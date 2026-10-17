@@ -1,3 +1,5 @@
+import { search, wordDetail, browse } from './search.ts';
+import { getContent, contentFeedback } from './content.ts';
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import fs from 'node:fs';
@@ -53,6 +55,13 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
     try { return { ok: true, ...checkSpelling(db, Number(cardId), String(answer ?? ''), now(), !!usedHint, answerId, { context, durationMs }) }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
+  app.get<{Querystring:{q?:string;limit?:string}}>('/api/search',async(req,reply)=>{
+    try {const limit=Number(req.query.limit??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('invalid limit');return search(db,req.query.q??'',limit);}catch(e){return reply.code(400).send({error:(e as Error).message});}
+  });
+  app.get<{Params:{id:string}}>('/api/word/:id',async(req,reply)=>wordDetail(db,Number(req.params.id))??reply.code(404).send({error:'word not found'}));
+  app.get<{Params:{id:string}}>('/api/word/:id/content',async req=>getContent(db,Number(req.params.id)));
+  app.get<{Querystring:Record<string,string|undefined>}>('/api/browse',async(req,reply)=>{try{return browse(db,req.query);}catch(e){return reply.code(400).send({error:(e as Error).message});}});
+  app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{try{return contentFeedback(db,Number(req.params.contentId),req.body?.reason,now());}catch(e){return reply.code(400).send({error:(e as Error).message});}});
   app.get('/api/progress', async () => ({ lists: progress(db), curriculum: curriculumProgress(db) }));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong', async req => wrongSummary(db, req.query.sort === 'recent' ? 'recent' : 'count', now()));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong/practice', async req => wrongPractice(db, 10, now(), opts.rng, req.query.sort === 'recent' ? 'recent' : 'count'));

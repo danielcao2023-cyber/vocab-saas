@@ -118,7 +118,30 @@ export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
       CREATE TABLE IF NOT EXISTS streak_makeups (day TEXT PRIMARY KEY, used_at TEXT NOT NULL);
       INSERT OR IGNORE INTO settings(key,value) VALUES ('choice_enabled','1'),('choice_weights','1,1,1'),
         ('makeup_per_month','2'),('makeup_window_days','7'),('makeup_requires_today','1'),('duration_cap_ms','300000');`);
+    migratePhase2(db);
     recomputeDailyStats(db);
     return db;
   } catch (error) { db.close(); throw error; }
+}
+
+/** Additive only: safe on both phase-one and already migrated databases. */
+export function migratePhase2(db: DB) {
+  const columns: Record<string, Record<string, string>> = {
+    word_content: { flags_json:'TEXT', hidden_at:'TEXT', hidden_reason:'TEXT', job_id:'INTEGER', input_hash:'TEXT', downgraded_from:'TEXT', approved_at:'TEXT' },
+    content_feedback: { content_id:'INTEGER', kind:'TEXT', handled_at:'TEXT' },
+    ai_jobs: { word_ids:'TEXT', model:'TEXT', prompt_version:'TEXT', request_id:'TEXT', duration_ms:'INTEGER', output_file:'TEXT', batch_size:'INTEGER', created_at:'TEXT' },
+  };
+  for (const [table, cols] of Object.entries(columns)) for (const [col, def] of Object.entries(cols)) addColumn(db,table,col,def);
+  db.exec(`CREATE TABLE IF NOT EXISTS word_forms (
+    word_id INTEGER NOT NULL REFERENCES words(id), form TEXT NOT NULL, kind TEXT NOT NULL,
+    PRIMARY KEY(word_id,form,kind));
+    CREATE TABLE IF NOT EXISTS word_freq (
+    word_id INTEGER NOT NULL REFERENCES words(id), grp TEXT NOT NULL CHECK(grp IN ('zk_high','daily_high')),
+    rank INTEGER NOT NULL, score REAL, basis TEXT NOT NULL, source TEXT NOT NULL,
+    is_inferred INTEGER NOT NULL CHECK(is_inferred IN (0,1)), job_id INTEGER, created_at TEXT NOT NULL,
+    PRIMARY KEY(word_id,grp));
+    CREATE INDEX IF NOT EXISTS idx_word_content_word_kind ON word_content(word_id,kind);
+    CREATE INDEX IF NOT EXISTS idx_word_content_hash ON word_content(input_hash);
+    CREATE INDEX IF NOT EXISTS idx_ai_jobs_hash ON ai_jobs(payload_hash);
+    INSERT OR IGNORE INTO settings(key,value) VALUES ('ai_model','gpt-6-luna'),('ai_batch_size','5'),('ai_max_attempts','2'),('ai_timeout_ms','600000');`);
 }

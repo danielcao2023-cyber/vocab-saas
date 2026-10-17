@@ -1,0 +1,23 @@
+<script setup lang="ts">
+import {computed,nextTick,onMounted,onUnmounted,ref,watch} from 'vue';
+import {api} from '../api';
+import {COPY} from '../copy';
+import StatusChip from './StatusChip.vue';
+import type {SearchItem} from '../types';
+const emit=defineEmits<{open:[id:number];active:[value:boolean]}>();
+const q=ref(''),results=ref<SearchItem[]>([]),visible=ref(false),mobile=ref(false),selected=ref(0),input=ref<HTMLInputElement|null>(null),resolved=ref(false),failed=ref(false);
+let timer:ReturnType<typeof setTimeout>|undefined,request=0;
+watch(mobile,value=>emit('active',value));
+const tooLong=computed(()=>[...q.value].length>40);
+watch(q,()=>{clearTimeout(timer);request++;visible.value=true;resolved.value=false;results.value=[];selected.value=0;if(!q.value.trim()||tooLong.value)return;const n=request;timer=setTimeout(async()=>{try{const rows=await api<SearchItem[]>('/api/search?limit=8&q='+encodeURIComponent(q.value));if(n===request){results.value=rows;resolved.value=true;failed.value=false;}}catch{if(n===request){failed.value=true;resolved.value=true;}}},200);});
+function close(){visible.value=false;mobile.value=false;request++;clearTimeout(timer);}
+function choose(id:number){close();q.value='';emit('open',id);}
+async function focus(){mobile.value=true;visible.value=true;await nextTick();input.value?.focus();}
+function keys(e:KeyboardEvent){if(e.key==='Escape'){close();e.preventDefault();}else if(e.key==='ArrowDown'||e.key==='ArrowUp'){visible.value=true;selected.value=(selected.value+(e.key==='ArrowDown'?1:-1)+Math.max(1,results.value.length))%Math.max(1,results.value.length);e.preventDefault();}else if(e.key==='Enter'&&visible.value&&results.value[selected.value]){choose(results.value[selected.value].id);e.preventDefault();}}
+function shortcut(e:KeyboardEvent){const t=e.target as HTMLElement|null;if(e.key==='/'&&!t?.isContentEditable&&!['INPUT','TEXTAREA','SELECT'].includes(t?.tagName??'')){focus();e.preventDefault();}if(e.key==='Escape')close();}
+function highlighted(s:string){const query=q.value.trim(),i=s.toLowerCase().indexOf(query.toLowerCase());return i<0||!query?{before:s,hit:'',after:''}:{before:s.slice(0,i),hit:s.slice(i,i+query.length),after:s.slice(i+query.length)};}
+function outside(e:FocusEvent){if(!(e.currentTarget as HTMLElement).contains(e.relatedTarget as Node|null)&&!mobile.value)visible.value=false;}
+onMounted(()=>window.addEventListener('keydown',shortcut));onUnmounted(()=>{emit('active',false);request++;clearTimeout(timer);window.removeEventListener('keydown',shortcut);});
+</script>
+<template><div class="search-wrap" :class="{'mobile-search':mobile}" @focusout="outside"><button type="button" class="mbtn" :aria-label="COPY.search" @click="focus"><span class="ico"></span></button><div class="search"><span class="ico"></span><input ref="input" v-model="q" :class="{focus:visible}" :placeholder="COPY.searchPlaceholder" :aria-label="COPY.searchPlaceholder" role="combobox" aria-controls="search-results" :aria-expanded="visible&&!!q.trim()" :aria-activedescendant="results.length?'search-'+selected:undefined" autocomplete="off" @focus="visible=true" @keydown="keys"><kbd class="kbd">/</kbd>
+<div v-if="visible&&q.trim()" id="search-results" class="sr sheet" role="listbox"><div v-if="tooLong" class="sr-empty">{{ COPY.searchTooLong }}</div><template v-else-if="results.length"><div class="hd">{{ results.some(x=>x.formMatch)?COPY.formResults+' · ':'' }}{{ COPY.searchResults(results.length) }}</div><button v-for="(r,i) in results" :id="'search-'+i" :key="r.id" type="button" class="sr-row" :class="{sel:i===selected}" role="option" :aria-selected="i===selected" @mouseenter="selected=i" @click="choose(r.id)"><div class="w">{{ r.headword }}<small>{{ r.phonetic }}</small></div><div class="m"><span v-if="r.formMatch" class="form-note">{{ r.formMatch.description }}</span>{{ highlighted(r.firstMeaning).before }}<mark v-if="highlighted(r.firstMeaning).hit">{{ highlighted(r.firstMeaning).hit }}</mark>{{ highlighted(r.firstMeaning).after }}</div><div class="side"><span class="tag" :class="{core:r.level==='三级'}">{{ r.level==='三级'?COPY.core:COPY.level2 }}</span><StatusChip :status="r.status" /></div></button><div class="ft">{{ COPY.searchKeys }}</div></template><div v-else-if="resolved&&!failed" class="sr-empty"><b>{{ COPY.noSearchResults }}</b><span class="muted">{{ COPY.noSearchResultsNote }}</span><ul><li>{{ COPY.searchTip }}</li><li>{{ COPY.searchFormsTip }}</li></ul></div><button v-else-if="failed" class="btn" type="button" @click="q=q+' '">{{ COPY.retry }}</button></div></div><button type="button" class="cancel link" @click="close">{{ COPY.cancel }}</button></div></template>

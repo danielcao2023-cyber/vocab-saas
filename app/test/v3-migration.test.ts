@@ -35,7 +35,7 @@ it('additive migrations twice preserve every old field, NULL new log columns and
         expect(tables[i]==='settings'?rows.filter(r=>before[i].some(old=>old.key===r.key)):rows).toEqual(before[i]);
       }
       expect(db.prepare('SELECT DISTINCT qtype,counted,context FROM review_logs').all()).toEqual([{qtype:null,counted:null,context:null}]);
-      expect(db.prepare('SELECT COUNT(*) n FROM settings').get()).toEqual({n:9});expect(db.prepare('SELECT COUNT(*) n FROM daily_stats').get()).toEqual({n:10});expect(db.pragma('integrity_check',{simple:true})).toBe('ok');db.close();
+      expect(db.prepare('SELECT COUNT(*) n FROM settings').get()).toEqual({n:13});expect(db.prepare('SELECT COUNT(*) n FROM daily_stats').get()).toEqual({n:10});expect(db.pragma('integrity_check',{simple:true})).toBe('ok');db.close();
     }
   } finally{fs.rmSync(dir,{recursive:true,force:true});}
 });

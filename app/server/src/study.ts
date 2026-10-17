@@ -1,5 +1,7 @@
 import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import type { DB } from './db.ts';
+import { freshWordId } from './learn-order.ts';
+import { statusKey } from './word-status.ts';
 import { shDay, shDayStart } from './time.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { setting } from './settings.ts';
@@ -70,14 +72,8 @@ export function nextCard(db: DB, now = new Date(), prefer: 'review' | 'new' = 'r
     if (q.new <= 0) return undefined;
     let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY c.id LIMIT 1`).get();
     if (!row) {
-      const n = (db.prepare(`SELECT COUNT(*) n FROM cards c JOIN words w ON w.id=c.word_id
-        WHERE c.mode='recognize' AND w.priority>0`).get() as { n: number }).n;
-      const every = setting(db, 'level2_every', 5);
-      const secondary = every > 0 && (n + 1) % every === 0;
-      const select = db.prepare(`SELECT w.id FROM words w WHERE w.priority=? AND NOT EXISTS
-        (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize')
-        ORDER BY COALESCE(w.freq_rank, 999999), w.id LIMIT 1`);
-      const w = (select.get(secondary ? 1 : 2) ?? select.get(secondary ? 2 : 1) ?? select.get(0)) as { id: number } | undefined;
+      const id = freshWordId(db);
+      const w = id === undefined ? undefined : { id };
       if (!w) return undefined;
       insertCard(db, w.id, 'recognize', now);
       row = db.prepare(`${CARD_SELECT} WHERE c.word_id=? AND c.mode='recognize'`).get(w.id);
@@ -182,13 +178,10 @@ export function checkSpelling(db: DB, cardId: number, answer: string, now = new 
 export function progress(db: DB) {
   const lists = db.prepare(`SELECT source, MAX(is_sample) is_sample, COUNT(*) total FROM words GROUP BY source`).all() as { source: string; is_sample: number; total: number }[];
   return lists.map((l) => {
-    const r = db.prepare(`SELECT
-      SUM(CASE WHEN c.id IS NULL OR c.state=${State.New} THEN 1 ELSE 0 END) AS new_,
-      SUM(CASE WHEN c.state IN (${State.Learning},${State.Relearning}) OR (c.state=${State.Review} AND c.stability<7) THEN 1 ELSE 0 END) AS learning,
-      SUM(CASE WHEN c.state=${State.Review} AND c.stability>=7 AND c.stability<21 THEN 1 ELSE 0 END) AS familiar,
-      SUM(CASE WHEN c.state=${State.Review} AND c.stability>=21 THEN 1 ELSE 0 END) AS mastered
-      FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' WHERE w.source=?`).get(l.source) as Record<string, number>;
-    return { source: l.source, isSample: !!l.is_sample, total: l.total, new: r.new_ ?? 0, learning: r.learning ?? 0, familiar: r.familiar ?? 0, mastered: r.mastered ?? 0 };
+    const r = { new:0, learning:0, familiar:0, mastered:0 };
+    const cards = db.prepare(`SELECT c.state,c.stability FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' WHERE w.source=?`).all(l.source) as {state:number|null;stability:number|null}[];
+    for (const c of cards) r[statusKey(c)]++;
+    return { source:l.source, isSample:!!l.is_sample, total:l.total, ...r };
   });
 }
 
