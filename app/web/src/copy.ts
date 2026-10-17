@@ -12,7 +12,11 @@ export const COPY = {
   meaningPrompt: '哪个词是这个意思？',
   spellPrompt: '看意思，拼出单词',
   listenHint: '戴上耳机 · 按 R 重听（不限次数）',
-  audioHelp: '没听到声音？检查耳机或音量。',
+  audioHelp: '点发音按钮，可以再听一次。',
+  audioUnavailable: '这个词的真人录音暂时无法播放，点按钮重试。',
+  audioBlocked: '浏览器还没有允许播放，点按钮听发音。',
+  audioRetry: '听发音',
+  audioCredits: '录音来源',
   dictationPrompt: '听发音，拼出单词', // 文案审查 #10
   think: '先自己想想意思再翻面',
   spellHint: 'Tab 提示首字母 · Enter 提交',

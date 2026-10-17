@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
-import { api, ClientError, OfflineError, speak } from '../api';
+import { api, ClientError, OfflineError, speak, stopAudio, type PlaybackFailure } from '../api';
 import { PendingSubmitter } from '../pending';
 import { COPY, isRepeatCard } from '../copy';
 import type { Turn, ChoiceResult } from '../types';
@@ -14,23 +14,30 @@ const props=defineProps<{ prefer: 'review'|'new'; practice: Turn[]|null; estimat
 const emit=defineEmits<{ cancel: []; done: [session: {done:number;correct:number}]; online: [value:boolean]; stale: [] }>();
 const turn=ref<Turn|null>(null), revealed=ref(false), answer=ref(''),usedHint=ref(false);
 const feedback=ref<{correct:boolean;expected:string}|null>(null), choiceResult=ref<ChoiceResult|null>(null);
-const input=ref<HTMLInputElement|null>(null), busy=ref(false),unsaved=ref(false),noAudio=ref(false),help=ref(false),failedLoad=ref(false);
+const input=ref<HTMLInputElement|null>(null), busy=ref(false),unsaved=ref(false),noAudio=ref<PlaybackFailure|null>(null),help=ref(false),failedLoad=ref(false);
 const session=ref({done:0,correct:0}); const estimated=ref(props.estimate);
 const card=computed(()=>turn.value?.card??null);
 const diff=computed(()=>charDiff(answer.value,feedback.value?.expected??''));
 const practiceQueue=props.practice ? [...props.practice] : null;
 const submitter=new PendingSubmitter((path,body)=>api(path,body));
-let shownAt=0,pendingRating=0,alive=true,timer:number|undefined;
+let shownAt=0,pendingRating=0,alive=true,timer:number|undefined,audioRequest=0;
 const progress=computed(()=>Math.min(100,session.value.done/Math.max(1,estimated.value)*100));
-function play(){if(card.value)noAudio.value=!speak(card.value.headword);}
+function cancelAudio(){audioRequest++;stopAudio();noAudio.value=null;}
+async function play(){
+  if(!card.value)return;
+  const n=++audioRequest;noAudio.value=null;
+  const result=await speak(card.value.headword);
+  if(!alive||n!==audioRequest||result.status==='cancelled')return;
+  noAudio.value=result.status==='unavailable'?result.reason:null;
+}
 async function loadNext(){
   if(busy.value||unsaved.value)return;
-  busy.value=true;failedLoad.value=false;turn.value=null;
+  cancelAudio();busy.value=true;failedLoad.value=false;turn.value=null;
   try{
     const next=practiceQueue ? (practiceQueue.shift()??null) : await api<Turn>('/api/next?prefer='+props.prefer);
     if(!alive)return;
     if(!next?.card){emit('done',session.value);return;}
-    turn.value=next;revealed.value=false;answer.value='';usedHint.value=false;feedback.value=null;choiceResult.value=null;noAudio.value=false;
+    turn.value=next;revealed.value=false;answer.value='';usedHint.value=false;feedback.value=null;choiceResult.value=null;
     estimated.value=Math.max(estimated.value,session.value.done+1);shownAt=Date.now();
     emit('online',true);
     if(next.question?.qtype==='listen_choice'||next.card.mode==='dictation')play();
@@ -75,7 +82,7 @@ async function submit(){
   await send('/api/check',{cardId:card.value.id,answer:answer.value,usedHint:usedHint.value});
 }
 function hint(){if(!card.value||feedback.value||unsaved.value||busy.value)return;usedHint.value=true;const first=card.value.headword[0];if(!answer.value.startsWith(first))answer.value=first+answer.value;}
-function cancel(){if(!busy.value&&!unsaved.value)emit('cancel');}
+function cancel(){if(!busy.value&&!unsaved.value){cancelAudio();emit('cancel');}}
 function onKey(e:KeyboardEvent){
   const editing=e.target instanceof HTMLInputElement;
   if(e.key==='?'&&!editing){help.value=!help.value;e.preventDefault();return;}
@@ -97,7 +104,7 @@ function onKey(e:KeyboardEvent){
   }
 }
 onMounted(()=>{loadNext();window.addEventListener('keydown',onKey);window.addEventListener('online',reconnect);timer=window.setInterval(reconnect,5000);});
-onUnmounted(()=>{alive=false;clearInterval(timer);window.removeEventListener('keydown',onKey);window.removeEventListener('online',reconnect);});
+onUnmounted(()=>{alive=false;cancelAudio();clearInterval(timer);window.removeEventListener('keydown',onKey);window.removeEventListener('online',reconnect);});
 </script>
 <template><main class="study"><div class="studybar"><button class="x" title="暂停（Esc）" aria-label="暂停" :disabled="busy||unsaved" @click="cancel">×</button><div class="track" role="progressbar" :aria-valuenow="session.done" :aria-valuemax="estimated" aria-valuemin="0" aria-label="本轮进度"><span :style="{width:`${progress}%`}"></span></div><span class="small muted num">{{ session.done }} / {{ estimated }}</span></div>
   <article v-if="turn&&card" :key="`${card.id}-${turn.question?.id??session.done}`" class="card">
@@ -113,12 +120,13 @@ onUnmounted(()=>{alive=false;clearInterval(timer);window.removeEventListener('ke
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>
-    <p v-if="noAudio" class="note" role="status">{{ COPY.audioHelp }}</p>
+    <p v-if="noAudio" class="note" role="status">{{ noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play">{{ COPY.audioRetry }}</button></p>
     <p v-if="unsaved" class="retry" role="status">{{ COPY.unsaved }} <button class="btn" :disabled="busy" @click="retry">{{ COPY.retry }}</button></p>
   </article>
   <div v-else-if="failedLoad" class="panel"><button class="btn primary" @click="loadNext">{{ COPY.retry }}</button></div>
   <div v-if="card?.mode==='recognize'&&!turn?.question&&!revealed" class="hints"><span><kbd>空格</kbd>听发音</span><span><kbd>→</kbd>翻面</span><span><kbd>Esc</kbd>暂停</span></div>
   <div v-else class="hints"><span><kbd>1</kbd>–<kbd>4</kbd>自评 / 选项</span><span><kbd>R</kbd>重听</span><span><kbd>Esc</kbd>暂停</span></div>
   <button class="link" :aria-expanded="help" @click="help=!help">? 快捷键表</button>
+  <a class="link small" href="/api/pronunciation/credits" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a>
   <div v-if="help" class="help"><dl><dt>空格 / R</dt><dd>听发音（输入框内用 Ctrl+R）</dd><dt>→ / Enter</dt><dd>翻面</dd><dt>1–4</dt><dd>自评 / 选项</dd><dt>Tab</dt><dd>提示首字母</dd><dt>Enter</dt><dd>提交 / 下一个</dd><dt>Esc</dt><dd>暂停</dd><dt>?</dt><dd>快捷键表</dd></dl></div>
 </main></template>

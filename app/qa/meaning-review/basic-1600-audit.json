@@ -1,0 +1,3067 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-17T13:27:58.402740+00:00",
+  "reviewer": "Codex编辑审核（非人工教师）",
+  "status": "proposals_only_not_applied",
+  "scope": {
+    "table": "words",
+    "filter": "source = 'kb2022'",
+    "column": "meaning_zh",
+    "reviewedWordCount": 1600,
+    "snapshotPath": ".tmp/meaning-audit/snapshot.json",
+    "snapshotSha256": "b457fdd9890d92f57b9fdaedc939620f7f38a5001e2a9d874a2596d2d0f66f01",
+    "excludedPreviouslyFixed": [
+      "X-ray",
+      "tidy",
+      "voluntary",
+      "warm",
+      "weekday",
+      "yogurt"
+    ],
+    "method": "逐条阅读1600条基础释义，保留真正影响初中学习者理解的错义、核心义遗漏、词头串义、词性/变化误导、未标语域的混乱旧词典义；不是全量风格改写。",
+    "limitations": [
+      "仅审核meaning_zh显示文本；独立pos字段未同步改动。",
+      "P2旧义清理不等于断言该词在所有历史或专业语境下无此用法。",
+      "未列建议的条目不代表经教师审核或穷尽全部词义。",
+      "所有建议待root复核与有原文哈希保护的统一更新，本文件不写数据库。"
+    ]
+  },
+  "counts": {
+    "proposed": 174,
+    "byCategory": {
+      "headword_mismatch": 11,
+      "grammar_or_form": 12,
+      "wrong_or_missing_common_meaning": 56,
+      "legacy_noise": 74,
+      "core_priority": 21
+    },
+    "byPriority": {
+      "P1": 79,
+      "P2": 95
+    },
+    "withExternalDictionaryCheck": 15
+  },
+  "items": [
+    {
+      "wordId": 1,
+      "headword": "a / an",
+      "oldMeaningZh": "第一个字母 A; 一个; 第一的",
+      "oldMeaningSha256": "098203561e5559349e0ceec12437ad8ef47692a48f23b54a85d99ff7f4cc95a8",
+      "proposedMeaningZh": "art. 一个；一（用于单数可数名词前）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "词头是冠词 a / an，原义混入字母 A 和“第一的”，会把冠词与字母混为一谈。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 6,
+      "headword": "abroad",
+      "oldMeaningZh": "adv. 往国外, 到室外, 到处\nadj. 往国外的, 在室外的, 广泛四散的",
+      "oldMeaningSha256": "85e1d07a97c19427a3013e39ba17b8a63e080e54554f5ad900bfbf3a8fad5636",
+      "proposedMeaningZh": "adv. 在国外；到国外",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原条把 abroad 作为形容词并列“往国外的”，又混入“在户外”；初中核心用法是副词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 10,
+      "headword": "according (to)",
+      "oldMeaningZh": "adj. 相符的, 根据...而定的\nadv. 相应地",
+      "oldMeaningSha256": "fb508430749f768f8d6436084b8cb06029383ffd7b7885ae0bb164b60ead43c7",
+      "proposedMeaningZh": "prep. 根据；按照（according to）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "词头明确带 to，原义“相符的；相应地”未解释介词短语 according to。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/according-to"
+        ],
+        "note": "Oxford 将 according to 作为介词，列报道来源及依照两类用法。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 11,
+      "headword": "account",
+      "oldMeaningZh": "n. 报告, 解释, 估价, 理由, 利润, 算账, 帐目\nvi. 报帐, 解释, 导致, 报偿, 占, 杀死\nvt. 认为",
+      "oldMeaningSha256": "87eed90575a282fc71c40c42e7499635064596a8bfbdae46323265edb96f7237",
+      "proposedMeaningZh": "n. 账户；账目；描述\nv. 解释；占（account for）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "缺少日常“账户”，又把 account for 等短语中的“导致、杀死”无条件归给 account。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 19,
+      "headword": "actor / actress",
+      "oldMeaningZh": "n. 男演员, 行动者",
+      "oldMeaningSha256": "77ceced6da41eae7ba20ce9020db607b81469454a2bd22db026d13f19b1f0c17",
+      "proposedMeaningZh": "n. 演员（actor）；女演员（actress）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "合并词头含 actress，原义只有“男演员、行动者”而遗漏女演员。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 23,
+      "headword": "address",
+      "oldMeaningZh": "n. 住址, 演说, 举止, 灵巧, 求爱\nvt. 发表(演说或讲话), 对付, 写地址",
+      "oldMeaningSha256": "42bfad196c276f63be7ee4426372829575898c2dc6de3624161ed0606aad57e3",
+      "proposedMeaningZh": "n. 地址；演讲\nv. 写地址；向……讲话",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "“求爱、灵巧、风度”等旧义与地址混列；会遮蔽通信和讲话的日常义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 38,
+      "headword": "ahead",
+      "oldMeaningZh": "adj. 领先的, 预先的, 向前的\nadv. 领先, 预先, 向前, 胜于, 在前面, 在将来",
+      "oldMeaningSha256": "d058ab95d1bd44a8600a12e3a674ecdfc98da3aadd00d82bb9b3750d84058d9b",
+      "proposedMeaningZh": "adv. 在前面；向前；提前",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原条先教形容词“领先的、前面的”再给副词；ahead 在初中位置和时间用法中主要作副词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 41,
+      "headword": "aim",
+      "oldMeaningZh": "n. 目标, 瞄准, 击中目标的能力\nvi. 对准目标, 致力, 打算\nvt. 瞄准\n应用接口模块, 医学人工智能, 相联索引法, 异步接口模块\n自动化信息管理, 自动化综合制造, 自动化库存管理",
+      "oldMeaningSha256": "281203906afaf449f391d19555426b3f126a9989463aa5fc912db206921898f6",
+      "proposedMeaningZh": "n. 目标；目的\nv. 瞄准；力求",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "释义尾部夹入 AIM 的整段计算机、医学等缩写解释，属于大写缩写污染。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 49,
+      "headword": "alone",
+      "oldMeaningZh": "adj. 孤独的, 单独的, 独自的\nadv. 独自地",
+      "oldMeaningSha256": "e43f206783096c906ab690174fca25fd08d5c37956bfef16011659a166837fb6",
+      "proposedMeaningZh": "adj. 独自的；单独的\nadv. 独自地",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "首义“孤独的”易与 lonely 的感受混淆；alone 首先说明独处状态。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 50,
+      "headword": "along",
+      "oldMeaningZh": "adv. 平行地, 向前\nprep. 沿着",
+      "oldMeaningSha256": "151dd4149748000ff7b1a90c1d6817542270a80fd76658b18e0edcbeee91196d",
+      "proposedMeaningZh": "prep. 沿着\nadv. 向前；一起",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原副词首义“平行地”不能帮助理解 walk along / come along 等常见表达。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 86,
+      "headword": "asleep",
+      "oldMeaningZh": "adj. 睡着的, 长眠的, 麻木的\nadv. 熟睡地",
+      "oldMeaningSha256": "07b0fb47fbec03e92447a5b7974043f6b3d0bf07e23275708e4ff8c2a8e093db",
+      "proposedMeaningZh": "adj. 睡着的",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原条给“adv. 熟睡地”；初中 be / fall asleep 中 asleep 是形容词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 101,
+      "headword": "awful",
+      "oldMeaningZh": "adj. 可怕的, 庄严的, 虔敬的",
+      "oldMeaningSha256": "0daa967babc9aed100fbc83bf047f11f69fa42ea17d9142c1a6cba1bdddeb26e",
+      "proposedMeaningZh": "adj. 糟糕的；可怕的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "“庄严的、虔敬的”为旧用法，与当代 awful 的常见负面含义相反，且未标旧义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 105,
+      "headword": "bad",
+      "oldMeaningZh": "adj. 坏的\nn. 坏\nadv. 坏地",
+      "oldMeaningSha256": "c725c74dd2d8e95db6bba6deabf5a883961c93612c49792a7854a33e488ddcf6",
+      "proposedMeaningZh": "adj. 坏的；差的；不好的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原无语域说明列“adv. 坏地”；bad 的副词用法有口语限制，基础书面语不应与 badly 无区别混教。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 116,
+      "headword": "basic",
+      "oldMeaningZh": "n. 基本原理, 要素, 基本规律\nadj. 基本的, 碱性的\n(计算机)BASIC语言",
+      "oldMeaningSha256": "5537a44bb5956d24e90f109e462d441282073e5534523c00e35216d9b25fbb00",
+      "proposedMeaningZh": "adj. 基本的；基础的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "小写 basic 后混入 BASIC 程序设计语言解释，且罕用名词置于核心形容词之前。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 151,
+      "headword": "bin",
+      "oldMeaningZh": "n. (贮存谷物等的)容器, 箱子",
+      "oldMeaningSha256": "384c94f04a19ab9e15bd0929dcc9807d38bc4cc24e63760a2dfd4806962fb51d",
+      "proposedMeaningZh": "n. 垃圾箱；储物箱",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义仅“储藏容器；容器”等，缺少 throw it in the bin 中最常用的垃圾箱。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 157,
+      "headword": "bit",
+      "oldMeaningZh": "n. 少量, 马嚼子, 辅币\nvt. 给马上嚼子, 控制\nbite的过去式和过去分词",
+      "oldMeaningSha256": "acfc6d4873b5ae46468551924ef9dfd3381ee867019cb3a315952a105b8fc16c",
+      "proposedMeaningZh": "n. 一点；少量\nv. bite 的过去式（咬）",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原条把 bit 说成 bite 的过去式和过去分词；初中应明确 bite—bit—bitten 的标准变化。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/bite_1"
+        ],
+        "note": "Oxford 词形表列 past simple bit、past participle bitten。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 161,
+      "headword": "blind",
+      "oldMeaningZh": "n. 蒙蔽物, 窗帘\nadj. 盲目的, 瞎的, 不加思考的\nvt. 使失明, 蒙蔽, 遮暗\nadv. 盲目地",
+      "oldMeaningSha256": "f0d54ac6848128daa3c0a792ccae6948388f83994334ef91e755a39cc9e549a2",
+      "proposedMeaningZh": "adj. 失明的；看不见的；盲目的\nn. （卷帘式）窗帘；百叶窗",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "首义“蒙蔽物”模糊且把窗帘等列在前；核心 blind person 的形容词义被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 165,
+      "headword": "blow",
+      "oldMeaningZh": "n. 吹, 打击, 殴打, 花开\nv. 吹, 风吹, 吹响, 开花",
+      "oldMeaningSha256": "d2843002b9e1f7f53876b15bf26f30fb1030bf4ee487261e0107d384e110bf41",
+      "proposedMeaningZh": "v. 吹；刮风\nn. 打击",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条把另一旧词义“开花、使开花”与吹气混列，不适合基础词条直接记忆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 167,
+      "headword": "board",
+      "oldMeaningZh": "n. 木板, 甲板, 膳食, 会议桌\nvt. 乘船, 供膳食, 用板覆盖\nvi. 搭伙",
+      "oldMeaningSha256": "b4cc40dc13b8d746bf819d8a609bcf075c0a71e23c0e7a6225e112f004641367",
+      "proposedMeaningZh": "n. 木板；黑板；董事会\nv. 上（车、船、飞机）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义遗漏课堂“黑板”，上船义又未覆盖日常交通登乘。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 173,
+      "headword": "born",
+      "oldMeaningZh": "adj. 天生的\nbear的过去分词",
+      "oldMeaningSha256": "ddb67b7fba6e1ce839780d16a61b907c13348334e32ca3b1b37196e36fe4d5fa",
+      "proposedMeaningZh": "adj. 出生的；天生的（常用 be born）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条只有天生和 bear 过去分词说明，缺少出生这一基础核心义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 175,
+      "headword": "boss",
+      "oldMeaningZh": "n. 老板, 上司, 岩瘤, 浮雕, 母牛\nvt. 指挥, 控制, 浮雕",
+      "oldMeaningSha256": "801213561d92c21f1dda6927f76bdcb98be8af0825f70776101f67c4236a5f24",
+      "proposedMeaningZh": "n. 老板；上司",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "“岩瘤、母牛、浮雕、把握”等混合旧词义会干扰对 boss 人物身份的理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 182,
+      "headword": "brain",
+      "oldMeaningZh": "n. 脑\nvt. 打碎脑部",
+      "oldMeaningSha256": "4d9202ce5478f28c0895359df99b1da34487c6ad87b9349f7c56b94f53dec07e",
+      "proposedMeaningZh": "n. 大脑；脑力",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条“打碎脑部”是罕用暴力动词义，未加语域说明并列在儿童基础词条。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 197,
+      "headword": "bully",
+      "oldMeaningZh": "n. 欺凌弱小者, 土霸\nvt. 威胁, 恐吓, 欺负\nvi. 欺负\nadj. 特好的, 第一流的\nadv. 十分",
+      "oldMeaningSha256": "f55da78bc746b3fbd11e50aae7b150f88060d930702c426a547719ce3769f4e7",
+      "proposedMeaningZh": "n. 欺凌弱小者\nv. 欺负；欺凌",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条把“特好的、非常、十分”等旧用法与欺凌义混列，容易理解为褒义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 203,
+      "headword": "butter",
+      "oldMeaningZh": "n. 奶油, 黄油\nvt. 涂黄油于",
+      "oldMeaningSha256": "55570bfb2cc9e3f985b1b645e4d51098644d9670df3aedf23788346e8907c81d",
+      "proposedMeaningZh": "n. 黄油\nv. 涂黄油",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原首义“奶油”易与 cream 混淆，应明确 butter 是黄油。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 212,
+      "headword": "camera",
+      "oldMeaningZh": "n. 照相机, 摄影机, 密谈室, 暗箱",
+      "oldMeaningSha256": "bdd8c19863ced1ba9c7361d23129e06057e1ab16456fc836704e7fa3f09a3216",
+      "proposedMeaningZh": "n. 照相机；摄像机",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“密谈室”混入与拉丁短语 in camera 有关的旧义，不能用于普通 camera 识记。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 213,
+      "headword": "camp",
+      "oldMeaningZh": "n. 露营, 帐篷\nvi. 露营, 扎营\nvt. 使扎营",
+      "oldMeaningSha256": "0f3d11fd2dd8409f9469858faf2ebbb11221b228c548040a7d97dae7c27daca1",
+      "proposedMeaningZh": "n. 营地；露营\nv. 露营；扎营",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原名词直接列“帐篷”，容易把 camp 和 tent 当作同义词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 231,
+      "headword": "cat",
+      "oldMeaningZh": "n. 猫, 恶妇\nvi. 呕吐\n计算机辅助教育, 计算机辅助测试, 计算机辅助翻译, 计算机辅助排版",
+      "oldMeaningSha256": "f675ac0fdd1454c345803008e653bd0d73a27b6f71da3e3bda440e0097e87371",
+      "proposedMeaningZh": "n. 猫",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条混入 CAT 大写缩写、计算机术语，以及“恶妇、呕吐”等无语域说明的杂义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 240,
+      "headword": "chair",
+      "oldMeaningZh": "n. 椅子, 显要的席位, 主席\nvt. 使入座, 使就任要职",
+      "oldMeaningSha256": "4c71beac615bb12ee8cd4be929b98f77b1fc2964ed58b024ac4508606958bcf4",
+      "proposedMeaningZh": "n. 椅子；主席\nv. 主持（会议）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原动词只给“使入座、使就任要职”，缺少 chair a meeting 的常用主持义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 259,
+      "headword": "China",
+      "oldMeaningZh": "n. 中国, 瓷器\nadj. 中国的",
+      "oldMeaningSha256": "20724c7f311e13a4fc3796ab2a8bd3b04142ebe20e2171fbe95b2844e5c99506",
+      "proposedMeaningZh": "n. 中国",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "大写 China 被混入小写 china 的瓷器义；“中国的”通常应用 Chinese。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 261,
+      "headword": "chip",
+      "oldMeaningZh": "n. 屑片, 薄片, 碎片\nvt. 削, 切, 削成碎片, 使摔倒, 凿\nvi. 削下屑片",
+      "oldMeaningSha256": "139c9af1afda2d89bdcf3c8f635916dbcf3cc8496be67c3626b363313d070c42",
+      "proposedMeaningZh": "n. 碎片；炸薯条；芯片",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条缺少 chips 的常见食物义和电子芯片义，影响日常语境理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 263,
+      "headword": "choice",
+      "oldMeaningZh": "n. 选择, 精选品, 选择权\nadj. 精选的, 挑三拣四的, 上等的\n该命令用于提示用户作出选择, 决定批处理文件的流程",
+      "oldMeaningSha256": "c2f2155b0cb2f9b416d951021da1c0e70f12c2e9bbb42aea839d38d79b3fa58d",
+      "proposedMeaningZh": "n. 选择；选择权",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条混入命令 choice 的整段计算机说明，不能作为普通词义展示。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 266,
+      "headword": "chore",
+      "oldMeaningZh": "n. 零工, 家务",
+      "oldMeaningSha256": "20616052657ef3ce179e0d159997eae329ca639f7ddab9aec923f60d39ae97f3",
+      "proposedMeaningZh": "n. 家务活；日常杂务",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "首义“零工”与孩子常见 do chores 的家务义不合，易学偏。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 279,
+      "headword": "click",
+      "oldMeaningZh": "n. 咔哒声, 啪嗒声\nvi. 作咔哒声\nvt. 使发咔哒声",
+      "oldMeaningSha256": "5da3a838aa1592f913b82597c40e0f0b47c46d7c8dfbd0bfd14dc4bdd822265b",
+      "proposedMeaningZh": "v. 点击；发出咔哒声\nn. 点击；咔哒声",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条只有声响和机械义，遗漏当前操作界面常用的点击。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 282,
+      "headword": "clock",
+      "oldMeaningZh": "n. 时钟, 计时器, (袜子上的)绣花边花\nvt. 绣花样, 记时, 记录\nvi. 记录时间",
+      "oldMeaningSha256": "8890ba8fc26f5ecb20b093e443869849230e02e9dda1134b9bcfefead30633e0",
+      "proposedMeaningZh": "n. 时钟\nv. 计时",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“袜子上的绣花边饰”等旧义对基础 clock 识记造成明显噪声。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 288,
+      "headword": "coach",
+      "oldMeaningZh": "n. 四轮大马车, 教练\nvt. 训练, 指导\nvi. 坐马车旅行, 作指导",
+      "oldMeaningSha256": "783e4d2490489947027e38e49e3652e14a7b8c3947e024289802318cf55f2a3e",
+      "proposedMeaningZh": "n. 教练；长途公共汽车\nv. 训练；指导",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原首义“四轮大马车”置前且遗漏常见长途客车。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 289,
+      "headword": "coast",
+      "oldMeaningZh": "n. 海岸, 滑坡\nv. 沿海岸而行",
+      "oldMeaningSha256": "cc192bc4ee8b2af67827912e35d2e9072a3fd875920cf7bec3e07fd8ee9d46c1",
+      "proposedMeaningZh": "n. 海岸；海滨\nv. （不靠动力）滑行",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原名词含“滑坡”，容易理解成山体滑坡；动词只给沿海岸而行，遗漏现代常见的不靠动力滑行。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 298,
+      "headword": "comfortable",
+      "oldMeaningZh": "adj. 舒服的, 轻松的\nn. 盖被",
+      "oldMeaningSha256": "9c53cc6d63427e827a9ae6af833b90a778fc1abf9ab171debfc5a33473a090eb",
+      "proposedMeaningZh": "adj. 舒服的；舒适的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原首项“n. 盖被”为罕见旧义，容易误导 comfortable 是被子名词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 300,
+      "headword": "communicate",
+      "oldMeaningZh": "vt. 显露, 传达, 感染\nvi. 通讯",
+      "oldMeaningSha256": "831c07ba3e856577b8e169fb439bb1b3344e154ba010c72e5dc3d517f88a3925",
+      "proposedMeaningZh": "v. 交流；沟通；传达",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条主要是传达、显露、感染等，缺少人际交流和沟通这一核心含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 321,
+      "headword": "copy",
+      "oldMeaningZh": "n. 副本, 摹仿, 一册\nv. 复印, 抄袭, 复制\n将几个文件合并成一个文件, 以及将文件传至外设或在设备之间传送",
+      "oldMeaningSha256": "f4a4b906a23657f74eb4bab400d957eb23288e39b0f12a38601e5507fe56c210",
+      "proposedMeaningZh": "v. 复制；复印；抄写\nn. 副本；一本；一份",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条夹入 copy 命令复制与文件拼接的操作段落。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 341,
+      "headword": "cross",
+      "oldMeaningZh": "n. 十字架, 十字架形物件, 交叉, 十字标, 交叉路, 磨难, 杂交\nadj. 生气的, 交叉的, 相反的\nv. 交叉, 横过, 越过",
+      "oldMeaningSha256": "a607017aef07f92b376c558162b08d9b2e60cd78d735457c25c1953e97862acf",
+      "proposedMeaningZh": "v. 穿过；越过\nn. 十字形；叉号；十字架\nadj. 生气的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原释义极长，十字架及多种杂义置前，常用过马路的动作和生气的形容词义难以辨认。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 348,
+      "headword": "customer",
+      "oldMeaningZh": "n. 消费者",
+      "oldMeaningSha256": "6dff3b6acbd0e625d0b52a76339f2d213637b4ac37e486a7ee2c3fa2faa9abd6",
+      "proposedMeaningZh": "n. 顾客；客户",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义只有消费者，容易与 consumer 混淆；customer 指向商家购买商品或服务的人。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 371,
+      "headword": "desert",
+      "oldMeaningZh": "n. 沙漠, 应得的赏罚, 功劳\nadj. 沙漠的, 不毛的\nvt. 放弃, 遗弃, 擅离\nvi. 逃掉",
+      "oldMeaningSha256": "c60468c04f1b7dbc3de2be5ba883ee3d072b2dce00bf6dc82abba3ace8fca2ed",
+      "proposedMeaningZh": "n. 沙漠\nv. 遗弃；抛弃",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原名词混入通常见于 deserts 的“应得赏罚、功劳”，不应与沙漠义无提示混列。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 378,
+      "headword": "die",
+      "oldMeaningZh": "vi. 死亡, 消逝, 平息, 熄灭, 漠然, 渴望\nvt. 死\nn. 骰子, 冲模",
+      "oldMeaningSha256": "af21b0df7c0616d25133f051dd93d1ba5f8d2a22b916af5b8a1c1b62730d1125",
+      "proposedMeaningZh": "v. 死亡；枯死；停止运转",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“漠然、渴望、骰子”等与 die 的基础动词义混列，词性顺序和义项十分混乱。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 379,
+      "headword": "diet",
+      "oldMeaningZh": "n. 日常饮食, 议会\nvt. 照规定饮食\nvi. 忌食",
+      "oldMeaningSha256": "f862c78c0c2a3609f61334bb88b54e498dbab874d8172ce3a39bf55fcd4c37bd",
+      "proposedMeaningZh": "n. 日常饮食；规定饮食\nv. 节食",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“国会、议会”为专门政治义，未标语域且容易与饮食主题混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 385,
+      "headword": "dining",
+      "oldMeaningZh": "n. 正餐, 宴会",
+      "oldMeaningSha256": "a8e2ffa752ed8dce8e4bfe1ad7d5e23c797f78754663f009909ca5809549f67d",
+      "proposedMeaningZh": "n. 用餐（如 dining room：餐厅）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "原“正餐、宴会”相当于 dinner 的释义；dining 是吃饭这一活动。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/dining"
+        ],
+        "note": "Oxford dining 名词条表示吃饭这一活动；与 dinner 的一餐不同。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 400,
+      "headword": "doll",
+      "oldMeaningZh": "n. 洋娃娃, 无头脑的美丽女人",
+      "oldMeaningSha256": "2cd834bde528504d81255feef0c25cc481074f83b706176e318904d1a801ea12",
+      "proposedMeaningZh": "n. 玩具娃娃；洋娃娃",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“无头脑的美丽女人”为贬损旧用法，无提示放在儿童基础词条会误导。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 410,
+      "headword": "draw",
+      "oldMeaningZh": "vi. 拉, 拖, 拔剑\nvt. 拖拉, 挨近, 领取, 打成平局, 引导, 抽签决定, 画, 描写, 制订, 草拟, 吸引\nn. 拉, 拖, 拔出, 抽签, 平局",
+      "oldMeaningSha256": "c40d7cb7bd7d3a50b2cb9c33dfe13e592e0499205cf4688bf164a63067dd0329",
+      "proposedMeaningZh": "v. 画；拉；吸引\nn. 平局",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原条“拉、拖、拔剑”等置前，绘画义埋在长列表中；基础识记应突出画画。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 412,
+      "headword": "dress",
+      "oldMeaningZh": "n. 服装, 覆盖物\nvi. 穿着\nvt. 给...穿衣, 整理",
+      "oldMeaningSha256": "a3d9dfe23d94bf380c4f69d26ad202d99656133fbba816738434bc7921e5caa4",
+      "proposedMeaningZh": "n. 连衣裙；衣服\nv. 穿衣；给……穿衣",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原名词缺少最常用的连衣裙，导致 dress 与 skirt 等区分困难。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 419,
+      "headword": "dumpling",
+      "oldMeaningZh": "n. 面团布丁, 团子",
+      "oldMeaningSha256": "99e156f1d9c8497580add42d426586177c5d42982a307f9336ba520d04c21c01",
+      "proposedMeaningZh": "n. 饺子；汤团",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义只有面团、布丁、团子，遗漏课标文化语境中的饺子。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 443,
+      "headword": "emperor / empress",
+      "oldMeaningZh": "n. 皇帝, 君主",
+      "oldMeaningSha256": "372fb773226fa330460b135fb862415e282a5a477d443c7ffcaa23e68c03359a",
+      "proposedMeaningZh": "n. 皇帝（emperor）；女皇；皇后（empress）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "词头包含 empress，但原义只解释 emperor。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 459,
+      "headword": "even",
+      "oldMeaningZh": "adj. 平坦的, 相等的, 连贯的, 均等的, 公平的, 偶数的, 平均的, 平衡的, 恰好的\nvt. 使平坦, 使相等\nvi. 变平, 成为相等\nadv. 甚至, 实际上, 完全, 十分\nn. 偶数, 偶校验",
+      "oldMeaningSha256": "53a245a86679ddcfc13f0f02505c544da0429f2dc2cd97ed797d6bf375e61dfb",
+      "proposedMeaningZh": "adv. 甚至；更加\nadj. 平坦的；偶数的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原义把偶校验等技术内容和多种低频义混在一起，甚至这一高频副词义不突出。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 473,
+      "headword": "excited",
+      "oldMeaningZh": "adj. 兴奋的, 已励磁的, 已激发的, 激昂的, 激动的",
+      "oldMeaningSha256": "f53d620136bee44f1ed87cef5ef8d17ee12bb82078d95d8bfc1edece93cf2c4e",
+      "proposedMeaningZh": "adj. 兴奋的；激动的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "“已励磁的、已激发的”属物理技术语域，混入情感词条妨碍理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 478,
+      "headword": "expensive",
+      "oldMeaningZh": "adj. 贵的, 奢华的, 费用浩大的, 乱化钱的",
+      "oldMeaningSha256": "816039ce4748b9ff7e10456ac4a8455346a48d3e3d8fd51ba76f39f8f79913f6",
+      "proposedMeaningZh": "adj. 昂贵的；价格高的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原含“乱化钱的”错字和不准确译法，会把价格高误作人的消费习惯。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 487,
+      "headword": "factory",
+      "oldMeaningZh": "n. 工厂, 产生地, 代理店",
+      "oldMeaningSha256": "99b0eba18d819d64d36c18671adf67227c79f4c3bdf91fa09394bf08a94ba4c9",
+      "proposedMeaningZh": "n. 工厂",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“代理店”为历史用法，未标古旧容易与 shop 混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 502,
+      "headword": "fat",
+      "oldMeaningZh": "n. 脂肪, 脂油, 肥肉\nadj. 肥的, 胖的, 油腻的\nn. 文件分配表",
+      "oldMeaningSha256": "33226c7902320ebf53eaca0c4490397729f9bb517555d5cd5966dff314e23cfc",
+      "proposedMeaningZh": "adj. 胖的\nn. 脂肪；肥肉",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原含 FAT 文件分配表解释，将大写技术缩写混入普通词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 504,
+      "headword": "favourite (AmE favorite)",
+      "oldMeaningZh": "n. 喜欢的事物\nadj. 喜爱的, 宠爱的",
+      "oldMeaningSha256": "9d850becd8bf7930684f559b3972535e74389e5a2fa2c6447af38a685191d1a6",
+      "proposedMeaningZh": "adj. 最喜欢的\nn. 最喜欢的人或事物",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原“喜欢的”缺少 favourite 中相较之下最偏爱的核心含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 517,
+      "headword": "find",
+      "oldMeaningZh": "vt. 发现, 感到, 找到, 认为, 得到\nvi. 裁决\nn. 发现\n寻找指定的字符串, 将符合条件的行或行数输出到标准输出设备上",
+      "oldMeaningSha256": "f4535dc955f9495be8c6d52167cf8641c58ee40864e669a34c6885f5f3206d9e",
+      "proposedMeaningZh": "v. 找到；发现；觉得",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条混入 find 计算机命令的整段说明。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 525,
+      "headword": "fit",
+      "oldMeaningZh": "n. 适宜, 合身, 发作, 痉挛\nadj. 适宜的, 对的, 准备好的\nvt. 适合, 安装, 使合身, 使适应, 使合格\nvi. 适合, 符合, 合身",
+      "oldMeaningSha256": "3fab6d33054f5726b51fe8d6f3bf0d8efaa9d14e0fd44089b885eb2d431f76c7",
+      "proposedMeaningZh": "adj. 健康的；适合的\nv. 合身；适合",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条未明确 keep fit 中健康这一基础含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 528,
+      "headword": "flat",
+      "oldMeaningZh": "adj. 平坦的, 单调的, 无力的, 浅的, 萧条的, 干脆的, 无聊的\nadv. 平直地, 断然地\nn. 扁平物, 平面, 平地, 平原, 平板车\nv. (使)变平",
+      "oldMeaningSha256": "5c1813dd5f8d68391d2378d36d81fa6cb6fc6109529a489d0c5f094890bbf2e4",
+      "proposedMeaningZh": "adj. 平坦的；扁平的\nn. 公寓",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条遗漏英式英语极常用的公寓义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 535,
+      "headword": "fog",
+      "oldMeaningZh": "n. 雾, 迷惑, (割后的)最生草, 苔藓\nvi. 被雾笼罩, 变模糊\nvt. 使困惑, 以雾笼罩",
+      "oldMeaningSha256": "64ee2dd2d7acefc7b21a96dd2d5e08ad1f8f80d731368200c81d29efc51e6e74",
+      "proposedMeaningZh": "n. 雾",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“最生草、苔藓”等明显混乱的旧词义与天气词雾混列。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 558,
+      "headword": "friendly",
+      "oldMeaningZh": "adj. 友好的, 亲切的, 互助的\nadv. 友善地, 温和地",
+      "oldMeaningSha256": "95b987ead586b9eb064d72e11fb5f1f36fff64693e02650d055b9ccd75bc6a5a",
+      "proposedMeaningZh": "adj. 友好的；友善的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原无提示给出“adv. 友善地”；基础现代用法应突出 friendly 是形容词，避免仅凭 -ly 结尾就当成一般副词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/friendly_1"
+        ],
+        "note": "Oxford 将此处友善、亲切的基础用法列为形容词。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 563,
+      "headword": "full",
+      "oldMeaningZh": "n. 全部, 完整\nadj. 充满的, 完全的, 丰富的, 完美的, 丰满的, 详尽的\nadv. 完全地, 整整, 十分\nvt. 把(衣服等)缝得宽松, 漂洗",
+      "oldMeaningSha256": "c38c1156d5946ba85ac2ecd0d7f4209130cf14c7fd79aaf503c6f3a5953dc4e0",
+      "proposedMeaningZh": "adj. 满的；吃饱的；完整的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“漂洗”是另一词源的纺织术语，名词旧义又置前，会干扰 full 的常用形容词含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 576,
+      "headword": "giraffe",
+      "oldMeaningZh": "n. 长颈鹿, 鹿豹座",
+      "oldMeaningSha256": "8178d10e34c6589b02577948da4f3d44934c65348d77627ca596aa2b12a8cf99",
+      "proposedMeaningZh": "n. 长颈鹿",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“鹿豹座”为星座名的旧称，混入动物名称条目且未作专名说明。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 583,
+      "headword": "go",
+      "oldMeaningZh": "vi. 去, 走, 达到, 运转, 查阅, 消失, 结束, 放弃, 花费, 流传, 趋于, 打算, 剩下\nvt. 以...打赌, 对付, 忍受, 出产, 为被捕者出(保释金)\nn. 去, 尝试, 进行",
+      "oldMeaningSha256": "82791c073cebb9afe84c95547084b2c256f96e91e322632502835478706efa7b",
+      "proposedMeaningZh": "v. 去；走；变得；运行",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条含“打赌、被捕者保释”等杂义，常用去和状态变化被大量旧释义遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 584,
+      "headword": "goal",
+      "oldMeaningZh": "n. 目标, 终点, 得分, 球门, 守门员\nvi. 攻门, 射门得分",
+      "oldMeaningSha256": "3a30ce9d15715cfcdc18d5699481bd50f2bb10b2f7f5ae953311f9603cc325e0",
+      "proposedMeaningZh": "n. 目标；球门；进球；得分",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条“守门员”对应 goalkeeper，不是 goal 的正常词义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/goal"
+        ],
+        "note": "Oxford 分球门、进球或得分、目标；in goal 表担当守门位置，不把单独 goal 普遍等同于 goalkeeper。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 591,
+      "headword": "graduate",
+      "oldMeaningZh": "n. 毕业生, 量杯\nadj. 已得学位的, 研究生的, 毕业的\nvi. 毕业, 得学位, 逐渐变为\nvt. 准予...毕业, 授予...学位, 分等级, 刻刻度",
+      "oldMeaningSha256": "09306352a4c1bd26773b58f32bc48356ce0044a8e967a44aab08655ab55da1cc",
+      "proposedMeaningZh": "v. 毕业\nn. 毕业生",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“量杯”为罕见器具名，混在教育主题词条会造成歧义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 593,
+      "headword": "grandfather (grandpa)",
+      "oldMeaningZh": "n. 祖父, 始祖",
+      "oldMeaningSha256": "59dc7467fbd082df2882186500a30b0394bb950469c9eb90751740257ad728ca",
+      "proposedMeaningZh": "n. 祖父；外祖父（爷爷；外公）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义未完整说明英语 grandfather 同时包括父系和母系祖父。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 594,
+      "headword": "grandmother (grandma)",
+      "oldMeaningZh": "n. 祖母, 女祖先",
+      "oldMeaningSha256": "5ff0c04aa2742a00f7147af2bdb3945561cf0ba7b15315fd4544a70ec0f7d5a9",
+      "proposedMeaningZh": "n. 祖母；外祖母（奶奶；外婆）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原义未完整说明英语 grandmother 同时包括父系和母系祖母。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 610,
+      "headword": "gym (=gymnasium)",
+      "oldMeaningZh": "n. +体育馆, 体育训练, 体育课, 体操",
+      "oldMeaningSha256": "cd11957f18cf817e9799b93d805428f1284f1ff3858296a1291ac510ee22a48c",
+      "proposedMeaningZh": "n. 体育馆；健身房；体育课",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原有加号等残留，且缺少日常 go to the gym 的健身房义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 615,
+      "headword": "hamburger",
+      "oldMeaningZh": "n. 汉堡(德国港口), 肉饼, 汉堡包, 纯精牛肉, 汉堡牛排",
+      "oldMeaningSha256": "e92f920d8ebc04a95ba805d788e6f5cb363a12ec27a26b9c5179d26b48e003c0",
+      "proposedMeaningZh": "n. 汉堡包",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "首义把 hamburger 当成德国港口 Hamburg，属于明显的词头混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/hamburger"
+        ],
+        "note": "Oxford 食物释义与词源分栏；德国港口 Hamburg 属词源信息，不是 hamburger 的地名义。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 622,
+      "headword": "hardly",
+      "oldMeaningZh": "adv. 刚刚, 几乎不, 勉强是",
+      "oldMeaningSha256": "dbeb2f4f5f68932b22b27edaefc0c6bc38d68d2aef82d1295e107b21e200a14c",
+      "proposedMeaningZh": "adv. 几乎不；几乎没有",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原首义“刚刚”易与 recently / just 混淆，未突出接近否定的程度。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 626,
+      "headword": "have (has)",
+      "oldMeaningZh": "vt. 有, 怀有, 拿, 进行\naux. 已经",
+      "oldMeaningSha256": "235af0cf876c71814d116782f28f1e8173ed7083f66ff0b238cf649acbfa7f41",
+      "proposedMeaningZh": "v. 有；拥有；吃；喝\naux. 与过去分词构成完成时",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原助动词单释“已经”会误导所有完成时都含 already 的意思。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 646,
+      "headword": "hide",
+      "oldMeaningZh": "n. 兽皮, 迹象, 躲藏处\nvt. 藏, 隐瞒, 遮避, 剥...的皮, 隐藏\nvi. 躲藏",
+      "oldMeaningSha256": "b206f2ab20d8d6955fc7f270d8f40584cb7df89be8ab32bbba602904b152cf7f",
+      "proposedMeaningZh": "v. 躲藏；隐藏\nn. 兽皮",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原先列兽皮，基础 hide and seek 的动词义位于后面且被杂义干扰。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 656,
+      "headword": "hold",
+      "oldMeaningZh": "n. 把握, 把持力, 柄, 控制, 掌握, 监禁\nvt. 保存, 握住, 拿住, 占据, 持有, 拥有\nvi. 支持, 持续, 有效\nn. 保留",
+      "oldMeaningSha256": "80564ef9e12f61f32443320d6fc74dce2a60892b4c72e9ff00566e607acee7d7",
+      "proposedMeaningZh": "v. 拿着；握住；举行；容纳；保持",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条缺少 hold a meeting / party 的常用举行义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 675,
+      "headword": "however",
+      "oldMeaningZh": "adv. 然而, 无论如何, 究竟怎样\nconj. 然而, 可是",
+      "oldMeaningSha256": "d14ace6fe4ca0d22c10f964889f280119af0a6abd6cf83a9aca1ee79e631774b",
+      "proposedMeaningZh": "adv. 然而；不过；无论多么",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原把“然而、可是”列为连词义，易误作 but 的同义连接方式；however 表转折通常作副词（另有表示任凭方式的连接用法，本基础释义不展开）。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://dictionary.cambridge.org/dictionary/learner-english/however"
+        ],
+        "note": "Cambridge 将转折义列为副词；任凭某种方式的用法另列连接词，不能笼统宣称 however 从不作连接词。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 680,
+      "headword": "hungry",
+      "oldMeaningZh": "adj. 饥饿的, 荒年的, 渴望的, 不毛的",
+      "oldMeaningSha256": "a0a65985ae577b81898afc145329c83fb3eefe1ff7b76a0a0475bb08d6d80a58",
+      "proposedMeaningZh": "adj. 饥饿的；渴望的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“荒年的、不毛的”是旧式表达，未标语域会让孩子误用 hungry 修饰土地等。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 691,
+      "headword": "illness",
+      "oldMeaningZh": "n. 疾病, 恶意",
+      "oldMeaningSha256": "3a6092d2a822ee9e096344aabe420897dfba160350b5b5cbb87c7c1e18781a63",
+      "proposedMeaningZh": "n. 疾病；生病",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“恶意”是罕见旧义，和 illness 的常见健康含义无关。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 702,
+      "headword": "insect",
+      "oldMeaningZh": "n. 昆虫, 卑鄙的人",
+      "oldMeaningSha256": "112c23d87452903a955ab6f826e28a1794fc923a993294ae4ad8fb0ba8a5051a",
+      "proposedMeaningZh": "n. 昆虫",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“卑鄙的人”是贬损比喻旧义，未标说明与动物名称并列。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 705,
+      "headword": "instruction",
+      "oldMeaningZh": "n. 指令, 教导, 命令",
+      "oldMeaningSha256": "feeeebf14c9c23ed19e52f13b24cdc9d7da99cbb77edba86c873a62ee4e84df7",
+      "proposedMeaningZh": "n. 指示；指导；（复数）用法说明",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条缺少 read the instructions 中关键的用法说明。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 706,
+      "headword": "instrument",
+      "oldMeaningZh": "n. 工具, 手段, 仪器",
+      "oldMeaningSha256": "f5040a195a196f72efa9a0faac8191c107474867575f2a1192c786d4bf2bd929",
+      "proposedMeaningZh": "n. 乐器；仪器；工具",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条缺少 musical instrument 的乐器义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 709,
+      "headword": "international",
+      "oldMeaningZh": "adj. 国际的\nn. 国别设定",
+      "oldMeaningSha256": "3d1f0194a19ec590e6268775bfef3bde8a4a7706ac8e01c2e4836265e2c39915",
+      "proposedMeaningZh": "adj. 国际的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“国别设定”是技术资料污染，不是 international 的一般名词义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 722,
+      "headword": "job",
+      "oldMeaningZh": "n. 工作, 零活, 职业, 事情\nvi. 做零工, 打杂, 做股票经纪, 假公济私\nvt. 代客买卖, 批发, 承包, 欺骗",
+      "oldMeaningSha256": "a71ab00e2b53dde63bafb88951280b00f67ebe942b16194eb3a069c9a4e0ce2f",
+      "proposedMeaningZh": "n. 工作；职业；任务",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原动词“假公济私、欺骗、股票经纪”等旧义会干扰职业主题的基础记忆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 732,
+      "headword": "just",
+      "oldMeaningZh": "adj. 正直的, 合理的, 正确的, 应得的\nadv. 刚刚, 正好, 仅仅",
+      "oldMeaningSha256": "87b5c8d207c769e2e06ea5e58458eaa5cc3de5ba9d9b127a175372c16861eb2b",
+      "proposedMeaningZh": "adv. 刚才；正好；仅仅\nadj. 公正的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原形容词正直义置前，初中日常句型极常用的副词义被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 737,
+      "headword": "kid",
+      "oldMeaningZh": "n. 小山羊, 小山羊肉, 小孩, 欺骗\nadj. 小山羊皮制的\nv. 哄骗, 嘲弄",
+      "oldMeaningSha256": "bce0ddd4d71c784d88a857a9ddc8a34a59006414fbc10eeb2f0e0a214fcd7781",
+      "proposedMeaningZh": "n. 小孩；小山羊\nv. 开玩笑",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原将小山羊置前，且动词只给“哄骗、嘲弄”而未明确常用的开玩笑。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 738,
+      "headword": "kill",
+      "oldMeaningZh": "n. 杀, 杀戮, 小河\nvt. 杀, 破坏, 消灭, 使终止, 抵消, 否决\nvi. 杀死",
+      "oldMeaningSha256": "20b196afacabe367cc7ffd63d290378d0504dd5ad402570669b80aba2a9bed6a",
+      "proposedMeaningZh": "v. 杀死；使停止；消磨（时间）",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“n. 小河”是特定地名中旧词根，不能作为普通 kill 的基础名词义记忆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 739,
+      "headword": "kilo (=kilogram)",
+      "oldMeaningZh": "n. 千",
+      "oldMeaningSha256": "425011f5fcfa20e97dfc3502e551153f509421547adf189dcc5e70736628e0b1",
+      "proposedMeaningZh": "n. 千克；公斤（kilogram 的简称）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "原释“千”混淆独立名词 kilo 与前缀 kilo-。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://dictionary.cambridge.org/dictionary/learner-english/kilo"
+        ],
+        "note": "Cambridge 区分独立名词 kilo（kilogram 的简称）与前缀 kilo-（千）。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 745,
+      "headword": "kite",
+      "oldMeaningZh": "n. 风筝, 筝帆, 空头支票, 骗子\nvi. 象风筝一样飞, 轻快地移动, 使用空头支票\nvt. 使上升, 骗钱",
+      "oldMeaningSha256": "b7947f5a4dcf5c96478c0002fd0fd5e8920f02ad0cb31520668303ef0f987908",
+      "proposedMeaningZh": "n. 风筝",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“骗子、空头支票”是无语域提示的罕见旧义，干扰玩具名称理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 754,
+      "headword": "lake",
+      "oldMeaningZh": "n. 湖, 池, 色淀\nv. (使)血球溶解",
+      "oldMeaningSha256": "0c96e4888c6d7bebce7cfbf1bbc97d411d1725f546346c7e7c031313e1865cb7",
+      "proposedMeaningZh": "n. 湖；湖泊",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原混入“血球溶解”等专门技术义，无语域提示。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 756,
+      "headword": "land",
+      "oldMeaningZh": "n. 陆地, 地面, 地界, 地产, 国土, 土地\nvi. 登陆, 登岸, 到达\nvt. 使上岸, 使登陆, 使到达",
+      "oldMeaningSha256": "e4abaf8dbc46fef2e2eafa3c04288c48af760c79ba3117963cc228f1951610e1",
+      "proposedMeaningZh": "n. 陆地；土地\nv. 着陆；降落；登陆",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原动词未明确飞机着陆这一高频用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 778,
+      "headword": "lend",
+      "oldMeaningZh": "vt. 借, 贷款给, 增添, 提供, 出租\nvi. 贷款",
+      "oldMeaningSha256": "31df1803bc86d4694be6b364afb05aa9d8f522430ba87a3665a4364016305b63",
+      "proposedMeaningZh": "v. 借给；借出",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "单释“借”方向不清，易把 lend 与 borrow 混用。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 781,
+      "headword": "let",
+      "oldMeaningZh": "vt. 让, 假设, 出租, 排放, 妨碍\nvi. 出租, 被承包\nn. 出租屋, 障碍",
+      "oldMeaningSha256": "e1806e0da693877ba4abcd81ae18cce9a9f5af79b514d1d2844bcc9c0024d5a4",
+      "proposedMeaningZh": "v. 让；允许；出租",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“妨碍”是极少见旧义，与允许的核心义相反但无提示。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 782,
+      "headword": "letter",
+      "oldMeaningZh": "n. 信, 字母, 证书, 字面意义, 铅字, 学问, 出租人\nvt. 写字母于, 在...上刻字母, 用字母标明\nvi. 写印刷体字",
+      "oldMeaningSha256": "c1143438ce1ada584b1bffd674f6460312ea079794b43a26b3f72aa98d8f533e",
+      "proposedMeaningZh": "n. 信；字母",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“出租人”等来自另一罕见构词义，容易让 letter 与 let 混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 793,
+      "headword": "lion",
+      "oldMeaningZh": "n. 狮子, 狮子(星)座, 国际狮子会会员",
+      "oldMeaningSha256": "f74eb4423701b65f6cce15429bdcefa7b0d73258291e421203fef4f8351ed250",
+      "proposedMeaningZh": "n. 狮子",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条混入星座、狮子会等大写专名，普通动物词条不宜直接混用。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 797,
+      "headword": "litter",
+      "oldMeaningZh": "n. 垃圾, 杂乱, 轿, 担架\nvt. 乱丢, 铺草, 弄乱\nvi. 产仔, 乱丢垃圾",
+      "oldMeaningSha256": "afac82da838194bb13fe3ad2b56b32fb7ef574b38631e3a2eed0edc880bb47aa",
+      "proposedMeaningZh": "n. 垃圾\nv. 乱扔垃圾",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原“轿、担架”等罕见义干扰日常 litter 的垃圾含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 804,
+      "headword": "long",
+      "oldMeaningZh": "adj. 长的, 长久的, 冗长的, 做多头的\nvi. 渴望, 热望, 极想\nadv. 长久, 始终\nn. 长时间, 长信号, 长整型",
+      "oldMeaningSha256": "8748cc2995614fdf2a580cb154a51fbf9f31bac3ae35e849ac33b5daf71e9f3a",
+      "proposedMeaningZh": "adj. 长的；长时间的\nadv. 长久地\nv. 渴望（常用 long for）",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“长整型、做多头”等技术和金融义无提示混入日常形容词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 808,
+      "headword": "lost",
+      "oldMeaningZh": "adj. 失去的, 遗失的, 迷惑的\nlose的过去式和过去分词",
+      "oldMeaningSha256": "c85e7c80ea25e305f9139c6d9b1dab3fb8ed0cead70e96bd738435bedecaeec7",
+      "proposedMeaningZh": "adj. 迷路的；丢失的\nv. lose 的过去式和过去分词",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条未明确 get lost / a lost child 中最关键的迷路义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 821,
+      "headword": "main",
+      "oldMeaningZh": "n. 主要部分, 干线, 体力, 力量, 主群组\nadj. 主要的, 重要的, 全力的",
+      "oldMeaningSha256": "e849dfb640e8f0176f5c4aa68ee0ae3ca347203950abebe27857afb50b0e5a79",
+      "proposedMeaningZh": "adj. 主要的；最重要的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原名词“体力、力量、主群组”等置前，基础形容词 main 的意义被混乱旧词义遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 823,
+      "headword": "mall",
+      "oldMeaningZh": "n. 林荫路",
+      "oldMeaningSha256": "d1bda01ea781006d0f18e3ed05eb37320f2b2dc2ea55677f6dde6cdd6cc85d8a",
+      "proposedMeaningZh": "n. 购物中心；商业街",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条只有林荫路，完全遗漏现代日常购物中心义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://dictionary.cambridge.org/dictionary/english/mall"
+        ],
+        "note": "Cambridge 现代常见义为购物中心或步行商业街。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 836,
+      "headword": "matter",
+      "oldMeaningZh": "n. 事件, 物质, 原因, 素材, 实体, 重要\nvi. 有关系",
+      "oldMeaningSha256": "c2672ea9ecf713bff438be4fb85bc713d018e125358f5bf0dce84b68e7c4a0d8",
+      "proposedMeaningZh": "n. 事情；问题；物质\nv. 要紧；有关系",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原动词只给“有关系”，缺少 It doesn't matter 的不要紧语义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 845,
+      "headword": "medical",
+      "oldMeaningZh": "n. 医生, 体格检查\nadj. 医学的, 内科的, 药的",
+      "oldMeaningSha256": "86a480b5b332878cbac6fa34ac56a90fb2e69cfe50cf31d1c6069bf593d2705c",
+      "proposedMeaningZh": "adj. 医疗的；医学的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原先列“n. 医生”，会误导 medical 可普遍代替 doctor。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 847,
+      "headword": "medium (pl. media)",
+      "oldMeaningZh": "n. 媒体, 方法, 媒介\nadj. 半生熟的, 中间的",
+      "oldMeaningSha256": "ed5aea742dba5edde88413db3648b52758e5dbd2d21ca4866d32665d71006cc9",
+      "proposedMeaningZh": "adj. 中等的\nn. 媒介；（复数 media）媒体",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原形容词以“半生熟的”开头，普通 medium size 的中等义不突出；补清媒体复数关系。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 853,
+      "headword": "mess",
+      "oldMeaningZh": "n. 食堂, 伙食, 用膳, 一份食品, 混乱, 乱七八糟, 困境\nvt. 将...弄糟, 妨碍, 使紊乱, 使就餐\nvi. 陷入困境, 搞乱, 用膳",
+      "oldMeaningSha256": "75efcd5dd63aa30e4bce7c267d4ffb0841230dedb4bc4195ff15376094ee5e48",
+      "proposedMeaningZh": "n. 脏乱；混乱；困境\nv. 弄乱",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原“食堂、伙食、用膳”等军事语域义占据前列，日常房间脏乱的核心义被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 865,
+      "headword": "miss",
+      "oldMeaningZh": "n. 失误, 避免, 失败, 小姐\nvt. 未得到, 未达到, 未听到, 未觉察, 逃脱, 遗漏, 错过, 思念\nvi. 失败, 击不中",
+      "oldMeaningSha256": "870c6ba3445e817ea6cabdb87d2ff18287d0ffad2de9034b43b0f67f6bb31135",
+      "proposedMeaningZh": "v. 错过；想念；未击中\nn. 未击中",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "小写 miss 与称谓 Miss 混列，词表另有 Miss，需避免大小写词头串义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 869,
+      "headword": "mobile",
+      "oldMeaningZh": "adj. 移动的, 易变的, 机动的\nn. 活动物体",
+      "oldMeaningSha256": "eb09a51d2473dc113d1fe4fef199cdf628e3212eaec8a8e92a10a830a448c3bb",
+      "proposedMeaningZh": "adj. 移动的；流动的\nn. 手机",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原名词只给活动物体，缺少英式英语常见的手机义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 874,
+      "headword": "monkey",
+      "oldMeaningZh": "n. 猴子, 猿, 打桩锤\nvi. 淘气, 胡闹\nvt. 嘲弄",
+      "oldMeaningSha256": "739ec5a60b8de19d786866938286d91bcab62620201fb8eb3a737b6fb4f9e6e6",
+      "proposedMeaningZh": "n. 猴子",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条将猿与猴子无区别并列，易将 monkey 与 ape 混同；“打桩锤”又是无提示的罕见器具义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 901,
+      "headword": "nearly",
+      "oldMeaningZh": "adv. 几乎, 密切地",
+      "oldMeaningSha256": "e679581f2ae3005052dd7b8ac498d419430d9ae2d53fa17e39e3cdd43099c750",
+      "proposedMeaningZh": "adv. 几乎；差不多",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“密切地”为旧义，容易让 nearly 与 closely 混用。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 903,
+      "headword": "neck",
+      "oldMeaningZh": "n. 脖子, 衣领, 颈\nvi. 拥抱, 拥吻, 收缩\nvt. 割颈",
+      "oldMeaningSha256": "77d68acd79256fe90f1eeda8d0bb4b7f35732c4ad4900537c38b21427515bf6c",
+      "proposedMeaningZh": "n. 脖子；颈部",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“割颈”等罕用暴力动词无语域提示，干扰身体部位词识记。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 928,
+      "headword": "note",
+      "oldMeaningZh": "n. 笔记, 记录, 注解, 票据, 符号, 显要, 注重, 便笺, 照会\nvt. 记录, 注解, 注意",
+      "oldMeaningSha256": "ec5e2213f1dcb9c3abd2161637ef66b1f775fca26f4df5cd11a74f71c84ed395",
+      "proposedMeaningZh": "n. 便条；笔记；音符\nv. 注意；记下",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原名词含显要、注重等杂义，却遗漏常见音乐音符。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 938,
+      "headword": "o'clock",
+      "oldMeaningZh": "n. ...点钟, 钟头",
+      "oldMeaningSha256": "fb17120e88cd301256fa6ab6d2a893b5954958dedf311daba6966e57308a8cdc",
+      "proposedMeaningZh": "adv. ……点钟（用于整点时间）",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原“n. 钟头”将整点表达 o'clock 错作时间长度名词 hour。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 943,
+      "headword": "officer",
+      "oldMeaningZh": "n. 军官, 主管, 官员, 公务员\nvt. 指挥",
+      "oldMeaningSha256": "fea15a2fe7ed6c262375e661b09c6f966d1fe19163ed032dcd1579a1cc0d98a1",
+      "proposedMeaningZh": "n. 官员；军官；警官",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条缺少 police officer 中常用的警官义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 948,
+      "headword": "Olympic",
+      "oldMeaningZh": "adj. 奥林匹亚的, 奥林匹斯山的, 强有力的, 巨大的",
+      "oldMeaningSha256": "babb636f49a64947680d0aa0238d7ff73d865eec5eb6b58fceb592840fec284f",
+      "proposedMeaningZh": "adj. 奥林匹克运动会的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原释奥林匹亚、奥林匹斯、强有力、巨大等，却缺少 Olympic Games 的核心义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 951,
+      "headword": "onion",
+      "oldMeaningZh": "n. 洋葱\nvt. 因洋葱使掉泪",
+      "oldMeaningSha256": "6ad6a8b7fad199e58161559d5f40ce5dfe6815ac931c3cd6ed90fa63b6f20a2d",
+      "proposedMeaningZh": "n. 洋葱",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“使掉泪”为无提示的罕见动词用法，不能当作普通 onion 的基础用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 962,
+      "headword": "organise (AmE organize)",
+      "oldMeaningZh": "vt. 组织, 有机化, 给予生机",
+      "oldMeaningSha256": "7f38110862398c99be4aa2cb0b11cfca908672876847948080b2a15a4e25547d",
+      "proposedMeaningZh": "v. 组织；安排",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“有机化、给予生机”等旧式释义会干扰 organise 的常见活动安排义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 969,
+      "headword": "oven",
+      "oldMeaningZh": "n. 烤箱, 灶, 子宫",
+      "oldMeaningSha256": "50fa45fe5f3ef1f43017dfd5f874cfc69139cfb7ebf88873b86348426f6f28e3",
+      "proposedMeaningZh": "n. 烤箱；烤炉",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“子宫”为罕见俚语，未标说明与厨房器具混列，明显不适合基础词条。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/oven"
+        ],
+        "note": "Oxford 普通词义是烹调加热设备；怀孕相关表达单独列为非正式习语，不应作为本词普通器官义。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 971,
+      "headword": "own",
+      "oldMeaningZh": "n. 自己的\nadj. 自己的, 嫡亲的, 同胞的\nvt. 拥有, 支配, 自认, 承认, 顺从于\nvi. 承认, 供认",
+      "oldMeaningSha256": "0c8807ec87c3e32f495becb1e301e20cef389ed63bb5a46d1fcfb83787af99a6",
+      "proposedMeaningZh": "adj. 自己的\nv. 拥有",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原首项“n. 自己的”未说明使用结构，干扰 my own ... 中常见的修饰用法；聚焦形容词“自己的”和动词“拥有”。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/own_1"
+        ],
+        "note": "Oxford 此条将 own 的“自己的”用法列为形容词；另有动词词条。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 979,
+      "headword": "pale",
+      "oldMeaningZh": "n. 栅栏, 界线, 范围\nadj. 苍白的, 暗淡的, 无力的\nvi. 变苍白, 变暗, 失色\nvt. 使变苍白, 使失色, 用栅栏围",
+      "oldMeaningSha256": "a35f2d0183a09267fe1c98e9161aecdb9e13a4067af21f6d7453ef1811c4ee6f",
+      "proposedMeaningZh": "adj. 苍白的；浅色的\nv. 变苍白",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原首先展示栅栏、范围等旧名词义，常用脸色或颜色形容词义被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/pale_1"
+        ],
+        "note": "Oxford pale 形容词列面色苍白与颜色浅淡；名词是独立词条，不能遮蔽基础形容词义。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 985,
+      "headword": "parent",
+      "oldMeaningZh": "n. 父母, 父母亲, 根源",
+      "oldMeaningSha256": "e80f36f57e4348c6fae097f9b75fbe6aa4183531d992581454d4bac16d95aa53",
+      "proposedMeaningZh": "n. 父亲或母亲；家长（parents：父母）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原单数 parent 直接释为父母，未说明一个家长与复数父母的区别。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 991,
+      "headword": "passage",
+      "oldMeaningZh": "n. 通道, 通过, 移居, 航行, 一段, 走廊\nvi. 通过, 经过, 航行, 横渡, 争吵\nvt. (使)马以斜横步前进, 使传代",
+      "oldMeaningSha256": "55051b2609e7b178f075254364c0257c82b0bff0923c35cb924c011f3ff5ee2b",
+      "proposedMeaningZh": "n. 段落；短文；通道",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原缺少阅读题 passage 的短文义，混入马步、传代、争吵等无语域说明的杂义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1005,
+      "headword": "per cent (AmE percent)",
+      "oldMeaningZh": "n. 每百中, 百分之..., (英)利息...厘的证券, (非正式)百分率",
+      "oldMeaningSha256": "c6d7a09111c546ef817553f1f534474c446f382ac18097eb076cb3b9042be184",
+      "proposedMeaningZh": "百分之……；百分比",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原条含证券利息等罕见义，会干扰 per cent 表百分数的基础用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1011,
+      "headword": "personal",
+      "oldMeaningZh": "adj. 私人的, 涉及隐私的, 有人性的, 人称的, 亲自的, 身体的",
+      "oldMeaningSha256": "e3260069d23e24234ca92a69ab8e70bdd6a665e16056cbd99405df55ff16fdb2",
+      "proposedMeaningZh": "adj. 个人的；私人的；亲自的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原“有人性的”为不准确的常用义表达，且缺少 personal information 的个人的。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1012,
+      "headword": "pet",
+      "oldMeaningZh": "n. 宠物, 受宠爱的人, 宠坏的孩子, 不悦, 生气\nadj. 宠爱的, 表示亲昵的, 养着观赏的, 特别珍爱的, 格外的\nvt. 宠爱, 溺爱, 抚摸\nvi. 拥抱, 爱抚, 生气, 发脾气",
+      "oldMeaningSha256": "bc7fe1934fcec605bfcc6330912de33b8352ae45e5dc68271b2966e76edf6852",
+      "proposedMeaningZh": "n. 宠物\nv. 抚摸；爱抚",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“不悦、生气、发脾气”等另一旧义与宠物并列，会产生相反情感联想。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1014,
+      "headword": "photo (=photograph)",
+      "oldMeaningZh": "n. 相片, 照片, 逼真的描绘\nv. 照相\nadj. 照相的, 摄影用的, 详细记录的, 逼真的, 酷似的",
+      "oldMeaningSha256": "5190a81ee82405a76286e8c2142bdce6e9f550dabe647537cbdec6f0e1636de3",
+      "proposedMeaningZh": "n. 照片；相片\nv. 拍照",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原带“逼真的、详细记录的、酷似的”等大段低频形容词解释，干扰 photo 作为照片名称的基础用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1020,
+      "headword": "pie",
+      "oldMeaningZh": "n. 馅饼, 财富, 总额, 贪污受贿, 杂乱, 喜鹊",
+      "oldMeaningSha256": "d26a2b132677ceb643f2b9db337af1ec48d71318b2389968ace14d7001333a35",
+      "proposedMeaningZh": "n. 馅饼；派",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“财富、贪污受贿、喜鹊”等旧义和短语推导义直接混入食物名称。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1023,
+      "headword": "pill",
+      "oldMeaningZh": "n. 药丸, 弹丸, 屈辱, 胡说\nv. 做成药丸, 形成丸状, 服药丸, 挫败, 抢劫",
+      "oldMeaningSha256": "903395a1353d0b9e63f88c728cb5478ba5196a9e4974719e7fc2159795d05269",
+      "proposedMeaningZh": "n. 药丸；药片",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“抢劫、胡说、屈辱”等旧杂义与药物形态混列，无语域提示。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1025,
+      "headword": "ping-pong",
+      "oldMeaningZh": "n. 乒乓, 乒乓球运动, 桌球, \"踢皮球\", 推来推去",
+      "oldMeaningSha256": "76e5e5e75cae61248ca46783ca02a14b9fe676b13809414dc602ad46cad60342",
+      "proposedMeaningZh": "n. 乒乓球；乒乓球运动",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原“桌球”在常用中文中易指台球，并混入踢皮球比喻，基础释义应明确乒乓球。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1026,
+      "headword": "pink",
+      "oldMeaningZh": "n. 粉红色, 石竹花, 化身, 典范, 头面人物, 极度\nadj. 粉红的, 石竹科的, 比较激进的, 脸色发红的, 精致的, 有点下流的\nvt. 刺, 扎, 刺痛, 射伤, 使面红耳赤, 使变粉红色\nvi. 变粉红色",
+      "oldMeaningSha256": "85da5a806402c1e2c95ecf7cb64ab05b51704707a5d71eec6f2c41e5ccd97b64",
+      "proposedMeaningZh": "adj. 粉红色的\nn. 粉红色",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“下流的、射伤、头面人物”等杂义干扰颜色词的基本理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1032,
+      "headword": "plane",
+      "oldMeaningZh": "n. 平面, 扁平物, 机翼, 飞机, 水准, 地位\nadj. 平的, 平面的\nvt. 将...刨平, 刨平, 掠过水面\nvi. 翱翔, 乘飞机旅行, 刨掉",
+      "oldMeaningSha256": "9ab7f25d4298e625f41f0f8b6828b5c267ae08d4cde41a985e68b9e825b00b12",
+      "proposedMeaningZh": "n. 飞机；平面",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原先列平面、扁平物、机翼再列飞机，且混入大量刨平等专门义，初中交通义不突出。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1037,
+      "headword": "play",
+      "oldMeaningZh": "n. 游戏, 游玩, 玩笑, 运动, 比赛, 赌博, 跳动, 表演, 剧本\nv. 玩, 游戏, 假装, 开玩笑, 比赛, 扮演, 演奏, 演戏, 传摇曳, (使)跳动",
+      "oldMeaningSha256": "2fd7b9df6794f83a169da40673ca1168ea7cf58c3b2f4102b0315e3efc64afe3",
+      "proposedMeaningZh": "v. 玩；参加（游戏或运动）；演奏；扮演\nn. 戏剧；剧本",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原含“传摇曳”等文本错误和赌博等混杂义，需突出游戏、运动、音乐、戏剧四类常用用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1051,
+      "headword": "pool",
+      "oldMeaningZh": "n. 池, 水塘, 石油层, 联营\nvt. 合伙经营, 共享, 采掘, 汇聚成\nvi. 汇合成塘, 淤积, 联营",
+      "oldMeaningSha256": "3b3196e18be8c9dd0fcde067d4203821ad9117d31636990c9777e76b4b756e97",
+      "proposedMeaningZh": "n. 游泳池；水塘\nv. 合用；集中（资源）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原没有明确 swimming pool 的游泳池，石油层、采掘等技术义反而占据词条。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1079,
+      "headword": "primary",
+      "oldMeaningZh": "n. 最主要者, 原色\nadj. 主要的, 初期的, 根本的, 原始的, 首要的, 基本的",
+      "oldMeaningSha256": "7e179574ae81f1021faed9b8c9f635ea8a95b9ed3dc69c1d7fb6f58bec9e019b",
+      "proposedMeaningZh": "adj. 初级的；小学的；主要的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原缺少 primary school 中最常见的小学的含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1080,
+      "headword": "prince / princess",
+      "oldMeaningZh": "n. 王子, 亲王, 国君, 贵族, 诸侯, 有权势的大人物",
+      "oldMeaningSha256": "a00f079a54022e64505ab2f499f6b18f2913b601b01b4c08ca61114b12be1729",
+      "proposedMeaningZh": "n. 王子；亲王（prince）；公主；王妃（princess）",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "合并词头包含 princess，但原只给男性王子、亲王等义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1082,
+      "headword": "private",
+      "oldMeaningZh": "adj. 私人的, 秘密的, 私立的, 隐蔽的\nn. 士兵, 隐士, 阴部",
+      "oldMeaningSha256": "5c9516322e9b92a0915f10137dc3c0365ed02069595bbab8ee51c03f0174dc16",
+      "proposedMeaningZh": "adj. 私人的；私立的；秘密的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“阴部、隐士”等名词旧义直接混列，干扰 private 的基础形容词理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1093,
+      "headword": "proper",
+      "oldMeaningZh": "adj. 适当的, 固有的, 高尚的, 专属的\nadv. 完全地, 彻底地",
+      "oldMeaningSha256": "4230ab16c8efe44a7301f28ba5f7d62be33c9ae30b5a5280f62e140ccc058ffa",
+      "proposedMeaningZh": "adj. 适当的；正确的；合适的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原无语域说明列“adv. 完全地、彻底地”；proper 的副词用法有口语限制，容易干扰 proper 与 properly 的基础区分。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1105,
+      "headword": "put",
+      "oldMeaningZh": "vt. 放, 摆, 安置, 移动, 发射, 投掷, 写上, 表达, 使从事, 使受到, 驱使, 赋予\nvi. 出发, 航行, 发芽\nn. 掷, 股票出售权, 笨蛋\nadj. 固定不动的",
+      "oldMeaningSha256": "c0f3fedb13d7768321f65ac27aa043c9956b6660476aa0f2187e1b62dbeb0889",
+      "proposedMeaningZh": "v. 放；摆；使处于（某种状态）",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“股票出售权、笨蛋、发芽”等杂义无提示混列，基础 put 的高频动词义被淹没。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1113,
+      "headword": "rabbit",
+      "oldMeaningZh": "n. 兔子\nvi. 猎兔\nvt. 让...见鬼去",
+      "oldMeaningSha256": "342700da45918b0fec892453f1816c8c517075fe6c3510e9405ed12033d35917",
+      "proposedMeaningZh": "n. 兔子",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“让……见鬼去”为罕见旧感叹用法，不宜作 rabbit 普通动词义教给孩子。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1114,
+      "headword": "race",
+      "oldMeaningZh": "n. 种族, 人种, 赛跑, 比赛, 急流, 人类, 同道, 姜根\nvi. 赛跑, 竞赛, 疾走\nvt. 与...赛跑, 使疾走, 使猛转",
+      "oldMeaningSha256": "75d06ad1171d6399da7a423d33754fd5dfde387644fc4afb85c17f59e5144098",
+      "proposedMeaningZh": "n. 赛跑；比赛；种族\nv. 赛跑；竞赛",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“姜根、同道、急流”等多词源旧义混列，影响体育和人群义项理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1124,
+      "headword": "ready",
+      "oldMeaningZh": "n. 预备好的状态, 现款\nadj. 准备好的, 备用的, 可以使用的\nadv. 预先, 迅速\nvt. 使准备好",
+      "oldMeaningSha256": "a805fc6b4a9c87c6f862cba9f18f2e2f16ae25ab157829d9a85566d539cfc60e",
+      "proposedMeaningZh": "adj. 准备好的；可使用的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原先列“现款”并给“adv. 预先、迅速”，容易掩盖 be ready 的基础形容词用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1179,
+      "headword": "run",
+      "oldMeaningZh": "n. 跑, 赛跑, 奔跑, 奔跑的路程, 趋向, 流出, 运转时间, 连续\nvi. 跑, 奔跑, 跑步, 赛跑, 竞赛, 行驶, 运转, 进行, 蔓延\nvt. 使跑, 参赛, 追究, 驾驶, 开动, 管理, 经营, 使流出, 运行\nadj. 熔化的, 融化的, 浇铸的\nrun的过去式和过去分词",
+      "oldMeaningSha256": "6e70d6b37e56a582161d80923a603843169bb5c50073ce13d0705ec056151bed",
+      "proposedMeaningZh": "v. 跑；运行；经营\nn. 跑步\n（过去式 ran，过去分词 run）",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原条写“run 的过去式和过去分词”，把自身错作过去式；应是 ran。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://dictionary.cambridge.org/dictionary/english/run?q=runs"
+        ],
+        "note": "Cambridge 明示过去式 ran、过去分词 run。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 1182,
+      "headword": "safe",
+      "oldMeaningZh": "n. 保险箱, 冷藏室\nadj. 安全的, 可靠的, 平安的, 稳健的, 有把握的",
+      "oldMeaningSha256": "a99736001c15f4aa2cd461bc519cf0d4c67e6cddcc9c726a7d3d6d4d464d0b78",
+      "proposedMeaningZh": "adj. 安全的；平安的\nn. 保险箱",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原先给保险箱、冷藏室，初中人身安全的形容词义不突出，且冷藏室为罕见用法。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1209,
+      "headword": "seldom",
+      "oldMeaningZh": "adj. 不常的, 稀少的\nadv. 很少, 不常",
+      "oldMeaningSha256": "a9f4202776e04b8f5d7c390d62276fda2da7e6240b621a71c4722eb3d4303c0f",
+      "proposedMeaningZh": "adv. 很少；不常",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原先列形容词“不常的、稀少的”；初中 seldom 表频率，常用词性为副词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://dictionary.cambridge.org/us/dictionary/english/seldom"
+        ],
+        "note": "Cambridge 将频率义列为副词，与 rarely 接近。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 1224,
+      "headword": "share",
+      "oldMeaningZh": "n. 部分, 参与, 一份, 参股, 份额\nvt. 均分, 分担, 分享, 分配, 共有\nvi. 分享\n文件锁定及检测磁盘更动和对超过32MB硬盘分区的支持",
+      "oldMeaningSha256": "b587f53c51a2f179ea080ef08dab9a0bfcce19b0dda09e17b04c938ac24d2fd4",
+      "proposedMeaningZh": "v. 分享；分担；共有\nn. 一份；份额",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原尾部整段“文件锁定、32MB硬盘分区”属于 SHARE 计算机命令污染。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1227,
+      "headword": "sheep (pl. sheep)",
+      "oldMeaningZh": "n. 羊, 胆小者",
+      "oldMeaningSha256": "fcba20e8c8be7b27a81e7d4b0cd1b66ec3abae87b8f1a981397cc39975fdfd0f",
+      "proposedMeaningZh": "n. 绵羊（单复数同形）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原仅释“羊”不能区分 sheep 与 goat；补明绵羊并保留不规则复数信息。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1232,
+      "headword": "shock",
+      "oldMeaningZh": "n. 震动, 冲突, 震惊, 冲击, 突击, 禾束堆, 休克, 长毛狗\nvt. 使震动, 使休克, 使受电击, 震惊得\nvi. 震动, 吓人\nadj. 蓬乱浓密的",
+      "oldMeaningSha256": "439766bfc519818bbff0c39e91e3ae9ad5a01b78c8a4feddd7dc6fee900e23d3",
+      "proposedMeaningZh": "n. 震惊；冲击；休克\nv. 使震惊",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“禾束堆、长毛狗”等多词源旧义混列，且“震惊得”是残缺译文。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1242,
+      "headword": "shower",
+      "oldMeaningZh": "n. 阵雨, 淋浴, 一阵, 展出者, 显示者\nvi. 淋浴, 下阵雨\nvt. 淋湿, 倾注",
+      "oldMeaningSha256": "e4a24cd07825556a9377b1d94fd6757e2ae53e04df0fd39a1b2f97abd4e000f9",
+      "proposedMeaningZh": "n. 淋浴；阵雨\nv. 淋浴；洒下",
+      "category": "headword_mismatch",
+      "priority": "P1",
+      "reason": "原“展出者、显示者”来自 show + -er 的罕见构词，与淋浴词同形异音，应避免混教。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1245,
+      "headword": "sick",
+      "oldMeaningZh": "n. 病人\nadj. 不舒服, 有病的, 恶心的, 厌恶的, 渴望的, 病态的\nvt. 呕吐, 追击, 使(狗)去攻击",
+      "oldMeaningSha256": "0e325988d5a22007502b7a5d885ab448044ac167a7cf8d5b1b08b50c925c9253",
+      "proposedMeaningZh": "adj. 生病的；恶心的；厌倦的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“追击、使狗攻击”来自 sic / sick 的另一用法，无提示混入健康词条。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1283,
+      "headword": "sock",
+      "oldMeaningZh": "n. 短袜, 鞋垫, 一击\nvt. 重击, 猛投, 给...穿袜\nvi. 打击\nadv. 正着地, 不偏不倚地\nadj. 非常成功的",
+      "oldMeaningSha256": "70ea69a56d34412d7c3b7d8c5d64fd77f9effd3e6eb83d678d7b2c2bcb11382e",
+      "proposedMeaningZh": "n. 短袜",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“adv. 正着地；adj. 非常成功的”等旧俚语混在服装名词中，容易错用词性。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1286,
+      "headword": "soil",
+      "oldMeaningZh": "n. 土壤, 土地, 国家, 国土, 温床, 污物, 粪便, 水池\nvt. 弄脏, 污辱\nvi. 变脏",
+      "oldMeaningSha256": "e8cce3393b8716a1c10d82a01224a34ab4f2b5d4fd7bd432c2b0336049a8f720",
+      "proposedMeaningZh": "n. 土壤；土地\nv. 弄脏",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“国家、粪便、水池”等旧式杂义干扰常见土壤和弄脏两个含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1288,
+      "headword": "solve",
+      "oldMeaningZh": "vt. 解决, 付给, 溶解\nvt. 求解\nvi. 求解",
+      "oldMeaningSha256": "a80f22be032d86b61d583f66e2c2e423478280f20e89ab265d8f1da12250810d",
+      "proposedMeaningZh": "v. 解决；解答；求解",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原“付给、溶解”不应作为 solve 的现代基础义，易与 pay / dissolve 混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1292,
+      "headword": "sometimes",
+      "oldMeaningZh": "adv. 有时, 时常, 往往",
+      "oldMeaningSha256": "f6c75eb89365e5e1f6f8b4a07c89fc2c8eee084525bcee6f9e041068e36ab1e5",
+      "proposedMeaningZh": "adv. 有时",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原“时常、往往”易与 often 混淆，破坏频率副词的基础区分。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1296,
+      "headword": "soon",
+      "oldMeaningZh": "adv. 不久, 早, 快, 宁可",
+      "oldMeaningSha256": "84e38ddf3d8ec567c2b56c95bc72abd80d12251917533a9ef48a9d35a50e14e7",
+      "proposedMeaningZh": "adv. 不久；很快；早",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“宁可”通常依赖 would as soon 等结构，不应无条件作为 soon 的基本词义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1297,
+      "headword": "sore",
+      "oldMeaningZh": "adj. 悲伤的, 痛的, 引起痛苦的\nn. 痛处, 溃疡, 疮",
+      "oldMeaningSha256": "420633aacaa1fb54b44728e83791c8d5e34d5c5c866a8ded74b0cb2c42c9fd8e",
+      "proposedMeaningZh": "adj. 疼痛的\nn. 痛处；疮",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原首义“悲伤的”偏离 sore throat 等初中健康语境，会与 sad 混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1298,
+      "headword": "sorry",
+      "oldMeaningZh": "adj. 难过的, 悲哀的, 遗憾的",
+      "oldMeaningSha256": "c96db4a4f9454adb5f107904218708379b553a19578c26c38a6e063093ed0057",
+      "proposedMeaningZh": "adj. 抱歉的；难过的；遗憾的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原缺少日常 I'm sorry 表达道歉的核心义“抱歉”。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1300,
+      "headword": "soup",
+      "oldMeaningZh": "n. 汤, 马力\nvt. 加速, 增加马力",
+      "oldMeaningSha256": "2b0c017343595920c81990e8543251700fbca4b38dc952cd2e0e7bff6180222d",
+      "proposedMeaningZh": "n. 汤",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“马力、增加马力”源于俚语和 soup up 短语，未说明就混入食物词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1308,
+      "headword": "spell",
+      "oldMeaningZh": "n. 符咒, 魅力, 轮值, 轮班, 工作时间, 一次发作\nvt. 拼写, 拼成, 琢磨, 理解, 招致, 轮换, 迷住\nvi. 轮换, 拼字",
+      "oldMeaningSha256": "843d649fa9d12c5baf2e3a9dc5be34dbcf14ab81ff5633c9977ec9bf0680b3f7",
+      "proposedMeaningZh": "v. 拼写\nn. 一段时间；咒语",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原名词符咒与多种杂义先列，基础课堂 spell your name 的拼写动作被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1311,
+      "headword": "spoon",
+      "oldMeaningZh": "n. 匙, 调羹, 匙形工具\nvt. 以匙舀起, 调情, 使成匙状",
+      "oldMeaningSha256": "c3e3b23dae24da6bcd2ff75f1f34ae3c3dc607488bee69e5667638f61b59a12a",
+      "proposedMeaningZh": "n. 勺子；调羹\nv. 用勺舀",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原动词“调情”属旧用法，未提示即与餐具混列。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1324,
+      "headword": "stay",
+      "oldMeaningZh": "n. 停留, 逗留, 制止, 延缓, 停止, 支柱, 支撑物, 支索\nvt. 制止, 延缓, 坚持, 支持, 支撑, 用支索固定\nvi. 停留, 逗留, 暂停, 坚持, 中止",
+      "oldMeaningSha256": "70ca4cbb9f17b653f48591bdc76917339cfe02f667cc4e61f0b2437850d4cdc7",
+      "proposedMeaningZh": "v. 停留；待；保持\nn. 停留",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原条有大量支柱、支索等义，却未明确 stay healthy / calm 中保持状态的高频义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1345,
+      "headword": "subject",
+      "oldMeaningZh": "n. 科目, 主题, 臣民, 主语, 题目, (事物的)经受者, 学科, 受治疗者, 原因, 理由\nadj. 服从的, 易患...的, 隶属的, 受支配的\nadv. 在...条件下\nvt. 使隶属, 使受到",
+      "oldMeaningSha256": "7f1747c1faea793eed2832b96ace36d51dfd8bcc1d017f6f22b7e684214586ef",
+      "proposedMeaningZh": "n. 科目；主题；主语\nadj. 易受……影响的（常用 subject to）\nv. 使遭受（常用 subject ... to）",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原“adv. 在……条件下”把 subject to 结构不准确地当作独立副词，且词条义项混乱。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1349,
+      "headword": "sudden",
+      "oldMeaningZh": "n. 突然, 忽然\nadj. 突然的, 意外的, 快速的",
+      "oldMeaningSha256": "ae03258c9f06c37ed2e709b6c3ee48eef7c4ed7e34651dffdf2adbc85d169b64",
+      "proposedMeaningZh": "adj. 突然的；意外的",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原首项“n. 突然、忽然”会让学习者误把 sudden 当成名词或副词 suddenly。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1399,
+      "headword": "the",
+      "oldMeaningZh": "art. 那",
+      "oldMeaningSha256": "764882245e8f7005fba4f88c115dad04c431a7e632de50ddb77b46b3a3b7e1fd",
+      "proposedMeaningZh": "art. （定冠词）表示特指的人或物，通常不译",
+      "category": "grammar_or_form",
+      "priority": "P1",
+      "reason": "原仅“art. 那”会把定冠词机械等同 that，不能说明特指功能。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review_with_dictionary_check",
+        "sourceUrls": [
+          "https://www.oxfordlearnersdictionaries.com/definition/english/the"
+        ],
+        "note": "Oxford 解释其定冠词功能，包括已提及、明确或独一事物；不等同单一中文指示词“那”。",
+        "checkedOn": "2026-10-17"
+      }
+    },
+    {
+      "wordId": 1428,
+      "headword": "tiny",
+      "oldMeaningZh": "adj. 很少的, 微小的",
+      "oldMeaningSha256": "41ffd921d33add356bba6b202f7569ae43e5317dbfb0def33c53fcd4148e5704",
+      "proposedMeaningZh": "adj. 极小的；微小的",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原首义“很少的”混淆尺寸小与数量少，tiny 指非常小。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1430,
+      "headword": "to",
+      "oldMeaningZh": "prep. 到, 向, 趋于\nadv. 向前",
+      "oldMeaningSha256": "dfe3f1824891edf6cd006e8a896489244f98a4027efdb6ff7e09fb51f50b121c",
+      "proposedMeaningZh": "prep. 到；向；给\n（也用作动词不定式符号，如 to do）",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原只有介词和“向前”，漏掉 to do 这一初中最常用的结构功能。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1434,
+      "headword": "toilet",
+      "oldMeaningZh": "n. 厕所, 梳妆\nvi. 梳妆, 打扮, 上厕所\nvt. 给...梳妆打扮",
+      "oldMeaningSha256": "f6c4080efdb1120b12df2841bb17b55907a282b9447af2545af2d8e0d9b8fa58",
+      "proposedMeaningZh": "n. 厕所；马桶",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原缺少器具马桶义，却给多条梳妆旧用法，影响具体日常物品理解。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1441,
+      "headword": "tooth (pl. teeth)",
+      "oldMeaningZh": "n. 牙齿, 齿状物, 爱好\nvt. 装以齿, 将...切成齿状\nvi. 啮合",
+      "oldMeaningSha256": "eea094c3d5c8bb6eb8eb4639432b94c44252ca1c25718104ae5f61938293850b",
+      "proposedMeaningZh": "n. 牙齿；齿状物（复数 teeth）",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原无提示“爱好”来自 have a ... tooth 等表达，不是 tooth 可独立替换 hobby 的意思。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1452,
+      "headword": "tradition",
+      "oldMeaningZh": "n. 传说, 传统, 交付",
+      "oldMeaningSha256": "6e402e013667b32940039257d84b76103c9b008b8afa101cab0f1757a631b9df",
+      "proposedMeaningZh": "n. 传统；惯例",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原把传说置前，又给“交付”，会混淆 tradition 与 legend / delivery。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1464,
+      "headword": "truck",
+      "oldMeaningZh": "n. 卡车, 货车, 对...进行交易, 来往, 实物工资, (供应市场的)蔬菜, 废物, 废话\nvt. 对...进行交易, 交往, 以卡车运输\nvi. 驾驶卡车, 以物易物",
+      "oldMeaningSha256": "27186a75b077e4cfee63b935a387b00140838a7f0f190cdc61e35bb760cf01c7",
+      "proposedMeaningZh": "n. 卡车；货车\nv. 用卡车运输",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“实物工资、蔬菜、废话”等旧词义与交通工具混列，名词下甚至出现动词短语。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1474,
+      "headword": "uncle",
+      "oldMeaningZh": "n. 叔父, 伯父, 姨丈",
+      "oldMeaningSha256": "b312e60eb555cd6aa4bce39449cdfbc01f30327cdccbc9dd39c749c5a890fc09",
+      "proposedMeaningZh": "n. 叔叔；伯父；舅舅；姑父；姨父",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原只列叔父、伯父、姨丈，漏掉舅舅与姑父，容易误认英文亲属称谓只对应父系。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1482,
+      "headword": "unless",
+      "oldMeaningZh": "conj. 除非\nprep. 除...之外",
+      "oldMeaningSha256": "d5579ee064b2caecdb03c063081caee2d3f633c9f9d22054ee71e73172cb7668",
+      "proposedMeaningZh": "conj. 除非；如果不",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原无语域说明列“prep. 除……之外”，属于旧式用法；初中应先明确 unless 引导条件从句，避免与 except 混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1492,
+      "headword": "very",
+      "oldMeaningZh": "adj. 真正的, 恰好的, 十足的, 特有的\nadv. 非常, 完全",
+      "oldMeaningSha256": "c173a38b9f3212fd7893b1eaa119bf6ee3abf2b1421908cc56c0de77462c8f11",
+      "proposedMeaningZh": "adv. 非常；很\nadj. 正是的；恰好的",
+      "category": "core_priority",
+      "priority": "P2",
+      "reason": "原形容词多项置前，初中程度副词 very 的主用法被遮蔽。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1494,
+      "headword": "video",
+      "oldMeaningZh": "n. 影像, 电视\nadj. 图像的, 电视的",
+      "oldMeaningSha256": "283470f537a2eae21eaa8315024ac8abbbd697455656facba471232e82c8da30",
+      "proposedMeaningZh": "n. 视频；录像\nv. 录像",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原只给影像、电视，缺少日常看视频和录像的明确现代义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1535,
+      "headword": "wet",
+      "oldMeaningZh": "n. 湿气, 潮湿, 水分, 雨天\nadj. 湿的, 潮的, 搞错的, 下雨的, 反对禁酒的\nvi. 变湿\nvt. 使...湿",
+      "oldMeaningSha256": "46f80340b0e6475c4709f02f1a36d5cb54264b8242b43750ef013202fb4063be",
+      "proposedMeaningZh": "adj. 湿的；潮湿的\nv. 弄湿",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“搞错的、反对禁酒的”等无语域说明的杂义混入基础状态形容词。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1559,
+      "headword": "windy",
+      "oldMeaningZh": "adj. 多风的, 风强的, 腹胀的, 吹牛的",
+      "oldMeaningSha256": "38dc98e1f1dd1f24288844ce0d70b018b71f5ef78327b850d3de9a47dff51563",
+      "proposedMeaningZh": "adj. 多风的；风大的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“腹胀的、吹牛的”为罕见义，混在天气词条中会误导使用。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1563,
+      "headword": "wise",
+      "oldMeaningZh": "adj. 明智的, 慎虑的, 聪明的, 博学的, 狡猾的, 机灵的\nvi. 知道\nvt. 教导, 告诉, 劝导\nn. 方法, 方式",
+      "oldMeaningSha256": "835ca68a35f6f2f85eb8f463428830e92bf4e1a785d887c45dea50b0fbad2a98",
+      "proposedMeaningZh": "adj. 明智的；有智慧的",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“n. 方法、方式；v. 知道、告诉”等旧式或俚语用法没有标注，易造成词性混淆。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1569,
+      "headword": "woman (pl. women)",
+      "oldMeaningZh": "n. 女人, 妇女, 女仆\nadj. 女用的, 女性的, 妇女的\nvt. 贬称...为女人, 使成女人腔",
+      "oldMeaningSha256": "ea2704e1c3fc42b8c27d0ff796e52c5edf05357718bb7d6bbbfcdce5eb85ca95",
+      "proposedMeaningZh": "n. 成年女子；妇女（复数 women）",
+      "category": "legacy_noise",
+      "priority": "P2",
+      "reason": "原“贬称……为女人、使成女人腔”等过时贬损表达不宜作为基础词义教授。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    },
+    {
+      "wordId": 1572,
+      "headword": "wood",
+      "oldMeaningZh": "n. 木材, 木制品\nvt. 植林于, 给...添加木柴\nvi. 收集木材",
+      "oldMeaningSha256": "5cbb55f24951bd0fa11b98cf92ba5aa5875d176c53301b65fdf94c0c372a9ce1",
+      "proposedMeaningZh": "n. 木头；木材；（常用复数 woods）树林",
+      "category": "wrong_or_missing_common_meaning",
+      "priority": "P1",
+      "reason": "原只有木材木制品，遗漏常用 woods 表树林的含义。",
+      "decision": "proposed_for_root_review",
+      "reviewer": "Codex编辑审核（非人工教师）",
+      "verification": {
+        "method": "independent_editorial_review",
+        "sourceUrls": [],
+        "note": "基于逐条原文与常见现代英语用法独立审核；未声称逐词查阅外部词典。"
+      }
+    }
+  ],
+  "deferred": [
+    {
+      "wordId": 1405,
+      "headword": "then",
+      "decision": "no_change_proposed",
+      "reason": "then 在部分词典和非正式语体有连接词用法；本轮不把词性标签直接判错，暂不改写。"
+    }
+  ],
+  "validation": {
+    "snapshotWordCount": 1600,
+    "all1600ReadIndividually": true,
+    "allOriginalHashesMatchSnapshot": true,
+    "currentDbDriftWordIds": [],
+    "uniqueWordIds": 174,
+    "dbOpenedReadOnly": true,
+    "dbWrites": 0,
+    "checkedAt": "2026-10-17T13:33:30.157759+00:00"
+  }
+}

@@ -1,0 +1,89 @@
+import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import { speak, stopAudio } from '../web/src/audio.ts';
+import { mockAudio, MockAudio } from './audio-fixtures.ts';
+
+beforeEach(mockAudio);
+afterEach(() => { stopAudio(); vi.useRealTimers(); vi.unstubAllGlobals(); });
+
+it('starts the same-origin recording synchronously and preserves the exact case', async () => {
+  const result = speak('US / us');
+  const audio = MockAudio.instances[0];
+  expect(audio.src).toBe('/api/pronunciation/audio?word=US');
+  expect(audio.play).toHaveBeenCalledOnce();
+  audio.emit('ended');
+  await expect(result).resolves.toEqual({ status: 'success' });
+});
+
+it('does not report success merely because play() fulfilled, and catches a later media failure', async () => {
+  const settled = vi.fn();
+  const result = speak('receive');
+  result.then(settled);
+  await Promise.resolve();
+  expect(settled).not.toHaveBeenCalled();
+  MockAudio.instances[0].emit('error');
+  await expect(result).resolves.toEqual({ status: 'unavailable', reason: 'failed' });
+});
+
+it.each([
+  ['NotAllowedError', 'blocked'],
+  ['NotSupportedError', 'failed'],
+  ['AbortError', 'failed'],
+])('handles rejected play() (%s) without an unhandled rejection', async (name, reason) => {
+  MockAudio.start = () => Promise.reject(Object.assign(new Error('Cannot play'), { name }));
+  await expect(speak('accept')).resolves.toEqual({ status: 'unavailable', reason });
+  expect(MockAudio.instances[0].pause).toHaveBeenCalledOnce();
+});
+
+it('a second click cancels the old recording, detaches its source and ignores its late failure', async () => {
+  let rejectOld!: (error: Error) => void;
+  MockAudio.start = () => new Promise((_, reject) => { rejectOld = reject; });
+  const old = speak('receive');
+  const oldAudio = MockAudio.instances[0];
+  MockAudio.start = async audio => { audio.emit('playing'); };
+  const latest = speak('accept');
+  await expect(old).resolves.toEqual({ status: 'cancelled' });
+  expect(oldAudio.pause).toHaveBeenCalledOnce();
+  expect(oldAudio.src).toBe('');
+  expect(oldAudio.load).toHaveBeenCalledOnce();
+  rejectOld(Object.assign(new Error('aborted'), { name: 'AbortError' }));
+  oldAudio.emit('error');
+  oldAudio.emit('ended');
+  MockAudio.instances[1].emit('ended');
+  await expect(latest).resolves.toEqual({ status: 'success' });
+});
+
+it('cancels a pending load explicitly and can be stopped more than once', async () => {
+  MockAudio.start = () => new Promise(() => {});
+  const result = speak('receive');
+  stopAudio(); stopAudio();
+  await expect(result).resolves.toEqual({ status: 'cancelled' });
+  expect(MockAudio.instances[0].pause).toHaveBeenCalledOnce();
+});
+
+it('fails and releases a stalled recording after a bounded wait', async () => {
+  vi.useFakeTimers();
+  MockAudio.start = () => new Promise(() => {});
+  const result = speak('receive');
+  await vi.advanceTimersByTimeAsync(15_000);
+  await expect(result).resolves.toEqual({ status: 'unavailable', reason: 'failed' });
+  const audio = MockAudio.instances[0];
+  expect(audio.pause).toHaveBeenCalledOnce();
+  expect(audio.src).toBe('');
+});
+
+it('does not treat an ended event before playback started as success', async () => {
+  MockAudio.start = () => new Promise(() => {});
+  const result = speak('receive');
+  MockAudio.instances[0].emit('ended');
+  await expect(result).resolves.toEqual({ status: 'unavailable', reason: 'failed' });
+});
+
+it('fails cleanly for an empty word or missing media support without trying speech synthesis', async () => {
+  const synth = { speak: vi.fn() };
+  vi.stubGlobal('speechSynthesis', synth);
+  await expect(speak(' (AmE) ')).resolves.toEqual({ status: 'unavailable', reason: 'failed' });
+  vi.stubGlobal('Audio', undefined);
+  await expect(speak('receive')).resolves.toEqual({ status: 'unavailable', reason: 'failed' });
+  expect(MockAudio.instances).toHaveLength(0);
+  expect(synth.speak).not.toHaveBeenCalled();
+});

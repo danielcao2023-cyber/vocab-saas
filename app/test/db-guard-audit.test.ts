@@ -49,7 +49,7 @@ export function audit(root:string){const files=collect(root),scope:string[]=[],f
   return {scope,failures};}
 it('every real CLI that opens a db guards it first; the scope is exactly the known set',()=>{
   const r=audit(process.cwd());expect(r.failures).toEqual([]);
-  expect(r.scope).toEqual(['scripts/ai-content-export.ts','scripts/ai-content-import.ts','scripts/ai-generate.ts','scripts/ai-review.ts','scripts/freq-daily.ts','scripts/freq-zk-rank.ts','scripts/import-forms.ts','scripts/seed-due.ts','scripts/verify-migration.ts','server/src/import.ts']);
+  expect(r.scope).toEqual(['scripts/ai-content-export.ts','scripts/ai-content-import.ts','scripts/ai-content-status.ts','scripts/ai-generate.ts','scripts/ai-review.ts','scripts/freq-daily.ts','scripts/freq-zk-rank.ts','scripts/import-forms.ts','scripts/seed-due.ts','scripts/verify-migration.ts','server/src/import.ts']);
 });
 it('guard wrappers really call the protection predicate; library openers guard internally',()=>{
   const body=(file:string,name:string)=>{const sf=parse(file,fs.readFileSync(file,'utf8'));let found='';walk(sf,n=>{if(ts.isFunctionDeclaration(n)&&n.name?.text===name)found=n.getText(sf);});expect(found,`${file} ${name}`).not.toBe('');return found;};
@@ -59,7 +59,7 @@ it('guard wrappers really call the protection predicate; library openers guard i
   expect(calls('x.ts',body('server/src/guard.ts','productionGate'),'isProduction')).toBe(true);
   for(const [file,fn] of [['server/src/ai/transfer.ts','importFile'],['server/src/ai/transfer.ts','exportFile'],['scripts/verify-migration.ts','verifyMigration']]){const a=analyze('x.ts',`import Database from 'better-sqlite3';import {openDb} from './db.ts';\n`+body(file,fn));expect(a.opens,fn).toBeGreaterThan(0);expect(a.unguarded,fn).toEqual([]);}
 });
-it.each([['scripts/seed-due.ts',/protectTarget\(dbPath\);/,'void dbPath;'],['scripts/freq-zk-rank.ts',/dbArg\(a\)/,"required(a,'db')"],['scripts/ai-generate.ts',/dbArg\(a\)/,"required(a,'db')"],['server/src/import.ts',/const gate = productionGate\([^;]*;/,'const gate = {backup:undefined as string|undefined};'],['scripts/verify-migration.ts',/productionGate\(file[^;]*;/,'']])('mutation: removing the guard from %s fails the audit (also when left in a comment)',(file,re,rep)=>{
+it.each([['scripts/seed-due.ts',/protectTarget\(dbPath\);/,'void dbPath;'],['scripts/freq-zk-rank.ts',/dbArg\(a\)/,"required(a,'db')"],['scripts/ai-generate.ts',/dbArg\(a\)/,"required(a,'db')"],['scripts/ai-content-status.ts',/dbArg\(a\)/,"required(a,'db')"],['server/src/import.ts',/const gate = productionGate\([^;]*;/,'const gate = {backup:undefined as string|undefined};'],['scripts/verify-migration.ts',/productionGate\(file[^;]*;/,'']])('mutation: removing the guard from %s fails the audit (also when left in a comment)',(file,re,rep)=>{
   const text=fs.readFileSync(file,'utf8');expect(re.test(text)).toBe(true);
   for(const m of [text.replace(re,rep),text.replace(re,m=>`/* ${m} */ ${rep}`),text.replace(re,m=>`${rep} const s=${JSON.stringify(m)};`)]){
     const a=analyze(file,m);expect(a.unguarded.length,file).toBeGreaterThan(0);}

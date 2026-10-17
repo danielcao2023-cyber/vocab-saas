@@ -1,21 +1,22 @@
 import { spawn, type SpawnOptions } from 'node:child_process';
-import os from 'node:os';
 import path from 'node:path';
 import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
 export const MODEL='gpt-6-luna' as const;
-export const projectRoot=()=>path.join(os.homedir(),'dev/vocab-saas');
-export interface RunnerRequest {prompt:string;schema:object;jobId:number;directory:string;timeoutMs:number}
+/** Resolve from this source file, so arbitrary checkout names and working directories work. */
+export const projectRoot=()=>fileURLToPath(new URL('../../../../',import.meta.url)).replace(/[\\/]$/,'');
+export interface RunnerRequest {prompt:string;schema:object;jobId:number;directory:string;timeoutMs:number;reasoningEffort?:'low'|'medium';ignoreUserConfig?:boolean}
 export interface RunnerResult {stdout:string;exitCode:number|null;durationMs:number;timedOut?:boolean;error?:string}
 export type Runner=(req:RunnerRequest)=>Promise<RunnerResult>;
-export function detectFlags(helpText:string) {return {schema:/(?:^|\s)--output-schema(?:\s|[=<\[]|$)/m.test(helpText),lastMessage:/(?:^|\s)--output-last-message(?:\s|[=<\[]|$)/m.test(helpText)};}
+export function detectFlags(helpText:string) {return {schema:/(?:^|\s)--output-schema(?:\s|[=<\[]|$)/m.test(helpText),lastMessage:/(?:^|\s)--output-last-message(?:\s|[=<\[]|$)/m.test(helpText),ephemeral:/(?:^|\s)--ephemeral(?:\s|$)/m.test(helpText),ignoreUserConfig:/(?:^|\s)--ignore-user-config(?:\s|$)/m.test(helpText)};}
 export function commandArgs(req:RunnerRequest,flags:ReturnType<typeof detectFlags>) {
-  return ['exec','-m',MODEL,'--sandbox','read-only','--skip-git-repo-check','-C',projectRoot(),...(flags.lastMessage?['--output-last-message',path.join(req.directory,'output.json')]:[]),...(flags.schema?['--output-schema',path.join(req.directory,'schema.json')]:[]),req.prompt];
+  return ['exec','-m',MODEL,...(flags.ignoreUserConfig&&req.ignoreUserConfig?['--ignore-user-config']:[]),...(flags.ephemeral?['--ephemeral']:[]),...(req.reasoningEffort?['-c',`model_reasoning_effort="${req.reasoningEffort}"`]:[]),'--sandbox','read-only','--skip-git-repo-check','-C',req.directory,...(flags.lastMessage?['--output-last-message',path.join(req.directory,'output.json')]:[]),...(flags.schema?['--output-schema',path.join(req.directory,'schema.json')]:[]),req.prompt];
 }
 export const spawnOptions:SpawnOptions={stdio:['ignore','pipe','pipe']};
-/** No shell, environment overrides, or configuration changes. Output/stderr never logs environment. */
+/** No shell, credential access, environment overrides, or persisted configuration changes. */
 export function runProcess(args:string[],timeoutMs:number,spawnFn:typeof spawn=spawn):Promise<RunnerResult> {
   return new Promise(resolve=>{const started=Date.now();let stdout='',timedOut=false,done=false,kill:ReturnType<typeof setTimeout>|undefined;let error:string|undefined;
-    const child=spawnFn('/opt/homebrew/bin/codex',args,spawnOptions);
+    const child=spawnFn('codex',args,spawnOptions);
     child.stdout?.on('data',chunk=>{stdout+=chunk.toString();});
     // Drain stderr without recording it: external tools could emit credentials.
     child.stderr?.on('data',()=>{});
