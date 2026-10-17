@@ -1,0 +1,1005 @@
+diff --git a/data/wordlists/README.md b/data/wordlists/README.md
+index dea4ed0..3ed5985 100644
+--- a/data/wordlists/README.md
++++ b/data/wordlists/README.md
+@@ -1,9 +1,49 @@
+-# 词表文件
+-- `sample.csv`：**示例数据**（42 个工程自拟常用词，level=示例），只用于开发和测试，不是课标词表。
+-- 正式词表应为 `kb2022.csv`（从教育部 2022 版英语课标 PDF 附录整理），格式：
+-  ```
+-  headword,level
+-  "a (an)",二级
+-  ability,三级
+-  ```
+-  level 按课标原文标注（二级 / 三级）。导入：`npm run import -- --list data/wordlists/kb2022.csv --source kb2022`
++# 词表文件与导入
++
++- `sample.csv`：42 个工程自拟示例词（level=示例），只用于开发和测试。
++- 正式课标输入为只读 TSV：`../data/curriculum/ocr/level3_list.tsv`（1600 词），其中 `level2_star=1` 为二级 505 词，`=0` 为三级新增核心 1095 词。`../data/curriculum/ocr/level2_list.tsv` 用于核对二级集合。
++- 人工释义为内容制作维护的 `../v2/manual_meanings.tsv`（`entry`、`manual_meaning`）。仅在显式传入 `--manual` 时读取；字面 `\n` 会转为卡片上的换行。人工来源的释义全部展开。
++
++所有命令在 `app/` 下运行：
++
++```bash
++npm run import -- --curriculum ../data/curriculum/ocr/level3_list.tsv \
++  --level2 ../data/curriculum/ocr/level2_list.tsv \
++  --manual ../v2/manual_meanings.tsv --source kb2022 \
++  --ecdict data/raw/ecdict.csv --db data/vocab.db --clear-sample --dry-run
++```
++
++选项：
++
++| 选项 | 含义 |
++| --- | --- |
++| `--curriculum <tsv>` | 新课标入口；必需列为 `entry`、`level2_star`；重复词头或无效星标报错 |
++| `--level2 <tsv>` | 可选；其 entry 集合须与主表 star=1 集合完全一致 |
++| `--manual <tsv>` | 可选；人工释义覆盖；未知 entry、重复 entry、空释义汇总报错 |
++| `--source <name>` | 必填；词表来源标识，例如 `kb2022` |
++| `--ecdict <csv>` | 默认 `data/raw/ecdict.csv`；精确匹配优先，其次忽略大小写 |
++| `--db <path>` | 默认 `DB_PATH` 或 `data/vocab.db` |
++| `--clear-sample` | 同一事务删除 `is_sample=1` 的词及关联复习、卡片、错词、内容、反馈和缓存，输出各表删除数 |
++| `--dry-run` | 在已有库的只读序列化内存副本上完整执行；库不存在则用空内存库，绝不创建目标文件 |
++| `--list <csv>` | 保留的旧入口，不能与 `--curriculum` 同用 |
++| `--sample` | 仅用于旧 CSV，标记示例词 |
++
++输入校验完成后才打开数据库。课标清理、upsert 和计数核对在同一事务完成，默认严格核对 1600 / 二级 505 / 三级 1095；不一致即回滚并以退出码 1 退出。人工释义校验失败同样退出 1，数据库不会被打开或迁移。
++
++按 `(source, headword)` 幂等更新所有导入内容列，保留 word id 和正式词的 cards、review_logs、wrong_words。引号 `’`、`‘`、`ʼ` 规范为 `'` 后按原文区分大小写，因此 `Miss` 与 `miss` 均保留。显示词头保留括号；原始 OCR entry 另存 `entry_raw`；实际词典命中词头存 `ecdict_key`。旧来源中不在当前表内的行只报告为 `staleRows`，不删除；它们若导致计数不一致，整个导入回滚。
++
++JSON 输出包含 inserted / updated / unchanged、总数和二三级数量、人工覆盖数、待审核词表、缺音标词表、未命中词表、大小写回退词表、示例清理计数、旧行和 dryRun 标志。未命中 ECDICT 会报告，但不单独视为错误。
++
++新词优先核心组（priority=2），每 `settings.level2_every` 个课标认词卡穿插一个二级词（priority=1，默认 5，设为 0 则先学完核心词）。组内按 ECDICT frq 排序，frq=0 时退回 bnc，两者为 0 排最后；两组耗尽后再出其他来源的 priority=0 词。
++
++旧 CSV 格式与用法保持可用：
++
++```csv
++headword,level
++"a (an)",二级
++ability,三级
++```
++
++```bash
++npm run import -- --list data/wordlists/sample.csv --source sample --sample
++```
+diff --git a/docs/superpowers/plans/2026-10-17-curriculum-import.md b/docs/superpowers/plans/2026-10-17-curriculum-import.md
+new file mode 100644
+index 0000000..6fd8c0b
+--- /dev/null
++++ b/docs/superpowers/plans/2026-10-17-curriculum-import.md
+@@ -0,0 +1,22 @@
++# Curriculum Import Implementation Plan
++
++**Goal:** Implement R1–R9 and R2b from `qa/codex-brief-import.md` without changing input data, dependencies, branches, or persistent app databases.
++
++**Architecture:** Normalize quotes in a shared text module. Validate curriculum, level2, and manual input before opening a database; run sample cleanup, content upserts, and count checks atomically. Dry runs migrate and import into an in-memory copy only. Keep existing CSV and seeding APIs compatible.
++
++**Execution:** Inline in the existing approved feature branch; no commits or worktrees. The user task book is the approved design. Tests use in-memory databases or disposable files below `test/`.
++
++- [x] Add failing spelling, quote normalization, pronunciation, and manual-rendering tests; implement shared text rules and UI changes (R2b–R5).
++- [x] Add failing curriculum parsing, dictionary resolution, validation, migration, transaction, cleanup, idempotency, and dry-run tests; implement import and schema changes (R1, R2, R6–R8).
++- [x] Add failing priority/interleaving and pending-card-order tests; implement fresh-card selection without changing queue counts (R6).
++- [x] Preserve all existing assertions except explicitly approved case-sensitive dedup/count adjustments. Verify seed-due using an in-memory database and typecheck its script.
++- [x] Document CLI options in import.ts and data/wordlists/README.md.
++- [ ] Run npm test and npm run typecheck, then the exact real-input dry-run command; verify nonexistent DB was not created and review the final diff.
++- [ ] Deliver file/change/test summaries, complete real-input JSON, any limitations, and one optional Wiki archive reminder. Do not archive without confirmation.
++
++## Verification status
++
++- Targeted curriculum/study/meaning/text tests: 60 passed. Typecheck, seed-due in memory, and standalone script typecheck passed. Read-only review found no actionable issues.
++- Real input: 1600 / 505 / 1095; manual 59; flagged 0; missing ECDICT 0; missing phonetic 10; exact hits 1592 / case-insensitive hits 8. Second in-memory import unchanged=1600, with word ids and study data preserved.
++- Exact npm import invocation was attempted but tsx IPC failed with sandbox EPERM. Equivalent node --import tsx invocation succeeded, and the named target DB was not created.
++- Full suite still has the explicitly protected old totalInDb=4 assertion, inconsistent with R1 retaining Apple and apple (5 rows). Approval to update the two totals is pending; do not make totalInDb inaccurate to satisfy the old assertion.
+diff --git a/server/src/db.ts b/server/src/db.ts
+index b7cd10d..63ba9de 100644
+--- a/server/src/db.ts
++++ b/server/src/db.ts
+@@ -1,4 +1,5 @@
+ import Database from 'better-sqlite3';
++import fs from 'node:fs';
+ 
+ export type DB = Database.Database;
+ 
+@@ -9,6 +10,12 @@ CREATE TABLE IF NOT EXISTS words (
+   phonetic TEXT,
+   pos TEXT,
+   meaning_zh TEXT,
++  meaning_raw TEXT,
++  meaning_flag TEXT,
++  meaning_source TEXT,
++  ecdict_key TEXT,
++  entry_raw TEXT,
++  priority INTEGER NOT NULL DEFAULT 0,
+   source TEXT NOT NULL,          -- 词表标识，如 kb2022 / sample
+   level TEXT,                    -- 课标级别：二级 / 三级（初中）等
+   unit TEXT,                     -- 九年级单元，第一期留空
+@@ -60,7 +67,7 @@ CREATE TABLE IF NOT EXISTS wrong_words (
+ CREATE TABLE IF NOT EXISTS ai_jobs (id INTEGER PRIMARY KEY, kind TEXT, payload_hash TEXT, status TEXT, attempts INTEGER DEFAULT 0, error TEXT, started_at TEXT, finished_at TEXT);
+ CREATE TABLE IF NOT EXISTS ai_cache (key_hash TEXT PRIMARY KEY, word_id INTEGER, question TEXT, answer TEXT, created_at TEXT);
+ CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+-INSERT OR IGNORE INTO settings(key,value) VALUES ('new_per_day','10'),('review_limit','200');
++INSERT OR IGNORE INTO settings(key,value) VALUES ('new_per_day','10'),('review_limit','200'),('level2_every','5');
+ `;
+ 
+ function addColumn(db: DB, table: string, col: string, def: string) {
+@@ -68,15 +75,29 @@ function addColumn(db: DB, table: string, col: string, def: string) {
+   if (!cols.some((c) => c.name === col)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
+ }
+ 
+-export function openDb(file: string): DB {
+-  const db = new Database(file);
+-  db.pragma('journal_mode = WAL');
+-  db.pragma('foreign_keys = ON');
+-  db.exec(SCHEMA);
+-  // 轻量迁移
+-  addColumn(db, 'words', 'meaning_raw', 'TEXT');      // ECDICT 原始 translation，不改动
+-  addColumn(db, 'words', 'meaning_flag', 'TEXT');     // '释义待人工看'
+-  addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
+-  db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
+-  return db;
++export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
++  let db: DB;
++  if (options.dryRun && file !== ':memory:' && fs.existsSync(file)) {
++    const original = new Database(file, { readonly: true });
++    let copy: Buffer;
++    try { copy = original.serialize(); } finally { original.close(); }
++    db = new Database(copy);
++  } else {
++    db = new Database(options.dryRun ? ':memory:' : file);
++  }
++  try {
++    db.pragma('journal_mode = WAL');
++    db.pragma('foreign_keys = ON');
++    db.exec(SCHEMA);
++    // 轻量迁移
++    addColumn(db, 'words', 'meaning_raw', 'TEXT');      // ECDICT 原始 translation，不改动
++    addColumn(db, 'words', 'meaning_flag', 'TEXT');     // '释义待人工看'
++    addColumn(db, 'words', 'meaning_source', 'TEXT');
++    addColumn(db, 'words', 'ecdict_key', 'TEXT');
++    addColumn(db, 'words', 'entry_raw', 'TEXT');
++    addColumn(db, 'words', 'priority', 'INTEGER NOT NULL DEFAULT 0');
++    addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
++    db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
++    return db;
++  } catch (error) { db.close(); throw error; }
+ }
+diff --git a/server/src/import.ts b/server/src/import.ts
+index a6ccf79..d84c00a 100644
+--- a/server/src/import.ts
++++ b/server/src/import.ts
+@@ -1,36 +1,104 @@
+ /**
+- * 幂等导入：词表 CSV（headword,level[,pos]）+ ECDICT 补音标/释义。
+- * 用法：tsx server/src/import.ts --list data/wordlists/sample.csv --source sample [--sample] [--ecdict data/raw/ecdict.csv] [--db data/vocab.db]
+- * 重复运行只更新 words 行（按 source+headword 唯一），不动 cards/复习记录。
++ * 幂等导入：先校验输入，再事务内更新 words，不动正式词的 cards/复习记录。
++ * 课标：npm run import -- --curriculum ../data/curriculum/ocr/level3_list.tsv
++ *   --level2 ../data/curriculum/ocr/level2_list.tsv --manual ../v2/manual_meanings.tsv --source kb2022
++ *   [--ecdict data/raw/ecdict.csv] [--db data/vocab.db] [--clear-sample] [--dry-run]
++ * 旧 CSV：npm run import -- --list data/wordlists/sample.csv --source sample [--sample]
++ * --level2 交叉核对二级集合；--manual 显式指定人工释义，不自动读取；--sample 仅用于 CSV。
++ * --clear-sample 同事务删除 is_sample=1 的词及关联记录；--dry-run 在内存副本执行，目标文件不变。
+  */
+ import fs from 'node:fs';
+ import readline from 'node:readline';
+ import { openDb, type DB } from './db.ts';
+ import { parseCsvLine, quotesOpen } from './csv.ts';
++import { mainHeadwords, normalizeQuotes } from './text.ts';
+ 
+-export interface ListEntry { headword: string; level: string | null; pos: string | null }
+-export interface DictEntry { phonetic: string; translation: string; pos: string; frq: number }
++export interface ListEntry { headword: string; level: string | null; pos: string | null; entry_raw?: string; priority?: number }
++export interface CurriculumEntry extends ListEntry { entry_raw: string; level: '二级' | '三级'; priority: 1 | 2 }
++export interface DictEntry { phonetic: string; translation: string; pos: string; frq: number; bnc?: number }
+ 
+-/** 课标词条常见写法：“a (an)”、“be (am, is, are)”、“color (colour)”、“T-shirt”。取主词形查词典 */
+-export function lookupKey(headword: string): string {
+-  return headword.replace(/\(.*?\)|（.*?）/g, '').split('/')[0].trim().toLowerCase();
++/** 保留大小写：ECDICT 原样匹配优先。 */
++export function lookupKey(headword: string): string { return mainHeadwords(headword)[0] ?? ''; }
++
++export function resolveEcdictKey(head: string, dict: ReadonlyMap<string, DictEntry>): string | null {
++  const key = lookupKey(head);
++  if (dict.has(key)) return key;
++  const lower = key.toLowerCase();
++  if (dict.has(lower)) return lower;
++  for (const candidate of dict.keys()) if (candidate.toLowerCase() === lower) return candidate;
++  return null;
+ }
+ 
+ export function readList(file: string): ListEntry[] {
+   const lines = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/).filter((l) => l.trim() && !l.startsWith('#'));
+-  const header = parseCsvLine(lines.shift()!).map((h) => h.trim());
++  const header = parseCsvLine(lines.shift() ?? '').map((h) => h.trim());
+   const hi = header.indexOf('headword'); const li = header.indexOf('level'); const pi = header.indexOf('pos');
+   if (hi < 0) throw new Error('词表 CSV 缺少 headword 列');
+   const seen = new Set<string>(); const out: ListEntry[] = [];
+   for (const l of lines) {
+-    const f = parseCsvLine(l); const hw = (f[hi] ?? '').trim();
+-    if (!hw || seen.has(hw.toLowerCase())) continue;
+-    seen.add(hw.toLowerCase());
+-    out.push({ headword: hw, level: li >= 0 ? (f[li]?.trim() || null) : null, pos: pi >= 0 ? (f[pi]?.trim() || null) : null });
++    const f = parseCsvLine(l); const raw = (f[hi] ?? '').trim(); const hw = normalizeQuotes(raw);
++    if (!hw || seen.has(hw)) continue;
++    seen.add(hw);
++    out.push({ headword: hw, entry_raw: raw, level: li >= 0 ? (f[li]?.trim() || null) : null, pos: pi >= 0 ? (f[pi]?.trim() || null) : null });
+   }
+   return out;
+ }
+ 
++function readTsv(file: string, required: string[]) {
++  const lines = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
++  const header = (lines.shift() ?? '').split('\t');
++  const missing = required.filter((name) => !header.includes(name));
++  if (missing.length) throw new Error(`${file}: 缺少列 ${missing.join(', ')}`);
++  return lines.flatMap((line, i) => {
++    if (!line.trim()) return [];
++    const fields = line.split('\t');
++    return [{ line: i + 2, fields: Object.fromEntries(header.map((name, j) => [name, fields[j] ?? ''])) }];
++  });
++}
++
++function curriculumRows(file: string): CurriculumEntry[] {
++  const errors: string[] = []; const seen = new Map<string, number>(); const entries: CurriculumEntry[] = [];
++  for (const { line, fields } of readTsv(file, ['entry', 'level2_star'])) {
++    const headword = normalizeQuotes(fields.entry.trim());
++    if (!headword) errors.push(`${file}:${line}: entry 为空`);
++    if (seen.has(headword)) errors.push(`${file}:${line}: entry 重复 ${headword}（首次在第 ${seen.get(headword)} 行）`);
++    seen.set(headword, line);
++    const star = fields.level2_star.trim();
++    if (star !== '0' && star !== '1') errors.push(`${file}:${line}: level2_star 必须是 0 或 1`);
++    entries.push({ headword, entry_raw: fields.entry, pos: null, level: star === '1' ? '二级' : '三级', priority: star === '1' ? 1 : 2 });
++  }
++  if (errors.length) throw new Error(errors.join('\n'));
++  return entries;
++}
++
++export function readCurriculum(file: string, level2File?: string): CurriculumEntry[] {
++  const entries = curriculumRows(file);
++  if (level2File) {
++    const expected = new Set(entries.filter((entry) => entry.priority === 1).map((entry) => entry.headword));
++    const actual = new Set(curriculumRows(level2File).map((entry) => entry.headword));
++    const missing = [...expected].filter((entry) => !actual.has(entry));
++    const extra = [...actual].filter((entry) => !expected.has(entry));
++    if (missing.length || extra.length) throw new Error(`二级词表交叉核对失败：缺少 ${JSON.stringify(missing)}；多出 ${JSON.stringify(extra)}`);
++  }
++  return entries;
++}
++
++/** 完整校验后才返回，所有错误行一起报告；不读任何默认人工释义文件。 */
++export function readManualMeanings(file: string, curriculumEntries: Iterable<string | ListEntry>): Map<string, string> {
++  const entries = new Set([...curriculumEntries].map((entry) => normalizeQuotes(typeof entry === 'string' ? entry : entry.headword)));
++  const meanings = new Map<string, string>(); const seen = new Map<string, number>(); const errors: string[] = [];
++  for (const { line, fields } of readTsv(file, ['entry', 'manual_meaning'])) {
++    const entry = normalizeQuotes(fields.entry.trim());
++    const meaning = fields.manual_meaning.replace(/\\n/g, '\n').trim();
++    if (!entries.has(entry)) errors.push(`${file}:${line}: entry 不在课标词表里：${entry}`);
++    if (seen.has(entry)) errors.push(`${file}:${line}: entry 重复：${entry}（首次在第 ${seen.get(entry)} 行）`);
++    if (!meaning) errors.push(`${file}:${line}: ${entry} 释义为空`);
++    seen.set(entry, line); meanings.set(entry, meaning);
++  }
++  if (errors.length) throw new Error(errors.join('\n'));
++  return meanings;
++}
++
+ /** 领域研究定的过滤规则：含这些标签的行整行删掉；[复][植][动][体][物] 等保留 */
+ export const DROP_TAGS = ['医', '化', '计', '网络', '经', '法', '电', '机', '建', '人名', '地名', '药', '矿', '生化', '地质', '解', '症', '美国', '英国', '德国', '法国'];
+ export const REVIEW_FLAG = '释义待人工看';
+@@ -51,9 +119,10 @@ export function filterSenses(t: string): { senses: string[]; flag: string | null
+ /** 兼容旧调用：返回过滤后的释义文本 */
+ export function cleanTranslation(t: string): string { return filterSenses(t).senses.join('\n'); }
+ 
+-/** 流式扫描 ECDICT，只保留需要的词 */
++/** 流式扫描 ECDICT，保留需要的词的所有大小写变体以及文件顺序。 */
+ export async function loadDict(file: string, wanted: Set<string>): Promise<Map<string, DictEntry>> {
+   const map = new Map<string, DictEntry>();
++  const lowerWanted = new Set([...wanted].map((key) => lookupKey(key).toLowerCase()));
+   const rl = readline.createInterface({ input: fs.createReadStream(file, 'utf8'), crlfDelay: Infinity });
+   let buf = ''; let header: string[] | null = null;
+   for await (const line of rl) {
+@@ -61,39 +130,98 @@ export async function loadDict(file: string, wanted: Set<string>): Promise<Map<s
+     if (quotesOpen(buf)) continue;
+     const f = parseCsvLine(buf); buf = '';
+     if (!header) { header = f; continue; }
+-    const key = f[0]?.toLowerCase();
+-    if (!key || !wanted.has(key)) continue;
+-    const e: DictEntry = { phonetic: f[1] ?? '', translation: f[3] ?? '', pos: f[4] ?? '', frq: Number(f[9]) || 0 };
+-    const prev = map.get(key);
+-    // 同一小写词有多条（如 May/may），优先小写原形且有释义的
+-    if (!prev || (!prev.translation && e.translation) || (f[0] === key && prev.translation && e.translation)) map.set(key, e);
++    const key = f[0];
++    if (!key || !lowerWanted.has(key.toLowerCase()) || map.has(key)) continue;
++    map.set(key, { phonetic: f[1] ?? '', translation: f[3] ?? '', pos: f[4] ?? '', bnc: Number(f[8]) || 0, frq: Number(f[9]) || 0 });
+   }
+   return map;
+ }
+ 
+-export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean) {
+-  const stmt = db.prepare(`INSERT INTO words(headword,phonetic,pos,meaning_zh,meaning_raw,meaning_flag,source,level,freq_rank,is_sample) VALUES (@headword,@phonetic,@pos,@meaning,@raw,@flag,@source,@level,@frq,@sample)
+-    ON CONFLICT(source,headword) DO UPDATE SET phonetic=excluded.phonetic,pos=excluded.pos,meaning_zh=excluded.meaning_zh,meaning_raw=excluded.meaning_raw,meaning_flag=excluded.meaning_flag,level=excluded.level,freq_rank=excluded.freq_rank,is_sample=excluded.is_sample`);
+-  let missingPhonetic = 0, missingMeaning = 0; const missing: string[] = []; const flagged: string[] = [];
+-  db.transaction(() => {
+-    for (const e of list) {
+-      const d = dict.get(lookupKey(e.headword));
+-      const phonetic = d?.phonetic ? `/${d.phonetic}/` : null;
+-      const fs_ = filterSenses(d?.translation ?? '');
+-      const meaning = fs_.senses.join('\n') || null;
+-      if (fs_.flag) flagged.push(e.headword);
+-      if (!phonetic) missingPhonetic++;
+-      if (!meaning) missingMeaning++;
+-      if (!phonetic || !meaning) missing.push(e.headword);
+-      stmt.run({ headword: e.headword, phonetic, raw: d?.translation || null, flag: fs_.flag, pos: e.pos ?? d?.pos ?? null, meaning, source, level: e.level, frq: d?.frq || null, sample: isSample ? 1 : 0 });
++const WORD_COLUMNS = ['headword', 'phonetic', 'pos', 'meaning_zh', 'meaning_raw', 'meaning_flag', 'meaning_source', 'ecdict_key', 'entry_raw', 'source', 'level', 'priority', 'freq_rank', 'is_sample'] as const;
++type WordValues = Record<typeof WORD_COLUMNS[number], string | number | null>;
++
++function applyWords(db: DB, list: ListEntry[], dict: ReadonlyMap<string, DictEntry>, source: string, isSample: boolean, manual: ReadonlyMap<string, string> = new Map()) {
++  const stmt = db.prepare(`INSERT INTO words(${WORD_COLUMNS.join(',')}) VALUES (${WORD_COLUMNS.map((col) => '@' + col).join(',')})
++    ON CONFLICT(source,headword) DO UPDATE SET ${WORD_COLUMNS.filter((col) => col !== 'source' && col !== 'headword').map((col) => `${col}=excluded.${col}`).join(',')}`);
++  const find = db.prepare('SELECT * FROM words WHERE source=? AND headword=?');
++  let inserted = 0, updated = 0, unchanged = 0, manualApplied = 0;
++  const missingPhoneticWords: string[] = [], missingMeaningWords: string[] = [], flaggedWords: string[] = [], missingEcdict: string[] = [];
++  const caseInsensitiveHits: { headword: string; ecdict_key: string }[] = [];
++  for (const entry of list) {
++    const headword = normalizeQuotes(entry.headword);
++    const key = resolveEcdictKey(headword, dict);
++    const d = key === null ? undefined : dict.get(key);
++    const manualMeaning = manual.get(headword);
++    const filtered = filterSenses(d?.translation ?? '');
++    const values: WordValues = {
++      headword, phonetic: d?.phonetic ? `/${d.phonetic}/` : null, pos: entry.pos ?? d?.pos ?? null,
++      meaning_zh: manualMeaning ?? (filtered.senses.join('\n') || null), meaning_raw: d?.translation || null,
++      meaning_flag: manualMeaning !== undefined ? null : filtered.flag,
++      meaning_source: manualMeaning !== undefined ? 'manual' : 'ecdict', ecdict_key: key,
++      entry_raw: entry.entry_raw ?? entry.headword, source, level: entry.level, priority: entry.priority ?? 0,
++      freq_rank: d?.frq || d?.bnc || null, is_sample: isSample ? 1 : 0,
++    };
++    if (manualMeaning !== undefined) manualApplied++;
++    if (values.meaning_flag) flaggedWords.push(headword);
++    if (!values.phonetic) missingPhoneticWords.push(headword);
++    if (!values.meaning_zh) missingMeaningWords.push(headword);
++    if (key === null) missingEcdict.push(headword);
++    else if (key !== lookupKey(headword)) caseInsensitiveHits.push({ headword, ecdict_key: key });
++    const old = find.get(source, headword) as WordValues | undefined;
++    if (!old) { stmt.run(values); inserted++; }
++    else if (WORD_COLUMNS.some((col) => old[col] !== values[col])) { stmt.run(values); updated++; }
++    else unchanged++;
++  }
++  return { inserted, updated, unchanged, manualApplied, flagged: flaggedWords.length, flaggedWords,
++    missingPhonetic: missingPhoneticWords.length, missingPhoneticWords, missingMeaning: missingMeaningWords.length, missingMeaningWords, missingEcdict, caseInsensitiveHits };
++}
++
++const emptyCleanup = () => ({ words: 0, cards: 0, review_logs: 0, wrong_words: 0, word_content: 0, content_feedback: 0, ai_cache: 0 });
++function clearSamples(db: DB) {
++  const deleted = emptyCleanup();
++  deleted.review_logs = db.prepare('DELETE FROM review_logs WHERE card_id IN (SELECT c.id FROM cards c JOIN words w ON w.id=c.word_id WHERE w.is_sample=1)').run().changes;
++  for (const table of ['cards', 'wrong_words', 'word_content', 'content_feedback', 'ai_cache'] as const) {
++    deleted[table] = db.prepare(`DELETE FROM ${table} WHERE word_id IN (SELECT id FROM words WHERE is_sample=1)`).run().changes;
++  }
++  deleted.words = db.prepare('DELETE FROM words WHERE is_sample=1').run().changes;
++  return deleted;
++}
++
++interface ImportOptions { clearSample?: boolean; dryRun?: boolean }
++export interface CurriculumOptions extends ImportOptions {
++  manual?: ReadonlyMap<string, string>;
++  expected?: { total: number; level2: number; level3: number };
++}
++
++export function upsertCurriculum(db: DB, list: CurriculumEntry[], dict: ReadonlyMap<string, DictEntry>, source: string, options: CurriculumOptions = {}) {
++  const expected = options.expected ?? { total: 1600, level2: 505, level3: 1095 };
++  return db.transaction(() => {
++    const clearSample = options.clearSample ? clearSamples(db) : emptyCleanup();
++    const result = applyWords(db, list, dict, source, false, options.manual);
++    const counts = db.prepare(`SELECT COUNT(*) total,
++      COALESCE(SUM(level='二级'),0) AS 二级, COALESCE(SUM(level='三级'),0) AS 三级 FROM words WHERE source=?`).get(source) as { total: number; 二级: number; 三级: number };
++    const current = new Set(list.map((entry) => normalizeQuotes(entry.headword)));
++    const staleRows = (db.prepare('SELECT id,headword,level FROM words WHERE source=? ORDER BY id').all(source) as { id: number; headword: string; level: string | null }[]).filter((entry) => !current.has(entry.headword));
++    if (counts.total !== expected.total || counts.二级 !== expected.level2 || counts.三级 !== expected.level3) {
++      throw new Error(`课标计数核对失败：${JSON.stringify(counts)}；预期 ${JSON.stringify(expected)}；staleRows=${JSON.stringify(staleRows)}`);
+     }
++    return { source, ...result, ...counts, clearSample, staleRows, dryRun: !!options.dryRun };
++  })();
++}
++
++/** 保留旧 CSV 调用和统计字段；所有其他来源的 priority 默认 0。 */
++export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean, options: ImportOptions = {}) {
++  return db.transaction(() => {
++    const clearSample = options.clearSample ? clearSamples(db) : emptyCleanup();
++    const result = applyWords(db, list, dict, source, isSample);
++    const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
++    const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
++    const missing = list.map((entry) => entry.headword).filter((headword) => result.missingPhoneticWords.includes(headword) || result.missingMeaningWords.includes(headword));
++    return { ...result, flagged: result.flaggedWords, imported: list.length, totalInDb: total, byLevel, missing, clearSample, dryRun: !!options.dryRun };
+   })();
+-  const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
+-  const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
+-  return { imported: list.length, totalInDb: total, byLevel, missingPhonetic, missingMeaning, missing, flagged };
+ }
+ 
+-/** 与课标转述数字（1600 / 二级 505 / 初中 1095，未验证）比对 */
++/** 旧 CSV 路径的计数提醒；课标路径使用事务内的严格核对。 */
+ export function compareExpected(total: number, byLevel: { level: string | null; n: number }[]) {
+   const exp = { total: 1600, level2: 505, junior: 1095 };
+   const lv2 = byLevel.find((x) => x.level === '二级')?.n ?? 0;
+@@ -106,14 +234,31 @@ export function compareExpected(total: number, byLevel: { level: string | null;
+ }
+ 
+ async function main() {
+-  const a = process.argv.slice(2); const arg = (k: string, d?: string) => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : d; };
+-  const listFile = arg('--list'); const source = arg('--source');
+-  if (!listFile || !source) { console.error('需要 --list <csv> --source <名称>'); process.exit(2); }
+-  const db = openDb(arg('--db', process.env.DB_PATH ?? 'data/vocab.db')!);
+-  const list = readList(listFile);
+-  const dict = await loadDict(arg('--ecdict', 'data/raw/ecdict.csv')!, new Set(list.map((e) => lookupKey(e.headword))));
+-  const r = upsertWords(db, list, dict, source, a.includes('--sample'));
+-  console.log(JSON.stringify({ source, sample: a.includes('--sample'), ...r, countCheck: compareExpected(r.totalInDb, r.byLevel as any) }, null, 2));
+-  db.close();
+-}
+-if (process.argv[1]?.endsWith('import.ts')) main().catch((e) => { console.error(e); process.exit(1); });
++  const a = process.argv.slice(2);
++  const valueOptions = new Set(['--list', '--curriculum', '--level2', '--manual', '--source', '--ecdict', '--db']);
++  const switches = new Set(['--sample', '--clear-sample', '--dry-run']);
++  const values = new Map<string, string>(); const flags = new Set<string>();
++  for (let i = 0; i < a.length; i++) {
++    const option = a[i];
++    if (switches.has(option)) flags.add(option);
++    else if (valueOptions.has(option) && a[i + 1] && !a[i + 1].startsWith('--')) values.set(option, a[++i]);
++    else throw new Error(`未知选项或缺少参数：${option}`);
++  }
++  const curriculum = values.get('--curriculum'); const listFile = values.get('--list'); const source = values.get('--source');
++  if ((!curriculum && !listFile) || (curriculum && listFile) || !source) throw new Error('需要 --curriculum <tsv> 或 --list <csv>（二选一），以及 --source <名称>');
++  if (!curriculum && (values.has('--level2') || values.has('--manual'))) throw new Error('--level2 和 --manual 需要 --curriculum');
++  if (curriculum && flags.has('--sample')) throw new Error('--sample 仅用于旧 CSV 路径');
++  // 所有输入校验和词典读取完成后才接触数据库，失败时连迁移也不执行。
++  const list = curriculum ? readCurriculum(curriculum, values.get('--level2')) : readList(listFile!);
++  const manual = values.has('--manual') ? readManualMeanings(values.get('--manual')!, list) : new Map<string, string>();
++  const dict = await loadDict(values.get('--ecdict') ?? 'data/raw/ecdict.csv', new Set(list.map((entry) => lookupKey(entry.headword))));
++  const options = { clearSample: flags.has('--clear-sample'), dryRun: flags.has('--dry-run') };
++  const db = openDb(values.get('--db') ?? process.env.DB_PATH ?? 'data/vocab.db', options);
++  try {
++    const result = curriculum
++      ? upsertCurriculum(db, list as CurriculumEntry[], dict, source, { ...options, manual })
++      : upsertWords(db, list, dict, source, flags.has('--sample'), options);
++    console.log(JSON.stringify({ source, ...result }, null, 2));
++  } finally { db.close(); }
++}
++if (process.argv[1]?.endsWith('import.ts')) main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; });
+diff --git a/server/src/study.ts b/server/src/study.ts
+index 5453550..cf4a997 100644
+--- a/server/src/study.ts
++++ b/server/src/study.ts
+@@ -1,6 +1,7 @@
+ import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
+ import type { DB } from './db.ts';
+ import { shDay, shDayStart } from './time.ts';
++import { mainHeadwords, normalizeQuotes } from './text.ts';
+ 
+ const scheduler = fsrs({ enable_fuzz: false });
+ export type Mode = 'recognize' | 'spell' | 'dictation';
+@@ -38,7 +39,7 @@ function newIntroducedToday(db: DB, now: Date): number {
+   return r.n;
+ }
+ 
+-const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
++const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
+ 
+ /** 到期判定：首页计数和出卡用同一个条件 */
+ const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
+@@ -68,9 +69,16 @@ export function nextCard(db: DB, now = new Date(), prefer: 'review' | 'new' = 'r
+   const due = () => q.review > 0 ? db.prepare(`${CARD_SELECT} WHERE ${DUE_WHERE} ORDER BY c.due LIMIT 1`).get(now.toISOString()) : undefined;
+   const fresh = () => {
+     if (q.new <= 0) return undefined;
+-    let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY w.id LIMIT 1`).get();
++    let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY c.id LIMIT 1`).get();
+     if (!row) {
+-      const w = db.prepare(`SELECT id FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize') ORDER BY COALESCE(freq_rank, 999999), id LIMIT 1`).get() as { id: number } | undefined;
++      const n = (db.prepare(`SELECT COUNT(*) n FROM cards c JOIN words w ON w.id=c.word_id
++        WHERE c.mode='recognize' AND w.priority>0`).get() as { n: number }).n;
++      const every = setting(db, 'level2_every', 5);
++      const secondary = every > 0 && (n + 1) % every === 0;
++      const select = db.prepare(`SELECT w.id FROM words w WHERE w.priority=? AND NOT EXISTS
++        (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize')
++        ORDER BY COALESCE(w.freq_rank, 999999), w.id LIMIT 1`);
++      const w = (select.get(secondary ? 1 : 2) ?? select.get(secondary ? 2 : 1) ?? select.get(0)) as { id: number } | undefined;
+       if (!w) return undefined;
+       insertCard(db, w.id, 'recognize', now);
+       row = db.prepare(`${CARD_SELECT} WHERE c.word_id=? AND c.mode='recognize'`).get(w.id);
+@@ -125,13 +133,28 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(),
+   return { card, duplicate: false };
+ }
+ 
+-export function normalizeAnswer(s: string) { return s.trim().toLowerCase().replace(/\s+/g, ' '); }
++export function normalizeAnswer(s: string) { return normalizeQuotes(s).trim().toLowerCase().replace(/\s+/g, ' '); }
+ 
+-/** 可接受的拼写：主词形和括号/斜杠里的变体，如 "a (an)" → a, an；"color (colour)" → color, colour */
++/** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */
+ export function acceptedSpellings(headword: string): string[] {
+-  const main = headword.replace(/\(.*?\)|（.*?）/g, '').split('/').map(normalizeAnswer).filter(Boolean);
+-  const inner = [...headword.matchAll(/[(（](.*?)[)）]/g)].flatMap((m) => m[1].split(/[,，/]/)).map(normalizeAnswer).filter((x) => /^[a-z' .-]+$/.test(x));
+-  return [...new Set([...main, ...inner])];
++  const normalized = normalizeQuotes(headword);
++  const main = mainHeadwords(normalized).map(normalizeAnswer);
++  const variants: string[] = [];
++  for (const match of normalized.matchAll(/[(（](.*?)[)）]/g)) {
++    const inner = match[1].trim();
++    if (main[0] === 'according' && normalizeAnswer(inner) === 'to') {
++      variants.push('according to');
++      continue;
++    }
++    // pl. applies to the whole annotation, including slashes within it.
++    if (/^pl\./i.test(inner)) continue;
++    const parts = inner.split(/\bAm\s?E\s+/);
++    const bare = parts.shift()!;
++    if (!bare.trim().startsWith('=')) variants.push(...bare.split(/[,，/]/));
++    variants.push(...parts.flatMap((part) => part.split(/[,，/]/)));
++  }
++  const accepted = variants.map(normalizeAnswer).filter((part) => /^[a-z' .-]+$/.test(part));
++  return [...new Set([...main, ...accepted])];
+ }
+ 
+ /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */
+diff --git a/server/src/text.ts b/server/src/text.ts
+new file mode 100644
+index 0000000..1ae6e73
+--- /dev/null
++++ b/server/src/text.ts
+@@ -0,0 +1,9 @@
++/** 课标 OCR 和用户输入统一使用直撇号。 */
++export function normalizeQuotes(s: string): string {
++  return s.replace(/[’‘ʼ]/g, "'");
++}
++
++/** 括号用于注明变体或词形；斜杠外的每段才是主词头。 */
++export function mainHeadwords(s: string): string[] {
++  return normalizeQuotes(s).replace(/\(.*?\)|（.*?）/g, '').split('/').map((part) => part.trim()).filter(Boolean);
++}
+diff --git a/test/curriculum.test.ts b/test/curriculum.test.ts
+new file mode 100644
+index 0000000..637a851
+--- /dev/null
++++ b/test/curriculum.test.ts
+@@ -0,0 +1,200 @@
++import { afterAll, beforeAll, describe, expect, it } from 'vitest';
++import fs from 'node:fs';
++import path from 'node:path';
++import { spawnSync } from 'node:child_process';
++import Database from 'better-sqlite3';
++import { openDb } from '../server/src/db.ts';
++import * as importer from '../server/src/import.ts';
++import { nextCard, progress, review } from '../server/src/study.ts';
++import { Rating } from 'ts-fsrs';
++import { splitSenses } from '../web/src/senses.ts';
++
++const tmp = fs.mkdtempSync(path.resolve('test/.curriculum-'));
++afterAll(() => fs.rmSync(tmp, { recursive: true, force: true }));
++const file = (name: string, contents: string) => { const p = path.join(tmp, name); fs.writeFileSync(p, contents); return p; };
++const header = 'page\tentry\tlevel2_star\tflag\tnote\n';
++const curriculum = file('curriculum.tsv', header + '1\tMiss\t0\t0\t\n1\tmiss\t0\t0\t\n1\tMs (AmE Ms.)\t1\t0\t\n1\to’clock\t0\t0\t\n');
++const level2 = file('level2.tsv', header + '1\tMs (AmE Ms.)\t1\t0\t\n');
++const manual = file('manual.tsv', 'entry\tmanual_meaning\nMs (AmE Ms.)\tn. 女士\\n称呼\n');
++const dictFile = file('dict.csv', [
++  'word,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio',
++  'MISS,upper,,n. 大写,n,,,,9,8,,,',
++  'miss,mis,,v. 想念,v,,,,7,0,,,',
++  'MS,,,"[计] 微软",n,,,,0,0,,,',
++  'Ms.,,,n. 女士,n,,,,0,0,,,',
++  "o'clock,,,adv. 点钟,adv,,,,0,4064,,,",
++  'mixed,,,"n. 第一行',
++  '第二行",n,,,,0,3,,,',
++  'CAP,,,n. 第一条,n,,,,0,1,,,',
++  'Cap,,,n. 第二条,n,,,,0,2,,,',
++  'May,,,n. 五月,n,,,,0,10,,,',
++  'may,,,v. 可以,v,,,,0,11,,,',
++].join('\n'));
++const expected = { total: 4, level2: 1, level3: 3 };
++let dict: Awaited<ReturnType<typeof importer.loadDict>>;
++beforeAll(async () => { dict = await importer.loadDict(dictFile, new Set(['Miss', 'Ms', 'Ms.', "o'clock", 'mixed', 'cap', 'may'])); });
++const cli = (args: string[]) => spawnSync(process.execPath, ['--import', 'tsx', 'server/src/import.ts', ...args], { encoding: 'utf8' });
++const cliArgs = ['--curriculum', curriculum, '--level2', level2, '--manual', manual, '--ecdict', dictFile, '--source', 'kb2022'];
++
++function seedRelated(db: ReturnType<typeof openDb>, id: number) {
++  const now = new Date('2026-10-17T01:00:00Z');
++  const card = nextCard(db, now, 'new')!;
++  expect(card.word_id).toBe(id);
++  review(db, card.id as number, Rating.Again, now);
++  db.prepare("INSERT INTO word_content(word_id,kind,body_json) VALUES (?,'example','{}')").run(id);
++  db.prepare("INSERT INTO content_feedback(word_id,reason) VALUES (?,'test')").run(id);
++  db.prepare("INSERT INTO ai_cache(key_hash,word_id) VALUES (?,?)").run('cache-' + id, id);
++}
++
++describe('curriculum validation and ECDICT keys', () => {
++  it('retains case, raw entry, quote normalization, levels and priority', () => {
++    const list = importer.readCurriculum(curriculum, level2);
++    expect(list).toEqual([
++      { headword: 'Miss', entry_raw: 'Miss', level: '三级', priority: 2, pos: null },
++      { headword: 'miss', entry_raw: 'miss', level: '三级', priority: 2, pos: null },
++      { headword: 'Ms (AmE Ms.)', entry_raw: 'Ms (AmE Ms.)', level: '二级', priority: 1, pos: null },
++      { headword: "o'clock", entry_raw: 'o’clock', level: '三级', priority: 2, pos: null },
++    ]);
++    const csv = file('quotes.csv', 'headword,level\nMiss,三级\nmiss,三级\no’clock,三级\no\'clock,三级\n');
++    expect(importer.readList(csv).map((x) => x.headword)).toEqual(['Miss', 'miss', "o'clock"]);
++  });
++  it('uses exact keys first, lowercase variant next, otherwise first file entry', () => {
++    expect([...dict.keys()]).toEqual(['MISS', 'miss', 'MS', 'Ms.', "o'clock", 'mixed', 'CAP', 'Cap', 'May', 'may']);
++    for (const [input, key] of [['MISS', 'MISS'], ['Miss', 'miss'], ['Ms', 'MS'], ['Ms.', 'Ms.'], ['cap', 'CAP'], ['MAY', 'may'], ['May', 'May'], ['unknown', null]]) {
++      expect(importer.resolveEcdictKey(input!, dict)).toBe(key);
++    }
++    expect(importer.lookupKey('Internet (AmE internet)')).toBe('Internet');
++    expect(importer.lookupKey('a / an')).toBe('a');
++    expect(importer.lookupKey('o’clock')).toBe("o'clock");
++    expect(dict.get('mixed')?.translation).toBe('n. 第一行\n第二行');
++  });
++  it('rejects curriculum duplicates after normalizing quotes', () => {
++    const duplicate = file('duplicate.tsv', header + "1\to’clock\t0\t0\t\n2\to'clock\t0\t0\t\n");
++    expect(() => importer.readCurriculum(duplicate)).toThrow(/重复.*3|3.*重复/);
++  });
++  it('reports both missing and unexpected level2 entries', () => {
++    const bad = file('bad-level2.tsv', header + '1\tother\t1\t0\t\n');
++    expect(() => importer.readCurriculum(curriculum, bad)).toThrow(/Ms.*other|other.*Ms/s);
++  });
++  it('reports every invalid manual line, including duplicate and empty meaning', () => {
++    const bad = file('bad-manual.tsv', "entry\tmanual_meaning\nunknown\t未知\nMiss\t女士\nMiss\t重复\nmiss\t   \n");
++    expect(() => importer.readManualMeanings(bad, importer.readCurriculum(curriculum))).toThrow(/2.*unknown[\s\S]*4.*重复[\s\S]*5.*空/);
++    const quotes = file('quotes-manual.tsv', "entry\tmanual_meaning\no'clock\tadv. 点钟\n");
++    expect(importer.readManualMeanings(quotes, importer.readCurriculum(curriculum)).get("o'clock")).toBe('adv. 点钟');
++    const duplicate = file('quotes-duplicate.tsv', "entry\tmanual_meaning\no’clock\t点钟\no'clock\t点钟\n");
++    expect(() => importer.readManualMeanings(duplicate, importer.readCurriculum(curriculum))).toThrow(/重复/);
++  });
++  it('CLI exits 1 before opening/migrating a DB for invalid inputs', () => {
++    const dbFile = path.join(tmp, 'unchanged.db');
++    const raw = new Database(dbFile); raw.exec('CREATE TABLE marker(value TEXT); INSERT INTO marker VALUES (\'original\')'); raw.close();
++    const before = fs.readFileSync(dbFile);
++    const invalid = file('unknown.tsv', 'entry\tmanual_meaning\nunknown\t未知\n');
++    const r = cli([...cliArgs, '--manual', invalid, '--db', dbFile]);
++    expect(r.status).toBe(1); expect(r.stderr).toContain('unknown');
++    expect(fs.readFileSync(dbFile)).toEqual(before);
++    const absent = path.join(tmp, 'validation-absent.db');
++    const r2 = cli([...cliArgs, '--level2', file('empty-level2.tsv', header), '--db', absent]);
++    expect(r2.status).toBe(1); expect(fs.existsSync(absent)).toBe(false);
++  });
++});
++
++describe('atomic curriculum imports', () => {
++  it('applies manual meanings and frequency fallback, preserving all study data on reimport', () => {
++    const db = openDb(':memory:');
++    try {
++      const list = importer.readCurriculum(curriculum, level2);
++      const meanings = importer.readManualMeanings(manual, list);
++      const options = { expected, manual: meanings };
++      const first = importer.upsertCurriculum(db, list, dict, 'kb2022', options);
++      expect(first).toMatchObject({ inserted: 4, updated: 0, unchanged: 0, total: 4, 二级: 1, 三级: 3, manualApplied: 1, flagged: 0, missingPhonetic: 2, staleRows: [] });
++      expect(first.caseInsensitiveHits).toEqual([{ headword: 'Miss', ecdict_key: 'miss' }, { headword: 'Ms (AmE Ms.)', ecdict_key: 'MS' }]);
++      const ms = db.prepare("SELECT * FROM words WHERE headword='Ms (AmE Ms.)'").get() as any;
++      expect(ms).toMatchObject({ meaning_zh: 'n. 女士\n称呼', meaning_raw: '[计] 微软', meaning_flag: null, meaning_source: 'manual', ecdict_key: 'MS', priority: 1, freq_rank: null });
++      expect(splitSenses(ms.meaning_zh)).toEqual({ shown: ['n. 女士', '称呼'], more: [] });
++      expect(db.prepare("SELECT freq_rank,meaning_source FROM words WHERE headword='miss'").get()).toEqual({ freq_rank: 7, meaning_source: 'ecdict' });
++      expect(db.prepare("SELECT entry_raw,freq_rank FROM words WHERE headword=?").get("o'clock")).toEqual({ entry_raw: 'o’clock', freq_rank: 4064 });
++      const miss = db.prepare("SELECT id FROM words WHERE headword='Miss'").get() as { id: number };
++      seedRelated(db, miss.id);
++      const snapshot = () => ['words', 'cards', 'review_logs', 'wrong_words', 'word_content', 'content_feedback', 'ai_cache'].map((t) => db.prepare(`SELECT * FROM ${t}`).all());
++      const before = snapshot();
++      expect(importer.upsertCurriculum(db, list, dict, 'kb2022', options)).toMatchObject({ inserted: 0, updated: 0, unchanged: 4 });
++      expect(snapshot()).toEqual(before);
++      const changed = new Map(meanings); changed.set('miss', 'v. 思念');
++      expect(importer.upsertCurriculum(db, list, dict, 'kb2022', { expected, manual: changed })).toMatchObject({ inserted: 0, updated: 1, unchanged: 3 });
++      expect(snapshot().slice(1)).toEqual(before.slice(1));
++      expect(nextCard(db)?.meaning_source).toBe('ecdict');
++    } finally { db.close(); }
++  });
++  it('clears samples and all related tables but preserves curriculum rows and progress', () => {
++    const db = openDb(':memory:');
++    try {
++      const sampleId = Number(db.prepare("INSERT INTO words(headword,source,is_sample) VALUES ('sample','sample',1)").run().lastInsertRowid);
++      seedRelated(db, sampleId);
++      const list = importer.readCurriculum(curriculum);
++      importer.upsertCurriculum(db, list, dict, 'kb2022', { expected });
++      const c = nextCard(db, new Date('2026-10-17T01:00:00Z'), 'new')!;
++      review(db, c.id as number, Rating.Again, new Date('2026-10-17T01:00:00Z'));
++      const keptCards = db.prepare('SELECT * FROM cards WHERE word_id<>?').all(sampleId);
++      const keptLogs = db.prepare('SELECT l.* FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE c.word_id<>?').all(sampleId);
++      const r = importer.upsertCurriculum(db, list, dict, 'kb2022', { expected, clearSample: true });
++      expect(r.clearSample).toEqual({ words: 1, cards: 3, review_logs: 1, wrong_words: 1, word_content: 1, content_feedback: 1, ai_cache: 1 });
++      expect(db.prepare('SELECT * FROM cards').all()).toEqual(keptCards);
++      expect(db.prepare('SELECT * FROM review_logs').all()).toEqual(keptLogs);
++      expect(progress(db)).toHaveLength(1); expect(progress(db)[0]).toMatchObject({ source: 'kb2022', isSample: false, total: 4 });
++      const again = importer.upsertCurriculum(db, list, dict, 'kb2022', { expected, clearSample: true });
++      expect(Object.values(again.clearSample)).toEqual([0, 0, 0, 0, 0, 0, 0]);
++    } finally { db.close(); }
++  });
++  it('rolls back cleanup and upserts on count mismatch; lists stale rows without deleting', () => {
++    const db = openDb(':memory:');
++    try {
++      db.prepare("INSERT INTO words(headword,source,is_sample) VALUES ('sample','sample',1),('old','kb2022',0)").run();
++      const before = db.prepare('SELECT * FROM words').all();
++      expect(() => importer.upsertCurriculum(db, importer.readCurriculum(curriculum), dict, 'kb2022', { expected, clearSample: true })).toThrow(/计数.*old/s);
++      expect(db.prepare('SELECT * FROM words').all()).toEqual(before);
++      const r = importer.upsertCurriculum(db, importer.readCurriculum(curriculum), dict, 'kb2022', { expected: { total: 5, level2: 1, level3: 3 } });
++      expect(r.staleRows).toEqual([{ id: 2, headword: 'old', level: null }]);
++    } finally { db.close(); }
++  });
++  it('reports missing dictionary, filtered meanings and absent phonetics', () => {
++    const db = openDb(':memory:');
++    try {
++      const list = importer.readCurriculum(curriculum);
++      const r = importer.upsertCurriculum(db, list, new Map(), 'kb2022', { expected });
++      expect(r.missingEcdict).toEqual(['Miss', 'miss', 'Ms (AmE Ms.)', "o'clock"]);
++      expect(r.missingPhonetic).toBe(4);
++      const r2 = importer.upsertCurriculum(db, list, dict, 'kb2022', { expected });
++      expect(r2.flaggedWords).toEqual(['Ms (AmE Ms.)']);
++    } finally { db.close(); }
++  });
++});
++
++describe('dry-run memory databases', () => {
++  it('migrates/imports/clears an existing DB copy without modifying its bytes', () => {
++    const p = path.join(tmp, 'dry.db');
++    const legacy = new Database(p);
++    legacy.exec("CREATE TABLE words(id INTEGER PRIMARY KEY,headword TEXT NOT NULL,phonetic TEXT,pos TEXT,meaning_zh TEXT,source TEXT NOT NULL,level TEXT,unit TEXT,freq_rank INTEGER,is_sample INTEGER NOT NULL DEFAULT 0,UNIQUE(source,headword)); INSERT INTO words(headword,source,is_sample) VALUES ('sample','sample',1)");
++    legacy.close();
++    const before = fs.readFileSync(p);
++    const db = openDb(p, { dryRun: true });
++    try {
++      const r = importer.upsertCurriculum(db, importer.readCurriculum(curriculum), dict, 'kb2022', { expected, clearSample: true, dryRun: true });
++      expect(r).toMatchObject({ total: 4, dryRun: true, clearSample: { words: 1 } });
++      expect(db.prepare('PRAGMA table_info(words)').all()).toEqual(expect.arrayContaining([expect.objectContaining({ name: 'meaning_source' })]));
++    } finally { db.close(); }
++    expect(fs.readFileSync(p)).toEqual(before);
++    const failed = cli([...cliArgs, '--db', p, '--dry-run', '--clear-sample']); // default 1600 count mismatch
++    expect(failed.status).toBe(1); expect(failed.stderr).toContain('计数');
++    expect(fs.readFileSync(p)).toEqual(before);
++  });
++  it('never creates the DB when it does not exist', () => {
++    const p = path.join(tmp, 'absent.db');
++    const db = openDb(p, { dryRun: true });
++    try { importer.upsertCurriculum(db, importer.readCurriculum(curriculum), dict, 'kb2022', { expected, dryRun: true }); }
++    finally { db.close(); }
++    expect(fs.existsSync(p)).toBe(false);
++    const r = cli(['--list', file('old.csv', 'headword,level\nmiss,示例\n'), '--source', 'legacy', '--ecdict', dictFile, '--db', p, '--dry-run']);
++    expect(r.status).toBe(0); expect(JSON.parse(r.stdout).dryRun).toBe(true);
++    expect(fs.existsSync(p)).toBe(false);
++  });
++});
+diff --git a/test/import.test.ts b/test/import.test.ts
+index e32a883..4d56050 100644
+--- a/test/import.test.ts
++++ b/test/import.test.ts
+@@ -34,7 +34,7 @@ describe('import', () => {
+ 
+   it('is idempotent and fills ECDICT fields', async () => {
+     const list = readList(listFile);
+-    expect(list.map((e) => e.headword)).toEqual(['a (an)', 'apple', 'T-shirt', 'zzzunknown']); // 去重
++    expect(list.map((e) => e.headword)).toEqual(['a (an)', 'apple', 'Apple', 'T-shirt', 'zzzunknown']); // R1：按原文区分大小写去重，Apple 和 apple 都保留
+     const dict = await loadDict(dictFile, new Set(list.map((e) => lookupKey(e.headword))));
+     expect(dict.size).toBe(3);
+     const db = openDb(':memory:');
+diff --git a/test/meaning.test.ts b/test/meaning.test.ts
+index d6048de..c3711e5 100644
+--- a/test/meaning.test.ts
++++ b/test/meaning.test.ts
+@@ -37,3 +37,27 @@ describe('collapse button copy (内容.md 09:14)', () => {
+     expect(fs.readFileSync('web/src/MeaningList.vue', 'utf8')).toContain('toggleLabel(open, s.more.length)');
+   });
+ });
++
++describe('curriculum card display', () => {
++  it('shows every manual sense but collapses ECDICT senses', async () => {
++    const meaning = '第一行\n第二行\n第三行\n第四行';
++    const html = async (source: string) => renderToString(createSSRApp({ render: () => h(MeaningList, { meaning, source }) }));
++    const manual = await html('manual');
++    for (const line of ['第一行', '第二行', '第三行', '第四行']) expect(manual).toContain(line);
++    expect(manual).not.toContain('更多释义');
++    const ecdict = await html('ecdict');
++    expect(ecdict).toContain('第一行'); expect(ecdict).toContain('第二行');
++    expect(ecdict).not.toContain('第三行'); expect(ecdict).not.toContain('第四行');
++    expect(ecdict).toContain('更多释义（2）');
++  });
++  it('hides absent phonetics and passes meaning source in all card modes', () => {
++    const app = fs.readFileSync('web/src/App.vue', 'utf8');
++    expect(app).not.toContain('暂无音标');
++    const phon = app.match(/<div\b[^>]*class="phon"[^>]*>/g) ?? [];
++    expect(phon).toHaveLength(2);
++    for (const tag of phon) expect(tag).toContain('v-if="card.phonetic"');
++    const meanings = app.match(/<MeaningList [^>]*>/g) ?? [];
++    expect(meanings).toHaveLength(3);
++    for (const tag of meanings) expect(tag).toContain(':source="card.meaning_source"');
++  });
++});
+diff --git a/test/study.test.ts b/test/study.test.ts
+index 05cd6c5..0d81672 100644
+--- a/test/study.test.ts
++++ b/test/study.test.ts
+@@ -103,3 +103,90 @@ describe('queue consistency & idempotency', () => {
+     expect((db.prepare('SELECT wrong_count FROM wrong_words').get() as any).wrong_count).toBe(1);
+   });
+ });
++
++describe('curriculum spelling rules', () => {
++  it.each([
++    ['a / an', ['a', 'an']],
++    ['according (to)', ['according', 'according to']],
++    ['colour (AmE color)', ['colour', 'color']],
++    ['theatre (Am E theater)', ['theatre', 'theater']],
++    ['maths (=mathematics, AmE math)', ['maths', 'math']],
++    ['Mr (AmE Mr.)', ['mr', 'mr.']],
++    ['child (pl. children)', ['child']],
++    ['ad (=advertisement)', ['ad']],
++    ['father (dad)', ['father', 'dad']],
++    ['mother (mum AmE mom)', ['mother', 'mum', 'mom']],
++    ['be (am, is, are)', ['be', 'am', 'is', 'are']],
++    ['policeman / policewoman (pl. policemen / policewomen)', ['policeman', 'policewoman']],
++    ['per cent (AmE percent)', ['per cent', 'percent']],
++    ['o’clock', ["o'clock"]],
++    ['T-shirt', ['t-shirt']],
++    ['Miss', ['miss']],
++    ['a (an)', ['a', 'an']],
++    ['color (colour)', ['color', 'colour']],
++  ])('%s accepts only the intended variants', (headword, expected) => {
++    expect(acceptedSpellings(headword as string)).toEqual(expected);
++  });
++  it.each([
++    ["o'clock", 'o’clock'], ["o'clock", 'O’Clock '], ["o'clock", "o'clock"], ['o’clock', "o'clock"],
++  ])('matches normalized quotes: %s / %s', (headword, answer) => {
++    db.prepare('UPDATE words SET headword=? WHERE id=1').run(headword);
++    const c = nextCard(db, T0)!; review(db, c.id as number, Rating.Easy, T0);
++    const sp = db.prepare("SELECT id FROM cards WHERE word_id=1 AND mode='spell'").get() as { id: number };
++    expect(checkSpelling(db, sp.id, answer, day(1)).correct).toBe(true);
++  });
++});
++
++describe('curriculum new-word ordering', () => {
++  function prepare(core = 10, secondary = 3, every = 5) {
++    db.exec('DELETE FROM words');
++    db.prepare("UPDATE settings SET value='50' WHERE key='new_per_day'").run();
++    db.prepare("UPDATE settings SET value=? WHERE key='level2_every'").run(String(every));
++    const ins = db.prepare('INSERT INTO words(headword,source,priority,freq_rank) VALUES (?,\'kb2022\',?,?)');
++    // Reverse insertion order distinguishes frequency from id ordering.
++    for (let i = core; i >= 1; i--) ins.run('core' + i, 2, i);
++    for (let i = secondary; i >= 1; i--) ins.run('level2-' + i, 1, i);
++    ins.run('other', 0, 1);
++  }
++  function learn(n: number) {
++    const heads: unknown[] = [];
++    for (let i = 0; i < n; i++) {
++      const c = nextCard(db, T0, 'new')!; heads.push(c.headword);
++      review(db, c.id as number, Rating.Easy, T0);
++    }
++    return heads;
++  }
++  it('interleaves every fifth curriculum recognition card and orders each group by frequency', () => {
++    prepare();
++    expect(learn(13)).toEqual(['core1', 'core2', 'core3', 'core4', 'level2-1', 'core5', 'core6', 'core7', 'core8', 'level2-2', 'core9', 'core10', 'level2-3']);
++    expect(learn(1)).toEqual(['other']);
++  });
++  it('finishes core words first when level2_every is zero', () => {
++    prepare(5, 2, 0);
++    expect(learn(7)).toEqual(['core1', 'core2', 'core3', 'core4', 'core5', 'level2-1', 'level2-2']);
++  });
++  it('falls back to core when the secondary group is exhausted', () => {
++    prepare(10, 1);
++    expect(learn(11)).toEqual(['core1', 'core2', 'core3', 'core4', 'level2-1', 'core5', 'core6', 'core7', 'core8', 'core9', 'core10']);
++  });
++  it('serves existing unlearned cards by card id before creating new cards', () => {
++    prepare(3, 0);
++    const ids = db.prepare('SELECT id FROM words WHERE priority=2 ORDER BY id').all() as { id: number }[];
++    const ins = db.prepare("INSERT INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,reps,lapses,state) VALUES (?,'recognize',?,0,0,0,0,0,0,0)");
++    ins.run(ids[1].id, T0.toISOString()); ins.run(ids[0].id, T0.toISOString());
++    expect(learn(3)).toEqual(['core2', 'core3', 'core1']);
++  });
++  it('puts missing frequencies last and counts curriculum cards only', () => {
++    prepare(2, 1, 2);
++    db.prepare("UPDATE words SET freq_rank=NULL WHERE headword='core1'").run();
++    // Existing priority=0 recognition cards must not advance the curriculum cadence.
++    const other = db.prepare("SELECT id FROM words WHERE headword='other'").get() as { id: number };
++    db.prepare("INSERT INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,reps,lapses,state) VALUES (?,'recognize',?,5,5,1,1,1,0,2)").run(other.id, day(5).toISOString());
++    expect(learn(3)).toEqual(['core2', 'level2-1', 'core1']);
++  });
++  it('breaks equal frequencies by word id within a group', () => {
++    prepare(3, 0, 0);
++    db.prepare('UPDATE words SET freq_rank=100 WHERE priority=2').run();
++    expect(learn(3)).toEqual(['core3', 'core2', 'core1']);
++  });
++});
+diff --git a/test/text.test.ts b/test/text.test.ts
+new file mode 100644
+index 0000000..4157b6a
+--- /dev/null
++++ b/test/text.test.ts
+@@ -0,0 +1,18 @@
++import { afterEach, expect, it, vi } from 'vitest';
++import { speak } from '../web/src/api.ts';
++import * as text from '../server/src/text.ts';
++
++afterEach(() => vi.unstubAllGlobals());
++it('normalizes all three curriculum apostrophes', () => {
++  expect(text.normalizeQuotes('o’clock')).toBe("o'clock");
++  expect(text.normalizeQuotes('‘yes’ ʼ')).toBe("'yes' '");
++});
++it.each([['a / an', 'a'], ['actor / actress', 'actor'], ['colour (AmE color)', 'colour'], ['o’clock', "o'clock"]])('speaks the first main headword: %s', (headword, expected) => {
++  let spoken = '';
++  const speech = { cancel() {}, speak(u: { text: string }) { spoken = u.text; } };
++  vi.stubGlobal('window', { speechSynthesis: speech });
++  vi.stubGlobal('speechSynthesis', speech);
++  vi.stubGlobal('SpeechSynthesisUtterance', class { constructor(public text: string) {} });
++  expect(speak(headword)).toBe(true);
++  expect(spoken).toBe(expected);
++});
+diff --git a/web/src/App.vue b/web/src/App.vue
+index 0c6ac1f..615f422 100644
+--- a/web/src/App.vue
++++ b/web/src/App.vue
+@@ -6,7 +6,7 @@ import MeaningList from './MeaningList.vue';
+ import { COPY, isRepeatCard } from './copy';
+ 
+ type View = 'home' | 'study' | 'done' | 'progress' | 'wrong';
+-interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number; reps: number }
++interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; meaning_source: string | null; is_sample: number; state: number; reps: number }
+ 
+ const view = ref<View>('home');
+ const online = ref(true);
+@@ -206,11 +206,11 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
+ 
+       <template v-if="card.mode === 'recognize'">
+         <div class="word">{{ card.headword }} <button class="icon" title="听发音（空格）" @click="play">🔊</button></div>
+-        <div class="phon">{{ card.phonetic ?? '（暂无音标）' }}</div>
++        <div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div>
+         <p v-if="!revealed" class="muted">空格 听发音 · → 翻面 · 先自己想想意思再翻面</p>
+         <button v-if="!revealed" @click="revealed = true">翻面</button>
+         <template v-else>
+-          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
++          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
+           <div class="row">
+             <button v-for="r in RATINGS" :key="r.v" @click="rate(r.v)">{{ r.v }} {{ r.label }}</button>
+           </div>
+@@ -220,8 +220,8 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
+ 
+       <template v-else>
+         <template v-if="card.mode === 'spell'">
+-          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
+-          <div class="phon">{{ card.phonetic }}</div>
++          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
++          <div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div>
+         </template>
+         <template v-else>
+           <p>戴上耳机，听发音后拼写。 <button class="icon" @click="play">🔊</button></p>
+@@ -234,7 +234,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
+         <div v-if="feedback">
+           <p v-if="feedback.correct" class="ok">正确 ✓</p>
+           <p v-else class="bad">应为：<b>{{ feedback.expected }}</b>（你写的是 {{ answer }}）。已加入错词本。</p>
+-          <MeaningList v-if="card.mode === 'dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
++          <MeaningList v-if="card.mode === 'dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
+           <button @click="loadNext">下一个（Enter）</button>
+         </div>
+       </template>
+diff --git a/web/src/MeaningList.vue b/web/src/MeaningList.vue
+index fdcc5cd..c00cd37 100644
+--- a/web/src/MeaningList.vue
++++ b/web/src/MeaningList.vue
+@@ -1,9 +1,9 @@
+ <script setup lang="ts">
+ import { computed, ref } from 'vue';
+ import { splitSenses, toggleLabel } from './senses';
+-const props = defineProps<{ meaning: string | null; flag?: string | null }>();
++const props = defineProps<{ meaning: string | null; flag?: string | null; source?: string | null }>();
+ const open = ref(false);
+-const s = computed(() => splitSenses(props.meaning));
++const s = computed(() => splitSenses(props.meaning, props.source === 'manual' ? Infinity : 2));
+ </script>
+ 
+ <template>
+diff --git a/web/src/api.ts b/web/src/api.ts
+index 02d6f6e..7a16063 100644
+--- a/web/src/api.ts
++++ b/web/src/api.ts
+@@ -1,3 +1,4 @@
++import { mainHeadwords } from '../../server/src/text';
+ import { ClientError, OfflineError } from './pending';
+ export { ClientError, OfflineError };
+ export async function api<T = any>(path: string, body?: unknown): Promise<T> {
+@@ -12,7 +13,7 @@ export async function api<T = any>(path: string, body?: unknown): Promise<T> {
+   return j as T;
+ }
+ export function speak(word: string): boolean {
+-  const w = word.replace(/\(.*?\)/g, '').trim();
++  const w = mainHeadwords(word)[0] ?? '';
+   if (!('speechSynthesis' in window)) return false;
+   const u = new SpeechSynthesisUtterance(w); u.lang = 'en-US'; u.rate = 0.9;
+   speechSynthesis.cancel(); speechSynthesis.speak(u);
