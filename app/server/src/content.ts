@@ -1,6 +1,7 @@
 import type { DB } from './db.ts';
 import { KINDS, canonical, type Kind } from './content-validate.ts';
 import { mainHeadwords } from './text.ts';
+import { HttpError } from './http-error.ts';
 export const LABELS:Record<Kind,string>={example:'例句',collocation:'常见搭配',distinction:'易混词',synonym:'近义',antonym:'反义',pronunciation:'发音',mnemonic_etymology:'词源',mnemonic_association:'联想 · 帮助记忆，不是词源',related_words:'相关词'};
 export function getContent(db:DB,wordId:number) {
   const pending={status:'pending' as const,blocks:[]};
@@ -19,11 +20,12 @@ export function getContent(db:DB,wordId:number) {
   }catch{return pending;}
 }
 export const FEEDBACK_REASONS=['例句不通','意思不对','太难','其他'] as const;
+/** 只接受对孩子当前看得到的内容的反馈；待审、未批准、已隐藏、已被取代或不存在的一律 404，不写任何东西。 */
 export function contentFeedback(db:DB,id:number,reason:string,now=new Date()) {
-  if(!FEEDBACK_REASONS.includes(reason as any))throw new Error('invalid feedback reason');
+  if(!FEEDBACK_REASONS.includes(reason as any))throw new HttpError(400,'invalid feedback reason');
   return db.transaction(()=>{
     const r=db.prepare('SELECT * FROM word_content WHERE id=?').get(id) as any;
-    if(!r)throw new Error('content not found');if(r.hidden_at)return {ok:true};
+    if(!r||!getContent(db,r.word_id).blocks.some(b=>b.id===id))throw new HttpError(404,'content not found');
     db.prepare('INSERT INTO content_feedback(word_id,content_id,kind,content_version,reason) VALUES (?,?,?,?,?)').run(r.word_id,id,r.kind,`${r.model}/${r.prompt_version}`,reason);
     db.prepare('UPDATE word_content SET hidden_at=?,hidden_reason=? WHERE id=?').run(now.toISOString(),`feedback:${reason}`,id);return {ok:true};
   })();
