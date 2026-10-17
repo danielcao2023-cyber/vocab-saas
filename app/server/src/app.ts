@@ -1,6 +1,7 @@
 import { search, wordDetail, browse } from './search.ts';
 import { getContent, contentFeedback } from './content.ts';
 import { sendError, parseId } from './http-error.ts';
+import { feedbackLimiter, LIMIT_ERRORS } from './rate-limit.ts';
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import fs from 'node:fs';
@@ -18,6 +19,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   const now = opts.now ?? (() => new Date());
   const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
+  const limiter = feedbackLimiter();
   const replayed = (answerId: unknown) => typeof answerId === 'string' && !!answerId && !!db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId);
   if (opts.allow) {
     const allow = opts.allow;
@@ -62,7 +64,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   app.get<{Params:{id:string}}>('/api/word/:id',async(req,reply)=>{try{return wordDetail(db,parseId(req.params.id))??reply.code(404).send({error:'word not found'});}catch(e){return sendError(reply,e);}});
   app.get<{Params:{id:string}}>('/api/word/:id/content',async(req,reply)=>{try{const id=parseId(req.params.id);if(!db.prepare('SELECT 1 FROM words WHERE id=?').get(id))return reply.code(404).send({error:'word not found'});return getContent(db,id);}catch(e){return sendError(reply,e);}});
   app.get<{Querystring:Record<string,string|undefined>}>('/api/browse',async(req,reply)=>{try{return browse(db,req.query);}catch(e){return reply.code(400).send({error:(e as Error).message});}});
-  app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{try{return contentFeedback(db,parseId(req.params.contentId,'content id'),req.body?.reason,now());}catch(e){return sendError(reply,e);}});
+  app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{const t=now(),limited=limiter.check(t);if(limited)return reply.code(429).send({error:LIMIT_ERRORS[limited],scope:limited});try{const r=contentFeedback(db,parseId(req.params.contentId,'content id'),req.body?.reason,t);limiter.hid(t);return r;}catch(e){return sendError(reply,e);}});
   app.get('/api/progress', async () => ({ lists: progress(db), curriculum: curriculumProgress(db) }));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong', async req => wrongSummary(db, req.query.sort === 'recent' ? 'recent' : 'count', now()));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong/practice', async req => wrongPractice(db, 10, now(), opts.rng, req.query.sort === 'recent' ? 'recent' : 'count'));

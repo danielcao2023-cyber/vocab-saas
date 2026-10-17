@@ -66,6 +66,7 @@ export const COPY = {
   // 第二期批准稿和内容规格；原文集中在这里。
   explain: '讲解', aiLabel: 'AI 生成 · 可能有误', expandAll: '全部展开', collapseAll: '全部收起',
   reportContent: '这条有问题', feedbackReasons: ['例句不通','意思不对','太难','其他'], feedbackSaved: '已记下，这条先不再出现。',
+  feedbackTooFast: '点得有点快啦，休息一分钟再试试。', feedbackDayLimit: '今天已经提了很多条意见，谢谢你！剩下的明天再说吧。',
   contentTitles: {example:'例句',collocation:'常见搭配',distinction:'易混词',relations:'近义 · 反义',pronunciation:'发音',memory:'记忆'} as Record<string,string>,
   synonym: '近义', antonym: '反义', etymology: '词源', association: '联想 · 帮助记忆，不是词源', sameRoot: '同根词', relatedWords: '相关词', learned: '已学', outsideList: '课标外',
   explainPending: '讲解还在准备', explainPendingNote: '这个词的例句还没生成，先看释义和发音。',
