@@ -51,7 +51,7 @@
 - `web/src/api.ts` 的 `speak()`：只去掉括号，所以 `a / an` 会被整段念出来。
 - `scripts/seed-due.ts` 用到了 `readList`、`loadDict`、`lookupKey`、`upsertWords`、`filterSenses`、`acceptedSpellings`。改完以后它必须还能跑通，`tsc` 也要通过。
 - 测试文件：test/import.test.ts、study.test.ts、meaning.test.ts、copy.test.ts、net.test.ts、pending.test.ts、client-error.test.ts、version.test.ts。现有用例必须全部通过。
-  - **只有一个例外**：import.test.ts 里 `expect(list.map(...)).toEqual(['a (an)', 'apple', 'T-shirt', 'zzzunknown']); // 去重` 这一条，按需求 1 要改成区分大小写，`Apple` 和 `apple` 都保留。改这条时在注释里写明原因。其他已有断言不许改。
+  - **只有一个例外**：import.test.ts 里 `expect(list.map(...)).toEqual(['a (an)', 'apple', 'T-shirt', 'zzzunknown']); // 去重` 这一条，按需求 R1 要改成区分大小写，`Apple` 和 `apple` 都保留。改这条时在注释里写明原因。其他已有断言不许改。
 
 ## 2. 输入文件格式
 
@@ -93,6 +93,16 @@
   - 新增列 `meaning_source TEXT`，值为 `'manual'` 或 `'ecdict'`。
 - 没有人工释义的词，`filterSenses()` 的现行规则不变。
 - 这样前端不用改：`splitSenses()` 已经按换行拆分。例如 `online` 会显示两行，即 `adj. …` 和 `adv. …`。
+
+### R2b 人工释义全部展开（12:09 新增需求）
+- 卡片要能拿到 `w.meaning_source`：在 `server/src/study.ts` 的 `CARD_SELECT` 里加上这一列；前端 `App.vue` 的 `Card` 接口也加上 `meaning_source: string | null`。
+- `MeaningList.vue` 新增 prop `source?: string | null`，三处 `<MeaningList ...>` 都要传 `:source="card.meaning_source"`。test/meaning.test.ts 断言 `<MeaningList ` 恰好出现 3 次，所以不要新增第 4 处。
+- `source === 'manual'` 时，所有行都直接显示（人工释义最多 4 行），**不折叠，也不出现「更多释义」按钮**。
+- ECDICT 来源（包括 `source` 为 null 或 `'ecdict'`）保持现在的行为：显示 2 行，其余折叠。
+- 实现方式：给 `web/src/senses.ts` 的 `splitSenses(meaning, shown = 2)` 加一个可选参数，例如 `splitSenses(meaning, source === 'manual' ? Infinity : 2)`；也可以加一个 `shownCount(source)`。现有调用和测试保持不变。
+- 测试（放在 meaning.test.ts 或新文件里，沿用 SSR 渲染的写法）：
+  - 4 行人工释义（`source='manual'`，比如 well 有 4 行）全部渲染，第 3、4 行也要出现在 HTML 里，而且不包含 `更多释义`；
+  - 同样 4 行、`source='ecdict'` 时只显示前 2 行，并且有 `更多释义（2）`。
 
 ### R3 没有音标就隐藏音标行
 - `App.vue` 里认词卡和拼写卡的 `.phon` 都改成 `v-if="card.phonetic"`，删掉「（暂无音标）」，不放任何占位文字。
@@ -229,7 +239,7 @@ npm run import -- --curriculum ../data/curriculum/ocr/level3_list.tsv \
 - 预计会改动的文件：
   - `server/src/import.ts`、`server/src/db.ts`、`server/src/study.ts`；
   - 新增 `server/src/text.ts`；
-  - `web/src/App.vue`、`web/src/api.ts`；
+  - `web/src/App.vue`、`web/src/api.ts`、`web/src/MeaningList.vue`、`web/src/senses.ts`；
   - 可能还有 `scripts/seed-due.ts`；
   - `test/import.test.ts`、`test/study.test.ts`、`test/meaning.test.ts`；
   - 新增 `test/curriculum.test.ts`；
