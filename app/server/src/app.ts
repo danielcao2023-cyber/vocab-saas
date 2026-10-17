@@ -3,11 +3,19 @@ import fastifyStatic from '@fastify/static';
 import fs from 'node:fs';
 import path from 'node:path';
 import type { DB } from './db.ts';
+import type { BlockList } from 'node:net';
+import { isAllowed } from './net.ts';
 import { checkSpelling, nextCard, progress, review, setWrong, todaySummary, wrongList, wrongPractice } from './study.ts';
 
-export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date } = {}) {
+export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; allow?: BlockList } = {}) {
   const now = opts.now ?? (() => new Date());
   const app = Fastify({ logger: false });
+  if (opts.allow) {
+    const allow = opts.allow;
+    app.addHook('onRequest', async (req, reply) => {
+      if (!isAllowed(allow, req.socket.remoteAddress)) return reply.code(403).send({ error: 'forbidden' });
+    });
+  }
 
   app.get('/health', async () => {
     db.prepare('SELECT 1').get();
