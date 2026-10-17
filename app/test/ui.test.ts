@@ -10,6 +10,7 @@ import WrongView from '../web/src/views/WrongView.vue';
 import DoneView from '../web/src/views/DoneView.vue';
 import { buildApp } from '../server/src/app.ts';
 import { database, card, T } from './v3-helpers.ts';
+import { setWrong } from '../server/src/study.ts';
 import { curriculumProgress, streak } from '../server/src/stats.ts';
 import type { Card, Turn } from '../web/src/types.ts';
 
@@ -93,7 +94,7 @@ it('actual StudyView holds an unsaved flip answer, waits for a healthy reconnect
   }finally{ui.app.unmount();await api.close();db.close();}
 });
 it('actual spelling input uses Tab hint, renders character feedback and sends practice duration/type through /api/check',async()=>{
-  const db=database(1);const id=card(db,1,'spell',0);const api=buildApp(db,{now:()=>T});
+  const db=database(1);const id=card(db,1,'spell',0);setWrong(db,1,true,T);const api=buildApp(db,{now:()=>T});
   const c={...sample,id,word_id:1,headword:'word1',mode:'spell' as const,meaning_zh:'n. 测试',state:0};
   vi.stubGlobal('fetch',vi.fn(async(url:string,options:any)=>{const r=await api.inject({method:options?.method??'GET',url,headers:options?.headers,payload:options?.body});return new Response(r.body,{status:r.statusCode});}));
   const ui=harness(clientComponent('web/src/views/StudyView.vue'),{prefer:'review',practice:[{card:c,question:null}],estimate:1});

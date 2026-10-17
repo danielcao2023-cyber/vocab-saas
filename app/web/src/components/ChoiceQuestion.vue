@@ -2,14 +2,14 @@
 import { computed } from 'vue';
 import type { Card, Question, ChoiceResult } from '../types';
 import { COPY } from '../copy';
+import { maskAnswer } from '../../../server/src/text';
 import MeaningList from '../MeaningList.vue';
 import SpeakButton from './SpeakButton.vue';
 const props=defineProps<{ card: Card; question: Question; result: ChoiceResult | null; busy: boolean }>();
 defineEmits<{ choose: [wordId: number]; next: []; play: [] }>();
 const letter=computed(()=>props.result ? String.fromCharCode(65+props.question.options.findIndex(o=>o.wordId===props.result!.answerWordId)):'');
-// 作答前把释义/选项里出现的答案词头（如“一会儿（for a while）”）遮成“～”，避免直接泄题
-const heads=computed(()=>props.card.headword.split(/\s*[(/（,，]\s*|\s*\)\s*/).map(h=>h.trim()).filter(h=>h.length>1));
-function mask(text:string|null){if(!text||props.result)return text??'';return heads.value.reduce((t,h)=>t.replace(new RegExp(`(^|[^A-Za-z])${h.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}(?![A-Za-z])`,'gi'),'$1～'),text);}
+// 作答前把释义/选项里出现的答案词头（如“一会儿（for a while）”）遮成“～”，词形说明里的原形遮成“某词”；服务端出题时也做同样处理
+function mask(text:string|null){if(!text||props.result)return text??'';return maskAnswer(text,props.card.headword);}
 const firstMeaning=computed(()=>(props.result?.expected.meaning_zh??'').split('\n')[0].replace(/^\s*[a-z]+\.\s*/i,'').split(/[,，;；]/)[0]);
 </script>
 <template>

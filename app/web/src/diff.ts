@@ -16,3 +16,11 @@ export function charDiff(typed: string, expected: string): { typed: DiffChar[]; 
   }
   return {typed:left,expected:right};
 }
+/** 拼写“差一点”：和正确拼写的编辑距离不超过 max(1, 长度的 30%)（4 个字母以内差 1 个，7 个字母差 2 个）。完全不沾边的答案不说“差一点”。 */
+export function isNearMiss(typed: string, expected: string): boolean {
+  const norm = (s: string) => s.replace(/[’‘ʼ]/g, "'").replace(/\(.*?\)|（.*?）/g, '').trim().toLowerCase().replace(/\s+/g, ' ');
+  const t = norm(typed);
+  const targets = norm(expected).split('/').map(s => s.trim()).filter(Boolean);
+  if (!t || !targets.length) return false;
+  return targets.some(e => { const d = charDiff(t, e); const edits = Math.max(d.typed.filter(c => c.changed).length, d.expected.filter(c => c.changed).length); return edits <= Math.max(1, Math.round(Array.from(e).length * 0.3)); });
+}

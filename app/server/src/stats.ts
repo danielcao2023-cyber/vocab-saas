@@ -145,7 +145,10 @@ export function streak(db: DB, now = new Date(), month = shDay(now).slice(0, 7))
   }
   const used = [...makeups].filter(d => d.startsWith(month)).length;
   return { current: data.current, best: data.best, calendar, badges: [7, 30, 100].map(days => ({ days, earned: data.best >= days, progress: Math.min(data.current, days) })), makeupLeft: Math.max(0, setting(db, 'makeup_per_month', 2) - used), makeupUsed: used,
-    makeupCandidates: calendar.filter(d => !makeupReason(db, d.day, now, data)).map(d => d.day) };
+    makeupCandidates: calendar.filter(d => !makeupReason(db, d.day, now, data)).map(d => d.day),
+    // 漏签但现在不能补的日子 → 原因（前端点击时说明）；今天是否已完成（补签提示随状态变化）
+    makeupBlocked: Object.fromEntries(calendar.filter(d => d.status === 'missed').map(d => [d.day, makeupReason(db, d.day, now, data)]).filter(([, r]) => r)) as Record<string, string>,
+    todayDone: !!db.prepare('SELECT 1 FROM daily_stats WHERE day=? AND completed=1').get(today) };
 }
 export function makeup(db: DB, day: string, now = new Date()) {
   db.transaction(() => {

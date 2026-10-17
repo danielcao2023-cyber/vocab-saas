@@ -228,3 +228,8 @@ export function wrongPractice(db: DB, limit = 10, now = new Date(), rng: Rng = M
   }).filter((r): r is NonNullable<typeof r> => r !== null);
   return { items };
 }
+
+/** 练错词只接受错词本里的词（或今天刚移出的词：同一轮里刚毕业/刚放回，晚到的提交仍然有效） */
+export function practiceAllowed(db: DB, cardId: number, now = new Date()) {
+  return !!db.prepare(`SELECT 1 FROM cards c JOIN wrong_words ww ON ww.word_id=c.word_id WHERE c.id=? AND (ww.removed_at IS NULL OR ww.removed_at>=?)`).get(cardId, shDayStart(now).toISOString());
+}

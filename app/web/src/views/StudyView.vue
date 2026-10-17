@@ -4,7 +4,7 @@ import { api, ClientError, OfflineError, speak } from '../api';
 import { PendingSubmitter } from '../pending';
 import { COPY, isRepeatCard } from '../copy';
 import type { Turn, ChoiceResult } from '../types';
-import { charDiff } from '../diff';
+import { charDiff, isNearMiss } from '../diff';
 import MeaningList from '../MeaningList.vue';
 import RecognizeCard from '../components/RecognizeCard.vue';
 import ChoiceQuestion from '../components/ChoiceQuestion.vue';
@@ -107,7 +107,7 @@ onUnmounted(()=>{alive=false;clearInterval(timer);window.removeEventListener('ke
       <div v-if="card.mode==='spell'" class="prompt"><div class="q">{{ COPY.spellPrompt }}</div><MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" /><div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div></div>
       <div v-else class="listen"><SpeakButton large @play="play" /><div><p>{{ COPY.dictationPrompt }}</p><p class="small muted">{{ COPY.listenHint }}</p></div></div>
       <form @submit.prevent="submit"><div class="spellbox"><input ref="input" v-model="answer" class="input" :disabled="!!feedback||unsaved||busy" autocomplete="off" autocapitalize="off" :spellcheck="false" aria-label="输入单词" placeholder="输入单词" /></div>
-      <div v-if="feedback" class="fb" :class="feedback.correct?'ok':'bad'" role="status"><div><div class="t">{{ feedback.correct?COPY.correct:COPY.almost }}</div><template v-if="!feedback.correct"><div class="diff"><span class="lbl">{{ COPY.typed }}</span><span v-for="(c,i) in diff.typed" :key="`t${i}`" :class="{x:c.changed}">{{ c.char }}</span> → <span v-for="(c,i) in diff.expected" :key="`e${i}`" :class="{y:c.changed}">{{ c.char }}</span></div><div class="d small">{{ COPY.addedWrong }}</div></template></div></div>
+      <div v-if="feedback" class="fb" :class="feedback.correct?'ok':'bad'" role="status"><div><div class="t">{{ feedback.correct?COPY.correct:isNearMiss(answer,feedback.expected)?COPY.almost:COPY.spellWrong }}</div><template v-if="!feedback.correct"><div class="diff"><span class="lbl">{{ COPY.typed }}</span><span v-for="(c,i) in diff.typed" :key="`t${i}`" :class="{x:c.changed}">{{ c.char }}</span> → <span v-for="(c,i) in diff.expected" :key="`e${i}`" :class="{y:c.changed}">{{ c.char }}</span></div><div class="d small">{{ COPY.addedWrong }}</div></template></div></div>
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>

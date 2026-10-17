@@ -12,7 +12,7 @@ onMounted(load);
 const max=computed(()=>Math.max(1,...(summary.value?.daily.map(d=>d.new+d.review+d.practice)??[])));
 const chartSegments=computed(()=>{
   const segments:{x:number;y:number;day:string;accuracy:number}[][]=[];let current:{x:number;y:number;day:string;accuracy:number}[]=[];
-  summary.value?.daily.forEach((d,i)=>{if(d.accuracy===null){if(current.length)segments.push(current);current=[];}else current.push({x:i*1000/29,y:56-d.accuracy*48,day:d.day,accuracy:Math.round(d.accuracy*100)});});
+  summary.value?.daily.forEach((d,i)=>{if(d.accuracy===null){if(current.length)segments.push(current);current=[];}else current.push({x:12+i*976/Math.max(1,(summary.value!.daily.length-1)),y:56-d.accuracy*48,day:d.day,accuracy:Math.round(d.accuracy*100)});});
   if(current.length)segments.push(current);return segments;
 });
 const timestamp=computed(()=>summary.value?new Date(summary.value.generatedAt).toLocaleString('zh-CN',{timeZone:'Asia/Shanghai',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}):'');

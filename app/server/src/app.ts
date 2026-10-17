@@ -9,12 +9,13 @@ import { shDay } from './time.ts';
 import type { BlockList } from 'node:net';
 import { isAllowed } from './net.ts';
 import { readVersion } from './version.ts';
-import { checkSpelling, nextCard, progress, review, setWrong, todaySummary, wrongSummary, wrongPractice } from './study.ts';
+import { checkSpelling, practiceAllowed, nextCard, progress, review, setWrong, todaySummary, wrongSummary, wrongPractice } from './study.ts';
 
 export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } = {}) {
   const now = opts.now ?? (() => new Date());
   const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
+  const replayed = (answerId: unknown) => typeof answerId === 'string' && !!answerId && !!db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId);
   if (opts.allow) {
     const allow = opts.allow;
     app.addHook('onRequest', async (req, reply) => {
@@ -37,14 +38,18 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   app.post<{ Body: { cardId: number; rating: number; durationMs?: number; answerId?: string; context?: Context } }>('/api/review', async (req, reply) => {
     const { cardId, rating, durationMs, answerId, context } = req.body ?? ({} as any);
     const t = now();
-    // 选择题必须由服务端判分：这张卡有未作答的选择题时，不接受翻面自评（重试已存过的 answerId 除外）
-    if (!(answerId && db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId)) && hasOpenQuestion(db, Number(cardId), context === 'practice' ? 'practice' : 'study', t))
-      return reply.code(409).send({ ok: false, error: 'question pending: answer via /api/answer' });
+    // 重试已存过的 answerId 直接走幂等返回
+    if (!replayed(answerId)) {
+      // 选择题必须由服务端判分：这张卡今天有任何 context 下未作答的选择题，都不接受翻面自评
+      if (hasOpenQuestion(db, Number(cardId), undefined, t)) return reply.code(409).send({ ok: false, error: 'question pending: answer via /api/answer' });
+      if (context === 'practice' && !practiceAllowed(db, Number(cardId), t)) return reply.code(409).send({ ok: false, error: 'practice only for wrong-book words' });
+    }
     try { const r = review(db, Number(cardId), Number(rating) as any, t, { durationMs, answerId, context, qtype: 'flip' }); return { ok: true, due: r.card.due.toISOString(), state: r.card.state, duplicate: r.duplicate }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
   app.post<{ Body: { cardId: number; answer: string; usedHint?: boolean; answerId?: string; durationMs?: number; context?: Context } }>('/api/check', async (req, reply) => {
     const { cardId, answer, usedHint, answerId, durationMs, context } = req.body ?? ({} as any);
+    if (context === 'practice' && !replayed(answerId) && !practiceAllowed(db, Number(cardId), now())) return reply.code(409).send({ ok: false, error: 'practice only for wrong-book words' });
     try { return { ok: true, ...checkSpelling(db, Number(cardId), String(answer ?? ''), now(), !!usedHint, answerId, { context, durationMs }) }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });

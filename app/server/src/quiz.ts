@@ -3,7 +3,7 @@ import { Rating, State } from 'ts-fsrs';
 import { review, type CardRow } from './study.ts';
 import { shDayStart } from './time.ts';
 import { settings as readSettings } from './settings.ts';
-import { mainHeadwords, normalizeQuotes } from './text.ts';
+import { mainHeadwords, maskAnswer, normalizeQuotes } from './text.ts';
 export type Qtype = 'flip' | 'listen_choice' | 'meaning_choice' | 'spell' | 'dictation';
 export type Context = 'study' | 'practice';
 export type Rng = () => number;
@@ -16,6 +16,17 @@ const norm = (s: string) => normalizeQuotes(s).toLowerCase().replace(/[\s，,；
 const head = (s: string) => norm(mainHeadwords(s)[0] ?? s);
 export function meaningSet(s: string | null) {
   return new Set((s ?? '').split('\n').slice(0, 2).flatMap(line => line.replace(/\([^)]*\)|（[^）]*）/g, '').replace(/^\s*(?:(?:[a-z]+\.)\s*)+/i, '').split(/[,，;；、]/)).map(norm).filter(Boolean));
+}
+/** 意思相近、孩子容易混的称呼/词义组：同组的词不同时出现在一道题里（如 Ms 女士 与 miss 小姐） */
+const NEAR_SYNONYMS: string[][] = [
+  ['女士', '小姐', '夫人', '太太', '淑女', '贵妇', '妇女', '女人'],
+  ['先生', '绅士', '阁下', '男人'],
+];
+const groupOf = (term: string) => NEAR_SYNONYMS.findIndex(g => g.some(x => term.includes(x)));
+/** 两个词的前两行义项是否重叠：相同、一方包含另一方（≥2 字），或属于同一近义组 */
+export function meaningsOverlap(a: string | null, b: string | null) {
+  const A = [...meaningSet(a)], B = [...meaningSet(b)];
+  return A.some(x => B.some(y => x === y || (Math.min(x.length, y.length) >= 2 && (x.includes(y) || y.includes(x))) || (groupOf(x) >= 0 && groupOf(x) === groupOf(y))));
 }
 const pos = (s: string | null) => (first(s).match(/^([a-z]+)\./i)?.[1] ?? '').toLowerCase().replace(/^(vt|vi)$/, 'v');
 export function editDistance(a: string, b: string) {
@@ -52,7 +63,7 @@ export function buildQuestion(db: DB, card: QuizCard, qtype: Qtype, rng: Rng = M
     .map(w => ({ word: w, score: (pos(w.meaning_zh) === pos(answer.meaning_zh) ? 100 : 0) + 20 - editDistance(a, head(w.headword)) + (head(w.headword)[0] === a[0] ? 4 : 0) + (Math.abs(head(w.headword).length - a.length) <= 2 ? 3 : 0) }))
     .sort((a,b) => b.score - a.score || a.word.id - b.word.id);
   const chosen: Word[] = [answer];
-  const valid = (w: Word) => chosen.every(other => head(other.headword) !== head(w.headword) && norm(display(other)) !== norm(display(w)) && ![...meaningSet(w.meaning_zh)].some(s => meaningSet(other.meaning_zh).has(s)));
+  const valid = (w: Word) => chosen.every(other => head(other.headword) !== head(w.headword) && norm(display(other)) !== norm(display(w)) && !meaningsOverlap(w.meaning_zh, other.meaning_zh));
   // Work through score bands of about 12. Exhaust one band before relaxing the POS preference.
   for (const same of [true, false]) {
     const pool = candidates.filter(c => (pos(c.word.meaning_zh) === pos(answer.meaning_zh)) === same);
@@ -61,26 +72,37 @@ export function buildQuestion(db: DB, card: QuizCard, qtype: Qtype, rng: Rng = M
     }
   }
   if (chosen.length < 4) return null;
-  return { qtype, prompt: qtype === 'meaning_choice' ? (answer.meaning_source === 'manual' ? answer.meaning_zh! : answer.meaning_zh!.split('\n').slice(0, 2).join('\n')) : undefined,
-    options: shuffle(chosen, rng).map(w => ({ wordId: w.id, text: display(w) })) };
+  return { qtype, prompt: qtype === 'meaning_choice' ? promptOf(answer) : undefined,
+    options: shuffle(chosen, rng).map(w => ({ wordId: w.id, text: qtype === 'listen_choice' ? maskAnswer(display(w), answer.headword) : display(w) })) };
+}
+/** 看义选词题面：作答前遮住答案词头和词形原形（服务端也遮，不只靠前端） */
+function promptOf(answer: Word) {
+  return maskAnswer(answer.meaning_source === 'manual' ? answer.meaning_zh! : answer.meaning_zh!.split('\n').slice(0, 2).join('\n'), answer.headword);
 }
 function renderIssue(db: DB, issue: Issue): Question {
   const answer = db.prepare('SELECT * FROM words WHERE id=?').get(issue.answer_word_id) as Word;
   const words = (JSON.parse(issue.options_json) as number[]).map(id => db.prepare('SELECT * FROM words WHERE id=?').get(id) as Word);
-  return { id: issue.id, qtype: issue.qtype, ...(issue.qtype === 'meaning_choice' ? { prompt: answer.meaning_source === 'manual' ? answer.meaning_zh! : answer.meaning_zh!.split('\n').slice(0, 2).join('\n') } : {}), options: words.map(w => ({ wordId: w.id, text: issue.qtype === 'listen_choice' ? first(w.meaning_zh) : w.headword })) };
+  return { id: issue.id, qtype: issue.qtype, ...(issue.qtype === 'meaning_choice' ? { prompt: promptOf(answer) } : {}), options: words.map(w => ({ wordId: w.id, text: issue.qtype === 'listen_choice' ? maskAnswer(first(w.meaning_zh), answer.headword) : w.headword })) };
 }
 export function issueQuestion(db: DB, card: QuizCard, now = new Date(), context: Context = 'study', rng: Rng = Math.random, forced?: Qtype): Question | null {
   const existing = db.prepare(`SELECT * FROM question_issues WHERE card_id=? AND context=? AND answered_at IS NULL AND issued_at>=? AND issued_at<? ORDER BY id DESC LIMIT 1`).get(card.id, context, shDayStart(now).toISOString(), new Date(shDayStart(now).getTime() + 86400_000).toISOString()) as Issue | undefined;
   if (existing) return renderIssue(db, existing);
+  // 另一个 context（学习/练错词）今天还有没答的选择题：/api/review 会拒绝翻面自评，所以这里也出同一题型的选择题，避免卡住
+  const other = openQuestion(db, card.id, now);
   const config = readSettings(db);
-  const qtype = card.mode === 'recognize' && (card.state === State.New || config.choice_enabled === '0') ? 'flip' : forced ?? pickQtype(card, rng, config);
-  const q = buildQuestion(db, card, qtype, rng); if (!q) return null;
+  const qtype = other && card.mode === 'recognize' ? other.qtype
+    : card.mode === 'recognize' && (card.state === State.New || config.choice_enabled === '0') ? 'flip' : forced ?? pickQtype(card, rng, config);
+  const q = buildQuestion(db, card, qtype, rng); if (!q) return other ? renderIssue(db, other) : null;
   const r = db.prepare('INSERT INTO question_issues(card_id,qtype,context,options_json,answer_word_id,issued_at) VALUES (?,?,?,?,?,?)').run(card.id, q.qtype, context, JSON.stringify(q.options.map(o => o.wordId)), card.word_id, now.toISOString());
   return { ...q, id: Number(r.lastInsertRowid) };
 }
-/** 该卡今天在该 context 下是否有未作答的选择题（有就必须走 /api/answer，由服务端判对错） */
-export function hasOpenQuestion(db: DB, cardId: number, context: Context, now = new Date()) {
-  return !!db.prepare(`SELECT 1 FROM question_issues WHERE card_id=? AND context=? AND answered_at IS NULL AND issued_at>=? AND issued_at<? LIMIT 1`).get(cardId, context, shDayStart(now).toISOString(), new Date(shDayStart(now).getTime() + 86400_000).toISOString());
+function openQuestion(db: DB, cardId: number, now: Date, context?: Context) {
+  return db.prepare(`SELECT * FROM question_issues WHERE card_id=? AND (? IS NULL OR context=?) AND answered_at IS NULL AND issued_at>=? AND issued_at<? ORDER BY id DESC LIMIT 1`)
+    .get(cardId, context ?? null, context ?? null, shDayStart(now).toISOString(), new Date(shDayStart(now).getTime() + 86400_000).toISOString()) as Issue | undefined;
+}
+/** 该卡今天是否有未作答的选择题（不分 context；给了 context 只看该 context）。有就必须走 /api/answer，由服务端判对错 */
+export function hasOpenQuestion(db: DB, cardId: number, context?: Context, now = new Date()) {
+  return !!openQuestion(db, cardId, now, context);
 }
 export function availableQtypes(db: DB, card: QuizCard, cards: QuizCard[]): Qtype[] {
   const types: Qtype[] = ['flip'];

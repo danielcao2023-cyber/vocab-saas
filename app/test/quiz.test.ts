@@ -2,7 +2,7 @@ import { it, expect, describe } from 'vitest';
 import { Rating, State } from 'ts-fsrs';
 import { buildApp } from '../server/src/app.ts';
 import { buildQuestion, issueQuestion, meaningSet, pickQtype } from '../server/src/quiz.ts';
-import { review, todaySummary } from '../server/src/study.ts';
+import { review, setWrong, todaySummary } from '../server/src/study.ts';
 import { card, database, seeded, T, day } from './v3-helpers.ts';
 
 describe('question selection and distractors', () => {
@@ -94,6 +94,10 @@ it('bad option is rejected without consuming the issue; flip, spell and dictatio
   const turn=(await app.inject('/api/next')).json();
   expect((await app.inject({method:'POST',url:'/api/answer',payload:{questionId:turn.question.id,choiceWordId:9999,answerId:'bad'}})).statusCode).toBe(400);
   expect(db.prepare('SELECT COUNT(*) n FROM review_logs').get()).toEqual({n:0});
+  // fix1：学习里有待答选择题时，practice 翻面自评也要 409；答完选择题、词在错词本里才接受
+  expect((await app.inject({method:'POST',url:'/api/review',payload:{cardId:turn.card.id,rating:3,answerId:'flip',context:'practice',durationMs:100}})).statusCode).toBe(409);
+  expect((await app.inject({method:'POST',url:'/api/answer',payload:{questionId:turn.question.id,choiceWordId:turn.card.word_id,answerId:'study-choice'}})).statusCode).toBe(200);
+  setWrong(db,1,true,T);setWrong(db,2,true,T);
   const reviewResult=await app.inject({method:'POST',url:'/api/review',payload:{cardId:turn.card.id,rating:3,answerId:'flip',context:'practice',durationMs:100}});expect(reviewResult.statusCode).toBe(200);
   for(const mode of ['spell','dictation']){
     const cid=card(db,2,mode);now=day(1);
