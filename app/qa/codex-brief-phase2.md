@@ -1,9 +1,9 @@
 # Codex 任务书：背单词 v3 第二期（查词、按高频分组浏览、AI 讲解流水线）
 
-> 起草：工程负责人，2026-10-17 15:30（上海时间）。**状态：草稿，等用户确认第 12 节的问题后再运行。**
+> 起草：工程负责人，2026-10-17 15:30（上海时间）；15:55 按用户决定更新。**状态：本书和查词/词表视觉稿（`v3/design/p2-*`）是同一个批准包，用户批准后才会启动你。你拿到本书时，本书和视觉稿都已批准，照做即可，不要因为批准问题停下。**
 > 基线：app 仓库分支 `feat/v3-phase2`，从 `feat/v3-phase1` 的 `c007ded` 拉出。分支由工程负责人建好，你不要建分支，也不要切分支。
-> 依据：`v3/方案.md`（1.1、1.5、第 3 节第 2 期、第 4 节第 2 期验收）、`v3/phase2-ai-content-spec.md`（下称“内容规格”）、`v3/design/design-notes.md` 第 10 节，以及视觉稿 `card-back-explain.html`、`card-back-explain-m.html`、`explain-pending.html` 和 `shots/` 里对应的三张图。
-> 用户已定：查词和浏览的范围；浏览按**高频分组**，不按教材单元；AI 内容 1600 词全部生成、**不设每日上限**（订阅额度够用），但必须能断点续跑、按 input_hash 幂等；每次调用显式写 `-m gpt-6-luna`，不改 `~/.codex/config.toml`。
+> 依据：`v3/方案.md`（1.1、1.5、第 3 节第 2 期、第 4 节第 2 期验收）、`v3/phase2-ai-content-spec.md`（下称“内容规格”）、`v3/design/design-notes.md` 第 10、11 节，以及视觉稿：讲解区 `card-back-explain.html`、`card-back-explain-m.html`、`explain-pending.html`；查词和词表 `p2-*.html`；`shots/` 里对应的截图（清单见 3.2、4.3 节）。
+> 用户已定：查词和浏览的范围；浏览按**高频分组**，不按教材单元；AI 内容 1600 词全部生成、**不设每日上限**（订阅额度够用），但必须能断点续跑、按 input_hash 幂等；每次调用显式写 `-m gpt-6-luna`，不改 `~/.codex/config.toml`。2026-10-17 15:26 又定了四件事，见第 12 节。
 
 ## 0. 工作目录与硬性限制（先读）
 
@@ -16,7 +16,7 @@
 ```
 运行方式：你以 `-C ~/dev/vocab-saas` 启动。**只能写 `app/` 和 `~/dev/vocab-saas/.tmp/`**。所有 npm 命令先 `cd app`。
 
-- **本次绝对不调用任何模型**：不运行 `codex`（连 `codex --help` 也不要跑）、不跑 `scripts/ai-generate.ts` 的真实模式、不联网。流水线只用**模拟模型**（注入的假 runner）做单元测试。20 词试点由工程负责人之后另行运行，不归你。
+- **本次绝对不调用任何模型**：不运行 `codex`（连 `codex --help` 也不要跑）、不跑 `scripts/ai-generate.ts` 的真实模式、不联网。流水线只用**模拟模型**（注入的假 runner）做单元测试。试点由工程负责人之后另行运行，不归你。
 - 不读、不写、不打印 `~/.codex/` 下的任何文件；代码里也不许出现写这个目录的逻辑。
 - 不 `git commit`、`push`、`checkout`、`switch`、`branch`、`stash`、`reset`；改动留在工作区。
 - 不装依赖，不改 `package.json` 和 `package-lock.json`。
@@ -91,16 +91,21 @@
 - 两个接口**都不能写任何表**（包括 daily_stats 和 question_issues）。要有测试：调用前后对所有表求 hash，结果相同。
 - “加入错词本”复用 `POST /api/wrong/:wordId {inBook:true}`，规则不变（不增加 wrong_count，correct_days 清空）。查词页里的“移出错词本”用 `{inBook:false}`。
 
-### 3.2 界面（这部分没有视觉稿，按 design.css 的组件和 tokens 做，不发明新的视觉语言）
-- **桌面**：顶栏中间放搜索框（placeholder“查单词，英文或中文”），快捷键 `/` 聚焦。**手机**：顶栏右侧放一个放大镜按钮，点开后搜索框盖住整个顶栏。学习页（study）不显示搜索。
+### 3.2 界面（必须对照视觉稿）
+- **按 `v3/design/design-notes.md` 第 11 节和下列稿子实现**。这些稿子是本次批准包的一部分，启动你之前已经批准；直接照稿做，颜色、间距、文案以稿子和 `design.css` 为准，不发明新的视觉语言：
+  - 搜索：`p2-search-en.html`、`p2-search-en-m.html`、`p2-search-zh.html`、`p2-search-inflect.html`、`p2-search-inflect-m.html`、`p2-search-empty.html`、`p2-search-empty-m.html`；截图 `shots/p2-search-{en,zh,inflect,empty}-desktop.png`、`shots/p2-search-{en,inflect,empty}-mobile.png`。
+  - 单词详情：`p2-word.html`、`p2-word-m.html`；截图 `shots/p2-word-desktop.png`、`shots/p2-word-mobile.png`。
+  - 稿子用到的样式在 `design.css` 末尾“第二期：查词、词表”一段，移植到 `web/src/styles/app.css`（类名可以改，效果要一致）。稿里的中考高频名次和依据是示意数据。
+- **桌面**：顶栏中间放搜索框（placeholder“查单词，英文或中文”），快捷键 `/` 聚焦，Esc 关闭下拉。**手机**：顶栏右侧放一个放大镜按钮，点开后变成全屏搜索层，右侧“取消”。学习页（study）不显示搜索。
+- 词形命中的结果，释义前加标签“went 是 go 的过去式”这一类说明（按 `word_forms.kind` 选：过去式、过去分词、现在分词、第三人称单数、复数、比较级、最高级）。
 - 输入时防抖 200ms 出下拉列表：最多 8 条，方向键选择，Enter 打开。打开后进入单词详情视图 `view='word'`，不引入路由；浏览器后退回到上一个视图，用 `history.pushState` 加 `popstate`，地址形如 `/?word=<id>`。
 - 详情页内容：
   - 大号词头、库里的音标、原有的浏览器朗读按钮。
   - 释义：用 `MeaningList`，规则和卡片背面一致。
-  - 学习状态 chip：新词 / 学习中 / 熟悉 / 掌握；有卡时附“下次复习：M月D日”，用上海日期。
-  - 错词本状态，以及“加入错词本 / 移出错词本”按钮。
-  - 讲解区：与 5.5 节是同一个组件，默认全部折叠，只展开例句。
-- 没找到时显示“没找到这个词。课标词表里没有，或者换个拼法试试。”（新文案，放进 `copy.ts`）。
+  - 学习状态 chip：新词 / 学习中 / 熟悉 / 掌握（总状态跟认词卡一致，口径同进度页）；有卡时附“下次复习：M月D日”，用上海日期；下面列认词、拼写、听写三张卡各自的状态和下次复习。
+  - 错词本：在本里时显示“在错词本里”、错过次数、1/3 天进度和“移出错词本”；不在时显示“不在错词本里。”“加入错词本”和说明“加入后会出现在“练错词”里；查词本身不算学习，不会改复习安排。”
+  - 讲解区：与 5.5 节是同一个组件，但在详情页里**6 块全部折叠**（用户定），每块标题后显示一行预览，右上“全部展开”。
+- 没找到时显示“没找到这个词。”“课标词表里没有，或者换个拼法试试。”和两条提示“英文、中文都能查，比如 receive、收到”“过去式、复数这些变化形式也能查，比如 went、children”（新文案，放进 `copy.ts`）。
 
 ## 4. 按高频分组浏览（用户已定：不按教材单元）
 
@@ -113,7 +118,7 @@
   - 两个字段都没有数据的词，排在最后，`is_inferred=1`，`basis`=“词频库无数据，排在最后（推断）”。
   - 短语词头取 `mainHeadwords()` 第一个变体去查；查不到就按无数据处理。
   - 脚本幂等，重跑结果相同。
-- **`zk_high`（中考高频）**：**目前没有找到可靠的公开数据源**（调研见第 11 节）。所以一律由模型**推断**，`is_inferred=1`：
+- **`zk_high`（中考高频）**：**用户已定（2026-10-17 15:26）：由模型按词义和用法打分推断排序，逐词写明依据，整组标「推断」。** 原因：工程负责人 2026-10-17 核对过公开来源，没有找到可靠的中考词频数据（调研见第 11 节）。所以一律 `is_inferred=1`：
   - 作为流水线的第二种任务（`ai_jobs.kind='zk_freq'`，`prompt_version='p2-zk-v1'`）。每批给模型若干词（词头、释义、级别），要求对每个词输出 `{ "word", "score": 1–5, "basis_zh" }`。`score` 表示“在中考听力、阅读、完形、写作里常见的程度”；`basis_zh` ≤ 40 字，说明理由，如“基础高频动词，常见于完形和书面表达”。
   - **校验**：
     - `score` 必须是 1–5 的整数。
@@ -131,12 +136,14 @@
   - 该组还没有 `word_freq` 数据时，`items` 按 id 排序，`coverage.ranked=0`，界面提示“这个分组还没排好，先按词表顺序显示。”
   - 不写任何表，要有测试。
 
-### 4.3 界面
+### 4.3 界面（必须对照视觉稿）
+- 按 design-notes 第 11 节和 `p2-browse-zk.html`、`p2-browse-zk-m.html`、`p2-browse-daily.html` 实现（截图 `shots/p2-browse-zk-desktop.png`、`shots/p2-browse-zk-mobile.png`、`shots/p2-browse-daily-desktop.png`），同 3.2 节：稿子已在批准包里批准，直接照做。
 - 导航加一个标签“词表”（桌面顶栏和手机底栏都加，顺序：今日 / 错词本 / 词表 / 进度）。
 - 页面顶部：分组切换做成分段按钮“中考高频 / 日常高频”；下面三个筛选：级别（全部 / 核心词 / 二级词）、首字母（A–Z 横向滚动的小格子加“全部”）、学习状态（全部 / 新词 / 学习中 / 熟悉 / 掌握）。
 - 列表每行：名次、词头、音标、释义第一行、级别标签、状态 chip、错词本小标。
-  - `isInferred` 为真时，名次旁边显示灰色小标签**「推断」**，悬停或点按显示 `basis`。中考高频这一组整组都是推断，所以列表顶部再加一行说明：“中考高频排序是根据词义和用法推断的，不是真题统计。”（新文案）
-  - 日常高频的 `basis` 也能点开看，例如“COCA 词频第 312 位”。
+  - 每行释义下面直接显示一行“依据：{basis}”（稿子如此，不用悬停）。`isInferred` 为真时，名次下面显示虚线框小标签**「推断」**。
+  - 中考高频这一组整组都是推断，列表上方常驻一条警示浅底说明：“「推断」 中考高频排序是根据词义和用法推断的，不是真题统计。每个词的依据写在释义下面。”（新文案）
+  - 日常高频列表上方一行说明：“按 COCA（美国当代英语语料库）词频排序，数据来自 ECDICT。词频库里没有的词排在最后，标「推断」。”（新文案）
 - 点一行进入 3.2 节的单词详情。分页用“加载更多”。
 
 ## 5. AI 讲解
@@ -185,7 +192,8 @@
 - **单实例锁**：`~/dev/vocab-saas/.tmp/ai/generate.lock`，里面写 pid；pid 已不存在时可以接管。
 - **不设每日上限**（用户已定），但要能随时 Ctrl-C：当前批完成或超时后，干净退出。
 - **`--dry-run`**：只打印将要处理的批（词列表和 hash），不调用，不写库。
-- **`--pilot`**（20 词试点用，配合 `--limit 20 --words <list>`）：
+- **`--pilot`**（试点用）：
+  - 词表默认（用户已定）：按 `learnOrder` 取接下来要学的 20 个新词，再加 receive、accept、whether（已在其中就不重复），共最多 23 个。`--words` 可以覆盖默认词表。`--dry-run --pilot` 打印这份词表。
   - 正常调用并入库，但**不批准任何内容**。
   - 结束时在 `app/qa/ai-pilot/<上海时间戳>/` 写：
     - `summary.md`：每批的词、批大小、耗时（ms）、重试次数、退出码、通过、标记、拒绝、降级的数量，以及总耗时和平均每词耗时。
@@ -217,8 +225,8 @@
 
 ### 5.5 讲解区界面（必须对照视觉稿）
 - 新组件 `components/ExplainPanel.vue`，**按 design-notes 第 10 节和三张截图实现**。
-  - 位置：认词卡翻面后，放在释义下面、评分按钮上面；拼写和听写答完后，放在反馈条下面；单词详情页里也用它。选择题答完后不显示（保持第一期的界面）。
-  - 每块用 `<details>`，顺序固定。默认展开例句和搭配；拼写/听写答完后只展开例句；折叠时右侧显示一行预览。展开状态存 localStorage。快捷键 E 全部展开或收起（输入框聚焦时不响应）。
+  - 位置：认词卡翻面后，放在释义下面、评分按钮上面；拼写和听写答完后，放在反馈条下面；单词详情页里也用它（详情页全部折叠，见 3.2 节）。选择题答完后不显示（保持第一期的界面）。
+  - 每块用 `<details>`，顺序固定。卡片背面默认展开例句和搭配；拼写/听写答完后只展开例句；单词详情页全部折叠；折叠时右侧显示一行预览。展开状态存 localStorage。快捷键 E 全部展开或收起（输入框聚焦时不响应）。
   - 讲解区标题旁的总标签“AI 生成 · 可能有误”；每块右下角“这条有问题”，点开出 4 个选项。提交后该块隐藏，原位显示“已记下，这条先不再出现。”
   - 词源框和联想框的样式、文字，严格照稿子；联想框里写“不是词源”。降级来的联想（`downgraded_from`）同样按联想显示。
   - 近义/反义做成小卡片，显示“已学”和“课标外”；发音只有文字，不显示 AI 给的音标，**讲解区里没有任何播放按钮或音频**。
@@ -233,13 +241,30 @@
 - 没有 `--ecdict` 或文件不存在时报错退出，不改库。
 - 测试用一个只有 5 行的 fixture CSV。
 
+## 6A. 内容导出/导入工具（用户已定：本期写好并测试；**不对任何真实库运行**）
+用途：流水线在 Studio `~/dev/vocab-saas` 的库副本上生成和审核；上线时把审核过的结果搬进正式库。**本期只写代码和测试。对正式库（`~/apps/vocab`）的使用要在上线时另批，你和本期任何人都不运行它。**
+- `scripts/ai-content-export.ts --db <path> --out <file.json>`：
+  - 只读打开库（`readonly: true`）。
+  - 导出 `word_content` 里 `status='approved'` 的行（含已隐藏的，让隐藏状态跟着走），以及全部 `word_freq` 行。
+  - 每行用 `(words.source, words.headword)` 标识词，不用 id。内容带上 kind、body、flags_json、input_hash、downgraded_from、approved_at、hidden_at、hidden_reason、model/prompt_version；word_freq 带上 grp、rank、score、basis、source、is_inferred。
+  - 文件头：`format='vocab-p2-content'`、`version=1`、导出时间（ISO，带时区）、行数、正文的 sha256。
+- `scripts/ai-content-import.ts --db <path> --in <file.json> [--yes --backup <path>]`：
+  - 默认只做检查并打印计划：新增、已存在（跳过）、找不到词、冲突的行数；不写库。
+  - `--yes` 必须同时给 `--backup <path>`：先用 better-sqlite3 的 `backup()` 备份到该路径，再在**一个事务**里写入；出错整体回滚。
+  - 幂等：同一个词、同一个 kind、同一个 input_hash 已有行就跳过（任何 status）；word_freq 按 `(word_id, grp)` 写入，内容相同就跳过。重复导入同一文件，第二次 0 行变化。
+  - 找不到的词只报告，不新建词。
+  - 只写 `word_content`、`word_freq` 两张表；其他表（cards、review_logs、wrong_words、daily_stats、words、settings 等）一行不动，测试里用全表 hash 验证。
+  - 目标库没有第二期迁移的列或表时，报错退出，不自己跑迁移。文件头格式、版本或 sha256 不对时报错退出。
+  - **路径保护**：`--db` 解析后位于 `$HOME/apps/` 下时，一律拒绝并退出（提示“正式库要在上线时另批”）。本期不提供绕过开关；上线时如获批准，再由工程负责人单独改。
+- 测试只用 `:memory:` 或 `~/dev/vocab-saas/.tmp/` 下的临时库。
+
 ## 7. 第一期界面不回退
 - 首页、学习、错词本、完成页、家长页的现有测试全部保持。
 - 新增的“词表”标签、搜索框**不出现在**学习页和 `/parent`；孩子页面里仍然不能出现 `/parent`。
 
 ## 8. 测试（`npm test`、`npm run typecheck`、`npm run build` 都必须通过）
 
-新增测试文件：`test/p2-migration.test.ts`、`content-validate.test.ts`、`ai-pipeline.test.ts`、`ai-review.test.ts`、`search.test.ts`、`browse.test.ts`、`freq.test.ts`、`explain-ui.test.ts`。至少覆盖：
+新增测试文件：`test/p2-migration.test.ts`、`content-validate.test.ts`、`ai-pipeline.test.ts`、`ai-review.test.ts`、`search.test.ts`、`browse.test.ts`、`freq.test.ts`、`explain-ui.test.ts`、`content-transfer.test.ts`。至少覆盖：
 
 - **迁移**：
   - 在第一期结构的库上（可用 b4429a2 fixture 加第一期迁移）跑第二期迁移，旧表旧列逐行不变，可重复执行。
@@ -262,6 +287,8 @@
   - 锁文件防止两个实例同时跑。
   - `--dry-run` 不写库。
   - `--pilot` 生成 summary.md、samples.md 和每批的 JSON，summary 里有每批耗时；pilot 不批准任何内容。
+- **导出/导入**：往返后内容一致；重复导入第二次 0 行变化；默认（不带 `--yes`）不写库；`--yes` 不带 `--backup` 拒绝；找不到的词只报告；除 word_content、word_freq 外全表 hash 不变；未迁移的库、坏文件头、sha256 不符都报错且不写库；`$HOME/apps/` 下的路径被拒绝（测试里用假的 HOME）；事务中途出错整体回滚。
+- **试点词表**：`--pilot` 不给 `--words` 时，词表等于 learnOrder 接下来的 20 个新词加 receive、accept、whether（去重）。
 - **审核**：`approve` 不批准 review 状态的块；`apply` 按表处理；抽样数量符合规格第 6 节，同一种子结果相同。
 - **zk_freq**：`basis_zh` 里含数字或“真题出现”要拒绝；rank 的生成规则正确；`is_inferred` 必须是 1。
 - **daily_high**：用 fixture ecdict 验证 frq、bnc、无数据三种情况的 rank、basis、is_inferred，重跑结果相同。
@@ -269,7 +296,8 @@
 - **内容接口**：只返回 approved 且未隐藏的块；反馈后隐藏，重复提交幂等；坏数据返回 pending，学习接口不受影响。
 - **前端**：
   - ExplainPanel 的 SSR 渲染：块顺序正确，空块不显示，联想框里有“不是词源”，讲解区没有 `<audio>` 或播放按钮，pending 文案正确。
-  - 推断标签会显示。
+  - 推断标签会显示；中考高频提示条和每行依据会显示。
+  - 单词详情里讲解区 6 块全部折叠。
   - 搜索框不出现在 StudyView。
   - `COPY` 的新键都有值。
 
@@ -283,26 +311,28 @@
   - 没做或没验证的事项。
 - 预计改动：
   - 服务端：`server/src/db.ts`、`app.ts`、`study.ts`（抽出状态函数），新增 `server/src/content-validate.ts`、`content.ts`、`search.ts`、`freq.ts`、`learn-order.ts`、`ai/codex-runner.ts`、`ai/pipeline.ts`、`ai/prompts.ts`、`ai/schema.ts`。
-  - 脚本：`scripts/ai-generate.ts`、`ai-review.ts`、`import-forms.ts`、`freq-daily.ts`、`freq-zk-rank.ts`。
+  - 脚本：`scripts/ai-generate.ts`、`ai-review.ts`、`import-forms.ts`、`freq-daily.ts`、`freq-zk-rank.ts`、`ai-content-export.ts`、`ai-content-import.ts`。
   - 前端：`web/src/components/ExplainPanel.vue`、`SearchBox.vue`，`views/WordView.vue`、`BrowseView.vue`。
   - 其他：`.gitignore`。
 - **本期不做**：
   - 真题语料统计；按教材单元浏览；音频（包括讲解区里的任何播放）；
   - 实际调用模型、试点运行、全量生成；
+  - 对任何真实库运行导出/导入工具（尤其是 `~/apps/vocab`）；
   - AI 易混词做干扰项（第三期）；登录、PIN。
 
 ## 10. 运行后由工程负责人做（不归你）
 - 复核、提交、18425 测试实例、截图对照视觉稿。
 - 用户确认后，在 Studio 跑：
   1. `import-forms`、`freq-daily`；
-  2. `ai-generate --pilot --limit 20 --words <20 个词>`，分别用 `--batch 1/5/10` 比较；
+  2. `ai-generate --pilot`（默认词表：learnOrder 接下来的 20 个 + receive、accept、whether），分别用 `--batch 1/5/10` 比较；
   3. 把 summary.md、samples.md 交用户和领域研究；
   4. 定下批大小后再全量跑。
+  5. 上线：用 `ai-content-export/import` 把审核过的内容搬进正式库——**要在上线时另批**，批准前不对 `~/apps/vocab` 做任何事。
 - 前后比对 `~/.codex/config.toml` 的 sha256。
 
 ## 11. 调研：“中考高频”有没有可靠的公开来源（工程负责人，2026-10-17 上海时间）
 
-结论：**没有找到可以直接引用的、方法和数据都公开的全国中考词频表**，所以 `zk_high` 本期一律标「推断」。“日常高频”有可靠来源（ECDICT 的 frq/bnc）。
+结论：**没有找到可以直接引用的、方法和数据都公开的全国中考词频表**（来源核对日期 2026-10-17），所以 `zk_high` 本期一律标「推断」。用户 2026-10-17 15:26 据此决定：中考高频按模型推断排序，写明依据并标「推断」。“日常高频”有可靠来源（ECDICT 的 frq/bnc）。
 
 - ECDICT（https://github.com/skywind3000/ECDICT ，2026-10-17 查看）：`frq` 是当代语料库（COCA）词频顺序，`bnc` 是 BNC 词频顺序，数值越小越常用；0 表示没有数据（见 issue #57：https://github.com/skywind3000/ECDICT/issues/57 ）。
   - `tag` 里的 `zk` 只表示“属于中考大纲词汇”，**不是频率**，不能用来排中考高频。
@@ -314,8 +344,8 @@
   - https://max.book118.com/html/2026/0523/6212101050012140.shtm （自称统计“700 余套真题”）
 - 自己统计的路径：用真题原卷文本统计词频，在技术上可行（参见 https://blog.csdn.net/m0_66450607/article/details/140676204 ，北京 2012–2022 年）。但网上的真题合集多来自网盘转存，来源和授权都不清楚，本期不做；如果用户能提供来源清楚的真题文本，第三期可以加上 `source='真题语料'`、`is_inferred=0`。
 
-## 12. 运行前要用户确认的问题
-1. 查词、词表页没有视觉稿。要先出稿给你看（建议），还是让 Codex 按现有组件风格直接做、做完再截图看？
-2. 中考高频由 gpt-6-luna 给每个词打 1–5 分，再推出排序，整组标「推断」并写明“不是真题统计”。这样可以吗？还是暂时只做“日常高频”，中考高频等有真题来源再说？
-3. 试点的 20 个词：默认取孩子接下来要学的 20 个（按 learnOrder），另外加入 receive、accept、whether 这三个稿子里核对过的词。要换成你指定的词吗？
-4. 生成内容的上线方式：流水线在 Studio `~/dev/vocab-saas` 的库副本上跑，审核通过后再导入正式库。导入工具和上线步骤需要另批（`~/apps/vocab` 现在禁止触碰）。本期先不做导入工具，可以吗？
+## 12. 用户已定（2026-10-17 15:26 上海时间；原第 12 节的待确认问题已全部定下，没有遗留的阻塞项）
+1. **查词、词表先出视觉稿**：已出，即 `v3/design/p2-*` 和 design-notes 第 11 节，和本书一起作为批准包，批准后才启动你。界面照稿做（3.2、4.3 节）。
+2. **中考高频**：按本书 4.1 节由模型打分推断排序，逐词写依据，整组标「推断」，并写明“不是真题统计”。依据：2026-10-17 的来源核对没有找到可靠公开来源（第 11 节）。
+3. **试点词表**：默认取 learnOrder 接下来的 20 个新词，加 receive、accept、whether（5.2 节 `--pilot`）。
+4. **导出/导入工具**：本期写代码和测试（6A 节），不对任何真实库运行；对 `~/apps/vocab` 的使用在上线时另批。
