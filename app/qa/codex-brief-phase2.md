@@ -1,7 +1,7 @@
 # Codex 任务书：背单词 v3 第二期（查词、按高频分组浏览、AI 讲解流水线）
 
 > 起草：工程负责人，2026-10-17 15:30（上海时间）；15:55 按用户决定更新。**状态：本书和查词/词表视觉稿（`v3/design/p2-*`）是同一个批准包，用户批准后才会启动你。你拿到本书时，本书和视觉稿都已批准，照做即可，不要因为批准问题停下。**
-> 基线：app 仓库分支 `feat/v3-phase2`，从 `feat/v3-phase1` 的 `c007ded` 拉出。分支由工程负责人建好，你不要建分支，也不要切分支。
+> 基线：app 仓库分支 `feat/v3-phase2`，从 `feat/v3-phase1` 拉出，已变基到第一期修正后的 `c39117d`。分支由工程负责人建好，你不要建分支，也不要切分支。
 > 依据：`v3/方案.md`（1.1、1.5、第 3 节第 2 期、第 4 节第 2 期验收）、`v3/phase2-ai-content-spec.md`（下称“内容规格”）、`v3/design/design-notes.md` 第 10、11 节，以及视觉稿：讲解区 `card-back-explain.html`、`card-back-explain-m.html`、`explain-pending.html`；查词和词表 `p2-*.html`；`shots/` 里对应的截图（清单见 3.2、4.3 节）。
 > 用户已定：查词和浏览的范围；浏览按**高频分组**，不按教材单元；AI 内容 1600 词全部生成、**不设每日上限**（订阅额度够用），但必须能断点续跑、按 input_hash 幂等；每次调用显式写 `-m gpt-6-luna`，不改 `~/.codex/config.toml`。2026-10-17 15:26 又定了四件事，见第 12 节。
 
@@ -24,22 +24,22 @@
 - 不在 `app/data/` 下创建或修改 `.db`；测试用 `:memory:` 或 `~/dev/vocab-saas/.tmp/` 下的临时文件，用完删掉。
 - 不启动监听端口的服务；接口测试用 `buildApp(db).inject(...)`。
 - **迁移只加不改**：只能 `addColumn`、`CREATE TABLE IF NOT EXISTS`、`CREATE INDEX IF NOT EXISTS`、`INSERT OR IGNORE` settings。不改已有 CHECK，不重建表，不改旧行。
-- 第一期的行为、接口和测试全部保持，不得回退（`npm test` 现有 19 个文件、118 个测试必须继续通过）。
+- 第一期的行为、接口和测试全部保持，不得回退（`npm test` 现有 20 个文件、127 个测试必须继续通过）。
 - 不确定的地方，按本书的默认做法实现，并写进交付报告的“假设”一节；**不要停下来提问**。
 
-## 1. 现状（行号以 c007ded 为准）
+## 1. 现状（行号以 c39117d 为准）
 
 - `server/src/db.ts`：
   - `SCHEMA` 中已有但未使用的表：`word_content`（第 27–36 行，status CHECK 只有 pending/generated/review/approved）、`content_feedback`（第 37–43 行）、`ai_jobs`、`ai_cache`（第 68–69 行）。
   - `words.freq_rank` 由导入写入，取 ECDICT 的 `frq`（COCA 词频位次），没有时用 `bnc`（`import.ts` 第 135、162 行）。注意：这个列混了两种来源，不能直接当“依据”展示。
   - 第一期迁移在第 103–120 行，`recomputeDailyStats(db)` 在第 121 行。
-- `server/src/text.ts`：`mainHeadwords()`（第 7 行）、`normalizeQuotes()`。
+- `server/src/text.ts`：`mainHeadwords()`（第 7 行）、`normalizeQuotes()`；`answerForms()`（第 13 行，规则推出的词形，例句校验和查词可以复用）、`maskAnswer()`（第 22 行）。
 - `server/src/import.ts`：ECDICT 解析在第 130–138 行，只取 phonetic/translation/pos/bnc/frq，没有取 `exchange`（词形变化）和 `tag`。ECDICT 原文件在 Studio 的 `app/data/raw/ecdict.csv`（已 gitignore）。列为：`word,phonetic,definition,translation,pos,collins,oxford,tag,bnc,frq,exchange,detail,audio`。
 - `server/src/study.ts`：
   - `progress()` 第 182 行，给出四档：新词 / 学习中 / 熟悉 / 掌握。
   - `setWrong()` 第 208 行，放回错词本时不增加 wrong_count。
   - `nextCard()` 第 66 行，新词顺序：已有 New 认词卡按 id；否则按 `level2_every` 穿插 priority 2/1，组内按 `COALESCE(freq_rank,999999), id`。
-- `server/src/app.ts`：第一期全部路由在第 25–75 行。
+- `server/src/app.ts`：第一期全部路由在第 26–76 行。
 - 前端：
   - `web/src/App.vue`：顶栏第 45 行，tabs 第 40 行。
   - `components/RecognizeCard.vue`（翻面后的释义和评分）。
