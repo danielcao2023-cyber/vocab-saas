@@ -68,3 +68,12 @@ npm test                          # vitest
 - **seed:due 加了验收用例**：认词卡里固定有 act（3 条）、enough（4 条），能看到“更多释义”；另有一个**只在测试库里的测试词 `qatest`**（source=`qa-only-test`，原始释义全部被过滤），显示“释义待人工看”。输出里列出每张拼写卡可以接受的答案。
 - **运行版本**：`npm run build` 最后一步 `scripts/write-version.mjs` 把 `git rev-parse --short HEAD`（以及工作区是否有改动）写进 `dist/version.json`，git 不可用时写 `unknown`。服务启动时只读一次：先看 `APP_COMMIT` 环境变量，再读 `dist/version.json`，都没有就是 `unknown`；运行时不调用 git，读不到也不报错。`GET /health` 带 `commit` 字段，`GET /version` 返回完整信息。
 - **答“忘了”后同一轮里会再出现（设计如此）**：ts-fsrs 5.4.2，代码里只设了 `fsrs({ enable_fuzz: false })`，其余用库默认值：`learning_steps = ['1m','10m']`，`relearning_steps = ['10m']`，`enable_short_term = true`。实测：新词答“忘了”，1 分钟后再到期；复习卡答“忘了”进入重学，10 分钟后再到期。所以练完一轮后首页复习数可能又变大（例如 2 → 10 分钟后 3），这是正常的短间隔重练。首页暂时不单独显示“重学 N”。
+
+## 本机 Node 版本（开发机）
+
+better-sqlite3 12.11.1 需要 Node 26（原生模块版本号 147）。系统自带的 `/usr/bin/node`（v20）加载不了它。在开发机上运行 npm、测试、构建或启动服务前，先执行：
+
+```
+export PATH=/workspace/vocab-saas/.node/bin:$PATH
+node -v   # 应输出 v26.x
+```
