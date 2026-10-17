@@ -2,12 +2,13 @@ import type { DB } from './db.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { wordStatus, statusKey } from './word-status.ts';
 import { getContent } from './content.ts';
+import { HttpError } from './http-error.ts';
 export interface WordRow {id:number;headword:string;phonetic:string|null;meaning_zh:string|null;level:string|null;state:number|null;stability:number|null;inWrongBook:number;[key:string]:unknown}
 export function readWords(db:DB):WordRow[] {return db.prepare(`SELECT w.*, c.state,c.stability, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' ORDER BY w.id`).all() as WordRow[];}
 export function summary(w:WordRow) {return {id:w.id,headword:w.headword,phonetic:w.phonetic,firstMeaning:(w.meaning_zh??'').split('\n')[0],level:w.level,status:wordStatus(w),inWrongBook:!!w.inWrongBook};}
 export const FORM_LABELS:Record<string,string>={p:'过去式',d:'过去分词',i:'现在分词','3':'第三人称单数',s:'复数',r:'比较级',t:'最高级'};
 export function search(db:DB,query:string,limit=20) {
-  if([...query].length>40)throw new Error('q must be at most 40 characters');
+  if([...query].length>40)throw new HttpError(400,'q must be at most 40 characters');
   const q=normalizeQuotes(query).trim().toLowerCase();if(!q)return [];
   const chinese=/\p{Script=Han}/u.test(q);
   const forms=db.prepare('SELECT word_id,form,kind FROM word_forms').all() as {word_id:number;form:string;kind:string}[];
@@ -32,8 +33,8 @@ export function wordDetail(db:DB,id:number) {
 }
 export function browse(db:DB,q:Record<string,string|undefined>) {
   const group=q.group??'zk_high',level=q.level??'all',letter=q.letter??'all',status=q.status??'all';
-  const page=Number(q.page??1),size=Number(q.size??50);
-  if(!['zk_high','daily_high'].includes(group)||!['all','core','level2'].includes(level)||!['all',...'abcdefghijklmnopqrstuvwxyz'].includes(letter)||!['all','new','learning','familiar','mastered'].includes(status)||!Number.isInteger(page)||page<1||!Number.isInteger(size)||size<1||size>100)throw new Error('invalid browse parameters');
+  const int=(v:string|undefined,d:number)=>v===undefined?d:/^[1-9]\d*$/.test(v)?Number(v):NaN;const page=int(q.page,1),size=int(q.size,50);
+  if(!['zk_high','daily_high'].includes(group)||!['all','core','level2'].includes(level)||!['all',...'abcdefghijklmnopqrstuvwxyz'].includes(letter)||!['all','new','learning','familiar','mastered'].includes(status)||!Number.isInteger(page)||page<1||!Number.isInteger(size)||size<1||size>100)throw new HttpError(400,'invalid browse parameters');
   const all=readWords(db).filter(w=>w.source==='kb2022');
   const ranks=db.prepare('SELECT * FROM word_freq WHERE grp=? AND rank>0').all(group) as {word_id:number;rank:number;basis:string;is_inferred:number}[];
   const byId=new Map(ranks.map(r=>[r.word_id,r]));
