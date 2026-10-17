@@ -59,3 +59,7 @@ describe('import', () => {
     expect(db.prepare('SELECT reps FROM cards').get()).toEqual({ reps: 3 });
   });
 });
+
+import { test as t2, expect as e2 } from 'vitest';
+import { filterSenses as fs2 } from '../server/src/import';
+t2('a. shown as adj.', () => { e2(fs2('a. 快乐的\nart. 一个').senses).toEqual(['adj. 快乐的', 'art. 一个']); });

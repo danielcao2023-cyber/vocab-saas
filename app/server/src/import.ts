@@ -43,7 +43,8 @@ export function rawLines(t: string): string[] {
 export function filterSenses(t: string): { senses: string[]; flag: string | null } {
   const lines = rawLines(t);
   const kept = lines.filter((l) => ![...l.matchAll(/\[([^\]]+)\]/g)].some((m) => DROP_TAGS.includes(m[1])));
-  if (kept.length) return { senses: kept, flag: null };
+  const fix = (l: string) => l.replace(/^a\.(?=\s|$)/, 'adj.');
+  if (kept.length) return { senses: kept.map(fix), flag: null };
   return { senses: lines.slice(0, 1), flag: lines.length ? REVIEW_FLAG : null };
 }
 
