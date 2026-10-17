@@ -51,7 +51,7 @@ it('makeup enforces all settings, crosses months correctly, and milestones use b
   review(db,id,Rating.Easy,T);
   expect(()=>makeup(db,'2026-10-17',T)).toThrow('之前');
   expect(()=>makeup(db,'2026-10-06',T)).toThrow('开始');
-  expect(()=>makeup(db,'2026-10-09',T)).toThrow('超出');
+  expect(()=>makeup(db,'2026-10-09',T)).toThrow('太久');
   expect(()=>makeup(db,'2026-10-15',T)).toThrow('已完成');
   expect(()=>makeup(db,'2026-02-30',T)).toThrow('无效');
   makeup(db,'2026-10-16',T);expect(streak(db,T).current).toBe(3);

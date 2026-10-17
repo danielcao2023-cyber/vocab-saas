@@ -13,29 +13,32 @@ export const COPY = {
   spellPrompt: '看意思，拼出单词',
   listenHint: '戴上耳机 · 按 R 重听（不限次数）',
   audioHelp: '没听到声音？检查耳机或音量。',
-  dictationPrompt: '戴上耳机，听发音后拼写。',
+  dictationPrompt: '听发音，拼出单词', // 文案审查 #10
   think: '先自己想想意思再翻面',
   spellHint: 'Tab 提示首字母 · Enter 提交',
   next: '下一个（Enter）',
   correct: '正确 ✓',
   almost: '差一点',
-  spellWrong: '答错了', // fix1 新增：拼写差得多时用，待内容复核
+  spellWrong: '拼错了', // 文案审查 #3
   typed: '你写的',
   chosen: '你选的',
   addedWrong: '已加入错词本。',
-  expectedChoice: (letter: string, word: string, meaning: string) => `应为 ${letter}：${word} ${meaning}。已加入错词本。`,
-  wrongRule: '3 个不同的日子答对会自动移出。',
-  wrongPracticeNote: '练错词会优先出你错过的题型。同一个词一天里只有第一次练习计入复习安排。',
+  expectedChoice: (letter: string, word: string, meaning: string) => `正确答案是 ${letter}：${word} ${meaning}。已加入错词本。`,
+  wrongRule: '在 3 个不同的日子答对，就会自动移出错词本。', // 文案审查 #1
+  wrongPracticeNote: '练错词会先出你错过的题型。同一个词一天只算第一次练。', // 文案审查 #14
   wrongSortCount: '按错的次数',
   wrongSortRecent: '最近错的',
   wrongEmpty: '错词本是空的',
   wrongEmptyNote: '答错或点了「忘了」的词会自动放进来，在 3 个不同的日子答对就会移出。',
-  wrongSummary: (n: number, twice: number) => `错词本 ${n} 个，其中 ${twice} 个本周已练对 2 次。`,
+  // 文案审查 #15：N = 错词本里已在 2 个不同的日子答对（Good/Easy）的词，再对 1 天就移出；N=0 时不显示这半句
+  nearOut: (twoDays: number) => twoDays ? `其中 ${twoDays} 个已经对了 2 天，再对 1 天就移出。` : '',
+  wrongSummary: (n: number, twoDays: number) => `错词本 ${n} 个。${twoDays ? `其中 ${twoDays} 个已经对了 2 天，再对 1 天就移出。` : ''}`,
   practice: (n: number) => `练这 ${n} 个`,
   complete: '今天的任务完成了，已打卡',
-  roundDone: '这一轮没有更多到期的卡了。',
+  roundDone: '这一轮的词做完了。', // 文案审查 #11
   doneSummary: (answers: number, accuracy: number, mastered: number, tomorrow: number) => `今天完成 ${answers} 题，正确率 ${accuracy}%，新掌握 ${mastered} 个词。明天要复习 ${tomorrow} 个。`,
-  comparison: (mastered: number, accuracy: number, previous: number) => `和上周的自己比：本周${mastered < 0 ? '少' : '多'}掌握 ${Math.abs(mastered)} 个 · 正确率 ${accuracy}%（上周 ${previous}%）`,
+  // 文案审查 #12：本周和上周的数字并列，不算差值
+  comparison: (mastered: number, previousMastered: number, accuracy: number, previousAccuracy: number) => `本周新掌握 ${mastered} 个（上周 ${previousMastered} 个）· 正确率 ${accuracy}%（上周 ${previousAccuracy}%）`,
   makeupLeft: (n: number) => `本月还可补签 ${n} 次`,
   calendarDone: '完成', calendarMakeup: '补签', calendarToday: '今天',
   earned: '已获得', remainingDays: (n: number) => `还差 ${n} 天`,
@@ -46,15 +49,16 @@ export const COPY = {
   unsaved: '这张没存上，连上后会自动补存', retry: '再试一次',
   // 以下为交互必需的补充文案，交付报告单独列出。
   checkin: '打卡', continuous: (n: number) => `连续 ${n} 天`,
-  curriculumProgress: '课标进度', core: '核心词', level2: '二级词', coreNote: '三级新增', level2Note: '小学阶段',
+  curriculumProgress: '课标进度', core: '核心词', level2: '二级词', coreNote: '初中新学', level2Note: '小学学过', // 文案审查 #18
   learningDays: '近 30 天学习天数', learningDuration: '近 30 天用时', learningAccuracy: '近 30 天正确率',
   dailyVolume: '近 30 天每天学习量', dailyAccuracy: '每天正确率', explanation: '说明',
   dataAsOf: (timestamp: string) => `数据截至 ${timestamp}（上海时间）`,
   parentFooter: '孩子的导航里没有这个入口，地址是 /parent。',
   roundSummary: (answers: number, accuracy: number) => `本轮完成 ${answers} 题，正确率 ${accuracy}%。`,
-  makeupHint: '先完成今天的任务，再点漏签日期补签。',
-  // fix1 新增：补签提示随状态变化，待内容复核
-  makeupReady: '点一下漏签的日期就能补签。',
+  backToday: '回到今日', // 文案审查 #13：完成页和错词本空状态统一
+  makeupHint: '完成今天的任务后，就能补签没打卡的日子。', // 文案审查 #6
+  // fix1 新增：补签提示随状态变化（文案审查 #7–#9 已过）
+  makeupReady: '点一下没打卡的日子就能补签。',
   makeupNoneEligible: '现在没有可以补签的日子。',
   makeupUsedUp: '这个月的补签次数已用完。',
   beforeStart: '开始学习之前', missed: '未完成', future: '还没到这一天',

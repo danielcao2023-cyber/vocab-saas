@@ -3,7 +3,7 @@ import type { DB } from './db.ts';
 import { shDay, shDayStart } from './time.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { setting } from './settings.ts';
-import { recomputeDailyStats, streak, weekStart } from './stats.ts';
+import { recomputeDailyStats, streak } from './stats.ts';
 import { issueQuestion, availableQtypes, type Qtype, type Context, type Rng } from './quiz.ts';
 
 const scheduler = fsrs({ enable_fuzz: false });
@@ -201,9 +201,11 @@ export function wrongList(db: DB, sort: WrongSort = 'count') {
       FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE c.word_id=? AND (l.correct=0 OR l.rating=1) GROUP BY 1`).all(r.word_id) as { qtype: string; n: number }[]).map(f => [f.qtype, f.n])) }));
 }
 export function wrongSummary(db: DB, sort: WrongSort = 'count', now = new Date()) {
-  const items = wrongList(db, sort), monday = weekStart(shDay(now));
+  const items = wrongList(db, sort);
+  // 移出进度：correct_days 只由 Good/Easy 写入（Hard 不动，Again/手动放回清零），满 3 个不同日子就移出；
+  // 所以“还在本里、恰好 2 个不同日子”= 再对 1 天就移出。不看本周，不看次数。
   const rows = db.prepare('SELECT correct_days FROM wrong_words WHERE removed_at IS NULL').all() as { correct_days: string }[];
-  return { items, total: items.length, practicedTwiceThisWeek: rows.filter(r => (JSON.parse(r.correct_days) as string[]).filter(d => d >= monday && d <= shDay(now)).length >= 2).length };
+  return { items, total: items.length, twoCorrectDays: rows.filter(r => new Set(JSON.parse(r.correct_days) as string[]).size === 2).length };
 }
 export function setWrong(db: DB, wordId: number, inBook: boolean, now = new Date()) {
   if (inBook) db.prepare(`INSERT INTO wrong_words(word_id,wrong_count,last_wrong_at,correct_days,removed_at) VALUES (?,0,?,'[]',NULL)

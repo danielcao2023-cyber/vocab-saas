@@ -15,7 +15,7 @@ const isParent=location.pathname.replace(/\/$/,'')==='/parent';
 type View='home'|'study'|'wrong'|'progress'|'done';
 const view=ref<View>('home'),online=ref(true),stale=ref(false),busy=ref(false);
 const today=ref<Today|null>(null),calendar=ref<Streak|null>(null),curriculum=ref<Curriculum|null>(null),lists=ref<any[]>([]);
-const wrong=ref<WrongBook>({items:[],total:0,practicedTwiceThisWeek:0}),sort=ref<'count'|'recent'>('count');
+const wrong=ref<WrongBook>({items:[],total:0,twoCorrectDays:0}),sort=ref<'count'|'recent'>('count');
 const prefer=ref<'review'|'new'>('review'),practice=ref<Turn[]|null>(null),estimate=ref(0),session=ref({done:0,correct:0});
 const isSample=computed(()=>lists.value.some(l=>l.isSample));
 const empty=computed(()=>!lists.value.some(l=>l.total));

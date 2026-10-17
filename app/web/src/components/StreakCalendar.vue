@@ -16,7 +16,7 @@ async function move(delta:number){
 const blocked=(day:string)=>data.value.makeupBlocked?.[day]??'';
 // 补签提示随状态变化：今天没完成 / 完成了且还能补 / 完成了但没有可补的日子 / 本月次数用完
 const hint=computed(()=>data.value.makeupLeft<=0?COPY.makeupUsedUp:data.value.todayDone===false?COPY.makeupHint:data.value.makeupCandidates.length?COPY.makeupReady:COPY.makeupNoneEligible);
-function pick(day:string){if(data.value.makeupCandidates.includes(day))makeup(day);else if(blocked(day))error.value=`${day.slice(5).replace('-','月')}日：${blocked(day)}。`;}
+function pick(day:string){if(data.value.makeupCandidates.includes(day))makeup(day);else if(blocked(day))error.value=`${Number(day.slice(5,7))}月${Number(day.slice(8,10))}日：${blocked(day)}。`;}
 async function makeup(day:string){
   if(busy.value)return;busy.value=true;error.value='';
   try{selected.value=await api('/api/streak/makeup',{day});emit('updated');}catch(e){if(e instanceof OfflineError)emit('offline');else if(e instanceof ClientError)error.value=e.message;else throw e;}finally{busy.value=false;}
