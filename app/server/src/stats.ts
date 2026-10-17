@@ -128,7 +128,7 @@ function makeupReason(db: DB, day: string, now: Date, data = streakData(db, now)
   if (day >= today) return '只能补签今天之前的日子';
   if (!data.firstDay || day < data.firstDay) return '不能补签开始学习之前的日子';
   if (data.done.has(day)) return '这一天已完成或已补签';
-  if (day < shiftDay(today, -setting(db, 'makeup_window_days', 7))) return '已超出可补签的时间范围';
+  if (day < shiftDay(today, -setting(db, 'makeup_window_days', 7))) return '这一天太久了，不能补签'; // 文案审查 #16
   const used = (db.prepare('SELECT COUNT(*) n FROM streak_makeups WHERE substr(day,1,7)=?').get(day.slice(0, 7)) as { n: number }).n;
   if (used >= setting(db, 'makeup_per_month', 2)) return '这个月的补签次数已用完';
   if (setting(db, 'makeup_requires_today', 1) && !(db.prepare('SELECT 1 FROM daily_stats WHERE day=? AND completed=1').get(today))) return '先完成今天的任务才能补签';

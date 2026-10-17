@@ -2,14 +2,14 @@ import { it,expect } from 'vitest';
 import { Rating } from 'ts-fsrs';
 import { countsTowardGraduation, review, setWrong, wrongList, wrongPractice, wrongSummary, reviewedToday, newIntroducedToday } from '../server/src/study.ts';
 import { card,database,T,day,seeded } from './v3-helpers.ts';
-it('sorts by count or recent, infers legacy qtype and summarizes two correct days this week',()=>{
+it('sorts by count or recent, infers legacy qtype and counts words with exactly two distinct correct days',()=>{
   const db=database(); const a=card(db,1),b=card(db,2);
   review(db,a,Rating.Again,day(-3));review(db,a,Rating.Again,day(-2));review(db,b,Rating.Again,day(-1),{qtype:'meaning_choice',correct:false});
   db.prepare('UPDATE review_logs SET qtype=NULL WHERE card_id=?').run(a);
   expect(wrongList(db).map(w=>w.word_id)).toEqual([1,2]);expect(wrongList(db,'recent').map(w=>w.word_id)).toEqual([2,1]);
   expect(wrongList(db)[0].fails).toEqual({flip:2}); expect(wrongList(db)[1].fails).toEqual({meaning_choice:1});
   review(db,a,Rating.Good,day(-1));review(db,a,Rating.Easy,T);
-  expect(wrongSummary(db,'count',T).practicedTwiceThisWeek).toBe(1);db.close();
+  expect(wrongSummary(db,'count',T).twoCorrectDays).toBe(1);db.close();
 });
 it('second practice logs only: card unchanged, no review quota/new quota usage, wrong accounting still runs',()=>{
   const db=database(); const id=card(db);

@@ -74,7 +74,7 @@ describe('MUST 1: no self-rating while a choice question is pending in any conte
 
 describe('MUST 2: wrong-book copy says 3 distinct days, nowhere says 连续 3 天', () => {
   it('copy text', () => {
-    expect(COPY.wrongRule).toBe('3 个不同的日子答对会自动移出。');
+    expect(COPY.wrongRule).toBe('在 3 个不同的日子答对，就会自动移出错词本。'); // copy round #1 覆盖 fix1 的措辞
     expect(COPY.wrongEmptyNote).toBe('答错或点了「忘了」的词会自动放进来，在 3 个不同的日子答对就会移出。');
     const all = [fs.readFileSync('web/src/copy.ts', 'utf8'), ...vueSources().map(s => s.text)].join('\n');
     expect(all).not.toMatch(/连续\s*3\s*天/);

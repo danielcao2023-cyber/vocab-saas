@@ -22,7 +22,7 @@ it('real Vue rendering hides listening answer before submission, exposes server 
   expect(before).not.toContain('whether');expect(before).not.toContain('pron. 哪一个');
   const result={correct:false,answerWordId:1,chosenWordId:2,expected:{...sample},chosen:{headword:'weather',meaning_first_line:'n. 天气'}};
   const after=await render(ChoiceQuestion,{card:sample,question,result,busy:false});
-  expect(after).toContain('whether');expect(after).toContain('应为 A');expect(after).toContain('你选的 weather');expect(after).toMatch(/class="[^"]*wrong[^"]*"/);
+  expect(after).toContain('whether');expect(after).toContain('正确答案是 A');expect(after).toContain('你选的 weather');expect(after).toMatch(/class="[^"]*wrong[^"]*"/);
   const front=await render(RecognizeCard,{card:sample,revealed:false,busy:false});expect(front).not.toContain('conj. 是否');expect(front).not.toContain('class="phon"');
   const back=await render(RecognizeCard,{card:sample,revealed:true,busy:false});expect(back).toContain('v. 四');expect(back).not.toContain('更多释义');
   const ecdict=await render(RecognizeCard,{card:{...sample,meaning_source:'ecdict'},revealed:true,busy:false});expect(ecdict).toContain('更多释义（2）');expect(ecdict).not.toContain('v. 四');
@@ -30,10 +30,10 @@ it('real Vue rendering hides listening answer before submission, exposes server 
 it('home, empty/wrong states and done render real counts rather than design placeholders',async()=>{
   const db=database(3);const curriculum=curriculumProgress(db),s=streak(db,T);
   const today={day:'2026-10-17',review:5,new:2,minutes:3,completed:false,streak:0,comparison:null,stats:{answers:7,accuracy:4/7},masteredNew:2,tomorrowReview:9};
-  const wrong={items:[],total:0,practicedTwiceThisWeek:0};
-  const home=await render(HomeView,{today,curriculum,streak:s,wrong,empty:false});expect(home).toContain('刚学的词和答错的词');expect(home).not.toContain('和上周的自己比');expect(home).toContain('本月还可补签 2 次');
+  const wrong={items:[],total:0,twoCorrectDays:0};
+  const home=await render(HomeView,{today,curriculum,streak:s,wrong,empty:false});expect(home).toContain('刚学的词和答错的词');expect(home).not.toContain('（上周');expect(home).toContain('本月还可补签 2 次');
   expect(await render(WrongView,{wrong,sort:'count',today:today.day,busy:false})).toContain('错词本是空的');
-  const incomplete=await render(DoneView,{today,session:{done:2,correct:1}});expect(incomplete).toContain('这一轮没有更多到期的卡了');expect(incomplete).not.toContain('今天的任务完成了，已打卡');
+  const incomplete=await render(DoneView,{today,session:{done:2,correct:1}});expect(incomplete).toContain('这一轮的词做完了');expect(incomplete).not.toContain('今天的任务完成了，已打卡');
   expect(await render(DoneView,{today:{...today,completed:true},session:{done:2,correct:1}})).toContain('今天的任务完成了，已打卡');db.close();
 });
 
