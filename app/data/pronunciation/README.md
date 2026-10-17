@@ -4,7 +4,7 @@
 
 `file` 为本目录内的安全文件名，`sha256` 用于校验内容。`sourceUrl` 指向原始录音说明页，`author`、`license`、`licenseUrl` 是录音本身的来源与许可。Commons 的 CC0 结构化数据许可、Free Dictionary API 的 GPL 软件许可都不能替代音频许可。
 
-- `verified-overrides.json`：经英文 Wiktionary 词条核实的特殊文件名、词性与口音映射；不是已完成许可审核或下载的清单。整短语录音不得冒充单词录音。
+- `verified-overrides.json`：经 Wiktionary 英语词条小节核实的特殊文件名、词性与口音映射（含法语版的 `Anglais` 英语小节）；不是已完成许可审核或下载的清单。整短语录音不得冒充单词录音。
 - `sources.json`：已核验的 Commons 录音元数据与官方 MP3 转码地址。
 - `progress.json`：逐词处理状态、失败原因和 `Retry-After` 冷却时刻，供断点续跑。
 - `coverage.json`：1600 个课标主词头的本地音频覆盖情况；`unknown` 包括未尝试、超时、限流、许可待核验以及尚未找到对应录音的词，不能解释为“没有真人音频”。
@@ -22,5 +22,7 @@ npx tsx scripts/prepare-pronunciation.ts --words=apple,about --limit=2
 Free Dictionary API 是独立的可选来源，必须显式使用 `--provider=free-dictionary`。仅接受该 API 返回的确切词条音频及逐音频许可，并通过 Commons 元数据核实作者与许可；不会在 Commons 限流时自动切换服务重试同一请求。它的在线稳定性和词表覆盖尚无保证。
 
 Commons 指向 `deed.en` 等官方许可摘要页时，保存对应的标准许可 URL；不改变许可种类。部分旧文件缺少结构化作者时，仅在原说明中明确写明“recorded by 某人”时采纳，仍无法验证的文件保持 `unknown`。
+
+公有领域录音须同时有文件级 Public domain 标记与 `PD-self` 或 `PD-user` 许可类别，保存对应的原始类别和文件许可区链接，不改称 CC0。
 
 最初的 `receive`、`accept` 两条录音由用户试听确认，原录音者为 Dvortygirl，许可为 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/)，从 Commons 原始 Ogg 转换为 MP3。其余音频沿用 Commons 提供的 MP3 转码，保留原录音署名及许可。缓存验证证明文件可播放且具有明确来源，并不替代逐词教学审听；同形异音词仍需结合当前释义核验。

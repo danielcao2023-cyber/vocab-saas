@@ -11,7 +11,7 @@ export function canReusePronunciation(word: string, entry: CachedPronunciation |
   override?: PronunciationOverride, metadata?: Map<string, CommonsRecording>): boolean {
   if (!entry || entry.word !== word || !/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.mp3$/.test(entry.file) ||
       !/^[a-f0-9]{64}$/.test(entry.sha256) || !entry.author?.trim() || /no machine-readable author|assumed/i.test(entry.author)) return false;
-  if (!allowedAudioLicense(entry.licenseUrl) && !(entry.license === 'Public domain (PD-self)' && commonsIdentity(entry.sourceUrl) && entry.licenseUrl === `${entry.sourceUrl}#Licensing`)) return false;
+  if (!allowedAudioLicense(entry.licenseUrl) && !(['Public domain (PD-self)', 'Public domain (PD-user)'].includes(entry.license) && commonsIdentity(entry.sourceUrl) && entry.licenseUrl === `${entry.sourceUrl}#Licensing`)) return false;
   const entryIdentity = commonsIdentity(entry.sourceUrl);
   const record = entryIdentity ? metadata?.get(entryIdentity) : undefined;
   const actualTitle = record?.title ?? (entryIdentity?.startsWith('title:') ? entryIdentity.slice(6) : undefined);

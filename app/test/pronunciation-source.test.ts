@@ -84,6 +84,14 @@ describe('pronunciation provenance', () => {
       .toMatchObject({ status: 'resolved', source: { word: 'centre' } });
   });
 
+  it('accepts a verified French Wiktionary English section but not its French section', async () => {
+    const other = { ...record, title: 'File:LL-Q1860 (eng)-Grendelkhan-exam.wav', sourceUrl: 'https://commons.wikimedia.org/wiki/File:LL-Q1860_(eng)-Grendelkhan-exam.wav' };
+    const map = new Map<string, CommonsRecording>(); indexCommonsRecording(map, other);
+    const options = { provider: 'wikimedia-commons' as const, sourceUrl: other.sourceUrl, metadata: map, lookupCommons: false };
+    expect(await resolvePronunciationSource('exam', { ...options, evidenceUrl: 'https://fr.wiktionary.org/wiki/exam#Anglais' })).toMatchObject({ status: 'resolved' });
+    expect(await resolvePronunciationSource('exam', { ...options, evidenceUrl: 'https://fr.wiktionary.org/wiki/exam#Français' })).toMatchObject({ status: 'unknown' });
+  });
+
   it('distinguishes network errors from a real dictionary 404', async () => {
     expect(await resolvePronunciationSource('apple', { fetch: vi.fn<typeof globalThis.fetch>().mockRejectedValue(new Error('offline')) }))
       .toEqual({ status: 'unknown', reason: 'network-unavailable' });
@@ -115,6 +123,16 @@ describe('pronunciation provenance', () => {
     }] };
     expect(parseCommonsRecording(page)).toMatchObject({ author: 'Dvortygirl', license: 'Public domain (PD-self)',
       licenseUrl: 'https://commons.wikimedia.org/wiki/File:En-us-afford.ogg#Licensing' });
+    page.categories = [];
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
+  it('preserves an explicit PD-user release instead of relabeling it as CC0', () => {
+    const sourceUrl = 'https://commons.wikimedia.org/wiki/File:En-us-volleyball.ogg';
+    const page = { pageid: 43, title: 'File:En-us-volleyball.ogg', categories: [{ title: 'Category:PD-user' }], videoinfo: [{
+      descriptionurl: sourceUrl, extmetadata: { Artist: { value: 'Spacecat2' }, LicenseShortName: { value: 'Public domain' },
+        ImageDescription: { value: 'Pronunciation of volleyball, American English male speaker' } } }] };
+    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Spacecat2', license: 'Public domain (PD-user)', licenseUrl: `${sourceUrl}#Licensing` });
     page.categories = [];
     expect(parseCommonsRecording(page)).toBeUndefined();
   });

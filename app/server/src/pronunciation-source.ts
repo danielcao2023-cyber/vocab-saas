@@ -95,7 +95,7 @@ export function loadCommonsMetadata(directory = PRONUNCIATION_DIRECTORY): Map<st
     if (Array.isArray(data)) for (const record of data) {
       if (record && typeof record.title === 'string' && Number.isSafeInteger(record.pageid) &&
           typeof record.author === 'string' && record.author.trim() && !/no machine-readable author|assumed/i.test(record.author) && (allowedAudioLicense(record.licenseUrl) ||
-            record.license === 'Public domain (PD-self)' && commonsIdentity(record.sourceUrl) && record.licenseUrl === `${record.sourceUrl}#Licensing`)) indexCommonsRecording(records, record);
+            ['Public domain (PD-self)', 'Public domain (PD-user)'].includes(record.license) && commonsIdentity(record.sourceUrl) && record.licenseUrl === `${record.sourceUrl}#Licensing`)) indexCommonsRecording(records, record);
     }
   } catch { /* A fresh cache has no metadata yet. */ }
   return records;
@@ -113,12 +113,12 @@ export function parseCommonsRecording(page: any): CommonsRecording | undefined {
   let license = plain(m?.LicenseShortName?.value);
   let licenseUrl = m?.LicenseUrl?.value;
   const description = plain(m?.ImageDescription?.value);
-  const pdSelf = license === 'Public domain' && page?.categories?.some((category: any) => category.title === 'Category:PD-self');
-  if (pdSelf && commonsIdentity(info?.descriptionurl ?? '')) {
-    license = 'Public domain (PD-self)';
+  const pdTemplate = license === 'Public domain' && page?.categories?.find((category: any) => ['Category:PD-self', 'Category:PD-user'].includes(category.title))?.title?.slice(9);
+  if (pdTemplate && commonsIdentity(info?.descriptionurl ?? '')) {
+    license = `Public domain (${pdTemplate})`;
     licenseUrl = `${info.descriptionurl}#Licensing`;
   }
-  if (!info || !author || /no machine-readable author|assumed/i.test(author) || !license || (!allowedAudioLicense(licenseUrl) && !pdSelf) || !Number.isSafeInteger(page.pageid)) return;
+  if (!info || !author || /no machine-readable author|assumed/i.test(author) || !license || (!allowedAudioLicense(licenseUrl) && !pdTemplate) || !Number.isSafeInteger(page.pageid)) return;
   if (!commonsIdentity(info.descriptionurl ?? '') || typeof page.title !== 'string') return;
   if (/text[- ]to[- ]speech|speech synthesis|synthetic|AI[- ]generated|computer[- ]generated/i.test(`${description} ${author} ${page.title}`)) return;
   if (!/pronunciation|recorded|speaker/i.test(description) && !/^File:(?:En-[a-z]+-|LL-)/i.test(page.title)) return;
@@ -169,7 +169,7 @@ async function commonsRecord(sourceUrl: string, options: SourceOptions): Promise
   const cached = options.metadata?.get(identity);
   if (cached && (options.provider === 'free-dictionary' || cached.audioUrl)) return cached;
   if (options.lookupCommons === false) return cached;
-  const params = new URLSearchParams({ action: 'query', format: 'json', formatversion: '2', redirects: '1', prop: 'videoinfo|categories', clcategories: 'Category:PD-self', cllimit: '10',
+  const params = new URLSearchParams({ action: 'query', format: 'json', formatversion: '2', redirects: '1', prop: 'videoinfo|categories', clcategories: 'Category:PD-self|Category:PD-user', cllimit: '50',
     viprop: 'url|extmetadata|derivatives', viextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl|ImageDescription', maxlag: '5',
     ...(identity.startsWith('id:') ? { pageids: identity.slice(3) } : { titles: identity.slice(6) }) });
   const result = await jsonRequest(`https://commons.wikimedia.org/w/api.php?${params}`, options);
@@ -187,7 +187,7 @@ export async function fetchCommonsRecordings(sourceUrls: string[], options: Sour
   if (!sourceUrls.length || sourceUrls.length > COMMONS_METADATA_BATCH_LIMIT) return { status: 'unknown', reason: 'invalid-batch-size' };
   const identities = sourceUrls.map(commonsIdentity);
   if (identities.some(id => !id?.startsWith('title:'))) return { status: 'unknown', reason: 'batch-requires-file-titles' };
-  const params = new URLSearchParams({ action: 'query', format: 'json', formatversion: '2', redirects: '1', prop: 'videoinfo|categories', clcategories: 'Category:PD-self', cllimit: '10',
+  const params = new URLSearchParams({ action: 'query', format: 'json', formatversion: '2', redirects: '1', prop: 'videoinfo|categories', clcategories: 'Category:PD-self|Category:PD-user', cllimit: '50',
     viprop: 'url|extmetadata|derivatives', viextmetadatafilter: 'Artist|LicenseShortName|LicenseUrl|ImageDescription', maxlag: '5',
     titles: identities.map(id => id!.slice(6)).join('|') });
   try {
@@ -251,7 +251,8 @@ export function recordingWordProblem(word: string, title: string, options: Pick<
   try {
     const url = new URL(options.evidenceUrl ?? '');
     const normalWord = (value: string) => value.toLowerCase().replace(/[ .’'-]/g, '');
-    evidence = url.protocol === 'https:' && url.hostname === 'en.wiktionary.org' && url.pathname.startsWith('/wiki/') &&
+    const englishSection = url.hostname === 'en.wiktionary.org' || url.hostname === 'fr.wiktionary.org' && url.hash === '#Anglais';
+    evidence = url.protocol === 'https:' && englishSection && url.pathname.startsWith('/wiki/') &&
       normalWord(decodeURIComponent(url.pathname.slice(6))) === normalWord(word);
   } catch { /* No verified mapping. */ }
   if (evidence && requested?.startsWith('title:') && stem(requested.slice(6)) === stem(actual)) return;

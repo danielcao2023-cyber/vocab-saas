@@ -23,6 +23,8 @@ DB_PATH=data/dev-vocab.db HOST=127.0.0.1 PORT=18421 npm start
 
 本轮本地修订后，1600 词均有释义和音标，人工释义表共 239 条（原有 59 条、新修订 180 条）。原始释义 `meaning_raw` 保留。每词两句例句和二至三条搭配已完成交叉编辑审核，共 3200 个已批准内容块；这里的审核指 Codex 编辑审核，尚不等同于教师审校。生产数据库尚未应用这些变更。
 
+补齐 10 项缺失音标之外，后续另修正 use、record、survey、AI、PE 共 5 条多音或缩写音标，明确词性或字母读法。修订依据是词典文本与音源所在词性小节的交叉核对，不代表已逐条试听；独立后续补丁保留原值和来源，不改原 190 字段补丁包。
+
 首次建立本地词库：
 
 ```bash
@@ -74,6 +76,7 @@ Codex CLI 从 PATH 查找，沿用已有登录，不把凭据写入项目。项�
 
 - `data/content/core-1600-2026-10-17.json`：1600 词的 3200 个已批准核心内容块。
 - `data/content/word-patches-2026-10-17.json`：180 项释义、10 项音标补丁，带原值与来源。
+- `data/content/phonetics-followup-2026-10-17.json`：后续 5 项多音与缩写音标修订；审核及应用前后字段哈希见 `qa/meaning-review/phonetics-followup-5-applied-2026-10-17.json`。
 - `qa/ai-editorial-review/final-core-1600-2026-10-17/`：逐块 hash、审核与修订映射、覆盖率及重复导入验证。
 - `qa/meaning-review/`：1600 词基础释义审查、修订记录与音标来源。
 
@@ -82,6 +85,8 @@ Codex CLI 从 PATH 查找，沿用已有登录，不把凭据写入项目。项�
 ```bash
 npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
   --patches data/content/word-patches-2026-10-17.json
+npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
+  --patches data/content/phonetics-followup-2026-10-17.json
 npx tsx scripts/ai-content-import.ts --db data/dev-vocab.db \
   --in data/content/core-1600-2026-10-17.json
 ```
