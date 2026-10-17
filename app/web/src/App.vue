@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
-import { api, OfflineError, speak } from './api';
+import { api, ClientError, OfflineError, speak } from './api';
 import { PendingSubmitter } from './pending';
 import MeaningList from './MeaningList.vue';
 import { COPY, isRepeatCard } from './copy';
@@ -27,7 +27,14 @@ const practiceQueue = ref<Card[] | null>(null);
 const noAudio = ref(false);
 const input = ref<HTMLInputElement | null>(null);
 const submitter = new PendingSubmitter((path, body) => api(path, body));
-const unsaved = ref(false);       // 当前卡的答案没存上
+const unsaved = ref(false);
+const stale = ref(false);          // 提交返回 4xx：页面过期
+function reloadPage() { location.reload(); }
+/** 提交：4xx 显示“页面过期”，不当离线处理 */
+async function send(fn: () => Promise<any>) {
+  try { return await fn(); }
+  catch (e) { if (e instanceof ClientError) { stale.value = true; return undefined; } throw e; }
+}       // 当前卡的答案没存上
 const pendingRating = ref(0);
 
 const RATINGS = [
@@ -36,15 +43,20 @@ const RATINGS = [
 
 async function guard<T>(fn: () => Promise<T>): Promise<T | undefined> {
   try { const r = await fn(); online.value = true; return r; }
-  catch (e) { if (e instanceof OfflineError) { online.value = false; return undefined; } throw e; }
+  catch (e) {
+    if (e instanceof OfflineError) { online.value = false; return undefined; }
+    if (e instanceof ClientError) { stale.value = true; return undefined; }
+    throw e;
+  }
 }
 
 async function ping() {
   const was = online.value;
   try { const r = await fetch('/health'); online.value = r.ok; } catch { online.value = false; }
   if (online.value && submitter.failed && (!was || unsaved.value)) {
-    const r = await submitter.onReconnect();
-    if (r) await afterSaved(r);
+    const r = await send(() => submitter.onReconnect());
+    if (r === undefined) unsaved.value = false;
+    else if (r) await afterSaved(r);
   }
 }
 
@@ -102,8 +114,10 @@ async function afterSaved(r: any) {
 async function rate(v: number) {
   if (!card.value || !revealed.value) return;
   pendingRating.value = v;
-  const r = unsaved.value ? await submitter.retry({ rating: v })
-    : await submitter.submit('/api/review', { cardId: card.value.id, rating: v, durationMs: Date.now() - shownAt.value });
+  const id = card.value.id;
+  const r = await send(() => unsaved.value ? submitter.retry({ rating: v })
+    : submitter.submit('/api/review', { cardId: id, rating: v, durationMs: Date.now() - shownAt.value }));
+  if (r === undefined) { unsaved.value = false; return; }
   if (!r) { unsaved.value = true; online.value = false; return; }
   await afterSaved(r);
 }
@@ -112,8 +126,10 @@ async function submit() {
   if (!card.value) return;
   if (feedback.value) { await loadNext(); return; }
   if (!answer.value.trim()) return;
-  const r = unsaved.value ? await submitter.retry()
-    : await submitter.submit('/api/check', { cardId: card.value.id, answer: answer.value, usedHint: usedHint.value });
+  const id = card.value.id;
+  const r = await send(() => unsaved.value ? submitter.retry()
+    : submitter.submit('/api/check', { cardId: id, answer: answer.value, usedHint: usedHint.value }));
+  if (r === undefined) { unsaved.value = false; return; }
   if (!r) { unsaved.value = true; online.value = false; return; }
   await afterSaved(r);
 }
@@ -165,6 +181,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
       连不上学习服务。如果不在家，请先打开 Tailscale；在家的话请家长看一下 Studio 是否开机。
       <button @click="ping(); loadHome()">重试</button>
     </div>
+    <div v-if="stale" class="offline" role="alert" data-testid="stale">{{ COPY.staleCard }} <button @click="reloadPage">{{ COPY.refresh }}</button></div>
     <div v-if="isSample" class="sample">当前是示例数据（开发测试用），不是课标词表。</div>
 
     <nav>

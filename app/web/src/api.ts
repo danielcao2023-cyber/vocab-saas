@@ -1,13 +1,14 @@
-import { OfflineError } from './pending';
-export { OfflineError };
+import { ClientError, OfflineError } from './pending';
+export { ClientError, OfflineError };
 export async function api<T = any>(path: string, body?: unknown): Promise<T> {
   let r: Response;
   try {
     r = await fetch(path, body === undefined ? undefined : { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
   } catch { throw new OfflineError('offline'); }
   if (r.status >= 500 || r.status === 0) throw new OfflineError(String(r.status));
-  const j = await r.json();
-  if (!r.ok) throw new Error(j.error ?? String(r.status));
+  let j: any = null;
+  try { j = await r.json(); } catch { /* 非 JSON */ }
+  if (r.status >= 400) throw new ClientError(r.status, j?.error ?? String(r.status));
   return j as T;
 }
 export function speak(word: string): boolean {

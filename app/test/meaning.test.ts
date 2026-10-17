@@ -25,3 +25,15 @@ describe('MeaningList', () => {
     expect(app).not.toMatch(/meaning_zh \?\? '（暂无释义）'|senses\.slice/);
   });
 });
+
+import { toggleLabel } from '../web/src/senses.ts';
+import { COPY } from '../web/src/copy.ts';
+describe('collapse button copy (内容.md 09:14)', () => {
+  it('collapsed shows count, expanded shows only 收起', () => {
+    expect(toggleLabel(false, 3)).toBe('更多释义（3）');
+    expect(toggleLabel(true, 3)).toBe('收起');
+    const doc = fs.readFileSync('../v2/内容.md', 'utf8');
+    expect(doc).toContain(`「${COPY.collapse}」`); expect(doc).toContain(`「${COPY.staleCard}」`); expect(doc).toContain(`「${COPY.refresh}」`);
+    expect(fs.readFileSync('web/src/MeaningList.vue', 'utf8')).toContain('toggleLabel(open, s.more.length)');
+  });
+});

@@ -1,5 +1,7 @@
 /** 断线时的答案补存：每个答案一个幂等键；重连时自动补存一次，失败后允许手动重试（同一键） */
 export class OfflineError extends Error {}
+/** 4xx：请求本身被拒（如测试库重置后卡片已不存在），不重试 */
+export class ClientError extends Error { constructor(public status: number, message: string) { super(message); } }
 export type Poster = (path: string, body: Record<string, unknown>) => Promise<any>;
 
 export function newAnswerId(): string {
@@ -20,7 +22,7 @@ export class PendingSubmitter {
     this.autoRetried = false;
     try { const r = await this.post(path, b); this.pending = null; this.autoRetried = false; return r; }
     catch (e) {
-      if (!(e instanceof OfflineError)) throw e;
+      if (!(e instanceof OfflineError)) { this.pending = null; throw e; }
       this.pending = { path, body: b }; return null;
     }
   }
@@ -37,6 +39,6 @@ export class PendingSubmitter {
     if (!this.pending) return null;
     const { path, body } = this.pending;
     try { const r = await this.post(path, { ...body, ...override, answerId: body.answerId }); this.pending = null; this.autoRetried = false; return r; }
-    catch (e) { if (!(e instanceof OfflineError)) throw e; return null; }
+    catch (e) { if (!(e instanceof OfflineError)) { this.pending = null; this.autoRetried = false; throw e; } return null; }
   }
 }
