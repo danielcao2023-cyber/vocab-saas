@@ -71,7 +71,7 @@ export const COPY = {
   explainPending: '讲解还在准备', explainPendingNote: '这个词的例句还没生成，先看释义和发音。',
   searchPlaceholder: '查单词，英文或中文', cancel: '取消', search: '查词', noSearchResults: '没找到这个词。',
   noSearchResultsNote: '课标词表里没有，或者换个拼法试试。', searchTip: '英文、中文都能查，比如 receive、收到', searchFormsTip: '过去式、复数这些变化形式也能查，比如 went、children',
-  searchResults: (n:number) => `${n} 个结果`, formResults: '词形', searchKeys: '↑↓ 选择 · Enter 打开 · Esc 关闭', searchTooLong: '最多输入 40 个字。',
+  searchResults: (n:number) => `${n} 个结果`, formResults: '词形', searchKeys: [[['↑','↓'],'选择'],[['Enter'],'打开'],[['Esc'],'关闭']] as [string[],string][], searchTooLong: '最多输入 40 个字。',
   wordList: '词表', zkHigh: '中考高频', dailyHigh: '日常高频', inferred: '推断', basis: '依据：',
   zkHighNote: '中考高频排序是根据词义和用法推断的，不是真题统计。每个词的依据写在释义下面。',
   dailyHighNote: '按 COCA（美国当代英语语料库）词频排序，数据来自 ECDICT。词频库里没有的词排在最后，标「推断」。',
@@ -81,6 +81,8 @@ export const COPY = {
   learningStatus: '学习状态', nextReview: '下次复习：', back: '← 返回', loadMore: '加载更多', all: '全部', levelLabel: '级别', letterLabel: '首字母',
   statuses: {new:'新词',learning:'学习中',familiar:'熟悉',mastered:'掌握'} as Record<string,string>, cardStates: ['新词','学习中','复习中','重学中'],
   noCard: '还没开始', wrongCount: (n:number)=>`错过 ${n} 次`, correctDays: (n:number)=>`${n}/3 天`, browseTotal: (n:number)=>`共 ${n} 个`,
+  // 稿 p2-browse-*.html 列表头：「共 1600 个 · 按中考常见程度（推断）排序」「首字母 E · 63 个 · 按日常使用频率排序」
+  browseHead: (n:number,letter:string,group:string)=>`${letter==='all'?`共 ${n} 个`:`首字母 ${String(letter).toUpperCase()} · ${n} 个`} · ${group==='zk_high'?'按中考常见程度（推断）排序':'按日常使用频率排序'}`,
   emptyLibrary: '词表还没导入，导入后这里会显示今天要学的词',
 };
 /** 学习中(1)/重学中(3) 且已经答过的卡 = 本轮里再次出现的卡 */
