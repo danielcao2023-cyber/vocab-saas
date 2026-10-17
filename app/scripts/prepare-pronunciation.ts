@@ -133,6 +133,7 @@ function curlRequest(url: string, kind: 'audio' | 'metadata'): { status: number;
   const headerFile = `${temporary}.headers`;
   try {
     const result = spawnSync('curl', ['--http1.1', '--proto', '=https', '--silent', '--show-error', '--connect-timeout', '10', '--max-time', '30',
+      ...(kind === 'metadata' ? ['--compressed'] : []),
       '--max-filesize', '2000000', '--user-agent', PRONUNCIATION_USER_AGENT,
       '--header', `Accept: ${kind === 'metadata' ? 'application/json' : 'audio/*'}`,
       '--dump-header', headerFile, '--output', temporary, '--write-out', '%{http_code} %{time_connect} %{time_appconnect} %{time_starttransfer} %{time_total}', url], { encoding: 'utf8', timeout: 35_000 });
