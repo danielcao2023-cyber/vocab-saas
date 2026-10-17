@@ -65,4 +65,4 @@ export async function importFile(file:string,input:any,opts:{yes?:boolean;backup
   if(opts.backup){protectTarget(opts.backup,opts.home);if(resolved(opts.backup)===resolved(file)||fs.existsSync(opts.backup))throw new Error('backup must be a new, different path');}
   const db=new Database(file,{readonly:!opts.yes,fileMustExist:true});try{const result=planImport(db,input);if(!opts.yes)return {...result.plan,changes:0};await db.backup(opts.backup!);return applyImport(db,input);}finally{db.close();}
 }
-export function exportFile(file:string,out:string) {const db=new Database(file,{readonly:true,fileMustExist:true});try{const data=exportContent(db);fs.writeFileSync(out,JSON.stringify(data,null,2)+'\n');return data.counts;}finally{db.close();}}
+export function exportFile(file:string,out:string,home?:string) {protectTarget(file,home);protectTarget(out,home);const db=new Database(file,{readonly:true,fileMustExist:true});try{const data=exportContent(db);fs.writeFileSync(out,JSON.stringify(data,null,2)+'\n');return data.counts;}finally{db.close();}}
