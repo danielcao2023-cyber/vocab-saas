@@ -109,7 +109,7 @@
 
 ### 4.4 自动毕业规则
 **现行逻辑（已读代码确认）**：同一个词任何卡（认词/拼写/听写）的任何非 Again 评分（含「模糊」和用了提示的拼写，Hard）都把当天（上海日期）加入 correct_days；集满 3 个不同日子就移出；任何一次 Again 都清空重来；3 天不要求日历上连续。手动“放回错词本”也走 addWrong，会让 wrong_count +1。
-**本期改为（工程提议，待用户确认；请把判断集中在一个函数 `countsTowardGraduation(rating)` 里，方便改回）**：
+**本期改为（用户已确认，2026-10-17 Grok Bot 转达；判断集中在一个函数 `countsTowardGraduation(rating)` 里）**：
 1. 只有 Good/Easy 计入 correct_days；Hard 既不计入也不清空。
 2. 只记日志的练习答案（counted=0）同样计入（每天最多算一天，本来就按日期去重）。
 3. 手动放回错词本（`POST /api/wrong/:id {inBook:true}`）不增加 wrong_count，只把 removed_at 置空、correct_days 清空。
