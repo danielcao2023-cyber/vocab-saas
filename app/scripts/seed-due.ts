@@ -42,6 +42,14 @@ db.transaction(() => {
   const recogIds = new Set<number>([...words.map((w) => w.id), ...recogDue]);
   for (const wid of recogIds) ins.run(wid, 'recognize', recogDue.has(wid) ? dueNow : tomorrow, 1.5, 1, State.Review, yesterday);
   for (const w of words) { ins.run(w.id, 'spell', dueNow, 0.5, 0, State.New, null); ins.run(w.id, 'dictation', dueNow, 0.5, 0, State.New, null); }
+  // 一张“上次答了忘了、现在到期”的认词卡（重学状态），让验收立刻看到“刚才这个再来一次”
+  const againWord = words[words.length - 1];
+  db.prepare("UPDATE cards SET state=?, due=?, reps=2, lapses=1, last_review=?, stability=0.5 WHERE word_id=? AND mode='recognize'")
+    .run(State.Relearning, iso(now - 2 * 3600_000), iso(now - 11 * 60_000), againWord.id); // 最早到期，开始复习后第一张就是它
+  const againCard = db.prepare("SELECT id FROM cards WHERE word_id=? AND mode='recognize'").get(againWord.id) as { id: number };
+  db.prepare(`INSERT INTO review_logs(card_id,rating,state,due,stability,difficulty,elapsed_days,scheduled_days,review_at,answer_id) VALUES (?,1,?,?,1.5,5,1,1,?,'seed-again')`)
+    .run(againCard.id, State.Review, yesterday, iso(now - 11 * 60_000));
+  report.againCard = { headword: againWord.headword, cardId: againCard.id, lastRating: '忘了(1)', due: 'now' };
   const q = (hw: string) => db.prepare('SELECT w.headword, w.meaning_zh, w.meaning_flag FROM words w WHERE w.id=?').get(id(hw, hw === 'qatest' ? 'qa-only-test' : 'sample')) as any;
   report.recognitionChecks = ['act', 'enough', 'qatest'].map((hw) => { const r = q(hw); return { headword: r.headword, senses: r.meaning_zh.split('\n').length, flag: r.meaning_flag }; });
   report.spellingAnswers = words.map((w) => ({ headword: w.headword, accepted: acceptedSpellings(w.headword) }));
