@@ -3,7 +3,7 @@ import fastifyStatic from '@fastify/static';
 import fs from 'node:fs';
 import path from 'node:path';
 import type { DB } from './db.ts';
-import { issueQuestion, answerQuestion, QuizError, type Rng, type Context } from './quiz.ts';
+import { issueQuestion, answerQuestion, hasOpenQuestion, QuizError, type Rng, type Context } from './quiz.ts';
 import { streak, makeup, parentSummary, curriculumProgress, queueStateAt, shiftDay } from './stats.ts';
 import { shDay } from './time.ts';
 import type { BlockList } from 'node:net';
@@ -36,7 +36,11 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   app.get<{ Querystring: { prefer?: 'review' | 'new' } }>('/api/next', async (req) => { const t = now(); const card = nextCard(db, t, req.query.prefer === 'new' ? 'new' : 'review'); return { card, question: card ? issueQuestion(db, card, t, 'study', opts.rng) : null }; });
   app.post<{ Body: { cardId: number; rating: number; durationMs?: number; answerId?: string; context?: Context } }>('/api/review', async (req, reply) => {
     const { cardId, rating, durationMs, answerId, context } = req.body ?? ({} as any);
-    try { const r = review(db, Number(cardId), Number(rating) as any, now(), { durationMs, answerId, context, qtype: 'flip' }); return { ok: true, due: r.card.due.toISOString(), state: r.card.state, duplicate: r.duplicate }; }
+    const t = now();
+    // 选择题必须由服务端判分：这张卡有未作答的选择题时，不接受翻面自评（重试已存过的 answerId 除外）
+    if (!(answerId && db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId)) && hasOpenQuestion(db, Number(cardId), context === 'practice' ? 'practice' : 'study', t))
+      return reply.code(409).send({ ok: false, error: 'question pending: answer via /api/answer' });
+    try { const r = review(db, Number(cardId), Number(rating) as any, t, { durationMs, answerId, context, qtype: 'flip' }); return { ok: true, due: r.card.due.toISOString(), state: r.card.state, duplicate: r.duplicate }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
   app.post<{ Body: { cardId: number; answer: string; usedHint?: boolean; answerId?: string; durationMs?: number; context?: Context } }>('/api/check', async (req, reply) => {

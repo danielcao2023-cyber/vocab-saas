@@ -25,12 +25,13 @@ function history(db: DB) {
     const c = mode.get(log.card_id)!;
     if (c.mode === 'recognize' && !introduced.has(c.word_id)) introduced.set(c.word_id, log.review_at);
   }
-  // ts-fsrs 5.x writes last_review as log.due for learning steps. Old rows are immutable;
-  // replay the learning-step counter to recover that interval only when this legacy signature is present.
+  // ts-fsrs 5.x writes the previous last_review as log.due for every non-New state (Learning, Review, Relearning),
+  // not the pre-answer due. Old rows are immutable; replay FSRS to recover the real pre-answer due whenever the
+  // legacy signature (qtype NULL and due === previous review_at) is present.
   const legacyDue = new Map<number, string>();
   const scheduler = fsrs({ enable_fuzz: false });
   for (const list of byCard.values()) {
-    if (!list.some((next, i) => i > 0 && next.qtype === null && (next.state === State.Learning || next.state === State.Relearning) && next.due === list[i - 1].review_at)) continue;
+    if (!list.some((next, i) => i > 0 && next.qtype === null && next.state !== State.New && next.due === list[i - 1].review_at)) continue;
     let replay: Card | undefined;
     for (let i = 0; i < list.length; i++) {
       const l = list[i], previous = list[i - 1];
@@ -38,7 +39,7 @@ function history(db: DB) {
         due: new Date(l.due), last_review: previous ? new Date(previous.review_at) : undefined };
       replay = scheduler.next(pre, new Date(l.review_at), l.rating as Grade).card;
       const next = list[i + 1];
-      if (next && next.qtype === null && (next.state === State.Learning || next.state === State.Relearning) && next.due === l.review_at) legacyDue.set(next.id, replay.due.toISOString());
+      if (next && next.qtype === null && next.state !== State.New && next.due === l.review_at) legacyDue.set(next.id, replay.due.toISOString());
     }
   }
   return { cards, logs, byCard, byDay, cardById: mode, introduced, legacyDue, words: (db.prepare('SELECT COUNT(*) n FROM words').get() as { n: number }).n };

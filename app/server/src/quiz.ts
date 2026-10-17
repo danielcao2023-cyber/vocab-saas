@@ -78,6 +78,10 @@ export function issueQuestion(db: DB, card: QuizCard, now = new Date(), context:
   const r = db.prepare('INSERT INTO question_issues(card_id,qtype,context,options_json,answer_word_id,issued_at) VALUES (?,?,?,?,?,?)').run(card.id, q.qtype, context, JSON.stringify(q.options.map(o => o.wordId)), card.word_id, now.toISOString());
   return { ...q, id: Number(r.lastInsertRowid) };
 }
+/** 该卡今天在该 context 下是否有未作答的选择题（有就必须走 /api/answer，由服务端判对错） */
+export function hasOpenQuestion(db: DB, cardId: number, context: Context, now = new Date()) {
+  return !!db.prepare(`SELECT 1 FROM question_issues WHERE card_id=? AND context=? AND answered_at IS NULL AND issued_at>=? AND issued_at<? LIMIT 1`).get(cardId, context, shDayStart(now).toISOString(), new Date(shDayStart(now).getTime() + 86400_000).toISOString());
+}
 export function availableQtypes(db: DB, card: QuizCard, cards: QuizCard[]): Qtype[] {
   const types: Qtype[] = ['flip'];
   if (card.state === State.New) return types;
