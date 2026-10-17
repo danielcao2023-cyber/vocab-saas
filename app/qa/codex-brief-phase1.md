@@ -184,3 +184,4 @@
 - 结束时在 `app/qa/v3-phase1-codex-report.md` 写说明，并在最终回复里给出同样内容：改了哪些文件、各自做了什么；新增测试列表；`npm test`、`npm run typecheck`、`npm run build` 的结果摘要（贴通过/失败数，不许编造）；新增文案清单；没做到或有疑问的地方。
 - 预计改动：`server/src/db.ts`、`study.ts`、`app.ts`，新增 `server/src/quiz.ts`、`server/src/stats.ts`、`scripts/verify-migration.ts`；`web/src/App.vue`、`copy.ts`、`api.ts`，新增 `web/src/views/*`、`web/src/components/*`、`web/src/styles/*`、`web/src/diff.ts`；`test/` 下新增和第 9 节允许的改写；`README.md` 功能段落更新。超出范围的改动要在说明里给理由。
 - 不做：查词/浏览、高频分组、AI 生成（第二期）；登录、PIN；音频文件。
+- 注意：`word_content` 表及其 kind（example、collocation、distinction、synonym、antonym、pronunciation、mnemonic_etymology、mnemonic_association、related_words）留给第二期（见 `v3/phase2-ai-content-spec.md`），本期不读、不写、不改这张表，也不改 content_feedback、ai_jobs、ai_cache。
