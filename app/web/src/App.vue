@@ -203,7 +203,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
           <div class="row">
             <button v-for="r in RATINGS" :key="r.v" @click="rate(r.v)">{{ r.v }} {{ r.label }}</button>
           </div>
-          <p v-if="unsaved" class="bad small" role="status">这张没存上，连上后会自动补存</p>
+          <p v-if="unsaved" class="bad small" role="status">这张还没存上，连上后会自动补交</p>
         </template>
       </template>
 
@@ -219,7 +219,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
         </template>
         <input ref="input" v-model="answer" :disabled="!!feedback || unsaved" autocomplete="off" spellcheck="false" placeholder="输入单词" />
         <p class="muted">Tab 提示首字母 · Enter 提交</p>
-        <p v-if="unsaved" class="bad small" role="status">这张没存上，连上后会自动补存 <button @click="submit">再试一次</button></p>
+        <p v-if="unsaved" class="bad small" role="status">这张还没存上，连上后会自动补交 <button @click="submit">再试一次</button></p>
         <div v-if="feedback">
           <p v-if="feedback.correct" class="ok">正确 ✓</p>
           <p v-else class="bad">应为：<b>{{ feedback.expected }}</b>（你写的是 {{ answer }}）。已加入错词本。</p>
