@@ -30,7 +30,7 @@
 ## 1. 现状（行号以 c007ded 为准）
 
 - `server/src/db.ts`：
-  - `SCHEMA` 中已有但未使用的表：`word_content`（第 28–36 行，status CHECK 只有 pending/generated/review/approved）、`content_feedback`（第 37–42 行）、`ai_jobs`、`ai_cache`（第 68–69 行）。
+  - `SCHEMA` 中已有但未使用的表：`word_content`（第 27–36 行，status CHECK 只有 pending/generated/review/approved）、`content_feedback`（第 37–43 行）、`ai_jobs`、`ai_cache`（第 68–69 行）。
   - `words.freq_rank` 由导入写入，取 ECDICT 的 `frq`（COCA 词频位次），没有时用 `bnc`（`import.ts` 第 135、162 行）。注意：这个列混了两种来源，不能直接当“依据”展示。
   - 第一期迁移在第 103–120 行，`recomputeDailyStats(db)` 在第 121 行。
 - `server/src/text.ts`：`mainHeadwords()`（第 7 行）、`normalizeQuotes()`。
