@@ -14,6 +14,8 @@
   v3/design/               ← 只读：视觉稿 HTML、design.css、design-notes.md、shots/*.png
   v3/codex-brief-phase1.md ← 本文件，只读
 ```
+运行方式：Codex 以 `-C ~/dev/vocab-saas/app` 启动，工作目录就是 `app/`；上面的 `v2/`、`v3/` 用相对路径 `../v2/…`、`../v3/…` 或绝对路径 `~/dev/vocab-saas/v3/…` 读取（只读，沙盒也不允许写）。
+
 限制：
 - **只改 `app/` 下的文件**。不要写 `~/dev/vocab-saas` 以外的任何位置，也不要读它以外的文件（Node/npm 运行时自身除外）。尤其不要碰 `~/apps/vocab`、`~/.codex`、`~/.ssh`、Tailscale、任何 wiki 或插件目录。
 - 不要 `git commit`、`git push`、`git checkout`/`switch`/`branch`/`stash`/`reset`。改动留在工作区，由工程负责人审核后提交。
