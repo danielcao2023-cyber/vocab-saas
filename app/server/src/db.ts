@@ -81,6 +81,8 @@ export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
     const original = new Database(file, { readonly: true });
     let copy: Buffer;
     try { copy = original.serialize(); } finally { original.close(); }
+    // WAL 模式的库头部 18/19 字节为 2，反序列化到内存时无法以 WAL 打开（SQLITE_CANTOPEN）；改成回滚日志模式（只改内存副本）
+    if (copy.length >= 100) { copy[18] = 1; copy[19] = 1; }
     db = new Database(copy);
   } else {
     db = new Database(options.dryRun ? ':memory:' : file);

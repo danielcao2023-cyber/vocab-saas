@@ -187,6 +187,18 @@ describe('dry-run memory databases', () => {
     expect(failed.status).toBe(1); expect(failed.stderr).toContain('计数');
     expect(fs.readFileSync(p)).toEqual(before);
   });
+  it('dry-run works on a WAL-mode DB (like vocab.db/qa.db) and leaves its bytes unchanged', () => {
+    const p = path.join(tmp, 'wal.db');
+    const w = openDb(p); w.prepare("INSERT INTO words(headword,source,is_sample) VALUES ('sample','sample',1)").run(); w.close();
+    expect(fs.readFileSync(p)[18]).toBe(2); // WAL 头
+    const before = fs.readFileSync(p);
+    const db = openDb(p, { dryRun: true });
+    try {
+      const r = importer.upsertCurriculum(db, importer.readCurriculum(curriculum), dict, 'kb2022', { expected, clearSample: true, dryRun: true });
+      expect(r).toMatchObject({ total: 4, dryRun: true, clearSample: { words: 1 } });
+    } finally { db.close(); }
+    expect(fs.readFileSync(p)).toEqual(before);
+  });
   it('never creates the DB when it does not exist', () => {
     const p = path.join(tmp, 'absent.db');
     const db = openDb(p, { dryRun: true });
