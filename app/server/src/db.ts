@@ -76,12 +76,12 @@ function addColumn(db: DB, table: string, col: string, def: string) {
   if (!cols.some((c) => c.name === col)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
 }
 
+import { readSnapshot } from './guard.ts';
 export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
   let db: DB;
   if (options.dryRun && file !== ':memory:' && fs.existsSync(file)) {
-    const original = new Database(file, { readonly: true });
-    let copy: Buffer;
-    try { copy = original.serialize(); } finally { original.close(); }
+    // 只读快照，不在库旁边生成 -wal/-shm（见 guard.ts readSnapshot）
+    const copy = Buffer.from(readSnapshot(file));
     // WAL 模式的库头部 18/19 字节为 2，反序列化到内存时无法以 WAL 打开（SQLITE_CANTOPEN）；改成回滚日志模式（只改内存副本）
     if (copy.length >= 100) { copy[18] = 1; copy[19] = 1; }
     db = new Database(copy);

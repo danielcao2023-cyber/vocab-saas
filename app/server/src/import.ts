@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import readline from 'node:readline';
 import { openDb, type DB } from './db.ts';
+import { checkBackupPath, productionGate, verifiedBackup } from './guard.ts';
 import { parseCsvLine, quotesOpen } from './csv.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
 
@@ -235,8 +236,8 @@ export function compareExpected(total: number, byLevel: { level: string | null; 
 
 async function main() {
   const a = process.argv.slice(2);
-  const valueOptions = new Set(['--list', '--curriculum', '--level2', '--manual', '--source', '--ecdict', '--db']);
-  const switches = new Set(['--sample', '--clear-sample', '--dry-run']);
+  const valueOptions = new Set(['--list', '--curriculum', '--level2', '--manual', '--source', '--ecdict', '--db', '--backup']);
+  const switches = new Set(['--sample', '--clear-sample', '--dry-run', '--allow-production']);
   const values = new Map<string, string>(); const flags = new Set<string>();
   for (let i = 0; i < a.length; i++) {
     const option = a[i];
@@ -248,12 +249,19 @@ async function main() {
   if ((!curriculum && !listFile) || (curriculum && listFile) || !source) throw new Error('需要 --curriculum <tsv> 或 --list <csv>（二选一），以及 --source <名称>');
   if (!curriculum && (values.has('--level2') || values.has('--manual'))) throw new Error('--level2 和 --manual 需要 --curriculum');
   if (curriculum && flags.has('--sample')) throw new Error('--sample 仅用于旧 CSV 路径');
+  // 正式库保护在读任何输入、碰任何库之前：$HOME/apps 下（realpath）默认拒绝；放行要 --allow-production 和 --backup。
+  const dbFile = values.get('--db') ?? process.env.DB_PATH ?? 'data/vocab.db';
+  const dryRun = flags.has('--dry-run');
+  if (dryRun && values.has('--backup')) throw new Error('--dry-run 不写任何文件，不能和 --backup 一起用');
+  const gate = productionGate(dbFile, { allowProduction: flags.has('--allow-production'), backup: values.get('--backup'), dryRun });
+  const backup = gate.backup ?? (values.has('--backup') ? checkBackupPath(dbFile, values.get('--backup')!) : undefined);
   // 所有输入校验和词典读取完成后才接触数据库，失败时连迁移也不执行。
   const list = curriculum ? readCurriculum(curriculum, values.get('--level2')) : readList(listFile!);
   const manual = values.has('--manual') ? readManualMeanings(values.get('--manual')!, list) : new Map<string, string>();
   const dict = await loadDict(values.get('--ecdict') ?? 'data/raw/ecdict.csv', new Set(list.map((entry) => lookupKey(entry.headword))));
-  const options = { clearSample: flags.has('--clear-sample'), dryRun: flags.has('--dry-run') };
-  const db = openDb(values.get('--db') ?? process.env.DB_PATH ?? 'data/vocab.db', options);
+  const options = { clearSample: flags.has('--clear-sample'), dryRun };
+  if (backup) { if (!fs.existsSync(dbFile)) throw new Error(`${dbFile} 不存在，无法备份`); console.error(JSON.stringify({ backup: await verifiedBackup(dbFile, backup) })); }
+  const db = openDb(dbFile, options);
   try {
     const result = curriculum
       ? upsertCurriculum(db, list as CurriculumEntry[], dict, source, { ...options, manual })
