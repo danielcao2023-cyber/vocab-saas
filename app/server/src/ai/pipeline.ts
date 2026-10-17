@@ -7,12 +7,14 @@ import { sha256 } from '../freq.ts';
 import { validateContent, validateZk, canonical, type WordContext, type ValidBlock } from '../content-validate.ts';
 import { setting } from '../settings.ts';
 import { MODEL, extractJson, projectRoot, type Runner, type RunnerResult } from './codex-runner.ts';
+import { FAKE_MODEL, FAKE_SUFFIX } from './fake-runner.ts';
 import { CONTENT_VERSION,ZK_VERSION,makePrompt } from './prompts.ts';
 import { contentSchema,zkSchema } from './schema.ts';
-export interface PipelineOptions {kind?:'content'|'zk_freq';batch?:number;limit?:number;words?:string[];pilot?:boolean;dryRun?:boolean;retryFailed?:boolean;reconcile?:boolean;root?:string;shouldStop?:()=>boolean;log?:(text:string)=>void}
+/** fake=true：模拟模型（默认）。记录 model=fake-model、prompt_version 加 -fake 后缀，input_hash 因此与真实模型不同，真实运行不会因模拟内容而跳过。 */
+export interface PipelineOptions {fake?:boolean;kind?:'content'|'zk_freq';batch?:number;limit?:number;words?:string[];pilot?:boolean;dryRun?:boolean;retryFailed?:boolean;reconcile?:boolean;root?:string;shouldStop?:()=>boolean;log?:(text:string)=>void}
 interface InputWord {id:number;headword:string;meaning_zh:string|null;level:string|null;pos:string|null;forms:{form:string;kind:string}[];input_hash:string}
-interface Snapshot {words:InputWord[];curriculum:WordContext['curriculum'];kind:'content'|'zk_freq';version:string}
-export function inputHash(kind:string,version:string,w:Omit<InputWord,'input_hash'>,listHash:string) {return sha256(JSON.stringify([kind,version,MODEL,w.headword,w.meaning_zh,w.level,w.forms,listHash]));}
+interface Snapshot {words:InputWord[];curriculum:WordContext['curriculum'];kind:'content'|'zk_freq';version:string;model?:string}
+export function inputHash(kind:string,version:string,w:Omit<InputWord,'input_hash'>,listHash:string,model:string=MODEL) {return sha256(JSON.stringify([kind,version,model,w.headword,w.meaning_zh,w.level,w.forms,listHash]));}
 export function acquireLock(file:string) {
   fs.mkdirSync(path.dirname(file),{recursive:true});
   try {const fd=fs.openSync(file,'wx');fs.writeFileSync(fd,String(process.pid));fs.closeSync(fd);}catch(e:any){
@@ -27,7 +29,7 @@ export function pilotWords(db:DB,order=learnOrder(db)) {
   for(const w of ['receive','accept','whether'])if(!words.some(x=>canonical(x)===w))words.push(w);return words;
 }
 export function pipelineQueue(db:DB,opts:PipelineOptions) {
-  const kind=opts.kind??'content',version=kind==='content'?CONTENT_VERSION:ZK_VERSION;
+  const kind=opts.kind??'content',model=opts.fake?FAKE_MODEL:MODEL,version=(kind==='content'?CONTENT_VERSION:ZK_VERSION)+(opts.fake?FAKE_SUFFIX:'');
   const order=learnOrder(db),all=db.prepare("SELECT id,headword,meaning_zh,level,pos FROM words WHERE source='kb2022' ORDER BY id").all() as Omit<InputWord,'forms'|'input_hash'>[];
   const curriculum=order.map((w,i)=>({headword:w.headword,order:i+1,forms:(db.prepare('SELECT form FROM word_forms WHERE word_id=? ORDER BY form,kind').all(w.id) as {form:string}[]).map(f=>f.form)}));
   const listHash=sha256(JSON.stringify(curriculum.map(w=>({headword:w.headword,forms:w.forms})).sort((a,b)=>a.headword.localeCompare(b.headword))));
@@ -36,7 +38,7 @@ export function pipelineQueue(db:DB,opts:PipelineOptions) {
   const specified=opts.words??(opts.pilot?pilotWords(db,order):[]);
   for(const name of opts.words??[])if(!all.some(w=>canonical(w.headword)===canonical(name)))throw new Error(`unknown requested word: ${name}`);
   const wanted=new Set(specified.map(canonical));
-  let words=all.map(w=>{const forms=db.prepare('SELECT form,kind FROM word_forms WHERE word_id=? ORDER BY form,kind').all(w.id) as InputWord['forms'];return {...w,forms,input_hash:inputHash(kind,version,{...w,forms},listHash)};});
+  let words=all.map(w=>{const forms=db.prepare('SELECT form,kind FROM word_forms WHERE word_id=? ORDER BY form,kind').all(w.id) as InputWord['forms'];return {...w,forms,input_hash:inputHash(kind,version,{...w,forms},listHash,model)};});
   if(opts.pilot)words=words.filter(w=>wanted.has(canonical(w.headword)));
   words.sort((a,b)=>Number(wanted.has(canonical(b.headword)))-Number(wanted.has(canonical(a.headword)))||(wanted.has(canonical(a.headword))&&wanted.has(canonical(b.headword))?specified.map(canonical).indexOf(canonical(a.headword))-specified.map(canonical).indexOf(canonical(b.headword)):priority.indexOf(a.id)-priority.indexOf(b.id))||a.id-b.id);
   const unresolved=db.prepare("SELECT word_ids,status FROM ai_jobs j WHERE kind=? AND (status IN ('running','unknown') OR (status='failed' AND NOT EXISTS (SELECT 1 FROM ai_cache c WHERE c.key_hash LIKE 'p2:%' AND CAST(c.answer AS INTEGER)=j.id)))").all(kind) as {word_ids:string|null;status:string}[];
@@ -48,7 +50,7 @@ export function pipelineQueue(db:DB,opts:PipelineOptions) {
     return opts.retryFailed?unresolved.some(j=>j.status==='failed'&&JSON.parse(j.word_ids??'[]').includes(w.id)):true;
   });
   if(opts.limit!==undefined)words=words.slice(0,opts.limit);
-  return {words,curriculum,version,kind};
+  return {words,curriculum,version,kind,model};
 }
 function validateOutput(raw:string,snapshot:Snapshot) {
   const value=extractJson(raw);if(!value||Object.keys(value).join()!=='items'||!Array.isArray(value.items))throw new Error('output must be {items:[]}');
@@ -65,8 +67,8 @@ function saveValidated(db:DB,jobId:number,snapshot:Snapshot,results:ReturnType<t
   let accepted=0;
   db.transaction(()=>{for(const r of results){
     if(snapshot.kind==='content'){if(db.prepare('SELECT 1 FROM word_content WHERE word_id=? AND input_hash=?').get(r.word.id,r.word.input_hash))continue;
-      for(const b of r.blocks){db.prepare('INSERT INTO word_content(word_id,kind,body_json,model,prompt_version,status,flags_json,job_id,input_hash,downgraded_from) VALUES (?,?,?,?,?,?,?,?,?,?)').run(r.word.id,b.kind,JSON.stringify(b.body),MODEL,snapshot.version,b.status,JSON.stringify(b.flags),jobId,r.word.input_hash,b.downgraded_from??null);accepted++;}}
-    else if(r.zk){db.prepare(`INSERT INTO word_freq(word_id,grp,rank,score,basis,source,is_inferred,job_id,created_at) VALUES (?,'zk_high',0,?,?,?,1,?,?) ON CONFLICT(word_id,grp) DO UPDATE SET rank=0,score=excluded.score,basis=excluded.basis,source=excluded.source,is_inferred=1,job_id=excluded.job_id,created_at=excluded.created_at`).run(r.word.id,r.zk.score,`${r.zk.basis_zh}（模型推断，非真题统计）`,`${MODEL}/${snapshot.version}`,jobId,new Date().toISOString());accepted++;}
+      for(const b of r.blocks){db.prepare('INSERT INTO word_content(word_id,kind,body_json,model,prompt_version,status,flags_json,job_id,input_hash,downgraded_from) VALUES (?,?,?,?,?,?,?,?,?,?)').run(r.word.id,b.kind,JSON.stringify(b.body),snapshot.model??MODEL,snapshot.version,b.status,JSON.stringify(b.flags),jobId,r.word.input_hash,b.downgraded_from??null);accepted++;}}
+    else if(r.zk){db.prepare(`INSERT INTO word_freq(word_id,grp,rank,score,basis,source,is_inferred,job_id,created_at) VALUES (?,'zk_high',0,?,?,?,1,?,?) ON CONFLICT(word_id,grp) DO UPDATE SET rank=0,score=excluded.score,basis=excluded.basis,source=excluded.source,is_inferred=1,job_id=excluded.job_id,created_at=excluded.created_at`).run(r.word.id,r.zk.score,`${r.zk.basis_zh}（模型推断，非真题统计）`,`${snapshot.model??MODEL}/${snapshot.version}`,jobId,new Date().toISOString());accepted++;}
   }})();return accepted;
 }
 function finishJob(db:DB,id:number,status:string,duration:number,error:string|null) {db.prepare('UPDATE ai_jobs SET status=?,duration_ms=?,finished_at=?,error=? WHERE id=?').run(status,duration,new Date().toISOString(),error?.slice(0,500)??null,id);}
@@ -85,10 +87,10 @@ export async function runPipeline(db:DB,opts:PipelineOptions,runner:Runner) {
     if(pilotDir)fs.mkdirSync(pilotDir,{recursive:true});
     for(const b of p.batches){if(opts.shouldStop?.())break;
       if(db.prepare("SELECT 1 FROM ai_jobs WHERE payload_hash=? AND status='succeeded'").get(b.payload_hash))continue;
-      const created=new Date().toISOString();const id=Number(db.prepare("INSERT INTO ai_jobs(kind,payload_hash,status,started_at,word_ids,model,prompt_version,batch_size,request_id,created_at) VALUES (?,?,'running',?,?,?,?,?,?,?)").run(p.kind,b.payload_hash,created,JSON.stringify(b.words.map(w=>w.id)),MODEL,p.version,b.words.length,randomUUID(),created).lastInsertRowid);
+      const created=new Date().toISOString();const id=Number(db.prepare("INSERT INTO ai_jobs(kind,payload_hash,status,started_at,word_ids,model,prompt_version,batch_size,request_id,created_at) VALUES (?,?,'running',?,?,?,?,?,?,?)").run(p.kind,b.payload_hash,created,JSON.stringify(b.words.map(w=>w.id)),p.model,p.version,b.words.length,randomUUID(),created).lastInsertRowid);
       const directory=path.join(temp,String(id)),outputFile=path.join(root,'app/data/ai-raw',`${id}.json`);fs.mkdirSync(directory,{recursive:true});fs.mkdirSync(path.dirname(outputFile),{recursive:true});
       db.prepare('UPDATE ai_jobs SET output_file=? WHERE id=?').run(outputFile,id);
-      const snapshot:Snapshot={words:b.words,curriculum:p.curriculum,kind:p.kind,version:p.version};fs.writeFileSync(path.join(directory,'request.json'),JSON.stringify(snapshot));
+      const snapshot:Snapshot={words:b.words,curriculum:p.curriculum,kind:p.kind,version:p.version,model:p.model};fs.writeFileSync(path.join(directory,'request.json'),JSON.stringify(snapshot));
       for(const w of b.words)db.prepare('INSERT OR REPLACE INTO ai_cache(key_hash,word_id,question,answer,created_at) VALUES (?,?,?,?,?)').run(`p2:${w.input_hash}`,w.id,p.kind,String(id),created);
       let result:RunnerResult={stdout:'',exitCode:null,durationMs:0},validated:ReturnType<typeof validateOutput>=[],errors:string[]=[],attempts=0;const tick=Date.now();
       const max=opts.retryFailed?1:Math.max(1,Math.min(2,setting(db,'ai_max_attempts',2)));
@@ -104,7 +106,7 @@ export async function runPipeline(db:DB,opts:PipelineOptions,runner:Runner) {
       const report={job:id,words:b.words.map(w=>w.headword),batchSize:b.words.length,durationMs:duration,retries:attempts-1,exitCode:result.exitCode,status,accepted,flagged:validated.flatMap(r=>r.blocks).filter(b=>b.flags.length).length,rejected:validated.reduce((n,r)=>n+r.rejects.length,0),downgraded:validated.flatMap(r=>r.blocks).filter(b=>b.downgraded_from).length};reports.push({...report,validated});opts.log?.(`batch ${id}: ${duration} ms (${b.words.length} words, ${status})`);
       if(pilotDir){const n=reports.length;fs.writeFileSync(path.join(pilotDir,`batch-${n}.raw.json`),result.stdout);fs.writeFileSync(path.join(pilotDir,`batch-${n}.validated.json`),JSON.stringify(validated,null,2));}
     }
-    if(pilotDir){const elapsed=Date.now()-started,words=reports.reduce((n,r)=>n+r.words.length,0);fs.writeFileSync(path.join(pilotDir,'summary.md'),`# AI 试点\n\n模型：${MODEL}；内容均未批准。\n\n|批|词|批大小|耗时 ms|重试|退出码|通过|标记|拒绝|降级|\n|---|---|---|---|---|---|---|---|---|---|\n`+reports.map(r=>`|${r.job}|${r.words.join(', ')}|${r.batchSize}|${r.durationMs}|${r.retries}|${r.exitCode}|${r.accepted}|${r.flagged}|${r.rejected}|${r.downgraded}|`).join('\n')+`\n\n总耗时：${elapsed} ms；平均每词：${words?elapsed/words:0} ms。\n`);fs.writeFileSync(path.join(pilotDir,'samples.md'),'# 可读样例\n\n'+reports.flatMap(r=>r.validated.map((w:any)=>`## ${w.word.headword}\n\n`+w.blocks.map(readableBlock).join('\n')+(w.rejects.length?'\n拒绝：'+w.rejects.map((x:any)=>`${x.kind}: ${x.reason}`).join('；'):'')).join('\n')).join('\n'));}
+    if(pilotDir){const elapsed=Date.now()-started,words=reports.reduce((n,r)=>n+r.words.length,0);fs.writeFileSync(path.join(pilotDir,'summary.md'),`# AI 试点\n\n模型：${p.model}${opts.fake?'（模拟模型，内容不是真实生成）':''}；内容均未批准。\n\n|批|词|批大小|耗时 ms|重试|退出码|通过|标记|拒绝|降级|\n|---|---|---|---|---|---|---|---|---|---|\n`+reports.map(r=>`|${r.job}|${r.words.join(', ')}|${r.batchSize}|${r.durationMs}|${r.retries}|${r.exitCode}|${r.accepted}|${r.flagged}|${r.rejected}|${r.downgraded}|`).join('\n')+`\n\n总耗时：${elapsed} ms；平均每词：${words?elapsed/words:0} ms。\n`);fs.writeFileSync(path.join(pilotDir,'samples.md'),'# 可读样例\n\n'+reports.flatMap(r=>r.validated.map((w:any)=>`## ${w.word.headword}\n\n`+w.blocks.map(readableBlock).join('\n')+(w.rejects.length?'\n拒绝：'+w.rejects.map((x:any)=>`${x.kind}: ${x.reason}`).join('；'):'')).join('\n')).join('\n'));}
     return {calls,reports,pilotDir,durationMs:Date.now()-started};
   }finally{unlock();}
 }

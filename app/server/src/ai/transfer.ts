@@ -14,10 +14,11 @@ export function assertPhase2(db:DB) {
     if(!columns.every(c=>existing.includes(c)))throw new Error('target requires phase-two migration');
   }
 }
+// 模拟模型（fake-model）内容只用于测试实例，永不导出。
 export function exportContent(db:DB,now=new Date()) {
   assertPhase2(db);
-  const content=(db.prepare("SELECT c.*,w.source word_source,w.headword FROM word_content c JOIN words w ON w.id=c.word_id WHERE c.status='approved' ORDER BY w.source,w.headword,c.id").all() as any[]).map(r=>({word_source:r.word_source,headword:r.headword,...pick(r,contentKeys)}));
-  const frequency=(db.prepare('SELECT f.*,w.source word_source,w.headword FROM word_freq f JOIN words w ON w.id=f.word_id ORDER BY w.source,w.headword,f.grp').all() as any[]).map(r=>({word_source:r.word_source,headword:r.headword,...pick(r,freqKeys)}));
+  const content=(db.prepare("SELECT c.*,w.source word_source,w.headword FROM word_content c JOIN words w ON w.id=c.word_id WHERE c.status='approved' AND c.model IS NOT 'fake-model' ORDER BY w.source,w.headword,c.id").all() as any[]).map(r=>({word_source:r.word_source,headword:r.headword,...pick(r,contentKeys)}));
+  const frequency=(db.prepare('SELECT f.*,w.source word_source,w.headword FROM word_freq f JOIN words w ON w.id=f.word_id WHERE f.source NOT LIKE ? ORDER BY w.source,w.headword,f.grp').all('fake-model/%') as any[]).map(r=>({word_source:r.word_source,headword:r.headword,...pick(r,freqKeys)}));
   const body={content:content.map((entry:any)=>{const {body_json,...row}=entry;return {...row,body:JSON.parse(body_json)};}),frequency};return {format:'vocab-p2-content',version:1,exported_at:now.toISOString(),counts:{content:content.length,frequency:frequency.length},sha256:sha256(JSON.stringify(body)),body};
 }
 function resolved(file:string) {let p=path.resolve(file),suffix:string[]=[];while(!fs.existsSync(p)){const parent=path.dirname(p);if(parent===p)break;suffix.unshift(path.basename(p));p=parent;}return path.join(fs.realpathSync(p),...suffix);}
