@@ -10,7 +10,7 @@ function snapshot(db: DB) {
 }
 export function verifyMigration(file: string, opts: { allowProduction?: boolean; home?: string } = {}) {
   // 只读核对：正式库（$HOME/apps 下）需显式 --allow-production；源库只读快照，不在库旁生成文件。
-  productionGate(file, { allowProduction: opts.allowProduction, dryRun: true, home: opts.home });
+  productionGate(file, { allowProduction: opts.allowProduction, dryRun: true, readOnly: true, home: opts.home });
   if (!fs.existsSync(file)) throw new Error(`${file} 不存在`);
   const snap = Buffer.from(readSnapshot(path.resolve(file))); if (snap.length >= 100) { snap[18] = 1; snap[19] = 1; }
   const original = new Database(snap);

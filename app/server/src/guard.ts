@@ -33,12 +33,12 @@ export function checkBackupPath(dbFile: string, backup: string) {
     throw new Error(`--backup 在库所在目录时必须是带时间戳的同级文件，例如 ${path.basename(db)}.20261017-190000.bak`);
   return b;
 }
-export interface ProductionGate { allowProduction?: boolean; backup?: string; dryRun?: boolean; home?: string }
+export interface ProductionGate { allowProduction?: boolean; backup?: string; dryRun?: boolean; home?: string; readOnly?: boolean }
 /** 返回 { production, backup }；不满足条件时抛出清楚的中文错误。只做检查，不写任何东西。 */
 export function productionGate(file: string, g: ProductionGate) {
   const production = isProduction(file, g.home);
   if (!production) return { production, backup: undefined };
-  if (!g.allowProduction) throw new Error(`拒绝：${file} 解析后位于 ${appsRoot(g.home)} 下，是正式库。确需上线导入时同时加 --allow-production 和 --backup <库目录外的路径，或带时间戳的同级文件>。`);
+  if (!g.allowProduction) throw new Error(`拒绝：${file} 解析后位于 ${appsRoot(g.home)} 下，是正式库。` + (g.readOnly ? '这是只读核对，确需对正式库运行时加 --allow-production。' : '确需上线导入时同时加 --allow-production 和 --backup <库目录外的路径，或带时间戳的同级文件>。'));
   if (g.dryRun) return { production, backup: undefined };
   if (!g.backup) throw new Error('正式库导入需要 --backup <路径>：写入前先做备份并校验。');
   return { production, backup: checkBackupPath(file, g.backup) };
