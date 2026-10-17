@@ -103,3 +103,90 @@ describe('queue consistency & idempotency', () => {
     expect((db.prepare('SELECT wrong_count FROM wrong_words').get() as any).wrong_count).toBe(1);
   });
 });
+
+describe('curriculum spelling rules', () => {
+  it.each([
+    ['a / an', ['a', 'an']],
+    ['according (to)', ['according', 'according to']],
+    ['colour (AmE color)', ['colour', 'color']],
+    ['theatre (Am E theater)', ['theatre', 'theater']],
+    ['maths (=mathematics, AmE math)', ['maths', 'math']],
+    ['Mr (AmE Mr.)', ['mr', 'mr.']],
+    ['child (pl. children)', ['child']],
+    ['ad (=advertisement)', ['ad']],
+    ['father (dad)', ['father', 'dad']],
+    ['mother (mum AmE mom)', ['mother', 'mum', 'mom']],
+    ['be (am, is, are)', ['be', 'am', 'is', 'are']],
+    ['policeman / policewoman (pl. policemen / policewomen)', ['policeman', 'policewoman']],
+    ['per cent (AmE percent)', ['per cent', 'percent']],
+    ['o’clock', ["o'clock"]],
+    ['T-shirt', ['t-shirt']],
+    ['Miss', ['miss']],
+    ['a (an)', ['a', 'an']],
+    ['color (colour)', ['color', 'colour']],
+  ])('%s accepts only the intended variants', (headword, expected) => {
+    expect(acceptedSpellings(headword as string)).toEqual(expected);
+  });
+  it.each([
+    ["o'clock", 'o’clock'], ["o'clock", 'O’Clock '], ["o'clock", "o'clock"], ['o’clock', "o'clock"],
+  ])('matches normalized quotes: %s / %s', (headword, answer) => {
+    db.prepare('UPDATE words SET headword=? WHERE id=1').run(headword);
+    const c = nextCard(db, T0)!; review(db, c.id as number, Rating.Easy, T0);
+    const sp = db.prepare("SELECT id FROM cards WHERE word_id=1 AND mode='spell'").get() as { id: number };
+    expect(checkSpelling(db, sp.id, answer, day(1)).correct).toBe(true);
+  });
+});
+
+describe('curriculum new-word ordering', () => {
+  function prepare(core = 10, secondary = 3, every = 5) {
+    db.exec('DELETE FROM words');
+    db.prepare("UPDATE settings SET value='50' WHERE key='new_per_day'").run();
+    db.prepare("UPDATE settings SET value=? WHERE key='level2_every'").run(String(every));
+    const ins = db.prepare('INSERT INTO words(headword,source,priority,freq_rank) VALUES (?,\'kb2022\',?,?)');
+    // Reverse insertion order distinguishes frequency from id ordering.
+    for (let i = core; i >= 1; i--) ins.run('core' + i, 2, i);
+    for (let i = secondary; i >= 1; i--) ins.run('level2-' + i, 1, i);
+    ins.run('other', 0, 1);
+  }
+  function learn(n: number) {
+    const heads: unknown[] = [];
+    for (let i = 0; i < n; i++) {
+      const c = nextCard(db, T0, 'new')!; heads.push(c.headword);
+      review(db, c.id as number, Rating.Easy, T0);
+    }
+    return heads;
+  }
+  it('interleaves every fifth curriculum recognition card and orders each group by frequency', () => {
+    prepare();
+    expect(learn(13)).toEqual(['core1', 'core2', 'core3', 'core4', 'level2-1', 'core5', 'core6', 'core7', 'core8', 'level2-2', 'core9', 'core10', 'level2-3']);
+    expect(learn(1)).toEqual(['other']);
+  });
+  it('finishes core words first when level2_every is zero', () => {
+    prepare(5, 2, 0);
+    expect(learn(7)).toEqual(['core1', 'core2', 'core3', 'core4', 'core5', 'level2-1', 'level2-2']);
+  });
+  it('falls back to core when the secondary group is exhausted', () => {
+    prepare(10, 1);
+    expect(learn(11)).toEqual(['core1', 'core2', 'core3', 'core4', 'level2-1', 'core5', 'core6', 'core7', 'core8', 'core9', 'core10']);
+  });
+  it('serves existing unlearned cards by card id before creating new cards', () => {
+    prepare(3, 0);
+    const ids = db.prepare('SELECT id FROM words WHERE priority=2 ORDER BY id').all() as { id: number }[];
+    const ins = db.prepare("INSERT INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,reps,lapses,state) VALUES (?,'recognize',?,0,0,0,0,0,0,0)");
+    ins.run(ids[1].id, T0.toISOString()); ins.run(ids[0].id, T0.toISOString());
+    expect(learn(3)).toEqual(['core2', 'core3', 'core1']);
+  });
+  it('puts missing frequencies last and counts curriculum cards only', () => {
+    prepare(2, 1, 2);
+    db.prepare("UPDATE words SET freq_rank=NULL WHERE headword='core1'").run();
+    // Existing priority=0 recognition cards must not advance the curriculum cadence.
+    const other = db.prepare("SELECT id FROM words WHERE headword='other'").get() as { id: number };
+    db.prepare("INSERT INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,reps,lapses,state) VALUES (?,'recognize',?,5,5,1,1,1,0,2)").run(other.id, day(5).toISOString());
+    expect(learn(3)).toEqual(['core2', 'level2-1', 'core1']);
+  });
+  it('breaks equal frequencies by word id within a group', () => {
+    prepare(3, 0, 0);
+    db.prepare('UPDATE words SET freq_rank=100 WHERE priority=2').run();
+    expect(learn(3)).toEqual(['core3', 'core2', 'core1']);
+  });
+});

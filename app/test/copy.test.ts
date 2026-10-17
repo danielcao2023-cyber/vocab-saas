@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
+import { vueSources } from './vue-sources.ts';
 import { COPY, isRepeatCard } from '../web/src/copy.ts';
 import { Rating, State } from 'ts-fsrs';
 import { openDb } from '../server/src/db.ts';
@@ -26,7 +27,8 @@ describe('relearn copy', () => {
     expect(again.id).toBe(c.id); expect(isRepeatCard(again as any)).toBe(true);
   });
   it('App.vue renders both lines (no popup)', () => {
-    const app = fs.readFileSync('web/src/App.vue', 'utf8');
+    // v3 splits App.vue into views/components: verify rendered copy across all Vue sources.
+    const app = vueSources().map(s => s.text).join('\n');
     expect(app).toContain('{{ COPY.repeatCard }}'); expect(app).toContain('{{ COPY.homeRelearnNote }}');
     expect(app).not.toMatch(/alert\(|confirm\(/);
   });

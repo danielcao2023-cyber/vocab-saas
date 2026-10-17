@@ -1,0 +1,6 @@
+import {it,expect} from 'vitest';
+import {buildApp} from '../server/src/app.ts';
+import {browse} from '../server/src/search.ts';
+import {database,card} from './v3-helpers.ts';
+import {snapshot} from './p2-helpers.ts';
+it('unranked fallback, combined filters, rank coverage, pagination and read-only calls',async()=>{const db=database(9);db.prepare("UPDATE words SET headword='apple' WHERE id=1").run();card(db,1);db.prepare('UPDATE cards SET stability=9').run();expect(browse(db,{})).toMatchObject({coverage:{ranked:0,total:9}});expect(browse(db,{}).items.map(w=>w.id)).toEqual([1,2,3,4,5,6,7,8,9]);db.exec("INSERT INTO word_freq VALUES (1,'zk_high',1,5,'基础词（模型推断，非真题统计）','gpt-6-luna/p2-zk-v1',1,NULL,'2026')");expect(browse(db,{group:'zk_high',level:'core',letter:'a',status:'familiar'}).items).toMatchObject([{id:1,rank:1,isInferred:true}]);expect(browse(db,{level:'level2',status:'new',size:'2',page:'2'}).items.map(w=>w.id)).toEqual([9]);const app=buildApp(db),before=snapshot(db);expect((await app.inject('/api/browse?group=daily_high')).statusCode).toBe(200);expect(snapshot(db)).toEqual(before);for(const q of ['group=no','letter=ab','page=-1','size=0','status=x','level=x'])expect((await app.inject('/api/browse?'+q)).statusCode).toBe(400);await app.close();db.close();});
