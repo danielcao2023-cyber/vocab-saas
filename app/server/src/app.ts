@@ -1,5 +1,7 @@
 import { search, wordDetail, browse } from './search.ts';
 import { getContent, contentFeedback } from './content.ts';
+import { sendError, parseId, HttpError } from './http-error.ts';
+import { feedbackLimiter, LIMIT_ERRORS } from './rate-limit.ts';
 import Fastify from 'fastify';
 import fastifyStatic from '@fastify/static';
 import fs from 'node:fs';
@@ -17,6 +19,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   const now = opts.now ?? (() => new Date());
   const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
+  const limiter = feedbackLimiter();
   const replayed = (answerId: unknown) => typeof answerId === 'string' && !!answerId && !!db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId);
   if (opts.allow) {
     const allow = opts.allow;
@@ -25,6 +28,11 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
     });
   }
 
+  // 查询参数只接受单个字符串：重复（?q=go&q=went）或数组形式一律 400，不进入业务代码、不外露内部错误。
+  app.addHook('preValidation', async (req, reply) => {
+    const q = req.query as Record<string, unknown> | undefined;
+    if (q && typeof q === 'object' && (Object.values(q).some(v => typeof v !== 'string') || Object.keys(q).some(k => /[[\]]/.test(k)))) return reply.code(400).send({ error: 'invalid query' });
+  });
   app.get('/health', async () => {
     db.prepare('SELECT 1').get();
     return { ok: true, commit: version.commit, time: new Date().toISOString(), words: (db.prepare('SELECT COUNT(*) n FROM words').get() as { n: number }).n };
@@ -56,12 +64,12 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
   app.get<{Querystring:{q?:string;limit?:string}}>('/api/search',async(req,reply)=>{
-    try {const limit=Number(req.query.limit??20);if(!Number.isInteger(limit)||limit<1||limit>100)throw new Error('invalid limit');return search(db,req.query.q??'',limit);}catch(e){return reply.code(400).send({error:(e as Error).message});}
+    try {const raw=req.query.limit??'20',limit=Number(raw);if(!/^[1-9]\d*$/.test(raw)||limit>100)throw new HttpError(400,'invalid limit');return search(db,req.query.q??'',limit);}catch(e){return sendError(reply,e);}
   });
-  app.get<{Params:{id:string}}>('/api/word/:id',async(req,reply)=>wordDetail(db,Number(req.params.id))??reply.code(404).send({error:'word not found'}));
-  app.get<{Params:{id:string}}>('/api/word/:id/content',async req=>getContent(db,Number(req.params.id)));
-  app.get<{Querystring:Record<string,string|undefined>}>('/api/browse',async(req,reply)=>{try{return browse(db,req.query);}catch(e){return reply.code(400).send({error:(e as Error).message});}});
-  app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{try{return contentFeedback(db,Number(req.params.contentId),req.body?.reason,now());}catch(e){return reply.code(400).send({error:(e as Error).message});}});
+  app.get<{Params:{id:string}}>('/api/word/:id',async(req,reply)=>{try{return wordDetail(db,parseId(req.params.id))??reply.code(404).send({error:'word not found'});}catch(e){return sendError(reply,e);}});
+  app.get<{Params:{id:string}}>('/api/word/:id/content',async(req,reply)=>{try{const id=parseId(req.params.id);if(!db.prepare('SELECT 1 FROM words WHERE id=?').get(id))return reply.code(404).send({error:'word not found'});return getContent(db,id);}catch(e){return sendError(reply,e);}});
+  app.get<{Querystring:Record<string,string|undefined>}>('/api/browse',async(req,reply)=>{try{return browse(db,req.query);}catch(e){return sendError(reply,e);}});
+  app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{const t=now(),limited=limiter.check(t);if(limited)return reply.code(429).send({error:LIMIT_ERRORS[limited],scope:limited});try{const r=contentFeedback(db,parseId(req.params.contentId,'content id'),req.body?.reason,t);limiter.hid(t);return r;}catch(e){return sendError(reply,e);}});
   app.get('/api/progress', async () => ({ lists: progress(db), curriculum: curriculumProgress(db) }));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong', async req => wrongSummary(db, req.query.sort === 'recent' ? 'recent' : 'count', now()));
   app.get<{ Querystring: { sort?: string } }>('/api/wrong/practice', async req => wrongPractice(db, 10, now(), opts.rng, req.query.sort === 'recent' ? 'recent' : 'count'));

@@ -1,10 +1,10 @@
 import Database from 'better-sqlite3';
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import type { DB } from '../db.ts';
 import { sha256 } from '../freq.ts';
 import { KINDS } from '../content-validate.ts';
+import { protectTarget,resolved } from '../guard.ts';
 const contentKeys=['kind','body_json','flags_json','input_hash','downgraded_from','approved_at','hidden_at','hidden_reason','model','prompt_version'] as const;
 const freqKeys=['grp','rank','score','basis','source','is_inferred'] as const;
 const pick=(r:any,keys:readonly string[])=>Object.fromEntries(keys.map(k=>[k,r[k]??null]));
@@ -21,12 +21,7 @@ export function exportContent(db:DB,now=new Date()) {
   const frequency=(db.prepare('SELECT f.*,w.source word_source,w.headword FROM word_freq f JOIN words w ON w.id=f.word_id WHERE f.source NOT LIKE ? ORDER BY w.source,w.headword,f.grp').all('fake-model/%') as any[]).map(r=>({word_source:r.word_source,headword:r.headword,...pick(r,freqKeys)}));
   const body={content:content.map((entry:any)=>{const {body_json,...row}=entry;return {...row,body:JSON.parse(body_json)};}),frequency};return {format:'vocab-p2-content',version:1,exported_at:now.toISOString(),counts:{content:content.length,frequency:frequency.length},sha256:sha256(JSON.stringify(body)),body};
 }
-function resolved(file:string) {let p=path.resolve(file),suffix:string[]=[];while(!fs.existsSync(p)){const parent=path.dirname(p);if(parent===p)break;suffix.unshift(path.basename(p));p=parent;}return path.join(fs.realpathSync(p),...suffix);}
-export function protectTarget(file:string,home=os.homedir()) {
-  if(file===':memory:')return;
-  const dbPath=resolved(file),apps=resolved(path.join(home,'apps'));
-  if(dbPath===apps||dbPath.startsWith(apps+path.sep))throw new Error('正式库要在上线时另批');
-}
+export { protectTarget,resolved } from '../guard.ts';
 export function validateTransfer(data:any) {
   if(data?.format!=='vocab-p2-content'||data.version!==1||!data.body||!Array.isArray(data.body.content)||!Array.isArray(data.body.frequency)||data.sha256!==sha256(JSON.stringify(data.body))||data.counts?.content!==data.body.content.length||data.counts?.frequency!==data.body.frequency.length)throw new Error('invalid content header, version, count or sha256');
   for(const r of [...data.body.content,...data.body.frequency])if(typeof r.word_source!=='string'||typeof r.headword!=='string')throw new Error('invalid word identity');

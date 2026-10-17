@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
-import {api} from '../api';
+import {api,ClientError} from '../api';
 import {COPY} from '../copy';
 import type {ContentBlock,WordContent} from '../types';
 const props=withDefaults(defineProps<{wordId:number;context?:'recognize'|'answer'|'word';content?:WordContent}>(),{context:'recognize'});
 const pending=():WordContent=>({status:'pending',blocks:[]});
-const data=ref<WordContent>(props.content??pending()),open=ref<Record<string,boolean>>({example:props.context!=='word',collocation:props.context==='recognize'}),hidden=ref<number[]>([]),reporting=ref<number|null>(null),submitting=ref(false);
+const data=ref<WordContent>(props.content??pending()),open=ref<Record<string,boolean>>({example:props.context!=='word',collocation:props.context==='recognize'}),hidden=ref<number[]>([]),reporting=ref<number|null>(null),limitMsg=ref<string|null>(null),submitting=ref(false);
 let alive=true,request=0;
 const groups=computed(()=>[
   {key:'example',kinds:['example']},{key:'collocation',kinds:['collocation']},{key:'distinction',kinds:['distinction']},{key:'relations',kinds:['synonym','antonym']},{key:'pronunciation',kinds:['pronunciation']},{key:'memory',kinds:['mnemonic_etymology','mnemonic_association','related_words']},
@@ -18,7 +18,7 @@ function toggle(key:string,event:Event){const value=(event.target as HTMLDetails
 function toggleAll(){const value=!allOpen.value;open.value=Object.fromEntries(groups.value.map(g=>[g.key,value]));persist();}
 function keydown(e:KeyboardEvent){const t=e.target as HTMLElement|null;if(t?.isContentEditable||['INPUT','TEXTAREA','SELECT'].includes(t?.tagName??''))return;if(e.key.toLowerCase()==='e'){toggleAll();e.preventDefault();}}
 async function load(){const n=++request;hidden.value=[];data.value=props.content??pending();if(props.content)return;try{const result=await api<WordContent>(`/api/word/${props.wordId}/content`);if(alive&&n===request)data.value=result;}catch{if(alive&&n===request)data.value=pending();}}
-async function feedback(id:number,reason:string){if(submitting.value)return;submitting.value=true;try{await api(`/api/content/${id}/feedback`,{reason});hidden.value.push(id);reporting.value=null;}catch{/* keep the block available to retry */}finally{submitting.value=false;}}
+async function feedback(id:number,reason:string){if(submitting.value)return;submitting.value=true;try{await api(`/api/content/${id}/feedback`,{reason});hidden.value.push(id);reporting.value=null;}catch(e){/* 404：这条已经看不到了（别处已反馈或已下线），同样收起；其他错误保留以便重试 */if(e instanceof ClientError&&e.status===404){hidden.value.push(id);reporting.value=null;}else if(e instanceof ClientError&&e.status===429)limitMsg.value=e.message.startsWith('daily')?COPY.feedbackDayLimit:COPY.feedbackTooFast;}finally{submitting.value=false;}}
 onMounted(()=>{if(props.context!=='word'){try{const saved=JSON.parse(window.localStorage.getItem('explain:'+props.context)??'null');if(saved&&typeof saved==='object')open.value=saved;}catch{/* optional */}}load();window.addEventListener('keydown',keydown);});
 watch(()=>props.wordId,load);watch(()=>props.content,v=>{if(v)data.value=v;});
 onUnmounted(()=>{alive=false;window.removeEventListener('keydown',keydown);});
@@ -34,5 +34,5 @@ onUnmounted(()=>{alive=false;window.removeEventListener('keydown',keydown);});
 <div v-else-if="b.kind==='pronunciation'" class="pron"><div class="syl"><template v-for="(s,i) in b.body.syllables" :key="i"><template v-if="i">·</template><span :class="{stress:i===b.body.stress}">{{ s }}</span></template></div><ul><li v-for="s in [...b.body.points_zh,...b.body.common_errors_zh]" :key="s">{{ s }}</li></ul></div>
 <div v-else-if="b.kind==='mnemonic_etymology'" class="mn ety"><span class="k">{{ COPY.etymology }}</span><div class="parts"><template v-for="(p,i) in b.body.parts" :key="i"><template v-if="i"> + </template><span>{{ p.form }}</span>「{{ p.meaning_zh }}」</template></div><p>{{ b.body.explain_zh }}</p><div class="src">{{ b.body.chain }}</div><div v-if="b.body.same_root?.length" class="wchips"><span class="rowlbl">{{ COPY.sameRoot }}</span><span v-for="x in b.body.same_root" :key="x.word" class="wchip"><span class="en">{{ x.word }}</span><span class="zh">{{ x.zh }}</span><span v-if="!x.inList" class="st out">{{ COPY.outsideList }}</span><span v-else-if="x.learned" class="st">{{ COPY.learned }}</span></span></div></div>
 <div v-else-if="b.kind==='mnemonic_association'" class="mn assoc"><span class="k">{{ COPY.association }}</span><div>{{ b.body.text_zh }}</div></div>
-<div class="foot"><button type="button" class="report" :aria-expanded="reporting===b.id" @click="reporting=reporting===b.id?null:b.id">{{ COPY.reportContent }}</button></div><div v-if="reporting===b.id" class="feedback-options"><button v-for="reason in COPY.feedbackReasons" :key="reason" type="button" class="btn" :disabled="submitting" @click="feedback(b.id,reason)">{{ reason }}</button></div>
+<div class="foot"><button type="button" class="report" :aria-expanded="reporting===b.id" @click="reporting=reporting===b.id?null:b.id;limitMsg=null">{{ COPY.reportContent }}</button></div><p v-if="reporting===b.id&&limitMsg" class="fbmsg limit" role="status">{{ limitMsg }}</p><div v-if="reporting===b.id&&!limitMsg" class="feedback-options"><button v-for="reason in COPY.feedbackReasons" :key="reason" type="button" class="btn" :disabled="submitting" @click="feedback(b.id,reason)">{{ reason }}</button></div>
 </div></template></div></details></section></template>

@@ -3,13 +3,17 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { openDb, type DB } from '../server/src/db.ts';
+import { productionGate, readSnapshot } from '../server/src/guard.ts';
 const tables = ['words','cards','review_logs','wrong_words','settings','word_content','content_feedback','ai_jobs','ai_cache'];
 function snapshot(db: DB) {
   return Object.fromEntries(tables.map(table => [table, { columns: (db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[]).map(r => r.name), rows: db.prepare(`SELECT * FROM ${table} ORDER BY ${table === 'ai_cache' ? 'key_hash' : table === 'settings' ? 'key' : table === 'wrong_words' ? 'word_id' : 'id'}`).all() as Record<string, unknown>[] }]));
 }
-export function verifyMigration(file: string) {
-  // The source is only ever opened readonly. serialize includes committed WAL pages.
-  const original = new Database(path.resolve(file), { readonly: true, fileMustExist: true });
+export function verifyMigration(file: string, opts: { allowProduction?: boolean; home?: string } = {}) {
+  // 只读核对：正式库（$HOME/apps 下）需显式 --allow-production；源库只读快照，不在库旁生成文件。
+  productionGate(file, { allowProduction: opts.allowProduction, dryRun: true, readOnly: true, home: opts.home });
+  if (!fs.existsSync(file)) throw new Error(`${file} 不存在`);
+  const snap = Buffer.from(readSnapshot(path.resolve(file))); if (snap.length >= 100) { snap[18] = 1; snap[19] = 1; }
+  const original = new Database(snap);
   let bytes: Buffer; let before: ReturnType<typeof snapshot>;let beforeTables: string[];
   try { before = snapshot(original);beforeTables = (original.prepare("SELECT name FROM sqlite_master WHERE type='table'").all() as {name:string}[]).map(t=>t.name); bytes = original.serialize(); } finally { original.close(); }
   const temp = path.resolve('../.tmp'); fs.mkdirSync(temp,{recursive:true});
@@ -33,5 +37,5 @@ export function verifyMigration(file: string) {
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const index = process.argv.indexOf('--db');
   if (index < 0 || !process.argv[index + 1]) { process.stderr.write('Usage: tsx scripts/verify-migration.ts --db <path>\n'); process.exitCode = 1; }
-  else { try { const report=verifyMigration(process.argv[index + 1]);process.stdout.write(JSON.stringify(report, null, 2) + '\n');if(!report.oldColumnsUnchanged||report.integrity_check!=='ok')process.exitCode=1; } catch (e) { process.stderr.write((e as Error).message + '\n'); process.exitCode = 1; } }
+  else { try { const report=verifyMigration(process.argv[index + 1], { allowProduction: process.argv.includes('--allow-production') });process.stdout.write(JSON.stringify(report, null, 2) + '\n');if(!report.oldColumnsUnchanged||report.integrity_check!=='ok')process.exitCode=1; } catch (e) { process.stderr.write((e as Error).message + '\n'); process.exitCode = 1; } }
 }

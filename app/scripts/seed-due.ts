@@ -5,6 +5,7 @@
  */
 import path from 'node:path';
 import { openDb } from '../server/src/db.ts';
+import { protectTarget } from '../server/src/guard.ts';
 import { filterSenses, loadDict, lookupKey, readList, upsertWords } from '../server/src/import.ts';
 import { acceptedSpellings } from '../server/src/study.ts';
 import { State } from 'ts-fsrs';
@@ -13,6 +14,8 @@ const a = process.argv.slice(2); const arg = (k: string, d?: string) => { const 
 const dbPath = arg('--db');
 if (!dbPath) { console.error('需要 --db <测试库路径>，例如 data/qa.db'); process.exit(2); }
 if (path.resolve(dbPath) === path.resolve('data/vocab.db') || path.basename(dbPath) === 'vocab.db') { console.error('拒绝：不能对正式库 vocab.db 造数据'); process.exit(2); }
+// 在 openDb（含迁移）之前：$HOME/apps 下（realpath，含符号链接）一律拒绝，本脚本会清空 cards/review_logs/wrong_words
+try { protectTarget(dbPath); } catch (e) { console.error((e as Error).message); process.exit(2); }
 const n = Number(arg('--n', '8'));
 const db = openDb(dbPath);
 const list = readList(arg('--list', 'data/wordlists/sample.csv')!);
