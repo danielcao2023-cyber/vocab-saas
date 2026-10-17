@@ -1,0 +1,31 @@
+{
+  "name": "vocab-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "import": "tsx server/src/import.ts",
+    "dev": "tsx server/src/main.ts",
+    "build": "tsc -p tsconfig.json --noEmit && vue-tsc -p web/tsconfig.json --noEmit && vite build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && vue-tsc -p web/tsconfig.json --noEmit",
+    "start": "tsx server/src/main.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@fastify/static": "10.1.6",
+    "better-sqlite3": "^11.10.0",
+    "fastify": "^5.12.7",
+    "ts-fsrs": "^5.4.2",
+    "tsx": "4.23.15",
+    "vue": "3.5.44"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/node": "^26.6.5",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^4.1.12",
+    "vue-tsc": "^3.3.13"
+  }
+}

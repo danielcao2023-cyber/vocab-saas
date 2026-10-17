@@ -1,0 +1,104 @@
+/**
+ * 幂等导入：词表 CSV（headword,level[,pos]）+ ECDICT 补音标/释义。
+ * 用法：tsx server/src/import.ts --list data/wordlists/sample.csv --source sample [--sample] [--ecdict data/raw/ecdict.csv] [--db data/vocab.db]
+ * 重复运行只更新 words 行（按 source+headword 唯一），不动 cards/复习记录。
+ */
+import fs from 'node:fs';
+import readline from 'node:readline';
+import { openDb, type DB } from './db.ts';
+import { parseCsvLine, quotesOpen } from './csv.ts';
+
+export interface ListEntry { headword: string; level: string | null; pos: string | null }
+export interface DictEntry { phonetic: string; translation: string; pos: string; frq: number }
+
+/** 课标词条常见写法：“a (an)”、“be (am, is, are)”、“color (colour)”、“T-shirt”。取主词形查词典 */
+export function lookupKey(headword: string): string {
+  return headword.replace(/\(.*?\)|（.*?）/g, '').split('/')[0].trim().toLowerCase();
+}
+
+export function readList(file: string): ListEntry[] {
+  const lines = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/).filter((l) => l.trim() && !l.startsWith('#'));
+  const header = parseCsvLine(lines.shift()!).map((h) => h.trim());
+  const hi = header.indexOf('headword'); const li = header.indexOf('level'); const pi = header.indexOf('pos');
+  if (hi < 0) throw new Error('词表 CSV 缺少 headword 列');
+  const seen = new Set<string>(); const out: ListEntry[] = [];
+  for (const l of lines) {
+    const f = parseCsvLine(l); const hw = (f[hi] ?? '').trim();
+    if (!hw || seen.has(hw.toLowerCase())) continue;
+    seen.add(hw.toLowerCase());
+    out.push({ headword: hw, level: li >= 0 ? (f[li]?.trim() || null) : null, pos: pi >= 0 ? (f[pi]?.trim() || null) : null });
+  }
+  return out;
+}
+
+export function cleanTranslation(t: string): string {
+  const lines = t.replace(/\\r/g, '').split('\\n').map((s) => s.trim()).filter(Boolean);
+  // 去掉 [网络]、[计]、[经] 等专业/网络释义行；若全是这类行则保留第一行
+  const general = lines.filter((s) => !/^\[[^\]]+\]/.test(s));
+  return (general.length ? general : lines.slice(0, 1)).join('\n');
+}
+
+/** 流式扫描 ECDICT，只保留需要的词 */
+export async function loadDict(file: string, wanted: Set<string>): Promise<Map<string, DictEntry>> {
+  const map = new Map<string, DictEntry>();
+  const rl = readline.createInterface({ input: fs.createReadStream(file, 'utf8'), crlfDelay: Infinity });
+  let buf = ''; let header: string[] | null = null;
+  for await (const line of rl) {
+    buf = buf ? buf + '\n' + line : line;
+    if (quotesOpen(buf)) continue;
+    const f = parseCsvLine(buf); buf = '';
+    if (!header) { header = f; continue; }
+    const key = f[0]?.toLowerCase();
+    if (!key || !wanted.has(key)) continue;
+    const e: DictEntry = { phonetic: f[1] ?? '', translation: cleanTranslation(f[3] ?? ''), pos: f[4] ?? '', frq: Number(f[9]) || 0 };
+    const prev = map.get(key);
+    // 同一小写词有多条（如 May/may），优先小写原形且有释义的
+    if (!prev || (!prev.translation && e.translation) || (f[0] === key && prev.translation && e.translation)) map.set(key, e);
+  }
+  return map;
+}
+
+export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean) {
+  const stmt = db.prepare(`INSERT INTO words(headword,phonetic,pos,meaning_zh,source,level,freq_rank,is_sample) VALUES (@headword,@phonetic,@pos,@meaning,@source,@level,@frq,@sample)
+    ON CONFLICT(source,headword) DO UPDATE SET phonetic=excluded.phonetic,pos=excluded.pos,meaning_zh=excluded.meaning_zh,level=excluded.level,freq_rank=excluded.freq_rank,is_sample=excluded.is_sample`);
+  let missingPhonetic = 0, missingMeaning = 0; const missing: string[] = [];
+  db.transaction(() => {
+    for (const e of list) {
+      const d = dict.get(lookupKey(e.headword));
+      const phonetic = d?.phonetic ? `/${d.phonetic}/` : null;
+      const meaning = d?.translation || null;
+      if (!phonetic) missingPhonetic++;
+      if (!meaning) missingMeaning++;
+      if (!phonetic || !meaning) missing.push(e.headword);
+      stmt.run({ headword: e.headword, phonetic, pos: e.pos ?? d?.pos ?? null, meaning, source, level: e.level, frq: d?.frq || null, sample: isSample ? 1 : 0 });
+    }
+  })();
+  const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
+  const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
+  return { imported: list.length, totalInDb: total, byLevel, missingPhonetic, missingMeaning, missing };
+}
+
+/** 与课标转述数字（1600 / 二级 505 / 初中 1095，未验证）比对 */
+export function compareExpected(total: number, byLevel: { level: string | null; n: number }[]) {
+  const exp = { total: 1600, level2: 505, junior: 1095 };
+  const lv2 = byLevel.find((x) => x.level === '二级')?.n ?? 0;
+  const jr = byLevel.filter((x) => x.level && x.level !== '二级').reduce((a, x) => a + x.n, 0);
+  const warnings: string[] = [];
+  if (total !== exp.total) warnings.push(`总数 ${total} ≠ 1600（1600 为二手转述，未验证）`);
+  if (lv2 !== exp.level2) warnings.push(`二级 ${lv2} ≠ 505`);
+  if (jr !== exp.junior) warnings.push(`初中 ${jr} ≠ 1095`);
+  return warnings;
+}
+
+async function main() {
+  const a = process.argv.slice(2); const arg = (k: string, d?: string) => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : d; };
+  const listFile = arg('--list'); const source = arg('--source');
+  if (!listFile || !source) { console.error('需要 --list <csv> --source <名称>'); process.exit(2); }
+  const db = openDb(arg('--db', process.env.DB_PATH ?? 'data/vocab.db')!);
+  const list = readList(listFile);
+  const dict = await loadDict(arg('--ecdict', 'data/raw/ecdict.csv')!, new Set(list.map((e) => lookupKey(e.headword))));
+  const r = upsertWords(db, list, dict, source, a.includes('--sample'));
+  console.log(JSON.stringify({ source, sample: a.includes('--sample'), ...r, countCheck: compareExpected(r.totalInDb, r.byLevel as any) }, null, 2));
+  db.close();
+}
+if (process.argv[1]?.endsWith('import.ts')) main().catch((e) => { console.error(e); process.exit(1); });
