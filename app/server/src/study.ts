@@ -113,12 +113,19 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
 
 export function normalizeAnswer(s: string) { return s.trim().toLowerCase().replace(/\s+/g, ' '); }
 
+/** 可接受的拼写：主词形和括号/斜杠里的变体，如 "a (an)" → a, an；"color (colour)" → color, colour */
+export function acceptedSpellings(headword: string): string[] {
+  const main = headword.replace(/\(.*?\)|（.*?）/g, '').split('/').map(normalizeAnswer).filter(Boolean);
+  const inner = [...headword.matchAll(/[(（](.*?)[)）]/g)].flatMap((m) => m[1].split(/[,，/]/)).map(normalizeAnswer).filter((x) => /^[a-z' .-]+$/.test(x));
+  return [...new Set([...main, ...inner])];
+}
+
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */
 export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false) {
   const row = db.prepare(`SELECT c.mode, w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string } | undefined;
   if (!row) throw new Error('card not found');
   if (row.mode === 'recognize') throw new Error('not a spelling card');
-  const correct = normalizeAnswer(answer) === normalizeAnswer(row.headword);
+  const correct = acceptedSpellings(row.headword).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
   const card = review(db, cardId, rating as Grade, now, { answer, correct });
   return { correct, expected: row.headword, rating, due: card.due.toISOString() };

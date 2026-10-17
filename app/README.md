@@ -1,0 +1,46 @@
+# 初三背单词 · 第一期（核心背词，无 AI）
+
+- 负责人：工程负责人 ｜ 2026-10-17（上海时间）｜ 仅在 box 上开发运行，**未部署到 Studio**。
+- 依据：`../方案-v2.md`、`../v2/工程.md`、`../v2/内容.md`（修订版）；群内 08:42 补充要求（不做任何 AI 界面；必须有拼写、听写、错词本、刷新后状态保留、断线提示；词表须来自教育部官方 PDF）。
+
+## 运行
+```bash
+cd /workspace/vocab-saas/app
+npm install                       # Node 20+；better-sqlite3 用 11.x（有预编译包）
+# 下载 ECDICT（MIT）到 data/raw/ecdict.csv（不入库）
+curl -L -o data/raw/ecdict.csv https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv
+npm run import -- --list data/wordlists/sample.csv --source sample --sample   # 示例数据
+npm run build                     # 类型检查 + 前端打包到 dist/
+npm start                         # 默认 HOST=127.0.0.1 PORT=18420 DB_PATH=data/vocab.db
+# 打开 http://127.0.0.1:18420/
+npm test                          # vitest
+```
+环境变量：`HOST`、`PORT`、`DB_PATH`、`STATIC_DIR`。没有任何密钥或令牌。
+
+## 词表现状（重要）
+- **官方来源**：教育部《义务教育课程方案和课程标准（2022年版）》通知页 http://www.moe.gov.cn/srcsite/A26/s8001/202204/t20220420_619921.html （发布 2022-04-21），英语课标 PDF：http://www.moe.gov.cn/srcsite/A26/s8001/202204/W020220420582349487953.pdf
+- 2026-10-17 08:45–08:48（上海时间）从 box 下载该 PDF：http 和 https 均连接超时（moe.gov.cn 从本机网络不可达），**没有拿到官方 PDF**。另外搜索引擎抓到的同批 PDF 文本是扫描件 OCR 乱码，推断该 PDF 为扫描图片，整理词表还需要 OCR + 人工校对。
+- 按要求不使用二手转载词表。当前库里只有 **`data/wordlists/sample.csv`：42 个示例数据**（工程自拟常用词，不是课标原文），界面顶部有“示例数据”提示。
+- 拿到 PDF 后：整理成 `data/wordlists/kb2022.csv`（`headword,level`，level 写“二级/三级”），运行
+  `npm run import -- --list data/wordlists/kb2022.csv --source kb2022`。脚本会输出缺音标/缺释义的词，以及与 1600 / 二级 505 / 初中 1095（**二手转述，未验证**）的差异。
+- 导入是幂等的：按 (source, headword) upsert，重复运行不新增行、不动复习记录。
+- 九年级单元标注：第一期不做（`words.unit` 留空）。
+
+## 功能
+- 今日首页：“今天：复习 N 个 · 新词 N 个 · 约 N 分钟”，“开始复习 / 先学新词”。每天新词默认 10 个（settings.new_per_day），按上海时间 0 点切换。
+- 认词卡：单词、音标、发音按钮、ECDICT 释义；四档自评 1 忘了 / 2 模糊 / 3 认识 / 4 很熟（对应 FSRS Again/Hard/Good/Easy）。
+- 拼写卡（看释义写单词）和听写卡（听发音写单词）：认词卡第一次学过后，次日起出现。严格比对（只忽略大小写、首尾空格；括号里的变体也算对，如 a (an)）。对→认识，错→忘了，用了 Tab 首字母提示→模糊。
+- 错词本：任何“忘了”或拼写/听写答错自动加入；跨天答对 3 次后移出；可手动移出；“练这 10 个”。
+- 进度页：按词表显示四档掌握度（新词 / 学习中 / 熟悉 / 掌握），用认词卡的 FSRS 状态：学习中 = 学习/重学阶段或稳定度 < 7 天；熟悉 = 7–21 天；掌握 = ≥ 21 天。阈值是设计假设。
+- 发音：浏览器 speechSynthesis（工程.md §2 方案）；没有该能力时提示“没听到声音？检查耳机或音量。”。macOS `say` 预录留待 Studio 阶段。
+- 断线：前端每 30 秒请求 /health，任何请求失败都显示“连不上学习服务。如果不在家，请先打开 Tailscale；在家的话请家长看一下 Studio 是否开机。”
+- 所有状态存 SQLite（WAL），刷新页面或重启服务不丢。
+
+## 与文档的差异
+- 按 08:42 要求，**不做任何 AI 界面**（无例句区、无“AI 生成”角标、无“这条有问题”、无“例句还没生成”）。表 `word_content`（含 status）、`content_feedback`、`ai_jobs`、`ai_cache` 已按工程.md 建好但空置。
+- 未做：首次水平小测、家长周报、补签/连续天数、时长上限、中考倒计时、选择题题型、家庭口令（只绑 127.0.0.1）。
+- 多了 `wrong_words` 表（错词本）和 `words.level / is_sample` 列；`cards` 多 `learning_steps`（ts-fsrs 5 的字段）。
+- better-sqlite3 用 11.x（12.x 在本机 Node 20 上没有预编译包）；TypeScript 用 5.x（vue-tsc 不兼容 7.x）。
+
+## API
+`GET /health` · `GET /api/today` · `GET /api/next?prefer=review|new` · `POST /api/review {cardId,rating 1-4,durationMs}` · `POST /api/check {cardId,answer,usedHint}` · `GET /api/progress` · `GET /api/wrong` · `GET /api/wrong/practice` · `POST /api/wrong/:wordId {inBook}`

@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { Rating, State } from 'ts-fsrs';
 import { openDb, type DB } from '../server/src/db.ts';
-import { checkSpelling, nextCard, progress, review, todaySummary, wrongList } from '../server/src/study.ts';
+import { acceptedSpellings, checkSpelling, nextCard, progress, review, todaySummary, wrongList } from '../server/src/study.ts';
 import { buildApp } from '../server/src/app.ts';
 
 let db: DB;
@@ -52,6 +52,12 @@ describe('daily queue & FSRS', () => {
     expect(r).toMatchObject({ correct: false, expected: 'apple', rating: Rating.Again });
     expect(wrongList(db).length).toBe(1);
     expect(() => checkSpelling(db, c.id as number, 'apple', day(2))).toThrow();
+  });
+
+  it('accepts variants in parentheses', () => {
+    expect(acceptedSpellings('a (an)')).toEqual(['a', 'an']);
+    expect(acceptedSpellings('color (colour)')).toEqual(['color', 'colour']);
+    expect(acceptedSpellings('T-shirt')).toEqual(['t-shirt']);
   });
 
   it('progress counts four tiers by list', () => {
