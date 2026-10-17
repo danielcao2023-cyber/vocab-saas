@@ -54,10 +54,12 @@ export function pipelineQueue(db:DB,opts:PipelineOptions) {
 }
 function validateOutput(raw:string,snapshot:Snapshot) {
   const value=extractJson(raw);if(!value||Object.keys(value).join()!=='items'||!Array.isArray(value.items))throw new Error('output must be {items:[]}');
-  const requested=new Set(snapshot.words.map(w=>canonical(w.headword))),seen=new Set<string>();
-  for(const item of value.items){if(typeof item?.word!=='string'||!requested.has(canonical(item.word))||seen.has(canonical(item.word)))throw new Error('unexpected or duplicate output word');seen.add(canonical(item.word));}
+  // 同批可能有只差大小写的词头（miss / Miss）：先按原词头精确匹配，只有唯一时才按 canonical 匹配。
+  const resolve=(word:string)=>{const exact=snapshot.words.find(w=>w.headword.trim()===word.trim());if(exact)return exact;const c=snapshot.words.filter(w=>canonical(w.headword)===canonical(word));return c.length===1?c[0]:undefined;};
+  const byId=new Map<number,any>();
+  for(const item of value.items){const w=typeof item?.word==='string'?resolve(item.word):undefined;if(!w||byId.has(w.id))throw new Error('unexpected or duplicate output word');byId.set(w.id,item);}
   const results=snapshot.words.map(w=>{
-    const item=value.items.find((x:any)=>canonical(x.word)===canonical(w.headword));
+    const item=byId.get(w.id);
     if(!item)return {word:w,blocks:[] as ValidBlock[],rejects:[{kind:'item',reason:'missing output word'}],zk:null};
     if(snapshot.kind==='zk_freq'){try{return {word:w,blocks:[] as ValidBlock[],rejects:[],zk:validateZk(item,w.headword)};}catch(e){return {word:w,blocks:[] as ValidBlock[],rejects:[{kind:'zk_freq',reason:(e as Error).message}],zk:null};}}
     return {word:w,...validateContent(item,{headword:w.headword,meaning_zh:w.meaning_zh,forms:w.forms,curriculum:snapshot.curriculum}),zk:null};
