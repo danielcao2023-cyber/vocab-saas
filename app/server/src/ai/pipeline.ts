@@ -8,6 +8,7 @@ import { validateContent, validateZk, canonical, type WordContext, type ValidBlo
 import { setting } from '../settings.ts';
 import { MODEL, extractJson, projectRoot, type Runner, type RunnerResult } from './codex-runner.ts';
 import { FAKE_MODEL, FAKE_SUFFIX } from './fake-runner.ts';
+import { mainHeadwords } from '../text.ts';
 import { CONTENT_VERSION,ZK_VERSION,makePrompt } from './prompts.ts';
 import { contentSchema,zkSchema } from './schema.ts';
 /** fake=true：模拟模型（默认）。记录 model=fake-model、prompt_version 加 -fake 后缀，input_hash 因此与真实模型不同，真实运行不会因模拟内容而跳过。 */
@@ -35,8 +36,9 @@ export function pipelineQueue(db:DB,opts:PipelineOptions) {
   const listHash=sha256(JSON.stringify(curriculum.map(w=>({headword:w.headword,forms:w.forms})).sort((a,b)=>a.headword.localeCompare(b.headword))));
   const due=db.prepare('SELECT word_id,MIN(due) due FROM cards GROUP BY word_id ORDER BY due,word_id').all() as {word_id:number}[];
   const priority=kind==='zk_freq'?all.map(w=>w.id):[...due.map(w=>w.word_id),...order.map(w=>w.id)];
-  const specified=opts.words??(opts.pilot?pilotWords(db,order):[]);
-  for(const name of opts.words??[])if(!all.some(w=>canonical(w.headword)===canonical(name)))throw new Error(`unknown requested word: ${name}`);
+  // --words：先按整条词头匹配；没有时按主词头（去掉括号注释，如 child → child (pl. children)）匹配。
+  const resolveName=(name:string)=>{const exact=all.filter(w=>canonical(w.headword)===canonical(name));return (exact.length?exact:all.filter(w=>mainHeadwords(w.headword).some(v=>canonical(v)===canonical(name)))).map(w=>w.headword);};
+  const specified=opts.words?opts.words.flatMap(name=>{const found=resolveName(name);if(!found.length)throw new Error(`unknown requested word: ${name}`);return found;}):(opts.pilot?pilotWords(db,order):[]);
   const wanted=new Set(specified.map(canonical));
   let words=all.map(w=>{const forms=db.prepare('SELECT form,kind FROM word_forms WHERE word_id=? ORDER BY form,kind').all(w.id) as InputWord['forms'];return {...w,forms,input_hash:inputHash(kind,version,{...w,forms},listHash,model)};});
   if(opts.pilot)words=words.filter(w=>wanted.has(canonical(w.headword)));

@@ -11,6 +11,8 @@ export function search(db:DB,query:string,limit=20) {
   if([...query].length>40)throw new HttpError(400,'q must be at most 40 characters');
   const q=normalizeQuotes(query).trim().toLowerCase();if(!q)return [];
   const chinese=/\p{Script=Han}/u.test(q);
+  const full=(h:string)=>normalizeQuotes(h).toLowerCase().replace(/\s+/g,' ').replace(/\s*([()（）])\s*/g,'$1').trim();
+  const qBase=/[(（]/.test(q)?mainHeadwords(q.replace(/[(（][^)）]*$/,'')).map(x=>x.toLowerCase()):[];
   const forms=db.prepare('SELECT word_id,form,kind FROM word_forms').all() as {word_id:number;form:string;kind:string}[];
   return readWords(db).map(w=>{
     let rank=Infinity;let formMatch: {form:string;kind:string;description:string}|undefined;
@@ -18,6 +20,9 @@ export function search(db:DB,query:string,limit=20) {
     else {
       const variants=mainHeadwords(w.headword).map(x=>x.toLowerCase());
       rank=variants.includes(q)?0:variants.some(v=>v.startsWith(q))?1:variants.some(v=>v.includes(q))?2:Infinity;
+      // 带括号注释的词头（child (pl. children)）：整条词头、或去掉括号部分（含没打完的括号）后与主词头比对
+      if(rank>0&&full(w.headword)===full(q))rank=0;
+      else if(rank>0&&qBase.length){if(qBase.every(b=>variants.includes(b)))rank=0;else if(rank>1&&variants.some(v=>v.startsWith(qBase[0])))rank=1;}
       const f=forms.find(f=>f.word_id===w.id&&normalizeQuotes(f.form).toLowerCase()===q);
       if(f&&rank===Infinity){rank=3;formMatch={form:f.form,kind:f.kind,description:`${q} 是 ${variants[0]} 的${FORM_LABELS[f.kind]??'变化形式'}`};}
     }
