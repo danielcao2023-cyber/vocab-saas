@@ -1,5 +1,6 @@
 import Database from 'better-sqlite3';
 import fs from 'node:fs';
+import { recomputeDailyStats } from './stats.ts';
 
 export type DB = Database.Database;
 
@@ -100,6 +101,24 @@ export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
     addColumn(db, 'words', 'priority', 'INTEGER NOT NULL DEFAULT 0');
     addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
     db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
+    addColumn(db, 'review_logs', 'qtype', 'TEXT');
+    addColumn(db, 'review_logs', 'counted', 'INTEGER');
+    addColumn(db, 'review_logs', 'context', 'TEXT');
+    db.exec(`CREATE TABLE IF NOT EXISTS question_issues (
+      id INTEGER PRIMARY KEY, card_id INTEGER NOT NULL REFERENCES cards(id),
+      qtype TEXT NOT NULL, context TEXT NOT NULL DEFAULT 'study', options_json TEXT NOT NULL,
+      answer_word_id INTEGER NOT NULL, issued_at TEXT NOT NULL,
+      answered_at TEXT, chosen_word_id INTEGER, answer_id TEXT);
+      CREATE INDEX IF NOT EXISTS idx_question_open ON question_issues(card_id,context,issued_at) WHERE answered_at IS NULL;
+      CREATE UNIQUE INDEX IF NOT EXISTS idx_question_answer ON question_issues(answer_id) WHERE answer_id IS NOT NULL;
+      CREATE TABLE IF NOT EXISTS daily_stats (
+        day TEXT PRIMARY KEY, new_count INTEGER NOT NULL, review_count INTEGER NOT NULL, practice_count INTEGER NOT NULL,
+        answers INTEGER NOT NULL, correct INTEGER NOT NULL, duration_ms INTEGER NOT NULL,
+        mastered_new INTEGER NOT NULL, completed INTEGER NOT NULL, completed_at TEXT, computed_at TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS streak_makeups (day TEXT PRIMARY KEY, used_at TEXT NOT NULL);
+      INSERT OR IGNORE INTO settings(key,value) VALUES ('choice_enabled','1'),('choice_weights','1,1,1'),
+        ('makeup_per_month','2'),('makeup_window_days','7'),('makeup_requires_today','1'),('duration_cap_ms','300000');`);
+    recomputeDailyStats(db);
     return db;
   } catch (error) { db.close(); throw error; }
 }

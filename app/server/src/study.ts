@@ -2,11 +2,14 @@ import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-
 import type { DB } from './db.ts';
 import { shDay, shDayStart } from './time.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
+import { setting } from './settings.ts';
+import { recomputeDailyStats, streak, weekStart } from './stats.ts';
+import { issueQuestion, availableQtypes, type Qtype, type Context, type Rng } from './quiz.ts';
 
 const scheduler = fsrs({ enable_fuzz: false });
 export type Mode = 'recognize' | 'spell' | 'dictation';
 
-interface CardRow {
+export interface CardRow {
   id: number; word_id: number; mode: Mode; due: string; stability: number; difficulty: number;
   elapsed_days: number; scheduled_days: number; learning_steps: number; reps: number; lapses: number;
   state: number; last_review: string | null;
@@ -20,11 +23,6 @@ function toCard(r: CardRow): Card {
   };
 }
 
-function setting(db: DB, key: string, def: number): number {
-  const r = db.prepare('SELECT value FROM settings WHERE key=?').get(key) as { value: string } | undefined;
-  return r ? Number(r.value) : def;
-}
-
 function insertCard(db: DB, wordId: number, mode: Mode, now: Date) {
   const c = createEmptyCard(now);
   db.prepare(`INSERT OR IGNORE INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,learning_steps,reps,lapses,state,last_review)
@@ -33,19 +31,19 @@ function insertCard(db: DB, wordId: number, mode: Mode, now: Date) {
 }
 
 /** 今天已经学过的新词数（认词卡首次复习发生在今天） */
-function newIntroducedToday(db: DB, now: Date): number {
+export function newIntroducedToday(db: DB, now: Date): number {
   const r = db.prepare(`SELECT COUNT(*) n FROM review_logs l JOIN cards c ON c.id=l.card_id
-    WHERE c.mode='recognize' AND l.state=${State.New} AND l.review_at >= ?`).get(shDayStart(now).toISOString()) as { n: number };
+    WHERE c.mode='recognize' AND l.state=${State.New} AND COALESCE(l.counted,1)<>0 AND l.review_at >= ? AND l.review_at<=?`).get(shDayStart(now).toISOString(), now.toISOString()) as { n: number };
   return r.n;
 }
 
-const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
+export const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample, w.level FROM cards c JOIN words w ON w.id=c.word_id`;
 
 /** 到期判定：首页计数和出卡用同一个条件 */
-const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
+export const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
 
-function reviewedToday(db: DB, now: Date): number {
-  return (db.prepare(`SELECT COUNT(*) n FROM review_logs WHERE state<>${State.New} AND review_at >= ?`).get(shDayStart(now).toISOString()) as { n: number }).n;
+export function reviewedToday(db: DB, now: Date): number {
+  return (db.prepare(`SELECT COUNT(*) n FROM review_logs WHERE state<>${State.New} AND COALESCE(counted,1)<>0 AND review_at >= ? AND review_at<=?`).get(shDayStart(now).toISOString(), now.toISOString()) as { n: number }).n;
 }
 
 /** 当前可出的复习数和新词数（首页与 nextCard 共用同一函数） */
@@ -60,7 +58,8 @@ export function queueState(db: DB, now = new Date()) {
 export function todaySummary(db: DB, now = new Date()) {
   const q = queueState(db, now);
   // 估算：复习 20 秒/个，新词 40 秒/个
-  return { day: shDay(now), review: q.review, new: q.new, minutes: Math.ceil((q.review * 20 + q.new * 40) / 60) };
+  const completed = !!db.prepare('SELECT 1 FROM daily_stats WHERE day=? AND completed=1').get(shDay(now));
+  return { day: shDay(now), review: q.review, new: q.new, minutes: Math.ceil((q.review * 20 + q.new * 40) / 60), completed, streak: streak(db, now).current };
 }
 
 /** 下一张卡：先到期复习，再新词。prefer='new' 时先新词。 */
@@ -105,7 +104,9 @@ function markCorrectForWrong(db: DB, wordId: number, now: Date) {
   db.prepare('UPDATE wrong_words SET correct_days=?, removed_at=? WHERE word_id=?').run(JSON.stringify([...days]), removed, wordId);
 }
 
-export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { durationMs?: number; answer?: string; correct?: boolean; answerId?: string } = {}): { card: Card; duplicate: boolean } {
+export function countsTowardGraduation(rating: number) { return rating === Rating.Good || rating === Rating.Easy; }
+
+export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { durationMs?: number; answer?: string; correct?: boolean; answerId?: string; qtype?: Qtype; context?: Context } = {}): { card: Card; duplicate: boolean } {
   if (extra.answerId) {
     const prev = db.prepare('SELECT card_id FROM review_logs WHERE answer_id=?').get(extra.answerId) as { card_id: number } | undefined;
     if (prev) return { card: toCard(db.prepare('SELECT * FROM cards WHERE id=?').get(prev.card_id) as CardRow), duplicate: true };
@@ -113,22 +114,31 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
   if (![Rating.Again, Rating.Hard, Rating.Good, Rating.Easy].includes(rating)) throw new Error('bad rating');
   const row = db.prepare('SELECT * FROM cards WHERE id=?').get(cardId) as CardRow | undefined;
   if (!row) throw new Error('card not found');
-  const { card, log } = scheduler.next(toCard(row), now, rating);
+  if (extra.durationMs !== undefined && (!Number.isFinite(extra.durationMs) || extra.durationMs < 0)) throw new Error('bad durationMs');
+  const context = extra.context ?? 'study';
+  if (!['study','practice'].includes(context)) throw new Error('bad context');
+  const qtype = extra.qtype ?? (row.mode === 'recognize' ? 'flip' : row.mode);
+  const already = db.prepare(`SELECT 1 FROM review_logs WHERE card_id=? AND COALESCE(counted,1)<>0 AND review_at>=? AND review_at<=? LIMIT 1`).get(cardId, shDayStart(now).toISOString(), now.toISOString());
+  const counted = context === 'practice' && already ? 0 : 1;
+  const scheduled = counted ? scheduler.next(toCard(row), now, rating) : null;
+  const card = scheduled?.card ?? toCard(row);
+  const log = scheduled?.log ?? { ...row, due: new Date(row.due) };
   db.transaction(() => {
-    db.prepare(`UPDATE cards SET due=?,stability=?,difficulty=?,elapsed_days=?,scheduled_days=?,learning_steps=?,reps=?,lapses=?,state=?,last_review=? WHERE id=?`)
+    if (counted) db.prepare(`UPDATE cards SET due=?,stability=?,difficulty=?,elapsed_days=?,scheduled_days=?,learning_steps=?,reps=?,lapses=?,state=?,last_review=? WHERE id=?`)
       .run(card.due.toISOString(), card.stability, card.difficulty, card.elapsed_days, card.scheduled_days, card.learning_steps,
         card.reps, card.lapses, card.state, now.toISOString(), cardId);
-    db.prepare(`INSERT INTO review_logs(card_id,rating,state,due,stability,difficulty,elapsed_days,scheduled_days,review_at,duration_ms,answer,correct,answer_id)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(cardId, rating, log.state, log.due.toISOString(), log.stability, log.difficulty,
+    db.prepare(`INSERT INTO review_logs(card_id,rating,state,due,stability,difficulty,elapsed_days,scheduled_days,review_at,duration_ms,answer,correct,answer_id,qtype,counted,context)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(cardId, rating, log.state, row.due, log.stability, log.difficulty,
         log.elapsed_days, log.scheduled_days, now.toISOString(), extra.durationMs ?? null, extra.answer ?? null,
-        extra.correct === undefined ? null : extra.correct ? 1 : 0, extra.answerId ?? null);
-    if (rating === Rating.Again) addWrong(db, row.word_id, now); else markCorrectForWrong(db, row.word_id, now);
+        extra.correct === undefined ? null : extra.correct ? 1 : 0, extra.answerId ?? null, qtype, counted, context);
+    if (rating === Rating.Again) addWrong(db, row.word_id, now); else if (countsTowardGraduation(rating)) markCorrectForWrong(db, row.word_id, now);
     // 认词卡第一次学过后，开启拼写和听写卡（明天起出现）
-    if (row.mode === 'recognize' && row.state === State.New) {
+    if (counted && row.mode === 'recognize' && row.state === State.New) {
       const tomorrow = new Date(shDayStart(now).getTime() + 86400_000);
       insertCard(db, row.word_id, 'spell', tomorrow);
       insertCard(db, row.word_id, 'dictation', tomorrow);
     }
+    recomputeDailyStats(db, [shDay(now)]);
   })();
   return { card, duplicate: false };
 }
@@ -158,13 +168,13 @@ export function acceptedSpellings(headword: string): string[] {
 }
 
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */
-export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false, answerId?: string) {
+export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false, answerId?: string, extra: { context?: Context; durationMs?: number } = {}) {
   const row = db.prepare(`SELECT c.mode, w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string } | undefined;
   if (!row) throw new Error('card not found');
   if (row.mode === 'recognize') throw new Error('not a spelling card');
   const correct = acceptedSpellings(row.headword).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
-  const r = review(db, cardId, rating as Grade, now, { answer, correct, answerId });
+  const r = review(db, cardId, rating as Grade, now, { ...extra, qtype: row.mode, answer, correct, answerId });
   return { correct, expected: row.headword, rating, due: r.card.due.toISOString(), duplicate: r.duplicate };
 }
 
@@ -182,19 +192,39 @@ export function progress(db: DB) {
   });
 }
 
-export function wrongList(db: DB) {
-  return db.prepare(`SELECT w.id word_id, w.headword, w.phonetic, w.meaning_zh, ww.wrong_count, ww.last_wrong_at, ww.correct_days
-    FROM wrong_words ww JOIN words w ON w.id=ww.word_id WHERE ww.removed_at IS NULL ORDER BY ww.wrong_count DESC, ww.last_wrong_at DESC`).all()
-    .map((r: any) => ({ ...r, correct_days: JSON.parse(r.correct_days).length }));
+export type WrongSort = 'count' | 'recent';
+export function wrongList(db: DB, sort: WrongSort = 'count') {
+  return (db.prepare(`SELECT w.id word_id,w.headword,w.phonetic,w.meaning_zh,ww.wrong_count,ww.last_wrong_at,ww.correct_days
+    FROM wrong_words ww JOIN words w ON w.id=ww.word_id WHERE ww.removed_at IS NULL
+    ORDER BY ${sort === 'recent' ? 'ww.last_wrong_at DESC,ww.word_id' : 'ww.wrong_count DESC,ww.last_wrong_at DESC,ww.word_id'}`).all() as any[])
+    .map(r => ({ ...r, correct_days: JSON.parse(r.correct_days).length, fails: Object.fromEntries((db.prepare(`SELECT COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END) qtype,COUNT(*) n
+      FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE c.word_id=? AND (l.correct=0 OR l.rating=1) GROUP BY 1`).all(r.word_id) as { qtype: string; n: number }[]).map(f => [f.qtype, f.n])) }));
 }
-
+export function wrongSummary(db: DB, sort: WrongSort = 'count', now = new Date()) {
+  const items = wrongList(db, sort), monday = weekStart(shDay(now));
+  const rows = db.prepare('SELECT correct_days FROM wrong_words WHERE removed_at IS NULL').all() as { correct_days: string }[];
+  return { items, total: items.length, practicedTwiceThisWeek: rows.filter(r => (JSON.parse(r.correct_days) as string[]).filter(d => d >= monday && d <= shDay(now)).length >= 2).length };
+}
 export function setWrong(db: DB, wordId: number, inBook: boolean, now = new Date()) {
-  if (inBook) addWrong(db, wordId, now);
+  if (inBook) db.prepare(`INSERT INTO wrong_words(word_id,wrong_count,last_wrong_at,correct_days,removed_at) VALUES (?,0,?,'[]',NULL)
+    ON CONFLICT(word_id) DO UPDATE SET correct_days='[]',removed_at=NULL`).run(wordId, now.toISOString());
   else db.prepare('UPDATE wrong_words SET removed_at=? WHERE word_id=?').run(now.toISOString(), wordId);
 }
 
-/** 练错词本：返回错词本里这些词的认词卡（立即可练，不改调度直到评分） */
-export function wrongPractice(db: DB, limit = 10) {
-  return db.prepare(`${CARD_SELECT} JOIN wrong_words ww ON ww.word_id=c.word_id WHERE ww.removed_at IS NULL AND c.mode='recognize'
-    ORDER BY ww.wrong_count DESC LIMIT ?`).all(limit);
+export function wrongPractice(db: DB, limit = 10, now = new Date(), rng: Rng = Math.random, sort: WrongSort = 'count') {
+  const items = wrongList(db, sort).slice(0, limit).map(word => {
+    const cards = db.prepare(`${CARD_SELECT} WHERE c.word_id=?`).all(word.word_id) as (CardRow & Record<string, any>)[];
+    const recognize = cards.find(c => c.mode === 'recognize');
+    if (!recognize) return null;
+    const available = availableQtypes(db, recognize, cards);
+    const failed = db.prepare(`SELECT COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END) qtype
+      FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE c.word_id=? AND (l.correct=0 OR l.rating=1)
+      GROUP BY 1 ORDER BY MAX(l.review_at) DESC,MAX(l.id) DESC`).all(word.word_id) as { qtype: Qtype }[];
+    const latest = failed.find(f => available.includes(f.qtype))?.qtype;
+    const types = latest ? available : available.filter(q => !['spell','dictation'].includes(q));
+    const qtype = latest && rng() < .7 ? latest : types[Math.min(types.length - 1, Math.floor(rng() * types.length))];
+    const card = qtype === 'spell' || qtype === 'dictation' ? cards.find(c => c.mode === qtype)! : recognize;
+    return { card, question: issueQuestion(db, card, now, 'practice', rng, qtype) };
+  }).filter((r): r is NonNullable<typeof r> => r !== null);
+  return { items };
 }
