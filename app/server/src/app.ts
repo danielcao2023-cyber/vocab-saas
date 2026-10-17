@@ -23,14 +23,14 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
   });
   app.get('/api/today', async () => todaySummary(db, now()));
   app.get<{ Querystring: { prefer?: 'review' | 'new' } }>('/api/next', async (req) => ({ card: nextCard(db, now(), req.query.prefer === 'new' ? 'new' : 'review') }));
-  app.post<{ Body: { cardId: number; rating: number; durationMs?: number } }>('/api/review', async (req, reply) => {
-    const { cardId, rating, durationMs } = req.body ?? ({} as any);
-    try { const c = review(db, Number(cardId), Number(rating) as any, now(), { durationMs }); return { ok: true, due: c.due.toISOString(), state: c.state }; }
+  app.post<{ Body: { cardId: number; rating: number; durationMs?: number; answerId?: string } }>('/api/review', async (req, reply) => {
+    const { cardId, rating, durationMs, answerId } = req.body ?? ({} as any);
+    try { const r = review(db, Number(cardId), Number(rating) as any, now(), { durationMs, answerId }); return { ok: true, due: r.card.due.toISOString(), state: r.card.state, duplicate: r.duplicate }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
-  app.post<{ Body: { cardId: number; answer: string; usedHint?: boolean } }>('/api/check', async (req, reply) => {
-    const { cardId, answer, usedHint } = req.body ?? ({} as any);
-    try { return { ok: true, ...checkSpelling(db, Number(cardId), String(answer ?? ''), now(), !!usedHint) }; }
+  app.post<{ Body: { cardId: number; answer: string; usedHint?: boolean; answerId?: string } }>('/api/check', async (req, reply) => {
+    const { cardId, answer, usedHint, answerId } = req.body ?? ({} as any);
+    try { return { ok: true, ...checkSpelling(db, Number(cardId), String(answer ?? ''), now(), !!usedHint, answerId) }; }
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
   app.get('/api/progress', async () => ({ lists: progress(db) }));

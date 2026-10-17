@@ -63,10 +63,20 @@ CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 INSERT OR IGNORE INTO settings(key,value) VALUES ('new_per_day','10'),('review_limit','200');
 `;
 
+function addColumn(db: DB, table: string, col: string, def: string) {
+  const cols = db.prepare(`PRAGMA table_info(${table})`).all() as { name: string }[];
+  if (!cols.some((c) => c.name === col)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
+}
+
 export function openDb(file: string): DB {
   const db = new Database(file);
   db.pragma('journal_mode = WAL');
   db.pragma('foreign_keys = ON');
   db.exec(SCHEMA);
+  // 轻量迁移
+  addColumn(db, 'words', 'meaning_raw', 'TEXT');      // ECDICT 原始 translation，不改动
+  addColumn(db, 'words', 'meaning_flag', 'TEXT');     // '释义待人工看'
+  addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
+  db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
   return db;
 }

@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { api, OfflineError, speak } from './api';
+import { PendingSubmitter } from './pending';
 
 type View = 'home' | 'study' | 'done' | 'progress' | 'wrong';
-interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; is_sample: number; state: number }
+interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number }
 
 const view = ref<View>('home');
 const online = ref(true);
@@ -23,6 +24,11 @@ const prefer = ref<'review' | 'new'>('review');
 const practiceQueue = ref<Card[] | null>(null);
 const noAudio = ref(false);
 const input = ref<HTMLInputElement | null>(null);
+const submitter = new PendingSubmitter((path, body) => api(path, body));
+const unsaved = ref(false);       // 当前卡的答案没存上
+const pendingRating = ref(0);
+const showMore = ref(false);
+const senses = computed(() => (card.value?.meaning_zh ?? '').split('\n').filter(Boolean));
 
 const RATINGS = [
   { v: 1, label: '忘了' }, { v: 2, label: '模糊' }, { v: 3, label: '认识' }, { v: 4, label: '很熟' },
@@ -34,7 +40,12 @@ async function guard<T>(fn: () => Promise<T>): Promise<T | undefined> {
 }
 
 async function ping() {
+  const was = online.value;
   try { const r = await fetch('/health'); online.value = r.ok; } catch { online.value = false; }
+  if (online.value && submitter.failed && (!was || unsaved.value)) {
+    const r = await submitter.onReconnect();
+    if (r) await afterSaved(r);
+  }
 }
 
 async function loadHome() {
@@ -58,6 +69,7 @@ async function startPractice() {
 }
 
 async function loadNext() {
+  showMore.value = false; unsaved.value = false;
   revealed.value = false; answer.value = ''; usedHint.value = false; feedback.value = null; noAudio.value = false;
   let c: Card | null | undefined;
   if (practiceQueue.value) c = practiceQueue.value.shift() ?? null;
@@ -74,22 +86,36 @@ function play() {
   noAudio.value = !speak(card.value.headword);
 }
 
+/** 答案存上之后：认词卡前进；拼写/听写卡显示判定 */
+async function afterSaved(r: any) {
+  unsaved.value = false; online.value = true;
+  if (!card.value) return;
+  if (card.value.mode === 'recognize') {
+    session.value.done++; if (pendingRating.value > 1) session.value.correct++;
+    await loadNext();
+  } else {
+    session.value.done++; if (r.correct) session.value.correct++;
+    feedback.value = { correct: r.correct, expected: r.expected, inBook: !r.correct };
+  }
+}
+
 async function rate(v: number) {
   if (!card.value || !revealed.value) return;
-  const r = await guard(() => api('/api/review', { cardId: card.value!.id, rating: v, durationMs: Date.now() - shownAt.value }));
-  if (!r) return;
-  session.value.done++; if (v > 1) session.value.correct++;
-  await loadNext();
+  pendingRating.value = v;
+  const r = unsaved.value ? await submitter.retry({ rating: v })
+    : await submitter.submit('/api/review', { cardId: card.value.id, rating: v, durationMs: Date.now() - shownAt.value });
+  if (!r) { unsaved.value = true; online.value = false; return; }
+  await afterSaved(r);
 }
 
 async function submit() {
   if (!card.value) return;
   if (feedback.value) { await loadNext(); return; }
   if (!answer.value.trim()) return;
-  const r = await guard(() => api('/api/check', { cardId: card.value!.id, answer: answer.value, usedHint: usedHint.value }));
-  if (!r) return;
-  session.value.done++; if (r.correct) session.value.correct++;
-  feedback.value = { correct: r.correct, expected: r.expected, inBook: !r.correct };
+  const r = unsaved.value ? await submitter.retry()
+    : await submitter.submit('/api/check', { cardId: card.value.id, answer: answer.value, usedHint: usedHint.value });
+  if (!r) { unsaved.value = true; online.value = false; return; }
+  await afterSaved(r);
 }
 
 function hint() {
@@ -119,8 +145,15 @@ function onKey(e: KeyboardEvent) {
 }
 
 let timer: number | undefined;
-onMounted(() => { loadHome(); timer = window.setInterval(ping, 30_000); window.addEventListener('keydown', onKey); });
-onUnmounted(() => { clearInterval(timer); window.removeEventListener('keydown', onKey); });
+let fast: number | undefined;
+onMounted(() => {
+  loadHome();
+  timer = window.setInterval(ping, 30_000);
+  fast = window.setInterval(() => { if (unsaved.value) ping(); }, 5_000); // 有没存上的答案时 5 秒探测一次
+  window.addEventListener('online', ping);
+  window.addEventListener('keydown', onKey);
+});
+onUnmounted(() => { clearInterval(timer); clearInterval(fast); window.removeEventListener('online', ping); window.removeEventListener('keydown', onKey); });
 
 const accuracy = computed(() => session.value.done ? Math.round((session.value.correct / session.value.done) * 100) : 0);
 const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
@@ -158,16 +191,25 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
         <p v-if="!revealed" class="muted">空格 听发音 · → 翻面 · 先自己想想意思再翻面</p>
         <button v-if="!revealed" @click="revealed = true">翻面</button>
         <template v-else>
-          <pre class="meaning">{{ card.meaning_zh ?? '（暂无释义）' }}</pre>
+          <div class="meaning">
+            <div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div>
+            <div v-if="!senses.length">（暂无释义）</div>
+            <p v-if="card.meaning_flag" class="warn small">{{ card.meaning_flag }}</p>
+            <template v-if="senses.length > 2">
+              <button class="link" @click="showMore = !showMore">{{ showMore ? '收起' : '更多释义' }}（{{ senses.length - 2 }}）</button>
+              <div v-if="showMore" class="more"><div v-for="(m, i) in senses.slice(2)" :key="i">{{ m }}</div></div>
+            </template>
+          </div>
           <div class="row">
             <button v-for="r in RATINGS" :key="r.v" @click="rate(r.v)">{{ r.v }} {{ r.label }}</button>
           </div>
+          <p v-if="unsaved" class="bad small" role="status">这张没存上，连上后会自动补存</p>
         </template>
       </template>
 
       <template v-else>
         <template v-if="card.mode === 'spell'">
-          <pre class="meaning">{{ card.meaning_zh ?? '（暂无释义）' }}</pre>
+          <div class="meaning"><div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div></div>
           <div class="phon">{{ card.phonetic }}</div>
         </template>
         <template v-else>
@@ -175,12 +217,13 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
           <p class="muted">按 R 重听（不限次数）（输入框里用 Ctrl+R 或点 🔊）</p>
           <p v-if="noAudio" class="warn">没听到声音？检查耳机或音量。</p>
         </template>
-        <input ref="input" v-model="answer" :disabled="!!feedback" autocomplete="off" spellcheck="false" placeholder="输入单词" />
+        <input ref="input" v-model="answer" :disabled="!!feedback || unsaved" autocomplete="off" spellcheck="false" placeholder="输入单词" />
         <p class="muted">Tab 提示首字母 · Enter 提交</p>
+        <p v-if="unsaved" class="bad small" role="status">这张没存上，连上后会自动补存 <button @click="submit">再试一次</button></p>
         <div v-if="feedback">
           <p v-if="feedback.correct" class="ok">正确 ✓</p>
           <p v-else class="bad">应为：<b>{{ feedback.expected }}</b>（你写的是 {{ answer }}）。已加入错词本。</p>
-          <pre v-if="card.mode === 'dictation'" class="meaning">{{ card.meaning_zh }}</pre>
+          <div v-if="card.mode === 'dictation'" class="meaning"><div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div></div>
           <button @click="loadNext">下一个（Enter）</button>
         </div>
       </template>
@@ -233,6 +276,8 @@ button.icon { border: none; background: none; font-size: 22px; padding: 0 4px; }
 .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px #0001; }
 .word { font-size: 42px; font-weight: 600; }
 .phon { color: #555; font-size: 18px; margin: 6px 0 12px; }
+.link { border: none; background: none; color: #2f6fde; padding: 4px 0; font-size: 14px; }
+.more { color: #445; font-size: 16px; }
 .meaning { font-family: inherit; font-size: 18px; white-space: pre-wrap; margin: 12px 0; }
 input { font-size: 24px; padding: 8px 12px; width: 100%; box-sizing: border-box; border-radius: 8px; border: 1px solid #bbc; }
 .muted { color: #778; } .small { font-size: 13px; }

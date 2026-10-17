@@ -38,26 +38,36 @@ function newIntroducedToday(db: DB, now: Date): number {
   return r.n;
 }
 
-const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
+const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
 
-export function todaySummary(db: DB, now = new Date()) {
-  const endOfDay = new Date(shDayStart(now).getTime() + 86400_000).toISOString();
-  const review = (db.prepare(`SELECT COUNT(*) n FROM cards WHERE (state<>${State.New} OR mode<>'recognize') AND due < ?`).get(endOfDay) as { n: number }).n;
-  const reviewLimit = setting(db, 'review_limit', 200);
-  const newLeftQuota = Math.max(0, setting(db, 'new_per_day', 10) - newIntroducedToday(db, now));
-  const unseen = (db.prepare(`SELECT COUNT(*) n FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize' AND c.state<>${State.New})`).get() as { n: number }).n;
-  const newCount = Math.min(newLeftQuota, unseen);
-  const reviewCount = Math.min(review, reviewLimit);
-  // 估算：复习 20 秒/个，新词 40 秒/个
-  const minutes = Math.ceil((reviewCount * 20 + newCount * 40) / 60);
-  return { day: shDay(now), review: reviewCount, new: newCount, minutes };
+/** 到期判定：首页计数和出卡用同一个条件 */
+const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
+
+function reviewedToday(db: DB, now: Date): number {
+  return (db.prepare(`SELECT COUNT(*) n FROM review_logs WHERE state<>${State.New} AND review_at >= ?`).get(shDayStart(now).toISOString()) as { n: number }).n;
 }
 
-/** 下一张卡：先到期复习，再新词（受每日新词数限制）。prefer='new' 时先新词。 */
+/** 当前可出的复习数和新词数（首页与 nextCard 共用同一函数） */
+export function queueState(db: DB, now = new Date()) {
+  const due = (db.prepare(`SELECT COUNT(*) n FROM cards c WHERE ${DUE_WHERE}`).get(now.toISOString()) as { n: number }).n;
+  const reviewLeft = Math.max(0, setting(db, 'review_limit', 200) - reviewedToday(db, now));
+  const newQuota = Math.max(0, setting(db, 'new_per_day', 10) - newIntroducedToday(db, now));
+  const unseen = (db.prepare(`SELECT COUNT(*) n FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize' AND c.state<>${State.New})`).get() as { n: number }).n;
+  return { review: Math.min(due, reviewLeft), new: Math.min(newQuota, unseen) };
+}
+
+export function todaySummary(db: DB, now = new Date()) {
+  const q = queueState(db, now);
+  // 估算：复习 20 秒/个，新词 40 秒/个
+  return { day: shDay(now), review: q.review, new: q.new, minutes: Math.ceil((q.review * 20 + q.new * 40) / 60) };
+}
+
+/** 下一张卡：先到期复习，再新词。prefer='new' 时先新词。 */
 export function nextCard(db: DB, now = new Date(), prefer: 'review' | 'new' = 'review') {
-  const due = () => db.prepare(`${CARD_SELECT} WHERE (c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ? ORDER BY c.due LIMIT 1`).get(now.toISOString());
+  const q = queueState(db, now);
+  const due = () => q.review > 0 ? db.prepare(`${CARD_SELECT} WHERE ${DUE_WHERE} ORDER BY c.due LIMIT 1`).get(now.toISOString()) : undefined;
   const fresh = () => {
-    if (setting(db, 'new_per_day', 10) - newIntroducedToday(db, now) <= 0) return undefined;
+    if (q.new <= 0) return undefined;
     let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY w.id LIMIT 1`).get();
     if (!row) {
       const w = db.prepare(`SELECT id FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize') ORDER BY COALESCE(freq_rank, 999999), id LIMIT 1`).get() as { id: number } | undefined;
@@ -87,7 +97,11 @@ function markCorrectForWrong(db: DB, wordId: number, now: Date) {
   db.prepare('UPDATE wrong_words SET correct_days=?, removed_at=? WHERE word_id=?').run(JSON.stringify([...days]), removed, wordId);
 }
 
-export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { durationMs?: number; answer?: string; correct?: boolean } = {}) {
+export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { durationMs?: number; answer?: string; correct?: boolean; answerId?: string } = {}): { card: Card; duplicate: boolean } {
+  if (extra.answerId) {
+    const prev = db.prepare('SELECT card_id FROM review_logs WHERE answer_id=?').get(extra.answerId) as { card_id: number } | undefined;
+    if (prev) return { card: toCard(db.prepare('SELECT * FROM cards WHERE id=?').get(prev.card_id) as CardRow), duplicate: true };
+  }
   if (![Rating.Again, Rating.Hard, Rating.Good, Rating.Easy].includes(rating)) throw new Error('bad rating');
   const row = db.prepare('SELECT * FROM cards WHERE id=?').get(cardId) as CardRow | undefined;
   if (!row) throw new Error('card not found');
@@ -96,10 +110,10 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
     db.prepare(`UPDATE cards SET due=?,stability=?,difficulty=?,elapsed_days=?,scheduled_days=?,learning_steps=?,reps=?,lapses=?,state=?,last_review=? WHERE id=?`)
       .run(card.due.toISOString(), card.stability, card.difficulty, card.elapsed_days, card.scheduled_days, card.learning_steps,
         card.reps, card.lapses, card.state, now.toISOString(), cardId);
-    db.prepare(`INSERT INTO review_logs(card_id,rating,state,due,stability,difficulty,elapsed_days,scheduled_days,review_at,duration_ms,answer,correct)
-      VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`).run(cardId, rating, log.state, log.due.toISOString(), log.stability, log.difficulty,
+    db.prepare(`INSERT INTO review_logs(card_id,rating,state,due,stability,difficulty,elapsed_days,scheduled_days,review_at,duration_ms,answer,correct,answer_id)
+      VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(cardId, rating, log.state, log.due.toISOString(), log.stability, log.difficulty,
         log.elapsed_days, log.scheduled_days, now.toISOString(), extra.durationMs ?? null, extra.answer ?? null,
-        extra.correct === undefined ? null : extra.correct ? 1 : 0);
+        extra.correct === undefined ? null : extra.correct ? 1 : 0, extra.answerId ?? null);
     if (rating === Rating.Again) addWrong(db, row.word_id, now); else markCorrectForWrong(db, row.word_id, now);
     // 认词卡第一次学过后，开启拼写和听写卡（明天起出现）
     if (row.mode === 'recognize' && row.state === State.New) {
@@ -108,7 +122,7 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
       insertCard(db, row.word_id, 'dictation', tomorrow);
     }
   })();
-  return card;
+  return { card, duplicate: false };
 }
 
 export function normalizeAnswer(s: string) { return s.trim().toLowerCase().replace(/\s+/g, ' '); }
@@ -121,14 +135,14 @@ export function acceptedSpellings(headword: string): string[] {
 }
 
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */
-export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false) {
+export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false, answerId?: string) {
   const row = db.prepare(`SELECT c.mode, w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string } | undefined;
   if (!row) throw new Error('card not found');
   if (row.mode === 'recognize') throw new Error('not a spelling card');
   const correct = acceptedSpellings(row.headword).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
-  const card = review(db, cardId, rating as Grade, now, { answer, correct });
-  return { correct, expected: row.headword, rating, due: card.due.toISOString() };
+  const r = review(db, cardId, rating as Grade, now, { answer, correct, answerId });
+  return { correct, expected: row.headword, rating, due: r.card.due.toISOString(), duplicate: r.duplicate };
 }
 
 /** 四档掌握度：看认词卡。新词=没学过；学习中=学习/重学阶段或稳定度<7天；熟悉=7–21天；掌握=稳定度≥21天 */

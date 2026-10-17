@@ -1,4 +1,5 @@
-export class OfflineError extends Error {}
+import { OfflineError } from './pending';
+export { OfflineError };
 export async function api<T = any>(path: string, body?: unknown): Promise<T> {
   let r: Response;
   try {
@@ -14,5 +15,5 @@ export function speak(word: string): boolean {
   if (!('speechSynthesis' in window)) return false;
   const u = new SpeechSynthesisUtterance(w); u.lang = 'en-US'; u.rate = 0.9;
   speechSynthesis.cancel(); speechSynthesis.speak(u);
-  return speechSynthesis.getVoices().length > 0 || true;
+  return true;
 }

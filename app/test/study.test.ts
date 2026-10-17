@@ -19,7 +19,7 @@ describe('daily queue & FSRS', () => {
   it('respects new_per_day and schedules via FSRS', () => {
     expect(todaySummary(db, T0)).toMatchObject({ new: 2, review: 0 });
     const c1 = nextCard(db, T0)!; expect(c1.headword).toBe('apple');
-    const after = review(db, c1.id as number, Rating.Good, T0);
+    const after = review(db, c1.id as number, Rating.Good, T0).card;
     expect(after.state).toBe(State.Learning);
     expect(after.due.getTime()).toBeGreaterThan(T0.getTime());
     const c2 = nextCard(db, T0)!; review(db, c2.id as number, Rating.Easy, T0);
@@ -73,5 +73,33 @@ describe('daily queue & FSRS', () => {
     expect(r.json().ok).toBe(true);
     const bad = await app.inject({ method: 'POST', url: '/api/review', payload: { cardId: card.id, rating: 9 } });
     expect(bad.statusCode).toBe(400);
+  });
+});
+
+describe('queue consistency & idempotency', () => {
+  it('home review count == cards actually served', () => {
+    const ins = db.prepare("INSERT INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,reps,lapses,state,last_review) VALUES (?,?,?,5,5,1,1,2,0,2,?)");
+    const past = new Date(T0.getTime() - 3600_000).toISOString();
+    const laterToday = new Date(T0.getTime() + 3 * 3600_000).toISOString(); // 今天晚些到期：不应计入
+    ins.run(1, 'recognize', past, past); ins.run(1, 'spell', past, past); ins.run(2, 'recognize', past, past);
+    ins.run(2, 'dictation', laterToday, past); ins.run(3, 'recognize', past, past);
+    db.prepare("UPDATE settings SET value='0' WHERE key='new_per_day'").run();
+    const shown = todaySummary(db, T0).review;
+    expect(shown).toBe(4);
+    let served = 0; let c;
+    while ((c = nextCard(db, T0)) && served < 50) { review(db, c.id as number, Rating.Easy, T0); served++; }
+    expect(served).toBe(shown);
+    expect(todaySummary(db, T0).review).toBe(0);
+  });
+
+  it('same answerId is applied once', async () => {
+    const app = buildApp(db, { now: () => T0 });
+    const card = (await app.inject('/api/next')).json().card;
+    const body = { cardId: card.id, rating: 1, answerId: 'ans-123' };
+    const a = (await app.inject({ method: 'POST', url: '/api/review', payload: body })).json();
+    const b = (await app.inject({ method: 'POST', url: '/api/review', payload: body })).json();
+    expect(a.duplicate).toBe(false); expect(b.duplicate).toBe(true); expect(b.due).toBe(a.due);
+    expect(db.prepare('SELECT COUNT(*) n FROM review_logs').get()).toEqual({ n: 1 });
+    expect((db.prepare('SELECT wrong_count FROM wrong_words').get() as any).wrong_count).toBe(1);
   });
 });

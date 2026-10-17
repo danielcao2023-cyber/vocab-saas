@@ -31,12 +31,24 @@ export function readList(file: string): ListEntry[] {
   return out;
 }
 
-export function cleanTranslation(t: string): string {
-  const lines = t.replace(/\\r/g, '').split('\\n').map((s) => s.trim()).filter(Boolean);
-  // 去掉 [网络]、[计]、[经] 等专业/网络释义行；若全是这类行则保留第一行
-  const general = lines.filter((s) => !/^\[[^\]]+\]/.test(s));
-  return (general.length ? general : lines.slice(0, 1)).join('\n');
+/** 领域研究定的过滤规则：含这些标签的行整行删掉；[复][植][动][体][物] 等保留 */
+export const DROP_TAGS = ['医', '化', '计', '网络', '经', '法', '电', '机', '建', '人名', '地名', '药', '矿', '生化', '地质', '解', '症', '美国', '英国', '德国', '法国'];
+export const REVIEW_FLAG = '释义待人工看';
+
+export function rawLines(t: string): string[] {
+  return t.replace(/\\r/g, '').replace(/\r/g, '').split(/\\n|\n/).map((s) => s.trim()).filter(Boolean);
 }
+
+/** 一行一个义项；删掉含 DROP_TAGS 标签的行；全删光则保留原始第一行并标记待人工看 */
+export function filterSenses(t: string): { senses: string[]; flag: string | null } {
+  const lines = rawLines(t);
+  const kept = lines.filter((l) => ![...l.matchAll(/\[([^\]]+)\]/g)].some((m) => DROP_TAGS.includes(m[1])));
+  if (kept.length) return { senses: kept, flag: null };
+  return { senses: lines.slice(0, 1), flag: lines.length ? REVIEW_FLAG : null };
+}
+
+/** 兼容旧调用：返回过滤后的释义文本 */
+export function cleanTranslation(t: string): string { return filterSenses(t).senses.join('\n'); }
 
 /** 流式扫描 ECDICT，只保留需要的词 */
 export async function loadDict(file: string, wanted: Set<string>): Promise<Map<string, DictEntry>> {
@@ -50,7 +62,7 @@ export async function loadDict(file: string, wanted: Set<string>): Promise<Map<s
     if (!header) { header = f; continue; }
     const key = f[0]?.toLowerCase();
     if (!key || !wanted.has(key)) continue;
-    const e: DictEntry = { phonetic: f[1] ?? '', translation: cleanTranslation(f[3] ?? ''), pos: f[4] ?? '', frq: Number(f[9]) || 0 };
+    const e: DictEntry = { phonetic: f[1] ?? '', translation: f[3] ?? '', pos: f[4] ?? '', frq: Number(f[9]) || 0 };
     const prev = map.get(key);
     // 同一小写词有多条（如 May/may），优先小写原形且有释义的
     if (!prev || (!prev.translation && e.translation) || (f[0] === key && prev.translation && e.translation)) map.set(key, e);
@@ -59,23 +71,25 @@ export async function loadDict(file: string, wanted: Set<string>): Promise<Map<s
 }
 
 export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean) {
-  const stmt = db.prepare(`INSERT INTO words(headword,phonetic,pos,meaning_zh,source,level,freq_rank,is_sample) VALUES (@headword,@phonetic,@pos,@meaning,@source,@level,@frq,@sample)
-    ON CONFLICT(source,headword) DO UPDATE SET phonetic=excluded.phonetic,pos=excluded.pos,meaning_zh=excluded.meaning_zh,level=excluded.level,freq_rank=excluded.freq_rank,is_sample=excluded.is_sample`);
-  let missingPhonetic = 0, missingMeaning = 0; const missing: string[] = [];
+  const stmt = db.prepare(`INSERT INTO words(headword,phonetic,pos,meaning_zh,meaning_raw,meaning_flag,source,level,freq_rank,is_sample) VALUES (@headword,@phonetic,@pos,@meaning,@raw,@flag,@source,@level,@frq,@sample)
+    ON CONFLICT(source,headword) DO UPDATE SET phonetic=excluded.phonetic,pos=excluded.pos,meaning_zh=excluded.meaning_zh,meaning_raw=excluded.meaning_raw,meaning_flag=excluded.meaning_flag,level=excluded.level,freq_rank=excluded.freq_rank,is_sample=excluded.is_sample`);
+  let missingPhonetic = 0, missingMeaning = 0; const missing: string[] = []; const flagged: string[] = [];
   db.transaction(() => {
     for (const e of list) {
       const d = dict.get(lookupKey(e.headword));
       const phonetic = d?.phonetic ? `/${d.phonetic}/` : null;
-      const meaning = d?.translation || null;
+      const fs_ = filterSenses(d?.translation ?? '');
+      const meaning = fs_.senses.join('\n') || null;
+      if (fs_.flag) flagged.push(e.headword);
       if (!phonetic) missingPhonetic++;
       if (!meaning) missingMeaning++;
       if (!phonetic || !meaning) missing.push(e.headword);
-      stmt.run({ headword: e.headword, phonetic, pos: e.pos ?? d?.pos ?? null, meaning, source, level: e.level, frq: d?.frq || null, sample: isSample ? 1 : 0 });
+      stmt.run({ headword: e.headword, phonetic, raw: d?.translation || null, flag: fs_.flag, pos: e.pos ?? d?.pos ?? null, meaning, source, level: e.level, frq: d?.frq || null, sample: isSample ? 1 : 0 });
     }
   })();
   const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
   const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
-  return { imported: list.length, totalInDb: total, byLevel, missingPhonetic, missingMeaning, missing };
+  return { imported: list.length, totalInDb: total, byLevel, missingPhonetic, missingMeaning, missing, flagged };
 }
 
 /** 与课标转述数字（1600 / 二级 505 / 初中 1095，未验证）比对 */
