@@ -1,6 +1,6 @@
 # Codex 任务书：背单词 v3 第一期（选择题、错词本增强、家长看板、打卡、视觉改版）
 
-> 起草：工程负责人，2026-10-17 13:10（上海时间）。范围已获用户批准（Grok Bot 12:58 转达）。**视觉部分以用户确认后的 `v3/design/` 为准；视觉稿未确认前不运行本任务书。**
+> 起草：工程负责人，2026-10-17 13:10（上海时间）。范围已获用户批准（Grok Bot 12:58 转达）。**用户已于 2026-10-17 14:21（上海时间）批准第一期视觉稿（`v3/design/` 的 16 张第一期截图）和 Studio 步骤，可以直接开始实现，不需要再等任何确认。** 视觉部分以 `v3/design/` 为准。
 > 基线：app 仓库 `b4429a2`，分支 `feat/v3-phase1`（由工程负责人建好，你不要建或切分支）。
 > 依据：`v3/方案.md`（1.2、1.3、1.4、1.6 节和 4 节第 1 期验收标准）、`v3/design/design-notes.md`、`v2/内容.md`（文案语气）。
 
@@ -14,7 +14,7 @@
   v3/design/               ← 只读：视觉稿 HTML、design.css、design-notes.md、shots/*.png
   v3/codex-brief-phase1.md ← 本文件，只读
 ```
-运行方式：Codex 以 `-C ~/dev/vocab-saas/app` 启动，工作目录就是 `app/`；上面的 `v2/`、`v3/` 用相对路径 `../v2/…`、`../v3/…` 或绝对路径 `~/dev/vocab-saas/v3/…` 读取（只读，沙盒也不允许写）。
+运行方式：Codex 以 `-C ~/dev/vocab-saas` 启动，工作目录是 `~/dev/vocab-saas`。**你只能写 `app/` 里面的文件**；`v2/`、`v3/`、`data/`、`_archive/`、日志和 bundle 文件一律只读，不许改、不许删、不许新建。
 
 限制：
 - **只改 `app/` 下的文件**。不要写 `~/dev/vocab-saas` 以外的任何位置，也不要读它以外的文件（Node/npm 运行时自身除外）。尤其不要碰 `~/apps/vocab`、`~/.codex`、`~/.ssh`、Tailscale、任何 wiki 或插件目录。
@@ -23,7 +23,7 @@
 - 不读取、打印或写入任何密钥、令牌、环境变量里的凭据。
 - 不在 `app/data/` 下创建或修改 `.db` 文件。测试用 `:memory:` 或 `os.tmpdir()` 下的临时文件，用完删掉。
 - 不启动监听端口的服务（不运行 `npm start`/`npm run dev`）。接口测试用 `buildApp(db).inject(...)`。
-- 所有命令在 `app/` 下运行：`npm test`、`npm run typecheck`、`npm run build`（build 会写 `dist/`，已被 .gitignore 忽略，可以）。
+- 所有 npm 命令先 `cd app` 再运行：`npm test`、`npm run typecheck`、`npm run build`（build 会写 `dist/`，已被 .gitignore 忽略，可以）。
 - **数据库迁移只能加不能改**：只能加列（`addColumn`）、加表（`CREATE TABLE IF NOT EXISTS`）、加 settings 新键（`INSERT OR IGNORE`）。不许 `UPDATE`/`DELETE` 已有的 words、cards、review_logs、wrong_words、settings 行，不许改已有表的 `CREATE TABLE` 文本（新列一律走 `addColumn`，保证新库和迁移后的旧库结构一致），不许 `DROP`、重建表或改列类型。
 
 ## 1. 现状（读懂这些再动手，行号以 b4429a2 为准）
@@ -66,7 +66,7 @@
    CREATE TABLE IF NOT EXISTS streak_makeups (day TEXT PRIMARY KEY, used_at TEXT NOT NULL);
    ```
    `daily_stats` 必须能由 review_logs（+ cards、settings）完整回算，删表重算结果相同；`streak_makeups` 是用户操作，不能回算，所以单独一张表。
-3. settings 新键（`INSERT OR IGNORE`，不动已有键）：`choice_enabled=1`、`choice_weights=1,1,1`（flip,listen_choice,meaning_choice 的权重）、`makeup_per_month=2`、`makeup_window_days=7`、`duration_cap_ms=300000`。
+3. settings 新键（`INSERT OR IGNORE`，不动已有键）：`choice_enabled=1`、`choice_weights=1,1,1`（flip,listen_choice,meaning_choice 的权重）、`makeup_per_month=2`、`makeup_window_days=7`、`makeup_requires_today=1`、`duration_cap_ms=300000`。
 4. `openDb()` 末尾调用 `recomputeDailyStats(db)` 回算所有有日志的日子（只写 daily_stats）。
 
 ## 3. 选择题：认词卡的一种出题方式（server/src/quiz.ts 新文件 + study.ts + app.ts）
@@ -109,7 +109,7 @@
 
 ### 4.4 自动毕业规则
 **现行逻辑（已读代码确认）**：同一个词任何卡（认词/拼写/听写）的任何非 Again 评分（含「模糊」和用了提示的拼写，Hard）都把当天（上海日期）加入 correct_days；集满 3 个不同日子就移出；任何一次 Again 都清空重来；3 天不要求日历上连续。手动“放回错词本”也走 addWrong，会让 wrong_count +1。
-**本期改为（用户已确认，2026-10-17 Grok Bot 转达；判断集中在一个函数 `countsTowardGraduation(rating)` 里）**：
+**本期规则（用户已确认，2026-10-17；判断集中在一个函数 `countsTowardGraduation(rating)` 里）**：
 1. 只有 Good/Easy 计入 correct_days；Hard 既不计入也不清空。
 2. 只记日志的练习答案（counted=0）同样计入（每天最多算一天，本来就按日期去重）。
 3. 手动放回错词本（`POST /api/wrong/:id {inBook:true}`）不增加 wrong_count，只把 removed_at 置空、correct_days 清空。
@@ -132,7 +132,7 @@
   - `calendar`：该月每天 `{ day, status: done|makeup|missed|today|future|before_start }`（第一次有日志之前的日子为 before_start）。
   - `badges`：`[7, 30, 100]` 各 `{ days, earned: best>=days, progress: min(current, days) }`。
   - `makeupLeft`：本月（按被补的那一天所在月份）还剩几次 = `makeup_per_month` − 已用；`makeupCandidates`：可补的日子。
-- `POST /api/streak/makeup { day }`：条件全部满足才写入，否则 400 并给出原因：该日 < 今天、未完成、不早于第一次有日志的日子、在 `makeup_window_days`（7）天内、该日所在月份补签次数 < `makeup_per_month`、**今天已完成今日任务**（补签作为“今天多做了”的奖励，【待确认】）。
+- `POST /api/streak/makeup { day }`：条件全部满足才写入，否则 400 并给出原因：该日 < 今天、未完成、不早于第一次有日志的日子、在最近 `makeup_window_days`（7）天内、该日所在月份补签次数 < `makeup_per_month`（2）、`makeup_requires_today=1` 时**今天已完成今日任务**（用户已确认：先完成今天的任务才能补签）。三个条件都从 settings 读，不写死。
 - `/api/today` 增加 `completed`（今天是否已打卡）和 `streak`（current）。
 
 ## 6. 家长看板（`GET /api/parent/summary?days=30` + 前端 `/parent`）
@@ -146,9 +146,9 @@
 - `generatedAt`（ISO）。
 前端 `/parent`：`App.vue` 按 `location.pathname` 判断，`/parent` 渲染 `ParentView`，**孩子的导航和任何孩子页面里都不出现 `/parent` 链接或文字**。不加 PIN。
 
-## 7. 前端：按确认后的视觉稿重做（web/src）
+## 7. 前端：按已批准的视觉稿重做（web/src）
 
-**必须实现 `~/dev/vocab-saas/v3/design/` 里已确认的视觉稿**：先读 `design-notes.md`，再对照 `shots/*.png` 和对应的 HTML。颜色、字体栈、间距、圆角、阴影、动效全部取自 `design.css` 的变量；把它搬成 `web/src/styles/tokens.css`（变量）和 `web/src/styles/app.css`（组件样式），不要再引入别的颜色。只用系统字体，不引用任何外部 CDN 或网络资源。
+**必须实现 `~/dev/vocab-saas/v3/design/` 里已批准的视觉稿**：先读 `design-notes.md`，再对照 `shots/*.png` 和对应的 HTML。颜色、字体栈、间距、圆角、阴影、动效全部取自 `design.css` 的变量；把它搬成 `web/src/styles/tokens.css`（变量）和 `web/src/styles/app.css`（组件样式），不要再引入别的颜色。只用系统字体，不引用任何外部 CDN 或网络资源。
 
 | 视觉稿 | 实现 |
 |---|---|
