@@ -5,10 +5,12 @@ import path from 'node:path';
 import type { DB } from './db.ts';
 import type { BlockList } from 'node:net';
 import { isAllowed } from './net.ts';
+import { readVersion } from './version.ts';
 import { checkSpelling, nextCard, progress, review, setWrong, todaySummary, wrongList, wrongPractice } from './study.ts';
 
 export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; allow?: BlockList } = {}) {
   const now = opts.now ?? (() => new Date());
+  const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
   if (opts.allow) {
     const allow = opts.allow;
@@ -19,8 +21,9 @@ export function buildApp(db: DB, opts: { staticDir?: string; now?: () => Date; a
 
   app.get('/health', async () => {
     db.prepare('SELECT 1').get();
-    return { ok: true, time: new Date().toISOString(), words: (db.prepare('SELECT COUNT(*) n FROM words').get() as { n: number }).n };
+    return { ok: true, commit: version.commit, time: new Date().toISOString(), words: (db.prepare('SELECT COUNT(*) n FROM words').get() as { n: number }).n };
   });
+  app.get('/version', async () => version);
   app.get('/api/today', async () => todaySummary(db, now()));
   app.get<{ Querystring: { prefer?: 'review' | 'new' } }>('/api/next', async (req) => ({ card: nextCard(db, now(), req.query.prefer === 'new' ? 'new' : 'review') }));
   app.post<{ Body: { cardId: number; rating: number; durationMs?: number; answerId?: string } }>('/api/review', async (req, reply) => {

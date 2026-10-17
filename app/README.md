@@ -62,3 +62,9 @@ npm test                          # vitest
 
 ## API
 `GET /health` · `GET /api/today` · `GET /api/next?prefer=review|new` · `POST /api/review {cardId,rating 1-4,durationMs}` · `POST /api/check {cardId,answer,usedHint}` · `GET /api/progress` · `GET /api/wrong` · `GET /api/wrong/practice` · `POST /api/wrong/:wordId {inBook}`
+
+## 第二轮验收修复（2026-10-17）
+- **释义统一组件**：认词、拼写、听写三种卡都用 `web/src/MeaningList.vue`，规则一样：一行一个义项，先显示前 2 条，其余收在“更多释义（N）/收起”里，有标记时显示“释义待人工看”。说明：accept 只有 2 行（`vt. 接受, 承认, … 容忍` 和 `vi. 同意`），验收看到的“约 10 条”是同一行里逗号分隔的词，按领域研究“一行一个义项”的规则不拆开。
+- **seed:due 加了验收用例**：认词卡里固定有 act（3 条）、enough（4 条），能看到“更多释义”；另有一个**只在测试库里的测试词 `qatest`**（source=`qa-only-test`，原始释义全部被过滤），显示“释义待人工看”。输出里列出每张拼写卡可以接受的答案。
+- **运行版本**：`npm run build` 最后一步 `scripts/write-version.mjs` 把 `git rev-parse --short HEAD`（以及工作区是否有改动）写进 `dist/version.json`，git 不可用时写 `unknown`。服务启动时只读一次：先看 `APP_COMMIT` 环境变量，再读 `dist/version.json`，都没有就是 `unknown`；运行时不调用 git，读不到也不报错。`GET /health` 带 `commit` 字段，`GET /version` 返回完整信息。
+- **答“忘了”后同一轮里会再出现（设计如此）**：ts-fsrs 5.4.2，代码里只设了 `fsrs({ enable_fuzz: false })`，其余用库默认值：`learning_steps = ['1m','10m']`，`relearning_steps = ['10m']`，`enable_short_term = true`。实测：新词答“忘了”，1 分钟后再到期；复习卡答“忘了”进入重学，10 分钟后再到期。所以练完一轮后首页复习数可能又变大（例如 2 → 10 分钟后 3），这是正常的短间隔重练。首页暂时不单独显示“重学 N”。

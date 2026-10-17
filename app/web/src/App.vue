@@ -2,6 +2,7 @@
 import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { api, OfflineError, speak } from './api';
 import { PendingSubmitter } from './pending';
+import MeaningList from './MeaningList.vue';
 
 type View = 'home' | 'study' | 'done' | 'progress' | 'wrong';
 interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number }
@@ -27,8 +28,6 @@ const input = ref<HTMLInputElement | null>(null);
 const submitter = new PendingSubmitter((path, body) => api(path, body));
 const unsaved = ref(false);       // 当前卡的答案没存上
 const pendingRating = ref(0);
-const showMore = ref(false);
-const senses = computed(() => (card.value?.meaning_zh ?? '').split('\n').filter(Boolean));
 
 const RATINGS = [
   { v: 1, label: '忘了' }, { v: 2, label: '模糊' }, { v: 3, label: '认识' }, { v: 4, label: '很熟' },
@@ -69,7 +68,7 @@ async function startPractice() {
 }
 
 async function loadNext() {
-  showMore.value = false; unsaved.value = false;
+  unsaved.value = false;
   revealed.value = false; answer.value = ''; usedHint.value = false; feedback.value = null; noAudio.value = false;
   let c: Card | null | undefined;
   if (practiceQueue.value) c = practiceQueue.value.shift() ?? null;
@@ -191,15 +190,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
         <p v-if="!revealed" class="muted">空格 听发音 · → 翻面 · 先自己想想意思再翻面</p>
         <button v-if="!revealed" @click="revealed = true">翻面</button>
         <template v-else>
-          <div class="meaning">
-            <div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div>
-            <div v-if="!senses.length">（暂无释义）</div>
-            <p v-if="card.meaning_flag" class="warn small">{{ card.meaning_flag }}</p>
-            <template v-if="senses.length > 2">
-              <button class="link" @click="showMore = !showMore">{{ showMore ? '收起' : '更多释义' }}（{{ senses.length - 2 }}）</button>
-              <div v-if="showMore" class="more"><div v-for="(m, i) in senses.slice(2)" :key="i">{{ m }}</div></div>
-            </template>
-          </div>
+          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
           <div class="row">
             <button v-for="r in RATINGS" :key="r.v" @click="rate(r.v)">{{ r.v }} {{ r.label }}</button>
           </div>
@@ -209,7 +200,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
 
       <template v-else>
         <template v-if="card.mode === 'spell'">
-          <div class="meaning"><div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div></div>
+          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
           <div class="phon">{{ card.phonetic }}</div>
         </template>
         <template v-else>
@@ -223,7 +214,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
         <div v-if="feedback">
           <p v-if="feedback.correct" class="ok">正确 ✓</p>
           <p v-else class="bad">应为：<b>{{ feedback.expected }}</b>（你写的是 {{ answer }}）。已加入错词本。</p>
-          <div v-if="card.mode === 'dictation'" class="meaning"><div v-for="(m, i) in senses.slice(0, 2)" :key="i">{{ m }}</div></div>
+          <MeaningList v-if="card.mode === 'dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
           <button @click="loadNext">下一个（Enter）</button>
         </div>
       </template>
