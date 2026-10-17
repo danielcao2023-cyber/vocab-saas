@@ -1,34 +1,102 @@
 /**
- * 幂等导入：词表 CSV（headword,level[,pos]）+ ECDICT 补音标/释义。
- * 用法：tsx server/src/import.ts --list data/wordlists/sample.csv --source sample [--sample] [--ecdict data/raw/ecdict.csv] [--db data/vocab.db]
- * 重复运行只更新 words 行（按 source+headword 唯一），不动 cards/复习记录。
+ * 幂等导入：先校验输入，再事务内更新 words，不动正式词的 cards/复习记录。
+ * 课标：npm run import -- --curriculum ../data/curriculum/ocr/level3_list.tsv
+ *   --level2 ../data/curriculum/ocr/level2_list.tsv --manual ../v2/manual_meanings.tsv --source kb2022
+ *   [--ecdict data/raw/ecdict.csv] [--db data/vocab.db] [--clear-sample] [--dry-run]
+ * 旧 CSV：npm run import -- --list data/wordlists/sample.csv --source sample [--sample]
+ * --level2 交叉核对二级集合；--manual 显式指定人工释义，不自动读取；--sample 仅用于 CSV。
+ * --clear-sample 同事务删除 is_sample=1 的词及关联记录；--dry-run 在内存副本执行，目标文件不变。
  */
 import fs from 'node:fs';
 import readline from 'node:readline';
 import { openDb, type DB } from './db.ts';
 import { parseCsvLine, quotesOpen } from './csv.ts';
+import { mainHeadwords, normalizeQuotes } from './text.ts';
 
-export interface ListEntry { headword: string; level: string | null; pos: string | null }
-export interface DictEntry { phonetic: string; translation: string; pos: string; frq: number }
+export interface ListEntry { headword: string; level: string | null; pos: string | null; entry_raw?: string; priority?: number }
+export interface CurriculumEntry extends ListEntry { entry_raw: string; level: '二级' | '三级'; priority: 1 | 2 }
+export interface DictEntry { phonetic: string; translation: string; pos: string; frq: number; bnc?: number }
 
-/** 课标词条常见写法：“a (an)”、“be (am, is, are)”、“color (colour)”、“T-shirt”。取主词形查词典 */
-export function lookupKey(headword: string): string {
-  return headword.replace(/\(.*?\)|（.*?）/g, '').split('/')[0].trim().toLowerCase();
+/** 保留大小写：ECDICT 原样匹配优先。 */
+export function lookupKey(headword: string): string { return mainHeadwords(headword)[0] ?? ''; }
+
+export function resolveEcdictKey(head: string, dict: ReadonlyMap<string, DictEntry>): string | null {
+  const key = lookupKey(head);
+  if (dict.has(key)) return key;
+  const lower = key.toLowerCase();
+  if (dict.has(lower)) return lower;
+  for (const candidate of dict.keys()) if (candidate.toLowerCase() === lower) return candidate;
+  return null;
 }
 
 export function readList(file: string): ListEntry[] {
   const lines = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/).filter((l) => l.trim() && !l.startsWith('#'));
-  const header = parseCsvLine(lines.shift()!).map((h) => h.trim());
+  const header = parseCsvLine(lines.shift() ?? '').map((h) => h.trim());
   const hi = header.indexOf('headword'); const li = header.indexOf('level'); const pi = header.indexOf('pos');
   if (hi < 0) throw new Error('词表 CSV 缺少 headword 列');
   const seen = new Set<string>(); const out: ListEntry[] = [];
   for (const l of lines) {
-    const f = parseCsvLine(l); const hw = (f[hi] ?? '').trim();
-    if (!hw || seen.has(hw.toLowerCase())) continue;
-    seen.add(hw.toLowerCase());
-    out.push({ headword: hw, level: li >= 0 ? (f[li]?.trim() || null) : null, pos: pi >= 0 ? (f[pi]?.trim() || null) : null });
+    const f = parseCsvLine(l); const raw = (f[hi] ?? '').trim(); const hw = normalizeQuotes(raw);
+    if (!hw || seen.has(hw)) continue;
+    seen.add(hw);
+    out.push({ headword: hw, entry_raw: raw, level: li >= 0 ? (f[li]?.trim() || null) : null, pos: pi >= 0 ? (f[pi]?.trim() || null) : null });
   }
   return out;
+}
+
+function readTsv(file: string, required: string[]) {
+  const lines = fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/);
+  const header = (lines.shift() ?? '').split('\t');
+  const missing = required.filter((name) => !header.includes(name));
+  if (missing.length) throw new Error(`${file}: 缺少列 ${missing.join(', ')}`);
+  return lines.flatMap((line, i) => {
+    if (!line.trim()) return [];
+    const fields = line.split('\t');
+    return [{ line: i + 2, fields: Object.fromEntries(header.map((name, j) => [name, fields[j] ?? ''])) }];
+  });
+}
+
+function curriculumRows(file: string): CurriculumEntry[] {
+  const errors: string[] = []; const seen = new Map<string, number>(); const entries: CurriculumEntry[] = [];
+  for (const { line, fields } of readTsv(file, ['entry', 'level2_star'])) {
+    const headword = normalizeQuotes(fields.entry.trim());
+    if (!headword) errors.push(`${file}:${line}: entry 为空`);
+    if (seen.has(headword)) errors.push(`${file}:${line}: entry 重复 ${headword}（首次在第 ${seen.get(headword)} 行）`);
+    seen.set(headword, line);
+    const star = fields.level2_star.trim();
+    if (star !== '0' && star !== '1') errors.push(`${file}:${line}: level2_star 必须是 0 或 1`);
+    entries.push({ headword, entry_raw: fields.entry, pos: null, level: star === '1' ? '二级' : '三级', priority: star === '1' ? 1 : 2 });
+  }
+  if (errors.length) throw new Error(errors.join('\n'));
+  return entries;
+}
+
+export function readCurriculum(file: string, level2File?: string): CurriculumEntry[] {
+  const entries = curriculumRows(file);
+  if (level2File) {
+    const expected = new Set(entries.filter((entry) => entry.priority === 1).map((entry) => entry.headword));
+    const actual = new Set(curriculumRows(level2File).map((entry) => entry.headword));
+    const missing = [...expected].filter((entry) => !actual.has(entry));
+    const extra = [...actual].filter((entry) => !expected.has(entry));
+    if (missing.length || extra.length) throw new Error(`二级词表交叉核对失败：缺少 ${JSON.stringify(missing)}；多出 ${JSON.stringify(extra)}`);
+  }
+  return entries;
+}
+
+/** 完整校验后才返回，所有错误行一起报告；不读任何默认人工释义文件。 */
+export function readManualMeanings(file: string, curriculumEntries: Iterable<string | ListEntry>): Map<string, string> {
+  const entries = new Set([...curriculumEntries].map((entry) => normalizeQuotes(typeof entry === 'string' ? entry : entry.headword)));
+  const meanings = new Map<string, string>(); const seen = new Map<string, number>(); const errors: string[] = [];
+  for (const { line, fields } of readTsv(file, ['entry', 'manual_meaning'])) {
+    const entry = normalizeQuotes(fields.entry.trim());
+    const meaning = fields.manual_meaning.replace(/\\n/g, '\n').trim();
+    if (!entries.has(entry)) errors.push(`${file}:${line}: entry 不在课标词表里：${entry}`);
+    if (seen.has(entry)) errors.push(`${file}:${line}: entry 重复：${entry}（首次在第 ${seen.get(entry)} 行）`);
+    if (!meaning) errors.push(`${file}:${line}: ${entry} 释义为空`);
+    seen.set(entry, line); meanings.set(entry, meaning);
+  }
+  if (errors.length) throw new Error(errors.join('\n'));
+  return meanings;
 }
 
 /** 领域研究定的过滤规则：含这些标签的行整行删掉；[复][植][动][体][物] 等保留 */
@@ -51,9 +119,10 @@ export function filterSenses(t: string): { senses: string[]; flag: string | null
 /** 兼容旧调用：返回过滤后的释义文本 */
 export function cleanTranslation(t: string): string { return filterSenses(t).senses.join('\n'); }
 
-/** 流式扫描 ECDICT，只保留需要的词 */
+/** 流式扫描 ECDICT，保留需要的词的所有大小写变体以及文件顺序。 */
 export async function loadDict(file: string, wanted: Set<string>): Promise<Map<string, DictEntry>> {
   const map = new Map<string, DictEntry>();
+  const lowerWanted = new Set([...wanted].map((key) => lookupKey(key).toLowerCase()));
   const rl = readline.createInterface({ input: fs.createReadStream(file, 'utf8'), crlfDelay: Infinity });
   let buf = ''; let header: string[] | null = null;
   for await (const line of rl) {
@@ -61,39 +130,98 @@ export async function loadDict(file: string, wanted: Set<string>): Promise<Map<s
     if (quotesOpen(buf)) continue;
     const f = parseCsvLine(buf); buf = '';
     if (!header) { header = f; continue; }
-    const key = f[0]?.toLowerCase();
-    if (!key || !wanted.has(key)) continue;
-    const e: DictEntry = { phonetic: f[1] ?? '', translation: f[3] ?? '', pos: f[4] ?? '', frq: Number(f[9]) || 0 };
-    const prev = map.get(key);
-    // 同一小写词有多条（如 May/may），优先小写原形且有释义的
-    if (!prev || (!prev.translation && e.translation) || (f[0] === key && prev.translation && e.translation)) map.set(key, e);
+    const key = f[0];
+    if (!key || !lowerWanted.has(key.toLowerCase()) || map.has(key)) continue;
+    map.set(key, { phonetic: f[1] ?? '', translation: f[3] ?? '', pos: f[4] ?? '', bnc: Number(f[8]) || 0, frq: Number(f[9]) || 0 });
   }
   return map;
 }
 
-export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean) {
-  const stmt = db.prepare(`INSERT INTO words(headword,phonetic,pos,meaning_zh,meaning_raw,meaning_flag,source,level,freq_rank,is_sample) VALUES (@headword,@phonetic,@pos,@meaning,@raw,@flag,@source,@level,@frq,@sample)
-    ON CONFLICT(source,headword) DO UPDATE SET phonetic=excluded.phonetic,pos=excluded.pos,meaning_zh=excluded.meaning_zh,meaning_raw=excluded.meaning_raw,meaning_flag=excluded.meaning_flag,level=excluded.level,freq_rank=excluded.freq_rank,is_sample=excluded.is_sample`);
-  let missingPhonetic = 0, missingMeaning = 0; const missing: string[] = []; const flagged: string[] = [];
-  db.transaction(() => {
-    for (const e of list) {
-      const d = dict.get(lookupKey(e.headword));
-      const phonetic = d?.phonetic ? `/${d.phonetic}/` : null;
-      const fs_ = filterSenses(d?.translation ?? '');
-      const meaning = fs_.senses.join('\n') || null;
-      if (fs_.flag) flagged.push(e.headword);
-      if (!phonetic) missingPhonetic++;
-      if (!meaning) missingMeaning++;
-      if (!phonetic || !meaning) missing.push(e.headword);
-      stmt.run({ headword: e.headword, phonetic, raw: d?.translation || null, flag: fs_.flag, pos: e.pos ?? d?.pos ?? null, meaning, source, level: e.level, frq: d?.frq || null, sample: isSample ? 1 : 0 });
-    }
-  })();
-  const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
-  const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
-  return { imported: list.length, totalInDb: total, byLevel, missingPhonetic, missingMeaning, missing, flagged };
+const WORD_COLUMNS = ['headword', 'phonetic', 'pos', 'meaning_zh', 'meaning_raw', 'meaning_flag', 'meaning_source', 'ecdict_key', 'entry_raw', 'source', 'level', 'priority', 'freq_rank', 'is_sample'] as const;
+type WordValues = Record<typeof WORD_COLUMNS[number], string | number | null>;
+
+function applyWords(db: DB, list: ListEntry[], dict: ReadonlyMap<string, DictEntry>, source: string, isSample: boolean, manual: ReadonlyMap<string, string> = new Map()) {
+  const stmt = db.prepare(`INSERT INTO words(${WORD_COLUMNS.join(',')}) VALUES (${WORD_COLUMNS.map((col) => '@' + col).join(',')})
+    ON CONFLICT(source,headword) DO UPDATE SET ${WORD_COLUMNS.filter((col) => col !== 'source' && col !== 'headword').map((col) => `${col}=excluded.${col}`).join(',')}`);
+  const find = db.prepare('SELECT * FROM words WHERE source=? AND headword=?');
+  let inserted = 0, updated = 0, unchanged = 0, manualApplied = 0;
+  const missingPhoneticWords: string[] = [], missingMeaningWords: string[] = [], flaggedWords: string[] = [], missingEcdict: string[] = [];
+  const caseInsensitiveHits: { headword: string; ecdict_key: string }[] = [];
+  for (const entry of list) {
+    const headword = normalizeQuotes(entry.headword);
+    const key = resolveEcdictKey(headword, dict);
+    const d = key === null ? undefined : dict.get(key);
+    const manualMeaning = manual.get(headword);
+    const filtered = filterSenses(d?.translation ?? '');
+    const values: WordValues = {
+      headword, phonetic: d?.phonetic ? `/${d.phonetic}/` : null, pos: entry.pos ?? d?.pos ?? null,
+      meaning_zh: manualMeaning ?? (filtered.senses.join('\n') || null), meaning_raw: d?.translation || null,
+      meaning_flag: manualMeaning !== undefined ? null : filtered.flag,
+      meaning_source: manualMeaning !== undefined ? 'manual' : 'ecdict', ecdict_key: key,
+      entry_raw: entry.entry_raw ?? entry.headword, source, level: entry.level, priority: entry.priority ?? 0,
+      freq_rank: d?.frq || d?.bnc || null, is_sample: isSample ? 1 : 0,
+    };
+    if (manualMeaning !== undefined) manualApplied++;
+    if (values.meaning_flag) flaggedWords.push(headword);
+    if (!values.phonetic) missingPhoneticWords.push(headword);
+    if (!values.meaning_zh) missingMeaningWords.push(headword);
+    if (key === null) missingEcdict.push(headword);
+    else if (key !== lookupKey(headword)) caseInsensitiveHits.push({ headword, ecdict_key: key });
+    const old = find.get(source, headword) as WordValues | undefined;
+    if (!old) { stmt.run(values); inserted++; }
+    else if (WORD_COLUMNS.some((col) => old[col] !== values[col])) { stmt.run(values); updated++; }
+    else unchanged++;
+  }
+  return { inserted, updated, unchanged, manualApplied, flagged: flaggedWords.length, flaggedWords,
+    missingPhonetic: missingPhoneticWords.length, missingPhoneticWords, missingMeaning: missingMeaningWords.length, missingMeaningWords, missingEcdict, caseInsensitiveHits };
 }
 
-/** 与课标转述数字（1600 / 二级 505 / 初中 1095，未验证）比对 */
+const emptyCleanup = () => ({ words: 0, cards: 0, review_logs: 0, wrong_words: 0, word_content: 0, content_feedback: 0, ai_cache: 0 });
+function clearSamples(db: DB) {
+  const deleted = emptyCleanup();
+  deleted.review_logs = db.prepare('DELETE FROM review_logs WHERE card_id IN (SELECT c.id FROM cards c JOIN words w ON w.id=c.word_id WHERE w.is_sample=1)').run().changes;
+  for (const table of ['cards', 'wrong_words', 'word_content', 'content_feedback', 'ai_cache'] as const) {
+    deleted[table] = db.prepare(`DELETE FROM ${table} WHERE word_id IN (SELECT id FROM words WHERE is_sample=1)`).run().changes;
+  }
+  deleted.words = db.prepare('DELETE FROM words WHERE is_sample=1').run().changes;
+  return deleted;
+}
+
+interface ImportOptions { clearSample?: boolean; dryRun?: boolean }
+export interface CurriculumOptions extends ImportOptions {
+  manual?: ReadonlyMap<string, string>;
+  expected?: { total: number; level2: number; level3: number };
+}
+
+export function upsertCurriculum(db: DB, list: CurriculumEntry[], dict: ReadonlyMap<string, DictEntry>, source: string, options: CurriculumOptions = {}) {
+  const expected = options.expected ?? { total: 1600, level2: 505, level3: 1095 };
+  return db.transaction(() => {
+    const clearSample = options.clearSample ? clearSamples(db) : emptyCleanup();
+    const result = applyWords(db, list, dict, source, false, options.manual);
+    const counts = db.prepare(`SELECT COUNT(*) total,
+      COALESCE(SUM(level='二级'),0) AS 二级, COALESCE(SUM(level='三级'),0) AS 三级 FROM words WHERE source=?`).get(source) as { total: number; 二级: number; 三级: number };
+    const current = new Set(list.map((entry) => normalizeQuotes(entry.headword)));
+    const staleRows = (db.prepare('SELECT id,headword,level FROM words WHERE source=? ORDER BY id').all(source) as { id: number; headword: string; level: string | null }[]).filter((entry) => !current.has(entry.headword));
+    if (counts.total !== expected.total || counts.二级 !== expected.level2 || counts.三级 !== expected.level3) {
+      throw new Error(`课标计数核对失败：${JSON.stringify(counts)}；预期 ${JSON.stringify(expected)}；staleRows=${JSON.stringify(staleRows)}`);
+    }
+    return { source, ...result, ...counts, clearSample, staleRows, dryRun: !!options.dryRun };
+  })();
+}
+
+/** 保留旧 CSV 调用和统计字段；所有其他来源的 priority 默认 0。 */
+export function upsertWords(db: DB, list: ListEntry[], dict: Map<string, DictEntry>, source: string, isSample: boolean, options: ImportOptions = {}) {
+  return db.transaction(() => {
+    const clearSample = options.clearSample ? clearSamples(db) : emptyCleanup();
+    const result = applyWords(db, list, dict, source, isSample);
+    const total = (db.prepare('SELECT COUNT(*) n FROM words WHERE source=?').get(source) as { n: number }).n;
+    const byLevel = db.prepare('SELECT level, COUNT(*) n FROM words WHERE source=? GROUP BY level').all(source);
+    const missing = list.map((entry) => entry.headword).filter((headword) => result.missingPhoneticWords.includes(headword) || result.missingMeaningWords.includes(headword));
+    return { ...result, flagged: result.flaggedWords, imported: list.length, totalInDb: total, byLevel, missing, clearSample, dryRun: !!options.dryRun };
+  })();
+}
+
+/** 旧 CSV 路径的计数提醒；课标路径使用事务内的严格核对。 */
 export function compareExpected(total: number, byLevel: { level: string | null; n: number }[]) {
   const exp = { total: 1600, level2: 505, junior: 1095 };
   const lv2 = byLevel.find((x) => x.level === '二级')?.n ?? 0;
@@ -106,14 +234,31 @@ export function compareExpected(total: number, byLevel: { level: string | null; 
 }
 
 async function main() {
-  const a = process.argv.slice(2); const arg = (k: string, d?: string) => { const i = a.indexOf(k); return i >= 0 ? a[i + 1] : d; };
-  const listFile = arg('--list'); const source = arg('--source');
-  if (!listFile || !source) { console.error('需要 --list <csv> --source <名称>'); process.exit(2); }
-  const db = openDb(arg('--db', process.env.DB_PATH ?? 'data/vocab.db')!);
-  const list = readList(listFile);
-  const dict = await loadDict(arg('--ecdict', 'data/raw/ecdict.csv')!, new Set(list.map((e) => lookupKey(e.headword))));
-  const r = upsertWords(db, list, dict, source, a.includes('--sample'));
-  console.log(JSON.stringify({ source, sample: a.includes('--sample'), ...r, countCheck: compareExpected(r.totalInDb, r.byLevel as any) }, null, 2));
-  db.close();
+  const a = process.argv.slice(2);
+  const valueOptions = new Set(['--list', '--curriculum', '--level2', '--manual', '--source', '--ecdict', '--db']);
+  const switches = new Set(['--sample', '--clear-sample', '--dry-run']);
+  const values = new Map<string, string>(); const flags = new Set<string>();
+  for (let i = 0; i < a.length; i++) {
+    const option = a[i];
+    if (switches.has(option)) flags.add(option);
+    else if (valueOptions.has(option) && a[i + 1] && !a[i + 1].startsWith('--')) values.set(option, a[++i]);
+    else throw new Error(`未知选项或缺少参数：${option}`);
+  }
+  const curriculum = values.get('--curriculum'); const listFile = values.get('--list'); const source = values.get('--source');
+  if ((!curriculum && !listFile) || (curriculum && listFile) || !source) throw new Error('需要 --curriculum <tsv> 或 --list <csv>（二选一），以及 --source <名称>');
+  if (!curriculum && (values.has('--level2') || values.has('--manual'))) throw new Error('--level2 和 --manual 需要 --curriculum');
+  if (curriculum && flags.has('--sample')) throw new Error('--sample 仅用于旧 CSV 路径');
+  // 所有输入校验和词典读取完成后才接触数据库，失败时连迁移也不执行。
+  const list = curriculum ? readCurriculum(curriculum, values.get('--level2')) : readList(listFile!);
+  const manual = values.has('--manual') ? readManualMeanings(values.get('--manual')!, list) : new Map<string, string>();
+  const dict = await loadDict(values.get('--ecdict') ?? 'data/raw/ecdict.csv', new Set(list.map((entry) => lookupKey(entry.headword))));
+  const options = { clearSample: flags.has('--clear-sample'), dryRun: flags.has('--dry-run') };
+  const db = openDb(values.get('--db') ?? process.env.DB_PATH ?? 'data/vocab.db', options);
+  try {
+    const result = curriculum
+      ? upsertCurriculum(db, list as CurriculumEntry[], dict, source, { ...options, manual })
+      : upsertWords(db, list, dict, source, flags.has('--sample'), options);
+    console.log(JSON.stringify({ source, ...result }, null, 2));
+  } finally { db.close(); }
 }
-if (process.argv[1]?.endsWith('import.ts')) main().catch((e) => { console.error(e); process.exit(1); });
+if (process.argv[1]?.endsWith('import.ts')) main().catch((error) => { console.error(error instanceof Error ? error.message : error); process.exitCode = 1; });

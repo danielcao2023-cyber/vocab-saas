@@ -1,3 +1,4 @@
+import { mainHeadwords } from '../../server/src/text';
 import { ClientError, OfflineError } from './pending';
 export { ClientError, OfflineError };
 export async function api<T = any>(path: string, body?: unknown): Promise<T> {
@@ -12,7 +13,7 @@ export async function api<T = any>(path: string, body?: unknown): Promise<T> {
   return j as T;
 }
 export function speak(word: string): boolean {
-  const w = word.replace(/\(.*?\)/g, '').trim();
+  const w = mainHeadwords(word)[0] ?? '';
   if (!('speechSynthesis' in window)) return false;
   const u = new SpeechSynthesisUtterance(w); u.lang = 'en-US'; u.rate = 0.9;
   speechSynthesis.cancel(); speechSynthesis.speak(u);

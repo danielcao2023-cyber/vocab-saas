@@ -34,13 +34,13 @@ describe('import', () => {
 
   it('is idempotent and fills ECDICT fields', async () => {
     const list = readList(listFile);
-    expect(list.map((e) => e.headword)).toEqual(['a (an)', 'apple', 'T-shirt', 'zzzunknown']); // 去重
+    expect(list.map((e) => e.headword)).toEqual(['a (an)', 'apple', 'Apple', 'T-shirt', 'zzzunknown']); // R1：按原文区分大小写去重，Apple 和 apple 都保留
     const dict = await loadDict(dictFile, new Set(list.map((e) => lookupKey(e.headword))));
     expect(dict.size).toBe(3);
     const db = openDb(':memory:');
     const r1 = upsertWords(db, list, dict, 'kb2022', false);
     const r2 = upsertWords(db, list, dict, 'kb2022', false);
-    expect(r1.totalInDb).toBe(4); expect(r2.totalInDb).toBe(4);
+    expect(r1.totalInDb).toBe(5); expect(r2.totalInDb).toBe(5); // R1：Apple 与 apple 各一行（原为 4）
     expect(r2.missingPhonetic).toBe(2); // T-shirt 无音标 + 未知词
     expect(r2.missingMeaning).toBe(1);
     const apple = db.prepare("SELECT * FROM words WHERE headword='apple'").get() as any;

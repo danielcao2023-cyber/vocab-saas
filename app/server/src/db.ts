@@ -1,4 +1,5 @@
 import Database from 'better-sqlite3';
+import fs from 'node:fs';
 
 export type DB = Database.Database;
 
@@ -9,6 +10,12 @@ CREATE TABLE IF NOT EXISTS words (
   phonetic TEXT,
   pos TEXT,
   meaning_zh TEXT,
+  meaning_raw TEXT,
+  meaning_flag TEXT,
+  meaning_source TEXT,
+  ecdict_key TEXT,
+  entry_raw TEXT,
+  priority INTEGER NOT NULL DEFAULT 0,
   source TEXT NOT NULL,          -- 词表标识，如 kb2022 / sample
   level TEXT,                    -- 课标级别：二级 / 三级（初中）等
   unit TEXT,                     -- 九年级单元，第一期留空
@@ -60,7 +67,7 @@ CREATE TABLE IF NOT EXISTS wrong_words (
 CREATE TABLE IF NOT EXISTS ai_jobs (id INTEGER PRIMARY KEY, kind TEXT, payload_hash TEXT, status TEXT, attempts INTEGER DEFAULT 0, error TEXT, started_at TEXT, finished_at TEXT);
 CREATE TABLE IF NOT EXISTS ai_cache (key_hash TEXT PRIMARY KEY, word_id INTEGER, question TEXT, answer TEXT, created_at TEXT);
 CREATE TABLE IF NOT EXISTS settings (key TEXT PRIMARY KEY, value TEXT NOT NULL);
-INSERT OR IGNORE INTO settings(key,value) VALUES ('new_per_day','10'),('review_limit','200');
+INSERT OR IGNORE INTO settings(key,value) VALUES ('new_per_day','10'),('review_limit','200'),('level2_every','5');
 `;
 
 function addColumn(db: DB, table: string, col: string, def: string) {
@@ -68,15 +75,29 @@ function addColumn(db: DB, table: string, col: string, def: string) {
   if (!cols.some((c) => c.name === col)) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
 }
 
-export function openDb(file: string): DB {
-  const db = new Database(file);
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
-  db.exec(SCHEMA);
-  // 轻量迁移
-  addColumn(db, 'words', 'meaning_raw', 'TEXT');      // ECDICT 原始 translation，不改动
-  addColumn(db, 'words', 'meaning_flag', 'TEXT');     // '释义待人工看'
-  addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
-  db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
-  return db;
+export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
+  let db: DB;
+  if (options.dryRun && file !== ':memory:' && fs.existsSync(file)) {
+    const original = new Database(file, { readonly: true });
+    let copy: Buffer;
+    try { copy = original.serialize(); } finally { original.close(); }
+    db = new Database(copy);
+  } else {
+    db = new Database(options.dryRun ? ':memory:' : file);
+  }
+  try {
+    db.pragma('journal_mode = WAL');
+    db.pragma('foreign_keys = ON');
+    db.exec(SCHEMA);
+    // 轻量迁移
+    addColumn(db, 'words', 'meaning_raw', 'TEXT');      // ECDICT 原始 translation，不改动
+    addColumn(db, 'words', 'meaning_flag', 'TEXT');     // '释义待人工看'
+    addColumn(db, 'words', 'meaning_source', 'TEXT');
+    addColumn(db, 'words', 'ecdict_key', 'TEXT');
+    addColumn(db, 'words', 'entry_raw', 'TEXT');
+    addColumn(db, 'words', 'priority', 'INTEGER NOT NULL DEFAULT 0');
+    addColumn(db, 'review_logs', 'answer_id', 'TEXT');  // 客户端幂等键
+    db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_logs_answer_id ON review_logs(answer_id) WHERE answer_id IS NOT NULL');
+    return db;
+  } catch (error) { db.close(); throw error; }
 }

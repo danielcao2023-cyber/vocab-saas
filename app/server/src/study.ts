@@ -1,6 +1,7 @@
 import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import type { DB } from './db.ts';
 import { shDay, shDayStart } from './time.ts';
+import { mainHeadwords, normalizeQuotes } from './text.ts';
 
 const scheduler = fsrs({ enable_fuzz: false });
 export type Mode = 'recognize' | 'spell' | 'dictation';
@@ -38,7 +39,7 @@ function newIntroducedToday(db: DB, now: Date): number {
   return r.n;
 }
 
-const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
+const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample FROM cards c JOIN words w ON w.id=c.word_id`;
 
 /** 到期判定：首页计数和出卡用同一个条件 */
 const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
@@ -68,9 +69,16 @@ export function nextCard(db: DB, now = new Date(), prefer: 'review' | 'new' = 'r
   const due = () => q.review > 0 ? db.prepare(`${CARD_SELECT} WHERE ${DUE_WHERE} ORDER BY c.due LIMIT 1`).get(now.toISOString()) : undefined;
   const fresh = () => {
     if (q.new <= 0) return undefined;
-    let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY w.id LIMIT 1`).get();
+    let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY c.id LIMIT 1`).get();
     if (!row) {
-      const w = db.prepare(`SELECT id FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize') ORDER BY COALESCE(freq_rank, 999999), id LIMIT 1`).get() as { id: number } | undefined;
+      const n = (db.prepare(`SELECT COUNT(*) n FROM cards c JOIN words w ON w.id=c.word_id
+        WHERE c.mode='recognize' AND w.priority>0`).get() as { n: number }).n;
+      const every = setting(db, 'level2_every', 5);
+      const secondary = every > 0 && (n + 1) % every === 0;
+      const select = db.prepare(`SELECT w.id FROM words w WHERE w.priority=? AND NOT EXISTS
+        (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize')
+        ORDER BY COALESCE(w.freq_rank, 999999), w.id LIMIT 1`);
+      const w = (select.get(secondary ? 1 : 2) ?? select.get(secondary ? 2 : 1) ?? select.get(0)) as { id: number } | undefined;
       if (!w) return undefined;
       insertCard(db, w.id, 'recognize', now);
       row = db.prepare(`${CARD_SELECT} WHERE c.word_id=? AND c.mode='recognize'`).get(w.id);
@@ -125,13 +133,28 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
   return { card, duplicate: false };
 }
 
-export function normalizeAnswer(s: string) { return s.trim().toLowerCase().replace(/\s+/g, ' '); }
+export function normalizeAnswer(s: string) { return normalizeQuotes(s).trim().toLowerCase().replace(/\s+/g, ' '); }
 
-/** 可接受的拼写：主词形和括号/斜杠里的变体，如 "a (an)" → a, an；"color (colour)" → color, colour */
+/** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */
 export function acceptedSpellings(headword: string): string[] {
-  const main = headword.replace(/\(.*?\)|（.*?）/g, '').split('/').map(normalizeAnswer).filter(Boolean);
-  const inner = [...headword.matchAll(/[(（](.*?)[)）]/g)].flatMap((m) => m[1].split(/[,，/]/)).map(normalizeAnswer).filter((x) => /^[a-z' .-]+$/.test(x));
-  return [...new Set([...main, ...inner])];
+  const normalized = normalizeQuotes(headword);
+  const main = mainHeadwords(normalized).map(normalizeAnswer);
+  const variants: string[] = [];
+  for (const match of normalized.matchAll(/[(（](.*?)[)）]/g)) {
+    const inner = match[1].trim();
+    if (main[0] === 'according' && normalizeAnswer(inner) === 'to') {
+      variants.push('according to');
+      continue;
+    }
+    // pl. applies to the whole annotation, including slashes within it.
+    if (/^pl\./i.test(inner)) continue;
+    const parts = inner.split(/\bAm\s?E\s+/);
+    const bare = parts.shift()!;
+    if (!bare.trim().startsWith('=')) variants.push(...bare.split(/[,，/]/));
+    variants.push(...parts.flatMap((part) => part.split(/[,，/]/)));
+  }
+  const accepted = variants.map(normalizeAnswer).filter((part) => /^[a-z' .-]+$/.test(part));
+  return [...new Set([...main, ...accepted])];
 }
 
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */

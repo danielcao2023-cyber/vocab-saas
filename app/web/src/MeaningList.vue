@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { splitSenses, toggleLabel } from './senses';
-const props = defineProps<{ meaning: string | null; flag?: string | null }>();
+const props = defineProps<{ meaning: string | null; flag?: string | null; source?: string | null }>();
 const open = ref(false);
-const s = computed(() => splitSenses(props.meaning));
+const s = computed(() => splitSenses(props.meaning, props.source === 'manual' ? Infinity : 2));
 </script>
 
 <template>

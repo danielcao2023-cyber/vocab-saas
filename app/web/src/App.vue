@@ -6,7 +6,7 @@ import MeaningList from './MeaningList.vue';
 import { COPY, isRepeatCard } from './copy';
 
 type View = 'home' | 'study' | 'done' | 'progress' | 'wrong';
-interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number; reps: number }
+interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; meaning_source: string | null; is_sample: number; state: number; reps: number }
 
 const view = ref<View>('home');
 const online = ref(true);
@@ -206,11 +206,11 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
 
       <template v-if="card.mode === 'recognize'">
         <div class="word">{{ card.headword }} <button class="icon" title="听发音（空格）" @click="play">🔊</button></div>
-        <div class="phon">{{ card.phonetic ?? '（暂无音标）' }}</div>
+        <div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div>
         <p v-if="!revealed" class="muted">空格 听发音 · → 翻面 · 先自己想想意思再翻面</p>
         <button v-if="!revealed" @click="revealed = true">翻面</button>
         <template v-else>
-          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
+          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
           <div class="row">
             <button v-for="r in RATINGS" :key="r.v" @click="rate(r.v)">{{ r.v }} {{ r.label }}</button>
           </div>
@@ -220,8 +220,8 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
 
       <template v-else>
         <template v-if="card.mode === 'spell'">
-          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
-          <div class="phon">{{ card.phonetic }}</div>
+          <MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
+          <div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div>
         </template>
         <template v-else>
           <p>戴上耳机，听发音后拼写。 <button class="icon" @click="play">🔊</button></p>
@@ -234,7 +234,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
         <div v-if="feedback">
           <p v-if="feedback.correct" class="ok">正确 ✓</p>
           <p v-else class="bad">应为：<b>{{ feedback.expected }}</b>（你写的是 {{ answer }}）。已加入错词本。</p>
-          <MeaningList v-if="card.mode === 'dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" />
+          <MeaningList v-if="card.mode === 'dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
           <button @click="loadNext">下一个（Enter）</button>
         </div>
       </template>
