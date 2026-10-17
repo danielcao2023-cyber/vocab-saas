@@ -3,9 +3,10 @@ import { computed, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { api, OfflineError, speak } from './api';
 import { PendingSubmitter } from './pending';
 import MeaningList from './MeaningList.vue';
+import { COPY, isRepeatCard } from './copy';
 
 type View = 'home' | 'study' | 'done' | 'progress' | 'wrong';
-interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number }
+interface Card { id: number; word_id: number; mode: 'recognize' | 'spell' | 'dictation'; headword: string; phonetic: string | null; meaning_zh: string | null; meaning_flag: string | null; is_sample: number; state: number; reps: number }
 
 const view = ref<View>('home');
 const online = ref(true);
@@ -174,6 +175,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
 
     <section v-if="view === 'home'">
       <h1 v-if="today">今天：复习 {{ today.review }} 个 · 新词 {{ today.new }} 个 · 约 {{ today.minutes }} 分钟</h1>
+      <p v-if="today && today.review > 0" class="muted small" data-testid="relearn-note">{{ COPY.homeRelearnNote }}</p>
       <div class="row">
         <button class="primary" @click="start('review')">开始复习</button>
         <button @click="start('new')">先学新词</button>
@@ -182,6 +184,7 @@ const modeLabel = { recognize: '认词', spell: '拼写', dictation: '听写' };
     </section>
 
     <section v-if="view === 'study' && card" class="card">
+      <p v-if="isRepeatCard(card)" class="muted small" data-testid="repeat-line">{{ COPY.repeatCard }}</p>
       <div class="muted">{{ modeLabel[card.mode] }}</div>
 
       <template v-if="card.mode === 'recognize'">
