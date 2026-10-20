@@ -1,0 +1,492 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4f98881daf147656408a7148b2b1ac280fa0504644c115690bdad17c4171e9f4",
+    "executedReviewPromptHash": "4f98881daf147656408a7148b2b1ac280fa0504644c115690bdad17c4171e9f4",
+    "reviewHash": "504cd8d7b028ae4bc859f320b480bdbbd1e3dcb5309c7516f3643ec5db2c3327",
+    "wordId": 1490,
+    "inputHash": "cd6ac5562c28408568a11d7bca2a3cff793ecb787a6575b00f2647b84d134fc6",
+    "draftHash": "5ee17449f9cb2f9faa1298ad51445d2f015510b3a17eb892cb07e690b4f1fd8c",
+    "finalHash": "843aa62a120bbc64b3bf16c97f8c214f4fe826edd4cfa3934b49f79ababe7df8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/value#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.915Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119997,
+        "revisionId": 39811197,
+        "revisionTimestamp": "2026-08-17T20:51:25Z",
+        "sha256": "e7df7dca027fc5cb86c056782ad734a00985a2376935606e5c19e4755e75cf69",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/value",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:30:45.742Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:46:49.059Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏常用复数 values“价值观”；“数值”不宜仅作一个例句的边缘义处理；货币价值与物有所值各只有一个例句，未满足各核心功能至少两个例句的要求。另需交代词条中的“购买力”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "货币价值与售价、消费是否划算混在一起，容易把 value 当作 price 的直接替换词。应分清估计的货币价值与 value for money。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "value something for a quality 表示因某种特质而看重它，不是根据该特质评分或评估。第二个例句的释义及句型解释错误；估价义需补足第二个真正表示估价的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0；/wordFamilyNote",
+        "message": "valuable 的实际拼写是 value 去掉末尾 e 再加 -able；保留 e 的说法错误。Her notes were valuable 中 valuable 作表语，并非定语修饰 notes。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions",
+        "message": "undervalue 是估价偏低，仍属于估价行为，不能称为估价义的反向行为。应与 overvalue 一起限定为估价高低的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古法语来源有依据，但 stages 中的 meaning 只是“英语 value 的来源”，不是已知的历史词义。应把可证实的借入关系保留在 summary，清空占位阶段，并去掉制作过程说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 抓取失败，不能作为本次审校已取得的内容证据。可保留为推荐延伸阅读；正文归属应改用实际取得且相关的英语词条，或对专业语言知识补充留空。法语维基词典提供的是英语 value 词条，不能误作法语词的释义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "英美末尾 /u/ 与 /uː/ 应解释为常见音标标注差异，不宜据此直接断言美式实际读音较短；原词条音标已经包含 /j/，“不要按旧音标读”的提醒没有必要。"
+      }
+    ],
+    "coverageAssessment": "已核对重要性、用途与价值，货币价值，物有所值，价值观，数学及计算机数值，货币购买力，以及动词重视、估价。修订后七个核心义各有至少两个原创英中例句，购买力作为扩展义保留一个例句。“评价、估价”按价值判断或估出的金额理解，不泛化为通用的评价、评分行为。词源仅保留已取得材料支持的古法语借入关系；Cambridge 仅保留为推荐阅读。其余常用义与教学补充依据专业语言知识审校，未声称获得额外词典核验。",
+    "senseInventory": [
+      {
+        "sense": "名词：价值、重要性、用途或可贵之处，包括材料中的 mérite",
+        "coveredBy": [
+          "value-n-worth"
+        ],
+        "assessment": "原稿基本覆盖，两个例句分别说明建议的用途与合作的价值；不必另造一个“优点”核心义。"
+      },
+      {
+        "sense": "名词：货币价值、市场价值及估出的金额",
+        "coveredBy": [
+          "value-n-price"
+        ],
+        "assessment": "修订后与售价及消费是否划算分清，提供两个货币价值例句。词条中的名词“估价”在此按估出的价值理解。"
+      },
+      {
+        "sense": "名词：花费与所得是否相称，物有所值",
+        "coveredBy": [
+          "value-n-money"
+        ],
+        "assessment": "新增独立核心义，覆盖 good value for money 与 excellent value，并提供两个例句。"
+      },
+      {
+        "sense": "复数名词：价值观、认为重要的行为准则",
+        "coveredBy": [
+          "value-n-values"
+        ],
+        "assessment": "原稿仅在复数词形说明中提及，正文遗漏；新增核心义及两个例句，并与数值复数区分。"
+      },
+      {
+        "sense": "名词：数学、科学或计算机中的数值、取值及计算结果",
+        "coveredBy": [
+          "value-n-number"
+        ],
+        "assessment": "由扩展义提升为核心义，补足两个例句；说明 value 既可指输入或变量取值，也可指计算结果。"
+      },
+      {
+        "sense": "名词：货币的购买力",
+        "coveredBy": [
+          "value-n-currency"
+        ],
+        "assessment": "新增扩展义，说明同样的钱能购买多少东西，避免与账户余额混淆。"
+      },
+      {
+        "sense": "动词：重视、珍惜、认为重要",
+        "coveredBy": [
+          "value-v-appreciate"
+        ],
+        "assessment": "原有两个例句可保留；补入 value someone/something for a quality，纠正其在估价义中的误归类。"
+      },
+      {
+        "sense": "动词：给财物估价、判断货币价值",
+        "coveredBy": [
+          "value-v-estimate"
+        ],
+        "assessment": "限定为估价，保留主动估价例句并补入被动估价例句；不把 value 泛化为按创意等标准评分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"value 作名词，常说某物值多少钱或有多重要；作动词，常表示“重视”，也可表示“给……估价”。\"",
+        "valueJson": "\"value 作名词可指价值、货币价值或数值；复数 values 还常指价值观。作动词时，value 表示重视或给……估价。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住名词搭配 value for money，表示“物有所值”。\"",
+        "valueJson": "\"练习 good / poor value for money，分别表示花得值和不划算，并区分 value 与 price。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"根据语境区分 values：它可以表示多个数值，也可以表示价值观。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/us",
+        "expectedValueJson": "\"/ˈvæljuː/\"",
+        "valueJson": "\"/ˈvælju/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式发音都以 /ˈvæl/ 开头；美式末尾的 /uː/ 常较短。\"",
+        "valueJson": "\"英美都重读第一音节；这里英式末尾标作 /uː/，美式标作 /u/。不同音标体系对元音长短的标注不同，不必据此刻意把美式末尾读短。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一音节；末尾读 /juː/，不要按旧音标读成以 /uː/ 单独结尾。\"",
+        "valueJson": "\"重音在第一音节；第二音节以 /j/ 开头，接 /uː/ 或 /u/，注意保留 /j/ 的音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"名词：价钱；物有所值\"",
+        "valueJson": "\"名词：货币价值；市值\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"某物的价格或市场价值；也可说花的钱是否换来了相称的质量或用途。\"",
+        "valueJson": "\"某物值多少钱，尤其指估计的货币价值或市场上通常能卖到的金额。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"说具体价格时，常用 value of；value for money 表示“钱花得值”，不单指便宜。\"",
+        "valueJson": "\"常用 the value of something，也可用 a value of + 金额。value 指货币价值；price 指标出的或实际成交的价格，二者不一定相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"value-n-price-ex2\",\"senseId\":\"value-n-price\",\"en\":\"This lunch is good value for money.\",\"zh\":\"这顿午餐很划算，花得值。\",\"note\":\"good value for money 强调价格和所得相称。\"}",
+        "valueJson": "{\"id\":\"value-n-price-ex2\",\"senseId\":\"value-n-price\",\"en\":\"The value of our house has gone up this year.\",\"zh\":\"今年我们房子的市值上涨了。\",\"note\":\"这里说房屋的市场价值增加，不是在说明某次交易的成交价。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"be good value for money\",\"zh\":\"物有所值；划算\",\"note\":\"评价商品、服务或活动时使用；不一定意味着最便宜。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"have a value of + amount\",\"zh\":\"价值为……\",\"note\":\"如 have a value of £50，表示估计值五十英镑。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"value for money\",\"zh\":\"物有所值\",\"note\":\"常用于比较花费与质量、数量或服务。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"rise / fall in value\",\"zh\":\"升值／贬值\",\"note\":\"说明房屋、物品或资产的货币价值上升或下降。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"poor value for money\",\"zh\":\"不划算\",\"note\":\"在“花费与所得是否相称”这一语境中，与 good value for money 相对。\"}]",
+        "valueJson": "[{\"en\":\"low value\",\"zh\":\"价值较低\",\"note\":\"在比较货币价值高低时，与 high value 相对；不表示 value 本身有一个通用反义词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"price 是买卖时的价格；value 更关注估算价值或所花的钱是否值得。\"",
+        "valueJson": "\"price 是标出的或实际成交的价格；此处 value 指估计的货币价值。be worth + 金额也可说明某物值多少钱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"poor value for money 是该购物评价语境中的对照表达，不表示物品毫无价值。\"",
+        "valueJson": "\"比较价值高低可用 high value / low value；描述价值变化可用 rise / fall in value。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"value someone / something for + noun\",\"zh\":\"因某种特质而看重某人或某物\",\"note\":\"如 I value her for her honesty，表示我看重她的诚实；for 引出看重的原因，不是评分标准。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"动词：估价；评估\"",
+        "valueJson": "\"动词：给……估价\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"判断某物值多少钱，或判断它的价值、重要程度。\"",
+        "valueJson": "\"估计某物值多少钱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"表示估价时常用 value something at + 金额；也可直接说 value something，表示对其作价值评估。\"",
+        "valueJson": "\"常用 value something at + 金额；被动式 be valued at + 金额也很常见。直接说 value a house 可以表示给房屋估价。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"value-v-estimate-ex2\",\"senseId\":\"value-v-estimate\",\"en\":\"The teacher valued each project for its creativity.\",\"zh\":\"老师根据创意来评价每个项目。\",\"note\":\"for 后说明评估时考虑的特点。\"}",
+        "valueJson": "{\"id\":\"value-v-estimate-ex2\",\"senseId\":\"value-v-estimate\",\"en\":\"Our house was valued at £200,000 last month.\",\"zh\":\"上个月，我们的房子被估价为二十万英镑。\",\"note\":\"was valued at 是被动式，表示得到的估价，不保证实际能以该价格成交。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0/note",
+        "expectedValueJson": "\"at 后接估出的金额或数值。\"",
+        "valueJson": "\"at 后接估出的金额，如 at £50。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"value something for + quality\",\"zh\":\"根据某特点评价某物\",\"note\":\"for 后说明评估看重的特征。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"be valued at + amount\",\"zh\":\"被估价为……\",\"note\":\"这是估价义的常用被动式；at 后接估出的金额。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"estimate 常突出估算过程；assess 可评估多种方面；value 可明确表示给出价值判断。\"",
+        "valueJson": "\"estimate 可估算价格、数量或时间；assess 可评估质量、情况等。此处 value 专指判断某物值多少钱。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"overvalue\",\"zh\":\"高估……的价值\",\"note\":\"在估价语境中，指估出的价值过高，与 undervalue 的方向相反。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"undervalue 是此义常用的反向派生词，表示估价或评价得过低。\"",
+        "valueJson": "\"这里对照的是估价高低：undervalue 是估得过低，overvalue 是估得过高，二者都含有估价行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"value-n-number\",\"title\":\"名词：数值\",\"meaning\":\"数学或计算中某个量所对应的数字。\",\"note\":\"常见于数学、科学或计算机语境；初中日常交流中较少用作此义。\",\"example\":{\"id\":\"value-n-number-ex1\",\"senseId\":\"value-n-number\",\"en\":\"Put the value of x into the equation.\",\"zh\":\"把 x 的数值代入方程。\",\"note\":\"value 指变量 x 对应的数。\"},\"sourceIds\":[\"cambridge-value\"]}]",
+        "valueJson": "[{\"id\":\"value-n-currency\",\"title\":\"名词：货币的购买力\",\"meaning\":\"同样数量的钱能够买到多少东西。\",\"note\":\"常见于谈通货膨胀、储蓄与物价的语境，是货币价值的一种具体用法。\",\"example\":{\"id\":\"value-n-currency-ex1\",\"senseId\":\"value-n-currency\",\"en\":\"Inflation has reduced the value of my savings.\",\"zh\":\"通货膨胀降低了我储蓄的购买力。\",\"note\":\"这里指同样的钱能买到的东西变少，不是说账户里的金额减少了。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"value-n-money\",\"title\":\"名词：物有所值；花费与所得是否相称\",\"meaning\":\"商品或服务的质量、数量或用途是否与所花的钱相称。\",\"usageNote\":\"good value for money 表示花得值，poor value for money 表示不划算。英式英语常用 good value；美式英语中也常见 a good value。\",\"examples\":[{\"id\":\"value-n-money-ex1\",\"senseId\":\"value-n-money\",\"en\":\"This lunch is good value for money.\",\"zh\":\"这顿午餐很划算，花得值。\",\"note\":\"评价的是花费与所得是否相称，不只是价格低。\"},{\"id\":\"value-n-money-ex2\",\"senseId\":\"value-n-money\",\"en\":\"At £40, these shoes are excellent value.\",\"zh\":\"这双鞋卖四十英镑，非常划算。\",\"note\":\"excellent value 表示以这个价格买到这样的鞋很值。\"}],\"patterns\":[{\"en\":\"be good / poor value for money\",\"zh\":\"物有所值／不划算\",\"note\":\"可评价商品、餐食、住宿或其他服务。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"good value for money\",\"zh\":\"物有所值；划算\",\"note\":\"强调花费与所得相称。\",\"kind\":\"fixed-expression\"},{\"en\":\"excellent value\",\"zh\":\"非常划算\",\"note\":\"英式英语常见表达，value 在此不加 a。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"worth the money\",\"zh\":\"值得花这些钱\",\"note\":\"常用 be worth the money，强调所得值得相应花费。\"}],\"contrasting\":[{\"en\":\"poor value for money\",\"zh\":\"不划算\",\"note\":\"与 good value for money 相对，说明花的钱与所得不相称。\"}],\"similarNote\":\"worth the money 与 good value for money 都可表示花得值；说便宜用 cheap，便宜的东西也可能质量差而不划算。\",\"contrastingNote\":\"poor value for money 只说明这笔花费不划算，不等于物品毫无价值。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"value-n-values\",\"title\":\"复数名词：价值观\",\"meaning\":\"一个人或群体认为重要、值得坚持，并据此判断行为的观念与准则。\",\"usageNote\":\"这个意思通常用复数 values。它表示认为哪些事情重要，与数学或计算机中的多个数值不同。\",\"examples\":[{\"id\":\"value-n-values-ex1\",\"senseId\":\"value-n-values\",\"en\":\"Honesty and kindness are important values in our family.\",\"zh\":\"诚实和善良是我们家庭的重要价值观。\",\"note\":\"values 指家庭成员认为重要、值得坚持的品质。\"},{\"id\":\"value-n-values-ex2\",\"senseId\":\"value-n-values\",\"en\":\"Although we disagree, we share many of the same values.\",\"zh\":\"虽然我们有分歧，但我们有许多共同的价值观。\",\"note\":\"share the same values 表示认同相同的重要观念。\"}],\"patterns\":[{\"en\":\"share someone's values\",\"zh\":\"认同某人的价值观\",\"note\":\"表示认为重要的事情与对方相同或相近。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"shared values\",\"zh\":\"共同的价值观\",\"note\":\"常用于谈一个家庭、团队或群体认同的观念。\",\"kind\":\"common-collocation\"},{\"en\":\"personal values\",\"zh\":\"个人价值观\",\"note\":\"指个人认为重要并据此作选择的观念。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"principles\",\"zh\":\"原则\",\"note\":\"更强调指导行为的准则；values 更强调认为哪些事情重要。\"},{\"en\":\"beliefs\",\"zh\":\"信念；看法\",\"note\":\"范围更广，可指相信为真的事情，不一定是价值观。\"}],\"contrasting\":[],\"similarNote\":\"values 关注什么值得重视，principles 关注按什么准则行动，beliefs 关注相信什么。\",\"contrastingNote\":\"values 没有统一的反义词；两组价值观互相冲突时，可说 conflicting values。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"value-n-number\",\"title\":\"名词：数值；取值\",\"meaning\":\"数学、科学或计算机中某个量、变量或数据项所取的数值。\",\"usageNote\":\"此义可数，复数为 values。既可指输入的数或变量的取值，也可指计算结果，不限于最后算出的答案。\",\"examples\":[{\"id\":\"value-n-number-ex1\",\"senseId\":\"value-n-number\",\"en\":\"Put the value of x into the equation.\",\"zh\":\"把 x 的数值代入方程。\",\"note\":\"value 指变量 x 对应的数。\"},{\"id\":\"value-n-number-ex2\",\"senseId\":\"value-n-number\",\"en\":\"Enter a value between 1 and 10.\",\"zh\":\"输入一个介于一和十之间的数值。\",\"note\":\"a value 指要输入的一个数。\"}],\"patterns\":[{\"en\":\"the value of + variable\",\"zh\":\"某个变量的值\",\"note\":\"如 the value of x，表示 x 所取的数值。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"input value\",\"zh\":\"输入值\",\"note\":\"指输入程序或计算过程的数据值。\",\"kind\":\"common-collocation\"},{\"en\":\"numerical value\",\"zh\":\"数值\",\"note\":\"明确说明谈的是用数字表示的值。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"number\",\"zh\":\"数；数字\",\"note\":\"number 泛指数；value 在这里强调这个数是某个变量或数据项的取值。\"}],\"contrasting\":[],\"similarNote\":\"数值可以是一个 number；谈某个变量取什么数时，用 value 更明确。\",\"contrastingNote\":\"数值义没有统一反义词；零、负数或未知值都不是 value 的反义词。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"value 的历史来源可追溯到古法语 value。这里按来源只呈现有依据的传入关系，不补写未获支持的更早阶段。\"",
+        "valueJson": "\"英语 value 借自古法语 value。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"value\",\"meaning\":\"英语 value 的来源\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是历史来源说明；现代学习中可把 value 与 valuable、valued 联系记忆，但这些现代词族关系不等同于词源箭头。\"",
+        "valueJson": "\"现代词族有助于记忆，但应与历史借入关系分开理解；旧书店故事也只是助记联想。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -able 后保留 value 的末尾 e，写作 valuable。\"",
+        "valueJson": "\"去掉 value 末尾不发音的 e，再加 -able，写作 valuable。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"valuable 作形容词修饰 notes。\"",
+        "valueJson": "\"valuable 作表语，说明这些笔记很有用；to the whole group 表示对整个小组而言。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-value\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"value 变形时注意末尾不发音的 e：valued 直接加 -d，valuing 去 e 加 -ing；valuable 和 valueless 保留 e。\"",
+        "valueJson": "\"注意 value 末尾不发音的 e：valued 直接加 -d；valuing 去 e 加 -ing；valuable 去 e 加 -able；valueless 保留 e 加 -less。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Cambridge Dictionary: value\"",
+        "valueJson": "\"Cambridge Dictionary: value（延伸阅读）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"常见名词和动词义项\",\"动词 value 的搭配和句型\",\"词形与发音参考\"]",
+        "valueJson": "[\"推荐延伸查阅：value 的现代释义、搭配与发音\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"value 的古法语来源及英语词条中的英美发音信息\"]",
+        "valueJson": "[\"英语 value 的古法语来源\",\"英语词条中的英美音标\",\"英语名词 value 的重要性、可贵之处及计算机数值义\",\"英语动词 value 的估价与重视义\",\"valuable、valued、valueless 等相关词的列举\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1490,
+    "headword": "value",
+    "meaning_zh": "n. 价值, 价格, 购买力, 评价, 估价, 计算结果\nvt. 评价, 估价, 重视",
+    "phonetic": "/'vælju:/",
+    "pos": "",
+    "forms": []
+  }
+}

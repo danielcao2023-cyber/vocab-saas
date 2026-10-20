@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0078378797b04ef86f228130d9b7604908e1407aee1efb465e169bf8cabd8141",
+    "executedReviewPromptHash": "0078378797b04ef86f228130d9b7604908e1407aee1efb465e169bf8cabd8141",
+    "reviewHash": "79352aad3c9e7e7a30e3d96481a4e5f2fbb0d2bddd2e3a78a2c13cc8230fabec",
+    "wordId": 1231,
+    "inputHash": "f60883706da029f49652230ce1134588650e6ec6f1b802da0bd194e671f8a8a1",
+    "draftHash": "a0fc3a9bfddfffc6a4088bee91c6746c1dde3c08021175dd9c775ca362107afd",
+    "finalHash": "a93f7e1c9c727c382464ed10b381dbcd090e84411e1c14f0c7e620fa6f032c5c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shirt#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.200Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 202851,
+        "revisionId": 39579473,
+        "revisionTimestamp": "2026-06-10T04:05:35Z",
+        "sha256": "81ecf2af65e578c9760c6d94668723b5d2e92e8b00147cd634facd23b9457eec",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shirt",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:11:26.826Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:31:45.773Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "“英式英语的元音较短”不准确。这里的常见英式读法含长元音 /ɜː/；英美差异主要涉及是否带卷舌色彩。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题中的“上身穿的衣服”范围过宽，而两条例句均译为衬衫，没有明确展示 maillot 对应的较宽衣物用法。应限定范围，并补入球衣和 T 恤语境；内衣说明也应直接讲用法，去掉“中文旧释义”的制作视角。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/2/note；/confusions/0/items/1/example/note；/memoryAid/story",
+        "message": "T-shirt 并非只有短袖款；语境清楚时，T 恤也可以称为 shirt。“要用完整词”“不要只写 shirt”把推荐的明确表达误写成强制限制，助记故事也需同步修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "早期阶段的 meaning 是来源说明式占位，并非历史词义；摘要也含面向制作者的说明。应把可支持的历史词形联系保留在摘要，清空缺少释义支撑的阶段，不补猜古义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "空数组本身符合结构，但当前说明过度排除了有用的现代构词。来源明确列有 T-shirt、overshirt，可补入构词关系、实际拼写和生活例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/1；/senses/0/sourceIds；/confusions/0/sourceIds",
+        "message": "Oxford 不在实际提供的来源材料中，却被用于词义和辨析的来源引用。本次应删除该来源及相关引用，保留已有正文支持的 s1。"
+      }
+    ],
+    "coverageAssessment": "已核对法语释义所描述的英语名词：chemise（衬衫，尤指男式衬衫）及 maillot 对应的某些上身衣物。这些范围差异可放在同一衣物义项中，不必强拆多义。原有两例覆盖衬衫，补入球衣和 T 恤两例后覆盖较完整；“内衣”不扩展为所有内衣。复数拼写、原有语法例句及 trousers 的部位对照可保留。词源仅保留有据的历史词形联系，不补猜古义或借入方向。核验范围限于提供的英语词条和专业语言知识，未将缺少正文的 Cambridge 或 Oxford 当作依据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：衬衫；尤指男式衬衫（chemise；chemise d’homme）",
+        "coveredBy": [
+          "shirt-n-clothing"
+        ],
+        "assessment": "原 ex1、ex2 已有两个自然例句。男式衬衫属于常见具体用法，无须另立核心义；shirt 也可用于女装。"
+      },
+      {
+        "sense": "可数名词：汗衫、球衣等某些上身衣物（maillot）；语境中也可指 T 恤",
+        "coveredBy": [
+          "shirt-n-clothing"
+        ],
+        "assessment": "原稿仅概括提及，且错误限制 T-shirt 与 shirt 的关系。补入 ex6、ex7，分别明确展示球衣用法和对 T 恤的指称。内穿上衣的明确表达由 undershirt 辨析承担，不另造泛指所有内衣的核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"shirt 通常指穿在上半身、覆盖躯干的衣服。日常常见的说法是 wear a shirt（穿衬衫）和 a white shirt（一件白衬衫）。\"",
+        "valueJson": "\"shirt 是可数名词，常指衬衫，也可按语境指 T 恤、球衣等上身衣物。wear a shirt 表示“穿着衬衫”；a white shirt 是“一件白衬衫”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式英语的元音较短；美式英语常带卷舌音。\"",
+        "valueJson": "\"常见标准英式读法 /ʃɜːt/ 用长元音 /ɜː/，元音后不读 r；美式 /ʃɝːt/ 的元音带卷舌色彩。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"衬衫；上身穿的衣服\"",
+        "valueJson": "\"衬衫；T 恤、球衣等上身衣物\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"中文旧释义里的“内衣、汗衫”不是 shirt 最常见的单独意思。T 恤通常明确说 T-shirt；需要强调内衣时也常说 undershirt。\"",
+        "valueJson": "\"shirt 单独出现时常指衬衫，也可按语境指 T 恤或球衣等；它不泛指所有上衣或所有内衣。要明确说贴身内穿的汗衫，美式常用 undershirt，英式常用 vest。shirt 是可数名词，单数通常需要 a、the、my 等限定词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex6\",\"senseId\":\"shirt-n-clothing\",\"en\":\"The coach gave each player a shirt with a number on the back.\",\"zh\":\"教练给每名球员发了一件背后有号码的球衣。\",\"note\":\"体育语境中的 shirt 可以指球衣，不一定是有领有扣的衬衫。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex7\",\"senseId\":\"shirt-n-clothing\",\"en\":\"I love this T-shirt—it's the softest shirt I own.\",\"zh\":\"我很喜欢这件 T 恤；我所有的上衣中，它最柔软。\",\"note\":\"这里的 shirt 指前面提到的 T-shirt；语境清楚时，可以直接用 shirt 指 T 恤。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/2/note",
+        "expectedValueJson": "\"是针织短袖上衣，通常没有衬衫式的门襟和衣领；说这种衣服要用完整词 T-shirt。\"",
+        "valueJson": "\"通常是无领、无前开襟的针织上衣，以短袖款最常见，也有长袖款。用 T-shirt 能明确款式，语境清楚时也可直接称作 shirt。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"说 T 恤时用 T-shirt，不要只写 shirt。\"",
+        "valueJson": "\"T-shirt 明确指出是 T 恤；语境清楚时，也可以用 shirt 指同一件衣服。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"shirt 有可追溯的历史词源：材料记载它经由古英语形式 scyrte，来自古诺尔斯语 kyrta。这里按来源给出的先后关系列出词形；学习时记住现代单词 shirt 和“衬衫、上身衣物”即可。\"",
+        "valueJson": "\"shirt 的早期英语形式是古英语 scyrte，与古诺尔斯语 kyrta 有词源联系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"kyrta\",\"meaning\":\"来源记载的早期形式\"},{\"language\":\"古英语\",\"form\":\"scyrte\",\"meaning\":\"经由的历史形式\"},{\"language\":\"现代英语\",\"form\":\"shirt\",\"meaning\":\"衬衫；上身穿的衣服\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这些是词源上的历史形式，不是现代英语的构词拆分；shirt 不是由 shirt 的字母部分组合而成。\"",
+        "valueJson": "\"这些是古代词形，不是现代英语的构词拆分；现代 shirt 作为一个完整词来记。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"T-shirt\",\"partOfSpeech\":\"noun\",\"meaning\":\"T 恤衫，通常无领、无前襟纽扣。\",\"formation\":\"由字母 T 与 shirt 组成的复合词。\",\"spellingNote\":\"常见规范写法为 T-shirt：大写 T 后加连字符，shirt 保持原拼写；复数为 T-shirts。\",\"example\":{\"id\":\"wf-ex1\",\"senseId\":\"shirt-n-clothing\",\"en\":\"I packed two T-shirts for the trip.\",\"zh\":\"我为这次旅行在行李里放了两件 T 恤。\",\"note\":\"两件 T 恤用复数 T-shirts，-s 加在整个词的末尾。\"},\"sourceIds\":[\"s1\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"overshirt\",\"partOfSpeech\":\"noun\",\"meaning\":\"外搭衬衫；穿在其他上衣外面的衬衫式外衣。\",\"formation\":\"over-（在外层）+ shirt，表示穿在外层的衬衫。\",\"spellingNote\":\"连写为 overshirt：over 后直接接完整的 shirt；复数为 overshirts。\",\"example\":{\"id\":\"wf-ex2\",\"senseId\":\"shirt-n-clothing\",\"en\":\"She wore an overshirt over a T-shirt.\",\"zh\":\"她在 T 恤外面穿了一件外搭衬衫。\",\"note\":\"over a T-shirt 说明这件衬衫穿在 T 恤外面。\"},\"sourceIds\":[\"s1\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"shirt 的常见屈折形式是复数 shirts；没有必要把相关衣物名称当作它的派生词族。\"",
+        "valueJson": "\"shirts 是 shirt 的复数，属于屈折变化；T-shirt 和 overshirt 是包含完整 shirt 的词，需分别记住构词、拼写和具体用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"早晨，乐乐打开衣柜拿出一件干净的 shirt，穿上后扣好扣子。看到衣领和袖子，就想起 shirt 常指衬衫；若是 T 恤，要记完整的 T-shirt。\"",
+        "valueJson": "\"早晨，乐乐打开衣柜拿出一件干净的 shirt，穿上后扣好扣子。下午，他换上一件 T-shirt 去运动，回来后指着它说：“This shirt is dirty.” 语境清楚时，这里的 shirt 就指那件 T 恤。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/sourceIds/1",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/confusions/0/sourceIds/1",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"s2\",\"title\":\"Oxford Learner’s Dictionaries：shirt\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/shirt\",\"supports\":[\"常见英语词义与用法查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1231,
+    "headword": "shirt",
+    "meaning_zh": "n. 衬衫, 内衣, 汗衫",
+    "phonetic": "/ʃә:t/",
+    "pos": "",
+    "forms": []
+  }
+}

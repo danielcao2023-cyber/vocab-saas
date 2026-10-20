@@ -1,0 +1,369 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0cf95996003819ea8d6da53302b491f7af0d0d1dfc949f005c5ff128459ac770",
+    "executedReviewPromptHash": "0cf95996003819ea8d6da53302b491f7af0d0d1dfc949f005c5ff128459ac770",
+    "reviewHash": "09f27bf5aab7c23d8e4adc06efe32d6b0f74fc2b6f1515e093d9fa5d782b8ad1",
+    "wordId": 1399,
+    "inputHash": "b2a695bdc414424bd420a989d9b2bc16d95f947415bf977d5cd609fdb534d9ed",
+    "draftHash": "3cc9bdc2f03a4d093dca4338e083d5a39f2b262a2da6f116411d0cec68df004d",
+    "finalHash": "f1f4f3a6d157bd0a89e0896da07b9e0d638de1adb20666e6df11b7a386445c7f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/the#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.995Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11509,
+        "revisionId": 39765109,
+        "revisionTimestamp": "2026-08-03T05:02:49Z",
+        "sha256": "acb5f1935a844fe6ed092357196c118fdc2a7f38c03d64cb31325caf173ee23f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/the",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:37:56.235Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:54:22.014Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 页面未获取成功，不能作为本次已读取的定义和发音依据。应改引已获取的英语维基词典条目；该条目未涉及的泛指类别说明可保留为专业语言知识，但应取消不实来源绑定。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "现列 /ðiː/ 并非错误，但把美音 /ði/ 主要解释为强调读法不够准确；应说明它也用于元音音素前，并区分常用读法、强调读法和词典标音差异。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0；/senses/1；缺失的专名用法",
+        "message": "冠词核心说明缺少复数名词、不可数名词及常见最高级、序数词结构。姓氏复数表示特定家庭，不宜混作类别泛指；来源详细说明的地名和团体名称用法也需要实际例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "young people 与 the young 表达相近人群，不属于反向表达。应移入相近表达，并用泛指类别与特指群体形成明确的语境对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "all the better、all the more 等是实用的比较结构，不宜笼统标为少见而只给一个例句。应作为独立功能说明，并补足两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/example/note",
+        "message": "该例句实际有三个 the：两个引出关联比较级，the song 中的 the 是定冠词。原注释未区分，容易直接误教。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "原词源阶段含两项只有字形、没有实质释义的占位说明，并遗漏古英语 sē 到 þē 的晚期变体关系。应将重构形式保留在概述中，明确阶段只展示定冠词一支，并分述副词的来源及其不确定性。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote；/memoryAid/story",
+        "message": "可补入来源列出的常用固化复合词 nevertheless，并解释实际拼写。助记故事后半句 it 的所指不清，可换成有明确练习情境的句子。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的定冠词、关联比较级副词和表示相应程度变化的副词三项主要定义，并检查地名、团体及家庭名称等常用功能。补丁补足核心例句、普通复数和不可数名词说明，并修正反向表达、来源绑定及词源阶段。原有正确例句与基本语法说明保留；未将整套英语冠词规则或古旧拼写变体扩展成独立义项。",
+    "senseInventory": [
+      {
+        "sense": "定冠词：标记听者可确定的人或事物，可用于单数、复数及不可数名词",
+        "coveredBy": [
+          "the-definite-article"
+        ],
+        "assessment": "原有特指说明和两个例句正确；补充复数、不可数名词例句，以及最高级、序数词等常见结构。"
+      },
+      {
+        "sense": "定冠词的类别泛指及形容词指一类人的功能",
+        "coveredBy": [
+          "the-generic"
+        ],
+        "assessment": "属于专业语言知识补充，所获词典正文未单列。保留，并为类别泛指和形容词指人各补足两个例句；移除特定家庭的混入。"
+      },
+      {
+        "sense": "定冠词：用于约定带冠词的地名、团体和家庭名称",
+        "coveredBy": [
+          "the-proper-names"
+        ],
+        "assessment": "来源有明确说明，原稿仅零散提及。新增完整功能项，覆盖河流、国家名称、家庭和团体，并说明常见不加冠词的专名。"
+      },
+      {
+        "sense": "副词：the + 比较级……，the + 比较级……，表示越……越……",
+        "coveredBy": [
+          "the-adverb"
+        ],
+        "assessment": "两个原创例句自然且翻译正确；保留。修正辨析例句中三个 the 的功能说明。"
+      },
+      {
+        "sense": "副词：比较级前表示因某种情况而更加……，常见于 all the better、all the more 等",
+        "coveredBy": [
+          "the-adverb-degree"
+        ],
+        "assessment": "原稿已有一个正确例句，但低估了常用程度。移入主要功能项并补足例句、搭配及限定语境的对照表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-the\",\"title\":\"Cambridge Dictionary: the\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/the\",\"supports\":[\"定冠词的特指用法\",\"泛指类别和群体的常见结构\",\"比较级副词用法及发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-the\",\"title\":\"Wiktionnaire：the（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/the#Anglais\",\"supports\":[\"定冠词的基本用法\",\"地名、团体和家庭名称的冠词用法\",\"关联比较级与程度比较结构\",\"读音及其语音环境\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"/ðə/；元音前或强调时常读 /ðiː/（美音强调时也可读 /ði/）\",\"uk\":\"/ðə/；元音前或强调时常读 /ðiː/\",\"us\":\"/ðə/；元音前或强调时常读 /ðiː/，强调时也可读 /ði/\",\"accentNote\":\"the 的读法会随前后语音和重音变化；/ð/ 是浊辅音，舌尖轻触上下齿之间发音。\",\"notes\":[\"非重读且后接辅音音素时通常读 /ðə/，如 the dog。\",\"后接元音音素时常读 /ðiː/，如 the apple；判断看发音，不看字母。\",\"需要强调“就是这个”时也可读较强的 /ðiː/；美音中也常见 /ði/。\"],\"sourceIds\":[\"cambridge-the\"]}",
+        "valueJson": "{\"ipa\":\"/ðə/；/ði/；强调时常读 /ðiː/\",\"uk\":\"/ðə/；元音音素前也常标作 /ðiː/；强调时常读 /ðiː/\",\"us\":\"/ðə/；元音音素前常读 /ði/；强调时常读 /ðiː/\",\"accentNote\":\"读法主要取决于后接音素和是否重读；不同词典对 /i/ 的长度标记也可能不同。/ð/ 是浊辅音：舌尖轻放在上下齿之间，让气流通过，同时声带振动。\",\"notes\":[\"非重读且后接辅音音素时通常读 /ðə/，如 the dog。\",\"后接元音音素时常读 /ði/，英音词典也常标作 /ðiː/，如 the apple；判断看发音，不看字母。\",\"例如 the university 的 university 以辅音 /j/ 开头，the 通常读 /ðə/；the hour 的 hour 以元音开头，the 常用 /ði/ 一类读法。\",\"需要突出或强调时常读较强的 /ðiː/；/ði/ 并不限于强调语境。\"],\"sourceIds\":[\"wiktionary-the\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"第一次提到一个可数单数事物时常用 a/an；再次提到同一个事物时常用 the。the 也可用于双方都知道的对象、独一或特定的事物，以及由后面的短语限定出的对象。\"",
+        "valueJson": "\"第一次引入一个尚不能确定的可数单数事物时常用 a/an；再次提到同一个事物时常用 the。the 可用于单数名词、复数名词和不可数名词，关键是听者能确定所指。双方都知道的对象、通常语境中独一的事物，以及能由修饰语确定的对象，都可用 the；但有修饰语不等于一定要用 the。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-ex-definite-plural\",\"senseId\":\"the-definite-article\",\"en\":\"The shoes by the door are still wet.\",\"zh\":\"门边的那些鞋还湿着。\",\"note\":\"the shoes 是复数名词短语；by the door 帮助确定指哪些鞋。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-ex-definite-mass\",\"senseId\":\"the-definite-article\",\"en\":\"The water in this bottle is warm.\",\"zh\":\"这个瓶子里的水是温的。\",\"note\":\"water 是不可数名词；这里特指这个瓶子里的水，因此用 the。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"the + 最高级／序数词 + 名词\",\"zh\":\"最……的……／第……个……\",\"note\":\"常见于 the tallest building、the first bus。若已有 my 等限定词，则不用叠加 the，如 my best friend。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"play the piano\",\"zh\":\"弹钢琴\",\"note\":\"表示演奏某种乐器时常见 the，如 play the piano、play the violin；球类通常说 play basketball、play football。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-the\"]",
+        "valueJson": "[\"wiktionary-the\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"定冠词：表示一类事物或群体\"",
+        "valueJson": "\"定冠词：泛指一个类别或一类人\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"the 可与某些单数名词、形容词或复数姓氏连用，泛指一类人或事物，或指某个家庭、群体。\"",
+        "valueJson": "\"the 可与某些单数可数名词连用，概括整个类别；也可与某些形容词连用，指具有该特征的一类人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这类表达指类别或群体整体，不是眼前某一个已提过的对象。不要把所有复数名词都加 the；泛指普通复数时通常不加冠词。\"",
+        "valueJson": "\"这里概括一个类别或一类人。the + 单数名词常用于介绍物种、发明等类别，不能机械替换所有泛指复数表达。the + 形容词指一类人时常作复数理解，如 the young are…。普通复数名词泛指时通常不加冠词，如 Tigers are powerful animals。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-ex-generic-invention\",\"senseId\":\"the-generic\",\"en\":\"The bicycle is an inexpensive way to get around.\",\"zh\":\"自行车是一种花费不高的出行工具。\",\"note\":\"the bicycle 概括自行车这种交通工具，不指某一辆车。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-ex-generic-elderly\",\"senseId\":\"the-generic\",\"en\":\"The elderly may need help carrying heavy bags.\",\"zh\":\"老年人可能需要有人帮忙提重袋子。\",\"note\":\"the elderly 指老年人这一类人；elderly 本身不加复数词尾。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"the Smiths\",\"zh\":\"史密斯一家\",\"note\":\"the 加姓氏复数形式通常表示这一家人。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"tigers\",\"zh\":\"老虎（泛指）\",\"note\":\"普通复数名词也可泛指一类动物；the tiger 常用单数形式概括整个类别。\"}],\"contrasting\":[{\"en\":\"young people\",\"zh\":\"年轻人\",\"note\":\"普通复数名词泛指时通常不用 the；the young 则是形容词名词化的表达。\"}],\"similarNote\":\"泛指类别可用 the + 单数名词，也可在不少场合用普通复数名词，句型和语感不同。\",\"contrastingNote\":\"在普通复数泛指中，young people 通常不加 the；the young 是固定的形容词名词化结构。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"tigers\",\"zh\":\"老虎（泛指）\",\"note\":\"普通复数也可概括老虎这一类动物；不少类别说明可用 tigers 或 the tiger，但并非所有句子都能直接互换。\"},{\"en\":\"young people\",\"zh\":\"年轻人\",\"note\":\"与 the young 所指相近；young people 用普通复数名词表达，泛指时通常不加 the。\"}],\"contrasting\":[{\"en\":\"the tigers in this zoo\",\"zh\":\"这家动物园里的那些老虎\",\"note\":\"这里特指能确定的一群老虎，与泛指整个物种形成用法对照，不是词汇反义。\"}],\"similarNote\":\"普通复数名词可以表达相近的泛指意义；the young 与 young people 也可指相近人群，但结构不同。\",\"contrastingNote\":\"区分泛指整个类别与特指其中一群：Tigers need space 是泛指；The tigers in this zoo need more space 是特指。the 本身没有通常意义上的词汇反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-the\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-the\"]",
+        "valueJson": "[\"wiktionary-the\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-proper-names\",\"title\":\"定冠词：用于某些地名、团体和家庭名称\",\"meaning\":\"某些专名按英语习惯带 the，包括一些地理名称、团体名称，以及表示一家人的复数姓氏。\",\"usageNote\":\"河流、沙漠、山脉和群岛名称常带 the；含 kingdom、states 等普通名词的某些国家名称也带 the。普通人名和多数国家、城市名称通常不带，如 Emma、China、London；常见说法还有 Lake Superior、Mount Everest、Harvard University。应连同完整名称记忆，不能只凭它是专名就决定是否加 the。\",\"examples\":[{\"id\":\"the-ex-proper-river\",\"senseId\":\"the-proper-names\",\"en\":\"We walked along the Thames after lunch.\",\"zh\":\"午饭后，我们沿着泰晤士河散步。\",\"note\":\"河流名称 the Thames 通常带 the。\"},{\"id\":\"the-ex-proper-country\",\"senseId\":\"the-proper-names\",\"en\":\"My cousin lives in the Netherlands.\",\"zh\":\"我表亲住在荷兰。\",\"note\":\"the Netherlands 是通常带 the 的国家名称。\"},{\"id\":\"the-ex-proper-family\",\"senseId\":\"the-proper-names\",\"en\":\"The Robinsons invited us to dinner on Sunday.\",\"zh\":\"罗宾逊一家邀请我们星期天去吃晚饭。\",\"note\":\"the + 姓氏复数指这一家人，是特定家庭，不是泛指一类人；Robinson 加 s，不加撇号。\"},{\"id\":\"the-ex-proper-group\",\"senseId\":\"the-proper-names\",\"en\":\"My dad often listens to the Beatles in the car.\",\"zh\":\"我爸爸经常在车里听披头士乐队的歌。\",\"note\":\"the Beatles 是约定带 the 的团体名称；并非所有乐队名称都带 the。\"}],\"patterns\":[{\"en\":\"the + 姓氏复数\",\"zh\":\"……一家\",\"note\":\"如 the Smiths；这里是姓氏复数，不是所有格 Smith's。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the United Kingdom / the United States\",\"zh\":\"英国／美国\",\"note\":\"常见国家名称及其缩写 the UK、the US 都带 the。\",\"kind\":\"common-collocation\"},{\"en\":\"the Sahara / the Rockies\",\"zh\":\"撒哈拉沙漠／落基山脉\",\"note\":\"分别体现沙漠名称和山脉名称的常见冠词习惯。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[{\"en\":\"China / London / Mount Everest\",\"zh\":\"中国／伦敦／珠穆朗玛峰\",\"note\":\"这些名称通常不带 the；这是专名的冠词用法对照，不是反义关系。\"}],\"similarNote\":\"专名之间通常不存在可直接替换的同义关系，重点是记住名称及其冠词习惯。\",\"contrastingNote\":\"对照记忆带冠词和不带冠词的完整名称；不能把所有国家、山峰或团体套用同一规则。\"},\"sourceIds\":[\"wiktionary-the\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"the-adverb-degree\",\"title\":\"副词：表示“更加”\",\"meaning\":\"在少数表达中，the 放在比较级前，表示因此更加……，常见于 all the + 比较级 + for/because of。\",\"note\":\"这是较少见的比较级用法；初学时优先掌握“越……越……”结构即可。\",\"example\":{\"id\":\"the-ex-7\",\"senseId\":\"the-adverb-degree\",\"en\":\"She felt all the better for a short rest.\",\"zh\":\"短暂休息后，她感觉好多了。\",\"note\":\"all the better for 表示因为短暂休息而感觉更好。\"},\"sourceIds\":[\"cambridge-the\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"the-adverb-degree\",\"title\":\"副词：在比较结构中表示因此更加……\",\"meaning\":\"the 用在比较级前，可表示由于某种情况而更加怎样，常见于 all the better、all the more 等表达。\",\"usageNote\":\"原因可由 for、because of 等引出，也可从上下文看出。这里不用另一处 the 来组成“越……越……”；all 常用于加强语气，但不是每次都必须出现。\",\"examples\":[{\"id\":\"the-ex-7\",\"senseId\":\"the-adverb-degree\",\"en\":\"She felt all the better for a short rest.\",\"zh\":\"短暂休息后，她感觉好多了。\",\"note\":\"all the better for 表示因为短暂休息而感觉更好。\"},{\"id\":\"the-ex-degree-welcome\",\"senseId\":\"the-adverb-degree\",\"en\":\"The cold weather made the hot soup all the more welcome.\",\"zh\":\"天气寒冷，这碗热汤就更受欢迎了。\",\"note\":\"all the more welcome 表示由于天气寒冷而更受欢迎；句中另外两处 the 分别限定 cold weather 和 hot soup。\"}],\"patterns\":[{\"en\":\"(all) the + 比较级 + for / because of ...\",\"zh\":\"因为……而更加……\",\"note\":\"如 all the better for a rest；原因有时也由上下文交代。\",\"kind\":\"sentence-pattern\"},{\"en\":\"all the more + 形容词／副词\",\"zh\":\"更加……\",\"note\":\"more 与后面的词组成比较结构，如 all the more important；the 在这里不表示名词特指。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"all the better\",\"zh\":\"更好；因此更好\",\"note\":\"常用于说明某种情况使结果或感受更好。\",\"kind\":\"fixed-expression\"},{\"en\":\"all the more important\",\"zh\":\"更加重要\",\"note\":\"常用于强调某个原因使事情的重要性进一步增加。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"even better\",\"zh\":\"更好\",\"note\":\"同样可突出比较，但不一定像 all the better for ... 那样指出改善的原因。\"}],\"contrasting\":[{\"en\":\"no better\",\"zh\":\"并没有更好\",\"note\":\"在谈情况是否改善时，可与 all the better 形成语境对照；不是 the 的词汇反义词。\"}],\"similarNote\":\"这里比较的是整个表达的意义；不能把 even 当作所有 the 的替换词。\",\"contrastingNote\":\"no better 否定改善，all the better 表示更好；这种对照只适用于相应的比较语境。\"},\"sourceIds\":[\"wiktionary-the\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-the\"]",
+        "valueJson": "[\"wiktionary-the\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"两个 the 都引出比较级短语，不是限定后面的名词。\"",
+        "valueJson": "\"句中有三个 the：句首的 The 和 easier 前的 the 引出关联比较级；the song 中的 the 是定冠词，限定 song。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-the\"]",
+        "valueJson": "[\"wiktionary-the\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"the 的历史形式与古英语 þē 有关；所列历史来源还说明，现代定冠词的形式经中古英语发展而来，并提到更早的日耳曼语及印欧语重构形式。\"",
+        "valueJson": "\"定冠词 the 经中古英语 the，来自古英语 þē；þē 是指示词 sē 的晚期变体。中古英语的 the 后来取代了古英语中其他相关冠词形式。更早的来源包括原始日耳曼语重构形式 *sa 和原始印欧语重构形式 *só。比较结构中的副词 the 有另一条发展路径：经中古英语 the、thy、thi，来自古英语 þē；这一古英语形式可能是指示词 sē 的中性工具格，意思近于“由此、因而”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始印欧语（重构）\",\"form\":\"*só\",\"meaning\":\"该来源列出的更早重构形式\"},{\"language\":\"原始日耳曼语（重构）\",\"form\":\"*sa\",\"meaning\":\"由更早形式继续发展而来的重构形式\"},{\"language\":\"古英语\",\"form\":\"þē\",\"meaning\":\"指示词的形式；与“这／那”相关\"},{\"language\":\"中古英语\",\"form\":\"the\",\"meaning\":\"现代形式的历史阶段\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"sē\",\"meaning\":\"指示词，原为阳性主格形式，具有“这／那”的指示意义。\"},{\"language\":\"古英语晚期\",\"form\":\"þē\",\"meaning\":\"sē 的晚期变体，具有“这／那”的指示意义。\"},{\"language\":\"中古英语\",\"form\":\"the\",\"meaning\":\"定冠词，用来标记可确定的人或事物。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"带星号的形式是重构形式。这里概述的是定冠词 the 的历史来源；副词 the 的历史发展不应与这条链混为一谈。\"",
+        "valueJson": "\"带星号的形式是语言学重构形式。所列阶段只展示定冠词一支；比较结构中的副词来源另行说明，其中古英语形式的具体格来源仍带有不确定性。两种 the 虽然同形，不能把它们的历史形式合并成一条演变链。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"nevertheless\",\"partOfSpeech\":\"副词\",\"meaning\":\"然而；尽管如此\",\"formation\":\"形式上可拆为 never + the + less，是已经固化的复合副词；其中 the 与比较结构中的副词有关，不能按现代定冠词用法逐词理解。\",\"spellingNote\":\"never + the + less 连写为 nevertheless；less 的 ss 完整保留，不加空格或连字符。\",\"example\":{\"id\":\"the-family-nevertheless\",\"senseId\":\"the-adverb-degree\",\"en\":\"It was raining. Nevertheless, we went for a walk.\",\"zh\":\"当时正在下雨。尽管如此，我们还是去散步了。\",\"note\":\"nevertheless 表示让步转折；它已经是独立单词，不能把其中的 the 单独替换。\"},\"sourceIds\":[\"wiktionary-the-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"the 是功能词，没有常用的派生词族；不要把与它搭配的名词或比较级词组当作词族。\"",
+        "valueJson": "\"the 没有能自由套用的常用派生模式；nevertheless 是已经固化的相关复合词。普通含 the 的名词短语或比较级短语不属于词族。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"定冠词 the 的历史形式及其词源链\"]",
+        "valueJson": "[\"定冠词 the 的历史形式及其词源链\",\"比较结构中副词 the 的独立历史来源\",\"相关固化复合词 nevertheless\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"老师说“Could you pass me the chalk?”时，学生递来黑板旁那支大家都看得见的粉笔。因为两人都知道指哪一支，所以用了 the；下课后，同学说“The more we practise, the clearer it sounds”，这里两个 the 则和比较级搭配，表示“越练越清楚”。\"",
+        "valueJson": "\"老师说“Could you pass me the chalk?”时，学生递来黑板旁那支大家都看得见的粉笔。因为两人都知道指哪一支，所以用了 the。下课后，大家练习唱英文歌，同学说“The more we practise, the better we sound.”，意思是“我们练得越多，唱得就越好听”。这里两个 the 和比较级搭配，表示两种变化之间的关联。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1399,
+    "headword": "the",
+    "meaning_zh": "art. （定冠词）表示特指的人或物，通常不译",
+    "phonetic": "/ðә/",
+    "pos": "",
+    "forms": []
+  }
+}

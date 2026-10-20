@@ -1,0 +1,250 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "49119746661ffe8035607bef8435a59fab7f2c5800cea446c84071e5dccdd983",
+    "executedReviewPromptHash": "954670a014c016dcfd36cbdcc46e14ddcb04f92194ab2f58676b8265c1d6f493",
+    "reviewHash": "0491cbcabdfe17c9e7b60fda6b63ab6f3bf701f1ce05c22d1278e79c6941357d",
+    "wordId": 1248,
+    "inputHash": "b0c225952f279a107d71a1b7e7b09a34d54f7ebd2b66d20b2c464936438160d6",
+    "draftHash": "f2ac1f6a78bcb4bf1eb0bca8eeec313868b55ebe7acd75f5ca6dd2c5693288ab",
+    "finalHash": "e72c05c0dc00a4981ddfd5a8e0b4f740e5d5f4cc9035f725c7c8768aa39e1168",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/silent#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.206Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121674,
+        "revisionId": 38299334,
+        "revisionTimestamp": "2025-06-07T13:27:37Z",
+        "sha256": "b53ca30901ebaf4490daf5d4ff55d7088255e07699e76b5ef3ef4263b555b909",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/silent",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:54:46.337Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:02:19.294Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Cambridge 页面未取得正文，不能作为本次释义、读音和词族说明的已用依据。应改列实际取得的 Wiktionnaire 英语词条，并清除其未支持内容的来源引用。该条目的法语是释义语言，silent 仍是英语词。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "字母“不发音”是来源明确列出的义项，也是英语学习中的常用功能，不宜仅作单例的次要义。应升入主要义项，补足两个例句及相关搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可补充常见搭配 silent film/movie，并说明无声电影可以有音乐伴奏，避免把它理解为放映现场完全无声。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/0/note",
+        "message": "比较级说明语句混乱，应明确 quieter、quietest 属于 quiet；silent 在需要比较程度时可用 more silent、most silent。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrastingNote",
+        "message": "noisy 本身不包含“持续”的时间限制，应删除这一额外限定。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对沉默、环境或设备无声、字母不发音三项主要用法；修订后各有两个例句，并补充无声电影用法。现有语法、发音及词族拼写基本正确；不把“静止的”另立为普通义。来源中的名词部分只有待补定义模板，不能据此编造名词义。标为 etymology 的来源实际没有历史词源叙述，不能支持任何历史形式或演变链；因此保留原稿明确区分的现代词族说明和空 stages，不新增历史词源，也不把该页面作为历史来源引用。",
+    "senseInventory": [
+      {
+        "sense": "形容词：人不说话；对某事保持沉默",
+        "coveredBy": [
+          "silent-1"
+        ],
+        "assessment": "现有两个例句分别覆盖不发言和不谈某事，句型及近反向表达的语境限制基本恰当。"
+      },
+      {
+        "sense": "形容词：环境寂静；设备不发出声音",
+        "coveredBy": [
+          "silent-2"
+        ],
+        "assessment": "两个例句分别覆盖环境与设备；修正 noisy 的时间限制后可保留。"
+      },
+      {
+        "sense": "形容词：拼写中的字母不发音",
+        "coveredBy": [
+          "silent-3"
+        ],
+        "assessment": "来源明确列出；由次要义升为主要义，并补足两个例句、句型和搭配。"
+      },
+      {
+        "sense": "形容词：silent film/movie 中表示没有录制对白的",
+        "coveredBy": [
+          "silent-4"
+        ],
+        "assessment": "按英语通行用法补作延伸义，说明可以有伴奏；不伪称来自已取得的简短释义。"
+      },
+      {
+        "sense": "来源列有名词标题，但没有实际定义",
+        "coveredBy": [],
+        "assessment": "只有待补模板，无法建立具体名词义，不据此新增教学内容。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"silent 常说人不说话、环境没有声音；也可用于设备或场合，表示安静无声。\"",
+        "valueJson": "\"silent 可指人不说话、环境或设备无声，也可指单词中的字母不发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"描述人、地点或设备等安静无声；比较级和最高级通常为 quieter、quietest 不适用于 silent，silent 可用 more silent、most silent。\"",
+        "valueJson": "\"描述人不说话或地点、设备等无声。表示完全无声时通常不分程度；需要比较程度时可用 more silent、most silent。quieter、quietest 是 quiet 的比较级和最高级。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[\"wiktionnaire_silent_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[\"wiktionnaire_silent_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"noisy 描述持续吵闹；loud 描述音量大，适用于声音本身，两者并非所有情境都能互换。\"",
+        "valueJson": "\"noisy 强调嘈杂、吵闹，不一定持续很久；loud 强调音量大，也可形容人、音乐或设备。两者并非所有情境都能互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"silent-3\",\"title\":\"字母写着但不发音\",\"meaning\":\"指字母出现在单词拼写里，却不在该词的读音中发音。\",\"usageNote\":\"要结合具体单词判断：某个字母在一个单词中不发音，并不代表它在其他单词中也不发音。\",\"examples\":[{\"id\":\"silent-3-ex1\",\"senseId\":\"silent-3\",\"en\":\"The k in “know” is silent.\",\"zh\":\"know 里的 k 不发音。\",\"note\":\"silent 说明 k 在这个单词中不发音。\"},{\"id\":\"silent-3-ex2\",\"senseId\":\"silent-3\",\"en\":\"The final e in “name” is silent.\",\"zh\":\"name 末尾的 e 不发音。\",\"note\":\"字母 e 写在单词末尾，但不单独读出声音。\"}],\"patterns\":[{\"en\":\"The ... in ... is silent.\",\"zh\":\"某个单词里的某个字母不发音。\",\"note\":\"第一个空位填字母，第二个空位填单词；silent 在 is 后作表语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a silent letter\",\"zh\":\"不发音的字母\",\"note\":\"描述字母在具体单词中的发音情况。\",\"kind\":\"common-collocation\"},{\"en\":\"a silent e\",\"zh\":\"不发音的 e\",\"note\":\"常用于讨论单词末尾写出但不发音的 e。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"unpronounced\",\"zh\":\"未发音的；不读出的\",\"note\":\"描述字母时，也可表示该字母没有在读音中读出。\"}],\"contrasting\":[{\"en\":\"be pronounced\",\"zh\":\"被读出；发音\",\"note\":\"字母被实际读出时可用这一动词结构，与 is silent 对照。\"}],\"similarNote\":\"说明字母不发音时，silent 是常用的教学用词；unpronounced 也能表达未被读出。\",\"contrastingNote\":\"这里比较的是字母有没有读出声音，不使用 noisy 或 loud 来表示字母发音。\"},\"sourceIds\":[\"wiktionnaire_silent_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"silent-3\",\"title\":\"不发声的字母\",\"meaning\":\"在拼写中存在、但通常不发音的字母。\",\"note\":\"常见于 silent letter 这一说法；此处 silent 描述字母的发音特点。\",\"example\":{\"id\":\"silent-3-ex1\",\"senseId\":\"silent-3\",\"en\":\"The k in “know” is silent.\",\"zh\":\"know 里的 k 不发音。\",\"note\":\"silent 用于说明拼写字母不发音。\"},\"sourceIds\":[\"cambridge_silent\"]}",
+        "valueJson": "{\"id\":\"silent-4\",\"title\":\"（电影）没有录制对白的\",\"meaning\":\"用于 silent film 或 silent movie，表示没有录制对白的无声电影。\",\"note\":\"无声电影放映时可以有音乐伴奏，并不表示观众听不到任何声音。\",\"example\":{\"id\":\"silent-4-ex1\",\"senseId\":\"silent-4\",\"en\":\"We watched a silent film with live piano music.\",\"zh\":\"我们看了一部由现场钢琴伴奏的无声电影。\",\"note\":\"silent 描述电影没有录制对白，与现场有音乐伴奏并不矛盾。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_silent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_silent\",\"title\":\"Cambridge Dictionary：silent\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/silent\",\"supports\":[\"silent 的词性、常见含义、发音与用法；silence、silently 等相关形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire_silent_en\",\"title\":\"Wiktionnaire：silent（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/silent#Anglais\",\"supports\":[\"英语形容词 silent 的安静、无声基本义，以及表示字母不发音的用法\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1248,
+    "headword": "silent",
+    "meaning_zh": "adj. 沉默的, 安静的, 无声的, 静止的",
+    "phonetic": "/'sailәnt/",
+    "pos": "",
+    "forms": []
+  }
+}

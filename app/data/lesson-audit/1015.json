@@ -1,0 +1,300 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "56eb2c67051e7b3586e958d6a1e5db76543f15f62427e72f49b77d7aaa016ad6",
+    "executedReviewPromptHash": "56eb2c67051e7b3586e958d6a1e5db76543f15f62427e72f49b77d7aaa016ad6",
+    "reviewHash": "4a11302c936474be8b44a202993564d07dab07a1e919824cbbf1b25d433a4f99",
+    "wordId": 1015,
+    "inputHash": "eb3a3dab1e5b5bd4812d0180685f85b1a48b7362075c348bb977be7e3effc6ea",
+    "draftHash": "b45e4092b140c40fe36443b7815c31ae16cd42b66973eafde712bab596653f54",
+    "finalHash": "ca3a55e622417056f3e0ff12011ad08e8d9fad88213976f9c33b9f151b60759c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/physics",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:53:53.159Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/physics#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.986Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116824,
+        "revisionId": 38449166,
+        "revisionTimestamp": "2025-08-01T23:53:10Z",
+        "sha256": "b8dda0b56f772168f9f8866b7c2ea60b069d033bd3191177de85d13d70dd99cf",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/physics",
+        "section": "physics etymology",
+        "supports": [
+          "Natural things meaning and later scientific narrowing"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:09:33.681244+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "f4224698248a2a4aec781bf43d44bcc94989db32002850be928cb2a2051925e6",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "f4224698248a2a4aec781bf43d44bcc94989db32002850be928cb2a2051925e6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1015.json"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:35:22.914Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及所有引用 cambridge_physics 的 sourceIds",
+        "message": "Cambridge 未取得正文，不能作为本次已依据的词义、读音和词族材料。改引实际取得的法语维基词典英语词条，并将其未载明的拓展用法及 physicist 的来源引用清空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway",
+        "message": "“通常不加复数词尾 -s”容易与单词本身的末尾 s 混淆。应明确该 s 属于固定拼写，学科名不是复数，作主语时接单数谓语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0",
+        "message": "次要用法应明确为特定现象或系统涉及的物理原理、性质和过程，并提示 the physics of/behind...，避免把 physics 泛用作任意一个“物理现象”的名称。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/note；/wordFamily/1/example/note",
+        "message": "仅仅教授物理并不意味着可以称为 physicist；该词指物理学家。两处释义需要收窄。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0；/wordFamily",
+        "message": "physical 宜补上与本词直接相关的“物理的”，例如 physical laws。词族拼写说明也应具体指出 physics、physical、physicist 的末尾字母变化，并与历史构词区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有摘要没有逐环说明希腊语到拉丁语再到英语的传承关系；拉丁语阶段的“承接……名称”也不是确切释义。应将可证实的字形、希腊语含义及英语词义收窄史保留在 summary，撤去这条顺序箭头链。"
+      }
+    ],
+    "coverageAssessment": "核心名词义“物理学”及学校课程用法覆盖充分，已有两个自然原创英中例句，无须强拆义项。特定现象所涉及的物理原理和过程可保留在次要义栏，一个例句符合该栏结构。已核对全部例句、搭配、翻译、读音、词族及学科对照；未发现需要修改的英文例句。来源局限是：已取得的词典正文仅直接列明英语不可数名词义、通用读音和 physical 这一相关词；其余语言说明依专业知识审查，词源仅保留已取得摘要支持的内容。",
+    "senseInventory": [
+      {
+        "sense": "物理学；学校中的物理课程（不可数名词）",
+        "coveredBy": [
+          "physics-n1"
+        ],
+        "assessment": "核心义覆盖充分；两个例句分别呈现课程安排与学习学科，另有单数谓语示例。"
+      },
+      {
+        "sense": "某种现象或系统涉及的物理原理、性质和过程",
+        "coveredBy": [
+          "physics-n2"
+        ],
+        "assessment": "可作为非核心拓展保留；修订后明确常见搭配及语义范围，不另拆成多个核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"physics 通常作不可数名词，表示“物理学”；说一门学科时用 physics，不加 a，也通常不加复数词尾 -s。\"",
+        "valueJson": "\"physics 表示“物理学”时是不可数名词；末尾的 s 属于固定拼写，不是复数标记。用 study physics，不加 a；学科名作主语时接单数谓语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[\"wiktionary_physics\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[\"wiktionary_physics\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"物理过程或物理现象\"",
+        "valueJson": "\"某种现象涉及的物理原理或过程\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在科学说明中，physics 有时指物体、物质和能量实际发生的物理过程或表现。\"",
+        "valueJson": "\"指某种现象或系统所涉及的物理原理、性质或过程，常见于 the physics of/behind...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"此用法依赖上下文，初中学习中优先掌握“物理学”这一学科义。\"",
+        "valueJson": "\"此用法依赖上下文，不宜把 physics 当作任意一个“物理现象”的名称；初中学习中优先掌握“物理学”这一学科义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"表示身体的、物质的或客观存在的；不是学科名。\"",
+        "valueJson": "\"表示物理的、身体的、物质的或客观存在的，具体含义看搭配；它是形容词，不是学科名。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"指物理学家，即研究或教授物理学的人。\"",
+        "valueJson": "\"指物理学家，即专门研究物理学的科学家；仅仅教授物理并不意味着就是 physicist。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"表示学科写 physics；修饰身体或物质写 physical；指研究者写 physicist。\"",
+        "valueJson": "\"学科名用 physics；形容词用 physical，如 physical laws（物理定律）、physical activity（身体活动）；物理学家用 physicist。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[\"wiktionary_physics\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[\"wiktionary_physics\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"physics 的历史词源可追溯到拉丁语 physica 和希腊语 ta physika，原先与“自然事物”相关；后来英语中的常用义逐渐集中为研究物质、能量及其规律的学科。\"",
+        "valueJson": "\"英语 physics 起初泛指自然科学，后来词义收窄，常专指研究物质和能量的物理学。其词源涉及拉丁语 physica 和希腊语 ta physika；ta physika 意为“自然事物”，也用作亚里士多德论述自然的著作名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"希腊语\",\"form\":\"ta physika\",\"meaning\":\"与自然事物有关；也用作亚里士多德一部论述自然的著作名称。\"},{\"language\":\"拉丁语\",\"form\":\"physica\",\"meaning\":\"承接与自然事物有关的名称。\"},{\"language\":\"英语\",\"form\":\"physics\",\"meaning\":\"原先可泛指自然科学，后来常专指物理学。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"身体的；物质的\"",
+        "valueJson": "\"物理的；身体的；物质的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"physics 变为 physical 时，词尾拼写不同，需整体记忆。\"",
+        "valueJson": "\"记拼写时，可把 physics 末尾的 s 换成 al：physical。这是拼写对照，不是历史词源说明。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[\"wiktionary_physics\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"注意 physicist 以 -ist 结尾，不要误写成 physicsist。\"",
+        "valueJson": "\"记拼写时，保留 physic-，把 physics 末尾的 s 换成 ist：physicist；不要误写成 physicsist。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"physicist 指从事物理学研究或教学的人。\"",
+        "valueJson": "\"physicist 指专门研究物理学的科学家；物理老师通常称 physics teacher。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_physics\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_physics\",\"title\":\"Cambridge Dictionary: physics\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/physics\",\"supports\":[\"物理学的基本含义\",\"词性及常见学科用法\",\"英式和美式读音\",\"physics 相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_physics\",\"title\":\"Wiktionnaire：physics（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/physics#Anglais\",\"supports\":[\"physics 是表示物理学的英语不可数名词\",\"通用读音 /ˈfɪzɪks/\",\"列出相关词 physical\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1015,
+    "headword": "physics",
+    "meaning_zh": "n. 物理学, 物理过程, 物理现象",
+    "phonetic": "/'fiziks/",
+    "pos": "",
+    "forms": []
+  }
+}

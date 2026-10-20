@@ -1,0 +1,394 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ffedb7458dee6e27ef709fed947ef5dfcd357b655aefc06abeb95766be28a6de",
+    "executedReviewPromptHash": "ffedb7458dee6e27ef709fed947ef5dfcd357b655aefc06abeb95766be28a6de",
+    "reviewHash": "ce1c7d5ed0241ed7c32d0d9c41d5cb24ac2331cff7c699bcd875311e195108c8",
+    "wordId": 764,
+    "inputHash": "d023caf4344e99918e96bb0a84415527e37e9a03b8b5a02ab9b861e8c69bf623",
+    "draftHash": "9e7b795bd6dccbf12a1bda2360213110d940dec73568f48054ef9f3b41d68b2e",
+    "finalHash": "f036effd5299e89b28414006d5d67b9783025eb15290eb250c9fc9cdbdb24510",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/later#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.256Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 52897,
+        "revisionId": 38578385,
+        "revisionTimestamp": "2025-08-25T17:53:11Z",
+        "sha256": "52b32c054f2dcadc80f5298009b8672a76c7ed3ccc978b3b572f037548cbe862",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/later",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:36:31.587Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:42:57.312Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge-later 的 sourceIds",
+        "message": "Cambridge 页面未取得正文，不能作为已使用的释义、发音或用法依据。应移除该来源，将有材料支持的引用改为英语维基词典词条；latest 等专业知识扩展不再挂靠 Cambridge。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "副词义缺少直接表示“比……更晚”的例句和句型，也未展示“时间长度 + later”的参照时间用法。应补足比较功能，并使将来“稍后”和过去“后来”各有两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“作形容词时放在名词前”限制过严，later 也可作表语。来源中的“迟到或延误更多”尚无实例，应补充两个明确例句，并限定相近表达的适用语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar/0/note",
+        "message": "subsequent 表示随后发生，不要求紧接其后；原说明错误增加了时间上的紧邻限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "See you later 中的 later 仍是副词，不能充当第二个独立感叹词例句。还应区分极随意的 Later! 与完整告别语的语体，避免将 Bye 概括为正式告别语，或把 See you later 理解成确定的见面约定。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "英式词尾 r“通常不明显”不够准确；常见非卷舌读法单独读该词时不读 /r/，并非只是轻读。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning",
+        "message": "副词释义“迟地”不自然，宜改为“晚；迟”。"
+      }
+    ],
+    "coverageAssessment": "已核对来源英语词条的副词比较、稍后与后来、形容词时间或阶段较后、迟到或延误更多，以及口语告别功能。补丁后各主要功能均有至少两个对应例句。late + -er 和告别省略的说明有来源支持，原有空词源阶段可保留，不补造历史链条。Cambridge 未取得正文，已移除相关引用；latest 等扩展说明依据专业语言知识保留，不声称获得该页面支持。",
+    "senseInventory": [
+      {
+        "sense": "副词比较级：比另一个时间更晚",
+        "coveredBy": [
+          "later-adv"
+        ],
+        "assessment": "初稿提到比较级身份，但缺少直接比较的实例；补充两个 later than 例句及对应句型。"
+      },
+      {
+        "sense": "副词时间指示：稍后、后来，在现在或某个参照事件之后",
+        "coveredBy": [
+          "later-adv"
+        ],
+        "assessment": "原有将来和过去例句均正确；补丁后两种时间参照各有两例，并展示时间长度放在 later 前的用法。"
+      },
+      {
+        "sense": "形容词：较晚的、后来的，时间或阶段较后",
+        "coveredBy": [
+          "later-adj"
+        ],
+        "assessment": "原有火车与章节两例覆盖时间安排和较后阶段，保留。"
+      },
+      {
+        "sense": "形容词比较级：迟到或延误的程度更大",
+        "coveredBy": [
+          "later-adj"
+        ],
+        "assessment": "初稿未明确展示这一功能；补充两个表语例句，并说明与正常时间安排较晚的区别。"
+      },
+      {
+        "sense": "感叹词：Later!，See you later 的随意省略式告别语",
+        "coveredBy": [
+          "later-interj"
+        ],
+        "assessment": "初稿只有一个真正独立的感叹词例句；替换第二例后达到两个，并区分完整告别句中的副词用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"副词；形容词；口语告别语\"",
+        "valueJson": "\"副词；形容词；感叹词（口语告别语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英音词尾的 r 通常不明显；美音通常读出 r。\"",
+        "valueJson": "\"常见英式读法单独读这个词时，词尾是 /ə/，不读 /r/；美式词尾通常为带 r 音色的 /ɚ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"稍后；后来\"",
+        "valueJson": "\"稍后；后来；更晚\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示某事发生在现在之后，或在叙述中发生在另一件事之后。常用于句末，也可和 today、this week 等时间表达连用。\"",
+        "valueJson": "\"表示某事发生在现在或某个参照时间之后，也可表示比另一个时间更晚。既可用于将来，也可用于过去叙述；具体间隔多久由语境决定。常用于句末，也可和 today、this week 等时间表达连用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"later 是 late 的副词比较级形式；在表示将来的“稍后”时，不需要再加 than。\"",
+        "valueJson": "\"later 是 late 的副词比较级；直接比较时可用 than 引出比较对象，表示“更晚”。表示“稍后、后来”时，通常不必加 than。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adv-ex3\",\"senseId\":\"later-adv\",\"en\":\"I went to bed later than usual last night.\",\"zh\":\"昨晚我比平时睡得晚。\",\"note\":\"later 修饰 went to bed；than usual 表示“比平时”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adv-ex4\",\"senseId\":\"later-adv\",\"en\":\"On Fridays, we eat dinner later than on other days.\",\"zh\":\"周五我们吃晚饭的时间比其他日子晚。\",\"note\":\"比较不同日子的吃饭时间，later 表示“更晚”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adv-ex5\",\"senseId\":\"later-adv\",\"en\":\"I left my bike at the repair shop on Monday, and they called me two days later.\",\"zh\":\"周一我把自行车留在修理店，他们两天后给我打了电话。\",\"note\":\"two days later 从前文的周一算起，表示过去叙述中的“两天后”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adv-ex6\",\"senseId\":\"later-adv\",\"en\":\"We’re having dinner with our neighbors later this week.\",\"zh\":\"本周晚些时候，我们要和邻居一起吃晚饭。\",\"note\":\"later this week 指本周晚些时候；later 不一定只表示几分钟之后。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"do something later than usual\",\"zh\":\"比平时更晚做某事\",\"note\":\"later 修饰动作；than 引出比较对象。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"two days later / ten minutes later\",\"zh\":\"两天后／十分钟后\",\"note\":\"时间长度放在 later 前；参照时间由上下文决定，既可用于过去叙述，也可用于将来安排。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"较晚的；后来的\"",
+        "valueJson": "\"较晚的；后来的；更迟的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"修饰名词，表示时间上比另一件事晚，或出现在较后的阶段。\"",
+        "valueJson": "\"表示时间或阶段比另一事物更靠后；也可表示迟到、延误的程度更大。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作形容词时放在名词前；比较对象可由 than 引出。\"",
+        "valueJson": "\"可放在名词前，如 a later train；也可在 be 后作表语，如 Emma was even later。语境决定它是在比较时间安排，还是在比较迟到、延误的程度。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adj-ex3\",\"senseId\":\"later-adj\",\"en\":\"I was ten minutes late for class, but Emma was even later.\",\"zh\":\"我上课迟到了十分钟，艾玛到得比我还晚。\",\"note\":\"later 在 was 后作表语，比较两人的迟到程度。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"later-adj-ex4\",\"senseId\":\"later-adj\",\"en\":\"The train was late yesterday, but it is even later today.\",\"zh\":\"这趟火车昨天晚点了，今天晚点得更厉害。\",\"note\":\"这里比较晚点程度；even later 表示比昨天还迟。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"later than + time or event\",\"zh\":\"比某个时间／事件更晚\",\"note\":\"than 后接比较对象，明确说明哪一个较晚。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"be later than someone / something\",\"zh\":\"比……更晚；比……迟到更多\",\"note\":\"later 在 be 后作表语；than 后可接名词或从句，如 Emma was later than I was。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"语气较正式，通常表示紧接在某事之后。\"",
+        "valueJson": "\"语气较正式，表示在某事之后发生，不一定紧接其后。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"more delayed\",\"zh\":\"延误更久的\",\"note\":\"用于列车、航班等延误语境；a later train 也可能只是时刻表上较晚的一班，不能一律换成 a more delayed train。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"subsequent 和 following 常用于较正式的叙述；later 语气普通，也可表示与另一时间相比更晚。\"",
+        "valueJson": "\"subsequent 较正式，表示随后发生但不一定紧接；following 常指接下来的；more delayed 用于延误语境。later 既可比较时间安排或阶段，也可比较迟到、延误的程度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常单独说 Later!，也常见于 See you later.；不适合正式告别场合。\"",
+        "valueJson": "\"Later! 是 See you later. 的省略式告别语，语气很随意，适合熟人之间。完整的 See you later. 是常用日常告别语，不一定约定具体再见时间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"later-interj-ex2\",\"senseId\":\"later-interj\",\"en\":\"See you later, Mia!\",\"zh\":\"回头见，米娅！\",\"note\":\"See you later 是熟人间常用的告别表达。\"}",
+        "valueJson": "{\"id\":\"later-interj-ex2\",\"senseId\":\"later-interj\",\"en\":\"Later, Mia! Have a good weekend.\",\"zh\":\"回头见，米娅！周末愉快！\",\"note\":\"Later 在这里独立用作告别语，Mia 是称呼。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"常见的轻松告别语，表示以后还会再见。\"",
+        "valueJson": "\"完整的日常告别表达，其中 later 仍作副词；不一定约定当天或某个具体时间再见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"更通用的告别语，可用于正式或非正式场合。\"",
+        "valueJson": "\"日常口语中很常用；需要更正式的告别语时可用 Goodbye。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-later\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"迟到的；晚的；迟地\"",
+        "valueJson": "\"迟到的；晚的；晚；迟\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-later\"",
+        "valueJson": "\"wiktionary-later\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-later\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-later\",\"title\":\"Cambridge Dictionary: later\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/later\",\"supports\":[\"later 的常见词性、释义与用法\",\"英美发音及口语告别表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"late 加比较级词尾 -er 的构词说明\",\"See you later 的省略式告别用法\"]",
+        "valueJson": "[\"later 作形容词和副词时是 late 的比较级及其较晚、随后含义\",\"Later! 的口语告别义及其源于 See you later 的省略\",\"英美发音及美式闪音 [ɾ]\",\"形容词 later 的近义 succeeding 与反向表达 earlier、previous\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 764,
+    "headword": "later",
+    "meaning_zh": "adv. 以后, 随后",
+    "phonetic": "/'leitә/",
+    "pos": "",
+    "forms": []
+  }
+}

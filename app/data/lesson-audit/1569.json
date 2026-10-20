@@ -1,0 +1,261 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "10bdcd1f5e0ba26c05d3a55719aea577de352f4a05ce3467220333f20b36eba8",
+    "executedReviewPromptHash": "10bdcd1f5e0ba26c05d3a55719aea577de352f4a05ce3467220333f20b36eba8",
+    "reviewHash": "ec3993e075fac5eff31e1b435c5421eb9c945b659e853ddd9a22cacde8839d07",
+    "wordId": 1569,
+    "inputHash": "5cb07cd7f668bcfe264a551de22d425ba16a933d723eb97a97128484caccd9ca",
+    "draftHash": "f02de466c3c345d069a329dfd1f85045c297814d965f8cee31661d961d3f364f",
+    "finalHash": "db616dfc885f8b85f552c3d90e421e8c9f951aa986f68d8dec3bb31dbb726f62",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/woman#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.199Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10175,
+        "revisionId": 39809984,
+        "revisionTimestamp": "2026-08-17T09:24:04Z",
+        "sha256": "3f7f1ffc840626ddcb647dc39fd22ff695fb10bdbf917049947da1a65a478a21",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/woman",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:54:51.335Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:01:09.356Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典列出的“女性整体”集合用法。该用法较正式或旧式，宜补入低频义，不必另立初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "his woman 不足以确定双方已婚，原例直接译为“妻子”不够准确；还应说明这种称呼可能带占有意味或令人感到不尊重。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote",
+        "message": "已引入 woman doctor，宜同时讲清复数 women doctors，并补充自然例句，避免学生套用一般名词修饰语不变复数的规则。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/kind",
+        "message": "women and men 是普通并列表达，不宜标为固定表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "词源遗漏已可证实的 wīf“女性”、mann“人”及其分别发展为 wife、man 的信息；阶段释义中的“历史形式”等属于空泛占位，宜将可靠历史关系集中写入 summary。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/sourceIds、/senses/0/sourceIds、/confusions/0/sourceIds、/wordFamily",
+        "message": "这些内容宜引用实际取得正文的 Wiktionary 英语词条。Oxford 和 Cambridge 链接可保留为推荐查阅，但不作为本次核验依据；派生词来源只支持所列词条线索，不代表已取得其独立词条全文。"
+      }
+    ],
+    "coverageAssessment": "已核对全部三个词典义：成年女性、女性整体、妻子或女性伴侣。核心义已有两个自然原创例句；补丁增加职业名词修饰用法的例句与复数规则，补齐低频集合义，并修正伴侣义的翻译和语域提示。音标、词形、近义与对照表达、词族拼写和历史链均已检查。局限是仅有 Wiktionary 英语词条取得正文，未核对其他推荐链接全文。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：成年女性；妇女",
+        "coveredBy": [
+          "1569-1"
+        ],
+        "assessment": "覆盖充分，已有两个自然英中例句；无需机械拆成多个核心义。"
+      },
+      {
+        "sense": "成年女性义的常用功能：作名词修饰语，如 woman doctor",
+        "coveredBy": [
+          "1569-1"
+        ],
+        "assessment": "属于同一词义的功能，不另立义；补充 women doctors 的双复数形式及例句。"
+      },
+      {
+        "sense": "集合用法：女性整体",
+        "coveredBy": [
+          "1569-l2"
+        ],
+        "assessment": "原稿遗漏；补入较正式或旧式的低频用法，说明现代日常英语通常用 women。"
+      },
+      {
+        "sense": "妻子；女性伴侣",
+        "coveredBy": [
+          "1569-l1"
+        ],
+        "assessment": "原稿已有，但例句译为妻子过于确定；补丁改用明确的伴侣语境，并说明语域与称呼风险。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"woman 是可数名词：单数通常说 a woman，复数说 women；woman doctor 等组合中，woman 也可修饰后面的名词。\"",
+        "valueJson": "\"woman 在本义中是可数名词：单数通常说 a woman，复数说 women。修饰职业名词时，可说 a woman doctor，复数为 women doctors，两个词都变复数；也常说 a female doctor / female doctors。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1569-1-ex3\",\"senseId\":\"1569-1\",\"en\":\"Two women doctors work at the local clinic.\",\"zh\":\"当地诊所有两位女医生。\",\"note\":\"表示女医生的复数时，woman 和 doctor 都变复数：women doctors。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/kind",
+        "expectedValueJson": "\"fixed-expression\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这种用法依赖上下文，初学时优先掌握“成年女性”这一常用义。\"",
+        "valueJson": "\"常见于 my woman、his woman 等非正式或旧式表达，可能带占有意味或令人感到不尊重。这种说法不保证双方已婚；日常介绍宜按实际关系用 wife 或 partner。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"1569-l1-ex1\",\"senseId\":\"1569-l1\",\"en\":\"He introduced us to his woman at the family picnic.\",\"zh\":\"他在家庭野餐会上把我们介绍给他的妻子。\",\"note\":\"此处是较旧式或特定语境的说法；日常更常说 wife 或 partner。\"}",
+        "valueJson": "{\"id\":\"1569-l1-ex1\",\"senseId\":\"1569-l1\",\"en\":\"He referred to his partner as 'my woman'.\",\"zh\":\"他把自己的伴侣称作‘我的女人’。\",\"note\":\"这里指女性伴侣，不说明婚姻关系。my woman 可能显得占有意味强，日常可按实际关系说 my partner 或 my wife。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1569-l2\",\"title\":\"女性整体（集合用法）\",\"meaning\":\"把女性作为一个群体或类别来谈论。\",\"note\":\"这种单数 woman 泛指女性整体的用法较正式或旧式，可不带冠词；现代日常英语通常用复数 women 泛指女性。\",\"example\":{\"id\":\"1569-l2-ex1\",\"senseId\":\"1569-l2\",\"en\":\"The essay discusses the position of woman in society.\",\"zh\":\"这篇文章讨论女性在社会中的地位。\",\"note\":\"woman 在此泛指女性整体，并非某一位女性；现代日常表达更常用 women。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"woman 的历史形式可追溯到中古英语 womman，再到古英语 wīfmann；古英语形式由 wīf 与 mann 两部分构成。\"",
+        "valueJson": "\"woman 经中古英语 womman 追溯到古英语 wīfmann，原由 wīf（女性）和 mann（人）组成。wīf 和 mann 后来分别发展为现代英语 wife（妻子）和 man（男人）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"wīfmann\",\"meaning\":\"由 wīf 与 mann 组成的形式\"},{\"language\":\"中古英语\",\"form\":\"womman\",\"meaning\":\"英语中的历史形式\"},{\"language\":\"现代英语\",\"form\":\"woman\",\"meaning\":\"成年女性\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"woman 的历史形式链及古英语组成信息\",\"woman 与 women 的读音信息\",\"woman 在特定上下文中的较少见用法\"]",
+        "valueJson": "[\"woman 的成年女性义及复数 women\",\"woman 与 women 的读音信息\",\"woman 泛指女性整体的集合用法\",\"woman 指妻子或女性伴侣的用法\",\"woman 的历史形式链、古英语成分原义及其与 wife、man 的关系\",\"womanhood、womanly 的派生词条线索\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1569,
+    "headword": "woman (pl. women)",
+    "meaning_zh": "n. 成年女子；妇女（复数 women）",
+    "phonetic": "/'wumәn/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "women",
+        "kind": "s"
+      }
+    ]
+  }
+}

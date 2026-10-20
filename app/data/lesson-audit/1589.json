@@ -1,0 +1,380 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fc613a22eb53d0518ce45617e4a5ce2264a9f5680b773039183aacf0fea3b566",
+    "executedReviewPromptHash": "fc613a22eb53d0518ce45617e4a5ce2264a9f5680b773039183aacf0fea3b566",
+    "reviewHash": "9e3636da74bda85a59d6dc1d001db9d0d4745189e5bc031140c3cca5450720af",
+    "wordId": 1589,
+    "inputHash": "84946ad2bda4f559116dd0f3d92b183a05e281dd6dd6642d8d9857cc989490d0",
+    "draftHash": "baf410945ba881aa8370414cfe4424a99985fd21cf07ea3d892e78cc72758a27",
+    "finalHash": "637b9cbf4b1e68d3bbd4397524517bb3dc864135522427bb43ee0f62d10c2113",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/yes#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.280Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9855,
+        "revisionId": 39764345,
+        "revisionTimestamp": "2026-08-03T04:48:43Z",
+        "sha256": "ab475745b888a0ec793bc0d345ab23b2af67a28caad1c5561d3dcd5dfd379f9d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/yes",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:28:44.494Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:37:17.780Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources; /pronunciation/sourceIds; /senses; /confusions/0/sourceIds",
+        "message": "Cambridge 页面未取得内容，不能作为本次审核中具体释义、发音和语法说明的证据。已将有词典依据的引用改到实际取得的英语词条，并去掉无对应材料支持的语法引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“回答否定问句时，yes 表示情况属实”容易被理解为赞同问句中的否定说法。应明确 yes 确认肯定事实，并用成对答句说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note; /confusions/1/items/1/note",
+        "message": "yes 直接加 -es 得到 yeses；yesses 需要先双写 s。原稿没有准确解释实际拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "少见及物动词被扩展成可供主动套用的常用搭配，尤其裸用 yes to a request 没有可靠依据。已将批准义移入少见义，删除这些搭配，并补上常用的接受、答应和赞同功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "接受或答应只有零散说明，缺少具体例句；常见的 Yes? 回应呼唤、请对方继续，以及 Yes! 表达欣喜均未覆盖。已分别补齐，相关区别依据专业语言知识说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/label",
+        "message": "标题标为“错误”，实际例句却是正确的 Yes, I do.，会误导学生。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples",
+        "message": "got a yes from my parents to join 的连接不够自然；已改成明确的请求情境，并为肯定答复和赞成票各补足两个例句。"
+      }
+    ],
+    "coverageAssessment": "已核对词典明确列出的肯定回应、名词肯定答复、赞成票、少见及物动词批准义及讨好式附和义，并检查常用交际功能。修订后核心功能均有至少两个自然例句，名词两种用法各有两个例句。古英语 ġēse 的来源及单阶段呈现有材料依据，无须修改；/e/ 与材料中的 /ɛ/ 可属不同转写惯例。少见动词保留为识别内容，不再推广未经支持的搭配。Cambridge 未取得内容，不作为本次证据；新增交际功能与语法辨析依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "肯定回答、确认事实，包括否定问句中的肯定回答",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有两个核心例句正确；已修正否定问句说明，并补充成对辨析。"
+      },
+      {
+        "sense": "承认某点，再提出保留意见",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "作为确认事实的延伸，补充 Yes, ... but ... 的句型和例句。"
+      },
+      {
+        "sense": "接受提议或提供之物、答应请求、表示赞同",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "原稿只有零散覆盖；现以三个对话例句分别展示接受、答应和赞同。"
+      },
+      {
+        "sense": "回应呼唤、示意对方继续说",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原稿遗漏；补充两个例句，并说明升调和语境。"
+      },
+      {
+        "sense": "表达成功、好消息带来的欣喜或如释重负",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "原稿遗漏；补充两个例句，与单纯肯定回答区分。"
+      },
+      {
+        "sense": "名词：一个肯定答复",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "词典明确支持；修正不够自然的例句，并补足两个实例。"
+      },
+      {
+        "sense": "名词：赞成票",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "词典明确支持；现有两个实例，并准确说明 yeses、yesses 两种复数拼写。"
+      },
+      {
+        "sense": "少见口语及物动词：批准、同意",
+        "coveredBy": [
+          "ls2"
+        ],
+        "assessment": "移入少见义，保留识别例句；删除无依据的裸词介词搭配和常用搭配标签。"
+      },
+      {
+        "sense": "俚语动词：为了讨好而不断附和某人",
+        "coveredBy": [
+          "ls1"
+        ],
+        "assessment": "已有释义、语域提示和原创例句，符合词典材料，无须修改。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"记住 a yes 表示一个肯定答复，复数常写 yesses。\"",
+        "valueJson": "\"记住 a yes 表示一个肯定答复；复数可写 yeses 或 yesses，注意后者双写 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_yes\"]",
+        "valueJson": "[\"wiktionary_yes\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/form",
+        "expectedValueJson": "\"yesses\"",
+        "valueJson": "\"yeses / yesses\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"作可数名词时常写 yesses；末尾加 -es，读作两个音节。\"",
+        "valueJson": "\"两种复数拼写都可以：yes 直接加 -es 得到 yeses；先双写 s 再加 -es 得到 yesses。两者都读两个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用于回答问题或回应别人，表示所说的情况属实、答案肯定，或愿意照办。常作独立回答，也可放在句首引出完整答句。\"",
+        "valueJson": "\"用于回答问题或回应别人，确认某事为真或作出肯定回答。常作独立回答，也可放在句首引出完整答句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"回答一般疑问句时，常用 Yes 加与问句对应的助动词或 be 动词，例如 Yes, I do. 回答否定问句时，yes 通常仍表示“是的，情况属实”，中文要结合具体问法理解。\"",
+        "valueJson": "\"回答一般疑问句时，常用 Yes 加主语和相应的助动词、情态动词或 be 动词，例如 Yes, I do.、Yes, I can.。回答否定问句时，yes 仍确认肯定的事实：Haven't you eaten? — Yes, I have. 表示“我已经吃过了”，不是“我还没吃”。不要按中文的“是的／不是”机械选择 yes 或 no。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_yes\"]",
+        "valueJson": "[\"wiktionary_yes\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"Yes, please.\",\"zh\":\"好的，请；是的，谢谢。\",\"note\":\"礼貌接受别人提供的食物、帮助或服务。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Yes, ... but ...\",\"zh\":\"……确实如此，不过……\",\"note\":\"先承认某一点，再提出保留意见；yes 不表示完全赞同后面的全部主张。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"Yes, the tickets are cheap, but the train leaves too early.\",\"zh\":\"票确实便宜，不过这趟火车出发得太早了。\",\"note\":\"承认票价便宜，再用 but 提出顾虑。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常是可数名词：可以说 a yes 或 several yesses。表示投票结果时，yes 常与 no 并列。\"",
+        "valueJson": "\"通常是可数名词：可以说 a yes，复数可写 yeses 或 yesses。表示投票结果时，yes 常与 no 并列。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/en",
+        "expectedValueJson": "\"I got a yes from my parents to join the school trip.\"",
+        "valueJson": "\"When I asked if I could go on the school trip, I got a yes from my parents.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"父母答应我参加学校旅行了。\"",
+        "valueJson": "\"我问父母能不能参加学校旅行，他们答应了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_yes\"]",
+        "valueJson": "[\"wiktionary_yes\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2e3\",\"senseId\":\"s2\",\"en\":\"We still need a yes from the teacher before we can book the bus.\",\"zh\":\"我们还得得到老师的同意，才能预订大巴。\",\"note\":\"a yes 指对请求给出的肯定答复；先得到同意，才能订车。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2e4\",\"senseId\":\"s2\",\"en\":\"We counted eighteen yeses and two noes in the class vote.\",\"zh\":\"在班级投票中，我们数出了十八张赞成票和两张反对票。\",\"note\":\"yeses 在这里指赞成票，也可拼作 yesses。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2",
+        "expectedValueJson": "{\"id\":\"s3\",\"title\":\"答应、表示赞同（少见动词）\",\"meaning\":\"作动词，表示对某个提议或请求说“好”、表示同意。\",\"usageNote\":\"动词用法少见，带口语色彩；日常表达“同意”更常用 agree to 或 say yes to。\",\"examples\":[{\"id\":\"s3e1\",\"senseId\":\"s3\",\"en\":\"After a short discussion, the coach yessed the change to our practice time.\",\"zh\":\"简短讨论后，教练同意了我们更改训练时间。\",\"note\":\"yessed 是少见动词 yes 的过去式。\"},{\"id\":\"s3e2\",\"senseId\":\"s3\",\"en\":\"She yessed the invitation and marked the date on her calendar.\",\"zh\":\"她答应了邀请，并在日历上记下日期。\",\"note\":\"此处 yes 作及物动词，后接表示请求或提议的名词。\"}],\"patterns\":[{\"en\":\"yes somebody/something\",\"zh\":\"答应某人／同意某事\",\"note\":\"少见的及物用法，yes 后直接接所答应的人或事情。\",\"kind\":\"sentence-pattern\"},{\"en\":\"yes to a request\",\"zh\":\"答应一项请求\",\"note\":\"表示对请求作出肯定答复；日常更常说 say yes to a request。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"yes an invitation\",\"zh\":\"答应邀请\",\"note\":\"少见表达，表示接受邀请；初学者用 accept an invitation 或 say yes to an invitation 更自然。\",\"kind\":\"common-collocation\"},{\"en\":\"yes a proposal\",\"zh\":\"同意一项提议\",\"note\":\"少见动词搭配，表示接受提议；普通写作中可用 agree to a proposal。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"agree to\",\"zh\":\"同意；答应\",\"note\":\"日常常用，后接提议、安排或请求，是表达“答应某事”的优先选择。\"},{\"en\":\"accept\",\"zh\":\"接受；答应\",\"note\":\"常用于接受邀请、提议或条件，语气清楚自然。\"}],\"contrasting\":[{\"en\":\"refuse\",\"zh\":\"拒绝\",\"note\":\"表示不接受请求或提议，与动词 yes 的“答应”义相反。\"},{\"en\":\"say no to\",\"zh\":\"拒绝；对……说不\",\"note\":\"常用口语表达，直接表示拒绝某个请求或提议。\"}],\"similarNote\":\"agree to 强调同意；accept 常用于接受邀请或提议；动词 yes 较少见。\",\"contrastingNote\":\"在“答应请求或提议”这一用法中，refuse 和 say no to 表示拒绝。\"},\"sourceIds\":[\"cambridge_yes\"]}",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"接受、答应；表示赞同\",\"meaning\":\"回应别人提供的东西、请求或建议，表示愿意接受、照办或赞同。\",\"usageNote\":\"接受别人提供的东西时常说 Yes, please.；答应请求可说 Yes, of course.。这里的 yes 可以独立使用，不是少见的动词用法。\",\"examples\":[{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"“Would you like some tea?” “Yes, please.”\",\"zh\":\"“你想喝点茶吗？”“好的，谢谢。”\",\"note\":\"礼貌接受别人提供的茶，不用照搬 would 补成短答。\"},{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"“Can you help me carry this bag?” “Yes, of course.”\",\"zh\":\"“你能帮我提这个袋子吗？”“当然可以。”\",\"note\":\"对方在请求帮助；yes 表示愿意帮忙。\"},{\"id\":\"s4e3\",\"senseId\":\"s4\",\"en\":\"“Let's take the bus.” “Yes, that's a good idea.”\",\"zh\":\"“我们坐公交车吧。”“好，这个主意不错。”\",\"note\":\"赞同建议；前一句不必是疑问句。\"}],\"patterns\":[{\"en\":\"Yes, please.\",\"zh\":\"好的，谢谢。\",\"note\":\"用于接受别人提供的东西或服务。\",\"kind\":\"fixed-expression\"},{\"en\":\"Yes, of course.\",\"zh\":\"当然可以。\",\"note\":\"可以用来爽快地答应请求；是否自然取决于具体语境。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"say yes to a request/an offer\",\"zh\":\"答应请求／接受提议\",\"note\":\"完整表达是 say yes to；日常表达中不要省掉 say，直接套用 yes to。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sure\",\"zh\":\"行；当然可以\",\"note\":\"口语中常用于答应请求，语气比 yes 随意。\"},{\"en\":\"of course\",\"zh\":\"当然可以\",\"note\":\"可爽快地答应请求；并非在所有提问中都能替换 yes。\"}],\"contrasting\":[{\"en\":\"No, thank you.\",\"zh\":\"不了，谢谢。\",\"note\":\"礼貌谢绝别人提供的东西或服务，与接受时的 Yes, please. 对应。\"},{\"en\":\"I'm afraid I can't.\",\"zh\":\"恐怕不行。\",\"note\":\"用于婉拒自己无法答应的请求，不用于直接回答所有事实问题。\"}],\"similarNote\":\"sure 和 of course 在答应请求时可接近 yes；接受饮食等招待时，Yes, please. 尤其常见。\",\"contrastingNote\":\"谢绝提供之物与拒绝请求有不同的常用说法，应按场景选择。\"},\"sourceIds\":[\"wiktionary_yes\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"回应呼唤；示意对方继续说\",\"meaning\":\"别人叫你或准备对你说话时，用 yes 表示自己在听，询问有什么事或请对方继续。\",\"usageNote\":\"常用升调说 Yes?，相当于“嗯？什么事？”；此时不是在肯定某个事实。语调和表情会影响它听起来是否友好。\",\"examples\":[{\"id\":\"s5e1\",\"senseId\":\"s5\",\"en\":\"“Lena?” “Yes?”\",\"zh\":\"“莉娜？”“什么事？”\",\"note\":\"莉娜回应别人叫自己的名字。\"},{\"id\":\"s5e2\",\"senseId\":\"s5\",\"en\":\"“I wanted to ask you something.” “Yes?”\",\"zh\":\"“我想问你件事。”“嗯？你说。”\",\"note\":\"表示在听，示意对方继续。\"}],\"patterns\":[{\"en\":\"Yes?\",\"zh\":\"嗯？什么事？\",\"note\":\"常以升调回应呼唤或请对方继续说。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"Yes? How can I help you?\",\"zh\":\"您好，有什么需要帮助的吗？\",\"note\":\"接待来访者时可用这样的回应；注意语气友好。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"What is it?\",\"zh\":\"什么事？\",\"note\":\"可回应呼唤，但语气不当时容易显得不耐烦。\"},{\"en\":\"Go on.\",\"zh\":\"继续说。\",\"note\":\"适合请对方接着说，不能替代所有回应呼唤的 Yes?。\"}],\"contrasting\":[],\"similarNote\":\"这些说法分别接近询问来意和邀请继续说话的功能，不是事实判断中的肯定回答。\",\"contrastingNote\":\"此处没有固定的反义表达；直接换成 No. 不能表达相反的回应功能。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"太好了！表示欣喜或如释重负\",\"meaning\":\"遇到成功、胜利或盼望的结果时，用 yes 表达高兴、兴奋或松了一口气。\",\"usageNote\":\"常重读，书面上常写作 Yes!。它可以直接回应好消息，也可以是说话人自己的欢呼，不一定是在回答问题。\",\"examples\":[{\"id\":\"s6e1\",\"senseId\":\"s6\",\"en\":\"Yes! We won the game!\",\"zh\":\"太好了！我们赢了比赛！\",\"note\":\"用 yes 欢呼比赛获胜，不宜机械译成“是的”。\"},{\"id\":\"s6e2\",\"senseId\":\"s6\",\"en\":\"Yes! I finally found my keys!\",\"zh\":\"太好了！我终于找到钥匙了！\",\"note\":\"找到一直在找的东西，表达欣喜和如释重负。\"}],\"patterns\":[{\"en\":\"Yes! + 表示好消息的句子\",\"zh\":\"太好了！……\",\"note\":\"可用来宣布成功或庆祝理想的结果。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"Oh, yes!\",\"zh\":\"太好了！\",\"note\":\"在成功或庆祝的语境中可加强欣喜；其他语境中也可能只是强调肯定。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"Hooray!\",\"zh\":\"好耶！\",\"note\":\"用于欢呼，常能表达类似的喜悦。\"},{\"en\":\"Great!\",\"zh\":\"太好了！\",\"note\":\"在回应好消息时意义相近；具体语气仍要结合上下文。\"}],\"contrasting\":[{\"en\":\"Oh no!\",\"zh\":\"糟了！\",\"note\":\"面对坏消息或不愿发生的事情时表示懊恼、惊慌等，与此处的欣喜相对。\"}],\"similarNote\":\"这里比较的是对结果的情绪反应，Hooray! 不能替代普通问答中的 Yes.。\",\"contrastingNote\":\"Oh no! 是情绪上的对照，不是用来否认同一个事实的逻辑反义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls2\",\"title\":\"批准、同意（少见及物动词）\",\"meaning\":\"yes 偶尔可作及物动词，表示批准或同意某事。\",\"note\":\"这是少见、带口语色彩的用法，认得即可。日常说“批准提议”更常用 approve a proposal，说“同意提议”可用 agree to a proposal。\",\"example\":{\"id\":\"ls2e1\",\"senseId\":\"ls2\",\"en\":\"The manager yessed the proposal after a short discussion.\",\"zh\":\"简短讨论后，经理批准了这项提议。\",\"note\":\"yessed 是少见动词 yes 的过去式；普通表达更常写 approved the proposal。\"},\"sourceIds\":[\"wiktionary_yes\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"错误：问句用 do，却回答 is\"",
+        "valueJson": "\"正确：问句用 do，肯定短答也用 do\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_yes\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"表示一次肯定答复时，yes 可数；单数前常用 a，复数可写 yesses。\"",
+        "valueJson": "\"表示一次肯定答复时，yes 可数；单数前常用 a，复数可写 yeses 或 yesses。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"名词复数可在 yes 后加 -es；no 的复数对应写作 noes 或 nos。\"",
+        "valueJson": "\"yes 直接加 -es 得到 yeses；双写 s 再加 -es 得到 yesses。两种拼写都可以。no 的复数可写 noes 或 nos。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表达“一次肯定答复”用 a yes；需要复数时可写 yesses。\"",
+        "valueJson": "\"表达“一次肯定答复”用 a yes；复数 yeses 和 yesses 都可以，注意 s 的数量。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"c3\",\"title\":\"否定问句：yes 确认肯定事实\",\"summary\":\"英语回答否定问句时，yes 通常接肯定答句，no 接否定答句。不能先按中文是否赞同对方的话来选词。\",\"items\":[{\"label\":\"Yes, I have.：已经吃过了\",\"note\":\"即使问句带否定，yes 仍确认“吃过午饭”这个肯定事实。\",\"example\":{\"id\":\"c3e1\",\"senseId\":\"s1\",\"en\":\"“Haven't you eaten lunch?” “Yes, I have.”\",\"zh\":\"“你还没吃午饭吗？”“不，我已经吃过了。”\",\"note\":\"yes 与肯定的 I have 搭配，不表示“还没吃”。\"}},{\"label\":\"No, I haven't.：还没吃\",\"note\":\"no 后接否定答句，确认自己没有吃过午饭。\",\"example\":{\"id\":\"c3e2\",\"senseId\":\"s1\",\"en\":\"“Haven't you eaten lunch?” “No, I haven't.”\",\"zh\":\"“你还没吃午饭吗？”“是的，我还没吃。”\",\"note\":\"中文可以用“是的”表示赞同对方的否定判断，英语这里仍用 no。\"}}],\"takeaway\":\"先判断事实：吃过了用 Yes, I have.；没吃过用 No, I haven't.。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_yes\",\"title\":\"Cambridge Dictionary: yes\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/yes\",\"supports\":[\"常见肯定回答用法\",\"yes 作名词表示肯定答复或赞成\",\"yes 的发音及常见词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"古英语 ġēse 的历史来源\",\"yes 的名词复数及少见动词用法\"]",
+        "valueJson": "[\"古英语 ġēse 的历史来源\",\"yes 的基本肯定义及 no 等相关表达\",\"名词肯定答复、赞成票及 yeses、yesses 两种复数拼写\",\"少见及物动词批准义和讨好式附和义\",\"yes 的英美发音\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1589,
+    "headword": "yes",
+    "meaning_zh": "adv. 是\nn. 是, 同意\nv. 同意",
+    "phonetic": "/jes/",
+    "pos": "",
+    "forms": []
+  }
+}

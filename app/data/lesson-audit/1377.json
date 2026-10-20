@@ -1,0 +1,388 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "25ad9aa0ee157976817e902957a0145106b3bcea2706c32571b3f4209253f5ef",
+    "executedReviewPromptHash": "25ad9aa0ee157976817e902957a0145106b3bcea2706c32571b3f4209253f5ef",
+    "reviewHash": "1be5ac26f08a77ab06a83a4c2a13fefaf689b1db3c74fc9d1287994b0e972119",
+    "wordId": 1377,
+    "inputHash": "c3212a8dec77fcb0bf5239da3a3977006f8edb4a1bf960754e4a0e69ef80f2c6",
+    "draftHash": "dc29f745f4dca5bd1c75303570b2a05300a30953ed757771d7d5156d8ec9af2e",
+    "finalHash": "11f97c4bf6c85e776e45160af01332ac5afaf76d19252f8af09aad7081a261ef",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tape#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.989Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120067,
+        "revisionId": 39735771,
+        "revisionTimestamp": "2026-08-01T22:24:21Z",
+        "sha256": "0e8a183d74898ba16dbc7d597b93ab7d7c5b242ebaec5f132c84f26d220081d5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tape",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:54:02.022Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:09:03.919Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题合并“胶带”和普通“带子”，但两个例句都只覆盖胶带；需分出不带粘性的窄带义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏词条明确列出的名词“卷尺”义，动词“用卷尺测量”不能代替这一名词功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "a piece of tape 中可数的是 piece，tape 仍是不可数的材料名词。复数词形说明也不应把“多卷胶带”直接教成 tapes。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0",
+        "message": "tape + -ed 和“直接加 -ed，保留 e”按所写步骤会得到 tapeed；实际拼写是 tape 只加 -d，成为 taped。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds, /senses/*/sourceIds, /lessCommonSenses/0/sourceIds, /confusions/0/sourceIds, /wordFamily/*/sourceIds, /sources",
+        "message": "Cambridge 页面未获取，不能作为本次释义、词形或发音判断的已用依据。改引实际取得且支持相应内容的维基词典英语词条；补充语言知识不挂不相干来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语阶段用制作说明代替词义。应将可证实的来源关系保留在正文摘要中，删除无法给出独立释义的占位阶段，避免顺序图误导。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items",
+        "message": "tap 和 type 的例句分别绑定 tape 的胶带义和录制义，却未出现相应 tape 用法。修改例句，使比较词和被绑定的 tape 义同时实际出现。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote, /pronunciation/notes/1, /lessCommonSenses/0",
+        "message": "“直接说 tape”容易造成可数录音带义的裸词误用；词尾 /p/ 不必强制明显爆破；少见的测量动词宜搭配更清楚的裁缝场景，并提示日常更常用的 measure 表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/examples/0/zh",
+        "message": "taped 未限定录音还是录像，译成“给家长看”增加了影像信息，宜保持原句范围。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对带状材料、胶带、录音带／磁带、卷尺，以及用胶带固定、录音／录像、用卷尺测量七类功能。补丁后六个核心义各有两个具体英中例句，少见测量动词保留一个例句并说明使用限制。近义和反向表达已有语境限定，无须强造材料名词的反义词。来源局限是 Cambridge 页面不可用；实际取得的维基词典英语词条支持基本带状材料义、相关复合表达、粘贴与录音动词、发音和所述词源，卷尺等补充说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "n. 带子；窄条状材料，可不带粘性",
+        "coveredBy": [
+          "tape-n-strip"
+        ],
+        "assessment": "原稿标题提及但例句缺失；新增独立义，以两个非胶带场景覆盖。"
+      },
+      {
+        "sense": "n. 胶带",
+        "coveredBy": [
+          "tape-n-adhesive"
+        ],
+        "assessment": "原有两个例句自然；修正不可数材料与数量表达的说明。"
+      },
+      {
+        "sense": "n. 录音带；磁带及其中的录制内容",
+        "coveredBy": [
+          "tape-n-recording"
+        ],
+        "assessment": "两个例句覆盖介质和播放内容；补清冠词及 on tape 的区别。"
+      },
+      {
+        "sense": "n. 卷尺；软尺",
+        "coveredBy": [
+          "tape-n-measure"
+        ],
+        "assessment": "原稿遗漏；新增两个实际使用 tape 指测量工具的例句。"
+      },
+      {
+        "sense": "vt. 用胶带粘贴、固定、封住",
+        "coveredBy": [
+          "tape-v-attach"
+        ],
+        "assessment": "两个例句和 tape A to B、tape something shut 已覆盖主要结构。"
+      },
+      {
+        "sense": "v. 录音；录像",
+        "coveredBy": [
+          "tape-v-record"
+        ],
+        "assessment": "两个例句覆盖主动与被动；record、film 的适用范围说明合理。"
+      },
+      {
+        "sense": "vt. 用卷尺测量",
+        "coveredBy": [
+          "tape-v-measure"
+        ],
+        "assessment": "作为少见义保留，改用更清楚的裁缝测量场景，提示常用替代表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"词尾 p 要清楚发出；不要读成 /iː/。\"",
+        "valueJson": "\"词尾 /p/ 要双唇闭合，不要在后面加元音；词中的 /eɪ/ 不要读成 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则加 -s；表示多卷胶带或多盘录音带。\"",
+        "valueJson": "\"规则加 -s，可表示多盘录音带。胶带作为材料通常不可数；多卷胶带说 rolls of tape。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"动词规则变化，词尾加 -ed，读作 /t/。\"",
+        "valueJson": "\"以不发音的 e 结尾，只加 -d：tape → taped；过去式词尾读 /t/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"胶带；带子\"",
+        "valueJson": "\"胶带\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种细长的材料，可用于粘贴、捆扎或固定东西；日常说 tape 通常指胶带。\"",
+        "valueJson": "\"带有粘性的窄条状材料，用于粘贴、修补或固定东西。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"tape 作可数名词时可说 a piece of tape；作为材料泛指时也常不可数。\"",
+        "valueJson": "\"表示胶带这种材料时，tape 通常不可数。一段胶带说 a piece of tape，一卷胶带说 a roll of tape；可数的是 piece 或 roll。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可说 a tape 或 a tape of a song；谈录音内容时也常直接说 tape。\"",
+        "valueJson": "\"表示一盘磁带或一份录制内容时，通常作可数名词，如 a tape、the tape、a tape of a song。on tape 表示“录在磁带上”，其中 tape 不加冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0/zh",
+        "expectedValueJson": "\"他们把学校音乐会录了下来，给没能到场的家长看。\"",
+        "valueJson": "\"他们把学校音乐会录了下来，留给没能到场的家长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"用卷尺量长度或尺寸，常见于 tape-measure 一类工具的语境。\"",
+        "valueJson": "\"用卷尺或软尺量长度、尺寸。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这个动词用法比“粘贴、录音”少见；初中阶段先认识即可。\"",
+        "valueJson": "\"这一动词义较少见，初中阶段先认识即可。日常更常说 measure something with a tape measure（用卷尺测量某物）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"tape-v-measure-ex1\",\"senseId\":\"tape-v-measure\",\"en\":\"She taped the table before buying a cloth.\",\"zh\":\"买桌布前，她用卷尺量了桌子。\",\"note\":\"这里 taped 表示用卷尺测量。\"}",
+        "valueJson": "{\"id\":\"tape-v-measure-ex1\",\"senseId\":\"tape-v-measure\",\"en\":\"The tailor taped my waist before making the trousers.\",\"zh\":\"裁缝做裤子前，用软尺量了我的腰围。\",\"note\":\"这里 taped 是较少见的“用卷尺或软尺测量”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"tape_confusion_ex2\",\"senseId\":\"tape-n-adhesive\",\"en\":\"Tap the screen once to open the picture.\",\"zh\":\"轻点一下屏幕打开图片。\",\"note\":\"tap 表示轻点、轻敲。\"}",
+        "valueJson": "{\"id\":\"tape_confusion_ex2\",\"senseId\":\"tape-n-adhesive\",\"en\":\"Tap the screen to see how to seal a box with tape.\",\"zh\":\"轻点屏幕，看看怎样用胶带封箱。\",\"note\":\"tap 是轻点屏幕；with tape 中的 tape 是名词“胶带”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example",
+        "expectedValueJson": "{\"id\":\"tape_confusion_ex3\",\"senseId\":\"tape-v-record\",\"en\":\"Please type your name here.\",\"zh\":\"请在这里打上你的名字。\",\"note\":\"type 表示打字。\"}",
+        "valueJson": "{\"id\":\"tape_confusion_ex3\",\"senseId\":\"tape-v-attach\",\"en\":\"Type and print the label, then tape it to the box.\",\"zh\":\"把标签内容打好并打印出来，再用胶带把标签贴到盒子上。\",\"note\":\"type 表示打字；tape it to the box 表示用胶带把标签贴到盒子上。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 tape 的历史来源可追溯到古英语 tæppe，再到拉丁语 tapes；给出的历史材料将拉丁语词义解释为“挂毯”。\"",
+        "valueJson": "\"英语 tape 来自古英语 tæppe，而古英语形式又源于拉丁语 tapes，意为“挂毯”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"tapes\",\"meaning\":\"挂毯\"},{\"language\":\"古英语\",\"form\":\"tæppe\",\"meaning\":\"传入英语历史词形；该材料未给出此阶段独立释义\"},{\"language\":\"英语\",\"form\":\"tape\",\"meaning\":\"带子；胶带；录音带\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"tape + -ed，规则过去式或过去分词\"",
+        "valueJson": "\"tape + -d → taped，是规则过去式或过去分词\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接加 -ed；结尾的 e 保留，词尾读 /t/。\"",
+        "valueJson": "\"tape 已以 e 结尾，只加 d，拼成 taped，不是 tapeed；过去式词尾读 /t/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_tape\"]",
+        "valueJson": "[\"wiktionary_tape\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_tape\",\"title\":\"Cambridge Dictionary: tape\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/tape\",\"supports\":[\"英美音标与发音\",\"tape 的名词和动词用法\",\"常见搭配及词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"历史词源：古英语 tæppe 与拉丁语 tapes 的来源关系\"]",
+        "valueJson": "[\"发音 /teɪp/\",\"带状材料的名词义，以及 adhesive tape、magnetic tape 等相关表达\",\"用胶带固定与录音的动词义及规则变化\",\"历史词源：古英语 tæppe 与拉丁语 tapes 的来源关系\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tape-n-strip\",\"title\":\"带子；窄条状材料\",\"meaning\":\"狭长、扁平的材料带，可以不带粘性，例如缝纫或捆扎用的棉织带。\",\"usageNote\":\"作为材料通常不可数。cotton tape 是棉织带；a length of tape 是一段带子。这里不一定指胶带。\",\"examples\":[{\"id\":\"tape-n-strip-ex1\",\"senseId\":\"tape-n-strip\",\"en\":\"She sewed cotton tape along the edge of the apron.\",\"zh\":\"她沿着围裙边缘缝上了棉织带。\",\"note\":\"cotton tape 是棉织带，不是有粘性的胶带。\"},{\"id\":\"tape-n-strip-ex2\",\"senseId\":\"tape-n-strip\",\"en\":\"I tied the parcel with a length of cotton tape.\",\"zh\":\"我用一段棉织带把包裹捆好了。\",\"note\":\"这里用带子系扎包裹，不是用胶带粘住。\"}],\"patterns\":[{\"en\":\"a length of tape\",\"zh\":\"一段带子\",\"note\":\"用 a length of 表示一段不可数的带状材料。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"cotton tape\",\"zh\":\"棉织带\",\"note\":\"常用于缝纫或系扎，不一定有粘性。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"ribbon\",\"zh\":\"丝带；缎带\",\"note\":\"也是窄条状材料，通常更强调装饰用途；缝纫加固用的 cotton tape 不宜一概换成 ribbon。\"}],\"contrasting\":[],\"similarNote\":\"tape 在这里强调实用的窄带材料，ribbon 常强调装饰。\",\"contrastingNote\":\"这种具体材料名没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary_tape\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tape-n-measure\",\"title\":\"卷尺；软尺\",\"meaning\":\"带有刻度、用来量长度或围度的带状测量工具。\",\"usageNote\":\"完整说法常用 a tape measure 或 a measuring tape；在测量语境明确时，可简称 a tape 或 the tape。\",\"examples\":[{\"id\":\"tape-n-measure-ex1\",\"senseId\":\"tape-n-measure\",\"en\":\"Hold the end of the tape while I measure the table.\",\"zh\":\"我量桌子时，你把卷尺的一端按住。\",\"note\":\"measure the table 的语境表明 tape 指卷尺。\"},{\"id\":\"tape-n-measure-ex2\",\"senseId\":\"tape-n-measure\",\"en\":\"The tailor put the tape around my waist.\",\"zh\":\"裁缝把软尺围在我的腰上。\",\"note\":\"裁缝量腰围时使用的是有刻度的软尺。\"}],\"patterns\":[{\"en\":\"measure something with a tape measure\",\"zh\":\"用卷尺测量某物\",\"note\":\"measure 是动词，tape measure 是测量工具的名称。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a tape measure\",\"zh\":\"一把卷尺；一条软尺\",\"note\":\"常用工具名，通常写成两个词。\",\"kind\":\"common-collocation\"},{\"en\":\"a measuring tape\",\"zh\":\"一把卷尺；一条软尺\",\"note\":\"也可用来称呼这种测量工具。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"ruler\",\"zh\":\"直尺\",\"note\":\"同样用于量长度，但通常是硬直的，不能像软尺那样围着腰部测量。\"}],\"contrasting\":[],\"similarNote\":\"tape measure 和 ruler 都是测量工具，结构和适用场景不同，不能处处互换。\",\"contrastingNote\":\"测量工具名称没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1377,
+    "headword": "tape",
+    "meaning_zh": "n. 带子, 录音带, 磁带, 窄带, 卷尺\nvt. 以带子绑起, 测量, 录音",
+    "phonetic": "/teip/",
+    "pos": "",
+    "forms": []
+  }
+}

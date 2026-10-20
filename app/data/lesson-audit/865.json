@@ -1,0 +1,510 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ec54be344cd49ac91e0c83e643dac300a4adfaf2dd902238ee8efe9357157dc8",
+    "executedReviewPromptHash": "ec54be344cd49ac91e0c83e643dac300a4adfaf2dd902238ee8efe9357157dc8",
+    "reviewHash": "a93ce18cd786a81208586784ecc9c30375e09f5ac321654cb37f4ad79305064e",
+    "wordId": 865,
+    "inputHash": "0faa0c0866fc1103471d887919766cb7e3e6f6f3393da7fc7b87b311f03da717",
+    "draftHash": "569cdf99a64bfd5b037c7eef52bb68d55fe96f04dca7ac268f73228a9d4d4c39",
+    "finalHash": "6a0f7a209db8b7c9b3a647bb8f26bdf2110bd58fa570307eb660b628e55eaa91",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/miss#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:19.150Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121615,
+        "revisionId": 39678225,
+        "revisionTimestamp": "2026-07-16T00:51:27Z",
+        "sha256": "4834a699f4913fa2bb914f0e8793c2530c0742ef02105b313e14d9881c2fa961",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/miss",
+        "section": "miss etymology",
+        "supports": [
+          "Old English failure-to-hit verb; later absence/time senses; title distinction"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:13:10.093213+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "523715bc4ade0edce06d4237c79f051dde355230cffcac975df4ae1cc472c571",
+        "summaryAndSupportsWordCount": 63,
+        "sha256": "523715bc4ade0edce06d4237c79f051dde355230cffcac975df4ae1cc472c571",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/865.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/miss",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:22:43.897Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:32:16.989Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 oxford-miss 的 sourceIds",
+        "message": "实际来源材料中没有 Oxford 条目，现有引用无法据此成立。应改引已取得的法语维基词典英语词条；其未直接列出的“没注意到／没理解”义不强行绑定该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "漏掉了词典明确区分的“察觉某人或某物不在”义，并把常见的 be missing 状态表达仅放在词族中；后者还被错误关联到“没注意到”义。两者需要分别说明并各补两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "常见称谓 Miss 仅有一个例句，不宜作为低频义简略处理。词典另外列出的、小写 miss 的旧式呼语及“年轻姑娘”名词义则完全遗漏。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote 和 /confusions/1",
+        "message": "中文“我想你”与 I miss you 的主宾语顺序一致。来源中主宾语倒置的说明针对法语，不能套用于中文；You miss me 本身也是正确句子，只是意思不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/2",
+        "message": "miss 原形已经以 ss 结尾；missed 是直接加 -ed，不是形成过去式时再双写 s。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“不读成长元音”紧接在词尾 /s/ 后，提示指向不清，应分别说明元音 /ɪ/ 和词尾 /s/。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning 和 /senses/0/relatedExpressions/similar/0",
+        "message": "miss 活动或课程不一定由迟到造成；be late for 只表示迟到，也不保证完全没赶上。原释义和近义词翻译均需收紧。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1/en",
+        "message": "threw the paper into the bin 通常表示纸已经进入垃圾桶，与随后说没扔中冲突，应改为只表达投向目标。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1/zh 和 /senses/1/relatedExpressions/similar/1",
+        "message": "just miss 是实际未命中，“差一点没打中”容易反转结果；fall short of 也不保证只差一点，并常涉及距离不足或低于标准。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/patterns 和 /senses/2/examples",
+        "message": "遗漏常用结构 miss doing something，应说明它表示怀念以前做的事，并给出对应例句。"
+      }
+    ],
+    "coverageAssessment": "已核对词典全部定义及常用教学功能。补齐察觉缺失、be missing、常见称谓 Miss，以及小写 miss 的两种旧式名词用法；思念人物、地方和往昔生活仍合理合并为一个情感义，并补充 miss doing。所有核心义均至少有两个例句。现有词源的古英语到现代英语顺序及 Miss 的独立来源可靠，保留不改。“没注意到／没理解”义依据专业语言知识保留，不冒称已获现有词典片段直接支持。",
+    "senseInventory": [
+      {
+        "sense": "动词：错过交通工具、活动或机会；未参加课程等",
+        "coveredBy": [
+          "miss-v1"
+        ],
+        "assessment": "已有基本覆盖；修正迟到限制，补充因病缺课的例句。"
+      },
+      {
+        "sense": "动词：未击中目标，可及物或不及物",
+        "coveredBy": [
+          "miss-v2"
+        ],
+        "assessment": "覆盖充分；修正投掷例句的结果冲突和距离表达的翻译。"
+      },
+      {
+        "sense": "missing：不见、缺少、不在应在的位置",
+        "coveredBy": [
+          "miss-missing"
+        ],
+        "assessment": "原稿仅在词族中简述；新增常用结构条，明确其形容词性用法。"
+      },
+      {
+        "sense": "动词：察觉某人或某物不在",
+        "coveredBy": [
+          "miss-v5"
+        ],
+        "assessment": "原稿遗漏；新增两个例句，与未注意到事物的 miss-v4 区分。"
+      },
+      {
+        "sense": "动词：想念不在身边的人",
+        "coveredBy": [
+          "miss-v3"
+        ],
+        "assessment": "已有覆盖；修正中文语序说明。"
+      },
+      {
+        "sense": "动词：思念故乡、国家或熟悉的地方",
+        "coveredBy": [
+          "miss-v3"
+        ],
+        "assessment": "与人物思念同属情感义；补充直接以地方为宾语的例句。"
+      },
+      {
+        "sense": "动词：怀念离开的地方、失去的事物或过去的生活",
+        "coveredBy": [
+          "miss-v3"
+        ],
+        "assessment": "与其他情感用法合并合理；补充 miss doing 的结构和例句。"
+      },
+      {
+        "sense": "动词：没注意到、没听到或没领会信息",
+        "coveredBy": [
+          "miss-v4"
+        ],
+        "assessment": "常见且原稿例句成立；现有来源片段未直接列出，移除不成立的来源引用。"
+      },
+      {
+        "sense": "可数名词：一次未命中",
+        "coveredBy": [
+          "miss-n1"
+        ],
+        "assessment": "已有两个自然例句及 hit、near miss 的语境说明，保留。"
+      },
+      {
+        "sense": "大写 Miss：姓名前的女性称谓及部分学校中的教师呼语",
+        "coveredBy": [
+          "miss-n2"
+        ],
+        "assessment": "从低频栏移入常用义，补充一般称谓及单独称呼教师的例句。"
+      },
+      {
+        "sense": "小写 miss：对年轻女性的旧式呼语",
+        "coveredBy": [
+          "miss-n3"
+        ],
+        "assessment": "原稿遗漏；补入低频栏并说明语域。"
+      },
+      {
+        "sense": "小写可数名词 miss：年轻姑娘",
+        "coveredBy": [
+          "miss-n4"
+        ],
+        "assessment": "原稿遗漏；补入低频栏，标明旧式表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-miss\",\"title\":\"Oxford Learner’s Dictionaries: miss\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/miss_1\",\"supports\":[\"动词 miss 的错过、没击中、察觉不到和想念等常见用法\",\"名词 miss 表示未命中，以及 Miss 作称谓的用法\",\"misses、missing、missed 等词形信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-miss\",\"title\":\"Wiktionnaire：miss（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/miss#Anglais\",\"supports\":[\"动词 miss 的错过、未命中、察觉缺失及想念用法，以及 be missing 的不见、缺少表达\",\"名词 miss 表示一次未命中、小写 miss 的呼语和年轻姑娘义，以及大写称谓 Miss 的区别\",\"读音、规则变化提示及动词与称谓的不同来源\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"元音 /ɪ/ 像 sit 中的短元音；词尾 /s/ 清晰，不读成长元音。\"",
+        "valueJson": "\"元音 /ɪ/ 与 sit 中的元音相同，不读成 /iː/；词尾 /s/ 是清辅音，不读成 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"对照 miss—missed—missed；过去式和过去分词都双写 s。\"",
+        "valueJson": "\"对照 miss—missed—missed：原形已经有两个 s，过去式和过去分词直接加 -ed，不再增加 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可表示错过、没打中、察觉不到或想念；作名词时也可表示未命中。\"",
+        "valueJson": "\"动词可表示错过、没打中、没注意到、发现某人或某物不在以及想念；可数名词 a miss 表示一次未命中。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"因迟到或没有赶上而错过交通工具、活动、机会等。\"",
+        "valueJson": "\"没有赶上交通工具，未能参加活动或上课，或未能抓住机会；原因不一定是迟到。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常接错过的事物，如 bus、class 或 chance。\"",
+        "valueJson": "\"直接接错过或未参加的对象，如 bus、class、meeting 或 chance；miss school 可表示缺课。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-v1-ex3\",\"senseId\":\"miss-v1\",\"en\":\"Owen missed two days of school because he had a fever.\",\"zh\":\"欧文因为发烧缺了两天课。\",\"note\":\"miss school 可表示因病等原因缺课，不一定是迟到。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/zh",
+        "expectedValueJson": "\"迟到，没赶上\"",
+        "valueJson": "\"迟到\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调时间上迟到；miss 强调结果是没赶上或错过。\"",
+        "valueJson": "\"强调比规定时间晚到；迟到后仍可能参加活动的一部分，miss 则强调没赶上或未参加。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"I threw the paper into the bin, but I missed.\"",
+        "valueJson": "\"I threw a ball of paper at the bin, but I missed.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/zh",
+        "expectedValueJson": "\"差一点没打中\"",
+        "valueJson": "\"差一点打中（实际没中）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/zh",
+        "expectedValueJson": "\"未达到；差一点没够到\"",
+        "valueJson": "\"未达到；未够到\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"适用于未能达到目标或标准，不一定是实物撞击。\"",
+        "valueJson": "\"表示距离不足或低于目标、标准，不保证只差一点；不能泛指各种未命中，例如球飞过目标也可能是 miss。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"因某人或某地不在身边而感到想念；也可表示怀念某种熟悉的生活或事物。\"",
+        "valueJson": "\"因与某人分开或远离某地而感到想念；也可怀念熟悉的生活、事物或以前常做的事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"英语的主语是想念的人：I miss you 表示“我想你”。不要按中文语序说 You miss me 来表达“我想你”。\"",
+        "valueJson": "\"英语的主语是想念的人：I miss you 表示“我想你”。这与中文的主宾语顺序一致；You miss me 则表示“你想我”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-v3-ex3\",\"senseId\":\"miss-v3\",\"en\":\"I miss playing football with my friends after school.\",\"zh\":\"我怀念放学后和朋友们一起踢足球的时光。\",\"note\":\"miss doing something 表示怀念以前做的事；这里不用 miss to play。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-v3-ex4\",\"senseId\":\"miss-v3\",\"en\":\"We miss our old neighbourhood now that we live in another city.\",\"zh\":\"如今住在另一座城市，我们很怀念以前的街区。\",\"note\":\"miss 也可直接接想念的地方。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"用于某地或过去生活不在身边时的思念。\"",
+        "valueJson": "\"可用来怀念以前居住的地方或过去的一段时光。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"miss doing something\",\"zh\":\"怀念做某事\",\"note\":\"表示怀念以前做、现在不能或不再做的事；后接动词的 -ing 形式。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-v5\",\"title\":\"发现……不在；察觉缺失\",\"meaning\":\"发现本应在场的人或本应在某处的东西不在。\",\"usageNote\":\"常见于否定句或 not ... until ... 结构。这里 miss 是察觉到缺失，与 miss a sign“没注意到标牌”不同；也要结合语境与“想念”义区分。\",\"examples\":[{\"id\":\"miss-v5-ex1\",\"senseId\":\"miss-v5\",\"en\":\"I didn’t miss my keys until I reached the front door.\",\"zh\":\"直到走到家门口，我才发现钥匙不在身上。\",\"note\":\"not ... until ... 表示直到……才……；这里是在发现物品不在。\"},{\"id\":\"miss-v5-ex2\",\"senseId\":\"miss-v5\",\"en\":\"Ben left the room quietly, and nobody missed him for several minutes.\",\"zh\":\"本悄悄离开了房间，好几分钟都没人察觉他不在。\",\"note\":\"离开房间的上下文说明，这里是在说有没有发现他离开。\"}],\"patterns\":[{\"en\":\"not miss someone/something until ...\",\"zh\":\"直到……才发现某人／某物不在\",\"note\":\"描述迟些时候才察觉缺席或缺失。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"not be missed\",\"zh\":\"缺席／缺失未被察觉\",\"note\":\"在描述离开或遗失的语境中可用；其他语境也可能表示“不被想念”。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"notice someone’s absence\",\"zh\":\"发现某人不在\",\"note\":\"明确说察觉到缺席，不表示情感上的想念。\"},{\"en\":\"realize something is gone\",\"zh\":\"发现某物不在了\",\"note\":\"把察觉物品缺失的意思说得更明确。\"}],\"contrasting\":[{\"en\":\"fail to notice that someone/something is missing\",\"zh\":\"没发现某人／某物不在\",\"note\":\"在察觉缺失这一语境中与本义相反。\"}],\"similarNote\":\"本义的 miss 接近 notice an absence；对象的缺失被发现了。\",\"contrastingNote\":\"not miss 在本义中可表示未察觉缺失；不能据此把所有 miss 都解释为 notice。\"},\"sourceIds\":[\"wiktionary-miss\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-missing\",\"title\":\"be missing：不见了；缺少\",\"meaning\":\"missing 是 miss 的 -ing 形式，也常作形容词，表示本应在的人或物不在、找不到，或整体中少了某一部分。\",\"usageNote\":\"be missing 描述状态；missing 在 a missing page 等短语中也可放在名词前。它与 miss a detail“没注意到细节”不同。\",\"examples\":[{\"id\":\"miss-missing-ex1\",\"senseId\":\"miss-missing\",\"en\":\"One button is missing from my coat.\",\"zh\":\"我的外套少了一颗扣子。\",\"note\":\"缺少的部分作主语，from 后接所属的整体。\"},{\"id\":\"miss-missing-ex2\",\"senseId\":\"miss-missing\",\"en\":\"Our cat has been missing since Monday.\",\"zh\":\"我们的猫从星期一起就不见了。\",\"note\":\"has been missing 表示不见的状态从过去持续到现在。\"}],\"patterns\":[{\"en\":\"be missing (from something)\",\"zh\":\"不见了；（某物中）缺少\",\"note\":\"主语是缺少或找不到的人、物；from 后可接本应在的地方或所属整体。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a missing page\",\"zh\":\"缺失的一页\",\"note\":\"missing 作形容词修饰 page。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be absent\",\"zh\":\"缺席；不存在\",\"note\":\"常用于人未到场或某种成分不存在；missing 也可强调找不到。\"},{\"en\":\"be lost\",\"zh\":\"丢失；迷路\",\"note\":\"说物品时可表示丢失；说人时还可能表示迷路，不一定是下落不明。\"}],\"contrasting\":[{\"en\":\"be present\",\"zh\":\"在场；存在\",\"note\":\"在说明人或组成部分是否在应在的位置时，与缺少、不在相对。\"}],\"similarNote\":\"absent、lost 与 missing 的侧重点不同，需按缺席、丢失或下落不明的语境选择。\",\"contrastingNote\":\"present 对应在场或存在的状态；找到失踪者这一变化还可用 be found 表达。\"},\"sourceIds\":[\"wiktionary-miss\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-n2\",\"title\":\"Miss：小姐；女教师的称谓\",\"meaning\":\"大写 Miss 是女性姓名前的称谓，传统上用于未婚女性；在英国一些学校，学生也可单独用 Miss 称呼女教师。\",\"usageNote\":\"首字母大写，通常接姓氏或全名。单独称呼教师的用法有地区差异；使用称谓时尊重本人偏好。\",\"examples\":[{\"id\":\"miss-n2-ex1\",\"senseId\":\"miss-n2\",\"en\":\"Miss Chen will lead our science club today.\",\"zh\":\"陈老师今天会带领我们的科学社团。\",\"note\":\"Miss Chen 是称谓加姓氏。\"},{\"id\":\"miss-n2-ex2\",\"senseId\":\"miss-n2\",\"en\":\"Please address the envelope to Miss Green.\",\"zh\":\"请把信封上的收件人写成格林小姐。\",\"note\":\"这里是姓名前的女性称谓。\"},{\"id\":\"miss-n2-ex3\",\"senseId\":\"miss-n2\",\"en\":\"May I open the window, Miss?\",\"zh\":\"老师，我可以打开窗户吗？\",\"note\":\"英国一些学校用大写 Miss 单独称呼女教师。\"}],\"patterns\":[{\"en\":\"Miss + surname / full name\",\"zh\":\"Miss＋姓氏／全名\",\"note\":\"姓名前的称谓首字母大写。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"Yes, Miss.\",\"zh\":\"好的，老师。\",\"note\":\"可见于英国一些学校中学生对女教师的回应。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"Ms\",\"zh\":\"女士\",\"note\":\"不说明婚姻状况的女性称谓，通常接姓氏或全名。\"},{\"en\":\"Mrs\",\"zh\":\"夫人；太太\",\"note\":\"传统上用于已婚女性；实际称呼应尊重本人偏好。\"}],\"contrasting\":[],\"similarNote\":\"Miss、Ms、Mrs 都可作女性称谓，但传统含义和使用偏好不同。\",\"contrastingNote\":\"称谓没有词义上的固定反义词。\"},\"sourceIds\":[\"wiktionary-miss\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"miss-n2\",\"title\":\"Miss（称谓）\",\"meaning\":\"放在女性姓名前的称谓，传统上用于未婚女性；也用于学校里称呼女教师。\",\"note\":\"Miss 作姓名前称谓时首字母大写，例如 Miss Chen；实际使用应尊重对方偏好的称呼。\",\"example\":{\"id\":\"miss-n2-ex1\",\"senseId\":\"miss-n2\",\"en\":\"Miss Chen will lead our science club today.\",\"zh\":\"陈老师今天会带领我们的科学社团。\",\"note\":\"学校语境中常用 Miss + 姓氏称呼女教师。\"},\"sourceIds\":[\"oxford-miss\"]}",
+        "valueJson": "{\"id\":\"miss-n3\",\"title\":\"miss：小姐（旧式呼语）\",\"meaning\":\"小写 miss 可用于直接称呼年轻女性。\",\"note\":\"这种呼语带有地区和时代色彩；对陌生人开口时，也可直接用 Excuse me。小写呼语的语域不能套用于所有大写 Miss 称谓。\",\"example\":{\"id\":\"miss-n3-ex1\",\"senseId\":\"miss-n3\",\"en\":\"Excuse me, miss. You dropped your scarf.\",\"zh\":\"打扰一下，小姐，您的围巾掉了。\",\"note\":\"这里 miss 是单独的呼语，前后用标点与句子其他部分分开。\"},\"sourceIds\":[\"wiktionary-miss\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"miss-n4\",\"title\":\"miss：年轻姑娘（旧式名词）\",\"meaning\":\"小写可数名词 miss 也可指年轻姑娘。\",\"note\":\"主要见于旧式或带特定语气的表达；现代中性叙述通常用 young woman 或 girl。\",\"example\":{\"id\":\"miss-n4-ex1\",\"senseId\":\"miss-n4\",\"en\":\"In the old novel, the young miss travels to London with her aunt.\",\"zh\":\"在那部老小说里，那位年轻姑娘和姑妈一起前往伦敦。\",\"note\":\"the young miss 指一位年轻姑娘，带有旧式叙述色彩。\"},\"sourceIds\":[\"wiktionary-miss\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"想念时别把主宾语倒过来\"",
+        "valueJson": "\"I miss you 和 You miss me：谁想念谁\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"英语中，想念的人作主语，被想念的人作宾语；中文常见语序不能直接照搬。\"",
+        "valueJson": "\"两句语法都正确。英语和中文在这里都是想念的人作主语，被想念的人作宾语；交换主宾语就会改变意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"易错：You miss me.\"",
+        "valueJson": "\"You miss me.：你想我\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"这句是“你想我”，不是“我想你”。\"",
+        "valueJson": "\"这句本身正确，表示“你想我”；主语 you 是想念的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表达“我想你”要说 I miss you，别按中文顺序说 You miss me。\"",
+        "valueJson": "\"看主语判断谁在想念：I miss you 是“我想你”；You miss me 是“你想我”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"miss-v4\"",
+        "valueJson": "\"miss-missing\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-miss\"]",
+        "valueJson": "[\"wiktionary-miss\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"misses、missed 和 missing 是 miss 的屈折变化；名词 Miss（称谓）虽然同形，但来源不同，不作为动词派生词列入词族。\"",
+        "valueJson": "\"misses、missed 和 missing 都保留 miss 原有的两个 s；missing 除作现在分词外，也常作形容词。小写名词 miss（小姐／年轻姑娘）和称谓 Miss 都与 mistress 的缩短有关，不是动词 miss 的派生词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 865,
+    "headword": "miss",
+    "meaning_zh": "v. 错过；想念；未击中\nn. 未击中",
+    "phonetic": "/mis/",
+    "pos": "",
+    "forms": []
+  }
+}

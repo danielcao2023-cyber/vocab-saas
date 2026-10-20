@@ -1,0 +1,250 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "89525abda8d9a1b1d0901ef91eb2b02f871dc9bf20ed732aac4cb4b1b823aadb",
+    "executedReviewPromptHash": "89525abda8d9a1b1d0901ef91eb2b02f871dc9bf20ed732aac4cb4b1b823aadb",
+    "reviewHash": "1f88cd2dc263641a62c64d6e816f8a5869952741c3a8e80fa76455d72d989c4b",
+    "wordId": 1249,
+    "inputHash": "4e9d1af65becbc5e1c5cf755b7c0be2fa90ea8b9363c419722d0a786a3f3b9a7",
+    "draftHash": "4f2ad59f35542336fa05183a4af5439d8d75279bafd990c50646a0817dc4d7f5",
+    "finalHash": "c80f16b0e0452e831e803dd871acfc13eda178789f001b9fef1cc4b03713ce1a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/silk#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.208Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118260,
+        "revisionId": 39920569,
+        "revisionTimestamp": "2026-10-05T20:41:26Z",
+        "sha256": "bed34d4efdc0fb43c4fa14b562857b64f7836102a58785dd1eb738c1c9142ba3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/silk",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:55:58.147Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:03:52.996Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "本义同时讲蚕丝纤维和丝绸布料，但现有两例都只展示布料。补充两句明确指纤维的原创例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0/note",
+        "message": "made of silk 说明材质，并不表示观察者一定能看出原材料。应去掉这一额外推断。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/note",
+        "message": "原有衣物例子正确；公式中的 a 应明确限于单数可数名词，避免误套到 trousers 等复数形式。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实取词源材料没有列出中古英语 silk 或古英语 sioloc；现有阶段还把来源顺序倒置。应按该条目的解释排列为拉丁语 sericum → 古诺斯语 silki → 英语 silk，并区分可能的商品贸易路线与单词传播路线。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 与各处 sourceIds",
+        "message": "Cambridge 页面未取回，不能作为这些说明的实取依据。读音、名词基本义和派生形式可改引已取回的维基词典英语词条；其未明确列出的定语功能依据专业语言知识说明，不虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的蚕丝纤维、丝绸布料两个层面，以及“丝制的”常用定语功能。修订后纤维和布料各有两句例句，定语功能保留两句；silks 的复数说明、近义限制及无固定反义词的处理可以保留。词源修正为实际材料支持的解释。来源局限是 Cambridge 页面未取回，不能据此补充或归引其他义项。",
+    "senseInventory": [
+      {
+        "sense": "名词：蚕丝，作为纤维的丝",
+        "coveredBy": [
+          "silk-n-material"
+        ],
+        "assessment": "定义已有，原例句未展示；补充两句纤维用例，与布料用法保留在同一材料义中。"
+      },
+      {
+        "sense": "名词：丝绸、丝织物，作为布料的丝",
+        "coveredBy": [
+          "silk-n-material"
+        ],
+        "assessment": "现有围巾和购买蓝色丝绸两例自然，已覆盖；材料名词通常不可数的说明正确。"
+      },
+      {
+        "sense": "定语功能／形容词用法：丝制的、丝绸制的",
+        "coveredBy": [
+          "silk-adj"
+        ],
+        "assessment": "已有两句自然例句。可以解释为名词作定语，也有词性体系将其列为形容词；无需把规范的 silk shirt 等表达判错。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"silk-n-material-ex3\",\"senseId\":\"silk-n-material\",\"en\":\"The children watched a silkworm spin silk.\",\"zh\":\"孩子们看着一条蚕吐丝。\",\"note\":\"spin silk 在这里指蚕吐丝；silk 指纤维。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"silk-n-material-ex4\",\"senseId\":\"silk-n-material\",\"en\":\"At the museum, we learned how silk is taken from cocoons.\",\"zh\":\"在博物馆里，我们了解了怎样从蚕茧中获取蚕丝。\",\"note\":\"这里的 silk 指从蚕茧取得的蚕丝纤维，尚未织成布料。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"made of silk 表示能看出原材料是丝绸。\"",
+        "valueJson": "\"be made of silk 说明围巾的材料是丝绸。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"silk 放在衣物名称前作定语，如 a silk dress、a silk scarf。\"",
+        "valueJson": "\"a 用于单数可数衣物名词前，如 a silk dress、a silk scarf；复数形式可说 silk shirts、silk trousers，不加 a。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"silk 经中古英语 silk、古英语 sioloc 等形式传入；给出的词源条目还提到英语形式经诺斯语 silki 关联到拉丁语 sericum（丝）。这些是历史词源信息，不等于现代单词可拆成这些部分。\"",
+        "valueJson": "\"silk 的一种词源解释是：拉丁语 sericum（丝）经古诺斯语 silki 传入英语。丝这种商品可能曾通过汉萨贸易的海上路线输入。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"sioloc\",\"meaning\":\"词源条目列出的早期英语形式，指丝。\"},{\"language\":\"古诺斯语\",\"form\":\"silki\",\"meaning\":\"词源条目所列的传入形式，指丝。\"},{\"language\":\"拉丁语\",\"form\":\"sericum\",\"meaning\":\"词源条目所列的相关词，指丝。\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"sericum\",\"meaning\":\"丝。\"},{\"language\":\"古诺斯语\",\"form\":\"silki\",\"meaning\":\"丝。\"},{\"language\":\"英语\",\"form\":\"silk\",\"meaning\":\"丝；丝绸。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史来源关系不表示现代英语 silk 由 sil 加 k 构成；本条目所列形式与来源关系依词源条目概述。\"",
+        "valueJson": "\"历史词形之间的联系不等于现代构词，不能把 silk 拆成 sil + k。有关汉萨海上贸易的说法指商品的可能传播途径，不能据此认定单词也沿同一路线传入。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-silk\"]",
+        "valueJson": "[\"wiktionary-silk-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-silk\"]",
+        "valueJson": "[\"wiktionary-silk-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-silk\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-silk\"]",
+        "valueJson": "[\"wiktionary-silk-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-silk\"]",
+        "valueJson": "[\"wiktionary-silk-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary：silk（English entry）\"",
+        "valueJson": "\"法语维基词典：silk（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"词源条目所列的历史来源概述\",\"silky 与 silken 作为相关派生形式\"]",
+        "valueJson": "[\"名词“丝；丝绸”的基本义与 /sɪlk/ 读音\",\"拉丁语 sericum、古诺斯语 silki 与英语 silk 的词源解释\",\"silky 与 silken 作为相关派生形式\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-silk\",\"title\":\"Cambridge Dictionary：silk\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/silk\",\"supports\":[\"silk 的词性、读音与基本含义\",\"silk 作名词及名词定语的常见用法\",\"silky、silken 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1249,
+    "headword": "silk",
+    "meaning_zh": "n. 丝, 绸, 绸锻类, 丝织品\nadj. 丝的, 丝织的",
+    "phonetic": "/silk/",
+    "pos": "",
+    "forms": []
+  }
+}

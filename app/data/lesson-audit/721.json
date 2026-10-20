@@ -1,0 +1,229 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2cda7ee20a47165fb6b8589998aee17af69a7ceba3152a5ec74e9b7f841266e7",
+    "executedReviewPromptHash": "2cda7ee20a47165fb6b8589998aee17af69a7ceba3152a5ec74e9b7f841266e7",
+    "reviewHash": "17a5df1b6fca98811ae62328670856345107245fefffdad26289771f122832e5",
+    "wordId": 721,
+    "inputHash": "f058ce110e8e2a35925c1c405f5fba76d23a3581e4fb7ec3fb644bde59d0f410",
+    "draftHash": "5d318dfd0f15ad9db269165fc305efcae76b891ca6f5746297914896bce5aaf9",
+    "finalHash": "1486b65471e1f6ebfd74dba0b02daff13b29b4084d8a8490853a1b8e61a7f7af",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/jeans#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:49.895Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118777,
+        "revisionId": 39720834,
+        "revisionTimestamp": "2026-08-01T01:39:41Z",
+        "sha256": "fb5a6e1bfda6be97f4ab6e6b7309b4d9efbd990a66a199929abb6f5ed4a1d665",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/Jean",
+        "section": "jean cloth noun, not the personal-name entry",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "d8921b38c233bad6bf98d660a76faf0ecd00590a87c3f7a572451ef7b3b18dfd",
+        "summaryAndSupportsWordCount": 67,
+        "sha256": "d8921b38c233bad6bf98d660a76faf0ecd00590a87c3f7a572451ef7b3b18dfd",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/721.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/jeans",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:48:10.014Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:56:56.809Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "“用较结实的布料制成的休闲长裤”范围过宽，不能区别牛仔裤与其他休闲裤，应明确通常使用牛仔布。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "不能根据美式音标未标长音符号，推断美式元音较短。这里主要是音标标记习惯不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段仍采用“蓝色染料→blue jeans→jeans”的路线，与已取得的 jean 布料名词源材料冲突。应改为法语布料名背景下的英语 jean→jeans 发展，并只引用支持这一路线的来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 内容未能取得，却承担发音、释义和语法的引用。应移除该来源，将相关 sourceIds 改指已取得的 Wiktionary 英语词条，并调整其 supports。法语是该页面的解释语言，不是 jeans 在本课中的语言。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "原注已限定比较范围，但 trousers 是上位词，denim 是材质词，shorts 也不是 jeans 的反义词。保留这些区别说明，避免用近义及反向条目呈现它们。"
+      }
+    ],
+    "coverageAssessment": "已核对现代核心义“牛仔裤”、复数名词功能及 a pair of jeans 的数量和主谓一致用法。两条核心例句自然，翻译与 senseId 正确，无须强拆多个义项。“工装裤”不应扩张为任意工作裤；jean 的历史布料义属于词源背景。主要局限是 Cambridge 页面不可用，相关引用已改由现有英语词条承接；冲突的词源链已修正。",
+    "senseInventory": [
+      {
+        "sense": "牛仔裤；表示衣物的复数名词",
+        "coveredBy": [
+          "jeans-clothing"
+        ],
+        "assessment": "核心义覆盖完整，穿着和购买各有一个具体例句；另有 jeans are 与 a pair of jeans is 的正确对照。释义需明确牛仔布材质，避免泛化为所有结实布料制成的休闲裤。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用较结实的布料制成的休闲长裤，通常指牛仔裤。\"",
+        "valueJson": "\"牛仔裤：通常用牛仔布（denim）制成的长裤。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美发音相近；美式元音有时较短。\"",
+        "valueJson": "\"英美读音基本一致；美式音标有时写作 /dʒinz/，不标元音长音符号。词尾都读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_jeans\"]",
+        "valueJson": "[\"wiktionary_jeans\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_jeans\"]",
+        "valueJson": "[\"wiktionary_jeans\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_jeans\"]",
+        "valueJson": "[\"wiktionary_jeans\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"trousers\",\"zh\":\"裤子\",\"note\":\"泛指裤子；英式英语常用 trousers，美国英语常说 pants。jeans 特指牛仔裤。\"},{\"en\":\"denim\",\"zh\":\"牛仔布\",\"note\":\"指常用来制作牛仔裤的布料，不是裤子本身。\"}],\"contrasting\":[{\"en\":\"shorts\",\"zh\":\"短裤\",\"note\":\"只在裤长这一点上与通常为长裤的 jeans 对照；二者不是全面反义词。\"}],\"similarNote\":\"trousers 和 pants 是更宽泛的裤子名称；denim 是布料名称。\",\"contrastingNote\":\"shorts 可按裤长作有限对照，并非 jeans 的严格反义词。\"}",
+        "valueJson": "{\"similar\":[],\"contrasting\":[],\"similarNote\":\"相关词要分清：trousers（英式）和 pants（美式）是范围更宽的长裤名称；denim 指牛仔布，与 jeans 的词义和数的用法不同。\",\"contrastingNote\":\"jeans 没有固定的反义词。shorts 指短裤，也包括牛仔短裤；这是裤长上的比较，不是反义关系。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"jeans 现指牛仔裤；其历史与 jean 这种斜纹棉布名称有关。牛仔布并非天生只有蓝色。\"",
+        "valueJson": "\"jeans 的历史与英语布料名 jean 有关，jean 指斜纹棉布，其名称可追溯到与意大利热那亚有关的法语布料名。jeans 后来成为常用复数形式，并进一步用于指用这种布料制成的裤子。这种布料本来并不限于蓝色。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"bleu de Gênes\",\"meaning\":\"与热那亚有关的蓝色染料名称；英语 blue jeans 的词源说明与它相关。\"},{\"language\":\"英语\",\"form\":\"blue jeans\",\"meaning\":\"用这种布料制成的裤子名称。\"},{\"language\":\"英语\",\"form\":\"jeans\",\"meaning\":\"由 blue jeans 缩短而来的常用名称。\"}]",
+        "valueJson": "[{\"language\":\"英语\",\"form\":\"jean\",\"meaning\":\"斜纹棉布的名称。\"},{\"language\":\"英语\",\"form\":\"jeans\",\"meaning\":\"先作为该布料名的常用复数形式，后来用于指用这种布料制成的裤子。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary_jeans\",\"etymonline_jean\"]",
+        "valueJson": "[\"etymonline_jean\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"jeans 的历史词源说明及英美发音线索\"]",
+        "valueJson": "[\"英语 jeans 的牛仔裤义、复数名词用法及 a pair of jeans 的表达\",\"jeans 的英美发音\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_jeans\",\"title\":\"Cambridge Dictionary: jeans\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/jeans\",\"supports\":[\"jeans 的词性、常用含义、发音及复数用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 721,
+    "headword": "jeans",
+    "meaning_zh": "n. 工装裤, 牛仔裤",
+    "phonetic": "/dʒi:nz/",
+    "pos": "",
+    "forms": []
+  }
+}

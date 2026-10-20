@@ -1,0 +1,242 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cb5c3a2e15988b8969668178d16c9151c54268d792ead8e77abf6ced2950b742",
+    "executedReviewPromptHash": "cb5c3a2e15988b8969668178d16c9151c54268d792ead8e77abf6ced2950b742",
+    "reviewHash": "b26beb23b879a0e8842da5bbf76eac23ac7997493c2756bbd13896e446746de4",
+    "wordId": 259,
+    "inputHash": "0dd98b3a7847732b2d2b9df38c0ee0a314ce037512df852b1332a6b4f3cc3c56",
+    "draftHash": "bcc53f91817efdebb94152b08b4832829522a58eb2d9545dbfbd01283a3579ba",
+    "finalHash": "a0a8edd92236c82a7ff74c50d7bc0290bf623c8f295121df69536a4b9157e69d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/China",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:59:08.593Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/China#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.910Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 49716,
+        "revisionId": 39762649,
+        "revisionTimestamp": "2026-08-03T04:11:15Z",
+        "sha256": "75e3d9da2f8d5ec95759d0db640d42a4710d2aee73133b6a0e7d3926b16f120a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:39:17.110Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/confusions/0/items/0/example；/confusions/1/items",
+        "message": "共五个例句缺少必填的 note 字段；例句本身语法正确，补齐说明即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段顺序与历史传入方向相反。应保留葡萄牙语到英语的顺序，把印地语、梵语及可能与“秦”有关的更早关系放入概述，避免画成确定的连续传递链。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1/kind",
+        "message": "the history of China 是名词短语搭配，不是句型。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/formation",
+        "message": "构词说明应交代去掉 China 末尾的 a，再加 -ese，明确实际拼写 Chinese。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "笼统评价“旧式音标不够准确”不利于学习，宜直接说明音节及双元音。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources",
+        "message": "Oxford 页面不在实际取得的材料中，不能据此确认其支持范围。改用已取得的法语维基词典英语词条，并把来源说明限定为实际包含的内容。"
+      }
+    ],
+    "coverageAssessment": "已核对唯一明确的核心义 China（国家专名“中国”），两个自然英中例句及大小写、冠词、介词和主谓一致说明均成立。小写 china 与 Chinese 作为关联词补充合理，不应算作 China 的新增核心义；其完整用法依据专业语言知识核对，取得的词条仅列出这些关联词。词源已按材料保留确定程度并修正箭头顺序；全部缺失的必填字段均已补齐。",
+    "senseInventory": [
+      {
+        "sense": "China（专有名词）：中国",
+        "coveredBy": [
+          "s1-country"
+        ],
+        "assessment": "实际取得的英语词条唯一明确释义；已有两个自然英中例句，核心用法覆盖充分，无须强行分义。"
+      },
+      {
+        "sense": "关联词 china（小写普通名词）：瓷器、瓷制餐具",
+        "coveredBy": [
+          "s2-material"
+        ],
+        "assessment": "释义、不可数用法和例句正确，适合作大小写辨析补充；不是大写 China 的第二个核心义。取得的条目仅将其列为派生词，未展开定义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧式音标写法不够准确，现代常见写法为 /ˈtʃaɪ.nə/。\"",
+        "valueJson": "\"分成两个音节 /tʃaɪ/ 和 /nə/；/tʃ/ 是一个辅音，/aɪ/ 是双元音。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in China 表示“在中国”，China 前不加 the。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"China 作主语时用单数谓语 is；be famous for 表示“以……闻名”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"China 是国家名；in Asia 表示“在亚洲”。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"visit 后直接接 China；is visiting 可表示已经安排好的将来行程。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"china cups 指瓷杯；此处 china 表示材料，通常小写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"China 的历史词源常被追溯到葡萄牙语 China，并可能与梵语、印地语中表示中国的名称有关；更早是否源自古汉语“秦”仍有不确定性。\"",
+        "valueJson": "\"英语 China 来自葡萄牙语 China；葡萄牙语名称很可能源于印地语 चीन（Cīn，意为“中国”）和梵语 चीन（cīna，意为“中国人”）的相关名称。梵语名称更早可能与古汉语“秦”（秦国之名）有关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"葡萄牙语\",\"form\":\"China\",\"meaning\":\"英语 China 可能经由葡萄牙语传入。\"},{\"language\":\"印地语、梵语\",\"form\":\"चीन / Cīn、cīna\",\"meaning\":\"相关名称表示中国或中国人。\"},{\"language\":\"古汉语（可能来源）\",\"form\":\"秦\",\"meaning\":\"有观点认为更早与秦有关，但这条关系并非确定。\"}]",
+        "valueJson": "[{\"language\":\"葡萄牙语\",\"form\":\"China\",\"meaning\":\"中国。\"},{\"language\":\"英语\",\"form\":\"China\",\"meaning\":\"中国。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这些阶段反映一种可能的历史传递关系，不是现代英语单词的拼写拆分；尤其“秦”是否为更早来源仍有争议。\"",
+        "valueJson": "\"更早的传递关系带有不确定性，不能把印地语、梵语排成已经确定的连续传递链，尤其不能把“源自秦”当作定论；这些历史来源也不是现代英语的拼写拆分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"s2\"]",
+        "valueJson": "[\"s1\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"China 的派生形式，添加 -ese。\"",
+        "valueJson": "\"与 China 对应，使用表示国籍或语言的后缀 -ese；拼写上去掉 China 末尾的 a，再加 -ese：Chin- + -ese → Chinese。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"s1\",\"title\":\"Oxford Learner’s Dictionaries：China\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/china\",\"supports\":[\"China 的词性、国家名用法及读音\",\"Chinese 的相关用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"s1\",\"title\":\"Wiktionnaire：China（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/China#Anglais\",\"supports\":[\"China 的专有名词词性、国名义和音标\",\"相关词 Chinese、china 的列举\",\"葡萄牙语来源及更早词源关系的不确定性\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"s2\",\"title\":\"Wiktionary：China（English）\",\"url\":\"https://fr.wiktionary.org/wiki/China#Anglais\",\"supports\":[\"所列可能的历史传递关系及其不确定性\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 259,
+    "headword": "China",
+    "meaning_zh": "n. 中国",
+    "phonetic": "/'tʃainә/",
+    "pos": "",
+    "forms": []
+  }
+}

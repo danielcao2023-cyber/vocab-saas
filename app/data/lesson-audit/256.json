@@ -1,0 +1,295 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4015d683c793751f603c33c641c281a48d8e6a58eeaf9cfbd9f5582efa7aabb4",
+    "executedReviewPromptHash": "4015d683c793751f603c33c641c281a48d8e6a58eeaf9cfbd9f5582efa7aabb4",
+    "reviewHash": "4629983eaaa293ac8876847c0296702627878517f3168f59a40fad5f3c5f7c6f",
+    "wordId": 256,
+    "inputHash": "cd554d45b5e17323c29f8d3824ba335ea37675c11aabb79d6df3d3080ccfc1bb",
+    "draftHash": "2e9fe91c4dd9b466b6f759925d4c4dbf0343ec07b856fe55d1cd33ff260e718c",
+    "finalHash": "213c18130ccb2f482e94487533f8b6262024fc91d6b8e9bcbb996d232e0111b8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/chess",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:52:40.422Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/chess#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.909Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115972,
+        "revisionId": 39658156,
+        "revisionTimestamp": "2026-07-07T20:58:26Z",
+        "sha256": "dda7482c7336d0a105eca88fc8e317de45d6b6d405e78d2905c2be2c38ea18e4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/chess",
+        "section": "chess (noun)",
+        "supports": [
+          "French plural source",
+          "Chessmen and game meanings",
+          "Relation to check"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "eecfeac712ca09a7d3b3aaeb3f3207280a43998dcc056809263e8bc717717a3b",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "eecfeac712ca09a7d3b3aaeb3f3207280a43998dcc056809263e8bc717717a3b",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/256.json"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:44:02.795Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "古法语 esches 曾指棋子，不能据此认定现代英语 chess 可泛指棋子。The chess on the board was made of wood. 不是这一含义的自然表达；应删除该附加义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 不在实际来源材料中，Cambridge 获取失败，不能承担当前引用的证据作用。Wiktionary 的英语词条支持国际象棋及不可数用法，不支持所称现代“棋子泛指义”。须调整来源及关联 sourceIds。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "不能笼统说 chess 与 checkers/draughts 的棋盘不同：国际象棋与英美常见西洋跳棋可以使用相同格数的棋盘。应以棋子和规则区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1、/senses/0/relatedExpressions、/confusions/0",
+        "message": "checkers/draughts 统一译为“西洋跳棋”更精确，并说明它与常见六角星形棋盘上的 Chinese checkers 不同，避免中文“跳棋”造成混淆。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "普通话“吃”的声母与 /tʃ/ 并不相同；词尾 /s/ 宜说明为摩擦音，避免用“送气”混淆发音方式。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1",
+        "message": "has a chess club after class 可以理解，但把俱乐部的存在与活动时间混在一起。改用 meets 表达活动时间更自然，中文也应相应调整。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的现代不可数名词义、常用搭配及名词修饰用法；s1 覆盖唯一可确立的现代核心义，并保留两条例句，无须把游戏、运动和活动拆义。删除由古法语历史释义误推的现代“棋子”义。现有词源及 chessboard、chess piece 的构词说明可保留。来源支持限于已获取内容；未将不可用的 Cambridge 或未提供的 Oxford 当作核验依据。",
+    "senseInventory": [
+      {
+        "sense": "名词，通常不可数：国际象棋这一游戏、运动或活动",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义已覆盖。play chess、a game of chess 和 chess club 属于同一义的不同用法。法语释义及古法语词源均不足以另立现代“棋子”“失败”或“将军”义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"区分 chess（国际象棋）和 checkers（跳棋）。\"",
+        "valueJson": "\"区分 chess（国际象棋）与 checkers（美式）/ draughts（英式）所指的西洋跳棋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头 /tʃ/ 像中文“吃”的声母；结尾 /s/ 清晰送气。\"",
+        "valueJson": "\"开头 ch 读 /tʃ/，先短暂阻住气流再摩擦放开；词尾 ss 读一个清辅音 /s/，不要加额外元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/en",
+        "expectedValueJson": "\"Our school has a chess club after class.\"",
+        "valueJson": "\"Our school's chess club meets on Friday afternoons.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"我们学校放学后有一个国际象棋俱乐部。\"",
+        "valueJson": "\"我们学校的国际象棋俱乐部每周五下午开展活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/zh",
+        "expectedValueJson": "\"英式英语 draughts、美式英语 checkers：跳棋\"",
+        "valueJson": "\"英式英语 draughts、美式英语 checkers：西洋跳棋\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"都是棋类游戏；棋盘和规则不同，不能替换 chess。\"",
+        "valueJson": "\"都是棋类游戏，但棋子和规则不同，名称不能互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/zh",
+        "expectedValueJson": "\"跳棋\"",
+        "valueJson": "\"西洋跳棋\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"ls1\",\"title\":\"国际象棋棋子（集合或泛指）\",\"meaning\":\"在讲棋局时，chess 有时可泛指棋子或棋子这一类东西。\",\"note\":\"初学阶段优先掌握“国际象棋”这一常见意思。\",\"example\":{\"id\":\"ex3\",\"senseId\":\"ls1\",\"en\":\"The chess on the board was made of wood.\",\"zh\":\"棋盘上的国际象棋棋子是木制的。\",\"note\":\"此处 chess 指棋子整体；具体一枚棋子常说 a chess piece。\"},\"sourceIds\":[\"src-wiktionary\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"它们都是棋类游戏名称，但指不同游戏。\"",
+        "valueJson": "\"chess 是国际象棋；checkers（美式）/ draughts（英式）是西洋跳棋。西洋跳棋也不同于常见六角星形棋盘上的跳棋（Chinese checkers）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"跳棋；名称因英语地区而异。\"",
+        "valueJson": "\"西洋跳棋；名称因英语地区而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"他们午餐时下了跳棋。\"",
+        "valueJson": "\"他们午餐时下了西洋跳棋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"这里指跳棋，不是国际象棋。\"",
+        "valueJson": "\"这里指西洋跳棋，不是国际象棋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 chess 是国际象棋；美式英语常说 checkers，英式英语常说 draughts，二者都是跳棋。\"",
+        "valueJson": "\"chess 是国际象棋；西洋跳棋在美式英语中通常叫 checkers，在英式英语中通常叫 draughts。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/title",
+        "expectedValueJson": "\"Wiktionary：chess\"",
+        "valueJson": "\"法语维基词典：chess 英语词条\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"chess 的棋子泛指用法\",\"chessboard、chess piece 等相关表达\"]",
+        "valueJson": "[\"英语词头拼写、国际象棋义及不可数标记\",\"chessboard、chess piece 等相关表达\",\"checkers（美式）与 draughts（英式）等棋类名称\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary：chess\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/chess\",\"supports\":[\"chess 的常见释义与用法\",\"checkers、draughts 等棋类词汇对照\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries：chess\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/chess\",\"supports\":[\"词性、国际象棋常见义及用法\",\"不可数用法与 play chess 搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 256,
+    "headword": "chess",
+    "meaning_zh": "n. 国际象棋",
+    "phonetic": "/tʃes/",
+    "pos": "",
+    "forms": []
+  }
+}

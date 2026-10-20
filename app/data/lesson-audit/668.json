@@ -1,0 +1,548 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "972df00209a7e06e41c0264022d8c22159a851bb65bd7f1e22968a4ccbe01045",
+    "executedReviewPromptHash": "972df00209a7e06e41c0264022d8c22159a851bb65bd7f1e22968a4ccbe01045",
+    "reviewHash": "8e0ae9580fda66abaad1b3f1d9a90b7a2af37a3f60ed307ff5d82db2dc53946d",
+    "wordId": 668,
+    "inputHash": "6bda8c14d705ecb419e4527daa116485aa0bd823f8a91e62b56e97e891721d48",
+    "draftHash": "d650ddd16f7fc926aae91fa8d78ba4d9101a6a5da979f4633e39e2df9739aa3a",
+    "finalHash": "d326ac98d65d15453cafb55023aeb938e9244be9e2e29dfa4be765d961ca9f2e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/host",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:28:23.594Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/host#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.837Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 250628,
+        "revisionId": 39760519,
+        "revisionTimestamp": "2026-08-03T00:37:48Z",
+        "sha256": "b38abe3107c9879005684de17f5cdc2d8883e99b0b28a037bc2008757859acd4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/host",
+        "section": "host etymology",
+        "supports": [
+          "Distinguish host/guest, army/multitude and religious homographs"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:18:15.010483+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "8f8723cd141ce3a3a2fde621eb4c871a74976881598a0ee18029054a80d1e9a6",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "8f8723cd141ce3a3a2fde621eb4c871a74976881598a0ee18029054a80d1e9a6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/668.json"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:42:10.670Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/5/note；/wordFamily/1/spellingNote",
+        "message": "host 没有词尾 e；hosting 是直接加 -ing，不能解释为删 e。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 正文未取得，不能承担现有内容的证据引用。应改引已取得的 Wiktionnaire 英语词条；“众多”义可关联 Etymonline 的词源摘要。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "stages 会按数组顺序显示历史箭头，原稿把古法语排在拉丁语之前，方向颠倒。军队／众多与宗教同形词的独立来源也应在 summary 中分别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "host 强调接待身份，不能一般等同旅馆或餐馆经营者；原旅馆例句也未说明老板身份。“host a guest”是动词搭配，不宜放在名词义的搭配栏。owner 亦宜换为限定旅店语境的 innkeeper。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1",
+        "message": "Our class host 缺少具体活动，角色表达生硬；应明确是班级知识竞赛的主持人。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "“主持节目”和“主办／承办活动”是需要区分的常用功能，原稿每项只有一个例句。应拆分并各补足两例，分别配置近义表达和角色对照；attend 也不是 host 的严格反义词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "已取得词条明确列有 héberger，即接待并提供住宿。原稿仅在释义中提及住宿，缺少对应例句和搭配，应补为明确的教学义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1；/forms；/wordFamily/0",
+        "message": "hostess 仅作为女性变体介绍，遗漏餐馆迎宾、安排座位的常用职业义；“只有需要指出女性身份才用 hostess”也过于绝对。应补充该义及 hostesses 的实际拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "英美差别涉及双元音的常见实际读法，不能主要解释成音标写法不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "名词 host 不只表示人；仅凭“位于主语后面”也不能可靠判断词性。应以完整句法结构和具体语境判断。"
+      }
+    ],
+    "coverageAssessment": "已核对所给英语词条中的住宿提供者、待客主人、主持人、军队、圣餐面饼及接待／住宿／主持等动词义，并核对 Etymonline 对军队／众多同形词的区分。修订后，待客、住宿、主持和承办分别教学，各核心义均有至少两条英中例句；hostess 的餐馆职业义依据通行语言知识补充，不虚列词典支持。军队和圣餐面饼属于非初中核心义，仅在词源中辨识，未扩展为带例句的教学义。Cambridge 未取得正文，不再作为证据引用。",
+    "senseInventory": [
+      {
+        "sense": "n. 接待客人或提供住宿的主人；东道主",
+        "coveredBy": [
+          "668-n1"
+        ],
+        "assessment": "合并语义相近的住宿接待者和待客主人；修正旅店老板的身份表达，并区分接待角色与所有权。"
+      },
+      {
+        "sense": "n. 节目主持人；活动主持或带领者",
+        "coveredBy": [
+          "668-n2"
+        ],
+        "assessment": "已有两个例句；明确第二例的班级知识竞赛场景。"
+      },
+      {
+        "sense": "n. hostess：女主人；女主持人",
+        "coveredBy": [
+          "668-n1",
+          "668-n2"
+        ],
+        "assessment": "属于相关主人、主持人义的女性称呼，无须机械另拆语义；保留构词说明并修正过度绝对的选择建议。"
+      },
+      {
+        "sense": "n. host／hostess：餐馆迎宾、安排座位的接待员",
+        "coveredBy": [
+          "668-n4"
+        ],
+        "assessment": "补充常用职业义及两个例句，明确不等于餐馆老板或点单上菜的服务员。"
+      },
+      {
+        "sense": "v. 接待；做东招待",
+        "coveredBy": [
+          "668-v1"
+        ],
+        "assessment": "保留人作宾语和聚会作宾语的两例；与专门强调住宿的用法分开。"
+      },
+      {
+        "sense": "v. 接待并提供住宿",
+        "coveredBy": [
+          "668-v4"
+        ],
+        "assessment": "补足 héberger 对应功能，新增两个明确涉及住宿的例句。"
+      },
+      {
+        "sense": "v. 主持节目或现场活动",
+        "coveredBy": [
+          "668-v2"
+        ],
+        "assessment": "从原合并义中独立出来，以广播节目和颁奖典礼两例说明主持工作。"
+      },
+      {
+        "sense": "v. 主办；承办活动",
+        "coveredBy": [
+          "668-v3"
+        ],
+        "assessment": "新增独立教学义及两个例句，区分承办方、筹备者和参加者。"
+      },
+      {
+        "sense": "n. 众多；大量，常见于 a host of",
+        "coveredBy": [
+          "668-n3"
+        ],
+        "assessment": "保留为次要用法，例句与搭配正确；改引涉及 multitude 同形词的词源来源。"
+      },
+      {
+        "sense": "n. 军队；大军",
+        "coveredBy": [],
+        "assessment": "词典已列，但属于古老或文学用法，非初中核心；在词源 summary 中单独说明来源，不新增教学例句。"
+      },
+      {
+        "sense": "n. 圣餐面饼",
+        "coveredBy": [],
+        "assessment": "宗教专门义，非初中核心；在词源 summary 中说明为另一来源的同形词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"host 作名词，常指做东招待客人的主人，也指节目或活动的主持人；作动词，表示招待来客或主持节目、活动。\"",
+        "valueJson": "\"host 作名词可指接待客人的主人、东道主或主持人；作动词可指招待、提供住宿、主持节目或承办活动。hostess 通常是女性称呼；餐馆里的 host/hostess 还可指迎宾、安排座位的接待员。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式主要在元音写法上不同。\"",
+        "valueJson": "\"常见英式读法中的 /əʊ/ 与常见美式读法中的 /oʊ/，主要区别在双元音的起始音；host 在两种读法中都只有一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"可指女主人或女主持人；现代英语常用 host 泛指各种性别的主人或主持人。\"",
+        "valueJson": "\"可指女主人、女主持人，也常指餐馆女迎宾接待员；host 可用作不分性别的称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e 后加 -ing。\"",
+        "valueJson": "\"host 以 t 结尾，直接加 -ing，写作 hosting；不删字母，也不双写 t。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"hostess 的复数\",\"form\":\"hostesses\",\"ipa\":\"/ˈhəʊstəsɪz/；美 /ˈhoʊstəsɪz/\",\"note\":\"hostess 以 -ss 结尾，复数加 -es，写作 hostesses；新增词尾读 /ɪz/。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"招待客人、做东的人；也可指接待来客的旅馆或餐馆经营者。\"",
+        "valueJson": "\"招待客人或提供住宿的主人；也可指承担接待工作的机构或国家。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常与 house、party、dinner 等场合相关；说旅馆经营者时，要看具体上下文。\"",
+        "valueJson": "\"常用于聚会、用餐和住宿场景。在旅店语境中，也可用来称呼接待住客的老板；host 强调接待身份，本身不说明谁拥有旅店。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/en",
+        "expectedValueJson": "\"The hotel host showed us to our room.\"",
+        "valueJson": "\"Our host, who owned the small inn, made breakfast for us.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"旅馆的接待主人把我们带到了房间。\"",
+        "valueJson": "\"接待我们的那位小旅店老板给我们做了早餐。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"具体身份由旅馆场景说明。\"",
+        "valueJson": "\"who owned the small inn 点明其老板身份；host 本身强调接待客人的角色。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"host a guest\",\"zh\":\"招待一位客人\",\"note\":\"作为名词时可说 a host to guests；host a guest 则是动词用法。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"play host to someone\",\"zh\":\"接待某人；做某人的东道主\",\"note\":\"host 在这个表达中是名词；to 后接被接待的人。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"owner\",\"zh\":\"业主；所有者\",\"note\":\"强调拥有某物，不一定负责招待客人。\"}",
+        "valueJson": "{\"en\":\"innkeeper\",\"zh\":\"小旅店老板\",\"note\":\"强调经营小旅店的人；在旅店语境中可能与 host 指同一人，不能替换聚会中的 host。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"host 的核心是招待来客；owner 只说明所有权。\"",
+        "valueJson": "\"host 与 hostess 都可表示接待客人的主人；在小旅店语境中，innkeeper 与 host 可能指同一人，前者强调经营身份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"Our class host asked each team a question.\"",
+        "valueJson": "\"The host of our class quiz asked each team a question.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"我们班的主持人问了每个小组一个问题。\"",
+        "valueJson": "\"我们班知识竞赛的主持人问了每个小组一个问题。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"host 可指班级活动主持人。\"",
+        "valueJson": "\"of our class quiz 明确说明主持的是哪项班级活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"邀请并接待客人，通常安排聚会、用餐或住宿。\"",
+        "valueJson": "\"接待客人、做东招待，常涉及聚会或用餐。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 host + 人，也可用 host a party/dinner 表示主办招待活动。\"",
+        "valueJson": "\"常用 host + 人表示接待来客，也可用 host a party/dinner 表示做东举办聚会或宴请；强调提供住宿的用法另见“接待并提供住宿”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"主持；主办\"",
+        "valueJson": "\"主持节目或现场活动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"负责引导节目或活动，也可指某地举办一项活动。\"",
+        "valueJson": "\"担任电视、广播节目或现场活动的主持人，介绍内容并引导流程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"host a show 表示主持节目；host an event/conference 表示主办活动或会议。\"",
+        "valueJson": "\"此义强调主持人的工作，如介绍内容、串联流程。host an event 也可能表示主办活动，需结合主语的角色与上下文区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"668-v2-e2\",\"senseId\":\"668-v2\",\"en\":\"Our town hosted a sports festival last summer.\",\"zh\":\"我们镇去年夏天举办了体育节。\",\"note\":\"主语是地点时，表示该地承办活动。\"}",
+        "valueJson": "{\"id\":\"668-v2-e2\",\"senseId\":\"668-v2\",\"en\":\"Maya hosted the school awards ceremony and introduced each speaker.\",\"zh\":\"玛雅主持了学校的颁奖典礼，并逐一介绍了发言人。\",\"note\":\"介绍发言人的动作明确说明这里是主持典礼。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0/note",
+        "expectedValueJson": "\"host 后接节目，表示负责节目内容和流程。\"",
+        "valueJson": "\"host 后接节目，表示担任主持人，介绍内容并串联流程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"host an event in a place\",\"zh\":\"在某地举办活动\",\"note\":\"主语通常是人或机构；地点也可作主语，表示承办。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"host a ceremony\",\"zh\":\"主持典礼\",\"note\":\"在主持人的语境中表示串联现场流程；同一搭配也可能表示主办，需结合上下文。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0",
+        "expectedValueJson": "{\"en\":\"host a conference\",\"zh\":\"主办会议\",\"note\":\"conference 指会议，host 强调组织并接待参与者。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"host a talk show\",\"zh\":\"主持访谈节目\",\"note\":\"指担任节目主持人，与嘉宾交谈并引导节目。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"present\",\"zh\":\"主持；播报\",\"note\":\"常指介绍节目或内容，未必负责组织整场活动。\"},{\"en\":\"organize\",\"zh\":\"组织；安排\",\"note\":\"强调筹备工作，不一定亲自主持或接待。\"}],\"contrasting\":[{\"en\":\"attend an event\",\"zh\":\"参加活动\",\"note\":\"host 主办或主持活动；attend 表示以参与者身份出席。\"}],\"similarNote\":\"host 可包含组织和接待；organize 只强调安排，present 更偏介绍内容。\",\"contrastingNote\":\"活动语境下，举办者 host 与参加者 attend 角色相反。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"present\",\"zh\":\"主持节目\",\"note\":\"英式英语中常用于电视、广播节目，强调向观众介绍内容。\"},{\"en\":\"emcee\",\"zh\":\"主持晚会、典礼等\",\"note\":\"作动词时强调台前串联流程，常用于现场活动，不能表示城市承办赛事。\"}],\"contrasting\":[{\"en\":\"be a guest on a show\",\"zh\":\"担任节目的嘉宾\",\"note\":\"表示受邀参与节目，与担任主持人的角色不同。\"}],\"similarNote\":\"host、present 都可表示主持节目；emcee 更常用于现场活动。\",\"contrastingNote\":\"主持人与受邀嘉宾承担不同角色；这是节目语境中的角色对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"668-v3\",\"title\":\"主办；承办活动\",\"meaning\":\"担任活动的主办方或承办方，负责接待参与者或提供举办场地。\",\"usageNote\":\"主语可为人、机构或地点。host 侧重由谁、在哪里承办，不表示主语一定亲自完成全部筹备工作。host an event 也可能表示主持现场活动，需看上下文。\",\"examples\":[{\"id\":\"668-v3-e1\",\"senseId\":\"668-v3\",\"en\":\"Our town hosted a sports festival last summer.\",\"zh\":\"我们镇去年夏天举办了体育节。\",\"note\":\"城镇作主语，表示该地承办活动。\"},{\"id\":\"668-v3-e2\",\"senseId\":\"668-v3\",\"en\":\"Our school will host a music festival in May.\",\"zh\":\"我们学校将在五月举办音乐节。\",\"note\":\"学校是举办方，不是拿话筒的主持人。\"}],\"patterns\":[{\"en\":\"host an event in a place\",\"zh\":\"在某地举办活动\",\"note\":\"host 后接活动，in 后接举办地点；举办城市或机构也可作主语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"host a conference\",\"zh\":\"主办或承办会议\",\"note\":\"强调作为会议的举办方接待参与者。\",\"kind\":\"common-collocation\"},{\"en\":\"host a music festival\",\"zh\":\"举办音乐节\",\"note\":\"在机构或地点作主语的语境中，通常指承办音乐节。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"hold an event\",\"zh\":\"举办活动\",\"note\":\"强调活动被举办；host 还常突出举办方提供场地或接待参与者。\"},{\"en\":\"organize\",\"zh\":\"组织；筹备\",\"note\":\"强调安排和筹备工作，组织者未必就是提供场地或接待参与者的承办方。\"}],\"contrasting\":[{\"en\":\"attend an event\",\"zh\":\"参加活动\",\"note\":\"表示作为参与者出席；举办方工作人员也可以 attend 同一活动。\"}],\"similarNote\":\"hold、organize 与 host 在举办活动的语境中有重合，侧重点分别是举办、筹备和承办接待。\",\"contrastingNote\":\"host 与 attend 在这里对照举办和参加两种角色，并非互相排斥的严格反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"668-v4\",\"title\":\"接待并提供住宿\",\"meaning\":\"为来访者提供住宿，承担接待工作。\",\"usageNote\":\"可接访客、交换生等作宾语；此义强调安排住处，常从住宿时长或居住场所等上下文判断。\",\"examples\":[{\"id\":\"668-v4-e1\",\"senseId\":\"668-v4\",\"en\":\"We hosted an exchange student in our home for two weeks.\",\"zh\":\"我们接待了一名交换生，让对方在我们家住了两周。\",\"note\":\"in our home 和 for two weeks 明确表示提供住宿。\"},{\"id\":\"668-v4-e2\",\"senseId\":\"668-v4\",\"en\":\"My aunt hosted us for three nights while our flat was being repaired.\",\"zh\":\"我们的公寓维修期间，姑妈接待了我们，让我们住了三个晚上。\",\"note\":\"for three nights 说明住宿时长；while 从句交代同一期间的情况。\"}],\"patterns\":[{\"en\":\"host someone for a few nights\",\"zh\":\"接待某人住宿几个晚上\",\"note\":\"host 后直接接人，for 后接住宿时长。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"host an exchange student\",\"zh\":\"接待交换生并提供住宿\",\"note\":\"常用于家庭接待交换生的场景。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"accommodate\",\"zh\":\"为……提供住宿\",\"note\":\"在住宿语境中强调提供住处，较正式，也可用于旅馆接待住客。\"},{\"en\":\"put someone up\",\"zh\":\"让某人借宿\",\"note\":\"较口语，常指让人在家里临时住宿。\"}],\"contrasting\":[{\"en\":\"turn someone away\",\"zh\":\"拒绝接待某人入住\",\"note\":\"在住宿语境中可表示拒绝提供住处；其他语境中也可指拒绝进入或服务。\"}],\"similarNote\":\"accommodate 强调住处，put someone up 偏口语临时借宿；host 还突出接待者的角色。\",\"contrastingNote\":\"turn someone away 仅在拒绝住宿接待的语境中构成反向表达。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"668-n4\",\"title\":\"餐馆迎宾接待员\",\"meaning\":\"在餐馆接待顾客、核对预订或安排座位的人，可称 host；女性也常称 hostess。\",\"usageNote\":\"此义在美式餐馆语境中很常见，表示工作角色，不表示餐馆老板。通常不同于负责点单、上菜的 server，小餐馆也可能由同一人兼任。\",\"examples\":[{\"id\":\"668-n4-e1\",\"senseId\":\"668-n4\",\"en\":\"The hostess checked our reservation and showed us to a table.\",\"zh\":\"女接待员核对了我们的预订，然后带我们入座。\",\"note\":\"这里的 hostess 是餐馆负责迎宾、安排座位的工作人员。\"},{\"id\":\"668-n4-e2\",\"senseId\":\"668-n4\",\"en\":\"The restaurant is looking for a host to greet customers at the entrance.\",\"zh\":\"这家餐馆正在招聘一名在门口迎接顾客的接待员。\",\"note\":\"host 在这里是职业称呼，可用于任何性别。\"}],\"patterns\":[{\"en\":\"work as a restaurant host\",\"zh\":\"担任餐馆迎宾接待员\",\"note\":\"host 表示岗位；女性工作人员也常被称为 hostess。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a restaurant hostess\",\"zh\":\"餐馆女迎宾接待员\",\"note\":\"由 restaurant 明确工作场景，不能理解成餐馆女老板。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"greeter\",\"zh\":\"迎宾员\",\"note\":\"强调迎接来客，未必负责核对预订或安排座位。\"}],\"contrasting\":[],\"similarNote\":\"greeter 与 host/hostess 都可涉及迎宾；餐馆 host/hostess 通常还负责安排座位。\",\"contrastingNote\":\"这一职业称呼没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"名词表示人，动词表示招待、主持或主办；看它在句中的位置和形式。\"",
+        "valueJson": "\"在待客、节目等常见语境中，名词 host 可表示主人、东道主或主持人；动词 host 可表示招待、提供住宿、主持或主办。结合句法结构和语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"主语后面直接用动词，过去式为 hosted。\"",
+        "valueJson": "\"动词表示接待、主持等动作；hosted 可作规则过去式，will host 表示将来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先找主语和冠词：the host 通常是“主人/主持人”；主语后面的 hosted 是“招待/主持”。\"",
+        "valueJson": "\"the host 中的 host 是名词；They hosted… 中的 hosted 是动词过去式。先看整句结构，再结合语境确定具体词义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"传统上表示女主人或女主持人。\"",
+        "valueJson": "\"传统上表示女主人或女主持人；在餐馆语境中也可表示女迎宾接待员。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"写作时用 host 通常最自然；只有确实需要指出女性身份时再用 hostess。\"",
+        "valueJson": "\"主人、节目主持人通常可用不分性别的 host；hostess 仍可用作传统女性称呼，也常见于餐馆迎宾岗位的称谓。按具体场景和本人使用的称呼选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"host（主人、主持人）和动词 host 有共同的历史来源，词典追溯到古法语，再追溯到拉丁语 hospes/hospitem，指处于待客关系中的人。表示“大量”的 host 是另一个词源；宗教用语 host（圣餐面饼）也有不同来源。\"",
+        "valueJson": "\"“主人”义的名词 host 经古法语 oste/hoste（主人或客人）来自拉丁语 hospes/hospitem（处于待客关系中的人）；“主持人”及相关动词用法属于这一待客词义系统。“军队／众多”义的 host 是另一条来源：拉丁语 hostis（敌人）→ 古法语 ost/host（军队）→ 英语 host。宗教用语 host（圣餐面饼）则源于拉丁语 hostia（祭品）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"oste/hoste\",\"meaning\":\"主人或客人\"},{\"language\":\"拉丁语\",\"form\":\"hospes/hospitem\",\"meaning\":\"处于待客关系中的人\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"hospes/hospitem\",\"meaning\":\"处于待客关系中的人\"},{\"language\":\"古法语\",\"form\":\"oste/hoste\",\"meaning\":\"主人或客人\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"女主人；女主持人\"",
+        "valueJson": "\"女主人；女主持人；餐馆女迎宾接待员\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"动词 host 去掉词尾 e，再加 -ing，写作 hosting。\"",
+        "valueJson": "\"动词 host 直接加 -ing，写作 hosting；不删字母，也不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: host\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/host\",\"supports\":[\"host 作名词和动词的常见义项\",\"host 与 hostess 的词性和词形\",\"英语例句用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：host（英语词条，以法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/host#Anglais\",\"supports\":[\"host 的主人、主持人、军队和圣餐面饼等名词义\",\"host 的接待、提供住宿及主持活动等动词义\",\"host 的英美读音、规则屈折类型，以及与 guest、hostess 的关系\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 668,
+    "headword": "host / hostess",
+    "meaning_zh": "n. 主人, 旅馆老板, 节目主持人\nvt. 当主人招待, 作...节目主持人",
+    "phonetic": "/hәust/",
+    "pos": "",
+    "forms": []
+  }
+}

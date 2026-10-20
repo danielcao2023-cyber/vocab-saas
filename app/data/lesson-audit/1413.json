@@ -1,0 +1,569 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1f140145a74cb65669d432e91be7e91ba26f43670994658de9b9c720a30381dc",
+    "executedReviewPromptHash": "1f140145a74cb65669d432e91be7e91ba26f43670994658de9b9c720a30381dc",
+    "reviewHash": "123b9c1b32ee8428a5a2610e309b41b6e1ba4934ab71cc6f0d319a1313fc3f74",
+    "wordId": 1413,
+    "inputHash": "ddb7e2e3897f17b029cf0eb2c318bdeedb2da585158dbec1902058b6dfa4a407",
+    "draftHash": "6bcf783c0213b78e680a81b733874388d440bb6c5cfd185e142acea10010d2ae",
+    "finalHash": "59d4184fe8f77bffa6aaceffd35096ee08ebb0b7268fc82367665de6e3d3755b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/think#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.432Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 185416,
+        "revisionId": 39764278,
+        "revisionTimestamp": "2026-08-03T04:47:38Z",
+        "sha256": "d20ffa2d045b6b029f2075ecbdd60c18d6d6dfffa278fb546eca54b4fa39648d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/think",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:03:00.024Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:15:49.460Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "常用的“想起、想到”和来源明确列出的“想出、编出”覆盖不足；“想象；想起”合并后只有回忆例句，未实际展示想象义。需分别补足核心义及每义两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3; /forms/0/note; /partOfSpeech",
+        "message": "have a think 中的名词 think 指一次或一段思考，不是一个主意或意见。其特点是非正式、主要用于英式英语，不能只概括为罕见名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "/θ/ 是清辅音；“送气发声”容易使学习者误以为需要声带振动。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /lessCommonSenses/*/example; /confusions/*/items/*/example; /wordFamily/*/example",
+        "message": "多处例句缺少目标结构必填的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "Oxford 页面不在实际提供的来源材料中，不能把具体教学内容统一归于该页。应使用实际取得的英语词条材料，并让仅依据专业语言知识补充的义项不冒用来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary; /etymology/stages",
+        "message": "词源正文含制作说明；阶段释义“think 的早期来源”只是占位，不是古英语字义。可证实的古英语来源应保留在 summary，删除空洞阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1",
+        "message": "think to do 的示例是成立的“想到、记得去做”用法，但条目说明却要求改成 think about doing，改变了意思；senseId 也错误地指向打算义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway; /studyPlan/0; /confusions/1",
+        "message": "概括容易把 think of 和 think about 教成固定分工，应明确二者在询问看法和考虑行动时常可互换。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/formation",
+        "message": "“去掉词尾 k？不去掉”虽随后自我纠正，仍会增加拼写干扰，应直接写 think + -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "尚缺常用的状态义与活动义区别：表达看法通常用 I think，表达正在思考或考虑计划可用 I'm thinking。需要补充，避免把全部 think 用法一律套用进行时。"
+      }
+    ],
+    "coverageAssessment": "已核对思考、认为、考虑行动、想起、想象、想出、料想及名词用法。补丁为新增的三个核心义各提供两个例句，并纠正名词含义、think to do 和进行时说明。料想保留为认为义的预测用途。原词条的“adj. 思想的”不足以支持可自由使用的形容词义，think tank、think piece 等固定组合也不能据此推广为一般形容词用法，故不另造形容词义。来源明确支持的词源仅写古英语来源，不推演更早历史；补充教学内容依据专业语言知识，未声称外部页面已核验。",
+    "senseInventory": [
+      {
+        "sense": "动词：思考；考虑事情或问题",
+        "coveredBy": [
+          "think-v-consider"
+        ],
+        "assessment": "保留两个例句，调整第二句以明确展示独立使用的思考义。"
+      },
+      {
+        "sense": "动词：认为；觉得；相信某判断",
+        "coveredBy": [
+          "think-v-believe"
+        ],
+        "assessment": "两个核心例句及肯定、否定、问看法结构均有覆盖；补充与进行时的区别。"
+      },
+      {
+        "sense": "动词：考虑做某事；有意或打算",
+        "coveredBy": [
+          "think-v-plan"
+        ],
+        "assessment": "两个例句充分覆盖 think about/of doing，并说明尚未作出最终决定。"
+      },
+      {
+        "sense": "动词：想起；想到；从记忆中找出",
+        "coveredBy": [
+          "think-v-recall"
+        ],
+        "assessment": "由原先合并且仅一例的次要条目提升为核心义，补足两个例句。"
+      },
+      {
+        "sense": "动词及短语动词：想出；构思；编出",
+        "coveredBy": [
+          "think-v-create"
+        ],
+        "assessment": "补充材料明确列出的 think up，并用两个例句区分构思办法和编造故事。"
+      },
+      {
+        "sense": "动词：想象；设想某种情景",
+        "coveredBy": [
+          "think-v-imagine"
+        ],
+        "assessment": "原稿标题提到但例句未覆盖；新增两个实际展示设想情景的例句。"
+      },
+      {
+        "sense": "动词：料想；预料",
+        "coveredBy": [
+          "think-v-expect",
+          "think-v-believe"
+        ],
+        "assessment": "已覆盖；属于认为义在预测情境中的应用，无须重复扩为独立核心义。"
+      },
+      {
+        "sense": "动词：想到、记得去做某事",
+        "coveredBy": [
+          "think-v-remember-to"
+        ],
+        "assessment": "补充 think to do 的有效用法，并修正易混条目的说明及 senseId。"
+      },
+      {
+        "sense": "名词：一番思考；想一想",
+        "coveredBy": [
+          "think-n-idea"
+        ],
+        "assessment": "保留原有 ID 和两个合适例句，纠正标题、释义、语域及近义比较。"
+      },
+      {
+        "sense": "原词条标注的形容词：思想的",
+        "coveredBy": [],
+        "assessment": "不据粗略词性标签建立自由形容词义；现有材料中的固定组合不足以支持这种推广。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb; noun (rare)\"",
+        "valueJson": "\"verb; noun (informal, chiefly British)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"think 最常用作动词：可以表示“思考”，也可以表示“认为”。think about 后接考虑的事情；think of 常用于询问看法。过去式和过去分词都是 thought。\"",
+        "valueJson": "\"think 常表示“思考、认为、考虑做某事”；think of 也能表示“想起、想出”，think up 表示“想出、编出”。think of/about 都可用于询问看法或考虑行动。过去式和过去分词都是 thought。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记住 think about（考虑）和 think of（想法、看法）的区别。\"",
+        "valueJson": "\"结合完整句型记忆 think about 和 think of：两者都能表示考虑行动或询问看法，think of 还常表示想起、想到。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头 /θ/ 要让舌尖轻触上下齿间，送气发声；不要读成 /s/ 或 /t/。\"",
+        "valueJson": "\"开头 /θ/ 是清辅音：舌尖轻放在上下齿之间，让气流通过，声带不振动；不要读成 /s/ 或 /t/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"动词原形，也可作名词，表示“想法”；名词用法较少见。\"",
+        "valueJson": "\"动词原形；也可作名词，表示一番思考，如 have a think，主要用于英式非正式表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用 think about + 事情；think of 可表示想起某事或考虑一个主意。\"",
+        "valueJson": "\"可以单独使用，如 Let me think；也常用 think about + 事情，说明正在考虑的内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"think about 后接需要考虑的内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"think-ex-2\",\"senseId\":\"think-v-consider\",\"en\":\"Mia is thinking of a new name for her puppy.\",\"zh\":\"米娅正在为她的小狗想一个新名字。\",\"note\":\"这里 think of 表示设想、想出一个主意。\"}",
+        "valueJson": "{\"id\":\"think-ex-2\",\"senseId\":\"think-v-consider\",\"en\":\"Please let me think for a minute before I decide.\",\"zh\":\"请让我先想一会儿，再作决定。\",\"note\":\"think 可以不接宾语；这里先思考，后作决定。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"think of + 名词\",\"zh\":\"想出……；考虑……\",\"note\":\"常用于设想一个办法、名字或计划。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"think 后接完整句子，表达个人判断。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Do you think ...? 用来询问对方的判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"think about joining 表示正在考虑加入，尚未决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"想法；意见（名词，较少见）\"",
+        "valueJson": "\"想一想；一番思考（名词，非正式，主要用于英式英语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"一个念头、主意或看法。\"",
+        "valueJson": "\"一次或一段时间的思考，而不是思考后得到的某个主意或意见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"名词 think 不如 idea 或 thought 常见；常见说法是 have a think，意为“想一想”。\"",
+        "valueJson": "\"主要用于英式非正式表达，常见结构 have a think 意为“想一想”。表达“一个主意”通常用 an idea，表达“一个念头”可用 a thought。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have a think 指花一点时间思考。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"thought\",\"zh\":\"想法；念头\",\"note\":\"更常见的名词，适用于口语和书面语。\"}",
+        "valueJson": "{\"en\":\"thought\",\"zh\":\"思考；考虑\",\"note\":\"表示思考过程时可与此义接近，如 give it some thought；a thought 则常指一个念头，不能与 a think 任意互换。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"idea\",\"zh\":\"主意；想法\",\"note\":\"常指具体的办法、计划或观点。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"作名词时，thought 和 idea 通常比 think 更自然、常用。\"",
+        "valueJson": "\"这里比较的是思考过程：have a think 与 give it some thought 意思接近；an idea 指一个主意，不是此义的同义表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此义没有适合各语境的固定反义词；可根据具体意思改用相反观点或行动。\"",
+        "valueJson": "\"表示一番思考的名词 think 没有常用的固定反义名词；具体语境中可用 without thinking 表示未经思考。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"think-v-recall\",\"title\":\"想起；想到\",\"meaning\":\"脑海里浮现某人、某事，或从记忆中找出名字、信息等。\",\"usageNote\":\"常用 think of + 人或事。can't think of 常表示一时想不起来，不一定表示已经忘掉。\",\"examples\":[{\"id\":\"think-recall-ex-1\",\"senseId\":\"think-v-recall\",\"en\":\"Whenever I smell fresh bread, I think of my grandmother.\",\"zh\":\"每当闻到新鲜面包的香味，我就会想起奶奶。\",\"note\":\"气味使熟悉的人浮现在脑海中。\"},{\"id\":\"think-recall-ex-2\",\"senseId\":\"think-v-recall\",\"en\":\"I know her face, but I can't think of her name right now.\",\"zh\":\"我认得她的脸，但现在一时想不起她的名字。\",\"note\":\"can't think of 表示此刻无法从记忆中找出信息。\"}],\"patterns\":[{\"en\":\"think of + 人或事\",\"zh\":\"想起某人或某事\",\"note\":\"此处强调脑海中浮现，并非询问评价。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"can't think of someone's name\",\"zh\":\"想不起某人的名字\",\"note\":\"常用于暂时记不起名字的情况。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"remember\",\"zh\":\"记得；想起\",\"note\":\"此义中与 think of 接近；remember 也能表示一直记得，不限于此刻想到。\"},{\"en\":\"come to mind\",\"zh\":\"浮现在脑海中\",\"note\":\"主语通常是被想到的人或事，如 Her name came to mind。\"}],\"contrasting\":[{\"en\":\"forget\",\"zh\":\"忘记\",\"note\":\"与记得形成反向关系；但 can't think of a name 可以只是一时提取不出，不等于完全忘记。\"}],\"similarNote\":\"think of 强调想到或回想；remember 的范围更广，come to mind 则改变了句子的主语。\",\"contrastingNote\":\"forget 可作相关反向表达；描述暂时想不起来时，用 can't think of 更准确。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"think-v-create\",\"title\":\"想出；构思；编出\",\"meaning\":\"通过思考产生一个办法、名字、故事等。\",\"usageNote\":\"常用 think of 或 think up。think up 突出构思出新内容，也可用于编出借口；完成了什么要结合时态和上下文判断。\",\"examples\":[{\"id\":\"think-create-ex-1\",\"senseId\":\"think-v-create\",\"en\":\"We finally thought of a way to keep the tent dry.\",\"zh\":\"我们终于想出了一个让帐篷保持干燥的办法。\",\"note\":\"finally thought of 表示在这个过去情境中已经想出了办法。\"},{\"id\":\"think-create-ex-2\",\"senseId\":\"think-v-create\",\"en\":\"Lily thought up a funny story for her little brother.\",\"zh\":\"莉莉给弟弟编了一个有趣的故事。\",\"note\":\"think up 表示构思、编出故事，不表示回忆已有的故事。\"}],\"patterns\":[{\"en\":\"think of/up + 主意或办法\",\"zh\":\"想出主意或办法\",\"note\":\"up 后可接名词；使用代词作宾语时说 think it up。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"think of a solution\",\"zh\":\"想出解决办法\",\"note\":\"强调产生解决问题的主意。\",\"kind\":\"common-collocation\"},{\"en\":\"think up a story\",\"zh\":\"编出一个故事\",\"note\":\"突出构思新内容。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"come up with\",\"zh\":\"想出；提出\",\"note\":\"与主意、办法搭配时很接近，如 come up with a plan。\"},{\"en\":\"invent\",\"zh\":\"发明；编造\",\"note\":\"也可用于创作故事或编造借口；用于实物时常强调发明，不能在所有语境中替换 think of。\"}],\"contrasting\":[{\"en\":\"fail to come up with\",\"zh\":\"未能想出\",\"note\":\"与成功想出某个办法或主意形成对照。\"}],\"similarNote\":\"come up with 常可替换此义；invent 的适用范围和语气取决于宾语。\",\"contrastingNote\":\"此义没有常用的否定派生词，可用 fail to come up with 表示未能想出。\"},\"sourceIds\":[\"wiktionary-en-think\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"think-v-imagine\",\"title\":\"想象；设想\",\"meaning\":\"在脑海中设想某个情景、感受或可能发生的情况。\",\"usageNote\":\"常见于 Just think ...、think what/how ... 或 think of ...，完整结构和语境决定这里是想象而非回忆。\",\"examples\":[{\"id\":\"think-imagine-ex-1\",\"senseId\":\"think-v-imagine\",\"en\":\"Just think how happy Ben will be when he sees his new bike.\",\"zh\":\"想想看，本看到自己的新自行车时会有多高兴。\",\"note\":\"设想尚未发生的情景，不是在回忆。\"},{\"id\":\"think-imagine-ex-2\",\"senseId\":\"think-v-imagine\",\"en\":\"Think what it would be like to live without electricity.\",\"zh\":\"想象一下，没有电的生活会是什么样。\",\"note\":\"would be like 用来设想一种假定的生活情况。\"}],\"patterns\":[{\"en\":\"think what/how ...\",\"zh\":\"想象……会怎样／多么……\",\"note\":\"常用于邀请对方设想情景或感受。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"Just think!\",\"zh\":\"想想看！\",\"note\":\"常用于引出值得想象或令人惊讶的情况。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"imagine\",\"zh\":\"想象；设想\",\"note\":\"直接表达在脑海中设想，也常接 what、how 等引出的内容。\"},{\"en\":\"picture\",\"zh\":\"在脑海中描绘\",\"note\":\"更强调具体、形象的画面，不适合替换所有抽象设想。\"}],\"contrasting\":[{\"en\":\"cannot imagine\",\"zh\":\"无法想象\",\"note\":\"表示难以在脑海中设想或难以相信，不是单纯表示此刻没有在想。\"}],\"similarNote\":\"imagine 适用较广；picture 更强调形象画面。\",\"contrastingNote\":\"cannot imagine 是表示无法设想的否定表达，不代表存在一个可通用于所有情景的反义动词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"think-v-imagine\",\"title\":\"想象；想起\",\"meaning\":\"think of 可表示脑海中浮现某人或某事；think 可用于回想、设想。\",\"note\":\"初中阶段先掌握 think of 表示“想起、想到”即可；具体理解要看上下文。\",\"example\":{\"id\":\"think-ex-9\",\"senseId\":\"think-v-imagine\",\"en\":\"I often think of my grandparents when I see this old photo.\",\"zh\":\"看到这张老照片时，我常会想起祖父母。\"},\"sourceIds\":[\"oxford-think\"]}",
+        "valueJson": "{\"id\":\"think-v-remember-to\",\"title\":\"想到；记得去做\",\"meaning\":\"think to do 表示想到或记得采取某个行动。\",\"note\":\"常见于否定句或疑问句，肯定句也成立；此结构不等于表示考虑计划的 think about/of doing。\",\"example\":{\"id\":\"think-remember-to-ex-1\",\"senseId\":\"think-v-remember-to\",\"en\":\"I didn't think to check the shop's opening hours before we left.\",\"zh\":\"出发前，我没想到要查一下那家店的营业时间。\",\"note\":\"没想到去查，表示未采取这个行动，不是在考虑要不要查。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用 think 对将来的天气作出预测，是认为义的具体应用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"about 后接 visiting，表示正在考虑的行动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"一般不用于表示“考虑去做”；此处应改用 think about doing。\"",
+        "valueJson": "\"可表示“想到、记得去做”，常见于否定句或疑问句，肯定句也成立；不能用它直接表达“考虑做某事”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"think-v-plan\"",
+        "valueJson": "\"think-v-remember-to\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"这种用法较少见，通常说 I remembered to bring my umbrella。\"",
+        "valueJson": "\"这里是正确的“记得带伞”用法，可用 remembered to bring 表达相近意思；改成 thought about bringing 会变成“考虑带伞”，不保证实际带了。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"plan to visit 表达计划，比正在考虑更明确。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"两者都能谈到某件事，但常见侧重点不同。\"",
+        "valueJson": "\"两者的用法有重叠：询问看法和考虑做某事时常可互换；think of 还常表示想起或想出，think about 常突出思考过程。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里也可以用 What do you think about ...? 询问看法。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里突出花时间考虑建议。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"问看法常用 What do you think of ...?；强调认真考虑时常用 think about。\"",
+        "valueJson": "\"问看法可用 What do you think of/about ...?；考虑行动可用 think of/about doing。想起、想出常用 think of，突出思考过程常用 think about，不能只按中文词义机械区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"think-confusion-progressive\",\"title\":\"I think 与 I'm thinking\",\"summary\":\"think 表示认为、持有看法时通常用一般时态；表示正在思考或考虑计划时可以用进行时。\",\"items\":[{\"label\":\"I think：表达看法\",\"note\":\"一般判断通常说 I think，不必因为是此刻的看法就使用进行时。\",\"example\":{\"id\":\"think-progressive-ex-1\",\"senseId\":\"think-v-believe\",\"en\":\"I think this seat is yours.\",\"zh\":\"我觉得这个座位是你的。\",\"note\":\"表达当前判断，使用一般现在时。\"}},{\"label\":\"I'm thinking：正在思考\",\"note\":\"强调目前正在进行的思考活动，或尚在考虑中的行动。\",\"example\":{\"id\":\"think-progressive-ex-2\",\"senseId\":\"think-v-consider\",\"en\":\"I'm thinking about how to fix my bike.\",\"zh\":\"我正在琢磨怎样修好自行车。\",\"note\":\"强调思考过程，因此可用进行时。\"}}],\"takeaway\":\"先看意思：表达看法通常用 I think；强调正在思考可用 I'm thinking。\",\"sourceIds\":[\"wiktionary-en-think\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"think 来自古英语 þencan。这里能确认的是词的传承来源；学习时可把现代拼写 think 整体记忆。\"",
+        "valueJson": "\"think 源自古英语 þencan。学习现代拼写时，可以把 think 整体记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"þencan\",\"meaning\":\"think 的早期来源\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Dad 是第三人称单数主语，因此用 thinks。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"think 去掉词尾 k？不去掉；直接加 -ing\"",
+        "valueJson": "\"think + -ing\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"am thinking 表示正在思考，thinking 保留 think 的全部字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 thought 是 think 的过去式，不是名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/3/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thinker 是表示人的名词，这里用 careful 描述其思考周全。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"oxford-think\"]",
+        "valueJson": "[\"wiktionary-en-think\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-think\",\"title\":\"Oxford Learner’s Dictionaries: think\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/think\",\"supports\":[\"常见动词义项和句型\",\"think about/of 的用法\",\"名词用法及词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"wiktionary-en-think\",\"title\":\"Wiktionary: think（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/think#Anglais\",\"supports\":[\"给定历史材料中记载的古英语来源形式 þencan\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-think\",\"title\":\"Wiktionnaire：think（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/think#Anglais\",\"supports\":[\"思考、认为、考虑行动等动词用法\",\"think up 表示构思、编出\",\"think 的读音及不规则词形\",\"thinker、thinking、thought 等相关词的列举\",\"古英语来源形式 þencan\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1413,
+    "headword": "think",
+    "meaning_zh": "vt. 想, 考虑, 想起, 想像, 打算, 认为\nvi. 思考, 料想\nn. 想法\nadj. 思想的",
+    "phonetic": "/θiŋk/",
+    "pos": "",
+    "forms": []
+  }
+}

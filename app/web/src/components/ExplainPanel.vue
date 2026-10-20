@@ -3,7 +3,7 @@ import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import {api,ClientError} from '../api';
 import {COPY} from '../copy';
 import type {ContentBlock,WordContent} from '../types';
-const props=withDefaults(defineProps<{wordId:number;context?:'recognize'|'answer'|'word';content?:WordContent}>(),{context:'recognize'});
+const props=withDefaults(defineProps<{wordId:number;context?:'recognize'|'answer'|'word';content?:WordContent;hidePending?:boolean}>(),{context:'recognize'});
 const pending=():WordContent=>({status:'pending',blocks:[]});
 const data=ref<WordContent>(props.content??pending()),open=ref<Record<string,boolean>>({example:props.context!=='word',collocation:props.context==='recognize'}),hidden=ref<number[]>([]),reporting=ref<number|null>(null),limitMsg=ref<string|null>(null),submitting=ref(false);
 let alive=true,request=0;
@@ -23,7 +23,7 @@ onMounted(()=>{if(props.context!=='word'){try{const saved=JSON.parse(window.loca
 watch(()=>props.wordId,load);watch(()=>props.content,v=>{if(v)data.value=v;});
 onUnmounted(()=>{alive=false;window.removeEventListener('keydown',keydown);});
 </script>
-<template><section class="explain"><div class="ex-head"><h3>{{ COPY.explain }}</h3><span class="ai">{{ COPY.aiLabel }}</span><div v-if="groups.length" class="tools"><button type="button" class="link" @click="toggleAll">{{ allOpen?COPY.collapseAll:COPY.expandAll }}</button></div></div>
+<template><section v-if="groups.length||!hidePending" class="explain"><div class="ex-head"><h3>{{ COPY.explain }}</h3><span class="ai">{{ COPY.aiLabel }}</span><div v-if="groups.length" class="tools"><button type="button" class="link" @click="toggleAll">{{ allOpen?COPY.collapseAll:COPY.expandAll }}</button></div></div>
 <div v-if="!groups.length" class="pending"><b>{{ COPY.explainPending }}</b>{{ COPY.explainPendingNote }}</div>
 <details v-for="g in groups" :key="g.key" class="blk" :open="!!open[g.key]" @toggle="toggle(g.key,$event)"><summary><span class="ttl">{{ title(g) }}</span><span class="pv">{{ g.blocks.filter(b=>!hidden.includes(b.id)).map(preview).join(' · ') }}</span><span class="chev">▾</span></summary><div class="body">
 <template v-for="b in g.blocks" :key="b.id"><p v-if="hidden.includes(b.id)" class="fbmsg" role="status">{{ COPY.feedbackSaved }}</p><div v-else class="content-block">

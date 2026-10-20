@@ -1,0 +1,358 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "bb9be5efaac212884b9f9c214c3115275212f3967be731821cf9e4078722b21c",
+    "executedReviewPromptHash": "bb9be5efaac212884b9f9c214c3115275212f3967be731821cf9e4078722b21c",
+    "reviewHash": "d1e356e00a1a385d0af4c5e60bb5df78718518e5bfa49b989756da18d7d57fa6",
+    "wordId": 1547,
+    "inputHash": "bdbbb63d6f8165d07acb26c5fd4803090d0f2060c551da2c8495d326a23b3f8d",
+    "draftHash": "82c2d9107ba53c1793a450ace47f90e33b4791c587c5097abf6e492c7186b457",
+    "finalHash": "5d52713cc5f18d2dc28cab615b529b757739aa1be4d8433a7e755609ff77b0ea",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/who#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.457Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116228,
+        "revisionId": 39768711,
+        "revisionTimestamp": "2026-08-03T09:04:12Z",
+        "sha256": "f784c14230326628c1661c923331c785ee61e1d46ce23d6665f87fde04f97384",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/who",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:24:38.464Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:36:49.108Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 页面未成功取得，不能把它列为正文事实的来源。应改引实际取得的英语词条；法语只是该词条的解释语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "who 与 whom 的语体说明颠倒。日常英语常用宾语 who；正式英语更倾向 whom，尤其在前置介词后。To who... 不宜作为正式表达范例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning；/senses/0/usageNote；/senses/0/patterns/1",
+        "message": "who 不直接询问“做什么”；宾语问句的中文模板误写成了“某人做了什么”。助动词后接原形的模板也应明确限定为 do/does/did。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "关系代词部分只举了主语用法，遗漏来源明确列出的限定性和非限定性宾语用法。省略规则必须区分：限定性从句中的宾语关系代词通常可省，非限定性从句中的关系代词不能省。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "“nobody 不能替换 who 的句法位置”不正确：二者都能占据主语或宾语位置。这里应说明 nobody 是否定回答，不是 who 的词汇反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms；/wordFamily；/wordFamilyNote",
+        "message": "词形说明应交代 whom、whose，避免“形式不变”掩盖相关形式。词族说明过于绝对，可补入来源列出的常用复合词 whoever，并说明实际拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "中文写了“今天值日”，对应英文却只有名词短语，缺少主句谓语。应补成完整句子。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的疑问代词，以及限定性、非限定性关系从句中作主语和宾语的四种用法。补丁保留两大核心义，每义均有至少两个自然原创英中例句，并补齐关系宾语及间接疑问句的教学覆盖。古英语到现代英语的词源关系有来源支持，可保留。来源中的派生词表不等同于额外义项；不必另造罕见义。Cambridge 未取得内容，本次判断仅依据已提供的英语词条与专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "疑问代词：询问谁，包括动作的执行者、对象和人物身份",
+        "coveredBy": [
+          "who-question"
+        ],
+        "assessment": "原稿已有身份问句和宾语问句；补丁纠正释义与问句模板，并补入主语问句和间接疑问句。"
+      },
+      {
+        "sense": "限定性关系代词：指人，在从句中作主语",
+        "coveredBy": [
+          "who-relative"
+        ],
+        "assessment": "原稿已有自然例句与基本句型，保留。"
+      },
+      {
+        "sense": "限定性关系代词：指人，在从句中作宾语",
+        "coveredBy": [
+          "who-relative"
+        ],
+        "assessment": "原稿遗漏；补丁补入例句、句型及可省略条件。"
+      },
+      {
+        "sense": "非限定性关系代词：指人，在从句中作主语",
+        "coveredBy": [
+          "who-relative"
+        ],
+        "assessment": "原稿已有例句；补丁明确逗号与不可省略规则。"
+      },
+      {
+        "sense": "非限定性关系代词：指人，在从句中作宾语，who 常见于非正式语体",
+        "coveredBy": [
+          "who-relative"
+        ],
+        "assessment": "原稿遗漏；补丁补入自然例句，说明正式语体可用 whom，且关系代词不能省略。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_who\"]",
+        "valueJson": "[\"wiktionary_who\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"疑问代词和关系代词的拼写相同；作主语或宾语时形式不变。\"",
+        "valueJson": "\"who 本身没有单复数变化，既可作疑问代词，也可作关系代词；一般语体中可作主语或宾语，较正式的宾语形式是 whom，所属形式是 whose。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"宾格（较正式）\",\"form\":\"whom\",\"ipa\":\"/huːm/\",\"note\":\"用于动词或介词的宾语位置，尤其常见于前置介词后，如 to whom；日常英语常用 who，并把介词放在句末。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"所属形式\",\"form\":\"whose\",\"ipa\":\"/huːz/\",\"note\":\"表示“谁的”或关系从句中的所属关系；实际拼写是 whose，不是 who's。who's 是 who is 或 who has 的缩写。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"谁；用来询问某个人是谁、做什么或与说话人有什么关系。\"",
+        "valueJson": "\"谁；用来询问人物身份、关系，或某个动作的执行者、对象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"who 可在问句中作主语或宾语。作主语时常见语序是 Who + 动词；作宾语时常见语序是 Who + 助动词或 be 动词 + 主语。\"",
+        "valueJson": "\"who 可作主语或宾语。直接问句中，who 作主语时通常不用 do/does/did，如 Who called?；作宾语时常用 Who + 助动词 + 主语 + 动词，如 Who did you call?。询问身份也常用 Who is she?。who 还可引导间接疑问句，从句用陈述语序，如 I know who she is.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"Who + 助动词 + 主语 + 动词原形?\",\"zh\":\"某人做了什么？\",\"note\":\"who 作宾语时，常放在助动词前，如 Who did you call?\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Who + do/does/did + 主语 + 动词原形 ...?\",\"zh\":\"某人……谁？\",\"note\":\"who 作宾语，如 Who did you call?（你给谁打了电话？）；这里的动词原形与 do/does/did 配合使用。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"who-q-ex3\",\"senseId\":\"who-question\",\"en\":\"Who left this umbrella on the bus?\",\"zh\":\"谁把这把伞落在公交车上了？\",\"note\":\"who 是 left 的主语，普通主语问句不另加 did。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"who-q-ex4\",\"senseId\":\"who-question\",\"en\":\"I don't know who she invited to dinner.\",\"zh\":\"我不知道她邀请了谁来吃晚饭。\",\"note\":\"who 引导间接疑问句并作 invited 的宾语；从句用 she invited 的陈述语序。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"know / ask / wonder + who 引导的间接疑问句\",\"zh\":\"知道／询问／想知道谁……\",\"note\":\"从句用陈述语序：I wonder who she is.，不能写成 I wonder who is she.。who 作从句主语时则如 I wonder who called.。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在回答“谁来了”这类问题时可表示一个人也没有；它不是 who 在所有语境中的反义词。\"",
+        "valueJson": "\"可用来回答“谁来了？”这类问题，表示一个人也没有；这是表示否定人数的回答，不是 who 的词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"nobody 只适用于“没有人”的人物语境，例如 Nobody came；不能替换 who 的句法位置。\"",
+        "valueJson": "\"who 在这里没有可直接配对的词汇反义词。nobody 可作主语或宾语，但把 Who came? 改成 Nobody came.，句意就从“谁来了？”变成了“没有人来”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_who\"]",
+        "valueJson": "[\"wiktionary_who\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"who 在关系从句中指人。它作从句主语时，后面直接接动词；不能像宾语位置那样随意省略。非限定性从句中的 who 前通常有逗号。\"",
+        "valueJson": "\"who 在关系从句中指人，可以作主语，也可以作宾语。作主语时通常后接动词，不能省略；作宾语时，后面通常另有从句主语，较正式的表达可用 whom。限定性从句说明“是哪一个人”，其中作宾语的 who 通常可省略。非限定性从句只补充信息，用逗号与主句隔开，无论 who 作主语还是宾语都不能省略；其中宾语 who 常见于非正式语体。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"who-r-ex3\",\"senseId\":\"who-relative\",\"en\":\"The woman who we met at the bus stop is our new neighbor.\",\"zh\":\"我们在公交车站遇见的那位女士是我们的新邻居。\",\"note\":\"限定性从句中，who 是 met 的宾语，we 是从句主语；这里可以省略 who，较正式时也可用 whom。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"who-r-ex4\",\"senseId\":\"who-relative\",\"en\":\"My cousin Leo, who you met at my birthday party, is moving to Shanghai.\",\"zh\":\"我表哥利奥要搬去上海了，你在我的生日聚会上见过他。\",\"note\":\"非限定性从句补充信息，who 是 met 的宾语，不能省略；宾语 who 常见于非正式语体，较正式时可用 whom。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"名词（指人）+ (who) + 主语 + 动词 ...\",\"zh\":\"某人所……的那个人\",\"note\":\"这是限定性关系从句中的宾语用法，如 the friend (who) I called；括号表示 who 可省略。非限定性从句中的 who 不能这样省略。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"who 后接复数谓语，补充说明这些人的共同特点或行为。\"",
+        "valueJson": "\"who 作从句主语时，谓语与 people 一致，用复数形式，如 people who live nearby；who 作宾语时，谓语则与从句自己的主语一致，如 people who she knows。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_who\"]",
+        "valueJson": "[\"wiktionary_who\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"who-formal-object\",\"title\":\"较正式地作宾语\",\"meaning\":\"在正式语体中，who 有时也可作动词或介词的宾语；日常英语更常用 whom，或把介词放在句末。\",\"note\":\"初中阶段优先掌握 who 作主语及日常问句中的宾语用法即可。\",\"example\":{\"id\":\"who-formal-ex1\",\"senseId\":\"who-formal-object\",\"en\":\"To who should I send the letter?\",\"zh\":\"我应该把信寄给谁？\",\"note\":\"较正式的书面表达中可见；更传统的正式写法是 To whom should I send the letter?\"},\"sourceIds\":[\"cambridge_who\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"三者都与人有关，但分别常表示“谁作主语或一般提问”“谁作宾语（较正式）”和“谁的”。\"",
+        "valueJson": "\"who 可作主语，也常作一般语体中的宾语；whom 是较正式的宾格形式；whose 表示“谁的”或所属关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"who-formal-object\"",
+        "valueJson": "\"who-question\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_who\"]",
+        "valueJson": "[\"wiktionary_who\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_who\"]",
+        "valueJson": "[\"wiktionary_who\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"whoever\",\"partOfSpeech\":\"pronoun\",\"meaning\":\"任何……的人；无论谁\",\"formation\":\"由 who 与 ever 组合成一个词，用来表示不限定具体是哪一个人。\",\"spellingNote\":\"who + ever → whoever；保留 who 的拼写，直接接 ever，不加空格或连字符。\",\"example\":{\"id\":\"who-family-whoever-ex1\",\"senseId\":\"who-relative\",\"en\":\"Whoever gets home first should feed the cat.\",\"zh\":\"谁先到家，谁就该喂猫。\",\"note\":\"whoever 相当于 anyone who，表示任何先到家的人。\"},\"sourceIds\":[\"wiktionary_who\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"who 是疑问代词和关系代词，没有适合初中生作为同族派生词学习的常用词族。whom 和 whose 是相关代词形式，不是由 who 加词缀构成的派生词。\"",
+        "valueJson": "\"可一起学习相关形式 whom、whose，以及由 who 与 ever 组合而成的 whoever。whom、whose 不是在现代英语中给 who 直接加词缀得到的规则拼写；whoever 则可以按 who + ever 记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象老师拿着点名册走进教室：先问“谁到了？”——Who is here? 接着指向一位同学说“坐在门边的那位同学今天值日”——the student who sits by the door。who 一边帮你找出人，一边把关于这个人的信息接起来。\"",
+        "valueJson": "\"想象老师拿着点名册走进教室：先问“谁在这里？”——Who is here? 接着指向一位同学说“坐在门边的那位同学今天值日”——The student who sits by the door is on duty today. who 一边帮你找出人，一边把关于这个人的信息接起来。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_who\",\"title\":\"Cambridge Dictionary: who\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/who\",\"supports\":[\"常见释义、疑问代词和关系代词用法、读音及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"古英语词形 hwā 到现代英语 who 的词源信息\"]",
+        "valueJson": "[\"疑问代词 who 的基本释义\",\"关系代词 who 在限定性、非限定性从句中作主语或宾语的用法\",\"英美读音\",\"相关形式 whom、whose 及复合词 whoever\",\"古英语词形 hwā 到现代英语 who 的词源信息\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1547,
+    "headword": "who",
+    "meaning_zh": "pron. 谁",
+    "phonetic": "/hu:/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,483 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "54bd028e3a990f5abef99dfd251bbf83cb29e3e96d060eae018c70420e217c70",
+    "executedReviewPromptHash": "54bd028e3a990f5abef99dfd251bbf83cb29e3e96d060eae018c70420e217c70",
+    "reviewHash": "1a6407f0f8ca13c63c59f067428a8abeec296ce84d356ef9809c4839983c9d23",
+    "wordId": 211,
+    "inputHash": "5ec709c1c0fd9fd1744839d7598ffc6bd638f523efa0441bfc285654523022f9",
+    "draftHash": "00e55762c3d95573e51ea5b04301df7ad3380e0665e1ab003e4a94b381d8025a",
+    "finalHash": "e5c04d52df00456fb9a34bd724f44f2aee244da5f041156507d1d8b9818eb106",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/calm#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.948Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120387,
+        "revisionId": 34228896,
+        "revisionTimestamp": "2024-04-22T18:04:02Z",
+        "sha256": "f0e3f7fa945527e59a85a691485a1800a2f2b9efdaf06d1e0d2626c8dc2725eb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/calm",
+        "section": "calm (adjective)",
+        "supports": [
+          "Still weather before mental calm",
+          "Possible French or Italian route",
+          "Tentative deeper heat connection"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "eec83295c54bc01089b47bc565b299bf0caa2be9d5a3ae8e61d4da049eaf4bf0",
+        "summaryAndSupportsWordCount": 75,
+        "sha256": "eec83295c54bc01089b47bc565b299bf0caa2be9d5a3ae8e61d4da049eaf4bf0",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/211.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/calm",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:01:05.909Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:08:45.119Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/wordFamily/2/spellingNote；/wordFamilyNote",
+        "message": "三处错误声称加 -ing 时双写 m；实际为 calm + -ing → calming，不双写。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/confusions/0/items；/wordFamily",
+        "message": "原有11个例句对象均缺少必填的 note，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/senses/1/examples；/senses/2/examples",
+        "message": "形容词的自然状态义、情绪义各仅1例；及物、不及物用法也各仅1例。名词缺少明确的内心平静例句。须补足各核心义双例，并展示不带 down 的不及物 calm。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0；相关 sourceIds",
+        "message": "Cambridge 未取得词条内容，不能承担当前实质引用。改引已取得的维基词典英语词条；未获该词条支持的具体句型和派生词不再挂此来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "传入路径应明确保留可能性；现有 stages 的 meaning 只是来源关系占位，没有阶段字义，应移除并在 summary 保留可证事实。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "l 不是 calm 的结尾字母；应说明常见读音中 l 不发音，词尾发 /m/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote",
+        "message": "已有 a calm、a brief calm，但说明只强调不可数和 the calm，未解释表示一阵平静时的可数用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions；/senses/2/relatedExpressions；/senses/2/collocations/0",
+        "message": "roughness 应限定海面状态，不能直接译为“风浪”；soothe 也常用于动物，agitate 的说明不宜暗示常搭配 situation。动词反向表达还应补充与不及物 calm down 对应的用法，泛化的 calm a person 可换为更具体的常见搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/example/senseId",
+        "message": "calming 表示“令人平静的”，对应使动意义，应关联 calm-v，而非描述自身平静状态的 calm-adj。"
+      }
+    ],
+    "coverageAssessment": "已核对自然状态与情绪状态的形容词用法、环境与内心平静的名词用法，以及及物和不及物动词。补丁后各核心义均有至少2例，补明名词可数用法、calm down 与直接不及物 calm。法语释义未被误当成英语新增义。具体搭配与构词部分依据专业语言知识；历史传入路径和更深层联系保留来源所述的不确定性。",
+    "senseInventory": [
+      {
+        "sense": "形容词：无风或少风，海面平静",
+        "coveredBy": [
+          "calm-adj"
+        ],
+        "assessment": "原有1例；补入少风的早晨例句后达到2例。"
+      },
+      {
+        "sense": "形容词：情绪平静、镇定、不慌乱",
+        "coveredBy": [
+          "calm-adj"
+        ],
+        "assessment": "原有1例；补入散步后心情平静的例句后达到2例。"
+      },
+      {
+        "sense": "名词：无风浪或骚动的平静状态；一阵平静",
+        "coveredBy": [
+          "calm-n"
+        ],
+        "assessment": "原有湖面与比赛前的环境例句；补入风平浪静时出船的例句，并明确不可数与可数用法。"
+      },
+      {
+        "sense": "名词：内心的平静、安宁",
+        "coveredBy": [
+          "calm-n"
+        ],
+        "assessment": "原稿未明确展示；补入散步、听音乐两个生活例句。"
+      },
+      {
+        "sense": "及物动词：使人、动物或局面平静；安抚",
+        "coveredBy": [
+          "calm-v"
+        ],
+        "assessment": "保留直接接宾语的例句，新增 calm me down，使及物用法达到2例。"
+      },
+      {
+        "sense": "不及物动词：平静下来；风浪平息",
+        "coveredBy": [
+          "calm-v"
+        ],
+        "assessment": "保留人的 calm down，新增风逐渐平息的直接不及物 calm，使该功能达到2例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则动词：过去式和过去分词 calmed，现在分词 calming；加 -ing 时去掉词尾不发音的 e？此处原形没有 e，直接双写 m。\"",
+        "valueJson": "\"规则动词：第三人称单数 calms；过去式和过去分词 calmed；现在分词 calming，直接加 -ing，不双写 m。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"末尾辅音字母 m 双写，再加 -ing：calming。\"",
+        "valueJson": "\"calm 直接加 -ing：calming；保留原有的 l，不双写 m。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"calmed、calming 是规则动词形式；calmly、calmness 是常用派生词。加 -ing 时双写末尾 m。\"",
+        "valueJson": "\"calmed、calming 是规则动词形式；calming 也常作形容词，表示“令人平静的”。calmly、calmness 是常用派生词。calm 加 -ing 直接写成 calming，不双写 m。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"结尾字母 l 不发音。\"",
+        "valueJson": "\"常见标准读音中，字母 l 不发音，词尾发 /m/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: calm\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/calm\",\"supports\":[\"形容词、名词和动词的常见含义与用法\",\"calm down 和相关搭配\",\"词形与派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire: calm（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/calm#Anglais\",\"supports\":[\"英语 calm 的形容词、名词和及物／不及物动词用法\",\"英语 calm 的读音\",\"派生形式 calming\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calm 描写海面风浪小，在 was 后作表语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"stay calm 表示保持冷静；calm 是形容词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-adj-ex3\",\"senseId\":\"calm-adj\",\"en\":\"The morning was calm, with almost no wind.\",\"zh\":\"那天早晨很平静，几乎没有风。\",\"note\":\"描述天气时，calm 强调少风或无风，不等于晴朗或温暖。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-adj-ex4\",\"senseId\":\"calm-adj\",\"en\":\"I felt calm after a short walk around the park.\",\"zh\":\"在公园散了会儿步后，我感到心情平静。\",\"note\":\"feel calm 描写人的内心状态，不只是周围没有声音。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作名词时常为不可数；the calm 可指一段平静时期。\"",
+        "valueJson": "\"表示平静状态时常不可数，如 a sense of calm；表示一段平静时也可数，如 a brief calm。the calm 表示特指的平静，可用于 the calm before the storm。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a calm 在这里描写暴风雨后的一阵平静，表达较有描写色彩。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a brief calm 指一段短暂的平静，此处表示比赛开始前的场面。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-n-ex3\",\"senseId\":\"calm-n\",\"en\":\"A period of calm allowed us to take the boat out.\",\"zh\":\"天气有一阵风平浪静，我们得以出船。\",\"note\":\"a period of calm 指一段平静时期；这里谈适合出船的天气。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-n-ex4\",\"senseId\":\"calm-n\",\"en\":\"I felt a sense of calm after my walk.\",\"zh\":\"散步后，我感到内心一片平静。\",\"note\":\"a sense of calm 指内心的平静感，calm 在这里不可数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-n-ex5\",\"senseId\":\"calm-n\",\"en\":\"The soft music gave me a few minutes of calm before work.\",\"zh\":\"上班前，轻柔的音乐让我享受了几分钟的宁静。\",\"note\":\"用 a few minutes of 表示持续时间；calm 仍表示不可数的平静状态。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作及物动词时，使人、动物或局面安定；作不及物用法时，指自己逐渐平静。\"",
+        "valueJson": "\"作及物动词时，使人、动物或局面安定；作不及物动词时，指人逐渐平静，或风浪等平息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 calm someone/something down（使……平静下来）和 calm down（平静下来）。\"",
+        "valueJson": "\"及物时可直接接宾语，如 calm the dog，也常用 calm someone/something down；代词须放在 down 前，如 calm him down。不及物时常用 calm down；描述风浪平息也可直接用 calm。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calm 直接接宾语 the frightened dog；to calm 表示轻声说话的目的。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calm down 在此不接宾语；直接对别人说 Calm down! 有时会显得不耐烦，应留意语气。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-v-ex3\",\"senseId\":\"calm-v\",\"en\":\"The nurse calmed me down by explaining each step of the test.\",\"zh\":\"护士给我逐步解释检查过程，让我平静了下来。\",\"note\":\"及物的 calm someone down 表示使人平静；代词 me 必须放在 calm 和 down 之间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"calm-v-ex4\",\"senseId\":\"calm-v\",\"en\":\"The wind calmed as evening approached.\",\"zh\":\"傍晚来临时，风渐渐平息了。\",\"note\":\"calmed 在这里是不及物动词，表示风平息，不带宾语，也没有 down。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"calm a person\",\"zh\":\"使某人平静\",\"note\":\"calm 后可直接接宾语。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"calm someone's fears\",\"zh\":\"缓解某人的恐惧\",\"note\":\"calm 可直接接 fears 作宾语；这个搭配通常不加 down。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"roughness\",\"zh\":\"不平静；风浪\",\"note\":\"谈海面时可作语境对照，但通常说 rough seas。\"}",
+        "valueJson": "{\"en\":\"roughness\",\"zh\":\"（海面的）不平静；波涛汹涌\",\"note\":\"限海况语境，如 the roughness of the sea；roughness 也可表示粗糙，不能脱离语境当作 calm 的反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"局面动荡可说 turmoil；海面有风浪更自然地说 rough。\"",
+        "valueJson": "\"局面或情绪的平静可与 turmoil 对照；谈海况时，可用 the roughness of the sea（海面的波涛汹涌）作反向对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常指用温和方式缓和人的不安；calm 用途更广，也可用于动物和局面。\"",
+        "valueJson": "\"侧重温和地缓和人或动物的不安，也可指减轻疼痛；calm 更直接强调恢复平静。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"较正式，指使人或局面更激动。\"",
+        "valueJson": "\"较正式，常指使人焦虑、烦躁或不安；可与 calm someone 对照。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get worked up\",\"zh\":\"变得激动；变得焦躁\",\"note\":\"描述人的情绪越来越激动，可与不及物的 calm down 对照，不用于风浪。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"要表达让人更不安，可用 upset；agitate 较正式，语气更强。\"",
+        "valueJson": "\"及物的 calm someone 可对照 upset someone 或较正式的 agitate someone；人的 calm down 可与 get worked up 对照。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"to calm down 表示出去的目的；平静下来的是主语 I。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"her brother 是被安抚的对象；换成代词时说 She calmed him down。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calmly 是副词，修饰 answered，说明回答时的方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calmness 是表示镇定这一特质或状态的名词，在这里作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/senseId",
+        "expectedValueJson": "\"calm-adj\"",
+        "valueJson": "\"calm-v\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"calming 在这里是形容词，表示雨声有使人平静的作用；calm 则表示人或事物本身处于平静状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 calm 经由法语 calme 或直接经由意大利语 calma 传入英语；它早先用于描述无风、平静的天气，后来也用于人的平静状态。更深层的来源联系尚不确定。\"",
+        "valueJson": "\"英语 calm 可能经由法语 calme，或直接从意大利语 calma 借入；它早先描述无风、风平浪静的天气，后来也用于人的平静状态。更深层的来源联系尚不确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"calme\",\"meaning\":\"与英语 calm 的传入来源有关。\"},{\"language\":\"意大利语\",\"form\":\"calma\",\"meaning\":\"也是可能的传入来源，和安静的天气状态相关。\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 211,
+    "headword": "calm",
+    "meaning_zh": "n. 平稳, 风平浪静\nadj. 平静的, 冷静的\nvi. 平静下来, 镇静\nvt. 使平静",
+    "phonetic": "/kɑ:m/",
+    "pos": "",
+    "forms": []
+  }
+}

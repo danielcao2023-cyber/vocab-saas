@@ -1,0 +1,224 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "873ac88f63e22f5355e29e219a8ba1dc8cf1b99283c37af3cb5e60143708ab21",
+    "executedReviewPromptHash": "873ac88f63e22f5355e29e219a8ba1dc8cf1b99283c37af3cb5e60143708ab21",
+    "reviewHash": "f29f0b825c7b4962eb454952d91d3a10da86007aae7f3ad6ce6bdd00f949ebd5",
+    "wordId": 660,
+    "inputHash": "26c0a6c55f5ec4ed15c145d1e63f7623f15b4b301853072aa5c626a26afbc304",
+    "draftHash": "9bd540d52b011d748d9cdce3facef773390d489457732cadae2a40ccb2cd30a3",
+    "finalHash": "e04dbb2fe6ad2216fe2703ae52080d1ef655ae0e13c506bfdbdbfb1fe7b04225",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hometown#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.835Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2366029,
+        "revisionId": 36991354,
+        "revisionTimestamp": "2025-01-17T20:59:56Z",
+        "sha256": "2c9338c525ffd3d4c6752f2e332d0206ed9c79cd79a78425805aa6d4b751fdbd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hometown",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:18:08.699Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:27:52.396Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/takeaway；/senses/0/patterns/1",
+        "message": "in a hometown、come from a hometown 在特定上下文中可以成立，但不宜作为介绍自己家乡的默认表达；come from a hometown 也不直接等于“来自家乡”。应示范 in my hometown，以及 come from + 地名。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning；/senses/0/usageNote",
+        "message": "“长期生活过”宜补充把当地视为家乡的含义，避免把所有长期居住地都算作 hometown；“一座地方”的中文量词搭配也不自然。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example/note",
+        "message": "“different 后使用复数”容易被理解为普遍规则；different 也可修饰 a different hometown。应说明本句为何使用复数。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/2/example",
+        "message": "The hometown’s library 语法可以成立，但作为没有前文的独立例句，家乡归属不明确；My hometown’s library 更自然。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/wordFamily/0/sourceIds；/sources",
+        "message": "Cambridge 页面未取回，不能作为本次已取得的发音、释义和语法证据。应清理相关引用：已取回的维基词典英语条目支持核心名词义、复合构词、分写形式和规则名词变化；具体 IPA 与所有格说明可按专业语言知识保留，不冒称来自该页面。"
+      }
+    ],
+    "coverageAssessment": "实际取回的是法语维基词典中的英语名词条目，只有一个核心义：家乡、故乡。出生地、成长地及视长期定居地为家乡属于同一义项的适用范围，无须机械拆义。现有两个核心例句自然，名词前置修饰功能也已体现。英美读音、复数拼写、近义表达及语境对照均已核对。home + town 和 home town 有直接材料支持，词源阶段保持为空正确；材料不支持进一步补写历史发展。",
+    "senseInventory": [
+      {
+        "sense": "名词：家乡；故乡，通常指一个人出生或长大的城镇，也可指长期定居并视为家乡的城镇。",
+        "coveredBy": [
+          "660-1"
+        ],
+        "assessment": "核心义已有两个自然原创英中例句；a hometown friend 展示名词前置修饰，无须另列形容词义。已收紧长期居住地的说明并修正默认搭配。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"hometown 通常指一个人出生、长大或长期居住的城镇；常说 my hometown、in a hometown、come from a hometown。\"",
+        "valueJson": "\"hometown 指一个人的家乡，通常是出生或长大的城镇；常说 my hometown、in my hometown、return to my hometown。介绍来自哪里时，可用 come from + 地名。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一个人出生、长大或长期生活过的城镇或城市。\"",
+        "valueJson": "\"一个人出生或长大的城镇或城市；也可指长期定居并视为家乡的城镇。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常说某人的 hometown。它指一座地方，不一定是现在居住的地方；汉语“故乡”不一定专指城镇，英语 hometown 通常有城镇意味。\"",
+        "valueJson": "\"通常用 my、your、her 等说明是谁的家乡。它通常指城镇或城市，不一定是现在居住的地方；汉语“故乡”的范围可以更广。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"come from a hometown / come from + place\",\"zh\":\"来自家乡／来自某地\",\"note\":\"come from 后通常接地点；介绍籍贯时也可直接说 I come from...。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"come from + place name\",\"zh\":\"来自某地\",\"note\":\"介绍自己来自哪里时可直接接地名，如 I come from Suzhou；用 hometown 介绍家乡则可说 My hometown is Suzhou。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"different 后使用复数 hometowns。\"",
+        "valueJson": "\"这里用 different hometowns 表示两名球员的家乡不同；different 也可修饰单数，如 a different hometown。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/en",
+        "expectedValueJson": "\"The hometown’s library is beside the river.\"",
+        "valueJson": "\"My hometown’s library is beside the river.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/zh",
+        "expectedValueJson": "\"这个家乡城镇的图书馆在河边。\"",
+        "valueJson": "\"我家乡的图书馆在河边。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: hometown\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hometown\",\"supports\":[\"名词用法和常见表达\",\"英美发音与复数拼写\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"home 与 town 的现代构词关系\",\"home town 的分写形式\"]",
+        "valueJson": "[\"英语名词 hometown 的家乡义\",\"home 与 town 的复合构词关系\",\"home town 的分写形式\",\"规则名词复数变化\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 660,
+    "headword": "hometown",
+    "meaning_zh": "n. 故乡, 家乡",
+    "phonetic": "/hәum'taun/",
+    "pos": "",
+    "forms": []
+  }
+}

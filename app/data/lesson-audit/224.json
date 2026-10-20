@@ -1,0 +1,304 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "44ed50aeca7f7616006d1eed6c4ed3d0ba9a446f9c26b3cbdfd62c29aefebb9a",
+    "executedReviewPromptHash": "44ed50aeca7f7616006d1eed6c4ed3d0ba9a446f9c26b3cbdfd62c29aefebb9a",
+    "reviewHash": "22f5865eda71d9e966416b7d2804eecbbc7ab717274627597a20c6236366a3d5",
+    "wordId": 224,
+    "inputHash": "1c015719850d8dd696f82059646e928e4662ee01150db28d7ddbc2bfc4953424",
+    "draftHash": "b2e9ed35fc53909fb0c3381f979d2da3a699c0ffe4390ccf8fc1d8ba56daaccf",
+    "finalHash": "c81122537494e9739775e07b377e89c84b39a597c32349dfdef99c323f9da136",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/careful#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.953Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119572,
+        "revisionId": 34228684,
+        "revisionTimestamp": "2024-04-22T17:58:05Z",
+        "sha256": "f44d2c22d9ce4f8843d9c6dc8ae69090321bb25e43b0b5bbdf059b5ccb91e0df",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/careful",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:14:05.517Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:19:28.165Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/formation; /wordFamilyNote",
+        "message": "careful 的词尾是 l，没有可删除的词尾 e。carefully 是 careful 直接加 -ly，形成连续两个 l；carefulness 也是直接加后缀。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote; /senses/1/examples/0; /senses/1/patterns/0",
+        "message": "例句语法正确，但 be careful to do 应突出“注意做到、留心确保做某事”，避免与 carefully do 的动作方式说明混同；同时补明常用的 not to do。译文中的“每一道答案”也宜改为“每道题的答案”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/2",
+        "message": "be careful about 表示在某方面留心或谨慎，不宜泛译为“认真考虑”。补充拼写方面的具体用例，可使它与本义更贴合。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0; /senses/0/examples",
+        "message": "来源还列有独立提醒 Careful!。现有 Be careful! 已覆盖其基本意义，但应补明省略式及原创例句。法语 doucement 是释义语言，不能据此新增英语普通副词义。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds; /senses; /confusions; /wordFamily; /sources",
+        "message": "Cambridge 正文未取得，不能作为本次审核已使用的发音、释义或拼写依据。应改引实际取得的英语词条；专业语言知识补充而无对应材料支持的项目使用空 sourceIds。Cambridge 可保留为推荐延伸阅读。"
+      }
+    ],
+    "coverageAssessment": "已核对全部三项词典释义：谨慎、防险与仔细、认真两类核心形容词义均有至少两个原创例句；Careful! 属于谨慎义的口头警示功能，补充后覆盖完整，无须另造副词义。近义词和 careless 的语境限定、比较形式及英美音标可保留。词源仅保留有依据的构词关系，不据此推断更早历史；具体英美读音和部分语法、构词说明属于专业语言知识补充，Cambridge 仅作推荐阅读。",
+    "senseInventory": [
+      {
+        "sense": "形容词：小心、谨慎，留意危险或不良后果（prudent）",
+        "coveredBy": [
+          "careful-1"
+        ],
+        "assessment": "已有过街与处理热汤两个具体例句，核心义覆盖充分；cautious、watch out 与 careless 的语境说明合理。"
+      },
+      {
+        "sense": "形容词：仔细、认真，留意细节（soigneux）",
+        "coveredBy": [
+          "careful-2"
+        ],
+        "assessment": "检查答案与制订计划覆盖本义，thorough、attentive 和 careless 的区别合理；补精确化 be careful to do 与 about 的说明。"
+      },
+      {
+        "sense": "口头警示：Careful!，可译为“当心、轻点儿”（来源以 doucement 释义）",
+        "coveredBy": [
+          "careful-1"
+        ],
+        "assessment": "作为形容词的省略式提醒并入谨慎义合理；补充裸词形式和原创例句，不将法语释义的词性套用于英语。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"careful 去掉词尾 e，再加 -ly。\"",
+        "valueJson": "\"careful + -ly；保留 careful 的全部字母，再加 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"carefully 拼作 careful 去掉词尾 e 再加 -ly；carefulness 则是 careful + -ness，拼写时保留 e。\"",
+        "valueJson": "\"care + -ful 组成 careful，care 的 e 保留，-ful 只有一个 l；carefully = careful + -ly，因此有连续两个 l；carefulness = careful + -ness，也保留 careful 的全部字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/en",
+        "expectedValueJson": "\"Be careful!\"",
+        "valueJson": "\"Be careful! / Careful!\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"常用于简短提醒。\"",
+        "valueJson": "\"口头提醒也可省略 Be，只说 Careful!；依情境可译为“小心！”“慢点儿！”或“轻点儿！”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"careful-1-ex3\",\"senseId\":\"careful-1\",\"en\":\"Careful! Set the vase down gently.\",\"zh\":\"轻点儿！把花瓶轻轻放下。\",\"note\":\"Careful! 可单独作提醒；这里要求对方动作轻一些。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常描述检查、计划、选择或工作；也可用 be careful to do 表示记得谨慎地做某事。\"",
+        "valueJson": "\"常描述检查、计划、选择或工作；be careful to do 强调注意做到某事，也可用于避免危险。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"利奥交卷前仔细检查了每一道答案。\"",
+        "valueJson": "\"利奥交卷前特地检查了每道题的答案。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"be careful to do 表示做某事时留心、谨慎。\"",
+        "valueJson": "\"was careful to check 强调注意做到逐项检查；若强调检查动作细致，可说 checked every answer carefully。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"做某事时注意；谨慎地做某事\"",
+        "valueJson": "\"注意做到某事；留心确保做某事\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"to 后接动词原形。\"",
+        "valueJson": "\"to 后接动词原形；be careful not to do 表示“注意别做某事”，如 Be careful not to spill the soup.（注意别把汤洒了。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2/zh",
+        "expectedValueJson": "\"对……很仔细；认真考虑……\"",
+        "valueJson": "\"在……方面留心；对……谨慎\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2/note",
+        "expectedValueJson": "\"about 后可接需要认真对待的事情。\"",
+        "valueJson": "\"about 后可接名词、动名词或 what 引导的从句，说明需要留心的方面，如 be careful about spelling（注意拼写）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[\"wiktionary-careful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-careful\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Cambridge Dictionary：careful\"",
+        "valueJson": "\"Cambridge Dictionary：careful（推荐延伸阅读）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"形容词的常用意义与搭配\",\"careful 和 carefully 的词性区别及拼写\",\"careless 等相关词形\"]",
+        "valueJson": "[\"延伸阅读：careful 的释义、用法与发音\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"care + -ful 的现代构词拆分\"]",
+        "valueJson": "[\"careful 的谨慎义、仔细义及 Careful! 提醒用法\",\"care + -ful 的构词拆分\",\"近义词 attentive、反义词 careless，以及派生词 carefully、carefulness\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 224,
+    "headword": "careful",
+    "meaning_zh": "adj. 小心的, 谨慎的",
+    "phonetic": "/'kєәful/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -108,7 +108,13 @@ export function parseCommonsRecording(page: any): CommonsRecording | undefined {
   let author = plain(m?.Artist?.value);
   // Older files sometimes lack an Artist field but explicitly name the recorder in their description.
   if (!author || /no machine-readable author|assumed/i.test(author)) {
-    author = plain(m?.ImageDescription?.value?.match(/recorded by\s*(<a\b[^>]*>[^<]+<\/a>)/i)?.[1]);
+    const descriptionHtml = m?.ImageDescription?.value ?? '';
+    const pronunciationBy = descriptionHtml.match(/pronunciation of([^\n]{0,200}?)\bby\s*(<a\b[^>]*>[^<]+<\/a>)/i);
+    const namedPronouncer = pronunciationBy && !/\b(?:upload\w*|convert\w*|edit\w*|transfer\w*|modif\w*)\b/i.test(pronunciationBy[1])
+      ? pronunciationBy[2] : undefined;
+    author = plain(descriptionHtml.match(/recorded by\s*(<a\b[^>]*>[^<]+<\/a>)/i)?.[1] ??
+      descriptionHtml.match(/(<a\b[^>]*>[^<]+<\/a>)(?:'|&#39;|&apos;)s pronunciation\b/i)?.[1] ??
+      namedPronouncer);
   }
   let license = plain(m?.LicenseShortName?.value);
   let licenseUrl = m?.LicenseUrl?.value;
@@ -121,7 +127,7 @@ export function parseCommonsRecording(page: any): CommonsRecording | undefined {
   if (!info || !author || /no machine-readable author|assumed/i.test(author) || !license || (!allowedAudioLicense(licenseUrl) && !pdTemplate) || !Number.isSafeInteger(page.pageid)) return;
   if (!commonsIdentity(info.descriptionurl ?? '') || typeof page.title !== 'string') return;
   if (/text[- ]to[- ]speech|speech synthesis|synthetic|AI[- ]generated|computer[- ]generated/i.test(`${description} ${author} ${page.title}`)) return;
-  if (!/pronunciation|recorded|speaker/i.test(description) && !/^File:(?:En-[a-z]+-|LL-)/i.test(page.title)) return;
+  if (!/pronunciation|pronounced|recorded|speaker/i.test(description) && !/^File:(?:En-[a-z]+-|LL-)/i.test(page.title)) return;
   const mp3 = info.derivatives?.find((d: any) => d?.type === 'audio/mpeg' && validAudioUrl(d.src, 'wikimedia-commons'));
   return { title: page.title, pageid: page.pageid, sourceUrl: info.descriptionurl,
     author, license, licenseUrl: normalizedLicense(licenseUrl), description,

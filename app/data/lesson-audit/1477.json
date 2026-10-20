@@ -1,0 +1,406 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4f62c61144a95e8c74278cf1500393a49aedf2072607a82779e819d51c60b994",
+    "executedReviewPromptHash": "4f62c61144a95e8c74278cf1500393a49aedf2072607a82779e819d51c60b994",
+    "reviewHash": "d738e627ad444d03da4d2da7836f44c7b9a47f7f629a338d0a3d972168793b9c",
+    "wordId": 1477,
+    "inputHash": "312a7fedb614e66ab698c8abff575fda210f1c44799df42c043bcfd9e9c8ce01",
+    "draftHash": "1eb3861123a0c5b18c6959af441bb13663b71b4ade889aba8360166aac06e8dc",
+    "finalHash": "a7375f959a2667cbf63d01891f66eb022cbcab2a10ca3318e82cffc67b982af9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/understand#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.910Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116476,
+        "revisionId": 39765497,
+        "revisionTimestamp": "2026-08-03T05:11:28Z",
+        "sha256": "30ca1224f77115bc503055a349ac4e81052edda7e62fe42e8e3ba08a81b60712",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/understand",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:03:55.636Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:23:55.881Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/4/note; /wordFamily/1/spellingNote",
+        "message": "understanding 的构词说明错误：应直接在 understand 后加 -ing，保留 d。原稿对进行时的说明也缺少状态动词的使用限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses/0",
+        "message": "“体谅他人”被并入理解义却没有明确示例；常用的 I understand (that)...“据我了解／我听说”仅以欠自然的火车例句放在次要义中。需分别补足教学内容和例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "“听懂、看懂”的两个例句均未明确展示阅读理解；understand English 本身也不限定听力。需用书面邮件和 spoken English 分别落实。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting; /memoryAid/story",
+        "message": "原稿将 misunderstand 与“听错”混用。misunderstand 指误解意思；把声音或字词听错通常用 mishear。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/note; /senses/0/relatedExpressions/similar/1/note",
+        "message": "why 从句说明理解的内容，而不是她为何理解；realize 也可以表示逐渐意识到，understand 本身不含“已经”的时态意义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语阶段只有字形和构词占位说明，没有可核实的阶段释义，应将可证实字形移入 summary 并清空阶段数组；同时补明 under- 的历史来源属于推测。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 各处 oxford_understand 引用",
+        "message": "实际来源中没有获取 Oxford 条目，不能将其列作这些具体内容的材料依据。应改用已获取的法语维基词典英语词条，并仅在其实际支持的内容处保留引用。"
+      }
+    ],
+    "coverageAssessment": "已核对条目释义中的理解、懂得、听说、认为，以及英语词条中的 comprendre。修订后，理解内容、听懂与看懂、体谅他人、据所得信息获悉或认为四组常用义均有至少两个例句，并补充不带宾语的用法；默认或默契义作为次要义保留。词形、搭配、词族拼写及历史词源均已逐项检查。材料限制是唯一获取的词典页释义较简略，细分语境与原创例句依据专业语言知识，未冒称 Cambridge 或 Oxford 已提供支持。",
+    "senseInventory": [
+      {
+        "sense": "理解、明白内容、原因或原理；也可不带宾语",
+        "coveredBy": [
+          "1477-s1"
+        ],
+        "assessment": "保留规则和原因两个例句，补充独立使用 understand 的例句与句型。"
+      },
+      {
+        "sense": "听懂或看懂语言、话语及书面信息",
+        "coveredBy": [
+          "1477-s2"
+        ],
+        "assessment": "改用邮件与英语口语分别展示阅读理解和听力理解。"
+      },
+      {
+        "sense": "理解、体谅他人的感受或处境",
+        "coveredBy": [
+          "1477-s3"
+        ],
+        "assessment": "从宽泛理解义中分出，补足两个具体例句及语境限定。"
+      },
+      {
+        "sense": "听说、获悉；根据所得信息认为",
+        "coveredBy": [
+          "1477-s4"
+        ],
+        "assessment": "补足常用的 I understand (that)... 及较正式的被动转述结构，避免将其解释为无根据的猜想。"
+      },
+      {
+        "sense": "默认、不言明而共同认定",
+        "coveredBy": [
+          "1477-l1"
+        ],
+        "assessment": "作为次要义补充，并说明 It was understood that... 需要结合语境区分默认与转述。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"understand：听懂信息，也能明白意思\"",
+        "valueJson": "\"understand：理解意思、体谅别人，也可表示“据我了解”\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"understand 是动词，常表示“理解、明白”或“听懂”；过去式和过去分词都是 understood。\"",
+        "valueJson": "\"understand 可表示理解内容、听懂或看懂语言、体谅他人，也可在 I understand (that)... 中表示“据我了解／我听说”。过去式和过去分词都是 understood。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"对比 understand a rule（理解规则）和 understand English（听懂英语）。\"",
+        "valueJson": "\"对比 understand a rule（理解规则）、understand spoken English（听懂英语）和 understand this email（看懂这封邮件）。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 I understand how you feel（我理解你的感受）和 I understand you've moved（据我了解你搬家了）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[\"wiktionary_understand\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"由 understand 去掉词尾 d，再加 -ing；可用于进行时。\"",
+        "valueJson": "\"直接在 understand 后加 -ing，保留词尾 d。understand 表示理解状态时通常不用进行时；understanding 也可用于分词结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"明白一个人的话、想法、原因或事情的含义；也可表示理解他人的感受或处境。\"",
+        "valueJson": "\"明白话语、规则、想法、原因或事情的含义、原理。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可直接接名词，也常接 what、why、how 等引导的从句。\"",
+        "valueJson": "\"可直接接名词，也常接 what、why、how 等引导的从句；上下文已明确理解对象时，也可不带宾语，如 I understand.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"why 引导的从句说明她明白的原因。\"",
+        "valueJson": "\"why 引导的从句作宾语，表示她明白的是朋友难过的原因。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1477-s1-e3\",\"senseId\":\"1477-s1\",\"en\":\"I don't understand. Could you explain it again?\",\"zh\":\"我没明白。你能再解释一遍吗？\",\"note\":\"understand 在这里不带宾语，理解的内容由上下文补足。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"understand（不带宾语）\",\"zh\":\"明白；懂了\",\"note\":\"当理解对象已明确时，可直接说 I understand. 或 I don't understand.。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"understand how someone feels\",\"zh\":\"理解某人的感受\",\"note\":\"表示体会他人的心情或处境。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"understand how something works\",\"zh\":\"了解某物如何运作\",\"note\":\"用于理解机器、系统等的工作原理。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"realize 常指突然察觉某事；understand 更强调已经明白其意思。\"",
+        "valueJson": "\"realize 强调意识到某个事实，可以突然发生，也可以逐渐发生；understand 强调明白含义或原因。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[\"wiktionary_understand\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/en",
+        "expectedValueJson": "\"Do you understand the question?\"",
+        "valueJson": "\"I understand your email, but I'm not sure how to reply.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"你听懂这个问题了吗？\"",
+        "valueJson": "\"我看懂你的邮件了，但还不确定该怎么回复。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"这里问听者是否明白刚才听到的问题。\"",
+        "valueJson": "\"以书面邮件为理解对象，understand 在这里可译为“看懂”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"He understands some English, but he cannot speak it well.\"",
+        "valueJson": "\"He understands spoken English, but he cannot speak it well.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"他能听懂一些英语，但说得不太好。\"",
+        "valueJson": "\"他能听懂英语，但说得不太好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"understand English 表示懂英语，不等于会流利地说英语。\"",
+        "valueJson": "\"spoken English 明确指口语；能听懂英语不等于能流利地说英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/zh",
+        "expectedValueJson": "\"听错、误解\"",
+        "valueJson": "\"误解话意\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在听懂话语这一语境中，表示把说话人的意思听错或理解错。\"",
+        "valueJson": "\"指把说话人的意思理解错；若是把声音或字词听错，通常用 mishear。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"misunderstand 是听懂信息这一义项下的反向表达，表示理解有误。\"",
+        "valueJson": "\"理解错话意用 misunderstand；没听懂可用 not understand；把声音或字词听错通常用 mishear。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1477-s3\",\"title\":\"理解、体谅他人\",\"meaning\":\"能体会他人的感受、困难或处境。\",\"usageNote\":\"可接某人、某人的感受或说明其处境的从句。理解或体谅某人，并不一定表示赞同其做法。\",\"examples\":[{\"id\":\"1477-s3-e1\",\"senseId\":\"1477-s3\",\"en\":\"I understand your disappointment about the cancelled trip.\",\"zh\":\"我理解你因旅行取消而感到失望的心情。\",\"note\":\"理解的对象是对方的感受，带有体谅的意味。\"},{\"id\":\"1477-s3-e2\",\"senseId\":\"1477-s3\",\"en\":\"My manager understands how hard it is to care for a sick child.\",\"zh\":\"我的经理体谅照顾生病的孩子有多辛苦。\",\"note\":\"这里强调能体会他人的困难。\"}],\"patterns\":[{\"en\":\"understand + 某人的感受／处境\",\"zh\":\"理解、体谅某人的感受或处境\",\"note\":\"可接 disappointment、worry 等表示感受的名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"understand how someone feels\",\"zh\":\"理解某人的感受\",\"note\":\"常用于安慰或表示体谅。\",\"kind\":\"common-collocation\"},{\"en\":\"understand someone's situation\",\"zh\":\"理解某人的处境\",\"note\":\"在此义中强调能体会其困难，而不只是知道相关事实。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"empathize with someone\",\"zh\":\"设身处地体会某人的感受\",\"note\":\"更明确强调设身处地；用 empathize with someone，而 understand 可直接接 someone。\"}],\"contrasting\":[{\"en\":\"not understand someone's feelings\",\"zh\":\"无法理解某人的感受\",\"note\":\"表示未能体会对方的感受；并不必然表示故意冷漠。\"}],\"similarNote\":\"谈体会别人的感受时，understand 与 empathize with 意思接近，但搭配结构不同。\",\"contrastingNote\":\"无法体会可用 not understand；若把对方的意思理解错，则用 misunderstand。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1477-s4\",\"title\":\"听说、获悉；据我了解\",\"meaning\":\"根据听闻或其他所得信息，得知或认为某事如此。\",\"usageNote\":\"I understand (that)... 常用于较客气或正式地转述获悉的情况，that 可以省略；被动 be understood to... 更偏报道文体。\",\"examples\":[{\"id\":\"1477-s4-e1\",\"senseId\":\"1477-s4\",\"en\":\"I understand you've moved to a new apartment.\",\"zh\":\"听说你搬到新公寓了。\",\"note\":\"这里表示获悉搬家的消息，而不是理解搬家的原因。\"},{\"id\":\"1477-s4-e2\",\"senseId\":\"1477-s4\",\"en\":\"The owner is understood to be selling the café.\",\"zh\":\"据悉，店主正在出售这家咖啡馆。\",\"note\":\"be understood to be doing 是较正式的消息转述结构。\"}],\"patterns\":[{\"en\":\"I/We understand (that) + 从句\",\"zh\":\"据我／我们了解……；我／我们听说……\",\"note\":\"在此义中，从句说明获悉的消息；具体含义仍须结合语境判断。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be understood to + 动词原形\",\"zh\":\"据悉……；据了解……\",\"note\":\"较正式；可用 to be doing 表示正在发生，用 to have done 表示此前已经发生。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"as I understand it\",\"zh\":\"据我的理解／了解\",\"note\":\"用于说明自己对情况的理解或掌握的信息；具体侧重由上下文决定。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"I gather (that)...\",\"zh\":\"我听说／我推测……\",\"note\":\"常表示根据线索或听到的信息得出判断；I understand (that)... 也可用于转述获悉的消息。\"}],\"contrasting\":[{\"en\":\"not know (that)...\",\"zh\":\"不知道……\",\"note\":\"用于尚不知道某消息的情形，与已经获悉该消息的信息状态相对。\"}],\"similarNote\":\"这一义强调依据所得信息获悉或判断；不必表示亲眼见到。\",\"contrastingNote\":\"not know 可对照是否知情，但不能直接替换所有 I understand... 的表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"1477-l1\",\"title\":\"认为；心里以为\",\"meaning\":\"在较正式的语境中，表示根据现有信息认为某事如此。\",\"note\":\"常见于被动形式 be understood to do，意为“据说／一般认为……”。\",\"example\":{\"id\":\"1477-l1-e1\",\"senseId\":\"1477-l1\",\"en\":\"The train is understood to arrive at six.\",\"zh\":\"据说这趟火车六点到。\",\"note\":\"be understood to do 常用于转述普遍了解到的情况。\"},\"sourceIds\":[\"oxford_understand\"]}",
+        "valueJson": "{\"id\":\"1477-l1\",\"title\":\"默认；不言明而共同认定\",\"meaning\":\"某个条件或安排没有明说，但相关的人都认定它成立。\",\"note\":\"常用被动结构。It is/was understood that... 也能表示“据悉”，需要结合上下文区分。\",\"example\":{\"id\":\"1477-l1-e1\",\"senseId\":\"1477-l1\",\"en\":\"When we borrowed the car, it was understood that we'd return it with a full tank.\",\"zh\":\"我们借车时，双方都默认还车时要加满油。\",\"note\":\"这里表示借车双方默认的条件。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"understand 是古老的英语词，历史上由 under- 与 stand 构成；它的现代常用义是“明白、理解”。不能简单按今天 under“在……下面”和 stand“站立”来推断词义。\"",
+        "valueJson": "\"understand 历史上由 under- 与 stand 构成，古英语形式写作 understanden。关于其中的 under-，一种解释认为它可能追溯到表示“在……之间、之中、附近”的原始印欧语成分 *nter-，从而把构词意象联系到“处在近旁”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"understanden\",\"meaning\":\"understand 的古英语形式；词典词源说明将其分析为由 under- 与 stand 构成。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的拆分是词源说明，不表示“理解”就是“站在下面”。\"",
+        "valueJson": "\"under- 的上述历史来源是一种推测；不能把现代 under“在……下面”与 stand“站立”的组合当作确定的词源释义。“处在近旁”也不是 understand 的现代词义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[\"wiktionary_understand\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"拼写为 understanding：去掉 understand 末尾的 d，再加 -ing。\"",
+        "valueJson": "\"拼写为 understanding：直接在 understand 后加 -ing，保留末尾的 d。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[\"wiktionary_understand\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_understand\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象老师在教室里讲一道新题：你先 hear 到讲解的声音，再弄明白题目为什么这样做，就可以说“I understand.” 如果把老师的话听错了，则是“I misunderstood.”\"",
+        "valueJson": "\"想象老师在教室里讲一道新题：你先 hear 到讲解的声音，再弄明白这道题为什么这样解，就可以说“I understand.” 如果把老师的意思理解错了，则是“I misunderstood.”\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_understand\",\"title\":\"Oxford Learner’s Dictionaries: understand\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/understand\",\"supports\":[\"常用动词义项与句型\",\"词形变化\",\"派生词与搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_understand\",\"title\":\"法语维基词典：understand（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/understand#Anglais\",\"supports\":[\"英语动词基本义：理解\",\"英美发音与不规则词形\",\"派生词 misunderstand、understanding\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1477,
+    "headword": "understand",
+    "meaning_zh": "vt. 理解, 了解, 领会, 听说, 懂\nvi. 懂得, 认为",
+    "phonetic": "/.ʌndә'stænd/",
+    "pos": "",
+    "forms": []
+  }
+}

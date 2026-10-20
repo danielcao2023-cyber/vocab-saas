@@ -1,0 +1,679 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4ad7c36bd9b78724a022cf0edf6164c1fd91c6743d5dbcbe4cb408eb2fcbde09",
+    "executedReviewPromptHash": "4ad7c36bd9b78724a022cf0edf6164c1fd91c6743d5dbcbe4cb408eb2fcbde09",
+    "reviewHash": "a4850225b39a084daf5272b1a1e7cfb9131348151c62ecc58ea32e58d0140fd5",
+    "wordId": 540,
+    "inputHash": "a2f53b434f1774c850d63442b18f2d51cdd617cacb0c14001a22de6ee9d739f8",
+    "draftHash": "1199b8659b5205f1b0ae8a2750d68c01ff13c2464a826b5916245dd85cb1d5d4",
+    "finalHash": "8fb16a81fb0678abac9d4940c4f27424608946382ff8f27475cc6c999330f8eb",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/foot#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.110Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2089,
+        "revisionId": 39766373,
+        "revisionTimestamp": "2026-08-03T05:48:38Z",
+        "sha256": "fc6e4292bd2bfa18b43500089daa1ec7c17afb8023e896aa1fef9ebb6c02e273",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/foot",
+        "section": "foot etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "e0aca31d3af8bd04f4079b92b2da69766e24a9c5328ee84e0ae9e8a390cf810d",
+        "summaryAndSupportsWordCount": 74,
+        "sha256": "e0aca31d3af8bd04f4079b92b2da69766e24a9c5328ee84e0ae9e8a390cf810d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/540.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/foot",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:48:37.226Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:58:10.128Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Oxford 未出现在实际取得的资料中；维基词典也未支持复数历史音变、英尺标准的历史变化等全部现有归因。须撤换来源并将这些历史事实归到 Etymonline。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation；/senses；/lessCommonSenses；/confusions；/wordFamily",
+        "message": "多个 example 缺少结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "长度中的 ft 通常展开读作 foot 或 feet，例如 3 ft 读 three feet，不能教成通常逐字母读。现代标准一英尺恰为 30.48 厘米。还须说明数词复合定语及口语身高中的单数 foot。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3；/confusions/1",
+        "message": "on foot 中的 foot 是名词，不能归为步行动词的常见表达。应单列常用短语，并把 foot it、直接接路程的动词用法放入低频识别区。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词条列出的跳舞、总计，以及取得的英语词典材料列出的踢义；“步调”也未作语义边界说明。这些不应提升为初中常用产出义，但须补入识别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "标题包含末端义，现有例句却都只示范下端。须补充信末、床尾等实际搭配，并区分床尾对应的 head 与上下位置对应的 top。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0",
+        "message": "hurt one's foot 是弄伤某人的脚；表示某人的脚疼应说 one's foot hurts。现有中文混淆及物和不及物结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段数组会把古英语、原始日耳曼语、原始印欧语画成反向历史链；史前阶段的释义也只是空泛占位。应将重构形式保留在概述中，阶段只列可具体说明词义且顺序正确的古英语至现代英语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions；/senses/4/relatedExpressions",
+        "message": "厘米是可换算的另一长度单位，不是反向表达。foot the bill 也不必由一个人独付全部费用；split the bill 只能作为费用分配方式的对照。cover 不必含有替别人付款之意。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0；/lessCommonSenses/1；/wordFamily/0",
+        "message": "集合名词 foot 应明确为旧式军事用语；换鞋底义须提示现代常用 resole。形容词 footed 的说明应突出其复合词用法，并与同形的动词过去式区分。"
+      }
+    ],
+    "coverageAssessment": "已核对所列名词义、动词义及 on foot 的常用功能。修订后，脚、英尺、底部或末端、on foot、付账五项常用内容各有至少两个例句；步速相关表达、步兵、动词步行或走过、换底、踢、跳舞、总计列入低频识别区。历史说明限于两项已取得的词源资料；低频用法的具体教学说明依据专业语言知识，不冒称另行查证。未扩展至未列出的其他专业义。",
+    "senseInventory": [
+      {
+        "sense": "名词：脚；动物的足",
+        "coveredBy": [
+          "n-body"
+        ],
+        "assessment": "已覆盖；修正 hurt one's foot 与 one's foot hurts 的区别。"
+      },
+      {
+        "sense": "名词：长度单位英尺",
+        "coveredBy": [
+          "n-unit"
+        ],
+        "assessment": "已覆盖；修正缩写读法、精确换算，补充复合定语和口语身高用法。"
+      },
+      {
+        "sense": "名词：底部；下端",
+        "coveredBy": [
+          "n-bottom"
+        ],
+        "assessment": "原有楼梯和山脚例句有效，保留。"
+      },
+      {
+        "sense": "名词：末端；信末；床尾",
+        "coveredBy": [
+          "n-bottom"
+        ],
+        "assessment": "原例句不足；补充信末和床尾，并限定位置对照。"
+      },
+      {
+        "sense": "名词：原释“步调”所涉及的脚步或步速",
+        "coveredBy": [
+          "n-pace"
+        ],
+        "assessment": "补入 fleet of foot 等有限搭配；不把 foot 教成可自由替换 pace 或 rhythm 的常用词。"
+      },
+      {
+        "sense": "名词：步兵，集合用法",
+        "coveredBy": [
+          "n-infantry"
+        ],
+        "assessment": "保留并明确旧式军事语域，说明与 foot soldiers 的结构区别。"
+      },
+      {
+        "sense": "固定短语：on foot，步行",
+        "coveredBy": [
+          "n-on-foot"
+        ],
+        "assessment": "从动词义中分出；补齐两个常用生活例句，明确 foot 是名词。"
+      },
+      {
+        "sense": "动词：步行；徒步走过",
+        "coveredBy": [
+          "v-walk"
+        ],
+        "assessment": "移入低频区；区分 foot it 和直接接路程的较旧用法，日常优先用 walk。"
+      },
+      {
+        "sense": "动词：给鞋靴装底或换底",
+        "coveredBy": [
+          "v-footwear"
+        ],
+        "assessment": "保留为专门识别义，提示现代常用 resole。"
+      },
+      {
+        "sense": "动词：支付；承担费用",
+        "coveredBy": [
+          "v-pay"
+        ],
+        "assessment": "两个例句保留；修正独付全部费用及 cover 必为替人付款的暗示。"
+      },
+      {
+        "sense": "动词：踢",
+        "coveredBy": [
+          "v-kick"
+        ],
+        "assessment": "原稿遗漏；按取得的英语词条补入，并标为少见用法。"
+      },
+      {
+        "sense": "动词：跳舞",
+        "coveredBy": [
+          "v-dance"
+        ],
+        "assessment": "原稿遗漏；补入旧式 foot it 的舞蹈用法，以舞会语境消除歧义。"
+      },
+      {
+        "sense": "动词：合计；总计",
+        "coveredBy": [
+          "v-total"
+        ],
+        "assessment": "原稿遗漏；补入 foot up to，明确为较旧的记账用语。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"My left foot 是主语；hurts 在这里表示疼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/zh",
+        "expectedValueJson": "\"某人的脚受伤或疼\"",
+        "valueJson": "\"弄伤某人的脚\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"one’s 根据人物替换，如 hurt my foot、hurt her foot。\"",
+        "valueJson": "\"I hurt my foot 表示我弄伤了自己的脚；My foot hurts 才是我的脚疼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"英尺，英制长度单位；1 foot 等于 12 inches，约 30.48 厘米。\"",
+        "valueJson": "\"英尺，英制长度单位；现代标准下，1 foot = 12 inches = 30.48 厘米。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"单数用 a foot 或 one foot；数字大于 1 时用 feet。缩写 ft 读作字母名 /ˌef ˈtiː/，一般不读成一个单词。\"",
+        "valueJson": "\"常规长度表达用 one foot、two feet 等。ft 是书面缩写，3 ft 通常读 three feet。名词前的数词复合定语用单数 foot 并加连字符，如 a six-foot ladder；口语身高也常用单数 foot，如 six foot two（六英尺二英寸）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"one 后用 foot；two、three 等大于一的数字后用 feet。\"",
+        "valueJson": "\"标准长度表达中用 one foot long、two feet long 等；名词前的复合定语另用单数 foot，如 a three-foot shelf。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"描述高度时，数字大于一通常用 feet。\"",
+        "valueJson": "\"描述高度时通常用 one foot、two feet 等；口语描述身高也可说 six foot tall。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-unit-ex3\",\"senseId\":\"n-unit\",\"en\":\"We bought a six-foot ladder to change the ceiling light.\",\"zh\":\"我们买了一把六英尺高的梯子来更换顶灯。\",\"note\":\"six-foot 整体修饰 ladder，foot 用单数，数词与单位之间加连字符。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"centimeter\",\"zh\":\"厘米\",\"note\":\"公制长度单位；1 foot 等于 30.48 centimeters，换单位时须换算数值。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"centimeter\",\"zh\":\"厘米\",\"note\":\"同样表示长度，但属于公制单位；不是 foot 的反义词。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"inch 与 foot 同属英制长度单位；meter 是常用公制单位。\"",
+        "valueJson": "\"这些都是长度单位，并非 foot 的直接同义词；表达同一长度时，须换算数值后再换单位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"centimeter 与 foot 的单位体系和大小不同，可在长度表达中作单位对照。\"",
+        "valueJson": "\"作为长度单位，foot 没有通常意义上的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"物体的底部或最下端，常见于 the foot of...。\"",
+        "valueJson": "\"物体的底部、下端；在特定搭配中也指末端，如信末或床尾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"这是名词的引申用法，常指山、楼梯等的下端；具体用法依所指物体而定。\"",
+        "valueJson": "\"常见于 the foot of...。山、楼梯和信件通常取下端或底部的意思；the foot of the bed 指远离枕头的床尾。搭配和具体位置由所指物体决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the foot of the stairs 指楼梯下端。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at the foot of the mountain 是山脚下。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-bottom-ex3\",\"senseId\":\"n-bottom\",\"en\":\"She added her phone number at the foot of the letter.\",\"zh\":\"她在信的末尾加上了自己的电话号码。\",\"note\":\"the foot of the letter 指信末的底部位置。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-bottom-ex4\",\"senseId\":\"n-bottom\",\"en\":\"Put the folded blanket at the foot of the bed.\",\"zh\":\"把叠好的毯子放在床尾。\",\"note\":\"这里指床尾，与枕头所在的床头相对，不是床底下。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"the foot of the bed\",\"zh\":\"床尾\",\"note\":\"指远离枕头的一端；床头是 the head of the bed。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"top\",\"zh\":\"顶部\",\"note\":\"描述同一物体或地点的上下位置时，top 与 foot 对照。\"}]",
+        "valueJson": "[{\"en\":\"top\",\"zh\":\"顶部；上端\",\"note\":\"在山、楼梯、页面等的上下位置中，可与 foot 所指的下端对照。\"},{\"en\":\"head\",\"zh\":\"床头\",\"note\":\"在床的位置搭配中，the head of the bed 与 the foot of the bed 相对。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在上下位置语境中，top 表示顶部，可与 foot 所指的下端形成对照。\"",
+        "valueJson": "\"上下位置通常对照 top；床的两端则对照 the head of the bed 和 the foot of the bed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3",
+        "expectedValueJson": "{\"id\":\"v-walk\",\"title\":\"步行；用脚走过\",\"meaning\":\"用脚走过某处；常见表达是 on foot，表示步行。\",\"usageNote\":\"foot 作动词表示走过某种表面时用法较少；日常表达“步行”通常用 walk 或 on foot。\",\"examples\":[{\"id\":\"v-walk-ex1\",\"senseId\":\"v-walk\",\"en\":\"We footed it back to the station after the bus left.\",\"zh\":\"公交车开走后，我们步行回了车站。\",\"note\":\"foot it 是较口语、较少见的“步行”说法。\"},{\"id\":\"v-walk-ex2\",\"senseId\":\"v-walk\",\"en\":\"The hikers footed their way through the muddy field.\",\"zh\":\"徒步者们踩着泥泞穿过田地。\",\"note\":\"此用法不如 walk 常见。\"}],\"patterns\":[{\"en\":\"on foot\",\"zh\":\"步行；走路去\",\"note\":\"作方式状语，常说 go/travel on foot；on 不变形。\",\"kind\":\"fixed-expression\"},{\"en\":\"foot it to + place\",\"zh\":\"步行去某地\",\"note\":\"口语表达，foot 用作动词；日常写作中 walk to 更常见。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"travel on foot\",\"zh\":\"步行出行\",\"note\":\"说明出行方式，不使用冠词。\",\"kind\":\"common-collocation\"},{\"en\":\"foot a path/route\",\"zh\":\"沿着小路／路线步行\",\"note\":\"表示用脚走过一段路，使用频率低于 walk along。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"walk\",\"zh\":\"走；步行\",\"note\":\"最常用、最自然的日常动词；多数情况下优先用 walk。\"},{\"en\":\"hike\",\"zh\":\"徒步旅行\",\"note\":\"通常指在乡间或山地进行较长距离的步行。\"}],\"contrasting\":[{\"en\":\"ride\",\"zh\":\"骑；乘坐\",\"note\":\"在出行方式语境中，ride 表示乘车或骑行，可与 on foot 对照。\"}],\"similarNote\":\"walk 是日常首选；hike 常指户外长距离徒步。\",\"contrastingNote\":\"只在出行方式语境中，ride（乘车或骑行）可与 on foot（步行）对照。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "{\"id\":\"n-on-foot\",\"title\":\"步行（on foot）\",\"meaning\":\"on foot 是表示出行方式的固定短语，意为步行；其中 foot 是名词。\",\"usageNote\":\"常与 go、come、travel 等动词连用。这个固定短语用单数 foot，不加冠词；go to school on foot 也可表达为 walk to school。\",\"examples\":[{\"id\":\"n-on-foot-ex1\",\"senseId\":\"n-on-foot\",\"en\":\"The station is only ten minutes away on foot.\",\"zh\":\"从这里步行到车站只需十分钟。\",\"note\":\"on foot 说明十分钟是步行所需的时间。\"},{\"id\":\"n-on-foot-ex2\",\"senseId\":\"n-on-foot\",\"en\":\"We went to the library on foot because the bus was late.\",\"zh\":\"因为公交车晚点了，我们步行去了图书馆。\",\"note\":\"went 表示去，on foot 补充出行方式。\"}],\"patterns\":[{\"en\":\"go/come/travel ... on foot\",\"zh\":\"步行去／来／出行\",\"note\":\"on foot 作方式状语，foot 在其中是名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"go to school on foot\",\"zh\":\"步行上学\",\"note\":\"也可说 walk to school。\",\"kind\":\"common-collocation\"},{\"en\":\"explore the city on foot\",\"zh\":\"步行游览城市\",\"note\":\"说明游览时采用步行的方式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"walk\",\"zh\":\"步行\",\"note\":\"常用动词；walk to the station 与 go to the station on foot 都可表示步行去车站。\"},{\"en\":\"hike\",\"zh\":\"徒步旅行\",\"note\":\"通常指乡间或山地较长距离的徒步，不能直接替换所有日常步行表达。\"}],\"contrasting\":[{\"en\":\"by bus/by car\",\"zh\":\"乘公交车／乘汽车\",\"note\":\"说明同一段行程采用其他出行方式。\"}],\"similarNote\":\"walk 是动词；on foot 是介词短语，须按各自结构放入句子。\",\"contrastingNote\":\"这里比较出行方式，不把交通方式短语当作 foot 的词义反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"foot the bill for dinner 表示承担晚餐费用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/0/note",
+        "expectedValueJson": "\"固定搭配，常暗示由某人承担全部费用。\"",
+        "valueJson": "\"固定搭配，强调承担费用；承担者可以是个人或组织，也可说 foot part of the bill，表示承担部分费用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常用于某人替另一人承担开支，如 cover the cost。\"",
+        "valueJson": "\"常说 cover the cost/expenses，表示支付或足以支付费用；不一定是替别人付款。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similarNote",
+        "expectedValueJson": "\"pay 用途广；cover 常指替人承担某项费用。\"",
+        "valueJson": "\"pay 用途最广；cover the cost/expenses 表示支付或足以支付费用；foot the bill 强调承担账单。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"多人各付一部分时使用；与一人承担整张账单的 foot the bill 相对。\"",
+        "valueJson": "\"强调多人分摊账单；在讨论餐费安排时，可与某一方承担费用的安排作对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在餐费分配语境中，split the bill 表示分摊，与一方承担账单相对。\"",
+        "valueJson": "\"这是费用分配方式的对照。foot the bill 本身不限定只有一个付款人，也不排除多人共同承担。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于 foot soldiers 等表达，初中阶段通常只需识别。\"",
+        "valueJson": "\"这是旧式或历史军事用语；现代通常用 infantry 或 foot soldiers。foot soldiers 中的 foot 作前置修饰语，与集合名词 foot 单独使用的结构不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"鞋匠工作等语境中的专门用法，日常交流较少见。\"",
+        "valueJson": "\"较旧或专门的制鞋用法；现代日常表示给鞋换底通常用 resole。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里 footed 表示给靴子换底；现代更常说 resoled the old boots。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-walk\",\"title\":\"步行；徒步走过（较少见）\",\"meaning\":\"作动词表示徒步行进；foot it 可表示步行，较旧的及物用法也可直接接一段路程。\",\"note\":\"foot it 略显旧式，日常通常用 walk。on foot 中的 foot 则是名词。\",\"example\":{\"id\":\"v-walk-rare-ex1\",\"senseId\":\"v-walk\",\"en\":\"We footed the last mile back to the village.\",\"zh\":\"回村的最后一英里，我们是步行走完的。\",\"note\":\"footed 后直接接路程；现代日常更常说 walked the last mile。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-kick\",\"title\":\"踢（少见动词用法）\",\"meaning\":\"用脚踢，尤其可用于踢球的语境。\",\"note\":\"这是少见用法；日常表达踢通常用 kick，不把 foot 当作通用替换词。\",\"example\":{\"id\":\"v-kick-ex1\",\"senseId\":\"v-kick\",\"en\":\"The striker footed the ball into the net.\",\"zh\":\"前锋把球踢进了球网。\",\"note\":\"这里 footed 相当于 kicked；普通表达更常用 kicked the ball。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-dance\",\"title\":\"跳舞（旧式或文学用语）\",\"meaning\":\"foot 作动词也可表示跳舞，见于旧式表达 foot it。\",\"note\":\"foot it 也能表示步行，须由舞会、音乐等上下文区分；现代日常说 dance。\",\"example\":{\"id\":\"v-dance-ex1\",\"senseId\":\"v-dance\",\"en\":\"At the village dance, the guests footed it to a lively fiddle tune.\",\"zh\":\"在村里的舞会上，宾客们随着欢快的小提琴曲起舞。\",\"note\":\"舞会和乐曲说明这里的 footed it 是跳舞，带旧式色彩。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-total\",\"title\":\"总计（foot up to）\",\"meaning\":\"foot up to 后接金额，可表示合计达到该金额。\",\"note\":\"较旧的记账用语；现代通常用 add up to 或 total。\",\"example\":{\"id\":\"v-total-ex1\",\"senseId\":\"v-total\",\"en\":\"The repair costs footed up to $80.\",\"zh\":\"修理费合计为80美元。\",\"note\":\"footed up to 在这里表示总计达到；现代通常说 added up to。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-pace\",\"title\":\"脚步与步速相关表达\",\"meaning\":\"在 fleet of foot、swift of foot 等表达中，foot 与行走或奔跑时脚步的敏捷程度有关。\",\"note\":\"这些表达偏文学；日常说步速或步调通常用 pace，说节奏通常用 rhythm，不能把 foot 普遍替换进去。\",\"example\":{\"id\":\"n-pace-ex1\",\"senseId\":\"n-pace\",\"en\":\"The young runner was fleet of foot.\",\"zh\":\"这位年轻跑者脚步敏捷。\",\"note\":\"fleet of foot 是脚步敏捷的较文雅说法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"表示两只或多只脚，也用于两英尺及以上的长度。\"",
+        "valueJson": "\"表示多只脚，也用于复数形式的英尺，如 two feet、one and a half feet；数词复合定语另用单数 foot。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"both 表示两只脚，所以用复数 feet，谓语用 are。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"She 作一般现在时的主语，动词 foot 加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"foot 可以作动词表示步行，但日常英语通常用 walk；foot the bill 则是“付账”，不能换成 walk。\"",
+        "valueJson": "\"walk 是日常步行动词；on foot 是固定介词短语，其中 foot 是名词。foot it 是较少见的动词表达；foot the bill 则表示付账，不能换成 walk。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"v-walk\"",
+        "valueJson": "\"n-on-foot\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"walk to school 可换成 go to school on foot，句子结构随之调整。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"常见于 foot it 等表达，使用范围较窄。\"",
+        "valueJson": "\"foot it 表示步行时较少见，略显旧式；其中 foot 是动词。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"回家的语境说明 footed it 表示步行；现代通常说 walked home。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"on foot（固定介词短语）\",\"note\":\"说明出行方式，foot 在其中是名词，固定用单数且不加冠词。\",\"example\":{\"id\":\"conf-on-foot-ex1\",\"senseId\":\"n-on-foot\",\"en\":\"I go to school on foot with my sister.\",\"zh\":\"我和姐姐步行去学校。\",\"note\":\"go 表示去，on foot 表示步行的方式。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"日常说“走路”优先用 walk；foot the bill 是固定的“付账”搭配。\"",
+        "valueJson": "\"日常可说 walk to school 或 go to school on foot；foot it 较少见。foot the bill 是付账。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"foot 的词源链可追溯到古英语 fot，再到原始日耳曼语重构形式 *fōts，并与原始印欧语重构形式 *pṓds 有关。复数 feet 保留了历史上的元音变化；foot 表示英尺的用法也很早，但长度标准曾随历史时期变化。\"",
+        "valueJson": "\"foot 沿袭古英语 fōt；其更早来源是原始日耳曼语重构形式 *fōts，再向前可追溯到原始印欧语重构形式 *pṓds。古英语已有身体部位和长度单位的用法；英尺的标准长度在历史上有过变化，不能把现代标准直接套到古英语时期。feet 与 foot 的元音差异来自历史音变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"fot\",\"meaning\":\"古英语中表示脚。\"},{\"language\":\"原始日耳曼语\",\"form\":\"*fōts\",\"meaning\":\"重构形式，与“脚”有关。\"},{\"language\":\"原始印欧语\",\"form\":\"*pṓds\",\"meaning\":\"重构形式，意为“脚”。\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"fōt\",\"meaning\":\"脚；也用作长度单位，其长度标准不能直接按现代英尺理解。\"},{\"language\":\"现代英语\",\"form\":\"foot\",\"meaning\":\"脚；英尺；底部；作动词还可表示付账。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"有……只脚的；以脚为特征的\"",
+        "valueJson": "\"常用于复合形容词，表示有……只脚的，或脚部具有某种特征的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"foot + -ed\"",
+        "valueJson": "\"foot + -ed；如 four + foot + -ed → four-footed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接加 -ed；复合形容词中常见，如 four-footed。\"",
+        "valueJson": "\"保留 foot 中的 oo，直接加 -ed 成 footed；four-footed 用连字符连接，表示四足的。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"four-footed 是修饰 animal 的复合形容词，不是动词过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"feet 是 foot 的不规则复数，不是派生词；footed 是实际可用的同族词。\"",
+        "valueJson": "\"feet 是 foot 的不规则复数，不是派生词；复合形容词中的 footed（如 four-footed）与动词过去式 footed 拼写相同，词性和用途不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: foot\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/foot\",\"supports\":[\"foot 的名词和动词常见义项\",\"foot 与 feet 的词形、发音及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"etymonline\",\"title\":\"Online Etymology Dictionary: foot\",\"url\":\"https://www.etymonline.com/word/foot\",\"supports\":[\"foot 沿袭古英语及长度单位的早期使用\",\"feet 的历史元音变化与英尺标准长度的历史变化\",\"底部和付账义在英语内部后续发展的语义边界\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary: foot（English）\"",
+        "valueJson": "\"维基词典法语站：foot（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"foot 的历史词源链及复数 feet 的历史元音变化\",\"英尺单位的历史使用及引申义的语义边界\"]",
+        "valueJson": "[\"英语 foot 的脚、英尺、踢及付账义\",\"foot 与 feet 的读音、不规则名词复数及规则动词词形\",\"现代英尺与英寸、厘米的换算及 on foot 等相关表达\",\"古英语 fōt、原始日耳曼语 *fōts 与原始印欧语 *pṓds 的词源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 540,
+    "headword": "foot (pl. feet)",
+    "meaning_zh": "n. 脚, 步调, 英尺, 底部, 末尾, 步兵\nvt. 走在...上, 给...换底, 支付\nvi. 跳舞, 步行, 总计",
+    "phonetic": "/fut/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "feet",
+        "kind": "s"
+      }
+    ]
+  }
+}

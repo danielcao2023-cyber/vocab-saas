@@ -1,0 +1,310 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c3ea86bf8dd85791a62d38f39c59773f6bca1eec3d942aee84a9e408622262b1",
+    "executedReviewPromptHash": "c3ea86bf8dd85791a62d38f39c59773f6bca1eec3d942aee84a9e408622262b1",
+    "reviewHash": "396ab17d80b7d9d4c673198aee45c4822fb7ba0badd469fe4bab4306e7a3f472",
+    "wordId": 1431,
+    "inputHash": "825095a535b2b6cef9660ee5a7004cf9e708e2976e4d6ac13c82c422dc4707d8",
+    "draftHash": "580966e1f628b5cdfb52bf03ae145c812cb28b798cb00d45680ebd93696812b9",
+    "finalHash": "2abb71574e4c2b191a75ca8b36e651c994e80fd9193dd37443cab065272a4527",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/today#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.933Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115724,
+        "revisionId": 39747560,
+        "revisionTimestamp": "2026-08-02T04:53:18Z",
+        "sha256": "e8dbd4f1f8e37da523ff779135851a19019ef05f48b36babcf74e51cda5620d2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/today",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:36:20.143Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:48:39.172Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/2/examples",
+        "message": "名词项合列“今天”和“当今时代”，但每义各只有一个例句，未达到每个核心义至少两例的要求。应分别补足，并让时代义例句更具体。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1; /senses/1/patterns/1; /senses/1/collocations",
+        "message": "today's homework、today's world、in today's society 和 today's technology 都使用名词所有格，放在副词义下会混淆词性，应移至名词项。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1",
+        "message": "todays 可见于特殊或文学表达，但“多个当今时代”的说明不适合普通用法教学。这里更应教授常用且易拼错的所有格 today's。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1",
+        "message": "as of today 不仅表示“截至今天”，也常表示“从今天起”。应补足区别；其中 today 作介词短语的补足语，宜归入名词项。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料明确支持古英语 tōdæge，但阶段项的 meaning 只是“历史来源形式”，属于空洞占位。应把可证实事实保留在 summary，清空该阶段；现有禁止拆分的说法也超出了材料所证实的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; /pronunciation/sourceIds; /senses/*/sourceIds; /confusions/0/sourceIds",
+        "message": "Oxford 未列为实际取得的材料，Cambridge 抓取失败，不能把它们挂作这些具体说明的证据。法语维基词典所给内容是英语词条，可支持读音、名词与副词的“今天”义及古英语来源；“当今”义可依据原词条中文释义和专业语言知识保留，但不应虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对副词“今天”、副词“当今”、名词“今天”和名词“当今”四项主要功能。修订后保留三项教学组织，名词项用四例分别覆盖两义，各核心义均有两例。近义及时间对照表达均有限定语境，无须强造否定派生词或反义词。词源仅保留已取得材料支持的古英语来源，不推测内部构词或更早演变。",
+    "senseInventory": [
+      {
+        "sense": "副词：在今天这一天",
+        "coveredBy": [
+          "today-adv-date"
+        ],
+        "assessment": "释义及两条例句自然；修订后将名词所有格和介词结构移至名词项，词性更清楚。"
+      },
+      {
+        "sense": "副词：在当今时代、如今",
+        "coveredBy": [
+          "today-adv-era"
+        ],
+        "assessment": "两例已覆盖现代时期义；该义与具体当天义区分清楚，修订其搭配归类。"
+      },
+      {
+        "sense": "名词：今天这一天",
+        "coveredBy": [
+          "today-noun"
+        ],
+        "assessment": "保留作主语的例句，补充所有格例句，共两例；同时明确常用所有格拼写及 as of today 的两种时间关系。"
+      },
+      {
+        "sense": "名词：当今时代",
+        "coveredBy": [
+          "today-noun"
+        ],
+        "assessment": "以 of today 和 today's 两种形式各给一个具体例句，共两例。实际取得的维基词典节选未单列时代义，该义由原词条中文释义及专业语言知识支持。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1",
+        "expectedValueJson": "{\"label\":\"名词复数\",\"form\":\"todays\",\"ipa\":\"/təˈdeɪz/\",\"note\":\"表示多个不同的“今天”或多个当今时代时可用复数，日常表达中较少见。\"}",
+        "valueJson": "{\"label\":\"名词所有格\",\"form\":\"today's\",\"ipa\":\"/təˈdeɪz/\",\"note\":\"在 today 后加 's，可表示“今天的”或“当今的”，如 today's homework、today's world。撇号不能漏写；这不是复数形式。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"today's homework\",\"zh\":\"今天的作业\",\"note\":\"名词所有格 today's 用来修饰名词，表示当天布置或完成的作业。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"as of today\",\"zh\":\"截至今天\",\"note\":\"常用于报告某项信息或变化目前的状态。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"today's world\",\"zh\":\"当今世界\",\"note\":\"today's 修饰 world，强调现代社会的环境或情况。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations",
+        "expectedValueJson": "[{\"en\":\"in today's society\",\"zh\":\"在当今社会\",\"note\":\"常用于讨论现代社会中的现象或问题。\",\"kind\":\"common-collocation\"},{\"en\":\"today's technology\",\"zh\":\"当今的技术\",\"note\":\"指现阶段常见或正在使用的技术。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"life today\",\"zh\":\"如今的生活\",\"note\":\"概括现今的生活情况；today 没有所有格词尾。\",\"kind\":\"common-collocation\"},{\"en\":\"widely used today\",\"zh\":\"如今被广泛使用\",\"note\":\"讨论某种工具或技术在现代的普及情况时可用；today 在这里指当前时期。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"名词 today 常见于 today is...、the world of today 等表达；所有格 today's 可直接修饰名词。\"",
+        "valueJson": "\"名词 today 可作主语，如 Today is Monday；也可用于 the world of today。所有格 today's 可表示“今天的”或“当今的”，具体看所修饰的名词和上下文。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"today-noun-ex2\",\"senseId\":\"today-noun\",\"en\":\"The world of today is changing quickly.\",\"zh\":\"当今世界变化很快。\",\"note\":\"of today 指现代的、当今的。\"}",
+        "valueJson": "{\"id\":\"today-noun-ex2\",\"senseId\":\"today-noun\",\"en\":\"My grandfather says the schools of today are very different from the ones he attended.\",\"zh\":\"我爷爷说，如今的学校和他当年上过的学校很不一样。\",\"note\":\"of today 表示“当今的”，与爷爷上学的年代对照；这种表达较正式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"today-noun-ex3\",\"senseId\":\"today-noun\",\"en\":\"I read about the new bus route in today's newspaper.\",\"zh\":\"我在今天的报纸上读到了有关新公交线路的报道。\",\"note\":\"today's 是名词所有格，这里指今天这一天的。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"today-noun-ex4\",\"senseId\":\"today-noun\",\"en\":\"In today's world, I can take a class with a teacher on another continent without leaving home.\",\"zh\":\"在当今世界，我足不出户就能跟另一个洲的老师上课。\",\"note\":\"today's 修饰 world，指当今时代，不是单指今天这一天。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"today's homework\",\"zh\":\"今天的作业\",\"note\":\"名词所有格 today's 用来修饰名词，表示当天布置或要完成的作业。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"today's world\",\"zh\":\"当今世界\",\"note\":\"today's 是名词所有格，修饰 world，强调当今时代。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"as of today\",\"zh\":\"截至今天；从今天起\",\"note\":\"说明截至某日的情况时可译为“截至今天”，如 As of today, we have sold ten tickets；说明新状态的起点时可译为“从今天起”，如 As of today, the shop is open on Sundays。这里 today 用在介词短语中。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"in today's society\",\"zh\":\"在当今社会\",\"note\":\"today's 是名词所有格；整个短语常用于讨论现代社会中的现象或问题。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"today's technology\",\"zh\":\"当今的技术\",\"note\":\"today's 是名词所有格，这里指现阶段的技术。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"today 源自古英语 tōdæge。现代可以把它整体记作表示“今天”的词；不宜把 today 生硬拆成 to 和 day 来解释历史来源。\"",
+        "valueJson": "\"today 源自古英语 tōdæge。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"tōdæge\",\"meaning\":\"today 的历史来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列的是有依据的历史来源形式；现代英语的词形拆分不等于完整的历史演变解释。\"",
+        "valueJson": "\"记忆时可以联想到熟悉的 day，但助记联想不等于完整的历史演变解释。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: today\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/today\",\"supports\":[\"常见词性和释义\",\"today 的基本用法与例句\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: today\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/today\",\"supports\":[\"副词和名词用法\",\"表示今天与当今时代的区别\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: today\",\"url\":\"https://fr.wiktionary.org/wiki/today#Anglais\",\"supports\":[\"所列古英语历史来源形式\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire：today（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/today#Anglais\",\"supports\":[\"英语读音 /təˈdeɪ/\",\"名词与副词的“今天”义\",\"古英语来源形式 tōdæge\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1431,
+    "headword": "today",
+    "meaning_zh": "n. 今天, 当今, 现在\nadv. 今天, 当今",
+    "phonetic": "/tә'dei/",
+    "pos": "",
+    "forms": []
+  }
+}

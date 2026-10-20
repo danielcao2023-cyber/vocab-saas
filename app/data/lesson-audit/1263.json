@@ -1,0 +1,314 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1eab8d77fee11b34195e95c3b5b826e734eb0da8be46ce707a9066d44e0d3dac",
+    "executedReviewPromptHash": "1eab8d77fee11b34195e95c3b5b826e734eb0da8be46ce707a9066d44e0d3dac",
+    "reviewHash": "7742c0c9c694d1dd5e2f1a478f2803f035df2db1c7d075b33d5c7acfd9913eda",
+    "wordId": 1263,
+    "inputHash": "d993e79f4aa4aef6ec04601cbcc64256b70387a7099857c1654410487659d7de",
+    "draftHash": "6290f5ac8424403157c463c41184ec69c1cca196e2fabf69cce8af2157c6beb3",
+    "finalHash": "2bb8245f6b995290cac5820681e7a01026aef4941bfc35c4d576256dc18a64f5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ski#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:12.685Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2058920,
+        "revisionId": 39257054,
+        "revisionTimestamp": "2026-01-25T14:20:09Z",
+        "sha256": "b8c33ee91a5067ffdd6b5870971793daaf7f45ec3027dc7271d0facf1ec45a9f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ski",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T13:18:09.968Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:24:29.207Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的英语词条中，词源段只有待补模板，没有挪威语来源或历史阶段的证据。须删除相关来源断言及阶段，并修正来源说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未取得，不能作为本次审校的实质依据。可由已取得英语词条支持的内容改引该词条；正确的英语词族予以保留，但撤去未获材料支持的来源归属。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily",
+        "message": "共8个例句对象缺少目标结构必填的 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions、/senses/1/relatedExpressions",
+        "message": "ski 本身及其复数 skis 不构成独立近义表达；snowboard 是另一项运动，宜作类别对照。动词近义栏可保留受语境限制的 go skiing 改写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/note",
+        "message": "go skiing 是一般表达活动的常用搭配，但 go to ski 中的不定式可以表示目的，说明宜避免使用绝对的“不说”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/label",
+        "message": "skied 同时也是过去分词，宜一并标明。"
+      }
+    ],
+    "coverageAssessment": "已核对滑雪板名词义、滑雪动词义，各有两个自然且译义准确的原创例句；ski equipment、ski lift 也体现了名词作定语的功能，无须另拆义。主要词形、读音和现代词族正确。现有材料不能支持历史来源，修订后不保留挪威语来源断言或历史阶段，也不将未取得的 Cambridge 页面视为核验依据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：滑雪板，通常成对使用",
+        "coveredBy": [
+          "ski-noun"
+        ],
+        "assessment": "已覆盖单块 ski、复数 skis 和 a pair of skis，两个例句分别体现复数与单数使用。"
+      },
+      {
+        "sense": "动词：滑雪，使用滑雪板滑行",
+        "coveredBy": [
+          "ski-verb"
+        ],
+        "assessment": "已覆盖日常滑雪活动、沿坡滑行、学习滑雪及 go skiing；两个核心例句自然，senseId 正确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[\"wiktionary-ski\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/label",
+        "expectedValueJson": "\"动词过去式\"",
+        "valueJson": "\"动词过去式／过去分词\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"skis 是复数，指滑雪板；ski lift 指滑雪场的缆车等运送设施。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"This ski 用单数，指一块滑雪板。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"skis\",\"zh\":\"滑雪板（复数）\",\"note\":\"是 ski 的复数形式，通常指一双滑雪板。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"ski 在这个义项中指器材本身；skis 只是它最常见的复数形式。\"",
+        "valueJson": "\"skis 是 ski 的复数形式，不是另一个近义词；snowboard 是另一种器材，也不能作为同义替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[\"wiktionary-ski\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"every winter 表示习惯性活动；主语 we 后用 ski。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"learn to ski 表示学习滑雪；down a gentle slope 说明沿缓坡向下滑行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"go 后接 skiing 表示去进行这项活动；不说 go to ski 来表达一般的“去滑雪”。\"",
+        "valueJson": "\"一般表达“去滑雪”常用 go skiing；go to ski 在强调目的时也符合语法，其中 to ski 表示“为了滑雪”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"ski\",\"zh\":\"滑雪\",\"note\":\"本词作动词，表示使用滑雪板在雪地上滑行。\"},{\"en\":\"snowboard\",\"zh\":\"进行单板滑雪\",\"note\":\"指站在单块宽板上滑行；适用于单板运动语境。\"}]",
+        "valueJson": "[{\"en\":\"go skiing\",\"zh\":\"去滑雪\",\"note\":\"强调去参加滑雪活动，常用于休闲安排等语境；不能在所有句型中直接替换 ski。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"snowboard 与 ski 都是雪上滑行运动，但所用器材和动作方式不同。\"",
+        "valueJson": "\"ski 可直接描述滑雪动作或技能；go skiing 常用于谈参加滑雪活动，描述“会滑雪”通常说 can ski。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"snowboard\",\"zh\":\"进行单板滑雪\",\"note\":\"使用单块宽板进行单板滑雪；与 ski 对照运动类别，并非 ski 的反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[\"wiktionary-ski\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"are skiing 是现在进行时；skiing 保留原词的 i，再加 -ing。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"enjoy 后接 -ing 形式，这里写作 skiing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[\"wiktionary-ski\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 ski 的历史来源与挪威语 ski 有关；英语中 ski 可作名词，也可作动词。把它记作滑雪板和滑雪动作两个相关用法即可。\"",
+        "valueJson": "\"英语 ski 的名词和动词用法同形同音，分别表示“滑雪板”和“滑雪”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"挪威语\",\"form\":\"ski\",\"meaning\":\"滑雪板\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是历史来源；现代英语中名词和动词的用法是同一拼写的不同词性，不代表两段历史演变。\"",
+        "valueJson": "\"现代词义之间的联系不能单独证明两个用法在历史上出现的先后。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"skier 是可数名词，这里指一位滑雪者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"句首的 Skiing 在这里作名词，指滑雪这项活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-ski\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-ski\",\"title\":\"Cambridge Dictionary: ski\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ski\",\"supports\":[\"英美发音\",\"名词和动词用法\",\"常见词形与拼写\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"英语 ski 的挪威语来源线索\"]",
+        "valueJson": "[\"英语 ski 的名词和动词用法\",\"英语读音 /skiː/\",\"名词及动词的规则变化模板\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1263,
+    "headword": "ski",
+    "meaning_zh": "n. 滑雪橇\nvi. 滑雪",
+    "phonetic": "/ski:/",
+    "pos": "",
+    "forms": []
+  }
+}

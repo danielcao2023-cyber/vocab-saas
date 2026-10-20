@@ -1,0 +1,306 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "30c4d2e81d435f78a6c87f13d0fd3b1b82a2438e3d183fd1ab26ff34fee343d5",
+    "executedReviewPromptHash": "30c4d2e81d435f78a6c87f13d0fd3b1b82a2438e3d183fd1ab26ff34fee343d5",
+    "reviewHash": "5e78fc1e2ff743c6f3b95e43770b917f3d447841179c146eca25b54fc12fd168",
+    "wordId": 1418,
+    "inputHash": "fdd4fca5a8699cece4cf05dfb9120cf575f9f990cf98f2391085a72a79419f87",
+    "draftHash": "c53a7361a2fde94a809cb4538520bba86c85115dd1cff1d05e2356dbb52f25cf",
+    "finalHash": "59ebb622b3e40e708261ee4e0cd6fb99ddabb885381eff9c205b004aadb55e5a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/thought#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.434Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116473,
+        "revisionId": 39765516,
+        "revisionTimestamp": "2026-08-03T05:11:45Z",
+        "sha256": "3ec12364d38276d8c8a2c3136cd506912eb5423b2e8ffb15e1cf10220fe06889",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/thought",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:15:50.224Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:27:11.350Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "think 中的 k 发音为 /k/，不是不发音字母；thinking 的拼写说明错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏词典明确列出的“某一群体的思想、思想体系”义，需补充独立说明和两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "“关心、挂念”是词条所列的实用义，不宜仅放在次要义中。原例主要体现考虑他人需要，未充分呈现挂念用法；应补充常用表达及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions；/senses/2/relatedExpressions",
+        "message": "misunderstanding 不与“想法”构成语义反向关系；carelessness 偏向粗心，宜改为 lack of thought 或限定语境的 thoughtlessness；forgot 也不是 thought 的反向表达。仅声明“不通用”不能使这些配对成立。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "过去分词不一定表示过去发生，也常用于 be thought to… 等被动结构。应修正概括，补充这一常用功能，并让过去式与过去分词的主要用法都有充分例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/0",
+        "message": "“与现代英语对应的来源形式”没有提供可解释的历史字义，是空洞阶段。保留 summary 中有依据的古英语形式，清空阶段数组。"
+      }
+    ],
+    "coverageAssessment": "已核对可用英语词条的全部定义，并结合词条中文释义和专业语言知识逐句审查。补丁补齐群体思想、关心挂念及过去分词的常用被动功能；修订后每个核心名词义至少有两个例句，过去式、完成时和被动结构也分别有两个例句。古英语来源仅保留材料明确支持的事实。Oxford 与未获取成功的 Cambridge 仅作为推荐阅读，不视为已取得的词典证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：具体想法、念头、意见",
+        "coveredBy": [
+          "thought-n-idea"
+        ],
+        "assessment": "两个例句分别呈现主意和看法；保留正文，删除不成立的反向配对。"
+      },
+      {
+        "sense": "名词：思考活动、思维",
+        "coveredBy": [
+          "thought-n-thinking"
+        ],
+        "assessment": "两个例句和不可数用法基本准确；修正反向表达。"
+      },
+      {
+        "sense": "名词：与群体相关的思想、思想体系",
+        "coveredBy": [
+          "thought-n-tradition"
+        ],
+        "assessment": "原稿遗漏；补丁新增独立义及两个例句。"
+      },
+      {
+        "sense": "名词：关心、挂念",
+        "coveredBy": [
+          "thought-n-care"
+        ],
+        "assessment": "原稿仅列次要义；补丁移入核心义，覆盖 spare a thought for 和慰问中的 thoughts。"
+      },
+      {
+        "sense": "动词：think 的过去式",
+        "coveredBy": [
+          "thought-v-past"
+        ],
+        "assessment": "原稿有过去看法的例句；补充过去考虑的例句。"
+      },
+      {
+        "sense": "动词：think 的过去分词",
+        "coveredBy": [
+          "thought-v-past"
+        ],
+        "assessment": "修正时间含义概括；修订后有两个完成时例句和两个被动结构例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"think 以不发音的词尾 k 结束，直接加 -ing：thinking。\"",
+        "valueJson": "\"think 中的 k 发 /k/；直接加 -ing，保留 k，写作 thinking。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"misunderstanding\",\"zh\":\"误解\",\"note\":\"在表达看法或理解时，misunderstanding 指理解错了；它不是 thought 的通用反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"表示“想法、看法”时可用 misunderstanding 对照正确理解；没有适用于所有用法的固定反义词。\"",
+        "valueJson": "\"thought 表示“念头、看法”时没有固定的词汇反义词。要表达“想不出任何办法”，可按句意说 I couldn't think of anything。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"carelessness\",\"zh\":\"粗心；不加考虑\",\"note\":\"在“认真思考”这一语境中，carelessness 表示做事不仔细；不是 thought 在其他义项下的反义词。\"}]",
+        "valueJson": "[{\"en\":\"lack of thought\",\"zh\":\"缺乏考虑\",\"note\":\"直接表示没有充分思考，可与 careful thought 对照。\"},{\"en\":\"thoughtlessness\",\"zh\":\"欠考虑；不体贴\",\"note\":\"指行动或决定欠考虑时可与 careful thought 对照；也可表示不顾及他人感受。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在是否认真考虑的语境中，可用 carelessness 对照；它不是名词 thought 的普遍反义词。\"",
+        "valueJson": "\"在做事是否经过充分考虑的语境中，可用 lack of thought 或 thoughtlessness 对照 careful thought；thoughtlessness 还可能侧重不体贴。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"forgot\",\"zh\":\"忘记\",\"note\":\"在“记得去想或考虑某事”的语境中可形成对照，但不是 thought 的通用反义词。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"过去时否定用 didn’t think，did 后必须用原形；forgot 只在记忆或考虑的具体语境中构成对照。\"",
+        "valueJson": "\"一般过去时的否定用 didn’t think，did 后必须用原形。完成时的否定可用 haven’t/hasn’t/hadn’t thought，不能一律改用 didn’t think。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"动词 think 的不规则过去式和过去分词，表示“想、认为、思考”发生在过去，或与 have/has/had 连用。\"",
+        "valueJson": "\"动词 think 的不规则过去式和过去分词，可表示“想、认为、思考”。过去式用于一般过去时；过去分词用于完成时、被动语态等结构，本身不等于过去发生。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"过去式用于一般过去时；过去分词常用于完成时。think 的两种形式拼写相同，都是 thought。\"",
+        "valueJson": "\"过去式和过去分词都写 thought。与 have/has/had 连用可构成完成时；表达“被认为……”时，常用 be thought to ... 或 It is/was thought that ...，这里的 thought 是过去分词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-v-past-ex3\",\"senseId\":\"thought-v-past\",\"en\":\"We thought about taking the bus, but decided to walk.\",\"zh\":\"我们考虑过乘公交车，但决定步行。\",\"note\":\"thought 是过去式，表示当时考虑过一种选择，并不表示最后采用了它。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-v-past-ex4\",\"senseId\":\"thought-v-past\",\"en\":\"Until yesterday, I had always thought the shop closed at six.\",\"zh\":\"直到昨天，我还一直以为这家商店六点关门。\",\"note\":\"thought 与 had 构成过去完成时，表示过去某个时间以前一直持有的看法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-v-past-ex5\",\"senseId\":\"thought-v-past\",\"en\":\"The old bridge is thought to be unsafe.\",\"zh\":\"人们认为那座旧桥不安全。\",\"note\":\"is thought to be 表示现在被认为如何；thought 是过去分词，整句不是一般过去时。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-v-past-ex6\",\"senseId\":\"thought-v-past\",\"en\":\"It was thought that the missing dog was near the park.\",\"zh\":\"当时人们认为那只走失的狗在公园附近。\",\"note\":\"It was thought that ... 是较正式的被动表达；was 标示过去，thought 是过去分词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be thought to + 动词原形\",\"zh\":\"被认为……\",\"note\":\"常用于较正式的表达，如 is thought to be safe；时间由 be 等结构体现，不能因为出现 thought 就判断为过去时。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It is/was thought that ...\",\"zh\":\"人们现在／当时认为……\",\"note\":\"it 是形式主语，that 从句说明人们所持的看法；thought 是过去分词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-n-tradition\",\"title\":\"群体的思想；思想体系\",\"meaning\":\"某一群体、文化或学术传统中的思想和观念，通常作不可数名词。\",\"usageNote\":\"常由文化、时代或领域名称修饰，如 Chinese thought、modern thought。这里指一套思想或思想传统，不是一个临时冒出的念头。\",\"examples\":[{\"id\":\"thought-n-tradition-ex1\",\"senseId\":\"thought-n-tradition\",\"en\":\"Our teacher used a story to explain ancient Greek thought.\",\"zh\":\"老师用一个故事解释古希腊思想。\",\"note\":\"thought 指与古希腊文化相关的思想传统，不加 a。\"},{\"id\":\"thought-n-tradition-ex2\",\"senseId\":\"thought-n-tradition\",\"en\":\"I borrowed a book on Chinese thought from the school library.\",\"zh\":\"我从学校图书馆借了一本关于中国思想的书。\",\"note\":\"Chinese thought 指中国的思想传统，不是某个人的一个想法。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"Chinese thought\",\"zh\":\"中国思想\",\"note\":\"指与中国文化相关的思想传统。\",\"kind\":\"common-collocation\"},{\"en\":\"modern thought\",\"zh\":\"现代思想\",\"note\":\"指现代的思想观念或思想发展。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"philosophy\",\"zh\":\"哲学；思想体系\",\"note\":\"讨论系统的哲学思想时可接近 thought；thought 的范围也可包括其他领域的观念。\"},{\"en\":\"thinking\",\"zh\":\"思想；思维方式\",\"note\":\"可表示某一群体的观念或思维方式；也常表示思考过程，不能处处替换。\"}],\"contrasting\":[],\"similarNote\":\"讨论思想传统时，可按内容选用 philosophy 或 thinking；两者与 thought 的范围并不完全相同。\",\"contrastingNote\":\"“思想体系”没有固定的词汇反义词；若讨论相反的主张，应具体说明是哪两种观点。\"},\"sourceIds\":[\"wiktionary-thought\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thought-n-care\",\"title\":\"关心；挂念\",\"meaning\":\"对别人处境、感受或需要的关心，也可表示惦念。\",\"usageNote\":\"常通过 spare a thought for ... 等搭配表达；复数 thoughts 也用于慰问，如 My thoughts are with you。不能把 thought 当作 concern 在所有句子中直接替换。\",\"examples\":[{\"id\":\"thought-n-care-ex1\",\"senseId\":\"thought-n-care\",\"en\":\"Please spare a thought for the people working outside in the cold.\",\"zh\":\"也请关心一下那些在寒冷天气里露天工作的人。\",\"note\":\"spare a thought for 表示抽点心思关心别人的处境。\"},{\"id\":\"thought-n-care-ex2\",\"senseId\":\"thought-n-care\",\"en\":\"My thoughts are with you and your family at this difficult time.\",\"zh\":\"在这段艰难的日子里，我惦念着你和你的家人。\",\"note\":\"常用于慰问，表达关心和支持；这里用复数 thoughts。\"}],\"patterns\":[{\"en\":\"My thoughts are with you/your family.\",\"zh\":\"我惦念着你／你的家人。\",\"note\":\"常在对方经历困难或失去亲人时表达慰问。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"spare a thought for someone\",\"zh\":\"关心一下某人的处境\",\"note\":\"常用来提醒别人顾及处境不易的人。\",\"kind\":\"fixed-expression\"},{\"en\":\"give thought to someone’s needs\",\"zh\":\"考虑某人的需要\",\"note\":\"关注对方的需要，体现为他人着想。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"concern\",\"zh\":\"关心；担忧\",\"note\":\"强调对别人处境的关切，也可能含担心；不能逐词替换 thoughts are with you。\"},{\"en\":\"consideration\",\"zh\":\"体谅；顾及\",\"note\":\"强调顾及他人的感受或需要，常见于 consideration for others。\"}],\"contrasting\":[{\"en\":\"thoughtlessness\",\"zh\":\"不体贴；欠考虑\",\"note\":\"在是否顾及他人感受和需要的语境中，与关心、体贴形成对照。\"},{\"en\":\"lack of concern\",\"zh\":\"缺乏关心\",\"note\":\"直接表示不关心他人的处境，不表示没有思考能力。\"}],\"similarNote\":\"concern 侧重关切，consideration 侧重体谅；表示挂念时需注意各自搭配。\",\"contrastingNote\":\"谈是否关心他人时，可用 thoughtlessness 或 lack of concern 作反向表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"thought-n-care\",\"title\":\"关心；挂念\",\"meaning\":\"在 give thought to someone/something 等表达中，表示把注意力或关心放在某人或某事上。\",\"note\":\"通常通过固定搭配表达，不必单独把它当成初学时优先记忆的独立义项。\",\"example\":{\"id\":\"thought-n-care-ex1\",\"senseId\":\"thought-n-care\",\"en\":\"Thanks for giving thought to the younger children.\",\"zh\":\"谢谢你为年纪小的孩子们着想。\",\"note\":\"give thought to 在此表示把对方放在心上、考虑其需要。\"},\"sourceIds\":[\"oxford-thought\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"þōht\",\"meaning\":\"与现代英语 thought 相对应的古英语来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/sources/2/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thought 的名词义：想法、思考及与群体相关的思想\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1418,
+    "headword": "thought",
+    "meaning_zh": "n. 想法, 思想, 思维, 关心, 挂念\nthink的过去式和过去分词",
+    "phonetic": "/θɒ:t/",
+    "pos": "",
+    "forms": []
+  }
+}

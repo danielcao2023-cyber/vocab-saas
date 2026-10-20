@@ -1,0 +1,381 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b81fc86d35714d0814b8995684236145bfc2ff8590cd9b58840932df17cd73ee",
+    "executedReviewPromptHash": "b81fc86d35714d0814b8995684236145bfc2ff8590cd9b58840932df17cd73ee",
+    "reviewHash": "83f3e98786074578d81352ef620f10009d90267ffa267b6144fddf9b7c810604",
+    "wordId": 1103,
+    "inputHash": "8da5dd82f704b89ca6831ead3bf7253977e8c67bb45630f30a05a284c42169dd",
+    "draftHash": "a0724e1bf193f0115bb5409fd2129623a7db99d1e1d6db25e1b8c92e6132340c",
+    "finalHash": "0d5b990b2ef923d5cec24adbf274bcbad3b0cb575423e5ae8f06f0809547cd78",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/purpose#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.403Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120430,
+        "revisionId": 34858469,
+        "revisionTimestamp": "2024-05-25T10:10:23Z",
+        "sha256": "a648bc87a54575bd930fe3431045d1ebb94f6d1202276be16c1abb23e89ef457",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/purpose",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T06:57:01.468Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T07:16:24.170Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses/2",
+        "message": "来源明确将动词标为罕见、旧式；初稿仅强调正式，容易诱导学生用于现代日常表达。须补足语域限制，并使例句符合旧式叙事语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；相关 sourceIds",
+        "message": "实际来源中没有 Oxford 页面的正文，不能让它承担已依据的具体断言。应将明确有据的内容关联至现有 Wiktionnaire 英语词条，其余专业语言知识不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "高频功能 on purpose 仅在辨析和助记中出现，缺少按核心功能提供的两个例句。应补齐，并说明有意行为不一定带责怪意味。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/note",
+        "message": "purpose 与 propose 并非只差一个字母：第二、第三个字母均不同，分别以 pur-、pro- 开头。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/*/example/senseId；/wordFamily/0/example/senseId",
+        "message": "有意行为误绑定到用途义；房间的新用途误绑定到目标义。应将 intentionality 相关例句关联至新增的 on purpose 功能，将房间例句关联至用途义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段释义“名词来源之一”“名词”只是词性占位，不是历史字义，不能用于顺序箭头图。应清空阶段，在摘要中分别说明名词、动词的古法语来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2",
+        "message": "purposely 重复收录，且重复项误关联至动词义；删除该重复项即可。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/note",
+        "message": "with purpose 强调坚定和方向感，并不必然表示有条理；宜同时注明不可数用法及其与 on purpose 的区别。"
+      }
+    ],
+    "coverageAssessment": "已核对目的／意图、用途／作用、坚定／决心、罕见旧式动词及常用短语 on purpose。修订后核心名词义与 on purpose 均有两个自然例句；动词保留两个明确标示旧式语域的例句，坚定义保留拓展识别。原释义中的“效果”结合作用类表达理解，“论题”不扩展为现代初中核心义。词形、读音及其余近反义语境限制未见必须改动的实质问题；历史说明限于已取回来源。",
+    "senseInventory": [
+      {
+        "sense": "名词：目的、意图，含人生目标",
+        "coveredBy": [
+          "purpose-n-goal"
+        ],
+        "assessment": "两个例句分别说明会议目的和个人目标；主要句型及近反义限制基本准确。"
+      },
+      {
+        "sense": "名词：用途、作用",
+        "coveredBy": [
+          "purpose-n-use"
+        ],
+        "assessment": "按钮和储物房间两个例句覆盖具体用途；serve a purpose、serve no purpose 覆盖作用表达。"
+      },
+      {
+        "sense": "名词：坚定、决心",
+        "coveredBy": [
+          "purpose-n-determination"
+        ],
+        "assessment": "作为拓展义保留 with purpose 示例；修正附加的“有条理”释义，并说明通常不可数。"
+      },
+      {
+        "sense": "常用固定功能：on purpose，故意地、有意地",
+        "coveredBy": [
+          "purpose-on-purpose"
+        ],
+        "assessment": "新增完整教学项及两个例句，覆盖带责怪意味和中性的有意安排，并与无意行为对照。"
+      },
+      {
+        "sense": "动词：意欲、打算、决意",
+        "coveredBy": [
+          "purpose-v-intend"
+        ],
+        "assessment": "保留该词性；按来源补足罕见、旧式限制，避免将其作为普通正式英语推荐使用。"
+      },
+      {
+        "sense": "原始释义中的“效果”",
+        "coveredBy": [
+          "purpose-n-use"
+        ],
+        "assessment": "通过作用义及 serve no purpose 等表达处理；不将 purpose 泛化为任何语境中的 effect 或 result。"
+      },
+      {
+        "sense": "原始释义中的“论题”",
+        "coveredBy": [],
+        "assessment": "不属于本课现代初中核心用法，现有英语词条亦未列此义；不将会议的 purpose 误解释为会议主题。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun; verb (rare, formal)\"",
+        "valueJson": "\"noun; verb (rare, old-fashioned)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"意欲；打算\"",
+        "valueJson": "\"意欲；打算（罕见、旧式）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"动词，表示打算做某事；这一用法较少见，语气偏正式。\"",
+        "valueJson": "\"作动词表示意欲、打算或决意做某事；这一用法罕见，带旧式书面语色彩。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构 purpose to do something。日常英语通常说 intend to 或 plan to。\"",
+        "valueJson": "\"结构是 purpose to do something。该动词罕见且旧式，不是普通正式表达；现代日常英语通常用 intend to 或 plan to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"purpose-3a\",\"senseId\":\"purpose-v-intend\",\"en\":\"The team purposed to finish the mural before the school fair.\",\"zh\":\"团队打算在校园集市前完成这幅壁画。\",\"note\":\"purpose to finish 表示打算完成，动词用法较正式。\"}",
+        "valueJson": "{\"id\":\"purpose-3a\",\"senseId\":\"purpose-v-intend\",\"en\":\"The traveller purposed to return before winter.\",\"zh\":\"那位旅人打算在冬天到来前返回。\",\"note\":\"purposed to return 是旧式叙事措辞；现代日常通常说 intended to return 或 planned to return。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"purpose-3b\",\"senseId\":\"purpose-v-intend\",\"en\":\"She purposed to speak with the coach after practice.\",\"zh\":\"她打算训练后和教练谈谈。\",\"note\":\"purpose 表示打算，并不说明最后一定做成。\"}",
+        "valueJson": "{\"id\":\"purpose-3b\",\"senseId\":\"purpose-v-intend\",\"en\":\"She purposed to keep her promise, whatever happened.\",\"zh\":\"无论发生什么，她都决意信守承诺。\",\"note\":\"这里是旧式书面语中的“决意”；句子并未说明她后来是否履行了承诺。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"较正式且不常见；日常表达多用 intend to 或 plan to。\"",
+        "valueJson": "\"罕见、旧式用法；现代日常表达多用 intend to 或 plan to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"purpose to act\",\"zh\":\"打算采取行动\",\"note\":\"purpose 后接 to 加动词原形，说明打算采取的行动。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"purpose to act\",\"zh\":\"打算采取行动\",\"note\":\"旧式书面语中的句型实例；purpose 后接 to 加动词原形，现代通常说 intend to act。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常暗示已有安排或步骤；purpose to 更少见、更正式。\"",
+        "valueJson": "\"常暗示有计划或安排；相比之下，purpose to 是罕见、旧式的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"日常说“打算”优先用 intend to 或 plan to；purpose 作动词较书面、少见。\"",
+        "valueJson": "\"日常表达“打算”通常用 intend to 或 plan to；purpose 作动词罕见，带旧式书面语色彩。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"purpose-on-purpose\",\"title\":\"on purpose：故意地；有意地\",\"meaning\":\"表示一个动作是有意做出的，而不是无意发生的；既可用于责怪，也可说明中性的有意安排。\",\"usageNote\":\"purpose 在这个固定短语里仍是名词，on purpose 整体作状语，常放在所描述的动作之后；不能漏掉 on。\",\"examples\":[{\"id\":\"purpose-on-purpose-1\",\"senseId\":\"purpose-on-purpose\",\"en\":\"He hid my keys on purpose.\",\"zh\":\"他故意把我的钥匙藏了起来。\",\"note\":\"说明藏钥匙是有意的，这里带有责怪意味。\"},{\"id\":\"purpose-on-purpose-2\",\"senseId\":\"purpose-on-purpose\",\"en\":\"She arrived early on purpose so that she could help set up the chairs.\",\"zh\":\"她特意早到，好帮忙摆椅子。\",\"note\":\"这里可译为“特意”，并不带责怪意味。\"}],\"patterns\":[{\"en\":\"do something on purpose\",\"zh\":\"故意／特意做某事\",\"note\":\"on purpose 说明动作是有意做出的。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"on purpose\",\"zh\":\"故意地；有意地\",\"note\":\"固定短语，通常不在 purpose 前加冠词。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"purposely\",\"zh\":\"故意地；特意地\",\"note\":\"副词，可与 on purpose 表达相同的有意性，如 purposely hide something。\"},{\"en\":\"intentionally\",\"zh\":\"有意地；故意地\",\"note\":\"也强调动作出于有意安排，不保证该行为有正当理由。\"}],\"contrasting\":[{\"en\":\"by accident\",\"zh\":\"无意地；偶然地\",\"note\":\"在动作是否有意这一点上与 on purpose 相对。\"},{\"en\":\"accidentally\",\"zh\":\"不小心地；意外地\",\"note\":\"副词，表示事情并非有意造成。\"}],\"similarNote\":\"purposely、intentionally 和 on purpose 都可强调动作是有意的；on purpose 在日常口语中很常见。\",\"contrastingNote\":\"这里对照的是动作是否有意，而不是行动有没有理由。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于 with purpose，描述行动坚定、有条理；不等于“决心”这一名词在所有句子中的用法。\"",
+        "valueJson": "\"这一义通常不可数，常见于 with purpose，强调行动坚定、有明确方向；on purpose 则强调动作是有意的。不能用 purpose 替换所有语境中的“决心”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"purpose-n-goal\"",
+        "valueJson": "\"purpose-on-purpose\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"purpose-n-use\"",
+        "valueJson": "\"purpose-on-purpose\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"purpose 表示目的或打算；propose 常表示提议或求婚，拼写只差一个字母但意思不同。\"",
+        "valueJson": "\"purpose 常作名词表示“目的”，propose 常表示“提议”或“求婚”；两词外形相近，但第二、第三个字母均不同，开头分别是 pur- 和 pro-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/senseId",
+        "expectedValueJson": "\"purpose-n-goal\"",
+        "valueJson": "\"purpose-n-use\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 purpose 经古法语 porpos／porposer 传入；该法语来源也与现代法语 propos／proposer 有关联。现代英语可把 purpose 作为一个整体记忆，不宜把它拆成 purpose + 某个词缀来猜词义。\"",
+        "valueJson": "\"英语名词 purpose 来自古法语名词 porpos，动词 purpose 来自古法语动词 porposer。现代法语 propos 和 proposer 也分别来自这两个古法语形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"porpos\",\"meaning\":\"名词来源之一\"},{\"language\":\"英语\",\"form\":\"purpose\",\"meaning\":\"名词\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史材料还提到动词来源 porposer；这些相关形式不应误排成一条“名词先变成动词再变成英语名词”的单线演变。这里仅列有据的名词来源链；现代英语 purpose 的词义不能仅凭这些形式推断。\"",
+        "valueJson": "\"porpos 与 porposer 分别对应名词和动词的来源，不能把 porpos、porposer、purpose 依次串成同一条演变链。历史来源、现代派生构词和助记联想应分开理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"purpose-n-goal\"",
+        "valueJson": "\"purpose-on-purpose\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/wordFamily/2",
+        "expectedValueJson": "{\"word\":\"purposely\",\"partOfSpeech\":\"adverb\",\"meaning\":\"有意地；特意地\",\"formation\":\"purpose + -ly。\",\"spellingNote\":\"加 -ly 后仍保留词尾 e。\",\"example\":{\"id\":\"purpose-family-3\",\"senseId\":\"purpose-v-intend\",\"en\":\"They purposely saved the last seat for Noah.\",\"zh\":\"他们特意把最后一个座位留给诺亚。\",\"note\":\"purposely 表示有意如此安排。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: purpose\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/purpose\",\"supports\":[\"名词的目的、用途及坚定行动用法\",\"名词搭配、purpose 作动词的用法与词形\",\"purposeful、purposely 等派生形式及拼写\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire: purpose（anglais）—词源\",\"url\":\"https://fr.wiktionary.org/wiki/purpose#Anglais\",\"supports\":[\"给定词源材料中 purpose 与古法语 porpos、porposer 的来源关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire: purpose（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/purpose#Anglais\",\"supports\":[\"名词的目的、意图及坚定义\",\"固定短语 on purpose\",\"动词 purpose 的罕见、旧式用法\",\"英语读音\",\"古法语名词 porpos、动词 porposer 与英语 purpose 及法语 propos、proposer 的来源关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1103,
+    "headword": "purpose",
+    "meaning_zh": "n. 目的, 意向, 决心, 用途, 效果, 论题\nvt. 意欲, 企图, 计划",
+    "phonetic": "/'pә:pәs/",
+    "pos": "",
+    "forms": []
+  }
+}

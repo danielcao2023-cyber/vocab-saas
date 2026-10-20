@@ -1,0 +1,636 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "65c1a82d999d4fc6c019beb311681a868f8c1c84e420294f2226d3f075b4a837",
+    "executedReviewPromptHash": "65c1a82d999d4fc6c019beb311681a868f8c1c84e420294f2226d3f075b4a837",
+    "reviewHash": "d362b4aaffe534ca58c61d332f11e3d0c4bd2d296be9a8c8498910360e88c4b6",
+    "wordId": 527,
+    "inputHash": "8ed2d1b75ff02e479b04d0c3aa7a27bfaecf7909e5154b5b850839edc7df1461",
+    "draftHash": "a330fbf0c4963378eabb74d91a7b013ad054edec8fc7650a9e4f0ce96a17b431",
+    "finalHash": "2bf2fdb312e6077e99232745c8a6af1026a290c35b00c17ce12239f949b46871",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/flag#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.108Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 103455,
+        "revisionId": 39759756,
+        "revisionTimestamp": "2026-08-03T00:22:34Z",
+        "sha256": "13f6462a6204652406e47fb3bf3eab2b5d27e2c6336c68e2ff8e444f58c65851",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/flag",
+        "section": "flag etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "f5b6f20c211c4e2fe4ae6448e7a1ae885fd9d3dcdbabb51c55a6b8f7977f64ff",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "f5b6f20c211c4e2fe4ae6448e7a1ae885fd9d3dcdbabb51c55a6b8f7977f64ff",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/527.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/flag",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:29:27.406Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:47:00.232Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*/note",
+        "message": "原有四个核心义的八条例句均缺少必填的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的 flag down（挥手示意车辆停下）；表示疲倦的用法也只举了精力、兴趣作主语的例子，没有覆盖人直接作主语的常用句型。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "编程中的状态标志、石板名词、植物名、悬旗装饰及具体的蔫垂义未得到明确说明。它们应与核心常用义分层补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "旗帜定义过度限定为挂在旗杆上并代表国家或组织，未覆盖手持旗和信号旗；to the match 译成“去参加比赛”还增加了原文没有限定的参赛身份。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "普通标记和比喻性的警示迹象需要分别用清楚的例句呈现。warning flag 可以成立，但核心教学宜优先呈现更常用的 red flag。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "应补充用实物旗标记、口头提请注意及 flag something as、flag something for review、flag something up 等常见功能，避免例句集中于书面做记号。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/*/relatedExpressions",
+        "message": "plain cloth 是生硬的物品对照；green light 应与 red flag 的直接语境对照 green flag 分清。精力减退义不宜笼统用 pick up 对照，软件中的 unflag 和形容词 unflagging 则值得明确限定语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation; /wordFamily/1/formation",
+        "message": "实际后缀分别是 -ed、-ing；不能把双写产生的 g 并入后缀，写成 -ged、-ging。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "“可追溯到”把可能的 flaka 联系说得过于确定；阶段中的“后来也用于表示体力或兴趣减退”没有得到给定历史材料支持，不宜画成确定的顺序演变链。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/sourceIds; /sources/2",
+        "message": "读音可引用已取得的 Wiktionnaire 英语条目。该来源的标题及支持范围宜明确标出英语词条、法语释义，并反映其中实际包含的读音、词形和词义。"
+      }
+    ],
+    "coverageAssessment": "已按词条释义、Wiktionnaire 的英语条目及词源摘要逐项核对。补丁后覆盖旗帜与信号旗、普通标记与警示迹象、标出与提请注意、示意停车、疲倦与减弱，并分层补入编程、石板、植物、悬旗装饰和蔫垂义。核心义均有至少两例，新增例句均补齐必填字段。词源仅保留可支持的事实与限定关系。Cambridge 未取得正文，Oxford 未附正文，二者仅作为推荐查询入口；扩展搭配、派生词和低频义的说明依据专业语言知识，不声称已逐页核验。",
+    "senseInventory": [
+      {
+        "sense": "名词：旗子、旗帜，包括代表身份的旗和传递信号的旗",
+        "coveredBy": [
+          "flag-n-1"
+        ],
+        "assessment": "保留原有代表性旗帜例句，扩宽定义，并补入两个信号旗例句。"
+      },
+      {
+        "sense": "名词：标记、旗形图标；比喻性的警示迹象",
+        "coveredBy": [
+          "flag-n-2"
+        ],
+        "assessment": "补丁后普通标记和 red flag 警示迹象各有两个例句。"
+      },
+      {
+        "sense": "名词：编程中指示状态或条件的标志",
+        "coveredBy": [
+          "flag-n-computing"
+        ],
+        "assessment": "补入专业低频栏，区别于屏幕上的旗形图标。"
+      },
+      {
+        "sense": "名词：铺路石板",
+        "coveredBy": [
+          "flag-n-stone"
+        ],
+        "assessment": "补入低频栏，并与布旗义的历史来源分开。"
+      },
+      {
+        "sense": "名词：植物名，见 yellow flag、sweet flag 等",
+        "coveredBy": [
+          "flag-n-plant"
+        ],
+        "assessment": "补入低频栏，区分黄菖蒲这一鸢尾类植物与 sweet flag 菖蒲。"
+      },
+      {
+        "sense": "及物动词：用旗或其他标记标出；标记信息；指出问题",
+        "coveredBy": [
+          "flag-v-1"
+        ],
+        "assessment": "补充实物旗标记、口头提醒和分类标记例句，并补齐 as、for review、up 等常用结构。"
+      },
+      {
+        "sense": "动词短语：发信号示意司机或车辆停下",
+        "coveredBy": [
+          "flag-v-down"
+        ],
+        "assessment": "新增核心义，两例覆盖 flag down a taxi 和 flag a driver down；另说明代词宾语的位置。"
+      },
+      {
+        "sense": "及物动词：悬旗、用旗装饰",
+        "coveredBy": [
+          "flag-v-decorate"
+        ],
+        "assessment": "补入低频栏，不与标记信息混为一义。"
+      },
+      {
+        "sense": "不及物动词：人逐渐疲倦；精力、兴趣、热情等减退",
+        "coveredBy": [
+          "flag-v-2"
+        ],
+        "assessment": "保留精力和兴趣两例，另补人作主语的疲倦用法。"
+      },
+      {
+        "sense": "不及物动词：失去挺立或张紧状态，蔫垂、松垂",
+        "coveredBy": [
+          "flag-v-droop"
+        ],
+        "assessment": "补入低频栏，用植物在高温中蔫垂的例句呈现具体义。"
+      },
+      {
+        "sense": "及物动词：用石板铺设",
+        "coveredBy": [
+          "flag-v-3"
+        ],
+        "assessment": "原有释义及例句成立，保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时常指旗子或用来提醒人的标记；作动词时可表示标出信息，也可表示体力或兴趣减退。\"",
+        "valueJson": "\"作名词时常指旗子或提示标记；作动词时可表示标出信息、挥手示意车辆停下（flag down），也可表示人变累或精力、兴趣减退。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"练习 flag down a taxi、flag a taxi down 和 flag it down，注意代词宾语的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-flag\"]",
+        "valueJson": "[\"wiktionary-flag\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"挂在旗杆上、用颜色和图案代表国家、组织或队伍的布。\"",
+        "valueJson": "\"通常用布制成的旗，用颜色、图案代表国家、组织或队伍，也可通过颜色、位置或挥动方式传递信号。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于国旗、校旗和船上的旗。作复数时用 flags。\"",
+        "valueJson": "\"可指国旗、校旗、队旗或信号旗，既可以悬挂，也可以手持。作复数时用 flags。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flew 是 fly 的过去式；旗子作主语时，fly 可表示飘扬。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"他们带着队旗去参加比赛。\"",
+        "valueJson": "\"他们带着队旗去了比赛现场。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"team flag 是队旗；to the match 说明前往比赛现场，并不限定他们是否参赛。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-1-ex-3\",\"senseId\":\"flag-n-1\",\"en\":\"The lifeguard raised a red flag to warn swimmers of strong currents.\",\"zh\":\"救生员升起红旗，提醒游泳者有强劲水流。\",\"note\":\"这里是实际用于传递警告的信号旗。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-1-ex-4\",\"senseId\":\"flag-n-1\",\"en\":\"The race official waved a flag to signal the start.\",\"zh\":\"比赛裁判挥旗示意比赛开始。\",\"note\":\"wave a flag 表示挥旗；旗子在这里用于传递比赛信号。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"plain cloth\",\"zh\":\"没有旗帜图案的普通布\",\"note\":\"仅在区分旗帜与普通布料时对照；它不是 flag 的固定反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义没有常用的单词反义词；此处只作“旗帜与普通布”的语境对照。\"",
+        "valueJson": "\"旗帜是具体物品名，没有常用的直接反义词；相关词主要按形状和用途区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"标记；提示信号\"",
+        "valueJson": "\"标记；警示信号\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用来提示问题、状态或需要注意之处的标记或信号。\"",
+        "valueJson": "\"用于标出位置、状态或待处理内容的标记；也可指让人警觉的迹象，后者常见于 red flag。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于表格、电脑程序和日常提醒；不一定是实际的旗子。\"",
+        "valueJson": "\"地图、任务列表等可用旗形图标作标记；比喻性的 red flag 则表示警示迹象，未必有实物旗子。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"地图上的红色标记指出了一处危险区域。\"",
+        "valueJson": "\"地图上的红色旗形标记标出了一处危险区域。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 flag 是地图上标出地点的旗形图标。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"A late reply can be a warning flag.\"",
+        "valueJson": "\"The seller's refusal to answer basic questions was a red flag.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"回复迟缓可能是一个警示信号。\"",
+        "valueJson": "\"卖家拒绝回答基本问题，是个警示信号。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"red flag 在这里比喻值得警惕的迹象，不是实物红旗。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-2-ex-3\",\"senseId\":\"flag-n-2\",\"en\":\"A blue flag appears next to each unfinished task.\",\"zh\":\"每项未完成的任务旁都会显示一个蓝色旗形标记。\",\"note\":\"这个标记用来表示任务状态，本身不表示危险。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-2-ex-4\",\"senseId\":\"flag-n-2\",\"en\":\"Several unexplained charges on the bill were a red flag.\",\"zh\":\"账单上有几项没有说明缘由的收费，这让人警觉。\",\"note\":\"几项收费共同构成一个警示迹象，所以可以用 a red flag 作表语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"a warning flag\",\"zh\":\"警示信号\",\"note\":\"用来提醒人留意可能存在的问题。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a red flag\",\"zh\":\"危险信号；值得警惕的迹象\",\"note\":\"既可指实际的红色信号旗，也常比喻可能存在问题的迹象；本义侧重后者。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"green flag\",\"zh\":\"积极迹象；让人放心的信号\",\"note\":\"非正式地评价人的表现或关系时，可与 red flag 对照；它不等于正式许可。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"green light 只在“提醒风险”和“准许继续”的语境中与 warning flag 相对。\"",
+        "valueJson": "\"green flag 可在非正式评价中与 red flag 对照；green light 强调获准继续。二者都不是普通位置标记的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"可接名词作宾语；也常用于 flag something for someone，表示替某人标出要留意的内容。\"",
+        "valueJson": "\"本义作及物动词，可用旗或其他记号标出地点、内容，也可在谈话中提醒别人注意问题。常见结构有 flag something、flag something as important 和 flag something for review；flag something up 也常见于英式英语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flag 直接接被标出的内容；这里要求把拼写错误标出来供人注意。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"for her brother 表示这项标记是为弟弟做的。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-1-ex-3\",\"senseId\":\"flag-v-1\",\"en\":\"The surveyors flagged the route through the woods.\",\"zh\":\"测量员用小旗标出了穿过树林的路线。\",\"note\":\"此处指用实物旗作标记，flag 后直接接被标出的路线。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-1-ex-4\",\"senseId\":\"flag-v-1\",\"en\":\"At the meeting, Nina flagged a problem with the trip schedule.\",\"zh\":\"会上，妮娜提醒大家出游日程安排有个问题。\",\"note\":\"这里指口头提请注意，不要求实际画出记号。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-1-ex-5\",\"senseId\":\"flag-v-1\",\"en\":\"The app flagged my message as spam.\",\"zh\":\"这个应用把我的消息标记为垃圾信息。\",\"note\":\"flag something as something 表示把某项内容标记为某个类别。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"flag something as + 名词或形容词\",\"zh\":\"把某项内容标记为……\",\"note\":\"as 后说明类别或状态，如 flag a message as spam、flag a task as important。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"flag something for review\",\"zh\":\"把某项内容标出来，留待复查\",\"note\":\"for review 说明后续要做的处理；与 for someone 表示受益人不同。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"flag something up / flag up something\",\"zh\":\"指出某事；提请注意某事\",\"note\":\"常见于英式英语；代词宾语放在中间，如 flag it up。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"unflag\",\"zh\":\"取消标记\",\"note\":\"常见于邮件或应用界面，表示撤销已有标记；不用于表示恢复体力。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"overlook 仅在发现并指出问题的语境中与 flag 对照。\"",
+        "valueJson": "\"overlook 在发现并指出问题的语境中与 flag 对照；unflag 则在软件操作中表示撤销标记，范围更具体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"逐渐变弱；渐渐没劲\"",
+        "valueJson": "\"渐渐疲倦；逐渐减弱\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"体力、热情或速度慢慢下降。\"",
+        "valueJson": "\"人逐渐感到疲倦，或体力、兴趣、热情等逐渐减退。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"通常作不及物动词，常见主语是 a person’s energy、interest、speed 或 strength。\"",
+        "valueJson": "\"本义作不及物动词，不直接接宾语。人作主语时表示渐感疲倦；energy、strength、interest、enthusiasm 等作主语时表示相应状态减退。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"his energy 作主语，表示他的精力逐渐减退。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"interest 作主语，flagged 表示兴趣减弱；in the game 修饰 interest。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-2-ex-3\",\"senseId\":\"flag-v-2\",\"en\":\"Halfway through the long walk, I began to flag.\",\"zh\":\"长途步行走到一半时，我开始觉得累了。\",\"note\":\"人可以直接作 flag 的主语；这里没有宾语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0",
+        "expectedValueJson": "{\"en\":\"flag a little\",\"zh\":\"稍稍减弱\",\"note\":\"a little 可放在动词后，说明减弱的程度较轻。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"flagging enthusiasm\",\"zh\":\"逐渐减退的热情\",\"note\":\"flagging 在名词前作修饰语，表示热情正在减退。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"fade 可用于声音、光线或感觉慢慢消退；flag 常用于精力、兴趣或速度下降。\"",
+        "valueJson": "\"fade 可用于声音、光线或感觉慢慢消退；flag 常用于人渐感疲倦，或精力、兴趣、热情减退。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"tire 强调人变累；flag 还可以说兴趣或速度减弱。\"",
+        "valueJson": "\"tire 在表示人变累时与 flag 接近；flag 还常以兴趣或热情作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"pick up\",\"zh\":\"恢复活力；加快\",\"note\":\"在谈精力或速度时，pick up 可表示回升或加快。\"}",
+        "valueJson": "{\"en\":\"regain one's strength\",\"zh\":\"恢复体力\",\"note\":\"在谈体力时与 strength flags 对照；这里由人作主语，如 She regained her strength。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"unflagging\",\"zh\":\"不减退的；始终不懈的\",\"note\":\"这是形容词，常修饰 energy、enthusiasm、support 等；可与 flagging 作对照，不能直接替换句中的动词 flag。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"pick up 和 grow stronger 只在精力、速度或力量变化的语境中构成对照。\"",
+        "valueJson": "\"regain one's strength 和 grow stronger 在体力或力量变化中构成对照；unflagging 则从形容词角度表示精力、热情等始终不减。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-down\",\"title\":\"挥手示意车辆停下\",\"meaning\":\"通过挥手或挥旗等发信号，让司机或车辆停下。\",\"usageNote\":\"常用动词短语 flag down。名词宾语可放在 down 前后，代词宾语放在 flag 与 down 之间。\",\"examples\":[{\"id\":\"flag-v-down-ex-1\",\"senseId\":\"flag-v-down\",\"en\":\"We flagged down a taxi outside the station.\",\"zh\":\"我们在车站外挥手拦下了一辆出租车。\",\"note\":\"名词宾语 a taxi 可以放在 down 后。\"},{\"id\":\"flag-v-down-ex-2\",\"senseId\":\"flag-v-down\",\"en\":\"Our car broke down, so we flagged a passing driver down.\",\"zh\":\"我们的车抛锚了，于是我们挥手示意一位路过的司机停下。\",\"note\":\"名词宾语 a passing driver 也可以放在 flag 与 down 之间。\"}],\"patterns\":[{\"en\":\"flag down + 名词宾语 / flag + 名词宾语 + down\",\"zh\":\"挥手示意……停下\",\"note\":\"flag down a taxi 和 flag a taxi down 都正确。\",\"kind\":\"sentence-pattern\"},{\"en\":\"flag + 代词宾语 + down\",\"zh\":\"挥手示意它或他们停下\",\"note\":\"代词宾语放在中间，如 flag it down。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"flag down a taxi\",\"zh\":\"挥手拦出租车\",\"note\":\"指通过手势等信号让经过的出租车停下。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"hail a taxi\",\"zh\":\"招呼出租车；拦出租车\",\"note\":\"与 flag down a taxi 接近；flag down 更明确地突出发信号让经过的车停下。\"}],\"contrasting\":[{\"en\":\"wave a vehicle on\",\"zh\":\"挥手示意车辆继续前行\",\"note\":\"在指挥车辆的语境中，与示意停车构成对照。\"}],\"similarNote\":\"hail 常与 taxi 搭配；flag down 还可用于经过的其他车辆或司机。\",\"contrastingNote\":\"这里按示意停车与示意继续前行作语境对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-computing\",\"title\":\"（编程）状态标志；标志位\",\"meaning\":\"程序中用来记录或指示某种状态的标志，例如表示某项操作是否完成的值。\",\"note\":\"这是程序内部的状态标志，不一定显示为小旗图标；初中阶段了解其专业含义即可。\",\"example\":{\"id\":\"flag-n-computing-ex-1\",\"senseId\":\"flag-n-computing\",\"en\":\"The program sets a flag when the download is complete.\",\"zh\":\"下载完成时，程序会设置一个状态标志。\",\"note\":\"sets a flag 表示设置标志，以便程序的其他部分识别相应状态。\"},\"sourceIds\":[\"wiktionary-flag\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-stone\",\"title\":\"铺路石板\",\"meaning\":\"铺设地面用的平整石板。\",\"note\":\"较少见，常用复数 flags；flagstone 也可表示这种石板。石板义与布旗义具有不同的历史来源。\",\"example\":{\"id\":\"flag-n-stone-ex-1\",\"senseId\":\"flag-n-stone\",\"en\":\"The courtyard was paved with large stone flags.\",\"zh\":\"庭院铺着大块石板。\",\"note\":\"这里的 flags 是石板，不是旗帜。\"},\"sourceIds\":[\"etymonline-flag\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-n-plant\",\"title\":\"植物名：鸢尾类植物；菖蒲\",\"meaning\":\"可指某些有长剑形叶片的植物；yellow flag 指黄菖蒲（一种鸢尾），sweet flag 指菖蒲。\",\"note\":\"多见于具体植物名称。yellow flag 与 sweet flag 并非同一种植物，不宜只凭 flag 就把植物都译成菖蒲。\",\"example\":{\"id\":\"flag-n-plant-ex-1\",\"senseId\":\"flag-n-plant\",\"en\":\"Yellow flags were growing beside the pond.\",\"zh\":\"池塘边长着黄菖蒲。\",\"note\":\"yellow flags 在这里是植物名的复数，不是黄色旗帜。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-decorate\",\"title\":\"悬旗；用旗装饰\",\"meaning\":\"给街道、建筑物等挂上旗帜作装饰。\",\"note\":\"较少见；日常表达可用 decorate something with flags。此义与给信息做标记不同。\",\"example\":{\"id\":\"flag-v-decorate-ex-1\",\"senseId\":\"flag-v-decorate\",\"en\":\"The streets were flagged for the festival.\",\"zh\":\"为庆祝节日，街道上挂起了旗帜。\",\"note\":\"were flagged 是被动结构，这里表示街道用旗帜作了装饰。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flag-v-droop\",\"title\":\"蔫垂；松弛地下垂\",\"meaning\":\"植物、帆等失去挺立或张紧的状态，变得蔫垂或松垂。\",\"note\":\"本义作不及物动词；植物失水或受热时可以用 flag 描写蔫垂，日常也常用 wilt 或 droop。\",\"example\":{\"id\":\"flag-v-droop-ex-1\",\"senseId\":\"flag-v-droop\",\"en\":\"The young plants began to flag in the afternoon heat.\",\"zh\":\"幼苗在午后的高温中开始蔫垂。\",\"note\":\"这里描写植物的具体状态，不是人的疲倦或兴趣减退。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"动词 flag 的“摇摆、飘动”这一历史联系可追溯到古诺尔斯语 flaka；布旗这个名词的来源则不确定，可能与飘动有关，但不能据此断定它也来自同一词。铺路石义的 flag 另有历史来源。\"",
+        "valueJson": "\"布旗名词 flag 的来源尚不确定，可能与表示飘动的动词有关，但这一联系尚未证实。与飘动有关的动词 flag 可能与古诺尔斯语 flaka（晃动、摇摆）有关。铺路石板义的 flag 则有不同来源，不能同布旗义串成一条演变链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"flaka\",\"meaning\":\"摇摆、飘动\"},{\"language\":\"英语\",\"form\":\"flag（动词）\",\"meaning\":\"摇摆、飘动；后来也用于表示体力或兴趣减退\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的历史演变链说明的是动词相关用法。布旗名词的来源尚不确定，铺路石义也有不同来源；现代英语中形式相同不代表历史来源相同。\"",
+        "valueJson": "\"flaka 是一条涉及飘动动词的可能词源线索，不能当成所有 flag 义项共同且确定的来源。现代英语中形式相同，不代表历史来源相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"flag + -ged；词尾 g 双写后加 -ed。\"",
+        "valueJson": "\"flag 的词尾 g 双写后加后缀 -ed，形成 flagged；后缀本身是 -ed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"flag + -ging；词尾 g 双写后加 -ing。\"",
+        "valueJson": "\"flag 的词尾 g 双写后加后缀 -ing，形成 flagging；后缀本身是 -ing。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"unflagging\",\"partOfSpeech\":\"形容词\",\"meaning\":\"不减退的；始终不懈的\",\"formation\":\"否定前缀 un- + flagging；此处 flagging 是表示渐弱的形容词。\",\"spellingNote\":\"保留 flagging 中的两个 g，在前面加 un-，写作 unflagging。\",\"example\":{\"id\":\"flag-family-3\",\"senseId\":\"flag-v-2\",\"en\":\"She answered every question with unflagging patience.\",\"zh\":\"她以始终如一的耐心回答了每一个问题。\",\"note\":\"unflagging 修饰 patience，表示耐心始终没有减退。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"列出的形式是 flag 的规则词形变化。没有把意思相关但并非同族派生词的词列入词族。\"",
+        "valueJson": "\"flagged、flagging 是 flag 的词形变化；unflagging 是表示不减退、始终不懈的派生形容词。词尾双写产生的 g 不属于后缀本身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/title",
+        "expectedValueJson": "\"Wiktionary: flag（English）\"",
+        "valueJson": "\"Wiktionnaire：flag（英语词条；法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"动词相关的古诺尔斯语 flaka 词源线索\"]",
+        "valueJson": "[\"英语 flag 的读音及规则词形\",\"旗帜、编程标志和标出、发信号、渐感疲倦等英语义项\",\"古诺尔斯语 flaka 词源线索；其适用范围须结合不同词项的历史区别理解\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 527,
+    "headword": "flag",
+    "meaning_zh": "n. 标志, 旗标, 旗子, 信号旗, 菖蒲\nvt. 悬旗, 打旗号, 铺石板\nvi. 无力地下垂",
+    "phonetic": "/flæg/",
+    "pos": "",
+    "forms": []
+  }
+}

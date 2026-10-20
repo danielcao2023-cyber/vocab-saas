@@ -1,0 +1,316 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "331aea3e1cfa72caa2ba148e9f0d72ca368196b3cdef82344b95834580f3c3db",
+    "executedReviewPromptHash": "331aea3e1cfa72caa2ba148e9f0d72ca368196b3cdef82344b95834580f3c3db",
+    "reviewHash": "4491493ea132678aa4392c60eca00db1820d432519d936c83f3f62bef0038954",
+    "wordId": 1337,
+    "inputHash": "2fd1a540abe7dc0660d1a0755c7ac520ba4823eaf222b126d7cacff0f274e39b",
+    "draftHash": "f61931117855f1d60f1bbeed0d3227084031064f6b106a6d9732a4afea6aafb5",
+    "finalHash": "681f6bcebcde8532ed1afc031f2333a4246d9ffda8447e85ddbe25665a22dfa4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/strawberry#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.074Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 38362,
+        "revisionId": 39174651,
+        "revisionTimestamp": "2025-12-12T23:06:52Z",
+        "sha256": "bd2d99ee8dc920f39ae134de857caca925dc7e0340c3f97e1ef5814c50fc6a8a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/strawberry",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:42:00.586Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:50:52.124Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation; /forms",
+        "message": "读音标注混用了不同口音和记音方式；英美区别也不能归结为美式读出 /r/，因为该词中的 /r/ 在常见英式读法中同样发音。“旧音标中的长音符号位置不准确”缺乏依据。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "食品修饰用法与颜色义合并后，各自只有一个例句。应将食品修饰用法保留为常用功能并补足两例，将较少用的颜色义单列。strawberry jam 还应明确表示用草莓制成的果酱。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions; /senses/1/relatedExpressions",
+        "message": "berry 需要限定为日常分类词，不能误作严格植物学上位词；raspberry-flavoured 表示另一种水果口味，不是草莓口味的近义表达。plain 的对照应限定到酸奶等具体食品搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了园艺语境中指草莓植株的常见延伸用法，可作为补充义说明，并与果实义区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有阶段用制作说明代替历史释义。来源能够支持古英语前身字形，但不能据此编排未记载的演变步骤；应把可靠字形事实写入摘要，删除空洞阶段，并保留命名缘由的具体不确定性。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处/sourceIds",
+        "message": "Oxford 未提供实际取得的内容，Cambridge 获取失败，不能将二者列作本次内容的实质依据。应将可直接支持的内容关联到已取得的英语词条，其余专业语言说明不虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的水果义、颜色义，以及常见的食品名词修饰功能和植株用法。修订后，水果义与食品修饰功能各有两个自然原创例句；颜色和植株收入补充义。实际外部依据仅有已取得的法语维基词典英语词条；未把未取得的词典内容或未记载的历史步骤当作证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：草莓果实",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义覆盖充分，两个例句自然；需校准 berry 的日常分类范围和来源关联。"
+      },
+      {
+        "sense": "名词作前置修饰语：草莓制成的、草莓口味的",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "属于常见名词修饰功能。修订后以冰淇淋和果酱两例分别说明口味与原料，避免误判为必须另立的形容词词性。"
+      },
+      {
+        "sense": "颜色：草莓般的红色，以及 strawberry blond/blonde 中的发色修饰",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "来源明确列出颜色义。修订后作为补充义保留，并说明完整发色组合表示带浅红色调的金发。"
+      },
+      {
+        "sense": "名词：草莓植株",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "依据专业语言知识补充园艺用法，以光照语境区分植株与果实，不声称该义出现在已取得的来源中。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"/ˈstrɔːˌbɛri/\",\"uk\":\"/ˈstrɔːbəri/\",\"us\":\"/ˈstrɔːˌberi/\",\"accentNote\":\"英美发音的第二音节有所不同；美式常读出清晰的 /r/。\",\"notes\":[\"重音在第一音节：STRAW-berry。\",\"词尾读作 /i/；旧音标中的长音符号位置不准确。\"],\"sourceIds\":[\"oxford-strawberry\",\"cambridge-strawberry\"]}",
+        "valueJson": "{\"ipa\":\"/ˈstrɔːbəri/\",\"uk\":\"/ˈstrɔːbəri/\",\"us\":\"/ˈstrɔˌbɛri/\",\"accentNote\":\"这里列出常见读法：英式常把 berry 中的元音弱读为 /ə/，美式常保留 /ɛ/；词中的 /r/ 在两种口音中都发音。\",\"notes\":[\"主重音在第一音节：STRAW-berry。\",\"词尾 y 读 /i/。\"],\"sourceIds\":[\"wiktionary-etymology-strawberry\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/ipa",
+        "expectedValueJson": "\"/ˈstrɔːˌbɛri/\"",
+        "valueJson": "\"/ˈstrɔːbəri/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/ipa",
+        "expectedValueJson": "\"/ˈstrɔːˌbɛriz/\"",
+        "valueJson": "\"/ˈstrɔːbəriz/\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"berry 是浆果类水果的统称；strawberry 特指草莓。\"",
+        "valueJson": "\"日常英语中，berry 可统称草莓、蓝莓等小型多汁水果；这种日常分类与植物学上的浆果分类不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"berry 是上位词，不能代替 strawberry 表达具体的“草莓”。\"",
+        "valueJson": "\"berry 是日常分类中的类别词，不是 strawberry 的同义词；要明确说草莓，仍用 strawberry。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-strawberry\",\"cambridge-strawberry\"]",
+        "valueJson": "[\"wiktionary-etymology-strawberry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"草莓口味或草莓色\"",
+        "valueJson": "\"草莓制成的；草莓口味的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作名词前的修饰语，表示草莓口味、含草莓成分，或草莓般的颜色。\"",
+        "valueJson": "\"放在食品名词前，表示食品用草莓制成或具有草莓口味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于食品名称和颜色描述；颜色义也可说 strawberry blonde，形容带红色调的浅金发。\"",
+        "valueJson": "\"这是名词在另一个名词前作修饰语的常见用法，通常用单数 strawberry；表示原料还是口味，要看具体食品名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"He has strawberry-blond hair.\",\"zh\":\"他有一头带红色调的浅金发。\",\"note\":\"原创例句；strawberry-blond 描述发色。\"}",
+        "valueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"I spread strawberry jam on my toast.\",\"zh\":\"我把草莓酱抹在吐司上。\",\"note\":\"原创例句；strawberry jam 指用草莓制成的果酱，这里强调原料。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"草莓口味的……\"",
+        "valueJson": "\"草莓制成的／草莓口味的……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"strawberry 放在食物名词前作修饰语，如 strawberry yogurt。\"",
+        "valueJson": "\"strawberry 通常用单数作前置修饰语，如 strawberry jam（草莓酱）、strawberry yogurt（草莓酸奶）；不能仅凭食品名称判断是否含有真实草莓。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"strawberry-blond hair\",\"zh\":\"草莓金色头发\",\"note\":\"用于描述浅金中带红色调的头发；常见拼法为 strawberry-blond。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"通常表示草莓制成或草莓口味的果酱。\"",
+        "valueJson": "\"指用草莓制成的果酱；这里强调原料。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"raspberry-flavoured\",\"zh\":\"覆盆子味的\",\"note\":\"同样描述水果口味，但指覆盆子味，不指草莓味。\"}]",
+        "valueJson": "[{\"en\":\"strawberry-flavoured / strawberry-flavored\",\"zh\":\"草莓味的\",\"note\":\"分别为常见英式、美式拼写；强调风味，不能据此断定含有真实草莓。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"其他水果口味词可描述相似类别，具体水果不同。\"",
+        "valueJson": "\"这组表达与草莓口味用法接近，但只说明风味，不等于说明食品由草莓制成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"描述食品时，plain 可与草莓口味相对，表示没有加入特别口味。\"",
+        "valueJson": "\"在 plain yogurt（原味酸奶）与 strawberry yogurt（草莓酸奶）等具体搭配中，可用于比较是否添加水果等风味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"plain 只适合食品口味对照；颜色义没有通用反义词。\"",
+        "valueJson": "\"这里只比较酸奶等食品的口味；plain 不是 strawberry 的通用反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-strawberry\",\"cambridge-strawberry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"id\":\"s3\",\"title\":\"颜色及发色修饰\",\"meaning\":\"可指草莓般的红色；在 strawberry blond/blonde 中，表示金发带有浅红色调。\",\"note\":\"颜色用法不如水果义常见。strawberry blond 和 strawberry blonde 都是常见拼法；放在 hair 前可写作 strawberry-blond hair 或 strawberry-blonde hair。\",\"example\":{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"My sister has strawberry-blond hair.\",\"zh\":\"我姐姐有一头带浅红色调的金发。\",\"note\":\"原创例句；完整组合 strawberry blond 表示发色，不能把 strawberry 单独理解为金色。\"},\"sourceIds\":[\"wiktionary-etymology-strawberry\"]},{\"id\":\"s4\",\"title\":\"草莓植株\",\"meaning\":\"在种植、园艺语境中，也可指结草莓的植株。\",\"note\":\"是否指植株要结合上下文判断；需要表达得更明确时，可说 strawberry plant。\",\"example\":{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"These strawberries need more sunlight.\",\"zh\":\"这些草莓植株需要更多阳光。\",\"note\":\"原创例句；谈论生长所需的光照，strawberries 指植株，而非摘下的果实。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-strawberry\",\"cambridge-strawberry\"]",
+        "valueJson": "[\"wiktionary-etymology-strawberry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中可看出 straw + berry 两部分，但这只是现代词形的拆分；不要据此把词源故事当成定论。\",\"stages\":[{\"language\":\"古英语\",\"form\":\"streawberige\",\"meaning\":\"所引历史词源材料给出的早期英语形式；材料将 strawberry 说明为由该形式构成的词。\"}],\"caveat\":\"这里的字形来自词源来源；现代的 straw + berry 拆分不等于已证实的历史解释。\",\"sourceIds\":[\"wiktionary-etymology-strawberry\"]}",
+        "valueJson": "{\"summary\":\"strawberry 可追溯到古英语 strēawberiġe，也转写作 streawberige。现代词形中可辨认出 straw（稻草）和 berry（浆果）。\",\"stages\":[],\"caveat\":\"名称中 straw 与这种水果的确切联系尚不明确；现代词形拆分和助记故事不能证明具体的命名缘由。\",\"sourceIds\":[\"wiktionary-etymology-strawberry\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-strawberry\"]",
+        "valueJson": "[\"wiktionary-etymology-strawberry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-strawberry\",\"title\":\"Oxford Learner’s Dictionaries：strawberry\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/strawberry\",\"supports\":[\"词性与常用释义\",\"单复数拼写\",\"常见用法\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-strawberry\",\"title\":\"Cambridge Dictionary：strawberry\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/strawberry\",\"supports\":[\"词性与常用释义\",\"发音查询\",\"常见用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology-strawberry\",\"title\":\"Wiktionnaire：strawberry（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/strawberry#Anglais\",\"supports\":[\"所列历史形式与词源说明\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology-strawberry\",\"title\":\"Wiktionnaire：strawberry（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/strawberry#Anglais\",\"supports\":[\"名词草莓的释义及规则复数信息\",\"颜色义与 strawberry blond 用法\",\"所列英美发音\",\"古英语字形及 straw、berry 的关联\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1337,
+    "headword": "strawberry",
+    "meaning_zh": "n. 草莓",
+    "phonetic": "/'strɒ:bәri/",
+    "pos": "",
+    "forms": []
+  }
+}

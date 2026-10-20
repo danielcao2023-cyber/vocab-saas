@@ -1,0 +1,456 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ab71745ef06e0b113894225541ddb0087d028a2f179e122c52f5d1eedf838b17",
+    "executedReviewPromptHash": "ab71745ef06e0b113894225541ddb0087d028a2f179e122c52f5d1eedf838b17",
+    "reviewHash": "b1ea3f9203c3781e8cf568a6efb45621086b88b85bba9032378dcbdecb495791",
+    "wordId": 1141,
+    "inputHash": "c0b5c8a1db7eb8f357eea23204923598087f189d70e593f5b8d5f06e4e5b3d91",
+    "draftHash": "7f63fe72f7d1fdaed0c8dff6aed31128a72a4b339adbff2f4b14ea0472c2baf5",
+    "finalHash": "d889a93d057a7b6b5bd59d211d900a8119d09e4f82364d70ae98d0dc5b3b89b4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/relax#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.667Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120680,
+        "revisionId": 39496747,
+        "revisionTimestamp": "2026-05-10T09:09:23Z",
+        "sha256": "d7ac45e309b15571daf5147b6fec6fa68f772734337607ac16a1426556ce3c30",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/relax",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:20:34.091Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:27:41.976Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿统一引用的 Oxford 页面不在实际来源材料中。应改用已取得的维基词典英语词条；该条目未直接支持的常见扩展用法与词族项目，不继续挂靠这个来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily",
+        "message": "共有12个例句缺少目标结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "身体松弛义只讲了及物用法，遗漏 muscles relax 等常见不及物功能；使人或心神放松也缺少直接体现该结构的例句。help someone relax 本身语法正确，但其中 relax 不及物，应移到相应用法下。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏“松懈、放松警惕或减少努力”的常见用法，需补充独立义项、两个例句及有语境限制的近义和反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples/1",
+        "message": "relax the training schedule 搭配不够自然，中文“放宽训练安排”也不清楚；改为可明确体现降低限制程度的借书场景。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similar/0/note",
+        "message": "ease 在规定语境中通常比 relax 更正式的说法不成立，应说明两者在 restrictions 等搭配中的重合及 ease 的其他适用对象。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting/0/note",
+        "message": "tense 的中文标签是及物释义，说明却用了“变得紧绷”；应明确以 tense your muscles 对照 relax your muscles。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "“去掉词尾不变”自相矛盾。relaxing 保留 relax 的全部字母，直接加 -ing，不双写 x。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧式拼写提示”混淆拼写与注音体系，改为直接提示短元音 /ɪ/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "take it easy“更像建议”的比较不够准确；放松义还宜用一个解除紧张的例句及 tense up 的语境对照，补足原有两个休闲场景。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/title",
+        "message": "“别漏掉被放松的对象”容易让学生误以为 relax 总要接宾语，改为中性的及物与不及物用法标题。"
+      }
+    ],
+    "coverageAssessment": "已核对自行放松与休息、身体部位松弛、使人或身心放松、放宽规定，以及松懈警惕或努力。修补后各核心义均有至少两个自然例句，并明确及物与不及物结构。来源是法语版维基词典中的英语词条；规定、警惕等常见扩展依据专业语言知识补充。其词源节实际只有待补模板，没有可核实的历史演变事实，因此保留已明确标注的现代语义联想，不虚构词源阶段。",
+    "senseInventory": [
+      {
+        "sense": "不及物：放松、休息；由紧张变得从容",
+        "coveredBy": [
+          "relax-v1"
+        ],
+        "assessment": "原有休闲与休息例句有效；补充解除紧张的场景，并以 tense up 对照紧张状态。"
+      },
+      {
+        "sense": "不及物：肌肉或身体部位松弛",
+        "coveredBy": [
+          "relax-v2"
+        ],
+        "assessment": "初稿遗漏这一常见功能；补充身体部位作主语的说明、句型与例句。"
+      },
+      {
+        "sense": "及物：使人、身体部位或心神放松",
+        "coveredBy": [
+          "relax-v2"
+        ],
+        "assessment": "保留两个有效的身体部位例句，并补充 relax 直接接人的例句；与 help someone relax 的结构分清。"
+      },
+      {
+        "sense": "及物：放宽规则、限制或要求",
+        "coveredBy": [
+          "relax-v3"
+        ],
+        "assessment": "原有核心义覆盖有效；更换一个搭配不够自然的例句，修正 ease 的语体比较。"
+      },
+      {
+        "sense": "松懈；放松警惕或减少努力",
+        "coveredBy": [
+          "relax-v4"
+        ],
+        "assessment": "由新增义项覆盖，分别展示 relax your guard 的及物结构和比赛中不能松懈的不及物结构。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"relax 既可以表示“放松、休息”，也可以表示“使……放松”或“放宽”。注意：不及物用法说人自己放松；及物用法后面要接被放松的人或事物。\"",
+        "valueJson": "\"relax 可以指人放松休息、身体部位松弛，也可以使人或身体部位放松；还可指放宽规定，或松懈、放松警惕。不接宾语时，主语自身放松或松弛；接宾语时，表示使对象放松，或放宽规则等。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对比 relax the rules（放宽规定）和 relax your guard（放松警惕），把不同对象与意思对应起来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"不要读成旧式拼写提示中的 /riˈlæks/；开头的元音是 /ɪ/。\"",
+        "valueJson": "\"开头的元音是短元音 /ɪ/，不要读成长元音 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾不变，直接加 -ing；双写规则不适用。\"",
+        "valueJson": "\"保留 relax 的全部字母，直接加 -ing，不双写 x。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relax 不接宾语；with a book 说明看书这一放松方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relaxed 是过去式；at home 和 on Sunday 分别说明地点和时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relax-v1-ex3\",\"senseId\":\"relax-v1\",\"en\":\"I finally relaxed when the dentist said my teeth were fine.\",\"zh\":\"牙医说我的牙齿没问题时，我终于放松了下来。\",\"note\":\"这里强调担心解除后不再紧张。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"help + 人 + relax\",\"zh\":\"帮助某人放松\",\"note\":\"人是 help 的宾语；这里的 relax 不接宾语。help 后也可说 to relax。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常用于劝人别紧张或别过度劳累，语气比 relax 更像建议。\"",
+        "valueJson": "\"常用于劝人别紧张、别太操劳，也可描述自己少做事、轻松休息的状态。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tense up\",\"zh\":\"紧张起来；绷紧\",\"note\":\"表示因担心、害怕等变得紧张，与 relax 表示不再紧张的用法相对。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里的对照只适用于“休息放松”这一义项。\"",
+        "valueJson": "\"work 用于工作与休息的对比；tense up 用于紧张与放松的对比。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"使放松；使松弛\"",
+        "valueJson": "\"（使）放松；（使）松弛\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"使某人的身体、肌肉或心情不再紧绷。\"",
+        "valueJson": "\"肌肉或身体部位由紧绷变得松弛，或使某人、身体部位、心神放松。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"及物用法，relax 后接被放松的人或身体部位；可用 relax yourself，但日常英语里常直接说 relax。\"",
+        "valueJson": "\"可作及物动词，如 relax your muscles、relax someone；也可作不及物动词，如 Your muscles relax（肌肉松弛下来）。说自己放松通常直接用 relax；relax yourself 语法成立，但一般不必加 yourself。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"my shoulders 是 relax 的宾语；me 是 helped 的宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relax 直接接 your face，表示放松脸部肌肉。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relax-v2-ex3\",\"senseId\":\"relax-v2\",\"en\":\"As I breathed out slowly, my shoulders relaxed.\",\"zh\":\"随着我慢慢呼气，肩膀也松弛了下来。\",\"note\":\"my shoulders 是主语；relaxed 不接宾语，表示身体部位自身变得松弛。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relax-v2-ex4\",\"senseId\":\"relax-v2\",\"en\":\"Soft music always relaxes me before bed.\",\"zh\":\"轻柔的音乐总能让我在睡前放松下来。\",\"note\":\"relaxes 直接接宾语 me，表示使人身心放松。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"help + 人 + relax\",\"zh\":\"帮助某人放松\",\"note\":\"help 后可接人，再接动词原形 relax。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"relax + 人 / one's mind\",\"zh\":\"使某人放松 / 使心神放松\",\"note\":\"relax 直接接被放松的人或心神，如 Music relaxes me.（音乐使我放松。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"muscles / 身体部位 + relax\",\"zh\":\"肌肉 / 身体部位松弛下来\",\"note\":\"这里的 relax 不接宾语，如 My shoulders relaxed.（我的肩膀松弛了下来。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在身体或情绪状态的语境中，tense 表示变得紧绷，与 relax 的此义相对。\"",
+        "valueJson": "\"在身体状态的语境中，tense your muscles 表示使肌肉绷紧，与 relax your muscles 相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the rule 是 relaxed 的宾语；这里指规定变得不那么严格。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"relax-v3-ex2\",\"senseId\":\"relax-v3\",\"en\":\"Our coach relaxed the training schedule before the race.\",\"zh\":\"比赛前，教练放宽了训练安排。\"}",
+        "valueJson": "{\"id\":\"relax-v3-ex2\",\"senseId\":\"relax-v3\",\"en\":\"The library relaxed its borrowing limits, so I could take home more books.\",\"zh\":\"图书馆放宽了借书数量限制，所以我能多借几本书回家。\",\"note\":\"先放宽借书限制，随后才有多借书的可能；so 引出这一结果。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可表示使限制或压力减轻；在规定语境中常比 relax 更正式。\"",
+        "valueJson": "\"ease restrictions 与 relax restrictions 都可指放宽限制；ease 还常用于减轻疼痛、压力或负担。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relax-v4\",\"title\":\"松懈；放松警惕\",\"meaning\":\"降低警惕或注意力，或不再像先前那样努力、认真。\",\"usageNote\":\"常用于提醒人保持警惕或继续努力。及物用法可说 relax your guard、relax your efforts；不及物用法由比赛、任务等语境体现松懈的意思。\",\"examples\":[{\"id\":\"relax-v4-ex1\",\"senseId\":\"relax-v4\",\"en\":\"Don't relax your guard just because the street looks quiet.\",\"zh\":\"别因为街上看着很安静就放松警惕。\",\"note\":\"your guard 是 relax 的宾语，指警惕或防备。\"},{\"id\":\"relax-v4-ex2\",\"senseId\":\"relax-v4\",\"en\":\"Our team was two goals ahead, but we couldn't relax yet.\",\"zh\":\"当时我们队领先两球，但还不能松懈。\",\"note\":\"relax 不接宾语；比分领先后仍需认真比赛，这里表示松懈。\"}],\"patterns\":[{\"en\":\"relax + one's guard / efforts\",\"zh\":\"放松……的警惕 / 减少……的努力\",\"note\":\"宾语说明减少的是警惕还是努力。\",\"kind\":\"sentence-pattern\"},{\"en\":\"主语 + cannot / must not relax\",\"zh\":\"……不能 / 不得松懈\",\"note\":\"relax 不接宾语；比赛、任务或风险语境决定这里的意思。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"relax your guard\",\"zh\":\"放松警惕\",\"note\":\"guard 在这里指防备或警惕；也常说 let your guard down。\",\"kind\":\"common-collocation\"},{\"en\":\"relax your efforts\",\"zh\":\"减少努力；松劲\",\"note\":\"可用否定句提醒人继续努力，如 Don't relax your efforts yet.（先别松劲。）\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"let your guard down\",\"zh\":\"放松警惕\",\"note\":\"在防备、警惕的语境中接近 relax your guard。\"},{\"en\":\"ease up\",\"zh\":\"减少用力；降低强度\",\"note\":\"在持续努力的语境中可接近 relax，未必包含放松警惕的意思。\"}],\"contrasting\":[{\"en\":\"stay alert\",\"zh\":\"保持警惕\",\"note\":\"与放松警惕相对，强调继续留意潜在问题。\"},{\"en\":\"keep up your efforts\",\"zh\":\"继续努力\",\"note\":\"与减少努力、松劲相对。\"}],\"similarNote\":\"let your guard down 对应警惕，ease up 对应努力或活动强度，不能任意互换。\",\"contrastingNote\":\"警惕与努力是不同的对照重点，应按语境选择。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"by drawing 说明放松的方式；画画也是活动，因此 relax 不要求完全停止活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"别漏掉被放松的对象\"",
+        "valueJson": "\"relax 的及物与不及物用法\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relaxed 后没有宾语；after the game 是时间短语。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"her hands 是 relaxed 的宾语，说明被放松的身体部位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relaxation 在这里是不可数名词，作定语修饰 routine。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"felt 后接形容词 relaxed，说明人的放松状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"relaxing 修饰 afternoon，表示这个下午让人放松。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_relax\"]",
+        "valueJson": "[\"wiktionary_relax\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_relax\",\"title\":\"Oxford Learner’s Dictionaries: relax\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/relax\",\"supports\":[\"常见动词义项和用法\",\"relax 的读音与词形\",\"relaxation、relaxed、relaxing 等词族\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_relax\",\"title\":\"维基词典（法语版）：relax（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/relax#Anglais\",\"supports\":[\"英语动词 relax 的不及物与及物基本用法\",\"放松、休息以及使身体或心神放松的基本词义\",\"英语读音 /ɹɪˈlæks/；相关词 relaxation、relaxing\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1141,
+    "headword": "relax",
+    "meaning_zh": "vi. 放松, 松懈, 松弛, 变从容, 休息, 休养\nvt. 使松弛, 缓和, 使松懈, 使休息",
+    "phonetic": "/ri'læks/",
+    "pos": "",
+    "forms": []
+  }
+}

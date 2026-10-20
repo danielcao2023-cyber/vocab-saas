@@ -1,0 +1,264 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "91644ca7fa4f92b057cf4bb8bf09a50447f88433fa93b192c04e88f0e2fd7fb8",
+    "executedReviewPromptHash": "91644ca7fa4f92b057cf4bb8bf09a50447f88433fa93b192c04e88f0e2fd7fb8",
+    "reviewHash": "2c76d03c98cbaf0a0f73dbe29f4445ca8acaf57adc31edc7e47a73d8c809219d",
+    "wordId": 1290,
+    "inputHash": "17c902fb2c67b6760aaa094b8e2583d6a29c94c5ed4293940d754f0664585ff5",
+    "draftHash": "334b6acb98db5aed7b5cfb7b5c208437f7cb219630b3f50aac21fffd6f755c2e",
+    "finalHash": "e929f027b024c1d2e96a34815580a793c105218da69f7fdc8b1b79516c0e9318",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/somebody#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.325Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116652,
+        "revisionId": 39765075,
+        "revisionTimestamp": "2026-08-03T05:02:08Z",
+        "sha256": "2694aeb838b0fb859aff95fd0e5c2252d0dcdcee48a694e95bd5e0f5cc298a76",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/somebody",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:18:20.494Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:24:42.134Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses/1/usageNote",
+        "message": "课程使用了 a somebody 等可数名词用法，但总词性只列代词。须明确“重要人物”义的名词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1",
+        "message": "somebodies 是名词 somebody 的复数，不能作为不定代词“某人”的普通复数来教；“在特定语境中表示几个人”容易造成误用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1",
+        "message": "第二例只使用反向表达 a nobody，没有展示目标词，导致该义实际只有一个直接例句。须换成 somebody 表示“重要人物”的自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1",
+        "message": "标签讨论 some body，例句却使用 someone；同时，body 并非只有“身体”这一词义。改为与现有例句一致的 someone 拼写说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "“所给历史词源说明中”属于学生正文不应出现的制作说明。应直接陈述来源支持的 some + body 构词事实。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms；/senses/0；/confusions/0",
+        "message": "补充常用所有格及单数动词与 their 回指的配合。现有 some/any 概括基本正确，但还应展示 Somebody hasn't ...，避免学生按疑问、否定形式机械换词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/kind",
+        "message": "ask / tell somebody to do something 展示的是动词补语句型，宜标为 sentence-pattern。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/1",
+        "message": "somebody at the door 是合法名词短语，但译为“门口有人”容易让初学者误认为它本身是完整陈述句。应区分短语与完整句子的表达。"
+      }
+    ],
+    "coverageAssessment": "已核对“某人；有人”和“重要人物；有地位的人”两类用法，无须机械增加义项。补丁使第二类也有两个直接例句，并修正词性、复数及拼写辨析，补充常用语法。现有英美音标属于可接受变体，无须更改。可取得的英语词条以法语释义明确支持代词义，并支持 some + body 的构词；没有证据建立历史演变箭头。重要人物用法及扩展语法依据专业语言知识审校；Cambridge 原文未取得，推荐链接不视为已核验引文。",
+    "senseInventory": [
+      {
+        "sense": "不定代词：某人；有人，指身份不明或不必明说的人",
+        "coveredBy": [
+          "1290-s1"
+        ],
+        "assessment": "给定词典明确列出此义。原有两个例句自然，分别覆盖肯定陈述与请求；补充所有格、their 回指及否定语境中的保留用法。"
+      },
+      {
+        "sense": "非正式用法：重要人物；有名望或有地位的人，含可数名词用法",
+        "coveredBy": [
+          "1290-s2"
+        ],
+        "assessment": "依据专业语言知识保留。原稿第二例只展示 nobody；替换后有两个目标词正例，并明确 a somebody 与 somebodies 的词性和形式。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"代词（不定代词）\"",
+        "valueJson": "\"不定代词；名词（somebody 指“重要人物”时）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/label",
+        "expectedValueJson": "\"复数形式\"",
+        "valueJson": "\"名词复数（较少见）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"较少见，表示“几个重要人物”或在特定语境中表示几个人；日常泛指多人通常用 some people。\"",
+        "valueJson": "\"somebodies 是名词 somebody（重要人物）的复数。表示“某人”的 somebody / someone 作不定代词时没有普通复数形式；泛指几个人通常用 some people。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"所有格\",\"form\":\"somebody's；someone's\",\"ipa\":\"/ˈsʌm.bə.diz/；/ˈsʌm.wʌnz/\",\"note\":\"表示“某人的”，如 someone's coat（某人的外套），不是复数。表示“别人的”时写 someone else's，'s 加在 else 后。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于肯定句；在表示邀请、请求或期待肯定回答的疑问句中也可使用。普通疑问和否定语境中常用 anybody。\"",
+        "valueJson": "\"常见于肯定句；请求帮助或期待肯定回答的疑问句也可用。表示“没有任何人”的否定句通常用 anybody / anyone；Somebody didn't ... 则表示“有某个人没……”。作主语时用单数动词，后文常用 they / them / their 回指性别不明的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1290-s1-e3\",\"senseId\":\"1290-s1\",\"en\":\"Someone has left their keys on the kitchen table.\",\"zh\":\"有人把自己的钥匙落在厨房桌上了。\",\"note\":\"someone 作主语时用单数 has；their 可回指性别不明的人，不表示 someone 变成了复数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"门口有人\"",
+        "valueJson": "\"门口的某个人\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"常用来说明某人所在的位置或出现的地点。\"",
+        "valueJson": "\"这是名词短语；要表达完整的“门口有人”，可说 There's somebody at the door.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于 be somebody 或 become somebody，谈一个人是否“出人头地”或“成为重要人物”。\"",
+        "valueJson": "\"常用于 be somebody 或 become somebody，表示“是／成为重要人物”。somebody 也可作可数名词，如 a somebody；复数为 somebodies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"1290-s2-e2\",\"senseId\":\"1290-s2\",\"en\":\"She never treated the new student as a nobody; she listened to his ideas.\",\"zh\":\"她从不把新同学当成无足轻重的人；她会认真听他的想法。\",\"note\":\"nobody 在此表示“无足轻重的人”，与 somebody 的此义形成对照。\"}",
+        "valueJson": "{\"id\":\"1290-s2-e2\",\"senseId\":\"1290-s2\",\"en\":\"Now that he runs the biggest shop in town, he thinks he's a real somebody.\",\"zh\":\"如今他经营着镇上最大的商店，便觉得自己是个了不起的人物了。\",\"note\":\"a real somebody 中的 somebody 作可数名词，表示“重要人物”；这里略带调侃。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"somebody：有某个人没……\",\"note\":\"否定句中仍可用 somebody，表示存在某个人没有做某事。\",\"example\":{\"id\":\"1290-c1-e4\",\"senseId\":\"1290-s1\",\"en\":\"Somebody hasn't handed in their homework yet.\",\"zh\":\"还有人没交作业。\",\"note\":\"somebody 作主语时用单数 hasn't；这里不是说“没有人交作业”。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先看句子是肯定、普通疑问还是否定语境，再选择 somebody 或 anybody；请求和邀请中 somebody 也很自然。\"",
+        "valueJson": "\"选择要看意思和语境：somebody 表示“有某个人”；普通疑问常用 anybody，not ... anybody 常表示“谁也没有……”。不要一见疑问或否定形式就机械换词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"some body：两个词\"",
+        "valueJson": "\"someone：一个词\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"只有 body 确实表示“身体”时，才可能分写；这不表示“某个人”。\"",
+        "valueJson": "\"表示“某人”的 someone 也写成一个词，通常可以与 somebody 互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"somebody 由 some 和 body 组合而成；所给历史词源说明中，body 在此组合里历史上表示“人”。somebody 和 someone 是意义相近的不同构词形式。\"",
+        "valueJson": "\"somebody 由 some 和 body 组合而成，其中 body 在历史上有“人”的意思。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1290,
+    "headword": "somebody / someone",
+    "meaning_zh": "pron. 某人；有人",
+    "phonetic": "/'sʌmbɒdi/",
+    "pos": "",
+    "forms": []
+  }
+}

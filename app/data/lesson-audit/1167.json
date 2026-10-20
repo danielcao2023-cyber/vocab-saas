@@ -1,0 +1,284 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1ed7b8291c18808741589ce638d214dfa1a62cc9b6aee5e814202c0daa765054",
+    "executedReviewPromptHash": "1ed7b8291c18808741589ce638d214dfa1a62cc9b6aee5e814202c0daa765054",
+    "reviewHash": "3d5e6e1cab39740549606628703c6968ad435329031adb1ed8e370ae3840dc92",
+    "wordId": 1167,
+    "inputHash": "9883b2749ed985f144a6fc5f2f05b1160182f97e69883dc9b0f3ac123a504ea7",
+    "draftHash": "1779564bb7ad33d6499aecc0da8b4a0fa08836c175f1ced5800040be30c74b20",
+    "finalHash": "e71d42e9188bac4e0323709b75ce398dab8b87f4a814d2258e6e9e4b61a0094f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/robot#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.644Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 69884,
+        "revisionId": 39783666,
+        "revisionTimestamp": "2026-08-07T13:08:20Z",
+        "sha256": "19191e0a6fc607c72554a91bba8016b97d7cc819bb9caa9177c9dec82f2fbc27",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/robot",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:50:06.640Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:55:32.875Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "多处引用 Oxford，但实际来源材料没有该页面的正文，无法据此归因。应改引已取得的维基词典英语词条，并将来源支持范围限定为其明确列出的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "唯一阶段的 meaning 只是“来源词”，没有解释字义，属于空洞占位；caveat 还包含材料获取情况。应保留可证实的捷克语借入事实，清空阶段并改写制作说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "比喻义应补明缺少独立思考、机械服从指令这一重点。第二例 robot voice 本身自然，但只是描述声音，未直接展示 robot 指人的名词用法；应换成直接指人的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "“自动执行程序的设备时用 robot”范围过宽；普通洗衣机等也能自动执行程序，却通常不称为 robot。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/note",
+        "message": "逐字符核对可见，把 robot 的 t 改成 i 再加 es 会得到 roboies，而不是 roboties。应直接说明不能添加 -ies。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "“旧式拼写提示”与首音节重音的说明无关；词尾 /t/ 的表述容易被理解为必须明显爆破。另可直接列出来源明确提供的美式 /ˈroʊ.bət/ 变体。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "automaton 不只是语体更正式的 robot；应说明其常见机械装置、人偶语境及替换限制。"
+      }
+    ],
+    "coverageAssessment": "已核对机器人、比喻机械行事的人、南非英语交通信号灯三义，无须另拆词性或强增核心义。修正后两项核心义各有两个自然原创英中例句，地区义单列适当。现代用法、词族拼写及搭配按专业语言知识核对；历史词源仅保留可确认的捷克语借入关系，不补写无法证实的早期释义或历史事件。",
+    "senseInventory": [
+      {
+        "sense": "机器人；人形机器，现代常用法也包括非人形机器人",
+        "coveredBy": [
+          "robot-n-1"
+        ],
+        "assessment": "已覆盖，两个例句分别展示工厂搬运和社团浇水任务；修正与 machine 的边界，避免将所有自动化设备都称为 robot。"
+      },
+      {
+        "sense": "比喻机械行事、缺少独立思考或情感的人",
+        "coveredBy": [
+          "robot-n-2"
+        ],
+        "assessment": "补明机械服从的含义，并将声音描述例句换为直接指人的隐喻；与保留的机械重复台词例句共同覆盖该义。"
+      },
+      {
+        "sense": "南非英语：交通信号灯",
+        "coveredBy": [
+          "robot-n-3"
+        ],
+        "assessment": "地区标签、释义及例句准确，作为 lessCommonSenses 保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"robot 通常指能自动完成任务的机器，尤其是可编程的机器；形容人时，强调动作或表现缺少自然感。\"",
+        "valueJson": "\"robot 通常指能自动完成任务的机器，尤其是可编程的机器；比喻人时，强调机械行事、缺少独立思考或情感。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常读 /ˈrəʊ.bɒt/；美式常读 /ˈroʊ.bɑːt/，部分美式口音的末尾元音也可能较弱。\"",
+        "valueJson": "\"英式常读 /ˈrəʊ.bɒt/；美式常读 /ˈroʊ.bɑːt/，也有 /ˈroʊ.bət/ 的读法，第二个音节用弱元音 /ə/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"重音在第一个音节，开头读 /r/，不要按旧式拼写提示把重音放在后面。\",\"末尾的 t 要清楚读出；英美口音的主要差别在两个元音。\"]",
+        "valueJson": "[\"重音在第一个音节，开头读 /r/，全词有两个音节。\",\"词尾是 /t/，后面不要额外加元音；自然口语中不一定明显爆破。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"较正式或偏文学用语，日常谈论科技时通常用 robot。\"",
+        "valueJson": "\"常指能自行按固定方式动作的机械装置，尤指机械人偶；与 robot 有重合，但现代科技语境中不能一律用它替换 robot。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"形容一个人动作、回答或工作方式像机器一样重复、僵硬，缺少自然变化或情感。\"",
+        "valueJson": "\"比喻机械地工作、照指令行动而缺少独立思考或情感的人；也可形容人的动作或表达僵硬、不自然。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"robot-ex-4\",\"senseId\":\"robot-n-2\",\"en\":\"He answered every question in a robot voice.\",\"zh\":\"他用机械般的声音回答了每个问题。\",\"note\":\"robot 在这里突出声音缺少自然情感。\"}",
+        "valueJson": "{\"id\":\"robot-ex-4\",\"senseId\":\"robot-n-2\",\"en\":\"To the manager, we were just robots who followed orders.\",\"zh\":\"在经理眼里，我们只是听命行事的机器人。\",\"note\":\"robots 在这里比喻缺少自主判断、只会服从指令的人，不是说他们真是机器。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说机器人或自动执行程序的设备时用 robot；泛指设备时用 machine。\"",
+        "valueJson": "\"robot 指机器人；machine 泛指机器。能自动工作或运行程序的设备不一定是 robot，例如普通洗衣机通常叫 washing machine。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"错误拼法；不要把结尾的 t 改成 i 再加 es。\"",
+        "valueJson": "\"错误拼法；robot 的复数直接加 -s，不加 -ies，也不改动 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"英语 robot 来自捷克语 robot。这个词在英语中用于指机器人；这里的历史来源不等于把现代英语拆成两个部分。\",\"stages\":[{\"language\":\"捷克语\",\"form\":\"robot\",\"meaning\":\"英语 robot 的来源词。\"}],\"caveat\":\"词源材料支持英语词来自捷克语，但没有提供可在这里可靠解释的更早演变链；robot 也不是英语中由 rob 加 ot 构成的词。\",\"sourceIds\":[\"wiktionary-robot-etymology\"]}",
+        "valueJson": "{\"summary\":\"英语 robot 借自捷克语 robot。\",\"stages\":[],\"caveat\":\"robot 不是由英语 rob 加 ot 构成的；robotic 等词是在 robot 的基础上派生出来的。\",\"sourceIds\":[\"wiktionary-robot-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-robot\"]",
+        "valueJson": "[\"wiktionary-robot-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"英语 robot 来自捷克语 robot\",\"robot 的南非英语地区义：交通信号灯\",\"robot 的相关派生词\"]",
+        "valueJson": "[\"robot 的英语名词义：人形机器、比喻机械行事的人，以及南非英语的交通信号灯\",\"英式和美式读音，包括美式 /ˈroʊ.bət/ 变体\",\"规则复数 robots\",\"英语 robot 来自捷克语 robot\",\"派生词 robotic、robotics、robotically 等\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-robot\",\"title\":\"Oxford Learner’s Dictionaries: robot\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/robot\",\"supports\":[\"robot 的名词用法和常见含义\",\"robot 的英式与美式发音\",\"robot 的复数形式及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1167,
+    "headword": "robot",
+    "meaning_zh": "n. 机械人, 自动机械, 机械般工作的人",
+    "phonetic": "/'rәubәt/",
+    "pos": "",
+    "forms": []
+  }
+}

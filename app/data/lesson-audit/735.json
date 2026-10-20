@@ -1,0 +1,291 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "67cf9164f358bf3c4285b20ff48b598d042a55bd56622b79186ed86c19984d53",
+    "executedReviewPromptHash": "67cf9164f358bf3c4285b20ff48b598d042a55bd56622b79186ed86c19984d53",
+    "reviewHash": "a46c505439ca530cb32996a6b65ae3ab2301f0b3a5c42622ba4911c66fc6c03e",
+    "wordId": 735,
+    "inputHash": "fa7da45961d7975166bac5a8937cbc7e4495a79251cd09bd44a85692149b5b64",
+    "draftHash": "16a0289fae2c0d2b9b8f4b04622aa71d93de4abcb2c55d972bf433f2a003c0be",
+    "finalHash": "d8d552aa0a94eb61523526f98fd93ae42a0daab5131e105ec0868e4bf87065d0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/keyboard#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:57.024Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115941,
+        "revisionId": 34227620,
+        "revisionTimestamp": "2024-04-22T17:30:04Z",
+        "sha256": "5de91ca03586120163463aa35c6908c2bb576a148c73cff308bc4a7577bfecf1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/keyboard",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:05:52.239Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:14:55.281Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "将乐器上的琴键部分与整件电子键盘乐器合并，现有例句各只覆盖其中一义。应拆分为 s2、s3，各保留至少两个例句，并将 play the keyboard 归入整件乐器义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting/0/note",
+        "message": "将 keyboard 限定为实体按键不准确：屏幕键盘也是常见用法，触摸屏也能显示键盘。需修正说明并补充相应用例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar/0",
+        "message": "piano 指整架钢琴，不能作为琴键部分义的近义表达；此处可改用有明确语境限制的 keys。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Cambridge 页面未取得，却被用于支持读音、义项和辨析。应移除该支持来源，将确有依据的引用改为已取得的英语词条；专业语言知识辨析不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/sourceIds",
+        "message": "key 与 board 的复合构词解释有直接来源支持，但漏列引用。应补上同一 URL 对应的来源；无需虚构历史阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh",
+        "message": "“用键盘打作业”中文不够自然，改为“用键盘输入作业内容”。英文原句成立。"
+      }
+    ],
+    "coverageAssessment": "已核对取得的英语词条所列三个主要名词义：输入键盘、乐器上的琴键组、合成器等电子键盘乐器。补丁后分别由 s1、s2、s3 覆盖，每义至少两个原创例句，并补及常见屏幕键盘用法。词源仅确认 key＋board 的复合关系，未推定年代或演变顺序，stages 保持为空。Cambridge 未取得，不作为支持来源；屏幕键盘说明和部分用法辨析依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "名词：电脑等设备的输入键盘，包括屏幕键盘",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿已覆盖实体电脑键盘；补丁纠正实体限定，并补充屏幕键盘例句。"
+      },
+      {
+        "sense": "名词（音乐）：乐器上的键盘，即整组琴键",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "修订后专指琴键部分，保留 ex3，并补充 ex8，达到两个例句。"
+      },
+      {
+        "sense": "名词（音乐）：合成器、电子琴等电子键盘乐器",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿仅在 s2 中附带提及，且只有一个例句；补丁新增 s3，移入原练琴例句，并增加购买乐器的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"keyboard：电脑键盘，也可以指乐器的键盘\"",
+        "valueJson": "\"keyboard：电脑键盘、乐器的琴键，也可指电子琴\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"keyboard 最常指用来打字的“键盘”；谈钢琴、电子琴时，也可指供手指按奏的一排琴键。\"",
+        "valueJson": "\"keyboard 常指电脑键盘；在音乐语境中可指钢琴等乐器上的整组琴键，也可指电子琴等整件电子键盘乐器。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"记住 a keyboard 也可指一台电子琴；play the keyboard 表示弹奏这类乐器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"连接或装在电脑上的输入设备，用来打字、输入数字或发出指令。\"",
+        "valueJson": "\"电脑等设备上用于输入文字、数字或指令的一组按键；可以是实体输入设备，也可以是屏幕上显示的虚拟键盘。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"米娅用键盘打作业。\"",
+        "valueJson": "\"米娅用键盘输入作业内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex10\",\"senseId\":\"s1\",\"en\":\"Tap the text box to bring up the on-screen keyboard.\",\"zh\":\"点一下文本框，调出屏幕键盘。\",\"note\":\"on-screen keyboard 指显示在屏幕上的虚拟键盘，也属于输入用的 keyboard。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在输入设备语境中，触摸屏靠触摸屏幕输入；keyboard 靠按实体按键输入。\"",
+        "valueJson": "\"比较实体键盘与触摸屏时，前者通过实体按键输入，后者通过触摸屏幕输入；触摸屏上也能显示屏幕键盘，因此 keyboard 并不只指实体按键。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"钢琴、电子琴等键盘乐器上供手指按奏的键盘部分；在日常语境中也可指键盘类乐器。\"",
+        "valueJson": "\"钢琴、电子琴等乐器上供手指按奏的一组琴键，指乐器的键盘部分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"piano keyboard 常指钢琴的键盘部分；play the keyboard 可表示弹奏键盘类乐器。\"",
+        "valueJson": "\"piano keyboard 和 the keyboard of a piano 都指钢琴的键盘部分；单个琴键叫 a key。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"ex4\",\"senseId\":\"s2\",\"en\":\"Leo practises the keyboard after dinner.\",\"zh\":\"利奥晚饭后练习弹键盘乐器。\",\"note\":\"练习语境中的 the keyboard 可指键盘类乐器。\"}",
+        "valueJson": "{\"id\":\"ex8\",\"senseId\":\"s2\",\"en\":\"She wiped the piano keyboard with a soft cloth.\",\"zh\":\"她用一块软布擦了擦钢琴的琴键。\",\"note\":\"keyboard 指钢琴上的整组琴键，擦拭的是这个部分。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"play the keyboard\",\"zh\":\"弹键盘乐器\",\"note\":\"play 后接乐器名称，表示演奏；此处 keyboard 指键盘类乐器。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"piano\",\"zh\":\"钢琴\",\"note\":\"piano 可指整件钢琴；keyboard 可指琴键部分，也可在演奏语境中指键盘类乐器。\"}",
+        "valueJson": "{\"en\":\"keys\",\"zh\":\"琴键（复数）\",\"note\":\"the keys 可在乐器语境中指琴键；keyboard 强调整组琴键构成的键盘。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"piano 指一种完整乐器；keyboard 更强调键盘部分或键盘类乐器。\"",
+        "valueJson": "\"在已经说清楚是哪件乐器时，the keys 可指它的琴键；piano 指整架钢琴，不能与本义混同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"电子键盘乐器（电子琴等）\",\"meaning\":\"电子琴、带键盘的合成器等整件电子键盘乐器。\",\"usageNote\":\"在买乐器、上音乐课或演奏的语境中，a keyboard 常指一台电子键盘乐器；play the keyboard 表示弹奏这类乐器。\",\"examples\":[{\"id\":\"ex4\",\"senseId\":\"s3\",\"en\":\"Leo practises the keyboard after dinner.\",\"zh\":\"利奥晚饭后练习弹电子琴。\",\"note\":\"这里 the keyboard 指整件电子键盘乐器。\"},{\"id\":\"ex9\",\"senseId\":\"s3\",\"en\":\"We bought a keyboard for our daughter's music lessons.\",\"zh\":\"我们买了一台电子琴，供女儿上音乐课用。\",\"note\":\"a keyboard 在买乐器的语境中指整件电子键盘乐器。\"}],\"patterns\":[{\"en\":\"play the keyboard\",\"zh\":\"弹电子琴等键盘乐器\",\"note\":\"play 后接乐器名称，表示演奏；此处 keyboard 指整件电子键盘乐器。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"an electronic keyboard\",\"zh\":\"一台电子琴／电子键盘乐器\",\"note\":\"electronic 明确说明这里说的是电子乐器。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"synthesizer\",\"zh\":\"合成器\",\"note\":\"带键盘的合成器可以称为 keyboard；有些合成器不带键盘，因此两词不能总互换。\"}],\"contrasting\":[],\"similarNote\":\"两词可指同一件带键盘的合成器；keyboard 的本义还包括其他电子键盘乐器。\",\"contrastingNote\":\"这是具体乐器名，没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionary: keyboard（English）\",\"url\":\"https://fr.wiktionary.org/wiki/keyboard#Anglais\",\"supports\":[\"key 与 board 的现代构词说明\",\"电脑键盘及乐器键盘用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire: keyboard（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/keyboard#Anglais\",\"supports\":[\"电脑键盘、乐器键盘及合成器义\",\"英语发音及美式读音标注\",\"key 与 board 的复合构词说明\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: keyboard\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/keyboard\",\"supports\":[\"常见名词义项与用法\",\"英式和美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 735,
+    "headword": "keyboard",
+    "meaning_zh": "n. 键盘",
+    "phonetic": "/'ki:bɒ:d/",
+    "pos": "",
+    "forms": []
+  }
+}

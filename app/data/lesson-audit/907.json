@@ -1,0 +1,349 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "33db15e82f75f8a5d477c49437ab2a45b6ab9b14b3718d689022455b3b048344",
+    "executedReviewPromptHash": "33db15e82f75f8a5d477c49437ab2a45b6ab9b14b3718d689022455b3b048344",
+    "reviewHash": "f324adb032f6146a4a4b1a00bc6f54338e22486fcb983c6bcea0e4057a5ff4e8",
+    "wordId": 907,
+    "inputHash": "4b7a97c9da5af4a47ce15378565490afadff648f6ac46e552d5f92d0e7d993de",
+    "draftHash": "8c25e25407c621c817f8272e0e07e25a0d0a9c3ba580af02d0c7dd9c83fda787",
+    "finalHash": "f0cd237cb29fa21ba9a7594e23514d1ffaf20befa277f857899333063e9fb6fd",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/neither#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:26.569Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 257105,
+        "revisionId": 38126782,
+        "revisionTimestamp": "2025-04-23T16:58:03Z",
+        "sha256": "920195622410999097fb8f4440358b2d66abfdb70c0cc15f96c4177133836c89",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/neither",
+        "section": "neither",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "60233279907aed30a40640648377b500730bf359ecd70fbf5aced5d8228abd13",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "60233279907aed30a40640648377b500730bf359ecd70fbf5aced5d8228abd13",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/907.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/neither",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:17:55.189Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:25:36.946Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning",
+        "message": "标准英语中表示“也不”的句末形式通常是 either，不能直接把 neither 放到否定句末。相关句型和说明也需明确只有 either 位于句末。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples/1",
+        "message": "第二例只使用 either，导致副词核心义实际上只有一个含目标词 neither 的例句；应改为 neither did I。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "应区分名词前的 no 与作代词的 none；neither of 结构宜归入现有代词义，并在那里说明宾格代词及主谓一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1",
+        "message": "I don't want either 中的 either 是 want 的宾语，作代词，不表示“也不”，因此 senseId 不能绑定副词义。需将代词与副词对照分开举例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions/contrasting/0/note",
+        "message": "neither...nor... 分别否定两项，不应称为“双重否定”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/example",
+        "message": "错误示例的中文不自然，也没有清楚区分想表达的意思与额外否定可能造成的读法；应标明拟表达的意思及标准改写。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "材料只确认中古英语拼写受到 either 影响，未确认该时期的具体拼写就是 neither；该阶段的 meaning 也只是拼写说明。改为可确定的现代英语阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Oxford 不在实际提供的来源材料中，多处 sourceIds 却将它作为依据。应改引已提供的 Wiktionnaire 英语词条，删除未使用的 Oxford 条目，并调整来源支持范围。"
+      }
+    ],
+    "coverageAssessment": "已核对限定词、代词、否定承接副词及 neither...nor... 四项核心功能。修补后每项均有两个自然、含目标词的英中例句；近义与反向表达、读音、拼写和词族说明均已检查。词源保留可靠的古英语至现代关系，不细定材料未确认的中古英语具体拼写；未使用不可用的 Cambridge 内容或未提供的 Oxford 内容。",
+    "senseInventory": [
+      {
+        "sense": "限定词（传统词典也称形容词）：两者都不",
+        "coveredBy": [
+          "907-det"
+        ],
+        "assessment": "两例均正确使用 neither + 单数可数名词；补清三个以上对象时 no 与 none 的用法区别。"
+      },
+      {
+        "sense": "代词：两者中的任何一个都不",
+        "coveredBy": [
+          "907-pron"
+        ],
+        "assessment": "已覆盖 neither of 和 Neither 单独作答；将相关结构说明集中到本义。"
+      },
+      {
+        "sense": "副词：承接否定内容，表示“也不”",
+        "coveredBy": [
+          "907-adv"
+        ],
+        "assessment": "修正句末位置说明，并将第二例改为 neither did I；两例分别展示情态动词和过去时助动词倒装。"
+      },
+      {
+        "sense": "关联连词结构：neither...nor...，既不……也不……",
+        "coveredBy": [
+          "907-conj"
+        ],
+        "assessment": "两例分别覆盖形容词和动作的并列否定；平行结构说明正确，修正“双重否定”的术语误用。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"neither 用来否定两者：放在名词前或单独作代词时表示“两者都不”；接 nor 可连接两项；单独回应否定句时表示“也不”。\"",
+        "valueJson": "\"neither 放在名词前或作代词时表示“两者都不”；neither...nor... 表示“既不……也不……”；承接否定内容时，Neither + 助动词／情态动词／be 动词 + 主语 表示“也不”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"用于明确只有两个选项或对象的语境。谈三个或更多时，通常用 none 等表达。\"",
+        "valueJson": "\"用于两个选项或对象。谈三个或更多时，名词前用 no，如 No answers are correct；作代词或接 of 时用 none。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"neither of + 限定词 + 复数名词\",\"zh\":\"……两者都不\",\"note\":\"例如 neither of the doors；整体指两者中的一个也不，正式英语中谓语常用单数。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 neither of + 复数名词或代词；口语中回答选择题时也可单独说 Neither。\"",
+        "valueJson": "\"常用 neither of + 带限定词的复数名词／宾格代词，如 neither of the keys、neither of them。作主语时，正式表达通常用单数谓语，非正式口语也常见复数谓语。回答两个选项的问题时可单独说 Neither。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"用于承接前一句的否定，表示另一人也不如此。常放句首并倒装，也可放句尾。\"",
+        "valueJson": "\"用于承接前面的否定内容，表示另一人或事物也不如此。完整分句常用“Neither + 助动词／情态动词／be 动词 + 主语”的倒装结构；换用否定句末的“也不”时，用 either。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"Mia didn't call, and I didn't either.\"",
+        "valueJson": "\"Mia didn't call, and neither did I.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "\"either 放在否定句末表示“也不”；这里与句首倒装的 Neither did I 意思相同。\"",
+        "valueJson": "\"前半句用 didn't，后半句用 neither did I 承接否定内容；did 放在主语 I 前，neither 已表达否定，不再用 didn't。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/en",
+        "expectedValueJson": "\"主语 + 否定句 + either\"",
+        "valueJson": "\"主语 + 否定谓语 + ... + either\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常置于否定句句尾，如 I don't know either；不倒装。\"",
+        "valueJson": "\"either 放在否定句末，如 I don't know either；句子不因 either 而倒装。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"Neither 放句首时需要倒装；not ... either 通常放在否定句末。\"",
+        "valueJson": "\"表示“也不”的完整分句中，neither 放句首并倒装；换用 not ... either 时，否定词随谓语出现，either 放在句末。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"连接两个并列成分并肯定两者，与 neither...nor... 的双重否定相对。\"",
+        "valueJson": "\"连接两个并列成分并肯定两者；neither...nor... 则表示两项都不成立。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1",
+        "expectedValueJson": "{\"label\":\"either：任意一个；否定句末的“也”\",\"note\":\"肯定语境中常表示两者之一；用于“也不”时放在否定句末。\",\"example\":{\"id\":\"907-conf-either-2\",\"senseId\":\"907-adv\",\"en\":\"I don't want either.\",\"zh\":\"两个我都不想要。\",\"note\":\"否定句里的 either 指两个选项中的任何一个。\"}}",
+        "valueJson": "{\"label\":\"either：两者中的任何一个\",\"note\":\"either 作代词时指两个选项中的任何一个；not ... either 可表示哪一个都不。即使出现在句末，也不一定是“也不”。\",\"example\":{\"id\":\"907-conf-either-2\",\"senseId\":\"907-pron\",\"en\":\"I don't want either.\",\"zh\":\"两个我都不想要。\",\"note\":\"这里 either 是 want 的宾语，代指两个选项中的任何一个；不是表示“也不”的副词。\"}}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"either：也不（副词）\",\"note\":\"表示“也不”时，either 放在否定句末；可与 neither 引导的倒装句对照。\",\"example\":{\"id\":\"907-conf-either-3\",\"senseId\":\"907-adv\",\"en\":\"Mia doesn't like this song, and I don't like it either.\",\"zh\":\"米娅不喜欢这首歌，我也不喜欢。\",\"note\":\"第二个分句中的 either 表示“也不”；也可改成 and neither do I。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/zh",
+        "expectedValueJson": "\"（易错）诺拉不既不吃肉也不吃鱼。\"",
+        "valueJson": "\"（想表达）诺拉既不吃肉，也不吃鱼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"应改成 Nora eats neither meat nor fish，避免额外的 doesn't。\"",
+        "valueJson": "\"若要表达“两样都不吃”，应写 Nora eats neither meat nor fish，或 Nora doesn't eat meat or fish。额外的 doesn't 不能直接当作加强否定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"中古英语\",\"form\":\"neither\",\"meaning\":\"拼写受到 either 的影响，逐渐形成现代拼写。\"}",
+        "valueJson": "{\"language\":\"现代英语\",\"form\":\"neither\",\"meaning\":\"两者都不；也不。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_neither\"]",
+        "valueJson": "[\"wiktionary_neither\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_neither\",\"title\":\"Oxford Learner’s Dictionaries: neither\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/neither\",\"supports\":[\"常见词性、意义和用法\",\"neither...nor... 与否定回应的结构\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"词源概要及英美读音变体\"]",
+        "valueJson": "[\"限定词、代词、副词与连词的核心意义\",\"neither...nor... 结构与否定承接中的倒装\",\"英美读音变体\",\"古英语词形及 either 对拼写的影响\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 907,
+    "headword": "neither",
+    "meaning_zh": "adj./pron. （两者）都不\nadv. 也不\nconj. neither…nor… 既不……也不……",
+    "phonetic": "/'naiðә/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1a2332746e52a9f1e4c0a73dcefa0de2c3d7232cdb16ff5c345971622611ba56",
+    "executedReviewPromptHash": "1a2332746e52a9f1e4c0a73dcefa0de2c3d7232cdb16ff5c345971622611ba56",
+    "reviewHash": "5bde095333a5a086036941d85a41bccf00a5a8ee319c015fee1cefdc5324b47d",
+    "wordId": 1136,
+    "inputHash": "b28be3f1a1a9b0a2f60e90e14c0d527fbe3079193288c5cf04e60c96808ef68c",
+    "draftHash": "4a74c02c4662959b060505618d18745052a732717fafa06b711ae9399d77ec88",
+    "finalHash": "6ec11e4ee5ae7b8b6d1d58ba5325fd0c90b1ccb99aa9c429ac8854c1bcc14740",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/reduce",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T08:09:49.729Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/reduce#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.665Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117760,
+        "revisionId": 39799792,
+        "revisionTimestamp": "2026-08-12T23:51:32Z",
+        "sha256": "e0c4418c044d06009e9bbd3e51e47dd349b618c7df4e7cab41bfd94d86b3e64a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:21:55.936Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /confusions/1",
+        "message": "缺少 reduce 不带宾语表示减少、缩小的用法。现有及物例句正确，但与 decrease 的比较不完整，容易使人把能否不带宾语误当成两词的区别。须补充不及物用法及两个例句，并调整比较说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "把使陷入某种状态与分解、归纳混在一起，仅有 to tears 的例句，未实际覆盖后两类用法。须分开说明并补例。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原始释义中的不及物“减肥”。应作为较旧用法补入，并说明现代日常英语通常用 lose weight。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/contrastingNote",
+        "message": "“increase 对应数值变低，enlarge 对应尺寸变小”容易被误读为这两个词本身的释义，应明确写出增加、放大的相反方向。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary; /etymology/stages",
+        "message": "阶段释义“来源词”等属于空洞占位，summary 也含制作说明。可用词源材料能确认古法语、拉丁语的来源关系，但未给出来源词的具体词义；应将可靠路径保留在 summary，清空占位阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对原始释义、实际取得的英语词条内容及各例句。补丁后覆盖使数量或程度减少、使尺寸缩小、不及物减少或缩小，以及结果状态、分解、归纳和较旧的减肥用法。原有两组及物义是同一核心意义按对象划分的教学分组，无须强行重组。现有读音、词形以及 reduce 去 e 加 -tion 得到 reduction 的拼写说明正确，予以保留。化学还原、数学约分等专业扩展义不列为本初中课的核心覆盖要求；词源不补造未经材料支持的来源词释义。",
+    "senseInventory": [
+      {
+        "sense": "及物：使数量、程度或发生频率减少",
+        "coveredBy": [
+          "reduce-vt-amount"
+        ],
+        "assessment": "已有两个自然例句，by 与 to 的区别准确，近义及反向表达有语境限制。"
+      },
+      {
+        "sense": "及物：使尺寸、重量等变小，或使价格、温度等降低",
+        "coveredBy": [
+          "reduce-vt-size"
+        ],
+        "assessment": "图片与价格例句覆盖缩小和降低两个教学侧面；修正反向表达说明的歧义即可。"
+      },
+      {
+        "sense": "不及物：数量或体积减少、缩小",
+        "coveredBy": [
+          "reduce-vi-decrease"
+        ],
+        "assessment": "原稿缺失；补入肿胀消退、酱汁煮后体积减小两个例句，并说明具体搭配。"
+      },
+      {
+        "sense": "及物结果结构：使陷入某种状态，常指较差或受限的状态",
+        "coveredBy": [
+          "reduce-to-state"
+        ],
+        "assessment": "已有 to tears 例句；缩窄说明，避免把原释义“使衰退”教成可在任何语境使用的独立通用义。"
+      },
+      {
+        "sense": "及物结果结构：把某物变成更细小的部分",
+        "coveredBy": [
+          "reduce-to-pieces"
+        ],
+        "assessment": "原稿只提到分解而无例句；补入压碎饼干的具体情境，并限制“分解”的适用范围。"
+      },
+      {
+        "sense": "及物结果结构：把复杂内容归纳为要点",
+        "coveredBy": [
+          "reduce-to-essentials"
+        ],
+        "assessment": "原稿未实际覆盖；作为拓展用法补入报告归纳例句。"
+      },
+      {
+        "sense": "不及物：减轻体重、减肥",
+        "coveredBy": [
+          "reduce-vi-weight"
+        ],
+        "assessment": "原稿缺失；补入并标明较旧，现代日常表达优先用 lose weight。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"increase 对应数值变低，enlarge 对应尺寸变小；适用对象各有范围。\"",
+        "valueJson": "\"谈价格、音量等数值时，increase 表示增大；谈图片等尺寸时，enlarge 表示放大，分别与 reduce 的相应用法相对。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reduce-vi-decrease\",\"title\":\"减少或缩小（不带宾语）\",\"meaning\":\"某物本身的数量、程度或体积变小。\",\"usageNote\":\"不及物用法不接宾语，主语是发生变化的事物。一般数量下降也常用 decrease 或 go down；烹饪中 reduce 可指液体加热后体积减小、逐渐收浓。\",\"examples\":[{\"id\":\"reduce-vi-ex1\",\"senseId\":\"reduce-vi-decrease\",\"en\":\"The swelling reduced overnight.\",\"zh\":\"肿胀一夜之间减轻了。\",\"note\":\"reduce 不带宾语，主语 swelling 表示发生变化的事物。\"},{\"id\":\"reduce-vi-ex2\",\"senseId\":\"reduce-vi-decrease\",\"en\":\"The sauce reduced by half as it simmered.\",\"zh\":\"酱汁在小火煨煮时体积减少了一半。\",\"note\":\"这里指水分蒸发后酱汁变少、收浓；by half 说明减少的幅度。\"}],\"patterns\":[{\"en\":\"something reduces (in size / volume)\",\"zh\":\"某物（尺寸／体积）变小\",\"note\":\"不接宾语；in size / volume 说明发生变化的方面。\",\"kind\":\"sentence-pattern\"},{\"en\":\"something reduces by + 数量或比例\",\"zh\":\"某物减少了……\",\"note\":\"by 后接减少的幅度，例如 by half。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"reduce in size\",\"zh\":\"尺寸变小\",\"note\":\"主语是尺寸发生变化的事物；这是不及物结构。\",\"kind\":\"common-collocation\"},{\"en\":\"reduce in volume\",\"zh\":\"体积减小\",\"note\":\"例如液体煮后体积减小；没有直接宾语。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"decrease\",\"zh\":\"减少、下降\",\"note\":\"也可不带宾语，常描述数量或程度下降；不专指酱汁收浓。\"},{\"en\":\"shrink\",\"zh\":\"缩小\",\"note\":\"侧重尺寸或体积变小，不一定涉及液体蒸发。\"}],\"contrasting\":[{\"en\":\"increase\",\"zh\":\"增加\",\"note\":\"用于数量、程度或体积时，与本义的减少方向相反。\"},{\"en\":\"swell\",\"zh\":\"肿起来\",\"note\":\"谈身体部位肿胀时，与 swelling reduces 所表示的消退方向相反。\"}],\"similarNote\":\"这些词有重合，但需结合搭配选择；烹饪中说酱汁煮后收浓，常用 reduce。\",\"contrastingNote\":\"increase 可对应数量等方面的减少；swell 仅对应肿胀语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"使某人或某物落到较差、受限或简单的状态。\"",
+        "valueJson": "\"使某人或某物陷入某种状态，常指较差或受限的状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见结构是 reduce someone to tears（使某人哭起来）或 reduce something to its parts（把某物分解成各部分）；对初中学习者先认读即可。\"",
+        "valueJson": "\"常见结构是 reduce someone to tears（使某人哭起来）；to 引出结果状态。这里不表示数量减少，初中阶段先认读即可。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reduce-to-pieces\",\"title\":\"把某物变成细小部分\",\"meaning\":\"把某物弄成碎屑、粉末等更细小的部分。\",\"note\":\"常用 reduce something to crumbs / powder 等结果结构；不能把所有语境中的“分解”都直接译为 reduce。\",\"example\":{\"id\":\"reduce-pieces-ex1\",\"senseId\":\"reduce-to-pieces\",\"en\":\"She reduced the biscuits to crumbs with a rolling pin.\",\"zh\":\"她用擀面杖把饼干压成了碎屑。\",\"note\":\"to crumbs 说明饼干最后变成什么。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reduce-to-essentials\",\"title\":\"归纳成要点\",\"meaning\":\"把复杂或冗长的内容归纳为更简明的要点。\",\"note\":\"常用 reduce something to + 要点或简单形式；这里改变的是内容的表达方式，不是物理尺寸。\",\"example\":{\"id\":\"reduce-essentials-ex1\",\"senseId\":\"reduce-to-essentials\",\"en\":\"We reduced the long report to three key points.\",\"zh\":\"我们把那篇长报告归纳成了三个要点。\",\"note\":\"to three key points 表示归纳后的结果。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reduce-vi-weight\",\"title\":\"减肥（较旧用法）\",\"meaning\":\"不带宾语时，可指减轻体重、减肥。\",\"note\":\"reduce 单独表示“减肥”是较旧的说法；现代日常英语通常用 lose weight，学习时以认读为主。\",\"example\":{\"id\":\"reduce-weight-ex1\",\"senseId\":\"reduce-vi-weight\",\"en\":\"I'm trying to reduce, so I won't have any cake.\",\"zh\":\"我在努力减肥，所以不吃蛋糕了。\",\"note\":\"这是较旧的表达；现在通常说 I'm trying to lose weight。trying to 只表示在尝试，不保证已经瘦下来。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"reduce 和 decrease 的主语用法\"",
+        "valueJson": "\"reduce 和 decrease 的及物与不及物用法\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"reduce 常用“人或行动使某物减少”；decrease 既能表示某物自己减少，也能表示使某物减少。\"",
+        "valueJson": "\"两词都可作及物或不及物动词。reduce 常用于说明使某物减少，也可描述肿胀消退、酱汁收浓等变化；decrease 常用于描述数量或程度下降。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"通常需要宾语，说明谁使什么变少。\"",
+        "valueJson": "\"在这个及物句型中，宾语说明被减少的内容；reduce 另有不带宾语的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"reduce-vt-amount\"",
+        "valueJson": "\"reduce-vi-decrease\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"reduce 也可不带宾语\",\"note\":\"例如描述酱汁煮后体积变小、逐渐收浓时，可以直接让 sauce 作 reduce 的主语。\",\"example\":{\"id\":\"reduce-decrease-ex3\",\"senseId\":\"reduce-vi-decrease\",\"en\":\"Let the sauce simmer until it reduces by half.\",\"zh\":\"让酱汁小火煨煮，直到体积减少一半。\",\"note\":\"reduces 没有宾语；until 从句用一般现在时表达尚未达到的结果。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表达“我们使某物变少”时优先用 reduce；表达某物自行减少时可用 decrease。\"",
+        "valueJson": "\"表示“使……减少”时常用 reduce + 宾语；表示某物本身减少时，reduce 和 decrease 都可能使用，需结合具体搭配选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"reduce 经古法语 reducer 传入英语，最终源自拉丁语 reducere。这里列出的是有来源支持的传入路径；记忆时可先把 reduce 整体作为一个词来记。\"",
+        "valueJson": "\"reduce 来自古法语 reducer，后者源自拉丁语 reducere。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"reducere\",\"meaning\":\"来源词\"},{\"language\":\"古法语\",\"form\":\"reducer\",\"meaning\":\"传入英语前的形式\"},{\"language\":\"英语\",\"form\":\"reduce\",\"meaning\":\"现代英语词形\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1136,
+    "headword": "reduce",
+    "meaning_zh": "vt. 减少, 分解, 降低, 使衰退, 把...分解, 把...归纳\nvi. 减少, 减肥, 缩小",
+    "phonetic": "/ri'dju:s/",
+    "pos": "",
+    "forms": []
+  }
+}

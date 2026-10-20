@@ -1,0 +1,380 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2f958e0225441761aa3b54edb5b2ffc2aab23a023c97ce256d94e6b95b4826d8",
+    "executedReviewPromptHash": "06965ea0428b2c9b919c6cb2c6ec4237c83dc1ad2cda62eee682c4618b38ef3c",
+    "reviewHash": "64dab289167af81cc90e1d8eb79011b10c25c44a55dcd016bb512e70726499a9",
+    "wordId": 1328,
+    "inputHash": "9e72427ee7d0c22f94edc86650d319a3af531dd3501b074f2f7d23447d04a0ec",
+    "draftHash": "76f0a34a6a323bf793cde46936c5dce015663298ec25224ffe7e1f03afbc4dd1",
+    "finalHash": "86346479770c0af9a2c147e5ba13aa83c5533d2e3ff38a6ce7d84ee4af19acc4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/still#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.072Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 25318,
+        "revisionId": 39821733,
+        "revisionTimestamp": "2026-08-21T18:13:06Z",
+        "sha256": "d82f8480753a0a2d1c51821efde02c5713d5558adbb39270bff5f17ee1f1ac4f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/still",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:25:02.754Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:34:57.044Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿全部引用了未列入实际来源材料的 Oxford 页面。须改为实际取得的英语词条来源；对比教学中由专业语言知识补充的内容不应冒称该页面直接支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用的历史词源材料，不能继续用现代用法充当词源占位。材料分别支持形容词来自中古英语 stille、动词来自古英语 stillan；必须引用相同 URL，且不能把两条来源串成演变链。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "持续义不限于持续到现在；可以相对于过去或将来的时间成立。疑问句公式把 still 错放在倒装的 be／助动词之前；位置说明也遗漏 still haven't 等常见否定结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "标题合并了静止和环境宁静，但两个例句均未实际展示环境宁静。第一例的主语是整杯水，注释却解释为水面不动。须纠正例句，并给宁静义提供独立例证及对应比较表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "比较级加强义和让步转折义都是常用功能，原稿各只有一个例句。来源还列出了蒸馏器、电影画面和使平静的名词／动词义，原稿完全遗漏。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "stay、sit 的独立例句被挂到并未使用的 still 义项下；“stay 才是动词”的总结也会误导学习者以为 still 不能作动词。still 与 sit 的比较价值有限，宜改为常见的 still／yet／already 时序辨析。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对读音、词形、例句、翻译、搭配、比较表达和来源。补丁后，持续、静止、环境宁静、比较级加强、让步转折五个主要义各有两个原创英中例句；蒸馏器、电影画面和使平静义置于次要义区。历史说明仅保留材料明确支持的两条词形来源，不补造副词或名词的发展过程，也不绘制缺乏释义依据的阶段箭头。饮用水中的 still water 在搭配注释中补充辨析。",
+    "senseInventory": [
+      {
+        "sense": "副词：原有情况在所谈时间仍然持续",
+        "coveredBy": [
+          "still-adv-ongoing"
+        ],
+        "assessment": "已有两个自然例句；修正时间范围、疑问句语序及否定句中的位置说明。"
+      },
+      {
+        "sense": "副词：加强比较级，表示还要、更",
+        "coveredBy": [
+          "still-adv-comparative"
+        ],
+        "assessment": "移入主要义区并补足两个例句，说明比较级前后的位置。"
+      },
+      {
+        "sense": "副词：尽管如此、然而",
+        "coveredBy": [
+          "still-adv-nevertheless"
+        ],
+        "assessment": "移入主要义区并补足两个例句，与持续义明确区分。"
+      },
+      {
+        "sense": "形容词：静止、不动",
+        "coveredBy": [
+          "still-adj-motionless"
+        ],
+        "assessment": "保留两个例句并纠正第一例的主语与注释；反向表达限定为移动。"
+      },
+      {
+        "sense": "形容词：平静、宁静",
+        "coveredBy": [
+          "still-adj-calm"
+        ],
+        "assessment": "从合并义中拆出，用安静的房屋和无风的傍晚分别展示，并限定 quiet、calm、noisy、windy 的比较语境。"
+      },
+      {
+        "sense": "名词：蒸馏器",
+        "coveredBy": [
+          "still-n-distillation"
+        ],
+        "assessment": "补入次要义区，提供一个具体例句。"
+      },
+      {
+        "sense": "名词：电影中的静态画面、剧照",
+        "coveredBy": [
+          "still-n-film"
+        ],
+        "assessment": "补入次要义区，提供一个具体例句。"
+      },
+      {
+        "sense": "动词：使平静、使安静、平息",
+        "coveredBy": [
+          "still-v-calm"
+        ],
+        "assessment": "补入次要义区，以平息哭声展示该用法；不将法语释义机械直译成不成立的英语义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adverb; adjective\"",
+        "valueJson": "\"adverb; adjective; noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作副词时，still 常表示某事从过去持续到现在；作形容词时，表示安静或没有移动。\"",
+        "valueJson": "\"still 最常表示在所谈的时间“仍然如此”，也可表示“尽管如此”或加强比较级；作形容词时表示“不动”或“宁静”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-learner\"]",
+        "valueJson": "[\"wiktionary-en-still\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示原来的情况或动作持续到现在，常用于肯定句。\"",
+        "valueJson": "\"表示原来的情况、动作或习惯在所谈的时间仍在持续；这个时间可以是现在、过去或将来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"在 be 动词、助动词之后，在普通实义动词之前；也可放句首或句尾作强调。\"",
+        "valueJson": "\"通常放在普通实义动词前、be 动词后，或第一个助动词、情态动词后，如 still remember、is still waiting、can still come。否定句中常放在否定助动词前，如 I still haven't finished；She is still not ready 也正确。疑问句中通常放在主语后。句尾有时可用于强调；句首的 Still, ... 常表示“尽管如此”，要另行区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"still + be动词 / 助动词 + 主语？\",\"zh\":\"……还……吗？\",\"note\":\"用于确认某状态或动作是否持续，例如 Is he still waiting?。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"be / 助动词 / 情态动词 + 主语 + still + 其余部分？\",\"zh\":\"……还……吗？\",\"note\":\"如 Is he still waiting? 或 Do you still live here?；still 通常在主语之后，不放在句首的助动词之前。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调动作接着进行；still 强调情况延续至现在。\"",
+        "valueJson": "\"continue to 后接动词原形，突出继续做某事；still 是副词，表示在所谈时间某情况仍在持续。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"continue to 强调继续做；still 直接说明现在仍是如此。\"",
+        "valueJson": "\"continue to 强调继续做；still 说明在所谈的时间仍是如此，不限于现在。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-learner\"]",
+        "valueJson": "[\"wiktionary-en-still\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"静止的；安静的\"",
+        "valueJson": "\"静止的；不动的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"形容人或物没有移动，也可形容环境平静、少有声响。\"",
+        "valueJson": "\"形容人、物体或水面等处于静止状态，没有移动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常作定语放在名词前，或放在 be、stay 等连系动词后作表语；still water 指不流动的水。\"",
+        "valueJson": "\"可放在名词前作定语，也可用于 be still、keep still、stay still 等结构。形容自然水体时，still water 指平静、几乎不流动的水；饮用水语境中的含义另见搭配注释。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"still-adj-motionless-ex1\",\"senseId\":\"still-adj-motionless\",\"en\":\"The glass of water stayed still on the tray.\",\"zh\":\"那杯水稳稳地放在托盘上，没有晃动。\",\"note\":\"这里描述水面没有移动。\"}",
+        "valueJson": "{\"id\":\"still-adj-motionless-ex1\",\"senseId\":\"still-adj-motionless\",\"en\":\"The pond was perfectly still, and I could see the trees reflected in it.\",\"zh\":\"池塘水面一动不动，我能看见树木映在水中的倒影。\",\"note\":\"still 描述水面静止，没有明显波动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"保持不动；保持安静\"",
+        "valueJson": "\"保持不动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"静止的……；平静的……\"",
+        "valueJson": "\"静止的……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations",
+        "expectedValueJson": "[{\"en\":\"still water\",\"zh\":\"静水；不流动的水\",\"note\":\"常用于描述没有明显流动的水。\",\"kind\":\"common-collocation\"},{\"en\":\"a still night\",\"zh\":\"宁静的夜晚\",\"note\":\"形容夜晚少风、少声响，语气偏描写。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"still water\",\"zh\":\"静水；不含气的饮用水\",\"note\":\"描述自然水体时指平静、几乎不流动的水；点饮用水时通常指不含气的水，与 sparkling water 相对。\",\"kind\":\"common-collocation\"},{\"en\":\"stand still\",\"zh\":\"站着不动\",\"note\":\"强调身体保持不动，不只是停止说话。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"moving\",\"zh\":\"移动中的\",\"note\":\"用于物体或人正在移动时，与 still 的静止义相对。\"},{\"en\":\"noisy\",\"zh\":\"吵闹的\",\"note\":\"用于环境声音大时，与 still 表示平静少声的语境相对。\"}]",
+        "valueJson": "[{\"en\":\"moving\",\"zh\":\"移动中的\",\"note\":\"用于物体或人正在移动时，与 still 的静止义相对。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"moving 对照“没有移动”，noisy 对照“环境平静”；两者分别对应不同语境。\"",
+        "valueJson": "\"moving 表示正在移动，与本义的静止状态相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-learner\"]",
+        "valueJson": "[\"wiktionary-en-still\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"still-adj-calm\",\"title\":\"宁静的；无风的\",\"meaning\":\"形容环境安静平和，也可形容空气几乎没有流动。\",\"usageNote\":\"常见于描写环境的表达，如 a still night、still air。描述人时，keep still 通常要求不动；要求小声或不说话通常用 keep quiet。\",\"examples\":[{\"id\":\"still-adj-calm-ex1\",\"senseId\":\"still-adj-calm\",\"en\":\"The house was still after everyone had gone to bed.\",\"zh\":\"大家都上床睡觉后，屋里静悄悄的。\",\"note\":\"still 描写屋内宁静的环境。\"},{\"id\":\"still-adj-calm-ex2\",\"senseId\":\"still-adj-calm\",\"en\":\"It was a still evening, with no breeze in the garden.\",\"zh\":\"那是一个无风的傍晚，花园里没有一丝微风。\",\"note\":\"still 在这里强调没有风。\"}],\"patterns\":[{\"en\":\"a still + 表示时间或环境的名词\",\"zh\":\"一个宁静或无风的……\",\"note\":\"如 a still evening；这种形容词用法常带描写色彩。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a still night\",\"zh\":\"宁静的夜晚\",\"note\":\"可描写夜晚少风、少声响的环境。\",\"kind\":\"common-collocation\"},{\"en\":\"still air\",\"zh\":\"静止的空气；无风的空气\",\"note\":\"强调空气没有明显流动，不是单指声音小。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"quiet\",\"zh\":\"安静的\",\"note\":\"主要强调声音少；描述安静的房屋时可与 still 接近，但不表达空气没有流动。\"},{\"en\":\"calm\",\"zh\":\"平静的\",\"note\":\"可形容环境或天气平稳，也可形容情绪平静；形容人情绪稳定时通常用 calm。\"}],\"contrasting\":[{\"en\":\"noisy\",\"zh\":\"吵闹的\",\"note\":\"与环境少有声响的含义相对。\"},{\"en\":\"windy\",\"zh\":\"有风的；多风的\",\"note\":\"描述天气时，与 still 表示无风的含义相对。\"}],\"similarNote\":\"quiet 突出声音少，calm 突出平稳；still 还可强调没有风或动静。\",\"contrastingNote\":\"谈声音时可对照 noisy，谈风时可对照 windy，须按具体语境选择。\"},\"sourceIds\":[\"wiktionary-en-still\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"still-adv-comparative\",\"title\":\"更；还要\",\"meaning\":\"加强比较级，表示在已有比较的基础上程度进一步增加。\",\"usageNote\":\"通常放在比较级前，如 still harder；也可放在比较级后，如 cheaper still。still more 还可修饰名词，如 still more time。\",\"examples\":[{\"id\":\"still-adv-comparative-ex1\",\"senseId\":\"still-adv-comparative\",\"en\":\"The second puzzle was still harder than the first.\",\"zh\":\"第二道谜题比第一道还难。\",\"note\":\"still 加强比较级 harder。\"},{\"id\":\"still-adv-comparative-ex2\",\"senseId\":\"still-adv-comparative\",\"en\":\"This route is short, but the path through the park is shorter still.\",\"zh\":\"这条路线很短，不过穿过公园的小路还要短。\",\"note\":\"still 也可放在比较级 shorter 后面。\"}],\"patterns\":[{\"en\":\"still + 比较级\",\"zh\":\"还要更……\",\"note\":\"如 still better、still harder；still 表示比较程度进一步增加。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"better still\",\"zh\":\"更好的是；还要更好\",\"note\":\"可用来提出比前一个选择更好的办法。\",\"kind\":\"common-collocation\"},{\"en\":\"still more time\",\"zh\":\"还要更多时间\",\"note\":\"more 修饰 time，still 加强 more 的比较程度。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"even + 比较级\",\"zh\":\"甚至更……；还要更……\",\"note\":\"在许多比较句中可与 still + 比较级互换；even 常突出出乎意料的程度。\"}],\"contrasting\":[],\"similarNote\":\"still 与 even 都能加强比较级，但 even 更常带惊讶或强调意味。\",\"contrastingNote\":\"本义没有固定的反义词。less 表示较少，但 still less 仍表示“还要更少”，不能把它当作 still 的反义表达。\"},\"sourceIds\":[\"wiktionary-en-still\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"still-adv-nevertheless\",\"title\":\"尽管如此；然而\",\"meaning\":\"表示前述情况并没有改变后面的结果、判断或决定。\",\"usageNote\":\"常放在句首并用逗号隔开，如 Still, ...。连接两个完整分句时，可在前面使用句号或分号；这里表达让步转折，不是说明时间上的延续。\",\"examples\":[{\"id\":\"still-adv-nevertheless-ex1\",\"senseId\":\"still-adv-nevertheless\",\"en\":\"It was cold; still, the children played outside for a while.\",\"zh\":\"天气很冷；尽管如此，孩子们还是在外面玩了一会儿。\",\"note\":\"天气冷没有阻止孩子们出去玩。\"},{\"id\":\"still-adv-nevertheless-ex2\",\"senseId\":\"still-adv-nevertheless\",\"en\":\"The bus was late. Still, we reached the cinema before the film started.\",\"zh\":\"公交车晚点了。尽管如此，我们还是在电影开始前赶到了电影院。\",\"note\":\"still 引出与晚点造成的预期相反的结果。\"}],\"patterns\":[{\"en\":\"前一句。Still, + 完整句子。\",\"zh\":\"……。尽管如此，……。\",\"note\":\"Still 后通常用逗号，后句说明让步之后仍成立的结果或判断。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"Still, ...\",\"zh\":\"尽管如此，……\",\"note\":\"作为引出转折的常用句首表达，后接完整句子。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"nevertheless\",\"zh\":\"尽管如此\",\"note\":\"同样强调前述情况没有改变后面的结果，语气通常更正式。\"},{\"en\":\"however\",\"zh\":\"然而；不过\",\"note\":\"同样可以引出转折；however 的转折范围更广，不一定突出克服前述不利情况。\"}],\"contrasting\":[],\"similarNote\":\"nevertheless 更接近“尽管如此”；however 是使用范围较广的转折表达。\",\"contrastingNote\":\"这里的 still 表示让步转折，没有固定的反义词，不宜用某个结果副词硬作反义对应。\"},\"sourceIds\":[\"wiktionary-en-still\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"still-adv-nevertheless\",\"title\":\"尽管如此；还是\",\"meaning\":\"用于转折，表示前面的情况没有阻止后面的事发生。\",\"note\":\"常见于句首或句中，语气接近 however；初学时先掌握 still 的“仍然”义。\",\"example\":{\"id\":\"still-adv-nevertheless-ex1\",\"senseId\":\"still-adv-nevertheless\",\"en\":\"It was cold; still, the children played outside for a while.\",\"zh\":\"天气很冷；尽管如此，孩子们还是在外面玩了一会儿。\",\"note\":\"still 引出与前句形成转折的结果。\"},\"sourceIds\":[\"oxford-learner\"]},{\"id\":\"still-adv-comparative\",\"title\":\"更；还要\",\"meaning\":\"放在比较级前加强程度，表示“比之前或预期更……”。\",\"note\":\"常用于 still better、still more 等比较结构。\",\"example\":{\"id\":\"still-adv-comparative-ex1\",\"senseId\":\"still-adv-comparative\",\"en\":\"The second puzzle was still harder than the first.\",\"zh\":\"第二道谜题比第一道还难。\",\"note\":\"still 修饰比较级 harder，表示程度进一步增加。\"},\"sourceIds\":[\"oxford-learner\"]}]",
+        "valueJson": "[{\"id\":\"still-n-distillation\",\"title\":\"蒸馏器\",\"meaning\":\"用于蒸馏液体、尤其用于制酒的装置。\",\"note\":\"可数名词，复数为 stills；常见于酿酒和蒸馏工艺语境。\",\"example\":{\"id\":\"still-n-distillation-ex1\",\"senseId\":\"still-n-distillation\",\"en\":\"The distillery uses a copper still to make whisky.\",\"zh\":\"这家酿酒厂使用铜制蒸馏器酿制威士忌。\",\"note\":\"a copper still 指一台铜制蒸馏器。\"},\"sourceIds\":[\"wiktionary-en-still\"]},{\"id\":\"still-n-film\",\"title\":\"电影画面；剧照\",\"meaning\":\"电影中的一幅静态画面或相关剧照。\",\"note\":\"可数名词，常见搭配为 a still from a film；复数为 stills。\",\"example\":{\"id\":\"still-n-film-ex1\",\"senseId\":\"still-n-film\",\"en\":\"The review includes a still from the film, showing the two sisters at the station.\",\"zh\":\"这篇影评配了一张电影画面，画中两姐妹正在车站。\",\"note\":\"a still from the film 指电影的一幅静态画面。\"},\"sourceIds\":[\"wiktionary-en-still\"]},{\"id\":\"still-v-calm\",\"title\":\"使平静；使安静；平息\",\"meaning\":\"使声音、动静或不安等平息下来。\",\"note\":\"较正式或带文学色彩。规则变化为 stills、stilled、stilling；加 -ed、-ing 时保留原有的双 l。\",\"example\":{\"id\":\"still-v-calm-ex1\",\"senseId\":\"still-v-calm\",\"en\":\"The gentle music stilled the baby's cries.\",\"zh\":\"轻柔的音乐使婴儿的哭声平息了下来。\",\"note\":\"stilled 是动词过去式，表示使哭声停止或安静下来。\"},\"sourceIds\":[\"wiktionary-en-still\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"conf-still-stay-ex2\",\"senseId\":\"still-adv-ongoing\",\"en\":\"Please stay here until the rain stops.\",\"zh\":\"请留在这里，等雨停下来。\",\"note\":\"stay 是句子的动词，表示留下。\"}",
+        "valueJson": "{\"id\":\"conf-still-stay-ex2\",\"senseId\":\"still-adv-ongoing\",\"en\":\"We are still here, but we can't stay much longer.\",\"zh\":\"我们还在这里，但不能再待很久了。\",\"note\":\"still 表示“仍然”，stay 是动词“待着、留下”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"still 描述“仍然”或“静止”的状态；stay 才是表示“留下、保持”的动词。\"",
+        "valueJson": "\"表示“仍然”用副词 still，表示“留下、保持某种状态”用动词 stay；stay still 就是“保持不动”。另有较少见的动词 still，意思是“使平静、平息”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-learner\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1",
+        "expectedValueJson": "{\"id\":\"still-vs-sit\",\"title\":\"still 和 sit：拼写与词性不同\",\"summary\":\"still 的首字母是 s，指“仍然”或“静止”；sit 是动词，意思是“坐”。\",\"items\":[{\"label\":\"still\",\"note\":\"形容词，可放在 sit 后说明坐着时不动。\",\"example\":{\"id\":\"conf-still-sit-ex1\",\"senseId\":\"still-adj-motionless\",\"en\":\"The class sat still during the announcement.\",\"zh\":\"广播通知时，全班同学都安静地坐着。\",\"note\":\"still 说明坐着时保持不动。\"}},{\"label\":\"sit\",\"note\":\"动词，表示采取坐姿；过去式是 sat。\",\"example\":{\"id\":\"conf-still-sit-ex2\",\"senseId\":\"still-adj-motionless\",\"en\":\"I sit by the window to read after dinner.\",\"zh\":\"晚饭后我坐在窗边看书。\",\"note\":\"sit 表示“坐”这个动作或状态。\"}}],\"takeaway\":\"sit 是动词“坐”，still 是副词“仍然”或形容词“静止”；别把 still 写成 sit。\",\"sourceIds\":[\"oxford-learner\"]}",
+        "valueJson": "{\"id\":\"still-vs-yet-already\",\"title\":\"still、yet 和 already：仍然、还没与已经\",\"summary\":\"still 强调原有情况继续；yet 常在否定句中表示“还没”，在疑问句中询问是否已经发生；already 表示“已经”。\",\"items\":[{\"label\":\"still\",\"note\":\"强调同一情况继续，通常在实义动词前、be 动词后。\",\"example\":{\"id\":\"conf-still-yet-already-ex1\",\"senseId\":\"still-adv-ongoing\",\"en\":\"I'm still waiting for the bus.\",\"zh\":\"我还在等公交车。\",\"note\":\"等待从先前持续到现在。\"}},{\"label\":\"yet\",\"note\":\"not ... yet 表示预期的事情还没发生，yet 通常在句尾；still haven't 更突出“到现在还没有”。\",\"example\":{\"id\":\"conf-still-yet-already-ex2\",\"senseId\":\"still-adv-ongoing\",\"en\":\"I still haven't received the parcel; it hasn't arrived yet.\",\"zh\":\"我到现在还没有收到包裹；它还没送到。\",\"note\":\"still 在否定助动词 haven't 前；yet 在第二个分句末尾。两种说法都正确。\"}},{\"label\":\"already\",\"note\":\"表示事情已经发生或某状态已经成立；still 则强调原有状态继续。\",\"example\":{\"id\":\"conf-still-yet-already-ex3\",\"senseId\":\"still-adv-ongoing\",\"en\":\"The café is already open, and the bakery next door is still closed.\",\"zh\":\"咖啡馆已经开门了，隔壁的面包店还关着。\",\"note\":\"already 说明咖啡馆已进入营业状态；still 说明面包店继续处于关门状态。\"}}],\"takeaway\":\"still 问的是原有情况是否继续；not ... yet 表示预期的事尚未发生；already 表示已经发生或已经如此。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"still 的副词和形容词用法整体记忆：它既能表示情况延续，也能描述静止、平静的状态。\",\"stages\":[],\"caveat\":\"这里用现代用法帮助记忆，不把联想当作历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"形容词 still 来自中古英语 stille；动词 still（使平静、使安静）来自古英语 stillan。这是分别对应两种词性的来源，不能把 stille 和 stillan 排成一条先后演变的链。\",\"stages\":[],\"caveat\":\"这些词形来源不能直接用来解释 still 各个名词义的历史；拍照故事只是现代助记联想。\",\"sourceIds\":[\"wiktionary-en-still\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-learner\"]",
+        "valueJson": "[\"wiktionary-en-still\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-learner\",\"title\":\"Oxford Learner’s Dictionaries: still\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/still\",\"supports\":[\"副词表示持续、转折及修饰比较级的用法\",\"形容词表示静止或安静的用法\",\"读音、词性和 stillness 词族\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en-still\",\"title\":\"Wiktionnaire：still（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/still#Anglais\",\"supports\":[\"副词的持续、比较级加强和让步转折义\",\"形容词的平静与静止义\",\"蒸馏器和电影画面的名词义，以及使平静的动词义\",\"/stɪl/ 读音、形容词比较变化及 stillness 派生词\",\"形容词来自中古英语 stille；动词来自古英语 stillan\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1328,
+    "headword": "still",
+    "meaning_zh": "adv. 仍然；还\nadj. 静止的；不动的",
+    "phonetic": "/stil/",
+    "pos": "",
+    "forms": []
+  }
+}

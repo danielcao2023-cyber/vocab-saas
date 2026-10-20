@@ -1,0 +1,363 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5c862a3ca9a7839de605bfad02eb5215566586a4127da8d39b30308d87fd17c4",
+    "executedReviewPromptHash": "5c862a3ca9a7839de605bfad02eb5215566586a4127da8d39b30308d87fd17c4",
+    "reviewHash": "d87b2db037389df5b2345ce1910bae76d26bfa9ebac8b71ae7998b79741b3d37",
+    "wordId": 1202,
+    "inputHash": "db314c6725be3839ff59ec8a661308501cbc818aa8789e2d6bbabbf3209309be",
+    "draftHash": "b5aafcad877fab2fc825b40656e6f8ac3d5cdfd0f407b940e5bd581b6c4d3949",
+    "finalHash": "2b1e0b02f0a53f8d57f211d836a87feb230e9ba92951f00ba28eadd642ca18f4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sea#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.248Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11379,
+        "revisionId": 39766225,
+        "revisionTimestamp": "2026-08-03T05:45:49Z",
+        "sha256": "d86d3ef2b7129c5d32c31bfb4de488765a724bd28c277ff5c27f2c71fddcd2eb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sea",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:34:31.590Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:41:18.139Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "将 sea 笼统标为可数名词，与正文的不可数用法说明矛盾；应明确它兼有可数和不可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0",
+        "message": "walk along the sea 不适合示范“沿海边散步”的常规表达。改为自然的 walk by the sea，并同步调整翻译和说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "具体海、复数 seas 表示海域的用法缺少实际例句；海浪、海况用法虽已提到，但只有一个例句。补充海域例句，并将海浪、海况单列，保留原风浪例句，再补一个复数 seas 例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "“日常谈海边和海上活动时 sea 更常见”未限定地区，容易误导。应说明 ocean 与 sea 的重合范围，以及地理专名不能任意替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "a large number of 缺少只接复数可数名词的限制；a sea of 也不只描写可见的铺展景象，可以表示大量抽象事物。补充限制、说明和例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example",
+        "message": "词族条目标注 seaside 为名词，例句却展示 a seaside town 中的定语用法。原句不应判为语法错误，但宜改用 at the seaside，直接示范所标词性。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语 sæ 及其“海；湖”义有来源支持，应直接陈述，去掉“给出的历史词源材料”“依据历史词源条目”等制作说明。单个历史阶段可以保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 正文未取得，不能将其作为本次审校的内容依据。改用实际取得的 Wiktionnaire 英语词条，并准确限定其支持范围；专业语言知识补充的海浪、海况义不伪托来源。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对所给英语词条中的海、海域、比喻性大片及夸张性大量，并区分法语说明语言与英语词条语言。补丁应用后，三个核心教学义各有至少两个自然原创英中例句，另补具体海域、抽象数量及 by sea／at sea 的用法。古英语词源保留可靠事实。局限是 Cambridge 正文不可用；海浪、海况及部分搭配说明依据专业语言知识补充，未作额外外部核验。",
+    "senseInventory": [
+      {
+        "sense": "名词：海、海洋，或某一片具体的海",
+        "coveredBy": [
+          "sea-1"
+        ],
+        "assessment": "原稿已有泛指海洋的用法；补丁修正散步例句，并加入横渡北海的例句，覆盖泛指与具体海名。"
+      },
+      {
+        "sense": "名词复数：海域、水域",
+        "coveredBy": [
+          "sea-1"
+        ],
+        "assessment": "对应原词条的 parage 释义。原稿只在词形说明中提及，补丁加入岛屿周围海域的具体例句，与具体海名一并展示。"
+      },
+      {
+        "sense": "名词：海浪、海面状况，常用复数 seas",
+        "coveredBy": [
+          "sea-3"
+        ],
+        "assessment": "原稿已通过 rough sea 和 rough／calm seas 触及此用法；补丁单列并配齐两个例句。此项依据专业语言知识补充，所给词典正文未独立列出。"
+      },
+      {
+        "sense": "比喻：像海一样的一大片事物",
+        "coveredBy": [
+          "sea-2"
+        ],
+        "assessment": "对应原词条的比喻用法；fans 和 mud 两个例句分别展示成片人群与大片覆盖物。"
+      },
+      {
+        "sense": "夸张：极大量或广阔范围，也可用于抽象事物",
+        "coveredBy": [
+          "sea-2"
+        ],
+        "assessment": "对应原词条的夸张用法，与比喻义共享 a sea of 结构，适合合讲。补充 information 例句，避免把它限制为可见景象。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词；泛指海洋时常说 the sea。\"",
+        "valueJson": "\"既有可数用法，也有不可数用法；泛指海洋常用 the sea，指一片海时可用 a sea。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"海；海洋；海面\"",
+        "valueJson": "\"海；海洋；海域\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"海洋或海的一部分；也可指海面，尤其在谈到风浪时。\"",
+        "valueJson": "\"作为整体的海洋，或其中某一片海；复数 seas 还可指不同海域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"泛指海洋时常用 the sea；表示某片海域时常与具体名称连用。sea 通常不可数，但表示不同海域或海况时可用复数 seas。\"",
+        "valueJson": "\"sea 既有不可数用法，也有可数用法。泛指海洋时常用 the sea；指一片海时可用 a sea。具体名称中 Sea 大写，如 the Baltic Sea；复数 seas 也可指不同海域。海浪、海况的用法另见相应义项。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/en",
+        "expectedValueJson": "\"We walked along the sea after lunch.\"",
+        "valueJson": "\"We walked by the sea after lunch.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"午饭后我们沿着海边散步。\"",
+        "valueJson": "\"午饭后我们在海边散步。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"这里 the sea 指海洋，也可理解为海边的海面。\"",
+        "valueJson": "\"by the sea 表示“在海边”；the sea 在这里泛指海洋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"sea-1-ex2\",\"senseId\":\"sea-1\",\"en\":\"The boat rocked on the rough sea.\",\"zh\":\"小船在波涛汹涌的海面上摇晃。\",\"note\":\"这里强调海面和风浪。\"}",
+        "valueJson": "{\"id\":\"sea-1-ex2\",\"senseId\":\"sea-1\",\"en\":\"We crossed the North Sea by ferry.\",\"zh\":\"我们乘渡轮横渡了北海。\",\"note\":\"the North Sea 是具体海域的名称；Sea 是专名的一部分，首字母大写。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sea-1-ex3\",\"senseId\":\"sea-1\",\"en\":\"We saw dolphins in the seas around the island.\",\"zh\":\"我们在那座岛周围的海域看到了海豚。\",\"note\":\"这里 seas 指岛屿周围的海域，不是指海浪。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"rough / calm seas\",\"zh\":\"汹涌的海面 / 平静的海面\",\"note\":\"复数 seas 常用来描述海上的状况或航行环境。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/2",
+        "expectedValueJson": "{\"en\":\"rough / calm seas\",\"zh\":\"汹涌的海面 / 平静的海面\",\"note\":\"复数 seas 常用来描述海上的状况或航行环境。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"by sea\",\"zh\":\"经海路；通过海运\",\"note\":\"表示运输或旅行的方式，不加 the；by the sea 则表示“在海边”。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"at sea\",\"zh\":\"在海上；出海航行中\",\"note\":\"固定表达，指处于海上或在海上航行，不加 the。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"ocean 常指广阔的大洋；日常谈海边和海上活动时，sea 更常见。\"",
+        "valueJson": "\"ocean 常指大洋，也可泛指海洋，与 sea 有重合；具体名称不能任意替换，如 the Pacific Ocean（太平洋）和 the Mediterranean Sea（地中海）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sea-2-ex3\",\"senseId\":\"sea-2\",\"en\":\"She felt lost in a sea of information.\",\"zh\":\"她面对海量信息感到无所适从。\",\"note\":\"a sea of 也可形容大量抽象事物，不一定是眼前铺开的景象；information 是不可数名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可直接说明数量；a sea of 更形象，常让人想到铺展开来的景象。\"",
+        "valueJson": "\"只接复数可数名词，如 a large number of fans；主要陈述数量，不保留 a sea of 的比喻，不能直接用于 mud 等不可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"a sea of 强调视觉上数量大、铺展开来；a large number of 主要陈述数量。\"",
+        "valueJson": "\"a sea of 是形象的比喻，可写眼前铺开的景象，也可表示大量抽象事物；a large number of 只接复数可数名词，主要陈述数量。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sea-3\",\"title\":\"海浪；海面状况\",\"meaning\":\"指海上的波浪，也用来描述海面平静、汹涌等状况。\",\"usageNote\":\"常与 rough、heavy、calm 等词搭配，尤其常用复数 seas；这里的 seas 不一定表示几片不同的海。\",\"examples\":[{\"id\":\"sea-3-ex1\",\"senseId\":\"sea-3\",\"en\":\"The boat rocked on the rough sea.\",\"zh\":\"小船在波涛汹涌的海面上摇晃。\",\"note\":\"这里强调海面和风浪。\"},{\"id\":\"sea-3-ex2\",\"senseId\":\"sea-3\",\"en\":\"Heavy seas delayed the ferry.\",\"zh\":\"汹涌的海浪使渡轮晚点了。\",\"note\":\"heavy seas 指汹涌的海浪；这里 seas 不表示几片不同的海。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"rough / calm seas\",\"zh\":\"汹涌的海面 / 平静的海面\",\"note\":\"复数 seas 常用来描述海上的状况或航行环境。\",\"kind\":\"common-collocation\"},{\"en\":\"heavy seas\",\"zh\":\"汹涌的海浪；巨浪\",\"note\":\"常用于描述影响船只航行的恶劣海况。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"waves\",\"zh\":\"波浪；海浪\",\"note\":\"直接指波浪，也可用于河流、湖泊等水面；seas 的海浪义用于海上。\"}],\"contrasting\":[{\"en\":\"calm seas\",\"zh\":\"平静的海面\",\"note\":\"与 rough seas、heavy seas 所描述的汹涌海况相对。\"}],\"similarNote\":\"waves 直接指波浪；seas 还常用来描述整体海况。\",\"contrastingNote\":\"这里对照的是汹涌与平静的海况，不能把 calm seas 当作 sea 在其他义项中的反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"sea 的历史词源可追溯到古英语 sæ，给出的历史词源材料将它与“海、湖”联系起来。\"",
+        "valueJson": "\"sea 来自古英语 sæ；sæ 在古英语中有“海；湖”的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的词源阶段依据历史词源条目；sea of 表示“大量”是现代英语中的比喻用法，不代表另一条词源。\"",
+        "valueJson": "\"古英语中的“湖”义不表示现代 sea 可以随意代替 lake；a sea of 的“大量”是比喻用法，并不是另一条词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"sea-family-ex1\",\"senseId\":\"sea-1\",\"en\":\"They spent the weekend at a seaside town.\",\"zh\":\"他们在一个海滨小镇度过了周末。\",\"note\":\"seaside 指海岸附近的地方。\"}",
+        "valueJson": "{\"id\":\"sea-family-ex1\",\"senseId\":\"sea-1\",\"en\":\"They spent the weekend at the seaside.\",\"zh\":\"他们在海滨度过了周末。\",\"note\":\"at the seaside 中，seaside 是名词，指海滨地区。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_sea\"]",
+        "valueJson": "[\"wiktionary_sea\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_sea\",\"title\":\"Cambridge Dictionary: sea\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sea\",\"supports\":[\"sea 的名词用法、读音和常见搭配\",\"sea 与 see 的同音关系\",\"seaside、seawater 等常见复合词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionnaire: sea（英語項目・詞源）\"",
+        "valueJson": "\"Wiktionnaire: sea（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"sea 的历史词源条目及古英语形式 sæ\"]",
+        "valueJson": "[\"sea 的海、海域及 a sea of 比喻义\",\"sea 的 /siː/ 读音，以及与 see、cee 的同音关系\",\"seaside、seawater、sea water 等复合表达的词形\",\"sea 来自古英语 sæ，古英语释义为“海；湖”\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1202,
+    "headword": "sea",
+    "meaning_zh": "n. 海, 海洋, 海浪, 大量",
+    "phonetic": "/si:/",
+    "pos": "",
+    "forms": []
+  }
+}

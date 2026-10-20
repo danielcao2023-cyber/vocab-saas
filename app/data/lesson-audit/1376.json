@@ -1,0 +1,365 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "96a994dd2571a95690b708badf904185ea3747dd26c2f9213f65c21e19a396e7",
+    "executedReviewPromptHash": "96a994dd2571a95690b708badf904185ea3747dd26c2f9213f65c21e19a396e7",
+    "reviewHash": "9790180f490f9eaae55d772685852263edc545f1424e33464791d1abbbc6e88b",
+    "wordId": 1376,
+    "inputHash": "740bae7540a3e3955b78c1a4f28e1bb4dcb98db7eabd7e952fad083e651a9c51",
+    "draftHash": "a27f703458feca4a1d35563b7b412ec136545b16c97519d906a5b618edbe58ed",
+    "finalHash": "47a1f327836999065cf5aad6017bb22307dd44e1d5f98f3992ad0a46c65e0c71",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tap#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.988Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 105662,
+        "revisionId": 39882819,
+        "revisionTimestamp": "2026-09-19T00:11:34Z",
+        "sha256": "eff02741f24e1bbd4665130185cf55d84c3210b2ecb1d860179ce177615d9bb3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tap",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:51:34.572Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:07:39.472Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用可数名词义“一次轻敲、轻拍或其声音”。动词例句不能代替该名词义的教学，须补充独立义项和两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "“选中某人承担任务”和“利用、开发资源”被合并，例句只覆盖前者；tap someone to do something 与 tap into resources 的宾语和结构应分别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "tap 并非“以重读短元音结尾”，而是以辅音字母 p 结尾，其前为重读短元音。双写结果正确，但规则解释有误。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples",
+        "message": "轻点触摸屏是常用功能，正文已有搭配但缺少具体例句；补充两个操作场景即可，无须人为拆成另一基本义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "应适当补充“敲出节奏”和实际来源明确收录的电话窃听名词、动词用法，并分别提供匹配词性的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿仅列 Oxford，实际提供的已取回内容来自法语维基词典的英语词条。应改用该真实来源，并清除其不支持的“选中某人”等义项的来源关联；不将法语释义误当成法语单词用法。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对原稿，并从中文词条、法语维基词典英语条目的全部定义及常用派生表达建立义项清单。补丁补齐常用名词“轻敲”，用两个新增例句落实触摸屏功能，将选人和利用资源分开，并补充敲出节奏及电话窃听。现有水龙头、轻敲、肩膀句型、英美用词差异、读音及 tapped/tapping 拼写说明总体正确。机械工具、钻孔取液、分接线路、向人要钱和脚步作响等低频用法列入审计清单，但不扩展为初中核心教学。词源材料实际只有待补占位，没有可据以新增的历史阶段；保留空 stages 和明确标注的原创助记，不编造演变关系。新增无直接资料支持的用法属于专业语言知识补充，sourceIds 留空。",
+    "senseInventory": [
+      {
+        "sense": "名词：水龙头；控制液体流出的龙头",
+        "coveredBy": [
+          "tap-noun-faucet"
+        ],
+        "assessment": "核心义已覆盖，两个生活例句自然；英式 tap 与美式 faucet 的说明正确。"
+      },
+      {
+        "sense": "名词：一次轻敲、轻拍或其声音",
+        "coveredBy": [
+          "tap-noun-light-hit"
+        ],
+        "assessment": "原稿遗漏；补丁增加独立核心义和两个例句，分别展示触碰和声音。"
+      },
+      {
+        "sense": "动词：轻敲、轻拍；不及物地轻叩",
+        "coveredBy": [
+          "tap-verb-lightly-hit"
+        ],
+        "assessment": "原有窗户和肩膀例句分别覆盖不及物介词结构及及物身体部位结构，均正确。"
+      },
+      {
+        "sense": "动词的常用操作功能：轻点触摸屏、图标或按钮",
+        "coveredBy": [
+          "tap-verb-lightly-hit"
+        ],
+        "assessment": "保留在轻触义内；补丁增加两个完整例句，不人为拆义。"
+      },
+      {
+        "sense": "动词：敲出节奏、信息等",
+        "coveredBy": [
+          "tap-verb-tap-out"
+        ],
+        "assessment": "补丁以 tap out a rhythm 展示可分短语动词结构，作为拓展义。"
+      },
+      {
+        "sense": "动词：选中、指定某人承担任务",
+        "coveredBy": [
+          "tap-verb-select-resource"
+        ],
+        "assessment": "保留原例句，收窄标题和释义，说明 tap someone to do something 与 tap someone for a role。"
+      },
+      {
+        "sense": "动词：利用、开发资源",
+        "coveredBy": [
+          "tap-verb-use-resources"
+        ],
+        "assessment": "原稿只有混合释义，缺少对应例句；补丁独立补充 tap resources 与 tap into resources。"
+      },
+      {
+        "sense": "名词：电话窃听、线路上的窃听装置",
+        "coveredBy": [
+          "tap-noun-phone"
+        ],
+        "assessment": "实际来源明确收录；补丁增加名词例句，与动词窃听分开。"
+      },
+      {
+        "sense": "动词：窃听电话或线路",
+        "coveredBy": [
+          "tap-verb-phone"
+        ],
+        "assessment": "实际来源明确收录；补丁增加 tap someone's phone 的独立例句。"
+      },
+      {
+        "sense": "名词：攻制内螺纹的丝锥",
+        "coveredBy": [],
+        "assessment": "实际来源收录的机械专业义，已核对；不属于初中常用核心义，本课未展开。"
+      },
+      {
+        "sense": "动词：钻孔取液、给桶或树等装出液嘴",
+        "coveredBy": [],
+        "assessment": "中文词条中的“装上嘴子、使流出”属于此组相关操作；属于较低频具体用法，本课未展开。"
+      },
+      {
+        "sense": "动词：接入、分接管道或线路",
+        "coveredBy": [],
+        "assessment": "中文词条列有“分接”；属技术用法，本课未展开，不与电话窃听或利用资源等同。"
+      },
+      {
+        "sense": "动词：向某人要钱、借钱",
+        "coveredBy": [],
+        "assessment": "中文词条的“向……乞讨”不宜作为通用现代释义；tap someone for money 可表示向人要钱或借钱。此非正式低频用法未纳入课内教学。"
+      },
+      {
+        "sense": "不及物动词：发出轻快敲击声地行走或移动",
+        "coveredBy": [],
+        "assessment": "对应中文词条的脚步作响用法，已核对；属于低频描写性延伸，不作为初中核心义。"
+      },
+      {
+        "sense": "固定表达：on tap，指啤酒等由桶装龙头供应",
+        "coveredBy": [
+          "tap-noun-faucet"
+        ],
+        "assessment": "实际来源明确列出；补丁加入龙头义下的搭配，不另立基本义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则动词以重读短元音结尾，末尾辅音字母 p 双写后加 -ed。\"",
+        "valueJson": "\"tap 以辅音字母 p 结尾，p 前是重读短元音 /æ/；加 -ed 时双写 p，成为 tapped。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-noun-light-hit\",\"title\":\"一次轻敲、轻拍；轻敲声\",\"meaning\":\"可数名词，表示一次轻而短的敲击、拍碰，也可指这种动作发出的声音。\",\"usageNote\":\"常说 a tap on the shoulder 或 hear a tap；give someone a tap 表示轻拍某人一下。\",\"examples\":[{\"id\":\"tap-noun-hit-ex1\",\"senseId\":\"tap-noun-light-hit\",\"en\":\"Ella gave me a gentle tap on the shoulder.\",\"zh\":\"埃拉轻轻拍了一下我的肩膀。\",\"note\":\"a tap 是可数名词；give someone a tap on the shoulder 表示轻拍某人的肩膀一下。\"},{\"id\":\"tap-noun-hit-ex2\",\"senseId\":\"tap-noun-light-hit\",\"en\":\"I heard a soft tap at the window and looked up.\",\"zh\":\"我听见窗边传来一声轻敲，便抬起头来。\",\"note\":\"这里的 tap 指轻敲声；a soft tap 是一声轻轻的敲击声。\"}],\"patterns\":[{\"en\":\"give someone a tap on the shoulder\",\"zh\":\"轻拍某人的肩膀一下\",\"note\":\"give 后的 a tap 是名词；对照动词结构 tap someone on the shoulder。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a gentle tap\",\"zh\":\"轻轻的一拍／一敲\",\"note\":\"gentle 强调动作轻柔。\",\"kind\":\"common-collocation\"},{\"en\":\"hear a tap\",\"zh\":\"听见一声轻敲\",\"note\":\"tap 在这里指敲击声。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a knock\",\"zh\":\"一次敲击；一声敲门声\",\"note\":\"用于敲门等场景，通常比 a tap 的声音更明显，但不必然是重击。\"},{\"en\":\"a pat\",\"zh\":\"轻拍一下\",\"note\":\"通常是用手掌轻拍，常用于安慰或鼓励；a tap 更强调短促的触击。\"}],\"contrasting\":[],\"similarNote\":\"比较名词用法时，要区分敲击的轻重、声音和用手指还是手掌接触。\",\"contrastingNote\":\"该动作或声音名词没有固定反义词；具体场景中可用 a hard blow 表示较重的一击作对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-screen-ex1\",\"senseId\":\"tap-verb-lightly-hit\",\"en\":\"Tap the camera icon to open the camera app.\",\"zh\":\"轻点相机图标，打开相机应用。\",\"note\":\"tap 可直接接图标或按钮，表示在触摸屏上轻点。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-screen-ex2\",\"senseId\":\"tap-verb-lightly-hit\",\"en\":\"Tap the photo twice to enlarge it.\",\"zh\":\"轻点照片两下，把它放大。\",\"note\":\"twice 表示两次；这里指触摸屏上的轻点操作。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"beer on tap\",\"zh\":\"桶装生啤；由酒桶龙头供应的啤酒\",\"note\":\"on tap 在这里说明供酒方式，常见于酒吧菜单。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"选中或调用资源\"",
+        "valueJson": "\"选中、指定某人承担任务\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"从人或资源中选用所需者，常见于 tap into something。\"",
+        "valueJson": "\"选中某人承担某项工作或担任某个职务。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"多见于新闻、商业或较正式表达；初学阶段先掌握轻敲和水龙头两义。\"",
+        "valueJson": "\"常见于新闻报道，尤见于美式英语；可说 tap someone to do something 或 tap someone for a role。此义选的是人，利用资源则另见 tap resources 或 tap into resources。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-verb-use-resources\",\"title\":\"利用、开发资源\",\"meaning\":\"利用已有的知识、经验、能源或其他资源，使它们发挥作用。\",\"note\":\"可用 tap resources 或 tap into resources；into 后接被利用的资源，不表示选人任职。\",\"example\":{\"id\":\"tap-resource-ex1\",\"senseId\":\"tap-verb-use-resources\",\"en\":\"The school hopes to tap into parents' skills to improve its garden.\",\"zh\":\"学校希望利用家长们的技能来改善校园花园。\",\"note\":\"tap into parents' skills 表示利用家长们的技能。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-verb-tap-out\",\"title\":\"敲出节奏等\",\"meaning\":\"通过敲击发出节奏、信息等。\",\"note\":\"常用 tap out a rhythm；若宾语是代词，放在 tap 和 out 之间，如 tap it out。\",\"example\":{\"id\":\"tap-rhythm-ex1\",\"senseId\":\"tap-verb-tap-out\",\"en\":\"She tapped out a simple rhythm on the desk with her fingers.\",\"zh\":\"她用手指在桌上敲出了一段简单的节奏。\",\"note\":\"a simple rhythm 是敲出的内容，on the desk 是敲击的位置。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-noun-phone\",\"title\":\"电话窃听；窃听装置\",\"meaning\":\"对电话线路的秘密监听，也可指为此设置的装置。\",\"note\":\"这里是名词，常见于 a phone tap 或 a tap on a phone line 等表达。\",\"example\":{\"id\":\"tap-phone-noun-ex1\",\"senseId\":\"tap-noun-phone\",\"en\":\"They discovered a tap on the office phone line.\",\"zh\":\"他们发现办公室的电话线路上装了窃听装置。\",\"note\":\"a tap 是名词，在这里指窃听装置。\"},\"sourceIds\":[\"fr_wiktionary_tap\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tap-verb-phone\",\"title\":\"窃听电话\",\"meaning\":\"通过接入电话线路等方式秘密监听通话。\",\"note\":\"这是及物动词，常说 tap someone's phone 或 tap a phone line。\",\"example\":{\"id\":\"tap-phone-verb-ex1\",\"senseId\":\"tap-verb-phone\",\"en\":\"She suspected that someone had tapped her phone.\",\"zh\":\"她怀疑有人窃听了她的电话。\",\"note\":\"had tapped 表示她产生怀疑之前可能已经发生的行为；suspected 不表示已经证实。\"},\"sourceIds\":[\"fr_wiktionary_tap\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_tap\"]",
+        "valueJson": "[\"fr_wiktionary_tap\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_tap\",\"title\":\"Oxford Learner’s Dictionaries: tap\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/tap_1\",\"supports\":[\"tap 作名词表示水龙头及常见搭配\",\"tap 作动词表示轻敲或轻拍及相关句型\",\"tap 的英式与美式用法提示\",\"tap 的读音与词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr_wiktionary_tap\",\"title\":\"Wiktionnaire：tap（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/tap#Anglais\",\"supports\":[\"名词 tap 的英式水龙头义及美式对应词 faucet\",\"动词 tap 的敲击、轻敲用法\",\"名词与动词的电话窃听义\",\"机械名词“丝锥”义\",\"读音 /tæp/、复数 taps 及动词双写 p 的屈折形式\",\"tap water、on tap 和 tap dance 等表达\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1376,
+    "headword": "tap",
+    "meaning_zh": "n. 轻打, 水龙头\nvt. 轻打, 轻敲, 敲打出, 选择, 装上嘴子, 使流出, 开发, 分接, 向...乞讨\nvi. 轻叩, 轻拍, 啪塔啪塔地走",
+    "phonetic": "/'tæp/",
+    "pos": "",
+    "forms": []
+  }
+}

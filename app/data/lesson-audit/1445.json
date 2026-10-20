@@ -1,0 +1,408 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "bdf01ad587d1a755b5e2b8d39ccc4c9e5fb4e8a72a9032b3982971874dbcad79",
+    "executedReviewPromptHash": "bdf01ad587d1a755b5e2b8d39ccc4c9e5fb4e8a72a9032b3982971874dbcad79",
+    "reviewHash": "fde833e16cd8efd4c195cdd64b0af8a7bdfaa6eda7049432e0956f140e91d0d9",
+    "wordId": 1445,
+    "inputHash": "2740ebc5e734dd98c1351c4f090b3ca726d800db12fcc8b90538d10031f31b64",
+    "draftHash": "9d500079958b674fa987cd6a7e2a3f0fea53681a2beb759fe2eef1eaa95c3778",
+    "finalHash": "cc1fed78b3d1c84df4ff493d085e63daec5105099b42fc91752a3d32922f722f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tour#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.939Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10455,
+        "revisionId": 39931988,
+        "revisionTimestamp": "2026-10-13T17:54:38Z",
+        "sha256": "2615e51ad9f21958bf74a700696b3df669b3baf0d475574478ff254ee2579df8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tour",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:59:46.764Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:09:48.239Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/2；/forms/5/note；/confusions/1",
+        "message": "tour 不含字母 e。现在分词直接加 -ing，不能解释为去掉词尾 e；拼写辨析中的同类说明须一并修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的名词“巡回演出或访问”。动词“游览”和“巡回演出或访问”目前合并后各只有一个例句，应分别教学，并为每义配置至少两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "未覆盖词条列出的及物用法“使节目巡回演出”；应说明 tour 后接演出或剧目与后接地点的区别。英语词典例句展示的抽象“概览、介绍”用法也宜补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology；/sources/2/supports",
+        "message": "来源中的 fro 指古法语，不能仅写现代法语。现有阶段没有提供实际历史词义，只是来源关系占位，应将可证实事实写入 summary，并清空占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0/zh",
+        "message": "by bus 不保证使用公共交通；译成“乘巴士”更准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "tour 表示一段服役或任职时间时有特定语境，不能泛化为任何岗位的普通任期；应与通常表示任期的 term 区分。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/pronunciation/sourceIds；各模块 sourceIds；/sources",
+        "message": "Oxford 未提供正文，Cambridge 获取失败，二者只能保留为推荐查阅项。将已有正文支持的内容关联至 Wiktionnaire 英语词条，其余专业语言知识不冒列为已获取来源的支持内容。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的游览、巡回活动、服役或任职期间及抽象概览用法，以及动词的及物／不及物游览、巡回活动和使节目巡演用法。修订后，各核心义至少有两个原创英中例句；专门和引申用法置于补充义项。近义表达及情境反向表达总体成立，未强造通用反义词。历史词源仅保留可证实的古法语借入关系；未取得正文的推荐词典不作为已核验依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：一次游览、参观或多地观光行程",
+        "coveredBy": [
+          "tour-n"
+        ],
+        "assessment": "原有两个场所参观例句正确；补充多地旅行例句，使义项范围更完整。"
+      },
+      {
+        "sense": "名词：巡回演出、访问或宣传活动",
+        "coveredBy": [
+          "tour-n-performance"
+        ],
+        "assessment": "原稿遗漏；新增独立核心义，配两个例句及 on tour 等搭配。"
+      },
+      {
+        "sense": "动词：游览、参观、周游，可及物或不及物",
+        "coveredBy": [
+          "tour-v"
+        ],
+        "assessment": "独立保留游览义，以两个例句分别展示直接接地点和不及物结构。"
+      },
+      {
+        "sense": "动词：到各地巡回演出或访问",
+        "coveredBy": [
+          "tour-v-performance"
+        ],
+        "assessment": "从合并义中拆出，以三个例句覆盖不及物巡演、及物地点宾语及巡回访问。"
+      },
+      {
+        "sense": "及物动词：使演出或剧目巡回上演",
+        "coveredBy": [
+          "tour-v-production"
+        ],
+        "assessment": "原稿遗漏；新增补充义，明确演出宾语与地点宾语的差别。"
+      },
+      {
+        "sense": "名词：一段规定的服役、值勤或外派任职时间",
+        "coveredBy": [
+          "tour-n-duty"
+        ],
+        "assessment": "已有补充义及例句；收窄适用范围，避免误教为所有岗位的普通任期。"
+      },
+      {
+        "sense": "名词：对知识、系统或功能的概览、介绍",
+        "coveredBy": [
+          "tour-n-figurative"
+        ],
+        "assessment": "英语词典的例句体现此引申功能；新增原创例句，不复制来源例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，tour 常指有安排地游览一处或多处；作动词时，表示游览、巡回访问或演出。\"",
+        "valueJson": "\"作名词，tour 可指游览行程、巡回活动，也可在特定语境中指一段服役期；作动词，可指游览某地或到各地巡回演出、访问。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读 tour、toured、touring，留意过去式只加 -ed，进行时要去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"朗读 tour、toured、touring：过去式直接加 -ed，现在分词直接加 -ing；tour 没有词尾 e，也不双写 r。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"掌握 on tour（在巡回演出或访问中），再认识 tour of duty（一段规定的服役或任职时间）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/note",
+        "expectedValueJson": "\"词尾不发音的 e 去掉，再加 -ing。\"",
+        "valueJson": "\"tour 直接加 -ing，写作 touring；不删字母，也不双写 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"有安排地参观一个地方或多个地方的一次行程，常含观光或由人带领参观的意思。\"",
+        "valueJson": "\"一次游览或参观行程，可以围绕一个场所展开，也可以到多个地方观光；可自行安排，也可由导游带领。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tour-n-ex3\",\"senseId\":\"tour-n\",\"en\":\"We booked a seven-day tour of Italy.\",\"zh\":\"我们预订了一个为期七天的意大利观光行程。\",\"note\":\"tour 也可指在一个国家内游览多个地方的旅行行程。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：游览；巡回访问或演出\"",
+        "valueJson": "\"动词：游览、参观；周游\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"游览某地；也可指人或团体按行程到不同地方访问、表演或展示。\"",
+        "valueJson": "\"在一个场所内参观，或到一个地区的不同地方游览。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"tour 可作及物动词，直接接地点；也可不及物使用，常见于巡回演出等语境。\"",
+        "valueJson": "\"可作及物动词，直接接地点，如 tour a museum；也可不及物使用，如 go touring 或 tour around Scotland。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"他们乘公交游览了这座岛。\"",
+        "valueJson": "\"他们乘巴士游览了这座岛。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"tour-v-ex2\",\"senseId\":\"tour-v\",\"en\":\"The band will tour across China next summer.\",\"zh\":\"这个乐队明年夏天将在中国各地巡回演出。\",\"note\":\"不及物用法，tour 表示按计划巡回演出。\"}",
+        "valueJson": "{\"id\":\"tour-v-ex3\",\"senseId\":\"tour-v\",\"en\":\"We spent a week touring around Scotland.\",\"zh\":\"我们花了一周时间在苏格兰各地游览。\",\"note\":\"这里 tour 不直接接宾语，around Scotland 说明游览的区域。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"touring band\",\"zh\":\"巡回演出的乐队\",\"note\":\"指到不同地点演出的乐队。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"tour by bus\",\"zh\":\"乘巴士游览\",\"note\":\"by bus 说明游览所用的交通方式。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"通常指到访一地；tour 常包含连续参观或巡回活动。\"",
+        "valueJson": "\"visit 侧重到访某地或某人；tour 在游览义中常指逐处游览或参观。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在巡回访问或多地游览的语境中，与到处走访形成对照。\"",
+        "valueJson": "\"在多地游览的语境中，与四处游览形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"描述参观具体地点时 visit 很自然；描述路线、多处游览或巡回演出时 tour 更合适。\"",
+        "valueJson": "\"travel 泛指旅行，visit 强调到访；tour 强调逐处游览或参观一个场所。去某地常说 travel to + 地点，而 tour 可直接接游览地点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tour-n-performance\",\"title\":\"名词：巡回演出或访问\",\"meaning\":\"艺术家、作家、运动队等到不同地方进行的一系列演出、访问、宣传或比赛。\",\"usageNote\":\"这是可数名词；on tour 表示正在巡回活动中，go on tour 表示开始或进行巡回活动。\",\"examples\":[{\"id\":\"tour-n-performance-ex1\",\"senseId\":\"tour-n-performance\",\"en\":\"The band announced a six-city tour.\",\"zh\":\"这个乐队宣布将到六座城市巡回演出。\",\"note\":\"这里的 a tour 是一整轮巡回演出，不是观光旅行。\"},{\"id\":\"tour-n-performance-ex2\",\"senseId\":\"tour-n-performance\",\"en\":\"The writer's book tour begins in our town on Monday.\",\"zh\":\"这位作家的新书巡回宣传活动周一从我们镇开始。\",\"note\":\"book tour 指作家到不同地方参加新书宣传活动。\"}],\"patterns\":[{\"en\":\"be on tour\",\"zh\":\"正在巡回演出或访问\",\"note\":\"tour 前通常不加冠词；可按语境用于演出、访问等巡回活动。\",\"kind\":\"fixed-expression\"},{\"en\":\"go on tour\",\"zh\":\"进行巡回演出或访问\",\"note\":\"区别于 go on a tour of a museum，后者通常表示参观博物馆。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"a concert tour\",\"zh\":\"巡回音乐会；一轮巡演\",\"note\":\"指在不同地方举行的一系列音乐会。\",\"kind\":\"common-collocation\"},{\"en\":\"a book tour\",\"zh\":\"新书巡回宣传活动\",\"note\":\"通常包括作家见面会、朗读会或签售等活动。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a series of concerts\",\"zh\":\"一系列音乐会\",\"note\":\"在音乐语境中意思接近；只有音乐会到不同地方举行时，才适合称为 a tour。\"},{\"en\":\"roadshow\",\"zh\":\"巡回展示或宣传活动\",\"note\":\"在商业宣传等语境中相近，但不能替代所有演出或体育巡回活动。\"}],\"contrasting\":[{\"en\":\"a one-off performance\",\"zh\":\"一次性演出\",\"note\":\"在演出语境中，与一整轮多站巡演形成对照。\"}],\"similarNote\":\"tour 的重点是到不同地方连续开展活动；一系列活动若都在同一地点举行，不一定构成 tour。\",\"contrastingNote\":\"这里比较的是巡回演出与单次演出，不是所有 tour 用法的通用反义关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tour-v-performance\",\"title\":\"动词：巡回演出或访问\",\"meaning\":\"到不同地方连续演出、访问、宣传或参加其他活动。\",\"usageNote\":\"既可不及物使用，也可直接接巡回活动所到的地点；后接地点时，不一定表示观光，要看主语和上下文。\",\"examples\":[{\"id\":\"tour-v-ex2\",\"senseId\":\"tour-v-performance\",\"en\":\"The band will tour across China next summer.\",\"zh\":\"这个乐队明年夏天将在中国各地巡回演出。\",\"note\":\"不及物用法；across China 说明巡演范围。\"},{\"id\":\"tour-v-performance-ex2\",\"senseId\":\"tour-v-performance\",\"en\":\"The orchestra toured Germany last autumn.\",\"zh\":\"这支管弦乐团去年秋天在德国巡回演出。\",\"note\":\"及物用法，Germany 是巡演地点，不是演出内容。\"},{\"id\":\"tour-v-performance-ex3\",\"senseId\":\"tour-v-performance\",\"en\":\"The author is touring schools this month to talk about her new book.\",\"zh\":\"这位作家这个月正在到各所学校介绍她的新书。\",\"note\":\"这里表示巡回访问和宣传，不是观光或音乐演出。\"}],\"patterns\":[{\"en\":\"tour + place\",\"zh\":\"在某地巡回演出或访问\",\"note\":\"如 tour Germany；地点直接作宾语，具体活动由语境决定。\",\"kind\":\"sentence-pattern\"},{\"en\":\"tour across + region\",\"zh\":\"在某个地区各地巡回活动\",\"note\":\"across 后接活动涉及的地区。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a touring band\",\"zh\":\"巡回演出的乐队\",\"note\":\"touring 修饰 band，表示乐队到不同地方演出。\",\"kind\":\"common-collocation\"},{\"en\":\"tour internationally\",\"zh\":\"在多个国家巡回演出或访问\",\"note\":\"强调巡回活动跨越国界，具体活动由语境确定。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"perform in different cities\",\"zh\":\"在不同城市演出\",\"note\":\"在表演语境中意思接近，但不能涵盖作家的巡回访问等活动。\"},{\"en\":\"travel\",\"zh\":\"旅行；出行\",\"note\":\"只说明移动或出行，本身不表示安排了巡回演出或访问。\"}],\"contrasting\":[{\"en\":\"perform at one venue\",\"zh\":\"在同一场地演出\",\"note\":\"在多地巡演的语境中，可与一直在同一场地演出形成对照。\"}],\"similarNote\":\"tour 把多地的连续活动连成一个行程；单说 travel 不保证有演出或访问安排。\",\"contrastingNote\":\"同一场地演出的对照只适用于表演语境，不适用于所有巡回访问。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"名词：任期或服役期间\"",
+        "valueJson": "\"名词：一段服役或任职时间\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"某人在岗位、军队或特定职责中连续服务的一段时间。\"",
+        "valueJson": "\"在军队服役、海外派驻等语境中，履行特定职责的一段规定时间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于 tour of duty；属于较专门的用法。\"",
+        "valueJson": "\"常见于 tour of duty；不要将它泛用于任何职位的任期，一般任期通常用 term。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tour-v-production\",\"title\":\"及物动词：使剧目或节目巡回演出\",\"meaning\":\"把一部剧或一台演出带到不同地方上演。\",\"note\":\"此时 tour 后面接演出内容，而不是地点；比较 tour a play（携一部剧巡演）与 tour Germany（在德国巡回活动）。\",\"example\":{\"id\":\"tour-v-production-ex1\",\"senseId\":\"tour-v-production\",\"en\":\"The company plans to tour its new play next spring.\",\"zh\":\"这家剧团计划明年春天携新剧巡回演出。\",\"note\":\"its new play 是巡演的剧目；company 在这里指剧团。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tour-n-figurative\",\"title\":\"名词引申：概览、介绍\",\"meaning\":\"像带人参观一样，依次介绍一个主题、系统或产品的主要内容。\",\"note\":\"常用 a tour of + 主题或系统，不涉及实际旅行。\",\"example\":{\"id\":\"tour-n-figurative-ex1\",\"senseId\":\"tour-n-figurative\",\"en\":\"This video gives you a quick tour of the app's main features.\",\"zh\":\"这个视频带你快速了解这款应用的主要功能。\",\"note\":\"a quick tour 在这里指简要介绍各项功能。\"},\"sourceIds\":[\"wiktionary-fr\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1",
+        "expectedValueJson": "{\"id\":\"touring-spelling\",\"title\":\"touring 的拼写\",\"summary\":\"tour 的现在分词要去掉词尾 e，再加 -ing。\",\"items\":[{\"label\":\"正确：touring\",\"note\":\"以不发音的 e 结尾，接 -ing 时去 e。\",\"example\":{\"id\":\"touring-correct\",\"senseId\":\"tour-v\",\"en\":\"They are touring the coast this week.\",\"zh\":\"他们这周正在沿海岸游览。\",\"note\":\"tour + ing，去掉词尾 e。\"}},{\"label\":\"错误：touringg\",\"note\":\"不要重复词尾辅音；tour 结尾是 r，不符合双写条件。\",\"example\":{\"id\":\"touring-wrong\",\"senseId\":\"tour-v\",\"en\":\"They are touring the coast this week.\",\"zh\":\"他们这周正在沿海岸游览。\",\"note\":\"正确拼写为 touring，不是 touringg。\"}}],\"takeaway\":\"写进行时或动名词时记作 tour + ing → touring。\",\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "{\"id\":\"touring-spelling\",\"title\":\"toured 和 touring 的拼写\",\"summary\":\"tour 的字母是 t-o-u-r，没有词尾 e；加 -ed 或 -ing 时都保留原形，不双写 r。\",\"items\":[{\"label\":\"过去式：toured\",\"note\":\"在 tour 后直接加 -ed。\",\"example\":{\"id\":\"toured-spelling-ex\",\"senseId\":\"tour-v\",\"en\":\"We toured the castle yesterday.\",\"zh\":\"我们昨天参观了那座城堡。\",\"note\":\"tour + ed → toured。\"}},{\"label\":\"现在分词：touring\",\"note\":\"在 tour 后直接加 -ing。\",\"example\":{\"id\":\"touring-correct\",\"senseId\":\"tour-v\",\"en\":\"They are touring the coast this week.\",\"zh\":\"他们这周正在沿海岸游览。\",\"note\":\"tour + ing → touring；不删字母，也不双写 r。\"}}],\"takeaway\":\"tour + ed → toured；tour + ing → touring。\",\"sourceIds\":[\"wiktionary-fr\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 tour 来自法语 tour。此处只说明来源关系；现代英语中 tour 可作名词和动词。\"",
+        "valueJson": "\"英语 tour 借自古法语 tour。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"French\",\"form\":\"tour\",\"meaning\":\"来源形式；与英语 tour 的来源关系\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"名词与动词常见义项\",\"词形变化\",\"tourist、tourism 等词族\"]",
+        "valueJson": "[\"名词义项的推荐延伸查阅\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"名词和动词的常见用法\",\"常见搭配与语法结构\"]",
+        "valueJson": "[\"名词、动词及常见搭配的推荐延伸查阅\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"英语 tour 的法语来源关系\"]",
+        "valueJson": "[\"英语 tour 的英美读音\",\"游览、参观的名词和动词用法\",\"用于抽象概览的比喻用法\",\"规则词形变化\",\"tourism 的词族关联\",\"英语 tour 借自古法语 tour\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1445,
+    "headword": "tour",
+    "meaning_zh": "n. 旅游, 观光旅行, 任期\nvi. 旅行, 周游, 巡回\nvt. 周游, 观光, 游历, 使巡回演出",
+    "phonetic": "/tuә/",
+    "pos": "",
+    "forms": []
+  }
+}

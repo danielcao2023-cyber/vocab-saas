@@ -1,0 +1,212 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "732611fab2165e0825ecb85d152484885b33fc1ca3f05f97a255b19ffd6510af",
+    "executedReviewPromptHash": "732611fab2165e0825ecb85d152484885b33fc1ca3f05f97a255b19ffd6510af",
+    "reviewHash": "e6d5035838354a1f7a3a7ac1ab91bcdd686ac2a6003c06c5aa407078dd1f7d78",
+    "wordId": 1116,
+    "inputHash": "b920241a881b5ad2d5611c4b59993aa83564cba2fe82c80a068a219fed30a6da",
+    "draftHash": "ba1bc851f27608040666d6810601f2b86b477ee48a6ca07d578c6d00f9f2df02",
+    "finalHash": "4b033338f6e4fd07e1f69cd0d69b53d2018084cd7896134f75384d23a610f089",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/railway#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.407Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 250353,
+        "revisionId": 39734356,
+        "revisionTimestamp": "2026-08-01T21:19:26Z",
+        "sha256": "4ff78fd2ad736d2d35f810b6af5964d163a6dc765bf61d8cad0700f6019731ce",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/railway",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T07:33:17.484Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T07:41:40.689Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "原始标音 /'reilwei/ 已含 w，“遗漏 /w/”不实。改为准确的音节和重音提示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1",
+        "message": "travel by railway 并非语法错误，但现代常用搭配是 travel by rail 或 travel by train，基础教学宜优先呈现这些表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/0/example",
+        "message": "原句表达生硬，中文“乘铁路”也不自然。改成与 railroad 例句平行的铁路线路例句，更清楚地展示英美用词差别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example",
+        "message": "火车通常在铁轨上运行，“停在铁轨旁”不适合作为 rail 的基础教学场景。改用更换一根铁轨的例句，明确 rail 与 railway 的部件和整体关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取回的法语维基词典英语词条明确记载 rail 与 way 的复合关系。初稿仅将其当作现代助记拆分且未引用来源，遗漏了可确认的词源事实。应补充实际构词关系及来源；stages 保持为空，不能把两个成分串成演变阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/sourceIds",
+        "message": "铁路公司或运营机构这一用法成立，可以保留；但已取回的词条片段未单列此义，应清除不当的来源归属。"
+      }
+    ],
+    "coverageAssessment": "已核对成功取回的英语词条所列核心名词义“铁路”。初稿两个核心例句分别呈现铁路线路和运输系统，无须强拆成多个义项。铁路公司或运营机构可作为次要转喻用法保留，其不当来源归属已修正。主要局限是该词典片段未细分机构义；未取得的 Cambridge 页面未用作证据。",
+    "senseInventory": [
+      {
+        "sense": "铁路；铁路线路及铁路运输系统",
+        "coveredBy": [
+          "railway-n-1"
+        ],
+        "assessment": "核心义覆盖充分，已有两个成立的原创英中例句，分别体现线路连接和铁路运输功能。"
+      },
+      {
+        "sense": "铁路公司或运营机构",
+        "coveredBy": [
+          "railway-n-2"
+        ],
+        "assessment": "作为次要用法保留适当，定义和例句成立；已取回的词条片段未直接列出此义，因此清除其来源标注。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧式近似标音遗漏了标准音标中的 /w/；读作两音节：RAIL-way。\"",
+        "valueJson": "\"railway 有两个音节：RAIL-way，主重音在第一音节；两个音节都含 /eɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"travel by railway\",\"zh\":\"乘铁路出行\",\"note\":\"by railway 表示交通方式；日常口语也常说 by train。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"travel by rail\",\"zh\":\"乘火车出行\",\"note\":\"by rail 是常用的交通方式表达，不加冠词；日常口语常说 travel by train。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example",
+        "expectedValueJson": "{\"id\":\"railway-confusion-ex-1\",\"senseId\":\"railway-n-1\",\"en\":\"We went to the station by railway.\",\"zh\":\"我们乘铁路去了车站。\",\"note\":\"用 railway 表示铁路交通方式。\"}",
+        "valueJson": "{\"id\":\"railway-confusion-ex-1\",\"senseId\":\"railway-n-1\",\"en\":\"The railway runs through the valley.\",\"zh\":\"这条铁路穿过山谷。\",\"note\":\"英式语境常用 railway；与下一例的 railroad 对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"railway-family-ex-1\",\"senseId\":\"railway-n-1\",\"en\":\"The train stopped beside the rail.\",\"zh\":\"火车停在铁轨旁。\",\"note\":\"rail 可指铁轨。\"}",
+        "valueJson": "{\"id\":\"railway-family-ex-1\",\"senseId\":\"railway-n-1\",\"en\":\"The workers replaced a damaged rail.\",\"zh\":\"工人们更换了一根损坏的铁轨。\",\"note\":\"a rail 指一根铁轨；railway 指整条铁路或铁路系统。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"wiktionary-en\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可看作 rail（铁轨）+ way（道路、路线）：合起来帮助记住“供火车行驶的路线”。\"",
+        "valueJson": "\"railway 由英语 rail（铁轨）和 way（道路、通道）复合而成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代构词拆分，帮助理解词义；不等同于一条经过核实的历史词源演变链。\"",
+        "valueJson": "\"rail 和 way 是共同构成 railway 的两部分，不是先后演变的两个词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports/1",
+        "expectedValueJson": "\"railway 的读音和 rail + way 的现代构词信息\"",
+        "valueJson": "\"railway 的读音及由英语 rail 与 way 复合而成的词源信息\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1116,
+    "headword": "railway",
+    "meaning_zh": "n. 铁路, 轨道",
+    "phonetic": "/'reilwei/",
+    "pos": "",
+    "forms": []
+  }
+}

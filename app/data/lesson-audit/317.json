@@ -1,0 +1,278 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "3aade9f0aef9cca5e9f86b51941cd57ba63d9ea706e8d43410da0d09c63db83f",
+    "executedReviewPromptHash": "3aade9f0aef9cca5e9f86b51941cd57ba63d9ea706e8d43410da0d09c63db83f",
+    "reviewHash": "a2a79dc1dcfdcff70dc6a1927510c2b159a474f3829ded5c5ac422b9e21f5a6b",
+    "wordId": 317,
+    "inputHash": "b658a1da50c127c77de3f4f0897b46b8f70b4880dfff2623e1d5d807bd357799",
+    "draftHash": "f0619dbb3cdbd911bebfc249a5b0df8167861475cc719b7df864b9d4b6ebed7d",
+    "finalHash": "0fbc89451103c102f324f74ef2375314ccd092e77a115a07e43006e85e2f88e2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cook#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:48.790Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116487,
+        "revisionId": 39741203,
+        "revisionTimestamp": "2026-08-02T01:24:39Z",
+        "sha256": "3ed59aa3d125b8ec8d8c8f05fd62ad38c5b2e41679ec1d4a5476efe3b3ec0285",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cook",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:42:49.081Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T13:48:31.546Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*/note；/wordFamily/2/example/note",
+        "message": "六个核心义例句和 cookbook 例句缺少必填的 note，共七处；已补齐，其中食物义第二例随例句替换一并补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "不双写 k 的说明混淆了元音发音与拼写条件。/ʊ/ 确实是短元音；这里应明确 cook 的元音由两个字母 oo 表示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples；/senses/1/patterns",
+        "message": "说明提到了人作主语时 cook 可不带宾语，但两个例句均为及物用法。补充具体的 cook for someone 例句与句型。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "until they are cooked 展示的是被动或结果状态，不能充当不及物 cook 的第二个对应例句。食物作主语的 cook 也不限于进行时，应同时覆盖煮熟所需时间等一般用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting/0/note；/senses/2/collocations/1/note",
+        "message": "食物正在煮时也可能还是生的，be raw 与 is cooking 并非相反状态。应区分烹煮过程与生熟状态，并明确 cooked through 表示熟透的结果。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example/note",
+        "message": "例句本身合语法；说明宜精确到 Cooking together 是整体作主语的动名词短语。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology；/sources/1/supports",
+        "message": "古英语 cōc 未出现在本次可用的词源原文中，不能据此纳入核验后的历史链；原文明确列出的拉丁语 coquere 则被遗漏。应保留 coquere、coquus 与英语名词 cook 的源头关系，并同步修正来源支持范围。"
+      }
+    ],
+    "coverageAssessment": "已核对名词“厨师、做饭的人”、人作主语的及物及不及物“烹调、做饭”，以及食物作主语的不及物“受热烹煮、变熟”。保留三项教学组织，修补后每个核心义均有至少两个对应例句。“加热”应理解为烹调食物，不泛指任何物体受热。词源依据法语维基词典中的英语词条核对；其他推荐查询入口未作为本次已取得正文的查证依据。未对来源未展开的俚语及习语作穷尽性覆盖。",
+    "senseInventory": [
+      {
+        "sense": "名词：厨师；做饭的人",
+        "coveredBy": [
+          "cook-n-1"
+        ],
+        "assessment": "两例分别体现负责供餐的厨师和家庭成员的烹饪本领，覆盖充分；无需强造反义词。"
+      },
+      {
+        "sense": "动词：烹调食物；做饭（人作主语，可及物或不及物）",
+        "coveredBy": [
+          "cook-v-1"
+        ],
+        "assessment": "原两例覆盖烹调具体食物和准备一餐；补充不带食物宾语的做饭用法即可，无须另拆义项。eat raw 的场景对照可以保留；来源列出的低频 uncook 不必强作日常反义词。"
+      },
+      {
+        "sense": "动词：食物受热烹煮；变熟（不及物）",
+        "coveredBy": [
+          "cook-v-2"
+        ],
+        "assessment": "保留汤正在煮的例句，替换原来的 cooked 状态例句，并扩展时间用法；修补后两例分别展示进行中的烹煮和煮熟所需时间。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"词尾只有一个辅音字母 k，前面的元音字母不是重读闭音节中的短元音拼写条件；直接加 -ing，不双写 k。\"",
+        "valueJson": "\"cook 的元音拼写是两个字母 oo；直接加 -ing，写作 cooking，不双写 k。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"cook 用作可数名词，这里指负责准备午餐的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a good cook 评价做饭的本领，不要求对方以做饭为职业。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"cook 后直接接食物，noodles 是被烹调的食物。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"cook dinner for someone 表示为某人做晚饭；for 后接用餐的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cook-v-1-ex3\",\"senseId\":\"cook-v-1\",\"en\":\"I cook for my family every Sunday.\",\"zh\":\"我每周日都给家人做饭。\",\"note\":\"cook 不带食物宾语；for my family 说明为谁做饭。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"cook (for someone)\",\"zh\":\"做饭（给某人吃）\",\"note\":\"cook 可不带食物宾语；for someone 说明为谁做饭。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"（食物）正在煮；正在熟\"",
+        "valueJson": "\"（食物）受热烹煮；变熟\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"用于食物作主语，表示食物正在受热烹煮。\"",
+        "valueJson": "\"食物受热烹煮并逐渐变熟，也可用来说明做熟所需的时间或速度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用于进行时；食物作主语时，cook 可不带宾语。\"",
+        "valueJson": "\"食物作主语时，cook 可作不及物动词。进行时说明正在烹煮，一般现在时可说明煮熟所需的时间或速度。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"soup 是主语；is cooking 表示汤正在受热烹煮。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"cook-v-2-ex2\",\"senseId\":\"cook-v-2\",\"en\":\"Leave the potatoes in the oven until they are cooked.\",\"zh\":\"把土豆留在烤箱里，直到它们熟透。\"}",
+        "valueJson": "{\"id\":\"cook-v-2-ex2\",\"senseId\":\"cook-v-2\",\"en\":\"These small potatoes cook in about twenty minutes.\",\"zh\":\"这些小土豆大约二十分钟就能煮熟。\",\"note\":\"食物作主语，cook 不带宾语；一般现在时说明煮熟所需的时间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"cooked through 描述食物已从里到外熟透。\"",
+        "valueJson": "\"这里 be cooked through 表示已经从里到外熟透的结果状态；is cooking 则表示正在烹煮。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"只在描述食物是否熟时，与 be cooking / be cooked 形成对照。\"",
+        "valueJson": "\"表示食物还是生的，与 be cooked（熟了）在生熟状态上形成对照；正在煮的食物也可能尚未熟。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"Cooking 在句中作名词。\"",
+        "valueJson": "\"Cooking together 是动名词短语，整体作主语，表示“一起做饭”这项活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"cookbook 指食谱书；recipe 指一道菜的具体做法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"cook 来自古英语 cōc；其更早来源与拉丁语 coquus（“厨师”）有关。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"coquus\",\"meaning\":\"厨师\"},{\"language\":\"古英语\",\"form\":\"cōc\",\"meaning\":\"厨师\"},{\"language\":\"现代英语\",\"form\":\"cook\",\"meaning\":\"厨师；做饭、烹调\"}],\"caveat\":\"词源说明的是历史来源；现代动词 cook 的“烹调”义与名词“厨师”相关，不能把记忆联想当成词源。\",\"sourceIds\":[\"wiktionary-etymology\"]}",
+        "valueJson": "{\"summary\":\"名词 cook 的词源可追溯到拉丁语 coquus（厨师）；coquus 又来自拉丁语 coquere（烹煮）。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"coquere\",\"meaning\":\"烹煮\"},{\"language\":\"拉丁语\",\"form\":\"coquus\",\"meaning\":\"厨师\"},{\"language\":\"现代英语\",\"form\":\"cook\",\"meaning\":\"厨师（名词）\"}],\"caveat\":\"这是名词的源头关系简图，省略中间的历史词形；现代构词和助记故事应另作理解。\",\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"拉丁语 coquus 与古英语 cōc 的词源关系\"]",
+        "valueJson": "[\"名词 cook 的拉丁语来源：coquus（厨师），以及 coquus 源于 coquere（烹煮）的关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 317,
+    "headword": "cook",
+    "meaning_zh": "n. 厨子, 厨师\nvt. 烹调, 煮饭, 加热\nvi. 在煮着",
+    "phonetic": "/kuk/",
+    "pos": "",
+    "forms": []
+  }
+}

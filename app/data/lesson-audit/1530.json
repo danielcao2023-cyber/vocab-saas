@@ -1,0 +1,399 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7c841af4258849839969e543b551cf94f3fa5c340e84e9ff9b25ff9d69a01fe9",
+    "executedReviewPromptHash": "7c841af4258849839969e543b551cf94f3fa5c340e84e9ff9b25ff9d69a01fe9",
+    "reviewHash": "9f1d2e4160821e9c3eabd789a4261f74bd9fe5deebb5d3e0943a11fc1333e230",
+    "wordId": 1530,
+    "inputHash": "98fad5aaf0d18b2b53e48161fc7d3c3dc49f2fb7cc74882735f6918188fe98bb",
+    "draftHash": "6ff0e1ecdef23aef80ead81dfb4820423d96f32bacc628632394a64a85060ebd",
+    "finalHash": "bc6aeeda2f863eccf5c596fc189f4f343c542628e2a5dd02ef0271b47f1b506e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/weigh#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.450Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117637,
+        "revisionId": 38439836,
+        "revisionTimestamp": "2025-08-01T00:08:52Z",
+        "sha256": "b6b9cee45f2e4b28f48ba7b7def20f27ece7da56ee44b275dc417681c44ad631",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/weigh",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:54:40.292Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:01:56.186Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "weigh 不以 e 结尾；weighed 的实际拼写是 weigh 后加 -ed。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "遗漏常见的心理负担用法 weigh on / weigh down，以及词条所列的压弯、具有分量或影响判断的用法。应分别补充，并区分主动权衡与被烦恼困扰。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds; /senses/*/sourceIds; /confusions/*/sourceIds; /wordFamily/0/sourceIds; /sources",
+        "message": "Cambridge 正文未取得，不能作为已使用的内容依据。可由实际取得的英语词条支持读音、规则变位、四项基本动词义及同音关系；其他专业语言知识不应冒挂该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "材料只明确给出古英语来源形式 wegan，没有给出其古英语释义。现有阶段释义只是来源关系的占位说明，应将可证实事实留在 summary，清空占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1; /wordFamily/0/spellingNote",
+        "message": "weight 也可作动词，不能把“weigh 是动词、weight 是名词”写成排他的词性规则；“weigh 变为名词 weight”也容易被理解为可套用的加 t 派生规则。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "be weightless 不是报告重量用法的自然反向表达，“失重”也不能简单等同于物体没有重量。宜改用有明确比较条件的 weigh less。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1; /senses/2/relatedExpressions",
+        "message": "get your weight 作为学习者近义表达不够自然；think over 不限于独自思考；立即决定也可能经过充分考虑，不能据速度推断未经权衡。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote; /senses/2/examples/1",
+        "message": "学习计划出现 weigh up，正文应补充其用法及英式倾向；两个 offers 的例句宜明确为工作邀约，使“离家更近”有清楚的指向。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例句只有 way，却关联 weigh 的称重义。可让同一句同时自然使用 way 和 weigh，保留有效的义项关联。"
+      }
+    ],
+    "coverageAssessment": "已核对英语来源中的称量、具有某重量、评估重要性和起锚四项定义，以及中文词条中的压弯、心理重压和具有分量等用法。三个原有核心义的双例句保留；新增心理负担核心义及两个例句，压弯和影响判断作为较少见用法补充。词条中的名词“过秤、称分量”缺少英语释义材料支持，不能据此列为现代常用名词，原稿“没有常用名词词性”的限定可以保留。历史词源仅保留可证实的古英语来源形式；新增的现代搭配说明依据专业语言知识，不冒用未取得的词典正文。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：称量，测定人或物的重量",
+        "coveredBy": [
+          "weigh-vt-weight"
+        ],
+        "assessment": "已有两个自然例句，覆盖称物品和称体重；修正一项近义表达。"
+      },
+      {
+        "sense": "不及物动词：具有某重量，重……",
+        "coveredBy": [
+          "weigh-intransitive-weight"
+        ],
+        "assessment": "已有两个例句，数值补语与程度表达均有覆盖；修正失重对照。"
+      },
+      {
+        "sense": "及物动词：评估重要性，考虑、权衡",
+        "coveredBy": [
+          "weigh-consider"
+        ],
+        "assessment": "已有两个例句及 weigh A against B；补充 weigh up 的用法，并修正近义与反向表达的限制。"
+      },
+      {
+        "sense": "短语动词：使忧虑，成为心理负担",
+        "coveredBy": [
+          "weigh-mental-pressure"
+        ],
+        "assessment": "原稿遗漏；新增核心义，以两个例句覆盖 weigh on someone's mind 和 be weighed down by。"
+      },
+      {
+        "sense": "短语动词：把……压下、压弯",
+        "coveredBy": [
+          "weigh-down-physical"
+        ],
+        "assessment": "原稿遗漏；新增较少见用法，并与心理负担用法区分。"
+      },
+      {
+        "sense": "不及物动词：具有分量，对判断产生影响",
+        "coveredBy": [
+          "weigh-influence"
+        ],
+        "assessment": "原稿未呈现其与主动权衡的区别；新增较少见用法。"
+      },
+      {
+        "sense": "航海用法：起锚",
+        "coveredBy": [
+          "weigh-anchor"
+        ],
+        "assessment": "已有固定表达 weigh anchor、自然例句和可对应的来源。"
+      },
+      {
+        "sense": "名词：过秤、称分量",
+        "coveredBy": [],
+        "assessment": "仅中文词条列出，实际取得的英语材料未列名词义；不作为现代常用教学义补入。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"以不发音的 e 结尾的动词加 -d。\"",
+        "valueJson": "\"weigh 后直接加 -ed，拼作 weighed；-ed 在这里读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[\"wiktionary-weigh\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[\"wiktionary-weigh\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[\"wiktionary-weigh\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[\"wiktionary-weigh\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[\"wiktionary-weigh\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weigh\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-weigh\",\"title\":\"Cambridge Dictionary: weigh\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/weigh\",\"supports\":[\"动词读音及常见词形\",\"称量、表示重量及权衡等动词用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: weigh（英语词条）\"",
+        "valueJson": "\"法语维基词典：weigh（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"weigh 的历史来源形式\",\"起锚义\"]",
+        "valueJson": "[\"英语动词 weigh 的读音、规则变位及与 way 的同音关系\",\"称量、评估重要性、具有某重量及起锚四项动词义\",\"古英语来源形式 wegan\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"get your weight\",\"zh\":\"测出体重\",\"note\":\"表达测量体重的结果；日常更常说 weigh yourself。\"}",
+        "valueJson": "{\"en\":\"check your weight\",\"zh\":\"查看、检查体重\",\"note\":\"通常指通过称量了解体重；weigh yourself 更明确地表示自己称体重这一动作。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"be weightless\",\"zh\":\"失重；没有重量\",\"note\":\"在物理或想象情境中表示没有重量，与有实际重量相对。\"}",
+        "valueJson": "{\"en\":\"weigh less\",\"zh\":\"更轻；重量更小\",\"note\":\"与 weigh more（更重）构成重量大小的比较对照，不是 weigh 各种用法的通用反义表达。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"weightless 表示没有重量，适用于失重等特定语境。\"",
+        "valueJson": "\"比较重量大小时可对照 weigh more 和 weigh less；两者都仍在描述重量。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 weigh an idea or choice；也常说 weigh A against B，比较双方的利弊。\"",
+        "valueJson": "\"常说 weigh your options、weigh the evidence；weigh A against B 表示把两个因素放在一起权衡。weigh up 也表示仔细考虑、权衡，尤其常见于英式英语，如 weigh up the options。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"Mia weighed the two offers and chose the one closer to home.\"",
+        "valueJson": "\"Mia weighed the two job offers and chose the job closer to home.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"米娅权衡了两个提议，选择了离家更近的那个。\"",
+        "valueJson": "\"米娅权衡了两份工作邀约，选择了工作地点离家更近的那份工作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常指独自认真思考某事；不一定涉及多个选项的比较。\"",
+        "valueJson": "\"表示认真思考某事，不限于独自思考，也不一定涉及多个选项的比较；宾语是人称代词时放在中间，如 think it over。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"decide immediately\",\"zh\":\"立刻作决定\",\"note\":\"在需要先权衡利弊的语境中，立即决定与仔细比较相对。\"}",
+        "valueJson": "{\"en\":\"decide without thinking\",\"zh\":\"不加思考就作决定\",\"note\":\"与先仔细权衡再决定形成行为上的对照；不是 weigh 的固定词汇反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"decide immediately 描述未经长时间权衡便作决定，适用于强调迅速选择的语境。\"",
+        "valueJson": "\"这里对照的是有没有认真考虑；决定得快，不一定意味着此前没有权衡。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weigh-mental-pressure\",\"title\":\"使忧虑；成为心理负担\",\"meaning\":\"问题、责任或烦恼让人心情沉重，难以放下。\",\"usageNote\":\"常用 weigh on someone 或 weigh on someone's mind；weigh someone down 也可表示使人感到负担沉重，常见被动形式 be weighed down by。注意：weigh your options 是主动权衡，worries weigh on you 则是烦恼困扰着你。\",\"examples\":[{\"id\":\"weigh-pressure-ex1\",\"senseId\":\"weigh-mental-pressure\",\"en\":\"The unpaid bills weighed on her mind all weekend.\",\"zh\":\"整个周末，那些未付的账单一直让她忧心忡忡。\",\"note\":\"weigh on someone's mind 表示某事让人持续担忧。\"},{\"id\":\"weigh-pressure-ex2\",\"senseId\":\"weigh-mental-pressure\",\"en\":\"He felt weighed down by work and family responsibilities.\",\"zh\":\"他感到工作和家庭责任压得自己心情沉重。\",\"note\":\"be weighed down by 表示因某种负担而感到沉重、压抑。\"}],\"patterns\":[{\"en\":\"something weighs on someone / someone's mind\",\"zh\":\"某事让某人忧虑\",\"note\":\"烦恼或问题作主语，受困扰的人放在 on 后。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be weighed down by something\",\"zh\":\"被某事压得心情沉重\",\"note\":\"by 后接造成负担的事情，如 worries 或 responsibilities。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"weigh heavily on someone's mind\",\"zh\":\"让某人十分忧虑\",\"note\":\"heavily 强调心理负担很重。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"trouble someone\",\"zh\":\"使某人烦恼\",\"note\":\"同样可指问题让人不安，但没有 weigh on 那么鲜明的沉重感。\"},{\"en\":\"burden someone with something\",\"zh\":\"使某人承担某种负担\",\"note\":\"强调把责任或负担加到某人身上；weigh on 强调这些事情给人的心理感受。\"}],\"contrasting\":[{\"en\":\"ease someone's worries\",\"zh\":\"减轻某人的忧虑\",\"note\":\"在心理负担语境中表示减轻烦恼，与烦恼压在心头形成对照。\"}],\"similarNote\":\"这些表达都可能涉及心理负担；weigh on 和 weigh down 突出心情沉重、受到压迫的感受。\",\"contrastingNote\":\"这里对照的是增加与减轻忧虑，不适用于称重或权衡义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weigh-down-physical\",\"title\":\"把……压下、压弯\",\"meaning\":\"以重量使某物向下垂或弯曲。\",\"note\":\"常用 weigh something down；宾语是代词时放在中间，如 weigh it down。这是实际重量造成的作用，也可引申为心理负担。\",\"example\":{\"id\":\"weigh-down-physical-ex1\",\"senseId\":\"weigh-down-physical\",\"en\":\"The snow weighed down the branches of the apple tree.\",\"zh\":\"积雪把苹果树的树枝压弯了。\",\"note\":\"雪的重量使树枝向下弯曲；此处不是称树枝的重量。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weigh-influence\",\"title\":\"具有分量；影响判断\",\"meaning\":\"某个事实或因素在判断中产生影响。\",\"note\":\"较正式，常见 weigh in someone's favour（成为对某人有利的因素）或 weigh against someone（成为对某人不利的因素）。这里是因素本身起作用，不是某人在主动权衡。\",\"example\":{\"id\":\"weigh-influence-ex1\",\"senseId\":\"weigh-influence\",\"en\":\"Her experience weighed in her favour when the company chose its new manager.\",\"zh\":\"公司选新经理时，她的经验成了对她有利的因素。\",\"note\":\"主语 her experience 是影响判断的因素；in her favour 表示对她有利。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"This is the easiest way to open the jar.\"",
+        "valueJson": "\"We need a better way to weigh these boxes.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"这是打开罐子最容易的方法。\"",
+        "valueJson": "\"我们需要一个更好的办法来称这些箱子的重量。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"way 前有 the，作名词使用。\"",
+        "valueJson": "\"way 是名词，表示办法；weigh 是动词，表示称重量。两词都读 /weɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"weigh 和 weight：动词与名词\"",
+        "valueJson": "\"weigh 和 weight：常见用法与区别\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"weigh 是动词，weight 是名词；不要在需要动词的位置误用 weight。\"",
+        "valueJson": "\"说“称重量、重多少”用动词 weigh；表示“重量”用名词 weight。weight 也可作动词，表示给……加重或赋予权重，但不能代替这些例句中的 weigh。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"weigh 变为名词 weight 时，词尾拼写为 -ght；记住 weigh 作动词以 gh 结尾，weight 作名词以 ght 结尾。\"",
+        "valueJson": "\"weigh 拼作 w-e-i-g-h；weight 拼作 w-e-i-g-h-t，比 weigh 多一个 t。这是两个同族词的拼写联系，不是动词加 t 变名词的通用规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"weigh 有可查的古英语来源形式 wegan。现代英语中可将 weigh 作为整体记忆；它的现代拼写也不应被拆成表示重量的词根和词尾。\"",
+        "valueJson": "\"weigh 来自古英语 wegan。学习现代英语时，可以把 weigh 作为一个整体记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"wegan\",\"meaning\":\"来源形式；与现代英语 weigh 的历史来源关系见词典词源说明。\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1530,
+    "headword": "weigh",
+    "meaning_zh": "vt. 称...重量, 衡量, 把...压弯, 考虑, 权衡, 起锚\nvi. 称分量, 有意义, 重压, 起锚\nn. 过秤, 称分量",
+    "phonetic": "/wei/",
+    "pos": "",
+    "forms": []
+  }
+}

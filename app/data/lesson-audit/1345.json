@@ -1,0 +1,526 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c2e1a71b591207605150b5b3676cc5bbe17d3d0ea687f9d844267436ed5dd76b",
+    "executedReviewPromptHash": "eba2bc002b54f7d2e7ad1fc8df135e6bd806ae14805ece115f708b8f63553a7e",
+    "reviewHash": "c21d075c5439dccb215ed1e3d94d4b2a12e687fdb1b2d64f0ab78d03408fb9c7",
+    "wordId": 1345,
+    "inputHash": "deac35b756d10939f3988a036069f9fb21708a03d2684b26e12b2784b0e1ebca",
+    "draftHash": "67a88353eeeafe820f90f0039bf1f7711c4249201abfc34b59fcbe293d4da4c8",
+    "finalHash": "7e6f8488b06c0e75433fb45391d0cd1d6b333c4343802c7e0f6eb0b0a0a0b340",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/subject#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.076Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116028,
+        "revisionId": 37412352,
+        "revisionTimestamp": "2025-03-02T20:47:50Z",
+        "sha256": "60c484340fc35ba293ac8a452ca4826ac851b15e4512e3f0adb0954a40d22e26",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/subject",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:06:47.946Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:32:30.014Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/6/note",
+        "message": "subjecting 没有双写 t；应说明直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "subjectively 保留 subjective 词尾的 e，不能说明为去 e 加 -ly。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "“主题”和“主语”混为一个义项，各只有一个例句；形容词的易受影响、受规则约束和以条件为前提也需分别覆盖。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1/note",
+        "message": "具体科目名称应替换 a subject，不能理解为加在 subject 前。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similarNote",
+        "message": "be affected by 并不限定影响已经发生，也可描述一般或持续的影响。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "拉丁语来源形式有依据，但 stages 中没有实际字义，属于占位阶段；应将可靠来源事实保留在 summary，并清空阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未能取得，不能作为本次审校的实证来源。补丁保留实际取得的英语词条，并调整各处来源关联。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily",
+        "message": "三个派生词的例句不能准确绑定“主题”义。补充“主体”术语义，并将三个 senseId 设为该实际存在的非空字符串。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "多处例句缺少结构要求的 note 字段；补丁逐处补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/cues/2/text",
+        "message": "原文错误暗示 subject someone to 后还要接承受者；承受者应位于 subject 与 to 之间。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "统一采用材料支持的 /e/ 标音，同时保留名词、形容词存在 /ɪ/ 变体的说明；动词重音另列。原有 /ɪ/ 不应一概判错。"
+      }
+    ],
+    "coverageAssessment": "已核对现有材料中的主题、学科、语法相关释义、使遭受及名动词重音，并结合专业语言知识补全主语、形容词三种常用功能和研究对象用法。材料把语法主语解释为施事，不能据此认定主语必定执行动作。修订后每个核心义均有两个例句，词族引用均指向实际存在的非空 senseId，缺失的 note 已补齐。另补“主体”术语义以解释 subjective 词族。历史词源仅保留可证实的拉丁语来源形式，不推演字义或演变顺序；本课不作为全部专业、历史义项的穷尽词典。",
+    "senseInventory": [
+      {
+        "sense": "名词：科目；学科",
+        "coveredBy": [
+          "subject-noun-school"
+        ],
+        "assessment": "保留两个例句，修正具体科目名的替换说明，并补充 discipline、course 的区别。"
+      },
+      {
+        "sense": "名词：主题；话题；题目",
+        "coveredBy": [
+          "subject-noun-topic"
+        ],
+        "assessment": "与主语义分开，两个例句分别展示谈论主题和转换话题。"
+      },
+      {
+        "sense": "名词：语法主语",
+        "coveredBy": [
+          "subject-noun-grammar"
+        ],
+        "assessment": "独立成义，以主动句、被动句各一例区分主语与施事。"
+      },
+      {
+        "sense": "形容词：易受……影响；可能遭遇……",
+        "coveredBy": [
+          "subject-adj"
+        ],
+        "assessment": "以延误和安排变更各一例覆盖，明确表示可能性。"
+      },
+      {
+        "sense": "形容词：受规则、法律等约束",
+        "coveredBy": [
+          "subject-adj-rules"
+        ],
+        "assessment": "独立成义，保留访客规则例句并补充销售受法律约束的例句。"
+      },
+      {
+        "sense": "形容词：以……为条件；须经……",
+        "coveredBy": [
+          "subject-adj-condition"
+        ],
+        "assessment": "新增批准与最终检查两个例句，区别于易受影响。"
+      },
+      {
+        "sense": "动词：使遭受；使经受",
+        "coveredBy": [
+          "subject-verb"
+        ],
+        "assessment": "原有主动、被动例句成立，保留并补齐字段；另明确承受者可为人或物。"
+      },
+      {
+        "sense": "名词：研究对象；受试者",
+        "coveredBy": [
+          "subject-lesscommon-person"
+        ],
+        "assessment": "作为较少用义保留一个自然例句。"
+      },
+      {
+        "sense": "名词：主体，指感知或认识的一方",
+        "coveredBy": [
+          "subject-lesscommon-self"
+        ],
+        "assessment": "作为术语义简要补充，为 subjective 等词族提供准确的关联义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"先看词性和后面的结构：a subject 是“科目或主题”，subject to 表示“可能受……影响”，subject someone to something 表示“使某人遭受某事”。\"",
+        "valueJson": "\"先看词性和结构：名词 subject 可指科目、主题或语法主语；be subject to 可表示易受影响、受规则约束或以某条件为前提；subject someone or something to something 表示使人或物遭受、经受某事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/levelHint",
+        "expectedValueJson": "\"初中核心词；注意名词、形容词和动词重音不同。\"",
+        "valueJson": "\"初中核心词；名词、形容词重读第一音节，动词重读第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读名词、形容词 /ˈsʌbdʒɪkt/ 与动词 /səbˈdʒekt/，听出重音变化。\"",
+        "valueJson": "\"朗读名词、形容词 /ˈsʌbdʒekt/ 与动词 /səbˈdʒekt/，听出重音变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"名词、形容词 /ˈsʌbdʒɪkt/；动词 /səbˈdʒekt/\",\"uk\":\"名词、形容词 /ˈsʌbdʒɪkt/；动词 /səbˈdʒekt/\",\"us\":\"名词、形容词 /ˈsʌbdʒɪkt/；动词 /səbˈdʒekt/\",\"accentNote\":\"英美读音在这里基本相同；词性不同，重音位置也不同。\",\"notes\":[\"名词和形容词重音在第一音节；动词重音在第二音节。\",\"词尾 -ject 中的 j 发 /dʒ/，类似“дж”的音。\"],\"sourceIds\":[\"cambridge-subject\"]}",
+        "valueJson": "{\"ipa\":\"名词、形容词 /ˈsʌbdʒekt/；动词 /səbˈdʒekt/\",\"uk\":\"名词、形容词 /ˈsʌbdʒekt/；动词 /səbˈdʒekt/\",\"us\":\"名词、形容词 /ˈsʌbdʒekt/；动词 /səbˈdʒekt/\",\"accentNote\":\"这里采用英美英语均有的读法；名词、形容词的第二音节也可听到 /ɪ/ 变体。\",\"notes\":[\"名词和形容词重音在第一音节；动词重音在第二音节，首音节弱读为 /səb/。\",\"字母 j 发 /dʒ/，与 job 开头的音相同。\"],\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/ipa",
+        "expectedValueJson": "\"/ˈsʌbdʒɪkt/\"",
+        "valueJson": "\"/ˈsʌbdʒekt/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/ipa",
+        "expectedValueJson": "\"/ˈsʌbdʒɪkts/\"",
+        "valueJson": "\"/ˈsʌbdʒekts/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/ipa",
+        "expectedValueJson": "\"/ˈsʌbdʒɪkt/\"",
+        "valueJson": "\"/ˈsʌbdʒekt/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/6/note",
+        "expectedValueJson": "\"词尾辅音 t 双写后加 -ing。\"",
+        "valueJson": "\"直接加 -ing，保留一个 t，写作 subjecting。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite subject 表示最喜欢的科目。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"three 后使用复数 subjects，指三门不同的科目。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"在 subject 前加具体科目名称，说明擅长的课程。\"",
+        "valueJson": "\"把 a subject 换成具体科目名，如 be good at maths。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"school subject\",\"zh\":\"学校科目\",\"note\":\"subject 本身就可指课程；school subject 特别强调它是学校里的学科。\"}]",
+        "valueJson": "[{\"en\":\"discipline\",\"zh\":\"学科；学术领域\",\"note\":\"通常比 subject 正式，常用于大学或学术研究领域。\"},{\"en\":\"course\",\"zh\":\"课程\",\"note\":\"强调有具体教学安排的一门课程；同一学科可以开设多门 course。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"谈一门课程时直接用 subject；需要强调学校课程属性时可说 school subject。\"",
+        "valueJson": "\"subject 强调所学的科目类别；course 强调具体开设的课程；discipline 常用于较正式的学科分类。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1",
+        "expectedValueJson": "{\"id\":\"subject-noun-topic\",\"title\":\"主题；话题；主语\",\"meaning\":\"谈话、文章或作品讨论的中心内容；在语法中，主语是句子里通常执行动作或被说明的人或事物。\",\"usageNote\":\"the subject of... 表示“……的主题”；语法里的 subject 常与 verb 对照，主语不一定是动作执行者，例如被动句。\",\"examples\":[{\"id\":\"subject-noun-topic-ex1\",\"senseId\":\"subject-noun-topic\",\"en\":\"The subject of her talk was ocean life.\",\"zh\":\"她演讲的主题是海洋生物。\"},{\"id\":\"subject-noun-topic-ex2\",\"senseId\":\"subject-noun-topic\",\"en\":\"In “Mia opened the window,” “Mia” is the subject.\",\"zh\":\"在“Mia 打开了窗户”这句话里，Mia 是主语。\",\"note\":\"此处说明语法术语。\"}],\"patterns\":[{\"en\":\"the subject of a talk / book\",\"zh\":\"演讲／书的主题\",\"note\":\"of 后接作品或活动，说明讨论的中心内容。\",\"kind\":\"sentence-pattern\"},{\"en\":\"the subject and the verb\",\"zh\":\"主语和动词\",\"note\":\"语法中常并列这两个句子成分来分析句子结构。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"change the subject\",\"zh\":\"换个话题\",\"note\":\"表示不再谈当前话题，转而讨论别的内容。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"topic\",\"zh\":\"话题；主题\",\"note\":\"多指谈话或写作所谈的内容；subject 也能指语法主语或学校科目。\"},{\"en\":\"theme\",\"zh\":\"主题思想\",\"note\":\"常指作品反复呈现的核心思想；topic 更像具体讨论内容。\"}],\"contrasting\":[{\"en\":\"object\",\"zh\":\"宾语\",\"note\":\"仅在语法语境中与 subject 对照；宾语通常承受动作，如 “Mia opened the window” 中的 the window。\"}],\"similarNote\":\"topic 常用于谈话和写作内容；theme 更强调作品的核心思想。语法主语应译作 subject，不要和话题混淆。\",\"contrastingNote\":\"在基础语法中，subject 与 object 是句子成分的对照；具体位置和功能要看句子。\"},\"sourceIds\":[\"cambridge-subject\"]}",
+        "valueJson": "{\"id\":\"subject-noun-topic\",\"title\":\"主题；话题；题目\",\"meaning\":\"谈话、文章或作品谈论、描写或表现的内容，也可指要求讨论或写作的题目。\",\"usageNote\":\"the subject of... 表示“……的主题”；change the subject 表示换个话题。此义与语法术语“主语”分开记。\",\"examples\":[{\"id\":\"subject-noun-topic-ex1\",\"senseId\":\"subject-noun-topic\",\"en\":\"The subject of her talk was ocean life.\",\"zh\":\"她演讲的主题是海洋生物。\",\"note\":\"the subject of her talk 指演讲谈论的内容。\"},{\"id\":\"subject-noun-topic-ex2\",\"senseId\":\"subject-noun-topic\",\"en\":\"When I asked about his exam results, he changed the subject.\",\"zh\":\"我问起他的考试成绩时，他换了个话题。\",\"note\":\"changed the subject 表示转而谈别的事情。\"}],\"patterns\":[{\"en\":\"the subject of a talk / book\",\"zh\":\"演讲／书的主题\",\"note\":\"of 后接作品或活动，说明讨论的中心内容。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"change the subject\",\"zh\":\"换个话题\",\"note\":\"表示不再谈当前话题，转而讨论别的内容。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"topic\",\"zh\":\"话题；主题\",\"note\":\"多指谈话或写作所谈的内容；subject 的适用范围更广。\"},{\"en\":\"theme\",\"zh\":\"主题思想\",\"note\":\"常指作品反复呈现的核心思想，而不只是具体谈论的内容。\"}],\"contrasting\":[],\"similarNote\":\"谈论具体内容时 subject 与 topic 常可互换；theme 更强调作品的核心思想。\",\"contrastingNote\":\"此义没有常用的直接反义词；语法里的 object 不是“主题”的反义词。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2",
+        "expectedValueJson": "{\"id\":\"subject-adj\",\"title\":\"易受……影响；受……支配\",\"meaning\":\"可能受到某种情况、规则或变化的影响。\",\"usageNote\":\"通常用 be subject to + 名词；可表示可能遭遇某事，也可表示受规则或条件约束。\",\"examples\":[{\"id\":\"subject-adj-ex1\",\"senseId\":\"subject-adj\",\"en\":\"The outdoor game is subject to the weather.\",\"zh\":\"户外比赛可能会受天气影响。\"},{\"id\":\"subject-adj-ex2\",\"senseId\":\"subject-adj\",\"en\":\"All visitors are subject to the same rules.\",\"zh\":\"所有访客都必须遵守相同的规则。\"}],\"patterns\":[{\"en\":\"be subject to + a change / delay\",\"zh\":\"可能受到变化／延误影响\",\"note\":\"说明某事可能因后面的情况而改变或发生。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be subject to + rules / conditions\",\"zh\":\"受规则／条件约束\",\"note\":\"说明必须遵守后面的规则或条件。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"subject to change\",\"zh\":\"可能变更\",\"note\":\"常用于计划、价格或安排，表示之后仍可能调整。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be affected by\",\"zh\":\"受……影响\",\"note\":\"直接说明受到影响；subject to 还可表达受规则约束，语气较正式。\"},{\"en\":\"be exposed to\",\"zh\":\"接触到；暴露于\",\"note\":\"强调处于某种影响或风险之中，不表示必须服从规则。\"}],\"contrasting\":[{\"en\":\"be free from\",\"zh\":\"不受……影响；免于……\",\"note\":\"用于强调没有某种影响或风险时，与 subject to 的“可能受影响”相对。\"}],\"similarNote\":\"be affected by 强调影响已经发生；subject to 常表示可能性或受条件约束。\",\"contrastingNote\":\"be free from 可在风险、影响等语境中与 subject to 对照；两者不是所有句子里的固定反义词。\"},\"sourceIds\":[\"cambridge-subject\"]}",
+        "valueJson": "{\"id\":\"subject-adj\",\"title\":\"易受……影响；可能遭遇……\",\"meaning\":\"容易或可能受到某种影响，或发生某种情况，常涉及延误、损坏等不利情况。\",\"usageNote\":\"常用 be subject to + 名词；subject to change 表示可能变更，并不表示已经变更。\",\"examples\":[{\"id\":\"subject-adj-ex1\",\"senseId\":\"subject-adj\",\"en\":\"Trains on this line are subject to delays in winter.\",\"zh\":\"这条线路的列车冬天容易晚点。\",\"note\":\"subject to delays 表示可能发生延误，不表示每班列车都会晚点。\"},{\"id\":\"subject-adj-ex2\",\"senseId\":\"subject-adj\",\"en\":\"The concert schedule is subject to change.\",\"zh\":\"音乐会的日程可能变更。\",\"note\":\"表示安排尚可能调整，而不是已经改过。\"}],\"patterns\":[{\"en\":\"be subject to + 名词\",\"zh\":\"易受……影响；可能遭遇……\",\"note\":\"常接 delays、damage 等；表示可能发生的情况，不使用 to do 结构。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"subject to change\",\"zh\":\"可能变更\",\"note\":\"常用于计划、价格或安排。\",\"kind\":\"fixed-expression\"},{\"en\":\"subject to delays\",\"zh\":\"容易延误\",\"note\":\"常用于交通或工作进度。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be affected by\",\"zh\":\"受……影响\",\"note\":\"可描述具体、一般或持续的影响，本身不限于已经发生的事情。\"},{\"en\":\"be prone to\",\"zh\":\"容易发生；易患\",\"note\":\"侧重反复出现某种不良情况的倾向，不适用于 subject to change 的所有语境。\"}],\"contrasting\":[{\"en\":\"be free from\",\"zh\":\"免于；没有……\",\"note\":\"在延误、风险等语境中表示没有相应的不利情况。\"}],\"similarNote\":\"subject to 常说明某种情况可能发生；be affected by 直接描述影响，be prone to 更突出倾向。\",\"contrastingNote\":\"be free from 可在具体不利情况的语境中形成对照，不能替换所有 subject to 结构。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"subjected 后先接承受者 the team，再以 to 引出考验。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用 subject + 人／物 + to + 名词；这里的 subject 是动词，重音在第二音节。\"",
+        "valueJson": "\"常用 subject + 人／物 + to + 名词或动名词；to 是介词。被动式为 be subjected to。动词重音在第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"subject-noun-grammar\",\"title\":\"主语\",\"meaning\":\"句子中的一种语法成分，通常与谓语动词在人称、数上相呼应。\",\"usageNote\":\"在普通陈述句中，主语通常位于谓语动词前。主语不一定是动作执行者，被动句尤其能说明这一点。\",\"examples\":[{\"id\":\"subject-noun-grammar-ex1\",\"senseId\":\"subject-noun-grammar\",\"en\":\"In “Mia opened the window,” “Mia” is the subject.\",\"zh\":\"在“Mia opened the window”中，Mia 是主语。\",\"note\":\"这个主动句中，Mia 同时也是开窗动作的执行者。\"},{\"id\":\"subject-noun-grammar-ex2\",\"senseId\":\"subject-noun-grammar\",\"en\":\"In “The window was opened by Mia,” “the window” is the subject.\",\"zh\":\"在“The window was opened by Mia”中，the window 是主语。\",\"note\":\"这个被动句中，窗户是主语，但开窗的人仍是 Mia。\"}],\"patterns\":[{\"en\":\"the subject of a sentence\",\"zh\":\"句子的主语\",\"note\":\"此处 of 后接 sentence，说明语法关系。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"subject–verb agreement\",\"zh\":\"主谓一致\",\"note\":\"指主语与谓语动词在人称、数上的一致关系。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[{\"en\":\"object\",\"zh\":\"宾语\",\"note\":\"另一种句子成分；在 Mia opened the window 中，the window 是宾语。\"},{\"en\":\"predicate\",\"zh\":\"谓语\",\"note\":\"传统句子分析中，与主语相对的部分，说明主语做什么或处于何种状态。\"}],\"similarNote\":\"subject 是明确的语法术语，不能用表示话题的 topic 随意替换。\",\"contrastingNote\":\"subject、object、predicate 是语法成分的对照，不是一般词义上的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"subject-adj-rules\",\"title\":\"受规则、法律等约束\",\"meaning\":\"某人或某事适用某些规则、法律或管理要求，须受其约束。\",\"usageNote\":\"常用 be subject to + rules / laws / regulations；此处不是只说规则可能产生影响，而是说明规则适用于谁或什么。\",\"examples\":[{\"id\":\"subject-adj-rules-ex1\",\"senseId\":\"subject-adj-rules\",\"en\":\"All visitors are subject to the same rules.\",\"zh\":\"所有访客都必须遵守相同的规则。\",\"note\":\"规则适用于所有访客。\"},{\"id\":\"subject-adj-rules-ex2\",\"senseId\":\"subject-adj-rules\",\"en\":\"Online sales are subject to the same laws as shop sales.\",\"zh\":\"网上销售和实体店销售受相同法律约束。\",\"note\":\"此处说明销售活动适用哪些法律。\"}],\"patterns\":[{\"en\":\"be subject to + rules / laws / regulations\",\"zh\":\"受规则／法律／规章约束\",\"note\":\"to 是介词，后接规定或要求。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"subject to local regulations\",\"zh\":\"受当地法规约束\",\"note\":\"常用于经营、建设等正式语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be governed by\",\"zh\":\"受……约束；由……管理\",\"note\":\"在规则、法律语境中与 be subject to 接近。\"},{\"en\":\"have to comply with\",\"zh\":\"必须遵守\",\"note\":\"强调履行遵守规则的义务。\"}],\"contrasting\":[{\"en\":\"be exempt from\",\"zh\":\"获豁免；不受……约束\",\"note\":\"须指明豁免的规则、义务或要求，不表示完全不受任何管理。\"}],\"similarNote\":\"be subject to 说明规则适用；have to comply with 更直接强调遵守义务。\",\"contrastingNote\":\"be exempt from 可与受某项具体规定约束形成直接对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"subject-adj-condition\",\"title\":\"以……为条件；须经……\",\"meaning\":\"某项安排须满足后面的条件，才能成立或最终确定。\",\"usageNote\":\"常见于 subject to approval、subject to a final check 等正式表达；不是说批准可能造成不利影响。\",\"examples\":[{\"id\":\"subject-adj-condition-ex1\",\"senseId\":\"subject-adj-condition\",\"en\":\"The trip is subject to the head teacher's approval.\",\"zh\":\"这次出行须经校长批准。\",\"note\":\"获得批准是出行得以进行的条件。\"},{\"id\":\"subject-adj-condition-ex2\",\"senseId\":\"subject-adj-condition\",\"en\":\"The sale is subject to a final inspection of the house.\",\"zh\":\"这笔房屋交易以通过最终验房为条件。\",\"note\":\"交易能否最终成立取决于检查结果。\"}],\"patterns\":[{\"en\":\"be subject to + 条件\",\"zh\":\"以满足某条件为前提\",\"note\":\"说明安排尚取决于批准、检查等条件。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"subject to approval\",\"zh\":\"须经批准\",\"note\":\"常见于计划、申请和协议。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be conditional on\",\"zh\":\"以……为条件\",\"note\":\"直接说明某事取决于某个条件，在此义中与 be subject to 接近。\"}],\"contrasting\":[{\"en\":\"unconditional\",\"zh\":\"无条件的\",\"note\":\"如 an unconditional offer，表示没有附带条件的提议或录取通知。\"}],\"similarNote\":\"be conditional on 适合解释这一条件义，不能据此替换 subject to delays 等表达。\",\"contrastingNote\":\"unconditional 可与附带条件的安排对照；它不是 subject 所有义项的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"此处 subject 指参加研究的人，不是研究主题。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"subject-lesscommon-self\",\"title\":\"主体（哲学等术语）\",\"meaning\":\"进行感知、认识或体验的一方，与被感知、认识的对象相对。\",\"note\":\"这是较专业的用法；理解它有助于联系 subjective 的“主观的”，不要把 subjective 理解为“主题的”。\",\"example\":{\"id\":\"subject-lesscommon-self-ex1\",\"senseId\":\"subject-lesscommon-self\",\"en\":\"In this theory, the subject perceives the world through experience.\",\"zh\":\"在这一理论中，主体通过经验感知世界。\",\"note\":\"subject 指进行感知的一方。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"说明句子谈论的人或事物，通常在动词前。\"",
+        "valueJson": "\"一种语法成分，在普通陈述句中通常位于谓语动词前；主语不一定是动作执行者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"subject-noun-topic\"",
+        "valueJson": "\"subject-noun-grammar\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"在这个主动句中，The dog 是主语，也是动作执行者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"subject-confusion-ex2\",\"senseId\":\"subject-noun-topic\",\"en\":\"“The ball” is the object in “The dog chased the ball.”\",\"zh\":\"在“The dog chased the ball.”中，The ball 是宾语。\"}",
+        "valueJson": "{\"id\":\"subject-confusion-ex2\",\"senseId\":\"subject-noun-grammar\",\"en\":\"“the ball” is the object in “The dog chased the ball.”\",\"zh\":\"在“The dog chased the ball.”中，the ball 是宾语。\",\"note\":\"此例用宾语与主语作语法成分对照。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"subject 是形容词，表示时间表仍可能调整。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/3/note",
+        "expectedValueJson": "\"subject 后必须有承受者，to 后接使其经历的事情。\"",
+        "valueJson": "\"主动结构中，subject 后先接承受者，可以是人或物；to 后接经历的事情。被动结构为 be subjected to。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/3/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the machine 是承受测试的对象；subjected 是动词过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到 subject to 时先看前面：be subject to 表示“受影响／受约束”；subject someone to 表示“使某人遭受／经受”。语法主语 subject 则与宾语 object 对照。\"",
+        "valueJson": "\"be subject to 是形容词结构，可表示易受影响、受约束或以某条件为前提；subject someone or something to 是主动动词结构，被动式为 be subjected to。语法主语 subject 则与宾语 object 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"subject 的历史来源与拉丁语有关；现代英语中名词、形容词和动词的读音重音不同。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"subjectus\",\"meaning\":\"来源形式；此处不据此推断现代各义项的历史发展。\"}],\"caveat\":\"这里只呈现可确认的来源形式，不把现代拼写拆分当作历史词源，也不据此推演语义变化。\",\"sourceIds\":[\"wiktionary-etymology\"]}",
+        "valueJson": "{\"summary\":\"subject 的词源可追溯至拉丁语 subjectus。\",\"stages\":[],\"caveat\":\"这一来源形式不能直接说明现代各义项形成的先后，也不能把课堂助记情境当作词义演变史。\",\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"subject + -ive；与 subject 同族的派生词。\"",
+        "valueJson": "\"与 subject 的“主体”义相关；现代拼写可按 subject + -ive 记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"subject-noun-topic\"",
+        "valueJson": "\"subject-lesscommon-self\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"subjective 表示基于个人感受或判断的，不表示“主题的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"由 subjective 去掉词尾 e，再加 -ly。\"",
+        "valueJson": "\"在 subjective 后直接加 -ly，保留词尾 e：subjective + ly → subjectively。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"subject-noun-topic\"",
+        "valueJson": "\"subject-lesscommon-self\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"subjectively 是副词，修饰 judge，说明评价的方式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/senseId",
+        "expectedValueJson": "\"subject-noun-topic\"",
+        "valueJson": "\"subject-lesscommon-self\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"subjectivity 是名词，表示个人感受、观点对判断或创作的影响。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-subject\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"subjective、subjectively 和 subjectivity 是与 subject 同族的派生词；后两者由 subjective 继续构成。\"",
+        "valueJson": "\"这组词联系 subject 的“主体”义，强调个人的感受和判断。subjective 加 -ly 时保留 e，成为 subjectively；加 -ity 时去掉 e，成为 subjectivity。这些拼写关系不代表各词的历史传入顺序。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"subject someone to 后接承受者和事情；动词重音落在第二音节。\"",
+        "valueJson": "\"subject 后先放承受者，再用 to 引出经历的事情；动词重音落在第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-subject\",\"title\":\"Cambridge Dictionary: subject\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/subject\",\"supports\":[\"名词、形容词和动词的常见含义及用法\",\"subject to 与 subject someone to 的结构\",\"读音和词形信息\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: subject（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/subject#Anglais\",\"supports\":[\"该词条给出的拉丁语来源形式 subjectus\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"法语维基词典：subject（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/subject#Anglais\",\"supports\":[\"英语名词的主题、学科相关释义\",\"英语动词使遭受、使经受的释义\",\"名词和动词的读音及重音区别\",\"拉丁语来源形式 subjectus\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1345,
+    "headword": "subject",
+    "meaning_zh": "n. 科目；主题；主语\nadj. 易受……影响的（常用 subject to）\nv. 使遭受（常用 subject ... to）",
+    "phonetic": "/'sʌbdʒekt/",
+    "pos": "",
+    "forms": []
+  }
+}

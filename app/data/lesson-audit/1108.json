@@ -1,0 +1,526 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fec9e725fe3e6ac81e8e9820bdedd32ac2d6eec03bb6fae07c62c11f0e9da804",
+    "executedReviewPromptHash": "fec9e725fe3e6ac81e8e9820bdedd32ac2d6eec03bb6fae07c62c11f0e9da804",
+    "reviewHash": "f19c73bc05fbe707aa7ca2c0696994d3431535517e0c891599084b780be7749b",
+    "wordId": 1108,
+    "inputHash": "936ab65eb37ff224731859203104f0d9e04feb55918e09d848f6b3dc76ba5f4f",
+    "draftHash": "7c5a013b9c047b5a7df196ac26c4a16fa847b9c5c1c46af36a1d5aa7d3774fd0",
+    "finalHash": "7d88f6ae90cc721f76e79282b0b414a32a2594717ce4fb96f7cacdeb990a7d71",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/queen#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.405Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115931,
+        "revisionId": 38544450,
+        "revisionTimestamp": "2025-08-17T21:09:56Z",
+        "sha256": "d53025435214a1dc03dc2430d0fd1a9725c8d3eecfdc697eb71298ec24bdaa77",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/queen",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T07:13:40.499Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T07:33:12.657Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "queen 以浊辅音 /n/ 结尾，原稿将其说成清辅音。复数词尾 /z/ 本身正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses、/confusions、/wordFamily、/sources",
+        "message": "Cambridge 页面获取失败，不能作为这些内容的实际依据。可由已取得的英语词条支持的内容改引 wiktionary；词族及 queen bee 比喻义按专业语言知识保留，不再错误归因。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/confusions、/wordFamily/1/example",
+        "message": "多处例句缺少目标结构必填的 note 字段，需要补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/senses/3、/lessCommonSenses",
+        "message": "棋类动词 queen 既可及物，也可不及物，原稿两个例句都只展示及物功能。此外，将动词用法限定为国际象棋过于绝对，遗漏了原词条列出的罕见非棋类动词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions/contrasting、/senses/3/relatedExpressions/contrastingNote",
+        "message": "兵到达对方底线时必须升变，不能选择继续保持为兵。可用 underpromote 表示升变为车、象或马，作为特定棋类语境中的选择对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similar",
+        "message": "chess piece 是棋子的上位词，不是 queen 的近义词，应移出近义表达列表。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example、/confusions/1/items/1/example/senseId",
+        "message": "king 对照例句未体现其绑定的 queen 义项；queen bee 比喻例句则错误绑定昆虫字面义。需分别调整例句及义项引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary、/etymology/stages",
+        "message": "古英语字形应按来源写作 cwēn。三个阶段的 meaning 都只是占位说明，未解释字义；应将可证实的历史字形关系保留在 summary，并清空占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story、/memoryAid/cues/1",
+        "message": "普通国际象棋棋子并不通常标有 Q；Q 是英文棋谱中表示后的符号。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对主要义项、句型、词形、例句、词族及词源。女王、王后、国际象棋的后均有两个主例句；Q牌和繁殖雌虫已作为拓展义覆盖，可维持现有层级。补齐棋类不及物功能、罕见非棋类动词及 queen bee 比喻义的引用。雌猫、变装者及可能带贬损意味的男性称呼属于本课有意识省略的高级义。法语页面提供的是英语词条，已按英语处理；Cambridge 未取得正文，未据其作证。修订后保留词源来源能够支持的历史形式，不补造阶段释义。",
+    "senseInventory": [
+      {
+        "sense": "n. 女王；以自身身份在位的女性君主",
+        "coveredBy": [
+          "queen-n-monarch"
+        ],
+        "assessment": "核心义已覆盖，有两个例句；与王后义分开处理正确。"
+      },
+      {
+        "sense": "n. 王后；国王的妻子",
+        "coveredBy": [
+          "queen-n-royal-wife"
+        ],
+        "assessment": "核心义已覆盖，有两个例句，并以 queen consort 明确配偶身份。"
+      },
+      {
+        "sense": "n. 国际象棋的后",
+        "coveredBy": [
+          "queen-n-chess"
+        ],
+        "assessment": "已覆盖，有两个自然例句；修正将棋子总称放入近义列表的问题。"
+      },
+      {
+        "sense": "n. 扑克牌中的 Q 牌",
+        "coveredBy": [
+          "queen-n-cards"
+        ],
+        "assessment": "已作为拓展义覆盖，可维持现有学习层级。"
+      },
+      {
+        "sense": "n. 雌猫，尤见动物繁育语境",
+        "coveredBy": [],
+        "assessment": "专业且低频，初中课程不展开可以接受。"
+      },
+      {
+        "sense": "n. 社会性昆虫群体中主要负责繁殖的雌虫",
+        "coveredBy": [
+          "queen-n-insect"
+        ],
+        "assessment": "已通过蜂后例句覆盖，并说明可用于蚁群。"
+      },
+      {
+        "sense": "n. 变装者；变装语境中的表演者",
+        "coveredBy": [],
+        "assessment": "来源列有此义；不属于本课初中主动学习重点，可以省略。不能与男性同性恋者义混同。"
+      },
+      {
+        "sense": "n. 男同性恋者或被认为举止女性化的男子，口语且可能带贬损意味",
+        "coveredBy": [],
+        "assessment": "来源列有此义及语体标签；本课省略可以接受，不能将其当作中性通称。"
+      },
+      {
+        "sense": "vt. 国际象棋中把兵升变为后",
+        "coveredBy": [
+          "queen-v-chess"
+        ],
+        "assessment": "原稿已覆盖；修订后保留及物例句，并纠正升变选择说明。"
+      },
+      {
+        "sense": "vi. 国际象棋中的兵升变为后",
+        "coveredBy": [
+          "queen-v-chess"
+        ],
+        "assessment": "原稿未充分展示；补入以 pawn 为主语的不及物例句和句型。queen 专指升后，不泛指所有升变。"
+      },
+      {
+        "sense": "vt. 立某人为女王",
+        "coveredBy": [
+          "queen-v-make-queen"
+        ],
+        "assessment": "原词条列有此义；补入拓展义，并标明古旧或文学色彩及现代常用表达。"
+      },
+      {
+        "sense": "vi. 做女王；摆女王架子，常见于 queen it",
+        "coveredBy": [
+          "queen-v-act-queen"
+        ],
+        "assessment": "补入较少见的 queen it 用法；说明普通的当女王通常用 be queen 或 reign as queen。"
+      },
+      {
+        "sense": "queen bee：团体中有支配力、爱发号施令的女性",
+        "coveredBy": [
+          "queenbee-n-figurative"
+        ],
+        "assessment": "原稿已在辨析中讲解；补建拓展义，使比喻例句不再绑定昆虫字面义。此项依据专业语言知识保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun; verb (chess)\"",
+        "valueJson": "\"noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则名词加 -s；词尾清辅音与 -s 连读后读 /z/。\"",
+        "valueJson": "\"规则名词加 -s；queen 以浊辅音 /n/ 结尾，复数词尾 -s 读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/label",
+        "expectedValueJson": "\"动词原形（国际象棋）\"",
+        "valueJson": "\"动词原形\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"作动词时通常用于国际象棋，表示把兵升变为后。\"",
+        "valueJson": "\"棋类用法表示把兵升变为后或兵升变为后；较少见时也可表示立为女王等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the queen 指语境中明确的那位女王。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"become queen 中，queen 表示取得的君主身份，通常不加冠词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里把国王和王后作为王室夫妇并列称呼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"本例按故事中的王后身份理解；queen 单独出现时，具体身份仍由上下文决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"queen 和 rook 在这里分别是棋子后与车。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"lose one's queen 指自己的后被吃掉；but still 表示结果出人意料。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"chess piece\",\"zh\":\"国际象棋棋子\",\"note\":\"这是棋子的总称；queen 是其中的一种。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"chess piece 是包含 queen 的总称。\"",
+        "valueJson": "\"此义没有常用的单词同义词。chess piece 是包括后、王、车等在内的棋子总称，不能等同于 queen。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"（国际象棋）使兵升变为后\"",
+        "valueJson": "\"（国际象棋）把兵升变为后；兵升变为后\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"把到达棋盘底线的兵变成后。\"",
+        "valueJson": "\"及物时表示把兵升变为后；不及物时表示兵升变为后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"作动词时是国际象棋专用说法；日常谈论升变通常也可用 promote a pawn to a queen。\"",
+        "valueJson": "\"这个棋类义既可用 queen a pawn，也可用 a pawn queens。兵到达对方底线时必须升变，但 queen 专指升变为后；一般说明也可用 promote a pawn to a queen。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0",
+        "expectedValueJson": "{\"id\":\"queen-v-chess-ex1\",\"senseId\":\"queen-v-chess\",\"en\":\"If her pawn reaches the last row, she can queen it.\",\"zh\":\"如果她的兵走到最后一排，就可以把它升变为后。\"}",
+        "valueJson": "{\"id\":\"queen-v-chess-ex1\",\"senseId\":\"queen-v-chess\",\"en\":\"Her pawn queened on the next move.\",\"zh\":\"她的兵在下一步升变为后。\",\"note\":\"queen 在这里是不及物动词，主语是 pawn。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"queen 在这里是及物动词，his pawn 是宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"queen on the last rank\",\"zh\":\"在最后一横排升变为后\",\"note\":\"last rank 指棋盘底线；此说法描述升变发生的位置。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a pawn queens\",\"zh\":\"一个兵升变为后\",\"note\":\"不及物用法：主语是发生升变的兵，queen 后不接宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"keep a pawn as a pawn\",\"zh\":\"让兵仍保持兵的身份\",\"note\":\"在升变选择的语境中，可与把兵升变为后形成对照。\"}]",
+        "valueJson": "[{\"en\":\"underpromote (a pawn)\",\"zh\":\"（把兵）升变为车、象或马\",\"note\":\"这是与升变为后相对的另一类升变选择，不是 queen 的通用反义词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"keep a pawn as a pawn 描写未升变的选择，仅在讨论棋类升变时构成对照。\"",
+        "valueJson": "\"兵到达对方底线时必须升变，可选后、车、象或马，不能选择继续保持为兵。underpromote 与 queen 只在升变选择的语境中形成对照。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 queen bee 是字面上的蜂后，强调繁殖职责。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a queen 表示任意一张 Q 牌，并未说明花色。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"queen-v-make-queen\",\"title\":\"（较古旧或文学用法）立为女王\",\"meaning\":\"使某人成为女王。\",\"note\":\"及物用法，较少见；现代通常用 make someone queen 或 crown someone queen。\",\"example\":{\"id\":\"queen-v-make-queen-ex1\",\"senseId\":\"queen-v-make-queen\",\"en\":\"The council queened her after the king died.\",\"zh\":\"国王去世后，议事会拥立她为女王。\",\"note\":\"这是较古旧的叙事表达；现代通常说 The council made her queen。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"queen-v-act-queen\",\"title\":\"（较少见）摆女王架子\",\"meaning\":\"像女王一样摆出高高在上的姿态，支配别人。\",\"note\":\"常见于 queen it 或 queen it over someone，带批评意味；普通的当女王通常说 be queen 或 reign as queen。\",\"example\":{\"id\":\"queen-v-act-queen-ex1\",\"senseId\":\"queen-v-act-queen\",\"en\":\"At the party, she queened it over the other guests.\",\"zh\":\"聚会上，她对其他宾客摆出一副女王架子。\",\"note\":\"queen it over someone 表示对别人摆架子、颐指气使。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"queenbee-n-figurative\",\"title\":\"queen bee：团体中有支配力的女性\",\"meaning\":\"比喻一个团体中很有影响力、爱发号施令的女性。\",\"note\":\"这是 queen bee 的比喻用法，常带批评意味，不是昆虫字面义。\",\"example\":{\"id\":\"queenbee-n-figurative-ex1\",\"senseId\":\"queenbee-n-figurative\",\"en\":\"At work, she behaves like a queen bee and expects everyone to obey her.\",\"zh\":\"在单位，她总摆出一副说了算的样子，希望所有人都服从她。\",\"note\":\"这里描述人际关系中的支配姿态，并非真正的蜂后。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"此处 queen 按女性君主理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"queen-confusion-k\",\"senseId\":\"queen-n-monarch\",\"en\":\"The king greeted the visitors.\",\"zh\":\"国王向访客致意。\"}",
+        "valueJson": "{\"id\":\"queen-confusion-k\",\"senseId\":\"queen-n-monarch\",\"en\":\"The king ruled one country, and the queen ruled another.\",\"zh\":\"国王统治一个国家，女王统治另一个国家。\",\"note\":\"king 与 queen 在这里分别指男性君主和女性君主。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"queen-n-insect\"",
+        "valueJson": "\"queenbee-n-figurative\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"hive 提供蜂巢语境，queen bee 在这里是字面义。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"班级中的人际关系使 queen bee 取得比喻义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"queen 经古英语 cwen 进入英语；给出的历史词源记录把它联系到原始日耳曼语重构形式 *kwēniz，并进一步联系到原始印欧语重构形式 *gʷḗn。\"",
+        "valueJson": "\"queen 源自古英语 cwēn；更早依次可追溯到原始日耳曼语重构形式 *kwēniz 和原始印欧语重构形式 *gʷḗn。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始印欧语（重构形式）\",\"form\":\"*gʷḗn\",\"meaning\":\"词源记录所列的更早重构形式\"},{\"language\":\"原始日耳曼语（重构形式）\",\"form\":\"*kwēniz\",\"meaning\":\"词源记录所列的后续重构形式\"},{\"language\":\"古英语\",\"form\":\"cwen\",\"meaning\":\"queen 的古英语形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"queenly 是形容词，在这里修饰名词 calm，表示女王般的从容气度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象一位戴王冠的女王走到棋盘旁：她在故事里是 queen；棋盘上标着 Q 的强力棋子也叫 queen；兵走到对面底线后，还能升变为 queen。\"",
+        "valueJson": "\"想象一位戴王冠的女王走到棋盘旁：她是 queen；棋盘上威力最强的棋子也叫 queen，英文棋谱中常用 Q 表示；一个兵走到对方底线，升变成了 queen。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/label",
+        "expectedValueJson": "\"棋盘上的 Q\"",
+        "valueJson": "\"英文棋谱中的 Q\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/label",
+        "expectedValueJson": "\"兵走到底线\"",
+        "valueJson": "\"兵走到对方底线\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"国际象棋动词：把兵升变为后。\"",
+        "valueJson": "\"国际象棋动词：把兵升变为后，或兵升变为后。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"queen 的英美发音与规则词形\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: queen\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/queen\",\"supports\":[\"queen 的名词常见义和英美读音\",\"queen 的棋类动词用法\",\"queen bee 等常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1108,
+    "headword": "queen",
+    "meaning_zh": "n. 王后, 女王\nvt. 立为女王\nvi. 做女王",
+    "phonetic": "/'kwi:n/",
+    "pos": "",
+    "forms": []
+  }
+}

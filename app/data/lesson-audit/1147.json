@@ -1,0 +1,288 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "31e7f0791d79a3eaf82ad84ceea5a56bd7d5c2f61b43afaeceebd885dc899f79",
+    "executedReviewPromptHash": "31e7f0791d79a3eaf82ad84ceea5a56bd7d5c2f61b43afaeceebd885dc899f79",
+    "reviewHash": "ec1e0ad726e0650ca090018693bdf161b7d0fdc4613ba52daa0a8bbb7d89c011",
+    "wordId": 1147,
+    "inputHash": "1319f5e0e67ac81c06ab97d239526a1f306566c477caaae1087c410d850eae70",
+    "draftHash": "36d0f5bca0b4ef91f162d787b8c88a76505413f9bb4d830fcfbc1df76db6c2b4",
+    "finalHash": "e5e9af3110e68f65923d35b5d83ee02fe2d9073f60557dff5ab6f9d5120b1e50",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/reply#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.668Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120001,
+        "revisionId": 39378014,
+        "revisionTimestamp": "2026-03-19T18:00:47Z",
+        "sha256": "f0ed0cc7a45535f56839a5ec7c7b1eb8101f5359ad3dd3960a8f7a262dcbc778",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/reply",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:24:51.186Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:32:01.879Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿未列实际取得的英语词条，所有引用均指向未提供正文的 Oxford 页面。应改引法语维基词典中的英语词条，并准确限定其支持范围；该词条没有 replier，词族说明可依据专业知识保留，但应清空该项引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "名词用法只讲了一条可数答复，遗漏常用的无冠词表达 in reply (to...)。应补充说明、搭配和例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2; /senses/1",
+        "message": "reply that 已列句型却没有对应例句，直接引语功能也未呈现。学习计划宜明确区分答复对象与答复内容，避免把 reply 和 reply to 当成两个词义记忆。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "原例只明确呈现解释性回应，没有清楚展示标题中的回击或回应行动。应换成实际以行动回击的例句；原英文句子本身没有语法错误。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1/kind",
+        "message": "get/receive a reply 是常见搭配，宜标为 common-collocation。"
+      }
+    ],
+    "coverageAssessment": "已核对名词答复、动词应答、引述回答内容及以行动回击；补丁补足常用功能和对应例句。原有词形、读音、词族拼写及近义和反向表达的语境限制无须实质修改。“答辩”按回应意见的语境义处理，不扩写为法律术语。字面回声式“反响”未纳入初中核心义。检索材料的词源段仅为待补模板，没有可靠历史信息，因此保留空历史阶段，不编造词源。",
+    "senseInventory": [
+      {
+        "sense": "名词：答复、回答",
+        "coveredBy": [
+          "reply-n-1"
+        ],
+        "assessment": "原有两个可数用法例句自然；补入 in reply to 的说明与例句，覆盖常见无冠词功能。"
+      },
+      {
+        "sense": "不及物动词：答复、回答、回应",
+        "coveredBy": [
+          "reply-v-1"
+        ],
+        "assessment": "原有两个例句覆盖答复消息和回答他人；reply to 的语法说明正确。"
+      },
+      {
+        "sense": "及物引述功能：回答说，接 that 从句或直接引语",
+        "coveredBy": [
+          "reply-v-1"
+        ],
+        "assessment": "不必另分词义；补充两种引述形式的例句，并说明所接的是答复内容。"
+      },
+      {
+        "sense": "动词引申义：回击、以行动回应",
+        "coveredBy": [
+          "reply-v-2"
+        ],
+        "assessment": "保留为较少见用法；换用实际以行动回击的例句，与普通解释性回答区分。"
+      },
+      {
+        "sense": "名词或动词的语境义：答辩、回应反对意见",
+        "coveredBy": [
+          "reply-n-1",
+          "reply-v-1"
+        ],
+        "assessment": "可并入一般答复义；新增投诉答复例句体现相关语境，不据此建立独立法律义。"
+      },
+      {
+        "sense": "中文义表中的“反响”：若指字面回响、回声",
+        "coveredBy": [],
+        "assessment": "实际取得的英语词条没有单列此义；不将其增补为初中常用义，也不以一般回应例句冒充覆盖。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_reply\",\"title\":\"Oxford Learner’s Dictionaries: reply\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/reply\",\"supports\":[\"常见词性与用法\",\"reply 的词形变化\",\"reply 与 answer、respond 的常见用法对照\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_reply_en\",\"title\":\"Wiktionnaire：reply（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/reply#Anglais\",\"supports\":[\"名词答复、回答与动词回答、回击的基本义\",\"reply to a question 的用法\",\"读音与规则词形变化模板\",\"answer、respond 的近义关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_reply\"",
+        "valueJson": "\"wiktionary_reply_en\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_reply\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"区分 reply（答复）和 reply to（答复某人或某事）。\"",
+        "valueJson": "\"分清答复对象与答复内容：reply to someone/something 引出对象；reply that + 从句或直接引语说出回答内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作可数名词，常用 a reply；指出答复针对什么时，常用 reply to。\"",
+        "valueJson": "\"指一条具体答复时可数，如 a reply、two replies；固定表达 in reply (to...) 中不加冠词。to 引出答复所针对的内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reply-n-ex3\",\"senseId\":\"reply-n-1\",\"en\":\"In reply to our complaint, the manager explained why the delivery was late.\",\"zh\":\"经理针对我们的投诉，解释了送货延迟的原因。\",\"note\":\"in reply to 表示作为对……的答复；固定表达中的 reply 不加冠词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"in reply (to...)\",\"zh\":\"作为答复；回应……\",\"note\":\"固定表达 in reply 中的 reply 不带冠词；to 引出回应对象。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 reply to someone/something；reply 作动词时，通常不直接把人或问题放在后面作宾语。\"",
+        "valueJson": "\"答复对象用 reply to someone/something；答复内容可用 reply that + 从句，或用 reply 引出直接引语。一般不说 reply someone 或 reply a question。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reply-v-ex4\",\"senseId\":\"reply-v-1\",\"en\":\"The shop replied that my order would arrive on Friday.\",\"zh\":\"商家回复说，我订的东西会在周五送到。\",\"note\":\"that 从句说明答复内容；would arrive 表示相对于过去回复时点的将来。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"reply-v-ex5\",\"senseId\":\"reply-v-1\",\"en\":\"\\\"I'm on the bus,\\\" Nina replied.\",\"zh\":\"妮娜回答说：“我在公交车上。”\",\"note\":\"直接引语给出回答的原话；replied 在这里用于引述回答。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"通常由上下文说明回应方式；可用 reply to an attack 或 reply with words/actions。\"",
+        "valueJson": "\"这是较少见的引申用法；reply with... 可引出回击手段，reply by doing... 可引出回应的动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"reply-v-ex3\",\"senseId\":\"reply-v-2\",\"en\":\"The team replied to the criticism with a calm explanation.\",\"zh\":\"团队用冷静的解释回应了批评。\",\"note\":\"这里是对批评作出回应，不只是回答一个问题。\"}",
+        "valueJson": "{\"id\":\"reply-v-ex3\",\"senseId\":\"reply-v-2\",\"en\":\"Jack threw a snowball at Mia, and she replied by throwing one back.\",\"zh\":\"杰克朝米娅扔了个雪球，她也扔了个雪球回敬他。\",\"note\":\"这里指用同样的行动回击，带有生动的叙述语气，不是口头作答。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1147,
+    "headword": "reply",
+    "meaning_zh": "n. 答复, 回答, 答辩\nvi. 答复, 回答, 回击, 反响, 答辩\nvt. 回答",
+    "phonetic": "/ri'plai/",
+    "pos": "",
+    "forms": []
+  }
+}

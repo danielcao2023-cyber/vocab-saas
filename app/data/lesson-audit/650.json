@@ -1,0 +1,347 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "498ea9669207c444dca0d462adf454f4003d1bb4e8bba8a4b261ec44185309ee",
+    "executedReviewPromptHash": "498ea9669207c444dca0d462adf454f4003d1bb4e8bba8a4b261ec44185309ee",
+    "reviewHash": "7610f94043b0369df758cbc92061bcad5bf84463d5878b1b2ef7d82cc8fd4718",
+    "wordId": 650,
+    "inputHash": "092b3b356aa9d6d5bc5f75a9176031d281360d123300dca354149f4898d8275d",
+    "draftHash": "d31f406ce81582c8101ab5ef711603f3369f58333884cd540c5626e652388a07",
+    "finalHash": "31edf44a84159cad29b4767881fc3ca7d99d6fae0dcd3640e6e218c92d185856",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/him#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.204Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116215,
+        "revisionId": 39764280,
+        "revisionTimestamp": "2026-08-03T04:47:41Z",
+        "sha256": "e175d0231be68f69c0458c6396242d157405031fdfc31c68f14ac672023327d7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/him",
+        "section": "him etymology",
+        "supports": [
+          "Old English case identity and later objective use"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.057781+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "ff0351a4f3d8a99b1f49fdd803a6727cee7406347fa897d777dd283dd7d8f526",
+        "summaryAndSupportsWordCount": 46,
+        "sha256": "ff0351a4f3d8a99b1f49fdd803a6727cee7406347fa897d777dd283dd7d8f526",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/650.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/him",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:03:00.104Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:14:54.490Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Oxford 正文未提供，Cambridge 获取失败，不能据此声称它们支持具体教学内容。应改用实际取回的法语维基词典英语词条，并清理无依据的来源关联；词源继续引用现有 Etymonline 来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway；/senses/0/meaning",
+        "message": "him 不限于指前文已经提到的男性，也可指现场或语境中明确的人，并可指已知为雄性的动物。原说明限制过窄。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "独立回答 Him. 不构成表示“他本人”的强调义；It's him. 等表语用法也很常见。应将这些用法归入同一核心指代义，补充例句，删除误立的强调义，并修正相关 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/headline；/confusions/0/items/0/note；/memoryAid",
+        "message": "不能用动作发出者和承受者直接判断 he、him。被动句的主语可以承受动作，ask him to do 中 him 所指的人又执行后面的动作。应明确按语法位置选择形式。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples；/senses/0/patterns",
+        "message": "建议补足间接宾语和 ask him to do 结构，说明 him 不仅表示动作直接作用的对象。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items",
+        "message": "现有 himself 例句只展示强调用法，未展示说明中提到的反身用法；应补充主语和宾语指同一人的具体例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "弱读说明过于笼统，宜明确自然连读中常见的 /h/ 省略及 /ɪm/ 读法。"
+      }
+    ],
+    "coverageAssessment": "已核对单一核心指代义及其主要语法功能：动词宾语、介词宾语、间接宾语、不定式结构，以及日常口语中的表语和独立回答。补充雄性动物的指代范围，不另造词义。he、him、himself 的拼写及现有重读音标正确；古英语与格到现代宾格的词源说明与已取回的 Etymonline 摘要相符，保留。可用词典正文直接支持基本宾格定义、读音及 himself 关系；细化语法与弱读补充依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "第三人称单数阳性宾格：指语境中明确的男性，也可指已知为雄性的动物；常作动词或介词的宾语",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留原有直接宾语和介词宾语例句，补充间接宾语、不定式结构及雄性动物指代，纠正必须在前文出现的限制。"
+      },
+      {
+        "sense": "同一指代义在日常口语中的表语和独立回答用法",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "补充 It's him. 与独立回答 Him. 的两个例句；不将其误列为“他本人”的独立词义或少见用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"him：动作落在“他”身上\"",
+        "valueJson": "\"him：作宾语的“他”，也用于日常指认\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"him 是 he 的宾格形式，常作动词或介词的宾语，指前文提到的一名男性。\"",
+        "valueJson": "\"him 是与 he 对应的宾格形式，通常表示“他”；常作动词或介词的宾语，日常口语中也用于 It's him. 和简短回答 Him.\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"弱读时元音可能变轻，但初学时读清 /hɪm/ 即可。\"",
+        "valueJson": "\"不重读且与前词连读时，him 常读作 /ɪm/，开头的 /h/ 可省去；需要强调时读清 /hɪm/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"作宾语，指“他”\"",
+        "valueJson": "\"指“他”：宾格及日常口语用法\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指前文已经提到的一名男性，放在动词或介词后，表示动作涉及的人或对象。\"",
+        "valueJson": "\"第三人称单数阳性代词的宾格，指语境中明确的一名男性，也可指已知为雄性的动物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"him 是宾格，通常不作句子主语。中文常把主语、宾语都译成“他”，英语要看句中位置来选 he 或 him。\"",
+        "valueJson": "\"所指对象不必先在前文出现，只要谈话双方清楚指谁即可。him 常作动词或介词的宾语；日常口语中也用于 It's him. 这类表语结构或独立回答。完整陈述句的主语通常用 he。中文都可译成“他”，英语要按语法位置选择形式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex9\",\"senseId\":\"s1\",\"en\":\"I gave him the spare key.\",\"zh\":\"我把备用钥匙给了他。\",\"note\":\"him 是 gave 的间接宾语，the spare key 是直接宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex10\",\"senseId\":\"s1\",\"en\":\"I asked him to close the window.\",\"zh\":\"我请他关上窗户。\",\"note\":\"him 是 asked 的宾语；关窗户的动作由 him 所指的人执行，不能因此把 him 改成 he。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex11\",\"senseId\":\"s1\",\"en\":\"Is that Ben at the door? — Yes, it's him.\",\"zh\":\"门口的那个人是本吗？——对，是他。\",\"note\":\"It's him. 是日常口语中常见的指认表达；him 作表语，不表示 himself 所表达的“他自己”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex3\",\"senseId\":\"s1\",\"en\":\"Who called? — Him.\",\"zh\":\"谁打来的？——他。\",\"note\":\"口语中的独立回答常用 him；完整回答可说 He called.，其中 He 是主语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex13\",\"senseId\":\"s1\",\"en\":\"Our dog Max was sick, so I took him to the vet.\",\"zh\":\"我们家的狗马克斯病了，我就带它去看了兽医。\",\"note\":\"这里已知 Max 是公狗，所以用 him；中文通常译为“它”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"give / send + him + something\",\"zh\":\"给／寄给他某物\",\"note\":\"him 是间接宾语，后面的事物是直接宾语；也可说 give/send something to him。不是所有动词都能这样接两个宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"ask / tell / want + him + to do something\",\"zh\":\"请／叫／想要他做某事\",\"note\":\"这类结构用 him，不用 he；后面接 to + 动词原形，him 所指的人执行后面的动作。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It's him. / Is it him?\",\"zh\":\"是他。／是他吗？\",\"note\":\"日常口语中常用 him 作表语来指认某人，不等于“他自己”。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s2\",\"title\":\"作强调成分，指“他本人”\",\"meaning\":\"在口语或非正式表达中，him 有时用于强调某个男性本人，或用作独立回答。\",\"note\":\"标准句子中作主语通常用 he；如 He did it himself.（是他自己做的。）强调“他自己”时常用 himself。\",\"example\":{\"id\":\"ex3\",\"senseId\":\"s2\",\"en\":\"Who called? — Him.\",\"zh\":\"谁打来的？——他。\",\"note\":\"简短口语回答中用宾格；完整回答可说 He called.\"},\"sourceIds\":[\"src-cambridge\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"he 执行动作或说明状态，通常位于谓语动词前。\"",
+        "valueJson": "\"he 是主格形式，通常作句子的主语。主语可以执行动作，也可以承受动作，如 He was invited.（他受邀了。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "\"s1\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"himself：动作回到主语本人\",\"note\":\"在这类直接反身结构中，主语和宾语是同一人，要用 himself，不能用 him 表达同一个意思。\",\"example\":{\"id\":\"ex12\",\"senseId\":\"s1\",\"en\":\"Tom cut himself while cooking.\",\"zh\":\"汤姆做饭时割伤了自己。\",\"note\":\"Tom 和 himself 指同一人；换成 him 就会指另一名男性。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "\"s1\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象座位表上写着 He sits here.（他坐在这里。）有人问“请给谁留座？”你指向他的座位说 Save a seat for him.（给他留个座位。）他坐在动作发出的位置时用 he；动作落到他身上或介词指向他时用 him。\"",
+        "valueJson": "\"想象座位表上写着 He sits here.（他坐在这里。）有人问“请给谁留座？”你指向他的座位说 Save a seat for him.（给他留个座位。）He 是 sits 的主语，him 是介词 for 的宾语；先看语法位置，再选形式。即使说 He was invited.（他受邀了。），他是动作的承受者，主语仍然用 he。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/label",
+        "expectedValueJson": "\"动作发出者\"",
+        "valueJson": "\"句子主语\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/label",
+        "expectedValueJson": "\"动作涉及的人\"",
+        "valueJson": "\"动词或介词的宾语\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: him\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/him\",\"supports\":[\"宾格用法\",\"与 he 的主宾格区别\",\"himself 相关形式\",\"例示常见语法位置\"],\"verification\":\"recommended\"},{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: him\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/him\",\"supports\":[\"人称代词宾格用法\",\"口语中的独立宾格回答\",\"him 与 himself 的用法区别\"],\"verification\":\"recommended\"},{\"id\":\"src-etymonline\",\"title\":\"Online Etymology Dictionary: him\",\"url\":\"https://www.etymonline.com/word/him\",\"supports\":[\"古英语 him 的历史用法\",\"由阳性宾格 hine 到现代 him 的演变\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：him（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/him#Anglais\",\"supports\":[\"英语第三人称单数阳性宾格代词\",\"读音 /hɪm/\",\"相关词 himself\"],\"verification\":\"recommended\"},{\"id\":\"src-etymonline\",\"title\":\"Online Etymology Dictionary: him\",\"url\":\"https://www.etymonline.com/word/him\",\"supports\":[\"古英语 him 的历史用法\",\"由阳性宾格 hine 到现代 him 的演变\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 650,
+    "headword": "him",
+    "meaning_zh": "pron. 他",
+    "phonetic": "/him/",
+    "pos": "",
+    "forms": []
+  }
+}

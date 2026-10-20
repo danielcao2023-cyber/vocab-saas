@@ -1,0 +1,184 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4a452444a2bf92769781d78594f5fc47388497d9b0e2d01d70a4571d7d7b7143",
+    "executedReviewPromptHash": "4a452444a2bf92769781d78594f5fc47388497d9b0e2d01d70a4571d7d7b7143",
+    "reviewHash": "d7a119a7ec47f4ad556dca51d69045d8df6849380297ad32353c408e92a516dd",
+    "wordId": 1385,
+    "inputHash": "308c6398a107d4fb7ff2e179044c3ee0efa89ac40c152e47293a59dc7af662f4",
+    "draftHash": "c874b775191697d1e6bfa77c761b695193ae34eafe06dae1a51db071ac875de9",
+    "finalHash": "f6c64519d103e7f8c344044b639b4410f3497d6cf662c1e1eb8a7a4c474d9106",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/teamwork#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.992Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2587414,
+        "revisionId": 39037968,
+        "revisionTimestamp": "2025-11-05T15:39:13Z",
+        "sha256": "da045e7371c9d82f747e8b4620e611dd55366453c50a1e2b41e647d34d65f009",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/teamwork",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:08:55.480Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:13:52.049Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 页面未取得正文，不能承担本课词义、不可数用法和读音的资料依据。应改引已取得的法语维基词典英语词条；法语是释义语言，词条本身属于英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠材料明确说明 team 与 work 的复合构词关系，应补上明确说明及同 URL 来源引用。两部分是并列构词成分，stages 保持为空，避免画成历史演变链。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar",
+        "message": "宜补充 team spirit 的语境区别，交代词典中“团队精神”这一释义侧面，同时避免把团队归属感与实际协作完全等同。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的不可数名词定义及“团队协作／团队精神”两个释义侧面，无须机械拆成两个独立义。现有两个原创英中例句自然，足以覆盖核心协作义；补充 team spirit 的区别后，精神层面的边界也更清楚。其余语法、搭配、翻译、拼写、读音、senseId及不可数说明可保留。词源依据仅支持复合构词，不扩展到首见年代或更早历史。",
+    "senseInventory": [
+      {
+        "sense": "不可数名词：团队合作、协力；可包含共同配合的团队精神",
+        "coveredBy": [
+          "teamwork-1"
+        ],
+        "assessment": "核心义已由释义和两个例句覆盖；词典的两个法语释义属于同一核心义的相关侧面。补充 team spirit 对照，说明 teamwork 侧重实际配合，team spirit 更强调团结、归属感与互相支持。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-teamwork\",\"title\":\"Cambridge Dictionary: teamwork\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/teamwork\",\"supports\":[\"词性与常用含义\",\"不可数名词用法\",\"英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-teamwork-en\",\"title\":\"Wiktionnaire：teamwork（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/teamwork#Anglais\",\"supports\":[\"英语名词及不可数用法\",\"团队协作与团队精神的释义侧面\",\"英式与美式发音\",\"由 team 与 work 复合而成\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-teamwork\"]",
+        "valueJson": "[\"wiktionary-teamwork-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-teamwork\"]",
+        "valueJson": "[\"wiktionary-teamwork-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-teamwork\"]",
+        "valueJson": "[\"wiktionary-teamwork-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中，teamwork 可看作 team（团队）和 work（工作、做事）连写而成，意思与“团队一起做事”相连。\"",
+        "valueJson": "\"teamwork 由英语 team（团队）和 work（工作）复合而成，表示团队成员共同配合做事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代构词，不能据此推断两个组成词各自更早的历史来源或该复合词的最早使用年代。\"",
+        "valueJson": "\"team 和 work 是两个构词成分，并不是先后演变的两个词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-teamwork-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"team spirit\",\"zh\":\"团队精神\",\"note\":\"强调成员的团结、归属感与互相支持；teamwork 更侧重共同完成任务时的实际配合。两者相关，但不能处处互换。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1385,
+    "headword": "teamwork",
+    "meaning_zh": "n. 协同作业, 协力",
+    "phonetic": "/'ti:mwә:k/",
+    "pos": "",
+    "forms": []
+  }
+}

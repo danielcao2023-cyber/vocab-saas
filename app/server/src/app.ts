@@ -15,12 +15,14 @@ import { isAllowed } from './net.ts';
 import { readVersion } from './version.ts';
 import { checkSpelling, practiceAllowed, nextCard, progress, review, setWrong, todaySummary, wrongSummary, wrongPractice } from './study.ts';
 import { pronunciationRoutes } from './pronunciation.ts';
+import { createLessonReader } from './lessons.ts';
 
-export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } = {}) {
+export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: string; lessonDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } = {}) {
   const now = opts.now ?? (() => new Date());
   const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
   const limiter = feedbackLimiter();
+  const readLesson = createLessonReader(opts.lessonDir);
   const replayed = (answerId: unknown) => typeof answerId === 'string' && !!answerId && !!db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId);
   if (opts.allow) {
     const allow = opts.allow;
@@ -70,6 +72,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   });
   app.get<{Params:{id:string}}>('/api/word/:id',async(req,reply)=>{try{return wordDetail(db,parseId(req.params.id))??reply.code(404).send({error:'word not found'});}catch(e){return sendError(reply,e);}});
   app.get<{Params:{id:string}}>('/api/word/:id/content',async(req,reply)=>{try{const id=parseId(req.params.id);if(!db.prepare('SELECT 1 FROM words WHERE id=?').get(id))return reply.code(404).send({error:'word not found'});return getContent(db,id);}catch(e){return sendError(reply,e);}});
+  app.get<{Params:{id:string}}>('/api/word/:id/lesson',async(req,reply)=>{try{const id=parseId(req.params.id);const word=db.prepare('SELECT id,headword FROM words WHERE id=?').get(id) as {id:number;headword:string}|undefined;if(!word)return reply.code(404).send({error:'word not found'});return readLesson(word);}catch(e){return sendError(reply,e);}});
   app.get<{Querystring:Record<string,string|undefined>}>('/api/browse',async(req,reply)=>{try{return browse(db,req.query);}catch(e){return sendError(reply,e);}});
   app.post<{Params:{contentId:string};Body:{reason:string}}>('/api/content/:contentId/feedback',async(req,reply)=>{const t=now(),limited=limiter.check(t);if(limited)return reply.code(429).send({error:LIMIT_ERRORS[limited],scope:limited});try{const r=contentFeedback(db,parseId(req.params.contentId,'content id'),req.body?.reason,t);limiter.hid(t);return r;}catch(e){return sendError(reply,e);}});
   app.get('/api/progress', async () => ({ lists: progress(db), curriculum: curriculumProgress(db) }));

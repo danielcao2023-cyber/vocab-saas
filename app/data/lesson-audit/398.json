@@ -1,0 +1,513 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8e362f777fb0f3002125f7ad6612de17cd7d844f99f0d6a2acc76483b9b4541b",
+    "executedReviewPromptHash": "8e362f777fb0f3002125f7ad6612de17cd7d844f99f0d6a2acc76483b9b4541b",
+    "reviewHash": "f572934804039668cd7217a182c5462db446f412bfee85ed3f6b0e798f505797",
+    "wordId": 398,
+    "inputHash": "9503e441d4fa34d65d78953042032e73be37b05054550d4e9a0f33bd4c17dd48",
+    "draftHash": "6126828d8b97666c69736a326ad1da7b00c0b519f5345a4234e90810642b3529",
+    "finalHash": "b884cf82549f055924bdd234403c8e2cc59141cffb80cfed4091eac8095e34a6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/doctor#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:33.245Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 64156,
+        "revisionId": 39869311,
+        "revisionTimestamp": "2026-09-10T08:05:11Z",
+        "sha256": "94a051dccfabf16b450f0a8b94bd6805b937ff1ffeb277f793df738fe00f5ac8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/doctor",
+        "section": "doctor etymology",
+        "supports": [
+          "Latin teacher and docere",
+          "Scholarly and degree uses",
+          "Gradual medical sense"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "438968803b532b153159830cb1e4e0b5d59df143ee3bd7e5b76bbe82c66e2af3",
+        "summaryAndSupportsWordCount": 74,
+        "sha256": "438968803b532b153159830cb1e4e0b5d59df143ee3bd7e5b76bbe82c66e2af3",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/398.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/doctor",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:49:41.377Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:55:30.483Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /confusions; /wordFamily",
+        "message": "13个例句对象缺少结构要求的 note 字段，需补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各 sourceIds",
+        "message": "Oxford 不在实际取得的材料中，Cambridge 明确不可用。改引已取得的法语维基词典英语词条；没有对应来源支持的词族说明清空来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原词条的“不及物：行医”“授予博士学位”，以及英语词典材料中的“掺入有害物质、下毒”。“修改”还应补充非造假的 doctor up 加工改进用法，并标明使用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/meaning; /senses/3/usageNote",
+        "message": "应明确医疗动词用法较少见；treat patients 是治疗者的行为，see a doctor 是病人的就医行为，不能作为同一位置的替换项。doctor 也不专指 diagnose 所表示的诊断。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1",
+        "message": "仅凭 Dr. Patel 讲太空科学，不能确定此处是博士称号而非医生称号。需加入明确的博士学位背景。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "“PhD 指学位”的概括过窄，也与前面的中文释义不一致。PhD 还可指该学位获得者；它不限于哲学专业，也不涵盖所有博士学位。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例实际使用的是名词 doctor 和动词 treated，不能直接示范所标注的 doctor-v2。应换成确实使用医疗动词 doctor 的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation; /forms/0/ipa",
+        "message": "英音词尾 r 的标示前后不一致；“通常不明显”也未准确说明非卷舌英音的发音规律。应说明通常不读及元音前连读，并去掉对旧式音标的笼统贬评。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "physician 不只是比 doctor 正式；英式用法中常特指内科医生，应补充地域及范围限制。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/summary",
+        "message": "Doctor 的大写主要取决于头衔或直接称呼功能，不能只强调句首；同时可交代 Dr. 与 Dr 的常见英美书写差别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "“法语及中世纪拉丁语”阶段的 meaning 只是“来源形式”的占位说明，也未分别落实历史词形。删去该阶段，在 summary 保留有依据的转借概述。"
+      }
+    ],
+    "coverageAssessment": "已核对医生、博士及称呼、医疗治疗、篡改、不及物行医、授予博士学位、掺入有害物质，以及 doctor up 的加工改进用法。保留四组主释义各两个例句，补充遗漏的低频义，并修正称号歧义、词义边界、来源引用及结构缺项。词源保留实际材料支持的概述，不补造中间阶段。局限是罕见授学位旧用及部分现代构词、口语说明依据原词条和专业语言知识，未另行核验网页。",
+    "senseInventory": [
+      {
+        "sense": "名词：医生、医师",
+        "coveredBy": [
+          "doctor-n1"
+        ],
+        "assessment": "已有两个具体生活例句；保留，并补充 physician 的英美使用范围。"
+      },
+      {
+        "sense": "名词：博士、博士学位获得者；相应头衔",
+        "coveredBy": [
+          "doctor-n2"
+        ],
+        "assessment": "已有两个例句；第二例补充明确的博士学位背景，并纠正 PhD 的范围说明。"
+      },
+      {
+        "sense": "及物动词：给人治病、提供医疗照护",
+        "coveredBy": [
+          "doctor-v2"
+        ],
+        "assessment": "已有两个例句；明确属于较少见的动词用法，不把 doctor 与 diagnose 或 see a doctor 简单等同。"
+      },
+      {
+        "sense": "及物动词：篡改、伪造文件、照片或数据",
+        "coveredBy": [
+          "doctor-v1"
+        ],
+        "assessment": "两个例句均覆盖目标义；alter、tamper with 及鉴真行为的语境限制基本合理。"
+      },
+      {
+        "sense": "不及物动词：行医",
+        "coveredBy": [
+          "doctor-v4"
+        ],
+        "assessment": "初稿未明确展示无宾语用法；补入低频义，并提供现代常用的 practise/practice medicine。"
+      },
+      {
+        "sense": "及物动词：授予博士学位或头衔",
+        "coveredBy": [
+          "doctor-v5"
+        ],
+        "assessment": "初稿遗漏原词条此义；补为罕见旧用，仅供识别。"
+      },
+      {
+        "sense": "及物动词：掺入有害物质、下毒",
+        "coveredBy": [
+          "doctor-v3"
+        ],
+        "assessment": "初稿遗漏已取得英语词条中的此义；补入低频义，区分于篡改资料。"
+      },
+      {
+        "sense": "动词：稍作加工、调味或改进，常用 doctor something up",
+        "coveredBy": [
+          "doctor-v6"
+        ],
+        "assessment": "补充“修改”的非造假用法，避免把所有 doctor 动词用法都理解成欺骗。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"doctor 最常见是名词，指医生；也可指拥有博士学位的人。作动词时，常表示“篡改、伪造”，另有“诊治”的用法。\"",
+        "valueJson": "\"doctor 最常见是名词，指医生；也可指拥有博士学位的人。作动词时，常表示“篡改、伪造”，另有较少用的“诊治、行医”等用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/ipa",
+        "expectedValueJson": "\"/ˈdɒk.tər/（英）；/ˈdɑːk.tɚ/（美）\"",
+        "valueJson": "\"/ˈdɒk.tə(ɹ)/（英）；/ˈdɑːk.tɚ/（美）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英音词尾 r 通常不明显；美音会读出词尾 r。\"",
+        "valueJson": "\"多数英式口音在单独读词或后接辅音时不读词尾 r，后接元音时可连读 /ɹ/；美式英语通常读出词尾 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不够准确；英音常标 /ˈdɒk.tə/，美音常标 /ˈdɑːk.tɚ/。\"",
+        "valueJson": "\"第二音节不重读：英音通常读 /tə/，美音通常读 /tɚ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/ipa",
+        "expectedValueJson": "\"/ˈdɒk.tər/；/ˈdɑːk.tɚ/\"",
+        "valueJson": "\"/ˈdɒk.tə/；/ˈdɑːk.tɚ/\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"take someone to the doctor 表示带某人去看医生。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tell someone to do something 表示告诉或嘱咐某人做某事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"较正式，常见于书面语；日常交流中 doctor 更普遍。\"",
+        "valueJson": "\"较正式；美式英语中常泛指医生，英式英语中常特指内科医生，与 surgeon（外科医生）相区别。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"doctor 是日常说法；physician 较正式，尤其常用于职业或医疗语境。\"",
+        "valueJson": "\"doctor 是日常通用说法；physician 较正式，指称范围还要结合英美用法判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctor of history 指历史学博士；这里的 doctor 不是“医生”的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"doctor-n2-ex2\",\"senseId\":\"doctor-n2\",\"en\":\"Dr. Patel gave a talk about space science.\",\"zh\":\"帕特尔博士作了一场关于太空科学的讲座。\",\"note\":\"这里 Dr. 是 Doctor 的缩写，读作 Doctor。\"}",
+        "valueJson": "{\"id\":\"doctor-n2-ex2\",\"senseId\":\"doctor-n2\",\"en\":\"Our history lecturer, Dr. Patel, earned her doctorate ten years ago.\",\"zh\":\"我们的历史课讲师帕特尔博士十年前获得了博士学位。\",\"note\":\"Dr. 读作 Doctor；本句明确交代博士学位，因此这里是学术头衔。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"of 后接学科，说明博士研究或专长的领域。\"",
+        "valueJson": "\"of 后接学科，说明博士学位所属领域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"PhD\",\"zh\":\"博士；哲学博士学位\",\"note\":\"常指研究型博士学位；不是所有博士学位都叫 PhD。\"}",
+        "valueJson": "{\"en\":\"PhD\",\"zh\":\"哲学博士学位；该学位获得者\",\"note\":\"即 Doctor of Philosophy，可授予多种学科，并不限于哲学专业；也可指该学位获得者，不涵盖所有类型的博士学位。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"doctor 指人；doctoral degree 或 PhD 指学位。\"",
+        "valueJson": "\"doctor 在本义中指人；doctoral degree 指博士学位；PhD 可指一种博士学位，也可指其获得者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctored 是动词过去式，宾语 the photo 表明这里指篡改照片。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"for 后用 doctoring；宾语 test results 表明这里指篡改检测结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"作为医生为某人检查或治疗疾病。\"",
+        "valueJson": "\"给人治病、提供医疗照护；这里的 doctor 不专指判断病因或疾病种类的“诊断”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"作此义时通常是及物动词，后接病人；日常表达中常用 treat 或 see a doctor。\"",
+        "valueJson": "\"这是较少见的及物动词用法，后面直接接病人。现代日常表达中，医生“治疗病人”通常说 treat patients；病人“去看医生”说 see a doctor。若强调诊断患了何种疾病，应使用 diagnose。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctored 后直接接受伤的球员，表示给予治疗；现代日常表达更常用 treated。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctor patients 是给病人治病；这是较少见的说法，普通叙述更常用 treat patients。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"doctor-v3\",\"title\":\"掺入有害物质；下毒\",\"meaning\":\"暗中在食物、饮料或其他物品中加入有害物质。\",\"note\":\"可用 doctor something with a substance，说明掺入了什么；这里与篡改文件的意思不同。\",\"example\":{\"id\":\"doctor-v3-ex1\",\"senseId\":\"doctor-v3\",\"en\":\"The detective suspected that someone had doctored the wine with poison.\",\"zh\":\"侦探怀疑有人往酒里下了毒。\",\"note\":\"with poison 说明加入的是毒物；had doctored 表示下毒发生在侦探产生怀疑之前。\"},\"sourceIds\":[\"fr-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"doctor-v4\",\"title\":\"行医（不及物，较少用）\",\"meaning\":\"从事医生的工作，为人治病。\",\"note\":\"doctor 在此不带病人宾语；现代通常说 practise medicine（英式）或 practice medicine（美式）。\",\"example\":{\"id\":\"doctor-v4-ex1\",\"senseId\":\"doctor-v4\",\"en\":\"He doctored in a small town for thirty years.\",\"zh\":\"他在一个小镇上行医了三十年。\",\"note\":\"doctor 后没有直接宾语；in a small town 说明行医地点。这种动词用法较少见。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"doctor-v5\",\"title\":\"授予博士学位或头衔（罕见旧用）\",\"meaning\":\"授予某人博士学位或博士头衔。\",\"note\":\"仅作旧用识别；现代通常说 award someone a doctorate 或 confer a doctorate on someone。\",\"example\":{\"id\":\"doctor-v5-ex1\",\"senseId\":\"doctor-v5\",\"en\":\"The university doctored him in divinity.\",\"zh\":\"大学授予他神学博士学位。\",\"note\":\"这是旧式学位授予语境；现代通常说 The university awarded him a doctorate in divinity。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"doctor-v6\",\"title\":\"稍作加工、调味或改进（常用 doctor up）\",\"meaning\":\"对食物等作些添加或调整，使味道或效果更好，不一定带有造假意味。\",\"note\":\"非正式用法，常见形式为 doctor something up；需结合宾语区分调味改进与篡改。\",\"example\":{\"id\":\"doctor-v6-ex1\",\"senseId\":\"doctor-v6\",\"en\":\"She doctored up the soup with a little cream.\",\"zh\":\"她加了一点奶油，把汤调得更好喝。\",\"note\":\"doctor up the soup 在此表示加工调味，不表示篡改资料或下毒。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctored 的宾语是 the photo，因此这里指篡改照片。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"doctor-confusion-1-ex2\",\"senseId\":\"doctor-v2\",\"en\":\"The doctor treated the child for a bad cough.\",\"zh\":\"医生为这个咳嗽严重的孩子进行了治疗。\",\"note\":\"此句用更常见的 treat 表达“治疗”。\"}",
+        "valueJson": "{\"id\":\"doctor-confusion-1-ex2\",\"senseId\":\"doctor-v2\",\"en\":\"During the war, she doctored wounded soldiers.\",\"zh\":\"战争期间，她为伤兵提供治疗。\",\"note\":\"doctored 后接 wounded soldiers，表示治疗；这一用法较少见，现代日常英语通常用 treated。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"句首称呼 Doctor 常大写；普通名词 doctor 通常小写。Dr. 是 Doctor 的书面缩写，朗读时读作 Doctor。\"",
+        "valueJson": "\"Doctor 用作姓名前的头衔或直接称呼时首字母大写；普通名词 doctor 通常小写。Dr.（美式常见）或 Dr（英式常见）是 Doctor 的书面缩写，朗读时读作 Doctor。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Doctor 是 Chen 姓名前的头衔，因此首字母大写。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctor 是普通可数名词，用小写；about that rash 说明就医原因。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"fr-wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"法语及中世纪拉丁语\",\"form\":\"doctor\",\"meaning\":\"传入英语的来源形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"work toward a doctorate 表示攻读博士学位；doctorate 指学位，不指获得学位的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"doctoral 是形容词，在这里修饰 research。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"of 后的 doctoring 作名词使用，表示篡改这一行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: doctor\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/doctor\",\"supports\":[\"doctor 的名词和动词用法\",\"常见搭配与词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr-wiktionary\",\"title\":\"Wiktionnaire（法语维基词典）：英语 doctor 词条\",\"url\":\"https://fr.wiktionary.org/wiki/doctor#Anglais\",\"supports\":[\"doctor 的医生、博士两个名词义\",\"动词治疗、篡改及掺入有害物质的用法\",\"英美发音及规则屈折形式\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: doctor\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/doctor\",\"supports\":[\"英美发音\",\"医生与博士的常见名词义\",\"动词及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 398,
+    "headword": "doctor",
+    "meaning_zh": "n. 医生, 博士\nvt. 授以博士学位, 诊断, 修改\nvi. 行医",
+    "phonetic": "/'dɒktә/",
+    "pos": "",
+    "forms": []
+  }
+}

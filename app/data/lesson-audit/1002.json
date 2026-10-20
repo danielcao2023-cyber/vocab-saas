@@ -1,0 +1,289 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "196544de40499c58489b4c6d64999a5128945250c12d359867cac7844e41217e",
+    "executedReviewPromptHash": "196544de40499c58489b4c6d64999a5128945250c12d359867cac7844e41217e",
+    "reviewHash": "080f8499c0f28025c7d7312396816692fec90ef9f16cd3bbb507b11f72a3579c",
+    "wordId": 1002,
+    "inputHash": "1f6981244115186808b3c297032cf23aacc46b3ce8126e816d5c39c8ff3fd8f5",
+    "draftHash": "3808f445c9b60c50854412762027a023e7bca2ad70fab97f5a667f15d8ac47f1",
+    "finalHash": "a523628a4df17348f20de3f5933877200903b764449f0c88a5279b229ece7446",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/penguin#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.980Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 60,
+        "revisionId": 39191714,
+        "revisionTimestamp": "2025-12-23T09:17:44Z",
+        "sha256": "46c0e02133b05a02f1fa9f4b42fece2dddcec9741555c971b23df72444f984fb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/penguin",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:35:43.162Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:45:34.503Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了已取得词典中的“大海雀”古义，以及原始词条列出的“空军地勤人员”俚语义。两者均应作为非核心义补入，不必把常用“企鹅”义拆开。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds; /senses/0/sourceIds; /confusions; /sources",
+        "message": "Cambridge 未取得词条正文，不能作为本次释义和发音审核的实际依据。相关引用应改用已取得的英语词条，并删除 Cambridge 支持记录。空军俚语义不冒用维基词典作来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway; /confusions/0",
+        "message": "不加时代限制地排除 penguin 的北半球海鸟义，与词典所载“大海雀”古义冲突。应明确现代常用义与历史用法的区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline",
+        "message": "penguin 与中文“企鹅”在此没有所称的“叫法差别”；来源中的假朋友提示针对法语 pingouin。标题应直接突出英语学习内容。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“不送气过强”容易让中文学习者压掉词首重读 /p/ 的正常送气，宜正面说明通常送气。现有 /e/ 与 /ɛ/ 的标注差异不构成读音错误，无须统一替换。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning",
+        "message": "分布宜写“主要分布于南半球”，避免把典型分布表述成严格的地理边界。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "原稿对上位词和鸟类区别的说明本身正确，但把这些词放进近义、反向列表，且 auk 两处重复，容易混淆词义关系。具体动物名称无须强配同义词或反义词，可将关系保留在说明中。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily; /wordFamilyNote",
+        "message": "来源明列透明派生形式 penguinlike。可保留这一项作构词拓展，解释 penguin + -like 的实际拼写；原稿将适合学习的透明派生词全部排除，措辞过强。"
+      }
+    ],
+    "coverageAssessment": "已核对原始词条及法语维基词典中的英语词条。常用“企鹅”义已有两条自然、对应准确的英中例句，单复数、主要搭配和例句语法正确，无须拆义。补入“大海雀”古义和“空军地勤人员”俚语义；后者依据原始词条及专业语言知识，不标作维基词典支持。词源的两种并列推测处理正确，stages 留空恰当。Cambridge 正文不可用，已移除其支持归属；未补写空军俚语无法据此确定的具体地域或年代。",
+    "senseInventory": [
+      {
+        "sense": "名词：企鹅，现代常用动物义",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义覆盖完整，保留两条原创英中例句；仅调整地理分布的精确度及相关词的呈现。"
+      },
+      {
+        "sense": "名词古义：大海雀，Pinguinus impennis",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，注明历史用法及现代名称 great auk，并修正正文中的绝对排除说法。"
+      },
+      {
+        "sense": "名词俚语：空军地勤人员、不担任飞行任务的空军人员",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原始词条列出但原稿遗漏；补入 lessCommonSenses，限定为空军中的少见戏称，并提供通用表达 ground crew、ground personnel。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"认识企鹅，也留意英汉“penguin / 企鹅”的叫法差别\"",
+        "valueJson": "\"penguin：企鹅的读音、单复数与常见用法\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"penguin 通常指企鹅这种不会飞、善于游泳的鸟；在英语中，它不指北半球的海雀。\"",
+        "valueJson": "\"现代常用英语中，penguin 指企鹅这种不会飞、善于游泳的鸟；海雀称为 auk，大海雀通常称为 great auk。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头的 /p/ 不送气过强；中间是 /ŋɡw/，不要漏掉 /ɡ/。\"",
+        "valueJson": "\"词首重读音节中的 /p/ 通常送气；中间的 /ŋɡw/ 要连贯读出，不要漏掉 /ɡ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"企鹅：生活在南半球的海鸟，翅膀适合游泳，不能飞。\"",
+        "valueJson": "\"企鹅：主要分布于南半球的海鸟，翅膀适合游泳，不能飞。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"seabird\",\"zh\":\"海鸟\",\"note\":\"范围更广，指生活或觅食于海边、海上的鸟；penguin 是其中一种。\"},{\"en\":\"auk\",\"zh\":\"海雀\",\"note\":\"外形可能让人联想到企鹅，但属于不同鸟类，主要生活在北半球。\"}],\"contrasting\":[{\"en\":\"flying bird\",\"zh\":\"会飞的鸟\",\"note\":\"仅在描述飞行能力时形成对照；企鹅不会飞，但它仍然是鸟。\"},{\"en\":\"auk\",\"zh\":\"海雀\",\"note\":\"在动物种类上与企鹅相区别；不能把中文“企鹅”与英文 auk 对应。\"}],\"similarNote\":\"seabird 是上位词；auk 是另一类海鸟，不能当作 penguin 的同义词。\",\"contrastingNote\":\"这里只对照是否会飞或鸟类类别，不是说企鹅与鸟相反；企鹅本身就是鸟。\"}",
+        "valueJson": "{\"similar\":[],\"contrasting\":[],\"similarNote\":\"penguin 的现代动物义没有可直接替换的常用同义词。seabird（海鸟）是上位词；auk（海雀）是另一类海鸟。\",\"contrastingNote\":\"具体动物名称 penguin 没有常用反义词；flying bird（会飞的鸟）只是在飞行能力上的对照，auk 也不是反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2\",\"title\":\"（古义）大海雀\",\"meaning\":\"大海雀，一种现已灭绝的北半球海鸟，学名 Pinguinus impennis。\",\"note\":\"这是见于16世纪英语的旧义；现代通常称 great auk。旧文献中的 penguin 是否用此义，要结合上下文判断。\",\"example\":{\"id\":\"s2e1\",\"senseId\":\"s2\",\"en\":\"The word penguin once referred to the great auk.\",\"zh\":\"penguin 这个词曾经指大海雀。\",\"note\":\"这句话说明历史词义，不表示现代 penguin 与 great auk 可以任意互换。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"（空军俚语）地勤人员\",\"meaning\":\"空军中不担任飞行任务的人员，常指地勤人员。\",\"note\":\"少见且带戏称色彩；一般介绍职业时用 ground crew 或 ground personnel，不把 penguin 当作通用的职务称呼。\",\"example\":{\"id\":\"s3e1\",\"senseId\":\"s3\",\"en\":\"At the airbase, the pilots jokingly called the ground crew 'penguins'.\",\"zh\":\"在空军基地，飞行员开玩笑地把地勤人员叫作“企鹅”。\",\"note\":\"这里的 penguins 指空军地勤人员，体现内部戏称，不是正式职业名称。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"penguin 和 auk 不是同一种鸟\"",
+        "valueJson": "\"现代常用义中，penguin 与 auk 要分清\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"中文“企鹅”对应 penguin；auk 指北半球的海雀。外形相似不代表是同一种动物。\"",
+        "valueJson": "\"现代常用英语中，penguin 指企鹅，auk 指海雀。旧文献中的 penguin 还可能指已灭绝的大海雀，现代通常称 great auk。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"auk 不等于 penguin。\"",
+        "valueJson": "\"在现代常用义中，auk 指海雀，penguin 指企鹅。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到“企鹅”要用 penguin；不要因外形相像而把 auk 当作英文翻译。\"",
+        "valueJson": "\"现代英语说“企鹅”用 penguin，说“海雀”用 auk，说“大海雀”通常用 great auk。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"wiktionary\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"penguinlike\",\"partOfSpeech\":\"adjective\",\"meaning\":\"像企鹅的；有企鹅特征的\",\"formation\":\"由 penguin 加后缀 -like（像……的）构成。\",\"spellingNote\":\"在 penguin 后直接接 like，拼作 penguinlike；不删字母，也不双写。\",\"example\":{\"id\":\"w1e1\",\"senseId\":\"s1\",\"en\":\"He took small, penguinlike steps on the ice.\",\"zh\":\"他在冰上像企鹅一样迈着小步。\",\"note\":\"penguinlike 作形容词修饰 steps，描述步态像企鹅。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课采用的常见用法中，没有适合初中生掌握的透明派生词；emperor penguin 等是名称组合，不是 penguin 的派生词。\"",
+        "valueJson": "\"先掌握 penguin 和 penguins，再把 penguinlike 当作构词拓展；emperor penguin 等是物种名称组合，不是 penguin 的派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"词源的并列推测\",\"企鹅与海雀的区别提示\"]",
+        "valueJson": "[\"现代‘企鹅’义及规则复数\",\"词条所列发音\",\"‘大海雀’古义\",\"词源的两种并列推测\",\"企鹅与海雀名称的区别提示\",\"派生形式 penguinlike\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: penguin\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/penguin\",\"supports\":[\"常用名词义及单复数\",\"发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1002,
+    "headword": "penguin",
+    "meaning_zh": "n. 企鹅, 空军地勤人员",
+    "phonetic": "/'pengwin/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,307 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9519f918056fb2039a29a0f92437ce25d8fe4e188f30b52014c4ba56d095ba78",
+    "executedReviewPromptHash": "9519f918056fb2039a29a0f92437ce25d8fe4e188f30b52014c4ba56d095ba78",
+    "reviewHash": "941a63a90f7831fc753e708e8ac5fa3f51220d69779a2d834d4a898fc5a5b1d7",
+    "wordId": 1295,
+    "inputHash": "49457d36964d18b9f4dc03979e5a7d785e51f4bf4e65fc702be06f78bdccd622",
+    "draftHash": "e7b1527e8d8ee94e9f3c738e27e970c7d80c26b37658654f2f85f6c9373e240d",
+    "finalHash": "bf9f8c1dee8abac1c06a5f0456db37a1a38a5fc00cb3260d6bd37f3542c081bd",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/song#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.326Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 23202,
+        "revisionId": 38319542,
+        "revisionTimestamp": "2025-06-11T00:16:28Z",
+        "sha256": "7c90a6b780fd9a5b9aac12c797667ea3770026fb53aae00578067cd19bb32097",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/song",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:30:01.309Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:42:26.474Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的不可数义“歌唱；歌声”，如 burst into song。现有辨析还把 song 笼统说成可数名词，并把适用范围限定为歌曲和动物鸣声，须一起修正。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可简列原词条释义中的文学“诗歌”义，说明它不能泛指所有诗；同时补充实际来源列出的 for a song，并明确这是固定表达的整体意义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "summary 中“分别”的对应顺序把 song 与 sing 的词性意义说反了；已有可用的动词派生词源材料，却未引用。caveat 还包含制作过程说明。应保留可证实的历史关系，不补造历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "“加 -er 后……再加 -er”重复了添加步骤，容易导向 singerer。应明确 sing + -er → singer。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 未包含在实际来源材料中，Cambridge 正文未获取，不能承担现有事实支撑。须改引已获取的法语维基词典英语词条，并清理所有旧来源引用；该条目的描述语言是法语，词的语言仍是英语。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对实际词典的歌曲、鸟鸣、部分昆虫鸣声三项定义。鸟与昆虫共用一个鸣唱义且各有例句，合并合理。补齐常用不可数“歌唱；歌声”义及两个例句，并简列文学“诗”义和价格习语。原有英中例句、英美读音、复数及近义比较基本正确，保留。历史说明仅采用已获取词源材料支持的动词派生关系；其他补充依据专业语言知识，不冒称获得 Oxford 或 Cambridge 正文支持。",
+    "senseInventory": [
+      {
+        "sense": "歌曲；一首歌",
+        "coveredBy": [
+          "song-n1"
+        ],
+        "assessment": "实际词典的音乐义。两个原创例句覆盖自然，搭配及近义表达限制基本准确。"
+      },
+      {
+        "sense": "鸟的鸣唱",
+        "coveredBy": [
+          "song-n2"
+        ],
+        "assessment": "实际词典单列的定义；现有鸟鸣例句覆盖，与昆虫鸣唱合并教学合理。"
+      },
+      {
+        "sense": "某些昆虫的鸣声",
+        "coveredBy": [
+          "song-n2"
+        ],
+        "assessment": "实际词典单列的定义；蟋蟀例句已实际覆盖，并未仅用鸟鸣例句代替。"
+      },
+      {
+        "sense": "歌唱；歌声（不可数）",
+        "coveredBy": [
+          "song-n3"
+        ],
+        "assessment": "原词条中文释义与常用英语用法涉及这一功能。初稿遗漏，补丁新增核心义、两个例句及不可数用法说明。"
+      },
+      {
+        "sense": "诗；抒情诗（文学用法）",
+        "coveredBy": [
+          "song-n4"
+        ],
+        "assessment": "原词条中文释义包含“诗歌”。非初中核心义，补丁仅作低频拓展，并限制文学语境。"
+      },
+      {
+        "sense": "for a song：以很低的价格",
+        "coveredBy": [
+          "song-idiom-for-a-song"
+        ],
+        "assessment": "实际来源列出该固定表达，其意义可据专业语言知识补充；须整体理解，不能把裸词 song 直接解释为“便宜”。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"song 最常指有旋律、可以唱的一首歌；也可指鸟或昆虫发出的有节奏的声音。\"",
+        "valueJson": "\"song 最常指一首歌曲；也可作不可数名词表示歌唱或歌声，如 burst into song（突然开始唱歌），还可指鸟或某些昆虫的鸣唱。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"song-n3\",\"title\":\"歌唱；歌声（不可数）\",\"meaning\":\"泛指歌唱这一活动，或歌唱发出的声音。\",\"usageNote\":\"这一义通常不可数，不加 a，也不表示歌曲的首数。常见于 burst into song（突然开始唱歌）和 in song（以歌唱的形式）。\",\"examples\":[{\"id\":\"song-n3-ex1\",\"senseId\":\"song-n3\",\"en\":\"The children burst into song when the birthday cake arrived.\",\"zh\":\"生日蛋糕一端上来，孩子们就放声唱了起来。\",\"note\":\"burst into song 表示突然开始唱歌，这里的 song 不加 a。\"},{\"id\":\"song-n3-ex2\",\"senseId\":\"song-n3\",\"en\":\"The hall was filled with song as everyone joined in.\",\"zh\":\"大家都跟着唱起来，大厅里充满了歌声。\",\"note\":\"song 泛指歌声，没有说明唱了多少首歌。\"}],\"patterns\":[{\"en\":\"burst into song\",\"zh\":\"突然开始唱歌\",\"note\":\"固定表达；into 后的 song 表示歌唱，不加冠词。\",\"kind\":\"fixed-expression\"},{\"en\":\"in song\",\"zh\":\"以歌唱的形式；用歌声\",\"note\":\"如 tell a story in song，表示用歌唱的形式讲故事。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"laughter and song\",\"zh\":\"笑声和歌声\",\"note\":\"可用于描写聚会等场景；song 在这里不可数。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"singing\",\"zh\":\"歌唱；歌声\",\"note\":\"通常更直接地表示歌唱活动或歌声；song 的这一义常见于 burst into song 等搭配。\"}],\"contrasting\":[],\"similarNote\":\"singing 与不可数的 song 都可表示歌唱或歌声，但各自的常见搭配不同。\",\"contrastingNote\":\"这一义没有常用的否定派生词；要表达停止歌唱，可说 stop singing。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"song-n4\",\"title\":\"诗；抒情诗（文学用法）\",\"meaning\":\"在文学语境中，可指适合吟唱或形式像歌曲的诗，尤其是抒情诗。\",\"note\":\"日常说“一首诗”通常用 poem；song 的这一义带有文学色彩，不能泛指所有诗。\",\"example\":{\"id\":\"song-n4-ex1\",\"senseId\":\"song-n4\",\"en\":\"The poet's latest collection includes a short song in praise of summer.\",\"zh\":\"这位诗人的最新诗集收录了一首赞美夏天的短诗。\",\"note\":\"在诗集这一文学语境中，song 指抒情诗，不一定已有配乐。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"song-idiom-for-a-song\",\"title\":\"for a song：以极低的价格\",\"meaning\":\"花很少的钱；以很便宜的价格。\",\"note\":\"这是固定表达的整体意义。常说 buy/get something for a song，也可说 something goes for a song，表示某物卖得非常便宜。\",\"example\":{\"id\":\"song-for-a-song-ex1\",\"senseId\":\"song-idiom-for-a-song\",\"en\":\"I bought this second-hand desk for a song.\",\"zh\":\"我花很少的钱买下了这张二手书桌。\",\"note\":\"for a song 表示价格很低，与实际唱歌无关；单独的 song 不表示“便宜”。\"},\"sourceIds\":[\"wiktionary_song\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"可数，通常说 a song 或 two songs。\"",
+        "valueJson": "\"指一首首歌曲时可数，如 a song、two songs；泛指歌唱或歌声时通常不可数，如 burst into song。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 sing 是做的动作，song 是唱出来的作品；不能把 I like song 当作“我喜欢唱歌”。\"",
+        "valueJson": "\"sing 是动词，表示唱；song 是名词，可指歌曲，也可泛指歌唱或歌声。“我喜欢唱歌”通常说 I like singing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"sound 是范围很广的“声音”；song 在音乐语境中指歌曲，在动物语境中指有节奏的鸣声。\"",
+        "valueJson": "\"sound 泛指声音；song 可指歌曲、歌唱或歌声，也可指鸟或某些昆虫的鸣唱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"只有在歌曲或有旋律的鸣声语境中才用 song；一般声响用 sound。\"",
+        "valueJson": "\"song 用于歌曲、歌唱或鸟虫鸣唱等特定含义；泛指听到的声音时用 sound。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"song 与动词 sing（唱）同族，现代英语中分别表示“唱的动作”和“唱出来的歌”。历史上 song 是从 sing 派生的名词。\"",
+        "valueJson": "\"song 与 sing（唱）有历史上的词源联系，是由表示“唱”的动词派生的名词。现代英语中，song 是名词，sing 是动词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代词义联系；目前不据此补写更早的历史形式或年代。\"",
+        "valueJson": "\"不要把 sing 的 i 换成 o 当作通用构词规则；song 也不是 sing 的过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"加 -er 后保留 sing 的拼写，再加 -er。\"",
+        "valueJson": "\"sing + -er → singer，直接在 sing 后加 -er，不双写 g。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_song\",\"title\":\"Oxford Learner’s Dictionaries: song\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/song\",\"supports\":[\"song 的名词用法与常见搭配\",\"sing 与 song 的区别及 song 的构词关系\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_song\",\"title\":\"Cambridge Dictionary: song\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/song\",\"supports\":[\"song 表示歌曲及鸟、昆虫鸣声的常见用法\",\"song 与 sound、tune 等近义表达的区别\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_song\",\"title\":\"Wiktionnaire：song（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/song#Anglais\",\"supports\":[\"song 的歌曲义、鸟鸣义及部分昆虫鸣声义\",\"英音读音及美音的元音变体\",\"song 与 sing 的动词派生词源关系\",\"birdsong、songwriter、for a song 等相关词语的列举\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_song\"]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_song\",\"cambridge_song\"]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_song\",\"cambridge_song\"]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_song\"]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_song\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_song\"]",
+        "valueJson": "[\"wiktionary_song\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_song\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_song\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1295,
+    "headword": "song",
+    "meaning_zh": "n. 歌, 曲, 鸣声, 歌唱, 歌曲, 诗歌",
+    "phonetic": "/sɒŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

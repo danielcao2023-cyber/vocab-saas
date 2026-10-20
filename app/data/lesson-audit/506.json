@@ -1,0 +1,521 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f0be4206fcabe442cff56d0db37649bd011d3f8011b32c6456461ab1b0b945c7",
+    "executedReviewPromptHash": "f0be4206fcabe442cff56d0db37649bd011d3f8011b32c6456461ab1b0b945c7",
+    "reviewHash": "ac5e9ea1d95610b8f1427e61ec8740f6e6945da219b0ec4dd9c5777f04beb143",
+    "wordId": 506,
+    "inputHash": "868eb69d7125ce44ae7402651eba2ad357f7d14d1f7eaaacc96d1ab5ff426d4f",
+    "draftHash": "10244337605eb9c22113df309cc081076818e449ba2e5b4b7816e90db4c229dd",
+    "finalHash": "b30186cc9c5103207a315252b47981f79971044dc13928f62252e2fe0924997e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/feed#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:58.068Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116317,
+        "revisionId": 38294762,
+        "revisionTimestamp": "2025-06-06T00:15:35Z",
+        "sha256": "4f6ad8536af91557599011e5338889071912c5912d66295566c23736e8502be5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/feed",
+        "section": "feed etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "18bc5f58c2c9bf96726b567e1d3cdac324f1946fa298a5643bddf08ab71076ef",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "18bc5f58c2c9bf96726b567e1d3cdac324f1946fa298a5643bddf08ab71076ef",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/506.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/feed",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:12:04.818Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:17:11.180Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "初稿多处引用 Oxford，但实际来源中没有该页面内容。应改用已取得的英语词条；未由该页具体支持的扩展用法不继续挂靠该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的 example",
+        "message": "现有例句均缺少目标结构必填的 note。补齐保留例句的说明，迁移的信息流例句也补齐该字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note；/wordFamily/1/spellingNote",
+        "message": "feed 以 d 结尾，不是以 e 或双写 e 结尾。feeding 应解释为完整保留 feed，直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏可数名词“一餐／一次喂食”，以及设备供料机构义。网络信息流是常见功能，不宜仅作低频附带义；原条目也没有实际示范音视频信号义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1；/senses/0",
+        "message": "“直接宾语表示被喂的对象”过于绝对。feed seeds to the birds 中，直接宾语是食物；需要补齐这一结构并修正总结。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1；/senses/1",
+        "message": "不能引导学习者用 fed 泛说自己昨天吃饭。人的日常吃饭通常用 eat；feed 和 feed on 的人物用法需要说明语境。graze 也不能泛指各种动物觅食。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/relatedExpressions",
+        "message": "no feed 只是对饲料加以否定，没有必要为具体物名填充反向表达。保留空数组并说明没有通常对应的反义名词即可。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh；/memoryAid/cues/2/text",
+        "message": "feed guests 强调提供食物供其食用，译成“招待”更准确；yesterday fed 应换成完整例句，并说明 fed 的元音音质也发生变化。"
+      }
+    ],
+    "coverageAssessment": "已逐义核对喂养、供养、自行进食、以某物为食、流入及输送、饲料、一餐及一次喂食、设备供料机构、电视音视频信号和网络信息流。修订后各核心义均有至少两个完整英中例句，信息流与音视频用法分别得到示范。“饲养”“放牧”“靠……为生”按实际句型限定，不机械增设独立义。古英语 fedan 及其食物相关含义、不及物用法的发展已有同 URL 来源支持，原有单阶段词源可以保留。本次范围不穷尽行业术语和全部习语。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：喂；给食物；通过供给食物养活或饲养",
+        "coveredBy": [
+          "feed-v1"
+        ],
+        "assessment": "原有核心义及两个例句成立；补充食物作直接宾语的结构，并限定“饲养／放牧”的翻译边界。"
+      },
+      {
+        "sense": "不及物动词：进食；以某物为食或靠某种食物生活",
+        "coveredBy": [
+          "feed-v2"
+        ],
+        "assessment": "动物进食与 feed on 均已覆盖；补充人物用法的语域限制。法语 repaître 项不应使学习者误以为英语 feed 必然表示吃饱。"
+      },
+      {
+        "sense": "及物及不及物动词：供应、输入或输送材料和信息；水流汇入",
+        "coveredBy": [
+          "feed-v3"
+        ],
+        "assessment": "水流和纸张例句正确；补充数据输入例句。这些具体扩展句型依据专业语言知识，不冒称出自未取得的 Oxford 页面。"
+      },
+      {
+        "sense": "不可数名词：动物饲料",
+        "coveredBy": [
+          "feed-n1"
+        ],
+        "assessment": "两个原有例句自然，保留；删除为具体物名凑出的否定式反向表达，并明确与喂食过程名词 feeding 的区别。"
+      },
+      {
+        "sense": "可数名词：一餐；一次喂食，尤指婴儿一次喂奶",
+        "coveredBy": [
+          "feed-n3"
+        ],
+        "assessment": "原稿遗漏；新增两个婴儿喂奶例句及一个成年人用餐例句，说明成年人用法的口语和地域色彩。"
+      },
+      {
+        "sense": "名词：机器的供料、进纸机构或装置",
+        "coveredBy": [
+          "feed-n4"
+        ],
+        "assessment": "原稿遗漏；作为设备用语补入较少用义，并提供进纸机构例句。"
+      },
+      {
+        "sense": "名词：电视或音视频的传送内容、信号或信号源",
+        "coveredBy": [
+          "feed-n2"
+        ],
+        "assessment": "原稿只在释义中提及，没有对应例句；修订后以两句示范实时音视频信号及其来源。"
+      },
+      {
+        "sense": "名词：网络信息流、动态列表或订阅内容源",
+        "coveredBy": [
+          "feed-n2"
+        ],
+        "assessment": "从较少用义提升为核心教学内容，保留原有信息流例句并补充一个自然例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-feed\",\"title\":\"Oxford Learner’s Dictionaries: feed\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/feed\",\"supports\":[\"动词的基本用法和常见结构\",\"feed—fed—fed 等词形及读音\",\"名词饲料及常见复合词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-feed\",\"title\":\"Wiktionnaire：feed（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/feed#Anglais\",\"supports\":[\"英语 feed 的喂养、进食及 feed on 用法\",\"feed、feeds、fed、feeding 的词形和读音\",\"名词饲料、一餐及一次喂奶、供料机构、电视传送和网络订阅内容义\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"加 -ing 时保留词尾 e 前的拼写部分，写作 feeding。\"",
+        "valueJson": "\"feed 以 d 结尾，完整保留 feed 后直接加 -ing：feeding；两个 e 都保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"通常作不可数名词，指喂给动物的饲料。\"",
+        "valueJson": "\"饲料义通常不可数；表示一餐或一次喂食时可数，复数为 feeds。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 fed 说一遍昨天喂宠物或吃饭的事。\"",
+        "valueJson": "\"用 fed 说一句昨天喂宠物的事，例如 I fed the cat last night.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作动词时，feed 常表示“喂、给……提供食物”，也可表示“吃东西”或“流入”；作名词时，常指动物饲料。\"",
+        "valueJson": "\"feed 可以表示喂人或动物、动物进食，也可表示水流汇入或把材料、信息送入某处。作名词可指饲料、一次喂食或一餐，也常指网络信息流及音视频信号。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用结构 feed + 人或动物；feed someone something 也可表示给某人某物吃。\"",
+        "valueJson": "\"feed + 人或动物 表示喂谁；给谁吃什么可用 feed someone/an animal something，或 feed food to someone/an animal。“饲养”在这里侧重供给食物；强调让牲畜吃草、放牧时通常用 graze。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"feed someone something\",\"zh\":\"给某人喂某物\",\"note\":\"两个宾语连用时，先说人，再说食物。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"feed someone/an animal something\",\"zh\":\"给某人或动物吃某种食物\",\"note\":\"两个宾语连用时，先说接受食物的人或动物，再说食物，如 feed the rabbits carrots。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"feed food to someone/an animal\",\"zh\":\"把食物喂给某人或动物\",\"note\":\"这里食物是直接宾语，接受食物的对象放在 to 后，如 feed carrots to the rabbits。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"feeds 是一般现在时第三人称单数；the rabbits 是接受食物的动物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"我们给客人端上了汤和新鲜面包。\"",
+        "valueJson": "\"我们用汤和新鲜面包招待了客人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"fed 是过去式；our guests 是接受食物的人，soup and fresh bread 是食物。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"feed-v1-ex3\",\"senseId\":\"feed-v1\",\"en\":\"We fed the leftover rice to the chickens.\",\"zh\":\"我们把剩饭喂给了鸡。\",\"note\":\"the leftover rice 是直接宾语；to the chickens 说明食物喂给谁。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"feed 作“进食”时不接直接宾语；说吃什么时常用 feed on。\"",
+        "valueJson": "\"feed 作不及物动词表示主语自己进食，feed on 后接食物，说明以什么为食；feed 本身不保证吃饱。人日常吃饭通常用 eat；feed 说人进食常见于婴儿、护理或特殊语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"on 后接食物；用于动物，也可用于描述人的饮食来源。\"",
+        "valueJson": "\"on 后接食物；主要用于动物，也可在特定语境中说人靠某种食物生活。人的普通日常饮食通常用 eat 描述。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"说人日常吃饭优先用 eat；描述动物吃草或觅食，可用 graze 或 feed on。\"",
+        "valueJson": "\"eat 是人日常说“吃”的普通词；graze 在这里指牛羊等吃草，不能泛指各种觅食；feed on 后接食物，如 feed on insects。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"were feeding 表示当时正在进食；马是自己吃东西的主语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"feed on small insects 表示以小昆虫为食，用一般现在时描述习性。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"水流作主语，feed into 表示汇入；这里 feed 不带直接宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the paper 是送入的材料；one sheet at a time 表示每次一张。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"feed-v3-ex3\",\"senseId\":\"feed-v3\",\"en\":\"The sensors feed temperature data into the control system.\",\"zh\":\"这些传感器把温度数据输入控制系统。\",\"note\":\"feed data into a system 表示向系统传送数据；这里传送的是信息。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"通常说 animal feed 或 feed for animals；不要把“饲料”误当作动词的过去式 fed。\"",
+        "valueJson": "\"饲料义通常不可数，如 animal feed、feed for sheep；表示喂食这一过程通常用 feeding。feed 的其他名词义可以可数，如表示一次喂奶的 a feed。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"feed 为不可数名词；for the sheep 说明饲料供哪些动物食用。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"bird feed 指喂鸟的饲料；in a dry place 说明存放条件。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"no feed\",\"zh\":\"没有饲料\",\"note\":\"这是描述缺少饲料的表达，不是 feed 的单词反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"英语没有适用于各种语境的单个反义名词；可按需要说 no feed 或 lack of feed。\"",
+        "valueJson": "\"feed 在这里是饲料的名称，通常没有对应的单个反义名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"feed-n2\",\"title\":\"（网络）信息流；（音视频）传送信号\",\"meaning\":\"网络上持续更新的一组内容，也可指持续传送的音视频内容、信号或其来源。\",\"usageNote\":\"通常可数，复数为 feeds。news feed、social media feed 常指动态内容列表；live feed 常指从某处传来的实时音视频信号，是否直播由 live 和上下文确定。\",\"examples\":[{\"id\":\"feed-n2-ex1\",\"senseId\":\"feed-n2\",\"en\":\"I saw the announcement in my news feed.\",\"zh\":\"我在新闻信息流里看到了这则公告。\",\"note\":\"my news feed 指展示更新内容的信息流；这里 feed 是名词。\"},{\"id\":\"feed-n2-ex2\",\"senseId\":\"feed-n2\",\"en\":\"My feed is full of photos of my friends' pets.\",\"zh\":\"我的动态信息流里全是朋友们的宠物照片。\",\"note\":\"社交媒体语境明确时，可以直接用 my feed 指自己的动态列表。\"},{\"id\":\"feed-n2-ex3\",\"senseId\":\"feed-n2\",\"en\":\"We lost the live video feed during the storm.\",\"zh\":\"暴风雨期间，我们接收不到实时视频信号了。\",\"note\":\"live video feed 指实时传送的视频信号；lost 在这里表示信号中断。\"},{\"id\":\"feed-n2-ex4\",\"senseId\":\"feed-n2\",\"en\":\"The studio receives a live feed from the stadium.\",\"zh\":\"演播室接收从体育场传来的实时音视频信号。\",\"note\":\"from the stadium 说明信号来源；a live feed 是可数名词短语。\"}],\"patterns\":[{\"en\":\"a feed from somewhere\",\"zh\":\"来自某处的内容流或信号\",\"note\":\"from 后说明内容或信号的来源，如 a feed from the stadium。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"news feed\",\"zh\":\"新闻信息流；动态信息流\",\"note\":\"指持续更新的内容列表，具体内容取决于网站或应用。\",\"kind\":\"common-collocation\"},{\"en\":\"live video feed\",\"zh\":\"实时视频信号\",\"note\":\"常用于直播、监控及远程传送画面的场景。\",\"kind\":\"common-collocation\"},{\"en\":\"RSS feed\",\"zh\":\"RSS 订阅源\",\"note\":\"通过订阅接收网站更新内容。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"stream\",\"zh\":\"连续的音视频流或数据流\",\"note\":\"在连续传送音视频、数据的语境中与 feed 有重叠；feed 还可指供浏览的更新内容列表。\"}],\"contrasting\":[],\"similarNote\":\"stream 与 feed 在音视频传送语境中可以接近，但社交媒体上的 my feed 不一定是连续播放的视频。\",\"contrastingNote\":\"这一义表示内容流或信号，通常没有对应的单个反义名词。\"},\"sourceIds\":[\"wiktionary-feed\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"feed-n3\",\"title\":\"一餐；一次喂食，尤指一次喂奶\",\"meaning\":\"一次进食或喂食，常指婴儿一次吃奶或喂奶；也可口语化地表示成年人吃的一顿饭。\",\"usageNote\":\"这是可数名词：a feed、two feeds。婴儿喂奶语境中常见；表示成年人一顿饭时较口语且有地区差异，普通中性表达通常用 meal。\",\"examples\":[{\"id\":\"feed-n3-ex1\",\"senseId\":\"feed-n3\",\"en\":\"The baby usually needs a feed at around midnight.\",\"zh\":\"宝宝通常在午夜左右需要喂一次奶。\",\"note\":\"a feed 表示一次喂奶，是可数名词。\"},{\"id\":\"feed-n3-ex2\",\"senseId\":\"feed-n3\",\"en\":\"I gave the baby a feed before we left the house.\",\"zh\":\"出门前，我给宝宝喂了一次奶。\",\"note\":\"give the baby a feed 表示给宝宝喂一次奶；喂奶发生在出门之前。\"},{\"id\":\"feed-n3-ex3\",\"senseId\":\"feed-n3\",\"en\":\"After the long walk, we stopped at a café for a good feed.\",\"zh\":\"走了很长一段路后，我们在一家咖啡馆停下来好好吃了一顿。\",\"note\":\"a good feed 是表示饱餐一顿的口语说法；普通中性表达可用 a good meal。\"}],\"patterns\":[{\"en\":\"give a baby a feed\",\"zh\":\"给宝宝喂一次奶或食物\",\"note\":\"feed 在这里是表示一次喂食的名词，give 是谓语动词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have a feed\",\"zh\":\"吃一次奶；吃一顿\",\"note\":\"常用于婴儿进食；用于成年人时需注意口语及地域色彩。\",\"kind\":\"common-collocation\"},{\"en\":\"a good feed\",\"zh\":\"饱餐一顿\",\"note\":\"较口语，表示一顿让人满足的饭。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"meal\",\"zh\":\"一餐\",\"note\":\"成年人日常用餐最普通的中性说法；婴儿一次喂奶通常不必称作 meal。\"},{\"en\":\"a feeding\",\"zh\":\"一次喂食\",\"note\":\"也可表示一次喂奶或喂食，在美式英语中常见。\"}],\"contrasting\":[],\"similarNote\":\"成年人一顿饭通常用 meal；婴儿一次喂奶可用 a feed 或 a feeding，具体选择受地区习惯影响。\",\"contrastingNote\":\"这一义表示一次进食事件，通常没有对应的单个反义名词。\"},\"sourceIds\":[\"wiktionary-feed\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"feed-n2\",\"title\":\"（网络或电视）信息流；节目源\",\"meaning\":\"连续提供的新闻、视频或其他内容；也可指传送节目内容的信号源。\",\"note\":\"常见于 news feed、video feed 等组合，属于名词的专门用法。\",\"example\":{\"id\":\"feed-n2-ex1\",\"senseId\":\"feed-n2\",\"en\":\"I saw the announcement in my news feed.\",\"zh\":\"我在新闻信息流里看到了这则公告。\"},\"sourceIds\":[\"oxford-feed\"]}",
+        "valueJson": "{\"id\":\"feed-n4\",\"title\":\"（机器的）供料或进纸机构\",\"meaning\":\"把纸张、原料等送入机器的机构或装置。\",\"note\":\"设备用语；paper feed 常指打印机等设备的进纸机构。\",\"example\":{\"id\":\"feed-n4-ex1\",\"senseId\":\"feed-n4\",\"en\":\"The printer's paper feed is jammed.\",\"zh\":\"打印机的进纸机构卡住了。\",\"note\":\"paper feed 是名词短语，指送入纸张的机构。\"},\"sourceIds\":[\"wiktionary-feed\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"一般现在时描述日常习惯，主语 I 后用 feed。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"last night 指过去时间；这句一般过去时肯定句使用 fed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"feed something 和 feed on something\"",
+        "valueJson": "\"feed the birds、feed seeds to the birds 和 feed on seeds\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"直接宾语表示被喂的对象；on 后面表示吃的东西。\"",
+        "valueJson": "\"feed + 人或动物 时，直接宾语是被喂的对象；feed + 食物 + to + 人或动物 时，直接宾语是食物；feed on + 食物 则说明主语自己以什么为食。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"feed seeds to the birds\",\"note\":\"seeds 是直接宾语，表示食物；to the birds 表示接受食物的对象。\",\"example\":{\"id\":\"conf-feed-5\",\"senseId\":\"feed-v1\",\"en\":\"We feed seeds to the birds in winter.\",\"zh\":\"冬天，我们把种子喂给鸟吃。\",\"note\":\"这一结构把食物放在 feed 后，把被喂的对象放在 to 后。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"问“喂谁”用 feed + 对象；说“吃什么”用 feed on + 食物。\"",
+        "valueJson": "\"喂谁：feed the birds；把什么喂给谁：feed seeds to the birds；主语以什么为食：the birds feed on seeds。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"主语 we 提供食物，the birds 是被喂的对象。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"主语 the birds 自己进食；on 后的 seeds 是食物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"bird feeder 指装鸟食、供鸟啄食的器具。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"feed 以双写 e 结尾，加 -ing 后写作 feeding，不再额外加字母。\"",
+        "valueJson": "\"feed 以 d 结尾，直接加 -ing，写作 feeding；原有的两个 e 和 d 都保留。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Feeding the ducks 是动名词短语，整体作主语；the ducks 仍是 feeding 的宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-feed\"]",
+        "valueJson": "[\"wiktionary-feed\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"yesterday fed：过去式拼写改变，读音也变短。\"",
+        "valueJson": "\"I fed the birds yesterday.：昨天我喂了鸟。fed 读 /fed/，与 feed /fiːd/ 相比，元音的音质和长短都有变化。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 506,
+    "headword": "feed",
+    "meaning_zh": "n. 饲料, 一餐, 饲养\nvt. 喂, 饲养, 放牧, 靠...为生\nvi. 吃东西, 用餐, 流入",
+    "phonetic": "/fi:d/",
+    "pos": "",
+    "forms": []
+  }
+}

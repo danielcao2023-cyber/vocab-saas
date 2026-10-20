@@ -1,0 +1,254 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8f8e495b2b730937bb9b6a5ee1413d2eecb2b35abb332324250a2c21518829a1",
+    "executedReviewPromptHash": "8f8e495b2b730937bb9b6a5ee1413d2eecb2b35abb332324250a2c21518829a1",
+    "reviewHash": "39c26cdc2d751e9cbee6e96471d150e771f007f495eb234d8ca42f077a3d3a1b",
+    "wordId": 708,
+    "inputHash": "76fa4ed607c89b29f4c2ba27346a25df34b684a162ac09c3d68f76fcbd73fa46",
+    "draftHash": "8f20499ff8db78fe427d77e3b412d661d1c95c59e5956dcad65594ef148bdfa7",
+    "finalHash": "24cbf64b05dd75d69c03a74a24f67baba5774929b5135506e5015e6266338a57",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/interesting#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:49.891Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121668,
+        "revisionId": 38123229,
+        "revisionTimestamp": "2025-04-23T15:22:25Z",
+        "sha256": "f22b36c694b43a467a6e8a7677213d13eadf169c567fa85b846a5dd89726c5b2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/interesting",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:31:59.078Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:41:42.872Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote；/pronunciation/notes/0",
+        "message": "四音节读法中的弱音 /ə/ 位于 /t/ 与 /r/ 之间，不在 /n/ 与 /t/ 之间。现有主音标是规范的三音节读法，可以保留，但音节提示须与之对应。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/lessCommonSenses",
+        "message": "词典还列出 interest 的现在分词。初稿仅在词形备注中点名，缺少实际动词用法的演示；应补充带宾语的例句，与形容词区分，无须另拆核心形容词义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "interest 以 t 结尾，两个 e 都在词干内部，不能说保留“词干末尾的 e”。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "interested 由 interest 直接加 -ed 构成，不是保留词尾 e 后只加 d；interested 实际有三个 e。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "现有引用全部指向未取得正文的 Cambridge，却未引用实际取得的法语维基词典英语词条。应按实际支持范围调整来源；interested 辨析及 interest 的名词用法可依据专业语言知识保留，不应改挂到未解释这些内容的页面。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "interest + -ing 的直接构词关系已有可用词源材料，应补入对应来源。可明确现在分词与形容词两种用法，但不能据此编造有先后顺序的历史阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的形容词定义和现在分词功能。核心形容词义已有两个自然例句，分别体现引起兴趣和值得注意，无须硬拆；近义与反向表达的语境限制恰当。补充动词形式后功能覆盖充分。Cambridge 正文未取得，相关扩展依据专业语言知识审校；词源仅确认 interest + -ing，不推断更早历史。",
+    "senseInventory": [
+      {
+        "sense": "形容词：有趣的；令人感兴趣的；值得注意的",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "一个核心义，现有两个例句覆盖充分；搭配、句型及近反义辨析基本准确。"
+      },
+      {
+        "sense": "动词形式：interest 的现在分词，表示使某人对某事感兴趣",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "补充为较少见的动词用法，以带宾语的现在分词例句区别于形容词，不增设核心形容词义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; present participle of interest\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音接近；有些人会在 /n/ 和 /t/ 之间读出较弱的 /ə/。\"",
+        "valueJson": "\"英美读音接近；除本栏的三音节读法外，也有 /ˈɪntərɪstɪŋ/ 这样的四音节读法，其中弱音 /ə/ 在 /t/ 和 /r/ 之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一个音节：IN-ter-est-ing；中间部分常读得较轻。\"",
+        "valueJson": "\"重音在第一个音节；本栏的 /ˈɪntrəstɪŋ/ 是三音节读法，中间的 /ə/ 轻读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[\"wiktionnaire-interesting-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[\"wiktionnaire-interesting-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"动词形式：使……感兴趣\",\"meaning\":\"interest 的现在分词形式，表示使某人对某事产生兴趣。\",\"note\":\"这是较少见的动词用法，不是第二个形容词义。interesting 后可接人作宾语，再用 in 引出兴趣对象。\",\"example\":{\"id\":\"lc1-ex1\",\"senseId\":\"lc1\",\"en\":\"The guide told stories about the old castle, interesting the children in local history.\",\"zh\":\"导游讲了那座古堡的故事，使孩子们对当地历史产生了兴趣。\",\"note\":\"interesting 在此是现在分词，接 the children 作宾语，补充说明讲故事带来的结果。\"},\"sourceIds\":[\"wiktionnaire-interesting-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[\"wiktionnaire-interesting-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，interesting 是动词 interest 加 -ing 形成的形式；本课按形容词讲，表示“引人注意、令人感兴趣的”。\"",
+        "valueJson": "\"interesting 来自英语动词 interest（使感兴趣）加后缀 -ing；它既是 interest 的现在分词，也常作形容词，表示“令人感兴趣的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionnaire-interesting-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"interest + ing 写作 interesting，保留词干末尾的 e。\"",
+        "valueJson": "\"interest 以 t 结尾，直接加 -ing 得到 interesting；词干中的两个 e 都保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"词干末尾的 e 保留，再加 d。\"",
+        "valueJson": "\"interest 以 t 结尾，直接加 -ed 得到 interested；注意 interested 一共有三个 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-interesting\"]",
+        "valueJson": "[\"wiktionnaire-interesting-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-interesting\",\"title\":\"Cambridge Dictionary: interesting\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/interesting\",\"supports\":[\"形容词常见含义与用法\",\"interesting 与 interested 的词形和用法\",\"interest 的相关形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire-interesting-en\",\"title\":\"Wiktionnaire：interesting（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/interesting#Anglais\",\"supports\":[\"形容词 interesting 的基本含义及读音变体\",\"由英语动词 interest 加后缀 -ing 构成\",\"interest 的现在分词形式\",\"反义词 uninteresting\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 708,
+    "headword": "interesting",
+    "meaning_zh": "adj. 有趣的",
+    "phonetic": "/'intristiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

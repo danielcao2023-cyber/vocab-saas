@@ -1,0 +1,638 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "bfc9025ccbf69c484db8aec6679f66409f9c12ca07929d66e5ab60bf871c8cee",
+    "executedReviewPromptHash": "bfc9025ccbf69c484db8aec6679f66409f9c12ca07929d66e5ab60bf871c8cee",
+    "reviewHash": "791e4c1ecc347f38a07a9b43ae4e69e55c39cce82d860e1d4933ead8f6ff9f52",
+    "wordId": 1200,
+    "inputHash": "450d208db026251cdbb2bd6aea26b0c9534b821385966205fcaffcca44388ac6",
+    "draftHash": "4f48984957ec0bfa1d1e3a493858456ec9ff92b58f585f36abbc7e7362c79167",
+    "finalHash": "4031d89fd9f25701395e85472ee61691d1b2b739eadf99dbd6e385fb290e08f0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/score#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.023Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119901,
+        "revisionId": 39716114,
+        "revisionTimestamp": "2026-07-31T18:32:58Z",
+        "sha256": "9457d8fbd27011ccb95e9e77b82e5bad2c9f4c8fca037c9c15bd0df6344a83c3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/score",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:32:17.473Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:40:04.701Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "缺少常用的 scores of、给对象评分、在表面刻划等用法；音乐义被降为少见义，且没有展示“乐谱”的例句。需补齐并分别提供足够例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/senses/1/examples",
+        "message": "名词比分与考试分数各只有一个例句；动词缺少考试得分的具体用法。补充后，各常用功能均有两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“考试成绩时常用 a score 或 score”容易诱导裸用单数可数名词，应明确 a score of ...、my score 等形式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "a losing score 不宜作为“落后的比分”的常用对照表达，且并非 score 的反义表达。保留有明确适用范围的高分与低分对照即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/0；/senses/1/collocations/0",
+        "message": "scored twice 表示得分两次，不能脱离项目计分规则译成得了两分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote；/senses/1/examples/1/note",
+        "message": "score a goal 不限于用脚踢球，释义应兼容其他设有球门的项目。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "取得成功与取得数值成绩混在一起，容易把 score 泛化为任意“取得结果”或“表现好”。将 score well、score highly 归入有评分依据的得分用法，成功义保留常见的 success、victory 搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/ipa；/pronunciation/accentNote",
+        "message": "标准英式 scoring 也读出 /r/，不能标为 /ˈskɔːɪŋ/；词尾 r 的说明需限定语音环境。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation；/wordFamily/0/spellingNote",
+        "message": "“score 后加 -er，保留 e”逐字符会得到 scoreer。正确说明是去掉 e，再加 -er，得到 scorer。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/example；/wordFamilyNote",
+        "message": "Scoring early 中 scoring 保留动词性质，early 是副词，不能据其整体作主语就认定 scoring 是词汇名词。另需区分名词 scoring 与同形的动词现在分词。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages/0/meaning",
+        "message": "词源中的二十个一组不宜改写为“二十左右”。正文应直接讲可证实的来源与释义，删除核验过程式措辞。古诺尔斯语到英语的来源顺序可以保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "Oxford 页面不在实际取得的资料中，不应承担已据资料支撑的角色。实取的法语维基词典页面是英语词条，除词源外也支持若干词义、读音和规则变化；其余专业语言知识补充不冒挂该页作依据。"
+      }
+    ],
+    "coverageAssessment": "已核对原词条全部释义及实取英语词条中的比分、考试分数、电影配乐、二十、刻划和比赛得分。补丁补齐常用的乐谱、scores of、考试得分、评分及刻划，各核心功能至少有两个原创例句；二十、名词刻痕、旧账目及口语“弄到”作为识别项。历史体育义“起跑线／终点线”及专门的记分动词用法不作为现代初中常用句型展开。来源标注区分实取页面与专业知识补充，未修改身份字段或 editorial。",
+    "senseInventory": [
+      {
+        "sense": "名词：比赛比分、得分",
+        "coveredBy": [
+          "score-n-result"
+        ],
+        "assessment": "保留原比分例句，增加打牌记分情境，共两个相关例句。"
+      },
+      {
+        "sense": "名词：考试、测验分数",
+        "coveredBy": [
+          "score-n-result"
+        ],
+        "assessment": "保留高分例句，增加具体分数与满分表达，共两个例句。"
+      },
+      {
+        "sense": "动词：比赛得分、进球",
+        "coveredBy": [
+          "score-v-points"
+        ],
+        "assessment": "原有两个例句可保留；修正 twice 的分值误译及 goal 的动作限制。"
+      },
+      {
+        "sense": "动词：考试或测评取得某个分数",
+        "coveredBy": [
+          "score-v-points"
+        ],
+        "assessment": "增加数值成绩和 score well 两个例句，并与评分者的动作区分。"
+      },
+      {
+        "sense": "动词：给对象评分、评价",
+        "coveredBy": [
+          "score-v-evaluate"
+        ],
+        "assessment": "新增完整核心义，提供作文评分与舞蹈评分两个例句。"
+      },
+      {
+        "sense": "动词：取得成功、胜利",
+        "coveredBy": [
+          "score-v-achieve"
+        ],
+        "assessment": "保留成功义，补明确的胜利例句，限制为实际常见搭配。"
+      },
+      {
+        "sense": "动词：获得、弄到想要的东西",
+        "coveredBy": [
+          "score-v-obtain"
+        ],
+        "assessment": "作为非正式口语识别项补入，避免泛化为 obtain 的全面替代词。"
+      },
+      {
+        "sense": "名词：乐谱，尤指总谱",
+        "coveredBy": [
+          "score-n-music"
+        ],
+        "assessment": "提升为核心义，增加两个真正展示书面乐谱的例句。"
+      },
+      {
+        "sense": "名词：电影、戏剧配乐",
+        "coveredBy": [
+          "score-n-music"
+        ],
+        "assessment": "保留话剧配乐例句，增加电影配乐例句，并与 soundtrack 限定比较。"
+      },
+      {
+        "sense": "名词复数固定表达：scores of，许多、大量",
+        "coveredBy": [
+          "score-n-many"
+        ],
+        "assessment": "新增完整核心用法，说明后接可数名词复数及不作精确计数。"
+      },
+      {
+        "sense": "名词：二十、二十个一组",
+        "coveredBy": [
+          "score-n-twenty"
+        ],
+        "assessment": "原有旧用识别项可保留，与现代 scores of 区分。"
+      },
+      {
+        "sense": "动词：刻划、划线、划出切口",
+        "coveredBy": [
+          "score-v-mark"
+        ],
+        "assessment": "新增两个生活例句，涵盖烘焙和木工；专门的不及物用法不另作初中核心句型。"
+      },
+      {
+        "sense": "名词：抓痕、刻痕",
+        "coveredBy": [
+          "score-n-mark"
+        ],
+        "assessment": "补为较少见识别项，注明日常更常使用 scratch 或 cut。"
+      },
+      {
+        "sense": "记分、把得分记下",
+        "coveredBy": [
+          "score-n-result"
+        ],
+        "assessment": "通过常见的 keep score 及具体例句覆盖实用功能；其中 score 是名词，不冒称已展示 score a game 等专门动词结构。"
+      },
+      {
+        "sense": "名词：旧用的账目、欠账",
+        "coveredBy": [
+          "score-n-account"
+        ],
+        "assessment": "补为旧式表达识别项，并提醒 settle a score 的现代常见含义。"
+      },
+      {
+        "sense": "名词：历史体育用语中的起跑线、终点线",
+        "coveredBy": [],
+        "assessment": "不属于现代初中常用义范围，不为其编造现代常用搭配或例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，score 常指比赛的比分或一次测验的成绩；作动词时，表示得分、进球或取得某个结果。\"",
+        "valueJson": "\"score 作名词常表示比分、分数或乐谱、配乐；scores of 表示“许多”。作动词可表示得分、评分、取得成功，或在表面刻划。\""
+      },
+      {
+        "op": "replace",
+        "path": "/levelHint",
+        "expectedValueJson": "\"初中常用；熟悉比赛和测验语境即可掌握核心用法。\"",
+        "valueJson": "\"先掌握比分、考试分数和得分，再辨别评分、乐谱与配乐、scores of 和刻划等常见用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"把考生 score 90（得90分）与老师 score a test（给试卷评分）分开。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"结合音乐、排队和做饭等情境，复习音乐义、scores of 和刻划义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"美式通常保留词尾 /r/，英式通常不发词尾 /r/。\"",
+        "valueJson": "\"单独念 score 时，美式通常发词尾 /r/，标准英式通常不发；scoring 的 r 后接元音，标准英式也发 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /skɒ:/ 不准确；score 的元音为 /ɔː/。\"",
+        "valueJson": "\"这里的标准英式元音是长元音 /ɔː/，不要读成短元音 /ɒ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/ipa",
+        "expectedValueJson": "\"/ˈskɔːrɪŋ/；/ˈskɔːɪŋ/\"",
+        "valueJson": "\"/ˈskɔːrɪŋ/（美、英）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说双方比分时常用 the score；说某人的考试成绩时常用 a score 或 score。\"",
+        "valueJson": "\"score 是可数名词。说双方比分常用 the score；说考试成绩可用 a score of 90、my score 等，单数形式通常需要冠词或物主限定词。keep score 表示记分。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-ex-16\",\"senseId\":\"score-n-result\",\"en\":\"Can you keep score while we play cards?\",\"zh\":\"我们打牌时，你能帮忙记分吗？\",\"note\":\"keep score 是常见的固定表达，其中 score 是名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-ex-17\",\"senseId\":\"score-n-result\",\"en\":\"My score on the spelling quiz was 9 out of 10.\",\"zh\":\"我的拼写小测得了9分，满分10分。\",\"note\":\"my score 指自己的成绩；out of 10 说明满分为10分。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"keep score\",\"zh\":\"记分\",\"note\":\"记录比赛或游戏的得分；这里 score 是名词。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"a losing score\",\"zh\":\"落后的比分\",\"note\":\"仅在比赛中表示己方比分处于劣势；不适用于考试成绩。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义没有通用于比分和考试成绩的单一反义词；以下对照仅适用于所注明语境。\"",
+        "valueJson": "\"score 本身没有统一的反义词；考试成绩中可用 a high score 与 a low score 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：得分、进球\"",
+        "valueJson": "\"动词：比赛得分、进球；考试得分\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"在比赛中得到分数或把球送进球门；也可泛指在某项活动中取得分数。\"",
+        "valueJson": "\"在比赛中得分、进球，或在考试、测评中得到某个分数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"score 可作不及物动词（得分），也可带宾语说 score a goal（踢进一球）。\"",
+        "valueJson": "\"可不带宾语说得分，也可说 score a goal（进一球）、score ten points（得十分）。考试中可说 score 90 或 score well；这里主语是取得分数的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"我们队在下半场得了两分。\"",
+        "valueJson": "\"我们队在下半场两次得分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"score 不带宾语，表示得分。\"",
+        "valueJson": "\"score 不带宾语；twice 表示得分两次，每次值几分取决于比赛项目。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"score the goal 表示把球踢进球门并得分。\"",
+        "valueJson": "\"score the winning goal 表示攻入制胜一球；这一搭配也用于曲棍球等项目。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-ex-18\",\"senseId\":\"score-v-points\",\"en\":\"I scored 18 out of 20 on the vocabulary quiz.\",\"zh\":\"我在满分20分的词汇小测中得了18分。\",\"note\":\"score 后直接接得到的分数；out of 20 说明满分。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-ex-19\",\"senseId\":\"score-v-points\",\"en\":\"Ava scored well in her final exam.\",\"zh\":\"埃娃期末考试考得不错。\",\"note\":\"score well 表示考试成绩好，不说明具体分数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"score 90 on a test / in an exam\",\"zh\":\"考试得90分\",\"note\":\"on a test 在美式英语中常见，in an exam 在英式英语中常见；分数可替换。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/zh",
+        "expectedValueJson": "\"得两分；进两球\"",
+        "valueJson": "\"得分两次；进两球（如足球）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"twice 说明得分或进球的次数，具体含义看比赛项目。\"",
+        "valueJson": "\"twice 说明次数，不直接说明分值；足球中通常指进两球。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"score well / highly\",\"zh\":\"得高分；成绩好\",\"note\":\"用于考试、测评等有评分依据的情境；不宜笼统替代所有语境中的“表现好”。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"动词：取得（成绩、成功）\"",
+        "valueJson": "\"动词：取得成功、胜利\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"在比赛、考试或竞选等场合取得特定成绩、结果或成功。\"",
+        "valueJson": "\"与 success、victory 等搭配，表示取得成功或赢得胜利。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"score 后接 success、a victory 等时，重点是取得某种结果；接 points 或 goals 时则指比赛得分。\"",
+        "valueJson": "\"常见于新闻或较生动的叙述，如 score a success、score a victory。不能据此把 score 用作任意“取得结果”的替代词；score well 表示有评分依据的成绩好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"score-ex-6\",\"senseId\":\"score-v-achieve\",\"en\":\"The candidate scored well in the debate.\",\"zh\":\"这位候选人在辩论中表现出色。\",\"note\":\"score well 可泛指表现好、取得好成绩。\"}",
+        "valueJson": "{\"id\":\"score-ex-6\",\"senseId\":\"score-v-achieve\",\"en\":\"Our class scored a narrow victory in the school quiz.\",\"zh\":\"我们班在学校知识竞赛中险胜。\",\"note\":\"score a narrow victory 表示以微弱优势获胜，不表示某个具体分数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/kind",
+        "expectedValueJson": "\"fixed-expression\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"score well / badly in ...\",\"zh\":\"在……中表现好 / 不好\",\"note\":\"可用于考试、比赛或某项活动，描述取得的成绩。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"score a victory over ...\",\"zh\":\"战胜……；取得对……的胜利\",\"note\":\"over 后接对手；这一表达常见于报道或较生动的叙述。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"score highly\",\"zh\":\"得高分；评价很高\",\"note\":\"可指测验成绩高，也可指表现获得很高评价，需结合上下文判断。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"score a major success\",\"zh\":\"取得重大成功\",\"note\":\"强调成功这一结果；major 修饰 success。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-n-music\",\"title\":\"名词：乐谱，尤指总谱；配乐\",\"meaning\":\"可指写下来的音乐乐谱，尤其是展示多个声部的总谱；也可指为电影、戏剧等创作的配乐。\",\"usageNote\":\"read a score 强调阅读乐谱；a film score 通常指电影配乐。write the score 可指创作配乐，不能仅凭 write 就判断是在抄写乐谱。\",\"examples\":[{\"id\":\"score-ex-8\",\"senseId\":\"score-n-music\",\"en\":\"She wrote the score for the school play.\",\"zh\":\"她为学校话剧创作了配乐。\",\"note\":\"score 指为演出创作的音乐。\"},{\"id\":\"score-ex-20\",\"senseId\":\"score-n-music\",\"en\":\"The film's score makes the final scene feel tense.\",\"zh\":\"这部电影的配乐让最后一幕显得很紧张。\",\"note\":\"这里指电影配乐，不是纸上的乐谱。\"},{\"id\":\"score-ex-21\",\"senseId\":\"score-n-music\",\"en\":\"The conductor opened the score before rehearsal.\",\"zh\":\"指挥在排练前翻开了总谱。\",\"note\":\"这里指可翻阅的书面乐谱。\"},{\"id\":\"score-ex-22\",\"senseId\":\"score-n-music\",\"en\":\"The score shows when each instrument should come in.\",\"zh\":\"总谱上标明了每种乐器应在何时加入演奏。\",\"note\":\"总谱呈现不同乐器或声部的音乐。\"}],\"patterns\":[{\"en\":\"the score for a film / play\",\"zh\":\"电影／戏剧的配乐\",\"note\":\"for 后接配乐所属的作品。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"read a score\",\"zh\":\"读乐谱\",\"note\":\"指阅读写下来的音乐。\",\"kind\":\"common-collocation\"},{\"en\":\"a film score\",\"zh\":\"电影配乐\",\"note\":\"通常指为电影创作的音乐。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sheet music\",\"zh\":\"乐谱\",\"note\":\"泛指印刷或手写的乐谱；score 尤其可指展示多个声部的总谱。\"},{\"en\":\"soundtrack\",\"zh\":\"电影音轨；原声带\",\"note\":\"范围可包括歌曲等；film score 更具体地指为电影创作的配乐。\"}],\"contrasting\":[],\"similarNote\":\"书面乐谱义可与 sheet music 比较；电影配乐义可与 soundtrack 比较，二者都不能在所有场合直接替换 score。\",\"contrastingNote\":\"音乐义没有常用的词汇反义词。\"},\"sourceIds\":[\"wiktionary-score-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-n-many\",\"title\":\"名词复数固定表达：scores of，许多、大量\",\"meaning\":\"scores of 后接可数名词复数，表示许多、几十个，通常不作精确计数。\",\"usageNote\":\"注意复数 -s 和介词 of：scores of people。它与表示二十个的旧式表达 a score of people 不同。\",\"examples\":[{\"id\":\"score-ex-23\",\"senseId\":\"score-n-many\",\"en\":\"Scores of people lined up outside the shop.\",\"zh\":\"许多人在商店外排起了队。\",\"note\":\"scores of people 表示许多人，不说明准确人数。\"},{\"id\":\"score-ex-24\",\"senseId\":\"score-n-many\",\"en\":\"We received scores of messages after the show.\",\"zh\":\"演出结束后，我们收到了大量留言。\",\"note\":\"messages 是可数名词复数。\"}],\"patterns\":[{\"en\":\"scores of + plural noun\",\"zh\":\"许多……\",\"note\":\"后接可数名词复数，如 people、messages。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"scores of people\",\"zh\":\"许多人\",\"note\":\"表示人数多，不必是二十的整倍数。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"dozens of\",\"zh\":\"数十；许多\",\"note\":\"同样常作概数；强调有几十个，不表示必须按十二个一组精确计算。\"},{\"en\":\"many\",\"zh\":\"许多\",\"note\":\"更普通、中性，也接可数名词复数，如 many messages。\"}],\"contrasting\":[{\"en\":\"few\",\"zh\":\"很少；几乎没有\",\"note\":\"后接可数名词复数，在数量多少上与 scores of 对照。\"},{\"en\":\"a handful of\",\"zh\":\"少数几个\",\"note\":\"强调数量少；与 scores of 在数量上形成对照。\"}],\"similarNote\":\"scores of 比 many 更强调数量多，通常是概数表达。\",\"contrastingNote\":\"这里比较的是数量多与数量少，不是为 score 的所有词义指定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-v-evaluate\",\"title\":\"动词：给……评分\",\"meaning\":\"根据标准给试卷、答案、表演等打分。\",\"usageNote\":\"主语是评分者，宾语是被评分的对象。The teacher scored the test 是老师给试卷评分；The student scored 90 是学生得了90分。\",\"examples\":[{\"id\":\"score-ex-25\",\"senseId\":\"score-v-evaluate\",\"en\":\"The teacher scored each essay out of ten.\",\"zh\":\"老师按十分制给每篇作文评分。\",\"note\":\"each essay 是被评分的对象；out of ten 表示满分十分。\"},{\"id\":\"score-ex-26\",\"senseId\":\"score-v-evaluate\",\"en\":\"The judges scored each dancer on timing and technique.\",\"zh\":\"评委根据节奏和技巧给每位舞者评分。\",\"note\":\"on 后接评分所依据的方面。\"}],\"patterns\":[{\"en\":\"score something out of ten\",\"zh\":\"按十分制给某物评分\",\"note\":\"ten 可替换为其他满分数值。\",\"kind\":\"sentence-pattern\"},{\"en\":\"score someone on ...\",\"zh\":\"按……给某人评分\",\"note\":\"on 后接评价标准或方面。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"score a test\",\"zh\":\"给试卷评分\",\"note\":\"这里主语是老师等评分者。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"mark / grade\",\"zh\":\"给作业或试卷打分、评级\",\"note\":\"学校语境中 mark 在英式英语中常见，grade 在美式英语中常见；评分结果可为数字或等级。\"},{\"en\":\"rate\",\"zh\":\"评价；评级\",\"note\":\"范围更广，可能表示好坏或等级，不一定给具体分数。\"}],\"contrasting\":[{\"en\":\"leave an answer unscored\",\"zh\":\"不给某个答案评分\",\"note\":\"与执行评分动作形成对照；不等于给答案打零分。\"}],\"similarNote\":\"score 强调按计分标准打分；rate 可以只是作评价。\",\"contrastingNote\":\"没有常用的一一对应反义动词；unscored 表示尚未或没有被评分。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-v-mark\",\"title\":\"动词：刻划；划出浅痕或切口\",\"meaning\":\"用锋利工具在物体表面划出痕迹或浅切口，通常不把物体切断。\",\"usageNote\":\"常用作及物动词：score the surface；也可用 with a knife 等说明工具。常见于烘焙、手工和加工说明。\",\"examples\":[{\"id\":\"score-ex-27\",\"senseId\":\"score-v-mark\",\"en\":\"Score the pastry with a knife before baking.\",\"zh\":\"烘烤前，用刀在酥皮表面划出浅痕。\",\"note\":\"指表面浅划，不是把酥皮完全切开。\"},{\"id\":\"score-ex-28\",\"senseId\":\"score-v-mark\",\"en\":\"He scored a straight line across the wood before cutting it.\",\"zh\":\"他先在木料表面刻出一条直线，再沿线切割木料。\",\"note\":\"先刻线，后切割；score a line 表示刻划出线条。\"}],\"patterns\":[{\"en\":\"score something with a knife\",\"zh\":\"用刀在某物表面划痕\",\"note\":\"with 后接所用工具。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"score the surface\",\"zh\":\"在表面刻划\",\"note\":\"强调在表面留下痕迹。\",\"kind\":\"common-collocation\"},{\"en\":\"score a line\",\"zh\":\"刻划出一条线\",\"note\":\"line 是刻划出来的线条。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"scratch\",\"zh\":\"划出痕迹；划伤\",\"note\":\"也可指表面划痕，可能是有意或无意造成；score 常用于有意刻划的操作。\"},{\"en\":\"cut\",\"zh\":\"切；割\",\"note\":\"范围更广，可浅切也可切断；score 通常强调表面的痕迹或浅切口。\"}],\"contrasting\":[{\"en\":\"cut all the way through\",\"zh\":\"完全切穿\",\"note\":\"在切割深度上与浅刻划对照，不是 score 的严格反义词。\"}],\"similarNote\":\"score 比 cut 更具体地说明表面刻划；与 scratch 比较时要看是否在描述有意加工。\",\"contrastingNote\":\"这一动作没有常用的一一对应反义词；可用浅刻与完全切穿比较操作深度。\"},\"sourceIds\":[\"wiktionary-score-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"score-n-music\",\"title\":\"名词：配乐；乐谱\",\"meaning\":\"可指电影、戏剧或其他作品的配乐，也可指写下来的音乐乐谱。\",\"note\":\"在 film score 中通常指为电影创作的音乐；a musical score 可指乐谱。\",\"example\":{\"id\":\"score-ex-8\",\"senseId\":\"score-n-music\",\"en\":\"She wrote the score for the school play.\",\"zh\":\"她为学校话剧创作了配乐。\",\"note\":\"score 指为演出创作的音乐。\"},\"sourceIds\":[\"oxford-score\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-n-mark\",\"title\":\"名词：刻痕、划痕\",\"meaning\":\"物体表面被刻划出来的痕迹。\",\"note\":\"这一名词义较少见；日常描述划痕常用 scratch，描述切口常用 cut。\",\"example\":{\"id\":\"score-ex-29\",\"senseId\":\"score-n-mark\",\"en\":\"The blade left a score in the metal.\",\"zh\":\"刀刃在金属表面留下了一道刻痕。\",\"note\":\"score 在这里是可数名词，指留下的刻痕。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-v-obtain\",\"title\":\"动词：口语中弄到想要的东西\",\"meaning\":\"非正式地表示获得、弄到某样想要的东西，常带幸运或令人满意的意味。\",\"note\":\"常用于门票等想得到的东西；不能在正式表达中随意替代所有 obtain 或 get。\",\"example\":{\"id\":\"score-ex-30\",\"senseId\":\"score-v-obtain\",\"en\":\"I scored two cheap tickets for the concert.\",\"zh\":\"我弄到了两张便宜的演唱会门票。\",\"note\":\"score 在这里表示成功弄到门票，不涉及比赛得分。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"score-n-account\",\"title\":\"名词：旧用的账目、欠账\",\"meaning\":\"旧式表达中可指记录的欠账或应付账款。\",\"note\":\"现代日常通常用 bill、account 或 debt。settle a score 如今常指算旧账、报复，不宜直接按结账理解。\",\"example\":{\"id\":\"score-ex-31\",\"senseId\":\"score-n-account\",\"en\":\"The traveller paid his score before leaving the inn.\",\"zh\":\"那位旅人在离开客栈前结清了账款。\",\"note\":\"这是旧式叙述用法，不建议作为现代结账时的常用说法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[\"wiktionary-score-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"score 有可靠的历史来源：法语词典记录其英语来源为古诺尔斯语 skor；词源所列早期含义涉及刻痕、带刻痕的计数棒以及二十这一数目。刻痕用于计数的联系也有助于理解它后来与比分的关系。\"",
+        "valueJson": "\"英语 score 源自古诺尔斯语 skor，其释义涉及切口、刻痕、带刻痕的计数棒，以及二十个的一组。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"词源记录所列来源形式；含义包括刻痕、带刻痕的计数棒以及二十左右的数量。\"",
+        "valueJson": "\"切口、刻痕；带刻痕的计数棒；二十个的一组。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"score + -er，表示做某事的人。\"",
+        "valueJson": "\"score 去掉词尾不发音的 e，再加表示人的后缀 -er。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"在 score 后加 -er，保留词尾 e。\"",
+        "valueJson": "\"score 去掉 e 后为 scor，加 -er 得 scorer，只有一个 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example",
+        "expectedValueJson": "{\"id\":\"score-ex-15\",\"senseId\":\"score-v-points\",\"en\":\"Scoring early gave the team confidence.\",\"zh\":\"早早得分让队伍有了信心。\",\"note\":\"Scoring 在句中作名词，指得分这件事。\"}",
+        "valueJson": "{\"id\":\"score-ex-15\",\"senseId\":\"score-v-points\",\"en\":\"All the scoring came in the first half.\",\"zh\":\"这场比赛的得分都出现在上半场。\",\"note\":\"the scoring 是名词短语，指比赛中的得分活动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-score\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"以上词形由 score 加常见后缀构成；score 的复数 scores 和动词变化 scored、scoring 是词形变化，不另列为派生词。\"",
+        "valueJson": "\"scorer、scoreless 和名词 scoring 与 score 有构词关系。scores、scored 以及作动词现在分词的 scoring 属于词形变化；本栏的 scoring 专指同形的名词用法。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-score\",\"title\":\"Oxford Learner’s Dictionaries: score\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/score\",\"supports\":[\"score 作名词表示比赛比分或考试成绩\",\"score 作动词表示比赛得分或进球\",\"score 的常见搭配与词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: score（English entry）\"",
+        "valueJson": "\"Wiktionnaire：score（英语词条；法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"score 的英语词源记录，列出古诺尔斯语 skor 及相关早期含义\"]",
+        "valueJson": "[\"score 的英美读音及规则屈折变化\",\"英语名词义：比赛比分、考试分数、电影配乐、二十（旧用）\",\"英语动词义：在表面刻划、比赛得分\",\"古诺尔斯语 skor 的词源及所列早期含义\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1200,
+    "headword": "score",
+    "meaning_zh": "n. 得分, 抓痕, 二十个, 刻痕, 帐目, 乐谱, 起跑线, 终点线, 大量\nvt. 刻划, 划线, 获得, 评价, 把...记下\nvi. 刻痕, 记分, 得分",
+    "phonetic": "/skɒ:/",
+    "pos": "",
+    "forms": []
+  }
+}

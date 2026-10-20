@@ -1,0 +1,414 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0615c3196f98d002ec0b354980f2f431fde81746a958b639e855ef4ea2f4e9ed",
+    "executedReviewPromptHash": "0615c3196f98d002ec0b354980f2f431fde81746a958b639e855ef4ea2f4e9ed",
+    "reviewHash": "8d1911ad2e99440a87f8d86754543daccb7313d6905fa72e1e05b4f3fba89382",
+    "wordId": 504,
+    "inputHash": "0ac358369c88bb458b0558b43bc2ca16dac86c22f6164fc41516d30086f1347a",
+    "draftHash": "f2bec16a988366c392278ec3ecef3447c42f5a8e89f96976bb72ff4356fc7ddb",
+    "finalHash": "dbfc4d44333abc4606ee7f9b98fd09ecdbc2e100a3ccfd851622cb9b34ed7fb5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/favourite#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:58.067Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121817,
+        "revisionId": 34229552,
+        "revisionTimestamp": "2024-04-22T18:22:12Z",
+        "sha256": "6232d233423ab59e31dad97c1114724c82e9b5dcdbd825f47bfb5fe9660428f7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/favorite",
+        "section": "favorite etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "eaabba3e3093faab1ce84e1a615d5a83dc1348b94833faf9a6b6bb3c8f50465e",
+        "summaryAndSupportsWordCount": 74,
+        "sha256": "eaabba3e3093faab1ce84e1a615d5a83dc1348b94833faf9a6b6bb3c8f50465e",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/504.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/favourite",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:09:49.307Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:14:46.974Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1; /lessCommonSenses/0",
+        "message": "表示个人喜爱的名词义与表示获胜预期的比赛义混在 s2 中，各只有一个例句，比赛义又在 s3 重复。应分开教学，各配两个例句，并将相关搭配和反向表达归入对应义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0; /senses/1/relatedExpressions",
+        "message": "a firm favourite 是名词短语，应归入名词义；favourite person / thing 中 favourite 是形容词，不宜充当名词义的近义表达。an old favourite 译成“老选择”也不够准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "favourite one 是规范结构，one 的使用不限于特别强调。“my favourite one”中的 favourite 作形容词，该例 senseId 应为 s1。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*; /lessCommonSenses/0/example; /confusions/*/items/*/example; /wordFamily/*/example",
+        "message": "原稿全部 11 个例句对象均缺少结构要求的 note。补丁为保留及新增的例句补齐该字段，并删除被合并处理的重复例句对象。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/0",
+        "message": "法语阶段的 meaning 只说明字形来源，没有提供释义，属于空洞占位。应删除该阶段；法语 favorit 的可靠来源信息已在 summary 保留，英语名词先于普通形容词用法的说明有材料支持。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“把末尾读成两个音节”与所列三音节形式的关系不清。应明确区分整词的三音节和两音节读法；原列 /ˈfeɪvərət/ 本身不应被判为错误读音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources; /pronunciation/sourceIds; /senses/*/sourceIds",
+        "message": "基本义、拼写和两音节读法可直接对应已提供的 Wiktionnaire 英语词条。补丁补入该来源并调整引用；比赛义、one 的句法分析及 favour 的现代用法依据专业语言知识，不额外归给未提供正文的网页。Oxford 可继续作为推荐阅读保留。"
+      }
+    ],
+    "coverageAssessment": "已核对材料中的形容词“最喜欢的”和名词“特别喜欢的人或事物”，并将常见的“比赛夺冠热门”义独立处理。补丁后三义各有两个自然英中例句，人物、事物及获胜预期均有覆盖。近义、反向表达和例句词性已按义归位；词源保留有依据的法语路线及意大利语关联的不确定性。来源范围限于给出的材料与专业语言知识，未声称核验额外推荐网页。",
+    "senseInventory": [
+      {
+        "sense": "形容词：最喜欢的；特别喜爱的",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "两个例句均正确体现形容词修饰名词；补丁将误放的名词搭配移出。"
+      },
+      {
+        "sense": "可数名词：特别喜欢的人或事物",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原稿仅有一个真正对应此义的例句；补丁补足人物例句，与事物例句共同覆盖标题范围。"
+      },
+      {
+        "sense": "可数名词：最被看好获胜的参赛者或队伍",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿在 s2 与 s3 重复出现。补丁独立列为常用义，补齐两个例句，并明确被看好不保证获胜。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"英式拼 favourite，美式拼 favorite。作形容词时放在名词前；作名词时表示最喜欢的人或事物。\"",
+        "valueJson": "\"英式拼 favourite，美式拼 favorite。作形容词时通常放在名词前；作名词可表示最喜欢的人或事物，也可指比赛中最被看好会获胜的选手或队伍。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"也有人把末尾读成两个音节，如 /ˈfeɪvərət/；按词典或当地口音可能略有差异。\"",
+        "valueJson": "\"既有三音节读法 /ˈfeɪ.və.rɪt/，也有两音节读法 /ˈfeɪv.rɪt/；词尾 -ite 在这里不读 /aɪt/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[\"wiktionary-favourite\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 作形容词，修饰 colour。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 修饰 story；to read before bed 说明这是睡前读的故事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"a firm favourite\",\"zh\":\"特别受欢迎的人或事物\",\"note\":\"常指在一群人或一系列选择中一直很受欢迎的对象。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"favourite food\",\"zh\":\"最喜欢的食物\",\"note\":\"常用于谈饮食喜好，如 my favourite food；favourite 修饰 food。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[\"wiktionary-favourite\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 my favourite、a favourite of mine 等结构；名词 favourite 也可指比赛中最有希望获胜的人或队伍。\"",
+        "valueJson": "\"常用 my favourite、a favourite of mine 等结构；可用复数 favourites / favorites 表示几个特别喜欢的对象。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 作名词，指最喜欢的零食，后面不必再加 snack。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"The runner in red is the race favourite.\",\"zh\":\"那位穿红衣的选手是这场比赛最被看好的人。\"}",
+        "valueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"Of all my teachers, Ms Green is my favourite.\",\"zh\":\"在我的所有老师中，格林老师是我最喜欢的一位。\",\"note\":\"favourite 作名词指人；与前一句指事物的用法相对应。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/2",
+        "expectedValueJson": "{\"en\":\"the favourite to win\",\"zh\":\"最被看好会获胜的人或队伍\",\"note\":\"常见于比赛语境，指最有希望获胜的选手或队伍。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/zh",
+        "expectedValueJson": "\"一直受喜爱的老选择\"",
+        "valueJson": "\"一直喜爱的人或事物\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"常指大家熟悉、经常喜欢的歌曲、故事或活动。\"",
+        "valueJson": "\"常指一直喜爱的老歌、故事或活动，也可指人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a firm favourite\",\"zh\":\"深受喜爱的人或事物\",\"note\":\"favourite 在这里是名词；常说 a firm favourite with children，表示深受孩子喜爱。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"favourite person / thing\",\"zh\":\"最喜欢的人／事物\",\"note\":\"把 favourite 具体指向的人或物说出来；单独用 favourite 时对象由上下文补足。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"top choice 强调选择排序；favourite 更常表达个人喜欢，也可在比赛报道中指热门选手。\"",
+        "valueJson": "\"top choice 强调选择顺序或最终决定；favourite 更强调喜爱。最喜欢的对象未必是实际决定采用的首选。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"underdog\",\"zh\":\"不被看好的参赛者\",\"note\":\"在比赛语境中可与最被看好的 favourite 对照，指获胜机会较小的一方。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"least favourite 用于个人喜好；underdog 用于比赛中和热门选手相对的语境。\"",
+        "valueJson": "\"least favourite 用于同一组人或事物的喜好排序，表示其中最不喜欢的对象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[\"wiktionary-favourite\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s3\",\"title\":\"比赛中的热门选手或队伍\",\"meaning\":\"作名词，指最被看好、最有希望获胜的选手或队伍。\",\"note\":\"常见于体育或竞赛报道；不保证一定获胜。\",\"example\":{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"Our school team is the favourite to win the final.\",\"zh\":\"我们校队是最被看好赢得决赛的队伍。\"},\"sourceIds\":[\"oxford-favourite\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"最被看好获胜的选手或队伍\",\"meaning\":\"作可数名词，在比赛或其他竞逐中指被认为最有可能获胜的选手、队伍等。\",\"usageNote\":\"常见于体育比赛，也可用于选举等竞逐。这里强调获胜预期；被看好不保证最终获胜。\",\"examples\":[{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"Our school team is the favourite to win the final.\",\"zh\":\"我们校队是最被看好赢得决赛的队伍。\",\"note\":\"the favourite to win 表示最被看好会获胜的一方。\"},{\"id\":\"s3-e2\",\"senseId\":\"s3\",\"en\":\"The favourite finished third in the 100-metre race.\",\"zh\":\"在那场100米赛跑中，夺冠热门最后得了第三名。\",\"note\":\"favourite 表示赛前的获胜预期，实际结果可以不同。\"}],\"patterns\":[{\"en\":\"be the favourite to win\",\"zh\":\"是最被看好会获胜的一方\",\"note\":\"win 后可接 the race、the final 等比赛名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the clear favourite\",\"zh\":\"明显最被看好的选手或队伍\",\"note\":\"clear 强调其获胜预期明显高于其他参赛者，仍不保证获胜。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"front-runner\",\"zh\":\"领先者；最有希望获胜者\",\"note\":\"常用于竞赛或选举，可强调目前领先；favourite 侧重被认为最可能获胜，不要求已经领先。\"}],\"contrasting\":[{\"en\":\"underdog\",\"zh\":\"不被看好的一方\",\"note\":\"指被认为获胜机会较小的参赛者或队伍，仍有可能取胜。\"}],\"similarNote\":\"front-runner 可强调当前领先，favourite 强调获胜预期。\",\"contrastingNote\":\"underdog 与本义的 favourite 在预期胜算上形成对照，不表示个人喜好排序。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"favourite 可以直接作名词，后面通常不用再加 one。\"",
+        "valueJson": "\"favourite 可以直接作名词，也可以作形容词修饰 one；两种结构都合乎语法。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 作名词，指最喜欢的那块蛋糕。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"one 可用于避免重复前面的可数名词，但不是每次都需要加。\"",
+        "valueJson": "\"在 my favourite one 中，favourite 作形容词，one 代替语境中明确的单数可数名词；one 本身不必表示强调。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "\"s1\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"one 代替 cup；favourite 修饰 one，属于形容词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"名词 favourite 本身就能表示“最喜欢的那个”；只有需要特别强调“那个”或承接前文时才加 one。\"",
+        "valueJson": "\"my favourite 和 my favourite one 都可以。前者的 favourite 是名词；后者的 favourite 是形容词，one 代替语境中明确的单数可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 是英式拼写，在句中修饰 subject。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favorite 是美式拼写，与英式 favourite 含义相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[\"wiktionary-favourite\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/0",
+        "expectedValueJson": "{\"language\":\"法语\",\"form\":\"favorit\",\"meaning\":\"传入英语时的法语形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favour 在这里作名词；show favour to 表示偏袒或优待某人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"favourite 作形容词，修饰 game。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-favourite\"]",
+        "valueJson": "[\"wiktionary-favourite\"]"
+      },
+      {
+        "op": "add",
+        "path": "/sources/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wiktionary-favourite\",\"title\":\"Wiktionnaire: favourite（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/favourite#Anglais\",\"supports\":[\"英语形容词与名词的基本义\",\"英美拼写差异\",\"两音节读法与规则名词复数\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 504,
+    "headword": "favourite (AmE favorite)",
+    "meaning_zh": "adj. 最喜欢的\nn. 最喜欢的人或事物",
+    "phonetic": "/'feivәrit/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "favorite",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5b6245ed6d2b79aeaf55b52eb2002acba16ac0714e3f911e748d6efa8fe50016",
+    "executedReviewPromptHash": "5b6245ed6d2b79aeaf55b52eb2002acba16ac0714e3f911e748d6efa8fe50016",
+    "reviewHash": "ef19e6759c9a86362d95ba83294e24f819d984383f85672ff2f74bd52b9a2dc5",
+    "wordId": 1357,
+    "inputHash": "7d8283dce8c0edfe21df4c77d2690f80a2cc4520c415da516329e416bfc6beff",
+    "draftHash": "b4072f8e6f04779ef3585990e7d5040c21dfcb432ca743ff62b3f31d3b79651a",
+    "finalHash": "7aa78072585f916369a70e1f84fda0c0a68c76f19d8074e016e49f832a88ad98",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/supermarket#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.551Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 367487,
+        "revisionId": 39376704,
+        "revisionTimestamp": "2026-03-19T08:18:22Z",
+        "sha256": "3212c6353ac5d13b9c2af51273f98a0f73a55cdc9e0ba06d4e9a3e1faae94211",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/supermarket",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:23:39.152Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:31:02.009Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0、/pronunciation/sourceIds、/senses/0/sourceIds、/confusions/0/sourceIds",
+        "message": "现有引用全部指向未提供实际内容的 Oxford 页面，应改引已取得的法语维基词典英语词条。该词条不支持 grocery store 的辨析，辨析部分应清空来源引用，保留专业语言说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "super 包含两个音节，不能称为“第一个音节”；主重音在第一个音节 /suː/。原词条中的 /sjuː/ 是规范英式变体，不能笼统判为旧音标不准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning",
+        "message": "释义应补出大型、自选及主要经营食品等特征，以免把一般食品杂货店或便利店都纳入 supermarket。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar、/confusions/0/summary",
+        "message": "美式 grocery store 可直接指大型超市，不能把规模较小作为主要区别。superstore 也可经营某一类非食品商品，不应暗示其以食品为必备商品。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源材料，不能只保留现代构词联想。应补充美国英语起源、super- 与 market 的组合关系及早期年代记载的差异，并引用原来源 URL。构词成分没有先后演变关系，stages 保持空数组适当。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/cues/2/text",
+        "message": "仅凭自选日用品并结账不能识别 supermarket；助记场景应加入较大规模和食品购物特征。"
+      }
+    ],
+    "coverageAssessment": "已核对所提供英语词条的全部定义：只有可数名词“超市”这一核心义，s1 已有两个自然且对应准确的原创英中例句，无须拆义。复数拼写、主要句型、例句 senseId 和便利店的语境对照均可保留。补正后覆盖常用义、读音和可靠词源；所给词典材料没有直接解释相关购物词的区别，这些辨析按专业语言知识修正，不冒充来源结论。未读取任何额外网页或文件，也未进行人工或教师逐词审核。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：超市，主要出售食品和日用品的大型自选商店",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "唯一已见词典义项，覆盖充分；两个生活例句分别展示定冠词用法和首次引入一家超市的用法。补足释义特征即可，无需增加其他义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一个音节 super 上；可分成 su-per-mar-ket 来练习。\"",
+        "valueJson": "\"主重音在第一个音节 /suː/ 上；super 包含两个音节，整个词可分成 su-per-mar-ket 四个音节来练习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不够准确；英美读音主要区别在 r 音。\"",
+        "valueJson": "\"英式开头既可读 /suː/，也可读 /sjuː/，两者都是规范变体；这里列出的英美读音主要区别在 r 音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-supermarket\"]",
+        "valueJson": "[\"wiktionary-supermarket-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"出售食品和日常用品、顾客通常可以自己挑选商品的商店。\"",
+        "valueJson": "\"主要出售食品和日用品、由顾客自己挑选商品的大型商店。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常见于美式英语，通常规模小于 supermarket；supermarket 往往商品种类更多。\"",
+        "valueJson": "\"常见于美式英语，泛指销售食品及日用品的商店，规模可大可小，也常用来指 supermarket；不能只按大小区分两者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"通常比 supermarket 更大，除了食品还可能销售更多种类的商品。\"",
+        "valueJson": "\"指规模很大的零售商店，可以经营多类商品，也可以专卖某一类商品，如电子产品；不一定出售食品，不能一概替换 supermarket。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-supermarket\"]",
+        "valueJson": "[\"wiktionary-supermarket-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者都能指买食品的地方，但常见地区用法和商店规模不同。\"",
+        "valueJson": "\"两者都能指买食品的地方。美式英语中的 grocery store 规模可大可小，也常指 supermarket；supermarket 则更明确地指大型自选商店。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-supermarket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，super- 表示“特大、超过一般”，market 是“市场”；两部分合起来帮助记住这个词指大型商店。\"",
+        "valueJson": "\"supermarket 起源于美国英语，由 super-（表示“超、大于一般”）与 market（市场）组合而成。早期出现时间有不同记载：约1920—1925年或1931年，另有1933年的书面用例记录。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代构词联想，不代表已经说明了各部分的历史来源或该词的完整词源。\"",
+        "valueJson": "\"最早出现的确切年份有不同记载，不能据此认定某一年就是唯一的造词年份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-supermarket-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"自己挑日用品、再结账的商店就是 supermarket。\"",
+        "valueJson": "\"想象在较大的自选商店里挑食品和日用品，再到收银处结账的场景。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-supermarket\",\"title\":\"Oxford Learner’s Dictionaries：supermarket\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/supermarket\",\"supports\":[\"名词用法及超市这一常见义\",\"英式和美式读音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-supermarket-en\",\"title\":\"法语维基词典：supermarket（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/supermarket#Anglais\",\"supports\":[\"英语名词 supermarket 的超市义及规则复数\",\"英式和美式读音\",\"美国英语起源、super- 与 market 的组合关系及早期年代记载\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1357,
+    "headword": "supermarket",
+    "meaning_zh": "n. 超级市场",
+    "phonetic": "/'sju:pәmɑ:kit/",
+    "pos": "",
+    "forms": []
+  }
+}

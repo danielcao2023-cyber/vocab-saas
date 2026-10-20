@@ -1,0 +1,358 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "695b6c71bb3e38e05cdf30204c9b1d3288fe05c2f2820aec9c0a7c3745e18d20",
+    "executedReviewPromptHash": "695b6c71bb3e38e05cdf30204c9b1d3288fe05c2f2820aec9c0a7c3745e18d20",
+    "reviewHash": "b0d29c42338d3f2f69cd9600c8de6ae0f559e99f9af0c16587a266107502d050",
+    "wordId": 1567,
+    "inputHash": "622ef5e353b5c27e82038db68b14162444713dace701f8dcafe90aba29804768",
+    "draftHash": "2abde58c154fc3dd9491202dea5966a924e4053c7419510779c13e2c759a10dc",
+    "finalHash": "bab85698f0d6212fbc5eb0f286f2667982708eb83747e6e0c1320b9443709fd2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/without#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.199Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116882,
+        "revisionId": 38141228,
+        "revisionTimestamp": "2025-04-24T08:50:05Z",
+        "sha256": "86e39df21822381326662b314cccf11e04f8ded6e55e6ce5a073cc2e617f062c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/without",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:53:57.299Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:14:14.975Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处/sourceIds",
+        "message": "初稿把未取得正文的 Cambridge 条目作为依据，并遗漏实际取得的 Wiktionary 英语词条。应更换来源及关联引用；新增的专业语言知识不冒充该页面明确收录的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/partOfSpeech；/forms/1",
+        "message": "遗漏现代常用的无显式宾语用法，如 manage without、go without；不能把副词用法一概标为少见或旧式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "条件语境中的“若没有……；不……就不能……”缺少专门说明和例句，需补充其与普通伴随性缺少表达的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "without the gate、without the walls 带有地点宾语，是旧式介词用法，不能用来证明副词义；“在外面”义也应明确标为旧式或文学用法，而非一般正式表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源材料，仍仅保留现代拆词助记，遗漏晚期古英语 wiþūtan。应补入可证实事实并引用相同来源 URL，不捏造字义或演变阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "来源同时列出 /ð/ 和 /θ/，宜将两者说明为可接受变体，避免让学生误以为 /θ/ 只是偶发口音现象。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions",
+        "message": "“without 放在名词前后”的说明容易混淆介词与修饰位置；把 without doing 自身列为近义表达也没有比较价值。需改为明确结构和有语境限制的改述。"
+      }
+    ],
+    "coverageAssessment": "已核对所附英语词条中的介词“没有”义、without + 动词-ing、副词“在外面”义，以及原始释义中的位置用法。补充现代常用的条件功能和省略已知对象的用法，各新增核心用法均有两个原创英中例句；纠正旧式位置义的词性混淆。词源仅保留可证实的古英语字形及组成关系，不建立缺乏释义依据的阶段链。原始词条所列名词标签未获正文支持，不据此扩写独立常用名词义；罕见方言和专业用法不作为本课覆盖目标。",
+    "senseInventory": [
+      {
+        "sense": "介词：没有、缺少、不带某人或某物",
+        "coveredBy": [
+          "without-absence"
+        ],
+        "assessment": "原有两个例句自然，覆盖物品缺少和帮助缺少；保留并明确近义表达的结构限制。"
+      },
+      {
+        "sense": "介词：未做某事，without + 动词-ing",
+        "coveredBy": [
+          "without-action"
+        ],
+        "assessment": "原有两个例句和核心语法正确；修正重复自身的近义表达。"
+      },
+      {
+        "sense": "介词的条件功能：若没有……；没有……就不能或不会……",
+        "coveredBy": [
+          "without-condition"
+        ],
+        "assessment": "初稿缺少明确教学，补充条件解释、两个例句及与 if、unless 的结构区别。"
+      },
+      {
+        "sense": "无显式宾语：没有已知对象也能应付，或只好缺着、将就",
+        "coveredBy": [
+          "without-omitted-object"
+        ],
+        "assessment": "初稿遗漏现代常用功能；补充 manage without 和 go without，并说明对象由上下文确定。"
+      },
+      {
+        "sense": "旧式或文学副词：在外面、在外部",
+        "coveredBy": [
+          "without-outside"
+        ],
+        "assessment": "保留两个例句，均改为不带地点宾语的副词用法，并强化语域限制。"
+      },
+      {
+        "sense": "旧式介词：在某一地点或界限之外",
+        "coveredBy": [
+          "without-outside-preposition"
+        ],
+        "assessment": "原稿已有实例却误归副词；移至补充义，单独标明词性和旧式语域。"
+      },
+      {
+        "sense": "原始词条标注的名词“外面、外部”",
+        "coveredBy": [],
+        "assessment": "所附词典正文没有独立名词定义或例证，不扩写为现代初中常用名词义；the world without 中的 without 也不是名词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"介词；副词（少见、较旧或较正式）\"",
+        "valueJson": "\"介词；副词\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"without 最常见作介词，表示“没有、缺少”或“没有做某事”。后面接名词、代词或动词-ing；通常不直接接动词原形。\"",
+        "valueJson": "\"without 最常见作介词，表示“没有、缺少”或“没有做某事”；在条件语境中可理解为“若没有……”。后接名词、代词或动词-ing，不直接接动词原形；对象已明确时也可省略，如 manage without。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"读句子时留意 without 也可表示“在……外面”，这种用法较少见。\"",
+        "valueJson": "\"练习条件表达 Without water, these plants will die，以及省略已知对象的 manage without、go without。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"认识“在外面”的旧式或文学用法即可；日常表达用 outside。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"中间的 th 通常发 /ð/，与 this 中的 th 相同；部分口音可能发 /θ/。\"",
+        "valueJson": "\"th 可发 /ð/，像 this 中的 th；也可发 /θ/，像 think 中的 th。两种都是可接受的读音变体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"表示“在外面”时也不变形；此用法较少见。\"",
+        "valueJson": "\"副词用法不变形。可单独表示没有前文所说的东西，如 manage without；“在外面”义则属旧式或文学用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可作形容词，描述某物缺少某种品质或成分；without 更常放在名词前后说明缺少的对象。\"",
+        "valueJson": "\"常见结构是 be lacking in + 名词，表示缺乏某种品质，如 be lacking in confidence。without + 名词还可表示没带某物、无人陪同等，不能处处换成 lacking。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"lacking 可描述缺少的状态；not have 是完整的动词表达。\"",
+        "valueJson": "\"lacking 常描述缺少某种品质的状态；not have 是动词的否定表达，进入句子时要按主语和时态变化，如 doesn't have、didn't have。两者都不能在原句中直接替换所有 without 短语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"without doing\",\"zh\":\"没有做……\",\"note\":\"直接表达某动作未发生。\"}",
+        "valueJson": "{\"en\":\"and did not ...\",\"zh\":\"而且没有……（用于过去叙述）\",\"note\":\"He left without paying 可改述为 He left and did not pay。without paying 把“没付款”作为离开的伴随情况；改述句并列叙述两件事。其他时态需相应调整。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"instead of 强调替代关系；without 强调缺少该动作。\"",
+        "valueJson": "\"and did not 可用于改述过去叙述中的某些 without + 动词-ing 短语，但句子结构和叙述重点会改变。instead of 强调替代关系，without 强调没有进行该动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"在外面；在外部\"",
+        "valueJson": "\"在外面；在外部（旧式或文学副词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"此义较少见，常见于较旧或较正式的表达；日常英语通常说 outside。\"",
+        "valueJson": "\"这是旧式或文学性的副词用法，without 后不带地点宾语；现代日常英语通常说 outside。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"A guard stood without the gate until dawn.\"",
+        "valueJson": "\"A guard stood without until dawn.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"一名守卫在门外站到黎明。\"",
+        "valueJson": "\"一名守卫在外面一直站到黎明。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "\"此处是较旧式的“在外面”表达。\"",
+        "valueJson": "\"without 单独作副词，地点由上下文确定；这是旧式语气，日常说 stood outside。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"较正式或文学语境中用来概括内外两侧。\"",
+        "valueJson": "\"旧式或文学表达，用来概括内部和外部。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"without the walls\",\"zh\":\"城墙之外\",\"note\":\"旧式表达，指城墙外的区域。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"voices from without\",\"zh\":\"从外面传来的声音\",\"note\":\"文学表达；without 表示外面，不带地点宾语。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"without-condition\",\"title\":\"若没有……；没有……就不能……\",\"meaning\":\"把某人、某物或某个动作看作条件，说明缺少它时会出现什么结果。\",\"usageNote\":\"这种用法仍是介词用法。without 短语可以放在句首，也可放在句末；常与 can't、couldn't、will、would 等连用。它既可说明一般必要条件，也可用于假设，不能一律理解为条件实际上不存在。\",\"examples\":[{\"id\":\"w1567-d1\",\"senseId\":\"without-condition\",\"en\":\"Without water, these plants will die.\",\"zh\":\"如果没有水，这些植物就会枯死。\",\"note\":\"说明水是植物存活的必要条件，并不是说植物现在一定没有水。\"},{\"id\":\"w1567-d2\",\"senseId\":\"without-condition\",\"en\":\"I can't carry this box without your help.\",\"zh\":\"没有你的帮助，我搬不动这个箱子。\",\"note\":\"can't ... without ... 表示做成某事需要某个条件。\"}],\"patterns\":[{\"en\":\"Without + noun, ...\",\"zh\":\"如果没有……，就……\",\"note\":\"后面的主句说明缺少该条件时的结果；具体时态取决于实际语境。\",\"kind\":\"sentence-pattern\"},{\"en\":\"can't ... without ...\",\"zh\":\"没有……就不能……\",\"note\":\"说明必要条件；without 后仍接名词、代词或动词-ing。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"without your help\",\"zh\":\"若没有你的帮助\",\"note\":\"可说明帮助是完成某事的条件，也可在其他句子中表示实际没有得到帮助。\",\"kind\":\"common-collocation\"},{\"en\":\"without enough sleep\",\"zh\":\"若睡眠不足\",\"note\":\"可用来说明缺少充足睡眠时的后果。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"if ... not ...\",\"zh\":\"如果不……；如果没有……\",\"note\":\"可把条件关系展开成完整从句，如 Without water 可展开为 If they don't get water；展开时要补主语并选择合适时态。\"},{\"en\":\"unless\",\"zh\":\"除非；如果不\",\"note\":\"I can't carry this box without your help 可改述为 I can't carry this box unless you help me。unless 后接从句，不能直接照搬 without 后的名词短语。\"}],\"contrasting\":[{\"en\":\"with\",\"zh\":\"有……作为条件\",\"note\":\"在条件有无这一点上形成对照，如 with your help；具备某个必要条件不一定保证事情成功。\"}],\"similarNote\":\"这些表达可在合适的条件语境中改述，但 without 后接短语，if 和 unless 通常引出有主语、谓语的从句，不能只替换一个词。\",\"contrastingNote\":\"with 只对照条件的有无，不自动把原句的结果变为相反结果。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"without-omitted-object\",\"title\":\"没它也能应付；只好缺着、将就\",\"meaning\":\"前文已明确所缺的东西时，without 可以不再带出宾语，表示没有它也能应付，或不得不缺着它。\",\"usageNote\":\"常见于 do without、manage without、go without。单独用 without 的前提是听者知道缺的是什么；它不是表示“在外面”。这里按传统词性分类列作副词用法。\",\"examples\":[{\"id\":\"w1567-e1\",\"senseId\":\"without-omitted-object\",\"en\":\"We forgot the picnic blanket, but we managed without.\",\"zh\":\"我们忘带野餐垫了，不过没它也应付过来了。\",\"note\":\"without 后省去已提到的 the picnic blanket；managed 表示实际应付过来了。\"},{\"id\":\"w1567-e2\",\"senseId\":\"without-omitted-object\",\"en\":\"There was no dinner left, so I had to go without.\",\"zh\":\"晚饭一点也没剩下，我只好饿着了。\",\"note\":\"go without 在这里表示没吃上晚饭，不含“成功应付”的意思。\"}],\"patterns\":[{\"en\":\"do/manage without (something)\",\"zh\":\"没有（某物）也行／也能应付\",\"note\":\"对象明确时可以省略；带出 something 时，without 作介词。\",\"kind\":\"sentence-pattern\"},{\"en\":\"go without (something)\",\"zh\":\"缺了（某物）；没有（某物）只好将就\",\"note\":\"常涉及食物或其他所需之物；是否自愿取决于语境。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have to go without\",\"zh\":\"只好缺着／将就\",\"note\":\"have to 说明是不得不接受这种缺少。\",\"kind\":\"common-collocation\"},{\"en\":\"can manage without\",\"zh\":\"没它也能应付\",\"note\":\"强调应付能力，省略的对象须由上下文确定。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"make do\",\"zh\":\"将就；凑合\",\"note\":\"也可表示条件不足时设法应付；make do with 后强调利用现有替代品，manage without 强调没有某物仍能应付。\"}],\"contrasting\":[{\"en\":\"have dinner\",\"zh\":\"吃晚饭\",\"note\":\"仅在 go without 指没吃上晚饭时形成具体对照，不是 manage without 在所有语境中的反义表达。\"}],\"similarNote\":\"make do 与 manage without 在将就应付的语境中接近；go without 本身只说明缺少，不保证已经解决困难。\",\"contrastingNote\":\"反向表达要补回具体对象：go without dinner 可与 have dinner 对照；没有一个固定短语能替换所有省略对象的用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"without-outside-preposition\",\"title\":\"介词：在……之外（旧式）\",\"meaning\":\"在某个地点或界限的外面。\",\"note\":\"这是旧式位置义，without 后带地点宾语，与单独表示“在外面”的副词用法不同。现代日常英语用 outside。\",\"example\":{\"id\":\"w1567-f1\",\"senseId\":\"without-outside-preposition\",\"en\":\"The travelers camped without the city walls.\",\"zh\":\"旅人们在城墙外扎营。\",\"note\":\"刻意采用旧式语气；the city walls 是介词 without 的宾语。日常说 outside the city walls。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中可以把 without 看作 with 与 out 组成的词，帮助记忆“在……之外”以及引申出的“没有”。这种拆分用于理解现代用法。\",\"stages\":[],\"caveat\":\"这里的拆分是现代记忆线索，不代表已说明其完整历史演变。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"without 可追溯到晚期古英语 wiþūtan，构成上是 with 与 out 两个成分的组合。\",\"stages\":[],\"caveat\":\"不要把现代 with 的“和……一起”与 out 的“外面”机械相加，来推断 without 的全部含义或各义出现的先后。\",\"sourceIds\":[\"wiktionary-fr-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: without\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/without\",\"supports\":[\"常见介词义及语法结构\",\"动词-ing结构\",\"英式与美式发音查询\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: without\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/without\",\"supports\":[\"常见词性和搭配查询\",\"副词位置义查询\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-fr-en\",\"title\":\"Wiktionnaire：without（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/without#Anglais\",\"supports\":[\"介词“没有”义及 without + 动词-ing 的用例\",\"旧式或文学性的副词“在外面”义\",\"/ð/ 与 /θ/ 两种读音变体\",\"晚期古英语 wiþūtan 及 with、out 的组成关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1567,
+    "headword": "without",
+    "meaning_zh": "prep. 没有, 不, 在...之外\nadv. 在外面, 户外\nn. 外面, 外部",
+    "phonetic": "/wi'ðaut/",
+    "pos": "",
+    "forms": []
+  }
+}

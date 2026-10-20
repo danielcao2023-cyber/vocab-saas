@@ -1,0 +1,538 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8d081a344c56cf5b04b23cd134df1c126c7647fa906f54a8da9613c61c97e6d3",
+    "executedReviewPromptHash": "8d081a344c56cf5b04b23cd134df1c126c7647fa906f54a8da9613c61c97e6d3",
+    "reviewHash": "57d6286b31ceabbcec4636f14636c95d0580ec1a15955c512774c037ad8c19de",
+    "wordId": 1539,
+    "inputHash": "779ff638f934434f6ace683173d8b236110648e94711b376189990d3d7974db7",
+    "draftHash": "2c156d308c7096c00dee053f59481446c06eed51d59d818c4f61805c0694c64a",
+    "finalHash": "ac03f0ababf040654c2860af2b0c92257e73ecd74a5e5e36cf613148478e8e79",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wheel#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.455Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117314,
+        "revisionId": 34921258,
+        "revisionTimestamp": "2024-05-27T05:49:05Z",
+        "sha256": "e6914b47bbc5de1e8affdb4e3d5acf644d9572f6387a9eecefe59dda24ff98c9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wheel",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:12:05.489Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:23:15.691Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "wheel 不以 e 结尾；wheeling 是直接加 -ing，不能解释为去掉词尾 e。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "wheel 与 well 并非只差字母 h；两词的 e、l 数量也不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0",
+        "message": "教学例句应以 tyre/tire 表示没气的轮胎，避免用 wheel is flat 混淆车轮与轮胎。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "/wiːl/ 是常见读音，但说明应兼顾来源所列 /ʍiːl/，不能把所有保留 wh 区别的读法排除。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见的动词“盘旋、绕圈移动”义；需新增独立义项并提供两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "wheel the car into a street 不适合作为普通车辆转弯的入门搭配；wheel around 也不默认表示转满一圈。应分别展示使某物转向和自己转身。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "roll 也能作及物动词，表示使物体滚动；wheel a chair 中的 chair 也不直接等于轮椅。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /confusions/*/items/*/example; /wordFamily/*/example",
+        "message": "十四个例句对象缺少必填 note；well 对比例句及 wheelchair 词族例句的 senseId 也需调整到对应的比较义或基础名词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "应补充 wheels 表示汽车及 wheels 比喻运作机制的用法，明确复数形式和语域限制，避免将“机构”理解为任意组织。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各 sourceIds",
+        "message": "提供的材料不含 Oxford 正文，不能据此给全部扩展义挂上该页面的来源标记。应仅将实际取得的词典材料用于其能支持的内容，其余专业语言知识不虚挂出处。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary",
+        "message": "应在正文中明确区分有记录的古英语词形与重构的史前形式，避免“有可靠记录的历史词形链”造成全部形式都有文字记录的印象。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "自行车车轮没气及修好自行车后握 steering wheel 的连续场景容易同时混淆轮胎与车轮、车把与方向盘。"
+      }
+    ],
+    "coverageAssessment": "已核对轮子、方向盘、推拉轮式物品、转身及使转向、盘旋绕圈，以及 wheels 指汽车、运作机制和 big wheel 指重要人物。修订后五个核心义各有两个例句。原中文中的名词“旋转”及泛化的动词“使旋转”未机械拆成初中核心义；wheel 不宜作为 rotation、spin 的通用替代。实际取得的词典正文较简略，扩展用法依据专业语言知识补充，并取消不受现有正文支持的来源挂接。",
+    "senseInventory": [
+      {
+        "sense": "名词：轮子、车轮及类似的圆形转动部件",
+        "coveredBy": [
+          "wheel-n1"
+        ],
+        "assessment": "核心义已覆盖；修正轮胎没气的混淆，保留两个具体例句。"
+      },
+      {
+        "sense": "名词：方向盘、舵轮",
+        "coveredBy": [
+          "wheel-n2"
+        ],
+        "assessment": "核心义已覆盖；两个汽车场景展示 steering wheel 与语境明确时的 wheel。"
+      },
+      {
+        "sense": "复数名词 wheels：汽车",
+        "coveredBy": [
+          "wheel-n5"
+        ],
+        "assessment": "补入较少见义区，说明是非正式说法及复数用法。"
+      },
+      {
+        "sense": "复数名词 wheels：运作机制、推动事务的过程",
+        "coveredBy": [
+          "wheel-n4"
+        ],
+        "assessment": "补入比喻义，并限制为 wheels of 等语境，不教成任意“机构”的名称。"
+      },
+      {
+        "sense": "名词：重要人物",
+        "coveredBy": [
+          "wheel-n3"
+        ],
+        "assessment": "已有 big wheel 及语气说明，适合放在较少见义区。"
+      },
+      {
+        "sense": "名词：一次回旋或转向动作",
+        "coveredBy": [],
+        "assessment": "属罕用名词义，不列为初中核心内容；原中文“旋转”不能据此泛化为 rotation 的通用同义词。"
+      },
+      {
+        "sense": "及物动词：推或拉带轮子的物品，也可推着轮椅上的人移动",
+        "coveredBy": [
+          "wheel-v1"
+        ],
+        "assessment": "核心义已覆盖；修正 chair 的释义及 roll 的及物用法说明。"
+      },
+      {
+        "sense": "不及物动词：借助轮子移动",
+        "coveredBy": [
+          "wheel-v1"
+        ],
+        "assessment": "补入 usageNote，说明也能不接宾语表示自己借助轮子移动。"
+      },
+      {
+        "sense": "动词：转身、改变方向或使转向",
+        "coveredBy": [
+          "wheel-v2"
+        ],
+        "assessment": "以人转身和骑手拨转马头分别展示不及物、及物用法；纠正 wheel around 的转动幅度说明。"
+      },
+      {
+        "sense": "不及物动词：盘旋、绕圈或沿弧线移动",
+        "coveredBy": [
+          "wheel-v3"
+        ],
+        "assessment": "新增核心义，提供鸟盘旋和舞者绕圈两个例句。"
+      },
+      {
+        "sense": "动词：旋转、使旋转的泛化释义",
+        "coveredBy": [
+          "wheel-v2",
+          "wheel-v3"
+        ],
+        "assessment": "通过具体的转向及圆周运动解释常见表现，不额外教成任意物体绕轴旋转都可用 wheel。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"wheel 最常指圆形的“轮子、车轮”；作动词时，常表示“推着带轮子的东西移动”或“转向”。\"",
+        "valueJson": "\"wheel 最常指“轮子、车轮”，也可按语境指方向盘；作动词时，可表示推拉带轮子的东西、转身或转向，也可描写鸟在空中盘旋。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"再读鸟在空中 wheel 的例句，记住它还可以表示“盘旋、绕圈移动”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式读音基本相同。\"",
+        "valueJson": "\"现代英式和美式英语中常读 /wiːl/；部分口音仍区分 wh 与 w，读作 /ʍiːl/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头是辅音 /w/，不要读成 /h/；元音 /iː/ 要拉长。\"",
+        "valueJson": "\"常见读音以 /w/ 开头，不是单独的 /h/；部分口音用清音 /ʍ/。元音是 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"加 -ing，保留词尾 e 的拼写变化：去掉 e 再加 -ing。\"",
+        "valueJson": "\"wheel 以 l 结尾，直接加 -ing，拼作 wheeling；中间的 ee 保留，l 不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"wheel-n1-ex1\",\"senseId\":\"wheel-n1\",\"en\":\"One wheel on my bike is flat.\",\"zh\":\"我自行车的一个车轮没气了。\"}",
+        "valueJson": "{\"id\":\"wheel-n1-ex1\",\"senseId\":\"wheel-n1\",\"en\":\"The front wheel on my bike is loose.\",\"zh\":\"我自行车的前轮松了。\",\"note\":\"wheel 指车轮；说轮胎没气通常用 tyre/tire is flat。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"four 后用复数 wheels。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"steering wheel 明确指方向盘；on 表示双手放在上面。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"在驾驶语境中，the wheel 可直接指方向盘。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"推着带轮子的物品移动\"",
+        "valueJson": "\"推或拉着带轮子的物品移动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用于推车、病床等；后面通常接被移动的物品。\"",
+        "valueJson": "\"常接推车、行李箱、病床等作宾语，也可接坐在轮椅上的人。不接宾语时也能表示自己借助轮子移动，如使用轮椅的人 wheeled into the room。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wheel 强调让物品借助轮子移动；具体可以用推或拉的方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的病床带轮子；into 表示移进房间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"wheel a cart / suitcase / chair\",\"zh\":\"推手推车／行李箱／轮椅\",\"note\":\"后接带轮子的物品，表示推动它移动。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"wheel a cart / suitcase / wheelchair\",\"zh\":\"推拉手推车／行李箱／轮椅\",\"note\":\"后接带轮子的物品。chair 本身只表示椅子；明确说轮椅用 wheelchair。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"roll\",\"zh\":\"滚动\",\"note\":\"roll 描述物体滚动；wheel something 是某人推动物品滚动。\"}",
+        "valueJson": "{\"en\":\"roll\",\"zh\":\"滚动；使滚动\",\"note\":\"roll 可不接宾语表示自己滚动，也可接宾语，如 roll a suitcase。wheel 更明确地强调借助轮子移动；roll 还可用于球等没有轮子的物体。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"转向；突然转身\"",
+        "valueJson": "\"转身；转向或使转向\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"使车辆或身体改变方向；wheel around 常表示迅速转过身。\"",
+        "valueJson": "\"迅速转身或改变方向，也可表示使马匹等转过方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常见于 wheel around 或 wheel to the left/right 等表达，具体是转车还是转身看宾语和上下文。\"",
+        "valueJson": "\"不接宾语时，wheel around/round 常表示突然转身；接 horse 等宾语时，可表示使其转向。这类用法常见于叙述；日常说车辆转弯通常用 turn，强调操纵方向通常用 steer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0",
+        "expectedValueJson": "{\"id\":\"wheel-v2-ex1\",\"senseId\":\"wheel-v2\",\"en\":\"The driver wheeled the car into the side street.\",\"zh\":\"司机把车转进了旁边的小街。\"}",
+        "valueJson": "{\"id\":\"wheel-v2-ex1\",\"senseId\":\"wheel-v2\",\"en\":\"The rider wheeled his horse around and rode back to the farm.\",\"zh\":\"骑手拨转马头，骑回了农场。\",\"note\":\"wheel 接 his horse 作宾语，表示使马转向。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里 wheel 不接宾语，around 表示转过身，并非转满一圈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0/note",
+        "expectedValueJson": "\"around 常表示转过一整圈或转向另一边，常用于人迅速转身。\"",
+        "valueJson": "\"常指迅速转向另一边，尤其是突然转身；不默认表示转满一圈。英式英语也常用 round。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0",
+        "expectedValueJson": "{\"en\":\"wheel a car into a street\",\"zh\":\"把车转进一条街\",\"note\":\"wheel 后接车辆，后面的 into 短语表示转入的地点。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"wheel a horse around\",\"zh\":\"拨转马头\",\"note\":\"叙述骑马动作时可用，表示使马转向。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wheel-v3\",\"title\":\"盘旋；绕圈移动\",\"meaning\":\"沿圆圈或弧线移动，常用来描写鸟在空中盘旋。\",\"usageNote\":\"此义通常不接宾语，常搭配 above、over 等说明位置；也可描写人群等绕圈移动。\",\"examples\":[{\"id\":\"wheel-v3-ex1\",\"senseId\":\"wheel-v3\",\"en\":\"Gulls wheeled above the fishing boats.\",\"zh\":\"海鸥在渔船上空盘旋。\",\"note\":\"wheeled 描写海鸥绕着圈飞，不是原地扇动翅膀。\"},{\"id\":\"wheel-v3-ex2\",\"senseId\":\"wheel-v3\",\"en\":\"The dancers wheeled in a circle across the floor.\",\"zh\":\"舞者们在舞池里绕着圈移动。\",\"note\":\"这里描写舞者绕圈移动，不要求他们像陀螺一样各自原地旋转。\"}],\"patterns\":[{\"en\":\"wheel above / over something\",\"zh\":\"在某物上空盘旋\",\"note\":\"常用于鸟的飞行，位置短语跟在 wheel 后。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"birds wheeling overhead\",\"zh\":\"在头顶盘旋的鸟\",\"note\":\"wheeling 描写鸟的绕圈飞行动作。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"circle\",\"zh\":\"绕圈；盘旋\",\"note\":\"在鸟绕圈飞的语境中可与 wheel 接近；circle 使用更广，也能接宾语，如 circle the island。\"}],\"contrasting\":[{\"en\":\"fly straight ahead\",\"zh\":\"径直向前飞\",\"note\":\"仅在飞行路线的语境中，与绕圈盘旋形成对照。\"}],\"similarNote\":\"circle 强调绕圈；wheel 常用于较有画面感的运动描写。\",\"contrastingNote\":\"此义没有常用的直接反义词，可用具体的直线飞行表达对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wheel-n4\",\"title\":\"运作机制；推动事务的过程\",\"meaning\":\"复数 wheels 可比喻使组织或事务持续运转的机制。\",\"note\":\"常见于 the wheels of government 等表达；不能把任何一个机构直接叫作 a wheel。set the wheels in motion 表示启动某项过程。\",\"example\":{\"id\":\"wheel-n4-ex1\",\"senseId\":\"wheel-n4\",\"en\":\"The wheels of government kept turning during the crisis.\",\"zh\":\"危机期间，政府的运作仍在继续。\",\"note\":\"这里的 wheels 是比喻，不是真正的车轮。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wheel-n5\",\"title\":\"汽车（非正式，复数）\",\"meaning\":\"口语中 wheels 可指汽车，尤其是某人拥有或可使用的车。\",\"note\":\"这种说法用复数形式；my own wheels 可表示自己有车可用。\",\"example\":{\"id\":\"wheel-n5-ex1\",\"senseId\":\"wheel-n5\",\"en\":\"I finally have my own wheels, so I can drive to work.\",\"zh\":\"我终于有自己的车了，可以开车上班了。\",\"note\":\"my own wheels 在这里指自己的汽车，不是几只单独的车轮。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两词只差一个字母 h，但发音和意思都不同。\"",
+        "valueJson": "\"wheel 拼作 w-h-e-e-l，well 拼作 w-e-l-l；区别不只是 h，e 和 l 的数量也不同，读音和意思也不同。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wheel 是名词，指松动的车轮。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"wheel-conf-2\",\"senseId\":\"wheel-v1\",\"en\":\"She can ride very well.\",\"zh\":\"她骑得很好。\"}",
+        "valueJson": "{\"id\":\"wheel-conf-2\",\"senseId\":\"wheel-n1\",\"en\":\"She can ride very well.\",\"zh\":\"她骑得很好。\",\"note\":\"well 在这里是修饰 ride 的副词；此句用于与名词 wheel 作拼写、读音对比。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"wheel 的开头拼写是 wh，但在 wheel 中读 /w/；well 少了 h，读音和意思都不同。\"",
+        "valueJson": "\"wheel 是 wh + ee + l；well 是 w + e + ll。常见读音分别是 /wiːl/ 和 /wel/，重点区分元音 /iː/ 与 /e/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里是推着自行车移动，不是骑车。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"steer 强调控制船的行进方向；toward 表示朝岸边行进。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"wheel 有可靠记录的历史词形链：古英语 hweol 来自原始日耳曼语 *hwehwlan，再往前与原始印欧语 *kʷekʷlóm 相连；古希腊语 kýklos 是相关词。\"",
+        "valueJson": "\"wheel 可追溯到古英语 hweol；更早的原始日耳曼语 *hwehwlan 和原始印欧语 *kʷekʷlóm 是语言学重构形式。古希腊语 kýklos 是相关词，不是 wheel 借入英语的来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"wheel-family-1\",\"senseId\":\"wheel-n1\",\"en\":\"We borrowed a wheeled chair for the picnic.\",\"zh\":\"我们借了一把带轮椅子去野餐。\"}",
+        "valueJson": "{\"id\":\"wheel-family-1\",\"senseId\":\"wheel-n1\",\"en\":\"She pulled a wheeled suitcase through the station.\",\"zh\":\"她拉着一个带轮子的行李箱穿过车站。\",\"note\":\"wheeled 是修饰 suitcase 的形容词，表示“带轮子的”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"wheel-v1\"",
+        "valueJson": "\"wheel-n1\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wheelchair 是由名词 wheel 和 chair 构成的复合名词，此句不展示动词 wheel。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_wheel\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你骑车时发现一个 wheel 没气。你把车推回家，再握住工具转动车轮；车修好后，握紧 steering wheel 的画面也能帮你记住“方向盘”这个用法。\"",
+        "valueJson": "\"想象你发现自行车的一个 wheel 松了，便把车推回家：wheel the bike home。听到有人叫你，你突然转身：wheel around。抬头看，几只海鸥正在屋顶上空盘旋，也可以用 wheel 来描写。后来你坐进汽车，看见驾驶员握着 steering wheel，由此记住“方向盘”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"推着带轮物品走，或让车转向：wheel。\"",
+        "valueJson": "\"推拉带轮物品、突然转身，或像鸟一样盘旋：wheel。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_wheel\",\"title\":\"Oxford Learner’s Dictionaries: wheel\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/wheel\",\"supports\":[\"wheel 的名词与动词用法\",\"常见搭配与例句用法参考\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_etymology\",\"title\":\"Wiktionary: wheel（English）\",\"url\":\"https://fr.wiktionary.org/wiki/wheel#Anglais\",\"supports\":[\"所列 wheel 的历史词形关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_etymology\",\"title\":\"Wiktionnaire：wheel 英语词条（法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/wheel#Anglais\",\"supports\":[\"wheel 的基本名词义“轮子”\",\"所列 /ʍiːl/ 读音\",\"steering wheel 与 wheelchair 的列举\",\"所列 wheel 的历史词形关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1539,
+    "headword": "wheel",
+    "meaning_zh": "n. 轮子, 车轮, 轮, 方向盘, 旋转, 机构, 重要人物\nvt. 使旋转, 转动, 使转向\nvi. 旋转, 转弯, 盘旋",
+    "phonetic": "/hwi:l/",
+    "pos": "",
+    "forms": []
+  }
+}

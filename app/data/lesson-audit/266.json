@@ -1,0 +1,242 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9e92ad6ecd3b822deab5cbcf3c1990e8dca3c8f2be779770132fdf08bfe94435",
+    "executedReviewPromptHash": "9e92ad6ecd3b822deab5cbcf3c1990e8dca3c8f2be779770132fdf08bfe94435",
+    "reviewHash": "e040eb7c13fbfe938ba33659a8f34ae76d115b8ed8c504f7b7f90cded31b4ffd",
+    "wordId": 266,
+    "inputHash": "6ab9b3cfdaae38447299ef61c5e83b49a58f8f0c2835e7cd19a0c99bd8106676",
+    "draftHash": "b64f9fbe7c906018423335c0b9ce1eaa7131b2160a6ac4c5ba45fc854467a4ae",
+    "finalHash": "f8b3ab9e39c05780708310ae5177974f980cfbc4226a7bf5c09cf529e141c18a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/chore#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.914Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2939262,
+        "revisionId": 36953011,
+        "revisionTimestamp": "2025-01-13T22:19:08Z",
+        "sha256": "c95c4fa01e6965b34cf352de5ad2cd87b08523211c718039c41cad885b2222a0",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/chore",
+        "section": "chore (noun)",
+        "supports": [
+          "Variant of char",
+          "Older turn or task meanings",
+          "Household-task development"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "ae66b4a2ff23b656b221fece58a16a351f8081e24409c36e4f232a5906cedd91",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "ae66b4a2ff23b656b221fece58a16a351f8081e24409c36e4f232a5906cedd91",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/266.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/chore",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:44:09.033Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:53:05.741Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/*/sourceIds、/sources",
+        "message": "Cambridge 未取得正文，Oxford 未提供正文，不宜把它们作为本次已读资料的依据。保留其推荐链接，补入实际取得的维基词典英语词条，并调整来源关联；job 的辨析按专业语言知识处理。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "本义包含家务和其他例行杂务，但两例均为家务，缺少非家务日常任务的示范。补充一个工作场景即可，无须另立义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/zh",
+        "message": "before finishing her other chores 只说明喂猫发生在其他家务全部完成之前；原译“喂完猫后，再做其他家务”容易被理解为其他家务尚未开始。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1/zh",
+        "message": "“一次短暂办事”搭配生硬。此处 quick visit 指原本可以很快结束的一趟办事，宜用自然中文表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "job 表示职业的例句不对应所绑定的“令人厌烦的差事”义。改为同句对照职业 job 与家务 chores，并绑定家务义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧音标”容易暗示 /tʃɒ:/ 是曾经通行的正确标法。改为直接提示英式 /ɔː/ 与 /ɒ/ 的区别。"
+      }
+    ],
+    "coverageAssessment": "已将法语站点材料按英语词条解读，结合词源材料与专业语言知识核对两种主要名词用法：例行杂务（尤其家务）和令人厌烦的任务。补充后分别有三个、两个生活例句。单复数、英美读音、近义及反向表达、拼写均已核对；char → chore 的历史顺序有材料支持，无须改动词源。Cambridge 与 Oxford 正文未取得，保留为推荐查阅链接，不作为本次已读证据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：需要例行完成的杂务，尤其是家务",
+        "coveredBy": [
+          "266-n1"
+        ],
+        "assessment": "释义正确；原例句仅覆盖家务，补充工作中的日常杂务，并修正一处时序翻译。"
+      },
+      {
+        "sense": "可数名词：令人厌烦、费劲或不情愿完成的任务",
+        "coveredBy": [
+          "266-n2"
+        ],
+        "assessment": "两个例句均体现对此类任务的主观评价；保留原分义，调整一处中文表达。近义词与 pleasure 的对照均已限定语境。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/sources/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：chore（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/chore#Anglais\",\"supports\":[\"英语名词 chore 的差事、任务等释义\",\"英式发音 /tʃɔː/\",\"规则可数名词形式\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /tʃɒ:/ 不准确；英式常见读音为 /tʃɔː/。\"",
+        "valueJson": "\"英式的 /ɔː/ 是长元音，要与短元音 /ɒ/ 区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"米娅喂完猫后，再做其他家务。\"",
+        "valueJson": "\"米娅会在做完其他家务之前喂猫。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"266-ex5\",\"senseId\":\"266-n1\",\"en\":\"At work, one of my daily chores is sorting the mail.\",\"zh\":\"在单位，给信件分类是我每天的一项杂务。\",\"note\":\"chore 也可指工作中例行的小任务，不限于家务。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"那张很长的表格把一次短暂办事变成了麻烦差事。\"",
+        "valueJson": "\"那份长长的表格让原本很快就能办完的事变成了苦差事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"266-conf-ex2\",\"senseId\":\"266-n2\",\"en\":\"Dad got a new job at the library.\",\"zh\":\"爸爸在图书馆找到了一份新工作。\",\"note\":\"job 在这里指职业。\"}",
+        "valueJson": "{\"id\":\"266-conf-ex2\",\"senseId\":\"266-n1\",\"en\":\"Dad has a job at the library and shares the chores at home.\",\"zh\":\"爸爸在图书馆工作，也分担家里的家务。\",\"note\":\"job 指职业，chores 指家里需要分担的具体任务。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 266,
+    "headword": "chore",
+    "meaning_zh": "n. 家务活；日常杂务",
+    "phonetic": "/tʃɒ:/",
+    "pos": "",
+    "forms": []
+  }
+}

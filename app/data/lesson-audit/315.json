@@ -1,0 +1,319 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0acc9078aba683b682d95e201f141019a901e17a1b54b9703bd87a7ba5703ff0",
+    "executedReviewPromptHash": "0acc9078aba683b682d95e201f141019a901e17a1b54b9703bd87a7ba5703ff0",
+    "reviewHash": "59db820c76984e49844222b11f391ea5b812a2165dbd72d71025e1358b5e8978",
+    "wordId": 315,
+    "inputHash": "2e725877e3ffb7a2e04744f6111f06bc9fee46409fd6db36583e6c520d3bf2e0",
+    "draftHash": "6892ce3c69d0454f1e44bb7cfdc781e3d9161b1f7153db3fe27931ccafdc5b4c",
+    "finalHash": "36a7df71e972cbd61e907db5233a25465315fa93aa2af278599dfaa3c00bf2e5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/convenient#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:48.790Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 113558,
+        "revisionId": 37408445,
+        "revisionTimestamp": "2025-03-02T16:51:05Z",
+        "sha256": "61dee6b5e7d25f52b6cd214fa5d450f0f749876f53f9ecbd9ba26ddbd2fc95bb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/convenient",
+        "section": "convenient etymology",
+        "supports": [
+          "Latin suitable and agreeing senses",
+          "Together and come formation",
+          "Modern ease-related development"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "30da23354c4fccd3b6171f88892a2884b4b60ac63a82b8d4178526c4232d113d",
+        "summaryAndSupportsWordCount": 71,
+        "sha256": "30da23354c4fccd3b6171f88892a2884b4b60ac63a82b8d4178526c4232d113d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/315.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/convenient",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:41:23.758Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T13:46:19.109Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/formation, /wordFamily/2/spellingNote, /wordFamilyNote",
+        "message": "convenient 以 t 结尾，没有可删除的词尾 e；conveniently 是直接加 -ly。三处错误说明须同步修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge 的 sourceIds",
+        "message": "Cambridge 内容未取得，不能作为这些具体说明的材料依据。基本释义、发音及列出的词族关系改引实际取得的维基词典英语词条；详细句法和 conveniently 的说明依据专业语言知识，不冒挂该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0/zh",
+        "message": "“离我们学校很方便”搭配不成立。原英文可以保留，中文应表达该站点便于前往学校。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "It is convenient to do something 也表示某种做法省事，并不限于时机或时间安排合适。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1, /senses/0/usageNote, /confusions/0/items/0",
+        "message": "“不直接形容人”的禁令过于绝对。应限定为不能用 someone is convenient 表达“某人有空”，避免把其他语境中涉及人的用法一概判错。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/note",
+        "message": "现有说明只提示 for 后用动名词，尚未讲清两种完整结构及改写时主语、地点成分的变化。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“不要读成多个清晰音节”容易让学生强行合并词尾；直接说明重音和非重读部分更准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2/meaning, /lessCommonSenses",
+        "message": "conveniently 不能不加限定地等同于“恰好”。补充 convenient excuse 一类常见语用延伸，并说明其“对当事人有利”和不赞许语气，可避免误解；此补充依据专业语言知识。"
+      }
+    ],
+    "coverageAssessment": "已核对两项基本释义：省事、位置便利，以及时间或安排合适。两个核心教学分组各有两句，覆盖充分，无须机械增设第三个核心义；另以拓展用法补充带不赞许语气的 convenient excuse。词源叙述及阶段先后与已取得的 Etymonline 摘要相符，可保留。局限是维基词典只提供简要释义，细致句法及补充用法依据专业语言知识；未取得的 Cambridge 内容不作依据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：方便、省事，包括地点便于到达或办事",
+        "coveredBy": [
+          "convenient-easy"
+        ],
+        "assessment": "对应 commode；应用程序和公交站两例分别覆盖用途便利与地点便利。修正公交站例句的中文，保留其英文。"
+      },
+      {
+        "sense": "形容词：时间或安排合适、合宜",
+        "coveredBy": [
+          "convenient-suitable"
+        ],
+        "assessment": "对应 convenable；两例均自然覆盖时间安排。须说明不定式句型也可表达省事，不能据此把句型局限于时机。"
+      },
+      {
+        "sense": "语用延伸：借口、解释等恰好对当事人有利，常含不赞许意味",
+        "coveredBy": [
+          "convenient-self-serving"
+        ],
+        "assessment": "作为非初中重点补入 lessCommonSenses；属于“符合自身需要”的延伸，不另立核心教学分组，也不声称现有词典摘录已详列此用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: convenient\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/convenient\",\"supports\":[\"形容词常见含义、用法和搭配\",\"convenience、inconvenient、conveniently 等词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：convenient（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/convenient#Anglais\",\"supports\":[\"英语形容词的基本释义：方便的、合宜的\",\"英语词条的音标及美国英语发音条目\",\"反义词 inconvenient 与相关名词 convenience\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第二音节；词尾读作 /niənt/，不要按拼写读成多个清晰音节。\"",
+        "valueJson": "\"重音在第二音节 /viː/；首音节 /kən/ 和词尾 /niənt/ 轻读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"注意 convenient 描述事情或安排，不直接形容人。\"",
+        "valueJson": "\"区分“某人有空”和“某事对某人方便”：前者用 be free/available，后者用 be convenient for someone。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常形容事物或安排；说某人方便，英语一般说 it is convenient for someone，而不说 someone is convenient。\"",
+        "valueJson": "\"通常形容事物或安排。表达“某人做某事方便”，常用 It is convenient for someone to do something；不用 someone is convenient 表达“某人有空”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"这个公交站离我们学校很方便。\"",
+        "valueJson": "\"从这个公交站去我们学校很方便。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于约时间；convenient to do 表示做某事的时机或安排合适。\"",
+        "valueJson": "\"常用于约时间，表示安排是否方便。It is convenient (for someone) to do something 既可说时间安排方便，也可说某种做法省事，并不限于“时机合适”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/label",
+        "expectedValueJson": "\"不要直接说 someone is convenient\"",
+        "valueJson": "\"不要用 someone is convenient 表达“某人有空”\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"要表达“某时间对某人合适”，用 convenient for someone。\"",
+        "valueJson": "\"问某个时间对谁是否方便，用 be convenient for someone；直接问某人是否有空，用 be free 或 be available。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"convenient to do 很常见；for 后若接动词，需用动名词。\"",
+        "valueJson": "\"说明做某事方便，常用 It is convenient (for someone) to do something；说明物品的用途，可用 something is convenient for doing something。例句也可说 It is convenient to store books on this shelf；改写时要补全地点等成分，不能只替换 to/for。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"方便地；恰好\"",
+        "valueJson": "\"方便地；便利地；也可带讽刺意味，表示某事恰好对当事人有利。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"convenient 去掉词尾 e，再加 -ly。\"",
+        "valueJson": "\"convenient 后直接加副词后缀 -ly，构成 conveniently。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"写作 conveniently；加 -ly 时去掉 convenient 末尾的 e。\"",
+        "valueJson": "\"保留 convenient 的全部字母，直接加 -ly，写作 conveniently。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"记住 convenience 的 -ence 拼写；conveniently 加 -ly 时去掉词尾 e。\"",
+        "valueJson": "\"记住 convenience 的 -ence 拼写；conveniently 在 convenient 后直接加 -ly。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"convenient-self-serving\",\"title\":\"（常含不赞许）恰好对自己有利的\",\"meaning\":\"形容借口、解释等恰好能帮某人避免麻烦或推卸责任。\",\"note\":\"常见搭配有 a convenient excuse、a convenient explanation；常带怀疑或讽刺语气，但并不表示借口一定是假的。\",\"example\":{\"id\":\"convenient-self-serving-ex1\",\"senseId\":\"convenient-self-serving\",\"en\":\"He said his phone was broken, which was a convenient excuse for not calling me back.\",\"zh\":\"他说手机坏了，这倒成了他不回我电话的现成借口。\",\"note\":\"convenient 突出这个借口对当事人有利，并带有不以为然的语气。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 315,
+    "headword": "convenient",
+    "meaning_zh": "adj. 方便的, 合宜的",
+    "phonetic": "/kәn'vi:njәnt/",
+    "pos": "",
+    "forms": []
+  }
+}

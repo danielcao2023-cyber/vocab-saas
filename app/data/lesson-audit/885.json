@@ -1,0 +1,230 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f7e8a3bb3b3cf2ffda8491b198d0b6b2a6e4282418897e82b21a681251d8d7ab",
+    "executedReviewPromptHash": "f7e8a3bb3b3cf2ffda8491b198d0b6b2a6e4282418897e82b21a681251d8d7ab",
+    "reviewHash": "14ed2b374c65a9804f45e241d8ea819e32ebf50ced4e4fbb779ab6e17c7d92fc",
+    "wordId": 885,
+    "inputHash": "9283e14e367ed3418f4f9c18e9f78f187be5d7b8790cb8e377f4b8b520d72f50",
+    "draftHash": "3866c50c9188b6323916e1f2a8bcdf7e3519c7de468c4c40d238ae4dcb6bbd49",
+    "finalHash": "87b8ddbd24d454405ee836716ff705957b67e80f369d4fb63d9355b3031094b7",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/movie#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.745Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 236585,
+        "revisionId": 38444217,
+        "revisionTimestamp": "2025-08-01T04:20:30Z",
+        "sha256": "88fc1c9240c9cd4c3ccec542243b6ec7408b815fb549672f21d0813d2e04f2df",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/movie",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:47:36.937Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:54:34.436Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note；/confusions/1/summary；/wordFamily/0/formation；/memoryAid/story",
+        "message": "movie 的末字母是 e，不是 y。复数 movies 由 movie 直接加 -s 构成；四处“y 改为 i 再加 -es”的说明必须更正。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story；/memoryAid/cues/1/text",
+        "message": "两张电影票可能对应同一部电影，不能据此记忆 movies 表示多部电影。助记应明确对应两部影片。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/confusions/1/sourceIds；/wordFamily/0/sourceIds；/sources",
+        "message": "Cambridge 正文未获取，不能承担这些内容的来源引用。应将有实际材料支持的引用改为 Wiktionary，其他语法说明清空引用，并移除本课未据以编写的 Cambridge 来源项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting/0/note",
+        "message": "movie 与 TV show 不能按播放媒介区分：电影也可在电视上播放。这里应限定为作品类型的语境对照，并明确不是反义关系。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "“watch 后面直接接 movie”容易被初学者理解成 watch movie。应保留直接接宾语的说明，同时明确这里的单数 movie 需要限定词。"
+      }
+    ],
+    "coverageAssessment": "已核对可得词典中的名词核心义“电影；影片”。现有两个原创例句分别覆盖一部具体影片和泛指一类影片，常用表达 go to the movies 也已提及，无须机械拆义。各例句语法、senseId、读音以及 movie/film 的主要用法区别可保留；词源 moving picture → movie 的缩略关系和阶段顺序有材料支持。来源局限是 Cambridge 正文未取得，补丁已相应调整引用。",
+    "senseInventory": [
+      {
+        "sense": "名词：电影；影片，可数名词",
+        "coveredBy": [
+          "movie-film"
+        ],
+        "assessment": "主要义已覆盖，两个例句自然且分别展示单数具体指称与复数泛指。泛指电影娱乐及 go to the movies 可在这一核心义下说明，不必另造多个义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 watch a movie 说“看电影”，留意 watch 后面直接接 movie。\"",
+        "valueJson": "\"用 watch a movie 说“看一部电影”：watch 后直接接宾语，这里的单数 movie 前要有 a 等限定词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"以辅音字母 y 结尾，变复数时 y 改为 i，再加 -es。\"",
+        "valueJson": "\"movie 以 e 结尾，复数直接加 -s：movie → movies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"movie 以辅音字母加 y 结尾，复数要把 y 改成 i，再加 -es。\"",
+        "valueJson": "\"movie 以 e 结尾，复数直接加 -s，写作 movies；movie’s 中的撇号不表示复数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"movie + -s；因词尾为辅音字母加 y，拼写时 y 改为 i，再加 -es。\"",
+        "valueJson": "\"movie + -s，构成规则复数；保留词尾 e，直接加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象周末你拿着一张写着 MOVIE 的电影票，和朋友去看一部影片；桌上放着两张票时，脑中把 movie 的 y 改成 i，再添 es：movies。\"",
+        "valueJson": "\"想象周末你拿着一张写着 MOVIE 的电影票，准备去看一部影片；后来你又看了另一部电影，就在 movie 后直接加 -s，写成 movies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"两张票，对应多部电影；拼写为 movies。\"",
+        "valueJson": "\"看了两部不同的电影，用复数 movies；movie 后直接加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"按播放媒介区分：movie 通常是电影作品，TV show 是电视节目；有些电影也会在电视上播放。\"",
+        "valueJson": "\"这里按作品类型作对照；电影也可以在电视上播放，TV show 与 movie 不是词义上的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary：movie\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/movie\",\"supports\":[\"movie 的名词用法与释义\",\"常见搭配和例句用法参考\",\"movie 与 film 的用法参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"movie 是 moving picture 的缩略形式\"]",
+        "valueJson": "[\"movie 的名词义“电影”及美式用法\",\"movie 的读音 /ˈmuː.vi/\",\"film 作为 movie 的近义词\",\"movie theater 等相关复合词\",\"movie 是 moving picture 的缩略形式\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 885,
+    "headword": "movie",
+    "meaning_zh": "n. 电影",
+    "phonetic": "/'mu:vi/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,558 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "68b0c7008021581e3261a16cdbb63a3e2c1cbfa13a5b2ca070abad9c65d1051a",
+    "executedReviewPromptHash": "68b0c7008021581e3261a16cdbb63a3e2c1cbfa13a5b2ca070abad9c65d1051a",
+    "reviewHash": "a6fd140ab83f1ec358eaf5a9632fc16125f9d24a2cf54cdeb338460db55f95c9",
+    "wordId": 237,
+    "inputHash": "c9bae1c3f183f6145c7d300a94e18541be2f54f0c20cda0e28f77050acb501fa",
+    "draftHash": "7dea6b7b106bcb5f8c46b05fa7ba58cde9d16897cc5ebc0e04fb8d75c732000c",
+    "finalHash": "8f00598977bb4231eb64909d594bdd43d0274b2f9a13bf983dfc64a35f2dc8c4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/centre#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:36.390Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 113424,
+        "revisionId": 39770544,
+        "revisionTimestamp": "2026-08-03T10:19:56Z",
+        "sha256": "4fc683a139f5041db1632f863be0d468b7968ab0b8926c17f2020d8b53c4229d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/centre",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:28:58.793Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:38:58.292Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/4",
+        "message": "centring 实际上去掉了 centre 末尾的 e，原注释却说保留 e。已纠正拼写说明，并标出常见的双音节读法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "town/city 的并列写法掩盖了冠词差别：in the centre of town 可以不加冠词，普通用法中的 city 通常需要 the。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的比喻名词义和使物体、文字居中的动词义；主题集中义也只展示不及物结构。已补齐相关义项、及物结构及例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "服务场所与篮球中锋混为一义，分别只有一个例句。已拆分，并补充活动或产业中心的用法。原 wing 不能简单等同于篮球前锋，改用明确的 forward、guard 作限定于篮球位置的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "The singer stood centre stage. 是自然句子，但 centre stage 整体作地点状语，不能单凭这一例证明 centre 的形容词用法。已保留该表达，另用 centre seat、centre drawer 展示中央位置的定语用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "middle 不限于有两个端点的物体；in the centre of the table 同样自然。已取消按桌面等对象硬分用词的倾向。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的例句",
+        "message": "原稿有 11 个例句缺少必填 note 属性，已全部补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "没有已获取的 Oxford 正文，Cambridge 获取明确失败，不能将它们作为已取得的具体支持证据。已仅保留为推荐查阅；实际来源只关联其确实写明的内容，其余按专业语言知识审核。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary、/wordFamily/0/formation、/senses/2/relatedExpressions/similar/1/note",
+        "message": "词源改为直接陈述已支持的拉丁语事实；central 的拆分明确为拼写分析；删除 centre around 比 revolve around 更简洁这一无必要的概括。"
+      }
+    ],
+    "coverageAssessment": "已核对空间中心、活动或服务中心、活动集中的地区、比喻核心、篮球中锋、中央位置的定语用法，以及及物和不及物动词功能。修订后各核心义均有至少两个自然英中例句；centre around 属于规范用法，予以保留。词源仅保留所附英语词条支持的拉丁语事实，没有把法语解释语言误当成词的语言。细分用法与原创例句结合专业语言知识审核；未取得的推荐网页不作为核验依据，更专门的体育和政治用法未展开。",
+    "senseInventory": [
+      {
+        "sense": "名词：空间位置、几何图形或城镇的中心",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已有两个例句；纠正 town 与 city 的冠词说明。"
+      },
+      {
+        "sense": "名词：活动或服务中心、机构和场所",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "从中锋义中分离，保留体育中心并补充购物中心例句。"
+      },
+      {
+        "sense": "名词：某种活动或产业集中的地方",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "补充 centre for/of 结构及商业、音乐活动两个例句。"
+      },
+      {
+        "sense": "名词：关注或事件的核心",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "原稿遗漏；新增关注焦点和争论核心两个例句。"
+      },
+      {
+        "sense": "名词：篮球中锋",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "独立成义，补足两个例句；位置对照限定于篮球语境。"
+      },
+      {
+        "sense": "形容词或名词作定语：中央的、正中的",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "补充两个明确的名词前修饰例句，并说明不能普遍替换 central。"
+      },
+      {
+        "sense": "不及物动词：以某人或某事为中心、围绕某事展开",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "保留 centre on 和 centre around 两个正确例句。"
+      },
+      {
+        "sense": "及物动词：使内容、活动或注意力集中于某个核心",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "补充 centre something on something 和被动结构，并新增两个及物例句。"
+      },
+      {
+        "sense": "动词：使物体或文字居中；在排版语境中自动居中",
+        "coveredBy": [
+          "s7"
+        ],
+        "assessment": "原稿遗漏；新增两个及物例句和一个自动居中的不及物例句。"
+      },
+      {
+        "sense": "固定表达：centre stage，在舞台中央",
+        "coveredBy": [
+          "s8"
+        ],
+        "assessment": "保留原来的自然句子，纠正其语法功能说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，centre 指空间或活动的中心；作动词时，centre around/on 表示“以……为中心”或“集中在……”。centre 是英式拼法，美式通常写 center。\"",
+        "valueJson": "\"centre 是英式拼法，美式通常写 center。作名词可指中心位置、核心、活动或服务中心，也可指篮球中锋；centre on/around 表示围绕某事展开，centre something 表示把某物居中。放在名词前的 centre 还可表示正中的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/ipa",
+        "expectedValueJson": "\"/ˈsentərɪŋ/\"",
+        "valueJson": "\"/ˈsentrɪŋ/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"英式通常保留 centre 的 e 并加 -ing；美式常写 centering。\"",
+        "valueJson": "\"centring 是 centre 去掉末尾 e，再加 -ing。英式也可见 centering；美式通常写 centering。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说城市中心常用 in the centre of town/city；centre 本身不专指精确的几何中心。\"",
+        "valueJson": "\"说镇中心可用 in the centre of town；说城市中心常用 in the city centre 或 in the centre of the city。centre 本身不专指精确的几何中心。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in the centre of town 表示位于镇中心；town 在这个表达中可不带冠词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里指圆的几何中心。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"日常用语，强调两端之间的位置；centre 更强调中心点或中心地带。\"",
+        "valueJson": "\"泛指空间或范围的中间部分，不限于有两个端点的物体；centre 常更突出中心点或中心地带。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"选 middle 说一般的中间位置；谈中心点、核心地带时常用 centre。\"",
+        "valueJson": "\"middle 常泛指中间部分，centre 常突出中心点或核心地带；描述桌面、房间等位置时，两者都常用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"名词：中心机构、场所；（篮球）中锋\"",
+        "valueJson": "\"名词：活动或服务中心；活动、产业集中的地方\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"以某类活动或服务为主的机构、建筑或地点；在篮球队中也指中锋这一位置或队员。\"",
+        "valueJson": "\"提供某类活动或服务的机构、建筑或场所，也可指某种活动或产业集中的地方。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"具体是什么中心通常由前面的词说明，如 sports centre；篮球位置义常用 centre。\"",
+        "valueJson": "\"sports centre、shopping centre 常指具体场所；a centre for/of + 活动或产业，也可指这类活动集中的城镇或地区。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sports centre 指提供运动场地或相关活动的场所。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"ex4\",\"senseId\":\"s2\",\"en\":\"The centre passed the ball to a teammate.\",\"zh\":\"中锋把球传给了一名队友。\",\"note\":\"此处 centre 指篮球位置。\"}",
+        "valueJson": "{\"id\":\"ex14\",\"senseId\":\"s2\",\"en\":\"We bought a pair of shoes at the shopping centre.\",\"zh\":\"我们在购物中心买了一双鞋。\",\"note\":\"shopping centre 指集中多家商店的购物场所。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex15\",\"senseId\":\"s2\",\"en\":\"The city is a major centre for business.\",\"zh\":\"这座城市是重要的商业中心。\",\"note\":\"这里的 centre 指商业活动集中的城市，不是一栋建筑。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex26\",\"senseId\":\"s2\",\"en\":\"The town is a centre for traditional music.\",\"zh\":\"这个镇是传统音乐活动的中心。\",\"note\":\"centre for + 活动，指这类活动较为集中的地方。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"play centre\",\"zh\":\"担任中锋\",\"note\":\"篮球语境中的位置说法。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a centre for/of + 活动或产业\",\"zh\":\"某种活动或产业的中心\",\"note\":\"可指活动集中的地方，如 a centre for business、a centre of trade。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"wing\",\"zh\":\"（篮球）前锋位置\",\"note\":\"仅在篮球位置语境中与 centre 对照。\"},{\"en\":\"guard\",\"zh\":\"（篮球）后卫位置\",\"note\":\"仅在篮球位置语境中与 centre 对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"wing 和 guard 是篮球场上的其他位置，不是 centre 的普遍反义词。\"",
+        "valueJson": "\"这类机构、场所或产业中心没有通用的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"使某事围绕一个人、主题或地点展开，或表示内容主要围绕某事。\"",
+        "valueJson": "\"表示内容或活动以某人、事物或地点为核心；也可带宾语，表示把内容、活动或注意力集中到某个核心上。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 centre around/on something；美式拼法为 center。不能把 centre 当成普通及物动词来表达所有“集中”意思。\"",
+        "valueJson": "\"不及物结构是 centre on/around something；及物结构是 centre something on/around something，也常用被动式 be centred on。centre around 是规范表达。这里的集中指主题或重点；说专心做事还常用 focus/concentrate on。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"centres 是第三人称单数；centre on 在这里不带直接宾语，说明故事主题。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"centred 是过去式；centre around 表示讨论围绕某事展开。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex16\",\"senseId\":\"s3\",\"en\":\"The teacher centred the lesson on road safety.\",\"zh\":\"老师围绕道路安全来安排这节课。\",\"note\":\"centre + lesson + on + 主题，是带直接宾语的及物结构。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex17\",\"senseId\":\"s3\",\"en\":\"The team centred its efforts on helping older people.\",\"zh\":\"团队把主要精力放在帮助老年人上。\",\"note\":\"centre one's efforts on 表示把努力集中在某事上；on 后可接 -ing 形式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"centre + 宾语 + on/around + 名词或 -ing 形式\",\"zh\":\"使某事以……为核心；把……集中于\",\"note\":\"带直接宾语，如 centre a lesson on a topic、centre one's efforts on helping others。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be centred on + 人、事物或主题\",\"zh\":\"以……为中心；重点在于……\",\"note\":\"这是常见的被动结构；美式写 be centered on。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常用于主题、生活或活动，语气形象；centre around 更简洁。\"",
+        "valueJson": "\"常用于主题、生活或活动，强调它们围绕某个核心展开；在这些语境中常与 centre on/around 接近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s4\",\"title\":\"形容词：中央的；居中的\",\"meaning\":\"位于某个区域或事物中央的。\",\"note\":\"常见于 centre stage（舞台中央）等固定搭配；美式写 center。\",\"example\":{\"id\":\"ex7\",\"senseId\":\"s4\",\"en\":\"The singer stood centre stage.\",\"zh\":\"歌手站在舞台中央。\",\"note\":\"centre 在此作形容词用法。\"},\"sourceIds\":[\"src-oxford\"]}",
+        "valueJson": "{\"id\":\"s8\",\"title\":\"固定表达：centre stage（在舞台中央）\",\"meaning\":\"在舞台正中央。\",\"note\":\"centre stage 可以作为整体说明位置；短语在句中的功能不等于 centre 单个词的词性。\",\"example\":{\"id\":\"ex7\",\"senseId\":\"s8\",\"en\":\"The singer stood centre stage.\",\"zh\":\"歌手站在舞台中央。\",\"note\":\"centre stage 整体作地点状语，说明歌手站的位置。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"形容词／名词作定语：中央的；正中的\",\"meaning\":\"放在名词前，表示该物位于正中位置。\",\"usageNote\":\"见于 centre seat、centre drawer 等搭配，也可分析为名词作定语。centre 不能像 central 一样广泛用作形容词；一般表示中央的或主要的常用 central。\",\"examples\":[{\"id\":\"ex18\",\"senseId\":\"s4\",\"en\":\"The centre seat in the back row is empty.\",\"zh\":\"后排正中间的座位空着。\",\"note\":\"centre 修饰 seat；这里也可说 middle seat。\"},{\"id\":\"ex19\",\"senseId\":\"s4\",\"en\":\"The centre drawer is locked.\",\"zh\":\"正中间的抽屉锁着。\",\"note\":\"centre 放在 drawer 前，说明抽屉的位置。\"}],\"patterns\":[{\"en\":\"centre + 名词（如 seat、drawer）\",\"zh\":\"正中间的……\",\"note\":\"限于合适的搭配，不能任意替换 central。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"centre seat\",\"zh\":\"正中间的座位\",\"note\":\"表示座位在中间；美式写 center seat。\",\"kind\":\"common-collocation\"},{\"en\":\"centre drawer\",\"zh\":\"正中间的抽屉\",\"note\":\"用位置区别几个抽屉。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"central\",\"zh\":\"中央的；主要的\",\"note\":\"是使用范围更广的形容词，还可表示核心的或主要的。\"},{\"en\":\"middle\",\"zh\":\"中间的\",\"note\":\"在 middle seat、middle drawer 等搭配中与 centre 很接近。\"}],\"contrasting\":[{\"en\":\"off-centre\",\"zh\":\"偏离中心的\",\"note\":\"可对照居中与偏离中心的位置状态，但不能在所有固定搭配中直接互换。\"}],\"similarNote\":\"centre 的定语用法较受搭配限制；central 范围更广，middle 常用于日常位置描述。\",\"contrastingNote\":\"off-centre 只就位置是否居中形成对照；美式写 off-center。\"},\"sourceIds\":[\"src-wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"名词（篮球）：中锋\",\"meaning\":\"篮球队中的中锋位置，或担任这一位置的队员。\",\"usageNote\":\"这里限定为篮球术语；英式写 centre，美式写 center。其他球类也可使用这个词，但位置含义须按运动项目判断。\",\"examples\":[{\"id\":\"ex4\",\"senseId\":\"s5\",\"en\":\"The centre passed the ball to a teammate.\",\"zh\":\"中锋把球传给了一名队友。\",\"note\":\"此处 centre 指篮球中锋。\"},{\"id\":\"ex20\",\"senseId\":\"s5\",\"en\":\"My brother plays centre for the school basketball team.\",\"zh\":\"我哥哥在校篮球队担任中锋。\",\"note\":\"play centre 表示担任中锋；位置名称前通常不加冠词。\"}],\"patterns\":[{\"en\":\"play centre for + 球队\",\"zh\":\"在某队担任中锋\",\"note\":\"centre 在这里表示所打的位置。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"play centre\",\"zh\":\"担任中锋\",\"note\":\"篮球位置用法；美式写 play center。\",\"kind\":\"common-collocation\"},{\"en\":\"the starting centre\",\"zh\":\"首发中锋\",\"note\":\"指首发阵容中的中锋球员。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[{\"en\":\"forward\",\"zh\":\"前锋\",\"note\":\"篮球中的其他位置名称，与中锋作位置对照。\"},{\"en\":\"guard\",\"zh\":\"后卫\",\"note\":\"篮球中的其他位置名称，与中锋作位置对照。\"}],\"similarNote\":\"centre 是具体位置名称；player 只表示球员，不能替代它来说明位置。\",\"contrastingNote\":\"forward、guard 是其他篮球位置，不是 centre 的词汇反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"名词：关注或事件的核心\",\"meaning\":\"人们关注的焦点，或某件事情中最重要、最关键的人或事物。\",\"usageNote\":\"常用 the centre of 和 at the centre of；这是比喻用法，不说明实际的空间位置。\",\"examples\":[{\"id\":\"ex21\",\"senseId\":\"s6\",\"en\":\"The puppy became the centre of attention at the picnic.\",\"zh\":\"野餐时，那只小狗成了大家关注的焦点。\",\"note\":\"the centre of attention 指受到大家关注的人或事物。\"},{\"id\":\"ex22\",\"senseId\":\"s6\",\"en\":\"A missing bicycle was at the centre of the argument.\",\"zh\":\"那场争论的核心是一辆丢失的自行车。\",\"note\":\"at the centre of the argument 表示处于争论的核心，不指自行车实际放在哪里。\"}],\"patterns\":[{\"en\":\"be/become the centre of attention\",\"zh\":\"是／成为关注的焦点\",\"note\":\"主语可以是人，也可以是事物。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be at the centre of + 事件\",\"zh\":\"处于某件事的核心\",\"note\":\"常用于争论、讨论等事件。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the centre of attention\",\"zh\":\"关注的焦点\",\"note\":\"强调受到关注。\",\"kind\":\"common-collocation\"},{\"en\":\"at the centre of a debate\",\"zh\":\"处于一场辩论的核心\",\"note\":\"强调某人或某事是辩论的关键。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"focus\",\"zh\":\"焦点\",\"note\":\"作名词时可说 the focus of attention，与关注焦点这一层意思接近。\"},{\"en\":\"heart\",\"zh\":\"核心\",\"note\":\"the heart of a problem 强调问题最关键的部分，不一定指受关注最多的部分。\"}],\"contrasting\":[{\"en\":\"on the periphery of\",\"zh\":\"处于……的边缘\",\"note\":\"较正式，只在参与程度或重要性上与处于核心形成对照。\"},{\"en\":\"out of the spotlight\",\"zh\":\"不受瞩目\",\"note\":\"仅就受到公众关注这一层意思形成对照。\"}],\"similarNote\":\"focus 常强调关注焦点，heart 常强调本质或关键；应按具体语境选择。\",\"contrastingNote\":\"这些表达分别对照边缘地位或较少受到关注，不是所有 centre 用法的反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s7\",\"title\":\"动词：使居中；自动居中\",\"meaning\":\"把物体、图片或文字放到正中位置，或使它相对某个参照物居中；在排版等语境中也可表示内容自动居中。\",\"usageNote\":\"作及物动词时直接接物体，如 centre the text，也常用被动式 be centred。软件自动排版时可不带宾语；普通静态位置通常说 be in the centre。\",\"examples\":[{\"id\":\"ex23\",\"senseId\":\"s7\",\"en\":\"Centre the photo on the page.\",\"zh\":\"把照片放在页面正中央。\",\"note\":\"centre 直接接 photo，表示把照片放到正中位置。\"},{\"id\":\"ex24\",\"senseId\":\"s7\",\"en\":\"Use this button to centre the text.\",\"zh\":\"用这个按钮让文字居中。\",\"note\":\"centre the text 是文字排版中的常用说法。\"},{\"id\":\"ex25\",\"senseId\":\"s7\",\"en\":\"The image centres automatically in the preview window.\",\"zh\":\"图像会在预览窗口中自动居中。\",\"note\":\"这里的 centres 不带直接宾语，表示软件中的图像自动居中。\"}],\"patterns\":[{\"en\":\"centre + 物体 + on/in + 位置\",\"zh\":\"把某物放在某处的正中位置\",\"note\":\"这里的 on/in 后接实际位置，与围绕某个主题的用法不同。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be centred\",\"zh\":\"被放在正中；呈居中状态\",\"note\":\"常用于图片、标题、文字等；美式写 be centered。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"centre the text\",\"zh\":\"使文字居中\",\"note\":\"常见于文档排版。\",\"kind\":\"common-collocation\"},{\"en\":\"centre an image\",\"zh\":\"使图像居中\",\"note\":\"可说明图像在页面或窗口中的位置。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"align\",\"zh\":\"对齐\",\"note\":\"范围更广；可以左对齐、右对齐或居中，不单独保证在正中。\"},{\"en\":\"put something in the middle\",\"zh\":\"把某物放在中间\",\"note\":\"日常说法，通常不如排版中的 centre 精确。\"}],\"contrasting\":[{\"en\":\"off-centre\",\"zh\":\"偏离中心的；不居中的\",\"note\":\"形容词，说明位置状态；美式写 off-center。\"},{\"en\":\"move something to one side\",\"zh\":\"把某物移到一侧\",\"note\":\"在摆放位置的语境中，与把某物放在正中形成动作对照。\"}],\"similarNote\":\"centre 明确要求居中；align 只要求按某种基准对齐。\",\"contrastingNote\":\"off-centre 对照的是居中状态，move something to one side 对照的是摆放动作；两者均须结合位置语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者都可表示“中间”，但 centre 更常指中心点、中心地带或核心；middle 更常说两端之间的中间部分。\"",
+        "valueJson": "\"两者都可表示中间；centre 常突出中心点或核心地带，middle 常泛指中间部分。两者在许多空间表达中可以重叠。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"强调两端之间的位置。\"",
+        "valueJson": "\"泛指中间部分，不限于有两个端点的物体；in the centre of the table 也完全自然。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in the centre of the city 指在市中心；city 前通常需要 the。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用 middle 泛指桌面中间，也可自然地说 in the centre of the table。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"谈市中心或中心点用 centre；谈桌面、队伍等两端之间的位置，middle 往往更自然。\"",
+        "valueJson": "\"强调中心点或核心地带时常用 centre，泛说中间部分时常用 middle；桌面、房间等许多场景中两者都自然。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"centre 是可数名词；the science centre 指具体的科学中心。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"central 是形容词，修饰 location。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"centre 的历史词源可追溯到拉丁语 centrum；资料给出的词义包括圆规的固定支脚、中心以及木结。\"",
+        "valueJson": "\"centre 的历史词源可追溯到拉丁语 centrum；centrum 的词义包括圆规的固定支脚、中心和木结。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"centre + -al；拼写中 centre 的末尾 e 不保留。\"",
+        "valueJson": "\"central 与 centre 同族；可用 centre 去掉末尾 e，再加 -al 来记拼写。这是拼写分析，不表示历史上由英语 centre 直接派生。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"central 是形容词，修饰 part，表示城市的中心区域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"centralise 在此指把记录集中管理；在这个意思下，不能直接把它换成 centre。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"centre 的英式拼法、美式拼法 center 及词性\",\"centre 的常见名词、形容词和动词用法\",\"centre 的词形变化及 central 等同族词\"]",
+        "valueJson": "[\"推荐查阅：centre 的常见词义、用法和词形。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"centre 的英美发音及拼写差异\",\"centre 与 middle 的常见用法区别\",\"centre 的常见搭配和动词句型\"]",
+        "valueJson": "[\"推荐查阅：centre 的发音、拼写及常见搭配。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"词源条目所列拉丁语 centrum 及其给出的词义\"]",
+        "valueJson": "[\"centre 与 center 的地域拼写标注及英式发音 /ˈsɛn.tə/\",\"英语 centre 的名词、形容词和动词词性标注，以及形容词释义 central\",\"off-centre 与 off-center 的拼写形式\",\"词源所列拉丁语 centrum，以及圆规固定支脚、中心、木结等释义\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 237,
+    "headword": "centre (AmE center)",
+    "meaning_zh": "n. 中心, 中心点, 中锋\nadj. 中央的, 位在正中的\nvt. 集中, 定中心\nvi. 居中",
+    "phonetic": "/'sentә/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "center",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

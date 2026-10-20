@@ -1,0 +1,272 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1157abb9d671498b0c09e7b6cdce0d69b92af551ee6efa87c0a59e103e9e98b5",
+    "executedReviewPromptHash": "1157abb9d671498b0c09e7b6cdce0d69b92af551ee6efa87c0a59e103e9e98b5",
+    "reviewHash": "7d776e69b1f8d2bd6441ed66f6ff6e40fc33bb550a6ec6a5758175f8a107f4a1",
+    "wordId": 1338,
+    "inputHash": "b5462c4e01bb3c5f91d85736dd3e949457a43a18d204841dca5fb5000b6f1a8c",
+    "draftHash": "a9bcf02a270e6c1ab79dfdaa1d957e33359b8be866278285fe05c88082580886",
+    "finalHash": "e676895117835f35aff418b96bbb2eb90840528696fb258eda72a74455be1284",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/street#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.074Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116237,
+        "revisionId": 39412780,
+        "revisionTimestamp": "2026-04-03T07:27:03Z",
+        "sha256": "b1bbe965e0cc83a1ecfff79cc73dbf2ad6b7c146f4c72b92509a0a8d623a1152",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/street",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:46:30.869Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:50:50.255Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/2/en",
+        "message": "街名结构写反了。Oak Street 对应“专名 + Street”，不是“Street + 街名”。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "材料说明 strata 是 via strata 的省略形式，不是 street 来自“strata 的缩略形式”。同时应避免把远源写成未经材料证明的直接借入关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "例句体现的是以街道借指居民，不能据此并列教授一般意义的“街区”。应明确与 block、neighborhood 的区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“末尾的 /t/ 要清楚读出”容易使学习者刻意强爆破；自然发音允许词尾 /t/ 不完全爆破。"
+      },
+      {
+        "severity": "error",
+        "location": "各处 sourceIds",
+        "message": "Oxford 正文未在实际材料中提供，Cambridge 明确未取得正文，不能作为已经获得的内容依据绑定。可保留为推荐阅读；内容引用应改指实际支持相应事实的维基词典材料，或留空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning",
+        "message": "streetwise 强调应对城市街头生活及其风险的实际经验，“懂得如何应对实际处境”范围过宽。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "streetwise 的具体构词方式是合成，用“合成词”比泛称“派生词”更清楚。"
+      }
+    ],
+    "coverageAssessment": "已核对实际词典明确列出的城镇街道义，以及名词前修饰功能和居民借代用法。两个主要教学项目均有两个自然的原创双语例句；居民借代作为补充保留一例合理。近义词和场所对照均限定了语境，没有强造反义词。派生表达列表不等于独立义项清单，无须逐项扩展成新义。实际可用词典正文较简略，road 等辨析及居民借代的说明属于专业语言知识补充，不应冒称由未取得的网页正文证实。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：城镇中的街道、马路",
+        "coveredBy": [
+          "street-n-road"
+        ],
+        "assessment": "实际词典明确列出的基本义；两个例句分别覆盖沿街位置和横穿马路，覆盖充分。街名结构须纠正。"
+      },
+      {
+        "sense": "名词前修饰功能：街道上的、街头的",
+        "coveredBy": [
+          "street-adj-attributive"
+        ],
+        "assessment": "实际材料列有 street food、street market、street art 等组合。初稿正确说明其名词修饰功能，两个例句充分，无须强行另立形容词词形。"
+      },
+      {
+        "sense": "借代：同一条街上的居民",
+        "coveredBy": [
+          "street-n-residential"
+        ],
+        "assessment": "专业语言知识可确认，作为补充用法处理恰当；应删去可能误导为一般地理区域的“街区”标签。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/en",
+        "expectedValueJson": "\"Street + 街名\"",
+        "valueJson": "\"专名 + Street（如 Oak Street）\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 street 来自拉丁语 strata 的缩略形式；该形式与 via strata（铺筑的道路）有关。\"",
+        "valueJson": "\"英语 street 的词源可追溯到晚期拉丁语 strata；strata 是 via strata（铺筑的道路）的省略说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"街区；同一条街上的居民\"",
+        "valueJson": "\"同一条街上的居民（借指）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在特定表达中，street 可借指同一条街上的居民或邻里。\"",
+        "valueJson": "\"在特定表达中，street 可借指住在同一条街上的居民。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于 the whole street 一类表达，具体含义由上下文判断。\"",
+        "valueJson": "\"常见于 the whole street 一类表达，具体含义由上下文判断。这里指居民；表示由几条街围成的街区通常用 block，表示周边社区可用 neighborhood。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"末尾的 /t/ 要清楚读出；元音是长音 /iː/，不要读成短音 /ɪ/。\"",
+        "valueJson": "\"元音是长音 /iː/，不要读成短音 /ɪ/；词尾 /t/ 可以不完全爆破，不必刻意加重，也不要在后面另加元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-street\"]",
+        "valueJson": "[\"wiktionary-street\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-street\",\"cambridge-street\"]",
+        "valueJson": "[\"wiktionary-street\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-street\",\"cambridge-street\"]",
+        "valueJson": "[\"wiktionary-street\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-street\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-street\",\"cambridge-street\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-street\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/title",
+        "expectedValueJson": "\"Wiktionary: street（English entry）\"",
+        "valueJson": "\"法语维基词典：street（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"street 的历史来源与拉丁语 strata、via strata 的关系\"]",
+        "valueJson": "[\"street 的街道基本义与读音\",\"street food、street market、street art 等名词组合\",\"street 的历史来源与晚期拉丁语 strata、via strata 的关系\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"有街头生活经验的；懂得如何应对实际处境的\"",
+        "valueJson": "\"熟悉城市街头生活的；有应对街头风险的实际经验的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"streetwise 常形容懂得应对现实生活的人。\"",
+        "valueJson": "\"streetwise 强调熟悉城市街头生活、有实际应对经验；这里体现为出行时熟门熟路。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"streetwise 是由 street 和 wise 组成的相关派生词；street 本身的常见屈折变化是复数 streets。\"",
+        "valueJson": "\"streetwise 是由 street 和 wise 组成的合成词；street 本身的常见屈折变化是复数 streets。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1338,
+    "headword": "street",
+    "meaning_zh": "n. 街道, 马路, 街区\nadj. 街道的",
+    "phonetic": "/stri:t/",
+    "pos": "",
+    "forms": []
+  }
+}

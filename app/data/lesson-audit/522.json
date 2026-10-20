@@ -1,0 +1,219 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "141b792846580dfb0a8f5cab0cef98b09105793c66f3ee1e6ce0f5b3e28c6013",
+    "executedReviewPromptHash": "141b792846580dfb0a8f5cab0cef98b09105793c66f3ee1e6ce0f5b3e28c6013",
+    "reviewHash": "82926aa07f8da388203a13c17a1a47f3fad46f700410bfcd748aa359d0b0aa19",
+    "wordId": 522,
+    "inputHash": "fb1bb1e0531f6d680f6dbce359148e4b0b79950951f10fa49a375a41655ab8d7",
+    "draftHash": "1d0663461d862664c7a81427783bb1035d25c79d8372b6d9ba7f753d0371836f",
+    "finalHash": "4b429fe8997096d8cc4ba6ccc21dd56b419e5ebedcb116dcb038f926e79a3bed",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/fireman#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:58.076Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 368587,
+        "revisionId": 34006450,
+        "revisionTimestamp": "2024-04-04T09:26:46Z",
+        "sha256": "fa89e27c9580406a84a375997b9b5f409d3cbf068ca26f1a7a8e5f53211b933d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/fireman",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:25:21.375Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:29:23.343Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1、/forms/1/ipa",
+        "message": "复数读音说明自相矛盾。firemen 的词尾通常也弱读为 /mən/，与 fireman 同音，不能把拼写变化说成 /mən/ 与 /men/ 的读音区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的旧时铁路义“蒸汽机车司炉工”。应补入较少见义，并提供对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠材料支持 fire + man 的复合词源，不能仍仅作为助记构词处理且不引来源。两个构词成分不构成历史先后阶段，stages 保持空数组即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "原稿引用的 Oxford 页面没有出现在实际取得的来源材料中。应改引已取得的维基词典英语词条，并让词源引用相同 URL。"
+      }
+    ],
+    "coverageAssessment": "已核对词典所列两个名词义。消防员核心义已有两条自然、准确的英中例句，搭配和语境限定可保留；旧时铁路司炉工义补入较少见义。补丁修正复数读音并补齐构词来源，不推断两个义项的出现年代或先后。",
+    "senseInventory": [
+      {
+        "sense": "名词：消防员，传统上常指男性",
+        "coveredBy": [
+          "fireman-firefighter"
+        ],
+        "assessment": "核心义覆盖充分，两条例句分别呈现救人与灭火场景；firefighter 的性别中立用法及 arsonist 的语境限制说明可保留。"
+      },
+      {
+        "sense": "名词，旧时铁路用语：蒸汽机车司炉工",
+        "coveredBy": [
+          "fireman-stoker"
+        ],
+        "assessment": "初稿遗漏；补丁在 lessCommonSenses 中新增该义及一条例句，作为识别性补充。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"firemen 的读音为 /ˈfaɪəmən/（英）或 /ˈfaɪərmən/（美），与单数的主要区别是末尾 /men/。\"",
+        "valueJson": "\"firemen 通常读 /ˈfaɪəmən/（英）或 /ˈfaɪərmən/（美），与单数 fireman 同音；复数拼写中的 -men 通常也弱读为 /mən/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/ipa",
+        "expectedValueJson": "\"/ˈfaɪərmen/\"",
+        "valueJson": "\"/ˈfaɪərmən/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-fireman\"]",
+        "valueJson": "[\"wiktionary-fireman\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fireman\"]",
+        "valueJson": "[\"wiktionary-fireman\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"fireman-stoker\",\"title\":\"（旧时铁路用语）司炉工\",\"meaning\":\"在蒸汽机车上负责加燃料、照管炉火的司炉工。\",\"note\":\"主要用于蒸汽机车的历史语境；这里的 fire 联系的是炉火，应按上下文与“消防员”义区分。\",\"example\":{\"id\":\"fireman-stoker-ex1\",\"senseId\":\"fireman-stoker\",\"en\":\"The fireman shovelled coal into the steam locomotive's firebox.\",\"zh\":\"司炉工把煤铲进蒸汽机车的炉膛。\",\"note\":\"steam locomotive（蒸汽机车）和 shovelled coal（铲煤）表明这里使用铁路司炉工义。\"},\"sourceIds\":[\"wiktionary-fireman\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fireman\"]",
+        "valueJson": "[\"wiktionary-fireman\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可看作 fire（火）与 man（人）的组合，帮助记住“与火打交道的人”。\"",
+        "valueJson": "\"fireman 是英语复合词，由 fire（火）和 man（人；男子）构成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是便于记忆的现代构词说明，不代表完整历史词源；构词联想也不表示该职业只由男性担任。\"",
+        "valueJson": "\"复合构词本身不能说明“消防员”和“司炉工”两个义项的出现先后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fireman\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fireman\"]",
+        "valueJson": "[\"wiktionary-fireman\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-fireman\",\"title\":\"Oxford Learner’s Dictionaries: fireman\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/fireman\",\"supports\":[\"fireman 的名词用法及消防员义\",\"fireman 的复数形式和读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fireman\",\"title\":\"Wiktionnaire：fireman（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/fireman#Anglais\",\"supports\":[\"fireman 的消防员义与旧时蒸汽机车司炉工义\",\"fireman 的复数 firemen 及英美读音\",\"fireman 由 fire 和 man 复合而成\",\"firefighter 与 firewoman 的称谓关系\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 522,
+    "headword": "fireman (pl. firemen)",
+    "meaning_zh": "n. 救火队员, 消防队员",
+    "phonetic": "/'faiәmәn/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "firemen",
+        "kind": "s"
+      }
+    ]
+  }
+}

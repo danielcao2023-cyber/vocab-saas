@@ -1,0 +1,222 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6cd5d679a819db80538c9a1ffae27c40fe4910902a2887a689713bd255a0eec1",
+    "executedReviewPromptHash": "6cd5d679a819db80538c9a1ffae27c40fe4910902a2887a689713bd255a0eec1",
+    "reviewHash": "23e438eebcc998d091169e8c86a7ddb8f718eea2cc612317b52c1e721dcd8aec",
+    "wordId": 670,
+    "inputHash": "3c1f67b45815f5f8f1a1586e5ad8ae1654f0c269b7866e61d5ab24e38150375a",
+    "draftHash": "e2fea3f1541b44a0b9a226c4a033370dbb349f4c5d726c9b0a3caed3f0528eac",
+    "finalHash": "85cd8f6ee7f01ea27169c0f42de2175b1aaec830dc5ebcdb60ab992ee8f3ce85",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hotel#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.838Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 55540,
+        "revisionId": 39768903,
+        "revisionTimestamp": "2026-08-03T09:07:46Z",
+        "sha256": "695ca224dc37350d35888d6f6cef9c1c7e63316358bf3c48c1fe5b19a70a8028",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hotel",
+        "section": "hotel etymology",
+        "supports": [
+          "French residence meaning; later English lodging specialization"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:20:43.557506+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "ad16bf9ae4119cad9574b2d3c14c06aa23434dfc4d61b3986b0c83c327fb447a",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "ad16bf9ae4119cad9574b2d3c14c06aa23434dfc4d61b3986b0c83c327fb447a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/670.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hotel",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:32:44.343Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:40:34.328Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/wordFamily/0/sourceIds",
+        "message": "Cambridge 本次未取得正文，Oxford 不在实际来源材料中，不能将它们作为相关说明的已读依据。发音与基本名词义改引已取得的法语维基词典英语词条；住宿类型比较和词族说明可依据专业语言知识保留，但撤去未对应的引注。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "原始旧式音标的重音符号同样位于第二音节之前；现有提醒容易让人误以为旧式标音标的是首音节重音。直接说明第二音节重读即可。现有 /e/ 与来源中的 /ɛ/ 属不同标音惯例，无须据此改动正确读音。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/note；/confusions/0/takeaway",
+        "message": "hotel 与 hostel 的拼写差别是 hostel 在 o 后多一个 s，不是中间字母次序不同。应逐字符说明，也将“只差几个字母”改得更准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example/zh",
+        "message": "住宿语境中的 shared rooms 指多人共住的客房；“共用房间”容易被理解为公共活动空间，改为“多人间”更清楚。"
+      }
+    ],
+    "coverageAssessment": "已核对一个现代核心名词义“旅馆；酒店”，以及 hotel room 中的名词修饰用法。两条核心例句自然，搭配、复数、近义词和住宿方式对照基本准确，无须人为拆义。历史住宅义已按实际词源材料交代，阶段顺序成立。覆盖结论限于实际材料与初中常用范围，未扩展材料未列出的地区性或专业用法。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：旅馆；酒店",
+        "coveredBy": [
+          "hotel-n-1"
+        ],
+        "assessment": "两条例句分别呈现入住和酒店设施，覆盖充分；预订、办理入住及 hotel room 的用法也已涉及，名词作修饰语无须另立形容词义。"
+      },
+      {
+        "sense": "历史名词义：较大的私人或官方住宅",
+        "coveredBy": [],
+        "assessment": "已在 etymology 中准确说明，并有对应 URL 的词源来源；不属于现代初中核心义，无须另建义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"读作两音节 ho-tel，词尾重读；不要按旧音标把重音放在第一音节。\"",
+        "valueJson": "\"读作两个音节 ho-tel，重音在第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src_cambridge\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src_cambridge\",\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"拼作 h-o-s-t-e-l，常指青年旅舍；不要把中间的字母顺序写成 hotel。\"",
+        "valueJson": "\"拼作 h-o-s-t-e-l，比 hotel 在 o 后多一个 s；常指青年旅舍。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"学生们住在一间有共用房间的青年旅舍。\"",
+        "valueJson": "\"学生们住在一家提供多人间的青年旅舍。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"hotel 与 hostel 只差几个字母，但拼写和常见住宿类型都不同；预订前要看清单词。\"",
+        "valueJson": "\"hostel 比 hotel 在 o 后多一个 s；两词常指不同的住宿类型，预订前要看清单词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src_cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src_cambridge\",\"title\":\"Cambridge Dictionary: hotel\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hotel\",\"supports\":[\"hotel 的名词用法及常见含义\",\"hotel 与 hostel 的词义区分\",\"hotel 的英美发音参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src_wiktionary\",\"title\":\"Wiktionnaire: hotel（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/hotel#Anglais\",\"supports\":[\"hotel 的现代名词义\",\"hotel 的英美发音\",\"hotel 借自法语 hôtel 的词源关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"src_oxford\",\"title\":\"Oxford Learner’s Dictionaries: hotel\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/hotel\",\"supports\":[\"hotel 的词性、拼写和常见搭配\",\"hotelier 的词族参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 670,
+    "headword": "hotel",
+    "meaning_zh": "n. 旅馆, 客栈",
+    "phonetic": "/hәu'tel/",
+    "pos": "",
+    "forms": []
+  }
+}

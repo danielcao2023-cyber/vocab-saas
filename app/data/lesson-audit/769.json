@@ -1,0 +1,311 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "55b6cddaf9fff9705f78d1cf000519011747b7fc31e758b36f2f53281526bed9",
+    "executedReviewPromptHash": "55b6cddaf9fff9705f78d1cf000519011747b7fc31e758b36f2f53281526bed9",
+    "reviewHash": "8327b51c3e7e377adcdfcb0e531b693d0d8b4bbd74945514a4479fe6842fa557",
+    "wordId": 769,
+    "inputHash": "f41362cdb3531bba8323ef256fcc34fade254fd3ab7a8bc19a75d11d0e7e1ca6",
+    "draftHash": "0ea1d4df8d105bc04eb8e439f21751b28188dce5ad5e8c2ef782352d00cbee76",
+    "finalHash": "a6f9f025dfc5c8d84cc3ea060c75116bcf4bebb06606973f9ca28632bf7d3aaf",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/lazy#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.257Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118516,
+        "revisionId": 38428600,
+        "revisionTimestamp": "2025-07-27T02:40:28Z",
+        "sha256": "5e71cc3df8a7d38bb363d14a2d65a61c4d64dc3f7abb53a28ae9d506d54f4e34",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/lazy",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:44:08.693Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:49:35.932Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge-lazy 的 sourceIds",
+        "message": "Cambridge 正文未取得，不能用它支撑具体释义、读音和辨析。改引实际取得的法语维基词典英语词条；该来源不直接支持的辨析不挂引文。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "“悠闲的时光”和“缓慢的水流”各只有一个例句。保留合并结构，但分别补足到两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "lazy writing、lazy thinking 中的常用评价义不只是一般的“粗心”，而是缺少应有的思考或努力。应独立讲清，并补足两个例句及对应近反义表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典列出的“下垂的、耷拉的”义，应以低频用法补入，并说明 lazy-eared 描写外形。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech 和 /lessCommonSenses",
+        "message": "原词条另列不及物动词用法，初稿完全遗漏。动词 lazy 确有罕见用法，宜放入低频栏，并提示现代常用 laze around。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段数组将尚未确定的来源关系画成顺序演变，且英语阶段只有字形和年代，没有可证实的历史释义。应把可靠事实保留在 summary，清空阶段，并补明 laisch 已给出的词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/takeaway",
+        "message": "“身体没力气用 tired”过窄，也容易与 weak 混淆；tired 可表示身体或精神疲倦。"
+      }
+    ],
+    "coverageAssessment": "修订后覆盖来源中的五项形容词义，以及原词条标出的罕见不及物动词义。“不愿费力”“悠闲时光”“缓慢水流”“敷衍不用心”各有至少两个例句；下垂义和罕见动词义各有一例。已核对语法、翻译、比较级与最高级、laziness 的实际拼写及近反义语境，原有正确说明予以保留。可引用的已取得正文仅为法语维基词典的英语词条；罕见动词的说明依据原词条与专业语言知识，不伪挂该来源。词源继续明确标为未定假说。",
+    "senseInventory": [
+      {
+        "sense": "形容词：懒惰的；不愿费力的",
+        "coveredBy": [
+          "lazy-adj-unwilling"
+        ],
+        "assessment": "原有两个自然例句，句型和勤奋、活跃等反向表达的语境说明基本准确；更正引用。"
+      },
+      {
+        "sense": "形容词：闲适的；悠闲的",
+        "coveredBy": [
+          "lazy-adj-unhurried"
+        ],
+        "assessment": "保留 lazy Sunday 例句，另补 lazy afternoon，达到两例。"
+      },
+      {
+        "sense": "形容词：缓慢的；活动不强的",
+        "coveredBy": [
+          "lazy-adj-unhurried"
+        ],
+        "assessment": "保留 lazy river 例句，另补溪流例句；与悠闲义合并呈现，但分别满足例句要求。"
+      },
+      {
+        "sense": "形容词：敷衍的；缺少应有思考或努力的",
+        "coveredBy": [
+          "lazy-adj-careless"
+        ],
+        "assessment": "从低频栏移入主要义项，细化与一般粗心的区别，补齐两例及近反义表达。"
+      },
+      {
+        "sense": "形容词：下垂的；耷拉的",
+        "coveredBy": [
+          "lazy-adj-drooping"
+        ],
+        "assessment": "原稿遗漏；补入低频栏，以 lazy-eared 展示外形义，避免解释成动物懒惰。"
+      },
+      {
+        "sense": "罕见不及物动词：懒散度日；闲待着",
+        "coveredBy": [
+          "lazy-verb-laze"
+        ],
+        "assessment": "原词条列有而初稿遗漏；补入低频栏，说明实际拼写及更常用的 laze around，不作为初中重点句型。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; intransitive verb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"lazy 最常说人或动物“不爱做事”；形容日子、河流等时，也可表示悠闲、缓慢。\"",
+        "valueJson": "\"lazy 最常说人或动物“不愿费力”；形容日子、水流时可表示悠闲、缓慢；评价写作、思考等时可表示敷衍、不用心。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[\"wiktionary-lazy\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[\"wiktionary-lazy\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lazy-ex-11\",\"senseId\":\"lazy-adj-unhurried\",\"en\":\"After a busy week, we enjoyed a lazy afternoon on the balcony.\",\"zh\":\"忙碌了一周后，我们在阳台上悠闲地度过了一个下午。\",\"note\":\"lazy afternoon 强调没有紧张安排，过得轻松悠闲。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lazy-ex-12\",\"senseId\":\"lazy-adj-unhurried\",\"en\":\"We watched a lazy stream flow past the campsite.\",\"zh\":\"我们看着一条小溪从营地旁缓缓流过。\",\"note\":\"lazy stream 指流速缓慢的小溪，不是在评价人的做事态度。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[\"wiktionary-lazy\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lazy-adj-careless\",\"title\":\"敷衍的；不用心的\",\"meaning\":\"形容写作、思考或回答等没有投入应有的心思和努力，因而不够认真、细致。\",\"usageNote\":\"常见于 lazy writing、lazy thinking 等搭配，带批评意味。重点是没有认真思考或下功夫，不只是偶然出错。\",\"examples\":[{\"id\":\"lazy-ex-5\",\"senseId\":\"lazy-adj-careless\",\"en\":\"That was a lazy answer; please check the facts before replying next time.\",\"zh\":\"那个回答很敷衍；下次回复前请先核实事实。\",\"note\":\"lazy 批评回答没有经过认真核实；next time 明确指下一次回复。\"},{\"id\":\"lazy-ex-13\",\"senseId\":\"lazy-adj-careless\",\"en\":\"The teacher criticized my lazy writing because I had not explained any of my ideas.\",\"zh\":\"老师批评我写得敷衍，因为我没有解释自己的任何观点。\",\"note\":\"lazy writing 指写作没有下功夫，不是说写字速度慢。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"lazy writing\",\"zh\":\"敷衍的写作\",\"note\":\"批评写作没有投入足够的思考或努力。\",\"kind\":\"common-collocation\"},{\"en\":\"lazy thinking\",\"zh\":\"不用心的思考；思考上的偷懒\",\"note\":\"例如不检查依据，就直接接受现成结论。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"careless\",\"zh\":\"粗心的；不仔细的\",\"note\":\"也可批评工作不细致，但可能只是疏忽，不一定强调缺少努力。\"},{\"en\":\"sloppy\",\"zh\":\"草率的；不细致的\",\"note\":\"常批评工作或表达粗糙，也可指凌乱；lazy 更突出没有下足功夫。\"}],\"contrasting\":[{\"en\":\"careful\",\"zh\":\"仔细的；用心的\",\"note\":\"评价写作或核对事实时，可与 lazy 对照。\"},{\"en\":\"thorough\",\"zh\":\"全面细致的\",\"note\":\"评价研究或调查时，与省事、敷衍的做法形成对照。\"}],\"similarNote\":\"careless 和 sloppy 侧重不细致的表现；lazy 还着重指出缺少应有的思考或努力。\",\"contrastingNote\":\"careful 可用于写作和检查，thorough 常用于研究和调查；这些对照限于工作质量与投入程度。\"},\"sourceIds\":[\"wiktionary-lazy\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"lazy-adj-careless\",\"title\":\"粗心的；马虎的\",\"meaning\":\"形容做事或表达不够认真、细致。\",\"note\":\"常见于 lazy writing 等搭配；初中学习先掌握“懒惰”和“悠闲、缓慢”两义即可。\",\"example\":{\"id\":\"lazy-ex-5\",\"senseId\":\"lazy-adj-careless\",\"en\":\"That was a lazy answer; please check the facts before you reply.\",\"zh\":\"那个回答有些马虎；请先核实事实再回复。\",\"note\":\"此处批评回答不够认真、仔细。\"},\"sourceIds\":[\"wiktionary-lazy\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lazy-adj-drooping\",\"title\":\"下垂的；耷拉的\",\"meaning\":\"形容身体部位松弛地下垂。\",\"note\":\"这一用法较少见，可见于 lazy-eared 这类复合形容词；描写耳朵的外形，不是说动物懒惰。\",\"example\":{\"id\":\"lazy-ex-14\",\"senseId\":\"lazy-adj-drooping\",\"en\":\"We watched a lazy-eared rabbit nibbling grass by the fence.\",\"zh\":\"我们看着一只耷拉着耳朵的兔子在篱笆旁吃草。\",\"note\":\"lazy-eared 意为“耳朵耷拉着的”。\"},\"sourceIds\":[\"wiktionary-lazy\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lazy-verb-laze\",\"title\":\"（罕见不及物动词）懒散度日；闲待着\",\"meaning\":\"懒洋洋地待着，不做什么事。\",\"note\":\"动词 lazy 在现代日常英语中很少用，通常说 laze 或 laze around。其第三人称单数为 lazies，过去式和过去分词为 lazied，-ing 形式为 lazying。普通形容词句中的 be 仍不能省略。\",\"example\":{\"id\":\"lazy-ex-15\",\"senseId\":\"lazy-verb-laze\",\"en\":\"They lazied around in the garden all afternoon.\",\"zh\":\"他们整个下午都在花园里无所事事地待着。\",\"note\":\"lazied 是罕见动词 lazy 的过去式；现代更常说 They lazed around in the garden all afternoon.\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"不愿做事用 lazy；身体没力气用 tired。\"",
+        "valueJson": "\"不愿费力可用 lazy；身体或精神疲倦用 tired。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[\"wiktionary-lazy\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"lazy 在英语中约于16世纪出现，早期写作 laysy。其来源仍有争议；一种较可能的解释认为它来自低地德语 laisch。\"",
+        "valueJson": "\"lazy 约在16世纪以 laysy 的形式出现于英语，确切来源仍有争议。一种较可能的解释把它与低地德语 laisch（“虚弱的、疲倦的”）联系起来。19世纪曾流行把它分析为 lay + -sy，但这种解释如今已不受词源学者青睐。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"低地德语\",\"form\":\"laisch\",\"meaning\":\"可能的来源；具体词义与对应关系仍有争议。\"},{\"language\":\"英语\",\"form\":\"lazy（早期形式 laysy）\",\"meaning\":\"约于16世纪出现的形容词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lazy\"]",
+        "valueJson": "[\"wiktionary-lazy\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-lazy\",\"title\":\"Cambridge Dictionary: lazy\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/lazy\",\"supports\":[\"lazy 的形容词读音和常见释义\",\"lazy 与 tired 的用法区别\",\"lazy 的拼写和比较级、最高级形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: lazy（English）\"",
+        "valueJson": "\"法语维基词典：lazy（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"lazy 的历史来源存在争议及较可能的低地德语来源\",\"早期形式 laysy 及约16世纪的记录\",\"较少见的“马虎、不够认真”用法\"]",
+        "valueJson": "[\"英语 lazy 的读音及懒惰、悠闲、敷衍、缓慢、下垂等形容词义\",\"比较级和最高级的构词格式及派生词 laziness\",\"早期形式 laysy、约16世纪的记录及存在争议的词源\",\"低地德语 laisch 来源假说及已不受青睐的 lay + -sy 分析\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 769,
+    "headword": "lazy",
+    "meaning_zh": "adj. 懒惰的, 怠惰的, 缓慢的\nvi. 懒散",
+    "phonetic": "/'leizi/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,535 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "acf3ac036eeefa1cfec389533d6500479af0bca63b79af4909783112df770fda",
+    "executedReviewPromptHash": "acf3ac036eeefa1cfec389533d6500479af0bca63b79af4909783112df770fda",
+    "reviewHash": "e9b7bed572b1b30afa76face41d8a48d82d5b2fa77df5b3c980df7929648572d",
+    "wordId": 418,
+    "inputHash": "21eddfc225903036095cf15d32472e3e14761da18b97c7dd44ea678f075a5529",
+    "draftHash": "4b2b639130e9b53cb2b1c75c8e09b5f67e00ce80f5335fb4ddf42c5fa0c98829",
+    "finalHash": "1935fbb7d3bd9ba31273a53224d0b335bfb9cf924428e11fc9dfc8d4180e2c66",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/duck#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:36.739Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116102,
+        "revisionId": 39764835,
+        "revisionTimestamp": "2026-08-03T04:57:30Z",
+        "sha256": "85901cbcfeadadb4bbd9866dff256f41dc3eed5955349698817163db16a4d87b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/duck",
+        "section": "duck etymology",
+        "supports": [
+          "Bird and diving connection",
+          "Unattested verb marked as reconstruction",
+          "Fabric homonym excluded"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T03:15:00.900172+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "88afc739f74fb21af7c12de7c2878188e5d12ad2042d8814add6bbcaa8ba9a20",
+        "summaryAndSupportsWordCount": 75,
+        "sha256": "88afc739f74fb21af7c12de7c2878188e5d12ad2042d8814add6bbcaa8ba9a20",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/418.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/duck",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:03:37.761Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:09:11.545Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及引用src_oxford的位置",
+        "message": "实际来源材料中没有 Oxford 页面内容，不能将其作为本课的依据。应改引已取回的法语维基词典英语词条；duck into 的具体用法由专业语言知识审定，不冒称该页面明确提供了这一搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "常用不可数名词义“鸭肉”仅被顺带提及，缺少独立教学及两个例句；常用动词义“回避问题、逃避责任”完全缺失。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "身体躲避义只教了不及物结构，遗漏常用的 duck one's head 和 duck + 飞来之物／一击等及物结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "入水义只有一个及物例句，遗漏原词条明确列出的不及物功能。应将同一入水义的及物、不及物结构一并讲清，并分别提供两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "duck into 不必为了躲藏，也可表示迅速进去买东西或短暂停留。当前标题、释义和多处搭配注释将其过度限定为暂避；hide in 也不只描述静态藏匿状态。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1",
+        "message": "a family of ducks 指有亲子关系的鸭子一家，不能解释为任意同类鸭子组成的一群。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "duck/dive 对照遗漏 duck 本身的入水义；dive 的例句也错误关联到了低头躲避义。猫迅速躲到椅后这一例句宜关联快速移动义。例句本身的语法没有问题。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "可依据词源补充明确 *ducan 是重建形式，并说明布料义来自独立来源；阶段箭头只呈现鸟名 duce 到 duck 的延续，避免把后起动词用法混入单一派生链。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对法语维基词典英语词条的全部定义，并区分法语释义语言与英语词的语言。修订后覆盖鸭子、鸭肉、身体躲避、快速移动、抽象回避和入水六组主要用法，每组至少两个例句，身体躲避及入水均补足及物与不及物功能。成年雌鸭、表示一次闪避的名词义及板球零分属于扩展义，本课仍不展开；布料同形词仅用于澄清独立词源。快速进入等惯用法依据专业语言知识审定，未借用未取回网页作为证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：鸭子，泛指雄鸭或雌鸭",
+        "coveredBy": [
+          "duck-n-bird"
+        ],
+        "assessment": "已覆盖，原有两个生活例句可保留；修正 family of ducks 的解释。"
+      },
+      {
+        "sense": "名词：成年雌鸭，与 drake 相对",
+        "coveredBy": [],
+        "assessment": "专指义未单独展开；泛指鸭子的教学不等于已经教授此义。非本课初中核心。"
+      },
+      {
+        "sense": "不可数名词：鸭肉",
+        "coveredBy": [
+          "duck-n-meat"
+        ],
+        "assessment": "新增独立义项、两个例句，并说明与可数动物义的区别。"
+      },
+      {
+        "sense": "名词：一次低头或闪避动作",
+        "coveredBy": [],
+        "assessment": "来源有列出，频率较低，本课不作为核心展开。"
+      },
+      {
+        "sense": "名词：板球比赛中的零分",
+        "coveredBy": [],
+        "assessment": "体育专门义，非初中日常核心，本课不展开。"
+      },
+      {
+        "sense": "动词：迅速低头、弯身或躲开一击，可及物或不及物",
+        "coveredBy": [
+          "duck-v-dodge"
+        ],
+        "assessment": "保留原有不及物例句，补充 duck one's head 和 duck + 躲避对象的及物用法。"
+      },
+      {
+        "sense": "动词：迅速进入或移到某处，如 duck into、duck behind",
+        "coveredBy": [
+          "duck-v-evade"
+        ],
+        "assessment": "依据专业语言知识核对；修正必须为了躲藏的限制，并用两个例句分别展示避雨与普通短暂进入。"
+      },
+      {
+        "sense": "不及物动词：短暂没入或潜到水下",
+        "coveredBy": [
+          "duck-v-submerge"
+        ],
+        "assessment": "新增两个不及物例句，与身体低头义和及物入水义区分。"
+      },
+      {
+        "sense": "及物动词：把人或物短暂按入、浸入水中",
+        "coveredBy": [
+          "duck-v-submerge"
+        ],
+        "assessment": "移入完整入水义，保留原有玩具例句，并增加第二个及物例句。"
+      },
+      {
+        "sense": "动词：回避问题、责任或本应参与的事情",
+        "coveredBy": [
+          "duck-v-avoid"
+        ],
+        "assessment": "新增三个例句，涵盖直接接宾语及 duck out of doing something，并限定近义和反向表达的语境。"
+      },
+      {
+        "sense": "独立同形名词：结实布料",
+        "coveredBy": [],
+        "assessment": "词源补充明确其来自荷兰语 doeck；仅在词源中说明，不并入鸟名演变链，也不作为本课核心义展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，duck 常指“鸭子”；作动词时，duck down 表示迅速低头或弯身躲避，duck into 表示快速躲进某处。\"",
+        "valueJson": "\"名词 duck 可指鸭子（可数）或鸭肉（不可数）；动词可表示迅速低头躲避、快速进入某处、回避问题或责任，以及短暂潜到水下或把人、物按入水中。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"用 a duck / ducks 指动物，用 some duck 指一些鸭肉，分清可数与不可数。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"比较 duck a question（回避问题）与 duck into a shop（迅速进入商店）：前者直接接宾语，后者接 into + 地点。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 duck under the water（自己短暂潜下）与 duck + 宾语 + under the water（使人或物短暂没入水中）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"一群鸭子\"",
+        "valueJson": "\"鸭子一家\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"family 在这里表示同类动物组成的一群。\"",
+        "valueJson": "\"family 在这里指有亲子关系的鸭子一家，例如母鸭和小鸭；任意一群鸭子可说 a group of ducks。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"为了避开迎面而来的东西，迅速低下头或弯下身体。\"",
+        "valueJson": "\"迅速低头或弯身，以避开飞来的东西、低矮障碍或一击。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用作不及物动词，后面可接 down；强调迅速改变身体姿势来躲避。\"",
+        "valueJson": "\"可作不及物动词（duck / duck down），也可直接接宾语：duck one's head 表示迅速低头，duck a ball / a blow 表示低头或弯身躲开球／一击。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"duck-v-dodge-ex3\",\"senseId\":\"duck-v-dodge\",\"en\":\"I ducked my head as I got into the small car.\",\"zh\":\"我钻进那辆小汽车时低下了头。\",\"note\":\"my head 是 ducked 的直接宾语；这里是为了适应低矮空间而低头。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"duck-v-dodge-ex4\",\"senseId\":\"duck-v-dodge\",\"en\":\"Ben ducked the snowball, and it hit the wall behind him.\",\"zh\":\"本低头躲开了雪球，雪球打在了他身后的墙上。\",\"note\":\"duck 直接接 the snowball，表示通过低头或弯身避开它，不需要另加介词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"duck one's head\",\"zh\":\"迅速低下头\",\"note\":\"head 是直接宾语；one's 要随主语换成 my、her、his 等。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"duck a ball / a blow\",\"zh\":\"低头或弯身躲开球／一击\",\"note\":\"duck 可直接接要躲开的对象；这里强调身体向下躲避。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"躲进某处\"",
+        "valueJson": "\"迅速进入或躲到某处\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"迅速进入某处暂避，常用 duck into。\"",
+        "valueJson": "\"迅速进入或移到某处，常常动作轻快、不引人注意；是否为了躲避要看语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"duck into + 地点表示匆忙或迅速躲进某处；不要与表示潜水的 dive into 混为一谈。\"",
+        "valueJson": "\"常见 duck into + 地点，表示快速进入或短暂进去，也可只是进去买东西；duck behind + 物体则可表示迅速躲到后面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"duck-v-evade-ex2\",\"senseId\":\"duck-v-evade\",\"en\":\"He ducked into the doorway when the dog ran past.\",\"zh\":\"狗跑过时，他迅速躲进了门口。\",\"note\":\"into the doorway 表示进入门口这个遮挡处。\"}",
+        "valueJson": "{\"id\":\"duck-v-evade-ex2\",\"senseId\":\"duck-v-evade\",\"en\":\"I ducked into a café to buy a sandwich.\",\"zh\":\"我快步走进一家咖啡馆去买个三明治。\",\"note\":\"这里是迅速进去买东西，不表示躲藏；to buy 说明目的，不保证最后买到了。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/zh",
+        "expectedValueJson": "\"迅速躲进某处\"",
+        "valueJson": "\"迅速进入某处\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"into 后接地点，强调从外面进入里面。\"",
+        "valueJson": "\"into 后接地点，表示从外面进入里面；duck 强调动作迅速，进入的目的由上下文说明。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/zh",
+        "expectedValueJson": "\"躲进一家商店\"",
+        "valueJson": "\"迅速走进一家商店\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"常用于为避雨、避人或暂时躲藏而迅速进去。\"",
+        "valueJson": "\"可以为了避雨、避人，也可以只是进去买点东西，不一定涉及躲藏。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0/zh",
+        "expectedValueJson": "\"躲进门口\"",
+        "valueJson": "\"迅速闪进门洞里\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/zh",
+        "expectedValueJson": "\"迅速躲进房间\"",
+        "valueJson": "\"迅速进入房间\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"room 是 into 后的地点，表示进入房间暂避。\"",
+        "valueJson": "\"room 是 into 后的地点；短语强调快速进入房间，不限定进入的目的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"run into 强调跑着进入；duck into 强调快速进入以躲避或暂避。\"",
+        "valueJson": "\"run into + 地点可表示跑着进入，突出跑的动作；duck into 不要求真的跑，也不必是为了躲避。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"hide 强调藏起来的状态；duck into 强调迅速进入某处的动作。\"",
+        "valueJson": "\"hide in 强调藏在某处以免被看见，可以描述藏身行为或状态；duck into 强调快速进入，本身不表示已经藏好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"hide in 侧重藏匿状态；duck into 侧重迅速进入遮挡处。\"",
+        "valueJson": "\"run into + 地点突出跑着进入，hide in 突出藏身；duck into 突出迅速进入，也可只是短暂停留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"duck-n-meat\",\"title\":\"鸭肉\",\"meaning\":\"作为食物的鸭肉，通常作不可数名词。\",\"usageNote\":\"谈鸭肉时通常不加 a，也不用 ducks 表示一些鸭肉；可说 some duck、a piece of duck。动物义 a duck / ducks 则是可数的。\",\"examples\":[{\"id\":\"duck-n-meat-ex1\",\"senseId\":\"duck-n-meat\",\"en\":\"We had roast duck for dinner.\",\"zh\":\"我们晚餐吃了烤鸭。\",\"note\":\"duck 在这里表示食物，不是计数活鸭。\"},{\"id\":\"duck-n-meat-ex2\",\"senseId\":\"duck-n-meat\",\"en\":\"There is some cooked duck in the fridge.\",\"zh\":\"冰箱里有一些做熟的鸭肉。\",\"note\":\"some cooked duck 中的 duck 是不可数名词，不加复数 -s。\"}],\"patterns\":[{\"en\":\"eat / have duck\",\"zh\":\"吃鸭肉\",\"note\":\"duck 表示肉类时通常不用 a。\",\"kind\":\"sentence-pattern\"},{\"en\":\"a piece of duck\",\"zh\":\"一块鸭肉\",\"note\":\"用 piece 等单位词表示一块或几块肉。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"roast duck\",\"zh\":\"烤鸭\",\"note\":\"常见菜名表达；这里的 duck 表示鸭肉。\",\"kind\":\"common-collocation\"},{\"en\":\"duck breast\",\"zh\":\"鸭胸肉\",\"note\":\"duck 修饰 breast，说明肉的来源。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"duck meat\",\"zh\":\"鸭肉\",\"note\":\"明确说明是肉；谈菜肴或点餐时通常直接用 duck。\"}],\"contrasting\":[],\"similarNote\":\"在食物语境中，duck meat 可以把肉类意思说得更明确。\",\"contrastingNote\":\"鸭肉没有常用反义词；chicken 等是其他肉类名称，不是 duck 的反义词。\"},\"sourceIds\":[\"src_wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"duck-v-avoid\",\"title\":\"回避问题或逃避责任\",\"meaning\":\"有意避开本应回答的问题、面对的事情或承担的责任。\",\"usageNote\":\"常见于口语，往往带有不愿正面应对的意味。duck 可直接接 question、issue、responsibility 等；duck out of + 名词或 -ing 也可表示设法躲掉某事。\",\"examples\":[{\"id\":\"duck-v-avoid-ex1\",\"senseId\":\"duck-v-avoid\",\"en\":\"Tom ducked the question about who had broken the cup.\",\"zh\":\"汤姆回避了谁打碎杯子这个问题。\",\"note\":\"ducked the question 表示没有正面回答；打碎杯子发生在提问之前。\"},{\"id\":\"duck-v-avoid-ex2\",\"senseId\":\"duck-v-avoid\",\"en\":\"He ducked his share of the housework again.\",\"zh\":\"他又逃避了自己那份家务。\",\"note\":\"这里是逃避本应承担的工作，不涉及身体躲闪。\"},{\"id\":\"duck-v-avoid-ex3\",\"senseId\":\"duck-v-avoid\",\"en\":\"He tried to duck out of washing the dishes.\",\"zh\":\"他试图躲掉洗碗的活儿。\",\"note\":\"of 后接 washing；tried to 只表示试图，不保证最后成功躲掉。\"}],\"patterns\":[{\"en\":\"duck + a question / an issue / responsibility\",\"zh\":\"回避问题／议题／责任\",\"note\":\"duck 直接接宾语，不需要加介词。\",\"kind\":\"sentence-pattern\"},{\"en\":\"duck out of + noun / -ing\",\"zh\":\"设法躲掉某事／逃避做某事\",\"note\":\"of 是介词，后接名词或动名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"duck a question\",\"zh\":\"回避一个问题\",\"note\":\"强调不愿正面回答。\",\"kind\":\"common-collocation\"},{\"en\":\"duck responsibility\",\"zh\":\"逃避责任\",\"note\":\"responsibility 在这一搭配中可作不可数名词。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"evade\",\"zh\":\"回避；逃避\",\"note\":\"evade a question / responsibility 与这一义接近，语气通常比 duck 正式。\"},{\"en\":\"avoid\",\"zh\":\"避开；避免\",\"note\":\"范围更广，也可指合理避免危险或问题发生；duck 在这一义常含逃避本应面对之事的意味。\"}],\"contrasting\":[{\"en\":\"answer a question directly\",\"zh\":\"直接回答问题\",\"note\":\"与 duck a question 在是否正面作答这一点上相对。\"},{\"en\":\"face up to one's responsibilities\",\"zh\":\"正视并承担自己的责任\",\"note\":\"与逃避责任在这一语境下相对。\"}],\"similarNote\":\"在不愿回答或承担的语境中，duck 与 evade 接近；avoid 本身不一定带有逃避责任的负面意味。\",\"contrastingNote\":\"回避问题对应直接作答，逃避责任对应正视并承担责任；这些反向表达分别绑定具体语境。\"},\"sourceIds\":[\"src_wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"duck-v-submerge\",\"title\":\"把人或东西按入水中\",\"meaning\":\"作及物动词，表示把某人或某物短暂按进水里。\",\"note\":\"常见于故事或特定情境；使用时要留意动作可能让人不舒服。\",\"example\":{\"id\":\"duck-v-submerge-ex1\",\"senseId\":\"duck-v-submerge\",\"en\":\"The children ducked the toy under the water.\",\"zh\":\"孩子们把玩具按进水里。\",\"note\":\"ducked 后直接接宾语 the toy，表示把它按入水中。\"},\"sourceIds\":[\"src_oxford\"]}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"duck-v-submerge\",\"title\":\"短暂潜到水下；把人或物按入水中\",\"meaning\":\"自己短暂没入水中，或使人、物体短暂浸入水中。\",\"usageNote\":\"这一义可不及物，也可及物。duck under the water 表示自己短暂潜下；duck someone/something under the water 表示使人或物没入水中，不必包含跳水动作。\",\"examples\":[{\"id\":\"duck-v-submerge-ex1\",\"senseId\":\"duck-v-submerge\",\"en\":\"The children ducked the toy under the water.\",\"zh\":\"孩子们把玩具按进水里。\",\"note\":\"ducked 后直接接宾语 the toy，表示把它按入水中。\"},{\"id\":\"duck-v-submerge-ex2\",\"senseId\":\"duck-v-submerge\",\"en\":\"During a game in the pool, Ben ducked his friend under the water.\",\"zh\":\"在泳池里玩游戏时，本把朋友短暂按到了水下。\",\"note\":\"his friend 是直接宾语；这里表示使别人没入水中。\"},{\"id\":\"duck-v-submerge-ex3\",\"senseId\":\"duck-v-submerge\",\"en\":\"I ducked under the water to get my hair wet.\",\"zh\":\"我潜到水下，把头发打湿。\",\"note\":\"ducked 后没有直接宾语，是不及物用法；under the water 说明潜到水下。\"},{\"id\":\"duck-v-submerge-ex4\",\"senseId\":\"duck-v-submerge\",\"en\":\"The children ducked under the water and then popped up again.\",\"zh\":\"孩子们潜到水下，随后又探出头来。\",\"note\":\"不及物 ducked 表示孩子们自己潜下；then 表明探出头发生在随后。\"}],\"patterns\":[{\"en\":\"duck under the water\",\"zh\":\"短暂潜到水下\",\"note\":\"不及物结构，主语自己没入水中。\",\"kind\":\"sentence-pattern\"},{\"en\":\"duck someone/something under the water\",\"zh\":\"把某人／某物短暂按入水中\",\"note\":\"及物结构，someone/something 是直接宾语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"duck one's head under water\",\"zh\":\"把头短暂浸到水下\",\"note\":\"head 是直接宾语；入水的可以只是头部，不一定是全身。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"dip\",\"zh\":\"浸一下\",\"note\":\"dip something in water 常指把物体轻轻浸一下；duck 也可指自己潜下或把人按到水下。\"},{\"en\":\"dunk\",\"zh\":\"浸入；按入水中\",\"note\":\"在使人或物浸入水中的语境中与 duck 接近；不能用来替换通常的低头躲避义。\"}],\"contrasting\":[{\"en\":\"come up to the surface\",\"zh\":\"浮出水面\",\"note\":\"与自己潜到水下在方向上相对。\"},{\"en\":\"lift something out of the water\",\"zh\":\"把某物提离水面\",\"note\":\"与把物体按入水中在动作方向上相对。\"}],\"similarNote\":\"比较这些词时须限定在入水语境；duck 的低头躲避义不能一并替换。\",\"contrastingNote\":\"不及物潜下可对照浮出水面；及物使物体入水可对照将其提离水面。\"},\"sourceIds\":[\"src_wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"duck 和 dive：低头躲开，还是跳入水中\"",
+        "valueJson": "\"duck 和 dive：低头、潜下与跳水\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"duck down 常指低头或弯身躲避；dive into water 指跳入水中或潜入水里。\"",
+        "valueJson": "\"duck down 常表示低头或弯身；duck under the water 可表示短暂潜到水下。dive 可以表示跳水或潜水，具体动作由上下文决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"dive into the water\"",
+        "valueJson": "\"duck under the water / dive into the pool\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"强调跳入或潜入水中；不要因 duck 可作“鸭子”就把两者当成同义动词。\"",
+        "valueJson": "\"duck 可指在水里短暂潜下，不必有跳水动作；dive into the pool 在跳水语境中表示跳入泳池。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"duck-dive-ex2\",\"senseId\":\"duck-v-dodge\",\"en\":\"Mia dived into the pool.\",\"zh\":\"米娅跳进了游泳池。\",\"note\":\"dive into the pool 表示跳入水中。\"}",
+        "valueJson": "{\"id\":\"duck-dive-ex2\",\"senseId\":\"duck-v-submerge\",\"en\":\"Mia ducked under the water, then came up and watched her brother dive into the pool.\",\"zh\":\"米娅潜到水下，随后探出头来，看着哥哥跳进泳池。\",\"note\":\"ducked under the water 是短暂潜下；dive into the pool 在这里表示跳进泳池。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到 down 想“低头躲开”；看到 dive into the water 想“跳入水中”。\"",
+        "valueJson": "\"duck 既可低头躲避，也可短暂潜到水下；duck into a shop 则是迅速进入商店。结合后接成分和语境判断动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"duck-v-dodge\"",
+        "valueJson": "\"duck-v-evade\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"鸭子义的历史词形是古英语 duce，这个鸟名通常被认为与“潜水”有关。后来 duck 作动词，发展出“潜入”和“迅速低头或弯身”的用法；它们与鸭子会潜水的联系带有推测性。\"",
+        "valueJson": "\"表示鸟的名词 duck 延续自古英语 duce，通常被认为与“潜水”有关。表示“潜水”的古英语动词 *ducan 是重建形式，尚无直接文献证据。英语动词 duck 后来发展出“浸入水中”和“迅速低头或弯身”等用法。另一个表示结实布料的同形名词 duck 来自荷兰语 doeck（布），与鸟名不是同一条词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"duce\",\"meaning\":\"鸭子；这个鸟名通常被认为与潜水有关。\"},{\"language\":\"英语\",\"form\":\"duck\",\"meaning\":\"鸭子；后来也用作动词，表示潜入或迅速低头、弯身。\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"duce\",\"meaning\":\"鸭子（名词）。\"},{\"language\":\"现代英语\",\"form\":\"duck\",\"meaning\":\"鸭子（名词）；鸟名的现代形式。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"鸭子名与潜水之间的联系并非完全确定。duck 的动词用法是后来的发展；这些联想帮助理解记忆，不代表每个现代用法都能直接从词源推出。\"",
+        "valueJson": "\"星号 * 标示重建形式，并非已发现的古英语原文。鸟名与“潜水”的历史联系带有推测性；布料义不能并入鸟名的演变链，现代各用法也不能只靠词源直接推出。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src_oxford\"]",
+        "valueJson": "[\"src_wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src_oxford\",\"title\":\"Oxford Learner’s Dictionaries: duck\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/duck_1\",\"supports\":[\"duck 作名词表示鸭子\",\"duck 作动词表示迅速低头或弯身躲避\",\"duck into 表示迅速躲进某处\",\"duck 的规则词形变化\",\"duckling 词族\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src_wiktionary\",\"title\":\"Wiktionnaire：duck（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/duck#Anglais\",\"supports\":[\"名词义：鸭子、成年雌鸭、鸭肉、闪避动作及板球零分\",\"动词义：迅速低头或弯身、躲开、浸入水中及回避\",\"duck 的读音与规则名词、动词变化\",\"duckling 派生词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"鸭子义的历史词形及与潜水相关的通常解释\",\"duck 动词的潜入和迅速低头等后起用法\",\"鸭子名与潜水关系的不确定性\"]",
+        "valueJson": "[\"鸟名 duck 延续自古英语 duce，通常被认为与潜水有关\",\"古英语动词 *ducan 是重建形式，未获直接文献证实\",\"duck 动词后来发展出浸入水中及迅速低头等用法\",\"布料义 duck 来自荷兰语 doeck，与鸟名来源不同\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 418,
+    "headword": "duck",
+    "meaning_zh": "n. 鸭子\nvi. 没入水中, 闪避\nvt. 猛按...入水, 躲避",
+    "phonetic": "/dʌk/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "61736e781a063b4daadd21f1caeab3e78f3f638c50cc1a3589f11e45cf6d46e3",
+    "executedReviewPromptHash": "61736e781a063b4daadd21f1caeab3e78f3f638c50cc1a3589f11e45cf6d46e3",
+    "reviewHash": "2c5b75b222a84de674506469238c1b21b0014b8fd047247cb03216b2304ba568",
+    "wordId": 1177,
+    "inputHash": "0f682564d552fb451685c0d7644248e81dbd2c737e3a2038e5f0aa9ab4c5fa3e",
+    "draftHash": "f9ae3cc949d456017b967547fb0ff235b5c3f5adf954b9fa5ec6b8a8cdc8f91d",
+    "finalHash": "80d2513e8a219759e05dc940528ad6b31c4160b20de7aa140713f5346d338641",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rule#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.019Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120397,
+        "revisionId": 39376773,
+        "revisionTimestamp": "2026-03-19T09:18:57Z",
+        "sha256": "b353adf28bc4ec03ae8ee95b9e3f97ae3ede543a86efe510ad56930c353948be",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rule",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:05:41.080Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:13:13.724Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "正文引用的 Oxford 没有对应的已取回材料，Cambridge 本次获取失败；实际取回的 Wiktionnaire 英语词条却未列入来源，词源也未引用它。应调整来源及对应 sourceIds，避免把未读取的网页当作支持依据。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "人为遵循的规则、做事准则与表示通常情况的规律混在一起。检查作业是一条做事准则，原译“规律”不准确；as a rule 应归入通常情况这一功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "名词“统治”是重要常用义，不宜仅列为次常用义并只配一个例句；还应说明其通常不可数。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "统治、普通事务管理与抽象支配混合，容易使学生把 rule 当作 manage。原来的第二例实际表示恐惧占主导，没有补足统治义的两个例句；助记中的班长管理值日也强化了这一误解。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote",
+        "message": "rule in/against someone 中的 rule in someone 不成立。应分别写 rule in someone's favor 和 rule against someone，并补充常用的 rule on + 事项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用短语 rule out。应单列其排除可能性或选项的用法，并说明代词须放在 rule 与 out 之间。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "rule 加 -er 时保留末尾 e 会得到错误拼写 ruleer。应说明去掉 e 再加 -er，得到 ruler；易混辨析中的相同说明也需修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "be ruled by 是同一动词的被动表达，不是统治的反义；独立与否也不直接对立于是否掌权。应改为在结束掌权语境下适用的 abdicate、step down。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "uphold a ruling 表示维持裁决，不能作为作出裁定的反向表达。可改为 decline to rule，并明确 overturn a ruling 对照的是原裁决的结果。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/senseId",
+        "message": "例句涉及 ruler 的统治者和尺子两义，不能关联到“规则”义 rule-n-1；至少应关联其中实际出现的尺义 rule-n-3。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "应补充排版线条义，纠正词条中“破折号”可能造成的误解，并补充与画线相关的动词用法。“刻线尺”也宜改为更自然的“量尺”。"
+      }
+    ],
+    "coverageAssessment": "已核对规则、规章和准则，通常情况与规律，名词统治，及物及不及物统治，抽象支配，正式裁定，以及 rule out；修订后每个核心义均有至少两个原创英中例句。尺、排版线条、画线和口语“很棒”分列次常用义。词源原有两条独立路径的处理正确，保留空的 stages，仅补齐相同 URL 的来源引用。未额外查阅网页；来源未展开的现代搭配和补充义项依据专业语言知识，不冒充已从其他词典取得的内容。",
+    "senseInventory": [
+      {
+        "sense": "n. 规则、规定、规章、章程、准则或标准",
+        "coveredBy": [
+          "rule-n-1"
+        ],
+        "assessment": "保留为核心义；修正第二例的中文，使其明确表示做事准则。规章、章程等属于规则义的具体应用，无须机械拆义。"
+      },
+      {
+        "sense": "n. 规律、常规、通常情况；as a rule",
+        "coveredBy": [
+          "rule-n-general"
+        ],
+        "assessment": "原稿混入规则义但未用例句充分说明；新增核心义和两个例句，并移入 as a rule。"
+      },
+      {
+        "sense": "n. 统治、统治权；语境中的统治时期",
+        "coveredBy": [
+          "rule-n-2"
+        ],
+        "assessment": "由次常用义移入核心义，补足两个例句并说明通常不可数。"
+      },
+      {
+        "sense": "v. 统治、掌权、管辖，兼有及物与不及物用法",
+        "coveredBy": [
+          "rule-v-1"
+        ],
+        "assessment": "限定为掌握统治权，补足及物与不及物例句，避免误教为普通事务管理。"
+      },
+      {
+        "sense": "v. 支配、控制、占主导地位",
+        "coveredBy": [
+          "rule-v-control"
+        ],
+        "assessment": "从政治统治义中分出，保留恐惧笼罩城镇的原例，并增加贴近日常生活的支配用法。"
+      },
+      {
+        "sense": "v. 正式裁定、作出有权威的决定或规定",
+        "coveredBy": [
+          "rule-v-2"
+        ],
+        "assessment": "原有两个核心例句正确；修正 rule in 的结构错误，补充 rule on，并调整反向表达。"
+      },
+      {
+        "sense": "短语动词 rule out：排除可能性、原因或选项",
+        "coveredBy": [
+          "rule-v-out"
+        ],
+        "assessment": "来源列有该短语；新增常用功能、两个例句及名词和代词的宾语位置说明，不把“排除”当作 rule 裸词的意思。"
+      },
+      {
+        "sense": "n. 尺、量尺",
+        "coveredBy": [
+          "rule-n-3"
+        ],
+        "assessment": "保留次常用义及原例，明确日常更常用 ruler，并调整中文标题。"
+      },
+      {
+        "sense": "n. 排版或印刷中的线条及相关线材",
+        "coveredBy": [
+          "rule-n-print"
+        ],
+        "assessment": "补充专业义；说明它是版面线条，不能笼统等同于标点破折号 dash。"
+      },
+      {
+        "sense": "v. 用尺画直线、划线",
+        "coveredBy": [
+          "rule-v-line"
+        ],
+        "assessment": "作为补充义列出，帮助理解 ruled paper 和 ruler 的工具用法。"
+      },
+      {
+        "sense": "vi. 非正式夸赞：很棒、出色",
+        "coveredBy": [
+          "rule-v-3"
+        ],
+        "assessment": "原稿覆盖正确；保留原例及语域说明，改用实际取得的英语词条作为来源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: rule\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/rule\",\"supports\":[\"词性、常见词义和词形\",\"rule 的规则、统治、裁定等用法\",\"ruler、ruling 等派生或相关形式\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: rule\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/rule\",\"supports\":[\"常见名词与动词用法\",\"裁定结构及常见搭配\",\"较少见的词义和语域\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：rule（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/rule#Anglais\",\"supports\":[\"名词的规则、规章、统治和尺等义项\",\"动词的统治、裁定与非正式夸赞义\",\"英语读音与规则词形\",\"名词和动词各自的词源路径\",\"ruler、rule out 等相关形式的列举\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"rule 作名词常指“规则”；作动词可表示“统治、管理”，也可表示“作出裁定”。\"",
+        "valueJson": "\"rule 作名词可指规则、通常情况或统治；作动词可表示统治、支配或正式裁定。as a rule 是“通常”，rule out 是“排除”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"告诉人们什么可以做、应该做或必须遵守的要求，也可指某一学科或活动中常见的规律。\"",
+        "valueJson": "\"行为或做事时遵循的规定、规章或准则，包括学校、游戏等的一套规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"一条有用的规律是交作业前检查一遍。\"",
+        "valueJson": "\"一条实用的做事准则是：交作业前先检查一遍。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"as a rule\",\"zh\":\"通常；一般说来\",\"note\":\"固定表达，概括常见情况，不表示绝无例外。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"统治；管理\"",
+        "valueJson": "\"统治；掌权\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"掌握国家、地区或组织的权力并管理它；也可表示某事物在某时期占主导地位。\"",
+        "valueJson": "\"拥有并行使对国家、地区或人民的统治权。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"及物用法可接被统治或管理的对象；rule over ... 强调统治某地或某群体。\"",
+        "valueJson": "\"可直接接国家、地区或人民，也可不接宾语，或用 rule over ...。日常管理班级、安排工作通常用 manage 或 run；rule 强调掌握统治权。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"rule-v-1-ex2\",\"senseId\":\"rule-v-1\",\"en\":\"For a while, fear ruled the town.\",\"zh\":\"有一段时间，恐惧笼罩着这座城镇。\",\"note\":\"原创例句；rule 作比喻用法，表示占主导。\"}",
+        "valueJson": "{\"id\":\"rule-v-1-ex2\",\"senseId\":\"rule-v-1\",\"en\":\"After her father's death, the queen ruled for twenty years.\",\"zh\":\"父亲去世后，这位女王在位统治了二十年。\",\"note\":\"原创例句；这里 ruled 不接宾语，for 后接统治持续的时间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"be ruled by\",\"zh\":\"受……统治\",\"note\":\"rule 的被动表达，说明权力掌握在别人手中。\"},{\"en\":\"be independent\",\"zh\":\"独立自主\",\"note\":\"在国家或地区统治的语境中，与受外部统治形成对照。\"}]",
+        "valueJson": "[{\"en\":\"abdicate\",\"zh\":\"退位\",\"note\":\"谈君主放弃王位、结束在位统治时，与继续掌权形成对照。\"},{\"en\":\"step down\",\"zh\":\"辞职；下台\",\"note\":\"谈掌权者离开职位时使用，适用范围比 abdicate 广。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"谈国家或地区的权力关系时，可用 be ruled by 表示受统治，用 be independent 表示独立。\"",
+        "valueJson": "\"在结束掌权的语境中，君主可用 abdicate，其他掌权者也可用 step down。be ruled by 则是 rule 的被动表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 rule that + 从句，也可用 rule in/against someone 表示裁定对某人有利或不利。\"",
+        "valueJson": "\"常用 rule that + 从句表示裁定内容，rule on + 事项表示就某事作出裁定；rule in someone's favor 表示裁定有利于某人，rule against someone 表示裁定不利于某人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"rule on something\",\"zh\":\"就某事作出裁定\",\"note\":\"on 后接需要裁定的事项，如 rule on a case；that 从句则说明裁定的具体内容。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"uphold a ruling\",\"zh\":\"维持裁决\",\"note\":\"指确认原裁决继续有效，与推翻相对。\"}",
+        "valueJson": "{\"en\":\"decline to rule\",\"zh\":\"拒绝作出裁定\",\"note\":\"表示法院或有权裁定者不就某事作出裁定，与实际作出裁定形成对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"裁决语境中，overturn 表示推翻裁定，uphold 表示维持裁定。\"",
+        "valueJson": "\"decline to rule 对照是否作出裁定；overturn a ruling 表示后来推翻原裁决，对照的是裁决结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"rule-n-2\",\"title\":\"统治；统治时期\",\"meaning\":\"作为名词，指统治某地的权力或时期。\",\"note\":\"常见于历史和政治话题，如 under the rule of ...（在……统治之下）。\",\"example\":{\"id\":\"rule-n-2-ex1\",\"senseId\":\"rule-n-2\",\"en\":\"The city changed greatly under her rule.\",\"zh\":\"在她统治期间，这座城市变化很大。\",\"note\":\"原创例句。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"直尺；刻线尺\"",
+        "valueJson": "\"尺；量尺\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"末尾加 -er 可构成表示人的名词，也常指尺子。\"",
+        "valueJson": "\"ruler 可指统治者或尺子；rule 加 -er 时去掉词尾 e，得到 ruler。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -er 时保留 rule 末尾的 e。\"",
+        "valueJson": "\"rule 去掉末尾不发音的 e，再加 -er：rul- + -er → ruler。ruler 中只有一个 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"rule-n-1\"",
+        "valueJson": "\"rule-n-3\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象教室门口挂着一张 rule（规则）卡，值日班长按卡片管理大家；比赛有争议时，裁判最后 rule（作出裁定）。同一个词在不同场景里换了用法。\"",
+        "valueJson": "\"想象学校正在演历史剧：门口的 rule（规则）卡提醒观众保持安静；剧中的国王 rule a kingdom（统治一个王国）；法庭一幕里，法官用 rule that...（裁定……）解决争议。同一个词串起了规定、统治权和正式裁决。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/label",
+        "expectedValueJson": "\"管理\"",
+        "valueJson": "\"统治\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"班长按规则管理值日安排。\"",
+        "valueJson": "\"历史剧里的国王统治王国：rule a kingdom。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-n-2\",\"title\":\"统治；统治时期\",\"meaning\":\"对国家、地区或人民的统治及相应权力；在具体语境中也可译为统治时期。\",\"usageNote\":\"此义通常不可数。under her rule 可译为‘在她的统治之下’或‘在她统治期间’。\",\"examples\":[{\"id\":\"rule-n-2-ex1\",\"senseId\":\"rule-n-2\",\"en\":\"The city changed greatly under her rule.\",\"zh\":\"在她统治期间，这座城市变化很大。\",\"note\":\"原创例句。\"},{\"id\":\"rule-n-2-ex2\",\"senseId\":\"rule-n-2\",\"en\":\"The island gained independence after decades of foreign rule.\",\"zh\":\"经过数十年的外国统治后，这座岛屿获得了独立。\",\"note\":\"原创例句；rule 表示统治，通常不可数。\"}],\"patterns\":[{\"en\":\"under the rule of someone\",\"zh\":\"在某人的统治之下\",\"note\":\"of 后说明统治者；也可用 under someone's rule。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"foreign rule\",\"zh\":\"外国统治\",\"note\":\"强调统治权掌握在外来势力手中。\",\"kind\":\"common-collocation\"},{\"en\":\"colonial rule\",\"zh\":\"殖民统治\",\"note\":\"常用于历史和政治语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"reign\",\"zh\":\"君主的统治；在位时期\",\"note\":\"常用于君主；表示一段在位时期时可数，如 a long reign。rule 还可用于政府或外来势力。\"},{\"en\":\"control\",\"zh\":\"控制；管辖\",\"note\":\"在政治权力语境中与 rule 接近，但也可广泛用于机构、局面等。\"}],\"contrasting\":[{\"en\":\"independence\",\"zh\":\"独立\",\"note\":\"在摆脱外部统治的语境中，与 foreign rule 形成对照。\"}],\"similarNote\":\"reign 更集中于君主及其在位时期；rule 的统治者范围更广。\",\"contrastingNote\":\"谈外部统治与自主地位时，可对照 foreign rule 和 independence。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-n-general\",\"title\":\"通常情况；常规；规律\",\"meaning\":\"反复出现、通常成立的情况或规律。\",\"usageNote\":\"固定表达 as a rule 表示‘通常’；the rule 可指常态，常与 the exception（例外）对照。\",\"examples\":[{\"id\":\"rule-n-general-ex1\",\"senseId\":\"rule-n-general\",\"en\":\"As a rule, I walk to school unless it rains.\",\"zh\":\"我通常步行上学，除非下雨。\",\"note\":\"原创例句；as a rule 概括习惯，允许存在例外。\"},{\"id\":\"rule-n-general-ex2\",\"senseId\":\"rule-n-general\",\"en\":\"On this bus route, delays are the rule rather than the exception.\",\"zh\":\"在这条公交线路上，晚点是常态，而非偶发现象。\",\"note\":\"原创例句；这里的 rule 指经常出现的情况。\"}],\"patterns\":[{\"en\":\"be the rule rather than the exception\",\"zh\":\"是常态而非例外\",\"note\":\"强调某种情况经常发生。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"as a rule\",\"zh\":\"通常；一般说来\",\"note\":\"固定表达，概括常见情况，不表示绝无例外。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"the norm\",\"zh\":\"常态\",\"note\":\"表示通常或普遍的情况时，与 the rule 接近。\"},{\"en\":\"usually\",\"zh\":\"通常\",\"note\":\"概括习惯时与 as a rule 接近；usually 是副词，常放在主要动词前。\"}],\"contrasting\":[{\"en\":\"exception\",\"zh\":\"例外\",\"note\":\"表示偏离通常情况的个别事例，不一定涉及违反规定。\"}],\"similarNote\":\"the norm 对应通常情况；usually 可表达 as a rule 所概括的频率或习惯。\",\"contrastingNote\":\"这里的 rule 与 exception 对照的是常态和例外。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-v-control\",\"title\":\"支配；控制；占主导地位\",\"meaning\":\"某种力量、情绪或事物强烈影响人的生活、决定或某个局面。\",\"usageNote\":\"可直接接 life、decisions 等，表示支配或控制；语气通常强于普通的 influence。\",\"examples\":[{\"id\":\"rule-v-control-ex1\",\"senseId\":\"rule-v-control\",\"en\":\"For a while, fear ruled the town.\",\"zh\":\"有一段时间，恐惧笼罩着这座城镇。\",\"note\":\"原创例句；rule 作比喻用法，表示恐惧占主导。\"},{\"id\":\"rule-v-control-ex2\",\"senseId\":\"rule-v-control\",\"en\":\"Don't let your phone rule your life.\",\"zh\":\"别让手机支配你的生活。\",\"note\":\"原创例句；指生活被手机牵着走。\"}],\"patterns\":[{\"en\":\"rule someone's life\",\"zh\":\"支配某人的生活\",\"note\":\"强调某事物对生活产生过强的控制。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be ruled by something\",\"zh\":\"受某事物支配\",\"note\":\"这是被动表达，如 be ruled by fear。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be ruled by fear\",\"zh\":\"受恐惧支配\",\"note\":\"强调行为或决定受到恐惧的控制。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"control\",\"zh\":\"控制\",\"note\":\"表示掌控行为或局面时接近 rule；control 也常用于机器等具体对象。\"},{\"en\":\"dominate\",\"zh\":\"支配；占主导地位\",\"note\":\"强调影响力压过其他因素，不一定涉及正式统治权。\"}],\"contrasting\":[{\"en\":\"be in control of one's own life\",\"zh\":\"掌握自己生活的主动权\",\"note\":\"在生活受他物支配的语境中，表示自己作主。\"}],\"similarNote\":\"control 强调掌控，dominate 强调占主导；此义的 rule 带有强烈支配意味。\",\"contrastingNote\":\"谈生活是否被外物支配时，可对照自己掌握生活的主动权。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-v-out\",\"title\":\"rule out：排除\",\"meaning\":\"判定某种可能性或原因不成立，或决定不考虑某个选项。\",\"usageNote\":\"这是带 out 的短语动词。名词宾语可放在 out 后，也可放在 rule 与 out 之间；代词必须放在中间，如 rule it out。can't rule out 表示仍不能排除，不等于已经确认。\",\"examples\":[{\"id\":\"rule-v-out-ex1\",\"senseId\":\"rule-v-out\",\"en\":\"The police ruled out an accident after watching the video.\",\"zh\":\"警方看过录像后，排除了意外事故的可能。\",\"note\":\"原创例句；排除一种解释。\"},{\"id\":\"rule-v-out-ex2\",\"senseId\":\"rule-v-out\",\"en\":\"We ruled out the hotel because it was too expensive.\",\"zh\":\"我们因为那家酒店太贵而不再考虑它。\",\"note\":\"原创例句；排除一个待选方案。\"}],\"patterns\":[{\"en\":\"rule out + 名词或动名词\",\"zh\":\"排除某事或某种做法\",\"note\":\"如 rule out an accident、rule out moving abroad。\",\"kind\":\"sentence-pattern\"},{\"en\":\"rule it out\",\"zh\":\"排除它；不考虑它\",\"note\":\"代词 it 必须放在 rule 与 out 之间。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"rule out the possibility of ...\",\"zh\":\"排除……的可能性\",\"note\":\"of 后接名词或动名词。\",\"kind\":\"common-collocation\"},{\"en\":\"can't rule out ...\",\"zh\":\"不能排除……\",\"note\":\"表示仍有可能，不表示必然发生。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"exclude\",\"zh\":\"排除；不予考虑\",\"note\":\"在排除可能性或选项时与 rule out 接近。\"},{\"en\":\"eliminate\",\"zh\":\"排除\",\"note\":\"筛查原因或缩小选项范围时接近 rule out；其他语境也可表示消除。\"}],\"contrasting\":[{\"en\":\"keep an option open\",\"zh\":\"保留一种选择\",\"note\":\"谈是否排除某个方案时，与 rule out an option 形成对照。\"},{\"en\":\"leave open the possibility of ...\",\"zh\":\"保留……的可能性\",\"note\":\"表示仍认为某事可能成立，不等于确认它。\"}],\"similarNote\":\"比较这些词时，应限定在排除原因、可能性或待选方案的语境。\",\"contrastingNote\":\"保留选择或可能性，与将其排除形成对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-n-print\",\"title\":\"（排版）线条\",\"meaning\":\"印刷或版面中用于分隔、装饰等的线条，可以是横线或竖线。\",\"note\":\"这种 rule 指版面线条；标点符号‘破折号’通常叫 dash。传统铅字排版中用于印出线条的金属条也可称 rule。\",\"example\":{\"id\":\"rule-n-print-ex1\",\"senseId\":\"rule-n-print\",\"en\":\"The designer put a thin rule under the title.\",\"zh\":\"设计师在标题下方加了一条细横线。\",\"note\":\"原创例句；这里是排版线条。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rule-v-line\",\"title\":\"用尺画直线；划线\",\"meaning\":\"用尺等工具画直线，也可指给纸张划上直线。\",\"note\":\"可说 rule a line；ruled paper 指画有平行线条的纸，通常是横线纸。\",\"example\":{\"id\":\"rule-v-line-ex1\",\"senseId\":\"rule-v-line\",\"en\":\"Please rule a line under the heading.\",\"zh\":\"请用尺子在标题下面画一条线。\",\"note\":\"原创例句；这里 rule 表示画直线。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1177,
+    "headword": "rule",
+    "meaning_zh": "n. 规则, 统治, 控制, 支配, 规律, 标准, 章程, 破折号, 铅线\nvt. 规定, 统治, 管理, 控制, 支配, 裁决\nvi. 统治, 管辖, 裁定",
+    "phonetic": "/ru:l/",
+    "pos": "",
+    "forms": []
+  }
+}

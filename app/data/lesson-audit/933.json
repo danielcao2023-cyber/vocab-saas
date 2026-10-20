@@ -1,0 +1,270 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b0e42c8864cb05e53e6f450c246e3752ed79aee497e761d6fc6fd437ebca9dda",
+    "executedReviewPromptHash": "b0e42c8864cb05e53e6f450c246e3752ed79aee497e761d6fc6fd437ebca9dda",
+    "reviewHash": "ebfcac6f7f309fdabf5d0c9f90e8f9f3ef05a5df0b8ea6786662eb128022e3e7",
+    "wordId": 933,
+    "inputHash": "fb5ccbe171b31c8cd02e8d2bbeb64a7d8c8fa5d4b3f751082ee993b8cab37469",
+    "draftHash": "99b9564b9b16753ae3df0fd0d106bf2726e2d56ef2ab6599583500216846592f",
+    "finalHash": "cdebc0f46998cdd4ea149498431d2f61b102a4c8fd7e6e8d71cda666ac626051",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/now#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.446Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115786,
+        "revisionId": 39764255,
+        "revisionTimestamp": "2026-08-03T04:47:14Z",
+        "sha256": "0e52a8abc78acb30fb084880928b16be795d1d019944156aea6cc9610355e174",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/now",
+        "section": "now adverb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "0567a0523df8e911341a05bf21ff2e0e9038a3670adf78668dfeccc8ce649351",
+        "summaryAndSupportsWordCount": 63,
+        "sha256": "0567a0523df8e911341a05bf21ff2e0e9038a3670adf78668dfeccc8ce649351",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/933.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/now",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:50:11.761Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:05:57.982Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "同一句把完全相同的 /naʊ/ 同时判为不规范和规范，构成直接矛盾；应删除。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge 的 sourceIds",
+        "message": "Cambridge 正文未取得，不能承担这些说明的来源依据。已取得的法语维基词典英语词条可支持相关释义、发音与功能说明，应改用该来源，并明确其词条语言为英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "转话题、引起注意和开始下一步是 now 的常用话语功能，不宜仅列为较少见义且只给一例。还遗漏了来源明确列出的 now then 和用于安抚或温和制止的 now, now；应提升为核心义并补齐例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples",
+        "message": "连词义的两个例句都使用 now that，虽然用法说明提到了省略 that，却没有展示词头 now 自身的连词用法。补一个自然例句即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "该阶段的 meaning 仅说明历史位置，没有解释字义，属于占位节点。应将可证实的中古英语词形 nou 保留在现有 summary，移除此阶段，不补造材料未单独说明的阶段释义。"
+      }
+    ],
+    "coverageAssessment": "已核对全部词典定义：此刻、目前及与过去相比的如今、立即行动、转换话题、提示开始或安抚，以及连词 now／now that。修订后四个核心义均有至少两个自然英中例句，话语义也展示了 now then 与 now, now。“如今”与现阶段义合讲合理，无须机械拆义。历史词源保留有依据的 nu—nou—now 演变说明；未将其他语言的并列同源形式串成演变链。Cambridge 未取得正文，来源改为已取得的英语词条与 Etymonline 摘要。未发现其他必须修正的语法、翻译、反向表达或构词断言。",
+    "senseInventory": [
+      {
+        "sense": "此刻；现在",
+        "coveredBy": [
+          "now-adv-present"
+        ],
+        "assessment": "已覆盖；第一例说明说话时的情况，与第二例的现阶段状态形成对照。"
+      },
+      {
+        "sense": "目前；如今，与过去相比的现状",
+        "coveredBy": [
+          "now-adv-present"
+        ],
+        "assessment": "已在意义说明及居住地点的例句中覆盖；与此刻义合讲符合实际用法。"
+      },
+      {
+        "sense": "立即；马上",
+        "coveredBy": [
+          "now-adv-immediately"
+        ],
+        "assessment": "已覆盖；收起手机与赶公交车两个例句都自然表达不能再等的行动要求。"
+      },
+      {
+        "sense": "引出新话题或新问题：那么；好了",
+        "coveredBy": [
+          "now-discourse"
+        ],
+        "assessment": "原稿仅作较少见义处理；补丁提升为核心义，并用询问过去的游泳课等例句展示其话语衔接功能。"
+      },
+      {
+        "sense": "提示开始、引起注意或安抚，包括 now then 与 now, now",
+        "coveredBy": [
+          "now-discourse"
+        ],
+        "assessment": "原稿仅部分覆盖开始下一步的功能；补丁补充 now then 的行动提示与 now, now 的安抚用法，并说明语气差别。"
+      },
+      {
+        "sense": "连词 now／now that：既然现在……",
+        "coveredBy": [
+          "now-conj"
+        ],
+        "assessment": "两个 now that 例句正确；补丁增加省略 that 的 now 例句，使词头自身的连词功能也有直接示范。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作副词时，now 常说此刻、目前或眼下该做的事；作连词时，now that 引出已成事实的情况，表示“既然”。\"",
+        "valueJson": "\"now 可表示“现在、目前”，也可催促“马上”；句首还常用来转话题或引起注意。now (that) 可引出当前已成立的情况，表示“既然现在……”。\""
+      },
+      {
+        "op": "remove",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧注音 /naʊ/ 写法不是规范音标，标准 IPA 用 /naʊ/。\"",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-now-11\",\"senseId\":\"now-conj\",\"en\":\"Now you have your own key, you can get in without waiting for me.\",\"zh\":\"既然你现在有自己的钥匙了，就能进门，不用等我了。\",\"note\":\"这里的 now 相当于 now that；前面的从句说明当前已成立的情况，后面的主句说明结果。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"now-discourse\",\"title\":\"话语开头：那么；好了\",\"meaning\":\"用来转换话题、引起注意，或开始处理下一件事。\",\"note\":\"常见于口语；语气由上下文和语调决定。\",\"example\":{\"id\":\"ex-now-7\",\"senseId\":\"now-discourse\",\"en\":\"Now, let’s check the answers together.\",\"zh\":\"好了，我们一起核对答案吧。\",\"note\":\"now 用来引出接下来要做的事。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"now-discourse\",\"title\":\"话语衔接：那么；好了；好啦\",\"meaning\":\"用来转换话题、引起注意，或开始处理下一件事；重复说 now, now 还可用来安抚或温和制止。\",\"usageNote\":\"这是常见的口语功能，主要用来组织话语，不一定强调当前时间。now 常放在话语开头，后有短暂停顿；now then 常提示开始处理事情，now, now 可带安抚或轻微责备的语气。\",\"examples\":[{\"id\":\"ex-now-7\",\"senseId\":\"now-discourse\",\"en\":\"Now, let’s check the answers together.\",\"zh\":\"好了，我们一起核对答案吧。\",\"note\":\"now 用来引出接下来要做的事。\"},{\"id\":\"ex-now-8\",\"senseId\":\"now-discourse\",\"en\":\"Now, how did your first swimming lesson go?\",\"zh\":\"那么，你第一节游泳课上得怎么样？\",\"note\":\"now 引出一个新问题；后面谈的是过去的事，因此这里不是在说事情发生于此刻。\"},{\"id\":\"ex-now-9\",\"senseId\":\"now-discourse\",\"en\":\"Now then, let’s make a list before we go shopping.\",\"zh\":\"好了，我们去购物前先列个清单吧。\",\"note\":\"now then 引起注意，提示开始下一步。\"},{\"id\":\"ex-now-10\",\"senseId\":\"now-discourse\",\"en\":\"Now, now, don’t cry. We can fix your toy.\",\"zh\":\"好啦，好啦，别哭。我们能把你的玩具修好。\",\"note\":\"温和地重复 now，用来安抚对方。\"}],\"patterns\":[{\"en\":\"Now, let’s + 动词原形\",\"zh\":\"好了，我们来……\",\"note\":\"把大家的注意力转到接下来要做的事。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"now then\",\"zh\":\"好了；那么\",\"note\":\"常用于引起注意、提出问题或开始处理下一件事。\",\"kind\":\"fixed-expression\"},{\"en\":\"now, now\",\"zh\":\"好啦，好啦\",\"note\":\"重复使用，常用于安抚或温和制止；具体语气取决于说法和情境。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"well\",\"zh\":\"嗯；那么\",\"note\":\"也能用于开始回应或引出下文，但常带思考、犹豫等语气，不能机械替换 now。\"},{\"en\":\"all right\",\"zh\":\"好了\",\"note\":\"在开始新步骤时意思接近；它也可表示同意，具体含义看语境。\"}],\"contrasting\":[],\"similarNote\":\"这里比较的是衔接对话的功能；具体选择取决于说话意图和语气。\",\"contrastingNote\":\"这种话语组织功能没有固定的反义表达。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"中古英语\",\"form\":\"nou\",\"meaning\":\"now 的中间历史形式。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: now\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/now\",\"supports\":[\"now 作副词的当前时间和立即行动用法\",\"now 作连词及 now that 结构\",\"常见口语话语用法\",\"英美发音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：now（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/now#Anglais\",\"supports\":[\"now 作副词表示现在、如今及立即行动\",\"now 转换话题、引起注意及 now then、now now 的口语功能\",\"连词 now 及其同义结构 now that\",\"英语 now 的 /naʊ/ 发音\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 933,
+    "headword": "now",
+    "meaning_zh": "adv. 现在；目前",
+    "phonetic": "/nau/",
+    "pos": "",
+    "forms": []
+  }
+}

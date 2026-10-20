@@ -1,0 +1,280 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "855e73cdb2f1faa3b75acff6517b9e6e723f0d4bc625991bf27354fd48235d1f",
+    "executedReviewPromptHash": "855e73cdb2f1faa3b75acff6517b9e6e723f0d4bc625991bf27354fd48235d1f",
+    "reviewHash": "c73e5d673f42747ca1bb32c277808e8c945dff4631373c0a782e3967c1efd4c7",
+    "wordId": 1429,
+    "inputHash": "142c542e92cf885ac8109d99ca4d6fa45e835ff0c350d48213f6c1d1f980c612",
+    "draftHash": "24554426046c22173f538bbfc8dd4705e486c897890e94214d1b4e58fede61b4",
+    "finalHash": "2a4f324ba060af4e66fb29f51b6541d5a362afea497ca393f03e7d5e6d67a71d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tired#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.933Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116851,
+        "revisionId": 39220865,
+        "revisionTimestamp": "2026-01-10T19:38:13Z",
+        "sha256": "49e686c4944e7e2c7c72656ca335578fe52939d18a578042eab4064f0c4ce580",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tired",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:33:19.873Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:49:49.134Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech, /forms, /senses",
+        "message": "来源明确列出 tired 也是 tire 的过去式和过去分词，初稿未讲解这一动词功能。须补充形式说明和能区分动词、形容词的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "tired 可以随口音和语速读成一或两个音节，不宜笼统教成通常只有一个音节。应区分音节变化与 -ed 在这里读 /d/。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources, 多处 sourceIds",
+        "message": "Cambridge 页面未成功取得，不能作为本次审校中实际支持具体内容的来源。将有材料支持的内容关联至维基词典英语词条，其余专业语言知识补充不冒挂该来源，并移除本课未取得的 Cambridge 来源条目。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples",
+        "message": "本义标题包括身体和精神疲劳，但现有例句没有明确呈现精神疲劳的情境，补一例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "get tired of 表示变得厌倦，不保证这一变化逐渐发生。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "“给出的历史词源材料”属于制作说明，应改成直接讲解已获支持的构词事实，并保持构词关系与更早历史的区别。"
+      }
+    ],
+    "coverageAssessment": "已核对材料中的疲倦、厌倦两个核心形容词义及 tire 的过去式、过去分词功能。两项核心形容词义均保留至少两个原创例句，补充精神疲劳情境和动词形式教学。老套乏味义可由专业语言知识确认，但现有成功取得的来源未列出，已撤去不实来源关联。词源仅保留 tire 与 -ed 的可证实构词关系，不建立未经支持的历史阶段链。",
+    "senseInventory": [
+      {
+        "sense": "形容词：身体或精神疲倦",
+        "coveredBy": [
+          "tired-physical"
+        ],
+        "assessment": "核心义已覆盖；补充明确表现精神疲劳的例句。"
+      },
+      {
+        "sense": "形容词：厌倦、厌烦，常用 tired of",
+        "coveredBy": [
+          "tired-fed-up"
+        ],
+        "assessment": "核心义及两个原创例句充分；修正 get 不必表示逐渐变化的说明。"
+      },
+      {
+        "sense": "动词功能：tire 的过去式和过去分词",
+        "coveredBy": [
+          "tired-verb"
+        ],
+        "assessment": "初稿遗漏，补充至形式栏及用法讲解；这是动词变化形式，不另冒称为第三个形容词义。"
+      },
+      {
+        "sense": "形容词扩展义：老套、陈旧乏味",
+        "coveredBy": [
+          "tired-overused"
+        ],
+        "assessment": "现有释义及例句自然，可作为较少见用法保留；本义依专业语言知识确认，现有成功取得的词典材料未直接覆盖。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; verb form (past tense and past participle of tire)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常把末尾的 r 弱化或不读；美式通常读出 r。\"",
+        "valueJson": "\"常见英式发音不读 /r/；常见美式发音在 /d/ 前读出 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"重音在第一个音节，开头与 tie 的元音相同。\",\"tired 通常读作一个音节；不要按拼写把 -ed 读成单独的音节。\"]",
+        "valueJson": "[\"开头的 /aɪ/ 与 tie 的元音相同；读成两个音节时，重音在前。\",\"tired 可随口音和语速读成一个或两个音节；-ed 在这里读 /d/，不能另读成 /ɪd/。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[\"wiktionary-tired\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词 tire 的过去式\",\"form\":\"tired\",\"ipa\":\"/ˈtaɪəd/（英）；/ˈtaɪərd/（美）\",\"note\":\"表示过去使人疲倦或变得疲倦；tire 以 e 结尾，实际拼写只加 -d。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词 tire 的过去分词\",\"form\":\"tired\",\"ipa\":\"/ˈtaɪəd/（英）；/ˈtaɪərd/（美）\",\"note\":\"可与 have、has、had 构成完成时；它与形容词 tired 拼写相同，要结合句子结构判断。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tired-physical-ex3\",\"senseId\":\"tired-physical\",\"en\":\"After working on maths problems all afternoon, I was mentally tired and needed a break.\",\"zh\":\"做了一下午数学题后，我精神疲惫，需要休息一下。\",\"note\":\"mentally tired 明确表示用脑后的精神疲劳，不是对数学感到厌烦。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[\"wiktionary-tired\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/zh",
+        "expectedValueJson": "\"渐渐厌倦……\"",
+        "valueJson": "\"变得厌倦……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"get 强调状态逐渐发生变化。\"",
+        "valueJson": "\"get 强调进入厌倦的状态，不一定表示逐渐变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[\"wiktionary-tired\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tired-verb\",\"title\":\"动词形式：tire 的过去式和过去分词\",\"meaning\":\"作为动词形式，表示使人疲倦或变得疲倦。\",\"usageNote\":\"tired 不总是形容词。它也可以是 tire 的过去式或过去分词：tire 可接人作宾语，表示使人疲倦，也可不接宾语，表示变得疲倦。tire someone out 常表示把某人累坏。\",\"examples\":[{\"id\":\"tired-verb-ex1\",\"senseId\":\"tired-verb\",\"en\":\"Carrying the bags upstairs tired me out.\",\"zh\":\"把这些袋子搬上楼把我累坏了。\",\"note\":\"tired 是过去式；me 是宾语，out 加强疲惫的程度。\"},{\"id\":\"tired-verb-ex2\",\"senseId\":\"tired-verb\",\"en\":\"The journey has tired the children out.\",\"zh\":\"这趟旅行把孩子们累坏了。\",\"note\":\"has tired 构成现在完成时，tired 是过去分词；the children 是宾语。\"},{\"id\":\"tired-verb-ex3\",\"senseId\":\"tired-verb\",\"en\":\"During the hike, Ben tired quickly and fell behind.\",\"zh\":\"徒步时，本很快就累了，落在了后面。\",\"note\":\"tired 是不及物动词 tire 的过去式，表示变得疲倦。\"}],\"patterns\":[{\"en\":\"have / has / had + tired\",\"zh\":\"完成时中的动词形式\",\"note\":\"这里 tired 是 tire 的过去分词；对比 I am tired 中描述状态的形容词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"tired someone out\",\"zh\":\"把某人累坏了\",\"note\":\"这是 tire someone out 的过去式形式；tired 也可在完成时中作过去分词。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"wore someone out\",\"zh\":\"把某人累坏了\",\"note\":\"wear someone out 的过去式，在使人精疲力尽的语境中接近 tired someone out；比一般的 tired someone 程度更强。\"}],\"contrasting\":[{\"en\":\"refreshed someone\",\"zh\":\"使某人恢复精神\",\"note\":\"在活动对人的精力产生何种作用这一语境中，可与 tired someone 对照；不能直接替换不及物用法 tired quickly。\"}],\"similarNote\":\"比较的是动词对人的作用；wore someone out 强调耗尽精力。\",\"contrastingNote\":\"refreshed someone 表示使人恢复精神，只与使人疲倦的及物用法形成语境对照。\"},\"sourceIds\":[\"wiktionary-tired\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-tired\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中可把 tired 看作 tire 加 -ed 构成的形式；作形容词时表示疲倦。给出的历史词源材料将其列为由动词 tire 加 -ed 形成。\"",
+        "valueJson": "\"tired 由英语动词 tire 与后缀 -ed 构成。tire 原本以 e 结尾，实际拼写时只加 d：tire → tired。这个形式既可作 tire 的过去式和过去分词，也可作形容词，表示“疲倦的”或“厌倦的”。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-tired\",\"title\":\"Cambridge Dictionary: tired\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/tired\",\"supports\":[\"常见形容词义项及用法\",\"tired 与 tiring 的词义区别\",\"be tired of 的结构\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"tire + -ed 的构词说明\",\"tiredness 等派生词\"]",
+        "valueJson": "[\"疲倦、厌倦两个形容词义及 tired of 用法\",\"英语发音 /taɪəd/\",\"tire + -ed 的构词关系\",\"tired 作 tire 的过去式和过去分词\",\"tiredness 等派生词及 sick and tired 表达\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1429,
+    "headword": "tired",
+    "meaning_zh": "adj. 疲累的, 疲乏的, 厌倦的",
+    "phonetic": "/taiәd/",
+    "pos": "",
+    "forms": []
+  }
+}

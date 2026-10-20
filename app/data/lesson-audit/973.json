@@ -1,0 +1,397 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a873b9c5ce4ca8a331722c454de947752de7e7e8e61bbf32ed5cbac27b0a3fa6",
+    "executedReviewPromptHash": "a873b9c5ce4ca8a331722c454de947752de7e7e8e61bbf32ed5cbac27b0a3fa6",
+    "reviewHash": "033b9018c3bab208b44a0935fbf2fad89320d9aacf9d8d73aa312725c5a549ca",
+    "wordId": 973,
+    "inputHash": "f63f2dbb0cd046d218be597b9fad8c418d3e3c3432ec471f0986f12c1adc064f",
+    "draftHash": "bb3c3bb23fc74e496a53bf652048d8998ea7e55252e2b074682d65cc060b855e",
+    "finalHash": "54db04e528a3af335d34889ee968442774925da876955ec22dfd7e677e9fb9a8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/packet#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.619Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 123110,
+        "revisionId": 37157709,
+        "revisionTimestamp": "2025-02-01T13:23:42Z",
+        "sha256": "7e9d8c89272d2c85fe3929439a359edf538513059152c8f64480c937ee5ab315",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/packet",
+        "section": "packet noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "c32eee8767a8be461e5d621e7cb3b9b8160d0e60d6eac07edf831d1c64dc6a5b",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "c32eee8767a8be461e5d621e7cb3b9b8160d0e60d6eac07edf831d1c64dc6a5b",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/973.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/packet",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:58:46.458Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:09:19.911Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未取回，却被用作全课释义、读音和词形的依据。应改引实际取得的 Wiktionnaire 英语词条；其未直接支持的专业语言知识补充不挂该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1；/memoryAid",
+        "message": "“一包的量”与第一义重复；与“一批信件”合并后两个意思各只有一例。packet of letters 强调归拢成包的信件，不能泛指任意一批邮件。应把份量解释并入第一义，为信件、文件义配足两例，并同步修正助记。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1；/confusions/0",
+        "message": "packet/package 的区别被过度归结为包装大小，遗漏重要地域差异：英式 packet of biscuits 常对应美式 package of cookies；package 并不要求包装较大。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note",
+        "message": "a packet of biscuits 不表示每块饼干都有独立包装。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote；/pronunciation/notes/1",
+        "message": "重音符号应说明为放在重读音节前，本词位于 /p/ 前。所取英语词条还采用英式 /a/、美式 /æ/ 的记音，应交代记音差异；现有 /ˈpækɪt/ 无须判错。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "packeting 全词只有一个 t，“保留两个 t”是逐字符拼写错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similarNote；/senses/2/relatedExpressions",
+        "message": "sachet 不一定表示成组物品。数据包义中的 data unit 是上位概念，message 是消息内容，均不宜直接列作近义表达；physical parcel 也不是其反向表达。可用 data packet 提供明确近义，同时保留消息与数据单元的区别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏英语来源明确列出的旧式及物动词义：成包寄送或由船运送。应作为历史用法简要补入。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "来源支持中古英语基础形式 pak 与小称词尾 -et 的构词分析，但不足以把整个 pak + -et 组合标作已证实的中古英语历史词形。可靠说明已在 summary 中，应清空这一阶段，避免图示造成错误年代归属。"
+      }
+    ],
+    "coverageAssessment": "已核对小包及单份包装、包中份量、成包信件或文件、网络数据包、英式非正式钱数义、及物打包义及旧式寄送义。修订后四个主要教学义均有两个例句，低频钱数义和历史寄送义各有一个例句。来源的不及物栏没有定义，不据此虚构义项。Cambridge 不再充当已取得的依据；来源未直接支持的专业知识补充使用空 sourceIds。",
+    "senseInventory": [
+      {
+        "sense": "名词：小包、小袋；单份调料包装；一包内的东西或份量",
+        "coveredBy": [
+          "packet-n1"
+        ],
+        "assessment": "合并原先重复的份量解释，保留糖和饼干两例，并补清地域使用差异。"
+      },
+      {
+        "sense": "名词：归拢成包的信件、文件；一套资料",
+        "coveredBy": [
+          "packet-n2"
+        ],
+        "assessment": "信件义有词条及历史材料背景；文件、资料义由专业语言知识补充。修订后以表格和信件两例分别落实，不泛化为任意批次。"
+      },
+      {
+        "sense": "名词：网络数据包",
+        "coveredBy": [
+          "packet-n3"
+        ],
+        "assessment": "定义和两例成立；修正近义与反向表达的分类。"
+      },
+      {
+        "sense": "名词：英式非正式用语中的一大笔钱",
+        "coveredBy": [
+          "packet-n4"
+        ],
+        "assessment": "cost a packet 及其翻译正确，放在低频拓展中适当；不是泛指任何东西的“大量”。此义依据专业语言知识保留，不挂未取得的 Cambridge 来源。"
+      },
+      {
+        "sense": "及物动词：把物品装成小包",
+        "coveredBy": [
+          "packet-v1"
+        ],
+        "assessment": "两例语法成立，低频提示与 pack/package 的使用限制适当；规则词形正确，仅需修正词族栏的 t 数量说明。"
+      },
+      {
+        "sense": "旧式及物动词：成包寄送或由邮船运送",
+        "coveredBy": [
+          "packet-v2"
+        ],
+        "assessment": "新增历史用法，以信件成包并由邮船寄送的例子呈现；不作为现代日常主动表达。"
+      },
+      {
+        "sense": "不及物动词标签：来源未给出定义",
+        "coveredBy": [],
+        "assessment": "来源该栏为空，不能建立可教学的独立义项，不视作已确认词义的遗漏。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"区分 packet（包本身或一包的量）和 package（常指较大的包装或包裹）。\"",
+        "valueJson": "\"注意食品包装的地域差异：英式英语常说 a packet of biscuits，美式英语常说 a package of cookies；糖、盐等单份小袋在英美英语中都可叫 packet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式常见读法相同。\"",
+        "valueJson": "\"英美常见读法可记为 /ˈpækɪt/；有些英式记音体系用 /a/ 记录第一音节元音，实际音色随口音而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧式音标中的 /æ/ 前有撇号表示重音；规范写法用 /ˈ/ 标出重音。\"",
+        "valueJson": "\"重音符号 /ˈ/ 放在重读音节前，本词位于 /p/ 前；第二音节的元音写作 /ɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"小包；包装成一小包的东西\"",
+        "valueJson": "\"小包；一包（的量）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指装着某种东西的小包或小袋，常用于食品、调料等单独小份包装。\"",
+        "valueJson": "\"指装着东西的小包、小袋或小盒，也可指一包内的全部东西或一包的量，常见于食品、调料等商品。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见结构是 a packet of + 内容物；内容物可以是可数名词复数，也可以是不可数名词。\"",
+        "valueJson": "\"a packet of 后常接不可数名词或可数名词复数。英式英语常用 packet 指一包饼干等商品；单份糖、盐等小袋在英美英语中都可叫 packet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"这里的 packet 指一整包独立包装的饼干。\"",
+        "valueJson": "\"packet 指同一包装内的一包饼干；packet of biscuits 是常见英式说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"sachet 和 pack 都能说包装成一组的东西；具体选词常取决于包装大小和物品类型。\"",
+        "valueJson": "\"sachet 强调小袋形态，pack 常指包装在一起的一组物品；选词还受地区和商品搭配影响。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1",
+        "expectedValueJson": "{\"id\":\"packet-n2\",\"title\":\"一包的量；一批信件\",\"meaning\":\"可指一包所含的量；在特定邮政或历史语境中，也可指成批递送的信件。\",\"usageNote\":\"表示数量时常见 a packet of；“一批信件”这一用法较少见，通常由上下文说明是一起递送的邮件。\",\"examples\":[{\"id\":\"packet-n2-ex1\",\"senseId\":\"packet-n2\",\"en\":\"The recipe needs a packet of noodles and two eggs.\",\"zh\":\"这道菜需要一包面条和两个鸡蛋。\",\"note\":\"packet 表示一包所含的那一份。\"},{\"id\":\"packet-n2-ex2\",\"senseId\":\"packet-n2\",\"en\":\"The clerk sorted a packet of letters before the post went out.\",\"zh\":\"邮务员在邮件寄出前整理了一批信件。\",\"note\":\"packet 指集中在一起处理或递送的一批信件。\"}],\"patterns\":[{\"en\":\"a packet of + quantity or contents\",\"zh\":\"一包／一份……\",\"note\":\"用来把包装中的数量作为一个整体来提及。\",\"kind\":\"sentence-pattern\"},{\"en\":\"a packet of letters\",\"zh\":\"一批信件\",\"note\":\"用于邮件被合在一起处理或递送的语境；日常更常说 a bundle of letters。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a packet of noodles\",\"zh\":\"一包面条\",\"note\":\"强调按包出售或使用的一份。\",\"kind\":\"common-collocation\"},{\"en\":\"a packet of letters\",\"zh\":\"一批信件\",\"note\":\"偏正式或特定邮政语境，指集中处理的一批邮件。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"bundle\",\"zh\":\"一捆；一批\",\"note\":\"常指用绳或其他方式捆在一起的物品；用于信件时比 packet 更日常。\"},{\"en\":\"batch\",\"zh\":\"一批\",\"note\":\"强调一起处理或生产的一组东西，不强调包装。\"}],\"contrasting\":[{\"en\":\"single item\",\"zh\":\"单件\",\"note\":\"当 packet 表示一批或一整包时，single item 可在数量语境中与之对照。\"}],\"similarNote\":\"bundle 强调捆在一起，batch 强调同一批次；packet 强调成包或一包的份量。\",\"contrastingNote\":\"single item 只在对比一批与单件时适用。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "{\"id\":\"packet-n2\",\"title\":\"一包信件或文件；资料包\",\"meaning\":\"指归拢在一起、常装在同一信封或封套里的信件或文件，也可指一套发给他人的资料。\",\"usageNote\":\"a packet of letters 指成包的信件，这类说法偏书面；packet 指一套表格或资料的用法在美式英语中较常见。\",\"examples\":[{\"id\":\"packet-n2-ex1\",\"senseId\":\"packet-n2\",\"en\":\"The school sent each family a packet of forms to complete.\",\"zh\":\"学校给每个家庭发了一套需要填写的表格。\",\"note\":\"packet 指一起发放的一套文件，这种用法常见于美式英语。\"},{\"id\":\"packet-n2-ex2\",\"senseId\":\"packet-n2\",\"en\":\"The clerk sorted a packet of letters before the post went out.\",\"zh\":\"邮务员在邮件寄出前整理了一包信件。\",\"note\":\"packet 指归拢成包的信件，这类说法偏书面。\"}],\"patterns\":[{\"en\":\"a packet of letters / forms / information\",\"zh\":\"一包信件／一套表格／一套资料\",\"note\":\"of 后说明包内或成套资料的内容；information 是不可数名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a packet of letters\",\"zh\":\"一包信件\",\"note\":\"强调信件归拢成包。\",\"kind\":\"common-collocation\"},{\"en\":\"an information packet\",\"zh\":\"一套资料；资料包\",\"note\":\"尤常见于美式英语，指汇集起来供人阅读或使用的相关资料。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"bundle\",\"zh\":\"一捆；一束\",\"note\":\"用于信件时强调一束放在一起的实物。\"},{\"en\":\"information pack\",\"zh\":\"资料包\",\"note\":\"尤其常见于英式英语，可与 information packet 表达相近的意思。\"}],\"contrasting\":[],\"similarNote\":\"bundle 偏重实物成束；information pack 指按主题汇集的一套资料。与 packet 的对应取决于具体内容。\",\"contrastingNote\":\"作为成包信件或文件的名称，packet 没有常用词汇反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"data unit\",\"zh\":\"数据单元\",\"note\":\"较宽泛的说法；packet 是网络通信中特定类型的数据单元。\"},{\"en\":\"message\",\"zh\":\"消息\",\"note\":\"指要传达的内容，可能由多个 packets 传送。\"}],\"contrasting\":[{\"en\":\"physical parcel\",\"zh\":\"实体包裹\",\"note\":\"用于对照网络中的数字数据和现实中寄送的物品。\"}],\"similarNote\":\"message 是信息内容，packet 是传送信息时使用的数据单元；两者不应混为一谈。\",\"contrastingNote\":\"physical parcel 仅在区分数字网络与现实寄送物时对照。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"data packet\",\"zh\":\"数据包\",\"note\":\"明确点出是数字数据；在网络语境中常与 packet 同义。\"}],\"contrasting\":[],\"similarNote\":\"data unit 是上位概念；message 指消息，可能由多个 packet 承载，均不能直接当作 packet 的同义词。\",\"contrastingNote\":\"数据包这一具体技术名词没有常用反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"packet-v2\",\"title\":\"（旧）成包寄送或由邮船运送\",\"meaning\":\"旧时可作及物动词，表示把东西成包寄出，或把人、物由邮船运送到某处。\",\"note\":\"属于历史用法。现代一般寄送用 send；说明船运时可用 send by ship 或 transport by ship。\",\"example\":{\"id\":\"packet-v2-ex1\",\"senseId\":\"packet-v2\",\"en\":\"The merchant packeted the letters to London by the weekly mail boat.\",\"zh\":\"商人把信件成包寄出，由每周一班的邮船运往伦敦。\",\"note\":\"packeted 在这个历史场景中含寄送之意；by the weekly mail boat 说明船运方式。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两词都与包装有关，但 packet 常指小包或一份；package 常指较大的包装、包裹，也可作动词表示包装。\"",
+        "valueJson": "\"两词都与包装有关。食品包装的称呼常受地域和搭配影响；package 也常指寄来的包裹，大小不是两词的硬性界线。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"常用于一小包食品、调料或一包的量。\"",
+        "valueJson": "\"英式英语常用于食品的一包；在英美英语中也可指糖、盐等单份小袋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"常指寄送的包裹或商品包装，美式英语中尤其常用。\"",
+        "valueJson": "\"可指寄送的包裹；美式英语也常说 a package of cookies（一包饼干），并不要求包装较大。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说一小包食品常用 packet；说寄来的包裹常用 package。\"",
+        "valueJson": "\"英式 a packet of biscuits 常对应美式 a package of cookies；糖、盐的单份小袋可用 packet，寄来的包裹常用 package。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"pak + -et\",\"meaning\":\"小包、小捆\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"词尾 t 后直接加 -ing，保留两个 t。\"",
+        "valueJson": "\"packet 直接加 -ing，形成 packeting；不双写词尾 t，整个单词只有一个 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你拿着一小包茶：在厨房里它是 a packet of tea；邮务员把一批信件集中递送，也能叫 a packet of letters；上网查资料时，信息会拆成 data packets 传送。记住共同画面是“装在一起的一份”。这只是记忆联想，不是词源。\"",
+        "valueJson": "\"想象你拿着一小包茶：在厨房里它是 a packet of tea；邮务员把信件归拢装成一包，就是 a packet of letters；上网查资料时，信息会拆成 data packets 传送。记住共同画面是“分装或归拢在一起的一份”。这只是记忆联想，不是词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"集中递送的一批信件：a packet of letters。\"",
+        "valueJson": "\"归拢成一包的信件：a packet of letters。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: packet\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/packet\",\"supports\":[\"packet 的主要名词义与动词义\",\"常见搭配及语境\",\"英式非正式表达 a packet 表示很多钱\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：packet（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/packet#Anglais\",\"supports\":[\"英语 packet 的小包、单份小袋与网络数据包义\",\"英语动词 packet 的打包义及成包寄送、由船运送义\",\"英语词条的英美读音标注及名词、动词规则变形标记\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 973,
+    "headword": "packet",
+    "meaning_zh": "n. 小包, 一批信件, 大量, 信息包\nvt. 打包, 装进小包",
+    "phonetic": "/'pækit/",
+    "pos": "",
+    "forms": []
+  }
+}

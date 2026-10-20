@@ -1,0 +1,475 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cfdb057449d14995929288850e6f9f03d6bd6cc78a09a930775a1f86313743ee",
+    "executedReviewPromptHash": "cfdb057449d14995929288850e6f9f03d6bd6cc78a09a930775a1f86313743ee",
+    "reviewHash": "d323470fe77b2ec25deca1173da5893676ed7d6ee52bd7ba69977ac18ac02551",
+    "wordId": 674,
+    "inputHash": "984679c758a0593bec6004b30c4cda0d04a625438f500e2782bdd5c335b5ac55",
+    "draftHash": "ae2094af027e460142aa18d87d5c1723878b991bf42b8b692b10cbbee6334ca9",
+    "finalHash": "8b0b888afed91ecb987e5d914176ba71dba4a79c41aa0038b8f6f9132e7bca4f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/how#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.839Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116112,
+        "revisionId": 39765990,
+        "revisionTimestamp": "2026-08-03T05:37:48Z",
+        "sha256": "df3806ea8ba45912a2a2b061998a3327504da4d8648c649cf72286c879ea62b4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/how",
+        "section": "how etymology",
+        "supports": [
+          "Old English question-word meaning; exclude greeting homograph"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:20:43.574807+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "80628818dc7e6c6149dfca3bdf3ad4e0f8c09bdcb839b86213b97347b4515b86",
+        "summaryAndSupportsWordCount": 43,
+        "sha256": "80628818dc7e6c6149dfca3bdf3ad4e0f8c09bdcb839b86213b97347b4515b86",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/674.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/how",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:37:33.862Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:53:03.539Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 未提供已取得内容，Cambridge 明确不可用，不能据此支撑正文。应引用实际取得的法语维基词典英语词条；仅凭专业语言知识补充的对照不冒充网页直接支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/forms、/lessCommonSenses",
+        "message": "遗漏词条所列的名词“方式”。“how 没有复数形式”也因此过于绝对：较少见的名词用法可有复数 hows。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0、/senses/1",
+        "message": "状况用法写进释义却没有对应例句；程度义的例句又全是数量问题。应分别补足状况及形容词、副词程度问法，避免标题覆盖大于实际教学内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "间接疑问是常见功能，不宜列为少见义；标题中的“是否”还混淆了 how 与 whether/if。应移入主体并补足第二个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "“先读嗷再带出 h”颠倒了辅音与元音顺序；“旧标注”也不适合作为学生发音说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions",
+        "message": "标准 how 感叹句不采用主语与助动词倒装；not at all 也不是 how 的反向表达，感叹内容本身可以是正面或负面的。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "what number 通常询问编号，不宜放在数量义的近义表达中；how much“限定于不可数名词或价格”的措辞也过于绝对，应明确这是数量搭配规则。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1、/senses/1/collocations/0",
+        "message": "动词加 how to do 是句型；how long 应按所问的长度、持续时间解释，避免写成直接“接物体／时间”的句法规则。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily、/wordFamilyNote",
+        "message": "可保留并讲清 how-to、know-how 这类常见复合形式及连字符，与普通 how to do 结构区分，无须全部略去。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "how 在所教感叹结构中是副词，不是感叹词。词源还可补入已取得材料明确记载的中古英语承继关系，并区分另有来源的同形问候语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/cues/2",
+        "message": "程度提示应同时说明疑问和感叹，避免只留下“形容词或副词前表示多么”的记忆。"
+      }
+    ],
+    "coverageAssessment": "已按英语词条核对方式、状况、程度、数量、感叹、间接疑问及名词“方式”。修订后主体各义或功能均至少有两个自然例句，较少见名词另列。名词义及部分语法、构词说明依据词条信息与专业语言知识；未将未取得网页当作依据。固定短语不穷尽展开，同形问候语不并入普通疑问词的词源。",
+    "senseInventory": [
+      {
+        "sense": "询问做事方式、方法或过程",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有两个例句有效；将状况用法分列，保留方法问句和 how to 结构。"
+      },
+      {
+        "sense": "询问健康、状况、进展或经历感受",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原稿缺少对应例句；新增独立主体义及两个例句。"
+      },
+      {
+        "sense": "询问形容词或副词所表示的程度，包括时长、年龄、距离、频率等",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原有搭配说明，但例句只教数量；补入形容词程度与频率问句。"
+      },
+      {
+        "sense": "how many、how much 询问数量或价格",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "两个数量例句有效；修正近义表达及过度限定的说明。"
+      },
+      {
+        "sense": "修饰形容词或副词，构成感叹",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "两个例句自然；修正倒装说法并移除不成立的反向表达。"
+      },
+      {
+        "sense": "引出间接疑问，包括 how 从句与 how to 结构",
+        "coveredBy": [
+          "s4",
+          "s1"
+        ],
+        "assessment": "作为常见功能移入主体，保留原例并补第二例；明确与是否型问题的区别。"
+      },
+      {
+        "sense": "名词：方式、方法",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "补入较少见名词用法及 hows 的实际拼写，修正无复数的绝对说法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"副词；连接词用法\"",
+        "valueJson": "\"副词；名词（较少见）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"how 常用来问方式、程度和数量，也能引出间接问题；它本身不变化。\"",
+        "valueJson": "\"how 常用来问方式、状况、程度和数量，也能引出间接问题或表达感叹；作副词时形式不变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"与 cow 的元音相同，可先读“嗷”再轻轻带出 h。\"",
+        "valueJson": "\"先轻轻送气发 /h/，再连上 /aʊ/；元音与 cow 中的元音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧标注 /hau/ 不准确；常用音标写作 /haʊ/。\"",
+        "valueJson": "\"how 是一个音节；/aʊ/ 是双元音，要连成一个音节读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"副词和引导疑问从句时形式不变；how 没有比较级或复数形式。\"",
+        "valueJson": "\"how 作副词或引出疑问内容时形式不变，没有比较级或最高级；较少见的名词用法可有复数 hows。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数\",\"form\":\"hows\",\"ipa\":\"/haʊz/\",\"note\":\"用于较少见的名词用法，如 the hows and whys（方法与缘由）；词尾读 /z/，不加撇号。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"询问做事的方法、过程或状态，相当于“怎样、如何”。\"",
+        "valueJson": "\"询问做事的方法或过程，相当于“怎样、如何”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"多少；多长、多大等程度\"",
+        "valueJson": "\"多少；达到什么程度\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2e3\",\"senseId\":\"s2\",\"en\":\"How spicy is the soup?\",\"zh\":\"这汤有多辣？\",\"note\":\"how 修饰形容词 spicy，询问辣的程度。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2e4\",\"senseId\":\"s2\",\"en\":\"How often do you water the plants on your balcony?\",\"zh\":\"你多久给阳台上的植物浇一次水？\",\"note\":\"how 修饰副词 often，询问频率；回答可用 twice a week（每周两次）。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"How + 形容词/副词 + be/助动词/情态动词 + 主语 ...?\",\"zh\":\"……有多……？／……做得多……？\",\"note\":\"询问程度或频率，使用直接疑问语序，如 How warm is the room?。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"接物体问长度，接时间问持续时长。\"",
+        "valueJson": "\"可问物体的长度，也可问事情持续多久，如 How long is the rope? / How long did you wait?。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"what number\",\"zh\":\"多少号／什么数字\",\"note\":\"适合询问编号或具体数字；问一般可数数量时通常用 how many。\"}",
+        "valueJson": "{\"en\":\"what is the total number of ...?\",\"zh\":\"……的总数是多少？\",\"note\":\"of 后接可数名词复数，可对应询问总数的 how many ...?；表达较正式，并强调总数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"what number 用于编号或数字；how many/how much 按数量表达习惯使用。\"",
+        "valueJson": "\"这些 what 结构分别询问总数和价格，不能替换所有 how 问程度的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"限定于不可数名词或价格；不用于直接修饰普通可数复数名词。\"",
+        "valueJson": "\"问数量时搭配不可数名词，也可单独问价格；如 How much are the tickets? 虽然 tickets 是复数，问的仍是价钱。不能直接用 much 修饰普通可数名词复数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"so 可加强形容词语气，如 so bright，但通常不构成同样的倒装感叹句。\"",
+        "valueJson": "\"so 可在陈述句中加强程度，如 The stars are so bright!；how 感叹句把 how + 形容词或副词放在句首，主语仍在谓语前。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"not at all\",\"zh\":\"一点也不\",\"note\":\"在表达程度时可与强烈肯定的感叹形成语义对照，但不能替换 how 感叹句。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"not at all 只在表达程度的语境中与强烈肯定形成对照，并非 how 的固定反义词。\"",
+        "valueJson": "\"how 在这里标记感叹的程度，没有固定反义词；感叹的具体内容可为正面或负面，如 kind / unkind。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s4\",\"title\":\"引出间接疑问：如何、是否以何种方式\",\"meaning\":\"how 可引出嵌在另一句里的问题，整个从句作主语、宾语或表语。\",\"note\":\"间接疑问从句用陈述语序，不用直接疑问句的倒装。\",\"example\":{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"Please tell me how the game ends.\",\"zh\":\"请告诉我比赛是怎样结束的。\",\"note\":\"the game ends 为陈述语序。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"名词：方式；方法\",\"meaning\":\"how 偶尔作名词，表示做事的方式或方法。\",\"note\":\"常见于 the hows and whys 这类表达，指具体做法及其缘由；日常单说“方法”通常用 way 或 method。\",\"example\":{\"id\":\"s6e1\",\"senseId\":\"s6\",\"en\":\"The guide explains the hows and whys of growing tomatoes.\",\"zh\":\"这本指南讲解了种西红柿的具体方法，以及这些做法背后的道理。\",\"note\":\"hows 是 how 的名词复数，表示具体做法，拼写不加撇号。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"how 是沿袭下来的英语疑问词，古英语形式为 hu；其日常提问方式的核心意思延续至今。\"",
+        "valueJson": "\"how 经中古英语 how 承继古英语 hū；古英语词已表示“怎样、如何”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/form",
+        "expectedValueJson": "\"hu\"",
+        "valueJson": "\"hū\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是历史词形承继；现代 how 作感叹词、引导从句等用法是它在英语中的语法用途，不代表额外的构词成分。记忆联想也不是词源。\"",
+        "valueJson": "\"how 在感叹句中仍作副词；拼写相同的借入问候语另有来历，不属于这条历史脉络。助记故事不代表词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"wiktionary-en\",\"etymonline\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"how-to\",\"partOfSpeech\":\"形容词；名词\",\"meaning\":\"提供操作方法的；操作指南\",\"formation\":\"由 how to ...（如何做……）这一结构形成的复合形式。\",\"spellingNote\":\"作定语或名词时通常写作 how-to，带连字符；普通句法结构 how to do 不加连字符。\",\"example\":{\"id\":\"wf1e1\",\"senseId\":\"s1\",\"en\":\"I watched a how-to video before fixing my bike.\",\"zh\":\"修自行车前，我看了一段操作教学视频。\",\"note\":\"how-to 修饰 video，说明视频教授具体做法。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"know-how\",\"partOfSpeech\":\"不可数名词\",\"meaning\":\"实际技能；操作诀窍\",\"formation\":\"由 know（知道）和 how（怎样）组成的复合名词。\",\"spellingNote\":\"know-how 带连字符；动词结构 know how to ...（知道如何做……）不加连字符。\",\"example\":{\"id\":\"wf2e1\",\"senseId\":\"s1\",\"en\":\"My aunt has the know-how to fix a leaking tap.\",\"zh\":\"我姑姑懂得修漏水的水龙头。\",\"note\":\"have the know-how to do 表示具备做某事的实际技能。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"how 在本课常见用法中没有适合初中生学习的常用派生词；how-to、however 等是相关表达或复合形式，不作为这里的词族。\"",
+        "valueJson": "\"这里列出的是含 how 的常见复合形式，不是 how 的词形变化。how-to、know-how 通常带连字符；how to do 则是普通句法结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"形容词或副词前的 how 可表示“多么”。\"",
+        "valueJson": "\"放在形容词或副词前，how 在问句里问“多……”，在感叹句里表示“多么……”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: how\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/how\",\"supports\":[\"how 的常用疑问和感叹用法\",\"how 引导疑问结构及相关搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire: how（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/how#Anglais\",\"supports\":[\"how 询问方式、状况和程度的副词用法\",\"how 引出间接问题及构成感叹句的用法示例\",\"how many、how much、how-to、know-how 等相关表达\",\"英美读音及中古英语 how 承继古英语 hū 的词形关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: how\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/how\",\"supports\":[\"how 的方式、程度、数量用法\",\"how many、how much 与间接疑问语序\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"疑问词 how 承继古英语 hu 的历史关系\"]",
+        "valueJson": "[\"疑问词 how 承继古英语 hu 的历史关系\",\"同形借入问候语与普通疑问词来源不同\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"状况如何；过得怎么样\",\"meaning\":\"询问人的健康、事情进展，或某段经历的总体感受。\",\"usageNote\":\"这里的 how 不要求对方说明具体步骤；常用 How + be + 主语?，be 的形式随主语和时间变化。\",\"examples\":[{\"id\":\"s5e1\",\"senseId\":\"s5\",\"en\":\"How is your ankle today?\",\"zh\":\"你的脚踝今天怎么样？\",\"note\":\"询问脚踝的恢复状况。\"},{\"id\":\"s5e2\",\"senseId\":\"s5\",\"en\":\"How was your first day at your new school?\",\"zh\":\"你在新学校的第一天过得怎么样？\",\"note\":\"询问已经结束的经历，用 was。\"}],\"patterns\":[{\"en\":\"How + be + 主语?\",\"zh\":\"……情况怎么样？\",\"note\":\"可问健康、状态或经历感受，如 How was your trip?。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"How are you?\",\"zh\":\"你好吗？\",\"note\":\"常用问候，也可按语境询问健康或近况。\",\"kind\":\"fixed-expression\"},{\"en\":\"How is ... going?\",\"zh\":\"……进展如何？\",\"note\":\"常用来问学习、工作或计划的进展。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"what ... like\",\"zh\":\"……是什么样的\",\"note\":\"描述经历或事物特点时有时接近 How was ...?；问人的性格常用 What is ... like?，问健康则常用 How is ...?。\"}],\"contrasting\":[],\"similarNote\":\"两种问法有时都可用于了解经历，但问健康、性格或具体特点时不能机械互换。\",\"contrastingNote\":\"这里询问状况，没有固定反义词；好坏来自具体回答，而不是 how 本身。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"引出间接问题：怎样；到什么程度\",\"meaning\":\"把关于方式、状况或程度的问题嵌入另一句话中，整个从句可作主语、宾语或表语。\",\"usageNote\":\"how 引出的从句用陈述语序，不把助动词移到主语前；how to + 动词原形也可表示“如何做”。\",\"examples\":[{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"Please tell me how the game ends.\",\"zh\":\"请告诉我比赛是怎样结束的。\",\"note\":\"the game ends 为陈述语序。\"},{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"We don't know how long the repairs will take.\",\"zh\":\"我们不知道这些维修工作要花多久。\",\"note\":\"how long 问所需时长；从句中 the repairs 在 will take 前。\"}],\"patterns\":[{\"en\":\"tell/know/wonder + how + 主语 + 谓语\",\"zh\":\"告诉／知道／想知道……怎样\",\"note\":\"从句使用陈述语序，如 how the door opens。\",\"kind\":\"sentence-pattern\"},{\"en\":\"how to + 动词原形\",\"zh\":\"如何做……\",\"note\":\"疑问词加不定式，如 learn how to swim（学会游泳）。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"wonder how ...\",\"zh\":\"想知道……怎样\",\"note\":\"表达心里有一个关于方式、状况或程度的问题。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"the way ...\",\"zh\":\"……的方式\",\"note\":\"仅在谈做法时可能与 how 表意接近；不能替换 how long、how much 等程度或数量问题。\"}],\"contrasting\":[{\"en\":\"whether/if\",\"zh\":\"是否\",\"note\":\"引出答案为“是／否”的间接问题；how 引出方式、状况或程度问题。\"}],\"similarNote\":\"the way ... 只在方式这一层意思上接近，不是任意 how 从句的替代形式。\",\"contrastingNote\":\"这里对照的是所问信息的类型，并非词义上的反义关系。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 674,
+    "headword": "how",
+    "meaning_zh": "adv. 如何, 怎样, 多少, 多么\nn. 方式",
+    "phonetic": "/hau/",
+    "pos": "",
+    "forms": []
+  }
+}

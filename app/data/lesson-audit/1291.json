@@ -1,0 +1,413 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5e1750de64471c035a3d7b713132eac58c77d422a11755537c719b07d7fbddb2",
+    "executedReviewPromptHash": "5e1750de64471c035a3d7b713132eac58c77d422a11755537c719b07d7fbddb2",
+    "reviewHash": "746ad0a8941836b3e46b863217ce6ea42a7512ff2f5e528cb3f19135d9ded02a",
+    "wordId": 1291,
+    "inputHash": "f330ad8b040e0d12522f63a3f38497e7cc5f9b2191c2e05fb4a9f8f9de505ff3",
+    "draftHash": "3388e8a816135161cca126f3ebf88f07bbc127eb6b86fd4786597ea0246337ad",
+    "finalHash": "2ea778da570f69d2a6a9f0556ae6637688294dd1d648585cc3a2ba543e6323f0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/something#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.326Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117332,
+        "revisionId": 37037847,
+        "revisionTimestamp": "2025-01-22T10:12:50Z",
+        "sha256": "d8db547d28ae13d13a5fd5a7c9f6aba935ad44b5ede11090604b4dd858dfe89a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/something",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:22:50.496Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:31:58.904Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses、/confusions",
+        "message": "8个例句缺少结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses、/confusions、/sources",
+        "message": "Cambridge 页面未成功取回，不能作为具体内容已获来源支持的依据。应解除相关绑定，仅保留延伸阅读推荐；基本释义、读音和词源改引实际取得的英语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/forms、/lessCommonSenses",
+        "message": "实际词典另列名词义“东西、物品”，初稿完全遗漏。该用法不必升级为初中核心义，但应补入次常用义，并说明名词复数 somethings 与不变的不定代词的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "评价义混入了普通后置修饰结构 something special 和表示少量东西或心意的 a little something；后者并不自带“了不起”之意。标题还包括人，但两个例句均只评价事物。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少常见的模糊收尾语 or something，以及 something like + 数量 表示“大约”的功能；后者应明确是整个短语的用法，并配足两个例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote、/confusions/1/items/1",
+        "message": "宜补充 something 作主语通常接单数谓语。分写 some thing 的原例句没有明确体现特殊强调，容易诱导学生在普通泛指句中分写；应给出确实存在对比重音的语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "中古英语 som-thing 被称作“分写”不准确；阶段的 meaning 实际填写了拼写说明。还遗漏了已取得的古英语形式 sum þinge。应把可证实的历史写入正文，并清空缺少独立释义依据的阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的不定代词义和名词义，以及日常常见的口语评价、模糊收尾和近似数量表达。修订后核心义均有至少两个例句，评价人的用法也有实示；低频名词义另列。词典直接支持基本释义、读音和历史形式，扩展语法与短语按专业语言知识审校；未取回的 Cambridge 页面仅作推荐阅读。未穷尽全部高阶习语。",
+    "senseInventory": [
+      {
+        "sense": "不定代词：未具体说明的某事、某物、情况或内容",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "基本覆盖；补充单数谓语规则及例句必填说明。"
+      },
+      {
+        "sense": "名词：某样东西、物品",
+        "coveredBy": [
+          "n1"
+        ],
+        "assessment": "原稿遗漏；补入次常用义，以可明确识别的复数名词例句展示，并补列 somethings。"
+      },
+      {
+        "sense": "口语评价：了不起、很不一般的人或事",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "收紧释义，保留评价事物的例句，补入评价人的例句；移走不属于此义的普通搭配。"
+      },
+      {
+        "sense": "模糊收尾：or something，或诸如此类",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "补入基本义下的常用固定表达及原创例句，无须另立独立词义。"
+      },
+      {
+        "sense": "近似数量：something like + 数量，大约",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "新增常见短语功能，配两个生活例句，并限定与 about、exactly 的比较语境。"
+      },
+      {
+        "sense": "不定代词的常用句法：后置修饰、单数谓语、提供或请求中的问句",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "后置形容词和不定式已有覆盖；补明主谓一致，保留原有问句使用倾向，不把这些倾向写成绝对禁令。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"indefinite pronoun\"",
+        "valueJson": "\"indefinite pronoun; noun (less common)\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"something：某事、某物；也可以表示“有点特别的东西”\"",
+        "valueJson": "\"something：某事、某物；口语中也可表示“真了不起”\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-something\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"表示不具体的某事或某物；这个词本身不随单复数或时态变化。\"",
+        "valueJson": "\"作不定代词时没有复数形式，也不随时态变化；作主语时通常接单数谓语。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数（较少见）\",\"form\":\"somethings\",\"ipa\":\"/ˈsʌmθɪŋz/\",\"note\":\"仅用于名词用法，如 a few little somethings（几样小东西）；在 something 后直接加 s。不定代词 something 不这样变复数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"问句中，表示主动提供或期待对方回答“是”的情况也常用 something；普通疑问和否定句里常见 anything。\"",
+        "valueJson": "\"something 作主语时通常接单数谓语，如 Something is wrong。问句中，主动提供、提出请求或期待肯定回答时也常用 something；普通疑问句和否定句里常见 anything。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"something 指听见但尚未辨明的声音或动静。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这是主动提供饮料的问句；warm 和 to drink 都放在 something 后面。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e3\",\"senseId\":\"s1\",\"en\":\"We could watch a film or something after dinner.\",\"zh\":\"晚饭后我们可以看看电影之类的。\",\"note\":\"or something 表示也可以做其他类似的事，语气随意，没有把活动说死。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"... or something (like that)\",\"zh\":\"……或诸如此类的事物／活动\",\"note\":\"口语中用来模糊概括同类选择，如 watch a film or something（看看电影之类的）。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"something special\",\"zh\":\"特别的东西／某种特别之处\",\"note\":\"这是 something 后接形容词的普通结构；可说 I want something special for her birthday（我想为她的生日准备点特别的东西）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a little something\",\"zh\":\"一点东西；一点心意\",\"note\":\"可指少量食物或饮料，也可委婉地指小礼物或酬谢，具体由语境决定，如 eat a little something（吃点东西）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-something\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"了不起的人或事；有点特别的东西\"",
+        "valueJson": "\"口语评价：了不起的人或事\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"口语中可表示某人或某事值得注意、令人印象深刻，也可说某处“有点特别”。\"",
+        "valueJson": "\"用于 be (really) something 等口语表达，表示某人或某事很不一般、令人印象深刻。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"was something 在这里是口语评价，表示这个项目很不简单。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"This little bookshop is something, with its tiny reading room upstairs.\",\"zh\":\"这家小书店真有特色，楼上还有一间小小的阅读室。\"}",
+        "valueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"Your sister is really something: she fixed my bike in ten minutes.\",\"zh\":\"你姐姐真了不起，十分钟就修好了我的自行车。\",\"note\":\"be really something 也能评价人；这里赞赏她修车的本领。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"something special\",\"zh\":\"特别的东西／特别之处\",\"note\":\"special 放在 something 后，可指特别之物，也可概括某人的独特之处。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"a little something\",\"zh\":\"一件小小的特别礼物／心意\",\"note\":\"常指小礼物或小小的心意，具体所指由语境决定。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-something\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"something like + 数量：大约\",\"meaning\":\"something like 后接数量时，整个短语可以表示估计，意思是“大约”。\",\"usageNote\":\"这个用法说的是近似数量；something 本身不能在所有位置替换 about。something like 后接人或物时，还可能表示“有点像”。\",\"examples\":[{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"The repair will cost something like two hundred yuan.\",\"zh\":\"这次维修大概要花两百元。\",\"note\":\"something like 修饰 two hundred yuan，表示估计费用。\"},{\"id\":\"s3-e2\",\"senseId\":\"s3\",\"en\":\"We waited for something like half an hour.\",\"zh\":\"我们等了大约半个小时。\",\"note\":\"something like half an hour 是近似时长，没有声称恰好三十分钟。\"}],\"patterns\":[{\"en\":\"something like + 数量\",\"zh\":\"大约……\",\"note\":\"常用于口语中估计金额、人数、时长等。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"something like half an hour\",\"zh\":\"大约半小时\",\"note\":\"把 something like 放在表示时长的数量短语前。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"about + 数量\",\"zh\":\"大约……\",\"note\":\"在估计数量的语境中通常可以替换 something like，表达更简短。\"},{\"en\":\"approximately + 数量\",\"zh\":\"大约……\",\"note\":\"也表示近似数量，常见于较正式的说明。\"}],\"contrasting\":[{\"en\":\"exactly + 数量\",\"zh\":\"恰好……；整整……\",\"note\":\"在同一数量语境中强调数值准确，与近似估计形成对照。\"}],\"similarNote\":\"这里只比较估计数量的用法，不把 about 的其他含义都视为同义。\",\"contrastingNote\":\"exactly 与 something like 在数量是否精确这一点上形成对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n1\",\"title\":\"名词：某样东西；物品\",\"meaning\":\"作名词，表示某个未具体说明的东西或物品，在特定表达中可以带冠词或用复数。\",\"note\":\"这种用法比不定代词用法少见。复数 somethings 常见于 little somethings 之类的说法；日常泛指通常仍用不变的代词 something。\",\"example\":{\"id\":\"n1-e1\",\"senseId\":\"n1\",\"en\":\"I bought a few little somethings for the children at the market.\",\"zh\":\"我在市场上给孩子们买了几样小东西。\",\"note\":\"a few 后接复数名词，这里的 somethings 表示几样未具体说明的小物品。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"肯定陈述中用 something，暂不说明带来的具体是什么。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这是一般询问是否有所发现，用 anything 很自然。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"nothing 自带否定意义，句中无需再加 not。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-something\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"普通泛指写成一个词 something；形容词 sweet 放在它后面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"只有在特意把 some 和普通名词 thing 分开强调时才这样写；日常表达“某物”通常写 something。\"",
+        "valueJson": "\"分写很少见，通常需要对 thing 这个普通名词作特别强调，例如与 person 对比；日常泛指“某物”写 something。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"c2-e2\",\"senseId\":\"s1\",\"en\":\"Some thing in the bag is making a noise.\",\"zh\":\"袋子里有某个东西在发出声音。\",\"note\":\"这里把 some 单独限定名词 thing，强调是某个东西。\"}",
+        "valueJson": "{\"id\":\"c2-e2\",\"senseId\":\"s1\",\"en\":\"I meant some THING, not some PERSON.\",\"zh\":\"我指的是某个东西，不是某个人。\",\"note\":\"大写标示对比重音，特意强调“物”与“人”的区别。普通泛指句应写 Something in the bag is making a noise。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-something\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"something 由 some 和 thing 组成；在现代英语中，两部分合写，作不定代词表示“某事、某物”。所列历史材料说明它曾分写，约在 1300 年见连字符形式，到了 17 世纪写成一个词。\"",
+        "valueJson": "\"something 是 some 与 thing 组成的合成词，可追溯到古英语 sum þinge，后来有中古英语 som-thing 的形式。它起初分写，约1300年出现连字符写法，17世纪出现合写形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"som-thing\",\"meaning\":\"分写的构词形式；历史材料记载约在 1300 年见连字符写法。\"},{\"language\":\"英语\",\"form\":\"something\",\"meaning\":\"合写成一个词；历史材料记载至 17 世纪形成这种写法。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"some + thing 是现代可理解的构词方式；历史材料还指出它来自中古英语形式，但这里不把现代拆词解释当作完整词源证明。\"",
+        "valueJson": "\"约1300年和17世纪说的是拼写方式的变化，不能据此把这个词的起源定在17世纪。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本词是由 some 和 thing 组成的不定代词；本课不列与它主题相关但并非同族派生的词。\"",
+        "valueJson": "\"something 由 some 和 thing 合成，常用作不定代词，也有较少见的名词用法。somethings 是名词复数形式，不是另一个派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"something 的不定代词用法及常见句型\",\"与 anything、nothing 的用法区别\",\"英式和美式音标\"]",
+        "valueJson": "[\"推荐延伸查阅：something 的释义、搭配、习语及英美发音\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary: something（英语词源条目）\"",
+        "valueJson": "\"Wiktionnaire: something（英语词条，法语释文）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"some 与 thing 的构词说明\",\"历史拼写形式及约 1300 年连字符写法、17 世纪合写信息\"]",
+        "valueJson": "[\"不定代词“某事、某物”的基本释义\",\"名词“东西、物品”的用法\",\"读音 /ˈsʌmθɪŋ/\",\"some 与 thing 的构词说明，以及古英语 sum þinge、中古英语 som-thing 的历史形式\",\"约1300年出现连字符写法、17世纪出现合写形式的信息\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1291,
+    "headword": "something",
+    "meaning_zh": "pron. 某事, 某物",
+    "phonetic": "/'sʌmθiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

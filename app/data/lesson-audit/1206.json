@@ -1,0 +1,358 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8814b9691322b5cb37b371aac4a23e6c50a5d1962a321f51a8310b8fb92c1e85",
+    "executedReviewPromptHash": "8814b9691322b5cb37b371aac4a23e6c50a5d1962a321f51a8310b8fb92c1e85",
+    "reviewHash": "c38e613164b95443542a5b1a8a475bd237b9926ffa755b3c1dd82ee80e76d83c",
+    "wordId": 1206,
+    "inputHash": "13df5437dbddd6d6f98fdc81f4220edd63bc30d77959c1c6f493be568e9fb999",
+    "draftHash": "69534296197df3c9d15969ae87b8b72f1f95d8633d6b9036eb5c90622018862b",
+    "finalHash": "6deebc79669d7274d776c569be63cfc11f62bd3edc61b3a9f26e9b65328ae8ad",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/secret#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.249Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115258,
+        "revisionId": 39915426,
+        "revisionTimestamp": "2026-10-03T07:44:45Z",
+        "sha256": "b3c456a1489d606e9ac946662009a34f7f25318f4095fb3173481f24a941c42c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/secret",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:35:32.221Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:44:07.560Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用名词义“奥秘；尚未弄清的事理”。它不要求有人故意保密，不能完全归入现有信息义；需补独立义项及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "现有英语资料不支持把 secret 教作“分泌物”，该生物学例句应使用 secretion。应删除此义，并补入实际英语词条明确列出的罕见及物动词用法：保密、使成为秘密、秘密藏匿。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "遗漏材料明列的常用固定表达 in secret。补充其无冠词用法和例句，并限定“可数名词”的概括；另补实际机密情境，完善标题覆盖。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "应明确原词条所列“秘方”与一般“秘诀”的联系及适用语境。第二例说明中混入了不完整的英语解释，也应改为清楚的中文。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote",
+        "message": "需限定原词条“极机密、神秘、偏僻”等译法：top secret 表示绝密；secret 描写地点侧重隐蔽、鲜为人知，不能普遍替代 mysterious 或 remote。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/0/zh",
+        "message": "原译把“计划是秘密的”转成“制定动作悄悄进行”，宜直接译出 secret 对 plan 的修饰关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/0/example/note",
+        "message": "例句本身正确，语法标注错误：按现有译文，secret 是形容词宾补；若 this secret 作名词短语，则整个短语是宾语，不能把其中的 secret 标为名词宾补。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "secret 最后一个字母是 t，不是 e。secretly 由 secret 直接加 -ly 构成，不删字母。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "古法语阶段的 meaning 填的是来源说明而非词义；现有词源材料只明确给出形式及来源关系。应清空缺乏字义依据的阶段，在摘要中保留形容词的古法语传入路径，并分别说明名词、罕见动词的拉丁语来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/cues/1/text",
+        "message": "“藏便条的办法”与 finding it 所说的“找到便条”不一致，应明确为找到便条的诀窍。"
+      }
+    ],
+    "coverageAssessment": "已核对秘密／机密、秘诀／秘方、奥秘、保密与隐蔽等主要用法，并补足 in secret 和材料中的罕见英语动词。核心义均保留或补有至少两个例句；神秘、偏僻等译法已限定语境。词源仅保留已取得材料明确支持的来源关系。Cambridge 获取失败，且没有 Oxford 正文，因此二者只保留推荐来源身份，不声称已逐项核验其页面。",
+    "senseInventory": [
+      {
+        "sense": "n. 秘密；机密",
+        "coveredBy": [
+          "secret-noun-information"
+        ],
+        "assessment": "原有两个日常例句正确；补充国家机密情境，保留相关搭配及有语境限制的近义、反向表达。"
+      },
+      {
+        "sense": "n. 秘诀；诀窍；秘方",
+        "coveredBy": [
+          "secret-noun-method"
+        ],
+        "assessment": "原有秘诀义及 to 的语法说明基本正确；补充秘方语境，并限定 secret 与普通食谱的区别。"
+      },
+      {
+        "sense": "n. 奥秘；尚待探明的事理",
+        "coveredBy": [
+          "secret-noun-mystery"
+        ],
+        "assessment": "新增核心义及两个例句，区分科学探索中的未知事理与有人刻意保密的信息。"
+      },
+      {
+        "sense": "固定表达 in secret：秘密地；暗中",
+        "coveredBy": [
+          "secret-noun-information"
+        ],
+        "assessment": "补入常用固定表达及具体例句，明确不用冠词，不另强拆为核心义。"
+      },
+      {
+        "sense": "adj. 秘密的；暗中的；极机密的",
+        "coveredBy": [
+          "secret-adjective"
+        ],
+        "assessment": "秘密计划例句有效；补 top secret 表示绝密，避免把保密程度全部归入裸词 secret。"
+      },
+      {
+        "sense": "adj. 隐蔽的；幽僻的、偏僻的（地点语境）",
+        "coveredBy": [
+          "secret-adjective"
+        ],
+        "assessment": "隐蔽小路例句已覆盖；补充鲜为人知的语义限制，不把 secret 当作一般表示距离偏远的 remote。"
+      },
+      {
+        "sense": "adj. 神秘的（受语境限制的译法）",
+        "coveredBy": [
+          "secret-adjective"
+        ],
+        "assessment": "不机械另立现代常用义；明确单纯表示神秘、难以解释时通常用 mysterious，避免无条件互换。"
+      },
+      {
+        "sense": "v. 保密；使成为秘密；秘密藏匿（罕见及物用法）",
+        "coveredBy": [
+          "secret-verb-hide"
+        ],
+        "assessment": "依据已取得的英语词条补入较少见用法，提供藏匿例句，并提示日常更常用 keep ... secret、hide 或 conceal。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun; adjective\"",
+        "valueJson": "\"noun; adjective; verb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 secret 指不公开的信息，也可指解决问题的方法；形容词 secret 表示不让别人知道或看见。\"",
+        "valueJson": "\"名词 secret 可指秘密、机密或奥秘，也可指做成某事的秘诀、秘方；形容词 secret 表示保密的或隐蔽的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词；表示一件秘密时常说 a secret。\"",
+        "valueJson": "\"表示一件秘密时作可数名词，常说 a secret；固定短语 in secret 表示“秘密地”，不用冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"是可数名词，常说 keep a secret（保守秘密）；表示大家都知道但仍不公开承认的事，可用 open secret。\"",
+        "valueJson": "\"表示一件秘密时可数，常说 keep a secret（保守秘密）；in secret 是“秘密地、暗中”的固定说法，不用冠词。大家都知道但仍未公开承认的事，可称为 an open secret。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-secret-info-3\",\"senseId\":\"secret-noun-information\",\"en\":\"These documents contain state secrets, so only a few officials can read them.\",\"zh\":\"这些文件含有国家机密，因此只有少数官员可以阅读。\",\"note\":\"state secrets 是 a state secret 的复数，指国家机密。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-secret-info-4\",\"senseId\":\"secret-noun-information\",\"en\":\"We met in secret to plan a birthday surprise for Mum.\",\"zh\":\"我们秘密见面，筹划给妈妈一个生日惊喜。\",\"note\":\"in secret 修饰 met，表示秘密会面；表达这个意思时不用冠词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"in secret\",\"zh\":\"秘密地；暗中\",\"note\":\"整个介词短语作状语，如 meet in secret（秘密会面）；其中不用冠词。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"秘诀；诀窍\"",
+        "valueJson": "\"秘诀；诀窍；秘方\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"做好某事或达到某种结果的关键方法。\"",
+        "valueJson": "\"做好某事或取得某种结果的关键方法、因素；在制作食物等语境中，也可指不外传的关键配方或做法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"这里用 secret to describe a method that helps achieve a result.\"",
+        "valueJson": "\"secret 在这里指帮助达到目标的诀窍；to 是介词，后接动名词 remembering；is 后的 to make 是不定式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-secret-method-3\",\"senseId\":\"secret-noun-method\",\"en\":\"Grandma finally shared the secret of her soup: a little lemon juice just before serving.\",\"zh\":\"奶奶终于分享了她做汤的秘方：上桌前加一点柠檬汁。\",\"note\":\"secret 在这里强调不轻易告诉别人的关键做法，可译“秘方”；普通食谱通常叫 recipe。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"形容词，通常放在名词前；也可放在 be、keep 等动词后，如 keep it secret。\"",
+        "valueJson": "\"可放在名词前作定语，也可在 be 后作表语，或在 keep something secret 中作宾语补足语。“绝密的”常用 top secret。地点描写中的 secret 侧重隐蔽、鲜为人知，有时可译“幽僻的”；单纯表示“偏远”用 remote，表示“神秘、难以解释”用 mysterious 更合适。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/zh",
+        "expectedValueJson": "\"他们悄悄制定了一个计划，想给老师一个惊喜。\"",
+        "valueJson": "\"他们制定了一个秘密计划，想给老师一个惊喜。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"top secret\",\"zh\":\"绝密的；高度机密的\",\"note\":\"可作表语，如 The plan is top secret；名词前常写作 top-secret，如 a top-secret document。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"secret-noun-mystery\",\"title\":\"奥秘；尚待探明的事理\",\"meaning\":\"某个领域中尚未完全理解、有待探索的事实、规律或机制。\",\"usageNote\":\"常用复数 secrets，尤其见于 the secrets of...；这里不要求有人故意把信息藏起来。\",\"examples\":[{\"id\":\"ex-secret-mystery-1\",\"senseId\":\"secret-noun-mystery\",\"en\":\"Scientists hope to uncover the secrets of the human brain.\",\"zh\":\"科学家希望揭开人脑的奥秘。\",\"note\":\"secrets 指尚待研究的机制，不是有人故意保密的消息。\"},{\"id\":\"ex-secret-mystery-2\",\"senseId\":\"secret-noun-mystery\",\"en\":\"At the museum, Ella watched a film about the secrets of the deep sea.\",\"zh\":\"埃拉在博物馆看了一部介绍深海奥秘的影片。\",\"note\":\"the secrets of the deep sea 指深海中值得探索的奥秘。\"}],\"patterns\":[{\"en\":\"the secrets of + noun\",\"zh\":\"……的奥秘\",\"note\":\"常用复数，说明所探索的领域，如 the secrets of nature。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"uncover the secrets of nature\",\"zh\":\"揭开大自然的奥秘\",\"note\":\"uncover 在这里表示通过探索发现、弄清。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"mystery\",\"zh\":\"奥秘；难解之事\",\"note\":\"两者都可指尚未理解的事；mystery 更突出难以解释，the secrets of... 常涉及某领域尚待探明的机制。\"}],\"contrasting\":[],\"similarNote\":\"secret 的这一用法与 mystery 有交集，不限于有人知情却不公开的信息。\",\"contrastingNote\":\"本义没有常用的一一对应名词反义词；谈奥秘被揭开，可用 uncover 或 reveal 等动词描述认识的变化。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"secret-noun-chemistry\",\"title\":\"分泌物\",\"meaning\":\"生物学中，腺体等产生并释放的物质。\",\"note\":\"这是专业用法，初中日常交流中较少见。\",\"example\":{\"id\":\"ex-secret-chemistry-1\",\"senseId\":\"secret-noun-chemistry\",\"en\":\"The gland releases a small amount of a clear secret.\",\"zh\":\"这个腺体会释放少量透明的分泌物。\",\"note\":\"这里是生物学术语用法。\"},\"sourceIds\":[\"src-oxford\"]}",
+        "valueJson": "{\"id\":\"secret-verb-hide\",\"title\":\"（罕见动词）保密；秘密藏匿\",\"meaning\":\"对某事保密，使某事成为秘密，或把某物秘密地藏起。\",\"note\":\"这是罕见的及物动词用法。日常表达“保密”更常用 keep ... secret，表达“藏起”更常用 hide 或 conceal。\",\"example\":{\"id\":\"ex-secret-verb-1\",\"senseId\":\"secret-verb-hide\",\"en\":\"She decided to secret the letter beneath the floorboards.\",\"zh\":\"她决定把那封信偷偷藏在地板下面。\",\"note\":\"secret 在这里是动词，后接宾语 the letter，表示“秘密藏起”。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"secret 在这里是名词，作 keep 的宾语补足语。\"",
+        "valueJson": "\"按这里“把这件事保密”的理解，this 是宾语，secret 是形容词宾语补足语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接加 -ly，保留 secret 末尾的 e。\"",
+        "valueJson": "\"直接在以 t 结尾的 secret 后加 -ly，拼作 secretly（s-e-c-r-e-t-l-y），不删字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"secret 的名词和形容词都可追溯到拉丁语来源：形容词来自拉丁语 secretus，名词来自拉丁语 secretum；两者在英语中都表示与秘密有关的意思。\"",
+        "valueJson": "\"形容词 secret 经古法语 secret 传入英语，古法语词又源自拉丁语 secretus。名词和罕见动词 secret 则源自拉丁语 secretum；这两条来源应分别理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"secretus\",\"meaning\":\"秘密的；形容词形式的来源\"},{\"language\":\"古法语\",\"form\":\"secret\",\"meaning\":\"英语 secret 的形容词来源\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列出的词源是历史来源；secret + -ly 是现代英语构词，不能把现代词缀分析当作词源演变。名词 secret 的来源形式 secretum 与形容词来源 secretus 是并行来源，不是同一条演变链。\"",
+        "valueJson": "\"形容词的传入路径与名词、动词的来源要分开理解；secret + -ly 是现代英语派生构词，不能当作这几种历史形式的演变链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"找到藏便条的办法，也可联想到 the secret to finding it。\"",
+        "valueJson": "\"找到便条的诀窍，可联想到 the secret to finding it。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/2/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"secret 的英语罕见及物动词义及其拉丁语来源\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1206,
+    "headword": "secret",
+    "meaning_zh": "n. 秘密, 机密, 秘诀, 秘方\nadj. 秘密的, 极机密的, 隐蔽的, 暗中的, 神秘的, 偏僻的",
+    "phonetic": "/'si:krit/",
+    "pos": "",
+    "forms": []
+  }
+}

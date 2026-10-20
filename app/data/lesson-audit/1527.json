@@ -1,0 +1,291 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5bb765b2405f59daa6bfd2b5179b22a649862ce714340081c6015f43af37bca5",
+    "executedReviewPromptHash": "5bb765b2405f59daa6bfd2b5179b22a649862ce714340081c6015f43af37bca5",
+    "reviewHash": "490e0d222297710c4f680722f52d6489e5f262edbec6ede66fa3140c0dbbe223",
+    "wordId": 1527,
+    "inputHash": "5db548132b72e16fe5ccf834988330cf67debb941433cab76acec81070fa2a40",
+    "draftHash": "71ad6cdc77b3e20140411bc0f81a5e51c9ee7041b280a72b9afa0b4bb4d3bf6a",
+    "finalHash": "d14d0a125860fb43dbe320b9376a1f888a27d30778517a38188c04c9d9664a56",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/week#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.449Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 243,
+        "revisionId": 38580013,
+        "revisionTimestamp": "2025-08-25T18:31:13Z",
+        "sha256": "b7b70f44a0874b987c0ef3c5e9ba95af4b3f87f31b8d59d106336b100fa4829e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/week",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:50:00.595Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:00:03.273Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "频率是 week 的常见用法，不是“每周一次”这一独立词义；原标题也不能涵盖 twice a week。应明确用法性质，并补充按周计量的常见表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏表示一周工作或上学时间的常见用法，如 a five-day week、school week；这种 week 不一定包含七个工作日。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "a day 是另一时间单位，不是 week 的反向表达，不应强行放入 contrasting。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1",
+        "message": "weekly meeting 是派生词 weekly 的搭配，已可由词族部分承接；这里宜换成直接含 week 的按周计量表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "summary 的 wike 与来源所载 weke 不一致；stages 从较晚形式排向较早形式，会形成反向演变箭头，且 meaning 均为占位说明。应将可证实的历史形式保留在 summary，清空占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及引用 cambridge-week 的 sourceIds",
+        "message": "Cambridge 正文未成功取得，不能作为这些具体内容的证据。应使用已取得的英语词条支持其实际涵盖的内容，其他专业语言知识补充不挂该来源。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对例句、翻译、搭配、拼写、读音与词族。已取得词典只明确列出“一周”这一名词本义；原稿覆盖七天时段及日历周。修订保留频率用法分组，补充按周计量及工作／学习周，每组均有至少两个原创英中例句。词源仅保留已取得材料支持的历史形式。资料局限是 Cambridge 正文不可用，且唯一已取得词条释义简略；新增常见用法依据专业语言知识，不冒充来源明确列出的定义。",
+    "senseInventory": [
+      {
+        "sense": "名词：一周、星期；连续七天或日历上的一周",
+        "coveredBy": [
+          "week-1"
+        ],
+        "assessment": "核心本义已覆盖；两个例句分别呈现七天时段与下一个日历周。"
+      },
+      {
+        "sense": "名词的常见用法：一周内的工作或上学时间",
+        "coveredBy": [
+          "week-3"
+        ],
+        "assessment": "原稿遗漏；补充工作周和学习周，并说明天数或工时取决于具体安排。"
+      },
+      {
+        "sense": "常用功能：表达每周频率或按周计算的数量",
+        "coveredBy": [
+          "week-2"
+        ],
+        "assessment": "作为用法分组保留，不视为独立词性或另一个“每周一次”词义；补充每周存款数量的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"这些时间表达前通常不加 the。\"",
+        "valueJson": "\"作时间状语时，这些表达前通常不加 in、on 或 at，也不加 the：如 Our school trip is next week。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"a day\",\"zh\":\"一天\",\"note\":\"在时间长度上与一周相对，通常为一天而非七天。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"a day 只表示一天，和 week 的七天时长形成对照。\"",
+        "valueJson": "\"week 没有常用的直接反义词；a day、a month 等表示其他时间单位，可以比较时长，但不是反义表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"每周；一周一次（用于频率）\"",
+        "valueJson": "\"用法：每周的频率或数量\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"与 once、twice、every 等词连用，说明事情每周发生或持续的频率。\"",
+        "valueJson": "\"week 仍是表示一周的名词；与次数或数量搭配时，可表达每周发生几次，或每周计算多少。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"表达频率时可说 once a week（一周一次）、twice a week（一周两次）或 every week（每周）。\"",
+        "valueJson": "\"once a week 表示每周一次，twice a week 表示每周两次；ten dollars a week 表示每周十美元，这些表达中的 a 相当于 per（每）。every week 表示每个星期，不限定每周的具体次数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"week-2-ex3\",\"senseId\":\"week-2\",\"en\":\"I save ten dollars a week for a new bike.\",\"zh\":\"我每周存十美元，准备买一辆新自行车。\",\"note\":\"ten dollars a week 表示按周计算的金额：每周十美元。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"weekly meeting\",\"zh\":\"每周例会\",\"note\":\"weekly 作形容词，表示每周举行或发生的。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"hours a week\",\"zh\":\"每周……小时\",\"note\":\"用来说明每周的小时数，如 ten hours a week（每周十小时）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"daily 用于每天一次或每天发生的安排，与每周频率形成语境对照。\"",
+        "valueJson": "\"daily 和 weekly 可以在日程安排中对照每天与每周的频率，但不是词汇上的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"week-3\",\"title\":\"工作周；学习周\",\"meaning\":\"一周中用于工作或上学的时间，可以按天数或总小时数说明。\",\"usageNote\":\"这种用法着重实际工作或上学的安排，不表示连续七天都在工作或上学；具体包含哪些天，要看有关安排。\",\"examples\":[{\"id\":\"week-3-ex1\",\"senseId\":\"week-3\",\"en\":\"My dad works a four-day week.\",\"zh\":\"我爸爸每周工作四天。\",\"note\":\"a four-day week 指每周工作四天的安排，不是说一个星期只有四天。\"},{\"id\":\"week-3-ex2\",\"senseId\":\"week-3\",\"en\":\"Our school week runs from Monday to Friday.\",\"zh\":\"我们每周从星期一到星期五上学。\",\"note\":\"school week 指一周中上学的那部分时间；这里说明的是我们学校的安排。\"}],\"patterns\":[{\"en\":\"work a four-day week\",\"zh\":\"实行每周工作四天的安排\",\"note\":\"four-day 放在 week 前作修饰语，用连字符连接，day 用单数。\",\"kind\":\"sentence-pattern\"},{\"en\":\"work a forty-hour week\",\"zh\":\"每周工作四十小时\",\"note\":\"用小时数说明一周的总工作时间；forty-hour 中的 hour 用单数。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the working week\",\"zh\":\"工作周；一周的工作时间\",\"note\":\"着重一周中用于工作的时间。\",\"kind\":\"common-collocation\"},{\"en\":\"the school week\",\"zh\":\"一周的上学时间\",\"note\":\"着重一周中学校安排上课的时间。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"workweek\",\"zh\":\"工作周\",\"note\":\"美式英语常用，指一周的工作时间；不能用来替换所有表示七天时段的 week。\"}],\"contrasting\":[{\"en\":\"the weekend\",\"zh\":\"周末\",\"note\":\"在对照工作日与周末的安排时可用；周末仍属于完整七天的一周。\"}],\"similarNote\":\"workweek 可对应工作时间这一用法；谈上学安排时用 school week。\",\"contrastingNote\":\"这里是工作或上学时间与周末的语境对照，不是说 weekend 与 week 在所有用法中互为反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"week 经由中古英语 wike 发展而来；更早与古英语 wice 有关。\"",
+        "valueJson": "\"week 来自中古英语 weke，后者来自古英语 wice；继续向前追溯，其来源是原始日耳曼语重构形式 *wikōn，再往前是原始印欧语重构形式 *weik。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"weke\",\"meaning\":\"week 的中古英语形式。\"},{\"language\":\"古英语\",\"form\":\"wice\",\"meaning\":\"week 的古英语来源形式。\"},{\"language\":\"原始日耳曼语\",\"form\":\"*wikōn\",\"meaning\":\"重构形式，与 week 的历史来源相关。\"},{\"language\":\"原始印欧语\",\"form\":\"*weik-\",\"meaning\":\"更早的重构词根；具体历史联系仍需谨慎看待。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-week\"]",
+        "valueJson": "[\"wiktionary-week\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-week\",\"title\":\"Cambridge Dictionary: week\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/week\",\"supports\":[\"week 的名词用法与常见时间搭配\",\"week 的英式和美式发音\",\"weekly、weekday、weekend 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"week 的历史形式与词源演变链\"]",
+        "valueJson": "[\"week 表示一周的名词本义\",\"week 的音标 /wiːk/ 及与 weak 同音\",\"列出 weekly、weekday、weekend 等相关词\",\"week 的历史形式与词源演变链\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1527,
+    "headword": "week",
+    "meaning_zh": "n. 星期, 周",
+    "phonetic": "/wi:k/",
+    "pos": "",
+    "forms": []
+  }
+}

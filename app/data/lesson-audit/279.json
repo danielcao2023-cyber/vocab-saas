@@ -1,0 +1,456 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cafefebeb04fde374396d3f216bbd50f3f9c11f740f0b5704e97a106f0f446de",
+    "executedReviewPromptHash": "f5245240886104b35982e12caf874e22f3f99263ccf9b25574b044c2757512e9",
+    "reviewHash": "555009cfb30bd8698b0d829d3ff15672fd34b9f5ad995d11f3828f35161a6813",
+    "wordId": 279,
+    "inputHash": "cc8cc009b028c8fe8e737e78d812d6339632fe947ee3ec76579cfb653f6dd4da",
+    "draftHash": "04d6057010668bdd25d06895acc76c01c3fdd22bdab9d569279f103ca3a068bd",
+    "finalHash": "1a439baf4216aebd8dbf0656bd0dc97958d1e3192cd6fed8d389d376801408af",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/click#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:44.649Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118422,
+        "revisionId": 35055892,
+        "revisionTimestamp": "2024-06-12T18:27:09Z",
+        "sha256": "b343564f7778b7d2b030e9250daa773d45b938c4a38375726efaeeea7c389fca",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/click",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:53:30.787Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:59:00.547Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "studyPlan[1]、forms[3].note、confusions[0]、wordFamily[2].spellingNote、wordFamilyNote",
+        "message": "clicking 是 click 直接加 -ing，不能双写 k。clicked 的错误拼法 clickt 也不是“省略 e”所得，而是误按读音拼写。相关说明须全部纠正。"
+      },
+      {
+        "severity": "error",
+        "location": "sources 及各处 sourceIds",
+        "message": "Oxford 正文未提供，Cambridge 未取得，不能据此标注本轮释义依据。应引用实际取得的法语维基词典英语词条；未有直接资料支持的词族补充保留专业语言说明，清空相应来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[4].examples",
+        "message": "名词的“点击操作”和“咔哒声”是两个常用义，原稿各仅一个例句。保留合列结构，分别补至两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "partOfSpeech、lessCommonSenses",
+        "message": "遗漏词典明确列出的拟声感叹词 click。应补充该用法，并为其例句使用独立、匹配的 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[1]",
+        "message": "词典标明声音动词兼有及物和不及物用法，原稿只展示物件自行发声。应补充 click one's tongue 等常用及物功能。"
+      },
+      {
+        "severity": "error",
+        "location": "etymology",
+        "message": "词源材料只支持“很可能源于拟声”，原稿语气过于确定，并把现代义项联系写成了发展过程。应保留推测程度，引用相同来源 URL，不构造历史阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "lessCommonSenses[0]",
+        "message": "公里义应明确为俚语用法；称为 kilometer 的“简称”容易误导为常规缩略构词。原有例句的 senseId 已与所属条目一致，应保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "pronunciation.notes[1]、wordFamily[0].example.zh、memoryAid.cues",
+        "message": "音标提示应直接教学，不笼统声称 /klik/ 是旧写法；幻灯片语境中的 clicker 宜译为“翻页器”；助记提示改为完整英语句子，避免裸词掩盖第三人称单数变化。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的声音名词、公里俚语、四个动词义及拟声感叹词，并核对词条所列的常见点击名词义。修订后，各核心义均有至少两个自然英中例句；合列的两个名词义分别有两个例句，声音动词兼顾及物和不及物功能。所有新增例句均绑定所属义项，两个 lessCommonSenses 例句的 senseId 均与各自条目 id 一致。词源仅保留可能的拟声来源，不建立未经支持的历史链。跨词典互证仍受 Oxford 正文未提供、Cambridge 不可用的限制。",
+    "senseInventory": [
+      {
+        "sense": "动词：点击鼠标或屏幕项目",
+        "coveredBy": [
+          "click-v-press"
+        ],
+        "assessment": "已有两个自然例句，click on 与直接带宾语的结构区分正确；tap、press 及鼠标按键对照均有语境说明。"
+      },
+      {
+        "sense": "动词：发出或使发出短促响声",
+        "coveredBy": [
+          "click-v-sound"
+        ],
+        "assessment": "保留两个不及物例句，补充及物结构 click one's tongue 的说明、搭配和例句。"
+      },
+      {
+        "sense": "动词：突然明白",
+        "coveredBy": [
+          "click-v-understand"
+        ],
+        "assessment": "两个例句覆盖突然理解；与 understand、dawn on someone 的联系及语境区别基本准确。"
+      },
+      {
+        "sense": "动词：迅速投缘、合得来",
+        "coveredBy": [
+          "click-v-get-along"
+        ],
+        "assessment": "两个例句覆盖 people click 和 click with someone，已区分一般相处融洽与迅速投缘。"
+      },
+      {
+        "sense": "名词：一次点击操作",
+        "coveredBy": [
+          "click-n-event"
+        ],
+        "assessment": "与声音义合列；补充后有两个专属例句，覆盖单数及复数计次。"
+      },
+      {
+        "sense": "名词：一声咔哒等短促响声",
+        "coveredBy": [
+          "click-n-event"
+        ],
+        "assessment": "与操作义合列；补充后有两个专属例句，声音搭配及 silence 的适用范围清楚。"
+      },
+      {
+        "sense": "名词：公里，俚语",
+        "coveredBy": [
+          "click-n-short-distance"
+        ],
+        "assessment": "保留原有例句及正确的所属 senseId，修正语域和“简称”说明，补上实际来源。"
+      },
+      {
+        "sense": "感叹词：模仿咔哒声",
+        "coveredBy": [
+          "click-int-sound"
+        ],
+        "assessment": "补为次要用法，独立拟声例句与点击指令区分清楚。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb; noun\"",
+        "valueJson": "\"verb; noun; interjection\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"朗读 clicked、clicking，注意双写 c 后的 k。\"",
+        "valueJson": "\"练习 clicked、clicking 的拼写和读音：保留 click 的 ck，直接加 -ed、-ing，不再双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧写法 /klik/ 不够准确；标准音标用 /ɪ/ 表示该短元音。\"",
+        "valueJson": "\"元音是 /ɪ/，不要读成 see 中的长元音 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"以辅音字母加元音字母加辅音字母结尾的重读单音节词，末尾辅音字母 c 的发音字母为 k；加 -ing 时双写 k。\"",
+        "valueJson": "\"直接在 click 后加 -ing：click → clicking。词尾 ck 保留，不再双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"发出咔哒声\"",
+        "valueJson": "\"发出咔哒声；使发出短促响声\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"发出短促、清脆的“咔哒”声。\"",
+        "valueJson": "\"发出短促、清脆的响声；也可带宾语，表示使某物发出这种声音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常描述开关、锁或机器零件发出的声音；声音本身也可作名词 click。\"",
+        "valueJson": "\"可不带宾语，描述开关、锁或机器零件发声；也可带宾语，如 click one's tongue（咂舌发声）。同一种短响还可用名词 a click 表示。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"click-v-sound-ex3\",\"senseId\":\"click-v-sound\",\"en\":\"She clicked her tongue when she saw the muddy footprints.\",\"zh\":\"她看到那些带泥的脚印时，啧了一声。\",\"note\":\"click one's tongue 是及物用法，常用短促舌响表达不满或不赞同。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"click one's tongue\",\"zh\":\"咂舌；发出啧声\",\"note\":\"tongue 作 click 的宾语；这种声音常用来表达不满或不赞同。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"click-n-event-ex3\",\"senseId\":\"click-n-event\",\"en\":\"I bought the train ticket with just a few clicks.\",\"zh\":\"我只点了几下就买好了火车票。\",\"note\":\"a few clicks 表示几次点击操作，click 用复数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"click-n-event-ex4\",\"senseId\":\"click-n-event\",\"en\":\"The lid shut with a click.\",\"zh\":\"盖子咔哒一声合上了。\",\"note\":\"with a click 描写合上时伴随的一声短响，不是点击操作。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"（口语）公里\"",
+        "valueJson": "\"（俚语，常见于军事语境）公里\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在少数口语用法中，click 可作 kilometer 的简称，表示公里。\"",
+        "valueJson": "\"在军事俚语等非正式语境中，click 可表示一公里。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"此义较少见，日常初中英语中通常不必主动使用。\"",
+        "valueJson": "\"此义也常拼作 klick；日常学习中优先使用 kilometre（英式拼写）或 kilometer（美式拼写）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"click-int-sound\",\"title\":\"（感叹词）咔哒！\",\"meaning\":\"用来模仿短促的咔哒声。\",\"note\":\"多见于故事、漫画或拟声描写；独立模仿声音时，不是要求别人点击的操作指令。\",\"example\":{\"id\":\"click-int-sound-ex1\",\"senseId\":\"click-int-sound\",\"en\":\"Click! The lock opened.\",\"zh\":\"咔哒！锁开了。\",\"note\":\"Click! 独立拟声；Click the link. 中的 click 则是祈使句中的动词。\"},\"sourceIds\":[\"wiktionary_click_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"click 的拼写变化有双写规则；而表示“理解”与“合得来”时，常用结构也不同。\"",
+        "valueJson": "\"click 的词尾已有 ck，加 -ed、-ing 时直接加后缀，不再双写 k；表示“理解”与“合得来”时，常用结构也不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"过去式和过去分词写 clicked；末尾要加 -ed，不能省略 e 写成 clickt。\"",
+        "valueJson": "\"过去式和过去分词写 clicked：在 click 后直接加 -ed；虽然词尾读 /t/，也不能按读音写成 clickt。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"clicking / click-ing\"",
+        "valueJson": "\"clicking / clickking\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"现在分词写 clicking；加 -ing 时双写末尾的 k。\"",
+        "valueJson": "\"现在分词写 clicking，直接在 click 后加 -ing；不能再加一个 k 写成 clickking。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"clicking 的 k 双写。\"",
+        "valueJson": "\"clicking 保留 click 原有的 ck，直接加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"click 模仿短促的“咔哒”声；现代英语中由声音义也用于鼠标点击，并引申出“突然明白”等说法。\"",
+        "valueJson": "\"click 很可能来自模仿短促“咔哒”声的拟声词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的声音联想和现代义项联系有助记忆；它们不构成已证实的历史词源链。\"",
+        "valueJson": "\"拟声来源仍属推测；把“咔哒声”“鼠标点击”和“突然明白”联想在一起有助记忆，但不代表已确定的历史演变顺序。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"老师用点击器切换幻灯片。\"",
+        "valueJson": "\"老师用翻页器切换幻灯片。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"加 -ing 时双写末尾 k：click → clicking。\"",
+        "valueJson": "\"在 click 后直接加 -ing：click → clicking，词尾 ck 保留，不双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_click\"]",
+        "valueJson": "[\"wiktionary_click_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"clicks、clicked、clicking 是 click 的常见词形变化；clicker、clickable 由 click 加后缀构成。clicking 加 -ing 时双写 k。\"",
+        "valueJson": "\"clicks、clicked、clicking 是 click 的常见词形变化；clicker、clickable 由 click 加后缀构成。这些形式都保留 click 的 ck，不再双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"手指 click on 链接：点一下。\"",
+        "valueJson": "\"Click on the link.（点击链接。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"开关 click：咔哒一声。\"",
+        "valueJson": "\"The switch clicks.（开关咔哒响。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"难题终于 click：一下想通。\"",
+        "valueJson": "\"It finally clicked.（终于想通了。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_click\",\"title\":\"Oxford Learner’s Dictionaries: click\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/click_1\",\"supports\":[\"常见动词和名词用法\",\"发音及动词词形\",\"电脑点击、咔哒声及口语引申义\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_click\",\"title\":\"Cambridge Dictionary: click\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/click\",\"supports\":[\"英式和美式音标查询\",\"点击、短促声音及口语用法参考\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_click_en\",\"title\":\"Wiktionnaire：click（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/click#Anglais\",\"supports\":[\"很可能源于拟声的词源解释\",\"名词咔哒声与俚语公里\",\"动词发出响声、点击、突然明白及迅速投缘\",\"拟声感叹词、发音、规则动词词形及 clicking 派生形式\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 279,
+    "headword": "click",
+    "meaning_zh": "v. 点击；发出咔哒声\nn. 点击；咔哒声",
+    "phonetic": "/klik/",
+    "pos": "",
+    "forms": []
+  }
+}

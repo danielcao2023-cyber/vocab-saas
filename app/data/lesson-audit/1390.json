@@ -1,0 +1,284 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6527f953ac287968ea7f018df34c4592364ed0a0a3795aeb1272c36da75899f0",
+    "executedReviewPromptHash": "6527f953ac287968ea7f018df34c4592364ed0a0a3795aeb1272c36da75899f0",
+    "reviewHash": "acf4834b8717a9ec657b55529d9feb396a31ce88dfcd054c5bb4d3994927183a",
+    "wordId": 1390,
+    "inputHash": "cfd9e9003ebbd819bf536abc2dabbc88f6206056416ae9f157fc4aa8d59e243c",
+    "draftHash": "5e6b91df90718a43a1424bc3dddf979686f58220de7dd8f7ab3b4195bb033be3",
+    "finalHash": "6ff0ac4a04e066f9f70b9f211e64737706defcdc00b17400a575f50282ceace5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tennis#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.993Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115971,
+        "revisionId": 39034197,
+        "revisionTimestamp": "2025-11-04T22:20:27Z",
+        "sha256": "273c4429c00c0e03d5d2c6a2e334155377258ac64e5295fc70d57f40599dfa18",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tennis",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:16:17.763Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:26:53.909Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "把“一场网球比赛”单列为 tennis 的义项会误导可数性。a tennis match 中表示“一场比赛”的是 match；赛事语境中的 tennis 仍是不可数用法，应并入运动义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用词源材料，原稿仍以整体记忆提示占位。应补入法语 tenez 及其在早期手掌球游戏中的喊语来源，并明确这是英语词的借词历史。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未成功读取，不能作为已经取得的发音和用法依据。应撤换相关引用，改用实际读取的英语词条，并区分词典支持内容与专业语言知识补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "sport 是上位词，不宜放作 tennis 的近义表达；table tennis 可以作为项目对照，但应明确它不是反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "英语词条还列有杂耍领域用法。可简要补入低频术语栏；现有材料不足以说明具体动作，不应扩写动作细节。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/0/note",
+        "message": "“通常用单数形式”不如直接说明不可数准确，容易让初学者误以为可以使用 a tennis。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条列出的运动义和杂耍领域义。修订后，核心运动义保留四个自然例句，覆盖打球、学球和观看赛事；比赛表达作为同一义项的语境用法处理。低频杂耍义仅作概括，不推断具体动作。标准读音、现有例句语法与翻译无须改动；发音不再挂接未读取的 Cambridge 来源。词源依据已读取的法语维基词典英语词条补齐。",
+    "senseInventory": [
+      {
+        "sense": "名词：网球运动，包括语境中对网球赛事的指称",
+        "coveredBy": [
+          "tennis-sport"
+        ],
+        "assessment": "核心常用义。将原 tennis-match 合并，保留其例句和实用搭配；明确 a tennis match 的可数中心词是 match。"
+      },
+      {
+        "sense": "名词：杂耍领域中称为 tennis 的抛接球花式",
+        "coveredBy": [
+          "tennis-juggling"
+        ],
+        "assessment": "低频专业用法，补入 lessCommonSenses。来源仅提供领域标签和交叉指引，因此不描述未经材料展开的动作细节。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"tennis：网球运动，也指网球\"",
+        "valueJson": "\"tennis：网球运动\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"tennis 是名词，可指网球这项运动，也可指网球比赛。\"",
+        "valueJson": "\"tennis 通常是不可数名词，指网球运动；一场网球比赛说 a tennis match，其中可数的是 match。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"注意 tennis 也可指一场网球比赛：a tennis match。\"",
+        "valueJson": "\"用 a tennis match 表示一场网球比赛，注意 a 修饰的是 match；watch tennis 表示观看网球赛事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-tennis\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词通常用单数形式表示这项运动；说一场比赛时可说 a tennis match。\"",
+        "valueJson": "\"表示网球运动时是不可数名词，不加 a/an，通常不用复数；一场比赛说 a tennis match。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"谈论参加或喜爱这项运动时，常用 play tennis；一般不说 play a tennis。\"",
+        "valueJson": "\"打网球说 play tennis，一般不说 play a tennis；观看网球赛事说 watch tennis。特定赛事语境中也可说 The tennis starts at two，此时 tennis 仍不可数。表示一场比赛用 a tennis match，其中 match 是可数名词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tennis-match-ex1\",\"senseId\":\"tennis-sport\",\"en\":\"We watched a tennis match on television last night.\",\"zh\":\"我们昨晚在电视上看了一场网球比赛。\",\"note\":\"a tennis match 指一场网球比赛；tennis 修饰可数名词 match。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tennis-match-ex2\",\"senseId\":\"tennis-sport\",\"en\":\"The tennis starts at two, so let’s find our seats.\",\"zh\":\"网球比赛两点开始，我们找座位吧。\",\"note\":\"双方都知道所谈赛事时，the tennis 可指相关网球赛事；tennis 仍不可数，并不表示可以说 a tennis。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a tennis match\",\"zh\":\"一场网球比赛\",\"note\":\"tennis 修饰 match，说明比赛项目；a 修饰的是 match。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"watch tennis\",\"zh\":\"看网球比赛\",\"note\":\"watch 后接 tennis，常表示观看网球赛事。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tennis tournament\",\"zh\":\"网球锦标赛\",\"note\":\"tournament 指锦标赛，tennis 说明比赛项目。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"sport\",\"zh\":\"体育运动\",\"note\":\"sport 是更宽泛的词；tennis 特指网球。\"}",
+        "valueJson": "{\"en\":\"lawn tennis\",\"zh\":\"网球\",\"note\":\"指通常所说的网球；较正式或用于区别其他网球形式，日常通常只说 tennis。这个名称不表示比赛必须在草地上进行。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"tennis 是一种具体运动，sport 可泛指各种体育运动。\"",
+        "valueJson": "\"lawn tennis 可指同一种运动；sport 是上位词，表示体育运动，不能直接当作 tennis 的同义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"table tennis 指乒乓球，与网球是不同项目。\"",
+        "valueJson": "\"tennis 没有常用反义词；table tennis 指另一运动项目乒乓球，用来区分项目，不是反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tennis\"]",
+        "valueJson": "[\"wiktionary-tennis-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1",
+        "expectedValueJson": "{\"id\":\"tennis-match\",\"title\":\"网球比赛\",\"meaning\":\"一场或一项网球比赛；常与 match、game 等词搭配表达。\",\"usageNote\":\"tennis 单独使用时可在上下文中指网球比赛；表达具体比赛时常说 a tennis match。\",\"examples\":[{\"id\":\"tennis-match-ex1\",\"senseId\":\"tennis-match\",\"en\":\"We watched a tennis match on television last night.\",\"zh\":\"我们昨晚在电视上看了一场网球比赛。\",\"note\":\"a tennis match 指一场网球比赛。\"},{\"id\":\"tennis-match-ex2\",\"senseId\":\"tennis-match\",\"en\":\"The tennis starts at two, so let’s find our seats.\",\"zh\":\"网球比赛两点开始，我们找座位吧。\",\"note\":\"tennis 在比赛语境中指网球赛事。\"}],\"patterns\":[{\"en\":\"a tennis match\",\"zh\":\"一场网球比赛\",\"note\":\"tennis 修饰 match，说明比赛项目。\",\"kind\":\"common-collocation\"},{\"en\":\"watch tennis\",\"zh\":\"看网球比赛\",\"note\":\"watch 后接 tennis，常表示观看网球赛事。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"tennis tournament\",\"zh\":\"网球锦标赛\",\"note\":\"tournament 指锦标赛，tennis 说明比赛项目。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"match\",\"zh\":\"比赛\",\"note\":\"match 是泛指比赛的名词；tennis match 特指网球比赛。\"}],\"contrasting\":[{\"en\":\"football match\",\"zh\":\"足球比赛\",\"note\":\"同为比赛，但项目不同；仅在体育赛事语境中对照。\"}],\"similarNote\":\"match 可指多种比赛，需用 tennis 限定项目。\",\"contrastingNote\":\"football match 指足球比赛，与网球比赛项目不同。\"},\"sourceIds\":[\"cambridge-tennis\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tennis-juggling\",\"title\":\"杂耍中的网球式花式\",\"meaning\":\"杂耍领域中一种称为 tennis 的抛接球花式。\",\"note\":\"这是小众专业术语；在杂耍语境中指花式名称，在日常体育语境中 tennis 通常指网球运动。\",\"example\":{\"id\":\"tennis-juggling-ex1\",\"senseId\":\"tennis-juggling\",\"en\":\"In the juggling class, we practised a pattern called tennis.\",\"zh\":\"在杂耍课上，我们练习了一种叫作 tennis 的抛接球花式。\",\"note\":\"这里的 tennis 是花式名称，不是网球运动。\"},\"sourceIds\":[\"wiktionary-tennis-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tennis\"]",
+        "valueJson": "[\"wiktionary-tennis-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"tennis 是英语中表示网球的词。记忆时可把它作为一个整体来记。\",\"stages\":[],\"caveat\":\"这里的整体记忆法只是学习提示，不代表词源拆解。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语 tennis 借自法语 tenez，这是动词 tenir 的命令式，在当时的游戏中相当于向对手喊‘接着！’。早期手掌球游戏的参与者用这声喊语提醒对手，球要发过去了。\",\"stages\":[{\"language\":\"法语\",\"form\":\"tenez\",\"meaning\":\"游戏中向对手发球时的喊语，相当于‘接着！’。\"},{\"language\":\"英语\",\"form\":\"tennis\",\"meaning\":\"网球运动的名称。\"}],\"caveat\":\"这个喊语来自早期手掌球游戏，不是现代网球必须使用的比赛口令。\",\"sourceIds\":[\"wiktionary-tennis-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tennis\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-tennis\",\"title\":\"Cambridge Dictionary: tennis\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/tennis\",\"supports\":[\"词性、发音及 tennis 的基本用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-tennis-en\",\"title\":\"Wiktionnaire：tennis（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/tennis#Anglais\",\"supports\":[\"英语名词 tennis 的网球运动义与杂耍领域用法\",\"相关表达 lawn tennis 与 table tennis\",\"tennis 源自法语 tenez 及其在早期手掌球游戏中的喊语用法\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1390,
+    "headword": "tennis",
+    "meaning_zh": "n. 网球",
+    "phonetic": "/'tenis/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "993e8fc4309e8a468ac738a246d6262e80b35c3c776748c9c731516d985ea0c8",
+    "executedReviewPromptHash": "993e8fc4309e8a468ac738a246d6262e80b35c3c776748c9c731516d985ea0c8",
+    "reviewHash": "caea04c39c4fa24ba4ac1666d39602fd656329b0577a78964417f859d06a758b",
+    "wordId": 927,
+    "inputHash": "cd77ed7a85ce6327327758888847c87d25fc0e5af94baa37a2ee95bc3c06163e",
+    "draftHash": "93bb1d6c329145f28c596b88ed53981dbb19ccb304410320c94fcfcca6884c23",
+    "finalHash": "89e75cd79e3f29d4f729c847faa2f3966603d4067a9b594819e1c575b5afef96",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/not#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.444Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 58044,
+        "revisionId": 39766366,
+        "revisionTimestamp": "2026-08-03T05:48:31Z",
+        "sha256": "dae1540e7943716d76137effd9d60b08cfc0c1c073c4c4f2a4f5697d8cad577c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/not",
+        "section": "not negative particle",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "15ca215e2a754c0bab8c27e8a25f132c573f02e6470b428b22b74fa48dc59d84",
+        "summaryAndSupportsWordCount": 57,
+        "sha256": "15ca215e2a754c0bab8c27e8a25f132c573f02e6470b428b22b74fa48dc59d84",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/927.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/not",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:40:46.196Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:50:04.441Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及引用cambridge-not的sourceIds",
+        "message": "Cambridge 页面未取得正文，不能承担现有事实支持。应改引已取得的法语维基词典英语词条，并删除其未直接支持的语法辨析引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/lessCommonSenses/0",
+        "message": "遗漏词典列出的逻辑学名词义；附加问句则是一般否定用法的句式，不是独立词义。应补入逻辑“非”，将原附加问句示例归回 s1。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway、/senses/0、/confusions/2",
+        "message": "do 支持规则需要限定于相关限定句结构；当前教学不足以区分否定不定式、否定祈使句、部分否定及省略回应。常用的 not only 也须说明两项均成立。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning、/senses/1/usageNote",
+        "message": "not 引出被否定的成分；在 not A but B 中，连接两部分的是 but。原说明容易混淆否定位置与连接作用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similarNote",
+        "message": "not、no、never 的改写往往需要调整结构，不能要求保留原句结构；还须保留否定范围与时间、频率含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/takeaway",
+        "message": "不能根据句子是否为否定句判断 not 或 knot 的拼写；否定句中同样可以出现 knot。应按词义判断。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的否定副词、对比用法和逻辑学名词三项定义。修订后保留两项核心教学义及各自至少两个原创例句，补入常用语法功能，并以较少见义补齐逻辑“非”。附加问句归回 s1。现有 Etymonline 词源说明及历史先后关系可保留；词族留空合理。未穷尽全部固定表达和方言变体。",
+    "senseInventory": [
+      {
+        "sense": "副词／否定词：不、没有、并非",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿已有动作、状态否定的基本覆盖；补充完成时、否定祈使句、否定不定式、部分否定、省略回应及 not only 的范围区别，均归入同一核心用法。"
+      },
+      {
+        "sense": "连词性对比用法：不是……；而非……",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "两个原例自然且覆盖纠正与排除选项；保留例句，修正对 not 与 but 各自作用的说明。"
+      },
+      {
+        "sense": "名词（逻辑学）：NOT 的小写变体，逻辑“非”运算",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿遗漏；补入较少见义及一个原创例句，明确领域和通常大写的形式。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-not\",\"title\":\"Cambridge Dictionary: not\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/not\",\"supports\":[\"not 的否定副词用法\",\"not A but B 等对比结构\",\"附加问句中的否定形式\",\"not 与 no 的用法区别\",\"英美发音及读音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-not\",\"title\":\"Wiktionnaire：not（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/not#Anglais\",\"supports\":[\"not 的否定副词用法\",\"表纠正或对比的用法，词典列为连词\",\"逻辑学名词 not，作为 NOT 的变体\",\"英美读音、否定缩写 -n't 及与 knot 同音\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[\"wiktionary-not\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[\"wiktionary-not\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[\"wiktionary-not\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[\"wiktionary-not\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-not\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"副词；否定词\"",
+        "valueJson": "\"副词（否定词）；连词（表对比）；名词（逻辑学）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s3\",\"title\":\"否定句中的附加问句\",\"meaning\":\"在否定陈述后接简短问句，以确认或征求回应。\",\"note\":\"常见结构是“否定陈述 + 肯定附加问句”，附加问句使用与前句匹配的助动词、be 动词或代词。\",\"example\":{\"id\":\"ex5\",\"senseId\":\"s3\",\"en\":\"You aren't cold, are you?\",\"zh\":\"你不冷吧？\",\"note\":\"前半句是否定形式，后面的附加问句用肯定形式 are you。\"},\"sourceIds\":[\"cambridge-not\"]}",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"逻辑运算：非（名词）\",\"meaning\":\"逻辑“非”运算：把真变为假，把假变为真。\",\"note\":\"用于逻辑学或计算机领域，通常写作大写 NOT；小写 not 也是这一名称的变体。\",\"example\":{\"id\":\"ex18\",\"senseId\":\"s3\",\"en\":\"In this exercise, NOT changes true to false and false to true.\",\"zh\":\"在这道练习中，逻辑“非”把真变为假，把假变为真。\",\"note\":\"NOT 在这里是逻辑运算的名称。\"},\"sourceIds\":[\"wiktionary-not\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"not 常放在 be 动词、助动词或情态动词后，表示“不、没有”；没有这些词时，通常用 do/does/did 帮忙否定。\"",
+        "valueJson": "\"not 表示“不、没有、并非”；陈述句中常放在 be 动词、助动词或情态动词后。一般现在时和一般过去时的普通实义动词通常用 do/does/did not + 动词原形来否定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"否定动作、状态或特征\"",
+        "valueJson": "\"否定动作、状态或其他句子成分\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"不；没有。否定句中的动作、状态或特征。\"",
+        "valueJson": "\"不；没有；并非。可否定动作、状态、性质或某个句子成分，具体范围取决于位置和上下文。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"be 动词、助动词或情态动词后直接加 not；一般现在时或一般过去时的普通实义动词通常要借助 do、does 或 did：do/does/did + not + 动词原形。\"",
+        "valueJson": "\"陈述句中，not 通常放在 be 动词、第一个助动词或情态动词后；一般现在时、一般过去时的普通实义动词通常用 do/does/did not + 动词原形。否定祈使句常用 do not / don't + 动词原形；否定不定式通常用 not to do。还要看否定范围：not all 是“并非所有”，not only A but also B 则表示 A、B 两项都成立。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"no、never 都能表达否定，但句法位置和否定范围不同；改写时要保留原句结构。\"",
+        "valueJson": "\"no、never 都能表达否定，但句法位置和含义不同；改写时往往需要调整结构，并确认否定范围及时间、频率含义保持一致。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"不是……而是……；并非……。not 可否定前一部分，也可用于 not A but B 的对比结构。\"",
+        "valueJson": "\"（用于纠正或对比）不是……；而非……。not 引出被否定或排除的说法；not A but B 表示“不是 A，而是 B”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于澄清误解、纠正选择或突出对比；此时 not 通常在句子中连接被否定的部分和后面的正确说法。\"",
+        "valueJson": "\"常用于澄清误解或说明实际选择，not 放在被排除的成分前。在 not A but B 中，连接两部分的是 but；A、B 通常采用平行结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"not 和 knot 同音；看到句子里是否定句，通常写 not；说绳结时写 knot。\"",
+        "valueJson": "\"not 和 knot 同音，要根据词义选择拼写：表示“不、没有”用 not；表示“绳结”或“打结”用 knot，开头的 k 不发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/2/title",
+        "expectedValueJson": "\"not 与 don't\"",
+        "valueJson": "\"not、don't 与 isn't\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/2/summary",
+        "expectedValueJson": "\"not 通常不能单独放在普通实义动词前来构成一般时态否定。\"",
+        "valueJson": "\"一般现在时和一般过去时的陈述句里，普通实义动词通常用 do/does/did not，be 后直接加 not。否定不定式中的 not to do 不适用这条 do 支持规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/2/takeaway",
+        "expectedValueJson": "\"先判断句子里的动词：普通动作常用 don't/doesn't；be 动词直接与 not 缩写。\"",
+        "valueJson": "\"先判断结构：一般现在时、一般过去时的普通实义动词常用 do/does/did not + 原形；be 后直接加 not，am not 通常缩写为 I'm not；否定不定式常用 not to + 原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex12\",\"senseId\":\"s1\",\"en\":\"I have not finished my homework yet.\",\"zh\":\"我还没有做完作业。\",\"note\":\"完成时中，not 放在助动词 have 后；not ... yet 表示到现在还没有。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex13\",\"senseId\":\"s1\",\"en\":\"Mum asked me not to wake the baby.\",\"zh\":\"妈妈让我别吵醒宝宝。\",\"note\":\"ask someone not to do 表示让某人不要做某事；这里否定的是不定式 to wake。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex14\",\"senseId\":\"s1\",\"en\":\"Not all the shops on this street open on Sundays.\",\"zh\":\"这条街上的商店并非都在星期日营业。\",\"note\":\"not all 表示“并非全部”，不能译成“所有商店都不营业”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex15\",\"senseId\":\"s1\",\"en\":\"A: Will the bus be late? B: I hope not.\",\"zh\":\"甲：公交车会晚点吗？乙：希望不会。\",\"note\":\"I hope not 相当于 I hope the bus will not be late，避免重复前文内容。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex16\",\"senseId\":\"s1\",\"en\":\"This bag is not only light but also strong.\",\"zh\":\"这个包不仅轻，而且结实。\",\"note\":\"not 否定 only 的限制：轻和结实两项都成立；这不同于排除 A 的 not A but B。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex17\",\"senseId\":\"s1\",\"en\":\"Please do not leave your bag by the door.\",\"zh\":\"请不要把包放在门旁。\",\"note\":\"否定祈使句用 do not / don't + 动词原形；这里不是在陈述一般现在时的习惯。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex5\",\"senseId\":\"s1\",\"en\":\"You aren't cold, are you?\",\"zh\":\"你不冷吧？\",\"note\":\"前半句是否定形式，后面的附加问句用肯定形式 are you。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"助动词／情态动词 + not + 后续动词形式\",\"zh\":\"没有／不能／不应等\",\"note\":\"如 have not finished（尚未完成）、cannot swim（不会游泳）、should not run（不该跑）。not 放在第一个助动词或情态动词后；can 与 not 在普通否定中通常合写为 cannot。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"do not / don't + 动词原形（祈使句）\",\"zh\":\"不要做……\",\"note\":\"用于禁止、提醒或请求某人不要做某事，如 Don't run.（不要跑。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"not to + 动词原形\",\"zh\":\"不做……；不要做……\",\"note\":\"否定 to 不定式通常用 not to do，常见于 ask/tell someone not to do；此处不需要另加 do 支持。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"not all / not every + 名词\",\"zh\":\"并非所有……／并非每个……\",\"note\":\"否定的是“全部、每个”的范围，不等于“全部都不”；注意 all 与 every 后名词形式的区别，如 not all shops、not every shop。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"I hope not. / I'm afraid not.\",\"zh\":\"希望不会／恐怕不是（或不能）\",\"note\":\"对话中可用 not 代替前文能恢复的否定内容；具体译法取决于所回答的问题。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"否定陈述 + 肯定附加问句\",\"zh\":\"……不……，是吗？／……不……吧？\",\"note\":\"常用于确认或征求回应；附加问句的助动词或 be 动词、时态及主语代词要与前句匹配。not 在这里仍表示一般否定。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"not only A but also B\",\"zh\":\"不仅 A，而且 B\",\"note\":\"A、B 两项都成立，通常采用平行结构；区别于“不是 A，而是 B”的 not A but B。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Why not + 动词原形?\",\"zh\":\"为什么不……呢？；……怎么样？\",\"note\":\"常用于提建议，如 Why not take a break?（休息一下怎么样？）；也可询问不做某事的原因，需看上下文。\",\"kind\":\"sentence-pattern\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 927,
+    "headword": "not",
+    "meaning_zh": "adv. 不, 非, 未",
+    "phonetic": "/nɒt/",
+    "pos": "",
+    "forms": []
+  }
+}

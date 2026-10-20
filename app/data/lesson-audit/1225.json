@@ -1,0 +1,381 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9372a8415a5e2907048a2d21478a6efdef63a9e3a50024d6d5c9f0c14cd73b9a",
+    "executedReviewPromptHash": "50ee2637f916fdee654e239c336751d066e4bdcdb1d5f4a51d46e636a6721a5c",
+    "reviewHash": "d23bf6caaa1bd81c2a05f2c91c95036e69551d6ab214d7af9d394f51d12f3ccd",
+    "wordId": 1225,
+    "inputHash": "4e638a40314bf65a3bde11f5b90c3bbe5fd13c9b83979a7f5da863114574b254",
+    "draftHash": "7fbafcdf786f61d0d45603d2ff2bd2cb57d33d141a70a9c76078fb1e017c13bb",
+    "finalHash": "20b49c26a9a9628335828b563538d84bd64cbc8cbed33e8ed0cfea9100455953",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shark#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.255Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117672,
+        "revisionId": 34960052,
+        "revisionTimestamp": "2024-06-01T18:42:12Z",
+        "sha256": "b2cdfa3b22fced28cc56cc036c5a54748b22041170bb0d2e806fc0cbb7c67a88",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shark",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:05:11.608Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:39:13.801Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "总音标中的英式读音误带 /r/，与 uk 字段矛盾；shark 的 r 位于 /k/ 前，并非词尾。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及各sourceIds",
+        "message": "Cambridge 未取得正文，不能充当现有释义、动词搭配及发音说明的依据。改用实际取得的英语词条支持相应内容；未获该词条支持的动词内容不挂接来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "将鲨鱼一概限定为海里的大型鱼类过窄；鲨鱼体型差异很大，也有能生活于淡水的种类。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "人称义不应全部归结为诈骗：还包括盘剥他人、损人利己的无赖。loan shark 不必然是骗子，中文也不能说“收取利率”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1及/lessCommonSenses",
+        "message": "card shark 的高手用法已出现，却归在骗子义下且没有对应例句。应明确高手不必作弊，并补充一个体现此义的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2及/confusions/1/items/0",
+        "message": "少见动词的句式不宜标成日常常用搭配；shark people for money 也不宜作为重点搭配推广。保留动词义和两个例句，收紧搭配教学。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "遗漏可核实的德语词形及来源，却加入“后来”这一无依据的义项先后。应明确 Schorck 与 Schurke 的关系，引用相同 URL，并避免制造历史时间链。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/summary",
+        "message": "“这道食材”搭配不当；鱼翅是食材，不能用“道”计量。"
+      }
+    ],
+    "coverageAssessment": "已核对动物义、骗子义、无赖义、复合表达中的高手用法及原词条所列少见动词义。常用动物义与贬义人称义均有两个具体例句；保留动词义及其两个例句，并补充高手义。语法、词形拼写及近义和反向表达整体可保留。可引用材料没有动词释义，Cambridge 也未取得正文，相关内容仅按专业语言知识审查，不冒充网页支持。词源仅保留可证实的德语词形联系，不推断两项英语词义的历史先后。",
+    "senseInventory": [
+      {
+        "sense": "名词：鲨鱼",
+        "coveredBy": [
+          "shark-n-animal"
+        ],
+        "assessment": "核心义，两个例句覆盖单数个体与复数泛指；修正定义中过于绝对的体型和栖息环境限制。"
+      },
+      {
+        "sense": "名词：骗子、欺诈者（escroc、filou）",
+        "coveredBy": [
+          "shark-n-cheater"
+        ],
+        "assessment": "已有推销员例句；保留并与盘剥他人的用法共同解释。"
+      },
+      {
+        "sense": "名词：无赖、恶棍（canaille、gredin）",
+        "coveredBy": [
+          "shark-n-cheater"
+        ],
+        "assessment": "与贬义人称义合并处理，补明不一定涉及诈骗；高利贷者例句体现盘剥含义，无须硬拆成另一核心义。"
+      },
+      {
+        "sense": "名词：高手，尤见于 card shark、pool shark",
+        "coveredBy": [
+          "shark-n-expert"
+        ],
+        "assessment": "补充义及例句说明熟练程度；不把高手身份自动等同于作弊。"
+      },
+      {
+        "sense": "动词：诈骗、欺骗",
+        "coveredBy": [
+          "shark-v-cheat"
+        ],
+        "assessment": "原始词条列有此义，保留两个例句和规则词形；明确少见，纠正“常用结构”的宣传，不挂接未取得的词典正文。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的是名词“鲨鱼”。口语或特定语境中，shark 也能指靠不诚实手段占便宜的人；作动词时表示诈骗，较少见。\"",
+        "valueJson": "\"最常见的是名词“鲨鱼”。用于人时，shark 常带贬义，指骗子或盘剥他人的人；card shark 等说法也可指高手。动词“诈骗、欺骗”少见，日常通常用 cheat 或 swindle。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/ipa",
+        "expectedValueJson": "\"/ʃɑːrk/（英） /ʃɑːrk/（美）\"",
+        "valueJson": "\"/ʃɑːk/（英） /ʃɑːrk/（美）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英音常不发词尾 r，美音通常发 r；两者元音都接近“啊”。\"",
+        "valueJson": "\"常见英式标准口音中，字母 r 在辅音 /k/ 前不发音；美式口音通常发出 r 音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种生活在海里的大型鱼类，身体呈流线形，常有锋利的牙齿。\"",
+        "valueJson": "\"大多生活在海里的一类鱼，身体通常呈流线形，许多种类有锋利的牙齿；不同种类的体型差异很大。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"骗子；靠不诚实手段占便宜的人\"",
+        "valueJson": "\"骗子；盘剥他人的无赖\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"指利用别人、欺骗别人或趁机占便宜的人，语气通常带批评。\"",
+        "valueJson": "\"用于贬称欺骗人、盘剥人或损人利己的人，尤其见于商业、借贷等语境；不一定专指实施诈骗的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于口语和复合词；说某人是 shark 时，往往强调对方在交易或某项活动中很会占便宜。\"",
+        "valueJson": "\"这是贬义的比喻用法，既可单用，也常见于 loan shark 等复合词。这里强调欺骗、盘剥或不择手段地谋利；card shark 等表达还可能有“高手”的意思，须结合语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"那个放高利贷的骗子向米娅收取了不公平的利率。\"",
+        "valueJson": "\"那个高利贷者按不合理的利率向米娅收取利息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"loan shark 指以苛刻条件放贷、借此压榨借款人的人。\"",
+        "valueJson": "\"loan shark 指收取极高利息、盘剥借款人的放贷者，不一定表示对方采用了诈骗手段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"具体含义由语境决定，可指精明强硬，也可指不诚实；本义常带贬义。\"",
+        "valueJson": "\"在商业语境中通常强调精于算计、损人利己，常带贬义；不一定指已实施诈骗。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"固定搭配，通常指以高利息或威胁手段放贷的人。\"",
+        "valueJson": "\"固定搭配，核心是收取极高利息；有时还会以威胁或暴力逼迫借款人还款。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"card shark\",\"zh\":\"牌桌上的高手；常带有善于赢钱或欺诈的意味\",\"note\":\"指打牌很厉害的人，语气和具体含义随上下文而变。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"card shark\",\"zh\":\"打牌高手；纸牌骗子（视语境而定）\",\"note\":\"非正式表达，尤见于美式英语。可强调牌技高，也可指靠打牌骗钱的人；不能仅凭这个称呼断定对方作弊。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"shark people for money\",\"zh\":\"为了钱诈骗别人\",\"note\":\"for 后说明诈骗的目的；此用法较少见。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"shark someone out of money\",\"zh\":\"骗走某人的钱\",\"note\":\"常用结构，说明受骗者和被骗走的钱。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"shark someone out of money\",\"zh\":\"骗走某人的钱\",\"note\":\"这是少见动词 shark 的一种句式；日常更常用 cheat 或 swindle someone out of money。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shark-n-expert\",\"title\":\"高手（常见于特定复合表达）\",\"meaning\":\"在 card shark、pool shark 等非正式表达中，可指打牌、打台球等活动的高手。\",\"note\":\"这类用法尤见于美式英语，不一定含有作弊的意思；有些语境仍可能带有骗钱或诱人下注的意味，需结合上下文判断。\",\"example\":{\"id\":\"shark-expert-1\",\"senseId\":\"shark-n-expert\",\"en\":\"My grandma is a real card shark; she wins almost every time we play.\",\"zh\":\"我奶奶是个打牌高手；我们一起玩牌时，她几乎每次都赢。\",\"note\":\"这里借家庭玩牌的语境强调牌技高，并没有说她作弊。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"shark 是“鲨鱼”；shark fin 指鲨鱼的鳍，也可指鱼翅这道食材。\"",
+        "valueJson": "\"shark 是“鲨鱼”；shark fin 指鲨鱼的鳍，在食材语境中也可指鱼翅。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"可指用欺诈手段骗取钱财或占便宜，常见结构是 shark someone out of something。\"",
+        "valueJson": "\"可指用欺诈手段骗取钱财或占便宜；shark someone out of something 是这种少见动词用法中的一种句式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 shark 的历史词源与德语一个表示恶棍、无赖的旧形式有关。后来英语也用 shark 指海里的鲨鱼；现有历史材料未把这两种意思之间的关系说明清楚。\"",
+        "valueJson": "\"一种词源解释将英语 shark 溯源到德语旧形式 Schorck；Schorck 是 Schurke（“恶棍、无赖”）的旧变体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"上面的词源联系不等于现代英语中的构词拆分；“鲨鱼”义与“骗子”义的历史联系仍不确定。\"",
+        "valueJson": "\"这是历史词源的一种解释，不是现代英语中的构词拆分，也不表示“骗子”义一定先于“鲨鱼”义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[\"wiktionary-shark-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shark\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-shark\",\"title\":\"Cambridge Dictionary：shark\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/shark\",\"supports\":[\"名词与动词用法、主要释义、常见搭配及英美发音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary：shark（英语词源条目）\"",
+        "valueJson": "\"法语维基词典：shark（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"英语 shark 的历史词源说明；德语旧形式与英语词形的联系\"]",
+        "valueJson": "[\"英语名词 shark 的鲨鱼、骗子及无赖等释义与英美读音\",\"great white shark、shark fin、card shark、loan shark 等复合表达的列举\",\"一种词源解释：英语 shark 与德语旧形式 Schorck 的联系，以及 Schorck 与 Schurke 的关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1225,
+    "headword": "shark",
+    "meaning_zh": "n. 鲨鱼, 骗子\nv. 诈骗",
+    "phonetic": "/ʃɑ:k/",
+    "pos": "",
+    "forms": []
+  }
+}

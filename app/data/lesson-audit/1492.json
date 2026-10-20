@@ -1,0 +1,285 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "61c0f5d6edf845c40aa2f12b7415768350d4143a9a183944f63691a8ab67c5a9",
+    "executedReviewPromptHash": "61c0f5d6edf845c40aa2f12b7415768350d4143a9a183944f63691a8ab67c5a9",
+    "reviewHash": "256c84982ba974be66554db2d2a35c7be87770888fbb1075f2f86905cbed68ba",
+    "wordId": 1492,
+    "inputHash": "7defe0749cb7558e1543b3708a2c48d65a201965305e0939ca2a7ccc278b47bf",
+    "draftHash": "af697898fa646f575e3c4f88f11387a807935c74a6224e4bee73b78f016b6581",
+    "finalHash": "e169129270f4400ded13e59f043c0511bec2e79d5d09e5e4d127d6010773132b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/very#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.915Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116105,
+        "revisionId": 36091484,
+        "revisionTimestamp": "2024-09-25T18:06:13Z",
+        "sha256": "3141d98a6a8bc185428e253887e9ff7ad4d5ea78ab2e73f868bf34c96a3a7bd9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/very",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:32:25.199Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:42:20.564Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "very first/last 属于加强顺序的副词功能，不能只列在形容词“正是那个”义下。还缺少 very 加强最高级和 own 的常用功能及对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏 the very thought/sight 等表示“光是……本身就……”的常用强调功能，需要与精确指认义分开讲解。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "“时间、地点恰好合适”容易误导为适宜性；very 在这里强调确切身份、时间或位置，并不表示合适。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源文字只明确说明来自意为“真实的”的古法语 verray，不能据此断言英语内部先有“真实的”义、后来发展出程度义的具体演变顺序。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "词尾 /i/ 不宜教成必须“短促”的音；现有音标可以保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote",
+        "message": "程度义的位置说明基本正确，但应补充可分程度、比较级以及 not very 的常见限制，避免把规则泛化到所有形容词和副词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/0/zh",
+        "message": "really 的“真地”译法不自然，宜改为“真的”。"
+      }
+    ],
+    "coverageAssessment": "已核对程度副词、加强最高级及顺序或归属、形容词精确指认、强调某事本身四项主要功能。补丁为新增核心功能各提供至少两个原创英中例句，并保留原有正确例句、近反向表达及词族说明。词源收窄至明确可证实的古法语来源。法语维基材料是英语词条；Cambridge 本次未取得正文，保留为推荐查阅，未将其视为已核验证据。",
+    "senseInventory": [
+      {
+        "sense": "程度副词：非常；很",
+        "coveredBy": [
+          "very-adv-degree"
+        ],
+        "assessment": "原稿已用形容词和副词例句覆盖；补充使用限制及 not very 的含义。"
+      },
+      {
+        "sense": "副词强调：用于最高级、first/last 和 own 前",
+        "coveredBy": [
+          "very-adv-emphasis"
+        ],
+        "assessment": "原稿仅把 very first/last 列在形容词义下，覆盖和归类不足；新增完整义项，分别提供最高级、顺序及归属例句。"
+      },
+      {
+        "sense": "强调性形容词：正是；恰是；强调确切对象、时间或位置",
+        "coveredBy": [
+          "very-adj-exact"
+        ],
+        "assessment": "原有两例自然且归义正确；修正“合适”的误导，并补充端点位置例句。"
+      },
+      {
+        "sense": "强调性形容词：光是……本身就……",
+        "coveredBy": [
+          "very-adj-mere"
+        ],
+        "assessment": "原稿遗漏；新增 thought 和 sight 两个自然例句，说明其与精确指认义的区别。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"very 作副词时表示“非常、很”，常放在形容词或副词前；作形容词时表示“正是的、恰好的”，常放在名词前，带强调意味。\"",
+        "valueJson": "\"very 作副词时常表示“非常、很”，也可加强最高级、顺序或归属，如 the very best、my very first、my very own；作强调性形容词时可表示“正是那个”，也可强调“光是……本身就……”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan",
+        "expectedValueJson": "[\"先记住 very + 形容词/副词，如 very tired、very quickly。\",\"再辨认 the very + 名词，表示“正是那个／恰好的”。\"]",
+        "valueJson": "[\"先记住 very + 表示程度的形容词或副词，如 very tired、very quickly；再比较 like it very much。\",\"学习 the very best、my very first 和 my very own 中的强调作用。\",\"辨认 the very book 的精确指认，以及 the very thought of… 中“光是想到……就……”的强调。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"读作两个音节，重读第一个音节；词尾是短促的 /i/。\"",
+        "valueJson": "\"读作两个音节，重读第一个音节；词尾读 /i/，不必刻意读得短促。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-very\"]",
+        "valueJson": "[\"wiktionary-very-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常不直接修饰动词；不要说 very like，更自然的是 like very much。\"",
+        "valueJson": "\"通常修饰能表示程度高低的形容词或副词原级，不直接修饰普通动词：说 I like it very much，不说 I very like it。比较级通常用 much 加强，如 much better；最高级可用 very 加强，如 the very best。not very 通常表示“不太”，如 not very hot（不太热）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/zh",
+        "expectedValueJson": "\"真地；非常\"",
+        "valueJson": "\"真的；非常\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-very\"]",
+        "valueJson": "[\"wiktionary-very-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作强调性形容词，放在名词前，指出某人或某物正是所说的那个，或时间、地点恰好合适。\"",
+        "valueJson": "\"作强调性形容词，通常放在限定词后、名词前，表示某人或某物正是所指的那一个，也可强调确切的时间或位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 the very + 名词；语气比普通的 the 更强调。\"",
+        "valueJson": "\"常见结构是 the very + 名词，如 the very book（正是那本书）；也可说 this very room（正是这间屋子）。这种用法放在名词前，不能单独作表语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"the very first / last\",\"zh\":\"最开始的那个／最后的那个\",\"note\":\"very 加强 first 或 last 的强调语气，说明顺序位置格外明确。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"the very beginning / end\",\"zh\":\"最开头／最末尾\",\"note\":\"very 强调起点或终点，如 from the very beginning（从一开始）、until the very end（直到最后）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"very-adj-exact-ex3\",\"senseId\":\"very-adj-exact\",\"en\":\"We stayed until the very end of the film to see all the names in the credits.\",\"zh\":\"我们一直待到电影最后，看完了演职员名单里的所有名字。\",\"note\":\"the very end 强调一直到最末尾。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"very-adv-emphasis\",\"title\":\"加强最高级、顺序或归属\",\"meaning\":\"作副词，用在最高级、first/last 或 own 前加强语气，如 the very best（最好的）、my very first（我的第一个）、my very own（完全属于我自己的）。\",\"usageNote\":\"very 通常放在 the、my 等限定词后。the very best 比 the best 更强调“最好的”；my very first 强调第一次；my very own 强调某物属于自己。\",\"examples\":[{\"id\":\"very-adv-emphasis-ex1\",\"senseId\":\"very-adv-emphasis\",\"en\":\"These are the very best tomatoes in our garden.\",\"zh\":\"这些是我们花园里最好的番茄。\",\"note\":\"very 加强最高级 best，强调这些番茄最好。\"},{\"id\":\"very-adv-emphasis-ex2\",\"senseId\":\"very-adv-emphasis\",\"en\":\"I still keep the ticket from my very first train journey.\",\"zh\":\"我还留着第一次坐火车旅行的车票。\",\"note\":\"very 加强 first，突出那是第一次。\"},{\"id\":\"very-adv-emphasis-ex3\",\"senseId\":\"very-adv-emphasis\",\"en\":\"After sharing with my sister for years, I finally have my very own room.\",\"zh\":\"和姐姐合住多年后，我终于有了完全属于自己的房间。\",\"note\":\"very own 强调拥有自己的房间。\"}],\"patterns\":[{\"en\":\"the very + superlative\",\"zh\":\"加强“最……”的语气\",\"note\":\"如 the very best、the very smallest；very 放在最高级前。\",\"kind\":\"sentence-pattern\"},{\"en\":\"限定词 + very + first / last\",\"zh\":\"强调第一个／最后一个\",\"note\":\"如 my very first day（我的第一天）、the very last bus（最后一班公交车）。\",\"kind\":\"sentence-pattern\"},{\"en\":\"物主限定词 + very own + noun\",\"zh\":\"完全属于某人自己的……\",\"note\":\"如 her very own desk（她自己专用的书桌）。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the very best\",\"zh\":\"最好的\",\"note\":\"强调在比较范围内最好。\",\"kind\":\"common-collocation\"},{\"en\":\"my very first time\",\"zh\":\"我的第一次\",\"note\":\"强调某个经历是首次发生。\",\"kind\":\"common-collocation\"},{\"en\":\"my very own room\",\"zh\":\"完全属于我自己的房间\",\"note\":\"强调拥有独立的个人空间。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"absolute\",\"zh\":\"绝对的；十足的\",\"note\":\"在 the absolute best 中可表达与 the very best 相近的强烈强调，但不能据此把 very first 或 very own 中的 very 都换成 absolute。\"}],\"contrasting\":[],\"similarNote\":\"这些结构中的 very 主要加强语气；比较时要看完整结构，不能逐词替换。\",\"contrastingNote\":\"这种强调功能没有固定反义词；去掉 very 后，best、first 和 own 的基本意思仍保留。\"},\"sourceIds\":[\"wiktionary-very-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"very-adj-mere\",\"title\":\"光是……本身就……\",\"meaning\":\"作强调性形容词，突出某件事本身就足以引起反应，常见于 the very thought、the very idea、the very sight 等表达。\",\"usageNote\":\"常用于思想、念头、所见事物等名词前。the very thought of… 常可译为“光是想到……就……”，强调引起反应所需的条件很少。\",\"examples\":[{\"id\":\"very-adj-mere-ex1\",\"senseId\":\"very-adj-mere\",\"en\":\"The very thought of losing my dog makes me sad.\",\"zh\":\"光是想到可能失去我的狗，我就很难过。\",\"note\":\"强调只要想到这件事，就足以令人难过。\"},{\"id\":\"very-adj-mere-ex2\",\"senseId\":\"very-adj-mere\",\"en\":\"The very sight of the broken window made me nervous.\",\"zh\":\"光是看见那扇破窗户，我就紧张起来。\",\"note\":\"强调仅仅看到破窗户就引起了反应。\"}],\"patterns\":[{\"en\":\"the very thought / idea of…\",\"zh\":\"光是想到……就……\",\"note\":\"后接名词或动名词短语，突出念头本身带来的反应。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the very sight of…\",\"zh\":\"光是看见……就……\",\"note\":\"强调视觉接触本身就足以引起情绪或其他反应。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"mere\",\"zh\":\"仅仅的；单单的\",\"note\":\"在 the mere thought of…、the mere sight of… 中，可与 very 表达相近的“仅仅……就……”之意。\"}],\"contrasting\":[],\"similarNote\":\"mere 在这些结构中与 very 接近；它不能代替 very hot 中表示程度的 very。\",\"contrastingNote\":\"这一强调功能没有固定反义词；省略 very 后，句子仍成立，但“光是……就……”的强调会减弱。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 very 的历史来源可追溯到古法语 verray，意为“真实的、确实的”；它后来在英语中也发展出加强程度的用法。\"",
+        "valueJson": "\"英语 very 来自意为“真实的”的古法语 verray。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"英语\",\"form\":\"very\",\"meaning\":\"真实的、确实的；后发展出“非常、很”等用法\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史来源与现代 very 的用法演变不等同于今天可见的词根拼接；这里的记忆联想不是词源。\"",
+        "valueJson": "\"verray 是历史来源形式，不是现代英语中可拆用的词根或词缀。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary: very（英语词条，词源）\"",
+        "valueJson": "\"Wiktionnaire: very（英语词条；法语释义与词源说明）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"very 的历史来源与古法语 verray 的关系\"]",
+        "valueJson": "[\"very 表示程度高的副词义\",\"very 加强 first 的副词用法\",\"very 的读音\",\"very 来自古法语 verray，原词意为真实的\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1492,
+    "headword": "very",
+    "meaning_zh": "adv. 非常；很\nadj. 正是的；恰好的",
+    "phonetic": "/'veri/",
+    "pos": "",
+    "forms": []
+  }
+}

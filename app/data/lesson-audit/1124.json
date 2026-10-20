@@ -1,0 +1,436 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "470926b9787997b63dcd70160abf385197dae4ca4113bfd1f47b0cee52283f16",
+    "executedReviewPromptHash": "470926b9787997b63dcd70160abf385197dae4ca4113bfd1f47b0cee52283f16",
+    "reviewHash": "3fb60fa965176b3d35f5d47bd22a5bbd77ce2b88fa79a8a4eefb709207b29e91",
+    "wordId": 1124,
+    "inputHash": "7b78f7f4f7967c2f09b1e37f12710fb6adbe6da7bfdd5fabcbc13ce0c1e6b210",
+    "draftHash": "ec607b8759a03872bb79c1f83801f10c13d7beabec60cceddec758a2da7f39b7",
+    "finalHash": "fed2771fa5d39a4e41e532926cd3500866885876a3dd4139ce2838d8088a758d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ready#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.409Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117980,
+        "revisionId": 33815324,
+        "revisionTimestamp": "2024-03-19T06:04:44Z",
+        "sha256": "48fc625ff092311ee0591cae7d047c84e1acd882fbd03b504eb0a1e03f4defbd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ready",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T07:46:11.426Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T08:02:05.318Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/forms；/lessCommonSenses",
+        "message": "成功取得的英语词条明确列有及物动词 ready，意为“准备；使……准备好”，初稿遗漏了这一词性。补入较少见义及 readies、readied、readying 的实际拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "缺少 ready to cry、ready to drop 中“快要；几乎要”的常用功能；另补较少见的“现成可得”和“迅速给出、反应敏捷”用法，避免全部归入准备或意愿。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "意愿义混入了行动准备：第四例不足以单独显示意愿，ready for action 应归准备义；ready and willing 译为“愿意而且乐意”也丢失了 ready 的准备意味。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "不能不限定词性便宣布 ready for leave 错误：leave 可以作表示休假的名词。应限定为表达“准备好离开”时使用 ready to leave。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/senseId",
+        "message": "readiness to learn 在该例中表示学习意愿，应关联愿意义，而非准备就绪义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples；/confusions/*/items/*/example；/wordFamily/*/example",
+        "message": "初稿共十个例句对象缺少目标结构要求的 note 字段，须逐一补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "初稿未列实际取得的法语维基词典英语词条，却引用了未提供正文的 Oxford 和获取失败的 Cambridge。修订为引用实际支持相关内容的来源；仅依据专业语言知识补充的内容不伪挂词典引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "“用 ready for 说出要准备好的东西”容易诱导把物品直接误放在 for 后。改为说明已为哪项活动做好准备。"
+      }
+    ],
+    "coverageAssessment": "已核对成功取得的英语词条中的形容词和及物动词定义，并依据专业语言知识补充意愿、临近状态及较少见用法。修订后三个核心义各有两个例句，准备状态、意愿和“快要”已分清。取回页面的词源节只有待补标记，不能据此编写历史词源，故保留空阶段；现有现代构词说明可以保留。Oxford 未提供正文，Cambridge 获取失败，均不作为已核实依据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：准备好的；已备妥而可使用的",
+        "coveredBy": [
+          "ready-adj-prepared"
+        ],
+        "assessment": "原有两例分别覆盖人和房间的准备状态；保留，并将 ready for action 移入本义。get ready 的状态变化也已有说明。"
+      },
+      {
+        "sense": "形容词：愿意的；乐意的",
+        "coveredBy": [
+          "ready-adj-willing"
+        ],
+        "assessment": "保留助人例，另用愿意多付房费的语境替换歧义例，保证两例真正体现意愿。"
+      },
+      {
+        "sense": "形容词：快要；几乎到了某种状态",
+        "coveredBy": [
+          "ready-adj-near"
+        ],
+        "assessment": "补为核心义，以快哭和累得快倒下两例说明；明确不保证动作真的发生。"
+      },
+      {
+        "sense": "形容词：现成可得的；可立即动用的",
+        "coveredBy": [
+          "ready-adj-available"
+        ],
+        "assessment": "补入较少见义，说明 ready cash、ready supply 的具体语境。"
+      },
+      {
+        "sense": "形容词：迅速给出的；反应敏捷的",
+        "coveredBy": [
+          "ready-adj-quick"
+        ],
+        "assessment": "补入较少见义，说明 ready answer 强调能迅速作答，不保证回答正确。"
+      },
+      {
+        "sense": "及物动词：准备；使……准备好",
+        "coveredBy": [
+          "ready-verb-prepare"
+        ],
+        "assessment": "取回词条明确列有此义；补入较少见用法和例句，并说明日常更常用 get ... ready。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"ready：准备好了，也可以表示“随时愿意”\"",
+        "valueJson": "\"ready：准备好了，也能表示“愿意”或“快要……”\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"ready 常说人或物已经准备好；ready to do 表示准备做某事，ready for 后接名词。\"",
+        "valueJson": "\"表示准备时，常用 ready for + 名词性成分或 ready to + 动词原形；ready to do 还可表示“愿意”或“快要”，要结合语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 ready for + 名词说出出门前要准备好的东西。\"",
+        "valueJson": "\"用 ready for + 名词说你已为哪项活动做好准备，如 ready for the trip。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr-ready\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词原形\",\"form\":\"ready\",\"ipa\":\"/ˈredi/\",\"note\":\"及物动词，表示“准备；使……准备好”。第三人称单数 readies；过去式、过去分词 readied；现在分词 readying，保留 y。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"ready for the school trip 表示已经为学校组织的出游做好准备。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里说房间已准备妥当，可供开会使用。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be ready for action\",\"zh\":\"随时可以行动\",\"note\":\"表示人或队伍已经可以开始行动，常用于活动或工作场景。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr-ready\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"愿意做某事，或随时可以做某事。\"",
+        "valueJson": "\"愿意或乐意做某事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 be ready to do；此义强调意愿或随时行动，不只是东西已备好。\"",
+        "valueJson": "\"常用 be ready to do，重点在愿意帮忙、承担费用等意愿。同一结构也能表示已准备好，须由上下文判断。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"always ready to help 突出一贯乐于助人的态度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"I am ready to answer your question.\"",
+        "valueJson": "\"I'm ready to pay a little more for a quieter room.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"我随时可以回答你的问题。\"",
+        "valueJson": "\"为了住得安静些，我愿意多付一点房费。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"为获得更安静的房间愿意多付钱，语境明确体现意愿。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"愿意／随时准备做某事\"",
+        "valueJson": "\"愿意做某事\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"be ready for action\",\"zh\":\"随时可以行动\",\"note\":\"表示人或队伍已经可以开始行动，常用于活动或工作场景。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/zh",
+        "expectedValueJson": "\"愿意而且乐意\"",
+        "valueJson": "\"准备好且愿意的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"强调不仅愿意，而且态度积极。\"",
+        "valueJson": "\"ready 表示已准备好，willing 表示愿意；常接 to do，如 ready and willing to help。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ready-adj-near\",\"title\":\"快要……的；几乎要……的\",\"meaning\":\"接近做出某个动作或进入某种状态，有时带夸张语气。\",\"usageNote\":\"常见于 ready to cry、ready to drop 等表达，描述接近某种状态；不保证动作真的发生。\",\"examples\":[{\"id\":\"ready-near-ex1\",\"senseId\":\"ready-adj-near\",\"en\":\"When Ben saw his broken model plane, he looked ready to cry.\",\"zh\":\"本看到自己坏掉的飞机模型时，看起来都快哭了。\",\"note\":\"ready to cry 描写快哭出来的样子。\"},{\"id\":\"ready-near-ex2\",\"senseId\":\"ready-adj-near\",\"en\":\"After carrying the boxes upstairs, I was ready to drop.\",\"zh\":\"把那些箱子搬上楼后，我累得快要倒下了。\",\"note\":\"ready to drop 常夸张地表示筋疲力尽，不一定真的会倒下。\"}],\"patterns\":[{\"en\":\"be ready to do\",\"zh\":\"快要……；几乎要……\",\"note\":\"这一结构也可表示准备或意愿；本义须由具体动作和上下文判断。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"ready to cry\",\"zh\":\"快要哭出来的\",\"note\":\"常用来描写难过、委屈等情绪已接近哭出来的程度。\",\"kind\":\"common-collocation\"},{\"en\":\"ready to drop\",\"zh\":\"累得快要倒下的\",\"note\":\"常用口语表达，强调非常疲倦。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be about to do\",\"zh\":\"马上就要做某事\",\"note\":\"同样可表示动作即将发生，但不表示已经做好准备或愿意做。\"}],\"contrasting\":[{\"en\":\"be far from + -ing\",\"zh\":\"远未到……的地步\",\"note\":\"可在程度或进程上与“几乎要”对照，如 far from collapsing；须结合具体状态使用。\"}],\"similarNote\":\"about to 与“快要”义相近，不能直接替换 ready 的准备义或愿意义。\",\"contrastingNote\":\"far from + -ing 对照的是距离某种状态还很远，不表示缺少准备或不愿意。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ready-adj-available\",\"title\":\"现成可得的；可立即动用的\",\"meaning\":\"已经备有，能够随时取得或使用。\",\"note\":\"常置于名词前。ready cash 指可立即动用的现钱；a ready supply 指随时能取得的供应。\",\"example\":{\"id\":\"ready-available-ex1\",\"senseId\":\"ready-adj-available\",\"en\":\"We keep some ready cash at home for emergencies.\",\"zh\":\"我们在家里备了一些现钱以应急。\",\"note\":\"ready cash 强调钱可以立即动用。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ready-adj-quick\",\"title\":\"迅速给出的；反应敏捷的\",\"meaning\":\"能够很快作出反应或给出回答。\",\"note\":\"常置于名词前，如 a ready answer、a ready wit。\",\"example\":{\"id\":\"ready-quick-ex1\",\"senseId\":\"ready-adj-quick\",\"en\":\"She had a ready answer for every question at the interview.\",\"zh\":\"面试时，每个问题她都能马上答上来。\",\"note\":\"a ready answer 强调能迅速给出回答，不保证回答正确，也不一定表示事先准备过。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ready-verb-prepare\",\"title\":\"动词：准备；使……准备好\",\"meaning\":\"使人或物进入准备就绪的状态。\",\"note\":\"及物动词，较正式，可用 ready somebody/something for something。日常更常用 get somebody/something ready。\",\"example\":{\"id\":\"ready-verb-ex1\",\"senseId\":\"ready-verb-prepare\",\"en\":\"The coach readied the team for the final.\",\"zh\":\"教练让全队为决赛做好了准备。\",\"note\":\"readied 是 ready 的过去式，the team 是宾语，for the final 说明准备参加什么。\"},\"sourceIds\":[\"wiktionary-fr-ready\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"for 后接名词；to 后接动词原形。\"",
+        "valueJson": "\"在这两个常用结构中，for 后接名词性成分，to 后接动词原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exam 是名词，表示所准备的考试。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"leave 是动词原形，表示准备进行的动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到 for，后面通常接名词；看到 to，后面接动词原形。不可说 ready to the exam 或 ready for leave。\"",
+        "valueJson": "\"表达“准备好考试”用 ready for the exam；表达“准备好离开”时，leave 是动词，应说 ready to leave。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"readier 是 ready 的比较级，表示准备得更充分。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"more ready 也是可用的比较级表达，for the test 点明准备对象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr-ready\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"ready-adj-prepared\"",
+        "valueJson": "\"ready-adj-willing\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"readiness to learn 指乐于学习的态度，承接“愿意做”这一义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr-ready\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"readily 在这里表示“乐意地、爽快地”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: ready\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/ready\",\"supports\":[\"ready 的形容词用法、常见搭配及比较级形式\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: ready\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ready\",\"supports\":[\"ready 的常见义项、句型和读音\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-fr-ready\",\"title\":\"Wiktionnaire：ready（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/ready#Anglais\",\"supports\":[\"ready 的英语形容词基本义与及物动词用法\",\"get ready、get ready to 与派生词 readiness\",\"ready 的读音\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1124,
+    "headword": "ready",
+    "meaning_zh": "adj. 准备好的；可使用的",
+    "phonetic": "/'redi/",
+    "pos": "",
+    "forms": []
+  }
+}

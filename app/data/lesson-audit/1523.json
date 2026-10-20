@@ -1,0 +1,302 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c82054df9c8c2e87c2818c20501e13e1a7be298113405c4d4ae2bc44aafc86cc",
+    "executedReviewPromptHash": "c82054df9c8c2e87c2818c20501e13e1a7be298113405c4d4ae2bc44aafc86cc",
+    "reviewHash": "9fe0100e0e130073647dc07b1a7f3663f9690b0b064ef0157aac6fb67f204baf",
+    "wordId": 1523,
+    "inputHash": "521e15ed6603094eaede73ac9cdc27b8a8e7c4149dd304c3b78918bb472a11e6",
+    "draftHash": "07071f5996efd9518d1bf99f6d8f0e3ac0d19b6e7a476cd48058584a6d6b9ed4",
+    "finalHash": "c4a87bee1134e84e1c71c0974920449fed96c58aab438876596efbceadbef686",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wealth#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.131Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116772,
+        "revisionId": 38443618,
+        "revisionTimestamp": "2025-08-01T03:47:09Z",
+        "sha256": "fcd4ff6dbf8b7726c29170d3be850ddd93f6743444db06d3eba26ceabca2218f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wealth",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:37:56.082Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:00:14.606Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/*/sourceIds、/wordFamily/*/sourceIds、/sources",
+        "message": "Cambridge 未成功取回，Oxford 未提供实际内容，不能作为本次审校的已用依据。改为引用实际取得的英语词条；比较级、最高级等依专业语言知识审定，不绑定未经读取的来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0、/senses/1/usageNote、/confusions/1",
+        "message": "“不说 a wealth”的概括及易混标题未同时说明 a wealth of；“a 修饰整体短语 a wealth of”也不是准确的语法解释。应直接说明财富义的不可数用法和 a wealth of 的完整结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题和词条涉及资源，但现有财富义只明确讲钱财、财产，没有充分呈现 mineral wealth、natural wealth 的常见用法。可在财富义内部补充，无须强拆第三个核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "中古英语阶段的 meaning 只是“wealth 的中古英语形式”，属于没有历史释义的占位文字。保留 summary 中可证实的字形和构词关系，删除这组阶段节点，避免呈现未经说明的词义演变链。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning、/wordFamily/1/meaning、/wordFamily/2/meaning、/wordFamilyNote",
+        "message": "wealthy 及其比较级、最高级的“丰富”释义缺少语境限制，容易被误用来修饰 information 等内容名词。宜突出本课实际教授的“富有、富裕”，并说明不能机械替换 a wealth of。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/0/example",
+        "message": "原句 even with great wealth 与主语 money 的衔接生硬，中文还补出了原句没有明确表达的拥有者。改用直接以 great wealth 作主语的自然句子。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中财富、财产及丰富、大量两个主要义域，并检查读音、语法、例句、近反义表达和词族拼写。补丁将矿产与自然资源作为财富义的常见用法补齐；两个核心义均保留至少两个原创英中例句。词源仅采用已取得的法语维基词典英语词条；该来源释义较简略，具体搭配、资源用法及屈折规则结合专业语言知识审定。修正后无须另设第三个核心义，也无尚未解决的实质问题。",
+    "senseInventory": [
+      {
+        "sense": "财富、财产与富有状况，包括国家或地区拥有的宝贵物质资源",
+        "coveredBy": [
+          "wealth-1"
+        ],
+        "assessment": "原稿已覆盖个人、家庭和地区财富；补充资源说明、mineral wealth 搭配及两个资源例句后，财富义的常见适用范围完整。"
+      },
+      {
+        "sense": "大量、丰富，常用 a wealth of 表示许多有用或有价值的事物",
+        "coveredBy": [
+          "wealth-2"
+        ],
+        "assessment": "信息与故事两个例句分别覆盖不可数名词和复数可数名词，经验搭配及近义、反向表达的语境说明适当；须统一冠词说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 wealth 是不可数名词，通常不说 a wealth 或 wealths。\"",
+        "valueJson": "\"谈钱财时，wealth 通常作不可数名词，不说 a wealth 或 wealths；表示“大量的……”时，记住完整结构 a wealth of + 名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"个人、家庭或群体拥有的钱财和有价值的财产，常用于谈论富有程度或财富分配。\"",
+        "valueJson": "\"个人、家庭或群体拥有的钱财和有价值的财产，也可包括国家或地区拥有的矿产等宝贵资源；常用于谈论富有程度或财富分配。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wealth-1-ex3\",\"senseId\":\"wealth-1\",\"en\":\"The region's mineral wealth has created many local jobs.\",\"zh\":\"这个地区丰富的矿产资源为当地创造了许多就业岗位。\",\"note\":\"mineral wealth 指有经济价值的矿产资源，wealth 不只用于个人的钱财。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wealth-1-ex4\",\"senseId\":\"wealth-1\",\"en\":\"The island's natural wealth includes forests and fertile land.\",\"zh\":\"这座岛屿的自然财富包括森林和肥沃的土地。\",\"note\":\"natural wealth 指一个地方拥有的宝贵自然资源。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"mineral wealth\",\"zh\":\"宝贵的矿产资源\",\"note\":\"把矿产资源视为地区或国家拥有的财富；这里的 wealth 仍不用复数形式。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 a wealth of + 复数名词或不可数名词；这里 wealth 仍作不可数名词。\"",
+        "valueJson": "\"表示“丰富的……”时，常用 a wealth of + 复数名词或不可数名词；在这一结构中须保留 a，如 a wealth of information。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"wealth 不加不定冠词，也通常不加复数 -s\"",
+        "valueJson": "\"wealth 的不可数用法与 a wealth of\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"这里 a 修饰整体短语 a wealth of，表示大量的某物；不要据此把 wealth 当作普通可数名词。\"",
+        "valueJson": "\"a wealth of 是表示“大量／丰富的……”的常用结构，在这一结构中须保留 a；不要据此类推，用 a wealth 表示“一份财产”或 wealths 表示“多份财产”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/en",
+        "expectedValueJson": "\"Money alone does not bring happiness, even with great wealth.\"",
+        "valueJson": "\"Great wealth does not always bring happiness.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/zh",
+        "expectedValueJson": "\"即使拥有巨额财富，金钱本身也不会带来幸福。\"",
+        "valueJson": "\"巨额财富并不总能带来幸福。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"welth\",\"meaning\":\"wealth 的中古英语形式\"},{\"language\":\"现代英语\",\"form\":\"wealth\",\"meaning\":\"财富；丰富\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"富有的；丰富的\"",
+        "valueJson": "\"富有的；富裕的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"更富有的；更丰富的\"",
+        "valueJson": "\"更富有的；更富裕的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"最富有的；最丰富的\"",
+        "valueJson": "\"最富有的；最富裕的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"wealthy 是常见派生形容词；其比较级和最高级遵循辅音字母加 y 结尾的拼写规则。\"",
+        "valueJson": "\"wealthy 通常形容人、家庭或地区富有；表达“丰富的信息”用 a wealth of information，不说 wealthy information。其比较级 wealthier 和最高级 wealthiest 都要把 wealthy 末尾的 y 改为 i，再加 -er 或 -est。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: wealth\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/wealth\",\"supports\":[\"不可数名词用法\",\"财富与丰富的常见意义\",\"a wealth of 结构\",\"与 wealthy 的词性和派生关系\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: wealth\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/wealth\",\"supports\":[\"wealth 的名词意义\",\"常见搭配及使用语境\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-fr\",\"title\":\"Wiktionnaire: wealth（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/wealth#Anglais\",\"supports\":[\"中古英语 welth 及与 weal、-th 的构词关联\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-fr\",\"title\":\"Wiktionnaire: wealth（英语词条；法语说明）\",\"url\":\"https://fr.wiktionary.org/wiki/wealth#Anglais\",\"supports\":[\"wealth 的名词词性及财富、丰富等基本释义\",\"wealth 的词形不变说明\",\"/wɛlθ/ 的读音标注\",\"poverty 被列为反义词，wealthy 被列为派生词\",\"中古英语 welth 及与 weal、-th 的构词关联\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1523,
+    "headword": "wealth",
+    "meaning_zh": "n. 财富, 资源, 财产, 丰富, 富裕, 大量",
+    "phonetic": "/welθ/",
+    "pos": "",
+    "forms": []
+  }
+}

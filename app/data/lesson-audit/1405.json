@@ -1,0 +1,382 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "050e0dc208322356c9a548b45b05d734a443f4ccc40345276a65846de21d56a8",
+    "executedReviewPromptHash": "050e0dc208322356c9a548b45b05d734a443f4ccc40345276a65846de21d56a8",
+    "reviewHash": "3dd6bb5a179dbacf99240172dfdaa0b96df383a2049a75e2831dff0e6f68a4d5",
+    "wordId": 1405,
+    "inputHash": "6705c9b16816334712014bdfc7aa717e046ac10598ee859672eb5314ca33fcca",
+    "draftHash": "c254d5a914591febd8218d07dadeb0559128b87ab492d933364af4552df23385",
+    "finalHash": "685dcdd52b420c00d50af7d8b598f4951b4b2a3b6e0e458486bbe9138114cae7",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/then#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.429Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116396,
+        "revisionId": 39764204,
+        "revisionTimestamp": "2026-08-03T04:46:15Z",
+        "sha256": "145a146461c9121592ac4399bb660a49bd249c6183fb4bbb74b7cb893a5bdb7e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/then",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:50:41.929Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:07:59.162Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources; /pronunciation/sourceIds; /senses/*/sourceIds; /confusions/*/sourceIds",
+        "message": "Cambridge 页面实际未取得，不能用它为正文提供已读取的释义依据。应改引已取得的 Wiktionnaire 英语词条，并删除无内容支持的 Cambridge 来源项。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /forms/0/label",
+        "message": "实际词典把相关连接功能列为连接性副词；法语 adverbe conjonctif 不等于独立的连词词性。按本课采用的词典体系统一为副词、形容词和名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning; /studyPlan/0; /confusions/1",
+        "message": "then 表示先后顺序，不保证事件紧接着发生；表示时间时也不限定放在动作或状态后。位置辨析把自然的句首用法冠以语序错误的改正，且该例的 senseId 错指结果义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1; /senses/4",
+        "message": "时间义缺少直接展示未来时间的裸词 then 例句，现有第二例只展示 by then。by then 包含截止时间本身，也可说明达到某种状态，不能概括为必须在该时间之前完成；名词义第二例还应明确 then 所指的时间。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "漏掉词典列出的补充列举功能和空间排列用法。补充列举是常用功能，应补两个例句；空间排列可作为较少见用法补入。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning; /senses/2/usageNote",
+        "message": "结果、推论义也常见于句末，用于确认根据上下文得出的判断；现稿只讲句首和句中，应补充这一常用位置及例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/summary",
+        "message": "then 与 than 在重读时元音不同，但弱读时都可能接近 /ðən/；笼统说读音不同容易让学生依赖并不可靠的听音区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions/similarNote",
+        "message": "former 的参照时间可以是过去叙述中的时间，不能一概解释为现在已不是该身份。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "取得的词源内容只直接支持古英语来源及并列历史形式，没有提供中古英语 then 这一阶段的依据；不能把它画入确定的历史顺序箭头。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的结果推论、特定时间、事件顺序、空间排列、补充列举、形容词和名词七项。补丁保留原有五义，为常用的补充列举功能增加两个例句，将空间排列收入较少见用法，并补齐未来时间及句末推论示例。修改后各核心义均有至少两个自然原创英中例句。词源只保留直接有据的古英语阶段；来源依据限于实际取得的 Wiktionnaire 英语词条，未把法语编写语言误作词的语言，也未使用未取得的 Cambridge 页面内容。",
+    "senseInventory": [
+      {
+        "sense": "副词：根据条件或情况表示结果、结论或回应，意为“那么、那样的话”",
+        "coveredBy": [
+          "then-result"
+        ],
+        "assessment": "原有条件句和对话回应各一例；补入句末确认推论的常用位置和例句。"
+      },
+      {
+        "sense": "副词：在过去或将来的那个时候",
+        "coveredBy": [
+          "then-time"
+        ],
+        "assessment": "保留过去时间例句，将另一例改为直接展示未来时间的 then，并区分 then 与 by then。"
+      },
+      {
+        "sense": "副词：接着、然后，表示事件或步骤的先后顺序",
+        "coveredBy": [
+          "then-seq"
+        ],
+        "assessment": "两个例句自然；删除必须紧接着发生的暗示，修正位置说明。"
+      },
+      {
+        "sense": "副词：按空间排列或观察顺序表示接下来是某物",
+        "coveredBy": [
+          "then-spatial"
+        ],
+        "assessment": "原稿遗漏；作为较少见用法补入，说明其与顺序义的联系。"
+      },
+      {
+        "sense": "副词：补充列举另一项信息，意为“此外还有、再说还有”",
+        "coveredBy": [
+          "then-addition"
+        ],
+        "assessment": "原稿遗漏；新增独立核心义及两个例句，避免一概误解为时间先后。"
+      },
+      {
+        "sense": "形容词：当时的，用于名词前",
+        "coveredBy": [
+          "then-adjective"
+        ],
+        "assessment": "两个职务身份例句覆盖充分；修正与 former 比较时的参照时间。"
+      },
+      {
+        "sense": "名词：那个时候，常用于 before then、by then、until then",
+        "coveredBy": [
+          "then-noun"
+        ],
+        "assessment": "依词典保留该词性分析及两个例句；明确第二例的时间指代，并修正 by then 的截止边界说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adverb; conjunction; adjective; noun\"",
+        "valueJson": "\"adverb; adjective; noun\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"副词、连词、形容词及名词原形\"",
+        "valueJson": "\"副词、形容词及名词原形\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"按时间线记住 first … then …；说过去的时间时，把 then 放在动作或状态后。\"",
+        "valueJson": "\"按时间线记住 first … then …；then 表示“那时”可放在句首或句末，表示“接着”常放在后续动作前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示一件事之后紧接着发生另一件事，常用于讲步骤、安排或故事顺序。\"",
+        "valueJson": "\"表示一件事之后发生另一件事，常用于讲步骤、安排或故事顺序。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常和 first, next 等表示顺序的词连用；then 放在后续动作之前。\"",
+        "valueJson": "\"常和 first、next 等表示顺序的词连用；可放在后续动作前或后一句句首，本身不说明两件事间隔多长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"那时；到那时\"",
+        "valueJson": "\"那时（过去或将来）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在句末，也可放在时间表达后；by then 表示“不迟于那时”或“到那时为止”。\"",
+        "valueJson": "\"可指过去或将来，常放在句首或句末。then 本身表示“在那时”；by then 表示“不晚于那时”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"then-time-ex2\",\"senseId\":\"then-time\",\"en\":\"The bus leaves at six, so be at the stop by then.\",\"zh\":\"公交车六点发车，所以到那时要在站台等。\",\"note\":\"by then 指不晚于六点这个时间。\"}",
+        "valueJson": "{\"id\":\"then-time-ex2\",\"senseId\":\"then-time\",\"en\":\"I'll be home at six. Can you call me then?\",\"zh\":\"我六点会在家。你能那时给我打电话吗？\",\"note\":\"then 直接指将来的六点，不需要加 by。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"说明某事应在提到的过去或未来时间之前完成。\"",
+        "valueJson": "\"以提到的过去或未来时间为界，表示不晚于那时完成某事或达到某种状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"放在句首或句中，引出根据前面情况得出的结果、结论或下一步回应。\"",
+        "valueJson": "\"根据前面的情况或条件表示“那么、那样的话”，引出结果、结论或回应，也可在句末用来确认推论。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用于对话中的推论或回应；此用法不是单纯表示时间顺序。\"",
+        "valueJson": "\"可用于条件句或对话，出现在句首、句中或句末；句末用法常带有“这么说来……？”的确认语气。这里表达的是条件或推论关系。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"then-result-ex3\",\"senseId\":\"then-result\",\"en\":\"You're coming with us, then?\",\"zh\":\"那么，你会跟我们一起去，对吧？\",\"note\":\"句末的 then 表示根据前面的信息作出判断，并向对方确认。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"former 强调现在已不是该身份；then 强调在所叙述的那个时候。\"",
+        "valueJson": "\"former 表示相对于所谈的时间已不再担任该职务；then 只说明在所叙述的那个时候担任该职务，并不交代后来是否卸任。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/1",
+        "expectedValueJson": "{\"id\":\"then-noun-ex2\",\"senseId\":\"then-noun\",\"en\":\"We don’t know the answer now, but we may know it by then.\",\"zh\":\"我们现在不知道答案，但到那时也许会知道。\",\"note\":\"by then 中 then 指将来某个时间。\"}",
+        "valueJson": "{\"id\":\"then-noun-ex2\",\"senseId\":\"then-noun\",\"en\":\"Our next lesson is on Friday. We may know the answer by then.\",\"zh\":\"我们的下一节课在周五。到那时，我们也许就知道答案了。\",\"note\":\"then 指周五；by then 表示最迟到那时可能已经知道答案。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1/note",
+        "expectedValueJson": "\"常说明某件事会在那个时间之前完成或达到某种状态。\"",
+        "valueJson": "\"表示不晚于那个时间完成某事或达到某种状态，包含该时间本身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"then-addition\",\"title\":\"此外还有；再说还有\",\"meaning\":\"在已经提到的事情之外，再提出另一项需要考虑的信息、问题或理由。\",\"usageNote\":\"常见于 Then there's … 或 and then there's …，用于继续列举或推进话题，不要求所说的事情按时间先后发生。\",\"examples\":[{\"id\":\"then-addition-ex1\",\"senseId\":\"then-addition\",\"en\":\"The rent is high, and then there's the cost of parking.\",\"zh\":\"房租很高，此外还有停车费。\",\"note\":\"停车费是另一项开支；then 用于补充列举。\"},{\"id\":\"then-addition-ex2\",\"senseId\":\"then-addition\",\"en\":\"We need to buy paint. Then there's the question of who will do the work.\",\"zh\":\"我们得买油漆。另外，还得考虑由谁来干这活。\",\"note\":\"then 引出另一项需要考虑的问题。\"}],\"patterns\":[{\"en\":\"Then there is / are + 名词短语\",\"zh\":\"另外还有……\",\"note\":\"把另一项信息或问题加入当前讨论；there is 常缩写为 there's。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"and then there's …\",\"zh\":\"而且还有……\",\"note\":\"接在已提到的事项后，补充另一项需要考虑的事情。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"also\",\"zh\":\"也；还\",\"note\":\"同样可增加一项信息，但不能照搬 then 的句中位置。\"},{\"en\":\"besides\",\"zh\":\"此外；再说\",\"note\":\"可用来补充理由或信息，有时带有加强前面观点的语气。\"}],\"contrasting\":[],\"similarNote\":\"then 在这里把话题推进到另一项；also 和 besides 可以表达补充关系，替换时须调整句子结构。\",\"contrastingNote\":\"补充列举这一功能没有固定的一词反义表达，不套用时间义中的 now。\"},\"sourceIds\":[\"wiktionary-then-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"then-spatial\",\"title\":\"再往后；接着是（空间排列）\",\"meaning\":\"按观察或描述的顺序，介绍接下来排列着的人或物。\",\"note\":\"属于按顺序介绍事物的用法；这里说的是空间排列，而非这些事物依次出现或发生。\",\"example\":{\"id\":\"then-spatial-ex1\",\"senseId\":\"then-spatial\",\"en\":\"From the gate, you can see a lawn, then a row of trees, and finally the house.\",\"zh\":\"从大门望过去，你可以看到一片草坪，再往后是一排树，最后是房子。\",\"note\":\"then 标明树在所描述的空间排列中接在草坪之后。\"},\"sourceIds\":[\"wiktionary-then-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"then 表示“然后、那时、那么”；than 用于比较，意思是“比”。两词拼写只差一个字母，读音也不同。\"",
+        "valueJson": "\"then 表示“然后、那时、那么”；than 常用于比较，意思是“比”。两词拼写只差一个字母；重读时 then 是 /ðen/，than 是 /ðæn/，口语弱读时都可能接近 /ðən/，仍须按意思和结构区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-then\"]",
+        "valueJson": "[\"wiktionary-then-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1",
+        "expectedValueJson": "{\"id\":\"then-position\",\"title\":\"then 作“接着”时的位置\",\"summary\":\"叙述两个动作时，then 通常放在后一个动作之前；不要因为中文语序而把它放在句子最开头却漏掉后续内容。\",\"items\":[{\"label\":\"自然说法\",\"note\":\"then 放在表示下一步的动词之前。\",\"example\":{\"id\":\"then-position-ex1\",\"senseId\":\"then-seq\",\"en\":\"She opened the box and then smiled.\",\"zh\":\"她打开盒子，然后笑了。\",\"note\":\"then 引出紧接着发生的动作。\"}},{\"label\":\"常见语序错误的改正\",\"note\":\"若用 then 引出句子，后面应接完整的后续内容。\",\"example\":{\"id\":\"then-position-ex2\",\"senseId\":\"then-result\",\"en\":\"Then we walked home together.\",\"zh\":\"接着我们一起走回了家。\",\"note\":\"then 后接完整的主语和谓语。\"}}],\"takeaway\":\"先决定 then 表示时间顺序还是推论，再让它紧贴要表达的后续动作或结果。\",\"sourceIds\":[\"cambridge-then\"]}",
+        "valueJson": "{\"id\":\"then-position\",\"title\":\"then 作“接着”时的位置\",\"summary\":\"then 表示“接着”时，可放在后续动作前，也可放在后一句句首。句首的 then 还可能表示“那时”或“那么”，要结合上下文理解。\",\"items\":[{\"label\":\"放在后续动作前\",\"note\":\"and then 可以连接先后发生的两个动作。\",\"example\":{\"id\":\"then-position-ex1\",\"senseId\":\"then-seq\",\"en\":\"She opened the box and then smiled.\",\"zh\":\"她打开盒子，然后笑了。\",\"note\":\"then 引出后发生的动作，本身不规定两个动作相隔多久。\"}},{\"label\":\"放在后一句句首\",\"note\":\"Then 可以自然地放在句首，继续讲述接下来的事。\",\"example\":{\"id\":\"then-position-ex2\",\"senseId\":\"then-seq\",\"en\":\"Then we walked home together.\",\"zh\":\"接着我们一起走回了家。\",\"note\":\"承接前面讲述的事情，then 表示后续发生的动作。\"}}],\"takeaway\":\"句首使用 then 很自然；它表示“接着”“那时”还是“那么”，须结合上下文判断。\",\"sourceIds\":[\"wiktionary-then-etymology\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"中古英语\",\"form\":\"then\",\"meaning\":\"然后；那时\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-then\",\"title\":\"Cambridge Dictionary: then\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/then\",\"supports\":[\"then 的常见词性和释义\",\"then 表示顺序、过去或将来时间、条件结果及前置定语的用法\",\"then 与 than 的区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"then 的古英语来源与历史形式\",\"then 的副词、形容词及名词用法\"]",
+        "valueJson": "[\"then 的古英语来源与并列历史形式\",\"then 的发音\",\"then 表示结果、时间、先后顺序、空间排列及补充列举的副词用法\",\"then 的形容词及名词用法\",\"then 与 than 的区分提示\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1405,
+    "headword": "then",
+    "meaning_zh": "adv. 然后, 当时\nconj. 然后, 当时\nn. 那时",
+    "phonetic": "/ðen/",
+    "pos": "",
+    "forms": []
+  }
+}

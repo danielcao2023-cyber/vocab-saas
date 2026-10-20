@@ -1,0 +1,295 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "60464e3d45b65b395326aa80ee003faf44645aec4cca702abf17e11e43cdbd1b",
+    "executedReviewPromptHash": "60464e3d45b65b395326aa80ee003faf44645aec4cca702abf17e11e43cdbd1b",
+    "reviewHash": "4063aa15d1bce201550b88112b068ac1e344fcb9e09e7b233fdef57a9ec9f759",
+    "wordId": 644,
+    "inputHash": "b41fc1b293a68838ef51dfa713a9c82ab4d488186aa3539499adb6581b8f01a7",
+    "draftHash": "09652e927efdb8ff6bd99a9d2b07fdacced21f0ce476d90f6864b6592e956c54",
+    "finalHash": "42640936d5d8b5be7849dc5539ba0910b233f3d37c0ed7766fd2e3efc9a636c6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/herself#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.202Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 248906,
+        "revisionId": 39744871,
+        "revisionTimestamp": "2026-08-02T02:58:18Z",
+        "sha256": "5bf3efbe4858158e541f0db6d6a2ff51a1e3ae8b0b496abef874268609c9b639",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/herself",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:47:49.723Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:03:47.959Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用该来源的 sourceIds",
+        "message": "Cambridge 页面未取得正文，不能作为已使用的释义和读音依据。应改引已取得的法语维基词典英语词条；法语是说明语言，不是 herself 的词源语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用词源说明明确指出 her 与 self 的组合关系，不能仍只作为助记拆分处理并留空来源。应补入可靠构词事实，保持 stages 为空，避免把两个成分串成历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note；/senses/1/patterns/1/en",
+        "message": "“谈到女性时用 herself”忽略了人称和数：女性以 I 作主语时仍用 myself。强调句型中的 subject 也应限定为适合搭配 herself 的主语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "移到句末的说明须限定于主语强调，不能泛用于宾语后的强调语。现有两个例句均强调主语，应补充宾语后的“本人”用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0",
+        "message": "“the + person + herself”与说明中的姓名用法不匹配：Mia herself 不加 the。应使用名词短语框架并明确姓名与身份称呼的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "“herself, not someone else”不是固定表达，脱离句子也不能作为普通宾语自由使用。应换成有明确句法依托的常用搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/contrasting/1",
+        "message": "not by herself 对照的是“独自／没有别人帮助”，与本义的“由她本人做”不是同一个对照维度。虽然原注有限定，仍宜换成由别人完成任务的表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway；/senses/0/usageNote；/senses/0/examples",
+        "message": "by herself 已列出两个常用含义，却没有完整例句区分独处和不靠帮助；总提示的二分也未涵盖这个结构。另外，“不能单独代替普通宾语”容易被理解成 herself 不能独立作宾语，应改为明确的指代条件。"
+      }
+    ],
+    "coverageAssessment": "已按英语词条的两项定义核对反身回指与强调本人，保留两义原有的各两个例句，并补充宾语强调及 by herself 的两种常用语境。by herself 作为常用结构讲解，不另造第三个核心义。英美读音、拼写及词族说明未发现实质错误；/e/ 与来源所用 /ɛ/ 属常见记音约定差异。词源补入有依据的 her + self，不推定形成年代或更早的演变链；未取得正文的 Cambridge 引用已撤换。",
+    "senseInventory": [
+      {
+        "sense": "反身回指：她自己",
+        "coveredBy": [
+          "herself-reflexive"
+        ],
+        "assessment": "动词宾语和介词宾语均有自然例句；修正人称、数及普通宾语替换条件的说明。"
+      },
+      {
+        "sense": "强调用法：她本人；她亲自",
+        "coveredBy": [
+          "herself-emphatic"
+        ],
+        "assessment": "保留两个主语强调例句，补充宾语强调例句；限定句末位置说明，并修正姓名框架和相关搭配。"
+      },
+      {
+        "sense": "常用结构 by herself：独自一人；没有别人帮助",
+        "coveredBy": [
+          "herself-reflexive"
+        ],
+        "assessment": "这是专业语言知识补充的常用结构，不另立词典核心义；补充两个具体例句分别示范两种含义，并与强调本人区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"herself 常指“她自己”，也可强调“她亲自”。看它在句中是动作的承受者，还是用来突出“由她本人做”。\"",
+        "valueJson": "\"herself 可回指“她自己”，也可强调“她本人／她亲自”；by herself 常表示“独自”或“没有别人帮助”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-herself\"]",
+        "valueJson": "[\"wiktionary-fr-herself\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于主语和宾语指同一人时，如 She taught herself.；反身代词通常不能单独代替普通宾语。\"",
+        "valueJson": "\"动词宾语与同一分句的主语 she、Mia 或 the girl 指同一个人时，用 herself；宾语指另一位女性时，通常用 her。by herself 可表示“独自”或“没有别人帮助”，含义由语境决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"herself-reflexive-ex-3\",\"senseId\":\"herself-reflexive\",\"en\":\"Mia sat by herself in the school library.\",\"zh\":\"米娅独自坐在学校图书馆里。\",\"note\":\"by herself 在这里表示没有人陪着她。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"herself-reflexive-ex-4\",\"senseId\":\"herself-reflexive\",\"en\":\"She fixed her bike by herself.\",\"zh\":\"她靠自己修好了自行车。\",\"note\":\"by herself 在这里强调没有别人帮忙，不一定表示周围没有其他人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"主语和 oneself 指同一个人；谈到女性时用 herself。\"",
+        "valueJson": "\"oneself 要随主语的人称和数变化；主语是 she 或 Mia、the girl 这类指单个女性的名词短语时用 herself，I 作主语时则用 myself。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-herself\"]",
+        "valueJson": "[\"wiktionary-fr-herself\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用来强调女性本人做了某事，或强调谈论的就是她本人；通常可移到句末而不改变句子基本意思。\"",
+        "valueJson": "\"用来强调“她本人”或“由她亲自做”。强调主语时，herself 可紧跟主语，也常可放在句末；强调宾语等位置上的人时，通常紧跟所强调的名词短语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"herself-emphatic-ex-3\",\"senseId\":\"herself-emphatic\",\"en\":\"We met the writer herself at the book fair.\",\"zh\":\"我们在书展上见到了那位女作家本人。\",\"note\":\"herself 紧跟宾语 the writer，强调见到的是作家本人；它不指回主语 we。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"the + person + herself\",\"zh\":\"某人本人；某人亲自\",\"note\":\"herself 放在女性身份或姓名后，用来强调这个人亲自做事。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"noun phrase + herself\",\"zh\":\"某人本人；某人亲自\",\"note\":\"这里用指单个女性的姓名或身份称呼，如 Mia herself、the coach herself；姓名前通常不加 the。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/en",
+        "expectedValueJson": "\"subject + herself + verb\"",
+        "valueJson": "\"she + herself + verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"herself, not someone else\",\"zh\":\"是她本人，不是别人\",\"note\":\"用于需要明确指出行动者或对象是她本人的语境。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"do it herself\",\"zh\":\"她亲自做这件事\",\"note\":\"如 She wants to do it herself. 强调由她本人来做；是否还表示没有别人帮助，要看上下文。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"not by herself\",\"zh\":\"不是她独自一人\",\"note\":\"只在表示独自完成的语境中构成对照；不否定“她本人”的其他用法。\"}",
+        "valueJson": "{\"en\":\"have someone else do it\",\"zh\":\"让别人来做这件事\",\"note\":\"当重点是“谁来完成这件事”时，可与 do it herself（她亲自做）形成对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"someone else 和 not by herself 只在特定强调或独自完成的语境中对照。\"",
+        "valueJson": "\"这里对照的是由她本人还是由别人完成任务；“亲自做”与“没有别人帮忙”需要分清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-herself\"]",
+        "valueJson": "[\"wiktionary-fr-herself\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-herself\"]",
+        "valueJson": "[\"wiktionary-fr-herself\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中可看作 her 与 self 的组合，帮助记住它表示女性本人；这是一种现代构词提示，不代表有完整的历史演变链。\"",
+        "valueJson": "\"herself 由 her（她）与 self（自己）组合而成，既可指“她自己”，也可强调“她本人”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"现代构词拆分用于理解记忆；本条不据此补写未核实的历史阶段。\"",
+        "valueJson": "\"her 和 self 是共同构成该词的两个成分，不代表两个先后相承的历史阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr-herself\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-herself\",\"title\":\"Cambridge Dictionary: herself\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/herself\",\"supports\":[\"herself 的常见含义及反身代词用法\",\"herself 的强调用法\",\"英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr-herself\",\"title\":\"Wiktionnaire：herself（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/herself#Anglais\",\"supports\":[\"反身用法：她自己\",\"强调用法：她本人\",\"英式与美式发音\",\"her 与 self 的构词关系\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 644,
+    "headword": "herself",
+    "meaning_zh": "pron. 她自己, 她亲自",
+    "phonetic": "/hә:'self/",
+    "pos": "",
+    "forms": []
+  }
+}

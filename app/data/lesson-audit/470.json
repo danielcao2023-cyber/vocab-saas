@@ -1,0 +1,380 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "902abc7136936a11da45663aeb02422436f5d80c7cc2d380608b2aaecab587fb",
+    "executedReviewPromptHash": "902abc7136936a11da45663aeb02422436f5d80c7cc2d380608b2aaecab587fb",
+    "reviewHash": "13cc883033da01cf03dc9809319ba2098ca1d0e997d739b3c8107c286dd0eca7",
+    "wordId": 470,
+    "inputHash": "fad151f91c55659033c6f0cc1a1e3c29915321b6fa9a18b37881b924097b8b4b",
+    "draftHash": "9262a275df8414af471f5b9f964967f9ad37ac80bbd2c66b8393c8b780f8b963",
+    "finalHash": "4f482639c9dc2e4a05f1a1428611ce03729af6cbd979976a34c7664bef220c56",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/example#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:51.170Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116005,
+        "revisionId": 38441189,
+        "revisionTimestamp": "2025-08-01T01:06:22Z",
+        "sha256": "756c5990ff84031858d358859d0ab29ce2acebfa8182eb769282f5a482089b2e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/example",
+        "section": "example etymology",
+        "supports": [
+          "French intermediary and respelling",
+          "Taken-out specimen background",
+          "Positive and cautionary examples"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T03:21:54.230150+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "4b96b2ebe1ae146ba125b63b3ebe5f72ec14f47a3c411534ecb3ec71e3ec0569",
+        "summaryAndSupportsWordCount": 74,
+        "sha256": "4b96b2ebe1ae146ba125b63b3ebe5f72ec14f47a3c411534ecb3ec71e3ec0569",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/470.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/example",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:43:17.110Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:47:19.692Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏词典明确列出的“某类事物的具体实物、样本”义。sample 的近义词说明不能代替 example 本身的义项教学；须补入该义及两个例句，并说明与检验用 sample 的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“规划不周的例子”属于说明或体现某种情况的实例，不能作为行为榜样义的第二例。须收紧本义边界，并用真正的好、坏行为示范覆盖两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/0/note",
+        "message": "“someone's 后接人物”解释错误；该位置应换成人物的所有格，如 Mia's。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "counterexample 属于论证、规则说明中的反向表达，放在榜样义下错位。应移至说明实例义；榜样义可用 a bad example 与 a good example 作语境对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "/pəl/ 是一个音节，不是两个；example 全词通常为三个音节，末尾也可使用成音节的 /l̩/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "单数可数名词需要限定词，不能概括成通常必须有 a 或 an。应保留 this example、my example 等可能，并说明 for example 是不加冠词的固定表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0",
+        "message": "将图片直接称为食物链的例子，指代关系不够清楚；改为图片展示一个食物链实例，并同步调整助记故事。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example/zh",
+        "message": "“典范的善意”中文搭配生硬；应自然表达 exemplary 所指的友善表现堪称表率。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "实际取得的维基词典英语词条没有进入来源表，正文却关联到未提供内容的 Oxford 和取得失败的 Cambridge。来源表与引用应改为实际可用材料，并继续仅使用 recommended 标签。"
+      }
+    ],
+    "coverageAssessment": "已核对说明实例与例题、代表性实物与样本、好坏行为榜样，以及 for example、make an example of 等常见功能。补丁补齐遗漏义，使每个核心义均有至少两个对应例句，并修正反向表达的义项归属。现有词源顺序与已取得的词源材料相符，可保留。法语维基材料按英语词条处理；其简略释义之外的搭配、译文和原创例句依据专业语言知识判断，未将未提供的网页内容视为已核验依据。",
+    "senseInventory": [
+      {
+        "sense": "用于说明、学习或演算的例子、实例、例题",
+        "coveredBy": [
+          "example-noun-illustration"
+        ],
+        "assessment": "两例分别覆盖概念说明和例题；保留该分义，调整图片例句的指代关系。"
+      },
+      {
+        "sense": "某类事物的具体个体、代表性实物或样本",
+        "coveredBy": [
+          "example-noun-specimen"
+        ],
+        "assessment": "初稿遗漏；补丁新增完整义项，以建筑和博物馆藏品两例覆盖，并限定与 sample、specimen 的相近范围。"
+      },
+      {
+        "sense": "可供效仿的行为榜样，包括好榜样与坏榜样",
+        "coveredBy": [
+          "example-noun-model"
+        ],
+        "assessment": "第一例正确；第二例原属一般实例，改为坏榜样，使两例均真正体现行为示范。"
+      },
+      {
+        "sense": "for example：引出例子的固定表达",
+        "coveredBy": [
+          "example-noun-illustration"
+        ],
+        "assessment": "已由固定表达和辨析例句覆盖；补充其不加冠词的说明，无须另立词性或核心义。"
+      },
+      {
+        "sense": "make an example of someone：惩戒某人以警示他人",
+        "coveredBy": [
+          "example-noun-personal-warning"
+        ],
+        "assessment": "释义、例句及语气说明正确，作为较少见固定表达保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"example 作名词，常指帮助说明或练习的“例子”；也可指值得学习或警惕的“榜样、典型”。\"",
+        "valueJson": "\"example 是可数名词，常指“例子、例题”；也可指某类事物的“代表性实物、样本”，或影响他人行为的“好／坏榜样”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"末尾是清晰的 /pəl/ 两音节感；复数 examples 末尾加 /z/。\"",
+        "valueJson": "\"全词通常有三个音节；末尾 /pəl/ 是一个音节，也可读作以 /l̩/ 成音节的 /pl̩/。复数 examples 在末尾加 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/en",
+        "expectedValueJson": "\"This picture is a good example of a food chain.\"",
+        "valueJson": "\"This picture shows an example of a food chain.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"这张图很好地说明了什么是食物链。\"",
+        "valueJson": "\"这张图展示了一个食物链的例子。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"counterexample\",\"zh\":\"反例\",\"note\":\"用于检验说法或规则：反例能表明某个说法并非总成立，与支持该说法的例子形成对照；不指坏榜样。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在“用事例说明”这一义项中，没有固定的反义词；可根据语境说 no example 或 without an example。\"",
+        "valueJson": "\"在检验某个说法或规则时，counterexample（反例）与支持该说法的例子相对；它不是所有语境下 example 的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_example\",\"cambridge_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"榜样；典型\"",
+        "valueJson": "\"榜样；行为示范\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"值得效仿的人或做法，也可指某种好或坏情况的典型。\"",
+        "valueJson": "\"可供他人效仿的人或行为，包括值得学习的好榜样和起不良示范作用的坏榜样。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"set an example 通常指树立榜样；an example of bad behaviour 等也可指负面典型。\"",
+        "valueJson": "\"set an example 通常指树立榜样；follow someone's example 指效仿某人的做法。表示好榜样或坏榜样可用 a good / bad example。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"example-ex4\",\"senseId\":\"example-noun-model\",\"en\":\"That broken sign is an example of poor planning.\",\"zh\":\"那块损坏的标牌是规划不周的一个典型例子。\",\"note\":\"此处 example 指能体现某种问题的实例。\"}",
+        "valueJson": "{\"id\":\"example-ex4\",\"senseId\":\"example-noun-model\",\"en\":\"By shouting at the referee, the coach set a bad example for the children.\",\"zh\":\"教练冲裁判大喊大叫，给孩子们做了坏榜样。\",\"note\":\"bad example 指可能被别人照着学的不良行为示范，不是论证中的反例。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2/zh",
+        "expectedValueJson": "\"好／坏榜样；正面／负面典型\"",
+        "valueJson": "\"好／坏榜样\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"someone's 后接人物，example 指其做法或选择。\"",
+        "valueJson": "\"someone's 这个位置换成人物的所有格，如 follow Mia's example（效仿米娅）；example 指这个人的做法或选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"counterexample\",\"zh\":\"反例\",\"note\":\"在论证或规则说明中，反例能表明某个说法并非总成立；不等于一般意义上所有坏榜样。\"}",
+        "valueJson": "{\"en\":\"a bad example\",\"zh\":\"坏榜样\",\"note\":\"与 a good example 相对，指给别人带来不良示范的人或行为；仍属于 example 的榜样义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在解释规则或判断说法是否成立时，counterexample 与支持该规则的例子相对；它不是所有语境下 example 的反义词。\"",
+        "valueJson": "\"谈论值得效仿的好榜样时，可用 a bad example 作语境对照；example 这个名词本身没有固定、通用的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_example\",\"cambridge_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"example-noun-specimen\",\"title\":\"代表性实物；样本\",\"meaning\":\"属于某一类的具体实物，尤其指能体现该类特点的物件。\",\"usageNote\":\"常用 an example of... 介绍建筑、艺术品或产品等具体实物。用于化验的血样、供试用的样品通常用 sample，不能只凭中文“样本”随意替换。\",\"examples\":[{\"id\":\"example-ex6\",\"senseId\":\"example-noun-specimen\",\"en\":\"This old house is a good example of local architecture.\",\"zh\":\"这座老房子是当地建筑风格的典型。\",\"note\":\"example 指房子这个实物，它体现了当地建筑的特点。\"},{\"id\":\"example-ex7\",\"senseId\":\"example-noun-specimen\",\"en\":\"The museum has several rare examples of early cameras.\",\"zh\":\"博物馆里收藏着几台罕见的早期照相机。\",\"note\":\"复数 examples 在这里指实际收藏的照相机，不是用来讲解相机的几句话。\"}],\"patterns\":[{\"en\":\"an example of + 类别或风格\",\"zh\":\"某一类或某种风格的具体实例\",\"note\":\"如 an example of local architecture，指体现当地建筑风格的具体建筑。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a fine example\",\"zh\":\"一件出色的代表性实物\",\"note\":\"常用于评价建筑、作品或藏品，强调实物本身出色且具有代表性。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sample\",\"zh\":\"样品；样本\",\"note\":\"更常指取来试用或检测的一小份或一件；example 更侧重该物件体现某类事物的特点。\"},{\"en\":\"specimen\",\"zh\":\"标本；某类事物的一个个体\",\"note\":\"常见于科学、收藏等语境，强调某一类中的具体个体。\"}],\"contrasting\":[],\"similarNote\":\"三者都可涉及具体物件，但 sample 偏试用或取样，specimen 偏标本或个体，example 偏类别或风格的代表，不能处处互换。\",\"contrastingNote\":\"这里指某类事物中的具体个体，没有固定反义词。\"},\"sourceIds\":[\"wiktionary_example\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"单数可数名词前通常要有 a 或 an；example 以元音音素 /ɪ/ 开头，所以用 an。\"",
+        "valueJson": "\"example 作单数可数名词时通常需要限定词，如 an example、this example 或 my example。表示“一个例子”时用 an，因为开头是元音音素 /ɪ/；固定表达 for example 不加冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"单数说 an example；举例用 for example，树立榜样用 set an example。\"",
+        "valueJson": "\"表示“一个例子”用 an example；举例用 for example，树立榜样用 set an example。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_example\",\"cambridge_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"她典范的善意让新同学感到受欢迎。\"",
+        "valueJson": "\"她待人友善、堪称表率，让新同学感到自己很受欢迎。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_example\"]",
+        "valueJson": "[\"wiktionary_example\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想向同学解释“食物链”时，先拿一张画着草、兔子和狐狸的图：这张图是 an example。再想起每天主动分类垃圾的同学，大家照着他做：他 sets a good example。\"",
+        "valueJson": "\"想向同学解释“食物链”时，先拿一张画着草、兔子和狐狸的图：图中这条食物链是 an example。再想起每天主动分类垃圾的同学，大家照着他做：他 sets a good example。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_example\",\"title\":\"Oxford Learner’s Dictionaries: example\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/example\",\"supports\":[\"example 的名词义项和常见搭配\",\"example 的复数形式\",\"相关派生词与固定表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_example\",\"title\":\"Wiktionnaire：example（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/example#Anglais\",\"supports\":[\"example 的例子义和具体实物、样本义\",\"英美读音与规则名词变化\",\"exemplary、exemplify 及 for example、set an example、make an example of 等关联词语\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_example\",\"title\":\"Cambridge Dictionary: example\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/example\",\"supports\":[\"example 的常见名词用法\",\"for example 与 set an example 等表达\",\"相关词语用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 470,
+    "headword": "example",
+    "meaning_zh": "n. 例子, 样本, 实例",
+    "phonetic": "/ig'zæmpl/",
+    "pos": "",
+    "forms": []
+  }
+}

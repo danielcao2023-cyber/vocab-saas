@@ -1,0 +1,373 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9db2d6806a67ca9688841b2796b69c8048d1af17e714d971f7223fc702306aae",
+    "executedReviewPromptHash": "9db2d6806a67ca9688841b2796b69c8048d1af17e714d971f7223fc702306aae",
+    "reviewHash": "cc67c9abc1150033a38967c0c396e49720436748c1f1a7647d39454d4fa67300",
+    "wordId": 1323,
+    "inputHash": "0376257205371c03f65d077838b6291e8ca6b86939cca1d47bccb0f49cd86f03",
+    "draftHash": "093b8cf5020bc346d9c93a1c5c37be52fc27671fce49046e3dd71bf675edf4f3",
+    "finalHash": "4ae5230ce5006081cdc13e37406c1b9178c735eccf49c00919159185bef57dd4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/station#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:27.742Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 29755,
+        "revisionId": 39802163,
+        "revisionTimestamp": "2026-08-14T09:23:59Z",
+        "sha256": "2d74eed172b7b7cfa381e229e07eaaf71d159b6c30854e7a31d083082ff1ee7b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/station",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:17:30.389Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:24:00.264Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "station 不以 e 结尾；stationing 是直接加 -ing，原稿的去 e 说明错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "标题和释义包含加油站，但两个例句均为交通车站，未覆盖加油站这一常用功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的专门机构或设施义（警察局、消防站、发电站等）以及岗位、指定位置义；动词派驻义不能代替这些名词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "已取回的英语词条还列有澳大利亚、新西兰牧场义及行程中停留义，应作为较少见用法补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "stop 不限于临时停靠点，也可指固定的公交站点；station、stop、terminal 的区别不能主要归结为规模。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "总结把身份、社会地位只分配给 status，与本课已列出的 station 地位义矛盾，需明确二者在该义上的交集和语域差别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "statio 阶段的 meaning 只是来源说明，没有提供字义，属于空洞占位。保留 summary 中可证实的来源事实，清空阶段数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 未提供检索材料，Cambridge 检索失败，不应作为正文证据引用。已取回的法语维基词典页面实际包含英语词条的读音、义项和动词信息，应据此调整来源及引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "现有材料列出了 stationary 的关联，但不足以核实原稿关于历史同源及具体派生方式的详细断言。应保留词族和拼写教学，收窄历史说明。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对交通车站、加油站、专门机构或设施、广播电视台、岗位或指定位置、驻地、社会地位、区域牧场、途中停留及及物动词派驻义。补丁为遗漏的常用名词义各补至少两个例句，并补足加油站例句；正式、区域及较少见用法保留在补充义中。机构和岗位等细化用法依据专业语言知识补充，不归称为未取回词典的证据。词源仅保留可核实的拉丁语 statio 来源，不扩展未经证实的字义或演变链。",
+    "senseInventory": [
+      {
+        "sense": "名词：火车站、汽车站等交通站点",
+        "coveredBy": [
+          "station-n-place"
+        ],
+        "assessment": "已有两个自然例句，覆盖充分。"
+      },
+      {
+        "sense": "名词：加油站",
+        "coveredBy": [
+          "station-n-place"
+        ],
+        "assessment": "原稿只有释义和搭配；补充美式 gas station、英式 petrol station 各一个例句。"
+      },
+      {
+        "sense": "名词：提供专门服务或开展特定工作的机构、建筑或设施",
+        "coveredBy": [
+          "station-n-facility"
+        ],
+        "assessment": "新增核心义，以警察局、消防站和发电站例句具体覆盖。"
+      },
+      {
+        "sense": "名词：广播电台、电视台",
+        "coveredBy": [
+          "station-n-broadcast"
+        ],
+        "assessment": "两个例句分别覆盖广播电台和电视台，机构与频道的比较基本准确。"
+      },
+      {
+        "sense": "名词：岗位、分配给某人的指定位置或工作区",
+        "coveredBy": [
+          "station-n-position"
+        ],
+        "assessment": "新增核心义，分别用警卫岗位和厨师工作区举例。"
+      },
+      {
+        "sense": "名词：驻地、军事基地",
+        "coveredBy": [
+          "station-n-facility"
+        ],
+        "assessment": "通过 naval station 搭配及例句覆盖，与动词驻扎义分开处理。"
+      },
+      {
+        "sense": "名词：社会身份、地位",
+        "coveredBy": [
+          "station-n-status"
+        ],
+        "assessment": "作为正式用法放在补充义中适当；修正辨析，避免暗示只有 status 能表示社会地位。"
+      },
+      {
+        "sense": "名词：澳大利亚、新西兰的大型牧场或农场",
+        "coveredBy": [
+          "station-n-ranch"
+        ],
+        "assessment": "新增区域性补充义，标明地域并给出 sheep station 例句。"
+      },
+      {
+        "sense": "名词：行程中的一站、停留点或停留",
+        "coveredBy": [
+          "station-n-halt"
+        ],
+        "assessment": "新增较少见补充义，以朝圣路线的停留点举例，并区别日常 stop。"
+      },
+      {
+        "sense": "及物动词：安置、配置、派驻、使驻扎",
+        "coveredBy": [
+          "station-v-place"
+        ],
+        "assessment": "已有主动和被动两个自然例句；搭配及与 place、post、withdraw 的语境限定准确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"动词以不发音的 e 结尾，去 e 再加 -ing。\"",
+        "valueJson": "\"在 station 后直接加 -ing，拼成 stationing；不去掉字母，也不双写 n。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-place-ex3\",\"senseId\":\"station-n-place\",\"en\":\"We stopped at a gas station to fill up the car.\",\"zh\":\"我们在一家加油站停车加油。\",\"note\":\"gas station 是美式英语中常用的‘加油站’。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-place-ex4\",\"senseId\":\"station-n-place\",\"en\":\"The nearest petrol station is five minutes away by car.\",\"zh\":\"最近的加油站开车五分钟就到。\",\"note\":\"petrol station 是英式英语中常用的‘加油站’。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"stop 可指公交车临时停靠的站点；station 常指较大的车站或专门服务点。\"",
+        "valueJson": "\"stop 可指公交线路上的固定停靠点，不一定有站房；bus station 通常有候车设施，可供车辆始发、终到或换乘。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"可按地点规模和功能选择：普通停靠点用 stop，较大的交通设施常用 station。\"",
+        "valueJson": "\"在交通场景中，stop 侧重线路上的停靠点，station 侧重车站设施，terminal 侧重线路端点或旅客集散设施；这些词不能仅按大小区分，也不总能互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-facility\",\"title\":\"专门机构或设施：站、局、基地\",\"meaning\":\"为特定服务或工作而设的机构、建筑或设施；中文随用途译为警察局、消防站、发电站、基地等。\",\"usageNote\":\"常用修饰语说明用途，如 police station、fire station、power station、naval station；station 不是所有机构或所有‘局’的通用译法。\",\"examples\":[{\"id\":\"station-n-facility-ex1\",\"senseId\":\"station-n-facility\",\"en\":\"We took the lost wallet to the police station.\",\"zh\":\"我们把捡到的钱包送到了警察局。\",\"note\":\"police station 指警察局或派出所。\"},{\"id\":\"station-n-facility-ex2\",\"senseId\":\"station-n-facility\",\"en\":\"There is a fire station next to the park.\",\"zh\":\"公园旁边有一座消防站。\",\"note\":\"fire station 是消防人员和车辆驻守的设施。\"},{\"id\":\"station-n-facility-ex3\",\"senseId\":\"station-n-facility\",\"en\":\"My brother works at a power station outside the town.\",\"zh\":\"我哥哥在镇外的一座发电站工作。\",\"note\":\"power station 指发电站，不是交通车站。\"},{\"id\":\"station-n-facility-ex4\",\"senseId\":\"station-n-facility\",\"en\":\"My aunt works at a naval station on the coast.\",\"zh\":\"我姑姑在沿海的一处海军基地工作。\",\"note\":\"naval station 中的 station 是名词，指海军驻地或基地。\"}],\"patterns\":[{\"en\":\"at a police/fire station\",\"zh\":\"在警察局／消防站\",\"note\":\"表示人在该机构或设施所在的地点。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"police station\",\"zh\":\"警察局；派出所\",\"note\":\"具体译法取决于当地警务机构设置。\",\"kind\":\"common-collocation\"},{\"en\":\"fire station\",\"zh\":\"消防站\",\"note\":\"消防人员和消防车辆的驻地。\",\"kind\":\"common-collocation\"},{\"en\":\"power station\",\"zh\":\"发电站\",\"note\":\"常见于英式英语；美式英语也常说 power plant。\",\"kind\":\"common-collocation\"},{\"en\":\"naval station\",\"zh\":\"海军基地；海军驻地\",\"note\":\"naval 说明该设施用于海军事务。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"facility\",\"zh\":\"设施；场所\",\"note\":\"是范围更广的概括词，可概括某些 station，但不能直接替换 police station 等固定名称。\"},{\"en\":\"power plant\",\"zh\":\"发电厂；发电站\",\"note\":\"只在发电设施这一搭配中与 power station 接近，不能替换其他 station。\"},{\"en\":\"base\",\"zh\":\"基地\",\"note\":\"在军事驻地语境中与 station 有交集，如 naval base；不是各种 station 的通用同义词。\"}],\"contrasting\":[],\"similarNote\":\"这些相近表达分别对应设施总称、发电设施或军事驻地，要按具体用途选择。\",\"contrastingNote\":\"这类机构和设施名称没有通用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-position\",\"title\":\"岗位；指定位置或工作区\",\"meaning\":\"分配给某人执行工作、值守或其他任务的位置，也可指其负责的工作区。\",\"usageNote\":\"常用于工作人员、警卫等有明确分工的位置；一般物体的位置通常用 position 或 location。\",\"examples\":[{\"id\":\"station-n-position-ex1\",\"senseId\":\"station-n-position\",\"en\":\"The guard left his station by the gate to help a visitor.\",\"zh\":\"警卫离开了门边的岗位，去帮助一位访客。\",\"note\":\"station 指警卫被安排值守的岗位。\"},{\"id\":\"station-n-position-ex2\",\"senseId\":\"station-n-position\",\"en\":\"The chef cleaned her station before leaving the kitchen.\",\"zh\":\"这位厨师离开厨房前清理了自己的工作区。\",\"note\":\"厨房中的 station 可指分配给某位厨师的工位或工作区。\"}],\"patterns\":[{\"en\":\"at one's station\",\"zh\":\"在自己的岗位上\",\"note\":\"one's 随主语改为 my、your、his、her 等。\",\"kind\":\"common-collocation\"},{\"en\":\"return to one's station\",\"zh\":\"回到自己的岗位\",\"note\":\"指返回分配好的工作或值守位置。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"take up one's station\",\"zh\":\"到自己的岗位就位\",\"note\":\"常用于开始值守或执行任务。\",\"kind\":\"common-collocation\"},{\"en\":\"an assigned station\",\"zh\":\"指定的岗位或位置\",\"note\":\"assigned 强调该位置由人分配。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"post\",\"zh\":\"岗位；哨位\",\"note\":\"与 station 在警卫、值守语境中接近，如 leave one's post。\"},{\"en\":\"workstation\",\"zh\":\"工位；工作站\",\"note\":\"在个人工作区的语境中有交集；也可指专用计算机，不能替换所有岗位义的 station。\"}],\"contrasting\":[],\"similarNote\":\"警卫值守的位置可用 post；个人工作区有时可用 workstation，须留意具体工作场景。\",\"contrastingNote\":\"岗位这一名词义没有通用的直接反义词；leave one's station 表示离开岗位，是相关动作表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-ranch\",\"title\":\"（澳大利亚、新西兰）大型牧场；农场\",\"meaning\":\"用于养羊、养牛等的大型牧场或农场。\",\"note\":\"这是区域用法，常见于 sheep station、cattle station；不能在所有英语地区都把普通农场称为 station。\",\"example\":{\"id\":\"station-n-ranch-ex1\",\"senseId\":\"station-n-ranch\",\"en\":\"She spent the summer working on a sheep station in Australia.\",\"zh\":\"她整个夏天都在澳大利亚的一座大型养羊牧场工作。\",\"note\":\"on a sheep station 表示在养羊牧场工作或生活。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"station-n-halt\",\"title\":\"（较少见）行程中的一站；停留点\",\"meaning\":\"行程中停下来的地点或一站。\",\"note\":\"可见于朝圣等正式或宗教语境；日常说途中停留或停留点通常用 stop。\",\"example\":{\"id\":\"station-n-halt-ex1\",\"senseId\":\"station-n-halt\",\"en\":\"The pilgrims stopped to pray at each station along the path.\",\"zh\":\"朝圣者在沿途的每个停留点驻足祈祷。\",\"note\":\"这里的 station 指路线上的停留点，不是交通车站。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"三个词看起来或意思有联系，但指向不同：车站或派驻地点、公交停靠点、身份地位。\"",
+        "valueJson": "\"station 与 stop 在交通场景中有区别；station 与 status 在‘社会地位’这一义上有交集，但语域和搭配不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"常指车站、服务站或广播电视台；作动词时表示派驻、安置。\"",
+        "valueJson": "\"常指车站、服务站或广播电视台，也可指岗位；较正式时还能表示社会地位，如 station in life。作动词时表示派驻、安置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"指身份、地位或状态；拼写和 station 不同。\"",
+        "valueJson": "\"可指身份、社会地位，也可指某事的状态；station 的地位义较正式，不能用来泛指一般的‘状态’。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"等车或说服务地点，用 station；说公交停靠点常用 stop；说身份或社会地位，用 status。\"",
+        "valueJson": "\"交通场景中，车站常用 station，公交停靠点常用 stop。社会地位通常用 status；较正式的 station in life 也表示社会地位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"statio\",\"meaning\":\"英语 station 的历史来源。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"与 station 同源的形容词，但不是 station 加常见英语后缀构成的透明派生词。\"",
+        "valueJson": "\"与 station 在拼写和‘停留在一处’的意义上有关联；作为完整的形容词学习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"station、stationary 有历史同源关系；不要把 stationery（文具）当作 station 的派生词。\"",
+        "valueJson": "\"可以把 station 与 stationary 联系记忆；stationary 是‘静止的’，stationery 是‘文具’，注意词尾分别为 -ary 和 -ery。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: station\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/station\",\"supports\":[\"station 的名词和动词用法\",\"stationary 的词族关系\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: station\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/station\",\"supports\":[\"station 的常见名词义和动词搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire: station（英文词条的词源部分）\",\"url\":\"https://fr.wiktionary.org/wiki/station#Anglais\",\"supports\":[\"station 源自拉丁语 statio\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire: station（英语词条；法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/station#Anglais\",\"supports\":[\"station 的读音\",\"车站、加油站、广播电视台和社会地位义\",\"澳大利亚、新西兰牧场义及行程中停留义\",\"动词 station 的安置、派驻义\",\"相关词列表中的 stationary\",\"station 的拉丁语来源 statio\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1323,
+    "headword": "station",
+    "meaning_zh": "n. 车站, 站, 局, 驻地, 位置, 身分, 地位\nvt. 安置, 配置, 驻扎",
+    "phonetic": "/'steiʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

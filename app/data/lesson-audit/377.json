@@ -1,0 +1,208 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "60eddad13fb1cf3645fd322355628f6feae506a56aa8ef33e5a4ffbf593da0d6",
+    "executedReviewPromptHash": "60eddad13fb1cf3645fd322355628f6feae506a56aa8ef33e5a4ffbf593da0d6",
+    "reviewHash": "212392f60f72c81e57ef20e8f1e8772e06ce436d56976aed2adae377f2946db2",
+    "wordId": 377,
+    "inputHash": "a683dca7d0ab972c4e4d4dddd0e47cc23037d21749f14ccb80fdad1ec63b3e29",
+    "draftHash": "9834c39c88a0707970087ad980508c9aca7d94184d8a9104e4783dc66babc6a4",
+    "finalHash": "ed3b1637824f4bf459d50f9eb520275b9e172a4a881ee6a0c2c47621d11a7676",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/dictionary#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:33.239Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10215,
+        "revisionId": 38441180,
+        "revisionTimestamp": "2025-08-01T01:06:14Z",
+        "sha256": "ea6a9d57742cc0e6e59fe2a466741dba8ecef1aff89a940a0966e0e3408c8f61",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/dictionary",
+        "section": "dictionary etymology",
+        "supports": [
+          "Medieval word collection",
+          "Dictio and dicere",
+          "Probable book-of-words shortening"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "40e27bb9dcb21e08aefc67715a54aacf589074b69c65d8a112d9c36b01acfdc2",
+        "summaryAndSupportsWordCount": 63,
+        "sha256": "40e27bb9dcb21e08aefc67715a54aacf589074b69c65d8a112d9c36b01acfdc2",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/377.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/dictionary",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:35:05.291Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:43:24.075Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "不能把是否读出 r 作为这里的英美差异；r 后接元音，所列英美读音都读出 r。差异主要涉及中间元音及其省略。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/0",
+        "message": "wordbook 也可直接表示词典，不宜按读音、释义是否完整来概括它与 dictionary 的区别。应说明意义重叠及其较少使用的特点。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "正文引用了未取得正文的 Oxford，以及明确获取失败的 Cambridge。本次审校不能以这些引用作为材料依据；应改引实际取得的英语词条，并保留 recommended 标签。"
+      }
+    ],
+    "coverageAssessment": "实际取得的释义支持名词“字典；词典”，s1 已用两个自然例句覆盖初中核心义；纸质、在线和英汉词典无需拆成独立义项。复数拼写、例句翻译及 senseId 正确，具体物名无需强造反义词。现有词源说明与两份已取得的词源材料相符，单阶段没有误串并列词根。专业扩展义未在现有释义材料中展开，因此不声称已穷尽所有技术用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：字典；词典，包括纸质、电子及双语词典",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义覆盖充分；两例分别体现查拼写和使用英汉词典，搭配及可数用法正确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音略有差异；美式常把中间的 r 音读出来。\"",
+        "valueJson": "\"英美都重读首音节，也都读出 r；n 与 r 之间的元音在英式中可弱读或省略，美式通常读得更清楚。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_dictionary\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"wordbook\",\"zh\":\"词汇书；词汇表\",\"note\":\"强调词语汇集，通常不如 dictionary 提供完整的读音和释义信息。\"}",
+        "valueJson": "{\"en\":\"wordbook\",\"zh\":\"词汇书；词典\",\"note\":\"较少用，可以指词汇汇编，也可与 dictionary 同义；内容详略取决于具体书，不能仅凭名称判断。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_dictionary\",\"cambridge_dictionary\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_dictionary\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_dictionary\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/sources/2/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"英语名词的基本释义及规则复数信息\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_dictionary\",\"title\":\"Cambridge Dictionary: dictionary\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/dictionary\",\"supports\":[\"常见含义和词典用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_dictionary\",\"title\":\"Oxford Learner’s Dictionaries: dictionary\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/dictionary\",\"supports\":[\"词性、常见含义与可数用法\",\"词形和读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 377,
+    "headword": "dictionary",
+    "meaning_zh": "n. 字典, 词典",
+    "phonetic": "/'dikʃәnәri/",
+    "pos": "",
+    "forms": []
+  }
+}

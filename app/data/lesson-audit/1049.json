@@ -1,0 +1,426 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e0d752cf04c24c7573159bd7e9f13c851a78cf959c5c2c7c0b8dd70c91dc5a81",
+    "executedReviewPromptHash": "e0d752cf04c24c7573159bd7e9f13c851a78cf959c5c2c7c0b8dd70c91dc5a81",
+    "reviewHash": "c3d4525a7a045bf758050cc03cf54fd9f538a19e9d0d480ffeb8adae65444b6e",
+    "wordId": 1049,
+    "inputHash": "f132d8ebbc1b39973e5d9b670e3f009a982ebed2de4e0f896792345bd8686068",
+    "draftHash": "8b7a91e01916f6f9bf26eefdf432fcb9d66de84e2e1be45e23be33a058d78341",
+    "finalHash": "c9e3d40ec0ab6f89751303230305265672921d422b378fdefa7930a9ea37bb04",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/polite#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:21.275Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120690,
+        "revisionId": 38790409,
+        "revisionTimestamp": "2025-09-30T07:36:23Z",
+        "sha256": "4a4874dcf4754b4e5995d6751b9d569b14534479c206621a5505d11d733ff7cd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/polite",
+        "section": "polite etymology",
+        "supports": [
+          "Polished meaning and later courteous behaviour"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:10:43.420051+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "287a14a4e9531fc3bd7c1e67a2ea5d805169baef13f0d3163360b0df059a9636",
+        "summaryAndSupportsWordCount": 50,
+        "sha256": "287a14a4e9531fc3bd7c1e67a2ea5d805169baef13f0d3163360b0df059a9636",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1049.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/polite",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T05:23:43.414Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:35:19.903Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote、/wordFamily/1/spellingNote、/wordFamilyNote",
+        "message": "politely、politeness 的单词拼写正确，但说明错误：两者都保留 polite 末尾的 e，再分别加 -ly、-ness。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的例句对象",
+        "message": "原稿全部11个例句对象均缺少结构要求的 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "polite 不必表示表达委婉；本组还遗漏了常见的“出于礼节、未必真心”用法。“没有同意”不足以展示这一含义，需补释义、例句及限定语境的对照表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "尚未交代 polite society 中较正式的“文雅、有教养、上流社交圈的”用法，宜列入次要义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns",
+        "message": "宜补常用的 It is polite to do something，明确评价行为的 to do 与 be polite to someone 中接人的 to 不同。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0/zh",
+        "message": "原文只请求更安静的房间，未明确已经入住并要求换房；译文中的“换”增加了情境。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/example",
+        "message": "原句语法正确，但只展示 politics，没有呈现其关联的 polite-1 义；改为同时包含两词的对照句更准确。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources 及相关 sourceIds",
+        "message": "本次材料没有 Oxford 正文，Cambridge 明确获取失败，现有来源关联无法据此复核。改用已提供的 Wiktionnaire 英语词条；仅依据专业语言知识的扩展内容不挂接未经取得的页面。"
+      }
+    ],
+    "coverageAssessment": "已核对英语形容词的基本礼貌义、常见的礼节性或客套用法，以及 polite society 中较正式的文雅、上流社交用法。保留原两组教学场景，不机械拆成三个核心义；补齐客套用法的两例，并把正式用法列为次要义。读音、比较形式及原词源说明可保留。可用词典正文仅直接支持基本礼貌义、读音及相关词 politeness；扩展用法和构词判断依据专业语言知识，不冒称网页核实。",
+    "senseInventory": [
+      {
+        "sense": "形容词：有礼貌的、客气得体的，形容人及其言行",
+        "coveredBy": [
+          "polite-1",
+          "polite-2"
+        ],
+        "assessment": "原两组是同一基本义的不同使用场景，均已有两例；保留并补齐说明字段。"
+      },
+      {
+        "sense": "形容词：出于礼节的、客套的，未必出于真心",
+        "coveredBy": [
+          "polite-2"
+        ],
+        "assessment": "原稿覆盖不足；在原组补充释义、两例、搭配及语境对照，不另增核心义组。"
+      },
+      {
+        "sense": "形容词，较正式：文雅的、有教养的；上流社交圈的",
+        "coveredBy": [
+          "polite-3"
+        ],
+        "assessment": "补入 lessCommonSenses，以 polite society 展示；不作为初中核心频用义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"be polite to 后接人，说明对谁有礼貌。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"was polite 描述米娅的举止；向司机道谢是具体表现。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"make a polite request for… 表示客气地请求……；a quieter room 是更安静的房间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a polite reply 说明答复客气；but 后说明他并没有同意。礼貌和赞同是两回事。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"polite 是形容词，在 is 后描述老师的待人态度。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"politely 是副词，修饰 asked，说明请求帮助的方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"polite 修饰 boy；替别人扶着门、方便通行是有礼貌的举动。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"politics 是名词，表示讨论的话题；polite 是形容词，描述讨论时的待人态度。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"politely 修饰 speak；speak politely to someone 表示礼貌地同某人说话。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"politeness 是名词；her politeness 指她表现出的礼貌。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"It is impolite to do something 用来评价某个行为不礼貌；这里评价的是打断别人说话。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"去掉末尾不发音的 e，再加 -ly。\"",
+        "valueJson": "\"保留 polite 末尾的 e，直接加 -ly：polite → politely。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"去掉末尾不发音的 e，再加 -ness。\"",
+        "valueJson": "\"保留 polite 末尾的 e，直接加 -ness：polite → politeness。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"politely 和 politeness 是常见派生词；impolite 是加前缀构成的反义词。注意 politely 和 politeness 都去掉 polite 末尾的 e 再加后缀。\"",
+        "valueJson": "\"politely 和 politeness 是常见派生词，分别由 polite 加 -ly、-ness 构成，两者都保留末尾的 e；impolite 则在完整的 polite 前加否定前缀 im-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"她客气地请求换一间安静些的房间。\"",
+        "valueJson": "\"她客气地请求安排一间更安静的房间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/en",
+        "expectedValueJson": "\"We talked about politics in history class.\"",
+        "valueJson": "\"We can discuss politics and still be polite.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/zh",
+        "expectedValueJson": "\"我们在历史课上谈到了政治。\"",
+        "valueJson": "\"我们讨论政治时也可以保持礼貌。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"措辞客气、委婉的\"",
+        "valueJson": "\"言语客气；礼节性的、客套的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用礼貌、得体的方式提出请求、表达意见或拒绝。\"",
+        "valueJson": "\"形容请求、答复等措辞客气得体；也可形容为了遵守社交礼节而表现出的态度或反应，未必出于真心。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"polite 可修饰 request、question、reply 等名词；礼貌不一定表示赞同。\"",
+        "valueJson": "\"polite 可修饰 request、question、reply 等，强调客气得体，不要求表达一定委婉，也不表示赞同。修饰 interest、laugh 等时，还可强调反应出于礼貌，未必反映真实兴趣或感受。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"polite-2-ex3\",\"senseId\":\"polite-2\",\"en\":\"He showed polite interest in my holiday photos, but he was clearly bored.\",\"zh\":\"他出于礼貌对我的度假照片表现出兴趣，但显然觉得很无聊。\",\"note\":\"polite interest 在这里指礼节性地表现出兴趣；后半句明确说明他其实感到无聊。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"polite-2-ex4\",\"senseId\":\"polite-2\",\"en\":\"She gave a polite laugh at his joke, although she did not find it funny.\",\"zh\":\"听了他的笑话，她出于礼貌笑了笑，尽管她并不觉得好笑。\",\"note\":\"a polite laugh 在这里是应酬性的笑；although 引出的内容说明她没有真的觉得好笑。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"polite interest\",\"zh\":\"出于礼貌表现出的兴趣\",\"note\":\"可强调礼节性的关注，不保证真有兴趣；实际感受仍要结合上下文判断。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"修饰请求或答复时，polite 常用；courteous 较正式，respectful 突出尊重。\"",
+        "valueJson": "\"形容请求或答复得体时，courteous（较正式）和 respectful（侧重尊重）意思接近；它们本身不突出“只是出于礼貌、未必真心”的含义。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"genuine interest\",\"zh\":\"真切的兴趣\",\"note\":\"只在 polite interest 强调“仅出于礼节的兴趣”时构成语境对照；不能把 genuine 当作 polite 的通用反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在措辞语境中，impolite 是直接对照；blunt 只表示表达方式生硬，不必然等于粗鲁。\"",
+        "valueJson": "\"谈措辞时，impolite 是直接对照；blunt 强调表达直接、生硬，并非必然无礼。polite interest 若强调只是出于礼节，可与 genuine interest（真切的兴趣）对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"polite 常形容一个人说话、做事有礼貌，也可形容措辞或行为客气得体。\"",
+        "valueJson": "\"polite 表示待人有礼貌、言语客气得体；也可形容出于礼节的反应，未必表示真实兴趣或由衷感受。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It is polite to do something\",\"zh\":\"做某事是有礼貌的\",\"note\":\"用来评价一个行为，to 后接动词原形；如 It is polite to knock before entering.（进去前先敲门是有礼貌的。）区别于 be polite to someone 中 to 后接人。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"polite-3\",\"title\":\"文雅的、有教养的；上流社交圈的\",\"meaning\":\"较正式地描述讲究教养、文雅礼仪的社会阶层或社交圈。\",\"note\":\"常见于 polite society 等表达，带有传统、较正式的语气。\",\"example\":{\"id\":\"polite-3-ex1\",\"senseId\":\"polite-3\",\"en\":\"He worried that his table manners would embarrass him in polite society.\",\"zh\":\"他担心自己的餐桌礼仪会让他在上流社交圈里出丑。\",\"note\":\"这里的 polite society 指讲究教养、礼仪的上流社交圈，不是单指一群待人客气的人。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-polite\",\"title\":\"Oxford Learner’s Dictionaries: polite\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/polite\",\"supports\":[\"形容词常用义\",\"常见搭配\",\"读音与派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-polite\",\"title\":\"Wiktionnaire：polite（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/polite#Anglais\",\"supports\":[\"英语形容词 polite 的基本礼貌义\",\"英语读音 /pəˈlaɪt/\",\"相关词 politeness\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-polite\",\"title\":\"Cambridge Dictionary: polite\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/polite\",\"supports\":[\"形容词释义与用法\",\"礼貌请求和言语语境\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[\"wiktionary-polite\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[\"wiktionary-polite\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-polite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[\"wiktionary-polite\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-polite\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1049,
+    "headword": "polite",
+    "meaning_zh": "adj. 有礼貌的, 文雅的, 客气的, 有教养的",
+    "phonetic": "/pә'lait/",
+    "pos": "",
+    "forms": []
+  }
+}

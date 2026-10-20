@@ -160,6 +160,33 @@ describe('pronunciation provenance', () => {
     expect(fetchFn).toHaveBeenCalledTimes(1);
   });
 
+  it('recognizes explicit possessive recorder attribution without trusting an assumed uploader', () => {
+    const page = { pageid: 42, title: 'File:En-us-Chinese.ogg', categories: [{ title: 'Category:PD-self' }], videoinfo: [{
+      descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-Chinese.ogg',
+      extmetadata: { Artist: { value: 'No machine-readable author provided. Muke assumed.' },
+        LicenseShortName: { value: 'Public domain' },
+        ImageDescription: { value: '<a href="/wiki/User:Muke">Muke Tever</a>\'s pronunciation of Chinese in general American English.' } },
+    }] };
+    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever', license: 'Public domain (PD-self)' });
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word <b>surprise</b> by <a>Muke Tever</a>';
+    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever' });
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation uploaded by <a>Someone</a>';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word Chinese uploaded by <a>Someone</a>';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
+  it('recognizes a named human stressed-form recording described as pronounced', () => {
+    const title = 'File:En-US should (stressed).ogg';
+    const page = { pageid: 45, title, videoinfo: [{ descriptionurl: `https://commons.wikimedia.org/wiki/${title}`,
+      extmetadata: { Artist: { value: 'Daviddwd' }, LicenseShortName: { value: 'CC BY-SA 4.0' },
+        LicenseUrl: { value: 'https://creativecommons.org/licenses/by-sa/4.0' },
+        ImageDescription: { value: '"should" pronounced with stress in General American English' } } }] };
+    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Daviddwd' });
+    page.videoinfo[0].extmetadata.ImageDescription.value = '"should" pronounced by synthetic text-to-speech';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
   it('preserves verified accent and sense evidence for alternate filenames', async () => {
     const other = { ...record, title: 'File:LL-Q1860 (eng)-Speaker-live.wav', pageid: 1,
       sourceUrl: 'https://commons.wikimedia.org/wiki/File:LL-Q1860_(eng)-Speaker-live.wav' };

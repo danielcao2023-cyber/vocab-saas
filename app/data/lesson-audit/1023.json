@@ -1,0 +1,247 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "061a19d413a668591fb94f232813771e1314a92dd32507ea7e916b57ac62918e",
+    "executedReviewPromptHash": "061a19d413a668591fb94f232813771e1314a92dd32507ea7e916b57ac62918e",
+    "reviewHash": "647e186f1bfc31cb10f706e0d0b79e0ce71e2e5d669fd0165ccfa5d0796e350b",
+    "wordId": 1023,
+    "inputHash": "88cb1332c7a421f0a4ab39d9150451cd481dfb56488ba3d270715f4de5422dca",
+    "draftHash": "19049233f856dd6d8f11b70692817acd5662d90270ebbd8c2179af0836d4d04e",
+    "finalHash": "1b4e07782577d101120d94e2abbfd83367f37a440d91666a06f1884c106fcd97",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pill#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.988Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119138,
+        "revisionId": 34228544,
+        "revisionTimestamp": "2024-04-22T17:54:32Z",
+        "sha256": "f931c95c84f594bf9acd62c314a9c9cb9bc77e3e59cf4c5c5a15dca8d4266864",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/pill",
+        "section": "pill etymology",
+        "supports": [
+          "Latin small-ball meaning; alternate intermediate routes and homograph boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:09:33.683553+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "f9e97423b61ec8c05a3148061729355db7604ff60d7ae9cd47fb3a7cf8d65648",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "f9e97423b61ec8c05a3148061729355db7604ff60d7ae9cd47fb3a7cf8d65648",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1023.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pill",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T04:42:33.393Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:51:20.740Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/confusions/1/sourceIds；/sources",
+        "message": "Cambridge 页面未成功取得，不宜作为这些内容的引用依据。药物义及读音可改引已取得的法语维基词典英语词条；medicine、peel 的辨析可依据专业语言知识保留，但不虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/summary",
+        "message": "pill 与 peel 并非只差一个元音字母：逐字符分别是 p-i-l-l 和 p-e-e-l。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "tablet 与 pill 不能简单按正式程度区分；英式英语口语中 tablet 也很常见。应突出片剂含义及两词日常用法的重叠。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "“（中间形式）”不是确证词形，不应作为顺序箭头中的历史阶段；不同中介路径应在摘要说明。材料明确支持 pila（球）到指小形式 pilula（小球；药丸）的关系，可补入这一真实阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "不宜仅因 pill box 是复合词就完全排除词族扩展。材料已列出这个透明、实用的词，可补充其构词及拼写，无需杜撰派生词。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的药丸／药片和口服避孕药两个现行名词义，均有两个自然原创英中例句，复数、服药搭配及 be on the pill 用法也已覆盖。现有语境对照无需强改成反义词。词源中的废弃除毛动词仅用于区分同形词，不列为初中核心义；本次不据有限摘录宣称穷尽 pill 的所有用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：药丸；药片",
+        "coveredBy": [
+          "pill-n-1"
+        ],
+        "assessment": "覆盖充分。药丸与药片在此属于同一日常义，无须按外形强拆；两例的语法、数量和翻译正确。"
+      },
+      {
+        "sense": "名词：口服避孕药，通常作 the pill",
+        "coveredBy": [
+          "pill-n-2"
+        ],
+        "assessment": "覆盖充分。两个例句自然，the pill 与 be on the pill 的特定用法已说明，未与普通药片混淆。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"也指压制成片的药；常用于较正式的说明，口语中 pill 更常见。\"",
+        "valueJson": "\"通常指压制成型的片剂；日常用法与 pill 有重叠，英式英语口语中也很常见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"两个词只差一个元音字母，读音和意思都不同。\"",
+        "valueJson": "\"pill 拼作 p-i-l-l，peel 拼作 p-e-e-l；元音分别为 /ɪ/ 和 /iː/，词义也不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"药片义的 pill 经由荷兰语或低地德语形式以及法语形式传入英语，最终与拉丁语 pilula（“小球”）有关；这一词源解释了从小球到药丸、药片的联系。\"",
+        "valueJson": "\"药物名词 pill 最终可追溯到拉丁语 pilula（“小球；药丸”）；pilula 是 pila（“球”）的指小形式。传入英语的中间路径有荷兰语或低地德语、法语等不同解释。\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/stages/0",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"language\":\"拉丁语\",\"form\":\"pila\",\"meaning\":\"球\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/2",
+        "expectedValueJson": "{\"language\":\"荷兰语或低地德语及法语形式\",\"form\":\"（中间形式）\",\"meaning\":\"经由这些语言形式传入英语；具体路线可能不同\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"pill box\",\"partOfSpeech\":\"noun\",\"meaning\":\"药盒\",\"formation\":\"pill（药片）+ box（盒子）组成的复合名词，指装药片的小盒子。\",\"spellingNote\":\"pill box 可分写，药盒义也可连写为 pillbox；两种写法都保留 pill 末尾的两个 l。\",\"example\":{\"id\":\"pill-family-1\",\"senseId\":\"pill-n-1\",\"en\":\"I keep my pills in a small pill box.\",\"zh\":\"我把药片放在一个小药盒里。\",\"note\":\"pills 是药片，pill box 是装药片的容器。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"常见的 pill（药片）没有适合初中阶段学习的常用派生词；pillbox 等是复合词或其他词义，不作为本词族条目。\"",
+        "valueJson": "\"pill（药片）的常用派生词不多，可学习 pill box（药盒）这样的复合名词；它由两个完整词组成，属于现代构词，不是 pill 的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"pill 可指口服避孕药\",\"pill 的相关表达\"]",
+        "valueJson": "[\"pill 的药丸、药片义与规则名词形式\",\"the pill 的避孕药义及 be on the pill 表达\",\"/pɪl/ 读音及英美发音条目\",\"pill box（药盒）等复合词\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: pill\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pill\",\"supports\":[\"pill 的药片义及常见搭配\",\"名词用法和英式、美式读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1023,
+    "headword": "pill",
+    "meaning_zh": "n. 药丸；药片",
+    "phonetic": "/pil/",
+    "pos": "",
+    "forms": []
+  }
+}

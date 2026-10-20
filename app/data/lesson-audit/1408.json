@@ -1,0 +1,242 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b53331fa85f50780ab1e94d4bc34bbb1f21ff1e90524b8e14009c68f1065110f",
+    "executedReviewPromptHash": "b53331fa85f50780ab1e94d4bc34bbb1f21ff1e90524b8e14009c68f1065110f",
+    "reviewHash": "f8322dbe2dd2a6a876853c992772545aaddd4a00509b38f8c62fb05cbc80485e",
+    "wordId": 1408,
+    "inputHash": "a4947c2e9f1c4db9575bbe5a1907585c183ea8687605347c3f5050b99694a190",
+    "draftHash": "2f782134ffddff985c06194d78143f64b195acdb419fbc5f249e18c919d020a1",
+    "finalHash": "6342f2a795f6d12272c7805441556bc1646072c4c990bdaaaeddc11bc7f1c719",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/these#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.429Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 206202,
+        "revisionId": 39804219,
+        "revisionTimestamp": "2026-08-14T23:41:29Z",
+        "sha256": "cc246fa88eb248933f8f8dc129018a76afcc6762c1217767c8caf4be04f7adca",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/these",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:54:35.468Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:05:54.272Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未成功获取，不能作为本次释义和读音的实际依据。应改引已取得的法语维基词典英语词条；其中的法语是编写语言，词条语言仍是英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote 与 /senses/1/patterns/1",
+        "message": "不能把 these of + 所有格限定词 + 名词教成通用句型。these of my drawings 在这里很不自然，说明“可以在后面加 of 短语”也过于宽泛。应删除该模板，保留自然的 one of these。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions 与 /confusions/0/items/0/note",
+        "message": "关于 this 只能指一个对象、只能接单数名词的表述不完整。this 还可以限定不可数名词，如 this water；单复数对照应明确限于可数名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "标题明确包含“这些人／东西”，但现有例句只指物。需补充介绍多个人的自然例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/note",
+        "message": "“不能再重复用代词 they”缺少语体和结构限制；带停顿的话题结构可以出现 These keys, they ...。此处宜直接说明普通陈述句的主语结构。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples",
+        "message": "these days 已列入常用表达，补一个完整例句可明确它表示当前时期，而非空间距离。"
+      }
+    ],
+    "coverageAssessment": "已核对全部词典定义，核心为修饰复数名词的限定词功能和独立指代复数对象的代词功能，无须另造第三义。现有例句自然，主语、宾语用法均已覆盖；补充人物介绍和当前时期的例句，并修正 of 模板、this 的搭配范围及来源引用。已取得的词典正文只支持现代单复数关系，未提供可建立历史先后链的词源事实，因此保留空 stages，不补造历史阶段。",
+    "senseInventory": [
+      {
+        "sense": "指示限定词：这些；修饰复数名词，指近处或语境中当前的一组对象",
+        "coveredBy": [
+          "these-det"
+        ],
+        "assessment": "已覆盖。词典的“指示形容词”功能在本课按现代语法归为限定词，分类合理；补充 these days 的时间用法例句。"
+      },
+      {
+        "sense": "指示代词：这些人／东西；独立指代多个对象",
+        "coveredBy": [
+          "these-pron"
+        ],
+        "assessment": "已覆盖独立作主语和宾语的功能；补充指人的例句，并删除不适合推广的 these of 模板。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: these\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/these\",\"supports\":[\"these 的读音及其与 this 的复数关系\",\"these 作限定词和代词的常见用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire-en\",\"title\":\"Wiktionnaire: these（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/these#Anglais\",\"supports\":[\"these 的英语读音\",\"these 与 this 的现代单复数关系\",\"these 修饰复数名词及独立指代复数对象的基本功能\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionnaire-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionnaire-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionnaire-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionnaire-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionnaire-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"these 可独立作主语或宾语；若要说明具体是哪一类，可以在后面加 of 短语。\"",
+        "valueJson": "\"these 可独立作主语或宾语，具体指哪些人或物通常由现场或上下文明确。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"these of + possessive determiner + noun\",\"zh\":\"……中的这些\",\"note\":\"如 these of my drawings，表示“我这些画中的这些”；日常表达也常说 these drawings。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"this + singular noun\",\"zh\":\"这个……\",\"note\":\"限定词用法中，this 后接单数名词，指一个对象。\"}",
+        "valueJson": "{\"en\":\"this + singular countable noun / uncountable noun\",\"zh\":\"这个……／这……\",\"note\":\"this 可接单数可数名词，如 this book（这本书），也可接不可数名词，如 this water（这水）。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"限定词用法下，these 对应 this 的复数；this 后接单数名词，不能直接替换 these。\"",
+        "valueJson": "\"限定可数名词时，these 接复数形式，this 接单数形式；this 还可以限定不可数名词，不能不改名词形式就直接替换 these。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"these 指多个对象并接复数名词；this 指一个对象并接单数名词。\"",
+        "valueJson": "\"限定可数名词时，these 接复数形式，this 接单数形式；this 也可接不可数名词，如 this water（这水）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"名词已经跟在 these 后面时，不能再重复用代词 they 指同一组作主语。\"",
+        "valueJson": "\"普通陈述句可用 These are mine. 或 These keys are mine.；前一句由 these 单独作主语，后一句由 These keys 整体作主语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"these-pron-ex3\",\"senseId\":\"these-pron\",\"en\":\"These are my cousins, Amy and Ben.\",\"zh\":\"这两位是我的表亲，埃米和本。\",\"note\":\"向别人介绍身边的多个人时，也可用 These are ...。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"these-det-ex3\",\"senseId\":\"these-det\",\"en\":\"I don't watch much TV these days.\",\"zh\":\"如今我不怎么看电视。\",\"note\":\"these days 表示当前这一段时期，不表示空间上的近处。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1408,
+    "headword": "these",
+    "meaning_zh": "pron. 这些",
+    "phonetic": "/ði:z/",
+    "pos": "",
+    "forms": []
+  }
+}

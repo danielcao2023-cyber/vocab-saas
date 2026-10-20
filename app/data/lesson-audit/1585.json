@@ -1,0 +1,311 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4b906b7291ad4df75f0c5069a61f7fae09292c9585a3457cc44992a20a5b4551",
+    "executedReviewPromptHash": "4b906b7291ad4df75f0c5069a61f7fae09292c9585a3457cc44992a20a5b4551",
+    "reviewHash": "936704561b0d31858918102e8892a1f7fa1cdc301bcc05e1965ee3c5e865525e",
+    "wordId": 1585,
+    "inputHash": "70ec19ef583980499af49fe75be8ec3d4635fda985ecfca42f901be9da88edd0",
+    "draftHash": "4054536e5b5924ad79cfcfccc60530cbdcaf144c17a9e186cafe2049967120dc",
+    "finalHash": "3fa1156a3b3fb01ede35a505e60747a455ffdfa3eb2ee7d54aa00f901673c635",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/X-ray#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.279Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 1475933,
+        "revisionId": 39455921,
+        "revisionTimestamp": "2026-04-19T00:11:09Z",
+        "sha256": "1ca9b9213623fd40d8def5e9b09a777bca40f0a0f3d7948df301aa596503fde8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/X-ray",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:21:10.101Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:28:44.449Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "名词合列了射线、影像和检查三个常用义，但各义未达到两个例句；第一例也容易理解为医生查看影像，不能清楚展示射线义。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms",
+        "message": "X-ray 以 y 结尾，X-raying 直接加 -ing，不存在去掉不发音 e 的变化。复数说明还应包含常见的射线义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "examine 是上位近义表达，不应放在反向表达中；leave unexamined 表示完全未检查，不能准确对应未做X光检查。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源明确说明英语 X-ray 是德语 X-Strahl 的仿译，应明确补齐。现有材料未解释字母 X 的命名原因，不应将相关推测写入历史词源。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Cambridge 获取失败，Oxford 不在实际来源材料中，不能将其作为本课具体内容的支持来源。应改引已取得的英语词条。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的X射线、X光影像、X光检查三个常用义，以及及物动词“给……拍X光片”。补丁保留合并的名词栏目，但使三个所指各有两个明确例句；动词原有两个例句可保留。词形、搭配、翻译及词源一并修正。来源支持限于已取得的法语维基词典英语词条，其法语说明不代表词条本身属于法语；Cambridge 和 Oxford 未作为核验依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：X射线",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已有定义，但例句数量与辨义清晰度不足；补丁后有两个明确展示射线本身的例句。"
+      },
+      {
+        "sense": "名词：X光片、X光影像",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已有一个明确例句；补丁增加一个，共两个。"
+      },
+      {
+        "sense": "名词：X光检查",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已有定义和搭配，但缺少独立例句；补丁增加两个接受检查的例句。"
+      },
+      {
+        "sense": "及物动词：给某人、身体部位或物品做X光检查",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "两个例句分别覆盖医疗与物品检查，直接宾语及 for 引出检查目标的结构正确；修正近义与反向表达的分类。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常用复数谈多张X光片或多次检查；作定语时常见 X-ray，如 X-ray machine。\"",
+        "valueJson": "\"谈射线本身时通常用复数 X-rays，也可用复数表示多张X光片或多次检查；作定语时常用单数形式 X-ray，如 X-ray machine。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"词尾已有不发音的 e，去 e 再加 -ing。\"",
+        "valueJson": "\"X-ray 以 y 结尾，保留 y，直接加 -ing：X-raying。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/ipa",
+        "expectedValueJson": "\"/ˈɛksˌreɪɪŋ/\"",
+        "valueJson": "\"/ˈɛks.reɪ.ɪŋ/\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"s1e1\",\"senseId\":\"s1\",\"en\":\"The doctor used X-rays to check whether the bone was broken.\",\"zh\":\"医生用X射线检查骨头有没有断。\",\"note\":\"X-rays 指用于检查的射线。\"}",
+        "valueJson": "{\"id\":\"s1e1\",\"senseId\":\"s1\",\"en\":\"At the airport, this machine uses X-rays to check bags.\",\"zh\":\"在机场，这台机器用X射线检查行李。\",\"note\":\"X-rays 指机器用于检查的射线，不是检查后得到的影像。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"X-rays are invisible to the human eye.\",\"zh\":\"人的肉眼看不见X射线。\",\"note\":\"这里谈射线本身，通常用复数 X-rays。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"The dentist pointed to one of my teeth on the X-ray.\",\"zh\":\"牙医指着X光片上我的一颗牙齿。\",\"note\":\"on the X-ray 表示在X光影像上，X-ray 指成像结果。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e5\",\"senseId\":\"s1\",\"en\":\"I had an X-ray of my ankle after I fell.\",\"zh\":\"摔倒后，我做了脚踝的X光检查。\",\"note\":\"have an X-ray 表示接受一次检查；after I fell 交代先摔倒、后检查。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e6\",\"senseId\":\"s1\",\"en\":\"My daughter is going to the hospital for a chest X-ray tomorrow.\",\"zh\":\"我女儿明天要去医院做胸部X光检查。\",\"note\":\"go for an X-ray 表示去做检查；chest 指明检查部位。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"日常交流中用 X-ray 最自然；radiograph 和 radiography 多见于医学语境，含义侧重点不同。\"",
+        "valueJson": "\"radiograph 对应影像义，radiography 对应成像技术或过程，不能用来替代表示射线本身的 X-rays。谈普通X光片或X光检查时，日常英语通常用 X-ray。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里只对照医学成像方式；这些词并不是所有语境下的反义词。\"",
+        "valueJson": "\"ultrasound 和 MRI scan 只用于与X光检查对照成像方式，不是 X-ray 的反义词，也不对应射线或影像本身的反向含义。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"examine\",\"zh\":\"检查\",\"note\":\"泛指查看或检查，不特指使用X射线；不能仅凭 examine 判断是否做了X光检查。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"examine\",\"zh\":\"检查\",\"note\":\"泛指查看或检查，不特指使用X射线；可用于不需要成像的检查。\"},{\"en\":\"leave unexamined\",\"zh\":\"不作检查\",\"note\":\"在检查语境中可与 X-ray 对照，表示没有进行检查；不是它的固定反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在“是否进行检查”的语境中，leave unexamined 表示未检查；它不适合作为 X-ray 在其他意义中的反义词。\"",
+        "valueJson": "\"X-ray 没有常用的固定反义词。要表达没有做X光检查，可否定动词，如 The doctor did not X-ray my wrist。未做X光检查不等于完全未作检查。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"X-ray 由字母 X 和 ray 组成；X 表示未知或待确定的对象，ray 表示射线。现代词形帮助记忆其含义。\"",
+        "valueJson": "\"英语 X-ray 是德语 X-Strahl（X射线）的仿译词：保留字母 X，把德语 Strahl（射线）换成英语 ray（射线）。\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/stages/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"language\":\"英语\",\"form\":\"X-ray\",\"meaning\":\"X射线\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"英语 X-ray 的历史构词与德语 X-Strahl 有关；这里的现代拆分解释便于记忆，不代表 X-ray 的完整历史演变链。\"",
+        "valueJson": "\"这里的先后关系表示英语按德语词的构成进行仿译，并不是直接借入德语的完整词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: X-ray\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/x-ray\",\"supports\":[\"名词和动词用法\",\"复数与动词词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: X-ray\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/X-ray\",\"supports\":[\"名词和动词用法\",\"常见搭配与读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"与德语 X-Strahl 的词源关联\",\"英语名词、动词及读音\"]",
+        "valueJson": "[\"英语 X-ray 对德语 X-Strahl 的仿译关系\",\"英语名词与及物动词的基本用法\",\"英语读音及规则词形\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1585,
+    "headword": "X-ray",
+    "meaning_zh": "n. X射线；X光片；X光检查\nv. 给……拍X光片",
+    "phonetic": "/'eks'rei/",
+    "pos": "",
+    "forms": []
+  }
+}

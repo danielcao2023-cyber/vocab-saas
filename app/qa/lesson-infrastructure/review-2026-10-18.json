@@ -1,0 +1,70 @@
+{
+  "format": "vocab-lesson-infrastructure-independent-review",
+  "version": 1,
+  "checkedAt": "2026-10-18T09:11:07.776389+08:00",
+  "scope": "Independent local infrastructure review; source fetch and production model invocations were not performed by this review.",
+  "checks": {
+    "targetedTests": {
+      "files": 6,
+      "passed": 57,
+      "failed": 0,
+      "command": "npx vitest run test/lesson-generate.test.ts test/lesson-status.test.ts test/lessons.test.ts test/db-guard-audit.test.ts test/lesson-sources.test.ts test/lesson-source-verify.test.ts"
+    },
+    "typecheck": {
+      "passed": true,
+      "command": "npx tsc -p tsconfig.json --noEmit"
+    }
+  },
+  "closedFindings": [
+    "Coverage audit shares the public reader containment, regular-file and 512 KiB boundaries.",
+    "Full curriculum completion requires total=1600 and reviewed=1600, separately from a small database completion.",
+    "Read-only database opener is production-guarded and covered by the static CLI audit; isolated database bytes remain unchanged.",
+    "Failed and timed-out generation output cannot be restored as a successful draft.",
+    "Saved generation/final bytes are hash-bound; changed bytes invalidate resume, while an intact success resumes without model calls.",
+    "Patch failures leave the original draft unchanged and cannot modify word identity.",
+    "Review coverage references must exist and cover every core sense, including on cached review reuse and publication.",
+    "Publication uses the bound raw review and replays patches to reproduce the final lesson; a changed shared review.json cannot substitute another audit.",
+    "One generator lock covers generation and review; simulated progress-write failure still releases the lock.",
+    "Invalid or draft destination files are reported explicitly and not silently skipped or overwritten.",
+    "Final serialized lesson bytes use the same 512 KiB delivery limit.",
+    "Malformed or misspelled CLI flags are rejected before opening a database.",
+    "Cambridge inventories include only exact headword entry-body__el blocks, preserving case/punctuation and explicit AmE aliases."
+  ],
+  "localSourceSamples": [
+    {
+      "word": "ability",
+      "originalEntryBlocks": 4,
+      "selectedEntryBlocks": 3,
+      "excluded": "-ability suffix"
+    },
+    {
+      "word": "after",
+      "originalEntryBlocks": 5,
+      "selectedEntryBlocks": 4,
+      "excluded": "after- prefix"
+    },
+    {
+      "word": "accept",
+      "originalEntryBlocks": 3,
+      "selectedEntryBlocks": 3
+    }
+  ],
+  "limitations": [
+    "This is infrastructure and provenance verification, not a teacher audit of generated language content.",
+    "The test uses isolated temporary databases and fake model runners; it makes no claim of full 1600 lesson completion.",
+    "The newly added CLI failure circuit was inspected in code but was not separately fault-injected in this review."
+  ],
+  "fileSha256": {
+    "app/server/src/lessons.ts": "9fbe93c6e6a09f65935b6c995758536c3846f1e6b931fe9ca9cb38a98a82164a",
+    "app/scripts/lesson-status.ts": "6dc537579939c4b3ba6ed51134ad1cd2b89cbddbd12b915358080e636c98c98c",
+    "app/scripts/lesson-generate.ts": "74e61bfd24eecf7cc2b13782b26c21612443f9b3917541863270a21536ce5e87",
+    "app/scripts/lesson-sources.ts": "7fb226bc98794d171f77dc19fdf39d8d1a57be6974aa35e5f17625af4994ad98",
+    "app/scripts/lesson-source-verify.ts": "3792fce5ab612fbde96cb1b546abbab60e121d8693c4d2dec5ac683bfe82492c",
+    "app/test/db-guard-audit.test.ts": "2e17b88a6bc55b9c2ab005ae7906e6f4c55c792097c74c2e9e0ec793b8203298",
+    "app/test/lessons.test.ts": "16c1bb76f19d0419e3b000787c56075f691a6eb90cbb16327823c875fc45e6d7",
+    "app/test/lesson-status.test.ts": "44bf1cc584c2a83bd16876e82c14066e23b33d823de44e9dd60ae90d7764b741",
+    "app/test/lesson-generate.test.ts": "7a5b13ab307a1553656a623517e8c0d74636081951c5f8fb14a6248e6979fb6c",
+    "app/test/lesson-sources.test.ts": "f04a7fd1ef7cd399bc548b23821360f698e6e46a2de2aac036739e9de44cc48b",
+    "app/test/lesson-source-verify.test.ts": "9a3270f6b781652eb6796be7b0fd0c425edcde087fdd0653d074f924ba0786aa"
+  }
+}

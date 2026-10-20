@@ -1,0 +1,556 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c2143cf74f5091a7ad9b1484188a11bebfdc8246c5589b88446ff66adcf7e05c",
+    "executedReviewPromptHash": "c2143cf74f5091a7ad9b1484188a11bebfdc8246c5589b88446ff66adcf7e05c",
+    "reviewHash": "0f676dfe549a5b13ed21a297aabc5fb9c1015edac1a31de09ab586581808ac85",
+    "wordId": 1157,
+    "inputHash": "02ebc022d29056fbb6f3223aa6d0df53df294c5e22df16a76f64459952cd4ed6",
+    "draftHash": "5f02d6a5c7109ad72796f43a144fc685c897b245fedb76d72381e888ba10c15b",
+    "finalHash": "d9e0d5c73a29f32dda6cb1389cc1ec0deb6c68d358fa6108736ef3aef6ba8d75",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/review#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.642Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 59079,
+        "revisionId": 38466593,
+        "revisionTimestamp": "2025-08-03T16:30:53Z",
+        "sha256": "fc78845bad8fc62cdc6666ac1b68c4f029485ea362b16a78e0d9b90263eca215",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/review",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:37:42.660Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:45:20.381Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note; /wordFamily/1/spellingNote; /wordFamily/2/formation",
+        "message": "review 逐字符拼写为 r-e-v-i-e-w，以 w 结尾。reviewed 和 reviewing 都直接添加词尾，原稿关于保留或删除词尾 e 的说明错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0; /senses/2; /senses",
+        "message": "“回顾过去事件”被并入复习义，却没有对应例句；常用名词“审查、复核”也未展开。补丁独立补充回顾义，并给审查义补上名词说明、例句和 under review。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0; /lessCommonSenses",
+        "message": "review 不表示“展示一组人员、事件或情况”。应明确军事检阅的名词和动词用法，并补充原始释义中的法律复审用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /confusions/0/items/*/example; /wordFamily/1/example; /wordFamily/2/example; /wordFamily/3/example",
+        "message": "共十二个例句对象缺少目标结构要求的 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有词源阶段只是来源占位，没有解释 revue 的历史字义。可用材料明确说明 review 借自法语 revue，后者为 revoir 的过去分词阴性形式转作名词；应补入这一事实，清空空洞阶段，并将现代拆分与历史来源分开。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources; /pronunciation/sourceIds; /senses/*/sourceIds; /lessCommonSenses/0/sourceIds; /confusions/0/sourceIds; /wordFamily/*/sourceIds",
+        "message": "Oxford 页面没有提供实际来源正文，Cambridge 本次不可用，不能作为本次审校已取得的依据。补丁移除这两项引用，按实际支持范围关联已取得的 Wiktionnaire 英语词条；其他扩展用法依据原始释义及专业语言知识，不冒称网页支持。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote; /confusions/0/takeaway; /wordFamily/0/meaning; /wordFamily/2/meaning",
+        "message": "应更明确备考复习义的英美用词差异，以及 review 的不及物用法；reviews 的中文释义不能重复英文占位，reviewing 也不总表示“正在”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote; /memoryAid/story",
+        "message": "审查或撰写评论不要求同一人此前已经查看或评价过该对象；“再看一次”应限于助记，避免成为所有用法的硬性条件。"
+      }
+    ],
+    "coverageAssessment": "修订后覆盖复习、回顾总结、评论评介、检查审查，以及较少见的军事检阅和法律复审。四个核心义均至少有两个原创英中例句，名词、及物动词及常见不及物用法均有明确呈现。可用网页正文主要支持评论、检查质量、读音及法语借入事实；其余扩展依据给定中文释义与专业语言知识，不声称取得不可用网页的支持。未推测缺少依据的历史字义。",
+    "senseInventory": [
+      {
+        "sense": "复习、温习：名词，及物或不及物动词",
+        "coveredBy": [
+          "review-n-study"
+        ],
+        "assessment": "保留原有名词和及物动词例句，补充不及物备考例句，并明确美式 review 与英式 revise 的常见分布。"
+      },
+      {
+        "sense": "回顾过去事件、总结某段时期：名词和及物动词",
+        "coveredBy": [
+          "review-retrospect"
+        ],
+        "assessment": "原稿只有标题提及；补为独立核心义，以年度活动回顾和通讯中的年度事件回顾分别展示动词与名词。"
+      },
+      {
+        "sense": "评论、评介：名词，及物或不及物动词",
+        "coveredBy": [
+          "review-n-critique"
+        ],
+        "assessment": "原有书面评论名词与评论作品的动词例句正确；补充不带宾语、表示为报纸撰写评论的用法。"
+      },
+      {
+        "sense": "检查、审查、复核、检讨：名词和及物动词",
+        "coveredBy": [
+          "review-v-check"
+        ],
+        "assessment": "补齐常用名词功能及 under review；明确审查不保证修改或批准，也不要求审查者以前看过该内容。"
+      },
+      {
+        "sense": "军事检阅：名词和及物动词",
+        "coveredBy": [
+          "review-v-show"
+        ],
+        "assessment": "保留较少见义的位置及原有动词例句，删除“展示”的错误解释，以 military review 补明名词用法。"
+      },
+      {
+        "sense": "法律语境中的复审、进一步审查：名词和动词",
+        "coveredBy": [
+          "review-legal"
+        ],
+        "assessment": "作为审查义的专业延伸补入较少见义；避免把 review 一概等同于撤销原判或重审整个案件。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，review 常指复习、回顾或评论；作动词时，常指复习功课、回顾内容，或检查并评价某物。\"",
+        "valueJson": "\"review 作名词或动词都可表示复习、回顾、评论或审查；具体含义由对象和语境决定，审查并不等于修改或批准。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_review\"]",
+        "valueJson": "[\"wiktionary_fr_review\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词复数为 reviews；动词第三人称单数为 reviews，过去式和过去分词为 reviewed，现在分词为 reviewing。加 -ing 时去掉词尾不发音的 e。\"",
+        "valueJson": "\"review 以 w 结尾：名词复数和动词第三人称单数直接加 -s，写作 reviews；过去式和过去分词直接加 -ed，写作 reviewed；现在分词直接加 -ing，写作 reviewing。词干 review 保持不变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"复习；回顾\"",
+        "valueJson": "\"复习；温习\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"名词：对学过的内容作复习或回顾。动词：重新学习或查看已经学过的内容，以便记住、检查或了解进展。\"",
+        "valueJson": "\"名词：对学过的内容进行复习。动词：重新学习或查看已经学过的内容，以巩固记忆和理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作“复习”讲时，review 后常接课程、笔记、单词等；review for a test 表示为考试复习。\"",
+        "valueJson": "\"表示备考复习时，review 尤其常见于美式英语，英式英语更常用 revise。review 后可直接接笔记、词汇等内容，也可不带宾语：review for a test 表示为考试复习。泛指复习活动时，名词 review 可不可数；一次具体的复习可说 a review。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"review 在这里是可数名词；a review of 引出复习的内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviews 是第三人称单数动词，后面直接接复习内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-e14\",\"senseId\":\"review-n-study\",\"en\":\"I need to review for tomorrow's math test.\",\"zh\":\"我需要为明天的数学考试复习。\",\"note\":\"常见美式用法：review 不带宾语，for 引出目标考试。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"review 后接 for 和考试名称，说明复习的目的。\"",
+        "valueJson": "\"review 在这里可不带宾语；for 和考试名称说明复习的目的，常见于美式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/zh",
+        "expectedValueJson": "\"对这节课的回顾\"",
+        "valueJson": "\"对这节课内容的复习\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"名词 review 后常用 of 引出回顾的内容。\"",
+        "valueJson": "\"名词 review 后常用 of 引出复习的内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"表示复习时，revise 尤其常见于英式英语；它也可表示修改文章或计划。review 更常强调重新查看、巩固或检查。\"",
+        "valueJson": "\"表示复习功课时，英式英语常用 revise，美式英语常用 review。revise 还表示修改文章或计划，此时不同于 review 所表示的检查。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_review\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a review of the film 表示对这部电影的评论。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviewed 是过去式；the play 是被评论的作品。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-e12\",\"senseId\":\"review-n-critique\",\"en\":\"Lena reviews for the local paper's arts page.\",\"zh\":\"莉娜为本地报纸的艺术版撰写评论。\",\"note\":\"review 在这里不带宾语，表示从事撰写评论的工作；for 引出供稿对象。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_review\"]",
+        "valueJson": "[\"wiktionary_fr_review\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"检查；审查；复核\"",
+        "valueJson": "\"检查；审查；复核（名词和动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"动词：重新查看工作、计划或决定，检查是否正确、合适，或是否需要调整。\"",
+        "valueJson": "\"名词：对工作、计划、规则或决定进行的检查、审查或检讨。动词：仔细查看或重新考虑这些内容，判断其质量、准确性、适当性或是否需要调整。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用于检查作业、计划、规则或决定；review 本身不表示一定会修改。\"",
+        "valueJson": "\"动词可直接接作业、计划、规则或决定；名词常用 a review of...，under review 表示正在审查或考虑中。review 不要求审查者以前看过该内容，也不表示一定会修改或批准。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"review your answers 表示检查答案；before 表明先检查，再交练习纸。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"review 直接接要重新评估的规则，不表示一定会修改规则。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-e10\",\"senseId\":\"review-v-check\",\"en\":\"After parents complained, the school carried out a review of its lunch menu.\",\"zh\":\"家长投诉后，学校对午餐菜单进行了一次审查。\",\"note\":\"review 是可数名词；a review of 引出接受审查的内容。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-e11\",\"senseId\":\"review-v-check\",\"en\":\"My application is still under review, so I haven't received a decision yet.\",\"zh\":\"我的申请仍在审核中，所以我还没有收到审核结果。\",\"note\":\"under review 表示审核尚在进行，不表示申请已经获批。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a review of something\",\"zh\":\"对某事物的一次审查\",\"note\":\"review 是名词，of 引出接受审查的内容。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"under review\",\"zh\":\"正在审查中；正在考虑中\",\"note\":\"表示尚在审核或考虑阶段，不等于已经批准。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_review\"]",
+        "valueJson": "[\"wiktionary_fr_review\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-retrospect\",\"title\":\"回顾；总结\",\"meaning\":\"名词：对已经发生的事情或某段时期的回顾、总结。动词：回顾过去的事件或活动，梳理发生了什么。\",\"usageNote\":\"对象常是一天的事件、一年的活动等。名词常用 a review of...；动词直接接事件或活动。这里不是复习功课，也不一定是在评论作品。\",\"examples\":[{\"id\":\"review-e8\",\"senseId\":\"review-retrospect\",\"en\":\"At our final club meeting, we reviewed the year's activities.\",\"zh\":\"在最后一次社团会议上，我们回顾了这一年的活动。\",\"note\":\"reviewed 是动词，表示回顾已经开展过的活动。\"},{\"id\":\"review-e9\",\"senseId\":\"review-retrospect\",\"en\":\"The December newsletter included a review of the year's main events.\",\"zh\":\"十二月那期通讯刊登了一篇年度主要事件回顾。\",\"note\":\"a review 是可数名词，指回顾过去事件的内容。\"}],\"patterns\":[{\"en\":\"review what happened\",\"zh\":\"回顾发生过的事\",\"note\":\"what 引导的从句作 review 的宾语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a year-end review\",\"zh\":\"年终回顾\",\"note\":\"对即将结束的一年进行回顾或总结。\",\"kind\":\"common-collocation\"},{\"en\":\"review the day's events\",\"zh\":\"回顾当天发生的事\",\"note\":\"the day's events 是过去发生的事件，不是待复习的课程。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"look back on\",\"zh\":\"回顾；回想\",\"note\":\"都可指回看过去；look back on 常带个人回忆色彩，review 也常用于有组织地总结事件。\"},{\"en\":\"recap\",\"zh\":\"简要回顾；概述\",\"note\":\"强调简短重述要点；review 的回顾不一定简短。\"}],\"contrasting\":[{\"en\":\"look ahead\",\"zh\":\"展望未来\",\"note\":\"在时间方向上形成对照：review 在此回顾过去，look ahead 关注将来。\"}],\"similarNote\":\"这些表达都能用于回顾，但个人回忆、梳理总结和简短概述各有侧重。\",\"contrastingNote\":\"look ahead 只与回顾过去这一义形成方向上的对照，不是 review 所有用法的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"检阅；回顾展示\"",
+        "valueJson": "\"军事检阅（名词和动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"正式查看或展示一组人员、事件或情况；此义常见于固定表达或正式语境。\"",
+        "valueJson": "\"名词：军事检阅。动词：由军官或重要人物正式检阅部队。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"如 review the troops 可指检阅部队；日常初中交流中不如“复习、评论、检查”常见。\"",
+        "valueJson": "\"review the troops 表示检阅部队；a military review 指一次军事检阅。此义较正式，不表示“展示人员”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_review\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"review-legal\",\"title\":\"法律语境中的复审\",\"meaning\":\"名词或动词：对先前的决定或裁定作进一步审查。\",\"note\":\"a review of a decision 可指对决定的复审；动词可直接接 decision。review 一词本身不保证撤销原决定或重新审理整个案件。\",\"example\":{\"id\":\"review-e13\",\"senseId\":\"review-legal\",\"en\":\"The court will review the earlier decision next month.\",\"zh\":\"法院将于下个月复审先前的裁定。\",\"note\":\"review 在这里表示法律语境中的进一步审查，句子没有说明最终结果。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviewed 表示复习；后半句说明复习不等于修改笔记。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"revised 在这里表示修改段落；after 表明老师先给出意见，随后才作修改。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviewed the film 表示撰写影评；for 引出刊登评论的网站。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"复习或重新检查用 review；要表达“修改文章”用 revise。看到 review a film 时，通常理解为“评论电影”。\"",
+        "valueJson": "\"表示复习功课，美式英语常用 review，英式英语常用 revise。检查内容可用 review；修改文章用 revise。review a film 通常表示“评论电影”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_review\",\"oxford_review\"]",
+        "valueJson": "[\"wiktionary_fr_review\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 review 的历史来源与法语 revue 有关；现代学习时可把 re-（再）和 view（看）联系起来，记作“再看一次”，帮助理解复习、回顾和检查等用法。这个拆分适合作为现代记忆线索。\"",
+        "valueJson": "\"英语 review 借自法语 revue；revue 是法语动词 revoir 的过去分词阴性形式，并已转作名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"revue\",\"meaning\":\"给英语 review 提供历史来源的法语词形\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"法语 revue 是有历史来源依据的形式；现代英语中的 re- + view 便于记忆这些用法，但这类拆分不能替代历史词源说明。\"",
+        "valueJson": "\"法语 revue 是历史借入来源；re-（再）+ view（看）只是现代记忆联想，不能当作这个英语词在历史上实际形成的过程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"reviews；reviews\"",
+        "valueJson": "\"评论、复习或审查（名词复数）；复习、检查或评论（动词第三人称单数）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_review\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"词尾 e 保留后加 -d，写作 reviewed。\"",
+        "valueJson": "\"review 以 w 结尾，直接加 -ed，写作 reviewed；词干不变。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviewed 是 review 直接加 -ed 构成的过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_review\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"正在复习、检查或评论\"",
+        "valueJson": "\"复习、检查或评论的 -ing 形式；是否表示正在进行，要看句子结构\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"review 去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"review + -ing；词干 review 保持不变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"写作 reviewing，不写 revieweing。\"",
+        "valueJson": "\"直接加 -ing，写作 reviewing；不删字母，也不额外添加 e。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is reviewing 构成现在进行时；review 不带宾语，for 引出目标考试，常见于美式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_review\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/3/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"reviewer 在这里指撰写电影评论的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"cambridge_review\"]",
+        "valueJson": "[\"wiktionary_fr_review\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"小林先 review 课本，重新看一遍单词；再 review 自己的答案，检查有没有错；周末读一篇 film review，看看别人怎样评价电影。同一个词都围绕“再看、再评价”，但句子里的对象会提示具体意思。\"",
+        "valueJson": "\"小林先 review 课本，重新看一遍单词；再 review 自己的答案，检查有没有错；社团月底 review 本月活动，回顾做过哪些事；周末读一篇 film review，看看别人怎样评价电影。课本、答案、活动和电影这几个对象，分别提示复习、检查、回顾和评论。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_review\",\"title\":\"Oxford Learner’s Dictionaries: review\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/review\",\"supports\":[\"review 的常见名词和动词用法\",\"reviewed、reviewing 等词形\",\"reviewer 派生形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_review\",\"title\":\"Cambridge Dictionary: review\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/review\",\"supports\":[\"复习、评论及重新检查等常见语境\",\"review 的句型和搭配\",\"review 与 revise 的用法区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionnaire: review（英法词条）\"",
+        "valueJson": "\"Wiktionnaire: review（英语词条，法语释文）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"英语 review 的历史来源关联法语 revue\"]",
+        "valueJson": "[\"英语 review 的读音\",\"评论这一名词义及评论、检查质量这两类动词用法\",\"review 与 revise 在检查和修改内容方面的区别\",\"reviewer 作为派生形式\",\"review 借自法语 revue；revue 为 revoir 的过去分词阴性形式转作名词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1157,
+    "headword": "review",
+    "meaning_zh": "n. 检讨, 复习, 回顾, 检阅, 评论\nvt. 温习, 检讨, 评论, 再检察, 复审\nvi. 复习功课, 写评论",
+    "phonetic": "/ri'vju:/",
+    "pos": "",
+    "forms": []
+  }
+}

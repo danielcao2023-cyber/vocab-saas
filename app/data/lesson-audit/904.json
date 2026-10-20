@@ -1,0 +1,384 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4e4d54b0d6fc83b7744b2f8cc072e3c48f0df5568e6c1f73db540541c1a03961",
+    "executedReviewPromptHash": "4e4d54b0d6fc83b7744b2f8cc072e3c48f0df5568e6c1f73db540541c1a03961",
+    "reviewHash": "5397424d4ec7dc9f28487f68ea75020fedf13bf7c20c80e6cb152d85f7d34b8d",
+    "wordId": 904,
+    "inputHash": "adff30d0f641f7768e386c58235e21cdffde5a72baf9f30be5aef9228dbc105f",
+    "draftHash": "105d378d018274784acd0f3d9640b52ce4afb7e23b15e4585767810298743215",
+    "finalHash": "83170109d9d8d8e2d647d6b167496f2deb1dab3dad0081ff6888ef75dfb10f1e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/need#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:26.568Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118401,
+        "revisionId": 39751439,
+        "revisionTimestamp": "2026-08-02T17:04:24Z",
+        "sha256": "0cee83b4ef33f0c02a535eb84dc9945ca898e6225ad7e8e6d6ef31746a613f6b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/need",
+        "section": "need noun and verb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "4e0e85dd282934977911ffab001a6c30fad0b9f642f6b112e5ee793e41836a1e",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "4e0e85dd282934977911ffab001a6c30fad0b9f642f6b112e5ee793e41836a1e",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/904.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/need",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:09:51.698Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:20:39.547Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "need 以 d 结尾，needing 是直接加 -ing，并未去掉 e。另应在 needs 的词形说明中兼顾名词复数。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /wordFamily/*/example",
+        "message": "六个例句对象缺少必填的 note：前三个相关位置为 senses/0/examples/0、senses/1/examples/0、senses/3/examples/0，另三个为 wordFamily 的全部例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0",
+        "message": "meet someone’s needs 中 needs 是名词复数，应移到名词义；普通动词义应配 need more time 等搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "do without 也可表示被迫将就，不能据此判断某物并非必需。应修正限制说明，并补上直接否定需要的表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "名词标题混列需求、必需品和困境，现有例句分别只展示一次需求和困境。应区分需求/必要与困境用法，各给至少两个例句，并补充常用的 There is no need to do。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions/contrasting",
+        "message": "surplus 与短缺相对，不能直接反向表达本义的需求或必要。应改用 no need for ...。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "常用句型 need + 人 + to do 尚未覆盖，宜补充具体例句。“湿衬衫需要洗”语法正确，但改为“脏衬衫”更能自然交代清洗的必要。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote; /confusions/0/items/0/note",
+        "message": "应提示情态 need 的地域和语体特点；普通动词 need 的说明也应限定在 need to do 句型，避免读成普通动词后总要加 to。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example",
+        "message": "There is no need for needless worry 意义重复，宜换成能具体展示 needless 的生活例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/sourceIds; /confusions/1/sourceIds",
+        "message": "读音及 need/knead 同音已有实际取得的 Wiktionary 英语词条支持，宜直接引用该来源。"
+      }
+    ],
+    "coverageAssessment": "已核对普通动词的“需要某物”和“需要行动”、情态助动词的必要性，以及名词的需求、必要和困境用法。修订补足常用句型与例句，修正拼写说明、搭配归属和反向表达。现有词源符合已获取材料，名词与动词来源没有误串成一链，予以保留。Cambridge、Oxford 仍仅作推荐阅读，不视为本次已取得的核验材料。",
+    "senseInventory": [
+      {
+        "sense": "普通动词：需要某物、某人或某种条件",
+        "coveredBy": [
+          "need-v-need"
+        ],
+        "assessment": "已有两个自然例句；修正搭配归属和 do without 的语境限制。"
+      },
+      {
+        "sense": "普通动词：有必要做某事；某事物需要被处理",
+        "coveredBy": [
+          "need-v-action"
+        ],
+        "assessment": "已有 need to do 和带被动含义的 need doing 两例；补充常用的 need someone to do。"
+      },
+      {
+        "sense": "情态助动词：询问或否定动作的必要性",
+        "coveredBy": [
+          "need-aux"
+        ],
+        "assessment": "疑问和否定各有一例，句型正确；补充英式英语及较正式问句的使用提示。"
+      },
+      {
+        "sense": "名词：需要、必要、需求",
+        "coveredBy": [
+          "need-n"
+        ],
+        "assessment": "保留需求例句，增加 no need to 的具体例句；补充相关句型并纠正反向表达。"
+      },
+      {
+        "sense": "名词：困境、缺少基本所需或需要帮助的处境",
+        "coveredBy": [
+          "need-n-distress"
+        ],
+        "assessment": "从原名词部分分出常用的 in need 用法，保留原例并补成两例；与一般的 in need of ... 作出区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/1/label",
+        "expectedValueJson": "\"第三人称单数\"",
+        "valueJson": "\"第三人称单数 / 名词复数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"普通动词一般现在时主语为 he、she、it 时加 -s；情态助动词 need 不加 -s。\"",
+        "valueJson": "\"普通动词一般现在时的第三人称单数和名词复数都写 needs；情态助动词 need 不加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"need 后直接加 -ing，保留原有的两个 e：need → needing。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"need 是普通动词，后面直接接名词短语 more chairs。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"meet someone’s needs\",\"zh\":\"满足某人的需要\",\"note\":\"常用于说明服务、安排或物品符合某人的需求。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"need more time\",\"zh\":\"需要更多时间\",\"note\":\"表示现有时间不够，需要增加时间。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"do without\",\"zh\":\"没有……也行；不用……也能应付\",\"note\":\"用于某种东西并非必需的语境，如 do without a car。\"}]",
+        "valueJson": "[{\"en\":\"don’t / doesn’t need\",\"zh\":\"不需要\",\"note\":\"普通动词 need 的直接否定，表示不需要某物，如 I don’t need an umbrella today。\"},{\"en\":\"do without\",\"zh\":\"没有……也能应付；将就着不用……\",\"note\":\"表示没有某物时仍设法生活或做事，如 do without a car；有时是被迫将就，不等于那件东西本来就不需要。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"do without 只在谈某件东西可以省去时与 need 对照。\"",
+        "valueJson": "\"don’t / doesn’t need 直接否定需要；do without 侧重缺少某物时仍设法应付，两者不能机械互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"need to 后接动词原形 finish，说明主语需要采取的行动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"These wet shirts need washing.\"",
+        "valueJson": "\"These dirty shirts need washing.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"这些湿衬衫需要洗一洗。\"",
+        "valueJson": "\"这些脏衬衫需要洗一洗。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"need-v-action-ex3\",\"senseId\":\"need-v-action\",\"en\":\"I need you to feed the cat while I'm away.\",\"zh\":\"我不在家的时候，需要你帮忙喂猫。\",\"note\":\"need + 人 + to do 表示需要某人做某事；这里喂猫的人是 you。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"need + 人 + to do\",\"zh\":\"需要某人做某事\",\"note\":\"说明需要谁来采取行动；例如 need you to help。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"此用法后直接接动词原形，不加 to；否定式 need not 可缩写为 needn’t。needn’t 读 /ˈniːdnt/。肯定句中通常用普通动词 need to。\"",
+        "valueJson": "\"此用法后直接接动词原形，不加 to；否定式 need not 可缩写为 needn’t。needn’t 读 /ˈniːdnt/。情态 need 在英式英语中更常见；Need ...? 问句往往较正式，日常询问也常用 Do/Does ... need to ...? 这一句型。普通肯定句通常用 need to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"需要；必需品；困难时的需要\"",
+        "valueJson": "\"名词：需要；必要；需求\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"可数用法常见于 needs；in need 表示处于困难、缺少帮助或生活必需品的境况。\"",
+        "valueJson": "\"可数和不可数用法都有。a need for ... 表示某方面的需要；needs 常指某人或某群体的多种需求；There is no need to ... 表示不必做某事。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"needs 是名词复数；meet the needs of ... 表示满足……的需求。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"need-n-ex2\",\"senseId\":\"need-n\",\"en\":\"The shelter gives warm meals to families in need.\",\"zh\":\"这家收容所为有困难的家庭提供热饭。\",\"note\":\"in need 指需要帮助或基本生活支持。\"}",
+        "valueJson": "{\"id\":\"need-n-ex3\",\"senseId\":\"need-n\",\"en\":\"There's no need to print your ticket; you can show it on your phone.\",\"zh\":\"不必把票打印出来；在手机上出示就行。\",\"note\":\"There is no need to ... 中 need 是名词，整个结构表示没有必要做某事。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"There is no need to + 动词原形\",\"zh\":\"不必做……\",\"note\":\"need 在这里是名词；no need 表示没有必要，如 There is no need to rush。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"in need\",\"zh\":\"有困难；需要帮助\",\"note\":\"常用于 in need of help 或 help those in need 等表达。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"meet someone’s needs\",\"zh\":\"满足某人的需要\",\"note\":\"常用于说明服务、安排或物品符合某人的需求；needs 是名词复数。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"surplus\",\"zh\":\"剩余；过剩\",\"note\":\"在资源数量语境中，surplus 与短缺或需求形成对照。\"}",
+        "valueJson": "{\"en\":\"no need for ...\",\"zh\":\"不需要……；没有对……的需要\",\"note\":\"否定某物的必要性，与 a need for ... 对照，如 no need for extra chairs。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"surplus 只在谈资源数量有余时与 need 对照。\"",
+        "valueJson": "\"a need for ... 与 no need for ... 对照；谈动作是否必要时，可用 There is no need to ... 表示不必做某事。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"need-n-distress\",\"title\":\"名词：困境；需要帮助的处境\",\"meaning\":\"指缺少基本生活所需，或遭遇困难、需要帮助的处境。\",\"usageNote\":\"常见于 in need 和 in someone’s time of need。单独的 in need 常突出困难或需要救助；in need of ... 则说明需要什么，也可用于普通的需要，如 a bike in need of repair。\",\"examples\":[{\"id\":\"need-n-ex2\",\"senseId\":\"need-n-distress\",\"en\":\"The shelter gives warm meals to families in need.\",\"zh\":\"这家收容所为有困难的家庭提供热饭。\",\"note\":\"in need 指需要帮助或基本生活支持。\"},{\"id\":\"need-n-distress-ex2\",\"senseId\":\"need-n-distress\",\"en\":\"Our neighbours gave us a place to stay in our time of need.\",\"zh\":\"在我们遇到困难时，邻居们给我们提供了住处。\",\"note\":\"in our time of need 表示在我们处于困境、需要帮助的时候，不一定专指长期贫困。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"in need\",\"zh\":\"有困难；需要帮助\",\"note\":\"常用于形容需要帮助或基本生活支持的人，如 families in need。\",\"kind\":\"fixed-expression\"},{\"en\":\"in someone’s time of need\",\"zh\":\"在某人遇到困难的时候\",\"note\":\"常用于谈论他人在困难时期给予的帮助或支持。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in difficulty\",\"zh\":\"遇到困难\",\"note\":\"范围较广；in need 常更突出缺少基本所需或需要帮助。\"},{\"en\":\"needy\",\"zh\":\"贫困的；需要救济的\",\"note\":\"形容词；在谈经济困难时，families in need 与 needy families 意义接近。\"}],\"contrasting\":[{\"en\":\"well-off\",\"zh\":\"生活宽裕的\",\"note\":\"只在 in need 表示经济困难、缺少生活必需品时形成对照。\"}],\"similarNote\":\"这些表达在形容困难处境时意义接近，但词性与适用范围不同。\",\"contrastingNote\":\"well-off 对照经济状况，不适用于所有需要帮助的情境。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"普通动词 need 后要有 to，再接动词原形。\"",
+        "valueJson": "\"当普通动词 need 表示主语有必要采取某个动作时，通常用 need to + 动词原形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"need-family-needy\",\"senseId\":\"need-n\",\"en\":\"The club collected coats for needy children.\",\"zh\":\"俱乐部为贫困儿童募集了外套。\"}",
+        "valueJson": "{\"id\":\"need-family-needy\",\"senseId\":\"need-n-distress\",\"en\":\"The club collected coats for needy children.\",\"zh\":\"俱乐部为贫困儿童募集了外套。\",\"note\":\"needy 在这里修饰缺少基本生活所需、需要帮助的儿童。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example",
+        "expectedValueJson": "{\"id\":\"need-family-needless\",\"senseId\":\"need-n\",\"en\":\"There is no need for needless worry.\",\"zh\":\"没有必要作无谓的担心。\"}",
+        "valueJson": "{\"id\":\"need-family-needless\",\"senseId\":\"need-n\",\"en\":\"Checking the address first can save us a needless trip.\",\"zh\":\"先核对地址能避免我们白跑一趟。\",\"note\":\"a needless trip 指本来可以避免、没有必要跑的一趟。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example",
+        "expectedValueJson": "{\"id\":\"need-family-the-needy\",\"senseId\":\"need-n\",\"en\":\"The town opened a kitchen for the needy.\",\"zh\":\"镇上为有困难的人开设了食堂。\"}",
+        "valueJson": "{\"id\":\"need-family-the-needy\",\"senseId\":\"need-n-distress\",\"en\":\"The town opened a kitchen for the needy.\",\"zh\":\"镇上为有困难的人开设了食堂。\",\"note\":\"the needy 泛指贫困、需要救济的一类人，具有复数意义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 904,
+    "headword": "need",
+    "meaning_zh": "v. 需要\naux. 需要（多用于否定句和疑问句）\nn. 需要",
+    "phonetic": "/ni:d/",
+    "pos": "",
+    "forms": []
+  }
+}

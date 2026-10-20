@@ -1,0 +1,622 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a87e5e718eb0c9ab28ac3f581a44ee66c7c91a19ee2e1f26d96cebc812c5bb45",
+    "executedReviewPromptHash": "a87e5e718eb0c9ab28ac3f581a44ee66c7c91a19ee2e1f26d96cebc812c5bb45",
+    "reviewHash": "5cd3cba174e2a485e017f0dafc615fc3baca987cb48b31d49be96bb7c3ae4909",
+    "wordId": 334,
+    "inputHash": "9aa1f2ca5cbc9b4464758aedab7c5c08f22f496369dafcdf7be04dde5e7e22ae",
+    "draftHash": "9e8bf862b0bdbe5f31dc2c746fca42d19503bf637280a27b0445c4c4086a6fbf",
+    "finalHash": "2a5a848963118f74a080b90563892fd98b932ee7e074d791da952cc44fc4eeb3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/course#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.845Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117386,
+        "revisionId": 39924409,
+        "revisionTimestamp": "2026-10-08T20:52:10Z",
+        "sha256": "03d6f82ddda690d12f41b10d5d3e4e4b8a22cc4a659bff18d26583444adacd67",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/course",
+        "section": "course etymology",
+        "supports": [
+          "Running and journey source",
+          "Ordered sequence development",
+          "Study and meal senses"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "74f73d20224a76417c58d5b0fa8f238aa844b764d34cbcc38efabe6604fad70d",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "74f73d20224a76417c58d5b0fa8f238aa844b764d34cbcc38efabe6604fad70d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/334.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/course",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:01:53.267Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:09:40.234Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及引用cambridge-course的sourceIds",
+        "message": "Cambridge 条目未取得，不能作为本次审校的实得依据。应引用已取得的法语维基词典英语词条，并区分其实际支持的内容与依据专业语言知识补充的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏高频固定表达 of course（当然），须补充完整教学项，区分答应请求、强调显然和让步承认等常见功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见的专用运动场地义和疗程义；golf course、obstacle course、a course of treatment 不能仅靠现有路线义或课程义解释。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "将事情的进程与行动方式合并，但各自只有一个例句。应分义，并为两义分别保留至少两个自然例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "徒步语境的 a narrow course 不如 path 自然；名词 course through 的教学形式也容易与动词混淆。宜改用明确的 follow a course through，并优先介绍 on/off course 的直接语境对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "class 尤其在美式英语中也常指整门课程，不能与 lesson 一并概括为通常偏向单节课。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions及/senses/3/relatedExpressions",
+        "message": "course of inaction 不适合放在进程义下作反向表达；不行动也可以是一种行动选择。meal 是整体与部分的相关词，snack 也不是餐次义的反义词，不宜分别当作近义和反向表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/4",
+        "message": "Sunlight coursed 属诗性修辞，不宜作为初学者理解该动词的代表例句。应标明较正式或文学性语体，并改用常见的液体流动搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "追逐义应突出狩猎语境，避免使学生将 course 当作日常 chase 的通用替换；资料中的穿行及词条中的奔跑义尚未明确覆盖。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "粗沙例句没有体现 course 的路线义，却标记为 course-n-route。应调整例句，使 senseId 确实对应所示 course 义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2及/confusions/0/summary",
+        "message": "course 与 coarse 在所教英美读音中是同音词，称为近音词不够准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "材料仅明确 currere 与 cursus 有关，现有箭头却将其画成已证实的连续传入链；法语阶段的 meaning 也只是来源占位说明。应把可靠关系写入 summary，清除该阶段链，并补引证明古法语形式的同 URL 来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily及个别中文说明",
+        "message": "词族仅重复原词的动词用法，可补充构词透明且常用的 coursework。另应将课程名称前用 a 改为可数名词 course 的用法说明，并修整一道上菜这一不自然表述。"
+      }
+    ],
+    "coverageAssessment": "已核对资料中的课程、餐次、追逐、穿行及固定表达，并检查路线、进程、行动方式、运动场地、疗程和流动等常用功能。补丁补齐遗漏，拆分混合义项，使各核心教学项至少有两个自然英中例句；原有读音和屈折拼写正确，保留。Cambridge 未取得；已按实得来源重新分配引用，纯专业语言知识补充项使用空 sourceIds。建筑等专门义不作初中核心展开，词源仅保留材料能够支持的历史关系。",
+    "senseInventory": [
+      {
+        "sense": "名词：课程；一系列学习内容",
+        "coveredBy": [
+          "course-n-class"
+        ],
+        "assessment": "已有两个有效例句；修正 class 的适用范围及冠词说明。"
+      },
+      {
+        "sense": "名词：一道菜；一轮上菜",
+        "coveredBy": [
+          "course-n-food"
+        ],
+        "assessment": "已有两个有效例句；明确与 dish、meal 的关系，删除牵强反向表达。"
+      },
+      {
+        "sense": "名词：路线；行进方向",
+        "coveredBy": [
+          "course-n-route"
+        ],
+        "assessment": "保留航向例句，改进路线例句及名词搭配，补充 on/off course。"
+      },
+      {
+        "sense": "名词：事情的发展进程或方向",
+        "coveredBy": [
+          "course-n-process"
+        ],
+        "assessment": "与行动方式分开后，提供两个真正体现进程义的例句。"
+      },
+      {
+        "sense": "名词：做法；行动方式",
+        "coveredBy": [
+          "course-n-action"
+        ],
+        "assessment": "补丁新增独立义项，以 course of action 和 the safest course is to do 展示两种常用形式。"
+      },
+      {
+        "sense": "名词：专门设置的运动场地或赛道",
+        "coveredBy": [
+          "course-n-sport"
+        ],
+        "assessment": "补丁新增，分别举高尔夫球场和障碍训练路线实例。"
+      },
+      {
+        "sense": "名词：疗程",
+        "coveredBy": [
+          "course-n-treatment"
+        ],
+        "assessment": "补丁新增，以抗生素疗程和物理治疗疗程展示。"
+      },
+      {
+        "sense": "固定表达：of course，当然",
+        "coveredBy": [
+          "course-phrase-of-course"
+        ],
+        "assessment": "补丁新增三个例句，覆盖肯定答复、强调显然和让步承认。"
+      },
+      {
+        "sense": "动词：流动；奔流",
+        "coveredBy": [
+          "course-v-flow"
+        ],
+        "assessment": "保留水流例句，改用泪水例句，并标明语体。"
+      },
+      {
+        "sense": "动词：追逐猎物；用猎犬追猎",
+        "coveredBy": [
+          "course-v-pursue"
+        ],
+        "assessment": "保留较少见义及有效例句，收窄使用范围，并说明放猎犬追猎的用法。"
+      },
+      {
+        "sense": "动词：奔跑；疾驰穿过",
+        "coveredBy": [
+          "course-v-run"
+        ],
+        "assessment": "补丁新增为文学性拓展义，避免漏掉资料中的穿行及词条中的奔跑用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"course 作名词时常表示“课程”“路线”或“过程”，也可指“一道菜”；作动词时表示液体等“流动”。\"",
+        "valueJson": "\"course 常见于“课程”和 of course（当然）；还可指路线、进程、行动方式、一道菜、球场／赛道和疗程。动词用法较少见，可表示奔流、疾驰或狩猎中的追逐。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"用“选课、看地图、吃饭”三个场景记住 course 的常见名词义。\"",
+        "valueJson": "\"先用选课、吃饭和日常答话三个场景，掌握“课程”“一道菜”和 of course（当然）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练熟 take a course、course of action 和 course through 等搭配。\"",
+        "valueJson": "\"再区分路线、事情的进程和行动方式，练熟 set a course for、in the course of 和 a course of action。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读 course 和近音词 coarse，注意两词拼写和意思不同。\"",
+        "valueJson": "\"朗读同音词 course 和 coarse，注意两词拼写和意思不同。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"认识 golf course（高尔夫球场）和 a course of treatment（一个疗程）；动词的流动、奔跑和狩猎义作为拓展。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"课程名称前可用 a；offers 表示“开设”。\"",
+        "valueJson": "\"course 是可数名词，这里用 a short course；offers 表示“开设”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"class 常指一次课堂、教学小组或课；course 通常指一整套或一段课程。\"",
+        "valueJson": "\"class 可指一节课、一个班，也可尤其在美式英语中指整门课程；course 通常指一套有安排的学习内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"class 和 lesson 都与学习有关，但通常比 course 更偏向单次课堂或一节内容。\"",
+        "valueJson": "\"lesson 通常指一节课；class 可指一节课、班级或整门课，尤其在美式英语中常与 course 重合，不能一概按课时长短区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于地图、航行和体育活动；常见搭配是 course through、set a course for。\"",
+        "valueJson": "\"可表示航向或预先设定的活动路线；常见名词搭配是 set a course for（把航向定向……）和 follow a course（沿路线前行）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"course-n-route-ex1\",\"senseId\":\"course-n-route\",\"en\":\"The hikers followed a narrow course along the river.\",\"zh\":\"徒步者沿着河边的一条狭窄路线前行。\",\"note\":\"course 指实际行走的路线。\"}",
+        "valueJson": "{\"id\":\"course-n-route-ex1\",\"senseId\":\"course-n-route\",\"en\":\"The runners followed a marked course through the park.\",\"zh\":\"跑步者沿着公园里标出的路线前进。\",\"note\":\"course 指预先标出的跑步路线；follow a course 表示沿路线前行。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"course through + place\",\"zh\":\"穿过……的路线\",\"note\":\"说明路线经过的区域；course 前常有形容词修饰。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"follow a course through + place\",\"zh\":\"沿穿过……的路线前行\",\"note\":\"course 在此是可数名词；through 后说明路线经过的区域，与动词 course through 要分清。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"on / off course\",\"zh\":\"沿预定路线／偏离路线\",\"note\":\"常用于船、飞机等的行进方向；off course 不一定表示已经迷路。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"lose one’s way\",\"zh\":\"迷路\",\"note\":\"在出行语境中，与沿着既定路线前行形成对照。\"}]",
+        "valueJson": "[{\"en\":\"off course\",\"zh\":\"偏离预定路线／航向\",\"note\":\"与 on course（沿预定路线）相对，侧重方向偏离，不一定是迷路。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"lose one’s way 描写没有找到正确路线，只在出行语境中与按路线前进相对。\"",
+        "valueJson": "\"这里是 on course 与 off course 两个短语形成对照；course 这个名词本身没有通用的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"事情按时间或步骤展开的过程；也可表示在某种情况下采取的做法。\"",
+        "valueJson": "\"事情随时间展开的进程或发展方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见表达有 in the course of 和 a course of action。后者指计划采取的行动。\"",
+        "valueJson": "\"常见表达有 in the course of（在……期间／过程中）、the course of events（事情的发展进程）和 change the course of…（改变……的进程）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"course-n-process-ex2\",\"senseId\":\"course-n-process\",\"en\":\"The coach chose a different course of action after the first loss.\",\"zh\":\"第一次失利后，教练选择了另一种行动方案。\",\"note\":\"course of action 指做事的方案或步骤。\"}",
+        "valueJson": "{\"id\":\"course-n-process-ex2\",\"senseId\":\"course-n-process\",\"en\":\"Losing his job changed the course of his life.\",\"zh\":\"失业改变了他的人生轨迹。\",\"note\":\"course 指人生发展的进程或方向。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"a course of action\",\"zh\":\"一种行动方案\",\"note\":\"course of 后接 action，整体表示要采取的做法。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"course of inaction\",\"zh\":\"不采取行动的做法\",\"note\":\"在讨论应对方案时，可与采取行动的方案形成语境对照。\"}]",
+        "valueJson": "[{\"en\":\"bring … to a halt\",\"zh\":\"使……停止\",\"note\":\"用于谈判、项目等时，表示使正在展开的进程停止；这是语境对照，不是 course 的词汇反义。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"course of inaction 指选择不行动，只在讨论行动方案时与 course of action 对照。\"",
+        "valueJson": "\"进程义没有固定的单词反义；bring … to a halt 可在谈判、项目等语境中表示进程停止。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"一道菜；一道上菜\"",
+        "valueJson": "\"一道菜；一轮上菜\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"dish 指具体菜品；course 强调它在一顿饭中的上菜顺序或类别。\"",
+        "valueJson": "\"dish 指具体菜品；course 指一顿饭中按顺序供应的一道或一轮，其中可以包含几种 dish。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"meal\",\"zh\":\"一顿饭\",\"note\":\"meal 指整顿饭，course 指其中一道或一轮食物。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"dish 是具体菜品，meal 是整顿饭；course 表示饭菜中的一道或一轮。\"",
+        "valueJson": "\"dish 与 course 有时都可译为“一道菜”，但 dish 强调菜品，course 强调餐次或一轮上菜，二者不一定一一对应。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"snack\",\"zh\":\"零食；小吃\",\"note\":\"在用餐安排的语境中，snack 通常是简单少量的食物，与正式的一道菜不同。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"snack 只在讨论正餐安排时与一道正式上菜的 course 构成有限对照。\"",
+        "valueJson": "\"餐次义没有固定反义词。meal 指整顿饭，course 是其中一道或一轮，二者是整体与部分的关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/title",
+        "expectedValueJson": "\"流动；流淌\"",
+        "valueJson": "\"流动；奔流（较正式或文学性）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"液体或类似液体的东西连续地流动；也可用于血液、光等沿某处流过。\"",
+        "valueJson": "\"水、血液、泪水等快速或大量地流动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"通常作不及物动词，后接 through 或 down 等介词说明流过的地方。\"",
+        "valueJson": "\"较正式或富有文学描写色彩；通常作不及物动词，后接 through、down 等说明流向。日常说液体流动，多用 flow 或 run。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/1",
+        "expectedValueJson": "{\"id\":\"course-v-flow-ex2\",\"senseId\":\"course-v-flow\",\"en\":\"Sunlight coursed across the floor as the clouds moved.\",\"zh\":\"云层移动时，阳光在地板上流淌。\",\"note\":\"course 可生动地描写光线连续移动。\"}",
+        "valueJson": "{\"id\":\"course-v-flow-ex2\",\"senseId\":\"course-v-flow\",\"en\":\"Tears coursed down her cheeks when she heard the news.\",\"zh\":\"听到这个消息时，泪水顺着她的脸颊流下来。\",\"note\":\"tears course down 描写泪水不断流下，带有文学描写色彩。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/0/note",
+        "expectedValueJson": "\"through 后接液体或光线经过的内部空间或通道。\"",
+        "valueJson": "\"through 后接液体流过的内部空间或通道，如血管、水管。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1/zh",
+        "expectedValueJson": "\"沿……流下／掠过\"",
+        "valueJson": "\"沿……流下／流过……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1/note",
+        "expectedValueJson": "\"down、across 说明流动或延伸的方向。\"",
+        "valueJson": "\"down 表示沿表面往下流，across 表示流过一片区域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"描述液体或光线不再移动时，与 course 表示的连续流动相对。\"",
+        "valueJson": "\"表示液体停止流动，与 course 描写的流动状态形成语境对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"追赶动物或人，常见于狩猎、文学或较正式的表达。\"",
+        "valueJson": "\"在狩猎中追逐野兔等猎物，尤指猎犬追逐；也可指放猎犬追猎。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"比 chase 少见，日常叙述通常优先用 chase。\"",
+        "valueJson": "\"多见于狩猎语境，比 chase 少见。日常表达追人或追公交车，一般用 chase、run after 等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"course 和近音词 coarse 拼写相近，但词义和用法不同；名词 course 也不要与一节 lesson 混为一谈。\"",
+        "valueJson": "\"course 和同音词 coarse 拼写相近，但词义和用法不同；名词 course 也不要与一节 lesson 混为一谈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"course-conf-ex2\",\"senseId\":\"course-n-route\",\"en\":\"The path was covered with coarse sand.\",\"zh\":\"小路上铺着粗沙。\",\"note\":\"coarse 修饰 sand，表示颗粒粗。\"}",
+        "valueJson": "{\"id\":\"course-conf-ex2\",\"senseId\":\"course-n-class\",\"en\":\"We used coarse sand in our art course.\",\"zh\":\"我们在美术课程中用了粗沙。\",\"note\":\"course 表示课程；coarse 修饰 sand，表示沙粒粗。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"course 经法语传入英语，源自拉丁语 cursus，意为“奔跑或旅程”，并与表示“跑”的 currere 有关。英语中由沿路移动的意思发展出“进程、课程”和饭菜依次上桌的用法。\"",
+        "valueJson": "\"course 经古法语 cours 传入英语，可追溯到拉丁语 cursus（奔跑、旅程）；cursus 与拉丁语 currere（跑）有关。英语把沿路径移动的观念扩展为有顺序的展开或进程，“学习课程”和“一顿饭中的一道菜”等用法也与这一顺序观念有关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"currere\",\"meaning\":\"跑\"},{\"language\":\"拉丁语\",\"form\":\"cursus\",\"meaning\":\"奔跑；旅程\"},{\"language\":\"法语\",\"form\":\"cours\",\"meaning\":\"传入英语的来源形式\"},{\"language\":\"英语\",\"form\":\"course\",\"meaning\":\"课程、路线、进程等\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline-course\"]",
+        "valueJson": "[\"etymonline-course\",\"wiktionary-course\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-course\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"coursework\",\"partOfSpeech\":\"noun (uncountable)\",\"meaning\":\"课程作业，通常作为课程考核的一部分\",\"formation\":\"由 course（课程）和 work（作业、工作）组成的合成名词。\",\"spellingNote\":\"连写 coursework，保留 course 末尾的 e；通常不可数，不加复数 -s。\",\"example\":{\"id\":\"coursework-family-ex1\",\"senseId\":\"course-n-class\",\"en\":\"I need to finish my coursework before Friday.\",\"zh\":\"我得在周五之前完成课程作业。\",\"note\":\"coursework 指课程要求完成的作业，通常作不可数名词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"此处只列 course 的动词用法；常见名词 courses 是复数或动词第三人称单数，不是新的词族词。\"",
+        "valueJson": "\"course 兼作名词和动词；courses 可作名词复数或动词第三人称单数，属于原词的屈折变化。coursework 是 course + work 构成的合成词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-course\",\"title\":\"Cambridge Dictionary: course\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/course\",\"supports\":[\"名词与动词的主要用法\",\"课程、路线、过程及一道菜等常见义\",\"course 的常见搭配与读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-course\",\"title\":\"Wiktionnaire：course（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/course#Anglais\",\"supports\":[\"英语 course 的课程义与餐次义\",\"英美读音、名词复数形式以及与 coarse 同音\",\"动词的追逐与穿行义\",\"in the course of、course of time、main course 和 of course 等表达\",\"英语 course 借自古法语 cours\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"course-n-action\",\"title\":\"做法；行动方式\",\"meaning\":\"在某种情况下选择采取的做法或行动方向。\",\"usageNote\":\"常说 a course of action；也可直接说 the best course 或 the safest course，表示最佳或最稳妥的做法。\",\"examples\":[{\"id\":\"course-n-action-ex1\",\"senseId\":\"course-n-action\",\"en\":\"The coach chose a different course of action after the first loss.\",\"zh\":\"第一次失利后，教练选择了另一种行动方案。\",\"note\":\"course of action 指应对某种情况所采取的做法。\"},{\"id\":\"course-n-action-ex2\",\"senseId\":\"course-n-action\",\"en\":\"The safest course is to stay here until the storm passes.\",\"zh\":\"留在这里等暴风雨过去，是最安全的做法。\",\"note\":\"course 后不一定要有 of action；to stay… 具体说明所选做法。\"}],\"patterns\":[{\"en\":\"a course of action\",\"zh\":\"一种行动方案\",\"note\":\"表示选择怎样应对某种情况。\",\"kind\":\"common-collocation\"},{\"en\":\"The best / safest course is to do…\",\"zh\":\"最好／最安全的做法是……\",\"note\":\"to 后接动词原形，具体说明做法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"choose / decide on a course of action\",\"zh\":\"选择／决定一种行动方案\",\"note\":\"侧重决定接下来怎样做。\",\"kind\":\"common-collocation\"},{\"en\":\"the best / safest course\",\"zh\":\"最佳／最安全的做法\",\"note\":\"常用于比较几种选择。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"approach\",\"zh\":\"处理方式；思路\",\"note\":\"在解决问题时与 course 有相近之处，更侧重处理问题的方法或思路。\"},{\"en\":\"plan\",\"zh\":\"计划；方案\",\"note\":\"course of action 侧重选择怎样做，plan 还可以包括详细安排。\"}],\"contrasting\":[],\"similarNote\":\"这些词在讨论应对方案时可以接近，但侧重点不同，不能处处互换。\",\"contrastingNote\":\"做法义没有固定的词汇反义；选择暂不行动，也可以是一种 course of action。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"course-n-sport\",\"title\":\"球场；专用赛道或活动路线\",\"meaning\":\"为高尔夫、赛马或障碍训练等活动专门设置的场地或路线。\",\"usageNote\":\"常见于 golf course、obstacle course 等表达；course 并不是所有运动场地的通用名称。\",\"examples\":[{\"id\":\"course-n-sport-ex1\",\"senseId\":\"course-n-sport\",\"en\":\"Our town has a nine-hole golf course.\",\"zh\":\"我们镇上有一座九洞高尔夫球场。\",\"note\":\"golf course 指高尔夫球场，包含按一定路线分布的球洞。\"},{\"id\":\"course-n-sport-ex2\",\"senseId\":\"course-n-sport\",\"en\":\"The children climbed and crawled through an obstacle course at the park.\",\"zh\":\"孩子们在公园里攀爬、匍匐，穿过一条障碍训练路线。\",\"note\":\"obstacle course 是设有各种障碍、供人依次通过的路线或场地。\"}],\"patterns\":[{\"en\":\"on a golf course\",\"zh\":\"在高尔夫球场上\",\"note\":\"谈论球场上的活动时常用 on。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a golf course\",\"zh\":\"高尔夫球场\",\"note\":\"指整座球场，不是一节高尔夫课程。\",\"kind\":\"common-collocation\"},{\"en\":\"an obstacle course\",\"zh\":\"障碍训练场／障碍路线\",\"note\":\"obstacle 表示需要跨越、攀爬等的障碍。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"track\",\"zh\":\"跑道；赛道\",\"note\":\"track 常用于田径或赛车跑道；不能把 golf course 随意换成 golf track。\"}],\"contrasting\":[],\"similarNote\":\"track 和 course 在部分比赛路线语境中相近，具体用词取决于运动项目和场地形式。\",\"contrastingNote\":\"场地义没有固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"course-n-treatment\",\"title\":\"疗程\",\"meaning\":\"按安排在一段时间内进行的一系列治疗或用药。\",\"usageNote\":\"可数；常说 a course of treatment 或 a course of antibiotics，后者指一个抗生素用药疗程。\",\"examples\":[{\"id\":\"course-n-treatment-ex1\",\"senseId\":\"course-n-treatment\",\"en\":\"The doctor prescribed a five-day course of antibiotics.\",\"zh\":\"医生开了为期五天的抗生素疗程。\",\"note\":\"course 表示连续进行的一段用药疗程。\"},{\"id\":\"course-n-treatment-ex2\",\"senseId\":\"course-n-treatment\",\"en\":\"After injuring his shoulder, Leo began a course of physiotherapy.\",\"zh\":\"肩部受伤后，利奥开始了一个物理治疗疗程。\",\"note\":\"course of physiotherapy 指一系列按安排进行的物理治疗。\"}],\"patterns\":[{\"en\":\"a course of treatment / antibiotics\",\"zh\":\"一个治疗／抗生素用药疗程\",\"note\":\"of 后说明疗程涉及的治疗或药物。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"begin a course of treatment\",\"zh\":\"开始一个疗程\",\"note\":\"begin 表示进入这段有安排的治疗。\",\"kind\":\"common-collocation\"},{\"en\":\"complete / finish a course of treatment\",\"zh\":\"完成一个疗程\",\"note\":\"指完成这一系列治疗。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"treatment\",\"zh\":\"治疗\",\"note\":\"treatment 泛指治疗；a course of treatment 强调一段按安排完成的系列治疗。\"}],\"contrasting\":[],\"similarNote\":\"course 表示疗程这一段安排，treatment 表示治疗本身。\",\"contrastingNote\":\"疗程义没有固定的词汇反义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"course-phrase-of-course\",\"title\":\"of course：当然；自然\",\"meaning\":\"表示答应或同意、强调某事显然如此，也可先承认一个事实再作转折。\",\"usageNote\":\"这是整个固定短语 of course 的用法，不是 course 单独表示当然；可独立作答，也可放在句首、句中或句末。\",\"examples\":[{\"id\":\"course-phrase-of-course-ex1\",\"senseId\":\"course-phrase-of-course\",\"en\":\"“Can I borrow your umbrella?” “Of course.”\",\"zh\":\"“我可以借一下你的伞吗？”“当然可以。”\",\"note\":\"用于答应一个请求。\"},{\"id\":\"course-phrase-of-course-ex2\",\"senseId\":\"course-phrase-of-course\",\"en\":\"Of course, we checked the train times before leaving.\",\"zh\":\"我们当然在出发前查过了火车时刻。\",\"note\":\"强调说话人认为理所当然的做法。\"},{\"id\":\"course-phrase-of-course-ex3\",\"senseId\":\"course-phrase-of-course\",\"en\":\"The flat is small, of course, but it's close to my office.\",\"zh\":\"这套公寓的确很小，不过离我的办公室近。\",\"note\":\"先承认公寓小这一点，再用 but 转折。\"}],\"patterns\":[{\"en\":\"Of course.\",\"zh\":\"当然可以／当然是。\",\"note\":\"作为肯定答复，具体译法取决于问题。\",\"kind\":\"fixed-expression\"},{\"en\":\"Of course, + clause\",\"zh\":\"当然，……\",\"note\":\"句首作插入语时常用逗号隔开，也可按语气放在句中或句末。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"of course not\",\"zh\":\"当然不／当然不是\",\"note\":\"用于强调否定，否定的具体内容由上下文决定。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"certainly\",\"zh\":\"当然；肯定\",\"note\":\"可用于肯定答复或强调确信；of course 还常带有理所当然的意味。\"},{\"en\":\"yes\",\"zh\":\"是；可以\",\"note\":\"在肯定答复中可与 of course 接近，但 yes 本身不强调事情显然或理所当然。\"}],\"contrasting\":[{\"en\":\"of course not\",\"zh\":\"当然不／当然不是\",\"note\":\"在答话中可与肯定的 Of course. 对照；二者都可以带有确信语气。\"}],\"similarNote\":\"答应请求时这些表达可能接近；of course 的显然意味和让步功能并非每个近义表达都有。\",\"contrastingNote\":\"of course not 表示明确否定某个具体判断，不是 course 这个名词的反义形式。\"},\"sourceIds\":[\"wiktionary-course\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"course-v-run\",\"title\":\"奔跑；疾驰穿过（文学性）\",\"meaning\":\"快速奔跑或穿过一片区域。\",\"note\":\"可作不及物动词，接 across、over 等说明经过的范围；日常表达跑步通常用 run。\",\"example\":{\"id\":\"course-v-run-ex1\",\"senseId\":\"course-v-run\",\"en\":\"The deer coursed across the open field.\",\"zh\":\"那只鹿飞奔穿过开阔的田野。\",\"note\":\"course 描写动物疾驰，across 引出穿过的区域。\"},\"sourceIds\":[\"wiktionary-course\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 334,
+    "headword": "course",
+    "meaning_zh": "n. 课程, 路线, 过程, 一道菜, 道路\nv. 追, (使)跑",
+    "phonetic": "/kɒ:s/",
+    "pos": "",
+    "forms": []
+  }
+}

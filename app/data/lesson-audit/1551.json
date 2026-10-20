@@ -1,0 +1,339 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2dab03a52f9b1506bd483b3ae7bb535c7093a093ff387d2fb07d270eb2646b77",
+    "executedReviewPromptHash": "2dab03a52f9b1506bd483b3ae7bb535c7093a093ff387d2fb07d270eb2646b77",
+    "reviewHash": "6eccfd02beff19b13fc0ad1b2c2364d19279df6a4aeeb7822e894c5b87f1518c",
+    "wordId": 1551,
+    "inputHash": "a31026ab9ddb717ec9fd12688edd6bd0525ceb77abca9382f5e67994b20fe59a",
+    "draftHash": "4a96760e42e26a9cf25cc52612091a017f5bc0af214a7aaf357e6764752605a8",
+    "finalHash": "82dabea51cce5191ef5a7409a7fff187fbb1a9af64d88ecd74a67669aeb9231d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/why#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.188Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 4112,
+        "revisionId": 39764257,
+        "revisionTimestamp": "2026-08-03T04:47:15Z",
+        "sha256": "2071554f6032f9db69a9867eb3895ba19a666400aa69657f3d113ec2d5bc6f21",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/why",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:29:13.707Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:36:27.501Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用该来源的 sourceIds",
+        "message": "初稿主要引用了未提供正文的 Oxford 页面。应将相关依据改为实际取得的法语维基词典英语词条，并准确列出其支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "“开头没有 /h/ 音”和将 /hwai/ 整体判为不准确都过于绝对。/waɪ/ 是常见读音，但部分口音保留 /ʍ/，也可转写为 /hw/；应区分口音差异和音标写法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "reason why 是常用的关系副词功能，不宜仅作为较少见用法处理。目前只有一个例句，应移入核心义并补足两个自然例句及必要的句型说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "There is a good why for every rule in this game. 不适合作为初中生模仿的日常表达，通常应说 a good reason。原稿还容易使学生认为名词 why 可自由替换 reason；应突出 the why behind … 和表示“为什么”问题的 whys，并使用更自然的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "感叹词 why 并非现代日常口语中的普通招呼语，“嗨”容易误导。其独立感叹用法往往略显老派或带戏剧感；现有例句主要表现惊讶和突然发现，应据此收窄释义，并修正 Why, of course. 的语气说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/summary 及 /senses/0/relatedExpressions/contrastingNote",
+        "message": "because 引出原因，不是结果；why 和 because 也不是反义词。“直接提问要倒装”应限定为常规完整问句，避免与已教授的 Why not …? 等省略结构冲突。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2",
+        "message": "“也可直接用 the reason”未说明省略的是 why，可能被理解为删除整个从句。应展示保留从句、仅省略 why 的完整对照。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的疑问副词、关系副词、名词和感叹词四类定义。修订后四项核心功能均有至少两个原创英中例句；关系副词不再被降为少见义，名词用法与 reason 的适用范围得到区分。古英语 hwī 的词形和含义与实际词源材料一致，单一阶段没有虚构历史先后关系，无须改动。来源改用已取得的英语词条；部分读音差异和语体说明依据专业语言知识补充。",
+    "senseInventory": [
+      {
+        "sense": "疑问副词：询问原因、理由或目的，也引导间接疑问句",
+        "coveredBy": [
+          "why-adv"
+        ],
+        "assessment": "原稿已有直接提问和间接疑问两个自然例句，基本覆盖充分；修正 because 的功能说明及相关语序概括。"
+      },
+      {
+        "sense": "关系副词：在 reason 后引导关系从句，相当于 for which",
+        "coveredBy": [
+          "why-relative"
+        ],
+        "assessment": "原稿仅在少见义中提供一个例句，覆盖不足；补丁将其移入核心义，补足两个例句及省略 why 的说明。"
+      },
+      {
+        "sense": "名词：原因、理由；所追问的“为什么”",
+        "coveredBy": [
+          "why-n"
+        ],
+        "assessment": "原稿覆盖了该词性，但部分例句和搭配不宜作为日常范例；修订后分别展示 whys 和 the why behind …，并说明其使用范围。"
+      },
+      {
+        "sense": "感叹词：表示惊讶",
+        "coveredBy": [
+          "why-int"
+        ],
+        "assessment": "两个例句均能体现惊讶或突然发现；保留例句，修正中文标签、释义范围和语体提示。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-why\",\"title\":\"Oxford Learner’s Dictionaries: why\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/why\",\"supports\":[\"常用词性和释义\",\"why 的疑问句与相关用法\",\"名词复数拼写\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-why\",\"title\":\"Wiktionnaire：why（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/why#Anglais\",\"supports\":[\"疑问副词及直接、间接疑问用法\",\"reason why 中的关系副词用法\",\"名词用法及复数 whys\",\"表示惊讶的感叹词用法\",\"常见读音 /waɪ/\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-why\"]",
+        "valueJson": "[\"wiktionary-why\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式发音基本相同。\"",
+        "valueJson": "\"英美常见读音均为 /waɪ/；部分口音保留 /ʍ/ 起音，也常转写为 /hw/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"读作一个音节，和字母 Y 同音；开头没有 /h/ 音。\",\"旧式拼写提示 /hwai/ 不准确，现代音标写作 /waɪ/。\"]",
+        "valueJson": "[\"常见读音 /waɪ/ 只有一个音节，与字母 Y 同音。\",\"部分说话人读 /ʍaɪ/，也可转写为 /hwaɪ/；这里用现代国际音标 /aɪ/ 表示双元音。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"记住 the reason why；说原因时也可直接用 the reason.\"",
+        "valueJson": "\"记住 the reason why；其中 why 常可省略，如 the reason why she left → the reason she left。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在询问原因这个语境中，because 常用于回答 why；两者承担的语法功能相反。\"",
+        "valueJson": "\"why 用来问原因，because 引出原因，常用于回答 why；这是提问与回答的功能区别，两者不是反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"指某件事背后的原因或理由。常见复数形式 whys，尤其用于谈论某人不断追问的“为什么”。\"",
+        "valueJson": "\"指某件事背后的原因或理由，也可指一个“为什么”的问题。复数 whys 可表示接连提出的“为什么”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作名词时可由冠词、形容词或物主代词修饰；复数直接加 -s，不改变 y。\"",
+        "valueJson": "\"名词用法比 reason 少见，常见于 the why behind …、whys 和 the whys and wherefores 等表达。日常说“一个充分的理由”一般用 a good reason。复数直接加 -s，保留 y。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"why-ex3\",\"senseId\":\"why-n\",\"en\":\"The teacher asked us to write down the whys behind our choices.\",\"zh\":\"老师让我们写下自己作出这些选择的理由。\",\"note\":\"whys 指多个理由。\"},{\"id\":\"why-ex4\",\"senseId\":\"why-n\",\"en\":\"There is a good why for every rule in this game.\",\"zh\":\"这场游戏里的每条规则都有充分的理由。\",\"note\":\"why 作可数名词，前面用 a。\"}]",
+        "valueJson": "[{\"id\":\"why-ex3\",\"senseId\":\"why-n\",\"en\":\"My little brother’s endless whys made the car journey feel like a quiz.\",\"zh\":\"弟弟一路不停地问“为什么”，让这趟乘车旅程像一场问答测验。\",\"note\":\"whys 指一个接一个的“为什么”问题，复数保留 y。\"},{\"id\":\"why-ex4\",\"senseId\":\"why-n\",\"en\":\"Before we change the plan, we need to understand the why behind it.\",\"zh\":\"修改计划之前，我们得先弄清制定它的理由。\",\"note\":\"the why behind … 表示某事背后的理由；这里 why 是名词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"ask the whys\",\"zh\":\"追问原因\",\"note\":\"常用复数 whys 表示连续追问的“为什么”。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"the why behind a decision\",\"zh\":\"一个决定背后的理由\",\"note\":\"适合强调作出决定的动机；日常也常说 the reason behind a decision。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"固定说法，指事情的各种原因，语气略正式。\"",
+        "valueJson": "\"固定说法，指事情的各种原因和缘由，略显老派。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"感叹词：咦；哎呀；嗨\"",
+        "valueJson": "\"感叹词：咦；哎呀\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"放在句首表达惊讶、迟疑或突然想起某事；具体语气由情境和语调决定。\"",
+        "valueJson": "\"放在句首表达惊讶，例如突然发现某件事时说“咦”或“哎呀”。具体语气由情境和语调决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见于对话，后面可接完整句子，也可单独使用。语气用法较口语，理解时要看上下文。\"",
+        "valueJson": "\"多见于对话，后面可接完整句子，也可单独使用；这种感叹用法往往略显老派或带戏剧感。现代日常对话中，oh 通常更常见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"句首 why 可表示说话人突然感到惊讶或想起某事。\"",
+        "valueJson": "\"句首 why 可表示惊讶，常用于刚注意到某件出乎意料的事时。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/zh",
+        "expectedValueJson": "\"哎呀，当然。\"",
+        "valueJson": "\"嗯，当然。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"用来表达恍然想起或带惊喜的肯定回答。\"",
+        "valueJson": "\"why 在这里加强肯定回应的语气，也可带惊讶；这种说法略显老派，日常通常直接说 Of course.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"oh 更常见、语气范围更广；句首 why 常带有突然反应或恍然大悟的感觉。\"",
+        "valueJson": "\"oh 更常见、语气范围更广；这里的句首 why 表示惊讶，往往略显老派或带戏剧感。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"why-relative\",\"title\":\"关系副词：引出 reason 后的原因说明\",\"meaning\":\"跟在 reason 后，引导说明原因的关系从句，相当于 for which。\",\"usageNote\":\"the reason why … 是常用结构，why 后用陈述语序。why 常可省略，如 the reason why she left 也可说 the reason she left；省略 why 时，后面的从句仍保留。\",\"examples\":[{\"id\":\"why-ex7\",\"senseId\":\"why-relative\",\"en\":\"That’s the reason why our team changed its plan.\",\"zh\":\"那就是我们队改变计划的原因。\",\"note\":\"why 引导关系从句，修饰前面的 reason。\"},{\"id\":\"why-ex12\",\"senseId\":\"why-relative\",\"en\":\"The main reason why I walk to school is that I live nearby.\",\"zh\":\"我步行上学的主要原因是我家住得近。\",\"note\":\"why I walk to school 修饰 reason，is that … 给出具体原因。\"}],\"patterns\":[{\"en\":\"the reason (why) + 主语 + 谓语\",\"zh\":\"……的原因\",\"note\":\"括号表示 why 常可省略，后面的从句用陈述语序。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the main reason why …\",\"zh\":\"……的主要原因\",\"note\":\"main 修饰 reason，why 引出与这个原因有关的事情。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"for which\",\"zh\":\"为此；由于这一原因\",\"note\":\"在 reason 后引导关系从句时可替换 why，语气较正式，如 the reason for which she left。\"}],\"contrasting\":[{\"en\":\"because\",\"zh\":\"因为\",\"note\":\"比较 That’s the reason why I stayed. 和 I stayed because it was raining.：前者的 why 从句修饰 reason，后者的 because 从句直接说明留下的原因。\"}],\"similarNote\":\"这里的 for which 与 why 对应，仅针对 reason 后说明原因的关系从句，不能据此替换直接提问的 Why …?。\",\"contrastingNote\":\"why 与 because 不是反义词；这里比较的是关系从句与原因状语从句的功能。\"},\"sourceIds\":[\"wiktionary-why\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"why-relative\",\"title\":\"关系副词：……的原因\",\"meaning\":\"在 the reason why 等结构中连接原因和相关内容，可理解为“……的原因”。\",\"note\":\"适合先作为固定结构学习；很多句子也可省略 why，或改用 for which。\",\"example\":{\"id\":\"why-ex7\",\"senseId\":\"why-relative\",\"en\":\"That’s the reason why our team changed its plan.\",\"zh\":\"那就是我们队改变计划的原因。\",\"note\":\"why 连接 reason 与后面的说明。\"},\"sourceIds\":[\"oxford-why\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"直接提问要用疑问语序；嵌入疑问用陈述语序。问原因的 why 也不要和表示结果的 because 混用。\"",
+        "valueJson": "\"常规完整的 why 直接疑问句通常用疑问语序；why 引导的间接疑问句用陈述语序。because 引出原因，可用来回答 why。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/label",
+        "expectedValueJson": "\"直接疑问句：why 后倒装\"",
+        "valueJson": "\"常规完整的直接疑问句：助动词等放在主语前\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1551,
+    "headword": "why",
+    "meaning_zh": "adv. 为什么\nn. 原因, 理由",
+    "phonetic": "/hwai/",
+    "pos": "",
+    "forms": []
+  }
+}

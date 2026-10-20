@@ -1,0 +1,465 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "121f3e52f4696cce531ef77d59a399a7f912eefb9fe3a707bb524a6deb893775",
+    "executedReviewPromptHash": "121f3e52f4696cce531ef77d59a399a7f912eefb9fe3a707bb524a6deb893775",
+    "reviewHash": "aa4264f79447ecf03961ae2920a880c5ec02ad51dbf9f7ab9abb7f410605fa2e",
+    "wordId": 1362,
+    "inputHash": "490da51e82e5fb64976dd25bad22d2a8d202ff2fdc3d3ec2f2ba68b997cb924a",
+    "draftHash": "dea5850bb4d9535b7853e3008b8258edfc0b364a6aeb87caf1314a1d0046399c",
+    "finalHash": "78b9e1310cb093f8cde33b514e56211a25a2f59a68dcbd00ea6a439348ac409c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/surprise#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.552Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120591,
+        "revisionId": 39900511,
+        "revisionTimestamp": "2026-09-23T18:10:36Z",
+        "sha256": "99f63a9f501952bfad88856daabbcf2055d9d24396c816117db57a11f7485291",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/surprise",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:31:05.055Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:41:28.487Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏不可数名词“惊讶、诧异”的常用义；原稿把 to my surprise 放在可数事件义下，未说明两种名词用法的区别。补充独立义项及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "“撞见”和“奇袭”混为一义，原有例句不能清楚展示“撞见”；surprise someone by doing something 也不必然表示突然行动。改用明确的撞见例句，另列较少见的军事动词义和名词用法，并把 take/catch someone by surprise 放回名词固定表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0；/senses/0",
+        "message": "give someone a surprise 不保证令人高兴，不能一律解释为“给某人一个惊喜”。需明确其情绪色彩由上下文决定。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/formation",
+        "message": "surprising 本身没有词尾 e；surprisingly 直接由 surprising 加 -ly 构成。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/meaning；/wordFamilyNote",
+        "message": "现在分词本身不等于“正在使人惊讶”；原稿也把分词变化和派生一概混称。需区分分词、形容词和副词构成。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段数组按中古英语到古法语再到来源动词排列，作为顺序箭头会倒置历史关系；meaning 字段又只是来源说明。改为在 summary 保留可证实关系及 sur-、prendre 的构词事实，清空缺乏字义依据的阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；各处 /sourceIds；/sources",
+        "message": "Oxford 未出现在实际取得的来源中，不能作为本次内容依据。保留其推荐阅读身份，移除正文中未经材料支持的归属；读音改引实际包含英美发音的维基英语条目。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples；/confusions/0/items/*/example；/wordFamily/*/example",
+        "message": "原稿全部十一条例句均缺少目标结构要求的 note 字段；补齐说明，替换的例句也保留完整结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "把 Surprise! 这声感叹直接解释成“一个 surprise”，混淆了感叹用语和意外事件。改为把欢迎安排对应到名词，并补充常见的名词前修饰功能。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "surprise 最后一个字母是 e，应说词尾辅音为 /z/，不能说“结尾字母 s”。"
+      }
+    ],
+    "coverageAssessment": "已核对可数名词“意外的事／惊喜”、不可数名词“惊讶”、动词“使惊讶／撞见／奇袭”，以及军事名词用法、名词前修饰和常见感叹及固定表达。修订后四个主要义项各有至少两个原创英中例句；较少见的军事用法另列。原有 at/about、过去式拼写及近义和反向表达的语境限制基本成立，予以保留。来源局限是：所附维基英语条目释义简略，名词行还出现 surprize 与罕用标记的内部不一致，不能据此认定标准拼写 surprise 罕用；常用义及教学例句同时依据词条中文释义和专业语言知识审校。Oxford 仅保留为推荐阅读，未冒称本次核验来源。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：出乎预料的事情、安排或惊喜",
+        "coveredBy": [
+          "sense-n-unexpected-event"
+        ],
+        "assessment": "原有两个例句成立；修正给人惊喜的单向解释，并补充 surprise party 和措手不及的固定表达。"
+      },
+      {
+        "sense": "不可数名词：惊讶、诧异的感觉",
+        "coveredBy": [
+          "sense-n-emotion"
+        ],
+        "assessment": "原稿遗漏；新增两个生活例句，说明通常不加 a，并承接 to someone's surprise。"
+      },
+      {
+        "sense": "及物动词：使某人惊讶",
+        "coveredBy": [
+          "sense-v-cause"
+        ],
+        "assessment": "两个原例句和主要句型正确；保留 at/about，不把合语法的表达误判为错误。"
+      },
+      {
+        "sense": "及物动词：突然发现、撞见某人正在做某事",
+        "coveredBy": [
+          "sense-v-catch-unaware"
+        ],
+        "assessment": "重写原混合义项，用两个明确的撞见例句覆盖；与单纯使人惊讶区分。"
+      },
+      {
+        "sense": "及物动词：出其不意地袭击",
+        "coveredBy": [
+          "less-v-attack"
+        ],
+        "assessment": "作为较少见的军事义单列，避免仅用普通惊讶句型冒充奇袭例句。"
+      },
+      {
+        "sense": "名词：军事行动中的出其不意、奇袭用法",
+        "coveredBy": [
+          "less-n-military"
+        ],
+        "assessment": "补充军事语境及明确例句；说明 surprise attack 的修饰结构，不把日常 a surprise 一律解释为袭击。"
+      },
+      {
+        "sense": "常用功能：名词前修饰，以及 Surprise! 感叹用语",
+        "coveredBy": [
+          "sense-n-unexpected-event"
+        ],
+        "assessment": "补充 surprise party 搭配和例句、Surprise! 固定用语；助记故事不再把喊声直接等同于意外事件。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，surprise 是“意外、惊喜或惊讶”；作动词时，表示“使某人吃惊”，也可表示“趁人没料到时突然行动”。\"",
+        "valueJson": "\"作名词时，surprise 可指一件意外的事或惊喜，也可指惊讶的感觉；作动词时，主要表示使人惊讶，还可表示突然撞见或出其不意地袭击。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记住 give someone a surprise（给某人一个惊喜）和 be surprised at（对……感到惊讶）。\"",
+        "valueJson": "\"先记住 give someone a surprise（让某人大吃一惊，也可指给人惊喜）和 be surprised at（对……感到惊讶）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第二音节 /praɪz/，结尾字母 s 读浊音 /z/。\"",
+        "valueJson": "\"重音在第二音节 /praɪz/；词尾辅音 /z/ 是浊音，最后的 e 不发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常与 a 连用；表示“给某人一个惊喜”时用 give someone a surprise。\"",
+        "valueJson": "\"指一件具体的意外事情时是可数名词，可说 a surprise 或 several surprises。give someone a surprise 表示让某人感到意外，不一定令人高兴。surprise 也可放在 party、visit 等名词前，表示事先未透露或出乎预料的。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a surprise 指事先保密的一项安排；这个语境可自然译为“惊喜”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a surprise 指出乎预料的事情，不表示下雪一定令人高兴。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-n-modifier\",\"senseId\":\"sense-n-unexpected-event\",\"en\":\"We organized a surprise party for Mum.\",\"zh\":\"我们瞒着妈妈为她办了一场惊喜派对。\",\"note\":\"surprise 放在 party 前作修饰语，表示事先没有告诉派对主角。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-n-by-surprise\",\"senseId\":\"sense-n-unexpected-event\",\"en\":\"The sudden rain took us by surprise, and we ran into a shop.\",\"zh\":\"突如其来的雨让我们措手不及，我们赶紧跑进一家商店。\",\"note\":\"take someone by surprise 是固定表达；这里的 surprise 是名词，不是句中的主要动词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/zh",
+        "expectedValueJson": "\"给某人一个惊喜\"",
+        "valueJson": "\"让某人大吃一惊；给某人一个惊喜\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"surprise 前通常带 a；someone 放在 give 后，说明谁收到惊喜。\"",
+        "valueJson": "\"surprise 前通常带 a；someone 表示感到意外的人。是惊喜还是不愉快的意外，要看上下文。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"take/catch someone by surprise\",\"zh\":\"使某人感到意外；使某人措手不及\",\"note\":\"这是含名词 surprise 的固定表达，可用于突然下雨、意外消息等日常情况，不一定涉及袭击。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Surprise!\",\"zh\":\"给你个惊喜！\",\"note\":\"揭晓事先保密的礼物或安排时常喊的感叹用语。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"to my surprise\",\"zh\":\"令我惊讶的是\",\"note\":\"常放在句首或句中，引出说话人意料之外的结果。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a surprise party\",\"zh\":\"事先保密的惊喜派对\",\"note\":\"surprise 作前置修饰语，通常指瞒着派对主角准备的聚会。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"message 是引起惊讶的事物，me 是感到惊讶的人；surprise 直接接宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at 后接 how 引导的从句，说明令人惊讶的是完成速度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2",
+        "expectedValueJson": "{\"id\":\"sense-v-catch-unaware\",\"title\":\"动词：趁人没料到时发现或突然袭击\",\"meaning\":\"在对方没有准备时碰见、发现某人，或突然采取行动；常用于被动结构 be caught by surprise。\",\"usageNote\":\"此义常见于新闻、故事或比赛情境；名词短语 by surprise 表示“趁其不备”。\",\"examples\":[{\"id\":\"ex-v-3\",\"senseId\":\"sense-v-catch-unaware\",\"en\":\"The guard was surprised by the visitors after dark.\",\"zh\":\"天黑后，守卫被来访者打了个措手不及。\"},{\"id\":\"ex-v-4\",\"senseId\":\"sense-v-catch-unaware\",\"en\":\"The team surprised its rivals with a quick attack.\",\"zh\":\"这支队伍突然发动快速进攻，打了对手一个措手不及。\"}],\"patterns\":[{\"en\":\"surprise someone by doing something\",\"zh\":\"突然做某事，使某人措手不及\",\"note\":\"by 后用动词-ing，说明采取了什么出其不意的行动。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be caught by surprise\",\"zh\":\"被打个措手不及\",\"note\":\"常用于被动表达，强调某人没有准备好。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"surprise attack\",\"zh\":\"突然袭击\",\"note\":\"指对方未预料到的进攻；常见于军事或比赛等语境。\",\"kind\":\"common-collocation\"},{\"en\":\"take someone by surprise\",\"zh\":\"使某人措手不及\",\"note\":\"固定表达，强调某件事突然发生，让人来不及准备。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"catch someone off guard\",\"zh\":\"趁某人没有防备\",\"note\":\"常指突然提问或出现，让人来不及准备；语气比“袭击”更日常。\"},{\"en\":\"ambush\",\"zh\":\"埋伏并突然袭击\",\"note\":\"通常指事先埋伏后发动攻击，比 surprise 的范围更窄、更具体。\"}],\"contrasting\":[{\"en\":\"warn someone\",\"zh\":\"预先警告某人\",\"note\":\"在突然行动或袭击的语境中，warn 表示提前告知，能让对方有所准备。\"}],\"similarNote\":\"surprise someone 可指突然遇到或发动行动；catch someone off guard 常用于日常措手不及，ambush 专指埋伏袭击。\",\"contrastingNote\":\"描述出其不意的行动时，warn someone 表示提前告知，能减少意外；它不是 surprise 的通用反义词。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "{\"id\":\"sense-v-catch-unaware\",\"title\":\"动词：突然发现；撞见\",\"meaning\":\"突然碰见或发现某人，尤其是在对方没有料到会被发现时。\",\"usageNote\":\"此义较少见，常用于叙事。surprise someone doing something 表示撞见某人正在做某事；不要与 surprise someone by doing something 混淆，后者表示通过自己的某个举动使对方惊讶。\",\"examples\":[{\"id\":\"ex-v-3\",\"senseId\":\"sense-v-catch-unaware\",\"en\":\"The guard surprised two men trying to force the back door open.\",\"zh\":\"守卫撞见两名男子正试图强行打开后门。\",\"note\":\"trying 描述 two men 当时正在做的事；句子不表示守卫已经逮捕了他们。\"},{\"id\":\"ex-v-4\",\"senseId\":\"sense-v-catch-unaware\",\"en\":\"I surprised my brother eating the cake I had saved for later.\",\"zh\":\"我撞见弟弟正在吃我留着待会儿吃的蛋糕。\",\"note\":\"eating 描述弟弟正在做的事，体现突然撞见，而不只是一般的“使他惊讶”。\"}],\"patterns\":[{\"en\":\"surprise someone doing something\",\"zh\":\"撞见某人正在做某事\",\"note\":\"doing 的动作由 someone 完成；与表示手段或原因的 by doing 不同。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"surprise someone in the act\",\"zh\":\"当场撞见某人\",\"note\":\"常用于偷窃等不想被发现的行为；也常说 catch someone in the act。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"catch someone in the act\",\"zh\":\"当场撞见某人做坏事\",\"note\":\"突出在行为发生时发现对方，通常涉及不当行为；surprise 的适用范围较宽。\"},{\"en\":\"come upon someone\",\"zh\":\"偶然遇见某人\",\"note\":\"强调偶然碰见，不一定表示对方受到惊吓或正在隐瞒什么。\"}],\"contrasting\":[{\"en\":\"let someone know you are coming\",\"zh\":\"事先告诉某人你要来\",\"note\":\"在登门或进入房间的情境中，提前告知可让对方有所准备；这是情境对照。\"}],\"similarNote\":\"catch someone in the act 强调当场发现不当行为；come upon someone 强调偶遇；surprise 在此义中强调对方没有料到会被发现。\",\"contrastingNote\":\"此处没有适用于所有句子的直接反义词；事先告知到来可与突然撞见作情境对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-n-emotion\",\"title\":\"名词：惊讶；诧异\",\"meaning\":\"因事情出乎预料而产生的惊讶感觉。\",\"usageNote\":\"表示感觉时通常是不可数名词，不说 a surprise 来表示一份惊讶。to my surprise 是“令我惊讶的是”，in surprise 或 with surprise 表示带着惊讶的反应。\",\"examples\":[{\"id\":\"ex-n-emotion-1\",\"senseId\":\"sense-n-emotion\",\"en\":\"To my surprise, my son had already washed the dishes.\",\"zh\":\"令我惊讶的是，儿子已经把碗洗好了。\",\"note\":\"to my surprise 引出出乎说话人预料的结果；had already washed 表示洗碗发生在发现之前。\"},{\"id\":\"ex-n-emotion-2\",\"senseId\":\"sense-n-emotion\",\"en\":\"She stared at the broken window in surprise.\",\"zh\":\"她惊讶地盯着那扇破了的窗户。\",\"note\":\"in surprise 描述她的惊讶反应，surprise 前不加 a。\"}],\"patterns\":[{\"en\":\"to someone's surprise\",\"zh\":\"令某人惊讶的是\",\"note\":\"常放在句首或句中，说明随后所说的情况出乎某人预料。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"in surprise\",\"zh\":\"惊讶地\",\"note\":\"常与 look、stare 等表示反应的动词连用。\",\"kind\":\"common-collocation\"},{\"en\":\"a look of surprise\",\"zh\":\"惊讶的神情\",\"note\":\"a 修饰可数名词 look；surprise 在这里仍表示不可数的感觉。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"astonishment\",\"zh\":\"十分惊讶\",\"note\":\"通常比 surprise 程度更强，也较正式。\"},{\"en\":\"amazement\",\"zh\":\"惊奇；惊叹\",\"note\":\"常指强烈的惊奇，有时带赞叹意味，但不必然是愉快的反应。\"}],\"contrasting\":[{\"en\":\"show no surprise\",\"zh\":\"没有表现出惊讶\",\"note\":\"描述外在反应，没有表现出来不一定等于内心毫不惊讶。\"}],\"similarNote\":\"三者都可表示感觉；astonishment 和 amazement 通常比 surprise 更强。\",\"contrastingNote\":\"show no surprise 是描述反应的反向表达，不是可以直接替换名词 surprise 的单词反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"less-v-attack\",\"title\":\"动词：出其不意地袭击\",\"meaning\":\"趁对方没有防备时突然进攻。\",\"note\":\"主要用于军事或类似行动的叙述。surprise someone by doing something 本身只说明某个举动使人惊讶，不自动含有袭击之意；ambush 还强调预先埋伏，范围更窄。\",\"example\":{\"id\":\"ex-less-v-attack\",\"senseId\":\"less-v-attack\",\"en\":\"At dawn, the soldiers surprised the enemy camp.\",\"zh\":\"黎明时，士兵们突袭了敌军营地。\",\"note\":\"军事语境及 enemy camp 使这里明确表示突袭，而不是一般的使人惊讶。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"less-n-military\",\"title\":\"名词：出其不意（军事语境）\",\"meaning\":\"军事行动中让敌人毫无防备的突然性，中文有时概括为“奇袭”。\",\"note\":\"可见于 by surprise、the element of surprise 等表达。surprise attack 表示“突然袭击”，其中 surprise 放在 attack 前作修饰语；日常的 a surprise 不自动表示一次袭击。\",\"example\":{\"id\":\"ex-less-n-military\",\"senseId\":\"less-n-military\",\"en\":\"The soldiers took the fort by surprise.\",\"zh\":\"士兵们趁敌人不备攻占了堡垒。\",\"note\":\"by surprise 表示趁其不备；句子的主要动词是 took，surprise 在这里是名词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a surprise 是名词短语，表示这条消息出乎预料。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"surprised 描述米娅的感受；to see the gift 说明惊讶的原因。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 surprise 经中古英语传入，借自古法语 surprise；古法语形式来自 surprendre。\"",
+        "valueJson": "\"英语 surprise 经中古英语 surprise 借自古法语 surprise；古法语 surprise 来自 surprendre，而 surprendre 由前缀 sur- 与 prendre 构成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"surprise\",\"meaning\":\"英语从古法语借入的形式。\"},{\"language\":\"古法语\",\"form\":\"surprise\",\"meaning\":\"传入中古英语的来源形式，来自古法语动词 surprendre。\"},{\"language\":\"古法语\",\"form\":\"surprendre\",\"meaning\":\"surprise 所据的古法语动词形式。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里仅说明可追溯的传入关系；联想记忆不是词源解释。\"",
+        "valueJson": "\"sur- 与 prendre 的组合属于古法语构词，不能直接拿来拆解现代英语单词 surprise；下面的故事只是助记联想。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"looked surprised 表示看起来感到惊讶；by the news 说明引起惊讶的消息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"令人惊讶的；表示正在使人惊讶。\"",
+        "valueJson": "\"令人惊讶的；也可用作 surprise 的现在分词。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"surprising 作形容词修饰 result，说明结果令人惊讶，不表示正在进行的动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"surprising 去掉词尾 e 的基础上加 -ly。\"",
+        "valueJson": "\"surprising 直接加 -ly，构成 surprisingly。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"surprisingly 修饰形容词 quiet，表示安静的程度出乎预料。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"surprised、surprising 和 surprisingly 都由 surprise 派生；surprising 修饰引起惊讶的事物，surprised 常修饰感到惊讶的人。\"",
+        "valueJson": "\"surprised 和 surprising 是 surprise 的分词形式，也常作形容词；surprisingly 是 surprising 加 -ly 构成的副词。作形容词时，surprising 描述引起惊讶的人或事物，surprised 描述感到惊讶的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象朋友躲在门后，门一打开，大家喊“Surprise!”：这声喊是一个 surprise；朋友突然出现会 surprise 你；你会感到 surprised。这个画面也能提醒你：英语里“令人惊讶的”是 surprising。\"",
+        "valueJson": "\"想象朋友们瞒着你准备了一场 surprise party。你一开门，大家喊“Surprise!”（给你个惊喜！）。这场意外的欢迎是 a surprise；朋友们的安排会 surprise 你；你会感到 surprised，而这场安排对你来说是 surprising 的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"名词和动词的常用义项、例句结构、搭配及词形参考\"]",
+        "valueJson": "[\"推荐延伸查阅：surprise 的名词和动词义项、搭配及词形\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionnaire: surprise（英语词源条目）\"",
+        "valueJson": "\"Wiktionnaire: surprise（英语条目）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"英语 surprise 的中古英语传入来源及古法语构词关系\"]",
+        "valueJson": "[\"英语 surprise 的英美读音\",\"英语 surprise 的中古英语、古法语来源及古法语构词关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1362,
+    "headword": "surprise",
+    "meaning_zh": "n. 惊奇, 奇袭, 诧异\nvt. 使惊奇, 撞见, 奇袭",
+    "phonetic": "/sә'praiz/",
+    "pos": "",
+    "forms": []
+  }
+}

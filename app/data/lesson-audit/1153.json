@@ -1,0 +1,596 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "968ec3356b361acf00e6ac0ecf9576f737fc8bd78ace88b0ea67669c6f803cb2",
+    "executedReviewPromptHash": "968ec3356b361acf00e6ac0ecf9576f737fc8bd78ace88b0ea67669c6f803cb2",
+    "reviewHash": "c9244b4c9f5cc84cee5490036b0744c314c33149d67e491d39f2c231adb6e8bc",
+    "wordId": 1153,
+    "inputHash": "2f58e09eb421a289eff6bf898a5b813c4a8a52654d0215ad5b05c6586cdaff81",
+    "draftHash": "ed0a25ba6d965ea6fb8dfb7cde79c85c59e5e534a1399e1100c508499446a6d2",
+    "finalHash": "a4c6b275ea0fcfde639a38a4d3f5b677045f85e25e475f9ad88feb6f5b9d1eb6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rest#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.641Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 29572,
+        "revisionId": 38292600,
+        "revisionTimestamp": "2025-06-05T12:28:20Z",
+        "sha256": "547bcd4824155d188425b542eaae175f889fe26b0c2076adcbdd14133da37d5f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rest",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:34:18.047Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:43:11.320Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "resting 的拼写说明错误：rest 没有词尾 e，应直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2、/senses/3、/lessCommonSenses/0",
+        "message": "常用及物功能未充分教学：让身体部位休息仅列搭配，把希望寄托于没有示范；物理支撑用法被放到页尾且缺少不及物例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses",
+        "message": "遗漏常用的 at rest 和 rest with；来源明确列出的音乐义、rest on one's laurels 也未覆盖。安息、安心、停止等功能需要按词性或固定结构补充。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3",
+        "message": "原线索例句并非语法错误，但不够清楚地示范依据义；应更明确区分依赖条件、基于证据和寄托希望，并补充有语境限制的反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/2/example",
+        "message": "armrest 的例句不能直接充当独立名词 rest 表示支撑物的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "取回的词源段只明确给出 rastō，没有提供该历史形式的释义；现有阶段填入了未经该段证实的解释。应删除占位阶段，并限定休息义的历史说明，避免暗示其余部分义也来自同一条演变链。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples、/lessCommonSenses/*/example、/confusions/*/items/*/example、/wordFamily/*/example",
+        "message": "共有16个原始例句对象缺少目标结构必填的 note；补丁通过补字段、替换例句或迁移义项全部修复。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/note",
+        "message": "wrest 的扭转释义过于宽泛，宜限定为用力夺走、费力夺得等常见用法。"
+      }
+    ],
+    "coverageAssessment": "已按英语词条理解法语释义，核对名词、及物动词、不及物动词及常用固定结构。补丁后核心义均有至少两个自然原创英中例句，合并义中的主要功能也有实际示范；补齐音乐义等低频用法。低频的独立地点义“休息处”未展开，不把裸词 rest 教作日常休息区的通称。词源仅采用已取回的同 URL 材料；推荐链接不视为已取回证据，未使用不可用的 Cambridge 页面。",
+    "senseInventory": [
+      {
+        "sense": "名词：休息、休息时间；可包含睡眠",
+        "coveredBy": [
+          "rest-n-rest"
+        ],
+        "assessment": "已有两个自然例句，补齐必填注释；休息与睡眠的关系说明正确。"
+      },
+      {
+        "sense": "名词：其余的人或物、剩余部分、后续内容",
+        "coveredBy": [
+          "rest-n-remainder"
+        ],
+        "assessment": "已有两个例句，the rest 与 the rest of 的基本功能及主谓一致说明可保留。"
+      },
+      {
+        "sense": "不及物动词：休息、歇息；可能包含睡眠",
+        "coveredBy": [
+          "rest-v-relax"
+        ],
+        "assessment": "保留原有两个例句；明确休息不保证睡着。"
+      },
+      {
+        "sense": "及物动词：让身体部位休息",
+        "coveredBy": [
+          "rest-v-relax"
+        ],
+        "assessment": "补充眼睛和双脚两个生活例句及及物句型。"
+      },
+      {
+        "sense": "及物／不及物动词：靠放、获得支撑、安置于支撑物上",
+        "coveredBy": [
+          "rest-v-support"
+        ],
+        "assessment": "提升为核心义，以四个例句区分 rest something on/against 与 something rests on/against。"
+      },
+      {
+        "sense": "名词固定表达：静止、不活动",
+        "coveredBy": [
+          "rest-n-still"
+        ],
+        "assessment": "补充 at rest，提供两个静止状态例句，并限定与 in motion 的对照。"
+      },
+      {
+        "sense": "不及物动词：依赖条件、以某事为依据",
+        "coveredBy": [
+          "rest-v-rely"
+        ],
+        "assessment": "明确抽象主语和 on/upon 结构，分别示范条件与依据。"
+      },
+      {
+        "sense": "及物动词：把希望寄托于、把论证建立在某事上",
+        "coveredBy": [
+          "rest-v-rely"
+        ],
+        "assessment": "补充 rest one's hopes/argument on；寄托希望有两个具体例句。"
+      },
+      {
+        "sense": "动词：决定权或责任归于某人",
+        "coveredBy": [
+          "rest-v-responsibility"
+        ],
+        "assessment": "补充 rest with 的两个例句，避免与 rest on 混用。"
+      },
+      {
+        "sense": "动词固定表达：安心、放心",
+        "coveredBy": [
+          "rest-v-assured"
+        ],
+        "assessment": "以 rest easy 示范，并说明 rest assured 的常见结构。"
+      },
+      {
+        "sense": "名词／动词：安息、长眠",
+        "coveredBy": [
+          "rest-n-death",
+          "rest-v-sleep"
+        ],
+        "assessment": "分别示范名词 eternal rest 与动词 rest in peace，不与普通睡眠混淆。"
+      },
+      {
+        "sense": "名词：支架、支撑物",
+        "coveredBy": [
+          "rest-n-other"
+        ],
+        "assessment": "改用独立名词 rest 的台球器具例句，不再以 armrest 代替。"
+      },
+      {
+        "sense": "名词（音乐）：休止、休止符",
+        "coveredBy": [
+          "rest-n-music"
+        ],
+        "assessment": "补齐取回词典明确列出的音乐义，以原创乐谱例句示范。"
+      },
+      {
+        "sense": "名词固定表达：稍息",
+        "coveredBy": [
+          "rest-n-parade-rest"
+        ],
+        "assessment": "限定为美式队列表达 parade rest，不泛化为普通日常口令。"
+      },
+      {
+        "sense": "动词固定表达：让事情暂告一段落、不再讨论或追究",
+        "coveredBy": [
+          "rest-v-let-rest"
+        ],
+        "assessment": "以 let the matter rest 覆盖停止、搁置这一语境功能。"
+      },
+      {
+        "sense": "动词固定表达：安于已有成绩、吃老本",
+        "coveredBy": [
+          "rest-v-laurels"
+        ],
+        "assessment": "补充来源出现的 rest on one's laurels，并标明比喻义。"
+      },
+      {
+        "sense": "名词：休息处",
+        "coveredBy": [],
+        "assessment": "低频独立地点义未作为初中核心义展开；现代日常指休息区或途中休息点通常用 rest area、rest stop。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"rest 直接加 -ing，拼作 resting；词尾没有需要去掉的 e。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a short rest 表示一段短暂的休息，rest 为可数用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a good night's rest 表示好好休息一晚，通常包含睡眠。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the rest 指同一批饼干中剩下的全部。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里所指的是复数 students，因此谓语用 are。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"休息；放松\"",
+        "valueJson": "\"休息；让……休息\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"动词，不及物，表示停止工作或活动，让身体休息。\"",
+        "valueJson": "\"动词，可不及物，表示停下工作或活动来休息，可能包含睡眠；也可及物，表示让眼睛、双脚等身体部位休息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 rest after work 或 rest for a while；一般不说 rest oneself 来表示日常休息。\"",
+        "valueJson": "\"不及物用法常说 rest after work 或 rest for a while；及物用法可说 rest your eyes、rest your feet。日常表达自己休息，一般直接用 rest，不必加 oneself。rest 不保证已经睡着。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rest 不及物；for a few minutes 说明休息时长。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rested 是过去式；after the game 说明休息发生在比赛之后。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-relax-ex3\",\"senseId\":\"rest-v-relax\",\"en\":\"Close the book and rest your eyes for a few minutes.\",\"zh\":\"合上书，让眼睛休息几分钟。\",\"note\":\"rest 作及物动词，your eyes 是宾语，表示让眼睛停止用力看。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-relax-ex4\",\"senseId\":\"rest-v-relax\",\"en\":\"I sat on the bench to rest my feet after the long walk.\",\"zh\":\"长途步行后，我坐在长椅上歇歇脚。\",\"note\":\"rest my feet 表示让双脚休息；to 引出坐下的目的。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"rest + body part\",\"zh\":\"让某个身体部位休息\",\"note\":\"及物结构，如 rest your eyes、rest your feet；这里强调停止使用该部位，让它恢复。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"依靠；取决于；以……为依据\"",
+        "valueJson": "\"取决于；以……为依据；把……寄托于\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"动词，常与 on 或 upon 连用，表示依靠某人或某物，也可表示结果取决于某事，或观点、判断以某事为依据。\"",
+        "valueJson": "\"动词。不及物结构 rest on/upon 表示计划或结果依赖某个条件，或观点、论证以某事为依据；及物结构 rest one's hopes/argument on 表示把希望寄托于某人某事，或把论证建立在某个依据上。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"此义通常用 rest on/upon；rest 作“取决于”时，主语常是 success、decision、answer 等。\"",
+        "valueJson": "\"此义略正式，upon 比 on 更正式。不及物用法的主语常是 success、plan、argument 等抽象事物；及物用法可说 rest your hopes on。一般的“依赖某人”通常用 rely on someone，不能处处换成 rest on someone。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0",
+        "expectedValueJson": "{\"id\":\"rest-v-rely-ex1\",\"senseId\":\"rest-v-rely\",\"en\":\"The answer rests on one important clue.\",\"zh\":\"答案取决于一条重要线索。\"}",
+        "valueJson": "{\"id\":\"rest-v-rely-ex1\",\"senseId\":\"rest-v-rely\",\"en\":\"Her argument rests on solid evidence.\",\"zh\":\"她的论点以可靠证据为依据。\",\"note\":\"argument 是主语；rests on 说明论点的依据。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on 后的 everyone arriving on time 表示计划所依赖的条件。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-rely-ex3\",\"senseId\":\"rest-v-rely\",\"en\":\"The success of the trip rests on careful planning.\",\"zh\":\"这次旅行能否顺利，取决于周密的计划。\",\"note\":\"rests on 表示成功所依赖的条件，近似 depends on。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-rely-ex4\",\"senseId\":\"rest-v-rely\",\"en\":\"He rested his argument on one old photograph.\",\"zh\":\"他以一张旧照片作为论证依据。\",\"note\":\"rest 作及物动词，his argument 是宾语；整句表示把论证建立在照片这一依据上。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-rely-ex5\",\"senseId\":\"rest-v-rely\",\"en\":\"She rested her hopes on winning the scholarship.\",\"zh\":\"她把希望寄托在获得这笔奖学金上。\",\"note\":\"rest one's hopes on 表示寄托希望；on 后接动名词短语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-rely-ex6\",\"senseId\":\"rest-v-rely\",\"en\":\"He rested all his hopes on the new shop.\",\"zh\":\"他把全部希望都寄托在新开的商店上。\",\"note\":\"all his hopes 是 rest 的宾语；on 后说明希望所寄托的对象。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"rest + one's hopes / an argument + on/upon + noun or -ing form\",\"zh\":\"把希望寄托于……；把论证建立在……上\",\"note\":\"这是及物结构，rest 后先接宾语，再用 on/upon 引出寄托对象或依据。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"rest one's hopes on\",\"zh\":\"把希望寄托在……上\",\"note\":\"one's 随语境变化，如 rest her hopes on；也可说 one's hopes rest on。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pin one's hopes on\",\"zh\":\"把希望寄托于\",\"note\":\"与 rest one's hopes on 接近，只对应寄托希望的用法，不用于替换所有依据或条件义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"depend on 用法更广；rely on 强调依赖或信赖；rest on 常用于条件、依据或论证。\"",
+        "valueJson": "\"depend on 用法更广；rely on 强调依赖或信赖；rest on 常用于条件、依据或论证。寄托希望时，可与 pin one's hopes on 比较。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be independent of\",\"zh\":\"不依赖于；不受……影响\",\"note\":\"只在某事是否依赖某个条件的语境中构成反向表达，不覆盖寄托希望等所有用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这个义项没有常用的单词反义项；表达相反关系时需根据具体句子改写。\"",
+        "valueJson": "\"谈依赖条件时，可用 be independent of 表示不依赖；谈论证依据或寄托希望时，需要按具体意思另作表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/meaning",
+        "expectedValueJson": "\"动词，较正式或用于墓志语境，表示安息；普通日常场景一般说 rest 或 sleep。\"",
+        "valueJson": "\"动词，用于悼念、祈愿或墓志中，委婉表示死者安息、长眠。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rest in peace 是对死者的祝愿，表示安息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/meaning",
+        "expectedValueJson": "\"名词，指支撑某物的部件，常见于 armrest（扶手）等词中。\"",
+        "valueJson": "\"名词，指用来支撑或托住物体的装置或部件。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/note",
+        "expectedValueJson": "\"单独用 rest 表示支架的场合较少，具体物件名称通常更明确。\"",
+        "valueJson": "\"独立名词 rest 常见于台球等具体器具语境；armrest、headrest 等复合词也包含支撑部件的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/example",
+        "expectedValueJson": "{\"id\":\"rest-n-other-ex1\",\"senseId\":\"rest-n-other\",\"en\":\"He put his arm on the armrest.\",\"zh\":\"他把手臂放在扶手上。\"}",
+        "valueJson": "{\"id\":\"rest-n-other-ex1\",\"senseId\":\"rest-n-other\",\"en\":\"He used a rest to support his cue when he could not reach the ball.\",\"zh\":\"够不着球时，他用架杆器支撑球杆。\",\"note\":\"rest 在此是独立名词，指支撑台球杆的架杆器。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"rest-v-support\",\"title\":\"使倚靠；支撑\",\"meaning\":\"及物动词或与介词连用，表示把某物靠在支撑物上，或使身体某部分得到支撑。\",\"note\":\"常见结构为 rest something on/upon something；身体部位作宾语时也可表示让其歇一歇。\",\"example\":{\"id\":\"rest-v-support-ex1\",\"senseId\":\"rest-v-support\",\"en\":\"He rested his bag against the wall.\",\"zh\":\"他把包靠在墙边。\"},\"sourceIds\":[\"oxford_rest\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-support\",\"title\":\"靠在；放在……上（获得支撑）\",\"meaning\":\"动词，可及物或不及物，表示某物靠着、放在另一物上并由其支撑，或把某物放到支撑物上。\",\"usageNote\":\"不及物结构是 something rests on/against something；及物结构是 rest something on/against something。on 常用于放在表面上，against 常用于斜靠着。\",\"examples\":[{\"id\":\"rest-v-support-ex1\",\"senseId\":\"rest-v-support\",\"en\":\"He rested his bag against the wall.\",\"zh\":\"他把包靠在墙边。\",\"note\":\"rest 作及物动词，his bag 是宾语；against the wall 说明倚靠的位置。\"},{\"id\":\"rest-v-support-ex2\",\"senseId\":\"rest-v-support\",\"en\":\"She rested her elbows on the table while she read.\",\"zh\":\"她读书时把双肘搁在桌上。\",\"note\":\"rest her elbows on the table 表示让桌面支撑双肘。\"},{\"id\":\"rest-v-support-ex3\",\"senseId\":\"rest-v-support\",\"en\":\"His head rested on a folded jacket.\",\"zh\":\"他的头枕在一件折好的外套上。\",\"note\":\"rest 不及物，his head 是主语；外套提供支撑。\"},{\"id\":\"rest-v-support-ex4\",\"senseId\":\"rest-v-support\",\"en\":\"The ladder rested against the garage wall.\",\"zh\":\"梯子斜靠在车库墙上。\",\"note\":\"主语是 ladder，rested 描述梯子靠墙的状态。\"}],\"patterns\":[{\"en\":\"rest something on/against something\",\"zh\":\"把某物搁在……上／靠在……上\",\"note\":\"及物结构，rest 后接被放置或支撑的物体。\",\"kind\":\"sentence-pattern\"},{\"en\":\"something rests on/against something\",\"zh\":\"某物搁在……上／靠着……\",\"note\":\"不及物结构，被支撑的物体作主语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"rest one's head on a pillow\",\"zh\":\"把头枕在枕头上\",\"note\":\"强调头由枕头支撑；是否睡着由上下文决定。\",\"kind\":\"common-collocation\"},{\"en\":\"rest against a wall\",\"zh\":\"靠在墙上\",\"note\":\"可描述人或物倚靠墙面的状态。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"lean\",\"zh\":\"倚靠；使倾斜\",\"note\":\"lean 常强调倾斜倚靠；rest 更强调放着或获得支撑。\"},{\"en\":\"place\",\"zh\":\"放置\",\"note\":\"place something on 可表示把东西放到某处；本身不强调由该处支撑或休息。\"}],\"contrasting\":[{\"en\":\"lift something off\",\"zh\":\"把某物从……上抬起\",\"note\":\"在物体原本搁在某个表面上的语境中，可表示解除接触和支撑这一反向动作。\"}],\"similarNote\":\"lean 与 rest 在倚靠场景中接近；place 与及物 rest 在放置场景中接近，侧重点不同。\",\"contrastingNote\":\"lift something off 只用于抬离支撑面的语境，不是 rest 各义的通用反义表达。\"},\"sourceIds\":[\"wiktionary_fr_rest\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-n-still\",\"title\":\"静止；不活动（at rest）\",\"meaning\":\"名词固定表达 at rest 表示处于静止或不活动的状态。\",\"usageNote\":\"常用 be at rest 或 remain at rest；rest 在这里是名词，at rest 整体说明状态。\",\"examples\":[{\"id\":\"rest-n-still-ex1\",\"senseId\":\"rest-n-still\",\"en\":\"The ball is at rest on the grass.\",\"zh\":\"球静止在草地上。\",\"note\":\"at rest 表示球没有运动，不是说球在恢复体力。\"},{\"id\":\"rest-n-still-ex2\",\"senseId\":\"rest-n-still\",\"en\":\"The cart remained at rest until Mia pushed it.\",\"zh\":\"手推车一直静止着，直到米娅推了它一下。\",\"note\":\"remained at rest 表示静止状态持续到 until 引出的时刻。\"}],\"patterns\":[{\"en\":\"be/remain at rest\",\"zh\":\"处于／保持静止状态\",\"note\":\"用于描述状态；与表示运动的 be in motion 对照。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"an object at rest\",\"zh\":\"一个静止的物体\",\"note\":\"at rest 放在 object 后面说明物体的状态。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be still\",\"zh\":\"静止不动\",\"note\":\"日常表达，具体语境中可与 be at rest 接近。\"},{\"en\":\"be stationary\",\"zh\":\"处于静止状态\",\"note\":\"较正式，强调位置没有移动。\"}],\"contrasting\":[{\"en\":\"be in motion\",\"zh\":\"处于运动状态\",\"note\":\"在描述物体是否运动的语境中，与 be at rest 对照。\"}],\"similarNote\":\"这些表达只在静止状态这一义上比较，不用于替换休息时间或其余部分。\",\"contrastingNote\":\"in motion 是物理运动语境中自然的反向表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-responsibility\",\"title\":\"决定权或责任在于某人（rest with）\",\"meaning\":\"动词，与 with 连用，表示某项决定由某人作出，或某项责任由某人承担。\",\"usageNote\":\"略正式。主语常是 decision、responsibility 等；with 后接拥有决定权或承担责任的人。与说明条件或依据的 rest on 区分。\",\"examples\":[{\"id\":\"rest-v-responsibility-ex1\",\"senseId\":\"rest-v-responsibility\",\"en\":\"The final decision rests with you.\",\"zh\":\"最后由你来决定。\",\"note\":\"rests with you 说明谁有最终决定权。\"},{\"id\":\"rest-v-responsibility-ex2\",\"senseId\":\"rest-v-responsibility\",\"en\":\"Responsibility for locking the shop rests with the manager.\",\"zh\":\"给商店锁门的责任由店长承担。\",\"note\":\"responsibility 是主语；with the manager 说明责任归属。\"}],\"patterns\":[{\"en\":\"a decision / responsibility rests with someone\",\"zh\":\"某项决定由某人作出／某项责任由某人承担\",\"note\":\"with 引出决定权或责任的归属者。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the final decision rests with\",\"zh\":\"最终决定由……作出\",\"note\":\"常用于明确最终决定权。\",\"kind\":\"common-collocation\"},{\"en\":\"responsibility rests with\",\"zh\":\"责任在于……\",\"note\":\"常用于说明谁应承担某项责任。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be up to someone\",\"zh\":\"由某人决定或负责\",\"note\":\"较口语化；谈决定权时，The decision rests with you 可近似改成 It's up to you。\"},{\"en\":\"lie with\",\"zh\":\"归于；在于\",\"note\":\"责任归属语境中，responsibility lies with 与 responsibility rests with 接近。\"}],\"contrasting\":[{\"en\":\"have no say in\",\"zh\":\"对……没有发言权或决定权\",\"note\":\"只在谈谁有决定权时构成语境反向，不涵盖所有责任归属用法。\"}],\"similarNote\":\"be up to someone 较口语化；lie with 常用于较正式的责任归属表达。\",\"contrastingNote\":\"谈决定权时可与 have no say in 对照；谈责任时应按具体责任内容表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-n-music\",\"title\":\"休止；休止符（音乐）\",\"meaning\":\"名词，指音乐中按规定时值不发声的间隔，也指记录这种间隔的符号。\",\"note\":\"这是可数用法；休止的时值由乐谱中的具体符号决定。\",\"example\":{\"id\":\"rest-n-music-ex1\",\"senseId\":\"rest-n-music\",\"en\":\"The score has a two-beat rest after the first phrase.\",\"zh\":\"乐谱在第一个乐句之后有一个时值为两拍的休止符。\",\"note\":\"a two-beat rest 指持续两拍的休止；这里与身体休息无关。\"},\"sourceIds\":[\"wiktionary_fr_rest\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-n-death\",\"title\":\"安息；长眠（名词）\",\"meaning\":\"名词，在悼念或宗教语境中委婉表示死后的安息。\",\"note\":\"常见于 eternal rest 等表达，语气庄重；普通睡眠通常说 sleep。\",\"example\":{\"id\":\"rest-n-death-ex1\",\"senseId\":\"rest-n-death\",\"en\":\"They prayed for her eternal rest.\",\"zh\":\"他们祈愿她永远安息。\",\"note\":\"rest 在这里是名词，eternal rest 表示死后的长眠。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-assured\",\"title\":\"安心；放心（固定表达）\",\"meaning\":\"动词，在 rest easy、rest assured 等固定结构中表示安心、放心。\",\"note\":\"rest easy 常接在 can 等情态动词后；Rest assured that ... 常用于郑重地请对方放心。\",\"example\":{\"id\":\"rest-v-assured-ex1\",\"senseId\":\"rest-v-assured\",\"en\":\"You can rest easy now; the missing dog is safe at home.\",\"zh\":\"现在你可以放心了；走失的狗已经平安到家了。\",\"note\":\"rest easy 表示不再担心，不要求真的躺下或睡觉。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-let-rest\",\"title\":\"让事情暂告一段落；不再追究\",\"meaning\":\"动词，在 let the matter rest、let it rest 等表达中，表示暂时或就此停止讨论、调查或追究。\",\"note\":\"let 后接宾语，再接动词原形 rest；是否永久结束要看上下文。\",\"example\":{\"id\":\"rest-v-let-rest-ex1\",\"senseId\":\"rest-v-let-rest\",\"en\":\"We disagreed, so I decided to let the matter rest for now.\",\"zh\":\"我们意见不一，所以我决定暂且不再讨论这件事。\",\"note\":\"for now 明确表示暂时搁置，没有保证以后不再讨论。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-v-laurels\",\"title\":\"安于已有成绩；吃老本\",\"meaning\":\"固定表达 rest on one's laurels 表示满足于已有的成就，不再继续努力。\",\"note\":\"常用于否定句或提醒；one's 随主语变化，如 rest on their laurels。\",\"example\":{\"id\":\"rest-v-laurels-ex1\",\"senseId\":\"rest-v-laurels\",\"en\":\"After winning the local final, the team refused to rest on its laurels and kept training.\",\"zh\":\"赢得本地决赛后，这支队伍没有满足于已有成绩，而是继续训练。\",\"note\":\"its 指这支队伍；整句说明夺冠后仍继续努力。\"},\"sourceIds\":[\"wiktionary_fr_rest\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rest-n-parade-rest\",\"title\":\"稍息（美式队列用语）\",\"meaning\":\"名词固定表达 parade rest 指军队队列中的稍息姿势。\",\"note\":\"常见结构为 at parade rest；属于特定队列用语，不作为普通日常休息的表达。\",\"example\":{\"id\":\"rest-n-parade-rest-ex1\",\"senseId\":\"rest-n-parade-rest\",\"en\":\"The recruits stood at parade rest while the sergeant spoke.\",\"zh\":\"中士讲话时，新兵们以稍息姿势站着。\",\"note\":\"at parade rest 说明站立姿势，不表示自由休息。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rested 是 rest 的过去式，表示休息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"开头有不发音的 w，常表示用力夺取或扭转。\"",
+        "valueJson": "\"开头有不发音的 w；常用 wrest something from someone，表示用力夺走，也可表示费力夺得控制权等。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"without falling asleep 明确说明没有睡着，体现 rest 可以只是醒着休息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 rest 的名词和动词形式同形；可参考的历史词源材料把名词追溯到原始日耳曼语形式 rastō。这个词源线索不提供一条可据以说明现代英语各义逐步演变的完整链条。\"",
+        "valueJson": "\"英语 rest 的‘休息’义可追溯到原始日耳曼语形式 rastō。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始日耳曼语\",\"form\":\"rastō\",\"meaning\":\"历史来源形式；与休息有关的名词形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的历史来源说明不等于把现代各义逐一串成词义演变。rest 与 wrest 发音相同只是巧合，不表示两者同源。\"",
+        "valueJson": "\"不要把‘休息’直接当作‘其余部分’的历史来源；树荫下的故事只是帮助记忆的联想。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"restful 修饰 evening，表示这个夜晚让人安宁、得到休息。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"restless 描述男孩难以安静下来，与不停动来动去的动作对应。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"restlessness 是不可数抽象名词，指坐立不安的状态；sit through 表示一直坐到活动结束。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports/0",
+        "expectedValueJson": "\"名词 rest 的历史来源形式 rastō\"",
+        "valueJson": "\"‘休息’义 rest 的历史来源形式 rastō\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"名词 rest 的音乐义、动词的物理支撑用法及 rest on one's laurels 表达\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1153,
+    "headword": "rest",
+    "meaning_zh": "n. 休息, 睡眠, 安息, 稍息, 静止, 支架, 休息处, 其余者, 剩余部分\nvi. 休息, 睡, 长眠, 安心, 静止, 停止, 安置, 依赖\nvt. 使休息, 使支撑, 把...寄托于",
+    "phonetic": "/rest/",
+    "pos": "",
+    "forms": []
+  }
+}

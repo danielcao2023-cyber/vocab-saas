@@ -1,0 +1,815 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "33d9d73c263f22b9be673781048c3e19278b2144feab8be152ce07407e59464c",
+    "executedReviewPromptHash": "33d9d73c263f22b9be673781048c3e19278b2144feab8be152ce07407e59464c",
+    "reviewHash": "e5883a5a55da4cd88d78159c264aa757afe8fbbf7be09b3fbe9eba31c91cc87c",
+    "wordId": 252,
+    "inputHash": "08c7ebe3fa45954817f79062da6fac5bc2fa8be007d5c92898f18f6b96926018",
+    "draftHash": "a004b5f704bb5b1db50788acc67fbd31a361f7811d60bb056e2b55d6da66cdb1",
+    "finalHash": "d4a1c06fc24cae69a9f220c3a3db0e0bc56c1655fd25998066a7fbcc1f951b03",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/check",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:48:02.418Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/check#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.908Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 83660,
+        "revisionId": 39385244,
+        "revisionTimestamp": "2026-03-22T06:53:51Z",
+        "sha256": "04c6357180361facedd340f6eac6f4753a05e2de6da04dede13d7d0abff31b4d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/check",
+        "section": "check (noun and verb)",
+        "supports": [
+          "Chess and king connection",
+          "Restraint and verification senses",
+          "Limit on unsupported parliamentary story"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "9c5c813bc0c921c27d0cbb0a0cc034aad26e23351613cbe9da35ae001fe60b4d",
+        "summaryAndSupportsWordCount": 77,
+        "sha256": "9c5c813bc0c921c27d0cbb0a0cc034aad26e23351613cbe9da35ae001fe60b4d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/252.json"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:43:59.720Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/1",
+        "message": "不能用 a/the 区分“勾选”和“检查”：check the box 和 check a box 都可以表示勾选，须结合语境。正文与学习计划均需修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "本义与动词检查义重复混排，两个例句中只有一个展示名词用法。应将本义明确为名词，并使例句、句型和近义表达保持词性一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "勾号和勾选分别是名词义、动词义；现有两个例句均为名词，缺少动词义的完整教学。应补入独立动词义，并纳入取消勾选 uncheck。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "餐馆账单与支票是不同义项，目前各只有一个例句，近义表达也混在一起。应拆分，每义提供两个例句，并分别限定 bill 和 cheque 的对应关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4/examples/0",
+        "message": "check the cows from wandering 不是适合教授的现代常用句型，容易使学生套用 prevent/stop somebody from doing。应改成 check 直接接表示进展或情绪的宾语，并注明此义较正式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/5",
+        "message": "寄存物品、托运行李和人办理入住或乘机登记需要区分。check in 不能笼统解释为寄存行李；寄存和托运也应各有两个具体例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏名词“制约、抑制因素”及常见的 keep ... in check；check in 的登记用法虽在正文出现，却未得到例句教学。补齐这些用法，并补入常用的酒店 check out。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "未交代原词条中的领取凭证、相符义，也遗漏已获取词典中的扑克名词和动词义。词族既提到方格图案，也应给出对应的 check 名词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "国际象棋的 knight 应译为“马”，不是“骑士”；check 也可描述己方的王受到攻击，不应只定义成对方的王受攻击。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily",
+        "message": "checked、checking 都是 check 直接加后缀，不再增加或双写 k；现有说明与实际拼写相矛盾。checker 可指一枚西洋跳棋棋子，游戏通常称 checkers。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example",
+        "message": "在 ready for pickup 的行李语境中，checked bags 通常指托运行李。原译和 senseId 容易误导，应对应托运义，并说明过去分词作定语。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用的历史词源材料，不能继续用现代联想代替词源。应补齐古法语借入、与波斯语 shah 的最终联系及“制约—查验”的发展；不采用议会控制国王的故事，也不混同 check 与 checkmate。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 没有对应的实际来源材料，Cambridge 本次未获取成功。应改用已获取的英语词条和 Etymonline 材料，调整引用范围；专业语言知识补充项可保留空 sourceIds。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid",
+        "message": "“check 住出发的念头”和 check an attempt 不利于形成自然的英语表达。应使用已讲解的 check one's anger 串联故事。"
+      }
+    ],
+    "coverageAssessment": "已逐义核对检查与核对、勾号与勾选、餐馆账单、支票、抑制及名词制约、寄存与托运，并补齐常用登记和退房用法；修订后每个核心义至少有两个例句，寄存、托运及酒店、乘机登记均分别有具体例句。领取凭证、相符、国际象棋、扑克和方格图案放入识别层。“开支票”以当代常用 write a check 教授，同时说明裸动词用法少见。历史部分采用可支持的借入与语义发展关系；未穷尽所有短语动词和行业用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：一次检查、核对",
+        "coveredBy": [
+          "check-n-examination"
+        ],
+        "assessment": "原稿混入动词；修订为两个名词例句，并调整对应句型和近义表达。"
+      },
+      {
+        "sense": "动词：检查、查看、核实、核对，包括查票",
+        "coveredBy": [
+          "check-v-examine"
+        ],
+        "assessment": "基本覆盖；补入 check A against B 和 check with somebody，区分比较核对与向人确认。"
+      },
+      {
+        "sense": "名词：勾号，主要为美式用法",
+        "coveredBy": [
+          "check-n-mark"
+        ],
+        "assessment": "已有两个有效例句；删除冠词决定词义的错误说明。"
+      },
+      {
+        "sense": "动词：勾选、打勾",
+        "coveredBy": [
+          "check-v-mark"
+        ],
+        "assessment": "新增独立核心义及两个例句，补入相应逆向表达 uncheck。"
+      },
+      {
+        "sense": "名词：美式餐馆账单",
+        "coveredBy": [
+          "check-n-bill"
+        ],
+        "assessment": "与支票义分开，补足两个餐馆账单例句。"
+      },
+      {
+        "sense": "名词：支票；英式拼法 cheque",
+        "coveredBy": [
+          "check-n-cheque"
+        ],
+        "assessment": "新增独立核心义，分别展示支票付款和开支票。"
+      },
+      {
+        "sense": "动词：开支票",
+        "coveredBy": [
+          "check-n-cheque"
+        ],
+        "assessment": "说明单独使用 check 表示此动作很少见；主动表达采用 write a check，不为罕见裸动词用法虚构生活例句。"
+      },
+      {
+        "sense": "动词：阻止、遏制、克制",
+        "coveredBy": [
+          "check-v-stop"
+        ],
+        "assessment": "修正不自然的 from doing 搭配，保留进展受阻与情绪克制两个例句，并标明较正式。"
+      },
+      {
+        "sense": "名词：制约、抑制因素",
+        "coveredBy": [
+          "check-n-restraint"
+        ],
+        "assessment": "补入 a check on 和 keep ... in check，两种常见结构均有例句。"
+      },
+      {
+        "sense": "动词：寄存衣物、行李",
+        "coveredBy": [
+          "check-v-deposit"
+        ],
+        "assessment": "保留寄存外套例句，另补寄存背包例句，与航空托运分清。"
+      },
+      {
+        "sense": "动词：托运行李",
+        "coveredBy": [
+          "check-v-deposit"
+        ],
+        "assessment": "保留 check in 行李例句，另补直接使用 check 的托运例句；说明代词位置。"
+      },
+      {
+        "sense": "名词：寄物牌、领取凭证",
+        "coveredBy": [
+          "check-n-claim-ticket"
+        ],
+        "assessment": "补入识别层，以 claim check 的取物场景说明。"
+      },
+      {
+        "sense": "不及物动词：相符、核对无误",
+        "coveredBy": [
+          "check-v-tally"
+        ],
+        "assessment": "补入识别层，并区分 check with facts 与 check with somebody。"
+      },
+      {
+        "sense": "国际象棋：将军，名词及动词",
+        "coveredBy": [
+          "check-n-chess",
+          "check-v-chess"
+        ],
+        "assessment": "修正 knight 的中文棋子名称，分别展示名词状态和及物动词用法，区分将军与将死。"
+      },
+      {
+        "sense": "扑克：过牌，名词及动词",
+        "coveredBy": [
+          "check-poker"
+        ],
+        "assessment": "补入识别层；例句同时展示两种词性，并说明当前没有需要跟注的下注时才可过牌。"
+      },
+      {
+        "sense": "名词：方格、方格图案",
+        "coveredBy": [
+          "check-n-pattern"
+        ],
+        "assessment": "补入识别层，与词族中的 checked 对应。"
+      },
+      {
+        "sense": "短语动词 check in：办理入住、乘机登记",
+        "coveredBy": [
+          "check-v-register"
+        ],
+        "assessment": "新增核心义，酒店与航空登记各有两个例句。"
+      },
+      {
+        "sense": "短语动词 check out：办理酒店退房",
+        "coveredBy": [
+          "check-v-checkout"
+        ],
+        "assessment": "补入常用酒店用法及两个例句，限定与 check in 的反向关系。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，check 常指检查或核对；作动词时，常指检查、核对，也可指阻止。check in 还可表示办理登记或寄存行李。\"",
+        "valueJson": "\"check 作动词常指检查、核对，也可表示勾选、抑制、寄存或托运；作名词可指一次检查、勾号、餐馆账单或支票。check in 可表示办理入住或乘机登记，check out 可表示办理退房。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"区分 check a box（勾选方框）和 check the box（检查方框）。\"",
+        "valueJson": "\"比较 check your answers（检查答案）和 check the box（勾选方框）；a / the 不能用来区分这两种意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"用 check in a bag 练习“寄存行李”的语境。\"",
+        "valueJson": "\"用 check a coat 表示寄存外套；在机场，用 check a bag 或 check a bag in 表示托运行李。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"检查；核对\"",
+        "valueJson": "\"检查；核对（名词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"对照、查看，以确认是否正确、安全或完整；作名词时可指一次检查或核对。\"",
+        "valueJson": "\"一次用于确认正确、安全或完整的检查或核对；这里的 check 是可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于作业、答案、信息、设备等。动词常接被检查的对象；名词常见于 a check on 或 a quick check。\"",
+        "valueJson": "\"常用 a check of/on ... 表示对……的检查；也常说 do a check 或 give something a quick check。注意名词 check 和动词 check 的句型不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/en",
+        "expectedValueJson": "\"Please check your answers before you hand in the test.\"",
+        "valueJson": "\"I did a quick check of my answers before handing in the test.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"交卷前请检查一下答案。\"",
+        "valueJson": "\"交卷前，我快速检查了一遍答案。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"check + 检查对象\"",
+        "valueJson": "\"do a check of ... 中，check 是名词，表示一次检查。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"check + 名词\",\"zh\":\"检查／核对某物\",\"note\":\"check the list、check your work 都是常见说法。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"do a check of/on + 名词\",\"zh\":\"对……做一次检查\",\"note\":\"check 是名词；例如 do a quick check of the answers。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"check the answers\",\"zh\":\"核对答案\",\"note\":\"做完练习或考试后常用。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a final check\",\"zh\":\"最后一次检查\",\"note\":\"常指完成任务、提交之前进行的最后核对。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"examine\",\"zh\":\"仔细检查\",\"note\":\"语气较正式，常强调认真查看细节；check 更常用于日常核对。\"},{\"en\":\"look over\",\"zh\":\"浏览检查\",\"note\":\"常指快速看一遍；不一定像 check 一样明确核对正确与否。\"}],\"contrasting\":[{\"en\":\"ignore\",\"zh\":\"不理会；忽视\",\"note\":\"在“查看某事”这一语境中，ignore 表示不去查看或留意。\"}],\"similarNote\":\"examine 更正式且常更仔细；look over 常是快速浏览。\",\"contrastingNote\":\"ignore 只在是否查看、留意的语境中构成对照。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"inspection\",\"zh\":\"检查；检验\",\"note\":\"也是名词，常用于对设备、物品或场所的查验，通常比日常的 check 正式。\"},{\"en\":\"examination\",\"zh\":\"检查；审查\",\"note\":\"可强调仔细查看；也可表示考试，考试义不能换成 check。\"}],\"contrasting\":[{\"en\":\"leave something unchecked\",\"zh\":\"没有检查某物\",\"note\":\"在核查语境中，unchecked 表示未经检查；在其他语境中也可能表示未受遏制。\"}],\"similarNote\":\"inspection 和 examination 都是名词；要按检查对象和正式程度选择。\",\"contrastingNote\":\"leave something unchecked 在此表示没有检查，不是名词 check 的通用反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"勾；勾号\"",
+        "valueJson": "\"勾号（名词，主要用于美式英语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示已选中或已完成的记号；常说 a check 或 a check mark。美式英语中 check 也可作动词表示在方框内打勾。\"",
+        "valueJson": "\"表示正确、已选中或已完成的勾形记号；常说 a check 或 a check mark。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作“勾号”时是名词；check the box 通常表示检查那个方框，check a box 才常表示在方框内打勾。\"",
+        "valueJson": "\"“勾号”主要用于美式英语，英式英语常说 tick。check a box 和 check the box 都可表示打勾；冠词不决定词义，要看语境。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"check a box\",\"zh\":\"在方框内打勾\",\"note\":\"美式英语中常用；英式英语也常说 tick a box。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"账单；支票\"",
+        "valueJson": "\"餐馆账单（美式英语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"在美国英语中，check 可指餐馆账单，也可指用来支付的支票；表示支票时，英国英语通常拼作 cheque。\"",
+        "valueJson": "\"在美式英语中，指餐馆列明餐费、供顾客结账的账单。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"在餐馆里常说 the check，意思是账单；在付款语境中，a check 指支票。要看上下文判断。\"",
+        "valueJson": "\"美式餐馆里常用 ask for the check 要账单；英式英语通常说 bill。账单义与支票义要靠语境区分，不能只看 a 或 the。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"check-ex-6\",\"senseId\":\"check-n-bill\",\"en\":\"Grandpa paid the club fee by check.\",\"zh\":\"爷爷用支票付了俱乐部费用。\",\"note\":\"by check 表示用支票付款。\"}",
+        "valueJson": "{\"id\":\"check-ex-bill-2\",\"senseId\":\"check-n-bill\",\"en\":\"We split the check after lunch.\",\"zh\":\"午饭后，我们平摊了餐费。\",\"note\":\"split the check 表示分摊餐馆账单。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"pay by check\",\"zh\":\"用支票付款\",\"note\":\"check 指支付用的支票。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Could we have the check, please?\",\"zh\":\"麻烦给我们账单好吗？\",\"note\":\"美式餐馆中礼貌要账单的常用说法。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"write a check\",\"zh\":\"开支票\",\"note\":\"write 在这里表示填写并开出支票。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"split the check\",\"zh\":\"分摊餐馆账单\",\"note\":\"指共同承担这一餐的费用。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"bill\",\"zh\":\"账单\",\"note\":\"在英国英语和许多其他语境中，餐馆账单常说 bill；美国英语常说 check。\"},{\"en\":\"cheque\",\"zh\":\"支票\",\"note\":\"与美式拼法 check 同义，常见于英式英语。\"}],\"contrasting\":[],\"similarNote\":\"bill 对应餐馆账单义；cheque 对应支票义。\",\"contrastingNote\":\"账单和支票是不同类型的支付相关事物，此义下没有自然、稳定的反义词。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"bill\",\"zh\":\"账单\",\"note\":\"在餐馆语境中与此义对应，英式英语通常使用 bill；bill 也可指水电等其他账单，不能处处换成 check。\"}],\"contrasting\":[],\"similarNote\":\"这里比较的是餐馆账单；check 的这一用法主要为美式英语。\",\"contrastingNote\":\"账单是具体凭单，没有自然、稳定的反义词；支票是另一种凭证，不是账单的反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-ex-against\",\"senseId\":\"check-v-examine\",\"en\":\"I checked the address on the parcel against the address in the email.\",\"zh\":\"我把包裹上的地址与邮件里的地址核对了一下。\",\"note\":\"check A against B：以 B 为参照核对 A。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-ex-with\",\"senseId\":\"check-v-examine\",\"en\":\"I'll check with Mum before I invite everyone.\",\"zh\":\"邀请大家之前，我会先问问妈妈，确认她是否同意。\",\"note\":\"check with somebody 可表示向某人确认安排或征求同意。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"check A against B\",\"zh\":\"把 A 与 B 对照核对\",\"note\":\"B 是用来参照的记录、标准或信息。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"check with + 人\",\"zh\":\"向某人核实或确认\",\"note\":\"例如先确认安排或征求同意；不同于资料之间相符的 check with。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"leave something unchecked\",\"zh\":\"未检查某物\",\"note\":\"在检查语境中表示没有核查；unchecked 在控制发展趋势的语境中也可表示未受遏制。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"overlook 是检查时未注意到某处的对照表达。\"",
+        "valueJson": "\"overlook 可指检查时漏看某处；leave something unchecked 则表示没有检查，二者不完全相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"常见结构为 check + 名词。语气通常不表示彻底消灭，而是让事情停下或受到控制。\"",
+        "valueJson": "\"此义较正式，常直接接表示行动、发展趋势或情绪的名词，如 check our progress、check the spread 或 check one's anger。表示阻碍或遏制，不一定意味着完全消除。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/0",
+        "expectedValueJson": "{\"id\":\"check-ex-9\",\"senseId\":\"check-v-stop\",\"en\":\"The fence checked the cows from wandering into the road.\",\"zh\":\"围栏阻止奶牛跑到路上。\",\"note\":\"check 在这里表示阻止。\"}",
+        "valueJson": "{\"id\":\"check-ex-9\",\"senseId\":\"check-v-stop\",\"en\":\"The heavy snow checked our progress up the mountain.\",\"zh\":\"大雪阻碍了我们登山的进程。\",\"note\":\"check 直接接 our progress，表示使前进受阻；此义较正式。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/usageNote",
+        "expectedValueJson": "\"常用 check in + 物品，尤其是行李；check in 也可指办理入住或登记，需结合语境理解。\"",
+        "valueJson": "\"check a coat/bag 可指把物品交给工作人员寄存；机场的 check a bag 或 check a bag in 指托运行李。不带宾语的 check in 则可表示人办理入住或乘机登记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/patterns/1/note",
+        "expectedValueJson": "\"此处 check in 是短语动词。\"",
+        "valueJson": "\"此处为可分离的短语动词，也可说 check a bag in；宾语是代词时说 check it in，不说 check in it。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-ex-deposit-2\",\"senseId\":\"check-v-deposit\",\"en\":\"I checked my backpack at the museum before going into the exhibition.\",\"zh\":\"进入展厅前，我把背包寄存在博物馆了。\",\"note\":\"这里指交给寄存处保管，不是机场托运。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-ex-baggage-2\",\"senseId\":\"check-v-deposit\",\"en\":\"I checked my large suitcase because it was too big to carry on.\",\"zh\":\"我的大行李箱太大，不能随身带上飞机，所以我把它托运了。\",\"note\":\"机场语境中，check 可直接接行李，不一定带 in。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-n-cheque\",\"title\":\"支票（名词；英式拼法 cheque）\",\"meaning\":\"一种填写金额并签名、指示银行付款的凭证。\",\"usageNote\":\"支票义在美式英语中写 check，英式英语通常写 cheque。单独用 check 表示动词“开支票”很少见，日常通常说 write a check；用支票付款说 pay by check。\",\"examples\":[{\"id\":\"check-ex-6\",\"senseId\":\"check-n-cheque\",\"en\":\"Grandpa paid the club fee by check.\",\"zh\":\"爷爷用支票付了俱乐部费用。\",\"note\":\"by check 表示用支票付款，这个短语中不用冠词。\"},{\"id\":\"check-ex-cheque-2\",\"senseId\":\"check-n-cheque\",\"en\":\"She wrote a check for the rent and mailed it to her landlord.\",\"zh\":\"她开了一张付房租的支票，寄给了房东。\",\"note\":\"write a check 表示填写并开出支票。\"}],\"patterns\":[{\"en\":\"pay by check\",\"zh\":\"用支票付款\",\"note\":\"by check 表示付款方式；英式拼法为 by cheque。\",\"kind\":\"common-collocation\"},{\"en\":\"write a check for + 金额或费用\",\"zh\":\"开一张支付某金额或费用的支票\",\"note\":\"例如 write a check for $50 或 write a check for the rent。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"write a check\",\"zh\":\"开支票\",\"note\":\"日常表示开支票通常使用 write。\",\"kind\":\"common-collocation\"},{\"en\":\"cash a check\",\"zh\":\"兑现支票\",\"note\":\"指凭支票领取相应款项。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"cheque\",\"zh\":\"支票\",\"note\":\"同一含义的常见英式拼法，读音与 check 相同；不用于检查义。\"}],\"contrasting\":[],\"similarNote\":\"check 与 cheque 在支票义上是地区拼写差异。\",\"contrastingNote\":\"支票是具体付款凭证，没有稳定的反义词；现金等是其他付款方式。\"},\"sourceIds\":[\"wiktionary-check\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-v-mark\",\"title\":\"勾选；打勾（动词，主要用于美式英语）\",\"meaning\":\"在方框、选项等处作勾选标记，表示选择或完成。\",\"usageNote\":\"check the box 和 check a box 都可以表示勾选；是否表示检查要看语境，不能只看冠词。英式英语常说 tick the box。\",\"examples\":[{\"id\":\"check-ex-mark-v-1\",\"senseId\":\"check-v-mark\",\"en\":\"Check the box next to your preferred delivery date.\",\"zh\":\"请在你希望的送货日期旁边的方框里打勾。\",\"note\":\"check the box 表示勾选，不是检查方框。\"},{\"id\":\"check-ex-mark-v-2\",\"senseId\":\"check-v-mark\",\"en\":\"I checked both boxes because I wanted email and text reminders.\",\"zh\":\"我把两个方框都勾选了，因为我希望同时收到邮件和短信提醒。\",\"note\":\"checked 是过去式，宾语是被选中的两个方框。\"}],\"patterns\":[{\"en\":\"check a/the box\",\"zh\":\"勾选方框\",\"note\":\"a 和 the 都可以出现；冠词取决于方框是否已明确。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"check an option\",\"zh\":\"勾选一个选项\",\"note\":\"常用于表格或软件界面中可勾选的选项。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"tick\",\"zh\":\"打勾\",\"note\":\"英式英语中的常见对应表达。\"},{\"en\":\"select\",\"zh\":\"选择；选中\",\"note\":\"含义更宽，选择某项不一定通过打勾完成。\"}],\"contrasting\":[{\"en\":\"uncheck\",\"zh\":\"取消勾选\",\"note\":\"尤其常用于界面中的复选框，表示撤销已作出的选择。\"}],\"similarNote\":\"tick 与此义最接近；select 只说明选中，不限定操作方式。\",\"contrastingNote\":\"uncheck 是勾选义下自然的逆向动词；不能用来表示取消一次普通检查。\"},\"sourceIds\":[\"wiktionary-check\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-n-restraint\",\"title\":\"制约；抑制因素（名词）\",\"meaning\":\"使某种行为、力量或发展受到限制的因素或约束。\",\"usageNote\":\"a check on ... 可指对……的制约；keep ... in check 表示使……受到控制。a check on 在其他语境中也可能表示对……的检查，须结合意思判断。\",\"examples\":[{\"id\":\"check-ex-restraint-1\",\"senseId\":\"check-n-restraint\",\"en\":\"A weekly budget acts as a check on my spending.\",\"zh\":\"每周的预算能约束我的开销。\",\"note\":\"a check on my spending 指限制开销的因素。\"},{\"id\":\"check-ex-restraint-2\",\"senseId\":\"check-n-restraint\",\"en\":\"I set a daily limit to keep my screen time in check.\",\"zh\":\"我设定了每天的时长上限，控制自己看屏幕的时间。\",\"note\":\"keep something in check 是使某事受到控制的固定表达。\"}],\"patterns\":[{\"en\":\"a check on + 名词\",\"zh\":\"对……的制约\",\"note\":\"常指限制权力、开支或发展趋势的因素。\",\"kind\":\"sentence-pattern\"},{\"en\":\"keep something in check\",\"zh\":\"使某事受到控制\",\"note\":\"常用于情绪、开支、增长等。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"act as a check on\",\"zh\":\"起到制约……的作用\",\"note\":\"强调某种规则或措施的限制作用。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"restraint\",\"zh\":\"约束；限制\",\"note\":\"名词，可指约束行为或力量的因素，语气较正式。\"},{\"en\":\"limit\",\"zh\":\"限制；限度\",\"note\":\"可强调明确的界限，不一定像 a check on 那样指制约因素。\"}],\"contrasting\":[{\"en\":\"leave something unchecked\",\"zh\":\"任由某事发展，不加控制\",\"note\":\"在本义中 unchecked 表示未受遏制，不是未经检查。\"}],\"similarNote\":\"restraint 更接近约束作用；limit 常突出界限。\",\"contrastingNote\":\"keep something in check 与 leave something unchecked 在是否加以控制的语境中形成对照。\"},\"sourceIds\":[\"etymonline-check\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-v-register\",\"title\":\"check in：办理入住或乘机登记\",\"meaning\":\"在酒店或机场办理登记手续，确认到达或准备搭乘航班。\",\"usageNote\":\"不带宾语时，check in 表示人办理登记；酒店常用 check in at a hotel，乘机常用 check in for a flight。它和 check in a bag“托运行李”要分清。\",\"examples\":[{\"id\":\"check-ex-register-1\",\"senseId\":\"check-v-register\",\"en\":\"We checked in at the hotel at three o'clock.\",\"zh\":\"我们三点在酒店办理了入住。\",\"note\":\"酒店语境中，check in 表示办理入住。\"},{\"id\":\"check-ex-register-2\",\"senseId\":\"check-v-register\",\"en\":\"The receptionist asked for my name when I checked in.\",\"zh\":\"我办理入住时，前台接待员问了我的姓名。\",\"note\":\"这里是人办理登记，check in 后没有行李宾语。\"},{\"id\":\"check-ex-register-3\",\"senseId\":\"check-v-register\",\"en\":\"I checked in online for tomorrow's flight.\",\"zh\":\"我在网上为明天的航班办理了乘机登记。\",\"note\":\"check in for a flight 表示办理某个航班的乘机手续。\"},{\"id\":\"check-ex-register-4\",\"senseId\":\"check-v-register\",\"en\":\"We checked in for our flight at the airport counter.\",\"zh\":\"我们在机场柜台办理了乘机手续。\",\"note\":\"登记不等于托运行李；没有托运行李也可能需要办理乘机登记。\"}],\"patterns\":[{\"en\":\"check in at + 酒店\",\"zh\":\"在某酒店办理入住\",\"note\":\"at 引出办理入住的酒店。\",\"kind\":\"sentence-pattern\"},{\"en\":\"check in for + 航班\",\"zh\":\"办理某航班的乘机登记\",\"note\":\"for 引出所乘航班。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"check in online\",\"zh\":\"在网上办理登记\",\"note\":\"乘机语境中常指网上办理乘机登记。\",\"kind\":\"common-collocation\"},{\"en\":\"check in at the front desk\",\"zh\":\"在前台办理入住\",\"note\":\"常用于酒店场景。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"register\",\"zh\":\"登记\",\"note\":\"含义更宽且较正式；乘机时通常说 check in，不能在所有语境中直接替换。\"}],\"contrasting\":[{\"en\":\"check out\",\"zh\":\"办理退房\",\"note\":\"在酒店语境中与办理入住相对；不是乘机登记的通用反义词。\"}],\"similarNote\":\"register 强调登记这一动作；check in 常用于酒店和航空手续。\",\"contrastingNote\":\"check in 与 check out 的反向关系在这里限于酒店入住和退房。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-v-checkout\",\"title\":\"check out：办理酒店退房\",\"meaning\":\"在酒店办理离店手续，结清需要支付的费用。\",\"usageNote\":\"check out 可不带宾语；也可说 check out of + 酒店，说明从哪家酒店退房。\",\"examples\":[{\"id\":\"check-ex-checkout-1\",\"senseId\":\"check-v-checkout\",\"en\":\"We checked out of the hotel after breakfast.\",\"zh\":\"早饭后，我们办理了酒店退房手续。\",\"note\":\"check out of 后接酒店。\"},{\"id\":\"check-ex-checkout-2\",\"senseId\":\"check-v-checkout\",\"en\":\"I returned my key card when I checked out.\",\"zh\":\"办理退房时，我归还了房卡。\",\"note\":\"这里 check out 不带宾语，表示办理退房。\"}],\"patterns\":[{\"en\":\"check out of + 酒店\",\"zh\":\"从某酒店办理退房\",\"note\":\"of 后说明离开的酒店。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"check out at the front desk\",\"zh\":\"在前台办理退房\",\"note\":\"常用于酒店场景。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"leave\",\"zh\":\"离开\",\"note\":\"含义更宽，只说离开酒店，不一定包含办理手续。\"}],\"contrasting\":[{\"en\":\"check in\",\"zh\":\"办理入住\",\"note\":\"在酒店语境中表示到店后办理入住。\"}],\"similarNote\":\"leave 只表示离开；check out 强调退房手续。\",\"contrastingNote\":\"这里比较的是酒店的入住与退房，不推广到两个短语的所有用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在国际象棋中，check 表示对方的王正受到攻击，必须设法应对。\"",
+        "valueJson": "\"在国际象棋中，指王正受到对方棋子的攻击；轮到走棋的一方必须应对，消除对王的威胁。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"check-ex-13\",\"senseId\":\"check-n-chess\",\"en\":\"The knight gave the king check.\",\"zh\":\"骑士对王将军了。\",\"note\":\"棋类语境中的名词用法。\"}",
+        "valueJson": "{\"id\":\"check-ex-13\",\"senseId\":\"check-n-chess\",\"en\":\"My knight put my opponent's king in check.\",\"zh\":\"我的马将了对方一军。\",\"note\":\"knight 在国际象棋中是“马”；in check 表示王受到攻击。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-check\"]",
+        "valueJson": "[\"etymonline-check\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-n-claim-ticket\",\"title\":\"寄物牌；领取凭证\",\"meaning\":\"寄存物品后拿到、供取回物品时出示的凭证。\",\"note\":\"主要用于美式英语，常见于 claim check、coat check 等表达；coat check 也可指衣物寄存处，须看语境。\",\"example\":{\"id\":\"check-ex-claim-ticket\",\"senseId\":\"check-n-claim-ticket\",\"en\":\"I showed my claim check at the luggage desk and collected my bag.\",\"zh\":\"我在行李寄存柜台出示领取凭证，取回了包。\",\"note\":\"这里的 check 是取物凭证，不是付款支票。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-v-tally\",\"title\":\"相符；核对无误（不及物动词）\",\"meaning\":\"两项记录、说法或数据经过比较后相符。\",\"note\":\"此用法较少见，可带 with；不同于 check with somebody“向某人确认”。日常也可用 match 或 agree 表达相符。\",\"example\":{\"id\":\"check-ex-tally\",\"senseId\":\"check-v-tally\",\"en\":\"His story doesn't check with the facts.\",\"zh\":\"他的说法与事实不符。\",\"note\":\"check with the facts 表示与事实相符；这里是否定句。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-poker\",\"title\":\"扑克：过牌（名词、动词）\",\"meaning\":\"轮到自己且当前没有需要跟注的下注时，暂不下注，把行动交给后续玩家。\",\"note\":\"过牌不是弃牌；已有需要跟注的下注时不能直接 check。名词和不及物动词都可表示过牌。\",\"example\":{\"id\":\"check-ex-poker\",\"senseId\":\"check-poker\",\"en\":\"After my check, the next player checked too.\",\"zh\":\"我过牌后，下一位玩家也选择了过牌。\",\"note\":\"my check 中是名词；checked 是动词过去式。\"},\"sourceIds\":[\"wiktionary-check\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-n-pattern\",\"title\":\"方格；方格图案\",\"meaning\":\"布料等表面由交叉线条或不同颜色形成的方格或格子图案。\",\"note\":\"常用复数 checks 描述方格图案；对应的常见形容词是 checked。\",\"example\":{\"id\":\"check-ex-pattern\",\"senseId\":\"check-n-pattern\",\"en\":\"She bought a scarf with red and black checks.\",\"zh\":\"她买了一条红黑格子围巾。\",\"note\":\"checks 在这里指格子图案，不是检查或支票。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"check-v-chess\",\"title\":\"国际象棋：向王将军（动词）\",\"meaning\":\"走棋使对方的王受到攻击。\",\"note\":\"check 可直接接受到攻击的 king；将军不一定意味着将死。\",\"example\":{\"id\":\"check-ex-chess-v\",\"senseId\":\"check-v-chess\",\"en\":\"Her rook checked my king.\",\"zh\":\"她用车将了我一军。\",\"note\":\"rook 是国际象棋中的“车”；checked 是及物动词过去式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"check-n-bill\"",
+        "valueJson": "\"check-n-cheque\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"check-n-bill\"",
+        "valueJson": "\"check-n-cheque\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-check\",\"cambridge-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"可把 check 的常见用法联系起来记：核对是在查看，阻止是让事情停住或受控制。学习时按具体语境记忆这些现代用法。\",\"stages\":[],\"caveat\":\"这只是帮助记忆现代词义的联系，不是历史词源解释。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语 check 经古法语 eschec（象棋中的“将军”警告）传入，最终与波斯语 shah（王）有关。从棋局中对王的威胁和限制，词义扩展到“遏制、阻碍”，随后发展出“按记录或标准查验”的用法。\",\"stages\":[{\"language\":\"古法语\",\"form\":\"eschec\",\"meaning\":\"象棋中的“将军”警告\"},{\"language\":\"英语\",\"form\":\"check\",\"meaning\":\"由棋局中的威胁、限制扩展为遏制、阻碍，随后发展出检查、核对等意思\"}],\"caveat\":\"check“将军”与 checkmate“将死”不同；这条历史线索也不表示现代各个词义同时出现。\",\"sourceIds\":[\"wiktionary-check\",\"etymonline-check\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/partOfSpeech",
+        "expectedValueJson": "\"形容词\"",
+        "valueJson": "\"动词过去式、过去分词；形容词\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"检查过的；有格子图案的\"",
+        "valueJson": "\"检查过、托运过；有方格图案的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"check + -ed\"",
+        "valueJson": "\"动词词形为 check + -ed；形容词“有方格图案的”与名词 check 的方格图案义有关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"作动词过去式或过去分词时，词尾辅音字母 c 后加 k，再加 -ed，写作 checked；作形容词时可表示有格子图案的。\"",
+        "valueJson": "\"check 已以 -ck 结尾，直接加 -ed 得到 checked，不再增加 k。checked 也可作形容词表示有格子图案的，如 a checked shirt。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"check-v-examine\"",
+        "valueJson": "\"check-v-deposit\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"检查过的行李已经可以领取了。\"",
+        "valueJson": "\"托运的行李已经可以领取了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"checked 作形容词，表示经过检查的。\"",
+        "valueJson": "\"checked 作过去分词定语；在此机场取行李语境中，checked bags 指托运行李。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-check\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"check 以重读闭音节结尾，变现在分词时双写末尾的 k 再加 -ing，写作 checking。\"",
+        "valueJson": "\"check 已以 -ck 结尾，直接加 -ing 得到 checking，不双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-check\"]",
+        "valueJson": "[\"wiktionary-check\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"检查者；（棋类）跳棋\"",
+        "valueJson": "\"检查者；检查工具；（美式英语）一枚西洋跳棋棋子\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"check + -er\"",
+        "valueJson": "\"检查者、检查工具义可按 check + -er 理解；棋子义不据此解释。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"加 -er 构成表示执行检查的人或物的名词；checker 也有固定的棋类词义。\"",
+        "valueJson": "\"check 后直接加 -er，写作 checker。checker 可指一枚西洋跳棋棋子；游戏名称通常用复数 checkers，英式英语通常称 draughts。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-check\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"uncheck\",\"partOfSpeech\":\"动词\",\"meaning\":\"取消勾选\",\"formation\":\"un- 表示逆转动作，加 check（勾选）。\",\"spellingNote\":\"保留 check 的拼写，在前面加 un-，写作 uncheck。\",\"example\":{\"id\":\"check-family-uncheck\",\"senseId\":\"check-v-mark\",\"en\":\"Uncheck the box if you don't want text reminders.\",\"zh\":\"如果不想收到短信提醒，请取消勾选这个方框。\",\"note\":\"uncheck 对应勾选义，不表示取消普通的检查。\"},\"sourceIds\":[\"wiktionary-check\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"unchecked\",\"partOfSpeech\":\"形容词\",\"meaning\":\"未检查的；未受遏制的\",\"formation\":\"表示否定的 un- 加 checked。\",\"spellingNote\":\"写作 unchecked，保留 checked 中的 -cked，不增加 k。\",\"example\":{\"id\":\"check-family-unchecked\",\"senseId\":\"check-v-stop\",\"en\":\"Left unchecked, the weeds spread across the garden.\",\"zh\":\"由于未加控制，杂草蔓延到了整个花园。\",\"note\":\"这里 unchecked 表示未受遏制；在核查语境中也可表示未检查。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"check 的变形要注意拼写：过去式 checked 双写 k 加 -ed；现在分词 checking 双写 k 加 -ing。checker 是常见派生词。\"",
+        "valueJson": "\"check 本身已以 -ck 结尾：直接加 -ed、-ing、-er，得到 checked、checking、checker，都不双写 k。uncheck 表示取消勾选；unchecked 可表示未检查或未受遏制，须按语境理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你准备出门：先 check 门锁，确认它锁好了；再 check 清单，在带好的物品旁画勾；看到暴雨预报，你 check 住出发的念头，改天再去。一个熟悉的出门场景，串起“核对、勾号、阻止”几个常见用法。\"",
+        "valueJson": "\"想象你准备出门：先 check the lock（检查门锁），再在随身物品清单上 put a check（打个勾）。出发时间推迟让你有些生气，你便深呼吸来 check your anger（克制怒气）。用这个场景串起“检查、勾号、抑制”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2",
+        "expectedValueJson": "{\"label\":\"改计划\",\"text\":\"check an attempt：阻止一次尝试。\"}",
+        "valueJson": "{\"label\":\"缓和情绪\",\"text\":\"check your anger：克制怒气；这个用法较正式。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-check\",\"title\":\"Oxford Learner’s Dictionaries: check\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/check_1\",\"supports\":[\"常见名词和动词用法\",\"读音与规则变形\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-check\",\"title\":\"Cambridge Dictionary: check\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/check\",\"supports\":[\"检查、核对、阻止及寄存等常见用法\",\"勾号、账单和支票等名词用法\",\"check 与 cheque 的地区拼写差异\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-check\",\"title\":\"Wiktionnaire：check（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/check#Anglais\",\"supports\":[\"英语 check 的检查、核对、抑制、寄存和勾选等用法\",\"美式勾号、餐馆账单与支票义及 cheque 拼写\",\"扑克名词和动词义\",\"英语发音、规则变化标记及 uncheck\",\"古法语 eschec 的借入线索\"],\"verification\":\"recommended\"},{\"id\":\"etymonline-check\",\"title\":\"Etymonline: check (noun and verb)\",\"url\":\"https://www.etymonline.com/word/check\",\"supports\":[\"与国际象棋和波斯语 shah（王）的历史联系\",\"从制约、阻碍到检查、核对的词义发展\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 252,
+    "headword": "check",
+    "meaning_zh": "n. 检查, 支票, 阻止物, 寄物牌, 象棋中将军\nvt. 检查, 阻止, 核对, 寄存, 托运\nvi. 逐项相符, 开支票",
+    "phonetic": "/tʃek/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,557 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0c2c9e59ffdc47d343f1ec5ba3fc6ff0199f72932cba51f90779582df29c2921",
+    "executedReviewPromptHash": "0c2c9e59ffdc47d343f1ec5ba3fc6ff0199f72932cba51f90779582df29c2921",
+    "reviewHash": "be0726dc3149b96212b38236dc50500a6ffd45dad1fbefe0442f3b3527ec0fbc",
+    "wordId": 570,
+    "inputHash": "120d154731ea142bb0543fae0b91c979abeb5120b9475f69550534dd301d2aa1",
+    "draftHash": "c28ce2f5e9f95746540711e725174e98628099523da3f263b916d3ad65d3cf6f",
+    "finalHash": "72abb5df676a78556bd570ec181ead8f578ce0c9b3fe27def560dc518c36993e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/gate#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:05.605Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 105323,
+        "revisionId": 39389291,
+        "revisionTimestamp": "2026-03-24T07:40:32Z",
+        "sha256": "2808fe55dbed2dae7f99c50f488fa7bd6420b1ec4efaf2192e189a7b227833a2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/gate",
+        "section": "gate etymology",
+        "supports": [
+          "Historical form and selected meaning",
+          "Qualified chronology and route"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "e9982fcefa28d13291f9365931a4cc2e366ad08d8fc266696f162356a1022c65",
+        "summaryAndSupportsWordCount": 73,
+        "sha256": "e9982fcefa28d13291f9365931a4cc2e366ad08d8fc266696f162356a1022c65",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/570.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/gate",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:32:02.676Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T17:48:15.238Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 页面未成功取得，不能作为本次审校的实际证据。应改引已取得的法语维基词典英语词条，并明确其词条语言为英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples、/confusions/*/items/*/example、/wordFamily/0/example",
+        "message": "共11个例句缺少目标结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning及/relatedExpressions",
+        "message": "gate 也可指围挡上的开口，不必始终有可开合门扇。原说明将入口义限制得过窄；闸门义也缺少对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions、/senses/1/relatedExpressions、/senses/2/relatedExpressions",
+        "message": "wall 和 arrival hall 不是 gate 的反义表达，terminal 也不是登机口的近义词。给入口装门之后仍可让门敞开，因此 leave open 不能作为“装门”的反向动作；可改为 remove the gate。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可补入材料明确列出的门票收入义和逻辑门义，作为拓展内容，无须提升为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items及相关对比例句",
+        "message": "a 和 ai 本身不分别表示“门”和“步态”，应解释完整单词的拼写。gait 例句误挂在登机口义下；对比例句也应实际包含其关联的 gate 用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1及/wordFamilyNote",
+        "message": "gating 所列技术义“门控”与例句所表达的入口装门不一致，例句也不适合作为常用搭配示范。可换成材料明确列出的 gatekeeper，同时保留正确的 gated 构词说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "古英语阶段可以保留。“更早来源无法确定”过于笼统：另一来源给出了原始日耳曼语重建分析。应说明重建性质及更远来源的不确定性，并继续将北方街名用法作为独立词源处理。"
+      }
+    ],
+    "coverageAssessment": "已核对全部释义，并合并材料中重复列出的逻辑门、晶体管栅极义。实体门与出入口、机场登机口和装门动词均保留至少两个例句，补充闸门例句；门票收入、逻辑门作为拓展义新增。其余专业、地域和旧义在清单中明确列为未展开，不属于本课初中必学范围。词源保留可确认的古英语阶段，重建形式及独立同形词不串入顺序箭头。",
+    "senseInventory": [
+      {
+        "sense": "名词：围栏、院墙或院落入口的大门",
+        "coveredBy": [
+          "gate-n1"
+        ],
+        "assessment": "核心义已覆盖，花园门和学校大门例句自然。"
+      },
+      {
+        "sense": "名词：围栏或墙上的开口、通道",
+        "coveredBy": [
+          "gate-n1"
+        ],
+        "assessment": "与实体门义合理合并；修正定义，学校入口例句的注释明确这一侧重。"
+      },
+      {
+        "sense": "名词：可开启或移开的障碍门、闸门",
+        "coveredBy": [
+          "gate-n1"
+        ],
+        "assessment": "补充船闸闸门例句，覆盖原词条中的“闸”。"
+      },
+      {
+        "sense": "名词：机场登机口",
+        "coveredBy": [
+          "gate-n2"
+        ],
+        "assessment": "核心义已覆盖，有两个自然例句。"
+      },
+      {
+        "sense": "名词：供运输、迁徙或经济活动通过的通道区域",
+        "coveredBy": [],
+        "assessment": "较专门的扩展用法，未单独展开。"
+      },
+      {
+        "sense": "名词：电子、计算机领域的逻辑门",
+        "coveredBy": [
+          "gate-n4"
+        ],
+        "assessment": "材料重复列出的两项合并为一个拓展义。"
+      },
+      {
+        "sense": "名词：场效应晶体管的栅极",
+        "coveredBy": [],
+        "assessment": "材料重复列出的电极义合并核对；专业义，未展开。"
+      },
+      {
+        "sense": "名词：滑雪比赛中两根标杆之间的旗门",
+        "coveredBy": [],
+        "assessment": "运动专项用法，未展开。"
+      },
+      {
+        "sense": "名词：比赛或演出的门票收入",
+        "coveredBy": [
+          "gate-n3"
+        ],
+        "assessment": "新增为拓展义，并用收入分配例句说明。"
+      },
+      {
+        "sense": "名词：金融领域的赎回门槛或限制机制",
+        "coveredBy": [],
+        "assessment": "金融专业义，未展开。"
+      },
+      {
+        "sense": "名词：锁具中供锁栓部件通过的槽口",
+        "coveredBy": [],
+        "assessment": "锁具专业义，未展开。"
+      },
+      {
+        "sense": "名词：铸造时金属流入模具的浇口或通道",
+        "coveredBy": [],
+        "assessment": "铸造专业义，未展开。"
+      },
+      {
+        "sense": "名词：凝固在浇口中的金属余料",
+        "coveredBy": [],
+        "assessment": "与浇口本身有别的专业义，未展开。"
+      },
+      {
+        "sense": "名词：板球击球手球棒与护腿之间的空隙",
+        "coveredBy": [],
+        "assessment": "板球专项用法，未展开。"
+      },
+      {
+        "sense": "名词：摄影机或放映机中定位胶片的片门",
+        "coveredBy": [],
+        "assessment": "影视设备专业义，未展开。"
+      },
+      {
+        "sense": "名词：流式细胞术图中区分粒子群的边界或选区",
+        "coveredBy": [],
+        "assessment": "实验技术专业义，未展开。"
+      },
+      {
+        "sense": "名词：四条竖线加一条斜线组成的五划计数记号",
+        "coveredBy": [],
+        "assessment": "罕见用法，未展开。"
+      },
+      {
+        "sense": "独立同形名词：苏格兰及英格兰北部的路、道路",
+        "coveredBy": [],
+        "assessment": "地域用法，未设正文义项；不得并入普通门义的词源链。"
+      },
+      {
+        "sense": "独立同形名词：旅程、行程",
+        "coveredBy": [],
+        "assessment": "较少见的地域或历史用法，未展开。"
+      },
+      {
+        "sense": "独立同形名词：街道，尤见于北方街名",
+        "coveredBy": [],
+        "assessment": "未设正文义项，词源说明中交代其独立来源。"
+      },
+      {
+        "sense": "独立同形名词：方式、步态",
+        "coveredBy": [],
+        "assessment": "地域旧义，未展开；现代常用 gait 不应因此与普通 gate 混同。"
+      },
+      {
+        "sense": "动词：用关闭的门把人或动物留在里面",
+        "coveredBy": [],
+        "assessment": "与安装门不同，属于较少见动词用法；未单独展开。"
+      },
+      {
+        "sense": "动词：以限制外出作为惩罚",
+        "coveredBy": [
+          "gate-v2"
+        ],
+        "assessment": "已列为较少见用法，并提供 ground someone 作常用表达参照。"
+      },
+      {
+        "sense": "动词：开启原本关闭的离子通道",
+        "coveredBy": [],
+        "assessment": "生化专业义，未展开。"
+      },
+      {
+        "sense": "动词：给入口或某处安装门",
+        "coveredBy": [
+          "gate-v1"
+        ],
+        "assessment": "原词条所列动词义已覆盖，有两个例句；修正反向表达。"
+      },
+      {
+        "sense": "动词：按需要选择性开启、关闭图像增强器",
+        "coveredBy": [],
+        "assessment": "设备门控专业义，未展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-gate\",\"title\":\"Cambridge Dictionary: gate\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/gate\",\"supports\":[\"名词 gate 的常见含义及用法\",\"gate 的动词形式、读音和词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-gate\",\"title\":\"法语维基词典：gate（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/gate#Anglais\",\"supports\":[\"英语 gate 的名词、动词释义及独立同形词的词源区分\",\"/ɡeɪt/ 读音及与 gait 同音\",\"gateway、gatekeeper、floodgate 等词族\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-gate\"]",
+        "valueJson": "[\"wiktionary-gate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"围栏、院墙等围挡上的可开合入口，也可指通道上的闸门或大门。通常不是房屋本身的门。\"",
+        "valueJson": "\"围栏、院墙等围挡上的门，也可指供进出的开口；在水道中还可指闸门。房屋或房间的门通常用 door。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"close the gate 指关上门；behind you 表示经过后随手关好。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"by 表示“在……旁”；这里的 gate 指学校围墙上的出入口。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"gate-n1-ex3\",\"senseId\":\"gate-n1\",\"en\":\"The lock gates opened, and the boat entered the canal.\",\"zh\":\"船闸的闸门打开后，小船驶入了运河。\",\"note\":\"lock gate 指船闸的闸门，体现 gate 作为水道控制设施的用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"from Gate 12 标明该航班使用的登机口。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at the gate 表示在登机口这一地点。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"gate 作及物动词，opening 是要装门的位置；这种动词用法较少见。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"was gated 是被动形式，说明入口装上了门；to keep the sheep inside 表示目的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"entrance 强调进入的地点；gate 强调有门扇或闸门的入口。\"",
+        "valueJson": "\"entrance 泛指进入某处的地方；gate 可侧重可开关的门，也可侧重围栏或围墙上的开口。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"wall\",\"zh\":\"墙\",\"note\":\"在围栏或围墙入口的语境中，wall 是阻隔边界，gate 是可通行的开口部分。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此处按围栏入口理解：墙阻挡通行，门打开时才可通过。\"",
+        "valueJson": "\"gate 是具体设施或入口名称，没有常用的一一对应的反义词。描述动作时可对照 open the gate（开门）和 close the gate（关门）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"boarding gate\",\"zh\":\"登机口\",\"note\":\"与 airport gate 意思相近，boarding 更明确强调登机用途。\"},{\"en\":\"terminal\",\"zh\":\"航站楼\",\"note\":\"指机场内较大的旅客建筑或区域，不是某个登机口。\"}]",
+        "valueJson": "[{\"en\":\"boarding gate\",\"zh\":\"登机口\",\"note\":\"与 airport gate 意思相近，boarding 更明确强调登机用途。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"boarding gate 强调登机功能；terminal 是包含多个登机口的较大区域。\"",
+        "valueJson": "\"boarding gate 与机场语境中的 gate 基本同义；terminal 指包含登机口等设施的航站楼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"arrival hall\",\"zh\":\"到达大厅\",\"note\":\"在机场旅客动线中，这是到达后的区域；gate 是候机或登机入口。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"限定在机场旅客流程中：登机口用于登机，到达大厅供抵达旅客离开航站楼。\"",
+        "valueJson": "\"gate 是具体设施名称，没有常用的直接反义词；登机口也可供下机旅客通过。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"leave open\",\"zh\":\"让入口敞开\",\"note\":\"在入口管理的语境中，与给入口装门或封闭入口相对。\"}]",
+        "valueJson": "[{\"en\":\"remove the gate\",\"zh\":\"拆掉门\",\"note\":\"在给入口装门这一场景中，拆门是相反的动作。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"仅就入口是否被门控制而言，leave open 表示入口保持敞开。\"",
+        "valueJson": "\"这里按给入口增设或拆除门来对照。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"gate-n3\",\"title\":\"门票收入\",\"meaning\":\"体育比赛或演出出售门票得到的收入。\",\"note\":\"常见于体育、演出报道；the gate 或 gate receipts 可指门票收入。\",\"example\":{\"id\":\"gate-n3-ex1\",\"senseId\":\"gate-n3\",\"en\":\"Half the gate from Saturday's match was donated to the local hospital.\",\"zh\":\"星期六那场比赛的一半门票收入捐给了当地医院。\",\"note\":\"the gate 在这里指门票收入；half the gate 是其中的一半。\"},\"sourceIds\":[\"wiktionary-gate\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"gate-n4\",\"title\":\"逻辑门\",\"meaning\":\"电子和计算机领域中，按特定逻辑规则处理输入并产生输出的电路单元。\",\"note\":\"常见于电子电路、计算机原理等专业语境；可先认识 logic gate 这一搭配。\",\"example\":{\"id\":\"gate-n4-ex1\",\"senseId\":\"gate-n4\",\"en\":\"The engineer added an AND gate to the alarm circuit.\",\"zh\":\"工程师在报警电路中加了一个与门。\",\"note\":\"AND gate 是“与门”，属于 logic gate（逻辑门）的一种。\"},\"sourceIds\":[\"wiktionary-gate\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"garden gate 指花园围栏上的门；through 表示穿过入口。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"gate-confusion-1-ex2\",\"senseId\":\"gate-n1\",\"en\":\"Please knock on the bedroom door.\",\"zh\":\"请敲卧室的门。\"}",
+        "valueJson": "{\"id\":\"gate-confusion-1-ex2\",\"senseId\":\"gate-n1\",\"en\":\"Please close the bedroom door before you go out through the garden gate.\",\"zh\":\"从花园门出去前，请把卧室的门关好。\",\"note\":\"bedroom door 是房间的门，garden gate 是围栏上的门。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"字母 a 对应“门、登机口”等意思。\"",
+        "valueJson": "\"gate 拼作 g-a-t-e，表示“门；登机口”等意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"字母 ai 表示“步态、走路的方式”，不是入口。\"",
+        "valueJson": "\"gait 拼作 g-a-i-t，表示“步态、走路的方式”。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里是在显示屏上查到登机口信息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"gate-confusion-2-ex2\",\"senseId\":\"gate-n2\",\"en\":\"The horse has a smooth gait.\",\"zh\":\"这匹马步态平稳。\"}",
+        "valueJson": "{\"id\":\"gate-confusion-2-ex2\",\"senseId\":\"gate-n1\",\"en\":\"The horse had a smooth gait as it passed through the gate.\",\"zh\":\"那匹马穿过大门时步态平稳。\",\"note\":\"gate 指门，gait 指马的步态；两词同音。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"gated community 指通过大门控制人员出入的住宅区。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1",
+        "expectedValueJson": "{\"word\":\"gating\",\"partOfSpeech\":\"noun\",\"meaning\":\"门控；门控过程\",\"formation\":\"gate + -ing\",\"spellingNote\":\"去掉词尾不发音的 e，再加 -ing。\",\"example\":{\"id\":\"gate-family-2\",\"senseId\":\"gate-v1\",\"en\":\"The gating of the entrance keeps the animals safe.\",\"zh\":\"入口设置门禁让动物更安全。\",\"note\":\"这里用名词形式描述设置门的过程。\"},\"sourceIds\":[\"cambridge-gate\"]}",
+        "valueJson": "{\"word\":\"gatekeeper\",\"partOfSpeech\":\"noun\",\"meaning\":\"守门人；门卫\",\"formation\":\"gate + keeper（看守人）\",\"spellingNote\":\"保留 gate 的词尾 e，直接接 keeper，拼作 gatekeeper。\",\"example\":{\"id\":\"gate-family-2\",\"senseId\":\"gate-n1\",\"en\":\"The gatekeeper opened the gate for the delivery van.\",\"zh\":\"门卫为送货车打开了大门。\",\"note\":\"gatekeeper 指看守大门的人。\"},\"sourceIds\":[\"wiktionary-gate\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"gated 和 gating 是 gate 的规则派生形式，分别常作形容词和名词。\"",
+        "valueJson": "\"gated 是 gate 的 -ed 形式，常用作形容词；gatekeeper 是 gate 与 keeper 构成的复合名词。两者拼写都保留 gate 的词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"gate 的常用“门、开口、通道”义延续自古英语 ġeat；更早的来源无法确定。\"",
+        "valueJson": "\"gate 的普通“门、开口、通道”义延续自古英语 ġeat（geat）。一种词源分析进一步追溯到重建的原始日耳曼语 *gatą（“洞；开口”）；更远的源头仍不确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是有记载的历史词形，不代表现代英语中可拆成独立词素；不要与北英格兰地名中的 gate（街道）混作同一条词源链。\"",
+        "valueJson": "\"星号 * 表示根据语言比较重建的词形；普通“门”义不能按现代拼写拆成独立词素。北英格兰街名中的 -gate（“街道”）另来自古诺斯语 gata，不属于普通“门”义的演变链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline-gate\"]",
+        "valueJson": "[\"etymonline-gate\",\"wiktionary-gate\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 570,
+    "headword": "gate",
+    "meaning_zh": "n. 门, 牌楼, 大门, 通道, 闸\nvt. 装门于",
+    "phonetic": "/geit/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fd56da6f3fa35af1619f014cfc1ac430f9205177a4edafd4f7f135526279c3cd",
+    "executedReviewPromptHash": "fd56da6f3fa35af1619f014cfc1ac430f9205177a4edafd4f7f135526279c3cd",
+    "reviewHash": "c3d9cd5787b8b3fa2a7b9c5b6dc442120ff951380387fecf1b12c74eec599750",
+    "wordId": 240,
+    "inputHash": "70e636e33294cf05fae305bd56c51ea051a300e9d4f1eee1b0397acac945316f",
+    "draftHash": "fee98701f918def37ed2d5899afd1a03db7115925fb3b178519bbd9e196dde38",
+    "finalHash": "42c1a517f3f02394a9fcd95fbb5c80e3f013b50c16f96459d8c11fb2d95e00c0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/chair#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:36.391Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 36453,
+        "revisionId": 39717090,
+        "revisionTimestamp": "2026-07-31T22:41:47Z",
+        "sha256": "1174ab563ae8ec36595728ab76aa29db34655329df3b3ab95022845ff3e97c5b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/chair",
+        "section": "chair (noun and verb)",
+        "supports": [
+          "Seat source",
+          "Authority represented by a seat",
+          "Meeting and presiding uses"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "3fed40ba7a17e5d84112a436ac2996f969756f86a4738090bbf2e70339e67aed",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "3fed40ba7a17e5d84112a436ac2996f969756f86a4738090bbf2e70339e67aed",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/240.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/chair",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:33:03.250Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:39:53.589Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms",
+        "message": "chair 不以 e 结尾；chairing 是直接加 -ing，不存在去 e。另补明 chairs 同时是动词第三人称单数形式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples；/confusions/0/items/0、1/example；/wordFamily/1/example",
+        "message": "共九个例句缺少目标结构要求的 note 字段，需补齐。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning；/senses/0/patterns/0/note",
+        "message": "家具义定义过宽且有循环解释；应突出通常有靠背。sit on a chair 正确，sit in a chair 也自然，应避免让学生误以为只能用 on。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "member 不等于未任主席的普通成员，主席通常也是 member。职位对照应写 ordinary committee member，并说明两者不是严格反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "已列 chair a committee，但释义和例句只展开了主持会议。应补明担任委员会主席、主持委员会工作的常用功能，并增加对应例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "实际材料还列出教授教席和铁路轨座两义，可补入较少用义，保留与初中核心义的层次区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "chair 本身就是一种 seat，原标题的禁令过宽；也不宜把 chair 后出现 at 写成无条件错误。改用 chair a meeting 与 preside over a meeting 比较结构，并改善两组名词辨析例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧音标不准确”缺少具体指向，宜直接说明音节数。现有英美音标属于可接受的学习词典转写，无须仅因符号体系不同而替换。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Oxford 页面未出现在实际来源材料中；应将对应引用关联到已获取的 Wiktionnaire 英语词条，并保持 recommended 标签。现有 Etymonline 词源叙述与材料相符，保留。"
+      }
+    ],
+    "coverageAssessment": "已核对材料中的四个名词义及动词义。三个核心义原有的两例均保留，补丁另为主持委员会工作增加一例；教授教席和铁路轨座补入较少用义。词源的拉丁语、古法语及座位向职位发展的说明有材料支持，助记故事也已明确区别于历史词源。范围仍限于所给材料与专业语言知识；专业义仅作识别性扩展，未展开行业细分。",
+    "senseInventory": [
+      {
+        "sense": "名词：供一个人坐、通常有靠背的椅子",
+        "coveredBy": [
+          "chair-noun-furniture"
+        ],
+        "assessment": "核心义已覆盖，两例自然；修订定义并补充 on/in 的搭配说明。"
+      },
+      {
+        "sense": "名词：会议、委员会或组织的主席、主持人",
+        "coveredBy": [
+          "chair-noun-leader"
+        ],
+        "assessment": "核心义已覆盖，会议主持人与委员会主席各有例句；修正与 member 的关系。"
+      },
+      {
+        "sense": "动词：主持会议、讨论或会议环节；主持委员会工作",
+        "coveredBy": [
+          "chair-verb-preside"
+        ],
+        "assessment": "主持会议的及物用法已覆盖；补丁为委员会工作补充释义及第三个例句。"
+      },
+      {
+        "sense": "名词：教授教席、教授职位",
+        "coveredBy": [
+          "chair-noun-academic"
+        ],
+        "assessment": "初稿遗漏；补丁加入较少用义，有独立例句，不与委员会主席混同。"
+      },
+      {
+        "sense": "名词：铁路轨座、承轨座",
+        "coveredBy": [
+          "chair-noun-rail-support"
+        ],
+        "assessment": "初稿遗漏；补丁依英语词条加入铁路专业义及识别例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；不要把单词末尾读成额外音节。\"",
+        "valueJson": "\"chair 通常读作一个音节，不要在词尾多加一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"名词复数\"",
+        "valueJson": "\"名词复数／动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则变化：词尾加 -s。\"",
+        "valueJson": "\"两种用法都直接加 -s：chairs；词尾 -s 读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"以不发音的 e 结尾，去 e 再加 -ing。\"",
+        "valueJson": "\"chair 以字母 r 结尾，直接加 -ing：chair → chairing；不删字母，也不双写 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"供一个人坐的家具；也可泛指有靠背、有腿的椅子。\"",
+        "valueJson": "\"供一个人坐、通常有靠背的家具，可有扶手。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a chair 是可数名词单数；by the window 表示“在窗边”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"chairs 是复数；around the table 表示“在桌子周围”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"表示坐在椅面上；通常用介词 on。\"",
+        "valueJson": "\"sit on a chair 和 sit in a chair 都自然；说坐在扶手椅上时，尤其常用 in an armchair。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the chair 在这里指主持会议的人，不是椅子。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the chair of... 表示“……的主席”；of 后接委员会名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"member\",\"zh\":\"成员\",\"note\":\"在委员会语境中，member 是一般成员；chair 是主持或领导该委员会的人。\"}",
+        "valueJson": "{\"en\":\"ordinary committee member\",\"zh\":\"普通委员会成员\",\"note\":\"与 chair 对照时，强调未任主席的普通委员；member 单独使用并不排除主席，主席本人通常也是委员会成员。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在委员会语境中，member 表示普通成员，与担任主席的人形成职位上的对照。\"",
+        "valueJson": "\"chair 与 ordinary committee member 对照的是职务；chair 本人通常也是 member，因此 chair 和 member 不是严格反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"主持（会议）\"",
+        "valueJson": "\"主持会议；主持委员会工作\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"担任会议的主持人，负责引导会议进行。\"",
+        "valueJson": "\"主持会议、讨论或会议中的某个环节；也可指担任委员会主席，主持委员会工作。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"will 后接动词原形 chair；the meeting 直接作宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"chaired 是过去式，表示主持了这场讨论。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chair-ex7\",\"senseId\":\"chair-verb-preside\",\"en\":\"She chairs the school safety committee.\",\"zh\":\"她担任学校安全委员会主席，主持该委员会的工作。\",\"note\":\"chair a committee 表示担任委员会主席、主持其工作，不只指主持某一次会议。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chair-noun-academic\",\"title\":\"教授教席\",\"meaning\":\"大学等高等院校的教授职位。\",\"note\":\"正式的学术用法；a chair in + 学科 可表示某学科的教授教席，不等同于委员会主席或系主任。\",\"example\":{\"id\":\"chair-academic-ex1\",\"senseId\":\"chair-noun-academic\",\"en\":\"She holds a chair in chemistry at the university.\",\"zh\":\"她在那所大学担任化学教授。\",\"note\":\"hold a chair in chemistry 表示担任化学教授职位；这里的 chair 不是一把椅子。\"},\"sourceIds\":[\"src-wiktionary\",\"src-etymonline\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chair-noun-rail-support\",\"title\":\"铁路轨座\",\"meaning\":\"承托铁轨并将铁轨固定在枕木上的轨座。\",\"note\":\"铁路工程用语，日常谈论家具或会议时不用这一义。\",\"example\":{\"id\":\"chair-rail-ex1\",\"senseId\":\"chair-noun-rail-support\",\"en\":\"The workers replaced a damaged rail chair.\",\"zh\":\"工人们更换了一个损坏的铁路轨座。\",\"note\":\"rail chair 中的 chair 指铁路部件，不是供人坐的椅子。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"别把 chair 当成“座位”或 chairman 的固定缩写\"",
+        "valueJson": "\"chair、seat、chairman 的区别与主持会议的搭配\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"chair 可以表示一把椅子，也可以表示主席；具体意思看上下文。作动词时，chair 后直接接会议等活动。\"",
+        "valueJson": "\"chair 可指椅子或主席；seat 表示座位，范围更广。表达主持会议时，注意 chair a meeting 与 preside over a meeting 的结构区别。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example",
+        "expectedValueJson": "{\"id\":\"chair-confusion-ex1\",\"senseId\":\"chair-noun-furniture\",\"en\":\"The chair is broken, but my seat on the bus is free.\",\"zh\":\"这把椅子坏了，但我在公交车上的座位是空的。\"}",
+        "valueJson": "{\"id\":\"chair-confusion-ex1\",\"senseId\":\"chair-noun-furniture\",\"en\":\"This chair is broken. Please take a seat on the sofa.\",\"zh\":\"这把椅子坏了。请坐到沙发上。\",\"note\":\"chair 指具体的椅子；take a seat 表示坐下，坐的位置也可以是沙发。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"chair 可直接作中性职位称呼；chairman 是另一种职位名称，不是 chair 的复数或必须使用的形式。\"",
+        "valueJson": "\"chair 是不限定性别的职位称呼；chairman 通常指男性主席，也可能是机构沿用的正式职位名称。chair 本身是完整、常用的词，不必还原成 chairman。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"chair-confusion-ex2\",\"senseId\":\"chair-noun-leader\",\"en\":\"Alex is the chair of the group, and everyone calls Alex by name.\",\"zh\":\"亚历克斯是这个小组的主席，大家都直呼其名。\"}",
+        "valueJson": "{\"id\":\"chair-confusion-ex2\",\"senseId\":\"chair-noun-leader\",\"en\":\"Mr Green is our club's chairman; we also call him the chair.\",\"zh\":\"格林先生是我们俱乐部的主席；我们也用 chair 称呼他。\",\"note\":\"chair 不限定性别，也可用于同一位男性主席；chair 与 chairman 在这里指同一职务。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/label",
+        "expectedValueJson": "\"chair a meeting / chair at a meeting\"",
+        "valueJson": "\"chair a meeting / preside over a meeting\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"表示“主持会议”时，chair 后直接接 meeting；不要误加 at。\"",
+        "valueJson": "\"两者都可表示“主持会议”：chair 通常直接接 meeting，preside 后用 over 再接 meeting。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 chair a meeting（主持会议）和 the chair of a committee（委员会主席）；表示主持时不要在 chair 后加 at。\"",
+        "valueJson": "\"记住 chair a meeting 与 preside over a meeting（主持会议），以及 the chair of a committee（委员会主席）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"chairwoman 指女性主席；opened the session 表示宣布这一会议环节开始。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: chair\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/chair_1\",\"supports\":[\"名词 chair 表示椅子或主席\",\"动词 chair 表示主持会议\",\"常见词形和用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：chair（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/chair#Anglais\",\"supports\":[\"英美读音及名词、动词的规则词形变化\",\"椅子、主席、教授教席和铁路轨座等名词义\",\"chair 作动词表示主持会议\",\"古法语 chaiere 词源及 chairperson、chairwoman 等词族形式\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 240,
+    "headword": "chair",
+    "meaning_zh": "n. 椅子；主席\nv. 主持（会议）",
+    "phonetic": "/tʃєә/",
+    "pos": "",
+    "forms": []
+  }
+}

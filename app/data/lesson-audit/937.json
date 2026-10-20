@@ -1,0 +1,325 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d243f004d84603a17e0b0ed028e36db02d7e859ff47b70dc434597e64ca998f5",
+    "executedReviewPromptHash": "d243f004d84603a17e0b0ed028e36db02d7e859ff47b70dc434597e64ca998f5",
+    "reviewHash": "0ec6c350719f1b2d3ab0dd466fe265833dbbf449dd3ccc3e3f1c9515eb266c70",
+    "wordId": 937,
+    "inputHash": "bff4ac90416268abaeed1dd1ecb6420f7ff9152e9848983f39b7b9360f435b8f",
+    "draftHash": "226d7fb22eaf99d2f4b7be3856807c006bfdcd3766363df70e183a215fe43876",
+    "finalHash": "4e8521495b590922c0a33dcd5b74d5ba916bb6df08ce440fd39ef6ebd22b4b24",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ocean#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.448Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11378,
+        "revisionId": 39749758,
+        "revisionTimestamp": "2026-08-02T15:30:03Z",
+        "sha256": "f696bd30e3b1f2c19e29e78dbf741e9823afac3f7093654c70ae8caae1d53211",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/ocean",
+        "section": "ocean noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "57edb49b17c31b1abde008b4c9af04ea683fae960ec8d9881575e7ee2534a9cf",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "57edb49b17c31b1abde008b4c9af04ea683fae960ec8d9881575e7ee2534a9cf",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/937.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ocean",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:57:26.542Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:13:56.943Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未取得内容，不能作为已经核对过的读音、义项、辨析及词族依据。改引实际获取的法语维基词典英语词条，并清除其内容未支持的引文关联。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0；/forms/0/note",
+        "message": "不能把 an ocean 与 the ocean 简化为泛指和特指的对立；the ocean 也常泛指海洋整体。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1；/senses/1",
+        "message": "an ocean of 后不限于复数名词，patience、time 都是不可数名词；还遗漏了常用的 oceans of 数量表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段数组将古法语、拉丁语、希腊语按溯源方向排列，会被错误显示成历史发展顺序；前两阶段的 meaning 也只是来源占位说明。应把可靠来源链写清楚于 summary，删除这些阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1；/senses/1/relatedExpressions",
+        "message": "an ocean of difference 可以理解，但标为固定表达说得过满。宜优先教授 oceans of time，并把少量表达按可数、不可数名词区分，补入来源列出的 a drop in the ocean。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "ocean 与 sea 的辨析应补充地域习惯：美国英语日常也常用 the ocean 谈海边和海上活动，不能只按大洋与日常海边场景区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning；/wordFamily/0/example/zh",
+        "message": "“海洋范围的”释义不清楚，“海洋性风”译法生硬；分别改为“大洋的”和“海风”。"
+      }
+    ],
+    "coverageAssessment": "已核对海洋／大洋，以及数量极多、范围广阔的比喻用法。原有两组例句覆盖两个核心义，补充 oceans of time 后也覆盖常用复数形式；a drop in the ocean 作为相关固定表达补入。实际取得的词典内容直接支持地理义、读音和相关词语的列举；比喻义、搭配限制及地域差异依据专业语言知识审核，未将无法获取的 Cambridge 页面计为已核对证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：海洋；大洋，包括海洋整体和具体大洋",
+        "coveredBy": [
+          "ocean-n-sea"
+        ],
+        "assessment": "已覆盖，两个原创例句分别呈现普通海洋语境和具体大洋名称；已修正冠词说明。"
+      },
+      {
+        "sense": "名词的比喻用法：大量；广阔的一片，常用 an ocean of 或 oceans of",
+        "coveredBy": [
+          "ocean-n-large-amount"
+        ],
+        "assessment": "patience 和 people 两例分别覆盖极大的数量与大片人群；补入 oceans of time。“广阔”不是独立的形容词义。"
+      },
+      {
+        "sense": "固定表达：a drop in the ocean，指相比之下微不足道的一点",
+        "coveredBy": [
+          "ocean-n-large-amount"
+        ],
+        "assessment": "作为比喻义的语境对照补入相关表达，不另立核心义；符合语境时可译为“杯水车薪”。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: ocean\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ocean\",\"supports\":[\"英美音标\",\"名词常用义及例句搭配参考\",\"oceanic 等派生词查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：ocean 英语词条（法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/ocean#Anglais\",\"supports\":[\"英语名词 ocean 的地理义\",\"英式与美式读音\",\"相关词语 oceanic、oceanographer、a drop in the ocean 的列举\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 an ocean 和 the ocean 的区别：泛指一片海洋、特指海洋。\"",
+        "valueJson": "\"分清 an ocean（一个大洋）与 the ocean（海洋整体或语境中特定的海洋），再记住 the Pacific Ocean 等名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 an ocean of + 复数名词，表示“大量的……”。\"",
+        "valueJson": "\"练习 an ocean of / oceans of + 不可数名词或可数名词复数，表示“大量的……”或“一大片……”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词原形；泛指时常用 an ocean。\"",
+        "valueJson": "\"单数形式；表示“一个大洋”时用 an ocean，泛指海洋整体时常用 the ocean。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这是形象的比喻说法，常见于日常表达；不表示真的有海水。\"",
+        "valueJson": "\"语气夸张、形象；oceans of 尤其常用于非正式表达。an ocean of 和 oceans of 后都可接不可数名词或可数名词复数，不表示真的有海水。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"an ocean of + noun\",\"zh\":\"大量的……；一大片……\",\"note\":\"ocean 前用 an；后接名词，表示数量或范围极大。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"an ocean of / oceans of + noun\",\"zh\":\"大量的……；一大片……\",\"note\":\"单数形式用 an ocean of，复数形式用 oceans of；of 后可接不可数名词或可数名词复数。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"an ocean of difference\",\"zh\":\"天壤之别\",\"note\":\"表示差异非常大，常用于比较两种情况。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"oceans of time\",\"zh\":\"大把时间；非常充裕的时间\",\"note\":\"非正式的夸张表达；oceans 用复数，time 在这里是不可数名词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ocean-ex5\",\"senseId\":\"ocean-n-large-amount\",\"en\":\"We have oceans of time before our flight.\",\"zh\":\"离航班起飞还早，我们有大把时间。\",\"note\":\"原创例句；oceans of time 是非正式的夸张表达，表示时间非常充裕。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"en\":\"a small amount of\",\"zh\":\"少量的……\",\"note\":\"接不可数名词，如 a small amount of time，与大量的数量表达形成对照。\"},{\"en\":\"a small number of\",\"zh\":\"少量的……\",\"note\":\"接可数名词复数，如 a small number of people。\"},{\"en\":\"a drop in the ocean\",\"zh\":\"微不足道的一点；杯水车薪\",\"note\":\"强调某一数量与更大的总量或需求相比微不足道；是语境上的对照，不是 ocean 的词汇反义词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义是比喻“大量或一大片”，没有固定、自然的单词反义项；可根据具体名词改说 very little 或 a small amount。\"",
+        "valueJson": "\"表达数量相反时，不可数名词用 very little 或 a small amount of，可数名词复数用 very few 或 a small number of；a drop in the ocean 则强调相较之下少得微不足道。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者都与海有关，但 ocean 常指大洋或广阔海洋，sea 常见于海边、海面等日常语境。\"",
+        "valueJson": "\"地理上，ocean 通常指大洋，sea 常指大洋的一部分，如 the Mediterranean Sea（地中海）。日常泛指海洋时，两词的选择也受地域习惯影响：英国英语常用 the sea，美国英语也常用 the ocean。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"谈太平洋等大洋或突出辽阔时用 ocean；谈海边、海面时 sea 很常见。\"",
+        "valueJson": "\"具体地理名称要记住 Ocean 或 Sea；日常谈海边、游泳等活动时两词都可能出现，美国英语中的 swim in the ocean 也很自然。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"ocean 经古法语 occean 和拉丁语 oceanus，来自希腊语 ōkeanos。古希腊人曾用这个名字称想象中环绕已知世界的广大水域；这是历史观念，不是现代地理描述。\"",
+        "valueJson": "\"英语 ocean 的来源可追溯至希腊语 ōkeanos，经拉丁语 oceanus、古法语 occean 传入英语。在古希腊宇宙观中，ōkeanos 指被认为环绕已知世界的广大水域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"occean\",\"meaning\":\"ocean 的历史传入形式之一\"},{\"language\":\"拉丁语\",\"form\":\"oceanus\",\"meaning\":\"由古法语形式继续传入英语的来源形式\"},{\"language\":\"希腊语\",\"form\":\"ōkeanos\",\"meaning\":\"更早的来源；古希腊宇宙观中环绕已知世界的广大水域\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史来源链按词源资料所述概括；古希腊观念是历史背景，不能当作现代地理事实。\"",
+        "valueJson": "\"ōkeanos 更早的来源尚不确定；古希腊的环世水域观念是历史背景，不能当作现代地理事实。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"海洋的；海洋范围的\"",
+        "valueJson": "\"海洋的；大洋的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"海洋性风给这座岛带来了凉爽空气。\"",
+        "valueJson": "\"海风给这座岛带来了凉爽的空气。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 937,
+    "headword": "ocean",
+    "meaning_zh": "n. 海洋, 广阔, 许多, 一大片",
+    "phonetic": "/'әuʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f0fb6a3a88af2a29852b1a0cdd3b07a09c49021f18a83188add7a0b159076f08",
+    "executedReviewPromptHash": "f0fb6a3a88af2a29852b1a0cdd3b07a09c49021f18a83188add7a0b159076f08",
+    "reviewHash": "710dad1173405c56a4a5a65477febf5d6a7ebfd0d6731836d4036bb39a8884d9",
+    "wordId": 1154,
+    "inputHash": "72ceabb66bcc036a8211dd52c01b463db249e235407c635cc85a1f640fd7b1c1",
+    "draftHash": "b4314a9927e063e537a8d184d9e30a6d4f6e1994796b0a2d04cbb3e44b80dd59",
+    "finalHash": "32e08184bf69cfc278f7faa14155a47977b4bb87dfab5e2d93aaa67391c24ef0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/restaurant#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.641Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9186,
+        "revisionId": 39804263,
+        "revisionTimestamp": "2026-08-15T00:08:07Z",
+        "sha256": "e0ce3c2713af0793c3291be36a48562045106dde921d6d344f72f4426790fca1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/restaurant",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:35:24.609Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:38:55.052Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Oxford 正文不在实际来源材料中，却被列为读音、释义和拼写说明的唯一出处。改引已提供的 Wiktionary 英语词条，并删除无实际材料对应的 Oxford 来源项。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "法语阶段的 meaning 只是借用与拼写说明，并非词义。材料明确支持英语借自法语，但不足以填出历史词义演变链；应保留 summary 中的借词事实，清空阶段，并将 caveat 改为面向学习者的说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/0/zh",
+        "message": "“家庭餐馆”可能被理解为家庭经营的餐馆；应与现有英文及注释一致，明确译为“适合家庭用餐的餐馆”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧音标不宜作为标准读法”过于笼统。改为具体说明音节变体及词尾 /nt/，避免把记音体系的新旧当作判断读音的依据。"
+      }
+    ],
+    "coverageAssessment": "所给材料是法语维基词典中的英语词条，仅列 restaurant 的可数名词核心义。原稿以一个义项和两个自然英中例句完整覆盖，无须拆分“餐馆／饭店”或增加其他词性。单复数、常见英美读音、语法、搭配及逐字符拼写均已核对；近义表达和就餐方式对照已有语境限制。词源可确认到法语借入，不能据此补写更早的历史词义。",
+    "senseInventory": [
+      {
+        "sense": "restaurant，名词（可数）：餐馆；饭店，提供餐食、供顾客用餐的场所",
+        "coveredBy": [
+          "restaurant-n-1"
+        ],
+        "assessment": "已完整覆盖。两个例句分别呈现在餐馆用餐和询问附近餐馆的生活场景；“餐馆”和“饭店”在此是同一英语义项的中文译名。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-restaurant\"]",
+        "valueJson": "[\"wiktionary-restaurant-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-restaurant\"]",
+        "valueJson": "[\"wiktionary-restaurant-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-restaurant\"]",
+        "valueJson": "[\"wiktionary-restaurant-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-restaurant\",\"title\":\"Oxford Learner’s Dictionaries：restaurant\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/restaurant\",\"supports\":[\"名词含义与常见用法\",\"英式和美式读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/sources/0/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"英语名词词性、基本含义与标准拼写\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"restaurant\",\"meaning\":\"传入英语的来源形式；英语沿用了这一拼写。\"},{\"language\":\"英语\",\"form\":\"restaurant\",\"meaning\":\"餐馆；提供饭菜供人就餐的场所。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只说明可确认的法语来源和英语用法，不把现代拼写拆分当作历史词源。\"",
+        "valueJson": "\"res-tau-rant 是帮助记忆拼写的分段，不代表 restaurant 的历史词根。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/zh",
+        "expectedValueJson": "\"家庭餐馆\"",
+        "valueJson": "\"适合家庭用餐的餐馆\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"英美口音和说话速度会带来读音差异；旧音标不宜作为标准读法。\"",
+        "valueJson": "\"常见读法有三音节和两音节两种，中间的弱读 /ə/ 可以省去；词尾按 /nt/ 记，不要读成 /ŋ/。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1154,
+    "headword": "restaurant",
+    "meaning_zh": "n. 餐馆, 饭店",
+    "phonetic": "/'restәrɒŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

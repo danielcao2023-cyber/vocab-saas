@@ -1,0 +1,346 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "572738da9fb4dd3a6c6c88ee906bde04b91dbf29e538144a7e4c7c22fb229267",
+    "executedReviewPromptHash": "572738da9fb4dd3a6c6c88ee906bde04b91dbf29e538144a7e4c7c22fb229267",
+    "reviewHash": "6ca1cb339769ed5277691fa1222f3202b21f417e42345d1892aa265ef4df6785",
+    "wordId": 649,
+    "inputHash": "a5a8a2ac4918d18735a0f925ad2baf60016016321cd1d7d78a083c8f44816ff4",
+    "draftHash": "4c6d0388f7bedad69f0a7c95aa2ffba8ce1867cf37feb32d4870933001d5aadd",
+    "finalHash": "a67bc0529298c6d95120d3454b917df5b84cd184eecce224597cd5cb7968a6bd",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hill#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.204Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118127,
+        "revisionId": 34791011,
+        "revisionTimestamp": "2024-05-23T08:00:47Z",
+        "sha256": "fc8cfd131b2d6bcbb15ab7b2ecc82e5a7e41d49a67162d399e90d832964a1a13",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hill",
+        "section": "hill etymology",
+        "supports": [
+          "Attested Old English hill form and bounded meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.057561+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "3b487329cb79b777fc49a4dc20b731370ffe4d107253365b58fa36e4b0b30f1a",
+        "summaryAndSupportsWordCount": 58,
+        "sha256": "3b487329cb79b777fc49a4dc20b731370ffe4d107253365b58fa36e4b0b30f1a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/649.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hill",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:01:24.227Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:11:47.556Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 正文未取得，却被用于支持读音、动词、易混词与词族。应改引已取得的 Wiktionnaire 英语词条来支持名词义和读音；其余缺少直接网页依据的引证应撤去。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "遗漏了英语词条明确列出的常用“坡路”义，以及原始释义中的“小土堆”义。坡路义需补两个生活例句；土堆义可作为低频义单列。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway; /senses/1",
+        "message": "把动词笼统称为“旧用法”不准确：hill 仍用于农业、园艺中的培土。现有例句只展示 soil/earth 作宾语，遗漏 hill potatoes 这类以作物作宾语的用法；相关译文也应明确土堆在植株根部周围。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/note",
+        "message": "hill 本来就以两个 l 结尾，hilling 是保留原有 ll 后直接加 -ing，不能解释成再双写一个 l。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "“hill 是山坡本身”混淆了整座小山与山坡；此处 on top of the hill 的情境应说明 hill 指小山，top 指其顶端。"
+      }
+    ],
+    "coverageAssessment": "已核对小山/丘陵、坡路、土堆及动词堆土/培土。补齐坡路的两个例句，土堆作为低频义单列，并补足现代农业用法。原有古英语词源、hillock 和 hilly 的构词基本正确，保留。局限是 Cambridge 正文不可用；动词细节与词族依据专业语言知识，不冒充网页核验。",
+    "senseInventory": [
+      {
+        "sense": "名词：小山；丘陵，复数可指丘陵地带",
+        "coveredBy": [
+          "hill-n-1"
+        ],
+        "assessment": "已有两个自然例句，覆盖单座小山及复数丘陵地带；无需拆成多个义项。"
+      },
+      {
+        "sense": "名词：斜坡；坡路",
+        "coveredBy": [
+          "hill-n-2"
+        ],
+        "assessment": "原稿遗漏；补入独立常用义及上坡、下坡两个生活例句。"
+      },
+      {
+        "sense": "名词：土堆；小丘状的堆积物",
+        "coveredBy": [
+          "hill-n-3"
+        ],
+        "assessment": "原始释义包含但原稿遗漏；作为较低频用法补入 lessCommonSenses。"
+      },
+      {
+        "sense": "及物动词：把土堆起或堆成小丘",
+        "coveredBy": [
+          "hill-v-1"
+        ],
+        "assessment": "已有以土为宾语的例句；保留并改善译文和使用范围说明。"
+      },
+      {
+        "sense": "及物动词：给植物培土",
+        "coveredBy": [
+          "hill-v-1"
+        ],
+        "assessment": "补足以作物为宾语的 hill potatoes，说明这是现行农业、园艺术语，并与一般堆物表达区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"hill 最常见是可数名词“小山、丘陵”。旧用法中也可作动词，表示把土堆成小丘；日常英语里很少这样用。\"",
+        "valueJson": "\"hill 最常见是可数名词“小山、丘陵”，也常指坡路；还可指小土堆。动词 hill 主要用于园艺、农业，表示把土堆起或给植物培土，属于现行的专业用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"辨认动词 hill：它较少见，通常指把土堆成小丘。\"",
+        "valueJson": "\"了解园艺和农业中的动词 hill：hill the soil 指把土堆起，hill potatoes 指给马铃薯培土。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[\"fr_wiktionary_hill\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"少见用法，意为把土堆成小丘。\"",
+        "valueJson": "\"主要见于园艺、农业，可指堆土或给植物培土。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"末尾辅音字母 l 双写后加 -ing。\"",
+        "valueJson": "\"保留词干 hill 末尾已有的两个 l，直接加 -ing，得到 hilling。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[\"fr_wiktionary_hill\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"堆成小丘\"",
+        "valueJson": "\"堆土；给植物培土\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把土堆成小丘；这一动词用法较少见。\"",
+        "valueJson": "\"把土堆起或堆成小丘；也可指在植物根部周围堆土，即给植物培土。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可作及物动词，后接被堆成小丘的对象；日常交流中通常会改用更常见的表达说明具体动作。\"",
+        "valueJson": "\"及物动词。一般堆物时较少用，现代主要见于园艺和农业。可接 soil / earth，表示把土堆起；也可直接接 potatoes 等作物，表示给植株培土。普通堆物更多用 pile up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"园丁把幼苗周围的土堆成了小丘。\"",
+        "valueJson": "\"园丁在幼苗根部周围堆高了泥土。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"hilled 是规则过去式，后接被堆土的 soil。\"",
+        "valueJson": "\"hilled 是规则过去式；soil 是被堆起的材料，around the young plants 说明堆土的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"hill-v-1-ex2\",\"senseId\":\"hill-v-1\",\"en\":\"They hilled the earth around each seedling to keep it steady.\",\"zh\":\"他们把每株幼苗周围的土堆成小丘，让幼苗更稳固。\",\"note\":\"这里的 hill 表示堆土，后面的 to keep 说明目的。\"}",
+        "valueJson": "{\"id\":\"hill-v-1-ex2\",\"senseId\":\"hill-v-1\",\"en\":\"We hill the potatoes as they grow.\",\"zh\":\"马铃薯生长时，我们给它们培土。\",\"note\":\"potatoes 在这里指生长中的马铃薯植株；hill 可直接以作物作宾语，表示给植株培土。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"把植物周围的土堆成小丘\"",
+        "valueJson": "\"在植物根部周围把土堆高\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"把幼苗周围的泥土堆起来\"",
+        "valueJson": "\"在幼苗根部周围堆土\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"hilled rows\",\"zh\":\"堆土形成的垄\",\"note\":\"过去分词 hilled 可放在名词前作修饰语，描述堆土形成的行垄。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"hill (up) potatoes\",\"zh\":\"给马铃薯培土\",\"note\":\"potatoes 指生长中的植株；动作是把土堆到植株根部周围。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可作动词表示堆成一堆，常用于土、沙或其他材料；比 hill 更常见。\"",
+        "valueJson": "\"可作动词，指把土、沙等材料堆成一堆或小丘；这里对应的是堆起材料这一动作。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"earth up\",\"zh\":\"给……培土\",\"note\":\"常用于园艺，尤其见于英式英语；earth up the potatoes 与 hill the potatoes 都指把土培到马铃薯植株根部周围。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"mound 强调堆出凸起，pile up 强调材料堆积；描述普通堆物时优先用 pile up。\"",
+        "valueJson": "\"mound 强调堆出凸起，pile up 强调材料堆积；普通堆物常用 pile up。给植物培土可用 hill 或 earth up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hill-n-3\",\"title\":\"土堆；小丘状的堆积物\",\"meaning\":\"堆起的土、沙等，形状像一座小山。\",\"note\":\"这是较低频的形状引申用法；一般说小土堆也常用 mound 或 pile。\",\"example\":{\"id\":\"hill-n-3-ex1\",\"senseId\":\"hill-n-3\",\"en\":\"The children made a little hill of sand on the beach.\",\"zh\":\"孩子们在沙滩上把沙子堆成了一座小山。\",\"note\":\"a hill of sand 用 hill 描写沙堆的小山形状。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_hill\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象放学路上，一条路从平地爬上 hill；站到 on top of the hill，正好看见太阳落下。hill 是山坡本身，top 是它的顶端。\"",
+        "valueJson": "\"想象放学路上，你爬上一座小山（a hill），然后站在山顶上（on top of the hill）看日落。hill 指小山，top 指它的顶端。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_hill\",\"title\":\"Cambridge Dictionary: hill\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hill\",\"supports\":[\"hill 的常见名词义\",\"hill 的动词用法\",\"英美音标及词形参考\",\"相关词形参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr_wiktionary_hill\",\"title\":\"Wiktionnaire：hill（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/hill#Anglais\",\"supports\":[\"hill 的小山、丘陵名词义\",\"hill 指倾斜道路的名词义\",\"英语读音 /hɪl/\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hill-n-2\",\"title\":\"斜坡；坡路\",\"meaning\":\"一段倾斜的地面或道路；日常常用来指道路上的坡。\",\"usageNote\":\"走路、骑车或开车时，hill 常指一段坡路。up the hill 表示上坡，down the hill 表示下坡。\",\"examples\":[{\"id\":\"hill-n-2-ex1\",\"senseId\":\"hill-n-2\",\"en\":\"I got off my bike and pushed it up the hill.\",\"zh\":\"我下了自行车，推着车走上了那段坡路。\",\"note\":\"这里的 hill 指骑车途中遇到的一段上坡路。\"},{\"id\":\"hill-n-2-ex2\",\"senseId\":\"hill-n-2\",\"en\":\"Drive slowly down this hill; the road is wet.\",\"zh\":\"下这段坡时开慢点，路面很湿。\",\"note\":\"down this hill 指沿这段坡路向下行驶。\"}],\"patterns\":[{\"en\":\"go up / down a hill\",\"zh\":\"上坡 / 下坡\",\"note\":\"在道路语境中，hill 指坡路，up / down 表示行进方向。\",\"kind\":\"common-collocation\"},{\"en\":\"at the top / bottom of the hill\",\"zh\":\"在坡顶 / 坡底\",\"note\":\"top 和 bottom 可表示这段坡路的上端和下端。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a steep / gentle hill\",\"zh\":\"陡坡 / 缓坡\",\"note\":\"steep 和 gentle 在这里描写道路的坡度。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"slope\",\"zh\":\"斜坡；坡面\",\"note\":\"适用范围更广，可指地面或其他倾斜表面；hill 在交通语境中常指道路上的一段坡。\"},{\"en\":\"incline\",\"zh\":\"斜坡；坡道\",\"note\":\"作名词时也可指坡道，语气较正式。\"}],\"contrasting\":[{\"en\":\"a flat stretch of road\",\"zh\":\"一段平路\",\"note\":\"在路线坡度的语境中与 a hill 对照，表示这段道路基本没有坡度。\"}],\"similarNote\":\"这些词在坡道语境中相近；slope 的适用范围更广，incline 较正式。\",\"contrastingNote\":\"这里比较的是路线是否有坡度，平路是这一语境中的反向表达。\"},\"sourceIds\":[\"fr_wiktionary_hill\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 649,
+    "headword": "hill",
+    "meaning_zh": "n. 小山, 丘陵, 小土堆\nvt. 作成土堆, 堆成小丘",
+    "phonetic": "/hil/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,588 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "13951e0bc5bac01ff211445cb77b0f58611e6c22a10191b3e1ed5314dc44efeb",
+    "executedReviewPromptHash": "13951e0bc5bac01ff211445cb77b0f58611e6c22a10191b3e1ed5314dc44efeb",
+    "reviewHash": "08a8dcf12f1bc354a59cfec7822c41eb14cf5fee9de92f3a92a92268bc5b8199",
+    "wordId": 1379,
+    "inputHash": "2685730537b1abc2974fa8e02564b3747385a0a8d9041af4775dbfa567985085",
+    "draftHash": "f3d26b9a61c7a7190e2fee528738027bac0215eff70ce04591ebf7ee91816a96",
+    "finalHash": "c442204b1deb979b68c189125e7d74117ea89fe123d2068d710b1c81b9b2b20f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/taste#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.990Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117927,
+        "revisionId": 34228304,
+        "revisionTimestamp": "2024-04-22T17:48:27Z",
+        "sha256": "7064dd6cba653fb829ba069b1aa2dd681a913ed672b285c7f4245b68a30d0d87",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/taste",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:59:05.348Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:08:55.230Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏动词“尝出、察觉味道”和名词、动词的体验义；“味道／味觉”“爱好／审美判断”合并后各只有一个对应例句，未达到每个核心义至少两个例句的要求。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿全部引用的 Oxford 页面不在实际取得的来源中。须改用已取得的英语词条来源，并清除没有对应来源支持的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用历史词源，初稿仍为空。可补充有据可查的历史字形关系；缺少明确释义的历史字形不宜填成顺序阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "tasty 实际去掉 taste 的词尾 e；formation 与正确拼写相矛盾，wordFamilyNote 同样写错。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/note",
+        "message": "The soup is tasty 中 tasty 作表语，并非直接修饰名词 soup。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/patterns/0/note",
+        "message": "“不要在形容词前加副词”会误排除 tastes very good 等正确结构。应说明系动词后用形容词作表语，副词仍可修饰该形容词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "bad taste 对应审美或得体程度，不是“喜好”的反向表达；喜好义应对照 dislike、distaste，并说明强度和结构差别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "spit out 可以与品尝先后发生，不能作为品尝的反向动作教学。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "“人 taste 食物就是主动品尝”的判断漏掉感知味道义；tasty 的说明也不能限定为只放在名词前。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/3/note",
+        "message": "taste 已以 e 结尾，实际拼写操作是加 -d；应与笼统的过去式词尾 -ed 区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/title",
+        "message": "标题说“两个 taste”，故事实际串联了三种用法。"
+      }
+    ],
+    "coverageAssessment": "已核对味道、味觉、喜好、审美判断及得体程度、少量试吃、初步体验，以及主动品尝、感知味道、呈现味道、经历体验等主要用法。补丁后各核心义均有至少两个自然英中例句；合并的少量试吃与初步体验各有两个。历史字形关系仅据已取得的法语维基词典英语词条补充，未推定缺失的古词释义。其他教学补充依据专业语言知识，不冒用未取得网页的引用；本次未进行外部检索。",
+    "senseInventory": [
+      {
+        "sense": "名词：食物或饮料的味道、滋味",
+        "coveredBy": [
+          "taste-n-flavor"
+        ],
+        "assessment": "原有一个对应例句；补丁将味觉例句移至独立义项，并补足第二个味道例句。"
+      },
+      {
+        "sense": "名词：味觉这一感官能力",
+        "coveredBy": [
+          "taste-n-sense"
+        ],
+        "assessment": "从味道义中独立，补足两个例句并说明通常不可数。"
+      },
+      {
+        "sense": "名词：喜好、偏爱",
+        "coveredBy": [
+          "taste-n-preference"
+        ],
+        "assessment": "补足两个喜好例句，保留 taste for，并与审美义的 taste in 区分。"
+      },
+      {
+        "sense": "名词：审美判断、品味",
+        "coveredBy": [
+          "taste-n-judgment"
+        ],
+        "assessment": "独立教学，配置两个审美判断例句，说明 good taste 通常不加不定冠词。"
+      },
+      {
+        "sense": "名词固定表达：言行或选择是否得体",
+        "coveredBy": [
+          "taste-n-judgment"
+        ],
+        "assessment": "与品味义相连，另有两个例句覆盖 in good taste、in bad taste。"
+      },
+      {
+        "sense": "名词：少量、一小口",
+        "coveredBy": [
+          "taste-n-sample-experience"
+        ],
+        "assessment": "由次要义移入完整教学义项，保留原例并补足第二例。"
+      },
+      {
+        "sense": "名词：短暂、初步的体验",
+        "coveredBy": [
+          "taste-n-sample-experience"
+        ],
+        "assessment": "补充两个具体生活例句，并与字面的少量试吃分别说明。"
+      },
+      {
+        "sense": "及物动词：主动尝、品尝",
+        "coveredBy": [
+          "taste-v-try"
+        ],
+        "assessment": "原有两个例句可保留；修正反向表达并明确主动动作性质。"
+      },
+      {
+        "sense": "及物动词：尝出、察觉某种味道",
+        "coveredBy": [
+          "taste-v-detect"
+        ],
+        "assessment": "原稿遗漏；补充两个例句及 can/could taste 结构，与主动品尝区分。"
+      },
+      {
+        "sense": "系动词：尝起来、有某种味道",
+        "coveredBy": [
+          "taste-v-have-flavor"
+        ],
+        "assessment": "保留原例，补充 taste like、taste of 的例句和结构，修正形容词与副词说明。"
+      },
+      {
+        "sense": "及物动词：经历、体会",
+        "coveredBy": [
+          "taste-v-experience"
+        ],
+        "assessment": "原稿遗漏；补充两个例句，并标明较书面的使用范围。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"规则变化加 -ed；词尾 t 后的 -ed 读 /ɪd/。\"",
+        "valueJson": "\"taste 已以 e 结尾，只加 -d，写成 tasted；过去式词尾在 /t/ 后读 /ɪd/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"味道；滋味；味觉\"",
+        "valueJson": "\"味道；滋味\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"作名词，指食物或饮料的味道，也可指辨别味道的感觉能力。\"",
+        "valueJson": "\"作名词，指食物或饮料在口中呈现的味道。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说某物的味道时常用 the taste of...；taste 也可表示人的味觉。\"",
+        "valueJson": "\"说某物的味道常用 the taste of...；说一种具体滋味可用 a sweet / bitter taste。味觉这一感官能力另用 sense of taste 表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"taste-ex2\",\"senseId\":\"taste-n-flavor\",\"en\":\"A cold can affect your sense of taste.\",\"zh\":\"感冒可能影响你的味觉。\",\"note\":\"sense of taste 指味觉这一感官。\"}",
+        "valueJson": "{\"id\":\"taste-ex-flavor2\",\"senseId\":\"taste-n-flavor\",\"en\":\"The medicine left a bitter taste in my mouth.\",\"zh\":\"这药在我嘴里留下了苦味。\",\"note\":\"a bitter taste 指一种具体的滋味；此处是字面上的苦味。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"sense of taste\",\"zh\":\"味觉\",\"note\":\"指辨别甜、酸、苦、咸等味道的能力。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"leave a bitter taste in your mouth\",\"zh\":\"在嘴里留下苦味\",\"note\":\"这里描述食物或药物留下的实际味道；这个表达也可比喻某事令人不快。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"taste good / taste bad\",\"zh\":\"味道好／味道差\",\"note\":\"在评价食物味道时构成正反对照；taste 本身没有固定反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"评价味道时可用 good 与 bad 对照，不适用于 taste 的“品味、喜好”义。\"",
+        "valueJson": "\"表示“味道”的名词 taste 没有固定反义词；具体味道可按语境用 pleasant / unpleasant、strong / mild 等形容词对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"品味；爱好\"",
+        "valueJson": "\"喜好；偏爱\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"指一个人喜欢什么，或在音乐、艺术、衣着等方面的审美选择。\"",
+        "valueJson": "\"指一个人对某类食物、活动或事物的喜欢和偏爱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 have a taste for + 名词，或 have good taste in + 领域。\"",
+        "valueJson": "\"have / develop a taste for... 表示喜欢／逐渐喜欢上……；谈不同人的喜好时也常用复数 tastes。表示在某领域有审美眼光则用 good taste in...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"taste-ex4\",\"senseId\":\"taste-n-preference\",\"en\":\"He has good taste in music.\",\"zh\":\"他在音乐方面很有品味。\",\"note\":\"good taste in... 指在某个领域有好的审美判断。\"}",
+        "valueJson": "{\"id\":\"taste-ex-preference2\",\"senseId\":\"taste-n-preference\",\"en\":\"I developed a taste for spicy food while living in Chengdu.\",\"zh\":\"在成都生活期间，我逐渐喜欢上了辣味食物。\",\"note\":\"develop a taste for... 强调逐渐形成喜好，不是在评价审美水平。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"have good taste in + 领域\",\"zh\":\"在……方面有好品味\",\"note\":\"in 后接音乐、艺术、衣着等领域。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"develop a taste for + 名词\",\"zh\":\"逐渐喜欢上……\",\"note\":\"develop 强调喜好的形成过程。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"good taste\",\"zh\":\"好品味；得体\",\"note\":\"可谈审美，也可指言行符合礼貌和分寸。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"different tastes\",\"zh\":\"不同的喜好\",\"note\":\"比较不同人的偏好时常用复数 tastes。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"preference\",\"zh\":\"偏好\",\"note\":\"更直接表示在几个选择中更喜欢哪一个；taste 还可涵盖整体审美。\"},{\"en\":\"style\",\"zh\":\"风格\",\"note\":\"指呈现出来的样式；taste 更强调作出选择时的审美判断。\"}],\"contrasting\":[{\"en\":\"bad taste\",\"zh\":\"品味差；不得体\",\"note\":\"在审美或言行是否得体的语境中，与 good taste 对照。\"}],\"similarNote\":\"preference 适合谈具体选择；taste 常描述一个人的整体爱好或审美。\",\"contrastingNote\":\"bad taste 可指审美不佳或言行不得体；具体含义由语境决定。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"preference\",\"zh\":\"偏好\",\"note\":\"常强调在几个选择中更喜欢哪一个；taste for 常指对某类事物的喜爱。\"},{\"en\":\"liking\",\"zh\":\"喜欢；喜爱\",\"note\":\"a liking for... 与 a taste for... 意思接近，较直接地表达喜欢。\"}],\"contrasting\":[{\"en\":\"dislike\",\"zh\":\"不喜欢；厌恶\",\"note\":\"可作名词或动词；名词结构 a dislike of / for... 可与 a taste for... 对照。\"},{\"en\":\"distaste\",\"zh\":\"反感；厌恶\",\"note\":\"通常不可数，常用 distaste for...；比单纯没有兴趣更强。\"}],\"similarNote\":\"preference 偏重选择，liking 偏重喜欢；taste for 常用于某类食物、活动或事物。\",\"contrastingNote\":\"喜好可与 dislike、distaste 对照；bad taste 则评价品味或得体程度，不能表示对某事不喜欢。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"taste + 食物或饮料；表示请别人尝一尝时，也可用祈使句。\"",
+        "valueJson": "\"表示主动试味时，taste 后直接接食物或饮料，也可用于祈使句。注意 I can taste garlic 常表示“我能尝出蒜味”，属于感知味道义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"spit out\",\"zh\":\"吐出来\",\"note\":\"在品尝食物的动作语境中，与把食物尝入口中形成动作对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"spit out 只在食物入口后的动作语境中构成对照。\"",
+        "valueJson": "\"主动品尝没有固定的单词反义词；拒绝试吃可说 decline to taste。spit out 表示吐出，可能发生在品尝之后，并不与 taste 相反。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"taste 后通常接形容词；主语是 he、she、it 或单数名词时用 tastes。\"",
+        "valueJson": "\"这里 taste 作系动词，后接形容词；也可用 taste like... 比较味道，或 taste of... 指出某种成分的味道。描述这种状态通常不用进行时。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0/note",
+        "expectedValueJson": "\"形容词说明味道；不要在形容词前加副词地形式。\"",
+        "valueJson": "\"用形容词作表语，如 tastes good，通常不用 tastes well 表示“好吃”；very、slightly 等副词仍可修饰形容词，如 tastes very good。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"taste of + 名词\",\"zh\":\"有……的味道\",\"note\":\"通常指出能尝出的成分味道，如 taste of garlic；taste like 则侧重味道相似。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-ex-like\",\"senseId\":\"taste-v-have-flavor\",\"en\":\"This homemade drink tastes like lemonade.\",\"zh\":\"这自制饮料尝起来像柠檬水。\",\"note\":\"taste like 比较味道相似，并不直接断定它就是柠檬水。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-ex-of\",\"senseId\":\"taste-v-have-flavor\",\"en\":\"The sauce tastes of garlic.\",\"zh\":\"这酱汁有蒜味。\",\"note\":\"taste of 指出食物呈现出的某种成分味道。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"good 与 bad 只在食物味道评价中对照。\"",
+        "valueJson": "\"这里以 taste good / taste bad 对照食物味道的好坏；这两个短语不是 taste 本身的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-n-sense\",\"title\":\"味觉\",\"meaning\":\"作名词，指辨别味道的感官能力。\",\"usageNote\":\"此义通常不可数，常用 one's sense of taste；不要与某种食物的具体味道混淆。\",\"examples\":[{\"id\":\"taste-ex2\",\"senseId\":\"taste-n-sense\",\"en\":\"A cold can affect your sense of taste.\",\"zh\":\"感冒可能影响你的味觉。\",\"note\":\"sense of taste 指辨别味道的能力。\"},{\"id\":\"taste-ex-sense2\",\"senseId\":\"taste-n-sense\",\"en\":\"After the illness, my sense of taste slowly returned.\",\"zh\":\"病后，我的味觉慢慢恢复了。\",\"note\":\"恢复的是味觉能力，不是某一种食物的滋味。\"}],\"patterns\":[{\"en\":\"one's sense of taste\",\"zh\":\"某人的味觉\",\"note\":\"sense 指感官能力，taste 在这里通常不可数。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"lose your sense of taste\",\"zh\":\"失去味觉\",\"note\":\"lose 表示丧失感知味道的能力。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"the ability to taste\",\"zh\":\"感知味道的能力\",\"note\":\"是 sense of taste 的通俗解释，不是指愿不愿意试吃。\"}],\"contrasting\":[{\"en\":\"loss of taste\",\"zh\":\"味觉丧失\",\"note\":\"表示味觉能力的丧失，与拥有正常味觉形成状态对照。\"}],\"similarNote\":\"这里的 taste 表示感官能力，不能用 flavour 替换。\",\"contrastingNote\":\"味觉能力可与其丧失对照；smell 是另一种感官，并非反义词。\"},\"sourceIds\":[\"wiktionary_taste_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-n-judgment\",\"title\":\"品味；审美判断；得体程度\",\"meaning\":\"指选择音乐、衣着或装饰等的审美眼光；也用于评价言行或选择是否得体。\",\"usageNote\":\"说有品味通常用 have good taste in...，good taste 前通常不加 a。in good / bad / poor taste 是固定表达，可评价言行是否得体。\",\"examples\":[{\"id\":\"taste-ex4\",\"senseId\":\"taste-n-judgment\",\"en\":\"He has good taste in music.\",\"zh\":\"他在音乐方面很有品味。\",\"note\":\"good taste in music 评价审美眼光，不只是说他喜欢音乐。\"},{\"id\":\"taste-ex-judgment2\",\"senseId\":\"taste-n-judgment\",\"en\":\"Lena chose the curtains; she has excellent taste.\",\"zh\":\"窗帘是莉娜挑的；她很有品味。\",\"note\":\"excellent taste 表示很好的审美判断。\"},{\"id\":\"taste-ex-decorum1\",\"senseId\":\"taste-n-judgment\",\"en\":\"His joke about the accident was in bad taste.\",\"zh\":\"他拿那起事故开的玩笑很不得体。\",\"note\":\"in bad taste 评价言行不合分寸，不是在说食物味道。\"},{\"id\":\"taste-ex-decorum2\",\"senseId\":\"taste-n-judgment\",\"en\":\"Her speech was funny, and all the jokes were in good taste.\",\"zh\":\"她的讲话很风趣，而且所有玩笑都很得体。\",\"note\":\"in good taste 表示言行有分寸。\"}],\"patterns\":[{\"en\":\"have good taste in + 领域\",\"zh\":\"在……方面有品味\",\"note\":\"in 后接 music、art、clothes 等领域；与表示偏爱的 a taste for 区分。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be in good / bad / poor taste\",\"zh\":\"得体／不得体\",\"note\":\"常评价玩笑、评论、装饰或其他选择是否合宜。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"excellent taste\",\"zh\":\"极好的品味\",\"note\":\"评价审美判断时 taste 通常不可数。\",\"kind\":\"common-collocation\"},{\"en\":\"poor taste\",\"zh\":\"品味差；不得体\",\"note\":\"可用于审美，也可用于言行分寸。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"aesthetic judgment\",\"zh\":\"审美判断\",\"note\":\"较正式，只对应审美眼光，不直接涵盖玩笑是否得体。\"},{\"en\":\"a good eye for design\",\"zh\":\"对设计有眼光\",\"note\":\"适合视觉设计语境，不能直接替换音乐品味。\"}],\"contrasting\":[{\"en\":\"bad / poor taste\",\"zh\":\"品味差；不得体\",\"note\":\"与 good taste 对照，具体评价对象由语境决定。\"},{\"en\":\"tasteless\",\"zh\":\"缺乏品味的；不得体的\",\"note\":\"是形容词，如 a tasteless joke；不是表示不喜欢某事的 distaste。\"}],\"similarNote\":\"审美判断与得体程度相连，但评价音乐眼光和评价玩笑分寸时应分别理解。\",\"contrastingNote\":\"good / bad taste 构成常用对照；否定派生词 tasteless 也可表达品味差或不得体。\"},\"sourceIds\":[\"wiktionary_taste_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-v-detect\",\"title\":\"尝出；察觉味道\",\"meaning\":\"作及物动词，指通过味觉感知某种味道或成分。\",\"usageNote\":\"常用 can / could taste...；宾语是察觉到的成分或味道。它描述感知结果，不等于主动尝一口的动作，通常不用进行时。\",\"examples\":[{\"id\":\"taste-ex-detect1\",\"senseId\":\"taste-v-detect\",\"en\":\"I can taste lemon in this cake.\",\"zh\":\"我能尝出这蛋糕里有柠檬味。\",\"note\":\"lemon 是感知到的成分味道，不是正在单独品尝的柠檬。\"},{\"id\":\"taste-ex-detect2\",\"senseId\":\"taste-v-detect\",\"en\":\"Can you taste the ginger in the soup?\",\"zh\":\"你能尝出汤里的姜味吗？\",\"note\":\"询问能否辨认出姜味，不是在邀请对方单独尝姜。\"}],\"patterns\":[{\"en\":\"can / could taste + 成分或味道\",\"zh\":\"能／能曾经尝出……\",\"note\":\"could 可用于过去的感知能力；具体时态由语境决定。\",\"kind\":\"sentence-pattern\"},{\"en\":\"taste + 成分 + in + 食物或饮料\",\"zh\":\"尝出……里有某种成分的味道\",\"note\":\"in 引出承载该味道的食物或饮料。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"taste the garlic\",\"zh\":\"尝出蒜味\",\"note\":\"在 can taste the garlic 等感知语境中指辨认蒜味；其他语境也可能指主动尝蒜。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"detect a flavour\",\"zh\":\"察觉一种味道\",\"note\":\"较正式，明确强调辨认味道；detect 本身还可用于其他感官或检测活动。\"}],\"contrasting\":[{\"en\":\"be unable to taste\",\"zh\":\"尝不出；无法感知味道\",\"note\":\"是否只尝不出某种成分，还是整体味觉受影响，要看后接内容。\"}],\"similarNote\":\"此义重在感知结果；主动试吃用 taste 或 try，不能因此认定已经辨认出某种成分。\",\"contrastingNote\":\"用 cannot taste / be unable to taste 表达感知不到，不必另造单词反义词。\"},\"sourceIds\":[\"wiktionary_taste_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-n-sample-experience\",\"title\":\"少量试吃；初步体验\",\"meaning\":\"a taste 可指供品尝的一小口食物或饮料，也可比喻对某种生活或经历的短暂、初步体验。\",\"usageNote\":\"两种用法都常见于 a taste of...；of 后接食物时通常是字面试吃，接生活或经历时通常是比喻体验，并不表示完整、深入地经历过。\",\"examples\":[{\"id\":\"taste-ex9\",\"senseId\":\"taste-n-sample-experience\",\"en\":\"I only had a taste of the cake.\",\"zh\":\"我只尝了一小口蛋糕。\",\"note\":\"a taste of the cake 指少量试吃。\"},{\"id\":\"taste-ex-sample2\",\"senseId\":\"taste-n-sample-experience\",\"en\":\"Could I have a taste of your soup?\",\"zh\":\"我能尝一小口你的汤吗？\",\"note\":\"请求尝一点，不是要一整份汤。\"},{\"id\":\"taste-ex-experience1\",\"senseId\":\"taste-n-sample-experience\",\"en\":\"The weekend course gave me a taste of life as a chef.\",\"zh\":\"周末课程让我初步体验了厨师的生活。\",\"note\":\"a taste of life 指短暂接触，不等于已经成为厨师。\"},{\"id\":\"taste-ex-experience2\",\"senseId\":\"taste-n-sample-experience\",\"en\":\"My first summer job gave me a taste of independence.\",\"zh\":\"第一份暑期工作让我初尝独立生活的滋味。\",\"note\":\"由少量品尝比喻初步体验。\"}],\"patterns\":[{\"en\":\"have a taste of + 食物或饮料\",\"zh\":\"尝一小口……\",\"note\":\"a taste 是可数名词短语，表示供品尝的少量。\",\"kind\":\"sentence-pattern\"},{\"en\":\"give someone a taste of + 生活或经历\",\"zh\":\"让某人初步体验……\",\"note\":\"通常表示短暂或有限的接触。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a taste of independence\",\"zh\":\"对独立生活的初步体验\",\"note\":\"比喻体验，不涉及口中的实际味道。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a sample\",\"zh\":\"样品；少量试用品\",\"note\":\"谈食物时可指试吃样品，但 sample 也用于非食物。\"},{\"en\":\"a glimpse of\",\"zh\":\"对……的短暂了解\",\"note\":\"可与比喻体验义相近，更强调短暂看到或了解到，不能指一口食物。\"}],\"contrasting\":[],\"similarNote\":\"字面义可与 a sample 联系；比喻义可与 a brief experience 联系，两者不能在所有句子中互换。\",\"contrastingNote\":\"此义没有固定反义词；初步体验与深入体验只是程度对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"taste-v-experience\",\"title\":\"经历；体会\",\"meaning\":\"作及物动词，比喻亲身经历某种处境，体会其滋味。\",\"usageNote\":\"较书面，常与 victory、defeat、freedom 等词搭配；不能把所有表示经历的 experience 都换成 taste。\",\"examples\":[{\"id\":\"taste-ex-vexperience1\",\"senseId\":\"taste-v-experience\",\"en\":\"Our team finally tasted victory in the last game of the season.\",\"zh\":\"我们队终于在赛季最后一场比赛中尝到了胜利的滋味。\",\"note\":\"tasted victory 表示亲身获胜，不是仅仅希望获胜。\"},{\"id\":\"taste-ex-vexperience2\",\"senseId\":\"taste-v-experience\",\"en\":\"After years of strict school rules, she tasted freedom during her first summer away from home.\",\"zh\":\"多年受严格校规约束后，她在第一次离家度过的暑假里体会到了自由的滋味。\",\"note\":\"taste freedom 是比喻性的经历表达，不是实际的味觉感受。\"}],\"patterns\":[{\"en\":\"taste + 经历或处境名词\",\"zh\":\"体会……的滋味\",\"note\":\"通常搭配能形成鲜明体验的抽象名词，带有比喻色彩。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"taste victory / defeat\",\"zh\":\"尝到胜利／失败的滋味\",\"note\":\"可用于比赛等语境，表达实际经历。\",\"kind\":\"common-collocation\"},{\"en\":\"taste freedom\",\"zh\":\"体会自由的滋味\",\"note\":\"较有表现力，常用于此前受到限制的情境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"experience\",\"zh\":\"经历；体验\",\"note\":\"适用范围更广、语气较中性；taste 更有亲尝滋味的比喻色彩。\"}],\"contrasting\":[{\"en\":\"suffer defeat\",\"zh\":\"遭遇失败\",\"note\":\"在比赛结果上与 taste victory 对照；不是 taste 这一动词的通用反义词。\"}],\"similarNote\":\"普通叙述经历通常可用 experience；taste 受搭配和文体限制。\",\"contrastingNote\":\"胜利与失败可构成具体经历的对照；taste 本身也能搭配 defeat。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"taste-n-small-amount\",\"title\":\"少量；一小口\",\"meaning\":\"少量的食物或饮料，通常指尝一口或一点点。\",\"note\":\"常见于 a taste of...；此义比“味道”和“品味”少见。\",\"example\":{\"id\":\"taste-ex9\",\"senseId\":\"taste-n-small-amount\",\"en\":\"I only had a taste of the cake.\",\"zh\":\"我只尝了一小口蛋糕。\",\"note\":\"a taste of... 指少量尝到的食物。\"},\"sourceIds\":[\"oxford_taste\"]}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"taste food 与 food tastes...\"",
+        "valueJson": "\"主动品尝、尝出成分与尝起来\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"taste + 食物表示“品尝”；食物 + taste(s) + 形容词表示“尝起来……”。\"",
+        "valueJson": "\"主动尝食物、感知某种成分和描述食物味道是三种不同用法，要结合主语、宾语和语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"主语主动去尝，taste 是及物动词。\"",
+        "valueJson": "\"强调主动试味时，taste 是及物动词；其后接食物本身。主动品尝的动作可以用进行时，如 I am tasting the soup。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"人 + can taste + 成分\",\"note\":\"表示察觉某种成分的味道，通常不用进行时。\",\"example\":{\"id\":\"taste-conf-detect\",\"senseId\":\"taste-v-detect\",\"en\":\"I can taste garlic in the lemonade.\",\"zh\":\"我能尝出这柠檬水里有蒜味。\",\"note\":\"句子语法正确，描述察觉到不寻常的味道；can taste 不表示主动尝蒜。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example",
+        "expectedValueJson": "{\"id\":\"taste-conf-detect\",\"senseId\":\"taste-v-detect\",\"en\":\"I can taste garlic in the lemonade.\",\"zh\":\"我能尝出这柠檬水里有蒜味。\",\"note\":\"句子语法正确，描述察觉到不寻常的味道；can taste 不表示主动尝蒜。\"}",
+        "valueJson": "{\"id\":\"taste-conf-detect\",\"senseId\":\"taste-v-detect\",\"en\":\"I can taste garlic in the sauce.\",\"zh\":\"我能尝出这酱汁里有蒜味。\",\"note\":\"garlic 是察觉到的成分；can taste 不表示主动尝蒜。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看主语和宾语：人 taste 食物是“尝”；食物 taste 形容词是“尝起来”。\"",
+        "valueJson": "\"taste the soup 可表示主动尝汤；can taste garlic 表示尝出蒜味；the soup tastes salty 则描述汤尝起来咸。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[\"wiktionary_taste_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"直接修饰名词，表示食物美味。\"",
+        "valueJson": "\"是形容词，表示食物美味；可修饰名词，也可在 be 后作表语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"描述食物时用 taste 作动词；放在名词前修饰食物时用 tasty。\"",
+        "valueJson": "\"The noodles taste good 与 The noodles are tasty 都正确：前者用动词 taste，后者用形容词 tasty；tasty 也可放在名词前，如 a tasty lunch。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中可把 taste 作为一个整体记忆：它既能指味道，也能指品尝；从具体味道引申出个人喜好和审美。\",\"stages\":[],\"caveat\":\"这里的意思联系是帮助理解现代用法，不代表已经说明了 taste 的历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"taste 来自中古英语 tasten，后者承自古法语 taster。更早的来源可追溯到重建的通俗拉丁语 *taxitare，继而关联到拉丁语 taxo；taxo 派生自意为“触摸”的 tangere。更远的词源还追溯到重建的印欧语形式 *tag。\",\"stages\":[],\"caveat\":\"星号 * 表示重建形式；这些古代字形是历史来源，不能把现代英语 taste 按它们拆成前缀、词根和后缀。\",\"sourceIds\":[\"wiktionary_taste_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"taste + -y；词尾 e 在加 -y 时保留。\"",
+        "valueJson": "\"taste 去掉词尾 e，再加 -y。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"tasty 修饰名词 soup，表示美味的。\"",
+        "valueJson": "\"tasty 在 is 后作表语，说明汤很美味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"无味的；没有品味的\"",
+        "valueJson": "\"无味的；缺乏品味的；不得体的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_taste\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"tasteful\",\"partOfSpeech\":\"adjective\",\"meaning\":\"有品味的；雅致的；得体的\",\"formation\":\"taste + -ful，表示体现良好品味。\",\"spellingNote\":\"保留 taste 的词尾 e；后缀 -ful 只有一个 l。不要与表示好吃的 tasty 混淆。\",\"example\":{\"id\":\"taste-family-tasteful\",\"senseId\":\"taste-n-judgment\",\"en\":\"The room had simple, tasteful decorations.\",\"zh\":\"房间里的装饰简洁而雅致。\",\"note\":\"tasteful 评价装饰的品味；tasty 才表示食物美味。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"distaste\",\"partOfSpeech\":\"noun\",\"meaning\":\"反感；厌恶\",\"formation\":\"dis- + taste，表示与喜爱相反的反感。\",\"spellingNote\":\"在完整的 taste 前加 dis-，保留词尾 e，拼作 distaste。\",\"example\":{\"id\":\"taste-family-distaste\",\"senseId\":\"taste-n-preference\",\"en\":\"She has a strong distaste for violent films.\",\"zh\":\"她很反感暴力电影。\",\"note\":\"distaste for 表示反感；a taste for 则表示喜爱。\"},\"sourceIds\":[\"wiktionary_taste_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"tasty、tasteless 和 tasting 都由 taste 构成，注意 tasty 保留 e，而 tasting 去掉 e 再加 -ing。\"",
+        "valueJson": "\"tasty 和 tasting 都去掉 taste 的词尾 e；tasteless、tasteful 保留 e。tasty 表示好吃，tasteful 表示有品味；tasteless 可表示无味，也可表示缺乏品味或不得体。distaste 表示反感，不等于 bad taste。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/title",
+        "expectedValueJson": "\"厨房里的两个 taste\"",
+        "valueJson": "\"从尝汤到选餐馆\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_taste\",\"title\":\"Oxford Learner’s Dictionaries: taste\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/taste\",\"supports\":[\"名词 taste 的味道、味觉、喜好等常用义\",\"动词 taste 表示品尝及尝起来的句型\",\"taste、tasty、tasteless 等词形与搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_taste_en\",\"title\":\"Wiktionnaire：taste（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/taste#Anglais\",\"supports\":[\"英语 taste 的读音、名词味觉／喜好／品味用法\",\"动词主动品尝、感知味道及呈现味道的用法\",\"in good / bad / poor taste 与 distaste\",\"中古英语、古法语及更早历史字形的词源关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1379,
+    "headword": "taste",
+    "meaning_zh": "n. 味道, 品味, 味觉, 感受, 体验, 爱好, 审美, 少量\nvt. 尝, 察觉...的味道, 体会\nvi. 品尝, 察觉味道, 有某种味道",
+    "phonetic": "/teist/",
+    "pos": "",
+    "forms": []
+  }
+}

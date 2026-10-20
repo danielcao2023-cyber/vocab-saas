@@ -1,0 +1,356 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "38b60301d76d2d9ae155f12bbff15bb81c83815d730a49f015a163c8aeff14de",
+    "executedReviewPromptHash": "38b60301d76d2d9ae155f12bbff15bb81c83815d730a49f015a163c8aeff14de",
+    "reviewHash": "8283a574ea06becd5c2e2f7bc767eb8e5d6fab70e647900b4f6be6c07a8f62b5",
+    "wordId": 1233,
+    "inputHash": "465202b22d24e98a58f1deba5a4558575580ccfdf83eff7bd5ebade963bd46dc",
+    "draftHash": "72c747b0378ada148c12f96c988d06f317ea7dbb5f4acda1aed78a12081f5fc2",
+    "finalHash": "055bdb01275a549d1477d752f953dd1b949fcfc94a192dde2457dc6d73fd672b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shoe#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.201Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116371,
+        "revisionId": 39759908,
+        "revisionTimestamp": "2026-08-03T00:25:37Z",
+        "sha256": "c08396dd006c6889e27cebc339858eec37c9e180fc024ef3df2186de3e3a731d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shoe",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:15:56.430Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:32:23.731Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各sourceIds",
+        "message": "初稿将内容归于未取得正文的 Oxford 和获取失败的 Cambridge。应改引实际取得的法语维基词典英语词条，并限定其支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "shoe 以字母 e 结尾，并非“元音字母加 o 结尾”；复数 shoes 本身拼写正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/6/note及/wordFamily/1",
+        "message": "shoeing 保留 shoe 的词尾 e。三处“去掉 e”的说明均与实际拼写相反。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway及/confusions/1",
+        "message": "shod 是常用形式，但 shoed 也是较少见的过去式、过去分词变体，不能一概判错。现有词典材料明列 shod，教学仍可优先记这一形式。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway",
+        "message": "“通常说 a shoe”容易误导；日常谈穿鞋、买鞋通常用复数 shoes，a shoe 强调一只鞋。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "boot 与 shoe 在日常分类中通常区分使用；应以 footwear 作为共同上位词，限定“boot 是 shoe 的一种”这一宽泛说法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "原释义中的给人供鞋义、外胎技术义，以及实取英语词条中的监狱禁闭俚语义均未交代；可列入低频义，不必增加核心义负担。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实际取得的词源部分只有待完善标记，没有可靠历史链可补。应保留空阶段数组，删除学生文案中关于资料获取情况的制作说明，不推造词源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example/note及/confusions/1/items/1/example/note",
+        "message": "原例句均正确。说明宜明确 needs shoeing 是 need + doing 的被动含义，have been shod 则是现在完成时的被动语态。"
+      }
+    ],
+    "coverageAssessment": "已核对原释义与法语维基词典英语词条中的各义。鞋义和钉蹄铁义各保留两个自然原创例句；给人供鞋、外胎及禁闭俚语补为低频义。靴子通过 boot 的使用区别说明，不硬拆核心义。外胎和给人供鞋义依据原释义及专业语言知识，实取网页未展开这两义；词源部分没有可建立历史演变链的内容。",
+    "senseInventory": [
+      {
+        "sense": "名词：鞋；广义鞋类，原释义包含靴",
+        "coveredBy": [
+          "shoe-n-1"
+        ],
+        "assessment": "核心义已有两个合格例句；修正单复数总述，并明确普通 shoes 与 boots 的日常区别。"
+      },
+      {
+        "sense": "动词：给马等动物钉蹄铁",
+        "coveredBy": [
+          "shoe-v-1"
+        ],
+        "assessment": "两个例句覆盖一般现在时和过去时；宾语、搭配及翻译正确，修正词形说明。"
+      },
+      {
+        "sense": "动词：给人提供鞋穿",
+        "coveredBy": [
+          "shoe-v-2"
+        ],
+        "assessment": "补为较少见用法，以供养儿童的语境说明；不作为初中核心义扩讲。"
+      },
+      {
+        "sense": "名词：充气轮胎的外胎",
+        "coveredBy": [
+          "shoe-n-technical-1"
+        ],
+        "assessment": "补为罕见技术义，明确日常谈轮胎通常用 tire 或 tyre。"
+      },
+      {
+        "sense": "名词：监狱禁闭室或禁闭区",
+        "coveredBy": [
+          "shoe-n-slang-1"
+        ],
+        "assessment": "实际取得的英语词条明列此俚语义；补入低频义并标明语域。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的是名词 shoe（鞋），通常说 a shoe；说一双鞋常用 a pair of shoes。动词 shoe 常指给马钉蹄铁，过去式和过去分词是 shod。\"",
+        "valueJson": "\"名词 shoe 指一只鞋；日常谈鞋子常用复数 shoes，一双鞋可说 a pair of shoes。动词 shoe 常指给马钉蹄铁，常用过去式和过去分词是 shod。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\",\"cambridge_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"以元音字母加 o 结尾的 shoe 直接加 -s；复数词尾读 /z/。\"",
+        "valueJson": "\"shoe 的复数直接加 -s，写作 shoes；复数词尾读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"不规则变化，不加 -ed。\"",
+        "valueJson": "\"常用的不规则过去式；较少见的规则变体为 shoed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/6/note",
+        "expectedValueJson": "\"shoe 以不发音的 e 结尾，去掉 e 再加 -ing。\"",
+        "valueJson": "\"保留词尾 e，再加 -ing：shoe → shoeing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"是 shoe 的一种，通常覆盖脚踝或更高部位。\"",
+        "valueJson": "\"与 shoe 同属 footwear（鞋类）；boot 通常覆盖脚踝或更高部位，日常常把 shoes 与 boots 分开说。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"shoe 指具体鞋子；footwear 是较正式的类别总称，boot 特指靴子。\"",
+        "valueJson": "\"footwear 是较正式的鞋类总称；日常区分款式时，shoe 通常指普通鞋，boot 特指靴子。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\",\"cambridge_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\",\"cambridge_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoe-v-2\",\"title\":\"给人提供鞋穿\",\"meaning\":\"给某人配备鞋子，使其有鞋可穿。\",\"note\":\"较少见，常用于谈供养或生活需要。日常说“帮某人穿上鞋”通常用 put shoes on someone。\",\"example\":{\"id\":\"shoe-v-2-ex1\",\"senseId\":\"shoe-v-2\",\"en\":\"The charity helps to clothe and shoe local children.\",\"zh\":\"这家慈善机构帮助当地儿童获得衣服和鞋子。\",\"note\":\"clothe and shoe 表示为人提供衣服和鞋子；这里的 shoe 是动词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoe-n-technical-1\",\"title\":\"外胎（罕见技术义）\",\"meaning\":\"充气轮胎的外层胎体或外胎。\",\"note\":\"这是很少见的技术用法。日常谈轮胎通常用 tire（美式）或 tyre（英式）；强调外层胎体时可用 tire/tyre casing。\",\"example\":{\"id\":\"shoe-n-technical-1-ex1\",\"senseId\":\"shoe-n-technical-1\",\"en\":\"The mechanic removed the damaged shoe and checked the inner tube.\",\"zh\":\"修理工拆下损坏的外胎，检查了内胎。\",\"note\":\"inner tube 指内胎，帮助限定 shoe 在这里的技术含义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoe-n-slang-1\",\"title\":\"监狱禁闭室或禁闭区（俚语）\",\"meaning\":\"监狱中用于禁闭囚犯的场所。\",\"note\":\"限监狱俚语语境，基础学习先掌握“鞋”的常用义。\",\"example\":{\"id\":\"shoe-n-slang-1-ex1\",\"senseId\":\"shoe-n-slang-1\",\"en\":\"After the fight, the prisoner spent a week in the shoe.\",\"zh\":\"打架后，那名囚犯在禁闭区待了一周。\",\"note\":\"the shoe 在这里指监狱禁闭区。\"},\"sourceIds\":[\"wiktionary_shoe_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"一只用 shoe；日常一双常说 shoes；覆盖脚踝的靴子用 boot。另记动词过去式是 shod，不是 shoed。\"",
+        "valueJson": "\"一只用 shoe；日常一双常说 shoes；覆盖脚踝的靴子用 boot。另记动词常用过去式和过去分词 shod。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\",\"cambridge_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"给马钉蹄铁的 shoe 作动词时，过去式和过去分词是 shod；不要按规则动词写成 shoed。\"",
+        "valueJson": "\"给马钉蹄铁的 shoe 作动词时，过去式和过去分词通常用 shod；shoed 也是较少见的规则变体，不能一概判错。学习时优先记 shoe—shod—shod。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"shoe → shoed\"",
+        "valueJson": "\"过去分词 shod\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"初学者容易按规则加 -ed；学习本义“给马钉蹄铁”时应记 shod。\"",
+        "valueJson": "\"完成时或被动语态中常用过去分词 shod；这里用 have been shod 表示马已经钉上了蹄铁。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"被动语态用 have been + 过去分词 shod。\"",
+        "valueJson": "\"这里是现在完成时的被动语态：have been + 过去分词 shod。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\",\"cambridge_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"本条可用的历史来源没有提供足以建立清楚演变链的词源证据。学习时把 shoe 当作整体记忆；现代英语中它既是鞋子的名称，也可作动词表示给马钉蹄铁。\"",
+        "valueJson": "\"把 shoe 作为整体记忆。现代英语中，它既是“鞋”的名称，也可作动词表示“给马等钉蹄铁”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"名词与动词的现代用法说明不等于历史词源；这里不据此推断两种用法的历史先后或构词关系。\"",
+        "valueJson": "\"现代用法的联系和助记故事都不能证明 shoe 的历史起源，也不能据此确定名词义与动词义出现的先后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"shoe + -ing；去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"shoe + -ing；保留词尾 e，再加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"类似 write—writing，去掉不发音的 e 后加 -ing。\"",
+        "valueJson": "\"实际拼写为 s-h-o-e-i-n-g，shoe 的词尾 e 保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"shoeing 在此作名词，指钉蹄铁这项工作。\"",
+        "valueJson": "\"need + 动名词可表示被动含义：needs shoeing = needs to be shod，即“需要被钉上蹄铁”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_shoe\"]",
+        "valueJson": "[\"wiktionary_shoe_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_shoe\",\"title\":\"Oxford Learner’s Dictionaries: shoe\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/shoe\",\"supports\":[\"常见名词义与给马钉蹄铁的动词义\",\"常见搭配、拼写及动词变化\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_shoe\",\"title\":\"Cambridge Dictionary: shoe\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/shoe\",\"supports\":[\"名词与动词用法及例型\",\"英美读音与词形信息\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_shoe_en\",\"title\":\"Wiktionnaire（法语维基词典）：shoe 的英语词条\",\"url\":\"https://fr.wiktionary.org/wiki/shoe#Anglais\",\"supports\":[\"英语名词的鞋义及监狱禁闭俚语义\",\"英语及物动词为马等钉蹄铁义\",\"shoe、shoes、shod、shoeing 的读音和词形\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1233,
+    "headword": "shoe",
+    "meaning_zh": "n. 鞋, 靴, 外胎\nvt. 给...穿鞋, 为马钉蹄铁",
+    "phonetic": "/ʃu:/",
+    "pos": "",
+    "forms": []
+  }
+}

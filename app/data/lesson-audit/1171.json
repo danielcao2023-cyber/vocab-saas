@@ -1,0 +1,437 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "efe6fef1cb527a3d2007e02f14070cd35b0afe52574e72b9dd146978f7cb261d",
+    "executedReviewPromptHash": "efe6fef1cb527a3d2007e02f14070cd35b0afe52574e72b9dd146978f7cb261d",
+    "reviewHash": "6a4eb394c876683262fbc2717d5e0350adfc50860faba59bae168ba442e807d8",
+    "wordId": 1171,
+    "inputHash": "dfdc2529834974ccadab80f1afed0b475891174d2ba1dc84a0cb573b4fe76a51",
+    "draftHash": "32ae07c5c0e99485611cf7dcfd2d9ef4c8f716e5e085d465e23e1454a86bbfae",
+    "finalHash": "27adf5a021c424bec7ebeedeb8f99b1234a0572175a7056d1e2200a357792d5e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/room#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.644Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 69895,
+        "revisionId": 38614115,
+        "revisionTimestamp": "2025-09-03T20:18:28Z",
+        "sha256": "71d14d3fb53ba549f24ee38dd4c2410df156e6a6bfec93f1b0e7cd3e130271fa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/room",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:55:34.582Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:12:59.724Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "三个核心义的六条例句均缺少必填的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "具体空间与抽象余地合并后各只有一个例句，未达到每个核心义至少两例的要求；应分开并补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2、/confusions/1",
+        "message": "把住宿动词 room 一概标成较正式不准确。它主要见于美式英语，room with 常用于租住、合住安排；stay with 不能无条件替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1、/lessCommonSenses/0",
+        "message": "room someone in 不宜作为表示留宿的常用固定短语教授。少见的及物用法是 room someone；in 后接地点时构成地点介词短语。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "/rʊm/ 变体不能仅解释成把 /uː/ 读短，也不应仅归于英国口音。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "中古英语 rum 阶段未获词源材料支持；“重建形式”不是词义，古英语阶段的释义也未由该材料明确说明。应将可证实的历史关系写入 summary，清空缺乏释义依据的阶段，并补充德语 Raum 的同源关系。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily、/wordFamilyNote",
+        "message": "词族留空影响教学完整性。可补充 roomy、bedroom、roommate，并说明词缀、复合方式及 roommate 连续两个 m 的实际拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources、各处 sourceIds",
+        "message": "Oxford 条目不在实际可用材料中，不能作为本次审校的材料依据。应关联已取得的法语维基词典英语词条，专业知识补充不虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的空间、一般房间、居住房间、用途房间及住宿动词。房间的不同用途合并为一个可数核心义；具体空间与抽象余地分开后，四个核心义均有至少两个完整例句。少见及物义予以保留并修正结构。抽象义、及物义及 roomy 的补充依据专业语言知识，不归于所引词典；词源仅保留材料直接支持的历史关系。",
+    "senseInventory": [
+      {
+        "sense": "n. 可用空间；容纳人或物的空位",
+        "coveredBy": [
+          "room-n2"
+        ],
+        "assessment": "保留不可数用法，补成放书与车辆容人的两个具体例句。"
+      },
+      {
+        "sense": "n. 房间；建筑内分隔出的室内空间",
+        "coveredBy": [
+          "room-n1"
+        ],
+        "assessment": "已有两个自然例句；不将中文“场所”扩展成任意地点义。"
+      },
+      {
+        "sense": "n. 居住房间；卧室或旅馆客房",
+        "coveredBy": [
+          "room-n1"
+        ],
+        "assessment": "作为房间义的用途覆盖，已有居住房间及旅馆客房语境，无须另立重复核心义。"
+      },
+      {
+        "sense": "n. 特定用途的室、厅，如教室",
+        "coveredBy": [
+          "room-n1"
+        ],
+        "assessment": "由定义和 classroom 等表达覆盖，属于一般房间义的用途细分。"
+      },
+      {
+        "sense": "n. 改进、选择或调整的余地",
+        "coveredBy": [
+          "room-n3"
+        ],
+        "assessment": "按专业语言知识补充为独立核心义，提供两个例句及限定语境的近义、反向表达。"
+      },
+      {
+        "sense": "vi. 居住；住宿；与某人合住",
+        "coveredBy": [
+          "room-v1"
+        ],
+        "assessment": "已有两个例句；修正语域说明并区分 room with 与 stay with。"
+      },
+      {
+        "sense": "vt. 为某人提供房间或安排住宿",
+        "coveredBy": [
+          "room-v2"
+        ],
+        "assessment": "作为少见用法保留；改用完整地点介词短语，不再教授孤立的 room someone in。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"记住 room with sb. 表示与某人合住；room sb. in 表示留某人住宿。\"",
+        "valueJson": "\"记住 room with sb. 表示与某人合住，主要见于美式英语；日常说留宿某人常用 put sb. up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音通常相同；部分英国口音会把元音读得较短。\"",
+        "valueJson": "\"英美均常读 /ruːm/，也有 /rʊm/ 变体；/ʊ/ 与 /uː/ 的音质和长度都不同，不能只理解成把长元音读短。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"元音 /uː/ 要读得长一些，结尾 /m/ 时双唇闭合。\"",
+        "valueJson": "\"采用 /ruːm/ 读法时，元音是 /uː/；结尾 /m/ 时双唇闭合。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"my room 指一间具体房间；单数可数名词前已有 my，不再加 a。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a room 是一间客房；for our family 说明这间房供谁使用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"空间；空位；余地\"",
+        "valueJson": "\"可用空间；空位\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"某处可用的地方或容纳空间；也可指行动、发展或安排的余地。\"",
+        "valueJson": "\"某处可用的地方，或能够容纳人、物的空间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作“空间”时 room 常为不可数名词；常见结构是 room for + 名词、room to do。\"",
+        "valueJson": "\"此义是不可数名词，常说 some room、more room、enough room；room for 后接需要容纳的人或物，room to do 表示做某事所需的空间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"room 指放书的可用空间，是不可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"room-n2-ex2\",\"senseId\":\"room-n2\",\"en\":\"There is room to improve our plan.\",\"zh\":\"我们的计划还有改进的余地。\"}",
+        "valueJson": "{\"id\":\"room-n2-ex2\",\"senseId\":\"room-n2\",\"en\":\"Is there room for one more person in the car?\",\"zh\":\"车里还能再坐一个人吗？\",\"note\":\"room for + 人表示还能容纳某人的空位；room 仍是不可数名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"room for + noun\",\"zh\":\"有……的空间／余地\",\"note\":\"for 后接名词，说明空间留给什么，或余地涉及什么。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"room for + noun\",\"zh\":\"容纳……的空间\",\"note\":\"for 后接人或物，说明空间需要容纳什么。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"room to do something\",\"zh\":\"做某事的空间／余地\",\"note\":\"to 后接动词原形，说明可以做的事。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"room to do something\",\"zh\":\"做某事所需的空间\",\"note\":\"to 后接动词原形，如 room to move 表示活动的空间。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"space 是表示空间的常见词；room 还常表示可安排或行动的余地。\"",
+        "valueJson": "\"此处都可指可用空间；space 还可指太空、空格等，不能总换成 room。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"谈可用空间时 space 和 room 常可互换；room for 常强调容纳或安排的余地。\"",
+        "valueJson": "\"谈容纳人或物的可用空间时，space 和 room 常可互换；place 通常指某个位置或地点，如 a place to sit（一个可坐的地方）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"no room for\",\"zh\":\"没有……的空间／余地\",\"note\":\"在空间或余地这一语境中，no room for 表示无法再容纳或安排某事。\"}",
+        "valueJson": "{\"en\":\"no room for\",\"zh\":\"没有容纳……的空间\",\"note\":\"表示某处容不下某人或某物，如 no room for another chair（放不下另一把椅子）。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此义可用 no room 或 not enough room 表示空间不足；no room for 也可指没有做某事的余地。\"",
+        "valueJson": "\"no room for 表示没有容纳……的空间；not enough room for 表示空间不够。这些是空间是否充足的反向表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作动词时，指暂住、住宿，尤其常指与某人住在同一处。\"",
+        "valueJson": "\"作不及物动词，指居住、住宿；room with 表示与某人合住，常用于学生等人的住宿安排。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构为 room with sb.，表示与某人合住；动词较正式，日常也常说 stay with 或 share a room with。\"",
+        "valueJson": "\"主要见于美式英语，常说 room with sb. 或 room together。合住可以涉及同一间房，也可以是同一套住所；stay with 常指暂住在某人家里，share a room with 则明确表示共用一间房。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"roomed 是过去式；with 后接同住的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"room together 表示合住；near the school 说明住宿地点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"room at a hotel\",\"zh\":\"在旅馆住宿\",\"note\":\"at 后接住宿地点；该说法较正式，日常更常说 stay at a hotel。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"room together in college\",\"zh\":\"上大学时合住\",\"note\":\"常见于美式英语的大学生活语境；in college 说明合住发生的阶段。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"stay 更常用于日常口语，表示暂住或停留；room 作此义较正式。\"",
+        "valueJson": "\"stay 可表示暂住或停留，使用范围更广；room with 则强调与谁合住。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"room-n3\",\"title\":\"余地；改进或选择的空间\",\"meaning\":\"做事、改进、选择或调整时仍可利用的机会与范围。\",\"usageNote\":\"此义是不可数名词，常用 room for + 名词或 room to do；例如 room for improvement 表示改进的余地。\",\"examples\":[{\"id\":\"room-n3-ex1\",\"senseId\":\"room-n3\",\"en\":\"There is room to improve our plan.\",\"zh\":\"我们的计划还有改进的余地。\",\"note\":\"room to improve 表示仍有改进的可能。\"},{\"id\":\"room-n3-ex2\",\"senseId\":\"room-n3\",\"en\":\"The teacher gave us room to choose our own topics.\",\"zh\":\"老师给了我们自主选择题目的余地。\",\"note\":\"room to choose 指选择时拥有的自由或余地。\"}],\"patterns\":[{\"en\":\"room for + noun\",\"zh\":\"……的余地\",\"note\":\"for 后接改进、变化或协商等事项，如 room for improvement。\",\"kind\":\"sentence-pattern\"},{\"en\":\"room to do something\",\"zh\":\"做某事的余地\",\"note\":\"to 后接动词原形，说明仍可采取的行动。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"room for improvement\",\"zh\":\"改进的余地\",\"note\":\"表示表现、计划或做法仍有可以改进的地方。\",\"kind\":\"common-collocation\"},{\"en\":\"leave room for change\",\"zh\":\"留下调整的余地\",\"note\":\"常用于计划或安排，表示仍允许后续变化。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"scope\",\"zh\":\"余地；可能的范围\",\"note\":\"scope for improvement 与 room for improvement 接近，强调可以改进的范围。\"},{\"en\":\"leeway\",\"zh\":\"回旋余地；自由度\",\"note\":\"强调规则或安排允许的灵活程度，适合谈选择、调整的自由，不适用于所有 room 的语境。\"}],\"contrasting\":[{\"en\":\"no room for negotiation\",\"zh\":\"没有协商余地\",\"note\":\"表示条件或决定不允许进一步协商，与留有协商余地相对。\"}],\"similarNote\":\"scope 常说可采取行动的范围；leeway 更强调允许的自由度。它们只与 room 的部分抽象用法相近。\",\"contrastingNote\":\"可用 no room for 或 little room for 表示没有或很少的余地，具体含义取决于后接的事项。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"room-v2\",\"title\":\"给某人提供住宿\",\"meaning\":\"作及物动词时，room someone in 表示安排某人住下或留某人住宿。\",\"note\":\"通常用 room someone in 这一结构；日常更常说 put someone up 或 give someone a room。\",\"example\":{\"id\":\"room-v2-ex1\",\"senseId\":\"room-v2\",\"en\":\"Our neighbors roomed us in for one night.\",\"zh\":\"邻居让我们住了一晚。\",\"note\":\"room 后先接住宿的人，再接 in。\"},\"sourceIds\":[\"oxford-room\"]}",
+        "valueJson": "{\"id\":\"room-v2\",\"title\":\"为某人安排房间（少见）\",\"meaning\":\"room 也可作及物动词，表示给某人提供房间或安排住宿。\",\"note\":\"此用法较少见，多用于安排住宿的语境。日常表示留宿某人，更常用 put someone up；例句中的 in the west wing 是说明地点的介词短语。\",\"example\":{\"id\":\"room-v2-ex1\",\"senseId\":\"room-v2\",\"en\":\"The hotel roomed us in the west wing.\",\"zh\":\"旅馆把我们安排在西翼住宿。\",\"note\":\"room 后直接接 us；in 后接完整地点 the west wing，不把 room someone in 单独作为常用短语记忆。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"room with 表示与某人合住，语气较正式；stay with 更常见，可表示暂住在某人家里。\"",
+        "valueJson": "\"room with 主要见于美式英语，强调与某人合住；stay with 常表示暂住在某人家里，不能仅根据住宿时间长短区分两者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-room\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语 room 可直接作为完整词记忆，用于“房间”和“空间”；其日耳曼语历史来源见词源阶段。\"",
+        "valueJson": "\"room 源自古英语 rūm，进一步可追溯到重建的原始日耳曼语 *rūman；它与德语 Raum 同源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始日耳曼语\",\"form\":\"*rūman\",\"meaning\":\"重建形式\"},{\"language\":\"古英语\",\"form\":\"rūm\",\"meaning\":\"空间\"},{\"language\":\"中古英语\",\"form\":\"rum\",\"meaning\":\"空间\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"原始日耳曼语形式是重建形式；词源关系不等于现代英语的拆词规则，room 不能拆成 room 的构词成分来解释。\"",
+        "valueJson": "\"星号 * 表示重建形式。德语 Raum 是同源词，不是英语 room 的直接来源；这些历史关系与 bedroom、roommate 等现代复合词的构成要分开理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"word\":\"roomy\",\"partOfSpeech\":\"形容词\",\"meaning\":\"宽敞的；内部空间大的\",\"formation\":\"room 加形容词后缀 -y。\",\"spellingNote\":\"room + y → roomy；保留 oo，m 不双写。\",\"example\":{\"id\":\"room-family-roomy-ex1\",\"senseId\":\"room-n2\",\"en\":\"The new car is surprisingly roomy.\",\"zh\":\"这辆新车的内部出乎意料地宽敞。\",\"note\":\"roomy 描述内部可用空间充足。\"},\"sourceIds\":[]},{\"word\":\"bedroom\",\"partOfSpeech\":\"名词\",\"meaning\":\"卧室\",\"formation\":\"bed 与 room 合成，表示用于睡觉的房间。\",\"spellingNote\":\"bed + room → bedroom，通常连写为一个词。\",\"example\":{\"id\":\"room-family-bedroom-ex1\",\"senseId\":\"room-n1\",\"en\":\"We painted the bedroom walls light blue.\",\"zh\":\"我们把卧室的墙刷成了浅蓝色。\",\"note\":\"bedroom 特指卧室，比 room 的范围小。\"},\"sourceIds\":[\"wiktionary-etymology\"]},{\"word\":\"roommate\",\"partOfSpeech\":\"名词\",\"meaning\":\"室友；合住的人\",\"formation\":\"room 与 mate 合成；mate 在这里表示同伴。\",\"spellingNote\":\"room + mate → roommate；room 末尾的 m 与 mate 开头的 m 都保留，因此连续写两个 m。\",\"example\":{\"id\":\"room-family-roommate-ex1\",\"senseId\":\"room-v1\",\"en\":\"My roommate and I take turns cleaning the kitchen.\",\"zh\":\"我和室友轮流打扫厨房。\",\"note\":\"尤其在美式英语中，roommate 也可指同住一套住所的人，不一定共用卧室。\"},\"sourceIds\":[\"wiktionary-etymology\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"room 的常用词形变化是 rooms、rooming、roomed，属于名词复数和动词屈折变化，不是另列的派生词族。\"",
+        "valueJson": "\"rooms、rooming、roomed 是屈折变化；roomy 是加后缀形成的形容词，bedroom、roommate 是复合词。这些现代构词关系与 room 的历史词源不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary: room（英语词条）\"",
+        "valueJson": "\"法语维基词典：room（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"room 的历史词源信息\"]",
+        "valueJson": "[\"room 的空间、房间及房间用途义\",\"room 的读音、住宿动词及 room with 用法\",\"bedroom、roommate 等复合词\",\"古英语 rūm、重建的原始日耳曼语 *rūman 及与德语 Raum 的同源关系\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-room\",\"title\":\"Oxford Learner’s Dictionaries: room\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/room\",\"supports\":[\"room 的名词、动词用法及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1171,
+    "headword": "room",
+    "meaning_zh": "n. 房间, 空位, 场所\nvi. 住宿, 居住\nvt. 留宿",
+    "phonetic": "/ru:m/",
+    "pos": "",
+    "forms": []
+  }
+}

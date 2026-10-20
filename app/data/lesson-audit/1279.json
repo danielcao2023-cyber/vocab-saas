@@ -1,0 +1,441 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "917a977a02dd5afc9eca51618cbd339325ea66ef1536c838f07f12a2ee036c41",
+    "executedReviewPromptHash": "917a977a02dd5afc9eca51618cbd339325ea66ef1536c838f07f12a2ee036c41",
+    "reviewHash": "26fe2e93fbc6ea8d8bb85c05b183f7da5ea5dd175d09a67bdda039e0663e77f1",
+    "wordId": 1279,
+    "inputHash": "3194df91ae8d3565dd742a26ba447f621517e36ff4e42e7bad9fafefa890bf14",
+    "draftHash": "6e1fc9f2d100bec13113e8a7dde31a6d826dac1f4a581f63916450e272499a4b",
+    "finalHash": "2b9224b1a0a487c671a1496484960a12475eda759ea997f6d88743d0f6680f03",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/so#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.323Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 21619,
+        "revisionId": 39798736,
+        "revisionTimestamp": "2026-08-12T17:21:16Z",
+        "sha256": "e5a34c900fc0c511e3f71ab4a0a909a0936a237f5d39bd454a024c537a4d6e45",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/so",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T13:58:32.178Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:12:49.274Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 正文未取得，Oxford 没有提供检索材料，不能把两者列为具体论述的依据。应引用实际取得的法语维基词典英语词条；仅依据专业语言知识补充的内容不冒充词典引文。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏词典明确列出的目的用法 so＝so that，以及替代前述形容词的用法。前者应作为核心义提供两个例句，后者可作为较少见用法介绍，并补足词性说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0；/lessCommonSenses/1",
+        "message": "I think so 一类承前替代和对话中的话题承接都很常用，不宜整体列为少见义且各只有一个例句。原稿也没有真正示范 do so 和表示具体方式的 so。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0；/senses/2",
+        "message": "数量用法只有搭配而无生活例句；词典中的推断、结论功能也未由例句覆盖。程度义不应一概解释为程度很高，还应说明它可以指上下文中的程度。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similar",
+        "message": "that's why 的信息顺序说明颠倒：that 通常指前述原因，why 后接结果。therefore 虽与 so 意义接近，但不能直接照搬逗号加 so 连接独立分句的写法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/0/note；/senses/1",
+        "message": "so much、so quickly 不是 so 的比较级。表示“也”的倒装结构应明确通常承接肯定陈述；do 对应并省去的是整个谓语内容，So am I 也不能笼统用于所有含 be 的时态。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example/senseId",
+        "message": "So I do 是确认前述事实，不应继续归到原来只示范 I think so 的条目中。应明确设立确认用法，并调整例句归属。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "材料明确列有 so-called，可补充这一真实复合词及其连字符、called 的实际拼写；不必因 so 没有普通屈折变化而把词族留空。"
+      }
+    ],
+    "coverageAssessment": "已核对程度、数量、承前替代、方式、结论推断、目的和形容词替代等全部定义，并检查专业语言知识涉及的“也”、事实确认和话题承接。修订后各核心功能均有至少两个对应例句，较少见的形容词替代与确认用法另列。法语页面描述的是英语词条，目的释义中的法语语气说明不能转作英语规则。实际词源部分只是待补模板，没有可补入的历史事实，故保留空阶段、不推测词源。固定短语未作穷尽罗列。",
+    "senseInventory": [
+      {
+        "sense": "程度：这么、如此、那么",
+        "coveredBy": [
+          "so-degree"
+        ],
+        "assessment": "保留两个程度与结果例句，修正“一律表示程度很高”的概括。"
+      },
+      {
+        "sense": "数量：这么多、那么多",
+        "coveredBy": [
+          "so-degree"
+        ],
+        "assessment": "补充 so many 与 so much 各一个具体例句，与程度用法共同教学。"
+      },
+      {
+        "sense": "也、同样：So＋助动词/be/情态动词＋主语",
+        "coveredBy": [
+          "so-also"
+        ],
+        "assessment": "已有两个例句；补清肯定语境、时态对应及省略内容。"
+      },
+      {
+        "sense": "结果：所以、因此",
+        "coveredBy": [
+          "so-result"
+        ],
+        "assessment": "原有两个因果例句自然；修正 that's why，并说明 therefore 的标点区别。"
+      },
+      {
+        "sense": "结论、推断：由此看来",
+        "coveredBy": [
+          "so-result"
+        ],
+        "assessment": "补充两个根据前述信息作推断的对话例句。"
+      },
+      {
+        "sense": "承前替代：代替已经提到的判断或说法",
+        "coveredBy": [
+          "so-manner"
+        ],
+        "assessment": "升为核心内容，以 I think so 和 say so 两例覆盖。"
+      },
+      {
+        "sense": "方式或动作：这样、如此",
+        "coveredBy": [
+          "so-manner"
+        ],
+        "assessment": "补充 do so 与 just so 两例，并分别限定替代动作和具体方式的含义。"
+      },
+      {
+        "sense": "目的：以便、为了，so＝so that",
+        "coveredBy": [
+          "so-purpose"
+        ],
+        "assessment": "新增核心义及两个例句，区分目的与已发生的结果，不把情态动词说成必需条件。"
+      },
+      {
+        "sense": "开启或承接话题：那么",
+        "coveredBy": [
+          "so-intensifier"
+        ],
+        "assessment": "升为核心内容，提供两个对话例句，与因果用法区分。"
+      },
+      {
+        "sense": "替代前述形容词：more so、most so",
+        "coveredBy": [
+          "so-adjectival"
+        ],
+        "assessment": "按来源的形容词分类补为较少见用法，提供一个原创例句。"
+      },
+      {
+        "sense": "确认前述事实：So＋主语＋助动词/be/情态动词",
+        "coveredBy": [
+          "so-confirmation"
+        ],
+        "assessment": "单列较少见用法，并使原有易混例句归属准确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adverb; conjunction\"",
+        "valueJson": "\"adverb; conjunction; adjective (anaphoric use)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"so 作副词时常表示“这么、如此”，也可表示“也”；作连词时常表示“所以”。看它连接什么、修饰什么，就能判断意思。\"",
+        "valueJson": "\"so 可表示“这么、如此”“也”“所以”，还常代替前文内容；so (that) 也可表示“以便、为了”。结合上下文和语序判断，特别注意区分目的与结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"用 so...that 说一个“太……所以……”的结果。\"",
+        "valueJson": "\"用 so ... that ... 说一个“如此……以至于……”的结果，再与表示目的的 so (that) ... 对比。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"对比 so am I 和 so I am，注意倒装只用于表示“我也一样”。\"",
+        "valueJson": "\"对比 So am I 和 So I am，分清“我也一样”与“确实如此”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"作副词时形式不变；比较程度通常用 so much、so quickly 等表达。\"",
+        "valueJson": "\"作副词时形式不变；so much、so quickly 是程度短语，不是 so 的比较级或最高级。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"形容词替代用法\",\"form\":\"so\",\"ipa\":\"/səʊ/; /soʊ/\",\"note\":\"在 more so、most so 中替代前述形容词；比较含义由 more、most 表达，so 本身不加 -er 或 -est。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"作副词，修饰形容词或副词，表示程度很高；也常用于 so...that... 结构，表示“如此……以至于……”。\"",
+        "valueJson": "\"作副词，表示上下文所指的程度，常用来加强语气；so much / so many 可表示“这么多”，so ... that ... 表示“如此……以至于……”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"so 通常放在形容词或副词前。so...that... 中，that 后面说明产生的结果。\"",
+        "valueJson": "\"so 通常放在形容词、副词或 much、many 等数量词前。so ... that ... 中，that 后面说明产生的结果；so 也可以单独强调程度，不一定接结果从句。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-degree-ex3\",\"senseId\":\"so-degree\",\"en\":\"There are so many toys on the floor!\",\"zh\":\"地板上的玩具真多！\",\"note\":\"so many 修饰可数名词复数 toys，强调数量多；这里没有结果从句。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-degree-ex4\",\"senseId\":\"so-degree\",\"en\":\"I spent so much time looking for my keys that I missed the bus.\",\"zh\":\"我花了那么长时间找钥匙，结果错过了公交车。\",\"note\":\"so much 修饰不可数名词 time，that 从句交代结果。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这种表示“也”的句型要倒装：助动词或 be 动词放在主语前。若 so 后不倒装，so 常表示“确实如此”，意思不同。\"",
+        "valueJson": "\"表示“也”的这个结构通常承接肯定陈述，并采用倒装：助动词、be 动词或情态动词放在主语前。回应否定陈述通常用 Neither/Nor + 助动词等 + 主语。So + 主语 + 助动词等则可确认前述事实，表示“确实如此”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"do 提前，代替前句中的 love。\"",
+        "valueJson": "\"do 与前句的一般现在时实义动词结构对应，省去重复的 love science。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"分别回应一般现在时动词句和含 be 动词的句子；要根据原句选择 do 或 am。\"",
+        "valueJson": "\"So do I 对应一般现在时实义动词的肯定句；So am I 对应前句中的 am/is/are。其他时态或主语须相应调整，如 So did I、So is she。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"所以；因此\"",
+        "valueJson": "\"所以；因此；由此看来\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作连词，连接原因和结果，说明后句是前面情况造成的结果。\"",
+        "valueJson": "\"作连词引出前述情况造成的结果，表示“所以、因此”；也可承接前文信息，引出“由此看来……”的推断。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-result-ex3\",\"senseId\":\"so-result\",\"en\":\"“Nina's bike is outside.” “So she must be here.”\",\"zh\":\"“妮娜的自行车在外面。”“那她一定在这里。”\",\"note\":\"根据自行车的位置推断人在这里；so 引出推断。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-result-ex4\",\"senseId\":\"so-result\",\"en\":\"“The shop closes at six, and it's seven now.” “So it's already closed.”\",\"zh\":\"“商店六点关门，现在七点了。”“那它已经关门了。”\",\"note\":\"根据营业时间和当前时间得出结论。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"So, + clause\",\"zh\":\"所以，……\",\"note\":\"句首 so 常承接前文并引出结论或下一步。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"So + clause\",\"zh\":\"由此看来，……\",\"note\":\"承接前文信息引出推断；逗号并非必需。单纯开启话题的 so 则不一定表达因果。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"意思相近，语气较正式，常用于书面表达。\"",
+        "valueJson": "\"意思相近，语气较正式；therefore 通常作连接副词，连接两个独立分句时宜用句号或分号，如 It rained; therefore, we stayed home.，不能直接照搬逗号加 so 的写法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常先说结果，再用 why 引出其原因，信息顺序与 so 不同。\"",
+        "valueJson": "\"that 指前面说过的原因，why 后面说结果，信息顺序可与 so 相同，如 The bus was late. That's why I missed class.（公交车晚点了，这就是我上课迟到的原因。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"so-manner\",\"title\":\"如此；那样\",\"meaning\":\"作副词代替前面已经说过的动作、情况或说法，避免重复。\",\"note\":\"如 I think so（我这么认为）；初中阶段先掌握 so 的意思要由上下文补全。\",\"example\":{\"id\":\"so-manner-ex1\",\"senseId\":\"so-manner\",\"en\":\"“Is the library open?” “I think so.”\",\"zh\":\"“图书馆开着吗？”“我想是这样。”\",\"note\":\"so 代替“图书馆开着”这一情况。\"},\"sourceIds\":[\"src-cambridge\"]}",
+        "valueJson": "{\"id\":\"so-adjectival\",\"title\":\"替代前述形容词（较少见）\",\"meaning\":\"在 more so、most so 等结构中，so 可代替前面已经出现的形容词，表示同一种性质。\",\"note\":\"这是词典单列的形容词替代用法；先认读 more so（更是如此），注意它与表示“也”的倒装结构不同。\",\"example\":{\"id\":\"so-adjectival-ex1\",\"senseId\":\"so-adjectival\",\"en\":\"The first room was noisy, and the second was even more so.\",\"zh\":\"第一间房很吵，第二间还要更吵。\",\"note\":\"more so 中的 so 代替 noisy，避免重复形容词。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"so-intensifier\",\"title\":\"那么；这么（引出话题或强调）\",\"meaning\":\"用于口语开头，引入问题、总结或下一步话题；具体语气看上下文。\",\"note\":\"常见于对话开场，不一定表示因果。\",\"example\":{\"id\":\"so-intensifier-ex1\",\"senseId\":\"so-intensifier\",\"en\":\"So, what should we do next?\",\"zh\":\"那么，我们接下来该做什么？\",\"note\":\"so 用来转入下一步讨论。\"},\"sourceIds\":[\"src-oxford\"]}",
+        "valueJson": "{\"id\":\"so-confirmation\",\"title\":\"的确如此（确认前述事实）\",\"meaning\":\"用 so + 主语 + 助动词、be 动词或情态动词确认前面说的事实。\",\"note\":\"正常语序表示确认，有时带突然发现的语气；不要与表示“也”的倒装结构混淆。\",\"example\":{\"id\":\"so-confirmation-ex1\",\"senseId\":\"so-confirmation\",\"en\":\"“Your glasses are on your head.” “So they are!”\",\"zh\":\"“你的眼镜在头上呢。”“哎，还真是！”\",\"note\":\"they 指 glasses；So they are 确认的是同一个事实。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-purpose\",\"title\":\"以便；为了\",\"meaning\":\"作连词，相当于表示目的的 so that，引出做某事想达到的目的。\",\"usageNote\":\"口语中常省略 that。目的从句常含 can、could、will、would 等情态动词，但不是必须；目的未必已经实现。so that 也可能表示结果，仍须结合上下文判断。\",\"examples\":[{\"id\":\"so-purpose-ex1\",\"senseId\":\"so-purpose\",\"en\":\"Please move your bag so I can sit down.\",\"zh\":\"请把你的包挪一下，好让我坐下。\",\"note\":\"so I can sit down 说明挪包的目的。\"},{\"id\":\"so-purpose-ex2\",\"senseId\":\"so-purpose\",\"en\":\"I wrote down the address so I wouldn't forget it.\",\"zh\":\"我把地址记了下来，以免忘记。\",\"note\":\"记地址的目的是避免忘记；这句话本身不保证后来没有忘记。\"}],\"patterns\":[{\"en\":\"main clause + so (that) + clause\",\"zh\":\"做某事，以便……\",\"note\":\"后面的从句有自己的主语和谓语；表示目的时，that 常可省略。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"so I can...\",\"zh\":\"好让我能……\",\"note\":\"常用于请求或解释安排的目的。\",\"kind\":\"sentence-pattern\"},{\"en\":\"so we don't...\",\"zh\":\"以免我们……\",\"note\":\"用否定从句说明希望避免的情况。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"so that\",\"zh\":\"以便；为了\",\"note\":\"表示目的时可补回 that；so that 本身也可能表示结果，须看上下文。\"},{\"en\":\"in order to\",\"zh\":\"为了\",\"note\":\"后接动词原形，通常由主句主语执行该动作；so (that) 后接完整从句，可以另有主语。\"}],\"contrasting\":[{\"en\":\"as a result\",\"zh\":\"结果；因此\",\"note\":\"引出产生的结果；表示目的的 so (that) 说明想达到的目标，目标未必已经达到。\"}],\"similarNote\":\"比较目的表达时，要同时检查后面接动词原形还是完整从句，以及动作由谁执行。\",\"contrastingNote\":\"目的与结果是这里的语义对照，不是 so 在所有用法中的反义关系。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-manner\",\"title\":\"如此；这样（替代前文内容或做法）\",\"meaning\":\"作副词，代替已经提到的情况、说法或动作，也可表示上下文中明确的做法。\",\"usageNote\":\"I think so 中的 so 代替完整判断；do so 中的 so 代替前述动作；just so 可表示“恰好这样、以讲究的方式”。这些表达要连同结构学习。\",\"examples\":[{\"id\":\"so-manner-ex1\",\"senseId\":\"so-manner\",\"en\":\"“Is the library open?” “I think so.”\",\"zh\":\"“图书馆开着吗？”“我想是这样。”\",\"note\":\"so 代替“图书馆开着”这一情况。\"},{\"id\":\"so-manner-ex2\",\"senseId\":\"so-manner\",\"en\":\"If the soup needs more salt, please say so.\",\"zh\":\"如果汤还需要加盐，请说一声。\",\"note\":\"say so 表示说出“汤还需要加盐”这件事。\"},{\"id\":\"so-manner-ex3\",\"senseId\":\"so-manner\",\"en\":\"If you need to leave early, please do so quietly.\",\"zh\":\"如果你需要提前离开，请安静地离开。\",\"note\":\"do so 代替 leave early，避免重复；这种表达较正式。\"},{\"id\":\"so-manner-ex4\",\"senseId\":\"so-manner\",\"en\":\"She arranged the cushions just so before the guests arrived.\",\"zh\":\"客人到来前，她把靠垫摆得恰到好处。\",\"note\":\"just so 表示按讲究、恰当的方式摆好。\"}],\"patterns\":[{\"en\":\"think / hope / say + so\",\"zh\":\"认为如此／希望如此／这样说\",\"note\":\"so 代替前述内容；think 的常见否定表达是 I don't think so，hope 则通常说 I hope not。\",\"kind\":\"sentence-pattern\"},{\"en\":\"do so\",\"zh\":\"这样做；照做\",\"note\":\"代替已提到的动作，常见于较正式的表达。\",\"kind\":\"fixed-expression\"},{\"en\":\"just so\",\"zh\":\"恰好这样；恰到好处地\",\"note\":\"强调具体方式或安排得准确、讲究。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"if so\",\"zh\":\"如果是这样\",\"note\":\"指如果前面说的情况属实；否定时可说 if not。\",\"kind\":\"fixed-expression\"},{\"en\":\"and so on / and so forth\",\"zh\":\"等等；诸如此类\",\"note\":\"列举几个同类项目后，表示还可以继续列下去。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"I think that's true\",\"zh\":\"我认为那是真的\",\"note\":\"可解释 I think so 所指的判断；不能替换所有含 so 的结构。\"},{\"en\":\"do it\",\"zh\":\"做这件事\",\"note\":\"与 do so 在指代动作时意思接近，日常口语中更常见；不能用来替换 I think so。\"},{\"en\":\"like that\",\"zh\":\"那样；像那样\",\"note\":\"只在表示做法时与 so 接近，不表示“我认为如此”中的完整判断。\"}],\"contrasting\":[{\"en\":\"I don't think so\",\"zh\":\"我不这么认为\",\"note\":\"否定前述判断，是 I think so 的常见否定表达。\"},{\"en\":\"do otherwise\",\"zh\":\"采用别的做法\",\"note\":\"只在谈做法时与 do so 形成对照。\"}],\"similarNote\":\"先判断 so 指的是完整情况还是动作，再选择对应表达，不能只按中文“这样”互换。\",\"contrastingNote\":\"判断的否定与做法的改变须分别表达；这里没有适用于所有结构的单一反义词。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-intensifier\",\"title\":\"那么（开启或承接话题）\",\"meaning\":\"用于交谈开头或话题转换处，引入问题、总结或下一步讨论；此时不一定表示因果。\",\"usageNote\":\"这种 so 的作用主要是组织对话。中文可按语境译成“那么”等，也可不译。\",\"examples\":[{\"id\":\"so-intensifier-ex1\",\"senseId\":\"so-intensifier\",\"en\":\"So, what should we do next?\",\"zh\":\"那么，我们接下来该做什么？\",\"note\":\"so 用来转入下一步讨论。\"},{\"id\":\"so-intensifier-ex2\",\"senseId\":\"so-intensifier\",\"en\":\"So, how was your trip?\",\"zh\":\"那么，你这趟旅行怎么样？\",\"note\":\"so 引出询问旅行近况的话题。\"}],\"patterns\":[{\"en\":\"So, + question / suggestion\",\"zh\":\"那么，接一个问题或建议\",\"note\":\"在这里起承接话题的作用；具体是否还有因果关系，要看上下文。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"So, how was...?\",\"zh\":\"那么，……怎么样？\",\"note\":\"常用于引出对经历或近况的询问。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"well\",\"zh\":\"那么；好吧\",\"note\":\"也可引出回答或新话题，但常带思考或缓和语气，不能处处替换 so。\"}],\"contrasting\":[],\"similarNote\":\"两者都能组织对话，选择取决于承接方式和语气。\",\"contrastingNote\":\"话题承接没有固定的词汇反义词，不必强配反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"so-manner\"",
+        "valueJson": "\"so-confirmation\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"so-purpose-result\",\"title\":\"so ... that ... 的程度结果与 so (that) 的目的\",\"summary\":\"so 后接形容词或副词，再接 that 从句，常说明程度带来的结果；so (that) 也可直接引出目的从句，说明想达到什么。\",\"items\":[{\"label\":\"程度与结果\",\"note\":\"so 修饰 quietly，that 从句说明说话太轻产生的结果。\",\"example\":{\"id\":\"conf-so-degree-result\",\"senseId\":\"so-degree\",\"en\":\"I spoke so quietly that Ben couldn't hear me.\",\"zh\":\"我说话声音太轻，结果本听不见我说的话。\",\"note\":\"这里陈述的是产生的结果。\"}},{\"label\":\"行为的目的\",\"note\":\"so 引出轻声说话的目的，that 可以补回。\",\"example\":{\"id\":\"conf-so-purpose\",\"senseId\":\"so-purpose\",\"en\":\"I spoke quietly so Ben could sleep.\",\"zh\":\"我轻声说话，好让本能睡觉。\",\"note\":\"睡觉是希望达到的目的，句子本身不保证本已经睡着。\"}}],\"takeaway\":\"先看 so 是否修饰形容词或副词，再结合上下文判断是在说产生的结果，还是想达到的目的；不能只凭出现 so that 就认定是目的。\",\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"so-called\",\"partOfSpeech\":\"adjective\",\"meaning\":\"被称为……的；所谓的，有时含怀疑或讽刺\",\"formation\":\"由 so 与 call 的过去分词 called 组成的复合形容词。\",\"spellingNote\":\"写作 so-called，中间有连字符；called = call + -ed，保留 call 原有的两个 l。\",\"example\":{\"id\":\"family-so-called\",\"senseId\":\"so-manner\",\"en\":\"The so-called shortcut took us an extra twenty minutes.\",\"zh\":\"这条所谓的捷径反而让我们多花了二十分钟。\",\"note\":\"so 在构词中表示“这样”；整个 so-called 在这里带怀疑语气。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课不列仅有语义关联的词；so 的常见用法属于同一个词形，不通过加词缀构成派生词。\"",
+        "valueJson": "\"so 的常见功能多由同一个词形承担；so-called 是复合词，不是给 so 加普通词缀构成的派生词。and so on 等固定短语放在搭配中学习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: so\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/so\",\"supports\":[\"副词 so 表示程度、如此或代替前文内容\",\"so...that... 的结构和结果含义\",\"so 表示结果的连词用法\",\"英式与美式发音\"],\"verification\":\"recommended\"},{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: so\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/so\",\"supports\":[\"so 表示相同情况的倒装结构\",\"so 用于承接话题或引出下一步表达\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：so（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/so#Anglais\",\"supports\":[\"程度、数量、方式及承前替代的用法\",\"表示结论或推断的用法\",\"so 相当于 so that、引出目的的用法\",\"替代前述形容词的用法，包括 more so 和 most so\",\"so-called、and so on、and so forth 等复合表达或固定短语\",\"美式 /soʊ/ 与英式 /səʊ/ 发音\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1279,
+    "headword": "so",
+    "meaning_zh": "adv. 如此；这么；也\nconj. 所以；因此",
+    "phonetic": "/sәu/",
+    "pos": "",
+    "forms": []
+  }
+}

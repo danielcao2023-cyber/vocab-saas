@@ -1,0 +1,304 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7e2f706e6efd4db34ae01e072d6a1f0358d155cae1ac554d7f66fbcf393b1073",
+    "executedReviewPromptHash": "7e2f706e6efd4db34ae01e072d6a1f0358d155cae1ac554d7f66fbcf393b1073",
+    "reviewHash": "4e0a66e8d5666eabb1237e72fadfef532e2e1edf8754cfa57b9407fa741673b9",
+    "wordId": 697,
+    "inputHash": "167e37d698b4c1be4152b440e818867ad0d0c46524967919dda20b01cd7c0030",
+    "draftHash": "0c7ed6abe84a2815008c9e1e4a5762057bcbe900687fa8c91107ec8a48e460f9",
+    "finalHash": "450d7fc445ac7ba1eb7816600bec3cd5208be429c9e1169de48b2e73bcab0372",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/include#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:36.599Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 64339,
+        "revisionId": 36339921,
+        "revisionTimestamp": "2024-11-03T12:35:21Z",
+        "sha256": "f290e5631030c3badf6cf07a57815b0870a5ff5d46eea31fb77b0d93624f44d8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/include",
+        "section": "include etymology",
+        "supports": [
+          "Latin enclose meaning; in plus close; headword versus infinitive"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:23:55.895674+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "7e27ffce64ccd1dd6c2fb6b029306fc885fa4804cb963026989397337c904a0f",
+        "summaryAndSupportsWordCount": 52,
+        "sha256": "7e27ffce64ccd1dd6c2fb6b029306fc885fa4804cb963026989397337c904a0f",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/697.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/include",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:16:52.927Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:30:42.069Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "include 以字母 e 结尾，过去式拼写只加 d；原说明“词尾 d 后加 ed”会导出错误拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation、/wordFamily/1/formation",
+        "message": "include 去 e 后加 -ion 会得到错误的 includion；inclusive 的说明也遗漏了词干变化。两词均须说明采用 inclus-，分别接 -ion、-ive。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "include 不只说明已经存在的包含关系，也能直接表示纳入动作。原稿把 add 与 include 概括成动作与结果的区别，限制过强。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "与 consist of 的比较缺少关键界限：consist of 通常交代完整构成，include 不要求穷尽列举。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote、/senses/1/examples",
+        "message": "早餐例句语法正确，但主要说明价格所含项目，与第一义重叠。第二义宜直接示范把费用计入总额，并补充让某人参与活动的常见用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary",
+        "message": "原词条列有“包住”，需根据已取得的词源材料说明英语早期的实体围合用法，避免将它与现代常用义等量教学。现有拉丁语到英语的阶段顺序可保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0及引用oxford-include的sourceIds",
+        "message": "实际材料没有 Oxford 页面的正文，不能将它作为这些说明的材料依据。应改引已取得的法语维基词典英语词条；该词条未直接支持的句型和形容词说明保留为专业语言知识补充，引用数组留空。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对词义、例句、搭配、拼写、读音、近反义表达及词源。材料中的 inclure、comprendre/regrouper 可归入“包括、包含”，rajouter 对应“添入、纳入”，无需机械拆成三义。修订后两项现代核心义分别有2个和3个例句，覆盖组成、名单、核算及人员参与。“包住、围住”仅作历史用法说明。材料中的法语是释义语言，词条本身是英语；未混淆二者。局限是来源释义简短，未直接列出的句型、近义界限与部分词族说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "包括、包含：整体中有所述部分或成员",
+        "coveredBy": [
+          "include-1"
+        ],
+        "assessment": "覆盖 inclure、comprendre 及此处 regrouper 所表达的整体与部分关系；现有两个原创例句分别说明成员组成和所含物品。"
+      },
+      {
+        "sense": "添入、纳入：列入名单、算入总额或让人参与",
+        "coveredBy": [
+          "include-2"
+        ],
+        "assessment": "覆盖 rajouter 及主动纳入用法；修订后以名单、费用核算和活动参与三个例句具体展示，保留 include A in B 与被动结构。"
+      },
+      {
+        "sense": "包住、围住、封入（历史用法）",
+        "coveredBy": [],
+        "assessment": "词源材料支持英语早期的实体围合义；已补入词源摘要，不将其另立为现代初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则变化：词尾 d 后加 ed，并额外读出一个音节。\"",
+        "valueJson": "\"以不发音的 e 结尾，拼写上只加 d；include 的末尾音是 /d/，所以过去式词尾读 /ɪd/，多出一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"include 去掉词尾 e，加 -ion。\"",
+        "valueJson": "\"与 include 对应的同族名词；采用 inclus- 这一词干形式，再加 -ion。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"include 的词干加 -ive，形成形容词。\"",
+        "valueJson": "\"与 include 对应的同族形容词；采用 inclus- 这一词干形式，再加 -ive。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调执行添加动作；include 更侧重说明 A 已属于整体或范围。\"",
+        "valueJson": "\"add A to B 突出把 A 加进去；include A in B 突出把 A 纳入 B，同样可以表示纳入这一动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"add 着重“添加”的动作；include 着重“纳入范围”的结果。\"",
+        "valueJson": "\"add 侧重增加；include 侧重纳入某个范围。include 既能说明已有的包含关系，也能用于请求、计划或描述一次纳入动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"用于列出整体的组成部分，主语是整体，结构为 consist of。\"",
+        "valueJson": "\"主语同样是整体，但通常交代完整构成；include 说明整体中有列举的部分，不要求把全部组成列完。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 include A in B，表示把 A 纳入 B；B 可以是名单、计划、费用或总数。\"",
+        "valueJson": "\"常用 include A in B，表示把 A 纳入 B；B 可以是名单、活动、计划、费用或总数。include someone in an activity 可表示让某人参与活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"Does the ticket price include breakfast?\"",
+        "valueJson": "\"Remember to include delivery costs in the total.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"票价包含早餐吗？\"",
+        "valueJson": "\"别忘了把运费算进总额。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"询问早餐是否算在票价内。\"",
+        "valueJson": "\"把一项费用纳入计算，直接示范 include A in B。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"include-2-ex3\",\"senseId\":\"include-2\",\"en\":\"The children included the new student in their game.\",\"zh\":\"孩子们让那位新同学也参加了他们的游戏。\",\"note\":\"include someone in an activity：让某人参与某项活动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"include 可借助 in“在里面”和 close“关闭”的现代联想来记：把内容放进整体范围里。词源上，英语 include 来自拉丁语 includere；其构词与 in 和 claudere（关闭）有关。\"",
+        "valueJson": "\"include 可借助 in“在里面”和 close“关闭”的现代联想来记：把内容放进整体范围里。词源上，英语 include 来自拉丁语 includere；其构词与 in 和 claudere（关闭）有关。早期英语也用 include 表示实际的“围住、封入”，并用它表示整体包含部分；今天应以“包括、纳入”这些常用义为主。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-include\",\"title\":\"Oxford Learner’s Dictionaries: include\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/include\",\"supports\":[\"include 的常见动词义项和用法\",\"include 的读音与词形\",\"include 的相关派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-include\",\"title\":\"Wiktionnaire: include（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/include#Anglais\",\"supports\":[\"include 的包括、包含及添入义\",\"英美发音及规则动词变位\",\"同族词 inclusion\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[\"wiktionary-include\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[\"wiktionary-include\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[\"wiktionary-include\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[\"wiktionary-include\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-include\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 697,
+    "headword": "include",
+    "meaning_zh": "vt. 包括, 把...算入, 包住",
+    "phonetic": "/in'klu:d/",
+    "pos": "",
+    "forms": []
+  }
+}

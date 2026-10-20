@@ -1,0 +1,352 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d8d949abefb2226ce184c1b4af68aa5f9f4122947d7fb389083fd43c21f8abaf",
+    "executedReviewPromptHash": "d8d949abefb2226ce184c1b4af68aa5f9f4122947d7fb389083fd43c21f8abaf",
+    "reviewHash": "30bb87b05f9cdd39fc61df12db29f16352acbdced655b840795d0acadc0b9305",
+    "wordId": 498,
+    "inputHash": "fe3d7891abd1bf562780b2c586838533a07aae6bf4b905668279fe2d0114dffc",
+    "draftHash": "c7dfebb521f2bedefc62ce77a39921959982e81f36d5e8e634b631009ee8c0cb",
+    "finalHash": "46f2b56f9ee769189f23a6f59c40acdb53e136f3b6cfd796b19b6fbfff270592",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/farm#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:42.423Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117371,
+        "revisionId": 39718544,
+        "revisionTimestamp": "2026-07-31T23:54:57Z",
+        "sha256": "cba9f4f2c5184571c99e43aa11ab3046f0fd0f66876355d98aab407f4571654f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/farm",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:05:21.007Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:11:23.764Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 页面未取得内容，不能据此支持读音、义项或词族说明。改引已取得的 Wiktionnaire 英语词条；没有对应材料的词族和辨析不附该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "原稿列出耕种、务农和养殖，却没有动物养殖例句，也没有不接宾语的务农例句。将耕种与务农保留在原义项，另补养殖义，每义两例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway；/studyPlan/0；/senses/1；/memoryAid",
+        "message": "farm crops、farm animals 在适当语境中可以成立，但不宜作为初学者的首选搭配，farms apples 也不如 grows apples 自然。改用 farm the land、无宾语的 farm 和 farm fish，并说明 farm animals 常是名词短语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning",
+        "message": "“农场产业或农田”范围不清，容易混同整个农业产业、农场经营单位和任意田块。应明确 farm 通常是可数的农业经营单位。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/4/note；/wordFamily/1/spellingNote",
+        "message": "farming 拼写正确，但“词尾不发音的 e 不需删除”容易被误读为通则。应直接说明 farm 加 -ing，不删字母，也不双写 m。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "阶段 meaning 目前只是来源身份说明，遗漏了可证实的中古英语词义。古法语借入关系保留在 summary；阶段中仅保留具有明确释义依据的中古英语 ferme。"
+      }
+    ],
+    "coverageAssessment": "已核对农场、耕种土地／务农、养殖动物三个农业核心义，并检查及物、不及物及被动用法。补丁后每个核心义均有两例。“农田”限定在农场土地的范围内，不泛指任意田块。历史说明限于材料支持的借入关系及中古英语词义；词族与搭配由专业语言知识补充，不将不可用的 Cambridge 页面作为引证。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：农场，种植或畜牧的农业经营单位",
+        "coveredBy": [
+          "farm-n-1"
+        ],
+        "assessment": "两例自然；收紧“农场产业或农田”的表述，并补充 farm animals 中名词作定语的用法。"
+      },
+      {
+        "sense": "及物动词：耕种、经营土地",
+        "coveredBy": [
+          "farm-v-1"
+        ],
+        "assessment": "farm the land 例句正确；与不及物的务农用法合并讲解，明确宾语差别。"
+      },
+      {
+        "sense": "不及物动词：务农、经营农场",
+        "coveredBy": [
+          "farm-v-1"
+        ],
+        "assessment": "原稿仅有说明，没有对应例句；补入不接宾语的自然例句。"
+      },
+      {
+        "sense": "及物动词：饲养、养殖动物",
+        "coveredBy": [
+          "farm-v-2"
+        ],
+        "assessment": "原稿列出但未举例；新增独立义项，以养鱼和养殖三文鱼的主动、被动例句覆盖。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"farm 作名词，指种植作物或饲养动物的农场；作动词，常说 farm crops（种庄稼）或 farm animals（养殖动物）。\"",
+        "valueJson": "\"farm 作名词指“农场”；作动词，可不接宾语表示“务农”，也可说 farm the land（耕种土地）、farm fish（养鱼）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记住 farm 作名词是“农场”，再用 farm crops 和 farm animals 记动词用法。\"",
+        "valueJson": "\"先记住名词 farm（农场），再练 farm the land（耕种土地）、不接宾语的 farm（务农）与 farm fish（养鱼）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[\"wiktionary-farm-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"词尾不发音的 e 不需删除；farm 本身没有 e，直接加 -ing。\"",
+        "valueJson": "\"farm 直接加 -ing，拼作 farming；不删字母，也不双写 m。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"种植作物或饲养动物的土地和经营场所，也可指农场产业或农田。\"",
+        "valueJson": "\"用于种植作物或饲养动物的农业经营场所，通常包括土地和相关建筑。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常与 on 连用表示“在农场上”；farm 是整个经营场所，不只是田地。\"",
+        "valueJson": "\"farm 是可数名词，常说 on a farm（在农场）。它通常指整个农业经营单位；一块田常用 field，泛指农田常用 farmland。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"farm animals\",\"zh\":\"农场饲养的动物\",\"note\":\"这里 farm 是名词作定语，animals 是中心词；整个表达是名词短语。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[\"wiktionary-farm-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"经营农场；耕种、种植或养殖\"",
+        "valueJson": "\"务农；经营农场；耕种土地\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"经营农场，种植作物或饲养动物。\"",
+        "valueJson": "\"从事农业、经营农场；耕种土地。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"动词可作及物或不及物用法：farm the land 指耕种土地；farm crops 或 farm animals 指种植作物或养殖动物。\"",
+        "valueJson": "\"farm 可不接宾语，表示务农或经营农场；接土地名词时，如 farm the land，表示耕种土地。说种某种作物通常用 grow，如 grow apples。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"farm-v-1-ex-2\",\"senseId\":\"farm-v-1\",\"en\":\"Her family farms apples and keeps bees.\",\"zh\":\"她家种苹果，也养蜜蜂。\",\"note\":\"farm apples 表示种植苹果；句中的 keeps bees 是更常见的“养蜂”说法。\"}",
+        "valueJson": "{\"id\":\"farm-v-1-ex-2\",\"senseId\":\"farm-v-1\",\"en\":\"Her family farms near the village.\",\"zh\":\"她家在村子附近务农。\",\"note\":\"farm 不接宾语，表示从事农业或经营农场；near the village 说明地点。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"farm + crops / animals\",\"zh\":\"种植作物 / 养殖动物\",\"note\":\"farm 后接作物或动物，说明农场经营的内容。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"farm in ...\",\"zh\":\"在……务农\",\"note\":\"farm 在这里不接宾语；in 后接从事农业的地区。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"专指种植物；不表示经营农场或饲养动物。\"",
+        "valueJson": "\"在农业语境中，grow crops / apples 表示种植作物或苹果，侧重种植具体植物；farm 还可表示从事农业经营。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"raise\",\"zh\":\"饲养；养殖\",\"note\":\"常用于 animals，侧重把动物养大；farm 的含义更宽。\"}",
+        "valueJson": "{\"en\":\"cultivate\",\"zh\":\"耕种；栽培\",\"note\":\"cultivate the land 也指耕种土地，语气较正式；这个表达侧重耕作，而非农场经营的各项活动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"说具体种某种植物可用 grow，谈养殖动物可用 raise；farm 可涵盖农场经营或种养活动。\"",
+        "valueJson": "\"grow 常接作物名，cultivate 常用于土地或作物；farm 可接土地作宾语，也可不接宾语表示务农。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[\"wiktionary-farm-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"farm-v-2\",\"title\":\"养殖动物\",\"meaning\":\"作为农业或养殖生产活动，饲养鱼类或其他动物。\",\"usageNote\":\"farm 可直接接所养动物的名称，常见于 farm fish、farm salmon 等表达。日常说养鸡、养牛也常用 raise。注意 farm animals 还常是名词短语，表示“农场饲养的动物”。\",\"examples\":[{\"id\":\"farm-v-2-ex-1\",\"senseId\":\"farm-v-2\",\"en\":\"My uncle farms fish in two large ponds.\",\"zh\":\"我叔叔在两个大池塘里养鱼。\",\"note\":\"farm fish 表示养鱼；farm 在这里是及物动词。\"},{\"id\":\"farm-v-2-ex-2\",\"senseId\":\"farm-v-2\",\"en\":\"The salmon we bought was farmed in Norway.\",\"zh\":\"我们买的三文鱼是在挪威养殖的。\",\"note\":\"was farmed 是被动语态，说明鱼是人工养殖的。\"}],\"patterns\":[{\"en\":\"be farmed\",\"zh\":\"被人工养殖\",\"note\":\"be 随主语和时态变化；farmed 是过去分词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"farm fish\",\"zh\":\"养鱼\",\"note\":\"farm 后接 fish，表示进行鱼类养殖。\",\"kind\":\"common-collocation\"},{\"en\":\"farmed salmon\",\"zh\":\"养殖三文鱼\",\"note\":\"farmed 作定语，表示人工养殖的；与 wild salmon（野生三文鱼）形成来源上的对比。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"raise\",\"zh\":\"饲养；养殖\",\"note\":\"raise animals 侧重饲养、养大动物；farm 更强调农业或养殖生产活动。\"}],\"contrasting\":[{\"en\":\"catch wild fish\",\"zh\":\"捕捞野生鱼\",\"note\":\"比较水产品的获取方式时，捕捞野生鱼与人工养鱼形成对比。\"}],\"similarNote\":\"raise 和 farm 在养殖语境中有重合；说养鸡常用 raise chickens，说养鱼可用 farm fish。\",\"contrastingNote\":\"捕捞与养殖只在比较鱼类来源或生产方式时构成对比，不是所有 farm 用法的反义关系。\"},\"sourceIds\":[\"wiktionary-farm-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 farm 的历史来源可追溯到中古英语 ferme，借自古法语 ferme；这里列出的是有依据的传入链。\"",
+        "valueJson": "\"英语 farm 来自中古英语 ferme，当时可指租赁经营的农场或地租。中古英语 ferme 借自古法语 ferme。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"ferme\",\"meaning\":\"farm 的借入来源\"},{\"language\":\"中古英语\",\"form\":\"ferme\",\"meaning\":\"英语 farm 的较早形式\"}]",
+        "valueJson": "[{\"language\":\"中古英语\",\"form\":\"ferme\",\"meaning\":\"租赁经营的农场；地租\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"farm 以辅音加 m 结尾，直接加 -ing；不删字母 m。\"",
+        "valueJson": "\"farm 以 -rm 结尾，直接加 -ing，拼作 farming；不删字母，也不双写 m。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-farm\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象一块农场：田里长着作物，围栏里养着动物，旁边有农舍。整块经营场所叫 farm；农夫在田里 farm crops，也就是种庄稼。\"",
+        "valueJson": "\"想象一个农场：田里种着作物，池塘里养着鱼，旁边有农舍。这个经营场所是 a farm；耕种土地可以说 farm the land，养鱼可以说 farm fish。有人问农夫做什么，他回答：I farm.（我务农。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"在土地上种植或养殖：farm the land / farm crops。\"",
+        "valueJson": "\"farm the land（耕种土地）、farm fish（养鱼）；I farm. 意为“我务农”。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-farm\",\"title\":\"Cambridge Dictionary: farm\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/farm\",\"supports\":[\"名词与动词的常见含义和用法\",\"farm 的英美发音\",\"farmer 与 farming 等相关词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"farm 的历史传入来源与中古英语形式\"]",
+        "valueJson": "[\"farm 的农业名词义\",\"farm 的耕种土地与饲养动物动词义\",\"farm 的英美发音\",\"farm 的历史传入来源及中古英语 ferme 的词义\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 498,
+    "headword": "farm",
+    "meaning_zh": "n. 农场, 农田\nvt. 耕种\nvi. 种田",
+    "phonetic": "/fɑ:m/",
+    "pos": "",
+    "forms": []
+  }
+}

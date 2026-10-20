@@ -1,0 +1,379 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "069b6a3b5c9e54b390eeebdedab4b3a9d7a252671f08fb37121dab38985f24c4",
+    "executedReviewPromptHash": "069b6a3b5c9e54b390eeebdedab4b3a9d7a252671f08fb37121dab38985f24c4",
+    "reviewHash": "cacae36f6bb87d316c2f9290f666d304d57f35671366da418f89cbd21ae9aeea",
+    "wordId": 1230,
+    "inputHash": "4e1bb568326e721b13c3258f96ff0080cac8a27d0231b56790e9cce49a3c65ee",
+    "draftHash": "23be3b545ad69ca468dcf2764151ca5a8b12c30300b415614e76d7b0b8b88fe3",
+    "finalHash": "4bbd1a1d9697209c349330b76a4464328ae9bce27edc8fb723a752ede180d13c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ship#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.200Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117069,
+        "revisionId": 39718558,
+        "revisionTimestamp": "2026-07-31T23:55:30Z",
+        "sha256": "23279b5932e38a394ec8bd9f2d4bf9218e29fa87c221672f60a3f5bd0ed00064",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ship",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:10:24.398Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:27:39.807Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "遗漏常见的不及物发货用法，如 Your order ships tomorrow。现有海运例句也未明确运输方式，且“运到了”容易混淆发运和送达。须补充句型和例句，并明确两者区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原词条的“装船”义，以及已获取词典中的网络配对名词义和动词义。现有上船义也应限定为较旧的海事用法，例句改用自然且明确的乘船出发语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "ship 与 sheep 不仅有通常的时长差别，还有元音音质差别。sheep 的原例句不含 ship，却绑定船只义的 senseId，须调整。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "shore 是相关场景中的地点词，不能因此作为具体名词 ship 的反向表达；应取消这种强造的反义关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面实际不可用，Oxford 页面未提供实际材料，现有引用无法作为本次核对依据。须改引已获取的法语维基词典英语词条，并让该页未支持的旧式海事义不再挂靠未获取页面。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1",
+        "message": "stood 用来描述舰艇停泊不够自然；was anchored 更适合初学者理解该场景。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline",
+        "message": "标题宜同时提示常见的泛指发货义；shipping 的拼写说明也宜明确名词同样双写 p。"
+      }
+    ],
+    "coverageAssessment": "已核对船／舰、海运、泛指运送与发运、不及物发货、装船、上船／乘船，以及网络配对的名词和动词用法。修订后两个核心义分别有2例和4例，其余列为扩展义，不把运输义机械拆分。原词源正确区分古英语 scip 与 relationship 截短两条来源，予以保留。依据限于实际提供的词典内容与专业语言知识；未把未获取页面当作核验依据，也未仅凭法语 vaisseau 增立太空船义。",
+    "senseInventory": [
+      {
+        "sense": "名词：船；舰（navire、bâtiment、vaisseau）",
+        "coveredBy": [
+          "ship-n-boat"
+        ],
+        "assessment": "核心义已覆盖；普通船只与军舰各有例句，无须按近义释词另拆义项。"
+      },
+      {
+        "sense": "及物动词：以船运送",
+        "coveredBy": [
+          "ship-v-transport"
+        ],
+        "assessment": "保留在运输核心义内，修订例句用 by sea 明确落实海运。"
+      },
+      {
+        "sense": "及物动词：运送；发运；发货",
+        "coveredBy": [
+          "ship-v-transport"
+        ],
+        "assessment": "已有日常发货例句；补充说明不限定海运，也不表示已经送达。"
+      },
+      {
+        "sense": "不及物动词：货物发出；订单商品发货",
+        "coveredBy": [
+          "ship-v-transport"
+        ],
+        "assessment": "原稿遗漏的常见语法功能；补充两个例句、句型及近义替换限制，与及物运输义合并教学。"
+      },
+      {
+        "sense": "及物动词：装船",
+        "coveredBy": [
+          "ship-v-load"
+        ],
+        "assessment": "按原词条补为较少见的海事扩展义，并与现代常见的 load something onto a ship 对照。"
+      },
+      {
+        "sense": "不及物动词：上船；乘船",
+        "coveredBy": [
+          "ship-v-board"
+        ],
+        "assessment": "保留为较旧用法；例句用明确海上语境中的 ship out 呈现乘船出发，并说明现代日常表达。"
+      },
+      {
+        "sense": "名词：网络或同人语境中的恋爱配对",
+        "coveredBy": [
+          "ship-n-pairing"
+        ],
+        "assessment": "原稿只在词源提及，未形成义项；补入扩展义及原创例句。"
+      },
+      {
+        "sense": "及物动词：支持或想象两个人成为恋爱配对",
+        "coveredBy": [
+          "ship-v-pairing"
+        ],
+        "assessment": "按已获取词典与专业语言知识补入扩展义，注明非正式语域及常用结构。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"ship：船，也可以表示用船运送\"",
+        "valueJson": "\"ship：船、舰，也表示运送、发货\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"不要把 /ɪ/ 拉成长音 /iː/；ship 和 sheep 的元音不同。\"",
+        "valueJson": "\"ship 的 /ɪ/ 与 sheep 的 /iː/ 在音质和通常时长上都不同：/ɪ/ 舌位稍低、较放松，/iː/ 舌位较高，通常也较长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"ship-n-boat-ex2\",\"senseId\":\"ship-n-boat\",\"en\":\"A navy ship stood near the harbor entrance.\",\"zh\":\"一艘海军舰艇停在港口入口附近。\",\"note\":\"navy ship 指海军舰艇。\"}",
+        "valueJson": "{\"id\":\"ship-n-boat-ex2\",\"senseId\":\"ship-n-boat\",\"en\":\"A navy ship was anchored near the harbor entrance.\",\"zh\":\"一艘海军舰艇停泊在港口入口附近。\",\"note\":\"navy ship 指海军舰艇；was anchored 表示抛锚停泊。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"shore\",\"zh\":\"岸上；岸边\",\"note\":\"在“船上与岸上”的语境中，ship 指船，shore 指岸边；二者不是所有用法中的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"shore 只在船只与陆岸相对的场景中构成对照。\"",
+        "valueJson": "\"ship 是具体船只的名称，没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"动词，指把货物或物品运往某地；既可强调海运，也常泛指发货、运送。\"",
+        "valueJson": "\"动词，可指经海路运输，也常泛指发运货物；及物时接货物作宾语，不及物时可用货物或订单作主语，表示发货。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 ship something to someone/place；现代商业语境中的 ship 不一定表示全程都走水路。\"",
+        "valueJson": "\"及物时常用 ship something to someone/a place；不及物时可说 Your order ships tomorrow。网购中的 ship 不限于海运；它表示发运，“已发货”不等于“已送达”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"ship-v-transport-ex2\",\"senseId\":\"ship-v-transport\",\"en\":\"They shipped the oranges overseas in a refrigerated container.\",\"zh\":\"他们用冷藏集装箱把橙子运到了海外。\",\"note\":\"海外运输语境中可指海运。\"}",
+        "valueJson": "{\"id\":\"ship-v-transport-ex2\",\"senseId\":\"ship-v-transport\",\"en\":\"They shipped the oranges to Japan by sea in a refrigerated container.\",\"zh\":\"他们用冷藏集装箱把橙子经海路发往日本。\",\"note\":\"by sea 明确表示海运；shipped 表示发运，不表示已经送达。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ship-v-transport-ex3\",\"senseId\":\"ship-v-transport\",\"en\":\"Your order will ship tomorrow.\",\"zh\":\"您订购的商品明天发货。\",\"note\":\"不及物用法：订单作主语，表示商品发出；不表示明天就会送达。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ship-v-transport-ex4\",\"senseId\":\"ship-v-transport\",\"en\":\"The replacement parts usually ship within two business days.\",\"zh\":\"替换零件通常在两个工作日内发出。\",\"note\":\"ship 后不接宾语；within two business days 说的是发货时间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"an order ships + time expression\",\"zh\":\"订单商品在某时发出\",\"note\":\"订单作主语，ship 不接宾语；ships 是一般现在时的第三人称单数形式，可用于说明发货安排。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"send 和 transport 都能表达运送，但 send 范围更广，transport 更正式。\"",
+        "valueJson": "\"send 和 transport 都能表达运送，但 send 范围更广，transport 更正式。订单作主语时，ship 可不接宾语；改用 send 时应说 The order will be sent tomorrow。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"ship-v-board\",\"title\":\"上船；乘船出发\",\"meaning\":\"动词，较少见，指登船或乘船出发，常见于历史、海军或较正式语境。\",\"note\":\"现代日常英语通常说 get on a ship 或 board a ship。\",\"example\":{\"id\":\"ship-v-board-ex1\",\"senseId\":\"ship-v-board\",\"en\":\"The sailors shipped at dawn and headed north.\",\"zh\":\"水手们黎明时上船，向北出发。\",\"note\":\"此处 ship 表示登船出发，较正式或带历史色彩。\"},\"sourceIds\":[\"oxford-ship\"]}",
+        "valueJson": "{\"id\":\"ship-v-board\",\"title\":\"上船；乘船出发（较旧的海事用法）\",\"meaning\":\"不及物动词，较旧用法可指上船或乘船旅行。\",\"note\":\"现代日常说“上船”通常用 board a ship 或 get on a ship，说“乘船旅行”用 travel by ship。ship out 在海上语境中可指乘船出发，也可在军旅语境中指被派往某地，不一定乘船。\",\"example\":{\"id\":\"ship-v-board-ex1\",\"senseId\":\"ship-v-board\",\"en\":\"He shipped out on a cargo vessel bound for Brazil.\",\"zh\":\"他乘一艘开往巴西的货轮出发了。\",\"note\":\"这里 on a cargo vessel 明确说明是乘船出发。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ship-v-load\",\"title\":\"装船（较少见的海事用法）\",\"meaning\":\"及物动词，指把货物装到船上，重点在装船这一动作。\",\"note\":\"这个义项较少见；现代通常说 load something onto a ship。ship an order 一般指发货，并不特别表示把商品装上船。\",\"example\":{\"id\":\"ship-v-load-ex1\",\"senseId\":\"ship-v-load\",\"en\":\"The crew shipped the crates aboard the vessel before dawn.\",\"zh\":\"船员们在黎明前把那些板条箱装上了船。\",\"note\":\"ship something aboard a vessel 在这里指把货物装船。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ship-n-pairing\",\"title\":\"恋爱配对；CP（网络名词）\",\"meaning\":\"名词，指粉丝支持或想象的恋爱配对，常涉及虚构角色。\",\"note\":\"非正式网络或同人用语，不表示船，也不保证角色在原作中真的成为情侣。\",\"example\":{\"id\":\"ship-n-pairing-ex1\",\"senseId\":\"ship-n-pairing\",\"en\":\"That ship is popular among fans of the show.\",\"zh\":\"那对CP在这部剧的粉丝中很受欢迎。\",\"note\":\"这里的 ship 指粉丝支持的一组恋爱配对。\"},\"sourceIds\":[\"wiktionary-ship-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ship-v-pairing\",\"title\":\"支持恋爱配对；嗑CP（网络动词）\",\"meaning\":\"及物动词，指支持或想象两个人发展恋爱关系。\",\"note\":\"非正式网络用语，常说 ship two people 或 ship A with B，与运输无关。\",\"example\":{\"id\":\"ship-v-pairing-ex1\",\"senseId\":\"ship-v-pairing\",\"en\":\"I ship those two characters.\",\"zh\":\"我支持那两个角色成为一对。\",\"note\":\"表达对角色恋爱配对的支持，不是在说运送人物。\"},\"sourceIds\":[\"wiktionary-ship-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两词只差元音长短，拼写和意思都不同。\"",
+        "valueJson": "\"两词的辅音相同，元音的音质和通常时长不同；拼写和意思也不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"ship-conf-ex2\",\"senseId\":\"ship-n-boat\",\"en\":\"The sheep are eating grass.\",\"zh\":\"这些绵羊正在吃草。\",\"note\":\"长元音 /iː/。\"}",
+        "valueJson": "{\"id\":\"ship-conf-ex2\",\"senseId\":\"ship-n-boat\",\"en\":\"The farmer took two sheep onto the ship.\",\"zh\":\"农场主把两只绵羊带上了船。\",\"note\":\"sheep 读 /ʃiːp/，ship 读 /ʃɪp/；注意元音的音质和通常时长。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"ship 是“船”，sheep 是“绵羊”；朗读时把 /ɪ/ 读短，把 /iː/ 读长。\"",
+        "valueJson": "\"ship 是“船”，sheep 是“绵羊”；朗读时既要分清 /ɪ/ 和 /iː/ 的音质，也要留意它们通常的时长差别。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"作名词时常表示运输或运费；动词现在分词 shipping 需双写 p。\"",
+        "valueJson": "\"shipping 无论作名词还是现在分词，都双写 p 再加 -ing；与直接加 -ment 的 shipment 区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-ship\"]",
+        "valueJson": "[\"wiktionary-ship-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"ship 的元音短，别读成长音 sheep。\"",
+        "valueJson": "\"ship 读 /ʃɪp/，sheep 读 /ʃiːp/；元音音质和通常时长都要分清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-ship\",\"title\":\"Cambridge Dictionary: ship\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ship\",\"supports\":[\"名词与动词常见释义\",\"英美音标\",\"ship 的规则变化与拼写\"],\"verification\":\"recommended\"},{\"id\":\"oxford-ship\",\"title\":\"Oxford Learner’s Dictionaries: ship\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/ship\",\"supports\":[\"动词运输义和较少见的登船义\",\"ship 相关派生词\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-ship-etymology\",\"title\":\"Wiktionary: ship（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/ship#Anglais\",\"supports\":[\"ship 的古英语来源\",\"网络用法 ship 源自 relationship 的截短形式\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-ship-etymology\",\"title\":\"法语维基词典：ship（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/ship#Anglais\",\"supports\":[\"船、舰及运输、发运的释义\",\"英语读音与规则词形\",\"shipment、shipping 等派生词的列举\",\"网络配对用法的名词与动词词条\",\"古英语 scip 来源及 relationship 截短构词\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1230,
+    "headword": "ship",
+    "meaning_zh": "n. 船, 舰\nvt. 以船运送, 装船, 运送\nvi. 上船, 乘船",
+    "phonetic": "/ʃip/",
+    "pos": "",
+    "forms": []
+  }
+}

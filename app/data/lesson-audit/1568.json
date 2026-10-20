@@ -1,0 +1,307 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e1ab9c123e371ac40eab40674c194876cbbaadde40dbb5d4c4861e55d2ec8122",
+    "executedReviewPromptHash": "e1ab9c123e371ac40eab40674c194876cbbaadde40dbb5d4c4861e55d2ec8122",
+    "reviewHash": "47670ee8260e8eee73151393fe22749ea806ffb7952058245ee54e85dc1a03c9",
+    "wordId": 1568,
+    "inputHash": "2675d2cd08df00f98a9bbe2167c3139615bef21a8e4e43d902fc8cc7e83f174e",
+    "draftHash": "4963aee8c6a7dfa311228e3b7cde6592aec735f75142de5fd4a72dfd7d3f53b9",
+    "finalHash": "0f9d495f87b88408e62568d2ace7606ba9805e4ed108c92048a5bcbcabe0ab1a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wolf#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.199Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 70532,
+        "revisionId": 39830000,
+        "revisionTimestamp": "2026-08-25T15:39:07Z",
+        "sha256": "d1dfb95828a4cd10417b55d43a76f003335ab804fd1fcff3894525818d60e168",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wolf",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:54:39.489Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:00:18.946Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 页面没有实际提供的来源内容，不能承接这些来源引用。应改引已取得的英语词条；该词条未列出的人的比喻义不应绑定到它。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原词条的穷困相关用法。应通过 keep the wolf from the door 教授，避免让学生以为 wolf 可以自由替换 poverty。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "The story's wolf 可以直接指故事中的动物狼，不能据此翻译成恶狼般的人物。例句需要明确以人作比喻对象。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/confusions/0/items/1/example/note",
+        "message": "示例本身就是 wolf down 的第三人称单数形式，不能再说该用法不如 wolf down 常见；这里混淆了动词变形与短语用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "应明确展示及物动词 wolf 直接接食物宾语的用法；其核心是吃得快而急切，进食量大并非必要含义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similarNote",
+        "message": "gobble up 与 wolf down 都偏口语，现有“更口语”缺少明确、可靠的比较依据。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "原始印欧语阶段使用了空洞的关联性释义；引文也未明确列出中古英语的具体拼写。应在 summary 保留完整、可证实的追溯关系，撤去缺少逐项释义依据的阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对动物义、人的凶狠贪婪比喻义、穷困相关固定表达及及物动词吞吃义。修订后两个核心义均保留至少两个原创英中例句，并补充不带 down 的及物用法；人的比喻义和生计表达作为拓展处理。纹章中的狼属于专门用法，本课未展开。词源保留已提供引文支持的历史链条，来源引用不再依赖未取得内容的页面。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：狼，复数 wolves",
+        "coveredBy": [
+          "wolf-n-animal"
+        ],
+        "assessment": "核心义覆盖充分，两例自然，复数拼写和读音正确。"
+      },
+      {
+        "sense": "名词比喻：凶狠、残忍或贪婪的人",
+        "coveredBy": [
+          "wolf-n-person"
+        ],
+        "assessment": "作为较少见的评价性用法保留；修正例句，使人的比喻义明确。"
+      },
+      {
+        "sense": "穷困相关表达：keep the wolf from the door",
+        "coveredBy": [
+          "wolf-idiom-poverty"
+        ],
+        "assessment": "新增固定表达，说明勉强维持生计、免于挨饿受穷；不将其误教为 wolf 的自由抽象名词用法。"
+      },
+      {
+        "sense": "及物动词：狼吞虎咽地吃、吞吃",
+        "coveredBy": [
+          "wolf-v-eat"
+        ],
+        "assessment": "已有两个 wolf down 例句，新增直接接宾语的 wolf 例句及句型，覆盖动词的常用结构。"
+      },
+      {
+        "sense": "纹章学名词：纹章中的狼图案",
+        "coveredBy": [],
+        "assessment": "来源明确列出，但属于专门领域用法，不列为初中常用义，也不要求本课展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-wolf\",\"title\":\"Oxford Learner’s Dictionaries: wolf\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/wolf_1\",\"supports\":[\"狼这一动物义及其常见搭配\",\"动词 wolf down 的吃法\",\"发音及常见词形\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology-wolf\",\"title\":\"Wiktionary: wolf（英语词条及词源）\",\"url\":\"https://fr.wiktionary.org/wiki/wolf#Anglais\",\"supports\":[\"古英语 wulf、中古英语 wolf 及更早重构形式的词源追溯\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-wolf\",\"title\":\"Wiktionnaire：wolf（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/wolf#Anglais\",\"supports\":[\"名词的动物义及纹章学用法\",\"及物动词的吞吃义及 gobble up、gulp down、wolf down 等近义表达\",\"发音 /wʊlf/\",\"lone wolf、wolfish 等相关表达与派生词\",\"经中古英语、古英语 wulf 至更早重构形式的词源追溯\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-etymology-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wolf\"]",
+        "valueJson": "[\"wiktionary-wolf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"动词规则变化加 -s：He wolfs down his lunch. 更常见的表达是 wolf down。\"",
+        "valueJson": "\"动词规则变化加 -s：He wolfs down his lunch. 这里的 wolfs 是动词第三人称单数，不能写成名词复数 wolves。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"主语 he 对应动词 wolfs；这个动词用法不如 wolf down 常见。\"",
+        "valueJson": "\"主语 he 对应动词 wolfs；wolfs down 是 wolf down 的第三人称单数形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"很快、很急地吃东西，常暗示吃得又快又多。\"",
+        "valueJson": "\"狼吞虎咽地吃，强调吃得快而急切。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用短语 wolf down；可说 wolf down something 或 wolf something down。wolf 本身单独作这个意思的动词较少见。\"",
+        "valueJson": "\"这是非正式的及物动词，可直接接食物宾语，如 wolf a sandwich；也常用 wolf down，可说 wolf down something 或 wolf something down。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wolf-eat-ex3\",\"senseId\":\"wolf-v-eat\",\"en\":\"She wolfed her lunch during the short break.\",\"zh\":\"她趁短暂的休息时间狼吞虎咽地吃完了午饭。\",\"note\":\"wolf 可直接接食物宾语，后面不必带 down。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"wolf + food\",\"zh\":\"狼吞虎咽地吃……\",\"note\":\"wolf 本身就是及物动词，如 wolf a sandwich；同样属于非正式表达。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"语气中性，只说明速度快，不像 wolf down 那样带有急切或吃得多的感觉。\"",
+        "valueJson": "\"语气中性，只说明速度快；wolf down 更有急切、大口吞吃的感觉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"gobble up 更口语，也可用于非食物；eat quickly 只陈述速度，语气较平。\"",
+        "valueJson": "\"gobble up 和 wolf down 都偏口语；gobble up 也可用于迅速消耗或吞并非食物的事物。eat quickly 只陈述速度，语气较中性。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"wolf-person-ex1\",\"senseId\":\"wolf-n-person\",\"en\":\"The story's wolf frightened the villagers.\",\"zh\":\"故事里的恶狼般的人物吓坏了村民。\",\"note\":\"此处是故事中的比喻性角色。\"}",
+        "valueJson": "{\"id\":\"wolf-person-ex1\",\"senseId\":\"wolf-n-person\",\"en\":\"The landlord was a wolf who kept raising the rent on poor families.\",\"zh\":\"那个房东就像一头贪婪的狼，不断给贫困家庭涨房租。\",\"note\":\"主语 landlord 明确指人；wolf 在这里是带强烈批评意味的比喻。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wolf-idiom-poverty\",\"title\":\"固定表达：keep the wolf from the door\",\"meaning\":\"勉强维持生计，免于挨饿受穷。\",\"note\":\"这是固定习语，把饥饿或穷困比作门外的狼。记住整个表达；wolf 通常不能单独当作 poverty 的替换词。\",\"example\":{\"id\":\"wolf-poverty-ex1\",\"senseId\":\"wolf-idiom-poverty\",\"en\":\"Her part-time job paid just enough to keep the wolf from the door.\",\"zh\":\"她那份兼职的收入刚够勉强糊口。\",\"note\":\"just enough 表明收入只够维持基本生活。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"wolf 的历史形式可追溯到古英语 wulf；法语材料还列出原始日耳曼语重构形式 *wulfaz 和原始印欧语重构形式 *wĺ̥kʷos。这里展示的是同一条词源追溯链。\"",
+        "valueJson": "\"现代英语 wolf 经由中古英语，来自古英语 wulf；再往前可追溯到原始日耳曼语的重构形式 *wulfaz，以及更早的原始印欧语重构形式 *wĺ̥kʷos。这些形式属于同一条历史传承链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始印欧语（重构形式）\",\"form\":\"*wĺ̥kʷos\",\"meaning\":\"词源重构形式；与狼这一动物名称相关\"},{\"language\":\"原始日耳曼语（重构形式）\",\"form\":\"*wulfaz\",\"meaning\":\"狼\"},{\"language\":\"古英语\",\"form\":\"wulf\",\"meaning\":\"狼\"},{\"language\":\"中古英语\",\"form\":\"wolf\",\"meaning\":\"狼\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1568,
+    "headword": "wolf (pl. wolves)",
+    "meaning_zh": "n. 狼, 残忍贪婪之人, 极度穷困\nvt. 狼吞虎咽, 大吃",
+    "phonetic": "/wulf/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "wolves",
+        "kind": "s"
+      }
+    ]
+  }
+}

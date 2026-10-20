@@ -1,0 +1,644 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4687bb35f86741ed10a34a44149749519b3f65a32fb28e7504b097bfff73fd40",
+    "executedReviewPromptHash": "97c63d91083848759a641cfcb464d81ff74f9d8c80b7d06c950df1293085f58b",
+    "reviewHash": "1e995adee5e70bc198e359c8a6a7351927e59a19a4714c0f5d04fd62f7969f3c",
+    "wordId": 990,
+    "inputHash": "57113bf8ad530ff719517250a13f1767ad36be0314b195f0710feee210189172",
+    "draftHash": "a28ed47698039366ad677b0d8e74c2c02864b7e1f0afc9fd2eb01b4c041a7b3a",
+    "finalHash": "57b0dae1b3f5b5098139893b45126b340678a524758b097226d59903a900f081",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pass#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.183Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86343,
+        "revisionId": 39738707,
+        "revisionTimestamp": "2026-08-02T00:07:22Z",
+        "sha256": "710e08503c747d47d96d6aab9a4e1ac332581ee86f5c2a4ee514bbf7ed6994cf",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pass",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:23:35.682Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:38:00.291Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处/sourceIds；/etymology",
+        "message": "初稿将多处内容归于未提供实际正文的 Oxford 页面，却没有引用已取得的历史词源。须改用法语维基词典的英语词条，并让词源引用与实际材料的 URL 完全一致；材料未直接支持的补充说明不伪挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏常用的超过／超车、时间流逝、表决通过、名词传球及名词及格成绩。口语婉拒也是常用功能，应提升为核心义并补足两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "passing 直接在 pass 后加 -ing，保留原有的两个 s；不是加后缀时再双写一个 s。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning；/senses/0/usageNote；/senses/0/patterns",
+        "message": "从一个地方移动到另一个地方不能笼统定义为 pass。须区分 pass the school 的从旁经过与 pass through a tunnel 的从内部穿过。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/1；/senses/2/patterns/1/note",
+        "message": "通过期末考试才能加入俱乐部的情境不够自然；科目前用 in 的说明也过于绝对，pass maths 同样成立。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3",
+        "message": "度过具体时段的 pass 用法可以成立，但日常消磨时间应突出 pass the time；须与时间作主语的 Time passes 分清，并说明与 spend time 的语境差异。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4/collocations/0；/senses/4/relatedExpressions",
+        "message": "bus pass 不等于月票，也不宜把单程票列为其默认类型。no pass 是临时否定组合，不是通行证的词汇反义表达，应删除。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1；/wordFamilyNote",
+        "message": "初稿列出 passing，却又说 passing 不另算词族条目，说明自相矛盾；短暂的这一形容词义也没有相应例句。须明确词形变化与形容词用法的关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses；/confusions",
+        "message": "笼统中文释义中的变化、流通、宣判、忽略及被忽略须落实到具体结构；现代旅行语境中的护照应与 pass 区分。词典另列的身份语境及 pass out 也应作为拓展准确交代，不能混同性别身份与性取向。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对词条中文释义及法语维基词典英语词条的全部主要定义。修订后，11 个核心义各有至少两个原创英中例句，并覆盖及物、不及物及不同名词功能；山口、一次经过、消退、状态变化、牌类不叫牌、宣判、忽略、身份语境和 pass out 放入拓展。护照和抽象途径不作为 pass 的现代通用对应词。历史词源仅采用实际取得且 URL 匹配的材料；本课仍不穷举所有短语动词、行业用法和旧用法。",
+    "senseInventory": [
+      {
+        "sense": "动词：从旁经过；穿过",
+        "coveredBy": [
+          "v-move"
+        ],
+        "assessment": "保留原有从旁经过的例句，补充 pass through 的结构和两个穿过内部的例句。"
+      },
+      {
+        "sense": "动词：超过；超车",
+        "coveredBy": [
+          "v-overtake"
+        ],
+        "assessment": "原稿未充分区分追越与一般经过；新增核心义，分别举车辆及跑步比赛的例子。"
+      },
+      {
+        "sense": "动词：递给；传球；在人与人之间传递或流转",
+        "coveredBy": [
+          "v-transfer"
+        ],
+        "assessment": "保留两种递物语序，补充不及物的 pass to someone 及物品作主语的 pass from ... to ...。"
+      },
+      {
+        "sense": "动词：通过考试或测验；及格",
+        "coveredBy": [
+          "v-succeed"
+        ],
+        "assessment": "核心义已覆盖；修正搭配说明，并换成更自然的驾驶考试例句。"
+      },
+      {
+        "sense": "动词：度过或消磨时间；经历一段时期",
+        "coveredBy": [
+          "v-time"
+        ],
+        "assessment": "保留正确的度过时段用法，突出 pass the time；艰难时期属于经历时段的语境延伸，不机械推广为 undergo 的通用替代。"
+      },
+      {
+        "sense": "动词：时间过去；流逝",
+        "coveredBy": [
+          "v-time-elapse"
+        ],
+        "assessment": "原稿遗漏，新增核心义；明确时间作主语，与人作主语的 pass the time 区分。"
+      },
+      {
+        "sense": "动词：表决通过；批准法律、动议等",
+        "coveredBy": [
+          "v-approve"
+        ],
+        "assessment": "原稿遗漏，新增核心义，同时展示机构通过议案及议案获得通过两种结构。"
+      },
+      {
+        "sense": "动词：婉拒提议；选择不参加",
+        "coveredBy": [
+          "v-decline"
+        ],
+        "assessment": "从拓展提升为核心义，覆盖 I'll pass 和 pass on something，并补足两个例句。"
+      },
+      {
+        "sense": "名词：通行证；准入凭证；定期乘车票证",
+        "coveredBy": [
+          "n-permit"
+        ],
+        "assessment": "已覆盖；修正 bus pass 的范围，删除强造的反义表达。"
+      },
+      {
+        "sense": "名词：山口；隘口",
+        "coveredBy": [
+          "n-mountain"
+        ],
+        "assessment": "原有拓展义准确，可保留。"
+      },
+      {
+        "sense": "名词：一次传球",
+        "coveredBy": [
+          "n-sport-pass"
+        ],
+        "assessment": "实际词典明确列出，原稿遗漏；新增核心义及两个体育例句。"
+      },
+      {
+        "sense": "名词：及格成绩；合格结果",
+        "coveredBy": [
+          "n-exam-result"
+        ],
+        "assessment": "新增核心名词义，说明英式及通过／不通过的评分语境，并与动词 pass 区分。"
+      },
+      {
+        "sense": "名词：一次经过；一次飞越",
+        "coveredBy": [
+          "n-one-pass"
+        ],
+        "assessment": "用拓展条目落实中文经过的名词功能，不与动词经过混为一项。"
+      },
+      {
+        "sense": "动词：疼痛、情绪等消退；情况过去或结束",
+        "coveredBy": [
+          "v-end"
+        ],
+        "assessment": "作为拓展补充；不把 pass 推广为任意停止动作的 stop。"
+      },
+      {
+        "sense": "动词：从一种状态转为另一种状态",
+        "coveredBy": [
+          "v-change"
+        ],
+        "assessment": "限定于较书面的 pass from ... to ...，不把裸词 pass 当作 change 的通用同义词。"
+      },
+      {
+        "sense": "动词／固定结构：宣判",
+        "coveredBy": [
+          "v-sentence"
+        ],
+        "assessment": "落实为 pass sentence on someone，并明确 sentence 是宾语，不能据中文释义误教成裸词的不及物用法。"
+      },
+      {
+        "sense": "固定结构：忽略；放过；不予追究",
+        "coveredBy": [
+          "v-ignore"
+        ],
+        "assessment": "以 let something pass 说明，不把 pass 单独当作 ignore 的通用替代。"
+      },
+      {
+        "sense": "动词结构：未被注意到",
+        "coveredBy": [
+          "v-unnoticed"
+        ],
+        "assessment": "以 pass unnoticed 说明；这是不及物动词加状态描述，不是 was passed 的泛用被动义。"
+      },
+      {
+        "sense": "动词：牌类游戏中不叫牌",
+        "coveredBy": [
+          "v-card"
+        ],
+        "assessment": "作为桥牌语境的拓展补充，不泛化为所有牌类中的弃牌。"
+      },
+      {
+        "sense": "动词：跨性别语境中被他人认作顺性别者",
+        "coveredBy": [
+          "v-transgender"
+        ],
+        "assessment": "按词典定义补入拓展，明确这是他人的身份判断，与性取向不同。"
+      },
+      {
+        "sense": "短语动词：pass out，昏倒",
+        "coveredBy": [
+          "pv-pass-out"
+        ],
+        "assessment": "按词典派生短语补入拓展；明确昏倒属于整个短语的意义。"
+      },
+      {
+        "sense": "中文途径的对应范围",
+        "coveredBy": [
+          "n-mountain"
+        ],
+        "assessment": "地理上的通道由山口义覆盖；抽象的方法、途径不能普遍用 pass 表达。"
+      },
+      {
+        "sense": "中文护照的对应范围",
+        "coveredBy": [
+          "n-permit"
+        ],
+        "assessment": "通行凭证义保留，并新增 pass／passport 对照；不把 pass 教成现代旅行中 passport 的常用替代。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-pass\",\"title\":\"Oxford Learner’s Dictionaries: pass\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/pass_1\",\"supports\":[\"动词和名词的常见用法\",\"pass 的常见词形与发音\",\"pass 作通行证、传递、经过及考试通过等义项\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-pass-en\",\"title\":\"法语维基词典：pass（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/pass#Anglais\",\"supports\":[\"英语 pass 的英美读音及规则词形\",\"经过、超过、传递、考试通过、度过时间和婉拒等动词义\",\"通行凭证、山口和传球等名词义\",\"跨性别语境中的 pass 及短语 pass out\",\"中古英语、古法语 passer、通俗拉丁语重构形式 *passare 与拉丁语 passus 的历史关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"以不发音的 e 结尾的拼写规则不适用；pass 直接加 -ing，并双写末尾的 s。\"",
+        "valueJson": "\"pass 直接加 -ing，保留原有的两个 s，拼成 passing；不需要再加一个 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"从某人、某物旁边经过，或从一个地方移动到另一个地方。\"",
+        "valueJson": "\"从某人或某地旁边经过；与 through 连用时，也可表示从某地或某物内部穿过。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可以直接接地点或人作宾语；pass by 常表示从旁边经过。\"",
+        "valueJson": "\"pass someone／pass the school 通常表示从某人或学校旁边经过；pass through a tunnel 表示穿过隧道内部。不能把 pass 当作所有“从一地到另一地移动”的通用说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"pass 后直接接地点，不需要加 through，除非想强调从内部穿过。\"",
+        "valueJson": "\"如 pass the school，表示经过学校；表示穿过城镇、隧道等内部时，常用 pass through。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pass through + a place\",\"zh\":\"穿过某地内部\",\"note\":\"through 表明路线经过内部，如隧道或村庄，区别于从旁边经过。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-v-move-3\",\"senseId\":\"v-move\",\"en\":\"Our train passed through a long tunnel.\",\"zh\":\"我们的火车穿过了一条长隧道。\",\"note\":\"pass through 表示从隧道内部穿过。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-v-move-4\",\"senseId\":\"v-move\",\"en\":\"We passed through a small village on our way to the beach.\",\"zh\":\"我们去海滩的路上穿过了一个小村庄。\",\"note\":\"路线经过村庄内部，用 pass through。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pass to someone\",\"zh\":\"把球传给某人\",\"note\":\"球类运动中可以不明说球这个宾语，如 She passed to Leo。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pass from ... to ...\",\"zh\":\"从……传到……\",\"note\":\"物品或消息也可作主语，表示在人与人之间流转；这时 pass 可以不直接接宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-v-transfer-3\",\"senseId\":\"v-transfer\",\"en\":\"The note passed from one student to another during the lesson.\",\"zh\":\"上课时，那张纸条在学生之间传来传去。\",\"note\":\"纸条作主语，pass from ... to ... 表示从一个人传到另一个人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"ex-v-succeed-2\",\"senseId\":\"v-succeed\",\"en\":\"You need to pass the final exam to join the club.\",\"zh\":\"你需要通过期末考试才能加入俱乐部。\",\"note\":\"pass the exam 表示考试达到通过标准。\"}",
+        "valueJson": "{\"id\":\"ex-v-succeed-2\",\"senseId\":\"v-succeed\",\"en\":\"Ravi passed his driving test on his second try.\",\"zh\":\"拉维第二次参加驾驶考试时通过了。\",\"note\":\"passed 明确表示通过，而不只是参加了考试。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"科目名前用 in，说明在哪一科通过。\"",
+        "valueJson": "\"pass in + 科目可见于英式英语；也可以直接说 pass maths。pass an exam 则直接接考试名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"后面常接表示时间的名词，如 the weekend、an hour。\"",
+        "valueJson": "\"日常表示等待时找事消磨时间，常用 pass the time。pass the afternoon 等也可表示度过具体时段，但通常比 spend the afternoon 稍书面；单纯说时间流逝则让时间作主语，如 Time passes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"ex-v-time-2\",\"senseId\":\"v-time\",\"en\":\"She passed an hour reading comics.\",\"zh\":\"她看漫画度过了一个小时。\",\"note\":\"pass an hour doing something 表示做某事消磨一小时。\"}",
+        "valueJson": "{\"id\":\"ex-v-time-2\",\"senseId\":\"v-time\",\"en\":\"We played cards to pass the time while we waited for the bus.\",\"zh\":\"等公交车时，我们打牌消磨时间。\",\"note\":\"pass the time 表示等待时找事做，让时间容易打发。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1/en",
+        "expectedValueJson": "\"pass time doing something\"",
+        "valueJson": "\"pass the time (by) doing something\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1/note",
+        "expectedValueJson": "\"doing something 说明消磨时间的方式。\"",
+        "valueJson": "\"doing something 说明消磨时间的方式，by 可以省略。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0",
+        "expectedValueJson": "{\"en\":\"pass the weekend\",\"zh\":\"度过周末\",\"note\":\"后面可接地点或活动，补充周末的安排。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"pass the time\",\"zh\":\"消磨时间\",\"note\":\"常用于等车、排队等需要打发时间的场景。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"更常见、更中性；pass time 常强调时间就这样过去或用某事消磨时间。\"",
+        "valueJson": "\"spend time 更中性，常说明时间花在哪里；pass the time 常强调等待时找事消磨时间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"表示在某处度过一段时间时，pass time 和 spend time 都可用；具体搭配需看句子。\"",
+        "valueJson": "\"度过一个下午可以用 pass the afternoon 或 spend the afternoon；等待时消磨时间常用 pass the time。单纯说时间流逝则用 Time passes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/0/zh",
+        "expectedValueJson": "\"爸爸给我买了一张周票公交卡。\"",
+        "valueJson": "\"爸爸给我买了一张公交周票。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/0",
+        "expectedValueJson": "{\"en\":\"bus pass\",\"zh\":\"公交月票／公交乘车卡\",\"note\":\"具体是单程、周票还是月票要看当地卡种。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"bus pass\",\"zh\":\"公交乘车证；公交定期票\",\"note\":\"可为日票、周票或月票等，具体有效期和使用条件取决于当地规定；bus pass 本身不等于月票。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"no pass\",\"zh\":\"没有通行证\",\"note\":\"在是否拥有准入资格的语境中，no pass 表示没有证件，不能作为适用于所有 pass 义项的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"no pass 只对照通行证这一名词义。\"",
+        "valueJson": "\"通行证是证件名称，没有常用的直接反义词；no pass 只是表示没有证件的否定组合。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[\"wiktionary-pass-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"v-decline\",\"title\":\"婉拒；不参加\",\"meaning\":\"在口语中表示不接受邀请或提议，语气简短。\",\"note\":\"常单独用 pass，或说 pass on something。\",\"example\":{\"id\":\"ex-v-decline-1\",\"senseId\":\"v-decline\",\"en\":\"Would you like another cookie? — I’ll pass, thanks.\",\"zh\":\"还要一块饼干吗？——不用了，谢谢。\",\"note\":\"I’ll pass 是礼貌地表示不需要。\"},\"sourceIds\":[\"oxford-pass\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pass-passport\",\"title\":\"pass 和 passport：通行凭证与护照\",\"summary\":\"现代旅行语境中，护照通常叫 passport；pass 可指通行证、乘车证或登机牌等，不能普遍替代 passport。\",\"items\":[{\"label\":\"pass\",\"note\":\"表示某种准入或使用服务的凭证；boarding pass 是登机牌。\",\"example\":{\"id\":\"ex-conf-permit-1\",\"senseId\":\"n-permit\",\"en\":\"I showed my boarding pass at the gate.\",\"zh\":\"我在登机口出示了登机牌。\",\"note\":\"boarding pass 不是护照。\"}},{\"label\":\"passport\",\"note\":\"表示国际旅行使用的护照。\",\"example\":{\"id\":\"ex-conf-passport-1\",\"senseId\":\"n-permit\",\"en\":\"I checked the expiry date on my passport before the trip.\",\"zh\":\"出发前，我查看了护照的有效期。\",\"note\":\"这里需要 passport，不能直接换成 pass。\"}}],\"takeaway\":\"护照用 passport；通行证、乘车证或登机牌根据具体类型使用 pass。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"pass 的历史词源可追溯到中古英语，并与古法语 passer 有关；更早的词形与拉丁语 passus（“一步”）相关。\",\"stages\":[],\"caveat\":\"以上是历史词源关系；现代学习时可把 pass 看作整体记忆，不要把它拆成现代英语词根来推义。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语 pass 经中古英语承自古法语 passer；后者来自通俗拉丁语重构形式 *passare（“穿越”）。*passare 又由拉丁语名词 passus（“一步”）派生而成。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"passus\",\"meaning\":\"一步\"},{\"language\":\"通俗拉丁语\",\"form\":\"*passare\",\"meaning\":\"穿越\"}],\"caveat\":\"星号 * 表示重构形式。这是历史传承关系；现代英语中应把 pass 作为整体学习，不用字母拆分来猜义。\",\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pass\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1",
+        "expectedValueJson": "{\"word\":\"passing\",\"partOfSpeech\":\"名词／形容词\",\"meaning\":\"经过；短暂的\",\"formation\":\"pass + -ing，可作动名词或构成形容词。\",\"spellingNote\":\"加 -ing 时保留双写的 s。\",\"example\":{\"id\":\"ex-family-passing-1\",\"senseId\":\"v-move\",\"en\":\"The passing bus splashed water onto the pavement.\",\"zh\":\"驶过的公交车把水溅到了人行道上。\",\"note\":\"passing 在此作形容词，修饰 bus。\"},\"sourceIds\":[\"oxford-pass\"]}",
+        "valueJson": "{\"word\":\"passing\",\"partOfSpeech\":\"形容词\",\"meaning\":\"短暂的；一时的\",\"formation\":\"由 pass 的 -ing 形式发展出的形容词用法，表示很快就会过去。\",\"spellingNote\":\"pass 后直接加 -ing，保留原有的两个 s，拼成 passing。\",\"example\":{\"id\":\"ex-family-passing-1\",\"senseId\":\"v-time-elapse\",\"en\":\"It was only a passing thought.\",\"zh\":\"那只是一个一闪而过的念头。\",\"note\":\"passing 修饰 thought，表示短暂出现。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"此处只列保留 pass 词干的常见派生形式；passed、passes 和 passing 是词形变化，不另算独立词族词条。\"",
+        "valueJson": "\"passer 是 pass 加 -er 的施事名词。passing 与动词的 -ing 词形拼写相同，这里另列它表示“短暂的”的形容词用法；passes、passed 则是规则词形变化。加这些后缀时都保留 pass 原有的两个 s。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-overtake\",\"title\":\"超过；超车\",\"meaning\":\"从后面赶上并超过前面的车辆或参赛者等。\",\"usageNote\":\"这里强调原本在后面，随后超过对方；与单纯从某人旁边经过有所区别。\",\"examples\":[{\"id\":\"ex-v-overtake-1\",\"senseId\":\"v-overtake\",\"en\":\"A red car passed our bus on the main road.\",\"zh\":\"一辆红色汽车在大路上超过了我们乘坐的公交车。\",\"note\":\"车从后面超过另一辆车，pass 表示超车。\"},{\"id\":\"ex-v-overtake-2\",\"senseId\":\"v-overtake\",\"en\":\"She passed two runners near the finish line.\",\"zh\":\"她在接近终点线时超过了两名跑步选手。\",\"note\":\"比赛中 pass someone 表示赶上并超过对方。\"}],\"patterns\":[{\"en\":\"pass + a vehicle / runner\",\"zh\":\"超过某辆车／某名跑步选手\",\"note\":\"被超过的人或车辆可直接作宾语；交通语境中也可不明说宾语，如 It is not safe to pass here。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"pass the car in front\",\"zh\":\"超过前面的汽车\",\"note\":\"强调超越同方向行驶的车辆。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"overtake\",\"zh\":\"超过；超车\",\"note\":\"在追越车辆或参赛者时与 pass 意义相近；英式英语常用 overtake。\"}],\"contrasting\":[],\"similarNote\":\"追越语境中 pass 和 overtake 常可互换；一般从建筑旁边经过不能据此改用 overtake。\",\"contrastingNote\":\"本义没有通用于所有对象的固定词汇反义词。\"},\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-time-elapse\",\"title\":\"（时间）过去；流逝\",\"meaning\":\"时间自然向前推移。\",\"usageNote\":\"时间作主语，pass 在这里不接宾语：Time passes。与 We pass the time 中人作主语的消磨时间不同。\",\"examples\":[{\"id\":\"ex-v-time-elapse-1\",\"senseId\":\"v-time-elapse\",\"en\":\"Two weeks passed before I heard from her again.\",\"zh\":\"过了两周，我才再次收到她的消息。\",\"note\":\"two weeks 作主语，passed 表示两周时间过去了。\"},{\"id\":\"ex-v-time-elapse-2\",\"senseId\":\"v-time-elapse\",\"en\":\"Time passes quickly when I am with my friends.\",\"zh\":\"和朋友们在一起时，时间过得很快。\",\"note\":\"一般现在时描述常有的感受；time 是主语。\"}],\"patterns\":[{\"en\":\"time / days / years + pass\",\"zh\":\"时间／日子／岁月过去\",\"note\":\"表示时间的词作主语，不需要把人或活动放在 pass 后面。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"as time passes\",\"zh\":\"随着时间流逝\",\"note\":\"引出随时间发生的变化。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"go by\",\"zh\":\"（时间）过去\",\"note\":\"时间作主语时意义相近，如 The days went by。\"}],\"contrasting\":[],\"similarNote\":\"谈时间流逝时 pass 与 go by 相近；go by 不能直接替换 pass the time 中的 pass。\",\"contrastingNote\":\"时间自然流逝这一义没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-approve\",\"title\":\"表决通过；批准\",\"meaning\":\"立法机构或委员会等正式通过法律、动议或提案。\",\"usageNote\":\"机构可作主语，说 pass a law／motion；法律或动议也可作主语，说 The motion passed，表示获得通过。\",\"examples\":[{\"id\":\"ex-v-approve-1\",\"senseId\":\"v-approve\",\"en\":\"Parliament passed a new law to protect children online.\",\"zh\":\"议会通过了一项保护儿童网络安全的新法律。\",\"note\":\"议会作主语，a new law 是通过的对象。\"},{\"id\":\"ex-v-approve-2\",\"senseId\":\"v-approve\",\"en\":\"The motion passed by six votes to three.\",\"zh\":\"这项动议以六票赞成、三票反对获得通过。\",\"note\":\"动议作主语，pass 不接宾语，表示表决通过。\"}],\"patterns\":[{\"en\":\"pass + a law / motion\",\"zh\":\"通过法律／动议\",\"note\":\"通常由议会、委员会等机构实施。\",\"kind\":\"sentence-pattern\"},{\"en\":\"a motion / bill + passes\",\"zh\":\"动议／法案获得通过\",\"note\":\"主语是被表决的事项，pass 可作不及物动词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"pass a law\",\"zh\":\"通过一项法律\",\"note\":\"强调立法程序中的通过。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"approve\",\"zh\":\"批准；同意\",\"note\":\"使用范围较广，如 approve a plan；pass a law 更具体地指法律获通过，不代表所有批准程序完全相同。\"}],\"contrasting\":[{\"en\":\"reject a proposal\",\"zh\":\"否决提案\",\"note\":\"在对提案作出决定时，与通过提案形成直接对照。\"},{\"en\":\"fail to pass\",\"zh\":\"未获通过\",\"note\":\"以动议或法案作主语，说明没有通过，不必另断定具体原因。\"}],\"similarNote\":\"approve 强调正式同意；pass 在本义中常用于立法或表决。\",\"contrastingNote\":\"reject 表示作出否决决定；fail to pass 说明通过这一结果没有实现。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-sport-pass\",\"title\":\"一次传球\",\"meaning\":\"体育运动中把球传给队友的动作或所传出的球。\",\"usageNote\":\"是可数名词，复数为 passes；a pass 是一次传球，与动词 pass the ball 的结构不同。\",\"examples\":[{\"id\":\"ex-n-sport-pass-1\",\"senseId\":\"n-sport-pass\",\"en\":\"Mia's pass went straight to a teammate near the basket.\",\"zh\":\"米娅的一记传球直接到了篮筐附近的一名队友手里。\",\"note\":\"pass 是名词，指这一记传球。\"},{\"id\":\"ex-n-sport-pass-2\",\"senseId\":\"n-sport-pass\",\"en\":\"Leo made a long pass to a teammate on the other side of the pitch.\",\"zh\":\"利奥向球场另一侧的队友送出了一记长传。\",\"note\":\"made a long pass 表示完成了一次长距离传球。\"}],\"patterns\":[{\"en\":\"a pass from someone to someone\",\"zh\":\"某人传给某人的一记球\",\"note\":\"from 指传球者，to 指接球队员。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"make a pass\",\"zh\":\"传一次球\",\"note\":\"用于体育场景，make 后接名词 pass。\",\"kind\":\"common-collocation\"},{\"en\":\"a long / short pass\",\"zh\":\"长传／短传\",\"note\":\"用 long 或 short 说明传球距离。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[],\"similarNote\":\"throw 和 kick 分别表示扔和踢；它们可以用来完成传球，但本身不保证是传给队友。\",\"contrastingNote\":\"本义没有固定反义词；receive the ball 是接球这一配对动作，不是 pass 的反义词。\"},\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-exam-result\",\"title\":\"及格成绩；合格结果\",\"meaning\":\"考试或考核达到通过标准的成绩或结果。\",\"usageNote\":\"名词用法尤其常见于英式英语及通过／不通过的评分制度；got a pass 中 pass 是名词，passed the exam 中 passed 是动词。\",\"examples\":[{\"id\":\"ex-n-exam-result-1\",\"senseId\":\"n-exam-result\",\"en\":\"I got a pass in maths this term.\",\"zh\":\"我这学期数学及格了。\",\"note\":\"a pass 表示一个及格结果；in maths 说明科目。\"},{\"id\":\"ex-n-exam-result-2\",\"senseId\":\"n-exam-result\",\"en\":\"The teacher gave my project a pass.\",\"zh\":\"老师给我的课题作业评了及格。\",\"note\":\"这里采用通过／不通过的评分方式，a pass 是合格评价。\"}],\"patterns\":[{\"en\":\"get a pass in + a subject\",\"zh\":\"某一科获得及格成绩\",\"note\":\"get 后面接名词 a pass，与动词 pass + 科目的结构区分。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a pass mark\",\"zh\":\"及格分数\",\"note\":\"达到这个分数即可通过考试，不等于优秀成绩。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a passing grade\",\"zh\":\"达到及格要求的成绩\",\"note\":\"美国英语常见的表达；具体成绩制度可能不同。\"}],\"contrasting\":[{\"en\":\"a fail\",\"zh\":\"不及格结果\",\"note\":\"在英式英语及通过／不通过的评分语境中，与 a pass 直接相对。\"}],\"similarNote\":\"a pass 和 a passing grade 都强调达到合格标准，不自动表示高分。\",\"contrastingNote\":\"a pass／a fail 是名词结果；pass／fail an exam 则使用动词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-decline\",\"title\":\"婉拒；选择不参加\",\"meaning\":\"口语中表示不接受某项提议，或决定不参加某项活动。\",\"usageNote\":\"可单独说 I'll pass，也可说 pass on something。加 thanks 往往更客气；pass on a message 则可能表示转达消息，需要结合宾语和语境判断。\",\"examples\":[{\"id\":\"ex-v-decline-1\",\"senseId\":\"v-decline\",\"en\":\"Would you like another cookie? — I'll pass, thanks.\",\"zh\":\"还要一块饼干吗？——不用了，谢谢。\",\"note\":\"I'll pass 是简短的婉拒回答。\"},{\"id\":\"ex-v-decline-2\",\"senseId\":\"v-decline\",\"en\":\"I'm tired, so I'll pass on the bike ride this afternoon.\",\"zh\":\"我累了，所以今天下午就不去骑车了。\",\"note\":\"pass on the bike ride 表示决定不参加这次骑行。\"}],\"patterns\":[{\"en\":\"I'll pass.\",\"zh\":\"我就不参加了／我就不要了。\",\"note\":\"用于回应当前提议；加 thanks 可以缓和语气。\",\"kind\":\"fixed-expression\"},{\"en\":\"pass on something\",\"zh\":\"选择不要某物／不参加某事\",\"note\":\"在拒绝提议的语境中使用；其他语境可能表示传递。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"pass on dessert\",\"zh\":\"不吃甜点\",\"note\":\"吃饭时表示决定不要甜点。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"No, thanks.\",\"zh\":\"不用了，谢谢。\",\"note\":\"同样可作礼貌拒绝的回答。\"},{\"en\":\"turn down an invitation\",\"zh\":\"拒绝邀请\",\"note\":\"turn down 后直接接拒绝的对象；不能把 I'll pass 中的 pass 直接换成 turn down。\"}],\"contrasting\":[{\"en\":\"accept an offer / invitation\",\"zh\":\"接受提议／邀请\",\"note\":\"在是否接受同一项提议或邀请时，与拒绝相对。\"}],\"similarNote\":\"I'll pass 是口语回答；turn down 常用于叙述拒绝了什么。\",\"contrastingNote\":\"这里只比较接受与拒绝提议，不把 accept 当作 pass 其他义项的反义词。\"},\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-end\",\"title\":\"（疼痛、情绪等）消退；过去\",\"meaning\":\"某种不适、情绪或暂时情况不再持续。\",\"note\":\"常以疼痛、担忧等作主语；不能据此把 pass 当作停止任何动作的通用动词。\",\"example\":{\"id\":\"ex-v-end-1\",\"senseId\":\"v-end\",\"en\":\"The pain soon passed, and I could walk again.\",\"zh\":\"疼痛很快消退了，我又能走路了。\",\"note\":\"pain 作主语，passed 表示疼痛过去了。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-one-pass\",\"title\":\"一次经过；一次飞越\",\"meaning\":\"经过某处一次的动作。\",\"note\":\"是可数名词；飞行语境中常见 make a pass over。\",\"example\":{\"id\":\"ex-n-one-pass-1\",\"senseId\":\"n-one-pass\",\"en\":\"The plane made a low pass over the field.\",\"zh\":\"飞机从田野上空低空掠过了一次。\",\"note\":\"a low pass 是一次低空飞越，pass 在这里是名词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-card\",\"title\":\"（桥牌等）不叫牌\",\"meaning\":\"轮到自己叫牌时，选择不作新的叫牌。\",\"note\":\"这里以桥牌为例；不要把它泛化为所有牌类游戏中的弃牌。\",\"example\":{\"id\":\"ex-v-card-1\",\"senseId\":\"v-card\",\"en\":\"I had a weak hand, so I decided to pass.\",\"zh\":\"我这手牌很弱，所以决定不叫牌。\",\"note\":\"在桥牌叫牌语境中，pass 表示不叫牌。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-sentence\",\"title\":\"宣判：pass sentence\",\"meaning\":\"pass sentence on someone 指法庭宣布对某人的刑罚或作出量刑判决。\",\"note\":\"sentence 在这里是名词宾语；不能把 pass 单独当作宣判的通用不及物动词。\",\"example\":{\"id\":\"ex-v-sentence-1\",\"senseId\":\"v-sentence\",\"en\":\"The judge passed sentence on the driver.\",\"zh\":\"法官宣布了对那名司机的量刑。\",\"note\":\"pass sentence on someone 是完整搭配。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-transgender\",\"title\":\"（跨性别语境）被认作顺性别者\",\"meaning\":\"跨性别者在他人眼中被认作顺性别者。\",\"note\":\"这里说的是他人的身份判断，不表示性取向，也不是对一个人身份真假的评价。\",\"example\":{\"id\":\"ex-v-transgender-1\",\"senseId\":\"v-transgender\",\"en\":\"He is a trans man and usually passes as cisgender.\",\"zh\":\"他是跨性别男性，通常会被他人认作顺性别男性。\",\"note\":\"pass as cisgender 表示被看作顺性别者。\"},\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pv-pass-out\",\"title\":\"pass out：昏倒\",\"meaning\":\"暂时失去意识。\",\"note\":\"这是短语动词 pass out 的意义，不能只用 pass 表示昏倒。\",\"example\":{\"id\":\"ex-pv-pass-out-1\",\"senseId\":\"pv-pass-out\",\"en\":\"He passed out from the heat while waiting for the bus.\",\"zh\":\"他等公交车时热得晕了过去。\",\"note\":\"passed out 是 pass out 的过去式。\"},\"sourceIds\":[\"wiktionary-pass-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-change\",\"title\":\"由一种状态转为另一种状态\",\"meaning\":\"在 pass from ... to ... 中表示状态或情绪的转变。\",\"note\":\"这种表达偏书面；pass 不能在所有表示变化的句子中替换 change。\",\"example\":{\"id\":\"ex-v-change-1\",\"senseId\":\"v-change\",\"en\":\"As she listened, her mood passed from excitement to disappointment.\",\"zh\":\"她听着听着，心情从兴奋转为失望。\",\"note\":\"from 和 to 分别引出转变前后的状态。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-ignore\",\"title\":\"放过；不予追究：let ... pass\",\"meaning\":\"注意到某件事，却选择不作回应或不追究。\",\"note\":\"常用 let something pass；不能把单独的 pass 普遍当作 ignore 使用。\",\"example\":{\"id\":\"ex-v-ignore-1\",\"senseId\":\"v-ignore\",\"en\":\"I noticed his rude comment, but I decided to let it pass.\",\"zh\":\"我注意到了他无礼的评论，但决定不予追究。\",\"note\":\"let it pass 表示放过这件事，而不是没有注意到。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v-unnoticed\",\"title\":\"未被注意到：pass unnoticed\",\"meaning\":\"某件事发生或存在，却没有引起注意。\",\"note\":\"pass 在这里是不及物动词，unnoticed 表示未被注意到；不能用 was passed 泛指被忽略。\",\"example\":{\"id\":\"ex-v-unnoticed-1\",\"senseId\":\"v-unnoticed\",\"en\":\"The spelling error passed unnoticed during the final check.\",\"zh\":\"最后检查时，那个拼写错误没有被发现。\",\"note\":\"这里没有人注意到错误，与明知有问题却 let it pass 不同。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 990,
+    "headword": "pass",
+    "meaning_zh": "n. 经过, 要隘, 途径, 通行, 护照, 及格\nvt. 经过, 越过, 通过, 批准, 度过, 传递, 忽略\nvi. 经过, 变化, 流通, 及格, 宣判, 终止, 消逝, 被忽略, 不叫牌, 传递",
+    "phonetic": "/pæs/",
+    "pos": "",
+    "forms": []
+  }
+}

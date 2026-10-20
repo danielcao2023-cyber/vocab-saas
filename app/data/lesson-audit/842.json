@@ -1,0 +1,364 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e3ac072ff6172b02e01b2d8c36c59bfa847ea1873f4fc8f1e1f65b16f2f1b1c3",
+    "executedReviewPromptHash": "e3ac072ff6172b02e01b2d8c36c59bfa847ea1873f4fc8f1e1f65b16f2f1b1c3",
+    "reviewHash": "f5e7e553a4d91eb11438feb08c86311a87e03aaeca38b45487b0e4beab5e818b",
+    "wordId": 842,
+    "inputHash": "fb55a3104be149bddbbb48b13ac13157c09c9aaa68d5946d6529f4def39dba98",
+    "draftHash": "2dda472b54aeb4452ed0b6f34b71e10014cca60f7dbac38d82b7e1badf8aaced",
+    "finalHash": "cfec62162c23365e85f387dc25c413b6d6f5025850f74110ca15294cccb71a26",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/meaning#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:15.229Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117775,
+        "revisionId": 33790638,
+        "revisionTimestamp": "2024-03-16T18:19:08Z",
+        "sha256": "6dc89fd08ca4eb52477a29efdadfbd892a4e523ea5a778cfefadc50a4b72f169",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/meaning",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:53:19.437Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:58:24.831Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/takeaway；/forms/0/note；/forms/1/note",
+        "message": "“通常不可数”容易误导。meaning 表示一种具体含义时可数，同一个词也可以有多个 meanings，并不限于不同词语各自的含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "不宜用 What are you meaning? 示范常见进行时用法。表示“意思是”时通常用一般现在时；常见的 have been meaning to do 使用的是 mean 的“打算”义。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/lessCommonSenses；/confusions",
+        "message": "遗漏词条列明的形容词义“意味深长的”。应补入较少见用法，并将混淆辨析中的“meaning 是名词”限定为当前比较的用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0；/senses/1",
+        "message": "需要明确“意图”在这里指想传达的用意，而“目的”可指人生的目的感，不能让学生把 meaning 泛用于任何计划或具体行动目标。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting/0/note",
+        "message": "meaningless 由 meaning 加 -less 构成，是 meaningful 在相关语境中的反义词，不是由 meaningful 构成的否定派生词。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology；/sources；相关 sourceIds",
+        "message": "已有词源材料明确支持 mean + -ing，却未引用对应页面。应引用法语维基词典的英语词条，并限定其支持范围；未由该页面直接覆盖的扩展说明不应挂靠该来源。"
+      }
+    ],
+    "coverageAssessment": "保留两个核心名词义，均有至少两个自然例句；补明表达者的用意、人生目的感及可数用法，另列较少见的形容词义。mean 的现在分词作为词形说明，不强行拆成独立名词义项。读音、搭配、翻译、词族拼写及反向表达已核对。词源仅保留有依据的 mean + -ing，不补造历史阶段。实际取得的维基词典页面属于英语词条；未使用未取得的 Cambridge 页面作为证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：意思、含义、义项",
+        "coveredBy": [
+          "meaning-sense-1"
+        ],
+        "assessment": "已有词语、标志的例句；修正可数性说明，明确同一个词也能有多个含义。"
+      },
+      {
+        "sense": "名词：表达者想传达的意思、用意",
+        "coveredBy": [
+          "meaning-sense-1"
+        ],
+        "assessment": "与表达内容归入同一核心义，补充两个具体例句，并限定其与一般计划、打算的区别。"
+      },
+      {
+        "sense": "名词：意义、价值、重要性",
+        "coveredBy": [
+          "meaning-sense-2"
+        ],
+        "assessment": "原有生活价值和家庭旅行两个例句覆盖充分，保留。"
+      },
+      {
+        "sense": "名词：人生的意义、目的感",
+        "coveredBy": [
+          "meaning-sense-2"
+        ],
+        "assessment": "原有 gives her life meaning 已体现此义；补明目的感，并完善与 purpose 的区别及重合。"
+      },
+      {
+        "sense": "形容词：意味深长的、暗含用意的",
+        "coveredBy": [
+          "meaning-less-1"
+        ],
+        "assessment": "补入较少见用法，说明通常置于名词前，并与表示有价值的 meaningful 区分。"
+      },
+      {
+        "sense": "动词屈折形式：mean 的现在分词",
+        "coveredBy": [],
+        "assessment": "由 forms[2] 覆盖，不另设独立义项；改用 have been meaning to do 示范“打算”义的常见用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; adjective; verb (present participle of mean)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"meaning 最常见作名词，表示“意思、含义”；也可表示“意义、价值”。它通常不可数。\"",
+        "valueJson": "\"meaning 常作名词，表示“意思、含义”或“意义、价值、人生的目的感”。表示一种具体含义时可数，泛指含义或价值时常不可数；较少见的形容词用法表示“意味深长的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常作不可数名词；谈不同词语各自的含义时可用复数 meanings。\"",
+        "valueJson": "\"名词既可数也可不可数。表示某一种含义时可用 a meaning；表示意义、价值时通常不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"加 -s，表示多个词语、动作或作品各自不同的含义。\"",
+        "valueJson": "\"规则加 -s，表示多个含义或义项；同一个词也可以有 several meanings。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"也是动词 mean 的现在分词形式，常用于进行时，如 What are you meaning?；这一用法少见，通常说 What do you mean?\"",
+        "valueJson": "\"也是动词 mean 的现在分词。表示“意思是”时通常用一般现在时，如 What do you mean?；表示“打算”时常见 have been meaning to do，如 I've been meaning to call you.（我一直想给你打电话。）强调此前一直有这个打算。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一个词、句子、动作或符号所表达的内容。\"",
+        "valueJson": "\"词语、语句、动作或符号表达的内容，也可指表达者想让别人领会的意思或用意。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用 the meaning of ...；询问某个词是什么意思，也常说 What does ... mean?\"",
+        "valueJson": "\"常用 the meaning of ...；询问词义时，也常用 What does ... mean? 这一句型。表示一种具体含义时可数；这里的“用意”指想传达的意思，不泛指所有计划或打算。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meaning-ex-1c\",\"senseId\":\"meaning-sense-1\",\"en\":\"When Dad tapped his watch, his meaning was clear: it was time to leave.\",\"zh\":\"爸爸敲了敲手表，他的意思很明白：该走了。\",\"note\":\"meaning 指爸爸通过动作想传达的意思。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meaning-ex-1d\",\"senseId\":\"meaning-sense-1\",\"en\":\"When Mum said, 'It's getting late,' her meaning was clear: we should go home.\",\"zh\":\"妈妈说“时间不早了”时，她的用意很清楚：我们该回家了。\",\"note\":\"指话语背后想让对方领会的用意。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"一件事、经历或生活中值得重视的价值、作用或重要性。\"",
+        "valueJson": "\"生活、工作或经历的重要性和价值，也包括让人觉得生活有方向、有目标的目的感。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于谈人生、工作、经历或行动带来的价值；与“词语的意思”不同。\"",
+        "valueJson": "\"表示价值、重要性或人生目的感时通常不可数。the meaning of life 可用于谈人生的价值和方向；某次行动的具体目的通常用 purpose，具体打算通常用 intention。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"强调做某事想达到的目标；不一定表示它带来的价值。\"",
+        "valueJson": "\"可指具体行动的目的，也可指人生的方向与目标感；后一用法与 meaning 接近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"significance 偏重重要性；purpose 偏重行动想达到的目标。\"",
+        "valueJson": "\"significance 偏重重要性；purpose 可指具体目的，也可指人生的方向和目标感，后一用法与 meaning 接近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"meaningful 的常见否定派生词，可在“有无意义或价值”这一语境中对照。\"",
+        "valueJson": "\"由 meaning 加 -less 构成，是 meaningful 在“有无意义或价值”这一语境中的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meaning-less-1\",\"title\":\"形容词：意味深长的\",\"meaning\":\"通过眼神、表情等暗示某种未直接说出的意思。\",\"note\":\"较少见，带书面色彩，通常用于名词前，如 a meaning look 或 a meaning smile；日常更常用 meaningful。这个用法不泛指“有价值的”。\",\"example\":{\"id\":\"meaning-less-ex-1\",\"senseId\":\"meaning-less-1\",\"en\":\"Mum gave me a meaning look, and I took my feet off the sofa.\",\"zh\":\"妈妈意味深长地看了我一眼，我便把脚从沙发上拿了下来。\",\"note\":\"meaning 修饰 look，暗示妈妈希望我注意自己的举止。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"meaning 是名词“意思、意义”；mean 常作动词，表示“意思是”。问某句话是什么意思时，常用 What does it mean?\"",
+        "valueJson": "\"这里对比名词 meaning（意思、意义）和动词 mean（意思是）。问某句话是什么意思时，常用 What does it mean?\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"meaning 是名词，表示“意思、意义”；meaningful 是形容词，表示“有意义的、重要的”。\"",
+        "valueJson": "\"这里的 meaning 是名词“意思、意义”，meaningful 是形容词“有意义的、重要的”。meaning 另有较少见的形容词义“意味深长的”，多修饰 look、smile 等，不等于“有价值的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"看到 -ful，留意词性变成形容词；meaningful conversation 是“有意义的谈话”。\"",
+        "valueJson": "\"说“有意义的谈话”用 a meaningful conversation；名词 meaning 加后缀 -ful 得到形容词 meaningful，后缀 -ful 只有一个 l。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"meaning 由动词 mean 加上 -ing 构成；现代英语中，-ing 形式构成了表示“意思、意义”的名词。\"",
+        "valueJson": "\"meaning 源自英语动词 mean（意思是；表示）加后缀 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代构词关系，不是有历史阶段证据的词源演变链。\"",
+        "valueJson": "\"名词 meaning 与 mean 的现在分词同形，但名词表示“含义、意义”，不能一律译成“正在表示”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-meaning\"]",
+        "valueJson": "[\"wiktionary-meaning-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-meaning\",\"title\":\"Oxford Learner’s Dictionaries: meaning\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/meaning\",\"supports\":[\"名词 meaning 的常见含义和用法\",\"词形、发音及相关词族\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-meaning-en\",\"title\":\"Wiktionnaire：meaning（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/meaning#Anglais\",\"supports\":[\"mean + -ing 的构词来源\",\"名词“含义、义项”及与 sense 的近义关系\",\"mean 的现在分词形式\",\"英美读音\",\"meaningful、meaningless 等派生词\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 842,
+    "headword": "meaning",
+    "meaning_zh": "n. 意义, 含义, 目的, 意图\nadj. 意味深长的",
+    "phonetic": "/'mi:niŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

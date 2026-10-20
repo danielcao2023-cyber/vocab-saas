@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1d0941d096402d3742bc8880aabb3e0632590b39c250d69afdd85491128a13fa",
+    "executedReviewPromptHash": "1d0941d096402d3742bc8880aabb3e0632590b39c250d69afdd85491128a13fa",
+    "reviewHash": "c265bbd8348a54e5f43a8b1f5eb88afd9ec962add6fd0c17c4b863bfe7f03bea",
+    "wordId": 760,
+    "inputHash": "88cda658d4fd59596948141c48c19b5dade20c7bc71b0a8653326a349d614ea5",
+    "draftHash": "d0b7619bca16130d90b7ce8eb4e52cd1b3dcbaffddd0d301aa1776c7f3b55a76",
+    "finalHash": "8f8b0f7040f9734b31ff105e40c4c311794754400bd4ceb11c0b2a551ea22470",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/laptop#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.255Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 372989,
+        "revisionId": 39617338,
+        "revisionTimestamp": "2026-06-22T23:31:05Z",
+        "sha256": "567ff8a4396362e6026edd7114a779d372e8b7eb51b9e6c7eec94f334e6b91b3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/laptop",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:34:05.577Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:36:28.620Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/wordFamily/0/sourceIds",
+        "message": "Cambridge 本次未获取到词条内容，现有来源对应缺乏依据。应引用实际获取的 Wiktionnaire 英语词条；其说明语言为法语，不影响 laptop 属于英语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "遗漏已获取词源中的“20世纪、由 lap 与 top 组成”，且未引用来源。应补齐这些事实并更新原有保留说明；两个构词成分不能画成先后演变阶段。"
+      }
+    ],
+    "coverageAssessment": "全部词典定义仅有“笔记本电脑”这一英语可数名词义，原稿已用两个自然、译义准确的原创例句覆盖。复数拼写与读音、名词作定语、搭配和近义表达合理；desktop 已恰当地限定为电脑类别对照。未发现遗漏的初中常用义。美音 /ɑː/ 与来源中的 /ɑ/ 属转写惯例差异，无须修改。修正限于来源对应和有依据的词源补充。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：笔记本电脑",
+        "coveredBy": [
+          "laptop-n-computer"
+        ],
+        "assessment": "完整覆盖，已有两个具体生活例句。laptop screen 中的名词定语用法不必另立义项；无需强分多义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-laptop\",\"title\":\"Cambridge Dictionary: laptop\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/laptop\",\"supports\":[\"词性及笔记本电脑的常用含义\",\"英式与美式发音\",\"常见搭配和用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-laptop-en\",\"title\":\"Wiktionnaire：laptop（英语词条，法语说明）\",\"url\":\"https://fr.wiktionary.org/wiki/laptop#Anglais\",\"supports\":[\"英语名词 laptop 的基本含义和规则复数\",\"英式与美式发音\",\"20世纪由 lap 与 top 构成的词源\",\"同义表达 laptop computer、notebook 及相关词 desktop\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-laptop\"]",
+        "valueJson": "[\"wiktionary-laptop-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-laptop\"]",
+        "valueJson": "[\"wiktionary-laptop-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-laptop\"]",
+        "valueJson": "[\"wiktionary-laptop-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-laptop\"]",
+        "valueJson": "[\"wiktionary-laptop-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，laptop 由 lap（腿面）和 top（上部、表面）组合；可借“放在腿面上使用的电脑”来理解这个名称。\"",
+        "valueJson": "\"laptop 是20世纪的英语复合词，由 lap（坐着时大腿朝上的部分，即腿面）和 top（上面）组成；可借“放在腿面上使用的电脑”理解这个名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是对现代构词和名称含义的说明，不把它当作有年代证据的历史演变链。\"",
+        "valueJson": "\"“腿面上”帮助解释名称，并不表示笔记本电脑必须放在腿上使用；这里不指定确切的首见年份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-laptop-en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 760,
+    "headword": "laptop",
+    "meaning_zh": "n. 笔记本电脑",
+    "phonetic": "英 /ˈlæptɒp/；美 /ˈlæptɑːp/",
+    "pos": "",
+    "forms": []
+  }
+}

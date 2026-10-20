@@ -1,0 +1,281 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ef355206004ebee6625221be38ff025b1631cf30ac7c057e0a357a0aa6274f78",
+    "executedReviewPromptHash": "ef355206004ebee6625221be38ff025b1631cf30ac7c057e0a357a0aa6274f78",
+    "reviewHash": "fd2b5ebb27bc335c2a26e00cb3434c4ab913739e7b272f7481fc3096e19c85ba",
+    "wordId": 1134,
+    "inputHash": "1b456f138bc5671a1af99334188b89ba59ed0f7f1c57b00fcd934c660df3ca88",
+    "draftHash": "e18f20c8963d00206fbdff645c7511c526138ebef14b08c8b639eff6312850e7",
+    "finalHash": "00ec513f1b6bebbc4f1cc0faf8bdc9c988dba3262224ea8b0d2096a1f1f4a8a3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-4",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/recycle",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T08:08:26.157Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/recycle#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.663Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 330084,
+        "revisionId": 37312855,
+        "revisionTimestamp": "2025-02-10T17:24:05Z",
+        "sha256": "d3d96c32a4c70f8b7c765970aea59ca60e78e2aa2d53f727960e54b3b63f76a6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:22:26.507Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/lessCommonSenses",
+        "message": "原词条列有名词用法，初稿完全遗漏。recycle 作名词主要见于技术语境，宜放入较少见义；日常表示回收活动通常用 recycling。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote、/senses/0/examples",
+        "message": "遗漏常用的不及物用法，如 We recycle at home。应说明 recycle 可以不接宾语，泛指参与回收再利用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway、/senses/0/meaning",
+        "message": "回收再利用不一定制成新产品，也可把用过的水等处理后再次使用。现有概括偏窄，需调整并补例。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote、/wordFamily/2/spellingNote、/wordFamilyNote",
+        "message": "两处“保留 e”说明错误。recyclable 是 recycl + able；recycler 是 recycl + er，也可按字形记为 recycle 后加 r。若保留原词末尾 e 再完整添加 -er，就会误拼成 recycleer。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及引用Oxford、Cambridge的sourceIds",
+        "message": "Oxford 不在实际取得的材料中，Cambridge 抓取失败，不能据此归属具体释义、读音或词族说明。应引用实际取得的维基词典英语词条；其未具体支持的教学补充保留为空引用。"
+      }
+    ],
+    "coverageAssessment": "已核对材料回收处理、无宾语表示参与回收、旧内容再次利用，以及较少见的技术名词用法。保留两项核心动词义各自的两个原例，补入不及物用法、水循环利用和技术名词例句。现有搭配、近义与反向表达的语境限制基本准确。法语维基词典材料属于英语词条，其词源节只是待补充标记，不能证明法语借入关系或历史演变；初稿已将现代构词与助记区别说明，空历史阶段应保留。细分释义、标准读音及词族拼写依专业语言知识审核，不冒充网页已逐项提供。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：处理用过的材料或废物，使其能够再次使用或制成新产品",
+        "coveredBy": [
+          "recycle-v-1"
+        ],
+        "assessment": "基本覆盖；修订过窄的概括，补入水处理后循环利用的例句。"
+      },
+      {
+        "sense": "不及物动词：参与废旧物品的回收再利用",
+        "coveredBy": [
+          "recycle-v-1"
+        ],
+        "assessment": "属于同一基本义的常用语法功能，无须另拆一义；补充说明和无宾语例句。"
+      },
+      {
+        "sense": "及物动词：把已有的想法、素材或内容再次拿来使用",
+        "coveredBy": [
+          "recycle-v-2"
+        ],
+        "assessment": "两个例句均实际覆盖此义；关于可能缺少新意的语气及与 adapt、reuse 的区别准确。"
+      },
+      {
+        "sense": "名词：再循环、循环回用，主要用于技术语境",
+        "coveredBy": [
+          "recycle-n-1"
+        ],
+        "assessment": "初稿遗漏，补入 lessCommonSenses；明确日常过程名词通常使用 recycling。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb\"",
+        "valueJson": "\"动词（及物 / 不及物）；名词（较少见，技术用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的意思是“回收再利用”：把用过的材料处理后做成新产品。也可指再次利用旧材料、想法或内容。\"",
+        "valueJson": "\"最常见的意思是“回收再利用”：把用过的材料或废物处理后再次使用，或制成新产品。也可指把旧想法、旧内容重新拿来用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"把用过的纸、塑料、玻璃等收集并加工，使它们能制成新产品。\"",
+        "valueJson": "\"把用过的材料或废物处理后再次利用，或把它们制成新产品。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常以材料或物品作宾语；强调经过处理后再次利用，不一定是原样使用。\"",
+        "valueJson": "\"可接材料或物品作宾语，也可不带宾语，泛指参与回收再利用。说家庭或学校 recycle 时，也可指将可回收物分类并送去处理，不必亲自完成加工。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"recycle-v-1-ex-3\",\"senseId\":\"recycle-v-1\",\"en\":\"We recycle at home, and the children help sort the paper.\",\"zh\":\"我们家会参与回收再利用，孩子们也帮忙把废纸分出来。\",\"note\":\"第一个分句中的 recycle 不带宾语，泛指参与废旧物品的回收再利用。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"recycle-v-1-ex-4\",\"senseId\":\"recycle-v-1\",\"en\":\"The car wash recycles the water it uses.\",\"zh\":\"这家洗车店循环利用洗车用水。\",\"note\":\"recycle water 指将用过的水处理后再次使用，结果不一定是新产品。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"recycle-n-1\",\"title\":\"再循环、循环回用（名词，技术用语）\",\"meaning\":\"使物料返回流程再次使用这一过程。\",\"note\":\"主要见于工程、化工等技术语境。日常表示回收活动或过程通常用名词 recycling，不宜一概换成 recycle。\",\"example\":{\"id\":\"recycle-n-1-ex-1\",\"senseId\":\"recycle-n-1\",\"en\":\"The unreacted gas is returned to the reactor for recycle.\",\"zh\":\"未反应的气体被送回反应器循环使用。\",\"note\":\"for recycle 中的 recycle 是专业名词，指循环回用。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"加 -able 时保留 recycle 末尾的 e，写作 recyclable。\"",
+        "valueJson": "\"先去掉 recycle 末尾不发音的 e，再加 -able：recycl + able → recyclable。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"以不发音的 e 结尾的动词加 -er 时保留 e，写作 recycler。\"",
+        "valueJson": "\"先去掉 recycle 末尾不发音的 e，再加 -er：recycl + er → recycler。也可按字形记成 recycle 后只加 r，不写 recycleer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"所列词都与 recycle 有直接构词关系；注意 recycling 去掉 e 加 -ing，而 recyclable 和 recycler 保留 e。\"",
+        "valueJson": "\"所列词都与 recycle 有直接构词关系。recycling、recyclable、recycler 都先去掉 recycle 末尾的 e，再分别加 -ing、-able、-er。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: recycle\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/recycle\",\"supports\":[\"动词释义、常见用法和词形参考\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: recycle\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/recycle\",\"supports\":[\"动词释义、常见搭配和派生形式参考\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：recycle（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/recycle#Anglais\",\"supports\":[\"英语动词身份及基本释义 recycler\",\"规则动词变化模板与 cycle 等相关词\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1134,
+    "headword": "recycle",
+    "meaning_zh": "vt. 使再循环, 重新利用, 再制\nn. 再循环",
+    "phonetic": "/.ri:'saikl/",
+    "pos": "",
+    "forms": []
+  }
+}

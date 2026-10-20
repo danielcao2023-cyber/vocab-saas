@@ -82,7 +82,7 @@ export const COPY = {
   dailyHighNote: '按 COCA（美国当代英语语料库）词频排序，数据来自 ECDICT。词频库里没有的词排在最后，标「推断」。',
   unrankedNote: '这个分组还没排好，先按词表顺序显示。',
   addWrong: '加入错词本', inWrong: '在错词本里', notInWrong: '不在错词本里。', removeWrong: '移出错词本', wrongBook: '错词本',
-  lookupWrongNote: '加入后会出现在“练错词”里；查词本身不算学习，不会改复习安排。',
+  lookupWrongNote: '加入后会保存在错词本；尚未开始认词的单词，需要先学习后才能进入“练错词”。查词本身不会改变复习安排。',
   learningStatus: '学习状态', nextReview: '下次复习：', back: '← 返回', loadMore: '加载更多', all: '全部', levelLabel: '级别', letterLabel: '首字母',
   statuses: {new:'新词',learning:'学习中',familiar:'熟悉',mastered:'掌握'} as Record<string,string>, cardStates: ['新词','学习中','复习中','重学中'],
   noCard: '还没开始', wrongCount: (n:number)=>`错过 ${n} 次`, correctDays: (n:number)=>`${n}/3 天`, browseTotal: (n:number)=>`共 ${n} 个`,

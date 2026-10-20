@@ -1,0 +1,299 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c8ce580b46554e9378498ac27a2ab52a3c01622d9271915e845c3ae96895444e",
+    "executedReviewPromptHash": "c8ce580b46554e9378498ac27a2ab52a3c01622d9271915e845c3ae96895444e",
+    "reviewHash": "2121d78b97ea5265933f2282d4b2aef115618141c2c2760d4b73bf67e88000c7",
+    "wordId": 784,
+    "inputHash": "85522aff7e9db7651de94b6c31495991e0e8202d9e04db09434627d8715b06f6",
+    "draftHash": "8ae7b1681ebf1d6da41f6f54b7958e5f9d374d3371b2ad605201d2df550495b8",
+    "finalHash": "d733228fdace24bf5e6be6c2bd06689c05adcdd99cce2d85a586bbad0bf3bd6f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/library#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:06.057Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117583,
+        "revisionId": 37267712,
+        "revisionTimestamp": "2025-02-05T22:40:09Z",
+        "sha256": "f19c200c5661ef76d1394a63320c3fbc5a91fb06c305dadc3c5515392c8789a5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/library",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:59:27.793Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:05:46.666Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“藏书”和“住宅中的藏书室”是词典分别列出的含义。原稿合并后各只有一个例句；对房间义的解释又容易泛化为普通家庭书房。应分开教学，各配两个例句，并说明 library 强调藏书，普通学习或办公书房更常用 study。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "收藏义未覆盖常见的 photo library、music library 等资料集合用法。“资料库”与“程序库”应区分，补入收藏义并配相应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/1",
+        "message": "bookstore 与 library 有主题联系，但不是近义表达；放在 similar 中与后面的功能对照重复且容易误导。保留 contrasting 中的语境对照即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 正文未取得，不能将其作为本次释义、读音及用法说明的材料依据。删除该来源，相关引用改为实际取得的维基词典英语词条；法语是该页面的释义语言，不是 library 的词语语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "summary 含“所给历史来源”等制作说明；英语阶段中的“后也可指”暗示了材料未证实的义项发展顺序。应直接陈述已支持的拉丁语→古法语→英语借词路线，并去掉现代义项的未经证实的先后判断。"
+      }
+    ],
+    "coverageAssessment": "已核对词典所列的图书馆、藏书、住宅藏书室和程序库四义。修订后，收藏义兼顾书籍和常见数字资料，藏书室独立成义，各核心义至少有两个自然例句；程序库保留为专门用法并配一例。原稿读音、复数规则及 librarian 的实际构词拼写可保留。历史词源仅确认借词路线，不推断现代义项出现的年代或顺序。",
+    "senseInventory": [
+      {
+        "sense": "图书馆：提供阅读、查阅或借阅服务的机构或场所",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿已有两个自然例句；保留正文，修正近义表达分类及来源引用。"
+      },
+      {
+        "sense": "藏书；成套收藏并供取用的资料",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原稿只有一个真正表示藏书的例句。修订后提供两个藏书例句，并以照片库、音乐库各一例覆盖常见资料集合用法。"
+      },
+      {
+        "sense": "住宅中的藏书室",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "原稿混在 s2 中，仅有一个例句。修订后独立为 s4，配两个房间义例句，并与普通 study 作语境区分。"
+      },
+      {
+        "sense": "计算机程序库",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "释义和例句准确。作为专门用法放在 lessCommonSenses 中并配一例，符合当前教学层级。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"library 最常指供人阅读或借书的图书馆，也可以指一批藏书或家中的书房。\"",
+        "valueJson": "\"library 最常指图书馆，也可指藏书或成套资料。说住宅中的房间时，通常指藏书室；在计算机语境中还可指程序库。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-library\"]",
+        "valueJson": "[\"wiktionary-library\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"bookstore\",\"zh\":\"书店\",\"note\":\"卖书的商店；library 通常供人阅读或借阅。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-library\"]",
+        "valueJson": "[\"wiktionary-library\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"藏书；书房\"",
+        "valueJson": "\"藏书；资料库\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"一批收藏起来的书；也可指家中用来放书、阅读或工作的房间。\"",
+        "valueJson": "\"一批收藏起来的书；也可泛指成套保存、供取用的照片、音乐等资料。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"说一批藏书时，library 可指书籍收藏；说家中房间时，常见于有专门书房的家庭语境。\"",
+        "valueJson": "\"常用 a library of ... 说明收藏内容，也可用 photo library、music library 表示照片库、音乐库。此义着重收藏的内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"Dad is reading in his library.\",\"zh\":\"爸爸正在他的书房里读书。\",\"note\":\"这里指家中专门放书、阅读或工作的房间。\"}",
+        "valueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"She keeps her personal library on two bookshelves.\",\"zh\":\"她把自己的藏书放在两个书架上。\",\"note\":\"personal library 指个人收藏的书籍。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e3\",\"senseId\":\"s2\",\"en\":\"I added the photos from our trip to my photo library.\",\"zh\":\"我把我们这次旅行的照片添加到了我的照片库中。\",\"note\":\"photo library 指整理保存的照片集合，常用于手机或电脑中的照片。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e4\",\"senseId\":\"s2\",\"en\":\"My music library has over five hundred songs.\",\"zh\":\"我的音乐库里有五百多首歌。\",\"note\":\"music library 指收藏的一批音乐资源。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns",
+        "expectedValueJson": "[{\"en\":\"a library of + books\",\"zh\":\"一批……藏书\",\"note\":\"of 后接书籍类别，说明收藏内容。\",\"kind\":\"sentence-pattern\"},{\"en\":\"in someone's library\",\"zh\":\"在某人的书房里\",\"note\":\"在家庭房间语境中，library 可指书房。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"a library of + plural noun\",\"zh\":\"一批……藏书或资料\",\"note\":\"如 a library of history books、a library of photos；of 后说明收藏的内容。\",\"kind\":\"sentence-pattern\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a private library\",\"zh\":\"私人藏书室；私人藏书\",\"note\":\"private 表示个人所有，具体指书籍收藏还是房间要看上下文。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a personal library\",\"zh\":\"个人藏书\",\"note\":\"强调个人收藏的书籍。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"book collection\",\"zh\":\"藏书\",\"note\":\"直接强调收集起来的书；library 也可以指有组织的藏书。\"},{\"en\":\"study\",\"zh\":\"书房\",\"note\":\"常指家中工作的房间；library 更突出书籍或藏书环境。\"}],\"contrasting\":[],\"similarNote\":\"book collection 更直接表示一批书；study 更常指家庭工作或学习的房间。\",\"contrastingNote\":\"此义没有稳定、自然的单词反义词；可根据具体语境改用表达非藏书的房间或空间。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"book collection\",\"zh\":\"藏书\",\"note\":\"对应书籍收藏义，强调收集起来的一批书。\"},{\"en\":\"music collection\",\"zh\":\"音乐收藏\",\"note\":\"对应 music library，侧重收藏的一批音乐。\"}],\"contrasting\":[],\"similarNote\":\"近义关系取决于收藏内容：书籍用 book collection，音乐用 music collection。\",\"contrastingNote\":\"收藏内容这一义没有常用的固定反义词，不必强配。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary-library\",\"cambridge-library\"]",
+        "valueJson": "[\"wiktionary-library\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"住宅中的藏书室\",\"meaning\":\"住宅中专门存放书籍并供人阅读的房间。\",\"usageNote\":\"此义强调藏书，常见于对专门藏书室的描写；普通家庭用于学习或工作的“书房”更常说 study。\",\"examples\":[{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"Dad is reading in his library.\",\"zh\":\"爸爸正在自己的藏书室里读书。\",\"note\":\"his library 在这里指家中存放藏书、供人阅读的房间。\"},{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"The old house has a library next to the dining room.\",\"zh\":\"这座老房子的餐厅旁有一间藏书室。\",\"note\":\"房屋布局的语境表明 library 指一个房间。\"}],\"patterns\":[{\"en\":\"in someone's library\",\"zh\":\"在某人的藏书室里\",\"note\":\"在住宅房间的语境中，表示人在藏书室内。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a home library\",\"zh\":\"家中的藏书室\",\"note\":\"谈住宅布局时可指家中的藏书室；谈收藏内容时也可能指家中藏书。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"study\",\"zh\":\"书房\",\"note\":\"同样可指住宅中的书房；study 强调学习或办公，library 强调藏书。\"}],\"contrasting\":[],\"similarNote\":\"描述普通家庭的学习、办公房间时，study 通常更自然；突出房内藏书时可用 library。\",\"contrastingNote\":\"房间义没有常用的固定反义词。\"},\"sourceIds\":[\"wiktionary-library\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-library\"]",
+        "valueJson": "[\"wiktionary-library\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-library\"]",
+        "valueJson": "[\"wiktionary-library\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 library 经古法语 librarie 借自拉丁语 libraria；所给历史来源说明这两个词都表示图书馆。\"",
+        "valueJson": "\"英语 library 来自古法语 librarie，后者借自帝国时期的拉丁语 libraria；这两个历史词形都表示“图书馆”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/2/meaning",
+        "expectedValueJson": "\"图书馆；后也可指藏书或书房\"",
+        "valueJson": "\"图书馆；藏书；藏书室；程序库\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史来源支持从拉丁语经古法语传入英语；现代英语中的“藏书”和“书房”是词义用法，不应误当作新的词源阶段。\"",
+        "valueJson": "\"这条传入路线不说明各个现代义项出现的具体先后顺序。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-library\",\"title\":\"Cambridge Dictionary: library\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/library\",\"supports\":[\"library 的常见释义与用法\",\"library 的英式和美式发音\",\"library 与 bookstore 的区别\",\"library 的复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"library 的藏书、书房及计算机程序库用法\",\"library 的历史词源信息\",\"librarian 这一同族词\"]",
+        "valueJson": "[\"library 的图书馆、藏书、住宅藏书室及程序库用法\",\"library 的英美发音和规则复数形式\",\"library 经古法语借自拉丁语的历史词源\",\"librarian 这一同族词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 784,
+    "headword": "library",
+    "meaning_zh": "n. 图书馆, 藏书, 库",
+    "phonetic": "/'laibrәri/",
+    "pos": "",
+    "forms": []
+  }
+}

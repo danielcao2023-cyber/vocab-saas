@@ -1,0 +1,354 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c1433fb823391c271ed3257b5d4ef6bc7832b83f310078a766b914f66acbe5bf",
+    "executedReviewPromptHash": "c1433fb823391c271ed3257b5d4ef6bc7832b83f310078a766b914f66acbe5bf",
+    "reviewHash": "99512e3bf35f577157d93d8898739663e9f267e7b7816628ee4be1e94c3a1310",
+    "wordId": 1433,
+    "inputHash": "e3c778110fddce1058027125395485e1eba15abb12be7372263ab96d8cdddd8a",
+    "draftHash": "c37820e37f57ee51b1652bc166855dacf2c7d9add81da518aa07ad6b9fe78aeb",
+    "finalHash": "9c5269a50a195cce384bd5af1a1a9a5933dee1685163d7f64b60f00711d74f12",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/together#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.934Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116379,
+        "revisionId": 35734519,
+        "revisionTimestamp": "2024-08-03T04:36:29Z",
+        "sha256": "600274bf88a005e035ed927714ef3baed67e6697d8671c006d60dbc6bdacb459",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/together",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:43:19.069Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:52:05.788Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少常用的“同时”“合计或综合考虑”和“处于恋爱或伴侣关系”用法，需补充并分别提供例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /lessCommonSenses",
+        "message": "遗漏已取得词典材料明确列出的口语形容词义：有条理的、情绪稳定的。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "把共同活动限定为同一时间、同一地点过窄；异地合作也可以用 together。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "该义合并了共同处于一处和拼装组合两种用法，却各只有一个例句，需分别补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples; /senses/1/examples",
+        "message": "四个例句均缺少目标结构要求的 note 属性。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/note",
+        "message": "时间长度后表示“连续”的 together 应明确标注偏文学或较旧的语体，并给出现代日常表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源阶段的 meaning 只是来源字形占位，没有解释古英语词义；应保留可证实的来源事实于 summary，清空占位阶段。“整体沿用”也不宜作为已证实的历史描述。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "Oxford 未列入实际取得的材料，Cambridge 获取失败，不能作为已据以核对的依据。应将直接有材料支持的内容关联到英语维基词典词条，其余专业语言知识补充使用空 sourceIds，并准确限定来源支持范围。"
+      }
+    ],
+    "coverageAssessment": "已核对所取得英语词条中的共同／一起、连续及口语形容词义，并依据专业语言知识补齐同时、合计／综合考虑、伴侣关系等常用功能。位置与拼装用法分别补足两个例句；新增核心义均至少两个例句。原稿语法一致说明、规范音标写法和词族实际拼写可保留。历史部分仅保留可证实的古英语来源形式；未将无法取得的词典页面当作核验依据。",
+    "senseInventory": [
+      {
+        "sense": "副词：共同活动、合作或结伴",
+        "coveredBy": [
+          "together-1"
+        ],
+        "assessment": "已覆盖；修正了必须同地、同时的过窄限定。"
+      },
+      {
+        "sense": "副词：人或物处于同一处、没有分开",
+        "coveredBy": [
+          "together-2"
+        ],
+        "assessment": "已覆盖；补足第二个位置或聚集状态例句。"
+      },
+      {
+        "sense": "副词：把分开的部分连接或拼装起来",
+        "coveredBy": [
+          "together-2"
+        ],
+        "assessment": "保留与位置义合讲的结构，补足第二个拼装例句。"
+      },
+      {
+        "sense": "副词：同时、一齐发生",
+        "coveredBy": [
+          "together-4"
+        ],
+        "assessment": "原稿遗漏；补为核心义，并与先后发生作语境对照。"
+      },
+      {
+        "sense": "副词：合计、把若干部分综合考虑",
+        "coveredBy": [
+          "together-5"
+        ],
+        "assessment": "原稿遗漏；补充合计和综合判断两类用法，各提供两个例句。"
+      },
+      {
+        "sense": "副词：处于或维持恋爱、伴侣关系",
+        "coveredBy": [
+          "together-6"
+        ],
+        "assessment": "原稿遗漏；补为核心义，并明确不等于当时待在同一地点。"
+      },
+      {
+        "sense": "副词：在时间长度后表示连续不断",
+        "coveredBy": [
+          "together-3"
+        ],
+        "assessment": "已覆盖；补充偏文学或较旧的语体限制。"
+      },
+      {
+        "sense": "形容词，口语：有条理的、情绪稳定的",
+        "coveredBy": [
+          "together-adj-1"
+        ],
+        "assessment": "所取得词典明确列出而原稿遗漏；补入拓展义，并更新词性。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adverb\"",
+        "valueJson": "\"adverb; adjective (informal)\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"两人或多人在同一时间、同一地点做某事，或共同参与一件事。\"",
+        "valueJson": "\"两人或多人结伴做某事，或共同参与、合作完成一件事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"表示共同活动时，常放在动词后；with 后接一起行动的人或团体。\"",
+        "valueJson": "\"表示共同活动时，常放在动词或宾语后。together with 后可接同行或共同参与的人；异地合作也可用 work together，不要求所有人身处同一地点。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"walk home together 表示结伴走回家。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"work together 强调为了共同目标合作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"说人或物处于一处时，常见 be together；表示拼装或整理时，常用 put … together。\"",
+        "valueJson": "\"描述位置或聚集状态时，常用 be / stay together；表示拼装时，常用 put … together。be / stay together 谈伴侣时还可表示处于或维持关系，须结合上下文判断。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"keep … together 表示把这些卡片收在一处，不分开存放。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"put … together 表示把零件拼装成完整的模型。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-2-ex3\",\"senseId\":\"together-2\",\"en\":\"The children stayed together during the museum visit.\",\"zh\":\"孩子们参观博物馆时一直待在一起。\",\"note\":\"stay together 在这里表示没有走散。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-2-ex4\",\"senseId\":\"together-2\",\"en\":\"I put the new bookshelf together after dinner.\",\"zh\":\"晚饭后，我把新书架组装好了。\",\"note\":\"组装对象放在 put 和 together 之间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这种用法较少见，初中阶段先认识即可。\"",
+        "valueJson": "\"这种用法偏文学或较旧，常用于 for hours / days / weeks together。例句在现代日常英语中通常说 It rained for three days in a row，初中阶段先认识这种旧式表达即可。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"together 源自古英语 tōgædere，属于整体沿用下来的副词。现代英语中可把它作为一个整体记忆。\"",
+        "valueJson": "\"together 源自古英语 tōgædere。学习现代英语时，可把 together 作为一个整体记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"tōgædere\",\"meaning\":\"together 的古英语来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-4\",\"title\":\"同时；一齐\",\"meaning\":\"两个或多个动作、事件在同一时间发生。\",\"usageNote\":\"重点是时间相同，参与者可以是人，也可以是物；不一定涉及合作。\",\"examples\":[{\"id\":\"together-4-ex1\",\"senseId\":\"together-4\",\"en\":\"The two alarms went off together at seven.\",\"zh\":\"七点时，两个闹钟同时响了。\",\"note\":\"together 强调两个闹钟响起的时间相同。\"},{\"id\":\"together-4-ex2\",\"senseId\":\"together-4\",\"en\":\"All the lights came on together when I pressed the switch.\",\"zh\":\"我按下开关时，所有灯同时亮了起来。\",\"note\":\"灯没有共同参与活动；这里表示同时发生。\"}],\"patterns\":[{\"en\":\"happen together\",\"zh\":\"同时发生\",\"note\":\"说明多个事件发生的时间相同。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"start together\",\"zh\":\"同时开始\",\"note\":\"可用于比赛、活动或设备的同时启动。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"at the same time\",\"zh\":\"同时\",\"note\":\"在强调发生时间相同的语境中，可替换 together。\"},{\"en\":\"simultaneously\",\"zh\":\"同时地\",\"note\":\"含义接近，但通常比 together 更正式。\"}],\"contrasting\":[{\"en\":\"one after another\",\"zh\":\"一个接一个地\",\"note\":\"在多个动作或事件的时间安排中，表示依次发生，而非同时发生。\"}],\"similarNote\":\"这些表达都能说明时间相同；不能用 simultaneously 替换表示恋爱关系或拼装的 together。\",\"contrastingNote\":\"one after another 对照的是事件发生的先后次序。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-5\",\"title\":\"合起来；综合来看\",\"meaning\":\"把两个或多个部分作为整体计算或考虑。\",\"usageNote\":\"Together 可放在句首表示合计；taken together 常表示把多个事实、意见等综合起来看。这个用法不要求这些事物实际放在同一地点。\",\"examples\":[{\"id\":\"together-5-ex1\",\"senseId\":\"together-5\",\"en\":\"Together, the two bags weigh ten kilos.\",\"zh\":\"这两个包合起来重十公斤。\",\"note\":\"十公斤是两个包的总重量。\"},{\"id\":\"together-5-ex2\",\"senseId\":\"together-5\",\"en\":\"Together, these three books cost thirty pounds.\",\"zh\":\"这三本书合计三十英镑。\",\"note\":\"together 表示把三个价格加在一起。\"},{\"id\":\"together-5-ex3\",\"senseId\":\"together-5\",\"en\":\"Taken together, these two messages explain why the meeting was cancelled.\",\"zh\":\"把这两条消息结合起来看，就能明白会议为什么取消了。\",\"note\":\"taken together 表示综合考虑信息，不是把消息放到同一地点。\"},{\"id\":\"together-5-ex4\",\"senseId\":\"together-5\",\"en\":\"Taken together, the test results suggest that the new method works.\",\"zh\":\"综合各项测试结果来看，新方法似乎有效。\",\"note\":\"suggest 表示结果提示这一结论，不表示已经完全证实。\"}],\"patterns\":[{\"en\":\"Together, A and B + verb …\",\"zh\":\"A 和 B 合起来……\",\"note\":\"常用于说明合计的重量、费用或其他总量。\",\"kind\":\"sentence-pattern\"},{\"en\":\"taken together\",\"zh\":\"综合来看；合起来考虑\",\"note\":\"常用于概括多条信息共同说明的结论。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"consider the facts together\",\"zh\":\"综合考虑这些事实\",\"note\":\"强调把事实作为整体考虑。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in total\",\"zh\":\"总计\",\"note\":\"可对应数量或金额的合计，不表示综合分析证据。\"},{\"en\":\"as a whole\",\"zh\":\"作为一个整体\",\"note\":\"与整体考虑接近，重点是整体而非各个部分。\"}],\"contrasting\":[{\"en\":\"individually\",\"zh\":\"逐个地；单独地\",\"note\":\"在计算或评估多个对象时，强调分别看每一个对象。\"}],\"similarNote\":\"合计数量时可对照 in total；综合考虑时可对照 as a whole，不能把它们用于所有 together 句子。\",\"contrastingNote\":\"individually 对照的是整体计算或考虑，而不是时间上是否同时发生。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-6\",\"title\":\"在交往；维持伴侣关系\",\"meaning\":\"两个人处于恋爱或伴侣关系中。\",\"usageNote\":\"常见于 be together、get together 和 stay together。谈关系时，together 不表示两人当时一定在同一地点，也不单独说明是否同居或结婚。\",\"examples\":[{\"id\":\"together-6-ex1\",\"senseId\":\"together-6\",\"en\":\"Are Nina and Alex still together?\",\"zh\":\"妮娜和亚历克斯还在交往吗？\",\"note\":\"谈两人的感情关系时，still together 问的是是否仍是一对。\"},{\"id\":\"together-6-ex2\",\"senseId\":\"together-6\",\"en\":\"They have been together for five years.\",\"zh\":\"他们已经在一起五年了。\",\"note\":\"在伴侣语境中表示关系持续五年，不是连续五年待在同一地点。\"}],\"patterns\":[{\"en\":\"be together for + a period of time\",\"zh\":\"在一起已有一段时间\",\"note\":\"描述持续至今的关系时，常用 have / has been together。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"stay together\",\"zh\":\"继续维持伴侣关系\",\"note\":\"谈伴侣时表示关系继续；谈位置时也可表示不要走散。\",\"kind\":\"common-collocation\"},{\"en\":\"get together\",\"zh\":\"开始交往\",\"note\":\"在感情语境中表示成为一对；其他语境中也常表示聚会或见面。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be a couple\",\"zh\":\"是一对恋人或伴侣\",\"note\":\"明确说明两人的伴侣关系，不表示只是同处一地。\"}],\"contrasting\":[{\"en\":\"break up\",\"zh\":\"分手\",\"note\":\"表示结束恋爱关系这一事件；be together 描述关系存在的状态。\"}],\"similarNote\":\"be a couple 能明确表达关系；be together 需要上下文帮助判断是伴侣关系还是位置。\",\"contrastingNote\":\"break up 适用于感情关系的结束，不能用来对照把物品收在一处的 together。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"together-adj-1\",\"title\":\"（形容词，口语）有条理的；情绪稳定的\",\"meaning\":\"形容一个人做事有条理，能稳妥处理事情或保持稳定的情绪。\",\"note\":\"这是形容词用法，常见于口语，初中阶段作为拓展认识。形容一个人 very together，并不是说这个人和别人待在一起。\",\"example\":{\"id\":\"together-adj-1-ex1\",\"senseId\":\"together-adj-1\",\"en\":\"Maya is very together: she plans her week carefully and stays calm when things go wrong.\",\"zh\":\"玛雅做事很有条理，心态也很稳：她会仔细安排一周的事情，遇到问题也能保持冷静。\",\"note\":\"very 修饰形容词 together；后面的描述具体说明条理和情绪稳定。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: together\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/together\",\"supports\":[\"常见副词义项与搭配\",\"发音\",\"togetherness 词族\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: together\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/together\",\"supports\":[\"共同与合在一起等用法\",\"together with 的语法说明\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: together（English entry, etymology）\",\"url\":\"https://fr.wiktionary.org/wiki/together#Anglais\",\"supports\":[\"古英语来源形式 tōgædere\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire: together（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/together#Anglais\",\"supports\":[\"古英语来源形式 tōgædere\",\"一起及连续的副词用法\",\"口语形容词用法\",\"英美发音\",\"派生词 togetherness 的列项\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1433,
+    "headword": "together",
+    "meaning_zh": "adv. 一起, 共同, 彼此",
+    "phonetic": "/tә'geðә/",
+    "pos": "",
+    "forms": []
+  }
+}

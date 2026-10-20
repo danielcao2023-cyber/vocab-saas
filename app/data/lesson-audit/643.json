@@ -1,0 +1,212 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "86410a546a9aa09d1f72f12fa8cc2de59c5931b5b9a13467e8dfc79cd9962747",
+    "executedReviewPromptHash": "86410a546a9aa09d1f72f12fa8cc2de59c5931b5b9a13467e8dfc79cd9962747",
+    "reviewHash": "28ace836ab513f6fb092f43907f18b803247abb214e31c83d4b2c52ef2286f79",
+    "wordId": 643,
+    "inputHash": "3c4ff54d3c2f6b5160ab51885a7aa6ec5765547da2fd7a1bdce281b8d619e35b",
+    "draftHash": "27345b1e43d35f6abc71935edcbec41208f561f529f4eb94daa2648a6175d3cd",
+    "finalHash": "63ab6a87404806034cba8c5475ac9a9f4b0042642c922b4f604cd275aedc57fa",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hers#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.202Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 57130,
+        "revisionId": 39760722,
+        "revisionTimestamp": "2026-08-03T00:41:58Z",
+        "sha256": "1354c5e0b91f83d83ebee82d60065b8e23dd82f357366f8c790e1046a0fd4c73",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hers",
+        "section": "hers etymology",
+        "supports": [
+          "Historical possessive s; avoid modern apostrophe misconception"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.055856+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "30455233eb1af646fd2d7bcba43b74496141f6b7c4b1defa172c0aba2ae75876",
+        "summaryAndSupportsWordCount": 55,
+        "sha256": "30455233eb1af646fd2d7bcba43b74496141f6b7c4b1defa172c0aba2ae75876",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/643.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hers",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:47:48.351Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:01:15.577Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0; /pronunciation/sourceIds; /senses/0/sourceIds; /confusions/0/sourceIds",
+        "message": "Oxford 条目不在实际取得的来源材料中，却被用于支撑读音、释义和辨析。应改引已取得的 Wiktionnaire 英语词条；无撇号拼写还可引用现有 Etymonline 材料。法语是该词条的解释语言，不影响其作为英语词条使用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning; /senses/0/usageNote; /senses/0/examples",
+        "message": "现有完整例句仅展示实物归属和表语用法，未充分覆盖独立物主代词常见的主语、宾语功能及人际关系、抽象事物的指代。“名词后”也应明确为“名词 + of hers”，避免误学成名词直接接 hers。这些属于同一核心义，不必另拆义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/takeaway",
+        "message": "仅凭后面是否有名词区分 her 与 hers 不够可靠：her 作宾格时也可独立出现。总结应分别说明名词前的 her、独立所有格 hers 和宾格 her。"
+      }
+    ],
+    "coverageAssessment": "已核对唯一核心义“她的；属于她的”，无需强拆多义。修订后覆盖实物、抽象事物、人际关系，以及表语、主语、宾语和 of hers 结构。原稿英美读音、无撇号拼写、单复数形式不变、所有者对照及中古英语词源说明基本正确，可保留。来源释文较简短，扩展句法说明依据专业语言知识；无未解决的实质不确定。",
+    "senseInventory": [
+      {
+        "sense": "名词性物主代词：她的；属于她的。独立指代她的物品、与她有关的人或抽象事物，所指可为单数或复数；可作主语、表语、宾语，也用于 of hers 结构。",
+        "coveredBy": [
+          "643-s1"
+        ],
+        "assessment": "原稿已覆盖基本归属义、表语用法和 a friend of hers 搭配；补充主语、宾语及关系和抽象指代的完整例句后，常用功能覆盖充分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-hers\",\"title\":\"Oxford Learner’s Dictionaries: hers\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/hers\",\"supports\":[\"hers 的词性、释义和基本用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-hers-en\",\"title\":\"Wiktionnaire：hers（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/hers#Anglais\",\"supports\":[\"英语物主代词 hers 的词性和基本释义\",\"hers 的英美读音\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-hers\"]",
+        "valueJson": "[\"wiktionary-hers-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-hers\"]",
+        "valueJson": "[\"wiktionary-hers-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-hers\"]",
+        "valueJson": "[\"wiktionary-hers-en\",\"etymonline-hers\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"代替“她的 + 名词”，指属于女性或女孩的某物；也可用于表示某人的特征或责任。\"",
+        "valueJson": "\"代替 her + 名词，表示“她的……”或“属于她的”；可指她的物品、与她有关的人，也可指她的计划、责任等抽象事物。hers 本身不随所指事物的单复数变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"hers 独立使用，常出现在 be 动词后或名词后；若名词紧跟其后，应使用 her，如 her coat。\"",
+        "valueJson": "\"hers 可以作主语、表语或宾语，也常用于“名词 + of hers”结构，如 a friend of hers。它不能直接修饰名词；在名词前表示“她的”时用 her，如 her coat。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"643-e6\",\"senseId\":\"643-s1\",\"en\":\"My keys are on the desk, but hers are still in her bag.\",\"zh\":\"我的钥匙在桌上，她的钥匙还在她包里。\",\"note\":\"hers 在后半句作主语，代替 her keys；指复数，所以用 are，hers 本身不变形。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"643-e7\",\"senseId\":\"643-s1\",\"en\":\"We discussed several plans and finally chose hers.\",\"zh\":\"我们讨论了几个方案，最后选了她的方案。\",\"note\":\"hers 作 chose 的宾语，代替 her plan，说明它也可指计划等抽象事物。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"643-e8\",\"senseId\":\"643-s1\",\"en\":\"A friend of hers helped us carry the sofa upstairs.\",\"zh\":\"她的一位朋友帮我们把沙发搬上了楼。\",\"note\":\"a friend of hers 表示她的一位朋友；of hers 在这里说明朋友关系。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看后面是否有名词：有名词用 her；代替整个名词短语用 hers。 hers 不加撇号。\"",
+        "valueJson": "\"修饰名词表示“她的”时用 her；代替整个“她的 + 名词”短语时用 hers；表示宾格“她”时也用 her。hers 不加撇号。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 643,
+    "headword": "hers",
+    "meaning_zh": "pron. 她的",
+    "phonetic": "/hә:z/",
+    "pos": "",
+    "forms": []
+  }
+}

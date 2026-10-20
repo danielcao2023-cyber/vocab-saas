@@ -1,0 +1,419 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b290406d325969fd826682ad75c84242946ac520a3861490eb29a24970057135",
+    "executedReviewPromptHash": "b290406d325969fd826682ad75c84242946ac520a3861490eb29a24970057135",
+    "reviewHash": "17b77e79861612bb9f4bdd5acb9c69334c877af5cabce8375fd4eaaa0a9ff2db",
+    "wordId": 950,
+    "inputHash": "751cc42063bc9d366b35e70af658c3fff96abf9a69ca8330949b29a5738f286f",
+    "draftHash": "d0a208f420a385498802b1eb16e31ba312e7f139199e3253be075030c970a315",
+    "finalHash": "011de8e08a46586062b3905c407975abeee29c852f2b461ed8332adeef6e34b4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/once#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.451Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2052,
+        "revisionId": 39864921,
+        "revisionTimestamp": "2026-09-07T18:18:17Z",
+        "sha256": "abbe5115c4fc6a3cfb2fb771e85c3311460d42b4b2333f253a54aabbcf5dd0a1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/once",
+        "section": "once adverb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "f8f89cd61b42ffcbce79941d1f667fdfbb8a3e7612ca1c45c6b6711ac82be067",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "f8f89cd61b42ffcbce79941d1f667fdfbb8a3e7612ca1c45c6b6711ac82be067",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/950.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/once",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:33:31.046Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:43:29.244Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“一次”和“从前”是不同义项，初稿合并后每义只有一个例句。须拆开，各补足两个例句，并分别配置搭配及近义、反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /lessCommonSenses",
+        "message": "词条摘要另列名词和形容词用法，初稿完全遗漏。应补入 this once 中的名词性用法及少见的名词前定语用法，明确其使用范围，不冒称已取得网页逐项支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations; /senses/1/collocations/1",
+        "message": "遗漏 at once、once again 等常用固定表达；once and for all 是整体副词短语，不属于连词 once 的搭配，应移入副词部分并解释整体义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "once 不保证后一件事“随即”发生，这一限制混淆了 once 与强调紧接发生的 as soon as。用法说明也应容纳 once ready 等省略结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "Everyone should bring one’s own notebook. 的泛指代词不一致，应使用 One should bring one’s own notebook.。one’s 应解释为泛指代词 one 的所有格；频率辨析还应说明 one a day 本身可以表示“一天一个”。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; /pronunciation/sourceIds; /senses; /confusions/0/sourceIds",
+        "message": "Cambridge 页面未取得正文，不能作为已用材料支持具体说明。应删除该来源及引用，发音和主要词义改引已取得的英语词条；维基来源的支持范围也须与正文相符。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/0/form",
+        "message": "阶段的 form 应填写已证实的中古英语字形 ones，而非构词描述。其余历史概述有已取得的词源材料支持，可以保留。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对次数、频率、从前、连词用法，以及词条摘要列出的名词和少见形容词用法。修订后各核心义均有两个自然例句，固定表达的整体义与裸词义分清；名词、形容词仅作限定范围的拓展，不假托网页出处。once removed 等专门表达未列为初中核心内容。未修改身份字段或 editorial。",
+    "senseInventory": [
+      {
+        "sense": "副词：一次；每个时间单位一次",
+        "coveredBy": [
+          "once-adv-one-time"
+        ],
+        "assessment": "保留参观博物馆的次数例句，补充浇水频率例句；将“从前”的解释及相关表达移出。"
+      },
+      {
+        "sense": "副词：曾经；从前",
+        "coveredBy": [
+          "once-adv-formerly"
+        ],
+        "assessment": "独立成义，包含过去状态和过去工作经历两个例句，明确不表示恰好一次。"
+      },
+      {
+        "sense": "连词：一旦；某事发生或完成之后",
+        "coveredBy": [
+          "once-conj"
+        ],
+        "assessment": "原有两个例句成立；修正必然立即发生的误导，并补充省略结构说明。"
+      },
+      {
+        "sense": "名词性用法：一次；一回",
+        "coveredBy": [
+          "once-nominal"
+        ],
+        "assessment": "以 this once 补入拓展区，说明固定用法范围及词典词性分类差异。"
+      },
+      {
+        "sense": "少见形容词：从前的",
+        "coveredBy": [
+          "once-adj-former"
+        ],
+        "assessment": "补入名词前的书面定语用法，并与 once 修饰形容词时的副词用法区分。"
+      },
+      {
+        "sense": "常用固定表达：at once、once again、once in a while、once and for all、once upon a time",
+        "coveredBy": [
+          "once-adv-one-time",
+          "once-adv-formerly"
+        ],
+        "assessment": "作为固定表达补充，明确“立刻／同时”等是短语整体义，不是裸 once 可直接表达的意思。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adverb; conjunction\"",
+        "valueJson": "\"adverb; conjunction; noun (limited fixed uses); adjective (rare, attributive)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"一次；曾经\"",
+        "valueJson": "\"一次；每……一次（次数和频率）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示某事发生过一次，也可表示过去某个时候或过去曾有某种状态。具体意思由上下文决定；“曾经”不一定只发生过一次。\"",
+        "valueJson": "\"表示某个动作发生一次；与 a day、a week 等连用时，表示每个相应时段发生一次。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"副词，可放在句末或实义动词前；和 be 动词连用时通常放在 be 后。\"",
+        "valueJson": "\"表示次数时，once 常放在动词或宾语后；once a week 等频率短语也常放在句末。at once 等固定表达要按短语整体理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"once-ex2\",\"senseId\":\"once-adv-one-time\",\"en\":\"This quiet street was once a busy market.\",\"zh\":\"这条安静的街道从前曾是热闹的集市。\",\"note\":\"once 表示过去的状态，不表示只当过一次集市。\"}",
+        "valueJson": "{\"id\":\"once-ex5\",\"senseId\":\"once-adv-one-time\",\"en\":\"We water this plant once a week.\",\"zh\":\"我们每周给这株植物浇一次水。\",\"note\":\"once a week 表示每周一次的频率。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"was once ...\",\"zh\":\"从前曾是……\",\"note\":\"放在 be 动词后，描述过去的身份或状态。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"once again / once more\",\"zh\":\"再一次；又一次\",\"note\":\"表示重复做某事，如 read it once more（再读一遍）。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"once in a while\",\"zh\":\"偶尔；有时\",\"note\":\"表示偶尔发生，不说明固定间隔。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"at once\",\"zh\":\"立刻；同时\",\"note\":\"按整体记：Come at once. 是“立刻过来”；do two things at once 是“同时做两件事”。表达这两个意思时不能省掉 at。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"once and for all\",\"zh\":\"一劳永逸地；彻底地\",\"note\":\"整体作副词短语，常与 settle、solve、end 等动词搭配，强调彻底解决某事。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"formerly\",\"zh\":\"从前\",\"note\":\"只表示过去，不表示发生次数；语气较正式。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"now\",\"zh\":\"现在\",\"note\":\"只在表示过去状态的语境中与 once 对照。\"}",
+        "valueJson": "{\"en\":\"never\",\"zh\":\"从未；一次也没有\",\"note\":\"在谈经历次数时，never 表示一次也没有，与 once 的一次形成对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"按语境选择：讲次数可用 one time；讲过去状态可用 formerly。\"",
+        "valueJson": "\"讲发生次数可用 one time；表达固定频率通常用 once a week 等简洁说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"twice 是次数上的对照词；now 仅与 once 表示“从前”的用法形成时间对照。\"",
+        "valueJson": "\"twice 表示两次；never 在经历语境中表示一次也没有。这些对照都限于次数，不适用于 once 的所有用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作连词引出时间或条件从句，表示某事发生或完成后，另一件事随即发生或可以进行。\"",
+        "valueJson": "\"作连词引出时间或条件从句，表示某事发生、某种情况出现或某一步完成后，另一件事就会发生或可以进行。强调达到某个时间点或满足条件；两件事之间可以有间隔。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"once 后接主语和谓语；一般现在时可表示将来时间，主句常用 will、can 或祈使句。\"",
+        "valueJson": "\"完整形式是 once + 主语 + 谓语；谈将来时，从句通常用一般现在时或现在完成时，主句常用 will、can 或祈使句。也有 once ready（准备好后）等省略结构，其所指的人或事须清楚。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"once and for all\",\"zh\":\"一劳永逸地；彻底地\",\"note\":\"固定表达，表示一次彻底解决问题。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"once-adv-formerly\",\"title\":\"曾经；从前\",\"meaning\":\"表示过去某个时候有过某种状态、身份或经历，不说明恰好发生一次。\",\"usageNote\":\"常放在实义动词前、be 动词后；表示过去的状态或经历时常与过去时连用。\",\"examples\":[{\"id\":\"once-ex2\",\"senseId\":\"once-adv-formerly\",\"en\":\"This quiet street was once a busy market.\",\"zh\":\"这条安静的街道从前曾是热闹的集市。\",\"note\":\"once 表示过去的状态，不表示只当过一次集市。\"},{\"id\":\"once-ex6\",\"senseId\":\"once-adv-formerly\",\"en\":\"My uncle once worked in a small bakery.\",\"zh\":\"我叔叔曾在一家小面包店工作。\",\"note\":\"指过去有过这段工作经历，不是说只工作过一次。\"}],\"patterns\":[{\"en\":\"subject + once + past-tense verb\",\"zh\":\"某人／某物从前曾……\",\"note\":\"once 可放在过去式的实义动词前，如 once worked、once lived。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"was once ...\",\"zh\":\"从前曾是……\",\"note\":\"放在 be 动词后，描述过去的身份或状态。\",\"kind\":\"sentence-pattern\"},{\"en\":\"once upon a time\",\"zh\":\"从前；很久以前\",\"note\":\"常用作童话或故事的开头，按固定表达记忆。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"formerly\",\"zh\":\"从前；以前\",\"note\":\"表示过去，不表示发生次数；语气较正式。\"},{\"en\":\"used to\",\"zh\":\"过去曾经；过去常常\",\"note\":\"后接动词原形，表示过去的状态或习惯，常暗示现在已不同；与 once 表示从前时有部分语境重合，句型不同。\"}],\"contrasting\":[{\"en\":\"now\",\"zh\":\"现在\",\"note\":\"在比较过去与现在的状态时，与 once 形成时间上的对照。\"}],\"similarNote\":\"formerly 与表示从前的 once 意思相近；used to 需要后接动词原形，不能直接照搬 once 的位置。\",\"contrastingNote\":\"now 只在过去与现在的时间对比中使用，不是 once 表示次数或引导从句时的反义表达。\"},\"sourceIds\":[\"wiktionary-etymology\",\"etymonline\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"once-nominal\",\"title\":\"名词性用法：这一回\",\"meaning\":\"一次；一回，主要见于 this once 等固定说法。\",\"note\":\"词典对这类固定说法的词性分类有所不同，有的按名词处理。把 this once 作为整体记，不把 once 当作能自由搭配的普通可数名词。\",\"example\":{\"id\":\"once-nominal-ex1\",\"senseId\":\"once-nominal\",\"en\":\"I'll make an exception just this once.\",\"zh\":\"就这一回，我会破例。\",\"note\":\"just this once 强调仅限这一次。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"once-adj-former\",\"title\":\"少见形容词：从前的\",\"meaning\":\"放在名词前，表示从前的身份或地位。\",\"note\":\"较少见，偏书面，只用于名词前的定语位置；日常通常用 former。a once busy street 中的 once 修饰 busy，则属于副词。\",\"example\":{\"id\":\"once-adj-ex1\",\"senseId\":\"once-adj-former\",\"en\":\"We visited the once capital of the kingdom.\",\"zh\":\"我们参观了这个王国从前的首都。\",\"note\":\"这里 once 直接修饰名词 capital；日常更常说 the former capital。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"once 是表示次数、过去或条件的副词／连词；one’s 是“某人的”，后接名词。\"",
+        "valueJson": "\"once 的常用副词、连词用法表示次数、过去或时间条件；one’s 是泛指代词 one 的所有格，通常修饰名词，常译为“自己的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"表示次数或引出从句，不表示“某人的”。\"",
+        "valueJson": "\"表示次数或引出从句，不表示所属关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"one’s：某人的\"",
+        "valueJson": "\"one’s：泛指的“自己的”\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"所有格形式，后面通常接名词；one’s 不是 once 的另一种拼法。\"",
+        "valueJson": "\"泛指代词 one 的所有格，后面通常接名词。one’s 读 /wʌnz/，与 once /wʌns/ 的末音不同，也不是 once 的另一种拼法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"Everyone should bring one’s own notebook.\"",
+        "valueJson": "\"One should bring one’s own notebook.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/label",
+        "expectedValueJson": "\"一次的表达：once a day，不写 one a day 表示“一天一次”\"",
+        "valueJson": "\"once a day：一天一次；one a day：一天一个\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"表示固定频率时使用 once + 时间单位。\"",
+        "valueJson": "\"once a day 数动作次数；one a day 中 one 可代指一个东西，如 Take one a day.（每天服一片。）表示频率可用 once a day/week，或 once every two days 等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到后面跟从句时，once 常表示“一旦”；看到名词前的 one’s，则表示“某人的”。\"",
+        "valueJson": "\"once 引出从句时常表示“一旦／……之后”；名词前的 one’s 表示所属关系，常译为“自己的”。once a day 数次数，one a day 数人或物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/form",
+        "expectedValueJson": "\"由 one 形成的副词形式，带类似属格的词尾\"",
+        "valueJson": "\"ones\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: once\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/once\",\"supports\":[\"once 作副词表示一次、曾经及频率的用法\",\"once 作连词引出时间或条件从句\",\"英式和美式发音及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: once（English）\"",
+        "valueJson": "\"法语维基词典：once（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"once 来自中古英语由 one 形成的副词形式\",\"副词 once 的次数、过去用法及连词用法\"]",
+        "valueJson": "[\"中古英语字形 ones\",\"once 作副词表示一次、从前及作连词的用法\",\"英语读音 /wʌns/ 及 once and for all、once upon a time 等表达\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 950,
+    "headword": "once",
+    "meaning_zh": "adv. 一次, 曾经, 一旦\nconj. 一旦, 一经\nn. 一次\nadj. 从前的",
+    "phonetic": "/wʌns/",
+    "pos": "",
+    "forms": []
+  }
+}

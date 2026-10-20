@@ -1,0 +1,320 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "74f71bdfe09785a039e2c1233e9616860c0849b239cf3ddc006e9abb2b7807cb",
+    "executedReviewPromptHash": "74f71bdfe09785a039e2c1233e9616860c0849b239cf3ddc006e9abb2b7807cb",
+    "reviewHash": "c3f3d4b8d9f0ec283c3181eb7311b27f8c304e386f46ed70d69130fbeda56063",
+    "wordId": 995,
+    "inputHash": "9aec351384dee2adbbca5ddacc4f3465e5d9a2c60b156ebea42e54b0884dbba4",
+    "draftHash": "57dc9bf0c9f6380f50643091825821b43d7cb8e5f5841878c122cf32d01e1d99",
+    "finalHash": "54c48354250d770c6671c3a80cafb4b26eab389d045589059da622d410e6d848",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/patient#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.184Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86355,
+        "revisionId": 39925790,
+        "revisionTimestamp": "2026-10-10T06:11:04Z",
+        "sha256": "bec33dd71a185a96de2569dd59112bcde66f3c80a7b75e5870171b5f2324e793",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/patient",
+        "section": "patient adjective and medical noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "4013502cf4dd6c07809beb51bbe331b4afddba6730edf2cbc2b052051943326e",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "4013502cf4dd6c07809beb51bbe331b4afddba6730edf2cbc2b052051943326e",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/995.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/patient",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:28:50.658Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:35:18.759Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge 的 sourceIds",
+        "message": "Cambridge 页面未取得内容，不能作为本次审校的实际依据。改引已取得的法语维基词典英语词条及词源材料；没有对应依据的引用置空。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词条所列“承受者”的较少见用法。补充语言学中的“受事”，并限定语境，避免误解为“有耐心的人”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions/0/items、/wordFamily 中的例句对象",
+        "message": "现有十个例句对象均缺少结构要求的 note 字段，需逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary 和 /etymology/stages/1",
+        "message": "法语阶段的 meaning 只说明传入路线，没有提供释义，应将该事实保留在 summary 并删除占位阶段。“名词后来……”也应改为不暗示未经明确支持的词性发展先后。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples",
+        "message": "两个例句都集中在重复讲解，补充一个面对延误仍保持耐心的例句，可覆盖正文强调的等待语境，无须另拆义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1",
+        "message": "the patient 是目标词加定冠词，不是近义表达，应从近义表达列表删除。"
+      }
+    ],
+    "coverageAssessment": "已核对名词“患者”和形容词“有耐心、能忍耐”的常用义；形容词的几种中文释义可以合并教学。补充等待例句及较少见的语言学“受事”义后，核心义均保留至少两个例句。读音、搭配、翻译和实际拼写未见其他实质错误；patient 到 patience 的“-t 改为 -ce”说明准确，予以保留。来源没有完整详释，技术义等依据专业语言知识补充，未将不可访问的 Cambridge 页面作为证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：病人；接受医疗检查、治疗或照护的人",
+        "coveredBy": [
+          "patient-n"
+        ],
+        "assessment": "核心义已覆盖，两个生活例句自然，医患角色对照及与 sick person 的区别基本准确。"
+      },
+      {
+        "sense": "形容词：有耐心的；能容忍等待、他人或困难而不急躁的",
+        "coveredBy": [
+          "patient-adj"
+        ],
+        "assessment": "属于同一常用义，无须机械拆分。原稿覆盖对人耐心及重复讲解，补例覆盖面对延误的忍耐。"
+      },
+      {
+        "sense": "较少见名词：受事；动作或事件的承受者（语言学）",
+        "coveredBy": [
+          "patient-role"
+        ],
+        "assessment": "原稿遗漏，补入 lessCommonSenses，并说明受事不等于所有语法宾语。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: patient\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/patient\",\"supports\":[\"patient 的名词和形容词用法\",\"patient 的常见搭配与相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire: patient（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/patient#Anglais\",\"supports\":[\"英语 patient 的形容词和名词词性\",\"反义词 impatient 及相关词 patience、impatience\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the patient 指语境中已知的那位患者。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patients 是名词复数，表示多位患者。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"be patient with someone 表示对某人有耐心。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patient enough to explain 表示有足够的耐心去讲解；again 表示再讲一次。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patient 在 is 后作表语，with beginners 说明耐心对待的对象。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patience 是不可数名词，takes patience 表示需要耐心。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patiently 修饰 answered，说明回答时的态度。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"your patience 中的 patience 是名词，表示耐心。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"patiently 修饰 showed，表示演示时不急躁。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"impatient 在 became 后作表语，表示变得不耐烦。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"patient-adj-ex3\",\"senseId\":\"patient-adj\",\"en\":\"The bus was thirty minutes late, but Sam remained patient.\",\"zh\":\"公交车晚点了半小时，但萨姆仍耐心等候。\",\"note\":\"这里的 patient 表示面对延误仍不急躁。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"patient-role\",\"title\":\"受事；动作承受者（语言学）\",\"meaning\":\"动作或事件中受到影响的参与者，尤其指被作用或发生变化的对象。\",\"note\":\"这是较少见的语言学术语，不是日常所说的病人，也不等于所有语法宾语。\",\"example\":{\"id\":\"patient-role-ex1\",\"senseId\":\"patient-role\",\"en\":\"In the sentence 'The child broke the cup', 'the cup' is the patient.\",\"zh\":\"在 The child broke the cup（孩子打碎了杯子）这句话中，the cup（杯子）是受事。\",\"note\":\"杯子受到打碎这一动作的影响，因此承担受事这一语义角色。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"the patient\",\"zh\":\"患者\",\"note\":\"医疗语境中常用的称呼，具体指哪位病人由上下文决定。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"patient 作形容词和医疗名词都与表示忍受、承受的拉丁语历史形式有关；名词后来用于接受治疗的人。\"",
+        "valueJson": "\"英语 patient 经法语 pacient 传入，可追溯至含有“承受、忍耐或受苦”之意的拉丁语 patientem。形容词表达平静忍耐，医疗名词指受苦或接受治疗的人；两者共享历史来源，但现代用法不同。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"法语\",\"form\":\"pacient\",\"meaning\":\"英语借入前经过的法语形式\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 995,
+    "headword": "patient",
+    "meaning_zh": "n. 病人, 承受者\nadj. 忍耐的, 容忍的, 有耐性的, 坚忍的",
+    "phonetic": "/'peiʃәnt/",
+    "pos": "",
+    "forms": []
+  }
+}

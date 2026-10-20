@@ -1,0 +1,225 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cf333ea1781cebbb083bddc42a85c1097fd0e97112fbe96727286ec8782ebb31",
+    "executedReviewPromptHash": "cf333ea1781cebbb083bddc42a85c1097fd0e97112fbe96727286ec8782ebb31",
+    "reviewHash": "3f5b5de5d812b13df3c29cc2ddb2c3ea57570cada97f5dd245be97bf5f56137b",
+    "wordId": 852,
+    "inputHash": "5b0156654d3019d812a2c2d45759154267e8715cf30ac580eca2a0f56c2a2bf6",
+    "draftHash": "c5124512e8b33b6bebf3e3dca482af538253ca0954174ca9a6cbd6fe5de34fbd",
+    "finalHash": "0a6ee1ef47a7966d2da115fbc902ccf990d4bb7ea65d2008e35dc44bf6e3abd5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/menu#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:19.141Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 104195,
+        "revisionId": 39821038,
+        "revisionTimestamp": "2026-08-21T10:42:45Z",
+        "sha256": "c610a12e658fbe18aa10b140c0c34bce1599f9c4524abb826c2bcbbc63138800",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/menu",
+        "section": "menu etymology",
+        "supports": [
+          "Detailed meal list; small/detailed adjective and later screen-options extension"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:12:02.594947+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "99639bf2650986adecfbbdbea184c4e789d3a6c17399ea2ce05bf2596eac448b",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "99639bf2650986adecfbbdbea184c4e789d3a6c17399ea2ce05bf2596eac448b",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/852.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/menu",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:05:07.911Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:09:56.246Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources、/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/0/sourceIds",
+        "message": "Oxford 没有随附来源材料，Cambridge 标为 unavailable，不能据此支撑当前引证。改引实际取得的法语维基词典英语词条；menu/manual 对照保留，但移除其不受材料支持的引证。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting、/senses/1/relatedExpressions/contrasting",
+        "message": "daily special 是供应的菜品，à la carte 与套餐点餐方式相对，content page 是另一类界面内容；它们都不与 menu 构成反向表达。应清空这些对照，并说明 menu 在这两个义项中没有常用的直接反义词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar/1",
+        "message": "toolbar 与 menu 是不同的界面组件，不是近义表达；说明二者形式不同，也不能使其成为近义词。"
+      }
+    ],
+    "coverageAssessment": "所附词典明确列出的两个核心名词义均已覆盖，每义各有两个自然原创英中例句，无须强拆更多义项。读音采用常见音标记法，复数拼写、语法、翻译及例句 senseId 均可保留。现有词源与已取得的词源材料相符，阶段顺序成立；词形、派生与助记也已区分。修订集中于来源归属及不成立的语义关系；未获得的网页不作为本次审校依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：餐饮菜单，列出供应的食物和饮料的清单",
+        "coveredBy": [
+          "852-restaurant"
+        ],
+        "assessment": "已覆盖。两个例句分别体现查看菜单与询问儿童菜单；常见搭配及可数名词用法正确。"
+      },
+      {
+        "sense": "名词：计算机或设备界面中供选择功能、命令或设置的列表",
+        "coveredBy": [
+          "852-computing"
+        ],
+        "assessment": "已覆盖。两个例句体现更改语言与打开菜单；menu item、主菜单及下拉菜单等相关用法处理恰当。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-menu\"]",
+        "valueJson": "[\"wiktionary-menu\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-menu\"]",
+        "valueJson": "[\"wiktionary-menu\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-menu\"]",
+        "valueJson": "[\"wiktionary-menu\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-menu\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-menu\",\"title\":\"Oxford Learner’s Dictionaries: menu\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/menu\",\"supports\":[\"menu 的名词用法、餐馆菜单义与计算机选项列表义\",\"英式与美式发音及复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-menu\",\"title\":\"Wiktionnaire：menu（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/menu#Anglais\",\"supports\":[\"英语名词 menu 的餐饮菜单义与计算机菜单义\",\"英美发音信息及 menu item、下拉菜单等相关表达\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-menu\",\"title\":\"Cambridge Dictionary: menu\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/menu\",\"supports\":[\"menu 的名词用法与常见搭配\",\"餐馆菜单义、计算机选项列表义及相关词语对照\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"daily special\",\"zh\":\"当日特色菜\",\"note\":\"只指当天特别供应的一道或几道菜，不是整份菜单。\"},{\"en\":\"à la carte\",\"zh\":\"按单点菜\",\"note\":\"餐饮语境中表示按单道菜分别点选；与套餐相对，并非菜单的同义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这些词只在餐馆点餐语境中构成范围或点餐方式上的对照。\"",
+        "valueJson": "\"menu 在餐饮菜单义中没有常用的直接反义词。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"toolbar\",\"zh\":\"工具栏\",\"note\":\"通常显示可直接点击的工具按钮；menu 常以列表形式展开，两者界面形式不同。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"content page\",\"zh\":\"内容页面\",\"note\":\"在软件界面语境中，页面主要供人阅读或查看内容，不一定提供一组选项。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"content page 只在软件界面语境中与功能选项列表作区分，并非所有情境下的反义词。\"",
+        "valueJson": "\"menu 在功能选项列表义中没有常用的直接反义词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 852,
+    "headword": "menu",
+    "meaning_zh": "n. 菜单, (功能)选择单",
+    "phonetic": "/'menju:/",
+    "pos": "",
+    "forms": []
+  }
+}

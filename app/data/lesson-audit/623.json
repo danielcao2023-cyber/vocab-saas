@@ -1,0 +1,337 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "888ad00abe4adee2c2fd11d941bd576cdf2378855dbbdeb5894f5cae1d2ac2f6",
+    "executedReviewPromptHash": "888ad00abe4adee2c2fd11d941bd576cdf2378855dbbdeb5894f5cae1d2ac2f6",
+    "reviewHash": "b4b46620e1a09c37e0eee22b9f8cb817264894209a1601cedcabfc25b0fc792e",
+    "wordId": 623,
+    "inputHash": "b5f5e9abd076221beb0153810505e5df0c3ddd122f0ff78db5fae47ea861531e",
+    "draftHash": "385f45714d03d510727a2c1d64b25dc691a67c6480b4cf24a116656bc7f8eb0c",
+    "finalHash": "275e325a00f5cf236d92e470eafd6762cd90dc1a204965e86b22e02000c87b6f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/harm#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:15.293Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 84739,
+        "revisionId": 39809361,
+        "revisionTimestamp": "2026-08-16T21:41:08Z",
+        "sha256": "8e6d53a51a79a1b3a0af6b2eff64549eb3b64da36152242cc3bc9e0fe690a1c9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/harm",
+        "section": "harm etymology",
+        "supports": [
+          "Old English noun and verb forms and meanings"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:14:23.810050+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "408d4ba55a090f0ece8189042412e799ee0ab9a7d15ecdcc2cb5eb3985c78e70",
+        "summaryAndSupportsWordCount": 42,
+        "sha256": "408d4ba55a090f0ece8189042412e799ee0ab9a7d15ecdcc2cb5eb3985c78e70",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/623.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/harm",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:14:12.310Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:24:15.158Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "初稿把现代释义、读音和词族统一归于未提供正文的 Oxford 条目。应改引实际可用的法语维基词典英语词条，并同步调整 sourceIds。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1; /senses/1/patterns/2",
+        "message": "harm someone's feelings 不宜作为常用搭配教授；通常说 hurt someone's feelings。这是搭配问题。改用自然的 harm someone's reputation，并明确 harm 可以表示心理伤害，但不等于一般的“使人难过”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "名词义缺少 no harm in doing、mean no harm 和 out of harm's way 等常用结构；现有第二例的场景也较抽象。补充具体例句，并区分“无意伤害”和“实际未造成伤害”。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/2/example/senseId",
+        "message": "damaged 在该例中是动词，却绑定名词义 harm-n，应绑定 harm-v。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/note; /wordFamily",
+        "message": "现在分词说明和 harmfully 拼写说明夹有无关的词尾 e 提问。harmfully 是真实但不常用的副词，原例句生硬；可换成更实用且来源列出的 unharmed。harmful 的构词解释也应直接说明“会造成伤害的”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "材料明确说明古英语动词 hearmian 由名词 hearm 派生。应把这一关系写清楚，使阶段箭头表达有依据的历史派生，而不使人误解为现代名词与动词依次替代。"
+      }
+    ],
+    "coverageAssessment": "已核对名词“伤害、损害、害处”和及物动词“伤害、损害”。法语释义 Mal、Tort、Préjudice 在这里可合讲为宽泛的名词义，无须机械拆成三个核心义。修订后两种词性均保留至少两个自然例句，并补充常用名词结构；反身用法不另算基本义。英美读音、规则变化及 benefit/protect 的语境限定可保留。可用现代释义材料主要来自法语维基词典的英语词条，历史解释限于所附 Etymonline 摘要，未借用不可用或未提供正文的页面内容。",
+    "senseInventory": [
+      {
+        "sense": "名词：伤害、损害、害处，包括身体、心理、名誉或事物受到的不良影响",
+        "coveredBy": [
+          "harm-n"
+        ],
+        "assessment": "核心义已覆盖；修订补充具体心理伤害例句，以及表示“无妨”“无意伤害”和“处于安全位置”的常用结构。这些结构不必另立基本义。"
+      },
+      {
+        "sense": "及物动词：伤害、损害，使人或事物受到不良影响",
+        "coveredBy": [
+          "harm-v",
+          "harm-v-reflexive"
+        ],
+        "assessment": "核心义已覆盖；将不自然的 feelings 搭配改为 reputation，并保留直接接宾语的语法说明。harm oneself 是反身用法，self-harm 可指故意自伤，不应据此扩大普通 harm 的含义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-harm\",\"title\":\"Oxford Learner’s Dictionaries: harm\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/harm_1\",\"supports\":[\"名词与动词的常见含义\",\"harm 的动词及名词用法\",\"harmful、harmless 等派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-harm\",\"title\":\"Wiktionnaire（法语维基词典）：harm（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/harm#Anglais\",\"supports\":[\"英语名词 harm 的伤害、损害含义\",\"英语动词 harm 的伤害、损害含义与英美读音\",\"harmful、harmless、unharmed 和 self-harm 等派生词或相关形式\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"词尾不发音的 e 不涉及此词；直接在 harm 后加 -ing。\"",
+        "valueJson": "\"直接在 harm 后加 -ing，词尾 m 不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"harm-n-ex2\",\"senseId\":\"harm-n\",\"en\":\"The new rule caused no harm to the team.\",\"zh\":\"新规定没有给队伍带来任何损害。\",\"note\":\"cause harm 表示“造成伤害或损害”。\"}",
+        "valueJson": "{\"id\":\"harm-n-ex2\",\"senseId\":\"harm-n\",\"en\":\"The cruel comments caused her a lot of emotional harm.\",\"zh\":\"那些刻薄的评论给她造成了很大的心理伤害。\",\"note\":\"emotional harm 指心理或情感上的伤害；harm 不只用于身体受伤。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"harm-n-ex3\",\"senseId\":\"harm-n\",\"en\":\"There's no harm in asking for a discount.\",\"zh\":\"问问能不能打折也无妨。\",\"note\":\"There is no harm in doing something 表示做某事没有坏处，常用来鼓励尝试；in 后接动词 -ing 形式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"harm-n-ex4\",\"senseId\":\"harm-n\",\"en\":\"I only wanted to help; I didn't mean any harm.\",\"zh\":\"我只是想帮忙，并无恶意。\",\"note\":\"mean (any) harm 说的是伤害的意图；无意伤害不保证实际上没有造成损害。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"harm-n-ex5\",\"senseId\":\"harm-n\",\"en\":\"Move the glass vase out of harm's way before the children start playing.\",\"zh\":\"孩子们开始玩耍前，把玻璃花瓶挪到不会被碰坏的地方。\",\"note\":\"out of harm's way 表示处在不易受伤或损坏的安全位置；保留 harm's 中的所有格符号。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"There is no harm in doing something.\",\"zh\":\"做某事无妨；做某事没有坏处。\",\"note\":\"常用来提出或赞同一个尝试；in 后接动词 -ing 形式。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"mean no harm\",\"zh\":\"无意伤害；没有恶意\",\"note\":\"表示主观上没有伤害的意图，不保证实际没有造成损害；也常说 not mean any harm。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"out of harm's way\",\"zh\":\"在安全的地方；脱离危险\",\"note\":\"可用于人或物，表示处于不易受到伤害或损坏的位置；harm's 带所有格符号。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"动词，表示使人受伤、难过或受到不良影响，也可表示损坏某物。\"",
+        "valueJson": "\"及物动词，表示使人、动物或事物受到伤害或损害，可涉及身体、心理、健康、名誉等方面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"harm-v-ex2\",\"senseId\":\"harm-v\",\"en\":\"His careless words harmed her feelings.\",\"zh\":\"他不经意的话伤害了她的感情。\",\"note\":\"这里的 harm 表示造成感情上的伤害。\"}",
+        "valueJson": "{\"id\":\"harm-v-ex2\",\"senseId\":\"harm-v\",\"en\":\"The false rumour harmed the shop's reputation.\",\"zh\":\"那个不实的传言损害了这家店的声誉。\",\"note\":\"harm someone's reputation 表示损害某人的名誉；这里说明 harm 也可用于非身体方面的损害。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2",
+        "expectedValueJson": "{\"en\":\"harm someone's feelings\",\"zh\":\"伤害某人的感情\",\"note\":\"用于言语或行为使某人难过的情形。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"harm someone's reputation\",\"zh\":\"损害某人的名誉\",\"note\":\"用于言论或行为对某人的社会评价造成不良影响的情形。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"日常表达中常用，可指身体疼痛或感情受伤；harm 语气较正式，也常强调造成不良影响。\"",
+        "valueJson": "\"hurt 在日常表达中常用，可指身体疼痛或感情受伤；“伤害某人的感情”通常说 hurt someone's feelings。harm 语气相对正式，更侧重造成伤害或不良影响。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/2/example/senseId",
+        "expectedValueJson": "\"harm-n\"",
+        "valueJson": "\"harm-v\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"名词 harm 和动词 harm 都有古英语阶段的来源：名词承接古英语 hearm，动词承接古英语 hearmian，表示伤害或使受伤。\"",
+        "valueJson": "\"现代名词 harm 延续古英语名词 hearm，当时可表示伤害、痛苦、悲伤或邪恶；古英语动词 hearmian 由名词 hearm 派生，意为“伤害、使受伤”，现代动词 harm 延续了这一形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"名词和动词是各自承接的古英语形式；这里并不表示现代拼写 harm 是由 harm 加某个后缀构成。\"",
+        "valueJson": "\"hearm 与 hearmian 之间是古英语中的名词派生动词关系；现代名词 harm 与动词 harm 分别延续相应的古英语形式。这不是现代英语中给 harm 添加后缀的构词过程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"harm + -ful，表示“充满……的”或“具有……性质的”。\"",
+        "valueJson": "\"harm + -ful，表示“会造成伤害的、有害的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-harm\"]",
+        "valueJson": "[\"wiktionary-harm\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2",
+        "expectedValueJson": "{\"word\":\"harmfully\",\"partOfSpeech\":\"副词\",\"meaning\":\"有害地\",\"formation\":\"harmful + -ly。\",\"spellingNote\":\"harmful 去掉词尾 e？不适用；副词拼写为 harmfully，保留 harmful 的 l 后再加 -ly。\",\"example\":{\"id\":\"harm-family-ex3\",\"senseId\":\"harm-v\",\"en\":\"The chemicals may affect the river harmfully.\",\"zh\":\"这些化学物质可能对河流造成有害影响。\",\"note\":\"harmfully 修饰 affect，说明影响的方式或性质。\"},\"sourceIds\":[\"oxford-harm\"]}",
+        "valueJson": "{\"word\":\"unharmed\",\"partOfSpeech\":\"形容词\",\"meaning\":\"未受伤的；未受损害的\",\"formation\":\"un- + harmed（harm 的过去分词），用否定前缀 un- 表示没有受到伤害。\",\"spellingNote\":\"un- 后接 harmed，完整拼写为 unharmed；词尾 -ed 读 /d/。\",\"example\":{\"id\":\"harm-family-ex3\",\"senseId\":\"harm-v\",\"en\":\"Luckily, everyone escaped from the burning house unharmed.\",\"zh\":\"幸运的是，大家都从着火的房子里逃了出来，没有受伤。\",\"note\":\"unharmed 描述逃出时没有受伤的状态。\"},\"sourceIds\":[\"wiktionary-harm\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"harmful 和 harmless 是常见派生词；harmfully 由 harmful 加 -ly 构成。\"",
+        "valueJson": "\"harmful 表示“有害的”，harmless 表示“无害的”；unharmed 表示“未受伤或未受损害的”。harmless 侧重不会造成伤害，unharmed 侧重没有受到伤害。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 623,
+    "headword": "harm",
+    "meaning_zh": "n. 伤害, 害处\nvt. 伤害, 损害",
+    "phonetic": "/hɑ:m/",
+    "pos": "",
+    "forms": []
+  }
+}

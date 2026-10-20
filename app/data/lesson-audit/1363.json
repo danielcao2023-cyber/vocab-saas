@@ -1,0 +1,389 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e4d449e321bfaa6e30d732de9bd99cb2ebd9c52551c051fa7a0b688de9681213",
+    "executedReviewPromptHash": "e4d449e321bfaa6e30d732de9bd99cb2ebd9c52551c051fa7a0b688de9681213",
+    "reviewHash": "d93c6768994386d59e99163fa99188599222003a38b7565fe8ed69bcf03c14e7",
+    "wordId": 1363,
+    "inputHash": "1796511a73ca770173aff489fcba6794843f29682aeecff38554d007f6899697",
+    "draftHash": "6f296a4b3c807bc74447ddbd764a8fc189fd1419b1f4dc9c060f257ca2c3317e",
+    "finalHash": "dfdd0503f2ef8154c125c4df30c7e4b5b865418723176629ca6d4aad867c444c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/survey#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.552Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 122640,
+        "revisionId": 38574103,
+        "revisionTimestamp": "2025-08-25T13:41:44Z",
+        "sha256": "23530283728debaced4829dda514b2fa9cd4da23680c9ba47add46475d8afa45",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/survey",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:31:55.459Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:45:21.195Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note；/wordFamily/1/spellingNote",
+        "message": "survey 以 y 结尾，没有可删除的词尾 e。surveying 应解释为保留 survey 全部字母，直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "“环视、审视”和“向人调查”是不同的常用功能，当前合并后每个功能只有一个例句。应拆分，并为两者分别提供至少两个例句及对应搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏来源明确列出的名词“土地测量”，以及词条中的“通盘考虑”和不及物测量用法。名词“一番察看”、房屋查验及高处俯瞰的语境延伸也需交代，避免把所有名词用法理解为问卷调查。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料明确说明古法语构词成分及名词由动词转来。初稿只写笼统关联，却未讲清这些事实；阶段中的“现代法语对应形式”也没有解释古法语构词含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 /sourceIds",
+        "message": "Cambridge 页面未成功取得，不能作为已核对这些释义、搭配和读音的来源。应改引实际取得的英语词条；仅凭专业语言知识补充的部分不冒称获得网页支持。"
+      }
+    ],
+    "coverageAssessment": "已核对调查、综览、审视、土地测量、通盘考察等主要义，以及名词察看、房屋查验、俯瞰语境和不及物测量功能。补丁使各核心义至少有两个原创英中例句，并修正拼写说明、义项引用和来源归属。限于实际取得的 Wiktionary 英语词条，Cambridge 内容未作已核实依据；额外现代用法按专业语言知识补充。",
+    "senseInventory": [
+      {
+        "sense": "名词：调查及其结果",
+        "coveredBy": [
+          "survey-n-survey"
+        ],
+        "assessment": "原稿覆盖充分，两个例句分别体现开展调查和调查显示的结果。"
+      },
+      {
+        "sense": "名词：概述、综览",
+        "coveredBy": [
+          "survey-n-overview"
+        ],
+        "assessment": "原稿已有两个自然例句；与 overview、review 和 detailed analysis 的区别有语境限定。"
+      },
+      {
+        "sense": "名词：土地测量、勘测",
+        "coveredBy": [
+          "survey-n-measure"
+        ],
+        "assessment": "原稿遗漏；补为核心义，提供两个例句，区分测量活动与相关成果。"
+      },
+      {
+        "sense": "名词：一番查看、环视或整体察看",
+        "coveredBy": [
+          "survey-n-inspection"
+        ],
+        "assessment": "来源中的 make a survey of the room 实际使用名词。补入次要义，并说明与问卷调查的区别。"
+      },
+      {
+        "sense": "名词：房屋等建筑物的状况查验",
+        "coveredBy": [
+          "survey-n-building"
+        ],
+        "assessment": "补充英国英语中较常见、但对当前学习层级较专门的用法。"
+      },
+      {
+        "sense": "动词：审视、视察、整体查看",
+        "coveredBy": [
+          "survey-v-examine"
+        ],
+        "assessment": "保留原义并与向人调查分开；补丁后有两个查看场景的例句。"
+      },
+      {
+        "sense": "动词：向人调查、收集意见或情况",
+        "coveredBy": [
+          "survey-v-investigate"
+        ],
+        "assessment": "从原合并义中独立出来，配置两个例句及 survey someone about something 句型。"
+      },
+      {
+        "sense": "动词：全面考察、通盘考虑",
+        "coveredBy": [
+          "survey-v-consider"
+        ],
+        "assessment": "补充原词条所列功能，以两例说明整体考察各种选择或办法，区别于单纯环顾。"
+      },
+      {
+        "sense": "动词：从高处整体观看、俯瞰",
+        "coveredBy": [
+          "survey-v-overlook"
+        ],
+        "assessment": "作为整体查看的空间延伸补入次要义，说明高处视角须结合上下文判断。"
+      },
+      {
+        "sense": "动词：测量土地、勘测，可及物或不及物",
+        "coveredBy": [
+          "survey-v-measure"
+        ],
+        "assessment": "原有两个及物例句成立；补充不及物说明及一个不带宾语的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"保留 survey 的全部字母，直接加 -ing：survey → surveying。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"加 -ing 时去掉词尾不发音的 e：survey → surveying。\"",
+        "valueJson": "\"survey 以 y 结尾，保留 y，直接加 -ing：survey → surveying。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"动词：仔细查看；调查\"",
+        "valueJson": "\"动词：审视，环视\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"有目的地查看某处或某物，了解其中的情况；也可指调查某个问题或收集信息。\"",
+        "valueJson": "\"有目的地整体查看某处或某物，了解眼前的情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"通常是及物动词，后接被查看或调查的对象。\"",
+        "valueJson": "\"此义通常是及物用法，后接被查看的地点或事物；常带有观察全貌的意味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"survey-v-examine-ex2\",\"senseId\":\"survey-v-examine\",\"en\":\"The team surveyed local families about the new bus route.\",\"zh\":\"团队就新公交线路询问了当地家庭的意见。\",\"note\":\"survey someone about something 表示就某事调查某人。\"}",
+        "valueJson": "{\"id\":\"survey-v-examine-ex2\",\"senseId\":\"survey-v-examine\",\"en\":\"She paused at the gate and surveyed the garden.\",\"zh\":\"她在大门口停下，环视了一下花园。\",\"note\":\"survey the garden 指整体察看眼前的花园。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns",
+        "expectedValueJson": "[{\"en\":\"survey something\",\"zh\":\"查看／调查某事物\",\"note\":\"survey 后直接接宾语，一般不加 about。\",\"kind\":\"sentence-pattern\"},{\"en\":\"survey someone about something\",\"zh\":\"就某事调查某人\",\"note\":\"about 引出调查主题。\",\"kind\":\"sentence-pattern\"}]",
+        "valueJson": "[{\"en\":\"survey a room / an area\",\"zh\":\"环视房间／察看一片区域\",\"note\":\"此义的 survey 后直接接被查看的对象。\",\"kind\":\"sentence-pattern\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"survey 强调有目的地查看整体或收集情况；examine、inspect 更突出检查细节或标准。\"",
+        "valueJson": "\"此义的 survey 偏重整体察看；examine 常突出仔细检查，inspect 常涉及检查状况是否符合要求。三者可有重叠。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-v-investigate\",\"title\":\"动词：向人调查\",\"meaning\":\"向一群人提问或收集有关他们的信息，以了解意见、经历或实际情况。\",\"usageNote\":\"调查对象直接作宾语；说明调查主题时，可用 survey someone about something。\",\"examples\":[{\"id\":\"survey-v-investigate-ex1\",\"senseId\":\"survey-v-investigate\",\"en\":\"The team surveyed local families about the new bus route.\",\"zh\":\"团队就新公交线路询问了当地家庭的意见。\",\"note\":\"local families 是调查对象，about 后接主题。\"},{\"id\":\"survey-v-investigate-ex2\",\"senseId\":\"survey-v-investigate\",\"en\":\"The school surveyed 200 students to find out how they travel to school.\",\"zh\":\"学校调查了200名学生，了解他们如何上学。\",\"note\":\"survey 后直接接接受调查的人；to find out 引出调查目的。\"}],\"patterns\":[{\"en\":\"survey someone about something\",\"zh\":\"就某事调查某人\",\"note\":\"先接调查对象，再用 about 引出调查主题。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"survey customers / residents\",\"zh\":\"调查顾客／居民\",\"note\":\"常用于了解需求、意见或生活情况。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"poll\",\"zh\":\"调查意见\",\"note\":\"侧重意见、偏好或投票倾向；survey 也能调查事实、习惯或经历。\"},{\"en\":\"interview\",\"zh\":\"访谈，采访\",\"note\":\"强调与人交谈获取信息；survey 可通过问卷完成，不要求逐一访谈。\"}],\"contrasting\":[],\"similarNote\":\"这些动词都可涉及向人获取信息，但所问内容和调查方式不完全相同。\",\"contrastingNote\":\"此义没有通用的常用反义词；不开展调查可说 not survey，不能把向受访者提供信息当作其固定反义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-n-measure\",\"title\":\"名词：土地测量，勘测\",\"meaning\":\"为确定地形、位置、尺寸或边界而进行的测量，也可指由此形成的记录或图件。\",\"usageNote\":\"是可数名词，常见于土地、地图和工程语境；不同于询问人们意见的调查。\",\"examples\":[{\"id\":\"survey-n-measure-ex1\",\"senseId\":\"survey-n-measure\",\"en\":\"We need a survey of the land before we can build a garage.\",\"zh\":\"我们需要先对这块土地进行测量，才能建车库。\",\"note\":\"a survey of the land 指土地测量这项工作。\"},{\"id\":\"survey-n-measure-ex2\",\"senseId\":\"survey-n-measure\",\"en\":\"The survey shows exactly where our land ends.\",\"zh\":\"这份测量图准确显示了我们土地的边界位置。\",\"note\":\"此处指呈现土地测量结果的图件或记录。\"}],\"patterns\":[{\"en\":\"a survey of the land / site\",\"zh\":\"对土地／场地的测量\",\"note\":\"of 后接被测量的地点。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a land survey\",\"zh\":\"土地测量\",\"note\":\"用于确定土地的边界、位置或地形等。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"measurement\",\"zh\":\"测量；测量结果\",\"note\":\"范围更广，可用于长度、温度等；land survey 指系统的土地测量。\"}],\"contrasting\":[{\"en\":\"a rough estimate\",\"zh\":\"粗略估计\",\"note\":\"仅在比较确定地块尺寸或边界的方法时，可与系统测量对照。\"}],\"similarNote\":\"measurement 是较宽泛的说法；survey 在此有土地勘测的专业含义。\",\"contrastingNote\":\"粗略估计与实地测量是方法上的对照，不是 survey 在所有语境下的反义。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-v-consider\",\"title\":\"动词：全面考察，通盘考虑\",\"meaning\":\"从整体上考察某种情况、一个领域或一组选择，了解全貌。\",\"usageNote\":\"偏正式，可用于考察各种方案；不一定涉及眼睛观看，也不表示已经作出选择。\",\"examples\":[{\"id\":\"survey-v-consider-ex1\",\"senseId\":\"survey-v-consider\",\"en\":\"Before choosing a flat, we surveyed all the available options.\",\"zh\":\"选公寓前，我们全面考察了所有可选方案。\",\"note\":\"survey the options 表示整体考察各种选择，并不表示此时已经选定。\"},{\"id\":\"survey-v-consider-ex2\",\"senseId\":\"survey-v-consider\",\"en\":\"At the meeting, we surveyed different ways to reduce food waste.\",\"zh\":\"会上，我们全面考察了减少食物浪费的各种办法。\",\"note\":\"被考察的是各种办法，而非眼前的场景。\"}],\"patterns\":[{\"en\":\"survey the options / possibilities\",\"zh\":\"全面考察各种选择／可能性\",\"note\":\"后接需要从整体上了解的方案或可能性。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"survey the situation\",\"zh\":\"全面审视局势\",\"note\":\"强调把握整体情况；语气较正式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"review\",\"zh\":\"审视，重新考虑\",\"note\":\"可用于审视方案或情况，也常带有回顾、重新检查的意味。\"},{\"en\":\"consider\",\"zh\":\"考虑\",\"note\":\"范围更广；survey 更突出对整个范围的考察。\"}],\"contrasting\":[{\"en\":\"focus on one option\",\"zh\":\"集中考虑一个选择\",\"note\":\"在考察范围上，可与纵览全部选择形成对照；两者也可先后进行。\"}],\"similarNote\":\"日常说考虑方案常用 consider 或 review；survey 更突出全面考察，语气偏正式。\",\"contrastingNote\":\"这里只比较考察范围，没有把这些表达当作固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"此义常用于专业场景；survey land 表示勘测土地。\"",
+        "valueJson": "\"此义常用于专业场景。可及物，如 survey land；上下文已说明测量工作时，也可不带宾语，如 The crew spent the morning surveying。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-v-measure-ex3\",\"senseId\":\"survey-v-measure\",\"en\":\"The crew spent the morning surveying.\",\"zh\":\"测量队整个上午都在做土地测量。\",\"note\":\"surveying 后没有宾语，展示 survey 表示从事土地测量时的不及物用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-n-inspection\",\"title\":\"名词：一番察看，环视\",\"meaning\":\"为了解整体情况而作的一番查看。\",\"note\":\"可用 a quick survey of a place。这里没有向人提问；若上下文涉及高处视角，也可能译作俯瞰或纵览。\",\"example\":{\"id\":\"survey-n-inspection-ex1\",\"senseId\":\"survey-n-inspection\",\"en\":\"After a quick survey of the room, I found an empty chair.\",\"zh\":\"快速环视房间后，我找到了一把空椅子。\",\"note\":\"a quick survey 是名词短语，指一番整体察看。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-n-building\",\"title\":\"名词：房屋状况查验\",\"meaning\":\"由专业人员检查房屋的结构或整体状况，也可指相应的检查报告。\",\"note\":\"英国英语中，买房语境下的 a house survey 常指房屋状况检查，不能自动理解为土地测量或问卷调查。\",\"example\":{\"id\":\"survey-n-building-ex1\",\"senseId\":\"survey-n-building\",\"en\":\"The survey found serious problems with the roof.\",\"zh\":\"房屋查验发现屋顶存在严重问题。\",\"note\":\"房屋语境下，survey 可指专业状况查验。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"survey-v-overlook\",\"title\":\"动词：俯瞰，纵览\",\"meaning\":\"从高处整体观看下方的景物。\",\"note\":\"这是整体查看的空间延伸，需结合观察位置判断；不能把所有 survey a place 都译成俯瞰。\",\"example\":{\"id\":\"survey-v-overlook-ex1\",\"senseId\":\"survey-v-overlook\",\"en\":\"From the hilltop, we surveyed the valley below.\",\"zh\":\"我们从山顶俯瞰下方的山谷。\",\"note\":\"from the hilltop 和 below 明确了从高处观看的视角。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"survey-v-examine\"",
+        "valueJson": "\"survey-v-investigate\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"survey 的名词由动词发展而来。词形可联想到“全面查看”，但这种联想只帮助记忆，不等于词源解释。\"",
+        "valueJson": "\"英语动词 survey 来自古法语 surveoir 或 surveer，由 sur / sor（在……上方）和 veoir / veeir（看）组成。英语名词 survey 后由动词转来。现代法语的相关形式是 surveiller，但英语词并非从这个现代法语形式借入。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"surveoir / surveer\",\"meaning\":\"与英语动词 survey 的历史来源有关；现代法语对应形式为 surveiller。\"}]",
+        "valueJson": "[{\"language\":\"古法语\",\"form\":\"surveoir / surveer\",\"meaning\":\"构词成分 sur / sor 表示“在……上方”，veoir / veeir 表示“看”。\"},{\"language\":\"英语（动词）\",\"form\":\"survey\",\"meaning\":\"审视、查看；测量土地。\"},{\"language\":\"英语（名词）\",\"form\":\"survey\",\"meaning\":\"由动词转来的名词，可指调查、综览或土地测量。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史来源记载涉及古法语形式；上面的“全面查看”是现代学习联想，不是对古词的逐字拆解。\"",
+        "valueJson": "\"sur / sor 与 veoir / veeir 是古法语构词成分，不应按现代英语字母硬拆。各个现代义项仍须结合搭配理解，不能一律逐字译成“从上方看”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-survey\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-survey\",\"title\":\"Cambridge Dictionary: survey\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/survey\",\"supports\":[\"名词和动词常用义项\",\"例型搭配和语法用法\",\"词形与发音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: survey（English）\",\"url\":\"https://fr.wiktionary.org/wiki/survey#Anglais\",\"supports\":[\"动词的古法语来源及名词由动词转来\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire：survey（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/survey#Anglais\",\"supports\":[\"名词的调查、综览和土地测量义\",\"动词的审视和土地测量义\",\"名词表示一番察看的用例\",\"英美名词和动词读音\",\"古法语来源、构词成分及名词由动词转来\",\"派生词 surveyor 和 surveying\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1363,
+    "headword": "survey",
+    "meaning_zh": "n. 纵览, 视察, 测量, 俯瞰, 调查\nvt. 审视, 视察, 俯瞰, 通盘考虑\nvi. 测量土地",
+    "phonetic": "英：n. /ˈsɜːveɪ/；v. /səˈveɪ/（部分义项亦读 /ˈsɜːveɪ/）",
+    "pos": "",
+    "forms": []
+  }
+}

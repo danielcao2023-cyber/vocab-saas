@@ -1,0 +1,220 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "bc7d01f95a1bfa75b3c99f1e86330b49be26faa174c739ff9d7ea496034ae032",
+    "executedReviewPromptHash": "bc7d01f95a1bfa75b3c99f1e86330b49be26faa174c739ff9d7ea496034ae032",
+    "reviewHash": "feea060351792c335112ff30927a77f522c8f13d9ad5c2ba76afdad9d64b4653",
+    "wordId": 1501,
+    "inputHash": "9ad6f7705fd40aecfebff85afafbdeec8a6bc1b0ffc2401eed8dcef8262ad7b0",
+    "draftHash": "22f4d628c44ed13d2d47fc1daf074962325f08832f4a39235d37f8e9837dab9c",
+    "finalHash": "7e2df530b46b32218dffeb2347f13a740539227b64b31a72d953aca49ed768ad",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/volleyball#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.126Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 141360,
+        "revisionId": 39034341,
+        "revisionTimestamp": "2025-11-04T22:37:08Z",
+        "sha256": "b80c3eebe04e509c837460e0a8a63f0f735c5ea93b922254e127b5fff43009fa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/volleyball",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:48:10.842Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:54:11.460Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处/sourceIds",
+        "message": "Cambridge 页面未成功取得，不能作为已取得的释义、读音或词族依据。应引用实际取得的英语词条，并移除其未明确支持内容的来源关联。球的可数义及 volleyballer 可凭专业语言知识保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实际取得的词源材料明确说明 volleyball 由英语 volley 和 ball 组成，初稿却仅作现代构词联想且未引用来源。应补入可证实的构词事实；两部分没有历史先后关系，stages 保持为空。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/0",
+        "message": "volleyball net 中的 volleyball 指运动项目，不能用来展示“比赛用球”义。应移至运动义，并为球义补入相应搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/0/note",
+        "message": "指一个具体的球并不自动要求使用 the；the 表示语境中可确定的特指对象。当前说明容易误导冠词使用。"
+      }
+    ],
+    "coverageAssessment": "已核对所取得英语词条中的排球运动义，并依据专业语言知识核对比赛用球的常用可数义；两义均有两个自然原创英中例句，senseId 正确。读音、复数拼写、词族构成及近义和对照表达总体可保留。来源局限是 Cambridge 页面未取得，现有材料未明确列出球义或 volleyballer；补丁已移除这些内容的无依据引用，并补齐有来源的构词说明。",
+    "senseInventory": [
+      {
+        "sense": "排球运动（不可数名词）",
+        "coveredBy": [
+          "volleyball-sport"
+        ],
+        "assessment": "取得的英语词条明确覆盖此义。初稿有两个自然例句，涵盖 play volleyball 和 volleyball team；应将 volleyball net 搭配归入此义。"
+      },
+      {
+        "sense": "排球比赛用的球（可数名词）",
+        "coveredBy": [
+          "volleyball-ball"
+        ],
+        "assessment": "属于常用标准义，初稿两个例句分别覆盖单个球和多个球，可保留。取得的词典正文未明确展开此义，不应归称 Cambridge 已提供支持；需修正冠词说明和搭配归属。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，volleyball 可看作 volley（截击、凌空击球）与 ball（球）的组合，贴合球被隔网击回的运动特点。\"",
+        "valueJson": "\"volleyball 是英语复合词，由 volley（凌空击球）和 ball（球）组成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是帮助理解的现代构词说明，不作为完整历史词源链；不要把联想记忆当作词源。\"",
+        "valueJson": "\"这里说明词的构成；助记中想象的打球场景不是历史命名故事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a volleyball net\",\"zh\":\"排球网\",\"note\":\"volleyball 修饰 net，说明这是排球运动使用的球网。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a volleyball net\",\"zh\":\"排球网\",\"note\":\"常用于描述排球比赛场地的球网。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"inflate a volleyball\",\"zh\":\"给排球充气\",\"note\":\"这里的 volleyball 指具体的球，是可数名词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"这里指一个具体的球，所以用 the volleyball。\"",
+        "valueJson": "\"这里指语境中能确定的那个排球，the 表示特指；首次提到一个尚未确定的球时可用 a volleyball。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: volleyball\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/volleyball\",\"supports\":[\"排球运动与比赛用球的常用含义\",\"名词用法及常见搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：volleyball（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/volleyball#Anglais\",\"supports\":[\"排球运动的名词义\",\"英式与美式读音\",\"英语复合词 volley + ball 的构成\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1501,
+    "headword": "volleyball",
+    "meaning_zh": "n. 排球",
+    "phonetic": "/'vɒlibɒ:l/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,523 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8980cc4c0adb4893832eb83c299f38f1ab9dfef1865f4f86c1b91b92a1ba3a3a",
+    "executedReviewPromptHash": "8980cc4c0adb4893832eb83c299f38f1ab9dfef1865f4f86c1b91b92a1ba3a3a",
+    "reviewHash": "a89cf9d8b53dbc09aaa507a625ed95d7f6bdff8a4cdde37f79eba06f0f2b20f9",
+    "wordId": 1162,
+    "inputHash": "bf5c628ef7657ed1a78b25ab73ad41f1e7781db0117810498f9d45664c69a723",
+    "draftHash": "908ce6cd446d5da3521af29052bcc081d55814d1f69815db268167a1acc6b53f",
+    "finalHash": "96475d0cabd5bf409a0282a19bba50206dbdaa89d219c5e12b301ccb196911a4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ring#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.643Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9761,
+        "revisionId": 39697289,
+        "revisionTimestamp": "2026-07-23T08:34:29Z",
+        "sha256": "6c5e572ca402a001461ab534038cdf63444f94821f59750a18354296becda503",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ring",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:45:08.693Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:53:49.668Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的及物动词义“使铃响、按铃”，以及名词用法 give someone a ring（给某人打电话）。已分别补充完整义项，各含两个原创例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "“戒指”和一般的“环、圈”合并后，每组实际只有一个例句，未达到核心义的例句要求。已拆分，戒指义保留两个例句，环形义补足实体环和圆圈排列的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses；/confusions；/wordFamily",
+        "message": "原稿所有 example 对象均缺少结构要求的 note 属性。已逐项补齐，保留原有正确例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "原稿把“环、戒指”和“响、打电话”串入同一条“弯曲”词源链，不能成立。已将该链限定于环形名词；*hringaz 的字形保留在摘要中，不为摘录未明确释义的中间阶段补造释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms；/lessCommonSenses/0/meaning；/confusions/0",
+        "message": "“不写成 ringed”等说明未限定义项，与“环绕”义的规则变化冲突；“常写作 ringed”又容易暗示可任意换用。已明确声音、电话义用 rang/rung，环绕义用 ringed/ringed，并补入规则词形。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/example；/wordFamily/0/example",
+        "message": "wring 的例句没有 ring，却挂接 ring-v1；ringed planet 表示“有环”，也不对应所挂接的“环绕”动词义。已调整例句，使其实际包含并展示对应义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "词典列出的拳击台、数学环尚未覆盖，声音特质义也未交代。已作为拓展识别义补入，未将数学专门义列为初中核心。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/relatedExpressions",
+        "message": "band 不宜以“宽”作为素圈戒指的常规特征。拆分义项后，circle 和 straight line 的形状比较也应移到环形义，戒指本身不强设反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/usageNote",
+        "message": "a phone ring 可以理解，但不宜作为初学者优先仿用的表达。已改用更自然的 the ring of the phone 和 the phone’s ring。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources；各 sourceIds",
+        "message": "本轮没有 Oxford 正文可供核对。已将能由实际取得的英语词条支持的内容挂接至同一 Wiktionary URL；专业语言知识补充项保留空 sourceIds，来源标签仍为 recommended。"
+      }
+    ],
+    "coverageAssessment": "已核对所附法语维基词典中的英语定义，并区分法语释义语言与英语词条。修订后，响、使铃响、打电话、戒指、环圈、铃声及“一通电话”的常用功能均有至少两个原创例句；环绕、拳击台、数学环和声音特质列为拓展义。已检查拼写、读音、及物性、词形、翻译、例句归属及必填字段。Cambridge 未取得正文，未据其作核验；其他行业义和习语未作穷举。",
+    "senseInventory": [
+      {
+        "sense": "n. 环形物；圈；围成一圈的人或物",
+        "coveredBy": [
+          "ring-n3"
+        ],
+        "assessment": "从戒指义拆出；实体环和圆圈排列各有两个例句。"
+      },
+      {
+        "sense": "n.（数学）环",
+        "coveredBy": [
+          "ring-n6"
+        ],
+        "assessment": "补作专门识别义，含一个准确例句，不列为初中核心。"
+      },
+      {
+        "sense": "n. 戒指",
+        "coveredBy": [
+          "ring-n1"
+        ],
+        "assessment": "独立保留，补足两个具体生活例句。"
+      },
+      {
+        "sense": "n. 拳击台",
+        "coveredBy": [
+          "ring-n5"
+        ],
+        "assessment": "补作拓展义，并说明场地通常为方形。"
+      },
+      {
+        "sense": "n. 铃声；响铃声",
+        "coveredBy": [
+          "ring-n2"
+        ],
+        "assessment": "两个原有例句自然，补齐注释并优化推荐表达。"
+      },
+      {
+        "sense": "n. 声音的特质；语气；听感",
+        "coveredBy": [
+          "ring-n7"
+        ],
+        "assessment": "从一般铃声义区分出来，作为拓展识别义。"
+      },
+      {
+        "sense": "v. 围绕；环绕",
+        "coveredBy": [
+          "ring-v3"
+        ],
+        "assessment": "原有拓展义保留，明确规则变化 ringed—ringed。"
+      },
+      {
+        "sense": "v. 给某人打电话",
+        "coveredBy": [
+          "ring-v2"
+        ],
+        "assessment": "两个生活例句及 ring someone、ring someone up 的句型说明正确。"
+      },
+      {
+        "sense": "v.（铃、电话等）响",
+        "coveredBy": [
+          "ring-v1"
+        ],
+        "assessment": "两个例句自然；不及物用法和不规则词形正确。"
+      },
+      {
+        "sense": "v. 使铃响；按铃；摇铃",
+        "coveredBy": [
+          "ring-v4"
+        ],
+        "assessment": "补足常用及物功能，与 The bell rang 的不及物结构明确区分。"
+      },
+      {
+        "sense": "n.（尤英）一通电话，常用于 give someone a ring",
+        "coveredBy": [
+          "ring-n4"
+        ],
+        "assessment": "补足常见名词功能，含两个自然原创例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作动词时，ring 常表示“铃、电话响”或“给某人打电话”；作名词时，常指“戒指”或“铃声”。动词变化不规则：ring—rang—rung。\"",
+        "valueJson": "\"动词 ring 可表示“（铃、电话）响”“使铃响”或“给某人打电话”，这组用法变为 ring—rang—rung；表示“环绕”时则用 ring—ringed—ringed。名词 ring 常指“戒指”“环、圈”或“铃声”；give someone a ring 还表示“给某人打个电话”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"不规则变化，不写成 ringed。\"",
+        "valueJson": "\"用于“响、使铃响、打电话”这一组动词义；“环绕”义的过去式是 ringed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"常与 have/has/had 连用。\"",
+        "valueJson": "\"用于“响、使铃响、打电话”这一组动词义；常见于 have/has/had rung，及物用法的被动结构用 be rung。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"环绕义的过去式／过去分词\",\"form\":\"ringed\",\"ipa\":\"/rɪŋd/\",\"note\":\"表示“环绕”时采用规则变化 ring—ringed—ringed；-ed 在这里读 /d/，不另加一个音节。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"主语是 bell，rang 表示铃响了，后面不接宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is ringing 表示电话正在响；in the kitchen 说明电话所在的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"ring 后直接接 Grandma，表示给奶奶打电话；这是常见的英式用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rang 是过去式；to ask about the homework 说明打电话的目的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"戒指；环状物\"",
+        "valueJson": "\"戒指\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"戴在手指上的环形饰品；也可指其他环状物。\"",
+        "valueJson": "\"戴在手指上的环形饰品。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples",
+        "expectedValueJson": "[{\"id\":\"ring-n1-ex1\",\"senseId\":\"ring-n1\",\"en\":\"She wears a silver ring on her left hand.\",\"zh\":\"她左手戴着一枚银戒指。\"},{\"id\":\"ring-n1-ex2\",\"senseId\":\"ring-n1\",\"en\":\"The children stood in a ring around the teacher.\",\"zh\":\"孩子们围着老师站成一圈。\"}]",
+        "valueJson": "[{\"id\":\"ring-n1-ex1\",\"senseId\":\"ring-n1\",\"en\":\"She wears a silver ring on her left hand.\",\"zh\":\"她左手戴着一枚银戒指。\",\"note\":\"wear a ring 表示“戴着戒指”；silver 说明戒指的材质。\"},{\"id\":\"ring-n1-ex2\",\"senseId\":\"ring-n1\",\"en\":\"He took off his wedding ring before washing the dishes.\",\"zh\":\"洗碗前，他摘下了结婚戒指。\",\"note\":\"take off one's ring 表示“摘下戒指”；before 明确摘戒指发生在洗碗之前。\"}]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"a ring of people/trees\",\"zh\":\"一圈人／树\",\"note\":\"ring 可指围成一圈的人或物，of 后接构成圆圈的成员。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"band\",\"zh\":\"环；箍；（素圈）戒指\",\"note\":\"作首饰名称时常指简单、宽而平的环形戒指；ring 是更宽泛的说法。\"},{\"en\":\"circle\",\"zh\":\"圆圈\",\"note\":\"强调平面上的圆形或圆圈；ring 可指实体环，也可指围成一圈的人或物。\"}],\"contrasting\":[{\"en\":\"straight line\",\"zh\":\"直线\",\"note\":\"在形状描述中与 ring 所表示的圆环或圆圈对照。\"}],\"similarNote\":\"band 常指简洁的环形饰品；circle 强调平面圆形。\",\"contrastingNote\":\"straight line 只在描述形状时与圆环形状对照。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"band\",\"zh\":\"素圈戒指\",\"note\":\"用于首饰时常指素圈式戒指，如 wedding band；ring 能涵盖更多款式。\"}],\"contrasting\":[],\"similarNote\":\"band 只有在首饰语境中才与这里的 ring 接近；它也有乐队、带子等其他含义。\",\"contrastingNote\":\"戒指是具体物品名称，没有通用的反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"可数名词；说听见电话铃声，可用 the ring of the phone 或 a phone ring。\"",
+        "valueJson": "\"可数名词，可指一声或一次响铃；描述某个电话的铃声，常说 the ring of the phone 或 the phone’s ring。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"ring 在这里是名词；of the doorbell 说明响声来自门铃。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a ring 表示一声铃响；from the next room 说明声音传来的方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-v4\",\"title\":\"使铃响；按铃；摇铃\",\"meaning\":\"通过按、敲或摇等动作，使铃发出声音。\",\"usageNote\":\"这是及物用法，ring 后直接接铃作宾语；过去式 rang，过去分词 rung。比较：She rang the bell 表示她使铃响；The bell rang 只说明铃响了。\",\"examples\":[{\"id\":\"ring-v4-ex1\",\"senseId\":\"ring-v4\",\"en\":\"Please ring the doorbell when you arrive.\",\"zh\":\"你到了以后请按门铃。\",\"note\":\"ring the doorbell 表示“按门铃”；when you arrive 说明按铃的时间。\"},{\"id\":\"ring-v4-ex2\",\"senseId\":\"ring-v4\",\"en\":\"The teacher rang a small bell to get the children’s attention.\",\"zh\":\"老师摇响了一只小铃，让孩子们注意听。\",\"note\":\"rang 后接 a small bell 作宾语；to get the children’s attention 说明摇铃的目的。\"}],\"patterns\":[{\"en\":\"ring + a bell/the doorbell\",\"zh\":\"使铃响／按门铃\",\"note\":\"ring 是及物动词，后面直接接铃作宾语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"ring the doorbell\",\"zh\":\"按门铃\",\"note\":\"常用于到访某人家或请屋里的人开门。\",\"kind\":\"common-collocation\"},{\"en\":\"ring the school bell\",\"zh\":\"使学校的铃响\",\"note\":\"强调操作或敲响铃的动作；the school bell rang 则只说明铃响。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"press the doorbell\",\"zh\":\"按门铃\",\"note\":\"用于按钮式门铃，强调按下按钮；ring the doorbell 侧重使门铃响。\"},{\"en\":\"make a bell ring\",\"zh\":\"让铃响起来\",\"note\":\"表达同一基本结果；make 后接宾语 a bell，再接不带 to 的 ring。\"}],\"contrasting\":[{\"en\":\"silence a bell/alarm\",\"zh\":\"使铃声／警报声停止\",\"note\":\"用于铃或警报已经发声、有人使其停止的场景，与使铃响的动作形成对照。\"}],\"similarNote\":\"press the doorbell 限于按钮式门铃；make a bell ring 是更一般的结果表达。\",\"contrastingNote\":\"silence a bell/alarm 在制止现有响声的语境中与使铃响对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-n3\",\"title\":\"环；圈；围成一圈的人或物\",\"meaning\":\"中间有空处的环形物，也指人或物围成的圆圈。\",\"usageNote\":\"可数名词。实体环可说 a metal ring；人或物围成一圈常用 in a ring 或 a ring of people。\",\"examples\":[{\"id\":\"ring-n3-ex1\",\"senseId\":\"ring-n3\",\"en\":\"The curtain hangs from small metal rings.\",\"zh\":\"窗帘挂在小金属环上。\",\"note\":\"rings 指悬挂窗帘用的实体圆环，metal 说明材质。\"},{\"id\":\"ring-n3-ex2\",\"senseId\":\"ring-n3\",\"en\":\"Put the keys on this metal ring.\",\"zh\":\"把钥匙串到这个金属环上。\",\"note\":\"这里的 ring 是串钥匙用的环；on 表示把钥匙装到环上。\"},{\"id\":\"ring-n3-ex3\",\"senseId\":\"ring-n3\",\"en\":\"The children stood in a ring around the teacher.\",\"zh\":\"孩子们围着老师站成一圈。\",\"note\":\"in a ring 描述孩子们的圆圈排列；around the teacher 说明他们围着谁。\"},{\"id\":\"ring-n3-ex4\",\"senseId\":\"ring-n3\",\"en\":\"They placed the chairs in a ring.\",\"zh\":\"他们把椅子摆成一圈。\",\"note\":\"in a ring 也能描述物品的排列，不限于人。\"}],\"patterns\":[{\"en\":\"a ring of people/trees\",\"zh\":\"一圈人／树\",\"note\":\"of 后接构成圆圈的人或物。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a metal ring\",\"zh\":\"金属环\",\"note\":\"指金属制成的环形物，具体用途由上下文说明。\",\"kind\":\"common-collocation\"},{\"en\":\"stand in a ring\",\"zh\":\"站成一圈\",\"note\":\"in a ring 表示站立时形成圆圈的排列方式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"circle\",\"zh\":\"圆圈；圆形\",\"note\":\"强调圆形或圆圈排列；ring 还常指中间空的实体环。\"}],\"contrasting\":[{\"en\":\"straight line\",\"zh\":\"直线；直线排列\",\"note\":\"只在比较形状或排列方式时与 ring 对照，如站成一排与站成一圈。\"}],\"similarNote\":\"circle 与 ring 在圆圈排列的语境中接近，实体金属环通常用 ring。\",\"contrastingNote\":\"straight line 是形状或排列方式的对照，不是所有 ring 用法的反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-n4\",\"title\":\"一通电话\",\"meaning\":\"一次电话联系，尤其见于英式口语 give someone a ring。\",\"usageNote\":\"这里的 ring 是可数名词，give someone a ring 相当于 call someone。这个短语表示给某人打电话，不是给对方一枚戒指。\",\"examples\":[{\"id\":\"ring-n4-ex1\",\"senseId\":\"ring-n4\",\"en\":\"Give me a ring when you get home.\",\"zh\":\"你到家后给我打个电话。\",\"note\":\"give me a ring 是常见的英式口语表达；when you get home 说明打电话的时间。\"},{\"id\":\"ring-n4-ex2\",\"senseId\":\"ring-n4\",\"en\":\"I’ll give the dentist a ring tomorrow morning.\",\"zh\":\"明天上午我会给牙医打个电话。\",\"note\":\"give 后接联系人 the dentist，再接 a ring；ring 在这里是名词。\"}],\"patterns\":[{\"en\":\"give someone a ring\",\"zh\":\"给某人打个电话\",\"note\":\"someone 是联系对象；a ring 在这个短语中表示一次电话联系。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"give someone a quick ring\",\"zh\":\"给某人打个简短的电话\",\"note\":\"quick 修饰名词 ring，说明通话或联系很简短。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"give someone a call\",\"zh\":\"给某人打个电话\",\"note\":\"与 give someone a ring 意思接近，英美英语都常用。\"},{\"en\":\"call someone\",\"zh\":\"给某人打电话\",\"note\":\"这里 call 是动词，直接接联系人；give someone a ring 中 ring 是名词。\"}],\"contrasting\":[],\"similarNote\":\"give someone a call 最通用；give someone a ring 带有较明显的英式口语色彩。\",\"contrastingNote\":\"一通电话没有固定的反义词；需要否定打电话这一动作时，在相应句子中否定 give。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"形成一圈围住某地或某物；过去式和过去分词常写作 ringed。\"",
+        "valueJson": "\"围成一圈环绕某地或某物；此义的过去式和过去分词均为 ringed。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"ringed 表示树木环绕小湖；这是“环绕”义的规则过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-n5\",\"title\":\"拳击台\",\"meaning\":\"进行拳击比赛的、四周有围绳的场地。\",\"note\":\"这是体育用法。拳击台虽然叫 ring，通常是方形的，不宜按字面想成圆形场地。\",\"example\":{\"id\":\"ring-n5-ex1\",\"senseId\":\"ring-n5\",\"en\":\"The two boxers stepped into the ring.\",\"zh\":\"两名拳击手走上了拳击台。\",\"note\":\"the ring 在拳击语境中指比赛场地；step into the ring 表示进入场地。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-n6\",\"title\":\"（数学）环\",\"meaning\":\"具有加法和乘法两种运算，并满足特定规则的代数结构。\",\"note\":\"这是数学专门术语，初中阶段只需知道它与日常的戒指、铃声不同。\",\"example\":{\"id\":\"ring-n6-ex1\",\"senseId\":\"ring-n6\",\"en\":\"The integers form a ring under addition and multiplication.\",\"zh\":\"整数在加法和乘法运算下构成一个环。\",\"note\":\"这里的 ring 是代数术语；under addition and multiplication 说明所采用的运算。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ring-n7\",\"title\":\"声音的特质；语气；听感\",\"meaning\":\"声音或话语呈现出的某种音色、语气或听起来给人的感觉。\",\"note\":\"常见形式是 have a ... ring to it；例如 a cheerful ring 表示声音中透出欢快的感觉。\",\"example\":{\"id\":\"ring-n7-ex1\",\"senseId\":\"ring-n7\",\"en\":\"Her voice had a cheerful ring to it.\",\"zh\":\"她的声音里透着欢快。\",\"note\":\"这里的 ring 描述声音的特质，不是电话或门铃的一声响。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"ring 是原形，rang 是一般过去式，rung 是过去分词。\"",
+        "valueJson": "\"在“响、使铃响、打电话”这一组动词义中，ring 是原形，rang 是过去式，rung 是过去分词；“环绕”义另用规则形式 ringed。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rings 是第三人称单数形式；本句用一般现在时说明中午响铃的规律。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"本句叙述昨天发生的响铃，用一般过去式 rang。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"has rung 构成现在完成时；twice 表示两次。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记成 ring—rang—rung：现在原形、过去 rang、完成时 rung。\"",
+        "valueJson": "\"声音、电话义记 ring—rang—rung，完成时用 have/has/had rung；环绕义记 ring—ringed—ringed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rang 是 ring 的过去式，表示学校的铃响了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"ring-c5\",\"senseId\":\"ring-v1\",\"en\":\"Please wring the wet shirt out.\",\"zh\":\"请把湿衬衫拧干。\"}",
+        "valueJson": "{\"id\":\"ring-c5\",\"senseId\":\"ring-v1\",\"en\":\"I was wringing out a wet towel when the phone rang.\",\"zh\":\"我正在拧干一条湿毛巾，这时电话响了。\",\"note\":\"wringing out 来自 wring out（拧干）；rang 是 ring 的过去式，表示电话响。原形 wring 与 ring 同音。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"ring 的名词和表示声音、打电话的动词有古老的日耳曼语来源；给出的历史词源记录把其更早来源追溯到原始日耳曼语 *hringaz，并进一步联系到印欧语词根 *sker-（“弯曲”）。这些是历史来源关系，不应当作现代英语的拆词规则。\"",
+        "valueJson": "\"表示“环、圈、戒指”的 ring 可追溯到原始日耳曼语 *hringaz，并进一步与意为“弯曲”的印欧语词根 *sker- 相联系。这条历史线解释的是环形名词这一组，不应把“铃响、打电话”也解释成从“弯曲”发展而来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始印欧语\",\"form\":\"*sker-\",\"meaning\":\"弯曲\"},{\"language\":\"原始日耳曼语\",\"form\":\"*hringaz\",\"meaning\":\"环、圈\"},{\"language\":\"英语\",\"form\":\"ring\",\"meaning\":\"戒指、环；铃声响或打电话\"}]",
+        "valueJson": "[{\"language\":\"原始印欧语\",\"form\":\"*sker-\",\"meaning\":\"弯曲\"},{\"language\":\"英语\",\"form\":\"ring\",\"meaning\":\"环；圈；戒指\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史记录支持从原始印欧语词根到原始日耳曼语形式的来源关系；现代英语 ring 不能按这些形式逐段拼拆。\"",
+        "valueJson": "\"这是一条概略的历史来源线，其间经过原始日耳曼语形式 *hringaz；* 标示历史语言学中的重构形式。这些历史形式不是现代英语的拆词单位，也不用于解释“铃响、打电话”这一组含义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; verb (past tense/past participle)\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"ring-family-1\",\"senseId\":\"ring-v3\",\"en\":\"The ringed planet looked bright through the telescope.\",\"zh\":\"透过望远镜看，那颗有环的行星显得很明亮。\"}",
+        "valueJson": "{\"id\":\"ring-family-1\",\"senseId\":\"ring-v3\",\"en\":\"The village is ringed by hills.\",\"zh\":\"村庄四周环山。\",\"note\":\"ringed 在这里是“环绕”义的过去分词；be ringed by 表示“被……环绕”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: ring\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/ring\",\"supports\":[\"英美发音与词形\",\"动词表示铃声响或打电话\",\"名词表示戒指、环或铃声\",\"常见搭配与用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionary: ring（English）\",\"url\":\"https://fr.wiktionary.org/wiki/ring#Anglais\",\"supports\":[\"历史词源记录：原始日耳曼语 *hringaz 与印欧语词根 *sker- 的关系\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"维基词典法语站：ring（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/ring#Anglais\",\"supports\":[\"英语名词义：环、戒指、拳击台、声音特质及数学专门义“环”\",\"英语动词义：环绕、打电话、响\",\"声音和电话义的 ring—rang—rung，以及环绕义的规则变化\",\"英语读音 /rɪŋ/ 及与 wring 同音\",\"环形名词的历史来源形式 *hringaz 与 *sker-（弯曲）\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1162,
+    "headword": "ring",
+    "meaning_zh": "v. （铃、电话）响；打电话\nn. 戒指；铃声",
+    "phonetic": "/riŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

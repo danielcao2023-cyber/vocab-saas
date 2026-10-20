@@ -1,0 +1,547 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ca80264b93806105adc1e2bd780a17da7a89db9b20ef42ad246df488cb20a301",
+    "executedReviewPromptHash": "ca80264b93806105adc1e2bd780a17da7a89db9b20ef42ad246df488cb20a301",
+    "reviewHash": "45a5b854e9e9a596a3fbc98b268293d94ed1aff6a91868cdf3655aa03567cd79",
+    "wordId": 534,
+    "inputHash": "80751196cc32ce33195f537579a0dd976d456ea32496923f7b9e84bc1e65a8a8",
+    "draftHash": "ec408d45756cee3667a6962633246c1fa5e1c71ce83fca9dc1d59f0db42e2ed6",
+    "finalHash": "f6858082b7663b54172b2ac8722810b070b32a2b8f7504415a3a6900acc2283e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/focus#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.109Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 52759,
+        "revisionId": 39694245,
+        "revisionTimestamp": "2026-07-22T06:37:22Z",
+        "sha256": "cb2657fa34d039c1f1884df8a4d948700f65a2e121f374771dd478bcf11f1527",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/focus",
+        "section": "focus etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "71e9ea8f09d0e0f592d133b15332cd4deae81babf224635d72049354b3996949",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "71e9ea8f09d0e0f592d133b15332cd4deae81babf224635d72049354b3996949",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/534.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/focus",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:38:36.079Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:50:11.919Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/confusions、/wordFamily 中的原有例句",
+        "message": "原有例句均缺少目标结构必填的 note 字段，须全部补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及 oxford_focus 引用",
+        "message": "实际来源材料中没有 Oxford 词条内容，不能以它承载现有释义和读音的来源引用。应改用已提供的英语维基词典词条；其未直接支持的专业语言知识可不挂来源 ID。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少常用名词义“专注、注意力的集中”和“影像清晰的状态”。in focus、out of focus、come into focus 中的 focus 是名词，不能只放在动词义下替代名词教学。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "仅教人的专注，未充分覆盖课程、会议等作主语时“以……为重点”的常用功能，也未说明把目光集中的用法。须补充相应说明和例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1、/senses/0/collocations/1",
+        "message": "bring attention into focus 不是表达“集中注意力”的自然常用搭配；名词义下的 focus on 又明确按动词解释。应换成真正的名词结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2、/lessCommonSenses/0",
+        "message": "调焦不等于调整焦距，focus on 摄影目标也不只是把镜头转向目标。现有第二例实际使用名词，未展示不及物动词；“使光线汇聚”也没有对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "计算机义标题把输入焦点误说成窗口或控件本身；尚遗漏材料中的作品主线／连贯性和语言学信息焦点义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "材料没有把近代早期数学用法明确限定为英语阶段，不宜画成该语言阶段的历史箭头。词源的不确定性应具体指向炉灶与数学焦点之间的比喻解释及更深来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily",
+        "message": "focused 重复列出；focusing 本身是 -ing 形式，并不独立表示“正在”。应区分词形、进行时和形容词，并可用真实的否定派生词 unfocused 替换重复项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1、/senses/1/collocations/0、部分中文说明",
+        "message": "“旧音标不准确”缺少具体依据且不适合学生正文；focus carefully 不宜作为重点常用搭配。另需调整米娅例句的中文，并避免把 side issue 一概说成不重要。"
+      }
+    ],
+    "coverageAssessment": "已核对各名词义、及物与不及物动词功能。补丁补齐“专注”、影像清晰状态和非人主语的重点义，各核心义均有至少两个例句；光线汇聚、作品主线、计算机与语言学用法作简要补充。数学焦点仅提示概念，不展开专门定义；双写变形和部分派生用法依据通行语言知识说明。",
+    "senseInventory": [
+      {
+        "sense": "名词：关注中心、主要目标或重点",
+        "coveredBy": [
+          "sense-noun-main"
+        ],
+        "assessment": "原有两例有效；修正名词结构及搭配。"
+      },
+      {
+        "sense": "名词：活动汇集的中心",
+        "coveredBy": [
+          "sense-noun-main"
+        ],
+        "assessment": "补充社区活动中心的例句，与关注重点同组说明。"
+      },
+      {
+        "sense": "名词：专注、注意力集中的状态",
+        "coveredBy": [
+          "sense-noun-concentration"
+        ],
+        "assessment": "新增核心义，提供两个例句并说明通常不可数。"
+      },
+      {
+        "sense": "名词：影像清晰成像的状态",
+        "coveredBy": [
+          "sense-noun-clarity"
+        ],
+        "assessment": "新增核心义，正确归属 in focus、out of focus 和 come into focus。"
+      },
+      {
+        "sense": "名词（数学、物理）：焦点",
+        "coveredBy": [
+          "sense-noun-optics"
+        ],
+        "assessment": "保留光线汇聚例句，提示数学用法，并与 focal length 区分。"
+      },
+      {
+        "sense": "名词：作品重点明确、主线连贯的状态",
+        "coveredBy": [
+          "sense-noun-coherence"
+        ],
+        "assessment": "新增较少见义，用电影评价展示。"
+      },
+      {
+        "sense": "名词（计算机）：输入焦点",
+        "coveredBy": [
+          "sense-noun-computing"
+        ],
+        "assessment": "修正为接收输入的状态，不等同于窗口、控件或文字被选中。"
+      },
+      {
+        "sense": "名词（语言学）：信息焦点",
+        "coveredBy": [
+          "sense-noun-grammar"
+        ],
+        "assessment": "新增较少见义，用问答语境解释。"
+      },
+      {
+        "sense": "动词：集中注意力或目光",
+        "coveredBy": [
+          "sense-verb-concentrate"
+        ],
+        "assessment": "保留两个专注例句，补充 gaze 作宾语的视觉注意用法。"
+      },
+      {
+        "sense": "动词：以……为重点、围绕某事展开",
+        "coveredBy": [
+          "sense-verb-concentrate"
+        ],
+        "assessment": "补充课程和讨论作主语的两个例句。"
+      },
+      {
+        "sense": "动词：调焦、对焦，及物或不及物",
+        "coveredBy": [
+          "sense-verb-optics"
+        ],
+        "assessment": "改为两个真正使用动词的例句，分别展示及物和不及物功能。"
+      },
+      {
+        "sense": "动词：使光线或光束汇聚",
+        "coveredBy": [
+          "sense-verb-converge"
+        ],
+        "assessment": "独立列为科学语境补充义，避免并入调焦却没有对应示例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 focus 常指“重点、中心”；动词 focus on 把注意力放在某事上，focus a camera 则是“给相机调焦”。\"",
+        "valueJson": "\"名词 focus 可指“重点、专注”或影像的清晰状态；动词 focus on 表示“专注于／以……为重点”，focus a camera 表示“给相机调焦”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；英式和美式首元音不同。\"",
+        "valueJson": "\"英式 /əʊ/ 和美式 /oʊ/ 是常见的口音差别；词尾 /s/ 不读成 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"focuses\",\"ipa\":\"/ˈfəʊ.kəsɪz/; /ˈfoʊ.kəsɪz/\",\"note\":\"与名词复数 focuses 同形同音；foci 只能作名词复数，不能作动词形式。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可说 the focus of ...；表示把注意力放在某事上时，常用动词 focus on。\"",
+        "valueJson": "\"the focus of ... 表示……的重点；a focus on ... 表示对某事的重点关注。表示活动汇集的中心时，也可用 a focus for ...。这些结构中的 focus 都是名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples",
+        "expectedValueJson": "[{\"id\":\"ex-focus-n1\",\"senseId\":\"sense-noun-main\",\"en\":\"The focus of our class project is clean water.\",\"zh\":\"我们班级项目的重点是清洁用水。\"},{\"id\":\"ex-focus-n2\",\"senseId\":\"sense-noun-main\",\"en\":\"After lunch, the focus returned to the science fair.\",\"zh\":\"午饭后，大家的注意力又回到了科学展览上。\"}]",
+        "valueJson": "[{\"id\":\"ex-focus-n1\",\"senseId\":\"sense-noun-main\",\"en\":\"The focus of our class project is clean water.\",\"zh\":\"我们班级项目的重点是清洁用水。\",\"note\":\"the focus of ... 用名词说明项目的重点。\"},{\"id\":\"ex-focus-n2\",\"senseId\":\"sense-noun-main\",\"en\":\"After lunch, the focus returned to the science fair.\",\"zh\":\"午饭后，大家的注意力又回到了科学展览上。\",\"note\":\"the focus 指当时关注的主题；returned to 表示重新回到该主题。\"},{\"id\":\"ex-focus-n-activity\",\"senseId\":\"sense-noun-main\",\"en\":\"The library has become a focus for community activities.\",\"zh\":\"图书馆已成为社区活动的中心。\",\"note\":\"a focus for ... 指活动汇集的中心，不是个人专注的状态。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"bring attention into focus\",\"zh\":\"让注意力集中起来\",\"note\":\"表示把注意力从分散状态转到重要事情上。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a focus on + 名词／动名词\",\"zh\":\"对……的重点关注\",\"note\":\"focus 在这里是名词，如 a focus on safety 表示对安全的重视。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"focus on + 名词／动名词\",\"zh\":\"把重点放在……上\",\"note\":\"这是相关动词的常用搭配；on 后接名词或动名词。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"the focus of attention\",\"zh\":\"关注的焦点\",\"note\":\"指最受关注的人、事或物；focus 在这里是名词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"只在“讨论重点”语境中与 focus 对照，指不重要的旁支问题。\"",
+        "valueJson": "\"在讨论中指相对于主问题较次要的旁支问题，只与 focus 的“讨论重点”义作对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：集中注意力\"",
+        "valueJson": "\"动词：专注；以……为重点\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把注意力放在某项任务或某件事上；也可表示注意力集中于某处。\"",
+        "valueJson": "\"把注意力或目光集中在某事物上；也指课程、讨论、工作等以某事为重点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"focus on 是最常见结构。focus on 后接名词或动名词；focus attention on something 也很常用。\"",
+        "valueJson": "\"focus on 常接名词或动名词。人作主语时常指专注；课程、讨论等作主语时常指以某事为重点。focus + attention / gaze / efforts + on ... 是及物结构，分别表示集中注意力、目光或精力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"ex-focus-v1\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Please focus on the teacher’s instructions.\",\"zh\":\"请把注意力放在老师的指示上。\"},{\"id\":\"ex-focus-v2\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Mia focused on finishing one question at a time.\",\"zh\":\"米娅专心一次完成一道题。\"}]",
+        "valueJson": "[{\"id\":\"ex-focus-v1\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Please focus on the teacher’s instructions.\",\"zh\":\"请把注意力放在老师的指示上。\",\"note\":\"focus on 后接名词短语，提醒听者集中注意力。\"},{\"id\":\"ex-focus-v2\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Mia focused on finishing one question at a time.\",\"zh\":\"米娅专心答题，一次只做一道。\",\"note\":\"on 后的 finishing 是动名词；one question at a time 表示一次处理一道题。\"},{\"id\":\"ex-focus-v-topic-1\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"This week’s lessons focus on road safety.\",\"zh\":\"这周的课重点讲道路安全。\",\"note\":\"课程作主语，focus on 表示以某个主题为重点。\"},{\"id\":\"ex-focus-v-topic-2\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Our discussion focused on plans for the school trip.\",\"zh\":\"我们的讨论重点是学校出游的计划。\",\"note\":\"讨论作主语，说明主要涉及的内容；不表示人的心理专注状态。\"},{\"id\":\"ex-focus-v-gaze\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"Leo focused his gaze on a bird outside the window.\",\"zh\":\"利奥凝神望着窗外的一只鸟。\",\"note\":\"focus one’s gaze on ... 表示把目光集中在……上；gaze 是直接宾语。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"focus carefully\",\"zh\":\"认真集中注意力\",\"note\":\"副词 carefully 修饰 focus，说明专注的方式。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"focus your efforts on ...\",\"zh\":\"把精力集中在……上\",\"note\":\"efforts 作直接宾语，on 引出投入精力的目标。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"调节镜头或光学设备，使影像清楚；也可使光线集中到一点。\"",
+        "valueJson": "\"调节镜头或光学设备，使影像清楚。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"表示给相机或镜头调焦时，focus 可作及物动词，也常用 focus on；表示影像清晰时常说 be in focus。\"",
+        "valueJson": "\"focus a camera / lens 是及物用法；相机作主语时也可不带宾语。focus (the camera) on + 目标 表示对着目标对焦，使其影像清楚。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples",
+        "expectedValueJson": "[{\"id\":\"ex-focus-v3\",\"senseId\":\"sense-verb-optics\",\"en\":\"I focused the camera before taking the photo.\",\"zh\":\"拍照前，我调好了相机的焦距。\"},{\"id\":\"ex-focus-v4\",\"senseId\":\"sense-verb-optics\",\"en\":\"The sign came into focus as the bus moved closer.\",\"zh\":\"公交车驶近时，标牌逐渐变清晰了。\"}]",
+        "valueJson": "[{\"id\":\"ex-focus-v3\",\"senseId\":\"sense-verb-optics\",\"en\":\"I focused the camera before taking the photo.\",\"zh\":\"拍照前，我给相机调好了焦。\",\"note\":\"focus 是及物动词，the camera 是宾语；这里表示对焦，不是变焦。\"},{\"id\":\"ex-focus-v4\",\"senseId\":\"sense-verb-optics\",\"en\":\"The camera won’t focus in the dark.\",\"zh\":\"这台相机在黑暗中无法对焦。\",\"note\":\"focus 在这里不带宾语，说明相机能否完成对焦。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"focus on + 目标\",\"zh\":\"把镜头对准……\",\"note\":\"在摄影语境中，on 后接要对准的对象。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"focus on + 目标\",\"zh\":\"对着……对焦\",\"note\":\"在摄影语境中，on 后接对焦目标，强调使目标影像清晰，不只是改变镜头方向。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations",
+        "expectedValueJson": "[{\"en\":\"in focus\",\"zh\":\"清晰对焦的\",\"note\":\"常用 be in focus 描述照片或影像清楚。\",\"kind\":\"fixed-expression\"},{\"en\":\"out of focus\",\"zh\":\"失焦的；模糊的\",\"note\":\"描述影像没有清楚对焦，与 in focus 构成对照。\",\"kind\":\"fixed-expression\"}]",
+        "valueJson": "[{\"en\":\"focus automatically\",\"zh\":\"自动对焦\",\"note\":\"常以相机为主语，表示设备自动完成对焦。\",\"kind\":\"common-collocation\"},{\"en\":\"focus manually\",\"zh\":\"手动对焦\",\"note\":\"表示由使用者手动调焦，与自动对焦相对。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"描述镜头没有对准而形成的模糊状态。\"",
+        "valueJson": "\"描述未清楚对焦造成的模糊状态；镜头即使朝向目标，也可能失焦。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-noun-concentration\",\"title\":\"名词：专注、注意力的集中\",\"meaning\":\"注意力集中在某事上的状态或能力，通常用作不可数名词。\",\"usageNote\":\"lose focus 表示失去专注，maintain focus 表示保持专注。这里谈的是专注状态；the focus of ... 则常用来说明关注的对象或重点。\",\"examples\":[{\"id\":\"ex-focus-n-concentration-1\",\"senseId\":\"sense-noun-concentration\",\"en\":\"I lose focus when my phone keeps buzzing.\",\"zh\":\"手机一直嗡嗡响时，我就无法专心。\",\"note\":\"lose focus 中 focus 是不可数名词，表示专注状态。\"},{\"id\":\"ex-focus-n-concentration-2\",\"senseId\":\"sense-noun-concentration\",\"en\":\"Solving this puzzle takes patience and focus.\",\"zh\":\"解这道谜题需要耐心和专注。\",\"note\":\"focus 与 patience 并列作名词，不表示某个具体的关注对象。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"maintain focus\",\"zh\":\"保持专注\",\"note\":\"focus 通常不加 a，也不用复数。\",\"kind\":\"common-collocation\"},{\"en\":\"lose focus\",\"zh\":\"失去专注\",\"note\":\"表示注意力不再集中。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"concentration\",\"zh\":\"专心、集中注意力\",\"note\":\"与本义很接近，常强调持续投入精力。\"},{\"en\":\"attention\",\"zh\":\"注意力\",\"note\":\"范围较广；focus 通常更突出注意力集中、方向明确。\"}],\"contrasting\":[{\"en\":\"distraction\",\"zh\":\"分心\",\"note\":\"在注意力语境中与专注状态相对，也可指造成分心的事物。\"},{\"en\":\"inattention\",\"zh\":\"不专心、未留意\",\"note\":\"强调没有留意或不够专心，不用于光学焦点义。\"}],\"similarNote\":\"这些词只在注意力语境中接近；attention 不一定表示高度或持续的专注。\",\"contrastingNote\":\"distraction 和 inattention 对照的是人的注意状态，不是 focus 的所有名词义。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-noun-clarity\",\"title\":\"名词：影像清晰的状态\",\"meaning\":\"影像清楚成像的状态，常见于 in focus、out of focus 等表达。\",\"usageNote\":\"in focus 表示对焦清晰，out of focus 表示失焦；come into focus 表示影像变得清楚。这些表达中的 focus 都是名词。\",\"examples\":[{\"id\":\"ex-focus-n-clarity-1\",\"senseId\":\"sense-noun-clarity\",\"en\":\"The sign came into focus as the bus moved closer.\",\"zh\":\"公交车驶近时，标牌逐渐变清晰了。\",\"note\":\"come into focus 中 focus 是名词，表示影像变清楚。\"},{\"id\":\"ex-focus-n-clarity-2\",\"senseId\":\"sense-noun-clarity\",\"en\":\"The photo is out of focus, so I can’t read the street name.\",\"zh\":\"照片没有对好焦，所以我看不清街道名称。\",\"note\":\"out of focus 指没有清楚对焦，不是说目标不在画面中心。\"}],\"patterns\":[{\"en\":\"come into focus\",\"zh\":\"变得清晰\",\"note\":\"这里用来描述影像逐渐清楚。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"in focus\",\"zh\":\"对焦清晰的\",\"note\":\"常用 be in focus 描述照片或影像清楚。\",\"kind\":\"fixed-expression\"},{\"en\":\"out of focus\",\"zh\":\"失焦的、模糊的\",\"note\":\"描述未清楚对焦的状态，与 in focus 相对。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sharpness\",\"zh\":\"清晰度\",\"note\":\"描述影像细节是否清楚；也可受图像处理等因素影响，不只取决于对焦。\"}],\"contrasting\":[{\"en\":\"blurriness\",\"zh\":\"模糊\",\"note\":\"描述影像不清楚；失焦、手抖或物体运动都可能造成模糊。\"}],\"similarNote\":\"sharpness 只在影像清晰度语境中与本义接近。\",\"contrastingNote\":\"blurriness 的原因比失焦更广，不能把所有模糊都归因于没有对好焦。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"sense-noun-optics\",\"title\":\"名词：焦点、焦距\",\"meaning\":\"光线汇聚的位置；在摄影中也可指镜头对焦的状态或距离。\",\"note\":\"这是科学和摄影语境中的用法；日常学习先掌握“重点、注意力中心”。\",\"example\":{\"id\":\"ex-focus-n3\",\"senseId\":\"sense-noun-optics\",\"en\":\"The lens brings the light to a single focus.\",\"zh\":\"镜头使光线汇聚到一个焦点。\"},\"sourceIds\":[\"oxford_focus\"]}",
+        "valueJson": "{\"id\":\"sense-noun-optics\",\"title\":\"名词（数学、物理）：焦点\",\"meaning\":\"物理中指光线等汇聚的点；数学中如椭圆也有专门定义的焦点。\",\"note\":\"科学语境中常见复数 foci。摄影中的“焦距”通常用 focal length，应与焦点、对焦状态区分。\",\"example\":{\"id\":\"ex-focus-n3\",\"senseId\":\"sense-noun-optics\",\"en\":\"The lens brings the light to a single focus.\",\"zh\":\"镜头使光线汇聚到一个焦点。\",\"note\":\"a single focus 指一个汇聚点，不表示镜头的焦距。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"sense-noun-computing\",\"title\":\"名词：当前选中的窗口或控件\",\"meaning\":\"电脑上当前接收键盘输入的窗口或控件状态。\",\"note\":\"主要见于计算机说明；初中日常交流中不常用。\",\"example\":{\"id\":\"ex-focus-n4\",\"senseId\":\"sense-noun-computing\",\"en\":\"Click the search box to give it focus.\",\"zh\":\"点击搜索框，让它成为当前输入目标。\"},\"sourceIds\":[\"oxford_focus\"]}",
+        "valueJson": "{\"id\":\"sense-noun-computing\",\"title\":\"名词（计算机）：输入焦点\",\"meaning\":\"窗口或控件当前接收键盘等用户输入的状态。\",\"note\":\"获得输入焦点不一定意味着其中的文字已被选中或高亮。\",\"example\":{\"id\":\"ex-focus-n4\",\"senseId\":\"sense-noun-computing\",\"en\":\"Click the search box to give it focus.\",\"zh\":\"点击搜索框，让它成为当前输入目标。\",\"note\":\"give it focus 表示让搜索框接收接下来的键盘输入。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-verb-converge\",\"title\":\"动词：使光线汇聚\",\"meaning\":\"使光线或光束集中到某一点或小区域。\",\"note\":\"这是及物用法，常用 focus + 光线 + on / onto + 位置。\",\"example\":{\"id\":\"ex-focus-v-converge\",\"senseId\":\"sense-verb-converge\",\"en\":\"A magnifying glass can focus sunlight onto a small spot.\",\"zh\":\"放大镜能把阳光聚集在一个小点上。\",\"note\":\"sunlight 是直接宾语；这里表示使光线汇聚，不是给相机调焦。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-noun-coherence\",\"title\":\"名词：作品的明确主线\",\"meaning\":\"电影、游戏等作品具有清晰重点、内容不散乱的状态。\",\"note\":\"常见于 has focus、lacks focus 等评价，谈的是作品的整体重点。\",\"example\":{\"id\":\"ex-focus-n-coherence\",\"senseId\":\"sense-noun-coherence\",\"en\":\"The film has some funny scenes, but it lacks focus.\",\"zh\":\"这部电影有些片段很有趣，但主线不够明确。\",\"note\":\"lacks focus 表示主线或重点不够明确，不是画面没有对好焦。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-noun-grammar\",\"title\":\"名词（语言学）：信息焦点\",\"meaning\":\"句子中按具体语境突出、用来回答当前问题的信息部分。\",\"note\":\"同一句话的焦点可随上下文或重音改变；它不一定是主语，也不等同于 topic（话题）。\",\"example\":{\"id\":\"ex-focus-n-grammar\",\"senseId\":\"sense-noun-grammar\",\"en\":\"In the answer ‘Maya bought a bike,’ ‘a bike’ is the focus if the question is ‘What did Maya buy?’\",\"zh\":\"如果问题是“玛雅买了什么？”，那么在回答“玛雅买了一辆自行车”中，“一辆自行车”就是信息焦点。\",\"note\":\"问题询问所买的东西，因此回答中提供这一信息的部分是焦点。\"},\"sourceIds\":[\"wiktionary_focus_en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on 是介词，后接 reading the map 这个动名词短语。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the camera 是直接宾语，on the moon 指明对焦目标。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"am focusing 构成现在进行时；focusing 使用单写 s 的规范拼法。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"focussed 是 focused 的规范变体，双写 s 的拼法主要见于英式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 focus 来自拉丁语 focus，原指炉灶或壁炉；后来在数学中用于表示汇聚点，再发展出活动中心、关注重点以及动词“调焦、集中注意力”等用法。把光线聚到一点的透镜比喻可能解释了数学用法，但这一路径并非定论。\"",
+        "valueJson": "\"英语 focus 源自拉丁语 focus，原义为炉灶或壁炉。近代早期的数学用法把这个词用于汇聚点；英语后来又发展出活动中心、关注重点的名词义，以及调焦、集中注意力等动词义。透镜聚光点可能有助于解释数学用法的由来，但这只是推测，并非定论。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"英语数学用语\",\"form\":\"focus\",\"meaning\":\"汇聚点\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"词源上的“炉灶”不是现代“集中注意力”义；从数学汇聚点到现代用法的具体发展过程不宜说成完全确定。\"",
+        "valueJson": "\"拉丁语“炉灶／壁炉”的旧义并不表示古人已经用 focus 表达现代的专注。炉灶与数学焦点之间的具体比喻联系只是可能解释；拉丁语 focus 更深的来源也不确定。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"focused 在这里是形容词，放在 team 前描述团队专注的状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"正在集中注意力；正在调焦\"",
+        "valueJson": "\"focus 的 -ing 形式：集中注意力；调焦\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is focusing 构成现在进行时；the telescope 是宾语，on 后接对焦目标。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_focus\"]",
+        "valueJson": "[\"wiktionary_focus_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2",
+        "expectedValueJson": "{\"word\":\"focused\",\"partOfSpeech\":\"adjective\",\"meaning\":\"注意力集中的\",\"formation\":\"focus + -ed。\",\"spellingNote\":\"也可写 focussed，常见于英式英语。\",\"example\":{\"id\":\"ex-focus-wf3\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"A focused learner checks each answer carefully.\",\"zh\":\"专注的学习者会认真检查每个答案。\"},\"sourceIds\":[\"oxford_focus\"]}",
+        "valueJson": "{\"word\":\"unfocused\",\"partOfSpeech\":\"adjective\",\"meaning\":\"注意力分散的；未清楚对焦的\",\"formation\":\"un- + focused；un- 表示否定。\",\"spellingNote\":\"保留 focused 的全部字母，前加 un-；也可写 unfocussed。\",\"example\":{\"id\":\"ex-focus-wf3\",\"senseId\":\"sense-verb-concentrate\",\"en\":\"After three hours without a break, I felt tired and unfocused.\",\"zh\":\"连续三小时没休息后，我感到疲倦，难以集中注意力。\",\"note\":\"unfocused 是形容词，在这里描述人的注意状态，与 focused 对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"focused 和 focusing 是 focus 的规则动词形式，也常作形容词或动词形式使用；focussed、focussing 是英式英语中可见的双写拼法。\"",
+        "valueJson": "\"focused 是 focus 的 -ed 形式，也常作形容词；focusing 是 -ing 形式，与 be 连用可构成进行时。unfocused 是 un- 加 focused 构成的形容词。focused / focusing 和 focussed / focussing 都是规范拼写，双写 s 的形式主要见于英式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_focus\",\"title\":\"Oxford Learner’s Dictionaries: focus\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/focus_1\",\"supports\":[\"英美读音与词形\",\"名词和动词常见义项\",\"常用句型、搭配及拼写形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_focus_en\",\"title\":\"Wiktionnaire：focus（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/focus#Anglais\",\"supports\":[\"英语名词与动词义项及部分用法\",\"英美读音\",\"名词复数 focuses、foci 与规则动词变形\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 534,
+    "headword": "focus",
+    "meaning_zh": "n. 焦点, 焦距\nvi. 聚焦, 注视\nvt. 使聚焦, 调焦, 集中",
+    "phonetic": "/'fәukәs/",
+    "pos": "",
+    "forms": []
+  }
+}

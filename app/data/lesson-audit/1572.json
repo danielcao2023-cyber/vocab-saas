@@ -1,0 +1,376 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2fd4b043e87085c5c154a5cc0d8459c956745fe874bea1d837c5689f58b2ba64",
+    "executedReviewPromptHash": "216e073cc5500b804c9608acd2ec5dec7fd16a905f998ef46eb1e65d2d19daf8",
+    "reviewHash": "c8445a86bd2b3b9fd58f3b454d81607279a6f67f9b1e28f684803db946f8ae26",
+    "wordId": 1572,
+    "inputHash": "ffef03e9bba626a4f7bd54b302be18efa0bfa8fe718de123e97a59ceae96e61d",
+    "draftHash": "ae84e06ab361191a59bb921dfbca78950b2e5a6bd4f719a00e7566f2cc654add",
+    "finalHash": "dd7d7ec13213391823f85c5a0f495f7e9b62c56366f63d096ac4a9ddf1a3262c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wood#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.200Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11200,
+        "revisionId": 39845816,
+        "revisionTimestamp": "2026-09-01T13:15:28Z",
+        "sha256": "576ccf8a332b04468cbfb7dba10fc1fe8036e0cf5a88de3a9c43a2f5a90025d2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wood",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:59:32.388Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:14:16.115Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及引用cambridge-wood的sourceIds",
+        "message": "Cambridge 页面未成功取得，不能作为已取得的内容依据。应改引实际取得的英语词条；woodenly 的补充说明不冒用该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "would 并非比 wood“多一个 u”：wood 拼作 w-o-o-d，would 拼作 w-o-u-l-d。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses及/confusions/1",
+        "message": "遗漏了常见的名词前 wood 用法，如 wood floors；“修饰物品时用 wooden”的概括过于绝对。须补充该功能及两个例句，并同步修正辨析。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples",
+        "message": "正文解释了 wood 表示木材种类时可数，但现有例句均为不可数材料义，需补充单数分类和复数种类的实际例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "木柴是常见的燃料语境用法，不宜仅以较少见义的一条例句处理。应纳入核心教学并提供两个例句；新增义同时补足至少两项句型或搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段中的 meaning 只是重复“有历史联系”，没有提供字义。应将可证实的古英语来源保留在 summary，删除空洞阶段，并区分词源与构词分析。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/formation及/wordFamilyNote",
+        "message": "woodenly 来自 wooden 的“生硬的”比喻义，需要说明这一语义衔接，避免学生从“木制的”直接推导出“生硬地”。"
+      }
+    ],
+    "coverageAssessment": "已核对全部八项名词定义、两项形容词定义及动词定义。修订后覆盖初中常用的材料、树林、木柴及名词前表示木制的用法；木材种类的可数用法也有两个实例。新增核心义均有两个例句及至少两项句型或搭配。高尔夫、音乐、棋类、性俚语、古义形容词及罕见动词不作为本课核心展开。未调用工具，未修改身份字段或 editorial。",
+    "senseInventory": [
+      {
+        "sense": "名词：木头；木材，通常不可数",
+        "coveredBy": [
+          "wood-material"
+        ],
+        "assessment": "原稿两个材料例句自然，基本覆盖充分。"
+      },
+      {
+        "sense": "名词：一种木材；不同种类的木材，可数",
+        "coveredBy": [
+          "wood-material"
+        ],
+        "assessment": "保留为材料义中的可数扩展，补充 a wood 和不同 woods 的两个例句。"
+      },
+      {
+        "sense": "名词：树林；林地，常用 woods",
+        "coveredBy": [
+          "wood-woods"
+        ],
+        "assessment": "两个核心例句充分；另有 a quiet wood，已说明英式单数用法。"
+      },
+      {
+        "sense": "名词：木柴；柴火",
+        "coveredBy": [
+          "wood-fuel"
+        ],
+        "assessment": "从较少见义移入核心教学，补足两个例句及燃料搭配。"
+      },
+      {
+        "sense": "名词：高尔夫木杆",
+        "coveredBy": [],
+        "assessment": "体育专门义，不属于本课初中核心范围，可不展开。"
+      },
+      {
+        "sense": "名词：管乐器，音乐专门用法",
+        "coveredBy": [],
+        "assessment": "专门用法，可不纳入基础课；不能据此把日常所有管乐器都称为 wood。"
+      },
+      {
+        "sense": "名词：勃起，性俚语",
+        "coveredBy": [],
+        "assessment": "不属于本课初中核心范围，可不展开。"
+      },
+      {
+        "sense": "名词：国际象棋棋子",
+        "coveredBy": [],
+        "assessment": "棋类专门用法，可不纳入基础课。"
+      },
+      {
+        "sense": "形容词或名词定语用法：木制的",
+        "coveredBy": [
+          "wood-attributive"
+        ],
+        "assessment": "补充常见功能、两个例句及搭配，并修正与 wooden 的绝对化区分。"
+      },
+      {
+        "sense": "古义形容词：疯狂的",
+        "coveredBy": [],
+        "assessment": "古义，不作核心教学；其来源是古英语 wōd，不能串入木材义的 wudu 词源线。"
+      },
+      {
+        "sense": "动词：使……长满树木；植树于",
+        "coveredBy": [],
+        "assessment": "罕见动词用法，不属于本课初中核心范围，可不展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun；adjective（主要用于名词前）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"wood 常指木头这种材料；woods 常指一片树林。\"",
+        "valueJson": "\"wood 常指木头、木材，也可指木柴；woods 常指树林。wood 还可在名词前表示“木制的”，如 wood floors。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wood-material-ex-3\",\"senseId\":\"wood-material\",\"en\":\"Oak is a strong wood commonly used for furniture.\",\"zh\":\"橡木是一种结实的木材，常用于制作家具。\",\"note\":\"a wood 表示一种木材，不是一块木头。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wood-material-ex-4\",\"senseId\":\"wood-material\",\"en\":\"The shop sells several different woods, including oak and pine.\",\"zh\":\"这家店出售几种不同的木材，包括橡木和松木。\",\"note\":\"woods 在这里表示不同种类的木材，不是树林。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wood-fuel\",\"title\":\"木柴；柴火\",\"meaning\":\"用作燃料的木头，通常不可数。这是材料义在生火、取暖等语境中的常见用法。\",\"usageNote\":\"常说 gather wood、burn wood；要明确表示木柴，也可用 firewood。\",\"examples\":[{\"id\":\"wood-fuel-ex-1\",\"senseId\":\"wood-fuel\",\"en\":\"They gathered wood for the fire.\",\"zh\":\"他们捡了些木柴生火。\",\"note\":\"for the fire 说明这些木头用作燃料。\"},{\"id\":\"wood-fuel-ex-2\",\"senseId\":\"wood-fuel\",\"en\":\"We burn wood to heat the house in winter.\",\"zh\":\"冬天我们烧木柴给房子取暖。\",\"note\":\"burn wood 表示烧木柴；这里 wood 不可数。\"}],\"patterns\":[{\"en\":\"wood for the fire\",\"zh\":\"生火用的木柴\",\"note\":\"for the fire 说明木头的用途。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"gather wood\",\"zh\":\"捡拾木柴\",\"note\":\"在准备生火的语境中，wood 通常指木柴。\",\"kind\":\"common-collocation\"},{\"en\":\"burn wood\",\"zh\":\"烧木柴\",\"note\":\"指燃烧木头来生火或取暖。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"firewood\",\"zh\":\"木柴；柴火\",\"note\":\"明确指燃料用的木头；普通材料语境中的 wood 不一定能换成 firewood。\"}],\"contrasting\":[{\"en\":\"coal\",\"zh\":\"煤\",\"note\":\"可在比较取暖燃料时与 wood 对照，不是词义上的反义词。\"},{\"en\":\"gas\",\"zh\":\"燃气\",\"note\":\"可在比较取暖或烹饪燃料时与 wood 对照。\"}],\"similarNote\":\"firewood 与本义接近，但含义比泛指材料的 wood 更窄。\",\"contrastingNote\":\"这些表达比较的是不同燃料；wood 在本义下没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wood-attributive\",\"title\":\"用于名词前：木制的\",\"meaning\":\"wood 放在名词前，表示该物品是木制的，如 wood floors（木地板）。\",\"usageNote\":\"这种用法可视为形容词用法，也常分析为名词作定语。wooden 也表示木制的，但具体搭配有习惯差异，不能机械替换。\",\"examples\":[{\"id\":\"wood-attributive-ex-1\",\"senseId\":\"wood-attributive\",\"en\":\"The apartment has wood floors.\",\"zh\":\"这套公寓铺的是木地板。\",\"note\":\"wood 放在 floors 前，说明地板的材质。\"},{\"id\":\"wood-attributive-ex-2\",\"senseId\":\"wood-attributive\",\"en\":\"We chose wood furniture for the dining room.\",\"zh\":\"我们为餐厅选了木制家具。\",\"note\":\"wood furniture 表示木制家具，也可以说 wooden furniture。\"}],\"patterns\":[{\"en\":\"wood + 名词\",\"zh\":\"木制的……\",\"note\":\"用于 wood floor、wood furniture 等搭配；并非所有名词前都习惯使用 wood。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"wood floors\",\"zh\":\"木地板\",\"note\":\"wood 修饰 floors，表示材质。\",\"kind\":\"common-collocation\"},{\"en\":\"wood furniture\",\"zh\":\"木制家具\",\"note\":\"furniture 不可数；wood 在这里修饰家具的材质。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"wooden\",\"zh\":\"木制的\",\"note\":\"形容词，在部分搭配中与 wood 接近，如 wood/wooden floors；具体用词取决于搭配。\"},{\"en\":\"made of wood\",\"zh\":\"由木头制成的\",\"note\":\"同样说明木制材质，但句子结构不同，如 The floor is made of wood。\"}],\"contrasting\":[{\"en\":\"metal furniture\",\"zh\":\"金属家具\",\"note\":\"与 wood furniture 对照的是家具材质。\"},{\"en\":\"plastic furniture\",\"zh\":\"塑料家具\",\"note\":\"同属材质对比，不是 wood 的直接反义词。\"}],\"similarNote\":\"wooden 可以修饰名词；made of wood 通常需要相应调整句子结构。\",\"contrastingNote\":\"这里只比较不同材质，不建立通用的反义关系。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"wood-fuel\",\"title\":\"木柴；柴火\",\"meaning\":\"用作燃料的木头。\",\"note\":\"通常由上下文判断 wood 指木柴；更明确地说“木柴”可用 firewood。\",\"example\":{\"id\":\"wood-fuel-ex-1\",\"senseId\":\"wood-fuel\",\"en\":\"They gathered wood for the fire.\",\"zh\":\"他们捡了些木柴生火。\",\"note\":\"此处 wood 指燃料用的木头。\"},\"sourceIds\":[\"cambridge-wood\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"wood-confusion-ex-2\",\"senseId\":\"wood-material\",\"en\":\"Would you open the window?\",\"zh\":\"你能把窗户打开吗？\",\"note\":\"would 在这里用于礼貌请求。\"}",
+        "valueJson": "{\"id\":\"wood-confusion-ex-2\",\"senseId\":\"wood-fuel\",\"en\":\"Would you bring in some wood for the fire?\",\"zh\":\"你能拿些木柴进来生火吗？\",\"note\":\"would 用于礼貌请求；wood 指木柴。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"wood 写有两个 o，指木头；would 多一个 u，是情态动词。两者都读 /wʊd/。\"",
+        "valueJson": "\"wood 拼作 w-o-o-d；would 拼作 w-o-u-l-d，是情态动词。wood 与 would 的重读形式同音，读 /wʊd/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"wood 是名词；wooden 是形容词，描述东西由木头制成。\"",
+        "valueJson": "\"wood 主要作名词，也可在名词前表示“木制的”；wooden 是形容词，也能说明木制材质。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"通常作不可数名词，表示木材。\"",
+        "valueJson": "\"作材料名词时通常不可数；也可在名词前表示“木制的”，如 a wood floor。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"说材料本身用 wood；修饰物品时用 wooden。\"",
+        "valueJson": "\"说材料本身用 wood；修饰物品可用 wooden，也有 wood floor、wood furniture 等常见搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"wood 与古英语 wudu 有历史联系。wooden 是现代英语中由 wood 加后缀 -en 构成的形容词；这是构词关系，不应和历史词源阶段混为一谈。\"",
+        "valueJson": "\"名词 wood 来自古英语 wudu。wooden 可以按 wood + -en 分析，-en 在这里表示“由……制成的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"wudu\",\"meaning\":\"与现代英语 wood 有历史联系的古英语形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"古英语形式属于历史词源；wooden 是现代构词。这里不把两者拼成一条历史演变链。\"",
+        "valueJson": "\"古英语 wudu 是历史来源；wood + -en 是构词分析，不能把两者排成同一条历史演变链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"wooden + -ly\"",
+        "valueJson": "\"wooden（生硬的）+ -ly\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wood\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"wooden 和 woodenly 与 wood 有明确的构词关系；不要把 woodpecker 等含 wood 的复合词都当成 wood 的词形变化。\"",
+        "valueJson": "\"wooden 除了“木制的”，还可比喻举止、表演等“僵硬的、生硬的”；woodenly 来自后一义。woodpecker 等复合词与 wood 有关，但不是 wood 的单复数等词形变化。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-wood\",\"title\":\"Cambridge Dictionary: wood\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/wood\",\"supports\":[\"wood 表示木材及树林的常见用法\",\"wood 与 would 的发音区分提示\",\"wooden 的相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: wood（English entry）\"",
+        "valueJson": "\"Wiktionnaire: wood（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"古英语 wudu 与 wood 的词源联系\"]",
+        "valueJson": "[\"wood 的读音及与 would 的同音关系\",\"wood 的木材、木材种类、树林和木柴义\",\"wood 表示木制的的用法及其同义词 wooden\",\"名词 wood 来自古英语 wudu\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1572,
+    "headword": "wood",
+    "meaning_zh": "n. 木头；木材；（常用复数 woods）树林",
+    "phonetic": "/wud/",
+    "pos": "",
+    "forms": []
+  }
+}

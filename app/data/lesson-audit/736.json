@@ -1,0 +1,607 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "73c00bfb19cc51092eeb93bd7fcad51f538373c6530c8a0da41445b994be58b6",
+    "executedReviewPromptHash": "73c00bfb19cc51092eeb93bd7fcad51f538373c6530c8a0da41445b994be58b6",
+    "reviewHash": "cede7e4a9b4b4cd1de1ace51e119db6a0c90db3f7060efedf99750c0a3df1547",
+    "wordId": 736,
+    "inputHash": "cef79c479cb95a3fd5726871f40f01e44d3e7ccffaa024009f40f8bd639ffef7",
+    "draftHash": "d256459843becc429b5858182d590069944c1ee33bef8df481356dfbce45dc51",
+    "finalHash": "a596ccfc5c86bcaa1a7798c01b3efe91144d322ae98c97e0165ee1875b34d112",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/kick#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:57.025Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116865,
+        "revisionId": 39768547,
+        "revisionTimestamp": "2026-08-03T09:01:08Z",
+        "sha256": "d92c68b336792f0d583110f633c5ae076786e01c21a0adf83fa77f4d74d4a4f4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/kick",
+        "section": "kick verb",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "10599189f5484cfd72172c4a22a5f3654f57d95d08108dad3682971550dd5e01",
+        "summaryAndSupportsWordCount": 60,
+        "sha256": "10599189f5484cfd72172c4a22a5f3654f57d95d08108dad3682971550dd5e01",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/736.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/kick",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:08:35.078Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:21:38.844Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/confusions/0；/wordFamily/1/spellingNote",
+        "message": "kicking 的实际拼写正确，但多处解释错误：kick 以 -ck 结尾，直接加 -ing，不双写 k。须同步修正所有重复说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/note",
+        "message": "复数 kicks 不能解释为“一脚”，应表示多次踢的动作。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏常见的名词“乐趣、兴奋感”“强烈刺激、劲”，以及常用短语 kick out、kick in；原词条的反冲、反抗和瓶子凹底义也未交代。kick off 属于常用短语，原例句只覆盖活动开始，没有展示足球开球。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1；/senses/0",
+        "message": "“kick 后不用加 to”应限定为被踢对象直接作宾语；kick the ball to someone 完全正确。还须展示不及物的蹬踢，并区分 kick at 的瞄准动作与踢中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "kick a problem 不宜作为通用的常见搭配教授。应保留自然的习惯用法，补充 kick a cold 展示摆脱困扰，并明确 trying to 不保证成功，肯定叙述 kicked the habit 才表示已经戒掉。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "反向表达宜用更自然的 keep doing something、be unable to give something up，并分别限定习惯与疾病语境；新增的疾病用法也应有相应近义表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/1；/senses/2/collocations/1",
+        "message": "小狗淘气地踢鞋并非典型生活表达，宜换成人踢球。take a kick 单独出现有歧义，教学搭配宜具体写成 take a free kick。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "“不能再 kick 那个坏习惯”实际表示不能再戒掉该习惯，与助记意图相反。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有阶段把现代拼写 kick 直接标为中古英语词形，超出了摘要可确认的细节。保留中古英语晚期的记录、动作义及名词来自动词的事实到 summary，不推定历史原始拼写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "本次实际取得的是法语说明的英语词条，应让相应引用指向该页面；摘录未涉及的新增现代用法不挂靠该来源。法语是释义语言，不是 kick 的来源语言。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline；/wordFamily",
+        "message": "标题中的“踢球得分”缺少限定且正文未展开，宜改为实际讲解的含义。词族可保留准确标注的词形变化，并补一个真正的派生名词 kicker。"
+      }
+    ],
+    "coverageAssessment": "已核对原词条各项中文义、英语词条定义及常见现代用法。修订后，核心义均至少两例；不及物蹬踢、戒除与摆脱、乐趣与刺激，以及开始、开球、赶出和起作用均有对应例句。反冲、抗拒及瓶底凹部按低频义补充；原词条的“vt.反冲”未机械套用为及物结构。词源仅保留可证实事实，不穷尽所有俚语和短语动词。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：用脚踢某人或某物",
+        "coveredBy": [
+          "kick-verb-foot"
+        ],
+        "assessment": "原有两例保留；限定直接宾语规则，并补充 kick at 与踢中之间的区别。"
+      },
+      {
+        "sense": "不及物动词：蹬踢；动物用后腿踢",
+        "coveredBy": [
+          "kick-verb-foot"
+        ],
+        "assessment": "补入马向后蹬踢的例句和不及物说明。"
+      },
+      {
+        "sense": "非正式动词：戒除习惯；摆脱难缠困扰",
+        "coveredBy": [
+          "kick-verb-quit"
+        ],
+        "assessment": "保留两则习惯例句，补入 kick a cold；修正常见搭配和是否成功的说明。"
+      },
+      {
+        "sense": "可数名词：一脚；一次踢球动作",
+        "coveredBy": [
+          "kick-noun"
+        ],
+        "assessment": "已有覆盖；改善第二例和足球搭配。"
+      },
+      {
+        "sense": "非正式名词：乐趣；兴奋感",
+        "coveredBy": [
+          "kick-noun-pleasure"
+        ],
+        "assessment": "初稿遗漏；补充 get a kick out of 与 for kicks，各有自然例句。"
+      },
+      {
+        "sense": "非正式名词：味道、酒等带来的强烈刺激或劲",
+        "coveredBy": [
+          "kick-noun-strength"
+        ],
+        "assessment": "初稿遗漏；分别以辣椒酱和鸡尾酒展示。"
+      },
+      {
+        "sense": "名词：后座力；反冲力",
+        "coveredBy": [
+          "kick-recoil-noun"
+        ],
+        "assessment": "原词条已有此义，初稿遗漏；作为低频义补入。"
+      },
+      {
+        "sense": "不及物动词：反冲；产生后座震动",
+        "coveredBy": [
+          "kick-recoil-verb"
+        ],
+        "assessment": "补入枪械作主语的不及物例句，不据中文标签另造通用及物用法。"
+      },
+      {
+        "sense": "不及物动词：反抗；表示不满",
+        "coveredBy": [
+          "kick-protest"
+        ],
+        "assessment": "作为较少见用法补入，限定 kick against 结构，并提示日常替代表达。"
+      },
+      {
+        "sense": "罕见技术名词：瓶底向内凹的部分",
+        "coveredBy": [
+          "kick-bottle-bottom"
+        ],
+        "assessment": "对应原词条“凹底”，以葡萄酒瓶为对象补充，不扩展为普通凹坑。"
+      },
+      {
+        "sense": "短语动词 kick off：开始；足球开球",
+        "coveredBy": [
+          "kick-off"
+        ],
+        "assessment": "由补充栏移入常用部分；开始与足球开球分别有两例，并区分动词与名词拼写。"
+      },
+      {
+        "sense": "短语动词 kick out：赶出；从组织中除名",
+        "coveredBy": [
+          "kick-out"
+        ],
+        "assessment": "补入地点和球队两种语境，说明代词位置及不必涉及实际脚踢。"
+      },
+      {
+        "sense": "短语动词 kick in：开始起作用；自动启动",
+        "coveredBy": [
+          "kick-in"
+        ],
+        "assessment": "补入药物生效与备用发电机启动两例，并限定近义和反向表达的适用对象。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"kick：用脚踢，也可以表示踢球得分或带来冲击\"",
+        "valueJson": "\"kick：踢、戒掉习惯；名词还能表示一脚或乐趣\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"动词 kick 常表示“踢”；名词 kick 常表示“一脚”。kick the ball 是“踢球”，kick a habit 是“戒掉习惯”，要看宾语和句型判断意思。\"",
+        "valueJson": "\"先看词性，再看宾语和固定搭配：kick the ball 是“踢球”，kick a habit 是“戒掉习惯”；名词 a kick 可指“一脚”，get a kick out of 则表示“从……获得乐趣”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"注意 kick 后直接接人或物，不用加 to。\"",
+        "valueJson": "\"被踢的人或物直接作 kick 的宾语；表示把球踢给谁，可说 kick the ball to someone。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"分清 get a kick out of（从……获得乐趣）和 have a kick（味道刺激或酒劲足）。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"把 kick out（赶出；除名）和 kick in（开始起作用）连同句型一起记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"kick 以辅音字母加重读元音字母加辅音字母结尾，需双写 k 再加 -ing。\"",
+        "valueJson": "\"kick 以 -ck 结尾，直接加 -ing：kick → kicking，不双写末尾的 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"表示多次踢或一脚；按常见规则加 -s。\"",
+        "valueJson": "\"表示多次踢或多次踢球动作；按常见规则加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"动词：踢；用脚踢中\"",
+        "valueJson": "\"动词：踢；蹬腿\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用脚打到某人或某物，常用于运动、玩耍或描述动作。\"",
+        "valueJson": "\"用脚踢某人或某物；也可指人蹬腿，或马等动物用后腿踢。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"kick 后面可直接接宾语；kick a ball 是“踢球”，kick someone 是“踢某人”。\"",
+        "valueJson": "\"既可及物，也可不及物：kick a ball 是“踢球”，The horse kicked 中没有宾语。kick at someone 表示朝某人踢去，不一定踢中；kick the ball to someone 中的 to 引出接球的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-ex-foot-intransitive\",\"senseId\":\"kick-verb-foot\",\"en\":\"The horse kicked when a dog ran behind it.\",\"zh\":\"一只狗从马的身后跑过时，马向后蹬了一脚。\",\"note\":\"这里 kick 不及物，表示马用后腿踢，没有直接宾语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"动词后直接接宾语，不在宾语前加 to。\"",
+        "valueJson": "\"被踢的人或物直接作宾语；kick the ball to someone 中，to 引出接球的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"常用于体育或玩耍场景，ball 前可换成具体球类。\"",
+        "valueJson": "\"a ball 可换成 a football 等；kick 强调脚踢动作，play football 表示进行足球运动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"kick at + 人或物\",\"zh\":\"朝某人或某物踢去\",\"note\":\"at 引出瞄准的对象，不保证踢中；kick someone 通常表示踢到了某人。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：戒掉；摆脱（习惯或问题）\"",
+        "valueJson": "\"动词：戒掉习惯；摆脱难缠的困扰\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"成功停止一种坏习惯，或摆脱一个难以解决的问题。\"",
+        "valueJson": "\"口语中指成功戒除坏习惯、摆脱成瘾，或摆脱感冒等纠缠不去的困扰。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"此义常用于口语；kick a habit 是“戒掉一种习惯”，kick a problem 可表示摆脱问题。\"",
+        "valueJson": "\"常说 kick a/the habit、kick an addiction，也可说 kick a cold。一般的“解决问题”通常用 solve a problem，不把 kick a problem 当成通用搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"kick a habit 指戒掉某种习惯。\"",
+        "valueJson": "\"try to kick a habit 表示努力戒掉习惯，不保证已经成功。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"过去式 kicked 表示已经戒掉。\"",
+        "valueJson": "\"这个肯定叙述中的 she kicked the habit 表示她已经戒掉；不是只尝试过。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-ex-quit-cold\",\"senseId\":\"kick-verb-quit\",\"en\":\"I can't seem to kick this cold.\",\"zh\":\"我这场感冒好像总也好不了。\",\"note\":\"kick a cold 是摆脱感冒的口语说法；can't seem to 表示似乎总做不到。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"habit 前加 the，指说话双方都知道的那个习惯。\"",
+        "valueJson": "\"常指戒烟，也可按上下文表示戒掉其他坏习惯。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"kick a problem\",\"zh\":\"摆脱一个问题\",\"note\":\"口语表达，表示设法克服困扰自己的问题。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"kick a cold\",\"zh\":\"摆脱感冒；感冒痊愈\",\"note\":\"非正式说法，常用于描述感冒迟迟不好或终于好了。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"shake off\",\"zh\":\"摆脱（疾病或困扰）\",\"note\":\"如 shake off a cold，可与 kick a cold 对照；不表示戒掉所有习惯。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"give up 可用于习惯、活动或希望；break a habit 也常表示改掉习惯。\"",
+        "valueJson": "\"give up、break a habit 主要与戒除习惯义对照；shake off 常与感冒等疾病或困扰搭配。一般问题可用 solve/overcome a problem。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"keep a habit\",\"zh\":\"保留一种习惯\",\"note\":\"在习惯语境中表示继续保持，与戒掉相对。\"},{\"en\":\"continue a habit\",\"zh\":\"继续某种习惯\",\"note\":\"强调习惯仍在继续；只在习惯语境中与 kick a habit 对照。\"}]",
+        "valueJson": "[{\"en\":\"keep doing something\",\"zh\":\"继续做某事\",\"note\":\"如 keep smoking 表示继续吸烟，与戒掉吸烟习惯相对。\"},{\"en\":\"be unable to give something up\",\"zh\":\"无法戒掉某种习惯或嗜好\",\"note\":\"如 be unable to give up smoking，表示未能戒掉，不是 kick 所有义项的反义表达。\"},{\"en\":\"still have a cold\",\"zh\":\"仍然感冒\",\"note\":\"只与 kick a cold 的摆脱疾病义作状态对照。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"keep 和 continue 只在“是否停止某种习惯”的语境中与此义相对。\"",
+        "valueJson": "\"继续原来的行为、无法戒掉，均与习惯义相对；仍然感冒只与摆脱感冒的用法对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"The puppy gave my shoe a playful kick.\"",
+        "valueJson": "\"Leo gave the ball a gentle kick.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"小狗淘气地踢了我的鞋一下。\"",
+        "valueJson": "\"利奥轻轻地踢了一下球。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"take a kick\",\"zh\":\"踢一脚\",\"note\":\"可用于描述踢球动作；具体意思由上下文决定。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"take a free kick\",\"zh\":\"主罚任意球\",\"note\":\"足球搭配；take 在这里表示执行这次任意球，不表示承受别人踢来的一脚。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"kick-off\",\"title\":\"动词短语：开始；开球\",\"meaning\":\"kick off 可表示活动或事件开始；在足球中也可表示开球。\",\"note\":\"常见于比赛、会议、活动等语境，具体意思由上下文判断。\",\"example\":{\"id\":\"kick-ex7\",\"senseId\":\"kick-off\",\"en\":\"The school fair kicks off at ten.\",\"zh\":\"学校义卖会十点开始。\",\"note\":\"这里 kicks off 表示活动开始。\"},\"sourceIds\":[\"oxford-kick\"]}",
+        "valueJson": "{\"id\":\"kick-recoil-noun\",\"title\":\"名词：后座力；反冲力\",\"meaning\":\"枪械等发射时向后产生的冲力。\",\"note\":\"可说 a strong/powerful kick；recoil 是这一语境中更正式的说法。\",\"example\":{\"id\":\"kick-ex-recoil-noun\",\"senseId\":\"kick-recoil-noun\",\"en\":\"The old rifle had a powerful kick.\",\"zh\":\"那支旧步枪的后座力很大。\",\"note\":\"kick 是名词，表示后座力，不是有人踢了步枪。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-noun-pleasure\",\"title\":\"名词：乐趣；兴奋感（非正式）\",\"meaning\":\"某件事带来的开心、刺激或兴奋感觉。\",\"usageNote\":\"常见结构是 get a kick out of something/doing something；for kicks 表示为了好玩，其中 kicks 用复数。\",\"examples\":[{\"id\":\"kick-ex-pleasure-1\",\"senseId\":\"kick-noun-pleasure\",\"en\":\"I get a real kick out of making my little sister laugh.\",\"zh\":\"把妹妹逗笑总让我特别开心。\",\"note\":\"out of 后接动名词 making，不用 make。\"},{\"id\":\"kick-ex-pleasure-2\",\"senseId\":\"kick-noun-pleasure\",\"en\":\"We entered the singing contest just for kicks.\",\"zh\":\"我们参加歌唱比赛纯粹是为了好玩。\",\"note\":\"for kicks 是非正式固定表达，表示为了好玩。\"}],\"patterns\":[{\"en\":\"get a kick out of + 名词/动名词\",\"zh\":\"从……中获得乐趣\",\"note\":\"of 是介词，后面可接 doing，不接 to do。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get a real kick out of something\",\"zh\":\"从某事中获得很大乐趣\",\"note\":\"real 加强语气；这里不是实际踢的动作。\",\"kind\":\"fixed-expression\"},{\"en\":\"just for kicks\",\"zh\":\"纯粹为了好玩\",\"note\":\"非正式说法，kicks 使用复数。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"enjoy something\",\"zh\":\"喜欢某事；从中得到乐趣\",\"note\":\"意思较接近，但 enjoy 是动词，句型不同。\"},{\"en\":\"get a thrill out of something\",\"zh\":\"从某事中获得兴奋感\",\"note\":\"通常更强调刺激、激动，不一定只是轻松的开心。\"}],\"contrasting\":[{\"en\":\"get no pleasure from something\",\"zh\":\"从某事中得不到乐趣\",\"note\":\"直接否定愉快感，只与乐趣义对照。\"},{\"en\":\"find something boring\",\"zh\":\"觉得某事无聊\",\"note\":\"适用于对活动缺乏兴趣的语境，不是所有 kick 的反义表达。\"}],\"similarNote\":\"enjoy 使用动词结构；get a thrill out of 通常更强调兴奋和刺激。\",\"contrastingNote\":\"这些表达只对照觉得有趣、开心这一义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-noun-strength\",\"title\":\"名词：强烈的刺激；劲（非正式）\",\"meaning\":\"食物的辣味、酒的酒精作用等带来的明显刺激。\",\"usageNote\":\"常说 something has a kick；这是口语中的强度描述，不等于具体的辣度或酒精含量。\",\"examples\":[{\"id\":\"kick-ex-strength-1\",\"senseId\":\"kick-noun-strength\",\"en\":\"This chilli sauce has a real kick.\",\"zh\":\"这款辣椒酱辣劲十足。\",\"note\":\"这里 kick 指辣味带来的强烈刺激。\"},{\"id\":\"kick-ex-strength-2\",\"senseId\":\"kick-noun-strength\",\"en\":\"That cocktail has quite a kick.\",\"zh\":\"那杯鸡尾酒酒劲挺大。\",\"note\":\"这里强调酒劲，quite a kick 表示刺激相当明显。\"}],\"patterns\":[{\"en\":\"something has a kick\",\"zh\":\"某物味道刺激或很有劲\",\"note\":\"常用于食物、饮料等；具体是哪种刺激取决于上下文。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a spicy kick\",\"zh\":\"明显的辛辣刺激\",\"note\":\"用于描述食物的辣味。\",\"kind\":\"common-collocation\"},{\"en\":\"give something a kick\",\"zh\":\"给某物增加刺激的味道\",\"note\":\"食物语境中可指加香料使味道更强；其他语境也可能是字面的踢一下。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"pack a punch\",\"zh\":\"味道很冲；劲很足\",\"note\":\"用于食物或饮料时，可强调强烈味道或作用；其他语境另有意思。\"}],\"contrasting\":[{\"en\":\"be mild\",\"zh\":\"味道温和；不刺激\",\"note\":\"如 The sauce is mild，与辣味刺激作对照；mild 是形容词，不能直接替换名词 kick。\"}],\"similarNote\":\"这里的近义比较只针对味道或作用的强烈程度。\",\"contrastingNote\":\"味道温和可与强烈刺激作语境对照，不是踢这个动作的反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-off\",\"title\":\"短语动词：开始；足球开球\",\"meaning\":\"活动或事件开始，或使其开始；足球中指开球。\",\"usageNote\":\"动词分写为 kick off；名词可写 kick-off 或 kickoff。既可说 an event kicks off，也可说 kick off an event。\",\"examples\":[{\"id\":\"kick-ex7\",\"senseId\":\"kick-off\",\"en\":\"The school fair kicks off at ten.\",\"zh\":\"学校义卖会十点开始。\",\"note\":\"这里是不及物的活动开始义。\"},{\"id\":\"kick-ex-off-start\",\"senseId\":\"kick-off\",\"en\":\"We kicked off the meeting with a short introduction.\",\"zh\":\"我们以简短的介绍开始了会议。\",\"note\":\"kick off 后接会议作宾语，with 引出开场内容。\"},{\"id\":\"kick-ex-off-football-1\",\"senseId\":\"kick-off\",\"en\":\"Our team will kick off in the second half.\",\"zh\":\"下半场将由我们队开球。\",\"note\":\"足球语境，表示由哪一队开球。\"},{\"id\":\"kick-ex-off-football-2\",\"senseId\":\"kick-off\",\"en\":\"The referee asked which team would kick off.\",\"zh\":\"裁判问哪支队开球。\",\"note\":\"这里是足球开球义；would 表示从过去视角看接下来要做的事。\"}],\"patterns\":[{\"en\":\"活动/比赛 + kick off (+ 时间)\",\"zh\":\"活动或比赛在……开始\",\"note\":\"不及物结构，时间可用 at 等引出。\",\"kind\":\"sentence-pattern\"},{\"en\":\"kick off + 活动 + with + 名词\",\"zh\":\"以……作为活动的开场\",\"note\":\"如 kick off a meeting with an introduction。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"kick off a meeting\",\"zh\":\"开始会议\",\"note\":\"非正式说法，可用 with 补充开场内容。\",\"kind\":\"common-collocation\"},{\"en\":\"kick off in the second half\",\"zh\":\"在下半场开球\",\"note\":\"足球语境中的开球，不是任意一次踢球。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"start\",\"zh\":\"开始\",\"note\":\"可替换活动开始义；仅用 start 不能准确表达由哪队开球。\"},{\"en\":\"begin\",\"zh\":\"开始\",\"note\":\"也是活动开始义的中性说法，不直接等于足球开球。\"}],\"contrasting\":[{\"en\":\"wrap up\",\"zh\":\"结束；收尾\",\"note\":\"可与开始会议或活动作对照，不能作为足球开球的通用反义词。\"}],\"similarNote\":\"start、begin 对应活动开始义；足球开球义须结合比赛语境。\",\"contrastingNote\":\"这里的反向比较只针对活动开始与结束。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-out\",\"title\":\"短语动词：赶出；除名（非正式）\",\"meaning\":\"强迫某人离开某地，或把某人从团体中开除。\",\"usageNote\":\"通常说 kick someone out of a place/group，不一定真的用脚踢。代词必须放在 kick 与 out 之间：kick him out。\",\"examples\":[{\"id\":\"kick-ex-out-1\",\"senseId\":\"kick-out\",\"en\":\"The guard kicked the noisy visitor out of the library.\",\"zh\":\"保安把吵闹的访客赶出了图书馆。\",\"note\":\"out of 引出被迫离开的地方，不必理解成用脚踢出去。\"},{\"id\":\"kick-ex-out-2\",\"senseId\":\"kick-out\",\"en\":\"He was kicked out of the team for missing too many practices.\",\"zh\":\"他因缺席训练太多次而被球队除名。\",\"note\":\"这里是从团体中开除；for 引出原因。\"}],\"patterns\":[{\"en\":\"kick + someone + out (of + 地点/团体)\",\"zh\":\"把某人赶出某地或从团体中除名\",\"note\":\"人称代词放在 out 前，如 kick him out，不说 kick out him。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be kicked out of school\",\"zh\":\"被学校开除\",\"note\":\"非正式表达，正式场合常用 be expelled from school。\",\"kind\":\"common-collocation\"},{\"en\":\"kick someone out of the house\",\"zh\":\"把某人赶出屋子\",\"note\":\"强调强制离开，语气较强。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"throw someone out\",\"zh\":\"把某人赶出去\",\"note\":\"同样是非正式说法，也不一定涉及实际抛掷。\"},{\"en\":\"expel someone\",\"zh\":\"开除某人；驱逐某人\",\"note\":\"较正式，常用于学校、组织等作出的决定。\"}],\"contrasting\":[{\"en\":\"let someone stay\",\"zh\":\"让某人留下\",\"note\":\"与强迫某人离开某地作对照。\"},{\"en\":\"admit someone to a group\",\"zh\":\"准许某人加入团体\",\"note\":\"只在组织接纳与除名的语境中对照。\"}],\"similarNote\":\"kick out、throw out 较口语；expel 更正式，常表示机构决定。\",\"contrastingNote\":\"允许留下对应赶出地点；接纳入团体对应从团体中除名。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-in\",\"title\":\"短语动词：开始起作用；启动（非正式）\",\"meaning\":\"药物等开始产生效果，或系统、设备等开始工作。\",\"usageNote\":\"这一义通常不及物，主语是药物、效果、系统等；不能把 kick in 当成这里需要直接宾语的动作。\",\"examples\":[{\"id\":\"kick-ex-in-1\",\"senseId\":\"kick-in\",\"en\":\"It took a few minutes for the medicine to kick in.\",\"zh\":\"过了几分钟，药才开始起作用。\",\"note\":\"kick in 指药效开始出现。\"},{\"id\":\"kick-ex-in-2\",\"senseId\":\"kick-in\",\"en\":\"The backup generator kicked in when the power went out.\",\"zh\":\"停电时，备用发电机启动了。\",\"note\":\"停电触发设备工作；kick in 不表示有人踢了发电机。\"}],\"patterns\":[{\"en\":\"药物/效果/系统 + kick in\",\"zh\":\"开始生效或工作\",\"note\":\"这是不及物结构，后面不直接接被作用的对象。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the effects kick in\",\"zh\":\"效果开始显现\",\"note\":\"effects 为复数，因此一般现在时用 kick。\",\"kind\":\"common-collocation\"},{\"en\":\"a system kicks in\",\"zh\":\"系统开始工作\",\"note\":\"单数主语的一般现在时用 kicks。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"take effect\",\"zh\":\"开始生效\",\"note\":\"可用于药物、措施等，不一定适合描述发电机启动。\"},{\"en\":\"start working\",\"zh\":\"开始工作；开始起作用\",\"note\":\"较中性，可按语境描述设备或药物。\"}],\"contrasting\":[{\"en\":\"wear off\",\"zh\":\"效果逐渐消退\",\"note\":\"可与药效开始出现作对照，不表示设备停机。\"},{\"en\":\"stop working\",\"zh\":\"停止工作\",\"note\":\"适用于设备或系统；是否表示故障取决于上下文。\"}],\"similarNote\":\"药物或措施生效可用 take effect；设备开始工作常用 start working。\",\"contrastingNote\":\"药效消退与设备停止工作分别对应不同对象。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-recoil-verb\",\"title\":\"不及物动词：反冲\",\"meaning\":\"枪械等发射时向后震动。\",\"note\":\"这一义以枪械等为主语，不直接接表示被反冲对象的宾语。\",\"example\":{\"id\":\"kick-ex-recoil-verb\",\"senseId\":\"kick-recoil-verb\",\"en\":\"The rifle kicked hard when he fired it.\",\"zh\":\"他开枪时，步枪猛地向后震了一下。\",\"note\":\"kicked 是不及物动词，表示步枪反冲。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-protest\",\"title\":\"不及物动词：反抗；表示不满\",\"meaning\":\"抗拒某项规定、限制等。\",\"note\":\"较少见，常用 kick against something；日常更常说 object to 或 protest against，不把裸词 kick 当成所有“反抗”的通用译法。\",\"example\":{\"id\":\"kick-ex-protest\",\"senseId\":\"kick-protest\",\"en\":\"The workers kicked against the new rules.\",\"zh\":\"工人们反对新规定。\",\"note\":\"against 引出反对的对象；不是用脚踢规章。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kick-bottle-bottom\",\"title\":\"名词：瓶底凹部（罕见技术用语）\",\"meaning\":\"玻璃瓶，尤其是葡萄酒瓶底部向内凹的部分。\",\"note\":\"通常称为 punt；kick 的这个义只宜在瓶子制造等专门语境中识别，不指一般凹坑。\",\"example\":{\"id\":\"kick-ex-bottle-bottom\",\"senseId\":\"kick-bottle-bottom\",\"en\":\"This wine bottle has a deep kick.\",\"zh\":\"这个葡萄酒瓶的瓶底凹部很深。\",\"note\":\"这是瓶子结构的专门用法，不表示瓶子受到了一脚踢击。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"kick 变成 kicking 时要双写 k；变成 kicked 时直接加 -ed。\"",
+        "valueJson": "\"kick 末尾已有 -ck；kicking 直接加 -ing，kicked 直接加 -ed，都不再添加 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"末尾的 k 需要双写，再加 -ing。\"",
+        "valueJson": "\"kick + -ing = kicking，词尾仍是原来的 -ck，不额外增加 k；不适用 run → running 那类双写规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住：kick + ing 要双写末尾的 k；kick + ed 不双写。\"",
+        "valueJson": "\"记住：kick + -ing → kicking；kick + -ed → kicked。两个形式都不需要再双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"Kick 在英语中记录为表示用脚击打的动词；名词 kick 来自动词。更早的来源尚不确定，虽有人提出与斯堪的纳维亚语有关，但这条关系并未定论。\"",
+        "valueJson": "\"kick 在中古英语晚期已有“用脚击打”的动词记录；名词来自动词。更早的来源尚不确定；有人提出与斯堪的纳维亚语言有关，但尚不能据此确定借词路线。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"kick\",\"meaning\":\"用脚击打\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"末尾辅音字母 k 双写后再加 -ing。\"",
+        "valueJson": "\"kick 末尾是 -ck，直接加 -ing；实际拼写为 k-i-c-k-i-n-g，没有增加辅音字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-kick\"]",
+        "valueJson": "[\"fr-wiktionary-kick\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"kicker\",\"partOfSpeech\":\"noun\",\"meaning\":\"踢球手；尤指美式橄榄球中负责踢球的队员。\",\"formation\":\"kick + -er，形成表示执行该动作之人的名词。\",\"spellingNote\":\"直接在 kick 后加 -er，写作 kicker；不额外双写 k。\",\"example\":{\"id\":\"kick-ex-family-kicker\",\"senseId\":\"kick-verb-foot\",\"en\":\"The team's kicker practises every morning.\",\"zh\":\"球队的踢球手每天早晨都训练。\",\"note\":\"这里指负责踢球的队员，尤其用于美式橄榄球语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"这里只列 kick 的规则动词形式；它们是同一动词的词形变化，不是不同词根的派生词。\"",
+        "valueJson": "\"kicked、kicking 是 kick 的词形变化；kicker 是加 -er 构成的名词。它们都完整保留 kick 的 -ck，不再额外双写 k。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你站在球门前，轻轻 kick 一脚，球滚进球门；回家后又提醒自己，不能再 kick 那个坏习惯。一个是脚踢球，一个是口语里戒掉习惯。\"",
+        "valueJson": "\"想象你站在球门前，轻轻 kick the ball，球滚进球门；回家后又用 kick the habit 提醒自己戒掉熬夜的坏习惯。一个是用脚踢球，一个是口语里戒掉习惯。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-kick\",\"title\":\"Oxford Learner’s Dictionaries: kick\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/kick\",\"supports\":[\"动词与名词的常见用法\",\"规则词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr-wiktionary-kick\",\"title\":\"Wiktionnaire：kick（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/kick#Anglais\",\"supports\":[\"英语词条的发音与规则动词变化\",\"用脚踢、动物蹬踢及名词“一脚”\",\"非正式的“克服、摆脱难缠问题”义\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 736,
+    "headword": "kick",
+    "meaning_zh": "n. 踢, 反冲, 后座力, 凹底\nvi. 踢, 反抗, 反冲\nvt. 踢, 反冲",
+    "phonetic": "/kik/",
+    "pos": "",
+    "forms": []
+  }
+}

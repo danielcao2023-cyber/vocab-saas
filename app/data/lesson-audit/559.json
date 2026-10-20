@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8406ea72a45339106ae2a535513a0829a4149a01f8a9c969e4a81d14e650faf5",
+    "executedReviewPromptHash": "8406ea72a45339106ae2a535513a0829a4149a01f8a9c969e4a81d14e650faf5",
+    "reviewHash": "f90a6a31d0025d623355658ac387bd2313da449b70c89a3004f0164cbf6c0196",
+    "wordId": 559,
+    "inputHash": "2a43bf7ba190b62a54dec61afee8f00ca7ea3736268a095b200856eaa622b649",
+    "draftHash": "f572769b81fe92fb3478a2fb766a7c3a77397516c919fc7ab1f16af325f40904",
+    "finalHash": "99f0c2b75398e889a8d470a99bb8afd067fc381f819ebb967ac1064db8b72daf",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/friendship#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:05.603Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 206790,
+        "revisionId": 38705238,
+        "revisionTimestamp": "2025-09-19T00:11:15Z",
+        "sha256": "2e1eb3b5df934766fb729646beef9148cc41d57781d0b72e817017353c628092",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/friendship",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:08:00.156Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T17:19:28.530Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/takeaway; /forms/0/note; /senses/0/usageNote; /senses/1/usageNote",
+        "message": "可数性说明遗漏了常用的可数单数 a friendship。泛指友谊时不可数，指具体的一段友谊时可数；涉及群体本身并不是使用复数 friendships 的理由。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning; /senses/1/examples/1",
+        "message": "第二块应明确为群体交往中的延伸用法，避免与第一块重复；第二个例句只有 friendly relations，未展示目标词，须换成含 friendship 的自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0/zh",
+        "message": "worked on the project 不保证项目已经完成，译成“完成这个项目”增加了原文没有表达的结果。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "实际材料中没有 Oxford 条目内容，不能将其挂作释义、音标及词族说明的资料依据。应改列实际取得的法语维基词典英语词条，并按其实际支持范围调整引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料明确给出英语 friend + -ship，应补上同一 URL 的来源并直接说明这一构词事实；材料不支持历史年代或先后演变链，stages 保持空数组。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example",
+        "message": "welcomed us with friendliness 语法成立，但表达略显生硬，宜换成更自然、具体的 friendliness 用例。"
+      }
+    ],
+    "coverageAssessment": "所附词典的英语词条列出“友谊”这一核心名词义；法语 amitié 是释义语言，不表示该词来自法语。初稿的个人友谊与集体友好关系可作为同一核心义的两个教学语境保留。修订后两块各有两个含目标词的例句，并补清可数单数、不可数用法和复数条件。读音、词族实际拼写及反义关系可保留。现有材料只支持构词关系，不支持具体历史年代或演变链；其余用法细节依据专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "名词：友谊；朋友之间的感情或关系，并可延伸至群体、组织或国家之间的友好关系",
+        "coveredBy": [
+          "559-n-1",
+          "559-n-2"
+        ],
+        "assessment": "个人关系和较正式的集体关系均已覆盖，属于同一核心义的语境延伸，无须强行增加独立义项。修订后兼顾抽象的不可数用法和具体关系的可数用法，未发现遗漏的初中常用词性或核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: friendship\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/friendship\",\"supports\":[\"friendship 的名词用法、释义与发音\",\"friendship 的常见搭配及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：friendship（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/friendship#Anglais\",\"supports\":[\"friendship 的名词义“友谊”及复数 friendships\",\"friend + -ship 的构词关系\",\"相关词 friend、friendly、friendliness、unfriendly 及反义词 enmity\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可以看作 friend（朋友）加 -ship（表示身份、状态或关系的后缀），整体表示朋友之间的关系。\"",
+        "valueJson": "\"friendship 由英语 friend（朋友）与名词后缀 -ship 构成，表示朋友之间的关系，即“友谊”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"friendship 是名词，表示朋友之间的友谊或友好关系；通常用作不可数名词，也可以用复数 friendships 表示多段友谊。\"",
+        "valueJson": "\"friendship 是名词：泛指友谊时不可数，指一段具体的友谊时可数，可说 a friendship 或 friendships；也用于群体、国家之间的友好关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词原形；常作不可数名词，表示友谊或友好关系。\"",
+        "valueJson": "\"名词原形；泛指友谊时不可数，指一段具体的友谊时可数，如 a close friendship。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常作不可数名词；谈到不同的友谊或多段友谊时可用复数 friendships。\"",
+        "valueJson": "\"泛指友谊时不可数；表示一段具体的朋友关系时可数，如 a close friendship，多段友谊用 friendships。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"个人、群体或国家之间的友好关系。\"",
+        "valueJson": "\"群体、组织或国家之间的友好关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于正式或较正式的表达；谈不同群体之间的关系时常见复数 friendships。\"",
+        "valueJson": "\"常用于较正式的交流或合作语境。描述双方的友好关系时常用 friendship；friendships 表示多段不同的友好关系，不按双方各有多少人来决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"一起完成这个项目后，他们的友谊更加深厚了。\"",
+        "valueJson": "\"一起参与这个项目后，他们的友谊更加深厚了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"559-ex-4\",\"senseId\":\"559-n-2\",\"en\":\"The two countries have maintained friendly relations for years.\",\"zh\":\"这两个国家多年来一直保持友好关系。\",\"note\":\"用 friendly relations 表达国家间的友好关系。\"}",
+        "valueJson": "{\"id\":\"559-ex-4\",\"senseId\":\"559-n-2\",\"en\":\"The two countries have enjoyed a close friendship for many years.\",\"zh\":\"这两个国家多年来一直保持着深厚的友谊。\",\"note\":\"enjoy a close friendship 表示拥有深厚的友谊；这里指国家之间的友好关系。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"559-conf-ex-2\",\"senseId\":\"559-n-1\",\"en\":\"The new student welcomed us with friendliness.\",\"zh\":\"新同学友好地欢迎了我们。\",\"note\":\"说的是欢迎时表现出的友善态度。\"}",
+        "valueJson": "{\"id\":\"559-conf-ex-2\",\"senseId\":\"559-n-1\",\"en\":\"The nurse's friendliness helped the child relax.\",\"zh\":\"护士的亲切态度让那个孩子放松了下来。\",\"note\":\"friendliness 说的是护士待人亲切的态度，不说明双方是朋友。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 559,
+    "headword": "friendship",
+    "meaning_zh": "n. 友谊, 友爱, 友善",
+    "phonetic": "/'frendʃip/",
+    "pos": "",
+    "forms": []
+  }
+}

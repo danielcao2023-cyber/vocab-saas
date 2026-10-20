@@ -1,0 +1,360 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4239c770f9db4f3789f6c9bd2dad6d1d2d1efd497da1c7295b88b33cc7f357be",
+    "executedReviewPromptHash": "4239c770f9db4f3789f6c9bd2dad6d1d2d1efd497da1c7295b88b33cc7f357be",
+    "reviewHash": "e47137bb80307cae9d1c4ea706ab70cad6445baaa603e668492bf9ddabb2ac77",
+    "wordId": 666,
+    "inputHash": "232438d4b8be554a8330c49be610be98eaf63d793025f534b633fb8efc9ba3e8",
+    "draftHash": "42dc95d2419bde8d061f1d0fd5ed7086d2de4311a492dae47222b518ae550a11",
+    "finalHash": "2e0086a39b538f114486d2690bb676e065892d177e5a205b58a8fed8ddd76cc3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/horse#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.837Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11595,
+        "revisionId": 39751493,
+        "revisionTimestamp": "2026-08-02T17:08:02Z",
+        "sha256": "09eed306e58c2b12438082e02f3edc187e289ff71d0b20250b63da70a1d388dd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/horse",
+        "section": "horse etymology",
+        "supports": [
+          "Old English horse meaning; disputed deeper history"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:18:15.009817+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "cc864a395d078729130af7ec3f80bff71f324083a70499e2fdd46dadd6e20b6d",
+        "summaryAndSupportsWordCount": 47,
+        "sha256": "cc864a395d078729130af7ec3f80bff71f324083a70499e2fdd46dadd6e20b6d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/666.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/horse",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:27:54.104Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:37:32.159Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "horse 的拼写已经以 e 结尾，复数是在原词后加 -s，而不是加 -es；原说明会导出错误拼写 horsees。复数词尾读 /ɪz/ 的说明正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /takeaway; /forms/1; /senses/1",
+        "message": "单独的 horse 某些动词义确实少见，但 horse around 是常见的非正式短语，不应整体标为“少见”。around 也不宜被说成表达嬉闹时绝对不可替换或省略；应按完整短语教学，并提示 horse about。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0; /lessCommonSenses/1",
+        "message": "支架例句只出现 sawhorse，象棋例句只出现 knight，均未实际展示对应的 horse 用法。国际象棋中的 knight 中文通常称“马”，原文“骑士棋子”也应改正。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "没有提供 Oxford 的实际内容，Cambridge 明确未取得内容，不能用它们承接本次审核中的具体来源归属。应保留实际取得的两个来源，并按其真实支持范围调整引用；仅依专业语言知识保留的用法可使用空 sourceIds。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline; /studyPlan/1",
+        "message": "标题突出“使劲干活”，学习计划要求练习 horse-drawn 和 work like a horse，但正文没有展开这些表达。应让标题和学习任务对应实际教授的内容。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "原始释义中的历史军事义“骑兵”，以及已取得英语词条中的纹章图案义尚未交代。可作为低频义简要补充，无须提升为初中核心义。"
+      }
+    ],
+    "coverageAssessment": "已盘点原始释义及所附英语词条中的义项，并逐句检查例句、搭配、翻译、词形、读音、近义与反向表达。核心动物义和常见短语 horse around 各保留两个自然例句；补充骑兵、纹章义，修正支架和象棋例句。裸动词的古旧骑马、供马、套马用法不作为初中核心义展开；“取笑”不与 horse around 强行等同。现有词源的古英语阶段有依据，保留原文；词族构词和拼写基本正确，无须删改。",
+    "senseInventory": [
+      {
+        "sense": "名词：马",
+        "coveredBy": [
+          "horse-noun-animal"
+        ],
+        "assessment": "核心义覆盖充分，两个例句分别展示单数和复数，ride a horse 搭配正确。"
+      },
+      {
+        "sense": "名词：骑兵",
+        "coveredBy": [
+          "horse-noun-cavalry"
+        ],
+        "assessment": "修订后作为历史军事用语补充，说明与现代常用 cavalry 的关系及集合用法。"
+      },
+      {
+        "sense": "名词：支架、木工支撑架",
+        "coveredBy": [
+          "horse-noun-support"
+        ],
+        "assessment": "修订后用 horses 本身展示支架义，并限制其专业语境，避免泛化成所有脚架的通用名称。"
+      },
+      {
+        "sense": "名词：纹章中的马形图案",
+        "coveredBy": [
+          "horse-noun-heraldry"
+        ],
+        "assessment": "实际取得的英语词条明确列出，修订后作为专业低频义补充。"
+      },
+      {
+        "sense": "名词：国际象棋中的马，非正式叫法",
+        "coveredBy": [
+          "horse-noun-chess"
+        ],
+        "assessment": "修订后例句实际使用 horse，并区分标准名称 knight 与中文名称“马”。"
+      },
+      {
+        "sense": "动词短语：horse around，嬉闹、胡闹",
+        "coveredBy": [
+          "horse-verb-around"
+        ],
+        "assessment": "两个例句自然；修正错误的低频标签，并补充 horse about，保留与 ride a horse 的区分。"
+      },
+      {
+        "sense": "不及物动词：骑马，古旧用法",
+        "coveredBy": [],
+        "assessment": "不属于初中常用的独立动词用法，未另设教学义项；现代“骑马”已通过 ride a horse 和 on horseback 教授。"
+      },
+      {
+        "sense": "原始中文释义所列不及物动词“取笑”",
+        "coveredBy": [],
+        "assessment": "不据笼统中文释义编造现代裸动词例句；修订后的 usageNote 明确 horse around 指嬉闹，表达“取笑某人”通常用 tease 或 make fun of。"
+      },
+      {
+        "sense": "及物动词：给人或车辆配备马匹、提供坐骑",
+        "coveredBy": [],
+        "assessment": "属于罕见用法，修订后在 forms 的说明中简要提示，未展开为核心义。"
+      },
+      {
+        "sense": "及物动词：给车套马，原始释义作“系马于”",
+        "coveredBy": [],
+        "assessment": "属于旧式用法，不作为现代一般“拴马”的表达教授，也不要求初中学习者主动使用。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun; verb (rare)\"",
+        "valueJson": "\"noun; verb (often in phrasal verbs)\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"horse：马，也能表示“使劲干活”等固定说法\"",
+        "valueJson": "\"horse：认识“马”，分清 ride a horse 与 horse around\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见时，horse 是“马”这个动物；horse 也出现在一些固定表达中。动词用法少见，初中学习先掌握名词。\"",
+        "valueJson": "\"horse 最常见的意思是“马”，骑马说 ride a horse；horse around 是常见的非正式短语，表示“胡闹、嬉闹”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 horse-drawn 和 work like a horse，留意后者是比喻说法。\"",
+        "valueJson": "\"练习 ride a horse 和 horse around，分清“骑马”与“胡闹”；再记住 on horseback。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_horse\",\"cambridge_horse\"]",
+        "valueJson": "[\"wiktionary_horse_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则复数：在以 s 音结尾的 horse 后加 -es。\"",
+        "valueJson": "\"规则复数：horse 已以 e 结尾，书面上只加 -s，写作 horses；因原词以 /s/ 音结尾，复数词尾读 /ɪz/，整个词有两个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/label",
+        "expectedValueJson": "\"原形动词（少见）\"",
+        "valueJson": "\"动词原形\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"动词原形与名词拼写相同；常见于 horse around 等非正式表达。\"",
+        "valueJson": "\"动词原形与名词同拼写。horse around 的 -ing 形式是 horsing around：去掉 horse 末尾的 e 再加 -ing；过去式和过去分词为 horsed。单独作“给人或车辆配马”等动词义较少见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_horse\",\"cambridge_horse\"]",
+        "valueJson": "[\"wiktionary_horse_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"胡闹、嬉闹（少见、非正式）\"",
+        "valueJson": "\"胡闹、嬉闹（非正式短语 horse around）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这是非正式动词短语，常用于口语；通常说 horse around，而不是把 horse 当作普通的“骑马”动词。\"",
+        "valueJson": "\"这是常见的非正式动词短语，多指嬉闹、打闹；英式口语中也常说 horse about。“骑马”用 ride a horse；“取笑某人”通常用 tease someone 或 make fun of someone，不能直接套用 horse around。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"非正式动词短语；around 是短语的一部分，不可省略来表达这个意思。\"",
+        "valueJson": "\"把 horse around 作为一个完整短语记忆；horse about 也表示嬉闹，尤其见于英式口语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_horse\",\"cambridge_horse\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"horse-noun-support\",\"title\":\"支架或支撑架\",\"meaning\":\"horse 在某些复合词或专业语境中可指支架、架子。\",\"note\":\"不是初中日常对话中的常用义，通常需要结合具体物品名称理解。\",\"example\":{\"id\":\"horse-ex-5\",\"senseId\":\"horse-noun-support\",\"en\":\"He placed the board on a sawhorse before cutting it.\",\"zh\":\"切木板前，他把木板放在锯木架上。\",\"note\":\"sawhorse 是“锯木架”；此处说明复合词中的支架义。\"},\"sourceIds\":[\"oxford_horse\"]}",
+        "valueJson": "{\"id\":\"horse-noun-support\",\"title\":\"支架或支撑架\",\"meaning\":\"承托木料等物品的支架，尤指木工用的支撑架。\",\"note\":\"这是专业或较少见的用法，常用更明确的 sawhorse；不要把 horse 当作所有“脚架”的通用译法。\",\"example\":{\"id\":\"horse-ex-5\",\"senseId\":\"horse-noun-support\",\"en\":\"The carpenter laid the planks across two wooden horses.\",\"zh\":\"木匠把几块木板架在两个木制支撑架上。\",\"note\":\"此处 horses 指木工支架；更明确的常用说法是 sawhorses。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"horse-noun-chess\",\"title\":\"国际象棋中的马\",\"meaning\":\"口语中 horse 有时指国际象棋里的骑士棋子。\",\"note\":\"正式名称是 knight；horse 是便于理解的非正式叫法。\",\"example\":{\"id\":\"horse-ex-6\",\"senseId\":\"horse-noun-chess\",\"en\":\"She moved her knight to protect the queen.\",\"zh\":\"她移动骑士棋子来保护王后。\",\"note\":\"日常和正式棋类表达优先使用 knight。\"},\"sourceIds\":[\"cambridge_horse\"]}",
+        "valueJson": "{\"id\":\"horse-noun-chess\",\"title\":\"国际象棋中的马\",\"meaning\":\"在非正式说法中，horse 可指国际象棋中的“马”。\",\"note\":\"标准英语名称是 knight；horse 是非正式叫法。\",\"example\":{\"id\":\"horse-ex-6\",\"senseId\":\"horse-noun-chess\",\"en\":\"During our chess game, my brother moved his horse to protect his queen.\",\"zh\":\"我们下国际象棋时，弟弟移动他的马来保护自己的后。\",\"note\":\"horse 为非正式叫法，标准英语名称是 knight；该棋子中文称“马”。\"},\"sourceIds\":[\"wiktionary_horse_etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"horse-noun-cavalry\",\"title\":\"骑兵（历史军事用语）\",\"meaning\":\"骑兵；骑马作战的部队。\",\"note\":\"常作集合称呼，现代通常用 cavalry；旧式军事表述中，数词后可用 horse。\",\"example\":{\"id\":\"horse-ex-7\",\"senseId\":\"horse-noun-cavalry\",\"en\":\"The general sent three hundred horse to guard the bridge.\",\"zh\":\"将军派了三百名骑兵去守桥。\",\"note\":\"three hundred horse 是旧式军事表达，指三百名骑兵；日常说三百匹马则用 three hundred horses。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"horse-noun-heraldry\",\"title\":\"纹章中的马形图案\",\"meaning\":\"纹章上的马形图案。\",\"note\":\"纹章学用法，见于描述家族或城镇纹章的文字。\",\"example\":{\"id\":\"horse-ex-8\",\"senseId\":\"horse-noun-heraldry\",\"en\":\"A white horse appears on the town’s coat of arms.\",\"zh\":\"这座小镇的纹章上有一匹白马的图案。\",\"note\":\"coat of arms 指纹章；这里的 horse 指纹章中的马形图案。\"},\"sourceIds\":[\"wiktionary_horse_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_horse\",\"cambridge_horse\"]",
+        "valueJson": "[\"wiktionary_horse_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_horse\"]",
+        "valueJson": "[\"wiktionary_horse_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_horse\"]",
+        "valueJson": "[\"wiktionary_horse_etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_horse\",\"title\":\"Cambridge Dictionary: horse\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/horse\",\"supports\":[\"英美发音与名词用法\",\"horse around 的口语用法\",\"国际象棋语境中的 knight 叫法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_horse\",\"title\":\"Oxford Learner’s Dictionaries: horse\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/horse\",\"supports\":[\"名词常见义与复数形式\",\"horse around 等用法\",\"horseman、horseback 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"古英语 hors 的历史词源信息\",\"英美发音差异\"]",
+        "valueJson": "[\"英语名词“马”、纹章中的马形图案及国际象棋中的非正式叫法\",\"英美发音、规则复数及 hoarse 同音词信息\",\"horseman、horseback 等合成词条目的列举\",\"古英语 hors 的历史词源信息\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 666,
+    "headword": "horse",
+    "meaning_zh": "n. 马, 骑兵, 脚架\nvi. 骑马, 取笑\nvt. 使骑马, 系马于",
+    "phonetic": "/hɒ:s/",
+    "pos": "",
+    "forms": []
+  }
+}

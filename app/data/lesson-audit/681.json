@@ -1,0 +1,490 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "286d5904d6fe84e778cd05fb497e21b2eb76fcb4fad8b79b956262bba9016285",
+    "executedReviewPromptHash": "286d5904d6fe84e778cd05fb497e21b2eb76fcb4fad8b79b956262bba9016285",
+    "reviewHash": "bb0bc7508c911ed3209b8f31e4c4cf6be03b14b10438fc0121ca2317fa725d8a",
+    "wordId": 681,
+    "inputHash": "be4022bd5c7a5a2155a0d95247aa070ff2a1d0a3fe400dd1aa3b1fdcdd9dcb02",
+    "draftHash": "7b6e301bd3383c5a8fa98faa459a21fbaa7ddaf8a41868d7d230d9c94db05b24",
+    "finalHash": "2c81ccb6f591f4064361d693d38df07b28c0e87dfcf9f2df5d44db09ab1650a5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hunt#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:36.592Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115997,
+        "revisionId": 39651818,
+        "revisionTimestamp": "2026-07-05T22:02:50Z",
+        "sha256": "70dd1147677b8be66fbda011212e56f24960a8ba8aec6c93baefe8ca64dc70c8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hunt",
+        "section": "hunt etymology",
+        "supports": [
+          "Pursue-game meaning; later searching; deeper uncertainty"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:20:43.604297+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "078ede4d87bad15c1a1f735dacd5aa7be2fb0287d05f8ce363cf2b9f19cdef65",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "078ede4d87bad15c1a1f735dacd5aa7be2fb0287d05f8ce363cf2b9f19cdef65",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/681.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hunt",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:49:43.381Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:00:50.380Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/confusions/1; /wordFamily/1",
+        "message": "多处错误声称 hunted、hunting 要双写 t，甚至把正确形式 hunting 列为错误。hunt 以 nt 两个辅音字母结尾，直接加词尾，t 始终只有一个。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "“追踪并捕捉”容易把捕获结果写进定义。hunt 表示以捕获或猎杀为目的的追寻，不保证成功。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples; /senses/1; /senses/2",
+        "message": "人打猎和动物猎食目前各只有一例；名词例句全部属于搜寻，未例证标题中的打猎；追捕人的常用动词、名词用法也缺少具体例证。补足各核心用法至少两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "原例句中的 the hunt 指狩猎队，译文也如此，不能证明“猎区”义。猎区义需限定传统狩猎语境并换成空间边界例句；狩猎团体义另列。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 各处 sourceIds",
+        "message": "Cambridge 正文未取得，不能作为已读取的支撑材料。改列实际取得的法语维基词典英语词条，并按支持范围调整引用；不能由该词条直接支撑的现代用法不挂该来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0; /senses/0/relatedExpressions; /confusions/0",
+        "message": "补清 hunt rabbits 与 hunt for rabbits 均可，以及追捕人时可直接接宾语；chase 的说明也不应限于“跑”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/relatedExpressions",
+        "message": "rest 与 hunt 的联系过于牵强，宜撤去；hunt 也不天然比 search operation 更日常，应按行动范围和组织性比较。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1",
+        "message": "a nationwide hunt 是名词搭配，移到名词义；动词义改列实用搭配 hunt for a job。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/note; /memoryAid/story",
+        "message": "删除词形说明中残留的自问句；助记故事改用带正确动词变化的完整英文句，避免学生误记裸词形式。"
+      }
+    ],
+    "coverageAssessment": "已核对动词的打猎、动物猎食、一般搜寻和追捕，以及对应的主要名词用法；补丁应用后各核心用法均有至少两例。猎区和狩猎团体作为较少见义各列一例并限定语域。词源与已取得的词源材料一致，无需改写。来源局限是 Cambridge 正文不可用；已撤去相应支撑性引注，现代搭配与较少见义依据专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "动词：打猎、追猎野生动物，可及物或不及物",
+        "coveredBy": [
+          "hunt-v1"
+        ],
+        "assessment": "原有直接接猎物的例句；补充不带宾语的打猎例句，共两例，并修正不保证捕获的定义。"
+      },
+      {
+        "sense": "动词：动物猎食、寻找或追逐猎物",
+        "coveredBy": [
+          "hunt-v1"
+        ],
+        "assessment": "保留狐狸觅食例句，补充狼群猎鹿例句，共两例。"
+      },
+      {
+        "sense": "动词：努力搜寻人或物",
+        "coveredBy": [
+          "hunt-v2"
+        ],
+        "assessment": "钥匙和公交卡两例已自然覆盖；保留 hunt for 与 hunt through 的区别。"
+      },
+      {
+        "sense": "动词：追捕某人",
+        "coveredBy": [
+          "hunt-v2"
+        ],
+        "assessment": "补入同义项，增加 hunt for someone 和 hunt someone 各一例，明确追捕不等于抓获。"
+      },
+      {
+        "sense": "名词：一次打猎活动",
+        "coveredBy": [
+          "hunt-n1"
+        ],
+        "assessment": "原稿没有相应例句；补入猎鹿和猎人空手返回两例。"
+      },
+      {
+        "sense": "名词：搜寻行动或寻宝活动",
+        "coveredBy": [
+          "hunt-n1"
+        ],
+        "assessment": "原有寻宝游戏、寻找走失狗两例，覆盖充分。"
+      },
+      {
+        "sense": "名词：追捕行动",
+        "coveredBy": [
+          "hunt-n1"
+        ],
+        "assessment": "补入追捕抢劫者和越狱犯两例，区别于一般失物搜寻。"
+      },
+      {
+        "sense": "名词：猎区，特指狩猎团体的活动区域",
+        "coveredBy": [
+          "hunt-n2"
+        ],
+        "assessment": "保留较少见义，限定英国传统狩猎语境，改用明确涉及区域边界的例句。"
+      },
+      {
+        "sense": "名词：狩猎团体、狩猎队",
+        "coveredBy": [
+          "hunt-n3"
+        ],
+        "assessment": "原猎区例句实际体现此义；新增独立的较少见义及团体集合例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[\"wiktionary-fr-hunt\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e？hunt 以辅音字母结尾且没有 e，直接加 -ing。\"",
+        "valueJson": "\"词尾是两个辅音字母 n、t，直接加 -ing，不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"追踪并捕捉野生动物；也可说动物为捕食而寻找猎物。\"",
+        "valueJson": "\"追寻野生动物，目的是捕获或猎杀；也指动物为捕食而寻找、追逐猎物。这个词本身不表示已经捕获。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"猎物直接作宾语，中间不加 for；实际使用时需符合当地法律和语境。\"",
+        "valueJson": "\"hunt rabbits 和 hunt for rabbits 都可以；前者直接说明猎捕对象，后者用 for 引出寻找的目标。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-v1-ex3\",\"senseId\":\"hunt-v1\",\"en\":\"My grandfather used to hunt, but he gave it up years ago.\",\"zh\":\"我爷爷以前常打猎，但很多年前就不打了。\",\"note\":\"hunt 不带宾语，也能单独表示打猎这项活动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-v1-ex4\",\"senseId\":\"hunt-v1\",\"en\":\"Wolves often hunt deer in groups.\",\"zh\":\"狼经常成群地猎鹿。\",\"note\":\"动物也可作主语；hunt deer 表示以鹿为猎食对象，不表示每次都能捕到。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调追着移动的人或动物跑，不一定以捕获为目的；hunt 更突出追踪猎物或捕猎。\"",
+        "valueJson": "\"强调追赶移动的人或动物，不一定涉及寻找或捕猎；hunt 更突出寻找、追踪猎物或捕猎。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[\"wiktionary-fr-hunt\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：搜寻；寻找\"",
+        "valueJson": "\"动词：搜寻；寻找；追捕\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"努力寻找某个人或某样东西，通常暗示需要仔细找、找了一阵，结果未必成功。\"",
+        "valueJson": "\"努力寻找某个人或某样东西；也可指追踪并试图抓获某人。通常暗示需要仔细找或持续追寻，结果未必成功。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 hunt for + 要找的东西；hunt through + 地点或物品，表示翻找其中的内容；hunt down 常表示费力找到某人或某物。\"",
+        "valueJson": "\"一般搜寻常用 hunt for + 目标；hunt through + 地点或物品，表示翻找其中的内容。追捕人时也可直接说 hunt someone。hunt 本身不保证找到或抓获；hunt down 着重追踪到目标，在肯定的已完成叙述中通常表示找到了或抓获了。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-v2-ex3\",\"senseId\":\"hunt-v2\",\"en\":\"Police are hunting for the man who stole the bikes.\",\"zh\":\"警方正在追捕偷走那些自行车的男子。\",\"note\":\"hunt for 后也可接人；这里表示警方正在寻找并试图抓获目标。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-v2-ex4\",\"senseId\":\"hunt-v2\",\"en\":\"Officers hunted the escaped prisoner through the woods, but he got away.\",\"zh\":\"警员们在树林里追捕那名越狱犯，但他还是逃脱了。\",\"note\":\"hunt 可直接接被追捕的人；后半句说明追捕没有成功。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"hunt (for) + a wanted person\",\"zh\":\"追捕被通缉的人\",\"note\":\"在追捕语境中，hunt someone 和 hunt for someone 都可以；两者本身都不保证抓获。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"a nationwide hunt\",\"zh\":\"全国范围的搜寻\",\"note\":\"hunt 作名词时可指为寻找某人或某物而展开的行动。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"hunt for a job\",\"zh\":\"找工作\",\"note\":\"表示积极寻找工作机会，不表示已经找到工作。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"名词：打猎活动；搜寻行动\"",
+        "valueJson": "\"名词：打猎活动；搜寻或追捕行动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"打猎这项活动，或为找到人、物而进行的一次搜寻。\"",
+        "valueJson": "\"一次打猎活动，或为找到人、物而进行的一次搜寻或追捕行动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"可数名词，常见搭配有 a hunt for...（一次对……的搜寻）和 go on a hunt（去搜寻）。英国英语中 fox hunt 也可特指猎狐活动。\"",
+        "valueJson": "\"可数名词，常见搭配有 a hunt for...（对……的搜寻或追捕）和 go on a hunt（去打猎或搜寻）。fox hunt 指猎狐活动；一般说“去打猎”也常用 go hunting。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-n1-ex3\",\"senseId\":\"hunt-n1\",\"en\":\"They went on a deer hunt in the mountains last autumn.\",\"zh\":\"去年秋天，他们去山里猎鹿。\",\"note\":\"a deer hunt 指一次猎鹿活动，hunt 在这里是可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-n1-ex4\",\"senseId\":\"hunt-n1\",\"en\":\"The hunt ended before sunset, and the hunters returned home empty-handed.\",\"zh\":\"这次打猎在日落前结束，猎人们空手而归。\",\"note\":\"hunt 指一次打猎活动；进行过打猎不代表捕到了猎物。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-n1-ex5\",\"senseId\":\"hunt-n1\",\"en\":\"The police launched a hunt for the man who robbed the corner shop.\",\"zh\":\"警方对抢劫街角商店的男子展开了追捕。\",\"note\":\"a hunt for + 人 可指追捕行动；launch a hunt 表示展开搜寻或追捕。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-n1-ex6\",\"senseId\":\"hunt-n1\",\"en\":\"The hunt for the escaped prisoner continued through the night.\",\"zh\":\"对那名越狱犯的追捕持续了一整夜。\",\"note\":\"the hunt for... 指明确的追捕行动；这里仍未说明是否抓获。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a nationwide hunt\",\"zh\":\"全国范围的搜寻或追捕\",\"note\":\"hunt 作名词，常用于描述全国范围的搜寻或追捕行动。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常用于较正式的救援或警方搜寻；hunt 语气更日常，也可指打猎。\"",
+        "valueJson": "\"常指有组织的搜寻行动，尤其是救援或警方行动；hunt 可指搜寻、追捕或打猎，二者不能一概互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"rest\",\"zh\":\"休息\",\"note\":\"在“外出打猎或搜寻”作为行动的语境中，rest 表示停下来休息；不是 hunt 在所有意义上的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"没有适用于所有名词义项的直接反义词；rest 只与正在进行的搜寻或打猎行动形成情境对照。\"",
+        "valueJson": "\"打猎、搜寻和追捕这几个名词义没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[\"wiktionary-fr-hunt\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"猎人或猎犬进行打猎的区域。\"",
+        "valueJson": "\"某个狩猎团体进行狩猎活动的区域或辖区。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"此义较少见，现代初中学习中优先掌握“打猎活动”和“搜寻行动”。\"",
+        "valueJson": "\"这是较少见的英国传统狩猎用语，常涉及特定狩猎团体的活动范围；一般说“狩猎地点”更常用 hunting ground 或 hunting area。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"hunt-n2-ex1\",\"senseId\":\"hunt-n2\",\"en\":\"The estate kept the hunt away from the nesting area.\",\"zh\":\"庄园方面让狩猎队避开筑巢区。\",\"note\":\"此处 hunt 指狩猎队或狩猎活动范围，属于较少见用法。\"}",
+        "valueJson": "{\"id\":\"hunt-n2-ex1\",\"senseId\":\"hunt-n2\",\"en\":\"The river marks the northern boundary of the hunt.\",\"zh\":\"这条河标出了这片猎区的北界。\",\"note\":\"boundary 表示边界，明确了 hunt 在这里指狩猎团体的活动区域。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hunt-n3\",\"title\":\"名词：狩猎团体；狩猎队\",\"meaning\":\"经常一起进行狩猎活动的团体或俱乐部。\",\"note\":\"主要见于英国传统狩猎语境；这里指参加狩猎的团体，而非一次活动或一片猎区。\",\"example\":{\"id\":\"hunt-n3-ex1\",\"senseId\":\"hunt-n3\",\"en\":\"The local hunt meets outside the village every Saturday.\",\"zh\":\"当地狩猎队每周六都在村外集合。\",\"note\":\"hunt 指狩猎团体；meets 表示该团体定期集合。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记忆时把目标分开：找物品用 hunt for；捕猎物可直接说 hunt + 动物。两种结构都不自动表示已经成功。\"",
+        "valueJson": "\"找物品通常用 hunt for；猎物可以直接接在 hunt 后，也可以用 hunt for 引出。追捕人时也能说 hunt someone。普通 hunt 都只说明搜寻或追猎，不保证成功。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1",
+        "expectedValueJson": "{\"id\":\"hunt-spelling\",\"title\":\"别把 hunt 写成 hunted 的规则变化\",\"summary\":\"hunt 的过去式和过去分词是规则形式 hunted；辅音字母 t 双写并加 -ed。\",\"items\":[{\"label\":\"正确形式：hunted\",\"note\":\"以单个辅音字母结尾、前有一个元音字母的重读短音节动词，常双写末尾辅音再加 -ed。\",\"example\":{\"id\":\"hunt-spelling-ex1\",\"senseId\":\"hunt-v1\",\"en\":\"They hunted in the forest last spring.\",\"zh\":\"他们去年春天在森林里打猎。\",\"note\":\"过去式写 hunted，双写 t 后加 -ed。\"}},{\"label\":\"正确形式：hunting\",\"note\":\"加 -ing 时也双写末尾 t；不是 huntting 或 hunting（只双写一次）。\",\"example\":{\"id\":\"hunt-spelling-ex2\",\"senseId\":\"hunt-v2\",\"en\":\"She is hunting for her lost glove.\",\"zh\":\"她正在寻找丢失的手套。\",\"note\":\"现在分词是 hunting，t 只双写一次。\"}}],\"takeaway\":\"记作 hunt → hunted / hunting：末尾 t 双写一次，再加词尾。\",\"sourceIds\":[\"cambridge-hunt\"]}",
+        "valueJson": "{\"id\":\"hunt-spelling\",\"title\":\"hunted 和 hunting：不双写 t\",\"summary\":\"hunt 以两个辅音字母 n、t 结尾；hunted、hunting 都直接加词尾，不双写 t。\",\"items\":[{\"label\":\"正确形式：hunted\",\"note\":\"hunt 的词尾是 nt，直接加 -ed，拼作 hunted。\",\"example\":{\"id\":\"hunt-spelling-ex1\",\"senseId\":\"hunt-v1\",\"en\":\"They hunted in the forest last spring.\",\"zh\":\"他们去年春天在森林里打猎。\",\"note\":\"过去式写 hunted，t 只有一个；-ed 读 /ɪd/。\"}},{\"label\":\"正确形式：hunting\",\"note\":\"直接在 hunt 后加 -ing，拼作 hunting；huntting 多写了一个 t。\",\"example\":{\"id\":\"hunt-spelling-ex2\",\"senseId\":\"hunt-v2\",\"en\":\"She is hunting for her lost glove.\",\"zh\":\"她正在寻找丢失的手套。\",\"note\":\"现在分词是 hunting，其中 t 只有一个。\"}}],\"takeaway\":\"hunt → hunted / hunting：直接加 -ed 或 -ing，不双写 t。\",\"sourceIds\":[\"wiktionary-fr-hunt\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[\"wiktionary-fr-hunt\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"hunt + -ing；动词加 -ing 时双写末尾 t。\"",
+        "valueJson": "\"hunt + -ing，直接加词尾，不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"拼作 hunting，末尾 t 双写一次。\"",
+        "valueJson": "\"拼作 hunting，其中 t 只有一个。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hunt\"]",
+        "valueJson": "[\"wiktionary-fr-hunt\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你在山路上看到狐狸：它 hunt for food，四处找食物；护林员则提醒大家，hunt animals 会伤害野生动物。回家后你又 hunt for the bus card，在书包里认真翻找。三幕都记住“追着目标找”，但 hunt 不保证找得到。\"",
+        "valueJson": "\"想象你在山路上看到狐狸：The fox is hunting for food.（狐狸正在觅食。）护林员指着告示说：Do not hunt animals here.（不要在这里猎捕动物。）回家后你又翻起书包：I am hunting for my bus card.（我正在找我的公交卡。）三幕都围绕寻找或追猎目标展开，但 hunt 本身不保证成功。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-hunt\",\"title\":\"Cambridge Dictionary: hunt\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hunt\",\"supports\":[\"hunt 作动词表示打猎、寻找及相关搭配\",\"hunt 作名词表示打猎活动或搜寻\",\"hunt 的主要词形和读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr-hunt\",\"title\":\"维基词典（法语站）：hunt 英语词条\",\"url\":\"https://fr.wiktionary.org/wiki/hunt#Anglais\",\"supports\":[\"英语 hunt 的动词打猎义与名词狩猎义\",\"读音 /hʌnt/、规则动词变化及 hunter、hunting 等派生词\",\"古英语 huntian 的词源形式\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 681,
+    "headword": "hunt",
+    "meaning_zh": "n. 狩猎, 追捕, 搜寻, 猎区\nvt. 狩猎, 打猎, 搜索\nvi. 打猎, 猎食, 搜寻",
+    "phonetic": "/hʌnt/",
+    "pos": "",
+    "forms": []
+  }
+}

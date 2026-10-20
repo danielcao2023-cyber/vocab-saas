@@ -1,0 +1,434 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e6b84c889b0b11d378910bff7868f6ecb91e728c8ba9572abab55cc47f6cf1a5",
+    "executedReviewPromptHash": "e6b84c889b0b11d378910bff7868f6ecb91e728c8ba9572abab55cc47f6cf1a5",
+    "reviewHash": "cdcfb3cb2d5729a45c556e8eed74f35fc48e0e05a7dfc4036cecce7e865c9008",
+    "wordId": 1319,
+    "inputHash": "7923fbc595771940a97b40073a325f643dca00f64ba86689168d31f7d9a8196a",
+    "draftHash": "13c012af56a5b58044af800866f3bd9adfaf85da2dd970336c51188d91487400",
+    "finalHash": "834c4c0d01ea1ddab5963d1658d70fbc2955ab1ff747b297b8566cadda2abd25",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/standard#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:27.740Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 181316,
+        "revisionId": 39776296,
+        "revisionTimestamp": "2026-08-04T08:06:02Z",
+        "sha256": "a92c50f032c5cdb3058db397fd3b097f97971b81566c336f7699294d24e4a1e1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/standard",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:10:10.594Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:18:48.442Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“评判标准”“参照基准”和“实际水平”没有得到充分区分；实际水平仅有一例，参照基准缺少例句。应补足标准义，并将水平义单列、配足两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "符合规格与通常采用的两种用法各只有一例；常见的“标配的”及形容词表语用法也未覆盖。应分别补足教学内容，修正学习计划中过于绝对的位置说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原词条的货币本位义，以及已取得词典材料中的林业名词、形容词用法。可以作为低频义简要补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "中古英语本身就是英语的历史阶段，不能说英语从中古英语借入；阶段数组又把中古英语排在古法语之前，形成反向箭头。阶段释义还是来源说明，未提供独立的历史词义。正文中的资料制作说明也应删除。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 没有提供实际取得的内容，Cambridge 明确获取失败，不能把它们作为已经支持具体说明的材料。应改引实际取得的英语词条；仅据专业语言知识补充的内容使用空 sourceIds。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1",
+        "message": "标签是 standardly，例句却没有使用它，导致标签与教学示例不对应。宜直接以例句实际展示的介词短语为标签。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/formation",
+        "message": "standardize 派生 standardization 时需要去掉词尾 e；应说明实际拼写变化。"
+      }
+    ],
+    "coverageAssessment": "已核对所给中文词条和法语维基词典的英语词条。补丁将核心教学分为名词的标准／基准、水平，以及形容词的符合规格、通常惯例、标配用法，各配至少两例；另补货币本位和林业低频义，保留旗帜义。词源仅采用已取得材料，保留更早来源的争议。货币本位及部分教学辨析依据专业语言知识补充，不冒充已取得网页的内容；未将本次审校扩大为英语所有专业义项的穷尽词典。",
+    "senseInventory": [
+      {
+        "sense": "名词：评判标准、规范、参照基准或典范",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿有评判标准，基准功能不够具体；补丁补充安全要求和参照基准例句。"
+      },
+      {
+        "sense": "名词：质量、表现或生活的水平",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "从原 s1 独立出来，保留高质量例句并补充生活水平例句。"
+      },
+      {
+        "sense": "形容词：标准的、符合通行规格或规范的",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "保留尺寸例句，增加标准格式例句；非标准与不寻常不再混作同义反向表达。"
+      },
+      {
+        "sense": "形容词：通常的、惯常采用的、普通的",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "从原 s2 独立出来，用惯常提问和常用回复说明，并限定 usual、routine、unusual 等表达的适用范围。"
+      },
+      {
+        "sense": "形容词：标配的、默认包含的",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "原稿遗漏；补充两例及 be standard、come as standard 等常用结构。"
+      },
+      {
+        "sense": "名词：旗帜、军旗",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿已覆盖，例句及低频标注合理，仅修正来源指向。"
+      },
+      {
+        "sense": "名词：货币本位",
+        "coveredBy": [
+          "s7"
+        ],
+        "assessment": "原中文词条列出而原稿遗漏；以 gold standard 补充为经济史语境中的低频义。"
+      },
+      {
+        "sense": "名词，林业：萌芽林中保留并继续长成的大树",
+        "coveredBy": [
+          "s8"
+        ],
+        "assessment": "已取得英语词条明确列出；补充低频说明及例句。"
+      },
+      {
+        "sense": "形容词，林业：独立长成乔木的",
+        "coveredBy": [
+          "s9"
+        ],
+        "assessment": "已取得英语词条明确列出；与林业名词义分别说明，不列入初中必记核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"读例句时注意：standard 作名词前常有 the 或 a；作形容词时放在名词前。\"",
+        "valueJson": "\"读例句时区分名词的标准与水平；形容词既可放在名词前，也可作表语，如 Air conditioning is standard on this model（这款车型标配空调）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\",\"cambridge_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"标准；水平；规范\"",
+        "valueJson": "\"标准；规范；参照基准\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"判断事物是否合格、够好或达到要求时采用的尺度，也可指某种应达到的水平或规范。\"",
+        "valueJson": "\"判断是否合格或符合要求时采用的尺度、规则，也可指供其他事物比较或效仿的基准。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可数，常用单数 a standard 表示一项标准；standards 常指一组要求或整体水平。\"",
+        "valueJson": "\"可数。a standard 可指一项标准，standards 常指一组要求；meet standards 是达到要求，set the standard 或 serve as the standard 强调树立或充当比较基准。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"Her work is always of a high standard.\",\"zh\":\"她的作品一向质量很高。\",\"note\":\"of a high standard 表示质量达到较高水平。\"}",
+        "valueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"The new playground meets the school's safety standards.\",\"zh\":\"新操场符合学校的安全标准。\",\"note\":\"meet standards 表示符合一组具体要求。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"Her careful work sets the standard for the rest of the team.\",\"zh\":\"她细致的工作为团队其他成员树立了标杆。\",\"note\":\"set the standard 表示树立供他人效仿的基准。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"We kept the first sample as a standard for checking the colour of later batches.\",\"zh\":\"我们保留了第一个样品，作为检查后续批次颜色的基准。\",\"note\":\"这里的 standard 是实际用来比较的参照样品。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"of a high/low standard\",\"zh\":\"水平高／低\",\"note\":\"常用来评价质量或表现。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"level\",\"zh\":\"水平\",\"note\":\"强调高低程度；standard 更常含有应达到的尺度或要求。\"}",
+        "valueJson": "{\"en\":\"benchmark\",\"zh\":\"比较基准；标杆\",\"note\":\"与 standard 表示比较基准时接近，常用于衡量表现；不宜直接替代 safety standards 中表示规定要求的 standards。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"谈评估条件时可用 criterion；谈高低程度时常用 level。\"",
+        "valueJson": "\"criterion 侧重具体评判条件，benchmark 侧重用来比较的基准；两者都不能替换 standard 的所有用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\",\"cambridge_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"标准的；通常采用的\"",
+        "valueJson": "\"标准的；符合通行规格的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"符合普遍接受的规格、规则或做法的；也可表示常见、通常使用的类型。\"",
+        "valueJson": "\"符合普遍接受的规格、格式或规范的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"形容词，通常放在名词前；本身不加复数词尾。standard question 还可指固定题型或常见提问。\"",
+        "valueJson": "\"常放在名词前，修饰尺寸、格式或语言等；本身不加复数词尾。符合通行规范不等于质量特别高，也不等于在每个场景中最常见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"The teacher asked the standard question about our weekend.\",\"zh\":\"老师问了那个常见的周末问题。\",\"note\":\"这里 standard 表示通常会问的、常见的。\"}",
+        "valueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"Please save the report in the standard format shown in the guide.\",\"zh\":\"请按指南展示的标准格式保存报告。\",\"note\":\"standard 修饰 format，强调符合规定或通行的格式。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"unusual\",\"zh\":\"不寻常的\",\"note\":\"与 standard 表示“通常、常见”时相对；不一定表示不合格。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"不符合规范可用 nonstandard；表示不常见可用 unusual，两者含义不同。\"",
+        "valueJson": "\"nonstandard 表示不符合通行规格或规范；它不一定表示质量差，例如非标准尺寸也可能是按需要定制的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\",\"cambridge_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"质量；水平\",\"meaning\":\"工作、服务或生活等实际达到的质量或水平。\",\"usageNote\":\"常见结构有 of a high standard（质量高）和 the standard of something（某事物的水平）。standard of living 是生活水平，standards of living 是其复数形式。\",\"examples\":[{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"Her work is always of a high standard.\",\"zh\":\"她的作品一向质量很高。\",\"note\":\"这里说作品实际达到的质量，不是在列评判规则。\"},{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"A steady job helped the family raise their standard of living.\",\"zh\":\"一份稳定的工作帮助这家人提高了生活水平。\",\"note\":\"standard of living 指物质生活水平，不是生活中应遵守的规则。\"}],\"patterns\":[{\"en\":\"of a high/low standard\",\"zh\":\"质量或水平高／低\",\"note\":\"常用于评价工作、产品或服务。\",\"kind\":\"fixed-expression\"},{\"en\":\"the standard of something\",\"zh\":\"某事物的水平\",\"note\":\"如 the standard of service（服务水平）。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"standard of living\",\"zh\":\"生活水平\",\"note\":\"主要指生活中的物质条件和舒适程度。\",\"kind\":\"common-collocation\"},{\"en\":\"raise standards\",\"zh\":\"提高水平\",\"note\":\"可用于教学、服务或工作质量；也可能指提高要求，须看语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"quality\",\"zh\":\"质量\",\"note\":\"谈作品或服务时与 standard 接近，但不能直接替换 standard of living 中的 standard。\"},{\"en\":\"level\",\"zh\":\"水平\",\"note\":\"更泛指程度高低；standard 常用于评价质量。\"}],\"contrasting\":[{\"en\":\"below standard\",\"zh\":\"未达到应有水平\",\"note\":\"常用于评价工作或产品质量。\"},{\"en\":\"substandard\",\"zh\":\"质量不达标的\",\"note\":\"形容词，强调低于可接受水平。\"}],\"similarNote\":\"评价质量时 standard 与 quality 接近；谈生活水平时使用固定搭配 standard of living。\",\"contrastingNote\":\"below standard 和 substandard 都含有低于要求的评价，不只是中性的水平高低描述。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"通常的；常规的；普通的\",\"meaning\":\"某种情境中惯常采用、反复出现或作为普通类型的。\",\"usageNote\":\"这里侧重惯例或普通类型，不必涉及正式制定的规格。standard question 可指惯常提问，standard room 常指普通房型。\",\"examples\":[{\"id\":\"s5e1\",\"senseId\":\"s5\",\"en\":\"The teacher began Monday's lesson with the standard question: 'How was your weekend?'\",\"zh\":\"老师在周一上课时，照例先问：‘周末过得怎么样？’\",\"note\":\"standard 表示老师惯常会问的问题。\"},{\"id\":\"s5e2\",\"senseId\":\"s5\",\"en\":\"The bank sent me the standard reply to my complaint.\",\"zh\":\"银行针对我的投诉给我发来了惯用的回复。\",\"note\":\"指处理这类投诉时通常采用的回复，不强调回复特别好。\"}],\"patterns\":[{\"en\":\"the standard question/reply\",\"zh\":\"惯常的问题／回复\",\"note\":\"定冠词常用于双方能理解的那种惯常内容。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"standard practice\",\"zh\":\"通常做法；惯例\",\"note\":\"强调某个行业或场景中一贯采用的做法。\",\"kind\":\"common-collocation\"},{\"en\":\"standard room\",\"zh\":\"普通房型\",\"note\":\"具体设施和标准由酒店规定，不保证各酒店完全相同。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"usual\",\"zh\":\"通常的\",\"note\":\"强调经常出现；在惯常提问等语境中与 standard 接近。\"},{\"en\":\"routine\",\"zh\":\"常规的\",\"note\":\"强调按惯例或程序进行，不适合替换所有表示普通类型的 standard。\"}],\"contrasting\":[{\"en\":\"unusual\",\"zh\":\"不寻常的\",\"note\":\"与惯常、常见相对，不表示不合格。\"},{\"en\":\"special\",\"zh\":\"特别的；专门的\",\"note\":\"在普通方案或普通类型的语境中可作对照，不是 standard 的通用反义词。\"}],\"similarNote\":\"这里的 standard 接近 usual 或 routine，侧重惯例，而不是是否符合正式规格。\",\"contrastingNote\":\"unusual 对照惯常情况，special 对照普通类型；它们都不自动表示质量更好或更差。\"},\"sourceIds\":[\"wiktionary_standard\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"标配的；默认包含的\",\"meaning\":\"产品、房间或服务通常自带、无须另外选配的。\",\"usageNote\":\"常作表语，如 be standard on a model；也可修饰 equipment 或 features。是否包含在基础价格中，应由具体产品说明确认。\",\"examples\":[{\"id\":\"s6e1\",\"senseId\":\"s6\",\"en\":\"Air conditioning is standard on this model.\",\"zh\":\"这款车型标配空调。\",\"note\":\"standard 作表语，说明空调属于该车型的默认配置。\"},{\"id\":\"s6e2\",\"senseId\":\"s6\",\"en\":\"Wi-Fi is standard in all the rooms at this hotel.\",\"zh\":\"这家酒店的所有客房都标配无线网络。\",\"note\":\"指每间房通常都提供这一设施。\"}],\"patterns\":[{\"en\":\"be standard on a model\",\"zh\":\"是某款型号的标配\",\"note\":\"常用于车辆或设备的功能配置。\",\"kind\":\"sentence-pattern\"},{\"en\":\"come as standard\",\"zh\":\"作为标配提供\",\"note\":\"尤其常见于英式英语，如 The car comes with air conditioning as standard。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"standard equipment\",\"zh\":\"标准配置；标配设备\",\"note\":\"在产品介绍中指默认包含的设备。\",\"kind\":\"common-collocation\"},{\"en\":\"standard features\",\"zh\":\"标配功能\",\"note\":\"与需要另行选配的功能相对。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"included\",\"zh\":\"已包含的\",\"note\":\"强调包含在产品或方案中，不一定强调这是所有同类产品的通常配置。\"},{\"en\":\"built-in\",\"zh\":\"内置的\",\"note\":\"只有设施本身整合在产品内部时才接近；标配物品也可能是独立配件。\"}],\"contrasting\":[{\"en\":\"optional\",\"zh\":\"可选配的\",\"note\":\"在产品配置中与 standard 形成常见对照。\"},{\"en\":\"an optional extra\",\"zh\":\"额外选配项目\",\"note\":\"名词短语，通常指需要另行选择、往往另付费用的项目。\"}],\"similarNote\":\"默认包含可用 included 解释；只有确实内置时才能用 built-in。\",\"contrastingNote\":\"配置语境中，standard 与 optional 是常见对照；optional 本身不表示质量差。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s7\",\"title\":\"货币本位\",\"meaning\":\"规定货币价值所依据的制度或基准，常见于 gold standard（金本位）。\",\"note\":\"主要用于经济和历史语境；gold standard 也可比喻公认的最佳评价基准，不能见到这一短语就一律译成金本位。\",\"example\":{\"id\":\"s7e1\",\"senseId\":\"s7\",\"en\":\"Under the gold standard, the value of money was linked to gold.\",\"zh\":\"在金本位制下，货币的价值与黄金挂钩。\",\"note\":\"这里谈货币制度，不是一般的质量标准。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s8\",\"title\":\"林业：留养的大树\",\"meaning\":\"名词，指在萌芽林等经营方式中保留、让其继续长成的大树。\",\"note\":\"这是林业专业用法；coppice with standards 指萌芽林中保留有这类大树的林分。\",\"example\":{\"id\":\"s8e1\",\"senseId\":\"s8\",\"en\":\"The oak was left as a standard when the underwood was cut.\",\"zh\":\"砍伐下层林木时，这棵栎树被保留下来继续长大。\",\"note\":\"a standard 指保留的大树，不是评判尺度。\"},\"sourceIds\":[\"wiktionary_standard\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s9\",\"title\":\"林业：独立长成乔木的\",\"meaning\":\"形容词，描述独立生长、长成乔木的树木。\",\"note\":\"林业中可用来区别于反复采伐后萌生的低矮林木；不属于初中阶段必记用法。\",\"example\":{\"id\":\"s9e1\",\"senseId\":\"s9\",\"en\":\"Standard oaks stood above the low coppice.\",\"zh\":\"长成乔木的栎树耸立在低矮的萌芽林之上。\",\"note\":\"这里 standard 描述树木的生长形态，不表示符合某项质量标准。\"},\"sourceIds\":[\"wiktionary_standard\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"standardly\"",
+        "valueJson": "\"to a standard specification\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"较少见的副词形式，不适合替代“以标准方式”时更自然的表达。\"",
+        "valueJson": "\"这是介词短语，表示按标准规格；standard 在短语内部仍是修饰 specification 的形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_standard\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 standard 的历史与法语来源有关；所给历史材料称，英语在十二世纪借入中古英语 standard，该形式来自古法语 estandard，后者可能与日耳曼语重构形式 standhard 有关。另有一种说法把古法语形式联系到中世纪拉丁语 standardum 和拉丁语 extendere（“伸展、展开”）。这些是不同的历史解释，不能合并成一条确定的演变链。\"",
+        "valueJson": "\"standard 在十二世纪的中古英语中已有使用，借自古法语 estandart（亦作 estandard，意为军旗、战旗）。更早来源有不同解释：一种认为可能来自重构的法兰克语 *standhard（稳定、固定），其组成部分与英语 stand、hard 同源；另一种把古法语形式联系到中世纪拉丁语 standardum，并进一步联系到拉丁语 extendere（伸展、展开）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"standard\",\"meaning\":\"英语借入的形式；后来也用于表示旗帜或标准。\"},{\"language\":\"古法语\",\"form\":\"estandart\",\"meaning\":\"英语形式的借入来源之一。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"所给历史材料把 standhard 说成可能的日耳曼语来源，并列出另一种与中世纪拉丁语 standardum、拉丁语 extendere 有关的解释；两者关系并非定论。本词现代拼写不能据此拆成 stand + hard。\"",
+        "valueJson": "\"法兰克语与拉丁语的更早来源是两种不同解释，不能串成一条确定的演变链。星号表示 *standhard 是重构形式；现代 standard 不能简单拆成 stand + hard 来解释词义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"standardize + -ation，表示标准化这一过程或结果。\"",
+        "valueJson": "\"由 standardize 派生：去掉词尾 e，再加 -ation，成为 standardization，表示标准化这一过程或结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_standard\"]",
+        "valueJson": "[\"wiktionary_standard\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_standard\",\"title\":\"Oxford Learner’s Dictionaries: standard\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/standard\",\"supports\":[\"名词与形容词的常见含义及用法\",\"standardize 等常见派生词\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_standard\",\"title\":\"Cambridge Dictionary: standard\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/standard\",\"supports\":[\"standard 的英美读音\",\"名词和形容词的常见用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_standard\",\"title\":\"Wiktionary: standard（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/standard#Anglais\",\"supports\":[\"给定历史材料中的词源说法及不确定性\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_standard\",\"title\":\"Wiktionnaire：standard 的英语词条（法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/standard#Anglais\",\"supports\":[\"英语 standard 的英美读音\",\"名词的基准、旗帜及林业用法\",\"形容词的标准、普通及林业用法\",\"standardize、standardization 与 substandard 等派生词\",\"古法语来源及更早来源的两种解释\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1319,
+    "headword": "standard",
+    "meaning_zh": "n. 标准, 规格, 旗, 军旗, 本位\nadj. 标准的, 合规格的",
+    "phonetic": "/'stændәd/",
+    "pos": "",
+    "forms": []
+  }
+}

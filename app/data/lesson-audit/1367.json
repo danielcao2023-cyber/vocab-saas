@@ -1,0 +1,543 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "14d140bacb50a64d2917fee14853810fc087505c00823318b895d435eabfb6d9",
+    "executedReviewPromptHash": "14d140bacb50a64d2917fee14853810fc087505c00823318b895d435eabfb6d9",
+    "reviewHash": "32bb73e3de41b9fd020e283f0188cf143918d4162219a0aa7947c95e70f12a0f",
+    "wordId": 1367,
+    "inputHash": "f392790e5e13fbce8e2895cb1195fc78b64fbfd3e6eec5259aadb4761766b758",
+    "draftHash": "9ee878a0d90adbda02efbf63a4881bd92ee0f1b785ec67e6b2c874b71ef7dfac",
+    "finalHash": "0c680eb31144dc8b859a1fed64034776ee1254bd13b2e42decfcd4fccc477cf8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sweet#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.556Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116286,
+        "revisionId": 39751608,
+        "revisionTimestamp": "2026-08-02T17:16:18Z",
+        "sha256": "1982d61ceffc2e36c27442acd814b98200fd2a78b11f633745dc7182e89520fd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sweet",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:37:15.427Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:50:58.702Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "初稿将未在实际来源材料中出现的 Oxford 页面作为依据，须改为实际取得的英语词条来源；属于专业语言知识补充的内容不应继续挂靠该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的 example 对象",
+        "message": "多条例句缺少结构要求的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/title",
+        "message": "sweet 描述甜味，并不等于含糖或加过糖；标题中的“含糖的”会误导。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1、/senses/2、/senses/3",
+        "message": "芳香、悦耳两类用法各只有一个例句；令人愉快、外观可爱、餐后甜点等已列出的意思缺少相应例句。须补足并明确分义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见非正式评价及回应 Sweet!（很棒；太好了）。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions",
+        "message": "fruit 与糖果没有稳定的反向关系，应删除；treat 并不专指甜点或甜食，须明确其范围及语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "名词“甜蜜、乐趣”和形容词“不咸”的用法未交代；“灵活、轻快”不宜作为可任意套用的普通词义，需要限定到动作流畅利落等语境。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/example",
+        "message": "较旧的亲昵称呼用 my sweet 更有代表性，应避免让学习者仿用裸词 sweet 称呼普通熟人。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example、/confusions/1/items",
+        "message": "suite、sweat 例句不含对应的 sweet 词义，却绑定甜味义；另一句用 smells sweet 表达气味，也绑定了甜味义。须使例句与 senseId 实际对应。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段从中古英语倒排至原始印欧语，不适合表示历史演变的顺序箭头；各阶段释义只是来源身份的占位说明。宜将可证实的来源链写入 summary，并清空这些占位阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对原始中文释义及法语维基词典英语词条的主要义项。补丁补足甜味、芳香、悦耳、愉快体验、亲切体贴、可爱、英式糖果及餐后甜点的例句覆盖，并加入常见口语评价功能。较少见的亲昵称呼、抽象乐趣、不咸及动作流畅用法均作了语域限定。历史来源仅保留已取得材料明确列出的形式关系。来源对现代用法的解释较简略，补充说明和原创例句依据专业语言知识，不冒充另行取得的词典证据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：甜的、有甜味的",
+        "coveredBy": [
+          "sweet-adj-taste"
+        ],
+        "assessment": "已有两个自然例句；修正“含糖的”并区分甜味与是否加糖。"
+      },
+      {
+        "sense": "形容词：芳香的",
+        "coveredBy": [
+          "sweet-adj-pleasant"
+        ],
+        "assessment": "补丁后有两个气味例句。"
+      },
+      {
+        "sense": "形容词：悦耳的、声音甜美的",
+        "coveredBy": [
+          "sweet-adj-pleasant"
+        ],
+        "assessment": "实际英语词条明确支持；补丁后有两个声音例句。"
+      },
+      {
+        "sense": "形容词：令人愉快的；祝愿中的美好",
+        "coveredBy": [
+          "sweet-adj-pleasant"
+        ],
+        "assessment": "补充愉快时刻及 Sweet dreams! 两个例句。"
+      },
+      {
+        "sense": "形容词：亲切的、体贴的",
+        "coveredBy": [
+          "sweet-adj-kind"
+        ],
+        "assessment": "原有两个例句有效；调整标题和定义，使其与外观可爱义分清。"
+      },
+      {
+        "sense": "形容词：可爱的、讨人喜欢的；部分语境中的漂亮",
+        "coveredBy": [
+          "sweet-adj-cute"
+        ],
+        "assessment": "新增独立核心义及两个例句；说明不能普遍代替 beautiful。"
+      },
+      {
+        "sense": "形容词及感叹用法：很棒的；太好了",
+        "coveredBy": [
+          "sweet-informal-great"
+        ],
+        "assessment": "新增常见非正式用法，分别示范修饰名词及独立回应。"
+      },
+      {
+        "sense": "名词：糖果",
+        "coveredBy": [
+          "sweet-noun-treat"
+        ],
+        "assessment": "保留两个例句并明确英美用词差异。"
+      },
+      {
+        "sense": "名词：餐后甜点",
+        "coveredBy": [
+          "sweet-noun-treat"
+        ],
+        "assessment": "补充两个例句，标明较传统的英式用法。"
+      },
+      {
+        "sense": "名词：亲爱的人、心上人或亲昵称呼",
+        "coveredBy": [
+          "sweet-noun-endearment"
+        ],
+        "assessment": "保留为较少见用法，改用有代表性的 my sweet 并限制使用对象。"
+      },
+      {
+        "sense": "名词：甜蜜、乐趣",
+        "coveredBy": [
+          "sweet-noun-pleasures"
+        ],
+        "assessment": "新增较文学化的复数结构 the sweets of something，避免暗示 sweet 是常规的不可数抽象名词。"
+      },
+      {
+        "sense": "形容词：不咸的、淡的",
+        "coveredBy": [
+          "sweet-adj-fresh-water"
+        ],
+        "assessment": "新增传统或文学语境中的 sweet water，提示日常通常说 fresh water。"
+      },
+      {
+        "sense": "形容词：动作流畅利落、完成得漂亮",
+        "coveredBy": [
+          "sweet-adj-smooth-action"
+        ],
+        "assessment": "以体育动作语境承接“灵活、轻快”一类旧释义，不将其教成普遍表示身体灵活或速度快的词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective; noun\"",
+        "valueJson": "\"adjective; noun; exclamation (informal)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作形容词时，sweet 常说味道甜，也可形容气味、声音或人令人愉快；作名词时，常指糖果或甜点。\"",
+        "valueJson": "\"sweet 可说味道甜、气味芳香、声音悦耳、人亲切或事物可爱；口语里还可表示“太棒了”。英式名词用法常指糖果，也可指餐后甜点。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 a sweet child 的可爱、a sweet deal 的划算，以及口语回应 Sweet! 的“太好了”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"甜的；含糖的\"",
+        "valueJson": "\"甜的；有甜味的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可修饰饮料、食物等；sweet tea 是甜茶，sweet fruit 是甜水果。\"",
+        "valueJson": "\"可修饰饮料、食物等；sweet tea 是甜茶，sweet fruit 是甜水果。sweet 描述味道，不说明是否加过糖；unsweetened 表示未加糖，食物仍可能天然带甜味。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"too sweet 表示甜度超过说话人的喜好。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweet 可描述水果本身的甜味，不表示加过糖。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"具体含义由后面的名词决定：smell 常指香气，voice 或 music 常指悦耳。\"",
+        "valueJson": "\"修饰 smell 或 scent 时可指芬芳、甜香；修饰 voice 或 music 时指声音柔和悦耳；修饰 moment 等词时可指令人愉快、值得珍惜。Sweet dreams! 是睡前祝愿。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"sweet-ex3\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"A sweet smell came from the flowers.\",\"zh\":\"花儿散发出一阵香气。\"},{\"id\":\"sweet-ex4\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"We listened to her sweet voice.\",\"zh\":\"我们听着她悦耳的声音。\"}]",
+        "valueJson": "[{\"id\":\"sweet-ex3\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"A sweet smell came from the flowers.\",\"zh\":\"花儿散发出一阵香气。\",\"note\":\"sweet smell 在这里指芬芳的气味。\"},{\"id\":\"sweet-ex4\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"We listened to her sweet voice.\",\"zh\":\"我们听着她悦耳的声音。\",\"note\":\"sweet 描述嗓音柔和、动听。\"},{\"id\":\"sweet-ex-scent\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"The room was filled with the sweet scent of roses.\",\"zh\":\"房间里弥漫着玫瑰的芬芳。\",\"note\":\"sweet scent 表示怡人的香气。\"},{\"id\":\"sweet-ex-song\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"A bird sang a sweet song outside my window.\",\"zh\":\"一只鸟在我的窗外唱着悦耳的歌。\",\"note\":\"这里形容声音动听，不是味道甜。\"},{\"id\":\"sweet-ex-moment\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"It was a sweet moment when our whole family was together again.\",\"zh\":\"我们全家再次团聚，那一刻温馨而美好。\",\"note\":\"sweet moment 指令人愉快、值得珍惜的时刻。\"},{\"id\":\"sweet-ex-dreams\",\"senseId\":\"sweet-adj-pleasant\",\"en\":\"Sweet dreams! I'll see you in the morning.\",\"zh\":\"祝你做个好梦！明早见。\",\"note\":\"Sweet dreams! 是睡前的美好祝愿。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"亲切的；可爱的\"",
+        "valueJson": "\"亲切的；体贴的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"形容一个人温柔、友好，或举止让人喜欢。\"",
+        "valueJson": "\"形容一个人温和友善，或举止体贴、让人感到被关心。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里评价邻居待人亲切，不是在描述外貌。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a sweet thing to do 用来称赞体贴的举动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"糖果；甜食\"",
+        "valueJson": "\"糖果；餐后甜点\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"英式英语中常指糖果，也可泛指甜点或甜食。\"",
+        "valueJson": "\"英式英语中可指一颗糖果，复数 sweets 常指糖果；在较传统的英式用法中也可指餐后甜点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用复数 sweets 指一颗颗糖果；美式英语通常说 candy。\"",
+        "valueJson": "\"说糖果时，英式英语常用 sweets，美式英语通常用 candy。餐后甜点义较传统，常可换成 dessert；美国英语中复数 sweets 也能泛指甜食，如糖果、糕点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples",
+        "expectedValueJson": "[{\"id\":\"sweet-ex7\",\"senseId\":\"sweet-noun-treat\",\"en\":\"The children shared a bag of sweets.\",\"zh\":\"孩子们分吃了一袋糖果。\"},{\"id\":\"sweet-ex8\",\"senseId\":\"sweet-noun-treat\",\"en\":\"Would you like a sweet after lunch?\",\"zh\":\"午饭后你想吃颗糖吗？\"}]",
+        "valueJson": "[{\"id\":\"sweet-ex7\",\"senseId\":\"sweet-noun-treat\",\"en\":\"The children shared a bag of sweets.\",\"zh\":\"孩子们分吃了一袋糖果。\",\"note\":\"这里的 sweets 是英式英语中的糖果。\"},{\"id\":\"sweet-ex8\",\"senseId\":\"sweet-noun-treat\",\"en\":\"Would you like a sweet after lunch?\",\"zh\":\"午饭后你想吃颗糖吗？\",\"note\":\"这里把 a sweet 理解为一颗糖；在餐饮语境中它也可能指一道甜点。\"},{\"id\":\"sweet-ex-dessert1\",\"senseId\":\"sweet-noun-treat\",\"en\":\"For sweet, we had apple crumble and custard.\",\"zh\":\"甜点我们吃的是苹果酥配蛋奶沙司。\",\"note\":\"for sweet 是较传统的英式说法，相当于 for dessert。\"},{\"id\":\"sweet-ex-dessert2\",\"senseId\":\"sweet-noun-treat\",\"en\":\"Today's sweet is chocolate pudding.\",\"zh\":\"今天的餐后甜点是巧克力布丁。\",\"note\":\"这里的 sweet 指餐后甜点，不是一颗糖。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0",
+        "expectedValueJson": "{\"en\":\"a sweet\",\"zh\":\"一颗糖；一份甜食\",\"note\":\"英式英语中 sweet 作可数名词，单数前通常要有 a 或其他限定词。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a sweet\",\"zh\":\"一颗糖；一道餐后甜点\",\"note\":\"英式英语中可指一颗糖；较传统的餐饮用法中也可指一道甜点，须结合上下文判断。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"treat\",\"zh\":\"甜点；款待\",\"note\":\"可指偶尔享用的小甜食，范围比 sweets 更宽。\"}",
+        "valueJson": "{\"en\":\"treat\",\"zh\":\"特别的享受；难得享用的美食\",\"note\":\"食物语境中可指偶尔享用的好吃的东西，包括甜食，也可包括其他食物；不是糖果或甜点的专称。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"candy 是主要的美式对应词；treat 指偶尔享用的零食或点心。\"",
+        "valueJson": "\"糖果义在美式英语中通常对应 candy，餐后甜点义通常对应 dessert；treat 强调难得的享受，不限定食物种类。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"fruit\",\"zh\":\"水果\",\"note\":\"可作为较清淡的甜食替代选择，但不是 sweet 的固定反义词。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义是食物类别，常按甜味与咸味区分；fruit 只是可能的饮食选择，不是严格反义词。\"",
+        "valueJson": "\"糖果和甜点没有固定的词汇反义词；savoury snack 只是在选择甜味或咸味零食时形成口味对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sweet-adj-cute\",\"title\":\"可爱的；讨人喜欢的\",\"meaning\":\"形容人、动物或事物的外观或整体印象可爱，让人产生喜爱之情。\",\"usageNote\":\"常用于孩子、小动物或小巧温馨的事物，带亲昵、欣赏的语气。这里有时可译为“漂亮”，但 sweet 不能在所有外貌评价中代替 beautiful。\",\"examples\":[{\"id\":\"sweet-ex-cute1\",\"senseId\":\"sweet-adj-cute\",\"en\":\"Your daughter looks sweet in that little hat.\",\"zh\":\"你女儿戴着那顶小帽子真可爱。\",\"note\":\"这里评价外观可爱，不是在说她待人友好。\"},{\"id\":\"sweet-ex-cute2\",\"senseId\":\"sweet-adj-cute\",\"en\":\"What a sweet little cottage!\",\"zh\":\"多么可爱的小屋啊！\",\"note\":\"sweet 也能形容小巧、讨人喜欢的事物。\"}],\"patterns\":[{\"en\":\"look sweet in something\",\"zh\":\"穿戴某物显得可爱\",\"note\":\"in 后可接衣服、帽子等；look 在这里是连系动词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a sweet little baby\",\"zh\":\"一个可爱的小宝宝\",\"note\":\"常带亲昵语气。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"cute\",\"zh\":\"可爱的\",\"note\":\"常用于孩子、小动物及小巧的东西；sweet 往往还带温柔、亲昵的感情色彩。\"},{\"en\":\"lovely\",\"zh\":\"可爱的；美好的\",\"note\":\"用途较广，也能表达对人或事物的欣赏。\"}],\"contrasting\":[{\"en\":\"unattractive\",\"zh\":\"外观不吸引人的\",\"note\":\"只在讨论外观吸引力时形成对照，不是 sweet 的亲切、甜味等义的反义词。\"}],\"similarNote\":\"cute 与本义最接近；lovely 的适用范围更广。\",\"contrastingNote\":\"外观与行为要分开：外观不吸引人可用 unattractive，待人不友善则应按亲切义选择 unkind 等词。\"},\"sourceIds\":[\"wiktionary-sweet\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sweet-informal-great\",\"title\":\"很棒的；太好了（非正式）\",\"meaning\":\"在非正式口语中表示事物很好、很合意，也可用 Sweet! 回应好消息。\",\"usageNote\":\"可修饰 deal 等名词；单独说 Sweet! 相当于“太好了！”。这种用法适合朋友之间的随意交谈。\",\"examples\":[{\"id\":\"sweet-ex-great1\",\"senseId\":\"sweet-informal-great\",\"en\":\"We got a sweet deal on a second-hand bike.\",\"zh\":\"我们以很划算的价格买到了一辆二手自行车。\",\"note\":\"a sweet deal 指条件很优惠、很合意的交易。\"},{\"id\":\"sweet-ex-great2\",\"senseId\":\"sweet-informal-great\",\"en\":\"“I got tickets for Saturday.” “Sweet! See you there.”\",\"zh\":\"“我买到周六的票了。”“太好了！到时见。”\",\"note\":\"Sweet! 在这里是表达满意、兴奋的简短回应。\"}],\"patterns\":[{\"en\":\"Sweet!\",\"zh\":\"太好了！\",\"note\":\"非正式口语中可独立回应好消息。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"a sweet deal\",\"zh\":\"一笔很划算的交易；很优惠的条件\",\"note\":\"这里的 sweet 表示合意、有利，不涉及甜味。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"great\",\"zh\":\"很棒的；太好了\",\"note\":\"表示积极评价的常用词；Great! 也能回应好消息。\"},{\"en\":\"awesome\",\"zh\":\"棒极了\",\"note\":\"口语中常表示强烈赞赏，语气通常较兴奋。\"}],\"contrasting\":[{\"en\":\"a bad deal\",\"zh\":\"一笔不划算的交易\",\"note\":\"在评价交易条件时，可与 a sweet deal 对照。\"}],\"similarNote\":\"Great! 与 Sweet! 都可表示满意；Awesome! 通常更显兴奋。\",\"contrastingNote\":\"交易条件不好可说 a bad deal；独立回应好消息的 Sweet! 没有适用于所有情境的固定反向感叹语。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"sweet-noun-endearment\",\"title\":\"亲爱的；心上人\",\"meaning\":\"较旧或带亲昵语气的称呼，可指亲爱的人。\",\"note\":\"现代日常英语里更常用 sweetheart、dear 等表达；sweet 单独作这种称呼较少见。\",\"example\":{\"id\":\"sweet-ex9\",\"senseId\":\"sweet-noun-endearment\",\"en\":\"Come here, sweet; I have something to show you.\",\"zh\":\"过来，亲爱的；我有东西给你看。\",\"note\":\"这种称呼带亲昵语气，适合熟人之间。\"},\"sourceIds\":[\"oxford-sweet\"]}",
+        "valueJson": "{\"id\":\"sweet-noun-endearment\",\"title\":\"亲爱的；心上人\",\"meaning\":\"可作亲昵称呼，指亲爱的人，常见形式是 my sweet。\",\"note\":\"这种说法较旧或带文学色彩，适用于爱人等十分亲近的人；日常更常用 sweetheart 或其他熟悉的昵称。\",\"example\":{\"id\":\"sweet-ex9\",\"senseId\":\"sweet-noun-endearment\",\"en\":\"Good night, my sweet. I'll call you tomorrow.\",\"zh\":\"晚安，亲爱的。我明天给你打电话。\",\"note\":\"my sweet 是亲昵称呼，不宜用来称呼普通熟人。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sweet-noun-pleasures\",\"title\":\"甜蜜；乐趣（文学用法）\",\"meaning\":\"复数 sweets 可表示某种经历带来的乐趣或美好滋味。\",\"note\":\"常见于 the sweets of something 一类较文学化的表达；日常说“甜味”通常用 sweetness，不把 sweet 当作常规的不可数抽象名词。\",\"example\":{\"id\":\"sweet-ex-pleasures\",\"senseId\":\"sweet-noun-pleasures\",\"en\":\"After years of hard work, she finally tasted the sweets of success.\",\"zh\":\"经过多年的努力，她终于尝到了成功的甜蜜。\",\"note\":\"the sweets of success 指成功带来的喜悦，不是糖果。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sweet-adj-fresh-water\",\"title\":\"不咸的；淡的（水）\",\"meaning\":\"形容水不含咸味，即淡水。\",\"note\":\"sweet water 属于较传统或文学性的说法；现代日常英语通常说 fresh water，不要据此把所有“不咸的食物”都称作 sweet。\",\"example\":{\"id\":\"sweet-ex-water\",\"senseId\":\"sweet-adj-fresh-water\",\"en\":\"The stream was our only source of sweet water.\",\"zh\":\"那条小溪是我们唯一的淡水来源。\",\"note\":\"这里的 sweet water 指淡水，不是加糖的水。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sweet-adj-smooth-action\",\"title\":\"流畅利落的；完成得漂亮的（动作）\",\"meaning\":\"在体育等语境中，称赞动作流畅、精准或完成得漂亮。\",\"note\":\"如 a sweet swing 可指一次漂亮的挥击；不能把 sweet 普遍当作“身体灵活”或“速度轻快”的对应词。\",\"example\":{\"id\":\"sweet-ex-swing\",\"senseId\":\"sweet-adj-smooth-action\",\"en\":\"He hit the ball with a sweet swing of the bat.\",\"zh\":\"他漂亮地挥棒击中了球。\",\"note\":\"sweet 称赞这次挥棒动作完成得好，并不单独说明速度快。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweet 在这里修饰 apple，表示味道甜。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"sweet-confusion-ex2\",\"senseId\":\"sweet-adj-taste\",\"en\":\"Their hotel suite has two bedrooms.\",\"zh\":\"他们的酒店套房有两间卧室。\"}",
+        "valueJson": "{\"id\":\"sweet-confusion-ex2\",\"senseId\":\"sweet-adj-taste\",\"en\":\"We ate sweet grapes in our hotel suite.\",\"zh\":\"我们在酒店套房里吃了甜葡萄。\",\"note\":\"sweet 表示葡萄味道甜；suite 表示套房，两词同音。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example",
+        "expectedValueJson": "{\"id\":\"sweet-confusion-ex3\",\"senseId\":\"sweet-adj-taste\",\"en\":\"This milk smells sweet.\",\"zh\":\"这牛奶闻起来有甜香。\"}",
+        "valueJson": "{\"id\":\"sweet-confusion-ex3\",\"senseId\":\"sweet-adj-taste\",\"en\":\"The peach tastes sweet.\",\"zh\":\"这个桃子尝起来很甜。\",\"note\":\"sweet 的元音是 /iː/；这里明确表示味觉。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"sweet-confusion-ex4\",\"senseId\":\"sweet-adj-taste\",\"en\":\"I sweat a lot on hot days.\",\"zh\":\"天气热的时候我出汗很多。\"}",
+        "valueJson": "{\"id\":\"sweet-confusion-ex4\",\"senseId\":\"sweet-adj-taste\",\"en\":\"After the run, I wiped away my sweat and drank some sweet tea.\",\"zh\":\"跑完步后，我擦去汗水，喝了些甜茶。\",\"note\":\"sweat /swet/ 在这里是名词“汗水”；sweet /swiːt/ 表示茶味道甜。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"sweet 经古英语 swēte 传至现代英语，来源可继续追溯到原始日耳曼语重构形式 *swōtuz，再追溯到印欧语系重构词根 *sweh₂d-。\"",
+        "valueJson": "\"sweet 的历史来源链可追溯为：原始印欧语重构词根 *sweh₂d- → 原始日耳曼语重构形式 *swōtuz → 古英语 swēte → 中古英语 swete → 现代英语 sweet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"swete\",\"meaning\":\"sweet 的中古英语形式\"},{\"language\":\"古英语\",\"form\":\"swēte\",\"meaning\":\"sweet 的古英语形式\"},{\"language\":\"原始日耳曼语\",\"form\":\"*swōtuz\",\"meaning\":\"被重构为 sweet 的日耳曼语来源形式\"},{\"language\":\"原始印欧语\",\"form\":\"*sweh₂d-\",\"meaning\":\"被认为与 sweet 同源的重构词根\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweeten 在这里是及物动词，宾语是 the tea。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweetly 是副词，修饰 sang，说明歌声悦耳。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweetness 是名词，这里指芒果的甜味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-sweet\"]",
+        "valueJson": "[\"wiktionary-sweet\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-sweet\",\"title\":\"Oxford Learner’s Dictionaries: sweet\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/sweet\",\"supports\":[\"发音与形容词、名词用法\",\"常见搭配及英式英语中 sweets 的含义\",\"sweeten、sweetly、sweetness 等派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-sweet\",\"title\":\"Wiktionnaire：sweet（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/sweet#Anglais\",\"supports\":[\"甜味、可爱、悦耳等形容词义及英式糖果、甜点名词义\",\"发音 /swiːt/、与 suite 同音及形容词比较形式的构形信息\",\"sweet tooth、sweet dreams 及 sweeten、sweetly、sweetness 等相关表达与派生词拼写\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1367,
+    "headword": "sweet",
+    "meaning_zh": "n. 甜蜜, 糖果, 情人\nadj. 甜的, 芳香的, 悦耳的, 漂亮的, 和蔼的, 不咸的, 灵活的, 轻快的",
+    "phonetic": "/swi:t/",
+    "pos": "",
+    "forms": []
+  }
+}

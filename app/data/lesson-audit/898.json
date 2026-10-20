@@ -1,0 +1,330 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7c94324a0b6be008301e7634dbc24ba27c0c2e10ff85a9c340f76522acb27536",
+    "executedReviewPromptHash": "7c94324a0b6be008301e7634dbc24ba27c0c2e10ff85a9c340f76522acb27536",
+    "reviewHash": "a867bde0ae66d45c5ac3b582174e4d98a42fd559beed96f7725b294be2edec86",
+    "wordId": 898,
+    "inputHash": "41a9b5784b6c40ca731a80c0720fc75fbca978a04218ce68a9d2e7c204e72181",
+    "draftHash": "fb690838ac03bd8dc0c12e20e242134f433b598b5fa68e74f722f4b02cbbc968",
+    "finalHash": "94a9288d91c27282ba3da0bfa9f035a4894929b09ffaa317afbbd9c0d2d01b5e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/nation#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.751Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86005,
+        "revisionId": 39720790,
+        "revisionTimestamp": "2026-08-01T01:35:56Z",
+        "sha256": "5d69ce656e8689d856ec2bd45b41c88ba988afe9840e165242b234b16595d0c7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/nation",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:03:44.341Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:09:41.155Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源材料支持拉丁语 natio 及“后代、族类；人民”等释义，未支持古法语中介、该阶段的释义或拉丁语“出生、血统”的表述。须删去未经材料证实的历史环节。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources及相关sourceIds",
+        "message": "原稿多数引用指向未取得内容的 Oxford 页面。本轮可核对的是法语维基词典中的英语词条；应据其实际内容引用基本义、读音与词源，辨析和词族则保留专业语言知识说明，不挂不匹配的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "本组合并了“国家”和“全国人民”两个主要用法，但各仅一例。各补一例，保留现有两组义项结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1",
+        "message": "island nation 通常指“岛国”，不能凭此例证明“民族”义；“岛国民族”的译法也不准确。须换成明确体现民族共同体可跨越国界的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1；/senses/0/patterns/1",
+        "message": "nation of people 与 a nation of + people 混淆了完整表达和可替换成分，容易被机械记忆。应给出明确的复数名词框架和具体示例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "country 也能自然地指全国人民，不能笼统断言 nation 更自然；another country 对照的是“本国”，不是 nation 本身的反向表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "需说明 people 表示“民族”时可用 a people，复数为 peoples，并收紧它与 ethnic group、nation 的替换范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1",
+        "message": "a sense of nationhood 是派生词 nationhood 的搭配，不能直接展示 nation 的搭配。改用 a stateless nation 可同时强化本义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/zh",
+        "message": "国家队语境中的 arrived home 指返回本国，译成“回到了家乡”不准确。"
+      }
+    ],
+    "coverageAssessment": "已核对“国家”“全国人民”的集合用法及“民族／人民共同体”三项主要用法，保留两组教学义项，补足各核心用法的例句。未发现须新增的常用词性。现有词典材料仅直接支持基本义、读音和拉丁语来源；搭配、辨析与现代词族按专业语言知识审定，未经证实的古法语中介已删除。",
+    "senseInventory": [
+      {
+        "sense": "国家；作为整体的国家共同体",
+        "coveredBy": [
+          "nation-1"
+        ],
+        "assessment": "原稿已有国家义例句；补充日常夏令营场景后，该用法有两例。"
+      },
+      {
+        "sense": "全国人民；一国人民的集合指称",
+        "coveredBy": [
+          "nation-1"
+        ],
+        "assessment": "原稿已有灾后互助例句；补充全国观看决赛的例句后，该用法有两例，无须另拆义项。"
+      },
+      {
+        "sense": "民族；具有共同身份、历史或文化的人民共同体",
+        "coveredBy": [
+          "nation-2"
+        ],
+        "assessment": "定义基本准确；保留歌曲例句，将偏向“岛国”的例句换成明确体现民族认同跨越国界的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 nation of people 与 the whole nation 两种表达。\"",
+        "valueJson": "\"练习 a nation of immigrants 与 the whole nation 两种表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[\"wiktionary-nation-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"nation-1-ex3\",\"senseId\":\"nation-1\",\"en\":\"Children from six nations took part in our summer camp.\",\"zh\":\"来自六个国家的孩子参加了我们的夏令营。\",\"note\":\"复数 nations 指不同国家；此处也可用 countries。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"nation-1-ex4\",\"senseId\":\"nation-1\",\"en\":\"The whole nation watched the final on TV.\",\"zh\":\"全国人民都通过电视收看了决赛。\",\"note\":\"the whole nation 指全国人民，强调大家对同一场赛事的关注。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"a nation of + people\",\"zh\":\"一个由……组成的国家\",\"note\":\"of 后可接描述人民特点或身份的名词短语。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a nation of + plural noun\",\"zh\":\"一个由……组成的国家；国民普遍……的国家\",\"note\":\"如 a nation of immigrants（由移民组成的国家）或 a nation of readers（国民普遍爱读书的国家）；这里用复数名词概括居民的身份或特点。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"日常交谈中常指一个国家的土地或政体；nation 更突出人民共同体或国家身份。\"",
+        "valueJson": "\"country 和 nation 在“国家”义上常可互换；country 在日常谈论具体国家时更常见，nation 较常突出国家整体或共同身份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"country 是最常见的近义表达，但说全国人民时 nation 更自然。\"",
+        "valueJson": "\"the nation 和 the whole country 都可以指全国人民；state 在“国家”义上则更侧重国家作为政治组织。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"another country\",\"zh\":\"另一个国家\",\"note\":\"在比较两个国家时，可与本国的 nation 对照；它不是 nation 在所有语境中的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"nation 没有通用于所有语境的反义词；比较不同国家时可用 another country。\"",
+        "valueJson": "\"nation 在这一义下没有固定的词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[\"wiktionary-nation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"nation-2-ex2\",\"senseId\":\"nation-2\",\"en\":\"The museum celebrates the art of the island nation.\",\"zh\":\"这家博物馆赞颂这个岛国民族的艺术。\",\"note\":\"语境可同时指岛国及其人民文化。\"}",
+        "valueJson": "{\"id\":\"nation-2-ex2\",\"senseId\":\"nation-2\",\"en\":\"Although they live in different countries, they see themselves as one nation.\",\"zh\":\"虽然他们生活在不同的国家，却认为自己属于同一个民族。\",\"note\":\"nation 指共同认同的民族，可以跨越国界，不等于一个独立国家。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"a sense of nationhood\",\"zh\":\"民族认同感\",\"note\":\"nationhood 指成为一个民族或国家共同体的状态，常用于较正式语境。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a stateless nation\",\"zh\":\"没有独立国家的民族\",\"note\":\"stateless 在此修饰 nation，指这个民族没有自己的独立国家。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"people\",\"zh\":\"人民；民族\",\"note\":\"people 是更宽泛、更日常的说法；nation 常强调共同身份或历史。\"}",
+        "valueJson": "{\"en\":\"a people\",\"zh\":\"一个民族\",\"note\":\"people 指“民族”时可用 a people，复数为 peoples；普通复数 people 通常指“人们”，不能在所有语境中直接替换 nation。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"强调共同文化或血缘特征，不一定具有国家共同体身份。\"",
+        "valueJson": "\"常按共同文化、语言或祖源等来界定族群；一个 nation 可能包含多个 ethnic groups，二者不能总是互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"people 适用面更广；ethnic group 更具体地描述文化或族群联系。\"",
+        "valueJson": "\"a people 侧重作为民族的人民群体，ethnic group 侧重族群联系；nation 还可强调共同的政治身份，三者不能随意互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此义没有稳定的反义词；people 和 ethnic group 可按强调重点替换。\"",
+        "valueJson": "\"此义没有固定的词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[\"wiktionary-nation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"nation 经古法语进入英语，历史上来自拉丁语 natio，原指出生、血统或人民。\"",
+        "valueJson": "\"nation 的历史来源可追溯到拉丁语 natio，意为“后代、族类；人民”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"natio\",\"meaning\":\"出生、血统；人民\"},{\"language\":\"古法语\",\"form\":\"nation\",\"meaning\":\"人民；民族\"},{\"language\":\"英语\",\"form\":\"nation\",\"meaning\":\"国家；民族\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"natio\",\"meaning\":\"后代、族类；人民\"},{\"language\":\"英语\",\"form\":\"nation\",\"meaning\":\"国家；民族\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"国家队今天回到了家乡。\"",
+        "valueJson": "\"国家队今天回国了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-nation\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-nation\",\"title\":\"Oxford Learner’s Dictionaries: nation\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/nation\",\"supports\":[\"名词的国家、民族常见含义\",\"发音及常见搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-nation-etymology\",\"title\":\"Wiktionary: nation（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/nation#Anglais\",\"supports\":[\"nation 的历史词源链\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-nation-etymology\",\"title\":\"Wiktionnaire：nation（英语词条；法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/nation#Anglais\",\"supports\":[\"英语 nation 的名词词性及国家、民族基本义\",\"英语读音 /ˈneɪʃən/\",\"拉丁语 natio 的历史来源及其释义\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 898,
+    "headword": "nation",
+    "meaning_zh": "n. 国家, 民族",
+    "phonetic": "/'neiʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

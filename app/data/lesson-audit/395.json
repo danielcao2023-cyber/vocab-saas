@@ -1,0 +1,336 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8f1580fc2732a77ce968fe7ae0480001515cf9c8216625af6b666ab728dbe81e",
+    "executedReviewPromptHash": "8f1580fc2732a77ce968fe7ae0480001515cf9c8216625af6b666ab728dbe81e",
+    "reviewHash": "3cc296596f8b40ab9834729191b87af91f03c6718cba582772a28003a2bc6454",
+    "wordId": 395,
+    "inputHash": "47ebadc15e68d750b10c5ff90f1116d0966b7914cab0bbf843041063084c915b",
+    "draftHash": "b139fdb0e8001513e9703c16ebae3c1529ed4f72afeeaf0e43e2cba8f2b6ffae",
+    "finalHash": "d99a7aa63854a45697df17906006d3f59001876108f88cdf2b4c65678d3f2402",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/dish#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:33.244Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116280,
+        "revisionId": 39759484,
+        "revisionTimestamp": "2026-08-03T00:11:53Z",
+        "sha256": "3bff8af57e46b428638041a3858bedc0a6c680e2c8251399cbce10777f19559c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/dish",
+        "section": "dish etymology",
+        "supports": [
+          "Old English plate or bowl",
+          "Latin discus family",
+          "Food from container extension"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "e7cacd616a618617075ac6e32843ef9f8850519563423b5d8aeceff492bbe862",
+        "summaryAndSupportsWordCount": 67,
+        "sha256": "e7cacd616a618617075ac6e32843ef9f8850519563423b5d8aeceff492bbe862",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/395.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/dish",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:48:30.414Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:51:41.303Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "复数 dishes 的餐具统称义属于日常核心用法，不宜列为较少见义；原稿只有一个例句，且将其过度限定为用过、待洗的餐具。应升为核心义，补足两例并涵盖干净餐具。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/senses/1/examples",
+        "message": "四个核心义例句均缺少结构要求的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "不能仅凭旧式记音 /diʃ/ 就判定读音错误，更不能据此推断其中有长元音。应直接说明现代 IPA 的 /ɪ/ 及音节数。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 正文未取得，不能作为此次已读材料的支持依据；现有材料也未建立其对 dishful 的支持。法语维基词典列出了相关义项，但没有说明容器到内容物的历史演变，该项应由 Etymonline 支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/0",
+        "message": "拉丁语阶段的 meaning 只是“来源词族”占位，并非字义。现有词源材料未给出 discus 的具体释义，应将可证实的来源关系保留在 summary，删除该空洞阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "ingredient 与 dish 应按配料和整道菜区分，不能限定成做菜前与做菜后的时间对立；菜做好后，其中的配料仍称 ingredients。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0/note；/confusions/0/takeaway",
+        "message": "a dish of fruit 表示一碟水果，也带有一份的量义；原总结将它概括成“一道菜或容器”，未清楚区分它与 a fish dish。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0/zh",
+        "message": "“一道鱼菜”中文不够自然，宜译明为一道以鱼为主料的菜。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "dishful 的构词和拼写正确，可以保留并标明较少用；同时应补入材料已有、生活中更常用的 dishwasher，并区分派生词与复合词。"
+      }
+    ],
+    "coverageAssessment": "已核对可读取英语词条的三项主要名词功能：盘碟容器、一道菜、复数 dishes 的餐具统称义。修订后三项均列为核心用法，各有两个完整例句。词源仅采用已取得的词源材料；Cambridge 正文未取得，本次不据此声称穷尽其他词性或较偏用法。",
+    "senseInventory": [
+      {
+        "sense": "盘子、碟子及盛食物的容器",
+        "coveredBy": [
+          "dish-n-plate"
+        ],
+        "assessment": "已有两个自然例句；补齐必填注释，并说明 a dish of food 的容器及份量含义。"
+      },
+      {
+        "sense": "一道菜；菜肴",
+        "coveredBy": [
+          "dish-n-food"
+        ],
+        "assessment": "已有两个例句，覆盖做菜及菜单场景；需补齐注释、润色一处翻译，并修正与 ingredient 的比较。"
+      },
+      {
+        "sense": "dishes：餐具的统称，常见于 do/wash the dishes",
+        "coveredBy": [
+          "dish-n-dishes-utensils"
+        ],
+        "assessment": "原稿放在较少见义且仅有一例；修订后升为核心义，保留洗餐具例句，增加干净餐具的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"dish 作名词时，常指单个盘碟，也常指一道菜；dishes 还可泛指要洗的餐具。\"",
+        "valueJson": "\"dish 作名词时，常指一个盘碟，也常指一道菜；复数 dishes 还可统称盘、碗、杯等餐具。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /diʃ/ 不准确；dish 的首音是 /d/，不是 /d/ 后带长元音。\"",
+        "valueJson": "\"dish 中的 /ɪ/ 是短元音，与 sheep 中的 /iː/ 不同。dish 只有一个音节；复数 dishes /ˈdɪʃɪz/ 有两个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-dish\"]",
+        "valueJson": "[\"wiktionary-dish-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"clean 和 on the shelf 使这里的 dish 明确指盛食物的容器。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a small dish of fruit 表示一小碟水果，带出容器及其中一份食物的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"dish 指盛放食物的容器，后接 of 和所装的食物。\"",
+        "valueJson": "\"of 后接盘碟里所盛的食物；整个短语也可表示这样一份食物的量，如 a dish of fruit（一碟水果）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-dish\"]",
+        "valueJson": "[\"wiktionary-dish-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"爸爸为晚饭做了一道鱼菜。\"",
+        "valueJson": "\"爸爸为晚餐做了一道以鱼为主料的菜。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a fish dish 指一道以鱼为主要食材的菜。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on the menu 表明 dish 指菜单上的一道菜。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在烹饪语境中，ingredient 是做菜前使用的原料，dish 是做好的菜。\"",
+        "valueJson": "\"ingredient 指一道菜所含的一种原料或配料，dish 指整道菜；菜做好后，其中的配料仍可称 ingredients。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在做饭语境中，ingredient 指做菜前的原料，与做好后的一道 dish 相对。\"",
+        "valueJson": "\"dish 的菜肴义没有常用的直接反义词；ingredient 在这里用于比较整道菜与其中的配料，是整体与成分的关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-dish\"]",
+        "valueJson": "[\"wiktionary-dish-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"dish-n-dishes-utensils\",\"title\":\"餐具（通常用复数 dishes）\",\"meaning\":\"统称吃饭时用的盘、碗、杯等餐具。\",\"usageNote\":\"此义常见于 do/wash/put away the dishes。dishes 也可以是前两义的普通复数，例如 two fish dishes 是两道鱼菜，要结合语境判断。\",\"examples\":[{\"id\":\"dish-ex-wash\",\"senseId\":\"dish-n-dishes-utensils\",\"en\":\"We do the dishes after dinner.\",\"zh\":\"我们晚饭后洗餐具。\",\"note\":\"do the dishes 是固定说法，指洗用过的餐具。\"},{\"id\":\"dish-ex-clean-dishes\",\"senseId\":\"dish-n-dishes-utensils\",\"en\":\"Please put the clean dishes back in the cupboard.\",\"zh\":\"请把洗干净的餐具放回橱柜。\",\"note\":\"clean dishes 指已经洗净的餐具，说明这一义不限于待洗餐具。\"}],\"patterns\":[{\"en\":\"do the dishes\",\"zh\":\"洗餐具\",\"note\":\"日常家务中的固定表达，do 在这里表示清洗。\",\"kind\":\"fixed-expression\"},{\"en\":\"wash the dishes\",\"zh\":\"洗餐具\",\"note\":\"wash 直接说明清洗动作，与 do the dishes 在家务场景中意思相近。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"put away the dishes\",\"zh\":\"把餐具收好\",\"note\":\"通常指把洗净的餐具放回橱柜等存放处。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"tableware\",\"zh\":\"餐具；餐桌用品\",\"note\":\"较正式，常用于用品分类；dishes 在日常清洗和收拾餐具的场景中更自然。\"}],\"contrasting\":[],\"similarNote\":\"tableware 着重餐桌用品这一类别，通常不可数；dishes 在餐具义下用复数。二者不能在所有表达中直接替换。\",\"contrastingNote\":\"餐具是具体物品类别，没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary-dish-etymology\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"dish-n-dishes-utensils\",\"title\":\"餐具（常用复数 dishes）\",\"meaning\":\"dishes 可泛指吃饭用过、需要清洗的盘碟和餐具。\",\"note\":\"常见于 do the dishes 或 wash the dishes；意思是洗餐具，不是做菜。\",\"example\":{\"id\":\"dish-ex-wash\",\"senseId\":\"dish-n-dishes-utensils\",\"en\":\"We do the dishes after dinner.\",\"zh\":\"我们晚饭后洗餐具。\",\"note\":\"do the dishes 是固定说法，指洗用过的餐具。\"},\"sourceIds\":[\"cambridge-dish\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到 do/wash the dishes，就想到“洗餐具”；看到 a dish of food，dish 多半指一道菜或盛菜的容器。\"",
+        "valueJson": "\"do/wash the dishes 表示洗餐具；a dish of fruit 表示一碟水果，a fish dish 表示一道以鱼为主要食材的菜。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-dish\"]",
+        "valueJson": "[\"wiktionary-dish-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/0",
+        "expectedValueJson": "{\"language\":\"拉丁语\",\"form\":\"discus\",\"meaning\":\"dish 的历史来源词族\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-dish\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"dishwasher\",\"partOfSpeech\":\"noun\",\"meaning\":\"洗碗机；洗餐具的人\",\"formation\":\"dish + washer 构成复合名词；washer 由 wash + -er 构成，表示清洗的人或设备。\",\"spellingNote\":\"dishwasher 写成一个词：dish + wash + -er；复数为 dishwashers。\",\"example\":{\"id\":\"dish-family-dishwasher\",\"senseId\":\"dish-n-dishes-utensils\",\"en\":\"Please put the cups in the dishwasher.\",\"zh\":\"请把杯子放进洗碗机。\",\"note\":\"这里的 dishwasher 指机器，其中的 dish 对应餐具义。\"},\"sourceIds\":[\"wiktionary-dish-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"dishful 是由 dish 加 -ful 构成的相关名词；dishwasher 虽含 dish，但指洗碗机或洗碗的人，不作为这里的核心派生词教学。\"",
+        "valueJson": "\"dishful 是 dish + -ful 构成的派生词，表示一盘的量，较少用；dishwasher 是 dish + washer 构成的常用复合名词，通常指洗碗机，也可指洗餐具的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"古英语 disc 与拉丁语 discus 词族的来源关系\",\"dish 从盘碟义扩展到菜肴义\"]",
+        "valueJson": "[\"古英语 disc 与拉丁语 discus 的来源关系\",\"dish 的盘碟义、菜肴义及复数 dishes 的餐具义\",\"dish 与 dishes 的发音及复数形式\",\"do the dishes、wash the dishes 及 dishwasher 的洗碗机义\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-dish\",\"title\":\"Cambridge Dictionary: dish\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/dish\",\"supports\":[\"dish 的常见名词义项与用法\",\"dish 的复数拼写和发音\",\"常见餐具及菜肴搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 395,
+    "headword": "dish",
+    "meaning_zh": "n. 盘子, 碟, 菜肴",
+    "phonetic": "/diʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

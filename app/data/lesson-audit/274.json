@@ -1,0 +1,218 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "95b57fe31f8aba0495e2cd6fa05f4de5b46ca584dc316a7e5e3a67711357aa6a",
+    "executedReviewPromptHash": "e6876e6ab1bb582497cce00e20ca6d33fe6d9aad4c43b4e3543a7b8309760aae",
+    "reviewHash": "9137d2423d6e4c53e98de297df7b4b8d37bc50416c5cdaad5be2a4fe0908319d",
+    "wordId": 274,
+    "inputHash": "2f546a42d3b7eeb2311a0ee4ab136185079a4b6a57fb58c8b11dbb0be1dd2ca0",
+    "draftHash": "f69e38e49561fe851645270dcdfe3eac63adfe8dba6f3f3690993cc1732f6b8c",
+    "finalHash": "34b9f4755fce8062e35158a81da680683b7586ec07d854dc5587c81b973eeb00",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/classmate#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.916Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2902303,
+        "revisionId": 29242275,
+        "revisionTimestamp": "2021-02-26T02:02:58Z",
+        "sha256": "569c35b0d091c002db734787d588191ac90ff527bd941a30991210b0d2f3d3ad",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/classmate",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:49:09.792Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:54:28.309Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "正文引用未对应本次成功取得的来源：Oxford 未列入实际来源，Cambridge 获取失败，而已取得的维基词典英语词条未被收录。应调整来源及相关 sourceIds，保持 recommended 标签。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有词源材料明确支持 class + mate 的复合构词，应补上同 URL 引用。“并列构词成分”容易混淆构词关系，宜直接说明合成事实；stages 保持为空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "my 表示所属关系，a、two 不表示“谁的”；two 还应搭配复数 classmates。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/kind",
+        "message": "classmates help each other 是完整句子示例，宜归为 sentence-pattern。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/0/example/zh",
+        "message": "“我二班的同班同学”不够自然，应明确表达两人都在二班。"
+      }
+    ],
+    "coverageAssessment": "已核对所提供的维基词典英语词条，核心义为名词“同班同学”；原稿已有两个自然、语法正确的原创例句，无须拆分更多义项。复数、英美读音、近义表达及班级归属对照均已核对，反向表达的语境限制合理。词源仅确认 class + mate 的复合构词，不建立未经支持的历史阶段链。美式读音及部分教学比较依据专业语言知识，来源说明仅列实际材料支持的内容。",
+    "senseInventory": [
+      {
+        "sense": "名词：同班同学",
+        "coveredBy": [
+          "classmate-noun"
+        ],
+        "assessment": "已覆盖；两个核心例句均准确体现同班关系，且说明了同班不等于朋友。未发现需要另立的常用义或词性。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_classmate\",\"title\":\"Oxford Learner’s Dictionaries: classmate\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/classmate\",\"supports\":[\"名词词性及“同班同学”的基本含义\",\"classmate 的拼写和复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_classmate\",\"title\":\"Wiktionnaire：classmate（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/classmate#Anglais\",\"supports\":[\"英语名词 classmate 的“同班同学”义\",\"词条拼写与规则名词标记\",\"英式读音 /ˈklɑːs.meɪt/\",\"class 与 mate 的复合构词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_classmate\",\"title\":\"Cambridge Dictionary: classmate\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/classmate\",\"supports\":[\"classmate 的发音查询\",\"同班学生这一常用语境\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_classmate\",\"cambridge_classmate\"]",
+        "valueJson": "[\"wiktionary_classmate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_classmate\",\"cambridge_classmate\"]",
+        "valueJson": "[\"wiktionary_classmate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_classmate\",\"cambridge_classmate\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_classmate\",\"cambridge_classmate\"]",
+        "valueJson": "[\"wiktionary_classmate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_classmate\"]",
+        "valueJson": "[\"wiktionary_classmate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可看作 class（班级）+ mate（伙伴、同伴），合起来表示同班的同伴。两部分是并列构词成分，不是先后演变的词源阶段。\"",
+        "valueJson": "\"classmate 由英语 class（班级）和 mate（同伴）合成，表示“同班同学”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_classmate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习用 my、a、two 等词说明是谁的同班同学。\"",
+        "valueJson": "\"练习用 my classmate 表示“我的同班同学”，用 a classmate、two classmates 表示“一位／两位同班同学”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/zh",
+        "expectedValueJson": "\"米娅是我二班的同班同学。\"",
+        "valueJson": "\"米娅是我的同班同学，我们都在二班。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 274,
+    "headword": "classmate",
+    "meaning_zh": "n. 同班同学",
+    "phonetic": "/'klɑ:smeit/",
+    "pos": "",
+    "forms": []
+  }
+}

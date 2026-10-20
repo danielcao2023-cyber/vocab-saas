@@ -1,0 +1,531 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e7de519f4767d4fb1232211073f1a9271b5a30b1b0b4c83ac88fdd67c1ab32e4",
+    "executedReviewPromptHash": "e7de519f4767d4fb1232211073f1a9271b5a30b1b0b4c83ac88fdd67c1ab32e4",
+    "reviewHash": "f26c74d700d8c73edf782241dbeb1c653b0e8c21e9f882e4b80b820096b46643",
+    "wordId": 1201,
+    "inputHash": "d52687a3a67eed5bc286e91c7b37886f692fdc9f0e354b145940ffc491774946",
+    "draftHash": "c217ee76112db4b14d499cc5beabfe03d2a6ac6008a79d4e1ab75d6be9349140",
+    "finalHash": "691f1cd3ced2726e6d1bc4a143b0e49a9ef816cb3012d15673e54deace8da434",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/screen#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.246Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121522,
+        "revisionId": 39195645,
+        "revisionTimestamp": "2025-12-26T15:44:01Z",
+        "sha256": "65cf54c7f6442e6f2ec7131e58d7dbc70fb60feed4f1f35d19acfdd0b44191b3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/screen",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:33:48.525Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:46:33.579Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses, /lessCommonSenses",
+        "message": "“银幕／投影幕”只在旁注中出现，缺少独立教学及例句；常用动词“遮挡／保护”被放入少见义且只有一个例句。另缺名词筛网及动词实际筛分义。补丁补齐并区分这些用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "screen 与 scream 不只差一个元音字母：第5个字母为 e/a，第6个为 n/m；词尾读音也不同。原 scream 例句还未体现所关联的设备屏幕义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "两个阶段的 meaning 都是占位说明，未提供历史字义。保留已有来源支持的词源摘要，清空占位阶段，避免箭头图把占位文字呈现为历史释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamilyNote, /wordFamily/2/meaning",
+        "message": "screened 和动词 screening 属于词形变化，不能统称派生词；-ing 形式也不自动表示“正在”，动名词尤其如此。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions, /senses/1/relatedExpressions",
+        "message": "screen protector 是另一件物品，open space 是空间描述，都不适合作为这两个具体物件名的反向表达。移除强造的对照，保留没有固定反义词的准确说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources, 各 sourceIds",
+        "message": "多处支持来源指向未提供正文的 Oxford 页面。改用实际提供的英语词条；专业语言知识补充的内容不冒挂该来源。所有来源仍只使用 recommended 标签。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "放映义不宜宽泛解释为显示任何“画面”；需补电视播出及影片作主语的不及物用法，并明确日常“拍摄电影”通常用 shoot a film。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3, /lessCommonSenses",
+        "message": "补充来电筛选、内容审核、screen out 和 unscreened；将纱窗与其他防护网分清，并以少见义简要承接词典中的筛网及体育用法。"
+      }
+    ],
+    "coverageAssessment": "已逐句检查原稿，并核对全部词典定义。补丁后，六个核心义均有至少两个自然英中例句，分别覆盖设备屏幕、投影银幕、屏风、放映与播出、筛查与审核、遮挡与保护；实体筛分和体育义另列简释。词典中的“faire rentrer dans un écran”及截图表述未扩写为初中常用义，也未将 screen 泛化为日常“拍摄”动词。词源只保留已获取材料明确支持的历史联系。",
+    "senseInventory": [
+      {
+        "sense": "名词：设备屏幕、显示面板",
+        "coveredBy": [
+          "screen-n-device"
+        ],
+        "assessment": "原稿已有两个准确例句；显示面板属于同一设备显示义，无须机械拆义。"
+      },
+      {
+        "sense": "名词：银幕、投影幕；the big screen 借指影院电影",
+        "coveredBy": [
+          "screen-n-projection"
+        ],
+        "assessment": "原稿只有旁注；补丁新增独立核心义，三个例句分别呈现投影、露天幕布和影院表达。"
+      },
+      {
+        "sense": "名词：屏风、遮挡物、掩蔽物",
+        "coveredBy": [
+          "screen-n-divider"
+        ],
+        "assessment": "两个原有例句覆盖隐私遮挡及工作区隔挡；不扩展为专门的电磁屏蔽术语。"
+      },
+      {
+        "sense": "名词：筛网、滤网、筛子",
+        "coveredBy": [
+          "screen-n-filter"
+        ],
+        "assessment": "补丁新增少见义，区分拦截颗粒的实体器具与显示屏。"
+      },
+      {
+        "sense": "名词：纱窗、窗纱",
+        "coveredBy": [
+          "screen-n-mesh"
+        ],
+        "assessment": "保留原例句，收紧定义，并补充美式常见用法及 screen door 的区别。"
+      },
+      {
+        "sense": "名词：篮球掩护",
+        "coveredBy": [
+          "screen-n-basketball"
+        ],
+        "assessment": "补丁以少见义介绍，并示范 set a screen。"
+      },
+      {
+        "sense": "名词：棒球场防护网",
+        "coveredBy": [
+          "screen-n-sports-net"
+        ],
+        "assessment": "与纱窗分开呈现，避免一个纱窗例句承担两类物件。"
+      },
+      {
+        "sense": "动词：遮挡、掩护、保护",
+        "coveredBy": [
+          "screen-v-protect"
+        ],
+        "assessment": "从少见义移为核心义；两个例句分别覆盖挡住视线和挡风保护，补充 screen A from B 与 screen off。"
+      },
+      {
+        "sense": "动词：放映影片、播出节目；影片放映的不及物用法",
+        "coveredBy": [
+          "screen-v-show"
+        ],
+        "assessment": "保留两个原例句，新增不及物放映及电视播出例句，并区分拍摄动作。"
+      },
+      {
+        "sense": "动词：疾病筛查、资格审查、申请筛选",
+        "coveredBy": [
+          "screen-v-check"
+        ],
+        "assessment": "原有医疗与申请材料例句准确；补充 screen out 及未经过筛查的 unscreened。"
+      },
+      {
+        "sense": "动词：筛选来电、审查或过滤信息",
+        "coveredBy": [
+          "screen-v-check"
+        ],
+        "assessment": "补丁增加来电与论坛内容审核例句，不把审查过程简单等同于删改内容。"
+      },
+      {
+        "sense": "动词：用筛网筛分、过滤颗粒",
+        "coveredBy": [
+          "screen-v-sift"
+        ],
+        "assessment": "补丁新增实际过筛的例句，与抽象的人选筛查分开。"
+      },
+      {
+        "sense": "原词条列出的“拍摄／拍电影”",
+        "coveredBy": [
+          "screen-v-show"
+        ],
+        "assessment": "不作为现代日常英语的通用义教授；在放映义说明中明确与 shoot a film 区分，不据简略中文释义编造常用例句。"
+      },
+      {
+        "sense": "英语词条另列的 faire rentrer dans un écran 动词表述",
+        "coveredBy": [],
+        "assessment": "不据这一孤立表述推导独立的初中常用用法；未写入学生正文，也未将其直接解释为拍摄。"
+      },
+      {
+        "sense": "英语词条列出的网页或电脑屏幕截图用法",
+        "coveredBy": [],
+        "assessment": "法语是释义语言，词条语言仍是英语。该边缘用法不列入本课；日常截屏通常表达为 take a screenshot。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"screen protector\",\"zh\":\"屏幕保护膜\",\"note\":\"这是保护屏幕的薄膜，不是屏幕本身；它是语境中的对照说法，不是反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"屏幕没有固定反义词；screen protector 与 screen 指不同物品，适合用来辨别对象。\"",
+        "valueJson": "\"“屏幕”是具体物件名，没有固定的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"open space\",\"zh\":\"开放空间\",\"note\":\"在描述房间布局时，open space 表示没有隔屏的空间，与隔开的空间形成对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"描述空间时可用 open space 与由 screen 隔出的区域作语境对照；它不是 screen 的词典反义词。\"",
+        "valueJson": "\"“屏风、遮挡物”没有固定反义词；描述是否隔开空间时，应另用完整的布局表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"在银幕、屏幕或电视上播放电影、节目或画面。\"",
+        "valueJson": "\"在银幕或屏幕上放映影片，或在电视上播出节目。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"作及物动词时，screen 后常接电影或节目；被动形式 be screened 常用于介绍影片放映安排。\"",
+        "valueJson": "\"作及物动词时，screen 后常接电影或节目；be screened 常用于放映安排。影片作主语时也可作不及物动词，如 The film screens tomorrow（影片明天放映）。日常表达“拍摄电影”通常用 shoot a film。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-show-ex3\",\"senseId\":\"screen-v-show\",\"en\":\"The film screens at six on Friday.\",\"zh\":\"这部电影周五六点放映。\",\"note\":\"screen 在这里是不及物动词，主语是影片，表示影片放映，不是拍摄。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-show-ex4\",\"senseId\":\"screen-v-show\",\"en\":\"The channel screens a children's programme every morning.\",\"zh\":\"这个频道每天早晨播出一个儿童节目。\",\"note\":\"screen 也可表示电视播出节目；这种说法尤其常见于英式英语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-check-ex3\",\"senseId\":\"screen-v-check\",\"en\":\"I screen my calls and answer only when I recognize the number.\",\"zh\":\"我会先筛选来电，只接熟悉号码打来的电话。\",\"note\":\"screen calls 指先筛选来电，决定是否接听。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-check-ex4\",\"senseId\":\"screen-v-check\",\"en\":\"All posts are screened before they appear on the school forum.\",\"zh\":\"所有帖子在学校论坛上显示前都要经过审核。\",\"note\":\"这里指发布前审核内容，决定是否允许发布。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"screen calls\",\"zh\":\"筛选来电\",\"note\":\"在接听或转接之前判断哪些来电可以接通。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"screen out unsuitable candidates\",\"zh\":\"筛掉不合适的候选人\",\"note\":\"out 强调排除；screen candidates 本身只表示审查候选人，不表示全部淘汰。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"unscreened\",\"zh\":\"未经过筛查或审查的\",\"note\":\"这是形容词 screened 的否定对应，表示没有经过筛查；不表示已经审查后被淘汰。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-n-projection\",\"title\":\"银幕；投影幕\",\"meaning\":\"放映电影或投影演示时，用来承接图像的幕面。\",\"usageNote\":\"on the screen 表示画面在银幕上，onto the screen 表示投到银幕上。the big screen 还常借指影院电影，而不只是尺寸大的显示屏。\",\"examples\":[{\"id\":\"screen-n-projection-ex1\",\"senseId\":\"screen-n-projection\",\"en\":\"A shadow appeared on the screen when someone walked in front of the projector.\",\"zh\":\"有人从投影仪前走过时，银幕上出现了一道影子。\",\"note\":\"这里的 screen 是承接投影图像的幕面。\"},{\"id\":\"screen-n-projection-ex2\",\"senseId\":\"screen-n-projection\",\"en\":\"We hung a white screen between two trees for the outdoor movie.\",\"zh\":\"我们在两棵树之间挂起一块白色幕布，准备放露天电影。\",\"note\":\"screen 可以是用于放映的幕布。\"},{\"id\":\"screen-n-projection-ex3\",\"senseId\":\"screen-n-projection\",\"en\":\"I'd love to see this film on the big screen.\",\"zh\":\"我很想在电影院看这部电影。\",\"note\":\"on the big screen 常指在影院观看，而不是仅仅换一块较大的设备屏幕。\"}],\"patterns\":[{\"en\":\"project an image onto a screen\",\"zh\":\"把图像投到幕面上\",\"note\":\"onto 强调投射的方向和落点。\",\"kind\":\"sentence-pattern\"},{\"en\":\"see a film on the big screen\",\"zh\":\"在电影院看电影\",\"note\":\"the big screen 是谈论影院电影的常见表达。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a cinema screen\",\"zh\":\"电影院银幕\",\"note\":\"指电影院里显示影片的银幕。\",\"kind\":\"common-collocation\"},{\"en\":\"a projection screen\",\"zh\":\"投影幕\",\"note\":\"可用于放映影片或演示幻灯片。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"projection screen\",\"zh\":\"投影幕\",\"note\":\"是更明确的叫法，专指承接投影的幕面，不能指手机显示屏。\"}],\"contrasting\":[],\"similarNote\":\"谈投影设备时可用 projection screen 明确所指；普通窗帘 curtain 不能一概替换 screen。\",\"contrastingNote\":\"银幕是具体物件，没有固定反义词。\"},\"sourceIds\":[\"wiktionary_screen\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-protect\",\"title\":\"遮挡；保护\",\"meaning\":\"借助屏障挡住视线，或使某人、某物少受风、阳光等影响。\",\"usageNote\":\"常用 screen A from B，表示遮挡或保护 A，使其避开 B 的视线或影响。screen off 则常表示用屏风等把一部分空间隔开。\",\"examples\":[{\"id\":\"screen-v-protect-ex1\",\"senseId\":\"screen-v-protect\",\"en\":\"The wall screened the garden from the road.\",\"zh\":\"这堵墙挡住了从马路上看花园的视线。\",\"note\":\"这里强调不让路上的人看见花园。\"},{\"id\":\"screen-v-protect-ex2\",\"senseId\":\"screen-v-protect\",\"en\":\"A row of trees screens the house from the wind.\",\"zh\":\"一排树为房子挡风。\",\"note\":\"这里强调阻挡风的影响；主语 a row 是单数，所以用 screens。\"}],\"patterns\":[{\"en\":\"screen A from B\",\"zh\":\"遮挡或保护 A，使其避开 B 的视线或影响\",\"note\":\"from 后可接视线的来源、风、阳光等，具体意思由语境决定。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"screen something from view\",\"zh\":\"把某物遮住，不让人看见\",\"note\":\"强调挡住视线。\",\"kind\":\"sentence-pattern\"},{\"en\":\"screen off part of a room\",\"zh\":\"用屏风等隔开房间的一部分\",\"note\":\"off 强调隔出一块空间。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"shield\",\"zh\":\"保护；遮挡\",\"note\":\"常强调挡住阳光、风或其他有害影响，不一定是为了隐藏。\"},{\"en\":\"hide\",\"zh\":\"隐藏；遮住\",\"note\":\"强调使人看不见，不一定借助一道屏障，也不一定具有保护作用。\"}],\"contrasting\":[{\"en\":\"expose something to view\",\"zh\":\"使某物显露出来\",\"note\":\"与遮挡视线、使某物不被看见形成反向关系。\"},{\"en\":\"leave something exposed to the wind\",\"zh\":\"让某物暴露在风中\",\"note\":\"与挡风保护形成语境对照。\"}],\"similarNote\":\"shield 重保护，hide 重不被看见；screen 常强调借助屏障遮挡或保护。\",\"contrastingNote\":\"expose 在使显露或使暴露的语境中可与遮挡、保护形成反向关系，不用于对照放映或筛查义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"纱窗；防护网\"",
+        "valueJson": "\"纱窗；窗纱\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"挡住昆虫或飞溅物、同时让空气通过的网状屏障。\"",
+        "valueJson": "\"装在门窗等处、能通风并挡住蚊虫的细网。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"在一些英语地区，screen 可指门窗上的纱网；不同地区更常用的叫法可能不同。\"",
+        "valueJson": "\"这种用法在美式英语中常见。window screen 指纱窗或窗纱，screen door 指纱门。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"screen-v-protect\",\"title\":\"掩护；遮挡\",\"meaning\":\"挡在前面以保护某人或某物，或不让某物被看到。\",\"note\":\"常见于体育、军事或具体遮挡场景；普通初中会话中不如“屏幕、放映、筛查”常用。\",\"example\":{\"id\":\"screen-v-protect-ex1\",\"senseId\":\"screen-v-protect\",\"en\":\"The wall screened the garden from the road.\",\"zh\":\"这堵墙挡住了从马路上看花园的视线。\",\"note\":\"screened ... from 表示遮挡，使某处不被看见或受到影响。\"},\"sourceIds\":[\"oxford_screen\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-n-filter\",\"title\":\"筛网；滤网\",\"meaning\":\"用来拦住或分开固体颗粒的网状器具或部件。\",\"note\":\"这里的 screen 用来筛分或过滤，不显示图像。\",\"example\":{\"id\":\"screen-n-filter-ex1\",\"senseId\":\"screen-n-filter\",\"en\":\"The pump has a fine screen to keep out grit.\",\"zh\":\"水泵装有细密滤网，用来挡住砂砾。\",\"note\":\"fine screen 指网眼细密的筛网或滤网。\"},\"sourceIds\":[\"wiktionary_screen\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-v-sift\",\"title\":\"用筛网筛除颗粒\",\"meaning\":\"用筛网筛分土、沙等材料，或从流体中滤除杂物。\",\"note\":\"这是实际使用筛网的动作，与筛查人员或审查材料的抽象用法分开记。\",\"example\":{\"id\":\"screen-v-sift-ex1\",\"senseId\":\"screen-v-sift\",\"en\":\"We screened the soil to remove stones before planting the seeds.\",\"zh\":\"播种前，我们把土过了筛，除去石块。\",\"note\":\"screen the soil 表示把土过筛。\"},\"sourceIds\":[\"wiktionary_screen\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-n-basketball\",\"title\":\"篮球中的掩护\",\"meaning\":\"进攻队员用站位阻挡防守者跟进，为队友创造机会的配合。\",\"note\":\"这是篮球术语，常用 set a screen。\",\"example\":{\"id\":\"screen-n-basketball-ex1\",\"senseId\":\"screen-n-basketball\",\"en\":\"Leo set a screen so his teammate could get an open shot.\",\"zh\":\"利奥做了一个掩护，好让队友获得空位投篮的机会。\",\"note\":\"set a screen 表示为队友作掩护。\"},\"sourceIds\":[\"wiktionary_screen\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"screen-n-sports-net\",\"title\":\"球场防护网\",\"meaning\":\"挡住飞来的球等物体、保护观众或其他人员的网状屏障。\",\"note\":\"例如棒球场上的防护网；与家里的纱窗用途不同。\",\"example\":{\"id\":\"screen-n-sports-net-ex1\",\"senseId\":\"screen-n-sports-net\",\"en\":\"We sat behind a protective screen at the baseball game.\",\"zh\":\"看棒球比赛时，我们坐在一道防护网后面。\",\"note\":\"protective screen 在这里指保护观众的网。\"},\"sourceIds\":[\"wiktionary_screen\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"screen 和 scream：拼写只差一个元音字母\"",
+        "valueJson": "\"screen 和 scream：两处拼写不同，词尾读音也不同\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"screen 中间是 ee，意思与屏幕、放映、筛查等有关；scream 中间是 ea，常作动词，表示尖叫。\"",
+        "valueJson": "\"screen 中间是 ee、末尾是 n；scream 中间是 ea、末尾是 m。两词的元音都读 /iː/，但词尾分别读 /n/ 和 /m/。scream 作动词表示尖叫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"ea 在此读 /iː/；scream 作动词表示尖叫。\"",
+        "valueJson": "\"ea 在此读 /iː/；scream /skriːm/ 的词尾是 /m/，作动词表示尖叫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"conf-screen-scream-2\",\"senseId\":\"screen-n-device\",\"en\":\"The baby screamed when the dog barked.\",\"zh\":\"狗叫时，宝宝尖叫起来。\",\"note\":\"screamed 的词尾 -ed 表示过去时。\"}",
+        "valueJson": "{\"id\":\"conf-screen-scream-2\",\"senseId\":\"screen-n-device\",\"en\":\"She screamed when a spider crawled across the screen.\",\"zh\":\"一只蜘蛛爬过屏幕时，她尖叫了起来。\",\"note\":\"screamed 是 scream 的过去式；同句中的 screen 指设备屏幕。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"先认清 screen 的拼写是 s-c-r-e-e-n，别把中间的 ee 写成 scream 中的 ea。\"",
+        "valueJson": "\"screen 拼作 s-c-r-e-e-n，scream 拼作 s-c-r-e-a-m；分清 ee/ea 和词尾 n/m，朗读时也要分清 /n/ 与 /m/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"escren\",\"meaning\":\"历史来源形式\"},{\"language\":\"英语\",\"form\":\"screen\",\"meaning\":\"英语中的对应词形\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这段词源只说明有来源支持的历史联系；现代英语词形不要拆成 screen 加其他部分来记。\"",
+        "valueJson": "\"词源联系不等于现代构词规则；情境助记也不代表真实的历史演变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary_screen_etymology\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"screen 的现在分词或动名词：正在筛查、放映等。\"",
+        "valueJson": "\"screen 的现在分词或动名词形式，表示筛查、放映、遮挡等动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_screen\"]",
+        "valueJson": "[\"wiktionary_screen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"这里只列 screen 的规则派生形式；screen protector、screen door 等是复合表达，不是词族派生词。\"",
+        "valueJson": "\"screened 和动词形式 screening 是词形变化；名词 screening 由 screen 加 -ing 构成，表示筛查或放映活动。screen protector、screen door 则是复合表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_screen\",\"title\":\"Oxford Learner’s Dictionaries: screen\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/screen_1\",\"supports\":[\"名词 screen 的屏幕等常见用法\",\"动词 screen 的放映与筛查用法\",\"screen 的规则词形及相关派生形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_screen\",\"title\":\"法语维基词典：screen（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/screen#Anglais\",\"supports\":[\"英语 screen 的读音与规则词形\",\"名词的显示屏、投影银幕、遮挡物、过滤网、纱窗及体育用法\",\"动词的筛分、过滤、信息审查及放映或播出用法\",\"英语 screen 与古法语 escren、现代法语 écran 的历史联系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"wiktionary_screen_etymology\",\"title\":\"Wiktionary: screen（英语词条词源）\",\"url\":\"https://fr.wiktionary.org/wiki/screen#Anglais\",\"supports\":[\"英语 screen 与古法语 escren 的词源联系\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1201,
+    "headword": "screen",
+    "meaning_zh": "n. 幕, 银幕, 屏风, 掩蔽物, 屏蔽, 筛子\nvt. 掩蔽, 放映, 拍摄, 掩护, 筛, 甄别\nvi. 拍电影",
+    "phonetic": "/skri:n/",
+    "pos": "",
+    "forms": []
+  }
+}

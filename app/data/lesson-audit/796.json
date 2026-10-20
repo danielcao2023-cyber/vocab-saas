@@ -1,0 +1,362 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "20a92d094fcdd1718aa8d7e2fd182d61cc7a105e3b54afbc6b28ad2b3ce35530",
+    "executedReviewPromptHash": "20a92d094fcdd1718aa8d7e2fd182d61cc7a105e3b54afbc6b28ad2b3ce35530",
+    "reviewHash": "d86221f1b71cb178fdb50f045230ac11c5a14b98fd465393d976d35b3d340926",
+    "wordId": 796,
+    "inputHash": "442ebc9bbab6842b6cb28a751296054022e8b8cdba2c2d874882f15efcf95a7a",
+    "draftHash": "9be3293bc02f8c7fbe4fbe979608bb4629e3b95c7498cb48226373c7a59911e7",
+    "finalHash": "16f5a7b14cae9d5699cb5e5cc59c22d2dcdca20195317b25df8bd94e503982aa",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/literature#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:06.063Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11372,
+        "revisionId": 38597210,
+        "revisionTimestamp": "2025-08-28T22:47:27Z",
+        "sha256": "5477eb389cf98a3ce4f8fb7debc95c643c3d053c96c4a6ba67f659b5428b7d9a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/literature",
+        "section": "literature noun",
+        "supports": [
+          "Relevant historical meaning",
+          "Sense and uncertainty boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "21e639926fa563d8dea2f5c41c0a023641e7acb0fa1d90379ec623e4f3a250c6",
+        "summaryAndSupportsWordCount": 57,
+        "sha256": "21e639926fa563d8dea2f5c41c0a023641e7acb0fa1d90379ec623e4f3a250c6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/796.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/literature",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:13:09.067Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:19:11.144Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses, /lessCommonSenses",
+        "message": "常用的“某领域或主题的文献”仅被放在补充义中，且只有一个例句；“说明资料、宣传材料”义完全遗漏。补丁将文献义移入主干并补足两例，另补资料义及两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及各 sourceIds",
+        "message": "Cambridge 实际未获取成功，Oxford 没有提供正文，不能据此宣称它们支持具体讲解。改列实际取得的法语维基词典英语词条；该词条未直接支持的具体用法不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote, /senses/1/relatedExpressions/similar/0/note",
+        "message": "school literature 不是表示“学校里的文学学科”的常规搭配，也不宜用它作为 literary studies 的比较基准。改用 study literature、teach literature 和 a literature class。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "凭“是否修饰另一个名词”选择 literature 或 literary 会误导学习者；literature 本身也可作名词前置修饰语，如 literature class、literature review。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote, /pronunciation/notes/1",
+        "message": "常见英音词末的 r 通常不发音，不能只解释为“不明显”；对旧式音标作笼统否定也缺乏依据。改为明确说明所列英美读音的差别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary, /etymology/stages, /etymology/caveat",
+        "message": "现有词源摘要支持拉丁语词形关系和英语含义演变，但没有交代完整借入路径。原有表述和连续阶段容易把同族关系理解为已经核实的直接演变链；改在摘要说明拉丁语关系，阶段仅呈现有依据的英语含义先后。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对文学作品、文学学科、领域文献及说明宣传资料四种现代常用用法；补丁后各主干用法均有两个自然原创英中例句。文学学科保留为文学义的教学性展开，不强称独立的历史词义。历史上的“书本知识”留在词源部分。原有 fiction/nonfiction 对照已有语境限制，不判为错误；词族拼写及现有规范例句保留。来源局限是实际取得的词典正文较简略，补充的具体用法依据专业语言知识，不声称已核验 Cambridge 或 Oxford 正文。",
+    "senseInventory": [
+      {
+        "sense": "文学作品；文学创作的成果",
+        "coveredBy": [
+          "796-1"
+        ],
+        "assessment": "原稿已覆盖，两个例句均对应文学作品义。"
+      },
+      {
+        "sense": "文学作为学习和研究领域",
+        "coveredBy": [
+          "796-2"
+        ],
+        "assessment": "原稿已有两个合适例句；保留这一教学性展开，修正 school literature 的搭配说明。"
+      },
+      {
+        "sense": "某领域或主题的著作、文献",
+        "coveredBy": [
+          "796-3"
+        ],
+        "assessment": "原稿仅有补充义及一个例句；补丁将其移入主干，补齐例句、搭配和近义边界。"
+      },
+      {
+        "sense": "介绍产品、服务或机构的说明资料、宣传材料",
+        "coveredBy": [
+          "796-4"
+        ],
+        "assessment": "原稿遗漏；补丁新增完整义项及两个例句。"
+      },
+      {
+        "sense": "书本知识、学问（历史用法）",
+        "coveredBy": [],
+        "assessment": "已在词源部分说明，非现代初中核心用法，不另造现行义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"literature：文学作品，也可以指“文学”这门学科\"",
+        "valueJson": "\"literature：文学，也指某领域的文献和说明宣传资料\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"literature 常指小说、诗歌等文学作品，也指学习和研究这些作品的文学学科；通常作不可数名词。\"",
+        "valueJson": "\"literature 通常不可数：可指文学作品及文学学科，也可指某领域的文献，或用于说明、宣传的资料。具体含义要结合语境判断。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"记住 product literature、sales literature 和 promotional literature 中的 literature 指产品介绍、销售或宣传资料。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式词尾的 r 通常不明显；美式通常会读出 r。\"",
+        "valueJson": "\"常见英式读音在词末通常不读 /r/，后接元音时可能出现连读的 /r/；常见美式读音的词尾带 r 音色。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"结尾 -ture 通常读作 /tʃər/；旧音标中的元音标记不准确。\"",
+        "valueJson": "\"在这里列出的读音中，词尾 -ture 的英式读法为 /tʃə/，美式读法为带 r 音色的 /tʃər/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\",\"oxford-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于 school literature、study literature 等表达；此义也通常不可数。\"",
+        "valueJson": "\"常见表达有 study literature（学习文学）、teach literature（教授文学）和 a literature class（文学课）。literature 通常不可数，class 和 course 则可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常指对文学作品及其历史、形式等进行研究的学术领域；比一般的 school literature 更偏学术。\"",
+        "valueJson": "\"指对文学作品及其历史、形式、思想等进行系统研究的学术领域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\",\"oxford-literature\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"796-3\",\"title\":\"某主题的文献\",\"meaning\":\"围绕某个研究主题发表的书籍、文章和其他专业资料。\",\"note\":\"常见于学术或专业语境，常与 on 或 about 连用；一般作为不可数名词。\",\"example\":{\"id\":\"796-3-ex1\",\"senseId\":\"796-3\",\"en\":\"The report reviews the literature on sleep and learning.\",\"zh\":\"这份报告综述了关于睡眠与学习的文献。\",\"note\":\"literature on 指某主题相关的研究文献。\"},\"sourceIds\":[\"cambridge-literature\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"796-3\",\"title\":\"某领域、某主题的文献\",\"meaning\":\"某个领域或围绕某一主题的书籍、文章等著作的总称；研究语境中通常译为“文献”。\",\"usageNote\":\"通常不可数。常见 research literature、medical literature 等表达；谈特定主题的相关文献时常用 the literature on/about ...。这里的著作不要求具有文学性。\",\"examples\":[{\"id\":\"796-3-ex1\",\"senseId\":\"796-3\",\"en\":\"The report reviews the literature on sleep and learning.\",\"zh\":\"这份报告综述了关于睡眠与学习的文献。\",\"note\":\"literature on 指某主题相关的研究文献。\"},{\"id\":\"796-3-ex2\",\"senseId\":\"796-3\",\"en\":\"I read the literature on water pollution for my science project.\",\"zh\":\"为了完成科学课的研究项目，我阅读了关于水污染的文献。\",\"note\":\"这里读的是相关研究资料，不是文学作品。\"}],\"patterns\":[{\"en\":\"the literature on / about + topic\",\"zh\":\"关于某主题的文献\",\"note\":\"on 和 about 都可用；研究写作中 on 很常见。the 指语境中与该主题相关的文献整体。\",\"kind\":\"sentence-pattern\"},{\"en\":\"review the literature\",\"zh\":\"综述／评述相关文献\",\"note\":\"review 作动词，表示梳理已有研究。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"research literature\",\"zh\":\"研究文献\",\"note\":\"指研究领域中的相关著作和文章，通常作为整体来谈。\",\"kind\":\"common-collocation\"},{\"en\":\"a literature review\",\"zh\":\"一篇文献综述\",\"note\":\"literature 作名词前置修饰语；可数的是 review，因此可说 a literature review。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"research papers\",\"zh\":\"研究论文\",\"note\":\"指可逐篇计数的论文，是 literature 可能包含的一类资料；文献还可包括专著等。\"},{\"en\":\"publications\",\"zh\":\"出版物；发表的著作\",\"note\":\"范围更广，可逐项计数；literature 强调作为整体的一批相关资料。\"}],\"contrasting\":[],\"similarNote\":\"papers 和 publications 可以逐篇、逐项计数；literature 通常将相关文献作为整体来表达。\",\"contrastingNote\":\"此义没有固定的词汇反义词。不同文献可以支持不同结论，但这不是 literature 这个名词本身的对立关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"796-4\",\"title\":\"说明资料；宣传材料\",\"meaning\":\"为介绍产品、服务或机构等而制作的书面资料，例如产品介绍册、传单和宣传手册。\",\"usageNote\":\"通常不可数，常见 product literature、sales literature 和 promotional literature。资料有多份也不因此加 -s；说单份手册或传单可用 a brochure 或 a leaflet。\",\"examples\":[{\"id\":\"796-4-ex1\",\"senseId\":\"796-4\",\"en\":\"The sales assistant gave me some literature about the new washing machine.\",\"zh\":\"售货员给了我一些介绍这款新洗衣机的资料。\",\"note\":\"产品介绍资料也可称 literature，这里不是文学作品。\"},{\"id\":\"796-4-ex2\",\"senseId\":\"796-4\",\"en\":\"We picked up some promotional literature at the travel fair.\",\"zh\":\"我们在旅游展上拿了些宣传资料。\",\"note\":\"promotional literature 指用于宣传的资料。\"}],\"patterns\":[{\"en\":\"some literature about + product / service\",\"zh\":\"一些介绍某产品／服务的资料\",\"note\":\"some 修饰不可数的 literature；具体内容由语境决定。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"product literature\",\"zh\":\"产品介绍资料\",\"note\":\"通常介绍产品的性能、特点等。\",\"kind\":\"common-collocation\"},{\"en\":\"sales literature\",\"zh\":\"销售资料\",\"note\":\"用于向潜在客户介绍、推销产品或服务。\",\"kind\":\"common-collocation\"},{\"en\":\"promotional literature\",\"zh\":\"宣传资料\",\"note\":\"常见于展会、旅游推广或机构介绍等场景。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"brochure\",\"zh\":\"小册子；宣传册\",\"note\":\"可数，指具体的一本或一份小册子；literature 是资料的总称。\"},{\"en\":\"leaflet\",\"zh\":\"传单；宣传单\",\"note\":\"可数，通常指单页或折叠的说明、宣传材料，形式比 literature 更具体。\"}],\"contrasting\":[],\"similarNote\":\"brochure 和 leaflet 指具体形式的资料，可用冠词和复数；literature 通常概括这些材料。\",\"contrastingNote\":\"这类资料的用途和形式各不相同，没有一个固定、直接的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到冠词或动词后需要名词时用 literature；修饰另一个名词时常用 literary。\"",
+        "valueJson": "\"literature 是名词，也可前置修饰名词，如 literature class（文学课）和 literature review（文献综述）；literary 是形容词，如 literary criticism（文学批评）。不能只凭后面有没有名词来选词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\",\"oxford-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"literature 经拉丁语 litteratura 进入英语；拉丁语这个词与“文字、学习或语法”有关，并与表示字母的 littera 同族。英语早期曾用 literature 表示书本知识，后来发展出文学作品及文学创作等含义。\"",
+        "valueJson": "\"词源上，literature 可追溯到拉丁语 litteratura，意为“书写、学问或语法”；litteratura 与 littera（字母）同族。英语中的早期用法指书本知识，后来发展出某类著作的总称及文学创作等含义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"littera\",\"meaning\":\"字母\"},{\"language\":\"拉丁语\",\"form\":\"litteratura\",\"meaning\":\"书写、学习或语法；与 littera 同族\"},{\"language\":\"英语\",\"form\":\"literature\",\"meaning\":\"早期指书本知识，后来发展出文学作品、文学创作等含义\"}]",
+        "valueJson": "[{\"language\":\"英语（早期用法）\",\"form\":\"literature\",\"meaning\":\"书本知识、学问\"},{\"language\":\"英语（后来的用法）\",\"form\":\"literature\",\"meaning\":\"某类著作的总称；文学创作及作品\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列出的是词源资料支持的历史关系与含义变化；现代英语中 literature 是一个完整名词，不应拆成与 litter“散落的杂物”有关的部分来记。\"",
+        "valueJson": "\"littera、litteratura 和 literature 的关系属于词源历史；现代英语中 literature 是一个完整名词，不能把它理解为由表示“散落的杂物”的 litter 直接构成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-literature\"]",
+        "valueJson": "[\"wiktionary-literature-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你走进一间教室：一面书架上摆着小说和诗集，老师正带大家读这些作品；黑板上写着 Literature，提醒你这个词既能指文学作品，也能指学习文学的课程。\"",
+        "valueJson": "\"想象你在学校开放日走进一间教室：书架上摆着小说和诗集，老师正带大家读作品；书架让你想到文学作品，课堂让你想到文学学科。课后，你为科学课的小报告查阅 the literature on sleep（关于睡眠的研究文献）；走出教室时，又拿到一份介绍学校的 promotional literature（宣传资料）。同一个词，场景不同，意思也会变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这是帮助记忆两个常用含义的情境联想，不是 literature 的词源解释。\"",
+        "valueJson": "\"这是串联文学、研究文献和宣传资料用法的原创情境联想，不是 literature 的词源解释。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"科学课的小报告\",\"text\":\"the literature on sleep 让你想到“关于睡眠的研究文献”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"学校宣传册\",\"text\":\"promotional literature 让你想到“宣传资料”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-literature\",\"title\":\"Cambridge Dictionary: literature\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/literature\",\"supports\":[\"名词含义与常见搭配\",\"常见不可数用法\",\"英美音标参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-literature-en\",\"title\":\"Wiktionnaire：literature（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/literature#Anglais\",\"supports\":[\"英语名词的文学义\",\"通常不可数的标注\",\"英美读音与重音\",\"literary、literacy、literate 等相关词的列举\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford-literature\",\"title\":\"Oxford Learner’s Dictionaries: literature\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/literature\",\"supports\":[\"名词含义与文学学科用法\",\"文学作品相关搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 796,
+    "headword": "literature",
+    "meaning_zh": "n. 文学, 文艺, 著作",
+    "phonetic": "/'litәrәtʃә/",
+    "pos": "",
+    "forms": []
+  }
+}

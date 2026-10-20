@@ -1,0 +1,381 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "df2e23c0a73ba11beb45889a4c1f56736a8c3ab5032f210a38aac904c8bb4b71",
+    "executedReviewPromptHash": "df2e23c0a73ba11beb45889a4c1f56736a8c3ab5032f210a38aac904c8bb4b71",
+    "reviewHash": "68aff0038ba05960526eb566b5f4d1460e075372b65adf07a4735c82368c425e",
+    "wordId": 755,
+    "inputHash": "a207e15e31f0bd7ea113e3e4477d5beca6428ad8f511ef603c811ac75f9d1ce7",
+    "draftHash": "636d6068aacf933037be1abc95d57512c52bd090aeb35f2b5504dd6a52990353",
+    "finalHash": "f49ca669758d35744a7cde08cbfb3d1cf36fc4510a6b820c9bd1c6c8ea882993",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/lamp#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.254Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 26043,
+        "revisionId": 38578372,
+        "revisionTimestamp": "2025-08-25T17:52:53Z",
+        "sha256": "7496987f4d752433f7c47af59e323b5a5552248bf26f6b2218a6951c62338f5a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/lamp",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:30:47.232Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:35:46.254Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了词典明确列出的“电灯泡”义和英式俚语动词“打；揍”。题头的动词“照亮”也应说明其罕见性，不能让学习者误当作日常表达。补入识别性扩展，并补全相应词性和动词变化。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "现有引用指向未成功取回的 Cambridge；Oxford 也没有可供本次核对的内容。应绑定实际取得的法语维基词典英语词条，且不把编辑性比较冒充词典原文结论。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源栏仍是助记占位，遗漏了已取得的可靠词源。应补充拉丁语 lampas（火炬）经法语 lampe 进入英语的顺序，并引用相同来源 URL。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples 和 /confusions",
+        "message": "六个现有例句对象均缺少必填的 note 属性，不符合目标结构。原有例句可以保留，补齐说明即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions、/confusions/0 和 /memoryAid/cues/0",
+        "message": "灯具与灯泡的区分被多处写成绝对界限，与 lamp 也可表示电灯泡的词典义冲突。应限定为日常优先说法，并说明 light bulb 是对照项，不是反义词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/1 和 /confusions/1/takeaway",
+        "message": "“lamp 多用于室内固定照明”限制过窄；“具体灯具优先用 lamp”也忽略 ceiling light、traffic light 等常见搭配。应说明使用范围的重叠和搭配限制。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "可补充常见复合词 lampshade、lamppost，并说明 lamppost 的两个 p 分别来自 lamp 和 post，避免把没有重点派生词等同于没有可学词族。"
+      }
+    ],
+    "coverageAssessment": "已核对词典的“照明设备／电灯泡／英式俚语打人”三义，并审查题头的罕见动词“照亮”。初中核心仍保留一个名词义及两条例句，其余列作识别性扩展。词源仅采用已取得的拉丁语→法语→英语关系。“照亮”的文学用法、术语使用范围及复合词说明依据专业语言知识，不冒充现有词典材料的明示内容。",
+    "senseInventory": [
+      {
+        "sense": "n. 灯；照明设备",
+        "coveredBy": [
+          "lamp-n-1"
+        ],
+        "assessment": "初中核心义，原有两例自然且译文准确；无需把台灯、床头灯等设备类型拆成不同义项。"
+      },
+      {
+        "sense": "n. 电灯泡",
+        "coveredBy": [
+          "lamp-n-2"
+        ],
+        "assessment": "词典明确列出，补入较少见义；说明其照明技术语境，保留日常说 light bulb 的建议。"
+      },
+      {
+        "sense": "v. 打；揍（英式俚语）",
+        "coveredBy": [
+          "lamp-v-1"
+        ],
+        "assessment": "词典明确列出，补入较少见义，并标明地域、语域和及物用法。"
+      },
+      {
+        "sense": "vt. 照亮（罕见文学用法）",
+        "coveredBy": [
+          "lamp-v-2"
+        ],
+        "assessment": "回应题头释义，按专业语言知识列为罕见用法；不列为初中核心义，也不归为现有词典直接支持的内容。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 lamp 是照明设备，light bulb 是灯泡。\"",
+        "valueJson": "\"先掌握 lamp 指灯具的常用义；日常说“灯泡”通常用 light bulb。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"lamps\",\"ipa\":\"/læmps/\",\"note\":\"动词直接加 -s；拼写、读音与名词复数相同，词性由句子决定。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"过去式和过去分词\",\"form\":\"lamped\",\"ipa\":\"/læmpt/\",\"note\":\"规则变化，直接加 -ed；-ed 在 /p/ 后读 /t/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"现在分词\",\"form\":\"lamping\",\"ipa\":\"/ˈlæmpɪŋ/\",\"note\":\"lamp + -ing → lamping；保留一个 p，不双写。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常与 turn on/off 连用。表达“灯泡”时用 light bulb。\"",
+        "valueJson": "\"常与 turn on/off 连用。日常表达“灯泡”通常用 light bulb；照明技术语境中的 lamp 也可能指灯泡。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on my desk 说明灯在书桌上；beside the lamp 表示在灯旁。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"turn off the lamp 表示关灯；before 从句说明关灯发生在上床之前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"lantern 通常可提着或悬挂，常用于户外；lamp 多用于室内固定照明。\"",
+        "valueJson": "\"lantern 常指带外罩、可提着或悬挂的灯；lamp 也可指便携灯、油灯或户外灯，不能按室内和室外硬分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"light 用法更广；lamp 指具体灯具。\"",
+        "valueJson": "\"light 还可表示光线，范围更广；两词表示灯时要留意习惯搭配，如 bedside lamp、ceiling light。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"指灯具中发光的灯泡，不是整件 lamp。\"",
+        "valueJson": "\"日常区分整件灯具与灯泡时可用来对照；不是 lamp 的反义词，技术语境中的 lamp 也可能指灯泡。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在区分整件灯具与其中的发光部件时，用 light bulb 对照 lamp。\"",
+        "valueJson": "\"这是日常语境中整件灯具与发光部件的区别，不是反义关系；lamp 作为具体物品名没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lamp-n-2\",\"title\":\"电灯泡\",\"meaning\":\"在照明技术或产品说明中，lamp 也可指电灯泡这类光源部件。\",\"note\":\"日常交流中说“灯泡”通常用 light bulb；阅读维修说明时，要结合上下文判断 lamp 是整件灯具还是灯泡。\",\"example\":{\"id\":\"lamp-n-2-ex-1\",\"senseId\":\"lamp-n-2\",\"en\":\"Switch off the power before replacing the lamp.\",\"zh\":\"更换灯泡前，先切断电源。\",\"note\":\"在灯泡更换说明这一语境中，lamp 指灯泡；日常也可说 replacing the light bulb。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lamp-v-1\",\"title\":\"打；揍（英式俚语）\",\"meaning\":\"用力打某人。\",\"note\":\"英式俚语，非正式；通常作及物动词，接被打的人，学习时以识别为主。\",\"example\":{\"id\":\"lamp-v-1-ex-1\",\"senseId\":\"lamp-v-1\",\"en\":\"He threatened to lamp me.\",\"zh\":\"他威胁说要揍我。\",\"note\":\"lamp someone 是英式俚语；较中性的表达是 hit someone。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lamp-v-2\",\"title\":\"照亮（罕见文学用法）\",\"meaning\":\"作及物动词，表示照亮某处。\",\"note\":\"这种用法很少见，带有文学色彩；日常表达“照亮”通常用 light (up) 或 illuminate。\",\"example\":{\"id\":\"lamp-v-2-ex-1\",\"senseId\":\"lamp-v-2\",\"en\":\"The moon lamped the path through the woods.\",\"zh\":\"月光照亮了穿过树林的小路。\",\"note\":\"这是罕见的文学性表达；日常通常说 The moon lit up the path through the woods.。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"lamp 和 light bulb 不一样\"",
+        "valueJson": "\"lamp 和 light bulb：日常说法的区别\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"lamp 通常指整件灯具，light bulb 指灯具里的灯泡。\"",
+        "valueJson": "\"日常英语中，lamp 通常指整件灯具，light bulb 指灯泡；在照明技术语境中，lamp 也可能指灯泡。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 lamp 指床边的整件灯具。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"changed the light bulb 表示更换灯泡，不是更换整盏灯。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说整件灯具用 lamp，说灯泡用 light bulb。\"",
+        "valueJson": "\"日常说整件灯具常用 lamp，说灯泡通常用 light bulb；技术语境中的 lamp 要结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 lamp 指桌上的一盏灯具。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里 light 指光线，通常不可数；from the window 表示光从窗户照进来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"描述具体灯具时优先用 lamp；描述光线时用 light。\"",
+        "valueJson": "\"表示光线用 light；台灯、床头灯常用 lamp，顶灯、交通信号灯通常说 ceiling light、traffic light，不能一律替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语 lamp 是一个整体名词，表示照明设备；可用“房间里的一盏灯”来记住它。\",\"stages\":[],\"caveat\":\"这里的整体记忆是学习联想，不是词源解释。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语名词 lamp 借自法语 lampe；法语这个词又来自意为“火炬”的拉丁语 lampas。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"lampas\",\"meaning\":\"火炬\"},{\"language\":\"法语\",\"form\":\"lampe\",\"meaning\":\"灯\"},{\"language\":\"英语\",\"form\":\"lamp\",\"meaning\":\"灯；照明设备\"}],\"caveat\":\"这是名词的历史来源，不应把 lamp 拆成英语词根和词缀；后面的情境故事只是助记。\",\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"lampshade\",\"partOfSpeech\":\"noun\",\"meaning\":\"灯罩\",\"formation\":\"由 lamp（灯）和 shade（遮光物）组成的复合词。\",\"spellingNote\":\"lamp + shade → lampshade，合写为一个词。\",\"example\":{\"id\":\"lamp-family-lampshade-ex-1\",\"senseId\":\"lamp-n-1\",\"en\":\"I bought a blue lampshade for my bedside lamp.\",\"zh\":\"我给床头灯买了一个蓝色灯罩。\",\"note\":\"lampshade 指灯罩，不是灯泡。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"lamppost\",\"partOfSpeech\":\"noun\",\"meaning\":\"路灯柱\",\"formation\":\"由 lamp（灯）和 post（柱子）组成的复合词。\",\"spellingNote\":\"lamp + post → lamppost；中间的两个 p 分别属于 lamp 和 post，不是双写规则造成的。\",\"example\":{\"id\":\"lamp-family-lamppost-ex-1\",\"senseId\":\"lamp-n-1\",\"en\":\"There is a lamppost outside our house.\",\"zh\":\"我们家门外有一根路灯柱。\",\"note\":\"lamppost 指支撑路灯的柱子。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"初中常用范围内没有需要重点掌握的常见派生词；复数 lamps 是名词的规则变化，不是派生词。\"",
+        "valueJson": "\"可认识 lampshade、lamppost 这类由两个完整单词组成的复合词；lamps 是名词复数或动词第三人称单数形式，不是派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"lamp 是整盏灯，light bulb 是里面的灯泡。\"",
+        "valueJson": "\"日常语境中，lamp 常指整盏灯，light bulb 指里面的灯泡。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary：lamp\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/lamp\",\"supports\":[\"名词含义与常见用法\",\"发音与复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：lamp（英语词条，法语说明）\",\"url\":\"https://fr.wiktionary.org/wiki/lamp#Anglais\",\"supports\":[\"英语名词义：电灯泡、照明设备\",\"英式俚语动词义：打、揍\",\"读音 /læmp/、复数 lamps 与规则动词变化\",\"名词词源：法语 lampe、拉丁语 lampas（火炬）\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries：lamp\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/lamp\",\"supports\":[\"名词含义与常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 755,
+    "headword": "lamp",
+    "meaning_zh": "n. 灯\nvt. 照亮",
+    "phonetic": "/læmp/",
+    "pos": "",
+    "forms": []
+  }
+}

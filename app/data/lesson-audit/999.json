@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0c400a4c1cff3e690723fbe6428ae74d6712d4fdbe9cf0afbeb685a6011e09bf",
+    "executedReviewPromptHash": "0c400a4c1cff3e690723fbe6428ae74d6712d4fdbe9cf0afbeb685a6011e09bf",
+    "reviewHash": "1085a0c3f06409c5fe3a2207ac640fd86785ba6b1d53624bd1deb41ca624e77f",
+    "wordId": 999,
+    "inputHash": "280ee8ea06120f4291520f31725b2a3a1b1d5cddc3fb05418e6cfb6a1cac3927",
+    "draftHash": "9f515ee9406f8c1e3032de223e43a3296f21d509c60220deab3b663de2f597ea",
+    "finalHash": "5ca3b23837f304ecb3df39e1c4e096682dc9ecb50237ec8d4b8b17da8499319e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pear#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.185Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 74858,
+        "revisionId": 39775049,
+        "revisionTimestamp": "2026-08-03T16:52:19Z",
+        "sha256": "59f81d15c859ee154209f06212a1491e26120c0f4bba08538500486167467201",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/pear",
+        "section": "pear noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "53ed97dfb4878463204471419f3a7438a499badc22ad8fb0201d973c6346aec5",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "53ed97dfb4878463204471419f3a7438a499badc22ad8fb0201d973c6346aec5",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/999.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pear",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:33:31.734Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:42:26.027Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未取得，不能承担当前各处的来源支持。应改引已取得的法语维基词典英语词条，并同步替换相关 sourceIds。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "输入词条列有“梨木”义，原稿遗漏。应作为低频、通常不可数的材料义补入，不必升为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有阶段会画成“古英语→中古英语→拉丁语”，历史顺序错误。应按拉丁语来源、古英语、中古英语、现代英语排列，并明确 pira 的复数被重新理解为单数这一事实。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "英式常见非卷舌口音中，独读时词尾 r 不发音，并非仅仅“不明显”；还应说明后接元音时可能出现连接音 /r/。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "例句只有 pair，没有体现其绑定的 pear-fruit 义。可改为同时出现梨和一双袜子的自然情境，保留 pair 的教学作用并使 senseId 对应实际用例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/takeaway",
+        "message": "“一双是一对 pair”表述重复且不顺，应明确写成“一双／一对用 pair”。"
+      }
+    ],
+    "coverageAssessment": "已核对梨（水果）、梨树、梨木三义。水果义和梨树义各有两个自然原创例句，原有上位词与类别对照的限制说明正确，无须强造反义词或派生词。补入低频梨木义，并修正来源引用、词源顺序、读音说明及例句关联。梨木义依据输入释义和专业语言知识补充，已取得的网页未单列此义；拉丁语以前的来源仍保持不确定。",
+    "senseInventory": [
+      {
+        "sense": "名词：梨；梨子（水果）",
+        "coveredBy": [
+          "pear-fruit"
+        ],
+        "assessment": "核心义覆盖充分，两例分别展示单数和复数；a piece of pear 也是自然的食物份量表达。"
+      },
+      {
+        "sense": "名词：梨树",
+        "coveredBy": [
+          "pear-tree"
+        ],
+        "assessment": "已覆盖，两个例句均自然使用更明确、常见的 pear tree；无需强行改成较少见的裸词树义。"
+      },
+      {
+        "sense": "名词：梨木",
+        "coveredBy": [
+          "pear-wood"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，说明材料义通常不可数，并用直接体现 pear 木材义的例句展示。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_pear\",\"title\":\"Cambridge Dictionary：pear\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pear\",\"supports\":[\"词性、常见词义与用法\",\"英式和美式发音\",\"常见拼写混淆词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_pear\",\"title\":\"Wiktionnaire：pear（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/pear#Anglais\",\"supports\":[\"英语名词 pear 的水果义、树木义与复数 pears\",\"英式、美式读音以及与 pair、pare 的同音关系\",\"古英语 pere 与拉丁语 pirum、pira 的来源关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_pear\"]",
+        "valueJson": "[\"wiktionary_pear\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常读作 /peə/，词尾 r 不明显；美式通常读作 /per/，r 清楚。\"",
+        "valueJson": "\"英式常见的非卷舌口音中，pear 单独读时词尾 r 不发音，后接元音时可出现连接音 /r/；美式通常读作 /per/，保留 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_pear\"]",
+        "valueJson": "[\"wiktionary_pear\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_pear\"]",
+        "valueJson": "[\"wiktionary_pear\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_pear\"]",
+        "valueJson": "[\"wiktionary_pear\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pear-wood\",\"title\":\"梨木\",\"meaning\":\"梨树的木材。\",\"note\":\"这是较少见的材料义，通常作不可数名词；也可说 pear wood，更明确地表示木材。\",\"example\":{\"id\":\"pear-wood-ex1\",\"senseId\":\"pear-wood\",\"en\":\"The bowl was carved from pear.\",\"zh\":\"这个碗是用梨木雕成的。\",\"note\":\"这里的 pear 指梨木，不是一个梨；材料义通常不用 a。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 pear 经古英语 pere 或 peru、再经中古英语 pere 延续而来；这些日耳曼语形式来自拉丁语词族，拉丁语的更早来源尚不确定。\"",
+        "valueJson": "\"古英语 pere 或 peru 经中古英语 pere 发展为现代英语 pear；相关日耳曼语形式借自包含 pirum 和 pira 的拉丁语词族。pira 原是 pirum 的中性复数，在借入过程中被重新理解为单数；拉丁语词的更早来源尚不确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"pere / peru\",\"meaning\":\"梨\"},{\"language\":\"中古英语\",\"form\":\"pere\",\"meaning\":\"梨\"},{\"language\":\"拉丁语词族\",\"form\":\"pirum / pira\",\"meaning\":\"梨；相关形式的单复数关系在借入过程中发生了重新理解\"}]",
+        "valueJson": "[{\"language\":\"拉丁语词族\",\"form\":\"pirum / pira\",\"meaning\":\"梨；pirum 为单数，pira 原为中性复数\"},{\"language\":\"古英语\",\"form\":\"pere / peru\",\"meaning\":\"梨\"},{\"language\":\"中古英语\",\"form\":\"pere\",\"meaning\":\"梨\"},{\"language\":\"现代英语\",\"form\":\"pear\",\"meaning\":\"梨\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline_pear\"]",
+        "valueJson": "[\"etymonline_pear\",\"wiktionary_pear\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"I need a pair of shoes.\"",
+        "valueJson": "\"I packed a pear and a pair of socks for the hike.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"我需要一双鞋。\"",
+        "valueJson": "\"我为徒步旅行装了一个梨和一双袜子。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"a pair of 后接复数名词。\"",
+        "valueJson": "\"a pear 指一个梨；a pair of socks 指一双袜子。pair 和 pear 同音，但拼写和意思不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"听起来相同不代表拼写相同：梨是 pear，一双是一对 pair，削皮是 pare。\"",
+        "valueJson": "\"听起来相同不代表拼写相同：表示“梨”用 pear，表示“一双／一对”用 pair，表示“削皮／修去”用 pare。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 999,
+    "headword": "pear",
+    "meaning_zh": "n. 梨子, 梨树, 梨木",
+    "phonetic": "/pєә/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "bdde8e815b25761a99f6d2c85d68f626c9d8f7082aff1955ac07477ddd3f3f0a",
+    "executedReviewPromptHash": "bdde8e815b25761a99f6d2c85d68f626c9d8f7082aff1955ac07477ddd3f3f0a",
+    "reviewHash": "8748ebee9ebe775e07e615b7cf7db9aa8bb8b41f87a5ee342cabec02fbb747d3",
+    "wordId": 568,
+    "inputHash": "358644ca7557c6851a9dbbffa2c916bff9f7d82cfde1a40532f4d328221efe1b",
+    "draftHash": "0581c6eb5e4985a5b12b4de4687d175122988bda49c2c41e78e662d4d8856bf0",
+    "finalHash": "748dddba04a0f9ee1c63fe6e7ba3e62da2525dd42d64ad0eeebf740b50ba079e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/garden#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:05.605Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116809,
+        "revisionId": 39378194,
+        "revisionTimestamp": "2026-03-19T18:09:50Z",
+        "sha256": "834e6749cfa2219719c7381c59e6e385a445d8eb7cfbe5acfffc779eea770c31",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/garden",
+        "section": "garden etymology",
+        "supports": [
+          "Historical source form and meaning",
+          "Preserved semantic or historical boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "a3fe76412fd172afbbc6dad89ca51576cb44bee2d63e5d4a60a0c1d8e9fc42d7",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "a3fe76412fd172afbbc6dad89ca51576cb44bee2d63e5d4a60a0c1d8e9fc42d7",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/568.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/garden",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:31:58.633Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T17:47:43.886Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/wordFamily/1/formation",
+        "message": "garden 以 n 结尾，不存在删除词尾不发音 e 的步骤。gardening 应直接加 -ing，且不双写 n。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 cambridge 来源引用；/etymology/sourceIds",
+        "message": "Cambridge 正文未取得，不能作为本次已获材料的支持来源。已改用法语维基词典中的英语词条，并为词源中的德语、荷兰语相关词形补上对应来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/lessCommonSenses",
+        "message": "遗漏了词条所列的较少见及物用法、“普通的”在固定表达中的用法，以及来源中的复数街道名用法。已作为识别性补充加入，未强行扩成初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "住宅 garden 的解释偏向种植区，未充分说明英式英语中包含草坪等区域的整片庭院用法。另需限制“果园”的对译，不能把 garden 当作 orchard 的通用替换词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "indoor 与 garden 的所属、用途关系并不互斥，不宜作为这里的反向表达。名词义中的 paved yard 也可能有植物，且英式 garden 可以有铺面；已一并去掉容易误导的场所对立。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline；/senses/0/patterns/0/note；/senses/2/examples/1/zh",
+        "message": "将动词义明确写成“做园艺”，说明 garden 的限定词不只限于 the，并把 garden hose 的中文改得更自然、精确。"
+      }
+    ],
+    "coverageAssessment": "已核对园地名词义、英式住宅庭院义、不及物园艺活动义及名词前修饰功能；保留各核心义原有的两个例句，并补充庭院草坪场景。及物用法、“普通的”固定表达及复数街道名用法列为较少见用法。“果园”按现代常用 orchard 作辨析，不把来源词 gardin 的历史释义直接搬成现代 garden 的通用义。词源保留有据的 gardin 阶段，相关词形不串成顺序链；更早日耳曼语中介仍保留具体的不确定性。本次未取得 Cambridge 正文，也未将新增的及物义和固定表达虚挂到不含这些释义的来源下。",
+    "senseInventory": [
+      {
+        "sense": "名词：花园、菜园等种植或休憩园地",
+        "coveredBy": [
+          "garden-noun"
+        ],
+        "assessment": "核心义已有种玫瑰、种番茄两个自然例句，保留。"
+      },
+      {
+        "sense": "名词：住宅旁的庭院，尤其英式英语中可包含草坪等区域",
+        "coveredBy": [
+          "garden-noun"
+        ],
+        "assessment": "补充地域用法说明和草坪活动例句，避免把 garden 一概缩成庭院里的种植区。"
+      },
+      {
+        "sense": "原释义中的“果园”",
+        "coveredBy": [
+          "garden-noun"
+        ],
+        "assessment": "作为词义边界辨析处理：现代专指果树种植地通常用 orchard；不据 gardin 的历史释义另造现代常用独立义。"
+      },
+      {
+        "sense": "不及物动词：从事园艺、种植和照料植物",
+        "coveredBy": [
+          "garden-verb"
+        ],
+        "assessment": "已有两个自然生活例句及 garden 与 do the gardening 的对应说明，保留。"
+      },
+      {
+        "sense": "较少见的及物动词：把土地辟作或用作园地，在其上种植、养护植物",
+        "coveredBy": [
+          "garden-transitive"
+        ],
+        "assessment": "补入较少见用法，例句明确展示土地直接作宾语。"
+      },
+      {
+        "sense": "形容词或名词前修饰功能：花园的、园艺用的",
+        "coveredBy": [
+          "garden-adj"
+        ],
+        "assessment": "garden gate 和 garden hose 已覆盖所属、用途关系；保留例句，去掉 indoor 这一不稳妥的反向表达。"
+      },
+      {
+        "sense": "“普通的、常见的”，主要见于 garden-variety、common-or-garden 等固定表达",
+        "coveredBy": [
+          "garden-ordinary"
+        ],
+        "assessment": "补入识别性说明，不教成单独 garden 可以随意替换 ordinary。"
+      },
+      {
+        "sense": "复数形式 Gardens：用于部分街道名",
+        "coveredBy": [
+          "garden-street-name"
+        ],
+        "assessment": "按已取得的英语词条补入较少见用法，说明专名大写及地址中的理解方式。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"名词；不及物动词；形容词\"",
+        "valueJson": "\"名词；动词（常作不及物动词，较少作及物动词）；形容词（作定语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"garden：花园，也可以表示“园艺”和“与花园有关的”\"",
+        "valueJson": "\"garden：花园，也可以表示“做园艺”和“与花园有关的”\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"以不发音的 e 结尾，去掉 e 再加 -ing。\"",
+        "valueJson": "\"garden 以 n 结尾，直接加 -ing 得 gardening；末音节不重读，不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"garden 去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"garden + -ing，形成表示园艺活动的名词 gardening；不删除任何字母，也不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"花园；庭院里的种植区\"",
+        "valueJson": "\"花园；菜园；（英式）住宅庭院\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"种花草、蔬菜或供人休息的园地。具体种什么要看上下文；vegetable garden 指菜园。\"",
+        "valueJson": "\"种植花草、蔬菜或供人休憩的园地；vegetable garden 指菜园。在英式英语中，garden 也常指住宅旁的整片私人庭院，包括草坪等区域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于家庭住宅周围；在英式英语中，house 的 garden 常指屋后的私人花园。美国英语中 yard 也常指住宅周围的院子，但 yard 不一定种着花草。\"",
+        "valueJson": "\"住宅的 garden 可以在屋前、屋后或侧面。英式英语常用 garden 指整片庭院；美式英语常用 yard 指整片院子，而 garden 更常指其中种花、种菜的区域。garden 也可用于公共或专用园地，并不限于私人住宅。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"garden-noun-ex3\",\"senseId\":\"garden-noun\",\"en\":\"The children are playing on the lawn in the back garden.\",\"zh\":\"孩子们正在后院的草坪上玩耍。\",\"note\":\"英式英语中的 back garden 可以包含草坪，不只是种植花草的小片区域。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"表示人或事物所在的位置；garden 前通常有 the。\"",
+        "valueJson": "\"表示所在位置。garden 在这里是单数可数名词；谈双方知道的花园用 the，也可按语境说 in a garden、in my garden。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"yard 更常指住宅周围的空地，尤其在美式英语中；不一定有花草。\"",
+        "valueJson": "\"美式 yard 通常指住宅周围的整个院子，可包含草坪和种植区；美式 garden 更常指其中种花或种菜的区域。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"orchard\",\"zh\":\"果园\",\"note\":\"专指种植果树的园地。现代英语说“果园”通常用 orchard，不能把 garden 当作它的通用替换词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"yard 和 park 都能指有户外空间的地方，但大小、用途和是否私人所有不同。\"",
+        "valueJson": "\"这些词都与园地或户外场所相关，但不能任意互换：yard 重在住宅院子，park 通常是公共休闲空间，orchard 专指果园。garden 与 yard 的对应还要区分英美用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"a paved yard\",\"zh\":\"铺了地面的院子\",\"note\":\"在“种植花草的园地”这一语境下，铺满地面的院子没有种植区；这只是具体情境对照，不是 garden 的通用反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"garden 没有适用于所有语境的固定反义词；这里用铺面院子对照种植园地。\"",
+        "valueJson": "\"garden 是具体场所名，通常没有固定反义词；院子是否有铺面，也不能单独决定它是否叫 garden。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"她买了一根浇花园的水管来给植物浇水。\"",
+        "valueJson": "\"她买了一根园艺软管来给植物浇水。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"indoor\",\"zh\":\"室内的\",\"note\":\"在 garden tools 这类户外园艺用品的语境中，indoor 表示用于室内，构成用途对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"indoor 只在室内外用途这一语境下与 garden 的户外含义形成对照。\"",
+        "valueJson": "\"这里表示与花园有关的所属或用途关系，通常没有固定反义词；园艺活动及相关工具并不限于室外。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"garden-transitive\",\"title\":\"较少见的及物用法：辟作或打理园地\",\"meaning\":\"garden 也可直接以土地为宾语，表示把它辟作园地或在上面种植、养护植物。\",\"note\":\"这种及物用法较少见。日常表达“把空地改成花园”，make the plot into a garden 更清楚；只说“做园艺”，通常用不及物的 garden 或 do the gardening。\",\"example\":{\"id\":\"garden-transitive-ex1\",\"senseId\":\"garden-transitive\",\"en\":\"They gardened the small plot behind their house.\",\"zh\":\"他们在屋后的小块地上种植、打理花草。\",\"note\":\"the small plot 直接作 gardened 的宾语，展示及物用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"garden-ordinary\",\"title\":\"固定表达中的“普通的；常见的”\",\"meaning\":\"garden-variety（主要用于美式英语）和 common-or-garden（英式英语）表示普通的、常见的、没有特别之处的。\",\"note\":\"优先把这些表达作为整体记忆；不要把单独的 garden 当作 ordinary 的通用替换词。\",\"example\":{\"id\":\"garden-ordinary-ex1\",\"senseId\":\"garden-ordinary\",\"en\":\"It was just a garden-variety cold.\",\"zh\":\"那只是普通感冒。\",\"note\":\"garden-variety 整体作定语，表示“普通的”，与真正的花园无关。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"garden-street-name\",\"title\":\"复数形式 Gardens：用于部分街道名\",\"meaning\":\"Gardens 可作为部分街道名称的一部分。\",\"note\":\"作为专名时通常大写。地址中的 Gardens 不一定表示那里有多座花园，要按完整街道名理解。\",\"example\":{\"id\":\"garden-street-name-ex1\",\"senseId\":\"garden-street-name\",\"en\":\"Their new address is 12 Rose Gardens.\",\"zh\":\"他们的新地址是玫瑰花园路12号。\",\"note\":\"Rose Gardens 在这个地址中是街道名。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds/0",
+        "expectedValueJson": "\"cambridge\"",
+        "valueJson": "\"wiktionary-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: garden\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/garden\",\"supports\":[\"garden 的名词、动词和形容词用法\",\"garden 的常见搭配与英美发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：garden（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/garden#Anglais\",\"supports\":[\"garden 的园地名词义、不及物动词义及与花园有关的修饰用法\",\"英美发音、常见复合搭配及 gardener、gardening 词族\",\"复数形式用于部分街道名，以及历史来源形式 gardin 和相关词形\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 568,
+    "headword": "garden",
+    "meaning_zh": "n. 花园, 果园, 菜园\nvi. 栽培花木\nvt. 造园\nadj. 花园的, 普通的",
+    "phonetic": "/'gɑ:dn/",
+    "pos": "",
+    "forms": []
+  }
+}

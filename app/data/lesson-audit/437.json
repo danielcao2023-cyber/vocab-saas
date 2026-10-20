@@ -1,0 +1,255 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9635e092fe93e19f31254ae67ba93a5c4ecfd3eee78bb94413e7011922d7e4f6",
+    "executedReviewPromptHash": "9635e092fe93e19f31254ae67ba93a5c4ecfd3eee78bb94413e7011922d7e4f6",
+    "reviewHash": "bd4d2e3c7aed9e71a29156920250e653f0f609e15e49257ba56616ea26f47d99",
+    "wordId": 437,
+    "inputHash": "ed0f8bfd93078c28dca4e723f945694eb97b797ed6f7e67d12b1bb35ee34ddd4",
+    "draftHash": "25899864273cac0cb6ce389d89dba024f58e8ec07154511f138ecdb2c483b31a",
+    "finalHash": "98971f80f558814cdff774515ab0552ffbd2e6545a8da895a9678845571d37ec",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/electric#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:47.463Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10244,
+        "revisionId": 39759859,
+        "revisionTimestamp": "2026-08-03T00:24:50Z",
+        "sha256": "6fea4f609f1b8850664a8253bb20ec6767557bf8abf416c632f8c660ef523baa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/electric",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:18:25.516Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:21:30.324Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "electricity 保留 electric 末尾的 c，直接加 -ity；原说明按字面操作会拼错。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/formation",
+        "message": "electrician 是 electric 直接加 -ian，原说明所称的“词尾拼写变化”并不存在。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "应明确1600年创造的是拉丁语 electricus，补出来源记载的英语17世纪信息，并删除“给出的历史条目说明”这类制作说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "该阶段的 meaning 实为构词说明，没有提供词义。相关事实保留在 summary，删除这一占位阶段，避免词源图把构词说明画成释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "实际来源中没有 Oxford 正文，不能据此归属本次审校内容。基本义、读音及材料列出的相关词改引已取得的 Wiktionnaire 英语词条；材料未载的比喻义、导电辨析及 electrical 构词说明保留为专业语言知识补充，清空相应来源关联。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "用单一中文括注区分 electric 与 electrical 过于简化，应提示两者在“与电有关”义上重叠，具体搭配仍须分别记忆。"
+      }
+    ],
+    "coverageAssessment": "已核对实际词典中的两个形容词核心义，各有2个自然、对应准确的原创例句；比喻义作为拓展保留，例句符合该栏要求。未把“导电的”误列为 electric 的常用义。读音、主要搭配及其余例句无需改动。核验范围限于提供的 Wiktionnaire 英语词条及专业语言知识，未取得的 Oxford、Cambridge 正文不作为依据。",
+    "senseInventory": [
+      {
+        "sense": "电的；与电有关的",
+        "coveredBy": [
+          "electric-related-to-electricity"
+        ],
+        "assessment": "对应词典第一义；电路、电流两个例句充分覆盖，搭配自然。"
+      },
+      {
+        "sense": "用电驱动或工作的",
+        "coveredBy": [
+          "electric-powered"
+        ],
+        "assessment": "对应词典第二义；电动汽车、电热水壶两个例句准确覆盖。"
+      },
+      {
+        "sense": "比喻：令人激动的；气氛热烈的",
+        "coveredBy": [
+          "electric-exciting"
+        ],
+        "assessment": "属于专业语言知识可确认的拓展义，提供的词典正文未列出；保留在 lessCommonSenses，清除未经取得正文支持的来源关联。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"electric + -ity；拼写中去掉 electric 末尾的 c，再加 -ity。\"",
+        "valueJson": "\"electric + -ity；保留 electric 末尾的 c，直接加 -ity。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"electric + -ian；词尾拼写变化后形成表示职业者的名词。\"",
+        "valueJson": "\"electric + -ian；保留 electric 的全部字母，直接加 -ian，形成表示职业者的名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"electric 的历史词源可追溯到拉丁语 electricus；给出的历史条目说明它由 electrum（琥珀）加后缀 -icus 构成，并记载 William Gilbert 于1600年创造了这个词。\"",
+        "valueJson": "\"英语 electric 的使用可追溯到17世纪，源自拉丁语 electricus。William Gilbert 于1600年用 electrum（“琥珀”）加后缀 -icus 创造了拉丁语 electricus。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"拉丁语\",\"form\":\"electricus\",\"meaning\":\"由 electrum 加后缀 -icus 构成的形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_electric\",\"title\":\"Oxford Learner’s Dictionaries: electric\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/electric\",\"supports\":[\"electric 的形容词含义与常见搭配\",\"electric、electrical 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_electric\",\"title\":\"Wiktionnaire: electric（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/electric#Anglais\",\"supports\":[\"electric 的两个基本形容词义\",\"electric 的读音\",\"electrical 与 electric 在“与电有关”义上的近义关系\",\"electricity、electrician 等派生词的列举\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_electric\"]",
+        "valueJson": "[\"wiktionary_electric\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习区分 electric（用电的）和 electrical（电学相关的）。\"",
+        "valueJson": "\"结合 electric car、electric current 和 electrical engineering 记常见搭配；electric 和 electrical 都可表示“与电有关”，不能只按一个中文释义区分。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 437,
+    "headword": "electric",
+    "meaning_zh": "adj. 电的, 导电的, 电动的",
+    "phonetic": "/i'lektik/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,401 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "aaf8c9189bd7c693de86b07c5e9590d0f205f02cb3365dce41394619f41502ba",
+    "executedReviewPromptHash": "aaf8c9189bd7c693de86b07c5e9590d0f205f02cb3365dce41394619f41502ba",
+    "reviewHash": "119063d8ec983e2f6fd3615253c5002ab13169c44def041068b1ab8dbdc85a00",
+    "wordId": 1215,
+    "inputHash": "ed220b20e1175ec158b504ee5c5f2534be51b61668edadbd47be0b1b494c3160",
+    "draftHash": "705e28c85dbe98f14e496dd94a9db897dbc3d0227c5a89c2b20cf654a82873a8",
+    "finalHash": "0b816595e87fc307deddcae4f2b8c396b4aea227387fe253278c3f3d4fc71f91",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/serious#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.250Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120589,
+        "revisionId": 39763169,
+        "revisionTimestamp": "2026-08-03T04:25:28Z",
+        "sha256": "3747e03bc04fa07d6eba4a4d74f8cf0fa925839f76c790e2bdee79774859fc08",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/serious",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:46:04.660Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:53:33.609Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation; /wordFamily/0/spellingNote; /wordFamilyNote",
+        "message": "serious 以 s 结尾，并无需要改成 i 的词尾 y。seriously 应保留 serious 的全部字母，直接加 -ly。三处错误说明均须修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology; /sources",
+        "message": "已取回页面的词源栏只有待补模板，没有拉丁语至法语再至英语的历史链。sérieux 是法语编写的英语释义，不能当作借入阶段。应删除未经证实的历史链，仅保留可确认的现代派生关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds; /senses; /lessCommonSenses; /confusions; /wordFamily; /sources",
+        "message": "Cambridge 正文未取得，不能以其作为已获得的具体释义、搭配或拼写依据。相关归因须撤去；实际取回的维基词典可支持音标、派生词字形及 take seriously 表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "该义合列认真投入与神情严肃，但目前每种意思只有一个例句。应分别补足两个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "表示当真、不是开玩笑的 serious 是核心日常用法，不宜列作较少见义。原例带 about，容易与真心打算混读；应移至核心义并提供两个清楚体现说话当真的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "重要、需慎重考虑与伤势或问题严重不能仅靠合并标题处理；现有两个例句都只体现严重程度。应单列重要义并补足例句，同时把 a serious matter 和 important 的比较移到相应语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrastingNote",
+        "message": "“这些词不能用来反说问题的严重程度”错误涵盖了 not serious；not serious 本来就可以表示问题或伤势不严重。应区分 playful、half-hearted 与 not serious 各自的适用语境。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/1/ipa",
+        "message": "比较级短语的音标与全课采用的英式主音标不一致；英式 more 在 serious 前不读词尾 /r/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses; /lessCommonSenses",
+        "message": "宜在核心搭配中补入 take someone/something seriously，并简要覆盖 serious money、serious relationship 和 serious contender 等常见延伸用法。"
+      }
+    ],
+    "coverageAssessment": "已核对认真投入、态度严肃、说话当真、情况严重、重要而需慎重考虑等主要用法。修订后各核心意思均有至少两个例句，并补充数量、感情关系与竞争者语境。现有词典正文只有概括译义、音标及派生词，细分义项依专业语言知识审核；历史词源没有可靠依据，已撤去历史链及对未取得页面的归因。",
+    "senseInventory": [
+      {
+        "sense": "认真投入；真心打算",
+        "coveredBy": [
+          "serious-1"
+        ],
+        "assessment": "保留 serious about 句型，补入学习投入的例句及 take someone/something seriously 搭配。"
+      },
+      {
+        "sense": "严肃、郑重的态度、神情或语气",
+        "coveredBy": [
+          "serious-1"
+        ],
+        "assessment": "与认真投入合列可以保留；补例后两种意思各有两个例句，近反义表达按语境区分。"
+      },
+      {
+        "sense": "当真的；不是开玩笑的",
+        "coveredBy": [
+          "serious-3"
+        ],
+        "assessment": "从拓展区移入核心义，用两个明确的口语场景覆盖。"
+      },
+      {
+        "sense": "严重的；可能造成重大不良影响的",
+        "coveredBy": [
+          "serious-2"
+        ],
+        "assessment": "原有问题与伤口例句可保留；移出重要性用法，收紧 severe 的比较范围。"
+      },
+      {
+        "sense": "重要的；值得慎重考虑的",
+        "coveredBy": [
+          "serious-4"
+        ],
+        "assessment": "新增完整核心义，以决定和责任两个例句区分重要性与伤害程度。"
+      },
+      {
+        "sense": "非正式用法：数量很大、相当可观的",
+        "coveredBy": [
+          "serious-5"
+        ],
+        "assessment": "补入 serious money，明确其表达金额可观。"
+      },
+      {
+        "sense": "感情认真、有长期交往打算的",
+        "coveredBy": [
+          "serious-6"
+        ],
+        "assessment": "作为认真投入在感情语境中的延伸补充，不将其解释为神情严肃。"
+      },
+      {
+        "sense": "有实际竞争力、值得重视的",
+        "coveredBy": [
+          "serious-7"
+        ],
+        "assessment": "补入 serious contender，说明其着重胜出可能性与竞争力。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"serious 常说人做事认真、态度严肃，也常说问题或后果严重；语气要看它修饰什么。\"",
+        "valueJson": "\"serious 可说态度认真或严肃、说话当真，也可说情况严重，或事情重要而需慎重考虑；含义要看具体语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[\"wiktionary-serious\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/ipa",
+        "expectedValueJson": "\"/mɔːr ˈsɪəriəs/\"",
+        "valueJson": "\"/mɔː ˈsɪəriəs/\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-1-ex3\",\"senseId\":\"serious-1\",\"en\":\"Liam is a serious student who reviews his notes every evening.\",\"zh\":\"利亚姆是个学习认真的学生，每天晚上都会复习笔记。\",\"note\":\"serious student 强调对学习认真投入。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-1-ex4\",\"senseId\":\"serious-1\",\"en\":\"Mum spoke in a serious voice when she asked why I was late.\",\"zh\":\"妈妈问我为什么迟到时，语气很严肃。\",\"note\":\"serious voice 描述严肃、郑重的语气。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"take someone/something seriously\",\"zh\":\"认真对待某人／某事\",\"note\":\"seriously 是副词，放在宾语后；表示重视对方或把事情当回事。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"half-hearted\",\"zh\":\"敷衍的；不尽心的\",\"note\":\"用于学习或做事态度时，可与认真投入的 serious 对照，强调缺乏热情或投入。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"态度语境可用 playful 或 not serious 对照；这些词不能用来反说问题的严重程度。\"",
+        "valueJson": "\"认真投入的语境可用 half-hearted 对照；神情、语气或气氛可用 playful 对照。not serious 随语境可表示不认真、不严肃或不严重。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"严重的；重大的\"",
+        "valueJson": "\"严重的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常修饰 problem、illness、accident、injury 等；表示“重要而需认真考虑”时，也可修饰 matter。\"",
+        "valueJson": "\"常修饰 problem、illness、accident、injury 等，强调情况严重、存在危险或可能造成较大损害。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a serious matter\",\"zh\":\"重要而严肃的事情\",\"note\":\"提示事情不能轻率处理，常用于提醒或讨论。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"severe\",\"zh\":\"严重的；严厉的\",\"note\":\"常形容程度很高，如 severe pain；用于惩罚或天气时也可表示严厉或恶劣。\"},{\"en\":\"重大（important）\",\"zh\":\"重要的\",\"note\":\"important 强调重要性；serious 更强调事情严肃、严重或后果值得重视。\"}]",
+        "valueJson": "[{\"en\":\"severe\",\"zh\":\"严重的；剧烈的\",\"note\":\"severe injury 和 serious injury 都可说“重伤”；severe 更突出程度之重，serious 也常强调危险或后果。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"描述程度高、情况棘手时可用 severe；强调值得关注或影响重大时，serious 很常用。\"",
+        "valueJson": "\"两词在 illness、injury 等搭配中有重叠，但搭配范围不同：剧痛常说 severe pain，严重问题常说 a serious problem，不能处处互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"serious-3\",\"title\":\"认真的（表示不是开玩笑）\",\"meaning\":\"用于确认或强调某人说的话是真的、不是玩笑。\",\"note\":\"常见于口语问句 Are you serious?；可译为“你是认真的吗？”或“你没开玩笑吧？”。\",\"example\":{\"id\":\"serious-3-ex1\",\"senseId\":\"serious-3\",\"en\":\"Are you serious about moving to another city?\",\"zh\":\"你真打算搬去另一个城市吗？\",\"note\":\"此处是在确认对方是否当真。\"},\"sourceIds\":[\"cambridge-serious\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-3\",\"title\":\"当真的；不是开玩笑的\",\"meaning\":\"说的话是认真的，应当真。\",\"usageNote\":\"常见于 Are you serious? 和 I'm serious.，用于确认或强调一句话是否当真。\",\"examples\":[{\"id\":\"serious-3-ex1\",\"senseId\":\"serious-3\",\"en\":\"Are you serious? The tickets are free?\",\"zh\":\"你没开玩笑吧？这些票是免费的？\",\"note\":\"确认令人意外的消息是否当真。\"},{\"id\":\"serious-3-ex2\",\"senseId\":\"serious-3\",\"en\":\"I'm serious. I really did see a fox in our garden.\",\"zh\":\"我没开玩笑。我真的在我们花园里看到了一只狐狸。\",\"note\":\"I'm serious 强调刚才的话是说真的。\"}],\"patterns\":[{\"en\":\"Are you serious?\",\"zh\":\"你是认真的吗？／你没开玩笑吧？\",\"note\":\"可用于确认意外消息，也可表达难以置信，具体语气由场景决定。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"I'm serious.\",\"zh\":\"我说真的。／我没开玩笑。\",\"note\":\"提醒对方把自己的话当真。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"mean it\",\"zh\":\"说真的；是认真的\",\"note\":\"I mean it 表示说话当真，常用于承诺、警告或表达坚定态度。\"}],\"contrasting\":[{\"en\":\"be joking\",\"zh\":\"在开玩笑\",\"note\":\"对照的是说话内容是否当真。\"},{\"en\":\"be kidding\",\"zh\":\"在开玩笑；在逗人\",\"note\":\"常见于口语，用于表示说着玩。\"}],\"similarNote\":\"这里比较的是说话是否当真；mean it 不用于泛指学习或做事态度认真。\",\"contrastingNote\":\"be joking 和 be kidding 都可与这一义的 be serious 对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-4\",\"title\":\"重要的；需慎重考虑的\",\"meaning\":\"事情重要、有分量，需要认真考虑或负责对待。\",\"usageNote\":\"常修饰 decision、matter、responsibility 等，强调不能轻率处理，不一定表示已经造成伤害或损失。\",\"examples\":[{\"id\":\"serious-4-ex1\",\"senseId\":\"serious-4\",\"en\":\"Choosing a school is a serious decision.\",\"zh\":\"选学校是一个需要慎重作出的决定。\",\"note\":\"强调决定重要，值得认真考虑。\"},{\"id\":\"serious-4-ex2\",\"senseId\":\"serious-4\",\"en\":\"Looking after a baby is a serious responsibility.\",\"zh\":\"照顾婴儿是一项重大的责任。\",\"note\":\"强调责任有分量，需要认真承担。\"}],\"patterns\":[{\"en\":\"a serious decision\",\"zh\":\"需要慎重作出的决定\",\"note\":\"强调决定及其影响值得认真考虑。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a serious matter\",\"zh\":\"重要而严肃的事情\",\"note\":\"提示事情不能轻率处理，常用于提醒或讨论。\",\"kind\":\"common-collocation\"},{\"en\":\"a serious responsibility\",\"zh\":\"重大的责任\",\"note\":\"强调责任有分量，需要认真承担。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"important\",\"zh\":\"重要的\",\"note\":\"important 泛指重要性；serious 更强调事情需要慎重、负责地对待。\"}],\"contrasting\":[{\"en\":\"trivial\",\"zh\":\"琐碎的；无足轻重的\",\"note\":\"a trivial matter 指无足轻重的小事，可与 a serious matter 对照。\"}],\"similarNote\":\"两词在重要性上有交集，但 important 也常形容令人高兴的重要时刻，不一定带郑重的语气。\",\"contrastingNote\":\"trivial 对照的是事情的重要性；描述伤势轻微一般用 minor。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-5\",\"title\":\"大量的；相当可观的\",\"meaning\":\"非正式用法，强调数量或金额很大。\",\"note\":\"常见于 serious money，表示很大一笔钱，而不是钱本身很严肃。\",\"example\":{\"id\":\"serious-5-ex1\",\"senseId\":\"serious-5\",\"en\":\"Repairing the roof will cost us serious money.\",\"zh\":\"修屋顶得花我们一大笔钱。\",\"note\":\"serious money 强调费用可观。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-6\",\"title\":\"感情认真的；有长期打算的\",\"meaning\":\"形容一段感情中双方认真投入，有长期交往的打算。\",\"note\":\"常说 a serious relationship，也可用 be serious about someone 表示对感情认真。\",\"example\":{\"id\":\"serious-6-ex1\",\"senseId\":\"serious-6\",\"en\":\"They're in a serious relationship and plan to move in together.\",\"zh\":\"他们在认真交往，并打算搬到一起住。\",\"note\":\"serious 描述对这段关系的投入与打算。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"serious-7\",\"title\":\"有实际竞争力的；值得重视的\",\"meaning\":\"形容竞争者或候选人确有竞争力，不能被轻视。\",\"note\":\"常见于 a serious contender，强调有实际胜出机会。\",\"example\":{\"id\":\"serious-7-ex1\",\"senseId\":\"serious-7\",\"en\":\"After three wins, our team became a serious contender for the title.\",\"zh\":\"连赢三场后，我们队成了有力的夺冠竞争者。\",\"note\":\"serious contender 强调竞争实力与夺冠可能性。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"serious 的历史词源可追溯到拉丁语 serius，后经法语进入英语。\",\"stages\":[{\"language\":\"拉丁语\",\"form\":\"serius\",\"meaning\":\"严肃的\"},{\"language\":\"法语\",\"form\":\"sérieux\",\"meaning\":\"严肃的\"},{\"language\":\"英语\",\"form\":\"serious\",\"meaning\":\"严肃的\"}],\"caveat\":\"这里列的是历史词源线索；现代英语中可通过 serious、seriously、seriousness 记忆词族，不应把记忆联想当成词源。\",\"sourceIds\":[\"wiktionary-serious\"]}",
+        "valueJson": "{\"summary\":\"seriously 和 seriousness 是 serious 的现代派生词，分别由 serious 加 -ly 和 -ness 构成。\",\"stages\":[],\"caveat\":\"这些现代派生构词关系不代表 serious 本身的历史来源。\",\"sourceIds\":[\"wiktionary-serious\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"serious + -ly；y 改为 i 后加 -ly。\"",
+        "valueJson": "\"serious + -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"先把 serious 末尾的 y 改为 i，再加 -ly：seriously。\"",
+        "valueJson": "\"保留 serious 的全部字母，直接加 -ly：serious → seriously。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[\"wiktionary-serious\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-serious\"]",
+        "valueJson": "[\"wiktionary-serious\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"seriously 拼写时将 serious 末尾的 y 改为 i 再加 -ly；seriousness 直接加 -ness。\"",
+        "valueJson": "\"seriously 与 seriousness 都保留 serious 的全部字母，分别直接加 -ly 和 -ness。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-serious\",\"title\":\"Cambridge Dictionary: serious\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/serious\",\"supports\":[\"常见形容词义项、搭配和比较级用法\",\"seriously、seriousness 等词族拼写\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"serious 的历史词源线索\"]",
+        "valueJson": "[\"serious 的形容词词性与音标\",\"seriously、seriousness 等派生词的字形\",\"take seriously 表达的形式\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1215,
+    "headword": "serious",
+    "meaning_zh": "adj. 严肃的, 认真的, 重要的, 严重的",
+    "phonetic": "/'siәriәs/",
+    "pos": "",
+    "forms": []
+  }
+}

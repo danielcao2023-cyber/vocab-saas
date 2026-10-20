@@ -1,0 +1,272 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4a2f4977691daa56f3f4508fe68c793fd30e7f06ae24faf2f2f9696b00a4ad20",
+    "executedReviewPromptHash": "4a2f4977691daa56f3f4508fe68c793fd30e7f06ae24faf2f2f9696b00a4ad20",
+    "reviewHash": "d2d1f482fb12e1a03c297239e897f07bc73fbf44af9e7dfdc09daa5dbc1f7361",
+    "wordId": 759,
+    "inputHash": "2c4a4a4cc3e50731fbdea8fec156a81a08708022ff0c453b6261478dcb268e60",
+    "draftHash": "8510c10756464fd57c999e36448f1089bbf5e259f9d8ffe5f0f06cf89b7a0b2e",
+    "finalHash": "b4462904dded7beae23bf6a83a307c0a96cdc9628f6644b854334ae613c46bae",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/lantern#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.255Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121898,
+        "revisionId": 38299351,
+        "revisionTimestamp": "2025-06-07T13:30:18Z",
+        "sha256": "47776d30185340294feba93109bfce322d5dca242a474d614bcbdf1074b12384",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/lantern",
+        "section": "lantern noun",
+        "supports": [
+          "Relevant historical meaning",
+          "Sense and uncertainty boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "a82318f2b6d8229524d571f7626822927200352b3d445ee104829bcf412b8c3a",
+        "summaryAndSupportsWordCount": 59,
+        "sha256": "a82318f2b6d8229524d571f7626822927200352b3d445ee104829bcf412b8c3a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/759.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/lantern",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:33:39.205Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:38:06.628Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /lessCommonSenses",
+        "message": "核心名词义覆盖充分，但遗漏了词条列出的航标灯用法及罕见及物动词“装上提灯”。应补作次要用法，并明确使用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; /pronunciation/sourceIds; /senses/0/sourceIds; /confusions/0/sourceIds",
+        "message": "Oxford 未出现在实际来源材料中，Cambridge 获取失败，不能承担当前内容的来源佐证。应改列已取得的法语维基词典英语条目，并清除没有对应材料支撑的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary; /etymology/stages/0",
+        "message": "材料只说明 lanthorn 是后起拼写，不支持“中古”的断代。希腊语阶段的 form 是资料说明而非真实词形，应移除该占位阶段；希腊语来源及 lucerna 的影响保留在概述中。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2",
+        "message": "所谓错误拼写的可见字母仍是正确的 lantern，只在 t 与 e 之间夹有 U+200B 零宽字符；说明却讨论漏字和调换字母，不能形成有效的拼写辨析。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/summary; /confusions/0/takeaway",
+        "message": "lantern 不是照明用具的泛称；能否移动、悬挂也不是它与 lamp 的严格分界。应以 lamp 的宽泛范围和 lantern 的典型灯具形态解释。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "lantern 的末字母是 n，“末尾的 r”表述不够准确；改为字母 r，并明确全词两个音节。现有英美音标无需更换。"
+      }
+    ],
+    "coverageAssessment": "灯笼、提灯是同一核心名词义的常见形态，原有两个自然例句分别覆盖节庆装饰和携灯照明，无须强拆。补入航海用法与罕见及物动词后，词条列出的主要释义均有对应内容。已核对语法、翻译、拼写、音标、复数和词义比较；现有近义表达限定基本恰当，也没有强造反义词。来源方面，法语维基词典材料是英语条目，只直接支持一般名词信息；词源依据 Etymonline，专门名词及动词说明依据原词条与专业语言知识，不声称已有检索词典逐项佐证。",
+    "senseInventory": [
+      {
+        "sense": "n. 灯笼；提灯",
+        "coveredBy": [
+          "lantern-n-1"
+        ],
+        "assessment": "核心义已充分覆盖，两个例句分别展示悬挂装饰与携行照明，保留原有例句。"
+      },
+      {
+        "sense": "n. 航标灯",
+        "coveredBy": [
+          "lantern-n-2"
+        ],
+        "assessment": "原稿遗漏；补为航海中的专门用法，提供一个例句，并说明它指灯具而非整个航标。"
+      },
+      {
+        "sense": "vt. 给……装上或配上提灯",
+        "coveredBy": [
+          "lantern-v-1"
+        ],
+        "assessment": "原稿遗漏；补为罕见及物动词，提供识别性例句及更常用的表达，不列为初中核心产出用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: lantern\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/lantern\",\"supports\":[\"英式与美式读音\",\"词性和复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：lantern（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/lantern#Anglais\",\"supports\":[\"英语名词 lantern 的灯笼、提灯义\",\"规则名词信息\",\"美国英语发音录音\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: lantern\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/lantern\",\"supports\":[\"灯笼、提灯的常见名词用法\",\"名词搭配及相关词比较\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb (rare)\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lantern-n-2\",\"title\":\"航标灯（航海专门用法）\",\"meaning\":\"用于航道、港口等处指示位置或引导航行的灯。\",\"note\":\"这里仍指灯具，不泛指整个航标；现代泛称航标灯也可用 beacon light。这一用法作为阅读补充即可。\",\"example\":{\"id\":\"lantern-2-ex1\",\"senseId\":\"lantern-n-2\",\"en\":\"A lantern at the harbor entrance guided the boats after dark.\",\"zh\":\"港口入口处的一盏航标灯在天黑后为船只引路。\",\"note\":\"harbor entrance 和 guided the boats 表明这盏灯用于航海指引。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lantern-v-1\",\"title\":\"给……装上提灯（罕见及物动词）\",\"meaning\":\"给某处装上或配上灯笼、提灯。\",\"note\":\"这是罕见动词用法，后面直接接配灯的场所。现代日常表达通常用 hang lanterns 或 put up lanterns，学习时以识别为主。\",\"example\":{\"id\":\"lantern-v-1-ex1\",\"senseId\":\"lantern-v-1\",\"en\":\"They lanterned the courtyard for the evening celebration.\",\"zh\":\"他们为晚上的庆典在庭院里装上了灯笼。\",\"note\":\"lanterned 是规则过去式；更常用的说法是 They hung lanterns in the courtyard for the evening celebration.\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课只列常见名词 lantern；没有加入仅与灯具主题相关、但并非其派生词的词。\"",
+        "valueJson": "\"lantern 主要作名词，罕见的动词 lantern 与名词同形，表示“给……装上提灯”。paper lantern（纸灯笼）是词组，不是加前后缀形成的派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式读音末尾的 r 通常不发音；美式通常发音。\"",
+        "valueJson": "\"常见英式发音中，字母 r 不发音；常见美式发音中 r 发音。全词有两个音节，末尾 /n/ 后不要另加元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者都可以泛指照明用具，但通常的形状和使用方式不同。\"",
+        "valueJson": "\"lamp 是较宽泛的灯具名称；lantern 通常指有外罩的灯笼或提灯。两者的区别不能只看是否能移动或悬挂。\""
+      },
+      {
+        "op": "remove",
+        "path": "/confusions/0/items/2",
+        "expectedValueJson": "{\"label\":\"错误写法 lant\\u200bern\",\"note\":\"正确拼写是 lantern，字母顺序为 l-a-n-t-e-r-n；中间不要漏掉 t 或调换字母。\",\"example\":{\"id\":\"lantern-confusion-ex3\",\"senseId\":\"lantern-n-1\",\"en\":\"She packed a lantern for the camping trip.\",\"zh\":\"她为露营旅行装了一盏提灯。\",\"note\":\"记清 lantern 的完整拼写。\"}}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看灯具的使用方式来选词：可提拿或悬挂的灯常用 lantern，桌上或固定位置的灯常用 lamp；拼写记作 l-a-n-t-e-r-n。\"",
+        "valueJson": "\"lamp 的范围较广，lantern 通常是有外罩的灯笼或提灯；悬挂、携带或摆放的位置只能辅助判断。lantern 拼作 l-a-n-t-e-r-n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 lantern 经古法语 lanterne 及拉丁语 lanterna 传来；词源资料还把拉丁形式追溯到表示“火把”的希腊词，并提到它受到拉丁语 lucerna 的影响。中古拼写 lanthorn 与灯罩曾用 horn（角质材料）的联想有关，但不代表 lantern 原本就是由“灯”和“角”拼成。\"",
+        "valueJson": "\"英语 lantern 经古法语 lanterne、拉丁语 lanterna 传来，后两者都表示灯或提灯。拉丁形式可追溯到表示“火把”的希腊语词，并受到拉丁语 lucerna 的影响。lanthorn 是后起拼写，源于对 horn（灯罩曾用的角质材料）的联想，不能用它来解释 lantern 的原始构成。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/0",
+        "expectedValueJson": "{\"language\":\"希腊语\",\"form\":\"词源资料所述的一个表示“火把”的词\",\"meaning\":\"表示火把；词源资料将其列为拉丁语 lanterna 的可能来源之一。\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 759,
+    "headword": "lantern",
+    "meaning_zh": "n. 灯笼, 提灯, 航标灯\nvt. 装上提灯",
+    "phonetic": "/'læntәn/",
+    "pos": "",
+    "forms": []
+  }
+}

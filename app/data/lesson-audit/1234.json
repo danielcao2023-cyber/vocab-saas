@@ -1,0 +1,744 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9f272d468bc073b67b2e33dfa39c7ab64890f484071fd1b70d9d41fe9982e341",
+    "executedReviewPromptHash": "ef3e7dbfa99f299c14b65d05e137adf301c670af8bd876a87da9efe8fa360ac8",
+    "reviewHash": "c856576a7533a867100e643a2d112f443890dbc4391fe70485bf09d5a3e3a7a5",
+    "wordId": 1234,
+    "inputHash": "f9ddfbfcd3528d9c4dabb28daa1d12f3a96fd7a1ba1e1ac9fa1c2dd4a93b0f4c",
+    "draftHash": "96a23704ed3826c72dd9e42ea826a50f43a355e7ed8108bec5b3dfeee93e00e2",
+    "finalHash": "1702d1fdf575c36e8479752eaaabb4222c9ad8183aa2121ff579ebaaaf3ef1d2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shoot#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.202Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116450,
+        "revisionId": 39751528,
+        "revisionTimestamp": "2026-08-02T17:10:18Z",
+        "sha256": "f017cfab0e56b1b767749ec4e2794aabf3390e118953bc36efa8692ebbfd5edd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shoot",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:26:06.252Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:07:30.102Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/4/note; /wordFamily/1/spellingNote; /wordFamilyNote",
+        "message": "shoot 没有词尾 e。shooting 是直接加 -ing，不能解释成去 e。三处均须修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses; /senses",
+        "message": "植物新梢、一次拍摄活动两种常用名词义，以及表示懊恼、允许对方开口的口语功能，均只有一个例句且被放入次要义。应提升为完整教学义，各补足两个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4; /lessCommonSenses",
+        "message": "缺少常用的 shoot up（价格、数量等猛涨），也遗漏了来源明确列出的高尔夫成绩义。喷出、快速发送、投去目光及英式狩猎活动等扩展用法需要适当补充或交代。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote; /senses/1/patterns/0; /confusions/1",
+        "message": "直接宾语与命中结果的说明相互矛盾，也未区分目标、枪支和发射物。枪击语境中 shoot someone 通常表示击中；shoot a gun、shoot an arrow 的宾语并非被击中的目标。罐子仍在原处不能证明没有命中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1/note; /confusions/0",
+        "message": "shoot a hole in something 的直接宾语是 a hole，不是被打穿的物体。完成时足球例句的 senseId 误指射中义；名词 shot 也须与表示整次拍摄活动的 shoot 分清。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples; /senses/5; /memoryAid",
+        "message": "部分例句虽可理解，但不适合示范自然用法，尤其是叶片沿枝条 shot up 及 shoot new leaves。植物动词用法应说明园艺语境，并把名词 young shoots 与动词搭配分开。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions; /senses/3/relatedExpressions",
+        "message": "删除录像并非拍摄的合适反向表达，应取消强配。体育义还应明确 shoot 描述射门或投篮，score 才表示得分。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源摘要实际上在讲现代词形；阶段按古英语到更早语言倒排，会形成反向历史箭头，且 meaning 全是来源说明而非字义。应将可证实的历史关系写入摘要、清空占位阶段，并补上感叹词独立的委婉语来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各 sourceIds",
+        "message": "Oxford 的正文并未取得，不能把它作为本次已据内容审查的依据。应将引用调整为实际提供的英语词条；仅凭专业语言知识补充的用法不伪挂来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes; /levelHint",
+        "message": "发音提示混淆字形与音标，且 /uːt/ 缺少词首 /ʃ/；shot 的美式元音也不宜笼统说成较短。学习重点应优先突出常见名词 shoots，而非把园艺动词用法当作同等常见的基础用法。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对英语词条的全部释义，并对照原始中文简释检查覆盖。补齐常用名词、口语功能、猛涨和喷出义；每个核心义均保留或补足至少两个原创英中例句，同时区分射击与命中、射门与得分、shot 与一次拍摄活动。高尔夫成绩等扩展义放入识别层。粗俗性俚语及缺少语境的旧式、技术性简释不列为初中核心，不据此捏造现代常用义。词源仅采用已提供的维基词典英语词条，未使用不可取得的 Cambridge 内容，也未声称取得 Oxford 正文。",
+    "senseInventory": [
+      {
+        "sense": "动词：射击、开枪、发射弹箭",
+        "coveredBy": [
+          "shoot-v-projectile"
+        ],
+        "assessment": "已覆盖不及物开火、shoot at，以及枪支和发射物作直接宾语的区别。"
+      },
+      {
+        "sense": "动词：射中、使中弹；射击造成伤害或损毁",
+        "coveredBy": [
+          "shoot-v-hit"
+        ],
+        "assessment": "已覆盖，补明中弹不必然死亡；损毁作为射击结果讲解，不泛化为 destroy 的同义词。"
+      },
+      {
+        "sense": "动词：拍照、拍电影或视频",
+        "coveredBy": [
+          "shoot-v-film"
+        ],
+        "assessment": "已覆盖及物拍摄，并补充不带宾语的拍摄用法。"
+      },
+      {
+        "sense": "动词：射门、投篮；把球打向得分目标",
+        "coveredBy": [
+          "shoot-v-sport"
+        ],
+        "assessment": "已有足球、篮球各一例；补明动作与得分结果的区别。原始简释的“挥出”只在相应运动搭配内理解。"
+      },
+      {
+        "sense": "动词：打出某个高尔夫成绩",
+        "coveredBy": [
+          "shoot-v-score"
+        ],
+        "assessment": "补入识别层，使用 shoot + 杆数，不推广为任意考试或比赛得分。"
+      },
+      {
+        "sense": "动词：迅速移动、飞速行进",
+        "coveredBy": [
+          "shoot-v-move"
+        ],
+        "assessment": "保留两个具体移动例句。"
+      },
+      {
+        "sense": "动词：价格、数量等猛涨",
+        "coveredBy": [
+          "shoot-v-move"
+        ],
+        "assessment": "补入 shoot up 及两个例句，并单独限定相关近义、反向表达。"
+      },
+      {
+        "sense": "动词：喷出、射出液体或火焰等",
+        "coveredBy": [
+          "shoot-v-emit"
+        ],
+        "assessment": "补为完整义项，分别展示及物喷出和不及物窜出。"
+      },
+      {
+        "sense": "动词：植物发芽、抽出新梢",
+        "coveredBy": [
+          "shoot-v-sprout"
+        ],
+        "assessment": "保留并改用自然园艺例句，说明日常说种子发芽时 sprout 更常用。"
+      },
+      {
+        "sense": "名词：嫩芽、新梢、竹笋；植物新生枝条",
+        "coveredBy": [
+          "shoot-n-plant"
+        ],
+        "assessment": "提升为核心名词义，覆盖枝条与食用竹笋，并区分 shoot 和 bud。根蘖属于相应植物生长语境中的较专门用法。"
+      },
+      {
+        "sense": "名词：一次摄影或影视拍摄活动",
+        "coveredBy": [
+          "shoot-n-session"
+        ],
+        "assessment": "提升为核心义，补足例句，并与单张照片或单个镜头 shot 区分。"
+      },
+      {
+        "sense": "名词：英式狩猎、射猎活动",
+        "coveredBy": [
+          "shoot-n-hunt"
+        ],
+        "assessment": "补入识别层，说明是一次组织起来的活动。"
+      },
+      {
+        "sense": "感叹词：哎呀、糟了",
+        "coveredBy": [
+          "shoot-interjection"
+        ],
+        "assessment": "提升为完整口语义，提供两个例句，并注明非正式、常见于美式口语。"
+      },
+      {
+        "sense": "命令式口语回应：请说、尽管问",
+        "coveredBy": [
+          "shoot-v-invitation"
+        ],
+        "assessment": "作为独立功能讲解，提供提问和提出建议两种对话。"
+      },
+      {
+        "sense": "动词：迅速发送邮件或消息",
+        "coveredBy": [
+          "shoot-v-send"
+        ],
+        "assessment": "补入识别层，明确 shoot someone something 的口语搭配；不据此推导名词“急送”的自由用法。"
+      },
+      {
+        "sense": "动词：投去某种目光",
+        "coveredBy": [
+          "shoot-v-look"
+        ],
+        "assessment": "补入识别层，以 shoot someone a look 展示搭配，不把 shoot 泛化为任意“投射”。"
+      },
+      {
+        "sense": "俚语动词：注射毒品",
+        "coveredBy": [
+          "shoot-v-inject"
+        ],
+        "assessment": "补入识别层，限制语域，避免误作普通打针、接种疫苗的通用表达。"
+      },
+      {
+        "sense": "粗俗性俚语：射精，尤其 shoot one's load",
+        "coveredBy": [],
+        "assessment": "来源确有收录；不属于初中核心教学，本课不展开练习。"
+      },
+      {
+        "sense": "动词：挥霍、浪费",
+        "coveredBy": [],
+        "assessment": "属于低频且依赖搭配的扩展用法，未纳入核心；不把裸词 shoot 教成 spend 或 waste 的通用替换。"
+      },
+      {
+        "sense": "原始简释中的名词：射击、射伤、发射、发芽",
+        "coveredBy": [],
+        "assessment": "这些简释不能直接证明现代自由名词用法；本课不把 a shoot 教成一发子弹、一次枪击或伤口。植物部位义另有完整覆盖。"
+      },
+      {
+        "sense": "原始简释中的名词：急流、滑运道",
+        "coveredBy": [],
+        "assessment": "缺少具体地理或技术语境，不作为现代常用义教授；也不凭同音关系把 shoot 与 chute 全面等同。"
+      },
+      {
+        "sense": "原始简释中的名词：推力",
+        "coveredBy": [],
+        "assessment": "缺少专门语境，不将 shoot 教成物理学 thrust 的普通同义词。"
+      },
+      {
+        "sense": "原始简释中的名词：急送",
+        "coveredBy": [],
+        "assessment": "未据此另造名词例句；常见口语中的快速发送已按动词搭配补充。"
+      },
+      {
+        "sense": "原始简释中的名词：浪费",
+        "coveredBy": [],
+        "assessment": "没有足够语境支持将其教作现代通用名词，未选教。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/levelHint",
+        "expectedValueJson": "\"初中基础词，重点掌握不规则变化 shot、shoot at 与 shoot 的区别，以及拍摄和发芽两种常见用法。\"",
+        "valueJson": "\"基础词：先掌握 shoot—shot—shot、shoot at 与 shoot 的区别，以及射门、拍摄和名词 shoots（新芽）。也要辨认 Shoot!（糟了）与 Shoot.（请说）两种口语功能。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"元音 /uː/ 要读得较长，末尾 /t/ 清晰；不要按旧式拼写把它误读成 /uːt/ 以外的音。\"",
+        "valueJson": "\"词首读 /ʃ/，中间是长元音 /uː/，词尾为 /t/，末尾不要另加元音。shoot 与 chute 同音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"shot 的元音较短，英美读音略有差别：英式常为 /ʃɒt/，美式为 /ʃɑːt/。\"",
+        "valueJson": "\"shot 与 shoot 的元音不同：英式通常为 /ʃɒt/，美式常记为 /ʃɑːt/，也有词典写作 /ʃɑt/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e 再加 -ing。\"",
+        "valueJson": "\"shoot 直接加 -ing，写作 shooting；原词没有词尾 e，也不用双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"shoot at 表示朝某处或某人射击，不说明是否射中；shoot someone/something 表示射击某人或某物，常指击中或造成伤害。\"",
+        "valueJson": "\"shoot 可单独表示开火。shoot at + 目标表示朝目标射击，不说明是否命中；枪击语境中的 shoot someone 通常表示击中。shoot a gun 表示开枪，shoot an arrow 表示射出箭，直接宾语不总是被击中的目标。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"shoot + 人/物\",\"zh\":\"射击……；射中……\",\"note\":\"直接接宾语，常用于说明目标受到射击。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"shoot + 枪支／发射物\",\"zh\":\"开枪／射出……\",\"note\":\"shoot a gun 中 gun 是使用的枪；shoot an arrow 中 arrow 是射出的箭。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"射中；使中弹受伤\"",
+        "valueJson": "\"射中；使中弹\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用枪、箭等射中某人或某物；用于人时可表示使其中弹受伤。\"",
+        "valueJson": "\"用子弹、箭等击中人、动物或物体，可能造成伤害甚至死亡。shoot someone 本身不等于射杀；shoot someone dead 才明确表示射杀。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"shoot-v-hit-ex1\",\"senseId\":\"shoot-v-hit\",\"en\":\"The hunter shot a target on the far hill.\",\"zh\":\"猎人在远处的山坡上射中了一个目标。\",\"note\":\"shot 后直接接目标，表示射击并命中。\"}",
+        "valueJson": "{\"id\":\"shoot-v-hit-ex1\",\"senseId\":\"shoot-v-hit\",\"en\":\"The guard was shot in the leg and taken to hospital.\",\"zh\":\"那名保安腿部中弹，被送往医院。\",\"note\":\"be shot in + 身体部位表示该部位中弹，不表示一定死亡。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"shoot-v-hit-ex2\",\"senseId\":\"shoot-v-hit\",\"en\":\"The window was shot during the attack.\",\"zh\":\"袭击发生时，窗户被子弹打中了。\",\"note\":\"was shot 是过去时被动语态，说明窗户遭到射击。\"}",
+        "valueJson": "{\"id\":\"shoot-v-hit-ex2\",\"senseId\":\"shoot-v-hit\",\"en\":\"Someone shot a hole in our fence last night.\",\"zh\":\"昨晚有人开枪，在我们家的围栏上打出了一个洞。\",\"note\":\"shoot a hole in something 表示射击造成物体上出现洞的结果。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"直接接被射击的对象；是否命中由上下文决定。\"",
+        "valueJson": "\"这里限于射中义：直接接被击中的人或物。shoot someone 通常表示对方中弹，但本身不说明是否死亡。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"强调射击造成的结果，宾语通常是被打出洞的物体。\"",
+        "valueJson": "\"直接宾语是 a hole；in something 指被打穿的物体。整个结构表示开枪在物体上打出一个洞。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 shoot a film/video/photo；shooting 可指拍摄活动或正在拍摄。\"",
+        "valueJson": "\"既可接拍摄对象，如 shoot a film/video/photo，也可不带宾语表示进行拍摄。shooting 还可作名词表示拍摄活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-film-ex3\",\"senseId\":\"shoot-v-film\",\"en\":\"We can't enter the kitchen because they're shooting in there.\",\"zh\":\"我们不能进厨房，因为他们正在里面拍摄。\",\"note\":\"shoot 不带宾语，表示正在进行拍摄；because 引出不能进入的原因。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"erase a recording\",\"zh\":\"删除一段录像\",\"note\":\"在拍摄记录影像的语境中，表示移除已录制内容，可与拍摄行为对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"erase a recording 是影像记录语境中的结果对照，不是普遍适用于 shoot 的反义词。\"",
+        "valueJson": "\"这一义项没有常用的直接反义词；停止拍摄可说 stop filming。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"在足球中 shoot 常指射门；在篮球中可指投篮。shoot at the goal/basket 说明射门或投篮的方向。\"",
+        "valueJson": "\"在足球中表示射门，在篮球中表示投篮。本义下 shoot 不保证得分，score 才表示得分；shoot at the goal/basket 说明射门或投篮的方向。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"score\",\"zh\":\"得分；进球\",\"note\":\"表示已经取得分数；shoot 只表示射门或投篮的动作，可能没有得分。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"kick 和 throw 描述踢或投的动作；shoot 突出朝得分目标射门或投篮。\"",
+        "valueJson": "\"kick、throw 只描述踢、投，不一定朝得分目标；shoot 表示射门或投篮，score 表示已经得分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/title",
+        "expectedValueJson": "\"迅速冲过；猛地移动\"",
+        "valueJson": "\"迅速移动；（价格、数量等）猛涨\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"像射出的东西一样快速地移动，常用于人、物体或光线。\"",
+        "valueJson": "\"人或物像射出的东西一样迅速移动；也可比喻价格、数量或程度在短时间内明显上升。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"通常不带宾语；可与 across、through、up 等表示移动方向的词连用。\"",
+        "valueJson": "\"迅速移动义通常不带宾语，后接 across、through、past 等方向词。价格、数量等作主语时，shoot up 表示猛涨，强调上升很快。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-move-ex3\",\"senseId\":\"shoot-v-move\",\"en\":\"The price of eggs shot up last month.\",\"zh\":\"上个月鸡蛋价格猛涨。\",\"note\":\"价格作主语，shot up 表示迅速上涨。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-move-ex4\",\"senseId\":\"shoot-v-move\",\"en\":\"Sales shot up after the shop started offering free delivery.\",\"zh\":\"商店开始提供免费送货后，销量猛增。\",\"note\":\"sales 指销量；after 从句中的变化发生在销量猛增之前。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"价格／数量 + shoot up\",\"zh\":\"价格／数量猛涨\",\"note\":\"主语是迅速上升的价格或数量；此处 shoot up 不带宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"soar\",\"zh\":\"猛涨；飙升\",\"note\":\"可与 shoot up 一样描述价格、数量等迅速上升，不能替换横穿小路等方向结构中的 shoot。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"fall/drop\",\"zh\":\"下降；下跌\",\"note\":\"用于价格、数量等下降，与 shoot up 的上升方向相对。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similarNote",
+        "expectedValueJson": "\"rush 常带有匆忙感；dart 更突出突然、短促的动作；shoot 可描写像射出一样的速度。\"",
+        "valueJson": "\"rush 常带匆忙感，dart 突出突然、短促的移动；soar 则可与 shoot up 一样形容价格、数量等猛涨。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"move slowly 仅在移动速度这一语境中与 shoot 对照。\"",
+        "valueJson": "\"move slowly 对照移动速度；fall/drop 对照价格、数量等上升与下降的方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/usageNote",
+        "expectedValueJson": "\"植物作主语时通常不及物；shoot up 可表示快速长高或长出。\"",
+        "valueJson": "\"这是园艺语境中的用法，植物作主语时可不带宾语。日常说种子发芽，sprout 更常用；shoot up 则常强调快速长高。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/examples/0",
+        "expectedValueJson": "{\"id\":\"shoot-v-sprout-ex1\",\"senseId\":\"shoot-v-sprout\",\"en\":\"The beans are shooting after the warm rain.\",\"zh\":\"温暖的雨后，豆子开始发芽了。\",\"note\":\"植物作主语，shooting 表示正在发芽。\"}",
+        "valueJson": "{\"id\":\"shoot-v-sprout-ex1\",\"senseId\":\"shoot-v-sprout\",\"en\":\"The tulip bulbs have started to shoot.\",\"zh\":\"郁金香的球茎已经开始发芽。\",\"note\":\"园艺语境中，球茎作主语，shoot 表示开始长出芽。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/examples/1",
+        "expectedValueJson": "{\"id\":\"shoot-v-sprout-ex2\",\"senseId\":\"shoot-v-sprout\",\"en\":\"New leaves shot up along the branch.\",\"zh\":\"枝条上很快长出了新叶。\",\"note\":\"shot up 表示新叶迅速长出。\"}",
+        "valueJson": "{\"id\":\"shoot-v-sprout-ex2\",\"senseId\":\"shoot-v-sprout\",\"en\":\"The rose bush has begun to shoot again after pruning.\",\"zh\":\"那株玫瑰修剪后又开始抽出新梢了。\",\"note\":\"shoot 表示植物长出新芽或新枝；again 表示重新生长。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/collocations",
+        "expectedValueJson": "[{\"en\":\"shoot new leaves\",\"zh\":\"长出新叶\",\"note\":\"new leaves 是植物长出的新叶。\",\"kind\":\"common-collocation\"},{\"en\":\"young shoots\",\"zh\":\"嫩芽；新枝\",\"note\":\"描述植物初生的柔嫩枝条。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"begin to shoot\",\"zh\":\"开始发芽；开始抽出新梢\",\"note\":\"用于描述植物开始长出芽或新枝；这里的 shoot 是动词。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-n-plant\",\"title\":\"名词：嫩芽；新梢；竹笋\",\"meaning\":\"植物新长出的嫩茎或枝条；bamboo shoots 指竹笋。shoot 是可数名词，复数是 shoots。\",\"usageNote\":\"shoot 主要指新长出的茎枝，bud 则指尚未展开的芽或花蕾。new shoots、young shoots 中的 shoots 都是名词复数。\",\"examples\":[{\"id\":\"shoot-n-plant-ex1\",\"senseId\":\"shoot-n-plant\",\"en\":\"The gardener cut off the weak shoots.\",\"zh\":\"园丁剪掉了那些细弱的新枝。\",\"note\":\"shoots 是可数名词复数，指植物的新生枝条。\"},{\"id\":\"shoot-n-plant-ex2\",\"senseId\":\"shoot-n-plant\",\"en\":\"We added fresh bamboo shoots to the soup.\",\"zh\":\"我们往汤里加了新鲜竹笋。\",\"note\":\"bamboo shoots 是竹笋，不是竹子的花蕾。\"}],\"patterns\":[{\"en\":\"a shoot / shoots\",\"zh\":\"一根新梢／多根新梢\",\"note\":\"可数名词；复数加 -s。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"new shoots\",\"zh\":\"新芽；新梢\",\"note\":\"指刚长出的植物部分。\",\"kind\":\"common-collocation\"},{\"en\":\"bamboo shoots\",\"zh\":\"竹笋\",\"note\":\"常见于食材和烹饪语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sprout\",\"zh\":\"嫩芽；新生部分\",\"note\":\"也可作名词，与 shoot 在指植物新生部分时有重叠。\"},{\"en\":\"sucker\",\"zh\":\"根蘖；萌蘖\",\"note\":\"较专门，指从根部或茎基部长出的萌蘖，不能替换所有 shoot。\"}],\"contrasting\":[],\"similarNote\":\"sprout 的范围与 shoot 有重叠；sucker 指特定位置长出的萌蘖。\",\"contrastingNote\":\"这一植物部位名词没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-n-session\",\"title\":\"名词：一次拍摄活动\",\"meaning\":\"一次摄影或影视拍摄活动，是可数名词。\",\"usageNote\":\"常说 a photo shoot、a film shoot，也可按语境直接说 a shoot。shoot 指整次拍摄活动，shot 可指一张照片或一个镜头。\",\"examples\":[{\"id\":\"shoot-n-session-ex1\",\"senseId\":\"shoot-n-session\",\"en\":\"The school magazine arranged a photo shoot for the team.\",\"zh\":\"校刊为这个队安排了一次拍照活动。\",\"note\":\"a photo shoot 指安排好的整次拍摄活动。\"},{\"id\":\"shoot-n-session-ex2\",\"senseId\":\"shoot-n-session\",\"en\":\"The outdoor shoot was cancelled because of the rain.\",\"zh\":\"那次户外拍摄因为下雨取消了。\",\"note\":\"shoot 作名词，前面可以用 the，并由 outdoor 修饰。\"}],\"patterns\":[{\"en\":\"a shoot / two shoots\",\"zh\":\"一次／两次拍摄活动\",\"note\":\"这里计算的是拍摄活动，不是照片张数。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a photo shoot\",\"zh\":\"一次摄影活动\",\"note\":\"用于拍照片。\",\"kind\":\"common-collocation\"},{\"en\":\"a film shoot\",\"zh\":\"一次影视拍摄\",\"note\":\"用于影视制作语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a photo session\",\"zh\":\"一次摄影活动\",\"note\":\"在拍照片的语境中与 a photo shoot 接近。\"}],\"contrasting\":[],\"similarNote\":\"photo session 适用于摄影；影视拍摄要按具体内容选择表达。\",\"contrastingNote\":\"拍摄活动这个名词没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-interjection\",\"title\":\"感叹词：哎呀；糟了\",\"meaning\":\"表达轻微懊恼、失误或突然想起麻烦事。\",\"usageNote\":\"非正式表达，常见于美式口语；语气比粗口委婉，仍不宜用于正式文字。\",\"examples\":[{\"id\":\"shoot-interjection-ex1\",\"senseId\":\"shoot-interjection\",\"en\":\"Shoot, I left my lunch at home.\",\"zh\":\"哎呀，我把午饭落在家里了。\",\"note\":\"表达发现失误时的轻微懊恼。\"},{\"id\":\"shoot-interjection-ex2\",\"senseId\":\"shoot-interjection\",\"en\":\"Shoot! I missed the last bus.\",\"zh\":\"糟了！我错过末班公交车了。\",\"note\":\"Shoot! 可以独立成为感叹，后句说明懊恼的原因。\"}],\"patterns\":[{\"en\":\"Shoot!\",\"zh\":\"哎呀！糟了！\",\"note\":\"可独立使用。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"Oh, shoot!\",\"zh\":\"哎呀，糟了！\",\"note\":\"非正式的懊恼感叹。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"Oh no!\",\"zh\":\"哎呀！不好！\",\"note\":\"同样可表达懊恼或发现问题，适用范围更广。\"}],\"contrasting\":[],\"similarNote\":\"Oh no! 可用于更多不妙的情况；Shoot! 常表达说话人的轻微懊恼。\",\"contrastingNote\":\"这里不强配直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-invitation\",\"title\":\"口语回应：请说；尽管问\",\"meaning\":\"让对方开始提问或继续说下去。\",\"usageNote\":\"形式上是动词的命令式，常用于熟人之间的简短回应；正式场合可用 Please go ahead。\",\"examples\":[{\"id\":\"shoot-v-invitation-ex1\",\"senseId\":\"shoot-v-invitation\",\"en\":\"“Can I ask you something?” “Shoot.”\",\"zh\":\"“我能问你件事吗？”“请说。”\",\"note\":\"回应对方的提问请求，表示可以开始问。\"},{\"id\":\"shoot-v-invitation-ex2\",\"senseId\":\"shoot-v-invitation\",\"en\":\"“I have a suggestion for our weekend trip.” “Shoot. I'm listening.”\",\"zh\":\"“我对周末的旅行有个建议。”“说吧，我听着呢。”\",\"note\":\"也可邀请对方说出建议，不限于提问。\"}],\"patterns\":[{\"en\":\"“Can I ask ...?” — “Shoot.”\",\"zh\":\"“我能问……吗？”——“尽管问。”\",\"note\":\"非正式对话中的许可回应。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"Sure, shoot.\",\"zh\":\"当然，说吧。\",\"note\":\"Sure 先表示同意，再邀请对方开口。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"Go ahead.\",\"zh\":\"请说；请继续。\",\"note\":\"用途更广，也可允许对方开始其他行动。\"},{\"en\":\"Fire away.\",\"zh\":\"尽管问；说吧。\",\"note\":\"同样是非正式的提问或发言邀请。\"}],\"contrasting\":[{\"en\":\"Not now.\",\"zh\":\"现在先别说。\",\"note\":\"在对方请求提问时，表示当前不方便。\"}],\"similarNote\":\"Go ahead 用途更广；Fire away 与 Shoot 在邀请对方提问时接近。\",\"contrastingNote\":\"Not now 是同一对话场景中的相反回应。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-emit\",\"title\":\"喷出；喷射\",\"meaning\":\"把液体、火焰等迅速喷射出去，或指这些东西迅速喷出。\",\"usageNote\":\"喷泉、机器等作主语时可接喷出的东西；液体、火焰作主语时，可不带宾语，后接 out of 等方向短语。\",\"examples\":[{\"id\":\"shoot-v-emit-ex1\",\"senseId\":\"shoot-v-emit\",\"en\":\"The fountain shoots water high into the air.\",\"zh\":\"喷泉把水高高地喷向空中。\",\"note\":\"water 是直接宾语，表示喷出的东西。\"},{\"id\":\"shoot-v-emit-ex2\",\"senseId\":\"shoot-v-emit\",\"en\":\"Flames shot out of the chimney.\",\"zh\":\"火焰从烟囱里窜了出来。\",\"note\":\"flames 作主语，shot 不带宾语；out of 说明喷出的来源。\"}],\"patterns\":[{\"en\":\"shoot + 液体等 + 方向短语\",\"zh\":\"把……喷向某处\",\"note\":\"及物结构，宾语是喷出的东西。\",\"kind\":\"sentence-pattern\"},{\"en\":\"液体／火焰 + shoot out of + 出口\",\"zh\":\"液体／火焰从……喷出\",\"note\":\"不及物结构。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"shoot water into the air\",\"zh\":\"向空中喷水\",\"note\":\"可用于喷泉等装置。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"spurt\",\"zh\":\"喷涌；喷出\",\"note\":\"常强调突然或短促地喷出液体。\"},{\"en\":\"spray\",\"zh\":\"喷洒\",\"note\":\"常突出液体散成小滴，不一定形成集中喷流。\"}],\"contrasting\":[],\"similarNote\":\"spurt 突出突然喷涌；spray 常突出分散的液滴。\",\"contrastingNote\":\"本义没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/3",
+        "expectedValueJson": "{\"id\":\"shoot-v-invitation\",\"title\":\"请说；尽管问\",\"meaning\":\"在口语对话中回应对方，表示可以提问或继续说。\",\"note\":\"常用于对方先询问“我能问个问题吗？”之后。\",\"example\":{\"id\":\"shoot-v-invitation-ex1\",\"senseId\":\"shoot-v-invitation\",\"en\":\"“Can I ask you something?” “Shoot.”\",\"zh\":\"“我能问你件事吗？”“请说。”\",\"note\":\"Shoot 在这里是口语回应，不表示射击。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/2",
+        "expectedValueJson": "{\"id\":\"shoot-interjection\",\"title\":\"哎呀；糟了\",\"meaning\":\"较委婉的感叹词，表示懊恼或突然想起某事。\",\"note\":\"非正式用法，适合日常轻松场合。\",\"example\":{\"id\":\"shoot-interjection-ex1\",\"senseId\":\"shoot-interjection\",\"en\":\"Shoot, I left my lunch at home.\",\"zh\":\"哎呀，我把午饭落在家里了。\",\"note\":\"用 Shoot 表达轻微懊恼。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"shoot-n-session\",\"title\":\"拍摄；摄影活动\",\"meaning\":\"一次摄影或拍摄活动，常见表达是 photo shoot。\",\"note\":\"此义通常出现在 photo shoot 等组合中。\",\"example\":{\"id\":\"shoot-n-session-ex1\",\"senseId\":\"shoot-n-session\",\"en\":\"The school magazine arranged a photo shoot for the team.\",\"zh\":\"校刊为这个队安排了一次拍照活动。\",\"note\":\"photo shoot 指安排好的拍摄活动。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"shoot-n-plant\",\"title\":\"新芽；嫩枝\",\"meaning\":\"植物刚长出的嫩芽或新枝，常用复数 shoots。\",\"note\":\"常见于谈论植物、蔬菜或竹笋的语境。\",\"example\":{\"id\":\"shoot-n-plant-ex1\",\"senseId\":\"shoot-n-plant\",\"en\":\"The gardener cut off the weak shoots.\",\"zh\":\"园丁剪掉了那些细弱的新枝。\",\"note\":\"shoots 是可数名词复数。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-score\",\"title\":\"高尔夫：打出……杆\",\"meaning\":\"用 shoot + 数字表示打出某个杆数的成绩。\",\"note\":\"限于相应运动的成绩表达，不是所有“得分”的通用说法。\",\"example\":{\"id\":\"shoot-v-score-ex1\",\"senseId\":\"shoot-v-score\",\"en\":\"I shot a 92 in my first round of golf.\",\"zh\":\"我第一次打一轮高尔夫时打了92杆。\",\"note\":\"shot a 92 表示这一轮用了92杆。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-n-hunt\",\"title\":\"名词：射猎活动\",\"meaning\":\"一次组织起来的射猎活动，尤见于英式英语。\",\"note\":\"是可数名词，常用于猎鸟等活动，不表示单独开一枪。\",\"example\":{\"id\":\"shoot-n-hunt-ex1\",\"senseId\":\"shoot-n-hunt\",\"en\":\"We were invited to a pheasant shoot.\",\"zh\":\"我们受邀参加了一次猎雉活动。\",\"note\":\"a shoot 指整次活动；pheasant 指雉鸡。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-send\",\"title\":\"口语：发邮件或消息给……\",\"meaning\":\"迅速发给某人邮件、消息等。\",\"note\":\"常用 shoot someone something，是非正式的发送表达。\",\"example\":{\"id\":\"shoot-v-send-ex1\",\"senseId\":\"shoot-v-send\",\"en\":\"Could you shoot me an email with the meeting time?\",\"zh\":\"你能发封邮件把开会时间告诉我吗？\",\"note\":\"me 是接收者，an email 是发送的内容，构成双宾语结构。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-look\",\"title\":\"投去某种目光\",\"meaning\":\"突然或迅速地向某人投去一种目光。\",\"note\":\"常见 shoot someone a look 或 shoot a glance at someone；look、glance 在这里是名词。\",\"example\":{\"id\":\"shoot-v-look-ex1\",\"senseId\":\"shoot-v-look\",\"en\":\"She shot her brother an angry look.\",\"zh\":\"她朝弟弟投去了愤怒的目光。\",\"note\":\"shoot someone a look 表示朝某人看一眼，修饰词说明目光带有的情绪。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shoot-v-inject\",\"title\":\"俚语：注射毒品\",\"meaning\":\"用注射方式吸食毒品。\",\"note\":\"仅作语境识别；不是日常说打针、接种疫苗的通用表达。\",\"example\":{\"id\":\"shoot-v-inject-ex1\",\"senseId\":\"shoot-v-inject\",\"en\":\"He admitted that he had been shooting heroin.\",\"zh\":\"他承认自己此前一直在注射海洛因。\",\"note\":\"shoot heroin 是俚语；过去完成进行时表示承认之前持续的行为。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"shoot 是原形；shot 是它的过去式和过去分词，也可作名词表示一次射门、投篮或拍摄。\"",
+        "valueJson": "\"shoot 是动词原形，shot 是过去式和过去分词。作名词时，a shot 可指一次射击、射门、投篮，也可指一张照片或一个镜头；a shoot 则可指一次拍摄活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"shoot-v-hit\"",
+        "valueJson": "\"shoot-v-sport\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"at 表示瞄准或射击的方向，不保证命中；直接接宾语时通常把它作为被射击的目标。\"",
+        "valueJson": "\"shoot at + 目标表示已经朝目标射击，但不说明是否命中。枪击语境中 shoot someone 通常表示击中；shoot a gun、shoot an arrow 的宾语则分别是枪支和射出的箭。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example",
+        "expectedValueJson": "{\"id\":\"shoot-confusion-at-ex1\",\"senseId\":\"shoot-v-projectile\",\"en\":\"Leo shot at the can, but it stayed in place.\",\"zh\":\"利奥朝罐子开了一枪，但罐子还在原处。\",\"note\":\"at 突出射击方向，结果由后文说明。\"}",
+        "valueJson": "{\"id\":\"shoot-confusion-at-ex1\",\"senseId\":\"shoot-v-projectile\",\"en\":\"Leo shot at the can, but his arrow missed it.\",\"zh\":\"利奥朝罐子射了一箭，却没有射中。\",\"note\":\"shoot at 只说明朝目标射击；后面的 missed 才明确表示没有命中。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"把罐子作为直接宾语，通常表示射击罐子这一目标。\"",
+        "valueJson": "\"此例中的罐子是被击中的目标；off the wall 进一步说明罐子被射落。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"要表达“朝某处开火”用 shoot at；要说明被射击的对象，直接接宾语。\"",
+        "valueJson": "\"shoot at 不保证命中；枪击语境中 shoot someone 通常表示击中。直接宾语还可以是枪支或发射物，要结合宾语和语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中，shoot 是动词，shoots 是其常见第三人称单数形式；shoot 作名词时可指植物新芽。\",\"stages\":[{\"language\":\"古英语\",\"form\":\"scēotan\",\"meaning\":\"与现代英语动词 shoot 有历史承继关系；所引词源材料将其列为该动词的古英语来源。\"},{\"language\":\"原始日耳曼语\",\"form\":\"*skeutanan\",\"meaning\":\"所引词源材料列出的更早重构形式；星号表示重构形式，并非现存文献中的直接拼写。\"},{\"language\":\"原始印欧语\",\"form\":\"*(s)keud-\",\"meaning\":\"所引词源材料列出的重构词根，与日耳曼语来源相连。\"}],\"caveat\":\"以上是词源材料所列的动词历史链；现代名词用法可理解为由动词发展而来。现代拼写变化不等于历史词源，重构形式也不是可直接查证的原始文献拼写。\",\"sourceIds\":[\"wiktionary\"]}",
+        "valueJson": "{\"summary\":\"动词 shoot 源自古英语 scēotan，更早可追溯到重构的原始日耳曼语形式 *skeutanan 和原始印欧语词根 *(s)keud-。名词 shoot 由动词发展而来。表示懊恼的感叹词 Shoot! 则是 shit 的委婉变体，应与动词的历史来源分开理解。\",\"stages\":[],\"caveat\":\"星号 * 表示学者重构的形式，不是现存文献直接记录的拼写。现代词形变化和助记故事都不等于历史词源。\",\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"shoot 去掉不发音的 e，再加 -ing，写作 shooting。\"",
+        "valueJson": "\"shoot 直接加 -ing，写作 shooting；保留 oo 和一个 t，不去字母，也不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"shoot、shot、shooting、shooter 属于同一词族；shot 是不规则变化形式。shooting 加 -ing 时要去掉词尾不发音的 e。\"",
+        "valueJson": "\"shooter = shoot + -er；shooting = shoot + -ing，均保留 shoot 的完整拼写。shot 是 shoot 的不规则过去式和过去分词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象体育课上球员把球 shoot 向球门，球嗖地飞过草地；镜头追着球拍下 video。回到家，花盆里又 shoot 出一片嫩芽。一个词串起射门、快速移动、拍摄和发芽。\"",
+        "valueJson": "\"想象体育课上，球员向球门射门（shoot），球嗖地从你身边掠过（shoot past），同学在旁边拍视频（shoot a video）。回家后，你又看到花盆里长出了 new shoots（新芽）。用球门、镜头和嫩枝串联这些用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"The plant shoots：植物发芽。\"",
+        "valueJson": "\"new shoots：新长出的芽或嫩枝；这里的 shoots 是名词复数。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: shoot\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/shoot_1\",\"supports\":[\"动词的常见义项、搭配及例句结构\",\"不规则变化 shoot—shot—shot\",\"shoot 作植物新芽、拍摄活动等名词用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"动词 shoot 的历史来源链及名词由动词派生的说明\"]",
+        "valueJson": "[\"动词的古英语来源及更早重构形式\",\"名词由动词发展而来，以及懊恼感叹词的独立来源\",\"读音及 shoot、shoots、shot、shooting 的词形\",\"射击、击中、摄影、迅速移动和高尔夫成绩用法\",\"植物新芽、摄影活动两种名词义，以及懊恼感叹和请说的口语功能\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1234,
+    "headword": "shoot",
+    "meaning_zh": "n. 射击, 狩猎, 芽, 射伤, 发射, 发芽, 急流, 推力, 摄影, 急送, 滑运道, 浪费\nvt. 射击, 射中, 损毁, 拍摄, 喷出, 投射, 挥出, 飞速行进, 挥霍, 给...注射\nvi. 射出, 射击, 发出, 拍电影, 射门, 发芽",
+    "phonetic": "/ʃu:t/",
+    "pos": "",
+    "forms": []
+  }
+}

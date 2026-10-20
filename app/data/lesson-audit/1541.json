@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d33b5ef308ae7679e1519b7e3b4ce9487ba1e268a3ffc72282d9500d14e98311",
+    "executedReviewPromptHash": "b950c9bfad9a7fe39a831b024f5b59bb692a7bda75527bb91d6eacabfeaf697d",
+    "reviewHash": "f02c6b5cda7767df42052c1f5c9902f443f9bcb4e58d1dbbc742240ac7a74a0d",
+    "wordId": 1541,
+    "inputHash": "e8660fa03d4cf576f0eadc145d1a7705214b56b1454b6d440a343f6c2082a5eb",
+    "draftHash": "afeb99af49a729f219e1557d1a1c7bd2f712d44efc66ac8469f8bae4b39c2c73",
+    "finalHash": "b8df545a474b3f656cbc5aca08976f4665674d0ff4b2b2525e5f1e1537df83f9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/whenever#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.455Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 249028,
+        "revisionId": 34331062,
+        "revisionTimestamp": "2024-04-25T13:05:35Z",
+        "sha256": "972508d6f3659ab46a805db3169c87c2d903a2d6bf54d7e012b460baa7b0f037",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/whenever",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:17:23.195Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:28:43.249Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及各sourceIds",
+        "message": "初稿全部引用 Oxford，但实际取得的材料是法语维基词典中的英语词条。应改用实际来源；法语是释义语言，不是 whenever 的词源语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote",
+        "message": "“随时”义的独立 whenever 主要见于非正式表达，不能概括为常见于疑问句、否定句。强调疑问中的 whenever 表示“究竟什么时候”，需要另行区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/patterns/1",
+        "message": "whenever possible 是省略主语和 be 动词的从句，不能用来说明 whenever 独立作副词；“尽可能随时”也不自然。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning及/examples/1/note",
+        "message": "whenever 表示不限定具体时间，本身不编码“一……就……”的即时关系；作业例句的说明也不宜扩展为完成之后任意时刻都可以行动。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "when 也能用于习惯或一般规律，表示“每当”；whenever 还可以用于强调疑问。现有对照需要补足这两个边界。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有已取得的词源材料明确记载 when + ever 的复合关系，应补入这一可靠事实并引用相同 URL；不应继续仅作为无来源的现代拆分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1及/pronunciation/notes/1",
+        "message": "ever 本身包含两个音节，重音应明确标为 EV；发音提示也可保留部分口音中的 /hw/ 或 /ʍ/ 读法。"
+      }
+    ],
+    "coverageAssessment": "已核对词典列出的连词“每当”、连词“无论何时”和副词“任何时候”三项，均保留两个自然原创英中例句。修正独立副词用法的语体、whenever possible 的分类及时间关系说明，并以专业语言知识补入较少见的强调疑问用法。词源仅确认 when + ever 的复合构词，不推断成词年代或历史演变阶段；未使用不可获取的 Cambridge 页面作依据。",
+    "senseInventory": [
+      {
+        "sense": "连词：每当；每次……时",
+        "coveredBy": [
+          "whenever-conj-every-time"
+        ],
+        "assessment": "两个例句准确覆盖反复发生的情形；补入 whenever possible 这一省略从句表达。"
+      },
+      {
+        "sense": "连词：无论什么时候；在……的时候，不限定具体时间",
+        "coveredBy": [
+          "whenever-conj-any-time"
+        ],
+        "assessment": "两个例句均可保留；修正把时间自由误说成即时先后关系的说明。"
+      },
+      {
+        "sense": "副词：任何时候；随时",
+        "coveredBy": [
+          "whenever-adv"
+        ],
+        "assessment": "两个独立使用的例句成立；须标明其非正式语体，并移出 whenever possible。"
+      },
+      {
+        "sense": "副词：究竟什么时候，强调疑问",
+        "coveredBy": [
+          "whenever-adv-emphatic-question"
+        ],
+        "assessment": "作为较少见用法补入，避免与“随时”义混淆；此项依据专业语言知识，不冒充现有词典摘录中的定义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作连词时，whenever常引出“每当……”或“无论什么时候……”的时间从句；作副词时表示“任何时候”。\"",
+        "valueJson": "\"作连词时，whenever 常引出“每当……”或“无论什么时候……”的时间从句；非正式表达中也可单独表示“随时”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"朗读例句，注意重音通常落在第二音节 ever 上。\"",
+        "valueJson": "\"朗读例句，注意重音落在第二音节 EV 上：when-EV-er。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"开头读 /w/，不要读成 /h/；中间的 ever 与单词 ever 发音相同。\"",
+        "valueJson": "\"常见读法以 /w/ 开头；部分口音保留 /hw/（也可记作 /ʍ/），不要读成单独的 /h/。后面的 ever 与单词 ever 发音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-whenever\"]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-whenever\"]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"引出时间从句，表示时间没有限制，或某事一发生就可以做另一件事。\"",
+        "valueJson": "\"引出时间从句，表示不限定具体时间，即“无论什么时候……都……”或“在……的时候，无论那是什么时候”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"表示事情一完成，之后随时可以行动。\"",
+        "valueJson": "\"不预先限定做完作业的时间，邀请对方做完时过来；finish 用一般现在时表示将来的事情。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-whenever\"]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"任何时候；随时\"",
+        "valueJson": "\"任何时候；随时（非正式独立用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见于疑问句、否定句或搭配 do it / call 等动词的表达中。\"",
+        "valueJson": "\"在非正式表达中，whenever 可以独立使用，后面不再接从句，表示时间不限；完整表达可用 whenever you like 等。疑问句中表示“究竟什么时候”的用法另见较少见义。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"whenever possible\",\"zh\":\"只要可能；尽可能随时\",\"note\":\"常用于说明某事可在条件允许时进行。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"whenever possible\",\"zh\":\"只要条件允许；尽可能\",\"note\":\"这是省略了主语和 be 动词的从句，如 whenever it is possible，表示每逢条件允许就做某事。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-whenever\"]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"whenever-adv-emphatic-question\",\"title\":\"究竟什么时候（强调疑问）\",\"meaning\":\"作疑问副词，加强 when 的语气，表示“究竟什么时候”。\",\"note\":\"较少见，常带惊讶语气；普通询问时间通常用 when。\",\"example\":{\"id\":\"whenever-emphatic-ex-1\",\"senseId\":\"whenever-adv-emphatic-question\",\"en\":\"Whenever did you get here?\",\"zh\":\"你究竟什么时候到这儿的？\",\"note\":\"强调到达时间让说话者感到意外，不表示“随时”。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"when 问或说明某个时间；whenever 常表示每次发生，或时间不受限制。\"",
+        "valueJson": "\"when 可询问或说明时间，也可用于习惯或一般规律；whenever 更明确地强调“每次”或“不论何时”。普通询问时间用 when；whenever 也有较少见的强调疑问用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"询问或指出某一时间。\"",
+        "valueJson": "\"可询问时间或引出时间从句；谈习惯或一般规律时，也能表示“每当”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"问一个具体时间用 when；说“每当”或“任何时候”常用 whenever。\"",
+        "valueJson": "\"普通问时间用 when；明确强调“每次”或“无论何时”可用 whenever。when 也能描述反复情形；疑问句中的 whenever 则可强调“究竟什么时候”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-whenever\"]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上可看作 when 与 ever 组合：when 表示“什么时候”，ever 在这里加强“任何时候”的意思。\"",
+        "valueJson": "\"whenever 是英语复合词，由 when（何时）与 ever（在任何时候）构成；两个成分合写为 whenever。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是帮助理解现代词义的构词拆分，不代表已经说明了它的历史来源或演变过程。\"",
+        "valueJson": "\"构词有助于记忆；整词在句子中可表示“每当”，也可表示“无论何时”，不能逐词硬译。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-whenever\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-whenever\",\"title\":\"Oxford Learner’s Dictionaries: whenever\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/whenever\",\"supports\":[\"词性、常见含义与用法\",\"英式和美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-whenever\",\"title\":\"Wiktionnaire：whenever（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/whenever#Anglais\",\"supports\":[\"连词的“每当”与“无论何时”义\",\"副词的“任何时候”义\",\"英式和美式发音\",\"when + ever 的复合构词来源\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1541,
+    "headword": "whenever",
+    "meaning_zh": "conj. 每当\nadv. 不论何时, 每逢",
+    "phonetic": "/hwen'evә/",
+    "pos": "",
+    "forms": []
+  }
+}

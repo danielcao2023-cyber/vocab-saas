@@ -1,0 +1,356 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a5e91de24235fd7ea1553b6a89b255e65643a6bc628fc564c204e6cb13a44ec4",
+    "executedReviewPromptHash": "a5e91de24235fd7ea1553b6a89b255e65643a6bc628fc564c204e6cb13a44ec4",
+    "reviewHash": "195b8da677a75f7d979eb23354fd6010261bd53bc99f99ed67575d4afa979b62",
+    "wordId": 582,
+    "inputHash": "c32d8781ace1846a6421e437110093767315c1adf25d6ed3cf3307c987fd46e1",
+    "draftHash": "8d84aac38dee9dabe730b8cccb96cd65176124159a0a579b8d86cfa4d8fb5be2",
+    "finalHash": "6d0969b2e2795426f9aee05fe68eac95544b06f0067b25536d7c944c981cd124",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/glue#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:11.303Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121424,
+        "revisionId": 38299317,
+        "revisionTimestamp": "2025-06-07T13:25:38Z",
+        "sha256": "129cdd331679ffb6886655f38e29ba2f2bb49e094c54cab077e915259155d5a0",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/glue",
+        "section": "glue etymology",
+        "supports": [
+          "Historical source form and meaning",
+          "Preserved semantic or historical boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "8c5f4fe723d4636fb156e3c225cf00ecce74bc629b2eba5543a29e8556368de6",
+        "summaryAndSupportsWordCount": 63,
+        "sha256": "8c5f4fe723d4636fb156e3c225cf00ecce74bc629b2eba5543a29e8556368de6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/582.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/glue",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:55:12.030Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T18:06:53.305Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；/etymology/sourceIds；其他 sourceIds",
+        "message": "Cambridge 实际未取回；法语维基词典英语词条的词源栏为空，不能支持现有历史说明。应将词源归于已取回的 Etymonline，并将普通释义与专业知识补充分别正确归属。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example/note",
+        "message": "glueing 是可接受的拼写变体，不能判为错拼；可以优先教授常用拼写 gluing。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "glues 可表示不同种类或产品，不能笼统说多份胶水即可用复数；普通数量应使用 bottles/tubes of glue 等。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses/0",
+        "message": "遗漏常见的名词比喻义“凝聚人或事物的纽带”。be glued to 也是常见结构，现有一例不足以满足核心用法的两例标准。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "未覆盖已取回英语词条明确列出的计算机用法 glue code、glue language，应补充其共同的衔接功能义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "adhesive 通常指黏合剂；胶带整体通常称 adhesive tape，不宜让学生直接把 adhesive 等同于胶带。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0；/wordFamilyNote",
+        "message": "“由名词转作动词”容易被读成历史起源判断。宜明确讲现代英语的名动同形用法，并保留动词自身的法语历史前身。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2",
+        "message": "“过去式 glued 末尾的 e 不重复”表述不清；直接说明原形已有 e，过去式只加 -d 更准确。"
+      }
+    ],
+    "coverageAssessment": "已核对材料名词义、粘合动词义及词典明确列出的计算机用法；补齐常见的凝聚作用名词义，并将 be glued to 扩展为有两例的核心结构。原有字面义例句、主要搭配及情境助记可保留。近义与反向表达按各义语境检查，未将局部对照误判为通用反义。读音、规则词形及常见比喻表达按专业语言知识审校；历史说明仅采用已取回的 Etymonline 摘要，不补写无法确定的拉丁语中间词形。补丁后无遗留实质问题。",
+    "senseInventory": [
+      {
+        "sense": "名词：胶水、胶黏剂等黏性粘合物",
+        "coveredBy": [
+          "glue-n-adhesive"
+        ],
+        "assessment": "已有两个自然例句，覆盖词典的材料义；修正复数数量说明。古法语的“捕鸟胶”释义保留在词源中，不另立当代初中核心义。"
+      },
+      {
+        "sense": "动词：用胶粘合、把物品粘到另一物上",
+        "coveredBy": [
+          "glue-v-join"
+        ],
+        "assessment": "已有两个自然例句，glue A to B 与 glue things together 均覆盖，例句及 senseId 正确。"
+      },
+      {
+        "sense": "名词比喻：维系家庭、团队等的纽带或凝聚力量",
+        "coveredBy": [
+          "glue-n-cohesion"
+        ],
+        "assessment": "原稿遗漏；补丁新增完整核心义，以家庭活动和团队成员两个生活例句覆盖。"
+      },
+      {
+        "sense": "常用结构：be glued to，紧盯、全神贯注",
+        "coveredBy": [
+          "glue-v-fix-attention"
+        ],
+        "assessment": "原稿仅列为低频项并提供一例；补丁移入核心义，增加 eyes 作主语的例句，并说明 to 为介词。"
+      },
+      {
+        "sense": "计算机用法：连接不同程序或组件的代码、语言等",
+        "coveredBy": [
+          "glue-n-computing"
+        ],
+        "assessment": "原稿遗漏已取回词条中的技术用法；补丁作为专门用法补入，说明 glue code 与 glue language 的共同衔接作用，例句为原创。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"glue 作名词常指“胶水”，作动词表示“用胶粘合”。动词过去式和过去分词都是 glued。\"",
+        "valueJson": "\"glue 作名词常指“胶水”，也可比喻维系家庭或团队的纽带；作动词表示“用胶粘合”。常用结构 be glued to 表示紧盯或全神贯注。过去式和过去分词都是 glued。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"留意过去式 glued 末尾的 e 不重复。\"",
+        "valueJson": "\"glue 原形已有词尾 e，过去式只加 -d，写作 glued。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"学习两个常见比喻：the glue that holds ... together 表示凝聚的纽带；be glued to the screen 表示紧盯屏幕。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-glue\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"表示不同种类或多份胶水时可用复数；作动词时也可作第三人称单数。\"",
+        "valueJson": "\"表示不同种类的胶水或胶黏剂产品时可用复数；几瓶或几管胶水通常说 bottles/tubes of glue。glues 也可作动词第三人称单数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"以不发音的 e 结尾，接 -ing 时去掉 e。\"",
+        "valueJson": "\"通常去掉词尾不发音的 e 再加 -ing，写作 gluing；glueing 也是可接受的变体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"比 glue 正式、范围更广，可指胶带等能黏合的材料；日常说胶水常用 glue。\"",
+        "valueJson": "\"作名词指黏合剂，语气比 glue 正式，常见于产品说明；日常说普通胶水常用 glue。胶带整体通常称 adhesive tape。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-glue\"]",
+        "valueJson": "[\"wiktionary-glue-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-glue\"]",
+        "valueJson": "[\"wiktionary-glue-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"glue-n-cohesion\",\"title\":\"名词（比喻）：维系群体的纽带\",\"meaning\":\"把家庭、团队等维系在一起的人、活动或力量，像胶水一样起凝聚作用。\",\"usageNote\":\"常用于 the glue that holds/keeps ... together；glue 在这里通常不可数。\",\"examples\":[{\"id\":\"glue-n-cohesion-ex1\",\"senseId\":\"glue-n-cohesion\",\"en\":\"Sunday lunches are the glue that holds our family together.\",\"zh\":\"周日聚餐是维系我们家庭的纽带。\",\"note\":\"把共同活动比作凝聚家庭的胶水；holds 的主语是单数的 glue。\"},{\"id\":\"glue-n-cohesion-ex2\",\"senseId\":\"glue-n-cohesion\",\"en\":\"Leah is the glue that keeps our small team together.\",\"zh\":\"莉娅是把我们这个小团队凝聚在一起的人。\",\"note\":\"glue 也可比喻在团队中起凝聚作用的人。\"}],\"patterns\":[{\"en\":\"the glue that holds ... together\",\"zh\":\"把……维系在一起的纽带\",\"note\":\"that 引导的从句说明这种凝聚作用；也可用 keeps。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"social glue\",\"zh\":\"社会纽带；社会凝聚力量\",\"note\":\"常用于谈论共同活动、习惯等如何维系群体。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a bond\",\"zh\":\"纽带；联系\",\"note\":\"强调人与人之间的关系或联系本身，不一定指起核心作用的某个人。\"},{\"en\":\"a unifying force\",\"zh\":\"凝聚力量\",\"note\":\"强调促使人团结的作用，语气比比喻用法 glue 正式。\"}],\"contrasting\":[{\"en\":\"a divisive force\",\"zh\":\"造成分裂的力量\",\"note\":\"在家庭、团队等语境中，与促进团结的凝聚力量形成对照。\"}],\"similarNote\":\"bond 强调联系本身，unifying force 强调促进团结的作用。\",\"contrastingNote\":\"这里对照的是群体中的凝聚与分裂，不涉及胶水材料的性质。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"glue-v-fix-attention\",\"title\":\"常用结构：be glued to，紧盯、全神贯注\",\"meaning\":\"形容人或眼睛一直盯着某处，注意力难以移开。\",\"usageNote\":\"常用被动形式 be glued to 作比喻；to 是介词，后接屏幕、手机等对象。\",\"examples\":[{\"id\":\"glue-v-fix-attention-ex1\",\"senseId\":\"glue-v-fix-attention\",\"en\":\"The children were glued to the screen during the game.\",\"zh\":\"比赛时，孩子们一直盯着屏幕。\",\"note\":\"be glued to the screen 是常见的比喻表达。\"},{\"id\":\"glue-v-fix-attention-ex2\",\"senseId\":\"glue-v-fix-attention\",\"en\":\"Her eyes were glued to the stage as her daughter began to sing.\",\"zh\":\"女儿开始唱歌时，她目不转睛地盯着舞台。\",\"note\":\"主语也可以是 eyes，强调视线一直不移开。\"}],\"patterns\":[{\"en\":\"be glued to something\",\"zh\":\"紧盯某物；全神贯注于某物\",\"note\":\"to 是介词，不是不定式标记。\",\"kind\":\"fixed-expression\"},{\"en\":\"keep one's eyes glued to something\",\"zh\":\"一直目不转睛地盯着某物\",\"note\":\"keep 后接 eyes 和 glued，表示让视线一直停留在某物上。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be glued to the screen\",\"zh\":\"紧盯屏幕\",\"note\":\"可用于看比赛、电影或其他屏幕内容。\",\"kind\":\"common-collocation\"},{\"en\":\"be glued to one's phone\",\"zh\":\"一直盯着手机\",\"note\":\"强调注意力难以从手机上移开。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be absorbed in something\",\"zh\":\"专心于某事\",\"note\":\"强调投入注意力，不一定涉及用眼睛看。\"},{\"en\":\"stare at something\",\"zh\":\"盯着某物看\",\"note\":\"强调持续注视，不一定表示被内容吸引。\"}],\"contrasting\":[{\"en\":\"look away from something\",\"zh\":\"把视线从某物上移开\",\"note\":\"用于对照视线一直停留在某物上的情况。\"},{\"en\":\"turn one's attention elsewhere\",\"zh\":\"把注意力转向别处\",\"note\":\"用于对照持续专注于同一对象的情况。\"}],\"similarNote\":\"absorbed 强调投入，stare 强调注视；be glued to 常同时突出持续关注和难以移开注意力。\",\"contrastingNote\":\"谈视线时可用 look away，谈注意力时可用 turn one's attention elsewhere。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"glue-v-fix-attention\",\"title\":\"动词：使全神贯注；使紧盯\",\"meaning\":\"常用于 be glued to，形容人一直盯着屏幕等，注意力像被粘住一样。\",\"note\":\"这是 glue 的比喻用法，初学时先掌握“胶水”和“粘合”两义。\",\"example\":{\"id\":\"glue-v-fix-attention-ex1\",\"senseId\":\"glue-v-fix-attention\",\"en\":\"The children were glued to the screen during the game.\",\"zh\":\"比赛时，孩子们一直盯着屏幕。\",\"note\":\"be glued to the screen 是常见的比喻表达。\"},\"sourceIds\":[\"cambridge-glue\"]}",
+        "valueJson": "{\"id\":\"glue-n-computing\",\"title\":\"计算机用法：连接不同程序或组件\",\"meaning\":\"指起衔接作用的代码、工具等；在 glue code 和 glue language 中，glue 作名词定语。\",\"note\":\"glue code 指连接组件的代码；glue language 指适合承担这种衔接任务的编程语言。这是技术领域的比喻用法。\",\"example\":{\"id\":\"glue-n-computing-ex1\",\"senseId\":\"glue-n-computing\",\"en\":\"We added some glue code so the booking app could share data with the calendar app.\",\"zh\":\"我们加了一些衔接代码，让预订应用能够与日历应用共享数据。\",\"note\":\"glue 修饰 code，强调代码的连接用途。\"},\"sourceIds\":[\"wiktionary-glue-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"写作 gluing，不写 glueing。\"",
+        "valueJson": "\"优先记常用拼写 gluing；glueing 也是可接受的变体，不能判为错拼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-glue\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 glue 经古法语 glu 传入；给出的词源说明把它与拉丁语中表示黏合物的词族联系起来，但中间形式存在不同说法。\"",
+        "valueJson": "\"名词 glue 经古法语 glu（黏合物、捕鸟胶）传入英语，更早与拉丁语表示黏合物的词族有关。动词 glue 也有法语黏合动词的前身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"黏合物\"",
+        "valueJson": "\"黏合物；捕鸟胶\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"中间的拉丁语形式有不同说法，因此这里不把它们写成确定的单一路径。这个词源说明的是历史来源；现代英语中 glue 的名词和动词用法是词性变化，不代表其历史构词过程。\"",
+        "valueJson": "\"古法语之前的拉丁语中间形式有不同解释，其中包括重建形式，不能排成确定的单一路径。现代英语中名词 glue 与动词 glue 同形，并不说明动词在历史上由英语名词直接转成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-glue-etymology\"]",
+        "valueJson": "[\"etymonline-glue\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"与名词 glue 同形转作动词。\"",
+        "valueJson": "\"名词和动词同形，现代英语中不需要加词缀就能用 glue 表示“用胶粘合”这个动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"动词词形：glues、glued、gluing；以 e 结尾加 -ing 时去掉 e。\"",
+        "valueJson": "\"动词常用词形为 glues、glued、gluing；gluing 去掉词尾 e，glueing 也是可接受的变体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"glue 由名词转作动词，表示用胶粘合。\"",
+        "valueJson": "\"glue 在这里作动词；back on 表示重新粘回原处。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-glue\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"名词 glue 可直接用作动词；glued、gluing 等是它的屈折变化，不另列为派生词。\"",
+        "valueJson": "\"名词 glue 与动词 glue 同形，可把材料义和动作义一起记；glued、gluing 等是动词的屈折变化，不另列为派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-glue\",\"title\":\"Cambridge Dictionary: glue\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/glue\",\"supports\":[\"名词和动词的常见含义及用法\",\"读音与词形\",\"be glued to 的比喻用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-glue-en\",\"title\":\"Wiktionnaire：glue（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/glue#Anglais\",\"supports\":[\"名词：胶水、黏合物\",\"动词：粘合\",\"计算机用法：glue code、glue language\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"wiktionary-glue-etymology\",\"title\":\"Wiktionary: glue（English）\",\"url\":\"https://fr.wiktionary.org/wiki/glue#Anglais\",\"supports\":[\"glue 的古法语来源及其与拉丁语黏合词族的关系\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"etymonline-glue\",\"title\":\"Etymonline：glue 词源\",\"url\":\"https://www.etymonline.com/word/glue\",\"supports\":[\"名词经古法语 glu 传入及其黏合物、捕鸟胶含义\",\"拉丁语中间形式存在不同解释，包括重建形式\",\"动词的法语黏合相关前身\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 582,
+    "headword": "glue",
+    "meaning_zh": "n. 胶, 粘性物\nvt. 粘合, 胶合",
+    "phonetic": "/glu:/",
+    "pos": "",
+    "forms": []
+  }
+}

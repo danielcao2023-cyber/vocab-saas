@@ -1,0 +1,337 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0f512286669fec305d11e7efdcc77cb8265c71ff3d0a5b07fb8f0d39a5724979",
+    "executedReviewPromptHash": "0f512286669fec305d11e7efdcc77cb8265c71ff3d0a5b07fb8f0d39a5724979",
+    "reviewHash": "9c6d018ccd48e66a89957bb42a5408ef03fd3d32a25f96828298664f24359d98",
+    "wordId": 1102,
+    "inputHash": "4a47017a92e30162525da4babf82059dab9cccaae843ba4ac426cdcedc0e8174",
+    "draftHash": "38e3468b9cd8bedb446e59ce3c9bff22b39fed152c0650d78573dc22ccf4cdd9",
+    "finalHash": "039c340d2036a97830efffe9f56c1513a1ea627b050931a4267a22f7c33ea618",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/purple#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.403Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115906,
+        "revisionId": 39174639,
+        "revisionTimestamp": "2025-12-12T22:58:07Z",
+        "sha256": "df5822c0f0016fccb78d5bd286b12bab6bb7b1d482066b8d4fcde8b1c366ea0e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/purple",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T06:57:00.762Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T07:13:36.716Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "The cold made his fingers purple 中 purple 是形容词宾语补足语，不是及物动词。动词义下的 make ... purple 和 turn purple 也应与 purple 自身作动词区分。补丁更换及物动词例句、移置形容词句型，并补入真正的动词搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "表示“紫色这种颜色”的常规表达是 the color purple；不应将 the color of purple 作为推荐搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词条中的古旧形容词义“帝王的、王室的”。名词帝位义中的“高级职位”又过于宽泛，不能泛指普通高级岗位；例句注释也应绑定完整习语 born to the purple。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "purplish 的实际拼写去掉了 purple 末尾的 e，原稿“保留末尾 e”的说明与逐字符拼写矛盾。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段中的 meaning 只是“来源词”“现代词形”等占位说明，并非相应字义。来源关系可以保留在 summary，但不能补猜古词释义，应清空这些占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Oxford 不在实际取回材料中，不能将其挂作动词、词族及少见义等内容的依据。补丁撤去这些归因，将颜色义、发音和词源关联到已取回的法语维基词典英语词条；专业语言知识补充的内容不冒充已获网页正文支持。"
+      }
+    ],
+    "coverageAssessment": "已核对形容词颜色义、名词颜色义、动词及物与不及物变色义、名词帝位义、古旧形容词帝王义及文风夸饰义。两个日常核心功能原有各两例；补丁使动词两例真正分别覆盖及物和不及物，并补齐少见帝王形容词义。发音写法、其余屈折形式、近义色名及颜色对照的语境限制无需改动。来源局限是：已取回正文直接支持颜色义、英美发音和所列词源关系，其余少见用法与派生词按专业语言知识审订；不补猜古词释义或中间传入阶段。",
+    "senseInventory": [
+      {
+        "sense": "形容词：紫色的",
+        "coveredBy": [
+          "purple-adj-color"
+        ],
+        "assessment": "核心义已有两个自然例句；补丁将 make ... purple 句型移入本义，明确形容词功能。"
+      },
+      {
+        "sense": "名词：紫色；不同紫色调",
+        "coveredBy": [
+          "purple-noun-color"
+        ],
+        "assessment": "两个例句分别覆盖颜色概念和复数色调用法；修正常规搭配说明。"
+      },
+      {
+        "sense": "及物动词：使……变成紫色",
+        "coveredBy": [
+          "purple-verb-color"
+        ],
+        "assessment": "原首例没有展示此义；补丁改为 purpled 直接带宾语的原创例句，并说明书面语色彩。"
+      },
+      {
+        "sense": "不及物动词：变成紫色",
+        "coveredBy": [
+          "purple-verb-color"
+        ],
+        "assessment": "The bruise purpled as it spread 正确覆盖此义；与及物用法合计保留两个例句。"
+      },
+      {
+        "sense": "名词：帝王身份、王权或帝位",
+        "coveredBy": [
+          "purple-noun-status"
+        ],
+        "assessment": "born to the purple 可保留；补丁收窄过宽的职位解释并明确完整习语。"
+      },
+      {
+        "sense": "形容词：帝王的、王室的",
+        "coveredBy": [
+          "purple-adj-royal"
+        ],
+        "assessment": "原稿遗漏；补丁新增少见义，以古旧文学表达 purple pomp 展示，供认读。"
+      },
+      {
+        "sense": "形容词：辞藻过分华丽、夸饰的",
+        "coveredBy": [
+          "purple-adj-overwritten"
+        ],
+        "assessment": "已有正确例句，并以 purple prose 说明写作评价语境及通常带批评意味的用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于 the color of purple 或介词 in 后，如 in purple；谈论一种颜色时通常用单数。\"",
+        "valueJson": "\"表示颜色本身时通常是不可数名词，如 Purple is my favorite color 或 the color purple；in purple 可表示“穿着紫色”或“以紫色呈现”。表示不同紫色调时可用复数 purples。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"（使某物）呈现紫色；常用 turn purple 表示变成紫色。\"",
+        "valueJson": "\"作不及物动词表示“变成紫色”，作及物动词表示“使……变成紫色”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"动词用法远少于形容词和名词。描述自然变色时更常见 turn purple；及物用法可表示使某物变紫。\"",
+        "valueJson": "\"purple 自身作动词的用法较少见，常带文学描写色彩，可直接带宾语，也可不带宾语。日常更常用 turn purple 或 make ... purple；这两种结构里的 purple 都是形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"purple-verb-color-ex1\",\"senseId\":\"purple-verb-color\",\"en\":\"The cold made his fingers purple.\",\"zh\":\"寒冷使他的手指变紫了。\",\"note\":\"purple 作及物动词，表示使手指呈紫色。\"}",
+        "valueJson": "{\"id\":\"purple-verb-color-ex1\",\"senseId\":\"purple-verb-color\",\"en\":\"Berry juice purpled her fingers.\",\"zh\":\"浆果汁把她的手指染成了紫色。\",\"note\":\"purpled 是及物动词过去式，直接带宾语 her fingers；这种表达带书面描写色彩。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"make + 名词 + purple\",\"zh\":\"使……变成紫色\",\"note\":\"make 后接宾语，再接形容词 purple 作宾语补足语；日常表达通常比动词 purple 自然。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"make + 名词 + purple\",\"zh\":\"使……变成紫色\",\"note\":\"make 后接宾语，再接形容词 purple 作宾语补足语；日常表达通常比动词 purple 自然。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"turn purple\",\"zh\":\"变紫\",\"note\":\"日常描述身体、天空或物体颜色变化时常用 turn purple。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"purple with rage\",\"zh\":\"气得脸色发紫\",\"note\":\"可用于较书面的描写，如 His face purpled with rage；其中 purpled 是不及物动词过去式。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"the purple 可指王权、帝位或高级职位，属于文学或历史语境中的表达。\"",
+        "valueJson": "\"the purple 在文学或历史语境中可指帝王身份、王权或帝位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "\"to the purple 是较少见的文学表达，指王室或帝王身份。\"",
+        "valueJson": "\"born to the purple 是“生于帝王之家”的文学说法；the purple 在这里指帝王身份。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"purple-adj-royal\",\"title\":\"形容词：帝王的；王室的（古旧）\",\"meaning\":\"帝王的；王室的。\",\"note\":\"古旧或文学用法，认读即可；日常形容紫色衣物时仍用普通颜色义。\",\"example\":{\"id\":\"purple-adj-royal-ex1\",\"senseId\":\"purple-adj-royal\",\"en\":\"The king entered the hall in all his purple pomp.\",\"zh\":\"国王带着十足的帝王排场走进大厅。\",\"note\":\"purple 修饰 pomp（排场），表示“帝王的”；这是古旧的文学用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -ish 时保留 purple 的末尾 e，写作 purplish。\"",
+        "valueJson": "\"加 -ish 时去掉 purple 末尾不发音的 e：purpl- + -ish → purplish。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 purple 经拉丁语 purpura 传入；该拉丁词又来自希腊语 πορφύρα（porphýra）。这里列出有依据的传入链，不把现代英语词形拆成词根和词缀。\"",
+        "valueJson": "\"英语 purple 的历史来源可追溯到拉丁语 purpura，后者又源自古希腊语 πορφύρα（porphýra）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古希腊语\",\"form\":\"πορφύρα（porphýra）\",\"meaning\":\"传入拉丁语的来源词\"},{\"language\":\"拉丁语\",\"form\":\"purpura\",\"meaning\":\"英语 purple 的拉丁语来源\"},{\"language\":\"英语\",\"form\":\"purple\",\"meaning\":\"现代英语词形\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[\"wiktionary-purple-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[\"wiktionary-purple-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[\"wiktionary-purple-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-purple\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-purple\",\"title\":\"Oxford Learner’s Dictionaries: purple\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/purple\",\"supports\":[\"purple 的词性、常见颜色义及动词用法\",\"purplish 的派生形式\",\"相关固定表达和较少见义项\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: purple（English section）\"",
+        "valueJson": "\"Wiktionnaire：purple（英语词条；法语说明）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"英语 purple 的拉丁语和希腊语来源关系\"]",
+        "valueJson": "[\"purple 作形容词和名词的颜色义\",\"英式、美式发音\",\"英语 purple 与拉丁语 purpura、古希腊语 πορφύρα 的来源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1102,
+    "headword": "purple",
+    "meaning_zh": "n. 紫色, 帝位\nadj. 紫色的, 帝王的, 华而不实的\nv. (使)成紫色",
+    "phonetic": "/'pә:pl/",
+    "pos": "",
+    "forms": []
+  }
+}

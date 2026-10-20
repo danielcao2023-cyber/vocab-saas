@@ -1,0 +1,376 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6c3beb22c3fa9b29e485e1e124a52889c8df7454d16161c0b2ebae7cfec6b01e",
+    "executedReviewPromptHash": "6c3beb22c3fa9b29e485e1e124a52889c8df7454d16161c0b2ebae7cfec6b01e",
+    "reviewHash": "b91fde6dd7ab07736b839ed554cb7c594ba14fbdc0caeec69aaa0fcb61941282",
+    "wordId": 713,
+    "inputHash": "b34a0ef96c230b3c35ec666e1a528a8f2c9bc5d7fda9b164946505c4842bda8d",
+    "draftHash": "bd613b5716f11c9a972689359605c8727d9f0292cca01e684709b5ce72de57eb",
+    "finalHash": "3e82ff64d12bc433455cff94093a783ceeeafa73097fd2389cd39f63b34c69ea",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/introduce#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:49.892Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 64397,
+        "revisionId": 38608961,
+        "revisionTimestamp": "2025-09-02T00:29:22Z",
+        "sha256": "e9e38ecee78924eacebe21232de6db5a95a5e21cbe4a2e738f5bc7fdfb10d187",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/introduce",
+        "section": "introduce verb",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "156be6c024d91efb94bbd7fd2ab23cbbec7c0ddea6b095680b469ad73d2a82fa",
+        "summaryAndSupportsWordCount": 60,
+        "sha256": "156be6c024d91efb94bbd7fd2ab23cbbec7c0ddea6b095680b469ad73d2a82fa",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/713.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/introduce",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:40:23.671Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:49:39.569Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及所有cambridge-introduce引用",
+        "message": "Cambridge 实际未取回，不能作为本次审校的材料依据。应改引已取回的 Wiktionnaire 英语词条，并明确法语只是释义语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "introduce 去掉 e 再加 -ion 会得到错误拼写 introducion。应说明 -duce 与 -duction 的拼写对应，同时避免把这种对应当作确定的历史派生方向。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "引出话题与使某人初次接触某个领域是不同的常用功能，目前各只有一个例句。应分开教学，并使每个核心义都有至少两个例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "自我介绍虽已列为搭配，但缺少例句；现有定义也局限于让两个人认识，未覆盖向听众介绍发言人的常用功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "现有解释主要覆盖推行制度和推出商品，未具体覆盖把作物、物种等引进某地的常见用法；to/into 的选择也应说明，避免理解为任意互换。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "缺少技术语境中把物质或器具放入、注入某处的用法，词条中文“输入”的适用范围因此不清楚。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "introduced a plan 也可能表示推出、实施计划，不能明确展示正式提出法案或修正案的义项。应换成明确的法案例句，并区分提出与通过。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "仅凭 introduce 后面是人，就判断为介绍给另一个人，会误导 introduce me to chess 等结构。需要同时检查 to/into 后的对象。"
+      }
+    ],
+    "coverageAssessment": "已按实际取回的英语词条定义核对引入、介绍人物、介绍主题及正式提出等用法，并核对自我介绍、向听众介绍发言人、使人初次接触某事物及技术性置入等功能。修订后四个核心义均至少有两个原创英中例句，较少见义有明确例句和语境限制。实际词典释义较概括，部分补充依专业语言知识，不将未取回的 Cambridge 当作证据。现有发音、规则词形及有依据的词源说明可保留；英语动词的两种可能形成路径继续保留必要的不确定性。",
+    "senseInventory": [
+      {
+        "sense": "介绍人、介绍自己；向听众介绍发言人等",
+        "coveredBy": [
+          "introduce-people"
+        ],
+        "assessment": "原有两个人际介绍例句正确；补充自我介绍和介绍发言人的例句，扩充定义以覆盖这些常用功能。"
+      },
+      {
+        "sense": "引入、采用制度或方法；推出产品",
+        "coveredBy": [
+          "introduce-new"
+        ],
+        "assessment": "学校采用阅读计划、商店推出购物袋的例句分别覆盖相关功能；保留并明确介词选择。"
+      },
+      {
+        "sense": "把事物、作物或物种引进某地",
+        "coveredBy": [
+          "introduce-new"
+        ],
+        "assessment": "同属引入义；补充作物引进地区的例句，说明新可以是相对于接收地区而言。"
+      },
+      {
+        "sense": "引出话题；介绍文章、课程或故事内容",
+        "coveredBy": [
+          "introduce-topic"
+        ],
+        "assessment": "保留课堂引出话题的例句，补充文章介绍主要观点的例句；移出初次接触活动的用法。"
+      },
+      {
+        "sense": "使某人初次接触某个活动、领域或事物",
+        "coveredBy": [
+          "introduce-experience"
+        ],
+        "assessment": "新增独立核心义，保留古典音乐例句并补充摄影例句，同时提供相近表达及适用边界。"
+      },
+      {
+        "sense": "正式提出法案或修正案",
+        "coveredBy": [
+          "introduce-legislation"
+        ],
+        "assessment": "作为较少见义保留；改用明确提出法案的例句，说明不蕴含法案已经通过。"
+      },
+      {
+        "sense": "把物质或器具放入、注入某处",
+        "coveredBy": [
+          "introduce-insert"
+        ],
+        "assessment": "补入较少见义，限定为较正式的技术语境，并区别于电脑操作中的输入。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-introduce\",\"title\":\"Cambridge Dictionary: introduce\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/introduce\",\"supports\":[\"动词的常见用法与句型\",\"英式和美式发音\",\"相关名词 introduction\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-introduce\",\"title\":\"Wiktionnaire：introduce（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/introduce#Anglais\",\"supports\":[\"引入、介绍人物、介绍主题及正式提出等英语动词用法\",\"英式和美式发音及规则变形\",\"同族名词 introduction\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-introduce\"]",
+        "valueJson": "[\"wiktionary-introduce\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"introduce 去掉词尾 e，加 -ion。\"",
+        "valueJson": "\"同族名词；拼写对应是 -duce → -duction：introduce → introduction。这种拼写对应不代表确定的历史派生方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"把一个人介绍给另一个人，使他们认识或交谈。\"",
+        "valueJson": "\"向他人介绍某人的姓名、身份等，使他们认识，或让听众了解即将发言、表演的人；也可以介绍自己。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用句型 introduce A to B，A 是被介绍的人，B 是认识对方的人。\"",
+        "valueJson": "\"常用句型 introduce A to B：A 是被介绍的人，B 是听介绍的人或群体。介绍自己时用反身代词，如 introduce myself/yourself。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"A 是被介绍的人，B 是认识对方的人；to 后接人。\"",
+        "valueJson": "\"A 是被介绍的人，B 是听介绍的人或群体。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"introduce-people-ex3\",\"senseId\":\"introduce-people\",\"en\":\"Please introduce yourself to the rest of the class.\",\"zh\":\"请向班里其他同学做一下自我介绍。\",\"note\":\"介绍自己用反身代词 yourself；to 后接听介绍的人。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"introduce-people-ex4\",\"senseId\":\"introduce-people\",\"en\":\"The host introduced the next speaker to the audience.\",\"zh\":\"主持人向听众介绍了下一位发言人。\",\"note\":\"这里是介绍发言人的姓名、身份等，帮助听众了解即将发言的人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把新的制度、方法、产品或设备带到某个地方或群体中，使人们开始使用或接触它。\"",
+        "valueJson": "\"使一个地方或群体开始采用某种制度、方法，或接触、使用某种产品、设备；也可指把当地原先没有的作物、物种等引进来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可用 introduce something to/into a place or group；宾语通常是新做法、产品、技术或制度。\"",
+        "valueJson": "\"introduce 后可直接接新做法、产品、技术或制度。需要说明接收方时，to 常用于人群、市场或地区，into 常突出进入某个地点或系统；须按具体搭配选择，不能一律互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"introduce-new-ex3\",\"senseId\":\"introduce-new\",\"en\":\"Local farmers introduced a new crop into the region.\",\"zh\":\"当地农民把一种新作物引进了该地区。\",\"note\":\"new 可以指对当地而言是新的；introduce 在这里表示引进作物。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"让一个话题、人物或内容进入谈话、课程或文章，使人们开始了解它。\"",
+        "valueJson": "\"在谈话、课程、文章或故事中引出某个话题，或首次向听众、读者介绍相关内容。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"introduce a topic/subject 常用于课堂、演讲或文章；introduce someone to something 表示让某人初次接触某领域。\"",
+        "valueJson": "\"introduce a topic/subject 常用于课堂、演讲或文章，表示开始引出或介绍某个主题；故事中 introduce a character 可表示首次向读者或观众呈现某个人物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"introduce-topic-ex2\",\"senseId\":\"introduce-topic\",\"en\":\"My aunt introduced me to classical music.\",\"zh\":\"姑姑让我第一次接触古典音乐。\",\"note\":\"introduce A to something 表示让A开始了解或接触某事物。\"}",
+        "valueJson": "{\"id\":\"introduce-topic-ex2\",\"senseId\":\"introduce-topic\",\"en\":\"The first paragraph introduces the main idea of the article.\",\"zh\":\"第一段介绍了这篇文章的主要观点。\",\"note\":\"这里表示在文章开头向读者介绍将要展开的内容。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"introduce A to something\",\"zh\":\"使A初次接触某事物\",\"note\":\"A 通常是人；to 后接领域、活动或事物。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"introduce-experience\",\"title\":\"使某人初次接触某事物\",\"meaning\":\"使某人开始接触、体验或了解某个活动、领域或事物。\",\"usageNote\":\"常用 introduce somebody to something；宾语是人，to 后接活动、领域或事物，表示开始接触或了解，不保证已经熟练掌握。\",\"examples\":[{\"id\":\"introduce-experience-ex1\",\"senseId\":\"introduce-experience\",\"en\":\"My aunt introduced me to classical music.\",\"zh\":\"姑姑让我第一次接触古典音乐。\",\"note\":\"introduce somebody to something 表示让某人开始了解或接触某事物。\"},{\"id\":\"introduce-experience-ex2\",\"senseId\":\"introduce-experience\",\"en\":\"The after-school club introduced us to photography.\",\"zh\":\"这个课外社团让我们开始接触摄影。\",\"note\":\"to 后的 photography 是开始接触的领域。\"}],\"patterns\":[{\"en\":\"introduce somebody to something\",\"zh\":\"使某人初次接触某事物\",\"note\":\"人作 introduce 的宾语；to 后接活动、领域或事物。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"introduce children to science\",\"zh\":\"让孩子开始接触科学\",\"note\":\"常用于描述启蒙活动或初步体验。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"familiarize somebody with something\",\"zh\":\"使某人熟悉某事物\",\"note\":\"强调帮助对方变得熟悉，也可用于已有一定了解的情况。\"},{\"en\":\"expose somebody to something\",\"zh\":\"使某人接触某事物\",\"note\":\"范围较广，可用于有益或有害的接触，未必包含引导或讲解。\"}],\"contrasting\":[{\"en\":\"keep somebody away from something\",\"zh\":\"使某人远离某事物\",\"note\":\"在鼓励接触与阻止接触某种活动的语境中，可作反向表达。\"}],\"similarNote\":\"introduce 常突出开始接触；familiarize 强调变得熟悉；expose 强调接触本身。\",\"contrastingNote\":\"keep somebody away from something 只在接触与回避的具体语境中构成反向表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"introduce-topic\"",
+        "valueJson": "\"introduce-experience\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先看 introduce 后面的宾语：是人，通常介绍给另一个人；是计划、产品或话题，则表示引入或介绍内容。\"",
+        "valueJson": "\"同时看宾语和 to/into 后的对象：人 + to + 人，是介绍两人认识；人 + to + 活动或领域，是让人开始接触；事物 + into + 地点或系统，是把事物引入其中。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"introduce-legislation-ex1\",\"senseId\":\"introduce-legislation\",\"en\":\"The council introduced a plan to improve the park.\",\"zh\":\"委员会提出了一项改善公园的计划。\",\"note\":\"这里表示正式提出计划供讨论。\"}",
+        "valueJson": "{\"id\":\"introduce-legislation-ex1\",\"senseId\":\"introduce-legislation\",\"en\":\"The senator introduced a bill to improve road safety.\",\"zh\":\"这位参议员提出了一项旨在改善道路安全的法案。\",\"note\":\"introduce a bill 表示正式提出法案，并不表示法案已经通过。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"introduce-insert\",\"title\":\"放入；注入（技术语境）\",\"meaning\":\"把物质、器具等放入或注入某个空间或系统。\",\"note\":\"常用 introduce something into something，表达较正式，常见于科学或医疗技术语境。这里的“输入”指带入、置入；电脑上“输入姓名”通常说 enter/type your name。\",\"example\":{\"id\":\"introduce-insert-ex1\",\"senseId\":\"introduce-insert\",\"en\":\"The technician introduced a small amount of dye into the water.\",\"zh\":\"技术员向水中加入了少量染料。\",\"note\":\"introduce dye into water 在技术描述中表示把染料加进水里。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 713,
+    "headword": "introduce",
+    "meaning_zh": "vt. 介绍, 引入, 采用, 输入",
+    "phonetic": "/.intrә'dju:s/",
+    "pos": "",
+    "forms": []
+  }
+}

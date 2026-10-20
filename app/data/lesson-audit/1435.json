@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e7044d533002a1e29914b428cdb4aa862ddd6baa2d894886f03ea60e616cb928",
+    "executedReviewPromptHash": "e7044d533002a1e29914b428cdb4aa862ddd6baa2d894886f03ea60e616cb928",
+    "reviewHash": "9d9d2fdff72e4a13823f97c35cc6ef6a7b181abeea7ba62f7cea2d37189b84f9",
+    "wordId": 1435,
+    "inputHash": "204dae87f93428efeacdcde253c5e66e2d3c91524ebb3918f79608ebfa9be382",
+    "draftHash": "72ad732c8e614b254c409a39b3a79086888aa212c3ec7b34e2f0f9f42af5b509",
+    "finalHash": "c315b5116be5e223ba65f80f6e7073e5ea37562d37c64a0d3cabf60ab5f42be6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tomato#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.935Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115899,
+        "revisionId": 39460138,
+        "revisionTimestamp": "2026-04-20T21:47:09Z",
+        "sha256": "295dd43d84e52b8228069fce20f9d995955e5c0dbf7a72716f6accbe65fe8ab9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tomato",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:46:19.622Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:54:33.656Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "果实义与植株义合并后，各自不足两个例句；tomato plant 中的 tomato 作定语，也不能充分展示 tomato 单独表示植株的用法。应分义并补足例句，同时说明食材语境中的不可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "词尾 -o 的读音与相应口音中字母 O 的名称相同，原说明错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0、/confusions/0、/wordFamily/0/spellingNote",
+        "message": "不能把“辅音字母加 o”概括成通常加 -es 的可靠拼写规则；photo、piano 等加 -s。应明确记忆 tomato、potato 的实际复数。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段数组把西班牙语放在纳瓦特尔语之前，与历史方向相反；两个 meaning 字段也只是来源占位说明。应将可证实的借入关系保留在 summary，删除空洞阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "实际来源没有 Oxford 的检索正文，不能将其作为已依据的释义、复数和发音来源。应改引已有正文的英语维基词典词条。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/0",
+        "message": "把 tomato 本身列为自身的近义表达没有教学价值。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "篮子里已有一个番茄，再放两个后应为三个，与 two tomatoes 不符。"
+      }
+    ],
+    "coverageAssessment": "已核对全部六组词典释义：果实、植株、两项俚语义及两项动词义。补丁将常用的果实义和植株义分开，各配两个例句，并补充食材不可数用法。俚语和动词义属于低频扩展，本课保留名词教学范围，不要求初中学生主动使用；现有材料对这些边缘用法的具体语域和使用频率说明有限。",
+    "senseInventory": [
+      {
+        "sense": "名词：番茄果实；作食材时也可用不可数形式",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿只有一个果实例句，且可数说明过于绝对；补丁后覆盖整颗果实和食材用法。"
+      },
+      {
+        "sense": "名词：番茄植株",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原稿合并提及，例句仅用 tomato plant；补丁新增独立义项及两个例句，包含 tomatoes 直接指植株的用法。"
+      },
+      {
+        "sense": "俚语名词：有吸引力的女人",
+        "coveredBy": [],
+        "assessment": "来源有列出，属于低频且带物化色彩的称呼；不作为初中核心义展开。"
+      },
+      {
+        "sense": "俚语名词：愚蠢的行为或人",
+        "coveredBy": [],
+        "assessment": "来源有列出，但没有例句或进一步语域说明；不作为初中核心义推荐使用。"
+      },
+      {
+        "sense": "及物动词：向……投掷番茄",
+        "coveredBy": [],
+        "assessment": "已检查词条末尾的动词定义；属于低频用法，不纳入本课名词教学范围。"
+      },
+      {
+        "sense": "及物动词：往菜肴中加入番茄",
+        "coveredBy": [],
+        "assessment": "已检查该动词定义；日常表达通常直接使用 add tomatoes，不要求初中学生主动使用 tomato 作动词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"tomato 是可数名词，指番茄；一个是 a tomato，多个通常写 tomatoes。\"",
+        "valueJson": "\"tomato 指番茄，也可指番茄植株；整颗番茄可数：a tomato、two tomatoes；表示切碎的番茄等食材时也可作不可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住复数拼写 tomatoes：词尾 o 前是辅音字母，通常加 es。\"",
+        "valueJson": "\"记住 tomato → tomatoes、potato → potatoes；其他以辅音字母加 o 结尾的名词不一定加 -es，如 photo → photos。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"词尾 -o 发音不同于拼写中的字母名称；按音标读更稳妥。\"",
+        "valueJson": "\"词尾 -o 英式读 /əʊ/，美式读 /oʊ/，与各自口音中字母 O 的名称同音；美式中间的 /t/ 常读成闪音 [ɾ]。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种常见的红色或其他颜色的果实，可生吃或用于做菜；也可指结这种果实的植物。\"",
+        "valueJson": "\"一种常见的红色或其他颜色的果实，可生吃或用于做菜。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"日常英语通常把 tomato 当作蔬菜食材来谈。它是可数名词：a tomato、two tomatoes。\"",
+        "valueJson": "\"日常英语常把番茄作为蔬菜食材来谈。指整颗番茄时用可数形式：a tomato、two tomatoes；指切碎的番茄等食材时，也可作不可数名词，如 some chopped tomato。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"s1-e2\",\"senseId\":\"s1\",\"en\":\"A tomato plant is growing beside the kitchen door.\",\"zh\":\"厨房门旁边种着一株番茄。\",\"note\":\"tomato 作名词修饰 plant，表示“番茄的”。\"}",
+        "valueJson": "{\"id\":\"s1-e2\",\"senseId\":\"s1\",\"en\":\"I added some chopped tomato to the soup.\",\"zh\":\"我往汤里加了些切碎的番茄。\",\"note\":\"tomato 表示切碎的食材，这里作不可数名词。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"plant/grow tomatoes\",\"zh\":\"种番茄\",\"note\":\"常用 plant 或 grow 描述栽种番茄。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"tomato\",\"zh\":\"番茄\",\"note\":\"本词就是这一果实及其植株的常用名称；谈食材时很自然。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2\",\"title\":\"番茄植株\",\"meaning\":\"结番茄果实的植物。\",\"usageNote\":\"可数名词。在种植、浇水等语境中，tomato 或 tomatoes 可指植株；说 tomato plant 更明确。\",\"examples\":[{\"id\":\"s2-e1\",\"senseId\":\"s2\",\"en\":\"A tomato plant is growing beside the kitchen door.\",\"zh\":\"厨房门旁边长着一株番茄。\",\"note\":\"tomato plant 明确表示番茄植株；这里 tomato 作名词定语。\"},{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"The tomatoes in these pots need watering.\",\"zh\":\"这些花盆里的番茄植株需要浇水。\",\"note\":\"浇水的语境表明 tomatoes 指多株番茄，而不是摘下来的果实。\"}],\"patterns\":[{\"en\":\"grow tomatoes\",\"zh\":\"种植番茄\",\"note\":\"谈栽培时，tomatoes 可指番茄植株。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"tomato plant\",\"zh\":\"番茄植株\",\"note\":\"加上 plant，可明确区别于番茄果实。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[],\"similarNote\":\"可用 tomato plant 明确指植株，没有需要单独记忆的常用同义词。\",\"contrastingNote\":\"植物名称没有固定反义词，不必另造反向表达。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"词尾是辅音字母加 o，常见复数写法加 -es。\"",
+        "valueJson": "\"tomato 的复数加 -es，记作 tomatoes；不能把这个拼法套用到所有以辅音字母加 o 结尾的词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 tomato 的复数是 tomatoes；这里 -es 既表示复数，也让拼写符合常见规则。\"",
+        "valueJson": "\"把 tomato → tomatoes、potato → potatoes 一起记；photo → photos、piano → pianos 则只加 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 tomato 经西班牙语 tomate 传入；更早的词源与纳瓦特尔语 tomatl 有关。\"",
+        "valueJson": "\"英语 tomato 借自西班牙语 tomate，后者源自纳瓦特尔语 (xi)tomātl。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"西班牙语\",\"form\":\"tomate\",\"meaning\":\"tomato 的传入来源\"},{\"language\":\"纳瓦特尔语\",\"form\":\"tomatl\",\"meaning\":\"更早的词源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"词尾辅音字母加 o 时，常见复数加 -es；tomato 的复数拼作 tomatoes。\"",
+        "valueJson": "\"保留 tomato 的全部字母，再加 es，拼作 tomatoes；不要误写成 tomatos。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象买沙拉食材：篮子里放一个番茄时记 a tomato；再放两个，标签写 two tomatoes，提醒自己复数末尾要加 -es。\"",
+        "valueJson": "\"想象买沙拉食材：篮子里放一个番茄时记 a tomato；再放一个，标签就改为 two tomatoes，提醒自己复数末尾要加 -es。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: tomato\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/tomato\",\"supports\":[\"名词含义及可数用法\",\"复数拼写 tomatoes\",\"发音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"tomato 经西班牙语 tomate 传入及更早的纳瓦特尔语形式\"]",
+        "valueJson": "[\"英语名词的果实义与植株义\",\"复数拼写 tomatoes\",\"英美发音\",\"tomato 经西班牙语 tomate 传入及更早的纳瓦特尔语形式\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1435,
+    "headword": "tomato",
+    "meaning_zh": "n. 番茄, 西红柿",
+    "phonetic": "/tә'mɑ:tәu/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e50ef34196ad8cec6f8d1e1725a046d46a457871077d58e8922ff6ce38255b87",
+    "executedReviewPromptHash": "e50ef34196ad8cec6f8d1e1725a046d46a457871077d58e8922ff6ce38255b87",
+    "reviewHash": "36d1deb68cfc0ff44503e527574999baab36c59b537b292762d6459bce73ba9a",
+    "wordId": 1055,
+    "inputHash": "dab3ed9372d3508471dff7ca0b7854a8459c6032727c38f6b69a63ac70c45315",
+    "draftHash": "b8a4d4bb542674f17eec55ad6fd91f27e04d36a7c5495b2adf458ec1124c660a",
+    "finalHash": "e21a690023be3c716c083ec8670a9df31d0f961c18674b0fe1e0f7cc25235f77",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pork#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:24.940Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118188,
+        "revisionId": 35056103,
+        "revisionTimestamp": "2024-06-12T18:38:36Z",
+        "sha256": "c76b123377bd8b644709dcd35997e32dc53556d648423f795d16f7924e9484bc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/pork",
+        "section": "pork etymology",
+        "supports": [
+          "Pig meaning at older stages and English meat use"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:12:33.394487+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "d07f84ef76f8b71da11961b69969ba42f21413f81964fa63955b6103d1740bbb",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "d07f84ef76f8b71da11961b69969ba42f21413f81964fa63955b6103d1740bbb",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1055.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pork",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T05:35:02.723Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:42:04.814Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "来源中的英语粗俗动词义被遗漏。应补入低频义识别区，明确词性、含义与语域，不作为初中核心口语练习。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源材料同时提到经古法语传入和直接借自拉丁语；现有顺序阶段将它们串成单一路线。应在 summary 中分述，并补充中古英语曾有动物义的历史事实。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources",
+        "message": "本次实际取得的 Wiktionnaire 英语词条未列入来源；Cambridge pork 取回失败，pig 页面也没有提供内容。宜改用实际可用的推荐来源，并同步引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“美式词尾 r”表述不准确：r 音位于 /k/ 前，词尾辅音是 /k/。现有美式 IPA 本身可以保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/note",
+        "message": "“切成排状”不能准确解释 pork chop；宜说明切肉部位、常带骨及 chop 的可数用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "pig 不只指活猪，也可用于 roast pig 等整只猪的表达；应避免把肉类名称与动物名称的区别说成绝对的生死区别。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的猪肉名词义、粗俗动词义及词源中的历史动物义。初中核心猪肉义已有两个自然例句，数量表达、相关肉类对照及词族说明无需强行扩充。补丁将粗俗义放入低频识别区，历史动物义仅写入词源，并修正来源对应和局部措辞。本次不穷举其他专业或方言用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：作为食物的猪肉，通常不可数",
+        "coveredBy": [
+          "pork-n-meat"
+        ],
+        "assessment": "初中核心义；现有两个生活例句覆盖充分，基本语法与翻译正确。"
+      },
+      {
+        "sense": "动词：与某人发生性关系，粗俗",
+        "coveredBy": [
+          "pork-v-sex"
+        ],
+        "assessment": "原稿遗漏；补丁新增低频识别条目及一个例句，明确不宜用于礼貌交谈。"
+      },
+      {
+        "sense": "历史名词义：猪这种动物",
+        "coveredBy": [],
+        "assessment": "词源材料说明中古英语曾有此义；补入词源说明，不另立现代初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb (vulgar)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"pork 与 fork 押韵；英式 /ɔː/ 较长，美式词尾 r 清楚。\"",
+        "valueJson": "\"pork 与 fork 押韵；英式有长元音 /ɔː/，美式在 /k/ 前读出 r 音；两者的词尾辅音都是 /k/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"cambridge-pork\"",
+        "valueJson": "\"wiktionary-pork\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-pork\"",
+        "valueJson": "\"wiktionary-pork\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/note",
+        "expectedValueJson": "\"指切成排状的一份猪肉，常用于菜单或食谱。\"",
+        "valueJson": "\"通常指从猪的肋部或腰部切下的肉排，常带骨。chop 是可数名词：a pork chop（一块猪排）、two pork chops（两块猪排）。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pork-v-sex\",\"title\":\"动词：与某人发生性关系（粗俗）\",\"meaning\":\"与某人发生性关系，是很粗俗的说法。\",\"note\":\"作及物动词，后接表示人的宾语；只供阅读识别，不作为初中日常口语练习。\",\"example\":{\"id\":\"pork-v-ex-1\",\"senseId\":\"pork-v-sex\",\"en\":\"He crudely joked that he'd porked his neighbour.\",\"zh\":\"他粗俗地开玩笑说自己跟邻居上过床。\",\"note\":\"porked 在这里是动词的过去分词；这种用法非常粗俗，不宜用于礼貌交谈。\"},\"sourceIds\":[\"wiktionary-pork\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"pork 指食用的猪肉；pig 指活的猪。\"",
+        "valueJson": "\"pork 通常是食用猪肉的名称；pig 指猪这种动物，也可用于 roast pig（烤全猪）等整只猪的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"吃的是 pork，农场里养的是 pig。\"",
+        "valueJson": "\"说猪肉这种食材通常用 pork，说猪这种动物用 pig；烤全猪也可以说 roast pig。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-pig\",\"cambridge-pork\"]",
+        "valueJson": "[\"wiktionary-pork\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"pork 经古法语 porc 传入英语；其更早来源是拉丁语 porcus。英语中常见的现代意思是作为食物的猪肉。\"",
+        "valueJson": "\"pork 的历史来源包括古法语 porc，也包括直接借入的拉丁语 porcus；这两个来源词都指猪。中古英语也曾用 pork 指猪这种动物；现代英语则主要用它指作为食物的猪肉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"porcus\",\"meaning\":\"猪\"},{\"language\":\"古法语\",\"form\":\"porc\",\"meaning\":\"猪；后传入英语\"},{\"language\":\"英语\",\"form\":\"pork\",\"meaning\":\"通常指作为食物的猪肉\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-pork\",\"title\":\"Cambridge Dictionary: pork\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pork\",\"supports\":[\"猪肉的常见含义与名词用法\",\"英式和美式发音参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-pork\",\"title\":\"Wiktionnaire：pork（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/pork#Anglais\",\"supports\":[\"英语名词 pork 的猪肉义与动物名 pig 的区别\",\"英式和美式发音\",\"英语动词 pork 的粗俗性义\",\"古法语 porc 的词源关联\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-pig\",\"title\":\"Cambridge Dictionary: pig\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pig\",\"supports\":[\"pig 指猪这种动物，与食物义 pork 的区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1055,
+    "headword": "pork",
+    "meaning_zh": "n. 猪肉",
+    "phonetic": "/pɒ:k/",
+    "pos": "",
+    "forms": []
+  }
+}

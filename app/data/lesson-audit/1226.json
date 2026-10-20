@@ -1,0 +1,308 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c42e61acc0b9e03329fa91bab56c012bcdf72e5ce23080245fd9db03869b6582",
+    "executedReviewPromptHash": "c42e61acc0b9e03329fa91bab56c012bcdf72e5ce23080245fd9db03869b6582",
+    "reviewHash": "ffd6b1d4b3e0b2021259faa612dea320203a5ee9ff064b6ef95356b398371514",
+    "wordId": 1226,
+    "inputHash": "2a27bf2d0ea47c441e01cf208d88382243f46be1f2c22a4982037c8ad2a26bed",
+    "draftHash": "82201fa30d3768bc105f8687bf47e0186573fa636efc0cbd7f8ad2128923d036",
+    "finalHash": "adc997728646f2c2237476b1215a9c668475f0d958e70acc0043ed95c72e9a53",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/she#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.198Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116214,
+        "revisionId": 39765104,
+        "revisionTimestamp": "2026-08-03T05:02:44Z",
+        "sha256": "8a947cb83e14ec4aa73058b3776b0526679a85b752c2723f1ed17e16ec0586c5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/she",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:06:21.578Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:15:53.638Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "Cambridge 正文未获取，不能将其列为现有读音、释义和代词形式的材料依据。改引已获取的 Wiktionnaire 英语词条；仅凭专业语法知识补充的辨析不冒充词典引文。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典列出的事物拟人化用法，以及有标记的泛指性别未指定者的写作用法。应收入少见义，并说明语体限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0；/confusions/0；/memoryAid/cues/1/text",
+        "message": "多处用动作执行者与承受者判断 she/her，会误导学生把被动句主语写成 her。应按主语、宾语区分，并补一个被动句对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/example",
+        "message": "例句中的 they 明确指一个人，中文译成“他们”会造成复数误解；can 也不能展示单数 they 的动词一致关系。改用明确的单数译法及 they are 例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/title；/senses/0/examples",
+        "message": "主义合讲女性与雌性动物，目前各只有一例。保留合并结构，明确标题，并各补一个自然例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms；/wordFamilyNote",
+        "message": "常用相关形式缺少 herself。补充反身与强调用法，并避免把所有相关形式统称为格变化。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“读作希”不能准确表示英语 /ʃ/，“元音要拉长”也过于绝对。应说明辅音区别及自然语流中的时长变化；现有英美 /ʃiː/ 标音本身可以保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/1/note",
+        "message": "补明 she's got 中的 's 是 has，以免学生将前一条的 she's = she is 套用到这里。"
+      }
+    ],
+    "coverageAssessment": "已核对全部词典定义。修补后，女性与雌性动物指代各有两个原创例句；拟人化和有标记的泛指用法收入少见义，并交代使用限制。主语与动作执行者的混淆、单数 they 的翻译及来源归属均已修正。现有古英语→中古英语→现代英语词源顺序有材料支持，可保留。Cambridge 未获取正文，不再作为本课依据；补充的通用语法说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "第三人称单数主格，指女性",
+        "coveredBy": [
+          "she-person"
+        ],
+        "assessment": "核心义已覆盖；补例后有两个明确指女性的生活例句。"
+      },
+      {
+        "sense": "指雌性动物，尤其熟悉的宠物",
+        "coveredBy": [
+          "she-person"
+        ],
+        "assessment": "作为同一主义的扩展保留，不强行另拆义项；补例后有两个动物例句。"
+      },
+      {
+        "sense": "传统或拟人化地指船、汽车等；较少且较陈旧地指国家、城市",
+        "coveredBy": [
+          "she-personification"
+        ],
+        "assessment": "原稿遗漏；补入少见义，说明中性表达可用 it，并保留各类指代对象的语体差别。"
+      },
+      {
+        "sense": "有标记地泛指性别未指定的人，可与 he 在不同例子中交替",
+        "coveredBy": [
+          "she-generic"
+        ],
+        "assessment": "来源标为 non standard；补作需识别的少见写作选择，不将它教成性别未知者的日常默认指代。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"读句子时先找 she 指代的人，再检查她是否是动作的执行者。\"",
+        "valueJson": "\"先找出 she 指代的人或动物，再确认 she 在句中是否作主语；主语不一定是动作的执行者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"读作“希”，开头是清辅音 /ʃ/，像要求安静时的“嘘”声；元音 /iː/ 要拉长。\"",
+        "valueJson": "\"先发清辅音 /ʃ/，舌面前部靠近齿龈后部，让气流摩擦通过，声带不振动，再接 /iː/；普通话“希”的声母与 /ʃ/ 并不相同。自然语流中，非重读的 she 可以读得较轻、较短，不必每次都刻意拖长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-she\"]",
+        "valueJson": "[\"wiktionary-she\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"反身代词\",\"form\":\"herself\",\"ipa\":\"/hɜːˈself/（英）；/hɝːˈself/（美）\",\"note\":\"表示“她自己”。在 She taught herself to swim. 中，herself 和主语 she 指同一人；在 She made the cake herself. 中，用于强调蛋糕是她亲手做的。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"指一位女性\"",
+        "valueJson": "\"指一位女性，也可指雌性动物\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"she-person-ex3\",\"senseId\":\"she-person\",\"en\":\"My mother works at a bakery. She gets up at five every morning.\",\"zh\":\"我妈妈在面包店工作。她每天早上五点起床。\",\"note\":\"She 指前句的 my mother；gets 是一般现在时的第三人称单数形式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"she-person-ex4\",\"senseId\":\"she-person\",\"en\":\"Our dog Bella had three puppies last week. She stays close to them all day.\",\"zh\":\"我们家的狗贝拉上周生了三只小狗。它整天都守在它们身边。\",\"note\":\"She 指雌性宠物 Bella；英文可用 she，中文仍可自然地译作“它”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"表示“她拥有……”；she has 后接名词，she's got 是常见口语表达。\"",
+        "valueJson": "\"表示“她拥有……”。She has a bike. 和 She's got a bike. 都可表示“她有一辆自行车”。she's got 是 she has got 的缩写，这里的 's 是 has。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-she\"]",
+        "valueJson": "[\"wiktionary-she\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"she-personification\",\"title\":\"拟人化指船、汽车等事物\",\"meaning\":\"在传统或带感情色彩的表达中，用 she 指船、汽车等事物，也可拟人化地指国家或城市。\",\"note\":\"这类 she 带有传统或拟人化色彩；指国家、城市时尤其少见、较陈旧。一般中性表达可用 it。\",\"example\":{\"id\":\"she-personification-ex1\",\"senseId\":\"she-personification\",\"en\":\"The old boat is back in the water. She is ready to sail again.\",\"zh\":\"那条旧船重新下水了。它又可以出航了。\",\"note\":\"She 指前句的船，带拟人化色彩；中性表述可换成 it。\"},\"sourceIds\":[\"wiktionary-she\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"she-generic\",\"title\":\"写作中泛指性别未指定的人\",\"meaning\":\"某些作者用 she 泛指某一类人中的任意一个，并不特指已知为女性的人；也可能在不同例子中交替使用 she 和 he。\",\"note\":\"这是一种有标记、不常规的泛指写法，不宜当作性别未知者的日常默认称呼。一般表达可用单数 they。\",\"example\":{\"id\":\"she-generic-ex1\",\"senseId\":\"she-generic\",\"en\":\"A writer should check the facts before she sends an article to an editor.\",\"zh\":\"作者把文章交给编辑之前，应先核实事实。\",\"note\":\"这里 a writer 泛指任一作者；这种写法中的 she 不表示该作者已知为女性。\"},\"sourceIds\":[\"wiktionary-she\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0",
+        "expectedValueJson": "{\"label\":\"she：主语\",\"note\":\"动作的执行者或句子谈论的对象作主语时用 she。\",\"example\":{\"id\":\"she-confuse-ex1\",\"senseId\":\"she-person\",\"en\":\"She helped me with my homework.\",\"zh\":\"她帮我做了作业。\",\"note\":\"She 是 helped 的主语。\"}}",
+        "valueJson": "{\"label\":\"she：主语\",\"note\":\"指代的人在句中作主语时用 she；主语可以做动作，也可以处于某种状态或承受动作。\",\"example\":{\"id\":\"she-confuse-ex1\",\"senseId\":\"she-person\",\"en\":\"She was invited to the party.\",\"zh\":\"她受邀参加了聚会。\",\"note\":\"She 是被动句的主语；虽然她是被邀请的人，仍用 she。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"动作作用到她身上，或介词后指她时用 her。\"",
+        "valueJson": "\"作动词的宾语时可用 her（如 I helped her），介词后也可用 her（如 I spoke to her）。直接宾语与主语指同一人时，通常用 herself。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"动作由她做，用 she；动作作用于她，用 her。\"",
+        "valueJson": "\"按句法位置判断：She was invited. 中 she 作主语；I invited her. 中 her 作宾语。不能只按谁做动作来选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-she\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"she-they-ex2\",\"senseId\":\"she-person\",\"en\":\"Someone left their umbrella. They can collect it at the desk.\",\"zh\":\"有人落下了雨伞。他们可以到服务台领取。\",\"note\":\"这里 they 指性别未知的一个人，谓语用 can。\"}",
+        "valueJson": "{\"id\":\"she-they-ex2\",\"senseId\":\"she-person\",\"en\":\"Someone left their umbrella here. They are probably looking for it.\",\"zh\":\"有人把雨伞落在这里了。失主可能正在找它。\",\"note\":\"They 指前句性别未知的一个人；虽然指单数，仍用 are，不用 is。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-she\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-she-etymology\"]",
+        "valueJson": "[\"wiktionary-she\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"she 是代词，没有适合初中学习、由它直接派生的常见词族；her 和 hers 是同一代词的格变化形式，已列在词形中。\"",
+        "valueJson": "\"she 是代词，没有适合初中学习、由它直接派生的常见词族；her、hers 和 herself 是相关代词形式，已列在词形中。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"她做动作时用 she；动作指向她时用 her。\"",
+        "valueJson": "\"先看句法位置：she 作主语，her 可作动词或介词的宾语；主语也可能是承受动作的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-she\",\"title\":\"Cambridge Dictionary: she\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/she\",\"supports\":[\"she 的常见读音与词性\",\"she 的指代范围和语法用法\",\"she、her、hers 等代词形式\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-she-etymology\",\"title\":\"Wiktionary: she（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/she#Anglais\",\"supports\":[\"she 的古英语、中古英语历史形式及所列演变关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-she\",\"title\":\"Wiktionnaire：she（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/she#Anglais\",\"supports\":[\"she 的主格身份及对女性、雌性动物的指代\",\"对船舶、汽车等事物的拟人化指代及其语体限制\",\"泛指性别未指定者的有标记写作用法\",\"she 的英美读音标记\",\"she 的古英语、中古英语历史形式及所列演变关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1226,
+    "headword": "she",
+    "meaning_zh": "pron. 她",
+    "phonetic": "/ʃi:/",
+    "pos": "",
+    "forms": []
+  }
+}

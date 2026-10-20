@@ -1,0 +1,460 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "3d90372a510f83dacd434d2190a649858ba2482cc49aeef70a6f46009c7153aa",
+    "executedReviewPromptHash": "3d90372a510f83dacd434d2190a649858ba2482cc49aeef70a6f46009c7153aa",
+    "reviewHash": "ede4c3df1f9f115f00a5f8b65e723d5225512286aa34e6fe5e816aff4189fa51",
+    "wordId": 1282,
+    "inputHash": "2246707fee82e3016401ec1a9b4544c897df5b20d77b0ae8251d9e6390609c30",
+    "draftHash": "0159210bfbd92e851cac7da7b1ac80dac2ed53fb045eb4418653b3538b34a757",
+    "finalHash": "5442d24486d0122e34b834f2847afa6726f1a303bb34aed5f3c749ca1367a70a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/society#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.324Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118321,
+        "revisionId": 39522179,
+        "revisionTimestamp": "2026-05-19T09:55:25Z",
+        "sha256": "fdd6f0f9a9bed55b0d4ea23971e0ee2483a1b01c688266b6e0d7abd940359efa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/society",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:05:13.576Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:18:11.454Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "三个主义项的六个例句均缺少必填的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“上流社会；社交界”与“交往；陪伴”被合并，例句各只覆盖一义，搭配和近义说明也混用。应为上流社交界补足两例，把较正式或旧式的陪伴义单列到 lessCommonSenses，并同步修正引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/0、/forms/0/note、/senses/0",
+        "message": "需要明确社会整体的不可数用法与具体社会、社团的可数用法；社会整体义的例句也宜改成具体生活情境。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1",
+        "message": "society 与 club 不能按组织规模大小区分。名称、活动性质和语体更相关；商业公司通常使用 company 或 corporation。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "可用词源材料只明确指出拉丁语 societas，未证明法语中介阶段、具体法语历史字形或所列拉丁语释义。应保留已证实的词源联系，删除未经支持的阶段箭头及释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/*/sourceIds、/wordFamily/*/sourceIds、/sources",
+        "message": "Oxford 未提供正文，Cambridge 获取失败，不能作为本次已取得的事实依据。可保留其推荐查阅链接，但相关 sourceIds 应改为实际支持该内容的来源或清空，来源支持说明也须相应收窄。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway、/wordFamily/1/example、/wordFamilyNote、/memoryAid",
+        "message": "总括和助记应标明陪伴义的正式或旧式色彩，并补入上流社交界的线索；词族说明宜区分现代相关词与已核实的历史词源。socialize 的中文例句也可更自然。"
+      }
+    ],
+    "coverageAssessment": "已核对社会整体、具体社会或社会类型、社团／学会、上流社交界，以及正式或旧式的交往／陪伴用法。修订后三个主义项各有两个自然例句，低频陪伴义单列，并明确可数性和适用语境。读音、复数拼写及其余正确说明予以保留。来源局限在于可用词典正文较简略，具体用法由专业语言知识审校；词源只保留材料明确支持的拉丁语来源，不推演中介阶段。",
+    "senseInventory": [
+      {
+        "sense": "社会整体，通常不可数",
+        "coveredBy": [
+          "society-1"
+        ],
+        "assessment": "已覆盖；补明不可数用法，并用线上联系朋友的生活情境展示。"
+      },
+      {
+        "sense": "一个具体的社会或一种社会类型，可数",
+        "coveredBy": [
+          "society-1"
+        ],
+        "assessment": "可与社会整体合在同一教学义项；通过 societies 的家庭生活例句及可数性说明区分。"
+      },
+      {
+        "sense": "上流社会；上层社交界，通常不可数",
+        "coveredBy": [
+          "society-2"
+        ],
+        "assessment": "原稿与陪伴义混合；修订后独立解释，并有当地社交界和慈善晚宴两个例句。"
+      },
+      {
+        "sense": "社团；学会；协会，可数",
+        "coveredBy": [
+          "society-3"
+        ],
+        "assessment": "已有两个合适例句；补充可数性及与商业公司名称的区别，纠正规模大小的判断标准。"
+      },
+      {
+        "sense": "与他人的交往或陪伴，不可数，正式或旧式",
+        "coveredBy": [
+          "society-4"
+        ],
+        "assessment": "移入 lessCommonSenses，保留原创例句，说明日常通常使用 company，并修正关联例句的 senseId。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"society：社会、人群与社团\"",
+        "valueJson": "\"society：社会、社团与社交界\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"society 最常表示“社会”；也可以指某一类人组成的圈子，或为了共同兴趣、目的而成立的社团。\"",
+        "valueJson": "\"society 常表示“社会”或“社团／学会”；high society 指“上流社会”。表示“交往、陪伴”时较正式或旧式，日常通常用 company。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 society 常与 modern、local、animal 搭配，表示社会或社会群体。\"",
+        "valueJson": "\"先记 society 表“社会整体”时通常不可数；表示一个具体社会或一个社团时可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"对比 society 和 club：前者常指范围较大的社团或机构，后者常指日常活动中的俱乐部。\"",
+        "valueJson": "\"对比 society、club 与 company：society 和 club 都可指社团，选词常取决于组织名称和活动性质；商业公司通常用 company。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词单数，表示社会、社会群体或社团。\"",
+        "valueJson": "\"泛指社会整体时通常不可数；指一个具体社会或社团时可数，可用 a society。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于讨论社会变化、社会问题或不同社会的生活方式。\"",
+        "valueJson": "\"泛指社会整体时通常不可数，常不加冠词，如 in modern society；指某个具体社会或某种社会类型时可数，如 a fair society、different societies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"society-1-ex1\",\"senseId\":\"society-1\",\"en\":\"Technology is changing society quickly.\",\"zh\":\"科技正在迅速改变社会。\"}",
+        "valueJson": "{\"id\":\"society-1-ex1\",\"senseId\":\"society-1\",\"en\":\"In modern society, many people keep in touch with friends online.\",\"zh\":\"在现代社会，许多人通过网络与朋友保持联系。\",\"note\":\"society 指社会整体；这里的 modern society 不加冠词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"society-1-ex2\",\"senseId\":\"society-1\",\"en\":\"Every society has rules that help people live together.\",\"zh\":\"每个社会都有帮助人们共同生活的规则。\"}",
+        "valueJson": "{\"id\":\"society-1-ex2\",\"senseId\":\"society-1\",\"en\":\"In some societies, grandparents live with their children and grandchildren.\",\"zh\":\"在有些社会里，祖父母与自己的子女及孙辈住在一起。\",\"note\":\"societies 是可数复数，指不同的具体社会。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"社会中地位较高、彼此交往频繁的一群人；也可指与他人交往的活动或场合。\"",
+        "valueJson": "\"社会地位较高、常出入上层社交场合的人群及其圈子。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"此义常见于描述某个时代或场合的社交生活；具体语境决定是指一群人还是交往活动。\"",
+        "valueJson": "\"通常不可数，常见于 high society，或 London society 等以地名限定的表达，强调上层社交圈。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"local society 在这里指当地有地位人士组成的社交圈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"society-2-ex2\",\"senseId\":\"society-2\",\"en\":\"He enjoys the society of his old friends.\",\"zh\":\"他喜欢和老朋友们交往。\"}",
+        "valueJson": "{\"id\":\"society-2-ex2\",\"senseId\":\"society-2\",\"en\":\"At the charity dinner, she met several members of high society.\",\"zh\":\"在那次慈善晚宴上，她结识了几位上流社会人士。\",\"note\":\"members of high society 指上流社会人士；society 在这里通常不可数。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"the society of someone\",\"zh\":\"与某人相处；某人的陪伴\",\"note\":\"较正式的表达，强调享受或需要某人的陪伴。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"enjoy someone's society\",\"zh\":\"喜欢与某人交往\",\"note\":\"常用于表达喜欢某人的陪伴，语气比 enjoy someone's company 稍正式。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a society wedding\",\"zh\":\"上流社会的婚礼\",\"note\":\"society 修饰 wedding，指社交界名流的婚礼。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"company\",\"zh\":\"陪伴；交往\",\"note\":\"在表示陪伴时比 society 更常见、更日常；company 也有“公司”一义。\"},{\"en\":\"social circle\",\"zh\":\"社交圈\",\"note\":\"指一个人经常来往的朋友圈，不特指上流社会。\"}],\"contrasting\":[],\"similarNote\":\"company 常用于日常陪伴；high society 则特指上流社交圈。\",\"contrastingNote\":\"本义没有稳定的单词反义词；可依语境用 be alone 表示独处，与 enjoy someone's society 所说的陪伴相对。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"social circle\",\"zh\":\"社交圈\",\"note\":\"指一个人经常来往的朋友圈，不特指上流社会。\"}],\"contrasting\":[],\"similarNote\":\"social circle 指个人的交往圈，成员未必属于上流社会，不能无条件替换 high society。\",\"contrastingNote\":\"“上流社会；社交界”没有常用的严格反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"society 作“社团”时通常指有组织的团体；日常兴趣小组也常称 club。\"",
+        "valueJson": "\"作“社团、学会”时是可数名词，如 join a society；组织名称中的 Society 常大写。与 club 的选择常依组织名称和活动性质；商业、工业或金融公司通常称 company 或 corporation。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"science society 指科学社团，是可数名词短语；这里用 the 限定学校的这一社团。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the society 指双方已知的学会；meets 表示定期聚会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"society-4\",\"title\":\"交往；陪伴\",\"meaning\":\"与他人相处时的陪伴或交往。\",\"note\":\"此义通常不可数，较正式或旧式，多见于 the society of ...、enjoy someone's society；日常通常用 company。仅在“与人相处／独处”的语境下，可与 solitude（独处）对照。\",\"example\":{\"id\":\"society-4-ex1\",\"senseId\":\"society-4\",\"en\":\"He enjoys the society of his old friends.\",\"zh\":\"他喜欢有老朋友们作伴。\",\"note\":\"这里指朋友的陪伴；日常更常说 He enjoys the company of his old friends.\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"两者都能表达与人相处，但 society 在这个用法中较正式；company 更常见，也可表示“公司”。\"",
+        "valueJson": "\"两者都能表达与人相处；society 在这一义下较正式或旧式，日常通常用 company。company 还可表示“公司”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/label",
+        "expectedValueJson": "\"society：较正式的陪伴\"",
+        "valueJson": "\"society：正式或旧式的陪伴\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"多见于 enjoy someone's society 等表达。\"",
+        "valueJson": "\"多见于 the society of ... 或 enjoy someone's society；日常会话通常用 company。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"society-2\"",
+        "valueJson": "\"society-4\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"society-2\"",
+        "valueJson": "\"society-4\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"一般表达日常陪伴时优先用 company；society 常见于较正式的说法。\"",
+        "valueJson": "\"一般表达日常陪伴时用 company；society 的陪伴义较正式或旧式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"society 的历史来源可追溯到拉丁语 societas，之后经由法语进入英语。现代英语中 society 与 social 同属相关词族；不要把现代拆分联想当成它的历史来源。\"",
+        "valueJson": "\"society 的词源可追溯到拉丁语 societas。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"societas\",\"meaning\":\"与同伴结成的团体或共同关系\"},{\"language\":\"法语\",\"form\":\"société\",\"meaning\":\"社会；社团\"},{\"language\":\"英语\",\"form\":\"society\",\"meaning\":\"社会；社交界；社团\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这段历史来源与现代拼写拆分是两回事；词义随语言和使用语境发展，以上中文为便于理解的概括。\"",
+        "valueJson": "\"历史来源与现代拼写拆分需分开理解；下方的校园情境仅用于助记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"society-2\"",
+        "valueJson": "\"society-4\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/zh",
+        "expectedValueJson": "\"学生们在午餐时间交往。\"",
+        "valueJson": "\"学生们在午餐时聊天交流。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"social 和 socialize 与 society 共享词源关联，值得一起记；它们是不同词性，不能互换。\"",
+        "valueJson": "\"把 society（名词）、social（形容词）和 socialize／socialise（动词）作为相关词一起记；socialize／socialise 由 social 加动词后缀构成，使用时须按句中作用选择词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象学校里有一个科学 society：成员一起讨论实验；这些成员共同生活的校园是一个小型 society；他们在活动后聊天，也享受彼此的 society。\"",
+        "valueJson": "\"想象学校里有一个科学社团（a science society），成员一起讨论实验。校园里的人及其共同生活的规则构成一个小型社会（a society）。社团举办慈善晚宴，邀请了一些上流社会人士（members of high society）。活动后，一位老校友写下自己享受老朋友的陪伴（the society of old friends）；最后这种说法较正式、偏旧式，日常通常用 company。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这是帮助记忆几个常见用法的情境联想，不是 society 的词源解释。\"",
+        "valueJson": "\"这是串联不同用法的原创情境联想，不是 society 的词源解释；“陪伴”义较正式或旧式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"成员共同生活的校园\"",
+        "valueJson": "\"校园里的人及其共同生活的规则\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"上流社交界\",\"text\":\"慈善晚宴上的上流社会人士：members of high society\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"词性、常见义项及例句用法参考\",\"society 与 social 的词形辨析\"]",
+        "valueJson": "[\"推荐查阅 society 的名词义项、可数性与常用搭配\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"社会、社交及社团等常见语境参考\",\"常用搭配与词义辨析\"]",
+        "valueJson": "[\"推荐查阅 society 的义项、搭配与用法说明\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"词源来源及词源阶段参考\"]",
+        "valueJson": "[\"society 的英语读音与复数形式\",\"society 源自拉丁语 societas 的词源说明\",\"social 等相关英语词\",\"商业、工业或金融公司通常使用 company 或 corporation 的用词提示\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1282,
+    "headword": "society",
+    "meaning_zh": "n. 社会；社交界；交往；社团",
+    "phonetic": "/sә'saiәti/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cca71acc23d4400204795074d442d0b742c03afda5515e1e528b34bb4a9f7dea",
+    "executedReviewPromptHash": "cca71acc23d4400204795074d442d0b742c03afda5515e1e528b34bb4a9f7dea",
+    "reviewHash": "6270a3e459a68608c8d3b54514df25265ffb6a0033bf5fa216bac91ceab2a103",
+    "wordId": 384,
+    "inputHash": "d62408878e9dfd4ca005ce68b33cf02151e4dad8c9df01c53857664b8e9f4b12",
+    "draftHash": "95fecd40d7056e34aba80ade468ca9ff17f8a40a9dd952c588546bea48a47663",
+    "finalHash": "b75ca3bff7a3470076f29b44762b1a36afb6c8b7be5e7a595551410018484cce",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/digital#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:33.241Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 108578,
+        "revisionId": 39829928,
+        "revisionTimestamp": "2026-08-25T14:34:38Z",
+        "sha256": "c660a2e2a13962b6a95bbcbcc3494fefdfe76030b8cb6fb1feb41d78826a40f0",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/digital",
+        "section": "digital etymology",
+        "supports": [
+          "Digitus finger or toe",
+          "Counting and digits connection",
+          "Later computing use"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "5227630fe9fb95934e30097f3a240870522a0090688202fec957af6f24be19d8",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "5227630fe9fb95934e30097f3a240870522a0090688202fec957af6f24be19d8",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/384.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/digital",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:42:23.772Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:48:19.884Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 oxford-digital 的 sourceIds",
+        "message": "实际来源中没有牛津页面，不能用它为具体讲解背书。应改引已取回的英语词条；该词条未列出的名词义不应挂在其名下。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0 与 /senses",
+        "message": "数字技术与数字显示两种常用功能混在一起，核心例句没有真正示范数字显示义。应补足该义的两个生活例句，并补充 digital skills、digital services 等常见技术应用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "digitals on its dashboard 作为无铺垫的日常例句不自然，另一个名词例句也缺少明确设备语境。应保留原词条的名词功能，同时突出其少见、依赖语境的特点。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "不能仅凭 digital 后面有没有名词判断词性。The clock is digital 中，digital 后面没有名词，仍是表语形容词。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items",
+        "message": "数字显示钟的例句应关联数字显示义；analog clock 例句目前错误关联到 digital 的名词义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "digital skill 容易被理解为数字技能，不能清楚示范手指义。该专业义也涉及脚趾，宜改用明确的解剖搭配，并引用列出该英语义项的词条。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "已取回材料明确记载英语 digital 来自拉丁语 digitalis，应在摘要中补入，并引用相同 URL；不必为未提供释义的 digitalis 添加占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2",
+        "message": "构词说明应明确 digitize 去掉词尾 e 后加 -ation，并直接展示名词的 -ization／-isation 拼写。"
+      }
+    ],
+    "coverageAssessment": "已核对数字技术、电脑及网络应用、数字显示、有限的名词用法，以及手指／脚趾相关专业义。修订后，科技及应用义有4例，数字显示义有2例，名词义保留2个明确语境例句，专业义保留在少见义区。名词范围以原词条为限，外部取回材料未详述其细目；未引用未取回的牛津或 Cambridge 页面，也未扩张其他名词义。",
+    "senseInventory": [
+      {
+        "sense": "adj. 用数码表示、记录、处理或传输信息的",
+        "coveredBy": [
+          "digital-adj"
+        ],
+        "assessment": "原有数码相机和数字副本例句自然，予以保留，并与数字显示功能区分。"
+      },
+      {
+        "sense": "adj. 与电脑、网络等数字技术及其应用有关的",
+        "coveredBy": [
+          "digital-adj"
+        ],
+        "assessment": "作为科技义的常见扩展讲解，补入数字技能和数字化服务两个具体例句。"
+      },
+      {
+        "sense": "adj. 以数字直接显示时间或读数的",
+        "coveredBy": [
+          "digital-display"
+        ],
+        "assessment": "新增独立教学义，提供钟表和温度计两个生活例句，并限定与 analog 的对照语境。"
+      },
+      {
+        "sense": "n. 数字显示钟表；特定语境中的数字式仪表",
+        "coveredBy": [
+          "digital-n"
+        ],
+        "assessment": "保留原词条所列名词功能，使用手表和闹钟语境示范，明确其少见性及完整设备名称的优先性。"
+      },
+      {
+        "sense": "adj. 手指或脚趾的；与指、趾有关的",
+        "coveredBy": [
+          "digital-finger-related"
+        ],
+        "assessment": "保留在少见义区，改用 digital nerves 清楚示范专业含义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见时，digital 形容用数字信号记录、处理或显示信息；作名词时也可指数字式仪表或钟表。\"",
+        "valueJson": "\"digital 常指使用数字技术的，也可专指以数字显示读数的；作名词指数字显示钟表等设备时，用法较少见且依赖明确语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[\"wiktionary-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"数字式的；数字化的\"",
+        "valueJson": "\"数字技术的；数字化的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用数字信号记录、处理或显示信息的；常指电脑、数码设备及其内容。\"",
+        "valueJson": "\"用数码表示、记录、处理或传输信息的；也常用来形容电脑、网络等数字技术及其应用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常作名词前的定语，如 digital camera。表示屏幕上以数字显示时间时，也常说 digital clock。\"",
+        "valueJson": "\"常放在名词前，修饰设备、文件、技能或服务，如 digital camera、digital copy、digital skills。此义关注数字技术及其应用。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"digital-adj-ex3\",\"senseId\":\"digital-adj\",\"en\":\"She helped her grandparents learn basic digital skills, such as sending email.\",\"zh\":\"她帮助爷爷奶奶学习发送电子邮件等基本的数字技能。\",\"note\":\"digital skills 指使用电脑、网络等数字工具的技能。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"digital-adj-ex4\",\"senseId\":\"digital-adj\",\"en\":\"The bank's digital services let me pay bills from home.\",\"zh\":\"银行的数字化服务让我在家就能缴费。\",\"note\":\"digital services 指借助数字技术提供的服务，如手机银行服务。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"digital clock\",\"zh\":\"数字显示钟\",\"note\":\"表示以数字显示时间的钟。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"digital signal\",\"zh\":\"数字信号\",\"note\":\"用离散数值表示信息的信号，常与 analog signal 对照。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[\"wiktionary-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"数字式仪表或钟表\"",
+        "valueJson": "\"数字显示手表或时钟（少见名词用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"数字式的仪表或钟表，尤其指用数字显示读数或时间的设备。\"",
+        "valueJson": "\"可数名词，可指数字显示的手表或时钟；在特定仪表语境中，也可指数字式仪表。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作名词时用法较有限，常见于产品或设备语境；日常也可直接说 digital clock 或 digital watch。\"",
+        "valueJson": "\"这种名词用法较少见，须先明确设备类别。日常通常直接说 digital watch 或 digital clock；谈测量设备时也优先使用 digital instrument 等完整名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"digital-n-ex1\",\"senseId\":\"digital-n\",\"en\":\"The old car has digitals on its dashboard.\",\"zh\":\"这辆旧车的仪表盘上有数字式仪表。\",\"note\":\"这里 digitals 指数字式仪表，属于较少见的名词用法。\"},{\"id\":\"digital-n-ex2\",\"senseId\":\"digital-n\",\"en\":\"She prefers a digital to a clock with hands.\",\"zh\":\"比起指针钟，她更喜欢数字显示钟。\",\"note\":\"省略了后面的 clock，digital 作名词指数字显示钟。\"}]",
+        "valueJson": "[{\"id\":\"digital-n-ex1\",\"senseId\":\"digital-n\",\"en\":\"I used to wear an analog watch, but now I wear a digital.\",\"zh\":\"我以前戴指针表，现在戴数字显示表。\",\"note\":\"前面已明确谈手表，a digital 指数字显示手表；日常更常说 a digital watch。\"},{\"id\":\"digital-n-ex2\",\"senseId\":\"digital-n\",\"en\":\"Of the two alarm clocks, she chose the digital.\",\"zh\":\"在那两个闹钟中，她选了数字显示的那个。\",\"note\":\"前面已明确谈闹钟，the digital 指其中数字显示的那个；这种简称较少见。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"digital-display\",\"title\":\"数字显示的\",\"meaning\":\"用数字直接显示时间、温度等读数的。\",\"usageNote\":\"常见于 digital clock、digital watch、digital thermometer。此义关注读数的呈现方式；钟表语境中通常与用指针显示时间的 analog／analogue 对照。\",\"examples\":[{\"id\":\"digital-display-ex1\",\"senseId\":\"digital-display\",\"en\":\"The digital clock beside my bed showed 6:30.\",\"zh\":\"我床边的数字显示钟显示6点30分。\",\"note\":\"digital clock 直接用数字显示时间。\"},{\"id\":\"digital-display-ex2\",\"senseId\":\"digital-display\",\"en\":\"I checked the room temperature on a digital thermometer.\",\"zh\":\"我用数字显示温度计查看了室温。\",\"note\":\"digital 说明温度读数以数字显示。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"digital clock\",\"zh\":\"数字显示钟\",\"note\":\"用数字显示时间，与指针钟形成对照。\",\"kind\":\"common-collocation\"},{\"en\":\"digital watch\",\"zh\":\"数字显示手表\",\"note\":\"强调手表用数字显示时间；digital 在此是形容词。\",\"kind\":\"common-collocation\"},{\"en\":\"digital thermometer\",\"zh\":\"数字显示温度计\",\"note\":\"直接用数字显示温度读数。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"numerical display\",\"zh\":\"数字显示\",\"note\":\"可解释用数字呈现读数的方式；这是名词短语，不能直接替换所有词组中的形容词 digital。\"}],\"contrasting\":[{\"en\":\"analog clock / analogue clock\",\"zh\":\"指针钟\",\"note\":\"在钟表语境中，用指针显示时间，与 digital clock 对照。\"}],\"similarNote\":\"相近处在于显示内容是数字，词性和搭配结构不同。\",\"contrastingNote\":\"这一对照针对钟表的显示方式；谈信号处理时，应使用数字信号与模拟信号的区分。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"digital-finger-related\",\"title\":\"与手指有关的\",\"meaning\":\"形容与手指有关的；这个意思在日常英语中很少见。\",\"note\":\"一般学习和交流中遇到 digital，优先考虑数字技术相关的意思。\",\"example\":{\"id\":\"digital-finger-ex1\",\"senseId\":\"digital-finger-related\",\"en\":\"The artist showed great digital skill when shaping the tiny clay figures.\",\"zh\":\"这位艺术家用手指塑造小泥人，手法十分娴熟。\",\"note\":\"这里 digital 与手指动作有关，不是“数字技术的”。\"},\"sourceIds\":[\"etymonline-digital\"]}",
+        "valueJson": "{\"id\":\"digital-finger-related\",\"title\":\"与手指或脚趾有关的\",\"meaning\":\"形容手指或脚趾的，或与手指、脚趾有关的。\",\"note\":\"多见于解剖、医学等专业语境。日常谈手部灵巧时，manual dexterity 通常更清楚；digital skills 通常指数字技能。\",\"example\":{\"id\":\"digital-finger-ex1\",\"senseId\":\"digital-finger-related\",\"en\":\"The diagram shows the digital nerves in the fingers.\",\"zh\":\"这张示意图展示了手指中的指神经。\",\"note\":\"digital nerves 是指神经；digital 在此描述手指相关的解剖结构。\"},\"sourceIds\":[\"wiktionary-digital\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0",
+        "expectedValueJson": "{\"id\":\"digital-confusion-adj-n\",\"title\":\"digital 作形容词还是名词？\",\"summary\":\"digital 放在名词前时通常是形容词；单独作名词时才可能指数字式钟表或仪表。\",\"items\":[{\"label\":\"形容词 digital\",\"note\":\"后面接被修饰的名词。\",\"example\":{\"id\":\"digital-confusion-ex1\",\"senseId\":\"digital-adj\",\"en\":\"We use a digital clock in the kitchen.\",\"zh\":\"我们在厨房用一只数字显示钟。\",\"note\":\"digital 修饰 clock，是形容词。\"}},{\"label\":\"名词 digital\",\"note\":\"较少见，常省略语境中已知的设备名称。\",\"example\":{\"id\":\"digital-confusion-ex2\",\"senseId\":\"digital-n\",\"en\":\"I chose a digital because its numbers are easy to read.\",\"zh\":\"我选了数字显示钟，因为它的数字很容易看清。\",\"note\":\"digital 单独作名词，指前文语境里的数字显示钟。\"}}],\"takeaway\":\"看后面有没有被修饰的名词：digital clock 中是形容词；单独的 a digital 才可能是名词。\",\"sourceIds\":[\"oxford-digital\"]}",
+        "valueJson": "{\"id\":\"digital-confusion-adj-n\",\"title\":\"digital 作形容词还是名词？\",\"summary\":\"digital 可以放在名词前作定语，也可以放在 be 等连系动词后作表语；在明确的钟表或仪表语境中，还可能用作名词。\",\"items\":[{\"label\":\"定语：digital + 名词\",\"note\":\"放在名词前，修饰该名词。\",\"example\":{\"id\":\"digital-confusion-ex1\",\"senseId\":\"digital-display\",\"en\":\"We use a digital clock in the kitchen.\",\"zh\":\"我们在厨房用一只数字显示钟。\",\"note\":\"digital 修饰 clock，是形容词。\"}},{\"label\":\"名词：a/the digital\",\"note\":\"用法较少见，需要先明确谈的是哪类设备。\",\"example\":{\"id\":\"digital-confusion-ex2\",\"senseId\":\"digital-n\",\"en\":\"Both watches cost the same, so I bought the digital.\",\"zh\":\"两块手表价格一样，所以我买了那块数字显示表。\",\"note\":\"前面已经明确谈手表，the digital 指其中数字显示的那块。\"}},{\"label\":\"表语：be digital\",\"note\":\"放在连系动词后描述主语，后面没有名词也仍可作形容词。\",\"example\":{\"id\":\"digital-confusion-ex5\",\"senseId\":\"digital-display\",\"en\":\"The clock in my bedroom is digital.\",\"zh\":\"我卧室里的钟是数字显示的。\",\"note\":\"digital 作表语，说明钟的显示方式，是形容词。\"}}],\"takeaway\":\"判断词性要看句中作用：The clock is digital 中是表语形容词；the digital 则可在明确语境中指数字式钟表。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"以数字形式处理或显示信息。\"",
+        "valueJson": "\"在这里的钟表语境中，指用数字显示时间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"digital-adj\"",
+        "valueJson": "\"digital-display\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"digital-n\"",
+        "valueJson": "\"digital-display\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[\"wiktionary-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"digital 与拉丁语 digitus（“手指、脚趾”）同族；英语中数字和手指相关的用法与用手指数数有关，后来 digital 发展出数字技术相关的现代用法。\"",
+        "valueJson": "\"英语 digital 来自拉丁语 digitalis，属于 digitus（手指或脚趾）这一拉丁词族。用手指数数把这个词族与表示数目的 digit 联系起来；digital 在英语中已有与手指、数目相关的用法，后来才发展出现代计算机义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline-digital\"]",
+        "valueJson": "[\"wiktionary-digital\",\"etymonline-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[\"wiktionary-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"由 digitize 加名词后缀 -ation 构成。\"",
+        "valueJson": "\"由 digitize 派生：去掉词尾 e，再加名词后缀 -ation，得到 digitization。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"英式也常见 digitisation，-ize 可写作 -ise。\"",
+        "valueJson": "\"digitization 的结尾是 -ization；对应 digitise 的名词拼法为 digitisation，结尾是 -isation。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-digital\"]",
+        "valueJson": "[\"wiktionary-digital\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-digital\",\"title\":\"Oxford Learner’s Dictionaries: digital\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/digital\",\"supports\":[\"digital 的常见词性、科技相关用法及读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-digital\",\"title\":\"Wiktionnaire：digital（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/digital#Anglais\",\"supports\":[\"英语 digital 的计算机技术义、手指相关义及 analog／analogue 对照\",\"英语读音及 digit、digitize、digitization 等词族成员\",\"英语 digital 来自拉丁语 digitalis\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 384,
+    "headword": "digital",
+    "meaning_zh": "adj. 数字显示的, 数字的\nn. 数字仪表, 数字式电子表(或时钟)",
+    "phonetic": "/'didʒitәl/",
+    "pos": "",
+    "forms": []
+  }
+}

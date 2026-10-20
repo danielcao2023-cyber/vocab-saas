@@ -1,0 +1,354 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cdb9ca03a22da458f6c85573235b17ba56edbcf46f1b667e927bced552ec3a4c",
+    "executedReviewPromptHash": "cdb9ca03a22da458f6c85573235b17ba56edbcf46f1b667e927bced552ec3a4c",
+    "reviewHash": "f8b892831c6cc220c27ee26a8a174a8ec3b1c854af4f6618b7f76d74762fa38b",
+    "wordId": 1587,
+    "inputHash": "4ca4b9594ddf2b2852a37fced3b913685567f47ddd73b8a4ffc0992796ec1e86",
+    "draftHash": "7cdcafa3a65988288641123af6b062fd939bd2995a7b30fe4a608091d10d31e8",
+    "finalHash": "6d8ca2e90b49b2cdb7979f9a996b0de7f9411d316e20944851730ec1d4c2cc28",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/year#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.279Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 138,
+        "revisionId": 39816450,
+        "revisionTimestamp": "2026-08-19T18:37:13Z",
+        "sha256": "7887b76b8309d86eb8ab5a638d1c04924de35a1a66ed7bfae3f4f588fea95465",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/year",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:27:03.737Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:35:56.653Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Oxford 不在实际取得的来源材料中，不能作为本次审校的证据。应将有材料支持的内容关联到已取得的英语词条，其余教学拓展不虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语来源可以保留，但现有阶段释义只是“与现代词相联系的形式”，没有解释字义，属于空洞占位。应在摘要保留可证实的来源，并清空占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote及相关学习提示",
+        "message": "普通表达年份通常直接使用年份数字，作时间状语常说 in 2026；不宜教成具体年份前常用 the year。the year 2026 本身正确，应保留并说明使用场景。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "months 本身不限定不足一年，例如 eighteen months。只能把 a few months 在具体语境中作为较短时长的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "young 不是 year 或 years old 的反向表达。这里的 year 是计量年龄的单位，没有常用词汇反义词，不应强配。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "现有任职年份、学习阶段与 year-2 重复，first-year student 也未展示独立的新义。可将此项改为真实的补充义：英国学校语境中同年级的全体学生。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning",
+        "message": "“一段年长的时间”不自然，也没有准确说明年作为时长单位的用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note",
+        "message": "every year 表示每年都发生，并不自行限定每年恰好一次。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "常见非卷舌英音中，词尾 r 通常不读，而不是仅仅“不明显”；后接元音时还可能出现连接音 /r/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples及/senses/0/patterns",
+        "message": "年度安排可补充一个会计年度例句；常用的 for years 也值得明确解释为“多年”，避免学生以为必须给出具体数字。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/label",
+        "message": "标签 a two-year-old 是名词用法，而说明与例句讲的是名词前的复合形容词。补上 child 可使标签与内容一致。"
+      }
+    ],
+    "coverageAssessment": "已核对材料中的全部定义：年这一时间单位，以及年龄中的“岁”。初稿三个核心义均有至少两个自然原创例句，英语语法、对应翻译及 senseId 基本正确。另核对了具体年份、学年等年度安排、英国学校的同年级学生用法及常用时间表达。补丁纠正年份表达的教学重点、错误反向表达和来源关联，并保留可靠词源与正确的 yearly 构词说明。年度安排、学生群体义和部分搭配属于专业语言知识拓展，不冒充已取得词典的直接记载。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：年，约十二个月的时间单位",
+        "coveredBy": [
+          "year-1"
+        ],
+        "assessment": "材料直接支持；已有两个例句覆盖持续年数和每年发生的事情，修正文案并补充 for years。"
+      },
+      {
+        "sense": "可数名词：具体日历年份",
+        "coveredBy": [
+          "year-2"
+        ],
+        "assessment": "属于材料中“年”的常用用法；例句正确，但须纠正 the year 被过度突出的问题，并补充 last/this/next year 的时间状语用法。"
+      },
+      {
+        "sense": "可数名词：学年、会计年度及学习或工作中的某一年",
+        "coveredBy": [
+          "year-2"
+        ],
+        "assessment": "专业语言知识支持的常用拓展；已有学习阶段例句，补充会计年度例句以覆盖年度安排。"
+      },
+      {
+        "sense": "可数名词：年龄计量中的岁",
+        "coveredBy": [
+          "year-3"
+        ],
+        "assessment": "材料直接支持；两个例句分别展示复数 years 和单数 year，复合定语的单数及连字符说明正确；删除 young 这一不成立的反向表达。"
+      },
+      {
+        "sense": "名词：同年级的全体学生，尤用于英国学校语境",
+        "coveredBy": [
+          "year-4"
+        ],
+        "assessment": "专业语言知识支持的补充义；以此替换原先与 year-2 重复的条目，配一个明确指学生群体的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"year 最常见的是“年”；说年龄时用数字 + years old，说某个日历年度时常用 the year + 年份。\"",
+        "valueJson": "\"year 是可数名词，表示“年”或年龄中的“岁”；说年份通常直接用数字，说年龄用数字 + year(s) old。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 the year 2026 表示具体年度，用 last year 和 next year 表示去年和明年。\"",
+        "valueJson": "\"说“在2026年”常用 in 2026；last year、this year 和 next year 作时间状语时通常不加介词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常不明显发词尾 /r/；美式通常发出 /r/。\"",
+        "valueJson": "\"常见非卷舌英音中，year 单独读或后接辅音时不读词尾 /r/，后接元音时可连读 /r/；美式通常读出 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[\"wiktionary_year_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"通常指地球绕太阳一周所需的大约365天，也可泛指一段年长的时间。\"",
+        "valueJson": "\"约十二个月的时间，可从任意日期起算；按日历计算，平年有365天，闰年有366天。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"every year 表示每年一次。\"",
+        "valueJson": "\"every year 表示每年都举办，本身不限定每年举办的次数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"for years\",\"zh\":\"多年；好几年\",\"note\":\"不说明确切年数，如 We have been friends for years.（我们做朋友好多年了。）\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在表示时长时，months 指不足一年的较短时间，可与 a year 对比。\"",
+        "valueJson": "\"a few months 通常指几个月，可在具体语境中与一年的时长对比；months 本身不限定少于一年。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"时长语境中，可用 months 表示比一年短的时间；它不是 year 在所有语境中的反义词。\"",
+        "valueJson": "\"year 没有常用的词汇反义词。a few months 可作较短时长的对照，但 months 也能表示超过一年的时间，如 eighteen months（十八个月）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[\"wiktionary_year_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"具体年份前常用 the year；school year 是一个学年的安排，不一定等于完整日历年。\"",
+        "valueJson": "\"年份通常直接用数字表示，如 2026；作时间状语常说 in 2026。the year 2026 也正确，常用于明确指出或强调该年份。school year 指学年，起止时间不一定与日历年一致。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"用 the year 引出具体日历年份，如 the year 2030。\"",
+        "valueJson": "\"可明确指出某个日历年份，如 the year 2030；普通时间状语通常直接说 in 2030，也可以说 in the year 2030。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"last year / this year / next year\",\"zh\":\"去年／今年／明年\",\"note\":\"作时间状语时通常不加介词，如 We moved here last year.（我们去年搬到了这里。）\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"year-2-ex3\",\"senseId\":\"year-2\",\"en\":\"Our financial year runs from April to March.\",\"zh\":\"我们的会计年度从四月开始，到次年三月结束。\",\"note\":\"financial year 指会计年度，起止月份可以与日历年不同。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"young\",\"zh\":\"年轻的；年幼的\",\"note\":\"在描述年龄时，young 表示年纪较小，与较大年龄形成语境对照，并非固定反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"young 可在描述人的年龄时与 old（年长的）对照，但不表示 year 的反义词。\"",
+        "valueJson": "\"year 在这里是计量年龄的单位，没有常用的词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[\"wiktionary_year_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"year-4\",\"title\":\"年级；任职或经历的年份\",\"meaning\":\"在学校或组织的语境中，year 可指某人所处的年级、学习年限或任职年份。\",\"note\":\"具体含义由搭配决定，如 first year student 表示一年级学生；不同国家的年级划分可能不同。\",\"example\":{\"id\":\"year-4-ex1\",\"senseId\":\"year-4\",\"en\":\"He is a first-year student at the college.\",\"zh\":\"他是这所学院的一年级学生。\",\"note\":\"first-year 在这里指学习阶段的第一年。\"},\"sourceIds\":[\"oxford_year\"]}",
+        "valueJson": "{\"id\":\"year-4\",\"title\":\"同年级的全体学生\",\"meaning\":\"在英国学校语境中，year 还可指某个年级的全体学生。\",\"note\":\"常见于 our year、the whole year 等表达，这时说的是一群学生。\",\"example\":{\"id\":\"year-4-ex1\",\"senseId\":\"year-4\",\"en\":\"Our whole year went to the museum on Friday.\",\"zh\":\"周五我们整个年级的学生都去参观了博物馆。\",\"note\":\"our whole year 指我们同一年级的全体学生。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"two years old / a two-year-old\"",
+        "valueJson": "\"two years old / a two-year-old child\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"year 的历史来源可追溯到古英语 ġēar，给定历史词源条目将其来源联系到古英语 gear。\"",
+        "valueJson": "\"year 源自古英语 ġēar（也写作 gear）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"ġēar\",\"meaning\":\"与现代英语 year 相联系的古英语形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_year\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_year\",\"title\":\"Oxford Learner’s Dictionaries: year\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/year\",\"supports\":[\"year 的名词用法与常见搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_year_etymology\",\"title\":\"Wiktionary: year（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/year#Anglais\",\"supports\":[\"古英语词形 ġēar 与 year 的历史联系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_year_etymology\",\"title\":\"法语维基词典：year（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/year#Anglais\",\"supports\":[\"英语名词 year 表示年及年龄中的岁\",\"英美发音与规则名词复数\",\"year 源自古英语 ġēar\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1587,
+    "headword": "year",
+    "meaning_zh": "n. 年, 年度, 年龄",
+    "phonetic": "/jiә/",
+    "pos": "",
+    "forms": []
+  }
+}

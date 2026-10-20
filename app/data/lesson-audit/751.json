@@ -1,0 +1,246 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "58605f543ca172d673d1c3df07bdba4fdc49de562335039456e4782326f42fcd",
+    "executedReviewPromptHash": "58605f543ca172d673d1c3df07bdba4fdc49de562335039456e4782326f42fcd",
+    "reviewHash": "ed018dd0cd194eaf88ffbc7a56cc9cf0279d44f19d205309ab59842dfaa75ddf",
+    "wordId": 751,
+    "inputHash": "0f23082ee30b7e70bc8720df9df78f30f71f1588b222869c67c84e2b275d2eca",
+    "draftHash": "d1726dd6776b390668beb0e73eedfe791051485e7d44f1322f70055905f93f18",
+    "finalHash": "6e225342a6fcd6408e8e5ba004d3ecbd7d1e44ecd97ec010fdc000ec34a32b98",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/kung%20fu#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.253Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 1684890,
+        "revisionId": 38101866,
+        "revisionTimestamp": "2025-04-21T12:23:55Z",
+        "sha256": "395a03c488ad281841fc6846f993b14a8f2127bd6aec0bf216c638fd291e51fc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/kung-fu",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:28:59.667Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:33:22.202Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；相关 sourceIds",
+        "message": "Cambridge 页面未取得，不能支撑稿中标注的释义、例句和拼写说明。删除该来源；读音及不可数名词用法改引实际取得的英语词条，拼写辨析保留为专业语言知识说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "kung fu film 使用的是“中国武术”这一核心义的名词修饰功能，不构成较少见的独立义。应将其例句和搭配并入核心义，并修正辨析例句的 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note",
+        "message": "learn kung fu 表示学习功夫，learn 本身不包含“开始”的限定。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway",
+        "message": "“中国武术”与“中国功夫”在这里指同一核心义，原句用“也可泛指”容易造成另有一般技能义的误解。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧音标中的首音节不准确”属于编辑背景，应改成直接面向学生的发音说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "non-martial activity 虽已注明只是语境对照，仍是学习价值较低的泛泛类别表达。此词没有常用的固定反义词，反向表达数组可留空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/0/meaning",
+        "message": "中文阶段用“功夫”解释“功夫”较空泛，还混入了借入关系。词源材料明确给出 compétence，应直接释为“本领；技能”。"
+      }
+    ],
+    "coverageAssessment": "可用英语词条支持一个核心义：中国武术、功夫，作不可数名词。现有两条核心例句自然且覆盖充分；电影搭配应归入同一义。已核对读音、语法、拼写、相关表达和词源，未把中文原词的“本领、技能”扩展成英语常用义。来源局限是 Cambridge 页面未取得；可用词条列出了两种英语读音，但没有逐一标注英美归属，稿中的英美栏仅宜理解为常见读法示例。",
+    "senseInventory": [
+      {
+        "sense": "中国武术；功夫（不可数名词）",
+        "coveredBy": [
+          "kung-fu-martial-art"
+        ],
+        "assessment": "两条原有例句已覆盖学习和练习功夫。kung fu teacher、kung fu film 属于同一义的名词修饰用法；电影例句并入后，无须另立低频义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"kung fu 通常指中国武术，也可泛指中国功夫；英语中常作不可数名词。\"",
+        "valueJson": "\"kung fu 指中国武术（功夫），英语中通常作不可数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标中的首音节不准确；常见英语读法可记作 /ˌkʌŋ ˈfuː/。\"",
+        "valueJson": "\"第一音节可读 /kʌŋ/ 或 /kʊŋ/；第二音节 /fuː/ 重读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-kung-fu\"]",
+        "valueJson": "[\"wiktionary-kung-fu\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"learn 后直接接 kung fu，表示开始学习这门武术。\"",
+        "valueJson": "\"learn 后直接接 kung fu，表示学习这门武术。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"kung-fu-film-ex1\",\"senseId\":\"kung-fu-martial-art\",\"en\":\"We watched a kung fu film after dinner.\",\"zh\":\"晚饭后我们看了一部功夫片。\",\"note\":\"kung fu 放在 film 前作修饰语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"kung fu film\",\"zh\":\"功夫片\",\"note\":\"kung fu 在 film 前作名词修饰语，表示影片以中国武术为题材。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"non-martial activity\",\"zh\":\"非武术活动\",\"note\":\"只在区分活动类别时与 kung fu 对照，例如舞蹈或绘画；不是 kung fu 的固定反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"英语中没有固定的 kung fu 反义词；需要表达对照时，可按具体语境说 non-martial activity。\"",
+        "valueJson": "\"kung fu 没有常用的固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-kung-fu\"]",
+        "valueJson": "[\"wiktionary-kung-fu\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"kung-fu-film\",\"title\":\"功夫片中的功夫\",\"meaning\":\"在电影等娱乐语境中，指表现中国武术的功夫招式或功夫题材。\",\"note\":\"常见于复合名词 kung fu film；这里仍是同一个名词用法。\",\"example\":{\"id\":\"kung-fu-film-ex1\",\"senseId\":\"kung-fu-film\",\"en\":\"We watched a kung fu film after dinner.\",\"zh\":\"晚饭后我们看了一部功夫片。\",\"note\":\"kung fu 放在 film 前作修饰语。\"},\"sourceIds\":[\"cambridge-kung-fu\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"kung-fu-film\"",
+        "valueJson": "\"kung-fu-martial-art\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-kung-fu\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"英语借入的中文词，常指功夫或本领。\"",
+        "valueJson": "\"本领；技能。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"英语名词词性与不可数用法\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-kung-fu\",\"title\":\"Cambridge Dictionary: kung fu\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/kung-fu\",\"supports\":[\"词性及常见英语用法\",\"例句与复合搭配参考\",\"拼写形式参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 751,
+    "headword": "kung fu",
+    "meaning_zh": "n. 中国功夫",
+    "phonetic": "/kjŋ'fu:/",
+    "pos": "",
+    "forms": []
+  }
+}

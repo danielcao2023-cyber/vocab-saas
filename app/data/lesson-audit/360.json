@@ -1,0 +1,414 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a2f876d889855e6dcced6caca4540fa5dac1fd1a85af4e2aba4f133e712607bc",
+    "executedReviewPromptHash": "a2f876d889855e6dcced6caca4540fa5dac1fd1a85af4e2aba4f133e712607bc",
+    "reviewHash": "d4d2418b3db5d42f3aeed3c0d233e4945d5d790313564110b7297ab4f01396da",
+    "wordId": 360,
+    "inputHash": "e997887b6d610abb9465d8b005ca719e1e14d7d528a52c1f34b55b9974da76bc",
+    "draftHash": "2fd6940197ce4dfdd8a4f04d4ce362a85763e9e2c735d1e68d4962334ab4669a",
+    "finalHash": "a6bb3841264624eb3e4e2d9721f28d7a7983e5b1cf4eaab7557541019c14c769",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/deaf#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:29.373Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118184,
+        "revisionId": 39760750,
+        "revisionTimestamp": "2026-08-03T00:42:28Z",
+        "sha256": "5ab72a0aa6589d7675a507bcfc37ecf2408efa53b0b47647719c1f1f649651fc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/deaf",
+        "section": "deaf etymology",
+        "supports": [
+          "Old English hearing-related sense",
+          "Germanic inheritance",
+          "Literal and figurative distinction"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "f50c3e9a9baf5ee9299e3ca830826c7bc7bcb87a5594410c68d3d600b043a5da",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "f50c3e9a9baf5ee9299e3ca830826c7bc7bcb87a5594410c68d3d600b043a5da",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/360.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/deaf",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:20:05.925Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:30:45.869Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及全部cambridge来源引用",
+        "message": "Cambridge 页面未取得内容，不能用作现有说明的证据。应改引已取得的法语维基词典英语词条及 Etymonline，并限定各来源实际支持的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "deaf 描述听力状况，不能表示某个声音无法被听见；后者应使用 inaudible 等表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3及/senses/2",
+        "message": "集合用法应明确 the deaf 的冠词和复数谓语。大写 Deaf 可以成立，但常涉及文化或社群身份，不能与一般听力描述混同。此外，the Deaf community 和 a deaf person 中的 deaf 都修饰名词，不属于集合性名词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "hard of hearing 主要说明听力状况，不宜概括为比 deaf 更委婉；两者范围可以重叠，具体称呼也涉及个人偏好。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/1/note及/forms/2/note",
+        "message": "deafer、deafest 是成立的规则形式；无充分依据断言通常应改用 more deaf、most deaf。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/en",
+        "message": "a request / warning / advice 中冠词的适用范围不清，可能误导学生说 a advice；改用复数可数名词与不可数 advice 并列。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/label",
+        "message": "deaf in 不能泛接任意身体部位，应限定为表示耳朵的短语。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有阶段把古英语接到泛称的“日耳曼语族／继承词族”，既非具体历史阶段，也不能按此顺序绘制。已有材料支持的重建形式 *daubaz 和德语 taub 亲缘关系亦应补入；未提供释义的重建形式不另编释义阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/story",
+        "message": "一次未听见广播不足以说明 deaf；同一人物随后听见建议却不理会，也容易混淆听力状况与比喻义。宜用两个清楚区分的情境。"
+      }
+    ],
+    "coverageAssessment": "已核对听力形容词义、常用比喻义及 the deaf 集合用法，三项均保留至少两个原创英中例句，无须新增核心义。修订补清冠词、谓语数和 Deaf 文化身份用法，并修正来源及词源阶段。细分搭配、语域和称呼说明依据专业语言知识判断；未取得内容的 Cambridge 页面不作为证据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：聋的，听不见或听力严重受损的",
+        "coveredBy": [
+          "deaf-adj-hearing"
+        ],
+        "assessment": "已有两个例句，覆盖人物听力状况和单耳听力；删除误加的声音不可闻义，并修正 hard of hearing 的比较说明。"
+      },
+      {
+        "sense": "形容词比喻义：不理会、不愿听取，常用于 deaf to",
+        "coveredBy": [
+          "deaf-adj-figurative"
+        ],
+        "assessment": "两个例句分别呈现不理会抱怨和警告，相关表达已有语境限制；仅需消除句型中冠词的歧义。"
+      },
+      {
+        "sense": "集合用法：the deaf，统称聋人",
+        "coveredBy": [
+          "deaf-noun-collective"
+        ],
+        "assessment": "保留两个例句，补明 the、复数谓语及个人称呼；区分一般集合称呼与大写 Deaf 的身份含义，并调整误归入本义的形容词搭配。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"deaf 作形容词常表示“听不见的、聋的”；作名词时可指聋人群体。\"",
+        "valueJson": "\"deaf 常作形容词，表示“聋的”；deaf to ... 表示“不理会”；统称聋人时用 the deaf，指个人用 a deaf person。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"规则比较级，较少使用；通常改用 more deaf，具体表达依语境而定。\"",
+        "valueJson": "\"规则比较级，较少使用；也可用 more deaf，具体表达依语境而定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则最高级，较少使用；通常改用 most deaf，具体表达依语境而定。\"",
+        "valueJson": "\"规则最高级，较少使用；也可用 most deaf，具体表达依语境而定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"可作集合性名词，指聋人群体；谈论个人时常说 a deaf person。\"",
+        "valueJson": "\"指群体时常用 the deaf，作主语时配复数谓语；指个人说 a deaf person，不说 a deaf。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"形容人听力部分或全部丧失；也可描述声音无法被某人听到。\"",
+        "valueJson": "\"形容人听不见或听力严重受损；也可具体说明某只耳朵的听力状况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常指听力下降或听不清，语气通常比 deaf 更委婉，也不一定表示完全听不见。\"",
+        "valueJson": "\"常指仍有一定听力但听得不清；与 deaf 的使用范围可能重叠，称呼个人时应尊重当事人的偏好。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"the Deaf community\",\"zh\":\"聋人社群\",\"note\":\"Deaf 在这里作形容词修饰 community；大写通常强调聋人文化或社群身份。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/en",
+        "expectedValueJson": "\"be deaf to + a request / warning / advice\"",
+        "valueJson": "\"be deaf to + requests / warnings / advice\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作集合性名词，指聋人这一群体。\"",
+        "valueJson": "\"以 the deaf 统称聋人这一群体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见于 the Deaf 等涉及群体或文化身份的表达；具体大小写和用法会随语境而变化。日常说某个人时用 a deaf person。\"",
+        "valueJson": "\"the deaf 作主语时用复数谓语；指个人用 a deaf person，不说 a deaf 或 deafs。小写 deaf 常描述听力状况，大写 Deaf 常强调聋人文化和社群身份；统称群体本身并不要求大写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/en",
+        "expectedValueJson": "\"The school offers classes for the Deaf and their families.\"",
+        "valueJson": "\"The school offers classes for the deaf and their families.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "\"the Deaf 指聋人群体。\"",
+        "valueJson": "\"the deaf 在这里统称聋人群体，不指某一个人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"The event was planned with the Deaf in mind.\"",
+        "valueJson": "\"The deaf in our town were invited to help plan the film festival.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"这项活动的筹划考虑到了聋人群体的需要。\"",
+        "valueJson": "\"本镇的聋人受邀参与电影节的筹划。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "\"此处 the Deaf 指群体，不指某一位聋人。\"",
+        "valueJson": "\"the deaf 指一群人，因此谓语用 were。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/en",
+        "expectedValueJson": "\"the Deaf\"",
+        "valueJson": "\"the deaf\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"带 the 时可作集合性称呼，常用于讨论群体服务或文化。\"",
+        "valueJson": "\"在这一集合用法中不能省略 the；作主语时用复数谓语，如 the deaf are。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/en",
+        "expectedValueJson": "\"services for the Deaf\"",
+        "valueJson": "\"services for the deaf\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations",
+        "expectedValueJson": "[{\"en\":\"the Deaf community\",\"zh\":\"聋人社群\",\"note\":\"指由聋人组成、具有共同交流或文化联系的社群。\",\"kind\":\"common-collocation\"},{\"en\":\"a deaf person\",\"zh\":\"一位聋人\",\"note\":\"日常指个人时使用 person，表达清楚且尊重。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"education for the deaf\",\"zh\":\"面向聋人的教育\",\"note\":\"the deaf 在 for 后表示聋人群体。\",\"kind\":\"common-collocation\"},{\"en\":\"support for the deaf\",\"zh\":\"为聋人群体提供的支持\",\"note\":\"这里 the deaf 是集合性表达，deaf 不加复数词尾 -s。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"复数名词短语，日常直接指多位聋人；the Deaf 更强调群体整体。\"",
+        "valueJson": "\"复数名词短语，既可指多位聋人，也可指整个群体；the deaf 是带 the 的集合性表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"deaf people 是普通复数短语；the Deaf 常把群体作为整体来谈。\"",
+        "valueJson": "\"deaf people 和 the deaf 都可指群体；日常交流常用 deaf people，the deaf 是较正式的集合性称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"deaf in + 身体部位\"",
+        "valueJson": "\"deaf in + 表示耳朵的短语，如 one ear / both ears / his left ear\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"deaf 延续自古英语 deaf，古英语中已有“缺乏听力”的意思；它属于继承下来的日耳曼语词族。英语后来也有了比喻用法，表示不听劝或不理会。\"",
+        "valueJson": "\"deaf 延续自古英语 deaf，古英语中已有“缺乏听力”的意思；它更早可追溯到重建的原始日耳曼语形式 *daubaz。英语 deaf 与德语 taub 有历史亲缘关系。英语后来也用 deaf 比喻“不理会、不听劝”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"日耳曼语族\",\"form\":\"继承词族\",\"meaning\":\"与其他日耳曼语词有历史亲缘关系\"}",
+        "valueJson": "{\"language\":\"现代英语\",\"form\":\"deaf\",\"meaning\":\"聋的；（比喻）不理会的\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"“充耳不闻”是英语中的后起比喻用法；它不表示聋人不愿听，也不是对听力丧失原因的解释。\"",
+        "valueJson": "\"星号 * 表示重建形式。“充耳不闻”是英语中的后起比喻用法；它不表示聋人不愿听，也不是对听力丧失原因的解释。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象车站广播响起，朋友没有听见，旁边的人用手势提醒他；画面里的 deaf 就是“听不见的”。再想象他听见了建议却不理会：deaf to advice 是“对建议充耳不闻”。\"",
+        "valueJson": "\"想象车站里，一位聋人旅客通过电子屏查看车次：a deaf passenger。另一位旅客明明听见了朋友的建议，却不理会：he is deaf to advice。第一幅画面说听力状况，第二幅画面说不理会建议。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"wiktionary-fr\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: deaf\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/deaf\",\"supports\":[\"形容词与名词用法\",\"发音\",\"deafness、deafen 等相关词\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr\",\"title\":\"Wiktionnaire：deaf（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/deaf#Anglais\",\"supports\":[\"英语形容词“聋的”及聋人群体用法\",\"英语发音 /dɛf/\",\"派生词 deafen、deafness\",\"原始日耳曼语重建形式 *daubaz 及与德语 taub 的亲缘关系\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 360,
+    "headword": "deaf",
+    "meaning_zh": "adj. 聋的",
+    "phonetic": "/def/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,303 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "99ce85043454f69ff99564615612615c15d711899d82d6dc44fe6a7832f7eef3",
+    "executedReviewPromptHash": "99ce85043454f69ff99564615612615c15d711899d82d6dc44fe6a7832f7eef3",
+    "reviewHash": "2613ac1c6f6c65222a83738504280d7fbf74a710cc9989f77d67e4f01cafb055",
+    "wordId": 1403,
+    "inputHash": "88f61844cc958fcda7d0a4143f59569fef1d0828f3092820cc55cadf5591959e",
+    "draftHash": "f41f8b640145a690416e47345bc58d479bf74a0e59008858f82041fe4f6d5a2c",
+    "finalHash": "d2c4baf0fbc4f21a527b5c934be6f9911283773bf1759d50643ab815cdb9fece",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/them#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.428Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116216,
+        "revisionId": 39905949,
+        "revisionTimestamp": "2026-09-27T00:06:43Z",
+        "sha256": "79d1b34b7846d60965802a79830f63d8735b7a72bdd8efb5c7cf6907eb674fc5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/them",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:46:53.215Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:01:34.603Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "复数和单数用法合并后各只有一个例句，且没有指代事物的实例。需分别覆盖复数人／物与不分性别的单个人，每项至少两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的复数指示限定词用法：方言中的 them 相当于 those。应补入低频义并明确其语体限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "对 them 的句法作用说明过窄，遗漏常见口语表语和独立回答用法；“不能作主语”的绝对表述也应收窄到基础陈述句的主宾格对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms",
+        "message": "“宾格单数或复数原形”标签不准确，“不随人称变化”的说明范围不清；反身形式还需明确 themselves 同样可对应单数 they，并可表示“亲自”。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "正文全部引用未成功取得的 Cambridge 页面，另列未提供内容的 Oxford 页面，却没有引用实际取得的法语维基词典英语词条。需更换来源及对应引用，并限定其支持范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "They saw them 的两组指代关系没有解释。补充 them 与 themselves 的回指对照，可避免学习者误以为两者都能直接表示主语自身。"
+      }
+    ],
+    "coverageAssessment": "补丁后覆盖词典的复数宾格、非性别化单数宾格及方言指示限定词三项定义；两个核心代词用法各有两个原创例句，覆盖人、物、身份未知者和已知使用 they/them 的个人，并补充口语表语、独立回答及反身回指对照。them 没有适合在此强造的词义反义词。原稿 selves 的拼写说明正确，予以保留。所取得页面的历史词源部分仅为待补占位，不能据此补写历史或演变箭头；保留现代形式关系说明及空 stages。弱读说明可由专业语音知识支持，来源支持项仅注明页面实际列出的强读与形式表。",
+    "senseInventory": [
+      {
+        "sense": "第三人称复数宾格代词：他们、她们、它们",
+        "coveredBy": [
+          "them-object"
+        ],
+        "assessment": "补丁后以两例分别覆盖复数人和事物，并分别展示介词宾语与动词宾语；另说明口语表语和独立回答功能。"
+      },
+      {
+        "sense": "不分性别的第三人称单数宾格代词：某个人",
+        "coveredBy": [
+          "them-singular"
+        ],
+        "assessment": "从混合义中独立，补丁后以两例覆盖身份未知的人和已知使用 they/them 的人。"
+      },
+      {
+        "sense": "复数指示限定词：那些……，相当于 those",
+        "coveredBy": [
+          "them-dialect-demonstrative"
+        ],
+        "assessment": "补入 lessCommonSenses，以一个原创例句说明，并明确美国部分方言及非标准口语的使用限制。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"代词\"",
+        "valueJson": "\"代词；限定词（方言用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"them：放在动词或介词后，指“他们、她们、它们”\"",
+        "valueJson": "\"them：they 的宾格，可指多个人、多个事物或一个人\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"them 是 they 的宾格形式，常作动词或介词的宾语。现代英语中也可用 them 指一位性别未知或不想说明性别的人。\"",
+        "valueJson": "\"them 是 they 的宾格，可指多个人或多个事物，也可不分性别地指一个人。常作动词或介词的宾语，口语中也可作表语或简短回答。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"读句子时找出 them 指的人或物，检查它是否是动作的对象。\"",
+        "valueJson": "\"读句子时先找出 them 指多个人、多个事物还是一个人，再判断它在句中的作用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-them\"]",
+        "valueJson": "[\"wiktionary-fr-them\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"宾格单数或复数原形\"",
+        "valueJson": "\"宾格形式（可指复数或单个人）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"代词形式不随人称或数量变化；对应的主格是 they。\"",
+        "valueJson": "\"them 是第三人称代词 they 的宾格；可指复数的人或事物，也可不分性别地指一个人，这些用法都拼作 them。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"复数主语作同一动作的对象时使用；themself 也用于单数 they。\"",
+        "valueJson": "\"themselves 可对应复数 they，也可对应单数 they；宾语回指主语时可用作反身代词，也可表示“亲自”。themself 也用于单数 they。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"作宾语：他们、她们、它们；某个人\"",
+        "valueJson": "\"指复数：他们、她们、它们\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"they 的宾格形式，指前文提到的复数人或事物；也可指一位性别未知或不想说明性别的人。作动作的承受者，或放在介词后。\"",
+        "valueJson": "\"they 的宾格形式，可指多个人或多个事物，对应中文的“他们、她们、它们”。常作动词或介词的宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"them 不能作标准英语中的主语；作主语用 they。单数用法在现代英语中很常见，尤其用于性别未知的人。\"",
+        "valueJson": "\"通常代替前文提过或情境中明确的人或物。口语中也可在 be 后作表语，如 It's them.（是他们。），或单独回答，如 Who called? — Them.（谁打来过电话？——他们。）。在 They are here.（他们在这里。）这类陈述句中，主语用 they。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"them-object-ex2\",\"senseId\":\"them-object\",\"en\":\"Someone left their lunch here. I’ll give it to them.\",\"zh\":\"有人把午餐落在这里了。我会把它交给那个人。\",\"note\":\"them 指一位身份不明的人，避免假定其性别。\"}",
+        "valueJson": "{\"id\":\"them-object-ex2\",\"senseId\":\"them-object\",\"en\":\"These shoes are muddy. Please leave them by the door.\",\"zh\":\"这些鞋上都是泥。请把它们放在门边。\",\"note\":\"them 指前句中的鞋，作 leave 的直接宾语；指事物时同样用 them。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在句中作主语用 they；同一代词作宾语时用 them，如 They saw them。\"",
+        "valueJson": "\"they 作主语，them 作宾语。They saw them 通常表示一群人看见另一群人；若看见的是他们自己，则说 They saw themselves。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"themselves\",\"zh\":\"他们自己／她们自己／它们自己\",\"note\":\"在同一分句中，宾语回指主语时通常用 themselves：They introduced themselves. 表示他们作自我介绍；They introduced them. 则通常表示他们介绍了另一群人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在标准英语中，they 作主语，them 作宾语；不能因中文都说“他们”而混用。\"",
+        "valueJson": "\"they 与 them 对照主格和宾格；themselves 与 them 对照宾语是否回指主语。这些是语法用法的对照，并非词义上的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-them\"]",
+        "valueJson": "[\"wiktionary-fr-them\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"them-singular\",\"title\":\"指一个人：不分性别的宾格用法\",\"meaning\":\"them 也可指一个人，常用于性别未知、性别与谈话无关，或某人使用 they/them 代词的情况。\",\"usageNote\":\"这是单数 they 的宾格形式，不一定表示多人。作宾语用 them；对应的主语用 they，即使指一个人也说 they are、they have。\",\"examples\":[{\"id\":\"them-singular-ex1\",\"senseId\":\"them-singular\",\"en\":\"Someone left their lunch here. I’ll give it to them.\",\"zh\":\"有人把午餐落在这里了。我会把它交给那个人。\",\"note\":\"them 指一位身份不明的人，作介词 to 的宾语，避免假定其性别。\"},{\"id\":\"them-singular-ex2\",\"senseId\":\"them-singular\",\"en\":\"Alex uses they/them pronouns. I emailed them the meeting notes.\",\"zh\":\"亚历克斯使用 they/them 这组代词。我把会议记录通过电子邮件发给了对方。\",\"note\":\"them 指已知的一个人 Alex，作 emailed 的间接宾语；单数用法并不限于身份未知的人。\"}],\"patterns\":[{\"en\":\"give something to them\",\"zh\":\"把某物给那个人\",\"note\":\"them 作介词 to 的宾语；究竟指一个人还是多人，由上下文决定。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"ask them\",\"zh\":\"问那个人\",\"note\":\"them 作 ask 的宾语；可用于询问一位性别未知或使用 they/them 的人。\",\"kind\":\"common-collocation\"},{\"en\":\"send them a message\",\"zh\":\"给那个人发条消息\",\"note\":\"them 表示接收消息的人，作间接宾语。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"that person\",\"zh\":\"那个人\",\"note\":\"也可指一个人；that person 可作主语或宾语，而 them 的使用受句法位置限制。\"},{\"en\":\"him / her\",\"zh\":\"他／她（宾格）\",\"note\":\"适合用 he 或 she 指称的人，对应宾格分别为 him 或 her；不能因此随意替换某人使用的 they/them 代词。\"}],\"contrasting\":[{\"en\":\"they\",\"zh\":\"那个人（主格，不分性别）\",\"note\":\"单数 they 作主语，对应宾格仍是 them：They are waiting. I’ll call them. 表示那个人正在等，我会给对方打电话。\"}],\"similarNote\":\"单数 them 不说明性别；其他表达能否替换它，要同时考虑指称对象、对方使用的代词以及句法位置。\",\"contrastingNote\":\"这里比较的是主格与宾格，没有需要强配的词义反义词。\"},\"sourceIds\":[\"wiktionary-fr-them\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"them-dialect-demonstrative\",\"title\":\"方言限定词：那些……\",\"meaning\":\"直接修饰复数名词，相当于标准英语的 those。\",\"note\":\"见于美国一些方言和非标准口语。正式写作和考试中用 those；这里的 them 是限定词，不是宾语代词。\",\"example\":{\"id\":\"them-dialect-demonstrative-ex1\",\"senseId\":\"them-dialect-demonstrative\",\"en\":\"Look at them clouds!\",\"zh\":\"看看那些云！\",\"note\":\"方言说法；them 直接修饰 clouds。标准英语说 Look at those clouds!\"},\"sourceIds\":[\"wiktionary-fr-them\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-them\"]",
+        "valueJson": "[\"wiktionary-fr-them\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"他们自己、她们自己、它们自己\"",
+        "valueJson": "\"他们自己、她们自己、它们自己；某人自己（对应单数 they）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"them + selves 的反身代词形式；单数 they 也可用 themself。\"",
+        "valueJson": "\"由 them 和 selves 构成，是对应的反身／强调形式；单数 they 可用 themselves，也可用 themself。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-them\"]",
+        "valueJson": "[\"wiktionary-fr-them\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-them\",\"title\":\"Cambridge Dictionary：them\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/them\",\"supports\":[\"them 作第三人称复数宾格代词的基本用法\",\"them 指单数性别未知者的用法\",\"them 的发音与相关代词形式\"],\"verification\":\"recommended\"},{\"id\":\"oxford-they\",\"title\":\"Oxford Learner’s Dictionaries：they\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/they\",\"supports\":[\"they 与宾格 them 的代词形式对应\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-fr-them\",\"title\":\"法语维基词典：them（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/them#Anglais\",\"supports\":[\"第三人称复数宾格代词与不分性别的第三人称单数宾格代词用法\",\"美国方言中相当于 those 的复数指示限定词用法\",\"词条列出的强读 /ðɛm/，以及 they、them、themself、themselves、their、theirs 的形式对应\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1403,
+    "headword": "them",
+    "meaning_zh": "pron. 他们, 她们, 它们",
+    "phonetic": "/ðem/",
+    "pos": "",
+    "forms": []
+  }
+}

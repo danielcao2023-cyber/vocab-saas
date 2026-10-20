@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "00805505642fd759b18f113b9f0d478c33299910e776473b85d503e2a2ccf731",
+    "executedReviewPromptHash": "00805505642fd759b18f113b9f0d478c33299910e776473b85d503e2a2ccf731",
+    "reviewHash": "be29ce49d9828551cb79eb46824562c7234fb375a550a65d013d3c201daed2bc",
+    "wordId": 1471,
+    "inputHash": "24679a2875d8764bcf874bcb18b77e39cbc7700882f27189d12afd18c5167487",
+    "draftHash": "48e2c8f07bde8535921ab3cef5095b03592728b90dab2e5abd821008fc9bfe35",
+    "finalHash": "41f9bc0e1a2615e67dfd12bc8c1d5a6c82c5d0dc5e1951125b782ad9b77822e4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/TV#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.821Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 193658,
+        "revisionId": 39773615,
+        "revisionTimestamp": "2026-08-03T13:53:32Z",
+        "sha256": "738da37c177b6448a68e97dcfc7604728166fcb0efc7c373b67934906bb7dff7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/TV",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:58:31.615Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:04:43.329Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“单复数形式拼写相同”与“复数可写 TVs”自相矛盾。媒介义通常不可数，电视机义可数，复数为 TVs。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "watch the TV 也可以表示看特定电视机播放的节目，不能凭 the 推断是在盯着机器。原例实际使用 looked at，未示范待辨析表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/note",
+        "message": "on TV 本身不表示“正在”；本例谈的是今晚的节目安排。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "当前说明将 screen 限定为屏幕部件，它在此限定下不是电视机的近义表达，不宜列入本义的近义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "television 是一个单词，不能说 T 和 V 都是它的首字母。已取得的词源材料可确认取 television 中的 t、v 构成缩写，应补上对应来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources",
+        "message": "现有引用全部指向实际来源材料中未出现的 Oxford。应改接已取得的法语维基词典英语词条，明确词条语言，并保留 recommended 标签。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的两个名词义：电视节目或媒介、电视机；原稿各有两个自然例句，核心覆盖充分，无须机械增义。近义和媒介对照的语境限制基本清楚，电视机没有需要强造的直接反义词。补丁修正复数说明、冠词辨析、近义项分类及来源关联。词源仅确认 television 与 TV 的缩写关系，不据此推演更早历史。",
+    "senseInventory": [
+      {
+        "sense": "电视节目；电视广播媒介",
+        "coveredBy": [
+          "tv-medium"
+        ],
+        "assessment": "已由看电视及电视播出电影两个例句覆盖；电视行业用法可视为媒介义的语境延伸，无须另立核心义。"
+      },
+      {
+        "sense": "电视机",
+        "coveredBy": [
+          "tv-set"
+        ],
+        "assessment": "已由关闭具体设备及厨房里有一台电视机两个例句覆盖；需纠正可数形式说明及相关冠词辨析。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词缩写；单复数形式拼写相同，复数可写 TVs。\"",
+        "valueJson": "\"名词缩写；表示电视节目或电视媒介时通常不可数；表示电视机时可数，复数为 TVs。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"on TV 表示节目正在电视上播出。\"",
+        "valueJson": "\"on TV 表示通过电视播出；本句谈的是今晚的节目安排。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"screen\",\"zh\":\"屏幕\",\"note\":\"只指显示画面的部分，不等于整台电视机。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"television set 可替代 TV 指电视机；screen 只指屏幕部件。\"",
+        "valueJson": "\"television set 可替代本义的 TV，指整台电视机。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"冠词会影响表达重点：watch TV 通常表示看电视节目；watch the TV 更容易指看某台电视机或盯着设备本身。\"",
+        "valueJson": "\"watch TV 是表示“看电视节目”的常用说法；watch the TV 在语法上也成立，可在上下文中表示看某台特定电视机播放的节目。the 限定设备，并不表示一定在盯着机器本身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"有 the 时通常指一台特定的电视机；具体意思仍要看上下文。\"",
+        "valueJson": "\"the 限定特定的电视机；watch the TV 仍可表示观看它播放的节目。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/en",
+        "expectedValueJson": "\"The repairer looked at the TV.\"",
+        "valueJson": "\"We watched the TV in the hotel lounge while we waited.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/zh",
+        "expectedValueJson": "\"维修人员查看了那台电视机。\"",
+        "valueJson": "\"等候时，我们在酒店休息室看了电视。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"这里查看的是具体设备；更自然地表达“看节目”时用 watch TV。\"",
+        "valueJson": "\"the TV in the hotel lounge 限定休息室里的那台电视机；这里仍是在观看电视节目。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表示看电视节目时记住 watch TV；要指具体机器，可用 the TV。\"",
+        "valueJson": "\"泛指看电视节目常用 watch TV；watch the TV 可指看特定电视机播放的节目，不能只凭 the 判断是在观察机器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"TV 是 television 的缩写，由该词的首字母 T 和 V 构成。\"",
+        "valueJson": "\"TV 是 television 的缩写，取其中的字母 t 和 v，通常写成大写 TV。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_tv\",\"title\":\"Oxford Learner’s Dictionaries: TV\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/tv\",\"supports\":[\"TV 的词性、缩写身份、读音和常见用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_tv_en\",\"title\":\"Wiktionnaire：TV（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/TV#Anglais\",\"supports\":[\"TV 是 television 的缩写\",\"电视节目或媒介与电视机两个名词义\",\"英美读音、变体 tv、同义表达 television 和英式 telly，以及 TV set\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_tv\"]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tv\"]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_tv\"]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_tv\"]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_tv\"]",
+        "valueJson": "[\"wiktionary_tv_en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1471,
+    "headword": "TV (=television)",
+    "meaning_zh": "电视",
+    "phonetic": "/'ti:'vi:/",
+    "pos": "",
+    "forms": []
+  }
+}

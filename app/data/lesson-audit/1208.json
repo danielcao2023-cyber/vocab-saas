@@ -1,0 +1,320 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ec55cb1742ba674cd1b3fa752ae601775f7f5daec9b10fc4de2ea6ba64e2b585",
+    "executedReviewPromptHash": "ec55cb1742ba674cd1b3fa752ae601775f7f5daec9b10fc4de2ea6ba64e2b585",
+    "reviewHash": "2fb0ee8842971e4f7c5aaeac3a9fb12097f83cca20cd70d4a5a03707676e38a7",
+    "wordId": 1208,
+    "inputHash": "637700691b6b818e0bcfcffff5891398276cc810c7e1018b3882dc559c0cd37f",
+    "draftHash": "09a33a2c25a26d0cac5b4fc958eaad54002f007c7b54383bed504be30f3cd9f3",
+    "finalHash": "becf0d8d0747707ebb30074f0f723b61c0e43f5a917fe5b9be788c23d8f3c46f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/seem#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.249Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116723,
+        "revisionId": 39751546,
+        "revisionTimestamp": "2026-08-02T17:11:19Z",
+        "sha256": "c8ad963ceb87da8993f70228a5345e527b4cb293cefba6bd25401dd899defd2e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/seem",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:40:08.156Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:45:47.791Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note, /wordFamily/0/spellingNote",
+        "message": "seem 以 m 结尾，seeming 是直接加 -ing，两个 e 都保留；两处“去掉词尾 e”均错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源阶段含“原材料列出”等占位说明，没有解释已有可靠释义。应补明 sœmr → sœma → semen 的派生、借用关系；只有重构字形而未给出释义的 *sōm- 留在概述中，不编造释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources, /pronunciation/sourceIds, /senses, /confusions, /wordFamily",
+        "message": "Oxford 不在实际取回材料中，却承担了多数出处引用。应移除该来源，将材料能够支持的内容关联到法语维基词典的英语词条；未获该词条直接支持的辨析使用空 sourceIds。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples, /senses/1/patterns",
+        "message": "核心义已覆盖，但常用功能仍需补齐：材料直接展示的判断者 to someone、as if/as though，以及完成不定式、can't seem to 和 there 存在句。应在同一义下补充，说明先后时间及 can't seem to 与普通否定的区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning, /wordFamily/0/example",
+        "message": "seeming 的名词用法较少见，应标明；现有“表面上的寂静”缺少支持其“只是表象”的情境，换用表面自信与实际紧张的对照更清楚。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/cues/0/text",
+        "message": "“天空 seem dark”容易被当作可直接说出的英语，未体现单数主语所需的 seems；应使用完整句子。"
+      }
+    ],
+    "coverageAssessment": "已核对可取回词典的全部定义：seem 只有一个常用动词核心义，初稿 s1、s2 是该义的两组句法用法，各有两个自然原创例句，无须另造词义。补丁补充常用结构，并修正拼写、词源和来源归属。Cambridge 未取回，未据其推断额外义项；语法扩展与辨析依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "英语动词：给人某种印象；显得、似乎，可描述状态、身份、动作或整个情况。",
+        "coveredBy": [
+          "s1",
+          "s2"
+        ],
+        "assessment": "s1 覆盖形容词补语及 like + 名词，s2 覆盖不定式和从句；两组共享同一核心意义。补入判断者、as if/as though、完成不定式、can't seem to 及存在句后，初中常用功能覆盖充分。材料未列出其他常用词性或独立核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"直接加 -ing：seem → seeming，两个 e 都保留。seem 表示状态，通常不用进行时。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -ing 时去掉词尾 e：seem → seeming。\"",
+        "valueJson": "\"seem 直接加 -ing：seem → seeming，两个 e 都保留，不删字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"表面上的；外观；表象\"",
+        "valueJson": "\"表面上的（形容词）；外观、表象（较少见的名词用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"wf-ex1\",\"senseId\":\"s1\",\"en\":\"The seeming silence made us feel uneasy.\",\"zh\":\"表面上的寂静让我们感到不安。\",\"note\":\"这里 seeming 作形容词，表示表面呈现的状态。\"}",
+        "valueJson": "{\"id\":\"wf-ex1\",\"senseId\":\"s1\",\"en\":\"Her seeming confidence hid how nervous she was.\",\"zh\":\"她表面上的自信掩盖了内心的紧张。\",\"note\":\"seeming 作形容词，修饰 confidence；她显得自信，实际上很紧张。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"看着乌云，说天空 seem dark。\"",
+        "valueJson": "\"看着乌云，说 The sky seems dark；The sky 是单数主语，这里用 seems。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"seem 后接 to 加动词原形；否定可说 not seem to。\"",
+        "valueJson": "\"to 后接动词原形。一般现在时的否定用 don't/doesn't seem to...，如 He doesn't seem to know（他似乎不知道）；can't seem to... 则常表示想做却总做不到。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-ex3\",\"senseId\":\"s2\",\"en\":\"It seems to me as if we've taken the wrong bus.\",\"zh\":\"我觉得我们好像坐错公交车了。\",\"note\":\"to me 点明判断者；as if 后接完整从句，也可换成 as though。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-ex4\",\"senseId\":\"s2\",\"en\":\"I seem to have left my keys at home.\",\"zh\":\"我好像把钥匙落在家里了。\",\"note\":\"现在根据情况作判断；把钥匙落在家里的动作发生在此前，所以用 to have left。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-ex5\",\"senseId\":\"s2\",\"en\":\"I can't seem to open this jar.\",\"zh\":\"我怎么也打不开这个罐子。\",\"note\":\"can't seem to 常表示想做或试过，却总做不到。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-ex6\",\"senseId\":\"s2\",\"en\":\"There seems to be a problem with the printer.\",\"zh\":\"打印机好像有点问题。\",\"note\":\"There seems to be... 表示“似乎有……”；a problem 是单数，这里用 seems。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It seems to someone (that) + clause\",\"zh\":\"在某人看来，似乎……\",\"note\":\"to someone 点明是谁作判断；It seems to me that... 表示“我觉得似乎……”。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It seems as if / as though + clause\",\"zh\":\"看起来好像……\",\"note\":\"as if/as though 后接完整从句；也可加入 to me 等短语。表达有迹象支持的推测时，不要求一律用过去时。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"seem to have + past participle\",\"zh\":\"似乎此前已经……\",\"note\":\"to have 加过去分词，表示动作发生在 seem 所表达的判断之前；seemed to have done 则表示动作早于过去的判断。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"can't / couldn't seem to do something\",\"zh\":\"怎么也做不到某事\",\"note\":\"常表示想做或试过却总做不到，语气可以较委婉；can't/couldn't 后用原形 seem。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"There seems / seem to be + noun phrase\",\"zh\":\"似乎有……\",\"note\":\"用于存在句。标准书面英语中，单数名词短语用 seems，复数名词短语用 seem，如 There seem to be two problems。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中 seem 是一个完整的动词，适合整体记忆。给定的历史来源记载了一条从古诺尔斯语到中古英语的传承线索。\"",
+        "valueJson": "\"seem 的前身是中古英语 semen（似乎；适合），来自古诺尔斯语 sœma（与……相符；适合）。sœma 又由形容词 sœmr（合适的）派生；更早可追溯到重构的原始日耳曼语形式 *sōm-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"sœma\",\"meaning\":\"原材料列出此形式作为 seem 的来源之一。\"},{\"language\":\"中古英语\",\"form\":\"semen\",\"meaning\":\"原材料说明此形式沿承自古诺尔斯语，意为“似乎；相称”。\"}]",
+        "valueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"sœmr\",\"meaning\":\"合适的（形容词）\"},{\"language\":\"古诺尔斯语\",\"form\":\"sœma\",\"meaning\":\"与……相符；适合（由 sœmr 派生的动词）\"},{\"language\":\"中古英语\",\"form\":\"semen\",\"meaning\":\"似乎；适合（来自古诺尔斯语 sœma）\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里概述的是来源所列的历史传承；不要把现代拼写 seem 拆成词根和词缀来解释。\"",
+        "valueJson": "\"星号 * 表示语言学上重构的形式。现代 seem 应整体记忆；历史上的派生和借用关系，不等于现代英语中的词根、词缀拆分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[\"wiktionary-seem-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[\"wiktionary-seem-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[\"wiktionary-seem-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[\"wiktionary-seem-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-seem\"]",
+        "valueJson": "[\"wiktionary-seem-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-seem\",\"title\":\"Oxford Learner’s Dictionaries: seem\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/seem\",\"supports\":[\"seem 的常用含义和例句结构\",\"seem + 形容词、seem to do、It seems that... 等用法\",\"seem 的词形变化及 seeming、seemingly 等相关词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: seem（英语词源条目）\"",
+        "valueJson": "\"Wiktionnaire：seem（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"来源所列的 seem 历史传承线索\"]",
+        "valueJson": "[\"英语动词 seem 的基本义，以及形容词补语、不定式和 seem to someone as though... 的用例\",\"读音 /siːm/ 及与 seam 同音\",\"seeming、seemingly 的衍生词关系\",\"中古英语 semen、古诺尔斯语 sœma、sœmr 及原始日耳曼语重构形式 *sōm- 的词源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1208,
+    "headword": "seem",
+    "meaning_zh": "vi. 象是, 似乎",
+    "phonetic": "/si:m/",
+    "pos": "",
+    "forms": []
+  }
+}

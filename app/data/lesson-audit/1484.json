@@ -1,0 +1,573 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "418b97fdae7c86d8b80fc74864dc250dc5b4620db6489c6f81f257d535a267a8",
+    "executedReviewPromptHash": "418b97fdae7c86d8b80fc74864dc250dc5b4620db6489c6f81f257d535a267a8",
+    "reviewHash": "a8090ba877e854d5cd32d1bb38edcfd3d6bb300842b682e0f3a5ba33a690aef4",
+    "wordId": 1484,
+    "inputHash": "dc80701968547f4a9568a65c997ef21cd857ce2afed309ed651d81b30f887a53",
+    "draftHash": "765234eff58cffd2ddc99072e7de6f9481710227b7b8c719e6b7c8c38e24e2af",
+    "finalHash": "b3cf59173194239f29f1168d64a59d471a9ada611f8c5c61e3ccee034f3b4a6d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/up#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.913Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120063,
+        "revisionId": 39765066,
+        "revisionTimestamp": "2026-08-03T05:01:57Z",
+        "sha256": "b9f7a99128bebb15b8c0d92686f7811a7d9ae8dac156b5912a862046bc892293",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/up",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:19:29.073Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:32:22.607Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各sourceIds",
+        "message": "初稿引用了未列入实际来源的牛津词典。应改引实际取得的英语词条；由专业语言知识补充、该词条未直接说明的内容不挂靠这一来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses及/lessCommonSenses",
+        "message": "常用的 be up for（愿意参加或做某事）遗漏；完成、用尽义不宜仅列为较少见用法且只给一个例句。方位义还缺少静态的“在高处”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "首例 up the ladder 中的 up 按本课采用的传统分类是介词，不能作为副词例句；rise 也可以表示起身，原文对此的排除不正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "be up 不能简单等同于已经醒来：早晨通常表示已起床，夜间通常表示尚未就寝。stay up + time 也会诱导省掉 until 等必要成分；get up early 是动作搭配，宜与本义的状态表达区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/patterns/1及短语动词语法说明",
+        "message": "put / bring up + a price / level 容易产生不自然或歧义搭配，尤其 bring up a price 常被理解为提及价格。宾语位置规则应限定于这里的可分及物短语动词。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "网站恢复运行不能泛化为商店“营业”；名词义宜准确说明 ups and downs 中的高点、顺境，不宜笼统教成“好处”。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠材料明确记载古英语 upp，初稿仍以助记画面代替词源。应补入这一可证实事实；材料未解释其古英语字义，不构造空洞的顺序阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation、/forms及/wordFamily/0",
+        "message": "英美发音“相同”和每次都读得“有力”的说法过于绝对；既然介绍动词和名词用法，应补齐 ups、upped、upping 的实际拼写，并避免把 upper 暗示成所有 up 用法都适用的比较级。"
+      }
+    ],
+    "coverageAssessment": "已核对材料中的全部词性和定义。补齐静态方位、完成用尽和愿意参加等常用功能；核心义均有至少两个自然原创英中例句。朝上或上行的定语用法、铁路专用义及名词、动词用法分别简要呈现。数值增加和系统运行状态按专业语言知识保留，不冒称实际词条直接支持。范围仍不包括 up 的全部短语动词和习语。",
+    "senseInventory": [
+      {
+        "sense": "副词：向上；在高处；起来",
+        "coveredBy": [
+          "up-adv-direction"
+        ],
+        "assessment": "修正副词与介词例句混用，并补充静态位置例句；覆盖向上移动、站起和在高处。"
+      },
+      {
+        "sense": "介词：沿着……向上；在……上方",
+        "coveredBy": [
+          "up-prep-route"
+        ],
+        "assessment": "山坡和树的两个例句覆盖主要路线用法；道路与河流搭配另说明方向限制。"
+      },
+      {
+        "sense": "副词性小品词：动作完成；彻底；用尽",
+        "coveredBy": [
+          "up-adv-complete"
+        ],
+        "assessment": "提升为核心义，以吃完和用尽两个例句分别落实含义。"
+      },
+      {
+        "sense": "形容词：已经起床；尚未就寝",
+        "coveredBy": [
+          "up-adj-awake"
+        ],
+        "assessment": "保留早晨起床和夜间未睡的两个场景，纠正与单纯醒来的混同。"
+      },
+      {
+        "sense": "形容词：愿意参加或做某事，be up for",
+        "coveredBy": [
+          "up-adj-willing"
+        ],
+        "assessment": "新增核心义，分别展示 for 后接名词和动词-ing形式。"
+      },
+      {
+        "sense": "形容词：朝上的；向上运行的",
+        "coveredBy": [
+          "up-adj-upward"
+        ],
+        "assessment": "补入较少见义，用上行扶梯例句展示定语位置。"
+      },
+      {
+        "sense": "形容词：驶向主要终点站的，铁路用语",
+        "coveredBy": [
+          "up-adj-rail"
+        ],
+        "assessment": "补入专门用法，明确方向由铁路系统约定，并非爬坡。"
+      },
+      {
+        "sense": "名词：高的一面；高点、顺境，常见于 ups and downs",
+        "coveredBy": [
+          "up-noun-high"
+        ],
+        "assessment": "以最实用的固定复数表达介绍，不推广为任何语境中的“好处”。"
+      },
+      {
+        "sense": "及物动词：增加；提高",
+        "coveredBy": [
+          "up-verb-increase"
+        ],
+        "assessment": "作为非正式用法简要介绍，并补齐动词变化形式。"
+      },
+      {
+        "sense": "副词性小品词：数值或程度增加",
+        "coveredBy": [
+          "up-adv-increase"
+        ],
+        "assessment": "两个例句分别覆盖调高音量和提高价格；修正搭配及宾语位置说明。"
+      },
+      {
+        "sense": "表语用法：系统正常运行",
+        "coveredBy": [
+          "up-adv-available"
+        ],
+        "assessment": "保留实用补充义，限定为网站、系统等运行状态，删除“营业”的泛化。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-up\",\"title\":\"Oxford Learner’s Dictionaries: up\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/up_1\",\"supports\":[\"副词、介词和形容词的常见用法\",\"up 作副词构成短语动词的例子\",\"词族及相关用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-up\",\"title\":\"维基词典：up（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/up#Anglais\",\"supports\":[\"古英语 upp 的词源记录\",\"方位副词、介词及完成性小品词用法\",\"形容词的朝上、起床或未睡、愿意参加及铁路方向义\",\"名词及 ups and downs\",\"及物动词增加义\",\"相关词 upper 及发音资料\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"副词；介词；形容词\"",
+        "valueJson": "\"副词；介词；形容词；动词；名词\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"up 常表达朝上或到较高处；作介词时可表示沿着某条路向上，作形容词时常表示醒着或已经起床。\"",
+        "valueJson": "\"up 的基本画面是向上或在高处；还要掌握沿路向上、已经起床或尚未就寝、短语中的增加与完成，以及 be up for 的愿意参加。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式发音相同。\"",
+        "valueJson": "\"英美常见标准读音都记作 /ʌp/；具体口音中的元音音色可能不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"up 是一个音节，读得短而有力。\"",
+        "valueJson": "\"up 是一个音节；是否重读取决于它在句子中的作用和说话重点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"形容词用法不变形；常放在 be 后，表示醒着或已经起床。\"",
+        "valueJson": "\"形容词用法不变形；be up 常表示已经起床或尚未就寝，be up for ... 表示愿意参加或做某事。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"ups\",\"ipa\":\"/ʌps/\",\"note\":\"up 作动词时直接加 -s。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式／过去分词\",\"form\":\"upped\",\"ipa\":\"/ʌpt/\",\"note\":\"双写末尾的 p，再加 -ed；-ed 在这里读 /t/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词现在分词／动名词\",\"form\":\"upping\",\"ipa\":\"/ˈʌpɪŋ/\",\"note\":\"双写末尾的 p，再加 -ing。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数\",\"form\":\"ups\",\"ipa\":\"/ʌps/\",\"note\":\"直接加 -s，常见于 ups and downs。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"副词：向上；到较高处\"",
+        "valueJson": "\"副词：向上；在高处；站起来\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示动作朝较高的位置移动，也可表示站起、抬起或把某物举高。\"",
+        "valueJson": "\"表示朝较高的位置移动、处于较高位置，或随 stand 等动词表示站起、起身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常跟在表示移动或动作的动词后；具体方向由动作和上下文决定。\"",
+        "valueJson": "\"常跟在动作动词后说明方向，也可在 up there 等表达中说明位置；这一义不一定表示正在移动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/en",
+        "expectedValueJson": "\"The little boy climbed up the ladder slowly.\"",
+        "valueJson": "\"The little boy climbed up slowly.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"小男孩慢慢地爬上梯子。\"",
+        "valueJson": "\"小男孩慢慢地向上爬。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"up 表示向较高处移动。\"",
+        "valueJson": "\"up 后没有路线名词，作副词说明向上爬的方向。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"up-adv-direction-ex3\",\"senseId\":\"up-adv-direction\",\"en\":\"Your hat is up there on the top shelf.\",\"zh\":\"你的帽子在上面最顶层的架子上。\",\"note\":\"up there 表示在上面较高的位置，没有移动的意思。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"climb / walk / go up\",\"zh\":\"爬上／沿着……向上走\",\"note\":\"后面可接表示路线或高处的名词，说明移动方向。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"climb / walk / go up\",\"zh\":\"向上爬／走上去\",\"note\":\"这里 up 单独说明方向，作副词；若说 up the hill，up 后接路线名词，作介词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调位置或水平升高，常用于太阳、气球或温度；不用于表示“站起来”这一整套日常动作。\"",
+        "valueJson": "\"可表示太阳升起、温度上升，也可表示起身，如 rise from a chair；表示起身时通常比 stand up 正式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"形容词：醒着；已经起床\"",
+        "valueJson": "\"形容词：已经起床；尚未就寝\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示人已经醒来，或已经从床上起来。\"",
+        "valueJson": "\"表示已经离床起身，或到了夜间仍没有上床睡觉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常放在 be 后；be up 可表示“已经起床”，也可依上下文表示“还醒着”。\"",
+        "valueJson": "\"常放在 be 或 stay 后作表语。早晨的 be up 通常表示已经起床；夜间的 still be up 通常表示还没就寝。仅仅醒来但仍躺在床上，通常用 awake。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"be up\",\"zh\":\"醒着；起床了\",\"note\":\"根据时间和上下文判断：早晨常问是否起床，深夜常问是否还醒着。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"be up\",\"zh\":\"已经起床；还没睡\",\"note\":\"根据时间和上下文判断：早晨常指已经起床，夜间常指尚未就寝。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"stay up + time / to do something\",\"zh\":\"熬到某个时间／熬夜做某事\",\"note\":\"stay up 表示比平时晚睡或一直没有睡。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"stay up late / stay up until + 时间 / stay up to do something\",\"zh\":\"熬夜／熬到某时／熬夜做某事\",\"note\":\"表示熬到具体时刻通常用 until，如 stay up until midnight；to 后接动词原形说明目的。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"get up early\",\"zh\":\"早起\",\"note\":\"get up 指离开床铺、起身；early 说明时间早。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"be up early\",\"zh\":\"早早就起床了\",\"note\":\"be up 描述已经起床的状态；get up early 则描述早起这一动作。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"清楚说明人不在床上，但不表示一定清醒或熬夜。\"",
+        "valueJson": "\"强调已经离开床铺；awake 只说明没有睡着，不说明是否离床。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"awake 强调清醒；up 常强调已经起床，或熬夜仍醒着。\"",
+        "valueJson": "\"awake 表示没有睡着，刚醒但还躺着也可用；be up 在早晨通常表示已起床，在夜间常表示尚未就寝。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"这是常见短语动词用法；宾语可放在动词与 up 之间，也可放在 up 后。代词宾语必须放在两词之间，如 turn it up。\"",
+        "valueJson": "\"在 turn up、put up 表示调高或提高的及物用法中，普通名词宾语通常可放在动词与 up 之间，也可放在 up 后；代词宾语须放在中间，如 turn it up。go up 表示数值上升时不带宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"put / bring up + a price / level\",\"zh\":\"提高价格／水平\",\"note\":\"具体意思取决于动词与宾语搭配，常用于数字或程度增加。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"put up the price / prices\",\"zh\":\"提高价格\",\"note\":\"也可说 put the price up；表示涨了多少可用 by，如 put the price up by five dollars。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"up-adv-complete\",\"title\":\"副词性小品词：做完；用尽\",\"meaning\":\"在 eat up、use up 等短语中，up 表示动作完成，或东西全部吃完、用尽。\",\"usageNote\":\"要连同整个短语理解，不能把 up 随意加到任何动词后表达完成。eat up、use up 的名词宾语可放在中间或后面，代词宾语放在中间，如 use it up。\",\"examples\":[{\"id\":\"up-adv-complete-ex1\",\"senseId\":\"up-adv-complete\",\"en\":\"We ate up all the sandwiches.\",\"zh\":\"我们把三明治全吃完了。\",\"note\":\"eat up 强调全部吃完。\"},{\"id\":\"up-adv-complete-ex2\",\"senseId\":\"up-adv-complete\",\"en\":\"We used up the milk when we made pancakes.\",\"zh\":\"我们做薄煎饼时把牛奶用完了。\",\"note\":\"use up 表示用尽，牛奶已经没有剩余。\"}],\"patterns\":[{\"en\":\"eat / use + something + up\",\"zh\":\"把某物吃完／用尽\",\"note\":\"代词宾语放在动词和 up 之间，如 eat it up、use it up。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"eat up your lunch\",\"zh\":\"把午饭吃完\",\"note\":\"强调吃完；也可说 eat your lunch up。\",\"kind\":\"common-collocation\"},{\"en\":\"use up the paper\",\"zh\":\"把纸用完\",\"note\":\"强调纸已全部用掉。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"finish off\",\"zh\":\"吃完剩下的；完成最后部分\",\"note\":\"谈食物时可表示吃完剩余部分，常与 eat up 接近；不能在所有 use up 的场景中直接替换。\"},{\"en\":\"use all of\",\"zh\":\"把……全部用掉\",\"note\":\"用于材料、钱等，直接说明全部用掉，与 use up 接近。\"}],\"contrasting\":[{\"en\":\"leave some\",\"zh\":\"留下一些\",\"note\":\"用于食物或材料时，表示没有全部吃完或用尽。\"},{\"en\":\"have some left\",\"zh\":\"还有一些剩余\",\"note\":\"描述尚有剩余的结果，与已经用尽的状态对照。\"}],\"similarNote\":\"比较整个短语：eat up 强调吃完，use up 强调用尽，不能仅凭 up 就任意替换动词。\",\"contrastingNote\":\"这一义按具体情境用留下一些、还有剩余来对照；方向词 down 不表示这里的相反结果。\"},\"sourceIds\":[\"wiktionary-up\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"up-adj-willing\",\"title\":\"形容词：愿意参加或做某事\",\"meaning\":\"在 be up for ... 中，表示对某项活动有兴趣、愿意参与或愿意做。\",\"usageNote\":\"这是非正式表达。for 是介词，后接名词或动词-ing形式，不接 to do。\",\"examples\":[{\"id\":\"up-adj-willing-ex1\",\"senseId\":\"up-adj-willing\",\"en\":\"I'm up for a walk after lunch.\",\"zh\":\"我愿意午饭后去散步。\",\"note\":\"for 后接名词短语 a walk，表示有兴趣参与。\"},{\"id\":\"up-adj-willing-ex2\",\"senseId\":\"up-adj-willing\",\"en\":\"Are you up for playing tennis on Saturday?\",\"zh\":\"你愿意星期六打网球吗？\",\"note\":\"for 后接 playing，询问对方是否有兴趣。\"}],\"patterns\":[{\"en\":\"be up for + 名词 / 动词-ing形式\",\"zh\":\"愿意参加……／愿意做……\",\"note\":\"例如 up for a game、up for going out。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be up for a game\",\"zh\":\"愿意玩一局／参加比赛\",\"note\":\"用于邀请或回应邀请，具体活动由上下文说明。\",\"kind\":\"common-collocation\"},{\"en\":\"be up for going out\",\"zh\":\"愿意出去\",\"note\":\"going 是介词 for 后的动词-ing形式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"feel like\",\"zh\":\"想要；有兴致\",\"note\":\"也接名词或动词-ing形式，更强调当时的兴致。\"},{\"en\":\"be willing to\",\"zh\":\"愿意做\",\"note\":\"to 后接动词原形，直接说明意愿，不一定表示对活动很有兴致。\"}],\"contrasting\":[{\"en\":\"not be up for\",\"zh\":\"不想参加；没有兴致做\",\"note\":\"直接否定这一表达，常用于婉拒活动邀请。\"},{\"en\":\"be unwilling to\",\"zh\":\"不愿意做\",\"note\":\"明确表达不愿意，语气可比 not be up for 更坚决；后接动词原形。\"}],\"similarNote\":\"意思接近时仍须保留各自结构：up for doing、feel like doing、willing to do。\",\"contrastingNote\":\"这里对照的是参与意愿；不能把表示方向的 down 直接当作这一表达的反义词。\"},\"sourceIds\":[\"wiktionary-up\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"up-adv-complete\",\"title\":\"副词：彻底；完全\",\"meaning\":\"在 eat up、use up 等短语中，up 可强调动作做到彻底或东西用尽。\",\"note\":\"常见于短语动词，具体含义要结合前面的动词理解。\",\"example\":{\"id\":\"up-adv-complete-ex1\",\"senseId\":\"up-adv-complete\",\"en\":\"We ate up all the sandwiches.\",\"zh\":\"我们把三明治全吃完了。\",\"note\":\"eat up 强调全部吃完。\"},\"sourceIds\":[\"oxford-up\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"副词：可用；营业\"",
+        "valueJson": "\"表语用法：系统正常运行\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在时间或服务场景中，up 可表示服务已可使用或系统已恢复运行。\"",
+        "valueJson": "\"在 be up 中作表语，表示网站、系统等正在正常运行、可以使用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见表达包括 The website is up，表示网站已能正常访问。\"",
+        "valueJson": "\"用于网站、系统等的运行状态；表示商店正在营业通常用 open。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/title",
+        "expectedValueJson": "\"名词：好处；上升阶段\"",
+        "valueJson": "\"名词：高点；顺境（常用复数）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/meaning",
+        "expectedValueJson": "\"在非正式表达或固定说法中，up 可作名词，表示好处或上升的一面。\"",
+        "valueJson": "\"在 ups and downs 等说法中，ups 指生活或经历中的高点、顺利阶段，与 downs 所指的低谷、逆境相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"up-adj-upward\",\"title\":\"形容词：朝上的；向上运行的\",\"meaning\":\"放在名词前，可表示朝上的一面，或向上运行的设备。\",\"note\":\"如 the up side 表示朝上的一面；up escalator 表示上行扶梯。描述位置较高的楼层通常用 upper。\",\"example\":{\"id\":\"up-adj-upward-ex1\",\"senseId\":\"up-adj-upward\",\"en\":\"Take the up escalator to the second floor.\",\"zh\":\"乘上行扶梯到二楼。\",\"note\":\"up 放在 escalator 前，说明扶梯向上运行。\"},\"sourceIds\":[\"wiktionary-up\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"up-adj-rail\",\"title\":\"形容词：驶向主要终点站的（铁路用语）\",\"meaning\":\"在铁路用语中，标记驶向主要终点站的方向。\",\"note\":\"方向由铁路系统约定，不表示列车正在爬坡；属于专门用语。\",\"example\":{\"id\":\"up-adj-rail-ex1\",\"senseId\":\"up-adj-rail\",\"en\":\"The next train will use the up line.\",\"zh\":\"下一班列车将走开往主要终点站方向的线路。\",\"note\":\"up 修饰 line，表示约定的铁路行车方向。\"},\"sourceIds\":[\"wiktionary-up\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"关键看 up 后面是否直接接名词，以及它在句子中承担的作用。\"",
+        "valueJson": "\"要判断 up 后的名词是否说明移动路线。up the stairs 中的 stairs 是路线；turn up the volume 中的 volume 是短语动词的宾语，不能只因 up 后有名词就判为介词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"短语动词的名词宾语位置较灵活，代词宾语必须放在动词和 up 之间。\"",
+        "valueJson": "\"turn up 表示调高时是可分的及物短语动词：普通名词宾语位置较灵活，代词宾语放在 turn 和 up 之间。其他短语动词须分别学习，不能一律套用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中，up 是一个基本方位词；可用“往高处走”的画面记住它在方向和路线表达中的常见用法。\",\"stages\":[],\"caveat\":\"上面的画面联想用于帮助记忆，不代表 up 的历史词源；此处不展开历史演变。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语 up 源自古英语 upp。\",\"stages\":[],\"caveat\":\"“往高处走”的画面可用来助记，但不能据此推断各个短语义的历史形成过程。\",\"sourceIds\":[\"wiktionary-up\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"up + -er，形成表示位置较高的相关词。\"",
+        "valueJson": "\"up 的相关形容词；形式上可记为 up + -er，并双写 p，表示位置较高，不能套用于 up 的所有义项。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[\"wiktionary-up\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-up\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对比 eat up 与 use up 的吃完、用尽，再用 be up for a walk 和 be up for playing tennis 练习表达参与意愿。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1484,
+    "headword": "up",
+    "meaning_zh": "adv. 向上；起来\nprep. 沿着……向上",
+    "phonetic": "/ʌp/",
+    "pos": "",
+    "forms": []
+  }
+}

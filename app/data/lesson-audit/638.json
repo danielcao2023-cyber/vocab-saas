@@ -1,0 +1,318 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ef80f025e425b7e1d1981b4f2bfb4d9ed643694cf6c7019027620fd0159ac403",
+    "executedReviewPromptHash": "ef80f025e425b7e1d1981b4f2bfb4d9ed643694cf6c7019027620fd0159ac403",
+    "reviewHash": "f64b9ff81ce13626bc39b5b8d59977145094fd92afdabafc110e5a98f52e4818",
+    "wordId": 638,
+    "inputHash": "08152710551cc426d80eaae67ba3f683d0a2283a4881b56887036f0b9a47b7b2",
+    "draftHash": "97f9f3e7bb10fbd8fb9568a5a61c1da3281203914110b6e644235187e0a59da3",
+    "finalHash": "a14207ab3690cf9814ae86e79da0c3a86a3ce3452e49e5b85839425a95598d02",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/helpful#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.201Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121997,
+        "revisionId": 34936124,
+        "revisionTimestamp": "2024-05-28T06:10:49Z",
+        "sha256": "c226310cde0c6f82a774e67cdf1f187085b1e16475143394c5649194aefcad5e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/helpful",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:38:20.748Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:47:49.448Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各 sourceIds",
+        "message": "Cambridge 未取得正文，不能作为本次审校的资料依据。应引用实际取得的法语维基词典英语词条，并按其支持范围分配引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/formation；/wordFamily/1/spellingNote",
+        "message": "helpfully 不涉及删除 e；helpful 词尾只有一个 l，与 -ly 开头的 l 相接，才形成末尾的 -lly。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/formation",
+        "message": "helpfulness 由 helpful 直接加 -ness 构成，不删除词尾 l。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源材料说明 help + -ful 的派生关系，应明确写出并引用相同 URL；不必编造历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/patterns/0",
+        "message": "be helpful to sb 的基本意思是“对某人有帮助”，并不单独表示助人意愿或长期性格；现有中文解释过窄且不自然。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "supportive 强调支持或鼓励，不固有地表示比 helpful 更持久。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "标题说两个错误，实际列了三项；“helpful（一个 l）”应明确限定为后缀。另应说明 helpful for sb 也正确，避免把常用搭配误记为排他规则。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "可在现有义项中明确涵盖“做法有益”，补一条例句及常见的 It is helpful to do sth 结构，无须另立第三义。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的 serviable、utile、bénéfique。分为“乐于助人”和“有帮助、可带来益处”两类合理，原稿每类已有两个例句；修订补充做法有益的具体情境和常见不定式结构。未见其他需补列的常用词性或独立义项。词源限定为可证实的派生关系，不扩展为年代或音变链。",
+    "senseInventory": [
+      {
+        "sense": "乐于助人、热心提供帮助（serviable）",
+        "coveredBy": [
+          "helpful-adj-person"
+        ],
+        "assessment": "已有两个生活例句；修正 to sb 的中文解释，区分助人态度、具体帮助和长期性格。"
+      },
+      {
+        "sense": "有用、有帮助、有益（utile / bénéfique）",
+        "coveredBy": [
+          "helpful-adj-useful"
+        ],
+        "assessment": "地图和建议的例句覆盖实际用途；新增做法带来益处的例句，使“有益”明确呈现，仍归入同一常用义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_helpful\",\"title\":\"Cambridge Dictionary: helpful\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/helpful\",\"supports\":[\"helpful 的词性、读音和常见含义\",\"helpful 的比较级、最高级及相关派生形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_helpful\",\"title\":\"Wiktionnaire：helpful（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/helpful#Anglais\",\"supports\":[\"helpful 的形容词词性及有益、有用、乐于助人的含义\",\"help 加后缀 -ful 的派生关系\",\"派生词 helpfully 和 helpfulness\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_helpful\"]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_helpful\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可看作 help（帮助）加形容词后缀 -ful，表示“充满帮助、能提供帮助的”。这是便于记忆的构词解释；历史词源关系尚不在此作进一步断言。\"",
+        "valueJson": "\"helpful 由英语 help（帮助）加形容词后缀 -ful 派生而来，表示“有帮助的；乐于助人的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"help + -ful 是现代英语中清楚的构词分析；它不等同于完整的历史演变说明。\"",
+        "valueJson": "\"这里说明实际的派生构词关系；-ful 不必逐字译成“充满”。地图故事只是助记情境，不是历史词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"helpful 去掉词尾 e（本词没有 e），直接加 -ly。\"",
+        "valueJson": "\"helpful 直接加副词后缀 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"helpful + ly 写作 helpfully；保留 helpful 末尾的两个 l。\"",
+        "valueJson": "\"helpful + -ly 写作 helpfully；helpful 词尾的 l 与 -ly 开头的 l 相接，所以末尾是 -lly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"helpful 去掉词尾 l，再加 -ness。\"",
+        "valueJson": "\"helpful 直接加名词后缀 -ness，保留词尾 l。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于描述人的性格或行为；可说 be helpful to someone，表示“对某人很乐于助人”。\"",
+        "valueJson": "\"可描述人的助人态度或具体行为。be helpful to someone 表示“对某人有帮助”；主语是人时，可根据语境译为“热心帮助某人”，不一定是在评价长期性格。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/zh",
+        "expectedValueJson": "\"对某人乐于助人\"",
+        "valueJson": "\"对某人有帮助；热心帮助某人\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"常用于描述一个人对谁提供帮助。\"",
+        "valueJson": "\"to sb 指明帮助的对象；主语既可以是人，也可以是建议、信息等事物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常指在情感或行动上支持某人，语气比 helpful 更强调持续支持。\"",
+        "valueJson": "\"侧重在情感、态度或行动上给予支持和鼓励，不限定支持持续多久。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"helpful 的两个常见错误\"",
+        "valueJson": "\"helpful 的常见易错点\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"形容对某人有帮助常用 helpful to sb；说明对某项任务有帮助常用 helpful for sth。\"",
+        "valueJson": "\"helpful to sb 常表示“对某人有帮助”；helpful for sth/doing sth 常说明用途或任务。for 后也可接人，例如 This map is helpful for visitors（这张地图对游客有帮助），不能机械记成“人用 to，事用 for”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"拼写记 helpful（一个 l）；描述对人有帮助常用 helpful to，对事情有帮助常用 helpful for。\"",
+        "valueJson": "\"拼写记 help + -ful，后缀只有一个 l；helpful 是形容词。helpful to sb 常说明帮助的对象，helpful for sth/doing sth 常说明用途或任务，helpful for sb 也正确。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"有帮助的；有用的\"",
+        "valueJson": "\"有帮助的；有用的；有益的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"形容建议、信息、书籍或工具能解决问题、让事情更容易。\"",
+        "valueJson": "\"形容建议、信息、工具或做法能提供帮助、使事情更容易，或带来好处。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"helpful-useful-3\",\"senseId\":\"helpful-adj-useful\",\"en\":\"It's helpful to take a short break when you lose focus on your homework.\",\"zh\":\"写作业走神时，短暂休息一下会有帮助。\",\"note\":\"这里指一种做法带来好处；It is helpful to do sth 表示“做某事有帮助”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It is helpful to do sth\",\"zh\":\"做某事有帮助\",\"note\":\"it 是形式主语，to do sth 说明什么做法有帮助。这里的 to 后接动词原形，与 helpful to sb 中接人的介词 to 不同。\",\"kind\":\"sentence-pattern\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 638,
+    "headword": "helpful",
+    "meaning_zh": "adj. 有帮助的, 有益的, 有用的",
+    "phonetic": "/'helpful/",
+    "pos": "",
+    "forms": []
+  }
+}

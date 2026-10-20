@@ -1,0 +1,313 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "76ac1d58fa11309f7c631560d911550ccc35a5388712a3e941faf0eab8d939c9",
+    "executedReviewPromptHash": "76ac1d58fa11309f7c631560d911550ccc35a5388712a3e941faf0eab8d939c9",
+    "reviewHash": "e86efb1056d5fb233225a2da79ddb9d78b27979f1309f21fa5d10b652fe2e34a",
+    "wordId": 993,
+    "inputHash": "ede06674e6cecfe8b851d0473c77ca53e5c9c22199573f65b01ff3186da8398c",
+    "draftHash": "a009ecd501f4c100516f4ef925b1144bda33c14e66b3894808a8934e71ff11db",
+    "finalHash": "65592b75de444960624f99c999572a720cd34d2e0d448af9692f35e784f8aa5e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/passport#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.184Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117605,
+        "revisionId": 39760693,
+        "revisionTimestamp": "2026-08-03T00:41:26Z",
+        "sha256": "3cb1a1dc0770bd529ea9eeeb4b6fbda32a11c1e77a29cd24c419e5352fa749f1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/passport",
+        "section": "passport noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "080d843129f7ac2776f3a7dfadcf0b9e9b2da9d07b2bbae501dfc7b6c3e65d55",
+        "summaryAndSupportsWordCount": 76,
+        "sha256": "080d843129f7ac2776f3a7dfadcf0b9e9b2da9d07b2bbae501dfc7b6c3e65d55",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/993.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/passport",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:26:41.813Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:34:24.040Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 未出现在实际取得的材料中，Cambridge 检索失败，却被挂接为多项内容的支持来源。应改用已取得的 Wiktionnaire 英语词条；该词条未支持的比喻义和辨析不挂靠来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的例句对象",
+        "message": "九个例句对象均缺少目标结构要求的 note。补齐说明，并保留全部核心义例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote；/pronunciation/notes/0",
+        "message": "首音节说明实际只标出了部分音段；“不要读成单独的港口”混淆读音与词义，且可能误导学生改变 -port 的正常读音。应说明首元音、重音及 r 的英美差异。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0/note",
+        "message": "valid 表示有效，不能仅解释为仍在有效期内。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote；/senses/1/examples",
+        "message": "“进入机会”不自然；两个比喻义例句也未达到每义两个具体生活情境的标准。改为明确的求职情境，并点明 to 是介词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "ticket to 比 passport to“更形象”并非稳定的用法区别。应说明二者在机会、目标语境中的相近点和互换限制。"
+      }
+    ],
+    "coverageAssessment": "已核对“护照”及“获得机会、实现目标的条件或手段”两项常用名词义；“手段、通行证”属于同一比喻义，无须拆分。修订后每义各有两个具体原创例句。词形、拼写、翻译及词源顺序无须另改；身份证仅作证件用途对照，barrier to 仅作比喻语境中的反向表达。来源局限是：已取得的 Wiktionnaire 英语词条直接支持护照义、读音和规则名词信息，比喻义与辨析依据专业语言知识审核；历史词源已有同 URL 的 Etymonline 材料支持。",
+    "senseInventory": [
+      {
+        "sense": "名词：护照，供国际旅行使用的官方身份与国籍证件",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义已覆盖；携带护照和换发护照两个生活例句自然。可数性、规则复数及常用动词搭配正确。"
+      },
+      {
+        "sense": "名词，比喻：获得机会、进入某领域或实现目标的条件、资格、本领或手段",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "核心义已覆盖，主要结构为 a passport to + 名词短语。修订为英语能力帮助求职、驾照帮助获得配送司机工作的两个具体例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式首音节常读 /pɑː/，美式常读 /pæ/。\"",
+        "valueJson": "\"英式首个元音通常为 /ɑː/，美式通常为 /æ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一个音节；末尾的 -port 不要读成单独的“港口”。\"",
+        "valueJson": "\"重音在第一个音节；-port 中的 r 在标准英式中通常不读，在美式中通常读出。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\"]",
+        "valueJson": "[\"wiktionary_passport\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"my passport 用物主代词 my 限定，前面不再加 a。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"renewed 是 renew 的过去式；renew one's passport 表示续办或换发护照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"valid 表示证件仍在有效期内。\"",
+        "valueJson": "\"valid 表示证件有效，不仅指尚未过期。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\",\"cambridge_passport\"]",
+        "valueJson": "[\"wiktionary_passport\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 passport to + 名词，强调某种条件能带来进入机会；这里不是实际证件。\"",
+        "valueJson": "\"常见结构是 a passport to + 名词（短语），强调某种条件有助于获得机会或达到目标；这里不是实际护照，to 是介词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"s2e1\",\"senseId\":\"s2\",\"en\":\"For her, good English was a passport to new opportunities.\",\"zh\":\"对她来说，良好的英语能力是获得新机会的通行证。\"}",
+        "valueJson": "{\"id\":\"s2e1\",\"senseId\":\"s2\",\"en\":\"For Mia, fluent English was a passport to a job at an international hotel.\",\"zh\":\"对米娅来说，流利的英语成了她获得国际酒店职位的通行证。\",\"note\":\"a passport to a job 把英语能力比作求职的通行证；to 后接名词短语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"Hard work can be a passport to success.\",\"zh\":\"努力可以成为通向成功的通行证。\"}",
+        "valueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"A driving licence was Sam's passport to a job as a delivery driver.\",\"zh\":\"驾照成了萨姆获得配送司机工作的通行证。\",\"note\":\"Sam's passport 用所有格 Sam's 限定；这里的 passport 比喻帮助他获得工作的资格。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"也可作比喻，语气较形象，常指进入某种机会或体验。\"",
+        "valueJson": "\"也可比喻获得机会或达到某种结果的条件；在 ticket to success 等表达中与 passport to 接近，但并非处处可以互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"key to 侧重关键因素；ticket to 与 passport to 相近，但语气更形象。\"",
+        "valueJson": "\"key to 侧重关键因素；ticket to 与 passport to 都可比喻获得机会或实现目标的条件，能否互换取决于具体搭配和语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"keep ... in a safe place 表示把某物保管在安全的地方。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 pass 是进入建筑物的通行证，不是国际旅行用的护照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"passport 连写；her passport 表示她的护照。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"此处 port 指港口；表示护照应使用连写的 passport。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"passports 是复数，作主语时与 are 搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passport\"]",
+        "valueJson": "[\"wiktionary_passport\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_passport\",\"title\":\"Oxford Learner’s Dictionaries: passport\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/passport\",\"supports\":[\"名词常用义与复数形式\",\"英式和美式发音\",\"passport 的典型搭配及例句语境\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_passport\",\"title\":\"Wiktionnaire：passport（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/passport#Anglais\",\"supports\":[\"英语名词 passport 的护照义\",\"词条所列的英式和美式读音\",\"规则名词的词形信息\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_passport\",\"title\":\"Cambridge Dictionary: passport\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/passport\",\"supports\":[\"护照的现代常见含义\",\"国际旅行中的使用语境\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 993,
+    "headword": "passport",
+    "meaning_zh": "n. 护照, 手段, 通行证",
+    "phonetic": "/'pæspɒ:t/",
+    "pos": "",
+    "forms": []
+  }
+}

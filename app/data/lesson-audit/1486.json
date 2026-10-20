@@ -1,0 +1,269 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "88dbb5fdda4bd791252fbdad4e0e54a669a743358b10478c4d042e8498d59c55",
+    "executedReviewPromptHash": "88dbb5fdda4bd791252fbdad4e0e54a669a743358b10478c4d042e8498d59c55",
+    "reviewHash": "f9dd16a840d4520a72629f1cf40f99b2f82cfb97a62474334a3e4cf5ac0a1a77",
+    "wordId": 1486,
+    "inputHash": "dcbd944d9385c4ecfd77d4a9f6f3a1091c49c00ee495bd8d57c08302db35c387",
+    "draftHash": "17c9f2f2ceceac3aa2fe08a57a0f9ac487c10ba62038c9d2a4871e7e43ed4db3",
+    "finalHash": "09a3979aeb8617a7aaa4031c77e2ba70844c92d9704383a5306edd8b32a39d42",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/us#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.914Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116212,
+        "revisionId": 39764249,
+        "revisionTimestamp": "2026-08-03T04:47:07Z",
+        "sha256": "f6314ba50bc8af3533b6d3a6486de5fff0c3069485d3283ff675c1f17494ea15",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/us",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:24:13.280Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:30:41.282Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未成功获取，不能据其标注具体支持内容。应改引已获取的法语维基词典英语词条，并同步修正来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“单复数形式相同”错误。us 是第一人称复数宾格；对应的第一人称单数宾格是 me。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "We made it ourselves 中的 ourselves 表示强调，不是动作回到主语自身的反身用法。需要分别解释并举例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1",
+        "message": "“与我们有关”不宜作为裸词组 with us 的常规释义；应保留明确、可直接运用的“和我们一起”。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源材料，初稿仍未写出古英语 us 这一来源。材料仅明确历史字形关系，宜补入 summary，继续保留空 stages，避免补造阶段释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "基本宾语用法已有两个合格例句，但常用的 let's 建议结构与口语表语 It's us 尚未覆盖。可在同一本义下补充，无须另造义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items",
+        "message": "主格、宾格应按句法位置区分。“动作由我们来做”不能作为使用 we 的判据，例如被动句中的 we 并非动作发出者。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "强读的说明应围绕强调与对比，避免让学生把句首位置当作强读条件。"
+      }
+    ],
+    "coverageAssessment": "可用词典只列出人称代词“我们”这一基本义，不应机械拆成多义。原稿的动词宾语、介词宾语例句自然且翻译准确；补丁在同一义项下补齐常用的 let's 结构和口语表语用法，保留四个原创英中例句。we、ourselves、them、you 的对照已核对，其中 ourselves 的说明已纠正；这些代词之间不构成固定反义关系。空词族可保留，相关代词形式无需伪装成派生词。词源仅补入材料明确支持的古英语来源；未扩展地区性或特殊语体用法。",
+    "senseInventory": [
+      {
+        "sense": "第一人称复数人称代词的宾格：我们，通常指说话者与至少另一人",
+        "coveredBy": [
+          "us-object"
+        ],
+        "assessment": "词典明确支持这一基本义。原稿覆盖动词宾语和介词宾语；补丁增加同一本义下的常用 let's 建议结构及口语表语用法，不另拆义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-us\",\"title\":\"Cambridge Dictionary：us\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/us\",\"supports\":[\"us 的人称代词用法\",\"重读与弱读发音\",\"与 we 的语法区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-us\",\"title\":\"法语维基词典：us（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/us#Anglais\",\"supports\":[\"us 表示“我们”的人称代词用法\",\"重读 /ʌs/ 与非重读 /əs/\",\"us 源自古英语 us\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-us\"]",
+        "valueJson": "[\"wiktionary-us\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-us\"]",
+        "valueJson": "[\"wiktionary-us\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-us\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"句首或特别强调时，us 通常读重音形式 /ʌs/。\"",
+        "valueJson": "\"强调或对比“我们”时，us 用强读 /ʌs/；不强调时常弱读为 /əs/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"人称代词的宾格形式，单复数形式相同；在常见用法中不随主语的人称或数量变化。\"",
+        "valueJson": "\"第一人称复数人称代词的宾格，与主格 we 对应；第一人称单数的宾格是 me。us 不随句子主语的人称或数量变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指说话者和至少另一人，作动词的宾语，或放在介词后。\"",
+        "valueJson": "\"指说话者和至少另一人，通常作动词宾语或介词宾语；日常口语中也可作表语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"us 是第一人称复数人称代词的宾格。作主语通常用 we：We saw them；作宾语用 us：They saw us。\"",
+        "valueJson": "\"us 是第一人称复数人称代词的宾格。作主语通常用 we：We saw them；作宾语用 us：They saw us。日常口语中，be 后也常用 us 作表语，如 It's us（是我们）。表示建议的 Let's ... 中，let's 是 let us 的缩写。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"us-ex3\",\"senseId\":\"us-object\",\"en\":\"Let's take the bus home.\",\"zh\":\"我们坐公交车回家吧。\",\"note\":\"Let's 是 let us 的缩写，这里提出建议；后接动词原形 take。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"us-ex4\",\"senseId\":\"us-object\",\"en\":\"“Who's at the door?” “It's us!”\",\"zh\":\"“谁在门口？”“是我们！”\",\"note\":\"日常口语中，us 可以放在 be 后作表语；这里的 us 不是动词宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"let's + 动词原形\",\"zh\":\"我们……吧\",\"note\":\"let's 是 let us 的缩写，常用于提出建议，如 Let's go home。完整的 let us + 动词原形还可表示“让／允许我们……”，如 Please let us leave（请让我们离开），要根据语境区分。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"和我们一起；与我们有关\"",
+        "valueJson": "\"和我们一起\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"with 是介词，后接宾格 us；具体意思由句子情境决定。\"",
+        "valueJson": "\"with 是介词，后接宾格 us，如 Come with us（和我们一起去）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"反身代词，通常指动作回到说话者一方，如 We made it ourselves；不能用来代替一般宾语 us。\"",
+        "valueJson": "\"ourselves 可表示反身，如 We introduced ourselves（我们作了自我介绍）；也可用于强调，如 We made it ourselves（我们亲手做的）。它不能随意替代普通宾语 us，如 They invited us（他们邀请了我们）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"动作由“我们”来做时，用 we。\"",
+        "valueJson": "\"“我们”作句子或分句的主语时，用 we；被动句中也一样，如 We were invited（我们受到了邀请）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"动作作用于“我们”，或介词后指“我们”时，用 us。\"",
+        "valueJson": "\"“我们”作动词宾语或介词宾语时，用 us，如 invite us（邀请我们）、give us a book（给我们一本书）、with us（和我们一起）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"us 是现代英语中的人称代词形式。这里用 we 与 us 的句中位置来记忆，不把记忆联想当作词源。\"",
+        "valueJson": "\"现代英语 us 源自古英语 us。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-us\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1486,
+    "headword": "us",
+    "meaning_zh": "pron. 我们",
+    "phonetic": "/ʌs/",
+    "pos": "",
+    "forms": []
+  }
+}

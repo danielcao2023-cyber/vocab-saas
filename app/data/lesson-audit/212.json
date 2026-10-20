@@ -1,0 +1,330 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f53b48a2cacf9b86c4d2aba4b40dcdffde04c29396098aabe46d5b325d23d68a",
+    "executedReviewPromptHash": "f53b48a2cacf9b86c4d2aba4b40dcdffde04c29396098aabe46d5b325d23d68a",
+    "reviewHash": "58f357334e06abe3c46625dc8d8512ee60ceac138cd35afbe938b19d3ca265df",
+    "wordId": 212,
+    "inputHash": "abfbc3dc5bbf84aa85eacb0f4f86607589da8fd216c83335d0eb7d6386d949f8",
+    "draftHash": "1c5e6e1dd69b2ee024768fb0b30912ce72fde086ae1ae7d6dc080e2f4107a4c7",
+    "finalHash": "7d8ff9e62ec54ab944124c3ee3ea12effbe188cad58bebdaf3334f2c56ba38e4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/camera#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.949Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 330090,
+        "revisionId": 39864012,
+        "revisionTimestamp": "2026-09-07T11:48:57Z",
+        "sha256": "ce7753a521ba1706240a91c66d71daac45ef69db79234719df344fc63f882be4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/camera",
+        "section": "camera (noun)",
+        "supports": [
+          "Room or chamber meaning",
+          "Camera obscura shortening",
+          "Later photographic meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "620d91cb29ca83804a323b98256d71bfb7d97545f4f2f4fe54766d5a4a25bee6",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "620d91cb29ca83804a323b98256d71bfb7d97545f4f2f4fe54766d5a4a25bee6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/212.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/camera",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:01:08.829Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:08:42.193Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 s-oxford 的 sourceIds",
+        "message": "初稿引用了未提供实际内容的 Oxford 页面。应改引已取得的 Wiktionnaire 英语词条，并同步修改引用标识；不能把法语编辑说明误当成法语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*/note；/confusions/0/items/*/example/note；/wordFamily/0/example/note",
+        "message": "全部7个例句均缺少目标结构要求的 note 字段，需要补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning；/senses/0/examples/1/zh",
+        "message": "手机语境中的 camera 在该例中指内置摄像头或拍照系统，不能仅解释成软件中的“相机功能”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1/zh；/senses/1/collocations/0",
+        "message": "video camera 应译为摄像机，“录像机”通常对应 video recorder；camera crew 指摄影或摄像团队，范围通常小于 film crew，不宜笼统等同于整个摄制组。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0/zh",
+        "message": "school play 指学校的话剧演出，原译“学校演出”没有体现 play 的戏剧含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/meaning",
+        "message": "cameraman 的释义需要限定电影、电视等动态影像拍摄语境，避免被理解为泛指拍静态照片的男摄影师；原有 camera + man 构词说明正确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote；/pronunciation/notes/1",
+        "message": "现有三音节读法可以保留，但还应说明来源列出的常见两音节读法 /ˈkæmrə/，突出中间 /ə/ 可以省略。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/1",
+        "message": "词源主线有依据；camera obscura 一栏宜明确其拉丁语来源及“暗室”的字面义，同时保留它进入英语后作为光学装置名称的事实。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的照相机义和电影摄影机义，两项核心义各有2个自然原创例句，照相、录像及电影拍摄场景均已覆盖，无须强拆更多义项。设备类型对照已有语境限制，没有强造反义词。房间义属于历史词源，未误列为现代初中常用义。修订补齐必填字段，并校正来源引用、设备释义和翻译精度；审校范围限于提供的来源内容与专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：照相机，拍摄静态照片的设备",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "覆盖完整。e1 展示用独立相机拍照，e2 展示手机内置摄像头；修订后不再把设备义仅解释为软件功能。"
+      },
+      {
+        "sense": "可数名词：摄像机、电影摄影机，拍摄动态影像的设备",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "覆盖完整。e3 展示录像，e4 展示电影摄影机；相关设备名称和摄影团队名称的中文对应需要修正。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"s-oxford\",\"title\":\"Oxford Learner’s Dictionaries: camera\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/camera\",\"supports\":[\"camera 的名词用法与常见含义\",\"camera 的复数形式及相关搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"s-wiktionary\",\"title\":\"Wiktionnaire：camera（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/camera#Anglais\",\"supports\":[\"camera 的照相机、电影摄影机两项名词义\",\"规则复数形式及两音节读音 /ˈkæmrə/\",\"cameraman、digital camera、video camera 等相关词语\",\"由 camera obscura 缩短而来的词源关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"s-oxford\"",
+        "valueJson": "\"s-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"s-oxford\"",
+        "valueJson": "\"s-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"s-oxford\"",
+        "valueJson": "\"s-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"s-oxford\"",
+        "valueJson": "\"s-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"s-oxford\"",
+        "valueJson": "\"s-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音相近；不同口音中末尾元音可能略有差异。\"",
+        "valueJson": "\"英美都重读首音节。除这里列出的三音节 /ˈkæmərə/ 外，也常读作两音节 /ˈkæmrə/；区别在于中间的 /ə/ 是否省略。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"中间音节通常弱读；不要按字母把每个音节都读得一样重。\"",
+        "valueJson": "\"三音节读法中，中间的 /ə/ 很轻；两音节读法中，这个 /ə/ 省略。不要把各音节都读得一样重。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"拍摄静态照片的设备，也可指手机等设备中的相机功能。\"",
+        "valueJson": "\"拍摄静态照片的设备，也包括手机等设备内置的摄像头。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"use + 设备 + to do 表示用某设备做某事；take pictures of… 表示给……拍照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"她的手机相机功能很好。\"",
+        "valueJson": "\"她手机上的摄像头拍照效果很好。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"has a good camera 指手机配备的摄像头或拍照系统好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"摄像机从大厅后方录下了学校演出。\"",
+        "valueJson": "\"摄像机从大厅后方录下了学校的话剧演出。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"recorded 是 record 的过去式；from the back of the hall 说明拍摄位置。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"move…closer to… 表示把……移得离……更近；此处 camera 指电影摄影机。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"摄像机；录像机\"",
+        "valueJson": "\"摄像机\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/zh",
+        "expectedValueJson": "\"摄制组\"",
+        "valueJson": "\"摄影组；摄像组\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"指参与摄影或摄像工作的团队。\"",
+        "valueJson": "\"指负责摄影或摄像的团队；film crew（摄制组）的范围通常更广。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"put A in B 表示把 A 放进 B；此处 camera 是可放进包里的实物设备。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"print the photo 指把照片打印出来；photo 是图像，camera 是设备。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1/language",
+        "expectedValueJson": "\"英语\"",
+        "valueJson": "\"拉丁语短语（后借入英语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1/meaning",
+        "expectedValueJson": "\"暗箱，一种光学装置名称。\"",
+        "valueJson": "\"字面义为“暗室”，用作一种光学装置的名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"男摄影师；男摄像师\"",
+        "valueJson": "\"（拍摄电影、电视等动态影像的）男摄影师；男摄像师\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"filming 指拍摄动态影像；cameraman 是操作摄影机的人，camera 是设备。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 212,
+    "headword": "camera",
+    "meaning_zh": "n. 照相机；摄像机",
+    "phonetic": "/'kæmәrә/",
+    "pos": "",
+    "forms": []
+  }
+}

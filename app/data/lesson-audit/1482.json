@@ -1,0 +1,201 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e79551c757826b7bd92389c5e183ea1bd4bdef2287d8c70d5a29ab1697988cae",
+    "executedReviewPromptHash": "e79551c757826b7bd92389c5e183ea1bd4bdef2287d8c70d5a29ab1697988cae",
+    "reviewHash": "b99520d812b92ec028603f7a5abcb4517c8fb5af77804028800061422fad3da8",
+    "wordId": 1482,
+    "inputHash": "fe70b5fdc93d829d0a54300e64ed5af421268c1ea3cc34d13fece0866001ec50",
+    "draftHash": "6a8742d8c7e29bd29a1d4c33203254f46b54f787b93adba484f981be558e4cec",
+    "finalHash": "69962e2e088bd1651f00a551f7a306f4b5f34418c226c7112ed59c9d092fe64c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/unless#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.912Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 248888,
+        "revisionId": 39915504,
+        "revisionTimestamp": "2026-10-03T08:49:20Z",
+        "sha256": "27e4692bcc15b840fda4c034e03843309a2a44ddca082cf3d8d8b5887de2fe69",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/unless",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:18:08.633Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:26:28.643Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning、/senses/0/patterns/1/note、/memoryAid",
+        "message": "把 unless 后的内容一概说成“必须满足的条件”不准确。它引出例外条件；“必要门槛”的理解适用于文中的实验室规定，不能推广到所有 unless 句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "初稿引用的 Oxford 页面不在实际提供的来源中。应改引已取得的维基词典英语词条，并将来源支持范围限定为基本词义、词性和读音；语法辨析不应冒充该词条提供的内容。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "现有 /ənˈles/ 标注可接受，但首音节说明宜同时容纳来源明确列出的 /ʌn/ 读法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "except if 没有稳定的“较正式”语体标签；这里应说明它引出例外条件，以及替换时需考虑自然程度。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对。来源只支持一个现代英语连词核心义：“除非／如果不”，两种中文表述无需拆义。现有两个核心例句自然、翻译准确，其他例句的条件逻辑及 senseId 正确；省略结构也已有覆盖。没有需要补充的常用核心义或规则派生词。取得的词源节仅含待补占位，不能据此建立历史词源链；现稿未编造历史阶段，可保留其明确标注为现代联想的说明。主要修正为条件关系的泛化和来源归属。",
+    "senseInventory": [
+      {
+        "sense": "连词：除非；如果不——引出例外条件，通常可用 if ... not 理解",
+        "coveredBy": [
+          "unless-condition"
+        ],
+        "assessment": "核心义覆盖充分，已有两个自然原创英中例句；unless necessary 和 unless otherwise stated 属于同一用法的省略结构，无须另立词义。需纠正将所有 unless 从句都解释为必要门槛的概括。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"引出一个必须满足的条件；若该条件不满足，主句所说的结果就会出现。\"",
+        "valueJson": "\"引出例外条件，表示“除非……；如果不……”：该条件不成立时，主句所说的情况成立。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"把必要条件放在主句后面；unless 从句也可放句首。\"",
+        "valueJson": "\"把例外条件放在主句后面；unless 从句也可放句首，放在句首时通常用逗号与主句分开。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象实验室门口贴着一张提示：戴上护目镜才能进。把它说成一句英语：Unless you wear safety glasses, you can’t enter. 记住 unless 后面给出“必须满足的门槛”，没达到就会有主句所说的结果。\"",
+        "valueJson": "\"想象实验室门口贴着一张提示：戴上护目镜才能进。把它说成一句英语：Unless you wear safety glasses, you can’t enter. 在这条规定中，戴护目镜是进门的必要条件；不戴就不能进。戴上护目镜也不表示其他入场要求就可以省略。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"unless 后面放必须满足的条件。\"",
+        "valueJson": "\"unless 引出例外条件；在这条实验室规定中，戴护目镜是进门的必要条件。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第二音节 les；开头是弱读 /ən/，不要把首音节读得很重。\"",
+        "valueJson": "\"重音在第二音节 /les/；首音节可读 /ən/ 或 /ʌn/，通常不重读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"可引出例外条件，语气较正式，日常表达中 unless 更常见。\"",
+        "valueJson": "\"也可引出例外条件；部分句子可与 unless 换用，是否自然要看具体语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford-unless\"",
+        "valueJson": "\"wiktionary-unless\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford-unless\"",
+        "valueJson": "\"wiktionary-unless\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-unless\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-unless\",\"title\":\"Oxford Learner’s Dictionaries: unless\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/unless\",\"supports\":[\"连词词性及基本条件含义\",\"unless 从句的常见句型与用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-unless\",\"title\":\"Wiktionnaire：unless（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/unless#Anglais\",\"supports\":[\"英语连词词性及“除非”的基本含义\",\"首音节 /ən/、/ʌn/ 两种读法及第二音节重音\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1482,
+    "headword": "unless",
+    "meaning_zh": "conj. 除非；如果不",
+    "phonetic": "/.ʌn'les/",
+    "pos": "",
+    "forms": []
+  }
+}

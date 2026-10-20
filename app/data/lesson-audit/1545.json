@@ -1,0 +1,364 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b34e6eddfa9f6df07f8a708e2d298b2f7a482d2f24e9033a3a99aeb492ecc600",
+    "executedReviewPromptHash": "b34e6eddfa9f6df07f8a708e2d298b2f7a482d2f24e9033a3a99aeb492ecc600",
+    "reviewHash": "2915d5d9be406733eb6bb28cbf1211859fe1ea8df638a74d9c221e366c3ddf6a",
+    "wordId": 1545,
+    "inputHash": "499297c37b393ef786bfc9cff38af4021ecf538222396682f904099f0f8e4d19",
+    "draftHash": "cb2f6b5af62f7cf79964c53611d5da17db48394d294b6579342ddbcfa36dd90b",
+    "finalHash": "9c13eb1c123b95440ea0f79a7c011529e42e9461fa9d12d94017e0b18090cc26",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/while#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.456Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116255,
+        "revisionId": 39751388,
+        "revisionTimestamp": "2026-08-02T17:00:18Z",
+        "sha256": "7dfbead93c907c87b57bd5e4463c9e54f5fc5d7507a0503873ac897ec0837020",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/while",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:21:40.316Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:33:58.283Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿多处引用未列入实际取得材料的 Oxford 来源。应改引已取得的法语维基词典英语词条，并准确列明其支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "常用让步义仅有一个拓展例句；动词 while away 的常用功能完全遗漏。须补足分义、例句、搭配及动词词形，并补入词典所列的条件持续义。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "禁止读成 /hwaɪl/ 的说法过于绝对：部分口音保留 wh 与 w 的区别，可读 /ʍaɪl/。中文谐音也容易诱发多余音节。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "briefly 与 a while 都可以表示短时间，不能仅靠限定语境把它们建立成反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/example",
+        "message": "例句实际使用 wile，却绑定 while 的名词义。应改为使用 while 的辨拼例句，使 senseId 与目标词用法一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "材料明确支持古英语来源及词形 hwīl，但词源行未提供其古英语释义，也未说明现代各义的演变过程。应保留可证实的来源事实，删除缺乏对应证据的释义阶段与演变暗示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "meanwhile 已见于来源的派生词列表，适合说明其实际拼写和独立副词用法，无须将词族全部留空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions",
+        "message": "宜补充 a while 与 awhile 的常见拼写、词性及介词后用法区别。"
+      }
+    ],
+    "coverageAssessment": "已核对来源全部定义：时间、对比、条件持续、让步四种连词功能，名词时段义，以及动词消磨时间、闲散度日义。修订后，常用时间、对比、让步、名词及 while away 动词用法各有两个原创英中例句；较少见的条件持续义列为拓展。动词教学采用现代常见的 while away 结构，不另推广罕见裸用。词源仅保留材料直接支持的古英语来源与词形，不推断各义的历史发展。",
+    "senseInventory": [
+      {
+        "sense": "连词：当……时；在……期间；一边……一边……",
+        "coveredBy": [
+          "while-conj-time"
+        ],
+        "assessment": "已有两个自然例句，分别覆盖完整从句和同主语的 while + 动词-ing。"
+      },
+      {
+        "sense": "连词：而；然而，表示对比",
+        "coveredBy": [
+          "while-conj-contrast"
+        ],
+        "assessment": "已有两个具体对比例句，与 whereas、but 的区别基本准确。"
+      },
+      {
+        "sense": "连词：只要……仍然；在……持续期间",
+        "coveredBy": [
+          "while-conj-condition"
+        ],
+        "assessment": "初稿遗漏；补入拓展义，说明其条件意义与持续时间条件的联系，避免泛化为所有 if 条件句。"
+      },
+      {
+        "sense": "连词：虽然；尽管",
+        "coveredBy": [
+          "while-conj-concession"
+        ],
+        "assessment": "初稿仅有一个拓展例句；移入主要义项并补足两个例句及 although、even though 的用法比较。"
+      },
+      {
+        "sense": "名词：一段时间；一会儿",
+        "coveredBy": [
+          "while-noun-duration"
+        ],
+        "assessment": "已有两个例句，覆盖 for a while 和 in a while；删除错误反向表达，并补充与 awhile 的区别。"
+      },
+      {
+        "sense": "动词：度过、消磨时间；闲散地度日",
+        "coveredBy": [
+          "while-verb-pass-time"
+        ],
+        "assessment": "初稿遗漏；以常用 while away 结构合并讲解相近的动词释义，补入两个例句及 whiles、whiled、whiling 的准确拼写。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"conjunction; noun\"",
+        "valueJson": "\"conjunction; noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"连词 while 常连接两个同时发生的动作或作对比；名词 a while 指一段时间。\"",
+        "valueJson": "\"连词 while 常表示“当……时”“而”或“虽然”；名词 a while 指一段时间；动词 while away 表示悠闲地度过、消磨时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"拓展学习 while 的让步义，以及 while away + 时间的动词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式读音基本相同。\"",
+        "valueJson": "\"英美英语都常读 /waɪl/；部分口音保留 wh 与 w 的区别，读作 /ʍaɪl/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"发音近似“外尔”，/w/ 起始，/aɪ/ 与 my 中的元音相同；不要读成 /hwaɪl/。\"",
+        "valueJson": "\"while 只有一个音节；/aɪ/ 与 my 中的元音相同，词尾 /l/ 后不要另加元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_while\"]",
+        "valueJson": "[\"wiktionary_while_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"原形（连词、名词）\"",
+        "valueJson": "\"原形（连词、名词、动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"连词和名词形式不变；名词前常用 a，复数较少见。\"",
+        "valueJson": "\"连词没有词形变化；名词常用 a while；动词通常与 away 连用。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"whiles\",\"ipa\":\"/waɪlz/\",\"note\":\"例如 whiles away the afternoon；拼写与名词复数相同，但句中功能不同。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式、过去分词\",\"form\":\"whiled\",\"ipa\":\"/waɪld/\",\"note\":\"以不发音的 e 结尾，直接加 d：while → whiled。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词-ing形式\",\"form\":\"whiling\",\"ipa\":\"/ˈwaɪlɪŋ/\",\"note\":\"去掉词尾不发音的 e，再加 ing：while → whiling；l 不双写。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_while\"]",
+        "valueJson": "[\"wiktionary_while_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_while\"]",
+        "valueJson": "[\"wiktionary_while_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_while\"]",
+        "valueJson": "[\"wiktionary_while_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"briefly\",\"zh\":\"短暂地\",\"note\":\"作副词描述动作很短暂；与 a while 对照时，仅限时长长短的语境。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"briefly 表示时间短，只有在比较动作持续时长时才与 a while 构成对照。\"",
+        "valueJson": "\"本义没有固定反义词。a while 的长短取决于上下文；briefly 也能表示短时间，不能作为它的反义表达。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"while-conj-concession\",\"title\":\"连词：虽然；尽管\",\"meaning\":\"先承认一种情况，再说明另一种仍然成立的情况，表示让步。\",\"usageNote\":\"意思接近 although，书面表达中较常见。while 引导让步从句时，不要照中文“虽然……但是……”再给主句加 but。\",\"examples\":[{\"id\":\"while-ex-concession-1\",\"senseId\":\"while-conj-concession\",\"en\":\"While the path was steep, the children reached the top safely.\",\"zh\":\"虽然小路很陡，孩子们还是安全地到达了山顶。\",\"note\":\"承认路陡，再说明孩子们仍然安全登顶。\"},{\"id\":\"while-ex-concession-2\",\"senseId\":\"while-conj-concession\",\"en\":\"While I like this jacket, it is too expensive for me.\",\"zh\":\"虽然我喜欢这件夹克，但对我来说它太贵了。\",\"note\":\"这里承认喜欢这件衣服，再指出价格上的障碍；不是说明时间。\"}],\"patterns\":[{\"en\":\"While + 主语 + 动词, 主句\",\"zh\":\"虽然……，但……\",\"note\":\"while 引出的情况得到承认，主句说明与之形成让步关系的情况。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"while true / useful / interesting\",\"zh\":\"虽然属实／有用／有趣\",\"note\":\"如 The idea, while useful, needs more testing.，表示“这个想法虽然有用，却还需要更多测试”。这里省略了与主句相同的主语及 be 动词。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"although\",\"zh\":\"虽然；尽管\",\"note\":\"可表达同类让步关系，比 while 更明确地排除时间义。\"},{\"en\":\"even though\",\"zh\":\"尽管；即使确实……\",\"note\":\"通常比 while 或 although 更强调出乎意料的让步关系。\"}],\"contrasting\":[],\"similarNote\":\"although 常可用于相同的让步语境；even though 的让步语气更强，不能假定语气完全相同。\",\"contrastingNote\":\"本义没有固定反义词；让步、原因和条件是不同逻辑关系，不宜互列为反义词。\"},\"sourceIds\":[\"wiktionary_while_etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"while-verb-pass-time\",\"title\":\"动词：悠闲地度过；消磨时间\",\"meaning\":\"通常用 while away + 一段时间，表示做些轻松的事，让时间过去。\",\"usageNote\":\"这是动词用法，需随主语和时态变化。while away 后接表示时间的宾语，如 the afternoon、an hour；away 后不加 for 来引出这个宾语。\",\"examples\":[{\"id\":\"while-ex-verb-1\",\"senseId\":\"while-verb-pass-time\",\"en\":\"We whiled away the afternoon playing cards on the porch.\",\"zh\":\"我们在门廊上打牌，悠闲地度过了一个下午。\",\"note\":\"whiled 是过去式；the afternoon 是表示时间的宾语，playing cards 说明怎样度过这段时间。\"},{\"id\":\"while-ex-verb-2\",\"senseId\":\"while-verb-pass-time\",\"en\":\"At the airport, Maya whiled away an hour browsing the bookshop.\",\"zh\":\"在机场，玛雅逛书店消磨了一个小时。\",\"note\":\"while away an hour 表示消磨一个小时；不是连词引导的时间从句。\"}],\"patterns\":[{\"en\":\"while away + 一段时间 + 动词-ing\",\"zh\":\"通过做……来消磨一段时间\",\"note\":\"时间是宾语，后面的动词-ing说明消磨时间的方式。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"while away the afternoon\",\"zh\":\"悠闲地度过一个下午\",\"note\":\"常用于读书、聊天、游戏等轻松活动。\",\"kind\":\"common-collocation\"},{\"en\":\"while away the hours\",\"zh\":\"消磨时光\",\"note\":\"强调一段时间在闲适或等待中过去。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"pass the time\",\"zh\":\"消磨时间\",\"note\":\"同样可用于等待期间做事打发时间，适用范围较广。\"},{\"en\":\"kill time\",\"zh\":\"打发时间\",\"note\":\"较口语化，常强调等待时找事做，不一定带有 while away 的闲适感。\"}],\"contrasting\":[{\"en\":\"make good use of the time\",\"zh\":\"好好利用这段时间\",\"note\":\"在对比时间安排时，强调有目的地利用时间；while away 强调让时间轻松过去，但不必然表示浪费。\"}],\"similarNote\":\"pass the time 较中性；kill time 常突出等待；while away 常描写闲适地度过时间。\",\"contrastingNote\":\"这里对照的是利用时间的方式，不是固定词汇反义关系；悠闲度过时间也可以有价值。\"},\"sourceIds\":[\"wiktionary_while_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"while-conj-concession\",\"title\":\"连词：虽然；尽管\",\"meaning\":\"在较正式的表达中，while 有时表示“虽然”，引出让步情况。\",\"note\":\"初中阶段优先掌握时间和对比两种连词用法；此义可作为阅读拓展。\",\"example\":{\"id\":\"while-ex-concession-1\",\"senseId\":\"while-conj-concession\",\"en\":\"While the path was steep, the children reached the top safely.\",\"zh\":\"虽然小路很陡，孩子们还是安全地到达了山顶。\",\"note\":\"while 引出与主句形成让步关系的情况。\"},\"sourceIds\":[\"oxford_while\"]}",
+        "valueJson": "{\"id\":\"while-conj-condition\",\"title\":\"连词：只要……仍然；在……持续期间\",\"meaning\":\"表示某种条件持续成立时，另一种情况也能成立，意思接近 as long as。\",\"note\":\"这种用法较少见，带有“在该条件仍然成立的期间”的意味；不能把所有表示条件的 if 都换成 while。\",\"example\":{\"id\":\"while-ex-condition-1\",\"senseId\":\"while-conj-condition\",\"en\":\"While we still have food, we can stay here.\",\"zh\":\"只要我们还有食物，就能继续待在这里。\",\"note\":\"有食物是能够继续留下的持续条件，兼有时间和条件意味。\"},\"sourceIds\":[\"wiktionary_while_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2",
+        "expectedValueJson": "{\"label\":\"wile\",\"note\":\"与 while 同音，意为诡计、花招；不要把它当作 while 的拼写变体。\",\"example\":{\"id\":\"while-confusion-wile\",\"senseId\":\"while-noun-duration\",\"en\":\"The fox used a clever wile to escape.\",\"zh\":\"狐狸用了一个巧妙的计策逃脱。\",\"note\":\"这里是 wile，意思是计策，拼写与 while 不同。\"}}",
+        "valueJson": "{\"label\":\"while 与 wile\",\"note\":\"在常见的 /waɪl/ 读法中，两词同音；wile 意为诡计、花招，不是 while 的拼写变体。\",\"example\":{\"id\":\"while-confusion-wile\",\"senseId\":\"while-noun-duration\",\"en\":\"We waited for a while.\",\"zh\":\"我们等了一会儿。\",\"note\":\"这里表示一段时间，须写 while，不能写成 wile。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_while\"]",
+        "valueJson": "[\"wiktionary_while_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"while-confusion-awhile\",\"title\":\"a while 与 awhile：两个词还是一个词？\",\"summary\":\"a while 是表示一段时间的名词短语；awhile 是副词，意思接近 for a while。\",\"items\":[{\"label\":\"a while：名词短语\",\"note\":\"初学写作时，介词 for、in、after 后用分写的 a while。a while 也可以不带 for，如 Wait a while.。\",\"example\":{\"id\":\"while-confusion-a-while\",\"senseId\":\"while-noun-duration\",\"en\":\"Please stay for a while.\",\"zh\":\"请待一会儿。\",\"note\":\"for 是介词，后面接名词短语 a while。\"}},{\"label\":\"awhile：副词\",\"note\":\"可直接修饰 stay、wait 等动词；初学写作时用 stay awhile 或 stay for a while 这两种清楚的写法。\",\"example\":{\"id\":\"while-confusion-awhile-example\",\"senseId\":\"while-noun-duration\",\"en\":\"Please stay awhile.\",\"zh\":\"请待一会儿。\",\"note\":\"这句用副词 awhile，与上一句 for a while 表达相近的时长意义；它不是 while 的名词变形。\"}}],\"takeaway\":\"记住两组常用写法：for a while 与 stay awhile；不要把 a while 一律连写。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"while 来自古英语 hwīl，表示“一段时间”。现代英语中，它常作连词连接同时发生的情况，也可用于对比；这些用法与表示时间的意义相关。\"",
+        "valueJson": "\"while 来自古英语 hwīl，亦转写为 hwil。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"hwīl\",\"meaning\":\"一段时间\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列的是有来源支持的历史形式与含义；现代 while 的句法用法说明不等同于一条完整的语义演变年代记录。\"",
+        "valueJson": "\"对比义和让步义的具体形成过程不在这里作推断；后面的车站故事只是现代用法的助记。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"meanwhile\",\"partOfSpeech\":\"adverb\",\"meaning\":\"与此同时；在此期间\",\"formation\":\"复合形式，可分为 mean + while；整体作为独立副词使用。\",\"spellingNote\":\"meanwhile 连写，保留 while 的完整拼写，包括词尾 e。\",\"example\":{\"id\":\"while-family-meanwhile\",\"senseId\":\"while-conj-time\",\"en\":\"Dad packed the bags. Meanwhile, I filled our water bottles.\",\"zh\":\"爸爸收拾行李。与此同时，我把我们的水瓶装满。\",\"note\":\"meanwhile 在新句中连接同时发生的事情；while 作时间连词时则引导从句，二者不能直接原位替换。\"},\"sourceIds\":[\"wiktionary_while_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"while 的常见学习用法中没有适合初中生作为词族重点记忆的派生词；meanwhile 虽含有 while，但作为独立副词学习更合适。\"",
+        "valueJson": "\"把 meanwhile 与 while 的时间义联系起来记忆，同时区分副词和连词的句法作用；whilst 是相关连词，不是 while 的过去式，动词过去式是 whiled。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_while\",\"title\":\"Oxford Learner’s Dictionaries: while\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/while\",\"supports\":[\"连词表示同时发生\",\"连词表示对比\",\"名词表示一段时间\",\"发音与词形信息\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_while_etymology\",\"title\":\"Wiktionary: while（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/while#Anglais\",\"supports\":[\"古英语词形 hwīl 及词源关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_while_etymology\",\"title\":\"法语维基词典：while（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/while#Anglais\",\"supports\":[\"连词的时间、对比、条件持续和让步义\",\"名词表示一段时间\",\"动词表示消磨时间及 while away 表达\",\"常见读音 /waɪl/、同音词 wile 及规则词形\",\"相关词 whilst、meanwhile\",\"古英语来源及词形 hwīl（hwil）\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1545,
+    "headword": "while",
+    "meaning_zh": "conj. 当……时；然而\nn. 一会儿（for a while）",
+    "phonetic": "/hwail/",
+    "pos": "",
+    "forms": []
+  }
+}

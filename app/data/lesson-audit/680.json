@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "300f8305dd73ca4f3b3824abe83a414b9f0c09d231e6f3aef99ff5487c04a5a7",
+    "executedReviewPromptHash": "300f8305dd73ca4f3b3824abe83a414b9f0c09d231e6f3aef99ff5487c04a5a7",
+    "reviewHash": "97df0e34b03fb4ed8fa9d1a7a3588aa9c89c8dc5eed1c8292eddc00a8c6c90de",
+    "wordId": 680,
+    "inputHash": "881bd4042e2c31b8b64c1f05b17fa67331f043f26ffb55dd1fc68f2499eb4c6b",
+    "draftHash": "36e265b452f2eeab1365a85a48b94baaa495b6322176e432db2fb394f92dc995",
+    "finalHash": "5cf7c5ebdc1e0543749abea7f1c5e3c0af9c89ac620a64c499d9729b694a67ea",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hungry#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:36.592Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 241456,
+        "revisionId": 38240288,
+        "revisionTimestamp": "2025-05-12T20:22:21Z",
+        "sha256": "945faa551644d65bf2b6c1bf64baede4e6258bdaf6b2702a68eca1c09cea3ae6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hungry",
+        "section": "hungry etymology",
+        "supports": [
+          "Inherited Old English adjective; hunger family and y"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:20:43.600145+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "d93bb20fe1b9bbaba34c1537c36e2078533d3d67ca284d4f01a3c025491e2fd2",
+        "summaryAndSupportsWordCount": 49,
+        "sha256": "d93bb20fe1b9bbaba34c1537c36e2078533d3d67ca284d4f01a3c025491e2fd2",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/680.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hungry",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:47:30.694Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:55:01.196Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏了词典列出的复数指人用法 the hungry（饥饿的人们）。应补充该功能、两个例句，并说明定冠词与复数谓语。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamilyNote",
+        "message": "hungrily 是常用副词，“没有常用、规则的副词形式”不正确。应补充其构词和拼写，同时明确 hunger 与 hungry 的实际拼写差别。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/example",
+        "message": "原例只有国家名 Hungary，却绑定了 hungry 的身体饥饿义。改为同时包含两词的自然句，使义项关联准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting/0/note",
+        "message": "satisfied with 表示对某事满意，不必然表示“不再强烈追求”；应限定为对同一目标或所得的语境性对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 内容获取失败，不能承担现有事实引证。应改用实际取得的法语维基词典英语词条，并撤去不能由该词条直接支持的引用关联。"
+      }
+    ],
+    "coverageAssessment": "身体饥饿与强烈渴望两项主要形容词义各有两个自然例句，for + 名词和 to + 动词的说明可保留。补充 the hungry 后，给定词典列出的主要功能得到覆盖。古英语到中古英语的历史阶段及释义有材料支持，无须修改。渴望义及部分扩展用法依据专业语言知识审核；Cambridge 未取得内容，引用范围已相应收窄。",
+    "senseInventory": [
+      {
+        "sense": "形容词：身体饥饿，需要食物",
+        "coveredBy": [
+          "680-hungry-physical"
+        ],
+        "assessment": "覆盖充分；两个例句分别展示表语和定语用法，full 的反向对照限定得当。"
+      },
+      {
+        "sense": "形容词：强烈渴望得到某物或做某事",
+        "coveredBy": [
+          "680-hungry-eager"
+        ],
+        "assessment": "两个例句分别覆盖 hungry for 与 hungry to；修正 satisfied with 的过度推断后，语境对照准确。"
+      },
+      {
+        "sense": "复数指人用法：the hungry，饥饿或挨饿的人们",
+        "coveredBy": [
+          "680-hungry-people"
+        ],
+        "assessment": "原稿遗漏；补丁新增独立说明、两个例句及复数谓语规则，避免将 hungry 裸用为普通可数名词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; nominal use (the hungry)\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"680-hungry-people\",\"title\":\"the hungry：饥饿的人们\",\"meaning\":\"饥饿或挨饿的人这一群体。\",\"usageNote\":\"用 the + 形容词概括一类人，常见于救助或慈善语境。the hungry 作主语时，谓语用复数。不能用 a hungry 或 two hungries 表示一个或两个饥饿的人；应说 a hungry person 或 two hungry people。\",\"examples\":[{\"id\":\"680-hungry-people-ex1\",\"senseId\":\"680-hungry-people\",\"en\":\"Our neighbors collect food for the hungry every month.\",\"zh\":\"我们的邻居每个月都为挨饿的人募集食物。\",\"note\":\"the hungry 指需要食物的人群，整个短语作 for 的宾语。\"},{\"id\":\"680-hungry-people-ex2\",\"senseId\":\"680-hungry-people\",\"en\":\"The hungry are given free meals at the community center.\",\"zh\":\"社区中心为挨饿的人提供免费餐食。\",\"note\":\"the hungry 按复数理解，所以用 are。\"}],\"patterns\":[{\"en\":\"the hungry + plural verb\",\"zh\":\"饥饿的人们……（谓语用复数）\",\"note\":\"这里概括一类人，不指单独一个人。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"feed the hungry\",\"zh\":\"给挨饿的人提供食物\",\"note\":\"常见于救助或慈善语境，the hungry 指人群。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"hungry people\",\"zh\":\"饥饿的人们\",\"note\":\"表达更直白，也可用于眼前具体的几个人；the hungry 常概括一类人。\"}],\"contrasting\":[{\"en\":\"the well-fed\",\"zh\":\"吃得饱的人们\",\"note\":\"在描写食物供应差距时，可与挨饿人群形成对照。\"}],\"similarNote\":\"都可指饥饿的人；the hungry 更常用于概括人群。\",\"contrastingNote\":\"这里限定为食物供应语境中的人群对比。\"},\"sourceIds\":[\"wiktionary-hungry\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"hungry 与 hunger 拼写相近，但词性不同；hungry 末尾是 -y，hunger 末尾是 -er。\"",
+        "valueJson": "\"hunger 拼作 h-u-n-g-e-r，hungry 拼作 h-u-n-g-r-y；hungry 中没有 hunger 的那个 e，不能直接在完整的 hunger 后添 y。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"hungrily\",\"partOfSpeech\":\"adverb\",\"meaning\":\"饥饿地；急切地\",\"formation\":\"由 hungry 构成副词：词尾 y 改为 i，再加 -ly。\",\"spellingNote\":\"hungry → hungri- + -ly → hungrily，实际拼写为 h-u-n-g-r-i-l-y。\",\"example\":{\"id\":\"680-family-hungrily-ex1\",\"senseId\":\"680-hungry-physical\",\"en\":\"The children ate their lunch hungrily after the long walk.\",\"zh\":\"走了很长一段路后，孩子们饥肠辘辘地吃起午饭。\",\"note\":\"hungrily 修饰 ate，描述饥饿时急切进食的样子。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"hunger 与 hungry 是同族词；本词没有常用、规则的副词形式。\"",
+        "valueJson": "\"hunger 是同族名词；hungrily 是 hungry 对应的常用副词，把 hungry 的词尾 y 改为 i 后加 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"680-confusion-hungry-hungary-ex2\",\"senseId\":\"680-hungry-physical\",\"en\":\"My aunt lives in Hungary.\",\"zh\":\"我姑姑住在匈牙利。\",\"note\":\"Hungary 是地名，不能写成 hungry。\"}",
+        "valueJson": "{\"id\":\"680-confusion-hungry-hungary-ex2\",\"senseId\":\"680-hungry-physical\",\"en\":\"I was hungry when I arrived in Hungary.\",\"zh\":\"我到达匈牙利时正饿着肚子。\",\"note\":\"同一句中，hungry 是表示饥饿的形容词，Hungary 是国家名。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在表达目标或欲望的语境中，表示已经满意，不再强烈追求。\"",
+        "valueJson": "\"表示对现状或已有成果满意；谈同一个目标时，可与仍渴求更多形成对照，但不必然表示不再追求。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-hungry\",\"title\":\"Cambridge Dictionary：hungry\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hungry\",\"supports\":[\"hungry 的词性、读音、常见意思和用法查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-hungry\",\"title\":\"Wiktionnaire：hungry（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/hungry#Anglais\",\"supports\":[\"英语 hungry 的饥饿义、读音及复数指人用法\",\"hungry 与 hunger、形容词后缀 -y 的构词关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[\"wiktionary-hungry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[\"wiktionary-hungry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hungry\"]",
+        "valueJson": "[\"etymonline-hungry\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 680,
+    "headword": "hungry",
+    "meaning_zh": "adj. 饥饿的；渴望的",
+    "phonetic": "/'hʌŋgi/",
+    "pos": "",
+    "forms": []
+  }
+}

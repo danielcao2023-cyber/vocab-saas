@@ -1,0 +1,236 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fe5bae4f603edf07587e27d05ab0ceb5daeb6a52b565a91d2926f5e90f4db07a",
+    "executedReviewPromptHash": "fe5bae4f603edf07587e27d05ab0ceb5daeb6a52b565a91d2926f5e90f4db07a",
+    "reviewHash": "2900b50a37292b85933063ce0e2947690c1ea53257f7b39340794c1805734f1c",
+    "wordId": 965,
+    "inputHash": "0054cfa55d6d12a7094d8b56359aeae58302448513a5ea26fdff132f540251ee",
+    "draftHash": "76cc3fae3120217e289ebb121707512151a867a5b79fdcd67fdd0e7259ed4f69",
+    "finalHash": "8ee5a024bdcfd8cf46e49366c944d73e7e50870b7021bcf701b1b0e05a38c840",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ours#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.617Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9083,
+        "revisionId": 39884930,
+        "revisionTimestamp": "2026-09-20T08:48:35Z",
+        "sha256": "fcab73c385610f4c84db70649fdaa5267c5810782ac72d2aa9671aedfb6a9a3d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ours",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:49:30.380Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:55:18.638Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds",
+        "message": "Cambridge 正文未成功取得，不能作为本课具体说明的依据。应改引实际取得的 Wiktionnaire 英语词条，并同步更新引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote；/pronunciation/notes",
+        "message": "读音变体不能笼统解释为中间 /r/ 弱化或自然语速中的弱读。应补充 /ɑːz/、/ɑrz/ 等变体，并把与 how 元音相同的说明限定于 /aʊ/ 读法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note；/senses/0/patterns/1/note；/senses/0/collocations/1/note",
+        "message": "a classmate of ours 表示与我们有同学关系的人，不等于“我们中的一位”。of ours 可以表示归属或关联，不能统一解释为所属群体中的成员，也不宜把朋友关系解释为拥有某人。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0/en；/senses/0/collocations/0/kind",
+        "message": "首个模板只列出 ours 作主语的形式，中文却同时涵盖其作表语的意义，应补出对应结构。This seat is ours. 是句型例示，类型宜标为 sentence-pattern。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料明确支持 our + -s 的构成，但初稿没有引用该来源。应补上引用并直接说明构词事实；保留空的 stages，避免把形式拆分画成历史演变链。"
+      }
+    ],
+    "coverageAssessment": "已区分法语说明语言与英语词项。词典仅列“我们的；属于我们的”这一名词性物主代词核心义；初稿已有两个自然原创例句，并覆盖主语、表语及 of ours 结构，无须拆成多义。补丁修正读音、关系解读、句型标示及来源引用。现有词源材料支持 our + -s 的构成，不足以建立更早的历史演变链。",
+    "senseInventory": [
+      {
+        "sense": "名词性物主代词：我们的；属于我们的，可指与我们有归属或关联关系的人或物，形式不随所指名词的单复数变化。",
+        "coveredBy": [
+          "ours-possessive"
+        ],
+        "assessment": "核心义覆盖完整，两个例句分别展示作主语和用于 of ours 结构，表语用法另有句型及例句展示。相关人称物主代词作为语境对照处理正确，无须强造反义词；of ours 的关系说明需要修正。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_ours\",\"title\":\"Cambridge Dictionary: ours\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ours\",\"supports\":[\"物主代词的基本含义与用法\",\"英式和美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_ours_en\",\"title\":\"Wiktionnaire：ours（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/ours#Anglais\",\"supports\":[\"英语物主代词的基本含义\",\"英式、美式读音变体及与 hours 同音\",\"our + -s 的构成\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_ours\"]",
+        "valueJson": "[\"wiktionary_ours_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_ours\"]",
+        "valueJson": "[\"wiktionary_ours_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_ours\"]",
+        "valueJson": "[\"wiktionary_ours_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常读 /aʊəz/；美式常读 /aʊərz/，部分口音也会弱化中间的 /r/。\"",
+        "valueJson": "\"英式有 /aʊəz/、/ɑːz/ 等读法；美式有 /aʊərz/、/ɑrz/ 等读法，通常带 /r/ 音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头与 how 的元音相同；结尾是浊辅音 /z/。\"",
+        "valueJson": "\"读 /aʊəz/ 或 /aʊərz/ 时，开头的 /aʊ/ 与 how 的元音相同；各读法都以浊辅音 /z/ 结尾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"在自然语速中，ours 有时会弱读，具体元音因口音而异。\"",
+        "valueJson": "\"ours 与 hours 同音，可把这两个词放在一起练习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"a classmate of ours 表示“我们中的一位同学”。\"",
+        "valueJson": "\"a classmate of ours 表示“我们的一位同学”，说明这个人与我们有同学关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"表示所属群体中的一个成员，如 a neighbor of ours（我们的一位邻居）。\"",
+        "valueJson": "\"of ours 放在名词后，表示某人或某物与我们有归属或关联关系，如 a neighbor of ours（我们的一位邻居）、a car of ours（我们的一辆车）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"of ours 放在名词后，表达“我们拥有或认识的其中一位”。\"",
+        "valueJson": "\"of ours 修饰 friend，说明这位朋友与我们的关系；整个短语表示“我们的一位朋友”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/en",
+        "expectedValueJson": "\"ours + be（动词）\"",
+        "valueJson": "\"Ours + be + … / 主语 + be + ours\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中，ours 可看作 our 加表示物主代词形式的词尾 -s；这是现代构词说明，不代表这里给出了完整历史演变。\"",
+        "valueJson": "\"构词上，ours 由 our 加词尾 -s 构成；our 用在名词前，ours 则独立表示“我们的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"不要把现代形式拆分当作已经证实的历史阶段；联想记忆也不是词源。\"",
+        "valueJson": "\"这里的 -s 不表示名词复数；ours 不加撇号，不能写成 our's。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_ours_en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 965,
+    "headword": "ours",
+    "meaning_zh": "pron. 我们的",
+    "phonetic": "/'auәz/",
+    "pos": "",
+    "forms": []
+  }
+}

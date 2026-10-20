@@ -1,0 +1,275 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0d9d9af93e05d754b89ff181101aac838e7e4a40a4ad4159ed4f1aad5861730b",
+    "executedReviewPromptHash": "0d9d9af93e05d754b89ff181101aac838e7e4a40a4ad4159ed4f1aad5861730b",
+    "reviewHash": "4855f9a3e609f8575ef6706903ed511ae98c8b13c3aa1276bbf580cb0ef3d6f9",
+    "wordId": 944,
+    "inputHash": "ad98a48d6dbdade3c06798cb0dd18d7b8e2be38f4e1af0e3066084b82929431f",
+    "draftHash": "aaa9664c12bbda7e3888694cb49f48d6925ec6fe6be4d9ec47d6014aeeb24226",
+    "finalHash": "ec835cca3c268a291471b0e2c98afd4e9def64737062b93eff2346ab4da10514",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/often#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.450Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118466,
+        "revisionId": 38100141,
+        "revisionTimestamp": "2025-04-21T11:38:51Z",
+        "sha256": "da0ea5e72d91d888356c4438b6af72d0493808141b53c7e8565599b276d04b35",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/often",
+        "section": "often adverb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "6773127bc0b6f12989abdaf39e0ddc134f4d388fb0b7fd0f9e534238d2f9bae2",
+        "summaryAndSupportsWordCount": 67,
+        "sha256": "6773127bc0b6f12989abdaf39e0ddc134f4d388fb0b7fd0f9e534238d2f9bae2",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/944.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/often",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:20:21.210Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:33:24.446Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 页面未取得正文，不能承担现有事实的来源支持。应改引已取得的法语维基词典英语词条；该词条未说明的语法规则不挂靠到它名下。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“没有比较级”错误：often 的比较级、最高级通常用 more often、most often。应同时调整 takeaway，区分不随主语或时态变化与频率比较。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0",
+        "message": "“often + 动词原形”把适用范围写窄了。often 后的实义动词仍按主语和时态变化，如 She often visits her grandparents。原有 often play、often visit 本身没有语法错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "核心副词义已覆盖，但缺少初中常用的 how often 频率疑问和 more/most often 频率比较。应补充句型和具体例句，无须另拆义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "英音栏也应列出读 t 的变体；来源同时列有北美 /ɑ/ 元音变体。应明确读不读 t 并非英美口音的分界。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1",
+        "message": "现有位置口诀需要限定为常见词序，并补充助动词、情态动词结构，避免将“be 后”直接套用于 can often be 等句子。原有例句均正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/0/meaning",
+        "message": "阶段的 meaning 只复述字形发展，没有提供阶段词义。可证实的历史事实已保留在 summary，应删除这一占位阶段，避免补造历史释义。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对核心义、全部例句、搭配、近反义、词形、词序、发音与词源。often 的常用副词义无需拆分，原有两例自然且译义准确；补丁补足频率疑问和比较用法。词族无需强补。来源局限是 Cambridge 正文不可用、历史材料仅有摘要；补丁已撤去不当来源归属，并将词源保留在可支持的范围内。",
+    "senseInventory": [
+      {
+        "sense": "副词：常常；经常，表示某事发生频繁。how often 的频率疑问和 more/most often 的频率比较属于同一义项的语法用法。",
+        "coveredBy": [
+          "often-1"
+        ],
+        "assessment": "核心义已有两个自然原创英中例句；补充疑问与比较句型及例句后，覆盖初中常用功能。没有需要另立的常用义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-often\",\"title\":\"Cambridge Dictionary：often\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/often\",\"supports\":[\"常用义项和副词用法\",\"句中常见位置及频率含义\",\"英美发音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-often\",\"title\":\"Wiktionnaire：often（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/often#Anglais\",\"supports\":[\"often 的英语副词义：常常；经常\",\"英国及北美发音变体，t 可发音或不发音\",\"frequently 等近义表达及 rarely、seldom 等反向表达\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"/ˈɒfən/；/ˈɔːfən/\",\"uk\":\"/ˈɒfən/\",\"us\":\"/ˈɔːfən/；也可读 /ˈɔːftən/\",\"accentNote\":\"英音常见 /ˈɒfən/；美音常见 /ˈɔːfən/，也有人读出 t。具体元音会因口音而异。\",\"notes\":[\"重音在第一个音节。\",\"often 中的 t 可以不发音，也可以发音；两种读法都正确。\"],\"sourceIds\":[\"cambridge-often\"]}",
+        "valueJson": "{\"ipa\":\"/ˈɒfən/；/ˈɔːfən/\",\"uk\":\"/ˈɒfən/；也可读 /ˈɒftən/\",\"us\":\"/ˈɔːfən/；/ˈɔːftən/；部分口音读 /ˈɑfən/ 或 /ˈɑftən/\",\"accentNote\":\"英音和美音都可读出或不读出 t；北美部分口音的首元音为 /ɑ/。\",\"notes\":[\"重音在第一个音节。\",\"often 中的 t 可以不发音，也可以发音；两种读法都正确。\"],\"sourceIds\":[\"wiktionary-often\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-often\"]",
+        "valueJson": "[\"wiktionary-often\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-often\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-often\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"often 是副词，用来说明一件事发生得多不多、频不频繁；它本身不变形。\"",
+        "valueJson": "\"often 是谈发生频率的副词，常表示‘常常；经常’；不随主语或时态变化，比较频率时常用 more often、most often。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"作频率副词时形式不变，没有比较级或过去式变化。\"",
+        "valueJson": "\"often 不随主语或时态变化；比较级通常用 more often，最高级通常用 most often。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"often + 动词原形\",\"zh\":\"常常做……\",\"note\":\"一般现在时中常放在实义动词前，如 often play、often visit。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"often + 实义动词\",\"zh\":\"常常做……\",\"note\":\"often 常放在实义动词前，动词仍按主语和时态变化，如 She often visits her grandparents.（她常常去看望祖父母。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"How often ...?\",\"zh\":\"多久一次？发生得多频繁？\",\"note\":\"询问频率，后面通常用一般疑问句的语序；回答可以用 often，也可以用 twice a week（每周两次）等具体频率。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"more often / most often\",\"zh\":\"更经常／最经常\",\"note\":\"比较发生频率。如 Of all my friends, I see Ben most often.（在所有朋友中，我见本的次数最多。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"often-1-ex3\",\"senseId\":\"often-1\",\"en\":\"How often do you visit your grandparents?\",\"zh\":\"你多久去看望祖父母一次？\",\"note\":\"how often 询问探望的频率，不是一次探望持续多长时间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"often-1-ex4\",\"senseId\":\"often-1\",\"en\":\"We visit our grandparents more often during the school holidays.\",\"zh\":\"学校放假时，我们会更常去看望祖父母。\",\"note\":\"more often 比较探望的频率，表示比平时更经常。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"often 的位置取决于句中的动词：放在实义动词前，放在 be 动词后。\"",
+        "valueJson": "\"在陈述句中，often 通常放在实义动词前、单独使用的 be 后，或第一个助动词或情态动词后；也可放在句首或句末。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"句中有 be 动词时，often 通常放在 be 后，而不是放在 be 前。\"",
+        "valueJson": "\"be 在句中单独作主要动词时，often 通常放在 be 后；与助动词或情态动词连用时，要看完整的动词结构。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"助动词／情态动词后\",\"note\":\"often 通常放在第一个助动词或情态动词后，如 has often helped、can often be。\",\"example\":{\"id\":\"often-confusion-2-ex3\",\"senseId\":\"often-1\",\"en\":\"The buses can often be crowded in the morning.\",\"zh\":\"早上公交车经常会很挤。\",\"note\":\"这里 often 放在情态动词 can 后、be 前。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"记住：实义动词前，be 动词后；不要把位置规则混在一起。\"",
+        "valueJson": "\"先看完整的动词结构：常见位置是实义动词前、单独使用的 be 后、第一个助动词或情态动词后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"often\",\"meaning\":\"由 oft 扩展而来的形式，后来成为常见形式。\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 944,
+    "headword": "often",
+    "meaning_zh": "adv. 时常, 常常",
+    "phonetic": "/'ɒ:fn/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "216e675a68c181405d5d30506c7539a5c4d91ea3fffa2527acbb12f8cc930e9f",
+    "executedReviewPromptHash": "216e675a68c181405d5d30506c7539a5c4d91ea3fffa2527acbb12f8cc930e9f",
+    "reviewHash": "d69d34b3107a76c3c563ba2fb99248cb91e04bf8ac558a4e7e1aa485802fb6f7",
+    "wordId": 1373,
+    "inputHash": "0d5d4f735fc11e764fbb440e31fc755252a5911bfd8898dbe0512a112f2bf861",
+    "draftHash": "2cdec95955bfa8f8da39f94b31830d5a275c1069b83e2e94ab6c214a14e820ee",
+    "finalHash": "ddc7aafb2e127440341a105117d204a6244048764b3d42f19eed91ccc3045fba",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/talent#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.557Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 177853,
+        "revisionId": 39816129,
+        "revisionTimestamp": "2026-08-19T17:17:22Z",
+        "sha256": "c933a996720848d51e944097b5784def7ac6f6d1fe8aa3865f7491ebffea78ce",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/talent",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:45:25.367Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:54:45.533Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "不能将 talent 一概标为可数名词；才能义有可数和不可数用法，人才义也有不可数集合用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "“指人时通常可数”会误导学生，也与第二例的不可数集合用法不一致。应分别解释 a young talent 与 new talent。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0",
+        "message": "不能把 a talent in/for + field 一律解释为某领域的一位人才；a talent for music 通常表示音乐天赋。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "beginner 表示学习阶段，不与有天赋的人构成反向关系；初学者也可能天赋突出。应换成同一领域内缺乏天赋的表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有阶段的 meaning 只是说明来源身份，没有提供词义，属于空洞占位。保留可证实的拉丁语来源事实到 summary，清空阶段数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/0/sourceIds、/wordFamily/0/sourceIds",
+        "message": "Cambridge 页面未成功获取，不能作为这些内容已经核实的依据。相关用法可依据专业语言知识保留；读音与 talented 派生词可引用实际获取的英语维基词典条目。Cambridge 仅保留为推荐查询入口。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example/zh",
+        "message": "talented student 本身没有限定音乐天赋，译文宜去掉额外添加的“音乐”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可补充古代重量及货币计量单位 talent，帮助识别历史阅读中的同形义；不将其意义演变写成未经来源证实的词源链。"
+      }
+    ],
+    "coverageAssessment": "已核对“才能／天赋”与“有才能的人／人才”两项核心义，各保留两个自然原创例句；人才义的两个例句分别覆盖个人和集合用法。修正可数性、指人句型和反向表达，并补充古代计量单位这一低频义。可读来源的释义较简略，常用义及语法判断结合专业语言知识完成；历史词源仅保留实际获取条目支持的拉丁语来源事实，未获取的 Cambridge 页面不作为核实依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：某方面的天赋、才能；有可数及不可数用法",
+        "coveredBy": [
+          "talent-ability"
+        ],
+        "assessment": "两个例句均自然且对应本义；补充不可数 talent、可数 a talent for 和复数 talents 的区别。"
+      },
+      {
+        "sense": "名词：有才能的人；也可不可数地统称人才",
+        "coveredBy": [
+          "talent-person"
+        ],
+        "assessment": "两个例句分别覆盖一位人才和集合人才；修正原有可数性概括、易混句型及 beginner 的错误对照。"
+      },
+      {
+        "sense": "名词：塔兰特，古代重量或货币计量单位",
+        "coveredBy": [
+          "talent-unit"
+        ],
+        "assessment": "补充为低频认读义，不作为初中核心义，也不据此推演历史语义演变。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词，复数通常加 -s；表示多种才能或多位有才能的人，具体看上下文。\"",
+        "valueJson": "\"复数直接加 -s。talents 可指多种才能，也可指多位有才华的人；泛指一批人才时常用不可数的 talent。talent 并非在所有用法中都可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常说 have a talent for sth/doing sth。talent 强调某方面的突出本领；ability 是更宽泛的“能力”，不一定特别突出。\"",
+        "valueJson": "\"表示天赋时可不可数，如 musical talent、She has talent；也可用 a talent for sth/doing sth 表示某方面的天赋。谈不同的才能时可用 talents。talent 强调某方面的突出本领；ability 是更宽泛的“能力”，不一定特别突出。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"指人时通常可数，常用 a talent 或 talented people。talent 作这一义时，句中指的是人而非抽象能力。\"",
+        "valueJson": "\"指某一位人才时可数，通常带修饰语，如 a young talent；多位人才可说 several promising talents。招募或统称人才时也常作不可数名词，如 look for new talent。这里的 talent 指人，不是抽象能力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"a talent in/for + field\",\"zh\":\"某领域的一位人才\",\"note\":\"用 in 或 for 指明这个人的专长领域。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a rising talent in + field\",\"zh\":\"某领域一位崭露头角的人才\",\"note\":\"如 a rising talent in music，指音乐领域一位崭露头角的人才。注意 a talent for music 通常指音乐天赋，不是一个人。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"beginner\",\"zh\":\"初学者\",\"note\":\"在某项技能或活动中，指刚开始学习的人；不代表这个人没有其他才能。\"}",
+        "valueJson": "{\"en\":\"an untalented person\",\"zh\":\"缺乏天赋的人\",\"note\":\"在正在讨论的领域内表示缺乏天赋；untalented 是 talented 加否定前缀 un-，不是说这个人所有方面都没有能力。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"beginner 只表示某项活动的熟练程度较低，不能据此判断一个人有没有天赋。\"",
+        "valueJson": "\"谈同一领域的天赋时，可用 untalented 或 someone with little talent 作反向描述。beginner 只说明刚开始学习，初学者也可能很有天赋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 talent 有拉丁语来源；现代学习时可把 talent 整体记作“才能”，并用常见派生词 talented 记住形容词形式。\"",
+        "valueJson": "\"英语 talent 的词源可追溯到拉丁语 talentum。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"talentum\",\"meaning\":\"英语 talent 的来源形式。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-talent\"]",
+        "valueJson": "[\"wiktionary-talent-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-talent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-talent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-talent\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-talent\"]",
+        "valueJson": "[\"wiktionary-talent-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"材料所载 talent 的拉丁语来源形式 talentum\"]",
+        "valueJson": "[\"talent 的拉丁语来源形式 talentum\",\"英语 talent 的读音 /ˈtælənt/\",\"英语派生词 talented\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"一位有音乐天赋的学生教了我们一首新歌。\"",
+        "valueJson": "\"一位有才华的学生教了我们一首新歌。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"talent-unit\",\"title\":\"塔兰特：古代计量单位\",\"meaning\":\"古代的一种重量单位，也用于按金银重量计量货币价值。\",\"note\":\"见于古代史或古籍相关语境；不是一种硬币，具体重量随地区和时代而异。初中阶段以认读为主。\",\"example\":{\"id\":\"talent-unit-ex1\",\"senseId\":\"talent-unit\",\"en\":\"In the story, the merchant pays five talents of silver for the land.\",\"zh\":\"在这个故事中，商人支付了五塔兰特白银来购买那块土地。\",\"note\":\"talents 在这里是计量单位的复数，不表示才能或人才。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1373,
+    "headword": "talent",
+    "meaning_zh": "n. 天才, 才能, 有才干的人, 天资",
+    "phonetic": "/'tælәnt/",
+    "pos": "",
+    "forms": []
+  }
+}

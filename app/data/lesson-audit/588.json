@@ -1,0 +1,290 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "81501d6739d0861bde712b931757444ef458b3ccbeed1e813b9cac1bf40521bf",
+    "executedReviewPromptHash": "81501d6739d0861bde712b931757444ef458b3ccbeed1e813b9cac1bf40521bf",
+    "reviewHash": "f39689c0a4ed0bf1f40b5776d3f93a773510f87e5f59135daada611d1c54c2c7",
+    "wordId": 588,
+    "inputHash": "dda3d44f2abc8ad16acc36d3529f0a66832c8aed61fae859e0797f9f6819fe01",
+    "draftHash": "d83d6178bd849b3edec21adb0436c8d2e0a0db0d0e04f368ae9b20cb2c05b072",
+    "finalHash": "438f63b396bd05cd240f36292aea0691a73cda813f491ff1530e291a91bfb2ed",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/goodbye#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:11.306Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116154,
+        "revisionId": 39871736,
+        "revisionTimestamp": "2026-09-11T14:36:55Z",
+        "sha256": "6f0f577e01446167e4b0b22cd0e53b3c5b50a3a68702157d2ad1ff836948e1ee",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/good-bye",
+        "section": "good-bye etymology",
+        "supports": [
+          "Historical form and selected meaning",
+          "Qualified chronology and route"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "7461ea18a0acce8b16a621c99ac2b32711dc5eec6f2af29dd1f7e6c4646627af",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "7461ea18a0acce8b16a621c99ac2b32711dc5eec6f2af29dd1f7e6c4646627af",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/588.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/goodbye",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T18:06:48.004Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T18:15:35.490Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds；/sources/1/supports",
+        "message": "Cambridge 页面未获取，不能承担当前释义、读音及拼写说明的出处。已取得的维基词典英语词条能够支持这些内容；其中的读音是现代读音，不是“历史读音信息”。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/lessCommonSenses",
+        "message": "来源还收录 goodbye 作动词表示“道别”的用法，初稿完全遗漏。应作为罕见用法补充，并说明 goodbying 的实际拼写，不提升为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1",
+        "message": "a final goodbye 明确是名词短语，应归入名词义。感叹词义可改用直接告别的表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples；/senses/1/examples/1",
+        "message": "核心例句宜直接示范词头中的 bye。wave goodbye 本身正确，但不如 a proper goodbye 清楚展示可数名词单数；改后可与 goodbyes 的复数例形成对照。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "把 good bye 仅放在历史框架下容易让学生误以为它已经失效；来源同时列有 good-bye，应说明二者都是拼写变体。“不要误写成 goodbye 的句中任意部分”也缺乏清楚的教学含义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline；/senses/0/patterns/1/kind",
+        "message": "“结束告别”搭配不自然；Goodbye, everyone! 展示的是告别语加称呼的句型，不是词语搭配。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的感叹词、名词和罕见动词三个词性义。修订后，两个核心义各有至少两句清楚的原创生活例句，bye 有直接示范，罕见动词仅作识别性补充。问候与告别的反向表达均有限定语境；现有复数拼写、读音、词族说明及祝愿语到缩略形式的词源顺序可保留。Cambridge 未取得内容，不再作为本课出处。",
+    "senseInventory": [
+      {
+        "sense": "感叹词：goodbye / bye，用于离开或结束交谈时告别",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖；补充直接使用 bye 的例句，并移出明确属于名词的搭配。"
+      },
+      {
+        "sense": "可数名词：一次告别或临别的话，复数 goodbyes",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已覆盖；保留复数例句，用 a proper goodbye 清楚展示单数名词，并接收 a final goodbye 搭配。"
+      },
+      {
+        "sense": "罕见动词：说再见、道别",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "初稿遗漏；补入 lessCommonSenses，标明罕见及日常替代说法 say goodbye，并说明 goodbying 的拼写。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"goodbye：礼貌地结束告别\"",
+        "valueJson": "\"goodbye：告别时说“再见”\""
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"interjection; noun (less common)\"",
+        "valueJson": "\"interjection; noun (less common); verb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-goodbye\"]",
+        "valueJson": "[\"wiktionary-goodbye-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-ex3\",\"senseId\":\"s1\",\"en\":\"Bye, Dad! I’ll call you when I get there.\",\"zh\":\"再见，爸爸！我到了就给你打电话。\",\"note\":\"bye 是 goodbye 的常见口语缩短形式；这里用于向家人告别。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"a final goodbye\",\"zh\":\"最后的告别\",\"note\":\"用于强调这是最后一次告别，语气较郑重。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"Bye for now!\",\"zh\":\"先说再见啦！\",\"note\":\"轻松的告别语；for now 表示眼下暂别，不约定下次见面的具体时间。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-goodbye\"]",
+        "valueJson": "[\"wiktionary-goodbye-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-ex2\",\"senseId\":\"s2\",\"en\":\"She waved goodbye from the train window.\",\"zh\":\"她在火车窗边挥手告别。\",\"note\":\"goodbye 作名词，表示告别这一动作。\"}",
+        "valueJson": "{\"id\":\"s2-ex2\",\"senseId\":\"s2\",\"en\":\"We didn’t have time for a proper goodbye before her train left.\",\"zh\":\"她的火车开走前，我们没来得及好好道别。\",\"note\":\"a proper goodbye 中的 a 清楚表明 goodbye 是可数名词单数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a final goodbye\",\"zh\":\"最后的告别\",\"note\":\"用于强调这是最后一次告别，语气较郑重。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-goodbye\"]",
+        "valueJson": "[\"wiktionary-goodbye-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"道别（罕见动词）\",\"meaning\":\"说再见；道别。\",\"note\":\"这是较罕见、带文学色彩的动词用法，日常表达通常用 say goodbye。现在分词 goodbying 去掉词尾 e，再加 -ing。\",\"example\":{\"id\":\"lc1-ex1\",\"senseId\":\"lc1\",\"en\":\"The guests were goodbying in the hallway when the taxi arrived.\",\"zh\":\"出租车到时，客人们正在门厅里道别。\",\"note\":\"goodbying 在这里是动词的现在分词；普通表达会说 were saying goodbye。\"},\"sourceIds\":[\"wiktionary-goodbye-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"goodbye、good bye 和 bye 怎么选\"",
+        "valueJson": "\"goodbye、good bye、good-bye 和 bye 怎么选\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"可单独使用，不要误写成 goodbye 的句中任意部分。\"",
+        "valueJson": "\"bye 本身就是完整的日常告别语，通常比 goodbye 更随意。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2",
+        "expectedValueJson": "{\"label\":\"good bye：分写形式\",\"note\":\"历史上也见过分写形式；学习和日常写作优先用 goodbye。\",\"example\":{\"id\":\"c1-ex3\",\"senseId\":\"s1\",\"en\":\"Write “goodbye” as one word in your sentence.\",\"zh\":\"在句子里把 goodbye 写成一个词。\",\"note\":\"提醒注意常见拼写。\"}}",
+        "valueJson": "{\"label\":\"good bye / good-bye：拼写变体\",\"note\":\"good bye 是分写变体，good-bye 是带连字符的变体；现代日常写作优先统一用 goodbye。\",\"example\":{\"id\":\"c1-ex3\",\"senseId\":\"s1\",\"en\":\"“Good-bye, Lucy,” he said at the gate.\",\"zh\":\"他在大门口说：“再见，露西。”\",\"note\":\"这里的连字符不改变告别的意思。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-goodbye\"]",
+        "valueJson": "[\"wiktionary-goodbye-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-goodbye\"]",
+        "valueJson": "[\"wiktionary-goodbye-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"历史告别祝愿语及缩略形式\",\"goodbye 的历史读音信息\"]",
+        "valueJson": "[\"感叹词、名词与罕见动词用法\",\"现代英美读音、口语缩短形式及拼写变体\",\"历史告别祝愿语、缩略形式及拼写影响\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-goodbye\",\"title\":\"Cambridge Dictionary: goodbye\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/goodbye\",\"supports\":[\"告别语与名词用法\",\"常见拼写、复数及发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 588,
+    "headword": "goodbye (bye)",
+    "meaning_zh": "interj. 再见",
+    "phonetic": "/gud'bai/",
+    "pos": "",
+    "forms": []
+  }
+}

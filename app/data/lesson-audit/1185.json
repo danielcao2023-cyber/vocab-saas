@@ -1,0 +1,385 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ed4de2c3c507ee937189a385b81b4aa5e31070235aad8c398add5693cb8266f3",
+    "executedReviewPromptHash": "ed4de2c3c507ee937189a385b81b4aa5e31070235aad8c398add5693cb8266f3",
+    "reviewHash": "a3b5c357ae98d79b9958e777fc916da34ec52976e587c0a62108c38fc2b543f3",
+    "wordId": 1185,
+    "inputHash": "0e68e766b453d9b4ecd906a51c7a83f394449c6230fbef666c5958a60a43141b",
+    "draftHash": "4affaef781946e84c484c5a3658ede0e8079e6996ed14d440b9627aba7673b82",
+    "finalHash": "5a26ff443d50f368eb0bbd120efd05c015978c3491b83746d30a17a476a35a11",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sale#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.021Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 77962,
+        "revisionId": 39815701,
+        "revisionTimestamp": "2026-08-19T14:35:05Z",
+        "sha256": "9725d85e2b8225ab028f4c2f398dd154464ab4bfbbd6a26bbd49f6b1a0784cd6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sale",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:16:16.169Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:22:34.390Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "六个核心例句均缺少目标结构必填的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏词条所列的拍卖用法，以及常见的 sales 表示销售工作或销售部门的用法。拍卖义须限定竞价语境，不能把所有 sale 都解释为拍卖。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "sale 可指减价销售活动，但通常不能单独指一件特价商品；sale items 才表示促销商品。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples",
+        "message": "两个例句都未明确区分销售金额与售出数量，未充分落实“销售额；销量”的双重解释。应分别用金额和件数说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions",
+        "message": "losses 与 sales 不构成收入和亏损的反向关系。销售额或销量很高的企业仍可能亏损；应改为限定销售趋势的反向表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote; /senses/1/patterns/1; /confusions/0/items/2",
+        "message": "应明确出售义的可数与不可数用法，并补充 go on sale 表示开始发售。on sale 的打折义尤其常见于美式英语，原对比例句需要标明这一理解条件。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1",
+        "message": "按中文原意，near the school 修饰房子；放在 house 后更清楚自然。原句不应判为语法错误。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/1",
+        "message": "sale price 可以表示售价或成交价，但在零售广告中通常指促销价，需要突出这一常见用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/story",
+        "message": "单独的 SALE 招牌通常已经表示减价销售。原故事容易让学生以为只有 SUMMER SALE 才表示促销，宜用 FOR SALE、SUMMER SALE 和账本 sales 分别建立联想。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources; sourceIds",
+        "message": "Oxford 是初稿中的推荐链接，本次没有其正文，不能作为已取得的审校证据。补丁将出处关联调整为实际取得的法语维基词典英语词条；其未涉及的商业细义和词族说明不作该来源的归因。"
+      }
+    ],
+    "coverageAssessment": "已核对取得的英语词条定义、原词条中文释义及常见专业用法。补丁后覆盖出售与交易、减价销售、sales 的销售额与销量、拍卖语境，以及销售工作和部门；各核心义均有至少两个完整例句。读音、规则复数、sell 的词族关系及古诺尔斯语 sala 词源可保留。拍卖和 sales 的商业细义依据专业语言知识补齐，未声称取得其他词典正文。",
+    "senseInventory": [
+      {
+        "sense": "出售；销售行为或一笔交易，包括待售和开始发售",
+        "coveredBy": [
+          "sale-transaction"
+        ],
+        "assessment": "原稿基本覆盖；补充可数与不可数说明及 go on sale 的发售用法，保留并完善原例句。"
+      },
+      {
+        "sense": "减价销售；促销活动",
+        "coveredBy": [
+          "sale-promotion"
+        ],
+        "assessment": "两个原例句自然可用；删除把 sale 本身解释为特价商品的表述，补充 on sale 的地域用法提示。"
+      },
+      {
+        "sense": "销售额；销量，通常用 sales",
+        "coveredBy": [
+          "sale-sales-figures"
+        ],
+        "assessment": "保留同一义项，用金额与售出件数各举一例，明确覆盖两种统计口径，并修正反向表达。"
+      },
+      {
+        "sense": "拍卖会；拍卖活动，须由竞价语境确定",
+        "coveredBy": [
+          "sale-auction"
+        ],
+        "assessment": "原稿遗漏；补充两个含拍卖行或竞相出价信息的例句，避免将一般出售误译为拍卖。"
+      },
+      {
+        "sense": "销售工作；销售部门，使用 sales",
+        "coveredBy": [
+          "sale-sales-work"
+        ],
+        "assessment": "原稿遗漏；分别用 work in sales 和部门名称 Sales 举例，并与采购职能作限定对照。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"sale 是名词，常指“出售”或“促销打折”；表示卖出的数量时常用 sales。\"",
+        "valueJson": "\"sale 是名词，常指“出售”或“一场减价促销”；sales 常指销售额、销量，也可指销售工作或部门。拍卖语境中的 a sale 可指一场拍卖会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 on sale 常表示“在售”或“打折促销”，要看语境。\"",
+        "valueJson": "\"区分 for sale（待售）和 on sale：后者可表示“有售”，在美式英语中还常表示“打折”；go on sale 表示开始发售。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[\"wiktionary-sale\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作可数名词时常说 a sale；说明某物可买或正在出售时常用 for sale。\"",
+        "valueJson": "\"表示一笔成交时可数，常说 a sale 或 make a sale；表示出售这一行为时也可作不可数名词，如 the sale of alcohol（酒类的销售）。for sale 表示待售，go on sale 表示开始发售。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the sale of the old bike 指那辆旧自行车的出售；句子说卖车所得的钱帮助支付新车费用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"sale-ex2\",\"senseId\":\"sale-transaction\",\"en\":\"The house is for sale near the school.\",\"zh\":\"学校附近的那栋房子正在出售。\"}",
+        "valueJson": "{\"id\":\"sale-ex2\",\"senseId\":\"sale-transaction\",\"en\":\"The house near the school is for sale.\",\"zh\":\"学校附近的那栋房子正在出售。\",\"note\":\"near the school 修饰 house；for sale 表示待售，不说明是否打折。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sale-availability-ex1\",\"senseId\":\"sale-transaction\",\"en\":\"Tickets for the school concert go on sale on Monday.\",\"zh\":\"学校音乐会的门票周一开始发售。\",\"note\":\"go on sale 表示开始发售；这里没有说票价打折。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"放在物品或地点后，表示可以购买；它本身不表示正在打折。\"",
+        "valueJson": "\"可用于 be for sale（正在出售）或 a house for sale（待售的房子）；本身不表示打折。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"go on sale\",\"zh\":\"开始发售；上市销售\",\"note\":\"强调从某时起可以买到，常用于门票、新书等；本身不表示降价。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"sale price\",\"zh\":\"售价\",\"note\":\"指商品实际出售的价格，是否打折要由语境判断。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"sale price\",\"zh\":\"售价；促销价\",\"note\":\"在一般交易中可指售价或成交价；在零售促销广告中通常指打折后的价格。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[\"wiktionary-sale\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"商店在一段时间内降价卖货的活动；也可指促销期间的特价商品。\"",
+        "valueJson": "\"商店在一段时间内以低于平时的价格卖货的活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常说 a sale 或 have a sale；on sale 在商店语境中常指“打折促销”。\"",
+        "valueJson": "\"常说 a sale 或 have a sale；on sale 表示“打折”尤其常见于美式英语，也可表示“有售／已开始发售”，需要看语境。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have a summer sale 表示举行夏季减价促销活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"half the usual price 明确说明买到了折扣价；on sale 的这一用法尤其常见于美式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"在谈商店折扣时表示商品正在减价；若强调商品可购买，也可能表示“在售”。\"",
+        "valueJson": "\"打折义尤其常见于美式英语；英美英语中也可表示有售或已发售。英式英语中表示打折还常用 in the sale。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[\"wiktionary-sale\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"sale-ex5\",\"senseId\":\"sale-sales-figures\",\"en\":\"The shop's sales rose in December.\",\"zh\":\"这家商店十二月的销售额（或销量）上升了。\"}",
+        "valueJson": "{\"id\":\"sale-ex5\",\"senseId\":\"sale-sales-figures\",\"en\":\"The bakery's sales reached £5,000 last month.\",\"zh\":\"这家面包店上个月的销售额达到5,000英镑。\",\"note\":\"£5,000 是金额，明确表示 sales 指销售额；销售额不等于利润。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"sale-ex6\",\"senseId\":\"sale-sales-figures\",\"en\":\"Online sales now make up half of the company's business.\",\"zh\":\"线上销售现在占这家公司业务的一半。\"}",
+        "valueJson": "{\"id\":\"sale-ex6\",\"senseId\":\"sale-sales-figures\",\"en\":\"Sales of this phone reached 300 units last month.\",\"zh\":\"这款手机上个月的销量达到300部。\",\"note\":\"300 units 是售出数量，明确表示 sales 指销量。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"losses\",\"zh\":\"亏损\",\"note\":\"在企业经营结果语境中，losses 指亏损，与销售带来的收入表现相对。\"}]",
+        "valueJson": "[{\"en\":\"falling sales\",\"zh\":\"销售额／销量下降\",\"note\":\"与 rising sales（销售额／销量上升）形成趋势上的对照；不是 sales 这个名词本身的反义词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"losses 是经营结果上的对照词，不是 sales 在所有用法中的反义词。\"",
+        "valueJson": "\"这里用上升与下降对照销售趋势。销售额或销量很高也可能出现 losses（亏损），因此 losses 不宜作为 sales 的反向表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sale-auction\",\"title\":\"拍卖会；拍卖活动\",\"meaning\":\"在拍卖行、竞相出价等语境中，sale 可指通过竞价出售物品的一场拍卖活动。\",\"usageNote\":\"a sale of paintings 本身也可能泛指画作出售；出现拍卖行、出价等信息时，才据此理解为拍卖会。\",\"examples\":[{\"id\":\"sale-auction-ex1\",\"senseId\":\"sale-auction\",\"en\":\"The auction house will hold a sale of antique clocks on Saturday.\",\"zh\":\"那家拍卖行星期六将举行一场古董钟拍卖会。\",\"note\":\"auction house 提供拍卖语境；hold a sale 表示举行拍卖活动。\"},{\"id\":\"sale-auction-ex2\",\"senseId\":\"sale-auction\",\"en\":\"I bid £80 for a desk at the sale, but someone else bid more.\",\"zh\":\"我在拍卖会上为一张书桌出价80英镑，但别人出了更高的价。\",\"note\":\"bid 和竞相出价的信息说明这里的 sale 指拍卖会。\"}],\"patterns\":[{\"en\":\"hold a sale of something\",\"zh\":\"举行某类物品的拍卖会\",\"note\":\"在拍卖语境中这样理解；一般商业语境中也可能只是组织出售活动。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"an auction sale\",\"zh\":\"拍卖；拍卖会\",\"note\":\"auction 明确指出通过竞价出售。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"auction\",\"zh\":\"拍卖；拍卖会\",\"note\":\"明确涉及竞价；sale 只有在相应语境中才表示拍卖。\"}],\"contrasting\":[{\"en\":\"sell at a fixed price\",\"zh\":\"按固定价格出售\",\"note\":\"在出售方式上与竞价拍卖对照。\"}],\"similarNote\":\"auction 的竞价含义明确；sale 的范围更广。\",\"contrastingNote\":\"这里对比的是竞价和固定价格两种出售方式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sale-sales-work\",\"title\":\"销售工作；销售部门（sales）\",\"meaning\":\"用 sales 表示销售这类工作，或公司负责把产品卖给顾客的部门。\",\"usageNote\":\"work in sales 表示从事销售工作；表示部门名称时可写作 Sales。说一份销售工作用 a job in sales，不用 a sales。\",\"examples\":[{\"id\":\"sale-sales-work-ex1\",\"senseId\":\"sale-sales-work\",\"en\":\"My aunt works in sales for a furniture company.\",\"zh\":\"我姑姑在一家家具公司从事销售工作。\",\"note\":\"work in sales 表示从事销售工作，不是指销售额。\"},{\"id\":\"sale-sales-work-ex2\",\"senseId\":\"sale-sales-work\",\"en\":\"Please contact Sales if you want to order fifty chairs.\",\"zh\":\"如需订购五十把椅子，请联系销售部。\",\"note\":\"Sales 在这里是销售部门的名称。\"}],\"patterns\":[{\"en\":\"work in sales\",\"zh\":\"从事销售工作\",\"note\":\"in 后接工作领域；sales 保留词尾 s。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the sales department\",\"zh\":\"销售部\",\"note\":\"sales 修饰 department，说明部门职能。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"selling\",\"zh\":\"销售；推销\",\"note\":\"侧重把产品卖给顾客的活动；sales 还可指工作领域或部门。\"}],\"contrasting\":[{\"en\":\"purchasing\",\"zh\":\"采购\",\"note\":\"在公司职能分工中，purchasing 负责买进，sales 负责卖出。\"}],\"similarNote\":\"a job in sales 指销售岗位；selling 侧重销售活动。\",\"contrastingNote\":\"采购与销售在公司职能和买卖方向上形成对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"on sale 可表示正在打折；for sale 表示待售、可购买。\"",
+        "valueJson": "\"for sale 表示待售；on sale 在美式英语中常表示打折，也可表示有售或已开始发售。理解下面的对比时，要采用 on sale 的打折义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "\"同一商品可待售而不打折。\"",
+        "valueJson": "\"这里按 on sale 常见的美式打折义理解：这个包可以买，但没有折扣。若把 on sale 理解为有售，这个对比就不成立。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-sale-etymology\"]",
+        "valueJson": "[\"wiktionary-sale\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-sale\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象商店门口挂着醒目的 SALE 牌：顾客走进来买东西，这是店里的出售；如果牌子旁写着 SUMMER SALE，就是一场打折促销。结账本上记录的 sales，则是卖出的金额或数量。\"",
+        "valueJson": "\"想象商店门口有一辆贴着 FOR SALE 的二手自行车，表示它正在出售。店里挂着 SUMMER SALE，表示夏季打折促销。店员每卖出一件商品，就完成一笔 sale；月底查看账本上的 sales，统计销售额或销量。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-sale\",\"title\":\"Oxford Learner’s Dictionaries: sale\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/sale\",\"supports\":[\"sale 的名词用法、读音及常见搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-sale-etymology\",\"title\":\"Wiktionary: sale（English）\",\"url\":\"https://fr.wiktionary.org/wiki/sale#Anglais\",\"supports\":[\"sale 与古诺尔斯语 sala 的历史来源\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-sale\",\"title\":\"Wiktionnaire：sale（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/sale#Anglais\",\"supports\":[\"英语名词 sale 的出售和减价销售义\",\"/seɪl/ 读音及与 sail 同音\",\"古诺尔斯语 sala（出售）的词源说明\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1185,
+    "headword": "sale",
+    "meaning_zh": "n. 出售, 卖, 拍卖, 销售额, 廉价出售",
+    "phonetic": "/seil/",
+    "pos": "",
+    "forms": []
+  }
+}

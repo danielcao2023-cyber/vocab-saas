@@ -1,0 +1,278 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "691207713c21f606b4c1d9247260b3fd50e3874ea0f89dac6e9df513acce4596",
+    "executedReviewPromptHash": "05419bb105fdc8c97ad4d4e8a194ec6c9399a0760f37944c5746d88fbd07fb47",
+    "reviewHash": "e469c5fc9bb661e03b0317f2bc71f2e3d8b60fc593f97112bc879244dc40e02f",
+    "wordId": 466,
+    "inputHash": "7db143456237812e5ccb5cac1d672346fc1b20c289343755aaae0d5368aeac3c",
+    "draftHash": "d7c9d023df9a00a76346b5b20cea972dae313bd48be2201cd7c15dff19fd9f16",
+    "finalHash": "a72abf39460e877a9db1c6919751a0a084e202571e58c83dbd6f1a8ab9f054c0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/everything#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:51.169Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117908,
+        "revisionId": 38299005,
+        "revisionTimestamp": "2025-06-07T12:37:30Z",
+        "sha256": "78308e04a8f411a31f011aa1164f22aa691fdbeeb4664c87d89bd44943d78324",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/everything",
+        "section": "everything etymology",
+        "supports": [
+          "Transparent every/thing formation",
+          "All-items meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T03:21:54.229745+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "02d59a600d1e2266eca8a599154ba0723eb4501ef458a9b7dcc223f29a26deed",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "02d59a600d1e2266eca8a599154ba0723eb4501ef458a9b7dcc223f29a26deed",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/466.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/everything",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:40:39.624Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:47:10.094Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 正文未取得，却被用于支持读音、义项和辨析。应改用已取得的英语词条支持基本词义，用 etymonline 支持强调义，并移除其他无实际材料支持的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“极其重要”与“投入全部心力”混在同一义中，而两个例句均只覆盖重要性。应收窄本义的标题与释义，将全力投入作为“全部”的语境用法补到第一义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“通常用于肯定句”容易造成句型限制的误解。应说明疑问句用法，并明确 not everything 的“不全都”与 nothing 的“一个也没有”之间的否定范围差异。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns",
+        "message": "宜补充 everything 后接形容词、else 及定语从句的常用结构，明确修饰语位置和关系代词的省略条件。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有说明只讲现代构词，遗漏已取得材料支持的中古英语使用和后来的强调义。应补入历史事实；every 与 thing 是并列构词成分，stages 继续留空。"
+      }
+    ],
+    "coverageAssessment": "已核对“相关范围内的全部事物或事情”和“极其重要的人或事”两个主要义，每义保留至少两个自然英中例句；补充全力投入的语境用法、疑问与否定范围、后置修饰及定语从句。读音、单数一致、实际拼写、近反义和词族说明均已检查；不将允许的少见强调写法 every thing 判为语法错误。法语维基词典材料按其英语词条使用。局限是 Cambridge 正文不可用，相关引用已撤换；补充语法和读音判断依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "某个范围内的全部事物、事情；一切",
+        "coveredBy": [
+          "466-everything-all-things"
+        ],
+        "assessment": "原有两例分别覆盖物品归属与旅行准备；修订补充全部心力的语境用法及例句，不另造独立核心义。单数一致、范围修饰、疑问句和否定范围均得到说明。"
+      },
+      {
+        "sense": "强调某个人或某件事极其重要",
+        "coveredBy": [
+          "466-everything-most-important"
+        ],
+        "assessment": "家庭与赢得决赛两个例句自然，均覆盖重要性强调义。修订去除混入的“全部心力”释义，并绑定实际支持该用法的词源来源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指某个范围内的全部事物或事情，常把它们作为一个整体来表达。\"",
+        "valueJson": "\"指某个范围内的全部事物或事情，常把它们作为一个整体来表达；也可在投入或努力的语境中概括全部心力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常用于肯定句；作主语时用单数动词。everything 本身不直接接名词。\"",
+        "valueJson": "\"可用于肯定句、疑问句和否定结构；作主语时用单数动词，不能直接放在名词前。Is everything ready? 问的是是否全部就绪；not everything 表示“不全都”，不同于 nothing 的“一个也没有”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"466-ex5\",\"senseId\":\"466-everything-all-things\",\"en\":\"She put everything into preparing for the school concert.\",\"zh\":\"为了筹备学校音乐会，她投入了全部心力。\",\"note\":\"put everything into doing something 表示全力投入做某事；everything 在这里概括全部精力和努力。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"put everything into something / doing something\",\"zh\":\"全力投入某事／做某事\",\"note\":\"into 是介词，后面接名词或动名词；everything 在这里强调全部精力和努力。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"everything + 形容词 / else\",\"zh\":\"所有……的事物／其他一切\",\"note\":\"形容词和 else 放在 everything 后面，如 everything important（所有重要的事）和 everything else（其他一切）。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"everything (that) + 从句\",\"zh\":\"……的一切\",\"note\":\"如 everything (that) I need（我需要的一切）；that 在从句中作宾语时可以省略。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"最重要的一切；全部心力\"",
+        "valueJson": "\"极其重要的人或事\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"在强调语境中，指某件事或某个人对某人最重要，或某人把全部心力放在某事上。\"",
+        "valueJson": "\"在强调语境中，指某个人或某件事对某人极其重要，是其生活或关注的核心。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"466-confusion-not-everything-nothing\",\"title\":\"not everything 和 nothing：不全都与一个也没有\",\"summary\":\"not everything 否定“全部都如此”，表示“并非全部”；nothing 表示“没有任何一项”。\",\"items\":[{\"label\":\"not everything：并非全部\",\"note\":\"否定全部符合条件，但不直接说明符合条件的具体数量。\",\"example\":{\"id\":\"466-conf-not-everything\",\"senseId\":\"466-everything-all-things\",\"en\":\"Not everything is ready for the picnic.\",\"zh\":\"野餐要用的东西还没全部准备好。\",\"note\":\"只否定“全部准备好”，不能直接译成“一样也没准备好”。\"}},{\"label\":\"nothing：没有任何一项\",\"note\":\"nothing 本身带否定含义，表示零项。\",\"example\":{\"id\":\"466-conf-nothing\",\"senseId\":\"466-everything-all-things\",\"en\":\"Nothing is ready for the picnic.\",\"zh\":\"野餐要用的东西一样也没准备好。\",\"note\":\"表示没有任何东西准备就绪。\"}}],\"takeaway\":\"not everything 是“不全都”；nothing 是“一个也没有”。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"everything 由 every 和 thing 组成，现代构词透明：every 表示“每一个”，thing 表示“事物”，合起来表示相关范围内的全部事物。\"",
+        "valueJson": "\"everything 由 every（每一个）与 thing（事物）组合而成，自中古英语时期就用于表示所谈范围内的全部事物；后来发展出强调用法，表示某人或某事极其重要。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代英语中可理解的构词说明，不代表完整历史词源链。\"",
+        "valueJson": "\"every 和 thing 是两个构词成分，不是 everything 先后经历的两种历史词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: everything\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/everything\",\"supports\":[\"everything 的词性、核心含义及常见语法用法\",\"everything 与 everyone 等相近表达的区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire: everything（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/everything#Anglais\",\"supports\":[\"everything 为英语不定代词，基本义是“全部；所有事物”\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"everything 由 every 和 thing 构成的透明复合词\",\"该词用于表示相关范围内全部事物\"]",
+        "valueJson": "[\"everything 由 every 和 thing 构成的透明复合词\",\"自中古英语时期起表示所谈范围内的全部事物\",\"后来发展的强调用法：极其重要的人或事\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 466,
+    "headword": "everything",
+    "meaning_zh": "pron. 每件事物, 所有事物",
+    "phonetic": "/'evriθiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

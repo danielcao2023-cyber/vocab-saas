@@ -1,0 +1,380 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cee6782463ce697f5c5896e7e952be4850f9734414a3b289cbf12fc47c1ef76c",
+    "executedReviewPromptHash": "cee6782463ce697f5c5896e7e952be4850f9734414a3b289cbf12fc47c1ef76c",
+    "reviewHash": "82f08958ec8eec77c38cbb68b8c3d8012e66232790d215e66623c4355eeb2b41",
+    "wordId": 976,
+    "inputHash": "73d3e3bf808611f78908181108ef476814e8f60a452fb3f18f442e365fb767b9",
+    "draftHash": "ac7749123ecb153ad93b3a8095472493d284e1b8a5610c6af5b4f305a3f0ba4d",
+    "finalHash": "bf6fec51b0d2ced4fe9e32dd2347e32ade90d660eed7cf6b3247607067cb8ca2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/paint#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.180Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116359,
+        "revisionId": 39872470,
+        "revisionTimestamp": "2026-09-11T21:46:51Z",
+        "sha256": "30664e7f20cf6c99fe6990f965045366de0cd01d40d8cdacf7f8f18c071780c2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/paint",
+        "section": "paint verb and noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "fb593226d81b54f99df25c6a2ff5d950509d53a4f7a9dc8ab31b211e24f0dd4e",
+        "summaryAndSupportsWordCount": 73,
+        "sha256": "fb593226d81b54f99df25c6a2ff5d950509d53a4f7a9dc8ab31b211e24f0dd4e",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/976.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/paint",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:08:14.759Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:17:53.899Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见的比喻义“描绘、描述”，未覆盖 paint a ... picture of ... 和 paint ... as ...。需新增独立义项及两个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "刷漆义被说明为仅及物，遗漏上下文明确时的不及物用法。补充该功能，并用涂指甲油的日常用法说明涂色装饰的范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "several early paints 不是现代英语中表示“几幅早期画作”的自然表达，应使用 paintings。法语释义 peinture 的多义不能直接移植给英语 paint；删除这一缺乏可靠支持的作品义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/meaning",
+        "message": "“其他绘画材料”范围过宽，容易模糊 paint 与用铅笔等 draw 的区别；收紧为用颜料作画。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "painting 本身不必然表示“正在绘画”，进行时需结合 be 等结构说明。pain(t)ing 又包含正确拼写 painting，不宜整体列作错误拼写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "不宜要求所有语流中的词尾 /t/ 都清楚爆破；“旧标注”也不是必要的学生学习内容。改为说明词尾辅音组合及避免添加元音。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "“与英语动词 paint 的形成相关”是历史关系说明，不是古法语形式的释义。该事实已在 summary 保留，应删除这个空泛阶段，不补造释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 与相关 sourceIds",
+        "message": "Cambridge 本次未取得正文，Oxford 未出现在实际取得材料中，不宜将正文依据挂接到这两页。改用已取得的 Wiktionnaire 英语词条；没有直接来源支持的专业用法使用空 sourceIds，保留 Etymonline 的词源引用。"
+      }
+    ],
+    "coverageAssessment": "已核对材料名词、及物与不及物绘画、及物与不及物涂刷、比喻描绘及涂色装饰的边界。修订后各核心义至少有两个例句；油漆与美术颜料均有实际例句。原词条的“绘画作品”和“涂漆”未被机械扩展成 paint 的通用作品名词或活动名词。现有近义及反向表达的语境限制基本合理，予以保留。直接取得的词典正文较简略，补充的通行用法依据专业语言知识；历史词源严格限于已取得的 Etymonline 内容，名词来源的不确定性继续明确保留。",
+    "senseInventory": [
+      {
+        "sense": "名词：油漆；颜料",
+        "coveredBy": [
+          "paint-n-material"
+        ],
+        "assessment": "已覆盖不可数材料义，两个例句分别体现表面油漆和绘画颜料；paints 表示种类或颜色的说明可保留。"
+      },
+      {
+        "sense": "动词：用颜料画；从事绘画",
+        "coveredBy": [
+          "paint-v-art"
+        ],
+        "assessment": "及物和不及物功能均有例句；将定义收紧为用颜料创作，避免泛指所有绘画材料。"
+      },
+      {
+        "sense": "动词：给物体刷漆、涂色；进行涂刷",
+        "coveredBy": [
+          "paint-v-coat"
+        ],
+        "assessment": "保留物体加颜色的句型，补足不带宾语表示刷漆的功能，并保留至少两个例句。"
+      },
+      {
+        "sense": "动词：比喻性地描绘、描述",
+        "coveredBy": [
+          "paint-v-describe"
+        ],
+        "assessment": "新增核心义，两个例句分别覆盖 paint a ... picture of ... 和 paint ... as ...。"
+      },
+      {
+        "sense": "动词：通过涂色装饰、点缀",
+        "coveredBy": [
+          "paint-v-coat"
+        ],
+        "assessment": "作为涂色义的应用处理，以 paint one's nails 体现；不推广为任意 decorate 或 embellish 的替换词。"
+      },
+      {
+        "sense": "名词：绘画作品（原词条列义的现代用法边界）",
+        "coveredBy": [],
+        "assessment": "不作为现代通用的可数作品义教授；删除 early paints 的失真例句，作品表达由原有 painting 对比及词族内容承担。"
+      },
+      {
+        "sense": "名词：涂漆、漆层与涂漆活动的边界",
+        "coveredBy": [
+          "paint-n-material"
+        ],
+        "assessment": "漆层由 a coat of paint 等表达覆盖；若指刷漆活动，通常用 painting，不另造 paint 的活动名词义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"paint：颜料、油漆；用颜料画，也可以给东西刷漆\"",
+        "valueJson": "\"paint：颜料、油漆；画画、刷漆，也能“描绘”情况\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"paint 作名词时常指“颜料、油漆”；作动词时可表示“画画”或“给某物上漆”。\"",
+        "valueJson": "\"paint 作名词时常指“颜料、油漆”；作动词时可表示“用颜料画画”“刷漆”，也可比喻“描绘人物或情况”。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"再记 paint a ... picture of ...（描绘……的情况）和 paint ... as ...（把……描述成……）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"结尾 /nt/ 要读出清楚的 /t/；旧标注 /peint/ 不是标准 IPA。\"",
+        "valueJson": "\"词尾是辅音组合 /nt/，练习时注意不要在后面额外加一个元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用颜料或其他绘画材料创作图画；也可不带宾语，表示从事绘画。\"",
+        "valueJson": "\"用颜料创作图画；也可不带宾语，表示从事绘画。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"给……刷漆；涂上颜料\"",
+        "valueJson": "\"给……刷漆；涂色\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"把油漆或颜料涂在某物表面。\"",
+        "valueJson": "\"把油漆或颜料涂在某物表面；也可用于涂指甲油等动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"这是及物用法：paint + 被涂的物体；常用来描述墙、门、家具等。\"",
+        "valueJson": "\"可用 paint + 被涂的物体，描述给墙、门、家具等刷漆；上下文清楚时，也可不带宾语表示刷漆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"paint-v-coat-ex2\",\"senseId\":\"paint-v-coat\",\"en\":\"Dad is painting the garden gate.\",\"zh\":\"爸爸正在给花园的大门刷漆。\",\"note\":\"paint 后接被涂漆的物体。\"}",
+        "valueJson": "{\"id\":\"paint-v-coat-ex2\",\"senseId\":\"paint-v-coat\",\"en\":\"The decorators were still painting when I got home.\",\"zh\":\"我到家时，装修工还在刷漆。\",\"note\":\"painting 不带宾语；decorators（装修工）使刷漆的含义明确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"paint-v-coat-ex3\",\"senseId\":\"paint-v-coat\",\"en\":\"She painted her nails red before the party.\",\"zh\":\"聚会前，她把指甲涂成了红色。\",\"note\":\"paint one's nails 指涂指甲油；red 表示涂成的颜色。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"paint your nails\",\"zh\":\"涂指甲油\",\"note\":\"paint 的对象也可以是指甲；这里使用的是指甲油。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"paint-v-describe\",\"title\":\"描绘；描述（比喻用法）\",\"meaning\":\"用语言等方式描绘人物或情况，使人形成某种印象。\",\"usageNote\":\"常用于 paint a ... picture of ... 和 paint ... as ...；所呈现的印象可以正面，也可以负面，是否客观要看语境。\",\"examples\":[{\"id\":\"paint-v-describe-ex1\",\"senseId\":\"paint-v-describe\",\"en\":\"Her emails painted a clear picture of life at her new school.\",\"zh\":\"她的几封邮件清楚地描绘了她在新学校的生活。\",\"note\":\"paint a ... picture of ... 在这里表示用文字呈现情况。\"},{\"id\":\"paint-v-describe-ex2\",\"senseId\":\"paint-v-describe\",\"en\":\"The review painted the restaurant as a great place for families.\",\"zh\":\"那篇点评把这家餐馆描述成了适合家庭用餐的好地方。\",\"note\":\"paint ... as ... 表示把……描述成……，并不保证这种评价一定准确。\"}],\"patterns\":[{\"en\":\"paint a/an + 形容词 + picture of + 人或情况\",\"zh\":\"描绘……的情况；使人对……形成某种印象\",\"note\":\"形容词说明呈现出的印象，如 clear、rosy 或 bleak。\",\"kind\":\"sentence-pattern\"},{\"en\":\"paint + 人或事物 + as + 名词或形容词\",\"zh\":\"把……描述成……\",\"note\":\"as 后说明被塑造的身份、特征或形象。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"paint a rosy picture\",\"zh\":\"把情况描绘得很美好\",\"note\":\"rosy 带有乐观色彩，有时暗示过分乐观。\",\"kind\":\"common-collocation\"},{\"en\":\"paint a bleak picture\",\"zh\":\"把情况描绘得很不乐观\",\"note\":\"bleak 突出形势黯淡、前景不佳。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"describe\",\"zh\":\"描述\",\"note\":\"describe 范围更广，不一定强调鲜明印象；paint 在此强调呈现出的整体印象。\"},{\"en\":\"portray\",\"zh\":\"描绘；刻画\",\"note\":\"塑造人物形象或呈现情况时与 paint 接近；portray 也可表示演员扮演角色，这一用法不能直接换成 paint。\"}],\"contrasting\":[],\"similarNote\":\"describe 重在叙述；portray 与 paint 都可突出呈现出的形象或印象。\",\"contrastingNote\":\"这一描绘、描述义没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"paint-n-artwork\",\"title\":\"绘画作品\",\"meaning\":\"一幅用颜料创作的画。日常英语中更常用 painting 表示一幅画。\",\"note\":\"paint 作“绘画作品”较少见，初学时优先掌握 painting。\",\"example\":{\"id\":\"paint-n-artwork-ex1\",\"senseId\":\"paint-n-artwork\",\"en\":\"The gallery has several early paints by local artists.\",\"zh\":\"这家画廊收藏了几幅当地艺术家早期的画作。\",\"note\":\"此处 paint 是较少见的作品用法。\"},\"sourceIds\":[\"oxford\"]}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"paint + ing，表示正在绘画或作名词“绘画”。\"",
+        "valueJson": "\"paint + -ing；作为现在分词可与 be 构成进行时，作为名词可指绘画、刷漆等活动或一幅画。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"先写完整的 paint，再加 -ed 或 -ing；不要写成 paied 或 pain(t)ing。\"",
+        "valueJson": "\"先写完整的 paint，再加 -ed 或 -ing：painted、painting；t 保留，不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"古法语\",\"form\":\"peintier\",\"meaning\":\"与英语动词 paint 的形成相关\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: paint\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/paint\",\"supports\":[\"名词和动词的常用义\",\"读音与词形\",\"常见搭配及用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：paint（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/paint#Anglais\",\"supports\":[\"英语 paint 的名词用法概览\",\"绘画与涂刷的动词用法\",\"发音及规则词形\",\"painting 等相关形式\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: paint\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/paint\",\"supports\":[\"名词与动词的释义和例用方向\",\"paint、painting 等词族\",\"常见句型\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 976,
+    "headword": "paint",
+    "meaning_zh": "n. 油漆, 颜料, 绘画作品, 涂漆\nvt. 油漆, 绘, 画, 描绘, 装饰, 点缀\nvi. 绘画, 涂漆",
+    "phonetic": "/peint/",
+    "pos": "",
+    "forms": []
+  }
+}

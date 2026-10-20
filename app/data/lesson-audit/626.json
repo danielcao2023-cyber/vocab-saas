@@ -1,0 +1,462 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6319f0e545a3897358df5c8470f715d73eb76f691c7b057dd3f721aa8feee4b4",
+    "executedReviewPromptHash": "6319f0e545a3897358df5c8470f715d73eb76f691c7b057dd3f721aa8feee4b4",
+    "reviewHash": "f610fb83bee5b8c62ebe5260c879b936950c5ee246c9ed8a264274579d2d9e1f",
+    "wordId": 626,
+    "inputHash": "af359873e1aae9b12617ca702b317fc6fe15c873b92a6bc4a18b8e033b920d16",
+    "draftHash": "ce6dd7dd8243aca2191fa700aa7696ef423b943dfd80c68a59123e5cba40a0ce",
+    "finalHash": "8f2001929fc7254310f3d03412855167406473dd4eeec137562c18b79b265c31",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/have#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.182Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 8568,
+        "revisionId": 39765050,
+        "revisionTimestamp": "2026-08-03T05:01:35Z",
+        "sha256": "c1c17688d497afa0b4cfb6a24f3dc70c86b22f78bb3041336de2db1bfb822135",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/have",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:20:45.454Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:36:28.562Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples、/lessCommonSenses/*/example、/confusions/*/items/*/example、/wordFamily/*/example",
+        "message": "初稿的13个例句对象均缺少必填字段 note。保留的例句须补齐说明，迁移后的例句也须满足结构要求。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "标题和释义包括日常活动，但两个例句都只涉及吃喝。应将吃喝与进行活动分开，并为活动用法提供两个实际例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses/0",
+        "message": "遗漏常用的 have to 义务结构和让／请别人做事的功能；经历、困难和身体状况也未充分覆盖。have a good time 不宜仅作单例的次要义，应扩充为核心教学内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "完成时助动词义只讲现在完成时，尚未覆盖 had 和 will have。需补充过去、将来参照时间及相应例句，避免把完成时助动词限定为 have/has。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段按由近及远排列，不适合直接画成历史顺序箭头；原始西日耳曼语、原始日耳曼语形式的释义未在已获取文字中明确给出。并列词根形式及只有字形依据的内容应移入 summary，保留事实，避免画成确定的单一路径。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/confusions/0/sourceIds、/wordFamily/*/sourceIds、/sources/1",
+        "message": "Cambridge 未实际获取，可保留为推荐阅读，但不作为本次已读材料的依据。能由已获取英语词条支持的内容应指向该来源，其余按专业语言知识补充的内容不虚挂引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example/zh",
+        "message": "have had this table 表示持续拥有，译成“用了很多年”增加了实际使用的含义；宜保留拥有义，并说明 have 与 had 的不同职能。"
+      }
+    ],
+    "coverageAssessment": "已核对已获取英语词条中的拥有义、完成时助动词义、读音、派生表达及词源。补丁补齐吃喝、日常活动、经历与身体状况、have to 和使役用法，各核心义均至少有两个自然例句；have to do with 作为拓展介绍。未穷尽所有习语和专门用法。Cambridge 仅保留为推荐阅读，词源不超出已获取材料。",
+    "senseInventory": [
+      {
+        "sense": "有；拥有；具备某种关系或特征",
+        "coveredBy": [
+          "626-have-own"
+        ],
+        "assessment": "原有两例有效；补充状态用法与 have got 的结构说明。"
+      },
+      {
+        "sense": "与过去分词构成完成时",
+        "coveredBy": [
+          "626-have-perfect"
+        ],
+        "assessment": "原有现在完成时两例有效；补充过去完成时、将来完成时及准确时间参照。"
+      },
+      {
+        "sense": "吃；喝；用餐",
+        "coveredBy": [
+          "626-have-eat"
+        ],
+        "assessment": "牛奶、吐司和晚餐两例已覆盖吃喝；移除未获例句支持的活动概括。"
+      },
+      {
+        "sense": "进行或参加日常活动",
+        "coveredBy": [
+          "626-have-activity"
+        ],
+        "assessment": "新增独立核心义，以英语课和休息两个例句覆盖。"
+      },
+      {
+        "sense": "经历；体验；遇到困难或出现身体状况",
+        "coveredBy": [
+          "626-have-experience"
+        ],
+        "assessment": "从次要义提升为核心义，保留原例，并补充感冒、入睡困难。"
+      },
+      {
+        "sense": "have to：必须；不得不",
+        "coveredBy": [
+          "626-have-obligation"
+        ],
+        "assessment": "新增核心结构，覆盖人称变化、过去形式及“不必”与“禁止”的区别。"
+      },
+      {
+        "sense": "让某人做事；安排别人处理某事",
+        "coveredBy": [
+          "626-have-causative"
+        ],
+        "assessment": "新增核心功能，分别用例句说明 have somebody do 和 have something done。"
+      },
+      {
+        "sense": "have to do with：与……有关",
+        "coveredBy": [
+          "626-have-relation"
+        ],
+        "assessment": "来源列有该派生表达；补充简要释义和原创例句，并与义务结构区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常直接接名词作宾语。否定和疑问句常用 do/does；have 的第三人称单数形式是 has。\"",
+        "valueJson": "\"通常直接接名词作宾语。表示拥有或亲属关系时，一般不用进行时。一般现在时的否定和疑问常借助 do/does，does 后用原形 have；第三人称单数肯定句用 has。have got 的疑问和否定按该结构处理。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"have/has got + 名词\",\"zh\":\"有……\",\"note\":\"口语中，尤其英式英语中，常用来表示现在拥有某物或具有某种状况。一般疑问句用 Have/Has + 主语 + got…?，否定用 haven’t/hasn’t got…，不用 do/does。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Mia 是第三人称单数主语，肯定句用 has，表示拥有。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 have 表示亲属关系，不表示对人的所有权。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"吃；喝；进行日常活动\"",
+        "valueJson": "\"吃；喝；用餐\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示吃、喝某种食物或饮料，也常用于说一顿饭或某项日常活动。\"",
+        "valueJson": "\"表示吃某种食物、喝某种饮料，或吃一顿饭。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have 与 milk、toast 搭配，在中文里分别译为喝和吃。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have dinner 表示吃晚饭；这里 dinner 前不用冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"have/has 与动词的过去分词连用，构成现在完成时；表示过去发生的事与现在有关，或从过去持续到现在的情况。\"",
+        "valueJson": "\"have 与过去分词连用构成完成时。现在完成时用 have/has，从现在回看过去；过去完成时用 had，从过去某个时间回看更早的情况；将来完成时用 will have，表示到将来某时已经完成或已持续一段时间的情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"这种 have 是助动词，本身通常不译作“有”。主语为 he、she、it 时用 has；否定句在 have/has 后加 not，疑问句把 have/has 提到主语前。缩写 have not = haven’t，has not = hasn’t；haven’t 读 /ˈhævənt/，hasn’t 读 /ˈhæzənt/。\"",
+        "valueJson": "\"这种 have 是助动词，本身通常不译作“有”。现在完成时中，第三人称单数主语用 has，其余人称用 have；否定在 have/has 后加 not，一般疑问句把 have/has 提到主语前。have not = haven’t（/ˈhævənt/），has not = hasn’t（/ˈhæzənt/）。过去完成时各人称用 had；将来完成时在 will 后用原形 have。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/zh",
+        "expectedValueJson": "\"已经……；曾经……\"",
+        "valueJson": "\"已经……；曾经……；一直……到现在\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have 是助动词，finished 是过去分词；这里强调现在作业已经完成。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"since 2022 给出起点；这里表示居住从过去一直延续到现在。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-perfect-ex3\",\"senseId\":\"626-have-perfect\",\"en\":\"I had finished my homework before my friends arrived.\",\"zh\":\"朋友们到达之前，我已经做完作业了。\",\"note\":\"做完作业先于朋友到达；had finished 以过去的 arrived 为参照。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-perfect-ex4\",\"senseId\":\"626-have-perfect\",\"en\":\"By Friday, we will have painted the kitchen.\",\"zh\":\"到星期五，我们就会把厨房粉刷完。\",\"note\":\"以将来的星期五为参照，表示到那时粉刷已经完成。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"had + 过去分词\",\"zh\":\"在过去某时之前已经……\",\"note\":\"过去完成时以过去的某个时间或事件为参照，回看更早完成或持续到那时的情况。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"will have + 过去分词\",\"zh\":\"到将来某时已经……\",\"note\":\"将来完成时常与 by Friday、by next year 等表示截止时间的短语连用。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"一般现在时中，复数主语 they 后用 have。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Ben 是第三人称单数主语，肯定句用 has。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"does 已体现第三人称单数变化，后面的 have 用原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/3/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"现在完成时的一般疑问句把 has 提到主语前，不再加 does；这里按读书的语境理解 finished her book。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"has 是 have 的第三人称单数现在时形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/zh",
+        "expectedValueJson": "\"这张桌子我们已经用了很多年。\"",
+        "valueJson": "\"这张桌子我们已经有很多年了。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have 是完成时助动词，had 是实义动词 have（有、拥有）的过去分词。\""
+      },
+      {
+        "op": "add",
+        "path": "/pronunciation/notes/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"表示“必须”的 have to 常读 /ˈhæf tə/，has to 常读 /ˈhæs tə/；这里常出现 /f/、/s/，与 have、has 单独读时的词尾音不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[\"wiktionary-have-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[\"wiktionary-have-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[\"wiktionary-have-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-have\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"626-have-experience\",\"title\":\"经历；体验\",\"meaning\":\"have 可与名词搭配，表示经历某件事或体验某种感受。\",\"note\":\"常见于 have a good time、have trouble 等固定搭配；初学时可把整组短语一起记。\",\"example\":{\"id\":\"626-have-experience-ex1\",\"senseId\":\"626-have-experience\",\"en\":\"We had a great time at the museum.\",\"zh\":\"我们在博物馆玩得很开心。\"},\"sourceIds\":[\"cambridge-have\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-activity\",\"title\":\"进行日常活动\",\"meaning\":\"与活动名词搭配，表示做、参加或进行某项活动，具体意思由搭配决定。\",\"usageNote\":\"这一用法可用于进行时。冠词和名词应按搭配记，如 have a class、have a break、have a shower。\",\"examples\":[{\"id\":\"626-have-activity-ex1\",\"senseId\":\"626-have-activity\",\"en\":\"We have an English class on Tuesday mornings.\",\"zh\":\"我们每周二上午上一节英语课。\",\"note\":\"have a class 可表示课表安排或上课，不表示拥有一门课程的所有权。\"},{\"id\":\"626-have-activity-ex2\",\"senseId\":\"626-have-activity\",\"en\":\"Let's have a short break before the next game.\",\"zh\":\"下一场比赛前，咱们短暂休息一下吧。\",\"note\":\"have a break 表示休息一下；break 在这里是可数名词。\"}],\"patterns\":[{\"en\":\"have + 活动名词\",\"zh\":\"进行某项活动\",\"note\":\"属于常见的动词与名词搭配，不能把所有表示做事的动词都机械替换为 have。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have a break\",\"zh\":\"休息一下\",\"note\":\"break 前通常用 a，也可用 short 等形容词修饰。\",\"kind\":\"common-collocation\"},{\"en\":\"have a shower\",\"zh\":\"淋浴；洗澡\",\"note\":\"表示洗澡这一活动，也常说 take a shower。\",\"kind\":\"common-collocation\"},{\"en\":\"have a look at\",\"zh\":\"看一看……\",\"note\":\"at 后接看的对象。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"take a break\",\"zh\":\"休息一下\",\"note\":\"在休息的语境中与 have a break 相近；不能据此把所有 have 都换成 take。\"},{\"en\":\"attend a class\",\"zh\":\"去上课\",\"note\":\"强调实际参加课堂；have a class 也可只说明课表安排。\"}],\"contrasting\":[{\"en\":\"work without a break\",\"zh\":\"不停歇地工作\",\"note\":\"在是否休息的语境中与 have a break 形成对照。\"}],\"similarNote\":\"相近表达取决于具体活动，替换时须保留各自的搭配。\",\"contrastingNote\":\"对照表达只适用于相应活动，不反向覆盖所有 have 的用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-experience\",\"title\":\"经历；感受；身体状况\",\"meaning\":\"与经历、感受、困难或疾病名词搭配，表示经历某事、体验某种感受或出现某种状况。\",\"usageNote\":\"常用搭配包括 have a good time、have a cold 和 have trouble doing something；trouble 在表示困难时不可数。\",\"examples\":[{\"id\":\"626-have-experience-ex1\",\"senseId\":\"626-have-experience\",\"en\":\"We had a great time at the museum.\",\"zh\":\"我们在博物馆玩得很开心。\",\"note\":\"have a great time 表示过得很愉快，had 是过去式。\"},{\"id\":\"626-have-experience-ex2\",\"senseId\":\"626-have-experience\",\"en\":\"I have a cold, so I'm staying home today.\",\"zh\":\"我感冒了，所以今天待在家里。\",\"note\":\"have a cold 表示感冒；feel cold 才是觉得冷。\"},{\"id\":\"626-have-experience-ex3\",\"senseId\":\"626-have-experience\",\"en\":\"She has trouble sleeping when it's hot.\",\"zh\":\"天气热时，她很难入睡。\",\"note\":\"have trouble 后接动词 -ing 形式，表示做某事有困难。\"}],\"patterns\":[{\"en\":\"have trouble doing something\",\"zh\":\"做某事有困难\",\"note\":\"trouble 在这里不可数；doing 不写成 to do。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have a good/great time\",\"zh\":\"过得愉快；玩得开心\",\"note\":\"表示愉快的经历，不是拥有一段时间。\",\"kind\":\"common-collocation\"},{\"en\":\"have a cold\",\"zh\":\"感冒\",\"note\":\"cold 表示一次感冒时是可数名词，通常带 a。\",\"kind\":\"common-collocation\"},{\"en\":\"have a headache\",\"zh\":\"头痛\",\"note\":\"表示身体不适；headache 前通常带 a。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"experience\",\"zh\":\"经历；体验\",\"note\":\"在遇到问题等语境中可接名词，如 experience a problem；不能机械替换 have a cold 或 have a good time。\"},{\"en\":\"suffer from\",\"zh\":\"患有；受……折磨\",\"note\":\"在疾病或不适的语境中与 have 相近，更突出不适；不能用于愉快的经历。\"}],\"contrasting\":[{\"en\":\"have no trouble doing something\",\"zh\":\"做某事没有困难\",\"note\":\"与 have trouble doing something 在做事是否有困难这一点上相对。\"},{\"en\":\"have a bad time\",\"zh\":\"过得不愉快；经历难熬的时光\",\"note\":\"与 have a good/great time 在经历是否愉快这一点上形成对照。\"}],\"similarNote\":\"相近表达须按经历、困难或疾病的具体语境选择。\",\"contrastingNote\":\"这些表达分别与具体搭配形成对照，不是 have 的通用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-obligation\",\"title\":\"have to：必须；不得不\",\"meaning\":\"have to + 动词原形表示有必要，或因规定、情况等必须做某事。\",\"usageNote\":\"现在时第三人称单数用 has to，过去时用 had to；疑问和否定通常借助 do/does/did。don’t/doesn’t have to 表示不必，不表示禁止。\",\"examples\":[{\"id\":\"626-have-obligation-ex1\",\"senseId\":\"626-have-obligation\",\"en\":\"I have to leave now to catch the last bus.\",\"zh\":\"为了赶上末班车，我现在得走了。\",\"note\":\"have to 后的 leave 用原形；to catch the last bus 说明离开的目的。\"},{\"id\":\"626-have-obligation-ex2\",\"senseId\":\"626-have-obligation\",\"en\":\"Mia has to wear a uniform at school.\",\"zh\":\"米娅在学校必须穿校服。\",\"note\":\"第三人称单数用 has to，后面的 wear 仍用原形。\"},{\"id\":\"626-have-obligation-ex3\",\"senseId\":\"626-have-obligation\",\"en\":\"You don't have to bring lunch; we'll provide it.\",\"zh\":\"你不用带午饭；我们会提供。\",\"note\":\"don’t have to 表示没有必要带，不是禁止带。\"}],\"patterns\":[{\"en\":\"have/has to + 动词原形\",\"zh\":\"必须／不得不做某事\",\"note\":\"第三人称单数现在时用 has to；其他人称用 have to。\",\"kind\":\"sentence-pattern\"},{\"en\":\"don’t/doesn’t have to + 动词原形\",\"zh\":\"不必做某事\",\"note\":\"表示没有必要；mustn’t 表示不许，两者不能混用。\",\"kind\":\"sentence-pattern\"},{\"en\":\"Do/Does + 主语 + have to + 动词原形?\",\"zh\":\"必须做某事吗？\",\"note\":\"does 后用 have，不用 has。\",\"kind\":\"sentence-pattern\"},{\"en\":\"had to + 动词原形\",\"zh\":\"当时必须／不得不做某事\",\"note\":\"用于过去的义务或必要性，各人称都用 had to。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have to leave\",\"zh\":\"必须离开\",\"note\":\"leave 是动词原形。\",\"kind\":\"common-collocation\"},{\"en\":\"have to get up early\",\"zh\":\"必须早起\",\"note\":\"整个 get up early 说明必须做的事。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"must\",\"zh\":\"必须\",\"note\":\"肯定句中常表示相近的必要性；谈过去的义务时常用 had to。must 后直接接动词原形，不加 to。\"},{\"en\":\"need to\",\"zh\":\"需要；有必要\",\"note\":\"在说明做某事的必要性时相近；不一定像具体规定中的 have to 那样突出强制要求。\"}],\"contrasting\":[{\"en\":\"don’t have to\",\"zh\":\"不必\",\"note\":\"表示没有必要做，是必要性上的否定，不表示禁止。\"},{\"en\":\"don’t need to\",\"zh\":\"不需要\",\"note\":\"在说明没有必要做某事时，与 don’t have to 相近。\"}],\"similarNote\":\"must、need to 与 have to 的相近点是必要性，句法和否定含义须分别记忆。\",\"contrastingNote\":\"不必与禁止不同：don’t have to 是不必，mustn’t 是不许。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-causative\",\"title\":\"让／请别人做某事\",\"meaning\":\"在安排或要求别人做事的语境中，have 可表示让某人做某事，或请人处理某事。\",\"usageNote\":\"have + 人 + 动词原形表示让某人做，不加 to；have + 宾语 + 过去分词可用于安排修理、理发等服务。后一结构在 have 与过去分词之间有宾语，应与完成时区分。\",\"examples\":[{\"id\":\"626-have-causative-ex1\",\"senseId\":\"626-have-causative\",\"en\":\"I'll have Ben call you after lunch.\",\"zh\":\"我会让本午饭后给你打电话。\",\"note\":\"Ben 后接原形 call，不用 to call；这里的 have 表示安排。\"},{\"id\":\"626-have-causative-ex2\",\"senseId\":\"626-have-causative\",\"en\":\"I had my bike repaired yesterday.\",\"zh\":\"我昨天请人把我的自行车修好了。\",\"note\":\"had 是一般过去时；my bike 是宾语，repaired 表示自行车被修理，不是 had repaired 这一过去完成时结构。\"}],\"patterns\":[{\"en\":\"have somebody do something\",\"zh\":\"让某人做某事\",\"note\":\"人后面接动词原形，不加 to。\",\"kind\":\"sentence-pattern\"},{\"en\":\"have something done\",\"zh\":\"请人处理某事\",\"note\":\"在安排服务的语境中，宾语后接过去分词，说明该事物接受什么处理。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have your hair cut\",\"zh\":\"理发；请人剪头发\",\"note\":\"通常表示由别人剪，不是自己动手剪。\",\"kind\":\"common-collocation\"},{\"en\":\"have the car repaired\",\"zh\":\"请人修车\",\"note\":\"car 与 repaired 之间是被动关系。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"get somebody to do something\",\"zh\":\"让某人做某事；促成某人做某事\",\"note\":\"与 have somebody do something 在促使别人做事的语境中相近，但 get 后须用 to do。\"},{\"en\":\"get something done\",\"zh\":\"把某事处理好；请人处理某事\",\"note\":\"在修车、理发等服务语境中与 have something done 相近；也可表示把事情做完，不能一概理解成请别人做。\"}],\"contrasting\":[{\"en\":\"do it yourself\",\"zh\":\"自己动手做\",\"note\":\"在请人修理等语境中，与安排别人来做形成对照。\"}],\"similarNote\":\"相近结构的动词形式不同：have somebody do，get somebody to do。\",\"contrastingNote\":\"自己做与请别人做只在这类安排事务的语境中形成对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"626-have-relation\",\"title\":\"have to do with：与……有关\",\"meaning\":\"固定表达 have (something) to do with 表示与某事有关。\",\"note\":\"have nothing to do with 表示与……无关；这里的 to do with 要按整组短语理解，不是表示必须做某事的 have to。\",\"example\":{\"id\":\"626-have-relation-ex1\",\"senseId\":\"626-have-relation\",\"en\":\"The delay has to do with the weather.\",\"zh\":\"延误与天气有关。\",\"note\":\"单数主语 the delay 后用 has；has to do with 整体表示与……有关。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"have 的词源可追溯到中古英语 haven，再到古英语 habban；现有历史材料还列出更早的重构形式及其“抓住、握住”一类的含义。\"",
+        "valueJson": "\"have 经中古英语 haven 传承自古英语 habban（“有”）；古英语相关形式还有 hafian。更早可追溯到原始西日耳曼语 *habbjan、原始日耳曼语 *habjaną，最终追溯到意为“抓住、握住”的原始印欧语词根 *keh₂p-；另有并列的重构形式 *kap-。这两个词根形式不表示先后演变的两个阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"haven\",\"meaning\":\"有；拥有\"},{\"language\":\"古英语\",\"form\":\"habban\",\"meaning\":\"有；拥有\"},{\"language\":\"西日耳曼语\",\"form\":\"*habbjan\",\"meaning\":\"重构形式，意为有、拥有\"},{\"language\":\"原始日耳曼语\",\"form\":\"*habjaną\",\"meaning\":\"重构形式，意为有、拥有\"},{\"language\":\"原始印欧语\",\"form\":\"*keh₂p-；*kap-\",\"meaning\":\"材料列出的重构词根，意为抓住、握住\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"habban\",\"meaning\":\"有\"},{\"language\":\"现代英语\",\"form\":\"have\",\"meaning\":\"有；拥有；也作完成时助动词\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionnaire: have（英语词源部分）\"",
+        "valueJson": "\"Wiktionnaire: have（英语词条，法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"have 从中古英语 haven 到古英语 habban 的历史演变\",\"所列西日耳曼语、原始日耳曼语及原始印欧语重构形式\"]",
+        "valueJson": "[\"have 表示有、拥有及亲属关系\",\"have 与过去分词构成完成时\",\"have 的重读 /hæv/ 与非重读 /həv/\",\"列有派生表达 have to 和 have to do with\",\"中古英语 haven、古英语 habban 等历史形式及更早的重构形式\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 626,
+    "headword": "have (has)",
+    "meaning_zh": "v. 有；拥有；吃；喝\naux. 与过去分词构成完成时",
+    "phonetic": "/hæv/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "has",
+        "kind": "3"
+      }
+    ]
+  }
+}

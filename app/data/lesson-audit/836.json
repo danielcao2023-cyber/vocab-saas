@@ -1,0 +1,326 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "09f6396a19193177589f43120c2a5157e3c6bf48f799cecb58a69370409c1c34",
+    "executedReviewPromptHash": "09f6396a19193177589f43120c2a5157e3c6bf48f799cecb58a69370409c1c34",
+    "reviewHash": "9f95ed29f0d7fc35361ac5e302a40ac7c7a74f85318fde37beba8a672f8c8a43",
+    "wordId": 836,
+    "inputHash": "66a1fdacb3e4c40a5be2d3d060adc6fb19265c8b5769b8c501ce8edbcda8b8d6",
+    "draftHash": "168c75c70cbf1f8359d707e94a886e8152ffcb3456e2f4a65017cc8c43fe3239",
+    "finalHash": "7badc6f73af7478b8d35439f1e14125c3a20e867d8df551df8f4af46ec798f28",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/matter",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:49:09.987Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/matter#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:15.227Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11375,
+        "revisionId": 39506161,
+        "revisionTimestamp": "2026-05-13T14:02:09Z",
+        "sha256": "b7b9dbeb0b3404440f15601b053e5c04f9d7e44a94be233323a95368add5ef23",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/matter",
+        "section": "matter etymology",
+        "supports": [
+          "French/direct Latin routes; substance/subject and later importance"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:12:02.591101+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "abc2a268e9673e025d2f98d29b497956e35a9e5e17c7345b386015c172fad084",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "abc2a268e9673e025d2f98d29b497956e35a9e5e17c7345b386015c172fad084",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/836.json"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:30:58.708Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 不在实际取得的来源材料中，不能作为现有引注的依据。应移除该来源，改引有对应证据的维基词典英语词条。此外，该维基词典条文只说明拉丁语词源，不支持其来源说明中的“古法语”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "把“不同种类的物质”直接作为使用 matters 的理由，会误导常规用法。现代基础英语通常说 different kinds of matter 或 different substances；matters 通常表示事情、事务。相关词形和辨析说明应保持一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/collocations/1/note",
+        "message": "the things that matter 中，修饰 things 的是定语从句 that matter；matter 是从句的谓语，不能直接解释为动词修饰 things。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0",
+        "message": "mattering 确有专门语境中的名词用法，但不适合作为本课唯一词族重点；The mattering of small choices 表达生硬，也没有现有来源支持这一释义和示例。可换成来源明确列出的 antimatter，并说明真实构词和拼写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "来源另列“文字内容”和医学中的“脓”。应作为非核心扩展义补入，分别说明常见搭配和旧时用法，避免全义清单遗漏。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations",
+        "message": "来源明确列出的常用固定表达 as a matter of fact 尚未覆盖，宜补充含义、语境和原创示例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms",
+        "message": "可补列过去分词 mattered，并说明与过去式同形；现有词形拼写和读音无需纠错。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "直接借自拉丁语的路径已有材料支持，不必降格成“也可能”。应明确阶段列表展示的是经古法语传入的路径，把直接借入路径留在文字说明中。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的四个名词义和一个动词义。事情／问题、物质、要紧三个初中核心义均保留两条自然原创例句；文字内容和旧时医学义补入扩展栏，as a matter of fact 补入固定表达。近义与反向表达的语境限制基本准确。词源阶段保留真实的古法语传入顺序，另行说明直接拉丁语路径。审查限于所列材料与专业语言知识，未进行额外网页核验。",
+    "senseInventory": [
+      {
+        "sense": "名词：事情、事务；问题，包括 What’s the matter?",
+        "coveredBy": [
+          "matter-n-issue"
+        ],
+        "assessment": "核心义已覆盖；两条例句分别呈现待讨论的事情和令人困扰的问题。"
+      },
+      {
+        "sense": "名词：物质",
+        "coveredBy": [
+          "matter-n-substance"
+        ],
+        "assessment": "核心义已有两条例句；修正不同种类的物质通常不使用 matters 的说明。"
+      },
+      {
+        "sense": "动词：重要、要紧、有关系",
+        "coveredBy": [
+          "matter-v-importance"
+        ],
+        "assessment": "核心义已有两条例句，覆盖 matter to someone 和否定结构；修正定语从句的语法解释。"
+      },
+      {
+        "sense": "名词：文字内容、阅读材料",
+        "coveredBy": [
+          "matter-n-content"
+        ],
+        "assessment": "补入非核心扩展义，以 reading matter 示范，并提示 printed matter。"
+      },
+      {
+        "sense": "名词：脓",
+        "coveredBy": [
+          "matter-n-pus"
+        ],
+        "assessment": "补入旧时医学用法，仅作识别；现代通常使用 pus。"
+      },
+      {
+        "sense": "固定表达：as a matter of fact，事实上、其实",
+        "coveredBy": [
+          "matter-n-issue"
+        ],
+        "assessment": "补入固定表达，说明补充事实或纠正误解的用途，并提供原创示例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-matter\"]",
+        "valueJson": "[\"wiktionary-matter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"规则变化：直接加 -s。\"",
+        "valueJson": "\"规则变化：matter + -s → matters，表示多件事情或事务；“物质”义通常不可数，不把 matters 当作其常规复数。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/4",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去分词\",\"form\":\"mattered\",\"ipa\":\"/ˈmætərd/\",\"note\":\"过去分词与过去式同形：matter + -ed → mattered。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-matter\"]",
+        "valueJson": "[\"wiktionary-matter\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"as a matter of fact\",\"zh\":\"事实上；其实\",\"note\":\"常用于补充真实情况或纠正误解。例如：As a matter of fact, I’ve already read this book.（其实，这本书我已经读过了。）\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常是不可数名词；谈不同种类的物质时也可用复数 matters，但初中学习先掌握不可数用法。\"",
+        "valueJson": "\"“物质”义通常不可数；“不同种类的物质”一般说 different kinds of matter 或 different substances。matters 通常表示“事情、事务”，不要把物质种类多当作常规加 -s 的理由。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-matter\"]",
+        "valueJson": "[\"wiktionary-matter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"matter 作动词修饰 things，表示这些事情值得在意。\"",
+        "valueJson": "\"that matter 是修饰 things 的定语从句；matter 在从句中作谓语，表示“重要、值得在意”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-matter\"]",
+        "valueJson": "[\"wiktionary-matter\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"matter-n-content\",\"title\":\"文字内容；阅读材料\",\"meaning\":\"指供阅读、印刷等的文字内容或材料，通常不可数。\",\"note\":\"常见于 reading matter（阅读材料）和 printed matter（印刷品）；不能在所有语境中直接替换 content。\",\"example\":{\"id\":\"matter-less-ex1\",\"senseId\":\"matter-n-content\",\"en\":\"I packed some light reading matter for the train journey.\",\"zh\":\"我在行李里放了些轻松的读物，准备在火车上看。\",\"note\":\"reading matter 指供阅读的材料；这里的 matter 不表示一件事情。\"},\"sourceIds\":[\"wiktionary-matter\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"matter-n-pus\",\"title\":\"脓（旧时医学用法）\",\"meaning\":\"指伤口等处产生的脓，作不可数名词。\",\"note\":\"这是旧时的医学用法，现代通常使用 pus；初中阶段只需识别。\",\"example\":{\"id\":\"matter-less-ex2\",\"senseId\":\"matter-n-pus\",\"en\":\"Thick matter oozed from the wound.\",\"zh\":\"浓稠的脓从伤口渗了出来。\",\"note\":\"这里示范旧时的“脓”义；现代一般用 pus。\"},\"sourceIds\":[\"wiktionary-matter\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"前面常有限定词，如 a matter；复数为 matters。\"",
+        "valueJson": "\"表示具体事情时可说 a matter，复数 matters 表示事情或事务；表示“物质”时通常不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-matter\"]",
+        "valueJson": "[\"wiktionary-matter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"matter 经古法语 matere 传入英语，也有直接来自拉丁语 materia 的路径。词义从材料、物质和主题，发展出“事情、问题”；“要紧”这一动词义由名词义发展而来。\"",
+        "valueJson": "\"matter 经盎格鲁法语、古法语 matere 传入英语，也有直接借自拉丁语 materia 的路径。法语中已有“物质、主题”等义；英语后来发展出“事情、情况”等用法，表示“要紧”的动词义由名词发展而来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"英语 matter 既经古法语传入，也可能直接承自拉丁语；词源中与拉丁语 mater（母亲、来源）的联系属于历史分析，不是现代英语中可拆开的词缀。\"",
+        "valueJson": "\"阶段列表展示经古法语传入的路径；直接从拉丁语借入是另一条路径。materia 与拉丁语 mater（母亲、来源）的历史联系，不表示现代英语 matter 含有可据此拆分的词缀。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0",
+        "expectedValueJson": "{\"word\":\"mattering\",\"partOfSpeech\":\"noun\",\"meaning\":\"重要性；值得关注之处（少见）\",\"formation\":\"matter + -ing\",\"spellingNote\":\"由动词 matter 加 -ing 构成；作为名词使用时不常见，初中阶段重点掌握动词形式。\",\"example\":{\"id\":\"matter-family-ex1\",\"senseId\":\"matter-v-importance\",\"en\":\"The mattering of small choices became clear to the team.\",\"zh\":\"小小选择的重要性逐渐被团队看清。\",\"note\":\"此名词用法少见，日常表达通常说 the importance of small choices。\"},\"sourceIds\":[\"oxford-matter\"]}",
+        "valueJson": "{\"word\":\"antimatter\",\"partOfSpeech\":\"noun\",\"meaning\":\"反物质\",\"formation\":\"anti-（反）+ matter（物质）\",\"spellingNote\":\"anti- 与 matter 合写成 antimatter，不用连字符；保留 matter 中的双写 t。\",\"example\":{\"id\":\"matter-family-ex1\",\"senseId\":\"matter-n-substance\",\"en\":\"Scientists use special equipment to study antimatter.\",\"zh\":\"科学家使用专门的设备研究反物质。\",\"note\":\"antimatter 是物理学名词，与 matter 的“物质”义相关。\"},\"sourceIds\":[\"wiktionary-matter\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"matter 的常见词形主要是规则变化 matters、mattered、mattering；没有必要把仅仅相关的词当作词族成员。\"",
+        "valueJson": "\"matters、mattered、mattering 是 matter 的规则词形变化；antimatter 是加前缀形成的派生词。学习时把词形变化和构成新词分开记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"matter 的古法语和拉丁语词源信息\",\"物质、事情及动词义\",\"英美发音差异\"]",
+        "valueJson": "[\"英语 matter 的名词义：物质、事情、文字内容及医学中的脓\",\"matter 表示重要、要紧的动词义\",\"英式和美式读音\",\"来自拉丁语 materia 的词源说明\",\"衍生词 antimatter 与固定表达 as a matter of fact\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-matter\",\"title\":\"Oxford Learner’s Dictionaries: matter\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/matter\",\"supports\":[\"名词和动词的常见义项及搭配\",\"英式和美式读音\",\"常见词形与用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 836,
+    "headword": "matter",
+    "meaning_zh": "n. 事情；问题；物质\nv. 要紧；有关系",
+    "phonetic": "/'mætә/",
+    "pos": "",
+    "forms": []
+  }
+}

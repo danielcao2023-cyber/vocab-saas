@@ -1,0 +1,482 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5d4b585e840537f1f83150ec188db2900ecec7e05259e6a45ba58f77358135db",
+    "executedReviewPromptHash": "5d4b585e840537f1f83150ec188db2900ecec7e05259e6a45ba58f77358135db",
+    "reviewHash": "0317664437c4dab2337fc565f3c301cf37be17a3f329ba8924f3ee4881d99df1",
+    "wordId": 1339,
+    "inputHash": "c88b2cd19733920a4c391b9964796d7add0ee2da564693f78c06080daac78fcf",
+    "draftHash": "6a1d0cb9a086ccb1c6241ffe49f4f8d6f967e7a014f83da6e2aef62231354db4",
+    "finalHash": "4db42cb7078f150918809c6f75c84f29061907da1eca6cb87b75996969abbb72",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/stress#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.074Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118417,
+        "revisionId": 39841158,
+        "revisionTimestamp": "2026-08-30T16:40:05Z",
+        "sha256": "ecdf5aa9dbcda9a49858a813f13ca570d66ebe0cbeb3f2bd880129209a457203",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/stress",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:50:58.730Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:06:53.478Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/4/note；/confusions/1",
+        "message": "stressing 是 stress 直接加 -ing，保留原有的 ss。初稿多处声称要再双写或添加 s，并写出 stress + s + ing，与实际拼写矛盾。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/wordFamily；/confusions/0",
+        "message": "遗漏常用口语动词功能：stress (out) about/over sth 表示焦虑，stress sb (out) 表示使人焦虑。须分别覆盖不及物、及物用法，并补充 stressed 与 stressful 的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "本段包含语音重音与一般强调两个功能，但各只有一个例句；一般强调也不宜定义为被强调的内容本身。保留合并段落，分别补足两例并修正释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "应力不是内力本身，而是单位面积上的内力；应变应解释为相对变形。原例注把应力说成作用于材料的力，容易再次混淆应力与外部载荷。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 实际获取失败，不能作为本次审校的实得词典依据。改引已取得的 Wiktionary 英语词条；该词条未明确收录、仅依据专业语言知识保留或补充的动词义不挂该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "可证实古法语 destresse 的来源关系，但材料没有给出该古法语词的释义。现有阶段的 meaning 都是身份说明，应去掉空洞阶段，只在 summary 保留可证实的来源事实。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0；/confusions/0/items/0/example/zh；/memoryAid/story",
+        "message": "strain 并非一概比 stress 更具体；stress at school 不限于学业压力；under stress 本身不编码“很大”。助记中的“stress 说”也应换成可模仿的完整英语用法。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的心理压力与紧张、语音重音、一般强调、力学应力，以及动词的强调、重读、施加应力和常用口语焦虑用法。补丁后各核心义或功能均有至少两个原创英中例句；力学动词保留为较少见义。未将“紧迫”另造为常用独立义。历史词源限于已取得的古法语来源信息；Cambridge 未取得正文，新增口语义依据专业语言知识，不冒充词典引证。",
+    "senseInventory": [
+      {
+        "sense": "名词：心理压力；持续负担造成的精神或情绪紧张",
+        "coveredBy": [
+          "stress-n-pressure"
+        ],
+        "assessment": "覆盖心理压力与材料中的 tension 用法，无须重复拆义；原有两例有效。"
+      },
+      {
+        "sense": "名词：单词或句子中的重音",
+        "coveredBy": [
+          "stress-n-emphasis"
+        ],
+        "assessment": "原稿只有一个重音例句；补丁后有两个，并保留 word stress、sentence stress 搭配。"
+      },
+      {
+        "sense": "名词：强调；重视",
+        "coveredBy": [
+          "stress-n-emphasis"
+        ],
+        "assessment": "与重音同段呈现；修正释义并补足第二个一般强调例句。"
+      },
+      {
+        "sense": "名词：力学应力",
+        "coveredBy": [
+          "stress-n-physics"
+        ],
+        "assessment": "已有两个例句；修正单位面积内力的定义，并明确与载荷、应变的区别。"
+      },
+      {
+        "sense": "及物动词：强调；着重指出",
+        "coveredBy": [
+          "stress-v-emphasize"
+        ],
+        "assessment": "stress sth 与 stress that 从句均已覆盖，两例自然；移除无法成立的来源归属。"
+      },
+      {
+        "sense": "及物动词：重读音节或词",
+        "coveredBy": [
+          "stress-v-pronounce"
+        ],
+        "assessment": "音节重读和句中词的突出各有实例，词性与搭配正确。"
+      },
+      {
+        "sense": "及物动词：使物体或结构承受应力",
+        "coveredBy": [
+          "stress-v-physics"
+        ],
+        "assessment": "已作为较少见学科义覆盖，与取得的词典定义相符。"
+      },
+      {
+        "sense": "不及物动词：焦虑；担心，常用 stress (out) about/over",
+        "coveredBy": [
+          "stress-v-worry"
+        ],
+        "assessment": "原稿遗漏；补丁新增独立义、两个生活例句及搭配和语境限定。"
+      },
+      {
+        "sense": "及物动词：使人焦虑，常用 stress sb out",
+        "coveredBy": [
+          "stress-v-cause-anxiety"
+        ],
+        "assessment": "原稿遗漏；补丁新增两个例句，覆盖带 out 与不带 out 的用法，并说明代词位置。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，stress 常指精神压力、说话中的重音或物体承受的应力；作动词时，常表示强调某事或读重某个音节。\"",
+        "valueJson": "\"作名词时，stress 可指心理压力、重音或强调，力学中指应力；作动词时，可指强调、重读，也可在口语中表示焦虑或使人焦虑。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"学会 stress sb out（使某人焦虑）和 stress about/over sth（为某事焦虑），并区分 stressed 与 stressful。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"末尾不发音的 e 不适用；stress 以辅音字母双写结尾，先双写 s 再加 -ing。\"",
+        "valueJson": "\"stress 已以 ss 结尾，直接加 -ing：stress + ing → stressing。保留原有的两个 s，不再添加 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"学业压力\"",
+        "valueJson": "\"在学校承受的压力\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常指长时间用力或负担造成的身心紧张，语气比日常的 stress 更具体。\"",
+        "valueJson": "\"与 stress 都可指身心负担；strain 常突出持续负担对精力、健康或关系造成的消耗，如 be under strain。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"重音；强调的重点\"",
+        "valueJson": "\"重音；强调\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"说话或读单词时某个音节听起来更突出；也可指讲话中特别强调的内容。\"",
+        "valueJson": "\"语音中某个音节或词读得更突出；也指对某件事的特别强调或重视。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stress-n-emphasis-ex3\",\"senseId\":\"stress-n-emphasis\",\"en\":\"I checked the stress in ‘photograph’ before reading it aloud.\",\"zh\":\"朗读 photograph 之前，我查了它的重音位置。\",\"note\":\"这里 stress 是名词，指单词的重音。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stress-n-emphasis-ex4\",\"senseId\":\"stress-n-emphasis\",\"en\":\"The school places great stress on road safety.\",\"zh\":\"学校十分重视道路安全。\",\"note\":\"place great stress on sth 表示十分强调或重视某事，不涉及读音。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"物体受到外力时，内部承受的力；常见于物理或工程语境。\"",
+        "valueJson": "\"物体受力时，其内部单位面积上承受的内力；常见于物理或工程语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/en",
+        "expectedValueJson": "\"The bridge was tested for stress before it opened.\"",
+        "valueJson": "\"Sensors measured the stress in the bridge as a truck crossed it.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/zh",
+        "expectedValueJson": "\"这座桥在开放前接受了应力测试。\"",
+        "valueJson": "\"卡车驶过桥面时，传感器测量了桥梁内部的应力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/zh",
+        "expectedValueJson": "\"反复受力可能会削弱金属。\"",
+        "valueJson": "\"反复承受应力可能使金属变弱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "\"用 repeated stress 描述重复作用于材料的力。\"",
+        "valueJson": "\"repeated stress 指金属反复承受的应力，不是外部载荷本身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"在材料工程中可指测量结构承受应力的测试；在其他领域也可指压力测试。\"",
+        "valueJson": "\"工程中可指在受力条件下检验材料或结构表现的试验；在其他领域也常指高负荷下的压力测试。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"物理学中常与 stress 一起讨论；strain 指物体受力后产生的变形。\"",
+        "valueJson": "\"物理学中常与 stress 一起讨论；strain 指变形相对于原尺寸的程度，例如伸长量与原长度的比值。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"strain 指变形，load 指外部载荷；它们是相关概念，不是 stress 的同义词。\"",
+        "valueJson": "\"strain 指相对变形，load 指外部载荷，stress 指单位面积上的内力；三者相关，但不是同义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此学科义没有适合初中学习者直接替换的常用反义词；理解时可对照外部载荷 load 与变形 strain。\"",
+        "valueJson": "\"此学科义没有适合直接替换的常用反义词；可对照外部载荷 load 与相对变形 strain 来理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/zh",
+        "expectedValueJson": "\"他这周压力很大。\"",
+        "valueJson": "\"他这周承受着压力。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"stressed（形容词）：感到压力的\",\"note\":\"描述人的压力感时常用 stressed；stressful 常描述造成压力的事情。\",\"example\":{\"id\":\"stress-confusion-ex4\",\"senseId\":\"stress-n-pressure\",\"en\":\"I felt stressed, but the short walk helped me relax.\",\"zh\":\"我感到很有压力，但散了一小会儿步后放松了些。\",\"note\":\"I felt stressed 描述人的感受；不能用 I felt stressful 表达同样的意思。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先看搭配：under stress 通常是“承受压力”；stress sth 或 stress that... 通常是“强调……”。\"",
+        "valueJson": "\"under stress 是“承受压力”；stress the need 或 stress that... 是“强调”；stress sb out 是“使某人焦虑”。形容词 stressed 常描述人的感受，stressful 常描述造成压力的事情。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"stress 以辅音字母双写结尾，变成现在分词时要双写词尾字母 s。\"",
+        "valueJson": "\"stress 本来就以两个 s 结尾，变成现在分词时直接加 -ing，保留 ss，不再添加 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"以辅音字母双写结尾的 stress 加 -ing 时，双写末尾 s。\"",
+        "valueJson": "\"stress 直接加 -ing，词中的两个 s 保持不变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "\"stress + s + ing，写作 stressing。\"",
+        "valueJson": "\"stress + ing → stressing，只有原来的两个 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"过去式是 stressed，词尾只写一个 d。\"",
+        "valueJson": "\"stress + ed → stressed，同样保留原来的两个 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"stress 的历史来源可追溯到古法语 destresse。英语 stress 与这个来源相关；现代英语中，压力、重音和应力是不同语境下形成的词义。\"",
+        "valueJson": "\"英语 stress 的历史来源可追溯到古法语 destresse。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"destresse\",\"meaning\":\"stress 的历史来源。\"},{\"language\":\"英语\",\"form\":\"stress\",\"meaning\":\"现代英语词形。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_stress\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"stressed\",\"partOfSpeech\":\"形容词\",\"meaning\":\"感到有压力的；紧张焦虑的\",\"formation\":\"stress + -ed，原为动词过去分词，常用作形容词描述人的感受。\",\"spellingNote\":\"直接在 stress 后加 -ed，保留两个 s，写作 stressed。\",\"example\":{\"id\":\"stress-family-ex3\",\"senseId\":\"stress-n-pressure\",\"en\":\"I felt stressed after a week of exams.\",\"zh\":\"经历了一周的考试后，我感到很有压力。\",\"note\":\"stressed 描述人的感受；a stressful week 则描述令人有压力的一周。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"stressful 和 stressor 都由 stress 构成；两词词尾不同，stressful 表示“令人有压力的”，stressor 指“压力来源”。\"",
+        "valueJson": "\"stressful = stress + -ful，描述造成压力的事物；stressor = stress + -or，指压力来源；stressed = stress + -ed，常描述人的压力感。三词都保留 stress 原有的 ss。语音中 stressed 也表示“重读的”，对应 unstressed（un- + stressed，非重读的）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"考试前，林林担心成绩，感到 stress；老师提醒她先深呼吸，又 stress 说“看清题目最重要”。同一个 stress，放在心情里是压力，作动词时是强调。朗读 begin 时，再把声音落在第二个音节，听一听 word stress。\"",
+        "valueJson": "\"考试前，林林担心成绩，正承受着 stress（压力）。老师提醒她先深呼吸，又说：“I must stress the importance of reading each question carefully.”（我必须强调仔细读每道题的重要性。）这里 stress 是“强调”。朗读 begin 时，林林把重音放在第二个音节，又体会到了 word stress（单词重音）。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stress-v-worry\",\"title\":\"焦虑；担心（不及物，口语）\",\"meaning\":\"因为某件事而紧张、焦虑或反复担心。\",\"usageNote\":\"常用 stress about/over sth，也可说 stress out about/over sth。这里 stress 不直接接所担心的事情；它与表示“强调”的 stress sth 句型不同。\",\"examples\":[{\"id\":\"stress-v-worry-ex1\",\"senseId\":\"stress-v-worry\",\"en\":\"Don't stress about tomorrow's test; you've prepared well.\",\"zh\":\"别为明天的测验焦虑；你已经充分准备了。\",\"note\":\"stress about 引出所担心的事，是不及物用法。\"},{\"id\":\"stress-v-worry-ex2\",\"senseId\":\"stress-v-worry\",\"en\":\"I was stressing out over the rent until my pay arrived.\",\"zh\":\"工资到账前，我一直在为房租发愁。\",\"note\":\"stress out over sth 表示因某事焦虑；out 在这一用法中可以省略。\"}],\"patterns\":[{\"en\":\"stress about/over sth\",\"zh\":\"因某事焦虑\",\"note\":\"about 或 over 后接所担心的事情；常用于口语。\",\"kind\":\"sentence-pattern\"},{\"en\":\"stress out about/over sth\",\"zh\":\"为某事焦虑不安\",\"note\":\"这里没有被施加压力的宾语，是描述本人焦虑的不及物用法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"stress about money\",\"zh\":\"为钱发愁\",\"note\":\"常见的生活话题搭配；这里不表示强调金钱。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"worry about sth\",\"zh\":\"担心某事\",\"note\":\"意思接近，语体更中性；stress about sth 更口语化，常突出紧张感。\"}],\"contrasting\":[{\"en\":\"relax\",\"zh\":\"放松\",\"note\":\"在焦虑语境中表示放松下来，与紧张担心的状态相对。\"}],\"similarNote\":\"这里比较的是因事情而焦虑的用法，不是 stress 的强调义。\",\"contrastingNote\":\"relax 可与这一焦虑义形成语境对照，不能替换到重音或应力语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stress-v-cause-anxiety\",\"title\":\"使人焦虑；使人紧张（及物，口语）\",\"meaning\":\"使某人产生压力感或焦虑。\",\"usageNote\":\"口语中常说 stress sb out，也可直接说 stress sb。人是宾语；用代词时必须放在 stress 和 out 之间，如 stress me out。\",\"examples\":[{\"id\":\"stress-v-cause-anxiety-ex1\",\"senseId\":\"stress-v-cause-anxiety\",\"en\":\"Waiting for my exam results is stressing me out.\",\"zh\":\"等考试成绩让我焦虑不安。\",\"note\":\"me 是宾语，放在 stressing 与 out 之间。\"},{\"id\":\"stress-v-cause-anxiety-ex2\",\"senseId\":\"stress-v-cause-anxiety\",\"en\":\"All these last-minute changes really stress me.\",\"zh\":\"这些临时变动真让我紧张。\",\"note\":\"stress 直接接人，也可表示使人有压力，不一定带 out。\"}],\"patterns\":[{\"en\":\"stress sb out\",\"zh\":\"使某人焦虑\",\"note\":\"代词宾语放在动词与 out 之间：stress her out，不能说 stress out her。\",\"kind\":\"sentence-pattern\"},{\"en\":\"stress sb\",\"zh\":\"使某人有压力\",\"note\":\"这里直接接人，表示使其紧张；不表示强调这个人。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"really stress me out\",\"zh\":\"真让我焦虑\",\"note\":\"常用于口语中描述某件事带给自己的压力。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"make sb anxious\",\"zh\":\"使某人焦虑\",\"note\":\"直接说明让人产生焦虑的结果，可解释这一口语义。\"}],\"contrasting\":[{\"en\":\"calm sb down\",\"zh\":\"使某人平静下来\",\"note\":\"与使人紧张焦虑的结果相对。\"},{\"en\":\"reassure sb\",\"zh\":\"使某人安心\",\"note\":\"常通过解释或保证减轻别人的担忧，适用于焦虑语境。\"}],\"similarNote\":\"这些表达都涉及人的焦虑感，不能用来替换强调或重读义。\",\"contrastingNote\":\"calm sb down 和 reassure sb 是缓解紧张的反向表达，并非 stress 所有义项的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_stress\",\"title\":\"Cambridge Dictionary: stress\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/stress\",\"supports\":[\"名词和动词的主要词义及常见用法\",\"词形变化与搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"stress 的历史来源可追溯到古法语 destresse\"]",
+        "valueJson": "[\"英语读音与规则词形信息\",\"心理压力、语言重音、力学应力及重读和施加应力的用法\",\"stress 的历史来源可追溯到古法语 destresse\",\"stressful 和 stressor 的衍生词关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1339,
+    "headword": "stress",
+    "meaning_zh": "n. 压力, 紧迫, 强调, 重音, 重点, 应力\nvt. 加压力于, 着重, 重读",
+    "phonetic": "/stres/",
+    "pos": "",
+    "forms": []
+  }
+}

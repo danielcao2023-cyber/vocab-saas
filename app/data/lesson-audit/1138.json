@@ -1,0 +1,431 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1c4df922526662be64ee03177d98504bae0687d215db6073352d18462b009e60",
+    "executedReviewPromptHash": "1c4df922526662be64ee03177d98504bae0687d215db6073352d18462b009e60",
+    "reviewHash": "bb6d217e3e602ec34506901a4bba01d6e527b4783e76fff193f8f2f12460f968",
+    "wordId": 1138,
+    "inputHash": "6640dbf84af00a7fe3d0247380bc52a19c9be9b339524182530acb838b1854fc",
+    "draftHash": "20f1f007da92b0d6de1307c05d230902ba4a7efdb263e60aec7e017ce7a1896f",
+    "finalHash": "7fa42f09584ee94fbbe5d685975baef01db650f99f08a392ebc488c6796bbc48",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/regret",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T08:11:08.694Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/regret#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.666Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119826,
+        "revisionId": 39921573,
+        "revisionTimestamp": "2026-10-06T19:51:30Z",
+        "sha256": "3f8e49d4f583fd05d6eb0e21566241a9caacd245116682d64b11c0e175f256f4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:24:19.907Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少动词对不愉快情况表示遗憾或歉意的常用功能，如 regret the delay、regret that...；这不一定涉及后悔自己的选择，也不限于过去。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples、/senses/1/usageNote",
+        "message": "名词义的第一个例句实际使用动词，导致该义只有一个名词例句；regrets that... 也不宜作为这里的常用名词句型。应改用 with regret、send one's regrets 等明确的名词结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2、/senses/3、/studyPlan/0、/confusions/0",
+        "message": "把 doing 限定为已经发生、把 to do 泛化为接下来不得不做任何事情，容易形成错误规则。动名词本身不限定过去；不定式教学应突出 regret to say/tell/inform 等常用搭配及其语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note",
+        "message": "例句中的 missing his sister’s graduation 是 was 后的表语，不能据此说明名词 regret 直接接动名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "apology 不必然承认过错；pleasure 本身也不能直接表示接受邀请，应给出 accept an invitation with pleasure 等完整表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“拼写中元音前的重读音节较短”表意不清，无法解释双写规则，应明确末音节重读及末尾字母结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "法语阶段的 meaning 只是“来源形式”的占位说明，没有实际词义。可证实的来源关系已在 summary 中，应清空该阶段图，避免画成缺乏词义依据的演变链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources、各处 sourceIds",
+        "message": "Cambridge 未取得正文，不能作为本次具体内容的证据来源。应移除这些引用；实际取得的英语词条可支持基本词义、示例结构、发音和所列派生词，其他语法与拼写说明依据专业语言知识。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的后悔／遗憾、礼貌性歉意，以及动词的懊悔、情况遗憾／歉意和正式告知功能。修订后各核心义均有至少两个对应的原创英中例句。词条所列 vi. 感到抱歉已按表达功能覆盖，未另造日常无补足语句型。屈折和派生拼写、现有音标及句首 Regretfully 的用法可保留。可得词典解释较简略，细微语法和礼貌搭配同时依据专业语言知识；词源只保留可证实的关系。",
+    "senseInventory": [
+      {
+        "sense": "名词：后悔、悔恨、对选择或情况的遗憾",
+        "coveredBy": [
+          "regret-n-1"
+        ],
+        "assessment": "已有两个名词例句；扩大定义的时间范围，并纠正表语结构的说明。remorse 与 regret 的内疚程度区别可保留。"
+      },
+      {
+        "sense": "名词：正式表达遗憾或歉意，尤其 regrets 表示不能出席的歉意",
+        "coveredBy": [
+          "regret-n-2"
+        ],
+        "assessment": "原稿混入动词例句；修订为两个明确的名词例句，并补充 send one's regrets。"
+      },
+      {
+        "sense": "动词：后悔、懊悔自己的行为或选择",
+        "coveredBy": [
+          "regret-v-1"
+        ],
+        "assessment": "两个例句对应准确；修正动名词必定表示过去的绝对化说明。"
+      },
+      {
+        "sense": "动词：对不愉快情况感到遗憾、惋惜或表示歉意",
+        "coveredBy": [
+          "regret-v-3"
+        ],
+        "assessment": "原稿缺少独立覆盖；新增 regret + 名词和 regret that 从句的两个例句，区分情况遗憾与后悔错误选择。"
+      },
+      {
+        "sense": "动词：用正式语气遗憾地告知消息",
+        "coveredBy": [
+          "regret-v-2"
+        ],
+        "assessment": "两个告知例句有效；收窄标题和规则，避免把 regret to do 推广到任意未来动作。"
+      },
+      {
+        "sense": "原词条 vi. 感到抱歉的功能标注",
+        "coveredBy": [
+          "regret-v-2",
+          "regret-v-3"
+        ],
+        "assessment": "抱歉功能已覆盖；现代常用教学以带宾语、that 从句或告知类不定式的结构为主，不把孤立的 I regret 教成普通道歉句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"拼写中元音前的重读音节较短，比较过去式 regretted 中双写的 t。\"",
+        "valueJson": "\"末音节重读，且以单个元音字母 e 加辅音字母 t 结尾；添加 -ed、-ing 时双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"对过去发生或没有发生的事感到难过，觉得结果不理想。\"",
+        "valueJson": "\"因某种行为、选择、错失的机会或不如人意的情况而产生的难过、惋惜之情。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"regret 后可用动名词说明具体遗憾。\"",
+        "valueJson": "\"missing his sister’s graduation 是 was 后的表语，说明他最大的遗憾是什么。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于 with regret 和 regrets that...；邮件或通知中的 regrets 往往表示歉意或婉拒。\"",
+        "valueJson": "\"正式表达遗憾常用 with regret 或 express regret；因故不能出席时，常用复数 regrets 表达歉意，如 send one's regrets。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"regret-n-2-ex1\",\"senseId\":\"regret-n-2\",\"en\":\"We regret to say that the school trip has been canceled.\",\"zh\":\"我们遗憾地通知大家，学校旅行取消了。\",\"note\":\"此处 regret 作动词，展示常见正式通知说法。\"}",
+        "valueJson": "{\"id\":\"regret-n-2-ex1\",\"senseId\":\"regret-n-2\",\"en\":\"It is with regret that I must cancel our weekend hike.\",\"zh\":\"我很遗憾，不得不取消我们周末的徒步活动。\",\"note\":\"with regret 中 regret 是名词，正式地表达对这一决定的遗憾。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"regret-n-2-ex2\",\"senseId\":\"regret-n-2\",\"en\":\"Please accept my regrets for missing your concert.\",\"zh\":\"请接受我未能参加你音乐会的歉意。\",\"note\":\"regrets 用复数，语气较正式。\"}",
+        "valueJson": "{\"id\":\"regret-n-2-ex2\",\"senseId\":\"regret-n-2\",\"en\":\"Please accept my regrets; I won't be able to attend your concert.\",\"zh\":\"很抱歉，我将无法出席你的音乐会，敬请谅解。\",\"note\":\"my regrets 是名词复数，正式地表达因故不能出席的歉意。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"send one's regrets\",\"zh\":\"因不能出席而致歉\",\"note\":\"常用于较正式地回复邀请，regrets 用复数。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"直接承认失礼或过错；regret 可表达歉意，但不一定是在正式道歉。\"",
+        "valueJson": "\"apology 指道歉的话或行为，常用于失礼、过失或造成的不便；regret 可以只表达遗憾，不一定承认过错。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"pleasure\",\"zh\":\"高兴、荣幸\",\"note\":\"回应邀请时，pleasure 表示欣然接受，可与表达遗憾的 regrets 对照。\"}",
+        "valueJson": "{\"en\":\"accept an invitation with pleasure\",\"zh\":\"欣然接受邀请\",\"note\":\"在回复邀请时，与 send one's regrets（因不能出席而致歉）构成语境对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"回复邀请时，regrets 表示遗憾不能出席；pleasure 可表示乐意接受。\"",
+        "valueJson": "\"回复邀请时，send one's regrets 表示因故不能出席；accept an invitation with pleasure 表示欣然接受。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"regret doing 表示后悔已经做过的事；regret not doing 表示后悔当时没做。regret 后也可直接接名词。\"",
+        "valueJson": "\"regret doing 常表示后悔做过的事，regret not doing 常表示后悔没做某事；具体时间仍由上下文决定。regret 后也可直接接名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"doing 指已发生的行为，不表示后悔将来要做。\"",
+        "valueJson": "\"常指已发生的行为；动名词本身不限定过去，也可指持续的行为或处境，如 regret living so far away。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"not 放在动名词前，表示遗憾当时没有采取行动。\"",
+        "valueJson": "\"not 放在动名词前；常表示遗憾当时没有采取行动，具体时间由上下文决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"动词：遗憾地告知或不得不做\"",
+        "valueJson": "\"动词：遗憾地告知\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"礼貌、正式地表示遗憾，尤其用于告知坏消息或说明不得不采取某项行动。\"",
+        "valueJson": "\"用礼貌、正式的语气表达对所传达坏消息的遗憾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用 regret to do；不定式表示接下来要说或要做的事。regret to say、regret to inform 是常见表达。\"",
+        "valueJson": "\"常接 to say、to tell someone、to inform someone，正式引出令人遗憾的消息。这些句式常用于说话或写信的当下，不能推广成对任意将来动作表示遗憾的通用结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0",
+        "expectedValueJson": "{\"en\":\"regret to say / tell / inform someone\",\"zh\":\"遗憾地说 / 告诉 / 通知某人\",\"note\":\"用于即将说出令人失望的消息，语气较礼貌正式。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"regret to say (that) ... / regret to tell or inform someone (that) ...\",\"zh\":\"遗憾地说……／告诉或通知某人……\",\"note\":\"say 后接消息内容；tell / inform 后通常先接人，再用 that 从句说明消息。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"regret to do something\",\"zh\":\"遗憾地不得不做某事\",\"note\":\"不定式指接下来要做的事，常带有不得已的语气。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"be pleased to tell\",\"zh\":\"高兴地告知\",\"note\":\"通知好消息时可用，与遗憾地告知坏消息的 regret to tell 形成语境对照。\"}",
+        "valueJson": "{\"en\":\"be pleased to tell someone (that) ...\",\"zh\":\"高兴地告诉某人……\",\"note\":\"用于告知好消息，与 regret to tell someone 引出坏消息的用法形成语境对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"告知好消息时可用 be pleased to tell；它只在这类告知语境中与 regret to tell 对照。\"",
+        "valueJson": "\"告知好消息时可用 be pleased to tell someone...；它只在告知语境中与 regret to tell someone... 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"regret-v-3\",\"title\":\"动词：对某种情况感到遗憾、抱歉\",\"meaning\":\"对不愉快或不理想的情况感到难过，或对给别人带来的不便表示歉意，不一定涉及后悔自己的选择。\",\"usageNote\":\"常接名词或 that 从句来说明遗憾的内容，语气较正式；所说的情况可以涉及过去、现在或将来。日常单独表达‘我很抱歉’通常用 I'm sorry。\",\"examples\":[{\"id\":\"regret-v-3-ex1\",\"senseId\":\"regret-v-3\",\"en\":\"We regret the delay in repairing your washing machine.\",\"zh\":\"您的洗衣机维修延误了，我们深表歉意。\",\"note\":\"regret the delay 对延误表达歉意，没有使用 regret to do。\"},{\"id\":\"regret-v-3-ex2\",\"senseId\":\"regret-v-3\",\"en\":\"I regret that we live so far apart.\",\"zh\":\"我们住得这么远，我感到很遗憾。\",\"note\":\"that 从句说明当前令人遗憾的情况，不必理解为后悔过去做错了事。\"}],\"patterns\":[{\"en\":\"regret something\",\"zh\":\"对某事感到遗憾或抱歉\",\"note\":\"直接接名词，说明令人遗憾的情况或需要致歉的事情。\",\"kind\":\"sentence-pattern\"},{\"en\":\"regret that + clause\",\"zh\":\"对……感到遗憾或抱歉\",\"note\":\"that 从句说明具体情况，从句时态按实际时间选择。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"regret the inconvenience\",\"zh\":\"对造成的不便表示歉意\",\"note\":\"常用于客服说明或正式通知。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be sorry about\",\"zh\":\"对……感到抱歉或难过\",\"note\":\"更日常，可用于自己造成的不便，也可用于无法改变的情况。\"},{\"en\":\"apologize for\",\"zh\":\"为……道歉\",\"note\":\"明确表达道歉，常用于造成的不便或过失；regret 也可只表达惋惜。\"}],\"contrasting\":[{\"en\":\"be pleased that ...\",\"zh\":\"对……感到高兴\",\"note\":\"评价同一种情况时，可以与 regret that... 表达的遗憾形成对照。\"}],\"similarNote\":\"be sorry about 较日常；apologize for 更明确地实施道歉，不能替换所有表达惋惜的 regret。\",\"contrastingNote\":\"be pleased that... 只在评价某种情况令人高兴或遗憾时与 regret that... 对照。\"},\"sourceIds\":[\"wiktionary-regret-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"对比记忆 regret doing（后悔做过）和 regret to do（遗憾地要做或告知）。\"",
+        "valueJson": "\"对比记忆 regret doing（常回顾已做的事）和 regret to say/tell/inform（遗憾地告知坏消息）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"doing 通常回看已经做过的事；to do 常用于遗憾地说出或做接下来的事。\"",
+        "valueJson": "\"regret doing 常用于回顾做过的事，但动名词本身不限定过去；regret to say/tell/inform 主要用于正式引出令人遗憾的消息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"常用于礼貌地引出接下来要说或要做的事。\"",
+        "valueJson": "\"常接 say、tell、inform，正式引出令人遗憾的消息；不要推广成任意将来动作的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住时间方向：doing 回看已经发生的事；to do 常引出接下来的告知或行动。\"",
+        "valueJson": "\"doing 常回顾已做的事；to say/tell/inform 用于遗憾地告知坏消息。时间和具体搭配要一起看。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"regretter（动词）或 regret（名词）\",\"meaning\":\"英语 regret 的来源形式\"},{\"language\":\"英语\",\"form\":\"regret\",\"meaning\":\"名词和动词，表示后悔或遗憾\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-regret\"]",
+        "valueJson": "[\"wiktionary-regret-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-regret\",\"title\":\"Cambridge Dictionary: regret\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/regret\",\"supports\":[\"动词和名词的常见含义与用法\",\"regret doing 与 regret to do 的结构区别\",\"regret 的词形变化和英式、美式发音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-regret-etymology\",\"title\":\"Wiktionnaire: regret（英语词条及词源）\",\"url\":\"https://fr.wiktionary.org/wiki/regret#Anglais\",\"supports\":[\"英语 regret 与法语 regretter（动词）或 regret（名词）的来源关系\",\"该法语来源与英语 greet 的关联\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-regret-etymology\",\"title\":\"Wiktionnaire: regret（英语词条及词源）\",\"url\":\"https://fr.wiktionary.org/wiki/regret#Anglais\",\"supports\":[\"英语 regret 的名词、动词身份和基本义\",\"regret 接动名词、regret to tell 及 regret 接名词表达遗憾或歉意的示例\",\"英语发音\",\"regretful、regretfully、regrettable 及 with regret 的列举\",\"英语 regret 与法语 regretter（动词）或 regret（名词）的来源关系，以及与英语 greet 的词源关联\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1138,
+    "headword": "regret",
+    "meaning_zh": "n. 遗憾, 后悔, 悔恨, 抱歉, 歉意\nvt. 为...感到遗憾, 后悔, 惋惜, 懊悔, 抱歉\nvi. 感到抱歉",
+    "phonetic": "/ri'gret/",
+    "pos": "",
+    "forms": []
+  }
+}

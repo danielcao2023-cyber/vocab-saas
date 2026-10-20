@@ -1,0 +1,281 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d8b2778c0c39bf6c6880261b8cb4e1340379a5d3bb9e00bbb0b077367c4c0da1",
+    "executedReviewPromptHash": "d8b2778c0c39bf6c6880261b8cb4e1340379a5d3bb9e00bbb0b077367c4c0da1",
+    "reviewHash": "a0dabf312e5e6adb4bba6d5625de9d159796c0339d44a1b71e7fc332b2d0ee44",
+    "wordId": 652,
+    "inputHash": "17be63fa070c917f2192e483961661d3a5403c1b880f2716fe0d1bb70029a5e7",
+    "draftHash": "f9783355f5e66908d13b9d5cae777b034a09a320b60948a49e50b1965dd44d75",
+    "finalHash": "611eb31ed9bd51c2b3333d8b0881cc56e60ac0e63cf714b622e0b36793f181de",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/his#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.833Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 67512,
+        "revisionId": 39764261,
+        "revisionTimestamp": "2026-08-03T04:47:19Z",
+        "sha256": "2499f87cabe6fe6237d0111cbdf0e90133f5157f32ea588dee474ff3fe582d11",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/his",
+        "section": "his etymology",
+        "supports": [
+          "Old English genitive and former neuter use"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.059061+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "17bdb7eb63408c37ed6d1fbcbc54c6b07513564b62c91067006c5e75f878c1a0",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "17bdb7eb63408c37ed6d1fbcbc54c6b07513564b62c91067006c5e75f878c1a0",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/652.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/his",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:03:57.986Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:13:51.554Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；/pronunciation/sourceIds；/senses/*/sourceIds；/confusions/*/sourceIds",
+        "message": "读音和主要用法引用了获取失败的 Cambridge 及未提供内容的 Oxford，却遗漏实际取得的 Wiktionnaire 英语词条。应改引已有材料；辨析内容可依据语言知识保留，但不应挂接没有对应材料的来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway；/senses/0/meaning；/senses/0/patterns/1/note",
+        "message": "his 不仅表示物品所有权，也表示亲属、身份等关系。当前总述过窄，且把 name、family 一并解释为“这些人……属于他”不准确。应明确关系用法，并补一个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“his 后直接接名词”表述过于绝对；his new shoes、his own room 都允许中间有修饰语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning；/senses/1/usageNote",
+        "message": "独立使用的 his 不限于代替前文已经出现的名词，也可由现场语境确定所指；它还可以指与他有关的人，不能一概限定为“东西”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1/kind",
+        "message": "mine, yours, and his 是可自由组合的并列结构，不是固定表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/note",
+        "message": "辨音提示宜明确完整读音中的 /ɪ/ 与 /iː/，并说明 he’s 表示 he has 时用于完成时，避免初学者误套到表示拥有的 has。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "“他……说”容易被理解为 Leo 本人用 his 回答自己的归属问题；应明确由旁人回答。另外，独立的 his 表达 his pen，而不只是代替 pen。"
+      }
+    ],
+    "coverageAssessment": "已核对物主限定词和独立物主代词两项现代核心功能；原稿各有两个自然原创例句，单复数用法也已覆盖。补丁补明关系用法、语境指代和修饰语位置，并保留原有例句。近义及对照表达已说明人称和指代差别，没有强造反义词；词族说明与古英语至现代英语的词源阶段可保留。历史中性用法属于背景，不必另列初中核心义。来源核对限于已提供内容，不将不可获取的页面作为已核实依据。",
+    "senseInventory": [
+      {
+        "sense": "物主限定词：他的；用于名词前表达所属、身份或关系，形式不随后面名词的单复数变化。",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖该核心功能及单复数物品例句；补丁修正所有权范围和直接接名词的限制，并补充亲属关系例句。"
+      },
+      {
+        "sense": "独立物主代词：他的那一个或那些；不再接所指名词，具体指代由上下文确定。",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已有单数主语、复数表语两个自然例句，并列出 a friend of his。补丁补明现场语境和人物指代，修正并列结构的分类。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"his 放在名词前表示某个男性或男孩拥有的东西；单独使用时，指“他的东西”。\"",
+        "valueJson": "\"his 用在名词前，表示某物属于他或某人、某事与他有关；也可独立使用，具体指什么由上下文决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"放在名词前，说明某物属于男性或男孩。这里的 his 指拥有者，不表示后面的东西是男性。\"",
+        "valueJson": "\"放在名词前，表示某物属于男性或男孩，或某人、某事与他有关；his 的选择取决于所指的“他”，而不是后面名词所指对象的性别。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"his 后直接接名词；名词是单数还是复数，都用 his。\"",
+        "valueJson": "\"his 用来限定名词，中间可以有修饰语，如 his shoes、his new shoes；单数、复数或不可数名词前，his 的形式都不变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"his 后接表示身份或关系的名词，说明这些人与他有关或属于他。\"",
+        "valueJson": "\"his 可表示身份或关系：his name 是他的名字，his family 是他的家人或家庭。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"Ben calls his mother every Sunday.\",\"zh\":\"本每周日都给他妈妈打电话。\",\"note\":\"his mother 表示亲属关系；his 根据 Ben 选择，mother 指女性也仍用 his。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"单独使用，代替前文已提到的名词，表示属于男性或男孩的那一个或那些东西。\"",
+        "valueJson": "\"独立使用，表示属于他的物品，或与他有关的人、事；具体所指由前文或现场语境确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"his 后面不再接被省略的名词；它本身就指“他的东西”，具体是什么由上下文决定。\"",
+        "valueJson": "\"his 后面不再接所指的名词；它可以指单数或复数的人或事物，例如代替 his jacket 或 his keys。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/kind",
+        "expectedValueJson": "\"fixed-expression\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"读音通常与 his 相近，但写法和意思不同；展开后是 he is 或 he has。\"",
+        "valueJson": "\"比较完整读音：his 是 /hɪz/，he’s 是 /hiːz/；he’s 可展开为 he is，也可在完成时中展开为 he has，如 He’s eaten lunch（他吃过午饭了）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"桌上有两支笔，一支在 Leo 面前：Leo has his pen. 另一支被拿走后，有人问“哪支是 Leo 的？”他指着桌上的那支说：The green one is his. 前一句 his 后接 pen，后一句 his 自己代替 pen。\"",
+        "valueJson": "\"桌上有两支笔，绿色的那支是 Leo 的。Leo 拿起它时，同桌说：Leo has his pen. 有人问“哪支是 Leo 的？”同桌指着绿色的那支回答：The green one is his. 前一句 his 修饰 pen，后一句 his 独立表示“Leo 的那支笔”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: his\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/his\",\"supports\":[\"his 作物主限定词时放在名词前\",\"his 作独立物主代词时的用法\",\"英式与美式读音\",\"his 与 he’s、him 的词形辨析\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：his（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/his#Anglais\",\"supports\":[\"his 作物主限定词和独立物主代词的两项主要用法\",\"his 的读音 /hɪz/\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: his\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/his\",\"supports\":[\"his 作限定词和独立物主代词的主要用法\",\"his 后接名词及独立使用的句型\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 652,
+    "headword": "his",
+    "meaning_zh": "pron. 他的",
+    "phonetic": "/hiz/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e0b4504a148e1c41344d9fd1c535c73bae216084695935798ca090792e0e6ebf",
+    "executedReviewPromptHash": "e0b4504a148e1c41344d9fd1c535c73bae216084695935798ca090792e0e6ebf",
+    "reviewHash": "10f7512634abd53f0c997eb07701fcd3e359a674ac8ba30550d2e9dfa9e8d1ac",
+    "wordId": 1132,
+    "inputHash": "14324002204f0aba591deffdf1b0e38cef2055e1773cd672bf8381e3f0de88cc",
+    "draftHash": "bad57cc2ea7e5df7e0e2104ef2401c4671453c7613979c814c87d0d6e9359ec3",
+    "finalHash": "aa5ea90680db1fde2808e5293c16a5a169389808e2564026bb1f84050969ab7f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/recommend",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T08:08:11.469Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/recommend#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.663Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121120,
+        "revisionId": 38608680,
+        "revisionTimestamp": "2025-09-01T19:53:45Z",
+        "sha256": "c0b262270203d3ec09e7464c7117948bb2950d9cb99fe11236a0e510405f6893",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:20:12.990Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "recommend 以 d 结尾，且全词有两个 e；“词尾只有一个 e”不符合实际拼写。recommending 是直接加 -ing，不双写 d。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote；/wordFamilyNote",
+        "message": "recommended 不双写 d，而是保留 recommend 末尾的 d，再加 -ed；两处说明均须纠正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0/note",
+        "message": "highly recommend 中 highly 位于动词前；它也可放在宾语后，不能概括为“放在动词后”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote；/senses/1/patterns/1/note；/confusions/0/items",
+        "message": "recommend someone to do sth 在部分英式用法中被接受，不能一概判错。应推荐更通用的 doing 和 that 从句，同时删除绝对禁用的说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "原始中文释义中的“托付”尚未澄清；已取回的英语词条专门提示，此类正式表达用 commend。应补充与现代常用 recommend 的区别，并引用该来源。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对两项常用功能：“推荐人或事物（含支持任职人选）”和“建议采取行动”，每项均有两个例句，覆盖充分，senseId 对应正确。正式的“使获得好感或认可”已有次要义补充；“介绍”已与 introduce 区分，“托付照料”经补丁澄清。词形、读音、近义及反向表达、词族和助记均已检查。词源仅保留可证的 re- + commend，空 stages 不会制造历史先后关系。法语维基词典材料按其英语词条解读；剑桥正文不可用、牛津未提供正文，其链接仅视为推荐查阅来源。",
+    "senseInventory": [
+      {
+        "sense": "推荐、引荐值得选择的人或事物，包括支持某人担任职位",
+        "coveredBy": [
+          "recommend-endorse"
+        ],
+        "assessment": "咖啡馆与校队人选两个例句分别覆盖事物推荐和人选支持；合并在同一推荐义下合理。“介绍”指推荐引介，不指单纯介绍双方认识。"
+      },
+      {
+        "sense": "建议、劝告采取某种行动",
+        "coveredBy": [
+          "recommend-advise"
+        ],
+        "assessment": "两个例句分别展示 doing 和 that 从句，英中对应准确；补丁修正了对 someone to do 结构的绝对禁用。"
+      },
+      {
+        "sense": "正式用法：某种品质使人或事物获得好感、认可或显得可取",
+        "coveredBy": [
+          "recommend-commend"
+        ],
+        "assessment": "已作为次要义列出，正式语体标注和例句基本合适，不必提升为初学核心义。"
+      },
+      {
+        "sense": "托付照料：须与 commend、entrust 区分",
+        "coveredBy": [],
+        "assessment": "不据原始中文释义另立现代 recommend 核心义；来源明确提示 commend。补丁在推荐义的 usageNote 中补充了用词警示。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"词尾只有一个 e，直接加 -ing；不要写成 recommendding。\"",
+        "valueJson": "\"在 recommend 后直接加 -ing，写作 recommending；不双写 d，不要写成 recommendding。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用 recommend + 人或事物；recommend sb for a job/position 表示推荐某人担任某工作或职位。\"",
+        "valueJson": "\"常用 recommend + 人或事物；recommend sb for a job/position 表示推荐某人担任某工作或职位。现代日常英语中，“托付照料”通常用 entrust；正式表达也可用 commend sb to someone's care，不要把这里的 recommend 当作“托付”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"highly 放在动词后加强推荐的语气。\"",
+        "valueJson": "\"highly 常放在 recommend 前，加强推荐的语气；也可放在宾语后，如 recommend this book highly。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wiktionary-recommend-etymology\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可用 recommend doing sth，或 recommend that + 主语 + 动词原形；也可以说 recommend sth。不要说 recommend someone to do sth。\"",
+        "valueJson": "\"常用 recommend doing sth，或 recommend that + 主语 + 动词原形；英式英语中 that 从句也常用 should + 动词原形。也可以说 recommend sth。recommend someone to do sth 在部分英式用法中也被接受，但初学者宜优先使用 doing 或 that 从句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"that 从句中常用动词原形；不要套用 advise someone to do 的结构。\"",
+        "valueJson": "\"that 从句中常用动词原形；若用 advise，也可说 advise someone to do something。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"trying 是动名词；不说 recommend you to try。\"",
+        "valueJson": "\"trying 是动名词；若明确说“建议你尝尝”，常用 I recommend that you try the vegetable soup。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"这里是 advise + 人 + to do；不能把这个结构直接搬到 recommend 后。\"",
+        "valueJson": "\"这是 advise + 人 + to do 的常用结构；用 recommend 时，更通用的说法是 I recommend that Ben take an umbrella。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"词尾加 -ed 时双写 d，写作 recommended。\"",
+        "valueJson": "\"在 recommend 后直接加 -ed，写作 recommended；保留原词末尾的 d，不双写 d。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"recommend 的过去式和过去分词也是 recommended，注意双写 d；-ing 形式 recommending 只加 -ing，不双写 d。\"",
+        "valueJson": "\"recommend 的过去式和过去分词都是 recommended，直接加 -ed；-ing 形式是 recommending，直接加 -ing。这两种变化都不双写 d。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/2/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"“托付照料”用 commend 的辨析提示\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1132,
+    "headword": "recommend",
+    "meaning_zh": "vt. 推荐, 介绍, 劝告, 使受欢迎, 托付",
+    "phonetic": "/.rekә'mend/",
+    "pos": "",
+    "forms": []
+  }
+}

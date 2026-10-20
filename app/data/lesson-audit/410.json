@@ -1,0 +1,564 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "84cba8890294e3f7dc12ecb7f3abff8aed47948a4150a59759d1944c0d8bf96e",
+    "executedReviewPromptHash": "84cba8890294e3f7dc12ecb7f3abff8aed47948a4150a59759d1944c0d8bf96e",
+    "reviewHash": "3234027b9e9b01fd1a402f3b156d2c0aef4179d3f55ac3137b7d46919ae02fe5",
+    "wordId": 410,
+    "inputHash": "a81bda59dd1d3a3d891f2bf6196fc7fac57cc23af3e47ce1f2b6478acf6de65b",
+    "draftHash": "06b161dd44f143a666da9173c6feafc5b9901dca48df80213cdf12e5e0d66a3e",
+    "finalHash": "159c014c7fc6a8396754b826ad69b58a152da076e6279469b9fec1addb71257f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/draw#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:36.737Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116207,
+        "revisionId": 34227715,
+        "revisionTimestamp": "2024-04-22T17:32:31Z",
+        "sha256": "19aeda90f6ca0d4a86f8502dabef2bb16383bc92b32a73ad0d3d1a61af44b4d0",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/draw",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:57:32.832Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:03:14.086Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "缺少动词“打平”、得出结论、借助资源等常用功能；名词“抽签”混在动词条目中却没有名词例句。需补齐并分别说明句型。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/1",
+        "message": "draw a conclusion 是“得出结论”，不能归入“拟定”；“描写”也没有相应例句。此项应收窄为 draw up 的“拟定、起草”，另列得出结论。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/meaning; /senses/3/relatedExpressions/similarNote",
+        "message": "平局不一定以双方得分相同为条件；draw 与 tie 在特定体育项目中也未必等同。定义和近义说明需保留项目限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1; /wordFamily/1/spellingNote",
+        "message": "draw 与 drawn 的英式元音相同，不能说三者元音都不同；drawer 的一般非卷舌英式读音不能标成必读词尾 /r/。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/0/note",
+        "message": "“to 后用原形”必须限定为不定式 to；一般现在时也需说明主语条件，避免与 draws 混淆。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar",
+        "message": "draw 不保证画得细致；与 paint 对比时，不能用“不限定绘画工具”抹去画线勾勒与使用颜料之间的常见区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 各处 sourceIds",
+        "message": "实际来源中没有取得牛津页面，不能把它作为本次审核的依据。应移除该来源及相应归因；可直接核对的内容改引已取得的英语词条，其余依据专业语言知识的内容不附虚构来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1; /lessCommonSenses",
+        "message": "“拉、取出”需增加直接拉动物体和拔出武器的例句，并补足来源中的取材、拔牙用法；保留正确的汲水例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/4/note; /wordFamily; /etymology/summary",
+        "message": "drawing 应直接说明保留 w；drawer 应联系 draw 的“拉”义解释真实构词。词源摘要应直接呈现有据可查的中古英语来源，把助记联想留在助记部分。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的抽签、平局、绘画、汲水、动用资源、从文献取材、拔出武器及拔牙各义，并补充常用的吸引、动词打平、得出结论和 draw up。修订后各核心义均有至少两个原创英中例句；较少见的取材、拔牙及名词“吸引点”等另列。读音、词形、搭配、近反义范围、构词与词源已分别检查；未穷举专业或低频用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：抽签、抽奖活动",
+        "coveredBy": [
+          "draw-n2"
+        ],
+        "assessment": "原稿混入动词条目；修订后独立列义，以赛事抽签和学校抽奖两例覆盖。"
+      },
+      {
+        "sense": "名词：比赛平局",
+        "coveredBy": [
+          "draw-n1"
+        ],
+        "assessment": "原有两例保留；修正定义及 draw、tie 的项目限制。"
+      },
+      {
+        "sense": "动词：画图、绘制线条或图表",
+        "coveredBy": [
+          "draw-v1"
+        ],
+        "assessment": "已有两个自然例句；修正与 sketch、paint 的比较。"
+      },
+      {
+        "sense": "动词：拉动、牵引",
+        "coveredBy": [
+          "draw-v2"
+        ],
+        "assessment": "保留拉窗帘例句，增加拉近椅子的例句。"
+      },
+      {
+        "sense": "动词：汲水、抽水",
+        "coveredBy": [
+          "draw-v2"
+        ],
+        "assessment": "作为物理取出用法保留，以井中打水及水泵抽水两例覆盖。"
+      },
+      {
+        "sense": "动词：借助、动用现有资源",
+        "coveredBy": [
+          "draw-v8"
+        ],
+        "assessment": "补充 draw on，以经验和储蓄两个具体语境说明。"
+      },
+      {
+        "sense": "动词：从某个来源获取信息或素材",
+        "coveredBy": [
+          "draw-v9"
+        ],
+        "assessment": "补充较少见用法，明确 draw something from a source 的来源结构。"
+      },
+      {
+        "sense": "动词：拔出武器",
+        "coveredBy": [
+          "draw-v2"
+        ],
+        "assessment": "增加从剑鞘拔剑的原创例句，覆盖来源中的 dégainer。"
+      },
+      {
+        "sense": "动词：拔牙",
+        "coveredBy": [
+          "draw-v10"
+        ],
+        "assessment": "补充为较少见用法，并说明现代更常用 pull out 或 extract。"
+      },
+      {
+        "sense": "动词：吸引人群、注意力或兴趣",
+        "coveredBy": [
+          "draw-v3"
+        ],
+        "assessment": "原有两例与主要句型自然，保留。"
+      },
+      {
+        "sense": "动词：比赛打平",
+        "coveredBy": [
+          "draw-v6"
+        ],
+        "assessment": "补充独立核心义，以 draw with 和 draw a match 两种结构说明。"
+      },
+      {
+        "sense": "动词短语：抽签决定",
+        "coveredBy": [
+          "draw-v4"
+        ],
+        "assessment": "保留 draw lots 例句，移出原先混入的名词释义。"
+      },
+      {
+        "sense": "动词搭配：得出结论",
+        "coveredBy": [
+          "draw-v7"
+        ],
+        "assessment": "补充两个具体例句，区分结论内容、判断对象和依据。"
+      },
+      {
+        "sense": "短语动词：拟定、起草",
+        "coveredBy": [
+          "draw-v5"
+        ],
+        "assessment": "保留 draw up a plan 例句，明确 up 属于完整短语。"
+      },
+      {
+        "sense": "名词：有吸引力的人或事物",
+        "coveredBy": [
+          "draw-n3"
+        ],
+        "assessment": "补充 a big draw 的常见名词用法，作为拓展义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"过去式是 drew，过去分词是 drawn。记住动作方向和语境，就能分清 draw a picture、draw the curtains、draw a crowd 和 a draw.\"",
+        "valueJson": "\"记住 draw—drew—drawn。按语境分清“画、拉或取出、吸引、打平”；作名词可指“平局”或“抽签、抽奖”。再记 draw a conclusion（得出结论）与 draw on experience（借助经验）。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"比较名词 draw 的“平局”和“抽签”两义，再用 draw a conclusion、draw on experience 各造一句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"旧音标 /drɒ:/ 不准确；音标中的冒号表示前面的元音较长。\"",
+        "valueJson": "\"英式 draw 的元音是 /ɔː/；/ː/ 是长音符号。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"draw、drew、drawn 的元音不同，分别留意 /ɔː/、/uː/ 和 /ɔː/。\"",
+        "valueJson": "\"按这里的英式读音，draw 和 drawn 的元音都是 /ɔː/；drew 的元音是 /uː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"拼写时直接在 draw 后加 -ing，去掉词尾不发音的 w 不适用。\"",
+        "valueJson": "\"保留词尾 w，直接加 -ing：draw → drawing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调快速勾画，通常不如 draw a picture 细致。\"",
+        "valueJson": "\"强调快速或粗略地勾画轮廓；draw 是更宽泛的画图动词，并不表示一定画得细致。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"强调使用颜料；普通的 draw 不限定绘画工具。\"",
+        "valueJson": "\"强调使用颜料作画；draw 通常指用铅笔、钢笔等画线或勾勒图形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把东西朝自己或某个方向拉动，也可指从容器中取出东西。\"",
+        "valueJson": "\"把东西朝某个方向拉动；也可表示把水、剑等从原处取出。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可用于拉窗帘、拉开抽屉，也可用于从井里打水；过去式 drew，过去分词 drawn。\"",
+        "valueJson": "\"常见搭配有 draw the curtains（拉窗帘）、draw water from a well（从井里打水）和 draw a sword（拔剑）。泛指日常拉动物体时，pull 更常用。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-ex11\",\"senseId\":\"draw-v2\",\"en\":\"She drew her chair closer to the table.\",\"zh\":\"她把椅子拉得离桌子更近了一些。\",\"note\":\"draw something closer 表示把某物拉近，语气稍偏书面。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-ex12\",\"senseId\":\"draw-v2\",\"en\":\"In the play, the actor drew a sword from its sheath.\",\"zh\":\"在剧中，演员从剑鞘里拔出了一把剑。\",\"note\":\"draw a sword 表示拔剑；from 说明从哪里拔出。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-ex13\",\"senseId\":\"draw-v2\",\"en\":\"The pump draws water from an underground tank.\",\"zh\":\"这台水泵从地下水箱抽水。\",\"note\":\"draw water 也可指抽水；单数主语 the pump 后用 draws。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"open 或 closed 说明拉动后的状态，例如 draw the door open。\"",
+        "valueJson": "\"open 或 closed 说明拉动后的状态，例如 draw the curtains open 或 draw the curtains closed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"是日常常用词；draw 常见于 curtains、water 等搭配，也可表示吸引。\"",
+        "valueJson": "\"是日常表示“拉”的常用词；draw 表示拉动时常见于 draw the curtains 等搭配，泛指拉动物体时可稍偏书面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在描述物体移动方向时，push 是推向前，pull 或 draw 是朝自己等方向拉。\"",
+        "valueJson": "\"这里在推拉物体的动作中对比 push 与 pull 或 draw：push 表示推，pull 或 draw 表示拉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"比赛结束时，双方得分相同、没有分出胜负的结果。\"",
+        "valueJson": "\"比赛按规则结束而双方都未获胜的结果；足球中常是双方进球数相同，棋类也可出现和棋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"tie 和 draw 都能表示比赛平局；具体偏好会因地区和体育项目而异。\"",
+        "valueJson": "\"在足球等项目中，tie 和 draw 都可表示平局，使用偏好因地区而异；在板球等有专门规则的项目中，两者可能表示不同结果，不能一律互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"抽签；抽取\"",
+        "valueJson": "\"抽签决定（draw lots）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"通过抽取号码、纸条或参赛者来决定结果；也可指抽签或抽出的号码、签。\"",
+        "valueJson": "\"通过随机抽取签条、号码等决定人选、顺序或结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"动词可说 draw lots（抽签）；作名词时 draw 也可指抽签活动或抽出的签。\"",
+        "valueJson": "\"draw lots 是“抽签”的常见说法；这里 draw 是动词，lots 指用来抽签的签。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/title",
+        "expectedValueJson": "\"描写；拟定\"",
+        "valueJson": "\"拟定；起草（draw up）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/meaning",
+        "expectedValueJson": "\"用文字描写某种情形，或拟定计划、结论等。\"",
+        "valueJson": "\"拟定或起草计划、名单、文件等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"常见于 draw a conclusion（得出结论）和 draw up a plan（拟定计划）；通常按短语整体记忆。\"",
+        "valueJson": "\"把 draw up 当作完整短语记忆：draw up a plan 是拟定计划。draw a conclusion 表示“得出结论”，属于另一种搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"原形用于一般现在时、祈使句，以及 to 后。\"",
+        "valueJson": "\"原形用于主语为 I、you、we、they 的一般现在时，也用于祈使句、情态动词后和不定式 to 后。介词 to 后则可能要用 drawing，如 look forward to drawing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中 draw 的词义包括拉动、画图和吸引等；可把这些用法联系到“把线条拉出来”或“把人吸引过来”的画面来记忆。\"",
+        "valueJson": "\"draw 来自中古英语 drawen，意为“拉、牵引”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"词形上含 draw 和 -er；作为“抽屉”的词义是固定词汇，不宜据此推断为“画画的人”。\"",
+        "valueJson": "\"draw（拉）+ -er；这里 -er 构成器物名称，drawer 指能拉出来的抽屉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"拼写为 drawer；表示抽屉时读 /drɔːr/（英式）或 /drɔːr/、/drɑːr/（部分美式口音）。\"",
+        "valueJson": "\"draw + er → drawer，保留 w。表示“抽屉”时，英式通常读 /drɔː/，后接元音时可出现连接 /r/；美式可读 /drɔːr/ 或 /drɑːr/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"drawing 是 draw 的常见派生形式。drawer 虽与 draw 拼写相连，但“抽屉”是独立词义，不能简单理解成“画的人”。\"",
+        "valueJson": "\"drawing = draw + -ing，drawer = draw + -er，两者都保留 w。drawer 的常用义“抽屉”联系 draw 的“拉”义；它在其他语境中也可指绘图的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/3/text",
+        "expectedValueJson": "\"比分相同、没有胜者：a draw。\"",
+        "valueJson": "\"比赛按规则没有分出胜负：a draw。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-v6\",\"title\":\"打平（动词）\",\"meaning\":\"比赛结束时与对手未分出胜负。\",\"usageNote\":\"常见于英式体育英语。可说 draw with a team，也可直接说 draw a match；过去式仍是 drew。\",\"examples\":[{\"id\":\"draw-ex14\",\"senseId\":\"draw-v6\",\"en\":\"Our team drew 1–1 with Hill School on Saturday.\",\"zh\":\"周六，我们队与希尔学校队打成了一比一。\",\"note\":\"draw + 比分 + with + 对手；这里 drew 是动词。\"},{\"id\":\"draw-ex15\",\"senseId\":\"draw-v6\",\"en\":\"We drew our first match of the season.\",\"zh\":\"我们本赛季的首场比赛打平了。\",\"note\":\"draw 可直接接 match 作宾语，表示把这场比赛打成平局。\"}],\"patterns\":[{\"en\":\"draw with somebody\",\"zh\":\"与某人或某队打平\",\"note\":\"with 后接对手；比分可放在 draw 后，如 draw 1–1 with a team。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"draw a match\",\"zh\":\"一场比赛打成平局\",\"note\":\"常见于英式英语；draw 在这里是及物动词。\",\"kind\":\"common-collocation\"},{\"en\":\"draw 1–1\",\"zh\":\"打成一比一\",\"note\":\"比分直接跟在动词后；口头可读 draw one all。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"tie\",\"zh\":\"打平\",\"note\":\"在美式英语及适用的体育项目中常用；具体含义仍须符合项目规则。\"}],\"contrasting\":[{\"en\":\"win\",\"zh\":\"赢\",\"note\":\"在比赛结果中表示获胜。\"},{\"en\":\"lose\",\"zh\":\"输\",\"note\":\"在比赛结果中表示落败。\"}],\"similarNote\":\"此处 draw 和 tie 都涉及比赛结果，但不同项目的规则含义可能不同。\",\"contrastingNote\":\"只在比赛结果中对比：win 是赢，lose 是输，draw 是按规则未分胜负。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-v7\",\"title\":\"得出（结论）\",\"meaning\":\"根据事实、证据或观察形成判断。\",\"usageNote\":\"常用 draw a conclusion 或 draw conclusions；from 后接依据，that 从句可说明结论内容。\",\"examples\":[{\"id\":\"draw-ex16\",\"senseId\":\"draw-v7\",\"en\":\"After checking the receipts, we drew the conclusion that we had paid twice.\",\"zh\":\"核对收据后，我们得出结论：我们付了两次钱。\",\"note\":\"that 从句说明结论；had paid 表示付款发生在得出结论之前。\"},{\"id\":\"draw-ex17\",\"senseId\":\"draw-v7\",\"en\":\"You can't draw a conclusion about the whole class from one student's answer.\",\"zh\":\"不能只凭一个学生的回答就对全班下结论。\",\"note\":\"about 后接判断涉及的对象；from 后接判断依据。\"}],\"patterns\":[{\"en\":\"draw a conclusion from something\",\"zh\":\"根据某事得出结论\",\"note\":\"from 引出证据或依据。\",\"kind\":\"sentence-pattern\"},{\"en\":\"draw the conclusion that ...\",\"zh\":\"得出……的结论\",\"note\":\"that 后接完整从句，说明结论内容。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"draw conclusions\",\"zh\":\"得出结论\",\"note\":\"conclusion 可用单数或复数，取决于具体语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"conclude\",\"zh\":\"得出结论\",\"note\":\"可用 conclude that ... 表达具体结论。\"},{\"en\":\"infer\",\"zh\":\"推断\",\"note\":\"强调根据已有信息推出未直接说明的内容，常用 infer something from something。\"}],\"contrasting\":[{\"en\":\"reserve judgment\",\"zh\":\"暂不作判断\",\"note\":\"表示暂缓下结论，与此处作出判断的动作形成语境对比。\"}],\"similarNote\":\"draw a conclusion 和 conclude 都可表示形成结论；infer 更突出由证据作推断。\",\"contrastingNote\":\"reserve judgment 适用于证据不足、暂不下结论的语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-v8\",\"title\":\"借助；动用（draw on）\",\"meaning\":\"利用已有的经验、知识、资金等资源来应对需要。\",\"usageNote\":\"这一用法通常采用 draw on something；on 后接所利用的资源。\",\"examples\":[{\"id\":\"draw-ex18\",\"senseId\":\"draw-v8\",\"en\":\"The coach drew on her experience to calm the nervous players.\",\"zh\":\"教练凭借自己的经验让紧张的队员们平静下来。\",\"note\":\"draw on experience 表示借助经验。\"},{\"id\":\"draw-ex19\",\"senseId\":\"draw-v8\",\"en\":\"We had to draw on our savings to pay for the new fridge.\",\"zh\":\"我们不得不动用储蓄来买新冰箱。\",\"note\":\"draw on savings 表示动用已有储蓄，不表示画图或把钱拉过来。\"}],\"patterns\":[{\"en\":\"draw on something to do something\",\"zh\":\"借助某种资源做某事\",\"note\":\"on 后接资源；to do 说明利用资源的目的。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"draw on experience\",\"zh\":\"借助经验\",\"note\":\"常指运用已有经验解决问题。\",\"kind\":\"common-collocation\"},{\"en\":\"draw on savings\",\"zh\":\"动用储蓄\",\"note\":\"用于需要使用积蓄支付费用等情境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"use\",\"zh\":\"使用；利用\",\"note\":\"范围更广；draw on 通常强调利用已有的经验、知识或资源。\"}],\"contrasting\":[{\"en\":\"leave one's savings untouched\",\"zh\":\"不动用储蓄\",\"note\":\"只与 draw on one's savings 形成具体情境中的反向对比。\"}],\"similarNote\":\"draw on 比 use 更突出从现有资源中获取帮助或支持。\",\"contrastingNote\":\"资金语境中，draw on savings 是动用积蓄，leave savings untouched 是保留积蓄不动用。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-n2\",\"title\":\"抽签；抽奖（名词）\",\"meaning\":\"通过随机抽取决定中奖者、比赛对阵等的活动。\",\"usageNote\":\"是可数名词。a prize draw 指抽奖，the draw for a tournament 指赛事抽签；与“平局”义靠上下文区分。\",\"examples\":[{\"id\":\"draw-ex20\",\"senseId\":\"draw-n2\",\"en\":\"The draw for the school football tournament will take place on Friday.\",\"zh\":\"校足球赛的抽签将在周五举行。\",\"note\":\"the draw 是名词，指决定比赛对阵的抽签活动。\"},{\"id\":\"draw-ex21\",\"senseId\":\"draw-n2\",\"en\":\"My number was picked in the prize draw at the school fair.\",\"zh\":\"学校游园会抽奖时，我的号码被抽中了。\",\"note\":\"prize draw 指抽奖活动，是常见英式表达。\"}],\"patterns\":[{\"en\":\"hold a draw\",\"zh\":\"举行抽签或抽奖\",\"note\":\"hold 后接名词 a draw，说明举办这项活动。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a prize draw\",\"zh\":\"一次抽奖\",\"note\":\"常见于英式英语，通过随机抽取决定获奖者。\",\"kind\":\"common-collocation\"},{\"en\":\"the draw for a tournament\",\"zh\":\"赛事的对阵抽签\",\"note\":\"指决定参赛者如何配对比赛的抽签。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"drawing\",\"zh\":\"抽签；抽奖\",\"note\":\"美式英语中可用这个名词表示抽签或抽奖；它也有“绘画”等其他意思。\"}],\"contrasting\":[],\"similarNote\":\"draw 和 drawing 在抽签、抽奖语境中可以接近，具体偏好因地区和搭配而异。\",\"contrastingNote\":\"此义没有常用的直接词汇反义词。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-v9\",\"title\":\"从……获取（信息、素材等）\",\"meaning\":\"从某个来源获得信息、灵感或创作素材。\",\"note\":\"常用 draw something from a source：宾语是获取的内容，from 后是内容来源。\",\"example\":{\"id\":\"draw-ex22\",\"senseId\":\"draw-v9\",\"en\":\"For her history project, Sara drew information from old family letters.\",\"zh\":\"为了完成历史课题，萨拉从旧家书中获取了信息。\",\"note\":\"information 是获取的内容；old family letters 是信息来源。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-v10\",\"title\":\"拔除（牙齿）\",\"meaning\":\"把牙齿拔出来。\",\"note\":\"draw a tooth 如今较少见；现代口语更常说 pull a tooth out，牙科用语常说 extract a tooth。\",\"example\":{\"id\":\"draw-ex23\",\"senseId\":\"draw-v10\",\"en\":\"The dentist had to draw the badly damaged tooth.\",\"zh\":\"牙医不得不拔掉那颗严重受损的牙。\",\"note\":\"这里 draw 指拔牙，是较少见的用法。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"draw-n3\",\"title\":\"有吸引力的人或事物（名词）\",\"meaning\":\"能够吸引人前来的人或事物。\",\"note\":\"常见 a big draw 或 a major draw，表示很有吸引力的事物或人物。\",\"example\":{\"id\":\"draw-ex24\",\"senseId\":\"draw-n3\",\"en\":\"The new playground is a big draw for families.\",\"zh\":\"新游乐场是吸引家庭前来的一个亮点。\",\"note\":\"a big draw 是名词短语，表示很有吸引力的事物。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: draw\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/draw\",\"supports\":[\"动词 draw 的常见意思、搭配与不规则变化\",\"名词 draw 表示比赛平局\",\"draw 的相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: draw（English entry）\"",
+        "valueJson": "\"Wiktionnaire：draw（英语词条，法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"中古英语 drawen 的词源记录\",\"英式及美式读音差异\"]",
+        "valueJson": "[\"中古英语 drawen（拉、牵引）的词源记录\",\"draw 的读音和不规则词形\",\"绘画、汲水、拔出武器及拔牙等动词释义\",\"借助资源及从文献获取素材的用法\",\"名词 draw 的抽签与平局义\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 410,
+    "headword": "draw",
+    "meaning_zh": "v. 画；拉；吸引\nn. 平局",
+    "phonetic": "/drɒ:/",
+    "pos": "",
+    "forms": []
+  }
+}

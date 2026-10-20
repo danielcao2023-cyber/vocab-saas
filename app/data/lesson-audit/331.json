@@ -1,0 +1,262 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a152ea8708c86b3fd2314074646a619440922842b648c839b5f029ec72c00794",
+    "executedReviewPromptHash": "a152ea8708c86b3fd2314074646a619440922842b648c839b5f029ec72c00794",
+    "reviewHash": "ba028a58c1ef5947c497fac1b6e4f1813173e1d5b9e3fcc5e7662bc763c25804",
+    "wordId": 331,
+    "inputHash": "82c9e15fe0cfe9979178559011b5ef0a275a659722d7435577227e2a6272ab06",
+    "draftHash": "ae860f92fc7bdd7653ab70834f82f171c0f79e8edd90c8f0fa211f2f4acf94d4",
+    "finalHash": "626ac96ff1c443fbb42412fb51e5a49ec5efe5b8aacc122d9833b05c82ef606f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/countryside#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.843Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119342,
+        "revisionId": 37277514,
+        "revisionTimestamp": "2025-02-06T20:25:10Z",
+        "sha256": "3e8b6a5e52b1561e877687ebfadc3e5422dff9e55d764a61e32731e519057634",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/countryside",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:59:11.464Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:02:49.832Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/0；/confusions/0；/lessCommonSenses",
+        "message": "countryside 除常用的地区义外，也可较少见地借指当地居民，如 the whole countryside turned out。一概否认其集合性用法不准确；应修正绝对化说明，并补入低频用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "两条例句均缺少必填的 note 字段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1",
+        "message": "法语释义 paysage 对应的乡间景色侧重点已在搭配中出现，但缺少直接例句。可替换第二例，使地区与景色两个侧重点均得到展示，无须另拆核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的英语词条明确列出 country + side，应引用该来源并确认复合构词；“乡村的一边”容易造成机械误解。材料没有提供历史阶段，stages 应继续留空。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 正文未取得，不能将其用作已读取的直接依据。应保留为推荐阅读，将有实际材料支持的构词、词形及简略释义关联至法语维基词典的英语词条，其余专业语言判断不冒挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中以法语 pays、paysage 表述的地区与景色义，合并保留为一个常用核心义，并用两条原创例句覆盖。另补入原词条中文释义所列、初稿错误排除的低频居民借代用法。复数 countrysides 有材料依据，予以保留；词源只确认 country + side，不编造历史阶段。来源局限是法语词条释义简略、Cambridge 未取回；读音和更细的用法判断依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "乡村地区；乡下（地区义，对应法语释义 pays）",
+        "coveredBy": [
+          "sense-1"
+        ],
+        "assessment": "核心常用义已覆盖；保留不可数用法及 in/to the countryside 等自然表达。"
+      },
+      {
+        "sense": "乡间风光；乡村景色（对应法语释义 paysage）",
+        "coveredBy": [
+          "sense-1"
+        ],
+        "assessment": "属于同一核心义的景色侧重点，无须机械拆义；替换第二例后，与地区侧重点均有直接例证。"
+      },
+      {
+        "sense": "乡下居民；某乡村地区的人们（低频集合、借代用法）",
+        "coveredBy": [
+          "sense-2"
+        ],
+        "assessment": "补入 lessCommonSenses，并修正初稿中将其绝对排除的学习提示与辨析。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 countryside 指乡村地区，不是乡下居民。\"",
+        "valueJson": "\"先记 countryside 最常指乡村地区；借指乡下居民的用法较少见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in the countryside 表示在乡下；这里的 countryside 指乡村地区。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"ex-2\",\"senseId\":\"sense-1\",\"en\":\"The countryside is quiet in the early morning.\",\"zh\":\"清晨的乡村很安静。\"}",
+        "valueJson": "{\"id\":\"ex-2\",\"senseId\":\"sense-1\",\"en\":\"We drove through beautiful countryside on our way to the lake.\",\"zh\":\"在去湖边的路上，我们开车穿过了一片风景优美的乡野。\",\"note\":\"这里着眼于乡间风光；beautiful countryside 在此不加 the。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sense-2\",\"title\":\"乡下居民（较少见的集合性用法）\",\"meaning\":\"借乡村地区指住在当地的人们。\",\"note\":\"多见于 the whole countryside 等概括说法，属于以地方代人的用法。日常明确说居民时，更常用 people in the countryside 或 rural residents。\",\"example\":{\"id\":\"ex-collective-1\",\"senseId\":\"sense-2\",\"en\":\"The whole countryside turned out to watch the parade.\",\"zh\":\"这一带乡村的人们都出来观看游行了。\",\"note\":\"the whole countryside 借整个地区指当地居民；turned out 在这里表示出来参加或观看。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"countryside 不表示“乡下居民”\"",
+        "valueJson": "\"countryside 通常指地方，偶尔借指当地居民\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"countryside 指乡村地区。要说住在乡下的人，可用 people in the countryside 或 country people，不能把 countryside 当作人的集合名词。\"",
+        "valueJson": "\"countryside 通常指乡村地区或乡间风光。the whole countryside 等说法也可借指当地居民，但日常明确说住在乡下的人，更常用 people in the countryside 或 rural residents。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"people 才表示人群。\"",
+        "valueJson": "\"这里用 people 直接点明人群，比借代说法更明确。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住：countryside 是地方；说居民时要加 people 等表示人的词。\"",
+        "valueJson": "\"先记“乡村地区”；日常说居民时优先用 people in the countryside，另认识 the whole countryside 借指当地居民的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可看作 country + side，字面上是“乡村的一边/一带”，如今表示乡村地区。\"",
+        "valueJson": "\"countryside 由英语 country（乡下）和 side 复合而成，整词表示乡村地带。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这个拆分说明现代词形的组成，不等同于完整的历史词源演变。\"",
+        "valueJson": "\"这个构词拆分不等于完整的历史演变；不要把整词机械译成“乡村的一边”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"名词用法及乡村地区的常见含义\",\"英式与美式发音\",\"常见搭配和例句用法\"]",
+        "valueJson": "[\"推荐拓展查阅：乡村地区义、英美读音与常见用法\"]"
+      },
+      {
+        "op": "add",
+        "path": "/sources/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wiktionary-fr\",\"title\":\"法语维基词典：countryside（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/countryside#Anglais\",\"supports\":[\"country + side 的复合构词\",\"英语名词词性及复数 countrysides\",\"地区与景色的简略释义\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 331,
+    "headword": "countryside",
+    "meaning_zh": "n. 乡下地方, 乡下居民",
+    "phonetic": "/'kʌntrisaid/",
+    "pos": "",
+    "forms": []
+  }
+}

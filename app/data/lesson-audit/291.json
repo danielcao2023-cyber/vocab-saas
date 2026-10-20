@@ -1,0 +1,316 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "66dec42dc7569a4f0b2cc8a8b8045f83d52bc61c00a2fa217b16f013e213a8a2",
+    "executedReviewPromptHash": "66dec42dc7569a4f0b2cc8a8b8045f83d52bc61c00a2fa217b16f013e213a8a2",
+    "reviewHash": "6c549e50b0f1b6e8cbbaf04fb7e8e79b52c55ed6a317ceb4bab515a6a251f6e2",
+    "wordId": 291,
+    "inputHash": "2035a0cc81f3eac24d8e6b07451310792f2065bdb57ae5d88cd2851dfdbba744",
+    "draftHash": "f7b2b94cad921d20b22c31082e562c2e699f3c82e3192536f7e41c5ea10431d2",
+    "finalHash": "1701ed01757fd88e2455d9d8d8f7b4a765f223511285a680bf699182af3306c1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/coffee#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:44.652Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10218,
+        "revisionId": 39783749,
+        "revisionTimestamp": "2026-08-07T13:37:30Z",
+        "sha256": "360848ad967cc5d2f45a535c8fa4c81786f5b78c479cbf2d22d9ff726a6b6ded",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/coffee",
+        "section": "coffee (noun)",
+        "supports": [
+          "Dutch Turkish Arabic route",
+          "Early spelling variation",
+          "Uncertainty beyond the Arabic name"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "a3223d6466d1f6349476a6b2781ee1f4edf1af28923d115987e40a9f6d5b1d5e",
+        "summaryAndSupportsWordCount": 72,
+        "sha256": "a3223d6466d1f6349476a6b2781ee1f4edf1af28923d115987e40a9f6d5b1d5e",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/291.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/coffee",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:17:33.760Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T13:21:53.618Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "遗漏常用的咖啡原料义和较少用的咖啡树义；coffees 表示种类的功能也只有形式说明。补入原料义及三个例句，并补入植物义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "原例只展示复合形容词 coffee-coloured，没有直接展示 coffee 作颜色名词。改用列举配色的自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 各处 sourceIds",
+        "message": "Cambridge 页面实际未获取，不能作为已据以编写内容的来源。删除该来源，将相关引用改为已获取的法语维基词典英语词条，并补全其支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar",
+        "message": "tea 只是同类饮料，不是 coffee 的近义表达。改用来源列出的 joe、java，并说明非正式语域；保留 tea 作为饮料选择中的语境对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "“旧式拼法暗示 /ɪ/”混淆拼写与标音，也把传统标音或口音差异一概判错。删除这一禁令，保留明确的发音提示。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/word",
+        "message": "第二项实际解释和例示的是美式 coffee-colored，但词头误写成 coffee-coloured，须逐字符纠正。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary; /etymology/stages",
+        "message": "“不是由……字母拼成的”没有表达正确的构词概念；各阶段 meaning 也只是位置说明，并非词义。改正借词说明，清空占位阶段，将有依据的传播路线保留在 summary。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对五个词典义及相关可数功能。饮料义、杯份义各保留两个例句；补入原料义三个例句，覆盖整豆、咖啡粉和种类可数用法。颜色义改用名词本身的例句，植物义补列为较少用法。颜色与植物各保留一个例句；阿拉伯语名称更早的来源仍按来源保留不确定性。",
+    "senseInventory": [
+      {
+        "sense": "名词，通常不可数：咖啡饮料",
+        "coveredBy": [
+          "coffee-drink"
+        ],
+        "assessment": "两个生活例句自然，黑咖啡和速溶咖啡搭配正确；修正近义表达及来源引用。"
+      },
+      {
+        "sense": "名词，可数：一杯或一份咖啡",
+        "coveredBy": [
+          "coffee-serving"
+        ],
+        "assessment": "两个例句确实展示杯份用法；a coffee 与 two coffees 的说明正确。"
+      },
+      {
+        "sense": "名词，通常不可数：咖啡豆等原料，也可指研磨咖啡粉",
+        "coveredBy": [
+          "coffee-material"
+        ],
+        "assessment": "原稿遗漏，补为核心义；分别例示整豆与粉末，并补充 coffees 表示不同种类的功能。"
+      },
+      {
+        "sense": "名词：咖啡树",
+        "coveredBy": [
+          "coffee-plant"
+        ],
+        "assessment": "原稿遗漏，补为较少用法，并提示日常说 coffee plant 或 coffee tree 更明确。"
+      },
+      {
+        "sense": "名词：咖啡色",
+        "coveredBy": [
+          "coffee-colour"
+        ],
+        "assessment": "保留为较少用法；替换只展示复合形容词的例句，使例句直接覆盖颜色名词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一音节；词尾是清晰的 /i/，不要读成旧式拼法暗示的 /ɪ/。\"",
+        "valueJson": "\"重音在第一音节；ff 读 /f/，词尾按这里的标音读 /i/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"tea\",\"zh\":\"茶\",\"note\":\"同为常见饮料；只有在讨论饮料选择时才与 coffee 相近，不能互换。\"}]",
+        "valueJson": "[{\"en\":\"joe\",\"zh\":\"咖啡（非正式说法）\",\"note\":\"主要用于美式口语，常见于 a cup of joe；语气随意，中性表达通常仍用 coffee。\"},{\"en\":\"java\",\"zh\":\"咖啡（非正式说法）\",\"note\":\"在非正式语境中可指咖啡，尤其见于美式英语；正式或中性表达通常仍用 coffee。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"tea 和 coffee 都是饮料名，适合比较喝什么；茶不是咖啡的同义词。\"",
+        "valueJson": "\"joe 和 java 都可在非正式语境中指咖啡，但带有口语色彩，不能作为所有场合都自然的替换词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"coffee-material\",\"title\":\"咖啡原料：咖啡豆或咖啡粉\",\"meaning\":\"用来冲泡咖啡的咖啡豆或咖啡粉，作为原料通常不可数。\",\"usageNote\":\"指原料时通常不可数；数单颗豆用 a coffee bean，数包装可用 a bag of coffee。按产地或品种区分种类时，a coffee / coffees 也可表示一种 / 多种咖啡。\",\"examples\":[{\"id\":\"coffee-material-ex1\",\"senseId\":\"coffee-material\",\"en\":\"We buy whole-bean coffee and grind it at home.\",\"zh\":\"我们买的是整豆咖啡，在家自己磨粉。\",\"note\":\"whole-bean coffee 指尚未磨粉的咖啡豆；这里的 coffee 指原料。\"},{\"id\":\"coffee-material-ex2\",\"senseId\":\"coffee-material\",\"en\":\"I bought a bag of ground coffee at the supermarket.\",\"zh\":\"我在超市买了一袋咖啡粉。\",\"note\":\"ground coffee 指磨好的咖啡粉，还没有冲成饮料。\"},{\"id\":\"coffee-material-ex3\",\"senseId\":\"coffee-material\",\"en\":\"The shop sells coffees from several different countries.\",\"zh\":\"这家店出售来自几个不同国家的多种咖啡。\",\"note\":\"coffees 在这里数的是种类，不是杯数。\"}],\"patterns\":[{\"en\":\"a bag of coffee\",\"zh\":\"一袋咖啡豆或咖啡粉\",\"note\":\"用 bag 计量包装；里面的 coffee 作不可数名词。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"coffee beans\",\"zh\":\"咖啡豆\",\"note\":\"bean 可数；一颗用 a coffee bean，多颗用 coffee beans。\",\"kind\":\"common-collocation\"},{\"en\":\"ground coffee\",\"zh\":\"研磨咖啡粉\",\"note\":\"指咖啡豆磨成的粉，不是已经冲泡好的饮料。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"coffee beans\",\"zh\":\"咖啡豆\",\"note\":\"当 coffee 指整颗豆子时可这样明确表达；磨成粉后则说 ground coffee。\"}],\"contrasting\":[],\"similarNote\":\"coffee beans 只对应原料义中的整豆；ground coffee 对应磨粉后的形式，要按实际形态选择。\",\"contrastingNote\":\"这一原料名词没有常用反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于描述颜色的复合词 coffee-coloured；日常基础学习中先掌握饮料义和一杯义。\"",
+        "valueJson": "\"作颜色名的 coffee 多见于色卡或商品配色；也可用 coffee-coloured（英式）或 coffee-colored（美式）表示“咖啡色的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"coffee-colour-ex1\",\"senseId\":\"coffee-colour\",\"en\":\"She chose a coffee-coloured coat.\",\"zh\":\"她选了一件咖啡色外套。\",\"note\":\"coffee-coloured 作形容词，修饰 coat。\"}",
+        "valueJson": "{\"id\":\"coffee-colour-ex1\",\"senseId\":\"coffee-colour\",\"en\":\"This fabric comes in cream, coffee, and grey.\",\"zh\":\"这种布料有奶油色、咖啡色和灰色可选。\",\"note\":\"coffee 在颜色选项中表示咖啡色。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"coffee-plant\",\"title\":\"咖啡树\",\"meaning\":\"咖啡树这种植物。\",\"note\":\"植物或农业语境中可这样使用；日常说 coffee plant 或 coffee tree 更明确。\",\"example\":{\"id\":\"coffee-plant-ex1\",\"senseId\":\"coffee-plant\",\"en\":\"The coffee in our greenhouse is flowering.\",\"zh\":\"我们温室里的咖啡树正在开花。\",\"note\":\"flowering 表明这里的 coffee 指植物，不是饮料或咖啡豆。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 coffee 经荷兰语 koffie、土耳其语 kahveh，追溯到阿拉伯语 qahwah。这个词随饮料经不同语言传播而来，不是由现代英语 coffee 的字母拼成的。\"",
+        "valueJson": "\"英语 coffee 经荷兰语 koffie、土耳其语 kahveh，可追溯到阿拉伯语 qahwah。这个词随饮料经不同语言传播，是借词，不能按现代英语的词根和词缀来拆解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"阿拉伯语\",\"form\":\"qahwah\",\"meaning\":\"词源链中较早的形式\"},{\"language\":\"土耳其语\",\"form\":\"kahveh\",\"meaning\":\"传播过程中的形式\"},{\"language\":\"荷兰语\",\"form\":\"koffie\",\"meaning\":\"英语借入前的形式\"},{\"language\":\"英语\",\"form\":\"coffee\",\"meaning\":\"现代英语形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/word",
+        "expectedValueJson": "\"coffee-coloured\"",
+        "valueJson": "\"coffee-colored\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/title",
+        "expectedValueJson": "\"Wiktionary: coffee\"",
+        "valueJson": "\"Wiktionary: coffee（英语词条，法语释文）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"coffee 的咖啡色义及 coffee-coloured 相关形式\"]",
+        "valueJson": "[\"coffee 的英美读音\",\"咖啡饮料义及不可数用法\",\"一杯咖啡的转喻用法\",\"咖啡豆原料义与咖啡树义\",\"咖啡色义及 coffee-coloured、coffee-colored 形式\",\"joe、java 的非正式咖啡义\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: coffee\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/coffee\",\"supports\":[\"coffee 作饮料名词及其可数、不可数用法\",\"coffee 表示一杯或一份饮料的用法\",\"coffee 的读音和常见复合词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 291,
+    "headword": "coffee",
+    "meaning_zh": "n. 咖啡, 咖啡色",
+    "phonetic": "/'kɒfi/",
+    "pos": "",
+    "forms": []
+  }
+}

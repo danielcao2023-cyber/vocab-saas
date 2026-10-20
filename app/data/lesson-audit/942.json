@@ -1,0 +1,410 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9ca977d288f37b183cc9e9c64ceb80332d7f3e3fc22e481e8d2b215fcf080c00",
+    "executedReviewPromptHash": "9ca977d288f37b183cc9e9c64ceb80332d7f3e3fc22e481e8d2b215fcf080c00",
+    "reviewHash": "cba424a6f781bf5c74c1204e0a17f1859a7b5fd99001867b0f173412d6875bbb",
+    "wordId": 942,
+    "inputHash": "c3333116ae7169acaa072de214a574407a6999b11f53cc04601c97816adeffee",
+    "draftHash": "2a7134dde73aa4c29ca959e7f3d34cfc0e67c30e910e4736c398a614e36a1592",
+    "finalHash": "c96908056dd39f89a5cb1b0bdafec0333449b8dade6d39a6cbc4736ab0a1cd2f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/office#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.449Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 32686,
+        "revisionId": 39844751,
+        "revisionTimestamp": "2026-09-01T00:04:30Z",
+        "sha256": "3c092321a010bf5bd738ceab4910b3c18187fbf88e624461300ad867c26b78ce",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/office",
+        "section": "office noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "ee37834269712a983f6cbb3437591ea0e315051f778ab759c71a960b838dafce",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "ee37834269712a983f6cbb3437591ea0e315051f778ab759c71a960b838dafce",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/942.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/office",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:16:46.157Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:32:07.498Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 页面未取得词条，不能据此归因释义、发音或词族说明。应改引实际取得的维基词典英语词条，并撤去其未涉及的 officer、official 等说明的来源归属。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning；/senses/2/patterns/2；/lessCommonSenses",
+        "message": "职位义与职责义混在一起；the duties of office 中 office 仍指职务，职责由 duties 表达。独立的“职责、职能”义尚无真正例句，应作为正式、偏旧式用法另列。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote；/wordFamily/0/formation",
+        "message": "office 保留词尾 e 再加 -er 会得到错误的 officeer。officer 只有一个 e；拼写拆分也应与历史派生解释区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0；/wordFamily/0",
+        "message": "officer 不能泛指任何担任职位的人或普通职员。词族例句中 office 实际表示办公地点，senseId 却指向公职义；辨析例句也应明确展示人与场所的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note；/senses/1/examples/1/zh",
+        "message": "at the office 本身不表达“去办公室”；ask ... for a new timetable 表示索要一份新课表，“询问一份新课表”译法不准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples；/senses/1/patterns/0；/senses/1/usageNote",
+        "message": "应以具体例句补足服务窗口和机构名称中“部”的用法；the [place or service] office 过于笼统，容易被当作可以自由套用的命名规则。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/0/note；/senses/0/usageNote；/senses/2/usageNote；/confusions",
+        "message": "宜补清办公地点义的可数性、复数 /ɪz/ 的语音依据，以及 in office 与 in the office 的冠词区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1；/etymology/summary",
+        "message": "古法语阶段的 meaning 只是传入关系说明，并非词义，应删除这个占位阶段，把有依据的中间形式和盎格鲁-诺曼语路径写进 summary。"
+      }
+    ],
+    "coverageAssessment": "已按法语维基词典的英语词条核对办公房间或建筑物、服务窗口、办事机构或部门、正式职位及职责或职能。修订后各核心义均保留至少两个例句，并补入窗口和“部”的实例；偏旧式的职责义单列于低频义。词源限于两份已取得的词源材料。Cambridge 不再作为已获取内容的依据；词族、原创例句及搭配辨析中的专业语言判断不冒称该页面已核实。",
+    "senseInventory": [
+      {
+        "sense": "办公室、办公房间或建筑物；办公处所（bureau、local）",
+        "coveredBy": [
+          "office-1"
+        ],
+        "assessment": "已有两个自然例句；补清可数性和地点表达，纠正 at the office 的说明。"
+      },
+      {
+        "sense": "服务窗口、售票处等（guichet）",
+        "coveredBy": [
+          "office-2"
+        ],
+        "assessment": "原稿仅在搭配中提及；新增 ticket office 例句明确覆盖。"
+      },
+      {
+        "sense": "办事机构、办事处或部门",
+        "coveredBy": [
+          "office-2"
+        ],
+        "assessment": "邮局和学校办事部门已有例句；新增 Home Office，说明机构名称中的“部”须按惯用名称理解。"
+      },
+      {
+        "sense": "正式职位、公职（emploi、place、poste）",
+        "coveredBy": [
+          "office-3"
+        ],
+        "assessment": "两个例句覆盖任职与卸任；移除职责义混释，补充常用无冠词表达。"
+      },
+      {
+        "sense": "职责、职能或服务（fonction、office、service）",
+        "coveredBy": [
+          "office-duty"
+        ],
+        "assessment": "补入低频义及真实表达职责的例句，注明正式、偏旧式语域；不将 duties of office 误当作该义的直接例证。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: office\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/office\",\"supports\":[\"office 的名词常见义、搭配与英美发音\",\"office、officer 等词的用法核对\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"维基词典（法语站）：office 的英语词条\",\"url\":\"https://fr.wiktionary.org/wiki/office#Anglais\",\"supports\":[\"英语名词 office 的办公场所、服务窗口、职位及职能等释义\",\"office 的英式及美式读音\",\"经盎格鲁-诺曼语及古法语传入英语的词源路径\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"以字母 e 结尾的名词加 -s；复数词尾读 /ɪz/。\"",
+        "valueJson": "\"office 的复数直接加 -s，写作 offices。单数以 /s/ 音结尾，所以复数词尾读 /ɪz/，多一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可指一间办公室，也可指办公楼或某人的工作地点。\"",
+        "valueJson": "\"本义通常可数，可指一间办公室、办公楼或某人的办公地点：an office、two offices。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"at the office 表示人在办公室或去办公室办事。\"",
+        "valueJson": "\"at the office 表示“在办公室／在工作单位”；本句说明桌子所在的地点，不表示“去办公室”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常出现在复合词中，例如 post office（邮局）和 ticket office（售票处）。\"",
+        "valueJson": "\"常出现在复合词或机构名称中，如 post office（邮局）、ticket office（售票处）。Office 在个别英国政府机构名称中可译作“部”，如 the Home Office（英国内政部）；具体名称须按惯用法记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"你可以向学校办公室询问一份新课表。\"",
+        "valueJson": "\"你可以向学校办公室要一份新课表。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"the [place or service] office\",\"zh\":\"某地或某项服务的办事处\",\"note\":\"前面的词说明这个 office 负责什么事务，如 school office。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"the school office\",\"zh\":\"学校办公室；校务办公室\",\"note\":\"school 修饰 office，指学校处理日常事务的办公室，也可连同其中的工作人员一起理解。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"office-2-ex3\",\"senseId\":\"office-2\",\"en\":\"The ticket office closes at six.\",\"zh\":\"售票处六点关门。\",\"note\":\"ticket office 可指售票窗口或售票处，体现 office 表示服务窗口或处所的用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"office-2-ex4\",\"senseId\":\"office-2\",\"en\":\"Her aunt works at the Home Office.\",\"zh\":\"她的姑姑在英国内政部工作。\",\"note\":\"Home Office 是英国内政部的名称；这里的 Office 指政府机构，不是一间办公房间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"正式职位，尤其指政府或组织中的重要职位；也可指担任这一职位的职责。\"",
+        "valueJson": "\"正式职位，尤其指政府或组织中的重要职位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见于 hold office（担任公职）和 leave office（离职或卸任）。\"",
+        "valueJson": "\"常用于政府或组织中的正式职位。hold office（任职）、take office（就职）、be in office（在任）、leave office（卸任）通常不用冠词；指某个具体职位时也可以说 this office 或 a public office。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/2/zh",
+        "expectedValueJson": "\"职务职责\"",
+        "valueJson": "\"任职须承担的职责\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/2/note",
+        "expectedValueJson": "\"office 在此指职位附带的职责。\"",
+        "valueJson": "\"office 在这里仍指“职务”，duties 表示“职责”；整个词组指任职须承担的工作。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"office-duty\",\"title\":\"职责；职能（正式或旧式）\",\"meaning\":\"某个人或事物应承担的职责或发挥的职能。\",\"note\":\"这一用法较正式、偏旧式；日常通常用 duty 表示职责，用 function 表示职能。\",\"example\":{\"id\":\"office-duty-ex1\",\"senseId\":\"office-duty\",\"en\":\"It is the office of a judge to apply the law fairly.\",\"zh\":\"法官的职责是公正地适用法律。\",\"note\":\"这里的 office 表示职责；这是正式、偏旧式的表达。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"office 是办公室、办事机构或职位；officer 是担任职务的人，如警察或军官。\"",
+        "valueJson": "\"office 指办公室、办事机构或正式职务；officer 指某些担任特定职务的人，如警察、军官或机构主管。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"officer：职员、官员；警官\"",
+        "valueJson": "\"officer：警察、军官等任职者\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"指人，常见于 police officer（警察）。\"",
+        "valueJson": "\"指人，常见于 police officer（警察）；也可指军官或特定岗位的主管、专员，不能泛指所有普通员工。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"office-confusion-1-ex2\",\"senseId\":\"office-1\",\"en\":\"A police officer helped us cross the road.\",\"zh\":\"一位警察帮我们过马路。\",\"note\":\"officer 指警察这个人。\"}",
+        "valueJson": "{\"id\":\"office-confusion-1-ex2\",\"senseId\":\"office-1\",\"en\":\"A police officer came into the office.\",\"zh\":\"一位警察走进了办公室。\",\"note\":\"police officer 指人；office 指办公室，注意两个单词的拼写相差一个 r。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 office 是地点、机构或职位；表示“担任职位的人”时用 officer。\"",
+        "valueJson": "\"office 常指场所、机构或正式职位；officer 指警察、军官等特定任职者，不是普通员工的通称。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"office-confusion-2\",\"title\":\"in office 与 in the office\",\"summary\":\"谈正式职位时，in office 表示“在任”；谈办公地点时，in the office 表示“在办公室里”。\",\"items\":[{\"label\":\"in office：在任\",\"note\":\"office 表示职务，这个固定表达通常不用冠词。\",\"example\":{\"id\":\"office-confusion-2-ex1\",\"senseId\":\"office-3\",\"en\":\"The president has been in office for two years.\",\"zh\":\"总统已在任两年。\",\"note\":\"说明任职持续的时间。\"}},{\"label\":\"in the office：在办公室里\",\"note\":\"office 表示具体办公地点，the 指语境中明确的办公室。\",\"example\":{\"id\":\"office-confusion-2-ex2\",\"senseId\":\"office-1\",\"en\":\"The manager has been in the office all morning.\",\"zh\":\"经理整个上午都在办公室里。\",\"note\":\"说明经理所在的地点。\"}}],\"takeaway\":\"in office 谈在任；in the office 谈办公地点。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"office 经古法语传入英语，源自拉丁语 officium，涉及职责、服务或职能；英语后来也用它表示履行事务的场所。\"",
+        "valueJson": "\"office 经盎格鲁-诺曼语 office 进入英语，该形式又来自古法语 office；更早源自拉丁语 officium，表示职责、服务或职能。英语早先用它指负有职责的职位，后来也指处理事务的房间或建筑物。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"古法语\",\"form\":\"ofice\",\"meaning\":\"由拉丁语传入的形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"etymonline\",\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"官员；职员；警官\"",
+        "valueJson": "\"警察；军官；官员；（机构中的）主管或专员\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"office + -er，表示担任职务的人。\"",
+        "valueJson": "\"与 office 同族；offic- + -er 可用作拼写助记，帮助联想到警察、军官等特定任职者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -er 后保留 office 的 e，写作 officer。\"",
+        "valueJson": "\"记拼写时，把 office 的词尾 e 去掉再接 -er：offic- + -er → officer；只写一个 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"family-officer-ex1\",\"senseId\":\"office-3\",\"en\":\"The officer showed us the way to the office.\",\"zh\":\"那位工作人员给我们指了去办公室的路。\",\"note\":\"前一个 officer 指人，后一个 office 指地点。\"}",
+        "valueJson": "{\"id\":\"family-officer-ex1\",\"senseId\":\"office-1\",\"en\":\"The police officer showed us the way to the office.\",\"zh\":\"那位警察给我们指了去办公室的路。\",\"note\":\"police officer 指警察；office 指办公地点，属于地点义。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 942,
+    "headword": "office",
+    "meaning_zh": "n. 办公室, 部, 公职, 职责",
+    "phonetic": "/'ɒfis/",
+    "pos": "",
+    "forms": []
+  }
+}

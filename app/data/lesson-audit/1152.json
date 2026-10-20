@@ -1,0 +1,261 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7ddab8ccbb31406d7d769f883813dbe1d123f9c2792da3701509cce865904d8a",
+    "executedReviewPromptHash": "7ddab8ccbb31406d7d769f883813dbe1d123f9c2792da3701509cce865904d8a",
+    "reviewHash": "3ca21d864aeebedb797229701b61a7e886ec70f43f3d22974cd879b8f70f2d61",
+    "wordId": 1152,
+    "inputHash": "c18c749b431ce7e6ac0662069f7108e16a1108736f07e76a3dd333b3148a62f8",
+    "draftHash": "a2c626ba00e5d7fa837b4184433e047b64613d374f9acc079d1c2871817b2209",
+    "finalHash": "48841a7c880edbfc9bfb1d1c2552487e829711bbf2e92c8a40d90239369a235e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/responsible#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.640Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117561,
+        "revisionId": 39838493,
+        "revisionTimestamp": "2026-08-29T14:30:26Z",
+        "sha256": "40fc8e04ba559fef926f261c4e5328b320efbe5b8ef9c53f2c3f6e85453b3c89",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/responsible",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:34:17.824Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:45:43.972Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的因果归责义：responsible for 可表示造成某种结果，主语也可以是天气等事物，并不总是在追究过错。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "第二例及 responsible for oneself 讲的是职责归属，未真正例示责任心；应补充评价人或行为负责任的用法。careless 的语义范围也不能笼统说成更窄。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning",
+        "message": "responsible decision 通常指审慎、负责任的决定，不属于职位或工作责任重大这一义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "junior 表示级别较低，less demanding 表示要求或难度较低，两者都不能直接表示承担的责任较少。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/0/example",
+        "message": "head teacher 应译为“校长”；原例仅出现 reports to，宜直接展示正在讲解的 responsible to。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "“responsible 的来源形式”不是法语词义。材料仅明确给出来源词形，应保留 summary 中的来源事实并删除占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/story",
+        "message": "故事开头已经是值日小队长，后文又说后来担任小队长，时间顺序重复；同时宜串入新增的因果义。"
+      }
+    ],
+    "coverageAssessment": "已核对职责承担、向某人负责、因果归责、责任心及职位责任重大等主要用法；补丁后各核心义均有至少两个对应例句。成功获取的词典材料明确提供概括释义、职位义、读音及法语来源，其余细分结合专业语言知识审核。Oxford 未提供正文，Cambridge 获取失败，两者仅作为推荐链接，不作为已核验依据。",
+    "senseInventory": [
+      {
+        "sense": "负责某项任务或职责；向某人或机构负责",
+        "coveredBy": [
+          "responsible-accountable"
+        ],
+        "assessment": "职责例句充分；修正辨析例句后，responsible to 的问责对象也得到直接展示。"
+      },
+      {
+        "sense": "造成某种结果；对后果负有责任",
+        "coveredBy": [
+          "responsible-cause"
+        ],
+        "assessment": "初稿遗漏；新增义项覆盖人为过错、非人为原因及积极结果。"
+      },
+      {
+        "sense": "有责任心、可信赖；行为或决定审慎负责",
+        "coveredBy": [
+          "responsible-reliable"
+        ],
+        "assessment": "保留人物评价例句，替换误归类的职责例句，并补充对行为的评价。"
+      },
+      {
+        "sense": "职位或工作责任重大",
+        "coveredBy": [
+          "responsible-position"
+        ],
+        "assessment": "词典明确支持，两个例句均对应此义；删除决定的误归类并修正反向表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"responsible 常说某人该为某事负责，也可说某人做事可靠，或某个职位责任重大。常用结构有 be responsible for 和 be responsible to。\"",
+        "valueJson": "\"responsible 可表示负责某项任务、向某人负责、做事有责任心，也可说明谁或什么造成了某个结果，或形容职位责任重大。for 后接负责的事项或造成的结果，to 后接需要向其负责的人或机构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"做事认真，能信守承诺并照顾好自己应做的事情。\"",
+        "valueJson": "\"形容人做事可靠、认真履行义务，也可形容行为或决定审慎、顾及后果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常修饰 person、student、adult 等人，也常用于 responsible for oneself，表示能照顾好自己。\"",
+        "valueJson": "\"可修饰 person、student、adult 等表示人的名词，也可修饰 behaviour、choice、decision 等，强调认真履责、考虑后果。responsible for oneself 则主要表示对自己负责，属于职责承担的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"responsible-reliable-ex2\",\"senseId\":\"responsible-reliable\",\"en\":\"At camp, each student must be responsible for their own belongings.\",\"zh\":\"在营地里，每个学生都必须照看好自己的物品。\",\"note\":\"responsible for 在此表示认真照管自己应负责的东西。\"}",
+        "valueJson": "{\"id\":\"responsible-reliable-ex2\",\"senseId\":\"responsible-reliable\",\"en\":\"Telling the teacher about the broken window was the responsible thing to do.\",\"zh\":\"把窗户破损的事告诉老师，是负责任的做法。\",\"note\":\"responsible 在这里评价一种做法有责任心、顾及后果。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"be responsible for oneself\",\"zh\":\"对自己负责；照顾好自己\",\"note\":\"常用于成长或生活自理的语境，强调承担自己的日常责任。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"the responsible thing to do\",\"zh\":\"负责任的做法\",\"note\":\"用来评价某种做法考虑了责任和后果；这里的 to do 修饰 thing。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"irresponsible 是责任心不足；careless 更偏向疏忽，语境范围较窄。\"",
+        "valueJson": "\"irresponsible 强调不顾应尽的责任或行为后果；careless 强调不够小心。两者可以重叠，但不完全等同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"形容职位、工作或决定需要承担较多责任。\"",
+        "valueJson": "\"形容职位或工作职责重要，需要承担较多责任。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"junior\",\"zh\":\"初级的\",\"note\":\"在职位级别语境中可与 senior 对照；并非 responsible 的通用反义词。\"},{\"en\":\"less demanding\",\"zh\":\"责任要求较少的\",\"note\":\"用于对比工作或职位所承担的责任多少，需结合具体语境。\"}]",
+        "valueJson": "[{\"en\":\"a job with little responsibility\",\"zh\":\"责任较少的工作\",\"note\":\"在比较工作所承担的责任多少时，可与 a responsible job 对照。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"junior 只在职位级别语境中对照；less demanding 适合比较工作的责任要求。\"",
+        "valueJson": "\"用具体短语对比职责多少；irresponsible 通常评价人或行为不负责任，不能用来表示一个职位承担的责任较少。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example",
+        "expectedValueJson": "{\"id\":\"responsible-confusion-ex1\",\"senseId\":\"responsible-accountable\",\"en\":\"The coach is responsible for the team and reports to the head teacher.\",\"zh\":\"教练负责这个队，并向班主任汇报。\",\"note\":\"for 后是负责对象；to 后是汇报对象。\"}",
+        "valueJson": "{\"id\":\"responsible-confusion-ex1\",\"senseId\":\"responsible-accountable\",\"en\":\"The coach is responsible to the head teacher for the team's training.\",\"zh\":\"教练负责这支队伍的训练，并向校长负责。\",\"note\":\"to the head teacher 指向校长负责；for the team's training 指负责的事项。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"responsable\",\"meaning\":\"responsible 的来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"responsible-cause\",\"title\":\"造成结果的；应为后果负责的\",\"meaning\":\"说明某人、行为或情况是某种结果的原因；若涉及过错，也表示应为后果承担责任。\",\"usageNote\":\"常用 be responsible for。主语既可以是人，也可以是天气、措施等事物；结果可以是坏的，也可以是好的，不一定涉及过错。\",\"examples\":[{\"id\":\"responsible-cause-ex1\",\"senseId\":\"responsible-cause\",\"en\":\"Tom was responsible for breaking the kitchen window.\",\"zh\":\"厨房窗户是汤姆打破的，他应对此负责。\",\"note\":\"这里说明谁造成了损坏，并非分派打破窗户的任务。\"},{\"id\":\"responsible-cause-ex2\",\"senseId\":\"responsible-cause\",\"en\":\"Heavy rain was responsible for the flooding in our street.\",\"zh\":\"大雨导致我们这条街被水淹了。\",\"note\":\"主语是天气，responsible for 说明原因，不是在评价责任心。\"},{\"id\":\"responsible-cause-ex3\",\"senseId\":\"responsible-cause\",\"en\":\"The extra practice was partly responsible for our team's success.\",\"zh\":\"我们队的成功部分得益于额外的训练。\",\"note\":\"也可说明积极结果的原因；partly 表示这只是部分原因。\"}],\"patterns\":[{\"en\":\"be responsible for + 结果（名词或动名词）\",\"zh\":\"造成……；应为……承担责任\",\"note\":\"for 后引出造成的结果；要结合上下文区分任务职责和结果归因。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be partly responsible for\",\"zh\":\"是……的部分原因；对……负部分责任\",\"note\":\"partly 限定原因或责任的程度，不表示唯一原因或全部责任。\",\"kind\":\"common-collocation\"},{\"en\":\"the person responsible for the damage\",\"zh\":\"造成损坏的人；应对损坏负责的人\",\"note\":\"responsible for the damage 放在 person 后面，说明是哪一个人。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be the cause of\",\"zh\":\"是……的原因\",\"note\":\"侧重说明原因，可用于好结果或坏结果；后接 of，而不是 for。\"},{\"en\":\"be to blame for\",\"zh\":\"应为……受责备\",\"note\":\"用于过失或坏结果，强调责备，不能用来说明积极结果的成因。\"}],\"contrasting\":[{\"en\":\"not be responsible for\",\"zh\":\"不是……的原因；不对……负责\",\"note\":\"依上下文否定因果或责任归属，不等于评价某人缺乏责任心。\"}],\"similarNote\":\"be the cause of 侧重因果；be to blame for 带有对坏结果追责的意思。\",\"contrastingNote\":\"否定某个结果的归因或责任时用 not responsible for；irresponsible 则评价人或行为不负责任。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象值日小队长拿着任务单：他负责锁门（responsible for locking），做事让同学放心（a responsible student）；后来他担任小队长，职位也责任重大（a responsible position）。把 responsible 和“任务单上的责任”连在一起记。\"",
+        "valueJson": "\"想象一名学生拿着值日任务单：他负责锁门（responsible for locking），平时做事让同学放心（a responsible student）。后来他当上值日小队长，岗位责任更重（a responsible position）。有一天教室窗户被球打破，大家问是谁造成的（Who was responsible for the damage?）。把这个词和任务、责任心、岗位职责以及结果的原因联系起来记。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"造成结果\",\"text\":\"be responsible for 也可说明造成某种结果的原因；既能追究过错，也能说明事物的影响。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1152,
+    "headword": "responsible",
+    "meaning_zh": "adj. 有责任的, 负责的, 责任重大的",
+    "phonetic": "/ri'spɒnsәbl/",
+    "pos": "",
+    "forms": []
+  }
+}

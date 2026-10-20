@@ -1,0 +1,337 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e605065cb6dcff25f2dca8b0eb8c70cb9696d7115c798af703df4377734f7ccb",
+    "executedReviewPromptHash": "e605065cb6dcff25f2dca8b0eb8c70cb9696d7115c798af703df4377734f7ccb",
+    "reviewHash": "b8c6df51d06c08c41476e0805f96d56b9d4e1e5ec809b6f699ad9d9e2d2d3f16",
+    "wordId": 948,
+    "inputHash": "65cafb848e4b7c474d6fcb956a10918d4ae550cfef279fbe89cea7c0f8df0127",
+    "draftHash": "1e8168abe67a73e4815320add7cf85b5f650b36a3257756c814300cab1d749b3",
+    "finalHash": "707e95b79d98b1a2b401361ef0553e98222646fcd49fae171794a5fd7f42e48c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/Olympic#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.451Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 1481052,
+        "revisionId": 39839771,
+        "revisionTimestamp": "2026-08-30T00:04:20Z",
+        "sha256": "d8bf6bed754db3aa5bded88b08ec056ef9c8763c8873cf40c4e15333d9eaf8f1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/Olympic",
+        "section": "Olympic adjective",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "b07f6c1258ba825216a00d5719d50a098e8fda625171ee2cea67ca90867e3924",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "b07f6c1258ba825216a00d5719d50a098e8fda625171ee2cea67ca90867e3924",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/948.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/Olympic",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:28:44.772Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:37:36.742Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "来源同时列出美式词首 /ə/ 和 /oʊ/，不能据此断言美式常以 /oʊ/ 起音。“旧音标不准确”也不是恰当的学生读音说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 未提供实际内容，Cambridge 获取失败，不能作为本次内容的支持来源。Wiktionnaire 的英语 Olympic 词条也没有提供 Olympian 的构词说明，须撤掉该错误归引。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "原条目合并奥林匹亚与奥林匹斯相关用法，但 ancient Olympic contests 只展示古代赛事义，不能覆盖两个地名相关用法。应分别说明并配例，同时明确古代赛事也属于主要体育义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway 和 /confusions/1",
+        "message": "“名词前用 Olympic”及“Olympics 不用来直接修饰 athlete”的判断过于绝对。英语名词可以作前置修饰语，例如 Olympics coverage；不能仅凭 Olympics 的名词身份判定该结构不合语法。应改教常见搭配及两词的词性、拼写区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源遗漏了明确提供的拉丁语 Olympicus。原阶段箭头直接连接希腊语与英语，没有交代拉丁语来源。修订保留希腊语基础于概述，箭头采用可确认的拉丁语到英语路径，并补明更深层地名来源不明。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily 和 /senses/0/relatedExpressions/similar/0/note",
+        "message": "Olympics 宜说明为 the Olympic Games 的简称，避免把字形差异教成可推广的形容词加 -s 规则。Olympian 的来源说明含混；其体育义形容词用法较少见，不能扩大为所有形容词用法都较少见。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1/note",
+        "message": "Olympic athlete 指参加或参加过奥运会的运动员，“与奥运会有关”范围过宽。"
+      }
+    ],
+    "coverageAssessment": "已核对英语形容词的奥运会相关核心义及罕见历史地名相关用法。核心义已有两个自然英中例句，无须强拆；修订补明古代赛事的归属，并为两个历史用法分别配例。Olympics 作为相关名词处理，不增列为 Olympic 的名词义。词源采用已取得的两项来源；更深层地名来源不明，已作明确限定。",
+    "senseInventory": [
+      {
+        "sense": "形容词：奥林匹克运动会的，包括古代、现代赛事及有关的人或物",
+        "coveredBy": [
+          "olympic-games-related"
+        ],
+        "assessment": "初中核心义覆盖充分，两个例句分别展示赛事名称与奖牌搭配；补充古代赛事也属于此义。"
+      },
+      {
+        "sense": "历史地名相关用法：古奥林匹亚的",
+        "coveredBy": [
+          "olympic-ancient"
+        ],
+        "assessment": "保留为次要历史用法，改用圣地例句展示地点关系，避免只重复古代赛事义。"
+      },
+      {
+        "sense": "罕见历史或文学用法：奥林匹斯相关的，尤其指诸神的",
+        "coveredBy": [
+          "olympic-olympus"
+        ],
+        "assessment": "另列次要用法，以 Olympic gods 配例，并提示更常用的表达 Olympian gods。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/us",
+        "expectedValueJson": "\"/oʊˈlɪm.pɪk/\"",
+        "valueJson": "\"/əˈlɪmpɪk/ 或 /oʊˈlɪmpɪk/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式通常以 /ə/ 起音，美式常以 /oʊ/ 起音；两者重音都在第二音节。\"",
+        "valueJson": "\"英式读 /əˈlɪmpɪk/；美式可读 /əˈlɪmpɪk/ 或 /oʊˈlɪmpɪk/，重音都在第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；常见英美读音的重音都在第二音节。\"",
+        "valueJson": "\"重读音节是 /lɪm/，其中 /ɪ/ 是短元音，不读成 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_olympic\",\"cambridge_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"Olympic 通常首字母大写；说赛事本身时常用 the Olympic Games 或 the Olympics。\"",
+        "valueJson": "\"Olympic 首字母大写；说赛事本身时常用 the Olympic Games 或 the Olympics。它也可用于古代赛事：the ancient Olympic Games 指古代奥林匹克运动会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"Olympic 放在 athlete 前，表示该运动员参加奥运会或与奥运会有关。\"",
+        "valueJson": "\"指参加或参加过奥运会的运动员；Olympic 放在 athlete 前作定语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"形容词用法较少见；作名词时可指奥运选手，初中表达优先用 Olympic athlete。\"",
+        "valueJson": "\"Olympian 作形容词表示“奥运会的”时不如 Olympic 常用；作名词可指奥运选手，对应 Olympic athlete。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_olympic\",\"cambridge_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"olympic-ancient\",\"title\":\"古奥林匹亚或奥林匹斯相关的\",\"meaning\":\"在历史或神话语境中，可指与古希腊奥林匹亚或奥林匹斯有关。\",\"note\":\"这类用法少见，日常学习中通常先掌握现代奥运会相关义。\",\"example\":{\"id\":\"olympic-ancient-example-1\",\"senseId\":\"olympic-ancient\",\"en\":\"The museum has a book about ancient Olympic contests.\",\"zh\":\"博物馆有一本介绍古代奥林匹亚竞技会的书。\",\"note\":\"这里指古代竞技会的历史背景。\"},\"sourceIds\":[\"wiktionary_olympic\",\"etymonline_olympic\"]}",
+        "valueJson": "{\"id\":\"olympic-ancient\",\"title\":\"古奥林匹亚的（历史用法）\",\"meaning\":\"在古希腊历史语境中，表示与奥林匹亚这一古代竞技会举办地有关。\",\"note\":\"这种地名相关用法常与古代奥运会背景重叠；初中主要掌握奥运会相关义。\",\"example\":{\"id\":\"olympic-ancient-example-1\",\"senseId\":\"olympic-ancient\",\"en\":\"The guide described the ancient Olympic sanctuary.\",\"zh\":\"导游介绍了古代奥林匹亚的圣地。\",\"note\":\"sanctuary 指宗教圣地；这里 Olympic 表示“奥林匹亚的”。\"},\"sourceIds\":[\"wiktionary_olympic\",\"etymonline_olympic\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"olympic-olympus\",\"title\":\"奥林匹斯相关的（罕见用法）\",\"meaning\":\"在古旧或文学语境中，表示与奥林匹斯山有关，尤其指希腊神话中的奥林匹斯诸神。\",\"note\":\"只需在历史或文学阅读中辨认；谈论这些诸神时，更常见的说法是 Olympian gods。\",\"example\":{\"id\":\"olympic-olympus-example-1\",\"senseId\":\"olympic-olympus\",\"en\":\"The poem describes a feast of the Olympic gods.\",\"zh\":\"这首诗描写了奥林匹斯诸神的一场宴会。\",\"note\":\"这里 Olympic 与希腊神话有关，不表示奥运会的。\"},\"sourceIds\":[\"etymonline_olympic\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"名词前用 Olympic；单独指赛事时用 the Olympics 或 the Olympic Games。\"",
+        "valueJson": "\"表示“奥运会的”时常用 Olympic 修饰名词；指赛事本身时常用 the Olympics 或 the Olympic Games。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_olympic\",\"cambridge_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"不要把 Olympic 拼成 Olympics 来修饰普通名词。\"",
+        "valueJson": "\"Olympic 以 -ic 结尾，是形容词；Olympics 以 -s 结尾，是赛事名称，不是形容词的复数形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1",
+        "expectedValueJson": "{\"label\":\"易错：Olympics athlete\",\"note\":\"Olympics 是赛事名词，不用来直接修饰 athlete。\",\"example\":{\"id\":\"spelling-wrong-example\",\"senseId\":\"olympic-games-related\",\"en\":\"He is an Olympics athlete.\",\"zh\":\"这种说法不自然；应说 He is an Olympic athlete.（他是一名奥运会运动员。）\",\"note\":\"改用形容词 Olympic。\"}}",
+        "valueJson": "{\"label\":\"赛事名：the Olympics\",\"note\":\"Olympics 是名词形式，通常用于 the Olympics；它不是形容词 Olympic 的复数形式。\",\"example\":{\"id\":\"spelling-wrong-example\",\"senseId\":\"olympic-games-related\",\"en\":\"He competed in the Olympics.\",\"zh\":\"他参加了奥运会。\",\"note\":\"in the Olympics 说明他参加的赛事。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"Olympic 源自希腊语 Olympikos，历史上与 Olympos（奥林匹斯）及 Olympia（古代竞技会举办地奥林匹亚）相关。现代体育义与奥运传统相连；奥林匹斯山和举办竞技会的奥林匹亚是不同地点。\"",
+        "valueJson": "\"英语 Olympic 来自拉丁语 Olympicus（“奥林匹亚的”），更早的词形基础是希腊语 Olympikos。古代用法涉及 Olympos（奥林匹斯）和 Olympia（奥林匹亚，古代竞技会的举办地）；现代奥运会复兴了古代赛事传统。奥林匹斯山与奥林匹亚是不同地点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"希腊语\",\"form\":\"Olympikos\",\"meaning\":\"与 Olympos 或 Olympia 有关的形容词形式\"},{\"language\":\"英语\",\"form\":\"Olympic\",\"meaning\":\"与奥林匹克运动会相关的\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"Olympicus\",\"meaning\":\"奥林匹亚的\"},{\"language\":\"英语\",\"form\":\"Olympic\",\"meaning\":\"奥林匹克运动会的；也有古希腊地名相关的历史用法\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"Olympic 的英语拼写可直接记忆，不要把 Olympic 拆成看似有意义的现代英语词块；Olympos 与 Olympia 的地名关系不应混为一处。\"",
+        "valueJson": "\"Olympos、Olympia 更深层的地名来源尚不明确；不要把 Olympic 拆成臆造的现代英语词块，也不要把奥林匹亚与奥林匹斯山当作同一地点。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\",\"etymonline_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"Olympic 加 -s 构成赛事名称。\"",
+        "valueJson": "\"the Olympic Games 的简称；末尾的 -s 属于这个赛事名称，不是形容词的复数变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_olympic\",\"wiktionary_olympic\"]",
+        "valueJson": "[\"wiktionary_olympic\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"奥运选手；奥林匹斯山或奥林匹克相关的\"",
+        "valueJson": "\"名词：奥运选手；形容词：奥林匹斯山或诸神的，也可指奥运会的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"由 Olympia/Olympic 同族形式发展而来。\"",
+        "valueJson": "\"Olympian 是与 Olympic 同族的词，不是在完整的 Olympic 后再加 -ian 得来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary_olympic\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_olympic\",\"title\":\"Oxford Learner’s Dictionaries: Olympic\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/olympic\",\"supports\":[\"词性与常见奥运会相关用法\",\"Olympic 与 Olympics 的区别\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_olympic\",\"title\":\"Cambridge Dictionary: Olympic\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/olympic\",\"supports\":[\"发音与形容词用法\",\"常见奥运会搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_olympic\",\"title\":\"Wiktionary: Olympic\",\"url\":\"https://fr.wiktionary.org/wiki/Olympic#Anglais\",\"supports\":[\"Olympic 的历史形式与少见历史义\"],\"verification\":\"recommended\"},{\"id\":\"etymonline_olympic\",\"title\":\"Online Etymology Dictionary: Olympic\",\"url\":\"https://www.etymonline.com/word/Olympic\",\"supports\":[\"Olympic 的希腊语来源及 Olympia 与 Olympos 的区别\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_olympic\",\"title\":\"Wiktionnaire：Olympic（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/Olympic#Anglais\",\"supports\":[\"英语形容词词性与奥运会相关义\",\"英式读音及美式词首 /ə/、/oʊ/ 两种读音\",\"拉丁语 Olympicus 的来源说明与地名相关义\",\"相关词 Olympics\"],\"verification\":\"recommended\"},{\"id\":\"etymonline_olympic\",\"title\":\"Online Etymology Dictionary: Olympic\",\"url\":\"https://www.etymonline.com/word/Olympic\",\"supports\":[\"希腊语 Olympikos 这一历史基础\",\"Olympia 与 Olympos 的区别及古代关联\",\"更深层地名来源不明\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 948,
+    "headword": "Olympic",
+    "meaning_zh": "adj. 奥林匹克运动会的",
+    "phonetic": "/әu'limpik/",
+    "pos": "",
+    "forms": []
+  }
+}

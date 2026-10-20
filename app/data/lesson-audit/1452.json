@@ -1,0 +1,273 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "040320376ee020384307071f90f66f28b1ffd86a61954c18ac539b4a92e96a2c",
+    "executedReviewPromptHash": "040320376ee020384307071f90f66f28b1ffd86a61954c18ac539b4a92e96a2c",
+    "reviewHash": "c3f7f60c3f3282439018f184d4c7b7e982517dff869f9208a21f3ee32ea4e219",
+    "wordId": 1452,
+    "inputHash": "61d66bfed624134ecba766b825a5f55d843e0724fdbcd24061cde6911a444b3a",
+    "draftHash": "5766a3ce56f91a3caa69e22d58abf604ff28f1a3ecf19749dcc63c37255d9412",
+    "finalHash": "ea1cf964a761bb77d50d05824bd65a13810adaad53e3d06c9fb70f888431958b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tradition#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.816Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 25044,
+        "revisionId": 39774232,
+        "revisionTimestamp": "2026-08-03T14:07:44Z",
+        "sha256": "11722df5d21a8de7c76637aeee0dd99de1ec604b361375091effba289ee3eaff",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tradition",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:11:00.904Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:19:56.643Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "只说明可数用法，遗漏常用的不可数 tradition。应补充泛指传统的用法，并用 by tradition、break with tradition 展示。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "两个例句都偏向长期保持的活动，与第一义重叠；缺少直接展示艺术风格或传承体系的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏 tradition 表示传承过程、尤其口头传承的用法，可作为较少见义补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "stages 中“传入英语的词形来源之一”是来源说明，不是词义；应删除占位阶段，将可证实的年代和两种可能的直接来源写入 summary。caveat 中的资料说明及无对应内容的“现代拆分”也应替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses、/confusions/0/sourceIds、/wordFamily、/sources",
+        "message": "Cambridge 正文未取得，不能充当已取得资料的支持依据。保留其推荐链接，调整支持关联；法语维基词典材料属于英语词条，可支持英语读音、名词标记、所列派生词及词源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0/en",
+        "message": "为与中文“除夕”准确对应，宜明确写 Lunar New Year's Eve。"
+      }
+    ],
+    "coverageAssessment": "已核对具体传统、泛指传统、机构或领域延续的特色与艺术风格，以及口头传承用法。补丁保留两组核心义及各至少两个例句，补充不可数用法和较少见义。近义词、语境对照、词族拼写及其余例句基本准确，无须强造反义词。现有英语词条释义简略，Cambridge 未取得正文；细分用法与原创例句依据专业语言知识审核，不声称已获完整词典正文验证。",
+    "senseInventory": [
+      {
+        "sense": "具体的传统习俗、惯例或沿袭观念；也可不可数地泛指传统",
+        "coveredBy": [
+          "tradition-1"
+        ],
+        "assessment": "具体传统已有两个自然例句；补充不可数说明及两个对应例句。"
+      },
+      {
+        "sense": "机构、地方或领域长期延续的特色、风格或传承体系",
+        "coveredBy": [
+          "tradition-2"
+        ],
+        "assessment": "机构特色已有覆盖；以艺术风格例句替换重复的地方活动例句，并补充 in the tradition of。"
+      },
+      {
+        "sense": "传承过程，尤指口头传承",
+        "coveredBy": [
+          "tradition-3"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，并明确与具体习俗的区别。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[\"wiktionary-tradition\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于节日、家庭活动和群体习俗；tradition 可数，常说 a tradition 或 traditions。\"",
+        "valueJson": "\"常用于节日、家庭活动和群体习俗。既可数，也可不可数：a tradition 或 traditions 指具体的一项或多项传统；不可数 tradition 泛指传统，常见于 by tradition（按传统）和 break with tradition（打破传统）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/en",
+        "expectedValueJson": "\"It is a family tradition to make dumplings together on New Year's Eve.\"",
+        "valueJson": "\"It is a family tradition to make dumplings together on Lunar New Year's Eve.\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tradition-1-ex3\",\"senseId\":\"tradition-1\",\"en\":\"By tradition, the oldest member of our family cuts the cake.\",\"zh\":\"按照传统，我们家由最年长的人切蛋糕。\",\"note\":\"by tradition 表示按照传统；这里的 tradition 不可数，不加 a。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tradition-1-ex4\",\"senseId\":\"tradition-1\",\"en\":\"This year, we broke with tradition and had a picnic instead of a formal family dinner.\",\"zh\":\"今年，我们打破传统，以野餐代替了正式的家庭聚餐。\",\"note\":\"break with tradition 表示打破传统；这里的 tradition 不可数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[\"wiktionary-tradition\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"tradition-2-ex2\",\"senseId\":\"tradition-2\",\"en\":\"The town has a long tradition of making wooden toys.\",\"zh\":\"这座小镇有制作木制玩具的悠久传统。\",\"note\":\"描述地方长期延续的行业特色。\"}",
+        "valueJson": "{\"id\":\"tradition-2-ex2\",\"senseId\":\"tradition-2\",\"en\":\"Her paintings are in the tradition of Chinese landscape art.\",\"zh\":\"她的画沿袭了中国山水画的传统。\",\"note\":\"这里指承接的艺术风格；in the tradition of 表示沿袭某种传统或风格。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"in the tradition of ...\",\"zh\":\"沿袭……的传统／风格\",\"note\":\"常用于艺术、文学等领域，说明作品所承接的风格。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tradition-3\",\"title\":\"（尤指口头）传承\",\"meaning\":\"把故事、信仰或知识等代代传下去的过程，尤其指口头传承。\",\"note\":\"这里强调传递的过程，不只是一项具体习俗；常见于历史、民俗等话题。oral tradition 可表示口头传承。\",\"example\":{\"id\":\"tradition-3-ex1\",\"senseId\":\"tradition-3\",\"en\":\"For centuries, these stories were preserved by oral tradition.\",\"zh\":\"几百年来，这些故事一直靠口头传承保存下来。\",\"note\":\"by oral tradition 表示通过口头传承；这里的 tradition 不可数。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[\"wiktionary-tradition\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"历史上，英语 tradition 来自古法语 tradicion，或直接来自拉丁语 traditio；这两条是来源路径，不应拼成同一条连续演变链。\"",
+        "valueJson": "\"英语 tradition 可追溯到14世纪，可能借自古法语 tradicion，也可能直接来自拉丁语 traditio。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"tradicion\",\"meaning\":\"传入英语的词形来源之一\"},{\"language\":\"英语\",\"form\":\"tradition\",\"meaning\":\"传统\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"给出的词源记载也列出拉丁语 traditio 作为另一种直接来源；词源路径存在不同说法。这里的现代拆分记忆不等于历史词源。\"",
+        "valueJson": "\"两种可能路径的区别在于是否经过古法语，具体借入路径并不确定。情境助记不代表词的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[\"wiktionary-tradition\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-tradition\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"名词常见释义、用法与读音；相关派生词\"]",
+        "valueJson": "[\"推荐查阅：名词常见释义、可数与不可数用法、读音及相关派生词\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"英语词条列出的古法语或拉丁语来源路径\"]",
+        "valueJson": "[\"英语名词词条及读音\",\"14世纪的年代说明及古法语或拉丁语的可能直接来源\",\"所列派生词 traditional、traditionalism、traditionalist\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1452,
+    "headword": "tradition",
+    "meaning_zh": "n. 传统；惯例",
+    "phonetic": "/trә'diʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

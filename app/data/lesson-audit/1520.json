@@ -1,0 +1,603 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "64e10b9d54aabaa44d4f3f0fb3306441470b0a2f43c4031e387c8dde5aafd4c8",
+    "executedReviewPromptHash": "03fbc95c1ca42248a0968071db80394971e651e280c9ed172c7dd74903e8600e",
+    "reviewHash": "433cd02b9a2f6d16d4aa416935ff479e4c0c4d9ad67c1e8ee12322c9044ac420",
+    "wordId": 1520,
+    "inputHash": "3af00edf5888169902e3804aa76050a82a0e25ab59a39fe13e08e6f882e6e61a",
+    "draftHash": "5466ba91eec6b05bbd212a0e0add8c792319f05847b5334bcec3bea7c4a39fb6",
+    "finalHash": "59f6be8feca1685ca5085c5762a8cc51d15f12b485b46c8a04ec76c6068d06eb",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/way#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.130Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119829,
+        "revisionId": 39765540,
+        "revisionTimestamp": "2026-08-03T05:12:07Z",
+        "sha256": "65003aa58bd3ee88d82a34c978a295c2939aaca724092b3e51ca291b1cf45ce5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/way",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:29:14.350Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:49:50.044Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "路线、方向、路程合并后例句覆盖不足；可行性、方面及常见复数 ways 的习惯义也需补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "No way! 是固定表达，不是词典所列单独回应 No way! 的感叹词 Way!。还缺少 way 直接修饰普通形容词的俚语用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "距离强调用法只有搭配，没有完整例句；关于 way 常放在 far 前及正式替换的说明不够准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "称重例句不体现所绑定的路线义。修订例句同时保留 weigh 与方式义 way，并绑定实际存在的非空 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段顺序与历史先后相反，且部分 meaning 只是资料占位说明。应将可证实的历史字形写入正文，并分清名词来源与副词截短关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未取得正文，不能承担已读取证据的作用。可由英语维基词典词条支持的部分改引该来源，其余教学分析不冒充已有网页证据。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "应明确是末尾字母 y 前为 a，而不是“way 前是元音字母 a”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/0",
+        "message": "原句语法正确，但作为生活教学例句略显生硬，可换成更自然的解释规则场景。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "仅列复数且笼统排除其他词族内容，教学价值有限；可补充材料中已有的 highway、railway，明确它们是合成词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid",
+        "message": "助记中的裸词和省略谓语的混合片段宜换成完整英文，避免学生照搬成句。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对英语词条中的路线、方向、距离、手段、方法、习惯，以及副词的程度、俚语强调、距离和独立感叹功能。补丁为各核心义或合并义中的主要功能补足自然例句，并补入常用的方面义和情况用法。旧动词 way（旅行）明确不作为初中重点；“行业”缺少可定位的用法依据，不据笼统中文释义编造独立义项。本次为独立模型审校，未作网页复核。",
+    "senseInventory": [
+      {
+        "sense": "名词：路、路线",
+        "coveredBy": [
+          "way-n-route"
+        ],
+        "assessment": "保留问路例句，补入选择回家路线的例句。"
+      },
+      {
+        "sense": "名词：方向",
+        "coveredBy": [
+          "way-n-route"
+        ],
+        "assessment": "补入 look both ways 和 go the wrong way，避免仅靠路线例句代替方向义。"
+      },
+      {
+        "sense": "名词：距离、路程",
+        "coveredBy": [
+          "way-n-route"
+        ],
+        "assessment": "保留 a long way，补入行走一小段路的例句。"
+      },
+      {
+        "sense": "名词：手段、可行办法或可能性",
+        "coveredBy": [
+          "way-n-method"
+        ],
+        "assessment": "补入 there is no way 加从句及询问能否调整预约的用法。"
+      },
+      {
+        "sense": "名词：方法",
+        "coveredBy": [
+          "way-n-method"
+        ],
+        "assessment": "原有 to do 与 of doing 两个例句正确，保留。"
+      },
+      {
+        "sense": "名词：方式、作风",
+        "coveredBy": [
+          "way-n-manner"
+        ],
+        "assessment": "保留独立教学，并改善一个例句的自然度。"
+      },
+      {
+        "sense": "名词：事情的样子、情况",
+        "coveredBy": [
+          "way-n-manner"
+        ],
+        "assessment": "补入 the way things are going 和 the way things are 两个例句。"
+      },
+      {
+        "sense": "名词：习惯、风俗，常用复数 ways",
+        "coveredBy": [
+          "way-n-habit"
+        ],
+        "assessment": "从次要义移入核心义，补足两个生活例句及相关表达。"
+      },
+      {
+        "sense": "名词：方面、某种意义",
+        "coveredBy": [
+          "way-n-aspect"
+        ],
+        "assessment": "补入 in many ways 与 in a way，属于常用功能。"
+      },
+      {
+        "sense": "副词：加强 too 或比较级",
+        "coveredBy": [
+          "way-adv-degree"
+        ],
+        "assessment": "原有两个程度例句正确；修正位置说明及替换限制。"
+      },
+      {
+        "sense": "副词：加强空间距离",
+        "coveredBy": [
+          "way-adv-degree"
+        ],
+        "assessment": "补入 way over there 与 way up 两个完整例句。"
+      },
+      {
+        "sense": "副词：直接表示 very 的俚语用法",
+        "coveredBy": [
+          "way-adv-slang"
+        ],
+        "assessment": "作为次要用法补充，并标明语体限制。"
+      },
+      {
+        "sense": "固定表达 No way!：拒绝或难以置信",
+        "coveredBy": [
+          "way-n-method"
+        ],
+        "assessment": "作为固定表达归入相关办法、可能性教学，分别补入拒绝和惊讶例句，不再冒充单词 way 的独立感叹义。"
+      },
+      {
+        "sense": "感叹词 Way!：回应 No way!，坚持确实如此",
+        "coveredBy": [
+          "way-interjection-reply"
+        ],
+        "assessment": "依据已取得的英语词条补入，标明较少见、很随意的对答语境。"
+      },
+      {
+        "sense": "固定表达 in a big way：规模大或程度强",
+        "coveredBy": [
+          "way-n-scale"
+        ],
+        "assessment": "以固定表达补充“规模”相关含义，不把它解释成可自由使用的普通规模名词。"
+      },
+      {
+        "sense": "旧动词：旅行",
+        "coveredBy": [],
+        "assessment": "词典明确标为过时，不列入初中教学正文；这是有意取舍。"
+      },
+      {
+        "sense": "词条中文所列“行业”",
+        "coveredBy": [],
+        "assessment": "现有英语定义没有提供相应语境，不作为独立常用义教授。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun; adverb\"",
+        "valueJson": "\"noun; adverb; interjection (informal, less common)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 way 常说“路、方向、方法、方式”；口语副词 way 可放在比较级或 too 前，表示“远远地、非常”。\"",
+        "valueJson": "\"名词 way 常表示“路、方向、路程、方法、方式”，也可表示习惯或方面；口语副词 way 可强调差距、过量或距离，如 way better、way too cold、way over there。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"问路时常说 the way to；谈路程时可说 a long way。\"",
+        "valueJson": "\"问路常用 the way to；方向可用 this way、both ways、the wrong way；路程可用 a long way 或 a short way。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-route-ex3\",\"senseId\":\"way-n-route\",\"en\":\"We took the long way home to avoid the traffic.\",\"zh\":\"为了避开拥堵，我们绕远路回了家。\",\"note\":\"take the long way 指选择较远的路线。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-route-ex4\",\"senseId\":\"way-n-route\",\"en\":\"We walked a short way before stopping for a rest.\",\"zh\":\"我们走了一小段路，就停下来休息了。\",\"note\":\"a short way 表示一小段距离。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-route-ex5\",\"senseId\":\"way-n-route\",\"en\":\"Look both ways before you cross the street.\",\"zh\":\"过马路前要看看两边。\",\"note\":\"both ways 指两个方向；before 表明先看再过马路。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-route-ex6\",\"senseId\":\"way-n-route\",\"en\":\"You're going the wrong way; the station is behind you.\",\"zh\":\"你走错方向了，车站在你身后。\",\"note\":\"the wrong way 在这里表示错误的行进方向。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"on one's way to + 地点\",\"zh\":\"在去……的途中\",\"note\":\"如 on my way to school；后接 home 时不加 to：on my way home。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"方法；方式\"",
+        "valueJson": "\"方法；办法；可行性\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"做某事的办法、步骤或风格。\"",
+        "valueJson": "\"做某事的方法或手段；在有无办法的表达中，也可强调事情是否可能办成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"a way to do something 和 a way of doing something 都可表示“做某事的方法”。\"",
+        "valueJson": "\"a way to do something 和 a way of doing something 都可表示“做某事的方法”。There is no way + 从句常表示“不可能……”。固定感叹表达 No way! 可表示拒绝或难以置信，须结合语境判断。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-method-ex3\",\"senseId\":\"way-n-method\",\"en\":\"There's no way we'll finish painting this room before lunch.\",\"zh\":\"我们不可能在午饭前刷完这个房间。\",\"note\":\"There's no way + 从句表示说话人认为事情不可能实现。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-method-ex4\",\"senseId\":\"way-n-method\",\"en\":\"Is there any way we can move the appointment to Friday?\",\"zh\":\"有没有办法把预约改到星期五？\",\"note\":\"Is there any way + 从句询问有没有可行的办法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-method-ex5\",\"senseId\":\"way-n-method\",\"en\":\"No way! I'm not lending you my bike after you broke it last time.\",\"zh\":\"没门！上次你把我的自行车弄坏了，我才不借给你。\",\"note\":\"固定表达 No way! 在这里表示强烈拒绝。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-method-ex6\",\"senseId\":\"way-n-method\",\"en\":\"No way! You found my missing ring in the garden?\",\"zh\":\"不会吧！你在花园里找到了我丢失的戒指？\",\"note\":\"这里表示惊讶、难以置信，并非拒绝。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"There is no way + 主语 + 动词\",\"zh\":\"不可能……\",\"note\":\"后接从句，表示不存在实现某事的可能或办法；不要漏掉 there is。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"No way!\",\"zh\":\"绝不！；不会吧！\",\"note\":\"常用口语感叹表达；具体表示拒绝还是惊讶，要看上下文和语气。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"方式；作风\"",
+        "valueJson": "\"方式；作风；情况\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"某人做事、说话或表现出来的样子。\"",
+        "valueJson": "\"某人做事、说话或表现的方式，也可指事情呈现的样子或情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"way-n-manner-ex1\",\"senseId\":\"way-n-manner\",\"en\":\"Please speak in a clear way.\",\"zh\":\"请用清楚的方式说。\",\"note\":\"in a clear way 描述说话的方式。\"}",
+        "valueJson": "{\"id\":\"way-n-manner-ex1\",\"senseId\":\"way-n-manner\",\"en\":\"She explained the rules in a way that everyone could understand.\",\"zh\":\"她用大家都能听懂的方式解释了规则。\",\"note\":\"in a way that ... 说明解释规则的方式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-manner-ex3\",\"senseId\":\"way-n-manner\",\"en\":\"I'm worried about the way things are going at work.\",\"zh\":\"我很担心工作上事情的发展状况。\",\"note\":\"the way things are going 指事情正在如何发展。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-manner-ex4\",\"senseId\":\"way-n-manner\",\"en\":\"The bus only comes once an hour. That's just the way things are in this village.\",\"zh\":\"公交车每小时才来一班。这个村子的情况就是这样。\",\"note\":\"the way things are 指现有的情况，不是做事方法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"副词 way 可加强距离或程度，常用于 far、too 和比较级前。\"",
+        "valueJson": "\"口语副词 way 可加强程度，常放在 too 或比较级前；也可放在 over there、up 等位置表达前，强调距离远。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"表示“非常”的 way 偏口语；正式写作宜用 much 或 far 等表达。\"",
+        "valueJson": "\"这种强调用法偏口语。较正式地加强比较级时可用 much 或 far；way too ... 可改为 far too ...。这些词不能在所有位置上直接互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-adv-degree-ex3\",\"senseId\":\"way-adv-degree\",\"en\":\"Our car is parked way over there, beside the red building.\",\"zh\":\"我们的车停在很远的那边，就在红色楼房旁边。\",\"note\":\"way 加强 over there 的距离感，不是在比较两件事物。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-adv-degree-ex4\",\"senseId\":\"way-adv-degree\",\"en\":\"There's a kite way up in the sky.\",\"zh\":\"高高的天空中有一只风筝。\",\"note\":\"way up 强调位置很高、离地面很远。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0/en",
+        "expectedValueJson": "\"way too + 形容词\"",
+        "valueJson": "\"way too + 形容词／副词\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"way-n-habit\",\"title\":\"习惯；风俗\",\"meaning\":\"常用复数 ways，表示某群体或某人的习惯、风俗或一贯做法。\",\"note\":\"通常见于 one’s ways、old ways 等表达。\",\"example\":{\"id\":\"way-n-habit-ex1\",\"senseId\":\"way-n-habit\",\"en\":\"Grandpa still has his old ways of doing things.\",\"zh\":\"爷爷做事仍保持着老习惯。\",\"note\":\"old ways 指沿用已久的做法。\"},\"sourceIds\":[\"cambridge_way\"]}",
+        "valueJson": "{\"id\":\"way-interjection-reply\",\"title\":\"Way!：真的！就是这样！\",\"meaning\":\"很随意的感叹回应，用来反驳对方的 No way!，坚持前面的消息确实属实。\",\"note\":\"较少见，常带玩笑口吻；普通交流也可直接说 Really! 或 Yes, really!。\",\"example\":{\"id\":\"way-interjection-reply-ex1\",\"senseId\":\"way-interjection-reply\",\"en\":\"\\\"No way—you won a free trip?\\\" \\\"Way! I got the email this morning.\\\"\",\"zh\":\"“不会吧——你赢得了一次免费旅行？”“真的！今天早上我收到邮件了。”\",\"note\":\"这里 Way! 回应对方的难以置信，不表示拒绝。\"},\"sourceIds\":[\"wiktionary_fr_way\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1",
+        "expectedValueJson": "{\"id\":\"way-interjection\",\"title\":\"No way!：绝不；不会吧！\",\"meaning\":\"口语感叹语；可表示强烈拒绝，也可表示惊讶和难以置信。\",\"note\":\"具体意思由语境和语气决定。\",\"example\":{\"id\":\"way-interjection-ex1\",\"senseId\":\"way-interjection\",\"en\":\"No way! I’m not climbing that tall tree.\",\"zh\":\"绝不！我才不爬那棵高树。\",\"note\":\"这里表示坚决拒绝。\"},\"sourceIds\":[\"cambridge_way\"]}",
+        "valueJson": "{\"id\":\"way-adv-slang\",\"title\":\"非常（直接修饰形容词的俚语用法）\",\"meaning\":\"在很随意的口语中，way 也可直接放在普通形容词前，表示非常。\",\"note\":\"这种用法语体限制较强，不宜据此把 way 当作 very 的通用替代词；一般表达可用 very 或 really。\",\"example\":{\"id\":\"way-adv-slang-ex1\",\"senseId\":\"way-adv-slang\",\"en\":\"I'm way tired after carrying all those boxes.\",\"zh\":\"搬完那么多箱子，我累极了。\",\"note\":\"way tired 在这里相当于 very tired；不同于 way too tired 所说的“实在太累”。\"},\"sourceIds\":[\"wiktionary_fr_way\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-scale\",\"title\":\"固定表达 in a big way：大规模地；大大地\",\"meaning\":\"在这一固定表达中，way 与 big 一起表示规模大或程度强。\",\"note\":\"应整体记忆；不能据此把 way 自由用作所有语境中的“规模”。\",\"example\":{\"id\":\"way-n-scale-ex1\",\"senseId\":\"way-n-scale\",\"en\":\"They celebrated their daughter's graduation in a big way, inviting eighty guests.\",\"zh\":\"他们邀请了八十位客人，隆重庆祝女儿毕业。\",\"note\":\"in a big way 在这里表示庆祝活动办得很盛大。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-habit\",\"title\":\"习惯；风俗（常用复数 ways）\",\"meaning\":\"某人或某群体一贯的生活习惯、行为方式或风俗。\",\"usageNote\":\"这一义常用复数 ways，如 someone's ways、old ways；可指普通习惯，不一定含贬义。\",\"examples\":[{\"id\":\"way-n-habit-ex1\",\"senseId\":\"way-n-habit\",\"en\":\"Grandpa still has his old ways of doing things.\",\"zh\":\"爷爷做事仍保持着老习惯。\",\"note\":\"old ways 指沿用已久的做法。\"},{\"id\":\"way-n-habit-ex2\",\"senseId\":\"way-n-habit\",\"en\":\"It took me a few weeks to get used to my host family's ways.\",\"zh\":\"我花了几个星期才适应寄宿家庭的生活习惯。\",\"note\":\"my host family's ways 指这个家庭一贯的生活方式。\"}],\"patterns\":[{\"en\":\"get used to someone's ways\",\"zh\":\"适应某人的习惯\",\"note\":\"to 是介词，后面接名词短语 someone's ways。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"old ways\",\"zh\":\"老习惯；旧有做法\",\"note\":\"常用于谈长期沿用的行为方式。\",\"kind\":\"common-collocation\"},{\"en\":\"be set in one's ways\",\"zh\":\"习惯难改；固守自己的做法\",\"note\":\"通常强调不愿改变，常带不赞同的语气。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"habits\",\"zh\":\"习惯\",\"note\":\"更直接地指经常重复的具体行为；ways 可概括整体生活和处事方式。\"},{\"en\":\"customs\",\"zh\":\"风俗；习俗\",\"note\":\"多指群体共同遵循的传统；个人日常习惯通常不用 customs。\"}],\"contrasting\":[{\"en\":\"change one's ways\",\"zh\":\"改变自己的行为习惯\",\"note\":\"常指改掉不良行为，可与坚持旧做法形成对照。\"}],\"similarNote\":\"个人重复行为可用 habits，群体传统可用 customs；ways 的范围更宽。\",\"contrastingNote\":\"change one's ways 与 stick to one's old ways 在改变或维持习惯的语境中相对，不是所有 ways 的通用反义表达。\"},\"sourceIds\":[\"wiktionary_fr_way\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"way-n-aspect\",\"title\":\"方面；某种意义\",\"meaning\":\"谈论评价事物的某个方面或某种理解角度。\",\"usageNote\":\"常见 in many ways、in some ways 和 in a way。in a way 常表示“从某种意义上说”，对判断作一定保留。\",\"examples\":[{\"id\":\"way-n-aspect-ex1\",\"senseId\":\"way-n-aspect\",\"en\":\"In many ways, online lessons are more convenient than classroom lessons.\",\"zh\":\"在很多方面，网课比在教室里上课更方便。\",\"note\":\"in many ways 表示在多个方面，不是有很多条路线。\"},{\"id\":\"way-n-aspect-ex2\",\"senseId\":\"way-n-aspect\",\"en\":\"In a way, this tiny flat is perfect for us: it's cheap and easy to clean.\",\"zh\":\"从某种意义上说，这套小公寓很适合我们：租金低，也容易打扫。\",\"note\":\"in a way 限定评价角度，不是说所有方面都完美。\"}],\"patterns\":[{\"en\":\"in some/many ways\",\"zh\":\"在某些／很多方面\",\"note\":\"some、many 后用复数 ways。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"in a way\",\"zh\":\"从某种意义上说\",\"note\":\"通常作为整体使用；不同于 in a friendly way 这种描述动作方式的结构。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in some respects\",\"zh\":\"在某些方面\",\"note\":\"与 in some ways 接近，语气稍正式。\"},{\"en\":\"to some extent\",\"zh\":\"在某种程度上\",\"note\":\"可用于限定判断，但更强调程度，不一定指具体方面。\"}],\"contrasting\":[],\"similarNote\":\"ways 在这里指评价的方面；respect 接近，extent 更偏向程度。\",\"contrastingNote\":\"这一义没有固定的词汇反义词；需要表达否定时，可在具体判断中使用否定结构。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"way-confuse-ex2\",\"senseId\":\"way-n-route\",\"en\":\"Please weigh the apples before you pay.\",\"zh\":\"付款前请称一下苹果。\",\"note\":\"weigh 表示称重量。\"}",
+        "valueJson": "{\"id\":\"way-confuse-ex2\",\"senseId\":\"way-n-manner\",\"en\":\"I weigh my suitcase the same way before every trip.\",\"zh\":\"每次出门旅行前，我都用同样的方法称行李箱的重量。\",\"note\":\"weigh 是“称重量”的动词；the same way 中的 way 是表示方式的名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代学习时可把 way 整体记作“路、方法”；副词 way 表示强调时，可联系到口语表达里用它加强距离或程度。\"",
+        "valueJson": "\"名词 way 经中古英语 wei、wai，源自古英语 weġ（路、道路）；更早可追溯到原始日耳曼语重构形式 *wegaz 和原始印欧语重构词根 *weǵʰ-。德语 Weg、荷兰语 weg 等与它同源。副词 way 则由 away 省去开头的 a- 形成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"wei\",\"meaning\":\"词典词源资料列出的名词历史形式。\"},{\"language\":\"古英语\",\"form\":\"weġ\",\"meaning\":\"词典词源资料给出的更早形式，义为“路、道路”。\"},{\"language\":\"原始日耳曼语\",\"form\":\"*wegaz\",\"meaning\":\"资料列出的重构形式；way 与德语 Weg 等词同源。\"},{\"language\":\"原始印欧语\",\"form\":\"*weǵʰ-\",\"meaning\":\"资料所列的更早词根。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上是名词 way 的历史来源链；副词 way 是 away 的截短形式，属于另一条来源关系，不能接在这条链后面。星号表示重构形式，不是直接记录下来的原始拼写。\"",
+        "valueJson": "\"名词的历史来源与副词由 away 截短的来源应分开理解。星号表示重构形式，并非直接见于历史文献的拼写。同源词也不表示英语从那些现代语言借入了这个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"way 前是元音字母 a，复数直接加 s，不改 y。\"",
+        "valueJson": "\"way 末尾的 y 前是元音字母 a，复数直接加 s，不改 y。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_way\"]",
+        "valueJson": "[\"wiktionary_fr_way\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"highway\",\"partOfSpeech\":\"noun\",\"meaning\":\"公路；干道\",\"formation\":\"high + way 的合成词。\",\"spellingNote\":\"合写为 highway，没有空格；现代含义不能逐字理解成“高的路”。\",\"example\":{\"id\":\"way-family-ex2\",\"senseId\":\"way-n-route\",\"en\":\"The highway is the quickest way to the airport.\",\"zh\":\"走这条公路去机场最快。\",\"note\":\"highway 指实体公路；way 指去机场的路线。\"},\"sourceIds\":[\"wiktionary_fr_way\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"railway\",\"partOfSpeech\":\"noun\",\"meaning\":\"铁路\",\"formation\":\"rail（铁轨）+ way 的合成词。\",\"spellingNote\":\"合写为 railway；rail 和 way 的拼写都保留。\",\"example\":{\"id\":\"way-family-ex3\",\"senseId\":\"way-n-method\",\"en\":\"The new railway gives villagers a faster way to reach the city.\",\"zh\":\"新铁路让村民有了更快进城的办法。\",\"note\":\"railway 是铁路；a way to reach 表示到达某处的办法。\"},\"sourceIds\":[\"wiktionary_fr_way\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"常见的 ways 是规则复数，不是新造的派生词；way 本身没有需要初中生掌握的常见派生词。\"",
+        "valueJson": "\"ways 是 way 的规则复数，不是独立的派生词；highway、railway 则是包含 way 的合成词。现代复数变化、合成构词和词源中的历史演变要分开理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你从校门口沿着一条 way（路）走到教室；进门后，老师教你 a way to solve a problem（解决问题的方法）。体育课上同学 way faster than you（比你快得多），这里的 way 又变成口语强调词。\"",
+        "valueJson": "\"想象你从校门口走向教室，说：I know the way to the classroom.（我知道去教室怎么走。）进门解题后，你说：I found a way to solve the problem.（我找到了解题方法。）体育课上你又说：My classmate is way faster than I am.（我的同学比我快得多。）同一个 way，在三个场景中分别表示路线、方法和口语强调。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"沿着 way 走到教室。\"",
+        "valueJson": "\"the way to the classroom：去教室的路线。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"同学 way faster，表示快得多。\"",
+        "valueJson": "\"My classmate is way faster than I am.：way 加强比较级，句子仍需谓语 is。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Cambridge Dictionary: way\"",
+        "valueJson": "\"Cambridge Dictionary: way（推荐延伸阅读）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"way 的名词和副词用法\",\"way 的搭配、句型与发音\"]",
+        "valueJson": "[\"推荐进一步查阅 way 的义项、搭配和发音\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"名词 way 的历史词形与词源关系\",\"副词 way 与 away 的截短关系\"]",
+        "valueJson": "[\"名词 way 的路线、方向、距离、手段、方法和习惯义\",\"副词 way 的程度、距离及俚语用法\",\"感叹词 Way! 对 No way! 的回应功能\",\"way 的读音及与 weigh 的同音关系\",\"highway、railway 等相关合成词\",\"名词 way 的历史词形与同源关系\",\"副词 way 与 away 的截短关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1520,
+    "headword": "way",
+    "meaning_zh": "n. 路, 路线, 路途, 方法, 道路, 情形, 规模, 习惯, 行业, 方面\nadv. 远远地, 非常",
+    "phonetic": "/wei/",
+    "pos": "",
+    "forms": []
+  }
+}

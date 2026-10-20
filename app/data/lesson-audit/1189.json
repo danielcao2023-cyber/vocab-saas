@@ -1,0 +1,367 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6f84f9bde45ab5b1f3182ec278a6be7638d528a46a951d8981d9a72eed97ca04",
+    "executedReviewPromptHash": "6f84f9bde45ab5b1f3182ec278a6be7638d528a46a951d8981d9a72eed97ca04",
+    "reviewHash": "13d23c8278cb59327a0dc5f9210c1abf234f13c34ef5628fa2ac351c59d10ccc",
+    "wordId": 1189,
+    "inputHash": "89b5ffcc0c689beca66c03b47a1d74735a058103668351ebac01a75019583a76",
+    "draftHash": "2bfd1919adc3a1aa09da28f32cb3ae288f3707ed00d02d2d65d58d9a6c1ee33a",
+    "finalHash": "0ccefafd3e325a0f6ba7888dff67d83e1533eef21f5bc0b1deab67e8d538364f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sandwich#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.021Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 104576,
+        "revisionId": 39875524,
+        "revisionTimestamp": "2026-09-14T11:35:04Z",
+        "sha256": "45663acb44170eb303771930374674cb02e8cd2e79ac58345b25a90504c39b74",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sandwich",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:19:55.515Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:26:32.534Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及引用 cambridge-sandwich 的 sourceIds",
+        "message": "Cambridge 页面实际未取回，不能据此支撑读音、释义和词形说明。应撤下该来源，并将确有依据的引用改到已取得的英语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "原词条中的夹层材料义遗漏；烹饪动词功能未充分讲解；活动或内容的插入功能只有一个例句。应补充技术义，在实体夹放义下补足烹饪用法，并为抽象插入功能提供两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/note",
+        "message": "sandwich 没有词尾 e，“保留词尾 e”是实际拼写错误。sandwiching 是原形直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note; /wordFamily/1/spellingNote",
+        "message": "sandwiched 的 -ed 读音取决于原形词尾：/tʃ/ 后读 /t/，/dʒ/ 后读 /d/，不能统一说明为 /t/。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/meaning",
+        "message": "抽象 sandwich 不普遍包含隐蔽或打断顺序的意味；普通的日程安排和内容排列也可使用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "separate A from B 没有对应“把 A 夹在 B、C 之间”的三方关系。此处用“从两者之间取出 A”表达反向动作更准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有总结把直接命名来源写成地名，再说后来与伯爵联系，颠倒了关键关系。材料明确指向第四代桑威奇伯爵的称号；阶段箭头应展示称号到食物名称，并删除正文中的资料制作说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamilyNote",
+        "message": "名词复数和规则动词变化属于屈折变化，不能称为派生。原注还遗漏了所列词形中的名词复数功能。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/note; /confusions/0/items/2/note",
+        "message": "第三人称单数加 -es 的说明应限定一般现在时；在 does、can、will 等后面仍用原形。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2",
+        "message": "英美词尾“不同”的提示过于绝对，宜提示常见读音变体，并联系过去式词尾的实际读法。"
+      }
+    ],
+    "coverageAssessment": "已核对食物名词、实体夹放、烹饪夹合、抽象插入和技术性夹层义。补丁保留原稿正确例句，为实体夹放义补充两个烹饪例句，将抽象插入功能展开为两个例句，并把夹层材料义作为拓展义补齐。Cambridge 未取得，已撤下其引用；技术义依据原词条释义与专业语言知识补充，未冒挂网页来源。词源限定为已取得材料支持的伯爵称号到食物名称。",
+    "senseInventory": [
+      {
+        "sense": "n. 三明治；夹心面包",
+        "coveredBy": [
+          "sandwich-n-food"
+        ],
+        "assessment": "原稿已充分覆盖；两个生活例句及可数名词说明正确。"
+      },
+      {
+        "sense": "vt. 把人或物夹在两者之间",
+        "coveredBy": [
+          "sandwich-v-between"
+        ],
+        "assessment": "原稿已有两个自然例句；修正反向表达及不同读音下的过去式说明。"
+      },
+      {
+        "sense": "vt. 把食材夹合成三明治或其他夹心食品",
+        "coveredBy": [
+          "sandwich-v-between"
+        ],
+        "assessment": "与实体夹放共享基本意义；补丁补充烹饪说明、夹合句型和两个主动句例句，无须另造独立核心义。"
+      },
+      {
+        "sense": "vt. 把活动、话语或内容插在另外两项之间",
+        "coveredBy": [
+          "sandwich-v-insert"
+        ],
+        "assessment": "原稿只有一例且附加了过强的隐蔽意味；补丁移入主要义项，提供日程安排和文章排列两个例句。"
+      },
+      {
+        "sense": "n. 夹层结构；夹层板",
+        "coveredBy": [
+          "sandwich-n-layered"
+        ],
+        "assessment": "原稿遗漏；补丁作为材料与工程领域的拓展义补充说明和一个例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，sandwich 通常指两片面包夹着馅料做成的三明治；作动词时，常表示把人或物夹在两者之间。\"",
+        "valueJson": "\"作名词时，sandwich 通常指三明治；作动词时，可表示把人或物夹在两者之间、把食物夹合起来，也可表示把活动或内容插在另外两项之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"注意 sandwich 的英式和美式读音末尾不同。\"",
+        "valueJson": "\"熟悉 /ˈsæn.wɪtʃ/ 和 /ˈsæn.wɪdʒ/ 等常见读音，并留意 sandwiched 的 -ed 读音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"动词以 ch 结尾，第三人称单数加 -es。\"",
+        "valueJson": "\"一般现在时的第三人称单数形式在词尾 ch 后加 -es。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"规则变化加 -ed；词尾读 /t/。\"",
+        "valueJson": "\"规则变化加 -ed。原形以 /tʃ/ 结尾时，-ed 读 /t/，sandwiched 读 /ˈsæn.wɪtʃt/；原形以 /dʒ/ 结尾时，-ed 读 /d/，读作 /ˈsæn.wɪdʒd/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"加 -ing 时保留词尾 e 的拼写，因为原形 sandwich 以 ch 而非不发音的 e 结尾。\"",
+        "valueJson": "\"原形直接加 -ing：sandwich + -ing → sandwiching，不删字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把某人或某物放在两个东西之间；也常表示某人被两边的人或物挤在中间。\"",
+        "valueJson": "\"把某人或某物放在两个东西之间；用于人时，常表示被两边挤住。烹饪时也可指把馅料夹在面包等之间，或用馅料把两片食物夹合起来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 sandwich A between B and C；被动式 be sandwiched between B and C 很常见。\"",
+        "valueJson": "\"常用 sandwich A between B and C；被动式 be sandwiched between B and C 很常见。夹合食物时还可用 sandwich two pieces together with + 馅料。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sandwich-v-between-ex3\",\"senseId\":\"sandwich-v-between\",\"en\":\"Sandwich the ham between two slices of bread.\",\"zh\":\"把火腿夹在两片面包之间。\",\"note\":\"主动式表示把馅料夹进面包，做成三明治。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sandwich-v-between-ex4\",\"senseId\":\"sandwich-v-between\",\"en\":\"Sandwich the two biscuits together with a layer of cream.\",\"zh\":\"用一层奶油把这两块饼干夹合起来。\",\"note\":\"sandwich ... together with ... 表示用馅料把两片食物夹合起来。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"sandwich two pieces together with + filling\",\"zh\":\"用……馅料把两片食物夹合起来\",\"note\":\"常用于饼干、蛋糕等夹心食品；宾语是要夹合的两片食物，with 后说明馅料。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"separate A from B\",\"zh\":\"把 A 和 B 分开\",\"note\":\"在位置关系语境中，表示让两者不再挨在一起，与夹在两者之间的状态相反。\"}",
+        "valueJson": "{\"en\":\"remove A from between B and C\",\"zh\":\"把 A 从 B 和 C 之间取出\",\"note\":\"在夹放实物的语境中，表示把原先夹在中间的东西取出，与夹入形成反向动作。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"separate 只适用于位置或接触关系的对照，不是所有 sandwich 用法的反义词。\"",
+        "valueJson": "\"这里对照的是把实物夹入和从中取出两个动作；描述商店等固定地点的位置时，不直接套用这一反向表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sandwich-v-insert\",\"title\":\"把活动或内容插在中间\",\"meaning\":\"把一项活动、一段话或其他内容安排在另外两项之间；可用于时间安排，也可用于文章等的内容顺序。\",\"usageNote\":\"常用 sandwich A between B and C，A 是插入的活动或内容，B 和 C 是前后两项。这个词突出前后夹着的安排，不必含有隐瞒的意思。\",\"examples\":[{\"id\":\"sandwich-v-insert-ex1\",\"senseId\":\"sandwich-v-insert\",\"en\":\"They sandwiched a short break between the two lessons.\",\"zh\":\"他们在两节课之间插入了一小段休息时间。\",\"note\":\"break 被安排在前后两节课之间。\"},{\"id\":\"sandwich-v-insert-ex2\",\"senseId\":\"sandwich-v-insert\",\"en\":\"The editor sandwiched a short interview between two longer articles.\",\"zh\":\"编辑把一篇简短的访谈夹在两篇较长的文章之间。\",\"note\":\"这里描述刊物中的内容顺序，而不是空间上的挤压。\"}],\"patterns\":[{\"en\":\"sandwich A between B and C\",\"zh\":\"把活动或内容 A 插在 B 和 C 之间\",\"note\":\"A、B、C 可以是活动、文章或话语；between 后交代前后两项。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"sandwich a break between two meetings\",\"zh\":\"在两场会议之间安排休息\",\"note\":\"用于时间安排，突出休息前后都有会议。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"insert A between B and C\",\"zh\":\"把 A 插在 B 和 C 之间\",\"note\":\"语气更中性，强调插入；sandwich 更突出前后两项把 A 夹在中间。\"},{\"en\":\"fit A in\",\"zh\":\"挤出时间做 A\",\"note\":\"适用于日程安排，但不要求明确指出前后两项活动。\"}],\"contrasting\":[{\"en\":\"remove A\",\"zh\":\"移除 A\",\"note\":\"当 A 是已排入日程的活动或已写进文本的内容时，表示将其移除，与插入形成反向动作。\"}],\"similarNote\":\"insert 可用于内容排列；fit in 主要对应挤时间安排活动。\",\"contrastingNote\":\"remove 只在讨论将某项活动或内容加入、移出的语境中构成反向表达。\"},\"sourceIds\":[\"wiktionary-sandwich-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"sandwich-v-insert\",\"title\":\"把（话语、活动等）插在中间\",\"meaning\":\"把一段话、一个活动或一项内容放在另外两项之间，常含有不易被注意或打断原有顺序的意味。\",\"note\":\"属于动词“夹在中间”的引申用法；初中学习先掌握食物义和空间位置义即可。\",\"example\":{\"id\":\"sandwich-v-insert-ex1\",\"senseId\":\"sandwich-v-insert\",\"en\":\"They sandwiched a short break between the two lessons.\",\"zh\":\"他们在两节课之间插入了一小段休息时间。\",\"note\":\"break 被放在两个课程之间。\"},\"sourceIds\":[\"cambridge-sandwich\"]}",
+        "valueJson": "{\"id\":\"sandwich-n-layered\",\"title\":\"夹层结构；夹层板\",\"meaning\":\"由两层外层材料夹着芯材构成的夹层结构或板材。\",\"note\":\"材料与工程领域的用法；sandwich panel 指夹层板，初中学习可作拓展了解。\",\"example\":{\"id\":\"sandwich-n-layered-ex1\",\"senseId\":\"sandwich-n-layered\",\"en\":\"The door is a sandwich of two plywood sheets with foam in between.\",\"zh\":\"这扇门是由两层胶合板夹着泡沫构成的夹层结构。\",\"note\":\"sandwich 在这里指材料构成的夹层结构。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"主语为 he、she、it 或单数名词时，动词加 -es。\"",
+        "valueJson": "\"在一般现在时的肯定陈述句中，主语为 he、she、it 或单数名词时用 sandwiches；does、can、will 等后面用原形 sandwich。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语名词 sandwich 来自英国地名 Sandwich；该名称后来也与第四代桑威奇伯爵 John Montagu 联系起来。动词用法则沿用名词所表达的“夹层”形象。\"",
+        "valueJson": "\"英语食物名 sandwich 来自 John Montagu（第四代桑威奇伯爵）的称号。相传伯爵忙于公务时会在办公桌前吃这种食物以节省时间；他是这种食物早期热衷的食用者之一。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语专名\",\"form\":\"Sandwich\",\"meaning\":\"英国地名，也用于桑威奇伯爵的称号。\"},{\"language\":\"英语普通名词\",\"form\":\"sandwich\",\"meaning\":\"以该称号为名的夹馅面包；传说伯爵喜欢这种方便进食的食物。\"}]",
+        "valueJson": "[{\"language\":\"英语贵族称号\",\"form\":\"Earl of Sandwich\",\"meaning\":\"桑威奇伯爵；John Montagu 是第四代伯爵。\"},{\"language\":\"英语普通名词\",\"form\":\"sandwich\",\"meaning\":\"以该伯爵称号命名的夹馅面包。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"伯爵很可能不是这种食物的发明者；词源故事强调的是名称的联系，不应理解为他创造了这种食物。动词的解释是现代意义联系，不代表材料列出了一条独立的历史演变阶段。\"",
+        "valueJson": "\"伯爵很可能不是这种食物的发明者；这段词源说明名称的来历，不能用来证明他发明了这种食物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"规则动词直接加 -ed；词尾发音通常为 /t/。\"",
+        "valueJson": "\"规则动词直接加 -ed；原形词尾为 /tʃ/ 时，-ed 读 /t/；为 /dʒ/ 时，-ed 读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-sandwich\"]",
+        "valueJson": "[\"wiktionary-sandwich-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本词常用派生主要是规则动词词形变化；sandwich shop 是复合名词，不是词族派生词。\"",
+        "valueJson": "\"上列 sandwiches、sandwiched、sandwiching 是原词的屈折变化，包括名词复数和动词词形变化，不是新派生词；sandwich shop 是复合名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-sandwich\",\"title\":\"Cambridge Dictionary: sandwich\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sandwich\",\"supports\":[\"名词食物义及例句型\",\"动词夹在中间义及常见结构\",\"sandwich 的词形变化与读音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-sandwich-etymology\",\"title\":\"Wiktionary: sandwich（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/sandwich#Anglais\",\"supports\":[\"Sandwich 地名与伯爵称号的词源联系\",\"伯爵与夹馅面包名称的历史故事\",\"英美读音差异\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-sandwich-etymology\",\"title\":\"Wiktionnaire: sandwich（英语词条，法语编写）\",\"url\":\"https://fr.wiktionary.org/wiki/sandwich#Anglais\",\"supports\":[\"英语名词 sandwich 的食物义\",\"英语动词的夹放义及比喻插入用法\",\"名词复数与规则动词变化的标注\",\"常见发音变体及口音标注\",\"食物名称来自第四代桑威奇伯爵的称号及相关历史叙述\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1189,
+    "headword": "sandwich",
+    "meaning_zh": "n. 三明治, 夹心面包, 夹层板\nvt. 插入, 夹入, 把...制成三明治",
+    "phonetic": "/'sændwitʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

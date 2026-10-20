@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "wordId": 40,
+  "headword": "aid",
+  "lessonSha256": "7ce5d746da3faff53116466d5c4efbaafc45527d2fd6bd8672048b101964de76",
+  "publishedAt": "2026-10-18T02:33:07.275Z",
+  "originalFailedPipeline": {
+    "status": "failed",
+    "modelGenerationInvocations": 2,
+    "modelReviewInvocations": 1,
+    "runs": [
+      {
+        "name": "generate-1",
+        "record": {
+          "model": "gpt-6-luna",
+          "role": "generator",
+          "outputSchemaVersion": "sense-lessons-output-v2",
+          "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+          "durationMs": 202283,
+          "exitCode": 0,
+          "timedOut": false,
+          "outputHash": "a79be0ff6834e118b8e74b4861ec4bb144a1522ed00a2aedbf6d4f06f3540440",
+          "at": "2026-10-18T02:00:55.770Z"
+        },
+        "outputHashVerified": true
+      },
+      {
+        "name": "generate-2",
+        "record": {
+          "model": "gpt-6-luna",
+          "role": "generator",
+          "outputSchemaVersion": "sense-lessons-output-v2",
+          "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+          "durationMs": 118321,
+          "exitCode": 0,
+          "timedOut": false,
+          "outputHash": "625d0766b0a4fa014f52fe9cffa3419eb84d59960c014fd78082e16443f74a0f",
+          "at": "2026-10-18T02:02:59.101Z"
+        },
+        "outputHashVerified": true
+      },
+      {
+        "name": "review-2",
+        "record": {
+          "model": "gpt-6.1-sol",
+          "modelSource": "user-cli-configuration; root-confirmed at initial run",
+          "modelOverride": false,
+          "reasoningOverride": false,
+          "role": "independent-model-reviewer",
+          "durationMs": 236379,
+          "exitCode": 0,
+          "timedOut": false,
+          "outputHash": "ab8dde76ede136b3719efb72349413087cf9a608c64acb45daee605eb89acd39",
+          "at": "2026-10-18T02:06:55.491Z"
+        },
+        "outputHashVerified": true
+      }
+    ],
+    "failureSequence": [
+      {
+        "stage": "generate-1 validation",
+        "error": "unknown source reference",
+        "detail": "etymology.sourceIds contained the full Etymonline URL instead of the defined source ID."
+      },
+      {
+        "stage": "review-2 patch application",
+        "error": "patch expected value mismatch at /lessCommonSenses/0",
+        "detail": "Patch index 21 changed Chinese double quotes to single quotes inside expectedValueJson. Index 22 contained the same mismatch at /confusions/0/takeaway. Strict application correctly rejected the review."
+      }
+    ],
+    "machineReviewVerdict": "revised",
+    "machineReviewAccepted": false,
+    "originalFilesUntouched": true,
+    "fileSha256": {
+      "input.json": "c86b7a313d83ffcbc085486d30526caf8de72e8a830f753e9c46dda9b2c775f5",
+      "draft.json": "2a8f030f964a0eb9f9cb5076acb3634d651297647ec763e6d57f32e3350772d4",
+      "source-evidence.json": "8f2677825796a8b4c1bd4bd08283231bc8c3bf147efbbcac53df0cd7129f7371",
+      "generate-1/output.json": "a79be0ff6834e118b8e74b4861ec4bb144a1522ed00a2aedbf6d4f06f3540440",
+      "generate-1.run.json": "5e5141e88f6984cbd008b44849355cdb6811bd1283e4fd5368f64f527df0765c",
+      "generate-2/output.json": "625d0766b0a4fa014f52fe9cffa3419eb84d59960c014fd78082e16443f74a0f",
+      "generate-2.run.json": "1d9c3e8cd262763e7582c259eac986a7215178a009be3f87f26047107cf5098a",
+      "review-2/output.json": "ab8dde76ede136b3719efb72349413087cf9a608c64acb45daee605eb89acd39",
+      "review-2.run.json": "79abad35f28cfb6aaf139a8577f2989cd954d201355241bee02f38877d00fd96"
+    }
+  },
+  "modelReview": {
+    "accepted": false,
+    "result": {
+      "verdict": "revised",
+      "issues": [
+        {
+          "severity": "error",
+          "location": "/pronunciation/notes/0",
+          "message": "aid 与字母 A 不同音；只有元音部分相同，aid 还包含 /d/。"
+        },
+        {
+          "severity": "error",
+          "location": "/forms、/lessCommonSenses/0",
+          "message": "混淆了 aid 与 aide：aid 的可数复数是 aids，aide 的复数才是 aides。表示职务上的助手通常用 aide；原稿不能用 aide 的例句直接展示 aid 的义项。"
+        },
+        {
+          "severity": "error",
+          "location": "/forms/5/note、/wordFamily/2/formation",
+          "message": "aid 没有词尾 e；aiding 是直接加 -ing，不能解释为去 e。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses",
+          "message": "遗漏常用可数名词义“辅助工具、辅助材料”，也未展示不及物结构 aid in。对外援助及 first aid 等常用表达需要补充。"
+        },
+        {
+          "severity": "error",
+          "location": "/confusions/0/takeaway",
+          "message": "“过去式是 aided，不能拼成 aided”前后完全相同，构成无效且误导性的拼写提示。"
+        },
+        {
+          "severity": "polish",
+          "location": "/wordFamily/2/example/senseId",
+          "message": "aiding visitors 直接以人为宾语，按本课分义宜归入 aid-v-help；例句本身语法正确。"
+        },
+        {
+          "severity": "polish",
+          "location": "/etymology/stages",
+          "message": "古法语两项的 meaning 只是重复来源关系，没有解释词义。相关传入事实已保留在 summary，可删除占位阶段，并准确写出有依据的拉丁语释义。"
+        },
+        {
+          "severity": "error",
+          "location": "/sources 及各处 sourceIds",
+          "message": "Cambridge 获取失败，Oxford 没有对应的实际来源摘录，不能作为本次已取得的内容依据。补入已取得的 Wiktionnaire 英语词条，调整引用；仅依据专业语言知识补充的细节使用空 sourceIds，确保最终所有来源引用均有定义。"
+        }
+      ],
+      "coverageAssessment": "已逐句核对主要义项、搭配、翻译、拼写、词性及例句归属。修订后，不可数名词“帮助、援助”、可数名词“辅助工具”、动词“帮助”和“有助于”均有至少两个例句；不及物 aid in 在两个动词义中均有展示。人的帮手义保留为较少用法，并与职位名词 aide 区分。词源仅保留实际取得材料支持的历史事实。来源释义较简略，新增工具义及细化用法依据专业语言知识，不声称均已获词典逐项证实；最终不存在未定义的 sourceIds。",
+      "senseInventory": [
+        {
+          "sense": "名词：帮助、援助，包括对外援助和资金、物资支援，通常不可数",
+          "coveredBy": [
+            "aid-n-help"
+          ],
+          "assessment": "原有两个例句有效；补充对外援助例句、foreign aid、first aid 和 with the aid of，不将这些搭配强拆成独立基本义。"
+        },
+        {
+          "sense": "可数名词：辅助工具、设备或材料",
+          "coveredBy": [
+            "aid-n-tool"
+          ],
+          "assessment": "原稿遗漏；新增完整义项，以助听器和教学模型两个具体例句展示，并说明复数 aids。"
+        },
+        {
+          "sense": "名词：起帮助作用的人、帮手",
+          "coveredBy": [
+            "aid-n-helper"
+          ],
+          "assessment": "保留为较少用法，改用真正包含 aid 的例句；说明职位上的助手通常拼作 aide。"
+        },
+        {
+          "sense": "及物动词：帮助某人或协助行动",
+          "coveredBy": [
+            "aid-v-help"
+          ],
+          "assessment": "原有两个例句及 aid someone with something、aid someone in doing something 均成立，保留。"
+        },
+        {
+          "sense": "及物动词：有助于、促进某事",
+          "coveredBy": [
+            "aid-v-facilitate"
+          ],
+          "assessment": "原有地图和照明两个例句有效；保留与 help、facilitate 以及 hinder、hamper 的语境限定。"
+        },
+        {
+          "sense": "不及物动词：在某事中提供帮助或起促进作用，常用 aid in",
+          "coveredBy": [
+            "aid-v-help",
+            "aid-v-facilitate"
+          ],
+          "assessment": "原稿未展示；在帮助义与促进义中分别补充句型和例句，不因句法变化另造语义。"
+        }
+      ],
+      "patches": [
+        {
+          "op": "add",
+          "path": "/sources/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：aid（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/aid#Anglais\",\"supports\":[\"aid 的读音 /eɪd/\",\"aid 作名词表示帮助、帮手及作动词表示帮助的基本义\",\"aid 的规则名词和动词变化\"],\"verification\":\"recommended\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/pronunciation/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\"]",
+          "valueJson": "[\"src-wiktionary\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/pronunciation/notes/0",
+          "expectedValueJson": "\"aid 与字母 A 同音；结尾是清楚的 /d/ 音。\"",
+          "valueJson": "\"先读字母 A 的音 /eɪ/，再接 /d/，合成一个音节 /eɪd/。\""
+        },
+        {
+          "op": "replace",
+          "path": "/forms/0/note",
+          "expectedValueJson": "\"通常作不可数名词，表示帮助或援助；指一名助手时可数，复数为 aides。\"",
+          "valueJson": "\"表示帮助或援助时通常不可数；表示辅助工具时可数，复数为 aids。职务上的助手通常用另一个名词 aide。\""
+        },
+        {
+          "op": "replace",
+          "path": "/forms/1",
+          "expectedValueJson": "{\"label\":\"名词复数（助手）\",\"form\":\"aides\",\"ipa\":\"/eɪdz/\",\"note\":\"表示助手时的复数形式；不要与常用缩写 AIDS 混淆。\"}",
+          "valueJson": "{\"label\":\"可数名词复数（辅助工具）\",\"form\":\"aids\",\"ipa\":\"/eɪdz/\",\"note\":\"aid 表示辅助工具时直接加 -s，如 teaching aids；aides 是 aide‘助手’的复数。注意与大写缩写 AIDS 区分。\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/forms/5/note",
+          "expectedValueJson": "\"aid 以不发音的 e 结尾，去 e 加 -ing。\"",
+          "valueJson": "\"aid 直接加 -ing，写作 aiding，不需要删去任何字母。\""
+        },
+        {
+          "op": "replace",
+          "path": "/takeaway",
+          "expectedValueJson": "\"作名词，aid 指提供的帮助或援助；作动词，aid 指帮助某人，或使某事更容易实现。\"",
+          "valueJson": "\"作名词，aid 通常指不可数的‘帮助、援助’，也可指可数的‘辅助工具’；作动词表示‘帮助’或‘有助于’，可直接接宾语，也可用 aid in...。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+          "valueJson": "[\"src-wiktionary\"]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"aid-n-help-ex3\",\"senseId\":\"aid-n-help\",\"en\":\"The country received foreign aid to rebuild its schools after the earthquake.\",\"zh\":\"地震后，这个国家获得了用于重建学校的对外援助。\",\"note\":\"foreign aid 指国家之间提供的援助；aid 在这里不可数。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/collocations/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"foreign aid\",\"zh\":\"对外援助；外援\",\"note\":\"通常指一个国家向另一个国家提供的资金、物资或其他支援。\",\"kind\":\"common-collocation\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/collocations/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"first aid\",\"zh\":\"急救；初步救护\",\"note\":\"指事故或突发疾病时给予的初步救护，常说 give first aid；此处 aid 不可数。\",\"kind\":\"fixed-expression\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/patterns/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"with the aid of someone/something\",\"zh\":\"在某人的帮助下；借助某物\",\"note\":\"如 with the aid of a map，意为‘借助地图’；这里的 aid 表示帮助，不是指一件工具。\",\"kind\":\"fixed-expression\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+          "valueJson": "[\"src-wiktionary\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/usageNote",
+          "expectedValueJson": "\"可直接接人作宾语，也可用 aid someone in doing something 或 aid someone with something。动词 aid 较正式，日常谈话中 help 更常用。\"",
+          "valueJson": "\"可直接接人作宾语，也可用 aid someone in doing something 或 aid someone with something。不带直接宾语时，可用 aid in something/doing something，表示参与帮助某项活动。动词 aid 较正式，日常谈话中 help 更常用。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"aid-v-help-ex3\",\"senseId\":\"aid-v-help\",\"en\":\"Several neighbours aided in the search for the missing dog.\",\"zh\":\"几位邻居帮忙寻找那条走失的狗。\",\"note\":\"aid 在这里不带直接宾语；in the search 说明参与帮助的活动。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/patterns/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"aid in something/doing something\",\"zh\":\"在某事中提供帮助；协助做某事\",\"note\":\"aid 作不及物动词，in 后接名词或 -ing 形式；与 aid someone in doing something 区别在于没有直接宾语 someone。\",\"kind\":\"sentence-pattern\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/usageNote",
+          "expectedValueJson": "\"常见于较正式的说明，主语通常是工具、方法或条件，而不是提供帮助的人。\"",
+          "valueJson": "\"可直接接事情或活动作宾语，如 aid learning；也可用 aid in + 名词/-ing，如 aid in learning。常见于较正式的说明，主语通常是工具、方法或条件，强调它们的促进作用。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/2/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"aid-v-facilitate-ex3\",\"senseId\":\"aid-v-facilitate\",\"en\":\"The diagrams aid in understanding how the machine works.\",\"zh\":\"这些示意图有助于理解这台机器的工作原理。\",\"note\":\"aid in doing something 表示有助于某项活动；aid 在这里没有直接宾语。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/2/patterns/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"aid in something/doing something\",\"zh\":\"有助于某事；有助于做某事\",\"note\":\"此处 aid 作不及物动词；in 是介词，后接名词或 -ing 形式。\",\"kind\":\"sentence-pattern\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"aid-n-tool\",\"title\":\"辅助工具；辅助材料（可数名词）\",\"meaning\":\"帮助完成某项活动的工具、设备或材料。此义可数，复数为 aids。\",\"usageNote\":\"可说 an aid、two aids，常见于 hearing aid、teaching aids 等组合。与通常不可数的‘援助’义区分；aids 是 aid 的复数，aides 是 aide‘助手’的复数。\",\"examples\":[{\"id\":\"aid-n-tool-ex1\",\"senseId\":\"aid-n-tool\",\"en\":\"My grandfather wears a hearing aid when he watches TV.\",\"zh\":\"我爷爷看电视时戴着助听器。\",\"note\":\"a hearing aid 是一件帮助听声音的设备，aid 在这里可数。\"},{\"id\":\"aid-n-tool-ex2\",\"senseId\":\"aid-n-tool\",\"en\":\"The teacher brought a model of the heart as a teaching aid.\",\"zh\":\"老师带来一个心脏模型，作为教学辅助工具。\",\"note\":\"a teaching aid 指帮助教学的工具或材料；模型是其中一种。\"}],\"patterns\":[{\"en\":\"an aid to something/doing something\",\"zh\":\"有助于某事的工具或方法\",\"note\":\"to 是介词，后接名词或 -ing 形式，如 an aid to remembering names，意为‘帮助记住姓名的工具或方法’。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"hearing aid\",\"zh\":\"助听器\",\"note\":\"可数，单数 a hearing aid，复数 hearing aids。\",\"kind\":\"common-collocation\"},{\"en\":\"teaching aids\",\"zh\":\"教学辅助工具；教具\",\"note\":\"可包括模型、图片等，常用复数。\",\"kind\":\"common-collocation\"},{\"en\":\"visual aids\",\"zh\":\"视觉辅助材料\",\"note\":\"指通过图片、图表等帮助理解的材料。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"tool\",\"zh\":\"工具\",\"note\":\"强调完成任务所使用的工具；与 aid 有重合，但 aid 更强调提供帮助的作用。\"},{\"en\":\"assistive device\",\"zh\":\"辅助设备\",\"note\":\"多指帮助改善或补偿某项身体功能的设备，如助听器；不能泛指所有教学材料。\"}],\"contrasting\":[],\"similarNote\":\"tool 的范围较广；assistive device 常用于功能辅助设备。两者都不能在所有语境下直接替换 aid。\",\"contrastingNote\":\"此义指辅助工具，没有适用于所有这类物品的固定反义词。\"},\"sourceIds\":[]}"
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0",
+          "expectedValueJson": "{\"id\":\"aid-n-helper\",\"title\":\"助手；助理\",\"meaning\":\"指帮助他人完成工作的助手，常见于正式职务名称。\",\"note\":\"此义可数，常见于组合词，如 teacher's aide（教师助理）；复数 aides。\",\"example\":{\"id\":\"aid-n-helper-ex1\",\"senseId\":\"aid-n-helper\",\"en\":\"The teacher's aide helped the class prepare for the trip.\",\"zh\":\"教师助理帮助全班为这次出行做准备。\",\"note\":\"aide 是表示‘助手’的可数名词。\"},\"sourceIds\":[\"src-oxford\"]}",
+          "valueJson": "{\"id\":\"aid-n-helper\",\"title\":\"帮手；起帮助作用的人（较少用）\",\"meaning\":\"aid 也可指起帮助作用的人，着重说明这个人能提供帮助。表示一种职务的‘助手、助理’通常用另一个名词 aide。\",\"note\":\"这一人的用法较少见，可用于 a great aid to someone 等表达。aid 的可数复数仍是 aids；aide 的复数才是 aides。\",\"example\":{\"id\":\"aid-n-helper-ex1\",\"senseId\":\"aid-n-helper\",\"en\":\"During the search, the local guide was a great aid to the rescue team.\",\"zh\":\"搜寻过程中，当地向导给救援队帮了大忙。\",\"note\":\"aid 指向导这个提供帮助的人，不是在称呼他的职务。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/takeaway",
+          "expectedValueJson": "\"说‘援助’或‘帮助’可用 aid；日常表达多用 help；说‘一名助手’用 aide。aid 的过去式是 aided，不能拼成 aided。\"",
+          "valueJson": "\"说‘援助’或动词‘帮助’可用 aid；日常表达多用 help；职务上的‘助手’通常拼作 aide，复数 aides。aid 的可数复数和动词第三人称单数均为 aids，过去式为 aided。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/0/sourceIds",
+          "expectedValueJson": "[\"src-oxford\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/1/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\"]",
+          "valueJson": "[\"src-wiktionary\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/2/formation",
+          "expectedValueJson": "\"去掉 aid 词尾不发音的 e，再加 -ing。\"",
+          "valueJson": "\"aid + -ing → aiding；直接加 -ing，不删字母，也不双写 d。\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/2/example/senseId",
+          "expectedValueJson": "\"aid-v-facilitate\"",
+          "valueJson": "\"aid-v-help\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/2/sourceIds",
+          "expectedValueJson": "[\"src-cambridge\"]",
+          "valueJson": "[\"src-wiktionary\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/stages",
+          "expectedValueJson": "[{\"language\":\"古法语（名词来源）\",\"form\":\"aide\",\"meaning\":\"名词 aid 的传入来源。\"},{\"language\":\"古法语（动词来源）\",\"form\":\"aidier\",\"meaning\":\"动词 aid 的传入来源。\"},{\"language\":\"拉丁语\",\"form\":\"adiuvare\",\"meaning\":\"与给予帮助有关的动词。\"}]",
+          "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"adiuvare\",\"meaning\":\"给予帮助；援助。\"}]"
+        },
+        {
+          "op": "remove",
+          "path": "/sources/1",
+          "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner's Dictionaries: aid\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/aid_1\",\"supports\":[\"aid 的名词和动词用法\",\"aid、aide 的词性和拼写区别\",\"aid 的常见搭配\"],\"verification\":\"recommended\"}",
+          "valueJson": "null"
+        },
+        {
+          "op": "remove",
+          "path": "/sources/0",
+          "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: aid\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/aid\",\"supports\":[\"aid 的英式和美式读音\",\"aid 作名词和动词的常用含义与句型\",\"aid 的动词变化形式\"],\"verification\":\"recommended\"}",
+          "valueJson": "null"
+        }
+      ]
+    },
+    "note": "Retained failed patch review; editorial recovery is separate."
+  },
+  "editorialReview": {
+    "method": "independent Codex agent full-content read",
+    "reviewer": "Independent Codex editorial agent and root full-content/source reread",
+    "status": "passed",
+    "candidateSha256": "3e33c90b21c55325061e68ce265a530ed26de82f1d6fd7c81544537f7545ddd8",
+    "humanTeacherReviewed": false,
+    "evidence": {
+      "recovery": {
+        "schemaVersion": 1,
+        "wordId": 40,
+        "headword": "aid",
+        "candidatePath": ".tmp/lesson-review/source-upgrade/40-candidate.json",
+        "candidateSha256": "3e33c90b21c55325061e68ce265a530ed26de82f1d6fd7c81544537f7545ddd8",
+        "status": "passed-independent-editorial-review; awaiting root publication",
+        "reviewer": "/root/pronunciation_code_review — independent Codex editorial agent, not a human teacher",
+        "reviewedAt": "2026-10-18T02:27:19.468397+00:00",
+        "originalPipeline": {
+          "status": "failed",
+          "modelGenerationInvocations": 2,
+          "modelReviewInvocations": 1,
+          "runs": [
+            {
+              "name": "generate-1",
+              "record": {
+                "model": "gpt-6-luna",
+                "role": "generator",
+                "outputSchemaVersion": "sense-lessons-output-v2",
+                "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+                "durationMs": 202283,
+                "exitCode": 0,
+                "timedOut": false,
+                "outputHash": "a79be0ff6834e118b8e74b4861ec4bb144a1522ed00a2aedbf6d4f06f3540440",
+                "at": "2026-10-18T02:00:55.770Z"
+              },
+              "outputHashVerified": true
+            },
+            {
+              "name": "generate-2",
+              "record": {
+                "model": "gpt-6-luna",
+                "role": "generator",
+                "outputSchemaVersion": "sense-lessons-output-v2",
+                "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+                "durationMs": 118321,
+                "exitCode": 0,
+                "timedOut": false,
+                "outputHash": "625d0766b0a4fa014f52fe9cffa3419eb84d59960c014fd78082e16443f74a0f",
+                "at": "2026-10-18T02:02:59.101Z"
+              },
+              "outputHashVerified": true
+            },
+            {
+              "name": "review-2",
+              "record": {
+                "model": "gpt-6.1-sol",
+                "modelSource": "user-cli-configuration; root-confirmed at initial run",
+                "modelOverride": false,
+                "reasoningOverride": false,
+                "role": "independent-model-reviewer",
+                "durationMs": 236379,
+                "exitCode": 0,
+                "timedOut": false,
+                "outputHash": "ab8dde76ede136b3719efb72349413087cf9a608c64acb45daee605eb89acd39",
+                "at": "2026-10-18T02:06:55.491Z"
+              },
+              "outputHashVerified": true
+            }
+          ],
+          "failureSequence": [
+            {
+              "stage": "generate-1 validation",
+              "error": "unknown source reference",
+              "detail": "etymology.sourceIds contained the full Etymonline URL instead of the defined source ID."
+            },
+            {
+              "stage": "review-2 patch application",
+              "error": "patch expected value mismatch at /lessCommonSenses/0",
+              "detail": "Patch index 21 changed Chinese double quotes to single quotes inside expectedValueJson. Index 22 contained the same mismatch at /confusions/0/takeaway. Strict application correctly rejected the review."
+            }
+          ],
+          "machineReviewVerdict": "revised",
+          "machineReviewAccepted": false,
+          "originalFilesUntouched": true,
+          "fileSha256": {
+            "input.json": "c86b7a313d83ffcbc085486d30526caf8de72e8a830f753e9c46dda9b2c775f5",
+            "draft.json": "2a8f030f964a0eb9f9cb5076acb3634d651297647ec763e6d57f32e3350772d4",
+            "source-evidence.json": "8f2677825796a8b4c1bd4bd08283231bc8c3bf147efbbcac53df0cd7129f7371",
+            "generate-1/output.json": "a79be0ff6834e118b8e74b4861ec4bb144a1522ed00a2aedbf6d4f06f3540440",
+            "generate-1.run.json": "5e5141e88f6984cbd008b44849355cdb6811bd1283e4fd5368f64f527df0765c",
+            "generate-2/output.json": "625d0766b0a4fa014f52fe9cffa3419eb84d59960c014fd78082e16443f74a0f",
+            "generate-2.run.json": "1d9c3e8cd262763e7582c259eac986a7215178a009be3f87f26047107cf5098a",
+            "review-2/output.json": "ab8dde76ede136b3719efb72349413087cf9a608c64acb45daee605eb89acd39",
+            "review-2.run.json": "79abad35f28cfb6aaf139a8577f2989cd954d201355241bee02f38877d00fd96"
+          }
+        },
+        "recovery": {
+          "method": "Independent full-content/source review; editor rebound only the two quote-transcription mismatches, then made separately recorded teaching/source revisions. This does not turn the failed machine run into a successful run.",
+          "reboundPatches": ".tmp/lesson-review/source-upgrade/40-editor-rebound-patches.json",
+          "editorialChanges": ".tmp/lesson-review/source-upgrade/40-editorial-changes.json",
+          "additionalCliCalls": 0,
+          "pipelineChanges": 0,
+          "databaseWrites": 0,
+          "publishedWrites": 0
+        },
+        "fullContentReview": {
+          "status": "passed",
+          "humanTeacherReviewed": false,
+          "checked": [
+            "Read all four core senses and eleven examples with their translations; each example is bound to its intended sense.",
+            "Corrected aid versus letter A, aids versus aides, and direct -ing spelling; forms match the actual Oxford verb entry.",
+            "Reviewed help/assist/facilitate distinctions and context-specific hinder/impede/hamper and withhold aid; no artificial universal opposite for tools.",
+            "Moved aid recovery to the facilitating sense; made finding translation avoid asserting successful discovery.",
+            "Added grounded noun-tool coverage, first aid, foreign aid, with the aid of, and valid aid to / aid in syntax.",
+            "Reviewed aide, modern unaided formation, historical French/Latin meanings and explicit mnemonic-not-etymology distinction.",
+            "Kept low-frequency human-helper use optional and noted US aid/aide variant; did not claim to exhaust historical/legal specialist meanings.",
+            "Cambridge remained unavailable; all final evidence comes from actually read named Oxford/MW/Etymonline pages."
+          ],
+          "sourceEvidence": ".tmp/lesson-review/source-upgrade/40-source-evidence.json",
+          "unresolvedRequiredEvidence": []
+        },
+        "deliveryValidation": {
+          "tool": "validateLesson",
+          "ok": true,
+          "wordId": 40,
+          "headword": "aid",
+          "note": "Structural check is separate from the above real full-content editorial read."
+        }
+      },
+      "rootReview": {
+        "reviewer": "root Codex editor",
+        "humanTeacherReviewed": false,
+        "readScope": "Full final aid teaching text, 4 core senses/11 examples, forms, near/opposite limits, optional helper use, family, mnemonic and source claims.",
+        "candidateSha256": "3e33c90b21c55325061e68ce265a530ed26de82f1d6fd7c81544537f7545ddd8",
+        "verifiedSource": "https://www.etymonline.com/word/aid",
+        "sourceAccess": "actual public web-tool page read",
+        "changedPaths": [
+          "/etymology/stages",
+          "/editorial"
+        ],
+        "reason": "Present Latin → Old French → English in chronological teaching order, explicitly retaining separate noun and verb intermediary histories rather than drawing a backwards arrow.",
+        "previousStages": [
+          {
+            "language": "古法语（名词来源）",
+            "form": "aide",
+            "meaning": "帮助；援助。"
+          },
+          {
+            "language": "古法语（动词来源）",
+            "form": "aidier",
+            "meaning": "帮助；协助。"
+          },
+          {
+            "language": "拉丁语",
+            "form": "adiuvare",
+            "meaning": "给予帮助；与 ad（朝向）和 iuvare（帮助、支持）有关。"
+          }
+        ],
+        "finalStages": [
+          {
+            "language": "拉丁语",
+            "form": "adiuvare",
+            "meaning": "给予帮助；其历史构成包含 ad（朝向）和 iuvare（帮助、支持）。"
+          },
+          {
+            "language": "古法语",
+            "form": "aide（名词）/ aidier（动词）",
+            "meaning": "名词表示帮助、援助；动词表示帮助、协助。两者经过各自的中间形式与拉丁语 adiuvare 相连。"
+          },
+          {
+            "language": "英语",
+            "form": "aid",
+            "meaning": "名词和动词均表示帮助，后来还用于有帮助作用的人或工具等。"
+          }
+        ],
+        "status": "passed"
+      }
+    }
+  },
+  "sourceEvidence": [
+    {
+      "id": "src-oxford-noun",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/aid_1",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "The noun entry separates uncountable external assistance and task-related help from countable assisting objects. It lists with/without the aid of, first aid and British in aid of. Pronunciation is /eɪd/.",
+      "summarySha256": "eac8e515bedb000bbb9d12da06a87c83b4e34fb0c34ffacb55089a279a1ccdf8",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "dictionary"
+    },
+    {
+      "id": "src-oxford-verb",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/aid_2",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "The verb entry gives formal transitive and intransitive uses, helping people and promoting processes. It explicitly supports aid someone to do, aid someone in doing, aid someone with, and aid in. Forms are aids, aided and aiding.",
+      "summarySha256": "5deb402c63a5bb5288185c6e62a22d8d58265361f4aecc6bd20ac98edb6c0ac3",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "dictionary"
+    },
+    {
+      "id": "src-mw",
+      "url": "https://www.merriam-webster.com/dictionary/aid",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "The entry includes assistance, assisting devices, and chiefly US aid as a spelling of aide. Its children’s definition also includes a person or thing that helps. This supports retaining the person sense as optional, without making aides the plural of aid.",
+      "summarySha256": "3de66a9de56c3077ed71222f3c8b623b2dd20b438c7d2a72227f4da72fa53682",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "dictionary"
+    },
+    {
+      "id": "src-oxford-aide",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/aide",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "Aide is a noun for someone who assists another person in their work, especially political work. Its pronunciation matches aid.",
+      "summarySha256": "323843ea9865f4ffc0ea5b847f8391768d99bcfeb4e497c4f5d3870663a20d9f",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "dictionary"
+    },
+    {
+      "id": "src-oxford-unaided",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/unaided",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "Unaided is both adjective and adverb, marked formal, meaning without assistance from a person or thing.",
+      "summarySha256": "40cb017264ddca64948616b14d8434f3d6739ac26e2b80be5df7702a52d8bb02",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "dictionary"
+    },
+    {
+      "id": "src-etymonline",
+      "url": "https://www.etymonline.com/word/aid",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "Aid has separate French noun aide and verb aidier routes, both related to Latin adiuvare. Ad carries the directional meaning and iuvare means help or support. The history should not be taught as modern English a + id.",
+      "summarySha256": "adc0cc2fa39a0c874e29df4c846a8d0ef79a5a015296be3c0b37b3609e702e48",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "etymology"
+    },
+    {
+      "id": "src-etymonline-aide",
+      "url": "https://www.etymonline.com/word/aide",
+      "status": "retrieved",
+      "retrievedAt": "2026-10-18T02:27:19.468397+00:00",
+      "method": "actual web-tool page read by independent editorial agent",
+      "summary": "Aide is a shortening of French aide-de-camp, historically a military assistant. It is not a modern aid + suffix -e formation.",
+      "summarySha256": "30181de85eb01ce70f30e494045c1f455188d23d8d052b2dd83fb5461edc87ae",
+      "hashScope": "original factual summary, not remote HTML",
+      "verification": "verified",
+      "kind": "etymology"
+    }
+  ],
+  "publicationChecks": {
+    "identityAndStructure": "passed",
+    "candidateSha256": "3e33c90b21c55325061e68ce265a530ed26de82f1d6fd7c81544537f7545ddd8",
+    "finalSha256": "7ce5d746da3faff53116466d5c4efbaafc45527d2fd6bd8672048b101964de76",
+    "rootChanges": [
+      "/etymology/stages",
+      "/editorial"
+    ]
+  }
+}

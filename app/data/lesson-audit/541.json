@@ -1,0 +1,276 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a4d9a768ec7f3e088c9c6eac42b00c61c1048e9f9f841d5d9a41fbfea2a33163",
+    "executedReviewPromptHash": "a4d9a768ec7f3e088c9c6eac42b00c61c1048e9f9f841d5d9a41fbfea2a33163",
+    "reviewHash": "d67c599b09d39fc2e973590507b586d16fd771e1ed156cf631445d98081d6834",
+    "wordId": 541,
+    "inputHash": "51c9fe106200705c14686f79659b55ee9b16cd25678777ac2ae3c8025bb854a1",
+    "draftHash": "e149ac911e12411c8ae347d6fd9eb6c46192c06919a5728e8ea93deba11fae57",
+    "finalHash": "38aabe4adc3b8e2c4d01b86147339fc726988fa8c9234185aa58bf843256888d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/football#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.111Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 4093,
+        "revisionId": 39911988,
+        "revisionTimestamp": "2026-10-01T00:05:04Z",
+        "sha256": "864e21024af858798dfa27686c7c38ad9b451431866b8168ab6120bf5a53f2d5",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/football",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:50:12.960Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:56:00.478Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "足球运动与实体球混在同一义中，两例各演示一种用法，未达到每个核心义至少两例的要求。应分出可数的球具义，并明确运动名通常不可数。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的加拿大式橄榄球和澳式足球用法；美式橄榄球义也应说明加拿大的相关用法及其歧义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1/note",
+        "message": "match 不限于正式比赛，非正式比赛也可使用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "两个阶段的 meaning 只是构词或拼写说明，没有给出有依据的历史词义。应将可核实的年代、早期形式和构词事实集中到 summary，清空占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "正文已提到常用派生词 footballer，却将词族留空。可补入其真实构词、准确拼写及具体例句。"
+      }
+    ],
+    "coverageAssessment": "已按法语维基词典的英语词条核对全部五类定义。补丁后，足球运动、美式橄榄球和球具三个核心义各有两例，加拿大式橄榄球与澳式足球作为地区扩展各有一例。原词典的可数性标签与通常英语用法不符，已按运动通常不可数、球具可数处理。词源仅采用已取回材料；未把未取得正文的推荐页面当作证据。",
+    "senseInventory": [
+      {
+        "sense": "足球运动（英国、爱尔兰等地；soccer）",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿混入球具义；补丁将其独立为运动义，并补足两个运动用例。"
+      },
+      {
+        "sense": "美式橄榄球（美国及加拿大的相关用法）",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已有两个自然用例；补充不可数用法及加拿大语境说明。"
+      },
+      {
+        "sense": "加拿大式橄榄球",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "原稿遗漏；补丁加入地区扩展，并说明加拿大的 football 也可能指美式橄榄球。"
+      },
+      {
+        "sense": "澳式足球",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原稿遗漏；补丁加入地区扩展，避免把澳大利亚所有 football 用法一概视为澳式足球。"
+      },
+      {
+        "sense": "足球等相关运动使用的球（实体球具）",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿仅在 s1 中有一个球具例句；补丁独立成义，以两例覆盖足球和美式橄榄球用球，并明确可数性。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分运动名与球具名：play football 中通常不可数；a football、two footballs 指一个球、两个球。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"football 的复数是 footballs。\"",
+        "valueJson": "\"指球具时，football 的复数是 footballs，词尾 -s 读 /z/；指运动时通常不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词原形；英式英语中通常指足球运动或足球。\"",
+        "valueJson": "\"名词原形；指运动时通常不可数，指一个球时可说 a football。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"在英国、爱尔兰等地，football 通常指两队用脚踢球、设法把球踢进对方球门的运动，也可指这种比赛或足球本身。\"",
+        "valueJson": "\"在英国、爱尔兰等地，football 通常指两队主要用脚踢球、设法把球送进对方球门的足球运动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"英式英语里常说 football；美式英语通常用 soccer 表示这种运动。play football 表示踢足球这项运动，通常不加 a。\"",
+        "valueJson": "\"本义通常不可数。英式英语里常说 football；美式英语通常用 soccer 表示这种运动。play football 表示踢足球，通常不用冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"ex2\",\"senseId\":\"s1\",\"en\":\"The football rolled under the bench.\",\"zh\":\"足球滚到了长椅下面。\",\"note\":\"这里 football 指比赛用的球。\"}",
+        "valueJson": "{\"id\":\"ex2\",\"senseId\":\"s1\",\"en\":\"My brother watches football on TV every weekend.\",\"zh\":\"我哥哥每个周末都在电视上看足球比赛。\",\"note\":\"英式英语语境；watch football 指观看足球比赛，football 仍作运动名使用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"match 指一场正式比赛；英式英语中常这样说。\"",
+        "valueJson": "\"match 指一场比赛，不限于正式比赛；英式英语中常这样说。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"此义主要见于美国英语。需要明确表示英式足球时，美国人通常说 soccer。\"",
+        "valueJson": "\"本义通常不可数。美国英语中的 football 通常指美式橄榄球，加拿大语境中也可这样用；但在加拿大还可能指 Canadian football，需结合具体赛事判断。美国英语通常用 soccer 明确表示英式足球。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"足球；橄榄球（球具）\",\"meaning\":\"football 所指的运动中使用的球；英式足球语境中指足球，美式橄榄球语境中指橄榄球。\",\"usageNote\":\"本义可数：a football 是一个球，two footballs 是两个球。具体是哪种球，要结合地区和运动项目判断。\",\"examples\":[{\"id\":\"ex5\",\"senseId\":\"s3\",\"en\":\"The football rolled under the bench.\",\"zh\":\"足球滚到了长椅下面。\",\"note\":\"按英式足球语境理解；这里 football 指具体的球具。\"},{\"id\":\"ex6\",\"senseId\":\"s3\",\"en\":\"He threw me a football, and I caught it with both hands.\",\"zh\":\"他把一个美式橄榄球扔给我，我用双手接住了。\",\"note\":\"美式橄榄球语境；a football 指一个球，体现可数用法。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"kick a football\",\"zh\":\"踢一个足球\",\"note\":\"按英式足球语境理解；football 指球具，可以用 a。\",\"kind\":\"common-collocation\"},{\"en\":\"throw a football\",\"zh\":\"扔一个橄榄球\",\"note\":\"按美式橄榄球语境理解，指用手把球扔出去。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"soccer ball\",\"zh\":\"足球（球具）\",\"note\":\"明确指英式足球用球，只能替换相应语境下指球具的 football。\"}],\"contrasting\":[],\"similarNote\":\"soccer ball 只对应英式足球用球，不包括美式橄榄球用球。\",\"contrastingNote\":\"球具没有固定反义词；其他运动的球只是不同种类。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"加拿大式橄榄球（加拿大地区用法）\",\"meaning\":\"加拿大英语中的 football 也可指加拿大式橄榄球（Canadian football）。\",\"note\":\"加拿大语境中的 football 既可能指加拿大式橄榄球，也可能指美式橄榄球；两者规则不同，需看具体赛事。运动义通常不可数。\",\"example\":{\"id\":\"ex7\",\"senseId\":\"s4\",\"en\":\"We watched Canadian football on TV last night.\",\"zh\":\"我们昨晚在电视上看了加拿大式橄榄球比赛。\",\"note\":\"Canadian football 明确说明运动项目；在相应语境中也可以只说 football。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"澳式足球（澳大利亚地区用法）\",\"meaning\":\"在澳大利亚的一些语境中，football 指澳式足球（Australian football）。\",\"note\":\"这是当地常见的用法之一；football 所指项目会随地区和说话人而变，明确说 Australian football 更清楚。运动义通常不可数。\",\"example\":{\"id\":\"ex8\",\"senseId\":\"s5\",\"en\":\"My cousin plays Australian football every Saturday.\",\"zh\":\"我表哥每周六都踢澳式足球。\",\"note\":\"Australian football 明确指澳式足球；在相应的澳大利亚语境中也可简称 football。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"football 由 foot（脚）和 ball（球）组合而成；这个构词能帮助记忆足球运动，但现代美国英语里的 football 也可指美式橄榄球。\"",
+        "valueJson": "\"football 约在 1400 年已有记载，源自中古英语形式 fotbal；它是 foot（脚）与 ball（球）组成的复合词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"fotbal\",\"meaning\":\"由 foot 和 ball 构成的早期英语形式。\"},{\"language\":\"英语\",\"form\":\"football\",\"meaning\":\"由 foot 和 ball 组成的现代拼写。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史材料记载该词约在 1400 年出现，并源自中古英语 fotbal；拆成 foot 与 ball 是有助记忆的构词说明，不代表所有现代地区用法都只指用脚踢球。\"",
+        "valueJson": "\"约 1400 年是已有文字记载的时间，不等于确切的造词时间；foot + ball 是构词事实，不表示现代各地的 football 都只指用脚踢球的运动。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"footballer\",\"partOfSpeech\":\"noun\",\"meaning\":\"足球运动员；在部分地区也可指当地 football 项目的选手。\",\"formation\":\"football 加表示从事某项活动的人的后缀 -er，构成派生名词。\",\"spellingNote\":\"直接在 football 后加 -er，保留原有的 ll：footballer；复数为 footballers。\",\"example\":{\"id\":\"wf1\",\"senseId\":\"s1\",\"en\":\"Her sister is a professional footballer in England.\",\"zh\":\"她姐姐是英格兰的一名职业足球运动员。\",\"note\":\"英式英语中常用 footballer 指足球运动员。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"football 是 foot 与 ball 组成的复合名词；footballer 等派生词与本词相关，但本条只收常用核心词形，不把运动相关词列作词族。\"",
+        "valueJson": "\"football 是 foot 与 ball 组成的复合名词；footballer 是在 football 后加 -er 形成的派生名词。运动相关词不都属于它的词族。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/0/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"加拿大与澳大利亚的地区义，以及 football 指比赛用球的词义。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 541,
+    "headword": "football",
+    "meaning_zh": "n. 足球, 橄榄球",
+    "phonetic": "/'futbɒ:l/",
+    "pos": "",
+    "forms": []
+  }
+}

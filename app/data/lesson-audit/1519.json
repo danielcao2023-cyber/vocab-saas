@@ -1,0 +1,451 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fd15424e8d909914c11f495259a2d4dc3f248b557b1a681fe44e03942a7c39da",
+    "executedReviewPromptHash": "1b0911825bdfd414e564c3993c5e05f93df3bb9ebb7df51b78f15e5bec1fa810",
+    "reviewHash": "da371c1f5385c5dea3c88d719ee5d6b958cf22979587fc144389e862935c843a",
+    "wordId": 1519,
+    "inputHash": "9ef6e60d3b0e4517ca01c413a2ffe9e39d1cbd3d00b9ecfe8136ea2dd9b9a8a1",
+    "draftHash": "60407d6b4dd2de2d3c34ad160c11964f4202b4a65769214f36292b1e1eba9e12",
+    "finalHash": "745cdd68d318c7072069a93dfdd20f13a8d2595f00bba9d6e90637434dc76fe7",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wave#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.130Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117938,
+        "revisionId": 39801032,
+        "revisionTimestamp": "2026-08-13T16:07:38Z",
+        "sha256": "510c738344c446a6fb4f603a25c357008de9f12417628468ad1d4ca7a563a357",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wave",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:28:16.472Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:54:34.752Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用名词义“挥手致意”；常用及物动词义“挥舞某物”被放入次要义且只有一个例句。须补齐两个核心义及各自至少两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "本义合并了海浪、声光波和波浪形起伏，但原例句未覆盖声光波及头发的波浪形，各主要用法的示例也不足。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "现有来源指向获取失败的 Cambridge 页面，未反映实际取得的英语词条。须改引法语维基词典中的英语条目，并移除其不能支持的义项和词族条目的来源关联。该条目的词源部分只有待补标记，不能据此编造历史词源或阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "wave 并非以 v 结尾，waive 也并非以 ai 开头；waive 的费用义应解释为免收。原 waive 例句没有体现所引用的 wave-v1 义，须改为包含有效目标义的对比例句并保留已定义的 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1",
+        "message": "不能把 waver 简单教成现代英语中 wave 加 -er 的透明构词；原构词说明与“保留 e 加 r”的拼写说明也不一致。应保留相关词及其实际拼写，取消未经来源支持的派生解释。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote",
+        "message": "wave someone off 常指挥手送别，不能在这里直接等同于挥手让人离开；表达后者应使用 away。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/patterns/1",
+        "message": "waves of grass / hair 是名词结构，不能作为本动词义的句型或搭配示范。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "应明确区分 a wave of heat 表示骤然袭来的热气与 a heat wave 表示持续一段时间的异常炎热天气，并补充一波事件的具体用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3",
+        "message": "头发随风运动的例句可以理解，但作为基础动词搭配示范，麦田起伏更自然明确。"
+      }
+    ],
+    "coverageAssessment": "已核对水浪、声光波及压力波、波浪形起伏、比喻性的一阵或一波、名词挥手、动词挥手及方向示意、随风起伏、及物挥舞和使头发成波浪形。补丁补齐核心义及必要例句；“高潮、波动、气压突变”等中文释义按具体语境限定，不教成任意替换。现有近义与反向表达均已限定语境，无须另造通用反义词。实际取得的词源栏不含可用的历史解释，故保留不声称历史先后的说明，不新增词源链。",
+    "senseInventory": [
+      {
+        "sense": "名词：水面的波、波浪",
+        "coveredBy": [
+          "wave-n1"
+        ],
+        "assessment": "保留原海浪例句，补充船边浪花例句，达到两个具体例句。"
+      },
+      {
+        "sense": "名词：声波、光波等物理波；专业语境中的压力波",
+        "coveredBy": [
+          "wave-n1"
+        ],
+        "assessment": "补充声波、光波和压力波例句；说明 pressure wave 不等于任意气压变化。"
+      },
+      {
+        "sense": "名词：头发、草木等的波浪形弯曲或起伏",
+        "coveredBy": [
+          "wave-n1"
+        ],
+        "assessment": "保留草地例句并补充头发例句，修正头发搭配。"
+      },
+      {
+        "sense": "名词：突然涌来的一阵感觉或一波事件",
+        "coveredBy": [
+          "wave-n2"
+        ],
+        "assessment": "保留宽慰例句，改进热气例句，补充投诉潮；heat wave 另作天气搭配解释。"
+      },
+      {
+        "sense": "名词：挥手致意、挥手动作",
+        "coveredBy": [
+          "wave-n3"
+        ],
+        "assessment": "原稿遗漏；新增完整核心义、两个生活例句及名词句型。"
+      },
+      {
+        "sense": "不及物动词：挥手打招呼或道别",
+        "coveredBy": [
+          "wave-v1"
+        ],
+        "assessment": "原例句和 wave at/to someone、wave goodbye 句型覆盖充分。"
+      },
+      {
+        "sense": "及物动词：挥手示意某人移动，或示意拒绝某物",
+        "coveredBy": [
+          "wave-v1"
+        ],
+        "assessment": "已有招人过来的例句；补充挥手谢绝的例句，并区分 away 与 off。"
+      },
+      {
+        "sense": "不及物动词：旗子飘动、草木等呈波浪形起伏",
+        "coveredBy": [
+          "wave-v2"
+        ],
+        "assessment": "保留旗子例句，以麦田例句覆盖连续起伏，清除误放的名词结构。"
+      },
+      {
+        "sense": "及物动词：挥舞、挥动旗子或手中物品",
+        "coveredBy": [
+          "wave-v3"
+        ],
+        "assessment": "由次要义提升为核心义，保留旗子例句并补充挥动票据的例句。"
+      },
+      {
+        "sense": "及物动词：使头发成波浪形",
+        "coveredBy": [
+          "wave-v4"
+        ],
+        "assessment": "按原始词条的及物释义补入次要义，说明是美发语境。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 wave 常说“波浪、波动、突然涌来的一阵”；作动词时可以说“挥手示意”或“飘动、起伏”。\"",
+        "valueJson": "\"名词 wave 可指波浪、声光等的波、一阵涌来的事物，也可指一次挥手；作动词时可表示挥手示意、挥动物品或随风起伏。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[\"wiktionary-wave-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"水面上向前起伏的波浪；也可指声音、光等传播的波，或头发、草地等形成的波浪形起伏。\"",
+        "valueJson": "\"水面上起伏的波浪；也可指声波、光波、压力波等物理波，或头发、草木等呈现的波浪形弯曲或起伏。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"具体的海浪常用复数 waves；声波、光波常用复合词 sound waves、light waves。\"",
+        "valueJson": "\"海浪常用复数 waves；声波、光波分别说 sound waves、light waves。专业语境中的 pressure wave 指传播的压力扰动；一般的气压变化不能一概称为 wave。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n1-e3\",\"senseId\":\"wave-n1\",\"en\":\"A large wave splashed over the side of our boat.\",\"zh\":\"一个大浪越过船舷，溅进了我们的船里。\",\"note\":\"a large wave 指一个具体的大浪；wave 是可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n1-e4\",\"senseId\":\"wave-n1\",\"en\":\"The speaker produces sound waves that travel through the air.\",\"zh\":\"扬声器产生在空气中传播的声波。\",\"note\":\"sound waves 指声波，不是水面上的浪。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n1-e5\",\"senseId\":\"wave-n1\",\"en\":\"In science class, we learned that light waves can travel through a vacuum.\",\"zh\":\"科学课上，我们学到光波能在真空中传播。\",\"note\":\"light waves 指光波；与 sound waves 同属物理语境中的波。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n1-e6\",\"senseId\":\"wave-n1\",\"en\":\"Her hair fell in soft waves around her shoulders.\",\"zh\":\"她的头发呈柔和的波浪形垂在肩头。\",\"note\":\"waves 在这里指头发的波浪形弯曲。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n1-e7\",\"senseId\":\"wave-n1\",\"en\":\"The explosion sent a pressure wave through the air.\",\"zh\":\"爆炸在空气中产生了一道传播开来的压力波。\",\"note\":\"pressure wave 是专业搭配，指传播的压力扰动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"waves of hair\",\"zh\":\"波浪形的头发\",\"note\":\"可用 wave 描写头发自然弯曲形成的波纹状。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"waves in someone's hair\",\"zh\":\"某人头发的波浪形弯曲\",\"note\":\"如 soft waves in her hair；名词 waves 指一处处波浪形弯曲。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[\"wiktionary-wave-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 a wave of + 名词；侧重一阵事物涌来，不一定是实际的水浪。\"",
+        "valueJson": "\"常用 a wave of + 名词，表示一阵感觉或一波事件涌来。a wave of heat 可指骤然袭来的热气；a heat wave 则是持续一段时间的异常炎热天气，两者不能机械互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"wave-n2-e1\",\"senseId\":\"wave-n2\",\"en\":\"A wave of heat moved across the city.\",\"zh\":\"一阵热浪席卷了这座城市。\",\"note\":\"a wave of heat 指一阵突然到来的高温。\"}",
+        "valueJson": "{\"id\":\"wave-n2-e1\",\"senseId\":\"wave-n2\",\"en\":\"A wave of heat hit my face when I opened the oven.\",\"zh\":\"我打开烤箱时，一股热气扑面而来。\",\"note\":\"a wave of heat 指突然袭来的热气；这里不是持续数日的 heat wave。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n2-e3\",\"senseId\":\"wave-n2\",\"en\":\"The shop received a wave of complaints after raising its prices.\",\"zh\":\"这家店涨价后收到了一大批投诉。\",\"note\":\"a wave of complaints 表示短时间内接连出现的一波投诉。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"wave at/to someone 表示向某人挥手；wave goodbye 表示挥手道别。wave someone over/off 可表示挥手示意某人过来／离开。\"",
+        "valueJson": "\"wave at/to someone 表示向某人挥手；wave goodbye 表示挥手道别。wave someone over/away 表示挥手示意某人过来／离开；wave someone off 常指挥手送别，不能直接等同于赶人离开。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-v1-e3\",\"senseId\":\"wave-v1\",\"en\":\"When the waiter offered more bread, she waved it away.\",\"zh\":\"服务员提出再添些面包时，她摆手谢绝了。\",\"note\":\"wave something away 可表示摆手拒绝；it 指服务员提出再添的面包。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[\"wiktionary-wave-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"wave-v2-e2\",\"senseId\":\"wave-v2\",\"en\":\"Her long hair waved in the breeze.\",\"zh\":\"她的长发在微风中飘动。\",\"note\":\"头发呈现轻柔摆动的状态。\"}",
+        "valueJson": "{\"id\":\"wave-v2-e2\",\"senseId\":\"wave-v2\",\"en\":\"The wheat waved gently in the breeze.\",\"zh\":\"麦子在微风中轻轻起伏。\",\"note\":\"wheat 作主语，wave 描写整片麦子随风呈波浪形起伏。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"waves of grass / hair\",\"zh\":\"起伏如波的草地／头发\",\"note\":\"作描写时，wave 可表达连续的波浪形起伏。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"grass / wheat waves in the wind\",\"zh\":\"草／麦子在风中起伏\",\"note\":\"grass 和 wheat 在这里是不可数名词，作主语时谓语用 waves；此处 waves 是动词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"hair waves gently\",\"zh\":\"头发轻轻起伏／飘动\",\"note\":\"用 gently 描写柔和、不猛烈的摆动。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"wheat waves in the breeze\",\"zh\":\"麦子在微风中起伏\",\"note\":\"wave 描写麦子连续起伏，gently 可用来说明动作轻柔。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[\"wiktionary-wave-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-n3\",\"title\":\"挥手；挥手致意\",\"meaning\":\"名词，指一次挥手动作，可用于打招呼、回应或告别。\",\"usageNote\":\"这是可数名词：a wave 表示一次挥手，常见 give someone a wave、with a wave。与动词用法比较：She waved 是“她挥了挥手”，She gave me a wave 是“她向我挥了挥手”。\",\"examples\":[{\"id\":\"wave-n3-e1\",\"senseId\":\"wave-n3\",\"en\":\"Our neighbor gave us a friendly wave from her garden.\",\"zh\":\"邻居在花园里友好地向我们挥了挥手。\",\"note\":\"a friendly wave 是名词短语，指一次友好的挥手致意。\"},{\"id\":\"wave-n3-e2\",\"senseId\":\"wave-n3\",\"en\":\"Dad left with a smile and a wave.\",\"zh\":\"爸爸笑着挥了挥手，然后离开了。\",\"note\":\"with a wave 表示伴随着一次挥手动作；wave 在这里是名词。\"}],\"patterns\":[{\"en\":\"give someone a wave\",\"zh\":\"向某人挥一挥手\",\"note\":\"give 后接人和名词短语 a wave；不要漏掉冠词 a。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a friendly wave\",\"zh\":\"友好的挥手致意\",\"note\":\"形容词 friendly 修饰名词 wave。\",\"kind\":\"common-collocation\"},{\"en\":\"with a wave\",\"zh\":\"挥着手；挥手示意着\",\"note\":\"介词 with 后接名词短语 a wave。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a greeting\",\"zh\":\"问候；招呼\",\"note\":\"范围更广，可以是话语，也可以是动作；a wave 特指挥手动作。\"}],\"contrasting\":[],\"similarNote\":\"在打招呼的情境中，a wave 可以是一种 greeting，但 greeting 不一定涉及挥手。\",\"contrastingNote\":\"这一动作名词没有适用于所有语境的固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wave-v3\",\"title\":\"挥舞；挥动某物\",\"meaning\":\"及物动词，指来回挥动手、旗子、纸张等。\",\"usageNote\":\"wave 后直接接被挥动的物品，如 wave a flag、wave a ticket。比较 The flag waved（旗子飘动）与 She waved the flag（她挥动旗子）。\",\"examples\":[{\"id\":\"wave-v3-e1\",\"senseId\":\"wave-v3\",\"en\":\"He waved a small flag to get our attention.\",\"zh\":\"他挥动一面小旗来引起我们的注意。\",\"note\":\"a small flag 是 wave 的宾语，表示被挥动的物品。\"},{\"id\":\"wave-v3-e2\",\"senseId\":\"wave-v3\",\"en\":\"I waved my ticket in the air so my friend could see where I was.\",\"zh\":\"我在空中挥动手中的票，好让朋友看见我在哪里。\",\"note\":\"my ticket 是被挥动的物品；in the air 说明挥动的位置。\"}],\"patterns\":[{\"en\":\"wave + object\",\"zh\":\"挥动某物\",\"note\":\"宾语是实际被挥动的物品，区别于 wave someone over 中接受示意的人。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"wave a flag\",\"zh\":\"挥旗\",\"note\":\"强调人主动挥动旗子。\",\"kind\":\"common-collocation\"},{\"en\":\"wave something in the air\",\"zh\":\"在空中挥动某物\",\"note\":\"可用于票、纸张、手帕等可拿在手中的东西。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"brandish\",\"zh\":\"挥舞；炫示\",\"note\":\"常用于武器或被刻意展示的物品，动作可能带有威胁或炫耀意味；wave a flag 可以只是友好地挥旗。\"}],\"contrasting\":[{\"en\":\"hold something still\",\"zh\":\"拿稳某物，使其不动\",\"note\":\"在比较手中物品是否移动时，可与 wave something 对照。\"}],\"similarNote\":\"brandish 常强调显眼、夸张或带威胁地挥动，不宜直接替换普通打招呼场景中的 wave。\",\"contrastingNote\":\"hold something still 是动作上的对照，不是 wave 所有意义的通用反义词。\"},\"sourceIds\":[\"wiktionary-wave-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"wave-v3\",\"title\":\"挥舞；挥动某物\",\"meaning\":\"及物用法：挥动手中的旗子、纸张等物品。\",\"note\":\"初学阶段先掌握 wave goodbye 和 wave at someone；要表达挥动物品时，wave 后直接接物品。\",\"example\":{\"id\":\"wave-v3-e1\",\"senseId\":\"wave-v3\",\"en\":\"He waved a small flag to get our attention.\",\"zh\":\"他挥动一面小旗来引起我们的注意。\",\"note\":\"a small flag 是 wave 的宾语，表示被挥动的物品。\"},\"sourceIds\":[\"cambridge-wave\"]}]",
+        "valueJson": "[{\"id\":\"wave-v4\",\"title\":\"把头发弄成波浪形\",\"meaning\":\"及物动词，在美发语境中表示使头发形成波浪形弯曲。\",\"note\":\"wave someone's hair 中的头发是被造型的对象，不是随风飘动；日常初学阶段可先识别这一用法。\",\"example\":{\"id\":\"wave-v4-e1\",\"senseId\":\"wave-v4\",\"en\":\"The stylist waved her hair for the wedding.\",\"zh\":\"造型师为她的婚礼把头发做成了波浪形。\",\"note\":\"waved her hair 表示给头发做造型，与挥手或挥动头发不同。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者发音相同，但拼写和意思不同：wave 常指波浪或挥手；waive 指放弃某项权利、要求或费用。\"",
+        "valueJson": "\"两者都读 /weɪv/，但拼写和意思不同：wave 常指波浪或挥手；waive 可指放弃权利，或免除要求、免收费用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"拼写以 v 结尾；可作名词或动词，常用于 waves、wave goodbye。\"",
+        "valueJson": "\"拼写是 w-a-v-e，以 e 结尾；可作名词或动词，常用于 waves、wave goodbye。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"拼写以 ai 开头的部分不同；作动词，常用于 waive a fee，表示免收费用。\"",
+        "valueJson": "\"拼写是 w-a-i-v-e，比 wave 在 a 后多一个 i；作动词，waive a fee 表示免收费用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"wave-confusion-1-e2\",\"senseId\":\"wave-v1\",\"en\":\"The club waived the entry fee for children.\",\"zh\":\"俱乐部免收了儿童入场费。\",\"note\":\"waive 表示放弃收取费用；此例句用于对比拼写和意思。\"}",
+        "valueJson": "{\"id\":\"wave-confusion-1-e2\",\"senseId\":\"wave-v1\",\"en\":\"The club waived our entry fee, and a volunteer waved us inside.\",\"zh\":\"俱乐部免收了我们的入场费，一位志愿者挥手示意我们进去。\",\"note\":\"waived 表示免收费用；waved us inside 属于 wave-v1 的挥手示意义。两词同音，拼写和意思不同。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[\"wiktionary-wave-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"wave 加动词后缀 -er，形成相关动词。\"",
+        "valueJson": "\"与 wave 形式和意义相关的动词，作为整词学习；词尾 -er 在这里不表示“做某事的人”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"写作 waver，保留词尾 e，再加 -r；过去式为 wavered。\"",
+        "valueJson": "\"逐字母写作 w-a-v-e-r，词尾是 -er；过去式为 wavered，现在分词为 wavering，r 不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-wave\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"wavy 和 waver 与 wave 同族；例如过去式 waved 去掉词尾 e 加 -ed，写作 waved。近义词、相关主题词不因此列入词族。\"",
+        "valueJson": "\"wavy 是形容词，拼写时 wave 去 e 加 -y；waver 是相关动词，应作为整词记忆。wave 的过去式只在词尾加 -d，写作 waved；现在分词去 e 加 -ing，写作 waving。近义词、相关主题词不因此列入词族。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-wave\",\"title\":\"Cambridge Dictionary: wave\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/wave\",\"supports\":[\"wave 作名词时表示波浪、波或一阵涌来的事物\",\"wave 作动词时表示挥手示意、挥动物品或随风摆动\",\"wave 的发音、拼写和常见搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-wave-en\",\"title\":\"Wiktionnaire：wave（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/wave#Anglais\",\"supports\":[\"英语名词 wave 的海浪、声光波和波浪形起伏义\",\"英语动词 wave 的起伏、飘动、挥手示意和挥动物品义\",\"wave 的 /weɪv/ 发音、规则词形及与 waive 同音\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1519,
+    "headword": "wave",
+    "meaning_zh": "n. 波, 波浪, 波动, 起伏, 高潮, 潮涌, 挥手致意, (气压)突变\nvi. 波动, 飘动, 挥手示意, 起伏\nvt. 使波动, 使飘扬, 挥舞, 使成波浪形",
+    "phonetic": "/weiv/",
+    "pos": "",
+    "forms": []
+  }
+}

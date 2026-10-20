@@ -1,0 +1,325 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "914aa9f3b9448804c2c463641e8b1b3c769a74e4328dde7f3618c3f0b0692252",
+    "executedReviewPromptHash": "914aa9f3b9448804c2c463641e8b1b3c769a74e4328dde7f3618c3f0b0692252",
+    "reviewHash": "b301d66fd5cdbe225c20519fad6b5fdbfa1a7a07954baa8644c1ca678b783332",
+    "wordId": 57,
+    "inputHash": "9ad527e70f3aa493356dd006406a68761927f18d515e4b11788f65050affefce",
+    "draftHash": "98cf99469bb07c8f4c5934a21a99d58aac56edf3b2d111b6b6ad82aecde167c8",
+    "finalHash": "e32edbc6b5a3cc64aaa9aab44d805ff23022d730d0a5512624ba717e9e94ba1c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/amazing#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:45:56.834Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 241745,
+        "revisionId": 39751938,
+        "revisionTimestamp": "2026-08-02T17:40:04Z",
+        "sha256": "926e4fdc26f7e84ab5f9133194d168d6ef291b4f4280007378b317bc26ab730e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/amazing",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T02:44:04.923Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T02:51:18.665Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/1",
+        "message": "把 amused 误写成“感到惊讶的”；此处应为 amazed。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "现有两例都侧重赞美，未充分展示“出乎意料、令人吃惊”的用法。需补充两个例句，并说明 amazing 不一定评价好事。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "现有反向表达适用于评价是否出色；补充 unsurprising，可同时覆盖“令人惊讶”这一用法。原有语境限定应保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0",
+        "message": "amazing 直接删去 -ing 得到的是 amaz，还须恢复 e 才是 amaze；“保留词尾 e，删去它”也自相矛盾。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/3/formation",
+        "message": "原操作虽能拼出 amazingly，却没有说明实际构词关系；此词由形容词 amazing 加 -ly 构成。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及各 sourceIds",
+        "message": "Oxford 不在实际来源材料中，Cambridge 获取失败，不能承担当前标注的依据。应引用已取得的法语维基词典英语词条；amazed、amazement 的条目保留，但移除没有材料支持的来源关联。词源栏只补充可证实的现代构词关系及相同 URL，不推断历史源流。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "将 amusing 的整词音标称为“开头”，且与 amazing 的词尾比较，容易混淆。应分别说明共同词尾和不同的重读部分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "概括应突出“引起惊讶”和“感到惊讶”的区别，避免让学生误以为 amazing 只用于事物；amusing 也能描述人。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的两项形容词释义及 amaze 的现在分词功能。两项形容词释义可合理合列于 s1；修订后，“令人吃惊”与“非常出色”各有两个例句。s2 已单列非核心的动词屈折用法，现有进行时例句正确，予以保留。法语是词条的解释语言，不是 amazing 的语言或来源。历史说明仅保留现代构词事实，不补写缺乏依据的早期词源。",
+    "senseInventory": [
+      {
+        "sense": "形容词：令人惊讶、吃惊的",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有释义已提及，但两例均偏向赞美；补充警报与床底灰尘两例，明确展示出乎意料且不必表示赞美的用法。"
+      },
+      {
+        "sense": "形容词：非同一般、非常出色的",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "山顶景色和学校项目两例已自然覆盖；近义表达及原有反向表达的语境限定基本准确，无须另拆一个义项。"
+      },
+      {
+        "sense": "动词 amaze 的现在分词：使人惊讶或赞叹",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已在 lessCommonSenses 中说明并举例；is amazing the children 带直接宾语，明确展示动词进行时。这是动词形式，不是第三个形容词义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"对比 amazing 和 amused：前者描述引起感受的事物，后者描述感到惊讶的人。\"",
+        "valueJson": "\"对比 amazing 和 amazed：前者描述引起惊讶或赞叹的人或事，后者描述感到惊讶的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"末尾是 /ɪŋ/，不要读成 amusing 的开头 /əˈmjuːzɪŋ/。\"",
+        "valueJson": "\"词尾 -ing 读 /ɪŋ/；amazing 的重读部分是 /meɪ/，amusing 的重读部分是 /mjuː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常修饰引起惊讶或赞叹的人或事。形容人的感受时，常用 amazed。\"",
+        "valueJson": "\"既可表示事情出乎意料，也常在口语中称赞某人或某事非常出色。表示“令人惊讶”时，事情也可能令人担忧。描述人令人赞叹可用 amazing；描述人感到惊讶则用 amazed。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e3\",\"senseId\":\"s1\",\"en\":\"It's amazing that nobody heard the alarm.\",\"zh\":\"居然没有人听见警报，真令人惊讶。\",\"note\":\"强调情况出乎意料；这里没有赞美的意思。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e4\",\"senseId\":\"s1\",\"en\":\"It's amazing how much dust collects under the bed.\",\"zh\":\"床底下竟然会积这么多灰，真让人吃惊。\",\"note\":\"how much 引出令人吃惊的数量，amazing 在这里不表示“非常出色”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"unsurprising\",\"zh\":\"不出所料的；不足为奇的\",\"note\":\"表示事情符合预期，可与 amazing 的“令人惊讶”用法对照；不表示事情本身好或不好。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"ordinary 只表示不特别；disappointing 描述令人失望的结果，适用于评价表现或结果的语境。\"",
+        "valueJson": "\"ordinary 对应“不特别”；disappointing 用于评价表现或结果不如预期；unsurprising 对应“不出乎意料”。三者分别与 amazing 的相关用法形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"amazing 描述令人惊讶的事物；amazed 描述感到惊讶的人；amusing 描述有趣、逗人笑的事物。\"",
+        "valueJson": "\"amazing 描述令人惊讶或赞叹的人或事；amazed 描述感到惊讶的状态；amusing 描述有趣、逗人笑的人或事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"常修饰人的感受，常见结构是 be amazed at/by。\"",
+        "valueJson": "\"描述人感到惊讶，常见结构是 be amazed at/by。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"事物令人惊叹，用 amazing；人感到惊讶，用 amazed；事情逗人发笑，用 amusing。\"",
+        "valueJson": "\"令人惊讶或赞叹，用 amazing；感到惊讶，用 amazed；有趣、逗人发笑，用 amusing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"amazing 是动词 amaze 加上 -ing 构成的形式；作形容词时，表示“令人惊讶的、令人赞叹的”。\"",
+        "valueJson": "\"从现代构词看，amaze 去掉词尾不发音的 e，再加 -ing，得到 amazing；它既可作 amaze 的现在分词，也可作形容词，表示“令人惊讶的、令人赞叹的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"amazing 去掉 -ing，得到动词原形 amaze。\"",
+        "valueJson": "\"amaze 是 amazing 对应的动词原形；从 amazing 还原为 amaze 时，去掉 -ing 后须补回词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -ing 时保留词尾不发音的 e，删去它：amaze → amazing。\"",
+        "valueJson": "\"加 -ing 时去掉词尾不发音的 e：amaze → amazing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/formation",
+        "expectedValueJson": "\"amazing 去掉 -ing，再加 -ingly。\"",
+        "valueJson": "\"形容词 amazing 加 -ly，构成副词 amazingly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: amazing\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/amazing\",\"supports\":[\"amazing 的词性、读音和常用义\",\"amaze 的现在分词形式及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary-en\",\"title\":\"Wiktionnaire：amazing（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/amazing#Anglais\",\"supports\":[\"形容词的“令人惊讶”与“非同一般”用法\",\"amazing 的读音及其与 amaze 的现在分词关系\",\"与 amusing 的意义区别及派生词 amazingly\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: amazing\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/amazing\",\"supports\":[\"amazing 与 amazed 的用法区别\",\"amazing 与 amusing 的意义区分\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 57,
+    "headword": "amazing",
+    "meaning_zh": "adj. 令人惊异的",
+    "phonetic": "/ә'meiziŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

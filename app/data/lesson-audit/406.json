@@ -1,0 +1,755 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "31da527475e69c27d70275adc170e893db10e40410a484e22773375a393b3a4f",
+    "executedReviewPromptHash": "31da527475e69c27d70275adc170e893db10e40410a484e22773375a393b3a4f",
+    "reviewHash": "fa23632234d6bfdcac94ad59a5f3ad03835633644f8a8b39326bd029cfc785d7",
+    "wordId": 406,
+    "inputHash": "6ae53841503413ea529785cbafaaa94910406a6ea9c8921a986b716de398a84f",
+    "draftHash": "87082edf4a304a07b6e37c00667a66f9a5882c9c8f1daec9153a0482d54fb286",
+    "finalHash": "7e8049eba87d7b3f76eb61759ac3691437948ea3872a4fd85c0ba36da677bfd2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/down#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:36.737Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116271,
+        "revisionId": 39702369,
+        "revisionTimestamp": "2026-07-25T15:31:04Z",
+        "sha256": "83f7a251669c0c23f6e4dd344f704e6430abdc33a8102ac28bc5a4479e7c4169",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/down",
+        "section": "down etymology",
+        "supports": [
+          "Hill phrase and shortening",
+          "Feather homonym has another origin",
+          "Verb from adverb"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T03:15:00.897759+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "20bab80bac9a9fbb672efbdf67c4d8bc93263304b46aeb55af02732b232d9041",
+        "summaryAndSupportsWordCount": 71,
+        "sha256": "20bab80bac9a9fbb672efbdf67c4d8bc93263304b46aeb55af02732b232d9041",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/406.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/down",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:55:31.510Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:02:16.722Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面实际未取得内容，不能承担现有释义、读音和构词说明的来源。应改引已取得的法语维基词典英语词条；纯语法分析和自主补充的常用功能不冒称出自该词典。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "down 以 n 结尾，ow 位于词中；“以 ow 结尾”属于拼写错误。宜直接教授 /aʊ/，不笼统否定旧式音标记法。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan、/senses/0/usageNote、/confusions/0",
+        "message": "不能仅凭 down 后是否出现名词判定词性：put down a bag 中名词是动词短语的宾语，down 仍是副词性小品词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "down the river 通常表示向下游，并非上下游由语境任意决定。介词“沿……向下”的基本义也需要明确解释和足量例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2、/senses/3",
+        "message": "数值下降、设备不可用、情绪低落和愿意参加被交叉合并，各义仅有一个例句，部分标题还与实际内容不符。应按义拆清，表语用法的词性说明与所引词典保持一致，每个核心义补足两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "常用的较低位置、降低音量或速度，以及 write down 的记录功能覆盖不足；补充时须说明动词搭配和代词宾语的位置。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4/examples/1、/senses/4/patterns/0、/senses/4/collocations",
+        "message": "down the ball 在特定运动中有专门含义，不能据此教授普通足球守门员“按下／控制住球”的通用表达。down a tree 的词义也不限定施事必须是风。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0、/wordFamily/1",
+        "message": "downed 只说明使其倒下或落下，不能直接译成枝条被刮断；两处枝条例句也不够典型。拼写说明应针对 down 本词，避免暗示所有以 n 结尾的动词都直接加后缀。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/lessCommonSenses",
+        "message": "已讲羽绒名词却未在总词性中列出名词；词典另有丘陵名词和铁路下行形容词，宜放入扩展义，标明使用范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology、/wordFamily",
+        "message": "词源材料未单独支持“中古英语 down”这一阶段标签，宜改为有据可述的短语缩短与副词发展为动词的顺序。词族可保留规则屈折形式，同时补入实际复合词，明确两者区别。"
+      }
+    ],
+    "coverageAssessment": "已核对所供英语词条的副词、介词、五类形容词、动词释义及两类名词，并检查初中常见功能。修订后九个核心义均至少有两个自然例句；丘陵、铁路下行、羽绒和迅速喝下列为扩展义。法语 laisser tomber 的无例短释不据此扩成“放弃”义。常用搭配与语法补充依据专业语言知识，覆盖范围不等于全部短语动词或专门体育用法。",
+    "senseInventory": [
+      {
+        "sense": "副词：向下移动、降低身体或物体的位置",
+        "coveredBy": [
+          "down-adv-direction"
+        ],
+        "assessment": "保留跳下、坐下两例，并补充 put something down 的宾语位置说明。"
+      },
+      {
+        "sense": "副词：位于较低处",
+        "coveredBy": [
+          "down-adv-direction"
+        ],
+        "assessment": "补入 down in the basement 和 down there 两个位置例句，与移动用法区分。"
+      },
+      {
+        "sense": "介词：沿着道路、走廊等路线",
+        "coveredBy": [
+          "down-prep-route"
+        ],
+        "assessment": "保留两个沿路例句，说明不必有高度下降。"
+      },
+      {
+        "sense": "介词：沿某物向下；沿河向下游",
+        "coveredBy": [
+          "down-prep-route"
+        ],
+        "assessment": "补足楼梯和山坡例句，纠正河流方向说明，并用 up the river 对照。"
+      },
+      {
+        "sense": "副词性小品词：减小程度、音量或速度",
+        "coveredBy": [
+          "down-adv-reduce"
+        ],
+        "assessment": "新增两个例句，区分 turn something down 与不及物的 slow down。"
+      },
+      {
+        "sense": "副词性小品词：写下、记下",
+        "coveredBy": [
+          "down-adv-record"
+        ],
+        "assessment": "新增两个记录信息的例句，说明 write it down 的语序及搭配限制。"
+      },
+      {
+        "sense": "形容词：价格、数量等比原来低",
+        "coveredBy": [
+          "down-adv-state"
+        ],
+        "assessment": "保留稳定的 sense ID，改正展示词性和内容；两个例句分别说明价格下降与销量降幅。"
+      },
+      {
+        "sense": "形容词：情绪低落",
+        "coveredBy": [
+          "down-adj-state"
+        ],
+        "assessment": "独立呈现，补足两个情绪例句，近义与反向表达只绑定心情语境。"
+      },
+      {
+        "sense": "形容词：机器、网站或服务不可用",
+        "coveredBy": [
+          "down-adj-unavailable"
+        ],
+        "assessment": "独立呈现两个例句，说明不可用不必然意味着设备损坏。"
+      },
+      {
+        "sense": "形容词：愿意参加、愿意做某事",
+        "coveredBy": [
+          "down-adj-willing"
+        ],
+        "assessment": "独立呈现两个例句，标明主要见于北美非正式口语；up for 在此可表达相近意思。"
+      },
+      {
+        "sense": "形容词：铁路下行的、远离主要终点站方向的",
+        "coveredBy": [
+          "down-lesscommon-railway"
+        ],
+        "assessment": "补入扩展义，明确这是铁路运行方向术语，与海拔下降无必然关系。"
+      },
+      {
+        "sense": "动词：使倒下、击倒、击落；使落下的结果义",
+        "coveredBy": [
+          "down-verb"
+        ],
+        "assessment": "用树木与拳击对手的自然例句教授可确定的用法；不把无例句的 laisser tomber 扩译成独立的“放弃”义。"
+      },
+      {
+        "sense": "动词：迅速喝下或吞下",
+        "coveredBy": [
+          "down-lesscommon-swallow"
+        ],
+        "assessment": "原例自然，作为扩展义保留，并更正来源。"
+      },
+      {
+        "sense": "名词：丘陵，常用复数 downs",
+        "coveredBy": [
+          "down-lesscommon-hills"
+        ],
+        "assessment": "补入扩展义，说明英国英语及复数使用特点。"
+      },
+      {
+        "sense": "名词：绒羽、羽绒",
+        "coveredBy": [
+          "down-lesscommon-feathers"
+        ],
+        "assessment": "保留原例，补充通常不可数及与方向词同形异源的说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"副词；介词；形容词；动词\"",
+        "valueJson": "\"副词；介词；形容词；动词；名词\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan",
+        "expectedValueJson": "[\"先分清副词 down 后面不直接接名词，介词 down 后面通常接地点或路线。\",\"用 down the road 练习“沿着路”，再用 sit down 练习“坐下”。\",\"复习 be down 和 let somebody down 时，留意 down 已不是单纯的方向词。\"]",
+        "valueJson": "[\"先区分方向副词与介词：看名词属于哪个结构，不能只看 down 后面有没有名词。\",\"用 down the road 练习沿路移动，用 down the stairs 练习沿路线向下，再用 sit down 练习坐下。\",\"把 turn it down、write it down 等搭配整体记住，并区分数值下降、心情低落和服务不可用。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"旧音标 /daun/ 不够准确；这里的元音写作 /aʊ/，像 now 中的元音。\",\"down 的拼写以 ow 结尾，发 /aʊ/。\"]",
+        "valueJson": "[\"元音是双元音 /aʊ/，与 now 中的元音相同。\",\"down 中的 ow 发 /aʊ/；全词以 n 结尾。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"副词：向下；往下\"",
+        "valueJson": "\"副词：向下；在较低处\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示动作朝较低处移动，或从直立、正常状态变成较低的位置。\"",
+        "valueJson": "\"表示向较低处移动，也可说明人或物位于较低的地方。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"副词用法中，down 通常不带直接宾语；如要说沿着一条路移动，down 后接路线名词时通常是介词。\"",
+        "valueJson": "\"这里的 down 本身不带介词宾语。put down a bag 中，a bag 是动词短语 put down 的宾语，down 仍是副词性小品词；不能只看后面有没有名词来判断词性。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-ex-location-1\",\"senseId\":\"down-adv-direction\",\"en\":\"The boxes are down in the basement.\",\"zh\":\"那些箱子在下面的地下室里。\",\"note\":\"down 说明位置较低，不表示箱子正在移动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-ex-location-2\",\"senseId\":\"down-adv-direction\",\"en\":\"From the bridge, we could see fish down there in the water.\",\"zh\":\"我们从桥上能看到下方水里的鱼。\",\"note\":\"down there 指下方的位置。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"put something down\",\"zh\":\"把某物放下\",\"note\":\"可说 put down the bag 或 put the bag down；宾语为代词时说 put it down。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"介词：沿着；顺着\"",
+        "valueJson": "\"介词：沿着；沿……向下\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示沿某条路、河流或路线朝前移动，具体方向要结合上下文判断。\"",
+        "valueJson": "\"表示沿道路等路线移动，也可表示沿楼梯、山坡等向低处移动；用于河流时通常表示向下游。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"介词 down 后通常接名词，如 down the street；它表示沿线移动，不一定表示高度下降。\"",
+        "valueJson": "\"介词 down 后接名词短语。down the street 表示沿街道，未必下坡；down the stairs 表示沿楼梯向下；down the river 通常表示沿河向下游。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-ex-descent-1\",\"senseId\":\"down-prep-route\",\"en\":\"Ella carried the empty basket down the stairs.\",\"zh\":\"艾拉提着空篮子下了楼梯。\",\"note\":\"down the stairs 同时说明路线和向下的方向。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-ex-descent-2\",\"senseId\":\"down-prep-route\",\"en\":\"We slid down the snowy hill on a sled.\",\"zh\":\"我们坐着雪橇滑下了雪坡。\",\"note\":\"down the snowy hill 表示沿着雪坡向低处滑行。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"沿着河流\"",
+        "valueJson": "\"沿河向下游\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"可指顺着河道行进；上游或下游方向需由语境决定。\"",
+        "valueJson": "\"通常指沿河向下游行进，与 up the river（沿河向上游）相对。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"up the river\",\"zh\":\"沿河向上游\",\"note\":\"在河流方向上，与 down the river 的向下游相对。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"副词：处于较低或停止状态\"",
+        "valueJson": "\"形容词：价格、数量等下降\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示价格、数量或水平降低，也可在 be down 中表示机器、网络等暂时不能运行。\"",
+        "valueJson": "\"表示价格、销量、数量等比之前低或少。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"具体意思取决于主语：价格或数量降低；系统、网站等 be down 则表示故障或不可用。\"",
+        "valueJson": "\"常放在 be 等系动词后作表语。down by 接下降的幅度，down to 接下降后的数值。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"down-ex-6\",\"senseId\":\"down-adv-state\",\"en\":\"The school website is down, so I can't check the notice.\",\"zh\":\"学校网站出故障了，所以我没法查看通知。\",\"note\":\"be down 表示网站暂时无法使用。\"}",
+        "valueJson": "{\"id\":\"down-ex-reduction-2\",\"senseId\":\"down-adv-state\",\"en\":\"Sales are down by ten percent this month.\",\"zh\":\"这个月的销量下降了百分之十。\",\"note\":\"down by ten percent 说明下降的幅度，不是下降后的数值。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"be down\",\"zh\":\"处于停机或不可用状态\",\"note\":\"主语通常是网站、电脑、服务等；此处不是“向下”。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"be down by + 降幅 / be down to + 数值\",\"zh\":\"下降了……／降到了……\",\"note\":\"down by 10% 表示下降百分之十；down to $10 表示降到十美元。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"the system is down\",\"zh\":\"系统停用了／发生故障\",\"note\":\"表示系统暂时不能正常运行。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"lower 常作形容词或动词；down 在 prices are down 中作表语副词。\"",
+        "valueJson": "\"lower 可作形容词或动词；这里的 down 作表语，说明数值比之前低。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"out of order\",\"zh\":\"出故障；不能使用\",\"note\":\"常用于机器或设备故障，语气比 be down 更直接说明设备失灵。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"working\",\"zh\":\"正常运转的\",\"note\":\"在网站或系统语境中，与 be down 的不可用状态相对。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"up 对应数值上升；working 对应设备或服务正常运行。\"",
+        "valueJson": "\"这里用 up 对照价格或数量上升，例如 sales are up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"形容词：情绪低落；减少；关闭\"",
+        "valueJson": "\"形容词：情绪低落\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"可形容人情绪低落，也可表示价格、数量减少；在 be down for something 中还可表示愿意参加。\"",
+        "valueJson": "\"形容人心情低落、沮丧或提不起劲。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"作形容词时常放在 be 等系动词后；be down for 是非正式表达，表示愿意或有兴趣参加。\"",
+        "valueJson": "\"多放在 be、feel 等系动词后，描述人的心情。I'm down 在回应活动邀请时也可能表示愿意参加，要结合语境区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"down-ex-8\",\"senseId\":\"down-adj-state\",\"en\":\"Are you down for a game of basketball after school?\",\"zh\":\"放学后你愿意打场篮球吗？\",\"note\":\"be down for 在口语中表示愿意参加。\"}",
+        "valueJson": "{\"id\":\"down-ex-mood-2\",\"senseId\":\"down-adj-state\",\"en\":\"I felt a little down when my best friend moved away.\",\"zh\":\"最好的朋友搬走时，我有些难过。\",\"note\":\"a little down 表示有些情绪低落。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"be down for + noun\",\"zh\":\"愿意参加……；想做……\",\"note\":\"非正式口语表达，for 后接活动或计划。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"I'm down.\",\"zh\":\"我愿意；我参加。\",\"note\":\"非正式口语中表示接受提议，具体含义由前文活动决定。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"willing\",\"zh\":\"愿意的\",\"note\":\"willing 是较中性的形容词；I'm down 更口语、更轻松。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"not interested\",\"zh\":\"不感兴趣\",\"note\":\"回应活动提议时，可与 I'm down 的愿意参加形成对照。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"sad 更具体地表示难过，down 范围较宽；willing 较正式、中性。\"",
+        "valueJson": "\"sad 明确表示难过；down 还可表示一时情绪低落、提不起精神。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"cheerful 对照低落情绪；not interested 对照愿意参加活动。\"",
+        "valueJson": "\"cheerful 对照低落的心情，这一对照只用于情绪语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"这是及物动词，后面接被击倒的人或物；过去式和过去分词为 downed。\"",
+        "valueJson": "\"这是及物动词，常见于灾害或体育报道，后面接被击倒的人或物；过去式和过去分词都是 downed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/1",
+        "expectedValueJson": "{\"id\":\"down-ex-10\",\"senseId\":\"down-verb\",\"en\":\"The goalkeeper downed the ball with one hand.\",\"zh\":\"守门员用一只手把球按了下来。\",\"note\":\"downed 表示使球落下或停在低处。\"}",
+        "valueJson": "{\"id\":\"down-ex-10\",\"senseId\":\"down-verb\",\"en\":\"The boxer downed his opponent in the second round.\",\"zh\":\"这名拳击手在第二回合击倒了对手。\",\"note\":\"downed 表示把对手击倒在地。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/0",
+        "expectedValueJson": "{\"en\":\"down + a tree / opponent / ball\",\"zh\":\"击倒树木／对手／球\",\"note\":\"down 作动词时直接接被弄倒或压下的对象。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"down + a tree / an opponent\",\"zh\":\"使树倒下／击倒对手\",\"note\":\"down 作动词时直接接被击倒或弄倒的人或物。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/0/zh",
+        "expectedValueJson": "\"刮倒一棵树\"",
+        "valueJson": "\"使一棵树倒下\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/1",
+        "expectedValueJson": "{\"en\":\"down the ball\",\"zh\":\"把球按下／控制住球\",\"note\":\"多见于体育语境，表示使球落下或停止移动。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"down an opponent\",\"zh\":\"击倒对手\",\"note\":\"可用于拳击等比赛的叙述；日常也常说 knock an opponent down。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"常见于 down jacket（羽绒服）等组合。\"",
+        "valueJson": "\"此义通常作不可数名词，如 duck down（鸭绒）；down jacket 指羽绒服。它与方向义 down 同形异源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"看 down 后面是否直接接路线或地点名词。\"",
+        "valueJson": "\"要看名词属于哪个结构：down the hill 中 the hill 是介词 down 的宾语；put down a bag 中 a bag 是动词短语的宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"down 后不直接接宾语，表示动作向下。\"",
+        "valueJson": "\"down 在这里是副词，本身不带宾语，说明动作向下。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词短语中的 down\",\"note\":\"down 后出现名词，也可能是因为名词充当动词短语的宾语。\",\"example\":{\"id\":\"down-confusion-ex-5\",\"senseId\":\"down-adv-direction\",\"en\":\"Please put down that heavy box.\",\"zh\":\"请把那个沉箱子放下。\",\"note\":\"也可说 put that heavy box down；that heavy box 不是介词 down 的宾语。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"down 后直接接路线或地点名词时，多作介词；单独说明方向时，多作副词。\"",
+        "valueJson": "\"判断时看语法关系，不只看相邻词：down the hill 是介词短语，put down a bag 中的 down 是副词性小品词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"方向义的 down 与羽绒义的 down 是同形异源词。方向义源于古英语短语 ofdune，原意与“离开山丘”有关，后来缩短为 down；其中 dun 指“山丘”。表示绒羽的 down 则另有来源，来自古诺尔斯语 dúnn，早期来源仍不确定。\"",
+        "valueJson": "\"方向义的 down 与绒羽义的 down 是同形异源词。方向义由古英语短语 ofdune 缩短而来，原意是“离开山丘”，其中 dun 指“山丘”。表示“使倒下”的动词 down 又由方向副词发展而来。绒羽名词则来自古诺尔斯语 dúnn，其更早来源仍不确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"中古英语\",\"form\":\"down\",\"meaning\":\"延续为表示向下、往下的方向词。\"}",
+        "valueJson": "{\"language\":\"英语\",\"form\":\"down（方向副词）\",\"meaning\":\"由古英语短语缩短而来，表示向下、往下。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/etymology/stages/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"language\":\"英语\",\"form\":\"down（动词）\",\"meaning\":\"由方向副词发展出“使倒下”的动词用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上历史线索用于解释方向义；绒羽义 down 是另一条来源，不能把两条历史关系连成一条。现代学习时可把 sit down 等搭配作为整体记忆。\"",
+        "valueJson": "\"这条演变线展示方向义及由它发展的动词用法。绒羽义来自另一条独立来源，不能把古诺尔斯语 dúnn 串进同一条演变链。现代搭配和助记联想也不等同于历史词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"以 n 结尾直接加 -ed，写作 downed。\"",
+        "valueJson": "\"down 保留词尾的一个 n，直接加 -ed，写作 downed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"down-family-ex-1\",\"senseId\":\"down-verb\",\"en\":\"The storm downed a large branch.\",\"zh\":\"暴风雨刮断了一根大树枝。\",\"note\":\"downed 是规则过去式。\"}",
+        "valueJson": "{\"id\":\"down-family-ex-1\",\"senseId\":\"down-verb\",\"en\":\"The storm downed a tall tree.\",\"zh\":\"暴风雨刮倒了一棵高树。\",\"note\":\"downed 是规则过去式，表示使树倒下。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"直接加 -ing，写作 downing。\"",
+        "valueJson": "\"down 保留词尾的一个 n，直接加 -ing，写作 downing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example",
+        "expectedValueJson": "{\"id\":\"down-family-ex-2\",\"senseId\":\"down-verb\",\"en\":\"The wind is downing branches across the field.\",\"zh\":\"风正把田野里的树枝刮落。\",\"note\":\"downing 是现在分词。\"}",
+        "valueJson": "{\"id\":\"down-family-ex-2\",\"senseId\":\"down-verb\",\"en\":\"Heavy snow is downing trees along the road.\",\"zh\":\"大雪正压倒路边的树木。\",\"note\":\"downing 是现在分词，与 is 构成现在进行时。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-down\"]",
+        "valueJson": "[\"wiktionary-down\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"downed 和 downing 是动词 down 的规则屈折形式，不是新词根；downstairs、downward 等是含 down 的复合或派生词，此处不把所有相关词都列为同族词。\"",
+        "valueJson": "\"downed 和 downing 是动词 down 的规则屈折形式；downstairs、downstream 是含方向成分 down 的复合词。要把词形变化与构成新词区分开。羽绒义的 down 来自另一条历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-down\",\"title\":\"Cambridge Dictionary：down\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/down\",\"supports\":[\"down 的副词、介词、形容词、动词和名词用法\",\"down 的发音与常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-down\",\"title\":\"Wiktionnaire：down（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/down#Anglais\",\"supports\":[\"down 的 /daʊn/ 发音及向下的副词和介词用法\",\"情绪低落、价格下降、不可用、愿意参加等形容词用法\",\"使倒下与迅速喝下的动词用法及规则变化\",\"丘陵、绒羽两类名词与铁路下行的专门用法\",\"downstairs、downstream 等相关复合词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"使倒下义的动词 down 由方向副词发展而来\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-adj-unavailable\",\"title\":\"形容词：机器、网站等不可用\",\"meaning\":\"表示机器、网站、网络或服务暂时无法正常使用。\",\"usageNote\":\"常用 be down。不可用可能是故障，也可能是维护，不必然表示设备损坏。\",\"examples\":[{\"id\":\"down-ex-6\",\"senseId\":\"down-adj-unavailable\",\"en\":\"The school website is down, so I can't check the notice.\",\"zh\":\"学校网站暂时无法访问，所以我没法查看通知。\",\"note\":\"down 表示网站暂时不可用。\"},{\"id\":\"down-ex-outage-2\",\"senseId\":\"down-adj-unavailable\",\"en\":\"The ticket machine is down, so we have to buy our tickets at the counter.\",\"zh\":\"售票机暂时用不了，我们得去柜台买票。\",\"note\":\"这里描述设备无法提供服务的状态。\"}],\"patterns\":[{\"en\":\"a website / system / machine is down\",\"zh\":\"网站／系统／机器暂时不可用\",\"note\":\"主语决定具体是哪项服务或设备无法使用。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be down for maintenance\",\"zh\":\"因维护而暂停运行\",\"note\":\"说明不可用的原因是维护。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"unavailable\",\"zh\":\"不可用的\",\"note\":\"范围更广，也可用于资源、时间或人员，不都能换成 down。\"},{\"en\":\"out of order\",\"zh\":\"发生故障的\",\"note\":\"常用于机器或设备；网站无法访问时通常用 down 或 unavailable。\"}],\"contrasting\":[{\"en\":\"up and running\",\"zh\":\"正常运行的\",\"note\":\"在设备或服务语境中，对照不可用的状态。\"}],\"similarNote\":\"down 常用于技术服务或设备的运行状态；out of order 更明确地指设备失灵。\",\"contrastingNote\":\"这里的 up and running 表示设备或服务已经能够正常工作。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-adj-willing\",\"title\":\"形容词：愿意参加；愿意做\",\"meaning\":\"表示愿意接受某项提议、参加某项活动或尝试做某事。\",\"usageNote\":\"主要见于美国、加拿大的非正式口语。I'm down 在回应活动邀请时可表示“我参加”；脱离语境也可能表示心情低落。\",\"examples\":[{\"id\":\"down-ex-8\",\"senseId\":\"down-adj-willing\",\"en\":\"Are you down for a game of basketball after school?\",\"zh\":\"放学后你愿意打场篮球吗？\",\"note\":\"be down for 后接活动名词。\"},{\"id\":\"down-ex-willing-2\",\"senseId\":\"down-adj-willing\",\"en\":\"I'm down to try that new café after class.\",\"zh\":\"下课后我愿意去试试那家新咖啡馆。\",\"note\":\"be down to do 表示愿意做某事。\"}],\"patterns\":[{\"en\":\"be down for + 活动名词\",\"zh\":\"愿意参加……\",\"note\":\"如 be down for a game，常用于熟人间的轻松对话。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be down to + 动词原形\",\"zh\":\"愿意做……\",\"note\":\"用于非正式口语，to 后接动词原形。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"I'm down.\",\"zh\":\"我愿意；我参加。\",\"note\":\"作为对活动提议的回应使用，意思由前文确定。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be up for something\",\"zh\":\"愿意参加某事\",\"note\":\"在活动邀请语境中与 be down for 意思相近，此时 up 与 down 不构成反义。\"},{\"en\":\"willing\",\"zh\":\"愿意的\",\"note\":\"语体较中性；表示愿意做某事时通常用 willing to do。\"}],\"contrasting\":[{\"en\":\"not interested\",\"zh\":\"不感兴趣\",\"note\":\"回应同一活动提议时，与愿意参加形成对照。\"}],\"similarNote\":\"这些表达都能表示愿意参与，但句型不同；down 的这一用法口语色彩较强。\",\"contrastingNote\":\"这里比较的是对活动提议的态度，不是上下方向或情绪。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-adv-reduce\",\"title\":\"副词／小品词：减弱；降低程度\",\"meaning\":\"与 turn、slow 等动词连用，表示音量、速度等减小或降低。\",\"usageNote\":\"turn the music down 和 turn down the music 都可以；宾语为代词时说 turn it down。slow down 可不带宾语，表示放慢速度。\",\"examples\":[{\"id\":\"down-ex-degree-1\",\"senseId\":\"down-adv-reduce\",\"en\":\"Could you turn the music down? I'm trying to study.\",\"zh\":\"能把音乐调小一点吗？我在学习。\",\"note\":\"turn the music down 表示降低音乐的音量。\"},{\"id\":\"down-ex-degree-2\",\"senseId\":\"down-adv-reduce\",\"en\":\"The driver slowed down when he saw the school gate.\",\"zh\":\"司机看到校门时放慢了车速。\",\"note\":\"这里的 slow down 不带宾语，表示减速。\"}],\"patterns\":[{\"en\":\"turn something down / turn it down\",\"zh\":\"把某物调小／把它调小\",\"note\":\"这里用于声音等强度；turn down an invitation 则是拒绝邀请，属于另一搭配义。\",\"kind\":\"sentence-pattern\"},{\"en\":\"slow down\",\"zh\":\"放慢速度\",\"note\":\"可单独使用；也可说 slow the car down，表示使车减速。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"turn the volume down\",\"zh\":\"调低音量\",\"note\":\"volume 指音量。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"lower the volume\",\"zh\":\"降低音量\",\"note\":\"与 turn the volume down 在调音量的语境中意思相近。\"},{\"en\":\"reduce speed\",\"zh\":\"降低速度\",\"note\":\"与 slow down 在减速语境中相近，语体较正式。\"}],\"contrasting\":[{\"en\":\"turn the volume up\",\"zh\":\"调高音量\",\"note\":\"只对应音量调节。\"},{\"en\":\"speed up\",\"zh\":\"加速\",\"note\":\"只对应速度增加。\"}],\"similarNote\":\"相近表达要跟具体量对应：音量用 lower，速度可用 reduce speed。\",\"contrastingNote\":\"音量降低对照调高音量；速度降低对照加速，不能跨语境套用。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-adv-record\",\"title\":\"副词／小品词：写下；记下\",\"meaning\":\"在 write down、note down 等搭配中，表示把信息记录下来。\",\"usageNote\":\"这是特定动词搭配中的功能，不能把 down 单独当作“记录”使用。可说 write down the address 或 write the address down；代词宾语放中间，如 write it down。\",\"examples\":[{\"id\":\"down-ex-record-1\",\"senseId\":\"down-adv-record\",\"en\":\"Please write down the address of the hotel.\",\"zh\":\"请记下酒店的地址。\",\"note\":\"write down 表示把信息写下来。\"},{\"id\":\"down-ex-record-2\",\"senseId\":\"down-adv-record\",\"en\":\"I wrote the Wi-Fi password down on a piece of paper.\",\"zh\":\"我把无线网络密码记在了一张纸上。\",\"note\":\"名词宾语 the Wi-Fi password 可以放在 wrote 和 down 之间。\"}],\"patterns\":[{\"en\":\"write something down / write it down\",\"zh\":\"把某事记下／把它记下\",\"note\":\"代词作宾语时放在 write 与 down 之间。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"write down an address\",\"zh\":\"记下地址\",\"note\":\"用于记录具体信息。\",\"kind\":\"common-collocation\"},{\"en\":\"note down the details\",\"zh\":\"记下细节\",\"note\":\"note down 也表示作简短记录。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"make a note of\",\"zh\":\"把……记下来\",\"note\":\"后接所记录的信息，如 make a note of the address。\"},{\"en\":\"record\",\"zh\":\"记录\",\"note\":\"范围更广，也可包括录音或录像，不都能换成 write down。\"}],\"contrasting\":[{\"en\":\"erase / delete a note\",\"zh\":\"擦去／删除一条记录\",\"note\":\"只对照清除已记录的内容：可擦掉的字用 erase，电子记录可用 delete。\"}],\"similarNote\":\"write down 明确指书写记录；record 可用多种方式保存信息。\",\"contrastingNote\":\"记录义没有通用于所有情形的单词反义词；清除记录要按载体选择表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-lesscommon-hills\",\"title\":\"名词：丘陵；绵延的草丘\",\"meaning\":\"指开阔的低矮丘陵地带。\",\"note\":\"主要见于英国英语，常用复数 downs。这个丘陵名词与方向词在历史上有关，与绒羽名词不同源。\",\"example\":{\"id\":\"down-ex-hills-1\",\"senseId\":\"down-lesscommon-hills\",\"en\":\"Sheep were grazing on the downs behind the village.\",\"zh\":\"羊群正在村后绵延的草丘上吃草。\",\"note\":\"downs 在这里是复数名词，不是方向副词。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"down-lesscommon-railway\",\"title\":\"形容词：铁路下行的\",\"meaning\":\"在英国铁路用语中，指远离主要终点站等方向的线路或列车。\",\"note\":\"这是铁路运行方向术语，不表示线路一定向低处延伸；具体方向按线路规定理解。\",\"example\":{\"id\":\"down-ex-railway-1\",\"senseId\":\"down-lesscommon-railway\",\"en\":\"The train waited for a signal on the down line.\",\"zh\":\"列车在下行线上等待信号。\",\"note\":\"down line 指铁路下行线。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"downstairs\",\"partOfSpeech\":\"副词\",\"meaning\":\"在楼下；到楼下\",\"formation\":\"down + stairs，构成复合词。\",\"spellingNote\":\"连写为 downstairs；stairs 保留词尾 s。\",\"example\":{\"id\":\"down-family-ex-3\",\"senseId\":\"down-adv-direction\",\"en\":\"I left my shoes downstairs by the front door.\",\"zh\":\"我把鞋放在了楼下前门旁。\",\"note\":\"downstairs 在这里说明楼下的位置。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"downstream\",\"partOfSpeech\":\"副词；形容词\",\"meaning\":\"向下游；在下游；下游的\",\"formation\":\"down + stream，构成复合词；stream 指溪流或水流。\",\"spellingNote\":\"连写为 downstream。\",\"example\":{\"id\":\"down-family-ex-4\",\"senseId\":\"down-prep-route\",\"en\":\"We paddled downstream to the bridge.\",\"zh\":\"我们划着船顺流到了那座桥。\",\"note\":\"downstream 作副词，明确表示向下游。\"},\"sourceIds\":[\"wiktionary-down\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 406,
+    "headword": "down",
+    "meaning_zh": "adv. 向下；往下\nprep. 沿着；顺着",
+    "phonetic": "/daun/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fbdaac83bb25ec2eb33f93beb5167b801884a3985774d56b05f136639e442cea",
+    "executedReviewPromptHash": "0214b99ae594ba36df1925739f1ed1799021640f047392306f091f6568412199",
+    "reviewHash": "edc32b256a6d6871d23470acbfec473dfd476bf62e3870e13a5eb5d32befeb4c",
+    "wordId": 1522,
+    "inputHash": "194fd6a4c7f5f79cad9e65dbb7c0c6d3bef8bd596d50debfa469570caa68a37f",
+    "draftHash": "4df96b48ac83f59341c20d3ba8c3b8170bf775ae8894aeaf67633b14e158789c",
+    "finalHash": "b01088711911bafa96340cd2b6f861b9423073fcf6ea4c5de5858370297c260e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/weak#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.131Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117333,
+        "revisionId": 39768749,
+        "revisionTimestamp": "2026-08-03T09:05:01Z",
+        "sha256": "d8753de8c67b13e188c1bb745187cc8e5dc742f3135661bcb85888409720c35e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/weak",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:36:15.160Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:56:18.897Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及各处 sourceIds",
+        "message": "初稿全部引用未成功获取正文的 Cambridge 页面，不能据此声称该页支持具体义项、搭配或构词。改用实际取得的英语词条，并仅为其明确支持的内容保留引用；其余专业语言补充不挂靠该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "论证说服力与信号强度被合为一义，各只有一个例句，近反义说明也只适用于论证。须拆开，并分别补足两个例句及对应表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏“某科目或技能较差”和“饮品味淡、浓度低”两个常用义；学习计划已提及 weak in，却没有对应教学内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "意志软弱及缺乏实力、影响力或执行能力均属常用延伸义，不宜只放在次要义项中各举一例。政府 weak 也不必然表示法定权力少，应区分权力、实力与执行能力。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例句只使用 week，却绑定身体虚弱义。改为同时出现 weak 和 week 的自然例句，使 senseId 确实对应句中用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/patterns/0/kind",
+        "message": "weak evidence for something 是名词搭配，应标为 common-collocation。"
+      }
+    ],
+    "coverageAssessment": "已核对所给中文释义、实际取得的英语词条及常用英语用法。修订后覆盖身体虚弱、结构不牢、论证不充分、强度微弱、能力欠佳、味淡、意志软弱及实力或影响力不足，每个主要义均有两个具体原创例句。原有读音、规则比较形式及词族拼写可保留。实际来源只给出概括义和少量词汇关系，不能充当全部细分用法的逐项出处；其词源段仅有待补标记，没有可用的历史词源信息，因此保留非历史助记，不新增历史阶段或历史词源引用。本次为独立模型审校。",
+    "senseInventory": [
+      {
+        "sense": "形容词：身体虚弱、肌肉或身体部位力量不足",
+        "coveredBy": [
+          "weak-physical"
+        ],
+        "assessment": "原稿两例覆盖充分；修正来源引用即可。"
+      },
+      {
+        "sense": "形容词：结构或材料不牢固、强度不足",
+        "coveredBy": [
+          "weak-structure"
+        ],
+        "assessment": "原稿两例自然，近反义语境基本准确；撤去无正文支持的来源引用。"
+      },
+      {
+        "sense": "形容词：论据、理由、证据等说服力不足",
+        "coveredBy": [
+          "weak-argument"
+        ],
+        "assessment": "移出信号义，补足第二个论证例句，并调整标题、释义及搭配。"
+      },
+      {
+        "sense": "形容词：信号、声音等强度低、微弱",
+        "coveredBy": [
+          "weak-intensity"
+        ],
+        "assessment": "从论证义中独立，分别用手机信号和声音举例。"
+      },
+      {
+        "sense": "形容词：某科目、技能或能力较差",
+        "coveredBy": [
+          "weak-ability"
+        ],
+        "assessment": "补入常用义，区分 weak in 与 weak at 的常见搭配。"
+      },
+      {
+        "sense": "形容词：饮品味淡、浓度低",
+        "coveredBy": [
+          "weak-concentration"
+        ],
+        "assessment": "补入 weak tea、weak coffee，说明此处 strong 表示味浓。"
+      },
+      {
+        "sense": "形容词：意志薄弱、容易屈服",
+        "coveredBy": [
+          "weak-character"
+        ],
+        "assessment": "提升为主要义，补足两例及 weak-willed、strong-willed 等对应表达。"
+      },
+      {
+        "sense": "形容词：缺乏实力、影响力或执行能力",
+        "coveredBy": [
+          "weak-power"
+        ],
+        "assessment": "提升为主要义，以政府执行能力和谈判地位举例，避免等同于完全没有权力。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-weak\",\"title\":\"Cambridge Dictionary: weak\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/weak\",\"supports\":[\"常见形容词义项与搭配\",\"比较级和最高级形式\",\"weak 与 week 的发音辨析\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-weak\",\"title\":\"Wiktionnaire：weak（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/weak#Anglais\",\"supports\":[\"英语形容词的基本义：弱的\",\"读音 /wiːk/ 及同音词 week\",\"规则比较级和最高级变化\",\"近义词 feeble 与反义词 strong\",\"派生词 weakness 和 weaken\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"论据或信号不够有力\"",
+        "valueJson": "\"论证或证据不够有力\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"形容理由、证据、解释或信号力度不足，不能有力地支持结论或传递信息。\"",
+        "valueJson": "\"形容论证、理由、证据或解释不充分，缺乏说服力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常修饰 argument、evidence、reason、signal 等。\"",
+        "valueJson": "\"常修饰 argument、evidence、reason、explanation 等；表示支持某个观点的力度不足，不代表结论必定错误。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"weak-argument-ex2\",\"senseId\":\"weak-argument\",\"en\":\"We received a weak phone signal in the basement.\",\"zh\":\"我们在地下室收到的手机信号很弱。\",\"note\":\"形容信号强度不足。\"}",
+        "valueJson": "{\"id\":\"weak-argument-ex2\",\"senseId\":\"weak-argument\",\"en\":\"His argument for buying a new phone was weak because his old one still worked well.\",\"zh\":\"他买新手机的理由缺乏说服力，因为他的旧手机仍然很好用。\",\"note\":\"a weak argument 表示理由或论证不够有力。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"a weak signal\",\"zh\":\"微弱的信号\",\"note\":\"常指无线电、手机或声音信号强度小。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a weak explanation\",\"zh\":\"缺乏说服力的解释\",\"note\":\"说明解释难以让人信服。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weak-intensity\",\"title\":\"微弱；强度低\",\"meaning\":\"形容信号、声音等强度不足。\",\"usageNote\":\"常见于手机信号不佳、声音轻弱等情境；具体强度要看所修饰的名词。\",\"examples\":[{\"id\":\"weak-intensity-ex1\",\"senseId\":\"weak-intensity\",\"en\":\"We received a weak phone signal in the basement.\",\"zh\":\"我们在地下室收到的手机信号很弱。\",\"note\":\"weak signal 表示信号强度低。\"},{\"id\":\"weak-intensity-ex2\",\"senseId\":\"weak-intensity\",\"en\":\"Her voice was so weak that I had to move closer to hear her.\",\"zh\":\"她的声音很微弱，我得靠近些才能听清。\",\"note\":\"weak voice 描写声音轻弱、缺乏力量。\"}],\"patterns\":[{\"en\":\"The signal is weak.\",\"zh\":\"信号很弱。\",\"note\":\"weak 作表语说明信号强度。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a weak signal\",\"zh\":\"微弱的信号\",\"note\":\"常用于手机、无线电等信号。\",\"kind\":\"common-collocation\"},{\"en\":\"a weak voice\",\"zh\":\"微弱的声音\",\"note\":\"常形容说话声轻弱无力。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"faint\",\"zh\":\"微弱的；不易察觉的\",\"note\":\"用于声音或信号时，强调难以听见或察觉。\"}],\"contrasting\":[{\"en\":\"strong\",\"zh\":\"强的；有力的\",\"note\":\"strong signal 指强信号；strong voice 指有力的声音。\"}],\"similarNote\":\"faint 侧重不易察觉，weak 侧重强度或力量不足。\",\"contrastingNote\":\"此义中常用 strong 对照；形容声音时，loud 则专门强调音量大。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weak-ability\",\"title\":\"某科目或技能较差\",\"meaning\":\"形容人在某一方面能力不足、不擅长，或某项技能比较薄弱。\",\"usageNote\":\"科目或领域常接 weak in；具体活动常接 weak at，后面可用名词或动名词。两种介词的用法存在重叠。\",\"examples\":[{\"id\":\"weak-ability-ex1\",\"senseId\":\"weak-ability\",\"en\":\"I'm weak in maths, so I practise a little every day.\",\"zh\":\"我的数学比较差，所以我每天都练习一点。\",\"note\":\"weak in maths 表示数学是薄弱科目。\"},{\"id\":\"weak-ability-ex2\",\"senseId\":\"weak-ability\",\"en\":\"Ben is weak at spelling, so he checks difficult words in a dictionary.\",\"zh\":\"本不擅长拼写，所以他会用词典核对难词。\",\"note\":\"weak at spelling 表示拼写能力较差。\"}],\"patterns\":[{\"en\":\"be weak in a subject\",\"zh\":\"某门功课较差\",\"note\":\"如 weak in maths；in 常引出科目或领域。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be weak at doing something\",\"zh\":\"不擅长做某事\",\"note\":\"at 后可接动名词，如 spelling。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"weak reading skills\",\"zh\":\"薄弱的阅读能力\",\"note\":\"weak 可直接修饰某项技能。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"poor at\",\"zh\":\"不擅长\",\"note\":\"常接活动名称或动名词，如 poor at spelling。\"}],\"contrasting\":[{\"en\":\"good at\",\"zh\":\"擅长\",\"note\":\"用于具体活动或技能，与 weak at 对照。\"},{\"en\":\"strong in\",\"zh\":\"在某方面能力强\",\"note\":\"常用于科目或领域，如 strong in maths。\"}],\"similarNote\":\"此处 weak 表示能力较差；poor at 也用于说明某人不擅长某事。\",\"contrastingNote\":\"根据原搭配选择 good at 或 strong in，不要把介词组合机械互换。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weak-concentration\",\"title\":\"味淡；浓度低\",\"meaning\":\"形容茶、咖啡等饮品味道不浓，或溶液浓度低。\",\"usageNote\":\"日常尤其常见于 weak tea、weak coffee；描述的是浓淡，不是在说饮品让人虚弱。\",\"examples\":[{\"id\":\"weak-concentration-ex1\",\"senseId\":\"weak-concentration\",\"en\":\"The tea was too weak, so I left the tea bag in for another minute.\",\"zh\":\"茶太淡了，所以我让茶包又泡了一分钟。\",\"note\":\"weak tea 指茶味淡。\"},{\"id\":\"weak-concentration-ex2\",\"senseId\":\"weak-concentration\",\"en\":\"This coffee is too weak for me; I'll use more coffee next time.\",\"zh\":\"这杯咖啡对我来说太淡了；下次我会多放些咖啡。\",\"note\":\"weak coffee 指咖啡不够浓。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"weak tea\",\"zh\":\"淡茶\",\"note\":\"与 strong tea（浓茶）相对。\",\"kind\":\"common-collocation\"},{\"en\":\"weak coffee\",\"zh\":\"淡咖啡\",\"note\":\"表示咖啡味不浓。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"watery\",\"zh\":\"水分过多、寡淡的\",\"note\":\"形容饮品时常带不满，强调喝起来像水、缺少味道。\"},{\"en\":\"diluted\",\"zh\":\"被稀释的\",\"note\":\"说明经过加水等稀释过程；weak 本身只说明浓度或味道较淡。\"}],\"contrasting\":[{\"en\":\"strong\",\"zh\":\"浓的\",\"note\":\"strong tea、strong coffee 分别表示浓茶、浓咖啡。\"}],\"similarNote\":\"weak 不一定表示后来加了水，也可能是泡茶时间短或咖啡用量少。\",\"contrastingNote\":\"此处 strong 表示味浓，不表示饮用者身体强壮。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weak-character\",\"title\":\"意志薄弱；软弱\",\"meaning\":\"形容人缺乏坚定的意志，容易向压力或诱惑屈服。\",\"usageNote\":\"用于评价人的性格或某次表现，常带批评意味；不单凭身体虚弱就作这种判断。\",\"examples\":[{\"id\":\"weak-character-ex1\",\"senseId\":\"weak-character\",\"en\":\"He was too weak to say no to his friends.\",\"zh\":\"他意志太薄弱，没法拒绝朋友。\",\"note\":\"too weak to 在这里指缺乏坚持拒绝的意志。\"},{\"id\":\"weak-character-ex2\",\"senseId\":\"weak-character\",\"en\":\"I was weak and let the children stay up after they begged me.\",\"zh\":\"孩子们一央求，我就心软了，让他们晚睡。\",\"note\":\"weak 在这里说明没有坚持原先的要求。\"}],\"patterns\":[{\"en\":\"too weak to say no\",\"zh\":\"软弱得无法拒绝\",\"note\":\"说明在他人压力下难以坚持立场。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a weak character\",\"zh\":\"软弱的性格\",\"note\":\"这里的 character 指性格。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"weak-willed\",\"zh\":\"意志薄弱的\",\"note\":\"专门描述意志不坚定；weak 的使用范围更广。\"}],\"contrasting\":[{\"en\":\"strong-willed\",\"zh\":\"意志坚定的\",\"note\":\"强调有坚定意志、不容易被左右。\"},{\"en\":\"firm\",\"zh\":\"坚定的\",\"note\":\"用于立场或对待他人的态度，强调坚持决定。\"}],\"similarNote\":\"需要明确说意志薄弱时可用 weak-willed；weak 要结合上下文理解。\",\"contrastingNote\":\"strong-willed 强调意志，firm 强调态度或立场坚定。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weak-power\",\"title\":\"实力、影响力或执行能力不足\",\"meaning\":\"形容政府、组织或人在某种关系中实力不足、影响有限，或难以有效行使权力。\",\"usageNote\":\"常见于组织、政治或谈判语境；weak government 可能强调执行不力，并不必然表示法定权力少。\",\"examples\":[{\"id\":\"weak-power-ex1\",\"senseId\":\"weak-power\",\"en\":\"The weak local government struggled to enforce the rules.\",\"zh\":\"这个执行能力薄弱的地方政府很难落实这些规定。\",\"note\":\"此处根据 enforce the rules 理解为执行能力不足。\"},{\"id\":\"weak-power-ex2\",\"senseId\":\"weak-power\",\"en\":\"With no other job offers, she was in a weak position when discussing her salary.\",\"zh\":\"由于没有其他工作邀约，她在商谈薪水时处于弱势。\",\"note\":\"a weak position 表示缺少谈判优势。\"}],\"patterns\":[{\"en\":\"be in a weak position\",\"zh\":\"处于弱势\",\"note\":\"可指谈判或竞争中的地位不利。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a weak government\",\"zh\":\"软弱无力的政府\",\"note\":\"可强调实力、影响力或执行能力不足，具体看上下文。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"powerless\",\"zh\":\"无能为力的；没有权力的\",\"note\":\"比 weak 更接近没有有效行动能力或权力；weak 通常只表示相对不足。\"},{\"en\":\"ineffective\",\"zh\":\"不起作用的；效率低的\",\"note\":\"着重行动未产生预期效果，不直接说明掌握多少权力。\"}],\"contrasting\":[{\"en\":\"powerful\",\"zh\":\"有权势的；有影响力的\",\"note\":\"用于权势或影响力的对照。\"},{\"en\":\"strong\",\"zh\":\"强有力的；占优势的\",\"note\":\"如 a strong government 或 a strong negotiating position。\"}],\"similarNote\":\"根据语境判断 weak 指实力不足还是执行不力，不要一律译成完全没有权力。\",\"contrastingNote\":\"权势可用 powerful 对照；政府能力或谈判地位常用 strong 对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"weak-power\",\"title\":\"权力或影响力较弱\",\"meaning\":\"形容政府、组织或人在某种关系中缺少权力或影响力。\",\"note\":\"常见于政治、社会或组织语境。\",\"example\":{\"id\":\"weak-power-ex1\",\"senseId\":\"weak-power\",\"en\":\"The weak local government struggled to enforce the rules.\",\"zh\":\"这个权力薄弱的地方政府很难执行这些规定。\",\"note\":\"weak 描写政府执行权力的能力有限。\"},\"sourceIds\":[\"cambridge-weak\"]},{\"id\":\"weak-character\",\"title\":\"意志薄弱；软弱\",\"meaning\":\"形容人缺乏坚定的意志，容易屈服或改变主意。\",\"note\":\"此义评价人的性格或表现，语气可能带批评。\",\"example\":{\"id\":\"weak-character-ex1\",\"senseId\":\"weak-character\",\"en\":\"He was too weak to say no to his friends.\",\"zh\":\"他意志太薄弱，没法拒绝朋友。\",\"note\":\"too weak to 在这里指缺乏坚持拒绝的意志。\"},\"sourceIds\":[\"cambridge-weak\"]}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"weak-week-ex2\",\"senseId\":\"weak-physical\",\"en\":\"We have a science test next week.\",\"zh\":\"我们下周有科学考试。\",\"note\":\"next week 表示下周。\"}",
+        "valueJson": "{\"id\":\"weak-week-ex2\",\"senseId\":\"weak-physical\",\"en\":\"I felt weak for a week after the flu.\",\"zh\":\"流感过后，我有一周都觉得浑身无力。\",\"note\":\"weak 描写身体状态；for a week 表示持续一周。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[\"wiktionary-weak\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-weak\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1522,
+    "headword": "weak",
+    "meaning_zh": "adj. 不牢固的, 弱的, 虚弱的, 软弱的, 无力的, 无权力的, (论据等)不充分的",
+    "phonetic": "/wi:k/",
+    "pos": "",
+    "forms": []
+  }
+}

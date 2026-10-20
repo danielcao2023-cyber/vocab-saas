@@ -1,0 +1,371 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "456defad3f69be750419ece55bec895ab4430e1af83c6f0331de32643ad2d214",
+    "executedReviewPromptHash": "456defad3f69be750419ece55bec895ab4430e1af83c6f0331de32643ad2d214",
+    "reviewHash": "4745f79c3ae227f51f99d0c58fe8a602a92b63bc733b211a4f457f4005bb00df",
+    "wordId": 1398,
+    "inputHash": "64439762f6390d2ed70c96c93f483d60127d746918f0bf866db423de556ca007",
+    "draftHash": "3167d8e94f6282e895e5aa38b28dc8e6487b5ca9769140d6c5f7a5961679fdab",
+    "finalHash": "af4f7da8803be895ea296aa50d28f9b4e85a3494e47365ecbca0dc4f24b2790e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/that#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.995Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116095,
+        "revisionId": 39804214,
+        "revisionTimestamp": "2026-08-14T23:39:57Z",
+        "sha256": "d87f5cce90ac50229c83f7d888c934c5335ebf3321faf03451b3514e75ee8d16",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/that",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:37:42.896Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:00:43.462Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；/pronunciation/sourceIds；/senses/*/sourceIds；/confusions/0/sourceIds",
+        "message": "Cambridge 页面未成功获取，不能作为已依据的正文来源。已将实际获得材料支持的基本用法和读音关联到英语维基词典条目；补充的结果、目的句式依据专业语法知识，不冒称来自已获取的词典正文。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms；/senses/0/title；/senses/0/patterns/1",
+        "message": "that 的限定词标题不应包含复数“那些”；不可数名词也不能一概译成“那些”或理解为“一份”。forms 还应列出正文已经提到的指示用法复数 those。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "弱读主要取决于重音和语法功能，原说明容易让学生误以为后接元音、发生连读是弱读的条件。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning；/senses/2/examples/1/note",
+        "message": "本义例句包含形容词后的内容从句，搭配还包含名词后的内容从句，但总释义只列主语、宾语和表语，覆盖不完整。glad that… 中的 that 应按内容从句连接词说明，避免误导为表示原因的连词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/usageNote",
+        "message": "缺少关系词 that 的关键限制：用于限制性定语从句，不能用于逗号隔开的非限制性定语从句，也不能紧跟前置介词。这影响与 who、which 的替换判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4/meaning；/senses/4/patterns/1；/senses/4/relatedExpressions",
+        "message": "程度副词 that 表示程度，不另表示方式；for… 不是其专门句型组成部分。not so… 与 not that… 在相关语境中意义相近，不宜列为反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "初中常用的 so/such…that… 结果结构和 so that 目的结构尚未教学覆盖；二者不能归入名词从句。已分别补充，每项含两个具体生活例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/note；/confusions/0/takeaway",
+        "message": "仅凭“名词后出现 that”不能判定为定语从句，the fact that… 就是反例。应结合 that 是否在从句中代替先行词、充当成分判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语 þæt 的来源有材料支持，但阶段释义只是“对应的古英语形式”，属于空洞占位；应将确定事实留在 summary，清空占位阶段，并移除学生正文中的材料获取说明。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的指示限定词、指示代词、内容从句连接词、关系代词的主语与宾语功能、程度副词，原有各核心义均保留至少两个例句。另补齐初中常用的结果和目的结构，各两个例句。其余原例句语法、翻译及 senseId 对应可保留；古英语来源保留为可证实的单一事实。来源局限是 Cambridge 未获取，结果、目的结构及进一步语法限制依据专业语言知识补充，不归称为该页面的核验结果。",
+    "senseInventory": [
+      {
+        "sense": "指示限定词：那；那个，修饰单数可数名词或不可数名词；复数为 those",
+        "coveredBy": [
+          "that-demonstrative-determiner"
+        ],
+        "assessment": "已有两个自然例句；修正标题和不可数名词释义，并补列 those 形式。"
+      },
+      {
+        "sense": "指示代词：那个；那件事；那种情况",
+        "coveredBy": [
+          "that-demonstrative-pronoun"
+        ],
+        "assessment": "已用两个例句覆盖具体对象和对行为、情况的概括。蛋糕例句中的 that 需要现场指示语境，但属于成立的指示用法，无须判错。"
+      },
+      {
+        "sense": "连接词：引出陈述内容从句，常不单独翻译",
+        "coveredBy": [
+          "that-content-clause"
+        ],
+        "assessment": "两个例句分别展示动词和形容词后的从句；扩充释义以涵盖正文已有的名词后内容从句。"
+      },
+      {
+        "sense": "关系代词：在限制性定语从句中作主语",
+        "coveredBy": [
+          "that-relative"
+        ],
+        "assessment": "狗的例句展示主语功能，人与物的指向均有说明；补足从句类型和前置介词限制。"
+      },
+      {
+        "sense": "关系代词：在限制性定语从句中作宾语，符合条件时可省略",
+        "coveredBy": [
+          "that-relative"
+        ],
+        "assessment": "照片例句展示宾语功能，与主语例句构成清晰对照；保留原有省略说明。"
+      },
+      {
+        "sense": "程度副词：那么；到那种程度",
+        "coveredBy": [
+          "that-adverb-degree"
+        ],
+        "assessment": "两个例句分别修饰形容词和副词；修正释义、句型及相近表达的归类。"
+      },
+      {
+        "sense": "常用连接结构：so/such…that…，表示结果",
+        "coveredBy": [
+          "that-result"
+        ],
+        "assessment": "原稿遗漏；补充 so 与 such 各一个生活例句，并说明结构差别。"
+      },
+      {
+        "sense": "常用连接结构：so that，表示目的",
+        "coveredBy": [
+          "that-purpose"
+        ],
+        "assessment": "原稿遗漏；补充两个生活例句，并区分预期目的与已经实现的结果。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"that 与后面的元音连读时，弱读形式 /ðət/ 很常见。\"",
+        "valueJson": "\"弱读主要取决于重音和语法功能：不重读的连接词、关系词 that 常读 /ðət/；指示用法和强调时通常读 /ðæt/，并非只有后接元音时才弱读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"指示用法的复数\",\"form\":\"those\",\"ipa\":\"/ðəʊz/（英）；/ðoʊz/（美）\",\"note\":\"作指示限定词或指示代词时，that 的复数对应形式是 those；拼写不是在 that 后加 -s。连接词、关系词和程度副词 that 不作这种复数变化。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"指示限定词：那个，那些\"",
+        "valueJson": "\"指示限定词：那个；那……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/zh",
+        "expectedValueJson": "\"那些……；那份……\"",
+        "valueJson": "\"那……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"不可数名词前也可用 that 指特定的一份，如 that music。\"",
+        "valueJson": "\"that 可修饰语境中特定的不可数名词，如 that music（那段或那种音乐）；不必表示“一份”，也不是复数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"连接一个句子作主语、宾语或表语，意思通常不单独翻译。\"",
+        "valueJson": "\"引出表示陈述内容的从句：从句可作主语、宾语或表语，也可放在形容词或名词后补充说明内容。that 本身通常不单独翻译。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "\"that 引出形容词 glad 后说明原因的从句。\"",
+        "valueJson": "\"that 引出 glad 后的内容从句，说明让说话者高兴的事情；that 本身不表示“因为”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"指人时 that 和 who 常可互换；指物时 that 和 which 常可互换。that 作宾语时，在许多限制性定语从句中可以省略；作主语时不能省略。\"",
+        "valueJson": "\"在限制性定语从句中，指人时 that 和 who 常可互换，指物时 that 和 which 常可互换。that 作宾语时常可省略，作主语时不能省略。that 不用于逗号隔开的非限制性定语从句，也不能直接跟在前置介词后：可说 the chair that I sat on 或 the chair on which I sat，不能说 the chair on that I sat。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"放在形容词或副词前，表示所说程度或方式达到“那样”的程度。\"",
+        "valueJson": "\"放在形容词或副词前，表示“那么；到那种程度”，所指程度通常在语境中已知或可见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1",
+        "expectedValueJson": "{\"en\":\"that + 形容词/副词 + (for…)\",\"zh\":\"对……来说那么……\",\"note\":\"用于比较或评价某种程度，如 that expensive for a snack。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"that + 形容词/副词\",\"zh\":\"那么……；到那种程度\",\"note\":\"可指语境中已知的程度，如 I didn't know it was that expensive.（我原来不知道它那么贵。）\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"so\",\"zh\":\"这么；那么\",\"note\":\"so 可表示程度，常用于 so + 形容词；that 更常带有“那样、到那种程度”的指向。\"}],\"contrasting\":[{\"en\":\"not so…\",\"zh\":\"不那么……\",\"note\":\"在表示程度的部分语境中可与 not that… 对照；具体选择取决于句子表达。\"}],\"similarNote\":\"so 和 that 都能放在形容词前表示程度；that 常指谈话中已知或预期的程度。\",\"contrastingNote\":\"在程度表达中，not so… 和 not that… 有时都能表示“不那么……”，但并非所有句型都可互换。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"so\",\"zh\":\"这么；那么\",\"note\":\"so 也可修饰形容词或副词表示程度；that 更突出语境中所指的那种程度。\"},{\"en\":\"not so…\",\"zh\":\"不那么……\",\"note\":\"在 It's not so bad. / It's not that bad. 这样的语境中，两者意思相近；不能据此把所有含 so 的句型都换成 that。\"}],\"contrasting\":[{\"en\":\"this\",\"zh\":\"这么；到这种程度\",\"note\":\"程度用法中，this big 与 that big 可对照当前或近处展示的程度与先前或较远处所指的程度；不是程度高低相反。\"}],\"similarNote\":\"so 与 that 有相近的程度用法；not so… 与 not that… 在部分否定评价中也相近。\",\"contrastingNote\":\"this 与 that 可形成近指、远指的语境对照；程度副词 that 本身没有固定的高低程度反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"that-result\",\"title\":\"连接结构：如此……以至于……\",\"meaning\":\"在 so…that… 或 such…that… 中，that 引出前面情况造成的结果。\",\"usageNote\":\"so 后常接形容词或副词；such 后接名词短语，单数可数名词通常带 a/an。结果从句使用陈述语序，不是名词从句。\",\"examples\":[{\"id\":\"that-result-1\",\"senseId\":\"that-result\",\"en\":\"I was so tired that I fell asleep on the bus.\",\"zh\":\"我太累了，结果在公交车上睡着了。\",\"note\":\"so tired 表示程度，that 从句说明实际发生的结果。\"},{\"id\":\"that-result-2\",\"senseId\":\"that-result\",\"en\":\"It was such a cold morning that we wore gloves to school.\",\"zh\":\"那天早晨冷得我们都戴着手套去上学。\",\"note\":\"such 后接 a cold morning 这个名词短语，that 从句说明结果。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"so + 形容词/副词 + that + 从句\",\"zh\":\"如此……以至于……\",\"note\":\"如 so tired that…；that 后说明结果。\",\"kind\":\"sentence-pattern\"},{\"en\":\"such + 名词短语 + that + 从句\",\"zh\":\"如此……以至于……\",\"note\":\"如 such a cold morning that…；不要把单数可数名词前的 a/an 漏掉。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"as a result\",\"zh\":\"因此；结果\",\"note\":\"也可交代结果，但通常用于另一个独立句子，不能直接替换 so…that… 中的 that。\"}],\"contrasting\":[],\"similarNote\":\"这些表达都能说明结果，但句子结构不同，需要相应改写。\",\"contrastingNote\":\"结果连接功能没有固定词汇反义词；某个结果是否发生，要由从句本身的肯定或否定表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"that-purpose\",\"title\":\"连接结构：so that 表示“为了……”\",\"meaning\":\"so that 可引出目的从句，说明做一件事是希望达到什么目标。\",\"usageNote\":\"目的从句常用 can、could、will、would 等情态动词；目的不等于已经实现的结果。so that 也能表示结果，须结合上下文判断。\",\"examples\":[{\"id\":\"that-purpose-1\",\"senseId\":\"that-purpose\",\"en\":\"I'll send you the address so that you can find the house.\",\"zh\":\"我会把地址发给你，好让你找到那栋房子。\",\"note\":\"发地址的目的是帮助对方找到房子；不表示对方已经找到。\"},{\"id\":\"that-purpose-2\",\"senseId\":\"that-purpose\",\"en\":\"We left early so that we could get good seats at the school play.\",\"zh\":\"我们早早出发，为的是能在学校话剧演出时坐到好位置。\",\"note\":\"could 与过去的 left 配合；句子说明出发目的，不保证最终坐到了好位置。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"so that + 主语 + can/could + 动词原形\",\"zh\":\"为了让……能够……\",\"note\":\"从句有自己的主语；can/could 后用动词原形。\",\"kind\":\"sentence-pattern\"},{\"en\":\"so that + 主语 + won't/wouldn't + 动词原形\",\"zh\":\"为了不让……；以免……\",\"note\":\"用否定目的从句说明希望避免的事情，须根据语境选择时态。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in order to\",\"zh\":\"为了……\",\"note\":\"后接动词原形；当目的动作的执行者与主句主语相同时，常可与 so that 目的从句相互改写。执行者不同时不能直接这样替换。\"}],\"contrasting\":[],\"similarNote\":\"so that 后接有主语的从句；in order to 后接动词原形。两者都能说明目的，但结构和主语条件不同。\",\"contrastingNote\":\"目的连接功能没有固定词汇反义词；希望防止某事发生时，可用 so that 引出否定的目的从句。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"that 后面的从句修饰前面的名词；that 在从句中可能作主语或宾语。\"",
+        "valueJson": "\"关系词 that 引出的从句修饰前面的名词，that 在其中代替该名词作主语或宾语。不能只看 that 是否出现在名词后：the fact that the pool closes at six 中，that 引出 fact 的内容，不在从句中代替 fact。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先找 that 后面有没有名词；若是从句，再看 that 是否在从句里代替先行词。\"",
+        "valueJson": "\"先判断 that 是指示对象、表示程度，还是引出从句。引出从句时，再看它是否代替前面的名词作主语或宾语；不要仅凭“名词后有 that”判断。so/such…that… 的结果结构和 so that 的目的结构还要单独辨认。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-that\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"that 的历史来源是古英语 þæt。这里把它作为一个整体记忆，不用现代英语中的拼写片段去猜词源。\"",
+        "valueJson": "\"that 源自古英语 þæt。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"þæt\",\"meaning\":\"对应现代英语 that 的古英语形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这条历史联系来自给出的词源条目；现代构词分析不适用于此词。\"",
+        "valueJson": "\"that 不是由现代英语词根与词缀拼接而成；助记故事不表示它的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-that\",\"title\":\"Cambridge Dictionary：that\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/that\",\"supports\":[\"指示限定词与指示代词的常见用法\",\"连接词引出名词从句及 that 的省略\",\"关系词 that 引出定语从句的用法\",\"程度副词用法与常见发音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary：that（English）\",\"url\":\"https://fr.wiktionary.org/wiki/that#Anglais\",\"supports\":[\"that 的古英语来源形式 þæt\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire：that（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/that#Anglais\",\"supports\":[\"指示限定词、指示代词及其复数对应形式 those\",\"连接词引出从句及部分语境中的省略\",\"关系代词的主语与宾语用法\",\"程度副词的基本用法\",\"重读 /ðæt/ 与非重读 /ðət/\",\"that 源自古英语 þæt\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1398,
+    "headword": "that",
+    "meaning_zh": "pron./adj. 那；那个\nconj. （引导从句，常不译）",
+    "phonetic": "/ðæt/",
+    "pos": "",
+    "forms": []
+  }
+}

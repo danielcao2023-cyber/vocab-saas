@@ -1,0 +1,393 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1aad886eb93d7bc14d371608bad48a22a59cad9eed7765655233512588f84b5e",
+    "executedReviewPromptHash": "1aad886eb93d7bc14d371608bad48a22a59cad9eed7765655233512588f84b5e",
+    "reviewHash": "7fe2b37790bcb9a2f721cb5f15d17352939fcd46243bdd4a255135ca06de5871",
+    "wordId": 1258,
+    "inputHash": "f1dcfd5132507ed557ed6f91e00f58cd8943bad8051fe89b939d21aa24e78dd9",
+    "draftHash": "8bb51b153080fb14a90b96729f0ba8b03fa41c8633f2041ce45f823931666115",
+    "finalHash": "05074b747a665870d0e43b57a3a6f7b0499b1cdad6a600c80952f8faab1627e9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sister#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:12.683Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116077,
+        "revisionId": 39764986,
+        "revisionTimestamp": "2026-08-03T05:00:22Z",
+        "sha256": "70f93031bdf5a39ee606148ce899c63b971515905101a211d82aba4c5578a9b4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sister",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T13:07:53.218Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:19:05.167Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 正文未取得，不能作为本次审校已掌握的释义、读音和词族依据。实际取得的法语维基词典材料是英语词条，支持范围也不限于词源；应据此调整来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "sister 在名词前表示机构、项目等相互关联，是常用功能，不宜仅列为低频义且只给一个例句。应升入核心义，补足两个例句及对应搭配、近义和反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“修女”与教会中普通女性信徒的“姊妹”称谓混在一起，现有例句却只体现修女。需明确身份差别，并为女教友称谓补充例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "priest 是宗教职务名称，不能作为 sister 对应的男性成员称谓，部分教派的 priest 也可以是女性。此处用同一宗教语境中的 brother 对照更准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1；/senses/2",
+        "message": "医院义的释义和部分译文仍把 sister 泛化为普通护士。英式医院用语通常指负责病房的资深女护士或病房护士长；senior sister 也不宜仅译为“资深护士”。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/confusions/1；/lessCommonSenses",
+        "message": "词条所列“像姐妹一样对待”的及物动词义确属罕用义，不能称为“生造”。初稿的两个对比项还重复使用同一个正确句子，未展示区别。应保留罕用义，并明确日常表达用 treat someone like a sister。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/meaning；/senses/0/collocations/1/note",
+        "message": "家庭义可以明确涵盖收养关系；little sister 中的 little 通常表示相对自己年幼，不是仅说对方年龄小，成年妹妹也可以这样称呼。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/partOfSpeech",
+        "message": "sisterly 现代常用词性是形容词，副词用法罕见，不能不加限制地并列呈现。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/2/meaning",
+        "message": "词源主链与材料相符，但材料未交代宗教义、医院义的具体发展过程；末阶段宜只保留可确认的姐妹义，避免把现代义项列表写成已经核实的历史发展结论。"
+      }
+    ],
+    "coverageAssessment": "已核对家庭义、宗教义、医院义、名词前修饰功能及词条所列罕用及物动词义。修订后四个核心义各有至少两个原创英中例句，宗教义中的修女与普通女教友称谓分别有例句；罕用动词另列低频栏。英美读音、规则复数、派生词拼写及词源主链基本正确。来源引用改为实际取得的英语词条；宗教称谓细分、医疗用法限制及罕用程度结合专业语言知识说明，未将无法读取的 Cambridge 正文当作证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：女性兄弟姐妹；姐姐或妹妹",
+        "coveredBy": [
+          "sister-family"
+        ],
+        "assessment": "核心义已覆盖，两个例句自然；补充收养关系并明确 little sister 的相对年龄含义。"
+      },
+      {
+        "sense": "名词：修女及其称呼",
+        "coveredBy": [
+          "sister-religious"
+        ],
+        "assessment": "原有两个例句均体现修女身份或称呼，予以保留；修正与 nun、brother 的语境关系。"
+      },
+      {
+        "sense": "名词：教会中对同一信仰女性成员的姊妹称谓",
+        "coveredBy": [
+          "sister-religious"
+        ],
+        "assessment": "原稿标题提及但未充分解释或举例；补入两个例句，明确不一定具有修女身份。"
+      },
+      {
+        "sense": "名词：特定医疗用语中的护士；英式语境通常指病房护士长",
+        "coveredBy": [
+          "sister-nurse"
+        ],
+        "assessment": "保留两个例句，收紧地域和职位限制，修正容易被理解为泛指护士的表达及译文。"
+      },
+      {
+        "sense": "名词前修饰功能：表示机构、项目、城市等相互关联",
+        "coveredBy": [
+          "sister-related"
+        ],
+        "assessment": "从低频栏移入核心义，保留友好城市例句，新增姊妹公司例句及常见组合。"
+      },
+      {
+        "sense": "罕用及物动词：像姐妹一样对待",
+        "coveredBy": [
+          "sister-verb"
+        ],
+        "assessment": "按词条所列释义补入低频栏；纠正“生造动词”的判断，同时保留适合日常使用的替代表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; transitive verb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"sister：姐妹，也可指修女或护士\"",
+        "valueJson": "\"sister：姐妹、修女、护士长；名词前还可表示关联\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的 sister 指有共同父母或一方父母的姐妹；在宗教和医院语境中也有特定用法。\"",
+        "valueJson": "\"sister 最常指姐姐或妹妹，本身不区分年龄；还可指修女、英式医院里的护士长，或放在名词前表示密切关联。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习区分 my sister（我的姐妹）和 a sister at the hospital（医院的护士）。\"",
+        "valueJson": "\"练习区分 my sister（我的姐姐或妹妹）、Sister Maria（玛丽亚修女）和 ward sister（病房护士长），再认识 sister company（姊妹公司）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"女性的兄弟姐妹，可以是同父母或同父异母、同母异父的姐妹；英语 sister 本身不区分年长或年幼。\"",
+        "valueJson": "\"女性的兄弟姐妹，包括有血缘关系或收养关系的姐姐、妹妹；英语 sister 本身不区分年长或年幼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"常用于亲切地称呼年幼的姐妹；有时也只是表示年龄小。\"",
+        "valueJson": "\"通常指比自己年幼的姐妹，语气亲切；妹妹成年后仍可这样称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"基督教等宗教团体中女性成员的称呼，常译为“修女”；有时用于对女性宗教成员的称呼。\"",
+        "valueJson": "\"可指基督教修会中的修女，也可在教会中称同一信仰的女性成员为“姊妹”；后者不一定是修女。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这个意思通常出现在宗教、教会或学校语境；正式称呼时常用 Sister 加姓名。\"",
+        "valueJson": "\"称呼修女时常用大写的 Sister 加姓名；教会里称普通女性信徒为 sister 时，则强调共同信仰。具体指哪一种，要看语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"a sister in a religious community\",\"zh\":\"宗教团体中的一位修女\",\"note\":\"用 in a religious community 明确说明宗教团体语境，避免误解为亲姐妹。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a sister in a convent\",\"zh\":\"修道院里的一位修女\",\"note\":\"convent 指女修道院，使这里的 sister 明确指修女。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sister-religious-ex3\",\"senseId\":\"sister-religious\",\"en\":\"At church, we call each other brothers and sisters.\",\"zh\":\"在教会里，我们彼此称为弟兄姊妹。\",\"note\":\"这里的 sisters 是同一信仰的女性成员，不表示她们都是修女。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sister-religious-ex4\",\"senseId\":\"sister-religious\",\"en\":\"The sisters in our church bring meals to people who live alone.\",\"zh\":\"我们教会的姊妹们给独居的人送饭。\",\"note\":\"教会成员之间可用 sisters 称女性教友；这不是亲属关系，也不必表示修女身份。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"nun\",\"zh\":\"修女\",\"note\":\"常用且直接的“修女”一词；sister 也可作宗教团体内部的称呼。\"}],\"contrasting\":[{\"en\":\"priest\",\"zh\":\"牧师；神父\",\"note\":\"在部分基督教语境中指男性宗教职务人员，可与女性宗教成员作性别或职务对照；不同教派的职务体系并不完全相同。\"}],\"similarNote\":\"谈一般身份时 nun 常直接表示“修女”；Sister 常作宗教称呼或团体成员称谓。\",\"contrastingNote\":\"priest 只在宗教身份语境中与女性宗教成员形成对照，不是 sister 的普遍反义词。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"nun\",\"zh\":\"修女\",\"note\":\"与 sister 在“修女”义上有重合；sister 若指普通女教友，则不能换成 nun。\"}],\"contrasting\":[{\"en\":\"brother\",\"zh\":\"修士；弟兄\",\"note\":\"在修会或教会语境中，可与 sister 形成男性、女性成员称谓的对照；Brother 也可放在人名前作称呼。\"}],\"similarNote\":\"nun 表示修女身份；Sister 常用于称呼修女。普通女性信徒也可能被称为 sister，但不因此具有修女身份。\",\"contrastingNote\":\"在修会成员或教会成员的称谓中，brother 可与 sister 对照；具体身份仍取决于所属团体。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"护士（特定医院用法）\"",
+        "valueJson": "\"护士长（英式医院用语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"在一些英语地区或医院称呼中，指护士，尤其是病房护士或护士长；此用法常见于英式英语或传统医院称呼。\"",
+        "valueJson": "\"在英式英语的医院用语中，通常指负责病房的资深女护士，即病房护士长；其他地区的具体称呼习惯可能不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"sister-nurse-ex1\",\"senseId\":\"sister-nurse\",\"en\":\"Ask the sister at the desk where the doctor is.\",\"zh\":\"问一下服务台旁的护士长医生在哪里。\",\"note\":\"这里是医院用语，sister 指护士或护士长。\"}",
+        "valueJson": "{\"id\":\"sister-nurse-ex1\",\"senseId\":\"sister-nurse\",\"en\":\"Ask the ward sister where the doctor is.\",\"zh\":\"问问病房护士长，医生在哪里。\",\"note\":\"ward sister 明确指负责病房的护士长。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/zh",
+        "expectedValueJson": "\"病房里的护士长 / 护士\"",
+        "valueJson": "\"病房里的护士长\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"医院语境中的 sister；具体职务要看当地医院称呼习惯。\"",
+        "valueJson": "\"在英式医院语境中，通常指该病房的护士长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/zh",
+        "expectedValueJson": "\"请护士（长）做某事\"",
+        "valueJson": "\"请护士长做某事\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/zh",
+        "expectedValueJson": "\"高级护士；资深护士\"",
+        "valueJson": "\"高级护士长\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"泛指护士用 nurse；sister 作护士义时属于特定医院称呼，常指资深护士或护士长。\"",
+        "valueJson": "\"泛指护士用 nurse；sister 在英式医院里通常指负责病房的资深女护士，与 charge nurse 所指岗位相近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"sister-related\",\"title\":\"姐妹般的；相对应的（名词前作修饰语）\",\"meaning\":\"放在另一个名词前，表示两个项目、机构或事物彼此对应、相似或有联系。\",\"note\":\"例如 sister city（友好城市）。这种用法常作名词修饰语；不要据此把 sister 当作普通动词使用。\",\"example\":{\"id\":\"sister-related-ex1\",\"senseId\":\"sister-related\",\"en\":\"Our town has a sister city in Japan.\",\"zh\":\"我们的小镇在日本有一座友好城市。\",\"note\":\"sister city 指建立友好联系的城市。\"},\"sourceIds\":[\"cambridge-sister\"]}",
+        "valueJson": "{\"id\":\"sister-verb\",\"title\":\"像姐妹一样对待（罕用及物动词）\",\"meaning\":\"把某人当作姐妹一样对待。\",\"note\":\"这是极少见的动词用法。现代日常交流通常说 treat someone like a sister，不把动词 sister 作为常用表达来套用。\",\"example\":{\"id\":\"sister-verb-ex1\",\"senseId\":\"sister-verb\",\"en\":\"She sistered the lonely girl.\",\"zh\":\"她像姐妹一样对待那个孤独的女孩。\",\"note\":\"sistered 是罕用及物动词 sister 的过去式；日常更自然地说 She treated the lonely girl like a sister。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sister-related\",\"title\":\"名词前表示关联：姊妹的；相对应的\",\"meaning\":\"用于另一个名词前，表示机构、项目或事物彼此紧密相关、属于同一体系，或建立了正式伙伴关系。\",\"usageNote\":\"常见于 sister company、sister project、sister city 等组合。这里 sister 修饰后面的名词，不是泛指任何看起来相似的事物。\",\"examples\":[{\"id\":\"sister-related-ex1\",\"senseId\":\"sister-related\",\"en\":\"Our town has a sister city in Japan.\",\"zh\":\"我们的小镇在日本有一座友好城市。\",\"note\":\"sister city 指建立正式友好关系的城市。\"},{\"id\":\"sister-related-ex2\",\"senseId\":\"sister-related\",\"en\":\"Our sister company makes the batteries for these electric bikes.\",\"zh\":\"我们的姊妹公司为这些电动自行车生产电池。\",\"note\":\"sister company 通常指与本公司同属一个母公司的另一家公司。\"}],\"patterns\":[{\"en\":\"a sister + company / project / school\",\"zh\":\"一家姊妹公司／一个姊妹项目／一所姊妹学校\",\"note\":\"sister 放在名词前，说明组织联系或伙伴关系；具体关系随所修饰的名词而变化。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"sister company\",\"zh\":\"姊妹公司\",\"note\":\"通常指同属一个母公司的公司。\",\"kind\":\"common-collocation\"},{\"en\":\"sister project\",\"zh\":\"姊妹项目\",\"note\":\"指相互关联、具有共同背景的项目，不要求内容完全相同。\",\"kind\":\"common-collocation\"},{\"en\":\"sister city\",\"zh\":\"友好城市；姐妹城市\",\"note\":\"指正式建立友好联系的城市。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"twin town / twin city\",\"zh\":\"友好城市\",\"note\":\"在城市缔结友好关系的语境中与 sister city 接近；twin town 尤常见于英式英语。\"},{\"en\":\"affiliated company\",\"zh\":\"关联公司\",\"note\":\"同样表示公司间存在组织联系，但范围较广，不一定共有母公司。\"}],\"contrasting\":[{\"en\":\"an unrelated company\",\"zh\":\"一家无关联的公司\",\"note\":\"在公司关系语境中，与 sister company 所强调的组织联系相对。\"}],\"similarNote\":\"比较时要对应具体组合：twin town 对照 sister city，affiliated company 对照 sister company。\",\"contrastingNote\":\"这里比较的是机构之间有联系还是无关联；unrelated 可在相应语境中表达反向关系。\"},\"sourceIds\":[\"wiktionary-sister-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1",
+        "expectedValueJson": "{\"id\":\"sister-not-verb\",\"title\":\"不要把 sister 当作“像姐妹一样对待”的常用动词\",\"summary\":\"现代日常英语通常用 treat someone like a sister 表达“像姐妹一样对待某人”；sister 通常是名词。\",\"items\":[{\"label\":\"自然表达\",\"note\":\"用 treat someone like a sister，结构清楚且常见。\",\"example\":{\"id\":\"sister-confusion-ex3\",\"senseId\":\"sister-family\",\"en\":\"She treats her best friend like a sister.\",\"zh\":\"她像对待姐妹一样对待她最好的朋友。\",\"note\":\"treat sb like... 表示像……一样对待某人。\"}},{\"label\":\"容易误用的动词表达\",\"note\":\"不要把 sister 当作普通动词来表达这个意思。\",\"example\":{\"id\":\"sister-confusion-ex4\",\"senseId\":\"sister-family\",\"en\":\"She treats her best friend like a sister.\",\"zh\":\"她像对待姐妹一样对待她最好的朋友。\",\"note\":\"用 treat...like...，不要生造动词 sister。\"}}],\"takeaway\":\"表达“像姐妹一样对待”时，用 treat someone like a sister。\",\"sourceIds\":[\"cambridge-sister\"]}",
+        "valueJson": "{\"id\":\"sister-not-verb\",\"title\":\"sister 的罕用动词义与日常说法\",\"summary\":\"sister 确有“像姐妹一样对待”的罕用及物动词义，但现代日常交流通常用 treat someone like a sister。\",\"items\":[{\"label\":\"日常表达\",\"note\":\"用 treat someone like a sister，结构清楚且常见。\",\"example\":{\"id\":\"sister-confusion-ex3\",\"senseId\":\"sister-family\",\"en\":\"She treats her best friend like a sister.\",\"zh\":\"她像对待姐妹一样对待她最好的朋友。\",\"note\":\"treat sb like... 表示像……一样对待某人；这里 sister 仍是名词。\"}},{\"label\":\"罕用动词\",\"note\":\"这种动词用法可以识别，但不作为现代日常表达的首选。\",\"example\":{\"id\":\"sister-confusion-ex4\",\"senseId\":\"sister-verb\",\"en\":\"She sistered the new girl.\",\"zh\":\"她像姐妹一样对待新来的女孩。\",\"note\":\"sistered 是罕用及物动词的过去式；日常通常说 She treated the new girl like a sister。\"}}],\"takeaway\":\"日常表达用 treat someone like a sister；动词 sister 表示相同意思的用法极少见。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/2/meaning",
+        "expectedValueJson": "\"姐妹；后发展出宗教成员、护士等语境用法。\"",
+        "valueJson": "\"姐妹\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sister\"]",
+        "valueJson": "[\"wiktionary-sister-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/partOfSpeech",
+        "expectedValueJson": "\"adjective/adverb\"",
+        "valueJson": "\"adjective; adverb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-sister\",\"title\":\"Cambridge Dictionary: sister\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sister\",\"supports\":[\"常见名词义项与用法\",\"英美发音参考\",\"相关词形与搭配\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-sister-etymology\",\"title\":\"Wiktionary: sister（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/sister#Anglais\",\"supports\":[\"从古英语 sweostor 到 sister 的词源线索\",\"原始印欧语重构形式与姐妹义\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-sister-etymology\",\"title\":\"法语维基词典：sister（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/sister#Anglais\",\"supports\":[\"姐妹、修女、护士等名词义及名词前表示关联的用法\",\"英美读音与规则复数形式\",\"古英语 sweostor 与原始印欧语重构形式 *swésōr 的词源关系\",\"sisterhood、sisterly 等派生词及 sibling、half-sister 等相关词\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1258,
+    "headword": "sister",
+    "meaning_zh": "n. 姐妹, 姐, 妹, 护士, 修女\nvt. 姐妹般对待",
+    "phonetic": "/'sistә/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6203cd09b5daed983c7b167347efce5b5118ed34ab4eb78d2d2108036d5eec07",
+    "executedReviewPromptHash": "6203cd09b5daed983c7b167347efce5b5118ed34ab4eb78d2d2108036d5eec07",
+    "reviewHash": "a4ad5dba97d3e45b138a6fcf422750eebf547bf1382c79c5b5458fca32cd193e",
+    "wordId": 795,
+    "inputHash": "a2f127fc39d5428bbbfb0c92a197b10fff354aa6120a81c70734ff7490ded68e",
+    "draftHash": "968b8142ea089e3b01898d9daeadbc9f0f317d238ebc73e6465cd2860ff3670b",
+    "finalHash": "866ba74af1b930c234199c30875bcf704162ea4e1df40f7b3283f9a9d056cb11",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/listen#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:06.063Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116192,
+        "revisionId": 38125482,
+        "revisionTimestamp": "2025-04-23T16:21:18Z",
+        "sha256": "fdd4d516c9baa799eeedbbbbddc60a8164f26eb9ccd1cc4ac5aa79b8a9dcbd73",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/listen",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:12:05.311Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:17:41.473Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses",
+        "message": "遗漏词条所列的名词用法。应补充口语中 a listen 表示“听一听”的用法，并提供两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/forms/3/note；/wordFamily/1/spellingNote；/wordFamilyNote",
+        "message": "listen 以 n 结尾，没有词尾不发音的 e。listened、listening 和 listener 都直接在完整词干后加相应后缀。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0/note",
+        "message": "listen to music 表示听音乐，不表示播放音乐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote；/senses/1/examples/1/note；/senses/1/collocations/1/note",
+        "message": "部分说明把听取建议或指示直接等同于实际采纳，与近义辨析中的限定不一致。是否照做取决于语境；should 表示劝告，不说明行动已经发生。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "古英语后接原始印欧语会画成时间倒置的箭头；所取回正文也未明确解释该印欧词根的字义。阶段仅保留有明确释义的古英语形式，更早的来源关系放入 summary。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；指向 cambridge-listen 的 sourceIds",
+        "message": "Cambridge 页面未获取，不能作为本次已取得的释义、发音和词族依据。相关引用应改指已取回的英语词条；仅据专业语言知识补充的 listening 名词说明不挂该引用。Cambridge 可保留为推荐延伸阅读。"
+      }
+    ],
+    "coverageAssessment": "已核对两项动词定义及词条列出的名词用法。修订后，“倾听”“听从／采纳”“听一听（名词）”各有两个自然原创英中例句，并区分听取与实际照做。拼写、变形和词源阶段错误均已修正。Cambridge 未获取的限制已通过调整引用处理；名词用法及部分现代用法说明依据词条和专业语言知识补充。",
+    "senseInventory": [
+      {
+        "sense": "动词：主动听；倾听",
+        "coveredBy": [
+          "listen-v1"
+        ],
+        "assessment": "原稿已有两个合适例句，并覆盖单独使用及 listen to；修正听音乐搭配说明。"
+      },
+      {
+        "sense": "动词：听从；采纳建议或指示",
+        "coveredBy": [
+          "listen-v2"
+        ],
+        "assessment": "原稿已有两个合适例句；补清语境限制，避免把认真听取自动理解为已经照做。"
+      },
+      {
+        "sense": "名词：一次听的活动；听一听",
+        "coveredBy": [
+          "listen-n1"
+        ],
+        "assessment": "原稿遗漏；补充口语单数名词用法、两个例句及常见表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"动词（通常不及物）\"",
+        "valueJson": "\"动词（通常不及物）；名词（口语，通常用单数）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"listen 表示专心去听；要说“听某人或某物”，通常用 listen to。它也可以表示听从建议或指示。\"",
+        "valueJson": "\"listen 表示主动留心听；要说“听某人或某物”，通常用 listen to。它也可以表示听从建议或指示。口语中的 a listen 是名词，表示“听一听”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"listen 以不发音的 e 结尾，加 -ed 时保留 e。\"",
+        "valueJson": "\"listen 以 n 结尾，直接加 -ed；-ed 在 /n/ 后读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"直接加 -ing：listen → listening；末音节不重读，不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"表示主动播放或留心欣赏音乐。\"",
+        "valueJson": "\"表示有意听音乐，强调听这一活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"listen to someone 表示听某人说；listen to someone’s advice 表示听从或采纳建议，具体意思由语境决定。\"",
+        "valueJson": "\"listen to 后接人、建议或警告时，既可表示认真听取，也可在语境中表示听从、采纳；是否实际照做，要看上下文，不能只凭 to 后的名词判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"listen to advice 表示认真考虑并采纳建议。\"",
+        "valueJson": "\"这里是在劝对方重视并听从医生的建议；should 表示劝告，并不说明对方已经照做。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"表示按要求留意并遵循操作说明。\"",
+        "valueJson": "\"可指认真听取指示，也可在语境中表示听从；若要明确表示实际照做，可用 follow instructions。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"listen-n1\",\"title\":\"听一听（名词，口语）\",\"meaning\":\"一次听的活动，常表示“听一听”。\",\"usageNote\":\"口语中通常用单数，常见于 have a listen、take a listen 或 give ... a listen；a listen 表示一次听的活动，不表示听觉能力。\",\"examples\":[{\"id\":\"listen-n1-ex1\",\"senseId\":\"listen-n1\",\"en\":\"Have a listen to this recording and tell me what you think.\",\"zh\":\"听听这段录音，告诉我你的看法。\",\"note\":\"a listen 是名词短语，to 后接听的对象。\"},{\"id\":\"listen-n1-ex2\",\"senseId\":\"listen-n1\",\"en\":\"I gave the new song a listen on my way home.\",\"zh\":\"回家的路上，我听了听那首新歌。\",\"note\":\"give + 听的对象 + a listen，表示听一听。\"}],\"patterns\":[{\"en\":\"have a listen (to ...)\",\"zh\":\"听一听（……）\",\"note\":\"have 后接名词短语 a listen；需要说明听什么时，再用 to 引出对象。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"give a song a listen\",\"zh\":\"听听一首歌\",\"note\":\"也可把 a song 换成 a recording 等听的对象。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"listen (to ...)\",\"zh\":\"听（……）\",\"note\":\"邀请对方听一听时，与 have a listen (to ...) 意思相近，但这是动词表达。\"}],\"contrasting\":[],\"similarNote\":\"a listen 是名词短语；listen (to ...) 是表达相近动作的动词用法。\",\"contrastingNote\":\"这一名词用法没有常用的直接反义名词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"listen 与古英语动词 hlysnan 有历史联系，含义为“听”；更早的来源与原始印欧语重构词根 *ḱlew- 有关。\"",
+        "valueJson": "\"listen 源自古英语 hlysnan（听）；更早的来源经由原始日耳曼语，可追溯到重构的原始印欧语词根 *ḱlew-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"hlysnan\",\"meaning\":\"听\"},{\"language\":\"原始印欧语\",\"form\":\"*ḱlew-\",\"meaning\":\"重构词根；与“听”有关\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"hlysnan\",\"meaning\":\"听\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"作动词现在分词时去掉 listen 末尾不发音的 e；名词 listening 保留该拼写。\"",
+        "valueJson": "\"listen 直接加 -ing，得到 listening；保留词干的全部字母，不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"listener 和 listening 与 listen 同族；听力名词 listening 的拼写保留词尾 e。\"",
+        "valueJson": "\"listener 和 listening 都在 listen 后直接加后缀，保留 listen 的全部字母，包括不发音的 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-listen\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"动词含义与用法\",\"listen to 的句型和搭配\",\"listen 与 hear 的用法区分\",\"发音及词形参考\"]",
+        "valueJson": "[\"延伸查阅：listen 的释义、用法与发音\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"listen 的历史来源及所列演变关系\"]",
+        "valueJson": "[\"动词“倾听”和“听从”的释义及基本用法\",\"hear 作为近义表达的参考\",\"发音与规则动词属性\",\"派生词 listener\",\"listen 的历史来源及所列同源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 795,
+    "headword": "listen",
+    "meaning_zh": "vi. 听, 倾听, 听从\nn. 听, 倾听",
+    "phonetic": "/'lisn/",
+    "pos": "",
+    "forms": []
+  }
+}

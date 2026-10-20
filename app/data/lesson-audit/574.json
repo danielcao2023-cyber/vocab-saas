@@ -1,0 +1,840 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7f4692bb2c86bfa4f63a799d54c642b865f56d7f6f0cbb6e67ed65841adb169c",
+    "executedReviewPromptHash": "745942d5c7dd132715dc9da86e414032dc7aa035ff4aac1c7ec5cf6c5be8dd50",
+    "reviewHash": "3621ab0ac7952a3fe03d8135b50c6400dcd379a992baa8938e8b3d165db97949",
+    "wordId": 574,
+    "inputHash": "186c60814c8c175298ed88ed5a54ecea04b25b273be9484f4bfb3ee5239c45f5",
+    "draftHash": "7ed22ef260923b252cb04ec2a0f226bca869607ea286a5c654b82eb84c2a91df",
+    "finalHash": "67411e047983277318c26a3fd0c6e97a03739c935332c141950457a056e54337",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/get#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:05.606Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 84590,
+        "revisionId": 39765100,
+        "revisionTimestamp": "2026-08-03T05:02:38Z",
+        "sha256": "2c0a8f80db58e5af83392954b1234ffd1000f86477005270bc61b9d8a855a9f4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/get",
+        "section": "get etymology",
+        "supports": [
+          "Historical source form and meaning",
+          "Preserved semantic or historical boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "849726a77fabc5dee864e9a7f49fc9b5e7ce873df2e8ce9abf18542c8c98a483",
+        "summaryAndSupportsWordCount": 74,
+        "sha256": "849726a77fabc5dee864e9a7f49fc9b5e7ce873df2e8ce9abf18542c8c98a483",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/574.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/get",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:44:29.793Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T18:11:08.069Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "sources[0]；各处 sourceIds",
+        "message": "Cambridge 页面获取失败，不能作为本次已取得的释义、发音和用法依据。应改引实际取得的 Wiktionnaire 英语词条；该页没有支持的具体说明不强挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "pronunciation.notes[0]",
+        "message": "/get/ 不能被笼统判成“用字母代替国际音标”；/e/ 与 /ɛ/ 是不同词典使用的标音惯例，g 与 ɡ 的排印差异也不等于整个标音不规范。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[2].meaning；senses[2].patterns[1]",
+        "message": "get 不通用于“成为某种身份或职业”的系动词结构。get a teacher 可以表示找到或请来老师，不能按 become a teacher 解释。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[3]",
+        "message": "get + 宾语 + 过去分词是使役或结果结构，不能直接标作 get 被动；还缺少 get + 宾语 + 形容词的清楚示范。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[4]",
+        "message": "机会义与 get something done 的完成结构混列；get to know 也不能一律解释成得到机会。应将完成结构移回使役义，并分别示范机会义和逐渐开始义。"
+      },
+      {
+        "severity": "error",
+        "location": "senses[5]",
+        "message": "电话联系、理解和捕获／赶车被合并，捕获和赶车没有对应例句。应按意义分开，近义和反向表达也随之绑定。"
+      },
+      {
+        "severity": "error",
+        "location": "senses；lessCommonSenses",
+        "message": "缺少常用的 get 被动、have got 表拥有、have got to 表必须；患病不宜仅作为低频义。起床、交通工具进出、相处和适应等高频用法也需补足。"
+      },
+      {
+        "severity": "error",
+        "location": "lessCommonSenses",
+        "message": "幼兽／动物后代义主要是育种专业用法，不能全部归为废旧用法；废旧的孩子义与体育救球义须分别交代。重排后每个 example.senseId 均须指向其所在义项，避免上次的跨义绑定错误。"
+      },
+      {
+        "severity": "error",
+        "location": "confusions[0].takeaway",
+        "message": "不能只凭 get 后面有没有人判断句型；get someone something、捕获某人等结构都会使这个判断失效。"
+      },
+      {
+        "severity": "error",
+        "location": "confusions[1].items[1]",
+        "message": "have gotten better 是状态变化义，例句误绑到获得义；got/gotten 说明还应明确 have got 和 have got to 不能任意换成 gotten。"
+      },
+      {
+        "severity": "error",
+        "location": "wordFamily[0].example",
+        "message": "top getter 不能自然地独立表示得分最多的队员。保留真实的 getter 构词，改用常见复合词 attention-getter 展示实际用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "etymology.summary；memoryAid",
+        "message": "词源正文应直接讲历史事实，删除制作口吻；助记故事应直接使用正确的 gets，避免 get[s] 这样的非实际词形。"
+      }
+    ],
+    "coverageAssessment": "已核对获得、收到、购买、取来、收成、到达、状态变化、使役、机会／渐进、理解、联系、捕获／赶车、患病、get 被动及 have got 两类常用功能，修订后各核心义均有至少两个例句。另补充起床、乘车、相处和适应用法；低频名词覆盖繁育／后代／血统、旧时孩子及体育救球。长衍生表中的较进阶短语和俚语未逐条展开。历史来源仅采用已取得的词源材料；未将法语说明误认作法语词条。低频义重排后，所有例句的 senseId 均与所属义项一致。",
+    "senseInventory": [
+      {
+        "sense": "得到、获得、收到、买到、取来；获得收成或成果",
+        "coveredBy": [
+          "get-1"
+        ],
+        "assessment": "补充取来和收成例句，覆盖原词条的“收获”；双宾语结构另作说明。"
+      },
+      {
+        "sense": "到达",
+        "coveredBy": [
+          "get-2"
+        ],
+        "assessment": "保留两个到达例句，区分 get to 与 get home/here/there。"
+      },
+      {
+        "sense": "与方向词连用：进入、出去、上下交通工具、返回",
+        "coveredBy": [
+          "get-2"
+        ],
+        "assessment": "补充 get into/out of、get on/off、get back 的句型及实际例句。"
+      },
+      {
+        "sense": "变得、进入某种状态",
+        "coveredBy": [
+          "get-3"
+        ],
+        "assessment": "纠正职业名词补语错误；保留形容词例句，并补充结婚等状态表达。"
+      },
+      {
+        "sense": "逐渐适应：get used to",
+        "coveredBy": [
+          "get-3"
+        ],
+        "assessment": "补充两个例句，明确 to 为介词，后接名词或动名词。"
+      },
+      {
+        "sense": "促使、说服某人做某事",
+        "coveredBy": [
+          "get-4"
+        ],
+        "assessment": "保留 get someone to do，区别于 make someone do 和仅提出请求的 ask。"
+      },
+      {
+        "sense": "使人或物进入状态；安排或使某事完成",
+        "coveredBy": [
+          "get-4"
+        ],
+        "assessment": "补充宾语加形容词及完成结果例句，纠正使役结构与被动结构混淆。"
+      },
+      {
+        "sense": "有机会或获准做某事：get to do",
+        "coveredBy": [
+          "get-5"
+        ],
+        "assessment": "保留并补足机会义例句，不再与 get something done 混为一义。"
+      },
+      {
+        "sense": "逐渐开始了解、喜欢等：get to know/like",
+        "coveredBy": [
+          "get-5"
+        ],
+        "assessment": "单独说明这一用法，并配两个例句；不泛化成所有 get to do 的解释。"
+      },
+      {
+        "sense": "理解、明白、听懂",
+        "coveredBy": [
+          "get-6"
+        ],
+        "assessment": "独立成义，配两个理解内容的例句；近反义限定在理解语境。"
+      },
+      {
+        "sense": "接通电话、联系上某人",
+        "coveredBy": [
+          "get-7"
+        ],
+        "assessment": "补充电话及联系表达，明确 get through to 中的 to。"
+      },
+      {
+        "sense": "抓住、逮到；赶上交通工具",
+        "coveredBy": [
+          "get-8"
+        ],
+        "assessment": "捕获和赶车各有两个例句，避免以 get a taxi 代替捕获义示范。"
+      },
+      {
+        "sense": "患上、染上疾病",
+        "coveredBy": [
+          "get-9"
+        ],
+        "assessment": "从低频义移入常用义，配两个例句，并与康复、健康状态区分。"
+      },
+      {
+        "sense": "get 被动：主语承受动作",
+        "coveredBy": [
+          "get-10"
+        ],
+        "assessment": "补充真正的 get + 过去分词被动，兼有不利事件和获邀等正面事件。"
+      },
+      {
+        "sense": "have/has got：现在拥有",
+        "coveredBy": [
+          "get-11"
+        ],
+        "assessment": "补充常用功能，明确 got 在这里不表示过去拥有。"
+      },
+      {
+        "sense": "have/has got to：必须",
+        "coveredBy": [
+          "get-12"
+        ],
+        "assessment": "补充常用功能，说明通常以 had to 表示过去的必要性。"
+      },
+      {
+        "sense": "get up：起床、起身",
+        "coveredBy": [
+          "get-13"
+        ],
+        "assessment": "两个例句分别覆盖从床上起床和从椅子上起身。"
+      },
+      {
+        "sense": "get along/on with：相处",
+        "coveredBy": [
+          "get-14"
+        ],
+        "assessment": "补充两个生活例句，并区别于表示进展或继续的其他 get on 用法。"
+      },
+      {
+        "sense": "名词：繁育、后代、血统",
+        "coveredBy": [
+          "get-lc-2"
+        ],
+        "assessment": "区分极罕见的生育／繁殖旧义与育种语境仍使用的后代义，不列作初中常用产出词汇。"
+      },
+      {
+        "sense": "名词：孩子（废旧用法）",
+        "coveredBy": [
+          "get-lc-3"
+        ],
+        "assessment": "单列旧义并明确限制，避免把现代儿童称呼与育种术语混在一起。"
+      },
+      {
+        "sense": "名词：（网球、壁球等）救球",
+        "coveredBy": [
+          "get-lc-4"
+        ],
+        "assessment": "补齐原词条体育名词义，仅作识读。"
+      },
+      {
+        "sense": "衍生短语：进展、成功、应付、完成、熬过",
+        "coveredBy": [
+          "get-4"
+        ],
+        "assessment": "get something done 已覆盖完成结果；get ahead、get by、get through a task/period、get nowhere、get on with it 等不逐条扩展为本课核心义。"
+      },
+      {
+        "sense": "衍生短语：准备、开始行动、康复、迷路、聚会及社交往来",
+        "coveredBy": [
+          "get-2",
+          "get-3",
+          "get-4",
+          "get-9",
+          "get-14"
+        ],
+        "assessment": "状态、准备、恢复及相处相关用法已有代表性覆盖；get together、get going、get about 等其余搭配留作拓展。"
+      },
+      {
+        "sense": "衍生短语：摆脱、逃离、免罚、报复、去除、穿戴、阻碍",
+        "coveredBy": [],
+        "assessment": "get rid of、get away、get away with、get back at、get even、get something off/out/on、get in the way 等属于各自的短语用法，本课未逐一展开。"
+      },
+      {
+        "sense": "衍生短语：暗示、倾诉、终于着手、参与、获准进入及俚语表达",
+        "coveredBy": [],
+        "assessment": "get at、get something off one's chest、get around to、get in on 等留作拓展；性语域、吸毒及其他俚语不列为初中核心，也不照搬衍生表中的可疑释义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-get\",\"title\":\"Cambridge Dictionary：get\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/get\",\"supports\":[\"动词常用义与搭配\",\"动词形式及英美用法\",\"get 的发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-get\",\"title\":\"Wiktionnaire：get（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/get#Anglais\",\"supports\":[\"获得、收到、理解、变得及 get 被动\",\"不规则词形与发音\",\"英语 get 的衍生短语\",\"名词血统义与废旧的孩子义\",\"中古英语 geten 与古诺尔斯语 geta 的历史关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"旧音标 /get/ 用字母代替了国际音标；标准音标写作 /ɡet/。\"",
+        "valueJson": "\"不同词典可将 get 标作 /ɡet/ 或 /ɡɛt/，这是对同一类短元音采用不同标音惯例；这里统一使用 /ɡet/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[\"wiktionary-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/ipa",
+        "expectedValueJson": "\"/ɡɒt/; /ˈɡɑːtən/\"",
+        "valueJson": "\"got：/ɡɒt/（英式），/ɡɑːt/（美式）；gotten：/ˈɡɑːtən/（美式）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"英式英语多用 got；美式英语中 got 和 gotten 都常见，具体用法随结构而变。\"",
+        "valueJson": "\"英式通常用 got；美式表示获得、变得等常用 gotten。表示现在拥有的 have got 和表示必须的 have got to 使用 got，不能一律换成 gotten。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记 get + 名词表示得到，再记 get + 地点表示到达。\"",
+        "valueJson": "\"先记获得、到达、变得三类常用义：get a book、get to school、get tired；home、here、there 前不加 to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练熟 get + 形容词表示变得，以及 get + to do 表示有机会做某事。\"",
+        "valueJson": "\"分清 get to do、get someone to do、get something done 和主语 + get + 过去分词；再练 get up、get on/off、get along with 等常用短语。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 have got 表示现在拥有、have got to 表示必须，以及 get used to 后接名词或动名词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-1-ex3\",\"senseId\":\"get-1\",\"en\":\"Could you get me a clean towel from the bathroom?\",\"zh\":\"你能去浴室帮我拿条干净毛巾吗？\",\"note\":\"这里 get 表示取来；get someone something 表示给某人弄来某物。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-1-ex4\",\"senseId\":\"get-1\",\"en\":\"We got a good crop of tomatoes from the garden this summer.\",\"zh\":\"今年夏天，我们家菜园里的西红柿收成不错。\",\"note\":\"get a good crop 表示获得好收成，对应“收获”这一用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get + 人 + 物\",\"zh\":\"给某人买来／取来／弄到某物\",\"note\":\"例如 get me a towel；后面是物，不是表示让人行动的 to do。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[\"wiktionary-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"到达；抵达\"",
+        "valueJson": "\"到达；与方位词连用表示移动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"到达某处，或在某个时间到达。\"",
+        "valueJson": "\"get to 表示到达；与 in、out、on、off、back 等词连用时，还可表示进入、出去、上下车或返回。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"get to + 地点；home、here、there 等副词前通常不加 to。\"",
+        "valueJson": "\"到达通常用 get to + 地点；home、here、there 前不加 to。上下小汽车常用 get in/into、get out of；上下公共汽车、火车、飞机常用 get on、get off。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-2-ex3\",\"senseId\":\"get-2\",\"en\":\"The children got into the car and put on their seat belts.\",\"zh\":\"孩子们上了汽车，系好安全带。\",\"note\":\"get into the car 表示进入小汽车。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-2-ex4\",\"senseId\":\"get-2\",\"en\":\"We got out of the taxi outside the hotel.\",\"zh\":\"我们在酒店外下了出租车。\",\"note\":\"下出租车用 get out of，不用 get off。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-2-ex5\",\"senseId\":\"get-2\",\"en\":\"We got on the bus near our house.\",\"zh\":\"我们在家附近上了公共汽车。\",\"note\":\"上公共汽车用 get on。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-2-ex6\",\"senseId\":\"get-2\",\"en\":\"Let's get off at the next stop.\",\"zh\":\"我们下一站下车吧。\",\"note\":\"语境已明确乘坐公共交通工具时，get off 后可以不重复车辆名称。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-2-ex7\",\"senseId\":\"get-2\",\"en\":\"We got back from the park at six.\",\"zh\":\"我们六点从公园回来了。\",\"note\":\"get back 在这里表示返回。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get in/into a car; get out of a car\",\"zh\":\"上小汽车；下小汽车\",\"note\":\"in/into 表示进入，out of 表示从里面出来。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get on/off a bus, train or plane\",\"zh\":\"上／下公共汽车、火车或飞机\",\"note\":\"这里通常使用 on/off；注意与小汽车的 in/out of 区分。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get back (from a place)\",\"zh\":\"（从某地）回来\",\"note\":\"这里 back 表示返回；get something back 则可表示取回某物。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[\"wiktionary-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"变得；变成\"",
+        "valueJson": "\"变得；进入某种状态\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"进入某种状态，后面常接形容词，也可接表示身份或职业的名词。\"",
+        "valueJson": "\"进入某种状态，常用 get + 形容词；get married、get lost、get used to 等也常表示状态变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"get + 形容词常表示状态发生变化，相当于“变得……”。\"",
+        "valueJson": "\"get + 形容词常表示“变得……”。表示成为某种身份或职业通常用 become a teacher 等；get a teacher 通常是找到或请来老师。get used to 中的 to 是介词，后接名词或动名词。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"get + 身份／职业名词\",\"zh\":\"成为……\",\"note\":\"可表示身份或职业发生变化，如 get a teacher 的结构不自然；通常说 become a teacher，get 常用于 get a job 等固定搭配。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get used to + 名词／动名词\",\"zh\":\"逐渐习惯／适应……\",\"note\":\"to 是介词：get used to the school、get used to getting up early；不是这里再接动词原形。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-3-ex3\",\"senseId\":\"get-3\",\"en\":\"I'm getting used to my new school.\",\"zh\":\"我正逐渐适应新学校。\",\"note\":\"getting used to 表示适应的过程。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-3-ex4\",\"senseId\":\"get-3\",\"en\":\"She got used to getting up early.\",\"zh\":\"她习惯了早起。\",\"note\":\"to 后用动名词 getting；got used to 表示逐渐形成了习惯。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-3-ex5\",\"senseId\":\"get-3\",\"en\":\"My cousin is getting married next spring.\",\"zh\":\"我表姐明年春天结婚。\",\"note\":\"get married 是结婚；这里现在进行时表示已安排的将来事项。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get married / get dressed / get lost\",\"zh\":\"结婚／穿好衣服／迷路\",\"note\":\"这些表达可按进入某种状态理解；不能仅凭词尾 -ed 就把所有表达都一律当成事件被动。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[\"wiktionary-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"使；让某人做成某事\"",
+        "valueJson": "\"使；促使；安排某事完成\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"使某人做某事，或说服、安排某人去做某事。\"",
+        "valueJson": "\"促使、说服某人做某事，使人或物进入某种状态，或安排、设法使某事完成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用 get + 人 + to do；被动结构常见为 get + 人／物 + 过去分词。\"",
+        "valueJson": "\"get + 人 + to do 表示促使对方行动；get + 宾语 + 形容词／过去分词表示使宾语进入某状态。这些都是带宾语的使役结构；主语 + get + 过去分词才是另一类 get 被动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"get + 物 + 过去分词\",\"zh\":\"找人把某物……；使某物被……\",\"note\":\"强调安排某事完成，通常不说明具体执行者。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"get + 宾语 + 过去分词\",\"zh\":\"使某人／某物被……；把某事做完\",\"note\":\"宾语承受动作；可以安排别人处理，也可以自己设法完成，不一定由别人来做。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get + 宾语 + 形容词\",\"zh\":\"使某人／某物变得……\",\"note\":\"形容词说明宾语达到的状态，如 get everything ready。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-4-ex3\",\"senseId\":\"get-4\",\"en\":\"I got my homework done before dinner.\",\"zh\":\"我晚饭前把作业做完了。\",\"note\":\"get my homework done 强调使作业达到完成状态，不表示一定请别人代做。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-4-ex4\",\"senseId\":\"get-4\",\"en\":\"We got everything ready before the guests arrived.\",\"zh\":\"客人到来前，我们把一切都准备好了。\",\"note\":\"everything 是宾语，ready 是说明宾语状态的形容词；准备完成在客人到来之前。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"get everything ready\",\"zh\":\"把一切准备好\",\"note\":\"get + 宾语 + 形容词；ready 表示准备就绪。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0/note",
+        "expectedValueJson": "\"to help 是不定式，说明希望对方做的事。\"",
+        "valueJson": "\"to help 说明促使对方采取的行动；肯定过去式 got someone to help 通常表示对方确实帮了忙。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/title",
+        "expectedValueJson": "\"有机会；设法做成\"",
+        "valueJson": "\"get to do：有机会；逐渐开始\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"get to do 表示有机会做某事；get something done 表示把某事做完。\"",
+        "valueJson": "\"get to do 常表示有机会或获准做某事；在 get to know、get to like 等搭配中，也可表示逐渐开始了解、喜欢。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"get to do 中的 to 后接动词原形；不要与表示“让某人做”的 get someone to do 混淆。\"",
+        "valueJson": "\"to 后接动词原形。机会义与逐渐开始义要看动词和语境区分，不能一律译成“设法做成”；get someone to do 是促使别人做，get something done 则是使事情完成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/1",
+        "expectedValueJson": "{\"id\":\"get-5-ex2\",\"senseId\":\"get-5\",\"en\":\"I got my homework done before dinner.\",\"zh\":\"我晚饭前把作业做完了。\",\"note\":\"get my homework done 表示把作业完成。\"}",
+        "valueJson": "{\"id\":\"get-5-ex2\",\"senseId\":\"get-5\",\"en\":\"On my birthday, I got to choose the dessert.\",\"zh\":\"过生日那天，我可以自己选甜点。\",\"note\":\"got to choose 表示当时获准选择，得到了一项特别待遇。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-5-ex3\",\"senseId\":\"get-5\",\"en\":\"Over the first few weeks, I got to know my new classmates.\",\"zh\":\"最初几个星期里，我逐渐熟悉了新同学。\",\"note\":\"get to know 在这里表示逐渐了解，不强调获得特殊机会。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-5-ex4\",\"senseId\":\"get-5\",\"en\":\"At first I disliked the song, but I got to like it after hearing it a few times.\",\"zh\":\"起初我不喜欢那首歌，但听了几遍后渐渐喜欢上了。\",\"note\":\"got to like 表示逐渐开始喜欢。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1",
+        "expectedValueJson": "{\"en\":\"get + 事情 + done\",\"zh\":\"把某事做完\",\"note\":\"done 是过去分词，表示事情达到完成状态。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"get to know / get to like\",\"zh\":\"开始了解／逐渐喜欢\",\"note\":\"这些搭配可以表示逐渐发生的变化，不能一律解释成“有机会”。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/0/note",
+        "expectedValueJson": "\"表示有机会并逐步了解某人。\"",
+        "valueJson": "\"常指开始认识或逐步了解某人，不必然强调获准或得到特殊机会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/1",
+        "expectedValueJson": "{\"en\":\"get everything ready\",\"zh\":\"把一切准备好\",\"note\":\"get + 宾语 + 形容词，表示使事情进入准备好的状态。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"get to choose\",\"zh\":\"有机会／获准选择\",\"note\":\"常表示得到了作出选择的机会或权利。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"have a chance to do\",\"zh\":\"有机会做\",\"note\":\"意思接近 get to do，结构清楚，适合表达获得机会。\"},{\"en\":\"finish\",\"zh\":\"完成\",\"note\":\"直接表示完成任务；get something done 常突出设法安排并使其完成。\"}],\"contrasting\":[{\"en\":\"miss a chance to do\",\"zh\":\"错过做某事的机会\",\"note\":\"只在机会这一语境中与 get to do 对照，表示没有得到机会。\"}],\"similarNote\":\"get to do 常见于口语，have a chance to do 更明确地说“有机会”；finish 直接说完成。\",\"contrastingNote\":\"当 get to 表示获得机会时，miss a chance 表示错过机会。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"have a chance to do\",\"zh\":\"有机会做\",\"note\":\"对应机会义；get to do 在肯定过去叙述中通常还表明实际经历了这件事。\"},{\"en\":\"be allowed to do\",\"zh\":\"获准做\",\"note\":\"对应 get to do 表示许可的语境，不适用于所有机会义。\"},{\"en\":\"come to know/like\",\"zh\":\"逐渐了解／开始喜欢\",\"note\":\"只对应 get to know/like 的逐渐开始义。\"}],\"contrasting\":[{\"en\":\"not get to do\",\"zh\":\"没机会／未获准做\",\"note\":\"直接否定机会或许可。\"},{\"en\":\"miss a chance to do\",\"zh\":\"错过做某事的机会\",\"note\":\"表示机会出现了却没有把握住，不等于根本没有机会。\"}],\"similarNote\":\"机会、许可和逐渐开始三种语境分别比较，不能用 finish 解释所有 get to do。\",\"contrastingNote\":\"机会义可与未能获得机会或错过机会对照；这些表达不适用于 get to know 的所有用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5",
+        "expectedValueJson": "{\"id\":\"get-6\",\"title\":\"接通；听懂；抓住\",\"meaning\":\"接通电话，听懂话语，或抓住、赶上某人或某物，具体含义由宾语决定。\",\"usageNote\":\"get 的口语含义很多，特别要留意电话、信息和交通工具等宾语。\",\"examples\":[{\"id\":\"get-6-ex1\",\"senseId\":\"get-6\",\"en\":\"Can you get the teacher on the phone?\",\"zh\":\"你能帮我把老师的电话接通吗？\",\"note\":\"get someone on the phone 表示联系上某人。\"},{\"id\":\"get-6-ex2\",\"senseId\":\"get-6\",\"en\":\"I didn’t get the last part of the joke.\",\"zh\":\"我没听懂那个笑话的最后一部分。\",\"note\":\"get 在这里表示听懂、理解。\"}],\"patterns\":[{\"en\":\"get someone on the phone\",\"zh\":\"通过电话联系上某人\",\"note\":\"强调成功接通或联系到对方。\",\"kind\":\"common-collocation\"},{\"en\":\"get the meaning / get the joke\",\"zh\":\"明白意思／听懂笑话\",\"note\":\"get 在口语中可表示理解信息。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"get a taxi\",\"zh\":\"叫到出租车\",\"note\":\"可表示找到或叫到一辆出租车。\",\"kind\":\"common-collocation\"},{\"en\":\"get the ball\",\"zh\":\"接到球；拿到球\",\"note\":\"在球类语境中表示接住或拿到球。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"understand\",\"zh\":\"理解\",\"note\":\"清楚表示理解内容；get 更口语。\"},{\"en\":\"catch\",\"zh\":\"接住；听清\",\"note\":\"用于球、声音或话语时，强调接住或捕捉到。\"}],\"contrasting\":[{\"en\":\"miss\",\"zh\":\"没听到；错过\",\"note\":\"在听懂、接住或赶上这一具体语境中，miss 表示未能听到、接住或赶上。\"}],\"similarNote\":\"understand 适合明确表达理解；catch 常用于听清或接住；get 依赖上下文判断。\",\"contrastingNote\":\"仅在听、接、赶上的语境中，miss 表示没有成功获得或赶上。\"},\"sourceIds\":[\"cambridge-get\"]}",
+        "valueJson": "{\"id\":\"get-6\",\"title\":\"理解；明白\",\"meaning\":\"在口语中表示理解话语、意思或笑点。\",\"usageNote\":\"I get it. 表示“我明白了”。理解可以来自听或读，不能把这种 get 一律译成“得到”。\",\"examples\":[{\"id\":\"get-6-ex1\",\"senseId\":\"get-6\",\"en\":\"I don't get why the bus is late again.\",\"zh\":\"我不明白公交车为什么又晚点了。\",\"note\":\"get 后接 why 引导的宾语从句，表示理解原因。\"},{\"id\":\"get-6-ex2\",\"senseId\":\"get-6\",\"en\":\"I didn’t get the last part of the joke.\",\"zh\":\"我没听懂那个笑话的最后一部分。\",\"note\":\"get 在这里表示听懂、理解。\"}],\"patterns\":[{\"en\":\"get what someone means\",\"zh\":\"明白某人的意思\",\"note\":\"what someone means 作 get 的宾语。\",\"kind\":\"sentence-pattern\"},{\"en\":\"get the meaning / get the joke\",\"zh\":\"明白意思／听懂笑话\",\"note\":\"用于理解内容或领会笑点。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"get it\",\"zh\":\"明白了\",\"note\":\"it 指前面提到的解释、情况或意思。\",\"kind\":\"fixed-expression\"},{\"en\":\"get the point\",\"zh\":\"领会要点\",\"note\":\"指理解主要意思。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"understand\",\"zh\":\"理解\",\"note\":\"适用范围较广；get 更口语。\"},{\"en\":\"follow\",\"zh\":\"听懂；跟上思路\",\"note\":\"常用于解释、讲述或讨论，强调跟得上对方的思路。\"}],\"contrasting\":[{\"en\":\"misunderstand\",\"zh\":\"误解\",\"note\":\"表示理解错了，不等于完全没理解。\"},{\"en\":\"miss the point\",\"zh\":\"没领会要点\",\"note\":\"只与理解要点这一语境对照。\"}],\"similarNote\":\"get 和 understand 可表示理解；follow 常突出跟上讲述或推理。\",\"contrastingNote\":\"误解和没抓住要点是不同的理解问题，应按具体语境选择。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-7\",\"title\":\"接通电话；联系上\",\"meaning\":\"通过电话或其他方式联系上某人。\",\"usageNote\":\"电话打通可用 get through to someone；get someone on the phone 表示让某人接听、使双方通上话。get in touch with 的联系方式更广。\",\"examples\":[{\"id\":\"get-7-ex1\",\"senseId\":\"get-7\",\"en\":\"Can you get the teacher on the phone?\",\"zh\":\"你能帮我联系老师，让老师接一下电话吗？\",\"note\":\"get someone on the phone 表示使对方接听并通上话。\"},{\"id\":\"get-7-ex2\",\"senseId\":\"get-7\",\"en\":\"I couldn't get through to Mum because her phone was off.\",\"zh\":\"妈妈的手机关机了，我没能打通她的电话。\",\"note\":\"get through to someone；否定式表示没联系成功。\"},{\"id\":\"get-7-ex3\",\"senseId\":\"get-7\",\"en\":\"Please get in touch with me when you arrive.\",\"zh\":\"你到了以后请联系我。\",\"note\":\"get in touch with 不限于打电话，也可以发消息等。\"}],\"patterns\":[{\"en\":\"get through to + 人\",\"zh\":\"打通某人的电话\",\"note\":\"电话语境中，通过 to 引出要联系的人。\",\"kind\":\"sentence-pattern\"},{\"en\":\"get someone on the phone\",\"zh\":\"让某人接电话；与某人通上话\",\"note\":\"强调成功接通或使对方接听。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get in touch with someone\",\"zh\":\"与某人取得联系\",\"note\":\"可通过电话、邮件或消息等方式联系。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"contact\",\"zh\":\"联系\",\"note\":\"方式不限于电话，也不总突出联系是否成功。\"},{\"en\":\"get hold of someone\",\"zh\":\"找到并联系上某人\",\"note\":\"常用于费了一番功夫才联系到人的语境。\"}],\"contrasting\":[{\"en\":\"fail to get through\",\"zh\":\"没能打通电话\",\"note\":\"直接否定电话接通的结果。\"}],\"similarNote\":\"call someone 只表示打电话，不保证对方接听；get through 强调接通。\",\"contrastingNote\":\"这里只比较联系成功与未成功，不把失去长期联系当成每次电话失败。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-8\",\"title\":\"抓住；逮到；赶上车\",\"meaning\":\"在口语中指抓到人或动物；与交通工具连用也可表示赶上并乘坐。\",\"usageNote\":\"get the thief 是抓住小偷；get the last bus 是赶上末班车。get a taxi 通常是叫到或找到出租车，侧重获得交通服务。\",\"examples\":[{\"id\":\"get-8-ex1\",\"senseId\":\"get-8\",\"en\":\"The police got the thief before he could leave the shop.\",\"zh\":\"小偷还没来得及离开商店，就被警方抓住了。\",\"note\":\"got 在这里是口语的抓获。\"},{\"id\":\"get-8-ex2\",\"senseId\":\"get-8\",\"en\":\"Our cat got a mouse in the kitchen last night.\",\"zh\":\"昨晚我们家的猫在厨房抓到了一只老鼠。\",\"note\":\"宾语是被捕获的动物。\"},{\"id\":\"get-8-ex3\",\"senseId\":\"get-8\",\"en\":\"If we leave now, we can still get the last bus home.\",\"zh\":\"如果现在出发，我们还赶得上回家的末班车。\",\"note\":\"get the bus 在这里表示赶上并乘坐公共汽车。\"},{\"id\":\"get-8-ex4\",\"senseId\":\"get-8\",\"en\":\"We got the 8:15 train to the city.\",\"zh\":\"我们赶上并乘坐了八点十五分去市里的火车。\",\"note\":\"这是交通语境中的 get，不表示买下一列火车。\"}],\"patterns\":[{\"en\":\"get + 被捕获的人／动物\",\"zh\":\"抓住……\",\"note\":\"属于口语用法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get the last bus/train\",\"zh\":\"赶上末班公共汽车／火车\",\"note\":\"指赶上并乘坐，不只是找到车辆。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"catch\",\"zh\":\"抓住；赶上\",\"note\":\"可用于捕获人或动物，也可用于赶上车船。\"},{\"en\":\"capture\",\"zh\":\"捕获；抓获\",\"note\":\"较正式，适用于捕获语境，不用于普通的赶公交车。\"}],\"contrasting\":[{\"en\":\"miss the bus/train\",\"zh\":\"没赶上公共汽车／火车\",\"note\":\"只与赶车义对照。\"},{\"en\":\"let someone escape\",\"zh\":\"让某人逃走\",\"note\":\"只在抓捕语境中形成结果相反的对照。\"}],\"similarNote\":\"catch 可覆盖这里两类用法；capture 只适用于抓捕。\",\"contrastingNote\":\"按抓捕和赶车分别选择反向表达。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-9\",\"title\":\"患上；染上疾病\",\"meaning\":\"开始患某种病，也可用 get sick/ill 表示生病。\",\"usageNote\":\"get 强调患上的过程，have a cold 常描述已经感冒的状态。a cold 要有冠词；flu 的搭配常为 the flu。\",\"examples\":[{\"id\":\"get-9-ex1\",\"senseId\":\"get-9\",\"en\":\"I got a cold after the school trip.\",\"zh\":\"学校旅行后我感冒了。\",\"note\":\"get a cold 是常用表达，got 表示过去患上。\"},{\"id\":\"get-9-ex2\",\"senseId\":\"get-9\",\"en\":\"My brother got the flu and missed three days of school.\",\"zh\":\"我弟弟得了流感，三天没去上学。\",\"note\":\"get the flu 表示患流感；后面的动作说明对上学的影响。\"}],\"patterns\":[{\"en\":\"get + 疾病名称\",\"zh\":\"患上某种疾病\",\"note\":\"冠词随疾病名称而定，如 get a cold、get the flu。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get sick / get ill\",\"zh\":\"生病\",\"note\":\"sick、ill 是形容词，与状态变化义相通。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"catch a cold\",\"zh\":\"患感冒\",\"note\":\"只用于适合 catch 的疾病表达，不能替换所有疾病名称前的 get。\"},{\"en\":\"have a cold\",\"zh\":\"感冒了；患着感冒\",\"note\":\"侧重已有的患病状态。\"}],\"contrasting\":[{\"en\":\"get over a cold\",\"zh\":\"从感冒中恢复\",\"note\":\"针对同一种疾病，对照患上与恢复。\"}],\"similarNote\":\"get/catch 常指出现疾病，have 常描述患病状态。\",\"contrastingNote\":\"get over a cold 表示恢复，不是单纯没有感染。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-10\",\"title\":\"get 被动：被……\",\"meaning\":\"get 后接过去分词，可以表示主语承受某个动作。\",\"usageNote\":\"多见于口语，常突出事件发生；既可表示遭遇坏事，也可表示获邀等好事。与 get + 宾语 + 过去分词的使役结构分清。\",\"examples\":[{\"id\":\"get-10-ex1\",\"senseId\":\"get-10\",\"en\":\"My phone got stolen on the bus.\",\"zh\":\"我的手机在公共汽车上被偷了。\",\"note\":\"my phone 是被偷的对象；get 后直接接 stolen。\"},{\"id\":\"get-10-ex2\",\"senseId\":\"get-10\",\"en\":\"The window got broken during the game.\",\"zh\":\"那扇窗户在比赛中被打破了。\",\"note\":\"主语 the window 承受动作，不是安排别人做事。\"},{\"id\":\"get-10-ex3\",\"senseId\":\"get-10\",\"en\":\"She got invited to her cousin's wedding.\",\"zh\":\"她受邀参加表亲的婚礼。\",\"note\":\"get 被动也可以表达正面的经历。\"}],\"patterns\":[{\"en\":\"主语 + get + 过去分词\",\"zh\":\"主语被……\",\"note\":\"get 随时态变化，后面的过去分词表示主语承受的动作。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get invited / get paid\",\"zh\":\"获邀／领到报酬\",\"note\":\"属于常见的 get 被动表达。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be + 过去分词\",\"zh\":\"被……\",\"note\":\"适用范围更广；get 被动常突出事件或变化，不是所有 be 被动都宜直接换成 get。\"}],\"contrasting\":[],\"similarNote\":\"My phone was stolen 和 My phone got stolen 都可表示手机被偷，后者更口语。\",\"contrastingNote\":\"被动是一种语法功能，没有一个适用于所有动作的词汇反义词。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-11\",\"title\":\"have got：有；拥有\",\"meaning\":\"have/has got 在日常表达中常表示现在拥有某物或具有某种情况。\",\"usageNote\":\"这里 got 不表示过去拥有。英式口语尤其常见；美式也使用。不要把表示拥有的 have got 一律换成 have gotten。\",\"examples\":[{\"id\":\"get-11-ex1\",\"senseId\":\"get-11\",\"en\":\"I've got two tickets for Saturday's film.\",\"zh\":\"我有两张星期六的电影票。\",\"note\":\"I've got = I have got，表示现在有。\"},{\"id\":\"get-11-ex2\",\"senseId\":\"get-11\",\"en\":\"Has your brother got a bike?\",\"zh\":\"你哥哥有自行车吗？\",\"note\":\"have got 的这类疑问句将 has 放到主语前；也可说 Does your brother have a bike?\"}],\"patterns\":[{\"en\":\"have/has got + 名词\",\"zh\":\"有／拥有……\",\"note\":\"常用于现在的拥有关系；否定可用 haven't/hasn't got。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have got enough time\",\"zh\":\"有足够的时间\",\"note\":\"拥有义也可以用于时间等抽象事物。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"have\",\"zh\":\"有\",\"note\":\"在这里意思接近；其疑问句和否定句通常用 do/does。\"},{\"en\":\"own\",\"zh\":\"拥有\",\"note\":\"明确表示所有权，不适合替换 have got time 等表达。\"}],\"contrasting\":[{\"en\":\"not have / haven't got\",\"zh\":\"没有\",\"note\":\"直接否定拥有关系。\"}],\"similarNote\":\"have 的适用范围更广；own 强调所有权。\",\"contrastingNote\":\"这里使用没有作直接对照，不把 lose 当成所有拥有关系的反义词。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-12\",\"title\":\"have got to：必须\",\"meaning\":\"have/has got to + 动词原形表示必须或有必要做某事。\",\"usageNote\":\"常见于口语；这里 got 不表示过去。表达过去的必要性通常用 had to；这一结构中的 got 不换成 gotten。\",\"examples\":[{\"id\":\"get-12-ex1\",\"senseId\":\"get-12\",\"en\":\"I've got to return this library book today.\",\"zh\":\"我今天必须归还这本图书馆的书。\",\"note\":\"have got to return 表示现在有这项必要性。\"},{\"id\":\"get-12-ex2\",\"senseId\":\"get-12\",\"en\":\"Mum has got to leave for work at six tomorrow.\",\"zh\":\"妈妈明天必须六点出门上班。\",\"note\":\"主语是 Mum，用 has got to；tomorrow 表示需要执行动作的时间。\"}],\"patterns\":[{\"en\":\"have/has got to + 动词原形\",\"zh\":\"必须做某事\",\"note\":\"区别于 have got + 名词表示拥有；to 后接动词原形。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have got to go\",\"zh\":\"必须走了\",\"note\":\"常用于口语中说明自己必须离开。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"have to do\",\"zh\":\"必须做\",\"note\":\"适用时态更广；过去常用 had to，将来可用 will have to。\"},{\"en\":\"must do\",\"zh\":\"必须做\",\"note\":\"在义务或必要性语境中接近，语气常较强。\"}],\"contrasting\":[{\"en\":\"don't have to do\",\"zh\":\"不必做\",\"note\":\"表示没有必要；mustn't do 则表示不准做。\"}],\"similarNote\":\"这里比较的都是必要性用法；must 还可以用于推测，不能在所有句子里互换。\",\"contrastingNote\":\"必须的反向意思是没有必要，不是禁止。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-13\",\"title\":\"get up：起床；起身\",\"meaning\":\"从床上起来，或从坐着的地方站起来。\",\"usageNote\":\"get up 指起床时，不等于 wake up 醒来；人可能已经醒了但仍躺在床上。\",\"examples\":[{\"id\":\"get-13-ex1\",\"senseId\":\"get-13\",\"en\":\"I get up at seven on school days.\",\"zh\":\"上学的日子我七点起床。\",\"note\":\"表示离床起身的日常习惯。\"},{\"id\":\"get-13-ex2\",\"senseId\":\"get-13\",\"en\":\"She got up from her chair to open the door.\",\"zh\":\"她从椅子上站起来去开门。\",\"note\":\"from her chair 表明这里是起身，不是早晨起床。\"}],\"patterns\":[{\"en\":\"get up (from + 地点)\",\"zh\":\"（从某处）起身\",\"note\":\"from 后可说明原来坐着的位置。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get up early/late\",\"zh\":\"早起／晚起\",\"note\":\"通常指起床时间。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"rise\",\"zh\":\"起身；起床\",\"note\":\"较正式，日常生活更常说 get up。\"},{\"en\":\"wake up\",\"zh\":\"醒来\",\"note\":\"只表示从睡眠中清醒，不保证已经起床。\"}],\"contrasting\":[{\"en\":\"stay in bed\",\"zh\":\"继续躺在床上\",\"note\":\"与起床语境对照。\"},{\"en\":\"sit down\",\"zh\":\"坐下\",\"note\":\"与从椅子上起身的动作对照。\"}],\"similarNote\":\"起床与醒来有关，但不是同一动作。\",\"contrastingNote\":\"从床上起来和从座位上起身分别选择合适的反向表达。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"get-14\",\"title\":\"get along/on with：相处\",\"meaning\":\"与某人相处；加 well、badly 等可以说明关系是否融洽。\",\"usageNote\":\"get along with 和 get on with 都可谈人际关系；get on with a task 则是继续做事，要看 with 后的宾语。\",\"examples\":[{\"id\":\"get-14-ex1\",\"senseId\":\"get-14\",\"en\":\"I get along well with my new classmates.\",\"zh\":\"我和新同学们相处得很好。\",\"note\":\"well 说明相处融洽。\"},{\"id\":\"get-14-ex2\",\"senseId\":\"get-14\",\"en\":\"Does your brother get on with the neighbours?\",\"zh\":\"你哥哥和邻居们相处得好吗？\",\"note\":\"这里 with 后是人，谈的是人际关系。\"}],\"patterns\":[{\"en\":\"get along/on (well/badly) with + 人\",\"zh\":\"与某人相处（得好／不好）\",\"note\":\"with 引出相处的对象。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"get along well with classmates\",\"zh\":\"与同学相处融洽\",\"note\":\"可把 classmates 换成朋友、家人或同事等。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"have a good relationship with\",\"zh\":\"与……关系好\",\"note\":\"对应 get along/on well with 的良好关系语境。\"}],\"contrasting\":[{\"en\":\"not get along with\",\"zh\":\"与……合不来\",\"note\":\"直接否定相处融洽。\"},{\"en\":\"fall out with\",\"zh\":\"与……闹翻\",\"note\":\"表示关系发生恶化，不等于一直合不来。\"}],\"similarNote\":\"要保留 well 的意义，不能把所有 get along with 都机械地译成关系特别好。\",\"contrastingNote\":\"关系不好与发生争吵后闹翻是不同情况。\"},\"sourceIds\":[\"wiktionary-get\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"get-lc-1\",\"title\":\"染上疾病\",\"meaning\":\"患上某种病，常见于 get a cold 等表达。\",\"note\":\"口语中 get 可表示患病，后接疾病名称。\",\"example\":{\"id\":\"get-lc-1-ex1\",\"senseId\":\"get-lc-1\",\"en\":\"I got a cold after the school trip.\",\"zh\":\"学校旅行后我感冒了。\",\"note\":\"get a cold 是“患感冒”的常见搭配。\"},\"sourceIds\":[\"cambridge-get\"]},{\"id\":\"get-lc-2\",\"title\":\"名词：血统；幼兽（旧用法）\",\"meaning\":\"名词 get 可指血统或后代；指幼兽的用法较旧且少见。\",\"note\":\"初中学习通常不需要掌握这个名词义。\",\"example\":{\"id\":\"get-lc-2-ex1\",\"senseId\":\"get-lc-2\",\"en\":\"In the old record, the word get refers to a horse’s offspring.\",\"zh\":\"在那份旧记录中，get 指一匹马的后代。\",\"note\":\"这是少见、偏旧的名词用法。\"},\"sourceIds\":[\"cambridge-get\"]}]",
+        "valueJson": "[{\"id\":\"get-lc-2\",\"title\":\"名词：后代；血统（专业或旧用法）\",\"meaning\":\"在畜牧、育种语境中可指某一雄性动物繁殖出的后代，也有血统义；生育、繁殖这一动作名词义极罕见。\",\"note\":\"动物后代义是专业用法，不能全部标成废旧用法。日常说生殖、繁殖通常用 reproduction 或 breeding，后代通常用 offspring。\",\"example\":{\"id\":\"get-lc-2-ex1\",\"senseId\":\"get-lc-2\",\"en\":\"The breeder was pleased with the stallion's get.\",\"zh\":\"育种者对这匹种公马繁育出的后代很满意。\",\"note\":\"这里 get 是指后代的集合名词，属于育种语境。\"},\"sourceIds\":[\"wiktionary-get\"]},{\"id\":\"get-lc-3\",\"title\":\"名词：孩子（废旧用法）\",\"meaning\":\"旧时可用 get 指孩子或后代。\",\"note\":\"仅用于识读旧文本；现代日常英语不用它代替 child。\",\"example\":{\"id\":\"get-lc-3-ex1\",\"senseId\":\"get-lc-3\",\"en\":\"The boy was said to be the king's get.\",\"zh\":\"据说那个男孩是国王的孩子。\",\"note\":\"这是刻意展示旧式名词用法的句子；现代通常用 child、son 或 offspring。\"},\"sourceIds\":[\"wiktionary-get\"]},{\"id\":\"get-lc-4\",\"title\":\"名词：（网球等）救球\",\"meaning\":\"在网球、壁球等运动中，指成功救起一个本来很难接到的球。\",\"note\":\"属于体育专业用法，初中阶段识别即可。\",\"example\":{\"id\":\"get-lc-4-ex1\",\"senseId\":\"get-lc-4\",\"en\":\"That was an amazing get—she reached the ball just in time.\",\"zh\":\"那是一次精彩的救球——她刚好及时够到了球。\",\"note\":\"an amazing get 中 get 是可数名词，表示一次成功的救球。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"安排某物被处理或完成。\"",
+        "valueJson": "\"使某物被处理或使某事完成；这是带宾语的使役结构，与主语 + get + 过去分词的被动结构不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先看 get 后面有没有“人”：get to do 是自己有机会做，get someone to do 是让某人做。\"",
+        "valueJson": "\"看完整结构：get to do 可表示自己有机会做，get + 人 + to do 是促使对方做，get + 宾语 + 过去分词是使某事被处理。不能只凭 get 后有没有人判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"完成时和被动结构中用过去分词；美式英语常见 gotten。\"",
+        "valueJson": "\"动词 get 的完成时用过去分词。英式多用 got；美式表示获得、变得等常用 gotten，但表示拥有的 have got 和表示必须的 have got to 保留 got。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"get-1\"",
+        "valueJson": "\"get-3\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[\"wiktionary-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"get 的历史来源可追溯到古诺尔斯语 geta；给出的历史词源说明其来源义域包括“获得”和“到达”。现代 get 的多种短语用法是在英语中逐渐形成的，不能当作彼此无关的词根。\"",
+        "valueJson": "\"英语动词 get 经由中古英语 geten，主要借自古诺尔斯语 geta，后者的词义范围已包括“获得、到达”等。古英语中相关形式主要保存在复合词里，也影响了后来的英语词形。现代 get 的许多短语用法在英语中逐渐形成，不能把它们当成彼此独立的词根。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只呈现有依据的历史来源关系；现代短语搭配不等于古诺尔斯语中已有这些具体表达。\"",
+        "valueJson": "\"古诺尔斯语的来源义域不能直接解释每个现代短语；get up、get along 等搭配需按各自的英语用法学习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline-get\"]",
+        "valueJson": "[\"wiktionary-get\",\"etymonline-get\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"获得者；善于取得东西的人（少见）\"",
+        "valueJson": "\"获取某物的人或东西，常见于复合词\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"get-family-1\",\"senseId\":\"get-1\",\"en\":\"The team’s top getter scored another point.\",\"zh\":\"队里得分最多的队员又拿下一分。\",\"note\":\"getter 语境依赖较强，日常更常直接说 the player who scored most。\"}",
+        "valueJson": "{\"id\":\"get-family-1\",\"senseId\":\"get-1\",\"en\":\"Her bright red hat was a real attention-getter.\",\"zh\":\"她那顶鲜红的帽子特别引人注意。\",\"note\":\"attention-getter 指吸引注意的人或物；getter 在这里作为复合词的一部分使用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-get\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"放学后，Mia get[s] a map（拿到地图），get[s] to the station（到车站），一路走得累了便 get[s] tired（变累）；回家后她 get[s] her homework done（把作业做完）。把每个 get 后面的词想成提示牌，就容易看出意思。\"",
+        "valueJson": "\"放学后，Mia gets a map（拿到地图），gets to the station（到车站），一路走得累了便 gets tired（变累）；回家后她 gets her homework done（把作业做完）。把每个 get 后面的词想成提示牌，就容易看出意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这是帮助记忆用法的情境联想，不是 get 的词源；故事中第三人称的正确形式是 gets。\"",
+        "valueJson": "\"这是原创的用法联想故事，帮助记忆句型，不是 get 的历史词源。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 574,
+    "headword": "get",
+    "meaning_zh": "vt. 得到, 获得, 变成, 使得, 收获, 接通, 抓住, 染上\nvi. 到达, 成为, 变得\nn. (网球等)救球, 生殖, 幼兽",
+    "phonetic": "/get/",
+    "pos": "",
+    "forms": []
+  }
+}

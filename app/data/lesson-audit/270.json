@@ -1,0 +1,307 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "628ea43d17caffaee40ad22aea4c88bfed322e80663f5608ebf3f5d965fdaf4b",
+    "executedReviewPromptHash": "628ea43d17caffaee40ad22aea4c88bfed322e80663f5608ebf3f5d965fdaf4b",
+    "reviewHash": "0441835e837f36ad75a7bf62ae182206032ff004b62a794cb686490d10644f11",
+    "wordId": 270,
+    "inputHash": "5938850eb216eddac237d2f1b76f8e94cb03e363f535462543dfd62deb994c66",
+    "draftHash": "7835e355693f25531776130edc7ca779245a5db6249d19b4dcb5ef4b60ec4c32",
+    "finalHash": "db35aab4c60c90c5ec1ed5c1fdb4ee3d896ec43fa1ae57e5915c2889f8c8be3b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/citizen#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.914Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116290,
+        "revisionId": 39760760,
+        "revisionTimestamp": "2026-08-03T00:42:40Z",
+        "sha256": "bd288db040e083db13ee64682f0f9176ab5c650af8e146f02ab46940e57c4586",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/citizen",
+        "section": "citizen (noun)",
+        "supports": [
+          "French city-dweller meaning",
+          "City family",
+          "Broader state-member meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "d239aa7962c5a99d71e4ff172311781507570c5388e3a4005e117f6d2b37ee1f",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "d239aa7962c5a99d71e4ff172311781507570c5388e3a4005e117f6d2b37ee1f",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/270.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/citizen",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:45:45.773Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:54:31.875Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源阶段按英语→盎格鲁法语→古法语倒排，箭头会误示历史方向；“中古英语 citizen”的具体阶段也未获现有材料支持。应保留可证实的盎格鲁法语→英语传入关系，把历史字形的变体关系放入概述，并补引维基词典英语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "正文依据均指向未提供正文的 Oxford 页面，却遗漏实际取得的法语维基词典英语词条。应改引实际可追溯的来源，且继续只使用 recommended 标签。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "美音第二音节可有变体，不应把现有 /ɪ/ 简单判错；本课可采用实际材料列出的 /ə/ 转写。另将“中间读成两个清晰的长音节”改为具体的轻读和音值提示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0",
+        "message": "向市政府咨询的句子也可自然理解为城市居民义，不能清楚示范国家公民身份。宜换成明确区分公民身份与居住地的生活例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/0",
+        "message": "citizen rights 可以理解，但作为入门常用搭配，citizens' rights 更自然，也能明确复数所有格的写法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote 与 /senses/1/relatedExpressions",
+        "message": "城市居民义宜补充较正式、常见于公共事务的语体特点。说明中已承认 non-resident 可作居住地对照，应将其列入反向表达，而不只留在空列表后的说明里。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0 与 /confusions/1",
+        "message": "Good citizenship 的原例正确，但这里的 citizenship 指履行公民责任的行为，不是法律身份。词族释义和易混说明只讲身份，与该例不一致；应补齐这一常见用法，并准确翻译。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example/zh",
+        "message": "citizenry 是群体称呼，原译“全体公民参加”容易额外断言每位公民均投票。改为“公民们参加”更稳妥。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对国家公民、城市居民，以及 fellow citizen 所表达的同胞／同城市民关系用法。前两个核心义各保留两个例句；关系性用法已有搭配和语境说明，无须另造第三个核心义。发音、搭配、反向表达、词族拼写及词源方向均已核对并作必要修正。来源范围限于实际提供的英语词条内容、词源概述和专业语言知识，未声称核验不可取得的页面或穷尽古旧用法。",
+    "senseInventory": [
+      {
+        "sense": "国家公民；国民",
+        "coveredBy": [
+          "citizen-1"
+        ],
+        "assessment": "核心义已覆盖；替换歧义较大的首例后，两例分别清楚展示公民身份与取得公民身份。"
+      },
+      {
+        "sense": "城市居民；市民",
+        "coveredBy": [
+          "citizen-2"
+        ],
+        "assessment": "核心义及两个生活例句已覆盖；补充正式公共事务语境，并明确 resident 和 non-resident 的居住地对照。"
+      },
+      {
+        "sense": "同胞；同国或同城的其他公民／市民，常通过 fellow citizen 表达",
+        "coveredBy": [
+          "citizen-2"
+        ],
+        "assessment": "已由 fellow citizens 搭配及其同国、同城语境说明覆盖。这是与前两义重叠的关系性用法，不必另立核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"/ˈsɪtɪzən/\",\"uk\":\"/ˈsɪtɪzən/\",\"us\":\"/ˈsɪtɪzən/\",\"accentNote\":\"英美读音相近；不同口音中第二个元音可能略有差别。\",\"notes\":[\"重音在第一音节，读作 SIT-ih-zən；词尾是轻读的 /ən/。\",\"不要按拼写把中间读成两个清晰的长音节。\"],\"sourceIds\":[\"oxford-citizen\"]}",
+        "valueJson": "{\"ipa\":\"/ˈsɪtɪzən/\",\"uk\":\"/ˈsɪtɪzən/\",\"us\":\"/ˈsɪtəzən/\",\"accentNote\":\"美音常把第二音节的元音读作 /ə/；英美重音都在第一音节，实际读音随口音略有变化。\",\"notes\":[\"共三个音节，重音在第一音节；后两个音节轻读。\",\"字母 z 发 /z/；中间的轻读元音不读成长元音 /iː/。\"],\"sourceIds\":[\"fr-wiktionary-citizen\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"citizen-1-ex1\",\"senseId\":\"citizen-1\",\"en\":\"Every citizen can ask the city office for information.\",\"zh\":\"每位公民都可以向市政府办公室咨询信息。\",\"note\":\"这里强调公民可以行使的权利。\"}",
+        "valueJson": "{\"id\":\"citizen-1-ex1\",\"senseId\":\"citizen-1\",\"en\":\"My brother is a Canadian citizen, but he lives in Japan.\",\"zh\":\"我哥哥是加拿大公民，但他住在日本。\",\"note\":\"Canadian citizen 表明国家公民身份，不说明目前住在哪里。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/en",
+        "expectedValueJson": "\"citizen rights\"",
+        "valueJson": "\"citizens' rights\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"常用于讨论公民依法享有的权利。\"",
+        "valueJson": "\"表示公民依法享有的权利；这是复数所有格，在 citizens 后加撇号，也可说 the rights of citizens。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-citizen\"]",
+        "valueJson": "[\"fr-wiktionary-citizen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这个意思说的是居住地点，不表示这个人依法拥有该城市或国家的公民身份。具体句子中也可能根据上下文侧重市民参与公共事务。\"",
+        "valueJson": "\"指某座城市的居民，通常出现在较正式的城市公共事务语境中，可带有参与公共生活的意味；日常只说住在哪里时，resident 更常用。这个用法本身不说明国籍或国家公民身份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"en\":\"non-resident\",\"zh\":\"非本地居民；非居民\",\"note\":\"谈某座城市或某个地区时，指不住在那里的人；与 citizen 的市民义形成居住地上的对照，不说明国籍或公民身份。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义下没有一个适用于所有语境的固定反义词；非居民可按上下文说 non-resident，但它与公民身份无关。\"",
+        "valueJson": "\"城市居民义可用 non-resident 作居住地上的对照；它表示不住在当地，不等于不具有该国公民身份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-citizen\"]",
+        "valueJson": "[\"fr-wiktionary-citizen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-citizen\"]",
+        "valueJson": "[\"fr-wiktionary-citizen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"citizen 是人，citizenship 是身份；不要用 citizenship 指某一位公民。\"",
+        "valueJson": "\"citizen 指人；citizenship 常指公民身份，也可指履行公民责任的行为，不能用来指某一位公民。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"表示公民身份或公民资格，词尾写作 -ship。\"",
+        "valueJson": "\"常表示公民身份或公民资格；good citizenship 中则指履行公民责任的行为。词尾写作 -ship。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"需要说“某个人”时用 citizen；需要说“公民身份”时用 citizenship。\"",
+        "valueJson": "\"citizen 是表示人的可数名词；citizenship 通常不可数，表示公民身份，也可表示履行公民责任的行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-citizen\"]",
+        "valueJson": "[\"fr-wiktionary-citizen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"citizen 经 Anglo-French 形式传入英语，早期与城市居民有关，后来也用于表示国家成员身份。它与 city 在历史上有关联，但现代 citizen 的意思不限于住在城市里。\",\"stages\":[{\"language\":\"中古英语\",\"form\":\"citizen\",\"meaning\":\"英语中用于城市居民，后来也用于国家成员身份。\"},{\"language\":\"Anglo-French\",\"form\":\"citezein\",\"meaning\":\"传入英语的相关形式。\"},{\"language\":\"古法语\",\"form\":\"citoien\",\"meaning\":\"更早的相关形式，材料说明其与表示城市的词有关。\"}],\"caveat\":\"这里概述的是历史来源；现代拼写不能简单拆成 city 加某个后缀来代替词源说明。\",\"sourceIds\":[\"etymonline-citizen\"]}",
+        "valueJson": "{\"summary\":\"citizen 经盎格鲁法语 citezein 传入英语。citezein 是 citein 的变体，而 citein 又是古法语 citoien 的变体。这些历史形式原指城镇居民，英语后来也用 citizen 表示国家成员。它与 city 有历史联系，但现代公民不必居住在城市里。\",\"stages\":[{\"language\":\"盎格鲁法语（Anglo-French）\",\"form\":\"citezein\",\"meaning\":\"城镇居民。\"},{\"language\":\"英语\",\"form\":\"citizen\",\"meaning\":\"早期指城镇居民，后来也指国家成员。\"}],\"caveat\":\"这里概述的是历史来源；现代拼写不能简单拆成 city 加某个后缀来代替词源说明。\",\"sourceIds\":[\"fr-wiktionary-citizen\",\"etymonline-citizen\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0",
+        "expectedValueJson": "{\"word\":\"citizenship\",\"partOfSpeech\":\"noun\",\"meaning\":\"公民身份；公民资格\",\"formation\":\"citizen + -ship，构成表示身份或状态的名词。\",\"spellingNote\":\"在 citizen 后加 -ship，不删字母；注意不是 citizanship。\",\"example\":{\"id\":\"citizen-family-1\",\"senseId\":\"citizen-1\",\"en\":\"Good citizenship includes helping your community.\",\"zh\":\"良好的公民意识包括帮助社区。\",\"note\":\"citizenship 表示公民身份或公民责任。\"},\"sourceIds\":[\"oxford-citizen\"]}",
+        "valueJson": "{\"word\":\"citizenship\",\"partOfSpeech\":\"noun\",\"meaning\":\"公民身份；公民资格；公民行为（履行公民责任）\",\"formation\":\"citizen 加后缀 -ship，构成名词；既可表示公民身份，也可表示履行公民责任的行为。\",\"spellingNote\":\"在 citizen 后加 -ship，不删字母；注意不是 citizanship。\",\"example\":{\"id\":\"citizen-family-1\",\"senseId\":\"citizen-1\",\"en\":\"Good citizenship includes helping your community.\",\"zh\":\"良好的公民行为包括为社区出力。\",\"note\":\"这里的 citizenship 指履行公民责任的行为，而非法律上的公民身份。\"},\"sourceIds\":[\"fr-wiktionary-citizen\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/zh",
+        "expectedValueJson": "\"全体公民参加了地方选举投票。\"",
+        "valueJson": "\"公民们参加了地方选举投票。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-citizen\"]",
+        "valueJson": "[\"fr-wiktionary-citizen\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-citizen\",\"title\":\"Oxford Learner’s Dictionaries: citizen\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/citizen\",\"supports\":[\"常见词性、复数形式、用法和发音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr-wiktionary-citizen\",\"title\":\"Wiktionnaire：citizen（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/citizen#Anglais\",\"supports\":[\"英语 citizen 的公民、同胞与城市居民用法\",\"英美发音与规则名词形式\",\"citizenship、citizenry 等派生词的列举\",\"盎格鲁法语和古法语的相关历史字形\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 270,
+    "headword": "citizen",
+    "meaning_zh": "n. 市民, 公民",
+    "phonetic": "/'sitizn/",
+    "pos": "",
+    "forms": []
+  }
+}

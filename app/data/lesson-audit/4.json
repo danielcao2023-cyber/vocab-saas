@@ -1,0 +1,1855 @@
+{
+  "schemaVersion": 1,
+  "wordId": 4,
+  "headword": "about",
+  "lessonSha256": "1be4873db1407087b3883eeaaf2ec22ddf20dc3f348952401786ae0620c53a7c",
+  "publishedAt": "2026-10-18T01:29:49.965Z",
+  "updatedAt": "2026-10-18T02:34:30.516Z",
+  "originalPipelineAudit": {
+    "provenance": {
+      "version": "sense-lessons-v1",
+      "reviewVersion": "sense-lessons-patch-review-v2",
+      "reviewPromptHash": "2b487ade204295134fbd24c63b323664a19b3c441338739b5bd4eae4a48b06b3",
+      "executedReviewPromptHash": "42abdbe0a2adaf8185ddbffe242ca86baa0be4b2f176fd8610d4f4be6b3bdd40",
+      "reviewHash": "aee0423171f15a7df0daa1b27ebaaa5fd05e5c4e12daf18299abf296185e5cf6",
+      "wordId": 4,
+      "inputHash": "551d8d3ba6586c9c9baa2223ce9215ae47df5be8b99aa0abc3a1b39fb51862db",
+      "draftHash": "ac9ae19ab5e01c55c2093042a7bce17d5b9cc6e26cfbce6dc2844b592db06abd",
+      "finalHash": "fa7dff75ae39ef55eb8902c1bb145b9a59bd054033e46a2a0b91ad4e270f78f7",
+      "generator": {
+        "model": "gpt-6-luna",
+        "method": "codex-exec",
+        "promptVersion": "sense-lessons-v1",
+        "directory": "generate-2"
+      },
+      "reviewer": {
+        "model": "gpt-6.1-sol",
+        "modelSource": "user-cli-configuration; confirmed by root",
+        "modelOverride": false,
+        "reasoningOverride": false,
+        "method": "separate-codex-exec-json-patches",
+        "independentInvocation": true,
+        "humanReviewed": false,
+        "verdict": "revised",
+        "directory": "review-2"
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://fr.wiktionary.org/wiki/about#Anglais",
+          "status": "retrieved",
+          "fetchedAt": "2026-10-18T00:45:49.533Z",
+          "kind": "etymology",
+          "retrievalMethod": "mediawiki-api-english-section",
+          "pageId": 36296,
+          "revisionId": 39765054,
+          "revisionTimestamp": "2026-08-03T05:01:39Z",
+          "sha256": "bffcfb594b07cd5f12e0b9d3481d175b8854f46e8a3d8f0549a5f960f8cdce02",
+          "language": "English entry; French editorial explanation",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "truncated": false
+        },
+        {
+          "url": "https://dictionary.cambridge.org/dictionary/english/about",
+          "status": "unavailable",
+          "fetchedAt": "2026-10-18T01:18:59.498Z",
+          "failure": "http 403 or no dictionary entry"
+        }
+      ],
+      "reviewedAt": "2026-10-18T01:29:49.965Z"
+    },
+    "review": {
+      "verdict": "revised",
+      "issues": [
+        {
+          "severity": "error",
+          "location": "/senses、/confusions",
+          "message": "多条例句缺少结构要求的 note 字段；需补齐，不能删除例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/2",
+          "message": "合并了介词“在周围”、副词“在附近”和“四处”，但仅有一个围绕例句和一个活动例句，没有附近义例句。需分开说明词性、语体和搭配，并各补足两个例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/lessCommonSenses/0",
+          "message": "be about to do 是常用结构，所给词典也明确列出，不宜归入较少见用法；应移入核心教学并补足第二个例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/0",
+          "message": "遗漏初中常用的 How/What about…? 功能，应补充提议和追问的句型及具体例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/sources、相关 sourceIds",
+          "message": "Oxford 未提供正文，Cambridge 取回失败，不能作为本次已读取的依据。应引用实际给出的英语词条；仅由专业知识补充且材料未明确展开的义项，不硬挂来源。"
+        },
+        {
+          "severity": "polish",
+          "location": "/senses/0/examples/1/zh",
+          "message": "译文未体现 is reading 的进行意义，需改为“正在读”。"
+        },
+        {
+          "severity": "polish",
+          "location": "/etymology/stages",
+          "message": "ābūtan 阶段的“此前使用的形式”指向含糊；中古英语阶段还可按材料补入 abouten，不能把历史形式说明冒充已给出的释义。"
+        },
+        {
+          "severity": "error",
+          "location": "/wordFamilyNote",
+          "message": "把 about-to 写作相关表达不符合本课所教结构的实际拼写，应写 be about to do，并与派生词区分。"
+        }
+      ],
+      "coverageAssessment": "已核对所给英语词条中的关于、大约、地点副词及 be about to，并结合原词条和专业知识检查空间介词用法。补丁将空间用法分清，每个核心义均有两个例句，并补充 How/What about…?；词源仅依据已取回材料。未把未提供正文或取回失败的页面当作审校证据。forms 保留现有的一项原形，满足此次运行要求。",
+      "senseInventory": [
+        {
+          "sense": "介词：关于、有关，引出话题或内容",
+          "coveredBy": [
+            "about-prep-topic"
+          ],
+          "assessment": "原有两个例句自然；补齐 note，并修正进行时译文。"
+        },
+        {
+          "sense": "常用功能：How/What about…? 提议、征询或追问",
+          "coveredBy": [
+            "about-prep-topic"
+          ],
+          "assessment": "原稿未展开；补丁加入句型及提议、追问各一个例句。"
+        },
+        {
+          "sense": "大约：数量、年龄、时间、距离等的近似值",
+          "coveredBy": [
+            "about-approx"
+          ],
+          "assessment": "时长和人数各有一个自然例句；所给词典同时列于介词和副词项下，原稿的分类说明无需判错。"
+        },
+        {
+          "sense": "介词：在某物周围、围绕某物",
+          "coveredBy": [
+            "about-around"
+          ],
+          "assessment": "修订后独立说明，保留房屋周围的树，并补充围巾例句；明确该用法较书面，日常多用 around。"
+        },
+        {
+          "sense": "副词：在附近、在场、可找得到",
+          "coveredBy": [
+            "about-nearby"
+          ],
+          "assessment": "原稿只有说明，没有例句；补丁新增两个例句，并提示常见于英式口语。"
+        },
+        {
+          "sense": "副词：四处活动、向四周",
+          "coveredBy": [
+            "about-movement"
+          ],
+          "assessment": "原稿只有一个跑动例句；补丁独立教学，配以跑动和环顾的两个例句，说明 about 不带宾语。"
+        },
+        {
+          "sense": "常用结构：be about to do，即将、正要",
+          "coveredBy": [
+            "about-to"
+          ],
+          "assessment": "从较少见用法移入核心教学，提供现在和过去叙述各一个例句，并区分计划、即将发生和刚已完成。"
+        }
+      ],
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/pronunciation/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"talk about 后接名词短语 our plans，说明谈论的主题。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/examples/1/zh",
+          "expectedValueJson": "\"米娅读一本关于太空的书。\"",
+          "valueJson": "\"米娅正在读一本关于太空的书。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about space 修饰 book，说明这本书的内容。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-topic-ex3\",\"senseId\":\"about-prep-topic\",\"en\":\"How about meeting at the library after school?\",\"zh\":\"放学后在图书馆见面怎么样？\",\"note\":\"How about 后接动名词短语，用来提出建议。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-topic-ex4\",\"senseId\":\"about-prep-topic\",\"en\":\"What about Leo? Is he coming with us?\",\"zh\":\"利奥呢？他会和我们一起去吗？\",\"note\":\"What about 后接人名，承接前文追问利奥的安排。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/patterns/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"How/What about + 名词或动名词？\",\"zh\":\"……怎么样？／……呢？\",\"note\":\"两者都可用于提议或征询意见；What about 还常用来追问尚未谈到的人或事。\",\"kind\":\"sentence-pattern\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about twenty minutes 表示估计时长。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"人数接近三十，不保证恰好三十。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/sourceIds",
+          "expectedValueJson": "[\"cambridge-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/title",
+          "expectedValueJson": "\"在周围；在附近；四处\"",
+          "valueJson": "\"在……周围；围着……（介词）\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/meaning",
+          "expectedValueJson": "\"作介词时表示围绕某物或在某处附近；作副词时表示人在某处附近，或在一个区域内四处活动。\"",
+          "valueJson": "\"作介词，表示在某物周围或围绕某物的位置关系，后接名词短语。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/usageNote",
+          "expectedValueJson": "\"介词 about 后要有地点或事物；副词 about 可单独使用，常见于 be about、move about 等表达。\"",
+          "valueJson": "\"这类表示位置或围绕关系的 about 较书面或带文学色彩；日常通常用 around。表示人在附近或四处活动时，还可用不带宾语的副词 about。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/examples/1",
+          "expectedValueJson": "{\"id\":\"about-around-ex2\",\"senseId\":\"about-around\",\"en\":\"The children were running about in the garden.\",\"zh\":\"孩子们在花园里跑来跑去。\"}",
+          "valueJson": "{\"id\":\"about-around-ex2\",\"senseId\":\"about-around\",\"en\":\"She wore a scarf about her neck.\",\"zh\":\"她脖子上围着一条围巾。\",\"note\":\"about her neck 表示围绕关系；这句话较书面，日常更常用 around her neck。\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/patterns",
+          "expectedValueJson": "[{\"en\":\"about + 地点或物体\",\"zh\":\"在……周围\",\"note\":\"about 作介词，后面需要接名词。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be about\",\"zh\":\"在附近；在场\",\"note\":\"about 作副词，指人在附近或可找到。\",\"kind\":\"sentence-pattern\"}]",
+          "valueJson": "[{\"en\":\"about + 名词短语\",\"zh\":\"在……周围；围着……\",\"note\":\"about 作介词，后有宾语；日常表达通常用 around。\",\"kind\":\"sentence-pattern\"}]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/collocations",
+          "expectedValueJson": "[{\"en\":\"walk about\",\"zh\":\"四处走动\",\"note\":\"about 作副词，表示在一个区域内走动。\",\"kind\":\"common-collocation\"},{\"en\":\"move about\",\"zh\":\"四处活动\",\"note\":\"常指在某个地方范围内移动。\",\"kind\":\"common-collocation\"}]",
+          "valueJson": "[{\"en\":\"trees about the house\",\"zh\":\"房子周围的树\",\"note\":\"较书面的地点表达，日常更常说 trees around the house。\",\"kind\":\"common-collocation\"},{\"en\":\"a scarf about her neck\",\"zh\":\"围在她脖子上的一条围巾\",\"note\":\"表示围绕关系，日常更常用 around her neck。\",\"kind\":\"common-collocation\"}]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/relatedExpressions",
+          "expectedValueJson": "{\"similar\":[{\"en\":\"around\",\"zh\":\"在……周围；四处\",\"note\":\"表示位置或四处活动时常可替换 about；around 在日常表达里更常见。\"},{\"en\":\"nearby\",\"zh\":\"在附近\",\"note\":\"只表示距离近，不能表达“围绕”或“四处活动”。\"}],\"contrasting\":[{\"en\":\"far away\",\"zh\":\"远处；很远\",\"note\":\"只在表示附近位置时与 about 对照；不对应 about 的“围绕”或“四处”活动义。\"}],\"similarNote\":\"about 作地点副词时，具体含义要看搭配：可指“在附近”，也可指“四处”。\",\"contrastingNote\":\"far away 是位置距离上的对照表达。\"}",
+          "valueJson": "{\"similar\":[{\"en\":\"around\",\"zh\":\"在……周围；围着……\",\"note\":\"表示周围位置或围绕关系时，日常通常比 about 更常用。\"},{\"en\":\"round\",\"zh\":\"围着……\",\"note\":\"英式英语也常用，如 a scarf round her neck。\"}],\"contrasting\":[{\"en\":\"in the centre\",\"zh\":\"在中央\",\"note\":\"仅在讨论区域内的位置分布时与“在周围”形成对照，不适用于围巾围着脖子等关系。\"}],\"similarNote\":\"此处比较的是空间位置或围绕关系，不能把这些词套用到 about 的所有义项。\",\"contrastingNote\":\"in the centre 是空间分布中的语境对照，并非 about 的通用反义词。\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-nearby\",\"title\":\"在附近；在场（副词）\",\"meaning\":\"作副词，表示人在附近、在场或可以找得到。\",\"usageNote\":\"常见于英式口语中的 be about；about 后不接宾语。这里不是 be about to do 的“正要”。\",\"examples\":[{\"id\":\"about-nearby-ex1\",\"senseId\":\"about-nearby\",\"en\":\"Is your dad about? I need to ask him something.\",\"zh\":\"你爸爸在吗？我想问他点事。\",\"note\":\"询问某人是否在附近、能否找得到；常见于英式口语。\"},{\"id\":\"about-nearby-ex2\",\"senseId\":\"about-nearby\",\"en\":\"I'll be about all morning if you need a hand.\",\"zh\":\"整个上午我都会在附近，你需要帮忙的话可以找我。\",\"note\":\"be about 表示人在附近；all morning 是时间状语。\"}],\"patterns\":[{\"en\":\"be about\",\"zh\":\"在附近；在场\",\"note\":\"about 是副词，没有宾语；是否在场要结合谈话中的地点理解。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be about all morning\",\"zh\":\"整个上午都在附近／在场\",\"note\":\"可用于告诉别人自己可以找得到。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be around\",\"zh\":\"在附近；在场\",\"note\":\"在询问或说明某人能否找得到时，常可表达相近意思。\"},{\"en\":\"be nearby\",\"zh\":\"在附近\",\"note\":\"强调距离近，不一定包含可以联系或找得到的意味。\"}],\"contrasting\":[{\"en\":\"be far away\",\"zh\":\"在很远的地方\",\"note\":\"只就距离远近与附近义对照。\"}],\"similarNote\":\"about 和 around 在这种口语表达中可表示人在附近；nearby 更直接说明距离。\",\"contrastingNote\":\"far away 对照的是附近位置，不是 about 的话题、估算或即将义。\"},\"sourceIds\":[]}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-movement\",\"title\":\"四处；向四周（副词）\",\"meaning\":\"作副词，表示在一个区域内四处活动，或向周围不同方向看。\",\"usageNote\":\"about 在这里不带宾语，常跟在 walk、run、move、look 等动词后。此用法在英式英语中常见，美式日常表达通常更常用 around。\",\"examples\":[{\"id\":\"about-movement-ex1\",\"senseId\":\"about-movement\",\"en\":\"The children were running about in the garden.\",\"zh\":\"孩子们在花园里跑来跑去。\",\"note\":\"about 表示四处活动；in the garden 另行说明活动范围。\"},{\"id\":\"about-movement-ex2\",\"senseId\":\"about-movement\",\"en\":\"She looked about for an empty seat.\",\"zh\":\"她环顾四周，想找个空座位。\",\"note\":\"look about 表示环顾；for an empty seat 说明寻找的目标，不是 about 的宾语。\"}],\"patterns\":[{\"en\":\"walk / run / move about\",\"zh\":\"四处走动／跑动／活动\",\"note\":\"about 作副词，不表示某一个明确目的地。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"walk about\",\"zh\":\"四处走动\",\"note\":\"表示在一个区域内走动。\",\"kind\":\"common-collocation\"},{\"en\":\"look about\",\"zh\":\"环顾四周\",\"note\":\"也常说 look around。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"around\",\"zh\":\"四处；向四周\",\"note\":\"在 run about、walk about、look about 等表达中，常可换用 around。\"}],\"contrasting\":[{\"en\":\"stay still\",\"zh\":\"保持不动\",\"note\":\"只与四处走动形成行为上的对照，不用于反指环顾动作。\"}],\"similarNote\":\"这里比较的是四处活动或朝四周看的副词用法。\",\"contrastingNote\":\"stay still 是活动状态的语境对照，不是 about 的通用反义词。\"},\"sourceIds\":[\"wiktionary-about-etymology\"]}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-to\",\"title\":\"即将；正要（be about to do）\",\"meaning\":\"be about to do sth. 表示从当前或过去叙述中的某个时刻看，某个动作马上就要发生。\",\"usageNote\":\"be 随主语和时态变化，to 后接动词原形。通常不与 tomorrow、next week 等表示明确未来时间的状语连用。\",\"examples\":[{\"id\":\"about-to-ex1\",\"senseId\":\"about-to\",\"en\":\"The film is about to start, so please take your seat.\",\"zh\":\"电影马上要开始了，请就座。\",\"note\":\"is about to start 表示开场就在眼前。\"},{\"id\":\"about-to-ex2\",\"senseId\":\"about-to\",\"en\":\"I was about to leave when my phone rang.\",\"zh\":\"我正要离开，这时手机响了。\",\"note\":\"was about to 表示过去某一刻正要做；when 引出这时发生的事情，本句未说明后来是否离开。\"}],\"patterns\":[{\"en\":\"be about to + 动词原形\",\"zh\":\"即将／正要做……\",\"note\":\"这是常用结构；表示谈论某个动作的 about + 动名词属于另一种用法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be about to leave\",\"zh\":\"正要离开\",\"note\":\"强调离开的动作即将发生。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be going to do\",\"zh\":\"打算做；将要做\",\"note\":\"可表示计划或根据当前迹象作出的预测，不一定像 be about to do 那样紧迫。\"},{\"en\":\"be on the point of doing\",\"zh\":\"正要做\",\"note\":\"同样强调动作即将发生，较正式；of 后接动名词。\"}],\"contrasting\":[{\"en\":\"have just done\",\"zh\":\"刚刚做了\",\"note\":\"对照动作尚未开始和动作刚已发生这两个阶段，不是可在各种时态中直接互换的反义结构。\"}],\"similarNote\":\"表示将来不等于表示马上；be about to do 强调即将发生。\",\"contrastingNote\":\"be about to leave 表示正要离开；have just left 表示刚刚离开。\"},\"sourceIds\":[\"wiktionary-about-etymology\"]}"
+        },
+        {
+          "op": "remove",
+          "path": "/lessCommonSenses/0",
+          "expectedValueJson": "{\"id\":\"about-to\",\"title\":\"即将；正要\",\"meaning\":\"be about to do sth. 表示马上就要做某事，常用于动作即将发生的时刻。\",\"note\":\"about to 后接动词原形；通常不与表示明确未来时点的时间状语连用。\",\"example\":{\"id\":\"about-to-ex1\",\"senseId\":\"about-to\",\"en\":\"The film is about to start, so please take your seat.\",\"zh\":\"电影马上要开始了，请就座。\"},\"sourceIds\":[\"cambridge-about\"]}",
+          "valueJson": "null"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about 修饰钟点表达，说明现在的时间是估计值。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"around 在这里表示大约，说明停电发生的大致时刻。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"be about to 后接动词原形 leave，表示眼下正要离开。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"介词 about 后用 leaving；leaving early 是谈论的内容。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/1/sourceIds",
+          "expectedValueJson": "[\"cambridge-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/stages/1/meaning",
+          "expectedValueJson": "\"此前使用的形式\"",
+          "valueJson": "\"由更早的 onbūtan 发展而来的古英语形式；所给材料未单列此形式的释义。\""
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/stages/2/form",
+          "expectedValueJson": "\"aboute\"",
+          "valueJson": "\"aboute / abouten\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamilyNote",
+          "expectedValueJson": "\"about 在这些常用义中主要是介词或副词，没有适合初中阶段作为直接派生词讲解的常用词族成员；around、about-to 等是相关表达，不是 about 的派生词。\"",
+          "valueJson": "\"about 在这些常用义中主要是介词或副词，没有适合本课作为规则派生词讲解的常用词族成员。around 是相关近义词，be about to do 是常用结构，二者都不是 about 的派生词。be about to 分开写。\""
+        },
+        {
+          "op": "replace",
+          "path": "/sources",
+          "expectedValueJson": "[{\"id\":\"oxford-about\",\"title\":\"Oxford Learner’s Dictionaries: about\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/about\",\"supports\":[\"常见词性、发音和介词及副词用法\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-about\",\"title\":\"Cambridge Dictionary: about\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/about\",\"supports\":[\"关于、大约、地点副词及 be about to 等用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-about-etymology\",\"title\":\"Wiktionnaire: about（英语词源部分）\",\"url\":\"https://fr.wiktionary.org/wiki/about#Anglais\",\"supports\":[\"所给材料中的英语词源形式及构词说明\"],\"verification\":\"recommended\"}]",
+          "valueJson": "[{\"id\":\"wiktionary-about-etymology\",\"title\":\"Wiktionnaire: about（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/about#Anglais\",\"supports\":[\"英语词条中的关于、大约、地点副词义及 be about to 结构\",\"所给英语读音 /əˈbaʊt/\",\"中古英语、古英语词源形式及 on + būtan 的构词说明\"],\"verification\":\"recommended\"}]"
+        }
+      ]
+    },
+    "input": {
+      "id": 4,
+      "headword": "about",
+      "meaning_zh": "prep. 在...周围, 大约, 有关, 关于\nadv. 大约, 四处, 在附近, 周围",
+      "phonetic": "/ә'baut/",
+      "pos": "",
+      "forms": []
+    }
+  },
+  "modelReview": {
+    "result": {
+      "verdict": "revised",
+      "issues": [
+        {
+          "severity": "error",
+          "location": "/senses、/confusions",
+          "message": "多条例句缺少结构要求的 note 字段；需补齐，不能删除例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/2",
+          "message": "合并了介词“在周围”、副词“在附近”和“四处”，但仅有一个围绕例句和一个活动例句，没有附近义例句。需分开说明词性、语体和搭配，并各补足两个例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/lessCommonSenses/0",
+          "message": "be about to do 是常用结构，所给词典也明确列出，不宜归入较少见用法；应移入核心教学并补足第二个例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/0",
+          "message": "遗漏初中常用的 How/What about…? 功能，应补充提议和追问的句型及具体例句。"
+        },
+        {
+          "severity": "error",
+          "location": "/sources、相关 sourceIds",
+          "message": "Oxford 未提供正文，Cambridge 取回失败，不能作为本次已读取的依据。应引用实际给出的英语词条；仅由专业知识补充且材料未明确展开的义项，不硬挂来源。"
+        },
+        {
+          "severity": "polish",
+          "location": "/senses/0/examples/1/zh",
+          "message": "译文未体现 is reading 的进行意义，需改为“正在读”。"
+        },
+        {
+          "severity": "polish",
+          "location": "/etymology/stages",
+          "message": "ābūtan 阶段的“此前使用的形式”指向含糊；中古英语阶段还可按材料补入 abouten，不能把历史形式说明冒充已给出的释义。"
+        },
+        {
+          "severity": "error",
+          "location": "/wordFamilyNote",
+          "message": "把 about-to 写作相关表达不符合本课所教结构的实际拼写，应写 be about to do，并与派生词区分。"
+        }
+      ],
+      "coverageAssessment": "已核对所给英语词条中的关于、大约、地点副词及 be about to，并结合原词条和专业知识检查空间介词用法。补丁将空间用法分清，每个核心义均有两个例句，并补充 How/What about…?；词源仅依据已取回材料。未把未提供正文或取回失败的页面当作审校证据。forms 保留现有的一项原形，满足此次运行要求。",
+      "senseInventory": [
+        {
+          "sense": "介词：关于、有关，引出话题或内容",
+          "coveredBy": [
+            "about-prep-topic"
+          ],
+          "assessment": "原有两个例句自然；补齐 note，并修正进行时译文。"
+        },
+        {
+          "sense": "常用功能：How/What about…? 提议、征询或追问",
+          "coveredBy": [
+            "about-prep-topic"
+          ],
+          "assessment": "原稿未展开；补丁加入句型及提议、追问各一个例句。"
+        },
+        {
+          "sense": "大约：数量、年龄、时间、距离等的近似值",
+          "coveredBy": [
+            "about-approx"
+          ],
+          "assessment": "时长和人数各有一个自然例句；所给词典同时列于介词和副词项下，原稿的分类说明无需判错。"
+        },
+        {
+          "sense": "介词：在某物周围、围绕某物",
+          "coveredBy": [
+            "about-around"
+          ],
+          "assessment": "修订后独立说明，保留房屋周围的树，并补充围巾例句；明确该用法较书面，日常多用 around。"
+        },
+        {
+          "sense": "副词：在附近、在场、可找得到",
+          "coveredBy": [
+            "about-nearby"
+          ],
+          "assessment": "原稿只有说明，没有例句；补丁新增两个例句，并提示常见于英式口语。"
+        },
+        {
+          "sense": "副词：四处活动、向四周",
+          "coveredBy": [
+            "about-movement"
+          ],
+          "assessment": "原稿只有一个跑动例句；补丁独立教学，配以跑动和环顾的两个例句，说明 about 不带宾语。"
+        },
+        {
+          "sense": "常用结构：be about to do，即将、正要",
+          "coveredBy": [
+            "about-to"
+          ],
+          "assessment": "从较少见用法移入核心教学，提供现在和过去叙述各一个例句，并区分计划、即将发生和刚已完成。"
+        }
+      ],
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/pronunciation/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"talk about 后接名词短语 our plans，说明谈论的主题。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/examples/1/zh",
+          "expectedValueJson": "\"米娅读一本关于太空的书。\"",
+          "valueJson": "\"米娅正在读一本关于太空的书。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about space 修饰 book，说明这本书的内容。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-topic-ex3\",\"senseId\":\"about-prep-topic\",\"en\":\"How about meeting at the library after school?\",\"zh\":\"放学后在图书馆见面怎么样？\",\"note\":\"How about 后接动名词短语，用来提出建议。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-topic-ex4\",\"senseId\":\"about-prep-topic\",\"en\":\"What about Leo? Is he coming with us?\",\"zh\":\"利奥呢？他会和我们一起去吗？\",\"note\":\"What about 后接人名，承接前文追问利奥的安排。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/patterns/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"en\":\"How/What about + 名词或动名词？\",\"zh\":\"……怎么样？／……呢？\",\"note\":\"两者都可用于提议或征询意见；What about 还常用来追问尚未谈到的人或事。\",\"kind\":\"sentence-pattern\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about twenty minutes 表示估计时长。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"人数接近三十，不保证恰好三十。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/sourceIds",
+          "expectedValueJson": "[\"cambridge-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/title",
+          "expectedValueJson": "\"在周围；在附近；四处\"",
+          "valueJson": "\"在……周围；围着……（介词）\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/meaning",
+          "expectedValueJson": "\"作介词时表示围绕某物或在某处附近；作副词时表示人在某处附近，或在一个区域内四处活动。\"",
+          "valueJson": "\"作介词，表示在某物周围或围绕某物的位置关系，后接名词短语。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/usageNote",
+          "expectedValueJson": "\"介词 about 后要有地点或事物；副词 about 可单独使用，常见于 be about、move about 等表达。\"",
+          "valueJson": "\"这类表示位置或围绕关系的 about 较书面或带文学色彩；日常通常用 around。表示人在附近或四处活动时，还可用不带宾语的副词 about。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/examples/1",
+          "expectedValueJson": "{\"id\":\"about-around-ex2\",\"senseId\":\"about-around\",\"en\":\"The children were running about in the garden.\",\"zh\":\"孩子们在花园里跑来跑去。\"}",
+          "valueJson": "{\"id\":\"about-around-ex2\",\"senseId\":\"about-around\",\"en\":\"She wore a scarf about her neck.\",\"zh\":\"她脖子上围着一条围巾。\",\"note\":\"about her neck 表示围绕关系；这句话较书面，日常更常用 around her neck。\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/patterns",
+          "expectedValueJson": "[{\"en\":\"about + 地点或物体\",\"zh\":\"在……周围\",\"note\":\"about 作介词，后面需要接名词。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be about\",\"zh\":\"在附近；在场\",\"note\":\"about 作副词，指人在附近或可找到。\",\"kind\":\"sentence-pattern\"}]",
+          "valueJson": "[{\"en\":\"about + 名词短语\",\"zh\":\"在……周围；围着……\",\"note\":\"about 作介词，后有宾语；日常表达通常用 around。\",\"kind\":\"sentence-pattern\"}]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/collocations",
+          "expectedValueJson": "[{\"en\":\"walk about\",\"zh\":\"四处走动\",\"note\":\"about 作副词，表示在一个区域内走动。\",\"kind\":\"common-collocation\"},{\"en\":\"move about\",\"zh\":\"四处活动\",\"note\":\"常指在某个地方范围内移动。\",\"kind\":\"common-collocation\"}]",
+          "valueJson": "[{\"en\":\"trees about the house\",\"zh\":\"房子周围的树\",\"note\":\"较书面的地点表达，日常更常说 trees around the house。\",\"kind\":\"common-collocation\"},{\"en\":\"a scarf about her neck\",\"zh\":\"围在她脖子上的一条围巾\",\"note\":\"表示围绕关系，日常更常用 around her neck。\",\"kind\":\"common-collocation\"}]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/relatedExpressions",
+          "expectedValueJson": "{\"similar\":[{\"en\":\"around\",\"zh\":\"在……周围；四处\",\"note\":\"表示位置或四处活动时常可替换 about；around 在日常表达里更常见。\"},{\"en\":\"nearby\",\"zh\":\"在附近\",\"note\":\"只表示距离近，不能表达“围绕”或“四处活动”。\"}],\"contrasting\":[{\"en\":\"far away\",\"zh\":\"远处；很远\",\"note\":\"只在表示附近位置时与 about 对照；不对应 about 的“围绕”或“四处”活动义。\"}],\"similarNote\":\"about 作地点副词时，具体含义要看搭配：可指“在附近”，也可指“四处”。\",\"contrastingNote\":\"far away 是位置距离上的对照表达。\"}",
+          "valueJson": "{\"similar\":[{\"en\":\"around\",\"zh\":\"在……周围；围着……\",\"note\":\"表示周围位置或围绕关系时，日常通常比 about 更常用。\"},{\"en\":\"round\",\"zh\":\"围着……\",\"note\":\"英式英语也常用，如 a scarf round her neck。\"}],\"contrasting\":[{\"en\":\"in the centre\",\"zh\":\"在中央\",\"note\":\"仅在讨论区域内的位置分布时与“在周围”形成对照，不适用于围巾围着脖子等关系。\"}],\"similarNote\":\"此处比较的是空间位置或围绕关系，不能把这些词套用到 about 的所有义项。\",\"contrastingNote\":\"in the centre 是空间分布中的语境对照，并非 about 的通用反义词。\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/2/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-nearby\",\"title\":\"在附近；在场（副词）\",\"meaning\":\"作副词，表示人在附近、在场或可以找得到。\",\"usageNote\":\"常见于英式口语中的 be about；about 后不接宾语。这里不是 be about to do 的“正要”。\",\"examples\":[{\"id\":\"about-nearby-ex1\",\"senseId\":\"about-nearby\",\"en\":\"Is your dad about? I need to ask him something.\",\"zh\":\"你爸爸在吗？我想问他点事。\",\"note\":\"询问某人是否在附近、能否找得到；常见于英式口语。\"},{\"id\":\"about-nearby-ex2\",\"senseId\":\"about-nearby\",\"en\":\"I'll be about all morning if you need a hand.\",\"zh\":\"整个上午我都会在附近，你需要帮忙的话可以找我。\",\"note\":\"be about 表示人在附近；all morning 是时间状语。\"}],\"patterns\":[{\"en\":\"be about\",\"zh\":\"在附近；在场\",\"note\":\"about 是副词，没有宾语；是否在场要结合谈话中的地点理解。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be about all morning\",\"zh\":\"整个上午都在附近／在场\",\"note\":\"可用于告诉别人自己可以找得到。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be around\",\"zh\":\"在附近；在场\",\"note\":\"在询问或说明某人能否找得到时，常可表达相近意思。\"},{\"en\":\"be nearby\",\"zh\":\"在附近\",\"note\":\"强调距离近，不一定包含可以联系或找得到的意味。\"}],\"contrasting\":[{\"en\":\"be far away\",\"zh\":\"在很远的地方\",\"note\":\"只就距离远近与附近义对照。\"}],\"similarNote\":\"about 和 around 在这种口语表达中可表示人在附近；nearby 更直接说明距离。\",\"contrastingNote\":\"far away 对照的是附近位置，不是 about 的话题、估算或即将义。\"},\"sourceIds\":[]}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-movement\",\"title\":\"四处；向四周（副词）\",\"meaning\":\"作副词，表示在一个区域内四处活动，或向周围不同方向看。\",\"usageNote\":\"about 在这里不带宾语，常跟在 walk、run、move、look 等动词后。此用法在英式英语中常见，美式日常表达通常更常用 around。\",\"examples\":[{\"id\":\"about-movement-ex1\",\"senseId\":\"about-movement\",\"en\":\"The children were running about in the garden.\",\"zh\":\"孩子们在花园里跑来跑去。\",\"note\":\"about 表示四处活动；in the garden 另行说明活动范围。\"},{\"id\":\"about-movement-ex2\",\"senseId\":\"about-movement\",\"en\":\"She looked about for an empty seat.\",\"zh\":\"她环顾四周，想找个空座位。\",\"note\":\"look about 表示环顾；for an empty seat 说明寻找的目标，不是 about 的宾语。\"}],\"patterns\":[{\"en\":\"walk / run / move about\",\"zh\":\"四处走动／跑动／活动\",\"note\":\"about 作副词，不表示某一个明确目的地。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"walk about\",\"zh\":\"四处走动\",\"note\":\"表示在一个区域内走动。\",\"kind\":\"common-collocation\"},{\"en\":\"look about\",\"zh\":\"环顾四周\",\"note\":\"也常说 look around。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"around\",\"zh\":\"四处；向四周\",\"note\":\"在 run about、walk about、look about 等表达中，常可换用 around。\"}],\"contrasting\":[{\"en\":\"stay still\",\"zh\":\"保持不动\",\"note\":\"只与四处走动形成行为上的对照，不用于反指环顾动作。\"}],\"similarNote\":\"这里比较的是四处活动或朝四周看的副词用法。\",\"contrastingNote\":\"stay still 是活动状态的语境对照，不是 about 的通用反义词。\"},\"sourceIds\":[\"wiktionary-about-etymology\"]}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"about-to\",\"title\":\"即将；正要（be about to do）\",\"meaning\":\"be about to do sth. 表示从当前或过去叙述中的某个时刻看，某个动作马上就要发生。\",\"usageNote\":\"be 随主语和时态变化，to 后接动词原形。通常不与 tomorrow、next week 等表示明确未来时间的状语连用。\",\"examples\":[{\"id\":\"about-to-ex1\",\"senseId\":\"about-to\",\"en\":\"The film is about to start, so please take your seat.\",\"zh\":\"电影马上要开始了，请就座。\",\"note\":\"is about to start 表示开场就在眼前。\"},{\"id\":\"about-to-ex2\",\"senseId\":\"about-to\",\"en\":\"I was about to leave when my phone rang.\",\"zh\":\"我正要离开，这时手机响了。\",\"note\":\"was about to 表示过去某一刻正要做；when 引出这时发生的事情，本句未说明后来是否离开。\"}],\"patterns\":[{\"en\":\"be about to + 动词原形\",\"zh\":\"即将／正要做……\",\"note\":\"这是常用结构；表示谈论某个动作的 about + 动名词属于另一种用法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be about to leave\",\"zh\":\"正要离开\",\"note\":\"强调离开的动作即将发生。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be going to do\",\"zh\":\"打算做；将要做\",\"note\":\"可表示计划或根据当前迹象作出的预测，不一定像 be about to do 那样紧迫。\"},{\"en\":\"be on the point of doing\",\"zh\":\"正要做\",\"note\":\"同样强调动作即将发生，较正式；of 后接动名词。\"}],\"contrasting\":[{\"en\":\"have just done\",\"zh\":\"刚刚做了\",\"note\":\"对照动作尚未开始和动作刚已发生这两个阶段，不是可在各种时态中直接互换的反义结构。\"}],\"similarNote\":\"表示将来不等于表示马上；be about to do 强调即将发生。\",\"contrastingNote\":\"be about to leave 表示正要离开；have just left 表示刚刚离开。\"},\"sourceIds\":[\"wiktionary-about-etymology\"]}"
+        },
+        {
+          "op": "remove",
+          "path": "/lessCommonSenses/0",
+          "expectedValueJson": "{\"id\":\"about-to\",\"title\":\"即将；正要\",\"meaning\":\"be about to do sth. 表示马上就要做某事，常用于动作即将发生的时刻。\",\"note\":\"about to 后接动词原形；通常不与表示明确未来时点的时间状语连用。\",\"example\":{\"id\":\"about-to-ex1\",\"senseId\":\"about-to\",\"en\":\"The film is about to start, so please take your seat.\",\"zh\":\"电影马上要开始了，请就座。\"},\"sourceIds\":[\"cambridge-about\"]}",
+          "valueJson": "null"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"about 修饰钟点表达，说明现在的时间是估计值。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"around 在这里表示大约，说明停电发生的大致时刻。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/sourceIds",
+          "expectedValueJson": "[\"oxford-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"be about to 后接动词原形 leave，表示眼下正要离开。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"介词 about 后用 leaving；leaving early 是谈论的内容。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/1/sourceIds",
+          "expectedValueJson": "[\"cambridge-about\"]",
+          "valueJson": "[\"wiktionary-about-etymology\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/stages/1/meaning",
+          "expectedValueJson": "\"此前使用的形式\"",
+          "valueJson": "\"由更早的 onbūtan 发展而来的古英语形式；所给材料未单列此形式的释义。\""
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/stages/2/form",
+          "expectedValueJson": "\"aboute\"",
+          "valueJson": "\"aboute / abouten\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamilyNote",
+          "expectedValueJson": "\"about 在这些常用义中主要是介词或副词，没有适合初中阶段作为直接派生词讲解的常用词族成员；around、about-to 等是相关表达，不是 about 的派生词。\"",
+          "valueJson": "\"about 在这些常用义中主要是介词或副词，没有适合本课作为规则派生词讲解的常用词族成员。around 是相关近义词，be about to do 是常用结构，二者都不是 about 的派生词。be about to 分开写。\""
+        },
+        {
+          "op": "replace",
+          "path": "/sources",
+          "expectedValueJson": "[{\"id\":\"oxford-about\",\"title\":\"Oxford Learner’s Dictionaries: about\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/about\",\"supports\":[\"常见词性、发音和介词及副词用法\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-about\",\"title\":\"Cambridge Dictionary: about\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/about\",\"supports\":[\"关于、大约、地点副词及 be about to 等用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-about-etymology\",\"title\":\"Wiktionnaire: about（英语词源部分）\",\"url\":\"https://fr.wiktionary.org/wiki/about#Anglais\",\"supports\":[\"所给材料中的英语词源形式及构词说明\"],\"verification\":\"recommended\"}]",
+          "valueJson": "[{\"id\":\"wiktionary-about-etymology\",\"title\":\"Wiktionnaire: about（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/about#Anglais\",\"supports\":[\"英语词条中的关于、大约、地点副词义及 be about to 结构\",\"所给英语读音 /əˈbaʊt/\",\"中古英语、古英语词源形式及 on + būtan 的构词说明\"],\"verification\":\"recommended\"}]"
+        }
+      ]
+    },
+    "provenance": {
+      "version": "sense-lessons-v1",
+      "reviewVersion": "sense-lessons-patch-review-v2",
+      "reviewPromptHash": "2b487ade204295134fbd24c63b323664a19b3c441338739b5bd4eae4a48b06b3",
+      "executedReviewPromptHash": "42abdbe0a2adaf8185ddbffe242ca86baa0be4b2f176fd8610d4f4be6b3bdd40",
+      "reviewHash": "aee0423171f15a7df0daa1b27ebaaa5fd05e5c4e12daf18299abf296185e5cf6",
+      "wordId": 4,
+      "inputHash": "551d8d3ba6586c9c9baa2223ce9215ae47df5be8b99aa0abc3a1b39fb51862db",
+      "draftHash": "ac9ae19ab5e01c55c2093042a7bce17d5b9cc6e26cfbce6dc2844b592db06abd",
+      "finalHash": "fa7dff75ae39ef55eb8902c1bb145b9a59bd054033e46a2a0b91ad4e270f78f7",
+      "generator": {
+        "model": "gpt-6-luna",
+        "method": "codex-exec",
+        "promptVersion": "sense-lessons-v1",
+        "directory": "generate-2"
+      },
+      "reviewer": {
+        "model": "gpt-6.1-sol",
+        "modelSource": "user-cli-configuration; confirmed by root",
+        "modelOverride": false,
+        "reasoningOverride": false,
+        "method": "separate-codex-exec-json-patches",
+        "independentInvocation": true,
+        "humanReviewed": false,
+        "verdict": "revised",
+        "directory": "review-2"
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://fr.wiktionary.org/wiki/about#Anglais",
+          "status": "retrieved",
+          "fetchedAt": "2026-10-18T00:45:49.533Z",
+          "kind": "etymology",
+          "retrievalMethod": "mediawiki-api-english-section",
+          "pageId": 36296,
+          "revisionId": 39765054,
+          "revisionTimestamp": "2026-08-03T05:01:39Z",
+          "sha256": "bffcfb594b07cd5f12e0b9d3481d175b8854f46e8a3d8f0549a5f960f8cdce02",
+          "language": "English entry; French editorial explanation",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "truncated": false
+        },
+        {
+          "url": "https://dictionary.cambridge.org/dictionary/english/about",
+          "status": "unavailable",
+          "fetchedAt": "2026-10-18T01:18:59.498Z",
+          "failure": "http 403 or no dictionary entry"
+        }
+      ],
+      "reviewedAt": "2026-10-18T01:29:49.965Z"
+    }
+  },
+  "editorialReview": {
+    "method": "independent Codex agent full-content read",
+    "reviewer": "Independent Codex editorial agent, not a human teacher",
+    "status": "passed",
+    "candidateSha256": "1be4873db1407087b3883eeaaf2ec22ddf20dc3f348952401786ae0620c53a7c",
+    "humanTeacherReviewed": false,
+    "evidence": {
+      "wordId": 4,
+      "headword": "about",
+      "candidateSha256": "1be4873db1407087b3883eeaaf2ec22ddf20dc3f348952401786ae0620c53a7c",
+      "reviewedAt": "2026-10-18",
+      "reviewer": "Independent Codex editorial agent, not a human teacher",
+      "verdict": "approved",
+      "reviewScope": [
+        "Read the whole candidate including all senses, examples, usage patterns, near/opposite expressions, forms, pronunciation, word family and mnemonic.",
+        "Independently opened the actual Etymonline page and checked the new historical forms, meanings, route and semantic development."
+      ],
+      "verifiedSource": "https://www.etymonline.com/word/about",
+      "additionalVerifiedSources": [
+        {
+          "url": "https://www.oxfordlearnersdictionaries.com/definition/english/about_2",
+          "supports": "Approximation is listed under adverb; nearby and movement uses also checked."
+        }
+      ],
+      "access": "web-tool public page read",
+      "contentFindings": [
+        "Old English spatial meanings, late Old English approximation, and the on/be/utan components match Etymonline.",
+        "The about to construction is distinguished from topic-about plus a gerund, and the examples do not incorrectly claim whether the interrupted action later occurred.",
+        "Oxford classifies ordinary approximate number/time uses as adverbial, so the candidate’s conflicting preposition-first instruction was corrected."
+      ],
+      "blockingErrors": [],
+      "minorSuggestion": null,
+      "nonBlockingFollowUps": [],
+      "reviewedCandidateSha256BeforeFinalCopy": "6de3875013ae1352ded85a59669642b69da0156331f021c90c84c78ae007eea6",
+      "preIndependentSnapshot": ".tmp/lesson-review/source-upgrade/4-pre-independent.json",
+      "finalEdits": [
+        "Corrected the approx-sense word-class explanation and matching takeaway using an actually read Oxford entry.",
+        "Supplied the missing gloss for historical on instead of leaving one component unexplained.",
+        "Marked this candidate reviewed and updated scope to accurately record completed independent review without claiming human-teacher approval or publication."
+      ],
+      "changes": [
+        {
+          "path": "/takeaway",
+          "op": "replace",
+          "before": "about 作介词时常接话题、数量或地点；作副词时常表示大约或四处活动。读音重音在第二音节。",
+          "after": "about 作介词时常引出话题或表示周围位置；作副词时常表示大约、在附近或四处活动。读音重音在第二音节。"
+        },
+        {
+          "path": "/senses",
+          "op": "replace",
+          "before": [
+            {
+              "id": "about-prep-topic",
+              "title": "关于；有关",
+              "meaning": "作介词，引出谈论、阅读、思考或了解的主题，后面接名词、代词或动名词。",
+              "usageNote": "talk about sth. 是“谈论某事”；about 后若接动作，动词要用 -ing 形式。",
+              "examples": [
+                {
+                  "id": "about-topic-ex1",
+                  "senseId": "about-prep-topic",
+                  "en": "We talked about our plans for the school trip.",
+                  "zh": "我们谈了学校郊游的计划。",
+                  "note": "talk about 后接名词短语 our plans，说明谈论的主题。"
+                },
+                {
+                  "id": "about-topic-ex2",
+                  "senseId": "about-prep-topic",
+                  "en": "Mia is reading a book about space.",
+                  "zh": "米娅正在读一本关于太空的书。",
+                  "note": "about space 修饰 book，说明这本书的内容。"
+                },
+                {
+                  "id": "about-topic-ex3",
+                  "senseId": "about-prep-topic",
+                  "en": "How about meeting at the library after school?",
+                  "zh": "放学后在图书馆见面怎么样？",
+                  "note": "How about 后接动名词短语，用来提出建议。"
+                },
+                {
+                  "id": "about-topic-ex4",
+                  "senseId": "about-prep-topic",
+                  "en": "What about Leo? Is he coming with us?",
+                  "zh": "利奥呢？他会和我们一起去吗？",
+                  "note": "What about 后接人名，承接前文追问利奥的安排。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "talk about + 名词",
+                  "zh": "谈论……",
+                  "note": "about 后接谈论的主题。",
+                  "kind": "sentence-pattern"
+                },
+                {
+                  "en": "learn about + 名词",
+                  "zh": "了解……",
+                  "note": "说明学习或获取信息的主题。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "think about + 名词或动名词",
+                  "zh": "考虑……；想一想……",
+                  "note": "动词 think 后常用 about 引出思考内容。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "How/What about + 名词或动名词？",
+                  "zh": "……怎么样？／……呢？",
+                  "note": "两者都可用于提议或征询意见；What about 还常用来追问尚未谈到的人或事。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "a story about animals",
+                  "zh": "一个关于动物的故事",
+                  "note": "about 引出故事主题。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "on",
+                    "zh": "关于",
+                    "note": "on 也可表示“关于”，常用于较正式或具体的主题，如 on the history of China；日常表达中 about 更常见。"
+                  },
+                  {
+                    "en": "concerning",
+                    "zh": "关于",
+                    "note": "语气较正式，常见于通知、说明等场合。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "unrelated to",
+                    "zh": "与……无关",
+                    "note": "只在表示话题关联时对照：a book about birds 与 a book unrelated to birds。"
+                  }
+                ],
+                "similarNote": "表示话题时 about 用法广；on 和 concerning 的语气及常见场合有所不同。",
+                "contrastingNote": "unrelated to 表示没有话题关联，可与“关于”这一义项形成语境对照。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            },
+            {
+              "id": "about-approx",
+              "title": "大约",
+              "meaning": "作介词时放在数量、年龄、时间或距离等表达前，表示不精确的估计；作副词时也可表示“大约”。",
+              "usageNote": "about 和 around 在表示近似数量时常可互换。用于钟点时，about 通常放在时间前。",
+              "examples": [
+                {
+                  "id": "about-approx-ex1",
+                  "senseId": "about-approx",
+                  "en": "The walk takes about twenty minutes.",
+                  "zh": "走这段路大约要二十分钟。",
+                  "note": "about twenty minutes 表示估计时长。"
+                },
+                {
+                  "id": "about-approx-ex2",
+                  "senseId": "about-approx",
+                  "en": "There were about thirty students in the hall.",
+                  "zh": "大厅里大约有三十名学生。",
+                  "note": "人数接近三十，不保证恰好三十。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "about + 数字或数量",
+                  "zh": "大约……",
+                  "note": "可用于人数、金额、距离、时长等估计。",
+                  "kind": "sentence-pattern"
+                },
+                {
+                  "en": "at about + 时间",
+                  "zh": "大约在……点",
+                  "note": "at 引出钟点，about 表示时间不精确。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "about ten minutes",
+                  "zh": "大约十分钟",
+                  "note": "常用于估计所需时间。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "about five kilometres",
+                  "zh": "大约五公里",
+                  "note": "用于近似距离；美式英语也常拼作 kilometers。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "大约",
+                    "note": "表示近似数量或时间时，常与 about 互换，如 around ten people。"
+                  },
+                  {
+                    "en": "approximately",
+                    "zh": "大约",
+                    "note": "更正式，常用于数据或说明文字。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "exactly",
+                    "zh": "准确地；恰好",
+                    "note": "表示精确数值或时间，与 about 表示估算相对，如 about ten minutes / exactly ten minutes。"
+                  }
+                ],
+                "similarNote": "日常估算常用 about 或 around；approximately 的语气更正式。",
+                "contrastingNote": "exactly 用于强调准确无误的数值或时间。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            },
+            {
+              "id": "about-around",
+              "title": "在……周围；围着……（介词）",
+              "meaning": "作介词，表示在某物周围或围绕某物的位置关系，后接名词短语。",
+              "usageNote": "这类表示位置或围绕关系的 about 较书面或带文学色彩；日常通常用 around。表示人在附近或四处活动时，还可用不带宾语的副词 about。",
+              "examples": [
+                {
+                  "id": "about-around-ex1",
+                  "senseId": "about-around",
+                  "en": "A few trees grow about the old house.",
+                  "zh": "老房子周围长着几棵树。",
+                  "note": "这里的 about 表示围绕；日常口语中 around 更常用。"
+                },
+                {
+                  "id": "about-around-ex2",
+                  "senseId": "about-around",
+                  "en": "She wore a scarf about her neck.",
+                  "zh": "她脖子上围着一条围巾。",
+                  "note": "about her neck 表示围绕关系；这句话较书面，日常更常用 around her neck。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "about + 名词短语",
+                  "zh": "在……周围；围着……",
+                  "note": "about 作介词，后有宾语；日常表达通常用 around。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "trees about the house",
+                  "zh": "房子周围的树",
+                  "note": "较书面的地点表达，日常更常说 trees around the house。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "a scarf about her neck",
+                  "zh": "围在她脖子上的一条围巾",
+                  "note": "表示围绕关系，日常更常用 around her neck。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "在……周围；围着……",
+                    "note": "表示周围位置或围绕关系时，日常通常比 about 更常用。"
+                  },
+                  {
+                    "en": "round",
+                    "zh": "围着……",
+                    "note": "英式英语也常用，如 a scarf round her neck。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "in the centre",
+                    "zh": "在中央",
+                    "note": "仅在讨论区域内的位置分布时与“在周围”形成对照，不适用于围巾围着脖子等关系。"
+                  }
+                ],
+                "similarNote": "此处比较的是空间位置或围绕关系，不能把这些词套用到 about 的所有义项。",
+                "contrastingNote": "in the centre 是空间分布中的语境对照，并非 about 的通用反义词。"
+              },
+              "sourceIds": []
+            },
+            {
+              "id": "about-nearby",
+              "title": "在附近；在场（副词）",
+              "meaning": "作副词，表示人在附近、在场或可以找得到。",
+              "usageNote": "常见于英式口语中的 be about；about 后不接宾语。这里不是 be about to do 的“正要”。",
+              "examples": [
+                {
+                  "id": "about-nearby-ex1",
+                  "senseId": "about-nearby",
+                  "en": "Is your dad about? I need to ask him something.",
+                  "zh": "你爸爸在吗？我想问他点事。",
+                  "note": "询问某人是否在附近、能否找得到；常见于英式口语。"
+                },
+                {
+                  "id": "about-nearby-ex2",
+                  "senseId": "about-nearby",
+                  "en": "I'll be about all morning if you need a hand.",
+                  "zh": "整个上午我都会在附近，你需要帮忙的话可以找我。",
+                  "note": "be about 表示人在附近；all morning 是时间状语。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "be about",
+                  "zh": "在附近；在场",
+                  "note": "about 是副词，没有宾语；是否在场要结合谈话中的地点理解。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "be about all morning",
+                  "zh": "整个上午都在附近／在场",
+                  "note": "可用于告诉别人自己可以找得到。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "be around",
+                    "zh": "在附近；在场",
+                    "note": "在询问或说明某人能否找得到时，常可表达相近意思。"
+                  },
+                  {
+                    "en": "be nearby",
+                    "zh": "在附近",
+                    "note": "强调距离近，不一定包含可以联系或找得到的意味。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "be far away",
+                    "zh": "在很远的地方",
+                    "note": "只就距离远近与附近义对照。"
+                  }
+                ],
+                "similarNote": "about 和 around 在这种口语表达中可表示人在附近；nearby 更直接说明距离。",
+                "contrastingNote": "far away 对照的是附近位置，不是 about 的话题、估算或即将义。"
+              },
+              "sourceIds": []
+            },
+            {
+              "id": "about-movement",
+              "title": "四处；向四周（副词）",
+              "meaning": "作副词，表示在一个区域内四处活动，或向周围不同方向看。",
+              "usageNote": "about 在这里不带宾语，常跟在 walk、run、move、look 等动词后。此用法在英式英语中常见，美式日常表达通常更常用 around。",
+              "examples": [
+                {
+                  "id": "about-movement-ex1",
+                  "senseId": "about-movement",
+                  "en": "The children were running about in the garden.",
+                  "zh": "孩子们在花园里跑来跑去。",
+                  "note": "about 表示四处活动；in the garden 另行说明活动范围。"
+                },
+                {
+                  "id": "about-movement-ex2",
+                  "senseId": "about-movement",
+                  "en": "She looked about for an empty seat.",
+                  "zh": "她环顾四周，想找个空座位。",
+                  "note": "look about 表示环顾；for an empty seat 说明寻找的目标，不是 about 的宾语。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "walk / run / move about",
+                  "zh": "四处走动／跑动／活动",
+                  "note": "about 作副词，不表示某一个明确目的地。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "walk about",
+                  "zh": "四处走动",
+                  "note": "表示在一个区域内走动。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "look about",
+                  "zh": "环顾四周",
+                  "note": "也常说 look around。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "四处；向四周",
+                    "note": "在 run about、walk about、look about 等表达中，常可换用 around。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "stay still",
+                    "zh": "保持不动",
+                    "note": "只与四处走动形成行为上的对照，不用于反指环顾动作。"
+                  }
+                ],
+                "similarNote": "这里比较的是四处活动或朝四周看的副词用法。",
+                "contrastingNote": "stay still 是活动状态的语境对照，不是 about 的通用反义词。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            },
+            {
+              "id": "about-to",
+              "title": "即将；正要（be about to do）",
+              "meaning": "be about to do sth. 表示从当前或过去叙述中的某个时刻看，某个动作马上就要发生。",
+              "usageNote": "be 随主语和时态变化，to 后接动词原形。通常不与 tomorrow、next week 等表示明确未来时间的状语连用。",
+              "examples": [
+                {
+                  "id": "about-to-ex1",
+                  "senseId": "about-to",
+                  "en": "The film is about to start, so please take your seat.",
+                  "zh": "电影马上要开始了，请就座。",
+                  "note": "is about to start 表示开场就在眼前。"
+                },
+                {
+                  "id": "about-to-ex2",
+                  "senseId": "about-to",
+                  "en": "I was about to leave when my phone rang.",
+                  "zh": "我正要离开，这时手机响了。",
+                  "note": "was about to 表示过去某一刻正要做；when 引出这时发生的事情，本句未说明后来是否离开。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "be about to + 动词原形",
+                  "zh": "即将／正要做……",
+                  "note": "这是常用结构；表示谈论某个动作的 about + 动名词属于另一种用法。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "be about to leave",
+                  "zh": "正要离开",
+                  "note": "强调离开的动作即将发生。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "be going to do",
+                    "zh": "打算做；将要做",
+                    "note": "可表示计划或根据当前迹象作出的预测，不一定像 be about to do 那样紧迫。"
+                  },
+                  {
+                    "en": "be on the point of doing",
+                    "zh": "正要做",
+                    "note": "同样强调动作即将发生，较正式；of 后接动名词。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "have just done",
+                    "zh": "刚刚做了",
+                    "note": "对照动作尚未开始和动作刚已发生这两个阶段，不是可在各种时态中直接互换的反义结构。"
+                  }
+                ],
+                "similarNote": "表示将来不等于表示马上；be about to do 强调即将发生。",
+                "contrastingNote": "be about to leave 表示正要离开；have just left 表示刚刚离开。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            }
+          ],
+          "after": [
+            {
+              "id": "about-prep-topic",
+              "title": "关于；有关",
+              "meaning": "作介词，引出谈论、阅读、思考或了解的主题，后面接名词、代词或动名词。",
+              "usageNote": "talk about sth. 是“谈论某事”；about 后若接动作，动词要用 -ing 形式。",
+              "examples": [
+                {
+                  "id": "about-topic-ex1",
+                  "senseId": "about-prep-topic",
+                  "en": "We talked about our plans for the school trip.",
+                  "zh": "我们谈了学校郊游的计划。",
+                  "note": "talk about 后接名词短语 our plans，说明谈论的主题。"
+                },
+                {
+                  "id": "about-topic-ex2",
+                  "senseId": "about-prep-topic",
+                  "en": "Mia is reading a book about space.",
+                  "zh": "米娅正在读一本关于太空的书。",
+                  "note": "about space 修饰 book，说明这本书的内容。"
+                },
+                {
+                  "id": "about-topic-ex3",
+                  "senseId": "about-prep-topic",
+                  "en": "How about meeting at the library after school?",
+                  "zh": "放学后在图书馆见面怎么样？",
+                  "note": "How about 后接动名词短语，用来提出建议。"
+                },
+                {
+                  "id": "about-topic-ex4",
+                  "senseId": "about-prep-topic",
+                  "en": "What about Leo? Is he coming with us?",
+                  "zh": "利奥呢？他会和我们一起去吗？",
+                  "note": "What about 后接人名，承接前文追问利奥的安排。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "talk about + 名词",
+                  "zh": "谈论……",
+                  "note": "about 后接谈论的主题。",
+                  "kind": "sentence-pattern"
+                },
+                {
+                  "en": "learn about + 名词",
+                  "zh": "了解……",
+                  "note": "说明学习或获取信息的主题。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "think about + 名词或动名词",
+                  "zh": "考虑……；想一想……",
+                  "note": "动词 think 后常用 about 引出思考内容。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "How/What about + 名词或动名词？",
+                  "zh": "……怎么样？／……呢？",
+                  "note": "两者都可用于提议或征询意见；What about 还常用来追问尚未谈到的人或事。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "a story about animals",
+                  "zh": "一个关于动物的故事",
+                  "note": "about 引出故事主题。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "on",
+                    "zh": "关于",
+                    "note": "on 也可表示“关于”，常用于较正式或具体的主题，如 on the history of China；日常表达中 about 更常见。"
+                  },
+                  {
+                    "en": "concerning",
+                    "zh": "关于",
+                    "note": "语气较正式，常见于通知、说明等场合。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "unrelated to",
+                    "zh": "与……无关",
+                    "note": "只在表示话题关联时对照：a book about birds 与 a book unrelated to birds。"
+                  }
+                ],
+                "similarNote": "表示话题时 about 用法广；on 和 concerning 的语气及常见场合有所不同。",
+                "contrastingNote": "unrelated to 表示没有话题关联，可与“关于”这一义项形成语境对照。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            },
+            {
+              "id": "about-approx",
+              "title": "大约",
+              "meaning": "表示“大约”时通常作副词，放在数量、年龄、时间或距离等表达前，说明这是不精确的估计。",
+              "usageNote": "about 和 around 在表示近似数量时常可互换。用于钟点时，about 通常放在时间前。",
+              "examples": [
+                {
+                  "id": "about-approx-ex1",
+                  "senseId": "about-approx",
+                  "en": "The walk takes about twenty minutes.",
+                  "zh": "走这段路大约要二十分钟。",
+                  "note": "about twenty minutes 表示估计时长。"
+                },
+                {
+                  "id": "about-approx-ex2",
+                  "senseId": "about-approx",
+                  "en": "There were about thirty students in the hall.",
+                  "zh": "大厅里大约有三十名学生。",
+                  "note": "人数接近三十，不保证恰好三十。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "about + 数字或数量",
+                  "zh": "大约……",
+                  "note": "可用于人数、金额、距离、时长等估计。",
+                  "kind": "sentence-pattern"
+                },
+                {
+                  "en": "at about + 时间",
+                  "zh": "大约在……点",
+                  "note": "at 引出钟点，about 表示时间不精确。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "about ten minutes",
+                  "zh": "大约十分钟",
+                  "note": "常用于估计所需时间。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "about five kilometres",
+                  "zh": "大约五公里",
+                  "note": "用于近似距离；美式英语也常拼作 kilometers。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "大约",
+                    "note": "表示近似数量或时间时，常与 about 互换，如 around ten people。"
+                  },
+                  {
+                    "en": "approximately",
+                    "zh": "大约",
+                    "note": "更正式，常用于数据或说明文字。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "exactly",
+                    "zh": "准确地；恰好",
+                    "note": "表示精确数值或时间，与 about 表示估算相对，如 about ten minutes / exactly ten minutes。"
+                  }
+                ],
+                "similarNote": "日常估算常用 about 或 around；approximately 的语气更正式。",
+                "contrastingNote": "exactly 用于强调准确无误的数值或时间。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology",
+                "oxford-about-adverb"
+              ]
+            },
+            {
+              "id": "about-around",
+              "title": "在……周围；围着……（介词）",
+              "meaning": "作介词，表示在某物周围或围绕某物的位置关系，后接名词短语。",
+              "usageNote": "这类表示位置或围绕关系的 about 较书面或带文学色彩；日常通常用 around。表示人在附近或四处活动时，还可用不带宾语的副词 about。",
+              "examples": [
+                {
+                  "id": "about-around-ex1",
+                  "senseId": "about-around",
+                  "en": "A few trees grow about the old house.",
+                  "zh": "老房子周围长着几棵树。",
+                  "note": "这里的 about 表示围绕；日常口语中 around 更常用。"
+                },
+                {
+                  "id": "about-around-ex2",
+                  "senseId": "about-around",
+                  "en": "She wore a scarf about her neck.",
+                  "zh": "她脖子上围着一条围巾。",
+                  "note": "about her neck 表示围绕关系；这句话较书面，日常更常用 around her neck。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "about + 名词短语",
+                  "zh": "在……周围；围着……",
+                  "note": "about 作介词，后有宾语；日常表达通常用 around。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "trees about the house",
+                  "zh": "房子周围的树",
+                  "note": "较书面的地点表达，日常更常说 trees around the house。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "a scarf about her neck",
+                  "zh": "围在她脖子上的一条围巾",
+                  "note": "表示围绕关系，日常更常用 around her neck。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "在……周围；围着……",
+                    "note": "表示周围位置或围绕关系时，日常通常比 about 更常用。"
+                  },
+                  {
+                    "en": "round",
+                    "zh": "围着……",
+                    "note": "英式英语也常用，如 a scarf round her neck。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "in the centre",
+                    "zh": "在中央",
+                    "note": "仅在讨论区域内的位置分布时与“在周围”形成对照，不适用于围巾围着脖子等关系。"
+                  }
+                ],
+                "similarNote": "此处比较的是空间位置或围绕关系，不能把这些词套用到 about 的所有义项。",
+                "contrastingNote": "in the centre 是空间分布中的语境对照，并非 about 的通用反义词。"
+              },
+              "sourceIds": []
+            },
+            {
+              "id": "about-nearby",
+              "title": "在附近；在场（副词）",
+              "meaning": "作副词，表示人在附近、在场或可以找得到。",
+              "usageNote": "常见于英式口语中的 be about；about 后不接宾语。这里不是 be about to do 的“正要”。",
+              "examples": [
+                {
+                  "id": "about-nearby-ex1",
+                  "senseId": "about-nearby",
+                  "en": "Is your dad about? I need to ask him something.",
+                  "zh": "你爸爸在吗？我想问他点事。",
+                  "note": "询问某人是否在附近、能否找得到；常见于英式口语。"
+                },
+                {
+                  "id": "about-nearby-ex2",
+                  "senseId": "about-nearby",
+                  "en": "I'll be about all morning if you need a hand.",
+                  "zh": "整个上午我都会在附近，你需要帮忙的话可以找我。",
+                  "note": "be about 表示人在附近；all morning 是时间状语。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "be about",
+                  "zh": "在附近；在场",
+                  "note": "about 是副词，没有宾语；是否在场要结合谈话中的地点理解。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "be about all morning",
+                  "zh": "整个上午都在附近／在场",
+                  "note": "可用于告诉别人自己可以找得到。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "be around",
+                    "zh": "在附近；在场",
+                    "note": "在询问或说明某人能否找得到时，常可表达相近意思。"
+                  },
+                  {
+                    "en": "be nearby",
+                    "zh": "在附近",
+                    "note": "强调距离近，不一定包含可以联系或找得到的意味。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "be far away",
+                    "zh": "在很远的地方",
+                    "note": "只就距离远近与附近义对照。"
+                  }
+                ],
+                "similarNote": "about 和 around 在这种口语表达中可表示人在附近；nearby 更直接说明距离。",
+                "contrastingNote": "far away 对照的是附近位置，不是 about 的话题、估算或即将义。"
+              },
+              "sourceIds": []
+            },
+            {
+              "id": "about-movement",
+              "title": "四处；向四周（副词）",
+              "meaning": "作副词，表示在一个区域内四处活动，或向周围不同方向看。",
+              "usageNote": "about 在这里不带宾语，常跟在 walk、run、move、look 等动词后。此用法在英式英语中常见，美式日常表达通常更常用 around。",
+              "examples": [
+                {
+                  "id": "about-movement-ex1",
+                  "senseId": "about-movement",
+                  "en": "The children were running about in the garden.",
+                  "zh": "孩子们在花园里跑来跑去。",
+                  "note": "about 表示四处活动；in the garden 另行说明活动范围。"
+                },
+                {
+                  "id": "about-movement-ex2",
+                  "senseId": "about-movement",
+                  "en": "She looked about for an empty seat.",
+                  "zh": "她环顾四周，想找个空座位。",
+                  "note": "look about 表示环顾；for an empty seat 说明寻找的目标，不是 about 的宾语。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "walk / run / move about",
+                  "zh": "四处走动／跑动／活动",
+                  "note": "about 作副词，不表示某一个明确目的地。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "walk about",
+                  "zh": "四处走动",
+                  "note": "表示在一个区域内走动。",
+                  "kind": "common-collocation"
+                },
+                {
+                  "en": "look about",
+                  "zh": "环顾四周",
+                  "note": "也常说 look around。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "around",
+                    "zh": "四处；向四周",
+                    "note": "在 run about、walk about、look about 等表达中，常可换用 around。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "stay still",
+                    "zh": "保持不动",
+                    "note": "只与四处走动形成行为上的对照，不用于反指环顾动作。"
+                  }
+                ],
+                "similarNote": "这里比较的是四处活动或朝四周看的副词用法。",
+                "contrastingNote": "stay still 是活动状态的语境对照，不是 about 的通用反义词。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            },
+            {
+              "id": "about-to",
+              "title": "即将；正要（be about to do）",
+              "meaning": "be about to do sth. 表示从当前或过去叙述中的某个时刻看，某个动作马上就要发生。",
+              "usageNote": "be 随主语和时态变化，to 后接动词原形。通常不与 tomorrow、next week 等表示明确未来时间的状语连用。",
+              "examples": [
+                {
+                  "id": "about-to-ex1",
+                  "senseId": "about-to",
+                  "en": "The film is about to start, so please take your seat.",
+                  "zh": "电影马上要开始了，请就座。",
+                  "note": "is about to start 表示开场就在眼前。"
+                },
+                {
+                  "id": "about-to-ex2",
+                  "senseId": "about-to",
+                  "en": "I was about to leave when my phone rang.",
+                  "zh": "我正要离开，这时手机响了。",
+                  "note": "was about to 表示过去某一刻正要做；when 引出这时发生的事情，本句未说明后来是否离开。"
+                }
+              ],
+              "patterns": [
+                {
+                  "en": "be about to + 动词原形",
+                  "zh": "即将／正要做……",
+                  "note": "这是常用结构；表示谈论某个动作的 about + 动名词属于另一种用法。",
+                  "kind": "sentence-pattern"
+                }
+              ],
+              "collocations": [
+                {
+                  "en": "be about to leave",
+                  "zh": "正要离开",
+                  "note": "强调离开的动作即将发生。",
+                  "kind": "common-collocation"
+                }
+              ],
+              "relatedExpressions": {
+                "similar": [
+                  {
+                    "en": "be going to do",
+                    "zh": "打算做；将要做",
+                    "note": "可表示计划或根据当前迹象作出的预测，不一定像 be about to do 那样紧迫。"
+                  },
+                  {
+                    "en": "be on the point of doing",
+                    "zh": "正要做",
+                    "note": "同样强调动作即将发生，较正式；of 后接动名词。"
+                  }
+                ],
+                "contrasting": [
+                  {
+                    "en": "have just done",
+                    "zh": "刚刚做了",
+                    "note": "对照动作尚未开始和动作刚已发生这两个阶段，不是可在各种时态中直接互换的反义结构。"
+                  }
+                ],
+                "similarNote": "表示将来不等于表示马上；be about to do 强调即将发生。",
+                "contrastingNote": "be about to leave 表示正要离开；have just left 表示刚刚离开。"
+              },
+              "sourceIds": [
+                "wiktionary-about-etymology"
+              ]
+            }
+          ]
+        },
+        {
+          "path": "/etymology/stages",
+          "op": "replace",
+          "before": [
+            {
+              "language": "古英语",
+              "form": "onbūtan / ābūtan",
+              "meaning": "在周围；在外面；在附近。历史构成与 on、be（在旁边）和 utan（在外面）有关。"
+            },
+            {
+              "language": "晚期古英语",
+              "form": "ābūtan",
+              "meaning": "还可表示时间、数量或程度接近某个值，即“大约”。"
+            },
+            {
+              "language": "中古英语",
+              "form": "aboute / abouten",
+              "meaning": "延续环绕、在附近等用法，后来也用于表示“关于、涉及”。"
+            }
+          ],
+          "after": [
+            {
+              "language": "古英语",
+              "form": "onbūtan / ābūtan",
+              "meaning": "在周围；在外面；在附近。历史构成与 on（在……上）、be（在旁边）和 utan（在外面）有关。"
+            },
+            {
+              "language": "晚期古英语",
+              "form": "ābūtan",
+              "meaning": "还可表示时间、数量或程度接近某个值，即“大约”。"
+            },
+            {
+              "language": "中古英语",
+              "form": "aboute / abouten",
+              "meaning": "延续环绕、在附近等用法，后来也用于表示“关于、涉及”。"
+            }
+          ]
+        },
+        {
+          "path": "/sources",
+          "op": "replace",
+          "before": [
+            {
+              "id": "wiktionary-about-etymology",
+              "title": "Wiktionnaire: about（英语词条，法语释义）",
+              "url": "https://fr.wiktionary.org/wiki/about#Anglais",
+              "supports": [
+                "英语词条中的关于、大约、地点副词义及 be about to 结构",
+                "所给英语读音 /əˈbaʊt/",
+                "中古英语、古英语词源形式及 on + būtan 的构词说明"
+              ],
+              "verification": "recommended"
+            },
+            {
+              "id": "etymonline-about",
+              "title": "Etymonline: about",
+              "url": "https://www.etymonline.com/word/about",
+              "supports": [
+                "古英语 onbutan、abutan 的周围、外面、附近义",
+                "晚期古英语约数义及中古英语传承",
+                "历史构成 on、be、utan"
+              ],
+              "verification": "verified",
+              "checkedAt": "2026-10-18"
+            }
+          ],
+          "after": [
+            {
+              "id": "wiktionary-about-etymology",
+              "title": "Wiktionnaire: about（英语词条，法语释义）",
+              "url": "https://fr.wiktionary.org/wiki/about#Anglais",
+              "supports": [
+                "英语词条中的关于、大约、地点副词义及 be about to 结构",
+                "所给英语读音 /əˈbaʊt/",
+                "中古英语、古英语词源形式及 on + būtan 的构词说明"
+              ],
+              "verification": "recommended"
+            },
+            {
+              "id": "etymonline-about",
+              "title": "Etymonline: about",
+              "url": "https://www.etymonline.com/word/about",
+              "supports": [
+                "古英语 onbutan、abutan 的周围、外面、附近义",
+                "晚期古英语约数义及中古英语传承",
+                "历史构成 on、be、utan"
+              ],
+              "verification": "verified",
+              "checkedAt": "2026-10-18"
+            },
+            {
+              "id": "oxford-about-adverb",
+              "title": "Oxford Learner’s Dictionaries: about（副词）",
+              "url": "https://www.oxfordlearnersdictionaries.com/definition/english/about_2",
+              "supports": [
+                "约数义的副词词性",
+                "附近与四处活动的副词用法"
+              ],
+              "verification": "verified",
+              "checkedAt": "2026-10-18"
+            }
+          ]
+        },
+        {
+          "path": "/editorial/status",
+          "op": "replace",
+          "before": "draft",
+          "after": "reviewed"
+        },
+        {
+          "path": "/editorial/scope",
+          "op": "replace",
+          "before": "原稿曾完成独立模型审校；本次只修订词源及其来源。此候选尚待另一个代理独立审读，不表示教师审核或已经发布。",
+          "after": "原稿曾完成独立模型审校；本次词源补证已由另一 Codex 代理逐词对照实际网页核验，并通读全篇，完成必要的教学措辞和引用修正。这是独立 AI 编辑审读，不是人类教师审核；未核验的既有来源仍保留推荐状态，不表示穷尽全部词典用法。"
+        }
+      ],
+      "publication": {
+        "status": "ready for root publication",
+        "teachingChangesAfterIndependentRootRead": false
+      },
+      "unsuccessfulAccess": [
+        {
+          "url": "https://dictionary.cambridge.org/dictionary/english/about",
+          "status": "403; not used as verified evidence"
+        }
+      ],
+      "coverageAddendum": {
+        "requestedBy": "Root following the user requirement that different common meanings receive separate examples.",
+        "author": "Codex editorial agent /root/manage_lesson_ui; not a human teacher",
+        "authoredAt": "2026-10-18",
+        "status": "passed-independent-root-read",
+        "sourceUrl": "https://www.oxfordlearnersdictionaries.com/definition/english/about_2",
+        "sourceAccess": "Actually opened the public page with web tool; adverb senses 2 (nearly) and 4 (various places/no particular order).",
+        "beforeCandidateSha256": "4dc3cdd455916854b519106f0a4a0a51881e7c94040e37ae1ee77a8405c22192",
+        "afterCandidateSha256": "49b2a944edbcfb5885cfc679d7266225a8bfe90d24a193d55d613a8829fe15eb",
+        "addedSenseIds": [
+          "about-nearly",
+          "about-scattered"
+        ],
+        "addedOriginalExampleIds": [
+          "about-nearly-ex1",
+          "about-nearly-ex2",
+          "about-scattered-ex1",
+          "about-scattered-ex2"
+        ],
+        "pedagogicalPlacement": "Both are ordinary contemporary adverb uses, so each remains a full section with two original examples. Study order prioritizes topic/quantity/nearly/imminent uses; scattered-location use is learned afterward in a concrete tidy-room setting, with its chiefly British preference explicit. Neither is labelled obsolete or specialist.",
+        "boundaryChecks": [
+          "Distinguished just about finished from be about to finish/start.",
+          "Distinguished stationary scattered objects from run/walk about movement.",
+          "Near/opposite expressions are restricted to readiness/completion or tidiness/distribution.",
+          "Examples are original and do not reproduce Oxford examples."
+        ],
+        "changedTopLevelFields": [
+          "headline",
+          "takeaway",
+          "levelHint",
+          "studyPlan",
+          "senses",
+          "sources",
+          "editorial"
+        ],
+        "snapshotPath": ".tmp/lesson-review/source-upgrade/4-before-coverage-addendum.json",
+        "independentReviewer": "root Codex editor; not a human teacher",
+        "independentChecks": [
+          "Read both complete new units, all four English/Chinese examples, usage, patterns and limited near/opposite comparisons.",
+          "Nearly/completion is distinct from imminent be about to; stationary scattered items are distinct from movement.",
+          "Accepted ordinary British location adverb placement and learning priorities; retained actual Oxford source review by the author."
+        ],
+        "rootCandidateSha256": "49b2a944edbcfb5885cfc679d7266225a8bfe90d24a193d55d613a8829fe15eb"
+      },
+      "previousVerdictBeforeRootCoverageRead": "approved-source-upgrade; coverage-addendum-awaiting-root-review"
+    }
+  },
+  "sourceEvidence": [
+    {
+      "url": "https://fr.wiktionary.org/wiki/about#Anglais",
+      "status": "retrieved",
+      "fetchedAt": "2026-10-18T00:45:49.533Z",
+      "kind": "etymology",
+      "retrievalMethod": "mediawiki-api-english-section",
+      "pageId": 36296,
+      "revisionId": 39765054,
+      "revisionTimestamp": "2026-08-03T05:01:39Z",
+      "sha256": "bffcfb594b07cd5f12e0b9d3481d175b8854f46e8a3d8f0549a5f960f8cdce02",
+      "language": "English entry; French editorial explanation",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "truncated": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/about",
+      "status": "unavailable",
+      "fetchedAt": "2026-10-18T01:18:59.498Z",
+      "failure": "http 403 or no dictionary entry"
+    },
+    {
+      "url": "https://www.etymonline.com/word/about",
+      "section": "about, adverb and preposition",
+      "text": "About continues Middle English aboute and Old English abutan, earlier onbutan. The older forms expressed being around, outside, or near something. Etymonline analyses the earlier formation with elements corresponding to on, by, and outside. The approximate meaning was already developing in late Old English. These are historical forms and senses, not a rule for splitting modern about into independently usable words.",
+      "supports": [
+        "Old English around outside or near meanings",
+        "Middle English transmission",
+        "Historical formation",
+        "Older approximate meaning"
+      ],
+      "kind": "etymology",
+      "status": "retrieved",
+      "fetchedAt": "2026-10-18",
+      "retrievalMethod": "web-tool-public-page-read; original factual summary",
+      "summarySha256": "f48b43085fd4028bb89a5c48174ced3ba6b2c1d3690184918e419292eb4ac430",
+      "summaryAndSupportsWordCount": 76
+    }
+  ],
+  "publicationChecks": {
+    "identityAndStructure": "passed",
+    "independentReviewHash": "matched",
+    "beforeEditSha256": "7fb72750b73997c2554880f0c6b37024341e8d559d0b965071e05a6d6af7d98f",
+    "note": "Original pipeline audit retained intact; new editor review binds the source-enriched version. No new single-word CLI review is claimed."
+  }
+}

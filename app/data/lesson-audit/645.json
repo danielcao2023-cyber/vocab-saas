@@ -1,0 +1,243 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "11fd1f50a1f7934b4658243dbfc0ceec50691dda8baa694aed3aa76dc7881b57",
+    "executedReviewPromptHash": "11fd1f50a1f7934b4658243dbfc0ceec50691dda8baa694aed3aa76dc7881b57",
+    "reviewHash": "5f20c5bf72a81e4971ae688d32527aff1774c300e267fb3dd69f86322272bc66",
+    "wordId": 645,
+    "inputHash": "52c651ae7494b5bdc5f4b19b6ee95864cd4888cb82ad3a9ea2394d1f6ec8bd78",
+    "draftHash": "51617ac1cd8c6b45ac47774030fd86700fed179d4d2d3e7610143200965354ce",
+    "finalHash": "ae66f21192f18e3679dbe44c954b83df6a52641d150e4f401d1fd555f3f4fe83",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hi#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.203Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116152,
+        "revisionId": 39900198,
+        "revisionTimestamp": "2026-09-23T13:02:14Z",
+        "sha256": "59e824b3fdcbbdb23811b99d0585a8de67e9aa394f7d0c32aa9199e7dd3a4b27",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hi",
+        "section": "hi etymology",
+        "supports": [
+          "Greeting interjection history; exclude high homograph"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.056168+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "47afe6edb4e368e687cc7b3996fd3c9e4ec1f38ffa87cd91994cd6614787195a",
+        "summaryAndSupportsWordCount": 45,
+        "sha256": "47afe6edb4e368e687cc7b3996fd3c9e4ec1f38ffa87cd91994cd6614787195a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/645.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hi",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:52:29.610Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:03:46.953Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "英语词条另列形容词 hi，表示 high 的缩写。初稿仅在词源中提及，未说明其实际用法；应补入较少见义，并同步补充词性。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "中古英语 hy / hey 只是可能相关的形式，不能放入表示确定历史先后的箭头链。应将这一不确定关系写在 summary，只保留有依据的问候用法阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "初稿的主要来源引用指向未提供正文的 Oxford，遗漏实际取得的维基词典英语词条。应更正来源及引用；hi 与 hey 的现代语用比较、引起注意的用法可保留为专业语言说明，但不应冒用该词典作为直接依据。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0/zh",
+        "message": "club meeting 具体指社团会议，译成“社团活动”不够精确。"
+      }
+    ],
+    "coverageAssessment": "已核对非正式问候义、引起注意的交际功能，以及独立的 high 缩写用法。核心问候义已有两条自然例句，无须拆成多个义项；缩写用法已补入较少见义。读音、搭配、语境限定、词族说明和助记均可保留。词源已排除未经证实的直接演变链。来源局限是 Oxford 未提供正文、Cambridge 未取得正文，均未作为本次核实依据。",
+    "senseInventory": [
+      {
+        "sense": "感叹词：非正式问候，嗨；你好；电话交谈中的招呼",
+        "coveredBy": [
+          "645-s1"
+        ],
+        "assessment": "覆盖充分；直接问候和打电话问候各有一例，say hi 与 Hi, + 称呼的用法清楚。"
+      },
+      {
+        "sense": "招呼兼引起注意的功能：喂；嗨",
+        "coveredBy": [
+          "645-ls1"
+        ],
+        "assessment": "保留为较少见的交际功能，例句可成立；不把历史上的引人注意用法当作现代常用程度的证据。"
+      },
+      {
+        "sense": "形容词：high 的缩写，高的；程度高的",
+        "coveredBy": [
+          "645-ls2"
+        ],
+        "assessment": "原稿遗漏，补入较少见义；以设备档位标识展示实际用法，并与问候语区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"interjection\"",
+        "valueJson": "\"interjection; adjective (short for high)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-hi\"]",
+        "valueJson": "[\"fr-wiktionary-hi\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"嗨，艾玛！你要来参加社团活动吗？\"",
+        "valueJson": "\"嗨，艾玛！你要来参加社团会议吗？\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-hi\"]",
+        "valueJson": "[\"fr-wiktionary-hi\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-hi\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"645-ls2\",\"title\":\"高的（high 的缩写）\",\"meaning\":\"形容词 high（高的；程度高的）的缩写，读音也是 /haɪ/。\",\"note\":\"常见于设备标识或复合形式，普通行文中通常写 high。这是独立的缩写用法，不能用来解释问候语 hi 的来源。\",\"example\":{\"id\":\"645-ls2-e1\",\"senseId\":\"645-ls2\",\"en\":\"Use the HI setting on the fan for a stronger breeze.\",\"zh\":\"把风扇调到高档，风就会更大些。\",\"note\":\"HI 是设备档位标识中 high 的简写，这里用来修饰 setting（档位）。\"},\"sourceIds\":[\"fr-wiktionary-hi\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"打招呼写 hi；表示“高的”写 high。\"",
+        "valueJson": "\"打招呼写 hi；普通行文中表示“高的”写 high，设备标识等处则可能用缩写 HI。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-hi\"]",
+        "valueJson": "[\"fr-wiktionary-hi\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-hi\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"问候语 hi 的历史来源通常与用于引起注意的感叹词 hey 联系起来；问候用法在十九世纪的美国英语中出现。它与表示“高的”的 high 是不同词，不应把两者混成一条词源。\"",
+        "valueJson": "\"问候语 hi 由用来引起注意的呼喊发展而来，可能与中古英语的 hy / hey 有关；十九世纪美国英语中已有问候用法。hi 也可作为 high（高的）的缩写，但那是另一种用法，不能用来解释问候语的起源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"hy / hey\",\"meaning\":\"可能相关的引起注意的感叹词\"},{\"language\":\"十九世纪美国英语\",\"form\":\"hi\",\"meaning\":\"发展为问候语\"}]",
+        "valueJson": "[{\"language\":\"十九世纪美国英语\",\"form\":\"hi\",\"meaning\":\"用作问候语，相当于“嗨；你好”\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-hi\",\"title\":\"Oxford Learner’s Dictionaries: hi\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/hi\",\"supports\":[\"hi 作非正式问候语的用法\",\"hi 与 hello、hey 等问候表达的语境参考\",\"常见例句与搭配查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr-wiktionary-hi\",\"title\":\"Wiktionnaire：hi（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/hi#Anglais\",\"supports\":[\"英语感叹词 hi 的非正式问候义\",\"hi 的读音 /haɪ/\",\"形容词 hi 作为 high 缩写的用法\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 645,
+    "headword": "hi",
+    "meaning_zh": "interj. 喂",
+    "phonetic": "/hai/",
+    "pos": "",
+    "forms": []
+  }
+}

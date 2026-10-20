@@ -1,0 +1,254 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e1d8bcc63f83b84a8ff0344c96ab0baa2ac5a2ebcf01cf76e93f569d708449c8",
+    "executedReviewPromptHash": "e1d8bcc63f83b84a8ff0344c96ab0baa2ac5a2ebcf01cf76e93f569d708449c8",
+    "reviewHash": "394b9819d61ccc7005ef8696e7215b90551e404cfe8a7f055d8926cef380aa2b",
+    "wordId": 1252,
+    "inputHash": "901f9b6aa4125ee914796e614d6e610a29f64d3da407ad6ea624b0ebdf619df4",
+    "draftHash": "a921aaec3a720aabaaf2fe90e1d554c8daf8fce30de4b44b3852e951111ef91c",
+    "finalHash": "55ecab9fa86bafe863397e98706937647388b1fe8cfc2ee050fcf5778816b13f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/similar#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:12.679Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 111966,
+        "revisionId": 38184328,
+        "revisionTimestamp": "2025-05-02T13:56:23Z",
+        "sha256": "e2233a4165e8a54e0741b32df923ab89ba28ce392680b0aa721e1ad117dc3ad6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/similar",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T13:01:28.654Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:14:42.507Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note; /wordFamily/0/spellingNote; /wordFamilyNote",
+        "message": "similarity 是 similar 直接加 -ity，原词字母全部保留。similar 末尾是 r，不是 a；原稿关于删去 a、调整词尾拼写的说明错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "be like + 名词或代词中的 like 作介词，不能把该结构中的 like 解释为形容词。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/note; /memoryAid/cues/0/text; /senses/0/relatedExpressions/contrastingNote",
+        "message": "similar 本身不保证完全相同，也不必然断言存在差异；different 只表示有差别，不等于缺少相似之处。原稿把这些语义边界说得过于绝对。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0; /partOfSpeech; /studyPlan/2",
+        "message": "罕见名词义可以保留，但不能称其通常出现在固定说法 the similar 中。原例表达生硬，比较关系也不清楚；改用专门术语中的真实名词复数用法，并同步限定总词性和学习提示。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/note",
+        "message": "similarity 兼有可数和不可数用法，不能笼统标成可数名词；应说明本例采用可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; /lessCommonSenses/0/sourceIds; /wordFamily/1/sourceIds; /wordFamily/2/sourceIds",
+        "message": "已取得的 Wiktionary 英语段没有名词义，不能为该义背书。Cambridge similar 未取得正文，similarity 页面也没有实际取回文本；链接可保留为推荐查阅，但须收窄支持说明，撤去无对应材料的名词及派生词来源归属。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对普通形容词义、罕见名词义、例句、比较结构、词性、读音、词族及词源。核心形容词只有一个常用义，两例分别覆盖物品特征和故事内容，无须强拆。罕见名词保留作识别补充。法语维基词典所给段落确为英语词条，支持形容词、英美发音差异及 similis 与 -ar 的词源说明；现有词源阶段可保留。来源局限在于 Cambridge 正文未取得，罕见名词及部分词族判断依据原始词条与专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "形容词：相似的；类似的",
+        "coveredBy": [
+          "similar-adj-alike"
+        ],
+        "assessment": "常用义覆盖充分；两条原创英中例句自然、对应准确，similar to、similar in 和名词前修饰功能均有呈现。已修正近反义说明中的词性和语义边界。"
+      },
+      {
+        "sense": "名词：相似的事物（罕见用法）",
+        "coveredBy": [
+          "similar-noun-rare"
+        ],
+        "assessment": "原始词条列有此义，宜保留而不提升为初中核心义。已纠正固定表达说明，改用 law of similars 中的名词复数示例，并撤去不支持此义的 Wiktionary 来源归属。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective\"",
+        "valueJson": "\"adjective; noun (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"注意 similar 是形容词，名词是 similarity。\"",
+        "valueJson": "\"similar 日常主要作形容词；表示“相似性、相似之处”的常用名词是 similarity。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"表示“相似之处；相似性”，拼写时在 similar 后加 -ity，并调整词尾拼写。\"",
+        "valueJson": "\"表示“相似之处；相似性”；直接在 similar 后加 -ity，原词的字母全部保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"日常表达灵活；作形容词时常说 be like，而 similar 通常用 similar to。\"",
+        "valueJson": "\"在 be like + 名词或代词中，like 作介词，表示“像……”，如 This bag is like yours；similar 是形容词，用 similar to 引出比较对象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"different 和 dissimilar 表示缺少相似之处；具体差异仍要看比较的方面。\"",
+        "valueJson": "\"different 说明存在差别，不排除也有相似之处；dissimilar 更强调不相似。两者都须结合所比较的方面理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"similar-noun-rare\",\"title\":\"相似的人或事物\",\"meaning\":\"similar 偶尔作名词，指相似的人或事物，通常出现在固定说法 the similar。\",\"note\":\"这种名词用法少见；初中学习和表达时优先把 similar 当形容词使用。\",\"example\":{\"id\":\"similar-noun-ex-1\",\"senseId\":\"similar-noun-rare\",\"en\":\"The two designs have much in common, but there are also differences between them and their similars.\",\"zh\":\"这两种设计有许多共同点，但它们与相似的设计之间也有差别。\",\"note\":\"similars 是少见的名词复数用法；一般可改说 similar designs。\"},\"sourceIds\":[\"wiktionary-similar\"]}",
+        "valueJson": "{\"id\":\"similar-noun-rare\",\"title\":\"相似的事物（罕见名词用法）\",\"meaning\":\"similar 在少见的名词用法中可指相似的事物。\",\"note\":\"这种用法主要在较旧的书面语或专门术语中遇到；日常表达“类似的东西”通常用 similar things 或 something similar。\",\"example\":{\"id\":\"similar-noun-ex-1\",\"senseId\":\"similar-noun-rare\",\"en\":\"The book includes a chapter on the law of similars.\",\"zh\":\"这本书有一章介绍“相似律”。\",\"note\":\"law of similars 是顺势疗法中的术语，通常译为“相似律”；其中 similars 是名词复数，此例仅用于识别专门用法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"similar 是相似但不完全一样；same 表示相同，通常说 the same as。\"",
+        "valueJson": "\"similar 表示在某些方面相像，本身不保证完全相同；same 表示在所比较的方面相同，通常说 the same as。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -ity 后写作 similarity，不保留 similar 的词尾 a。\"",
+        "valueJson": "\"similar + -ity = similarity；similar 中的 a 和末尾 r 都保留，不删字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"similarity 是可数名词，此处用 a 修饰。\"",
+        "valueJson": "\"similarity 可表示不可数的“相似性”，也可表示可数的“相似之处”；本例 a clear similarity 采用可数用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-similar\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-similar\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"这些词由 similar 加词缀构成；注意 similarity 的拼写变化。\"",
+        "valueJson": "\"similarly、similarity 分别在 similar 后直接加 -ly、-ity，原词字母全部保留；dissimilar 在前面加 dis-，连接处有两个 s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"像，但不是完全一样。\"",
+        "valueJson": "\"在某些方面相像；不一定完全一样。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"形容词常用义和搭配\",\"similar 的发音与词性\",\"dissimilar 与 similarly 等词形\"]",
+        "valueJson": "[\"推荐查阅：similar 的形容词常用义和搭配\",\"推荐查阅：similar 的发音与词性\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"similarity 的词性和常用义\",\"similarity 的拼写\"]",
+        "valueJson": "[\"推荐查阅：similarity 的词性和常用义\",\"推荐查阅：similarity 的拼写\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"英国和美国英语发音差异\",\"拉丁语 similis 与英语 similar 的词源关系\",\"少见名词用法\"]",
+        "valueJson": "[\"英语形容词“相似的；类似的”\",\"英国和美国英语发音差异\",\"拉丁语 similis 与后缀 -ar 的词源说明\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1252,
+    "headword": "similar",
+    "meaning_zh": "adj. 相似的, 类似的\nn. 相似的东西",
+    "phonetic": "/'similә/",
+    "pos": "",
+    "forms": []
+  }
+}

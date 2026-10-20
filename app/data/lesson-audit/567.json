@@ -1,0 +1,585 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f41391993412569b83e01a2c096f7f6de476d76f6bd0070cf2b98e1b882ace57",
+    "executedReviewPromptHash": "f41391993412569b83e01a2c096f7f6de476d76f6bd0070cf2b98e1b882ace57",
+    "reviewHash": "c7062a563ee93d87fdee4ebfc832b3f75d03f3ccfc748bb909ff5e8a514522e8",
+    "wordId": 567,
+    "inputHash": "d86f4af50ca8073a5f7e06c412af47cbefa46f5e8b87346469ee2e38921d5e58",
+    "draftHash": "8618e15c81102e3054a3e2233f9b40d32a9625e2a2ba33221e9141b50df2c28b",
+    "finalHash": "bc8e2d6d58b99e7cbb4dfe29678061a476463e64d302e8e8cb6a1e5024512f0c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/game#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:05.604Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116807,
+        "revisionId": 39573724,
+        "revisionTimestamp": "2026-06-08T06:58:54Z",
+        "sha256": "7ec0c9298f8fbc601794113f4869bb69ce5d3dbe75c2d5df893fb85ac08f50aa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/game",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T17:21:19.746Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T17:44:19.245Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "初稿多处引用未出现在实际取回材料中的 Oxford 来源，词源来源的 supports 也与实际内容不符。应删除该 Oxford 来源，将有据内容改引英语词条的法语维基词典材料；仅据专业语言知识补充的内容不伪配来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "遗漏了“勇敢顽强”“盘算、把戏”等重要用法，以及材料明确列出的非正式“吸引别人的技巧”义。现代不及物动词“玩电子游戏”和原词条中的旧式“赌博”“跛的”、狩猎相关定语功能也需分级交代。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "将比赛内部的 game 笼统解释为“局或盘”会混淆网球中的 game、set、match。应明确网球的 game 是“局”，set 才是“盘”。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/1",
+        "message": "“猎物”和食物“野味”列在一起，却只有食物例句。应分别覆盖活体狩猎动物和肉食用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note；/wordFamily/0/spellingNote",
+        "message": "拼写规则不够准确：game 的过去式直接加 -d；说明 gamer 时不能同时说加 -er 又保留原有词尾 e，否则会导向 gameer。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "古英语 gamen 虽是可能成立的历史知识，但不在本次允许据以核实词源的材料中。实际材料提供的是重构日耳曼语 *gamaną 及相关词，应据此重写；瑞典语和古高地德语的相关形式不能画成英语依次经过的阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "标题“game 不等于赌博”过于绝对。game 确有较旧的赌博义，只是不宜作为现代日常表达的首选；gamble 例句也应关联这一义，而非“操纵系统”义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions；/confusions/0；/senses/1/relatedExpressions",
+        "message": "应补出 play 作不可数名词“玩耍”的功能，并用具体项目说明 match 与 game 的使用限制，避免只靠词性或笼统英美差异区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote；/senses/2/patterns/0；/senses/2/collocations/1",
+        "message": "be game for 也可接动名词；be willing to try 属近义表达，宜把该搭配位留给实际含 game 的表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "原词条“比分、得胜、比赛规则、策略”的中文标签需要限定，不能让学生误以为 game 可普遍裸用为 score、victory、rules 或 strategy。应补充实际表达及其边界。"
+      }
+    ],
+    "coverageAssessment": "已核对游戏、运动项目、一场比赛、局、猎物、野味、吸引技巧、愿意尝试、勇敢顽强、盘算把戏、操纵规则及不及物动词用法。新增核心义均有至少两例，扩展义按频率和语域标注；“比分、得胜、规则、策略”通过具体表达限定。词源仅保留取回材料支持的历史线索，不推演完整演变链。未将 Cambridge 的不可用页面或未取回的 Oxford 页面当作依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：有规则的游戏、娱乐活动及运动项目",
+        "coveredBy": [
+          "game-noun-play"
+        ],
+        "assessment": "保留两例，补充运动项目例句，并明确与不可数名词 play“玩耍”的区别。"
+      },
+      {
+        "sense": "名词：一场体育比赛；Games 用于综合体育赛事名称",
+        "coveredBy": [
+          "game-noun-sport"
+        ],
+        "assessment": "已有两例；补充 Olympic Games，并具体限制 match 与 game 的互换。"
+      },
+      {
+        "sense": "名词：比赛内部的一局",
+        "coveredBy": [
+          "game-noun-meeting"
+        ],
+        "assessment": "保留为扩展义，纠正网球中“局”与“盘”的层级。"
+      },
+      {
+        "sense": "名词标签“比分”",
+        "coveredBy": [
+          "game-noun-meeting",
+          "game-noun-sport"
+        ],
+        "assessment": "通过 games 计局和 score 问比分说明边界，不把 game 教成 score 的通用替代词。"
+      },
+      {
+        "sense": "名词标签“得胜”",
+        "coveredBy": [
+          "game-noun-sport"
+        ],
+        "assessment": "以 win a game 表达赢得比赛，不另立为可自由替换 victory 的日常裸词义。"
+      },
+      {
+        "sense": "名词标签“比赛规则”",
+        "coveredBy": [
+          "game-noun-play",
+          "game-noun-sport"
+        ],
+        "assessment": "补充 rules of the game，明确 rules 才表达规则。"
+      },
+      {
+        "sense": "名词：盘算、把戏；策略相关表达",
+        "coveredBy": [
+          "game-noun-plan"
+        ],
+        "assessment": "新增核心义，分别示范盘算和耍花招；中性的行动策略用 game plan 单独说明。"
+      },
+      {
+        "sense": "不可数名词：可供狩猎的野生动物",
+        "coveredBy": [
+          "game-noun-quarry"
+        ],
+        "assessment": "新增独立扩展义及动物例句，与食物义区分。"
+      },
+      {
+        "sense": "不可数名词：野味肉食",
+        "coveredBy": [
+          "game-noun-hunting"
+        ],
+        "assessment": "收窄原扩展义，保留已有食物例句。"
+      },
+      {
+        "sense": "不可数名词：非正式的吸引或追求别人的技巧",
+        "coveredBy": [
+          "game-noun-attraction"
+        ],
+        "assessment": "补齐实际英语词条明确列出的用法，并限定恋爱、搭讪语境。"
+      },
+      {
+        "sense": "及物动词：钻规则空子、取巧操纵系统",
+        "coveredBy": [
+          "game-verb-manipulate"
+        ],
+        "assessment": "已有两例及恰当近义、反向表达；补明及物用法。"
+      },
+      {
+        "sense": "不及物动词：赌博",
+        "coveredBy": [
+          "game-verb-gamble"
+        ],
+        "assessment": "补为旧式或较正式扩展义；现代日常表达优先用 gamble。"
+      },
+      {
+        "sense": "不及物动词：玩电子游戏",
+        "coveredBy": [
+          "game-verb-play"
+        ],
+        "assessment": "补为玩家语境的现代扩展义，同时给出通用表达 play video games。"
+      },
+      {
+        "sense": "形容词：愿意参加、乐于尝试",
+        "coveredBy": [
+          "game-adj-willing"
+        ],
+        "assessment": "已有两例；保留正确的 be game to do，并补齐 for 后接动名词的功能。"
+      },
+      {
+        "sense": "形容词：勇敢、顽强、有胆量",
+        "coveredBy": [
+          "game-adj-brave"
+        ],
+        "assessment": "新增核心义及两例，强调勇敢尽力不等于最终成功。"
+      },
+      {
+        "sense": "定语功能：与猎物或野味有关",
+        "coveredBy": [
+          "game-attributive-hunting"
+        ],
+        "assessment": "用 game dishes 等名词前修饰表达覆盖，不与 be game 的形容词义混淆。"
+      },
+      {
+        "sense": "形容词：跛的、腿有毛病的",
+        "coveredBy": [
+          "game-adj-lame"
+        ],
+        "assessment": "补为旧式识别义，主要结合 a game leg 学习，不臆造其词源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"规则变化：词尾加 -ed；此处 -ed 读 /d/。\"",
+        "valueJson": "\"词尾已有不发音的 e，直接加 -d，得到 gamed；词尾读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"在 game 后加 -er，保留词尾 e。\"",
+        "valueJson": "\"加后缀 -er 时先去掉 game 词尾不发音的 e：gam + er → gamer；不要写成 gameer。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-ex-sport-kind\",\"senseId\":\"game-noun-play\",\"en\":\"Basketball is a team game.\",\"zh\":\"篮球是一项团队运动。\",\"note\":\"这里 game 指一类有规则的运动，不是某一场具体比赛。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"play\",\"zh\":\"玩；进行游戏\",\"note\":\"play 可作动词，表示玩或进行活动；game 是名词，表示有规则的游戏本身。\"}",
+        "valueJson": "{\"en\":\"play\",\"zh\":\"玩；玩耍活动\",\"note\":\"play 可作动词“玩”，也可作不可数名词“玩耍”；a game 则可指一项有规则的游戏。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"play 是相关动词，不可直接当作 game 的名词替换。\"",
+        "valueJson": "\"名词 play 强调玩耍活动本身，如 learn through play；game 通常可数，指一项具体游戏，两者不能直接互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"match 在英式英语中常指一场球赛；game 在美式英语中也常这样用。\"",
+        "valueJson": "\"英式英语常说 a football match，美式英语常说 a soccer game；但网球中的 match 是整场比赛，game 还可指其中一局，不能任意互换。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"the Olympic Games\",\"zh\":\"奥林匹克运动会；奥运会\",\"note\":\"赛事名称中用复数 Games，并大写首字母；不是只指一场比赛。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-ex-olympics\",\"senseId\":\"game-noun-sport\",\"en\":\"We watched the opening ceremony of the Olympic Games on TV.\",\"zh\":\"我们在电视上看了奥运会开幕式。\",\"note\":\"the Olympic Games 是综合体育赛事的名称，Games 用复数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 be game for + 名词或 be game to + 动词原形；这里 game 是形容词。\"",
+        "valueJson": "\"常用 be game for + 名词或动名词，也可用 be game to + 动词原形；这里 game 是形容词，语气较口语化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"be game for + 名词\",\"zh\":\"愿意参加／尝试……\",\"note\":\"for 后接名词或名词短语。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"be game for + 名词 / 动名词\",\"zh\":\"愿意参加／尝试……\",\"note\":\"for 是介词，后面可接 a bike ride 等名词短语，也可接 trying something new 等 -ing 短语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"be willing to try\",\"zh\":\"愿意尝试\",\"note\":\"中性常用表达，语气不如 game 活泼。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"be game for a challenge\",\"zh\":\"愿意接受挑战\",\"note\":\"强调爽快地接受有难度的事情。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常见于 game the system 一类表达；这里不是赌博义，也不是普通的“玩游戏”。\"",
+        "valueJson": "\"这是及物动词用法，后接被取巧利用的系统、规则等，常见于 game the system；不是普通的“玩游戏”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-adj-brave\",\"title\":\"勇敢顽强的；不轻易退缩的\",\"meaning\":\"面对困难或不利局面仍有勇气、肯尽力。\",\"usageNote\":\"常修饰 effort、attempt、fight 等，强调勇敢和坚持，不保证最终成功；与接受邀请时的 be game for 有所区别。\",\"examples\":[{\"id\":\"game-ex-brave-1\",\"senseId\":\"game-adj-brave\",\"en\":\"Despite her sore ankle, Amy made a game effort to finish the walk.\",\"zh\":\"尽管脚踝疼，艾米仍顽强地努力走完全程。\",\"note\":\"a game effort 赞扬她的勇气和努力，没有说明她是否走完。\"},{\"id\":\"game-ex-brave-2\",\"senseId\":\"game-adj-brave\",\"en\":\"Our school team put up a game fight against the champions.\",\"zh\":\"我们校队面对冠军队顽强奋战。\",\"note\":\"game 修饰 fight，强调面对强手仍奋力应战，不等于赢了比赛。\"}],\"patterns\":[{\"en\":\"make a game effort to + 动词原形\",\"zh\":\"顽强地努力做……\",\"note\":\"描述困难中的努力；是否成功要看后文。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a game attempt\",\"zh\":\"勇敢而顽强的尝试\",\"note\":\"常用于虽有困难仍肯尝试的情境。\",\"kind\":\"common-collocation\"},{\"en\":\"put up a game fight\",\"zh\":\"顽强奋战\",\"note\":\"可用于比赛或其他艰难抗争的语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"brave\",\"zh\":\"勇敢的\",\"note\":\"适用范围更广，可强调面对危险时的勇气；game 常带坚持应战的意味。\"},{\"en\":\"determined\",\"zh\":\"坚定的；有决心的\",\"note\":\"强调决心和坚持，本身不一定涉及勇气。\"}],\"contrasting\":[{\"en\":\"faint-hearted\",\"zh\":\"胆怯的；畏难的\",\"note\":\"在面对困难或风险时，与 game 所强调的勇气形成对照。\"}],\"similarNote\":\"brave 重勇气，determined 重决心；game 在这些搭配中兼有敢面对和肯尽力的意味。\",\"contrastingNote\":\"这里对照的是面对困难时的态度，不是 game“游戏”义的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-noun-plan\",\"title\":\"盘算；把戏（比喻）\",\"meaning\":\"指某人暗中的盘算，或带有欺瞒、操纵意味的做法。\",\"usageNote\":\"常见于 What's someone's game? 和 play games with someone。不要把单独的 game 一概当作中性的“策略”；中性的行动计划常说 a game plan。\",\"examples\":[{\"id\":\"game-ex-plan-1\",\"senseId\":\"game-noun-plan\",\"en\":\"I know his game: he offers to help and then asks for money.\",\"zh\":\"我知道他的算盘：他先提出帮忙，然后就开口要钱。\",\"note\":\"his game 指他的真实盘算，不是他玩的某个游戏。\"},{\"id\":\"game-ex-plan-2\",\"senseId\":\"game-noun-plan\",\"en\":\"Don't play games with me—just tell me when you'll pay me back.\",\"zh\":\"别跟我耍花招了，直接告诉我什么时候还钱。\",\"note\":\"play games with someone 指不坦诚地对待或操纵别人，不是一起娱乐。\"},{\"id\":\"game-ex-plan-3\",\"senseId\":\"game-noun-plan\",\"en\":\"We need a game plan for moving house this weekend.\",\"zh\":\"我们需要为周末搬家定个行动计划。\",\"note\":\"game plan 是中性的“行动计划”，不含前两例的贬义。\"}],\"patterns\":[{\"en\":\"What's someone's game?\",\"zh\":\"某人在打什么算盘？\",\"note\":\"常带怀疑语气，询问真实目的。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"play games with someone\",\"zh\":\"对某人耍花招；操纵某人\",\"note\":\"比喻用法，通常带批评意味。\",\"kind\":\"fixed-expression\"},{\"en\":\"know someone's game\",\"zh\":\"知道某人的盘算\",\"note\":\"表示看清对方的真实意图。\",\"kind\":\"common-collocation\"},{\"en\":\"a game plan\",\"zh\":\"行动计划；策略\",\"note\":\"可用于比赛或日常事务，通常中性；plan 是中心词。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"trick\",\"zh\":\"诡计；花招\",\"note\":\"可指一次具体的欺骗手段；game 还可指一整套盘算或做法。\"},{\"en\":\"plan\",\"zh\":\"计划\",\"note\":\"本身中性，不自动带有 game 在怀疑语境中的隐瞒意味。\"}],\"contrasting\":[{\"en\":\"be straightforward with someone\",\"zh\":\"坦诚直接地对待某人\",\"note\":\"在 play games with someone 表示耍花招时形成对照。\"}],\"similarNote\":\"trick 强调欺骗手段，plan 只是计划；理解 game 要结合怀疑、操纵等具体语境。\",\"contrastingNote\":\"这是对行为方式的对照，不是 game 各义通用的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"一场比赛的局或盘\"",
+        "valueJson": "\"（网球等比赛中的）一局\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"某些运动或比赛中，game 可指一局或一盘。\"",
+        "valueJson": "\"在网球等运动中，game 可指整场比赛内部的一局；具体计分层级随项目而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"具体含义随运动规则而变；初学时先掌握“比赛”和“游戏”。\"",
+        "valueJson": "\"网球中，match 是整场比赛，set 是一盘，game 是一局。three games to two 表示局数为三比二；一般问比分仍用 score。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "\"这里 game 是一场比赛中的一局。\"",
+        "valueJson": "\"按网球语境理解，game 指一局，不是 set（一盘）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/title",
+        "expectedValueJson": "\"野味；猎物\"",
+        "valueJson": "\"野味（食物）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/meaning",
+        "expectedValueJson": "\"可供狩猎的野生动物，或作为食物的野味。\"",
+        "valueJson": "\"供人食用的野生猎物的肉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"常见于狩猎或饮食语境；通常作不可数名词。\"",
+        "valueJson": "\"饮食语境，通常作不可数名词；可供狩猎的野生动物也称 game，另见“猎物”义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-noun-quarry\",\"title\":\"猎物；可供狩猎的野生动物\",\"meaning\":\"可供狩猎的野生鸟兽，不泛指所有野生动物。\",\"note\":\"通常不可数；big game 指大型猎物，不能用 three games 表示三只猎物。\",\"example\":{\"id\":\"game-ex-quarry\",\"senseId\":\"game-noun-quarry\",\"en\":\"The guide showed us tracks left by big game.\",\"zh\":\"向导给我们看大型野生猎物留下的足迹。\",\"note\":\"这里 game 指动物，而非端上桌的野味。\"},\"sourceIds\":[\"wiktionary_game\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-noun-attraction\",\"title\":\"（非正式）吸引或追求别人的本领\",\"meaning\":\"在恋爱或搭讪语境中，指吸引别人、与心仪对象交往的技巧。\",\"note\":\"通常不可数，常见于 have game 或 have got game；这一用法很口语化。\",\"example\":{\"id\":\"game-ex-attraction\",\"senseId\":\"game-noun-attraction\",\"en\":\"Leo is shy, but he's got game when he talks to someone he likes.\",\"zh\":\"利奥虽然害羞，但和心仪的人聊天时很懂得吸引对方。\",\"note\":\"这里 have got game 指吸引对方的本领，不是拥有一个游戏。\"},\"sourceIds\":[\"wiktionary_game\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-verb-gamble\",\"title\":\"（旧式或较正式）赌博\",\"meaning\":\"作不及物动词，表示赌钱。\",\"note\":\"现代日常英语通常用 gamble；相关名词 gaming 在博彩业语境中也可指赌博活动。\",\"example\":{\"id\":\"game-ex-gamble\",\"senseId\":\"game-verb-gamble\",\"en\":\"The men gamed for money at the club every night.\",\"zh\":\"那些男人每晚都在俱乐部赌钱。\",\"note\":\"这是较旧的 game 用法；日常更常说 gambled for money。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-verb-play\",\"title\":\"（玩家语境）玩电子游戏\",\"meaning\":\"作不及物动词，表示玩电脑游戏或其他电子游戏。\",\"note\":\"现代非正式用法，在玩家语境中常见；一般表达“玩电子游戏”也可用 play video games。\",\"example\":{\"id\":\"game-ex-verb-play\",\"senseId\":\"game-verb-play\",\"en\":\"My brother games online with his friends on Friday nights.\",\"zh\":\"我哥哥星期五晚上和朋友一起在线打电子游戏。\",\"note\":\"games 是动词第三人称单数，不是复数名词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-attributive-hunting\",\"title\":\"作定语：与猎物或野味有关\",\"meaning\":\"放在另一名词前，表示与狩猎动物或野味有关。\",\"note\":\"常见于 game birds（可供狩猎的鸟类）、game dishes（野味菜肴）等表达，可与名词“猎物；野味”一起记。\",\"example\":{\"id\":\"game-ex-attributive-hunting\",\"senseId\":\"game-attributive-hunting\",\"en\":\"The restaurant serves several game dishes in winter.\",\"zh\":\"这家餐馆冬天供应好几道野味菜。\",\"note\":\"game 在 dishes 前作修饰语，表示菜肴用野味制作。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-adj-lame\",\"title\":\"（旧式）跛的；腿有毛病的\",\"meaning\":\"形容腿有伤病或残疾，影响正常行走。\",\"note\":\"主要结合 a game leg 识别，属于旧式用法；不要与“愿意的、勇敢的”混淆。\",\"example\":{\"id\":\"game-ex-lame\",\"senseId\":\"game-adj-lame\",\"en\":\"His game leg made it hard for him to climb the stairs.\",\"zh\":\"他腿有毛病，上楼很吃力。\",\"note\":\"game 在这里修饰 leg，表示腿有问题。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"game 通常是名词“游戏、比赛”；play 常作动词“玩、进行”，也可表示“戏剧”。\"",
+        "valueJson": "\"game 作名词可指一项有规则的游戏或比赛；play 既可作动词“玩”，也可作不可数名词“玩耍、游戏活动”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"作动词时表示玩或进行游戏；不是“游戏”这个名词。\"",
+        "valueJson": "\"本例中作动词“玩”；play 也有名词用法，不能只按“game 是名词、play 是动词”来区分。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"play（不可数名词）\",\"note\":\"指玩耍活动本身，不是一项可数的具体游戏。\",\"example\":{\"id\":\"game-conf-play-noun\",\"senseId\":\"game-noun-play\",\"en\":\"Young children learn through play.\",\"zh\":\"幼儿通过玩耍学习。\",\"note\":\"play 是介词 through 的宾语，作不可数名词；这里不用 a play 表示一次玩耍。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"game 不等于“赌博”\"",
+        "valueJson": "\"“赌博”通常用 gamble；注意 game 的不同动词义\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"game 可指游戏或比赛；它不是表示“赌博”的常用动词。\"",
+        "valueJson": "\"game 作动词可指钻规则空子，也有较旧的“赌博”义；现代日常表达赌博通常用 gamble。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"game-verb-manipulate\"",
+        "valueJson": "\"game-verb-gamble\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表达“赌博”用 gamble；game the system 表示“钻系统空子”。\"",
+        "valueJson": "\"日常说“赌博”优先用 gamble；game the system 表示“钻系统空子”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"game-confusion-score-rules\",\"title\":\"比分、获胜和比赛规则的表达\",\"summary\":\"日常谈比分用 score，谈赢得比赛用 win a game，谈规则用 rules of the game；不能把这些意思都直接交给 game。\",\"items\":[{\"label\":\"score：比分\",\"note\":\"game 指比赛，score 才指比赛的分数或比分。\",\"example\":{\"id\":\"game-conf-score\",\"senseId\":\"game-noun-sport\",\"en\":\"What was the score in yesterday's game?\",\"zh\":\"昨天那场比赛的比分是多少？\",\"note\":\"score 问比分，game 指那场比赛。\"}},{\"label\":\"win a game：赢得比赛\",\"note\":\"win 表达获胜，game 是被赢下的比赛。\",\"example\":{\"id\":\"game-conf-win\",\"senseId\":\"game-noun-sport\",\"en\":\"We won the game by two points.\",\"zh\":\"我们以两分优势赢得了比赛。\",\"note\":\"by two points 表示获胜优势，不是我们的全部得分。\"}},{\"label\":\"rules of the game：游戏或比赛规则\",\"note\":\"rules 是中心词，of the game 说明是哪项游戏的规则。\",\"example\":{\"id\":\"game-conf-rules\",\"senseId\":\"game-noun-play\",\"en\":\"Before we start, let's go over the rules of the game.\",\"zh\":\"开始前，我们先过一遍游戏规则吧。\",\"note\":\"不能只用 game 来替代整段“游戏规则”。\"}}],\"takeaway\":\"先分清游戏或比赛本身，再分别用 score、win 和 rules 表达比分、获胜和规则。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"game 与古英语 gamen 有历史联系；该旧词表示游戏或娱乐。现代英语 game 常指有规则的游戏、比赛；形容词 game“愿意尝试”是另一种用法。\",\"stages\":[{\"language\":\"古英语\",\"form\":\"gamen\",\"meaning\":\"游戏、娱乐\"}],\"caveat\":\"这里呈现的是有据可查的历史联系；现代词性和各义项的发展不能仅凭这一历史形式逐一推定。记忆联想不代表词源。\",\"sourceIds\":[\"wiktionary_game\"]}",
+        "valueJson": "{\"summary\":\"表示“游戏、娱乐”的 game 可追溯到重构的日耳曼语形式 *gamaną，意为“娱乐、愉快”。英语 gamble 与它有历史联系；相关形式还有瑞典语 gamman 和古高地德语 gaman，后者意为“欢乐、愉快”。\",\"stages\":[{\"language\":\"日耳曼语（重构形式）\",\"form\":\"*gamaną\",\"meaning\":\"娱乐；愉快\"}],\"caveat\":\"星号 * 表示语言学重构形式。瑞典语和古高地德语的相关词不是英语依次经过的阶段；这条线索也不说明各个现代义项的完整发展过程。\",\"sourceIds\":[\"wiktionary_game\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"这里 gaming 指玩电子游戏这项活动。\"",
+        "valueJson": "\"这里 gaming 指玩电子游戏；在博彩业语境中也可指赌博活动，要结合上下文辨认。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_game\"]",
+        "valueJson": "[\"wiktionary_game\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_game\",\"title\":\"Oxford Learner’s Dictionaries: game\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/game\",\"supports\":[\"名词 game 的游戏、比赛及野味义\",\"game 作形容词表示愿意尝试\",\"game 的常见搭配及派生形式\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_game\",\"title\":\"Wiktionary: game（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/game#Anglais\",\"supports\":[\"game 与古英语 gamen 的历史联系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_game\",\"title\":\"法语维基词典：game（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/game#Anglais\",\"supports\":[\"英语读音 /ɡeɪm/\",\"有规则的游戏、体育比赛、猎物及非正式吸引技巧义\",\"形容词“愿意的”和及物动词“钻系统空子”义\",\"重构日耳曼语 *gamaną 及相关词的历史线索\",\"相关词列表中的 gamer、gaming、gameplay\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 567,
+    "headword": "game",
+    "meaning_zh": "n. 比赛, 玩耍, 比分, 得胜, 比赛规则, 策略, 游戏, 野味\nvi. 赌博\nadj. 勇敢的, 有胆量的, 关于野味的, 跛的",
+    "phonetic": "/geim/",
+    "pos": "",
+    "forms": []
+  }
+}

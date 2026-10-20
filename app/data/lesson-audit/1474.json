@@ -1,0 +1,313 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8238eb9c3c2c30866d21ca84718b0bc86fc703fc6666b74a9c0f3f693566b733",
+    "executedReviewPromptHash": "8238eb9c3c2c30866d21ca84718b0bc86fc703fc6666b74a9c0f3f693566b733",
+    "reviewHash": "49ad76abf5154f45bd59f5974eefeada949c53f252a937e73f3fc498dc863060",
+    "wordId": 1474,
+    "inputHash": "22c46c20dbb0d884e35f8249fe3978ee477466a7935f856adaa04e17dc7d39ad",
+    "draftHash": "70b68c43c7fbf492f59b6095dd83da61f6214ec5d1af24fbaa81dadc024c3818",
+    "finalHash": "444c57a523eedeb6d7fad08baf88f8d2aad594e10ec099b0a6d1174c0bfdb20a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/uncle#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.821Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116083,
+        "revisionId": 38441373,
+        "revisionTimestamp": "2025-08-01T01:24:20Z",
+        "sha256": "7fb63d399e344abec3bcb1abe729102be7a3dbbb055f8c056c3d70f69d83a140",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/uncle",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:02:15.387Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:09:39.397Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "uncle 的拼写中没有 ng；应解释 n 在 /k/ 前读 /ŋ/，并保留 /k/。/l̩/ 是有效的词尾读法，不能把未写 /əl/ 一概判为缺漏；同时应删除“旧标注”这类制作说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note；/confusions/1；/memoryAid",
+        "message": "“父母一辈的男性亲属”不足以界定 uncle；该范围还可能包括父亲等其他亲属。助记故事把所有男性长辈都标成 Uncle，进一步扩大了范围。应明确限定亲属关系，并同步收紧标题与核心提示。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1/note",
+        "message": "an uncle of mine 不要求说话人实际有多位 uncle；原说明把常见语境误写成必要条件。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1",
+        "message": "my aunt and uncle 并不能单凭并列结构证明二人是夫妻，因此这个例句未明确展示第二义。改为明确包含父亲的姐妹及其丈夫的场景，也能补足姑父的实例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations/1/zh；/senses/1/relatedExpressions/contrasting",
+        "message": "uncle by marriage 的中文应直接说明婚姻关系，并举姑父、姨父帮助理解。nephew by marriage 不是这一义下自然、必要的反向表达，宜删除并保留 aunt 的性别对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "stages 按中古英语→古法语→拉丁语排列，会把追溯方向画成演变方向；中间阶段的具体字形和释义也未由词源文本逐项支持。应把可靠的演变路径写入 summary，并移除这些阶段节点。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 /sourceIds",
+        "message": "实际来源材料没有 Oxford 页面内容，不能用它承担发音和释义的来源引用。现有法语维基词典材料属于英语词条，已支持核心释义、发音和词源；应改引该来源。cousin 的比较属于专业语言说明，不应挂接未提供内容的 Oxford 来源。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的两项主要义：父母的兄弟、父母姐妹的丈夫；每义均保留两个原创英中例句，修订后第二义明确覆盖姨父与姑父。Uncle + 人名的称呼用法已有说明，无须另拆核心义。词源仅保留可由现有材料支持的历史路径；未将习语或地区性称呼扩为核心义。",
+    "senseInventory": [
+      {
+        "sense": "父亲或母亲的兄弟：伯父、叔叔、舅舅",
+        "coveredBy": [
+          "uncle-1"
+        ],
+        "assessment": "已覆盖；两个例句均可自然用于此义，搭配、复数和所有格基本准确。需修正范围过宽的概括及 an uncle of mine 的限制说明。"
+      },
+      {
+        "sense": "父母姐妹的丈夫：姑父、姨父",
+        "coveredBy": [
+          "uncle-2"
+        ],
+        "assessment": "已覆盖；第一例明确展示姨父关系，第二例修订为明确的姑父关系，满足每义至少两个例句的要求。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"uncle：父母一辈的男性亲属\"",
+        "valueJson": "\"uncle：父母的兄弟或父母姐妹的丈夫\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"uncle 常指父母的兄弟，也可指姑姑、姨妈等女性亲属的丈夫；具体是哪一种叔伯舅姨父，要看家庭关系和上下文。\"",
+        "valueJson": "\"uncle 指父亲或母亲的兄弟，也可指父母姐妹的丈夫；中文按具体关系译为伯父、叔叔、舅舅、姑父或姨父。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头是 /ʌ/，类似“啊”但更短；ng 连读为 /ŋ/，不要在后面另加 /g/。\"",
+        "valueJson": "\"重读元音是 /ʌ/；字母 n 在后面的 /k/ 前读 /ŋ/，接着仍要发 /k/，不要额外加 /g/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧标注 /ʌŋkl/ 少了重音符号，也没有标出末尾轻读的 /əl/。\"",
+        "valueJson": "\"词尾不重读，可读 /əl/，也可由 /l̩/ 自成音节；/ˈʌŋ.kəl/ 和 /ˈʌŋ.kl̩/ 都是常见标注。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_uncle\"]",
+        "valueJson": "[\"wiktionary_uncle\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"用来介绍自己不止一位叔叔或舅舅中的一位。\"",
+        "valueJson": "\"表示“我的一位叔叔/舅舅”，常用来介绍或提到某位亲属；并不表示说话人一定有多位 uncle。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"范围更广，可指各种亲戚；uncle 专指父母一辈的男性亲属。\"",
+        "valueJson": "\"relative 范围更广，可指各种亲戚；uncle 通常指父母的兄弟或父母姐妹的丈夫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_uncle\"]",
+        "valueJson": "[\"wiktionary_uncle\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"uncle-2-ex2\",\"senseId\":\"uncle-2\",\"en\":\"We’re having lunch with my aunt and uncle.\",\"zh\":\"我们要和姨妈、姨父一起吃午饭。\",\"note\":\"uncle 与 aunt 并列，指姨妈的丈夫。\"}",
+        "valueJson": "{\"id\":\"uncle-2-ex2\",\"senseId\":\"uncle-2\",\"en\":\"My father’s sister and her husband, Uncle Jack, are coming over for lunch.\",\"zh\":\"我姑姑和她的丈夫杰克姑父要来家里吃午饭。\",\"note\":\"my father’s sister 是姑姑；her husband 明确说明 Uncle Jack 是姑父。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/zh",
+        "expectedValueJson": "\"姻亲关系的叔伯舅父\"",
+        "valueJson": "\"通过婚姻形成的叔辈亲属，如姑父、姨父\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"nephew by marriage\",\"zh\":\"姻亲中的侄子或外甥\",\"note\":\"在特定姻亲称谓关系中可表示晚一辈男性亲属，日常很少这样说。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"亲属称谓没有适用于所有关系的反义词；这里列出的是特定家庭关系中的对照。\"",
+        "valueJson": "\"aunt 与 uncle 是性别上的称谓对照，不是一般意义的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_uncle\"]",
+        "valueJson": "[\"wiktionary_uncle\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_uncle\"]",
+        "valueJson": "[\"wiktionary_uncle\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"uncle 是父母一辈的男性亲属；cousin 通常指堂、表兄弟姐妹，属于自己这一辈。\"",
+        "valueJson": "\"uncle 通常指父母的兄弟或父母姐妹的丈夫；cousin 最常见的意思是堂、表兄弟姐妹，属于自己这一辈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"指父母一辈的男性亲属。\"",
+        "valueJson": "\"通常指父母的兄弟或父母姐妹的丈夫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"看辈分和关系：父母一辈的男性亲属用 uncle；堂表兄弟姐妹用 cousin。\"",
+        "valueJson": "\"看具体关系：父母的兄弟或父母姐妹的丈夫用 uncle；堂表兄弟姐妹用 cousin。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_uncle\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"历史上，uncle 经古法语进入英语，法语词又来自拉丁语 avunculus，意为母亲的兄弟。\"",
+        "valueJson": "\"uncle 的历史来源可追溯到拉丁语 avunculus，意为“母亲的兄弟”。这条演变路径依次经过古法语、中古英语，形成现代英语的 uncle。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"uncle\",\"meaning\":\"英语中的叔伯舅父称呼\"},{\"language\":\"古法语\",\"form\":\"oncle\",\"meaning\":\"叔伯舅父\"},{\"language\":\"拉丁语\",\"form\":\"avunculus\",\"meaning\":\"母亲的兄弟\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象一张家庭合照：父母两边的男性长辈都站在孩子身旁，照片背面写着 Uncle。看到他是爸爸或妈妈的兄弟，就按关系叫叔叔、伯伯或舅舅；如果他是姑姑或姨妈的丈夫，也可以叫 uncle。\"",
+        "valueJson": "\"想象一张家庭合照：孩子向朋友逐个介绍爸爸的哥哥、爸爸的弟弟、妈妈的兄弟，以及姑姑或姨妈的丈夫，英文都用 uncle。中文则根据关系分别叫伯伯、叔叔、舅舅、姑父或姨父。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"先想到父母一辈的男性亲属。\"",
+        "valueJson": "\"先想到父母的兄弟，或父母姐妹的丈夫。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_uncle\",\"title\":\"Oxford Learner’s Dictionaries: uncle\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/uncle\",\"supports\":[\"常见亲属称谓义\",\"词性与发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: uncle（英语词条，词源）\"",
+        "valueJson": "\"法语维基词典：uncle（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"从中古英语经古法语至拉丁语 avunculus 的词源关系及其含义\"]",
+        "valueJson": "[\"uncle 的名词词性、亲属义及 aunt 的丈夫这一扩展义\",\"英语发音 /ˈʌŋ.kl̩/\",\"拉丁语 avunculus 经古法语、中古英语发展为 uncle 的词源路径；avunculus 意为母亲的兄弟\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1474,
+    "headword": "uncle",
+    "meaning_zh": "n. 叔叔；伯父；舅舅；姑父；姨父",
+    "phonetic": "/ʌŋkl/",
+    "pos": "",
+    "forms": []
+  }
+}

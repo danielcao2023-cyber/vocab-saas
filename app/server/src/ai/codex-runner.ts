@@ -5,12 +5,20 @@ import { fileURLToPath } from 'node:url';
 export const MODEL='gpt-6-luna' as const;
 /** Resolve from this source file, so arbitrary checkout names and working directories work. */
 export const projectRoot=()=>fileURLToPath(new URL('../../../../',import.meta.url)).replace(/[\\/]$/,'');
-export interface RunnerRequest {prompt:string;schema:object;jobId:number;directory:string;timeoutMs:number;reasoningEffort?:'low'|'medium';ignoreUserConfig?:boolean}
+export interface McpPolicy { disabledServers: readonly string[]; disabledPluginServers: readonly { plugin: string; server: string }[] }
+export interface RunnerRequest {prompt:string;schema:object;jobId:number;directory:string;timeoutMs:number;reasoningEffort?:'low'|'medium';ignoreUserConfig?:boolean;mcpPolicy?:McpPolicy}
 export interface RunnerResult {stdout:string;exitCode:number|null;durationMs:number;timedOut?:boolean;error?:string}
 export type Runner=(req:RunnerRequest)=>Promise<RunnerResult>;
 export function detectFlags(helpText:string) {return {schema:/(?:^|\s)--output-schema(?:\s|[=<\[]|$)/m.test(helpText),lastMessage:/(?:^|\s)--output-last-message(?:\s|[=<\[]|$)/m.test(helpText),ephemeral:/(?:^|\s)--ephemeral(?:\s|$)/m.test(helpText),ignoreUserConfig:/(?:^|\s)--ignore-user-config(?:\s|$)/m.test(helpText)};}
 export function commandArgs(req:RunnerRequest,flags:ReturnType<typeof detectFlags>) {
-  return ['exec','-m',MODEL,...(flags.ignoreUserConfig&&req.ignoreUserConfig?['--ignore-user-config']:[]),...(flags.ephemeral?['--ephemeral']:[]),...(req.reasoningEffort?['-c',`model_reasoning_effort="${req.reasoningEffort}"`]:[]),'--sandbox','read-only','--skip-git-repo-check','-C',req.directory,...(flags.lastMessage?['--output-last-message',path.join(req.directory,'output.json')]:[]),...(flags.schema?['--output-schema',path.join(req.directory,'schema.json')]:[]),req.prompt];
+  return ['exec','-m',MODEL,...(flags.ignoreUserConfig&&req.ignoreUserConfig?['--ignore-user-config']:[]),...(flags.ephemeral?['--ephemeral']:[]),...(req.reasoningEffort?['-c',`model_reasoning_effort="${req.reasoningEffort}"`]:[]),...mcpPolicyArgs(req.mcpPolicy),'--sandbox','read-only','--skip-git-repo-check','-C',req.directory,...(flags.lastMessage?['--output-last-message',path.join(req.directory,'output.json')]:[]),...(flags.schema?['--output-schema',path.join(req.directory,'schema.json')]:[]),req.prompt];
+}
+/** Request-scoped enablement only. Never read or rewrite the user's configuration. */
+export function mcpPolicyArgs(policy?:McpPolicy):string[] {
+  if (!policy) return [];
+  const key=(value:string)=>{if(!/^[A-Za-z0-9_@-]+$/.test(value))throw new Error('invalid MCP policy identifier');return value;};
+  const overrides=[...policy.disabledServers.map(server=>`mcp_servers.${key(server)}.enabled=false`),...policy.disabledPluginServers.map(({plugin,server})=>`plugins.${key(plugin)}.mcp_servers.${key(server)}.enabled=false`)];
+  return [...new Set(overrides)].flatMap(value=>['-c',value]);
 }
 export const spawnOptions:SpawnOptions={stdio:['ignore','pipe','pipe']};
 /** No shell, credential access, environment overrides, or persisted configuration changes. */

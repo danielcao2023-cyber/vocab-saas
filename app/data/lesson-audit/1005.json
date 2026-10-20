@@ -1,0 +1,237 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7f220f2401e5e5968a70910b5c8039a8341cdc3db51c5c2ec39b4b131ad65673",
+    "executedReviewPromptHash": "7f220f2401e5e5968a70910b5c8039a8341cdc3db51c5c2ec39b4b131ad65673",
+    "reviewHash": "9d213fe0e073c54a4d0593c83e83a0225606fc8dafce3d2c627280086dfede2c",
+    "wordId": 1005,
+    "inputHash": "990ddcd21aae44c93606061f0e05b750fafbb80fdceb2923f3a19310443289f0",
+    "draftHash": "30487a95b164d34c3b004608f89478402e9996fc6810efbdf9ff648f91de7101",
+    "finalHash": "dc17b9e0d56c282e43912f3e8e3a0eb19febcfb3564b591d6ff43a7d098632c0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://www.etymonline.com/word/percent",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T01:17:53Z",
+        "kind": "etymology",
+        "retrievalMethod": "independent-editor-web-source-summary",
+        "summaryAuthorship": "Codex source reading; original summary, no dictionary examples copied",
+        "sha256": "78ba32edbb80f982e591231fd845644ab0407cd5aae7f5ec5a726e7f3c73b23e"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/per-cent",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:40:23.430Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:46:51.979Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech",
+        "message": "仅标 noun 不完整；还需说明与数词连用时常见的形容词性和副词性用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1/en",
+        "message": "句型漏掉前面的数词，容易教成裸用 per cent of。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "缺少常用的 100 per cent / percent 表示“完全”的程度强调用法，也未用例句展示定语功能。可在同一核心义内补齐，无须另拆多个比例义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations",
+        "message": "现有两项均围绕 percentage，需补入 per cent / percent 本身的常用搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/example/note",
+        "message": "百分点的解释正确；补出同一变化的相对增幅，可更清楚地区分增加 5 个百分点与增长 5%。"
+      }
+    ],
+    "coverageAssessment": "保留一个“每百份”核心比例义，在其中补齐定语功能及 100 per cent / percent 表示“完全”的常用程度表达，各补充用法均有自然例句支持。原有比例、折扣例句、读音、英美拼写、percentage 构词及百分点计算均可保留。词源的一阶段叙述与已取回的 Etymonline 材料相符。来源局限是未提供现代词典释义正文：现代用法依据专业语言知识审核，Oxford、Cambridge 链接仍仅作为推荐来源，不声称已取得或核验其正文。",
+    "senseInventory": [
+      {
+        "sense": "百分之……：以一百为基数表示份额、比例或变化幅度",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有两例分别覆盖人数比例和降价幅度，均自然准确；修正 of 句型缺失数词的问题。"
+      },
+      {
+        "sense": "数词 + per cent / percent 作定语，说明折扣、增长等的比例",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "属于同一比例义的常用语法功能；补充词性说明及 a 10 percent discount 例句。"
+      },
+      {
+        "sense": "100 per cent / percent 表示完全、百分之百的程度",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "作为同一核心义下的固定程度表达补入，增加两个例句，并限定 completely、not completely 的对应语境。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; adjective; adverb（常与数词连用）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示每一百份中的份数，常用于数字、统计和比例。\"",
+        "valueJson": "\"表示每一百份中的份数，可用于数量比例、变化幅度或程度；100 per cent / percent 也常用来强调“完全”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"数字通常置于 per cent 或 percent 之前。具体比例可说 30 per cent；泛指“一个百分比”时常用 a percentage。\"",
+        "valueJson": "\"数字通常置于 per cent 或 percent 之前。具体比例可说 30 per cent；泛指比例时常用 a percentage，但 percentage 也能指明确的百分比。数词 + per cent / percent 可修饰名词，如 a 10 percent discount；也可表示变化幅度或程度，如 20 percent cheaper、100 percent sure（完全确定）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/en",
+        "expectedValueJson": "\"per cent of + 名词\"",
+        "valueJson": "\"数词 + per cent / percent of + 名词短语或代词\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"We got a 10 percent discount on our train tickets.\",\"zh\":\"我们买火车票时享受了九折优惠。\",\"note\":\"数词 + percent 放在名词 discount 前作定语；降价 10% 就是打九折。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"I'm 100 per cent sure I locked the front door.\",\"zh\":\"我百分之百确定自己锁好了前门。\",\"note\":\"100 per cent 修饰 sure，强调完全确定；这里不是统计数据。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e5\",\"senseId\":\"s1\",\"en\":\"We support your plan to open a bookshop 100 percent.\",\"zh\":\"我们完全支持你开一家书店的计划。\",\"note\":\"100 percent 修饰 support，强调完全支持，可对应 completely。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"20 per cent / percent off\",\"zh\":\"降价百分之二十；打八折\",\"note\":\"off 表示减去原价的一部分；20 percent off 是付原价的 80%，不是付原价的 20%。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"100 per cent / percent sure\",\"zh\":\"完全确定；百分之百有把握\",\"note\":\"100 per cent / percent 在这里强调完全的程度；not 100 percent sure 表示并非完全确定。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"completely\",\"zh\":\"完全地\",\"note\":\"仅对应 100 per cent / percent 强调完全程度的用法，如 completely sure；不能替换 20 percent 等一般百分数中的 percent。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"not completely\",\"zh\":\"并非完全\",\"note\":\"与 100 per cent / percent 表示完全程度的用法对照，如 not completely sure；不是百分比单位本身的反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"本义是比例单位，没有适用于所有语境的直接反义词；per thousand 仅在比较基数时构成对照。\"",
+        "valueJson": "\"比例单位本身没有直接反义词；per thousand 仅用于对照计数基数。100 per cent / percent 表示“完全”时，可用 not completely 表达“并非完全”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"25% 与 20% 的差是 5 个百分点。\"",
+        "valueJson": "\"25% 与 20% 的差是 5 个百分点；若以前面的 20% 为基数，相对增幅则是 25%（5 ÷ 20 = 25%），不是 5%。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1005,
+    "headword": "per cent (AmE percent)",
+    "meaning_zh": "百分之……；百分比",
+    "phonetic": "/pә'sent/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "percent",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

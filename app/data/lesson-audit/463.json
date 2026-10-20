@@ -1,0 +1,378 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ee9066b550838e988f9d343671daeeafb6701cdeb406db71bd83d03faa23873e",
+    "executedReviewPromptHash": "ee9066b550838e988f9d343671daeeafb6701cdeb406db71bd83d03faa23873e",
+    "reviewHash": "6bb224ccc0e945c3bd881d5edc624b5e5f7fd2fc50bc9e3bdd3e0e230050be21",
+    "wordId": 463,
+    "inputHash": "3ebe766474e07826a3e339df9f38de6cff1ea7e994a1846692e2d7cff2a351f3",
+    "draftHash": "6f1693c8d6f8de39f6303cb7de67c580446addd2a7d76011fb3e767805492a60",
+    "finalHash": "473c631080f8ed15df38bfc6daa87851dbc1c1d650c050a5865d579ba9ae0120",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/every#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:51.169Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 249789,
+        "revisionId": 36091570,
+        "revisionTimestamp": "2024-09-25T18:13:17Z",
+        "sha256": "089129989cf6ad4002f3999f2d45e740ae94a6905fb560d22051df8bbc2e11ee",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/every",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:38:53.898Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:44:24.660Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge-every 的 sourceIds",
+        "message": "Cambridge 正文未取回，不能作为本次审校的证据。应移除该来源引用，改用已取回的英语词条；专业语言知识补充的独立用法不虚配来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway、/forms/0/note、/senses/0、/confusions/1",
+        "message": "“every 后名词和谓语用单数”的规则范围不清。只有 every 修饰的名词短语作主语时，才能据此判断谓语；every two days 等间隔结构还允许复数单位。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1",
+        "message": "every one of 后接复数名词时通常还需要 the、these、my 等限定词，不能按当前公式造出 every one of students。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "把 every two days 译为“每隔两天”容易与 every third day 的说明混淆。应明确为“每两天一次，中间隔一天”，并说明 every third day 等于 every three days。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "标题包含距离用法，但两个例句均只体现时间；序数词的重复选取功能也只有短语说明。需补充距离和按序号选取的完整例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏 every reason、make every effort、wish someone every success 等常见强调用法。它们不宜全部解释为逐个点数，应补充相应含义、搭配及例句，并说明尽力不保证成功。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary、/etymology/stages",
+        "message": "阶段释义包含“不另行补写”等制作说明及“历史前身”占位语。已取回材料支持古英语组成成分的意义，应在正文说明；空洞阶段应移除。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "现有 no student 对照有语境限制，但缺少常用的 not every。“并非每个都……”与“没有任何一个……”需要区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "“every day 和 every day/everyday”重复，应直接比较 every day 与 everyday。"
+      }
+    ],
+    "coverageAssessment": "已核对取回英语词条的全部定义：全体成员的“每一个”，以及基数词、序数词表示的重复间隔；补充了距离和按序号选取的例句，并加入常见的强调用法。修订后每个核心义均至少有两个自然英中例句。读音、词性、合成词拼写和现有词源历史关系可保留；主谓一致、否定范围及间隔翻译已校正。限制是 Cambridge 正文不可用，新增强调用法依据专业语言知识审校，未编造词典引证。",
+    "senseInventory": [
+      {
+        "sense": "每一个；涵盖一组中的所有成员",
+        "coveredBy": [
+          "every-1"
+        ],
+        "assessment": "两个生活例句覆盖充分；修正主谓一致规则的适用范围和 every one of 的结构，并补充 not every 与 no 的区别。"
+      },
+      {
+        "sense": "按时间、距离或序号重复：每……一次；每隔……",
+        "coveredBy": [
+          "every-2"
+        ],
+        "assessment": "对应取回词条的数词和序数词定义。保留两个时间例句，补充距离与按序号选取例句，并明确 every two days 与 every third day 的差别。"
+      },
+      {
+        "sense": "常见强调用法：充分的；一切可能的；尽可能大的",
+        "coveredBy": [
+          "every-3"
+        ],
+        "assessment": "取回词条未单列这一常见功能，依据专业语言知识补充。三个例句分别体现理由充分、尽一切努力和祝愿圆满成功，并限定相关近义与反向表达的语境。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"every 放在单数可数名词前，表示“每一个”；它强调成员一个不漏，后面的名词和动词通常用单数。\"",
+        "valueJson": "\"every 最常表示“每一个”，通常接单数可数名词；这种短语作主语时，谓语用单数。every two days 是“每两天一次”；every reason 则可表示“充分的理由”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记 every + 单数可数名词，再留意一般现在时动词的单数形式。\"",
+        "valueJson": "\"先练 every + 单数可数名词；短语作主语时，留意一般现在时谓语的单数形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 every day 和 every day/everyday 的区别。\"",
+        "valueJson": "\"比较 every day（每天）和 everyday（日常的），各造一句话。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"限定词形式不变化；后接单数可数名词。\"",
+        "valueJson": "\"every 本身形式不变；表示“每个”时通常接单数可数名词，表示间隔时可用 every + 数词 + 复数单位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指一组中的每一个成员，强调一个不漏；every 后接单数可数名词，句子谓语通常用单数。\"",
+        "valueJson": "\"指一组中的所有成员，一个也不漏；通常用 every + 单数可数名词。这一名词短语作主语时，谓语用单数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"名词用单数，如 every book；谓语通常也用单数。\"",
+        "valueJson": "\"名词用单数，如 every book；这一名词短语作主语时，谓语用单数，如 Every book is useful。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/en",
+        "expectedValueJson": "\"every one of + 复数名词/代词\"",
+        "valueJson": "\"every one of + 限定词 + 复数名词；every one of + 复数代词\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"every one 后接 of 短语，名词或代词用复数形式，如 every one of them。\"",
+        "valueJson": "\"如 every one of the students、every one of my books、every one of them；复数名词前要有 the、my 等限定词。整个短语作主语时，谓语用单数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"no student\",\"zh\":\"没有学生\",\"note\":\"仅在谈学生是否到场、拥有某物等同一范围时，与 every student 所表达的全体肯定形成对照。\"}]",
+        "valueJson": "[{\"en\":\"not every student\",\"zh\":\"并非每个学生\",\"note\":\"Not every student has a bike 表示并非每个学生都有自行车；至少有学生没有，但没有说明究竟多少人有。\"},{\"en\":\"no student\",\"zh\":\"没有任何学生\",\"note\":\"No student has a bike 表示一个有自行车的学生也没有。比较时须保持群体和谓语相同。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"no + 单数名词可表达同一范围内“一个也没有”，与 every + 单数名词的全体肯定相对。\"",
+        "valueJson": "\"not every 表示“并非每个都……”；no 表示“没有任何一个……”。比较相同群体的相同情况时，要分清这两种否定范围。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"每隔……；每……（时间或距离）\"",
+        "valueJson": "\"每……一次；每隔……（时间、距离或数量）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示事情按固定时间或距离重复发生，常用于日常安排和频率说明。\"",
+        "valueJson": "\"表示反复发生的频率、空间间距，或在一串人或物中按固定序号重复选取。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用结构为 every + 数字 + 复数时间/距离单位；every two days 表示每隔两天。\"",
+        "valueJson": "\"every two days 表示每两天一次（中间隔一天）；every third day 等于 every three days，表示每三天一次。大于一的基数词后用复数单位，序数词后用单数名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"every + 数字 + 复数时间单位\",\"zh\":\"每隔……；每……一次\",\"note\":\"表示重复间隔，如 every three days；单位用复数。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"every + 基数词（≥2）+ 复数时间或距离单位\",\"zh\":\"每……一次；每隔……\",\"note\":\"如 every three days（每三天一次）和 every ten metres（每隔十米）；数字大于一时单位用复数。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"每逢第……个\"",
+        "valueJson": "\"每数到第……个就……一次\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"常见于日期或周期表达，如 every third day，表示每隔两天一次。\"",
+        "valueJson": "\"every third day 与 every three days 都表示每三天一次（中间隔两天）；every third box 则指按顺序反复选中第三个箱子。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"every-ex5\",\"senseId\":\"every-2\",\"en\":\"There is a streetlight every fifty metres along this road.\",\"zh\":\"这条路沿途每隔五十米就有一盏路灯。\",\"note\":\"every fifty metres 表示空间间距；metres 用复数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"every-ex6\",\"senseId\":\"every-2\",\"en\":\"We put a sticker on every third box.\",\"zh\":\"我们每数三个箱子，就在第三个上贴一张标签。\",\"note\":\"按三个一组反复选取第三个；序数词 third 后的 box 用单数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"every-3\",\"title\":\"充分的；一切可能的（强调）\",\"meaning\":\"与某些抽象名词搭配，强调程度充分或涵盖一切可能，如理由充分、尽一切努力、祝愿获得圆满成功。\",\"usageNote\":\"常见于 every reason、every chance、every effort、every success 等搭配，不必理解成逐个点数。make every effort to do 只强调尽力，不保证成功；wish someone every success 是较正式的祝愿。\",\"examples\":[{\"id\":\"every-ex7\",\"senseId\":\"every-3\",\"en\":\"You have every reason to feel proud of your progress.\",\"zh\":\"你完全有理由为自己的进步感到自豪。\",\"note\":\"every reason 表示理由充分，不是要逐一列出所有理由。\"},{\"id\":\"every-ex8\",\"senseId\":\"every-3\",\"en\":\"We made every effort to find the owner of the lost dog.\",\"zh\":\"我们尽一切努力寻找那只走失的狗的主人。\",\"note\":\"这句话说明尽了力，本身不说明最终是否找到了主人。\"},{\"id\":\"every-ex9\",\"senseId\":\"every-3\",\"en\":\"We wish you every success in your new job.\",\"zh\":\"祝你在新工作中一切顺利、取得圆满成功。\",\"note\":\"every success 表达祝愿；success 在这里表示抽象的成功。\"}],\"patterns\":[{\"en\":\"have every reason to do something\",\"zh\":\"完全有理由做某事\",\"note\":\"强调理由充分，如有理由感到自豪、担心或相信某事。\",\"kind\":\"sentence-pattern\"},{\"en\":\"make every effort to do something\",\"zh\":\"尽一切努力做某事\",\"note\":\"to 后接动词原形；强调努力程度，不保证办成。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have every chance of doing something\",\"zh\":\"很有可能做成某事\",\"note\":\"强调成功可能性很大，仍不保证一定成功；of 后接动词 -ing 形式。\",\"kind\":\"common-collocation\"},{\"en\":\"wish someone every success\",\"zh\":\"祝某人取得圆满成功\",\"note\":\"常用于工作、学习等祝愿，语气较正式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"good reason to do something\",\"zh\":\"做某事的充分理由\",\"note\":\"good reason 表示合理或充分的理由；every reason 的强调语气更强。\"},{\"en\":\"do one's best\",\"zh\":\"尽最大努力\",\"note\":\"可与 make every effort 对照，二者强调努力程度，都不保证最终办成。\"}],\"contrasting\":[{\"en\":\"have no reason to do something\",\"zh\":\"没有理由做某事\",\"note\":\"只在讨论同一件事的理由时，与 have every reason to do 形成对照。\"},{\"en\":\"make no effort to do something\",\"zh\":\"丝毫不努力做某事\",\"note\":\"只在讨论同一项行动的努力程度时，与 make every effort to do 形成对照。\"}],\"similarNote\":\"good reason 与 every reason 比较理由的充分程度；do one's best 与 make every effort 比较努力程度。\",\"contrastingNote\":\"按搭配分别比较：every reason 对照 no reason，every effort 对照 no effort；它们讨论的分别是理由与努力。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"every 后直接接单数可数名词，谓语通常用单数；不要因意义上包含很多人或物而改成复数。\"",
+        "valueJson": "\"表示“每个”时，every 通常直接修饰单数可数名词；这种名词短语作主语时，谓语用单数。every two days 是表示间隔的另一结构，其中 days 用复数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"看到 every，先检查紧跟的名词是否为单数，再检查一般现在时谓语是否为单数。\"",
+        "valueJson": "\"表示“每个”时用 every child 这样的单数名词；短语作主语时，才据此决定谓语用单数。表示间隔则另记 every two days。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"every 有可靠词源记录：中古英语 everich 源自古英语 æfre 和 ælc 的组合。现代学习时可把它作为一个整体记忆，重点掌握后接单数名词的用法。\"",
+        "valueJson": "\"every 来自中古英语 everich，更早可追溯到古英语的 æfre ælc；其中 æfre 意为“总是”，ælc 意为“每一个”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"æfre + ælc\",\"meaning\":\"记录显示的构词成分；此处不另行补写各成分的具体释义。\"},{\"language\":\"中古英语\",\"form\":\"everich\",\"meaning\":\"every 的历史前身。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-every\"]",
+        "valueJson": "[\"wiktionary-every-etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-every\",\"title\":\"Cambridge Dictionary: every\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/every\",\"supports\":[\"every 的限定词用法与基本含义\",\"every 后接单数名词及主谓一致\",\"表示时间间隔的结构\",\"everyday 等相关表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"every 的历史词源记录：中古英语 everich 与古英语 æfre、ælc 的关系\"]",
+        "valueJson": "[\"英语 every 的读音及“每一个”的基本用法\",\"every 后接数词或序数词表示重复间隔的用法\",\"everyday、everyone、everything、everywhere 等相关形式列表\",\"中古英语 everich 与古英语 æfre、ælc 的历史关系及组成成分的意义\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 463,
+    "headword": "every",
+    "meaning_zh": "adj. 每一, 所有的",
+    "phonetic": "/'evri/",
+    "pos": "",
+    "forms": []
+  }
+}

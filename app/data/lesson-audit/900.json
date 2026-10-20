@@ -1,0 +1,563 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cac34abe8e213b9adc4544283ddffe014363d53fc5ba8572e1cafe9b0332abfd",
+    "executedReviewPromptHash": "2f3d024656e44c143fa9bb04b76dbcb8d60088ab95822ffc7f6b53e0457a5faa",
+    "reviewHash": "fdae62d43f59993777fe11ff88cb24f0eef4459767d4b5d0dff616150a4c7337",
+    "wordId": 900,
+    "inputHash": "1f4182fe67d22911bb693ca28f397a85946f33ccf79abd2fcf5c2ca833b5ced2",
+    "draftHash": "5c6d4c6234df514c7f4ba56d6d40d6818c7a3f74149afe6d7062a425454f0588",
+    "finalHash": "b4d6d45440d333d89836d17d1218c8d317fcad8182eb3b3d98c61988bd8526ae",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/near#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.751Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116629,
+        "revisionId": 39766273,
+        "revisionTimestamp": "2026-08-03T05:46:50Z",
+        "sha256": "f61049adab234b2ca37fae888d4185a43dee290eafed42d75f0debf4866a90ef",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/near",
+        "section": "near etymology",
+        "supports": [
+          "Old English comparative; Norse influence rather than sole borrowing"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:14:25.323055+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "2af0354cf9e8ee2b1d5ea3dbebde67a71a068d6c279fa00d538cf51279efaab3",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "2af0354cf9e8ee2b1d5ea3dbebde67a71a068d6c279fa00d538cf51279efaab3",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/900.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/near",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:05:58.418Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:23:50.904Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未取得，不能将具体内容归因于该页。改用实际取得的维基词典英语词条；超出该条明确内容的专业语言知识不虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "原有六个核心例句均缺少必填 note。补丁补齐，并扩充未充分覆盖的用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "live near to the school 是规范表达，不能判错；near the school 通常更简洁。near 直接接名词时也存在不同词性分析，不应据此否定正确句子。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "a near friend 不是现代日常英语中常用的“亲密朋友”搭配；现有关系例句也容易被理解为空间接近。改用明确的距离、时间和状态例句，另以识别义保留亲属关系用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/partOfSpeech",
+        "message": "时间介词义仅有一例；动词义只有一例且未列入词性；常见的 near disaster／near miss 功能及词典明确列出的非正式副词“几乎”义未充分覆盖。补丁分别补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note、/forms/3/ipa、/forms/4/note",
+        "message": "nearer、nearest 也可用于副词功能；直接接名词的 nearer 也正确，不能笼统称不变形。nearest 的英式音标漏了元音间的 /r/。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items、/wordFamily/2/example",
+        "message": "nearby 的形容词例句应关联形容词义；nearly 的“几乎”例句不能继续关联空间／时间接近的副词义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/caveat",
+        "message": "near + -er 构成的是 nearer，而且属于真实的现代构词，不只是联想。现有古英语来源、古诺尔斯语影响及阶段顺序可以保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan、/pronunciation/notes/1",
+        "message": "学习计划用词性更清楚的结构作对比，并承认 near to 的正确性；发音提示改为直接指导发音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote、/wordFamily/2/example",
+        "message": "比较级和最高级属于词形变化，应与派生词区分；nearly finished 的翻译和说明应明确表达尚未全部完成。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的英语词条中的形容词接近义、直接接名词的用法、非正式副词“几乎”义、动词接近义及读音，并核对词源补充材料。补丁补足空间、时间、状态、近乎某种结果及动词功能；修订后每个核心义至少有两个原创英中例句，形容词与副词的空间、时间功能也分别得到展示。非正式“几乎”和较正式的亲属关系用法作为识别义保留。Cambridge 未取得内容，不作为已获支持的依据；部分现代用法依据专业语言知识补充。",
+    "senseInventory": [
+      {
+        "sense": "介词：空间上在……附近；靠近",
+        "coveredBy": [
+          "near-prep"
+        ],
+        "assessment": "保留空间义，补足两例；纠正禁止 near to 的说法。"
+      },
+      {
+        "sense": "介词：临近某个时间或阶段",
+        "coveredBy": [
+          "near-time"
+        ],
+        "assessment": "从空间义中分出，提供两个时间例句，并区别接近节点与恰在节点。"
+      },
+      {
+        "sense": "形容词：空间上近的；更近的；最近的",
+        "coveredBy": [
+          "near-adj"
+        ],
+        "assessment": "保留正确的 near + 名词例句，并补充明确的最高级定语例句；承认词性分析差异。"
+      },
+      {
+        "sense": "形容词：时间临近；即将到来",
+        "coveredBy": [
+          "near-adj"
+        ],
+        "assessment": "以 in the near future 和表语 near 各举一例。"
+      },
+      {
+        "sense": "形容词结构：接近某种状态或程度",
+        "coveredBy": [
+          "near-adj"
+        ],
+        "assessment": "补充 near to tears 与 near exhaustion 两例，对应词典中 near to death 所体现的状态接近功能。"
+      },
+      {
+        "sense": "形容词：近乎；险些成为或发生",
+        "coveredBy": [
+          "near-almost-adj"
+        ],
+        "assessment": "补充 near disaster 与固定表达 near miss，并分别说明结果接近和险情含义。"
+      },
+      {
+        "sense": "副词：在近处；向近处移动",
+        "coveredBy": [
+          "near-adv"
+        ],
+        "assessment": "保留原例并补充一例；明确 nearer、nearest 可用于比较距离。"
+      },
+      {
+        "sense": "副词：时间或事件逐渐临近",
+        "coveredBy": [
+          "near-adv"
+        ],
+        "assessment": "以 draw near 的现在和过去语境提供两例。"
+      },
+      {
+        "sense": "副词：几乎，非正式或带地域色彩",
+        "coveredBy": [
+          "near-almost"
+        ],
+        "assessment": "补入词典明确列出的义项，作为识别义；日常学习和写作优先使用 nearly。"
+      },
+      {
+        "sense": "动词：逐渐接近地点、时间或目标",
+        "coveredBy": [
+          "near-verb"
+        ],
+        "assessment": "提升为完整义项，补足空间、时间两例及规则变化。"
+      },
+      {
+        "sense": "形容词：亲属关系近的",
+        "coveredBy": [
+          "near-kinship"
+        ],
+        "assessment": "限定于较正式的亲属关系表达，不再将 a near friend 当作日常常用搭配。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"介词；形容词；副词\"",
+        "valueJson": "\"介词；形容词；副词；动词\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"对比记忆 near the school（介词）和 The school is near（副词）。\"",
+        "valueJson": "\"对比 near the school（直接接地点）、the nearest station（形容词修饰名词）和 come nearer（副词修饰动作）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 near + 地点，以及 be near to + 名词两种表达。\"",
+        "valueJson": "\"练习 live near the school 和 live near to the school；两者都正确，通常前者更简洁。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /niә/ 不准确；可按英式 /nɪə/、美式 /nɪr/ 记。\"",
+        "valueJson": "\"英式 /nɪə/ 从 /ɪ/ 自然滑向 /ə/；美式 /nɪr/ 要带出词尾 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"介词用法不变形，后面直接接地点或名词。\"",
+        "valueJson": "\"基本结构为 near + 名词，如 near the station；nearer the station 也正确，表示“离车站更近”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/ipa",
+        "expectedValueJson": "\"/ˈnɪrɪst/；英 /ˈnɪəɪst/\"",
+        "valueJson": "\"/ˈnɪrɪst/；英 /ˈnɪərɪst/\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"副词用法不变形，表示在附近；日常表达也常用 nearby。\"",
+        "valueJson": "\"作副词时也有比较级 nearer 和最高级 nearest，如 come nearer（再靠近些）；表达“在附近”也常用 nearby。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"nears\",\"ipa\":\"/nɪrz/；英 /nɪəz/\",\"note\":\"near 作动词表示接近，第三人称单数直接加 -s。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式／过去分词\",\"form\":\"neared\",\"ipa\":\"/nɪrd/；英 /nɪəd/\",\"note\":\"直接加 -ed；词尾 -ed 在这里读 /d/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词现在分词\",\"form\":\"nearing\",\"ipa\":\"/ˈnɪrɪŋ/；英 /ˈnɪərɪŋ/\",\"note\":\"直接加 -ing，不重复 r；英式读音中，r 在后接元音时读出。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示某人或某物与一个地点相距不远，near 后直接接地点或名词，不加 to。\"",
+        "valueJson": "\"表示某人或某物与另一个人、物或地点相距不远。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说“住在学校附近”可用 live near the school；不能说 live near to the school。near 也可用于时间，表示接近某个时刻或阶段。\"",
+        "valueJson": "\"“住在学校附近”通常说 live near the school，也可以说 live near to the school。谈地点时一般无需 to；near 本身不保证两处紧挨着。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples",
+        "expectedValueJson": "[{\"id\":\"near-prep-ex1\",\"senseId\":\"near-prep\",\"en\":\"Our house is near the library.\",\"zh\":\"我们家在图书馆附近。\"},{\"id\":\"near-prep-ex2\",\"senseId\":\"near-prep\",\"en\":\"We arrived near sunset.\",\"zh\":\"我们在日落前后到达。\"}]",
+        "valueJson": "[{\"id\":\"near-prep-ex1\",\"senseId\":\"near-prep\",\"en\":\"Our house is near the library.\",\"zh\":\"我们家在图书馆附近。\",\"note\":\"near 直接接地点 the library，表示相距不远。\"},{\"id\":\"near-prep-ex2\",\"senseId\":\"near-prep\",\"en\":\"I left my umbrella near the front door.\",\"zh\":\"我把伞放在前门附近了。\",\"note\":\"表示物品的位置在门附近，不一定紧挨着门。\"}]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"near the end / beginning\",\"zh\":\"接近结尾／开头\",\"note\":\"可指故事、活动或一段时间快结束或刚开始。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"near the end of the day\",\"zh\":\"临近一天结束时\",\"note\":\"near 也可描述时间或阶段接近某个节点。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"形容词：近的；接近的\"",
+        "valueJson": "\"形容词：近的；时间或状态临近的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"描述距离、时间或程度离某个对象不远，也可表示两者关系亲近。\"",
+        "valueJson": "\"描述空间或时间上的接近；也可表示快要达到某种状态，如 near to tears（快哭了）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构为 be near (to) + 名词，或 be near + 地点；作表语时，near 后接名词可带 to。\"",
+        "valueJson": "\"原级 near 并不总能放在普通地点名词前；“附近的一家商店”通常说 a nearby shop。比较级和最高级常作定语，如 the nearer shop、the nearest station；时间上常说 in the near future 或 The end is near。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"near-adj-ex1\",\"senseId\":\"near-adj\",\"en\":\"The bus stop is near our home.\",\"zh\":\"公交站离我们家很近。\"},{\"id\":\"near-adj-ex2\",\"senseId\":\"near-adj\",\"en\":\"The two friends are very near to each other.\",\"zh\":\"这两个朋友彼此关系很亲近。\"}]",
+        "valueJson": "[{\"id\":\"near-adj-ex1\",\"senseId\":\"near-adj\",\"en\":\"The bus stop is near our home.\",\"zh\":\"公交站离我们家很近。\",\"note\":\"表示距离近；这种 near + 名词结构也常按介词分析。\"},{\"id\":\"near-adj-ex2\",\"senseId\":\"near-adj\",\"en\":\"We plan to move to a bigger flat in the near future.\",\"zh\":\"我们计划不久后搬进一套更大的公寓。\",\"note\":\"in the near future 表示“不久以后”，near 修饰 future。\"},{\"id\":\"near-adj-ex3\",\"senseId\":\"near-adj\",\"en\":\"The nearest bus stop is across the street.\",\"zh\":\"最近的公交站在街对面。\",\"note\":\"nearest 是形容词最高级，直接修饰 bus stop。\"},{\"id\":\"near-adj-ex4\",\"senseId\":\"near-adj\",\"en\":\"The end of the school year is near, so we are planning a class picnic.\",\"zh\":\"学年快结束了，所以我们正在计划一次班级野餐。\",\"note\":\"near 作表语，表示某个时刻即将到来。\"},{\"id\":\"near-adj-ex5\",\"senseId\":\"near-adj\",\"en\":\"She was near to tears after losing her phone.\",\"zh\":\"她丢了手机后，眼泪都快掉下来了。\",\"note\":\"near to tears 表示快哭了，不表示已经哭了。\"},{\"id\":\"near-adj-ex6\",\"senseId\":\"near-adj\",\"en\":\"After the long hike, we were near exhaustion.\",\"zh\":\"长途徒步之后，我们都快筋疲力尽了。\",\"note\":\"near exhaustion 表示接近精疲力竭的状态。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a near friend\",\"zh\":\"亲密的朋友\",\"note\":\"此处 near 表示关系亲近，不是地理距离近。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"in the near future\",\"zh\":\"在不久的将来\",\"note\":\"near 修饰 future，表示时间不远；这是常见的原级定语用法。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"near (to) tears\",\"zh\":\"快要哭了\",\"note\":\"表示接近哭出来的状态，to 可省略。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"close\",\"zh\":\"近的；亲密的\",\"note\":\"描述距离或关系时都可与 near 接近；close friend 是更常见的“亲密朋友”说法。\"}",
+        "valueJson": "{\"en\":\"close\",\"zh\":\"近的；临近的\",\"note\":\"描述距离、时间或状态接近时与 near 意思相近；接名词通常用 close to，如 close to tears。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"close 适用于距离和关系；nearby 更常作前置定语或副词。\"",
+        "valueJson": "\"close 可描述距离、时间或状态接近；nearby 表示空间上的附近，不能代替 in the near future 中的 near。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"distant\",\"zh\":\"远的；疏远的\",\"note\":\"在距离或关系语境中可与 near 对照。\"}",
+        "valueJson": "{\"en\":\"distant\",\"zh\":\"远的；遥远的\",\"note\":\"在空间或时间上表示相隔较远，如 a distant village、the distant future。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"distant 是距离远或关系疏远时的对照词。\"",
+        "valueJson": "\"distant 在距离或时间远近时构成对照；near to tears 等状态表达需结合具体语境寻找反向表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示某人或某物处于附近；也可表示某事接近发生或接近某个程度。\"",
+        "valueJson": "\"表示在不远处或向近处移动；也可表示某个时间或事件越来越近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"副词 near 可单独使用，也常见于 come near；表示“几乎”时，nearly 更常见。\"",
+        "valueJson": "\"常见于 come near、stay near、draw near 等表达；也有比较级 nearer 和最高级 nearest，如 come nearer。日常说“待在附近”也常用 stay nearby。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples",
+        "expectedValueJson": "[{\"id\":\"near-adv-ex1\",\"senseId\":\"near-adv\",\"en\":\"Come near and look at this picture.\",\"zh\":\"走近些，看看这张画。\"},{\"id\":\"near-adv-ex2\",\"senseId\":\"near-adv\",\"en\":\"The holidays are drawing near.\",\"zh\":\"假期就快到了。\"}]",
+        "valueJson": "[{\"id\":\"near-adv-ex1\",\"senseId\":\"near-adv\",\"en\":\"Come near and look at this picture.\",\"zh\":\"走近些，看看这张画。\",\"note\":\"near 后面没有地点名词；要强调再靠近一点，也常说 Come nearer。\"},{\"id\":\"near-adv-ex2\",\"senseId\":\"near-adv\",\"en\":\"The holidays are drawing near.\",\"zh\":\"假期就快到了。\",\"note\":\"draw near 表示某个时间或事件越来越近。\"},{\"id\":\"near-adv-ex3\",\"senseId\":\"near-adv\",\"en\":\"The dog came near and sniffed my hand.\",\"zh\":\"那只狗走近，闻了闻我的手。\",\"note\":\"near 修饰 came，表示向近处移动。\"},{\"id\":\"near-adv-ex4\",\"senseId\":\"near-adv\",\"en\":\"As my birthday drew near, I started planning a small party.\",\"zh\":\"随着生日临近，我开始筹划一个小聚会。\",\"note\":\"drew 是 draw 的过去式；生日临近时，筹划聚会的动作开始了。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"near-verb\",\"title\":\"动词：接近\",\"meaning\":\"逐渐靠近某个地点、时间或目标。\",\"note\":\"常见于描述船只、车辆或日期逐渐接近某处或某时。\",\"example\":{\"id\":\"near-verb-ex1\",\"senseId\":\"near-verb\",\"en\":\"The train is nearing the station.\",\"zh\":\"火车正逐渐驶近车站。\",\"note\":\"near 作动词时，第三人称单数为 nears，进行时为 nearing。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "{\"id\":\"near-almost\",\"title\":\"副词（非正式或带地域色彩）：几乎\",\"meaning\":\"表示某事差一点发生，相当于 almost 或 nearly。\",\"note\":\"这种用法可在非正式或某些地区的英语中见到；一般学习和写作优先用 nearly，不要随意把所有 nearly 都替换成 near。\",\"example\":{\"id\":\"near-almost-ex1\",\"senseId\":\"near-almost\",\"en\":\"I near dropped my phone when the dog barked.\",\"zh\":\"狗一叫，我差点把手机掉到地上。\",\"note\":\"near 在这里表示“几乎”；更通用的说法是 I nearly dropped my phone。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"near-kinship\",\"title\":\"形容词：亲属关系近的\",\"meaning\":\"表示亲属或血缘关系较近。\",\"note\":\"near relatives、nearest relative 属于较正式的亲属关系表达，不保证感情亲密；日常说“亲密朋友”通常用 close friend。\",\"example\":{\"id\":\"near-kinship-ex1\",\"senseId\":\"near-kinship\",\"en\":\"Only near relatives were invited to the wedding.\",\"zh\":\"婚礼只邀请了近亲。\",\"note\":\"near 修饰 relatives，强调亲属关系近，而非住得近。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"near-adv\"",
+        "valueJson": "\"near-adj\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/senseId",
+        "expectedValueJson": "\"near-adv\"",
+        "valueJson": "\"near-almost\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"副词，主要表示“几乎、差不多”，不是“在附近”。\"",
+        "valueJson": "\"副词，主要表示“几乎、差不多”，不表示地点上的“在附近”。near 也有非正式的“几乎”义，但不能随意替换 nearly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是历史词源说明；把 near 记成 near（近）+ er（比较级）只是帮助记忆的现代联想，不能代替真实词源。\"",
+        "valueJson": "\"现代英语的 nearer 确实由 near 加 -er 构成；near 在古英语中本身曾是比较级，这是更早的历史，二者不应混为一谈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/senseId",
+        "expectedValueJson": "\"near-adv\"",
+        "valueJson": "\"near-almost\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/zh",
+        "expectedValueJson": "\"我们差不多快拼完这个拼图了。\"",
+        "valueJson": "\"我们差一点就拼完了那个拼图。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "\"nearly 表示事情接近完成。\"",
+        "valueJson": "\"nearly finished 表示接近完成，但这里并未全部拼完。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"nearer、nearest、nearly 和 nearness 都由 near 派生，注意 nearly 的“几乎”与 near 的“附近”不同。\"",
+        "valueJson": "\"nearer、nearest 是 near 的比较级和最高级，属于词形变化；nearly、nearness 是加后缀形成的派生词。nearly 通常表示“几乎”，与 near 表示地点上的“附近”区分。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"near-time\",\"title\":\"介词：临近某时或某个阶段\",\"meaning\":\"表示接近某个时间点或阶段；也可指书、电影等接近开头或结尾的位置。\",\"usageNote\":\"near sunset 可指日落前后，不保证一定在日落之前；near the end 表示接近结尾，不等于已经结束。\",\"examples\":[{\"id\":\"near-time-ex1\",\"senseId\":\"near-time\",\"en\":\"We arrived near sunset.\",\"zh\":\"我们在日落前后到达。\",\"note\":\"near 表示到达时间接近日落，不必恰好在日落时。\"},{\"id\":\"near-time-ex2\",\"senseId\":\"near-time\",\"en\":\"I fell asleep near the end of the film.\",\"zh\":\"电影快结束时，我睡着了。\",\"note\":\"睡着发生在电影接近结尾时，而非电影结束后。\"}],\"patterns\":[{\"en\":\"near + 时间点\",\"zh\":\"临近某个时间\",\"note\":\"如 near sunset、near midnight；表示时间接近该节点。\",\"kind\":\"sentence-pattern\"},{\"en\":\"near the end / beginning\",\"zh\":\"接近结尾／开头\",\"note\":\"可指时间进程，也可指书、电影等接近开头或结尾的位置。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"near the end of the day\",\"zh\":\"临近一天结束时\",\"note\":\"描述一天的进程接近终点。\",\"kind\":\"common-collocation\"},{\"en\":\"near the beginning of the lesson\",\"zh\":\"在课开始后不久；在这堂课靠近开头的部分\",\"note\":\"表示接近一堂课的开头，不是泛指整堂课都刚开始。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"close to\",\"zh\":\"接近某时或某阶段\",\"note\":\"如 close to midnight；与 near 表示时间接近时意思相近。\"},{\"en\":\"around\",\"zh\":\"大约在某时\",\"note\":\"around sunset 也可表示日落前后，侧重大致时间。\"}],\"contrasting\":[{\"en\":\"far from the end\",\"zh\":\"离结束还远\",\"note\":\"只对照进程是否接近结束，不作为所有时间表达的固定反义。\"}],\"similarNote\":\"close to 侧重接近时间点或阶段；around 侧重大致时间。\",\"contrastingNote\":\"far from 可对照阶段上的远近，具体还要多久取决于上下文。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"near-almost-adj\",\"title\":\"形容词：近乎；险些发生的\",\"meaning\":\"放在某些名词前，表示几乎成为某种结果；也见于表示险些出事的固定搭配。\",\"usageNote\":\"a near disaster 指差点酿成灾难。near miss 是固定说法，通常指差点发生碰撞或事故，实际躲过了。\",\"examples\":[{\"id\":\"near-almost-adj-ex1\",\"senseId\":\"near-almost-adj\",\"en\":\"Dinner was a near disaster, but my sister took the chicken out of the oven just in time.\",\"zh\":\"晚饭差点搞砸，好在姐姐及时把鸡肉从烤箱里拿了出来。\",\"note\":\"a near disaster 表示差点成为灾难性的结果；but 后说明及时补救。\"},{\"id\":\"near-almost-adj-ex2\",\"senseId\":\"near-almost-adj\",\"en\":\"The car stopped just inches from my bike. That was a near miss.\",\"zh\":\"汽车在离我的自行车仅几英寸的地方停住了，险些相撞。\",\"note\":\"near miss 在这里指差点发生碰撞，实际上没有撞上。\"}],\"patterns\":[{\"en\":\"near + 某些表示状态或结果的名词\",\"zh\":\"近乎某种状态或结果\",\"note\":\"如 a near disaster；这种用法不能随意套用于所有名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a near disaster\",\"zh\":\"差点酿成的灾难\",\"note\":\"强调事情几乎变得非常糟糕。\",\"kind\":\"common-collocation\"},{\"en\":\"a near miss\",\"zh\":\"险些发生的碰撞或事故\",\"note\":\"常用于交通和安全语境，整体理解为一次险情。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"almost\",\"zh\":\"几乎\",\"note\":\"a near disaster 可改写为 almost a disaster；almost 在这里是副词，句法不同。\"},{\"en\":\"a close call\",\"zh\":\"险些出事；侥幸脱险\",\"note\":\"与 near miss 接近，常指一次危险但躲过的情况。\"}],\"contrasting\":[{\"en\":\"an actual disaster\",\"zh\":\"实际发生的灾难\",\"note\":\"与 a near disaster 对照是否真的酿成灾难。\"},{\"en\":\"an actual collision\",\"zh\":\"实际发生的碰撞\",\"note\":\"在交通语境中与 a near miss 对照是否真的撞上。\"}],\"similarNote\":\"almost 对应“近乎”；a close call 主要对应险些出事的语境。\",\"contrastingNote\":\"这些表达只对照险些发生与实际发生的结果，不是 near 各义通用的反义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"near-verb\",\"title\":\"动词：逐渐接近\",\"meaning\":\"逐渐靠近某个地点、时间或目标。\",\"usageNote\":\"可及物，也可不及物；直接接宾语时不用 to。常见形式有 nears、neared、nearing。\",\"examples\":[{\"id\":\"near-verb-ex1\",\"senseId\":\"near-verb\",\"en\":\"The train is nearing the station.\",\"zh\":\"火车正逐渐驶近车站。\",\"note\":\"is nearing 是现在进行时，强调火车正在靠近。\"},{\"id\":\"near-verb-ex2\",\"senseId\":\"near-verb\",\"en\":\"As six o'clock neared, I started cooking dinner.\",\"zh\":\"快到六点时，我开始做晚饭。\",\"note\":\"neared 在这里没有宾语，表示六点这个时刻临近了。\"}],\"patterns\":[{\"en\":\"near + 地点／时间／目标\",\"zh\":\"逐渐接近某处、某时或某个目标\",\"note\":\"near 作及物动词，宾语前不用 to。\",\"kind\":\"sentence-pattern\"},{\"en\":\"时间或事件 + near\",\"zh\":\"某个时刻或事件临近\",\"note\":\"near 可不带宾语，并随主语和时态变化。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"near the station\",\"zh\":\"逐渐驶近车站\",\"note\":\"作动词时表示接近的过程；与 be near the station 表示已经在附近不同。\",\"kind\":\"common-collocation\"},{\"en\":\"near retirement\",\"zh\":\"临近退休\",\"note\":\"表示逐渐接近退休这一阶段。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"approach\",\"zh\":\"接近；临近\",\"note\":\"也可用于地点或时间，如 approach the station；直接接宾语时通常不用 to。\"},{\"en\":\"get closer to\",\"zh\":\"逐渐靠近\",\"note\":\"日常口语中常用；接名词时保留 to。\"}],\"contrasting\":[{\"en\":\"move away from\",\"zh\":\"逐渐远离\",\"note\":\"在实际空间移动的语境中与 near 对照，不用于机械反转时间的流逝。\"}],\"similarNote\":\"approach 可用于空间和时间；get closer to 更常见于日常表达。\",\"contrastingNote\":\"move away from 对照空间上的靠近与远离；时间义没有一个适用于所有句子的简单反义动词。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary：near\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/near\",\"supports\":[\"near 作介词、形容词、副词和动词的常见用法\",\"near、nearer、nearest 等词形及常见搭配\",\"nearby 与 nearly 的词义区分\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"法语维基词典：near（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/near#Anglais\",\"supports\":[\"near 的英美读音及 nearer、nearest 比较形式\",\"形容词的空间、时间和状态接近义，以及直接接名词时的词性分析说明\",\"非正式副词 near 表示“几乎”\",\"动词 near 表示逐渐接近\",\"nearly、nearness、near miss 等相关形式的列举\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 900,
+    "headword": "near",
+    "meaning_zh": "prep. 在……附近；靠近\nadj. 近的\nadv. 在附近",
+    "phonetic": "/niә/",
+    "pos": "",
+    "forms": []
+  }
+}

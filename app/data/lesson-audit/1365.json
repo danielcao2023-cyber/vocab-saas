@@ -1,0 +1,268 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "74798a558cf7bd16f6d7c60a3ca34bc8fba1820df5998397fbb72de5e5ae2fce",
+    "executedReviewPromptHash": "74798a558cf7bd16f6d7c60a3ca34bc8fba1820df5998397fbb72de5e5ae2fce",
+    "reviewHash": "8f96bcd9a556d197fbe158321945660ecd43ebe07d970b895623b2fb86e97bc7",
+    "wordId": 1365,
+    "inputHash": "674bb63c583b69c59385d3a2bd11442e1ef25999beca525ed9a03e6ee0b121b3",
+    "draftHash": "0eb073e4d45fde854e2fd57fce66e19571e156afce2caaa838812af7d7758702",
+    "finalHash": "4424290c70205f3eee709130b9df968bf14f5cf8c1c5c22e782ac87be92fc45a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sweater#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.552Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 957078,
+        "revisionId": 39008984,
+        "revisionTimestamp": "2025-11-01T23:21:29Z",
+        "sha256": "caed9b564d7dcb510c752607834e060bb12995daa75615e6ab009cd443baad6a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sweater",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:33:44.503Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:40:12.534Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/confusions/0/items",
+        "message": "四个例句缺少结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds；/lessCommonSenses/0/sourceIds；/sources",
+        "message": "Cambridge 页面未取得正文，不能作为本次已取得的释义、读音和辨析依据。法语维基词典的英语词条支持衣物义、读音及 sweat + -er 的构词关系，没有列出“出汗者”义。应纠正来源关联及 supports。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "裸用 the sweater 指比赛后出汗的人很不自然；原译文还增加了英文未表达的“容易出汗”。应改用 a heavy sweater 这一自然的人物用法，并解释其修饰语。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "例句只出现 sweatshirt，却绑定 sweater 的针织上衣义。改成同时包含两种衣物的自然例句，使 senseId 有实际对应。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example",
+        "message": "“容易出汗，所以携带薄毛衣”的因果关系不够明确；改成因此选择薄款而非厚款，语言和生活逻辑更自然。"
+      }
+    ],
+    "coverageAssessment": "已核对取得的英语词条定义、原词条中文释义及专业语言知识。核心义“毛衣／针织上衣”已有两个自然例句，套头与开襟是款式，无须拆成不同核心义。“出汗的人”保留在较少见义中，并改为自然的 heavy sweater 用法。“运动衫”不宜据中文泛译另立一个等同 sweatshirt 的常用义，现有辨析已说明区别。词源材料仅证实 sweat + -er 的构词关系；原稿没有虚构历史演变，可保留。来源局限已通过修正引用处理，未冒称取得 Cambridge 正文或取得人物义的词典证据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：毛衣、毛线衫、针织上衣，包括套头及开襟款",
+        "coveredBy": [
+          "sweater-n-knitwear"
+        ],
+        "assessment": "覆盖充分；已有两个生活例句，相关衣物词的范围也有说明。"
+      },
+      {
+        "sense": "可数名词：出汗的人，常用修饰语说明出汗量或特点",
+        "coveredBy": [
+          "sweater-n-person"
+        ],
+        "assessment": "可作为较少见义保留；补丁改用 a heavy sweater，消除裸词误用和翻译增义，并移除不支持此义的来源引用。"
+      },
+      {
+        "sense": "原中文释义中的“运动衫”译法",
+        "coveredBy": [
+          "sweater-n-knitwear"
+        ],
+        "assessment": "不能据此把普通运动卫衣另立为 sweater 的核心义；正文对 sweatshirt 的辨析已提供必要边界。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"put on 表示穿上的动作；a warm sweater 指一件保暖的毛衣。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"buy something for someone 表示给某人买某物；blue 说明毛衣的颜色。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wore 表示当时的穿着状态；wool 说明毛衣的材质。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"He changed into a clean sweatshirt after practice.\"",
+        "valueJson": "\"He packed a sweatshirt for practice and a sweater for the evening.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"训练后，他换上了一件干净的运动卫衣。\"",
+        "valueJson": "\"他收拾行李时带了一件训练时穿的运动卫衣，还带了一件晚上穿的毛衣。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"sweatshirt 指运动卫衣，sweater 指毛衣；句中是为不同场合准备的两件上衣。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"日常英语通常直接说 someone who sweats；初中学习重点是“毛衣”义。\"",
+        "valueJson": "\"人物义常出现在 a heavy sweater（出汗多的人）这类带修饰语的表达中；单独说 the sweater 容易被理解成“那件毛衣”。初中学习重点仍是衣物义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/en",
+        "expectedValueJson": "\"After the race, the sweater reached for a towel.\"",
+        "valueJson": "\"I'm a heavy sweater, so I always bring a towel to the gym.\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"比赛结束后，那个容易出汗的人伸手拿毛巾。\"",
+        "valueJson": "\"我出汗多，所以去健身房时总会带条毛巾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "\"此义少见，通常需要上下文帮助理解。\"",
+        "valueJson": "\"a heavy sweater 在这里指一个出汗多的人；heavy 说明出汗量，不是说毛衣厚重。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/en",
+        "expectedValueJson": "\"I sweat easily, so I carry a light sweater.\"",
+        "valueJson": "\"I sweat easily, so I wear a light sweater instead of a thick one.\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"我很容易出汗，所以会带一件薄毛衣。\"",
+        "valueJson": "\"我容易出汗，所以穿薄毛衣，不穿厚毛衣。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"wiktionary-fr\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"sweat 加 -er 的构词关系\",\"少见的表示出汗者的名词义\"]",
+        "valueJson": "[\"sweat 加 -er 的构词关系\",\"衣物名词义及相关衣物词\",\"英语词条的读音标注及美式发音音频条目\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: sweater\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sweater\",\"supports\":[\"常见名词义与用法\",\"英美读音查询\",\"相关衣物表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1365,
+    "headword": "sweater",
+    "meaning_zh": "n. 毛衣, 毛线衫, 运动衫, 出汗者",
+    "phonetic": "/'swetә/",
+    "pos": "",
+    "forms": []
+  }
+}

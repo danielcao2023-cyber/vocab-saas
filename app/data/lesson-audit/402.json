@@ -1,0 +1,374 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "86a83eb15eb613b54c05c1ddf20d98790c465ed960b71cb463b1fba5d455fc63",
+    "executedReviewPromptHash": "86a83eb15eb613b54c05c1ddf20d98790c465ed960b71cb463b1fba5d455fc63",
+    "reviewHash": "f98e04b2d9264a10e859416782b62bf85a06ce8578647463d5e1c980cdaa91a5",
+    "wordId": 402,
+    "inputHash": "f04e785c911334f45e3f8d32cb6899be85608d186e6ecd8beb28045cfaef1906",
+    "draftHash": "5b4678577c6791baac4cc920b6a8286490c494ed8d5586cbb610971fe2749e09",
+    "finalHash": "c31d1a23721dec020b73d0e2b2e1b859251903f4851ad40de635a7a4b7dccf4d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/donate#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:36.736Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118740,
+        "revisionId": 38299096,
+        "revisionTimestamp": "2025-06-07T12:49:21Z",
+        "sha256": "471d4cebcbe36aaf10f958bca9a4df76c363207a651306524fae0915560f1bdd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/donate",
+        "section": "donate etymology",
+        "supports": [
+          "Back-formation from donation",
+          "Correction of direct Latin-loan claim"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T03:15:00.895722+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "feb072ed605a13273e3a0c6ac29516c5c1ebba1fd14686c058125d9c54286607",
+        "summaryAndSupportsWordCount": 59,
+        "sha256": "feb072ed605a13273e3a0c6ac29516c5c1ebba1fd14686c058125d9c54286607",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/402.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/donate",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:53:05.393Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:57:16.051Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未取得，不能作为本次已核对的具体用法依据。改用实际取得的法语维基词典英语词条，并将其支持范围限定为基本释义和所列读法；其余语法、搭配依专业语言知识审校。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题包含钱物，但原有例句都只涉及物品；同时遗漏常用的 donate one's time。补充捐款、无偿投入时间及省略捐赠物宾语的完整例句，并将时间用法并入原有捐赠义。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1",
+        "message": "donate the library books 可以合乎语法，其中 the library books 整体表示捐出的书。不能直接把该短语标成语法错误，应说明它与“把书捐给图书馆”的结构和意思不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "直接写 donate + -ion 容易与已核实的历史顺序冲突。须区分现代拼写联记与历史逆构：先有 donation，后形成 donate。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "初稿的八个例句对象均缺少必填 note，包括 senses、confusions 和 wordFamily 中的例句；已逐项补齐。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similar/1",
+        "message": "donor 表示捐献者，是相关名词，不是 donate 的近义表达；从近义栏移除，保留词族中的完整说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "单独用 doh-NAYT 不能概括所列的首音节重读读法；“旧音标不准确”也过于笼统。改为分别标明主重音并提供具体发音提示。"
+      }
+    ],
+    "coverageAssessment": "已核对捐赠钱物、无偿投入时间或服务、捐献血液或器官，以及省略捐赠物宾语的常用结构。保留原有两个教学分组，不强拆成三义；补后各组均有至少两个完整自然例句。词形、翻译、语境反向表达及记忆故事可保留。历史词源已按 Etymonline 核对为 donation 先于 donate；法语页面提供的是英语词条资料。现有材料未逐项列出全部搭配及英美读音分布，这些内容依据专业语言知识审校，不冒称取得了 Cambridge 页面佐证。",
+    "senseInventory": [
+      {
+        "sense": "捐赠钱款或物品",
+        "coveredBy": [
+          "donate-v1"
+        ],
+        "assessment": "已有书籍和衣物例句；补充明确捐款例句，使钱、物均有实际覆盖。"
+      },
+      {
+        "sense": "无偿贡献时间或服务，属于捐赠义的常用延伸",
+        "coveredBy": [
+          "donate-v1"
+        ],
+        "assessment": "原稿遗漏；补入释义、搭配和投入时间帮助儿童阅读的例句，无须另立独立义项。"
+      },
+      {
+        "sense": "捐献血液、器官等",
+        "coveredBy": [
+          "donate-v2"
+        ],
+        "assessment": "献血和器官捐献各有一例，覆盖充分；保留为便于学习而设置的使用领域分组。"
+      },
+      {
+        "sense": "省略捐赠物宾语：donate 或 donate to an organization",
+        "coveredBy": [
+          "donate-v1"
+        ],
+        "assessment": "原稿已有短语说明；补充完整例句，明确这是同一捐赠义的句法用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"donate 表示自愿捐出钱物或身体组织等，常用 donate something to someone/an organization。\"",
+        "valueJson": "\"donate 表示自愿捐出钱物、血液或器官，也可表示无偿投入时间或提供服务；常用 donate something to someone/an organization。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"读作 doh-NAYT；末尾的 t 要发清楚。\"",
+        "valueJson": "\"所列英式读法可记作 doh-NAYT，美式读法可记作 DOH-nayt；大写部分表示主重音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；英式与美式元音写法不同。\"",
+        "valueJson": "\"donate 有两个音节，词尾 -ate 读 /eɪt/；不要在词尾 /t/ 后加读一个元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[\"wiktionary-en-donate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"捐赠钱物\"",
+        "valueJson": "\"捐赠钱物、时间等\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"自愿把钱、物品等交给个人、机构或公益事业，供对方使用。\"",
+        "valueJson": "\"自愿把钱物等提供给个人、机构或某项事业，通常为了支持或帮助对方；也可指无偿投入时间或提供服务。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"捐出的对象常是 money、food、books、clothes 等；表示捐给谁或什么机构时常用 to。\"",
+        "valueJson": "\"常见宾语有 money、food、books、clothes，也可以是 time 或 services。接受者或所支持的事业常用 to 引出；不说捐什么时，可用 donate to a charity。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"books 是捐赠物，to the school library 表示接受方。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"old clothes 是捐出的衣物，to a local shelter 说明衣物捐给哪里。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"donate-v1-ex3\",\"senseId\":\"donate-v1\",\"en\":\"Omar donated twenty dollars to the local food bank.\",\"zh\":\"奥马尔向当地的食物救济机构捐了二十美元。\",\"note\":\"twenty dollars 说明捐款金额；接受机构前用 to。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"donate-v1-ex4\",\"senseId\":\"donate-v1\",\"en\":\"On Saturdays, Nina donates her time to help children learn to read.\",\"zh\":\"每逢周六，妮娜都无偿花时间帮助孩子们学习阅读。\",\"note\":\"donate one's time 表示无偿投入时间；这里的 to help 是说明目的的不定式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"donate-v1-ex5\",\"senseId\":\"donate-v1\",\"en\":\"We donate to a local charity every month.\",\"zh\":\"我们每个月都向当地一家慈善机构捐款。\",\"note\":\"这里省略了捐赠物宾语，to a local charity 直接说明接受方；这一语境中通常理解为捐款。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"donate one's time / services\",\"zh\":\"无偿投入时间 / 提供服务\",\"note\":\"捐出的不一定是实物；也可以是帮助他人所花的时间或提供的专业服务。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[\"wiktionary-en-donate\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"donate blood 是“献血”的常用搭配，blood 在此为不可数名词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"an organ 泛指一个器官；organ 是可数名词。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"donor\",\"zh\":\"捐献者\",\"note\":\"指捐出血液、器官或钱物的人，是相关名词。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"常见错误：donate the library books\"",
+        "valueJson": "\"易混：donate the library books\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"若想表达“把书捐给图书馆”，不能把接受者直接当作 donate 的宾语；应说 donate books to the library。\"",
+        "valueJson": "\"这个短语可以合乎语法：the library books 可整体理解为“图书馆的书”，作捐出的东西。若要明确表达“把书捐给图书馆”，用 donate books to the library；donate 通常不使用 give 那样的双宾语结构。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"donated 后接捐出的 warm coats，to the shelter 引出接受者。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"her books 是捐赠物，the library 是介词 to 后的接受方。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记作 donate something to someone/an organization；只说捐赠对象时，也可说 donate to an organization。\"",
+        "valueJson": "\"记作 donate something to someone/an organization；只说接受捐赠的一方时，也可说 donate to an organization。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"donate + -ion；拼写时去掉 donate 末尾不发音的 e，再加 -ion。\"",
+        "valueJson": "\"历史上先有名词 donation，后由它逆构出动词 donate。按现代拼写联记时，可以用 donate 去掉词尾 e 再加 -ion 得到 donation，但这不是历史造词顺序。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"donation 在这里作名词，表示一笔捐款。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[\"etymonline-donate\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"blood donor 指献血者；donor 表示人，donate 表示捐赠行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-donate\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-donate\",\"title\":\"Cambridge Dictionary：donate\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/donate\",\"supports\":[\"donate 的词性、主要用法及常见搭配\",\"捐赠对象前的 to 结构\",\"donation、donor 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-donate\",\"title\":\"Wiktionnaire：donate（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/donate#Anglais\",\"supports\":[\"英语动词 donate 的基本义：给予、捐赠\",\"英语词条记录的首音节重读读法 /ˈdəʊˌneɪt/\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 402,
+    "headword": "donate",
+    "meaning_zh": "v. 捐赠",
+    "phonetic": "/'dәuneit/",
+    "pos": "",
+    "forms": []
+  }
+}

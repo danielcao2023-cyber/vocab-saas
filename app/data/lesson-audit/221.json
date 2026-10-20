@@ -1,0 +1,330 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9f10e21b6336f682b799ea80d23fc24c967b44226b5f708beb120ef092ea2280",
+    "executedReviewPromptHash": "9f10e21b6336f682b799ea80d23fc24c967b44226b5f708beb120ef092ea2280",
+    "reviewHash": "33ea326c6432e9814ac7b0416c49b2e551cee44cae31a3ce9027ca4651dc2fad",
+    "wordId": 221,
+    "inputHash": "7497beab91db4b04620ec6b1c7518399e82e969000a0190ddc4066335dcaf400",
+    "draftHash": "9cc82a22b20b5ade1079b86029690c113d29f105a3c3ce07f092bfe78ba5189c",
+    "finalHash": "b4713d098880639bec10515196f77fa85e8642ff7d6bcd613270e925f7e1f874",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/car#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.952Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9241,
+        "revisionId": 39859477,
+        "revisionTimestamp": "2026-09-05T14:13:27Z",
+        "sha256": "028bed069de620981f38a651bbf2362c64b7277499740c037279967750c6a594",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/car",
+        "section": "car (noun)",
+        "supports": [
+          "Vehicle borrowing through French",
+          "Latin wagon meaning",
+          "Exclusion of the conjunction homograph"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "413d81c31cf122422d1a7c4f35b0e404b6ac70f20425d8700d4afda4459e7730",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "413d81c31cf122422d1a7c4f35b0e404b6ac70f20425d8700d4afda4459e7730",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/221.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/car",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:11:23.598Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:18:53.387Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0/note; /senses/1/examples/1/note; /wordFamily/0/example/note",
+        "message": "三个例句缺少结构要求的 note 字段，需补齐。"
+      },
+      {
+        "severity": "polish",
+        "location": "/sources; 各处 sourceIds",
+        "message": "引文未对应已取得的 Wiktionary 英语词条。Oxford 无对应正文，Cambridge 获取失败；改引实际可用来源，by car 的语法说明不附无材料支撑的引文。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "材料另列了不同来源的 Lisp 名词 car。应简短标明这个专业义，无须扩为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "/kɑː/ 是现行常用英式标音，不宜称为“旧标音”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh; /confusions/0/items/0/example/zh; /senses/1/examples/1/zh",
+        "message": "by car、in his car 未明确驾驶者，full of passengers 未明确乘客都坐着；译文宜避免添加这些信息。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/2/note",
+        "message": "train 的辨认重点是整列列车；说明中应兼容动车组等自带动力的列车。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/1/kind",
+        "message": "the next / last car 是名词搭配，不是句型。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/caveat",
+        "message": "材料支持车辆义早于汽车，但未具体交代铁路义的扩展年代。应删除该历史断言，并区分车辆名词、法语连词及 Lisp 同形术语的来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily; /wordFamilyNote",
+        "message": "现有词族仅重复复数 cars；可补入材料已列的常用复合词 carpool，并说明 carpooling 的实际拼写，区分复数变化与构词。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对材料中的汽车义、北美铁路客车义和独立的 Lisp 专业义。两个核心义均有两个自然原创例句，搭配及近义、反向表达的语境限制基本恰当；补入专业义提示和常用复合词。车辆名词的词源主体有材料支持，保留原有可靠内容。铁路教学仍以客车车厢为重点，不展开其他专门车辆类型；by car 等语法说明依据专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：小汽车",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义已覆盖，两个例句分别体现驾驶和交通方式；修正一处增加驾驶信息的译文。"
+      },
+      {
+        "sense": "可数名词：铁路客车车厢，主要用于加拿大和美国英语",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "核心义已覆盖，两个例句均确实指乘客车厢；carriage、coach 及 passenger car / freight car 的对照限定了铁路语境。"
+      },
+      {
+        "sense": "专业名词：Lisp 中 cons 单元的 car，即第一个分量",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "初稿未列；补入 lessCommonSenses，以非空列表首元素为例，不提高为初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"drive a car 表示开汽车；to work 表示去上班。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 car 指火车上的客车车厢。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"two 后用复数 cars；词尾 -s 读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧标音 /kɑː/ 更接近英式读法；美式读法通常写作 /kɑːr/。\"",
+        "valueJson": "\"/kɑː/ 是常用英式标音，其中 /ː/ 表示元音较长；美式通常保留 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"我们开车去了湖边。\"",
+        "valueJson": "\"我们乘汽车去了湖边。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/zh",
+        "expectedValueJson": "\"爸爸开车回家了。\"",
+        "valueJson": "\"爸爸乘自己的车回家了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"最后一节客车里坐满了乘客。\"",
+        "valueJson": "\"最后一节客车车厢里满是乘客。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"通常指由机车牵引的一整列火车。\"",
+        "valueJson": "\"指沿轨道运行的一整列列车，可以由机车牵引，也可以像动车组那样自带动力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"Lisp 编程术语\",\"meaning\":\"Lisp 中 cons 单元的第一个分量；对非空列表而言，它对应列表的第一个元素。\",\"note\":\"这是计算机专业用语，与车辆名词 car 不同源；初中阶段了解即可。\",\"example\":{\"id\":\"lc1\",\"senseId\":\"s3\",\"en\":\"The car of the list (10 20 30) is 10.\",\"zh\":\"列表 (10 20 30) 的 car，也就是第一个元素，是 10。\",\"note\":\"这里的 car 是专业术语，与汽车或车厢无关。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上是车辆名词的历史来源；现代英语里 car 的基本记忆应以“汽车”为主。火车客车义是现代用法扩展，不应据此把 car 拆成其他单词的首字母。\"",
+        "valueJson": "\"这里说明的是车辆名词 car 的历史来源，不要与法语连词 car（“因为”）混淆。Lisp 编程术语 car 另有缩略语来源，不能用它解释“汽车”或“车厢”义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"src-etymonline\"]",
+        "valueJson": "[\"src-etymonline\",\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"carpool\",\"partOfSpeech\":\"noun / verb\",\"meaning\":\"拼车安排、拼车小组；拼车出行\",\"formation\":\"由 car + pool 组成的复合词；这里的 pool 与集中、共同使用资源有关。\",\"spellingNote\":\"carpool 连写；加 -ing 得 carpooling，保留原有字母，不额外双写 l。\",\"example\":{\"id\":\"wf2\",\"senseId\":\"s1\",\"en\":\"My neighbors and I carpool to work.\",\"zh\":\"我和邻居们拼车上班。\",\"note\":\"这里 carpool 作动词，表示合乘汽车出行。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"car 的常见教学词形是复数 cars；本条不列仅与汽车主题有关、但不是 car 派生的词。\"",
+        "valueJson": "\"cars 是 car 的复数变化；carpool 是复合词。carpooling 在 carpool 后直接加 -ing，可作名词表示拼车这种活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: car\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/car\",\"supports\":[\"car 的汽车义及用法\",\"car 的复数形式 cars\",\"car 的英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire: car（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/car#Anglais\",\"supports\":[\"汽车义及北美铁路客车义\",\"英美读音与规则复数\",\"carpool、carpooling 等相关形式\",\"Lisp 术语 car 及其独立来源\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: car\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/car\",\"supports\":[\"car 的常见含义和例句用法参考\",\"交通方式及相关用法参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 221,
+    "headword": "car",
+    "meaning_zh": "n. 汽车, 客车",
+    "phonetic": "/kɑ:/",
+    "pos": "",
+    "forms": []
+  }
+}

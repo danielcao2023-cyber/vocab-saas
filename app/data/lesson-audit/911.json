@@ -1,0 +1,238 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "05e9a7ae3390616c53bb7be688afa213169db9e1e145e29e36b2806714a3ca93",
+    "executedReviewPromptHash": "05e9a7ae3390616c53bb7be688afa213169db9e1e145e29e36b2806714a3ca93",
+    "reviewHash": "603ed1e4c3788bc97795ebd4c827860ef33b8a7c9a0e9289cd955fe66b76704f",
+    "wordId": 911,
+    "inputHash": "ba146dfefa6a040e4e73eb2a9e9618d248bbef184d90d47a2d5ce646118472d7",
+    "draftHash": "1698011d50e6a79791eb6943a4d45c69cf7111f4cf1c4a3c0d8225d24d477e4e",
+    "finalHash": "b0f60ac2f19b4078434a310c37526efcac70f04f98edac1f145ec44ef9daa67a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/news#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:26.571Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118408,
+        "revisionId": 36387260,
+        "revisionTimestamp": "2024-11-11T14:46:59Z",
+        "sha256": "20f6664d972bbd9dfe04a8d3341f1e1059a0a0e7e4d7621da86445a54d2ebb4e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/news",
+        "section": "news noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "ecb23448bca843528e5e5d20b89ff81f53cdb709490672c9a3af75ad3a02c40d",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "ecb23448bca843528e5e5d20b89ff81f53cdb709490672c9a3af75ad3a02c40d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/911.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/news",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:23:31.660Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:31:37.347Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0; /lessCommonSenses/0",
+        "message": "The news is on at seven 表示新闻节目播出，不是一般新闻信息义的例句。新闻节目也是常用义，不宜放入较少见义且只配一个例句。应调整归类，并分别补足信息义和节目义的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏了词典列出的常用定语功能，如 news report、news agency。需要说明这是名词作定语，并提供两个例句，避免误教为一般形容词。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 引用 cambridge-news 的 sourceIds",
+        "message": "Cambridge 词条本次未取得内容，不能充当这些释义和读音说明的已取得依据。应改引实际取得的 Wiktionnaire 英语词条；页面说明语言为法语，不影响其英语词条身份。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/caveat",
+        "message": "故事没有把 s 解释为“报纸标记”，此处否定一个未提出的说法会增加混淆。方向缩写的澄清也应针对整个 news，而不是单独的 s。"
+      }
+    ],
+    "coverageAssessment": "已核对全部三项词典定义：新闻／消息、新闻节目、名词作定语。补丁后，信息义分别用公共新闻和个人消息举例，节目义覆盖电视与广播，定语功能有两个例句。不可数用法、单数一致、近义表达的限制、词族拼写及历史词源均已核对；现有词源内容可保留。范围限于所列定义与常见用法，未将派生词表中未释义的短语机械另立为核心义。",
+    "senseInventory": [
+      {
+        "sense": "新闻；消息：关于新近事件的信息，包括公共时事和个人收到的消息",
+        "coveredBy": [
+          "news-information"
+        ],
+        "assessment": "原稿的一个例句实际属于节目义；替换后两个例句分别覆盖公共新闻与个人消息，无须强行拆成两个义项。"
+      },
+      {
+        "sense": "新闻节目：电视或广播中的新闻播报",
+        "coveredBy": [
+          "news-media"
+        ],
+        "assessment": "原稿已有此义，但归为较少见义且例句不足；补丁将其移入核心义并补足两个例句。"
+      },
+      {
+        "sense": "名词作定语：新闻的；与新闻报道有关的",
+        "coveredBy": [
+          "news-attributive"
+        ],
+        "assessment": "原稿遗漏；补丁单列常用功能并提供两个例句，明确不将其视为一般形容词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-news\",\"title\":\"Cambridge Dictionary: news\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/news\",\"supports\":[\"news 的常见含义与用法\",\"不可数名词及常见搭配\",\"新闻节目这一用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-news\",\"title\":\"Wiktionnaire：news（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/news#Anglais\",\"supports\":[\"news 的新闻／消息义与新闻节目义\",\"名词作定语的常用功能\",\"不可数用法与消息计数表达\",\"英美读音差异\",\"newspaper 等相关词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-news\"]",
+        "valueJson": "[\"wiktionary-news\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-news\"]",
+        "valueJson": "[\"wiktionary-news\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-news\"]",
+        "valueJson": "[\"wiktionary-news\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-news\"]",
+        "valueJson": "[\"wiktionary-news\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-news\"]",
+        "valueJson": "[\"wiktionary-news\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"news-ex-1\",\"senseId\":\"news-information\",\"en\":\"The news is on at seven.\",\"zh\":\"七点有新闻节目。\",\"note\":\"这里指电视上的新闻节目。\"}",
+        "valueJson": "{\"id\":\"news-ex-1\",\"senseId\":\"news-information\",\"en\":\"I read the latest sports news on my phone during breakfast.\",\"zh\":\"吃早饭时，我在手机上看了最新的体育新闻。\",\"note\":\"这里指体育新闻信息；news 仍是不可数名词。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"news-media\",\"title\":\"新闻节目\",\"meaning\":\"广播或电视播出的新闻内容，常见于 the news。\",\"note\":\"日常英语里常用 the news 指新闻节目或新闻时段；具体指节目时也可说 a news programme。\",\"example\":{\"id\":\"news-ex-3\",\"senseId\":\"news-media\",\"en\":\"We watched the news after dinner.\",\"zh\":\"我们晚饭后看了新闻。\",\"note\":\"这里指电视新闻节目。\"},\"sourceIds\":[\"cambridge-news\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"news-media\",\"title\":\"新闻节目\",\"meaning\":\"通过电视或广播播出的新闻节目。\",\"usageNote\":\"这是常见用法，通常说 the news，news 仍不可数。谈具体的一档节目，也可说 a news programme（英式）或 a news program（美式）。\",\"examples\":[{\"id\":\"news-ex-3\",\"senseId\":\"news-media\",\"en\":\"We watched the news after dinner.\",\"zh\":\"我们晚饭后看了新闻。\",\"note\":\"这里指电视新闻节目。\"},{\"id\":\"news-media-ex-2\",\"senseId\":\"news-media\",\"en\":\"Dad listens to the news on the radio while he makes breakfast.\",\"zh\":\"爸爸做早饭时会听收音机里的新闻。\",\"note\":\"这里指广播新闻；listen 后接收听内容时要用 to。\"}],\"patterns\":[{\"en\":\"The news is on at ...\",\"zh\":\"新闻在……播出。\",\"note\":\"is on 在此表示节目播出；例如 at seven 表示七点。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"watch the news / listen to the news\",\"zh\":\"看新闻节目／听新闻节目\",\"note\":\"看电视新闻用 watch；听广播新闻用 listen to。\",\"kind\":\"common-collocation\"},{\"en\":\"on the news\",\"zh\":\"在新闻节目中\",\"note\":\"指某事出现在电视或广播新闻中。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"news programme\",\"zh\":\"新闻节目\",\"note\":\"可数表达，可说 a news programme；美式拼写为 news program。\"},{\"en\":\"news bulletin\",\"zh\":\"新闻简报\",\"note\":\"通常指较短的一次新闻播报，不能替换所有表示新闻信息的 news。\"}],\"contrasting\":[],\"similarNote\":\"这两个表达可指具体的一档或一次新闻节目，都是可数表达；news 本身不可数。\",\"contrastingNote\":\"这一义没有固定反义词；不同节目类型可按语境作对照。\"},\"sourceIds\":[\"wiktionary-news\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"news-attributive\",\"title\":\"作定语：新闻的；与新闻报道有关的\",\"meaning\":\"放在另一个名词前，说明它与新闻或新闻报道有关。\",\"usageNote\":\"news 在这里仍是名词，放在另一个名词前作修饰语。要数“一篇／两篇新闻报道”，说 a news report / two news reports，复数变化落在 report 上。\",\"examples\":[{\"id\":\"news-attributive-ex-1\",\"senseId\":\"news-attributive\",\"en\":\"Our teacher asked us to write a news report about the football match.\",\"zh\":\"老师让我们写一篇关于那场足球比赛的新闻报道。\",\"note\":\"news 修饰 report；a 修饰整个可数名词组合 a news report。\"},{\"id\":\"news-attributive-ex-2\",\"senseId\":\"news-attributive\",\"en\":\"My sister works for a news agency in Shanghai.\",\"zh\":\"我姐姐在上海的一家通讯社工作。\",\"note\":\"news agency 表示“通讯社”，news 修饰中心名词 agency。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"news report\",\"zh\":\"新闻报道\",\"note\":\"report 是可数的中心名词；复数为 news reports。\",\"kind\":\"common-collocation\"},{\"en\":\"news agency\",\"zh\":\"通讯社\",\"note\":\"指采集并向媒体等提供新闻的机构。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"journalistic\",\"zh\":\"新闻工作的；新闻业的\",\"note\":\"强调新闻工作的性质，如 journalistic skills（新闻工作技能）；不能机械替换 news agency 等组合中的 news。\"}],\"contrasting\":[],\"similarNote\":\"近义表达要结合整个组合判断；journalistic 更强调新闻工作的性质。\",\"contrastingNote\":\"这一修饰功能没有固定反义表达，不必强造反义词。\"},\"sourceIds\":[\"wiktionary-news\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这个画面只是记忆联想；news 的词尾 s 不是方向词首字母，也不是这里故事所说的报纸标记。\"",
+        "valueJson": "\"这个画面只是记忆联想，不是词源解释；news 并非 north、east、west、south 四个方向词的首字母缩写。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 911,
+    "headword": "news",
+    "meaning_zh": "n. 新闻, 消息, 报导",
+    "phonetic": "/nju:z/",
+    "pos": "",
+    "forms": []
+  }
+}

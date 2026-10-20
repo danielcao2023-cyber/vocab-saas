@@ -1,0 +1,302 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "34bdbeb666b140ae31bd57d4219f8535d6fcfac6d8ff8edef1a7f59c2f19f7ab",
+    "executedReviewPromptHash": "34bdbeb666b140ae31bd57d4219f8535d6fcfac6d8ff8edef1a7f59c2f19f7ab",
+    "reviewHash": "cf95d5b92b756acfd9555086d3230e1f63d99548687bd26ab2370068e36270e5",
+    "wordId": 615,
+    "inputHash": "d821da3ec2ec4da72533f473162ddeac7dce6bb05df1f6de76c80b0e25e7c5cf",
+    "draftHash": "da437765585327b3539879768e967c1e1868ce7de710ba812c4616647956110c",
+    "finalHash": "ebb206a85d40085e527e1e76dc62853472b156da5bb0da457d0529ef35769d37",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hamburger#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:15.292Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117209,
+        "revisionId": 39006237,
+        "revisionTimestamp": "2025-11-01T17:23:27Z",
+        "sha256": "ff369c1746ca8902bb3d2f9ba6947a5727a9c26abcf73e914692ea1f1dd73f77",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hamburger",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:01:18.894Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:11:41.014Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处/sourceIds",
+        "message": "初稿多处引用未取得内容的 Cambridge，Oxford 也不在实际来源材料中。应改引已取得的法语维基词典英语词条，明确其描述语言是法语、词条语言是英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源材料，不能继续以现代联想占位。应补充 Hamburger steak 省略为 hamburger 的历史关系，并区分词语使用记录与食物发明时间。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏美式英语中通常不可数的“绞牛肉”用法，未呈现 a hamburger 与 some hamburger 的重要区别。此项可依据专业语言知识补充，但不能冒引未单列该义的现有来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0及/senses/1/meaning",
+        "message": "宜明确 hamburger 通常涉及牛肉，并补充 burger 可涵盖鸡肉、素食等材料的语境边界。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0",
+        "message": "cook 泛指烹制，不能在该独立搭配中直接译成“煎”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1/en",
+        "message": "表示把肉饼放进锅里烹制，用 in the pan 更自然。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0",
+        "message": "burger 的组合形式不能笼统概括为通常连写；应区分 cheeseburger 与 chicken burger 等实际拼写。例句也宜直接展示 burger 的独立用法。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对。现有来源明确列出的汉堡包义、肉饼义均已有两个自然原创例句；另依据专业语言知识补入美式不可数的绞牛肉义及两个例句，并同步补充数量表达。读音、复数、近义范围、反义处理和词源已核对；具体食物名不强造反义词。现有来源未单列绞牛肉义，因此该新增义不挂该来源。未改身份字段或 editorial，无未解决的实质问题。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：汉堡包，通常夹有牛肉饼",
+        "coveredBy": [
+          "hamburger-sandwich"
+        ],
+        "assessment": "来源明确列出；原稿两例覆盖充分，补充通常使用牛肉及 burger 的适用范围。"
+      },
+      {
+        "sense": "可数名词：汉堡肉饼，可不夹在面包中",
+        "coveredBy": [
+          "hamburger-patty"
+        ],
+        "assessment": "来源明确列出；原稿两例覆盖充分，修正 cook 的翻译并调整锅具介词搭配。"
+      },
+      {
+        "sense": "美式英语通常不可数名词：绞牛肉",
+        "coveredBy": [
+          "hamburger-ground-beef"
+        ],
+        "assessment": "原稿遗漏；依据专业语言知识补充两例、重量表达及 ground beef/minced beef 的地域区别，不冒用现有来源背书。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"hamburger：汉堡包，也可指汉堡肉饼\"",
+        "valueJson": "\"hamburger：汉堡包、汉堡肉饼，也可指绞牛肉\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的意思是夹着肉饼等食材的圆面包；在谈烹饪或点餐时，也可能指其中的肉饼。\"",
+        "valueJson": "\"通常指夹有牛肉饼的汉堡包，也可指肉饼本身；在美式英语中，还可作不可数名词指绞牛肉。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对照 a hamburger（一个汉堡包或一块肉饼）和 some hamburger（一些绞牛肉，美式英语）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-hamburger\"]",
+        "valueJson": "[\"wiktionary-en-hamburger\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则名词：末尾加 -s，表示多个汉堡包或肉饼。\"",
+        "valueJson": "\"用于汉堡包或肉饼义时，复数在末尾加 -s；美式英语中表示绞牛肉原料时通常不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"把肉饼和其他食材夹在圆面包中的食物，通常称汉堡包。\"",
+        "valueJson": "\"通常用切开的圆面包夹入牛肉饼制成的食物，可另加蔬菜、酱料等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"burger 是更短、更口语的说法，也常见于 cheeseburger 等复合词。\"",
+        "valueJson": "\"常用短形式，菜单和日常表达中都很常见；所指食材的范围比 hamburger 更宽。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"hamburger 与 burger 在指整份汉堡时常可互换；burger 更简短，也常用于菜单名称。\"",
+        "valueJson": "\"两词在指牛肉汉堡时常可互换；burger 的范围更宽，如 chicken burger（鸡肉汉堡）、veggie burger（素汉堡）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hamburger\"]",
+        "valueJson": "[\"wiktionary-en-hamburger\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用绞碎的肉做成、可煎烤或夹入面包的圆肉饼。\"",
+        "valueJson": "\"通常用绞牛肉做成、可煎烤或夹入面包的圆肉饼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/en",
+        "expectedValueJson": "\"Put the hamburger on the hot pan and cook it for five minutes.\"",
+        "valueJson": "\"Put the hamburger in the hot pan and cook it for five minutes.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"烤／煎汉堡肉饼\"",
+        "valueJson": "\"烤／烹制汉堡肉饼\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"在烹饪语境中，这里的 hamburger 通常指肉饼。\"",
+        "valueJson": "\"grill 指烤，cook 泛指烹制；在这类烹饪语境中，hamburger 通常指肉饼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hamburger\"]",
+        "valueJson": "[\"wiktionary-en-hamburger\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hamburger-ground-beef\",\"title\":\"绞牛肉（美式英语，通常不可数）\",\"meaning\":\"绞碎的牛肉这种食材，不限于已经做成的肉饼。\",\"usageNote\":\"美式英语中，hamburger 还可指绞牛肉原料，通常不可数。可说 some hamburger、a pound of hamburger；a hamburger 则通常指一个汉堡包或一块肉饼。\",\"examples\":[{\"id\":\"hamburger-ground-beef-ex1\",\"senseId\":\"hamburger-ground-beef\",\"en\":\"I bought a pound of hamburger to make meatballs.\",\"zh\":\"我买了一磅绞牛肉，准备做肉丸。\",\"note\":\"用 a pound of 按重量计量；这里不是买了一个汉堡包。\"},{\"id\":\"hamburger-ground-beef-ex2\",\"senseId\":\"hamburger-ground-beef\",\"en\":\"We need some hamburger for tonight's pasta sauce.\",\"zh\":\"今晚做意面酱要用一些绞牛肉。\",\"note\":\"some hamburger 表示一些绞牛肉，hamburger 不加复数词尾。\"}],\"patterns\":[{\"en\":\"some hamburger\",\"zh\":\"一些绞牛肉\",\"note\":\"这个美式用法通常不可数；区别于 a hamburger 所表示的一份汉堡包或一块肉饼。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a pound of hamburger\",\"zh\":\"一磅绞牛肉\",\"note\":\"用重量单位表达这种肉类原料的数量。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"ground beef\",\"zh\":\"绞牛肉（美式英语）\",\"note\":\"在指这种肉类原料时与 hamburger 意思相近；ground beef 不表示夹面包的整份汉堡。\"},{\"en\":\"minced beef\",\"zh\":\"绞牛肉（英式英语）\",\"note\":\"英式英语通常用 minced beef 表示这种原料。\"}],\"contrasting\":[],\"similarNote\":\"这些表达在指绞牛肉原料时相近，不能用来替换表示整份汉堡包的 hamburger。\",\"contrastingNote\":\"这种肉类原料没有固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hamburger\"]",
+        "valueJson": "[\"wiktionary-en-hamburger\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中，hamburger 可与汉堡包联系起来理解；拼写里的 ham 容易让人想到火腿，但这不是它在食物名称中的意思。\",\"stages\":[],\"caveat\":\"这只是帮助记忆的现代联想，不是历史词源说明。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"英语 hamburger 是 Hamburger steak（汉堡式牛排）的省略形式，名称与德国城市 Hamburg（汉堡）有关，并非由 ham（火腿）构成。hamburger 在 1880 年已有使用记录；后来的截短形式 burger 在 1939 年已有使用记录。\",\"stages\":[{\"language\":\"英语\",\"form\":\"Hamburger steak\",\"meaning\":\"汉堡式牛排\"},{\"language\":\"英语\",\"form\":\"hamburger\",\"meaning\":\"汉堡肉饼；也可指夹有肉饼的汉堡包\"}],\"caveat\":\"这里的年代指词语已有使用记录的时间，不等于汉堡包这种食物的发明时间。\",\"sourceIds\":[\"wiktionary-en-hamburger\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"作复合词时通常连写，如 cheeseburger。\"",
+        "valueJson": "\"burger 拼作 b-u-r-g-e-r；cheese + burger 写成 cheeseburger，但 chicken burger、veggie burger 通常分写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"hamburger-family-ex1\",\"senseId\":\"hamburger-sandwich\",\"en\":\"We shared a cheeseburger after school.\",\"zh\":\"放学后我们一起吃了一个芝士汉堡。\",\"note\":\"cheeseburger 是含奶酪的汉堡。\"}",
+        "valueJson": "{\"id\":\"hamburger-family-ex1\",\"senseId\":\"hamburger-sandwich\",\"en\":\"I ordered a burger with extra onions.\",\"zh\":\"我点了一个多加洋葱的汉堡包。\",\"note\":\"burger 可独立作名词；这里指整份汉堡包。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hamburger\"]",
+        "valueJson": "[\"wiktionary-en-hamburger\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-hamburger\",\"title\":\"Cambridge Dictionary：hamburger\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hamburger\",\"supports\":[\"常用词义和名词用法\",\"英式与美式音标\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-hamburger\",\"title\":\"Wiktionnaire：hamburger（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/hamburger#Anglais\",\"supports\":[\"英语 hamburger 的汉堡包义与肉饼义\",\"英式与美式读音及规则名词形式\",\"由 Hamburger steak 省略而来的词源及 burger 等形式的历史记录\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford-hamburger\",\"title\":\"Oxford Learner’s Dictionaries：hamburger\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/hamburger\",\"supports\":[\"汉堡包的常见用法与搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 615,
+    "headword": "hamburger",
+    "meaning_zh": "n. 汉堡包",
+    "phonetic": "/'hæmbә:gә/",
+    "pos": "",
+    "forms": []
+  }
+}

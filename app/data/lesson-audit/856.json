@@ -1,0 +1,249 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "085f03fde60c888c85a68322f21326c3aefa7f8f8918047c80d24f6992137482",
+    "executedReviewPromptHash": "085f03fde60c888c85a68322f21326c3aefa7f8f8918047c80d24f6992137482",
+    "reviewHash": "8d6415a60c99806c28a35c2fb44a878e65cefe4443533523b76dad6b93b404a0",
+    "wordId": 856,
+    "inputHash": "8b9e90a064734594b118fc9660801ebdf9282d0a93d4536537fa3ff187ab3430",
+    "draftHash": "1008b80a70ebff82c5b46a5d79fbac6aaa6f5937cb2e29ea6a783c0c03cd1cfe",
+    "finalHash": "eaf29e4a1397c3320c5d14bcdf79c73a898f701995b7346c98e82e033237b9b5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/metre#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:19.146Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2082,
+        "revisionId": 39800306,
+        "revisionTimestamp": "2026-08-13T10:30:32Z",
+        "sha256": "f14a4b93fa20aa474aca7c2315e89bd0d8b0e2065218c5deed380774adad2181",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/metre",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:09:08.584Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:17:50.327Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及各处 sourceIds",
+        "message": "Oxford 未出现在实际取得的材料中，Cambridge 抓取失败，不能把两者作为已获得的释义、读音和词族依据。相关引用改用已取得的英语词条；metrical 的正确拼写说明保留，但撤去无材料支持的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/lessCommonSenses",
+        "message": "遗漏了来源明确列出的罕见英式动词 metre（meter“测量”的拼写变体）。应作为低频补充收入，不必提升为核心义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1",
+        "message": "metre／meter 的英美对应关系应限定于长度单位义和格律义；表示计量表时，英美均写 meter，需补明这一常见区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "“旧音标”说明容易使学生误以为 /i:/ 与 /iː/ 表示不同元音；两种拼写读音相同也应限定在同一种口音内。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "学生正文含“给定的历史材料”等制作说明，应直接陈述可证实的两条借入路径。两条路径不能串成顺序阶段，原有空 stages 应保留。"
+      }
+    ],
+    "coverageAssessment": "已核对法语站所载英语词条的全部定义：长度单位、诗歌格律及罕见英式动词变体。两个核心名词义各有两个自然英中例句；“格律／韵律”在这里属于同一义，无须拆分。单位换算、格律与押韵的区别及 metrical 的实际拼写均可保留。补充低频动词，并清理未取得的来源引用；音乐等未列入给定定义的专业扩展不据此增设核心义。",
+    "senseInventory": [
+      {
+        "sense": "n. 米；公尺，国际单位制的长度基本单位",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "覆盖充分；两个例句分别呈现物品长度和游泳距离，相关单位说明正确。"
+      },
+      {
+        "sense": "n. 诗歌格律；韵律",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "覆盖充分；两个例句呈现诗行节奏和格律分析，且正确区分 rhyme 与 free verse。"
+      },
+      {
+        "sense": "v. 罕见英式用法：meter（测量）的拼写变体",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses 并提供一个例句，仅作识别性补充。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb (rare, UK)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一个音节，元音读长 /iː/；不要按旧音标读成短促的 /ɪ/。\"",
+        "valueJson": "\"重音在第一个音节，首音节读长元音 /iː/，全词有两个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"metre 与 meter 在英美拼写中对应同一个词，读音没有实质区别。\"",
+        "valueJson": "\"在“米”和“诗歌格律”两义中，metre 与 meter 是地区拼写变体；在同一种口音中，两种拼法的读音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\",\"cambridge_metre\"]",
+        "valueJson": "[\"wiktionary_metre\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\",\"cambridge_metre\"]",
+        "valueJson": "[\"wiktionary_metre\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\"]",
+        "valueJson": "[\"wiktionary_metre\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"（罕见英式动词）测量\",\"meaning\":\"动词 meter（测量）的罕见英式拼写变体。\",\"note\":\"仅作识别性补充；日常表示“测量”通常用 measure。\",\"example\":{\"id\":\"lc1-ex1\",\"senseId\":\"lc1\",\"en\":\"The cloth was metred before it was cut.\",\"zh\":\"这块布在裁剪前先量过尺寸。\",\"note\":\"metred 是 metre 的过去分词；这一动词拼写很少见。\"},\"sourceIds\":[\"wiktionary_metre\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\"]",
+        "valueJson": "[\"wiktionary_metre\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"metre 是英式拼法，meter 是美式拼法。两者指同一词，写作时按所用的英语拼写习惯保持一致。\"",
+        "valueJson": "\"在“米”和“诗歌格律”两义中，英式写 metre，美式写 meter，写作时按所采用的拼写体系保持一致。表示“计量表”时，英美都写 meter，如 electricity meter（电表）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"metre/metres 对应英式拼写，meter/meters 对应美式拼写；选定一种后前后一致。\"",
+        "valueJson": "\"在“米”和“诗歌格律”两义中：英式 metre/metres，美式 meter/meters；表示计量表时，英美都写 meter/meters。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\",\"cambridge_metre\"]",
+        "valueJson": "[\"wiktionary_metre\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"给定的历史材料分别记载：长度单位义经法语 mètre 与希腊语 μέτρον（métron，“测量”）相关；诗歌格律义经拉丁语 metrum 与同一个希腊词相关。这是两条分别对应不同词义的传入路径，不能拼成一条连续的英语演变链。\"",
+        "valueJson": "\"长度单位义借自法语 mètre，诗歌格律义借自拉丁语 metrum；两条借入路径共同上溯至希腊语 μέτρον（métron，“尺度、度量”）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_metre\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_metre\",\"title\":\"Oxford Learner’s Dictionaries: metre\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/metre\",\"supports\":[\"metre 的名词用法、长度单位义与诗歌格律义\",\"英式 metre 与美式 meter 的拼写差异\",\"metrical 词族形式\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_metre\",\"title\":\"Cambridge Dictionary: metre\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/metre\",\"supports\":[\"metre 的英式拼写及美式 meter 对应形式\",\"长度单位义与基本读音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_metre\",\"title\":\"Wiktionary: metre（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/metre#Anglais\",\"supports\":[\"长度单位义经法语 mètre、上溯希腊语 μέτρον 的词源关系\",\"诗歌格律义经拉丁语 metrum、上溯希腊语 μέτρον 的词源关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_metre\",\"title\":\"Wiktionnaire：metre（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/metre#Anglais\",\"supports\":[\"英语名词 metre 的长度单位义与诗歌格律义\",\"metre 的英美读音及美式拼写变体 meter\",\"罕见英式动词 metre，作为 meter（测量）的拼写变体\",\"长度单位义经法语 mètre、上溯希腊语 μέτρον 的词源关系\",\"诗歌格律义经拉丁语 metrum、上溯希腊语 μέτρον 的词源关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 856,
+    "headword": "metre (AmE meter)",
+    "meaning_zh": "n. 公尺, 格律, 韵律",
+    "phonetic": "/'mi:tә/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "meter",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

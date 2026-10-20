@@ -1,0 +1,628 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e5933cbb705236b4d00b3afd8ead115716874f1b47f054496942dfb092efcdf3",
+    "executedReviewPromptHash": "e5933cbb705236b4d00b3afd8ead115716874f1b47f054496942dfb092efcdf3",
+    "reviewHash": "4913957d85cea00bd21c717628e14b02dcf2a65287a3c1a498783677f8c864e4",
+    "wordId": 1285,
+    "inputHash": "c2a6fdd821e646a335bd8a7b8f1cc8a5668c4427211c4930afb9c97ebb9d37dc",
+    "draftHash": "038b62c9efefed6a5bcf9bd60f3a1d7eac488c0d3852e8f81e74656bcfd3e6c2",
+    "finalHash": "ab9ca4b23812226d0a70b2381fabb5f88d517c07d5a79f9f18df49f156dedd0d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/soft#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.325Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118325,
+        "revisionId": 39920540,
+        "revisionTimestamp": "2026-10-05T20:14:09Z",
+        "sha256": "34594293cdf05bc3c2803e9fb9433d06adfd9007de97858a55d11ac3e6efe136",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/soft",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:12:57.615Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:30:00.787Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各sourceIds",
+        "message": "初稿把未取回的 Oxford 页面和访问失败的 Cambridge 页面列为具体内容的支持来源。应删除这些支持关系，仅保留实际取回的英语词条；专业语言知识补充的内容不冒称来自未取得的页面。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "原始日耳曼语形式误写为 samaz，材料实际为 somaz。各阶段的 meaning 只是字形占位说明，应将可证实的历史关系保留在 summary，清空占位阶段，并正确标出重构形式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "soft 不等于表面光滑。容易变形的柔软与触感柔和需要分清，并分别补足两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "soft-hearted 强调同情心或心软，不能直接当作 soft 描述待人温柔的等价用法；它也不是 soft 的普通词语搭配。声音与光线两方面的例证需补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "have a soft time 和 soft workout 不适合作为这一义的常用教学搭配。应以 soft option、soft job 为中心，限制 soft 对 easy 的替换范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4、/forms/4、/takeaway",
+        "message": "把餐饮语境可能出现的缩略表达推广为常用英式可数名词 a soft，依据不足，不宜设置为基础核心义。应删除这组主动产出教学，保留完整表达 soft drink。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses",
+        "message": "缺少常用的 soft water 和 be soft on someone；soft 作副词的受限用法、名词指软质物品的用法，以及词典列出的语音术语义也未交代。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0至/lessCommonSenses/3",
+        "message": "心软、不够严厉与缺乏韧性应分清。缓坡、愚笨及笨人等用法的现代通用程度被夸大，需要限定语域或时代，并改用更明确的愚笨义表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/4",
+        "message": "soft currency 中 soft 是形容词；软通货不等于纸币，不能用它证明 soft 的纸币名词义。应分别说明旧式纸币用法与软通货表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions",
+        "message": "hard drink 不是这里最清楚的烈酒教学表达，且不宜断言它总是特指烈酒。改为 hard liquor，并说明烈酒只是含酒精饮料的一部分。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "要求词尾 t 一律清楚释放过于绝对；自然语流中可以不完全爆破。教学重点应是保留 /ft/ 组合且不插入元音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/title、/wordFamily/0/spellingNote",
+        "message": "混淆辨析标题重复了 softly；soften 的拼写说明正确，但宜同时提示 t 通常不发音。"
+      }
+    ],
+    "coverageAssessment": "已核对原词条全部释义及实际取回的英语词条。修订补足软水、对人不够严厉、受限副词及语音用法；柔软与触感柔和、声音与光线均有足量例句。容易义限于自然搭配，罕见名词、缓坡及货币旧义仅作阅读识别。未取得的网页不再充当支持来源；罕见用法的限制已明确，不作为现代日常自由造句的通用规则。",
+    "senseInventory": [
+      {
+        "sense": "形容词：软的，容易受压或改变形状",
+        "coveredBy": [
+          "soft-adj-physical"
+        ],
+        "assessment": "保留，并补为两个明确表达软硬性质的例句。"
+      },
+      {
+        "sense": "形容词：触感柔和、细腻舒服的",
+        "coveredBy": [
+          "soft-adj-physical"
+        ],
+        "assessment": "与表面光滑区别，皮肤与围巾两个例句覆盖此义。"
+      },
+      {
+        "sense": "形容词：声音轻柔的",
+        "coveredBy": [
+          "soft-adj-gentle"
+        ],
+        "assessment": "声音与音乐两个例句覆盖；近反义继续限定音量或音质。"
+      },
+      {
+        "sense": "形容词：光线等柔和、不强烈的",
+        "coveredBy": [
+          "soft-adj-gentle"
+        ],
+        "assessment": "光线与照明两个例句覆盖。"
+      },
+      {
+        "sense": "形容词：心软、过于宽容或不够严厉的",
+        "coveredBy": [
+          "soft-adj-lenient"
+        ],
+        "assessment": "新增核心义，教授 soft on someone 和 too soft to do。"
+      },
+      {
+        "sense": "形容词：软弱、不够强健或缺乏韧性的",
+        "coveredBy": [
+          "soft-adj-weak"
+        ],
+        "assessment": "与宽容义分开，保留为带评价色彩的次要用法。"
+      },
+      {
+        "sense": "形容词：容易、轻松的",
+        "coveredBy": [
+          "soft-adj-easy"
+        ],
+        "assessment": "保留，改用 soft option、soft job，说明不能任意替换 easy。"
+      },
+      {
+        "sense": "形容词：饮料不含酒精的",
+        "coveredBy": [
+          "soft-adj-drink"
+        ],
+        "assessment": "保留在 soft drink 中教学，说明通常指汽水等清凉饮料，并非所有无酒精饮品的通称。"
+      },
+      {
+        "sense": "形容词：水的硬度低",
+        "coveredBy": [
+          "soft-adj-water"
+        ],
+        "assessment": "新增核心义，说明主要涉及钙、镁含量，并与 hard water 对照。"
+      },
+      {
+        "sense": "形容词：语音术语中的 soft",
+        "coveredBy": [
+          "soft-adj-phonetic"
+        ],
+        "assessment": "新增阅读识别项；区分传统浊辅音术语与英语拼读的 soft c、soft g，不把 soft 一概等同于 voiced。"
+      },
+      {
+        "sense": "形容词：坡度小、平缓的",
+        "coveredBy": [
+          "soft-adj-slope"
+        ],
+        "assessment": "保留但标为少见描写用法，日常优先使用 gentle slope。"
+      },
+      {
+        "sense": "形容词：笨、糊涂的",
+        "coveredBy": [
+          "soft-adj-stupid"
+        ],
+        "assessment": "以英式非正式表达 soft in the head 明确呈现，标明贬义。"
+      },
+      {
+        "sense": "形容词：纸币的，旧式 soft money 用法",
+        "coveredBy": [
+          "soft-noun-money"
+        ],
+        "assessment": "在货币旧义的说明中交代，并明确其词性及与 soft currency 的区别；不列作基础产出义。"
+      },
+      {
+        "sense": "名词：柔软的东西",
+        "coveredBy": [
+          "soft-noun-things"
+        ],
+        "assessment": "补充特定分类语境中的复数 softs，不推广为任意软物均可称 a soft。"
+      },
+      {
+        "sense": "名词：笨人或容易受骗的人",
+        "coveredBy": [
+          "soft-noun-person"
+        ],
+        "assessment": "保留为旧式或方言阅读识别义，不再描述成通用非正式名词。"
+      },
+      {
+        "sense": "名词：纸币",
+        "coveredBy": [
+          "soft-noun-money"
+        ],
+        "assessment": "按旧式名词义呈现，不再用形容词搭配 soft currency 充当例证。"
+      },
+      {
+        "sense": "副词：轻柔地、轻声地",
+        "coveredBy": [
+          "soft-adv"
+        ],
+        "assessment": "补充受文体或表达限制的用法；一般写作仍优先用 softly，不限定为英式英语。"
+      },
+      {
+        "sense": "原稿新增的名词义：软饮料",
+        "coveredBy": [],
+        "assessment": "删除其核心义地位及单数 a soft 的基础教学；餐饮分类中偶见的缩略不足以支撑原稿的普遍化说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective; noun; adverb in informal British English\"",
+        "valueJson": "\"mainly adjective; adverb in limited expressions; noun in rare or specialized uses\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"先看它在说什么：物体可以软或柔滑，声音和动作可以轻柔；soft drink 指不含酒精的饮料。作名词时，soft 在英式非正式用法中还可指软饮料。\"",
+        "valueJson": "\"物体可以柔软，声音和光线可以轻柔；be soft on someone 可指对某人不够严厉。soft water 是软水，soft drink 通常指汽水等不含酒精的清凉饮料。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"补记 soft water（软水）和 be soft on someone（对某人不够严厉），分别与 hard water、be strict with someone 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"词尾 ft 连读，结尾的 t 要清楚；soft 是单音节词。\"",
+        "valueJson": "\"soft 是单音节词，词尾是辅音组合 /ft/；两个辅音之间不要插入元音，/t/ 在自然语流中可以不完全爆破。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/forms/4",
+        "expectedValueJson": "{\"label\":\"名词（非正式，英式）\",\"form\":\"soft\",\"ipa\":\"UK /sɒft/\",\"note\":\"在非正式英式用法中可指软饮料；形式不变，常见复数为 softs。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"柔软的；柔滑的\"",
+        "valueJson": "\"软的；触感柔和的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"物体容易按压、弯曲，或摸起来平滑舒服。\"",
+        "valueJson": "\"物体不硬，容易受压、弯曲或改变形状；也可指皮肤、布料等摸起来细腻舒服，不等于表面光滑。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-physical-ex3\",\"senseId\":\"soft-adj-physical\",\"en\":\"The butter is soft enough to spread now.\",\"zh\":\"黄油现在已经软得可以涂抹了。\",\"note\":\"描述黄油容易改变形状，与枕头的软硬性质相呼应。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-physical-ex4\",\"senseId\":\"soft-adj-physical\",\"en\":\"This scarf feels soft against my neck.\",\"zh\":\"这条围巾贴着我的脖子，感觉很柔软舒服。\",\"note\":\"强调接触皮肤时的舒适触感，不是表面是否光滑。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"声音、光线、动作或人的方式不强烈、不刺耳，显得轻柔或温和。\"",
+        "valueJson": "\"声音轻而不刺耳，或光线、颜色柔和、不强烈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可修饰 voice、light、music 等；说一个人待人温柔时，也可用 soft-hearted。\"",
+        "valueJson": "\"常修饰 voice、music、light 和 lighting。soft voice 描述声音轻柔，不能单凭这个搭配判断说话者的性格；soft-hearted 则强调有同情心、容易心软。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"soft-hearted\",\"zh\":\"心软的；温柔的\",\"note\":\"形容对别人有同情心、容易心软的人。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"soft lighting\",\"zh\":\"柔和的照明\",\"note\":\"描述灯光不强烈、不刺眼。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-gentle-ex3\",\"senseId\":\"soft-adj-gentle\",\"en\":\"Soft music played while we ate dinner.\",\"zh\":\"我们吃晚饭时，轻柔的音乐在播放。\",\"note\":\"与 soft voice 一样，描述声音轻柔、不响亮。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-gentle-ex4\",\"senseId\":\"soft-adj-gentle\",\"en\":\"We chose soft lighting for the baby's room.\",\"zh\":\"我们为宝宝的房间选择了柔和的照明。\",\"note\":\"与 soft light 一样，强调光线柔和、不刺眼。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见表达是 have a soft time，意为过得轻松；这个义项多见于非正式语境。\"",
+        "valueJson": "\"主要见于 soft option、soft job 等搭配，尤见于英式非正式英语；有时暗含选择了省力的办法。这一义不能任意替换 easy，例如“容易的问题”通常说 an easy question。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples",
+        "expectedValueJson": "[{\"id\":\"soft-easy-ex1\",\"senseId\":\"soft-adj-easy\",\"en\":\"The team had a soft time in the first round.\",\"zh\":\"这支队伍在第一轮过得很轻松。\",\"note\":\"soft time 表示一段轻松、少有困难的经历。\"},{\"id\":\"soft-easy-ex2\",\"senseId\":\"soft-adj-easy\",\"en\":\"The coach gave us a soft workout today.\",\"zh\":\"教练今天给我们安排的训练不太累。\",\"note\":\"这里 soft 表示强度低、较轻松。\"}]",
+        "valueJson": "[{\"id\":\"soft-easy-ex1\",\"senseId\":\"soft-adj-easy\",\"en\":\"Working from home isn't always the soft option.\",\"zh\":\"居家办公并不总是轻松的选择。\",\"note\":\"the soft option 指较省力、要求较低的选择，有时带批评意味。\"},{\"id\":\"soft-easy-ex2\",\"senseId\":\"soft-adj-easy\",\"en\":\"She was looking for a soft job with short hours.\",\"zh\":\"她想找一份工时短、又轻松的工作。\",\"note\":\"soft job 指不太费力的工作，带非正式色彩。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns",
+        "expectedValueJson": "[{\"en\":\"have a soft time\",\"zh\":\"过得轻松\",\"note\":\"表示某段经历不太费力，常见于非正式表达。\",\"kind\":\"fixed-expression\"},{\"en\":\"a soft workout\",\"zh\":\"轻松的训练\",\"note\":\"soft 描述训练的强度较低、不太累。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"take the soft option\",\"zh\":\"选择较省力的办法\",\"note\":\"常暗含避开较困难、要求较高的选择。\",\"kind\":\"fixed-expression\"},{\"en\":\"a soft job\",\"zh\":\"一份轻松的工作\",\"note\":\"用来评价工作不太费力，不能据此把所有表示难度低的 easy 都换成 soft。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"常形容任务、训练或经历强度大，可与 soft 的轻松义对照。\"",
+        "valueJson": "\"常形容工作或经历艰难；a tough job 可与 a soft job 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"difficult 对照任务难度；tough 对照经历或训练的艰苦程度。\"",
+        "valueJson": "\"difficult 对照任务难度；tough 在工作或经历的语境中对照艰苦程度。soft 的轻松义仍受具体搭配限制。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"在 soft drink 中，soft 表示不含酒精；soft drink 指软饮料，如汽水。\"",
+        "valueJson": "\"在 soft drink 中，soft 表示不含酒精。soft drink 通常指汽水等不含酒精的清凉饮料，并非所有无酒精饮品的通称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"hard drink\",\"zh\":\"烈酒\",\"note\":\"可与 soft drink 对照饮料类别；hard drink 通常指酒精含量较高的饮品。\"}",
+        "valueJson": "{\"en\":\"hard liquor\",\"zh\":\"烈酒（尤美式）\",\"note\":\"通常指威士忌、伏特加等蒸馏酒，是含酒精饮料的一部分；不涵盖所有酒类。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"饮料类别语境中，alcoholic drink 与 soft drink 相对；hard drink 特指烈酒。\"",
+        "valueJson": "\"alcoholic drink 可按是否含酒精与 soft drink 对照；hard liquor 只指其中的烈酒，范围更窄。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/4",
+        "expectedValueJson": "{\"id\":\"soft-noun\",\"title\":\"软饮料（非正式，英式）\",\"meaning\":\"在非正式英式用法中，soft 可作名词，指 soft drink，即不含酒精的饮料。\",\"usageNote\":\"多用于口语或菜单简写；日常表达中说 soft drink 更清楚。\",\"examples\":[{\"id\":\"soft-noun-ex1\",\"senseId\":\"soft-noun\",\"en\":\"We ordered two softs and a lemonade.\",\"zh\":\"我们点了两杯软饮料和一杯柠檬水。\",\"note\":\"softs 是名词复数，指软饮料。\"},{\"id\":\"soft-noun-ex2\",\"senseId\":\"soft-noun\",\"en\":\"Would you like a soft with your meal?\",\"zh\":\"你吃饭时要来一杯软饮料吗？\",\"note\":\"这里 soft 是非正式名词用法。\"}],\"patterns\":[{\"en\":\"a soft\",\"zh\":\"一杯软饮料\",\"note\":\"非正式英式口语中可省略 drink，用 a soft 指一杯软饮料。\",\"kind\":\"common-collocation\"},{\"en\":\"softs\",\"zh\":\"软饮料（复数）\",\"note\":\"名词 soft 的复数形式，常见于口语或餐饮语境。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"order a soft\",\"zh\":\"点一杯软饮料\",\"note\":\"在餐馆等场景中表示点不含酒精的饮料。\",\"kind\":\"common-collocation\"},{\"en\":\"a soft with a meal\",\"zh\":\"随餐的一杯软饮料\",\"note\":\"with a meal 表示吃饭时配饮料。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"soft drink\",\"zh\":\"软饮料\",\"note\":\"完整、清楚的说法；适合各种日常语境。\"},{\"en\":\"soda\",\"zh\":\"汽水\",\"note\":\"常指汽水，范围通常比 soft drink 窄。\"}],\"contrasting\":[{\"en\":\"alcoholic drink\",\"zh\":\"含酒精的饮料\",\"note\":\"按饮料类型对照时，与 soft 所指的软饮料不同。\"},{\"en\":\"hard drink\",\"zh\":\"烈酒\",\"note\":\"餐饮语境中可与软饮料类别对照。\"}],\"similarNote\":\"soft 作名词是 soft drink 的非正式简略说法，地域和语体限制较明显。\",\"contrastingNote\":\"此处只按饮料是否含酒精及类别作对照。\"},\"sourceIds\":[\"oxford_soft\",\"cambridge_soft\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-adj-lenient\",\"title\":\"心软的；过于宽容的\",\"meaning\":\"对别人容易心软，要求或处罚不够严格；是否带批评意味要看上下文。\",\"usageNote\":\"常用 be soft on someone 表示对某人宽容或不够严厉；too soft to do 表示心太软而做不出某事。\",\"examples\":[{\"id\":\"soft-lenient-ex1\",\"senseId\":\"soft-adj-lenient\",\"en\":\"You're too soft on the children; they need clear rules.\",\"zh\":\"你对孩子们太宽松了；他们需要明确的规矩。\",\"note\":\"too soft on 表示说话者认为管教不够严格。\"},{\"id\":\"soft-lenient-ex2\",\"senseId\":\"soft-adj-lenient\",\"en\":\"She was too soft to refuse his request.\",\"zh\":\"她心太软，不忍心拒绝他的请求。\",\"note\":\"too soft to refuse 表示因心软而没有拒绝。\"}],\"patterns\":[{\"en\":\"be soft on someone\",\"zh\":\"对某人宽容；对某人不够严厉\",\"note\":\"这里用于规则、管教或处罚语境；评价可能是正面的，也可能带批评。\",\"kind\":\"sentence-pattern\"},{\"en\":\"too soft to do something\",\"zh\":\"心太软而做不出某事\",\"note\":\"常与 refuse、say no 等动作连用。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"soft on crime\",\"zh\":\"对犯罪打击不力\",\"note\":\"常见于批评性评价，意思是惩罚或执法不够严厉。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"lenient\",\"zh\":\"宽容的；从宽处理的\",\"note\":\"更直接用于规则、处罚或管教，尤其能与 soft on 的宽松义对应。\"},{\"en\":\"soft-hearted\",\"zh\":\"心软的；富有同情心的\",\"note\":\"强调同情心，不一定表示执行规则不严格。\"}],\"contrasting\":[{\"en\":\"strict\",\"zh\":\"严格的\",\"note\":\"在规则或管教语境中与 soft 对照，常用 strict with someone。\"},{\"en\":\"hard on someone\",\"zh\":\"对某人严厉\",\"note\":\"可与 soft on someone 对照，有时还暗含过分苛刻。\"}],\"similarNote\":\"lenient 侧重处理宽松，soft-hearted 侧重同情心；二者不能在所有场合互换。\",\"contrastingNote\":\"strict 和 hard on someone 对照的是要求或处置是否严厉，不表示人的身体软硬。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-adj-water\",\"title\":\"（水）硬度低的；软的\",\"meaning\":\"水中使水变硬的钙、镁离子含量低。\",\"usageNote\":\"soft water 是软水；这里说的是水的硬度，不是水摸起来柔软，也不是说水里完全没有矿物质。\",\"examples\":[{\"id\":\"soft-water-ex1\",\"senseId\":\"soft-adj-water\",\"en\":\"We moved to an area with soft water.\",\"zh\":\"我们搬到了一个水质偏软的地区。\",\"note\":\"soft water 描述当地水的硬度低。\"},{\"id\":\"soft-water-ex2\",\"senseId\":\"soft-adj-water\",\"en\":\"Soap lathers easily in soft water.\",\"zh\":\"肥皂在软水中容易起泡。\",\"note\":\"用生活中的洗涤现象帮助理解软水。\"}],\"patterns\":[{\"en\":\"have soft water\",\"zh\":\"当地或家中用的是软水\",\"note\":\"如 We have soft water here，描述供水的水质。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"soft water\",\"zh\":\"软水\",\"note\":\"固定的水质分类表达，与 hard water 对照。\",\"kind\":\"fixed-expression\"},{\"en\":\"naturally soft water\",\"zh\":\"天然软水\",\"note\":\"表示水本身硬度较低，而非经软化处理后才降低硬度。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"water low in calcium and magnesium\",\"zh\":\"钙、镁含量低的水\",\"note\":\"是解释软水的释义短语，不是另一种固定名称。\"}],\"contrasting\":[{\"en\":\"hard water\",\"zh\":\"硬水\",\"note\":\"钙、镁离子含量较高的水，是这一水质义的直接对照。\"}],\"similarNote\":\"软水主要涉及钙、镁含量，不等于完全不含矿物质的水。\",\"contrastingNote\":\"这里 soft 与 hard 对照的是水的硬度。\"},\"sourceIds\":[\"wiktionary_soft_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"soft-adj-weak\",\"title\":\"柔弱的；软弱的\",\"meaning\":\"形容人或态度不够强硬、坚定，或不够坚强。\",\"note\":\"用于评价人或态度时可能带批评意味；要结合上下文判断语气。\",\"example\":{\"id\":\"soft-weak-ex1\",\"senseId\":\"soft-adj-weak\",\"en\":\"He was too soft to say no.\",\"zh\":\"他心太软，不好意思拒绝。\",\"note\":\"这里指不够强硬、容易心软。\"},\"sourceIds\":[\"oxford_soft\",\"cambridge_soft\"]}",
+        "valueJson": "{\"id\":\"soft-adj-weak\",\"title\":\"不够强健的；缺乏韧性的\",\"meaning\":\"形容人因缺乏锻炼或习惯安逸而不够强健、吃不了苦。\",\"note\":\"常带批评意味；与因同情心而不够严厉的用法有所区别，也不能替换所有语境中的 weak。\",\"example\":{\"id\":\"soft-weak-ex1\",\"senseId\":\"soft-adj-weak\",\"en\":\"Years of comfortable living had made him soft.\",\"zh\":\"多年的安逸生活让他变得吃不了苦。\",\"note\":\"这里强调缺乏吃苦的韧性，不是待人宽容。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/title",
+        "expectedValueJson": "\"坡度缓的\"",
+        "valueJson": "\"坡度缓的（较少见）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"常见于道路、坡地等具体地形语境。\"",
+        "valueJson": "\"属于较少见的描写性用法；现代日常描述缓坡通常说 a gentle slope 或 a gradual slope。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/2",
+        "expectedValueJson": "{\"id\":\"soft-adj-stupid\",\"title\":\"愚笨的（非正式，冒犯性）\",\"meaning\":\"用于批评人时，可表示笨、缺乏判断力。\",\"note\":\"这类用法不礼貌，容易冒犯他人，初学时只需认读。\",\"example\":{\"id\":\"soft-stupid-ex1\",\"senseId\":\"soft-adj-stupid\",\"en\":\"That was a soft thing to do.\",\"zh\":\"那样做真是愚蠢。\",\"note\":\"这里批评的是行为；直接用来称呼别人会更冒犯。\"},\"sourceIds\":[\"oxford_soft\"]}",
+        "valueJson": "{\"id\":\"soft-adj-stupid\",\"title\":\"糊涂的；愚笨的（英式非正式，贬义）\",\"meaning\":\"在某些英式非正式表达中，表示人愚笨或缺乏判断力。\",\"note\":\"尤其见于 soft in the head，带贬义，初学时只需认读。\",\"example\":{\"id\":\"soft-stupid-ex1\",\"senseId\":\"soft-adj-stupid\",\"en\":\"You'd have to be soft in the head to pay that much.\",\"zh\":\"只有脑子糊涂了才会花那么多钱。\",\"note\":\"soft in the head 是带侮辱性的非正式说法，不是描述身体柔软。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/3/title",
+        "expectedValueJson": "\"笨人；容易受骗的人（非正式）\"",
+        "valueJson": "\"笨人；容易受骗的人（旧式或方言名词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/3/meaning",
+        "expectedValueJson": "\"非正式且可能冒犯的说法，指被看作愚笨或容易受骗的人。\"",
+        "valueJson": "\"旧式或某些方言中的名词，指被认为愚笨、容易受骗的人；不是现代通用的称人说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/3/note",
+        "expectedValueJson": "\"不要用来称呼他人；只需了解其可能含义。\"",
+        "valueJson": "\"仅作阅读识别，带贬义。现代说某人容易被说服或利用，可用 a soft touch，但那不必意味着此人愚笨。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/3/example/note",
+        "expectedValueJson": "\"此处 soft 是带贬义的名词。\"",
+        "valueJson": "\"a soft 按旧式或方言名词义理解；现代普通表达通常会用 a fool 等更明确的词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/4",
+        "expectedValueJson": "{\"id\":\"soft-noun-money\",\"title\":\"软通货；纸币（特定语境）\",\"meaning\":\"在经济或货币语境中，soft 可描述币值较弱或不稳定的货币；soft currency 指软通货。\",\"note\":\"纸币并非 soft 的一般名词义；通常需要 currency 等搭配说明。\",\"example\":{\"id\":\"soft-money-ex1\",\"senseId\":\"soft-noun-money\",\"en\":\"The report discusses the risks of a soft currency.\",\"zh\":\"这份报告讨论了软通货的风险。\",\"note\":\"soft currency 是经济语境中的固定搭配。\"},\"sourceIds\":[\"oxford_soft\"]}",
+        "valueJson": "{\"id\":\"soft-noun-money\",\"title\":\"纸币（旧式或少见名词用法）\",\"meaning\":\"旧式或少见用法中，soft 可作名词指纸币，与金属货币相对；现代通常说 paper money 或 banknotes。\",\"note\":\"旧式搭配 soft money 也可指纸币，其中 soft 是形容词。soft currency 则通常谈币值或兑换性，不能当作“纸币”的同义词。\",\"example\":{\"id\":\"soft-money-ex1\",\"senseId\":\"soft-noun-money\",\"en\":\"The trader asked to be paid in soft rather than in coins.\",\"zh\":\"那个商人要求用纸币付款，而不用硬币。\",\"note\":\"这里按旧式名词义理解 soft；现代通常会直接说 paper money 或 banknotes。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-noun-things\",\"title\":\"软质的一类东西（特定分类语境）\",\"meaning\":\"名词复数 softs 可在特定分类语境中指软质的一类东西，具体是什么须由上下文确定。\",\"note\":\"例如把糖果按软硬分类时可如此省略；不能据此把任意一个软物都称为 a soft。日常直接说明物品名称更清楚。\",\"example\":{\"id\":\"soft-things-ex1\",\"senseId\":\"soft-noun-things\",\"en\":\"The sweets were sorted into hards and softs.\",\"zh\":\"糖果被分成了硬糖和软糖两类。\",\"note\":\"softs 在这个分类语境中指软糖；通常直接说 soft sweets 或 soft candies 更清楚。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-adj-phonetic\",\"title\":\"语音或拼读术语中的 soft\",\"meaning\":\"英语拼读中，soft c 通常指字母 c 发 /s/，soft g 通常指字母 g 发 /dʒ/；某些传统语音术语也用 soft 描述浊辅音，须看具体体系。\",\"note\":\"不能把 soft 一概解释为“浊的”：soft c 的 /s/ 是清辅音。英语拼读中的 hard c、hard g 通常分别指 /k/、/ɡ/。\",\"example\":{\"id\":\"soft-phonetic-ex1\",\"senseId\":\"soft-adj-phonetic\",\"en\":\"The c in city is soft, and the g in giant is soft.\",\"zh\":\"city 中的 c 发 /s/，giant 中的 g 发 /dʒ/，都称为相应字母的 soft 读音。\",\"note\":\"这里是在给字母读音分类，不是描述音量轻柔。\"},\"sourceIds\":[\"wiktionary_soft_etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"soft-adv\",\"title\":\"轻轻地；轻声地（受文体限制的副词）\",\"meaning\":\"soft 也可作副词表示轻柔地、轻声地，见于文艺表达或部分口语说法。\",\"note\":\"不是一般动作描写都能使用的通用替代词；基础写作通常用 softly。这种副词用法不限于英式英语。\",\"example\":{\"id\":\"soft-adv-ex1\",\"senseId\":\"soft-adv\",\"en\":\"Speak soft, or you'll wake the baby.\",\"zh\":\"说话轻点，不然你会吵醒宝宝。\",\"note\":\"这里 soft 修饰 speak，带口语色彩；通常写作 Speak softly。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"soft、softly 和 softly?\"",
+        "valueJson": "\"soft 与 softly：形容性质还是修饰动作\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"soft 的历史形式可沿一条日耳曼语系演变链追溯：中古英语 softe 承接古英语 sōfte，古英语形式与原始日耳曼语重构形式 samftijaz 有关；该重构形式又由 samaz 派生。更早的词根也被联系到原始印欧语重构形式 sem-。\"",
+        "valueJson": "\"soft 来自中古英语 softe，后者承接古英语 sōfte；更早可追溯到原始日耳曼语重构形式 *samftijaz（由 *somaz 派生），并与原始印欧语重构词根 *sem- 相联系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始印欧语（重构）\",\"form\":\"sem-\",\"meaning\":\"重构词根；具体原始含义此处不作扩展。\"},{\"language\":\"原始日耳曼语（重构）\",\"form\":\"samaz\",\"meaning\":\"与后续日耳曼语词形相关的重构形式。\"},{\"language\":\"原始日耳曼语（重构）\",\"form\":\"samftijaz\",\"meaning\":\"由 samaz 派生的重构形式。\"},{\"language\":\"古英语\",\"form\":\"sōfte\",\"meaning\":\"soft 的古英语历史形式。\"},{\"language\":\"中古英语\",\"form\":\"softe\",\"meaning\":\"soft 的中古英语历史形式。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"带星号含义的形式属于重构形式；这些历史词形不能当作现代英语的可拆构词。\"",
+        "valueJson": "\"星号 * 标记重构形式；这些历史词形不是现代英语中可以自由拼接的词根或词缀。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接在 soft 后加 -en；词尾 t 保留。\"",
+        "valueJson": "\"直接在 soft 后加 -en，拼写保留 t；但 soften 中的 t 通常不发音，英式读 /ˈsɒfən/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_soft\",\"cambridge_soft\"]",
+        "valueJson": "[\"wiktionary_soft_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_soft\",\"title\":\"Oxford Learner’s Dictionaries: soft\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/soft\",\"supports\":[\"形容词的常见含义与搭配\",\"副词 softly、比较级 softer、最高级 softest\",\"soften、softness 等派生词\",\"soft 作名词的词典义项\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_soft\",\"title\":\"Cambridge Dictionary: soft\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/soft\",\"supports\":[\"柔软、温和等形容词义项及常见搭配\",\"soft drink 的含义与例示语境\",\"softly 和相关词形\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_soft_etymology\",\"title\":\"Wiktionnaire: soft（英语词条，词源部分）\",\"url\":\"https://fr.wiktionary.org/wiki/soft#Anglais\",\"supports\":[\"soft 的中古英语、古英语及原始日耳曼语词源链\",\"词条列出的原始印欧语词根联系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_soft_etymology\",\"title\":\"Wiktionnaire: soft（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/soft#Anglais\",\"supports\":[\"soft 的英美读音与规则比较级、最高级的标记\",\"柔软、触感柔和、温和及软水等形容词义\",\"语音术语中的 soft 用法\",\"soft drink、soften、softly、softness 等衍生词或表达的列示\",\"中古英语 softe、古英语 sōfte 及重构形式 *samftijaz、*somaz、*sem- 的词源关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1285,
+    "headword": "soft",
+    "meaning_zh": "adj. 软的, 温和的, 柔和的, 柔滑的, 温柔的, 软弱的, 坡度小的, 笨的, 纸币的\nn. 柔软的东西, 笨人, 纸币\nadv. 柔软地, 温和地",
+    "phonetic": "/sɒft/",
+    "pos": "",
+    "forms": []
+  }
+}

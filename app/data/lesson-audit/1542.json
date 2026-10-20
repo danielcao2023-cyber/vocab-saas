@@ -1,0 +1,393 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e9921fc558db7bc8e2c5b8e47f17ac2b3b9592d7d3cd434ca202b4a15f846784",
+    "executedReviewPromptHash": "e9921fc558db7bc8e2c5b8e47f17ac2b3b9592d7d3cd434ca202b4a15f846784",
+    "reviewHash": "03ea69813682e3a87fbb733d5cf97d4d322ab33912f531c52150fd548e6c941d",
+    "wordId": 1542,
+    "inputHash": "51a2b9fba2bcd2047493edcf18bcc2b328686e507f017a69f7096e00ad0844a8",
+    "draftHash": "fb03504b3c9e893df00f7b27b42728ecb5422c255d7c643d42f8f092e86b22ce",
+    "finalHash": "7f0c77897c0d515e44da4df69cede8cafe0bb7d41e1105d08e59f41be7e3f05b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/where#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.455Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 23143,
+        "revisionId": 39764557,
+        "revisionTimestamp": "2026-08-03T04:52:20Z",
+        "sha256": "aaf977e2bc6de5a61d1285f7a0326ac1068ca36148077dc00612897dd6e2e0f3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/where",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:17:37.635Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:29:09.922Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 页面未取得内容，不能支撑初稿所标注的释义、发音和名词用法。应改用实际取得的 Wiktionnaire 英语词条；该词条的法语是解释语言，不是 where 的语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的间接疑问结构和没有先行地点名词的地点从句；关系副词部分也未覆盖情境、阶段等常用抽象用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“询问主语本身的位置时，where 后直接接动词”混淆句法关系。where 不是这里的主语，Where is my notebook? 仍是 be 动词在主语前的疑问结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "标题包含“到哪里”，但两个例句都只展示事情发生或物品所在的地点，需要补充目的地用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions",
+        "message": "what place 不能普遍直接替换 where；关系副词 where 也不总对应 in which，介词应按实际关系选择。somewhere else 与关系副词 where 没有成立的反向关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "settle the where 不是适合初学者掌握的常用搭配。名词 where 虽有词典依据，但主要应通过 the when and where 等带修辞色彩的表达教授，不能把它概括为较口语化的 location。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“也不因复数而改变”将副词的不变词形错误推广到名词用法；名词化的 where 在特殊语境中可以出现复数 wheres。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "不应笼统要求不要读 /hw/；实际来源明确列有这种地区性读音。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "somewhere、anywhere、nowhere 是复合词，不能因其不是狭义派生词就排除构词联系；原稿将 some、any、no 简单称为前缀也不准确。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的词典中疑问副词、关系副词和名词三个主要类别。修订保留这些类别，补足目的地例句、间接疑问、独立地点从句和抽象情境用法，并修正句法、近反向表达、构词及来源标注。古英语 hwǣr 与日耳曼语来源有材料支持，现有词源阶段无需重写。新增句法说明依据通行英语语法知识；不可用的 Cambridge 页面未作为证据。",
+    "senseInventory": [
+      {
+        "sense": "疑问副词：询问所在地点或目的地",
+        "coveredBy": [
+          "where-1"
+        ],
+        "assessment": "基本覆盖；补充目的地例句，并纠正疑问句语序说明。"
+      },
+      {
+        "sense": "疑问副词：嵌入主句的间接疑问，包括 where to do",
+        "coveredBy": [
+          "where-4"
+        ],
+        "assessment": "原稿遗漏；新增两个完整从句例句、陈述语序说明和不定式结构。"
+      },
+      {
+        "sense": "关系副词：修饰地点名词",
+        "coveredBy": [
+          "where-2"
+        ],
+        "assessment": "原有两个生活例句自然；需限定 where 与介词加 which 的替换关系，并说明其状语功能。"
+      },
+      {
+        "sense": "关系副词的常用延伸：修饰情境、阶段等抽象名词",
+        "coveredBy": [
+          "where-2"
+        ],
+        "assessment": "原稿遗漏；补充两个自然例句，与具体地点用法放在同义项讲解。"
+      },
+      {
+        "sense": "地点从句：没有先行地点名词，表示动作发生或物品放置的地方",
+        "coveredBy": [
+          "where-5"
+        ],
+        "assessment": "原稿遗漏；新增两个例句，并与修饰地点名词的关系从句区分。"
+      },
+      {
+        "sense": "名词：某事发生的地点",
+        "coveredBy": [
+          "where-3"
+        ],
+        "assessment": "词典有明确依据；保留两个例句的数量，将不宜当作常用搭配教授的例句改为更自然的固定组合，并明确使用频率和语气。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在单音节词本身；开头通常读 /w/，不要按旧式拼写线索读成 /hw/。\"",
+        "valueJson": "\"where 是单音节词，通常以 /w/ 开头；部分口音保留 /hw/ 起始音，这也是存在的地区性读法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-where\"]",
+        "valueJson": "[\"wiktionary-where-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"where 在这些用法中词形不变；它不是动词，没有时态变化，也不因复数而改变。\"",
+        "valueJson": "\"where 用作疑问副词或关系副词时词形不变，没有动词的时态变化。本课的名词表达通常使用 the where；特殊语境中的名词复数 wheres 很少见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常放在句首构成特殊疑问句。be 动词或助动词通常放在主语前；询问主语本身的位置时，where 后直接接动词。\"",
+        "valueJson": "\"直接提问时，where 常放在句首：有 be 动词时，把 be 放在主语前；一般现在时或一般过去时的普通实义动词通常需要 do、does 或 did。有情态动词时，把情态动词放在主语前，如 Where should we meet?。where 询问地点，不充当这些句子的主语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"where-1-ex3\",\"senseId\":\"where-1\",\"en\":\"Where should I put these bags?\",\"zh\":\"我该把这些袋子放到哪里？\",\"note\":\"询问放置的目标地点；should 放在主语 I 前面。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"what place\",\"zh\":\"什么地方\",\"note\":\"意思接近，但通常说 What place...?；日常问地点优先用 where。\"}",
+        "valueJson": "{\"en\":\"at what location\",\"zh\":\"在什么地点\",\"note\":\"询问所在位置或事情发生的地点时意思接近，语气较正式；不能直接替换所有表示目的地的 where。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"where 是常见的疑问副词；what place 是较完整、较少用的替代表达。\"",
+        "valueJson": "\"日常问地点通常用 where。使用 what place 或 what location 时，要按句子选择介词，如 in、at 或 to，不能只把 where 换成 what place。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-where\"]",
+        "valueJson": "[\"wiktionary-where-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"关系副词：……的地方\"",
+        "valueJson": "\"关系副词：连接地点或情境的说明\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"连接一个地点和对它作补充说明的从句，相当于中文的“……的地方”或“在那里”。\"",
+        "valueJson": "\"引导从句修饰前面的地点名词，也可修饰表示情境、阶段等的名词，说明在那里或在那种情况下发生什么。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"where 引导的从句说明前面的地点；它本身在从句中表示地点，通常不再另加表示同一地点的 there。\"",
+        "valueJson": "\"where 在这类从句中作地点或情境状语，不作主语或宾语；通常不再另加表示同一地点的 there。它也常接在 situation、point 等抽象名词后。若从句需要关系词充当主语或宾语，应按结构选择 which 或 that。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"where-2-ex3\",\"senseId\":\"where-2\",\"en\":\"We reached a point where we had to ask for help.\",\"zh\":\"我们到了不得不寻求帮助的地步。\",\"note\":\"point 表示某个阶段；where 引出的不是实际地理位置。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"where-2-ex4\",\"senseId\":\"where-2\",\"en\":\"I don't want a job where I have to work every weekend.\",\"zh\":\"我不想找一份每个周末都得上班的工作。\",\"note\":\"where 从句说明这份工作中的具体情况。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"in which\",\"zh\":\"在其中；在那个地方\",\"note\":\"在指地点的从句中可替换 where，语气较正式；介词 in 不能漏掉。\"}",
+        "valueJson": "{\"en\":\"in/at/to which\",\"zh\":\"在其中／在那里／到那里\",\"note\":\"修饰地点名词时，where 常可换成合适的介词加 which；介词取决于从句的意思，如 the room in which we met、the café at which we met、the town to which we moved。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"where 和 in which 都能连接地点从句；where 更自然简洁，in which 较正式。\"",
+        "valueJson": "\"介词加 which 通常更正式；选择 in、at 还是 to，要看实际地点关系。抽象情境中的 where 也不能一律机械替换成 in which。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"somewhere else\",\"zh\":\"别的地方\",\"note\":\"谈论地点时，where 引出具体地点信息，somewhere else 表示另一处地点。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"somewhere else 是地点表达，用于明确表示“另一个地方”，只在地点语境下形成对照。\"",
+        "valueJson": "\"关系副词 where 没有固定反义词。somewhere else 表示“别的地方”，并不是与这种连接功能相反的词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-where\"]",
+        "valueJson": "[\"wiktionary-where-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"名词用法不如疑问词常见，通常出现在 the where 这样的表达中，常与 the when 并列。\"",
+        "valueJson": "\"名词用法较少见，常与 when 并列，用来概括事件的时间和地点，往往带有修辞或俏皮的语气。普通叙述通常用 the time and place。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"where-3-ex2\",\"senseId\":\"where-3\",\"en\":\"The map helped us settle the where of the picnic.\",\"zh\":\"地图帮我们确定了野餐地点。\",\"note\":\"这里把 where 当作名词，指待确定的位置。\"}",
+        "valueJson": "{\"id\":\"where-3-ex2\",\"senseId\":\"where-3\",\"en\":\"Let's agree on the when and where of the party before we invite anyone.\",\"zh\":\"发出邀请前，咱们先把聚会的时间和地点定下来。\",\"note\":\"the when and where 把时间和地点作为两项信息来概括；普通说法是 the time and place。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"settle the where\",\"zh\":\"确定地点\",\"note\":\"较少见的名词用法，表示把某事的地点定下来。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"the when and where of an event\",\"zh\":\"某件事的时间和地点\",\"note\":\"这是较少见、带修辞色彩的概括表达；日常更常说 the time and place of an event。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"更常见的名词，适合正式或一般叙述；the where 较口语化且少见。\"",
+        "valueJson": "\"location 是常用的地点名词，适合一般或正式叙述；名词 where 较少见，常用于刻意概括事件信息的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-where\"]",
+        "valueJson": "[\"wiktionary-where-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"where-4\",\"title\":\"间接疑问：把“在哪里”放进句子\",\"meaning\":\"在 know、ask、tell 等后引出尚待知道或说明的地点信息。\",\"usageNote\":\"where 后的完整从句用陈述语序：where + 主语 + 谓语，不作直接疑问句式的倒装。即使主句是疑问句，也说 Do you know where she lives?。\",\"examples\":[{\"id\":\"where-4-ex1\",\"senseId\":\"where-4\",\"en\":\"I don't know where my brother left the keys.\",\"zh\":\"我不知道我哥哥把钥匙放在哪儿了。\",\"note\":\"where 从句是 know 的宾语；从句中主语 my brother 在动词 left 前。\"},{\"id\":\"where-4-ex2\",\"senseId\":\"where-4\",\"en\":\"Please tell me where I should get off the bus.\",\"zh\":\"请告诉我该在哪里下公交车。\",\"note\":\"从句说 where I should get off，不说 where should I get off。\"}],\"patterns\":[{\"en\":\"主句 + where + 主语 + 谓语\",\"zh\":\"知道、询问或说明……在哪里\",\"note\":\"如 Can you tell me where the station is?；从句中的 is 放在主语 the station 后。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"where to + 动词原形\",\"zh\":\"在哪里／到哪里做某事\",\"note\":\"常接在 know、decide 等后，如 I don't know where to sit，意思接近 I don't know where I should sit。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"at what location\",\"zh\":\"在什么地点\",\"note\":\"在询问所在或发生地点的间接疑问中意思接近，但更正式；表达目的地时需按意思选择其他介词。\"}],\"contrasting\":[],\"similarNote\":\"日常通常用 where；改用 what location 等名词表达时，句子结构和介词也要相应调整。\",\"contrastingNote\":\"这是引出地点问题的语法功能，没有固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"where-5\",\"title\":\"地点从句：在……的地方\",\"meaning\":\"直接引出地点从句，说明动作在哪里发生，或物品应放到什么地方。\",\"usageNote\":\"where 前没有要修饰的地点名词；整个从句说明地点。这里不是提问，从句用陈述语序。可与 the park where we met 对照：后者的 where 从句修饰前面的 park。\",\"examples\":[{\"id\":\"where-5-ex1\",\"senseId\":\"where-5\",\"en\":\"Leave the keys where I can find them.\",\"zh\":\"把钥匙放在我能找到的地方。\",\"note\":\"where I can find them 直接说明钥匙应放在哪里，前面没有 place 等地点名词。\"},{\"id\":\"where-5-ex2\",\"senseId\":\"where-5\",\"en\":\"We sat where we could see the whole stage.\",\"zh\":\"我们坐在能看清整个舞台的地方。\",\"note\":\"where 从句说明我们坐的位置，不是在询问地点。\"}],\"patterns\":[{\"en\":\"动词（+ 宾语）+ where + 主语 + 谓语\",\"zh\":\"在……的地方做某事／把某物放在……的地方\",\"note\":\"如 Put the milk where the children can reach it。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"stay where you are\",\"zh\":\"待在原地\",\"note\":\"where you are 表示你现在所在的地方。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in/at the place where ...\",\"zh\":\"在……的地方\",\"note\":\"在合适的地点语境中可展开表达，如 We sat in a place where we could see the stage；介词和冠词须按具体意思选择。\"}],\"contrasting\":[],\"similarNote\":\"这种 where 从句本身提供地点信息；展开成地点名词短语时，要补上适合主句的介词等成分。\",\"contrastingNote\":\"这种地点连接功能没有固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-where\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"somewhere\",\"partOfSpeech\":\"副词\",\"meaning\":\"在某处；到某处\",\"formation\":\"some 与 where 合成，表示某个未指明的地方。\",\"spellingNote\":\"some + where → somewhere，两个成分的字母都保留，合写成一个词。\",\"example\":{\"id\":\"family-somewhere-ex\",\"senseId\":\"where-1\",\"en\":\"Where did I leave my glasses? They must be somewhere in the kitchen.\",\"zh\":\"我把眼镜放在哪儿了？它们一定在厨房的某个地方。\",\"note\":\"where 提问地点；somewhere 表示尚未确定的某处。\"},\"sourceIds\":[\"wiktionary-where-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"anywhere\",\"partOfSpeech\":\"副词\",\"meaning\":\"在任何地方；到任何地方；用于疑问或否定时也可表示某处\",\"formation\":\"any 与 where 合成，表示不限定的地点。\",\"spellingNote\":\"any + where → anywhere，any 中的 y 保留，不改成 i。\",\"example\":{\"id\":\"family-anywhere-ex\",\"senseId\":\"where-1\",\"en\":\"Where can we sit? We can sit anywhere in this room.\",\"zh\":\"我们可以坐在哪里？这间屋子里随便哪里都可以坐。\",\"note\":\"肯定句中的 anywhere 在这里表示地点不限。\"},\"sourceIds\":[\"wiktionary-where-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"nowhere\",\"partOfSpeech\":\"副词\",\"meaning\":\"无处；没有任何地方\",\"formation\":\"no 与 where 合成，具有否定意义。\",\"spellingNote\":\"no + where → nowhere，合写为一个词，不是 now here。\",\"example\":{\"id\":\"family-nowhere-ex\",\"senseId\":\"where-1\",\"en\":\"Where can I put this bag? There's nowhere to put it.\",\"zh\":\"我能把这个包放在哪里？没有地方放了。\",\"note\":\"nowhere 自带否定意义；这个句子不再加 not。\"},\"sourceIds\":[\"wiktionary-where-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"where 常与 somewhere、anywhere、nowhere 一起学习，但它们是带有不同前缀的复合副词，不作为 where 的派生词族列在这里。\"",
+        "valueJson": "\"somewhere、anywhere、nowhere 分别由 some、any、no 与 where 合成，可以作为相关构词一起学习。其中 anywhere 可表示地点不限，nowhere 表示没有任何地点；在这个意义上，二者可以形成对照。这些是现代构词关系，与 where 的古英语词源分开理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"古英语形式 hwǣr 及其日耳曼语来源\"]",
+        "valueJson": "[\"疑问副词与关系副词的基本用法\",\"名词 where 表示事件发生的地点\",\"英美发音及地区性的 /hw/ 起始音\",\"列出的相关词 somewhere、anywhere、nowhere\",\"古英语形式 hwǣr 及其日耳曼语来源\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-where\",\"title\":\"Cambridge Dictionary: where\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/where\",\"supports\":[\"常用疑问副词与关系副词用法\",\"英式与美式发音参考\",\"名词用法及相关句型\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1542,
+    "headword": "where",
+    "meaning_zh": "adv. 在哪里\npron. 哪里\nn. 地点",
+    "phonetic": "/hwєә/",
+    "pos": "",
+    "forms": []
+  }
+}

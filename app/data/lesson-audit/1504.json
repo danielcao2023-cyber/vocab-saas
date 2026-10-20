@@ -1,0 +1,438 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "667b312a0e9ba7ec8de4abd28fea7fe5b121b40014985b9daca725c18a3d09ce",
+    "executedReviewPromptHash": "667b312a0e9ba7ec8de4abd28fea7fe5b121b40014985b9daca725c18a3d09ce",
+    "reviewHash": "3bc6d8eb4809b05fc80d328e075cf0654ca614ccf55d53ad8470a30477d24d1d",
+    "wordId": 1504,
+    "inputHash": "dafb08cdbf3b797b3c5142e415755a7460e3a03d498b25ca85584e7e8c1d13e1",
+    "draftHash": "11dffa9a4d42baae9c350e497ad1923581b3d61fb307e870c2377ec4178778c4",
+    "finalHash": "21d48706dd8ac1f4812799508f16071e386cb0863a86b0883edc45baee087a86",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/vote#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.127Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116687,
+        "revisionId": 39774127,
+        "revisionTimestamp": "2026-08-03T14:05:26Z",
+        "sha256": "32b1f923c39a54621d9aec79e0eb0e514609bce0db27bb14bb932c89c400c656",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/vote",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:51:26.983Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:13:34.822Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Cambridge 页面未成功取得，不能将其作为已取得内容的依据。应移除该来源及相关引用，改用实际取得的英语词条支持其明确涵盖的内容；其余专业语言说明不虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“vote 本身作名词时不表示选举权”错误：the vote 可以表示选举权。原名词义还合并了表决与一票／得票数，但每项功能的例句不足，应拆清并补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "缺少 vote to do 的重要句型及例句；投票选出某职务只有说明，没有例句；通过投票评为某称号的常用及物用法未覆盖。“公认”须限定为投票评选结果，不能泛指普遍认为。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "vote 加 -er 时不是保留 e 后直接拼接；应先去掉词尾 e，再加 -er，得到 voter。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "一致决定并不是 vote 的反向表达；投票本身也完全可以产生一致结果。应删除这一对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid及/confusions/1/items/0/example/note",
+        "message": "将 a vote 直接等同于一张纸质选票不够准确。vote 主要指投下的一票或表达的选择；纸质选票宜用 ballot 或 ballot paper。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "英美读音中的元音都是双元音，用“长音”解释不够准确。宜直接说明双元音及 /v/、/t/ 的发音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可补充正式语境中“表决拨款”与口语中“I vote...”表示提议的用法，并明确它们的语境限制。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的投票／表决、一票及得票数、选举权，以及动词的参加投票、表决行动、选出和评为等主要功能。补丁为各核心义补足至少两个原创英中例句，并补充两项次常用功能。得票数按同一可数名词的复数用法处理，不机械另拆义。词源所述拉丁语 votum、英语名词及派生动词的先后关系与取得的词源材料一致，无须改写。“使投票”不宜直接教成现代常用的 vote + 人结构，未据此增设独立核心义。来源覆盖仍有限：选举权等专业语言补充不冒充已取得网页的定义。",
+    "senseInventory": [
+      {
+        "sense": "名词：一次投票、表决；在选举中进行的投票",
+        "coveredBy": [
+          "vote-noun"
+        ],
+        "assessment": "保留原义，限定为程序或事件，并补足两个表决例句；选举活动与 election 的区别继续保留。"
+      },
+      {
+        "sense": "名词：投下的一票；复数表示所得票数",
+        "coveredBy": [
+          "vote-count"
+        ],
+        "assessment": "从原合并义中分出，以单票和得票数各一例覆盖同一可数意义的单复数用法。"
+      },
+      {
+        "sense": "名词：选举权、投票权，常用 the vote",
+        "coveredBy": [
+          "vote-right"
+        ],
+        "assessment": "纠正原稿的明确否认，新增两个例句。"
+      },
+      {
+        "sense": "不及物动词：参加投票，投票支持或反对，就议题表决",
+        "coveredBy": [
+          "vote-verb"
+        ],
+        "assessment": "原有 for、against、on 的区别正确；保留原例句及辨析。"
+      },
+      {
+        "sense": "动词：投票赞成采取某行动；集体表决决定做某事",
+        "coveredBy": [
+          "vote-verb"
+        ],
+        "assessment": "补充 vote to do 和 vote not to do，并说明表决决定不等于行动已经完成。"
+      },
+      {
+        "sense": "及物动词：投票选出某人担任职务",
+        "coveredBy": [
+          "vote-elect"
+        ],
+        "assessment": "原句型本身正确；迁入独立义并补足两个例句。"
+      },
+      {
+        "sense": "及物动词：经投票评为、选为某称号或类别",
+        "coveredBy": [
+          "vote-rated"
+        ],
+        "assessment": "新增两个例句，限定“评为”与投票评选的关系，避免误教成一般的“公认”。"
+      },
+      {
+        "sense": "及物动词：表决批准拨款",
+        "coveredBy": [
+          "vote-funds"
+        ],
+        "assessment": "作为正式、次常用义补充，不与参加投票混为一谈。"
+      },
+      {
+        "sense": "口语动词：提出个人主张，如 I vote we...",
+        "coveredBy": [
+          "vote-proposal"
+        ],
+        "assessment": "作为日常口语补充，说明不必涉及正式投票。"
+      },
+      {
+        "sense": "原中文释义中的“使投票”",
+        "coveredBy": [],
+        "assessment": "不作为现代初中英语的独立常用义；不能据此推出 vote someone 表示让某人去投票。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，vote 可指投票这一行为或投票结果；作动词时，常接 for、against 或 on，说明支持谁、反对什么或表决什么。\"",
+        "valueJson": "\"vote 作名词可指一次表决、投下的一票或得票数，the vote 还可指选举权；作动词可表示投票支持或反对、就某事表决、投票决定做某事，以及投票选出或评出人选。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"比较 have a vote（举行表决）和 vote on something（就某事投票）。\"",
+        "valueJson": "\"比较 have a vote on something（就某事举行表决）、have the vote（有选举权）和 vote to do something（投票赞成采取某行动）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"词尾 e 不发音；元音读长音，结尾 /t/ 清晰。\"",
+        "valueJson": "\"词尾 e 不发音；中间是双元音 /əʊ/（英）或 /oʊ/（美），结尾是 /t/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧写法 /vәut/ 不规范；常用 IPA 写作 /vəʊt/（英）和 /voʊt/（美）。\"",
+        "valueJson": "\"发 /v/ 时，上齿轻触下唇并振动声带；词尾 /t/ 后不要额外加一个元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[\"wiktionary_vote_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"名词：投票、表决；一票或投票结果\"",
+        "valueJson": "\"名词：一次投票、表决\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示投票或表决这件事，也可指某人投下的一票、一次表决的结果；具体含义由上下文决定。\"",
+        "valueJson": "\"指为选人或决定某事而进行的一次投票或表决。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于选举、班级决定或会议表决。表示“有投票权”常说 have the right to vote；vote 本身作名词时不表示“选举权”。\"",
+        "valueJson": "\"表示一次表决时是可数名词，常说 have a vote 或 take a vote；议题可用 on 引出。the vote 还可表示选举权，见“选举权”义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"vote-noun-ex-2\",\"senseId\":\"vote-noun\",\"en\":\"She got the most votes in the school election.\",\"zh\":\"她在学校选举中得票最多。\",\"note\":\"复数 votes 指投给候选人的票数。\"}",
+        "valueJson": "{\"id\":\"vote-noun-ex-2\",\"senseId\":\"vote-noun\",\"en\":\"After a short discussion, we took a vote on whether to cancel the picnic.\",\"zh\":\"简短讨论后，我们就是否取消野餐进行了表决。\",\"note\":\"take a vote 表示举行一次表决；whether 从句说明要决定的问题。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"get / receive votes\",\"zh\":\"获得选票\",\"note\":\"常用于描述候选人获得的票数。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"cast a vote\",\"zh\":\"投下一票\",\"note\":\"较正式地说投票行为，cast 是“投下、投出”。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"a unanimous decision\",\"zh\":\"一致通过的决定\",\"note\":\"用于结果没有反对票或异议的语境；与有分歧的表决结果对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"unanimous decision 描述一致的决定，与存在不同投票选择的表决结果形成语境对照。\"",
+        "valueJson": "\"表示一次表决的 vote 没有通用的直接反义词；表决既可能全体一致，也可能存在分歧。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[\"wiktionary_vote_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"vote for + 人或方案表示投票支持；vote against + 人或方案表示投票反对；vote on + 议题表示就该事项表决。表示“投票选某人担任某职”可用 vote someone + 职务。\"",
+        "valueJson": "\"vote for 表支持，vote against 表反对，vote on 引出表决议题。vote to do 表示投票赞成采取某行动；集体作主语时通常表示表决作出了该决定，不表示行动已经完成。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-verb-ex-3\",\"senseId\":\"vote-verb\",\"en\":\"The committee voted to repair the roof.\",\"zh\":\"委员会投票决定修缮屋顶。\",\"note\":\"vote to do 表示表决决定做某事；这句话没有说屋顶已经修好。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-verb-ex-4\",\"senseId\":\"vote-verb\",\"en\":\"The residents voted not to close the playground.\",\"zh\":\"居民们投票决定不关闭游乐场。\",\"note\":\"vote not to do 表示投票决定不采取某行动；这里是投了票，并非没有参加投票。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2",
+        "expectedValueJson": "{\"en\":\"vote someone class monitor\",\"zh\":\"投票选某人当班长\",\"note\":\"vote 后可直接接人，再接当选职务；常见于选举语境。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"vote to do / vote not to do something\",\"zh\":\"投票赞成做／不做某事\",\"note\":\"集体作主语时常表示表决决定；个人说 I voted to... 时，只说明自己的投票选择，不保证方案获通过。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[\"wiktionary_vote_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-count\",\"title\":\"名词：一票；得票数\",\"meaning\":\"指投票者表达的一次选择；复数 votes 可用来说明某人或某方案获得多少票。\",\"usageNote\":\"一票可以通过纸质选票、举手或电子方式投出，不一定对应一张纸。说具体票数时用数词加 votes。\",\"examples\":[{\"id\":\"vote-count-ex-1\",\"senseId\":\"vote-count\",\"en\":\"Each club member has one vote.\",\"zh\":\"每位俱乐部成员有一票。\",\"note\":\"one vote 表示一次投票选择的份额。\"},{\"id\":\"vote-count-ex-2\",\"senseId\":\"vote-count\",\"en\":\"She got the most votes in the school election.\",\"zh\":\"她在学校选举中得票最多。\",\"note\":\"votes 是可数名词的复数，这里用于比较得票数。\"}],\"patterns\":[{\"en\":\"get / receive votes\",\"zh\":\"获得选票\",\"note\":\"常用于描述候选人或方案获得的票数。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"cast a vote\",\"zh\":\"投下一票\",\"note\":\"较正式地表达投票，不限定使用纸质选票。\",\"kind\":\"common-collocation\"},{\"en\":\"count the votes\",\"zh\":\"计票\",\"note\":\"count 指清点各选项获得的票。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"ballot\",\"zh\":\"选票；投票\",\"note\":\"指选票时强调记录选择的载体；vote 强调投出的选择，二者并非处处互换。\"}],\"contrasting\":[],\"similarNote\":\"a vote 是一票，a ballot 可指一张选票；电子投票同样会产生 votes。\",\"contrastingNote\":\"一票或票数没有通用的直接反义词；赞成票和反对票都属于 votes。\"},\"sourceIds\":[\"wiktionary_vote_etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-right\",\"title\":\"名词：选举权、投票权\",\"meaning\":\"the vote 可表示参加选举投票的权利。\",\"usageNote\":\"此义常带定冠词 the，如 have the vote、give someone the vote；have the right to vote 是更直白的表达。\",\"examples\":[{\"id\":\"vote-right-ex-1\",\"senseId\":\"vote-right\",\"en\":\"The campaign fought to give women the vote.\",\"zh\":\"这场运动为赋予女性选举权而斗争。\",\"note\":\"give women the vote 指赋予选举权，不是给她们各一张选票。\"},{\"id\":\"vote-right-ex-2\",\"senseId\":\"vote-right\",\"en\":\"He believed that every adult should have the vote.\",\"zh\":\"他认为每个成年人都应该享有选举权。\",\"note\":\"have the vote 表示享有选举权。\"}],\"patterns\":[{\"en\":\"have the vote\",\"zh\":\"享有选举权\",\"note\":\"注意 the；与 have a vote on something 表示举行表决不同。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"give someone the vote\",\"zh\":\"赋予某人选举权\",\"note\":\"常用于讨论投票权的取得或扩大。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"the right to vote\",\"zh\":\"投票权、选举权\",\"note\":\"意思明确，适用于一般说明。\"},{\"en\":\"suffrage\",\"zh\":\"选举权\",\"note\":\"较正式，常见于选举权历史和制度讨论。\"}],\"contrasting\":[{\"en\":\"disenfranchisement\",\"zh\":\"剥夺选举权\",\"note\":\"指被剥夺投票权的行为或状态，语体正式。\"}],\"similarNote\":\"the vote 和 the right to vote 都可表示选举权；suffrage 更正式。\",\"contrastingNote\":\"讨论权利得失时，可用 disenfranchisement 对照；它不是一张反对票。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-elect\",\"title\":\"及物动词：投票选某人担任职务\",\"meaning\":\"通过投票选出某人担任某个职位。\",\"usageNote\":\"可用 vote + 人 + 职务，职务作宾语补足语。集体说 voted someone treasurer 表示选出了财务负责人；个人说 voted for someone 只说明自己支持谁。\",\"examples\":[{\"id\":\"vote-elect-ex-1\",\"senseId\":\"vote-elect\",\"en\":\"The class voted Maya class monitor.\",\"zh\":\"全班投票选玛雅当班长。\",\"note\":\"Maya 后直接接职务 class monitor。\"},{\"id\":\"vote-elect-ex-2\",\"senseId\":\"vote-elect\",\"en\":\"The club voted Sam treasurer.\",\"zh\":\"俱乐部投票选萨姆担任财务负责人。\",\"note\":\"treasurer 说明投票选萨姆担任的职务。\"}],\"patterns\":[{\"en\":\"vote someone class monitor / treasurer\",\"zh\":\"投票选某人当班长／财务负责人\",\"note\":\"人后接职务，不要把这个结构理解为让某人去投票。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"vote someone into office\",\"zh\":\"通过投票使某人当选公职\",\"note\":\"into office 强调当选进入公职。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"elect\",\"zh\":\"选举某人担任职务\",\"note\":\"如 elect someone president；强调选举产生任职者。\"}],\"contrasting\":[{\"en\":\"vote someone out of office\",\"zh\":\"通过投票使某人下台\",\"note\":\"适用于现任公职人员因选举失去职位的语境。\"}],\"similarNote\":\"此义与 elect 接近；一般的 choose 不保证经过投票。\",\"contrastingNote\":\"讨论公职得失时，vote into office 与 vote out of office 可形成直接对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-rated\",\"title\":\"及物动词：经投票评为、选为\",\"meaning\":\"通过投票评选，把某人或某物选为某个称号或类别的获得者。\",\"usageNote\":\"常用 vote + 人或物 + 称号，也常用被动式 be voted...。表示投票评选结果，不等于所有人都一致认为。\",\"examples\":[{\"id\":\"vote-rated-ex-1\",\"senseId\":\"vote-rated\",\"en\":\"Readers voted this novel the best book of the year.\",\"zh\":\"读者投票将这部小说评为年度最佳图书。\",\"note\":\"the best book of the year 是评选称号。\"},{\"id\":\"vote-rated-ex-2\",\"senseId\":\"vote-rated\",\"en\":\"Our café was voted the best café in town.\",\"zh\":\"我们的咖啡馆被投票评为镇上最佳咖啡馆。\",\"note\":\"被动式强调获得评选称号，不表示全镇每个人都赞同。\"}],\"patterns\":[{\"en\":\"be voted the best...\",\"zh\":\"经投票被评为最佳……\",\"note\":\"常用于评奖、读者评选或顾客评选。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"vote someone player of the year\",\"zh\":\"投票评选某人为年度最佳球员\",\"note\":\"这里评选的是称号，不是任职职位。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"choose\",\"zh\":\"选为\",\"note\":\"choose 可以表示选出获奖者，但本身不说明采取投票方式。\"}],\"contrasting\":[],\"similarNote\":\"vote 强调投票评选；choose 的选择方式更宽。\",\"contrastingNote\":\"这一用法没有通用的直接反义词；落选可说 not be chosen，不能据此假定所有落选者都受到否定评价。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-funds\",\"title\":\"正式用法：表决批准拨款\",\"meaning\":\"议会、委员会等通过投票批准拨出一笔资金。\",\"note\":\"vote 后可直接接金额；表示批准拨款，不表示钱已经支付。\",\"example\":{\"id\":\"vote-funds-ex-1\",\"senseId\":\"vote-funds\",\"en\":\"The council voted £5,000 for repairs to the village hall.\",\"zh\":\"地方议会表决批准拨款五千英镑修缮村民会堂。\",\"note\":\"金额是 vote 的直接宾语，for 引出资金用途。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"vote-proposal\",\"title\":\"口语用法：我提议、我主张\",\"meaning\":\"用 I vote... 表达自己希望大家采取的行动。\",\"note\":\"常见于轻松讨论，不一定真的举行投票。\",\"example\":{\"id\":\"vote-proposal-ex-1\",\"senseId\":\"vote-proposal\",\"en\":\"I vote we order noodles tonight.\",\"zh\":\"我提议今晚点面条吃。\",\"note\":\"I vote 后直接接从句，这里表达个人提议。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"vote-noun\"",
+        "valueJson": "\"vote-count\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "\"这里指一张选票或一票。\"",
+        "valueJson": "\"这里指每个人投下的一票，不特指纸质选票。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"vote + -er，表示做某事的人；加后缀时保留不发音的 e。\"",
+        "valueJson": "\"vote 去掉词尾不发音的 e，再加 -er，构成表示投票者的名词 voter。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"拼作 voter，不写成 votter。\"",
+        "valueJson": "\"拼作 voter，不写成 voteer 或 votter。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[\"wiktionary_vote_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_vote\"]",
+        "valueJson": "[\"wiktionary_vote_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象班级要决定周末去哪儿：每个人拿一张选票，支持公园的就在公园选项旁画勾。选票是 a vote；把票投给公园是 vote for the park；全班就地点表决是 vote on the place。\"",
+        "valueJson": "\"想象班级要决定周末去哪儿：每个人拿一张纸质选票，在自己支持的地点旁画勾。纸质选票可叫 a ballot，投下的一票是 a vote；投票支持去公园是 vote for the park；全班就去哪儿表决是 vote on where to go。大家最后投票决定去公园，就是 voted to go to the park。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/label",
+        "expectedValueJson": "\"一张票\"",
+        "valueJson": "\"投下的一票\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge_vote\",\"title\":\"Cambridge Dictionary: vote\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/vote\",\"supports\":[\"常用名词和动词义项\",\"英式与美式发音\",\"动词常见搭配与词形\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_vote_etymology\",\"title\":\"Wiktionary: vote（English etymology）\",\"url\":\"https://fr.wiktionary.org/wiki/vote#Anglais\",\"supports\":[\"名词来自拉丁语 votum 的词源线索\",\"动词由名词发展而来\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_vote_etymology\",\"title\":\"Wiktionnaire：vote 英语词条（法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/vote#Anglais\",\"supports\":[\"名词的投票、表决及选票基本义\",\"动词的投票基本义\",\"英式与美式发音及规则词形\",\"voter、voting、revote 的派生词列举\",\"名词来自拉丁语 votum，动词由名词发展而来\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1504,
+    "headword": "vote",
+    "meaning_zh": "n. 投票, 选举, 选票, 表决, 选举权, 得票数\nvi. 投票, 选举\nvt. 投票选举, 投票决定, 公认, 使投票",
+    "phonetic": "/vәut/",
+    "pos": "",
+    "forms": []
+  }
+}

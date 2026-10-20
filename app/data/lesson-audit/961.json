@@ -1,0 +1,603 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ecf8339ae323b59e3a371dabf784db98ba784de95fa879471e20969bb1174cf8",
+    "executedReviewPromptHash": "ecf8339ae323b59e3a371dabf784db98ba784de95fa879471e20969bb1174cf8",
+    "reviewHash": "3abf8fb23666ca16ef935031561a361d06489f9ecae36e418fab6c3bbfda1840",
+    "wordId": 961,
+    "inputHash": "204ea8679277a863e3aabfd772a2f754b4ee752ada1304f6db238ee809b9d638",
+    "draftHash": "99890f12c9595fd85a50a3a86526d397099e72ed6da6c15f8e7b9d2dacd72447",
+    "finalHash": "590f03be514d00893dcbb7c529d70a22b9c007d3d905ea9ca518d6f4464795de",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/order#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.615Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86223,
+        "revisionId": 39764912,
+        "revisionTimestamp": "2026-08-03T04:58:53Z",
+        "sha256": "82aea2886e53787a16154154cab2288fdde752f972546e7ceac8c46b2f6156af",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/order",
+        "section": "order noun and verb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "12b2e66dc85a0a2b6b2d75e031209186fa206458c590db924eefe33b66a5e8b2",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "12b2e66dc85a0a2b6b2d75e031209186fa206458c590db924eefe33b66a5e8b2",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/961.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/order",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:45:23.687Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:57:05.769Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；相关 sourceIds",
+        "message": "初稿反复引用未列入实际来源材料的 Oxford 页面，却未收录已取得的维基词典英语词条。应更换来源并同步修正引用；来源未具体支持的补充不应冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note；/forms/4/note",
+        "message": "order 不全是可数名词；表示条理、社会秩序等时通常不可数。ordering 是 order 直接加 -ing，不存在删除词尾 e 的步骤。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote；/pronunciation/notes/1",
+        "message": "标准英式读音单独读词时词尾 r 通常不发音，不能只说“不明显”。音标笔记宜直接说明第二音节弱读。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/studyPlan",
+        "message": "缺少常用的社会秩序义、设备运行状态表达和 in order to 的目的功能；点餐义也缺少不接宾语的常用实例。学习计划把 in order 与机器故障义的 out of order 简单配对，容易误导。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/0/note；/senses/2/patterns/1/zh",
+        "message": "订购的东西 arrived 时，order 指商品，不能同时解释成订单记录。take someone’s order 宜明确译为记录顾客点餐内容。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/5/relatedExpressions",
+        "message": "sort 不仅表示分类，也常表示按次序排序；现有近义说明弱化了它与 order 在排序语境中的直接重合。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "social order 通常指社会秩序或社会结构，不能据此解释为一个社会阶层。建筑“属于另一种社会阶层”的例句也不自然。此条改为来源明确列出的生物分类义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "尚未交代来源列出的修会、勋位团体、图论中的阶，以及 order of magnitude。较正式的类别义也应给出准确的 of a different order 形式与翻译。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "排列语境中的 in/out of order 与设备语境中的故障/正常运行不能机械对应。故障例句的 senseId 也应指向设备状态义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "法语和英语两个阶段的 meaning 实际写的是传播路线与词性发展，并非该阶段的词义。路线应留在 summary；阶段只保留材料明确支持的形式与释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0；/wordFamily/1",
+        "message": "orderly 的本课释义和例句都是形容词，不宜把 -ly 当作普通副词构词来教。护理员例句又错误绑定了 order 的命令义；改用直接关联排列义的 reorder。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/story",
+        "message": "“order 了全班安静”等中英混写没有展示正确句型，宜换成完整英语句子，明确 ordered someone to do 的结构。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的名词、动词、专业义和常见表达。补丁补齐秩序、设备运行状态、目的功能及不及物点餐实例；各核心义均至少有两个自然英中例句。专业义放入 lessCommonSenses 作识别，不宣称穷尽所有行业用法。词源仅保留已取得材料支持的历史事实。",
+    "senseInventory": [
+      {
+        "sense": "名词：顺序、次序",
+        "coveredBy": [
+          "order-n-sequence"
+        ],
+        "assessment": "已有日期排序实例及字母排序搭配，覆盖充分。"
+      },
+      {
+        "sense": "名词：整齐、有条理的状态",
+        "coveredBy": [
+          "order-n-sequence"
+        ],
+        "assessment": "与次序义合理合并；书架例句确实覆盖有条理的状态。"
+      },
+      {
+        "sense": "名词：社会或群体的秩序",
+        "coveredBy": [
+          "order-n-public-order"
+        ],
+        "assessment": "原稿遗漏；补入两个例句，并区分整体秩序与单条规则。"
+      },
+      {
+        "sense": "名词：命令、指示",
+        "coveredBy": [
+          "order-n-command"
+        ],
+        "assessment": "已有两个自然例句，命令与请求的语气对照基本准确。"
+      },
+      {
+        "sense": "名词：订单、订购要求及所订商品或餐食",
+        "coveredBy": [
+          "order-n-purchase"
+        ],
+        "assessment": "购物与餐馆均已覆盖；修正 arrived 对应的具体所指。"
+      },
+      {
+        "sense": "固定表达：设备出故障或处于工作状态",
+        "coveredBy": [
+          "order-n-working-condition"
+        ],
+        "assessment": "原稿仅零散提及故障；补成独立教学单元并配两个例句。"
+      },
+      {
+        "sense": "动词：命令、下令",
+        "coveredBy": [
+          "order-v-command"
+        ],
+        "assessment": "主动、被动及 order someone to do 结构均已覆盖。"
+      },
+      {
+        "sense": "动词：点餐、订购",
+        "coveredBy": [
+          "order-v-purchase"
+        ],
+        "assessment": "已有餐食与商品例句；补入 Are you ready to order? 展示不及物用法。"
+      },
+      {
+        "sense": "动词：按一定依据排列、整理",
+        "coveredBy": [
+          "order-v-arrange"
+        ],
+        "assessment": "两个例句覆盖排列依据和方向；修正与 sort 的语境区别。"
+      },
+      {
+        "sense": "固定表达：in order to 表示目的",
+        "coveredBy": [
+          "order-expr-purpose"
+        ],
+        "assessment": "原稿遗漏；补入肯定目的与否定目的两个例句。"
+      },
+      {
+        "sense": "名词：性质、类别或级别",
+        "coveredBy": [
+          "order-n-kind"
+        ],
+        "assessment": "保留较正式用法，修正短语形式及不够准确的翻译。"
+      },
+      {
+        "sense": "名词：生物分类中的目",
+        "coveredBy": [
+          "order-n-taxonomy"
+        ],
+        "assessment": "来源明确列出，补入识别性说明与原创例句。"
+      },
+      {
+        "sense": "名词：修会、宗教团体",
+        "coveredBy": [
+          "order-n-religious-group"
+        ],
+        "assessment": "来源明确列出，补入较少用义。"
+      },
+      {
+        "sense": "名词：骑士团、勋位团体",
+        "coveredBy": [
+          "order-n-chivalric-order"
+        ],
+        "assessment": "来源的 noblesse 项指荣誉团体或勋位体系，不应解释成普通社会阶层。"
+      },
+      {
+        "sense": "名词：图论中的阶",
+        "coveredBy": [
+          "order-n-graph-order"
+        ],
+        "assessment": "补入来源明确列出的专业义，并限定为图的顶点数。"
+      },
+      {
+        "sense": "固定表达：order of magnitude，数量级",
+        "coveredBy": [
+          "order-n-magnitude"
+        ],
+        "assessment": "来源列出的重要表达，补入明确的十倍关系示例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_order\",\"title\":\"Oxford Learner’s Dictionaries: order\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/order\",\"supports\":[\"词性、常见义项、搭配、动词句型及词形参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_order\",\"title\":\"Wiktionnaire：order（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/order#Anglais\",\"supports\":[\"英语名词、动词义项及英美读音与规则词形\",\"生物分类、宗教、勋位团体及图论义\",\"out of order、working order、order of magnitude 等表达\",\"orderly、disorder 等相关词及古法语 ordre 词源\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，order 常指“顺序、次序”或“命令”；作动词时，常表示“命令、点（餐）、订购”或“整理排列”。看它后面的词，就能判断具体意思。\"",
+        "valueJson": "\"order 的名词常用义包括“顺序、条理、秩序、命令、订单”；动词常表示“命令、点餐或订购、按次序排列”。in order to do 表示“为了做……”，机器 out of order 则表示“出了故障”。结合搭配和语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"对比 in order 和 out of order，记住它们分别表示“按顺序”和“出故障”。\"",
+        "valueJson": "\"先记 in alphabetical order 和 put ... in order；谈机器时，对照 out of order（出故障）与 in working order（运转正常）。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"用 in order to do 表达一个目的，再用 in order not to do 表达想避免的事情。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式读音通常不卷舌，词尾 r 不明显；美式读音通常卷舌。\"",
+        "valueJson": "\"标准英式读音通常不卷舌，单独读词时词尾 r 不发音，后接元音时可出现连接 r；美式读音通常发 r 音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"英式读音的首元音较长；旧音标中的 /ә/ 不是准确的标准写法。\"",
+        "valueJson": "\"第二音节弱读为 /də/（英式）或 /dər/（美式），不要把两个音节读得一样重。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词；复数为 orders。\"",
+        "valueJson": "\"可数或不可数：命令、订单等通常可数，复数为 orders；表示条理、社会秩序等时通常不可数。排列顺序常见于 in ... order 等结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"加 -ing 时去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"order 以 r 结尾，直接加 -ing，写成 ordering；不删字母，也不双写 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "\"order 指订购记录或所订的商品。\"",
+        "valueJson": "\"arrived 表明这里的 order 指订购的商品。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/zh",
+        "expectedValueJson": "\"为某人点餐；记录某人的点单\"",
+        "valueJson": "\"记录某人的点餐内容；接单\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"可直接接所点的食物或商品；也可用 order something from somewhere 表示从某处订购。\"",
+        "valueJson": "\"既可直接接所点的食物或商品，也可不接宾语，表示点餐或下单。order something from somewhere 表示从某处订购。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-v-purchase-ex3\",\"senseId\":\"order-v-purchase\",\"en\":\"Are you ready to order?\",\"zh\":\"您准备好点餐了吗？\",\"note\":\"order 在这里不接宾语；服务员是在问顾客是否可以点餐了。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常强调分组或分类；order 常强调先后顺序。\"",
+        "valueJson": "\"既可表示分类，也可表示按次序排序；sort the names alphabetically 与 order the names alphabetically 都表示按字母顺序排列姓名。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/relatedExpressions/similarNote",
+        "expectedValueJson": "\"arrange 偏重安排和摆放，sort 偏重分类，order 偏重按次序排列。\"",
+        "valueJson": "\"arrange 可泛指安排或摆放；sort 既能分类，也能排序。谈按日期、大小或字母排序时，sort 与 order 常可表达相同的排列动作。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-public-order\",\"title\":\"名词：秩序\",\"meaning\":\"指群体活动或社会生活有组织、守规则而不混乱的状态。\",\"usageNote\":\"这一义通常不可数，常说 keep、maintain 或 restore order。单独一条规则通常叫 a rule；order 在这里指整体秩序。\",\"examples\":[{\"id\":\"order-n-public-order-ex1\",\"senseId\":\"order-n-public-order\",\"en\":\"The teacher soon restored order in the classroom.\",\"zh\":\"老师很快恢复了课堂秩序。\",\"note\":\"restore order 表示恢复秩序。\"},{\"id\":\"order-n-public-order-ex2\",\"senseId\":\"order-n-public-order\",\"en\":\"The police kept order outside the stadium.\",\"zh\":\"警察在体育场外维持秩序。\",\"note\":\"kept order 表示维持人群活动的正常秩序。\"}],\"patterns\":[{\"en\":\"keep / maintain / restore order\",\"zh\":\"维持／保持／恢复秩序\",\"note\":\"order 在这些搭配中通常不可数，不加 an。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"public order\",\"zh\":\"公共秩序\",\"note\":\"用于公共场所或社会生活的秩序。\",\"kind\":\"common-collocation\"},{\"en\":\"law and order\",\"zh\":\"法律与秩序；社会治安\",\"note\":\"常用于讨论社会安全和守法状态。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"discipline\",\"zh\":\"纪律\",\"note\":\"谈课堂管理时，两词都可涉及有序状态；discipline 更强调纪律和行为约束。\"}],\"contrasting\":[{\"en\":\"disorder\",\"zh\":\"混乱；秩序紊乱\",\"note\":\"在群体或社会秩序语境中与 order 相对。\"},{\"en\":\"chaos\",\"zh\":\"混乱\",\"note\":\"通常比 disorder 更强调严重、难以控制的混乱。\"}],\"similarNote\":\"order 描述整体有序状态；discipline 更关注人们是否遵守纪律。\",\"contrastingNote\":\"谈社会或群体秩序时，可用 disorder 或 chaos 对照；它们不表示取消订单或拒绝命令。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-working-condition\",\"title\":\"固定表达：设备出故障；处于工作状态\",\"meaning\":\"out of order 表示设备出了故障；in working order 或 in good working order 表示设备能正常运转。\",\"usageNote\":\"这些表达常用于机器、设施或车辆。恢复正常可说 back in working order。\",\"examples\":[{\"id\":\"order-n-working-condition-ex1\",\"senseId\":\"order-n-working-condition\",\"en\":\"The printer is out of order, so I can't print the tickets.\",\"zh\":\"打印机坏了，所以我没法打印票。\",\"note\":\"out of order 在设备语境中表示故障。\"},{\"id\":\"order-n-working-condition-ex2\",\"senseId\":\"order-n-working-condition\",\"en\":\"The bike is old, but it is still in good working order.\",\"zh\":\"这辆自行车虽然旧了，但仍能正常使用。\",\"note\":\"in good working order 表示工作状态良好。\"}],\"patterns\":[{\"en\":\"be out of order\",\"zh\":\"出故障；不能正常使用\",\"note\":\"这里描述设备的运行状态。\",\"kind\":\"fixed-expression\"},{\"en\":\"be in (good) working order\",\"zh\":\"能正常运转；工作状态良好\",\"note\":\"working 明确说明谈的是运行状态。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"back in working order\",\"zh\":\"恢复正常运行\",\"note\":\"back 表示从故障或停用状态恢复过来。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"not working\",\"zh\":\"不能正常工作\",\"note\":\"描述设备时可解释 out of order；也可能只是设备暂未运行，需看上下文。\"}],\"contrasting\":[{\"en\":\"working properly\",\"zh\":\"运转正常\",\"note\":\"在设备语境中，与 out of order 表示的故障状态相对。\"}],\"similarNote\":\"out of order 明确指设备不能正常使用；not working 的具体原因由上下文说明。\",\"contrastingNote\":\"设备故障与正常运行可用 out of order 和 in working order 对照。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-expr-purpose\",\"title\":\"固定表达：in order to 表示目的\",\"meaning\":\"in order to 加动词原形，表示“为了做某事”。\",\"usageNote\":\"目的动作通常与主句动作由同一主语完成。否定形式是 in order not to do，表示“为了不……”。\",\"examples\":[{\"id\":\"order-expr-purpose-ex1\",\"senseId\":\"order-expr-purpose\",\"en\":\"I left home early in order to catch the first bus.\",\"zh\":\"为了赶上第一班公共汽车，我早早出了门。\",\"note\":\"说明早出门的目的，不保证最后一定赶上车。\"},{\"id\":\"order-expr-purpose-ex2\",\"senseId\":\"order-expr-purpose\",\"en\":\"We spoke quietly in order not to wake the baby.\",\"zh\":\"我们轻声说话，以免吵醒宝宝。\",\"note\":\"否定目的用 in order not to wake。\"}],\"patterns\":[{\"en\":\"in order to do something\",\"zh\":\"为了做某事\",\"note\":\"to 后接动词原形。\",\"kind\":\"sentence-pattern\"},{\"en\":\"in order not to do something\",\"zh\":\"为了不做某事；以免……\",\"note\":\"not 放在 to 前面。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"in order to save time\",\"zh\":\"为了节省时间\",\"note\":\"常用来说明采取某种做法的目的。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"to do something\",\"zh\":\"为了做某事\",\"note\":\"作目的状语时，to do 常可替换 in order to do；后者把目的说得更明确。\"},{\"en\":\"so that + clause\",\"zh\":\"以便……\",\"note\":\"后接完整从句，常含 can、could 等，而不是直接接动词原形。\"}],\"contrasting\":[],\"similarNote\":\"比较目的表达时，要分清 in order to 后接动词原形，so that 后接句子。\",\"contrastingNote\":\"目的表达没有固定的词汇反义词；in order not to do 是目的的否定形式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"order-n-rank\",\"title\":\"名词：等级；阶层\",\"meaning\":\"指社会或组织中的等级、阶层，或按等级排列的类别。\",\"note\":\"常见于正式表达，如 social order；初中阶段先掌握“顺序、命令、订单”等常用义即可。\",\"example\":{\"id\":\"order-n-rank-ex1\",\"senseId\":\"order-n-rank\",\"en\":\"The old building belongs to a different order of society.\",\"zh\":\"这座老建筑属于社会中的另一种阶层。\",\"note\":\"这里 order 指类别或等级。\"},\"sourceIds\":[\"oxford_order\"]}",
+        "valueJson": "{\"id\":\"order-n-taxonomy\",\"title\":\"名词：生物分类中的目\",\"meaning\":\"生物分类的一个等级，通常位于纲与科之间。\",\"note\":\"用于生物学分类，不是一般的排列顺序。\",\"example\":{\"id\":\"order-n-taxonomy-ex1\",\"senseId\":\"order-n-taxonomy\",\"en\":\"Butterflies and moths belong to the same order.\",\"zh\":\"蝴蝶和蛾属于同一个目。\",\"note\":\"这里 order 是分类等级“目”。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"多见于固定表达 a different order of；日常初级表达通常用 kind 或 type。\"",
+        "valueJson": "\"常见于 of a different order（性质或程度不同）、of the highest order（最高水平的）等表达；不是日常 kind 或 type 的通用替代词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/example/zh",
+        "expectedValueJson": "\"那个问题属于另一种级别。\"",
+        "valueJson": "\"那个问题在性质或程度上有所不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_order\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-religious-group\",\"title\":\"名词：修会；宗教团体\",\"meaning\":\"遵守共同宗教规则的团体。\",\"note\":\"这一义是可数名词，常见搭配为 a religious order。\",\"example\":{\"id\":\"order-n-religious-group-ex1\",\"senseId\":\"order-n-religious-group\",\"en\":\"The nuns belong to a religious order that runs a hospital.\",\"zh\":\"这些修女属于一个经营医院的修会。\",\"note\":\"order 指宗教团体。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-chivalric-order\",\"title\":\"名词：骑士团；勋位团体\",\"meaning\":\"由君主等授予荣誉成员资格的团体或勋位体系。\",\"note\":\"常见于历史与荣誉制度语境；用于正式名称时，Order 通常大写。\",\"example\":{\"id\":\"order-n-chivalric-order-ex1\",\"senseId\":\"order-n-chivalric-order\",\"en\":\"He was admitted to an order of chivalry.\",\"zh\":\"他获准加入一个骑士勋位团体。\",\"note\":\"这里 order 指具有成员资格的荣誉团体。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-graph-order\",\"title\":\"名词：图论中的阶\",\"meaning\":\"在图论中，指一个图的顶点数。\",\"note\":\"这是数学专业义；其他数学语境中 order 的具体含义须另行判断。\",\"example\":{\"id\":\"order-n-graph-order-ex1\",\"senseId\":\"order-n-graph-order\",\"en\":\"This graph has five vertices, so its order is five.\",\"zh\":\"这个图有五个顶点，因此它的阶为五。\",\"note\":\"图的 order 由顶点数确定。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"order-n-magnitude\",\"title\":\"固定表达：order of magnitude，数量级\",\"meaning\":\"以十的幂衡量的规模级别；相差一个数量级通常表示约十倍的差距。\",\"note\":\"常见于科学、技术和数量比较。\",\"example\":{\"id\":\"order-n-magnitude-ex1\",\"senseId\":\"order-n-magnitude\",\"en\":\"An increase from 10 to 100 is an increase of one order of magnitude.\",\"zh\":\"从 10 增加到 100，数值提高了一个数量级。\",\"note\":\"100 是 10 的十倍。\"},\"sourceIds\":[\"wiktionary_order\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"这两个短语都常见，但方向相反：in order 表示有序、安排妥当；out of order 表示次序混乱，或机器出了故障。\"",
+        "valueJson": "\"谈排列时，in order 表示有序、妥当，out of order 可表示次序不对；谈机器时，out of order 表示故障，正常运转常用 in (good) working order。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"order-n-sequence\"",
+        "valueJson": "\"order-n-working-condition\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"in working order：运转正常\",\"note\":\"这里说明设备处于能正常使用的状态。\",\"example\":{\"id\":\"order-confusions-in-order-ex3\",\"senseId\":\"order-n-working-condition\",\"en\":\"The lift is back in working order.\",\"zh\":\"电梯已经恢复正常运行了。\",\"note\":\"back in working order 表示恢复正常。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"in 和 out 改变了短语意思；看到机器时，out of order 通常指机器不能正常使用。\"",
+        "valueJson": "\"先判断说的是排列还是设备：排列可用 in/out of order；设备故障用 out of order，恢复正常可说 back in working order。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"order 经法语 ordre 进入英语；更早与拉丁语 ordo（其变格形式为 ordinem）有关，含有“行列、等级或排列”的意思。英语动词由名词发展而来；命令和商业订购是后来扩展出的意思。\"",
+        "valueJson": "\"英语 order 经古法语 ordre 传入，往前可追溯到拉丁语 ordo（变格形式 ordinem），意为“行列、等级或排列”。英语动词由名词发展而来；“命令”和商业上的“订购”是后来的义项扩展。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"ordo（变格形式 ordinem）\",\"meaning\":\"行列、等级或排列\"},{\"language\":\"法语\",\"form\":\"ordre\",\"meaning\":\"经法语传入英语的形式\"},{\"language\":\"英语\",\"form\":\"order\",\"meaning\":\"先有名词用法，动词用法由名词发展而来\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"ordo（变格形式 ordinem）\",\"meaning\":\"行列、等级或排列\"}]"
+      },
+      {
+        "op": "add",
+        "path": "/etymology/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/partOfSpeech",
+        "expectedValueJson": "\"adjective, adverb\"",
+        "valueJson": "\"adjective\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"整齐的；有条理地\"",
+        "valueJson": "\"整齐的；有条理的；有秩序的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"order + -ly；形容词可描述有秩序，副词可表示有条理地进行。\"",
+        "valueJson": "\"order + -ly；这里的 -ly 构成形容词，表示“有秩序的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1",
+        "expectedValueJson": "{\"word\":\"orderly\",\"partOfSpeech\":\"noun\",\"meaning\":\"护理员；看护人员（尤用于医院或机构）\",\"formation\":\"与 order 同族的名词，指负责协助照料或维持秩序的人员。\",\"spellingNote\":\"拼写为 orderly；此处是名词用法，意思不同于“整齐的”。\",\"example\":{\"id\":\"order-family-orderly-n-ex1\",\"senseId\":\"order-n-command\",\"en\":\"The orderly helped the patient to the chair.\",\"zh\":\"护理员扶病人坐到椅子上。\",\"note\":\"这里 orderly 指护理员。\"},\"sourceIds\":[\"oxford_order\"]}",
+        "valueJson": "{\"word\":\"reorder\",\"partOfSpeech\":\"verb\",\"meaning\":\"重新排列\",\"formation\":\"re- + order；这里 re- 表示“重新”。\",\"spellingNote\":\"在完整的 order 前加 re-，写成 reorder。\",\"example\":{\"id\":\"order-family-reorder-ex1\",\"senseId\":\"order-v-arrange\",\"en\":\"I reordered the photos by date.\",\"zh\":\"我把照片重新按日期排了一遍。\",\"note\":\"这里 reorder 对应 order 的排列义，表示重新排序。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds/0",
+        "expectedValueJson": "\"oxford_order\"",
+        "valueJson": "\"wiktionary_order\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"oxford_order\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"orderly 和 disorder 与 order 有直接构词关系；disorderly 在 disorder 后加 -ly。动词变化按规则：order、orders、ordered、ordering。\"",
+        "valueJson": "\"orderly 的 -ly 构成形容词；disorder 的 dis- 表示缺少秩序，disorderly 在 disorder 后加 -ly；reorder 的 re- 表示重新。它们都保留 order 的完整拼写。动词形式为 order、orders、ordered、ordering；ordering 是直接加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"小林先把卡片按号码排成一列，检查它们 are in order。老师接着 order 了全班安静；午餐时，小林又 order 了一碗汤。三幕都用同一个词，却分别对应次序、命令和点餐。\"",
+        "valueJson": "\"小林先把卡片按号码排好：The cards are in order. 老师要求全班安静：The teacher ordered the class to be quiet. 午餐时，小林点了一碗汤：Lin ordered a bowl of soup. 三幕分别对应次序、命令和点餐。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 961,
+    "headword": "order",
+    "meaning_zh": "n. 次序, 规则, 命令\nvi. 命令, 定货\nvt. 整理, 命令, 定购\nn. 顺序, 阶数",
+    "phonetic": "/'ɒ:dә/",
+    "pos": "",
+    "forms": []
+  }
+}

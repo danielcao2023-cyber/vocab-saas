@@ -1,0 +1,408 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c0aedee9b4e1d2618914d713594cdcb5ebfe51c2206ca7434b3d89d19f10279c",
+    "executedReviewPromptHash": "c0aedee9b4e1d2618914d713594cdcb5ebfe51c2206ca7434b3d89d19f10279c",
+    "reviewHash": "997761723c8c35567357c75a7126f5ca8dec0fd24ef77f11eaf0376c8e4cb8e3",
+    "wordId": 892,
+    "inputHash": "8f6816882f0388d01853dfb4dcf39b1917f080f58f42b90a41c4c8fe3b61815b",
+    "draftHash": "5e02824a5a7125c8060e08173505e387da3717d42dd548d7c0bc15122cae2fb1",
+    "finalHash": "b8d7e56d703072bd05271a71572e152396c566f727bbfb2631508fe0a1214f61",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/must#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.748Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119830,
+        "revisionId": 39789195,
+        "revisionTimestamp": "2026-08-08T21:15:54Z",
+        "sha256": "0efad8a5e4fe896ed1723b8d55285690cd733c4a8550cfdefe8596a51c0b8eda",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/must",
+        "section": "must etymology",
+        "supports": [
+          "Past-form auxiliary to present necessity; essential noun and unrelated homographs"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:14:25.320985+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "1456c431d66813dee5dab70cf2eb3fe69a6c4f8c5009f22c7616f7740aa85f4c",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "1456c431d66813dee5dab70cf2eb3fe69a6c4f8c5009f22c7616f7740aa85f4c",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/892.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/must",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:56:36.206Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:08:10.305Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未取得，不能作为这些说明的已获来源。应改引实际取得的 Wiktionnaire 英语词条；其未直接说明的否定义务对比不强挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "释义提到强烈建议，但两个例句都表示实际要求或必要，缺少热情推荐、邀请这一常用功能的实例。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“情态动词没有……过去式”概括过宽，其他情态动词存在相关过去形式。应限定为 must 的现代语法形式，并说明 will have to 的用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note、/senses/1/usageNote、/confusions/0/summary",
+        "message": "把 must not 一概解释为禁止过于绝对。它也能表达否定推断，尤其常见于美式英语；禁止与不必的对比应限定在义务用法中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting/1/note",
+        "message": "don’t have to 不是 mustn’t 的反义表达；它对照的是 must 表示的必要性。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1/note、/confusions/1/items/1",
+        "message": "must have 加过去分词不能无条件等同于过去推断。来源明确列有将来截止时间下的完成要求，应限定原说明并补充这一用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典列出的罕见名词“霉／霉味”。酿酒义也不应限为发酵前的纯鲜榨汁，must 可包含果皮、果籽，并可处于发酵过程中。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "首阶段的“历史前身”不是词义说明。可使用材料明确提供的 motan 及其含义，把 moste 的过去形式身份写入摘要，并分别交代酿酒义和霉义的独立来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation、/wordFamilyNote",
+        "message": "must-have、must-see 应按情态动词 must 与 have、see 的组合解释，不能说它们直接由名词 must 构成；had to 也应说明为替代表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1/zh、/senses/2/meaning",
+        "message": "one’s homework 应体现主语自己的作业；名词 must 的定义还应明确包含“不可缺少”，不能只解释为值得拥有或体验。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的义务／必要、强烈推断、名词必备／推荐义、酿酒义及罕见霉义。补充后，核心义均有至少两个自然例句，推荐与邀请也有明确实例；否定式、完成结构的时间解释及词族归属得到修正。专业和罕见名词仅作识别性介绍，未扩展酿酒技术细节。未取得的 Cambridge 页面不再承担来源支持。",
+    "senseInventory": [
+      {
+        "sense": "情态动词：义务、要求或必要",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有规则和个人必要性两个例句有效；修正形式说明及否定表达的适用范围。"
+      },
+      {
+        "sense": "情态动词的常用功能：热情推荐或邀请",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿仅在释义中提及；新增推荐和邀请各一个例句，明确其语用功能。"
+      },
+      {
+        "sense": "情态动词：依据线索作有把握的推断",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "现状推断和过去推断均有例句；补充否定推断，并限定完成结构的解释。"
+      },
+      {
+        "sense": "名词：不可缺少或强烈推荐的事物、活动及地方",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "外套和博物馆两个例句分别覆盖必需与推荐；定义补明不可缺少的含义。"
+      },
+      {
+        "sense": "名词：酿酒用葡萄汁或葡萄浆",
+        "coveredBy": [
+          "ls1"
+        ],
+        "assessment": "已有术语例句有效；修正发酵阶段和成分范围，保留为较少见义。"
+      },
+      {
+        "sense": "罕见名词：霉、霉变或霉味",
+        "coveredBy": [
+          "ls2"
+        ],
+        "assessment": "原稿遗漏；新增识别性释义和例句，并区分其独立词源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-must\",\"title\":\"Cambridge Dictionary: must\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/must\",\"supports\":[\"情态动词 must 的常用义和句法\",\"must 表示强烈推断的用法\",\"mustn’t 与不必表达的区别\",\"must 作为名词表示必备之物\",\"must-have 与 must-see 等复合表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-must\",\"title\":\"Wiktionnaire：must（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/must#Anglais\",\"supports\":[\"英语 must 表示义务、必要和强烈推断的基本义\",\"过去义务 had to、完成结构的推断用法及将来截止时间用法\",\"名词的必备或推荐义、酿酒义与罕见霉义\",\"must 及否定式的发音\",\"must-have、must-see 关联复合词\",\"情态动词与几个同形名词的不同词源\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"etymonline-must\"]",
+        "valueJson": "[\"wiktionary-must\",\"etymonline-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "add",
+        "path": "/etymology/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wiktionary-must\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-must\"]",
+        "valueJson": "[\"wiktionary-must\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"情态动词没有第三人称单数、现在分词或过去式；表示过去的义务通常用 had to。\"",
+        "valueJson": "\"情态动词 must 不随主语的人称或数变化，没有 -s、-ing 或 -ed 形式；表示过去义务通常用 had to。must 可以直接谈将来的事；在 will 等情态助动词后表达“必须”时用 have to，如 will have to，不能说 will must。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"must not 可缩写为 mustn’t，表示禁止；mustn’t 中的撇号不可省略。\"",
+        "valueJson": "\"must not 可缩写为 mustn’t；在义务用法中表示禁止，mustn’t 中的撇号不可省略。推断用法中的 must not 也可能表示“一定不／没有”，须结合语境理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"must 没有通常意义上的过去式；过去的义务用 had to。mustn’t 表示“禁止”，don’t have to 表示“不必”，两者意思不同。\"",
+        "valueJson": "\"must 没有通常意义上表示过去义务的过去式；过去的义务通常用 had to。在义务用法中，mustn’t 表示“禁止”，don’t have to 表示“不必”。热情推荐或邀请中的 must 相当于“一定要”，不表示对方真的负有义务。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"You must try the lemon cake at this café. It's delicious!\",\"zh\":\"你一定要尝尝这家咖啡馆的柠檬蛋糕，太好吃了！\",\"note\":\"must 表达热情的强烈推荐，不是在规定一项义务。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"You must come over for dinner sometime!\",\"zh\":\"你哪天一定要来我家吃晚饭呀！\",\"note\":\"用 must 表达热情邀请，并不要求对方必须服从。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/zh",
+        "expectedValueJson": "\"必须做某人的作业\"",
+        "valueJson": "\"必须做（自己的）作业\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"表示没有必要做，并非禁止；与 mustn’t 意思相反的常用对照。\"",
+        "valueJson": "\"表示没有必要做某事，与本义 must 的“必须做”形成对照；它不能代替 mustn’t 来表达禁止。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"must be 后可接形容词、名词或地点；推断过去发生的事时，常用 must have + 过去分词。这里的 must 不表示命令。\"",
+        "valueJson": "\"在推断义中，must be 后可接形容词、名词或地点；推断过去常用 must have + 过去分词，不表示命令。must not 也可表示“一定没有／不是”，尤其在美式英语中，如 He must not have seen my message（他一定没看到我的消息）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"用于对已经发生的事作强烈推断，不表示过去的义务。\"",
+        "valueJson": "\"在本义中，用于对已发生的事作有把握的推断，不表示过去义务；该结构在其他语境中也可表达将来截止时间前必须完成的要求。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"口语中指某人认为非常值得拥有、体验或观看的东西。\"",
+        "valueJson": "\"较口语，指不可缺少的东西，或强烈推荐、不可错过的事物、活动和地方。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"葡萄发酵酿酒前的鲜榨葡萄汁。\"",
+        "valueJson": "\"酿酒用的葡萄汁或葡萄浆，通常指尚未发酵或仍在发酵的汁液，可带有果皮、果籽等。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls2\",\"title\":\"霉；霉味（罕见名词）\",\"meaning\":\"罕见用法，指霉、发霉的状态或霉味。\",\"note\":\"通常只需能认出。日常说“霉”多用 mold（美式拼写）或 mould（英式拼写），说“霉味”常用 a musty smell；这个名词与表示“必须”的 must 同形异源。\",\"example\":{\"id\":\"ls2e1\",\"senseId\":\"ls2\",\"en\":\"The smell of must filled the damp cellar.\",\"zh\":\"潮湿的地窖里弥漫着霉味。\",\"note\":\"must 在这里是不可数名词，属于罕见用法。\"},\"sourceIds\":[\"wiktionary-must\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"mustn’t 是禁止；don’t have to 是不必。一个是不可以做，另一个是可以不做。\"",
+        "valueJson": "\"在表达义务或规则时，mustn’t 是禁止，don’t have to 是不必。前者不允许做某事，后者表示可以不做。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"must have + 过去分词 = 推断过去\"",
+        "valueJson": "\"must have + 过去分词：可用于推断过去\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"它表示现在根据线索推断过去发生的事，不是过去义务。\"",
+        "valueJson": "\"本例表示现在根据线索推断过去的事，不是过去义务。不过，该结构也可与将来截止时间连用，表示届时必须已完成，如 You must have finished the report by noon tomorrow（明天中午前你必须已经完成报告）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"表示义务的情态动词 must 沿着古英语 moste、motan 的历史形式发展而来；表示必备之物的名词由这个情态动词引申。酿酒术语 must 则来自另一条词源。\"",
+        "valueJson": "\"情态动词 must 来自古英语动词 motan（“能够；须要”）的过去形式 moste，后来用于表达现在的必要；名词 must（“必备之物／必做之事”）由这个情态动词引申而来。酿酒名词 must 另来自拉丁语 mustum（“新酒”）；罕见的“霉／霉味”义名词则由 musty（“发霉的”）去掉 -y 逆构而成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0",
+        "expectedValueJson": "{\"language\":\"古英语\",\"form\":\"moste（motan 的过去形式）\",\"meaning\":\"情态动词 must 的历史前身\"}",
+        "valueJson": "{\"language\":\"古英语\",\"form\":\"motan\",\"meaning\":\"能够；须要\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的历史演变只适用于表示义务的情态动词及其引申名词；酿酒术语 must 是同形异源。\"",
+        "valueJson": "\"古英语的过去形式后来成了现代情态动词；谈过去的义务通常仍要用 had to。酿酒义和霉义与这个情态动词同形异源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"must（必备）+ have（拥有）构成的现代复合词。\"",
+        "valueJson": "\"情态动词 must（必须）与 have（拥有）构成的复合词，可理解为“必须拥有的（东西）”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"这里列出的是与名词 must 有直接构词关系的常见复合词；had to、mustn’t 等是语法形式，不是派生词族。\"",
+        "valueJson": "\"这里列的是含情态动词 must 的常见复合词；must-have 和 must-see 分别可理解为“必须拥有的”和“必须看的”。had to 是过去义务的替代表达，mustn’t 是 must not 的缩写，都不是派生词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 892,
+    "headword": "must",
+    "meaning_zh": "aux. 必须；一定是",
+    "phonetic": "/mʌst/",
+    "pos": "",
+    "forms": []
+  }
+}

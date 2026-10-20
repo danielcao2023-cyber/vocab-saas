@@ -1,0 +1,237 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6b35b4ee9027c4033ee5edaa94b0a96eb4acd1a55d12887e9599edf56e8b3101",
+    "executedReviewPromptHash": "6b35b4ee9027c4033ee5edaa94b0a96eb4acd1a55d12887e9599edf56e8b3101",
+    "reviewHash": "24427cce3769d0d59ff864af4c6cd6c3c0ed52d85762898e0ce88b89cdd02a40",
+    "wordId": 1050,
+    "inputHash": "aad5fbe8a8fa29c9d6be938aa4011602c84688e20cb2c7588352ff17aebb80da",
+    "draftHash": "20ba2547e6a2e70fe5a6280cc001114319c08d46bb2b47fc4ac685a1aa282437",
+    "finalHash": "475e3e0d60c86b2a8bb492dff7d50527fc8eacc0d9204e4944f17ce4c7b91f89",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pollute#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:21.276Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119575,
+        "revisionId": 38128008,
+        "revisionTimestamp": "2025-04-23T17:32:23Z",
+        "sha256": "96d41236cea3877fa7bd757b409e778491a9822635bd5aa168e08394f23f8ecc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/pollute",
+        "section": "pollute etymology",
+        "supports": [
+          "Defilement before environmental pollution; alternate immediate routes"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:10:43.420480+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "1734cdeab112ecdd38de35995baca2cfaa79e2e4937faafcb44f3ab389504d30",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "1734cdeab112ecdd38de35995baca2cfaa79e2e4937faafcb44f3ab389504d30",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1050.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pollute",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T05:24:18.891Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:34:06.205Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "pollute 已以 e 结尾，应说明只加 -d；直接说“词尾加 -ed”容易导向错误拼写 polluteed。词族栏“去 e 再加 -ed”按字符可以得到正确拼写，无须判错。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及各处 sourceIds",
+        "message": "具体内容引用了本次未取得的 Cambridge/Oxford 词条，却漏列实际取得的 Wiktionnaire 英语词条。应改用实际材料；材料未展开的词族和语法比较可保留为专业语言知识说明，清空其来源关联。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary；/etymology/stages/1/meaning",
+        "message": "宜明确早期仪式或道德玷污先于物理污损和环境污染，并将 pollutus 译为“被玷污的”。现有 stages 只展示拉丁语来源解释，没有把 pollution 的逆向形成路线串入，结构可以保留。"
+      }
+    ],
+    "coverageAssessment": "已核对全部释义。初中核心为及物的环境污染义，已有两句自然原创英中例句；较少用的玷污、败坏义也已覆盖，不必机械拆成三义。语法、搭配、翻译、近反向表达及词族实际拼写总体成立。法语说明按英语词条处理。结论限于所列实际材料与专业语言知识，不声称核验未取得的网页。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：污染、污损，使环境或物质受到污染；涵盖 contaminer、polluer 及 salir、souiller 的物理用法",
+        "coveredBy": [
+          "environmental-contamination"
+        ],
+        "assessment": "核心义覆盖充分，例句、句型和近反向表达均对应环境语境。普通表面弄脏通常用 dirty，不应据宽泛释义另造一个高频 pollute 义。"
+      },
+      {
+        "sense": "及物动词：玷污、败坏，使思想或品质受到不良影响；对应 dégrader、souiller 的引申用法",
+        "coveredBy": [
+          "figurative-corrupt"
+        ],
+        "assessment": "已作为较少用义说明，例句符合正式、批评性的比喻语境。早期仪式或道德玷污的历史重点由词源补充，无须升为初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"规则变化：词尾加 -ed；过去式表示过去发生，过去分词可用于完成时或被动语态。\"",
+        "valueJson": "\"词尾已有 e，只加 -d，得到 polluted；过去式表示过去发生，过去分词可用于完成时或被动语态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"pollute 的历史来源与拉丁语 polluere 有关，含有“玷污、弄脏”一类意思；pollute 也可能由 pollution 逆向形成。早期的玷污义与今天常说的环境污染义不能简单当作同一条现代释义。\"",
+        "valueJson": "\"pollute 的直接来源有两种解释：一说由 pollution 逆向形成，另一说来自拉丁语 pollutus，即 polluere（“玷污、弄脏”）的过去分词。英语早期主要用于宗教仪式或道德上的玷污，后来扩展到物理上的污损和环境污染。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1/meaning",
+        "expectedValueJson": "\"polluere 的过去分词形式，表示玷污过的\"",
+        "valueJson": "\"polluere 的过去分词形式，意为“被玷污的、被弄脏的”\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: pollute\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pollute\",\"supports\":[\"pollute 的词性、环境污染义、常见搭配和词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire\",\"title\":\"Wiktionnaire：pollute（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/pollute#Anglais\",\"supports\":[\"英语及物动词词性及污染、弄脏、玷污等基本词义\",\"/pəˈljuːt/ 与 /pəˈluːt/ 两种读音及规则词形变化\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: pollute\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/pollute\",\"supports\":[\"pollute 的常用义项、用法和派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionnaire\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionnaire\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionnaire\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1050,
+    "headword": "pollute",
+    "meaning_zh": "vt. 污染, 弄脏, 玷污",
+    "phonetic": "/pә'lu:t/",
+    "pos": "",
+    "forms": []
+  }
+}

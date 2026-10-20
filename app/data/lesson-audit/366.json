@@ -1,0 +1,336 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "09f00b27c0d9dd4a8516be66932c0aa8d168d67581dfa2a328d7784b98789c70",
+    "executedReviewPromptHash": "09f00b27c0d9dd4a8516be66932c0aa8d168d67581dfa2a328d7784b98789c70",
+    "reviewHash": "014a482b2fc6f2a6d8a0e3ab3fff794ebcc2d7066cf5e9aaf99a56ad8bc80dfd",
+    "wordId": 366,
+    "inputHash": "0a90709c5758a536861449f3415ab806f7b0c0990ea31af0f8b1120ef252c0d3",
+    "draftHash": "a65dfb739bf028f39e9224fb4d35c0cd70defef941d8d2daec6d71c8c39bfa98",
+    "finalHash": "c593ead45297b41432f4e2c1f5a5e070b9eacbaac3dcf344e9c8151e9cf89fd4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/degree#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:29.374Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 12045,
+        "revisionId": 39759971,
+        "revisionTimestamp": "2026-08-03T00:26:55Z",
+        "sha256": "6ec4e372d403517126e985cc02f621f57375a2e1a3c41cd2a19e3fdbe0ac3c94",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/degree",
+        "section": "degree etymology",
+        "supports": [
+          "French step or rank",
+          "Latin gradus",
+          "Levels and scale divisions"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "0c7e1a7b4ca391fb4bd8072ed37b51cfa90dbd7fe7a5e8271c427db43a8957ae",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "0c7e1a7b4ca391fb4bd8072ed37b51cfa90dbd7fe7a5e8271c427db43a8957ae",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/366.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/degree",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:28:02.161Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:31:50.098Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及所有引用 oxford 的 sourceIds",
+        "message": "实际来源中没有取得 Oxford 词条，不能将其列为本课依据。应改引已取得的法语维基词典英语词条；词源中的古法语信息也应引用该来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "温度单位和角度单位各只有一个例句，未满足每个核心义至少两个例句的要求。可保留合栏，分别补一个生活例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar",
+        "message": "temperature 和 angle 是测量对象，不是 degree 的近义词；现有解释虽指出区别，仍不应将二者列入近义表达数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning",
+        "message": "学位是授予的资格，不能笼统定义为证书；取得学位的要求也可能包括研究，而不只是完成课程。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/meaning 及 /lessCommonSenses/0/example/note",
+        "message": "直接用变量的最高指数定义所有多项式的次数，遗漏了适用范围：多元多项式通常按各项指数之和确定次数。应将现有解释限定为非零一元多项式。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/label",
+        "message": "计量表达的词序写反了，应为“数字 + degree(s)”，与本项例句及 takeaway 保持一致。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“旧式拼法会把重音放在开头”没有依据；原词条的旧式音标也把重音标在第二音节。直接说明正确发音即可。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote",
+        "message": "补充 one degree 和名词前 45-degree 的单数形式，并明确温度的度与角度的度只是中文名称相同，避免误解为同一计量单位。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对来源列出的八类名词义。程度、温度单位、角度单位和学位均已覆盖；补例后四个核心义各有至少两个原创英中例句，温度和角度保留合栏。数学义已修正适用范围。酒精度、音级及称号义未展开，属于本课对专门或低频用法的范围限制，不构成初中核心义遗漏。词源历史顺序、例句 senseId、词形拼写及近义与反向表达均已检查，其余内容可保留。",
+    "senseInventory": [
+      {
+        "sense": "程度；水平；某种性质的量",
+        "coveredBy": [
+          "degree-extent"
+        ],
+        "assessment": "两个例句自然，a degree of 与 a high degree of 的区别清楚；高低程度的对照已限定语境。"
+      },
+      {
+        "sense": "酒精度",
+        "coveredBy": [],
+        "assessment": "来源另列，但未说明具体标度；不能据此把裸用数字加 degrees 当成现代通用酒精浓度表达。非初中核心，本课不展开。"
+      },
+      {
+        "sense": "角度计量单位：度",
+        "coveredBy": [
+          "degree-measure"
+        ],
+        "assessment": "补充旋转照片的例句后有两个角度例句；radian 已明确作为另一种单位进行对照。"
+      },
+      {
+        "sense": "温度计量单位：度",
+        "coveredBy": [
+          "degree-measure"
+        ],
+        "assessment": "补充冰柜温度的例句后有两个温度例句；已说明摄氏、华氏需由语境或标记确定。"
+      },
+      {
+        "sense": "数学：次数",
+        "coveredBy": [
+          "degree-math"
+        ],
+        "assessment": "作为较少见义保留一个例句合适；补丁将最高指数的解释限定为非零一元多项式。"
+      },
+      {
+        "sense": "音乐：音级",
+        "coveredBy": [],
+        "assessment": "来源列出的专门义，非初中通用词汇核心，本课可不展开。"
+      },
+      {
+        "sense": "高等教育授予的学位",
+        "coveredBy": [
+          "degree-academic"
+        ],
+        "assessment": "两个例句及 degree in、earn/get a degree 均正确；补丁修正资格与证书的混同。"
+      },
+      {
+        "sense": "称号；头衔",
+        "coveredBy": [],
+        "assessment": "来源单列的低频义，不宜直接并入现代学位义；本课未展开，不影响核心义覆盖。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"首音节读 /dɪ/，重读的末音节读 /ɡriː/；不要按旧式拼法把重音放在开头。\"",
+        "valueJson": "\"首音节读 /dɪ/，重音在第二音节 /ɡriː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常用复数 degrees；表示具体温度时常用 at + 数字 + degrees。温度和角度都是以“度”为单位，但所测量的东西不同。\"",
+        "valueJson": "\"说 one degree、30 degrees；作名词前的复合修饰语时用单数并加连字符，如 a 45-degree angle。表示具体温度时常用 at + 数字 + degrees，摄氏或华氏需看语境或标记。温度和角度的单位都译作“度”，但不是同一计量单位。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"degree-measure-ex3\",\"senseId\":\"degree-measure\",\"en\":\"The freezer is set to minus 18 degrees Celsius.\",\"zh\":\"冰柜的温度设为零下十八摄氏度。\",\"note\":\"minus 18 degrees Celsius 表示零下十八摄氏度，句中已明确温标。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"degree-measure-ex4\",\"senseId\":\"degree-measure\",\"en\":\"Rotate the photo 90 degrees to the right.\",\"zh\":\"把这张照片向右旋转九十度。\",\"note\":\"这里的 degrees 说明照片旋转的角度。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"temperature\",\"zh\":\"温度\",\"note\":\"temperature 是被测量的冷热程度；degree 是温度数值所用的单位。\"},{\"en\":\"angle\",\"zh\":\"角；角度\",\"note\":\"angle 是几何图形中的角，degree 是量角大小时常用的单位。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"temperature 和 angle 说明测量对象；degree 是单位。\"",
+        "valueJson": "\"temperature 表示温度，angle 表示角；degree 表示计量单位，不能与这两个词互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"大学完成规定课程后授予的资格或证书。\"",
+        "valueJson": "\"由大学等高等教育机构授予的学术资格，通常通过完成规定的学习或研究要求获得。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"数学中多项式中变量的最高次数。\"",
+        "valueJson": "\"数学中指多项式的次数；对非零一元多项式，是化简后最高次项中变量的指数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "\"按变量的最高指数确定次数。\"",
+        "valueJson": "\"这个一元多项式中变量的最高指数是 2，因此次数是 2。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/label",
+        "expectedValueJson": "\"degree(s) + 数字或计量语境\"",
+        "valueJson": "\"数字 + degree(s)，或其他计量语境\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries：degree\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/degree\",\"supports\":[\"名词常见义项及用法搭配\",\"degree 的词形和发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：degree（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/degree#Anglais\",\"supports\":[\"英语名词的程度、角度单位、温度单位、学位及专门义\",\"英语发音和规则复数\",\"经古法语 degré 传入的词源信息\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 366,
+    "headword": "degree",
+    "meaning_zh": "n. 程度, 度数, 学位, 度",
+    "phonetic": "/di'gri:/",
+    "pos": "",
+    "forms": []
+  }
+}

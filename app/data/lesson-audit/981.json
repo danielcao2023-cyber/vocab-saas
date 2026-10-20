@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "dbd44e9460afd2eaa3eca3341015bddda65a6568131fc630b09728cf2971a895",
+    "executedReviewPromptHash": "dbd44e9460afd2eaa3eca3341015bddda65a6568131fc630b09728cf2971a895",
+    "reviewHash": "64186e2226428b701209a4f782d297c3adec7fc2350ade70d912212f4074c6bc",
+    "wordId": 981,
+    "inputHash": "7ffcdc8e2dcbc235a23b58e8a99a0158b9f1777934d49e0b62ed68d730583555",
+    "draftHash": "9c17e1ddff2fea9c2cc0a628885224983ec1b9a98548b7fe69b85e1a0c4da198",
+    "finalHash": "8c9d9a3b486e1cd8e2d267ebd303265a6ecc8797d49674e494336ea0da317f3a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/panda#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.181Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117317,
+        "revisionId": 39774418,
+        "revisionTimestamp": "2026-08-03T14:11:35Z",
+        "sha256": "debf196f801035dd16871201ac267f757b0f655c2478ccbc672fd029e598b919",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/panda",
+        "section": "panda animal name",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "7da330fd58629beb8b3a9d6cca6b6edb554f9013afa468a1022efb38d37694a7",
+        "summaryAndSupportsWordCount": 67,
+        "sha256": "7da330fd58629beb8b3a9d6cca6b6edb554f9013afa468a1022efb38d37694a7",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/981.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/panda",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:13:22.240Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:18:28.701Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "词典把 panda 单独指小熊猫标为旧义。初稿只讲现代名称 red panda，没有明确呈现这一旧义；多处“必须加 red”的表述也过于绝对。应标明使用年代，并补充旧义语境例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了已检索英语词条收录的英国非正式“警车”义，应作为非重点义补入。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "法语阶段的 meaning 只是借入说明，没有解释字义，属于空洞阶段。应移除该阶段，在摘要中补充更早来源的线索，并明确尼泊尔语与藏语不能串成已证实的借词链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 没有对应的实取材料，Cambridge 获取失败，不能承担当前出处支持。法语维基词典的英语词条支持词义、读音及词源线索，但没有明确叙述“小熊猫先、大熊猫后”的顺序；该历史顺序应由 Etymonline 支持。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "对旧音标记录的评价不利于直接学习发音，可改成明确的元音提示。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的三个名词义。大熊猫是初中核心义，原有两例自然、译文准确，复数和读音正确。修订后，小熊猫义明确标为裸词 panda 的旧用法，保留现代 red panda 的两例并补入旧义例句；英国非正式警车义补入次要义。动物名称没有直接反义词，原有上位词与类别对照的说明基本恰当。更早词源的具体形式和借用关系仍未确定，修订后仅作审慎说明，不画成确定的顺序链。",
+    "senseInventory": [
+      {
+        "sense": "名词：大熊猫；现代普通用法",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "覆盖充分；已有两个自然原创例句，giant panda 与上位词 bear 的范围区别正确。"
+      },
+      {
+        "sense": "名词：小熊猫；单独使用 panda 属旧义",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "修订后区分旧义与现代常用名称 red panda，并补入裸词 panda 的旧义语境；原有两个现代名称例句予以保留。"
+      },
+      {
+        "sense": "名词：警车；英国非正式用法",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，提供一个明确的警车语境例句及配色联想说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"日常英语里，panda 通常指大熊猫；red panda（小熊猫）要说出 red，避免只说 panda。\"",
+        "valueJson": "\"日常英语里，panda 通常指大熊猫，小熊猫通常称 red panda；panda 单独指小熊猫是旧用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标中的词尾符号不规范；这里使用常见 IPA 写法。\"",
+        "valueJson": "\"第一音节中的 /æ/ 与 cat 中的元音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"是另一种动物；要表达小熊猫需说 red panda，不能当作大熊猫的反义词。\"",
+        "valueJson": "\"是另一种动物，现代英语通常称 red panda；这是动物名称的对照，并非大熊猫的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"小熊猫（需说 red panda）\"",
+        "valueJson": "\"小熊猫（panda 的旧义；现代通常说 red panda）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"red panda 指小熊猫，是一种体型较小、红褐色的动物。\"",
+        "valueJson": "\"panda 在旧用法中也指小熊猫，即一种体型较小、毛色红褐的动物；现代通常称 red panda。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"现代英语通常说 red panda；单独的 panda 通常指大熊猫。\"",
+        "valueJson": "\"读旧文时，可能遇到 panda 单独表示小熊猫的用法。现代日常交流通常用 red panda，以免被理解为大熊猫。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e3\",\"senseId\":\"s2\",\"en\":\"The old book describes a panda with reddish-brown fur and a long tail.\",\"zh\":\"这本旧书描写了一只长着红褐色毛和长尾巴的小熊猫。\",\"note\":\"旧书语境中的 panda 使用“小熊猫”旧义；现代通常称 red panda。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\",\"etymonline\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"警车（英国非正式用语）\",\"meaning\":\"英国非正式英语中，panda 也可指警车。\",\"note\":\"也见于 panda car；这个称呼源于部分警车的黑白配色与大熊猫的联想。一般表达用 police car 更清楚。\",\"example\":{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"A panda pulled up outside the shop, and two officers got out.\",\"zh\":\"一辆警车在商店外停下，两名警察下了车。\",\"note\":\"在这个英国非正式用法中，panda 指警车；警察下车的语境使意思明确。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"单独使用 panda 通常指大熊猫；说小熊猫时要加 red。\"",
+        "valueJson": "\"现代日常英语里，panda 通常指大熊猫，小熊猫通常称 red panda；旧时 panda 也可单独指小熊猫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"加上 red 才清楚表示小熊猫。\"",
+        "valueJson": "\"red panda 是现代英语中表示小熊猫的常用名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记大熊猫用 panda；小熊猫要说 red panda。\"",
+        "valueJson": "\"日常交流记住：panda 通常指大熊猫，小熊猫通常称 red panda；读旧文时留意 panda 的旧义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 panda 经法语传入；这个名称早先用于小熊猫，后来也用于大熊猫。\"",
+        "valueJson": "\"英语 panda 借自法语 panda；更早可能来自尼泊尔语中的动物名称，也有联系到藏语的说法。在英语中，这个名称最初指小熊猫，后来也用于大熊猫。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"panda\",\"meaning\":\"英语从法语借入的名称。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是名称的历史传入路径；现代英语中 panda 通常指大熊猫，而 red panda 指小熊猫。\"",
+        "valueJson": "\"更早来源的确切词形、含义及借用关系仍不确定；尼泊尔语与藏语的线索不能当作已经证实的先后传入链。名称的沿用也不能用来判断两种动物的现代生物分类。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"小熊猫名称前要加 red。\"",
+        "valueJson": "\"小熊猫的现代常用名称是 red panda，把 red 和 panda 一起记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"英语 panda 经法语传入的词源线索\",\"该名称曾指小熊猫，后来也用于大熊猫\"]",
+        "valueJson": "[\"英语名词 panda 的大熊猫义、旧指小熊猫义及英国非正式警车义\",\"英语读音及英美发音材料\",\"英语从法语借入的路径及尼泊尔语、藏语的更早来源线索\",\"警车义与车身配色的联想\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: panda\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/panda\",\"supports\":[\"panda 的常见含义\",\"panda 与 red panda 的用法区分\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: panda\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/panda\",\"supports\":[\"常见词义与词性\",\"复数形式及用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 981,
+    "headword": "panda",
+    "meaning_zh": "n. 大熊猫, 小熊猫",
+    "phonetic": "/'pændә/",
+    "pos": "",
+    "forms": []
+  }
+}

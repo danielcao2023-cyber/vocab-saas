@@ -1,0 +1,580 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c2a82567a65fbb8fb6ea325074a2d271746d1d6128411fc2baaa7ea626e51215",
+    "executedReviewPromptHash": "c2a82567a65fbb8fb6ea325074a2d271746d1d6128411fc2baaa7ea626e51215",
+    "reviewHash": "da162e81cc7947a36da59864e8202cbf1376f7522cafeedbb53f0fa67c0eb20d",
+    "wordId": 841,
+    "inputHash": "65d9f63f08ec483e3a5b15618a91fe57f21b4676dbe05bd32ea10cd41fc435db",
+    "draftHash": "a1d79793943ebb5139439d30ec4318b5da7ef5df6c753d054730830c9eb1595b",
+    "finalHash": "506d3c639307bed2b2aa86c76b1b61f8decc135e96ac742c59c5182599a45d52",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/mean#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:15.228Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 147666,
+        "revisionId": 39749043,
+        "revisionTimestamp": "2026-08-02T12:35:12Z",
+        "sha256": "49b0790de3e5831514ce4d4f0963c05ec638d7f4b5fc5d0252285c071bffc276",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/mean",
+        "section": "mean etymology",
+        "supports": [
+          "Three historical families: intention, commonness, and middle"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:12:02.592636+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "216db563f62a15abc85d138e2769552bb43a21ffec18b6fea7e3ae5d508ac686",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "216db563f62a15abc85d138e2769552bb43a21ffec18b6fea7e3ae5d508ac686",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/841.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/mean",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:53:18.522Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:02:55.721Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note; /wordFamily/0/spellingNote",
+        "message": "mean 的词尾是 n，不是“不发音的 e”。meaning 应解释为直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/spellingNote",
+        "message": "-less 的开头是 l，结尾有两个 s；原说明与 meaningless 的实际拼写不符。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0; /senses",
+        "message": "“意味着某种结果或可作出的判断”是核心常用义，不宜仅列为次要延伸且只有一个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的“说话是认真的”以及“对某人有重要意义”两组用法，需分别补充例句和搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech; /senses; /lessCommonSenses",
+        "message": "遗漏词典所列的名词“平均数”、means“手段”、非正式夸奖义及 no mean 中保留的旧义。数学中的形容词 mean 也应与名词用法区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "mean to do 本身不说明计划是否实现；原例仅说到家晚，注释却断定没有打电话。另外应补充常用的 be meant for / to do，区分意图、用途和安排。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2; /senses/3/usageNote; /memoryAid/cues/2/text",
+        "message": "教学提示宜写 be mean to someone，明确这里是形容词结构，避免与动词 mean to do 混淆。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote; /senses/2/collocations/0",
+        "message": "吝啬义尤常见于英式英语；脱离语境的 a mean person 也容易理解为“刻薄的人”，不宜作为明确表示吝啬的搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/meaning",
+        "message": "把刻薄义限定为“故意”伤害过窄；mean 也可评价不友善、不体贴的言行。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/summary; /wordFamily/1/example/senseId; /wordFamily/2/example/zh",
+        "message": "meaning 还可以是 mean 的 -ing 形式；meaningful 例句更适合关联重要性义；解码语境中的 key 应译为密钥，而非笼统的密码提示。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料支持三条主要历史来源，原稿遗漏“中间、平均”支系；阶段中的“来源形式”也未解释可证实的词义。三支须在摘要中并列，不能画成一条演变链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "Cambridge 实际未取得词条内容，不能承担现有释义、读音和句型的来源归属。应改引已取得的英语维基词典词条及 Etymonline；仅凭专业语言知识补充的独立用法不虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对所列词典的全部主要定义，并检查常用句型和词性。补丁将结果／推论、认真、重要性及名词平均数补入核心层，各配至少两个例句；补充用途、安排、口语 I mean 等功能。非正式夸奖义、no mean、数学形容词及相关名词 means 放在扩展栏。means 按现代英语说明为单复数同形的相关名词。词源分开交代三支，保留原稿正确内容；本课不穷尽所有历史和专业用法。",
+    "senseInventory": [
+      {
+        "sense": "动词：表示；意思是；说明说话者想表达的内容",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "原有两个例句合格；补充询问说话意图和口语澄清、改口的 I mean。"
+      },
+      {
+        "sense": "动词：打算；有意图；被动结构表示预定对象、用途或安排",
+        "coveredBy": [
+          "v2"
+        ],
+        "assessment": "保留意图义，明确是否实现须看上下文；补充 be meant for、be meant to 和常用完成进行时表达。"
+      },
+      {
+        "sense": "动词：意味着；包含某种要求、结果或可作出的判断",
+        "coveredBy": [
+          "v3"
+        ],
+        "assessment": "从扩展栏移入核心层，配结果、mean doing 和判断三个例句。"
+      },
+      {
+        "sense": "动词：所说的话是认真的；真心这么说",
+        "coveredBy": [
+          "v4"
+        ],
+        "assessment": "原稿遗漏；补充 I mean it、mean every word 等常用表达及两个例句。"
+      },
+      {
+        "sense": "动词：对某人有重要意义",
+        "coveredBy": [
+          "v5"
+        ],
+        "assessment": "属于专业语言知识可确认的常用用法；补两个生活例句，不声称来自未取得的词典内容。"
+      },
+      {
+        "sense": "形容词：吝啬的；小气的",
+        "coveredBy": [
+          "a1"
+        ],
+        "assessment": "已有两个合格例句；补充地域倾向，换用能明确表达吝啬义的搭配。"
+      },
+      {
+        "sense": "形容词：刻薄的；不友善的",
+        "coveredBy": [
+          "a2"
+        ],
+        "assessment": "已有两个合格例句；去掉必须故意伤人的限制，明确形容词句型。"
+      },
+      {
+        "sense": "形容词：平均的",
+        "coveredBy": [
+          "a3"
+        ],
+        "assessment": "作为数学、统计用法补充，与名词 mean 分开示例。"
+      },
+      {
+        "sense": "形容词：非正式的“出色的；技艺高的”",
+        "coveredBy": [
+          "a4"
+        ],
+        "assessment": "词典明确列出，原稿遗漏；补入扩展栏并标明夸奖语境。"
+      },
+      {
+        "sense": "形容词旧义：普通的；平庸的，现常保留在 no mean 等表达中",
+        "coveredBy": [
+          "a5"
+        ],
+        "assessment": "补充常见的 no mean feat，说明整句是在称赞，避免按刻薄义理解。"
+      },
+      {
+        "sense": "名词：平均数；通常指算术平均数",
+        "coveredBy": [
+          "n1"
+        ],
+        "assessment": "原稿遗漏；补入核心层，提供两个具体应用例句及与 average 的区别。"
+      },
+      {
+        "sense": "相关名词 means：办法；手段",
+        "coveredBy": [
+          "n2"
+        ],
+        "assessment": "补入扩展栏；明确 a means 与复数 means 均保留 s，不把它当作动词 mean 的义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb; adjective\"",
+        "valueJson": "\"verb; adjective; noun\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"动词 mean 常用来说明“某个词或事情表示什么”，也可说“打算做某事”；形容词 mean 常表示“吝啬的”或“对人刻薄的”。\"",
+        "valueJson": "\"动词 mean 可表示“意思是、意味着、打算”，也常用于强调“我是认真的”或某事对人的重要性；形容词表示“吝啬、刻薄”，数学中的名词 mean 指平均数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"用 mean to someone 造句，练习描述对人的态度。\"",
+        "valueJson": "\"用 be mean to someone 造句，练习描述对人的态度，并与动词 mean to do 区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"直接在 mean 后加 -ing，写作 meaning。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数（平均数）\",\"form\":\"means\",\"ipa\":\"/miːnz/\",\"note\":\"表示多个平均数时使用；表示“手段”的相关名词 means 则单复数同形。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-e3\",\"senseId\":\"v1\",\"en\":\"Let's meet at six—I mean, at half past six.\",\"zh\":\"我们六点见——我是说，六点半见。\",\"note\":\"I mean 在这里用于改口，纠正刚说出的时间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"What do you mean (by ...)?\",\"zh\":\"你（说……）是什么意思？\",\"note\":\"询问对方想表达什么；by 后可接所谈论的词语或事情。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"I mean, ...\",\"zh\":\"我的意思是……；我是说……\",\"note\":\"口语中用于补充说明或改口；与强调认真的 I mean it 区分。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"打算；本来想\"",
+        "valueJson": "\"打算；意在；（按安排）应该\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"有做某事的计划或意图，常指后来可能没有做到。\"",
+        "valueJson": "\"表示做某事的意图；被动结构 be meant for / to do 还可说明预定对象、用途，或按安排应该做的事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"表示“打算做”时常用 mean to do；过去式 meant to do 可说明原本的打算。\"",
+        "valueJson": "\"mean to do 表示意图，不保证已经或最终做到；meant to do 回顾原先的打算。说明预定对象、用途或安排时用 be meant for / to do。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"v2-e1\",\"senseId\":\"v2\",\"en\":\"I meant to call you after school, but I got home late.\",\"zh\":\"我本来想放学后给你打电话，但我到家晚了。\",\"note\":\"meant to call 表示原本打算打电话，后文说明没有按计划做。\"}",
+        "valueJson": "{\"id\":\"v2-e1\",\"senseId\":\"v2\",\"en\":\"I meant to call you after school, but I forgot.\",\"zh\":\"我本来打算放学后给你打电话，但忘了。\",\"note\":\"meant to call 表示原先的打算；没有打电话由 but I forgot 说明，并非 meant 本身表示。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v2-e3\",\"senseId\":\"v2\",\"en\":\"This seat is meant for passengers with young children.\",\"zh\":\"这个座位是留给带小孩的乘客的。\",\"note\":\"be meant for 说明预定的使用对象。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v2-e4\",\"senseId\":\"v2\",\"en\":\"The coloured cards are meant to help children learn the alphabet.\",\"zh\":\"这些彩色卡片是用来帮助孩子学习字母的。\",\"note\":\"be meant to help 说明设计用途，不是卡片自己有打算。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v2-e5\",\"senseId\":\"v2\",\"en\":\"You're meant to put your phone away during the lesson.\",\"zh\":\"按规定，你上课时应该把手机收起来。\",\"note\":\"be meant to 在这里表示按要求应当做，接近 be supposed to。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v2-e6\",\"senseId\":\"v2\",\"en\":\"I've been meaning to return your umbrella.\",\"zh\":\"我一直想把伞还给你。\",\"note\":\"have been meaning to 是常见表达，表示这件事一直想做，往往还未抽空去做。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be meant for someone / something; be meant to do something\",\"zh\":\"为……准备；旨在做某事；按安排应当做某事\",\"note\":\"保留 be，构成被动结构；与表示主语本人打算做的 mean to do 区分。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"have been meaning to do something\",\"zh\":\"一直想做某事\",\"note\":\"常用于引出一直想做、现在才做或仍未做的事情；这是意图义中的常见用法。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be supposed to do\",\"zh\":\"按规定或安排应该做\",\"note\":\"只与表示要求或安排的 be meant to 接近，不等于主动结构 mean to do 的“打算做”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"日常表达中 mean to do 很常见；intend to do 较正式，plan to do 更突出计划安排。\"",
+        "valueJson": "\"intend to do 较正式，plan to do 更强调计划安排；表示要求或安排的 be meant to 接近 be supposed to。主动结构 mean to do 表示主语的意图。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"形容人的行为或态度；mean with something 常表示在某方面舍不得给。\"",
+        "valueJson": "\"吝啬义尤常见于英式英语；be mean with money / food 表示舍不得花钱或分享食物。单独说 a mean person 也可指刻薄的人，须看上下文。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"a mean person\",\"zh\":\"小气的人\",\"note\":\"直接描述一个人吝啬、不大方。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"be mean with money\",\"zh\":\"花钱吝啬；舍不得给钱\",\"note\":\"with money 明确了吝啬的方面，尤常见于英式英语。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"故意用不友善的话或行为伤害、欺负别人。\"",
+        "valueJson": "\"待人不友善，常表现为伤人的话、欺负或不体贴的行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"mean to someone 表示对某人刻薄；mean 可描述言语、行为或人。\"",
+        "valueJson": "\"常用 be mean to someone 表示对某人刻薄；这里 mean 是形容词，也可修饰言语、行为或人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v3\",\"title\":\"意味着；会带来某种结果\",\"meaning\":\"某种情况包含或要求某个结果，也可据此作出判断。\",\"usageNote\":\"常用 mean that + 从句或 mean doing；这里说的是某种情况意味着什么，不是做事的意图。\",\"examples\":[{\"id\":\"v3-e1\",\"senseId\":\"v3\",\"en\":\"Missing the last bus means that we must walk home.\",\"zh\":\"错过末班车就意味着我们得走回家。\",\"note\":\"mean that 引出由前一情况带来的结果。\"},{\"id\":\"v3-e2\",\"senseId\":\"v3\",\"en\":\"Taking the early flight means getting up at four.\",\"zh\":\"坐早班飞机就意味着要四点起床。\",\"note\":\"means getting up 说明选择早班飞机所要求的行动。\"},{\"id\":\"v3-e3\",\"senseId\":\"v3\",\"en\":\"Your name is on the winners' list. That means you've won a prize.\",\"zh\":\"获奖名单上有你的名字。这说明你获奖了。\",\"note\":\"这里从名单上的信息作出判断，不表示名单造成了获奖。\"}],\"patterns\":[{\"en\":\"mean that + 从句\",\"zh\":\"意味着……；说明……\",\"note\":\"从句说明结果或据此作出的判断。\",\"kind\":\"sentence-pattern\"},{\"en\":\"mean doing something\",\"zh\":\"意味着要做某事\",\"note\":\"doing 表示某种情况所包含或要求的行动；不要换成表示意图的 to do。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"mean extra work / a longer wait\",\"zh\":\"意味着额外工作／更长的等待\",\"note\":\"mean 后也可接名词短语，说明带来的影响。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"entail\",\"zh\":\"必然包含；必然带来\",\"note\":\"较正式，强调某结果或要求是必然包含的。\"},{\"en\":\"imply\",\"zh\":\"意味着；暗示\",\"note\":\"可用于根据情况作推断，不一定表示造成结果或证明结论。\"},{\"en\":\"involve\",\"zh\":\"涉及；包含\",\"note\":\"侧重某事包含的行动、工作或条件。\"}],\"contrasting\":[{\"en\":\"not mean / not necessarily mean\",\"zh\":\"并不意味着／不一定意味着\",\"note\":\"前者否定具体结果或推论，后者只否定它的必然性。\"}],\"similarNote\":\"entail 强调必然包含的结果或要求；imply 常侧重推断；involve 侧重所包含的行动或工作，不能在所有句子中直接替换 mean。\",\"contrastingNote\":\"这些是否定具体判断的反向表达，不是适用于 mean 全部义项的反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v4\",\"title\":\"说话是认真的；真心这么说\",\"meaning\":\"表示所说的话确实表达自己的想法、态度或承诺。\",\"usageNote\":\"常用 I mean it 强调自己是认真的；mean every word 强调说出的每句话都是真心的。\",\"examples\":[{\"id\":\"v4-e1\",\"senseId\":\"v4\",\"en\":\"Please stop throwing stones. I mean it.\",\"zh\":\"请别再扔石头了。我是认真的。\",\"note\":\"I mean it 加强前面的要求，说明不是随口说说。\"},{\"id\":\"v4-e2\",\"senseId\":\"v4\",\"en\":\"I meant every word of my apology.\",\"zh\":\"我道歉时说的每一句话都是真心的。\",\"note\":\"meant 在这里表示当时确实怀有那些想法，不是“本来打算”。\"}],\"patterns\":[{\"en\":\"mean what you say\",\"zh\":\"说的话是认真的\",\"note\":\"强调话语与真实想法一致。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"I mean it.\",\"zh\":\"我是认真的。\",\"note\":\"常用于强调要求、承诺或态度。\",\"kind\":\"fixed-expression\"},{\"en\":\"mean every word\",\"zh\":\"每句话都是真心的\",\"note\":\"可用于道歉、感谢、赞扬或承诺。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be serious\",\"zh\":\"是认真的\",\"note\":\"强调没有开玩笑，适合要求、计划或警告等语境。\"},{\"en\":\"be sincere\",\"zh\":\"是真诚的\",\"note\":\"强调真实感情，适合道歉、感谢或赞扬等语境。\"}],\"contrasting\":[{\"en\":\"be joking\",\"zh\":\"是在开玩笑\",\"note\":\"在是否认真说话这一语境中构成对照。\"},{\"en\":\"not really mean it\",\"zh\":\"并非真心这么说\",\"note\":\"否定话语背后的真实想法，不一定表示在开玩笑。\"}],\"similarNote\":\"be serious 侧重认真，be sincere 侧重真诚；根据所说内容选择。\",\"contrastingNote\":\"玩笑和并非真心是两种不同情况，不能一概等同。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v5\",\"title\":\"对某人有重要意义\",\"meaning\":\"某人或某事对一个人很重要、有价值或有感情分量。\",\"usageNote\":\"常用 mean a lot to someone；这里的 to 后接感到它重要的人。\",\"examples\":[{\"id\":\"v5-e1\",\"senseId\":\"v5\",\"en\":\"Your call meant a lot to me when I was in hospital.\",\"zh\":\"我住院时，你打来的电话对我意义重大。\",\"note\":\"meant a lot 强调这通电话带来的支持和感情分量。\"},{\"id\":\"v5-e2\",\"senseId\":\"v5\",\"en\":\"This old photo means a lot to Mum because it shows her childhood home.\",\"zh\":\"这张老照片对妈妈很重要，因为照片里是她小时候的家。\",\"note\":\"mean 在这里不表示照片里有什么词义，而是照片对人的重要性。\"}],\"patterns\":[{\"en\":\"something means a lot to someone\",\"zh\":\"某事对某人意义重大\",\"note\":\"a lot 表示重要性的程度；to 后接人。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"mean the world to someone\",\"zh\":\"对某人极其重要\",\"note\":\"带有强烈感情色彩，常用于亲人、支持或珍贵事物。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"matter to someone\",\"zh\":\"对某人重要\",\"note\":\"强调某人或某事受到重视。\"},{\"en\":\"be important to someone\",\"zh\":\"对某人很重要\",\"note\":\"较直接、通用，感情色彩由上下文决定。\"}],\"contrasting\":[{\"en\":\"mean little / nothing to someone\",\"zh\":\"对某人不太重要／毫无意义\",\"note\":\"在重要性这一语境中表达相反方向；mean nothing 也可在其他语境表示无法理解。\"}],\"similarNote\":\"mean a lot to 常带个人感情或价值判断；matter to 和 be important to 可用于更广的语境。\",\"contrastingNote\":\"这里比较的是对某人的重要程度，不是否有字面含义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n1\",\"title\":\"名词：平均数\",\"meaning\":\"通常指算术平均数，即把一组数相加后除以数的个数所得的值。\",\"usageNote\":\"这是数学、统计中的名词；常用 the mean of ...，谈多个平均数时复数为 means。\",\"examples\":[{\"id\":\"n1-e1\",\"senseId\":\"n1\",\"en\":\"My three quiz scores were 70, 80, and 90, so the mean was 80.\",\"zh\":\"我三次小测的成绩是70、80和90分，所以平均分是80分。\",\"note\":\"三个分数相加后除以3，得到算术平均数。\"},{\"id\":\"n1-e2\",\"senseId\":\"n1\",\"en\":\"We added the five delivery times and divided by five to find the mean.\",\"zh\":\"我们把五次送货所用的时间相加，再除以5，求出平均用时。\",\"note\":\"the mean 是名词，指这五个用时的平均值。\"}],\"patterns\":[{\"en\":\"the mean of a set of numbers\",\"zh\":\"一组数的平均数\",\"note\":\"of 后说明计算的是哪组数据。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"calculate / find the mean\",\"zh\":\"计算／求出平均数\",\"note\":\"用于数学计算和数据分析。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"average\",\"zh\":\"平均数；平均水平\",\"note\":\"日常也常指算术平均数，但还可笼统表示一般水平；精确讨论统计指标时应说明计算方式。\"}],\"contrasting\":[],\"similarNote\":\"mean 在这里通常指算术平均数；median 是中位数，mode 是众数，不能随意当成同义词替换。\",\"contrastingNote\":\"平均数没有通用反义词；最大值和最小值是其他统计指标。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"v3\",\"title\":\"意味着；造成某种结果\",\"meaning\":\"表示某件事会带来某个结果或结论，常用 mean that 引出结果。\",\"note\":\"初中阶段可先把它看作“表示”的语境延伸。\",\"example\":{\"id\":\"v3-e1\",\"senseId\":\"v3\",\"en\":\"Missing the last bus means that we must walk home.\",\"zh\":\"错过末班车就意味着我们得走回家。\",\"note\":\"mean that 引出由前一情况带来的结果。\"},\"sourceIds\":[\"cambridge\"]}]",
+        "valueJson": "[{\"id\":\"a3\",\"title\":\"形容词：平均的\",\"meaning\":\"表示由一组数值计算出的平均水平。\",\"note\":\"用于数学、统计，常修饰 age、temperature、score 等名词；属于“中间、平均”这一历史支系。\",\"example\":{\"id\":\"a3-e1\",\"senseId\":\"a3\",\"en\":\"The mean age of the children in the club is nine.\",\"zh\":\"俱乐部里这些孩子的平均年龄是九岁。\",\"note\":\"mean 修饰名词 age，在这里是形容词。\"},\"sourceIds\":[\"etymonline\"]},{\"id\":\"a4\",\"title\":\"非正式：出色的；技艺高的\",\"meaning\":\"用于称赞某人的本领或做出的东西很棒。\",\"note\":\"看所修饰的对象和上下文判断；这种用法常见于 a mean + 名词结构。\",\"example\":{\"id\":\"a4-e1\",\"senseId\":\"a4\",\"en\":\"My uncle makes a mean curry.\",\"zh\":\"我叔叔的咖喱做得很棒。\",\"note\":\"这里称赞厨艺，是非正式用法。\"},\"sourceIds\":[\"wiktionary\"]},{\"id\":\"a5\",\"title\":\"no mean：绝非寻常的；了不起的\",\"meaning\":\"mean 的“普通、平庸”旧义保留在 no mean 等表达中，整体表示相当出色或很不容易。\",\"note\":\"普通、平庸这一义现在不宜随意单独使用；可先记常见表达 no mean feat。\",\"example\":{\"id\":\"a5-e1\",\"senseId\":\"a5\",\"en\":\"Organizing a school fair for 300 visitors was no mean feat.\",\"zh\":\"为300位来宾组织一场校园集市可真不容易。\",\"note\":\"no mean feat 表示了不起的成就，带有称赞意味。\"},\"sourceIds\":[\"wiktionary\"]},{\"id\":\"n2\",\"title\":\"相关名词 means：办法；手段\",\"meaning\":\"实现某事所用的方法或手段。\",\"note\":\"means 本身很常见，这里作为相关名词补充。表示“手段”时单复数都拼 means：单数 a means，复数 means。by means of 表示“借助；通过”。\",\"example\":{\"id\":\"n2-e1\",\"senseId\":\"n2\",\"en\":\"A bicycle is a cheap means of transport.\",\"zh\":\"自行车是一种便宜的交通工具。\",\"note\":\"a means 是单数，仍保留 s；这里不是动词的第三人称单数。\"},\"sourceIds\":[\"wiktionary\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"mean 可作动词或形容词；meaning 是名词，表示“意思、含义”。\"",
+        "valueJson": "\"mean 可作动词、形容词，也可在数学中作名词。meaning 在 the meaning of ... 中是表示“意思、含义”的名词；它也可作 mean 的 -ing 形式，例如 I've been meaning to ...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"mean 有不同词性和历史来源：动词“表示、打算”与古英语 maenan 有关；形容词“吝啬、刻薄”来自另一条与“共同、共有”相关的古英语词源。它们只是现代拼写相同，不能当作同一条词根演变。\"",
+        "valueJson": "\"mean 有三条主要历史来源：动词“表示、打算”承接古英语 mǣnan；形容词“吝啬、刻薄”来自表示“共同、共有”的古英语 (ge)mǣne，经历了“地位低微”等意义的发展；“中间、平均”这一支则经古法语 meien 上溯到拉丁语 medianus（在中间的）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"maenan\",\"meaning\":\"动词 mean“表示、打算”的来源形式\"}]",
+        "valueJson": "[{\"language\":\"古英语（动词支系）\",\"form\":\"mǣnan\",\"meaning\":\"表示；意指；打算\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"形容词 mean 的历史来源与动词不同；这里的词源关系不等于现代英语中可拆分的构词规则。\"",
+        "valueJson": "\"三条主要来源不同；后来的部分形容词用法虽有相互影响，也不能因此合成单一来源。历史词源不等于现代英语的拆词规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"wiktionary\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"mean 以不发音的 e 结尾，去掉 e 再加 -ing。\"",
+        "valueJson": "\"mean 的词尾是 n；直接加 -ing，写作 meaning，n 不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"v1\"",
+        "valueJson": "\"v5\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"加 -less 后仍只保留一个 s 在后缀开头，写作 meaningless。\"",
+        "valueJson": "\"-less 以两个 s 结尾：meaning + -less → meaningless。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/zh",
+        "expectedValueJson": "\"没有密码提示时，这串代码对我们来说毫无意义。\"",
+        "valueJson": "\"没有解码密钥，这串暗码在我们看来毫无意义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"mean to someone：对某人刻薄；mean with money：花钱小气。\"",
+        "valueJson": "\"be mean to someone：对某人刻薄；be mean with money：花钱小气。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: mean\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/mean\",\"supports\":[\"mean 作动词表示意思、意图或意味着\",\"mean 作形容词表示吝啬或对人不友善\",\"mean 的常见句型与词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire: mean（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/mean#Anglais\",\"supports\":[\"英语 mean 的主要动词义、词形和读音\",\"英语 mean 的刻薄义、非正式夸奖义及 no mean 用法\",\"英语名词 mean 的平均数义及相关名词 means 的手段义\",\"三条词源及 meaning、meaningful、meaningless 等派生词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"mean 的动词和形容词历史来源不同\"]",
+        "valueJson": "[\"动词 mean 承接古英语 maenan，表示意图或含义\",\"吝啬、刻薄义来自古英语 gemaene，并经历地位低微等义的发展\",\"中间、平均一支经古法语 meien 来自拉丁语 medianus；三条主要来源不能合并\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 841,
+    "headword": "mean",
+    "meaning_zh": "v. 意思是；意味着\nadj. 吝啬的；刻薄的",
+    "phonetic": "/mi:n/",
+    "pos": "",
+    "forms": []
+  }
+}

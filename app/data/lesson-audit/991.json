@@ -1,0 +1,313 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "826ac27a037b7c1cb9ed7fd65b91caf0b67a5c0706bb28a7615aa6c2c5fc0c77",
+    "executedReviewPromptHash": "826ac27a037b7c1cb9ed7fd65b91caf0b67a5c0706bb28a7615aa6c2c5fc0c77",
+    "reviewHash": "f642c3e4f390f4197f48c773af345cf271a7b67635cb74f54bea6b513b62a387",
+    "wordId": 991,
+    "inputHash": "4b35c202e7cbe53b2c5b9a80e93150f66566b489e3959cf4277f352bc9d15149",
+    "draftHash": "1bd695fe1ade6ddc7fc74750615ee4fb8b86ae6c9b3555453406c04cd770906d",
+    "finalHash": "8d6a5fdb74e0a917a31304586abf456e63ab09e072807e896fd15663d3eeb4ee",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/passage#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.183Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119756,
+        "revisionId": 39864919,
+        "revisionTimestamp": "2026-09-07T18:18:07Z",
+        "sha256": "98dc4eaa5e2467d9f9a288f0eed183a9de408916d0b7b27527478d1a84c69411",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/passage",
+        "section": "passage noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "cf75f8f5d33685bc93e832fa1f8f588835cf6a46804caa6600abe0171469f436",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "cf75f8f5d33685bc93e832fa1f8f588835cf6a46804caa6600abe0171469f436",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/991.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/passage",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:24:58.063Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:33:27.923Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 未出现在实际取得的材料中，Cambridge 获取失败，不能据此标注正文依据。应改引已取得的法语维基词典英语词条和 Etymonline；没有对应来源内容的独立语言辨析不强行挂引文。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了材料明确支持的“音乐片段”义，以及应提示的 the passage of time。航程、法案通过也可作为正式用法补入拓展栏；通行过程义宜补明 safe passage，并与实体通道区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/zh",
+        "message": "about space 修饰 book，原译把主题限定移到了所选文字上。应译出“从一本介绍太空的书中选取”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting；/senses/1/relatedExpressions/contrasting",
+        "message": "title 和 entrance 的释义本身正确，但不是 passage 的反向表达。文字义宜说明没有常用直接反义词；通道义可限定为畅通与堵塞的状态对照。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/kind",
+        "message": "a passage through the mountains 是名词短语搭配，不是句型，应标为 common-collocation。"
+      }
+    ],
+    "coverageAssessment": "已核对文字／引文、通路／小巷／走廊、通过过程、音乐片段、时间流逝、航程及法案通过等主要用法。两个初中核心义均保留两例，其余放在拓展栏。现有法语→英语词源顺序有依据，无须改写。法语维基词典提供的是英语词条；其中另一读音的名词项没有定义，不据此推定专门词义，也不穷举专业术语用法。",
+    "senseInventory": [
+      {
+        "sense": "文字片段；引文；阅读短文",
+        "coveredBy": [
+          "passage-text"
+        ],
+        "assessment": "核心义覆盖充分；两例分别呈现阅读材料和书中选文，修正第二例的中文修饰关系。"
+      },
+      {
+        "sense": "通路；小巷；路径；走廊",
+        "coveredBy": [
+          "passage-way"
+        ],
+        "assessment": "英语词条中的 ruelle、chemin／route／voie、corridor／couloir 均落在这一空间义范围内，无须机械拆义；已有两例。"
+      },
+      {
+        "sense": "经过；通过；通行的行为或过程",
+        "coveredBy": [
+          "passage-through"
+        ],
+        "assessment": "原有例句正确；补充 safe passage，并明确与实体通道的区别。"
+      },
+      {
+        "sense": "音乐片段；乐段",
+        "coveredBy": [
+          "passage-music"
+        ],
+        "assessment": "Etymonline 材料明确提及，新增为拓展义。"
+      },
+      {
+        "sense": "时间的流逝",
+        "coveredBy": [
+          "passage-time"
+        ],
+        "assessment": "补充常见表达 the passage of time，说明其过程义及不可数用法。"
+      },
+      {
+        "sense": "旅程，尤指航程",
+        "coveredBy": [
+          "passage-journey"
+        ],
+        "assessment": "依据专业语言知识补充正式用法，不列为初中核心义。"
+      },
+      {
+        "sense": "法案等的通过",
+        "coveredBy": [
+          "passage-law"
+        ],
+        "assessment": "依据专业语言知识补充新闻、政治语境中的正式用法，区别于法案中的文字片段。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_passage\",\"title\":\"Oxford Learner’s Dictionaries: passage\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/passage\",\"supports\":[\"词性与常见释义\",\"常见搭配和用法\",\"英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_passage_en\",\"title\":\"法语维基词典：passage（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/passage#Anglais\",\"supports\":[\"英语名词 passage 的常用读音 /ˈpæsɪdʒ/\",\"小巷、通路、走廊及引文等释义\",\"英语 passage 来自法语 passage\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge_passage\",\"title\":\"Cambridge Dictionary: passage\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/passage\",\"supports\":[\"文字片段与通道等常见义项\",\"英美发音参考\",\"常见用法查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_passage\",\"cambridge_passage\"]",
+        "valueJson": "[\"wiktionary_passage_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passage\",\"cambridge_passage\"]",
+        "valueJson": "[\"wiktionary_passage_en\",\"etymonline_passage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_passage\",\"cambridge_passage\"]",
+        "valueJson": "[\"wiktionary_passage_en\",\"etymonline_passage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passage\"]",
+        "valueJson": "[\"etymonline_passage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_passage\",\"cambridge_passage\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"老师选了书中一段关于太空的文字。\"",
+        "valueJson": "\"老师从一本介绍太空的书中选了一段文字。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"title\",\"zh\":\"标题\",\"note\":\"在文章结构中，标题给出主题；passage 是实际阅读的正文片段。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在文章阅读语境中，title 与 passage 分别是标题和正文片段，可用于区分文章组成部分。\"",
+        "valueJson": "\"表示文字片段或阅读短文时，passage 没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"entrance\",\"zh\":\"入口\",\"note\":\"entrance 是进入某处的地方；passage 是通过或连接地点的路线。\"}]",
+        "valueJson": "[{\"en\":\"a blocked passage\",\"zh\":\"堵塞的通道\",\"note\":\"与 a clear passage（畅通的通道）在通行状态上相对；不是名词 passage 本身的反义词。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在地点和路线的语境中，entrance 指进入的地方，passage 指通过其中的路线。\"",
+        "valueJson": "\"这里对比的是通道畅通或堵塞的状态；passage 表示实体通道时没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"通常出现在 the passage of ... 结构中；初中阶段先掌握“文字”和“通道”两义即可。\"",
+        "valueJson": "\"指通过这一行为或过程，区别于实体通道；常见 the passage of ... through ... 或 safe passage（安全通行），这里通常不可数。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"passage-music\",\"title\":\"音乐片段；乐段\",\"meaning\":\"乐曲中的一个片段。\",\"note\":\"通常可数；a difficult passage 可以指一段较难演奏的乐段。\",\"example\":{\"id\":\"passage-music-ex1\",\"senseId\":\"passage-music\",\"en\":\"The pianist practiced the same difficult passage until she could play it smoothly.\",\"zh\":\"这位钢琴家反复练习同一个难弹的乐段，直到能把它流畅地弹出来。\",\"note\":\"这里的 passage 指乐曲的一部分。\"},\"sourceIds\":[\"etymonline_passage\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"passage-time\",\"title\":\"时间的流逝\",\"meaning\":\"时间的推移或流逝。\",\"note\":\"常见表达是 the passage of time；这里 passage 不可数，表示时间流逝的过程。\",\"example\":{\"id\":\"passage-time-ex1\",\"senseId\":\"passage-time\",\"en\":\"The old photographs faded with the passage of time.\",\"zh\":\"随着时间的流逝，那些老照片褪了色。\",\"note\":\"with the passage of time 表示随着时间的推移。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"passage-journey\",\"title\":\"旅程；航程\",\"meaning\":\"从一处到另一处的旅行，尤指乘船的旅程。\",\"note\":\"较正式，尤其用于航海叙述；这里 passage 指一次行程。\",\"example\":{\"id\":\"passage-journey-ex1\",\"senseId\":\"passage-journey\",\"en\":\"Our passage across the Atlantic took ten days.\",\"zh\":\"我们横渡大西洋的航程历时十天。\",\"note\":\"a passage across ... 指横越某处的旅程。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"passage-law\",\"title\":\"法案等的通过\",\"meaning\":\"法案等经正式审议而获得通过。\",\"note\":\"用于新闻、政治等正式语境；the passage of a bill 指法案获通过。\",\"example\":{\"id\":\"passage-law-ex1\",\"senseId\":\"passage-law\",\"en\":\"The passage of the bill was welcomed by local teachers.\",\"zh\":\"当地教师对这项法案的通过表示欢迎。\",\"note\":\"这里指法案获通过这一事件，不是法案中的一段文字。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 991,
+    "headword": "passage",
+    "meaning_zh": "n. 段落；短文；通道",
+    "phonetic": "/'pæsidʒ/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6aa01ea852e17f8f16099e8130f9cab26a7add8e848056a18bfe283318fed863",
+    "executedReviewPromptHash": "6aa01ea852e17f8f16099e8130f9cab26a7add8e848056a18bfe283318fed863",
+    "reviewHash": "aa7bfb8b99657910865a0b8fc3455196246aced0a476c1a0a3b7df3536dbad63",
+    "wordId": 535,
+    "inputHash": "c929337f3734cbb7ee51e8258b6e8d99c17139bc26a7fbf5942be359bdffe3ae",
+    "draftHash": "8f01e7632a9bd5880f1d644257fbbbf868928680215e0e69fa510e0ace509220",
+    "finalHash": "b05d1e88a7cfa5f91f21bb40d21a2db549df917f6678bd9623b38be83b372947",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/fog#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.110Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 61025,
+        "revisionId": 39766341,
+        "revisionTimestamp": "2026-08-03T05:48:02Z",
+        "sha256": "8f6b958e2fba0053433779df1a78278f6ea14f82514c857645ac5c7ffac9fb14",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/fog",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:39:21.518Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:55:30.098Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "原稿将全部内容关联到未在实际来源中取得的 Oxford 条目。应引用已取得的法语维基词典英语词条，并将其未直接支持的扩展义和派生词的 sourceIds 留空。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0",
+        "message": "不能绝对禁止 a fog。fog 通常不可数，但 a thick fog 等表达可以表示某次或某片浓雾。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "第二例及部分搭配实际使用名词 fog，导致动词义只有一个例句，常见名词比喻义也未独立覆盖。应补足两个动词例句，并为名词比喻义另设核心义及两个例句。nap 也不限定为午睡。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "玻璃蒙雾这一义应优先对照 defog、demist。clear up 不是教玻璃或镜片除雾时最准确的对应表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similarNote及/senses/1",
+        "message": "mist 应说明为悬浮小水滴形成的雾；mist up 与 fog up 在玻璃蒙雾语境中通常可互换，没有稳定的“更直接”之别。up 也不必表示逐渐发生。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有词源栏只讲现代用法，遗漏了已取得来源明确记载的“来源不明”。应补入这一事实并关联相同 URL，继续保留空阶段数组。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example",
+        "message": "The hills appeared foggily 搭配生硬，不宜作学习例句。foggily 的拼写及“去 y 加 -ily”的构词说明正确，应保留并换成自然的记忆模糊语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/1/example",
+        "message": "原例只使用 frog，却绑定 fog 的天气义。可在对照例句中同时使用 frog 和 fog，使 senseId 与实际词义对应。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的名词“雾”和动词“使蒙上雾气”，并按专业语言知识审核名词迷糊状态、动词思路模糊及专业喷雾用法。修订后四个核心义各有两个例句，及物与不及物蒙雾用法均有覆盖。fog of war 是来源列出的派生表达，不必另立初中核心义。比喻义、喷雾义及 foggily、fogginess 未获现有摘录直接展开，已避免将其冒充为该词典的明确支持内容。原稿音标及词形拼写可接受，保留；Cambridge 未取得内容，不作依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：雾，通常不可数，也可表示某次或某片雾",
+        "coveredBy": [
+          "fog-noun-weather"
+        ],
+        "assessment": "基本义及两个例句完整；修正对 a fog 的绝对禁用说明。"
+      },
+      {
+        "sense": "动词：使蒙上雾气；玻璃等表面起雾",
+        "coveredBy": [
+          "fog-verb-obscure"
+        ],
+        "assessment": "两个例句分别覆盖及物和不及物用法；修正近义比较、up 的说明及除雾对应表达。"
+      },
+      {
+        "sense": "名词比喻义：迷糊、困惑或思绪不清的状态",
+        "coveredBy": [
+          "fog-noun-mental"
+        ],
+        "assessment": "原稿散见于动词义中；新增独立核心义，配置两个自然例句及对应搭配。"
+      },
+      {
+        "sense": "动词比喻义：使思路或判断不清",
+        "coveredBy": [
+          "fog-verb-confuse"
+        ],
+        "assessment": "保留正确的第一个动词例句，替换误放的名词例句，并移出名词搭配。"
+      },
+      {
+        "sense": "专业动词义：喷雾；用细雾状液体处理",
+        "coveredBy": [
+          "fog-verb-spray"
+        ],
+        "assessment": "解释和例句可保留为较少见用法；清除未取得来源的关联。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，fog 是让视线变差的雾；作动词时，常说雾气使窗户变模糊，也可说人的头脑变得糊涂。\"",
+        "valueJson": "\"fog 作名词常指雾，也可比喻迷糊、思绪不清的状态；作动词可指使玻璃等蒙雾，或使人的思路不清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住不可数名词 fog：a lot of fog，不说 a fog 表示一片雾。\"",
+        "valueJson": "\"fog 表示雾时通常不可数，如 a lot of fog；也可说 a thick fog，表示某次或某片浓雾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"mist 也指空气中的水汽，但通常不如 fog 浓。\"",
+        "valueJson": "\"mist 和 fog 都指由悬浮小水滴形成的雾；日常用语中，mist 通常较薄，对视线的影响较小。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"up 强调表面逐渐被雾气遮住。\"",
+        "valueJson": "\"这是及物用法；名词宾语也可放在 up 前，如 fog the window up；代词须放在中间，如 fog it up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常用于玻璃或眼镜；fog up 更直接地表达因雾气而变模糊。\"",
+        "valueJson": "\"mist up 与 fog up 都可指玻璃、镜片因水汽凝结而蒙雾，在这一语境中通常可互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"clear up\",\"zh\":\"变清晰；雾气散去\",\"note\":\"用于雾气或表面模糊消退的语境，与 fog up 的结果相反。\"}",
+        "valueJson": "{\"en\":\"defog / demist a window\",\"zh\":\"给窗户除雾\",\"note\":\"defog（美式常用）和 demist（英式常用）用于清除玻璃表面的雾气，与及物用法 fog up a window 相对。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"clear up 只适用于雾气散去、视线转清等相关语境。\"",
+        "valueJson": "\"玻璃或镜片除雾可用 defog / demist；自然界的雾散去常说 the fog lifts / clears。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"fog-eg-6\",\"senseId\":\"fog-verb-confuse\",\"en\":\"After the nap, the fog in my head began to lift.\",\"zh\":\"午睡之后，我脑中的迷糊感开始消散。\",\"note\":\"fog in my head 指头脑中的迷糊感。\"}",
+        "valueJson": "{\"id\":\"fog-eg-6\",\"senseId\":\"fog-verb-confuse\",\"en\":\"Panic fogged my mind, and I couldn't remember my own phone number.\",\"zh\":\"恐慌让我脑子一片混乱，连自己的电话号码都想不起来了。\",\"note\":\"fogged 是动词，my mind 是宾语，表示恐慌使思维不清。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"a fog in someone's head / mind\",\"zh\":\"某人头脑中的迷糊感\",\"note\":\"用名词 fog 作比喻，描述思路不清的状态。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"the fog lifts\",\"zh\":\"迷糊感消散；思路变清楚\",\"note\":\"常用来描述头脑中的困惑或迷糊逐渐消失。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"fog someone's mind / brain\",\"zh\":\"使某人思维模糊；使某人头脑不清\",\"note\":\"fog 是动词，mind 或 brain 是它的宾语。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"fog-noun-mental\",\"title\":\"迷糊；思绪不清的状态（名词比喻义）\",\"meaning\":\"比喻像被雾罩住一样的困惑、迷糊或不清醒状态。\",\"usageNote\":\"常说 be in a fog；也可用 the fog in my head 描述一时的头脑昏沉。这些表达中的 fog 是名词。\",\"examples\":[{\"id\":\"fog-eg-8\",\"senseId\":\"fog-noun-mental\",\"en\":\"After the nap, the fog in my head began to lift.\",\"zh\":\"小睡之后，我脑中的迷糊感开始消散。\",\"note\":\"the fog 是名词短语，指头脑不清的状态；nap 指小睡，不限定为午睡。\"},{\"id\":\"fog-eg-9\",\"senseId\":\"fog-noun-mental\",\"en\":\"After the overnight flight, I was in a fog and left my bag on the bus.\",\"zh\":\"坐完通宵航班后，我整个人迷迷糊糊的，把包落在了公交车上。\",\"note\":\"be in a fog 表示处于迷糊、思路不清的状态。\"}],\"patterns\":[{\"en\":\"be in a fog\",\"zh\":\"迷迷糊糊；思路不清\",\"note\":\"用名词 fog 描述人的精神状态。\",\"kind\":\"fixed-expression\"},{\"en\":\"a fog in someone's head / mind\",\"zh\":\"某人头脑中的迷糊感\",\"note\":\"用名词 fog 作比喻，描述思路不清的状态。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"the fog lifts\",\"zh\":\"迷糊感消散；思路变清楚\",\"note\":\"在头脑或思维的语境中，表示困惑或迷糊消失。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a daze\",\"zh\":\"恍惚、茫然的状态\",\"note\":\"常说 in a daze，往往与震惊、疲劳等有关；in a fog 更侧重思路不清楚。\"}],\"contrasting\":[{\"en\":\"mental clarity\",\"zh\":\"思路清晰；头脑清醒\",\"note\":\"与比喻义的 fog 在思考状态上形成对照。\"}],\"similarNote\":\"in a daze 和 in a fog 都可描述发蒙，但侧重点有所不同。\",\"contrastingNote\":\"这里对照的是头脑清楚与不清楚的状态。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"fog-conf-eg-4\",\"senseId\":\"fog-noun-weather\",\"en\":\"A green frog sat beside the pond.\",\"zh\":\"一只绿色青蛙坐在池塘边。\",\"note\":\"frog 是动物名词，注意拼写中有 r。\"}",
+        "valueJson": "{\"id\":\"fog-conf-eg-4\",\"senseId\":\"fog-noun-weather\",\"en\":\"We heard a frog croaking in the fog.\",\"zh\":\"我们听见一只青蛙在雾中呱呱叫。\",\"note\":\"frog（青蛙）和 fog（雾）同句对照；frog 的拼写多一个 r。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"现代英语中可直接把 fog 当作一个整体记忆：它表示雾，也能引申为“使模糊”。\",\"stages\":[],\"caveat\":\"这里的记忆方式说明现代用法，不代表 fog 的历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"fog（雾）的更早来源不明。\",\"stages\":[],\"caveat\":\"foggy 可按现代构词理解为 fog 加 -y，并双写 g；这不能说明 fog 本身的历史来源。\",\"sourceIds\":[\"wiktionary-fog\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[\"wiktionary-fog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example",
+        "expectedValueJson": "{\"id\":\"fog-family-eg-2\",\"senseId\":\"fog-noun-weather\",\"en\":\"The hills appeared foggily in the distance.\",\"zh\":\"远处的山峦朦朦胧胧地显现出来。\",\"note\":\"foggily 作副词修饰 appeared。\"}",
+        "valueJson": "{\"id\":\"fog-family-eg-2\",\"senseId\":\"fog-noun-mental\",\"en\":\"I foggily remembered putting my keys on the kitchen table.\",\"zh\":\"我模模糊糊地记得把钥匙放在了厨房桌上。\",\"note\":\"foggily 修饰 remembered，表示记得不清楚；这个副词较少用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-fog\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-fog\",\"title\":\"Oxford Learner’s Dictionaries: fog\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/fog_1\",\"supports\":[\"fog 的名词用法与不可数特征\",\"fog 的动词用法及 fog up 等搭配\",\"foggy 等派生形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fog\",\"title\":\"维基词典（法语版）：fog（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/fog#Anglais\",\"supports\":[\"英语名词 fog 的“雾”义及不可数用法\",\"英语动词 fog 的“使蒙上雾气”基本义\",\"派生词 foggy\",\"英式 /fɒɡ/ 与美式 /fɑɡ/ 读音\",\"fog 的词源不明\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 535,
+    "headword": "fog",
+    "meaning_zh": "n. 雾",
+    "phonetic": "/fɒg/",
+    "pos": "",
+    "forms": []
+  }
+}

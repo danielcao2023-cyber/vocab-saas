@@ -1,0 +1,321 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8d66be606a40aca5f992d8044b16187efe5936d71e57b820741afd7e3515acaf",
+    "executedReviewPromptHash": "8d66be606a40aca5f992d8044b16187efe5936d71e57b820741afd7e3515acaf",
+    "reviewHash": "57e7d15618ed53e3edad6fe4588818f45e3c63ee553df843dfd8192cf4e3d045",
+    "wordId": 895,
+    "inputHash": "7acc63f52977a5acbedab8c6fbf635ae2b18c2060757944088c212382c24d4dc",
+    "draftHash": "bc591eedad8c2a77e57589b834aa91a3801235ff6a3599eb46852294d7a8accc",
+    "finalHash": "dcc235c57d236f488d851d3e38c4b692c74c5a5f913125cdd54fd2ece1e22df9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/myself#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.749Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 248905,
+        "revisionId": 39744875,
+        "revisionTimestamp": "2026-08-02T02:58:23Z",
+        "sha256": "3d067e6f816ab38e3c6cfb802fd4278396c4c71cced8d9e4e3f56c76b2873393",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/myself",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:58:35.989Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:07:53.937Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Cambridge 未取得可用正文，不能作为当前说明的实际依据。应改引已提供的法语维基词典英语词条；该正文未涵盖的 by myself 扩展不挂此来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/confusions/1/items/1/example/senseId",
+        "message": "by myself 的“独自一人”和“没有别人帮助”都是常用功能，目前仅在辨析中出现一个例句，且错误归入强调义。需补齐教学与例句，并修正 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "强调用法不限于亲自完成动作，也可强调本人的观点、感受或情况；应补充常见的 I myself 位置及相应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0/note；/senses/0/relatedExpressions/similar/0；/confusions/0/items/0/note",
+        "message": "teach myself 中自己是教学对象，不是学习内容；me 也不是“另一个动作的承受者”。“当 I 是动作的对象时使用 myself”缺少主语条件，可能误导学生写出 She called myself。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh",
+        "message": "“照了照镜子里的自己”中文不自然，宜译为“看了看镜子里的自己”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar/0/note",
+        "message": "in person 强调本人实际到场；“直接处理”过宽，可能把亲自打电话也误算为 in person。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有词源正文明确说明 my 与 self 的组合关系，应补充来源，不能只把它写成助记拆分。两者是构词成分，不应画成历史先后阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的反身与本人强调两类定义，并补齐 by myself 的“独自”和“没有帮助”两种常用短语功能，各配两例。读音写法、代词范式与词族处理可保留。词源仅补有据的 my + self 构词关系，不推断年代，stages 保持为空。by myself 扩展依据专业语言知识，不虚挂词典出处。",
+    "senseInventory": [
+      {
+        "sense": "反身：我自己，作宾语指回主语 I",
+        "coveredBy": [
+          "895-1"
+        ],
+        "assessment": "已有两个自然英语例句；修正教学对象说明、me 的解释及一处中文翻译。"
+      },
+      {
+        "sense": "强调：我本人、我亲自",
+        "coveredBy": [
+          "895-2"
+        ],
+        "assessment": "保留亲自做事的两例，补充 I myself 强调本人观点或情况的两例及位置说明。"
+      },
+      {
+        "sense": "by myself：独自一人，没有人陪同",
+        "coveredBy": [
+          "895-3"
+        ],
+        "assessment": "新增短语教学，配两个例句；不把“独自”误教为裸词 myself 的独立意义。"
+      },
+      {
+        "sense": "by myself：独立完成，没有别人帮助",
+        "coveredBy": [
+          "895-3"
+        ],
+        "assessment": "与无人陪同的意思明确区分，另配两个例句和相应反向表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"myself 是 I 的反身代词：主语和动作承受者是同一个人时用它；也可强调“我本人亲自做”。\"",
+        "valueJson": "\"myself 是 I 的反身代词，可表示“我自己”，也可强调“我本人、我亲自”；“独自一人、没有别人帮助”常用 by myself。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"结合具体情境，区分 by myself 表示的“没有人陪同”和“没有别人帮助”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_myself\"]",
+        "valueJson": "[\"wiktionary_myself_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"动作由我做，学习的对象也是我。\"",
+        "valueJson": "\"教的人和学的人都是我；teach myself to... 表示“自学做……”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"我照了照镜子里的自己。\"",
+        "valueJson": "\"我看了看镜子里的自己。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"me\",\"zh\":\"我；我自己\",\"note\":\"me 是宾格，通常指另一个动作的承受者；若它与主语 I 指同一人，标准用法通常选 myself。\"}",
+        "valueJson": "{\"en\":\"me\",\"zh\":\"我（宾格）\",\"note\":\"me 是 I 的宾格，普通用法如 She called me。myself 不能因中文也指“我”而与 me 随意互换；I hurt myself 这类动作直接指回主语 I 的反身结构要用 myself。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_myself\"]",
+        "valueJson": "[\"wiktionary_myself_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"强调：我亲自\"",
+        "valueJson": "\"强调：我本人；我亲自\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"放在句中强调“我本人做了这件事”，突出亲自参与，而不是别人代做。\"",
+        "valueJson": "\"强调“我本人”，可突出由我亲自完成某事，也可强调我本人的想法、感受或情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在动词后或句末作强调语；去掉 myself 后句子通常仍然完整。\"",
+        "valueJson": "\"可紧跟主语 I，也可放在句末；作强调语时，去掉 myself 后句子通常仍完整，但强调语气会减弱。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"895-2-ex3\",\"senseId\":\"895-2\",\"en\":\"I myself prefer tea to coffee.\",\"zh\":\"比起咖啡，我本人更喜欢茶。\",\"note\":\"myself 紧跟 I，强调这是我本人的偏好，不表示亲自动手做事。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"895-2-ex4\",\"senseId\":\"895-2\",\"en\":\"I myself am afraid of dogs.\",\"zh\":\"我本人就怕狗。\",\"note\":\"强调我本人的情况；删去 myself，句子仍完整。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"I myself ...\",\"zh\":\"我本人……\",\"note\":\"myself 紧跟 I，可强调本人的想法、感受或身份，不限于亲自完成动作。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"强调本人实际到场或直接处理；myself 强调句子主语本人做了动作。\"",
+        "valueJson": "\"in person 强调本人实际到场、面对面；myself 强调本人参与，不一定面对面。例如 I spoke to the coach myself 也可以指我亲自打电话与教练谈。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_myself\"]",
+        "valueJson": "[\"wiktionary_myself_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"895-3\",\"title\":\"by myself：独自一人；没有别人帮助\",\"meaning\":\"by myself 可表示只有我一个人、没有人陪同，也可表示我独立完成某事、没有别人帮助。\",\"usageNote\":\"这两种意思由具体情境决定。表示独自或没有帮助时，要注意 by；单独的 myself 不自动表达这两层意思。\",\"examples\":[{\"id\":\"895-3-ex1\",\"senseId\":\"895-3\",\"en\":\"I walked home by myself after school.\",\"zh\":\"放学后，我独自走回家。\",\"note\":\"这里表示没有人陪我一起走。\"},{\"id\":\"895-3-ex2\",\"senseId\":\"895-3\",\"en\":\"I sat by myself on a bench in the park.\",\"zh\":\"我一个人坐在公园的长椅上。\",\"note\":\"这里强调独处，没有人和我坐在一起。\"},{\"id\":\"895-3-ex3\",\"senseId\":\"895-3\",\"en\":\"I put the bookshelf together by myself.\",\"zh\":\"我独立组装好了书架。\",\"note\":\"这里强调没有别人帮忙，不要求当时周围没有其他人。\"},{\"id\":\"895-3-ex4\",\"senseId\":\"895-3\",\"en\":\"I finished the maths homework by myself.\",\"zh\":\"我没有别人帮忙，自己做完了数学作业。\",\"note\":\"强调独立完成作业，不一定表示做作业时独处。\"}],\"patterns\":[{\"en\":\"I + verb + by myself\",\"zh\":\"我独自／独立……\",\"note\":\"by myself 常放在动作或地点表达之后；具体表示没有陪伴还是没有帮助，要看情境。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"all by myself\",\"zh\":\"完全独自一人；完全靠自己\",\"note\":\"all 加强语气；具体是哪一种意思仍由情境决定。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"alone\",\"zh\":\"独自一人\",\"note\":\"与 by myself 的“没有人陪同”义相近；alone 本身不保证做事时没有得到帮助。\"},{\"en\":\"on my own\",\"zh\":\"独自；独立地\",\"note\":\"和 by myself 一样，可指没有人陪同，也可指没有别人帮助。\"}],\"contrasting\":[{\"en\":\"with other people\",\"zh\":\"和别人一起\",\"note\":\"在是否有人陪同的情境中，与“独自一人”形成对照。\"},{\"en\":\"with someone else's help\",\"zh\":\"在别人的帮助下\",\"note\":\"在是否得到帮助的情境中，与“独立完成”形成对照。\"}],\"similarNote\":\"alone 主要对应独处；on my own 与 by myself 都可表达独处或独立完成。\",\"contrastingNote\":\"这里是两组语境对照：有无陪伴，以及有无帮助；两者不能混为一谈。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"当 I 是动作的对象，或要强调本人时使用。\"",
+        "valueJson": "\"主语是 I，且动作指回自己时用 myself；它也可强调“我本人”。不能因为宾语指“我”就一律用 myself。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_myself\"]",
+        "valueJson": "[\"wiktionary_myself_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"895-2\"",
+        "valueJson": "\"895-3\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_myself\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上可看作 my（我的）与 self（自己）组成，帮助记住“我自己”的意思。\"",
+        "valueJson": "\"myself 由英语 my（“我的”）与 self（“自己”）组合而成，表示“我自己”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是便于理解的现代构词拆分，不据此推断更早的历史演变。\"",
+        "valueJson": "\"作代词时，myself 连写，不写成 my self。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_myself_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge_myself\",\"title\":\"Cambridge Dictionary：myself\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/myself\",\"supports\":[\"myself 的读音和反身代词用法\",\"myself 可用于强调本人亲自\",\"反身代词与主语指向相同\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_myself_en\",\"title\":\"Wiktionnaire（法语维基词典）：myself 英语词条\",\"url\":\"https://fr.wiktionary.org/wiki/myself#Anglais\",\"supports\":[\"myself 的读音及英美音频条目\",\"myself 的反身用法与“我本人”的意义\",\"myself 由 my 与 self 组合而成\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 895,
+    "headword": "myself",
+    "meaning_zh": "pron. 我自己, 我亲自, 我独自",
+    "phonetic": "/mai'self/",
+    "pos": "",
+    "forms": []
+  }
+}

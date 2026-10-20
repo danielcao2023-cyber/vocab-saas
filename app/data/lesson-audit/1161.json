@@ -1,0 +1,779 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "af05162e746c1ae6379bdd7bcf5de42842a0a7c4218f6dcfe42c519aaa928c94",
+    "executedReviewPromptHash": "af05162e746c1ae6379bdd7bcf5de42842a0a7c4218f6dcfe42c519aaa928c94",
+    "reviewHash": "b9226e7838b20faef5f57f4b2f081e28c1ccf2c8e9e7496ff2f50e6cd7195132",
+    "wordId": 1161,
+    "inputHash": "1b7746c6ada8e0425126171d082a29757fa5b463239770aa5e76fa539092ca9d",
+    "draftHash": "c8f023c7db22f1ce2eae80d5ce3ac49e6f8d20b9f089f6cb503837de20e93d75",
+    "finalHash": "5e5280e9e488464743e70ad7fded4c151b2cb506465e4fcff1522b77483a3e89",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/right#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.643Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116074,
+        "revisionId": 39765969,
+        "revisionTimestamp": "2026-08-03T05:37:22Z",
+        "sha256": "30d056eaa7f4ea112c8d2a3d0dd3b62a95e37c8f2f2596f01ad2e22def7fbb22",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/right",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:43:22.202Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:52:37.466Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 获取失败，却被用于支撑读音、释义和词族。应移除这些支撑性引用；已取得的 Wiktionnaire 英语词条可支撑其中明确载有的内容，专业语言知识补充不冒充检索证据。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的几何“直角”义和名词“道义上的正当”义；副词“直接、径直”也未得到明确教学。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "正确、判断正确、合适和道德上正当的例句覆盖不足，尤其没有道德判断例句。各项须有至少两个实际覆盖该用法的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "方向义的形容词、副词各只有一例；名词方向义被放在“权利”条目中。应归拢方向义并明确三种词性的结构，各补足两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "精确强调、当前时间和立即行动的例句不足；“放在数量等表达前”的概括过宽，可能诱发任意数量词前加 right 的误用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "“权利”和“右边”只是词性相同，意义并不相近。混列使例句、近义及反向表达互相串义，应将此条集中于权利。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4",
+        "message": "确认、组织谈话和句尾征求确认是不同的常用功能；现有标题和例句未完整覆盖，尤其缺少 right? 的完整例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "“扶正”和“纠正不公”被合写，却只有扶正例句；所取得词条明确列出的动词纠正义没有对应例句，应分别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "将 righter、rightest 说成通常使用的比较形式会误导使用频率；这些形式存在，但日常较少见。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "中古英语阶段只有字形传承依据，没有明确释义依据，不宜填写“直的；正的”。应将其传承事实保留在 summary，并移除该阶段的无据释义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan",
+        "message": "right now 与 right away 的学习提示没有准确对应“目前”和“立刻”；朗读提示也容易使人误以为 right 与 write 发音不同。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "学生正文不需要讨论旧标注，应直接解释正确音素和 gh 不发音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1/note",
+        "message": "right 不必然表示“最符合”需要，不宜添加最高程度的含义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "rightful 的释义宜包括“理应享有的”；词族说明还可明确 right 本身能够作副词，避免将其机械替换成 rightly。"
+      }
+    ],
+    "coverageAssessment": "已核对所给英语词条明列的全部定义及常用功能。修订补齐直角、名词性道义上的正当、动词纠正和副词直接义，并使各核心义及常用功能至少有两个对应例句。方向义明确区分形容词、副词和名词。Cambridge 获取失败，已移除其支撑性引用；right away、话语转换、扶正义及词族中的专业知识补充不冒充已取得的词典证据。历史词源仅保留有据的传承关系和释义。",
+    "senseInventory": [
+      {
+        "sense": "形容词：正确、准确，符合事实或规则",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有搭配说明；补充金额核算和练习题答案两个完整例句。"
+      },
+      {
+        "sense": "形容词：某人的判断正确、说得对",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留 be right about 的例句，并补充直接确认对方判断的例句，共两例。"
+      },
+      {
+        "sense": "形容词：合适、符合需要",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留钥匙例句，补充尺码适配例句；去掉不必要的“最符合”限制。"
+      },
+      {
+        "sense": "形容词：道德上正确、正当",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原先只有标题和搭配；补充归还多找的钱与不应错误归责两个例句，并补充对应近义和反向表达说明。"
+      },
+      {
+        "sense": "形容词：右边的",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "明确修饰名词的结构，补足两个例句。"
+      },
+      {
+        "sense": "形容词：直角的，几何上为90°",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "原稿遗漏；新增核心义，包含 right angle、right triangle 及两个课堂情境例句。"
+      },
+      {
+        "sense": "副词：向右",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "明确修饰移动或转向动作，补足两个例句。"
+      },
+      {
+        "sense": "副词：正、恰好，强调具体时间或位置",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "保留精确时间例句，补充精确位置例句，并限定与 approximately 的对照语境。"
+      },
+      {
+        "sense": "副词：直接、径直",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿未明确展开；补充两个例句及 go right home 与 go right to 的结构区别。"
+      },
+      {
+        "sense": "副词短语 right now：现在、此刻；命令中的现在就",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "分别用当前状态和立即行动的请求示例，说明其不一概等同于 right away。"
+      },
+      {
+        "sense": "副词短语 right away：立刻、马上",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "依专业语言知识保留，补足两个例句；未声称该短语已由获取失败的 Cambridge 核实。"
+      },
+      {
+        "sense": "名词：道义上的正当、对，与 wrong 相对",
+        "coveredBy": [
+          "s7"
+        ],
+        "assessment": "原稿遗漏；新增核心义，以 right and wrong、tell right from wrong 两个例句说明。"
+      },
+      {
+        "sense": "名词：权利、正当资格",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "从方向义中分开，补足单数权利结构和复数 rights 的例句，并修正近义与反向表达。"
+      },
+      {
+        "sense": "名词：右边、右侧",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "归入方向义，明确 on the right、keep to the right 中的名词用法，并提供两个例句。"
+      },
+      {
+        "sense": "感叹词：对、没错，用于确认",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "保留原有对话并补充一个确认例句，共两例。"
+      },
+      {
+        "sense": "句尾确认用法：right?，对吗",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原先只有句型；补充两个完整例句。"
+      },
+      {
+        "sense": "话语组织用法：Right, ...，好，接下来……",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "依专业语言知识保留并明确标出，补足两个例句。"
+      },
+      {
+        "sense": "动词：纠正错误、弥补不公",
+        "coveredBy": [
+          "ls2"
+        ],
+        "assessment": "原稿只有概括，没有对应例句；新增较少用义，并区分 tried to 与已成功纠正。"
+      },
+      {
+        "sense": "动词：扶正，使恢复直立",
+        "coveredBy": [
+          "ls1"
+        ],
+        "assessment": "依专业语言知识保留为较少用义，与纠正不公分开，不再引用未取得的 Cambridge 内容。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 right now（此刻）和 right away（立刻）区分“正好”和“马上”。\"",
+        "valueJson": "\"用 I'm busy right now（我现在正忙）和 I'll reply right away（我马上回复）区分“目前”和“立刻”；再练 right at six（恰好六点）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读 right、write、left，注意发音和词义不同。\"",
+        "valueJson": "\"对照 right 与 write 的同音不同义，再用 right 和 left 练习左右方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头是 /r/，元音是 /aɪ/，结尾是清辅音 /t/；旧标注 /rait/ 不符合常用 IPA 写法。\"",
+        "valueJson": "\"开头是 /r/，元音是双元音 /aɪ/，结尾是清辅音 /t/；字母 gh 不发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"比较级通常为 righter，最高级为 rightest；表示“更正确”时也常用 more right、most right。\"",
+        "valueJson": "\"日常通常直接用 right；比较正确程度时可用 more right、most right。righter、rightest 也有使用，但较少见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"right 表示最符合当前需要，不一定是唯一选择。\"",
+        "valueJson": "\"right 表示适合当前需要；是否唯一要看具体语境。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e3\",\"senseId\":\"s1\",\"en\":\"I checked the receipt, and the total was right.\",\"zh\":\"我核对了收据，总金额是对的。\",\"note\":\"right 作表语，表示金额核算正确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e4\",\"senseId\":\"s1\",\"en\":\"These boots are the right size for my daughter.\",\"zh\":\"这双靴子的尺码正适合我女儿。\",\"note\":\"the right size 表示尺码符合穿着者的需要。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e5\",\"senseId\":\"s1\",\"en\":\"Returning the extra change was the right thing to do.\",\"zh\":\"把多找的钱还回去是正当的做法。\",\"note\":\"right 评价行为在道德上是否正确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e6\",\"senseId\":\"s1\",\"en\":\"It wasn't right to blame Maya for a mistake she hadn't made.\",\"zh\":\"把并非玛雅犯的错怪到她头上是不对的。\",\"note\":\"not right 表示行为不正当；hadn't made 说明所指错误并非她此前所犯。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e7\",\"senseId\":\"s1\",\"en\":\"You are right: we need three tickets, not two.\",\"zh\":\"你说得对：我们需要三张票，而不是两张。\",\"note\":\"对话中可直接用 be right 确认对方的判断。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e8\",\"senseId\":\"s1\",\"en\":\"Circle the right answer on the worksheet.\",\"zh\":\"在练习纸上圈出正确答案。\",\"note\":\"right 放在 answer 前，表示答案正确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"ethical\",\"zh\":\"合乎道德的\",\"note\":\"只在行为或选择符合道德标准时与 right 接近；不用来表示答案正确或物品合适。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在答案、判断或选择的语境中与 right 相对；wrong answer 是“错误答案”。\"",
+        "valueJson": "\"在答案、判断或选择中表示错误、不合适；评价行为时还可表示道德上不当，与相应的 right 义相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"correct 适合检查对错；suitable 适合讨论是否合用。\"",
+        "valueJson": "\"correct 侧重事实或规则上的对错；suitable 侧重是否合用；ethical 只对应道德上的正当。三者不能跨义机械替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"右边的；向右（形容词、副词）\"",
+        "valueJson": "\"右边的；向右；右边（形容词、副词、名词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"形容词表示位于右侧；副词表示朝右边移动或转向。\"",
+        "valueJson": "\"形容词表示右侧的；副词表示向右移动或转向；名词表示右侧的位置或方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"左右方向通常以面朝前方的人自身为参照。作副词时 right 不变形。\"",
+        "valueJson": "\"right hand 指某人自己的右手；说明位置时，要先确认以谁的朝向或哪件物体为参照。the right side 中 right 是形容词，turn right 中是副词，on/to the right 中是名词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e3\",\"senseId\":\"s2\",\"en\":\"My right glove is wet, but the left one is dry.\",\"zh\":\"我的右手手套湿了，左手手套却是干的。\",\"note\":\"right 作形容词修饰 glove，说明是右手戴的那只。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e4\",\"senseId\":\"s2\",\"en\":\"When the path divides, go right toward the lake.\",\"zh\":\"走到岔路口时，向右朝湖边走。\",\"note\":\"right 作副词，说明 go 的方向。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e5\",\"senseId\":\"s2\",\"en\":\"Our classroom is the first door on the right.\",\"zh\":\"右边第一扇门进去就是我们的教室。\",\"note\":\"on the right 中 right 作名词，表示右侧。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e6\",\"senseId\":\"s2\",\"en\":\"Keep to the right when you walk through this corridor.\",\"zh\":\"走过这条走廊时请靠右行。\",\"note\":\"keep to the right 中 the right 是名词短语，表示应保持的位置。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"常用于说明物体或地点的相对位置。\"",
+        "valueJson": "\"这里 right 是名词；说明相对位置时也常用 to the right of something。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"常用于道路、走廊等需要保持右侧通行的场合。\"",
+        "valueJson": "\"常用于需要保持右侧通行的道路或走廊；这里 the right 是名词短语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"正好；恰恰；立刻（副词）\"",
+        "valueJson": "\"正好；直接；现在；立刻（副词及短语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"放在时间、地点或数量等表达前可加强语气，表示“正、恰好”；在 right away 等表达中表示“马上”。\"",
+        "valueJson": "\"可在时间、地点等表达前强调“正、恰好、就”；也可表示“直接、径直”。right now 指现在、此刻，right away 表示立刻、马上。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"right now 常指“现在、此刻”；right away 表示“立即”，两者都常用于日常对话。具体是“正好”还是“立刻”要看后接词语。\"",
+        "valueJson": "\"right now 可以描述当前持续的状态，在命令或请求中也可表示“现在就”；right away 强调行动没有拖延。go right home 表示直接回家。right 不能任意放在数量词前表达“正好”，要结合具体搭配。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e3\",\"senseId\":\"s3\",\"en\":\"Your glasses are right here, beside the kettle.\",\"zh\":\"你的眼镜就在这里，在水壶旁边。\",\"note\":\"right here 强调确切位置。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e4\",\"senseId\":\"s3\",\"en\":\"I noticed the broken lock and called the landlord right away.\",\"zh\":\"我发现门锁坏了，马上就给房东打了电话。\",\"note\":\"right away 表示发现问题后没有拖延就采取行动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e5\",\"senseId\":\"s3\",\"en\":\"I'm busy right now, but I can help you after lunch.\",\"zh\":\"我现在正忙，不过午饭后可以帮你。\",\"note\":\"right now 描述目前的状态，不表示“马上开始忙”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e6\",\"senseId\":\"s3\",\"en\":\"Please put your phone away right now.\",\"zh\":\"请现在就把手机收起来。\",\"note\":\"在请求中，right now 强调立即行动的要求。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e7\",\"senseId\":\"s3\",\"en\":\"After school, I went right home to feed the cat.\",\"zh\":\"放学后，我直接回家喂猫了。\",\"note\":\"right home 表示直接回家，不在别处停留。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3-e8\",\"senseId\":\"s3\",\"en\":\"The nurse took us right to the waiting room.\",\"zh\":\"护士直接带我们去了候诊室。\",\"note\":\"right to the waiting room 强调直接到达该地点。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"go right home / go right to a place\",\"zh\":\"直接回家／直接去某地\",\"note\":\"home 在这里是地点副词，前面不加 to；普通地点名词前通常保留 to。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"directly\",\"zh\":\"直接地；径直地\",\"note\":\"在直接前往某地的语境中接近 right，如 go directly home；不替换表示向右的 turn right。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"approximately\",\"zh\":\"大约\",\"note\":\"可在具体时间上与 right at six 的精确含义对照，如 at approximately six；不用于机械替换 right here 中的 right。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"take a detour\",\"zh\":\"绕路\",\"note\":\"在出行路线中可与直接前往某地形成对照，不对应 right 的“正好”或“立刻”义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"exactly 侧重精确吻合；immediately 侧重迅速发生。\"",
+        "valueJson": "\"exactly 对应精确强调；immediately 对应没有延迟；directly 在路线语境中对应直接前往。要按搭配选择，不能彼此通换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"later 只对照“立刻”义，不对照 right 的“正确”或“右边”义。\"",
+        "valueJson": "\"later 对照立即行动；approximately 在具体时间或数值上对照精确；take a detour 在路线中对照直接前往。各自只适用于相应语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"权利；右边（名词）\"",
+        "valueJson": "\"权利（名词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"权利：法律或规则保障一个人可以做或享有的事；右边：右侧的位置或方向。\"",
+        "valueJson": "\"在法律、规则或道义上，可以做某事、享有某物或受到某种对待的正当资格。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"rights 常用复数表示各项权利；the right 表示右边时常出现在 on the right 等位置表达中。\"",
+        "valueJson": "\"谈一项具体权利可用 a/the right；rights 常用复数表示各项权利。right to 后接动词原形时说明有权做什么，后接名词时说明有权享有什么。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"Our classroom is the first door on the right.\",\"zh\":\"我们的教室是右边的第一扇门。\",\"note\":\"the right 指右侧的位置。\"}",
+        "valueJson": "{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"The poster explains workers' rights in simple language.\",\"zh\":\"这张海报用通俗的语言说明了劳动者的各项权利。\",\"note\":\"rights 用复数，表示不止一项权利。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"on the right\",\"zh\":\"在右边\",\"note\":\"the right 作名词短语，说明右侧位置。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"civil rights\",\"zh\":\"公民权利\",\"note\":\"常用复数，指公民在社会和法律上的基本权利。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"right-hand side\",\"zh\":\"右侧\",\"note\":\"比 the right side 更明确地指左右方向。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"left\",\"zh\":\"左边\",\"note\":\"只在“右边”这一位置义上与 right 相对；权利义没有对应的左右反义词。\"}",
+        "valueJson": "{\"en\":\"be denied the right to do something\",\"zh\":\"被拒绝行使或被剥夺做某事的权利\",\"note\":\"与 have the right to do something 在能否享有或行使某项权利上形成对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"entitlement 常见于正式语境；right-hand side 用于明确描述方位。\"",
+        "valueJson": "\"entitlement 较正式，常涉及按法律或规则应享有的资格或福利；right 的使用范围更广，也可谈道义上的权利。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"left 是方位义的反向表达；权利义可在具体语境中与 a ban（禁令）形成对照，但不是所有权利的固定反义词。\"",
+        "valueJson": "\"可用 be denied the right to... 描述某项权利受到拒绝或剥夺；left 只与方位义相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/title",
+        "expectedValueJson": "\"对；没错（感叹词）\"",
+        "valueJson": "\"对；好；对吗？（感叹词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"用于回应或确认，表示同意、认可或提醒对方注意。\"",
+        "valueJson": "\"可简短确认对方的说法，也可用来开始或转入下一步；放在句尾的 right? 用于征求确认。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5-e3\",\"senseId\":\"s5\",\"en\":\"“The next lesson is on Tuesday?” “Right.”\",\"zh\":\"“下节课在星期二？”“对。”\",\"note\":\"Right 单独回应，确认对方理解正确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5-e4\",\"senseId\":\"s5\",\"en\":\"Right, who wants to read the first line?\",\"zh\":\"好，谁想读第一行？\",\"note\":\"句首 Right 用来组织谈话，引出接下来的课堂活动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5-e5\",\"senseId\":\"s5\",\"en\":\"You've got your keys, right?\",\"zh\":\"你带上钥匙了，对吧？\",\"note\":\"句尾 right? 征求对方确认。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5-e6\",\"senseId\":\"s5\",\"en\":\"The shop closes at six, right?\",\"zh\":\"商店六点关门，对吗？\",\"note\":\"说话人已有一个判断，用 right? 检查是否正确。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"直角的（形容词；几何）\",\"meaning\":\"表示角度为90°；right angle 是直角，right triangle 是直角三角形。\",\"usageNote\":\"right angle 指一个90°的角；right triangle 指含有一个直角的三角形，是美式常用说法，英式常说 right-angled triangle。这里的 right 表示几何特征。\",\"examples\":[{\"id\":\"s6-e1\",\"senseId\":\"s6\",\"en\":\"The two lines meet at a right angle.\",\"zh\":\"这两条线相交成直角。\",\"note\":\"a right angle 是一个90°的角。\"},{\"id\":\"s6-e2\",\"senseId\":\"s6\",\"en\":\"We drew a right triangle on the board.\",\"zh\":\"我们在黑板上画了一个直角三角形。\",\"note\":\"right 修饰 triangle，说明这个三角形含有一个直角。\"}],\"patterns\":[{\"en\":\"at a right angle to something\",\"zh\":\"与某物成直角\",\"note\":\"用来说明两条线、两面墙等之间的垂直关系。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a right angle\",\"zh\":\"一个直角\",\"note\":\"角度为90°。\",\"kind\":\"common-collocation\"},{\"en\":\"a right triangle\",\"zh\":\"一个直角三角形\",\"note\":\"含有一个直角的三角形；英式常说 a right-angled triangle。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"perpendicular\",\"zh\":\"垂直的\",\"note\":\"两条线成直角时可说一条线 is perpendicular to 另一条线；不能直接替换 right angle 中的 right。\"},{\"en\":\"right-angled triangle\",\"zh\":\"直角三角形\",\"note\":\"与 right triangle 指同一类三角形，尤其常见于英式英语。\"}],\"contrasting\":[{\"en\":\"acute angle\",\"zh\":\"锐角\",\"note\":\"角度大于0°而小于90°，在角的分类中与直角形成对照。\"},{\"en\":\"obtuse angle\",\"zh\":\"钝角\",\"note\":\"角度大于90°而小于180°，在角的分类中与直角形成对照。\"}],\"similarNote\":\"perpendicular 描述两条线等之间的垂直关系；right-angled triangle 是直角三角形的另一种常见说法。\",\"contrastingNote\":\"acute angle、right angle、obtuse angle 是不同的角度类别；这里的对照只涉及几何意义。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s7\",\"title\":\"正当；道义上的对（名词）\",\"meaning\":\"指道德上的正确、正当，常与 wrong 连用，谈是非对错。\",\"usageNote\":\"right and wrong 表示是非；tell right from wrong 表示明辨是非。这里 right 是抽象名词，通常不用复数，与表示一项具体权利的 a right 不同。\",\"examples\":[{\"id\":\"s7-e1\",\"senseId\":\"s7\",\"en\":\"We talked about right and wrong after the children found a wallet.\",\"zh\":\"孩子们捡到一个钱包后，我们谈了谈什么是对、什么是错。\",\"note\":\"right 和 wrong 都作名词，指道义上的对错。\"},{\"id\":\"s7-e2\",\"senseId\":\"s7\",\"en\":\"My grandfather taught me to tell right from wrong.\",\"zh\":\"我爷爷教我明辨是非。\",\"note\":\"tell A from B 表示区分两者；这里谈的是道德判断。\"}],\"patterns\":[{\"en\":\"tell right from wrong\",\"zh\":\"明辨是非\",\"note\":\"tell 在这里表示区分；right 和 wrong 都是名词。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"right and wrong\",\"zh\":\"是非；对错\",\"note\":\"谈道德上的正当与不当。\",\"kind\":\"fixed-expression\"},{\"en\":\"a sense of right and wrong\",\"zh\":\"是非观\",\"note\":\"指判断行为是否正当的意识。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"rightness\",\"zh\":\"正确性；正当性\",\"note\":\"较正式，侧重某个判断或行为所具有的正当性；不能机械替换 right and wrong 等固定搭配。\"}],\"contrasting\":[{\"en\":\"wrong\",\"zh\":\"道义上的错；不当行为\",\"note\":\"这里同样作名词，与道义上的 right 相对。\"}],\"similarNote\":\"rightness 常讨论某个行为或判断的性质；right 在 right and wrong 中泛指道义上的对。\",\"contrastingNote\":\"wrong 在这一义中是道义上的反向概念；left 只涉及左右方向。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"使恢复直立或正常（动词）\"",
+        "valueJson": "\"扶正；使恢复直立（动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"right 作动词时可表示把倾倒的物体扶正，或纠正错误、弥补不公。\"",
+        "valueJson": "\"把倾倒、翻转的物体扶正，使其重新处于直立或正常朝上的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于书面表达，口语中通常会用 put upright、fix 或 correct。\"",
+        "valueJson": "\"这个及物动词可以倾倒的船、椅子等作宾语；日常也可说 set something upright 或 stand something back up。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls2\",\"title\":\"纠正错误；弥补不公（动词）\",\"meaning\":\"使不正确或不公正的情况得到纠正。\",\"note\":\"right a wrong 常指纠正不公或弥补对他人的伤害，比日常的 fix a mistake 更正式。\",\"example\":{\"id\":\"ls2-e1\",\"senseId\":\"ls2\",\"en\":\"The school apologized and tried to right the wrong it had done to the student.\",\"zh\":\"学校道了歉，并试图弥补曾对那名学生造成的不公。\",\"note\":\"right 是及物动词，the wrong 是宾语；tried to 不保证已经纠正成功。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"right 经中古英语 right、古英语 riht，来自原始日耳曼语 *rehtaz；给出的历史材料将其联系到“直、正”一类意义。\"",
+        "valueJson": "\"英语 right 来自中古英语 right，后者承自古英语 riht（也写作 reht），更早可追溯到重构的原始日耳曼语 *rehtaz，带有“直的、直接的”之意。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始日耳曼语\",\"form\":\"*rehtaz\",\"meaning\":\"直的；正的\"},{\"language\":\"古英语\",\"form\":\"riht\",\"meaning\":\"直的；正的\"},{\"language\":\"中古英语\",\"form\":\"right\",\"meaning\":\"直的；正的\"},{\"language\":\"现代英语\",\"form\":\"right\",\"meaning\":\"正确的、右边的、权利等\"}]",
+        "valueJson": "[{\"language\":\"原始日耳曼语（重构）\",\"form\":\"*rehtaz\",\"meaning\":\"直的；直接的\"},{\"language\":\"古英语\",\"form\":\"riht（也写作 reht）\",\"meaning\":\"直的；正的\"},{\"language\":\"现代英语\",\"form\":\"right\",\"meaning\":\"正确的；右边的；权利等\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"词源链描述历史关系；现代英语 right 的各个词性和用法是在长期使用中形成，不能仅凭词源推断具体句意。\"",
+        "valueJson": "\"星号 * 表示重构形式。古英语到现代英语之间还经过中古英语 right；上面的阶段展示省略了这一中间环节。历史传承与现代用法要分开理解，不能只凭古义推断具体句意。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"合法拥有的；正当的\"",
+        "valueJson": "\"合法的；正当的；理应享有的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"rightly、rightness 和 rightful 都由 right 加常见后缀构成；right-hand 是相关复合词，不作为派生词列入。\"",
+        "valueJson": "\"rightly、rightness、rightful 分别由 right 加 -ly、-ness、-ful 构成，right 的 gh 均保留。right 本身也能作副词：向右转说 turn right；rightly 则常表示“正确地”或“有充分理由地”，不能一概替换 right。right-hand 是复合词。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: right\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/right\",\"supports\":[\"常见词性、释义与搭配\",\"读音及派生词用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"right 的历史词源链\"]",
+        "valueJson": "[\"英语 right 的主要词性与基本义，包括正确、合适、道德上正当、右侧、直角、直接与精确强调、权利、道义上的对、对话确认及动词纠正\",\"读音及 right、write、rite 的同音关系\",\"right 的历史词源传承及重构形式 *rehtaz\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1161,
+    "headword": "right",
+    "meaning_zh": "adj. 正确的；右边的\nadv. 正好；马上（right now）\nn. 右边；权利",
+    "phonetic": "/rait/",
+    "pos": "",
+    "forms": []
+  }
+}

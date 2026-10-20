@@ -1,0 +1,411 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "693d35347204b3db348333409bfb8053c705d71ab4ba2b8c5f2b05a0da000e38",
+    "executedReviewPromptHash": "693d35347204b3db348333409bfb8053c705d71ab4ba2b8c5f2b05a0da000e38",
+    "reviewHash": "5cf3f9662b6763eae0c2852a142c52fd0313d9337860ac98974fa19c2e4639c8",
+    "wordId": 1316,
+    "inputHash": "5025c9a3a5a2146a452017138248ae8d51b7eca5da2bc25249e63617509f09bc",
+    "draftHash": "8c031e78dced8ce37b780c5b0bb1f0015fde5308aabc1a9bfadb9b6580eedf49",
+    "finalHash": "dafe886727d79134e7434266e8c1faf34f92c9b12b42b3f490b5d03db5792dfd",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/stage#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:27.739Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117856,
+        "revisionId": 39815896,
+        "revisionTimestamp": "2026-08-19T15:56:11Z",
+        "sha256": "115e76b2d4f62867d16da64c374703ae3f6321298ce61347b93e7a014e7cc4cb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/stage",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:07:39.394Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:17:24.634Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/*/sourceIds、/lessCommonSenses/0/sourceIds、/confusions/*/sourceIds、/wordFamily/0/sourceIds、/sources",
+        "message": "Cambridge 页面未成功取得，不能作为本次审校的实证来源。应将有直接依据的内容关联到已取得的英语词条，将专业语言知识补充的内容留空来源标识，并明确法语只是该词典的说明语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples、/senses/2/examples",
+        "message": "“舞台／戏剧界”和“上演／组织举行”各包含两个常用功能，现有例句每个功能只有一句，未达到每个核心义至少两句的要求。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏 stage 表示人为安排事件、制造真实或自然发生的假象的常用功能；来源中的模拟袭击例子已体现这一功能。需与正常举办活动区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples、/confusions/*/items/*/example、/wordFamily/0/example",
+        "message": "上述原有例句共十一项缺少目标结构要求的 note 属性。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "audience 是观众，与 stage 所指的地点或行业不构成反向表达。可改为限定位置语境的 off stage，并说明 stage 本身没有通用反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/note",
+        "message": "on stage 不必表示正在表演，工作人员也可以在台上；on the stage 在特指某座实体舞台时同样规范。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0",
+        "message": "旅程中的一段与火箭的一级是不同用法，现有条目仅为后者举例。应分别呈现，并补充“活动舞台”的比喻用法，避免把“场所”理解成通用的 place。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对发音、词形、搭配、译文、例句归属、近义与反向表达，以及词源的来源和先后关系。修订后，阶段、实体舞台、戏剧事业、上演、组织举行及人为安排事件的功能均各有至少两句例句；旅程分段、火箭分级和比喻性活动舞台另列。词条中的驿站、层、脚手架及两项历史性不及物用法未作为初中核心内容扩展。古法语 estage 到英语 stage 的词源链有直接依据，保留原文；未使用无法取得的 Cambridge 页面作核验依据。部分搭配辨析和低频用法属于专业语言知识补充，来源标识留空。",
+    "senseInventory": [
+      {
+        "sense": "名词：阶段；时期",
+        "coveredBy": [
+          "stage-n-phase"
+        ],
+        "assessment": "核心义已覆盖，两句例句自然，stage 与 step 的区别总体准确。"
+      },
+      {
+        "sense": "名词：供表演的实体舞台",
+        "coveredBy": [
+          "stage-n-theatre"
+        ],
+        "assessment": "补充搬钢琴上台的例句后，本功能有两句；修正冠词说明。"
+      },
+      {
+        "sense": "名词：戏剧；戏剧表演事业或行业",
+        "coveredBy": [
+          "stage-n-theatre"
+        ],
+        "assessment": "与实体舞台合列可以接受；补充离开戏剧事业从教的例句后，本功能有两句。"
+      },
+      {
+        "sense": "名词：活动或公共事务展开的舞台、领域",
+        "coveredBy": [
+          "stage-n-arena"
+        ],
+        "assessment": "补为比喻用法，并明确不能用 stage 泛指任意场所。"
+      },
+      {
+        "sense": "名词：旅程或路线中的一段",
+        "coveredBy": [
+          "stage-n-journey"
+        ],
+        "assessment": "从原来的混合条目中分出，补充对应例句。"
+      },
+      {
+        "sense": "名词：火箭等装置的一级或分级部分",
+        "coveredBy": [
+          "stage-n-other"
+        ],
+        "assessment": "来源明确支持；保留原有火箭例句，收窄标题和释义。"
+      },
+      {
+        "sense": "名词：站；驿站",
+        "coveredBy": [],
+        "assessment": "属于历史交通相关用法，不作为初中核心义扩展；不能将其当作现代 station 的通用替代词。"
+      },
+      {
+        "sense": "名词：层",
+        "coveredBy": [],
+        "assessment": "裸释义不足以确定具体建筑或技术语境，未扩展为通用的楼层义。"
+      },
+      {
+        "sense": "名词：脚手架或架设的作业平台",
+        "coveredBy": [],
+        "assessment": "专业低频用法，未纳入本课核心教学。"
+      },
+      {
+        "sense": "及物动词：上演；制作并呈现演出",
+        "coveredBy": [
+          "stage-v-perform"
+        ],
+        "assessment": "补充例句后有两句；stage 强调组织呈现，不等同于演员亲自 perform 或 act。"
+      },
+      {
+        "sense": "及物动词：组织举行活动、抗议等",
+        "coveredBy": [
+          "stage-v-perform"
+        ],
+        "assessment": "补充抗议活动例句后有两句，并保留与 organize、put on 的语境区别。"
+      },
+      {
+        "sense": "及物动词：人为安排事件或场景，使其看起来真实或自然发生",
+        "coveredBy": [
+          "stage-v-contrive"
+        ],
+        "assessment": "原稿遗漏；新增独立义及两句例句，说明其与正常举办活动的区别。"
+      },
+      {
+        "sense": "不及物动词：适于上演",
+        "coveredBy": [],
+        "assessment": "历史性、低频用法；未纳入初中核心内容，也未错误概括为现代常用句型。"
+      },
+      {
+        "sense": "不及物动词：乘驿车旅行",
+        "coveredBy": [],
+        "assessment": "历史交通用法，未纳入现代初中核心教学。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"名词复数\"",
+        "valueJson": "\"名词复数；动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则变化：词尾加 -s；复数词尾读 /ɪz/。\"",
+        "valueJson": "\"两种形式都在 stage 后加 -s，拼作 stages，词尾均读 /ɪz/。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at an early stage 表示处于发展的早期阶段。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the next stage of 后接过程或活动，说明其下一阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"stage-n-theatre-ex1\",\"senseId\":\"stage-n-theatre\",\"en\":\"The children sang on stage.\",\"zh\":\"孩子们在舞台上唱歌。\"},{\"id\":\"stage-n-theatre-ex2\",\"senseId\":\"stage-n-theatre\",\"en\":\"She hopes to return to the stage one day.\",\"zh\":\"她希望有一天重返戏剧舞台。\"}]",
+        "valueJson": "[{\"id\":\"stage-n-theatre-ex1\",\"senseId\":\"stage-n-theatre\",\"en\":\"The children sang on stage.\",\"zh\":\"孩子们在舞台上唱歌。\",\"note\":\"这里指孩子们表演的实体舞台。\"},{\"id\":\"stage-n-theatre-ex2\",\"senseId\":\"stage-n-theatre\",\"en\":\"She hopes to return to the stage one day.\",\"zh\":\"她希望有一天重返戏剧舞台。\",\"note\":\"这里的 return to the stage 指重新从事戏剧表演。\"},{\"id\":\"stage-n-theatre-ex3\",\"senseId\":\"stage-n-theatre\",\"en\":\"We carried the piano onto the stage.\",\"zh\":\"我们把钢琴搬到了舞台上。\",\"note\":\"onto 表示移动到台上；the stage 特指这座实体舞台。\"},{\"id\":\"stage-n-theatre-ex4\",\"senseId\":\"stage-n-theatre\",\"en\":\"He left the stage to become a teacher.\",\"zh\":\"他离开戏剧表演行业，成为了一名教师。\",\"note\":\"这里的 the stage 指戏剧事业，left 不只是说他走下了舞台。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"表示演员正在舞台上表演，stage 前通常不加 the。\"",
+        "valueJson": "\"on stage 常表示在台上或登台，不要求当时正在表演。特指某座实体舞台时，on the stage 也正确。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"audience\",\"zh\":\"观众\",\"note\":\"在演出语境中，观众观看表演，演员则在 stage 上表演。\"}]",
+        "valueJson": "[{\"en\":\"off stage\",\"zh\":\"不在台上；在幕后\",\"note\":\"与 on stage 在位置上相对，不表示退出戏剧表演行业。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在演出场景里，audience 是观看的一方，与舞台上的表演者相对。\"",
+        "valueJson": "\"stage 所指的舞台或戏剧行业没有通用反义词；说明人在台上还是台下时，可用 on stage 与 off stage 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples",
+        "expectedValueJson": "[{\"id\":\"stage-v-perform-ex1\",\"senseId\":\"stage-v-perform\",\"en\":\"The school staged a short play about friendship.\",\"zh\":\"学校上演了一部关于友谊的短剧。\"},{\"id\":\"stage-v-perform-ex2\",\"senseId\":\"stage-v-perform\",\"en\":\"The town staged a music festival in July.\",\"zh\":\"小镇在七月举办了一场音乐节。\"}]",
+        "valueJson": "[{\"id\":\"stage-v-perform-ex1\",\"senseId\":\"stage-v-perform\",\"en\":\"The school staged a short play about friendship.\",\"zh\":\"学校上演了一部关于友谊的短剧。\",\"note\":\"stage a play 指安排并呈现戏剧演出，不是说学校本身扮演角色。\"},{\"id\":\"stage-v-perform-ex2\",\"senseId\":\"stage-v-perform\",\"en\":\"The town staged a music festival in July.\",\"zh\":\"小镇在七月举办了一场音乐节。\",\"note\":\"stage a festival 表示组织并举行音乐节。\"},{\"id\":\"stage-v-perform-ex3\",\"senseId\":\"stage-v-perform\",\"en\":\"Our local theatre stages a comedy every summer.\",\"zh\":\"我们当地的剧院每年夏天都会上演一部喜剧。\",\"note\":\"这里的 stages 是动词第三人称单数，宾语是上演的剧目类型。\"},{\"id\":\"stage-v-perform-ex4\",\"senseId\":\"stage-v-perform\",\"en\":\"The workers staged a peaceful protest outside the factory.\",\"zh\":\"工人们在工厂外举行了一场和平抗议。\",\"note\":\"stage a protest 是组织举行抗议活动，不是把抗议当作戏来演。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stage-v-contrive\",\"title\":\"人为安排；制造假象\",\"meaning\":\"有意安排事件或场景，使它看起来像真实或自然发生的事。\",\"usageNote\":\"常见于视频、照片或假事件的描述。是否涉及欺骗，要看目的和上下文；不能见到 staged 就一律译为“伪造”。\",\"examples\":[{\"id\":\"stage-v-contrive-ex1\",\"senseId\":\"stage-v-contrive\",\"en\":\"The argument in the video was staged; both people were actors.\",\"zh\":\"视频中的争吵是事先安排的；两个人都是演员。\",\"note\":\"was staged 表示争吵是设计出来的，不是自然发生的。\"},{\"id\":\"stage-v-contrive-ex2\",\"senseId\":\"stage-v-contrive\",\"en\":\"They staged a break-in to claim insurance money.\",\"zh\":\"他们制造了一起入室盗窃的假象，企图骗取保险金。\",\"note\":\"这里结合目的可知 stage 指制造假事件；to claim 说明目的，不表示已经拿到钱。\"}],\"patterns\":[{\"en\":\"The scene was staged.\",\"zh\":\"这个场景是人为安排的。\",\"note\":\"被动结构常用于说明画面或事件经过设计，并非自然发生。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a staged photograph\",\"zh\":\"一张摆拍的照片\",\"note\":\"staged 作修饰语，表示照片中的场景或动作经过安排。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"set up\",\"zh\":\"安排；设计\",\"note\":\"set up a scene 可表示安排场景，但 set up 本身不一定暗示制造假象。\"},{\"en\":\"fake\",\"zh\":\"伪造；假装\",\"note\":\"更直接地表示弄虚作假；stage 也可用于不含欺骗目的的场景安排。\"}],\"contrasting\":[{\"en\":\"happen spontaneously\",\"zh\":\"自然发生；自发发生\",\"note\":\"与人为安排事件相对，说明事件并非预先设计。\"}],\"similarNote\":\"本义关注事件或画面的安排；fake 更明确地突出其虚假性。\",\"contrastingNote\":\"在事件是否事先安排的语境中，可用 staged 与 spontaneous 作对照。\"},\"sourceIds\":[\"wiktionary-stage\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"其他较少见用法\"",
+        "valueJson": "\"火箭等装置的一级\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"stage 还可指旅程中的一段路程，或火箭等装置的一级、分级部分。\"",
+        "valueJson": "\"火箭等装置中分级工作或分离的一个部分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这些用法多见于旅行、工程或科技语境；初中学习可先掌握“阶段、舞台”和动词“上演、举办”。\"",
+        "valueJson": "\"主要用于工程和科技语境，如 a two-stage rocket（两级火箭）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stage-n-journey\",\"title\":\"旅程或路线中的一段\",\"meaning\":\"较长旅程或路线划分出来的一段。\",\"note\":\"这里指有一定起点和终点的路段，与一般的过程阶段相关，但具体落在行程上。\",\"example\":{\"id\":\"stage-n-journey-ex1\",\"senseId\":\"stage-n-journey\",\"en\":\"We cycled the final stage of the journey in heavy rain.\",\"zh\":\"我们冒着大雨骑完了旅程的最后一段。\",\"note\":\"the final stage of the journey 指最后一段路程。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"stage-n-arena\",\"title\":\"活动的舞台；领域（比喻）\",\"meaning\":\"某种活动、竞争或公共事务展开的领域。\",\"note\":\"常见于 the world stage、the international stage 等搭配；不能把 stage 当作通用的 place 来表示任意地点。\",\"example\":{\"id\":\"stage-n-arena-ex1\",\"senseId\":\"stage-n-arena\",\"en\":\"The issue has moved onto the international stage.\",\"zh\":\"这个问题已进入国际公共议程。\",\"note\":\"international stage 比喻国际事务的舞台，不指实体演出场所。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"planning stage 指整个规划时期，不是规划中的单个动作。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"step 指一个具体步骤；本句用来与 stage 表示的阶段作对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"staged 是过去式，拼写时保留原有的 e，再加 d。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"are staging 是现在进行时；staging 去掉 stage 词尾的 e 后加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"The staging of the play 是名词短语，指该剧的排演和舞台呈现安排。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-stage\"]",
+        "valueJson": "[\"wiktionary-stage\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-stage\",\"title\":\"Cambridge Dictionary: stage\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/stage\",\"supports\":[\"常见名词和动词用法、词形及读音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-stage\",\"title\":\"Wiktionary: stage（English）\",\"url\":\"https://fr.wiktionary.org/wiki/stage#Anglais\",\"supports\":[\"材料所示的词源信息：英语 stage 来自古法语 estage，意为住所\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-stage\",\"title\":\"法语维基词典：stage（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/stage#Anglais\",\"supports\":[\"英语 stage 来自古法语 estage，意为住所\",\"读音 /steɪdʒ/\",\"名词义：舞台、戏剧、阶段、火箭的一级\",\"动词义：安排上演及人为策划事件\",\"派生名词 staging 的舞台呈现义\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1316,
+    "headword": "stage",
+    "meaning_zh": "n. 阶段, 舞台, 场所, 戏剧, 站, 驿站, 级, 层, 脚手架\nvt. 上演, 表演, 筹划\nvi. 适于上演, 乘驿车旅行",
+    "phonetic": "/steidʒ/",
+    "pos": "",
+    "forms": []
+  }
+}

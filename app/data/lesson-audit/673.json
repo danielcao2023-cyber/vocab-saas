@@ -1,0 +1,179 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4473efeac8b9eb53d513874ce31eb07441cdfb0a9005b0da76e41d6109f67197",
+    "executedReviewPromptHash": "4473efeac8b9eb53d513874ce31eb07441cdfb0a9005b0da76e41d6109f67197",
+    "reviewHash": "ac519ca3c1a4131f66576eac4c9bef26fc7f5d367bfa10b7fd74bf6d6db86eb5",
+    "wordId": 673,
+    "inputHash": "3e3d5c5801b636e929a7f24328640e35a562fc8b1f2e7df96d7d2dc6481e4faf",
+    "draftHash": "7e10bc43b7aaefa3c63874afae22d6843f8ef290948e0f8d14fde2d4bd0f5839",
+    "finalHash": "a14f367069edc82905c1566fb47367575f2667d508f92a44c90ed5c0b98da8a4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/housework#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.839Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 1969164,
+        "revisionId": 36277599,
+        "revisionTimestamp": "2024-10-23T06:03:29Z",
+        "sha256": "df11ecd14bebe13cfc1c04a5631909534faccb55e2fe59547dfcbf08bcca9fc6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/housework",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:37:33.181Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:42:53.424Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源仍只说明现代构词，遗漏已取得的英语词条所载的复合构词及1841年记录。应补入可靠年代并引用该词条原URL；house与work是构词成分，不应画成先后演变阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Oxford内容未提供，Cambridge页面未取得，不能将其作为本次审核的实质依据。应改引实际取得的Wiktionnaire英语词条，并区分英语词条与法语释文。现有音标可依据专业语言知识保留，移除其无材料支持的Oxford引用。"
+      }
+    ],
+    "coverageAssessment": "已核对全部可用定义：housework只有“家务劳动”这一常用不可数名词义，现有673-s1及两条例句覆盖充分，无须拆义或增列词性。语法、搭配、翻译、拼写、读音及相关表达可保留。修订补齐词源年代并校正引用；Cambridge不可用，Oxford未提供内容，未据此推断额外义项。",
+    "senseInventory": [
+      {
+        "sense": "不可数名词：家务；家务劳动",
+        "coveredBy": [
+          "673-s1"
+        ],
+        "assessment": "定义涵盖清洁、做饭、洗衣等日常家务，两条原创英中例句自然；不可数用法、常见搭配及与chores、housekeeping的联系均有说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-housework\",\"title\":\"Oxford Learner’s Dictionaries: housework\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/housework\",\"supports\":[\"housework 的名词用法\",\"不可数名词及常见搭配\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-housework\",\"title\":\"Cambridge Dictionary: housework\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/housework\",\"supports\":[\"housework 指家庭日常劳动\",\"不可数名词用法及与 chore 的区分\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-housework\",\"title\":\"Wiktionnaire：housework（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/housework#Anglais\",\"supports\":[\"家务劳动义及不可数名词词性\",\"housekeeping 的近义关系\",\"house 与 work 的复合构词\",\"1841 年的使用记录\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-housework\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-housework\"]",
+        "valueJson": "[\"wiktionary-housework\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-housework\"]",
+        "valueJson": "[\"wiktionary-housework\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-housework\"]",
+        "valueJson": "[\"wiktionary-housework\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"housework 是现代英语中 house（房子、家庭）和 work（工作）的组合，字面上指家庭里的劳动。\"",
+        "valueJson": "\"housework 由 house（家、房子）和 work（工作、劳动）复合而成，表示家务劳动；其使用记录可追溯至 1841 年。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代构词关系，不把它当作更早的历史词源演变链。\"",
+        "valueJson": "\"1841 年是可追溯的使用记录年代，并不等于可以确定的造词年份。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-housework\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 673,
+    "headword": "housework",
+    "meaning_zh": "n. 家事, 家务",
+    "phonetic": "/'hauswә:k/",
+    "pos": "",
+    "forms": []
+  }
+}

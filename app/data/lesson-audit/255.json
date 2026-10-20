@@ -1,0 +1,366 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f39b941eb0734576a7e5ac1e94f3b2da6e89c42122c8467c3426ce63b43940da",
+    "executedReviewPromptHash": "f39b941eb0734576a7e5ac1e94f3b2da6e89c42122c8467c3426ce63b43940da",
+    "reviewHash": "faf1f46c055c07bcac13400291cac44ef8e513fa2e22a1fa67f0592bdb47b626",
+    "wordId": 255,
+    "inputHash": "c3e8ba32ef0d27bc75955585ece2676a1e2e14701a5409f3cf6e57c8fc6b92a5",
+    "draftHash": "689c6c47228dc162fdf617bcc4b6daa6839b9da949d49ca79192927c179a821b",
+    "finalHash": "992abfd709de646bd24a10097d6c33440db87ea45aa45ad99694905f53eebc59",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/chemistry",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:52:19.081Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/chemistry#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.908Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116731,
+        "revisionId": 38298944,
+        "revisionTimestamp": "2025-06-07T12:28:18Z",
+        "sha256": "73c8539284f9c31c9ac3ac29320e6a4f883b9e6373fde63769c6bb65bfb4f9bc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/chemistry",
+        "section": "chemistry (noun)",
+        "supports": [
+          "Chemist plus -ry",
+          "Early association with alchemy",
+          "Later scientific meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "1d4517c34e05c3a498d4dd654d129b13fedf83ef8e7932200ab36d53ab496efb",
+        "summaryAndSupportsWordCount": 60,
+        "sha256": "1d4517c34e05c3a498d4dd654d129b13fedf83ef8e7932200ab36d53ab496efb",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/255.json"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:44:47.508Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未取得，却被用于支持释义、发音和词族说明。应改用实际取得的英语词条材料，并移除超出其支持范围的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "学科义与具体物质的化学性质／过程义混写，各只有一个例句。液体例句中的 chemistry between 搭配也不够自然，容易把 chemistry 与一次具体 reaction 混同。应分义并各保留至少两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "删去字母可以帮助辨认词形，但不能代替派生方向说明；已取得的词源材料支持 chemist 加 -ry 构成 chemistry。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/formation",
+        "message": "chemist 直接加 -ical 得不到 chemical。应说明同族词共享的 chem- 部分及 chemical 的实际结尾。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/spellingNote",
+        "message": "chemical 没有词尾 e；应直接加 -ly，得到含两个连续 l 的 chemically。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "KEM-uh-stree 暗示 /ə/，却同时要求读 /ɪ/；应说明弱元音变体，并明确单词有三个音节、只有第一音节重读。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages",
+        "message": "构词关系与包含前后两个时期的用法概述混列，箭头时间线不清。应把构词保留在 summary，阶段按早期炼金术相关用法到后来的科学义排列。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/2",
+        "message": "关于 -istry 与错误拼写的句子绕口，应直接说明 chemist 后接 ry，不插入 e。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/meaning",
+        "message": "人际义不限于两个人，也常描述团队成员的配合感；补入 team chemistry 可避免范围过窄。"
+      }
+    ],
+    "coverageAssessment": "已核对学科义、具体物质的化学组成／性质／过程义，以及人际吸引与合作默契义；修订后各主要义均有两个自然原创英中例句。不可数用法、近义限制及反向表达基本正确，无须强造反义词。实际取得的维基词典文字是英语词条的法语释义，并未展开所有定义；发音、人际义及具体搭配依据专业语言知识审核，不再虚挂 Cambridge 引用。历史词源仅采用已取得的 Etymonline 摘要。",
+    "senseInventory": [
+      {
+        "sense": "化学：研究物质及其变化的科学",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心学科义。原稿只有一个明确的学科例句；修订后独立呈现并有两个例句。"
+      },
+      {
+        "sense": "具体物质的化学组成、性质，或某个活动涉及的化学过程",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原稿混在 s1 中，说明和例句不足。新增独立义，分别以土壤性质和烘焙过程展示用法，并保留 the chemistry of 结构。"
+      },
+      {
+        "sense": "人与人之间的吸引力、默契或团队配合感",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原有舞台合作和约会例句覆盖自然；扩展说明团队语境，近义及缺乏默契的反向表达保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的意思是“化学”：研究物质及其变化的科学。谈到两个人时，chemistry 还可表示彼此自然的吸引力或默契。\"",
+        "valueJson": "\"chemistry 最常指“化学”这门科学，也可指具体物质的化学组成、性质或某个活动涉及的化学过程。谈到人际关系时，还可表示自然的吸引力或默契。\""
+      },
+      {
+        "op": "replace",
+        "path": "/levelHint",
+        "expectedValueJson": "\"初中基础；第二义作为拓展了解\"",
+        "valueJson": "\"初中基础：先学学科义；再学化学性质／过程义和人际关系义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"拼写分成 chem-is-try；注意词尾是 -istry，不是 -istry 的变体写法 *chemistery。\"",
+        "valueJson": "\"用 chemist + -ry 记拼写：chemist 后直接接 ry 得到 chemistry，中间不加 e；不要写成 *chemistery。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"读作 KEM-uh-stree，开头重读；中间的 i 发短音 /ɪ/。\"",
+        "valueJson": "\"开头 ch 读 /k/，第一音节重读。这里中间的 i 标为 /ɪ/，在有些口音中也会弱化为 /ə/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"词尾 -try 连读，不要按拼写读成三个清晰的重音音节。\"",
+        "valueJson": "\"通常有三个音节，只有第一音节重读；结尾 /stri/ 要连贯读出，不在辅音之间额外加元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"化学；化学过程\"",
+        "valueJson": "\"化学（学科）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"研究物质的组成、性质和变化的科学；也可指物质之间发生的化学变化。\"",
+        "valueJson": "\"研究物质的组成、结构、性质及其变化的科学。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"表示学科时通常不可数，常说 study chemistry 或 chemistry class。\"",
+        "valueJson": "\"表示学科时通常不可数，常说 study chemistry 或 chemistry class；学科名称通常不加冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"s1-e2\",\"senseId\":\"s1\",\"en\":\"The chemistry between the two liquids changed their color.\",\"zh\":\"这两种液体之间的化学反应改变了它们的颜色。\",\"note\":\"此处指物质发生的化学变化。\"}",
+        "valueJson": "{\"id\":\"s1-e2\",\"senseId\":\"s1\",\"en\":\"I like chemistry because it helps me understand how soap works.\",\"zh\":\"我喜欢化学，因为它能帮助我理解肥皂的作用原理。\",\"note\":\"chemistry 指这门学科；because 从句说明喜欢它的原因。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"the chemistry of + 名词\",\"zh\":\"……的化学性质／化学过程\",\"note\":\"说明某种物质或过程涉及的化学。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[\"fr-wiktionary-chemistry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"两个人之间自然的好感、吸引力或默契。\"",
+        "valueJson": "\"人与人之间自然的吸引力、默契或配合感，也可形容团队成员之间的合拍。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于描述两个人相处时的感觉，尤其常见于口语；通常说 have chemistry with someone。\"",
+        "valueJson": "\"可谈约会中的吸引力，也可谈演员搭档或团队合作中的默契，具体含义由语境判断。通常不可数，常说 have chemistry with someone 或 chemistry between people。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"team chemistry\",\"zh\":\"团队默契\",\"note\":\"指团队成员相处和协作时的合拍感，不必带有恋爱含义。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"具体物质或过程中的化学\",\"meaning\":\"特定物质的化学组成和性质，或某个活动涉及的化学过程。\",\"usageNote\":\"通常不可数，常见于 the chemistry of ...、soil chemistry 等表达；the 用来限定具体对象。\",\"examples\":[{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"The chemistry of the soil affects how well plants grow.\",\"zh\":\"土壤的化学组成和性质会影响植物的生长状况。\",\"note\":\"这里谈具体土壤的化学特性，不是学校里的学科名称。\"},{\"id\":\"s3-e2\",\"senseId\":\"s3\",\"en\":\"This video explains the chemistry of baking a cake.\",\"zh\":\"这个视频解释了烤蛋糕时涉及的化学过程。\",\"note\":\"the chemistry of baking 指烘焙涉及的化学过程；若专指某一次反应，可用 a chemical reaction。\"}],\"patterns\":[{\"en\":\"the chemistry of + 名词／动名词短语\",\"zh\":\"……的化学组成、性质或涉及的化学过程\",\"note\":\"of 后说明所谈的物质或活动，如 the chemistry of soil 或 the chemistry of baking。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"soil chemistry\",\"zh\":\"土壤的化学组成与性质\",\"note\":\"在园艺或农业语境中，关注土壤的化学成分和性质。\",\"kind\":\"common-collocation\"},{\"en\":\"body chemistry\",\"zh\":\"身体内部的化学状态\",\"note\":\"指体内化学物质及相关过程，区别于人际关系中的默契义。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"chemical composition\",\"zh\":\"化学组成\",\"note\":\"强调含有哪些化学成分，适合组成语境，不能替代所有过程义。\"},{\"en\":\"chemical processes\",\"zh\":\"化学过程\",\"note\":\"强调涉及的变化过程，不表示整门学科或人际吸引力。\"}],\"contrasting\":[],\"similarNote\":\"chemical composition 偏组成；chemical processes 偏变化过程，应按上下文选择。\",\"contrastingNote\":\"具体物质的化学组成、性质或过程没有通用的直接反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，chemistry 可看作由 chemist 加上表示类别或活动的词尾 -ry 构成。它的早期用法与炼金术有关，后来用于表示研究物质及其变化的科学。\"",
+        "valueJson": "\"chemistry 由 chemist 加后缀 -ry 构成。这个词早期与炼金术有关，后来用来指研究物质及其变化的科学。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语构词\",\"form\":\"chemist + -ry\",\"meaning\":\"由 chemist 加词尾 -ry 构成 chemistry。\"},{\"language\":\"英语早期用法\",\"form\":\"chemistry\",\"meaning\":\"早期用法与炼金术有关；后来用于表示研究物质及其变化的科学。\"}]",
+        "valueJson": "[{\"language\":\"英语早期用法\",\"form\":\"chemistry\",\"meaning\":\"早期用法与炼金术有关。\"},{\"language\":\"英语后期用法\",\"form\":\"chemistry\",\"meaning\":\"后来用于指研究物质及其变化的科学。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是构词和用法发展的简要说明；-ry 是词尾，不应把 chemistry 拆成各部分的中文谐音来记。\"",
+        "valueJson": "\"chem-is-try 只是方便记拼写的分块，不能用来解释历史词义；实验课故事也只是助记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"chemistry 去掉词尾 -ry，使用词干 chemist。\"",
+        "valueJson": "\"chemist 是 chemistry 的构词基础；由 chemist 加后缀 -ry 得到 chemistry。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[\"fr-wiktionary-chemistry\",\"etymonline-chemistry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"由 chemist 加形容词词尾 -ical 构成。\"",
+        "valueJson": "\"现代词形上，它与 chemistry、chemist 共享 chem- 部分，形容词结尾为 -ical；不是在 chemist 后直接加 -ical。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[\"fr-wiktionary-chemistry\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"chemical 去掉词尾 e，再加 -ly，拼作 chemically。\"",
+        "valueJson": "\"chemical 以 l 结尾，直接加 -ly，两个 l 都保留：chemical + ly → chemically。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-chemistry\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-chemistry\",\"title\":\"Cambridge Dictionary: chemistry\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/chemistry\",\"supports\":[\"chemistry 的名词用法与常见意思\",\"chemistry 的英美发音\",\"chemistry 的学科用法和人与人之间吸引力的用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr-wiktionary-chemistry\",\"title\":\"Wiktionnaire：chemistry（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/chemistry#Anglais\",\"supports\":[\"chemistry 为英语名词，基本释义对应法语 chimie\",\"列出的关联词 chemist、chemical\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 255,
+    "headword": "chemistry",
+    "meaning_zh": "n. 化学, 化学过程",
+    "phonetic": "/'kemistri/",
+    "pos": "",
+    "forms": []
+  }
+}

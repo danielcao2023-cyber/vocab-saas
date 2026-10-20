@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a8641935785d357a9fb3cc5c000392a83da141bd7641419ce491f60f6a53fd20",
+    "executedReviewPromptHash": "a8641935785d357a9fb3cc5c000392a83da141bd7641419ce491f60f6a53fd20",
+    "reviewHash": "ef16bef7e16018d3b8df56b9f97eccbc15df8cddec6c9c2f338e6075021bbf8b",
+    "wordId": 595,
+    "inputHash": "0a3cb6dd9808467dfc818b882e20b1cdf2d44aa7829fb80f293e96bb2af8b6fd",
+    "draftHash": "5f06924076c74d4f45b52a00768e55594b6671eb9be33bf193fc8839ced5a2b1",
+    "finalHash": "87850617ad518b0cbd288328a4d2780671b3bb97d41e2e34844fa762156e8e38",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/grape#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:11.308Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 14028,
+        "revisionId": 39232114,
+        "revisionTimestamp": "2026-01-15T01:18:42Z",
+        "sha256": "accc29c849b720d7514453436dcd362d1ab36c180924e588876b095a45f288b3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/grape",
+        "section": "grape etymology",
+        "supports": [
+          "Historical source form and meaning",
+          "Preserved semantic or historical boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "1adf552c1e63e47be56f57c816d14df89da04007a430f3f768b5ce2906af3416",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "1adf552c1e63e47be56f57c816d14df89da04007a430f3f768b5ce2906af3416",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/595.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/grape",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T18:15:45.753Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T18:25:43.858Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/confusions/0/items",
+        "message": "两个核心义例句和三个辨析例句均缺少必填的 note 属性，共五处。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/0/sourceIds；/lessCommonSenses/0/sourceIds；/confusions/0/sourceIds；/sources",
+        "message": "Cambridge 未取得正文，Oxford 未提供来源材料，不能作为本次审校的正文依据。应采用已取得的 Wiktionnaire 英语词条；植株义及相关词辨析由专业语言知识支持，不挂靠未取得的词典正文。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/meaning；/lessCommonSenses/0/example",
+        "message": "grape plant 和 grape vine 这类组合不能直接示范 grape 本身的植株义。该较少见义可以保留，但需用 grape 直接指植株的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "berry 是植物学分类上的上位词，不宜列作近义表达。raisin 可以保留作鲜果与干果的对照，并明确其不是反义词。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/example",
+        "message": "原例句只说明 grapefruit，却标注 grape-fruit。改为同时出现 grapes 和 grapefruit，使例句确实覆盖所标注的葡萄水果义。"
+      }
+    ],
+    "coverageAssessment": "水果义是本课唯一的初中核心义，已有两个语法正确、翻译准确的原创例句，无需强拆义项。词条所列的植株义保留为较少见用法，并修正其示例。复数、读音、常用搭配和辨析已核对；古法语到英语的词源顺序及不确定性说明符合 Etymonline 材料，无需改动。来源局限是：已取得的现代词典正文仅明确支持水果义、读音和规则复数；植株义与相关词辨析依据专业语言知识，不声称已获这些正文直接佐证。",
+    "senseInventory": [
+      {
+        "sense": "名词：葡萄这种水果；一颗葡萄",
+        "coveredBy": [
+          "grape-fruit"
+        ],
+        "assessment": "核心义覆盖充分，两个例句分别展示单数和复数。a bunch of grapes 是数量搭配，不需另立“一串葡萄”义。"
+      },
+      {
+        "sense": "名词：葡萄植株或葡萄藤，较少见用法",
+        "coveredBy": [
+          "grape-vine"
+        ],
+        "assessment": "词条中文列有此义，可按专业语言知识保留在较少见义中。补丁以 wild grape 直接指植株，避免仅用复合表达代替本词义项示例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a grape 表示一颗葡萄，grape 在这里用单数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"These 与复数 grapes 搭配；sweet and juicy 描写葡萄的味道和口感。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"berry\",\"zh\":\"浆果\",\"note\":\"berry 是一类小而多汁的水果的名称；grape 是葡萄，不能用 berry 替换其具体名称。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"berry 是上位的水果类别词，具体说葡萄时用 grape。\"",
+        "valueJson": "\"grape 是葡萄的具体名称，没有常用的直接同义词；berry 在植物学中是葡萄所属的浆果类别，不能当作 grape 的同义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"区分新鲜果实 grape 和制成的葡萄干 raisin；这组对照只用于水果语境。\"",
+        "valueJson": "\"raisin 表示葡萄干，是鲜果与干果的对照，不是反义词；grape 没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在园艺或农业语境中，grape 可指葡萄植株或葡萄藤，尤其见于 grape plant 等组合。\"",
+        "valueJson": "\"较少见用法：grape 在植物介绍或园艺语境中也可指葡萄植株或葡萄藤。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"grape-vine-ex1\",\"senseId\":\"grape-vine\",\"en\":\"They planted a grape vine beside the fence.\",\"zh\":\"他们在篱笆旁种了一株葡萄藤。\",\"note\":\"这里说的是植株；更常见的写法也有 grapevine。\"}",
+        "valueJson": "{\"id\":\"grape-vine-ex1\",\"senseId\":\"grape-vine\",\"en\":\"A wild grape was climbing up the old fence.\",\"zh\":\"一株野葡萄藤正沿着旧篱笆向上爬。\",\"note\":\"这里的 grape 指整株野葡萄藤，而不是一颗葡萄；日常表达也常用 wild grapevine。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"some grapes 表示一些葡萄，指果实。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 grapevine 指葡萄藤，对应植株而非果实。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example",
+        "expectedValueJson": "{\"id\":\"grape-confusion-ex3\",\"senseId\":\"grape-fruit\",\"en\":\"She had half a grapefruit for breakfast.\",\"zh\":\"她早餐吃了半个葡萄柚。\"}",
+        "valueJson": "{\"id\":\"grape-confusion-ex3\",\"senseId\":\"grape-fruit\",\"en\":\"She had grapes and half a grapefruit for breakfast.\",\"zh\":\"她早餐吃了葡萄和半个葡萄柚。\",\"note\":\"grapes 指葡萄；grapefruit 指葡萄柚，half a grapefruit 表示半个葡萄柚。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary：grape\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/grape\",\"supports\":[\"grape 的词性、发音和水果义\",\"grape 的常见用法与复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：grape（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/grape#Anglais\",\"supports\":[\"英语名词 grape 的水果义\",\"英美读音 /ɡɹeɪp/\",\"规则复数 grapes\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries：grape\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/grape\",\"supports\":[\"grape 的词义和常用搭配\",\"grape 与葡萄藤相关表达的用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 595,
+    "headword": "grape",
+    "meaning_zh": "n. 葡萄, 葡萄树",
+    "phonetic": "/greip/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7bffa0bf7d59756e14d4106d5adf4f54f8bbcf1c3d6de7eea25c32bb8c164866",
+    "executedReviewPromptHash": "7bffa0bf7d59756e14d4106d5adf4f54f8bbcf1c3d6de7eea25c32bb8c164866",
+    "reviewHash": "0978e34ce833d90f2c81af1ac5f09663efbdfce9f06f6e489290623f45ca68e0",
+    "wordId": 1400,
+    "inputHash": "c19d62c36527d017c28ebd4521741868f28cc42bca2d75736a5196c34e8047d6",
+    "draftHash": "7f1d2419b647fcabc4e960dfed591bda4c3a47035adaca77aaa4a92473f2ba1b",
+    "finalHash": "bff2070f5055d1c7ae7b5c3cbdcd8252e83a84ae0d5a66e7f2ebedf086eaa280",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/theatre#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.996Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 23160,
+        "revisionId": 37089056,
+        "revisionTimestamp": "2025-01-27T00:14:18Z",
+        "sha256": "b05123ac5613e66c3179a37b7f779fc3974b4f09a5c50af6ee5f0c64ffbe3841",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/theatre",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:40:49.832Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:48:45.963Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/confusions/1",
+        "message": "把 theatre/theater 与电影院过度对立，遗漏美式 theater 可直接指电影院这一常用义；相关辨析及例句 senseId 需同步修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "未覆盖词条列出的全体观众、戏剧效果、阶梯式讲堂及一般活动场所义。可作为低频或限定语境用法补充，不必都扩为核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation；/wordFamily/0/spellingNote",
+        "message": "theatrical 不保留 theatre 末尾的 e；原构词说明与实际拼写不符。应明确区分同族词的拼写拆解与历史词源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "历史概述漏掉材料明确列出的中古英语阶段；stages 的 meaning 只是来源身份描述，没有解释词义，应将可靠传入链保留在 summary，清空这些占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "英式词尾 r 通常是不发音，而非仅仅卷舌不明显；应同时保留常见连读条件。原英美音标可保留，不应仅因来源采用另一种标音而判错。"
+      }
+    ],
+    "coverageAssessment": "已核对剧场、电影院、戏剧艺术、全体观众、戏剧效果、阶梯式讲堂、一般活动场所，以及初稿补充的手术室和战区义。修订后，三个核心义各有两个原创英中例句，其余用法按语境限制补入低频义。词源仅据已取得的法语维基词典英语词条修订；Oxford 仍只是推荐查阅来源，本次未将其视作已取得的词典正文。其余语法、翻译、搭配和词族例句可保留。",
+    "senseInventory": [
+      {
+        "sense": "供现场演出的剧场、戏院",
+        "coveredBy": [
+          "1400-n1"
+        ],
+        "assessment": "原有两个例句覆盖充分；需修正对电影义的排除性说明。"
+      },
+      {
+        "sense": "电影院，主要见于美式 theater",
+        "coveredBy": [
+          "1400-n5"
+        ],
+        "assessment": "原稿缺失的核心义；补入两个例句及地区用法说明，并修正 cinema 辨析。"
+      },
+      {
+        "sense": "戏剧艺术、戏剧表演领域及相关学习",
+        "coveredBy": [
+          "1400-n2"
+        ],
+        "assessment": "原有两个例句分别覆盖学习和艺术兴趣，不可数用法及与 a play 的区别正确。"
+      },
+      {
+        "sense": "剧场内的全体观众",
+        "coveredBy": [
+          "1400-n6"
+        ],
+        "assessment": "补入以场所代指其中观众的用法，说明其语境限制。"
+      },
+      {
+        "sense": "戏剧效果、刻意表演或做戏",
+        "coveredBy": [
+          "1400-n7"
+        ],
+        "assessment": "补入比喻用法及具体例句，避免误解为实际戏剧演出。"
+      },
+      {
+        "sense": "阶梯式讲堂",
+        "coveredBy": [
+          "1400-n8"
+        ],
+        "assessment": "以常见的 lecture theatre 补入，标明主要见于英式英语。"
+      },
+      {
+        "sense": "某类事件或活动发生的场所、舞台",
+        "coveredBy": [
+          "1400-n9"
+        ],
+        "assessment": "补入正式、比喻用法，与专门的军事战区义区分。"
+      },
+      {
+        "sense": "手术室",
+        "coveredBy": [
+          "1400-n3"
+        ],
+        "assessment": "原稿已以 operating theatre 自然覆盖，英式用法说明可保留。"
+      },
+      {
+        "sense": "战区、军事行动区域",
+        "coveredBy": [
+          "1400-n4"
+        ],
+        "assessment": "原稿覆盖充分，也得到已取得英语词条中军事义的支持。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"theatre 是名词，常指剧场，也可指戏剧这种表演艺术；英式拼作 theatre，美式常拼作 theater。\"",
+        "valueJson": "\"theatre 常指剧场或戏剧艺术；美式常拼作 theater，也常可指电影院，要结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习辨认“去剧场看戏”和“学习戏剧艺术”这两种语境。\"",
+        "valueJson": "\"练习辨认现场演出的剧场、美式英语中的电影院，以及戏剧艺术这三种常见语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"英式读音末尾通常不明显卷舌；美式 theater 的 r 通常发音。\"",
+        "valueJson": "\"常见英式标准发音中，词尾 r 在停顿或辅音前通常不发音，后接元音时可连读 /r/；美式通常读出 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可指剧场建筑，也常泛指去剧场看演出这一活动场所；通常不指电影院。\"",
+        "valueJson": "\"本义为可数名词。英式英语中，单说 theatre 通常指现场演出的剧场；美式 theater 也常可指电影院，需结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"指主要放映电影的场所；theatre 通常指现场演出场所。\"",
+        "valueJson": "\"用于区分放电影与现场演出的场所；但美式 theater 本身也可指电影院，不能仅凭这个词判断演出类型。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在区分演出类型时，cinema 或 movie theater 指看电影的场所；theatre 常指看现场戏剧的场所。\"",
+        "valueJson": "\"这里比较的是场所用途，不是反义词。英式 theatre 通常指现场演出的剧场，cinema 指电影院；美式 theater 可兼指两类场所，movie theater 明确指电影院。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1400-n5\",\"title\":\"电影院（主要为美式用法）\",\"meaning\":\"供观众观看电影的场所。\",\"usageNote\":\"可数名词。美式英语常说 movie theater，也可直接说 theater；英式英语通常说 cinema。需结合电影、放映、票务等上下文理解，不能认为 theater 只指现场演出的剧场。\",\"examples\":[{\"id\":\"1400-n5-e1\",\"senseId\":\"1400-n5\",\"en\":\"Let's meet outside the movie theater at seven.\",\"zh\":\"我们七点在电影院外面见吧。\",\"note\":\"movie theater 明确指电影院。\"},{\"id\":\"1400-n5-e2\",\"senseId\":\"1400-n5\",\"en\":\"The theater near our house shows children's films on Saturday mornings.\",\"zh\":\"我们家附近的电影院每周六上午放映儿童电影。\",\"note\":\"美式 theater 可直接指电影院；shows films 提供了明确语境。\"}],\"patterns\":[{\"en\":\"go to a movie theater\",\"zh\":\"去电影院\",\"note\":\"美式表达；指去一家电影院。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a movie theater\",\"zh\":\"一家电影院\",\"note\":\"美式英语中明确表示电影院的常见表达。\",\"kind\":\"common-collocation\"},{\"en\":\"a theater showing a film\",\"zh\":\"正在放映一部电影的电影院\",\"note\":\"show a film 表示放映电影。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"cinema\",\"zh\":\"电影院\",\"note\":\"此处比较可数的场所义；英式英语通常用这个词。\"}],\"contrasting\":[{\"en\":\"a live performance venue\",\"zh\":\"现场演出场地\",\"note\":\"比较现场演出与电影放映的用途；同一建筑也可能兼有两种用途。\"}],\"similarNote\":\"在电影院这一场所义上，英式 cinema 与美式 movie theater 相对应。\",\"contrastingNote\":\"theater 没有固定反义词；这里仅按活动类型比较电影院与现场演出场地。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"在常见场所义中，theatre 多看现场戏剧，cinema 看电影；美式英语常说 movie theater。\"",
+        "valueJson": "\"英式英语通常用 theatre 指现场演出的剧场，用 cinema 指电影院；美式 theater 可指剧场，也可指电影院，movie theater 则明确指电影院。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"通常指现场戏剧等演出的场所。\"",
+        "valueJson": "\"在这里的英式场所用法中指现场演出的剧场；美式拼法 theater 也常有电影院义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"英式英语常指电影院；美国常说 movie theater。\"",
+        "valueJson": "\"英式英语常用 cinema 指电影院；美式英语常说 movie theater，也可在语境明确时直接说 theater。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"1400-n1\"",
+        "valueJson": "\"1400-n5\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"先看活动类型：现场戏剧通常用 theatre，电影通常用 cinema 或 movie theater。\"",
+        "valueJson": "\"先看地区和上下文：英式 theatre 通常指现场演出的剧场；美式 theater 可指剧场或电影院，movie theater 明确指电影院。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1400-n6\",\"title\":\"剧场内的全体观众\",\"meaning\":\"借剧场这个场所指其中的观众。\",\"note\":\"常见于 the whole theatre 等表达；一般直接说观众时，用 audience 更清楚。\",\"example\":{\"id\":\"1400-n6-e1\",\"senseId\":\"1400-n6\",\"en\":\"The whole theatre burst into applause when the actors returned to the stage.\",\"zh\":\"演员们回到舞台时，全场观众爆发出掌声。\",\"note\":\"鼓掌的是观众，the whole theatre 在这里代指全场观众。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1400-n7\",\"title\":\"戏剧效果；刻意表演、做戏\",\"meaning\":\"像舞台表演一样引人注意的言行或场面，有时暗指缺乏真诚或实际内容。\",\"note\":\"此义通常不可数；是否带贬义取决于上下文。\",\"example\":{\"id\":\"1400-n7-e1\",\"senseId\":\"1400-n7\",\"en\":\"His public apology was pure theatre; he made no effort to repair the damage.\",\"zh\":\"他公开道歉纯粹是在做戏；他根本没有努力弥补造成的损害。\",\"note\":\"pure theatre 指刻意表演，并非真正上演一出戏。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1400-n8\",\"title\":\"阶梯式讲堂\",\"meaning\":\"座位通常逐排升高、供讲课或演示使用的大教室。\",\"note\":\"主要见于英式英语，常用完整表达 lecture theatre；不是所有普通教室都叫 theatre。\",\"example\":{\"id\":\"1400-n8-e1\",\"senseId\":\"1400-n8\",\"en\":\"Our chemistry lecture takes place in the large lecture theatre on the ground floor.\",\"zh\":\"我们的化学课在一楼的大阶梯教室里上。\",\"note\":\"lecture theatre 指讲课场所；ground floor 是英式英语中的底层。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1400-n9\",\"title\":\"事件或活动发生的场所、舞台\",\"meaning\":\"某类重要事件或活动发生的地方或领域。\",\"note\":\"属于正式或比喻用法，常用 theatre of ...；不能把日常所有“地方”都替换成 theatre。军事上的战区是其中较固定的专门用法。\",\"example\":{\"id\":\"1400-n9-e1\",\"senseId\":\"1400-n9\",\"en\":\"The city became a theatre of political conflict.\",\"zh\":\"这座城市成了政治冲突的舞台。\",\"note\":\"比喻政治冲突在此发生，并非指一座剧场。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"theatre 经古法语 theatre 进入英语，古法语形式来自拉丁语 theatrum，后者来自希腊语 théatron。\"",
+        "valueJson": "\"英语 theatre 可追溯到14世纪末的中古英语 theatre，借自古法语 theatre；古法语形式来自拉丁语 theatrum，后者来自古希腊语 θέατρον（théatron）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"希腊语\",\"form\":\"θέατρον (théatron)\",\"meaning\":\"古希腊语来源形式\"},{\"language\":\"拉丁语\",\"form\":\"theatrum\",\"meaning\":\"由希腊语传入拉丁语的形式\"},{\"language\":\"古法语\",\"form\":\"theatre\",\"meaning\":\"经古法语传入英语的形式\"},{\"language\":\"英语\",\"form\":\"theatre\",\"meaning\":\"英语词；美国英语常拼作 theater\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只列有依据的传入先后；theatre 与 theater 是英美拼写差异，不是两个不同词。\"",
+        "valueJson": "\"theatre 与 theater 是同一英语词的地区拼写变体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"theatre + -ical\"",
+        "valueJson": "\"同族形容词；拼写可拆记为 theatr- + -ical，这不是历史词源分析。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"theatre 加 -ical，保留结尾 e。\"",
+        "valueJson": "\"拼写时可记为 theatre 去掉词尾 e，再加 -ical，得到 theatrical。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1400,
+    "headword": "theatre (Am E theater)",
+    "meaning_zh": "n. 戏院, 电影院, 剧场, 全体观众, 戏剧, 戏剧效果, 阶梯式讲堂, 场所",
+    "phonetic": "英 /ˈθɪətə(r)/；美 /ˈθiːətər/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "theater",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

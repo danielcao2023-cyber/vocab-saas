@@ -1,0 +1,407 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "82c5e3489a8f0ecfc53b3fda44fdbb2b8402e3ab2b30201b8bd1f4b076a555cd",
+    "executedReviewPromptHash": "82c5e3489a8f0ecfc53b3fda44fdbb2b8402e3ab2b30201b8bd1f4b076a555cd",
+    "reviewHash": "6a822ac9ed045e3e9e6b06399c98c88b99a9db1dc9d2766dcbb60aa201d2e695",
+    "wordId": 977,
+    "inputHash": "e56726e4fc4f71a95a749b274b738a0df81681d4aa7edb2b826d928f2c706261",
+    "draftHash": "076259af6fb957b222830465e1fdc8b94540dd1ab7662facbc4135405c29b5f2",
+    "finalHash": "3c9598244f7bb11810058e0218d4013a10abbf5d69aca8c8b2e221a672946fef",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pair#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.180Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117089,
+        "revisionId": 39717096,
+        "revisionTimestamp": "2026-07-31T22:42:10Z",
+        "sha256": "d00c2b5cdcad76e6f49b8c1cc3895fcaadc7ea7500361e011dd828fb38685bc4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pair",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:08:55.705Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:17:45.246Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "pair 末尾是 r，没有不发音的 e。paired 和 pairing 都直接加词尾，原说明的加 d、去 e 规则错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源材料明确支持拉丁语 par，但未证实初稿列出的法语中间阶段及其释义。法语是该页面的说明语言，不能据此补出历史链条；对应来源说明也须修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "把 a pair of glasses 混入两个独立物品的解释，遗漏了 pair 为眼镜、剪刀、长裤等单件物品计数的常用功能。应单列说明并提供两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "分组和搭配两种常用功能各只有一个例句，pair up 仅出现在助记故事中；日常设备配对功能也未覆盖。须补足例句、句型和设备义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/1",
+        "message": "把 together 拼接到名词短语后并不是有教学价值的独立句型，且未明确名词复数要求。宜改教常用表达 in pairs。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions; /senses/2/relatedExpressions",
+        "message": "应明确 a couple of 主要表示数量，team up 不限定两人；分组、搭配效果和设备配对的反向表达也应分别对应相关功能。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "“不支持旧音标写法”没有说明可学习的发音事实，应改成具体发音提示。现有英美音标属于可接受的学习词典标注，无须判错。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily; /sources",
+        "message": "词族可补充常用名词 pairing。来源应区分实际取得的英语词条内容与推荐阅读，并把读音、同音词和议会用法关联到实际提供这些信息的来源。"
+      }
+    ],
+    "coverageAssessment": "已核对成对物品、单件双部件物品、人或动物组合、分组、相互搭配、设备配对及议会专门义。补丁为核心义及两种常用动词功能提供至少两例，并补入 in pairs 和 pair up。词源仅保留材料明确支持的拉丁语 par。Cambridge 无可用正文；Oxford 链接保留为推荐阅读，不视作已取得的词典证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：两个一起使用或出现的独立物品，一双／一副／一对",
+        "coveredBy": [
+          "pair-n-1"
+        ],
+        "assessment": "已有两例；收窄解释，使其与单件双部件物品的计量用法区分。"
+      },
+      {
+        "sense": "名词：眼镜、剪刀、长裤等单件物品的计量单位",
+        "coveredBy": [
+          "pair-n-3"
+        ],
+        "assessment": "初稿仅在搭配中出现，解释不足；补丁新增完整义项及两例。"
+      },
+      {
+        "sense": "名词：组成一组的两个人或动物；in pairs 表示两两成组",
+        "coveredBy": [
+          "pair-n-2"
+        ],
+        "assessment": "原有两例自然；补充 in pairs，并说明不必是情侣或一雄一雌。"
+      },
+      {
+        "sense": "动词：把两者配成一组；两人结成搭档",
+        "coveredBy": [
+          "pair-v-1"
+        ],
+        "assessment": "保留老师安排搭档的例句，新增 pair up 的例句和句型。"
+      },
+      {
+        "sense": "动词：使两者搭配；两者相配",
+        "coveredBy": [
+          "pair-v-1"
+        ],
+        "assessment": "作为同一动词义的常用延伸保留，补足食物、衣物两个具体例句。"
+      },
+      {
+        "sense": "动词：为电子设备建立配对关系",
+        "coveredBy": [
+          "pair-v-3"
+        ],
+        "assessment": "补丁新增两例，区分 pair、connect、unpair 和 disconnect。"
+      },
+      {
+        "sense": "动词：英国议会中立场相反的议员约定双方不参加投票",
+        "coveredBy": [
+          "pair-v-2"
+        ],
+        "assessment": "原解释和例句可保留，作为较少见义；来源改指实际取得的词条。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"pair 作名词常指成双使用或出现的两个东西，也可指一对人或动物；作动词表示把人或物配成一组。\"",
+        "valueJson": "\"pair 作名词可指成双的物品、一副眼镜这类单件物品，或一对人或动物；作动词可指配成搭档、相互搭配，也常用于电子设备配对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"pair 的拼写和读音不支持旧音标写法；美式读音有清晰的词尾 r。\"",
+        "valueJson": "\"pair 通常只有一个音节；美式发音中的 /r/ 不要另读成一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-pair\"]",
+        "valueJson": "[\"wiktionary-pair-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"两个一起使用、出售或自然成双的东西；中文常说“一双、一副、一对”。\"",
+        "valueJson": "\"两个一起使用、出售或出现的独立物品，合在一起算一双、一副或一对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"用于常成双使用的物品，如 shoes、gloves、glasses。\"",
+        "valueJson": "\"这里用于两个成双使用的独立物品，如 shoes、gloves、socks。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"a pair of glasses\",\"zh\":\"一副眼镜\",\"note\":\"眼镜由两个镜片组成，英语中常用 pair 表示一副。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a pair of socks\",\"zh\":\"一双袜子\",\"note\":\"指组成一双的两只袜子。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"couple\",\"zh\":\"两个；一对\",\"note\":\"可指两个人或两件事物，语气较宽泛；pair 常强调成双、相配或一起使用。\"}",
+        "valueJson": "{\"en\":\"a couple of\",\"zh\":\"两个；两三个\",\"note\":\"通常表示两个，口语中也可泛指少数几个，强调数量而不保证成双相配；如 a couple of days（两天或两三天）。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"可说 a pair of dancers，也可直接用 two people 表示两个人；pair 更强调两者作为一组。\"",
+        "valueJson": "\"可说 a pair of dancers，也可直接用 two people 表示两个人；pair 更强调两者作为一组，并不一定表示情侣，也不保证动物是一雄一雌。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"a pair of + 人／动物 + together\",\"zh\":\"一起行动的一对……\",\"note\":\"together 可补充说明两者共同活动。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"in pairs\",\"zh\":\"两人／两只一组地\",\"note\":\"强调两两成组，如 work in pairs（两人一组工作）、walk in pairs（两人一组走）。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"把两者配成一组\"",
+        "valueJson": "\"配成一组；与……搭配\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"使两个人或两个事物配在一起，成为搭档或相配的一组；也可指两者自然地成对。\"",
+        "valueJson": "\"把两个人或两个事物安排在一起，成为一组；也可表示食物、衣物等相互搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 pair A with B，表示把 A 和 B 配在一起；pair with 也可表示某人或某物与另一方搭配。\"",
+        "valueJson": "\"pair A with B 表示把 A 和 B 配在一起；pair up 或 pair up with somebody 常用于两人结成搭档。A pairs well with B 表示 A 与 B 很相配。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pair-v-1-ex3\",\"senseId\":\"pair-v-1\",\"en\":\"We paired up for the speaking exercise.\",\"zh\":\"我们两人一组做口语练习。\",\"note\":\"pair up 在这里不带宾语，表示两人结成一组。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pair-v-1-ex4\",\"senseId\":\"pair-v-1\",\"en\":\"Your blue scarf pairs well with that grey coat.\",\"zh\":\"你的蓝围巾和那件灰外套很搭。\",\"note\":\"pairs well with 描述衣物之间的搭配效果。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pair up (with somebody)\",\"zh\":\"（与某人）结成两人小组\",\"note\":\"可以单说 pair up，也可以用 with 指明搭档。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"pair up with a classmate\",\"zh\":\"和一位同学结成一组\",\"note\":\"常用于课堂活动，通常指两人一组。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"用于人一起合作完成任务，语气比 pair 更强调共同做事。\"",
+        "valueJson": "\"强调一起合作，组队人数不一定只有两人；pair up 通常指两两结组。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"unpair\",\"zh\":\"取消配对\",\"note\":\"用于设备或系统等已配对对象，表示解除配对；日常人际搭档语境中较少用。\"}",
+        "valueJson": "{\"en\":\"not pair well with\",\"zh\":\"与……搭配不好\",\"note\":\"用于描述食物、衣物等的搭配效果，不表示把已经组成的一组拆开。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"separate 是一般的“分开”；unpair 多用于设备或已建立的配对关系。\"",
+        "valueJson": "\"separate 对应把组合中的成员分开；not pair well with 对应两者搭配得不好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-pair\"]",
+        "valueJson": "[\"wiktionary-pair-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pair-n-3\",\"title\":\"一件有两个对应部分的物品\",\"meaning\":\"用来计数眼镜、剪刀、长裤等有两个对应部分的单件物品，中文常译为“一副、一把、一条”。\",\"usageNote\":\"这些物品名称通常用复数形式。a pair of glasses 是一副眼镜；two pairs of scissors 是两把剪刀。作主语时，谓语通常随 pair 或 pairs 分别用单数或复数。\",\"examples\":[{\"id\":\"pair-n-3-ex1\",\"senseId\":\"pair-n-3\",\"en\":\"I keep a spare pair of glasses in my bag.\",\"zh\":\"我在包里放着一副备用眼镜。\",\"note\":\"这里的 a pair of glasses 表示一副眼镜。\"},{\"id\":\"pair-n-3-ex2\",\"senseId\":\"pair-n-3\",\"en\":\"This pair of scissors is too blunt to cut the paper.\",\"zh\":\"这把剪刀太钝，剪不动这张纸。\",\"note\":\"a pair of scissors 是一把剪刀；主语中心词 pair 是单数，所以用 is。\"}],\"patterns\":[{\"en\":\"a pair of glasses / scissors / trousers\",\"zh\":\"一副眼镜／一把剪刀／一条长裤\",\"note\":\"一件物品也可以用 a pair of 计数，后面的物品名称仍用复数。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a pair of glasses\",\"zh\":\"一副眼镜\",\"note\":\"glasses 在这里指眼镜。\",\"kind\":\"common-collocation\"},{\"en\":\"a pair of scissors\",\"zh\":\"一把剪刀\",\"note\":\"剪刀有两个相连的刀片，但 a pair of scissors 指一把剪刀。\",\"kind\":\"common-collocation\"},{\"en\":\"a pair of trousers\",\"zh\":\"一条长裤\",\"note\":\"长裤有两条裤腿；两条长裤说 two pairs of trousers。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[],\"similarNote\":\"也可直接用 glasses、scissors、trousers 指相应物品；a pair of 则明确表示一副、一把或一条。\",\"contrastingNote\":\"这里的 pair 是计量单位，没有固定的词汇反义词；two pairs of 表示数量增加。\"},\"sourceIds\":[\"wiktionary-pair-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"pair-v-3\",\"title\":\"给电子设备配对\",\"meaning\":\"使两台设备相互识别，以便建立无线连接，常用于蓝牙设备。\",\"usageNote\":\"pair A with B 表示把设备 A 与设备 B 配对；A pairs with B 表示 A 与 B 配对。配对侧重建立设备之间的识别关系。\",\"examples\":[{\"id\":\"pair-v-3-ex1\",\"senseId\":\"pair-v-3\",\"en\":\"I paired my phone with the new headphones.\",\"zh\":\"我把手机和新耳机配对了。\",\"note\":\"paired A with B 指为手机和耳机建立配对关系。\"},{\"id\":\"pair-v-3-ex2\",\"senseId\":\"pair-v-3\",\"en\":\"The speaker won't pair with my tablet.\",\"zh\":\"这个音箱没法和我的平板电脑配对。\",\"note\":\"pair with 在这里不带直接宾语，表示设备与另一台设备配对。\"}],\"patterns\":[{\"en\":\"pair a device with another device\",\"zh\":\"把一台设备与另一台设备配对\",\"note\":\"device 可以换成 phone、speaker、tablet 等具体设备名称。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"pair a phone with a speaker\",\"zh\":\"把手机与音箱配对\",\"note\":\"常用于蓝牙设备的设置过程。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"connect\",\"zh\":\"连接\",\"note\":\"范围更广，可指有线或无线连接；设备配对和建立当前连接不总是同一个操作。\"}],\"contrasting\":[{\"en\":\"unpair\",\"zh\":\"解除配对\",\"note\":\"解除设备之间已经建立的配对关系。\"},{\"en\":\"disconnect\",\"zh\":\"断开连接\",\"note\":\"断开当前连接，通常不必删除已保存的配对信息。\"}],\"similarNote\":\"connect 强调连接起来；pair 强调让设备建立配对关系。\",\"contrastingNote\":\"unpair 解除配对；disconnect 断开当前连接，两者应按设备操作的实际含义区分。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pair\"]",
+        "valueJson": "[\"wiktionary-pair-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pair\"]",
+        "valueJson": "[\"wiktionary-pair-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"pair 来自法语 pair，法语形式又与拉丁语 par（相等、成双）有关。这个来源与现代英语中“两者成对”的意思相连。\"",
+        "valueJson": "\"pair 的词源可追溯到拉丁语 par，意为“相等；一对”。现代英语中，pair 可指“一对”，也可作动词表示“配对”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"相等的\"",
+        "valueJson": "\"相等；一对\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"法语\",\"form\":\"pair\",\"meaning\":\"相等的；一对\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"动词过去式 paired：词尾已有不发音的 e，直接加 d；现在分词 pairing：去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"paired = pair + -ed；pairing = pair + -ing。pair 末尾是 r，两种形式都保留原词拼写，不去字母，也不双写 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-pair\"]",
+        "valueJson": "[\"wiktionary-pair-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"pairing\",\"partOfSpeech\":\"noun\",\"meaning\":\"配对；搭档组合\",\"formation\":\"pair 加 -ing，可形成表示配对过程或组合的名词。\",\"spellingNote\":\"直接加 -ing，写作 pairing；名词复数为 pairings。\",\"example\":{\"id\":\"pair-family-ex2\",\"senseId\":\"pair-v-1\",\"en\":\"The teacher changed the pairings for today's game.\",\"zh\":\"老师调整了今天游戏中的搭档组合。\",\"note\":\"pairings 是名词复数，指安排好的几组搭档。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"名词和动词 pair 是同一个词形的不同词性；常用派生词较少，因此只列这一项。\"",
+        "valueJson": "\"pair 同形兼作名词和动词；pairing 既可以是动词的 -ing 形式，也可作名词表示配对或组合，具体词性要看句中的作用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports/0",
+        "expectedValueJson": "\"pair 作名词和动词的常见含义、搭配及词形\"",
+        "valueJson": "\"pair 的名词常见含义、搭配及词形（推荐延伸阅读）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionary: pair（英语词条，词源）\"",
+        "valueJson": "\"法语维基词典：pair（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"pair 的拉丁语 par 与法语 pair 的词源关系\"]",
+        "valueJson": "[\"英语 pair 的英美读音及同音词 pear、pare\",\"名词“一对”、单件衣物的计量用法及动词“配对”\",\"规则动词词形与英国下议院投票中的配对约定\",\"拉丁语词源 par（相等；一对）\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 977,
+    "headword": "pair",
+    "meaning_zh": "n. 一双, 一对, 一副\nv. (使)成对",
+    "phonetic": "/pєә/",
+    "pos": "",
+    "forms": []
+  }
+}

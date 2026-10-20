@@ -1,0 +1,601 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1749a50b9e1024382205fb5920a4c65476384a5c6f5688e775f4342fb8cae44e",
+    "executedReviewPromptHash": "1749a50b9e1024382205fb5920a4c65476384a5c6f5688e775f4342fb8cae44e",
+    "reviewHash": "2ee260b5fd7ca9f18893a2ac21a1351af681f75e0985374a4a0f2d935f1d3c66",
+    "wordId": 529,
+    "inputHash": "befe0375913df018a63352b8d0f0e961e9d59286e88d64342513d3311edeaae9",
+    "draftHash": "1dbc4061202ad4ed059aa3ea9f0decbff148af2f8dd0320711d9518fa5cb9571",
+    "finalHash": "a935794523c00e5cf5864a6aa58116812db2c37fa6a22bf021e097adcdf4c656",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/flood#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.108Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117134,
+        "revisionId": 39676480,
+        "revisionTimestamp": "2026-07-15T11:48:23Z",
+        "sha256": "108e991a3f8ad80e85534f86a8a6aa33d48e2f9b41169a6dd638d847c1ad88f9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/flood",
+        "section": "flood etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "699fe40483cf4cf898dbea65884b9be7273cb1d46d63c6ea28dbf9e8d088e662",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "699fe40483cf4cf898dbea65884b9be7273cb1d46d63c6ea28dbf9e8d088e662",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/529.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/flood",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:32:36.150Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:38:02.673Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 oxford_flood 的 sourceIds",
+        "message": "正文多处引用了未在实际来源材料中提供的 Oxford 页面。应改引实际取得的法语维基词典英语词条，并准确限定来源支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions、/wordFamily 中的例句",
+        "message": "14 个原有例句对象缺少目标结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“大量之水、涌流”未明确展开。应在“大量”义中补充水流释义和具体例句，与洪水漫上陆地的灾害义区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "只讲了及物的“淹没”，遗漏常用不及物功能：河流泛滥、地点进水被淹。须补充结构及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "“充满”义未覆盖常见的光线洒满空间；所列回忆涌回也没有例句。flood somebody/something with something 还需明确发送、供应的一方与接收者的关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1、/confusions/1",
+        "message": "不能仅凭有无 into 区分水淹与人群涌入：水也能 flood into，光线或人群也能直接 flood 某个地点。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1",
+        "message": "be flooded with water 是动词被动结构，错放在名词义下；动词义中已有该结构，删除此处重复项即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions、/senses/3/relatedExpressions",
+        "message": "应补充人群、消息等到来语境中常用的反向表达 a trickle of 和 trickle in，并限定数量少、到来缓慢的含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/note",
+        "message": "high tide 是高潮、满潮，不能作为涨潮过程的等义替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote、/wordFamilyNote",
+        "message": "flooded 直接由 flood 加 -ed 得到，不双写词干末尾的 d；原说明会导向错误拼写 floodded。另须区分屈折形式、分词转作形容词及 -ing 名词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "food 例句没有 flood，却绑定 flood-n-1。可改为同时包含 food 和名词 flood 的自然句子，使关联成立。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "来源明确指出“大量”比喻义在中世纪已出现，宜写清时间；caveat 中关于资料支持和阶段展示的制作说明应改为面向学生的解释。"
+      }
+    ],
+    "coverageAssessment": "已核对洪水、大量水流、大量人或事物、涨潮，以及动词的及物淹没、不及物泛滥或被淹、大量涌入和充满功能。保留原有四个主要教学义框架，补足各功能的例句；涨潮仍作为较少见义处理。实际来源没有逐一展开全部现代句型，新增常用语法与原创例句依据专业语言知识；历史陈述限于已取得的词源材料。修订后无遗留实质不确定项。",
+    "senseInventory": [
+      {
+        "sense": "名词：洪水；水灾",
+        "coveredBy": [
+          "flood-n-1"
+        ],
+        "assessment": "已有两个自然例句；保留，移除错置的动词被动结构。"
+      },
+      {
+        "sense": "名词：大量之水；涌流",
+        "coveredBy": [
+          "flood-n-2"
+        ],
+        "assessment": "原稿未明确展示；补入释义和两个水流例句，不强行另立重复义项。"
+      },
+      {
+        "sense": "名词：大量涌来的人或事物",
+        "coveredBy": [
+          "flood-n-2"
+        ],
+        "assessment": "原有粉丝、消息两个例句覆盖；补充 a trickle of 作语境反向表达。"
+      },
+      {
+        "sense": "名词：涨潮；涨潮期",
+        "coveredBy": [
+          "flood-n-3"
+        ],
+        "assessment": "较少见义已有例句；纠正 rising tide 与 high tide 的区别。"
+      },
+      {
+        "sense": "及物动词：淹没；使某处充满水",
+        "coveredBy": [
+          "flood-v-1"
+        ],
+        "assessment": "已有两个例句，结构和翻译成立。"
+      },
+      {
+        "sense": "不及物动词：河水泛滥；地点被淹；水涌进",
+        "coveredBy": [
+          "flood-v-1"
+        ],
+        "assessment": "补充河流泛滥、地下室被淹两个主要例句，并在辨析栏展示水作 flood into 主语。"
+      },
+      {
+        "sense": "不及物动词：人、信息、回忆等大量涌来",
+        "coveredBy": [
+          "flood-v-2"
+        ],
+        "assessment": "保留人群涌入例句，补充回忆涌回例句及 trickle in 的语境对照。"
+      },
+      {
+        "sense": "及物动词：使大量收到；使充满，包括光线洒满",
+        "coveredBy": [
+          "flood-v-2"
+        ],
+        "assessment": "保留大量来电的被动例句，补充阳光洒满的主动例句，并明确 with 结构的施受关系。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"区分 flood a place（淹没某地）和 flood into a place（大量涌入）。\"",
+        "valueJson": "\"把 flood + 地点理解为“淹没或充满某处”，把 flood into + 地点理解为“涌入某处”；具体意思还要看主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"名词复数\"",
+        "valueJson": "\"名词复数；动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则复数，词尾加 -s。\"",
+        "valueJson": "\"两种形式都在 flood 后加 -s，词尾读 /z/。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the flood 指这场特定的洪水；covered 描写洪水覆盖路面的结果。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"floods 是名词复数；because of 后接名词短语，说明离家的原因。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"be flooded with water\",\"zh\":\"被水淹\",\"note\":\"常用于说明房间、道路等被水覆盖。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"大量的人或事物在短时间内出现或到来，常带有突然、密集的感觉。\"",
+        "valueJson": "\"大量的水、人或其他事物集中出现或涌来，常带有突然、密集的感觉。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a flood of fans 指集中出现的大批粉丝，是比喻用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a flood of messages 强调消息很多、来得密集；messages 用复数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-n-2-ex-3\",\"senseId\":\"flood-n-2\",\"en\":\"A flood of water poured out of the broken pipe.\",\"zh\":\"大量的水从破裂的管道中涌了出来。\",\"note\":\"a flood of water 表示大量涌出的水；water 是不可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-n-2-ex-4\",\"senseId\":\"flood-n-2\",\"en\":\"When the dam gates opened, a flood of water rushed downstream.\",\"zh\":\"水坝闸门一打开，一股巨大的水流就奔向了下游。\",\"note\":\"这里强调水量大、流势急，不一定指水漫上陆地造成洪灾。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a trickle of\",\"zh\":\"零星的；少量陆续到来的……\",\"note\":\"可与 a flood of visitors/messages 对照；a trickle of visitors/messages 表示来得少、慢，不可机械替换所有名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这个“大量”义没有稳定、贴切的反义词；表示少量可按语境说 a small number of 或 only a little。\"",
+        "valueJson": "\"谈人、消息等陆续到来时，可用 a trickle of 与 a flood of 对照，兼有数量少、来得慢的意思；一般表达数量少，也可按名词的可数性用 a small number of 或 only a little。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"淹没；使被水覆盖\"",
+        "valueJson": "\"淹没；泛滥；被淹\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"水漫过某个地方，使地面、房间等被水覆盖。\"",
+        "valueJson": "\"水漫出河岸或覆盖某个地方；也可指房间、道路等进水被淹。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"及物用法：flood + 地点。被动形式 flooded 常用于说明某处遭水淹。\"",
+        "valueJson": "\"及物时用 flood + 地点，表示淹没某处。不及物时，河流可作主语，表示泛滥；房间等地点也可作主语，表示进水被淹。被动结构 be flooded 也常用于说明某处遭水淹。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flooded 是及物动词，the fields 是被淹没的地点。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Water 作主语，flooded 后直接接宾语 the basement，表示水淹了地下室。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-v-1-ex-3\",\"senseId\":\"flood-v-1\",\"en\":\"The river flooded after a week of heavy rain.\",\"zh\":\"连下一个星期的大雨后，河水泛滥了。\",\"note\":\"flooded 不接宾语；河流作主语时，表示河水漫出河岸。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-v-1-ex-4\",\"senseId\":\"flood-v-1\",\"en\":\"Our basement floods whenever it rains heavily.\",\"zh\":\"每逢下大雨，我们家的地下室就会进水被淹。\",\"note\":\"地点作主语，flood 不接宾语也能表示被淹；这里用一般现在时说明反复发生的情况。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a river floods / a room floods\",\"zh\":\"河水泛滥／房间进水被淹\",\"note\":\"都是不及物用法：前者写河水漫出，后者写某处被淹；一般现在时第三人称单数用 floods。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"人、物、信息或感情大量而迅速地进入某处或某人的意识。\"",
+        "valueJson": "\"人、信息、回忆等像潮水般大量到来，或使某人、某处大量收到某物、充满某物；也可形容光线洒满空间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"人或物进入地点时常用 flood into；大量信息、电话等到达时常用 flood someone with something。\"",
+        "valueJson": "\"不及物时，人或事物可 flood into + 地点，回忆可 flood back。及物时，人群、光线等可直接 flood + 地点；发送或供应的一方可 flood + 接收者/地点 + with + 事物。被动形式 be flooded with 表示大量收到或充满。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"People 作主语，flooded 不接宾语；into 表示进入大厅的方向。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"be flooded with calls 表示大量接到来电，是及物 flood 的被动用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-v-2-ex-3\",\"senseId\":\"flood-v-2\",\"en\":\"Morning sunlight flooded the kitchen.\",\"zh\":\"清晨的阳光洒满了厨房。\",\"note\":\"sunlight 作主语，flooded 直接接地点 the kitchen，表示光线充满空间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"flood-v-2-ex-4\",\"senseId\":\"flood-v-2\",\"en\":\"Memories of our old school flooded back when I saw the photo.\",\"zh\":\"看到那张照片时，在母校的种种回忆一下子涌上了我的心头。\",\"note\":\"memories 作主语；flood back 写出回忆突然大量涌回的感觉。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"flood someone with + noun\",\"zh\":\"向某人大量提供或发送……\",\"note\":\"someone 是接收者，后面的名词说明大量到来的事物。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"flood somebody/something with something\",\"zh\":\"向某人或某处大量发送、供应……；使……充满\",\"note\":\"主语是发送、供应或造成充满的一方；with 前是接收者或被充满的对象，with 后是大量发送或充入的事物。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"flood + place\",\"zh\":\"涌满或洒满某处\",\"note\":\"人群、光线等也可作主语，后接被充满的地点；直接接地点不一定表示水淹。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"trickle in\",\"zh\":\"零星地进入；缓慢到达\",\"note\":\"可与 people/messages flood in 对照，强调到来得少、慢；不适用于所有“充满”的搭配。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这类“涌入”用法没有通用反义词；要表达相反方向，可按地点语境用 leave 或 flow out。\"",
+        "valueJson": "\"强调到来数量少、速度慢时，可用 trickle in 对照 flood in；强调移动方向相反时，可按语境用 leave 或 flow out。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"现代日常英语中，表示涨潮更常用 the rising tide 或 high tide。\"",
+        "valueJson": "\"这是较旧或航海、潮汐语境中的用法。日常说潮水正在上涨可用 the rising tide 或 the tide is coming in；high tide 指高潮、满潮，不能等同于涨潮过程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flood 是名词“洪水”，读 /flʌd/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"flood-confusion-ex-2\",\"senseId\":\"flood-n-1\",\"en\":\"We packed enough food for the trip.\",\"zh\":\"我们为这次旅行带了足够的食物。\"}",
+        "valueJson": "{\"id\":\"flood-confusion-ex-2\",\"senseId\":\"flood-n-1\",\"en\":\"We stored food upstairs before the flood arrived.\",\"zh\":\"洪水来临前，我们把食物存放在楼上。\",\"note\":\"food 表示食物，flood 表示洪水；两者的 oo 分别读 /uː/ 和 /ʌ/。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"flood + 地点通常表示水淹了某处；flood into + 地点表示人或物大量进入某处。\"",
+        "valueJson": "\"flood 可直接接被淹或被大量充满的地点；flood into 突出向内涌进的方向。水也能 flood into，人群或光线也能直接 flood 某个地点，具体意思要结合主语判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"直接接地点，表示水淹大厅。\"",
+        "valueJson": "\"本句中是破裂水管漏出的水淹了大厅；flood 直接接地点 the hall。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"The broken pipe 是造成水淹的来源；the hall 是 flooded 的宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Students 作主语；into 表示向大厅里面移动。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"flood the hall（光线）\",\"note\":\"光线也可直接 flood 某个地点，表示洒满该处。\",\"example\":{\"id\":\"flood-confusion-ex-5\",\"senseId\":\"flood-v-2\",\"en\":\"Sunlight flooded the hall.\",\"zh\":\"阳光洒满了大厅。\",\"note\":\"Sunlight 作主语，flooded 直接接 the hall；这里表示光线充满空间。\"}}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"flood into the hall（水）\",\"note\":\"水也可作 flood into 的主语，into 只说明进入方向。\",\"example\":{\"id\":\"flood-confusion-ex-6\",\"senseId\":\"flood-v-1\",\"en\":\"Water flooded into the hall through the open door.\",\"zh\":\"水从敞开的门涌进了大厅。\",\"note\":\"Water 作主语；flooded into 描写水大量涌进大厅。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"有 into 时看作“涌进”；直接接地点时，通常表示“淹没”。\"",
+        "valueJson": "\"直接接地点可表示淹没或充满，into 突出向内涌进；是否与水有关，要看主语和上下文。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"flood 延续自古英语 flōd；该历史形式可表示流动的水、潮水、大量水体或漫到陆地上的水。现代英语中“大量”的比喻义后来出现，常用动词则由名词发展而来。\"",
+        "valueJson": "\"flood 延续自古英语 flōd，古英语中可指流动的水、潮水、大量水体或漫上陆地的水。“大量”的比喻义在中世纪已经出现；常用的“淹没、泛滥”动词用法由名词发展而来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"词源资料支持古英语形式及相关水义；不要把现代拼写拆成独立词根来记。这里提到的现代比喻义与动词发展属于语义发展，不是额外的历史拼写阶段。\"",
+        "valueJson": "\"不要把 flood 的现代拼写随意拆成几个独立词根；后面的记忆故事只帮助联想，不解释词的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"规则形式 flood + -ed；保留词尾 d，双写 d 后再加 -ed。\"",
+        "valueJson": "\"flood + -ed → flooded（f-l-o-o-d-e-d），直接加 -ed，不双写词干末尾的 d。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flooding 在这里是不可数名词，表示洪水泛滥、水淹这一现象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"flooded 是过去式，主语为 Heavy rain，宾语为 the lower streets。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_flood\"]",
+        "valueJson": "[\"wiktionary_flood_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本词常见派生形式是 flooded、flooding；不要把 floodgate 等复合词误当作词形变化。\"",
+        "valueJson": "\"flooded 是过去式和过去分词，过去分词也可作形容词；flooding 是现在分词，也可作表示水淹现象的名词。floodgate 意为“水闸”，由 flood + gate 构成，是复合词，不是 flood 的词形变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_flood\",\"title\":\"Oxford Learner’s Dictionaries: flood\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/flood_1\",\"supports\":[\"词性及常见义项\",\"flood 的名词、动词用法与搭配\",\"规则词形和英式、美式读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_flood_en\",\"title\":\"Wiktionnaire: flood（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/flood#Anglais\",\"supports\":[\"英语名词的洪水、大量涌来和涨潮义\",\"英语动词的淹没义及大量商品涌入的比喻用例\",\"读音 /flʌd/ 与规则名词、动词变化\",\"复合词 floodgate\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 529,
+    "headword": "flood",
+    "meaning_zh": "n. 洪水, 大量之水, 涨潮\nvt. 淹没, 使泛滥, 注满\nvi. 被淹, 溢出, 涌进",
+    "phonetic": "/flʌd/",
+    "pos": "",
+    "forms": []
+  }
+}

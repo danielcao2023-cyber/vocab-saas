@@ -1,0 +1,314 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0632dadde0bbde166fb040bb1725b2c53d25f43a88399b5def623d8ca08e67c3",
+    "executedReviewPromptHash": "be7ee91b9a368f5429908b1f9ff802176950783253a8aaa1a281fe7642d7dc34",
+    "reviewHash": "b8d2fd87a7d03c6177cbcd75986de797eda128082688cdddeb5d51ae6964c9af",
+    "wordId": 230,
+    "inputHash": "92be1695aa7c1f75d200e424b986310a86b07e5c62fedf04c05546d237a60376",
+    "draftHash": "e00786d4787030c49e4b90ae0a72591b358f0ce96c32d850dc5c8670118d327d",
+    "finalHash": "c46655821009f3e2468fa5495eb9fce1b5fc674958315ed33f7c5bec8b5caf2b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cash#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:36.389Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117048,
+        "revisionId": 38784700,
+        "revisionTimestamp": "2025-09-29T13:32:03Z",
+        "sha256": "7dd517d845505306804f7eec8b7e7e256d1373775e392b1115c0f05e1ddddda4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/cash",
+        "section": "cash (noun)",
+        "supports": [
+          "Money-box source",
+          "Container-to-contents change",
+          "Separate Asian coin term"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "536e4e852e75015549d31b52aa5bf96821392afe5eb3f60e70408946abc462d6",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "536e4e852e75015549d31b52aa5bf96821392afe5eb3f60e70408946abc462d6",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/230.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cash",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:19:35.412Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:31:42.672Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处引用 src-cambridge 的 sourceIds",
+        "message": "Cambridge 正文未成功取得，不能作为已获取的支撑材料。删除该来源，将有对应材料的引用改为 src-wiktionary，其余置为空数组；最终所有非空来源引用均指向保留的来源条目。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/takeaway；/senses/0/relatedExpressions",
+        "message": "遗漏 cash 泛指钱或可用资金的常用名词义，且“cash 特指现钱”的说明没有限定义项。应补充账户资金也可包含在内的用法及两个例句，并限定原有近义比较的适用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/confusions/1/items/1",
+        "message": "an amount of cash 本身不表示具体金额；“避免”项中的例句语法正确，不能标成应避免的表达。应区分确切金额与数量表达，并更正标签。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例句只有 cache，却绑定 cash-n-money。改为同时出现 cache 与现金义 cash 的自然例句，使义项关联成立。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/0/label；/wordFamily",
+        "message": "不可数用法宜标为“不可数名词”，而非“名词单数”；词族可补入常见且构词透明的 cashless，并说明它通常指无现金支付。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology；/sources",
+        "message": "现有词源方向正确，可依据已取得材料明确中古法语阶段、补充拉丁语 capsa，并说明亚洲旧币名 cash 与日常现金义异源。"
+      }
+    ],
+    "coverageAssessment": "已核对现金、可用资金、兑现支票三类常用功能；修订后各核心义均有两个原创英中例句。历史亚洲币名不作为初中核心义展开，仅在词源中区分。Cambridge 未取得正文，已删除其引用；资金义、动词义及现代派生的补充依据专业语言知识，不伪挂来源。",
+    "senseInventory": [
+      {
+        "sense": "n. 现金；纸币和硬币",
+        "coveredBy": [
+          "cash-n-money"
+        ],
+        "assessment": "原稿已覆盖，两个例句自然；修正数量说明并限定近义比较的范围。"
+      },
+      {
+        "sense": "n. 钱；可用资金，包括账户中的可用钱款",
+        "coveredBy": [
+          "cash-n-funds"
+        ],
+        "assessment": "原稿遗漏；新增独立义项及两个例句，区分可用资金与纸币硬币。"
+      },
+      {
+        "sense": "vt. 兑现支票等票据",
+        "coveredBy": [
+          "cash-v-redeem"
+        ],
+        "assessment": "原稿已充分覆盖，及物结构、cheque/check 拼写及两个例句均正确。"
+      },
+      {
+        "sense": "n. 历史上某些亚洲旧币的名称，属于异源词",
+        "coveredBy": [],
+        "assessment": "不属于本课初中核心学习范围；在词源说明中划清来源界限即可。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"cash 作名词通常指纸币和硬币等现钱；作动词时常见于 cash a cheque，表示把支票兑现。\"",
+        "valueJson": "\"cash 作名词可指纸币和硬币，也可泛指可用资金；作动词时常见于 cash a cheque/check，表示兑现支票。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"名词单数\"",
+        "valueJson": "\"不可数名词\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说具体金额时可用 an amount of cash；不要把 cash 当作可数名词说 a cash。\"",
+        "valueJson": "\"cash 在此义中不可数，可说 some cash 或 a small amount of cash；表达确切金额可说 £20 in cash（20英镑现金），不能说 a cash。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"泛指所有形式的钱；cash 特指现钱。\"",
+        "valueJson": "\"money 泛指钱；在本义中，cash 指纸币和硬币形式的现钱。cash 在其他语境也可泛指可用资金。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"money 范围更广，cash 强调可直接使用的现钱。\"",
+        "valueJson": "\"谈付款方式时，cash 强调纸币和硬币，money 是更一般的说法；不要把这个区别套用于 cash 的所有用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"ex-conf-cache\",\"senseId\":\"cash-n-money\",\"en\":\"The hikers found a cache of food.\",\"zh\":\"徒步者发现了一批藏起来的食物。\",\"note\":\"cache 不表示现金。\"}",
+        "valueJson": "{\"id\":\"ex-conf-cache\",\"senseId\":\"cash-n-money\",\"en\":\"The police found a cache of cash under the floorboards.\",\"zh\":\"警方在地板下面发现了一批藏起来的现金。\",\"note\":\"cache 指藏起来的一批东西，cash 指现金；两词同音。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"避免\"",
+        "valueJson": "\"一笔现金\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"不要在普通的“现金”义中说 a cash；需要表达一笔现金时可说 an amount of cash。\"",
+        "valueJson": "\"an amount of cash 是正确表达：an 修饰 amount，cash 仍不可数；不要直接说 a cash。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语 cash 的日常“现金”义与法语 caisse（钱箱）有关；词义从装钱的箱子转到箱中所装的钱。\"",
+        "valueJson": "\"英语 cash 的日常“现金”义经由中古法语 caisse（钱箱）而来，其历史可追溯到拉丁语 capsa（箱子）；词义从装钱的容器转到了其中的钱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"caisse\",\"meaning\":\"钱箱；与英语 cash 的日常现金义有关。\"},{\"language\":\"英语\",\"form\":\"cash\",\"meaning\":\"现金；现钱。\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"capsa\",\"meaning\":\"箱子；盒子。\"},{\"language\":\"中古法语\",\"form\":\"caisse\",\"meaning\":\"钱箱。\"},{\"language\":\"英语\",\"form\":\"cash\",\"meaning\":\"现金；现钱。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是历史词源说明，不等同于现代英语中 cash 的构词拆分；不要把 cash 拆成字母来推测词义。\"",
+        "valueJson": "\"这是日常“现金”义的历史，不是现代构词拆分。历史上另有表示亚洲某些旧币的 cash，来源不同，不能与这里的钱箱词源合并成一条借词链。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"cashless\",\"partOfSpeech\":\"adjective\",\"meaning\":\"无现金支付的；不使用现金的\",\"formation\":\"cash + 后缀 -less，表示不使用现金。\",\"spellingNote\":\"直接在 cash 后加 less，拼作 cashless；现代常见用法指付款方式，不能简单理解成“穷”。\",\"example\":{\"id\":\"ex-family-cashless\",\"senseId\":\"cash-n-money\",\"en\":\"The café is cashless, so I couldn't use the cash in my wallet.\",\"zh\":\"这家咖啡馆实行无现金支付，所以我没法用钱包里的现金。\",\"note\":\"cashless 说明店铺不收现金，不表示店铺缺钱。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"cash 的英语读音 /kæʃ/\",\"法语 caisse 与英语 cash 的词源关联\"]",
+        "valueJson": "[\"cash 的英语读音 /kæʃ/\",\"cash 的现金义及不可数用法\",\"cash 与 cache 同音\",\"中古法语 caisse 与英语 cash 的词源关联\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"日常现金义与法语 caisse（钱箱）的历史关联\",\"词义从钱箱转指箱中钱财的变化\"]",
+        "valueJson": "[\"日常现金义与法语 caisse（钱箱）的历史关联\",\"词义从钱箱转指箱中钱财的变化\",\"该词源历史可追溯至拉丁语 capsa（箱子）\",\"亚洲旧币名 cash 与日常现金义异源\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary：cash\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/cash\",\"supports\":[\"现金义及其不可数用法\",\"cash 作动词表示兑现\",\"常见搭配和英美拼法提示\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cash-n-funds\",\"title\":\"钱；可用资金\",\"meaning\":\"泛指手头可支配的钱或企业可用于支付开支的资金，不限于纸币和硬币。\",\"usageNote\":\"此义仍不可数，可以包括账户中的可用钱款，但不等于房产等所有资产的总值。short of cash 常表示“手头紧”，不一定只是钱包里没有纸币。\",\"examples\":[{\"id\":\"ex-cash-funds-1\",\"senseId\":\"cash-n-funds\",\"en\":\"I'm short of cash this month, so I'll cook at home.\",\"zh\":\"我这个月手头紧，所以打算在家做饭。\",\"note\":\"short of cash 表示可用的钱不够。\"},{\"id\":\"ex-cash-funds-2\",\"senseId\":\"cash-n-funds\",\"en\":\"The company needs more cash to pay its staff.\",\"zh\":\"公司需要更多资金来支付员工工资。\",\"note\":\"这里指可用资金，不要求用纸币发工资。\"}],\"patterns\":[{\"en\":\"be short of cash\",\"zh\":\"手头紧；缺钱\",\"note\":\"强调可用的钱不足。\",\"kind\":\"sentence-pattern\"},{\"en\":\"run out of cash\",\"zh\":\"钱用光了；资金耗尽\",\"note\":\"可用于个人或企业，具体含义由语境决定。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"raise cash\",\"zh\":\"筹钱；筹集资金\",\"note\":\"可通过借款或出售资产等筹措可用资金。\",\"kind\":\"common-collocation\"},{\"en\":\"cash flow\",\"zh\":\"现金流\",\"note\":\"一段时间内资金流入和流出的情况，不限于纸币和硬币的流动。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"money\",\"zh\":\"钱\",\"note\":\"一般用语；cash 在本义中侧重可以动用的钱。\"},{\"en\":\"funds\",\"zh\":\"资金\",\"note\":\"较正式，常指可供某项用途使用的钱。\"}],\"contrasting\":[{\"en\":\"be out of cash\",\"zh\":\"没钱可用了\",\"note\":\"表示缺少可用资金，与 have cash available（有钱可用）形成状态上的对照。\"}],\"similarNote\":\"money 是一般说法，cash 在这里侧重可用的钱，funds 较正式。\",\"contrastingNote\":\"cashless 通常指无现金支付，不能直接当作“手头紧”的常用说法；谈资金有无时，可对照 have cash available 与 be out of cash。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 230,
+    "headword": "cash",
+    "meaning_zh": "n. 现金\nvt. 兑现",
+    "phonetic": "/kæʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

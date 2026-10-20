@@ -1,0 +1,138 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "81d62c2da84041a198ac84bcf05ea1240eb4171e418f52ee640cad0371bf7db3",
+    "executedReviewPromptHash": "81d62c2da84041a198ac84bcf05ea1240eb4171e418f52ee640cad0371bf7db3",
+    "reviewHash": "87ac9e9bbaa1ccd2d99e79b16a33a887bb0164e09f887d0934a545ddf91baa63",
+    "wordId": 1196,
+    "inputHash": "e1d6acfad4748d44b2b83b4fa5365101e443f52a6db7f425c6e4152cbb97bf93",
+    "draftHash": "32564840ca42bd9342f4fd0ab2bb6e1047a0e014299e32485ae07f510d3b9ae7",
+    "finalHash": "4372e4c7a3658a79bfc588c91dccd13ccb2b4cae15ae0b71ecd6038c38072e60",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://en.wiktionary.org/wiki/schoolbag#English",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T01:17:53Z",
+        "kind": "etymology",
+        "retrievalMethod": "independent-editor-web-source-summary",
+        "revisionId": 89483729,
+        "summaryAuthorship": "Codex source reading; original summary, no dictionary examples copied",
+        "sha256": "d01f8636f274b88c116ddc2755a91df06b545b025e0af66cff8b382a817439f2"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/schoolbag",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:29:20.189Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:31:27.717Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "/ɡ/ 本身是浊辅音，不是在构成复数时发生“浊化”；应明确复数词尾 -s 在 /ɡ/ 后读 /z/。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/takeaway",
+        "message": "“才写”将 schoolbag's 过度限定为所有格；它也可缩写 schoolbag is。将结论限定到当前所有格例句即可。"
+      }
+    ],
+    "coverageAssessment": "已核对所获英语词条的主要定义：可数名词“书包”。现有单一义项及两个自然英中例句覆盖充分，无须拆义；近义词的用途、形状区别和不设固定反义词的处理合理。现代构词说明有来源支持，空置历史阶段恰当。Cambridge 获取失败，不据其推断额外义项或历史信息。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：装课本、文具等学习用品的书包",
+        "coveredBy": [
+          "sense-1"
+        ],
+        "assessment": "覆盖充分；两例分别呈现书包的位置和装入学习用品的生活场景，未发现遗漏的初中常用义或其他常用词性。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词，通常直接加 -s；词尾 /ɡ/ 浊化影响复数词尾，读 /z/。\"",
+        "valueJson": "\"可数名词，复数直接加 -s；词尾 /ɡ/ 是浊辅音，因此复数词尾 -s 读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"普通复数写 schoolbags；表示“书包的”才写 schoolbag's。\"",
+        "valueJson": "\"普通复数写 schoolbags；本例中的 schoolbag's 是单数所有格，表示“书包的”。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1196,
+    "headword": "schoolbag",
+    "meaning_zh": "n. 书包",
+    "phonetic": "/'sku:lbæ^/",
+    "pos": "",
+    "forms": []
+  }
+}

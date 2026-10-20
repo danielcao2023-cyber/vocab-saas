@@ -1,0 +1,287 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "86a32bc10d76ac500f105af779fe7500ab22ab308378f82c732443c081fd28d3",
+    "executedReviewPromptHash": "86a32bc10d76ac500f105af779fe7500ab22ab308378f82c732443c081fd28d3",
+    "reviewHash": "fa176891fa27c7e9626986d3f034ef45fceb4c9478a31546e91a182d9a9f2a60",
+    "wordId": 1414,
+    "inputHash": "675f89c9dd644ef2c3bc5510b3e027a88d098de4053c159f56651f9d096a6c8d",
+    "draftHash": "352463ddb285ce59fb8c0e8366d0d5d32d4a6ad3d53dad10bfe5f49ef6df7720",
+    "finalHash": "a4211e61c6f4abf09e7b291b36d1818032f3faaa2893b392a87310d5394f7e16",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/thirsty#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.432Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 241457,
+        "revisionId": 38441261,
+        "revisionTimestamp": "2025-08-01T01:15:48Z",
+        "sha256": "5db682bdf1768dda2ccc87e7f5059f86f930243a83a4f4f747143c1b74fa8496",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/thirsty",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:05:57.593Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:20:13.072Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 页面未取得内容，不能作为已审核释义、读音和词族的证据。应保留推荐查阅身份，解除正文引用；已取得的 Wiktionary 英语词条可支持口渴义和所示构词信息。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "quenched 通常描述 thirst 得到消除，不能直接教成描述人的“解渴了的”。应提供完整搭配 quench your thirst，并说明主宾关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "“干燥缺水”和“需水量大”不相同；水稻例句只展示需水量大。应分开说明，并为干燥缺水义补充例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/0",
+        "message": "原表达是临时组合的名词短语，不宜标为常用搭配；中文还额外加入了英语中没有的“喝”。可换成实用搭配 get thirsty。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2；/wordFamilyNote",
+        "message": "thirstiness 拼写和构词正确，但较少用，thirstiness for adventure 也不宜作为日常表达优先推荐。应明确频率，并提示更自然的 thirst for adventure。"
+      }
+    ],
+    "coverageAssessment": "已核对口渴、强烈渴望、干燥缺水及需水量大四类用法。两个核心义各有两个可接受的原创例句；修订后较少见的两类用法也各有对应例句。读音、比较等级拼写、thirstily 和 thirstiness 的构词说明可保留；词源仅限有材料支持的 thirst + -y 构词关系。直接取得的词典正文只明确支持口渴义，其他释义和用法依据专业语言知识审校，不归称为 Cambridge 已核实内容。",
+    "senseInventory": [
+      {
+        "sense": "口渴的；需要饮水的",
+        "coveredBy": [
+          "thirsty-1"
+        ],
+        "assessment": "已覆盖；两个例句分别展示人的口渴和植物需要水。Wiktionary 英语词条直接支持口渴义。"
+      },
+      {
+        "sense": "强烈渴望的，常用 thirsty for",
+        "coveredBy": [
+          "thirsty-2"
+        ],
+        "assessment": "已覆盖，两个例句和介词结构正确；近义及反向表达有语境限制。"
+      },
+      {
+        "sense": "需水量大的；耗水多的",
+        "coveredBy": [
+          "thirsty-3"
+        ],
+        "assessment": "水稻例句可保留；修订标题和释义，避免与暂时干燥缺水混同。"
+      },
+      {
+        "sense": "干燥缺水的，尤指土地",
+        "coveredBy": [
+          "thirsty-4"
+        ],
+        "assessment": "原稿仅在合并标题中提及，缺少对应例句；补为独立的较少见用法，并标明描写色彩。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[\"wiktionary_thirsty_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_thirsty\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"常用形容词义项与用法\",\"发音及相关词形\"]",
+        "valueJson": "[\"建议延伸查阅：thirsty 的释义、用法、读音与词形\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"thirst + -y 的构词信息\"]",
+        "valueJson": "[\"英语形容词 thirsty 的口渴义\",\"比较级与最高级的构词信息\",\"thirst + -y 的构词信息\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"quenched\",\"zh\":\"解渴了的\",\"note\":\"用于喝水后口渴得到缓解的语境，不是 thirsty 的通用反义词。\"}",
+        "valueJson": "{\"en\":\"quench your thirst\",\"zh\":\"解渴\",\"note\":\"quench 是动词，thirst 作宾语；可说 The water quenched my thirst.，表示水解了我的渴。描述自己不再口渴通常说 I’m not thirsty anymore.。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"“不口渴”可说 not thirsty；喝水后解渴可说 quenched。\"",
+        "valueJson": "\"描述不口渴用 not thirsty；描述饮料解渴用 quench someone’s thirst。quenched 通常描述得到缓解的 thirst，不直接用来表示一个人不口渴。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"a glass of water when you’re thirsty\",\"zh\":\"口渴时喝一杯水\",\"note\":\"常见生活表达；when 引出感到口渴的时间。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"get thirsty\",\"zh\":\"变得口渴\",\"note\":\"get 表示状态发生变化，如 I get thirsty after exercise.（我运动后会口渴。）\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"需要大量水的；干旱的\"",
+        "valueJson": "\"需水量大的；耗水多的\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"形容土地、植物等需要较多水分；也可用于描述耗水量大的事物。\"",
+        "valueJson": "\"形容作物等需要或消耗大量水。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是从“口渴、缺水”引申出的用法，具体含义由所修饰的事物决定。\"",
+        "valueJson": "\"这里强调需水量大，不一定表示当下缺水；a thirsty crop 指需水量大的作物。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thirsty-4\",\"title\":\"干燥缺水的\",\"meaning\":\"形容土地等干燥、急需水分。\",\"note\":\"带有把土地比作口渴者的描写色彩；普通地说明土壤干燥可用 dry。\",\"example\":{\"id\":\"thirsty-4-ex1\",\"senseId\":\"thirsty-4\",\"en\":\"The first rain soaked into the thirsty soil.\",\"zh\":\"第一场雨渗入了干燥缺水的土壤。\",\"note\":\"thirsty soil 表示需要雨水滋润的干土，不表示这种土壤本身耗水量特别大。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"口渴；渴望\"",
+        "valueJson": "\"口渴；渴望（较少用）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "\"thirstiness for 表示对某事物的渴望。\"",
+        "valueJson": "\"thirstiness for 可表示对某事物的渴望，但这种表达很少用；本句通常更自然地说 Her thirst for adventure led her to try rock climbing.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"thirst 是核心同族词；thirstily 和 thirstiness 按常见拼写规则由 thirsty 派生。\"",
+        "valueJson": "\"thirst 是最实用的同族名词；thirstily 和 thirstiness 按常见拼写规则由 thirsty 派生。thirstiness 较少用，日常表达“口渴”或“渴望”通常优先用 thirst。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1414,
+    "headword": "thirsty",
+    "meaning_zh": "adj. 口渴的, 渴望的, 干燥的",
+    "phonetic": "/'θә:sti/",
+    "pos": "",
+    "forms": []
+  }
+}

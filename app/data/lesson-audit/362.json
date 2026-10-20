@@ -1,0 +1,586 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a4958b0a975a520a6d35d25c072ae839cd83742a552775123a0860c229957272",
+    "executedReviewPromptHash": "a4958b0a975a520a6d35d25c072ae839cd83742a552775123a0860c229957272",
+    "reviewHash": "2a4d2b2868a5d52d0901c8634e59b96613ad26aabc2da62282e6fad3ec91a779",
+    "wordId": 362,
+    "inputHash": "3f9f0ee6bbb5a385ee7a65465645fc4c686b6cdbd3b7bce927c17fe886f4ee98",
+    "draftHash": "6f2b9d3b8a27a48a7ec3d0fe3d381fc769f2e06cf166c21b2efca6c0d1e273a0",
+    "finalHash": "32f7c1c9248343ac4568ccf97f1548e3ca5efae4537bba6ddd53be0066e7c11c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/dear#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:29.374Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115987,
+        "revisionId": 39599582,
+        "revisionTimestamp": "2026-06-17T08:27:32Z",
+        "sha256": "094b857edb3f2d73d04c852c22c5ef1cdb411202835c1204bcde9d37bea83efc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/dear",
+        "section": "dear etymology",
+        "supports": [
+          "Old English costly and loved meanings",
+          "Germanic family",
+          "Uncertain deeper origin"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "19ad89ccfb2da2399ef8d31a90f1f01f88e6df0d11f550226759611a2553f9ee",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "19ad89ccfb2da2399ef8d31a90f1f01f88e6df0d11f550226759611a2553f9ee",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/362.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/dear",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:20:53.466Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:31:34.804Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 与各 sourceIds",
+        "message": "Oxford 不在实际取得的材料中，Cambridge 明确未取得正文，不能据此归因具体讲解。改引实际取得的法语维基词典英语词条，并为历史字形补上对应来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“珍贵、珍视”没有实际例示；书信 Dear 也不一定表示亲密。补独立的珍视义，并补足亲爱义、书信称呼功能各两个例句及正式称呼说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "“单复数形式相同”与 dears 矛盾；名词 dear 的规则复数为 dears。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "遗漏常用名词功能 You're a dear（你真好心）；her dear、a dear of mine 不宜作为入门常用范例，dear ones、a dear friend 中的 dear 则是形容词。修正分类，并为称呼和赞人两种功能各配两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions 与 /senses/3/relatedExpressions",
+        "message": "strange 容易表示“奇怪的”，stranger 也不与亲昵称呼或好心人形成可靠反义。分别改用限定语境的 unloved、an unkind person。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/0、/senses/1/collocations/1、/memoryAid",
+        "message": "a dear price、dear prices 并非现代入门教学宜优先推荐的常用搭配；改为 too dear、a bit dear 等自然表达，不将原表达判作语法错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "不同音标体系不能笼统判作“元音不准确”，且 /ɪə/ 的说明未区分英美读法。改为直接讲解发音。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "原始日耳曼语阶段的词义没有直接材料支持，“词根”定性也不准确；中古英语阶段的 meaning 实为发展说明。将可证实的历史字形移入 summary，阶段只保留有明确语义支持的古英语。"
+      },
+      {
+        "severity": "error",
+        "location": "多处 example/note",
+        "message": "七个例句缺少结构规定的必填 note 字段，须补齐。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses 与 /wordFamily",
+        "message": "补充 cost someone dear 的副词用法，区分其与价格形容词义；补 dearly 的高代价用法，并明确 dearness 的低频语体。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对主要词义、称呼功能、语法、译文、拼写、读音及例句归属。修订后覆盖亲爱、书信称呼、珍视、昂贵、感叹，以及名词的亲昵称呼和赞人功能，各核心义或功能均有至少两个例句；另以较少见义补充 cost someone dear。历史陈述限于实际取得的两份词源材料；现代用法与语体判断结合专业语言知识，未作外部复核声明。",
+    "senseInventory": [
+      {
+        "sense": "形容词：亲爱的、受喜爱的",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留原亲属例句，补第二个具体生活例句。"
+      },
+      {
+        "sense": "书信或邮件开头的 Dear 称呼功能",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "补正式邮件例句，说明 Dear 不必表示私人感情；共两个例句。"
+      },
+      {
+        "sense": "形容词：珍视的、对某人很重要的",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原稿仅在标题提及；新增 dear to someone 的两例，并讲解 hold something dear。"
+      },
+      {
+        "sense": "形容词：昂贵的、价格高的",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "两例自然，保留英式用法限制，替换不宜作为常用搭配的价格短语。"
+      },
+      {
+        "sense": "感叹表达：Oh dear、Dear me",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "保留两个自然例句，补 Dear me 的较老派语体说明。"
+      },
+      {
+        "sense": "名词：亲昵称呼 dear、my dear、my dears",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "补第二例，修正复数说明及搭配分类，并提示关系与语气限制。"
+      },
+      {
+        "sense": "名词：和善、可爱或乐于帮忙的人",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "补 You're a dear 与 Be a dear and… 两例及适用语境。"
+      },
+      {
+        "sense": "副词：在 cost someone dear 中表示付出高昂代价",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "作为补充识别用法列入较少见义，提供一例，不混入形容词句型。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"形容词；感叹词；名词\"",
+        "valueJson": "\"形容词；感叹词；名词；副词（多见于固定表达）\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"对照记忆 dear friend（亲爱的朋友）和 a dear price（高价）。\"",
+        "valueJson": "\"对照记忆 a dear friend（亲密的朋友）和 too dear（太贵）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标中的元音不准确；注意开头是 /d/，元音是 /ɪə/。\"",
+        "valueJson": "\"开头的 d 读 /d/；英式常见读法为 /dɪə/，美式常见读法为 /dɪr/，带卷舌音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"规则变化：末尾加 -er，表示更亲近或价格更高。\"",
+        "valueJson": "\"规则变化：直接在 dear 后加 -er，可表示更受珍爱或更昂贵。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"可作称呼，指亲爱的人；单复数形式相同，复数可写 dears。\"",
+        "valueJson": "\"可作亲昵称呼，也可指和善体贴的人；是可数名词，复数为 dears，如 my dears。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"亲爱的；珍贵的\"",
+        "valueJson": "\"亲爱的；书信称呼用语\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"形容人或事物与自己关系亲近、令人珍视；也可作亲切称呼。\"",
+        "valueJson": "\"形容人受到喜爱、与自己亲近；Dear 也常放在书信或邮件称呼的开头，用来礼貌地称呼收信人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常放在名词前，如 dear friend；用作称呼时可说 My dear。\"",
+        "valueJson": "\"表达亲近时常放在名词前，如 a dear friend；Dear + 姓名或称谓可用于正式或非正式书信，不一定表示私人感情。my dear 作独立称呼时属于名词用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"dear 修饰 aunt，表达对亲人的喜爱。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"I had lunch with a dear friend who was visiting from Canada.\",\"zh\":\"我和一位从加拿大来访的亲密朋友吃了午饭。\",\"note\":\"a dear friend 指受到珍爱、关系亲近的朋友。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"Dear Ms Chen, I am writing to ask about the English course.\",\"zh\":\"陈女士：我写信想咨询英语课程的情况。\",\"note\":\"正式邮件中的 Dear 主要表示礼貌，不代表双方关系亲密。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"dear + 人\",\"zh\":\"亲爱的……\",\"note\":\"放在人称名词前，表达亲近或喜爱。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"dear + 表示人的名词\",\"zh\":\"亲爱的／亲近的……\",\"note\":\"如 a dear friend、my dear aunt；dear 作形容词修饰名词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"Dear + 人名,\",\"zh\":\"亲爱的……：\",\"note\":\"常用于信件或电子邮件开头的称呼。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"Dear + 姓名或称谓,\",\"zh\":\"……（书信称呼）\",\"note\":\"用于信件或邮件开头，可表示亲切，也可只是正式、礼貌的称呼。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"my dear\",\"zh\":\"亲爱的；我亲爱的\",\"note\":\"可作亲切称呼，具体语气取决于说话关系和场合。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"my dear aunt\",\"zh\":\"我亲爱的阿姨\",\"note\":\"dear 修饰 aunt，属于形容词用法。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"strange\",\"zh\":\"陌生的\",\"note\":\"在描述人与自己关系时，可与 dear 的亲近义形成对照。\"}]",
+        "valueJson": "[{\"en\":\"unloved\",\"zh\":\"未得到爱的；不受喜爱的\",\"note\":\"与受到喜爱、珍爱的意思形成对照；不用于对照书信开头的 Dear。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"strange 只在描述关系不熟悉时与此义对照，不是 dear 的通用反义词。\"",
+        "valueJson": "\"unloved 对照的是是否受到爱或关怀；书信称呼 Dear 本身没有相应的反义称呼格式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"价格高；常用于英式英语，也可表示某物代价很大。\"",
+        "valueJson": "\"指商品或服务价格高；这一义主要用于英式英语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"too dear for us 表示价格超出我们的承受范围。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"dear prices\",\"zh\":\"高价\",\"note\":\"dear 放在 prices 前修饰价格；此用法偏英式。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a bit dear\",\"zh\":\"有点贵\",\"note\":\"a bit 修饰 dear，常用于英式英语中评价商品或服务的价格。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"发现小麻烦时，用 Oh dear! 表达懊恼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Oh dear 放在句首，表达发现没赶上车时的遗憾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"另一种较温和的感叹说法，常表达惊讶或担忧。\"",
+        "valueJson": "\"较温和、较老派的感叹说法，常表达惊讶或担忧。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"亲爱的人；亲爱的\"",
+        "valueJson": "\"亲爱的（称呼）；和善体贴的人\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"用作名词，指亲近、珍视的人，也可作亲昵称呼。\"",
+        "valueJson": "\"作可数名词，可用于亲昵称呼；a dear 也可指和善可爱、乐于帮忙的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用于亲友之间；称呼不熟悉的人时需留意语气和关系。\"",
+        "valueJson": "\"称呼用的 dear 常见于亲友之间，也可见于长辈对晚辈的说话；对不熟悉的成年人使用可能显得居高临下。You're a dear 则是亲切地夸人好心、体贴。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"She brought a small gift for her dear.\",\"zh\":\"她给自己的爱人带了一份小礼物。\",\"note\":\"名词用法，语气亲昵。\"}",
+        "valueJson": "{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"Thanks for helping me with these bags. You're a dear.\",\"zh\":\"谢谢你帮我拿这些袋子。你真贴心。\",\"note\":\"a dear 是可数名词，指和善、乐于帮忙的人。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4e3\",\"senseId\":\"s4\",\"en\":\"Are you warm enough, dear?\",\"zh\":\"亲爱的，你觉得够暖和吗？\",\"note\":\"dear 在句末直接称呼亲近的人，是名词用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4e4\",\"senseId\":\"s4\",\"en\":\"Be a dear and pass me my glasses, please.\",\"zh\":\"帮个忙，把我的眼镜递给我，好吗？\",\"note\":\"用 a dear 亲昵地请人帮忙；对不熟悉的成年人这样说可能显得居高临下。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"a dear of mine\",\"zh\":\"我的一位亲爱的人\",\"note\":\"用名词 dear 指亲近的人，表达亲昵。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Be a dear and + 动词原形\",\"zh\":\"帮个忙，……\",\"note\":\"亲昵地请人帮忙的说法；须留意双方关系，避免显得居高临下。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations",
+        "expectedValueJson": "[{\"en\":\"dear ones\",\"zh\":\"亲爱的人们\",\"note\":\"指自己珍视的亲友，常见于温暖或郑重的语境。\",\"kind\":\"common-collocation\"},{\"en\":\"a dear friend\",\"zh\":\"一位亲密的朋友\",\"note\":\"此处 dear 修饰 friend，是形容词用法，不是名词。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"my dears\",\"zh\":\"亲爱的各位（复数称呼）\",\"note\":\"dears 是名词 dear 的规则复数；这种称呼带亲昵感，也可能显得较老派。\",\"kind\":\"fixed-expression\"},{\"en\":\"such a dear\",\"zh\":\"这么好心、可爱的人\",\"note\":\"可用来亲切地赞美某人，如 You're such a dear。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"stranger\",\"zh\":\"陌生人\",\"note\":\"在描述人与自己关系时，可与 dear 所指的亲近之人对照。\"}]",
+        "valueJson": "[{\"en\":\"an unkind person\",\"zh\":\"一个不友善的人\",\"note\":\"只与 a dear 表示和善、体贴之人的意思形成对照。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"stranger 只在人物关系语境中形成对照。\"",
+        "valueJson": "\"an unkind person 对照的是人的性情与待人方式；亲昵称呼 my dear 没有固定的反义称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"珍视的；对某人很重要的\",\"meaning\":\"形容人、事物或回忆受到某人珍爱，具有感情上的价值。\",\"usageNote\":\"常用 be dear to someone；这里谈的是感情和意义，不是商品售价。hold something dear 表示珍视某物或某种观念。\",\"examples\":[{\"id\":\"s5e1\",\"senseId\":\"s5\",\"en\":\"These old photos are very dear to me.\",\"zh\":\"这些老照片对我来说很珍贵。\",\"note\":\"dear to me 表示我很珍视它们，不是在说照片售价高。\"},{\"id\":\"s5e2\",\"senseId\":\"s5\",\"en\":\"The garden is dear to my father because he planted every tree himself.\",\"zh\":\"父亲很珍爱这座花园，因为里面的每棵树都是他亲手种的。\",\"note\":\"说明花园对父亲具有特殊的感情价值。\"}],\"patterns\":[{\"en\":\"be dear to someone\",\"zh\":\"受到某人珍爱；对某人很重要\",\"note\":\"用 to 引出珍视这个人或事物的人。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"hold something dear\",\"zh\":\"珍视某物或某种观念\",\"note\":\"hold 后接宾语，再用 dear 说明自己珍视它，如 hold our family traditions dear。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be precious to someone\",\"zh\":\"对某人很珍贵\",\"note\":\"可强调感情上的珍贵；precious 在其他语境也能表示物质价值高。\"},{\"en\":\"be important to someone\",\"zh\":\"对某人很重要\",\"note\":\"范围更广，不一定包含 dear 所表达的珍爱情感。\"}],\"contrasting\":[{\"en\":\"mean little to someone\",\"zh\":\"对某人没什么意义\",\"note\":\"在感情价值或个人意义的语境中与 dear to someone 形成对照。\"}],\"similarNote\":\"这些表达都能谈个人价值；dear、precious 通常比 important 更突出珍爱情感。\",\"contrastingNote\":\"mean little 对照的是个人意义，不表示商品价格低。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"付出高昂代价（副词）\",\"meaning\":\"表示代价高昂或损失很大。\",\"note\":\"主要识别固定表达 cost someone dear；这里 dear 作副词，也可以用 dearly。代价可以是钱，也可以是其他损失。\",\"example\":{\"id\":\"lc1e1\",\"senseId\":\"lc1\",\"en\":\"Missing the last train cost us dear: the taxi home was very expensive.\",\"zh\":\"错过末班火车让我们花了不少钱：打车回家很贵。\",\"note\":\"cost us dear 表示使我们付出高昂代价，不是形容某件商品。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"dear 修饰 cousin，表达喜爱或亲近；不要与表示鹿的 deer 混淆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"dear 延续古英语中表示“有价值、昂贵或受珍爱”的词义；“价格高”和“亲爱、珍贵”两种现代意思都与价值有关。\"",
+        "valueJson": "\"dear 经中古英语 dere 承自古英语 dīere，古英语已兼有“有价值、昂贵、受珍爱”的意思；其更早形式通常重建为原始日耳曼语 *deurja-。德语 teuer 和荷兰语 duur 是同源词。“价格高”和“亲爱、珍贵”两种现代意思都延续了这一历史语义范围。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始日耳曼语\",\"form\":\"*deurja-\",\"meaning\":\"重建形式；与价值或昂贵相关的词根\"},{\"language\":\"古英语\",\"form\":\"dīere\",\"meaning\":\"有价值、昂贵或受珍爱\"},{\"language\":\"中古英语\",\"form\":\"dere\",\"meaning\":\"承接古英语形式，发展为现代英语 dear\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"dīere\",\"meaning\":\"有价值、昂贵或受珍爱\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"etymonline\",\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"dearest 是 dear 的最高级，在这里表达最亲密、最珍爱的感情。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"深深地；非常\"",
+        "valueJson": "\"深深地；非常；以很高的代价\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"加 -ly 构成副词；常见搭配如 love someone dearly。\"",
+        "valueJson": "\"直接在 dear 后加 -ly；love someone dearly 表示深爱某人，pay dearly for a mistake 表示因失误付出沉重代价。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"dearly 修饰 loves，表达深爱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/example/note",
+        "expectedValueJson": "\"较少见的名词用法。\"",
+        "valueJson": "\"dearness 较少见；日常谈价格更常说 the high cost of food（食物价格高）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象一张卡片写着 Dear Grandma，里面装着给奶奶的拥抱；旁边另一张写着 dear price，贴在让人犹豫的高价商品上。看到 Oh dear!，就想象发现卡片忘在家时轻轻叹一声。\"",
+        "valueJson": "\"想象一张卡片写着 Dear Grandma，里面装着给奶奶的拥抱；旁边那件高价商品让你说出 It's too dear（太贵了）。看到 Oh dear!，就想象发现卡片忘在家时轻轻叹一声。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"a dear price：价格高。\"",
+        "valueJson": "\"too dear：太贵。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: dear\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/dear\",\"supports\":[\"形容词 dear 的亲爱和昂贵义\",\"比较级、最高级及相关词形\",\"名词称呼用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：dear（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/dear#Anglais\",\"supports\":[\"形容词的亲爱、昂贵及珍贵义\",\"名词 dear 的亲昵称呼义及 darling 近义词\",\"英美读音及与 deer 同音\",\"规则比较变化及 dearest、dearly、dearness 等相关词\",\"dear me、oh dear 等相关表达的列举\",\"古英语、中古英语及原始日耳曼语重建形式，德语和荷兰语同源词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: dear\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/dear\",\"supports\":[\"dear 作形容词、名词和感叹表达的用法\",\"昂贵义在英式英语中的使用\",\"近义词语境参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 362,
+    "headword": "dear",
+    "meaning_zh": "adj. 亲爱的；昂贵的\ninterj. 哎呀（Oh dear）",
+    "phonetic": "/'diә/",
+    "pos": "",
+    "forms": []
+  }
+}

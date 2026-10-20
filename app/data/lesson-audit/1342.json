@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "964ffe7166efcf85f7731ddc2930b1c55e1fb0a80bf02031fcfd6d5e74e10c47",
+    "executedReviewPromptHash": "964ffe7166efcf85f7731ddc2930b1c55e1fb0a80bf02031fcfd6d5e74e10c47",
+    "reviewHash": "75b3f36a68ae8c56b93ada04e2064d4b44f2c6e196c5814cde0d61886b7d1f51",
+    "wordId": 1342,
+    "inputHash": "3d5a080d18d7de19fc506004b100f76a5feb85ea890f0e5935aaa946e5b09a53",
+    "draftHash": "2b3f42b1fb1916acd14646576835e50cff36fa92cb82850d9735ce438720139f",
+    "finalHash": "827165debf16442caacbda0ba9a7985cef92e91514bae1889a8c319ec1bb84a9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/student#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:35.075Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 516,
+        "revisionId": 38579453,
+        "revisionTimestamp": "2025-08-25T18:19:08Z",
+        "sha256": "f919af2d731c242cab52af957eef6892ac338357415db46ad6fd97c8d4106907",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/student",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T15:55:15.139Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:06:46.775Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "/j/ 的位置写错了：英式 /stjuː-/ 中，/j/ 位于 /t/ 与 /uː/ 之间。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1；/senses/0；/senses/1/usageNote",
+        "message": "a student of + 学科也可指修读该学科的学生，不能仅凭 of 结构判断为“研究者”。应补入学生义，并说明须结合语境区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；相关 sourceIds",
+        "message": "Cambridge 未取得正文，Oxford 未提供实际材料，不能把它们作为本次释义、读音和词形说明的材料依据。已改用实际取得的英语词条；仅凭专业语言知识补充的内容不挂未经核对的来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation；/wordFamilyNote",
+        "message": "现有词源材料只说明 student、studens、studeo 的关系，未说明 study 的历史来源。保留实用词族教学，但删除超出材料的历史来源断言。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "“变形时 y 改为 i”范围过宽，容易使学习者误写 studying；应明确限定为 studies、studied，并说明 studying 保留 y。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/1/meaning",
+        "message": "该阶段目前只给出语法身份；可根据 studeo 的已知释义补出现在分词的字面意义。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的“学生”主要义及“专心钻研某领域的人”扩展义，两义均有两个自然原创例句，翻译和 senseId 对应正确。“学者”无需另拆一义，也不宜将 student 等同于职业学者。近义词和教师角色对照的限制基本准确，无须强造反义词。主要遗漏是 student of 也可表示某专业学生。词源主干符合已取得材料；扩展义及部分教学说明依据专业语言知识核对，缺少本次取得的独立词典正文支持。",
+    "senseInventory": [
+      {
+        "sense": "名词：学生；在学校、大学或课程中学习的人",
+        "coveredBy": [
+          "student-learner"
+        ],
+        "assessment": "实际取得的英语词条支持此主要义；原有两个例句合格。补充 student of + 学科表示修读该学科的学生。"
+      },
+      {
+        "sense": "名词：专心学习、观察或研究某领域的人",
+        "coveredBy": [
+          "student-researcher"
+        ],
+        "assessment": "属于专业语言知识可确认的扩展义，两个例句能够覆盖；不必另立“学者”义。须说明 student of 也可能只是专业学生，不能仅凭介词判义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常在 /s/ 与 /t/ 间带 /j/ 音；许多美式口音不发这个音。\"",
+        "valueJson": "\"常见英式读音 /stjuː-/ 中，/j/ 位于 /t/ 与 /uː/ 之间；常见美式读音 /stuː-/ 不发这个 /j/ 音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 a student at... 介绍就读学校，用 a student of... 表示研究或钻研某领域。\"",
+        "valueJson": "\"用 a student at... 介绍就读学校；a student of... 既可指学习某学科的学生，也可指专心钻研某领域的人，要结合语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常与 school、college、university 等表示学习地点或机构的词连用。\"",
+        "valueJson": "\"常与 school、college、university 等表示学习机构的词连用。a student of + 学科也可表示修读该学科的学生，如 a student of medicine（医学生）。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a student of + 学科\",\"zh\":\"学习某学科的学生\",\"note\":\"如 a student of medicine 可指医学生；of 结构也可用于‘钻研者’义，具体含义取决于语境。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 a student of + 学科或主题，强调深入学习或研究。\"",
+        "valueJson": "\"本义常用 a student of + 学科或主题，强调持续钻研或认真观察。不过，同一结构也可指修读某学科的学生；是否为这里的‘钻研者’义，要结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"同源词；与 student 一样来自表示学习的拉丁词根。\"",
+        "valueJson": "\"学习词族中的常用词，与 student 在词形和意义上相关；现代英语中，study 不是由 student 按一般词尾变化规则直接变成的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"列出与 student 同源且常用的 study；teacher、school 等只是相关词，不属于 student 的词族。\"",
+        "valueJson": "\"把 student 和 study 放在一起记忆词形与用法，但不要把它们当作同一个词的不同变形。teacher、school 等只是语义相关词，不列入这个词族。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"study 作动词，第三人称单数为 studies，过去式和过去分词为 studied；y 前是辅音字母时，变形时 y 改为 i。\"",
+        "valueJson": "\"study 作动词，第三人称单数为 studies，过去式和过去分词为 studied：这两类变化把 y 改为 i，再加 -es 或 -ed。现在分词 studying 则保留 y，直接加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1/meaning",
+        "expectedValueJson": "\"studeo 的现在分词\"",
+        "valueJson": "\"正在学习的（studeo 的现在分词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-student\"]",
+        "valueJson": "[\"wiktionary-student-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-student\",\"oxford-student\"]",
+        "valueJson": "[\"wiktionary-student-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-student\",\"oxford-student\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-student\",\"oxford-student\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"wiktionary-student-etymology\",\"oxford-student\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford-student\",\"title\":\"Oxford Learner’s Dictionaries: student\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/student\",\"supports\":[\"名词释义与用法\",\"读音、复数及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-student\",\"title\":\"Cambridge Dictionary: student\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/student\",\"supports\":[\"名词的学生义及相关用法\",\"词性与常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"student 与拉丁语 studens、studeo 的词源关系\"]",
+        "valueJson": "[\"英语名词 student 的学生义\",\"英美读音及规则复数\",\"student 与拉丁语 studens、studeo 的词源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1342,
+    "headword": "student",
+    "meaning_zh": "n. 学生, 研究者, 学者",
+    "phonetic": "/'stju:dnt/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b07fd84df5c0128d4cfc6cd0b8639aa5462dd53574c7f99fe21bedeb8cf6b525",
+    "executedReviewPromptHash": "b07fd84df5c0128d4cfc6cd0b8639aa5462dd53574c7f99fe21bedeb8cf6b525",
+    "reviewHash": "b900ad01abe8ef0e5a7610f72bf8d8c57c0f39c3cea954f870ffb56bc780e603",
+    "wordId": 617,
+    "inputHash": "11b464e701aee3a19c5e5fe1fc033c35d73a6c85f3bd32b7c8afa2a818792403",
+    "draftHash": "0d2efe314c56df23dc941347d22bd701e628e633f35de220e9274aa2094ed1e8",
+    "finalHash": "7d31a20914201448578ed7c51a00eea8e504ab7451347cfbcf8e7cba55f84b87",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/handsome#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:15.292Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119591,
+        "revisionId": 39883693,
+        "revisionTimestamp": "2026-09-19T15:34:08Z",
+        "sha256": "699353fe0ca18e59c67554e0ac64467657d8ba61ad62a227e267d63078c1945d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/handsome",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:05:45.055Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:17:14.709Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少修饰举动、提议等时“慷慨大方”的用法，如 a handsome gesture。金额丰厚不能完全覆盖这一义，需补独立说明及两个例句，并区别 handsome 与 generous 直接形容人的用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "“相当大的”目前仅用金钱语境讲解，可补 a handsome margin，明确它也能表示获胜幅度很大，同时避免泛化为所有语境中的 big。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "plain 按原稿解释为“朴素”时，物品仍可美观，与 handsome 并不相反。应改用评价外观不好看的 unattractive。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "hansom 例句未使用 handsome，却绑定了“英俊”义的 senseId；两词拼写对比也应同时说明 d 和词尾 e，不能只提醒 d。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "词源概述正确但不完整。已取回的英语词条还明确记载了最初的“易于使唤、乐于效劳、易于使用”，以及现代义出现于16世纪，应按该来源的先后关系补齐。"
+      }
+    ],
+    "coverageAssessment": "已核对人和物的外貌义、丰厚可观义、慷慨举动义及废旧义，并检查例句、词形、读音和词族。原有标准英美读音、比较形式及派生词拼写可保留；补丁补足慷慨举动义和非金钱数量用法。废旧义不扩充为初中核心义。词源仅依据已取回的 Wiktionnaire 英语词条；Oxford 未提供正文，Cambridge 获取失败，推荐链接不视为已核验，现代用法修正依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "英俊、相貌好看，通常用于男性，也可用于女性",
+        "coveredBy": [
+          "617-adj-attractive"
+        ],
+        "assessment": "已有两个自然例句，并说明女性用法的限制，可保留。"
+      },
+      {
+        "sense": "房屋、家具等美观大方",
+        "coveredBy": [
+          "617-adj-attractive-object"
+        ],
+        "assessment": "已有两个具体例句；需修正将“朴素”作为反向表达的问题。"
+      },
+      {
+        "sense": "金额、利润、报酬等丰厚可观；获胜幅度等显著",
+        "coveredBy": [
+          "617-adj-generous-large"
+        ],
+        "assessment": "金钱语境已有两个例句；补充 a handsome margin，覆盖常见的非金钱数量用法。"
+      },
+      {
+        "sense": "慷慨大方的，修饰举动、提议等",
+        "coveredBy": [
+          "617-adj-generous-action"
+        ],
+        "assessment": "原稿未充分覆盖；补为独立义，配两个例句并注明较正式的语体及修饰对象。"
+      },
+      {
+        "sense": "废旧义：灵巧、能干",
+        "coveredBy": [],
+        "assessment": "来源明确标为废旧义，保留在历史说明中即可；不应把词条中的“灵敏”教成现代常用的“反应快”。"
+      },
+      {
+        "sense": "废旧义：公正、诚实、忠诚",
+        "coveredBy": [],
+        "assessment": "来源明确标为废旧义，不属于初中常用义，无须增列为现代核心义。"
+      },
+      {
+        "sense": "更早历史义：易于使唤、乐于效劳、易于使用；随后有用",
+        "coveredBy": [],
+        "assessment": "补入词源的真实发展顺序，不作为现代常用义教授。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的是形容男子相貌英俊；也能形容房屋等外观漂亮，或表示金额、利润等相当可观。\"",
+        "valueJson": "\"handsome 常形容男子英俊，也可形容建筑美观、金额丰厚或获胜优势明显；a handsome gesture 则指慷慨大方的举动。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 a handsome gesture（慷慨大方的举动）与 a handsome profit（丰厚的利润）；称赞一个人慷慨通常用 generous。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"形容钱、利润、报酬等数量较大，通常含有令人满意或慷慨的意味。\"",
+        "valueJson": "\"形容金额、利润、报酬等丰厚可观；也可形容获胜幅度等很大，常带满意或赞许的语气。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见于 a handsome sum、a handsome profit、a handsome reward；不是“相貌英俊”的意思。\"",
+        "valueJson": "\"常见于 a handsome sum、a handsome profit、a handsome reward；a handsome margin 可表示很大的获胜幅度。这些都是特定搭配，不能把 handsome 当作通用的 big。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"617-ex-7\",\"senseId\":\"617-adj-generous-large\",\"en\":\"Our school team won by a handsome margin.\",\"zh\":\"我们校队以很大的优势获胜。\",\"note\":\"by a handsome margin 表示获胜幅度很大；这里不涉及金额。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a handsome margin\",\"zh\":\"很大的领先幅度；明显的优势\",\"note\":\"常见于 win by a handsome margin，用于比赛、投票等结果。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"617-adj-generous-action\",\"title\":\"慷慨大方的（举动、提议等）\",\"meaning\":\"形容帮助、给予或提议等表现得慷慨大方，着重赞许这种行为，而不只说明数额大。\",\"usageNote\":\"较正式，常放在 gesture、offer、gift 等名词前。称赞某人慷慨，通常说 He is generous；He is handsome 通常是在说他英俊。\",\"examples\":[{\"id\":\"617-ex-8\",\"senseId\":\"617-adj-generous-action\",\"en\":\"Lending us his van for the move was a handsome gesture.\",\"zh\":\"他把货车借给我们搬家，真是个慷慨的举动。\",\"note\":\"handsome gesture 赞许帮助他人的大方举动，不一定涉及赠送钱财。\"},{\"id\":\"617-ex-9\",\"senseId\":\"617-adj-generous-action\",\"en\":\"She made a handsome offer to pay for all the repairs.\",\"zh\":\"她大方地提出承担全部维修费用。\",\"note\":\"handsome offer 赞许提议慷慨，这里强调愿意承担费用。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"a handsome gesture\",\"zh\":\"慷慨大方的举动\",\"note\":\"评价举动大方，语体较正式。\",\"kind\":\"common-collocation\"},{\"en\":\"a handsome offer\",\"zh\":\"慷慨的提议；优厚的出价\",\"note\":\"评价提出的帮助或条件大方、优厚。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"generous\",\"zh\":\"慷慨的；大方的\",\"note\":\"更日常，可直接形容人，也可形容举动、提议或给予的东西。\"}],\"contrasting\":[{\"en\":\"ungenerous\",\"zh\":\"不大方的；不慷慨的\",\"note\":\"评价提议或给予等不够大方时，与这一义相对。\"}],\"similarNote\":\"generous 更日常，并可直接形容人；handsome 在这一义中常用来评价举动或提议。\",\"contrastingNote\":\"ungenerous 对应给予方面不大方，与相貌好坏无关。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"plain\",\"zh\":\"朴素的；不显眼的\",\"note\":\"仅在外观风格上与 handsome 对照，不一定含贬义。\"}",
+        "valueJson": "{\"en\":\"unattractive\",\"zh\":\"不好看的；缺乏美感的\",\"note\":\"形容房屋或家具外观不好看时与 handsome 相对，不评价其是否实用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"plain 可指外观朴素、不显眼，与物品外观义相对。\"",
+        "valueJson": "\"unattractive 对应物品外观不好看；plain 表示“朴素”时仍可能很美观。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"handsome 是常见形容词“英俊的、漂亮大方的”；hansom 是旧式马车名词，初学者写作时容易漏掉 handsome 中的 d。\"",
+        "valueJson": "\"handsome 是形容词；hansom 是旧式双轮出租马车的名词。两词同音，但 handsome 比 hansom 多一个 d 和词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"注意 handsome 中有 d。\"",
+        "valueJson": "\"handsome 中有不发音的 d，词尾还有 e；注意与 hansom 的完整拼写区别。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"名词，指一种旧式双轮出租马车；现代日常英语中很少见。\"",
+        "valueJson": "\"名词，指一种旧式双轮出租马车；现代日常英语中很少见。与 handsome 相比，拼写少了 d 和词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"617-conf-2\",\"senseId\":\"617-adj-attractive\",\"en\":\"A hansom waited outside the old hotel.\",\"zh\":\"一辆旧式双轮马车停在老旅馆外。\",\"note\":\"这是名词，拼写中没有 d。\"}",
+        "valueJson": "{\"id\":\"617-conf-2\",\"senseId\":\"617-adj-attractive\",\"en\":\"The handsome man stepped out of a hansom.\",\"zh\":\"那位英俊的男子从一辆旧式双轮出租马车里走了下来。\",\"note\":\"handsome 修饰 man，表示英俊；hansom 是马车名词。两词同音，拼写不同。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"拼写 handsome 时别漏掉 d；hansom 是另一个少见名词。\"",
+        "valueJson": "\"handsome 是形容词，hansom 是马车名词；前者多 d 和词尾 e，两词读音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"handsome 由 hand 与 -some 构成；历史上它的意思曾包括“有用、能干、灵巧”，后来发展出今天常见的“英俊、漂亮大方”等含义。\"",
+        "valueJson": "\"handsome 由 hand 与后缀 -some 构成，最初含“易于使唤、乐于效劳、易于使用”等意思，随后有“有用、能干、灵巧”等意思；16 世纪开始出现现代含义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语构词\",\"form\":\"hand + -some\",\"meaning\":\"早期有“有用、能干、灵巧”等意思，后来出现“漂亮、英俊”等现代常见义。\"}]",
+        "valueJson": "[{\"language\":\"英语\",\"form\":\"handsome\",\"meaning\":\"最初含“易于使唤、乐于效劳、易于使用”等意思。\"},{\"language\":\"英语\",\"form\":\"handsome\",\"meaning\":\"随后有“有用、能干、灵巧”等意思。\"},{\"language\":\"英语\",\"form\":\"handsome\",\"meaning\":\"16 世纪开始出现“英俊、漂亮”等现代含义。\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 617,
+    "headword": "handsome",
+    "meaning_zh": "adj. 英俊的, 大方的, 慷慨的, 相当可观的, 美观的, 灵敏的",
+    "phonetic": "/'hænsәm/",
+    "pos": "",
+    "forms": []
+  }
+}

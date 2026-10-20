@@ -1,0 +1,202 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fa6e0b3faa1417c10820413871f4b5654813ab52011285d8d3bdf21a99514936",
+    "executedReviewPromptHash": "fa6e0b3faa1417c10820413871f4b5654813ab52011285d8d3bdf21a99514936",
+    "reviewHash": "428aa4f671f061e3675707c92ad4b068cdfd4300a0334f5c53d100611d9f4fd3",
+    "wordId": 1526,
+    "inputHash": "0db75401ec3349bd196dd9c5e17d67bfb96993ab1655ef3cb1fa55d6b966fc00",
+    "draftHash": "e6676d25be5b63ba6ee02fa75442d1bc918b86327f54fd187da9e61e60090119",
+    "finalHash": "872e5716a7fb038a54baf6508d104d602a2de4bd441c24ef76c8a6dde862cc96",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/website#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.448Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 797836,
+        "revisionId": 38449286,
+        "revisionTimestamp": "2025-08-01T23:58:56Z",
+        "sha256": "ed8af619aef99a0fd0a153efbe5085486404c4ca30805aed36c0936fbfc6b338",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/website",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:47:42.470Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:02:16.674Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 页面未成功获取，不能承担现有来源归属。应改引已获取的法语维基词典英语词条；该材料未涉及的辨析不绑定此来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已获取的词源材料明确说明 website 由英语 web 和 site 复合而成，应补充明确说明及来源。两项构词成分不应画成历史演变链，stages 保持为空。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "离线资料、印刷页面只是媒介比较对象，并非 website 的常用反向表达；具体事物名词无需强设此类对照。"
+      }
+    ],
+    "coverageAssessment": "已核对所给英语词条的唯一主要义：可数名词“网站”。初稿覆盖充分，两条例句自然，英中对应准确；网站与网页的辨析、常用搭配、复数拼写及读音说明可保留。未发现需要另立的常用义项。来源材料较简略，不能为全部原创教学说明提供直接引证；已移除不适用的来源归属，并补齐可证实的复合构词事实。",
+    "senseInventory": [
+      {
+        "sense": "noun：网站，互联网上的站点",
+        "coveredBy": [
+          "website-noun"
+        ],
+        "assessment": "已覆盖，具备两条自然原创例句及常用搭配；无需拆分成多个义项。法语是来源的解释语言，所审词条仍是英语 website。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-website\",\"title\":\"Cambridge Dictionary: website\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/website\",\"supports\":[\"website 的词性、基本含义和读音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-website\",\"title\":\"Wiktionnaire：website（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/website#Anglais\",\"supports\":[\"英语名词 website 的网站义、读音与规则复数\",\"website 由英语 web 和 site 复合而成\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-website\"]",
+        "valueJson": "[\"wiktionary-en-website\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-website\"]",
+        "valueJson": "[\"wiktionary-en-website\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-website\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-website\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-website\"]",
+        "valueJson": "[\"wiktionary-en-website\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词可以看作 web（万维网）+ site（地点、场所），合起来表示互联网上的站点。\"",
+        "valueJson": "\"website 由英语 web（万维网）和 site（地点、站点）复合而成，表示“网站”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是帮助理解现代构词的拆分；不要把它误当成已说明完整历史演变的词源链。\"",
+        "valueJson": "\"web 和 site 是两个构词成分，不是先后演变的两个历史词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en-website\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"offline resource\",\"zh\":\"线下资料\",\"note\":\"在获取信息的方式上与网站形成对照，指不通过互联网访问的资料。\"},{\"en\":\"printed page\",\"zh\":\"印刷页面\",\"note\":\"在媒介形式上与网站页面对照，指纸上的一页内容。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里只按信息获取媒介对照：网站在线访问，线下资料或印刷页面不以网站形式访问。\"",
+        "valueJson": "\"website 是具体事物名词，没有常用的词汇反义词；webpage 与它是部分和整体的关系。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1526,
+    "headword": "website",
+    "meaning_zh": "n. 网站（全球资讯网的主机站）",
+    "phonetic": "/ˈwebsaɪt/",
+    "pos": "",
+    "forms": []
+  }
+}

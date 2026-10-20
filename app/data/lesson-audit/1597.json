@@ -1,0 +1,372 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "23c8fff0ff86c54ebf4dd96d1f7cbeadf0ff4a4ad09fd78f637b7e5ec5391edd",
+    "executedReviewPromptHash": "23c8fff0ff86c54ebf4dd96d1f7cbeadf0ff4a4ad09fd78f637b7e5ec5391edd",
+    "reviewHash": "0182177f9e45616feff22731021d4f778d7b2024c1b791d96504d17e02d3ecb3",
+    "wordId": 1597,
+    "inputHash": "10af7d21c62ffed7ea3d94c5a3f0569a9e2785f7909b4567a4ec185e269ffef5",
+    "draftHash": "877aabca8dc6f8e72d0307394275bc48263570ea754754a2cf5014c6cbdbce58",
+    "finalHash": "ab3e08096294431b711acca743750304cec40384c83479168fcf318023d137e2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/yourself#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.283Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 241222,
+        "revisionId": 39744877,
+        "revisionTimestamp": "2026-08-02T02:58:25Z",
+        "sha256": "625af110805d11c28c0d7851731e1e13be576f851829e152e7e5448d3f126987",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/yourself",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:35:57.682Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:43:20.244Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "所列读音中的 yourself 是两个音节，不是三个音节。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Cambridge 页面未成功获取，不能作为已获材料支撑全文。应改引已获取的 Wiktionnaire 英语词条，并将其支持范围限定在实际释义、发音和构词信息。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1及/lessCommonSenses/0",
+        "message": "主语后的强调用法属于常用强调功能，与 s2 重复，不宜另列为低频义。s2 又混入 by yourself 的独自、无帮助用法，导致强调功能只有一个核心例句。应合并强调用法，并单列 by yourself 的常用结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0及/senses/1/patterns/0",
+        "message": "句型中的泛称“主语”范围过宽；此处反身或强调成分须对应 you，不能让学生理解为任何主语后都使用 yourself。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrastingNote",
+        "message": "文字说“主语是 you”，例句 She helped you 的主语却是 She，语法角色说明相互矛盾。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/note及/relatedExpressions",
+        "message": "introduce yourselves 应解释为自我介绍，避免泛化成介绍本组成员；oneself 通常对应泛指的 one。you 与反身代词的替换条件也应限定到具体反身结构，不能仅凭同指关系判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "仅按是否有 by 区分反身宾语与独自用法，会遗漏裸用 yourself 的强调功能。应加入强调成分的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已获取材料明确说明英语 your 与 self 的组合来源，应补入相同 URL 的引用；your 的构成释义应为“你的”。两个构成成分不能画成先后演变阶段。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的反身义与“你本人”的强调功能。修补后 s1、s2 各有两个例句；s3 用两个例句分别覆盖 by yourself 的“独自”和“靠自己”，并说明复数结构不必表示各人分别行动。保留正确的单复数拼写和常用搭配。来源仅能支持基本释义、发音及 your + self 的构成；其他结构辨析依据专业语法知识，未虚构历史阶段。",
+    "senseInventory": [
+      {
+        "sense": "反身用法：动作对象与主语 you 指同一个人或同一群人",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "两例覆盖伤到自己及复数自我介绍；修正句型的主语限制和相关代词说明。"
+      },
+      {
+        "sense": "强调用法：你本人、你亲自；你们本人",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "将原低频栏的主语后强调用法并入常用功能；两例覆盖句末强调与紧跟 you 的强调。"
+      },
+      {
+        "sense": "常用结构 by yourself / by yourselves：独自；没有别人帮助",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "从强调义中分出；两例分别展示无人陪伴和无人帮助，并限定近义及反向表达的适用语境。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"yourself 有三个音节，重音落在 self。\"",
+        "valueJson": "\"所列读音中的 yourself 有两个音节，重音落在 self。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"主语 + 动词 + yourself / yourselves\",\"zh\":\"某人对自己做某事\",\"note\":\"当动作落在主语本人身上时，用相应的反身代词作动词宾语。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"You + 动词 + yourself / yourselves\",\"zh\":\"你对自己做某事；你们对自己做某事\",\"note\":\"这里的反身代词作动词宾语，指回主语 you；祈使句中的主语 you 通常省略。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/note",
+        "expectedValueJson": "\"introduce 后接反身代词，表示向别人介绍本人或本组成员。\"",
+        "valueJson": "\"表示作自我介绍；对多人说话时用 yourselves，通常是请他们各自介绍自己。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"by yourself / by yourselves\",\"zh\":\"独自；靠自己\",\"note\":\"强调没有别人陪同或帮助，具体含义看上下文。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"用于泛指的人或正式说明中的抽象主语；yourself 则直接对 you 说话。\"",
+        "valueJson": "\"通常与泛指主语 one 对应；对听话者 you 说话时用 yourself / yourselves，不能任意互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"作宾格时指动作作用的对象；若对象就是主语本人，应改用 yourself 或 yourselves。\"",
+        "valueJson": "\"you 可作普通宾语，如 I can help you；在 You hurt yourself 这类同一小句的反身结构中，用 yourself / yourselves。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"表示两人或多人相互做某事；yourself 表示动作回到同一个人身上。\"",
+        "valueJson": "\"each other 表示两人或多人相互做某事；yourselves 表示动作回到主语所指的你们自己。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"反身关系与互相关系不同；主语是 you 而动作由对方做给你时，可用宾格 you，如 She helped you。\"",
+        "valueJson": "\"反身关系与互相关系不同；主语是别人、动作作用于你时，可用宾格 you，如 She helped you。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"强调 you 本人参与或完成某事，也可强调独立完成。\"",
+        "valueJson": "\"用来加强语气，强调“你本人”或“你们本人”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在句末，也可放在 by 后；是否表示“独自”需结合语境判断。\"",
+        "valueJson": "\"常紧跟主语 you，也可放在句末；删去后句子仍完整，但失去对本人的强调。表示“独自、靠自己”时常用 by yourself / by yourselves。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"Did you make this card by yourself?\",\"zh\":\"这张卡片是你自己一个人做的吗？\",\"note\":\"by yourself 强调没有他人帮忙。\"}",
+        "valueJson": "{\"id\":\"s2-e2\",\"senseId\":\"s2\",\"en\":\"You yourself said we should check the map.\",\"zh\":\"你本人说过我们应该看看地图。\",\"note\":\"yourself 紧跟 you，强调这话正是你说的。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"主语 + 动词 + ... + yourself / yourselves\",\"zh\":\"某人亲自做某事\",\"note\":\"把反身代词放在句末附近，强调是听话的人本人做的。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"You yourself / yourselves + 动词 ...；You + 动词 ... + yourself / yourselves\",\"zh\":\"你本人／你们本人做某事\",\"note\":\"yourself / yourselves 可紧跟主语 you，也可放在句末，强调本人。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"by yourself / by yourselves\",\"zh\":\"独自；靠自己\",\"note\":\"用于说明独立行动；在不同语境中也可只表示没有人陪伴。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"on your own\",\"zh\":\"独自；靠自己\",\"note\":\"常强调没有帮助；yourself 也能表达此意，但须看它在句中的搭配。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"personally 偏重本人参与或个人立场；on your own 偏重独立完成。\"",
+        "valueJson": "\"personally 可对应“亲自”，但还可表示“就个人而言”；yourself / yourselves 在这里强调主语 you 本人。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"with someone’s help\",\"zh\":\"在某人的帮助下\",\"note\":\"用于说明事情并非独自完成；与 by yourself 的“靠自己”义相对。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里的对照只针对“本人做或独自做”的语境；yourself 作反身宾语时没有固定的词汇反义词。\"",
+        "valueJson": "\"这里对照的是“由你本人做”和“由别人做”；本人参与并不必然意味着没有别人帮助。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"s3\",\"title\":\"用于加强语气：你本人\",\"meaning\":\"和主语 you 同位，强调“你本人”，而不是别人。\",\"note\":\"常见于主语后的 yourself / yourselves，中文可按语境译作“你本人”或“你们本人”。\",\"example\":{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"You yourself said we should check the map.\",\"zh\":\"你本人说过我们应该看看地图。\",\"note\":\"yourself 紧跟 you，起强调作用。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"by yourself / yourselves：独自；靠自己\",\"meaning\":\"在 by yourself / by yourselves 中，表示没有其他人陪同，或没有其他人帮助；具体含义看语境。\",\"usageNote\":\"yourself 对应一个人，yourselves 对应多个人。by yourselves 可指你们这一群人一起行动而没有其他人加入，不一定指每个人分别单独行动。\",\"examples\":[{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"Are you staying at home by yourself tonight?\",\"zh\":\"你今晚要一个人待在家吗？\",\"note\":\"这里的 by yourself 表示没有别人陪伴。\"},{\"id\":\"s3-e2\",\"senseId\":\"s3\",\"en\":\"Did you make this card by yourself?\",\"zh\":\"这张卡片是你自己一个人做的吗？\",\"note\":\"这里的 by yourself 强调没有他人帮忙。\"}],\"patterns\":[{\"en\":\"do something by yourself / by yourselves\",\"zh\":\"独自做某事；靠自己做某事\",\"note\":\"根据语境判断是没有别人陪同，还是没有别人帮助。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"all by yourself / all by yourselves\",\"zh\":\"完全独自；全靠自己\",\"note\":\"all 加强“没有其他人陪同或帮助”的意思。\",\"kind\":\"common-collocation\"},{\"en\":\"live by yourself\",\"zh\":\"独居\",\"note\":\"表示一个人居住，不是在说明生活中完全不接受帮助。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"on your own\",\"zh\":\"独自；靠自己\",\"note\":\"也可表示没有陪伴或没有帮助，需结合语境判断。\"},{\"en\":\"alone\",\"zh\":\"独自；单独\",\"note\":\"在表示无人陪伴时可接近 by yourself；若要明确表示无人帮助，可用 without anyone’s help。\"}],\"contrasting\":[{\"en\":\"with someone’s help\",\"zh\":\"在某人的帮助下\",\"note\":\"与 by yourself 的“靠自己、不靠别人帮助”义相对。\"},{\"en\":\"with other people\",\"zh\":\"和其他人一起\",\"note\":\"在表示有人陪同的语境中，与 by yourself 的“独自”义形成对照。\"}],\"similarNote\":\"这些表达的重合程度取决于语境中的陪伴或帮助关系。\",\"contrastingNote\":\"有人帮助与有人陪伴是两种不同关系；应按 by yourself 在具体句子中的意思选择对照表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"两者都包含 yourself，但 by yourself 常补充“独自或靠自己”的意思。\"",
+        "valueJson": "\"yourself 可作反身宾语，也可强调 you 本人；by yourself / by yourselves 常表示没有其他人陪同或帮助。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"s2\"",
+        "valueJson": "\"s3\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"yourself 作强调成分\",\"note\":\"强调主语 you 本人；删去后句子仍完整，不必然表示没有别人帮助或陪同。\",\"example\":{\"id\":\"c2-e3\",\"senseId\":\"s2\",\"en\":\"You yourself chose this hotel.\",\"zh\":\"是你本人选的这家酒店。\",\"note\":\"yourself 紧跟 you，强调作出选择的人是你。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"看 yourself 前面有没有 by，并结合动词和语境判断是反身宾语还是“独自、靠自己”。\"",
+        "valueJson": "\"先看语法作用：yourself 可作反身宾语，也可强调 you 本人；by yourself / by yourselves 表示独自或靠自己。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中，yourself 可拆作 your + self，字面可帮助记作“你 + 自己”；这是现代构词理解。\"",
+        "valueJson": "\"yourself 由英语 your（你的）和 self（自己）组合而成，整体用来指“你自己”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的拆分用于理解现代词形，不代表已经说明各部分的历史来源或演变过程。\"",
+        "valueJson": "\"your 和 self 是两个构成成分，不是两个先后相承的历史阶段；这一构成关系本身不能确定具体成词年代。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary：yourself\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/yourself\",\"supports\":[\"yourself 的反身和强调用法\",\"yourself 与 yourselves 的基本用法及发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：yourself（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/yourself#Anglais\",\"supports\":[\"yourself 的反身用法及“你自己／你本人”的基本释义\",\"yourself 的英美发音变体\",\"英语 your 与 self 的组合来源\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1597,
+    "headword": "yourself (pl. yourselves)",
+    "meaning_zh": "pron. 你自己",
+    "phonetic": "/juә'self/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "yourselves",
+        "kind": "s"
+      }
+    ]
+  }
+}

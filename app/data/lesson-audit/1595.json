@@ -1,0 +1,289 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cbe781f24bcfb56db00b97062ab47009eb6684e2e91027072f4da8a1be251e71",
+    "executedReviewPromptHash": "cbe781f24bcfb56db00b97062ab47009eb6684e2e91027072f4da8a1be251e71",
+    "reviewHash": "0c8ae467d63e61cca942f5d183314f3020b6c13264e9f359e3038716ad003d3a",
+    "wordId": 1595,
+    "inputHash": "f0a94d8c00131883d5be615a444e205583adff63e273b17c441f65d3e0b77a85",
+    "draftHash": "42fad3bf34207646c693d4e863f75d925a55d89a3d7bdf0648355de8a4e43823",
+    "finalHash": "d868bf0c28b36ba689b475862659c33cfaeb9cb033a5a34a1ccc9a9f2ad031c5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/your#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.282Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 232289,
+        "revisionId": 39764528,
+        "revisionTimestamp": "2026-08-03T04:51:51Z",
+        "sha256": "eeb46893afd699181bcaaa000e84aac2582d2f9869ba2278117bea3b14e308f9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/your",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:33:43.806Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:40:29.100Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/1",
+        "message": "your 与 you’re 通常同音，但意思不同；“意思相同”会直接造成误学。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面获取失败，不能作为已经支撑正文的来源。应改引实际取得的法语维基词典英语词条，并同步修改引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的泛指功能；现有两个例句也未实际展示“你们的”。应补泛指用法，并明确展示复数听话者及非所有权关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "不能仅凭后面出现名词就判断用 your；You’re friends. 是规范句子。应以能否展开为 you are 及句子结构判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/confusions/0/items",
+        "message": "四个现有例句对象均缺少结构要求必填的 note 字段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline；/takeaway；/senses/0/patterns/0/note",
+        "message": "“属于”不足以概括亲属、特点等关系；“后直接接名词”也忽略了 your new room 等正常结构。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "“通常重读部分”不适合说明这个单音节词；应明确区分强读、弱读，并采用实际来源中的发音标注。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/0",
+        "message": "your name 对多人使用时通常具有逐一分配的含义；应与明确表示多个名字的 your names 区分。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的物主限定词定义、同音误拼记录及英美发音。修订后覆盖具体听话者的单复数所属关系、其他关联关系及常用泛指功能，每个核心用法均至少有两个原创例句。来源虽把误拼列在动词变形栏，其说明明确指向拼写错误，不能据此新增规范动词义。近义与人称对照不作为通用替换或严格反义处理；现有词族说明无需强造派生词。标为 etymology 的材料正文没有历史词源内容，因此保留空阶段，不补造历史链条；这也是本次历史覆盖的局限。",
+    "senseInventory": [
+      {
+        "sense": "物主限定词：你（们）的，表示所有权及其他关联关系",
+        "coveredBy": [
+          "your-possessive"
+        ],
+        "assessment": "保留为一个基本义；补充明确面向多人的例句和亲属关系例句，无须把单复数拆成两个义项。"
+      },
+      {
+        "sense": "物主限定词的泛指功能：一般人的、任何人的",
+        "coveredBy": [
+          "your-general"
+        ],
+        "assessment": "原稿遗漏；依据常用英语功能补充，注明它仍是物主限定词的用法，提供两个例句。"
+      },
+      {
+        "sense": "your 被误写为 you’re",
+        "coveredBy": [
+          "your-possessive"
+        ],
+        "assessment": "由关联的 your-confusions 辨析覆盖；属于同音误拼，不是 your 的规范动词义。修正判断口诀，保留 You’re welcome. 的正确拼写提醒。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"your 放在名词前，表示“属于你”或“属于你们”\"",
+        "valueJson": "\"your 修饰名词：你（们）的，也可泛指一般人的\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"your 后面通常接名词，说明这个人或东西属于正在交谈的一个人或一群人。\"",
+        "valueJson": "\"your 修饰后面的名词，表示与你或你们有关的人或事物；谈论一般情况时，也可泛指任何人的情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"朗读 your book 和 you’re welcome，听清意思相同但拼写不同。\"",
+        "valueJson": "\"朗读 your book 和 you’re welcome，注意 your 与 you’re 通常同音，但意思和拼写不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation",
+        "expectedValueJson": "{\"ipa\":\"/jɔːr/（美式常读 /jʊr/ 或 /jər/）\",\"uk\":\"/jɔː/\",\"us\":\"/jʊr/\",\"accentNote\":\"英音常见 /jɔː/；美音常见 /jʊr/ 或弱读 /jər/，具体读法因口音和语流而异。\",\"notes\":[\"your 通常重读部分是 /jɔː/ 或 /jʊr/；在句中不强调时，元音可能弱化。\",\"your 与 you’re 通常同音，必须根据句意和句子结构判断拼写。\"],\"sourceIds\":[\"cambridge_your\"]}",
+        "valueJson": "{\"ipa\":\"/jɔː/（英）；/jɔɹ/（美）\",\"uk\":\"强读 /jɔː/，弱读 /jə/\",\"us\":\"强读可用 /jɔɹ/，弱读可用 /jɚ/\",\"accentNote\":\"英音还可读 /jʊə/；美音还有 /jʊɚ/、/jɝ/ 等读法，具体发音随口音和语流变化。\",\"notes\":[\"强调 your 时常用强读；句中不强调时常用弱读。\",\"your 与 you’re 通常同音，必须根据句意和句子结构判断拼写。\"],\"sourceIds\":[\"wiktionary_your\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对一个人提问，your 表示这支铅笔是否属于对方。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"your-ex-2\",\"senseId\":\"your-possessive\",\"en\":\"Your idea helped our team.\",\"zh\":\"你的主意帮了我们小组。\"}",
+        "valueJson": "{\"id\":\"your-ex-2\",\"senseId\":\"your-possessive\",\"en\":\"Please put your bags on the table, everyone.\",\"zh\":\"大家请把你们的包放在桌上。\",\"note\":\"everyone 表明是在对一群人说话，your 在这里表示“你们的”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"your-ex-3\",\"senseId\":\"your-possessive\",\"en\":\"Your sister called while you were out.\",\"zh\":\"你不在的时候，你姐姐来过电话。\",\"note\":\"your 也可表示亲属等关联关系，不表示拥有这个人；sister 本身不区分姐姐和妹妹。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"your 后直接接名词，如 your room；名词可为单数或复数。\"",
+        "valueJson": "\"your 修饰后面的名词，中间可有形容词等修饰语，如 your new room；名词可为单数或复数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"your name\",\"zh\":\"你的名字；你们的名字\",\"note\":\"常用于询问或填写姓名，也可按语境指一群人的名字。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"your name\",\"zh\":\"你的名字；（对多人逐一说）各自的名字\",\"note\":\"对多人发出共同指令时，your name 可指每个人各自的名字；明确表示多个名字时用 your names。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_your\"]",
+        "valueJson": "[\"wiktionary_your\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"your-general\",\"title\":\"泛指：一般人的、任何人的\",\"meaning\":\"谈论普遍适用的情况或建议时，your 可泛指一般人的事物、身体或经历，不一定只指眼前某个听话者。\",\"usageNote\":\"这仍是物主限定词的用法，常与泛指的 you 配合，也可出现在没有明说 you 的句子里。是否泛指，要看整个语境。\",\"examples\":[{\"id\":\"your-general-ex-1\",\"senseId\":\"your-general\",\"en\":\"Regular exercise is good for your health.\",\"zh\":\"经常锻炼有益健康。\",\"note\":\"在一般健康建议中，your health 泛指任何人的健康，中文可不逐字译出“你的”。\"},{\"id\":\"your-general-ex-2\",\"senseId\":\"your-general\",\"en\":\"It’s easy to lose your way in a new city.\",\"zh\":\"在陌生的城市里很容易迷路。\",\"note\":\"说明一般人可能遇到的情况；lose your way 表示迷路。\"}],\"patterns\":[{\"en\":\"you … your + 名词\",\"zh\":\"泛指一般人及其相关事物\",\"note\":\"例如谈普遍经验时，you 和 your 可一起泛指一般人；同样的结构也能指特定听话者，需结合语境判断。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"your health\",\"zh\":\"你的健康；泛指人的健康\",\"note\":\"常用于健康建议，泛指时中文往往直接说“健康”。\",\"kind\":\"common-collocation\"},{\"en\":\"lose your way\",\"zh\":\"迷路\",\"note\":\"既可指听话者迷路，也可泛指任何人迷路；实际句意由语境决定。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"one’s\",\"zh\":\"一个人的；一般人的\",\"note\":\"泛指时可用于较正式的表达，如 one’s health；通常与泛指代词 one 呼应。\"}],\"contrasting\":[],\"similarNote\":\"泛指的 your 和 one’s 都可谈一般人的情况，但 one’s 较正式；不能把所有指特定听话者的 your 都直接换成 one’s。\",\"contrastingNote\":\"这一功能没有固定反义词。若改为具体某人的情况，应按所属者选择 my、his、her 等形式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者通常同音，但词性和句子结构不同。your 后接名词；you’re 是 you are 的缩写，后面接形容词、名词短语或动词的现在分词等。\"",
+        "valueJson": "\"两者通常同音，但句子结构不同。your 修饰名词，中间可有形容词等修饰语；you’re 是 you are 的缩写，可接形容词、名词短语或动词的现在分词等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"后面接名词，表示“你的／你们的”。\"",
+        "valueJson": "\"修饰后面的名词，表示“你的／你们的”；中间也可有修饰语，如 your new jacket。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"your 修饰 jacket；整个名词短语 Your jacket 作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"展开后读作 you are；通常可用来说明对方的状态或身份。\"",
+        "valueJson": "\"相当于 you are，可用来说明对方的状态或身份等。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"You’re 可展开为 You are，后面的 ready 是形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到空格后是名词，通常用 your；能展开成 you are 时用 you’re。比如 You’re welcome. 中的 you’re 不能写成 your。\"",
+        "valueJson": "\"先判断能否展开为 you are：You’re friends.（你们是朋友。）用 you’re；Your friends are here.（你的朋友们在这里。）中 your 修饰 friends。不能只看后面是不是名词。You’re welcome. 中的 you’re 不能写成 your。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_your\"]",
+        "valueJson": "[\"wiktionary_your\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_your\",\"title\":\"Cambridge Dictionary: your\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/your\",\"supports\":[\"your 表示听话者所属关系的基本用法\",\"your 与 you’re 的拼写和用法区分\",\"your 的英美发音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_your\",\"title\":\"Wiktionnaire：your（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/your#Anglais\",\"supports\":[\"your 作为英语物主限定词的基本义\",\"your 的英美发音及其与 you’re 的同音关系\",\"把 your 写在应使用 you’re 的位置属于常见拼写错误\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1595,
+    "headword": "your",
+    "meaning_zh": "pron. 你的, 你们的",
+    "phonetic": "/juә/",
+    "pos": "",
+    "forms": []
+  }
+}

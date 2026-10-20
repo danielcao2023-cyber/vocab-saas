@@ -1,0 +1,392 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "55ca5343acf07f8a1d184d5d3e60e5f465f0bfe12681ea7cc6cb2a2e8de44f9b",
+    "executedReviewPromptHash": "55ca5343acf07f8a1d184d5d3e60e5f465f0bfe12681ea7cc6cb2a2e8de44f9b",
+    "reviewHash": "a9bd46a1212ef281aad35cbbcc26fac6609f3db2f3421f6872050c25923ea0e5",
+    "wordId": 930,
+    "inputHash": "6c44bb874ada6c444383f0a95c185f815cf8c00d1c39b071756bdb16a5db4c0c",
+    "draftHash": "84cdbe682d02313150316bef1012765b1c5972b264bcf28ffa6640cb6e23061a",
+    "finalHash": "c6b22afeb6053d1895b7099f01d0d6fb9ea443fec11c84b8f8e8f5e651a02709",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/nothing#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.445Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117160,
+        "revisionId": 36091647,
+        "revisionTimestamp": "2024-09-25T18:17:53Z",
+        "sha256": "9dd1bb88ee3bccfb38e5961df25f52916b434e525232824659a6d66f62aada91",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/nothing",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:43:37.621Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:57:25.616Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 正文未取得，却被多处用作释义、读音和词族的依据。应改引实际取得的法语版维基词典英语词条；该词条未涉及的扩展说明不附不实来源关联。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠的 no + thing 构词来源，初稿仍仅称现代助记拆解且未引用。应补实构词事实和同 URL 来源；两个组成成分不能串成历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech",
+        "message": "遗漏 nothing like 中常见的程度副词功能，以及 sweet nothings 中的名词复数用法；应补充相应词性、例句和实际词形。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "have nothing to do with 是常用表达，放在较少见用法中且只有一个例句，与学习计划中的重点地位不一致。应移入主要教学内容，补足两个例句并区分 have nothing to do。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "核心语法说明宜补充形容词后置，并补入 nothing else、nothing but、better than nothing 等常用表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/0",
+        "message": "next to nothing 表示数量极少或价格极低，不宜归入“不重要”义。应移至数量语境，并在评价义下补入 it's nothing。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "be nothing special 表示“不特别”，不等于“不重要”，不能直接与 be important 对立；nothing、unimportant、worthless 的比较也应限定句型和意义，避免一概判断语体或语气强弱。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "“nothing 不指明具体集合”过于绝对；none 还可承接不可数数量。应以已知范围、数量及指人限制说明二者差别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "原稿的通常否定规则基本正确，但宜明确适用于标准英语中的同一层否定，并补充有意使用 not nothing 的规范用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid",
+        "message": "“空盒子里面留有便条”与“盒内什么也没有”自相矛盾；同时，助记声明应与已有构词依据保持一致。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的英语词条所列“不存在任何东西或事情”核心义、读音、构词关系及派生表达。修订后，核心义、评价义、常用关系表达和程度副词功能各有两个原创英中例句；sweet nothings 作为名词补充用法处理。扩展语法与用法依据专业语言知识，不冒称得到未取得的 Cambridge 正文支持；不补写未经证实的历史年代或中间词形。",
+    "senseInventory": [
+      {
+        "sense": "不定代词：没有任何东西或事情",
+        "coveredBy": [
+          "nothing-1"
+        ],
+        "assessment": "实际取得的词典明列此义。原有两个例句成立；补充形容词后置及常用限定表达。"
+      },
+      {
+        "sense": "评价义：不重要、没有意义或价值",
+        "coveredBy": [
+          "nothing-2"
+        ],
+        "assessment": "原有两个例句分别展示毫无意义和不值得担心，均可保留；修正搭配归类和反向表达。"
+      },
+      {
+        "sense": "数量近零：next to nothing",
+        "coveredBy": [
+          "nothing-1"
+        ],
+        "assessment": "作为数量或价格表达处理，不另强拆核心义，不再误归为“不重要”。"
+      },
+      {
+        "sense": "常用固定表达：have nothing to do with，与……无关",
+        "coveredBy": [
+          "nothing-3"
+        ],
+        "assessment": "移入主要教学内容，补足两个例句，明确区别于“无事可做”。"
+      },
+      {
+        "sense": "程度副词：完全不像；程度远远不及",
+        "coveredBy": [
+          "nothing-4"
+        ],
+        "assessment": "原稿遗漏。补充 be/look nothing like 和 nothing like as ... as ...，分别配例句并限定近义表达的句型。"
+      },
+      {
+        "sense": "名词复数固定表达：sweet nothings，情话",
+        "coveredBy": [
+          "nothing-5"
+        ],
+        "assessment": "实际来源列出该表达；补充其用法和一个原创例句，并说明 nothings 不是不定代词的复数。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"代词\"",
+        "valueJson": "\"不定代词；副词；名词（如 sweet nothings）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-nothing\"]",
+        "valueJson": "[\"wiktionary-fr-nothing-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"代词通常不变形；单数用法常接单数谓语，如 Nothing is wrong.\"",
+        "valueJson": "\"作不定代词时没有复数形式；作主语通常接单数谓语，如 Nothing is wrong. 名词复数 nothings 见 sweet nothings 等特定用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数（特定用法）\",\"form\":\"nothings\",\"ipa\":\"/ˈnʌθɪŋz/\",\"note\":\"在 nothing 后直接加 -s，常见于 sweet nothings（情话）；这不是不定代词 nothing 的复数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-nothing\"]",
+        "valueJson": "[\"wiktionary-fr-nothing-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"nothing + 形容词\",\"zh\":\"没有任何……的东西／事情\",\"note\":\"形容词放在 nothing 后，如 nothing new（没有新情况）、nothing interesting（没有有趣的东西）；表达此义不用 new nothing。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"next to nothing\",\"zh\":\"几乎没有；极少；价格极低\",\"note\":\"用于数量或价格，如 The used chair cost next to nothing（这把二手椅子几乎没花什么钱）。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"nothing else\",\"zh\":\"没有别的东西／事情\",\"note\":\"else 紧跟 nothing，表示除已提到的内容外再无其他，如 I need nothing else（我不需要别的了）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"nothing but + 名词短语\",\"zh\":\"只有……；除了……什么也没有\",\"note\":\"如 I packed nothing but clothes（我只打包了衣服）。but 在这里表示“除了”，整个表达强调只有所说的内容。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"better than nothing\",\"zh\":\"总比没有好\",\"note\":\"用于所得不多或不理想、但仍比完全没有好的情况，如 A short break is better than nothing（休息一小会儿总比不休息好）。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"none 常指前文提到的一组人或物中一个也没有；nothing 不指明具体集合。\"",
+        "valueJson": "\"none 可指已知范围内的人、物或数量，表示“一个也没有／一点也没有”；nothing 在本义中指“没有任何东西或事情”，表达“没有人”要用 no one 或 nobody。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"none 通常承接已知的一组对象；nothing 更泛指“没有任何东西或事情”。\"",
+        "valueJson": "\"none 通常承接已知对象或数量，可接 of 短语，如 none of the books（这些书一本也没有）；不能用 nothing of the books 表达这个意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-nothing\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"next to nothing\",\"zh\":\"几乎没有；少得可怜\",\"note\":\"可指数量极少，也可指价格极低，按上下文判断。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"it's nothing\",\"zh\":\"没什么；小事一桩\",\"note\":\"可回应道谢、道歉或用于安慰，表示不必放在心上，不是说“什么东西也没有”。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"直接描述重要性；nothing 更口语，也可强调毫无意义或价值。\"",
+        "valueJson": "\"unimportant 是形容词，直接描述某事不重要；nothing 须在 mean nothing、be nothing 等结构中表达相近意思，不能按相同词性直接替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"语气更强，着重指没有实际价值；nothing 的意思范围更广。\"",
+        "valueJson": "\"worthless 是形容词，着重表示没有价值或用处，可能带贬义；只在谈价值的语境中与 nothing 接近，语气不一定比 nothing 更强。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"在评价重要性的语境中与 be nothing special 等表达形成对照。\"",
+        "valueJson": "\"在评价重要性的语境中，与表示“不重要”的 nothing 用法形成对照；be nothing special 是“不特别”，并不等于“不重要”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"nothing-3\",\"title\":\"常用表达：与……毫无关系\",\"meaning\":\"在 have nothing to do with 中表示“与……毫无关系”。\",\"usageNote\":\"有 with 时表示关联；I have nothing to do 则是“我没有事可做”，不能混淆。with 后接涉及的人或事。\",\"examples\":[{\"id\":\"nothing-ex5\",\"senseId\":\"nothing-3\",\"en\":\"That message has nothing to do with our project.\",\"zh\":\"那条消息和我们的项目毫无关系。\",\"note\":\"have nothing to do with 表示没有关联。\"},{\"id\":\"nothing-ex6\",\"senseId\":\"nothing-3\",\"en\":\"The printer problem has nothing to do with your laptop.\",\"zh\":\"打印机的问题和你的笔记本电脑无关。\",\"note\":\"说明问题与所提到的设备没有关联。\"}],\"patterns\":[{\"en\":\"have nothing to do with someone/something\",\"zh\":\"与某人／某事无关\",\"note\":\"with 引出没有关联的人或事；主语不同，have 可变为 has 或 had。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have absolutely nothing to do with\",\"zh\":\"与……完全无关\",\"note\":\"absolutely 加强完全没有关联的语气。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be unrelated to\",\"zh\":\"与……无关\",\"note\":\"用于说明事情、问题等之间没有联系，不表示“没有事可做”。\"}],\"contrasting\":[{\"en\":\"have something to do with\",\"zh\":\"与……有些关系\",\"note\":\"表示确实存在某种关联，未必表示全部原因都在于此。\"}],\"similarNote\":\"这里比较的是关联关系，不是空闲状态。\",\"contrastingNote\":\"在同一句型中，something 表示存在某种关系，nothing 表示没有关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"nothing-4\",\"title\":\"程度副词：完全不像；远远不及\",\"meaning\":\"用于强调相似或比较的程度，常见于 nothing like 等结构。\",\"usageNote\":\"在 be/look nothing like ... 中表示“完全不像”；在 nothing like as ... as ... 中表示程度远远不及。这里不能把 nothing 硬译成“没有东西”。\",\"examples\":[{\"id\":\"nothing-ex7\",\"senseId\":\"nothing-4\",\"en\":\"The new café looks nothing like the old one.\",\"zh\":\"新咖啡馆的样子和原来那家完全不一样。\",\"note\":\"looks nothing like 表示外观完全不像。\"},{\"id\":\"nothing-ex8\",\"senseId\":\"nothing-4\",\"en\":\"The hike was nothing like as hard as we expected.\",\"zh\":\"这次徒步远没有我们预想的那么辛苦。\",\"note\":\"nothing like as hard as 强调实际难度远低于预想。\"}],\"patterns\":[{\"en\":\"be/look nothing like + 名词或代词\",\"zh\":\"完全不像……\",\"note\":\"表示外观、性格等差别很大，如 looks nothing like the photo。\",\"kind\":\"sentence-pattern\"},{\"en\":\"nothing like as + 形容词/副词 + as ...\",\"zh\":\"远没有……那么……\",\"note\":\"比较双方的程度，前者远不及后者。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"look nothing like the photo\",\"zh\":\"外观与照片完全不同\",\"note\":\"可用于比较商品实物、食物或景物与照片的差别。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"not at all like\",\"zh\":\"完全不像\",\"note\":\"用于相似程度，可对应 be/look nothing like，不能替换所有 nothing 用法。\"},{\"en\":\"nowhere near as ... as ...\",\"zh\":\"远没有……那么……\",\"note\":\"用于程度比较，与 nothing like as ... as ... 接近。\"}],\"contrasting\":[{\"en\":\"just like\",\"zh\":\"正像……；和……非常像\",\"note\":\"在相似程度的语境中与 nothing like 对照。\"}],\"similarNote\":\"两个近似表达分别对应“完全不像”和“远远不及”，句型要配套使用。\",\"contrastingNote\":\"比较相似程度时，nothing like 表示很不像，just like 表示非常像。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"nothing-3\",\"title\":\"没有某种关系\",\"meaning\":\"在 have nothing to do with 中表示“与……毫无关系”。\",\"note\":\"这是常见固定表达，注意 do with 后接名词或代词。\",\"example\":{\"id\":\"nothing-ex5\",\"senseId\":\"nothing-3\",\"en\":\"That message has nothing to do with our project.\",\"zh\":\"那条消息和我们的项目毫无关系。\",\"note\":\"have nothing to do with 表示没有关联。\"},\"sourceIds\":[\"cambridge-nothing\"]}",
+        "valueJson": "{\"id\":\"nothing-5\",\"title\":\"名词复数固定表达：sweet nothings（情话）\",\"meaning\":\"sweet nothings 指恋人之间亲昵、甜蜜的话语。\",\"note\":\"这里 nothings 是名词复数，不是不定代词 nothing 的复数；整个搭配通常用于亲昵、浪漫的语境。\",\"example\":{\"id\":\"nothing-ex9\",\"senseId\":\"nothing-5\",\"en\":\"He whispered sweet nothings to his wife while they danced.\",\"zh\":\"他们跳舞时，他在妻子耳边低声说着情话。\",\"note\":\"whisper sweet nothings to someone 表示向某人低声说情话。\"},\"sourceIds\":[\"wiktionary-fr-nothing-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-nothing\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"not nothing（有意的双重否定）\",\"note\":\"可以用否定 nothing 来强调某事仍有一定价值、数量或意义，并非一见 not 和 nothing 连用就是错误。\",\"example\":{\"id\":\"nothing-conf4\",\"senseId\":\"nothing-2\",\"en\":\"Ten dollars is not nothing when you're short of cash.\",\"zh\":\"手头紧时，十美元也不是个小数目。\",\"note\":\"强调十美元仍有价值，不是在表达“没有钱”。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"通常说 I found nothing 或 I didn't find anything；不要把两种否定结构混在一起说 I didn't find nothing。\"",
+        "valueJson": "\"在标准英语中，表达“什么也没找到”通常说 I found nothing 或 I didn't find anything。有意使用 not nothing 时，意思是“并非毫无……”，不能把所有同时含 not 与 nothing 的句子都判错。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上可看作 no（没有）+ thing（东西），帮助理解“没有任何东西／事情”。\"",
+        "valueJson": "\"nothing 由 no（没有、无）与 thing（东西、事情）复合而成，字面意思是“没有任何东西”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代构词拆解，帮助记忆词义；不据此推断历史演变。\"",
+        "valueJson": "\"no 与 thing 是共同组成 nothing 的两个成分；nothing 在现代英语中写成一个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr-nothing-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-nothing\"]",
+        "valueJson": "[\"wiktionary-fr-nothing-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/title",
+        "expectedValueJson": "\"空盒子里的便条\"",
+        "valueJson": "\"空盒子和盒盖上的便条\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象打开一个空盒子，里面只留着一张写有 no thing 的便条：没有东西。把它放进句子 There is nothing in the box，就能记住这个词的核心用法。\"",
+        "valueJson": "\"想象你打开一个空盒子，盒里空空的。你在盒盖外贴上一张写着 no + thing 的便条，提醒自己“没有东西”。把这个画面和 There is nothing in the box 联系起来，记住 nothing 的核心用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"no thing 是帮助联想的现代拆分，不代表历史词源。\"",
+        "valueJson": "\"no + thing 是有词源依据的构词分析；空盒子和便条只是助记情节，不是单词起源的历史故事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-nothing\",\"title\":\"Cambridge Dictionary: nothing\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/nothing\",\"supports\":[\"nothing 的读音与词性\",\"nothing 表示不存在的东西或事情\",\"nothing 的常见搭配与句型\",\"nothingness 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr-nothing-en\",\"title\":\"维基词典法语版：nothing（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/nothing#Anglais\",\"supports\":[\"nothing 的读音、不定代词词性及核心义\",\"no 与 thing 的复合构词关系\",\"nothingness 的派生关系与“虚无”义\",\"better than nothing、it's nothing、next to nothing、nothing else、sweet nothings 等表达的收录\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 930,
+    "headword": "nothing",
+    "meaning_zh": "pron. 没有什么；没有东西",
+    "phonetic": "/'nʌθiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

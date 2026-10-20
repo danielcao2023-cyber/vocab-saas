@@ -1,0 +1,539 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ef60d65a5116a458670a6e3752bb948d099683a208f908cf5f059435f16b6d32",
+    "executedReviewPromptHash": "ef60d65a5116a458670a6e3752bb948d099683a208f908cf5f059435f16b6d32",
+    "reviewHash": "7d510d07ae4d83f2e070256f9eaf0ff476f8155307b69f8337f422bb17e3ede0",
+    "wordId": 1411,
+    "inputHash": "20c5334e948694d6f571a7711f5ded84de7fd042fad0be34b1945bf586d3cb32",
+    "draftHash": "9add8c36dc302be46573816c3ca2b08676a2b4a1186698747ff3f9e4d5a3501a",
+    "finalHash": "d4039241c849322952a0fb9e05a2e1c00a4153b022d87e46a51f27508eccadc4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/thin#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.430Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115888,
+        "revisionId": 39763409,
+        "revisionTimestamp": "2026-08-03T04:31:57Z",
+        "sha256": "df2581a3e95c29109e1c8a9347d91d95963a63b4a42e7e76ba8429ac3860f2af",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/thin",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:00:45.304Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:19:54.765Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "ship 与 thin 只有元音相同，并不同韵；thin 与 win、pin 同韵。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/confusions/0、/wordFamily",
+        "message": "多条例句缺少结构要求中的必填 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "形容词义混入“渐渐减少”的动词意义；首例重复表达“人少”，缺少自然语境；thin out 也不应作为该形容词义的搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/collocations/0",
+        "message": "用于人手、精力时，spread too thin 常表示承担过多任务而难以兼顾，现有解释过于笼统。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "液体稠度、雾的浓密程度和溶液浓度未充分区分；concentrated 不能作为这一整组用法的直接反义表达。该形容词义的搭配栏还混入了动词短语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/partOfSpeech、/takeaway",
+        "message": "遗漏常用的空气稀薄义、理由或证据薄弱义，以及 slice ... thin 等有限搭配中的副词功能，须补充相应例句和用法边界。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "声音单薄与理由缺乏说服力被合并，却只举了声音例句；thin voice 也不只是音量微弱。应拆开处理。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/4",
+        "message": "thin ... with ... 被概括成用材料使任何东西变薄，范围过宽；还应展示不带 out 的常用不及物用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary、/etymology/stages",
+        "message": "阶段按由晚到早排列，会使顺序箭头误示历史方向；各阶段 meaning 实为占位说明。应将可证实的历史词形关系写入摘要，清空没有可靠史义的阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/3、/wordFamilyNote",
+        "message": "thickness 来自 thick，与 thin 语义相关，但不能据此归入 thin 的派生词族。应改为 thinness，并准确说明其两个 n 分别来自词干和后缀。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similar/1/zh",
+        "message": "将 skinny 一律译成“瘦得皮包骨”过强，宜改为“很瘦的；瘦巴巴的”。"
+      }
+    ],
+    "coverageAssessment": "补丁后覆盖薄、细、瘦、稀疏、液体稀、雾和空气稀薄、声音单薄、理由或证据薄弱，以及及物动词、不及物动词和常见副词功能；每个核心义均有至少两例。衣物轻薄归入厚度义，不另造独立义项。词条中的低频名词“细小部分”和副词“微弱地”等泛释不扩写为可自由套用的现代常用义。历史内容仅依据已取得的英语词条材料；法语是其编辑说明语言。推荐链接不等于已取得的网页证据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：薄的，包括衣物轻薄、不够保暖",
+        "coveredBy": [
+          "thin-adj-thickness"
+        ],
+        "assessment": "原有封面例句可用；补充衣物用法和例句。"
+      },
+      {
+        "sense": "形容词：细的、不粗的",
+        "coveredBy": [
+          "thin-adj-thickness"
+        ],
+        "assessment": "细线例句已覆盖，与厚度义合讲合理。"
+      },
+      {
+        "sense": "形容词：瘦的",
+        "coveredBy": [
+          "thin-adj-body"
+        ],
+        "assessment": "已有两例，身材描述及近反义的语境基本准确；调整 skinny 的过强译法。"
+      },
+      {
+        "sense": "形容词：稀少的、稀疏的",
+        "coveredBy": [
+          "thin-adj-sparse"
+        ],
+        "assessment": "以人群和头发覆盖；修正动态释义和重复例句。"
+      },
+      {
+        "sense": "形容词：液体稀的、不浓稠的，部分语境可译为淡",
+        "coveredBy": [
+          "thin-adj-liquid"
+        ],
+        "assessment": "保留汤的例句，并明确稠度不等同于味道强弱或溶液浓度。"
+      },
+      {
+        "sense": "形容词：雾等不浓密的",
+        "coveredBy": [
+          "thin-adj-liquid"
+        ],
+        "assessment": "薄雾例句已覆盖；限定其与液体稠度的共同点及差异。"
+      },
+      {
+        "sense": "形容词：空气稀薄的",
+        "coveredBy": [
+          "thin-adj-air"
+        ],
+        "assessment": "原稿遗漏；补充独立核心义和两例。"
+      },
+      {
+        "sense": "形容词：声音细弱、单薄的",
+        "coveredBy": [
+          "thin-adj-weak"
+        ],
+        "assessment": "作为拓展义保留，修正为声音不饱满，而非单指音量小。"
+      },
+      {
+        "sense": "形容词：理由、借口、证据薄弱或不充分的",
+        "coveredBy": [
+          "thin-adj-unconvincing"
+        ],
+        "assessment": "原稿仅在释义中提及；补为核心引申义，用借口和证据分别举例。"
+      },
+      {
+        "sense": "及物动词：使变薄、使液体变稀、使密度或数量减少",
+        "coveredBy": [
+          "thin-verb"
+        ],
+        "assessment": "调稀颜料的例句及间苗搭配可用；修正 with 句型的适用范围。"
+      },
+      {
+        "sense": "不及物动词：变薄、变稀疏、变少",
+        "coveredBy": [
+          "thin-verb"
+        ],
+        "assessment": "保留 thin out，补充头发变稀和冰层变薄的裸动词用法。"
+      },
+      {
+        "sense": "副词：薄薄地",
+        "coveredBy": [
+          "thin-adv"
+        ],
+        "assessment": "原稿遗漏；补充切片和涂抹例句，说明其搭配范围有限。"
+      },
+      {
+        "sense": "副词：稀疏地、微弱地等低频概括",
+        "coveredBy": [],
+        "assessment": "不将这些泛释教成 thin 可任意替代 thinly 或 weakly 的规则；本课优先教授常见的薄地义。"
+      },
+      {
+        "sense": "名词：细小部分",
+        "coveredBy": [],
+        "assessment": "属于低频概括释义，不纳入初中核心教学，也不据此生造现代常用名词例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"元音是短音 /ɪ/，与 thin 同韵的词有 win、ship。\"",
+        "valueJson": "\"元音是短音 /ɪ/；thin 与 win、pin 同韵。ship 也含 /ɪ/，但词尾不同，因此不同韵。\""
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective; verb\"",
+        "valueJson": "\"adjective; verb; adverb\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作形容词时，thin 常表示厚度小、身体瘦或数量稀少；作动词时，表示使某物变稀或变少。\"",
+        "valueJson": "\"thin 可形容薄、细、瘦、稀疏或稀薄，也可形容理由、证据薄弱；作动词表示使变薄、变稀、变少或发生这些变化，在 slice ... thin 等搭配中还可作副词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常放在名词前，也可放在 be、look 等系动词后。\"",
+        "valueJson": "\"常放在名词前，也可放在 be、look 等系动词后。形容衣物时，常强调面料薄、保暖不足，如 a thin jacket。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin 描写封面的厚度小。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin line 指线条细，不是线条短。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-thickness-ex-jacket\",\"senseId\":\"thin-adj-thickness\",\"en\":\"This jacket is too thin for a cold morning.\",\"zh\":\"这件夹克太薄，寒冷的早晨穿它不够暖和。\",\"note\":\"形容衣物时，thin 可通过面料薄表达保暖不足。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"looked 后接形容词 thin，描述小狗病后的体形。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin 描述体形；but 表示这里的瘦并未妨碍精力充沛。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/zh",
+        "expectedValueJson": "\"瘦得皮包骨的\"",
+        "valueJson": "\"很瘦的；瘦巴巴的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"指数量少、分布不密，或某段时间里人或事物渐渐减少。\"",
+        "valueJson": "\"指人或事物数量少、分布不密，如人群稀疏、头发不浓密；变化过程可用动词 thin 或 thin out 表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"thin-ex-5\",\"senseId\":\"thin-adj-sparse\",\"en\":\"There were only a few people in the thin crowd.\",\"zh\":\"稀稀拉拉的人群里只有几个人。\"}",
+        "valueJson": "{\"id\":\"thin-ex-5\",\"senseId\":\"thin-adj-sparse\",\"en\":\"There was a thin crowd at the outdoor concert because of the rain.\",\"zh\":\"因为下雨，露天音乐会的观众稀稀拉拉的。\",\"note\":\"thin crowd 说的是观众不多，不是观众的身材瘦。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin 描述头发不浓密；temples 在这里指太阳穴附近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"spread thin\",\"zh\":\"分散开；分布稀疏\",\"note\":\"可描述人手、资源或事物分散到较大范围。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"be spread too thin\",\"zh\":\"人手或精力分散得太开，难以兼顾\",\"note\":\"常指同样的人手、资源或精力承担太多任务，因而顾不过来。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"thin out\",\"zh\":\"变稀；变少\",\"note\":\"常用于人群、树木等数量或密度逐渐降低的情况。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"指液体、雾等不浓、不厚，或某物质含量低。\"",
+        "valueJson": "\"指汤、酱汁等液体不浓稠，也可指雾等不浓密。液体的稠度与溶液的浓度不是同一回事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常与 soup、mist 等名词搭配；与表示味道的 weak 不完全相同。\"",
+        "valueJson": "\"说汤、酱汁时主要谈稠度；说 mist 时谈雾的浓密程度。thin soup 不一定意味着味道淡；茶或咖啡味淡通常用 weak。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin 说明汤不浓稠；加土豆是为了使汤更稠。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin mist 指不浓密的薄雾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0",
+        "expectedValueJson": "{\"en\":\"thin out a liquid\",\"zh\":\"把液体稀释\",\"note\":\"作及物动词时表示使液体变稀；也可按具体情境说 add water to。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"thin gravy\",\"zh\":\"稀的肉汁\",\"note\":\"gravy 是浇在食物上的肉汁；thin 在这里形容其不浓稠。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"dilute\",\"zh\":\"稀释的；稀释\",\"note\":\"可作形容词或动词，常用于液体、溶液；语体比 thin 正式。\"}",
+        "valueJson": "{\"en\":\"dilute\",\"zh\":\"浓度低的；稀释\",\"note\":\"作形容词可指溶液浓度低，作动词可指降低浓度；与 thin 描写液体稠度只在部分语境中重合。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"watery 往往暗示稀得像水；dilute 常用于有意稀释或较正式的说明。\"",
+        "valueJson": "\"watery 往往暗示水分太多、稀得像水；thin 可只描述稠度。dilute 谈浓度，不能仅凭液体稀稠就与 thin 互换。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"concentrated\",\"zh\":\"浓缩的；浓的\",\"note\":\"用于液体或溶液含量较高的语境，与 thin 表示稀薄时对照。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"thick 表稠度高，concentrated 表含量较浓，只在相应液体语境中对照 thin。\"",
+        "valueJson": "\"thick 可在汤汁稠度或雾的浓密程度上与 thin 对照。concentrated 表示浓度高，不能直接当作稠度高的同义说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/meaning",
+        "expectedValueJson": "\"作及物动词时，表示减少厚度、密度或浓度；作不及物动词时，表示这些方面逐渐减少。\"",
+        "valueJson": "\"作及物动词时，表示使物体更薄、使液体更稀，或使分布更疏、数量更少；作不及物动词时，表示自身变薄、变稀或变少。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"及物用法后接被改变的对象；不及物用法常与 out 连用。\"",
+        "valueJson": "\"及物用法后接被改变的对象。不及物用法可以直接使用，如 hair is thinning；thin out 常强调人群、树木等分布变疏，也可作及物短语表示疏开或减少。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin 是及物动词，paint 是宾语，with 引出加入的水。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin out 在这里是不及物用法，描述越接近山顶树木越稀疏的空间变化。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-verb-ex-hair\",\"senseId\":\"thin-verb\",\"en\":\"His hair began to thin in his twenties.\",\"zh\":\"他二十多岁时，头发开始变稀疏。\",\"note\":\"thin 直接作不及物动词，不需要加 out。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-verb-ex-ice\",\"senseId\":\"thin-verb\",\"en\":\"The ice is thinning as the weather warms up.\",\"zh\":\"随着天气转暖，冰层正在变薄。\",\"note\":\"is thinning 表示正在发生的厚度变化。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/0/zh",
+        "expectedValueJson": "\"用……把某物调稀或变薄\"",
+        "valueJson": "\"用……把液体调稀\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/0/note",
+        "expectedValueJson": "\"thin 是及物动词，宾语是被改变的东西，with 后说明所用材料。\"",
+        "valueJson": "\"在这个调稀液体的句型中，宾语是颜料、汤汁等液体，with 后接加入的水或其他稀释液。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similarNote",
+        "expectedValueJson": "\"dilute 专指浓度降低；thin 也可说厚度或密度降低。\"",
+        "valueJson": "\"在液体语境中，dilute 侧重降低浓度，thin 常侧重降低稠度；thin 还可用于厚度、分布密度或数量的减少。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-adj-air\",\"title\":\"（空气）稀薄的\",\"meaning\":\"指空气密度低，常用来描述高海拔地区的空气。\",\"usageNote\":\"常说 the air is thin 或 thin air，描述空气的稀薄程度。\",\"examples\":[{\"id\":\"thin-air-ex-1\",\"senseId\":\"thin-adj-air\",\"en\":\"The air was thin at the mountain campsite.\",\"zh\":\"山上营地的空气很稀薄。\",\"note\":\"thin 在系动词 was 后形容空气密度低。\"},{\"id\":\"thin-air-ex-2\",\"senseId\":\"thin-adj-air\",\"en\":\"We stopped often to rest while hiking in the thin air.\",\"zh\":\"在稀薄的空气中徒步时，我们常常停下来休息。\",\"note\":\"thin air 指空气稀薄；这里描述的是高海拔徒步的情境。\"}],\"patterns\":[{\"en\":\"the air is thin\",\"zh\":\"空气稀薄\",\"note\":\"thin 作表语，描述空气的状态。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"thin mountain air\",\"zh\":\"山上稀薄的空气\",\"note\":\"常用于高海拔山地的语境。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"rarefied air\",\"zh\":\"稀薄的空气\",\"note\":\"比 thin air 正式，常描述高海拔地区的空气。\"}],\"contrasting\":[{\"en\":\"dense air\",\"zh\":\"密度较高的空气\",\"note\":\"从空气密度这一点与 thin air 对照。\"}],\"similarNote\":\"日常表达可用 thin air；rarefied air 较正式。\",\"contrastingNote\":\"dense 与 thin 在气体密度这一维度上方向相反。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-adj-unconvincing\",\"title\":\"（理由、证据等）薄弱的；不充分的\",\"meaning\":\"指理由、借口或证据不充分，缺乏说服力。\",\"usageNote\":\"常与 excuse、argument、evidence 等搭配，是从分量不足引申出的评价。\",\"examples\":[{\"id\":\"thin-unconvincing-ex-1\",\"senseId\":\"thin-adj-unconvincing\",\"en\":\"That's a thin excuse for not helping with the washing-up.\",\"zh\":\"用那个借口解释为什么不帮忙洗碗，实在很牵强。\",\"note\":\"thin excuse 指站不住脚的借口。\"},{\"id\":\"thin-unconvincing-ex-2\",\"senseId\":\"thin-adj-unconvincing\",\"en\":\"The claim was based on thin evidence: only three people had tried the new method.\",\"zh\":\"这一说法的依据很薄弱：只有三个人试过这种新方法。\",\"note\":\"thin evidence 指支持说法的证据不充分；evidence 通常是不可数名词。\"}],\"patterns\":[{\"en\":\"a thin excuse for + 名词 / 动名词\",\"zh\":\"为……找的牵强借口\",\"note\":\"for 后说明借口所涉及的事情。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"thin evidence\",\"zh\":\"薄弱的证据\",\"note\":\"评价证据的充分程度，不说 a thin evidence。\",\"kind\":\"common-collocation\"},{\"en\":\"a thin argument\",\"zh\":\"缺乏说服力的论证\",\"note\":\"表示论证缺少足够支持。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"weak\",\"zh\":\"薄弱的；无说服力的\",\"note\":\"weak argument、weak evidence 可表达相近评价，适用范围较广。\"},{\"en\":\"flimsy\",\"zh\":\"站不住脚的\",\"note\":\"flimsy excuse、flimsy evidence 常带明显的否定评价。\"}],\"contrasting\":[{\"en\":\"strong\",\"zh\":\"有力的\",\"note\":\"strong evidence、a strong argument 可分别对照薄弱证据和论证。\"},{\"en\":\"convincing\",\"zh\":\"令人信服的\",\"note\":\"用于解释、理由或论证，强调能使人相信。\"}],\"similarNote\":\"thin 强调支持或分量不足；weak 较宽泛，flimsy 常更明显地表示站不住脚。\",\"contrastingNote\":\"strong 适合证据或论证有力的语境；convincing 强调实际具有说服力。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"thin-adv\",\"title\":\"薄薄地（副词）\",\"meaning\":\"在 cut、slice、spread 等动词的常见搭配中，表示切得薄或抹得薄。\",\"usageNote\":\"thin 可用作不带 -ly 的副词，但搭配范围有限；不能在所有场合代替 thinly。\",\"examples\":[{\"id\":\"thin-adv-ex-1\",\"senseId\":\"thin-adv\",\"en\":\"Slice the bread thin for the sandwiches.\",\"zh\":\"把面包切成薄片做三明治。\",\"note\":\"thin 说明切片要薄；这里也可以用 thinly。\"},{\"id\":\"thin-adv-ex-2\",\"senseId\":\"thin-adv\",\"en\":\"Spread the butter thin on the warm toast.\",\"zh\":\"在热吐司上薄薄地抹一层黄油。\",\"note\":\"thin 在涂抹的搭配中表示抹得薄。\"}],\"patterns\":[{\"en\":\"cut / slice + 宾语 + thin\",\"zh\":\"把……切薄\",\"note\":\"thin 位于宾语之后，说明切片的厚薄。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"spread butter thin\",\"zh\":\"薄薄地涂黄油\",\"note\":\"这是 thin 作副词的常见搭配之一。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"thinly\",\"zh\":\"薄薄地；稀疏地\",\"note\":\"在切片、涂抹语境中可与 thin 接近，但 thinly 的搭配范围更广。\"}],\"contrasting\":[{\"en\":\"thickly\",\"zh\":\"厚厚地\",\"note\":\"如 spread butter thickly，表示厚厚地涂黄油，与薄薄地涂相对。\"}],\"similarNote\":\"slice the bread thin 与 slice the bread thinly 都可用；thinly populated 等其他搭配不能直接换成 thin。\",\"contrastingNote\":\"这里只比较切片或涂层的厚薄，不将 thickly 当作 thin 所有词性的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"thin-adj-weak\",\"title\":\"微弱的；不够有力的\",\"meaning\":\"可指声音轻弱，或论据、理由等缺乏说服力。\",\"note\":\"这是较少见、依赖语境的用法，初学阶段先理解搭配即可。\",\"example\":{\"id\":\"thin-ex-11\",\"senseId\":\"thin-adj-weak\",\"en\":\"We heard a thin voice from the next room.\",\"zh\":\"我们听见隔壁传来微弱的声音。\",\"note\":\"描述声音时，thin 强调声音轻弱、不饱满。\"},\"sourceIds\":[\"oxford-thin\"]}",
+        "valueJson": "{\"id\":\"thin-adj-weak\",\"title\":\"（声音）细弱的；单薄的\",\"meaning\":\"形容声音细而不够饱满，不一定表示音量很小。\",\"note\":\"常见搭配为 a thin voice，可作为声音描写的拓展用法记忆。\",\"example\":{\"id\":\"thin-ex-11\",\"senseId\":\"thin-adj-weak\",\"en\":\"We heard a thin voice from the next room.\",\"zh\":\"我们听见隔壁传来细弱的说话声。\",\"note\":\"thin voice 侧重声音单薄，不能一律换成表示轻声的 quiet voice。\"},\"sourceIds\":[\"oxford-thin\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thin /θɪn/ 在这里作表语，表示纸薄。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"then 在这里表示然后，引出吃完午饭之后的动作；这是对照词例句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"thin 是一个古老的英语词，现代英语中可直接作为整体记忆。\"",
+        "valueJson": "\"thin 源自古英语 þynne；再往前追溯，依次为原始日耳曼语重构形式 *þunnu、重构形式 *þen，以及原始印欧语重构形式 *ten-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"þynne\",\"meaning\":\"与现代英语 thin 有历史联系的旧英语形式。\"},{\"language\":\"原始日耳曼语\",\"form\":\"*þunnu\",\"meaning\":\"资料列出的更早阶段。\"},{\"language\":\"原始印欧语\",\"form\":\"*ten-\",\"meaning\":\"资料所列演变链的更早阶段。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thinner 是 thin 的比较级，than 后接比较对象。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thinnest 是最高级，比较范围是这包纸中的各张纸。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"thinly 是 thin 加 -ly 构成的副词，这里修饰 spread。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3",
+        "expectedValueJson": "{\"word\":\"thickness\",\"partOfSpeech\":\"noun\",\"meaning\":\"厚度；厚薄\",\"formation\":\"thick + -ness，与 thin 同属 thick/thin 这一形容词词族中的相关派生名词。\",\"spellingNote\":\"来自 thick 而不是直接由 thin 加后缀构成；thin 与 thick 是同一对形容词的反义词。\",\"example\":{\"id\":\"thin-family-ex-4\",\"senseId\":\"thin-adj-thickness\",\"en\":\"Check the thickness of the board before you cut it.\",\"zh\":\"切木板前先检查它的厚度。\"},\"sourceIds\":[\"oxford-thin\"]}",
+        "valueJson": "{\"word\":\"thinness\",\"partOfSpeech\":\"noun\",\"meaning\":\"薄、细、瘦或稀薄的状态\",\"formation\":\"thin + -ness，构成表示性质或状态的名词。\",\"spellingNote\":\"thin 的词尾 n 与 -ness 开头的 n 都保留，拼成 thinness；这里不是另加一个 n。\",\"example\":{\"id\":\"thin-family-ex-4\",\"senseId\":\"thin-adj-thickness\",\"en\":\"The thinness of the paper made it easy to tear.\",\"zh\":\"这种纸很薄，所以容易撕破。\",\"note\":\"thinness 在这里表示纸薄这一性质。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"thinner、thinnest、thinly 和动词 thinned、thinning 都保留 thin 的词干；加以元音开头的词尾时双写词尾 n。厚度名词 thickness 来自 thick。\"",
+        "valueJson": "\"thinner、thinnest 是形容词的比较级和最高级，thinned、thinning 是动词变化形式；这四种形式都双写词尾 n。thinly 直接加 -ly；thinness 由 thin + -ness 构成，两个 n 分别来自词干和后缀。thickness 来自反义词 thick，不属于 thin 的直接派生词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1411,
+    "headword": "thin",
+    "meaning_zh": "adj. 薄的, 细的, 瘦的, 稀疏的, 稀薄的, 淡的, 弱的, 空洞的\nvt. 使变薄, 使变细, 使稀少, 使淡\nvi. 变薄, 变细, 变少, 变淡\nadv. 薄地, 稀疏地, 微弱地\nn. 细小部分",
+    "phonetic": "/θin/",
+    "pos": "",
+    "forms": []
+  }
+}

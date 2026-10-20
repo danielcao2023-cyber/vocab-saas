@@ -1,0 +1,248 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "db82ae943fd78869685f6dd90e1e6296a4dee7c6ed0ddcf39ae56faa8d8ff359",
+    "executedReviewPromptHash": "c11f5efe80c6220d93b6e4d2c00a07d27bfc1673246ea56f0e73a1dd01a030ed",
+    "reviewHash": "03fa9eeceb2a97fb890e475ad40c82989e5e7939d6b295e07ad9c65c4f7e030e",
+    "wordId": 217,
+    "inputHash": "0849cdd79ad86ee4ffbd0e7a3a3265c4999d397254747da57574f1c3c445c1cc",
+    "draftHash": "bacbd01424ec0c6761c35e350394be61fa71c2d04027058992b5e6b9c6ab4182",
+    "finalHash": "9d1a222744873ba14f4b3668fa5367a7146ee6b3bcae5ec4d58279fed19238b0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/candle#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.950Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117689,
+        "revisionId": 39769795,
+        "revisionTimestamp": "2026-08-03T09:29:18Z",
+        "sha256": "f75f8fa7451b3ebe02eb064c3c8dff71f52c4d25cc1c63bd6fc31f846d2cf7f4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/candle",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:08:43.717Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:16:41.335Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 未取得正文，不能承担当前读音、释义和词形说明的来源引用。已取得的词条也未列出 candlelight；该复合词讲解正确，可保留，但应移除不对应的引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/2",
+        "message": "原说明容易让学生误以为 candle 不是双音节词，应明确末尾 /l/ 可以自成音节。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "lamp 通常不包括 candle，不能把两者讲成上下位关系。它们是用途相关的照明用品名称，不能作为同义词直接替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "candle an egg for development 搭配不自然，for development 也不能准确表达“检查发育情况”。改用自然、明确的工具搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similar/0/note",
+        "message": "“普通语境都能用”范围过大；inspect 通常表示仔细检查，语气较正式，需要说明其实际使用范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "末级释义宜写“发白、发亮”，避免收窄成发出白色光。字形统一采用来源列出的 candeō；原有 candēre 是同一动词的不定式，本身并非拼写错误。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的两项定义：可数名词“蜡烛”和及物动词“对光检查，尤指蛋”。两义各有两条自然原创例句，无核心义遗漏；动词属于专门用法。法语是词条的解释语言。Cambridge 正文未取得，跨词典复核仍有限。此前报错的两处搭配 note 在修订结果中均为非空短字符串。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：蜡烛",
+        "coveredBy": [
+          "candle-n-1"
+        ],
+        "assessment": "常用核心义已覆盖；停电照明和生日蛋糕两个例句自然，单复数使用正确。"
+      },
+      {
+        "sense": "及物动词：借透射光检查内部，尤指检查蛋",
+        "coveredBy": [
+          "candle-v-1"
+        ],
+        "assessment": "专门义已覆盖；两例均正确体现及物用法。孵化前检查蛋本身合理，不必改动例句；需修正一条不自然的搭配。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/2",
+        "expectedValueJson": "\"末尾不读成两个完整音节。\"",
+        "valueJson": "\"全词通常读两个音节；末尾 /l/ 可以自成音节，词尾 e 不单独发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"泛指灯具，通常靠电或油发光，不一定有烛芯。\"",
+        "valueJson": "\"通常指台灯、油灯等灯具；与 candle 都能用于照明，但一般不把蜡烛称为 lamp。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"lamp 是更宽泛的照明用品名称；candle 特指带烛芯、通常燃烧发光的蜡烛。\"",
+        "valueJson": "\"wax candle 强调蜡制材质；lamp 与 candle 是两类照明用品的名称，不能作为同义词直接替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"candle an egg for development\",\"zh\":\"为查看发育情况而照光检查蛋\",\"note\":\"for 后说明检查目的。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"candle an egg with a flashlight\",\"zh\":\"用手电筒给蛋照光检查\",\"note\":\"with a flashlight 说明照光检查时使用的工具。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"普通语境都能用，范围很广；candle 特指借强光查看内部。\"",
+        "valueJson": "\"inspect 表示仔细检查物品、场所或设备等，语气较正式；candle 专指用透射光检查蛋等物品内部。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 candle 经中古英语 candel，来自古英语 candel；古英语形式借自拉丁语 candēla，拉丁语 candēla 又与 candēre（发白光、发亮）有关。现代英语中 candle 作为整体记忆即可。\"",
+        "valueJson": "\"英语 candle 经中古英语 candel，来自古英语 candel；古英语形式借自拉丁语 candēla（蜡烛），candēla 又源自拉丁语动词 candeō（发白、发亮）。现代英语中 candle 作为整体记忆即可。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/3/form",
+        "expectedValueJson": "\"candēre\"",
+        "valueJson": "\"candeō\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/3/meaning",
+        "expectedValueJson": "\"发白光、发亮\"",
+        "valueJson": "\"发白、发亮\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary-etymology\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: candle\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/candle\",\"supports\":[\"名词 candle 的常见含义与读音\",\"动词 candle 的照光检查用法\",\"candle 的常见词形和搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"candle 的历史词源链\",\"candlestick 等相关词形\"]",
+        "valueJson": "[\"名词 candle 的蜡烛义与动词的照光检查义\",\"英语词条所列读音 /ˈkæn.dl̩/\",\"candle 的历史词源链\",\"词条列出的 candlestick 等相关词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 217,
+    "headword": "candle",
+    "meaning_zh": "n. 蜡烛\nvt. 对着光检查",
+    "phonetic": "/'kændl/",
+    "pos": "",
+    "forms": []
+  }
+}

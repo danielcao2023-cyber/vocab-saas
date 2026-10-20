@@ -1,0 +1,230 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1ed832d0e834ee4ecd5955e295522b5482bff5c8f84a090de241ef73a0474686",
+    "executedReviewPromptHash": "1ed832d0e834ee4ecd5955e295522b5482bff5c8f84a090de241ef73a0474686",
+    "reviewHash": "f1efbcca6aaa34bf0cbc3884c82ba67ad50dc54aa31ed73fc568827f400d7a98",
+    "wordId": 1498,
+    "inputHash": "fa8eb037ec1abce6b55594a0258e6013d152d5b3abf5bc04f0bfd00288dffd77",
+    "draftHash": "252e0837acfd964e314b72a8e9b31b6f4e83008f2f9891274eae7a4e90377d76",
+    "finalHash": "73cf3c1d0b98d1fa992e2df0acd27595e62a0c349b9afb7a5aa84e29da81f8e8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/virus#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.919Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10295,
+        "revisionId": 39868590,
+        "revisionTimestamp": "2026-09-09T16:49:02Z",
+        "sha256": "3c2df91af856222fd96bf256c7108c0ba5963660fd6ec72b341b8a40c4b90bfa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/virus",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:43:43.984Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:50:50.756Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "生物义应说明病毒依靠活细胞复制；“在生物体内繁殖”不够准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote",
+        "message": "来源同时标注可数和不可数，应补充表示病毒物质量时的不可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "当前定义也适用于蠕虫等恶意程序，缺少电脑病毒依附并感染其他程序或文件的区别性特征。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "bacterium 不是 virus 的近义词；细菌也并非都属于病原体。应保留类别对照，移除近义栏中的重复归类。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段中的 meaning 只是来源说明，并非拉丁语词义。来源关系已在 summary 中准确表达，应删除占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/formation",
+        "message": "antivirus 是前缀 anti- 与 virus 构成的派生词，此处不宜称为复合词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "原词条的“毒害”可对应较少见的比喻义，宜简短提示，并与两个常用义区分。"
+      }
+    ],
+    "coverageAssessment": "已核对来源所列的生物病毒、计算机病毒两个主要义项；每义均有两个自然原创英中例句，senseId 对应正确。补充生物义的不可数用法及较少见的有害影响比喻义。“滤过性病毒”不另立现代常用义。词源仅保留已获来源支持的拉丁语来源关系，不补造拉丁语释义。Cambridge 页面未取得内容，仅保留为推荐查询来源。",
+    "senseInventory": [
+      {
+        "sense": "名词：生物病毒",
+        "coveredBy": [
+          "virus-biology"
+        ],
+        "assessment": "核心义覆盖充分；修正定义并补充不可数用法。"
+      },
+      {
+        "sense": "名词：计算机病毒",
+        "coveredBy": [
+          "virus-computing"
+        ],
+        "assessment": "核心义及两个例句齐全；补明与蠕虫的区别。"
+      },
+      {
+        "sense": "名词：像病毒一样蔓延的有害影响（较少见比喻义）",
+        "coveredBy": [
+          "virus-figurative"
+        ],
+        "assessment": "补入次要义提示；依据专业语言知识，不归为已取得词典材料直接支持的义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"能在生物体内繁殖并引起感染或疾病的微小病原体。\"",
+        "valueJson": "\"依靠活细胞进行复制的微小感染性因子，可能引起疾病。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可数名词，常说 a virus 或 viruses；病毒不等同于细菌。\"",
+        "valueJson": "\"通常可数，常说 a virus 或 viruses；谈病毒的量时也可不可数，如 a small amount of virus（少量病毒）。病毒不等同于细菌。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"会自行传播或复制，并可能破坏文件、窃取信息或干扰电脑运行的恶意程序。\"",
+        "valueJson": "\"依附其他程序或文件，在它们被运行或打开时执行，并通过感染其他程序或文件来复制的恶意代码；可能破坏数据或干扰电脑运行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"也是会传播的恶意程序，但技术上与 virus 有区别。\"",
+        "valueJson": "\"也是会复制和传播的恶意程序；蠕虫通常能独立运行并通过网络传播，病毒则依附并感染其他程序或文件，二者不能直接互换。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"bacterium\",\"zh\":\"细菌\",\"note\":\"指细菌这一类微生物，与 virus 是不同类别。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"germ 是日常概称，bacterium 是另一类病原微生物；virus 指特定的病毒。\"",
+        "valueJson": "\"germ 是日常语言中对致病微生物等的宽泛称呼，可包含病毒；virus 更具体，二者不是精确同义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在生物学分类上与病毒相对，二者不是同一种病原体；并非所有语境中的反义词。\"",
+        "valueJson": "\"指一个细菌，复数为 bacteria；细菌和病毒属于不同类别，不能互换，也并非所有细菌都会致病。这是类别对照，不是反义关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"virus\",\"meaning\":\"英语 virus 的来源形式。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"anti- 表示“防止、对抗”，与 virus 组成复合词。\"",
+        "valueJson": "\"在 virus 前加表示“防止、对抗”的前缀 anti-，构成派生词 antivirus。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"virus-figurative\",\"title\":\"比喻：蔓延的有害影响\",\"meaning\":\"像病毒一样传播、产生毒害的思想或影响。\",\"note\":\"较少见，多用于带修辞色彩的表达，如 the virus of hatred；不是指一般的毒药。\",\"example\":{\"id\":\"virus-figurative-ex1\",\"senseId\":\"virus-figurative\",\"en\":\"The virus of hatred spread through the community.\",\"zh\":\"仇恨像病毒一样在这个社区蔓延。\",\"note\":\"把仇恨比作会传播并造成伤害的病毒。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1498,
+    "headword": "virus",
+    "meaning_zh": "n. 病毒, 滤过性病毒, 毒害",
+    "phonetic": "/'vaiәrәs/",
+    "pos": "",
+    "forms": []
+  }
+}

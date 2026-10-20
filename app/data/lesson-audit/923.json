@@ -1,0 +1,342 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "89097e56008a713fb45a4d9e181a13058e3584696df14a5730cf698b318e1d3b",
+    "executedReviewPromptHash": "3267a0cca1155798b02a6b579423995f5aa10033e4c218b95858c0ca70458e65",
+    "reviewHash": "2381931ea513d3ce24ff803be43ad21b8995570b6aaeb7a29ae2d3ae05a49287",
+    "wordId": 923,
+    "inputHash": "a7519da4f2b05f00ab9e586c6519253d949ed1e54bdbff8e4b50eab474cfde6a",
+    "draftHash": "dc41c952c054bc653d4c9814a5a9946c3507d79158b0ec8a779b1ab8f63094cd",
+    "finalHash": "c0b0b4bda00c5ae26daa568c602fe32f860f62f0be2db24cf9033159dcb7ff75",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/nor#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:26.578Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 64502,
+        "revisionId": 39751262,
+        "revisionTimestamp": "2026-08-02T16:45:23Z",
+        "sha256": "395249797de7718839f7bd5da0d6af8d4893c77a1b3f410b321ad69dbfd27719",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/nor",
+        "section": "nor conjunction",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "940c87a05e92fed4dc3004bd8082fb6301b15e2375f4ee8f43c3d30aff5943b9",
+        "summaryAndSupportsWordCount": 59,
+        "sha256": "940c87a05e92fed4dc3004bd8082fb6301b15e2375f4ee8f43c3d30aff5943b9",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/923.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/nor",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:35:38.254Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:53:14.057Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 正文未取得，不能承担草稿中的具体来源归属。改引实际取得的法语维基词典英语词条，限定其支持范围；其中关于 nor 不再用于句首的说明不符合现代标准英语，不予采纳。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "nor 接续否定并另起完整分句时，标准语序要求倒装，不能只说“常用”或“可采用”；还须包括 be 动词，并区分不需要倒装的成分并列。相关学习提示一并修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "not ... or ... 在否定涵盖两项时表示两项都不，译成“不……或……”容易误解。neither ... nor ... 也不宜称为“双重否定”。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "标题讨论否定句中的 or/nor，例句却用肯定选择，未解决实际疑点。应直接比较 We don't have tea or juice 与 We have neither tea nor juice，避免暗示“两项都不”只能用 neither ... nor ...。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "补充 not 后直接连接并列成分，以及换一位说话人进行否定附和的例句；nor do I、nor can she 应标为句型。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0",
+        "message": "句首 nor 是追加否定的句法形式，不是另一个罕见词义。将其并回第二组用法，并为例句补出否定前文。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "汉字“奥”容易诱导读成双元音，“旧标注”也不适合学生文案。改为说明英式单元音及美式 /r/ 与前音同属一个音节。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的否定连接义及其常用功能：neither 配对、not 后成分并列、追加否定分句、句首接续和否定附和。两组核心教学用法均保留至少两个例句；不将句首位置另立词义。现有词源正确保留两种形成分析，空 stages 避免了虚构顺序；无需修改词族或强造反义。审核范围为现代常用英语，不扩展古旧或方言用法。",
+    "senseInventory": [
+      {
+        "sense": "否定连接：与 neither 配对，表示并列两项都不成立",
+        "coveredBy": [
+          "923-nor-neither"
+        ],
+        "assessment": "已覆盖。两个核心例句自然，主谓一致正确；修正相关表达中的否定范围说明和“双重否定”措辞。"
+      },
+      {
+        "sense": "否定连接：在已有否定后表示“也不、也没有”，包括成分并列、分句接续和否定附和",
+        "coveredBy": [
+          "923-nor-additional-negative"
+        ],
+        "assessment": "原有两个分句例句正确。补入成分并列、be 动词附和及具有否定前文的句首接续，明确完整分句的倒装要求。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"一个音节，元音读作“奥”一类的长音；美音词尾有卷舌 r。\",\"不要按旧标注把词尾读成单独的长元音；按英美口音区别词尾 r。\"]",
+        "valueJson": "[\"nor 通常只有一个音节；英式 /ɔː/ 是单元音，不要读成汉语拼音 ao 那样的滑动音。\",\"美式读音通常带 /r/；/r/ 与前面的元音连在同一个音节内，不另加一个音节。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_nor\"]",
+        "valueJson": "[\"wiktionary_fr_nor\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"辨认 Nor do I 这类倒装句：nor 在句首时，助动词要放在主语前。\"",
+        "valueJson": "\"辨认 Nor do I、Nor am I 这类倒装句：nor 接续否定并引出完整分句时，把助动词、情态动词或 be 动词放在主语前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/zh",
+        "expectedValueJson": "\"不……或……\"",
+        "valueJson": "\"既不……也不……（not 的否定范围涵盖两项时）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"否定句中常用 or 连接可选项；neither ... nor ... 更明确地表示两项都不。\"",
+        "valueJson": "\"当 not 的否定范围涵盖两个并列项时，常用 or，例如 I don't eat meat or fish（我既不吃肉，也不吃鱼）；通常可改用 neither ... nor ...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"not ... or ... 也可表达否定下的两个选项，但本结构更强调两者都不。\"",
+        "valueJson": "\"在否定涵盖两个并列项时，not ... or ... 与 neither ... nor ... 通常意义相近；neither ... nor ... 明确强调两项都不。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在连接两个并列对象的语境中，它表达两者都成立，与 neither ... nor ... 的双重否定相对。\"",
+        "valueJson": "\"在连接两个并列对象的语境中，both ... and ... 表示两者都成立，与 neither ... nor ... 表示的两者都不成立形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_nor\"]",
+        "valueJson": "[\"wiktionary_fr_nor\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"nor 通常跟在否定分句或否定表达之后。放在新分句句首时，常用倒装：nor + 助动词/情态动词 + 主语。\"",
+        "valueJson": "\"nor 可在已有否定后连接并列成分，也可追加一个否定分句。用 nor 另起完整分句时，要把助动词、情态动词或 be 动词放在主语前；一般现在时和一般过去时的普通动词用 do/does/did。只连接并列成分时不作这种倒装。句首 nor 接续前文的否定，语气通常较正式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"用 nor 接续前面的否定内容；后面的分句可采用倒装。\"",
+        "valueJson": "\"用 nor 接续前面的否定内容；nor 若另起完整分句，须用倒装，若只连接并列成分则不作这种倒装。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"nor + auxiliary/modal + subject\",\"zh\":\"nor + 助动词/情态动词 + 主语\",\"note\":\"nor 位于新分句句首时，常把助动词或情态动词提到主语前。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"nor + auxiliary/modal/be + subject (+ ...)\",\"zh\":\"nor + 助动词/情态动词/be 动词 + 主语（+ 其余部分）\",\"note\":\"nor 接续否定并引出完整分句时，用这种倒装语序；一般现在时和一般过去时的普通动词用 do/does/did。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"not A nor B\",\"zh\":\"既不 A，也不 B\",\"note\":\"nor 也可直接连接被否定的并列成分，不必另起分句。这类表达偏正式；日常英语常用 not A or B。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/kind",
+        "expectedValueJson": "\"common-collocation\"",
+        "valueJson": "\"sentence-pattern\""
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"923-nor-initial\",\"title\":\"句首表示“也不”\",\"meaning\":\"在较正式的表达中，nor 可放在句首，表示前面提到的否定情况同样适用。\",\"note\":\"常见结构是 nor + 助动词/情态动词 + 主语；日常表达“我也不”时，通常说 Me neither 或 I don't either。\",\"example\":{\"id\":\"923-nor-initial-ex1\",\"senseId\":\"923-nor-initial\",\"en\":\"Nor was the answer easy to find.\",\"zh\":\"这个答案也不容易找到。\",\"note\":\"句首 nor 后用 was，再接主语 the answer。\"},\"sourceIds\":[\"cambridge_nor\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"923-nor-additional-negative-ex3\",\"senseId\":\"923-nor-additional-negative\",\"en\":\"The room wasn't spacious, nor particularly clean.\",\"zh\":\"这个房间不宽敞，也不怎么干净。\",\"note\":\"nor 连接两个形容词（短语），不另起完整分句；这种说法偏正式，口语更常用 or。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"923-nor-additional-negative-ex4\",\"senseId\":\"923-nor-additional-negative\",\"en\":\"'I'm not ready to leave.' 'Nor am I.'\",\"zh\":\"“我还没准备好出发。”“我也没准备好。”\",\"note\":\"第二位说话人附和前面的否定情况；前句用 be，答句也用 am，并把它放在 I 前。日常也常说 Me neither。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"923-nor-initial-ex1\",\"senseId\":\"923-nor-additional-negative\",\"en\":\"The question wasn't clear. Nor was the answer easy to find.\",\"zh\":\"问题表述得不清楚，答案也不容易找到。\",\"note\":\"句首 Nor 接续上一句的否定；was 放在主语 the answer 前。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_nor\"]",
+        "valueJson": "[\"wiktionary_fr_nor\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_nor\"]",
+        "valueJson": "[\"wiktionary_fr_nor\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"or 常连接普通选择；nor 常用于 neither ... nor ... 或接续否定分句。\"",
+        "valueJson": "\"not 的否定范围涵盖两个并列成分时，常用 or；neither ... nor ... 也可表示两项都不。nor 还可追加一个否定分句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"用于普通选择，也常见于 not ... or ... 结构。\"",
+        "valueJson": "\"or 除了表示选择，也常连接同时处在 not 否定范围内的两个并列成分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example",
+        "expectedValueJson": "{\"id\":\"923-conf-or-ex\",\"senseId\":\"923-nor-neither\",\"en\":\"You can have tea or juice.\",\"zh\":\"你可以喝茶或果汁。\",\"note\":\"这是肯定的普通选择，用 or。\"}",
+        "valueJson": "{\"id\":\"923-conf-or-ex\",\"senseId\":\"923-nor-neither\",\"en\":\"We don't have tea or juice.\",\"zh\":\"茶和果汁我们都没有。\",\"note\":\"not 的否定范围包括 tea 和 juice；这里的 or 不表示仍有其中一种。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"普通选择用 or；表达两项都不时，用 neither ... nor ...。\"",
+        "valueJson": "\"表达两项都不时，可用 not ... or ...，也可用 neither ... nor ...；nor 接续否定并另起完整分句时，用倒装。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_nor\"]",
+        "valueJson": "[\"wiktionary_fr_nor\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"nor 引出新分句时，记得把助动词放到主语前。\"",
+        "valueJson": "\"nor 接续否定并引出完整分句时，把助动词、情态动词或 be 动词放在主语前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_nor\",\"title\":\"Cambridge Dictionary: nor\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/nor\",\"supports\":[\"nor 的连词用法及其与 neither 的搭配\",\"nor 引出否定分句时的语序\",\"英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_fr_nor\",\"title\":\"Wiktionnaire: nor（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/nor#Anglais\",\"supports\":[\"nor 的连词词性及否定连接义\",\"neither ... nor ... 及 not 后连接并列成分的用法\",\"英式与美式读音\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 923,
+    "headword": "nor",
+    "meaning_zh": "conj. 也不, 也没有",
+    "phonetic": "/nɒ:/",
+    "pos": "",
+    "forms": []
+  }
+}

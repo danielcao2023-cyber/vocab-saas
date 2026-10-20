@@ -1,0 +1,588 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "50ef701aef41c3ddad11bf40f8000ef1cbc17bb78e4b17b9047ecdeac48d13b2",
+    "executedReviewPromptHash": "43f9177681d4dd70d52937cf80dee5aa628be8409b1b6a8b0bdd047e84050511",
+    "reviewHash": "c2be0d8f57c617699a508e2babfdd5532c509d9b2118cfa31e463e5a16ae4c7e",
+    "wordId": 799,
+    "inputHash": "d129369daf0f1bd477284a6b047f68cb123ae7c9e62abc95d9c434210b808660",
+    "draftHash": "9f1f53214597cd29a133875fb92718450666da93f3426021709cca2902e9495a",
+    "finalHash": "4d11a7041fdefcc310370da7128811e685c36eed6e368f7e507da80606010fe6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/live#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:06.064Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 25270,
+        "revisionId": 39752618,
+        "revisionTimestamp": "2026-08-02T18:55:23Z",
+        "sha256": "f907f722de68ef68dad96651449cffd6c96e0fa645d839fa498f84e47d74c24f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/live",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:18:59.986Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:27:27.324Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "lives 的构词说明错误：live 保留 e，直接加 s；去掉 e 再加 s 会得到错误拼写 livs。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "合并标题中的多个核心功能未分别达到两例：生存义没有明确例句，过某种生活与 live through 各仅一例，形容词活体义没有完整例句、带电义与实况义各仅一例，现场表演的形容词及副词用法也未充分覆盖。补丁分别补足。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "“后接地点时用 in 或 at”过于绝对；live near、live on an island、live here/there/abroad 均规范。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "需要明确区分 live a … life 与 live through …；现有相近表达只对应经历义，遗漏生活方式义常见的 lead a … life。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/meaning；/senses/3",
+        "message": "现场演出不要求同时直播；现有定义把两者混为一谈。go live 中的 live 是形容词补语，不宜列为副词搭配；live on air 仅译成“正在播出”也丢失了实况含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "把 live 泛用于颜色、记忆和想象力缺乏可靠依据，a live imagination 不适合作为初中常用示范。改用确切的非正式表达 a live wire，并保留该项例句 senseId 与本项 id 完全一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions；/senses/3/relatedExpressions",
+        "message": "in person 与 live 不构成范围上的包含关系；远程直播也可以是 live。带电义应补明常见反向表达 dead；副词义的反向表达应说明实际句法，避免把形容词 recorded 当成可直接替换的副词。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "livelily 虽存在，却不是通常采用的副词表达；lively 本身主要是形容词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1/example；/memoryAid/title",
+        "message": "living room 未直接展示所列 living 的活体或生计含义；助记标题“词尾的元音”也不准确，live 的目标元音并不在词尾。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "“古英语 live 的动词形式”容易误把现代拼写 live 当作古英语词形；部分阶段的 meaning 实为来源说明。可靠历史关系保留在概述中，删除未给出确切阶段词义的占位链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "Cambridge 页面实际未取得内容，不能承担这些具体结论的支撑归因。补丁移除该来源及引用，改用已取得的英语词条；受限习语的专业语言判断不虚挂来源。"
+      }
+    ],
+    "coverageAssessment": "已核对生存、居住、过某种生活、live through 经历并度过，形容词的活体、带电、现场演出和实况播出，以及副词的现场表演和同步播出。补丁使上述每个核心功能分别具有两个自然英中例句，并纠正拼写、词性、近反义限制、词族和来源归因。“生动、精力充沛”按受限表达处理，不扩张为 live 的通用替换义。较少见义的例句 senseId 与本项 id 一致。未穷举全部扩展短语，Cambridge 未取得的内容未作为依据。",
+    "senseInventory": [
+      {
+        "sense": "动词：活着、生存；活到某个年龄",
+        "coveredBy": [
+          "live-verb-life"
+        ],
+        "assessment": "原例句主要说明居住环境；补充缺水不能生存及活到九十岁的两例。"
+      },
+      {
+        "sense": "动词：居住；生活在某处",
+        "coveredBy": [
+          "live-verb-life"
+        ],
+        "assessment": "原有两例覆盖；修正地点表达必须使用 in/at 的过度概括。"
+      },
+      {
+        "sense": "及物动词：过某种生活",
+        "coveredBy": [
+          "live-verb-experience"
+        ],
+        "assessment": "补足两例，并加入同语境的 lead a … life；明确 life 是宾语。"
+      },
+      {
+        "sense": "动词结构 live through：亲历并活着度过事件或时期",
+        "coveredBy": [
+          "live-verb-experience"
+        ],
+        "assessment": "补足两例，与直接接 life 的结构分清，不教授裸用 live 替代 experience。"
+      },
+      {
+        "sense": "形容词：活的、有生命的",
+        "coveredBy": [
+          "live-adjective"
+        ],
+        "assessment": "补充活螃蟹和活鱼两例；说明此义通常用于名词前，与表语 alive 区分。"
+      },
+      {
+        "sense": "形容词：带电的",
+        "coveredBy": [
+          "live-adjective"
+        ],
+        "assessment": "补足两例；保留 be live，补充 energized 和电气语境中的 dead。"
+      },
+      {
+        "sense": "形容词：现场演出的、真人当场表演的",
+        "coveredBy": [
+          "live-adjective"
+        ],
+        "assessment": "补充现场音乐及现场乐队两例；明确无需同时直播。"
+      },
+      {
+        "sense": "形容词：实况播出的",
+        "coveredBy": [
+          "live-adjective"
+        ],
+        "assessment": "补足电视赛事与游行实况报道两例；go live 移入形容词搭配并注明结构。"
+      },
+      {
+        "sense": "副词：现场表演地",
+        "coveredBy": [
+          "live-adverb"
+        ],
+        "assessment": "补充现场演出与现场演唱两例，不要求存在广播或电视直播。"
+      },
+      {
+        "sense": "副词：实况地、同步播出地",
+        "coveredBy": [
+          "live-adverb"
+        ],
+        "assessment": "原有音乐会直播和记者现场报道两例覆盖；修正搭配与反向表达的词性说明。"
+      },
+      {
+        "sense": "受限的活跃、精力充沛义；词条所列生动义的使用边界",
+        "coveredBy": [
+          "live-adjective-lively"
+        ],
+        "assessment": "用 a live wire 展示精力充沛义；明确一般的活泼、热闹或鲜明生动通常分别用 lively、vivid，不保留不自然的 live imagination。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"记住 live show 是现场演出，形容词 live 通常放在名词前。\"",
+        "valueJson": "\"区分 live animal（活的动物）、live music（现场演奏的音乐）和 broadcast live（现场直播）；live 表示“活的”时通常放在名词前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"例：She lives near the school. 拼写时把词尾 e 去掉再加 s。\"",
+        "valueJson": "\"例：She lives near the school. 保留词尾 e，直接加 -s：live → lives。动词 lives 读 /lɪvz/；不要与 life 的名词复数 lives /laɪvz/ 混淆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"live 可不带宾语表示生活或生存；后接地点时用 in 或 at。live in a city 表示住在某个城市，live at 常接较具体的地址或地点。\"",
+        "valueJson": "\"live 可不带宾语表示活着或生存。表示居住时，live in 常接城市、国家或房屋，live at 常接具体地址；也可说 live near the school、live on an island。here、there、abroad 可直接跟在 live 后，前面不加 in 或 at。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-verb-life-ex3\",\"senseId\":\"live-verb-life\",\"en\":\"People cannot live without water.\",\"zh\":\"人没有水就无法生存。\",\"note\":\"这里的 live 表示生存，不是居住；without 引出生存所不能缺少的东西。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-verb-life-ex4\",\"senseId\":\"live-verb-life\",\"en\":\"Her grandfather lived to be ninety.\",\"zh\":\"她的祖父活到了九十岁。\",\"note\":\"live to be + 年龄表示活到多少岁；lived 读 /lɪvd/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"live to be + 年龄\",\"zh\":\"活到……岁\",\"note\":\"如 live to be ninety；表示寿命，不是在说明居住地点。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"live a long life\",\"zh\":\"活得长寿\",\"note\":\"live 后接 life 表示“过某种生活”或“活某种人生”。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"live without water\",\"zh\":\"在没有水的情况下生存\",\"note\":\"常用于否定句，说明水对生存不可缺少；过某种生活的 live a … life 另见下一义。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"survive\",\"zh\":\"生存；幸存\",\"note\":\"常强调在危险或困难中仍活着；live 更一般，也可只说明活着或活了多久。survive 不表示居住。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"日常表达居住或生存时优先用 live；stay 突出暂时停留，reside 较正式。\"",
+        "valueJson": "\"居住义中，stay 突出暂时停留，reside 较正式；生存义中，survive 常突出经历危险或困难后仍活着。这些表达分别对应 live 的不同意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"过某种生活；经历\"",
+        "valueJson": "\"过某种生活；经历并挺过（live through）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"live a happy life 中 life 是宾语；live through 后接事件或时期。不要把表示“经历”的 live 与及物动词 experience 混淆。\"",
+        "valueJson": "\"live a happy life 中 life 是宾语，说明过怎样的生活。live through a difficult winter 中 through 后接所经历的时期，强调亲历并活着度过；不要把这个结构中的 live 当作可直接替换 experience 的及物动词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-verb-experience-ex3\",\"senseId\":\"live-verb-experience\",\"en\":\"My aunt lives a busy but happy life.\",\"zh\":\"我姑姑过着忙碌却幸福的生活。\",\"note\":\"live a … life 描写生活方式；busy 和 happy 都修饰 life。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-verb-experience-ex4\",\"senseId\":\"live-verb-experience\",\"en\":\"My grandparents lived through the war.\",\"zh\":\"我祖父母经历了那场战争并活了下来。\",\"note\":\"live through 强调亲历那段时期并活着度过。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"lead a … life\",\"zh\":\"过……的生活\",\"note\":\"说明生活方式时常可与 live a … life 替换，如 lead a quiet life；它不表示经历并挺过某件事。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"live through 强调完整经历并挺过；experience 更直接，go through 可指经历过程或困难。\"",
+        "valueJson": "\"生活方式义可用 lead a … life；经历义可比较 experience 和 go through。live through 更强调亲历并活着度过某个事件或时期，不能把这些表达跨义替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"活着的；带电的；现场播出的\"",
+        "valueJson": "\"活的；带电的；现场演出的／实况播出的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作形容词，表示仍活着、带电，或节目和表演正在现场进行并向观众播出。\"",
+        "valueJson": "\"作形容词，表示动物等有生命、电线等带电、表演由真人当场进行，或节目随着事件发生同步播出。现场演出不必同时进行广播或电视直播。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"此义读 /laɪv/。live animal 常指活体动物；live wire 指带电的电线；live show 表示现场演出或实况节目。表示“活着的”时，live 多放在名词前。\"",
+        "valueJson": "\"这些形容词用法都读 /laɪv/。表示“活的”时，live 通常放在名词前，如 a live animal；作表语说明动物活着通常用 alive。带电义可说 The cable is live。live music 强调现场演奏，live broadcast 强调同步播出。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex3\",\"senseId\":\"live-adjective\",\"en\":\"The children found a live crab in the bucket.\",\"zh\":\"孩子们在桶里发现了一只活螃蟹。\",\"note\":\"live 修饰 crab，表示螃蟹是活的，不是死的。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex4\",\"senseId\":\"live-adjective\",\"en\":\"The shop sells live fish for garden ponds.\",\"zh\":\"这家店出售供花园池塘饲养的活鱼。\",\"note\":\"live fish 指活鱼；live 在名词前说明生命状态。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex5\",\"senseId\":\"live-adjective\",\"en\":\"The electrician found a live wire behind the wall.\",\"zh\":\"电工在墙后发现了一根带电的电线。\",\"note\":\"live wire 在这里按字面表示带电的电线。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex6\",\"senseId\":\"live-adjective\",\"en\":\"We enjoyed live music at the café.\",\"zh\":\"我们在咖啡馆欣赏了现场演奏的音乐。\",\"note\":\"live music 与播放录音相对，不表示一定进行了直播。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex7\",\"senseId\":\"live-adjective\",\"en\":\"The café has a live band on Friday nights.\",\"zh\":\"这家咖啡馆每周五晚上都有乐队现场演奏。\",\"note\":\"a live band 指乐队当场表演，而不是播放乐队的录音。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adjective-ex8\",\"senseId\":\"live-adjective\",\"en\":\"The channel will show live coverage of the parade.\",\"zh\":\"这个频道将对游行进行实况转播。\",\"note\":\"live coverage 指随着事件发生同步进行的报道。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"a live + 节目／表演\",\"zh\":\"现场播出的节目／演出\",\"note\":\"live 放在名词前，表示现场进行或实况播出。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"live + 名词\",\"zh\":\"活的／带电的／现场演出的／实况播出的……\",\"note\":\"具体意思由 animal、wire、music、broadcast 等名词决定；不要把现场演出一律理解成直播。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"go live\",\"zh\":\"开始直播；正式上线\",\"note\":\"go 表示进入某种状态，live 在这里是形容词。节目语境指开始直播，网站或系统语境可指正式上线。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"in person\",\"zh\":\"现场；亲自\",\"note\":\"表示人在现场参与，与录播或远程方式相对，但不是所有 live 节目的同义表达。\"}",
+        "valueJson": "{\"en\":\"in person\",\"zh\":\"亲自；本人到场\",\"note\":\"强调人亲自到场；live 可强调现场表演或同步播出。远程直播可以是 live，但屏幕前的观众并未 in person 到场。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"energized\",\"zh\":\"已通电的；带电的\",\"note\":\"在电气语境中可与 live 对应；不能用来表示活体动物或实况节目。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"real-time\",\"zh\":\"实时的\",\"note\":\"在信息同步传输或更新的语境中与 live 接近，如 real-time updates；也用于数据处理，不等于现场表演。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"alive 常作表语说明生命状态；live 常作名词前定语。in person 表示人在现场，范围比实况播出窄。\"",
+        "valueJson": "\"alive 常作表语说明生命状态；energized 对应电气中的带电；real-time 强调传输或更新同步。in person 强调本人到场，与 live 不能简单互换，也没有范围上的包含关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"dead\",\"zh\":\"死的\",\"note\":\"仅与 live 的“活着的”义相对。\"},{\"en\":\"recorded\",\"zh\":\"录制的\",\"note\":\"在节目或表演语境中，与现场进行或实况播出的 live 相对。\"},{\"en\":\"disconnected\",\"zh\":\"未接通电源的\",\"note\":\"只在电线等电气语境中与 live“带电的”形成对照。\"}]",
+        "valueJson": "[{\"en\":\"dead\",\"zh\":\"死的；不带电的\",\"note\":\"a dead animal 与 a live animal 对照；电气语境中 a dead wire 也可与 a live wire 对照，表示不带电的电线。\"},{\"en\":\"recorded\",\"zh\":\"录制的\",\"note\":\"在音乐、节目等语境中与现场演出或实况播出对照；强调预先录制时可用 prerecorded。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"dead、recorded 和 disconnected 分别对应生命状态、播出方式和电气状态，不能互换。\"",
+        "valueJson": "\"dead 可分别在生命状态和电气状态中与 live 相对；recorded 对应音乐或节目采用录制内容的方式。应先确定语境再选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"作副词，表示节目或表演正在现场进行并同步播出。读 /laɪv/。\"",
+        "valueJson": "\"作副词，表示当场表演而不是播放预先录好的内容，或节目随着事件发生同步播出。现场表演不要求同时直播。读 /laɪv/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常见结构是 broadcast live，live 放在动词后说明播出方式。这个副词用法不变形。\"",
+        "valueJson": "\"live 可放在 perform、sing、broadcast、report 等动词后，说明表演或播出方式，如 perform live、broadcast live。这个副词用法不变形。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adverb-ex3\",\"senseId\":\"live-adverb\",\"en\":\"Our band performs live at the café every Saturday.\",\"zh\":\"我们的乐队每周六都在那家咖啡馆现场演出。\",\"note\":\"live 修饰 performs，说明乐队当场演奏；句子没有说演出被同步播出。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"live-adverb-ex4\",\"senseId\":\"live-adverb\",\"en\":\"I heard her sing live for the first time last night.\",\"zh\":\"昨晚我第一次听到她现场演唱。\",\"note\":\"live 说明演唱是现场进行的，而不是听预先录好的演唱。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations",
+        "expectedValueJson": "[{\"en\":\"go live\",\"zh\":\"开始直播；正式上线\",\"note\":\"用于节目开始直播，也可用于网站或服务正式上线，需根据语境理解。\",\"kind\":\"fixed-expression\"},{\"en\":\"live on air\",\"zh\":\"正在播出\",\"note\":\"指广播或电视节目此刻正在播出。\",\"kind\":\"fixed-expression\"}]",
+        "valueJson": "[{\"en\":\"perform live\",\"zh\":\"现场表演\",\"note\":\"live 修饰 perform，强调当场表演，不要求同时广播或直播。\",\"kind\":\"common-collocation\"},{\"en\":\"stream live\",\"zh\":\"通过网络直播\",\"note\":\"live 修饰 stream，强调随事件或表演发生同步传输。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"recorded\",\"zh\":\"录制后播出的\",\"note\":\"在播出方式上与 live“现场同步播出”相对。\"}]",
+        "valueJson": "[{\"en\":\"in a recording\",\"zh\":\"在录音或录像中\",\"note\":\"可在听取或观看方式上形成对照，如 hear her sing live 与 hear her sing in a recording；不是 live 在所有句型中的直接替换。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"recorded 只在播出方式语境中与 live 对照。\"",
+        "valueJson": "\"这是听取或观看方式的语境对照。recorded 是形容词，可说 a recorded programme；不要把它当成能直接替换副词 live 的词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"live-adjective-lively\",\"title\":\"鲜活的；生动的\",\"meaning\":\"可形容颜色、记忆等鲜明而有活力，例如 a live imagination（活跃的想象力）；日常形容人精力充沛时通常用 lively。\",\"note\":\"这是较少见的形容词用法，不要把 live 当作 lively 的通用替代词。\",\"example\":{\"id\":\"live-adjective-lively-ex1\",\"senseId\":\"live-adjective-lively\",\"en\":\"Her live imagination filled the notebook with colorful ideas.\",\"zh\":\"她活跃的想象力让笔记本里写满了多彩的点子。\",\"note\":\"live 在此表示想象力鲜活、有活力。\"},\"sourceIds\":[\"cambridge-live\"]}",
+        "valueJson": "{\"id\":\"live-adjective-lively\",\"title\":\"精力充沛的人（a live wire，非正式）\",\"meaning\":\"a live wire 可指精力充沛、活跃而有感染力的人。单独的 live 不能普遍代替 lively 或 vivid。\",\"note\":\"这里的 live 读 /laɪv/，wire 是“电线”；整个短语是比喻。描述人活泼或场面热闹常用 lively，描述细节生动或记忆鲜明常用 vivid。\",\"example\":{\"id\":\"live-adjective-lively-ex1\",\"senseId\":\"live-adjective-lively\",\"en\":\"My cousin is a real live wire and keeps everyone laughing.\",\"zh\":\"我表亲精力十足，总能逗得大家大笑。\",\"note\":\"a real live wire 在这里形容人活跃，不是指真正带电的电线。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"古英语 live 的动词形式与古英语 lifian、libban 有历史关联；词典所列的后续来源是中古英语 liven。居住义的出现年代在给出的条目中记为 13 世纪。形容词 live 则被列为由 alive 派生。\"",
+        "valueJson": "\"动词 live 的历史形式可追溯到中古英语 liven，更早有古英语 lifian、libban，表示“存在、活着”；“居住”义可追溯到 13 世纪。形容词 live 则由 alive 派生，与动词的历史来源应分别理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"lifian / libban\",\"meaning\":\"有历史关联的古英语动词形式；条目将它们列作 live 的早期来源。\"},{\"language\":\"中古英语\",\"form\":\"liven\",\"meaning\":\"条目列出的中古英语形式，承接古英语来源。\"},{\"language\":\"英语\",\"form\":\"live\",\"meaning\":\"现代动词形式，表示生活、生存；居住义在 13 世纪出现。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这条演变链只说明动词 live 的历史来源；形容词 live 另由 alive 派生，不属于这条链。将这些古英语形式记作历史来源，不等于现代词的拼写规则。\"",
+        "valueJson": "\"动词与形容词虽然现在拼写相同，但历史来源应分别理解；这些古英语词形不是现代英语中可任意拆用的词根，也不是 living、lively 的现代拼写规则。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"lively 的 y 是单词组成部分；副词 lively 通常拼作 livelily。\"",
+        "valueJson": "\"lively 拼作 l-i-v-e-l-y，保留 live 的 e，是形容词；表示“活泼地”常说 in a lively way。livelily 虽存在，但很少用；表示“现场地”的常用副词仍是 live。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example",
+        "expectedValueJson": "{\"id\":\"live-family-living-ex1\",\"senseId\":\"live-verb-life\",\"en\":\"The living room has two large windows.\",\"zh\":\"客厅有两扇大窗户。\",\"note\":\"living room 是固定组合，指客厅；这里的 living 不是“现场的”。\"}",
+        "valueJson": "{\"id\":\"live-family-living-ex1\",\"senseId\":\"live-adjective\",\"en\":\"We saw many living creatures in the pond.\",\"zh\":\"我们在池塘里看到了许多生物。\",\"note\":\"living 在这里是形容词，表示“有生命的”，修饰 creatures，对应 live 的活体义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-live\"]",
+        "valueJson": "[\"wiktionary-live-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/title",
+        "expectedValueJson": "\"看节目单，再听词尾的元音\"",
+        "valueJson": "\"先看词性，再选读音\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-live\",\"title\":\"Cambridge Dictionary: live\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/live\",\"supports\":[\"动词、形容词和副词的常见用法与读音\",\"live in、live with、live a … life 等结构\",\"alive、lively 等近似表达的用法区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: live（English entry）\"",
+        "valueJson": "\"Wiktionnaire：live（英语词条，法语释文）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"动词 live 的历史来源与古英语、中古英语形式\",\"居住义的年代线索\",\"形容词 live 与 alive 的派生关系\"]",
+        "valueJson": "[\"动词、形容词和副词的读音与词性\",\"动词的生存、居住及 live a … life 用法\",\"形容词的活体义和带电义；副词的实况义\",\"living、lively 等派生形式\",\"动词的古英语、中古英语来源和居住义年代\",\"形容词 live 来自 alive 的独立来源\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 799,
+    "headword": "live",
+    "meaning_zh": "adj. 活的, 生动的, 精力充沛的, 实况转播的\nvi. 活, 生存, 居住\nvt. 过着, 度过, 经历\nadv. 实况地",
+    "phonetic": "/liv.laiv/",
+    "pos": "",
+    "forms": []
+  }
+}

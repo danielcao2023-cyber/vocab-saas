@@ -55,11 +55,34 @@ npx tsx scripts/prepare-pronunciation.ts --limit=20
 
 默认导入 Commons 真人录音，优先美式、无合适美式时可用已核实英式录音。音频转为 MP3，保留来源许可；`/api/pronunciation/credits` 提供逐词署名。公开页面可访问不等于许可合格，录音者/许可无法确认时保留 unknown。遇到 429/503 遵守 Retry-After，不通过更换服务绕过限流。词性影响读音的词需要明确对应读法。
 
-全量音频仍在分批补齐，以 `coverage.json` 的时间和实际 `ready` 数为准。服务端核对文件 SHA-256，损坏、缺失或来源不合格的录音不会作为可播放内容返回；旧机器朗读不会作为失败回退。
+截至 2026-10-20，本地真人录音清单有 1599 / 1600 词就绪；`underground` 的候选录音尚未核准与名词、形容词的重音对应关系，标为 unknown，不会用机器朗读冒充真人录音。以 `coverage.json` 的时间和实际 `ready` 数为准。服务端核对文件 SHA-256，损坏、缺失或来源不合格的录音不会作为可播放内容返回。
 
 ## 扩展讲解制作
 
-基础中文释义与 AI 扩展讲解分开统计。核心内容为每词两句自然例句和二至三条常用搭配；词源、词性辨析等字段不适用或未核实时留空。生成稿、已核查稿、对孩子可见的已批准内容不能混计。
+基础中文释义、旧核心内容与完整讲解必须分别统计。2026-10-17 的核心包仅含每词两句例句和二至三条搭配，不代表已满足完整讲解要求。用户于 2026-10-18 认可 `manage` 样例，并要求按该标准扩展全部 1600 词。
+
+完整讲解按常用义项组织：每义分别给自然英中例句、句型和常见/固定搭配，近义区别、限定语境的反义或相反表达；另有易混点、可靠的词根/构词与词族、原创情境助记和词形发音。不能强凑词源或反义词；确实不适用时须说明原因，也不能因不存在“所有语境通用的反义词”而漏掉明确的 `ability / inability` 等关系。事实来源与联想分开，推荐网址与实际核验来源分开。结构校验、独立模型审校、Codex 内容审读和教师审核不能混称。
+
+完整讲解保存为 `data/lessons/<wordId>.json`，共享契约在 `shared/lesson.ts`；`GET /api/word/:id/lesson` 按需返回身份匹配、结构完整且已审校的文件，不修改学习数据库。缺失、草稿或无效文件不会冒充完整讲解，页面保留旧内容。`manage` 的正式样例为 `data/lessons/825.json`。真实完成数量以独立覆盖检查为准，不能把已生成任务数或旧核心块数量当作完成词数。
+
+```bash
+# 公共词典参考缓存；只读词库，不读取孩子的学习记录
+npx tsx scripts/lesson-sources.ts --db data/dev-vocab.db
+# 完整讲解小批编写与独立审校，先暂存，复核后再扩大
+npx tsx scripts/lesson-generate.ts --db data/dev-vocab.db --real --fetch-sources --words ability,accept,after --concurrency 2
+# 独立检查可交付文件；fullCurriculumComplete 还要求总词数恰为 1600
+npx tsx scripts/lesson-status.ts --db data/dev-vocab.db --out ../.tmp/lesson-coverage.json
+# 只读内容疑点汇总：重复、占位、审校记录与内容指纹、每义覆盖；不能代替语义审读
+npx tsx scripts/lesson-quality.ts --db data/dev-vocab.db --out qa/lesson-quality/latest.json
+```
+
+生成草稿、原始模型输出及来源缓存保留在 `.tmp/lesson-generation/` 和 `.tmp/lesson-source-evidence/`；随讲解交付的审校记录在 `data/lesson-audit/`，包含来源摘要、输入与内容指纹、审校修改和真实制作方式。文件使用原子替换。`--publish` 只发布通过校验与审校的新内容，不覆盖已有讲解；超时、失败或审计不匹配的缓存不能作为通过结果恢复。生成与审校是不同调用；审校沿用用户已有 Codex CLI 模型设置，不修改全局配置。全量内容仍须复核实际覆盖、来源和疑点，不能仅以测试通过判定教学正确。
+
+`lesson-root-sources.ts --limit 1600` 可补充英语词源段明确指向的原语词条，只读取完全匹配的语言段，结果独立保存至 `.tmp/lesson-root-evidence/`，不会直接改课文。词条抓取成功只代表拿到了资料；有的原语词条只有另一个词形链接，仍需继续查证其含义。缺页或缺对应语言段时保留缺失，不能用同形的其他语言条目替代。
+
+2026-10-20 本地交付核对：完整讲解和逐词审校侧录各 1600 份；`qa/lesson-quality/coverage-20261020-delivery.json` 报告 1600 reviewed、0 draft、0 invalid、0 missing。`qa/lesson-quality/quality-20261020-delivery.json` 另保留 2632 条需人工判断的规则提示，不能用覆盖数字代替教学正确性。已对高优先级提示做独立内容审读，修正 `wet`、`to` 的词库输入漂移和 `size`、`technology` 等词源来源问题；制作、审读、来源和最终哈希留在 `data/lesson-audit/` 与 `.tmp/lesson-review/`。59 个测试文件、474 项测试及构建通过；390px 手机宽度、认词翻面后完整讲解和作答推进已在临时学习库中实测，真实学习记录未改。此处的“reviewed”指独立 AI 审校，不代表教师逐词把关。
+
+以下为旧核心内容流程，保留用于原数据维护与兼容回退：
 
 ```bash
 # 只读覆盖审计

@@ -1,0 +1,556 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b403c433394da44de050fd7be5c16bbd37afb4013dbaaad503063d76a23b456e",
+    "executedReviewPromptHash": "b403c433394da44de050fd7be5c16bbd37afb4013dbaaad503063d76a23b456e",
+    "reviewHash": "15f398043c1c48e948211d5a8cbc390e73e30bd6c14e27cebccde74d1ba01613",
+    "wordId": 928,
+    "inputHash": "03cc9e2c7fd88a3845da31edb89f44fa53002792b47dfa753bf35e4e78ce5ea2",
+    "draftHash": "94d0e7d712eb3882397983f0342d303d4a36af515370fafb846655237db6b5f5",
+    "finalHash": "919be2798e07b84a377c8e70cfcaad6fed19d6877bce2f5ab77d9d7d65faf0cc",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/note#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.445Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119731,
+        "revisionId": 39773724,
+        "revisionTimestamp": "2026-08-03T13:56:14Z",
+        "sha256": "a968d4d528937dcb63d2e3f7a5cb05ed7998168131e985546f32015eda40dfdf",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/note",
+        "section": "note noun and verb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "355199cb1c6f31573f415aa88597075d0b8b5e3984b5faaf3eba6f06188b2699",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "355199cb1c6f31573f415aa88597075d0b8b5e3984b5faaf3eba6f06188b2699",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/928.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/note",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T01:41:48.669Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:57:03.961Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "原有10个核心例句均缺少必填的 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用动词功能“指出、特别提到”；“注意”义也缺少 Please note ... 的提醒功能。音乐义原例只展示实际发出的音，缺少乐谱符号用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/1；/senses/3/collocations/1",
+        "message": "take a note 属于记录信息的语境，不宜列作书面留言的搭配；be noted for 表示“以……闻名”，不能归入普通“注意到”义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/note；/senses/4/patterns",
+        "message": "过去式说明应明确词尾已有 e 时只加 -d；note down 应完整说明名词宾语的两种位置和代词的位置。记录义下的裸 note that ... 容易与留意、指出混淆。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/relatedExpressions/similar/1/note",
+        "message": "observe 表示“注意到”时不必经过一段时间或有意识地观察，原说明限制过强。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/4/examples/0；/confusions/0/items/0/example",
+        "message": "要求在表格处写自己的姓名和电话时，原 note 例句不够典型；diary 在记录日期的例句中宜译为“日程本”。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "法语阶段只有“与英语有关的形式”这一占位说明，没有可靠字义；现有摘要也不足以支持把这些阶段画成确定的顺序箭头。应保留已证实的名词、动词历史联系，清空阶段数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "未列入实际取回的维基词典英语词条，却普遍引用未取回正文的 Cambridge 和未提供正文的 Oxford。应纠正来源关联；专业语言知识补充项不冒充这些页面的核实结果。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example/senseId",
+        "message": "noted 的“著名的”不是普通“注意到”义。应关联到名望、显著性相关义，保留原本正确的构词和拼写说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/contrastingNote",
+        "message": "forget the details 是忘记细节的结果，并非笔记这一名词义的反向表达，无须附加。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的书面留言、笔记记录、音乐、纸币，以及察觉、记下、指出和留意等用法。补丁补足“指出”和注释义，补入提醒功能及音符记号例句；修订后每个核心义均有至少两个自然原创英中例句。语气色彩和 of note 列作补充。法语是资料的释义语言，没有将其对应词泛化为英语的普通车票、门票义；票券类特殊用法及香水术语未扩展为初中核心内容。词源仅采用已取回的历史摘要，不推测更深词根。",
+    "senseInventory": [
+      {
+        "sense": "n. 便条；简短书面留言",
+        "coveredBy": [
+          "note-n-message"
+        ],
+        "assessment": "两个原例覆盖充分；替换归类不当的 take a note。"
+      },
+      {
+        "sense": "n. 笔记；简短记录",
+        "coveredBy": [
+          "note-n-study"
+        ],
+        "assessment": "两个原例及 take notes 搭配充分；删除牵强的反向结果说明。"
+      },
+      {
+        "sense": "n. 注释；补充说明",
+        "coveredBy": [
+          "note-n-annotation"
+        ],
+        "assessment": "补作独立核心义，用页下注释和食谱说明两个例句覆盖。"
+      },
+      {
+        "sense": "n. 音符记号；唱出或奏出的音",
+        "coveredBy": [
+          "note-n-music"
+        ],
+        "assessment": "保留两个乐音例句，新增一个书写音符的例句。"
+      },
+      {
+        "sense": "n. 纸币",
+        "coveredBy": [
+          "note-n-money"
+        ],
+        "assessment": "原补充义正确；英国日常可以常见，美式通常用 bill。"
+      },
+      {
+        "sense": "n. 票券、凭单类对应词",
+        "coveredBy": [],
+        "assessment": "记录法语 billet、ticket 的对应线索，不据此把普通英语 note 教成车票或门票；不列初中核心义。"
+      },
+      {
+        "sense": "v. 察觉；注意到；发现某事实",
+        "coveredBy": [
+          "note-v-notice"
+        ],
+        "assessment": "原两个例句覆盖；修正 observe 的语境限制。"
+      },
+      {
+        "sense": "v. 留意；认真对待",
+        "coveredBy": [
+          "note-v-notice"
+        ],
+        "assessment": "补入 Please note ... 和 take note of ...，覆盖提醒与有意识地留意。"
+      },
+      {
+        "sense": "v. 记下；写下",
+        "coveredBy": [
+          "note-v-record"
+        ],
+        "assessment": "保留两个核心例句的数量，换入更自然的明确记录场景，并补全 note down 的语序。"
+      },
+      {
+        "sense": "v. 指出；特别提到",
+        "coveredBy": [
+          "note-v-remark"
+        ],
+        "assessment": "补作独立核心义，区别于心里察觉和单纯抄记。"
+      },
+      {
+        "sense": "n. 语气或感情色彩",
+        "coveredBy": [
+          "note-n-quality"
+        ],
+        "assessment": "以 a note of worry 补充，不提高为初中必学核心义。"
+      },
+      {
+        "sense": "n. 重要性；知名度，主要见 of note",
+        "coveredBy": [
+          "note-n-importance"
+        ],
+        "assessment": "补充固定表达，并为 noted 的词族例句提供合适的语义关联。"
+      },
+      {
+        "sense": "n. 香调，香水专业用法",
+        "coveredBy": [],
+        "assessment": "资料的相关链接与派生词涉及此领域；属于专业扩展，不列入本课初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则变化：词尾加 -ed；发音多一个 /ɪd/ 音节。\"",
+        "valueJson": "\"词尾已有不发音的 e，只加 -d，拼成 noted；过去式词尾读 /ɪd/，因此多一个音节。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"leave a note for someone 表示给某人留便条。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"send a note 表示发送简短书面信息。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"take a note\",\"zh\":\"记一条简短信息\",\"note\":\"可指记下简短内容；课堂上记录重点更常说 take notes。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a handwritten note\",\"zh\":\"手写便条\",\"note\":\"handwritten 说明这条简短书面信息是手写的。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"课堂上记录要点通常用 take notes，notes 用复数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"my notes 指自己记下的一组学习记录。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"笔记这一用法没有自然、常用的单词反义项；可用 forget the details（忘记细节）表达相反结果。\"",
+        "valueJson": "\"笔记这一义没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"音符\"",
+        "valueJson": "\"音符；（唱出或奏出的）音\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示音乐中一个音高或一个声音的记号；也可指演奏出的一个音。\"",
+        "valueJson": "\"乐谱上表示一个音的符号；也可指唱出或演奏出的一个音。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里 note 指钢琴实际奏出的一个音。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"high 描述音高，不表示音量大。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-n-music-ex3\",\"senseId\":\"note-n-music\",\"en\":\"The teacher drew a note on the board.\",\"zh\":\"老师在黑板上画了一个音符。\",\"note\":\"这里 note 指画出来的音乐符号。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常接名词，也可接 that 从句；表示“注意到”时，notice 常是更直接、更常见的近义词。\"",
+        "valueJson": "\"既可表示已经注意到某事，也可在 Please note ... 中提醒对方留意；常接名词或 that 从句。语气通常比 notice 正式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"note 后直接接注意到的事物，语气比 notice 正式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"that 从句说明注意到的情况；句子没有要求把它写下来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"note that + 句子\",\"zh\":\"注意到／指出……\",\"note\":\"that 后接完整句子，说明注意到的情况。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"note that + 句子\",\"zh\":\"注意到……；请注意……（用于提醒）\",\"note\":\"that 后接完整句子；叙述时可报告注意到的事实，Please note that ... 则提醒对方留意。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"be noted for\",\"zh\":\"以……而闻名\",\"note\":\"被动结构，表示某人或某物因某特点而出名。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"take note of something\",\"zh\":\"留意；重视某事\",\"note\":\"表示有意识地留意某事，也可含认真对待的意思；不要求写下来。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-v-notice-ex3\",\"senseId\":\"note-v-notice\",\"en\":\"Please note that the museum is closed on Mondays.\",\"zh\":\"请注意，博物馆每周一不开放。\",\"note\":\"Please note that ... 是提醒对方注意信息的常用说法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-v-notice-ex4\",\"senseId\":\"note-v-notice\",\"en\":\"The coach took note of my sore knee and changed the exercises.\",\"zh\":\"教练留意到我膝盖疼，便调整了训练动作。\",\"note\":\"take note of 在这里表示留意并认真对待这一情况。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"强调仔细观察一段时间或有意识地观察，语气较正式。\"",
+        "valueJson": "\"也可表示“注意到”，语气较正式；还可强调有意观察，但不一定持续一段时间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/0",
+        "expectedValueJson": "{\"id\":\"note-v-record-ex1\",\"senseId\":\"note-v-record\",\"en\":\"Please note your name and phone number here.\",\"zh\":\"请在这里记下你的姓名和电话号码。\"}",
+        "valueJson": "{\"id\":\"note-v-record-ex1\",\"senseId\":\"note-v-record\",\"en\":\"I noted the address on the back of an envelope.\",\"zh\":\"我把地址记在了信封背面。\",\"note\":\"on the back of an envelope 明确说明把地址写在了哪里。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"note down 强调把信息写下来；这里名词宾语放在 down 后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/0/note",
+        "expectedValueJson": "\"down 可放在宾语前或代词宾语后；代词要放在 note 与 down 之间，如 note it down。\"",
+        "valueJson": "\"名词宾语可放在 note 和 down 之间，也可放在 down 后：note the address down / note down the address。代词必须放在两者之间，如 note it down。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/patterns/1",
+        "expectedValueJson": "{\"en\":\"note that + 句子\",\"zh\":\"记下／留意……\",\"note\":\"用于记录一个事实或说明，具体含义按上下文判断。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"note something in/on ...\",\"zh\":\"把某事记在……里／上\",\"note\":\"用地点短语说明记录位置，如 note the number in a notebook（把号码记在笔记本里）。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-v-remark\",\"title\":\"指出；特别提到\",\"meaning\":\"在说话或写作时提及某个事实、问题或观察结果，提醒别人注意。\",\"usageNote\":\"较正式，常见于报道、讨论和书面说明。这里强调把信息说出或写进说明，供别人知晓。\",\"examples\":[{\"id\":\"note-v-remark-ex1\",\"senseId\":\"note-v-remark\",\"en\":\"At the meeting, Ben noted that the school bus was often late.\",\"zh\":\"会上，本指出校车经常晚点。\",\"note\":\"这里 note 表示在讨论中提出一个情况。\"},{\"id\":\"note-v-remark-ex2\",\"senseId\":\"note-v-remark\",\"en\":\"As Mum noted, a taxi would cost more than the bus.\",\"zh\":\"正如妈妈指出的，坐出租车会比坐公交车更贵。\",\"note\":\"As Mum noted 引用妈妈已经提出的看法。\"}],\"patterns\":[{\"en\":\"note that + 句子\",\"zh\":\"指出……\",\"note\":\"that 从句说明说话者提出的事实或看法。\",\"kind\":\"sentence-pattern\"},{\"en\":\"as someone notes/noted, ...\",\"zh\":\"正如某人指出的，……\",\"note\":\"用来引述某人提出的观察或看法；时态根据语境选择。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"note a problem in a report\",\"zh\":\"在报告中指出一个问题\",\"note\":\"强调把问题写进报告，让读者知晓。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"point out\",\"zh\":\"指出\",\"note\":\"通常更直接地表示把一个事实或问题提出来，让别人注意。\"},{\"en\":\"mention\",\"zh\":\"提到\",\"note\":\"可只是顺带说到，不一定强调该信息值得注意。\"}],\"contrasting\":[{\"en\":\"omit\",\"zh\":\"省略；未提及\",\"note\":\"在报告或说明中，表示没有把某项信息写入或说出。\"}],\"similarNote\":\"强调提出一个值得注意的事实，可用 note 或 point out；只是简短提及，可用 mention。\",\"contrastingNote\":\"omit 在报告内容是否包含某信息的语境中与 note 形成对照，不是所有用法中的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-n-annotation\",\"title\":\"注释；补充说明\",\"meaning\":\"对正文中的某处或某个问题作出的简短解释、补充说明。\",\"usageNote\":\"常见于书页、食谱和说明书，用来帮助读者理解正文。\",\"examples\":[{\"id\":\"note-n-annotation-ex1\",\"senseId\":\"note-n-annotation\",\"en\":\"A note at the bottom of the page explains the symbol.\",\"zh\":\"页底的一条注释解释了这个符号。\",\"note\":\"这里 note 是附在正文之外的解释。\"},{\"id\":\"note-n-annotation-ex2\",\"senseId\":\"note-n-annotation\",\"en\":\"The recipe includes a note about using frozen fruit.\",\"zh\":\"这份食谱附有一条关于使用冷冻水果的说明。\",\"note\":\"note 补充说明食谱中的具体做法。\"}],\"patterns\":[{\"en\":\"a note on/about something\",\"zh\":\"关于某事的注释或说明\",\"note\":\"on 或 about 引出说明的主题。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"a note at the bottom of the page\",\"zh\":\"页底的一条注释\",\"note\":\"用地点短语说明注释所在的位置。\",\"kind\":\"common-collocation\"},{\"en\":\"a note to the reader\",\"zh\":\"给读者的说明\",\"note\":\"常用于向读者提供补充解释或提醒。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"annotation\",\"zh\":\"批注；注释\",\"note\":\"常指针对文本某处添加的解释或评注，语气较正式。\"},{\"en\":\"comment\",\"zh\":\"评注；意见\",\"note\":\"范围更广，可以是口头或书面的意见，不一定解释正文。\"}],\"contrasting\":[],\"similarNote\":\"解释正文某处时，note 和 annotation 可接近；表达意见或评价时，comment 更宽泛。\",\"contrastingNote\":\"注释这一名词义没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-n-quality\",\"title\":\"语气；感情色彩\",\"meaning\":\"声音或表达中流露出的某种情绪、特点。\",\"note\":\"常用 a note of + 情绪名词，如 a note of worry；属于基础义之外的补充用法。\",\"example\":{\"id\":\"note-n-quality-ex1\",\"senseId\":\"note-n-quality\",\"en\":\"There was a note of worry in her voice.\",\"zh\":\"她的声音里带着一丝担忧。\",\"note\":\"这里 note 指声音中流露的情绪色彩。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"note-n-importance\",\"title\":\"重要性；知名度（of note）\",\"meaning\":\"在 of note 中表示值得注意、重要或有名。\",\"note\":\"of note 较正式，常修饰人物、作品或事件；与形容词 noted（著名的）的意义相关。\",\"example\":{\"id\":\"note-n-importance-ex1\",\"senseId\":\"note-n-importance\",\"en\":\"She is a local artist of note.\",\"zh\":\"她是当地一位知名艺术家。\",\"note\":\"an artist of note 表示一位知名或值得注意的艺术家。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/zh",
+        "expectedValueJson": "\"把日期记在你的日记里。\"",
+        "valueJson": "\"把日期记在你的日程本里。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"这里强调记下来。\"",
+        "valueJson": "\"这里 diary 指记录日期和安排的日程本；note 强调记下来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"note-v-notice\"",
+        "valueJson": "\"note-n-importance\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"名词 note 与法语 note、拉丁语 nota（记号、标记）有关；动词 note 与法语 noter、拉丁语 notare（标记、记录）有关。名词和动词的历史路径分别说明，不应把它们串成一条更长的演变链。\"",
+        "valueJson": "\"英语名词 note 与法语 note、拉丁语 nota（记号、标记）有关；英语动词 note 则与法语 noter、拉丁语 notare（标记、记录）有关。书面提醒与音乐记号属于这一“标记、记录”的意义家族。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"nota\",\"meaning\":\"记号；标记\"},{\"language\":\"法语\",\"form\":\"note\",\"meaning\":\"与英语名词 note 有关的形式\"},{\"language\":\"英语\",\"form\":\"note\",\"meaning\":\"名词：便条、笔记、音符等\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列出的是名词的历史关联链；动词 note 另与法语 noter、拉丁语 notare 有关。拉丁语 nota 更深的来源仍有争议。\"",
+        "valueJson": "\"拉丁语 nota 更早的来源仍有争议。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-note\",\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-note\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-note\"]",
+        "valueJson": "[\"wiktionary-note\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-note\",\"title\":\"Cambridge Dictionary: note\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/note\",\"supports\":[\"名词常见义项与例型\",\"动词 note 的用法\",\"英式纸币义\",\"英美发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-note\",\"title\":\"Wiktionnaire：note 英语词条（法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/note#Anglais\",\"supports\":[\"英语词条中的名词与动词义项线索\",\"英美发音与规则词形\",\"纸币义及美式 bill 的对照\",\"notebook、notepad 等派生词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford-note\",\"title\":\"Oxford Learner’s Dictionaries: note\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/note_1\",\"supports\":[\"名词与动词的常见用法\",\"常见搭配与词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 928,
+    "headword": "note",
+    "meaning_zh": "n. 便条；笔记；音符\nv. 注意；记下",
+    "phonetic": "/nәut/",
+    "pos": "",
+    "forms": []
+  }
+}

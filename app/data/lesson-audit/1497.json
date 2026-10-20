@@ -1,0 +1,223 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8d6a2349aff1195ffd07c3307a1e41a61e5c9268fb0219b0de80915019a58628",
+    "executedReviewPromptHash": "f2265e14bbd9a1e02238b4f2580fcc447cffff28affe8a2112bc9be192cea064",
+    "reviewHash": "7dae4c175a9eae280fed2e9b0c3bb2faa942b27cac37831cd24c875cce70bdae",
+    "wordId": 1497,
+    "inputHash": "651b67708456b3ad3f5cde7f13b8cb084ce4f83de59e45da8406ab4840bb0825",
+    "draftHash": "c251e5453e1fb432c61e9553e94dc2f516d3b5e417b95fb744fa3bd5676b1388",
+    "finalHash": "a6f29bb9219cbc8cc5b16ad23347e1ceb92861a51cc4953c752c4740da6ec195",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/violin#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.919Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 87678,
+        "revisionId": 38442327,
+        "revisionTimestamp": "2025-08-01T02:19:01Z",
+        "sha256": "7a3b7964f1068df492438aa8ab71a04ffa2c61cf226993d895ef7fca201a9a08",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/violin",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:42:20.861Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:54:22.199Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "旧式标音虽不规范，却大致表示同一读音，不能教学生“不要读成”该读音；应改为具体发音提示。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "释义并列加入声部用法，例句却均未展示。应聚焦词典明确列出的乐器义；violin section 可继续作为组合搭配教学。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting/0/note",
+        "message": "“钢琴靠琴键发声”混淆操作方式与发声机制；小提琴也并非只能拉奏。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/note",
+        "message": "“中提琴通常比小提琴低五度”比较对象不明确，应具体说明常规定弦的对应关系。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "当前内容只有整体记忆建议。实际材料的历史词源栏为空，但列有 violinist 派生关系；可保留这项确证事实，明确其不构成历史词源链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及各 sourceIds",
+        "message": "Cambridge 未成功取回，Oxford 未提供实际内容，不能作为正文已获支持的依据。应引用实际取回的英语词条，仅关联其能够支持的释义与派生词；其余专业知识不附虚置来源。"
+      }
+    ],
+    "coverageAssessment": "已核对全部实际词典定义：英语可数名词“小提琴”是唯一明确列出的主要义，原有两个原创例句足以覆盖。保留演奏、调音、声部搭配以及 fiddle、viola 辨析。取回页面使用法语说明英语词条，并非提供法语 violin 义项。材料没有可核实的历史演变或书面 IPA，故不补造词源阶段，读音按专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "名词：小提琴，一种弦乐器",
+        "coveredBy": [
+          "violin-n-1"
+        ],
+        "assessment": "覆盖充分：两个例句分别展示练习这种乐器与一件具体乐器，搭配涵盖演奏、调音及乐团声部。无需人为拆分多个核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"开头听起来近似“vai”，不要读成旧标注中的“vaiә'lin”那种不规范音标。\"",
+        "valueJson": "\"开头的 /v/ 要让上齿轻触下唇，不要读成 /w/；中间的 /ə/ 轻读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_violin\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种有四根弦、通常用弓拉奏的乐器；也可指这种乐器的一个声部。\"",
+        "valueJson": "\"一种有四根弦、通常用弓拉奏的弦乐器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在乐器分类对比中，钢琴靠琴键发声，小提琴靠拉弦发声；两者不是普遍意义上的反义词。\"",
+        "valueJson": "\"钢琴通过按键带动琴槌击弦发声，小提琴通常用弓拉弦，也可拨弦；这里对比演奏和发声方式，两词不是反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_violin\"]",
+        "valueJson": "[\"wiktionary_violin\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"中提琴，通常比小提琴低五度。\"",
+        "valueJson": "\"中提琴；常规定弦中，四根空弦的音高分别比小提琴对应的空弦低五度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_violin\",\"oxford_violin\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中可把 violin 作为整体记忆；它与小提琴这一乐器名称对应。\"",
+        "valueJson": "\"violin 意为“小提琴”；它的派生词 violinist 指“小提琴演奏者”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上是便于学习的记忆说明，不是历史词源；不要把发音联想当作词源解释。\"",
+        "valueJson": "\"violin 加 -ist 是现代构词分析，不能据此推断 violin 本身的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_violin\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_violin\"]",
+        "valueJson": "[\"wiktionary_violin\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge_violin\",\"title\":\"Cambridge Dictionary: violin\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/violin\",\"supports\":[\"词性、常见含义、读音与用法查询\"],\"verification\":\"recommended\"},{\"id\":\"oxford_violin\",\"title\":\"Oxford Learner’s Dictionaries: violin\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/violin\",\"supports\":[\"小提琴与中提琴等乐器名称区分查询\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_violin\",\"title\":\"Wiktionnaire：violin（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/violin#Anglais\",\"supports\":[\"英语名词 violin 的“小提琴”义\",\"派生词 violinist\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1497,
+    "headword": "violin",
+    "meaning_zh": "n. 小提琴",
+    "phonetic": "/.vaiә'lin/",
+    "pos": "",
+    "forms": []
+  }
+}

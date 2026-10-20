@@ -1,0 +1,366 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1dc345ff4d6e4d99ba2d2b93d35be5aa54a4cc36bce5fa59c60a685deab8f7da",
+    "executedReviewPromptHash": "1dc345ff4d6e4d99ba2d2b93d35be5aa54a4cc36bce5fa59c60a685deab8f7da",
+    "reviewHash": "93f809b5da011e62a2e1e4e023c726e778f21f5939e909c95367861e939e6a1b",
+    "wordId": 693,
+    "inputHash": "8cbf5bc9b0aa65a7c91f5fdb59029533d4659b9ca6b2036a739867ef8581956a",
+    "draftHash": "9aedd13228dbf194a52c32a2dce718e573e9c7183ecdc68582b9a152591dab9a",
+    "finalHash": "6a5e1f3edc71d0639cfd50d4fc5067c9f6cd02e097cdfa2aa1f70cf7677fb02b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/important#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:36.599Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 64308,
+        "revisionId": 39881986,
+        "revisionTimestamp": "2026-09-18T16:39:58Z",
+        "sha256": "0e70caba080859752040b3422a5261337d3c5c4ed3eb38f399ca86aeca9ab710",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/important",
+        "section": "important etymology",
+        "supports": [
+          "Latin participial route and semantic distinction from commercial import"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:21:54.158296+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "06de2cac4cabc289ac39a213e34eac61b4811f4704633fb8d492cb77c7af1f4a",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "06de2cac4cabc289ac39a213e34eac61b4811f4704633fb8d492cb77c7af1f4a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/693.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/important",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:05:23.638Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:17:57.628Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "important 的美式 /r/ 位于元音之后、/t/ 之前，原说明没有准确解释本词的英美差异。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway; /confusions/1/items/1/note; /wordFamily/0/formation",
+        "message": "不能在 important 后直接加 -ance 得到 importance。应说明将词尾 -ant 换为 -ance；原有正确拼写提示应保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example/note",
+        "message": "例句中 sleep 才是 of 的宾语；importance 是 about 后整个名词短语的中心词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/note; /senses/0/patterns/1/note",
+        "message": "important 不仅表示有帮助；句型说明也应明确表达事情的是整个 to do sth 不定式短语。两条例句本身正确。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "社会地位义不保证受到尊重；原第二例较容易理解为作用重要。an important role 通常属于第一义；junior 表示级别较低，不能据此推出不重要。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns",
+        "message": "两项都是名词搭配框架，宜标为 common-collocation。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词条列出的数额可观义和自负、神气义。宜列为次常用义，并限制数量义的搭配及自负义的语境，避免教成通用替换。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 各处 cambridge-important 引用",
+        "message": "Cambridge 正文未取得，不能作为已取得的内容依据。应撤下该来源及引用；可由已取得的英语维基词条支持的内容改引该词条，其余保留为专业语言知识判断。"
+      }
+    ],
+    "coverageAssessment": "已核对重要性、社会地位两项核心义，修正后各保留两个原创英中例句；数额可观及语境性自负义补入次常用义。未发现需要另立的常用词性。现有拉丁语至中世纪拉丁语的词源阶段有材料支持，可保留。局限是英语维基词条释义简略、Cambridge 正文不可用；补充义的使用限制依据词条释义与专业语言知识，不扩大词源结论。",
+    "senseInventory": [
+      {
+        "sense": "重要的；关系重大的，包括对某人重要",
+        "coveredBy": [
+          "693-s1"
+        ],
+        "assessment": "核心义已覆盖，保留两例；补正用途说明，并接收表示作用重要的搭配。"
+      },
+      {
+        "sense": "有地位、权力或影响力的",
+        "coveredBy": [
+          "693-s2"
+        ],
+        "assessment": "核心义已覆盖；明确社会地位与受尊重的区别，加强职位例证，修正反向表达。"
+      },
+      {
+        "sense": "数额可观的；相当大的",
+        "coveredBy": [
+          "693-s3"
+        ],
+        "assessment": "原稿遗漏；补为较少见的正式用法，不将 important 教成通用数量形容词。"
+      },
+      {
+        "sense": "自以为重要的；神气十足的",
+        "coveredBy": [
+          "693-s4"
+        ],
+        "assessment": "原稿遗漏；补充带揶揄意味的语境，同时说明 look/feel important 并不自动表示自负。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"important 通常说明某事很重要、会产生明显影响；形容人或职位时，也可表示有地位、受重视。\"",
+        "valueJson": "\"important 通常说明某事值得重视、会产生重大影响；形容人或职位时，也可表示有地位、有影响力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式通常不读出 r；美式在元音前读出 r。\"",
+        "valueJson": "\"常见英式读音不发 /r/；常见美式读音在第二音节的元音之后、/t/ 之前发 /r/。两种读法都重读第二音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[\"wiktionary-important\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"说明某物对某个目的有帮助。\"",
+        "valueJson": "\"说明这张地图对这次旅行很重要，而不只是有一点帮助。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"常用 it 作形式主语，真正要说明的事情放在 to do 后。\"",
+        "valueJson": "\"it 作形式主语，整个 to do sth 不定式短语说明什么事情很重要；for sb 表示做这件事的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"an important role\",\"zh\":\"重要角色；重要作用\",\"note\":\"强调某人在团队或某件事中的作用很大，不一定表示职位高。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[\"wiktionary-important\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"有地位的；受重视的\"",
+        "valueJson": "\"有地位的；有影响力的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"形容人、职位或机构在某个群体中有影响力、受到尊重。\"",
+        "valueJson": "\"形容人、职位或机构在社会或组织中地位较高，或具有较大的权力、影响力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"693-s2-e2\",\"senseId\":\"693-s2\",\"en\":\"He hopes to become an important member of the club.\",\"zh\":\"他希望成为俱乐部里受重视的一员。\",\"note\":\"表示在团体中有分量、受重视。\"}",
+        "valueJson": "{\"id\":\"693-s2-e2\",\"senseId\":\"693-s2\",\"en\":\"Her uncle holds an important position at the bank.\",\"zh\":\"她叔叔在那家银行担任要职。\",\"note\":\"an important position 指在机构中地位较高或影响较大的职位。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"an important role\",\"zh\":\"重要角色；重要作用\",\"note\":\"强调某人在团队或某件事中的作用很大。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"an important position\",\"zh\":\"要职\",\"note\":\"指地位较高或影响较大的职位，常与 hold 连用。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"junior\",\"zh\":\"级别较低的\",\"note\":\"在职位等级比较中，与重要或高级职位形成对照。\"}",
+        "valueJson": "{\"en\":\"unimportant\",\"zh\":\"地位不显要的；影响不大的\",\"note\":\"在描述社会地位或影响力时可与 important 相反；直接用来评价人可能显得轻视。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里的对照限于身份、职位或显著程度；ordinary 不表示某个人在私人关系中不重要。\"",
+        "valueJson": "\"这里比较社会地位和影响力。ordinary 只表示身份普通，未必不重要；unimportant 可表示地位不显要或影响小，但直接评价人时可能带有轻视意味。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[\"wiktionary-important\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"693-s3\",\"title\":\"数额可观的（正式、较少见）\",\"meaning\":\"形容金额等数目相当大、值得重视。\",\"note\":\"主要留意 an important sum of money 等较正式搭配。日常表达数额大通常用 large、considerable 或 substantial；不能把 important 当作通用的“大量的”。\",\"example\":{\"id\":\"693-s3-e1\",\"senseId\":\"693-s3\",\"en\":\"The restoration required an important sum of money.\",\"zh\":\"这项修复工程需要一笔可观的资金。\",\"note\":\"important 在这里形容 sum，表示数额可观；日常说 a large sum of money 更自然。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"693-s4\",\"title\":\"自以为重要的；神气十足的\",\"meaning\":\"在带揶揄或贬义的语境中，形容人摆出一副自己很了不起的样子。\",\"note\":\"look important、feel important 本身不一定表示自负，也可能表示显得有地位或觉得受到重视。只有上下文带讽刺时才取此义；要明确说“自负的”，self-important 更直接。\",\"example\":{\"id\":\"693-s4-e1\",\"senseId\":\"693-s4\",\"en\":\"He strutted into the room, looking very important.\",\"zh\":\"他趾高气扬地走进房间，一副自以为了不起的样子。\",\"note\":\"strutted 描写神气十足的走路姿态，使 looking very important 在这里带有揶揄意味。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"importance 是 of 的宾语中心词。\"",
+        "valueJson": "\"importance 是 about 后名词短语的中心词；of sleep 说明什么的重要性，sleep 才是 of 的宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说“重要的”用 important；说“重要性”用 importance。拼写时 important 末尾加 -ance，形成 importance。\"",
+        "valueJson": "\"说“重要的”用 important；说“重要性”用 importance。拼写时把 important 末尾的 -ant 换成 -ance，得到 importance。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"名词，在 important 后加 -ance；表示抽象的“重要性”。\"",
+        "valueJson": "\"名词，表示抽象的“重要性”；拼写时将 important 的词尾 -ant 换成 -ance。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"important + -ance；构成名词\"",
+        "valueJson": "\"与 important 对应的名词；拼写上将词尾 -ant 换为 -ance。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[\"wiktionary-important\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-important\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"important 与 import 和 -ant 的构词说明\",\"英式与美式读音信息\"]",
+        "valueJson": "[\"important 与 import 和 -ant 的构词说明\",\"英式与美式读音信息\",\"事项重要性与社会地位用法的英语例证\",\"importance 派生形式及 significant 近义词\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-important\",\"title\":\"Cambridge Dictionary: important\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/important\",\"supports\":[\"英式与美式读音\",\"形容词用法和常见搭配\",\"importance 与 importantly 等词族形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 693,
+    "headword": "important",
+    "meaning_zh": "adj. 重要的, 有地位的, 大量的, 显要的, 自负的",
+    "phonetic": "/im'pɒ:tәnt/",
+    "pos": "",
+    "forms": []
+  }
+}

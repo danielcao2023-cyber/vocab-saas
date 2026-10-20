@@ -1,0 +1,310 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "905ec7042801777130c57daac06ca95720d19166cc41948492f2700a03411972",
+    "executedReviewPromptHash": "905ec7042801777130c57daac06ca95720d19166cc41948492f2700a03411972",
+    "reviewHash": "571f9e02cbe9c151fdc8c14ac98731e0bb0b44682404909bb84af5b449082b6e",
+    "wordId": 351,
+    "inputHash": "717c0041cce53ec166d7d1c3c760da908a57780d5f8caabeb3955e1dbc9a36a9",
+    "draftHash": "2c726ae3cedab32dd2a6847f98a5d31cb688c426deac92f547ad7ee9e33295f8",
+    "finalHash": "4a6ee83d574e07d54fdf8659043fd230872a9e1015ca6bd91ce34f3daccd955c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/daily#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:29.370Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 241310,
+        "revisionId": 39828671,
+        "revisionTimestamp": "2026-08-24T21:17:48Z",
+        "sha256": "75ce7ba7aad0ff727ebabcde1572f4921c994c4d58dc3da94d4253bf98c6ff6e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/daily",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:14:55.999Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:19:35.624Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "初稿引用的牛津页面不在实际取得的来源中。应改引已取得的法语维基词典英语词条，并同步更新 sourceIds；页面的法语说明不代表 daily 是法语词。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "“day 加 -ly 时保留 y”与实际拼写不符。day 中的 y 变为 i；daily 末尾的 y 来自后缀 -ly。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/patterns/1",
+        "message": "daily reports 表示“每日报告”，不是“日报”；daily newspaper 中 daily 也是形容词。此处应换成展示名词 daily 的搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "daily 通常后置，不能照搬 usually 等频率副词的常用中位规则。be + daily + 过去分词本身合乎语法，应保留并说明其语体特点。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/0/note",
+        "message": "例句中 daily 后面还有 during the term，并未位于句末。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "名词前表示“日常的”并不总能任选 everyday 或 daily。应保留每天发生与普通、平常之间的区别，并限定可互换的搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有已取得的词源材料明确支持 day + -ly，应补入这一构词事实并引用同一 URL。材料没有提供历时阶段，stages 保持空数组合理。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples",
+        "message": "write a short daily journal 不如写 journal entry 自然。改用每日散步的例句，并用 daily life 明确展示“日常生活”的用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example",
+        "message": "daily club 搭配生硬，也不能自然译成“日常活动小组”。应换成同时自然展示 day 和 daily 的例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "day-to-day 并非普遍偏口语；用日常事务、运作管理等具体搭配说明其适用语境更准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/relatedExpressions/similar/1",
+        "message": "newspaper 是上位词，不说明每日出版。近义栏改用 daily paper，并保留原有说明，帮助区分 newspaper 的范围。"
+      }
+    ],
+    "coverageAssessment": "已核对已取得词典中的形容词、副词和名词三项主要定义，无核心义遗漏。修订后每项仍有两个原创英中例句，形容词分别展示每日发生与日常生活的用法。词源仅补可靠的 day + -ly 构词关系，不虚构历史阶段；未扩展来源未列出的罕见用法。",
+    "senseInventory": [
+      {
+        "sense": "形容词：每日的；日常的",
+        "coveredBy": [
+          "daily-adj"
+        ],
+        "assessment": "已覆盖；修订后分别以每日散步和 daily life 展示相关用法，无须另拆义项。"
+      },
+      {
+        "sense": "副词：每天；每日",
+        "coveredBy": [
+          "daily-adv"
+        ],
+        "assessment": "两个例句及频率搭配齐全；修正典型位置规则和首例的位置说明。"
+      },
+      {
+        "sense": "可数名词：日报；复数 dailies",
+        "coveredBy": [
+          "daily-n"
+        ],
+        "assessment": "单复数例句齐全；修正混入的形容词搭配及近义表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-daily\",\"title\":\"Oxford Learner’s Dictionaries: daily\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/daily\",\"supports\":[\"daily 的词性、常见释义和用法\",\"daily 的英式与美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-daily\",\"title\":\"Wiktionnaire（法语维基词典）：daily（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/daily#Anglais\",\"supports\":[\"daily 的形容词、副词和名词释义\",\"daily 的读音及名词复数 dailies\",\"daily 由 day 与 -ly 构成的词源说明\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-daily\"]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-daily\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"ex-daily-adj-1\",\"senseId\":\"daily-adj\",\"en\":\"I write a short daily journal after dinner.\",\"zh\":\"我晚饭后写一篇简短的日记。\",\"note\":\"daily 修饰 journal，表示每天写的。\"}",
+        "valueJson": "{\"id\":\"ex-daily-adj-1\",\"senseId\":\"daily-adj\",\"en\":\"I take a daily walk after dinner.\",\"zh\":\"我每天晚饭后散步。\",\"note\":\"daily 修饰 walk，说明散步每天进行。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"ex-daily-adj-2\",\"senseId\":\"daily-adj\",\"en\":\"Walking the dog is part of her daily routine.\",\"zh\":\"遛狗是她日常生活的一部分。\",\"note\":\"daily routine 指日常的固定安排。\"}",
+        "valueJson": "{\"id\":\"ex-daily-adj-2\",\"senseId\":\"daily-adj\",\"en\":\"The new washing machine has made her daily life easier.\",\"zh\":\"新洗衣机让她的日常生活轻松多了。\",\"note\":\"daily life 指平日的生活，体现 daily 的“日常的”含义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常描述实际生活或工作中的日常事务，语气较口语。\"",
+        "valueJson": "\"常描述生活或工作中的日常事务，如 day-to-day management（日常管理），尤其侧重日常运作和事务处理。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作频率副词，可放在句末，也常放在 be 动词之后、实义动词之前。\"",
+        "valueJson": "\"作频率副词，通常放在动词短语之后或句末，也可放在句首；置于 be 与过去分词之间等句中位置也合乎语法，但通常较正式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"daily 放在句末，说明开放的频率。\"",
+        "valueJson": "\"daily 放在 opens 后，说明每天开放；during the term 表示这一安排适用于学期期间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"daily + reports / newspaper\",\"zh\":\"日报；每日出版的报纸\",\"note\":\"daily 常用于报刊语境，指每天出版的报纸。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a local / national daily\",\"zh\":\"一份地方日报／全国性日报\",\"note\":\"daily 在这里是可数名词，由 local 或 national 修饰；daily newspaper 中的 daily 则是形容词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"newspaper\",\"zh\":\"报纸\",\"note\":\"范围更广，可以是日报，也可以是其他出版周期的报纸。\"}",
+        "valueJson": "{\"en\":\"daily paper\",\"zh\":\"日报\",\"note\":\"paper 在这里指报纸；daily 作形容词，整个短语与名词 daily 同指日报。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"能换成 each day 时通常写 every day；放在名词前表示“日常的”时可用 everyday 或 daily。不要把 everyday 当成 every day 来表示“每天做”。\"",
+        "valueJson": "\"能换成 each day、表示“每天”时，every day 要分开写；作副词时也可用 daily。名词前，daily 通常强调每天发生，everyday 强调普通、平常；daily life / everyday life 都可指“日常生活”，但不可据此处处互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"daily 的现代构词可看作 day 加形容词或副词词尾 -ly，帮助记住它与“每天、日常”有关。\"",
+        "valueJson": "\"daily 由 day（一天）和后缀 -ly 构成；day 中的 y 在 daily 中写作 i。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"day + -ly 是现代英语中的构词分析；这里不把它当作经过历史来源逐阶段证实的词源链。\"",
+        "valueJson": "\"构词组成不等于完整的历史演变过程；-ly 也可用于形容词，因此不能把 daily 只当作副词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"day 加 -ly 时保留 y，写作 daily。\"",
+        "valueJson": "\"day + -ly → daily：day 中的 y 改为 i，再接 -ly；daily 末尾的 y 来自 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"ex-family-day\",\"senseId\":\"daily-adj\",\"en\":\"The daily club meets after class each day.\",\"zh\":\"这个日常活动小组每天放学后集合。\",\"note\":\"day 是 daily 的构词基础。\"}",
+        "valueJson": "{\"id\":\"ex-family-day\",\"senseId\":\"daily-adj\",\"en\":\"My daily reading time is the best part of my day.\",\"zh\":\"每天的阅读时间是我一天中最美好的时光。\",\"note\":\"day 表示“一天”；daily 修饰 reading time，表示每天的阅读时间。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 351,
+    "headword": "daily",
+    "meaning_zh": "adj. 每日的, 日常的\nadv. 每日地, 日常地\nn. 日报",
+    "phonetic": "/'deili/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "517d4674f1606fa717b90f80e3df1948f998ef8c7bbb80c091d12e2115371057",
+    "executedReviewPromptHash": "517d4674f1606fa717b90f80e3df1948f998ef8c7bbb80c091d12e2115371057",
+    "reviewHash": "b49bbad3451b36eb2c29661206c1cb9eaab322d3ad7beca18cdd4c7a81973395",
+    "wordId": 1455,
+    "inputHash": "edfe1287e282789e4bf7b91fcb1a616fbfbeecc3ed334b3dec2a5b5c6cdcac8e",
+    "draftHash": "e0a32eec523d7bb1332f7f7b6e35d86a53793d8cf462505e74cc3de717b7df07",
+    "finalHash": "f014234102efb76a524c93858a0bce16dedbef77f3520fe36ebfc1c4db8aaa9a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/training#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.817Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 123977,
+        "revisionId": 37156080,
+        "revisionTimestamp": "2025-02-01T10:45:46Z",
+        "sha256": "beae5bafdd5dad3efeff2417a7dc05b28bb619105cf24417c63d6eb8e6d28710",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/training",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:20:00.796Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:34:18.164Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note；/wordFamily/0/spellingNote；/wordFamily/1/spellingNote",
+        "message": "train 的末字母是 n，并无词尾 e。training 和 trainer 都直接加后缀，原稿三处拼写规则错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses；/confusions/0",
+        "message": "词典明确收录 training 作为 train 现在分词的功能。原稿虽在词形栏提及，却没有相应释义、完整句型和两个例句，名词与动词形式的辨析也不完整。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds；/etymology/sourceIds",
+        "message": "Oxford 不在实际取得的来源中，Cambridge 未能取得正文，不能用它们支撑本课的来源归属。应改用已取得的法语维基词典英语词条；该材料也明确支持 train + -ing 的构词关系。trainer 的解释可依据专业语言知识保留，但不应归给未支持它的来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1；/senses/1/patterns",
+        "message": "training in 与 training on 的使用范围需要分清，不能把两者笼统教成任意互换的“技能或领域”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote；/senses/1/relatedExpressions",
+        "message": "词典中的 stage 涉及工作实践中的培训阶段。应说明它与 internship 的有限重合，避免把 training 理解成任何形式的实习。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1/zh",
+        "message": "“她从当地一所学校开始接受艺术培养”中文不够自然，宜改成明确的受训地点和起始经历。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对名词的训练、工作培训及教学培养含义，以及 train 现在分词的功能。两个名词分义合理，无须为词典中的每个法语释义另立一义；补丁补足动词形式的两个例句和句型，并限定培训与实习的关系。现有名词例句数量和 senseId 均合格。词源只保留来源支持的 train + -ing，不扩展未经证实的历史链；英美读音说明可保留。来源局限是仅取得一个词典的英语词条正文，未将无法取得的页面作为证据。",
+    "senseInventory": [
+      {
+        "sense": "不可数名词：训练、锻炼或为提高表现而进行的练习",
+        "coveredBy": [
+          "training-1"
+        ],
+        "assessment": "覆盖充分，有两个自然例句；practice、exercise 与 rest 的语境限制基本准确。"
+      },
+      {
+        "sense": "不可数名词：职业或工作实践中的培训、受训阶段（词典释义 stage）",
+        "coveredBy": [
+          "training-2"
+        ],
+        "assessment": "归入培训义合理；补丁明确工作实践中的受训阶段，并说明 training 与 internship 不能普遍互换。"
+      },
+      {
+        "sense": "不可数名词：教学、技能培养（词典释义 enseignement）",
+        "coveredBy": [
+          "training-2"
+        ],
+        "assessment": "安全培训与艺术训练例句体现指导和技能培养；与工作培训合并讲解符合学习需求，中文翻译作小幅修正。"
+      },
+      {
+        "sense": "动词形式：train 的现在分词",
+        "coveredBy": [
+          "training-3"
+        ],
+        "assessment": "原稿仅在词形栏提及，教学覆盖不足；补丁新增动词功能、两个例句和相关句型，并补全名词与动词形式的辨析。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun；verb（train 的现在分词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"training 常指为了提高能力而进行的训练或培养，也可指工作所需的培训。通常作不可数名词。\"",
+        "valueJson": "\"training 作名词时指训练、培养或工作培训，通常不可数；它也是动词 train 的现在分词，如 They are training（他们正在训练）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 training in/on + 技能或领域表达某方面的训练。\"",
+        "valueJson": "\"training in 常接技能或领域，如 training in first aid；training on 常接设备、系统或具体主题，如 training on the new software。两者有重合，要结合内容选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"train + -ing；去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"train 直接加 -ing，写作 training；不删字母，也不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于工作技能、职业或学校活动；training 通常不可数。\"",
+        "valueJson": "\"常见于工作技能、职业或艺术等方面的培养，通常不可数。也可指入职前或实习期间的一段培训；重点是学习技能，不等于所有形式的实习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"她从当地一所学校开始接受艺术培养。\"",
+        "valueJson": "\"她最初在当地一所学校接受艺术训练。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"training on + 设备、系统或具体主题\",\"zh\":\"关于……的培训；使用……的培训\",\"note\":\"常用于学习使用设备或系统，如 training on the new software。in 更常接技能或专业领域；两者有重合，并非所有名词前都能任意互换。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"internship\",\"zh\":\"实习\",\"note\":\"指在单位获得实际工作经验的一段实习经历，其中可能包含 training。training 强调培训或技能培养，不一定发生在实习中，两词不能普遍互换。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"training-3\",\"title\":\"train 的现在分词\",\"meaning\":\"动词 train 的现在分词形式，可表示训练别人、自己进行训练或接受职业训练。\",\"usageNote\":\"常与 am、is、are 等一起构成进行时。此时 training 是动词形式；名词 training 本身不表示动作正在进行。\",\"examples\":[{\"id\":\"training-3-ex1\",\"senseId\":\"training-3\",\"en\":\"The coach is training the children to swim.\",\"zh\":\"教练正在训练孩子们游泳。\",\"note\":\"is training 构成现在进行时；train somebody to do something 表示训练某人做某事。\"},{\"id\":\"training-3-ex2\",\"senseId\":\"training-3\",\"en\":\"I'm training for a five-kilometre race.\",\"zh\":\"我正在为一场五公里赛跑训练。\",\"note\":\"am training 表示现阶段正在训练；for 引出准备参加的比赛。\"}],\"patterns\":[{\"en\":\"be training somebody to do something\",\"zh\":\"正在训练某人做某事\",\"note\":\"training 后可接受训者，再用 to do 说明要学会的动作。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be training for + 比赛或目标\",\"zh\":\"正在为……训练\",\"note\":\"这里 be training 是动词进行时，区别于名词短语 training for a race。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be training to be + 职业\",\"zh\":\"正在接受成为……的职业训练\",\"note\":\"如 She is training to be a nurse. 表示她正在接受护士职业训练。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"training new staff\",\"zh\":\"培训新员工\",\"note\":\"可用于 They are training new staff.，其中 training 是动词形式，new staff 是宾语。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be coaching\",\"zh\":\"正在指导训练\",\"note\":\"常用于体育或针对表现的指导；train 的适用范围还包括职业培训等。\"},{\"en\":\"be teaching\",\"zh\":\"正在教授；正在教\",\"note\":\"teach 范围较广，也可教授知识；train 更强调通过指导和练习培养技能。\"}],\"contrasting\":[],\"similarNote\":\"这些表达只在具体教学或训练情境中接近，不能在所有句子中互换。\",\"contrastingNote\":\"进行时的否定可说 They are not training.（他们没有在训练）；这不等于说他们从未受过训练，不能直接换成 untrained。\"},\"sourceIds\":[\"wiktionary_training_en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"training 可作名词，表示训练或培训；train 是动词，表示训练某人或自己。\"",
+        "valueJson": "\"training 可作不可数名词，也可作动词 train 的现在分词；train 是动词原形。要结合句子判断 training 的作用。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"training（动词的现在分词）\",\"note\":\"与 be 动词一起构成进行时，表示正在或现阶段进行训练。\",\"example\":{\"id\":\"training-confusion-1-ex3\",\"senseId\":\"training-3\",\"en\":\"They are training after school this week.\",\"zh\":\"这周他们放学后都在训练。\",\"note\":\"are training 是进行时；training 在这里不是名词。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"表达“训练需要时间”用 Training；表达“他们训练”用 train。\"",
+        "valueJson": "\"Training takes time. 中 training 是名词；They train. 用动词原形；They are training. 中 training 是现在分词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"train 的现在分词按“去 e 加 -ing”规则写作 training。\"",
+        "valueJson": "\"train 的现在分词直接加 -ing，写作 training；保留 train 的全部字母，不双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"train 以不发音的 e 结尾，加 -er 时保留 e。\"",
+        "valueJson": "\"train 直接加 -er，写作 trainer；词中的 e 来自后缀 -er，n 不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[\"wiktionary_training_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_training\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_training\",\"title\":\"Oxford Learner’s Dictionaries: training\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/training\",\"supports\":[\"training 的词性、常见含义及用法\",\"training 与 train 的词形关系\"],\"verification\":\"recommended\"},{\"id\":\"cambridge_training\",\"title\":\"Cambridge Dictionary: training\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/training\",\"supports\":[\"training 的读音和常见搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_training_en\",\"title\":\"Wiktionnaire：training（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/training#Anglais\",\"supports\":[\"training 的英语读音及不可数名词词性\",\"训练、工作培训和教学培养等名词含义\",\"training 是 train 的现在分词\",\"training 由 train 加后缀 -ing 构成\",\"training 与 internship 在实习培训语境中的近义关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1455,
+    "headword": "training",
+    "meaning_zh": "n. 训练, 培养",
+    "phonetic": "/'treiniŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

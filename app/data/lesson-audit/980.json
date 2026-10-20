@@ -1,0 +1,262 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e4d033b60279427ceaefd47dd59bf05e6f7f154bf728f863b3cc7b3849bc5fbc",
+    "executedReviewPromptHash": "e4d033b60279427ceaefd47dd59bf05e6f7f154bf728f863b3cc7b3849bc5fbc",
+    "reviewHash": "992bfac5c2c6f31f8ff0437f4eb653f3a4fdd8516e1b699ce2b73840cf40ca07",
+    "wordId": 980,
+    "inputHash": "f82958bd1c253895845435ceacf153f594e165d03079472f37b558e1e12a4817",
+    "draftHash": "7c4aa665a2212e9c54c2b9c69f977649514a903ee7079eb6a578193ee975809f",
+    "finalHash": "a5adeba9c6b9c28bd386bc2df60e0658f84130b284378383484c1f6aab2234c4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pancake#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.181Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 119123,
+        "revisionId": 39054145,
+        "revisionTimestamp": "2025-11-10T14:02:41Z",
+        "sha256": "b769ddd30db64d99d9ff3cd4874e85795854a0fc1ccf03d4355bfeba633e4283",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pancake",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:10:53.843Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:16:07.978Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的厚质化妆品义，应补为低频义，并与食物义区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "标题和定义将食物概括为薄饼，与后文较厚的美式煎饼说明不够一致；crêpe 的“更薄”也应明确比较对象。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源明确支持 pan + cake 的复合来源，以及化妆品义的 Pan-Cake 品牌来源和1937年年代信息，不能仅写成现代助记。并列构件和两义的不同来源不应画成历史阶段链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 页面内容不在实际来源材料中，却被多处用于背书。应改引已取得的维基词典英语词条，并删除未参与本次核对的 Oxford 来源项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "s1e1、s1e2 以及 /confusions/0/items/0/example 均缺少目标结构必填的 note 字段。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的三条释义：一般薄煎饼、其中的 pancake 类型、厚质化妆品。前两项保留为同一食物义，以薄饼和厚饼例句具体覆盖；化妆品义补入低频义。读音、复数、搭配和词源均已核对。Cambridge 正文不可用，未作为判断依据。",
+    "senseInventory": [
+      {
+        "sense": "食物义：一般薄煎饼，包含 crêpe 所指的薄饼",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖；修订例句明确呈现薄煎饼，并限定与 crêpe 的比较语境。"
+      },
+      {
+        "sense": "食物义中的特指：通常较厚的美式煎饼",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "属于同一食物义的类型差异，无须强拆；修订定义及例句明确覆盖厚而松软的类型。"
+      },
+      {
+        "sense": "化妆品义：厚质粉底",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "原稿遗漏；补为低频义，附化妆语境例句及独立的品牌词源说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"pancake：薄而圆的煎饼\"",
+        "valueJson": "\"pancake：有薄有厚的煎饼\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"pancake 通常指用面糊在平底锅上煎成的薄饼；常见复数是 pancakes。\"",
+        "valueJson": "\"食物义的 pancake 指用面糊煎成的圆饼，厚薄因做法而异；它是可数名词，复数是 pancakes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 pancake 是可数名词，通常用 pancakes 表示多个。\"",
+        "valueJson": "\"记住 pancake 的食物义可数：a pancake 表示一个，pancakes 表示多个。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用面糊在平底锅或煎锅上煎成的薄而圆的饼，常作为早餐或点心食用。\"",
+        "valueJson": "\"用面糊在平底锅或煎烤盘上煎成的扁圆饼，厚薄因做法而异，常作为早餐或点心食用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"s1e1\",\"senseId\":\"s1\",\"en\":\"Dad made pancakes for breakfast.\",\"zh\":\"爸爸做了煎饼当早餐。\"}",
+        "valueJson": "{\"id\":\"s1e1\",\"senseId\":\"s1\",\"en\":\"Dad made thick, fluffy pancakes for breakfast.\",\"zh\":\"爸爸做了厚实松软的煎饼当早餐。\",\"note\":\"thick, fluffy 描写较厚、松软的煎饼，常见于美式做法；for breakfast 表示作为早餐。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"I ate a pancake with honey.\",\"zh\":\"我吃了一张加蜂蜜的煎饼。\"}",
+        "valueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"I ate a thin pancake with honey.\",\"zh\":\"我吃了一张加蜂蜜的薄煎饼。\",\"note\":\"thin pancake 明确指薄的类型；with honey 表示配蜂蜜食用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"通常更薄，常卷起或包入馅料；具体用法随地区而变。\"",
+        "valueJson": "\"与较厚的美式 pancake 相比，crêpe 通常更薄，可卷起或包馅；英式薄 pancake 与它较接近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"（化妆品）厚质粉底\",\"meaning\":\"一种质地较厚的粉底化妆品。\",\"note\":\"较少见，常用于舞台化妆语境；通常作不可数名词，也常说 pancake makeup。\",\"example\":{\"id\":\"lc1e1\",\"senseId\":\"lc1\",\"en\":\"The makeup artist applied pancake makeup to the actor's face before the show.\",\"zh\":\"演出前，化妆师在那位演员脸上涂了厚质粉底。\",\"note\":\"这里的 pancake makeup 指化妆用的粉底，不是食物。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"two 后用复数 pancakes；这个食物名称仍连写为一个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"oxford\"",
+        "valueJson": "\"wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代拼写可看作 pan（平底锅）和 cake（饼）的组合，帮助记忆它是在锅里煎成的饼。\"",
+        "valueJson": "\"食物义由英语 pan（平底锅）和 cake（饼）复合而成。化妆品义另源于美国 Max Factor 品牌的产品名 Pan-Cake，这一用法可追溯至1937年。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语构词\",\"form\":\"pan + cake\",\"meaning\":\"锅 + 饼\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是便于理解的现代构词拆分；它不等同于完整的历史词源说明。\"",
+        "valueJson": "\"pan 与 cake 是并列的构词成分；化妆品义另有品牌名来源，不能把两义理解成依次演变的阶段。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: pancake\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/pancake\",\"supports\":[\"词性、常见食物义及读音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"pan 与 cake 的构词说明及相关词源线索\"]",
+        "valueJson": "[\"英语名词的煎饼义与厚质化妆品义\",\"读音、拼写和规则复数形式\",\"食物义的 pan + cake 复合来源，以及化妆品义的品牌来源和1937年年代信息\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 980,
+    "headword": "pancake",
+    "meaning_zh": "n. 薄烤饼, 薄煎饼, 烙饼",
+    "phonetic": "/'pænkeik/",
+    "pos": "",
+    "forms": []
+  }
+}

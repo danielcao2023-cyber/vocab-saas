@@ -1,0 +1,319 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "aac65a618cc55d8f4e473b9b4d29b862f3b57ada7b88cba2a230d99f4e6eccfd",
+    "executedReviewPromptHash": "650203b7c3ba7101b3a45656574bedc614a14739c5b2fca2aca31996f5eddad5",
+    "reviewHash": "ed885ed50292b3c414237caa69d7c1ccc8b4f31f214280bffa0ee8199b8b76b9",
+    "wordId": 627,
+    "inputHash": "1b0d6e1ab0abc1a17b498b2f5f46c59bdd5737600c275e07bd2f3ae9d17862bb",
+    "draftHash": "b7fa88e984b9e73f08a5253ba0be0073965efd874256e0ad96cc040de76546cd",
+    "finalHash": "4f21c8b5381bfd118eef068a49d6b7884d036b78b4047e3122b3c43491e960a6",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/he#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.193Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 25931,
+        "revisionId": 39823411,
+        "revisionTimestamp": "2026-08-22T09:35:07Z",
+        "sha256": "b826980934c97c0cac24a8306b7c2245a95160ba7b6d94e302eb12dcf6dd0fb1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/he",
+        "section": "he etymology",
+        "supports": [
+          "Old English pronoun identity and case family"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:14:23.811062+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "ed4e51d8e2d5b07a0e43333f8ef4e13b52fabfba47ed94622f862eefa34f264d",
+        "summaryAndSupportsWordCount": 44,
+        "sha256": "ed4e51d8e2d5b07a0e43333f8ef4e13b52fabfba47ed94622f862eefa34f264d",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/627.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/he",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:21:06.877Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:40:25.867Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "Cambridge 页面获取失败，不能作为已获取的释义、读音和语法证据。应改引已获取的法语维基词典英语词条；该词条未涵盖的补充说明不冒标来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/partOfSpeech",
+        "message": "遗漏了 he 指雄性动物的常用代词功能，以及词条列出的少见名词用法。补入动物指代义的两个例句、两个句型和一项搭配，并将名词用法列为低频识别项；另补来源明确列出的大写 He 宗教用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "泛指 he 的例句实际上只出现 his or her，没有展示所讲用法。应换成含泛指 he 的原创例句，并明确其较旧语体和现代改写。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note",
+        "message": "“后面的动词用第三人称单数形式”缺少时态和结构限制，会误导学生写出 he can plays 等形式。应限定一般现在时，并说明情态动词后的原形。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "/hiː/ 是标准音标写法，不是旧式简写。应纠正该说明，并补充功能词 he 的常见弱读。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrastingNote",
+        "message": "he 与 she 的性别指代对照也适用于动物，不能限定为只有指人时才成立。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamilyNote",
+        "message": "himself 是反身代词，不能与 him、his 一概称为人称格形式。应区分宾格、物主形式和反身代词，并准确说明 himself 的拼写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/summary",
+        "message": "“不要漏写 he 的字母 e”没有说明 he 与 the 的实际拼写差异；应明确 the 在开头多一个 t。"
+      }
+    ],
+    "coverageAssessment": "已核对男性主格指代、雄性动物指代、较旧泛指用法、少见名词用法及宗教文体中的大写 He。修订后两个核心义各有两个原创英中例句，且各有至少两项句型或搭配，解决了上次新增义结构不足的问题。动物指代和名词补充依据词条释义及专业语言知识，不冒称已获网页支持。词源现有古英语阶段和格形式关系有材料支持，保留原稿，不推演未经可靠确认的更早词根。未改身份字段或 editorial。",
+    "senseInventory": [
+      {
+        "sense": "主格代词：他，指男性",
+        "coveredBy": [
+          "he-pronoun-male"
+        ],
+        "assessment": "原有两个自然例句，覆盖充分；修正动词形式说明和性别对照的限制。"
+      },
+      {
+        "sense": "主格代词：它，指性别明确的雄性动物",
+        "coveredBy": [
+          "he-pronoun-animal"
+        ],
+        "assessment": "原稿遗漏；补入两个动物情境例句、两个句型及一项搭配，并说明与 it、she 的语境差别。"
+      },
+      {
+        "sense": "较旧泛指用法：性别未知或一般的人",
+        "coveredBy": [
+          "he-generic-older"
+        ],
+        "assessment": "原有说明基本正确，但例句不含 he；替换后直接展示该用法及 singular they 改写。"
+      },
+      {
+        "sense": "少见可数名词：男性或雄性个体",
+        "coveredBy": [
+          "he-noun-male"
+        ],
+        "assessment": "原稿遗漏；补入常见于辨认动物性别的 a he 用法，标明低频和非正式语体。"
+      },
+      {
+        "sense": "宗教文体大写 He：指上帝的拼写变体",
+        "coveredBy": [
+          "he-divine-capitalized"
+        ],
+        "assessment": "作为低频文体用法补入，不当作独立核心词义，也不把大写规定为所有宗教文本的统一规则。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"pronoun\"",
+        "valueJson": "\"pronoun; noun (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"he 是第三人称单数主格代词，通常指前文提到的男性，在句中常作主语；对应的宾格是 him，物主形式有 his。\"",
+        "valueJson": "\"he 是第三人称单数主格代词，通常指男性，也可指性别明确的雄性动物，在句中常作主语；对应的宾格是 him，物主形式有 his。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"看到 he，先找它指代的男性，再看它是否作主语。\"",
+        "valueJson": "\"看到 he，先找它指代的人或动物，再看它是否作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"不要把词尾读成单独的 /ə/；旧式简写 /hiː/ 仍表示长元音。\"",
+        "valueJson": "\"音标 /hiː/ 中的 /ː/ 是标准长元音符号。非重读时可读 /hi/；在句中连读时还可能省去 /h/，读作 /i/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-he\"]",
+        "valueJson": "[\"wiktionary-he-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"第三人称单数男性代词，通常在句中作主语。\"",
+        "valueJson": "\"第三人称单数主格代词，可指男性或雄性动物，通常在句中作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"he 作主语，后面的动词用第三人称单数形式，如 he plays。\"",
+        "valueJson": "\"一般现在时中，he 后直接跟实义动词时，通常用第三人称单数形式，如 he plays；情态动词后用原形，如 he can play；一般过去时则如 he played。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"只有在指代人的语境中，she 才与 he 构成常见性别对照；两者都不能因此当作普遍的反义词。\"",
+        "valueJson": "\"这里用 she 与 he 对照女性和男性的指代；谈到动物时，两者也可分别指雌性和雄性。这是性别指代上的对照，不能当作普遍适用的反义关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-he\"]",
+        "valueJson": "[\"wiktionary-he-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"he-pronoun-animal\",\"title\":\"它：指雄性动物\",\"meaning\":\"第三人称单数主格代词，也可指性别明确的雄性动物，尤用于宠物或说话人熟悉的动物。\",\"usageNote\":\"知道动物是雄性时可以用 he；谈论有名字的宠物时尤其常见。不关注性别或性别不明时通常用 it；即使知道性别，也可以根据语境用 it。作宾语用 him，物主形式用 his。\",\"examples\":[{\"id\":\"he-animal-ex1\",\"senseId\":\"he-pronoun-animal\",\"en\":\"This is my dog, Max. He loves chasing tennis balls.\",\"zh\":\"这是我的狗马克斯。它喜欢追网球。\",\"note\":\"he 指公狗 Max，不是指一个男性。\"},{\"id\":\"he-animal-ex2\",\"senseId\":\"he-pronoun-animal\",\"en\":\"Our rabbit is male. He sleeps in a box by the window.\",\"zh\":\"我家的兔子是公的。它睡在窗边的一个盒子里。\",\"note\":\"前句明确兔子的性别，后句用 he 指代它。\"}],\"patterns\":[{\"en\":\"he + 一般现在时实义动词\",\"zh\":\"它……（描述雄性动物的习性）\",\"note\":\"如 He sleeps by the window，用 sleeps 描述习性；有情态动词时用原形，如 He can swim。\",\"kind\":\"sentence-pattern\"},{\"en\":\"he is + 形容词\",\"zh\":\"它……（描述雄性动物的状态）\",\"note\":\"如 He is hungry，表示这只雄性动物饿了。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"he wagged his tail\",\"zh\":\"它摇了摇尾巴\",\"note\":\"谈论公狗等雄性动物时可这样说；his 在这里表示“它的”。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"it\",\"zh\":\"它\",\"note\":\"不关注动物性别或性别不明时常用 it；知道动物是雄性时也可以用 it。\"}],\"contrasting\":[{\"en\":\"she\",\"zh\":\"它（指雌性动物）\",\"note\":\"性别明确的雌性动物可用 she，与 he 的雄性指代形成对照。\"}],\"similarNote\":\"it 不标明动物性别；he 用于已知为雄性的动物，两者的选择还取决于说话语境。\",\"contrastingNote\":\"这里的 he 与 she 是动物性别上的指代对照，不是通用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"he-generic-ex1\",\"senseId\":\"he-generic-older\",\"en\":\"A student should bring his or her own lunch.\",\"zh\":\"学生应带自己的午餐。\",\"note\":\"较旧的书面表达用 his or her；现代英语也常改写为 students should bring their own lunch。\"}",
+        "valueJson": "{\"id\":\"he-generic-ex1\",\"senseId\":\"he-generic-older\",\"en\":\"If a student needs help, he should ask the teacher.\",\"zh\":\"学生如果需要帮助，就应该向老师求助。\",\"note\":\"这里的 he 在较旧的泛指用法中指任何学生，并非特指男生。现代英语通常写成 If a student needs help, they should ask the teacher.\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-he\"]",
+        "valueJson": "[\"wiktionary-he-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"he-noun-male\",\"title\":\"名词：雄性个体（少见口语）\",\"meaning\":\"作可数名词时表示男性或雄性动物，尤其可用于谈论动物的性别。\",\"note\":\"普通代词 he 前面不加 a；a he 则把 he 当作可数名词使用，可与 a she 对照。日常称呼男人或男孩通常仍用 man 或 boy。\",\"example\":{\"id\":\"he-noun-ex1\",\"senseId\":\"he-noun-male\",\"en\":\"I thought the kitten was female, but it's a he.\",\"zh\":\"我原以为这只小猫是母的，结果它是公的。\",\"note\":\"a 后的 he 作名词，表示这只小猫是雄性；这是非正式说法。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"he-divine-capitalized\",\"title\":\"大写 He：宗教文体中指上帝\",\"meaning\":\"某些宗教文本用大写 He 指上帝。\",\"note\":\"这是文体性的拼写变体，不是新的语法功能；是否大写取决于文本习惯，并非所有宗教文本都如此。\",\"example\":{\"id\":\"he-divine-ex1\",\"senseId\":\"he-divine-capitalized\",\"en\":\"They prayed to God and trusted that He would guide them.\",\"zh\":\"他们向上帝祈祷，相信祂会指引他们。\",\"note\":\"He 位于句中仍大写，体现某些宗教文本的书写习惯，指前面的 God。\"},\"sourceIds\":[\"wiktionary-he-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-he\"]",
+        "valueJson": "[\"wiktionary-he-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"he 是代词，the 是定冠词；注意不要漏写 he 的字母 e。\"",
+        "valueJson": "\"he 是代词，the 是定冠词；the 比 he 在开头多一个 t，不能因为拼写相近就混用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-he\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"he 是代词，没有适合初中学习的常见派生词族；him、his、himself 是同一代词的人称格形式，已列在词形中。\"",
+        "valueJson": "\"he 没有适合初中阶段优先学习的常见派生词族。him 是宾格形式，his 是物主形式，himself 是反身代词，均已列在词形中；himself 由 him 与 self 组成，连写成一个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-he\",\"title\":\"Cambridge Dictionary: he\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/he\",\"supports\":[\"he 的主格代词用法及男性指代\",\"he、him、his、himself 的代词形式\",\"英式和美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-he-en\",\"title\":\"Wiktionnaire：he（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/he#Anglais\",\"supports\":[\"he 的男性主格指代及较旧泛指用法\",\"he、him、his、himself 的相关代词形式\",\"英式和美式读音标注\",\"宗教文体中指上帝的大写 He 变体\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 627,
+    "headword": "he",
+    "meaning_zh": "pron. 他\nn. 男孩, 男人, 雄性动物",
+    "phonetic": "/hi:/",
+    "pos": "",
+    "forms": []
+  }
+}

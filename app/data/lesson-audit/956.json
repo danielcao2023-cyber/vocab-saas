@@ -1,0 +1,312 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d913cb01fc699ddc4775500a927516c183548a8899a58158e3a4981d9e7b3800",
+    "executedReviewPromptHash": "d913cb01fc699ddc4775500a927516c183548a8899a58158e3a4981d9e7b3800",
+    "reviewHash": "eb0db556fbd3b41e78a55fe2d4ceec6382e26e7cbdc2a3756672a74e290668ad",
+    "wordId": 956,
+    "inputHash": "8a799557299acab1fd381f966aa6071fc713d4e821511198a14e1cb50b99c6d7",
+    "draftHash": "e3de05263c91b08292c7dde7f6c64f558a5cf3814c7f58a8ad2ea0aaf0f5e329",
+    "finalHash": "485aab75facd5dd0bdaabb99ded04201861c52c015af08bc081cc147c83e02b2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/operate#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.611Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 122060,
+        "revisionId": 38299377,
+        "revisionTimestamp": "2025-06-07T13:32:38Z",
+        "sha256": "217683bb0d90ec0b0aa8e3495038b6174d95b41b52f8fd11db3e39411283ec5b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/operate",
+        "section": "operate verb",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "4bcf18d2bf5703216371534428fcdfe9cb10d060687238db99383a22260aaaa4",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "4bcf18d2bf5703216371534428fcdfe9cb10d060687238db99383a22260aaaa4",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/956.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/operate",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:38:23.716Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:45:19.068Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "operate 已以不发音的 e 结尾，过去式只加 -d；“直接加 -ed”会误导学生拼成 operateed。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "“某人或某物在某个范围内活动”范围过宽，容易误用于普通走动或休闲活动。应限定为经营、运营及开展工作或执行任务，并为及物经营用法和不及物活动用法各补一个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有 stages 展示的是拉丁语动词与分词的形态关系，不能据此画成确定的历史阶段；operatus 的阶段释义也只有词形身份。应将这些事实放入 summary、清空阶段，并补入已有来源支持的早期“活动、工作”义及后来的专门义发展。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 页面未取得，不能作为本次读音、词义和词族说明的查证依据。应引用实际取得的法语维基词典英语词条，并清除读音与词族中缺乏对应来源内容的引用；相关正确知识可以保留。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的操作机器、提供服务、做手术、运转四项定义，并检查机构经营和开展工作的常见用法。修订后各核心用法均有至少两个自然原创例句。现有语法、读音、近反义语境和词族实际拼写基本正确，予以保留。可用词典释义较简略，读音及现代词族按专业语言知识审校，不将无法取得的 Cambridge 页面当作查证依据；词源保留两种形成路径的不确定性。",
+    "senseInventory": [
+      {
+        "sense": "操作、操纵机器或设备（及物）",
+        "coveredBy": [
+          "operate-1"
+        ],
+        "assessment": "相机和升降机两个例句覆盖充分，直接接设备宾语的说明正确。"
+      },
+      {
+        "sense": "机器、系统或服务运转、运行（不及物）",
+        "coveredBy": [
+          "operate-2"
+        ],
+        "assessment": "供暖系统和渡船两个例句分别展示设备运转与服务按时运行。"
+      },
+      {
+        "sense": "施行手术；给人或身体部位做手术",
+        "coveredBy": [
+          "operate-3"
+        ],
+        "assessment": "两个例句分别覆盖病人和身体部位；operate on 的结构及相关对照正确。"
+      },
+      {
+        "sense": "提供、运营服务或经营业务（及物）",
+        "coveredBy": [
+          "operate-4"
+        ],
+        "assessment": "原航班例句加上咖啡馆经营例句，展示运营服务与经营店铺两种具体情境。"
+      },
+      {
+        "sense": "机构或人员在一定地区开展工作、执行任务（不及物）",
+        "coveredBy": [
+          "operate-4"
+        ],
+        "assessment": "保留慈善机构例句并补充救援队例句，同时收窄泛泛的“活动”解释。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"规则变化：直接加 -ed。\"",
+        "valueJson": "\"以不发音的 e 结尾，只加 -d：operate → operated。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"经营；开展；活动\"",
+        "valueJson": "\"经营；运营；开展工作\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"公司、机构或组织开展业务或提供服务；也可表示某人或某物在某个范围内活动。\"",
+        "valueJson": "\"经营企业、运营服务，或指机构、组织、人员在某地区开展业务或执行任务。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用 operate in a place / area，说明经营或活动的地点、领域。\"",
+        "valueJson": "\"可直接接 business、service 等宾语；也可不带宾语，用 in + 地点或领域说明经营或工作的范围。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"operate-4-ex3\",\"senseId\":\"operate-4\",\"en\":\"My parents operate a small cafe near the station.\",\"zh\":\"我的父母在车站附近经营一家小咖啡馆。\",\"note\":\"operate a cafe 表示经营一家店；这里是及物用法。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"operate-4-ex4\",\"senseId\":\"operate-4\",\"en\":\"The rescue team operates in the mountains.\",\"zh\":\"这支救援队在山区执行救援任务。\",\"note\":\"operate in 后接任务区域，表示在当地开展工作。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 operate 可能由 operation 逆构形成，也可能来自拉丁语 operatus（与“工作、劳动”有关）；这两种来源说法并不确定，不能拼成一条连续演变链。\"",
+        "valueJson": "\"operate 可能由英语 operation 逆构形成，也可能来自拉丁语 operatus（动词 operari“工作、劳动”的分词）。它在英语中早期表示“活动、工作”，后来发展出“做手术”和“操作机器”等专门用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"Latin\",\"form\":\"operari\",\"meaning\":\"工作；劳动\"},{\"language\":\"Latin\",\"form\":\"operatus\",\"meaning\":\"operari 的分词形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上是可能的历史来源之一；另一种说法认为 operate 由英语 operation 逆构而来。现代英语中可把 operate 记作表示“使……运作／自己运作”的动词，但这只是助记，不等于确定词源。\"",
+        "valueJson": "\"operate 的具体形成路径存在上述两种解释；operation 逆构说与拉丁语来源说不能串成一条已确定的演变链。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-operator\",\"title\":\"Cambridge Dictionary: operate\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/operate\",\"supports\":[\"operate 的发音、词形与动词用法\",\"操作机器、机器运转、手术及机构运营等常见义项\",\"operation、operator、operational 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-operate\",\"title\":\"Wiktionnaire：operate（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/operate#Anglais\",\"supports\":[\"英语 operate 的操作机器、提供服务、做手术和运转等基本义项\",\"operate 的规则动词词形及 operate on 的手术用法\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"operate 早期“活动、工作”义及后来的手术、机器操作等专门义发展\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[\"wiktionary-operate\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-operator\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 956,
+    "headword": "operate",
+    "meaning_zh": "v. 操作, 运转, 动手术, 活动",
+    "phonetic": "/'ɒpәreit/",
+    "pos": "",
+    "forms": []
+  }
+}

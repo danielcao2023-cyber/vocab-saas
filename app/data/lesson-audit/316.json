@@ -1,0 +1,220 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1ee00fd9cd6e83e54cd2050ab4a68dcfdb52083a94420939b2e64a8ab3eb8d86",
+    "executedReviewPromptHash": "1ee00fd9cd6e83e54cd2050ab4a68dcfdb52083a94420939b2e64a8ab3eb8d86",
+    "reviewHash": "46d601c21fdf1781eeefae173b6274aaf8f860d28760071698e6540729145ecd",
+    "wordId": 316,
+    "inputHash": "e498032c71d96f678505fafd62e78106bd4d535ed3af50483882c78df61da425",
+    "draftHash": "a156f3ecaa16b5c3cf8e8c5bf416a04a08fd3298266eaa520391ab6d48400ce6",
+    "finalHash": "c0298e5d693269a8775c3dbc0a5dcc7124bae44bad6701196cc6350ca3bc2703",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/conversation#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:48.790Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 235214,
+        "revisionId": 39715390,
+        "revisionTimestamp": "2026-07-31T18:04:28Z",
+        "sha256": "c3d87ab56170ced1f14da915b566a1a1af3fcb3521645cc332af9bc4cf542898",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/conversation",
+        "section": "conversation etymology",
+        "supports": [
+          "Earlier life and association senses",
+          "Latin keeping-company family",
+          "Later spoken-exchange meaning"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "f3c9a9bd7b21fb4f58d36878e7c30ba64cac1e6a6a53fc42cd39075e0195281c",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "f3c9a9bd7b21fb4f58d36878e7c30ba64cac1e6a6a53fc42cd39075e0195281c",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/316.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/conversation",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:42:01.773Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T13:51:14.984Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "polish",
+        "location": "/takeaway",
+        "message": "开头直接说“是可数名词”不够完整，应明确一次具体谈话用可数形式、泛指交谈活动时可作不可数名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "e3 本身语法正确，但 the conversation 可以回指一次具体谈话，不能清楚示范本节的不可数用法。应换成明确受 much 修饰的例句，并把 keep the conversation going 移到具体谈话用法下，保留这一实用搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "两处“特指口头交谈”过于绝对；conversation 也可用于文字聊天。改成“通常”并补充媒介范围即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "古法语阶段的 meaning 只是传入路径说明，并非该形式的释义。法语中介关系已保留在 summary，应删除这个空洞阶段；同时补明早期生活方式、交往义不能一律按现代交谈义理解。"
+      }
+    ],
+    "coverageAssessment": "现有定义支持一个现代核心名词义：交谈、谈话。s1 和 s2 可保留为具体谈话的可数用法与泛指活动的不可数用法，无须另造词义。两组均保留两个原创英中例句；读音、复数、with/about 搭配、近义及反向表达、converse 的词性与重音均已核对。早期生活方式、交往义在词源中交代，不扩充为初中常用义。",
+    "senseInventory": [
+      {
+        "sense": "交谈、谈话：一次具体交谈（可数用法）",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "两个例句分别自然展示交谈对象和话题，覆盖充分；补入延续某段谈话的搭配。"
+      },
+      {
+        "sense": "交谈、谈话：泛指交谈活动（同一核心义的不可数用法）",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "e4 已明确展示不可数用法；修订 e3 及相关说明后，两例均能清楚支撑本节教学目标。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"conversation 是可数名词，常指一段交谈，也可泛指交谈这种活动。重点记住 have a conversation、conversation with someone 和 conversation about something。\"",
+        "valueJson": "\"conversation 指一次具体交谈时是可数名词，泛指交谈这种活动时可作不可数名词。重点记住 have a conversation、conversation with someone 和 conversation about something。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于 keep the conversation going、conversation flows 等表达；说一种交谈能力时常用 conversation skills。\"",
+        "valueJson": "\"泛指交谈活动时可作不可数名词，如 practise conversation、not much conversation、in conversation。conversation skills 表示交谈能力，其中 conversation 用来修饰 skills。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"e3\",\"senseId\":\"s2\",\"en\":\"Good questions can keep the conversation going.\",\"zh\":\"好问题能让谈话继续下去。\",\"note\":\"conversation 指谈话活动整体。\"}",
+        "valueJson": "{\"id\":\"e3\",\"senseId\":\"s2\",\"en\":\"There wasn't much conversation at dinner because everyone was tired.\",\"zh\":\"晚饭时大家都累了，所以没怎么交谈。\",\"note\":\"much 修饰不可数的 conversation，表示交谈活动的多少。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"keep the conversation going\",\"zh\":\"让谈话继续下去\",\"note\":\"keep 后接宾语和 going，表示使谈话不中断。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"in conversation with someone\",\"zh\":\"正在与某人交谈\",\"note\":\"常用于 be in conversation with someone；这里的 conversation 不加 a，表示交谈活动。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"keep the conversation going\",\"zh\":\"让谈话继续下去\",\"note\":\"the conversation 常回指某段已知谈话；keep 后接宾语和 going，表示使谈话不中断。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"communication 范围更广，可包括文字、动作等方式；conversation 特指通过说话进行的交谈。\"",
+        "valueJson": "\"communication 范围更广，可包括文字、动作等方式；conversation 通常指有来有往的口头交谈，也可用于文字聊天。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"communication 包括多种交流方式；discussion 更强调围绕议题讨论。conversation 特指口头交谈。\"",
+        "valueJson": "\"communication 包括多种交流方式；discussion 更强调围绕议题讨论。conversation 强调有来有往的交谈，通常通过说话，也可通过文字聊天。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"古法语\",\"form\":\"conversacion\",\"meaning\":\"英语 conversation 经由的法语形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里概述的是词的历史来源；现代英语中不应把 conversation 简单拆成有独立词义的几个部分来推断词源。\"",
+        "valueJson": "\"早期英语中的 conversation 还可涉及生活方式或交往，不能把旧用例一律理解成今天的“交谈”。现代词形也不应简单拆成有独立词义的几个部分来推断词源。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 316,
+    "headword": "conversation",
+    "meaning_zh": "n. 会话, 说话, 交谈",
+    "phonetic": "/.kɒnvә'seiʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

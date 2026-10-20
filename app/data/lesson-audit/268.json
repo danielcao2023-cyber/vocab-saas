@@ -1,0 +1,200 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2e523d726ff04be3fb53af958e78d1fe0c375305e10a07bb8a2440b5679469a2",
+    "executedReviewPromptHash": "2e523d726ff04be3fb53af958e78d1fe0c375305e10a07bb8a2440b5679469a2",
+    "reviewHash": "3b4c1b4af3a1dc9b9d3f4d5cf79a6270f48dea9701fa2b59f4a6f3b5b2fd794b",
+    "wordId": 268,
+    "inputHash": "65121aee6c4369b4380d77fa21398d16e6f565d9dd4f54970ec40b9be2d7d6c1",
+    "draftHash": "6f829f117316234df951206c7b444250699cc9e4d5877b0ec87539190e2b73a9",
+    "finalHash": "62205caeb4c39cc7145392601dbebccfddbf702c31ec88da54441e6014a68d68",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cinema#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.914Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9517,
+        "revisionId": 39709090,
+        "revisionTimestamp": "2026-07-29T05:52:05Z",
+        "sha256": "a58c4dbaf1bb424033946ed0465d10c42bc38170f5334224f7a7f844ed7cb4d4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cinema",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:44:49.502Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:49:07.810Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "cinema 去掉 a 再加 -tic 会得到 cinemtic。cinematic 的实际拼写保留 cinema 末尾的 a。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "cinema and film 不是具有固定“电影艺术／电影作品”分工的常用搭配；film 也能指电影艺术。应换成含义明确的实用搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "可数性说明不完整：电影院义可数，电影艺术或电影业义通常不可数。第二义也应明确这一点，防止把 a cinema 用来表示一部电影。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples",
+        "message": "标题和释义包含电影行业，但现有例句只体现电影史与国别电影作品，缺少明确的行业用法例句。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/etymology/stages",
+        "message": "已取回的词源材料支持借入及缩略关系，但未给出 cinématographe 的具体装置释义；cinéma 阶段的 meaning 也只是缩略关系，并非词义。可靠历史关系已在 summary 中保留，应取消这些释义依据不足的阶段展示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "“旧音标不准确”缺少明确参照，对学生帮助有限，可替换为具体发音提示。"
+      }
+    ],
+    "coverageAssessment": "已核对电影院、go to the cinema 的看电影活动表达，以及电影艺术、国别作品和电影业用法。保留两组教学义合理；补充行业例句并明确可数性后，核心用法覆盖完整。近义表达的地区和语境限制基本准确，无须强造反义词。来源局限是已取回词条只有概括性释义，Cambridge 正文未取得；常用义与语法另依专业语言知识审查，词源严格限于已取回材料。",
+    "senseInventory": [
+      {
+        "sense": "名词：电影院（可数，英式常用）；the cinema 也用于表达去电影院看电影的活动",
+        "coveredBy": [
+          "268-1"
+        ],
+        "assessment": "两例分别呈现具体电影院与去看电影的活动，搭配自然；合在同一教学义中说明即可。"
+      },
+      {
+        "sense": "名词：电影艺术、电影作品与传统，或电影行业（通常不可数）",
+        "coveredBy": [
+          "268-2"
+        ],
+        "assessment": "电影艺术史及国别电影已有例句；补入行业生活例句，并说明不可数用法后，覆盖完整。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"cinema 去掉词尾 a，再加 -tic，拼作 cinematic。\"",
+        "valueJson": "\"cinema 保留词尾 a，直接加 -tic，拼作 cinematic。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"cinema and film\",\"zh\":\"电影艺术与电影作品\",\"note\":\"常用于讨论电影相关主题；film 更常指一部具体影片。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"work in cinema\",\"zh\":\"从事电影行业的工作\",\"note\":\"指在电影行业工作；这里的 cinema 通常不可数。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词，表示一座电影院时用 a cinema 或 the cinema。\"",
+        "valueJson": "\"表示‘电影院’时可数，单数可用 a cinema 或 the cinema；表示电影艺术或电影业时通常不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于谈电影的发展、历史或某地的电影作品时；中文可按上下文译为“电影”或“电影业”。\"",
+        "valueJson": "\"本义通常不可数，可用于谈电影艺术、某地的电影作品与传统或电影行业；泛指时常直接用 cinema。说‘一部电影’用 a film 或 a movie。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"268-2-ex3\",\"senseId\":\"268-2\",\"en\":\"My brother works in cinema as a sound engineer.\",\"zh\":\"我哥哥在电影行业做录音师。\",\"note\":\"work in cinema 表示从事电影行业的工作；cinema 在这里指电影业。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古希腊语\",\"form\":\"κίνημα（kinēma）\",\"meaning\":\"运动\"},{\"language\":\"法语\",\"form\":\"cinématographe\",\"meaning\":\"电影摄影机或电影放映相关装置名称\"},{\"language\":\"法语\",\"form\":\"cinéma\",\"meaning\":\"cinématographe 的缩略形式\"},{\"language\":\"英语\",\"form\":\"cinema\",\"meaning\":\"电影院；电影艺术\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；常见英式与美式读法见上。\"",
+        "valueJson": "\"词首 c 发 /s/，第一个音节中的 i 发 /ɪ/。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 268,
+    "headword": "cinema",
+    "meaning_zh": "n. 电影院, 电影",
+    "phonetic": "/'sinәmә/",
+    "pos": "",
+    "forms": []
+  }
+}

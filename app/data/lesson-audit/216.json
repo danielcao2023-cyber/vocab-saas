@@ -1,0 +1,361 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8105ec9c30189f6d56ba22910bea71204d0ad38a0505f35020df1e7942b97275",
+    "executedReviewPromptHash": "8105ec9c30189f6d56ba22910bea71204d0ad38a0505f35020df1e7942b97275",
+    "reviewHash": "8bbcdea23dfe157ed2e653eab2bc883635bec38368f3fa0e728584eeb3c8dbec",
+    "wordId": 216,
+    "inputHash": "ab0c2becd4ab0436c4a0c8cda042c0eb30c2f46869b477e7439fbe1aac8aa103",
+    "draftHash": "1e896d562a3eb7a6b3b0ae49ce050e5eabddd3518cd44a37abc730112c406388",
+    "finalHash": "9cb7ea474ebfe5f19869e440ce2c0a357c03fc2618dbed5057c7ea458f4e0d72",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cancer#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.950Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10297,
+        "revisionId": 39479244,
+        "revisionTimestamp": "2026-05-02T20:59:52Z",
+        "sha256": "33f55b9c2d9904abef26052dfa0ac47022f18b554455010b59f0d58f3a992c4a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/cancer",
+        "section": "cancer (noun)",
+        "supports": [
+          "Latin crab and tumour senses",
+          "Historical visual comparison",
+          "Naming distinguished from disease causation"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "899b7db138d2305c9d8de16aeb831278627f4cde6d5c56418296f81974c98251",
+        "summaryAndSupportsWordCount": 72,
+        "sha256": "899b7db138d2305c9d8de16aeb831278627f4cde6d5c56418296f81974c98251",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/216.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cancer",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:04:39.337Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T06:11:23.127Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/0；/forms/0/note",
+        "message": "cancer 并非一概不可数；表示癌种或具体恶性肿瘤时可以可数。复数 cancers 是规则变化，“不规则复数形式不常用”有误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题包含“恶性肿瘤”，但释义及两条例句只覆盖疾病和癌种，未充分呈现具体肿瘤的指称；需补明含义并增加两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/0；/confusions/0/items",
+        "message": "主例句第一项及辨析中的三条例句均缺少必填 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/patterns/2/note；/memoryAid/cues/1/text",
+        "message": "lung、breast、skin 是器官或组织名称，不是放在 cancer 前的完整“病种名称”；lung cancer 等整体才是病种名称。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions；/confusions/0/summary",
+        "message": "不能简单说 tumor 的范围包含所有 cancer；有些癌症不形成实体肿瘤。tumor 也不能泛指任何肿块，应说明它指异常组织生长形成的肿瘤。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；相关 sourceIds",
+        "message": "Oxford 正文未提供，Cambridge 获取失败，不能作为本次实际取得的词典依据。应改用已取得的维基词典英语词条，并清除没有直接材料支持的来源关联。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "原音标本来就标示首音节重读，“按旧音标把重音放到第二音节”的提醒缺乏依据；改讲两个 c 的实际读音更准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/senses/0/relatedExpressions/contrasting",
+        "message": "可补入常用且构词清楚的 cancerous、noncancerous，并用 be cancer-free 对照 have cancer 所表示的患癌状态。"
+      }
+    ],
+    "coverageAssessment": "已核对疾病总称、具体癌种、恶性肿瘤指称及次常见比喻义。修订后，同一核心义内分别有两例呈现疾病和具体肿瘤，无须机械拆义。法语维基词典材料属于英语词条，其法语释义中的大写 Cancer 不能作为英语星座义的证据。细分可数用法、辨析和词族依据专业语言知识审核；所附直接释义有限，Oxford 与 Cambridge 未作为实际取得的证据。现有词源与已取得材料一致，无须修改。",
+    "senseInventory": [
+      {
+        "sense": "癌症；某种癌症",
+        "coveredBy": [
+          "cancer-disease"
+        ],
+        "assessment": "已有两条自然的疾病例句；补充可数癌种与规则复数 cancers 的说明。"
+      },
+      {
+        "sense": "某个具体的恶性肿瘤",
+        "coveredBy": [
+          "cancer-disease"
+        ],
+        "assessment": "与疾病义紧密相关，保留在同一核心义内；补明释义并增加两条具体例句。"
+      },
+      {
+        "sense": "像癌症般蔓延的祸害或严重问题",
+        "coveredBy": [
+          "cancer-figurative"
+        ],
+        "assessment": "原例句自然，强烈贬义及语域限制说明恰当。作为次常见义保留；所附材料未直接列出独立比喻释义，本项按专业语言知识审核。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 cancer 是不可数名词，通常不说 a cancer 表示患癌。\"",
+        "valueJson": "\"泛指患癌通常说 have cancer，不加 a；表示某种癌症或一个具体的恶性肿瘤时可以可数，复数为 cancers。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"开头 /kæn/ 的元音近似 cat 中的元音；不要按旧音标把重音放到第二音节。\"",
+        "valueJson": "\"重读元音 /æ/ 与 cat 中相同；第一个 c 读 /k/，第二个 c 读 /s/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常作不可数名词，表示癌症这一类疾病；不规则复数形式不常用。\"",
+        "valueJson": "\"泛指癌症或说明患癌状态时通常不可数；表示某种癌症或一个具体的恶性肿瘤时可以可数。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"规则复数\",\"form\":\"cancers\",\"ipa\":\"/ˈkænsə(r)z/\",\"note\":\"在 cancer 后加 -s，词尾读 /z/；可表示多种癌症或多个恶性肿瘤，如 some cancers（某些癌症）。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一类身体细胞异常生长、可能侵入或扩散到身体其他部位的严重疾病；也可指某种癌症。\"",
+        "valueJson": "\"一类身体细胞异常生长、可能侵入周围组织或扩散到身体其他部位的严重疾病；可数时也可指某种癌症或一个具体的恶性肿瘤。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"泛指疾病时通常作不可数名词；说患癌常用 have cancer。具体病种常放在 cancer 前，如 lung cancer。\"",
+        "valueJson": "\"泛指疾病或说明患癌状态时通常不可数，常说 have cancer；表示某种癌症或一个具体的恶性肿瘤时可数，复数为 cancers。器官或组织名称可放在 cancer 前，如 lung cancer、breast cancer。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"treatment for cancer 表示针对癌症的治疗；这里的 cancer 不可数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cancer-ex-4\",\"senseId\":\"cancer-disease\",\"en\":\"The surgeon removed a small cancer from her cheek.\",\"zh\":\"外科医生从她的脸颊上切除了一个小的恶性肿瘤。\",\"note\":\"a cancer 在此指一个具体的恶性肿瘤，作可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cancer-ex-5\",\"senseId\":\"cancer-disease\",\"en\":\"The scan showed that the cancer in his liver had grown.\",\"zh\":\"扫描结果显示，他肝脏里的恶性肿瘤增大了。\",\"note\":\"这里的 the cancer 指语境中已知的具体恶性肿瘤。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/note",
+        "expectedValueJson": "\"病种名称放在 cancer 前。\"",
+        "valueJson": "\"lung、breast、skin 是器官或组织名称；它们修饰 cancer，整体构成病种名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"指身体组织中的肿块；肿瘤可能是良性的，也可能是恶性的，所以不能总用它替换 cancer。\"",
+        "valueJson": "\"指细胞异常增生形成的肿瘤，可能良性，也可能恶性；不是任何肿块都能称为 tumor，也不能总用它替换 cancer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"tumor 范围更广，cancer 指恶性疾病。\"",
+        "valueJson": "\"两词不能简单互换：tumor 可良性也可恶性，cancer 指恶性疾病；有些癌症并不形成实体肿瘤。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be cancer-free\",\"zh\":\"没有癌症；目前未见癌症\",\"note\":\"用于描述人目前未患癌或治疗后未见癌症的状态，与 have cancer 对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"benign tumor 是有用的医学语境对照，不是所有场合下 cancer 的反义词。\"",
+        "valueJson": "\"benign tumor 对照肿瘤性质；be cancer-free 对照 have cancer 所表示的患癌状态。它们都不是适用于 cancer 所有用法的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"tumor 表示肿瘤或肿块，可能良性也可能恶性；cancer 指癌症或恶性肿瘤。\"",
+        "valueJson": "\"tumor 指细胞异常增生形成的肿瘤，可良性也可恶性；cancer 指癌症，也可指具体的恶性肿瘤。有些癌症不形成实体肿瘤。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have cancer 表示患癌，这里的 cancer 不加不定冠词。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"benign 表示良性；tumor 本身不表示恶性。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"泛指邻居患癌时用 has cancer，不加 a。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"cancerous\",\"partOfSpeech\":\"adjective\",\"meaning\":\"癌性的；含癌细胞的\",\"formation\":\"cancer + -ous，名词加后缀构成形容词。\",\"spellingNote\":\"在完整的 cancer 后直接加 ous，保留 e 和 r，写作 cancerous。\",\"example\":{\"id\":\"cancer-family-ex-1\",\"senseId\":\"cancer-disease\",\"en\":\"Tests showed that the lump was cancerous.\",\"zh\":\"检查显示，这个肿块是癌性的。\",\"note\":\"cancerous 描述肿块具有癌性。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"noncancerous\",\"partOfSpeech\":\"adjective\",\"meaning\":\"非癌性的\",\"formation\":\"non- + cancerous，给形容词加否定前缀。\",\"spellingNote\":\"保留 cancerous 的完整拼写；也常写作 non-cancerous。\",\"example\":{\"id\":\"cancer-family-ex-2\",\"senseId\":\"cancer-disease\",\"en\":\"The doctor explained that the growth was noncancerous.\",\"zh\":\"医生解释说，这个肿块是非癌性的。\",\"note\":\"noncancerous 与 cancerous 对照，说明肿块是否具有癌性。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课不列仅与癌症主题相关的词；常见病种名称如 lung cancer 是搭配，不是 cancer 的派生词。\"",
+        "valueJson": "\"cancerous 是 cancer 加 -ous 构成的形容词；noncancerous 再加 non- 表示否定。lung cancer 等病种名称是搭配，不是派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"患癌常说 have cancer；病种放前面，如 lung cancer。\"",
+        "valueJson": "\"患癌常说 have cancer；器官或组织名称可放在 cancer 前，如 lung cancer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: cancer\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/cancer\",\"supports\":[\"常用疾病义及词性\",\"have cancer 等用法与搭配\",\"英美发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：cancer（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/cancer#Anglais\",\"supports\":[\"英语名词 cancer 的疾病义\",\"英美读音\",\"英语 cancer 来自拉丁语 cancer\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: cancer\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/cancer\",\"supports\":[\"疾病义及常见病种搭配\",\"tumor 与 cancer 的用法区分参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 216,
+    "headword": "cancer",
+    "meaning_zh": "n. 癌, 恶性肿瘤",
+    "phonetic": "/'kænsә/",
+    "pos": "",
+    "forms": []
+  }
+}

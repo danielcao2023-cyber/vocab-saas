@@ -1,0 +1,352 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b9b8588f029ce4ec9e85227ca5357e6b9ec0d73b665cd121ad4435dca176df2c",
+    "executedReviewPromptHash": "b9b8588f029ce4ec9e85227ca5357e6b9ec0d73b665cd121ad4435dca176df2c",
+    "reviewHash": "33788420fbc1939b5138f22f3f353ddecf11bf3b1ffebb53d8b0bfd9fcba1f12",
+    "wordId": 1009,
+    "inputHash": "96430d1c375a5718697897cbbe33f761fe33471e04de49fc39d6b055350f7fde",
+    "draftHash": "02cb484c227e2b6bc37979db524fd05e0a673a8f12c87e7569c8d32376859615",
+    "finalHash": "6a247ace7106faae133c3809cf8bb41ebac5c5c9594a5a936df79315a45b2810",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/period#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.986Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86374,
+        "revisionId": 38817495,
+        "revisionTimestamp": "2025-10-03T19:06:54Z",
+        "sha256": "2e7f861194169c7af3543fbeb62e3441c31a3909a2ba6c2d754f9003cb0a4f5f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/period",
+        "section": "period etymology",
+        "supports": [
+          "Cycle and sentence branches; Greek around plus way"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:09:33.680026+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "518ad44f4381297ec2e6e6e47d4aed7ab036d73f2d190767d52a437f0880f935",
+        "summaryAndSupportsWordCount": 59,
+        "sha256": "518ad44f4381297ec2e6e6e47d4aed7ab036d73f2d190767d52a437f0880f935",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1009.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/period",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:45:35.475Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:53:52.714Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 本次未取得词条内容，不能作为各处说明的实际材料依据；Wiktionary 的现有 supports 又越界声称支持希腊语和“中世纪”拉丁语关系。应调整来源与引用，学校课时义、词族等可靠内容按专业语言知识保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1",
+        "message": "第二条例句没有使用 period，不能充当该词的核心示范例句。还应直接示范已经讲到的历史时期用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "句号、月经／经期都是常见义，不宜仅作为各有一例的少见义处理。句号条目还混入了独立的口语强调功能，却没有示范该功能；须分开并各补足两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech",
+        "message": "只列 noun 遗漏了材料明确列出的感叹语功能；period costume 所体现的历史风格定语用法也未得到教学覆盖。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有顺序箭头把法语和直接借入拉丁语两条路径压成了一条链。应在 summary 分述，并补入已有材料支持的 peri、hodos 构成及拉丁语“完整句子”这一语义分支。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "“英式常把中间的元音读得更明显”不能准确说明这里的英美差异；应说明常见音值及共同的首音节重音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "moment 也能指很短的一段时间，而 period 本身不限定长短。现有“某一刻／一段时间”的概括过于绝对，应明确只是特定语境下的对照。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对词义、例句、搭配、翻译、拼写、读音、近反向表达、词族和来源。修订后覆盖时间段、人生及历史阶段、学校课时、句号、月经／经期、美式强调语和历史风格定语用法；六个主要教学义项均有至少两个原创例句。学校课时义、具体英美读法及词族说明部分依据专业语言知识，未将不可用的 Cambridge 页面当作已取得的依据。词源仅使用已取得的两份词源材料。",
+    "senseInventory": [
+      {
+        "sense": "名词：一段时间；持续时间",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留自然的天气例句，替换未出现目标词的例句；时间段义覆盖充分。"
+      },
+      {
+        "sense": "名词：人生阶段；历史时期",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "补入人生困难阶段及历史时期的直接示例，与一般持续时间用法共同覆盖。"
+      },
+      {
+        "sense": "名词：学校课表中的一节课／课时",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原有两例、搭配及 class／lesson 辨析基本准确，保留；来源引用改为不冒称有已取得的词典支持。"
+      },
+      {
+        "sense": "名词：句号，主要用于美式及加拿大英语",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "提升为主要义项，补足两例，明确与英式 full stop 的关系，并移出感叹语功能。"
+      },
+      {
+        "sense": "名词：月经；经期",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "提升为主要义项，补足两例和常用表达，避免把月经描述为必然每月发生。"
+      },
+      {
+        "sense": "感叹语：就这样；不再讨论",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "新增独立义项及两个句末强调例句，标明美式口语和较强语气。"
+      },
+      {
+        "sense": "形容词定语用法：具有特定历史时期风格的；以过去时代为背景的",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "新增服装和年代剧两例，覆盖材料中 period costume 所体现的实际用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; adjective (attributive); interjection\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式常把中间的元音读得更明显；不同口音略有差异。\"",
+        "valueJson": "\"英美读法都重读第一音节；常见英式标音为 /ˈpɪə.ri.əd/，美式为 /ˈpɪr.i.əd/，后两个音节都不重读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一音节：PEER-ee-uhd；不要按旧音标把它读成三个重音相同的音节。\"",
+        "valueJson": "\"重音在第一音节：PEER-ee-uhd；不要把三个音节读得一样重。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"She learned a lot during her time at the summer camp.\",\"zh\":\"她在夏令营那段时间学到了很多。\",\"note\":\"此处用 time 表示经历的一段时间；period 也可用于强调这是一段有界限的时期。\"}",
+        "valueJson": "{\"id\":\"s1e2\",\"senseId\":\"s1\",\"en\":\"She went through a difficult period after losing her job.\",\"zh\":\"失业后，她经历了一段艰难时期。\",\"note\":\"a difficult period 指生活中的一个困难阶段。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"The museum has a large collection of objects from the Roman period.\",\"zh\":\"这家博物馆收藏了大量罗马时期的物品。\",\"note\":\"the Roman period 用 period 表示一个历史时期。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在描述持续时间时，moment 指很短的一刻，和 period 所指的一段时间形成对照。\"",
+        "valueJson": "\"moment 可指某一时刻或很短的一段时间；在把片刻与较长时期作比较时，可与 period 形成语境上的对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"moment 是某一刻，period 是一段时间；这是时间长短语境中的对照。\"",
+        "valueJson": "\"period 本身不限定时长，a short period 也可以很短；moment 与 period 不是固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"月经；经期\",\"meaning\":\"一次月经，或月经持续的那段时间。\",\"usageNote\":\"此义通常作可数名词，常说 have one's period 或 be on one's period；one's 换成 my、her 等相应的物主限定词。\",\"examples\":[{\"id\":\"s3e1\",\"senseId\":\"s3\",\"en\":\"She stayed home because she was having her period.\",\"zh\":\"她因为正值经期而待在家里。\",\"note\":\"have one's period 是常见说法。\"},{\"id\":\"s3e2\",\"senseId\":\"s3\",\"en\":\"My period started this morning.\",\"zh\":\"我的月经今天早上来了。\",\"note\":\"my period 指这一次月经。\"}],\"patterns\":[{\"en\":\"be on one's period\",\"zh\":\"处于经期\",\"note\":\"例如 I'm on my period，表示目前正值经期。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"have one's period\",\"zh\":\"来月经；处于经期\",\"note\":\"常用物主限定词，如 have my period、have her period。\",\"kind\":\"common-collocation\"},{\"en\":\"one's first period\",\"zh\":\"初潮；第一次月经\",\"note\":\"用 first 指第一次来月经。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"menstruation\",\"zh\":\"月经；月经过程\",\"note\":\"更正式的不可数名词，侧重生理过程；period 通常指一次月经或经期。\"}],\"contrasting\":[],\"similarNote\":\"period 是日常说法；menstruation 更正式，语法上也不能处处直接替换。\",\"contrastingNote\":\"这一生理现象没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"句号（主要用于美式英语）\",\"meaning\":\"美式及加拿大英语中句号的常用名称，符号为“.”；英式英语通常说 full stop。\",\"usageNote\":\"这是可数名词，可说 a period、two periods；普通陈述句通常以句号结尾。\",\"examples\":[{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"Put a period at the end of the sentence.\",\"zh\":\"在句子末尾加一个句号。\",\"note\":\"这是美式英语中的标点名称。\"},{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"Does this sentence need a question mark or a period?\",\"zh\":\"这个句子该用问号还是句号？\",\"note\":\"question mark 和 period 是不同的标点名称。\"}],\"patterns\":[{\"en\":\"put a period at the end of + 名词\",\"zh\":\"在……末尾加句号\",\"note\":\"例如 at the end of a sentence，指在句子末尾。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"end with a period\",\"zh\":\"以句号结尾\",\"note\":\"常用于说明句子的标点。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"full stop\",\"zh\":\"句号\",\"note\":\"英式英语中的常用名称；美式英语通常用 period。\"}],\"contrasting\":[],\"similarNote\":\"在标点名称这一义上，period 与 full stop 主要体现地区用语差异。\",\"contrastingNote\":\"句号是标点名称，没有直接反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"就这样；不再讨论（美式口语强调语）\",\"meaning\":\"放在陈述之后，强调刚才说的话就是最终结论，不接受补充或争论。\",\"usageNote\":\"属于感叹语用法，常写在逗号后，也可单独写成 Period!；语气较强。\",\"examples\":[{\"id\":\"s5e1\",\"senseId\":\"s5\",\"en\":\"You must wear a helmet on this ride, period.\",\"zh\":\"这趟骑行你必须戴头盔，没得商量。\",\"note\":\"period 强调这项要求不容商量。\"},{\"id\":\"s5e2\",\"senseId\":\"s5\",\"en\":\"I'm not sharing my password, period.\",\"zh\":\"我不会把密码告诉别人，就这样。\",\"note\":\"句末 period 强调拒绝的态度和最终决定。\"}],\"patterns\":[{\"en\":\"..., period.\",\"zh\":\"……，就这样／没得商量。\",\"note\":\"先作出完整陈述，再用 period 加强最终决定的语气。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"That's it, period.\",\"zh\":\"就这样，不再讨论。\",\"note\":\"常用于明确结束讨论，语气强硬。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"full stop\",\"zh\":\"就这样；不再讨论\",\"note\":\"英式英语也可在陈述之后用 full stop 表示类似强调。\"},{\"en\":\"that's final\",\"zh\":\"就这么定了\",\"note\":\"强调决定已经作出，不再接受争论。\"}],\"contrasting\":[{\"en\":\"open to discussion\",\"zh\":\"可以商量的\",\"note\":\"表示仍可讨论，与 period 表达的结束讨论形成态度上的对照。\"}],\"similarNote\":\"这些表达都可强调结论或决定；使用时要考虑语气和地区习惯。\",\"contrastingNote\":\"这里对照的是是否愿意继续商量，不是固定的词汇反义关系。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s6\",\"title\":\"具有特定历史时期风格的；以过去时代为背景的（定语）\",\"meaning\":\"说明服装、家具等具有过去某个时代的风格，或影视、戏剧等以过去某个时代为背景。\",\"usageNote\":\"此义用在名词前，常见于 period costume、period furniture 和 period drama；具体年代由上下文说明。\",\"examples\":[{\"id\":\"s6e1\",\"senseId\":\"s6\",\"en\":\"The actors wore period costumes in the school play.\",\"zh\":\"演员们在学校话剧中穿着符合故事所处历史年代风格的服装。\",\"note\":\"period costumes 指具有相应历史时代风格的戏服。\"},{\"id\":\"s6e2\",\"senseId\":\"s6\",\"en\":\"My aunt enjoys period dramas set in the nineteenth century.\",\"zh\":\"我姨妈喜欢以十九世纪为背景的年代剧。\",\"note\":\"period dramas 以过去的时代为背景；这里进一步说明是十九世纪。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"period costume\",\"zh\":\"具有特定历史时代风格的戏服\",\"note\":\"用于影视或舞台演出中的历史服装。\",\"kind\":\"common-collocation\"},{\"en\":\"period drama\",\"zh\":\"历史背景剧；年代剧\",\"note\":\"强调故事发生的时代背景，不保证剧情取自真实历史事件。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"historical\",\"zh\":\"历史的；历史题材的\",\"note\":\"historical drama 也可指历史背景的剧作；historical 还可用于历史研究、事实等，范围更广。\"}],\"contrasting\":[{\"en\":\"a modern-day setting\",\"zh\":\"现代背景\",\"note\":\"在故事背景的年代上，与 period drama 的历史背景作对照。\"}],\"similarNote\":\"在影视题材语境中，historical 与定语 period 的意思有交集，但不能推广到所有搭配。\",\"contrastingNote\":\"这里比较的是故事背景的年代，不是 period 所有义项的反义关系。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"s3\",\"title\":\"月经；经期\",\"meaning\":\"女性每月的月经，也可指经期。\",\"note\":\"常见表达为 have one’s period；属于健康话题用语。\",\"example\":{\"id\":\"s3e1\",\"senseId\":\"s3\",\"en\":\"She stayed home because she was having her period.\",\"zh\":\"她因为正值经期而待在家里。\",\"note\":\"have one’s period 是常见说法。\"},\"sourceIds\":[\"cambridge\"]},{\"id\":\"s4\",\"title\":\"句号；句末标点\",\"meaning\":\"美式英语中 period 可指句号；英式英语通常说 full stop。\",\"note\":\"也可作口语强调语，表示“就是这样，不再讨论”；此用法语气较强。\",\"example\":{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"Put a period at the end of the sentence.\",\"zh\":\"在句子末尾加一个句号。\",\"note\":\"这是美式英语中的标点名称。\"},\"sourceIds\":[\"cambridge\"]}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"period 经法语 periode 传入英语，源自中世纪拉丁语 periodus；更早的希腊语 periodos 表示“环绕一圈、走一圈”。“一段时间”和“句号”等用法与“完整的一圈、一个完整单位”的意思相关发展。\"",
+        "valueJson": "\"period 既经法语 periode，也直接从中世纪拉丁语 periodus 进入英语。更早的希腊语 periodos 表示“绕行一圈”，由 peri（周围）与 hodos（行程、道路）构成。拉丁语 periodus 既有循环的意思，也用于完整的句子；时间段与句末标点沿相关但可区分的用法发展。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"希腊语\",\"form\":\"periodos\",\"meaning\":\"环绕一圈；走一圈\"},{\"language\":\"中世纪拉丁语\",\"form\":\"periodus\",\"meaning\":\"完整的一圈；循环\"},{\"language\":\"法语\",\"form\":\"periode\",\"meaning\":\"传入英语的来源形式\"},{\"language\":\"英语\",\"form\":\"period\",\"meaning\":\"时期、一段时间；后也用于句末标点等义\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"period 的法语和中世纪拉丁语来源\",\"periodus 与希腊语 periodos 的词源关系\"]",
+        "valueJson": "[\"时期与持续时间义及其例示\",\"历史语境中的 period costume 用法\",\"句号义、月经义和美式口语强调语\",\"基本读音以及法语、拉丁语来源\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"希腊语 periodos 的“环绕、行进”构成说明\",\"时间段与句末标点相关但可区分的历史发展\"]",
+        "valueJson": "[\"经法语及直接从中世纪拉丁语借入英语的路径\",\"希腊语 periodos 及 peri（周围）与 hodos（行程、道路）的构成\",\"拉丁语 periodus 的循环与完整句子用法\",\"时间段与句末标点相关但可区分的历史发展\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: period\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/period\",\"supports\":[\"英式与美式发音\",\"时间段、学校课时、月经及句号等常见义项\",\"学校课程与时间相关搭配\",\"periodic 等词族查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1009,
+    "headword": "period",
+    "meaning_zh": "n. 时期；一段时间；（一节）课",
+    "phonetic": "/'piәriәd/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,414 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7e341c899d9c5323ef12d27acb7bf40a43e65bc37915dd80a84a6c92c5acd95a",
+    "executedReviewPromptHash": "e2857520a904946c0533261d6b1798f8596ee7fb9c346f194d8841d3da95a0e5",
+    "reviewHash": "2d10a55f16efd8ffcc184e84ff60d63160353d06207dd538afa6d10a1f4ae8ff",
+    "wordId": 1220,
+    "inputHash": "b6ce6373339eeed12e9651b459cf36f14986155494a2c7a34efbf106f693c4e6",
+    "draftHash": "b6339604a22d90c4e826d805b4df4cd7224f717af8eaac2bb4be0b475ecae13d",
+    "finalHash": "f52cfadfa2448d63da5b73051c9d95b4f2247fea99f61de2ffe8759d079cff9d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shake#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:56.251Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116438,
+        "revisionId": 39392207,
+        "revisionTimestamp": "2026-03-24T22:28:30Z",
+        "sha256": "f4a7e5b56d363bbf5df180463cf6fc1e455d273655f7ab13687c36caf8598a9a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shake",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:55:54.736Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:06:09.241Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "原稿把实体摇动、情绪冲击和信心动摇合并，但例句只覆盖实体运动。已将后两义分为 v4、v5，各补两个匹配例句，并调整相关例句的 senseId。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "物体自身震动、摇头及挥拳示威等常用功能缺少教学覆盖。已补齐句型和例句，使实体摇动、使震动、自身震动、摇头、挥拳各有两个对应例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh",
+        "message": "原译“直响”增加了原句没有明确表达的声响，改为直接描述窗户震动。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/relatedExpressions/similar/1/note",
+        "message": "give someone a handshake 没有固定的正式语体限制，改为说明其名词结构和实际修饰方式。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "原稿的来源索引全部指向未取回正文的 Cambridge，且遗漏实际取得的 Wiktionnaire 英语词条。已更正来源及索引；没有材料直接支持的词族说明保留内容并清空来源索引。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的摇动、震动、发抖、使动摇及两个名词义，并补入常用情绪引申和动作表达。修订后七个核心义均至少有两个 senseId 匹配的例句；v1 内五类具体用法也各有两例。词形、读音、握手结构和词族拼写基本正确，予以保留。法语页面描述的是英语词条；其词源栏只有待补标记，不能支持历史阶段，因此不编造词源链。派生短语的独立多义未作全面展开。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：摇动某物",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "保留摇瓶例句，补入摇罐混匀颜料的例句，共两例。"
+      },
+      {
+        "sense": "及物动词：使物体或地方震动",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "保留撞击声震动窗户的例句，补入地震震动楼房的例句，共两例。"
+      },
+      {
+        "sense": "不及物动词：物体、地面自身摇晃或震动",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "补入不及物句型及窗户、地面作主语的两个例句。"
+      },
+      {
+        "sense": "不及物动词：身体或声音发抖、颤抖",
+        "coveredBy": [
+          "v2"
+        ],
+        "assessment": "原有小狗因冷发抖及声音发颤两例，覆盖正确。"
+      },
+      {
+        "sense": "动词：使人震惊、心神不安",
+        "coveredBy": [
+          "v4"
+        ],
+        "assessment": "从原 v1 分出，补入事故及火灾消息引起情绪冲击的两个例句。"
+      },
+      {
+        "sense": "动词：动摇信心、信任或信念",
+        "coveredBy": [
+          "v5"
+        ],
+        "assessment": "从原 v1 分出，以考试失利动摇信心、谎言动摇信任分别举例。"
+      },
+      {
+        "sense": "常用表达：shake one’s head，摇头",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "补入固定搭配及表示不要、表示不知道的两个例句。"
+      },
+      {
+        "sense": "常用动作表达：shake one’s fist at someone，朝某人挥拳示威",
+        "coveredBy": [
+          "v1"
+        ],
+        "assessment": "补入搭配及两个具体例句，并与一般挥手使用的 wave 区分。"
+      },
+      {
+        "sense": "常用表达：shake hands／shake someone’s hand，握手",
+        "coveredBy": [
+          "v3"
+        ],
+        "assessment": "原有两个自然例句，单复数及 with 结构说明正确。"
+      },
+      {
+        "sense": "可数名词：一次或一阵摇动、震动",
+        "coveredBy": [
+          "n1"
+        ],
+        "assessment": "原有 give something a shake 及一阵震动惊醒婴儿两例，覆盖充分。"
+      },
+      {
+        "sense": "口语可数名词：奶昔",
+        "coveredBy": [
+          "n2"
+        ],
+        "assessment": "原有巧克力、草莓奶昔两例，与 milkshake、smoothie 的范围区分合理。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作动词时，shake 常表示“来回摇动”，也可表示人因寒冷、害怕等发抖，或用 shake hands 表示握手；作名词时可表示一次摇动，也可指奶昔。\"",
+        "valueJson": "\"shake 可表示摇动物体、物体自身震动，以及身体或声音发抖；也可引申为使人震惊或动摇信心。常用表达还有 shake one’s head（摇头）、shake one’s fist（挥拳示威）和 shake hands（握手）。名词可指一次或一阵摇动，也可指奶昔。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"比较 The accident shook her（事故令她震惊）与 It shook her confidence（这动摇了她的信心），分清情绪冲击和信心减弱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"摇动；使震动\"",
+        "valueJson": "\"摇动；（使）震动\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"使某物快速、反复地动；也可指震动某个地方或使人受到震动、动摇。\"",
+        "valueJson": "\"使物体来回移动或发生震动，也可指物体自身摇晃、震动；摇头、挥动拳头是常见的具体用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用作及物动词，后接被摇动的物体；shake someone’s confidence 表示使某人的信心动摇。\"",
+        "valueJson": "\"既可作及物动词，如 shake the bottle，也可作不及物动词，如 the ground shakes。shake one’s head 常表示否定；shake one’s fist at someone 表示朝某人挥拳示威。一般的挥手问候通常用 wave。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"巨大的撞击声震得窗户直响。\"",
+        "valueJson": "\"巨大的撞击声使窗户震动起来。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex3\",\"senseId\":\"v1\",\"en\":\"He shook the jar to mix the paint.\",\"zh\":\"他摇晃罐子来混匀颜料。\",\"note\":\"与摇瓶子一样，表示主动摇动物体；to mix the paint 说明目的。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex4\",\"senseId\":\"v1\",\"en\":\"The earthquake shook the whole building.\",\"zh\":\"地震使整栋楼都摇晃起来。\",\"note\":\"地震作主语，楼房是受到震动的对象，shake 作及物动词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex5\",\"senseId\":\"v1\",\"en\":\"The windows shook when a truck passed.\",\"zh\":\"一辆卡车经过时，窗户震动起来。\",\"note\":\"窗户自身震动，shook 后没有宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex6\",\"senseId\":\"v1\",\"en\":\"The ground shook during the earthquake.\",\"zh\":\"地震时，地面发生了震动。\",\"note\":\"the ground 作主语，shake 用作不及物动词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex7\",\"senseId\":\"v1\",\"en\":\"I asked if she wanted more soup, but she shook her head.\",\"zh\":\"我问她还要不要汤，可她摇了摇头。\",\"note\":\"shake one’s head 在这里表示不要。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex8\",\"senseId\":\"v1\",\"en\":\"He shook his head when I asked if he knew the answer.\",\"zh\":\"我问他是否知道答案时，他摇了摇头。\",\"note\":\"在这个问答中，摇头表示不知道答案。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex9\",\"senseId\":\"v1\",\"en\":\"The angry driver shook his fist at the cyclist.\",\"zh\":\"愤怒的司机朝骑车人挥拳示威。\",\"note\":\"shake one’s fist at someone 表示朝某人挥动拳头，常带有愤怒或威胁意味。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v1-ex10\",\"senseId\":\"v1\",\"en\":\"The shopkeeper shook his fist at the thief.\",\"zh\":\"店主朝小偷挥拳示威。\",\"note\":\"at 引出示威的对象；这一表达描述挥动拳头的动作。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"shake someone’s confidence\",\"zh\":\"动摇某人的信心\",\"note\":\"可用于坏消息或失败使人失去信心的语境。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"something shakes\",\"zh\":\"某物摇晃或震动\",\"note\":\"物体自身运动时，shake 可作不及物动词，不需要宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"shake one’s head\",\"zh\":\"摇头\",\"note\":\"常用来表示否定、拒绝或不知道；具体含义结合情境判断。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"shake one’s fist at someone\",\"zh\":\"朝某人挥拳示威\",\"note\":\"fist 指拳头，at 后接示威或威胁的对象。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v4\",\"title\":\"使震惊；使心神不安\",\"meaning\":\"使人受到强烈的情绪冲击，感到震惊、害怕或不安。\",\"usageNote\":\"事故、坏消息等常作主语；这一义描述心理感受。也常用 be shaken by something 表示受到某事的冲击。\",\"examples\":[{\"id\":\"v4-ex1\",\"senseId\":\"v4\",\"en\":\"The accident shook her badly, even though she wasn't hurt.\",\"zh\":\"尽管她没有受伤，这场事故还是让她大受惊吓。\",\"note\":\"事故造成的是情绪冲击，badly 强调受惊的程度。\"},{\"id\":\"v4-ex2\",\"senseId\":\"v4\",\"en\":\"We were all shaken by the news of the fire.\",\"zh\":\"听到火灾的消息，我们都深感震惊。\",\"note\":\"were shaken by 表示因消息受到情绪冲击。\"}],\"patterns\":[{\"en\":\"something shakes someone\",\"zh\":\"某事使某人震惊或不安\",\"note\":\"这一用法中，主语常是事故、消息等事件。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be shaken by something\",\"zh\":\"因某事受到惊吓或情绪冲击\",\"note\":\"shaken 是过去分词，可用于描述受事件冲击后的状态。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be badly shaken\",\"zh\":\"大受惊吓；受到很大冲击\",\"note\":\"badly 强调情绪受到的影响较大。\",\"kind\":\"common-collocation\"},{\"en\":\"be visibly shaken\",\"zh\":\"明显受到惊吓或冲击\",\"note\":\"visibly 表示这种情绪反应能从外表看出来。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"upset someone\",\"zh\":\"使某人难过或不安\",\"note\":\"范围较广，可指悲伤、担心或烦恼，不一定有突然受惊的感觉。\"},{\"en\":\"shock someone\",\"zh\":\"使某人震惊\",\"note\":\"更突出意外和强烈的震惊；shake 也常强调事后仍心绪不稳。\"}],\"contrasting\":[{\"en\":\"reassure someone\",\"zh\":\"使某人安心\",\"note\":\"在事件使人不安、安慰使人安心的情境中形成对照。\"}],\"similarNote\":\"这些表达只比较心理感受；具体选择取决于情绪是难过、震惊还是持续不安。\",\"contrastingNote\":\"shake someone 可使人不安，reassure someone 则使人恢复信心或安心，适用于情绪影响的对照。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"v5\",\"title\":\"动摇信心、信任或信念\",\"meaning\":\"使原有的信心、信任或信念变得不稳固。\",\"usageNote\":\"常以 confidence、faith、belief 等抽象名词作宾语；表示受到打击，不一定完全失去信心或信任。\",\"examples\":[{\"id\":\"v5-ex1\",\"senseId\":\"v5\",\"en\":\"Failing the driving test shook my confidence.\",\"zh\":\"驾照考试没通过，动摇了我的信心。\",\"note\":\"动名词短语 Failing the driving test 作主语；confidence 是受到影响的信心。\"},{\"id\":\"v5-ex2\",\"senseId\":\"v5\",\"en\":\"His lies shook my faith in him.\",\"zh\":\"他的谎言动摇了我对他的信任。\",\"note\":\"faith in someone 在这里指对某人的信任，不是宗教信仰。\"}],\"patterns\":[{\"en\":\"shake someone’s confidence\",\"zh\":\"动摇某人的信心\",\"note\":\"可用于失败或负面评价影响信心的情境。\",\"kind\":\"common-collocation\"},{\"en\":\"shake someone’s faith in someone/something\",\"zh\":\"动摇某人对某人或某事的信任、信念\",\"note\":\"in 后接原本信任或相信的对象。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"shake someone’s confidence\",\"zh\":\"动摇某人的信心\",\"note\":\"不等于使其完全丧失信心。\",\"kind\":\"common-collocation\"},{\"en\":\"shake someone’s faith\",\"zh\":\"动摇某人的信任或信念\",\"note\":\"faith 的具体含义由对象和语境决定。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"undermine someone’s confidence\",\"zh\":\"削弱某人的信心\",\"note\":\"可强调信心的基础受到损害或逐渐被削弱；shake 常突出受到打击后的动摇。\"},{\"en\":\"weaken someone’s faith\",\"zh\":\"削弱某人的信任或信念\",\"note\":\"强调程度减弱，不必带有突然受冲击的意味。\"}],\"contrasting\":[{\"en\":\"strengthen someone’s confidence\",\"zh\":\"增强某人的信心\",\"note\":\"在信心受到削弱或得到增强的情境中，与 shake someone’s confidence 对照。\"},{\"en\":\"remain unshaken\",\"zh\":\"保持坚定；未被动摇\",\"note\":\"unshaken 由 un- 与 shaken 构成；在信心、信念语境中可与 be shaken 对照。\"}],\"similarNote\":\"这些表达比较抽象的信心、信任或信念受到削弱的情况。\",\"contrastingNote\":\"strengthen 描述增强信心的变化；remain unshaken 描述受到考验后仍坚定的状态，分别对应不同句型。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"名词 handshake 指一次握手，表达正式、直接。\"",
+        "valueJson": "\"与 shake hands 表意相近；handshake 是可数名词，可用 a firm handshake、a friendly handshake 描述力度或态度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"v1\"",
+        "valueJson": "\"v4\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: shake\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/shake\",\"supports\":[\"shake 的英美音标及不规则动词形式\",\"shake 作动词的摇动、发抖和握手用法\",\"shake 作名词表示摇动及奶昔\",\"shake 的常见搭配与语法结构\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: shake\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/shake_1\",\"supports\":[\"shake 的常见动词和名词义项\",\"shake hands 与 give something a shake 等用法\",\"shaky、shaken、shaking 等相关形式\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：shake（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/shake#Anglais\",\"supports\":[\"英语 shake 的摇动、发抖及使动摇等基本动词义\",\"shake、shakes、shook、shaken、shaking 的形式与读音\",\"名词的震动义及口语奶昔义\",\"shake hands、shake one’s head 等常用表达\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1220,
+    "headword": "shake",
+    "meaning_zh": "n. 摇动, 震动\nvt. 摇动, 动摇, 使震动, 挥舞\nvi. 震动, 发抖, 动摇",
+    "phonetic": "/ʃeik/",
+    "pos": "",
+    "forms": []
+  }
+}

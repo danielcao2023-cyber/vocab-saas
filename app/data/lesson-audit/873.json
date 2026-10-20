@@ -1,0 +1,295 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "708b0dac0e4afa21cad45dba507038328dab5f5b86b45934a3d60032f240dd52",
+    "executedReviewPromptHash": "708b0dac0e4afa21cad45dba507038328dab5f5b86b45934a3d60032f240dd52",
+    "reviewHash": "392ffd3bd4c3daa69d4767523a5c63380eb6819c405291f5b9dfff59ecb928a1",
+    "wordId": 873,
+    "inputHash": "0e838369f02f5c28c589c26c69088002fc14a244f2fe278223742ed7e8fc964a",
+    "draftHash": "eca69b9f760c60fefdc6bd4ab74a271cfd374b0d9126bcf92b20ec18d53b348d",
+    "finalHash": "7ceea8191c53e485f3a9111226f4a5c1db4c31d35d527f7e6ad9c24e61bc5c0b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/money#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:19.153Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115879,
+        "revisionId": 38449289,
+        "revisionTimestamp": "2025-08-01T23:59:01Z",
+        "sha256": "ac972e10747f8c963ce7b229b120a3cade859e1836fcad687510b54d4f201b0a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/money",
+        "section": "money etymology",
+        "supports": [
+          "Coin/mint route and Juno title; qualified deeper warning account"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:14:25.316514+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "e818d9a57988539321cfd99d94e649db7ec8f80d5b02658589efef3ab02073c1",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "e818d9a57988539321cfd99d94e649db7ec8f80d5b02658589efef3ab02073c1",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/873.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/money",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:32:24.261Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:41:41.413Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及引用oxford的sourceIds",
+        "message": "实际材料没有 Oxford 网页正文，不能将其挂作读音、释义和语法说明的依据。应改引已取得的法语维基词典英语词条，并把该词条未具体支持的细分说明解除挂引。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "不可数不等于单复数同形。moneys、monies 的实用说明还应优先交代法律、财务语境中的款项用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "缺少常用的“财富；家财”义及其两个例句；基本义还应明确 money 可以包括账户里的钱，并说明与 currency 的范围区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "money 并不限于自己拥有或可支配的钱，也可以指欠款或借来的钱。debt 应限定为财务状况的对照，不能靠缩窄 money 的定义建立反向关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1/note",
+        "message": "a certain amount of money 不要求金额已经确定或必须达到；常表示一定但未明说的数额。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily及/wordFamilyNote",
+        "message": "词族为空，遗漏了材料明确列出的 moneyed、money-losing。可补充真实构词及 moneyed、losing 的准确拼写。"
+      }
+    ],
+    "coverageAssessment": "已核对“钱／货币”“特定款项／金额”“财富”三方面。前两者属于相通的基本义与数量用法，保留现有教学分组，不据此强造词义区别。补丁补齐财富义的两个原创例句，并完善货币范围、词族和来源引用。现有英美读音、其余例句及拉丁语→古法语→英语的词源顺序可以保留。检索词条未逐项解释金额与财富的细分用法，这些说明依据专业语言知识补充，未虚挂网页出处。",
+    "senseInventory": [
+      {
+        "sense": "名词：钱；金钱；作为支付和储蓄手段的货币",
+        "coveredBy": [
+          "873-1"
+        ],
+        "assessment": "原有例句自然；补丁明确现金与账户余额的范围，增加兑换货币的例句及 currency 的语境限制。"
+      },
+      {
+        "sense": "名词：特定的一笔钱；款项；金额",
+        "coveredBy": [
+          "873-2"
+        ],
+        "assessment": "已有两个合格例句。属于基本义的数量用法；修正 certain amount 的限制性误释，并在 forms 中交代正式复数。"
+      },
+      {
+        "sense": "名词：财富；家财；富裕",
+        "coveredBy": [
+          "873-3"
+        ],
+        "assessment": "原稿遗漏；补丁新增核心义、两个生活例句，以及限于财富语境的近义和反向表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: money\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/money\",\"supports\":[\"money 的词性、常见意义与用法\",\"money 通常作不可数名词的学习提示\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：money（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/money#Anglais\",\"supports\":[\"英语名词 money 的基本义和不可数用法\",\"money 的英美读音 /ˈmʌn.i/\",\"currency 的近义关系及 pocket money 表达\",\"moneyed、money-losing 等派生词和复合词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常作不可数名词，单复数形式相同；表示不同国家或种类的货币时，偶尔可用 moneys 或 monies，初中阶段通常不需要这样用。\"",
+        "valueJson": "\"通常作不可数名词，日常泛指钱时不用复数；法律、财务等正式语境中可见复数 moneys 或 monies，常指不同来源、用途或应付的款项。初中阶段先掌握不可数用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"钱；金钱\"",
+        "valueJson": "\"钱；货币\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"泛指用来购买商品、支付费用或储蓄的钱，通常不可数。\"",
+        "valueJson": "\"指用来购买商品、支付费用或储蓄的钱，包括纸币、硬币和银行账户里的钱；也可泛指货币。通常不可数。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"873-1-ex3\",\"senseId\":\"873-1\",\"en\":\"I changed some money into euros at the airport.\",\"zh\":\"我在机场把一些钱兑换成了欧元。\",\"note\":\"change money into euros 表示把钱兑换成欧元。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"873-1-ex4\",\"senseId\":\"873-1\",\"en\":\"I don't carry much cash, but I have money in my bank account.\",\"zh\":\"我随身带的现金不多，但银行账户里有钱。\",\"note\":\"money 也包括账户里的钱；cash 在这里指现金。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"currency\",\"zh\":\"货币；通货\",\"note\":\"常指某个国家或地区使用的货币，如欧元；谈多种货币可用 currencies。money 更泛指钱，也用于谈金额。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"cash 是 money 的一种形式；funds 多用于正式或特定用途的资金。\"",
+        "valueJson": "\"日常语境中 cash 指现金，funds 多指正式或特定用途的资金；currency 常用于谈货币种类，不能在所有表示钱或金额的句子中替换 money。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在财务语境中，money 是拥有或可支配的钱，debt 是欠下的钱。\"",
+        "valueJson": "\"debt 指欠款或偿还欠款的义务；借来的 money 也可能形成 debt，所以二者不是词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"财务语境中可用 debt 对照可支配的钱；它不是 money 在所有语境中的反义词。\"",
+        "valueJson": "\"谈财务状况时，have money 与 be in debt 可以形成对照；一个人也可能既有可用的钱，又背着债务。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"用于金额已确定或需要达到的语境。\"",
+        "valueJson": "\"常表示一定但未明说的数额，具体是多少要看语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"873-3\",\"title\":\"财富；家财\",\"meaning\":\"指一个人或家庭拥有的财富，也用来表示富裕，不只指手头的一笔现金。\",\"usageNote\":\"仍作不可数名词。have money 在谈家庭背景或生活条件时可表示有钱；come from money 表示出身富裕家庭。\",\"examples\":[{\"id\":\"873-3-ex1\",\"senseId\":\"873-3\",\"en\":\"Her family has money, but she still has a weekend job.\",\"zh\":\"她家很有钱，但她仍然在周末打工。\",\"note\":\"这里的 has money 描述家庭富裕，没有说明具体金额。\"},{\"id\":\"873-3-ex2\",\"senseId\":\"873-3\",\"en\":\"He comes from money, but he prefers a simple life.\",\"zh\":\"他出身富裕家庭，但更喜欢简单的生活。\",\"note\":\"come from money 指家庭背景富裕，不是说钱来自哪里。\"}],\"patterns\":[{\"en\":\"have money\",\"zh\":\"有钱；富有\",\"note\":\"谈生活条件时可表示富有；若谈具体开支，也可能只是表示有足够的钱支付。\",\"kind\":\"common-collocation\"},{\"en\":\"come from money\",\"zh\":\"出身富裕家庭\",\"note\":\"描述家庭财富背景。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"family money\",\"zh\":\"家里的财富；家产\",\"note\":\"常指来自家庭的财富，包括继承或由家里提供的财产。\",\"kind\":\"common-collocation\"},{\"en\":\"marry into money\",\"zh\":\"通过婚姻进入富裕家庭\",\"note\":\"强调婚姻带来的富裕家庭背景。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"wealth\",\"zh\":\"财富\",\"note\":\"可包括房产等资产，更直接强调财富总量或富裕状况。\"}],\"contrasting\":[{\"en\":\"be poor\",\"zh\":\"贫穷\",\"note\":\"在描述生活条件时，可与 have money 表示的富有相对。\"},{\"en\":\"be broke\",\"zh\":\"身无分文；手头没钱\",\"note\":\"口语表达，可能只是暂时没钱，不一定长期贫穷。\"}],\"similarNote\":\"谈家产或富裕时可联系 wealth；谈车费、票价等具体付款时，通常不能直接用 wealth 替换 money。\",\"contrastingNote\":\"这些表达对照的是富裕、贫穷或暂时没钱的财务状况，不是所有 money 用法的反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"moneyed\",\"partOfSpeech\":\"adjective\",\"meaning\":\"富有的；有钱的\",\"formation\":\"money + -ed，表示拥有财富的。\",\"spellingNote\":\"保留 money 的全部字母，直接加 ed：moneyed。\",\"example\":{\"id\":\"873-family-1\",\"senseId\":\"873-3\",\"en\":\"The club has a few moneyed members.\",\"zh\":\"这个俱乐部有几位富有的会员。\",\"note\":\"moneyed 是较正式的形容词，这里修饰 members。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"money-losing\",\"partOfSpeech\":\"adjective\",\"meaning\":\"亏损的；赔钱的\",\"formation\":\"money + losing，构成表示经营亏损的复合形容词。\",\"spellingNote\":\"lose 去掉词尾 e 再加 -ing，写作 losing；money-losing 作名词前的形容词时用连字符连接。\",\"example\":{\"id\":\"873-family-2\",\"senseId\":\"873-1\",\"en\":\"The company closed its money-losing shop.\",\"zh\":\"公司关掉了那家亏损的店。\",\"note\":\"money-losing 说明经营亏损，不是把现金弄丢了。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本讲只列 money 的常见用法；不把主题相关词误当作它的派生词。\"",
+        "valueJson": "\"moneyed 是加后缀形成的形容词；money-losing 是复合形容词。cash、coin、currency 是相关词，不是 money 的派生词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 873,
+    "headword": "money",
+    "meaning_zh": "n. 金钱, 一笔款, 财富, 货币, 金额",
+    "phonetic": "/'mʌni/",
+    "pos": "",
+    "forms": []
+  }
+}

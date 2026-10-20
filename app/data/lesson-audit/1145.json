@@ -1,0 +1,506 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2f8a51d3ca1f8a3cc22b132ebdcd9b380b2fd60315f781eeffd94437b251821e",
+    "executedReviewPromptHash": "2f8a51d3ca1f8a3cc22b132ebdcd9b380b2fd60315f781eeffd94437b251821e",
+    "reviewHash": "9556f6227251d37171654ae9c13e75b523e29300478def38747910a26f6f7900",
+    "wordId": 1145,
+    "inputHash": "c9117f4ec7c8bee23df090e20379e46da06f1b7f3d86b71f4aefcc3d860cd40f",
+    "draftHash": "915d1b77f44c65dcdaa17922400028b618a96e36ea194b293f3e2b62c3c38d10",
+    "finalHash": "4a65cdc3e1904e654658a77505a57a03e862938d24a0b832c6c2b8b054bc3512",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/repair#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.668Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121602,
+        "revisionId": 37312952,
+        "revisionTimestamp": "2025-02-10T17:36:10Z",
+        "sha256": "432cb05f4e4d97be2f01c58a747a0695816d038f2fa4561fbe5ef52ba234d53a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/repair",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:23:56.710Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:34:16.810Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "遗漏常用名词功能 in good/poor repair，原稿对“状态”的解释也不准确；另遗漏来源明确列出的质量管理专义和旧式移动义。补充分义、例句及语境限制，并加入常用表达 beyond repair。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/summary",
+        "message": "prepare 结尾是 -pare，不是 -pair；repair 与 prepare 都重读第二音节。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "reparer 与 repairier 是两条独立来源，不能放入会显示为顺序箭头的阶段数组；“较早、现已过时”也超出了材料能够支持的结论。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote; /senses/0/patterns/1/note",
+        "message": "repairs 通常指维修工作或修理项目，不宜直接教成“维修费用”；费用应明确表达为 repair costs 或 the cost of repairs。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2; /memoryAid",
+        "message": "多处把 repair 本身解释成“努力修复”，应与 try to repair 区分；原有目的不定式例句可以保留，其目的并不等于已经完成修复。另需限定“补偿”译义，避免误解为直接赔钱。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/collocations/0/kind",
+        "message": "repair the damage done 是普通搭配，done 是修饰 damage 的过去分词，不是固定习语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /confusions/*/items/*/example; /wordFamily/*/example",
+        "message": "共十处例句缺少目标结构要求的 note 字段，需补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "本次 Cambridge 获取结果不可用，不能作为已经查阅的内容依据。基本义、读音及词源改引已取得的 Wiktionnaire 英语词条；其余专业语言知识说明不冒充该网页的核验结果。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0; /forms/0; /senses/0/relatedExpressions/similarNote",
+        "message": "去掉无依据的旧音标重音警告；补明 repairs 的第三人称单数功能；明确名词 fix 的用法，并避免把 maintenance 一概等同于预防性维护。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example",
+        "message": "原 prepare 例句语法正确，但与 repair-v-1 的关联不明确；改用同时包含两个词的自然例句，使 senseId 有实际对应。"
+      }
+    ],
+    "coverageAssessment": "已核对名词修理、完好状况、质量管理专义，及动词修理、修复损害和旧式前往义。核心义均保留或补足至少两个例句，专门义和旧式义降为了解项。“补偿”限定为弥补损害，“集合”限定为多人前往同一处的语境译法。Cambridge 正文未取得；新增状态义及部分辨析依据专业语言知识，历史词源仅保留材料明确支持的两条古法语来源。",
+    "senseInventory": [
+      {
+        "sense": "名词：修理、修复的行为、工作或具体修理项目",
+        "coveredBy": [
+          "repair-n-1"
+        ],
+        "assessment": "原稿已有两个正确例句；补清可数与不可数用法、维修费用的表达，并以 beyond repair 补充抽象修复语境。"
+      },
+      {
+        "sense": "名词：从维护角度看的完好程度，常见于 in good/bad/poor repair",
+        "coveredBy": [
+          "repair-n-2"
+        ],
+        "assessment": "原稿仅含模糊的状态说明，缺少实际教学；新增独立核心义、两个例句及与 under repair、in disrepair 的区分。"
+      },
+      {
+        "sense": "名词（质量管理）：使不合格产品适合特定用途的返修",
+        "coveredBy": [
+          "repair-n-technical"
+        ],
+        "assessment": "来源明确列出，原稿遗漏；补入较少见义，并限定 repair 与 rework 的技术区别，不推广为日常修理的必然含义。"
+      },
+      {
+        "sense": "动词：修理、修补物品，恢复可用状态",
+        "coveredBy": [
+          "repair-v-1"
+        ],
+        "assessment": "两个原例句自然，及物结构说明基本正确；保留例句并补齐教学注释。"
+      },
+      {
+        "sense": "动词：修复损害、弥补不良影响，恢复关系或名誉",
+        "coveredBy": [
+          "repair-v-2"
+        ],
+        "assessment": "原例句覆盖实际损害和关系修复；修正词义与“尝试”的混淆，保留目的不定式的正确用法，并说明不直接表示付钱赔偿。"
+      },
+      {
+        "sense": "不及物动词（旧式、正式或诙谐）：前往、返回或常去某处",
+        "coveredBy": [
+          "repair-v-motion"
+        ],
+        "assessment": "补入 repair to a place。多人一起前往时可以按语境译为“集合”，不另造日常集合义；与修理义保持词源区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"repair 作名词时常指“修理、修复”；作动词时表示“修好、修补”。常用结构是 repair something 和 repair damage。\"",
+        "valueJson": "\"repair 作动词可说 repair a bike（修车）、repair damage（修复损害）；作名词可说 repairs（维修工作）、under repair（正在维修），也可用 in good repair 表示“保存完好”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"注意 repair 是及物动词，通常直接接被修的东西。\"",
+        "valueJson": "\"表示“修理某物”时，repair 通常作及物动词，直接接被修的东西。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 under repair（正在维修）和 in good repair（保存完好）：前者讲维修活动，后者讲物品状况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头读短音 /rɪ/，不要按旧音标把重音放在开头。\"",
+        "valueJson": "\"第一音节读 /rɪ/，第二音节重读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"名词复数\"",
+        "valueJson": "\"名词复数／动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则加 -s；指一次或多次修理，也常用于维修工作。\"",
+        "valueJson": "\"规则加 -s；名词复数 repairs 表示维修工作或若干修理项目，作动词时是第三人称单数的一般现在时形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"修理某物的行为或工作；也可指修理后的状态。\"",
+        "valueJson": "\"修理、修复某物的行为或工作，也可指一次具体的修理。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于车辆、房屋、机器等需要修好的东西；repair 常用复数 repairs 表示维修工作或维修费用。\"",
+        "valueJson": "\"泛指维修工作时可作不可数名词，如 under repair；表示具体修理项目时可数，如 a repair、repairs。repairs 常指维修工作或项目；维修费用用 repair costs 或 the cost of repairs。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a repair 表示一次具体的修理；泛指需要维修时也可说 needs repair。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repairs 表示维修工作；repairs to our roof 指对我们屋顶的修理。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"repair-n-1-ex3\",\"senseId\":\"repair-n-1\",\"en\":\"The argument damaged their friendship beyond repair.\",\"zh\":\"那次争吵给他们的友谊造成了无法挽回的伤害。\",\"note\":\"beyond repair 表示“无法修复、无法挽回”，既可用于物品，也可用于关系等抽象对象。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"repair 常用复数 repairs 表示维修工作或费用。\"",
+        "valueJson": "\"repairs 表示维修工作或修理项目；汽车维修费用可说 car repair costs。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"beyond repair\",\"zh\":\"无法修复；无法挽回\",\"note\":\"可形容物品已损坏到修不好，也可用于受损的关系等；repair 在这里不可数。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"fix 常见于口语；maintenance 是预防性维护，不能简单替换 repair。\"",
+        "valueJson": "\"fix 较口语，作名词时常见 a quick fix，指快速的解决或修补办法，有时只是临时处理。maintenance 指维护保养，也可包括必要的修理，范围比单次 repair 更广。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repair 直接接 the loose handle，表示修理松动的把手。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repaired 是规则过去式；repair a car 是常见搭配。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"改善已经造成的损害，或努力恢复受损的关系、名誉等。\"",
+        "valueJson": "\"修复已经造成的损害；恢复受损的关系、名誉等。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repair damage 可指修复实际损害；这里的 to repair 说明种树的目的，并未断言修复已经完成。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"to repair 表示道歉的目的；若要明确强调尝试修复，可说 try to repair。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/zh",
+        "expectedValueJson": "\"修复损害、弥补损失\"",
+        "valueJson": "\"修复损害；弥补不良影响\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"可指物质损害，也可指某个行为带来的负面影响。\"",
+        "valueJson": "\"可指物质损害，也可指行为带来的不良影响。若重点是向受损者作出赔偿，可说 compensate someone for a loss；repair 本身不直接表示赔钱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"表示努力恢复受损的关系，常与信任、友情等语境连用。\"",
+        "valueJson": "\"表示修复受损的关系，常用于信任、友情等语境；try to repair 则明确表示“尝试修复”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0/kind",
+        "expectedValueJson": "\"fixed-expression\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"用于名誉受损后努力恢复的语境。\"",
+        "valueJson": "\"用于名誉受损后恢复声誉的语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在损害与修复的语境中，damage 表示造成伤害，repair 表示努力弥补。\"",
+        "valueJson": "\"在损害与修复的语境中，damage 表示造成伤害，repair 表示修复损害。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"repair-n-2\",\"title\":\"名词：完好或失修的状况\",\"meaning\":\"从维护角度看的完好程度，常用 in good repair 或 in poor repair 表示保存完好或状况不佳。\",\"usageNote\":\"多用于建筑、道路、围栏或设备的维护状况，主要见于 in good / bad / poor repair；repair 在这种用法中不可数。\",\"examples\":[{\"id\":\"repair-n-2-ex1\",\"senseId\":\"repair-n-2\",\"en\":\"The old house is still in good repair.\",\"zh\":\"这栋老房子仍保存完好。\",\"note\":\"in good repair 描写目前完好的状态，不表示此刻正在维修。\"},{\"id\":\"repair-n-2-ex2\",\"senseId\":\"repair-n-2\",\"en\":\"The garden fence is in poor repair, with several broken boards.\",\"zh\":\"花园围栏状况不佳，有几块木板坏了。\",\"note\":\"in poor repair 表示状况不佳、需要修缮；正在维修则用 under repair。\"}],\"patterns\":[{\"en\":\"keep something in good repair\",\"zh\":\"使某物保持完好\",\"note\":\"keep 后接宾语，再用 in good repair 说明保持的状态。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"in good repair\",\"zh\":\"保存完好；维护良好\",\"note\":\"repair 在这里不可数，不加 a，也不用 repairs。\",\"kind\":\"fixed-expression\"},{\"en\":\"in poor / bad repair\",\"zh\":\"失修；状况不佳\",\"note\":\"描述建筑、设备等的完好程度。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in good condition\",\"zh\":\"状况良好\",\"note\":\"适用范围更广；in good repair 特别关注房屋、设施等是否维护得完好。\"},{\"en\":\"well maintained\",\"zh\":\"维护良好的\",\"note\":\"强调维护保养做得好；in good repair 着重目前的完好状态。\"}],\"contrasting\":[{\"en\":\"in disrepair\",\"zh\":\"失修；破败\",\"note\":\"与 in good repair 相对，与 in poor repair 意思接近。\"}],\"similarNote\":\"比较时对应整个表达：in good repair 可与 in good condition、well maintained 对照。\",\"contrastingNote\":\"这里的反向表达针对完好状态；in disrepair 表示失修破败。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"repair-n-technical\",\"title\":\"名词（质量管理）：返修\",\"meaning\":\"使不合格产品达到特定用途所能接受的程度，但修后仍未完全符合原规格。\",\"note\":\"这是质量管理中的专门区分：repair 着重使产品可供某一用途；rework（返工）以符合原规格为目标。日常所说的修理并没有必然“不合规格”的含义。\",\"example\":{\"id\":\"repair-n-technical-ex1\",\"senseId\":\"repair-n-technical\",\"en\":\"The repair made the pump suitable for our test, though it still fell short of the original specifications.\",\"zh\":\"这次返修使这台泵能用于我们的测试，不过它仍未完全符合原规格。\",\"note\":\"repair 在这里是名词；产品能用于指定测试，并不等于已经达到原规格的全部要求。\"},\"sourceIds\":[\"wiktionary-fr\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"repair-v-motion\",\"title\":\"旧式动词：前往、返回某处\",\"meaning\":\"前往、返回或常去某处，通常用 repair to a place。\",\"note\":\"这是不及物用法，多见于旧式、文学、正式或故意诙谐的表达；日常通常用 go to。若多人一起前往，中文可按语境译为“移步到某处”或“到某处集合”。此义与修理义来自不同词源。\",\"example\":{\"id\":\"repair-v-motion-ex1\",\"senseId\":\"repair-v-motion\",\"en\":\"After dinner, the guests repaired to the drawing room for coffee.\",\"zh\":\"晚饭后，客人们移步客厅喝咖啡。\",\"note\":\"repaired to 表示前往某处，不是修理客厅；整句带旧式或诙谐色彩。\"},\"sourceIds\":[\"wiktionary-fr\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两词都以 -pair 结尾，但意义和读音重音不同。\"",
+        "valueJson": "\"repair 的结尾是 -pair，prepare 的结尾是 -pare；两词都重读第二音节，开头分别读 /rɪ/ 和 /prɪ/。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repair this chair 是修理这把椅子，repair 后直接接物品。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"repair-confusion-ex2\",\"senseId\":\"repair-v-1\",\"en\":\"We need to prepare for the test.\",\"zh\":\"我们需要为考试做准备。\",\"note\":\"本句用于对比 prepare 的常见用法。\"}",
+        "valueJson": "{\"id\":\"repair-confusion-ex2\",\"senseId\":\"repair-v-1\",\"en\":\"I repaired my bike to prepare for the race.\",\"zh\":\"我修好了自行车，为比赛做准备。\",\"note\":\"repair the bike 是修车，prepare for the race 是为比赛做准备；to prepare 说明修车的目的。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the gate 直接作 repaired 的宾语，不在前面加 for。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"名词和表示“修理”的动词来自法语 reparer；英语中另有一个较早、现已过时的 repair，源自法语 repairier，意为返回。现代常用的“修理”义与这个过时词义不要混为一谈。\"",
+        "valueJson": "\"英语中表示“修理”的名词和动词来自古法语 reparer；另一个表示“前往、返回”的旧式动词 repair 来自古法语 repairier。这是两条不同的词源关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古法语\",\"form\":\"reparer\",\"meaning\":\"修理；成为英语 repair（名词及常用动词）的来源。\"},{\"language\":\"古法语\",\"form\":\"repairier\",\"meaning\":\"返回；成为英语中过时动词 repair（返回）的来源。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repairer 指从事修理的人；具体职业中也常按工作内容称 technician 或 mechanic。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"repairable 表示仍能修好；be repairable 是形容词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"disrepair\",\"partOfSpeech\":\"noun\",\"meaning\":\"失修；破败\",\"formation\":\"dis- + repair，构成表示失修状态的名词。\",\"spellingNote\":\"在 repair 前加 dis-，保留 repair 的完整拼写：disrepair。\",\"example\":{\"id\":\"repair-family-ex3\",\"senseId\":\"repair-n-2\",\"en\":\"The empty house fell into disrepair.\",\"zh\":\"那栋空房子逐渐失修破败了。\",\"note\":\"fall into disrepair 表示逐渐陷入失修状态；in disrepair 与 in good repair 对照。\"},\"sourceIds\":[\"wiktionary-fr\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"自行车链条掉了，店员指着 repair（修理）牌子说：“把车留下，我来修。”门口的 repair sign 让人想到东西出了问题后被修好。\"",
+        "valueJson": "\"小林借朋友的自行车时摔坏了车。他请师傅 repair the bike；账单上的 bicycle repairs 指维修工作。车修好后处于 in good repair 的状态。小林又道歉并承诺以后爱护借来的东西，希望 repair their friendship：修好车之外，还要修复受损的友谊。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"repair a friendship：努力修复一段关系。\"",
+        "valueJson": "\"repair a friendship：修复一段友谊；try to repair a friendship：尝试修复一段友谊。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"状况\",\"text\":\"in good repair：保存完好；under repair：正在维修。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: repair\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/repair\",\"supports\":[\"英美发音及重音\",\"名词与动词的常见义项和用法\",\"名词复数及动词形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"名词及修理义动词的法语来源\",\"过时的“返回”义动词来源\",\"英美发音差异\"]",
+        "valueJson": "[\"英语 repair 的名词修理义和动词修理义\",\"质量管理语境下 repair 与 rework 的区分\",\"旧式移动义 repair 的用法及其古法语来源\",\"修理义名词和动词的古法语来源\",\"英美发音差异及规则词形\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1145,
+    "headword": "repair",
+    "meaning_zh": "n. 修理, 补救, 修复\nvt. 修理, 修补, 补救, 恢复, 补偿\nvi. 修理, 修补, 补救, 恢复, 去, 常去, 集合",
+    "phonetic": "/ri'pєә/",
+    "pos": "",
+    "forms": []
+  }
+}

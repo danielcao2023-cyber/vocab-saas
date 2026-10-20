@@ -1,0 +1,377 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1231688ba82785f61d25f4f2d88c7dacfa45483a4b4127f7c518e6c2a8ace5f4",
+    "executedReviewPromptHash": "1231688ba82785f61d25f4f2d88c7dacfa45483a4b4127f7c518e6c2a8ace5f4",
+    "reviewHash": "fc4793246eea8b278ca8610359e5bd861f5b7bf7742b13a4cc3fefa35b3f42ef",
+    "wordId": 1544,
+    "inputHash": "224a9668361bb006aba14aaa6e849c3e144861842db83712de6a00062c946aae",
+    "draftHash": "dbbb6a7e1df9165b6596d2f5556e2ad5cdca14f82741a041bfc8aedf4a3575a2",
+    "finalHash": "c779cafa57c0840025fd777e12f3750093718a48b6609cf3b18317b88c03d109",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/which#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.456Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116230,
+        "revisionId": 39751606,
+        "revisionTimestamp": "2026-08-02T17:16:16Z",
+        "sha256": "ea538cba3579350f636a6f841f65688e8e09cd3701616dadb6d0a17795ed4a05",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/which",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:20:04.257Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:30:44.881Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "正文主要引用抓取失败的 Cambridge，而实际取得的英语词条未列入来源。应调整来源及相关 sourceIds，使支持范围与现有材料一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/0",
+        "message": "“开头是 /w/，不是 /h/”表述过于绝对，应说明部分口音保留 /ʍ/ 或 /hw/，同时保留常见读音 /wɪtʃ/。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "疑问用法只讲“哪一个”，遗漏“哪些”；which 也可在一组人中询问选择，不能由 who 的说明引导学生误以为它只能询问事物。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "标题和释义把关系用法概括为补充说明，却包含限定性从句；指事物与回指整件事目前各仅一个例句。宾语 which 的省略规则还须明确限于限定性从句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏关系限定词功能：常见的 in which case、at which point，以及较少见的 which 后重复前述名词的正式用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily",
+        "message": "词族留空且称没有需要掌握的常用派生词，遗漏材料列出的常用相关词 whichever；应补充其构词、拼写和实际用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/note",
+        "message": "现有拼写说明虽未拼错，但辨认线索曲折，应直接逐字母对照 which 与 witch。"
+      }
+    ],
+    "coverageAssessment": "已核对疑问限定词、疑问代词、指事物及回指整件事的关系代词、关系限定词等全部定义。补丁补齐常见功能，并使指事物和整件事的关系用法各有两个原创例句；正式重复名词的用法另列低频项。词源小节实际只有待补标记，没有可据以补写的历史事实，因此保留空的历史阶段，不推测词根或发展链。来源局限已通过改用实际取得的英语词条处理。",
+    "senseInventory": [
+      {
+        "sense": "疑问限定词：which + 名词，询问哪个或哪些",
+        "coveredBy": [
+          "which-choice"
+        ],
+        "assessment": "已有单数例句和名词前用法；补充复数解释及 which one / which ones 的区别。"
+      },
+      {
+        "sense": "疑问代词：单独询问哪一个或哪些",
+        "coveredBy": [
+          "which-choice"
+        ],
+        "assessment": "保留座位选择例句，新增 which of these students 的复数人物选择例句。"
+      },
+      {
+        "sense": "关系代词：指前面的事物",
+        "coveredBy": [
+          "which-relative"
+        ],
+        "assessment": "保留限定性从句例句，新增非限定性从句例句，补明省略条件和介词前置结构。"
+      },
+      {
+        "sense": "关系代词：回指前面整件事",
+        "coveredBy": [
+          "which-relative"
+        ],
+        "assessment": "保留误车例句，新增航班延误例句，使这一常见功能有两个具体例句。"
+      },
+      {
+        "sense": "关系限定词：in which case、at which point 等",
+        "coveredBy": [
+          "which-relative-determiner"
+        ],
+        "assessment": "原稿遗漏；新增完整核心义，分别示范情况回指与时间回指。"
+      },
+      {
+        "sense": "关系限定词：which 后重复前述名词，表示该……",
+        "coveredBy": [
+          "which-relative-repeated-noun"
+        ],
+        "assessment": "原稿遗漏；新增低频项，明确其正式或旧式语体，避免作为日常表达推广。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"限定词；代词；关系代词\"",
+        "valueJson": "\"疑问限定词；疑问代词；关系代词；关系限定词\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"问选择时，which 可放在名词前，也可单独作代词；作关系代词时，常指物或指前面整件事。\"",
+        "valueJson": "\"问选择时，which 可放在名词前，也可单独使用，表示“哪个或哪些”；作关系代词时，常指物或前面整件事；在 in which case 等结构中，它放在名词前，回指前述情况。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式读音基本相同。\"",
+        "valueJson": "\"英式和美式常见读音均为 /wɪtʃ/；部分口音保留 /ʍ/ 或 /hw/ 开头，此时 which 与 witch 不同音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头是 /w/，不是 /h/；末尾 /tʃ/ 与单词 chair 的开头辅音相同。\"",
+        "valueJson": "\"常见读法以 /w/ 开头；部分口音读作 /ʍ/ 或 /hw/，不是单独的 /h/。末尾 /tʃ/ 与 chair 的开头辅音相同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-which\"]",
+        "valueJson": "[\"wiktionnaire-which\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"询问选哪一个\"",
+        "valueJson": "\"询问选哪一个或哪些\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"作限定词时放在名词前，询问一组已知或可选的对象中哪一个；作代词时可单独使用，意思是“哪一个”。\"",
+        "valueJson": "\"作疑问限定词时放在名词前，询问一组对象中的哪一个或哪些；作疑问代词时可单独使用。所选对象可以是人，也可以是事物。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"which-choice-ex3\",\"senseId\":\"which-choice\",\"en\":\"Which of these students are on your team?\",\"zh\":\"这些学生中，哪些是你队里的？\",\"note\":\"which 在这里作疑问代词，询问一组人中的哪些人；are 表明问题按复数提问。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/zh",
+        "expectedValueJson": "\"哪一个……？\"",
+        "valueJson": "\"哪个或哪些……？\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"Which one + ...?\",\"zh\":\"哪一个……？\",\"note\":\"one 代替已知的可数名词，避免重复；也可以只用 which。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Which one / Which ones + ...?\",\"zh\":\"哪一个／哪几个……？\",\"note\":\"one 代替已知的单数可数名词，ones 代替复数可数名词；上下文清楚时也可只用 which。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"which of these\",\"zh\":\"这些当中的哪一个\",\"note\":\"of 后接限定范围，后面常跟复数名词或代词。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"which of these\",\"zh\":\"这些当中的哪一个或哪些\",\"note\":\"these 可直接作代词，也可后接复数名词，如 which of these bags；which 可以询问一个或多个对象。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-which\"]",
+        "valueJson": "[\"wiktionnaire-which\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"引出关于事物的补充说明\"",
+        "valueJson": "\"引出修饰事物或回指整件事的从句\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作关系代词，通常指前面的事物或整件事，引出补充信息；可在从句中作主语或宾语。\"",
+        "valueJson": "\"作关系代词，指前面的事物时，可引出从句限定所说的对象，也可补充说明；还可回指前面整件事。which 在从句中可作主语、动词宾语或介词宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"which-relative-ex3\",\"senseId\":\"which-relative\",\"en\":\"Please return the camera, which belongs to my sister.\",\"zh\":\"请把那台相机还回来，它是我姐姐的。\",\"note\":\"which 指 camera，在非限定性从句中作主语；逗号后的从句补充说明相机属于谁。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"which-relative-ex4\",\"senseId\":\"which-relative\",\"en\":\"Our flight was delayed, which gave us time for breakfast.\",\"zh\":\"我们的航班延误了，这让我们有时间吃早饭。\",\"note\":\"which 回指航班延误这件事，在从句中作 gave 的主语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"which 引出修饰前面事物的从句；如果 which 在从句中作宾语，口语或非正式写作中有时可省略。\"",
+        "valueJson": "\"which 引出修饰前面事物的从句。在限定性从句中，which 作动词宾语时可以省略；在非限定性从句中，即使作宾语也不能省略。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"名词 + 介词 + which + 从句\",\"zh\":\"在／用／关于……的……\",\"note\":\"如 the room in which we met（我们见面的那个房间）。介词放在 which 前时，which 不能省略，也不能换成 that；in which 在这里相当于 where。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-which\"]",
+        "valueJson": "[\"wiktionnaire-which\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"which-relative-determiner\",\"title\":\"接着说“在那种情况下”或“到那时”\",\"meaning\":\"作关系限定词，放在 case、point 等名词前，回指前述情况或时间。in which case 表示“在那种情况下”，at which point 表示“到那时”。\",\"usageNote\":\"这里的 which 不是在提问，而是与后面的名词一起接回前述内容。注意 case 表示情况，point 在此表示时间点。\",\"examples\":[{\"id\":\"which-relative-determiner-ex1\",\"senseId\":\"which-relative-determiner\",\"en\":\"The shop may close early today, in which case I'll buy the bread tomorrow.\",\"zh\":\"商店今天可能提前打烊；如果这样，我就明天再买面包。\",\"note\":\"in which case 回指商店提前打烊的可能情况；买面包的安排以这种情况发生为条件。\"},{\"id\":\"which-relative-determiner-ex2\",\"senseId\":\"which-relative-determiner\",\"en\":\"We reached the front of the line at noon, at which point the clerk checked our tickets.\",\"zh\":\"我们中午排到了队伍最前面，这时工作人员检查了我们的票。\",\"note\":\"at which point 回指排到队伍最前面的那个时间点；which 放在名词 point 前。\"}],\"patterns\":[{\"en\":\"分句, in which case + 分句\",\"zh\":\"……；在那种情况下，……\",\"note\":\"前面可提出一种可能，后面说明这种情况发生时的做法或结果。\",\"kind\":\"sentence-pattern\"},{\"en\":\"分句, at which point + 分句\",\"zh\":\"……，到那时……\",\"note\":\"后一个分句说明在前述时间点发生的事。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"in which case\",\"zh\":\"在那种情况下；如果这样\",\"note\":\"which 限定 case，回指前面提到的情况。\",\"kind\":\"fixed-expression\"},{\"en\":\"at which point\",\"zh\":\"到那时；在那个时间点\",\"note\":\"which 限定 point，回指前面叙述中的时间点。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"in that case\",\"zh\":\"在那种情况下\",\"note\":\"常可另起一句承接前文；in which case 则连接在前一个分句之后。\"},{\"en\":\"at that point\",\"zh\":\"在那个时间点\",\"note\":\"可在独立句中回指时间；at which point 用于连接从句。\"}],\"contrasting\":[],\"similarNote\":\"这些表达可以回指相似的情况或时间，但连接句子的方式不同。\",\"contrastingNote\":\"这一语法功能没有固定反义表达，不强配反义词。\"},\"sourceIds\":[\"wiktionnaire-which\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"which-relative-repeated-noun\",\"title\":\"正式回指：which + 重复的名词\",\"meaning\":\"which 放在重复的名词前，表示“该……”，接着说明前面提到的同一事物。\",\"note\":\"这种写法偏正式或旧式，日常表达通常直接用关系代词 which，不必重复名词。它不是询问“哪个”。\",\"example\":{\"id\":\"which-relative-repeated-noun-ex1\",\"senseId\":\"which-relative-repeated-noun\",\"en\":\"The lawyer produced a receipt, which receipt was then attached to the file.\",\"zh\":\"律师拿出了一张收据，该收据随后被附入卷宗。\",\"note\":\"第二个 receipt 重复前面的名词，which 在它前面作关系限定词；日常表达可写成 a receipt, which was then attached to the file。\"},\"sourceIds\":[\"wiktionnaire-which\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"先看是在一组选择中挑选、开放式询问，还是询问某个人。\"",
+        "valueJson": "\"先看是在一组对象中选择，还是开放式询问事物或人的身份；which 也能用于一组人之间的选择。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/label",
+        "expectedValueJson": "\"who：询问人或指人\"",
+        "valueJson": "\"who：询问人的身份；关系从句中指人\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"问某人是谁，或在关系从句中指人，通常用 who。\"",
+        "valueJson": "\"询问某人是谁，或在关系从句中指人，通常用 who；但在已知的一组人中询问选择，也可用 which，如 Which of the two students is your partner?（这两名学生中哪位是你的搭档？）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"有明确选项时常用 which；开放式询问事物常用 what；询问或指人常用 who。\"",
+        "valueJson": "\"从明确选项中选择人或物，常用 which；开放式询问事物常用 what；询问人的身份或在关系从句中指人，常用 who。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-which\"]",
+        "valueJson": "[\"wiktionnaire-which\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"表示“女巫”，拼写中没有 which 的 h 后接 i 这一组合。\"",
+        "valueJson": "\"witch 表示“女巫”，拼作 w-i-t-c-h；which 拼作 w-h-i-c-h。witch 有 t，which 在 w 后有 h；两词都以 ch 结尾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-which\"]",
+        "valueJson": "[\"wiktionnaire-which\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"whichever\",\"partOfSpeech\":\"限定词；代词\",\"meaning\":\"无论哪一个；任何一个……的\",\"formation\":\"由 which + ever 连写构成，常表示在可选范围内，无论选哪个都可以。\",\"spellingNote\":\"which 和 ever 直接相连，不删字母：w-h-i-c-h-e-v-e-r。\",\"example\":{\"id\":\"which-family-whichever-ex1\",\"senseId\":\"which-choice\",\"en\":\"Take whichever seat you like.\",\"zh\":\"你喜欢哪个座位，就坐哪个。\",\"note\":\"whichever 后接 seat，表示可以任选喜欢的座位；这里不是在直接提问。\"},\"sourceIds\":[\"wiktionnaire-which\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"which 是功能词，常见初中用法没有需要掌握的常用派生词。\"",
+        "valueJson": "\"which 本身不随单复数或时态变化；whichever 是 which + ever 连写构成的常用相关词。no matter which 是分写的表达，不是 which 的单词变形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-which\",\"title\":\"Cambridge Dictionary: which\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/which\",\"supports\":[\"which 的英美音标\",\"which 作为疑问限定词、疑问代词和关系代词的常见用法\",\"which 与 what、who、that 的常见区别\"],\"verification\":\"recommended\"},{\"id\":\"oxford-which\",\"title\":\"Oxford Learner’s Dictionaries: which\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/which\",\"supports\":[\"which 的词性和学习者常用释义\",\"which 用于选择提问和关系从句的语法说明\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionnaire-which\",\"title\":\"Wiktionnaire：which（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/which#Anglais\",\"supports\":[\"常见读音 /wɪtʃ/ 及与 witch 通常同音\",\"疑问限定词、疑问代词及与 what 的选择范围区别\",\"关系代词指事物或前述整件事，以及介词加 which 的结构\",\"关系限定词的 in which case 和重复名词用法\",\"whichever、no matter which 等相关表达\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1544,
+    "headword": "which",
+    "meaning_zh": "pron. 哪一个, 那一个",
+    "phonetic": "/hwitʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

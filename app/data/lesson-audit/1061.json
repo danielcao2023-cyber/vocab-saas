@@ -1,0 +1,201 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0c588d32e2ec76b27014f171f33cea19df6021d621547ba46f0f372683e7d428",
+    "executedReviewPromptHash": "b26314ef4cfb25d46d7395eca2eba147f72d7771a31ab9ff3f7437a408de115c",
+    "reviewHash": "08384ffa6b4b73ac1a907a292c9203631b23e43fd0f5c61eedf3e06220770aa5",
+    "wordId": 1061,
+    "inputHash": "f31564c44518e02ac3dcfb0e382f30289a3d89816cd1f693a74d40dff27ebdb8",
+    "draftHash": "98ace6febbc1a7a61d8ff64fb6b92155d3b88c39ed1da00cc3dd580743135383",
+    "finalHash": "dde861d7607a113913db710274bc8a49b80e43fce62d93faab802e4e6a7b06b0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/postcard#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:24.941Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118455,
+        "revisionId": 38100140,
+        "revisionTimestamp": "2025-04-21T11:38:50Z",
+        "sha256": "d770ecdd8090b8709bc4216946c2503c7121ed7b1e5d029eac77060998ae1923",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/postcard",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T05:42:13.378Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:52:47.337Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "初稿引用的 Oxford 条目不在实际取得的材料中。应改用法语维基词典的英语词条，更新对应引用，并撤去该来源不能支持的贺卡对比引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "两个核心例句均缺少结构要求的 note 字段；例句本身语法自然，可保留并补充说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源材料明确支持 post 与 card 的复合构词，应补充这一事实及同 URL 引用，修正仅作为现代拆分的保留说法。两个构词成分没有构成历史先后阶段，stages 保持空数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "postcard 的 r 位于 d 前，并非词尾；应准确说明 card 中 r 的英美发音差异。"
+      }
+    ],
+    "coverageAssessment": "实际取得的英语词条只有名词“明信片”一个定义，初稿已覆盖这一核心义，并有两个自然原创例句，无须人为拆义。搭配、复数拼写及读音正确；贺卡和信件的比较已限定语境，没有强造反义。英式读音及日常用法依据专业语言知识判断，词源仅补充材料明确支持的复合构词，不推断年代或演变链。",
+    "senseInventory": [
+      {
+        "sense": "明信片（可数名词）：可写简短留言和地址、通常不装信封邮寄的卡片，常有图片。",
+        "coveredBy": [
+          "postcard-n-1"
+        ],
+        "assessment": "覆盖充分；两个例句分别展示寄送明信片和明信片上的图片。picture postcard 是该义下的搭配，无须另立义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式读音主要区别在元音；美式通常读出词尾 r。\"",
+        "valueJson": "\"post 中的元音，英式通常读 /əʊ/，美式通常读 /oʊ/；card 中的 r 在美式读音中通常发音，在常见英式读音中不发音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_postcard\"]",
+        "valueJson": "[\"wiktionary_postcard_en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"send a postcard to someone 表示给某人寄明信片；from Beijing 表示寄出地点。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on the postcard 表示在明信片上；a picture of the beach 指画面内容是海滩。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_postcard\"]",
+        "valueJson": "[\"wiktionary_postcard_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_postcard\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语里，postcard 可看作 post（邮寄）和 card（卡片）组合而成，帮助记住“邮寄的卡片”这一意思。\"",
+        "valueJson": "\"postcard 是英语复合词，由 post（邮政；邮寄）和 card（卡片）组成，可以联系“用于邮寄的卡片”来理解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代构词拆分，不能据此当作已证实的历史演变过程。\"",
+        "valueJson": "\"这里的 post 与邮政、邮寄有关，不是“柱子”的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_postcard_en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_postcard\",\"title\":\"Oxford Learner’s Dictionaries: postcard\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/postcard\",\"supports\":[\"名词含义与常见用法\",\"词形与英式、美式读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_postcard_en\",\"title\":\"Wiktionnaire：postcard（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/postcard#Anglais\",\"supports\":[\"英语名词义：明信片\",\"规则名词标记\",\"美式读音\",\"post 与 card 的复合构词\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1061,
+    "headword": "postcard",
+    "meaning_zh": "n. 明信片",
+    "phonetic": "/'pәustkɑ:d/",
+    "pos": "",
+    "forms": []
+  }
+}

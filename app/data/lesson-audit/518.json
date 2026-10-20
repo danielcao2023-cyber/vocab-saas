@@ -1,0 +1,629 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5f16619a618f8470a8bd58415b68fb725226eb540868b96406b6965b0c75299e",
+    "executedReviewPromptHash": "5f16619a618f8470a8bd58415b68fb725226eb540868b96406b6965b0c75299e",
+    "reviewHash": "b757b4e34f06895543a477f637fee47fcb586568343f8702b0556d0d62917cc8",
+    "wordId": 518,
+    "inputHash": "62837b352fdd83df6d6ed6bd4f17090bb74ee603b29985745b5f982377243612",
+    "draftHash": "7573656a2d51e711124a2a3db915cc6ef4e2ed42c6495640010680c623c661a8",
+    "finalHash": "ff8e40a8a70935e2e459389ba57776ff9b802aed088d23caf6d346e7763e4fe5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/fine#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:58.074Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 16503,
+        "revisionId": 39904311,
+        "revisionTimestamp": "2026-09-26T06:22:00Z",
+        "sha256": "2da7448ec3b0bd468b8e81e920defcc2a837bf642988d2d6a53ff4707198f610",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/fine",
+        "section": "fine etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "01820551d82b28bd84a273ec4d7cdd569f7d4148d80fd295230d1d868483228b",
+        "summaryAndSupportsWordCount": 79,
+        "sha256": "01820551d82b28bd84a273ec4d7cdd569f7d4148d80fd295230d1d868483228b",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/518.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/fine",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:20:40.190Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T16:26:52.651Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses; /partOfSpeech",
+        "message": "“身体好”和“安排可以接受”合在一义后，各自只有一个例句；常用的优质义被放入低频区，细小、细微、罚款动词及口语副词用法缺少完整教学。独立应答 Fine! 也需明确呈现。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/meaning",
+        "message": "品质优良、做工精细、颗粒细小和区别细微不能混成一个义项。应分别说明其搭配和语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples; /lessCommonSenses/*/example; /confusions/*/items/*/example; /wordFamily/*/example",
+        "message": "初稿全部例句对象均缺少目标结构要求的 note 字段；须逐项补齐，迁移的例句也须保留完整字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0; 引用 cambridge 的 sourceIds",
+        "message": "Cambridge 实际获取失败，不能作为已经掌握的内容依据。应改引已取得的法语维基词典英语词条；仅凭专业语言知识补充的内容不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有顺序会画成“中古英语→古法语→另一条古法语名词来源”，既倒置历史方向，也串联了两条路线。应取消该阶段链，在 summary 中分别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/cues/2/text",
+        "message": "fine 和 time 的韵尾分别是 /aɪn/、/aɪm/，不押韵；可改用 line。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1",
+        "message": "It is fine for … 本身不能固定解释为“天气适合……”，也可能表示一般适用性。天气句型应补出 a fine day。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/3/example/senseId",
+        "message": "was fined 使用的是动词罚款义，不能绑定名词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/1/en; /senses/2/relatedExpressions",
+        "message": "for the late book 不如 for returning the book late 自然明确；退款也不直接表示罚款被取消，改用撤销罚款作结果上的对照更清楚。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0; /wordFamily/0; /wordFamilyNote",
+        "message": "发音正文无需讨论旧注音；finely 应突出精细程度，并与 work fine 中的副词 fine 区分，同时明确保留词尾 e 的实际拼写。"
+      }
+    ],
+    "coverageAssessment": "已核对词典中的品质、外观、天气、细小、细微、可接受及应答、罚款名词和罚款动词，并按专业语言知识检查身体状况及口语副词功能。修订后各教学核心义均有至少两个自然原创英中例句，近义与反向表达均限定语境。来源另列的名词 ordonnance 孤立释义仅记入审计，不扩写为初中常用义。词源两条路线分别叙述，不再生成错误顺序链；未获取的 Cambridge 内容不作为证据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：品质优良、表现出色",
+        "coveredBy": [
+          "518-adj-quality"
+        ],
+        "assessment": "由低频区提升为核心义，以模型和修理表现的例句说明明确赞美，区别于“还行”。"
+      },
+      {
+        "sense": "形容词：漂亮、美好，称赞外观",
+        "coveredBy": [
+          "518-adj-quality"
+        ],
+        "assessment": "与品质赞美相邻处理，另用漂亮老房子的例句实际覆盖。"
+      },
+      {
+        "sense": "形容词：天气晴好",
+        "coveredBy": [
+          "518-adj-weather"
+        ],
+        "assessment": "原有两例可保留；修正不能独立锁定天气含义的句型，并说明晴好不保证暖和。"
+      },
+      {
+        "sense": "形容词：颗粒细小、线等纤细",
+        "coveredBy": [
+          "518-adj-small"
+        ],
+        "assessment": "新增核心义，以细沙和细丝线分别覆盖颗粒与纤细物体。"
+      },
+      {
+        "sense": "形容词：区别或界限细微、微妙",
+        "coveredBy": [
+          "518-adj-subtle"
+        ],
+        "assessment": "新增核心义，以 fine distinction 和 fine line 的具体语境覆盖。"
+      },
+      {
+        "sense": "形容词：身体好、没事",
+        "coveredBy": [
+          "518-adj-well"
+        ],
+        "assessment": "从接受安排义中拆出，保留原有回答近况的例句，补充医生确认身体状况的例句。"
+      },
+      {
+        "sense": "形容词：可以接受、没有问题",
+        "coveredBy": [
+          "518-adj-acceptable"
+        ],
+        "assessment": "迁移原有征求同意见面安排的正确例句，并补充 fine with me。"
+      },
+      {
+        "sense": "感叹应答：Fine! 好吧、同意",
+        "coveredBy": [
+          "518-adj-acceptable"
+        ],
+        "assessment": "在接受安排义内明确其独立应答功能，提供对话，并说明语调影响。"
+      },
+      {
+        "sense": "名词：罚款",
+        "coveredBy": [
+          "518-noun-penalty"
+        ],
+        "assessment": "保留两个具体例句，优化逾期还书的表述，明确可数性及 pay a fine。"
+      },
+      {
+        "sense": "名词：来源以法语 ordonnance 释义的条目",
+        "coveredBy": [],
+        "assessment": "该释义属于英语 fine 的名词栏，不能误当成法语 fine 的词义。来源未展开其适用范围，本课不据此编造现代常用例句。"
+      },
+      {
+        "sense": "及物动词：对某人或机构处以罚款",
+        "coveredBy": [
+          "518-verb-penalize"
+        ],
+        "assessment": "新增核心义，覆盖主动、被动、金额及 for 引出原因；fined 的词族例句改绑此义。"
+      },
+      {
+        "sense": "口语副词：运转正常、做得好或听得清楚",
+        "coveredBy": [
+          "518-adv-well"
+        ],
+        "assessment": "按专业语言知识补入两个例句，区别 work fine 与表示精细程度的 finely，不冒引未获取的词典内容。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective; noun\"",
+        "valueJson": "\"adjective; adverb; noun; verb; interjection\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"fine：状态不错、天气晴好，也可以表示“罚款”\"",
+        "valueJson": "\"fine：好、没问题、细，也能表示“罚款”\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"fine 作形容词时常表示“不错、可以”或“晴朗的”；作名词时，a fine 是因违反规则而要缴的罚款。\"",
+        "valueJson": "\"fine 可以说品质好、天气好、身体没事或安排可以，也可以说颗粒细、差别微妙；a fine 是罚款，fine someone 是对某人罚款，work fine 是运转正常。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan",
+        "expectedValueJson": "[\"记住两种常见形容词用法：I’m fine.（我没事。）和 fine weather（晴好天气）。\",\"把 pay a fine 作为“交罚款”整体记忆。\",\"注意 fine 读 /faɪn/，结尾是 /n/。\"]",
+        "valueJson": "[\"先分清 I’m fine（我没事）和 That’s fine（那可以）：前者常说人的状态，后者常接受安排。\",\"用 a fine meal（很棒的一餐）和 fine weather（晴好天气）区分品质与天气。\",\"把 fine sand（细沙）与 a fine distinction（细微的区别）分别记忆。\",\"名词记 pay a fine（交罚款），动词记 be fined for doing something（因做某事被罚款）。\",\"注意 work fine 表示运转正常，finely chopped 表示切得很细。\",\"读准 /faɪn/；fine 与 line 押韵。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头是 /f/，中间的 i 发 /aɪ/，末尾 n 要发出来；旧注音 /fain/ 不是标准 IPA 写法。\"",
+        "valueJson": "\"开头是 /f/，字母 i 在这里读双元音 /aɪ/，词尾 /n/ 要发出来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/label",
+        "expectedValueJson": "\"名词复数\"",
+        "valueJson": "\"名词复数；动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"名词 fine 加 s，表示多笔罚款。\"",
+        "valueJson": "\"fine 加 s，词尾读 /z/；作名词时表示多笔罚款，作动词时用于第三人称单数主语。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式／过去分词\",\"form\":\"fined\",\"ipa\":\"/faɪnd/\",\"note\":\"fine 以不发音的 e 结尾，直接加 d；词尾读 /d/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词 -ing 形式\",\"form\":\"fining\",\"ipa\":\"/ˈfaɪnɪŋ/\",\"note\":\"去掉词尾不发音的 e，再加 -ing，拼作 fining，不双写 n。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"身体或情况不错；可以\"",
+        "valueJson": "\"身体好；没事\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示身体感觉良好，或表示某事可以接受、没有问题。回答 How are you? 时常用 I’m fine.；单独说 Fine. 也可表示同意，但语气会随情境变化。\"",
+        "valueJson": "\"表示身体感觉良好，或在别人担心时表示自己没有受伤、没有问题。回答 How are you? 时常用 I’m fine.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"fine 不一定表示特别好；有时只是“还行、没问题”。\"",
+        "valueJson": "\"I’m fine. 可用于回答问候，也可安慰担心自己的人；语气可能只是“我还好”，不保证心情非常愉快。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"now 表示现在已经没事；fine 描述说话者的状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"518-ex-2\",\"senseId\":\"518-adj-well\",\"en\":\"Is it fine if we meet after lunch?\",\"zh\":\"我们午饭后见面可以吗？\"}",
+        "valueJson": "{\"id\":\"518-ex-16\",\"senseId\":\"518-adj-well\",\"en\":\"The doctor says my son is fine and can go back to school.\",\"zh\":\"医生说我儿子身体没问题，可以回学校了。\",\"note\":\"fine 在这里说身体状况，不是在评价学习成绩。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns",
+        "expectedValueJson": "[{\"en\":\"be fine\",\"zh\":\"身体不错；情况还好\",\"note\":\"常用于说明某人感觉良好或某件事没有问题。\",\"kind\":\"sentence-pattern\"},{\"en\":\"It’s fine if …\",\"zh\":\"如果……就可以\",\"note\":\"用于表示某个安排或做法可以接受。\",\"kind\":\"sentence-pattern\"}]",
+        "valueJson": "[{\"en\":\"someone + be + fine\",\"zh\":\"某人身体好／没事\",\"note\":\"用于回答近况或说明某人身体没有问题。\",\"kind\":\"sentence-pattern\"}]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"That’s fine.\",\"zh\":\"那可以；没关系\",\"note\":\"常用于接受安排或宽慰对方，语气取决于说话方式。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"well\",\"zh\":\"健康的；感觉好的\",\"note\":\"well 更常强调健康状况；fine 常表示“还不错”或“没问题”。\"},{\"en\":\"all right\",\"zh\":\"还好；可以\",\"note\":\"口语中与 fine 相近，常用于回答近况或接受安排。\"}],\"contrasting\":[{\"en\":\"unwell\",\"zh\":\"不舒服的\",\"note\":\"在描述身体状况时与 fine 相对。\"},{\"en\":\"not okay\",\"zh\":\"不行；不舒服\",\"note\":\"在表示情况可接受时与 fine 相对。\"}],\"similarNote\":\"well 更强调健康，all right 常表示一般或可以；fine 也可用于接受安排。\",\"contrastingNote\":\"unwell 用于身体不适；not okay 用于情况或安排不可接受，不是所有 fine 的反义表达。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"well\",\"zh\":\"健康的；身体好的\",\"note\":\"作形容词谈人时，直接说明身体健康；fine 也能表示身体没问题。\"},{\"en\":\"all right\",\"zh\":\"身体还好；没事\",\"note\":\"谈人的状态时可与 fine 接近，常用于回答关心。\"}],\"contrasting\":[{\"en\":\"unwell\",\"zh\":\"身体不舒服的\",\"note\":\"直接对照身体状况良好的 fine。\"},{\"en\":\"ill\",\"zh\":\"生病的\",\"note\":\"强调有病，与这里的健康状态相对。\"}],\"similarNote\":\"这些表达在谈身体状况时接近；不要由此推到天气、品质或罚款义。\",\"contrastingNote\":\"unwell、ill 用于身体不适或生病，不用于表示某个安排不可接受。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在 weather 或 day 等天气、日子类名词前，也可放在 be 后。\"",
+        "valueJson": "\"常放在 weather 或 day 前，也可放在 be 后；说天气 fine 不代表一定暖和。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"fine 修饰不可数名词 weather，说的是野餐时的天气。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用 it 谈天气；should 表示预计，而非要求。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"It is fine for …\",\"zh\":\"天气适合……\",\"note\":\"后面可接活动，说明天气适宜做某事。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"It’s a fine day for + 名词或 -ing\",\"zh\":\"这是适合……的好天气\",\"note\":\"如 a fine day for a walk 或 a fine day for cycling；补出 a fine day，清楚说明天气。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a fine 是可数名词；for 后的 -ing 短语说明被罚原因。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1/en",
+        "expectedValueJson": "\"The library charged me a small fine for the late book.\"",
+        "valueJson": "\"The library charged me a small fine for returning the book late.\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"for returning the book late 说明罚款缘由；return 在这里是“归还”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"refund\",\"zh\":\"退款\",\"note\":\"表示退还已付的钱，与缴纳罚款的方向和目的不同。\"}",
+        "valueJson": "{\"en\":\"cancellation of a fine\",\"zh\":\"撤销罚款\",\"note\":\"指取消原有的罚款义务，是处罚结果上的反向表达，不是 fine 的词汇反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"reward 是奖励，refund 是退款；这里只在钱款结果的语境中与 fine 对照。\"",
+        "valueJson": "\"reward 只在“奖励与处罚”的语境中作对照；cancellation of a fine 指原来的罚款被撤销。这些是语境中的对照，不能当成随处可替换的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"518-adj-quality\",\"title\":\"优良的；精致的\",\"meaning\":\"可形容品质好、做工精细或细小精密，如 fine work（精细的工作）。\",\"note\":\"初中阶段先掌握“不错、天气好”和名词“罚款”；此义可在阅读中识别。\",\"example\":{\"id\":\"518-ex-7\",\"senseId\":\"518-adj-quality\",\"en\":\"She made a fine model of the old bridge.\",\"zh\":\"她做了一座很精致的旧桥模型。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-adj-acceptable\",\"title\":\"可以的；可接受的；好吧\",\"meaning\":\"表示安排、做法等可以接受、没有问题；Fine! 单独作应答时可表示“好吧、同意”。\",\"usageNote\":\"fine 不一定表示热情赞同。单独说 Fine! 时，友好语调可表示同意，生硬语调也可能表示勉强接受或不耐烦。\",\"examples\":[{\"id\":\"518-ex-2\",\"senseId\":\"518-adj-acceptable\",\"en\":\"Is it fine if we meet after lunch?\",\"zh\":\"我们午饭后见面可以吗？\",\"note\":\"if 引出征求同意的安排；fine 表示可以接受。\"},{\"id\":\"518-ex-17\",\"senseId\":\"518-adj-acceptable\",\"en\":\"Six o’clock is fine with me.\",\"zh\":\"六点钟我可以。\",\"note\":\"fine with me 表示这个时间对我来说可以接受。\"},{\"id\":\"518-ex-18\",\"senseId\":\"518-adj-acceptable\",\"en\":\"“Shall we take the bus?” “Fine!”\",\"zh\":\"“我们坐公交车好吗？”“好！”\",\"note\":\"Fine! 独立作应答；这里按友好语调表示同意。\"}],\"patterns\":[{\"en\":\"be fine with someone\",\"zh\":\"对某人来说可以接受\",\"note\":\"常用于询问或说明某人是否接受安排。\",\"kind\":\"sentence-pattern\"},{\"en\":\"It’s fine if …\",\"zh\":\"如果……也没问题\",\"note\":\"if 后说明可以接受的情况或做法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"That’s fine.\",\"zh\":\"那可以；没关系\",\"note\":\"常用于接受安排或宽慰对方，语气取决于说话方式。\",\"kind\":\"fixed-expression\"},{\"en\":\"Fine!\",\"zh\":\"好吧！\",\"note\":\"可独立表示同意；语调生硬时也可能表示勉强或不耐烦。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"okay\",\"zh\":\"可以的；没问题的\",\"note\":\"口语中常与表示接受的 fine 接近。\"},{\"en\":\"all right\",\"zh\":\"可以的；行的\",\"note\":\"用于接受提议或安排时与 fine 接近。\"}],\"contrasting\":[{\"en\":\"unacceptable\",\"zh\":\"不可接受的\",\"note\":\"明确表示安排或做法不能接受，语气较强。\"},{\"en\":\"not okay\",\"zh\":\"不行；不能接受\",\"note\":\"口语中可用来拒绝或指出某种做法有问题。\"}],\"similarNote\":\"这些词在接受提议或安排时接近，不表示品质一定出色。\",\"contrastingNote\":\"这里对照的是是否接受某个安排，不是在谈身体健康或天气。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-adj-quality\",\"title\":\"优质的；出色的；漂亮的\",\"meaning\":\"称赞物品、作品或表现很出色，也可称赞建筑等外观漂亮；这时 fine 往往比“还行”强得多。\",\"usageNote\":\"在 a fine meal、a fine job 这类搭配中，fine 是明确的赞美；在 fine sand 中则说颗粒细，要看所修饰的名词。\",\"examples\":[{\"id\":\"518-ex-7\",\"senseId\":\"518-adj-quality\",\"en\":\"She made a fine model of the old bridge.\",\"zh\":\"她做的那座老桥模型很出色。\",\"note\":\"fine 评价模型做得好，不是在说模型颗粒细小。\"},{\"id\":\"518-ex-19\",\"senseId\":\"518-adj-quality\",\"en\":\"You did a fine job repairing the garden gate.\",\"zh\":\"你把花园大门修得很出色。\",\"note\":\"a fine job 是对工作表现的明确称赞。\"},{\"id\":\"518-ex-20\",\"senseId\":\"518-adj-quality\",\"en\":\"This is a fine old house, with a beautiful wooden staircase.\",\"zh\":\"这是一栋漂亮的老房子，里面有一段美丽的木楼梯。\",\"note\":\"fine 在这里赞美房子的外观和特色。\"}],\"patterns\":[{\"en\":\"a fine + 可数名词单数\",\"zh\":\"一个／一次很好的……\",\"note\":\"用于赞美时可说 a fine meal、a fine performance；具体含义仍要由名词和语境判断。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a fine meal\",\"zh\":\"很棒的一餐\",\"note\":\"称赞食物或整顿饭的品质。\",\"kind\":\"common-collocation\"},{\"en\":\"a fine job\",\"zh\":\"出色的工作表现\",\"note\":\"常见于称赞别人把事情做好。\",\"kind\":\"common-collocation\"},{\"en\":\"a fine building\",\"zh\":\"漂亮的建筑\",\"note\":\"可赞美建筑的外观或整体品质。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"excellent\",\"zh\":\"极好的；出色的\",\"note\":\"在称赞品质或表现时接近，赞美通常更直接强烈。\"},{\"en\":\"beautiful\",\"zh\":\"美丽的；漂亮的\",\"note\":\"只在 fine 赞美外观等美感时接近，不替代 fine 的所有品质评价。\"}],\"contrasting\":[{\"en\":\"poor\",\"zh\":\"质量差的；不佳的\",\"note\":\"在 poor work、poor quality 等评价品质或表现的搭配中与此义相对；不是指贫穷。\"},{\"en\":\"ugly\",\"zh\":\"难看的\",\"note\":\"仅在赞美外观的语境中与漂亮的 fine 对照。\"}],\"similarNote\":\"excellent 侧重优秀，beautiful 侧重美感；fine 可根据名词称赞品质、表现或外观。\",\"contrastingNote\":\"反向表达随评价对象变化：表现差可说 poor，外观难看可说 ugly。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-adj-small\",\"title\":\"颗粒细小的；纤细的\",\"meaning\":\"形容沙、粉末等颗粒很小，或线、针等很细。\",\"usageNote\":\"这里说的是颗粒或粗细，不直接说明品质好坏；fine sand 是细沙，不是“优质沙”的固定说法。\",\"examples\":[{\"id\":\"518-ex-21\",\"senseId\":\"518-adj-small\",\"en\":\"The sand on this beach is very fine.\",\"zh\":\"这个海滩上的沙子很细。\",\"note\":\"fine 描述沙粒小，与 coarse sand（粗沙）相对。\"},{\"id\":\"518-ex-22\",\"senseId\":\"518-adj-small\",\"en\":\"This scarf is woven from fine silk threads.\",\"zh\":\"这条围巾是用纤细的丝线织成的。\",\"note\":\"fine 描述丝线很细，不只是称赞丝线品质。\"}],\"patterns\":[{\"en\":\"fine + 颗粒或细长物体名词\",\"zh\":\"细小的／纤细的……\",\"note\":\"可修饰 sand、powder、threads、needles 等。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"fine sand\",\"zh\":\"细沙\",\"note\":\"强调沙粒细小。\",\"kind\":\"common-collocation\"},{\"en\":\"fine threads\",\"zh\":\"细线\",\"note\":\"强调线的直径小。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"thin\",\"zh\":\"细的；薄的\",\"note\":\"说线等物体很细时可接近 fine；不能因此把 fine sand 换成 thin sand。\"},{\"en\":\"small\",\"zh\":\"小的\",\"note\":\"可解释单个颗粒的大小，但 small sand 不是 fine sand 的自然替换。\"}],\"contrasting\":[{\"en\":\"coarse\",\"zh\":\"颗粒粗大的；粗的\",\"note\":\"谈沙、粉末等颗粒大小时与 fine 相对。\"},{\"en\":\"thick\",\"zh\":\"粗的；厚的\",\"note\":\"谈线等物体的粗细时与 fine 相对。\"}],\"similarNote\":\"颗粒细要看粒径，线细要看粗细；thin、small 只能帮助解释各自相关的部分含义。\",\"contrastingNote\":\"fine sand 对照 coarse sand；fine threads 对照 thick threads，不能机械共用一个反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-adj-subtle\",\"title\":\"细微的；微妙的\",\"meaning\":\"形容不容易察觉或辨别的差别，也可形容两种行为、概念之间很微妙的界限。\",\"usageNote\":\"常见于 distinction、difference、line 等搭配；这里的“细”是抽象的细微，不是物体的粗细。\",\"examples\":[{\"id\":\"518-ex-23\",\"senseId\":\"518-adj-subtle\",\"en\":\"There’s a fine distinction between being honest and being rude.\",\"zh\":\"坦诚与无礼之间有细微的区别。\",\"note\":\"fine distinction 表示需要仔细辨别的差别。\"},{\"id\":\"518-ex-24\",\"senseId\":\"518-adj-subtle\",\"en\":\"There’s a fine line between teasing a friend and hurting their feelings.\",\"zh\":\"逗朋友和伤害对方感情之间只有微妙的界限。\",\"note\":\"a fine line 表示两者界限很窄，稍不注意就可能越界。\"}],\"patterns\":[{\"en\":\"a fine distinction between A and B\",\"zh\":\"A 与 B 之间细微的区别\",\"note\":\"A、B 可以是名词或 -ing 短语。\",\"kind\":\"sentence-pattern\"},{\"en\":\"a fine line between A and B\",\"zh\":\"A 与 B 之间微妙的界限\",\"note\":\"常提示两种情况很接近，容易越过界限。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a fine distinction\",\"zh\":\"细微的区别\",\"note\":\"强调区别微妙，需要仔细辨认。\",\"kind\":\"common-collocation\"},{\"en\":\"a fine line\",\"zh\":\"微妙的界限\",\"note\":\"在抽象语境中表示很窄的分界。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"subtle\",\"zh\":\"细微的；不易察觉的\",\"note\":\"修饰区别等抽象事物时与 fine 接近。\"},{\"en\":\"slight\",\"zh\":\"轻微的；很小的\",\"note\":\"可强调差别小，但不一定强调难辨或微妙。\"}],\"contrasting\":[{\"en\":\"obvious\",\"zh\":\"明显的\",\"note\":\"说区别很容易看出来时，与细微难辨的 fine 对照。\"},{\"en\":\"clear-cut\",\"zh\":\"界限分明的\",\"note\":\"说分类或界限明确时，与 a fine line 表达的微妙界限对照。\"}],\"similarNote\":\"subtle 强调不易察觉，slight 强调程度小；二者只在相应搭配中与 fine 接近。\",\"contrastingNote\":\"obvious 对照差别是否明显，clear-cut 对照界限是否清楚。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-verb-penalize\",\"title\":\"对……处以罚款\",\"meaning\":\"作及物动词，表示因违规而要求某人或机构缴纳罚款。\",\"usageNote\":\"主动结构是 fine someone；金额可放在人后，原因用 for 引出。被罚者作主语时用 be fined，不必再加名词 a fine。\",\"examples\":[{\"id\":\"518-ex-25\",\"senseId\":\"518-verb-penalize\",\"en\":\"The city fined me fifty dollars for parking in a bus lane.\",\"zh\":\"市政府因我把车停在公交专用道上而罚了我五十美元。\",\"note\":\"fined 后先接被罚者 me，再接金额；for 后说明原因。\"},{\"id\":\"518-ex-26\",\"senseId\":\"518-verb-penalize\",\"en\":\"The company was fined for dumping waste into the river.\",\"zh\":\"这家公司因向河里倾倒废料而被罚款。\",\"note\":\"was fined 是被动语态，公司是被罚的一方。\"}],\"patterns\":[{\"en\":\"fine someone + 金额 + for + 名词或 -ing\",\"zh\":\"因……罚某人多少钱\",\"note\":\"金额可省略；for 后说明违规原因。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be fined + 金额 + for + 名词或 -ing\",\"zh\":\"因……被罚多少钱\",\"note\":\"这是被动结构；金额也可省略。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"be fined for speeding\",\"zh\":\"因超速被罚款\",\"note\":\"for 后的 speeding 表示违规行为。\",\"kind\":\"common-collocation\"},{\"en\":\"be heavily fined\",\"zh\":\"被处以高额罚款\",\"note\":\"heavily 修饰 fined，强调罚款金额大。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"penalize\",\"zh\":\"处罚\",\"note\":\"范围比 fine 广，也可指扣分等非金钱处罚。\"},{\"en\":\"punish\",\"zh\":\"惩罚\",\"note\":\"泛指惩罚，不能单凭此词判断是否罚款。\"}],\"contrasting\":[{\"en\":\"let someone off with a warning\",\"zh\":\"只警告某人而不进一步处罚\",\"note\":\"在本可罚款的语境中，表示只给警告。\"},{\"en\":\"waive a fine\",\"zh\":\"免除罚款\",\"note\":\"表示免去罚款义务，与处以罚款在处理结果上对照。\"}],\"similarNote\":\"fine 明确是金钱处罚；penalize、punish 需要更多语境才能确定处罚方式。\",\"contrastingNote\":\"只给警告和免除罚款是具体处理上的反向表达，不是可在任何句子中直接替换 fine 的词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"518-adv-well\",\"title\":\"正常地；顺利地；清楚地\",\"meaning\":\"口语中作副词，可表示设备运转正常、事情进行顺利，或听得清楚等。\",\"usageNote\":\"常见于 work fine、do fine、hear someone fine 等表达。这里 fine 本身可以作副词，不需要改成 finely；finely 常表示精细程度。\",\"examples\":[{\"id\":\"518-ex-27\",\"senseId\":\"518-adv-well\",\"en\":\"My old laptop still works fine after the update.\",\"zh\":\"更新后，我的旧笔记本电脑仍然运转正常。\",\"note\":\"fine 修饰 works，表示设备工作正常。\"},{\"id\":\"518-ex-28\",\"senseId\":\"518-adv-well\",\"en\":\"I can hear you fine now that I’ve closed the window.\",\"zh\":\"我关上窗户后，现在能清楚地听见你说话了。\",\"note\":\"fine 修饰 hear；now that 引出现在能听清的原因。\"}],\"patterns\":[{\"en\":\"work / do + fine\",\"zh\":\"运转正常／做得不错\",\"note\":\"fine 在这些口语表达中作副词。\",\"kind\":\"sentence-pattern\"},{\"en\":\"hear someone fine\",\"zh\":\"清楚地听见某人说话\",\"note\":\"强调听取声音没有问题，不评价说话内容。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"work fine\",\"zh\":\"运转正常\",\"note\":\"常用于设备、工具或方案。\",\"kind\":\"common-collocation\"},{\"en\":\"do just fine\",\"zh\":\"做得挺好；应付得来\",\"note\":\"just 在这里加强“没问题、挺好”的语气。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"well\",\"zh\":\"好地；顺利地\",\"note\":\"作副词时常可表达相近意思，如 work well；well 的使用范围更广。\"},{\"en\":\"properly\",\"zh\":\"正常地；正确地\",\"note\":\"谈设备运作时可与 fine 接近，强调按应有方式运行。\"}],\"contrasting\":[{\"en\":\"badly\",\"zh\":\"差地；不好地\",\"note\":\"在 do badly 等评价表现的结构中与 do fine 对照。\"},{\"en\":\"not work properly\",\"zh\":\"不能正常运转\",\"note\":\"在谈设备功能时与 work fine 对照。\"}],\"similarNote\":\"副词 fine 常见于口语和特定搭配；不能把所有 well 都换成 fine。\",\"contrastingNote\":\"表现差与设备故障要分别表达；不能把 badly 当成所有副词 fine 用法的固定反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"无票乘车是受罚原因，因此用 fine，而不是正常服务费用 fee。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"fee 是为游泳课支付的正常费用，这里不含违规处罚。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"fine 表示自己没事，用来让对方放心继续行动。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"well 在 is 后作形容词，表示健康；again 说明恢复了健康。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"形容词 fine 和名词 fine 的近源发展不同：形容词经由中古英语 fin，来自古法语 fin；罚款义名词经由古法语 fin 发展而来。两者都与拉丁语 finis 一族有关，但“罚款”不是因为“品质好”而得名。\"",
+        "valueJson": "\"形容词 fine 从古法语 fin 进入中古英语，曾写作 fin；这些早期用法涉及“完成、纯粹或品质高”。罚款义名词则经另一条古法语 fin（结束、了结）的发展路线而来，先指为了结事项所付的钱，后来指作为处罚缴纳的钱。两者都与拉丁语 finis 一族有关，但不能把“罚款”解释成“品质好”直接引申出的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"fin\",\"meaning\":\"形容词 fine 的传入形式。\"},{\"language\":\"古法语\",\"form\":\"fin\",\"meaning\":\"形容词的近源形式，带有完成、纯粹或品质高等相关含义。\"},{\"language\":\"古法语\",\"form\":\"fin\",\"meaning\":\"名词 fine 的近源形式，表示结束或了结；后来发展为了结事项的付款，再发展为罚款。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这两条近源路线应分别理解；此处并列的阶段不是一条从中古英语依次走到名词罚款义的单线历史。现代英语 fine 的“状态不错”和“罚款”是不同词性与用法，不能用现代含义倒推出词源。\"",
+        "valueJson": "\"形容词更深层的形成仍有不同解释；形容词和罚款义名词的近源发展应分别理解，不能用现代含义倒推词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"wiktionary\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"精细地；很好地\"",
+        "valueJson": "\"精细地；成细小颗粒地；精美地\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接加 -ly；此副词常见于描述制作方式或程度。\"",
+        "valueJson": "\"保留 fine 的词尾 e，直接加 -ly，拼作 finely；常描述制作精细或颗粒细小的程度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"518-ex-12\",\"senseId\":\"518-adj-quality\",\"en\":\"The pieces were finely cut.\",\"zh\":\"这些部分切得很精细。\"}",
+        "valueJson": "{\"id\":\"518-ex-12\",\"senseId\":\"518-adj-small\",\"en\":\"Finely chop the onion before adding it to the soup.\",\"zh\":\"先把洋葱切细，再把它加入汤中。\",\"note\":\"finely 指切得细；不是 work fine 中“运转正常”的意思。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"finer 是 fine 的比较级，这里表示天气更好。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"finest 在这里评价纸的品质，不表示纸最薄。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/example/senseId",
+        "expectedValueJson": "\"518-noun-penalty\"",
+        "valueJson": "\"518-verb-penalize\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/3/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"was fined 是动词的被动结构；for 后说明违规行为。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本组列出常见派生词及 fine 作动词时的规则变化形式；finer、finest 是形容词比较级和最高级，不是新词义。\"",
+        "valueJson": "\"finely 是派生副词；finer、finest 是 fine 的比较级和最高级，fined 是动词 fine 的过去式／过去分词。另有口语副词 fine，如 work fine；它与表示精细程度的 finely 不能机械互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"fine 的 i 发 /aɪ/，与 time 押韵。\"",
+        "valueJson": "\"fine 的 i 发 /aɪ/，fine 与 line 押韵，韵尾都是 /aɪn/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: fine\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/fine\",\"supports\":[\"英美音标\",\"形容词与名词常见含义\",\"搭配及词形变化\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：fine（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/fine#Anglais\",\"supports\":[\"英语 fine 的 /faɪn/ 发音\",\"品质、外观、天气、细小、细微及接受或同意的用法\",\"罚款名词与处以罚款的动词用法\",\"形容词中古英语 fin 与名词古法语 fin 的近源说明\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 518,
+    "headword": "fine",
+    "meaning_zh": "adj. 好的；晴朗的；身体好的\nn. 罚款",
+    "phonetic": "/fain/",
+    "pos": "",
+    "forms": []
+  }
+}

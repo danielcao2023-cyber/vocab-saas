@@ -1,0 +1,259 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "39232b847d74b4fbbc8d6f53ed5897fb8069ae129af8998a914de55aabfd4614",
+    "executedReviewPromptHash": "39232b847d74b4fbbc8d6f53ed5897fb8069ae129af8998a914de55aabfd4614",
+    "reviewHash": "b3e816e7ba59ee8cc21778ae26a4ff04dd9894a896074943bcd27838a347f6e9",
+    "wordId": 886,
+    "inputHash": "8eeba7c2a4fa59d7cf46c8bbc85391c9b901ba420638bab2e0221050b63b2166",
+    "draftHash": "8d0ade917efec047723995c5375d2a830929a3256214f3f37937ca9454abd750",
+    "finalHash": "6ac1403f46608d8a2383b2791505923a73c310369d22546b0f802d89ed3034b0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/Mr#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.746Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 248891,
+        "revisionId": 39764745,
+        "revisionTimestamp": "2026-08-03T04:55:48Z",
+        "sha256": "9148f63554a4ca2eb8978ea5365da2181185370face670e045af3740b1a0f0e6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/Mr",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:48:30.375Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:57:58.670Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0; /pronunciation/sourceIds; /senses/0/sourceIds; /confusions/0/sourceIds",
+        "message": "Cambridge 正文未取得，不能作为已使用的释义和读音依据。移除该来源及相关引用；读音和标点说明改引已取得的维基词典英语词条，称谓用法按专业语言知识审校。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0; /takeaway; /confusions/0; /memoryAid/cues/0",
+        "message": "遗漏 Mr President、Mr Chairman 等正式职衔称呼这一常用功能，部分总括说明也把 Mr 的后接成分局限为姓名。应在同一称谓义内补充句型和两个例句，并同步限定规则，无须另拆新义。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms",
+        "message": "已取得的词条明确列出补充式复数 Messrs 及英美读音，初稿未收录。应补入正式复数形式，并与 Mrs 区分。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/etymology/stages",
+        "message": "缩写关系有依据，但不能仅据此断定完整拼写 mister 与缩写 Mr 在历史上的出现先后。清空会被绘制为历史顺序的阶段，保留 summary 中正确的现代缩写关系即可。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway; /confusions/0/items/0/note; /memoryAid/story",
+        "message": "“用于男子姓名或姓名前”有重复；“Mr 通常要跟在它后面的男子姓名”句法残缺，容易混淆前后位置；助记故事中“如果老师当面没有叫出姓名”的说话者和条件不清。应分别改为明确的位置规则和直接称呼场景。"
+      }
+    ],
+    "coverageAssessment": "已核对法语维基词典中的英语词条：其正文提供英式拼写变体、英美读音、mister 缩写关系及 Messrs 复数形式；Cambridge 未取得正文。结合专业语言知识核对“先生”这一称谓义及姓名、正式职衔两种常用功能。原有姓氏和全名例句均正确并保留，补充职衔功能的两个例句。Ms、Mrs 的对照已限定为相关称谓差别，无须强造反义；mister 的拼写及词族说明基本正确。历史说明仅保留可证实的缩写关系，不推定更早的演变。",
+    "senseInventory": [
+      {
+        "sense": "先生：Mr／Mr. 是 mister 的缩写，通常用于男子的姓氏或全名前，也用于 Mr President 等特定正式职衔称呼；正式复数为 Messrs。",
+        "coveredBy": [
+          "mr-title"
+        ],
+        "assessment": "属于同一称谓义，不强拆多义。原有两例分别覆盖姓氏和全名；补入职衔称呼的句型和两例，并在 forms 补全复数及读音。英美拼写差异和复数形式不另算新义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"Mr 是 mister 的缩写，读作 /ˈmɪstə(r)/；用于男子姓名或姓名前的称呼，通常不单独放在姓名后。英式英语常写 Mr，AmE 常写 Mr.。\"",
+        "valueJson": "\"Mr 是 mister 的缩写，读作 /ˈmɪstə(r)/；通常放在男子的姓氏或全名前，表示“先生”，也可用于 Mr President 等正式职衔称呼。它不表示婚姻状况。英式英语常写 Mr，美式英语常写 Mr.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_mr\"]",
+        "valueJson": "[\"wiktionary_mr_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"正式复数称谓\",\"form\":\"Messrs\",\"ipa\":\"/ˈmɛsəz/（英）；/ˈmɛsɚz/（美）\",\"note\":\"Mr 的不规则复数，主要见于正式书面语，用于两位或多位男子的姓名前，如 Messrs Brown and Green；美式常写 Messrs.。不要与 Mrs（太太）混淆。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"先生；男子姓名前的称谓\"",
+        "valueJson": "\"先生；用于男子姓名或某些正式职衔前的称谓\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"放在成年男子的姓氏或全名前，表示礼貌称呼，类似中文的“先生”。通常不单独用来称呼一个人。\"",
+        "valueJson": "\"通常放在男子的姓氏或全名前，表示礼貌称呼，类似中文的“先生”；正式场合也可放在 President、Chairman 等特定职衔前直接称呼对方。一般不把缩写 Mr 单独用作当面称呼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mr-title-ex3\",\"senseId\":\"mr-title\",\"en\":\"Mr President, thank you for visiting our school.\",\"zh\":\"总统先生，谢谢您到访我们学校。\",\"note\":\"Mr 可用于某些正式职衔前；这里的 President 是职衔，不是姓名。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mr-title-ex4\",\"senseId\":\"mr-title\",\"en\":\"Mr Chairman, may I ask a question about the new parking rules?\",\"zh\":\"主席先生，我可以就新的停车规定提个问题吗？\",\"note\":\"在正式会议中称呼男主席可用 Mr Chairman；这类称呼只适用于约定的职衔。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Mr + certain official titles\",\"zh\":\"Mr + 某些正式职衔\",\"note\":\"例如 Mr President、Mr Chairman，用于正式场合的当面称呼；这不是可以任意套用到所有职业名称的格式。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"sir 可独立用于当面称呼，Mr 通常必须跟姓名；mister 是 Mr 的全称。\"",
+        "valueJson": "\"sir 可独立用于礼貌的当面称呼；Mr 通常接姓氏或全名，也可接 President 等特定职衔；mister 是 Mr 的完整拼写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_mr\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"Mr 通常要跟在它后面的男子姓名。\"",
+        "valueJson": "\"Mr 通常放在男子的姓氏或全名前，如 Mr Green；也可放在 President 等特定职衔前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"写在姓名前用 Mr（美式常写 Mr.）；当面不带姓名称呼时用 sir。\"",
+        "valueJson": "\"一般在姓氏或全名前用 Mr（美式常写 Mr.）；不带姓名时，可用 sir 礼貌称呼，也可用 Mr President 等约定的职衔称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_mr\"]",
+        "valueJson": "[\"wiktionary_mr_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"English\",\"form\":\"mister\",\"meaning\":\"先生；男子姓名前的称谓\"},{\"language\":\"English\",\"form\":\"Mr\",\"meaning\":\"mister 的缩写形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象教室门口挂着一块牌子：Mr Chen。先看到 Mr，就知道后面跟的是一位男子的姓名；如果老师当面没有叫出姓名，礼貌地说 sir。\"",
+        "valueJson": "\"想象教室门口挂着一块牌子：Mr Chen。你见到陈老师说：“Good morning, Mr Chen.”；遇到一位不知道姓名的男访客，你礼貌地说：“Excuse me, sir.”。把两幅画面连起来：Mr 通常接姓氏，sir 可以独立称呼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"Mr 放在姓名前。\"",
+        "valueJson": "\"Mr 通常放在姓氏或全名前，也可放在某些职衔前，如 Mr President。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"Mr 是 mister 的缩写关系\"]",
+        "valueJson": "[\"Mr 是 mister 的缩写关系\",\"英式 Mr 与 Mr. 的拼写变体关系及标点风格说明\",\"英美读音\",\"复数 Messrs 及其英美读音\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_mr\",\"title\":\"Cambridge Dictionary: Mr\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/Mr\",\"supports\":[\"Mr 的读音和称谓用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 886,
+    "headword": "Mr (AmE Mr.)",
+    "meaning_zh": "先生",
+    "phonetic": "/'mistә(r)/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "mr.",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

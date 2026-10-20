@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4a7b9fab182579c3130ee092dbf024d1d2dec490f8268737d052643b9925f65d",
+    "executedReviewPromptHash": "4a7b9fab182579c3130ee092dbf024d1d2dec490f8268737d052643b9925f65d",
+    "reviewHash": "1f391f5318f045b318edcce6ce711f99012afb7dd59e0bd51a25656a0c8b141d",
+    "wordId": 275,
+    "inputHash": "ca0d83a3a754729d35e94ec32f89c38d0b351ade139f37dbee178adb67ad2036",
+    "draftHash": "529ee3a40afc067157ee8e961f183239630cda029e72ca68abfdceac1006ebc7",
+    "finalHash": "4f42b4928403816c5085c768f57a55299eb0870f183afbba32aa02e21f593e9a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/classroom#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.916Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 580454,
+        "revisionId": 37277084,
+        "revisionTimestamp": "2025-02-06T19:43:44Z",
+        "sha256": "cc183fbe87ecb5deb0c4e79b28cc9c3556a19ebdcce94b77e05607ca9e0c52c2",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/classroom",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:49:17.387Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:52:31.433Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Oxford 未列入实际取得的材料，Cambridge 获取失败；初稿却引用二者，遗漏了已取得的法语维基词典英语词条。需更正来源及其支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有词源材料明确说明 class 与 room 的合成关系，初稿仍仅称现代拆分且没有来源。应补齐有据的构词来源；两个成分不构成历史先后阶段，stages 保持空数组。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "class 是易混词，不是 classroom 的近义表达。应改列 schoolroom，并注明其较少使用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote及/wordFamily/0/spellingNote",
+        "message": "classrooms 是复数词形，不是派生新词。“词尾辅音后加 s”也容易被理解为通用规则，应限定为本词的具体变化。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "“classroom 后接具体教室名称或地点”目标不清楚，宜改为正文实际展示的可数形式及地点搭配。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example",
+        "message": "原句语法正确，但只出现 class，却关联 classroom 的义项。让两词同时出现，可以明确义项对应并加强辨析。"
+      }
+    ],
+    "coverageAssessment": "已核对词典材料所列全部定义：核心是可数名词“教室”，现有两条核心例句自然、翻译准确，已满足覆盖要求；名词作定语的用法也已展示，无须另拆义项。英美读音、重音及复数读音可保留。词源仅补入有据的合成关系，不推断首次使用年代或更早历史；美音及扩展用法依专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：教室，供教学活动使用的房间",
+        "coveredBy": [
+          "classroom-n-1"
+        ],
+        "assessment": "已由两条具体英中例句覆盖。classroom door、classroom rules 展示同一名词作定语的用法，不需要新增词性或义项。playground 已明确限定为学校场所对照，并未冒充反义词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 classroom 后接具体教室名称或地点的表达。\"",
+        "valueJson": "\"练习 a classroom、classrooms 和 in the classroom 的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"class\",\"zh\":\"班级；一节课\",\"note\":\"class 指一群学生或一次课程；classroom 指上课的房间。\"}",
+        "valueJson": "{\"en\":\"schoolroom\",\"zh\":\"教室\",\"note\":\"也指学校里上课的房间，但较少使用；日常交流通常用 classroom。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"classroom 是地点；class 主要指学生群体或课程。\"",
+        "valueJson": "\"schoolroom 与 classroom 都可指学校里的教室；classroom 是更常用的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"classroom-conf-2\",\"senseId\":\"classroom-n-1\",\"en\":\"Our class starts at nine.\",\"zh\":\"我们九点开始上课。\",\"note\":\"这里的 class 指课程。\"}",
+        "valueJson": "{\"id\":\"classroom-conf-2\",\"senseId\":\"classroom-n-1\",\"en\":\"We have our English class in this classroom.\",\"zh\":\"我们在这间教室上英语课。\",\"note\":\"class 指英语课，classroom 指上课的房间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，classroom 由 class（班级、课程）和 room（房间）组合，表示上课的房间。\"",
+        "valueJson": "\"classroom 是英语合成词，由 class（班级）和 room（房间）组成，表示上课用的房间，即“教室”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是现代构词拆分，不能据此推断更早的历史演变。\"",
+        "valueJson": "\"class 和 room 是共同构成 classroom 的两个词，不是先后演变的词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"以 -s 构成规则复数；词尾辅音后加 s。\"",
+        "valueJson": "\"保留 classroom 的完整拼写，直接加 -s：classrooms；-s 在 /m/ 后读 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"classroom 的常用词族主要是其规则复数 classrooms；class 和 room 是构词成分，不作为本条的派生词列出。\"",
+        "valueJson": "\"classrooms 是 classroom 的规则复数，属于同一名词的词形变化，不是新派生词；class 和 room 是构成 classroom 的两个独立单词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: classroom\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/classroom\",\"supports\":[\"classroom 的词性、释义、发音和复数形式\",\"classroom 的常见搭配\"],\"verification\":\"recommended\"},{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: classroom\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/classroom\",\"supports\":[\"classroom 的词性、释义和用法例证\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"src-wiktionary-en\",\"title\":\"法语维基词典：classroom（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/classroom#Anglais\",\"supports\":[\"英语名词词性与“教室”义\",\"英式发音与规则复数\",\"classroom 的合写形式\",\"由 class 与 room 合成的词源\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 275,
+    "headword": "classroom",
+    "meaning_zh": "n. 教室",
+    "phonetic": "/'klɑ:sru:m/",
+    "pos": "",
+    "forms": []
+  }
+}

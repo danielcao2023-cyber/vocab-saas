@@ -1,0 +1,338 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a32b255010147f30e3862a0df5940cb44bab5cbd0df2f4550b0c859644cdbfc6",
+    "executedReviewPromptHash": "656d9510d24188480d4bfbc96bb62bde9beee80f6a63e66306832af83a1b45d4",
+    "reviewHash": "3edcde4a9627805a130c5f52f2269fb46b1377ecde1f120b121772ee3c427307",
+    "wordId": 1158,
+    "inputHash": "98688bdede22327459a818a9896326ddda945e5522b79d8b873dc694dd791c66",
+    "draftHash": "88bb24429b2e7425ef347d3100b117a047eaa13f37d45017af8c0d11fec8aa41",
+    "finalHash": "13e6c5c9bf799f4264d6d3777d982a1ba58e41bebf94548992de289fad04e022",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rice#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.642Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 24830,
+        "revisionId": 39574816,
+        "revisionTimestamp": "2026-06-08T15:19:21Z",
+        "sha256": "57e7e189128a802224cb0c241f466da9c7f3b4ba75964ab4e239e390f404bf49",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rice",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:38:57.534Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:45:02.071Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech, /forms, /lessCommonSenses, /wordFamilyNote",
+        "message": "遗漏词条已列出的烹饪及物动词义“把食物压成米粒状”。应作为低频义补入，并补齐动词变化；加入相关工具名 ricer，说明实际构词和拼写。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0",
+        "message": "grow rice 中 rice 是宾语，只表示“种植水稻”；“水稻生长”须用 rice 作主语，不能只说根据主语判断同一搭配的含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar, /senses/1/relatedExpressions/similar",
+        "message": "grain、meal、crop、wheat 分别属于上位概念、餐食概念或同类作物，不能列作 rice 的近义替换词。相关区别可保留在说明中。现有 noodles、wheat 对照已限定语境，可以保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example/zh",
+        "message": "made 表示制作、准备；原译“盛了”与英文动作不一致。英文句子本身正确，修正中文即可。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary, /etymology/stages",
+        "message": "阶段数组按由近及远排列，却会显示为顺序箭头；各项 meaning 又只是“来源形式”等占位说明。应在 summary 中按历史先后保留传入线索，并补入古波斯语。阶段数组清空，不为缺少具体字形的古波斯语新增空字符串或占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources, /pronunciation/sourceIds, /senses/0/sourceIds, /senses/1/sourceIds, /confusions/0/sourceIds",
+        "message": "实际取得的材料不含 Oxford 页面。名词、读音及不可数说明应关联已取得的 Wiktionnaire 英语词条，并扩大该来源的标题和支持范围；新增动词、词族内容不冒挂该来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes",
+        "message": "把英语 /r/ 统一称为“卷舌音”不够准确；发音提示可直接说明发音动作、双元音和词尾清辅音，无须讨论“旧音标”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/summary",
+        "message": "不可数规则应明确限定泛指米或米饭的普通用法，并补出 a grain of rice，避免将规则理解为所有语境下都禁止复数形式。"
+      }
+    ],
+    "coverageAssessment": "已核对米、米饭、稻作物及烹饪及物动词义。生米与熟饭由同一核心义下的两个例句分别覆盖，作物义已有两个自然例句；低频烹饪动词补入 lessCommonSenses，并补齐词形及 ricer。其余例句、搭配和助记内容可保留。历史词源仅依据已取得的英语词条材料修正。外部材料的局限是 Cambridge 未取得、Oxford 未提供实际内容；新增动词与词族依据题给词义及专业语言知识，不声称完成网页核验或教师人工审核。",
+    "senseInventory": [
+      {
+        "sense": "名词：米，谷粒",
+        "coveredBy": [
+          "rice-grain-food"
+        ],
+        "assessment": "已覆盖；买一袋米的例句明确体现未煮熟的米。"
+      },
+      {
+        "sense": "名词：米饭，煮熟后食用的米",
+        "coveredBy": [
+          "rice-grain-food"
+        ],
+        "assessment": "已覆盖；午饭吃米饭配蔬菜的例句明确体现熟饭。与生米合为同一食物义合理。"
+      },
+      {
+        "sense": "名词：稻，稻这种植物或作物",
+        "coveredBy": [
+          "rice-plant"
+        ],
+        "assessment": "已有两个例句；修正 grow rice 与 rice grows 的句法区别。"
+      },
+      {
+        "sense": "及物动词：把食物压成米粒状细粒",
+        "coveredBy": [
+          "rice-food-processing"
+        ],
+        "assessment": "原稿遗漏；补为低频食谱用法，配一个完整例句，并补入动词变化及相关器具名 ricer。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; transitive verb\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词原形\",\"form\":\"rice\",\"ipa\":\"/raɪs/\",\"note\":\"烹饪及物动词，表示把食物压成米粒状细粒；读音与名词相同。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"rices\",\"ipa\":\"/ˈraɪsɪz/\",\"note\":\"在 rice 后加 -s；词尾读 /ɪz/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式和过去分词\",\"form\":\"riced\",\"ipa\":\"/raɪst/\",\"note\":\"在 rice 后加 -d；词尾读 /t/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词现在分词和动名词\",\"form\":\"ricing\",\"ipa\":\"/ˈraɪsɪŋ/\",\"note\":\"去掉 rice 末尾不发音的 e，再加 -ing。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rice-food-processing\",\"title\":\"把食物压成米粒状细粒\",\"meaning\":\"作及物动词，指把食物（如煮熟的土豆）压成米粒状的细粒。\",\"note\":\"属于食谱中的专门用法；rice 后直接接所处理的食物，认识即可。\",\"example\":{\"id\":\"rice-food-processing-ex1\",\"senseId\":\"rice-food-processing\",\"en\":\"Rice the cooked potatoes before adding the butter.\",\"zh\":\"先把煮熟的土豆压成米粒状细粒，再加入黄油。\",\"note\":\"rice 在这里是及物动词，the cooked potatoes 是宾语；操作常用带孔压具。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"ricer\",\"partOfSpeech\":\"noun\",\"meaning\":\"把熟土豆等压成细粒的厨房压具\",\"formation\":\"由动词 rice 加表示工具的后缀 -er 构成。\",\"spellingNote\":\"rice 去掉末尾不发音的 e，再加 -er，得到 ricer，拼作 r-i-c-e-r。\",\"example\":{\"id\":\"rice-ricer-ex1\",\"senseId\":\"rice-food-processing\",\"en\":\"She pushed the cooked potatoes through a ricer.\",\"zh\":\"她用压具把煮熟的土豆压成了细粒。\",\"note\":\"ricer 是完成动词 rice 所表示操作的厨房工具。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课只列 rice 的常用名词义；没有收录可确认且适合初中学习的常见派生词。\"",
+        "valueJson": "\"rice 的常用义以名词为主；ricer 来自动词 rice，是厨房器具名称，属于认识即可的拓展词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/zh",
+        "expectedValueJson": "\"种植水稻；水稻生长\"",
+        "valueJson": "\"种植水稻\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"可描述人种水稻，也可描述水稻生长，需结合主语判断。\"",
+        "valueJson": "\"grow rice 中 rice 是宾语，如 Farmers grow rice；说“水稻生长”时，用 rice 作主语，如 Rice grows here。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"grain\",\"zh\":\"谷物；颗粒\",\"note\":\"grain 可指多种谷物或单颗谷粒；rice 更具体地指米或米饭。\"},{\"en\":\"meal\",\"zh\":\"一餐；饭食\",\"note\":\"meal 指一顿饭或一餐的食物，不专指米饭。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"grain 是更宽泛的谷物名称；meal 指一餐，范围也比米饭广。\"",
+        "valueJson": "\"rice 在这一义项中没有常用的直接近义词。grain 可指谷物或谷粒，meal 指一餐，都不能直接代替 rice。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"crop\",\"zh\":\"农作物\",\"note\":\"crop 是更宽泛的“农作物”；rice 是其中一种作物。\"},{\"en\":\"wheat\",\"zh\":\"小麦\",\"note\":\"wheat 和 rice 都是粮食作物，可在谈作物种类时并列比较。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"crop 指各类农作物；rice 是具体的一种。\"",
+        "valueJson": "\"rice 在这一义项中没有常用的直接近义词。crop 是上位词，wheat 是另一种粮食作物，都不能作为 rice 的同义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"rice 通常不可数，表示米或米饭；说份量时加量词，不能直接套用 a/an 或复数形式。\"",
+        "valueJson": "\"泛指米或米饭时，rice 是不可数名词；说份量或单颗米粒时，用 a bowl of rice（一碗米饭）、a grain of rice（一粒米）等结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"她给弟弟盛了一碗米饭。\"",
+        "valueJson": "\"她给弟弟做了一碗米饭。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 rice 经由中古英语 rys、古法语 ris 和意大利语 riso，来自拉丁语 oriza；拉丁语又来自古希腊语 ὄρυζα。\"",
+        "valueJson": "\"rice 的来源可追溯至古波斯语。按由早到晚的传入顺序，之后依次是古希腊语 ὄρυζα、拉丁语 oriza、意大利语 riso、古法语 ris、中古英语 rys，最后成为现代英语 rice。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"rys\",\"meaning\":\"rice 的中古英语来源形式\"},{\"language\":\"古法语\",\"form\":\"ris\",\"meaning\":\"传入中古英语的形式\"},{\"language\":\"意大利语\",\"form\":\"riso\",\"meaning\":\"古法语形式的来源\"},{\"language\":\"拉丁语\",\"form\":\"oriza\",\"meaning\":\"意大利语形式的来源\"},{\"language\":\"古希腊语\",\"form\":\"ὄρυζα\",\"meaning\":\"拉丁语形式的来源\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"开头的 r 是英语卷舌音；结尾 /s/ 清晰，不要读成 /z/。\",\"旧音标 /rais/ 不是规范 IPA；常用写法是 /raɪs/。\"]",
+        "valueJson": "[\"开头 /r/ 发音时舌尖不接触上腭，不要读成汉语“日”的声母。\",\"中间 /aɪ/ 是双元音；结尾 /s/ 是清辅音，不要把 rice 读成 rise /raɪz/。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-rice\"]",
+        "valueJson": "[\"wiktionary-rice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-rice\"]",
+        "valueJson": "[\"wiktionary-rice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-rice\"]",
+        "valueJson": "[\"wiktionary-rice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-rice\"]",
+        "valueJson": "[\"wiktionary-rice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionnaire: rice（英语词条，词源部分）\"",
+        "valueJson": "\"Wiktionnaire: rice（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"英语 rice 的历史来源链：中古英语 rys、古法语 ris、意大利语 riso、拉丁语 oriza、古希腊语 ὄρυζα\"]",
+        "valueJson": "[\"英语 rice 的不可数名词用法：稻这种植物及稻米\",\"英语读音 /ɹaɪs/\",\"历史来源：古波斯语、古希腊语 ὄρυζα、拉丁语 oriza、意大利语 riso、古法语 ris、中古英语 rys\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-rice\",\"title\":\"Oxford Learner’s Dictionaries: rice\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/rice\",\"supports\":[\"rice 的名词用法与常见搭配\",\"rice 表示米、米饭或稻作物的用法\",\"单词发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1158,
+    "headword": "rice",
+    "meaning_zh": "n. 米, 米饭, 稻\nvt. 将...压成米粒状",
+    "phonetic": "/rais/",
+    "pos": "",
+    "forms": []
+  }
+}

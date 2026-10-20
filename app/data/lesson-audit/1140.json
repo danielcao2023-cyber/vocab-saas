@@ -1,0 +1,426 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e5f661cde524217f422665c9a217593b2517e3011817df8537ec3d95ea64b985",
+    "executedReviewPromptHash": "e5f661cde524217f422665c9a217593b2517e3011817df8537ec3d95ea64b985",
+    "reviewHash": "b61a736fba3a2f270037edc6497bf6fcc68baf26e45a36814a18001691506b22",
+    "wordId": 1140,
+    "inputHash": "e9e43ed6ec97451fd5933659b3d9ea66cdf6bd779db49afe231aa0dfd81480a9",
+    "draftHash": "76cb88085b9e7f4556dadb4d86c9573920a95eb6fef6951d8151eba10f3913f7",
+    "finalHash": "e753f123d9ae6c3db2070dc42abc2f7e9704968e02299631638500ae64045513",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/relative#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.666Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 18553,
+        "revisionId": 39774548,
+        "revisionTimestamp": "2026-08-03T14:14:43Z",
+        "sha256": "7f0dd26b08b5ad5dc59e64efe95a9fdd5c055100de5e119452b4660042d28f48",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/relative",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:20:14.036Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:28:16.497Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "把法语维基词典的英语词条误读成了法语来源证明。正文没有给出历史词源，不能断言英语 relative 来自法语 relative，也不能建立法语到英语的演变阶段。改为有依据的现代词族与构词说明，清空历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Oxford 未出现在实际取得的来源正文中，不应承担具体内容的依据标注；Wiktionary 的 supports 还误称其提供了法语对应形式。删除未取得正文的来源引用，并准确限定现有英语词条的支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "family member 与 relative 的范围不能简单说成前者更广；relative 也包括父母、兄弟姐妹等亲属。stranger 表示不认识的人，不能在亲属身份这一维度充当反向表达，改为直接否定亲属关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "表示“关于、涉及”的 relative to 较正式，不能把 be relative to 当作日常 be related to 的常用替换。第二例容易被理解为取决于各班需要，directly relative to 也不宜列为此义的常见搭配。改用明确的正式文本语境及名词后置修饰结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "第二个核心例句及部分搭配只展示派生副词 relatively，导致 relative 本身只有一个核心例句。改为 relative 的直接用例，并补充其作表语及名词前修饰语的用法；relatively 的正确说明保留在词形、易混辨析和词族中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses; /lessCommonSenses",
+        "message": "遗漏常见语法形容词功能 relative pronoun／relative clause，以及来源明确列出的近缘生物义和抽象名词义。分别补充核心语法义与两个低频补充义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "原例中的 relative 修饰 pronoun，展示的是形容词，而不是本项所讲的名词“关系词”。改用 a relative 的独立名词用例，并保留其低频语法术语定位。"
+      }
+    ],
+    "coverageAssessment": "已核对亲属名词义、近缘生物引申义、抽象名词义、相对／比较形容词义、正式“关于”用法，以及语法形容词和名词功能。修订后各核心义均至少有两个直接展示该义的原创例句；低频义各有一个例句。现有词典正文较简略，具体语法说明结合专业语言知识补足；未据此推造历史词源，也未把未取得的 Oxford 正文作为依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：亲戚、亲属",
+        "coveredBy": [
+          "relative-noun-kin"
+        ],
+        "assessment": "核心义已有两个自然例句；修正亲属近义说明和不成立的 stranger 对照。"
+      },
+      {
+        "sense": "名词：具有演化亲缘关系的生物或物种",
+        "coveredBy": [
+          "relative-noun-biological"
+        ],
+        "assessment": "来源明确列出而初稿遗漏；新增为低频补充义，配一个原创例句。"
+      },
+      {
+        "sense": "名词：相对者、相对的事物",
+        "coveredBy": [
+          "relative-noun-abstract"
+        ],
+        "assessment": "对应来源的概括性抽象名词释义；新增低频 the relative 用法，不扩为日常核心义。"
+      },
+      {
+        "sense": "形容词：相对的、比较而言的、依赖参照或条件的",
+        "coveredBy": [
+          "relative-adj-comparative"
+        ],
+        "assessment": "修订后以三个 relative 本词例句展示比较参照、有限程度和判断依赖条件；不再用 relatively 代替核心例句。"
+      },
+      {
+        "sense": "形容词／relative to 结构：关于、涉及",
+        "coveredBy": [
+          "relative-adj-related"
+        ],
+        "assessment": "保留并明确正式语域，配两个语义清楚的例句，撤回泛化的 be relative to 句型指导。"
+      },
+      {
+        "sense": "形容词（语法）：关系的，如关系代词、关系从句",
+        "coveredBy": [
+          "relative-adj-grammar"
+        ],
+        "assessment": "新增常见语法功能，提供两个例句，并与名词“关系词”分开。"
+      },
+      {
+        "sense": "名词（语法）：关系词",
+        "coveredBy": [
+          "relative-grammar"
+        ],
+        "assessment": "保留为低频术语义；改用真正的独立名词用例。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，relative 常指亲戚；作形容词时，常表示“相对的”或“有关联的”。看它修饰什么、出现在什么句型里，就能分清意思。\"",
+        "valueJson": "\"作名词时，relative 常指“亲戚”；作形容词时，常指“相对的”，也用于 relative pronoun（关系代词）等语法术语。relative to 可表示“相对于”，在较正式的语境中还可表示“关于”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\"]",
+        "valueJson": "[\"wiktionary_relative\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"范围更广，可包括父母、兄弟姐妹等家庭成员；relative 常指亲属关系中的亲戚。\"",
+        "valueJson": "\"与 relative 范围有重叠，但更强调家庭成员身份；relative 强调亲属关系，也可包括父母、兄弟姐妹及婚姻关系中的亲属。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"谈一般亲属时用 relative 最自然；family member 强调家庭成员身份。\"",
+        "valueJson": "\"relative 强调人与人之间的亲属关系，family member 强调家庭成员身份；两者不能简单按范围大小区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"stranger\",\"zh\":\"陌生人\",\"note\":\"在“是否属于自己的亲属”这一语境中与 relative 对照；并非所有语境下的严格反义词。\"}",
+        "valueJson": "{\"en\":\"not related (to someone)\",\"zh\":\"（与某人）没有亲属关系\",\"note\":\"谈亲属关系时可用这一否定表达；related 在其他语境中也可表示事情有关联。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"stranger 只在亲属与非亲属的对比中适用。\"",
+        "valueJson": "\"这里否定的是亲属关系。stranger 强调不认识，不能用来判断一个人是否属于亲属。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\",\"wiktionary_relative\"]",
+        "valueJson": "[\"wiktionary_relative\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示某事与另一件事或某个人有联系。\"",
+        "valueJson": "\"在较正式的 relative to 结构中，表示关于或涉及某个事项。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 be relative to；此处 relative 是形容词，后接 to 引出关联对象。\"",
+        "valueJson": "\"这一用法较正式，常见于 documents relative to the case 这类名词后置修饰结构。日常表达“与……有关”通常用 related to；不要把 be relative to 当作它的常用替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"relative-adj-related-ex1\",\"senseId\":\"relative-adj-related\",\"en\":\"The teacher asked a question relative to our science project.\",\"zh\":\"老师问了一个与我们的科学项目有关的问题。\",\"note\":\"relative to 表示“与……有关”，语气较正式。\"}",
+        "valueJson": "{\"id\":\"relative-adj-related-ex1\",\"senseId\":\"relative-adj-related\",\"en\":\"The lawyer asked for all documents relative to the sale of the house.\",\"zh\":\"律师要求提供所有涉及这次房屋出售的文件。\",\"note\":\"relative to 放在 documents 后，表示这些文件涉及什么事项，符合较正式的法律事务语境。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"relative-adj-related-ex2\",\"senseId\":\"relative-adj-related\",\"en\":\"These rules are relative to the needs of each class.\",\"zh\":\"这些规定与每个班的需要有关。\",\"note\":\"be relative to 后接关联对象。\"}",
+        "valueJson": "{\"id\":\"relative-adj-related-ex2\",\"senseId\":\"relative-adj-related\",\"en\":\"The council discussed several matters relative to the new bus route.\",\"zh\":\"地方议会讨论了几项有关新公交线路的事项。\",\"note\":\"matters relative to 表示“涉及……的事项”，用于正式讨论语境。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"be relative to + 名词\",\"zh\":\"与……有关\",\"note\":\"用于说明话题、规则或事实与某对象有联系。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"名词 + relative to + 事项\",\"zh\":\"涉及某事项的……\",\"note\":\"较正式的后置修饰结构，如 documents relative to the case；日常常用 about 或 related to 表达相关意思。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"directly relative to\",\"zh\":\"与……直接相关\",\"note\":\"directly 加强关联程度，常用于较正式的说明。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"documents relative to the case\",\"zh\":\"涉及此案的文件\",\"note\":\"较正式的文件或法律事务表达；relative to 说明文件涉及的事项。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"日常对话中 related to 通常更自然；relative to 稍正式。\"",
+        "valueJson": "\"relative to 表示“关于”时较正式，常用于文件或事项的说明；日常表达“与……有关”更常用 related to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\",\"wiktionary_relative\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示某种程度要拿别的事物作参照，因此不是绝对不变的；也常用于 relatively，表示“比较、相对地”。\"",
+        "valueJson": "\"表示大小、程度或重要性等需要参照其他事物或条件来判断；也可表示某种状态只是比较而言成立，并非完全如此。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"relative 常出现在 relative to + 参照对象中；relatively 修饰形容词或副词，如 relatively easy。\"",
+        "valueJson": "\"relative 可修饰名词，如 relative importance、relative peace，也可作表语。relative to 引出比较的参照对象；修饰 easy 等形容词时用副词 relatively。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"relative-adj-comparative-ex2\",\"senseId\":\"relative-adj-comparative\",\"en\":\"The test was relatively easy for our class.\",\"zh\":\"对我们班来说，这次考试相对容易。\",\"note\":\"relatively 修饰 easy，表示“比较容易”，不等于“非常容易”。\"}",
+        "valueJson": "{\"id\":\"relative-adj-comparative-ex2\",\"senseId\":\"relative-adj-comparative\",\"en\":\"The children played in another room, so we ate dinner in relative peace.\",\"zh\":\"孩子们在另一间屋里玩，因此我们吃晚饭时还算清静。\",\"note\":\"relative 修饰 peace，表示比较清静，并非完全不受打扰。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relative-adj-comparative-ex3\",\"senseId\":\"relative-adj-comparative\",\"en\":\"What counts as expensive is relative; it depends on your budget.\",\"zh\":\"怎样才算贵是相对的，要看你的预算。\",\"note\":\"relative 作表语，说明对“贵”的判断取决于条件或参照标准。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"relatively + 形容词／副词\",\"zh\":\"相对比较……\",\"note\":\"relatively 放在形容词或副词前，表示程度相较而言较高或较低。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"relative + 名词\",\"zh\":\"相对的……；比较而言的……\",\"note\":\"如 relative importance、relative peace；relative 在这里是修饰名词的形容词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"relatively small / large\",\"zh\":\"比较小／大\",\"note\":\"描述程度时留有比较空间，并不表示绝对大小。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"relative peace\",\"zh\":\"相对的平静；还算清静的状态\",\"note\":\"表示与其他情形相比比较平静，不表示完全没有干扰。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\",\"wiktionary_relative\"]",
+        "valueJson": "[\"wiktionary_relative\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relative-adj-grammar\",\"title\":\"形容词（语法）：关系的\",\"meaning\":\"用于 relative pronoun（关系代词）、relative adverb（关系副词）和 relative clause（关系从句）等语法术语。\",\"usageNote\":\"这是语法分类用法。关系从句通常补充说明名词或代词所指的人或物；relative 在这些术语中修饰后面的名词。\",\"examples\":[{\"id\":\"relative-adj-grammar-ex1\",\"senseId\":\"relative-adj-grammar\",\"en\":\"In 'the girl who won the race', 'who' is a relative pronoun.\",\"zh\":\"在 the girl who won the race（赢得比赛的那个女孩）中，who 是关系代词。\",\"note\":\"relative 修饰 pronoun；who 引出修饰 the girl 的关系从句。\"},{\"id\":\"relative-adj-grammar-ex2\",\"senseId\":\"relative-adj-grammar\",\"en\":\"The teacher asked us to underline the relative clause in each sentence.\",\"zh\":\"老师让我们给每个句子中的关系从句画下划线。\",\"note\":\"relative 修饰 clause，整个术语表示“关系从句”。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"relative pronoun\",\"zh\":\"关系代词\",\"note\":\"如 who、which、that 等；具体用法取决于从句结构。\",\"kind\":\"common-collocation\"},{\"en\":\"relative clause\",\"zh\":\"关系从句\",\"note\":\"通常用于补充说明名词或代词所指的人或物。\",\"kind\":\"common-collocation\"},{\"en\":\"relative adverb\",\"zh\":\"关系副词\",\"note\":\"如关系从句中的 where、when 等。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[],\"similarNote\":\"这是语法分类用语，没有可直接替换的通用近义词。\",\"contrastingNote\":\"本义没有通用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"语法：关系词\"",
+        "valueJson": "\"名词（语法）：关系词\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"relative-grammar-ex1\",\"senseId\":\"relative-grammar\",\"en\":\"In “the book that I bought,” that is a relative pronoun.\",\"zh\":\"在“我买的那本书”中，that 是关系代词。\",\"note\":\"that 引出修饰 the book 的关系从句。\"}",
+        "valueJson": "{\"id\":\"relative-grammar-ex1\",\"senseId\":\"relative-grammar\",\"en\":\"In 'the woman who called', 'who' is a relative.\",\"zh\":\"在 the woman who called（打来电话的那位女士）中，who 是关系词。\",\"note\":\"a relative 在这里是语法术语名词；教学中更常见的完整说法是 a relative pronoun。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relative-noun-biological\",\"title\":\"名词：近缘生物；亲缘物种\",\"meaning\":\"指与某种生物在演化上有较近亲缘关系的另一种生物。\",\"note\":\"这是“亲属”在生物学语境中的引申用法，不表示两种生物属于同一物种。\",\"example\":{\"id\":\"relative-noun-biological-ex1\",\"senseId\":\"relative-noun-biological\",\"en\":\"The lion is a close relative of the tiger.\",\"zh\":\"狮子是老虎的近缘物种。\",\"note\":\"relative 在这里表示具有演化亲缘关系的生物，而不是人的亲戚。\"},\"sourceIds\":[\"wiktionary_relative\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"relative-noun-abstract\",\"title\":\"名词（抽象用法）：相对者；相对的事物\",\"meaning\":\"在抽象讨论中，the relative 可统指依赖比较或条件的事物。\",\"note\":\"这是较少见的抽象名词用法，可与 the absolute（绝对者）对照。\",\"example\":{\"id\":\"relative-noun-abstract-ex1\",\"senseId\":\"relative-noun-abstract\",\"en\":\"The essay contrasts the absolute with the relative.\",\"zh\":\"这篇文章对比了绝对的事物与相对的事物。\",\"note\":\"the relative 在这里是抽象名词性表达，不指亲戚。\"},\"sourceIds\":[\"wiktionary_relative\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说“亲戚”用 a relative；说“与某事有关”常用 be related to，也可用 be relative to。\"",
+        "valueJson": "\"说“亲戚”用 a relative；日常说“与某事有关”通常用 be related to。relative to 表示“关于”时较正式，常接在名词后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\"]",
+        "valueJson": "[\"wiktionary_relative\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 relative 来自法语 relative；英语词典材料将它列为形容词和名词。现代可通过 relate、relation 一组词记住“关系”这一核心联想。\"",
+        "valueJson": "\"relative 与 relate、relation 是相关词；副词 relatively 由 relative 加 -ly 构成，拼写保留末尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"法语\",\"form\":\"relative\",\"meaning\":\"与英语 relative 对应的法语形式；材料列出其形容词和名词用法。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只呈现材料支持的法语来源形式；relate 和 relation 是相关词，不据此把它们串成 relative 的历史演变阶段。现代联想帮助记忆，不等于完整词源说明。\"",
+        "valueJson": "\"这里说明现代词族和派生关系，不把它们当作 relative 的历史演变阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_relative\"]",
+        "valueJson": "[\"wiktionary_relative\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_relative\",\"title\":\"Oxford Learner’s Dictionaries: relative\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/relative\",\"supports\":[\"名词“亲戚”和形容词“有关联、相对”的常见用法\",\"relatively 的派生形式及相应词性\",\"relative 的英语读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: relative（English）\"",
+        "valueJson": "\"法语维基词典：relative（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"材料所列法语 relative 与英语 relative 的对应形式\",\"材料所列 relative 的名词、形容词用法及相关词\"]",
+        "valueJson": "[\"英语 relative 的形容词、名词用法及读音\",\"亲属义、近缘生物引申义和抽象名词释义\",\"形容词反义词 absolute，以及 relatively 等派生词和 relate、relation 等相关词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1140,
+    "headword": "relative",
+    "meaning_zh": "n. 亲戚, 关系词\nadj. 有关系的, 相对的, 比较的",
+    "phonetic": "/'relәtiv/",
+    "pos": "",
+    "forms": []
+  }
+}

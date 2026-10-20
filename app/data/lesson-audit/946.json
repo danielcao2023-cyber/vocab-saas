@@ -1,0 +1,573 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8b59916943a28a025f8eb60cb7d1e09beb2eec21e25eecbf769919386fc5cf99",
+    "executedReviewPromptHash": "8b59916943a28a025f8eb60cb7d1e09beb2eec21e25eecbf769919386fc5cf99",
+    "reviewHash": "02967c5a56dd0d4b3043bf7a00605225f0fa9337b0c9c8b1960d7bcb22e8f3a7",
+    "wordId": 946,
+    "inputHash": "698cf51041f3e653e0bf528420b42d369492fed89b0f1d3a25eb7b3fe991985b",
+    "draftHash": "29817b7b52847130b11ffc216051e13fb2bd57fd601e8d697ac1f4b6cca311f3",
+    "finalHash": "c606a87a6e2531c19fe4e10a0873668f47979c4926ef7ada47d5b754b7ebc68d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/OK#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.450Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 237496,
+        "revisionId": 39863637,
+        "revisionTimestamp": "2026-09-07T07:37:07Z",
+        "sha256": "5290c7ce812f707cf27d232f7f51d94ed530aa8affcce46a481bc8add327f8c7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/OK",
+        "section": "OK abbreviation",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "b2bf014cc4e0bfe99d5aadff597c609e020ec5173fecc22df9b3d5b55f3404e9",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "b2bf014cc4e0bfe99d5aadff597c609e020ec5173fecc22df9b3d5b55f3404e9",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/946.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/OK",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:22:12.904Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:33:43.342Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及各处 sourceIds",
+        "message": "初稿引用了未提供正文的 Oxford 和获取失败的 Cambridge，实际取回的法语维基词典英语词条反而未列入。应更正来源及关联，不能把推荐网页当作已取得的支持材料。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/senses",
+        "message": "遗漏常用副词用法，如 work OK、do OK。需补充独立核心义、例句及形容词与副词的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0、/studyPlan/0",
+        "message": "应答中的同意与收到各只有一个例句；常见的引出下一步及句末确认功能未覆盖。学习计划把 OK 列为“问候”也不准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1",
+        "message": "be OK with 中的 OK 是形容词，不属于应答语句型，应移到形容词部分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "形容词合并了多个核心意义，但许可与质量各仅一个例句，健康或情绪状态没有例句；接受安排及回应道歉、安慰的常用功能也需补足。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/usageNote",
+        "message": "名词 OK 前也常用所有格，初稿自己的两个例句即属此类；只强调通常带 the 容易误导。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/examples/1",
+        "message": "原句一般现在时可以表达惯常条件，并非语法错误；但中文描述的是这次出行的未来批准，主句加 will 可使语境与翻译一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "已取回词典中的计算机动词义“点击 OK 按钮确认”完全遗漏，宜作为较少见用法补充，并避免把 Click OK 中的按钮名称误判为动词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/caveat",
+        "message": "将 Old Kinderhook 称为“另一种解释”容易重新混淆起源与推广史；应明确其推广作用，并限定缺乏历史文献支持的乔克托语来源说。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对英语词条的应答、许可、尚可、健康、批准及计算机操作义，并结合原词条与专业语言知识检查副词和常见话语功能。补丁为各核心意义或功能提供至少两个例句；形容词保留原分组，但分别覆盖其不同意义。计算机动词义列入较少见用法。词源顺序保留有依据的 oll korrect → OK，并澄清推广史。来源关联改为实际取回的材料；副词及部分语用扩展依据专业语言知识补充，不冒称由不可用网页核验。",
+    "senseInventory": [
+      {
+        "sense": "应答：同意、接受提议或安排",
+        "coveredBy": [
+          "946-intj"
+        ],
+        "assessment": "原稿覆盖但例句不足；补丁后由 ex1、ex3 分别示范接受时间和座位安排。"
+      },
+      {
+        "sense": "应答：收到、听懂",
+        "coveredBy": [
+          "946-intj"
+        ],
+        "assessment": "补丁后由 ex2、ex4 示范回应指示与确认收到信息。"
+      },
+      {
+        "sense": "话语标记：开始或转入下一步",
+        "coveredBy": [
+          "946-intj"
+        ],
+        "assessment": "原稿缺失；补充两个例句及语用说明。"
+      },
+      {
+        "sense": "句末确认：好吗、明白吗",
+        "coveredBy": [
+          "946-intj"
+        ],
+        "assessment": "原稿缺失；补充征求同意与确认听懂的两个例句。"
+      },
+      {
+        "sense": "形容词：被允许、可以做",
+        "coveredBy": [
+          "946-adj"
+        ],
+        "assessment": "原稿仅一例；补充 Is it OK if...? 后达到两例。"
+      },
+      {
+        "sense": "形容词：安排可接受、本人不介意",
+        "coveredBy": [
+          "946-adj"
+        ],
+        "assessment": "将误放的 be OK with 归回形容词，并补充名词及 -ing 两种宾语的例句。"
+      },
+      {
+        "sense": "形容词：质量尚可、一般",
+        "coveredBy": [
+          "946-adj"
+        ],
+        "assessment": "原稿仅一例；补充第二例，保留与 good、fine、not bad 的语境区别。"
+      },
+      {
+        "sense": "形容词：身体或情绪还好、没事",
+        "coveredBy": [
+          "946-adj"
+        ],
+        "assessment": "原稿只列释义和搭配；补充询问状态及恢复后的两个例句。"
+      },
+      {
+        "sense": "形容词及常用表达：没关系、不要紧，用于回应道歉或安慰",
+        "coveredBy": [
+          "946-adj"
+        ],
+        "assessment": "原稿未明确覆盖；补充 That’s OK、It’s OK 的两个具体对话。"
+      },
+      {
+        "sense": "副词：动作、表现或过程进行得还好",
+        "coveredBy": [
+          "946-adv"
+        ],
+        "assessment": "原稿遗漏；新增核心义，以运转、睡眠、考试表现和排练进展四例覆盖。"
+      },
+      {
+        "sense": "名词：批准、认可",
+        "coveredBy": [
+          "946-n"
+        ],
+        "assessment": "已有两个自然例句；仅澄清 the 与所有格的使用。"
+      },
+      {
+        "sense": "及物动词：批准、认可",
+        "coveredBy": [
+          "946-v"
+        ],
+        "assessment": "已有两个例句；调整第二例的时态，使其与具体未来出行的中文一致。"
+      },
+      {
+        "sense": "及物动词，计算机操作：点击 OK 按钮确认",
+        "coveredBy": [
+          "946-v-computing"
+        ],
+        "assessment": "原稿遗漏；依据取回词典补入较少见义，例句中 OK 确实作动词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"interjection; adjective; noun; verb\"",
+        "valueJson": "\"interjection; adjective; adverb; noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"OK 常用作应答语表示“好、知道了”；放在名词前或 be 后可表示“可以、还不错”；作名词时指“批准”，作动词时表示“批准”。它通常读作 /ˌəʊˈkeɪ/（英）或 /ˌoʊˈkeɪ/（美）。\"",
+        "valueJson": "\"OK 可回应“好、知道了”，也可引出下一步或在句末征求同意；作形容词表示“可以、还行、没事、没关系”，作副词说明动作或事情进行得还好；作名词或动词表示“批准”。英式读 /ˌəʊˈkeɪ/，美式读 /ˌoʊˈkeɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/levelHint",
+        "expectedValueJson": "\"初中常用；先掌握应答和形容词用法，再认识名词与动词用法。\"",
+        "valueJson": "\"初中常用；先掌握应答、形容词和副词用法，再认识名词与动词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"听到 OK 作回答时，先判断它是在表示同意、收到还是问候。\"",
+        "valueJson": "\"听到 OK 时，判断是在同意、表示收到，还是引出下一步；句末 OK? 常用于征求同意或确认听懂。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对照 The printer is OK 和 The printer works OK：前者的 OK 是形容词，后者是副词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "add",
+        "path": "/forms/2",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"副词原形\",\"form\":\"OK\",\"ipa\":\"/ˌəʊˈkeɪ/; /ˌoʊˈkeɪ/\",\"note\":\"用于 work OK、do OK 等，说明动作或事情进行得还好。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"应答：好、可以、知道了\"",
+        "valueJson": "\"应答与话语标记：好、知道了；那么；好吗？\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"用作简短回答，表示同意、接受安排或表示已经听懂、收到。语气通常随说话方式变化。\"",
+        "valueJson": "\"用作回答时表示同意、接受安排或已经听懂、收到；也可提示开始或转入下一步，或放在句末征求同意、确认对方明白。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可单独回答，也可放在句首引出接下来的话；书面聊天中常写 OK。\"",
+        "valueJson": "\"可独立回答，也可放在句首或句末。句首 OK 常提示开始下一步；句末 OK? 常带升调，期待对方回应。语气会影响它听起来是爽快、勉强还是催促。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"be OK with + noun / -ing\",\"zh\":\"同意……；不介意……\",\"note\":\"主语表示接受某个安排或做法，如 be OK with waiting。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"sentence, OK?\",\"zh\":\"……，好吗／明白吗？\",\"note\":\"放在句末征求同意，或确认对方听懂；常读升调。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex3\",\"senseId\":\"946-intj\",\"en\":\"“Shall we sit by the window?” “OK, that sounds good.”\",\"zh\":\"“我们坐在窗边好吗？”“好，听起来不错。”\",\"note\":\"OK 表示接受对方的提议。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex4\",\"senseId\":\"946-intj\",\"en\":\"“The spare key is in the blue box.” “OK, got it.”\",\"zh\":\"“备用钥匙在蓝色盒子里。”“好，知道了。”\",\"note\":\"表示已收到并理解信息，不是在批准钥匙的位置。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex5\",\"senseId\":\"946-intj\",\"en\":\"OK, let’s check our answers.\",\"zh\":\"好，我们来核对答案。\",\"note\":\"句首 OK 提示开始下一步活动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex6\",\"senseId\":\"946-intj\",\"en\":\"OK, now tell me what happened after lunch.\",\"zh\":\"好了，现在告诉我午饭后发生了什么。\",\"note\":\"用 OK 把谈话转到接下来要说的内容。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex7\",\"senseId\":\"946-intj\",\"en\":\"Let’s meet outside the library, OK?\",\"zh\":\"我们在图书馆外面碰面，好吗？\",\"note\":\"句末 OK? 征求对方对安排的同意。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-intj-ex8\",\"senseId\":\"946-intj\",\"en\":\"Keep your ticket until the end of the journey, OK?\",\"zh\":\"把票留到行程结束，明白吗？\",\"note\":\"句末 OK? 用来确认对方明白并会照做。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"all right 和 sure 都能答应，但 sure 更像“当然可以”，OK 也常表示“收到”。\"",
+        "valueJson": "\"all right 可用于答应、引出下一步或句末确认；回应请求时，sure 更像“当然可以”，OK 也常只是表示“收到”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"no 用于拒绝一个请求；not OK 用于评价安排或行为，不能当作所有语境下 OK 的固定反义词。\"",
+        "valueJson": "\"no 可拒绝请求或提议；not OK 用于评价某事不可接受。引出下一步的话语标记 OK 没有固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"形容词：可以、没问题；还不错、还好\"",
+        "valueJson": "\"形容词：可以、可接受；还行；没事；没关系\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示某事允许或可接受；评价质量时表示一般但可以；形容人的状态时表示还好、没事。\"",
+        "valueJson": "\"表示某事被允许或可接受；评价质量时表示一般但可以；形容人时表示身体或情绪还好、没事；安慰或回应道歉时表示没关系、不要紧。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在 be 后；It is OK to do something 表示做某事可以。评价质量时 OK 通常不如 good 强。\"",
+        "valueJson": "\"常放在 be 后，也可非正式地放在名词前。It’s OK to... / Is it OK if...? 用来谈许可；人 + be OK with... 表示接受某个安排；That’s OK / It’s OK 可回应道歉或安慰对方。评价质量时，OK 通常不如 good 积极。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"person + be OK with + noun / -ing\",\"zh\":\"某人接受……；不介意……\",\"note\":\"with 是介词，后接名词或 -ing，如 be OK with waiting；这里的 OK 是形容词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Is it OK if + clause?\",\"zh\":\"如果……，可以吗？\",\"note\":\"if 后接完整句子，常用来询问能否做某事。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"That’s OK. / It’s OK.\",\"zh\":\"没关系；不要紧。\",\"note\":\"可用于回应道歉或安慰对方，具体意思由语境决定。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex3\",\"senseId\":\"946-adj\",\"en\":\"Is it OK if I open the window?\",\"zh\":\"我可以把窗户打开吗？\",\"note\":\"询问这个行为是否被允许。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex4\",\"senseId\":\"946-adj\",\"en\":\"The sandwiches were OK, but I wouldn’t buy them again.\",\"zh\":\"这些三明治还行，但我不会再买了。\",\"note\":\"评价质量尚可，满意程度有限。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex5\",\"senseId\":\"946-adj\",\"en\":\"Are you OK? You look pale.\",\"zh\":\"你还好吗？你看起来脸色苍白。\",\"note\":\"询问对方的身体状态。Are you OK? 也可按语境询问情绪。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex6\",\"senseId\":\"946-adj\",\"en\":\"I felt sick on the bus, but I’m OK now.\",\"zh\":\"我在公交车上觉得恶心，但现在没事了。\",\"note\":\"说明不适已经缓解，目前身体还好。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex7\",\"senseId\":\"946-adj\",\"en\":\"I’m OK with waiting here for ten minutes.\",\"zh\":\"我不介意在这里等十分钟。\",\"note\":\"表示接受等待这个安排；with 后接 waiting。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex8\",\"senseId\":\"946-adj\",\"en\":\"I’m OK with your plan to take the bus.\",\"zh\":\"我可以接受你乘公交车的计划。\",\"note\":\"with 后接名词短语，表示本人对该计划没有异议。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex9\",\"senseId\":\"946-adj\",\"en\":\"“Sorry I’m late.” “That’s OK. We haven’t started yet.”\",\"zh\":\"“抱歉，我来晚了。”“没关系，我们还没开始呢。”\",\"note\":\"That’s OK 回应道歉，表示这件事不要紧。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adj-ex10\",\"senseId\":\"946-adj\",\"en\":\"“I spilled some juice.” “It’s OK; I’ll help you clean it up.”\",\"zh\":\"“我洒了一些果汁。”“没关系，我会帮你收拾干净。”\",\"note\":\"It’s OK 用来安慰对方，表示不用过于担心。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"all right 可在许可和状态义中替换；fine 常表达更好的状态，not bad 常表达略积极的评价。\"",
+        "valueJson": "\"all right 可用于许可、状态，也可在 That’s all right 中回应道歉；fine 谈状态时常较积极；not bad 评价质量时常比 OK 稍积极。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 get/ask for the OK；此时 OK 前通常带 the。\"",
+        "valueJson": "\"常见结构是 get/ask for the OK 和 give one’s OK；名词 OK 前常用 the 或所有格，如 the OK、the teacher’s OK、his OK。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1/en",
+        "expectedValueJson": "\"My parents OK the trip if a teacher comes with us.\"",
+        "valueJson": "\"My parents will OK the trip if a teacher comes with us.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "\"OK 直接接 trip，表示批准这次出行。\"",
+        "valueJson": "\"will OK 表示将批准这次出行；if 条件从句用一般现在时 comes。OK 直接接 the trip。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-adv\",\"title\":\"副词：动作或事情进行得还好\",\"meaning\":\"修饰动作或事情进行的情况，表示运作正常、进展顺利，或表现达到可以接受的水平。\",\"usageNote\":\"常放在 work、go、do、sleep 等动词后。The printer works OK 中 OK 修饰 works，是副词；The printer is OK 中 OK 描述打印机的状态，是形容词。此用法常见于口语。\",\"examples\":[{\"id\":\"946-adv-ex1\",\"senseId\":\"946-adv\",\"en\":\"The printer is working OK now.\",\"zh\":\"打印机现在运转正常了。\",\"note\":\"OK 修饰 working，说明设备运作的情况。\"},{\"id\":\"946-adv-ex2\",\"senseId\":\"946-adv\",\"en\":\"Did you sleep OK last night?\",\"zh\":\"你昨晚睡得还好吗？\",\"note\":\"OK 修饰 sleep，询问睡眠情况。\"},{\"id\":\"946-adv-ex3\",\"senseId\":\"946-adv\",\"en\":\"I did OK in the maths test, but I made two careless mistakes.\",\"zh\":\"我数学测验考得还行，不过犯了两个粗心的错误。\",\"note\":\"do OK 表示表现尚可，不保证成绩出色。\"},{\"id\":\"946-adv-ex4\",\"senseId\":\"946-adv\",\"en\":\"The rehearsal went OK, although we started a little late.\",\"zh\":\"排练进行得还算顺利，尽管我们开始得有点晚。\",\"note\":\"go OK 说明事情进行得怎样。\"}],\"patterns\":[{\"en\":\"verb + OK\",\"zh\":\"……得还好；进行得顺利\",\"note\":\"OK 作副词，说明动作、表现或过程的情况。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"work OK\",\"zh\":\"运作正常；能正常使用\",\"note\":\"常用于机器、设备、软件或方法。\",\"kind\":\"common-collocation\"},{\"en\":\"do OK\",\"zh\":\"表现还行；做得还可以\",\"note\":\"可用于考试、比赛或其他任务。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"well\",\"zh\":\"好地；顺利地\",\"note\":\"描述动作或进展时意义相近，但往往比仅表示“还可以”的 OK 更积极。\"},{\"en\":\"satisfactorily\",\"zh\":\"令人满意地；达到要求地\",\"note\":\"较正式，强调达到可接受的标准。\"}],\"contrasting\":[{\"en\":\"badly\",\"zh\":\"差；不顺利\",\"note\":\"可用于 do badly、sleep badly 等，表示表现或情况欠佳。\"},{\"en\":\"not very well\",\"zh\":\"不太好\",\"note\":\"可谈表现或运作情况，如 The printer isn’t working very well。\"}],\"similarNote\":\"well 与 OK 都可评价动作或进展；OK 常只表示达到可接受的水平，satisfactorily 更正式。\",\"contrastingNote\":\"do OK 可与 do badly 对照；work OK 的反向表达常用 not work very well 或 not work properly，应结合动词选择。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"946-v-computing\",\"title\":\"计算机动词：点击 OK 按钮确认\",\"meaning\":\"通过点击 OK（确定）按钮确认或完成对话框中的操作。\",\"note\":\"这是较少见的非正式及物动词用法。日常操作说明更常直接说 click OK，其中 OK 是按钮名称。\",\"example\":{\"id\":\"946-v-computing-ex1\",\"senseId\":\"946-v-computing\",\"en\":\"Check the settings, then OK the dialog box.\",\"zh\":\"检查设置，然后点击对话框中的“确定”按钮。\",\"note\":\"这里 OK 作动词，后接 the dialog box，表示点击确定来确认。\"},\"sourceIds\":[\"wiktionary-en-ok\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"常见的完整字母拼写形式，也可作形容词、名词或动词。\"",
+        "valueJson": "\"常见的另一种拼写，也可作形容词、副词、名词或动词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"Old Kinderhook 是后来助推流行的另一种解释；它与最初缩写的形成不能混为一谈。联想故事只帮助记忆，不是词源。\"",
+        "valueJson": "\"Old Kinderhook 与 OK 后来的流行有关；这段推广史应与 oll korrect 缩写的形成分开。乔克托语来源说缺乏必要的历史文献支持。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/partOfSpeech",
+        "expectedValueJson": "\"应答语、形容词、名词、动词\"",
+        "valueJson": "\"应答语、形容词、副词、名词、动词\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ok\",\"cambridge-ok\"]",
+        "valueJson": "[\"wiktionary-en-ok\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-ok\",\"title\":\"Oxford Learner’s Dictionaries: OK\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/ok\",\"supports\":[\"OK/okay 的读音与常见拼写\",\"应答语及形容词常用义\",\"名词与动词用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-ok\",\"title\":\"Wiktionnaire：OK（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/OK#Anglais\",\"supports\":[\"英美读音与 okay 拼写变体\",\"应答及形容词的许可、尚可、健康义\",\"名词“批准”及动词“批准、点击 OK 按钮”\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-ok\",\"title\":\"Cambridge Dictionary: OK\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/OK\",\"supports\":[\"OK 的应答、形容词、名词和动词用法\",\"常见搭配和语境区别\",\"OK 与 okay 的拼写关系\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 946,
+    "headword": "OK",
+    "meaning_zh": "adj. 好, 不错, 可以\nadv. 好, 不错, 可以\nn. 批准, 认可",
+    "phonetic": "/'әu'kei/",
+    "pos": "",
+    "forms": []
+  }
+}

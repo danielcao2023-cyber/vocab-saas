@@ -1,0 +1,295 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "05a44ff85fbe491c3df76c3b3daca9f5b34fab7a6ed23bc41f2deb58181f9488",
+    "executedReviewPromptHash": "05a44ff85fbe491c3df76c3b3daca9f5b34fab7a6ed23bc41f2deb58181f9488",
+    "reviewHash": "966ac6ef65c319cd8d2a3c2e826ce8c1b70e80f32fb4f1cf4c9db030a119367d",
+    "wordId": 1084,
+    "inputHash": "282081917bccf2d69e03cfb419edf1c047a5256776759e9d9e47591ef606a3cc",
+    "draftHash": "3bcf35145403f67fcdce6bd501b32b8a52a58e3b63f3cd090f63b22498a5b0da",
+    "finalHash": "a3da037ee1357d1235689346ce9b629281a0edcd681714b6e80880bd7aae8be1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/probably#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:37.016Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121885,
+        "revisionId": 39764590,
+        "revisionTimestamp": "2026-08-03T04:52:56Z",
+        "sha256": "5d01c3b1c23a7787fd0526d158572a139be447a8be902b5ccb6c4ff4c68db92d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/probably",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T06:22:52.743Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T06:31:36.776Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/patterns/2",
+        "message": "否定词位置说明与例子相反；won’t probably 不宜作为常规否定句型教授。应明确 probably not、probably won’t、will probably not 表示“不发生／不成立”的可能性较大。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "“没有比较级”过于绝对。probably 不用 -er/-est 词尾，但可见 more probably、most probably。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "probable 去掉 e 再加 ly 会得到错误拼写 probablly；probably 去掉 ly 也不会直接得到 probable。应说明 -le → -ly，并补清 probability 的 -ble → -bility 拼写对应。probable 的释义也应保持“很可能”，避免与仅表示“有可能”的 possible 混淆。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0；/senses/0/patterns/0",
+        "message": "词性辨析应说明 probable 既可修饰名词，也可作表语；probably 表示对整个情况的推测，并且同样可以出现在 be 后。位置规则须保留弹性，probably will 本身合语法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns",
+        "message": "缺少常用的 Probably.／Probably not. 简短回答功能；可在同一核心义下补充，无须另立义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology；/sources；相关 sourceIds",
+        "message": "已取回的法语维基词典英语词条明确支持 probable + -ly，却未被引用；现有引用指向本次未取回或未提供正文的 Cambridge 页面。应引用实际来源，并删除“以很可能的方式”这一容易误导为方式副词的解释。该来源仅支持构词关系，不支持扩展历史阶段。"
+      }
+    ],
+    "coverageAssessment": "词典只列一个常用副词义：“很可能；大概”，无需拆成多义。原有两个生活例句自然、senseId 正确，予以保留；补充简短回答并修正否定和词性说明。原有英美音标属于可接受的转写。词源证据仅支持英语内部 probable + -ly 的构词关系，因此 stages 保持为空，不推演更早历史；语法及其余词族说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "副词：很可能；大概，表示说话人认为某事发生或属实的可能性较大，但并非确定",
+        "coveredBy": [
+          "probably-1"
+        ],
+        "assessment": "唯一常用核心义已由两个自然原创英中例句覆盖。句内推测、否定推测和简短回答均在此义内处理，不另造义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"副词用法不变形；没有比较级或复数变化。\"",
+        "valueJson": "\"副词原形不随人称、时态或单复数变化；可见 more probably、most probably 等短语形式，但不加 -er、-est 词尾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作句子副词，常置于普通动词前、be 动词后，也可放在句首；否定词通常放在 probably 前，如 probably won’t。\"",
+        "valueJson": "\"作句子副词，表示对整件事的推测。常放在实义动词前、be 动词后或第一个助动词／情态动词后，也可放在句首。常见否定表达是 probably not、probably won’t、will probably not，表示“不发生／不成立”的可能性较大。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"通常把 probably 放在一般动词前；助动词存在时，放在助动词后，如 will probably go。\"",
+        "valueJson": "\"通常把 probably 放在实义动词前；有助动词或情态动词时，常放在第一个助动词或情态动词后，如 will probably go。probably will go 也合语法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"probably not / probably won’t\",\"zh\":\"可能不…… / 很可能不会……\",\"note\":\"否定词 not 通常紧跟 probably，或置于助动词后形成 won’t probably；日常表达更常见 probably won’t。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"probably not / probably won’t / will probably not\",\"zh\":\"很可能不……／很可能不会……\",\"note\":\"这些形式表示“不发生／不成立”的可能性较大，如 I probably won’t go 或 I will probably not go（我很可能不去）。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"“Will you be home for dinner?” — “Probably. / Probably not.”\",\"zh\":\"“你会回家吃晚饭吗？”——“大概会。／大概不会。”\",\"note\":\"回答是否类问题时，可用 probably 或 probably not 作简短回答，省略上下文已明确的内容。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"在判断某件事不成立或不会发生时，否定 probably 所表达的可能性方向；并非所有句子都能机械替换。\"",
+        "valueJson": "\"表示“不发生／不成立”的可能性较大；否定的是事件或判断的内容，probably 仍表示说话人有较大把握。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"probably 是副词；probable 是形容词。要看它修饰的是动词还是名词、系动词后的状态。\"",
+        "valueJson": "\"probably 是副词，对一件事是否发生或属实作推测；probable 是形容词，可修饰名词，也可作表语。两词都可能出现在 be 后，要结合完整结构判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"可修饰动作或整句判断。\"",
+        "valueJson": "\"表示整个情况很可能属实；可放在实义动词前、助动词后，也可放在 be 与其后的表语之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"probably 修饰 call 这一动作。\"",
+        "valueJson": "\"probably 表示说话人认为“她今晚会打电话”这件事很可能发生。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"通常作表语，常见结构为 be probable that...。\"",
+        "valueJson": "\"可放在名词前，如 the probable cause（很可能的原因）；也可作表语，如 It is probable that...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到 -ly 通常可想到副词，但要按句子结构判断：修饰动作常用 probably，作 be 后形容词用 probable。\"",
+        "valueJson": "\"记住两种结构：It is probable that the bus will be late；The bus is probably late。后一例中 late 是形容词表语，probably 表示对整个情况的推测。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，probably 可看作 probable 加副词后缀 -ly，表达“以很可能的方式”或“很可能”。\"",
+        "valueJson": "\"英语 probably 由形容词 probable（很可能的）与副词后缀 -ly 构成。实际拼写将词尾 -le 变为 -ly：probable → probably；它表示说话人认为某事很可能发生或属实。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en-probably\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"很可能的；有可能的\"",
+        "valueJson": "\"很可能的；可能性大的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"probably 去掉副词后缀 -ly，回到形容词 probable。\"",
+        "valueJson": "\"probable 是基础形容词；probably 是在它的基础上加副词后缀 -ly 形成的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"probable 变为 probably 时，去掉词尾 e 再加 -ly：probable → probably。\"",
+        "valueJson": "\"probable 变为 probably 时，词尾 -le 变为 -ly，也就是把末尾的 e 改成 y。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"拼写为 probability；不要误写成 probablity。\"",
+        "valueJson": "\"probable → probability：词尾 -ble 对应 -bility；注意 -bil- 中的 i，不要误写成 probablity。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"probable、probably 和 probability 同属表示可能性的词族；注意 probable 加 -ly 时需去掉词尾 e。\"",
+        "valueJson": "\"probable、probably 和 probability 同属表示可能性的词族；probable → probably 是 -le 变为 -ly，probable → probability 是 -ble 对应 -bility。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en-probably\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en-probably\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en-probably\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: probably\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/probably\",\"supports\":[\"副词的核心含义和用法\",\"英式与美式发音\",\"probably 与 probable 的词性及构词关系\",\"同义表达与例句搭配参考\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-probable\",\"title\":\"Cambridge Dictionary: probable\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/probable\",\"supports\":[\"probable 的形容词用法和拼写\",\"probable 与 probably 的区别\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en-probably\",\"title\":\"Wiktionnaire：probably（英语词条，法语说明）\",\"url\":\"https://fr.wiktionary.org/wiki/probably#Anglais\",\"supports\":[\"英语副词 probably 的基本义\",\"英式、美式发音及英式口语简化读法\",\"英语构词关系 probable + -ly\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1084,
+    "headword": "probably",
+    "meaning_zh": "adv. 大概, 或许",
+    "phonetic": "/'prɒbәbli/",
+    "pos": "",
+    "forms": []
+  }
+}

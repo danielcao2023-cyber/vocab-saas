@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a7210a274256077bdf7ac1ee9a3ecd08bad8a5f7455b45b7d1f2c94bf2b8ff0d",
+    "executedReviewPromptHash": "a7210a274256077bdf7ac1ee9a3ecd08bad8a5f7455b45b7d1f2c94bf2b8ff0d",
+    "reviewHash": "f7c60d3369cded5f257d45d8f86859414e41b9b13bfc889e821862ca66e90894",
+    "wordId": 348,
+    "inputHash": "39e5a26f19be5f17758237770fe27d9a3f4844c1e228e9d3e26144777149f076",
+    "draftHash": "9cabe026ecabb834c321773ddd3bc7317a5a638e8dd7a9828f2103211d1c7da5",
+    "finalHash": "c31c78bd780d2fc17123f77b7056e458f0402771e452dd83a436673dee585fcf",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/customer#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.850Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 122665,
+        "revisionId": 39759778,
+        "revisionTimestamp": "2026-08-03T00:22:58Z",
+        "sha256": "a84add32e9e270c5423e1e337ba6b18fed4f974c5f33124850e84216a3b19321",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/customer",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:12:05.644Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:15:06.628Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "customer 与 costumer 的 u、o 位置互换，并非只差一个字母 o。costumer 的释义也应限定在戏服制作、供应等语境，不能泛指一般服装设计师。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "customer 也常指购买商品或服务的公司、机构。原稿定义只写“人”，遗漏这一常用范围；需同步调整概括并补充机构客户例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面本次未取得内容，不宜承担正文的来源引用。已取得的维基词典英语词条可以支持核心释义、发音、规则名词形式和词源；costumer 辨析依据专业语言知识，不应挂靠未取得的 Cambridge 内容。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "已取得材料明确说明 custom + -er 的构词及“常客→顾客”的语义发展，应补足这些可靠内容。两个词义阶段可以形成真实的先后关系，构词成分则不应串成历史阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "现有词族仅重复规则复数。可保留该项，并补入有构词依据的 custom，说明其实际拼写和现代词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "尚未提示 a tough customer 等表达中“某类人”的非正式引申用法。适合补入较少见用法，无须拆成另一个初中核心义。"
+      }
+    ],
+    "coverageAssessment": "已核对所获词典的全部定义：核心是可数名词“顾客；客户”，常客与偶尔购买者属于同一义。原有商品、维修服务两例自然，近义词的语境限制及卖方、店员的角色对照基本准确，英美读音和复数形式可保留。补充机构客户及非正式引申用法后覆盖充分。来源局限是 Cambridge 内容未取得；词源仅采用已取得的维基词典英语词条，不推断更早的历史。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：购买商品或服务的顾客、客户，可指个人或机构，也包括常客和偶尔购买者",
+        "coveredBy": [
+          "customer-1"
+        ],
+        "assessment": "原有两例覆盖商品与服务场景；补充机构客户的定义和例句后，核心义覆盖完整，无须把“顾客”和“客户”拆义。"
+      },
+      {
+        "sense": "非正式：具有某种特点的人，如 a tough customer 指不好对付的人",
+        "coveredBy": [
+          "customer-informal"
+        ],
+        "assessment": "依据专业语言知识补入 lessCommonSenses，明确其常与描述词搭配的特点。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"customer：购买商品或服务的人\"",
+        "valueJson": "\"customer：购买商品或服务的个人或机构\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"customer 常指商店、餐馆或其他服务中的顾客；在商业语境里也可译为“客户”。\"",
+        "valueJson": "\"customer 指购买商品或服务的个人或机构，按场景可译为“顾客”或“客户”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_customer\"]",
+        "valueJson": "[\"wiktionary_customer_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"在商店、餐馆等购买商品，或向机构购买服务的人。具体译作“顾客”还是“客户”，由场景决定。\"",
+        "valueJson": "\"购买商品或服务的个人或机构。商店、餐馆里的 customer 通常译为“顾客”；公司的 customer 也常译为“客户”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"customer-1-ex3\",\"senseId\":\"customer-1\",\"en\":\"The local hospital is our biggest customer.\",\"zh\":\"当地医院是我们最大的客户。\",\"note\":\"customer 也可以指购买商品或服务的机构。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_customer\"]",
+        "valueJson": "[\"wiktionary_customer_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"customer-informal\",\"title\":\"非正式：某种类型的人；家伙\",\"meaning\":\"具有某种特点的人，具体意思由前面的描述词决定。\",\"note\":\"常见于 a tough customer（难对付的人）、a cool customer（遇事沉着的人）等表达；单说 customer 时通常仍指顾客。\",\"example\":{\"id\":\"customer-informal-ex1\",\"senseId\":\"customer-informal\",\"en\":\"Our new coach is a tough customer.\",\"zh\":\"我们的新教练可不好对付。\",\"note\":\"这里的 a tough customer 形容人的性格，不涉及购物。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"customer 指顾客；costumer 指为戏剧、电影等准备服装的人。两词只差一个字母 o，意思不同。\"",
+        "valueJson": "\"customer 指顾客；costumer 指为戏剧、电影等准备服装的人。两词中的 u 和 o 位置互换，意思不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"拼写为 c-o-s-t-u-m-e-r，指服装设计师或服装管理员。\"",
+        "valueJson": "\"拼写为 c-o-s-t-u-m-e-r，指为戏剧、电影等制作或提供戏服的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_customer\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"customer 与 custom 同族；历史上曾有“常来的顾客”这一层意思，后来用于指顾客。\"",
+        "valueJson": "\"customer 由 custom 加后缀 -er 构成，早先指“经常光顾的人、常客”，后来词义扩大为一般的“顾客；客户”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"language\":\"英语\",\"form\":\"customer\",\"meaning\":\"常客；经常光顾的人\"},{\"language\":\"英语\",\"form\":\"customer\",\"meaning\":\"顾客；客户，既可以是常客，也可以偶尔购买\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的联系帮助记忆词义变化；不要把现代词尾 -er 的提示当作完整的历史词源说明。\"",
+        "valueJson": "\"现代 customer 不要求经常光顾，第一次购买的人也可以是 customer；“常客”通常说 regular customer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_customer\"]",
+        "valueJson": "[\"wiktionary_customer_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"custom\",\"partOfSpeech\":\"noun\",\"meaning\":\"习俗；惯例\",\"formation\":\"customer 的构词基础：custom 加 -er 构成 customer。\",\"spellingNote\":\"拼写为 c-u-s-t-o-m；加 -er 构成 customer 时不删字母。\",\"example\":{\"id\":\"family-custom\",\"senseId\":\"customer-1\",\"en\":\"It is a local custom to leave a small gift for the host.\",\"zh\":\"给主人留一份小礼物是当地的习俗。\",\"note\":\"custom 在这里表示“习俗”。\"},\"sourceIds\":[\"wiktionary_customer_etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"customer 与 custom 在历史上相关，但 custom 是独立词；本词族这里只列 customer 的规则复数。\"",
+        "valueJson": "\"customers 是 customer 的复数形式；custom 是构成 customer 的词。custom 在现代常表示“习俗；惯例”，不能直接用来替换 customer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"customer 与 custom 的构词联系及从“常来的顾客”到“顾客”的语义变化\"]",
+        "valueJson": "[\"customer 的核心名词义、英美发音及规则名词形式\",\"custom + -er 的构词及从“常客”到“顾客”的语义变化\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_customer\",\"title\":\"Cambridge Dictionary: customer\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/customer\",\"supports\":[\"customer 的词性、含义、发音和常见用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 348,
+    "headword": "customer",
+    "meaning_zh": "n. 顾客；客户",
+    "phonetic": "/'kʌstәmә/",
+    "pos": "",
+    "forms": []
+  }
+}

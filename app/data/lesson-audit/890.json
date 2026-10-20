@@ -1,0 +1,189 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8ad8d6d7f4e02d687c7d4978e21ef0b36924424cf2c9dd9e1db6b3893a6b232c",
+    "executedReviewPromptHash": "8ad8d6d7f4e02d687c7d4978e21ef0b36924424cf2c9dd9e1db6b3893a6b232c",
+    "reviewHash": "cba28c320708b259282790f75a890a0c2897724d812a53b9d6241f35f726130b",
+    "wordId": 890,
+    "inputHash": "218eb03848171e740ac485e10f54c4959ed8fb21c8e64d69b7c2e792e0d3a12e",
+    "draftHash": "08c2f6c7161d008c570d9b5ea7a2f556124baac8110b7587531d6ba8fec3614c",
+    "finalHash": "1f75d412af14aa32cbf4bc98124909714bec4b8f58d01e6000e439e276ecdca7",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/museum#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.748Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 69569,
+        "revisionId": 39760189,
+        "revisionTimestamp": "2026-08-03T00:31:12Z",
+        "sha256": "a219ceaeb61ad882cf0eaee0e57b12ed680785e00f9d0efd5cf58658f4c62d5e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/museum",
+        "section": "museum etymology",
+        "supports": [
+          "Muses/study meanings; later collection-and-display institution"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:14:25.320696+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "4561d00672872d9a34c18a51287f4264491f642c3fddb4708c29e79024ec867c",
+        "summaryAndSupportsWordCount": 55,
+        "sha256": "4561d00672872d9a34c18a51287f4264491f642c3fddb4708c29e79024ec867c",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/890.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/museum",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:56:28.684Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:03:35.416Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/0/sourceIds、/confusions/0/sourceIds、/sources",
+        "message": "Cambridge 条目未成功取得，不能作为这些内容已经获得的支持材料。应改引实际取得的维基词典英语词条，并补明其对基本释义的支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "shop 与 museum 仅有场所用途上的差别，不构成自然的语义对立。museum 没有常用的直接反义词，无须用另一类场所填充反向表达。"
+      }
+    ],
+    "coverageAssessment": "现代常用义只有名词“博物馆”，已覆盖其场所与机构含义，两个自然原创例句达标，无须拆义。名词作定语、复数、搭配、近义限制及词源链均已核对；现有长元音读法可以成立，不因来源采用其他变体转写而判错。词源中的古代含义不应另列为现代常用义。来源局限是 Cambridge 页面未取得，修订后不再以其作为依据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：博物馆，收藏、保存并展示藏品的机构或场所",
+        "coveredBy": [
+          "museum-n-1"
+        ],
+        "assessment": "覆盖充分；两例分别展示参观博物馆与馆内展陈，museum ticket 也正确体现名词作定语。无需增加独立形容词义或拆分建筑、机构两义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-museum\"]",
+        "valueJson": "[\"wiktionary-museum-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-museum\"]",
+        "valueJson": "[\"wiktionary-museum-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-museum\"]",
+        "valueJson": "[\"wiktionary-museum-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/sources/1/supports/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"英语名词 museum 的基本义：博物馆\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-museum\",\"title\":\"Cambridge Dictionary: museum\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/museum\",\"supports\":[\"名词用法与释义\",\"英式和美式发音查询\",\"复数形式查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"shop\",\"zh\":\"商店\",\"note\":\"若只比较场所用途，shop 主要供人购买商品，museum 主要供人参观和学习；两者不是所有语境中的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"没有适用于所有语境的直接反义词；shop 只是在场所用途上形成有限对照。\"",
+        "valueJson": "\"museum 是具体场所或机构的名称，没有常用的直接反义词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 890,
+    "headword": "museum",
+    "meaning_zh": "n. 博物馆",
+    "phonetic": "/mju:'ziәm/",
+    "pos": "",
+    "forms": []
+  }
+}

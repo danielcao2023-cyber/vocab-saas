@@ -1,0 +1,425 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "325d50b57c5bab5a4783350ca61127f13732e4e3dae654e38ab63fe4723e4e0a",
+    "executedReviewPromptHash": "325d50b57c5bab5a4783350ca61127f13732e4e3dae654e38ab63fe4723e4e0a",
+    "reviewHash": "f8b6ecfe18fbc0f7df72be90a86837b72ffd02fe4f01a2d5303051d65dc83cfd",
+    "wordId": 1351,
+    "inputHash": "2b9e696e6b69a7d1789c97183627f17217b1811c6b95a2dfe6cb8134e525ee03",
+    "draftHash": "cfd4adb2a4cb7bc3925ebde2e8bcdfd01ee730ebc8efd863996f3d43e72f5d9c",
+    "finalHash": "e7c30b1c29e690cb5cc9680f90a8cbebb5b76983a8326fd29a556db0686db259",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sugar#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.534Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 47749,
+        "revisionId": 39912105,
+        "revisionTimestamp": "2026-10-01T06:52:30Z",
+        "sha256": "7ab4933f4ed6f7354aeb1b4f2054fa35da517625adea597c4e317cf3d22d6309",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sugar",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:10:04.996Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:23:38.214Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未取得正文，不能作为已提供内容的依据；法语维基词典的英语词条也未收录原稿所引用的少见制糖动词义。须调整来源及引用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏来源明确列出的“糖类”义，也未讲清点饮品时 a sugar、two sugars 表示一份、两份糖的可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏感叹词 Sugar!；原始释义中的名词“甜言蜜语”和动词“粉饰、美化”也应作为较少见用法交代。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/1",
+        "message": "植物在温暖天气中自然产糖的例句不能可靠示范不及物 sugar。应换成真实的制糖活动语境，并撤去不支持此义的来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note",
+        "message": "sugar 没有词尾 e，“不去掉词尾 e”会制造拼写误导。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "英式非卷舌读音通常不读词尾 r，并非只是读得不明显；发音提示也不必提及旧标注。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "sugar your tea 语法正确，但“日常对话中常用来询问或指示加糖”的频率说明过强；宜提示更日常的 add sugar to your tea。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example/senseId",
+        "message": "This tea is sweet. 未展示“给……加糖”的动词义，应关联本组所比较的名词 sugar。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "所称“连续阶段”漏掉中古法语 sucre；各阶段 meaning 又只是“来源列出的形式”等制作说明。应把可证实的借入关系写入 summary，清除没有字义内容的占位阶段。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "派生词与复合词的区分可以保留，但不宜据此暗示复合词不能纳入词族联想。"
+      }
+    ],
+    "coverageAssessment": "已核对食用糖、饮品中的一份糖、糖类、亲昵称呼、甜言蜜语、加糖、比喻性的粉饰、不及物制糖及感叹词功能。补丁为新增的主要“糖类”义配齐两个例句，并补足可数用法；较少见功能放入扩展义。词源仅采用已取得的英语词条内容。甜言蜜语、比喻动词和不及物制糖依原始释义及专业语言知识修正，不冒称有网页正文支持。",
+    "senseInventory": [
+      {
+        "sense": "名词：食用糖，通常不可数",
+        "coveredBy": [
+          "sugar-n-sweetener"
+        ],
+        "assessment": "原有两个生活例句自然，保留并明确与糖类总称的区别。"
+      },
+      {
+        "sense": "名词：一份糖，用于饮品，可数",
+        "coveredBy": [
+          "sugar-n-sweetener"
+        ],
+        "assessment": "补入 a sugar、two sugars 的用法及两个饮品场景例句；一份糖不必固定是一块方糖。"
+      },
+      {
+        "sense": "名词：糖类及某一种糖",
+        "coveredBy": [
+          "sugar-n-chemistry"
+        ],
+        "assessment": "原稿仅在词形说明中提到，覆盖不足；新增完整义项和两个例句。"
+      },
+      {
+        "sense": "名词：亲爱的、甜心",
+        "coveredBy": [
+          "sugar-n-affection"
+        ],
+        "assessment": "已有自然例句及关系、场合限制，可保留为扩展义。"
+      },
+      {
+        "sense": "名词：甜言蜜语、奉承话",
+        "coveredBy": [
+          "sugar-n-flattery"
+        ],
+        "assessment": "补为较旧或比喻用法，并提示日常替代表达。"
+      },
+      {
+        "sense": "及物动词：给……加糖",
+        "coveredBy": [
+          "sugar-v-add"
+        ],
+        "assessment": "两个原例正确；调整频率说明，保留正确句型。"
+      },
+      {
+        "sense": "及物动词：使显得悦耳或容易接受，粉饰、美化",
+        "coveredBy": [
+          "sugar-v-soften"
+        ],
+        "assessment": "补为偏书面的比喻用法，避免与更常见的 sugar-coat 混淆。"
+      },
+      {
+        "sense": "不及物动词：制糖",
+        "coveredBy": [
+          "sugar-v-make"
+        ],
+        "assessment": "保留少见义，改用熬制枫糖的明确语境；删除不受支持的植物自然产糖例句及来源引用。"
+      },
+      {
+        "sense": "感叹词：表示轻微懊恼，相当于“糟了、哎呀”",
+        "coveredBy": [
+          "sugar-int-annoyance"
+        ],
+        "assessment": "补入独立词性及扩展义，说明其委婉、非正式的语气。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun, verb\"",
+        "valueJson": "\"noun, verb, interjection\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分食用糖与糖类：some sugar 表示一些糖，glucose is a sugar 表示葡萄糖是一种糖；点饮品时 two sugars 表示两份糖。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"重音在第一音节；英式词尾通常不明显读出 r，美式会读出 r。\"",
+        "valueJson": "\"重音在第一音节；英式通常不读词尾 r，但后接元音时可连读；美式通常带卷舌音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头读 /ʃ/，像 shoe 的开头；不要按旧标注读成 /ʃuː/。\"",
+        "valueJson": "\"开头读 /ʃ/，像 shoe 的开头；后面接短元音 /ʊ/，不要读成长元音 /uː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-sugar\"]",
+        "valueJson": "[\"wiktionary-sugar\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常指不同种类的糖，或在科学语境中指不同糖类；日常说食用的糖多用不可数 sugar。\"",
+        "valueJson": "\"可指不同种类的糖；点茶或咖啡时，two sugars 也可表示两份糖。日常说食用糖这种物质时，多用不可数 sugar。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则变化：词尾直接加 -ing，不去掉词尾 e，因为 sugar 以辅音字母 r 结尾。\"",
+        "valueJson": "\"sugar 以 r 结尾，直接加 -ing，拼成 sugaring，不双写 r。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"sugars\",\"ipa\":\"/ˈʃʊɡ.əz/\",\"note\":\"直接加 -s；拼写与名词复数相同，词性由句子决定。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种甜味物质，常加进茶、咖啡或食物里。日常通常作不可数名词。\"",
+        "valueJson": "\"用于给饮食调味的食用糖，主要成分是蔗糖；通常作不可数名词。点茶或咖啡时，也可用 a sugar 表示一份糖。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说数量时常用 some、a little 等；若数小包或方糖，用 packets 或 cubes 等量词。\"",
+        "valueJson": "\"表示糖这种物质时用 some、a little 等；明确数包装或方糖时用 packets、cubes。点饮品时也可说 one sugar、two sugars，指一份、两份糖，具体份量由场合决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-ex10\",\"senseId\":\"sugar-n-sweetener\",\"en\":\"How many sugars do you take in your coffee?\",\"zh\":\"你喝咖啡放几份糖？\",\"note\":\"这里 sugars 是可数用法，询问加几份糖。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-ex11\",\"senseId\":\"sugar-n-sweetener\",\"en\":\"I'd like tea with milk and two sugars, please.\",\"zh\":\"请给我一杯加牛奶和两份糖的茶。\",\"note\":\"two sugars 表示两份糖，不一定专指两块方糖。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"How many sugars do you take?\",\"zh\":\"你放几份糖？\",\"note\":\"谈论茶或咖啡时，sugar 可按每份糖来数。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sugar\"]",
+        "valueJson": "[\"wiktionary-sugar\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作及物动词，后面直接接所加糖的食物或饮料；也常用于被动式。\"",
+        "valueJson": "\"作及物动词，直接接被加糖的食物或饮料；也可用被动式。日常对话中更常说 add sugar to ...；sugared 还可用于描述加了糖的食物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1/note",
+        "expectedValueJson": "\"日常对话中常用来询问或指示加糖。\"",
+        "valueJson": "\"表达正确；日常对话中更常说 add sugar to your tea。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-sugar\"]",
+        "valueJson": "[\"wiktionary-sugar\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-n-chemistry\",\"title\":\"糖类；某一种糖\",\"meaning\":\"用于指葡萄糖、果糖等糖类物质；指其中某一种时可用 a sugar。\",\"usageNote\":\"谈一种糖时可用 a sugar；谈多种糖或食品中的各类糖时可用 sugars。这里的范围比厨房里的食用糖更广。\",\"examples\":[{\"id\":\"sugar-ex12\",\"senseId\":\"sugar-n-chemistry\",\"en\":\"Glucose is a simple sugar.\",\"zh\":\"葡萄糖是一种单糖。\",\"note\":\"a sugar 表示糖类中的一种；simple sugar 在这里指单糖。\"},{\"id\":\"sugar-ex13\",\"senseId\":\"sugar-n-chemistry\",\"en\":\"Milk contains a sugar called lactose.\",\"zh\":\"牛奶含有一种叫乳糖的糖。\",\"note\":\"a sugar called ... 用来介绍某一种糖。\"}],\"patterns\":[{\"en\":\"a sugar called ...\",\"zh\":\"一种叫……的糖\",\"note\":\"用于介绍某一种糖，sugar 在这里可数。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"simple sugars\",\"zh\":\"单糖；简单糖类\",\"note\":\"用于科学或营养语境；具体分类应结合上下文理解。\",\"kind\":\"common-collocation\"},{\"en\":\"added sugars\",\"zh\":\"添加糖\",\"note\":\"食品和营养语境中的表达，指加工或制作时添加的糖。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"carbohydrate\",\"zh\":\"碳水化合物\",\"note\":\"范围更广，糖类属于碳水化合物，但淀粉等碳水化合物不能一概叫 sugar。\"}],\"contrasting\":[],\"similarNote\":\"carbohydrate 是上位概念，不是 sugar 在科学语境中的可互换同义词。\",\"contrastingNote\":\"糖类没有通用的词汇反义词，无须把盐或其他营养成分当作反义词。\"},\"sourceIds\":[\"wiktionary-sugar\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/meaning",
+        "expectedValueJson": "\"在较少见的用法中，指把植物汁液等加工成糖。\"",
+        "valueJson": "\"不及物动词，指从枫树汁等原料制糖。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"这是不及物用法，常见度远低于“给食物加糖”；初中阶段认识即可。\"",
+        "valueJson": "\"主要见于北美枫糖生产语境，是少见用法；日常表达“制糖”更常用 make sugar。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/example",
+        "expectedValueJson": "{\"id\":\"sugar-ex6\",\"senseId\":\"sugar-v-make\",\"en\":\"In warm weather, the plant can sugar naturally.\",\"zh\":\"天气温暖时，这种植物能自然产糖。\",\"note\":\"这里描述植物制成糖的过程。\"}",
+        "valueJson": "{\"id\":\"sugar-ex6\",\"senseId\":\"sugar-v-make\",\"en\":\"In early spring, the farmers sugar, boiling maple sap down to make maple sugar.\",\"zh\":\"早春，农民们熬煮浓缩枫树汁，制作枫糖。\",\"note\":\"sugar 在这里是不及物动词，后面的部分解释具体的制糖活动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary-sugar\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-n-flattery\",\"title\":\"甜言蜜语；奉承话\",\"meaning\":\"比喻讨好人的甜言蜜语或奉承话。\",\"note\":\"较旧或带修辞色彩的名词用法；日常更常用 sweet talk 或 flattery。\",\"example\":{\"id\":\"sugar-ex14\",\"senseId\":\"sugar-n-flattery\",\"en\":\"There was plenty of sugar in his speech, but no clear promise to help.\",\"zh\":\"他的话里尽是甜言蜜语，却没有明确答应帮忙。\",\"note\":\"sugar 比喻话语中讨好人的成分，不指食用糖。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-v-soften\",\"title\":\"使显得悦耳或容易接受；粉饰\",\"meaning\":\"用好听的话等减轻令人不快的内容，使它显得更容易接受。\",\"note\":\"sugar 本身的这种比喻动词用法偏书面；日常表达“粉饰、把坏事说得好听”更常用 sugar-coat，也可拼作 sugarcoat。\",\"example\":{\"id\":\"sugar-ex15\",\"senseId\":\"sugar-v-soften\",\"en\":\"He sugared his criticism with a few compliments.\",\"zh\":\"他在批评中加了几句赞美，让话听起来不那么刺耳。\",\"note\":\"sugar ... with ... 在这里比喻用赞美缓和批评。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"sugar-int-annoyance\",\"title\":\"糟了！哎呀！\",\"meaning\":\"感叹词，表示轻微的懊恼或失望。\",\"note\":\"非正式用语，尤见于英式英语，可作为粗话的委婉替代；这里不表示糖或甜味。\",\"example\":{\"id\":\"sugar-ex16\",\"senseId\":\"sugar-int-annoyance\",\"en\":\"Oh, sugar! I've left my keys at home.\",\"zh\":\"哎呀，糟了！我把钥匙落在家里了。\",\"note\":\"Sugar! 在这里独立作感叹词。\"},\"sourceIds\":[\"wiktionary-sugar\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"sugar-v-add\"",
+        "valueJson": "\"sugar-n-sweetener\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sugar\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 sugar 的历史传入路线可追溯到法语，再到中世纪拉丁语、意大利语、阿拉伯语、波斯语和更早的语言形式；以下只列所引来源明确给出的连续阶段。\"",
+        "valueJson": "\"英语 sugar 的早期形式包括14世纪的中古英语 sugre、sucre。沿借词关系向前追溯，依次可见中古法语 sucre、古法语 çucre、中世纪拉丁语 zuccarum、古意大利语 zúccharo、阿拉伯语 sukkar、波斯语 šakar、巴列维语 šqr 和梵语 śárkarā。这个词经历了跨越多种语言的借入与演变。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"sugre\",\"meaning\":\"来源列出的英语早期形式。\"},{\"language\":\"古法语\",\"form\":\"çucre\",\"meaning\":\"来源列出的传入形式。\"},{\"language\":\"中世纪拉丁语\",\"form\":\"zuccarum\",\"meaning\":\"来源列出的拉丁语形式。\"},{\"language\":\"古意大利语\",\"form\":\"zúccharo\",\"meaning\":\"来源列出的意大利语形式。\"},{\"language\":\"阿拉伯语\",\"form\":\"سُكَّر‎ (sukkar)\",\"meaning\":\"来源列出的阿拉伯语形式。\"},{\"language\":\"波斯语\",\"form\":\"شکر‎ (šakar)\",\"meaning\":\"来源列出的波斯语形式。\"},{\"language\":\"巴列维语\",\"form\":\"𐫢𐫞𐫡‎ (šqr)\",\"meaning\":\"来源列出的形式。\"},{\"language\":\"梵语\",\"form\":\"शर्करा (śárkarā)\",\"meaning\":\"来源列出的梵语形式。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是历史来源链，不是现代英语的拼写拆分；各阶段的含义解释不超出来源所给信息。\"",
+        "valueJson": "\"这是跨语言借入的发展史，不能据此把现代英语 sugar 拆成词根和词缀。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-sugar\"]",
+        "valueJson": "[\"wiktionary-sugar\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"这里收录常见派生词 sugary；sugar cube、sugar cane 等是复合词，不是派生词族成员。\"",
+        "valueJson": "\"sugary 是加后缀形成的派生词；sugar cube、sugar cane 则是由 sugar 与其他词组合成的复合词，也可以一起联想记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-sugar\",\"title\":\"Cambridge Dictionary：sugar\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sugar\",\"supports\":[\"名词与动词的常见用法和读音\",\"sugary 等相关词形\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-sugar\",\"title\":\"Wiktionary：sugar（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/sugar#Anglais\",\"supports\":[\"来源材料中列出的历史词源形式与传入路线\",\"亲昵称呼及少见动词义\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-sugar\",\"title\":\"法语维基词典：sugar（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/sugar#Anglais\",\"supports\":[\"英语 sugar 的英美读音\",\"名词食用糖、糖类及亲昵称呼义\",\"及物动词加糖义\",\"表示懊恼的感叹词用法\",\"历史词源形式与借入关系\",\"派生词 sugary 的列举\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1351,
+    "headword": "sugar",
+    "meaning_zh": "n. 糖, 糖块, 甜言蜜语\nvt. 加糖于, 使甜蜜, 粉饰, 美化\nvi. 制成糖",
+    "phonetic": "/'ʃugә/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "411a47121cc79b66c1639cd10e40d53f2b57a92c78d68acc455a7679b7e19f11",
+    "executedReviewPromptHash": "411a47121cc79b66c1639cd10e40d53f2b57a92c78d68acc455a7679b7e19f11",
+    "reviewHash": "438690ef5fe5ae0660df75a175a502c0cc1a9d7fd4522c0420e096327383f7bf",
+    "wordId": 1238,
+    "inputHash": "790dd13d09b444ee3c6b61cfc7c2575436dab4aebc68e9fa32ec6524960ad044",
+    "draftHash": "3747af156528c32671f8dad4c8b15381d07e9ca660ffaa38e8d4f7f1cdf7f0e3",
+    "finalHash": "a20cf22ec9cb0583a4b2d70a3ee58bd730f6f1a094b8ea1e420c3b858c390f52",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/should#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.204Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 236574,
+        "revisionId": 39810009,
+        "revisionTimestamp": "2026-08-17T09:45:05Z",
+        "sha256": "1b27ceb0b1f5214c95ff58c616bc1d553e9ae6d3aa3af2bb94a021e6a829cf1b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/should",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:31:30.575Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:41:40.641Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "初稿全部引证指向未取得可用正文的剑桥页面，却未引用已经取得的 Wiktionnaire 英语词条。应更换为实际可用的来源，并明确法语是释义语言，should 是英语词。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的条件假设用法，以及 should 作为 shall 过去式参与时态呼应、表示过去将来的用法。两者应标明语域后补入。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "词源栏仍是现代用法占位说明。现有材料已经支持 should 与 shall 的过去式关系，应补入这一事实并引用相同 URL；不据此编造更早词根或历史阶段链。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/senses/1；/senses/2；/confusions/0",
+        "message": "should have + 过去分词被过度绑定为过去本该做却没做；它也能表达按理已经完成的预期。易混标题还容易使人误以为谈过去一律必须用完成结构。需明确区分结构与具体语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway；/senses/0/meaning；/senses/0/examples/1/note",
+        "message": "与 must 的语气比较应限定在义务语境；shouldn’t 也不能直接等同于“不允许”。走廊例句表达行为规范，应保留“不应该”的强度。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "“ought to 后要接 to”会导向错误的 ought to to do。正确结构是 ought to + 动词原形。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/senses/0/patterns",
+        "message": "常用的疑问求建议功能，以及建议、必要性 that 从句中的 should 尚未覆盖。宜归入现有建议与义务义，补充自然例句，并说明省略 should 后仍用动词原形。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/note",
+        "message": "委婉表达项需要补充偏正式、偏英式的语域限制；I should think 有时也表示较有把握的“想必”，不宜让学生理解为总会减弱判断。原例本身可保留。"
+      }
+    ],
+    "coverageAssessment": "已核对词典列出的建议或义务、预期、委婉表达、条件假设、shall 的过去式与时态呼应五项，并核对过去评价说明。修订后，三个核心教学义均至少有两个原创英中例句，另补充疑问求建议、建议或必要性从句，以及完成结构的预期用法。后两类细分结构依据专业语言知识补充，不声称词典逐项列明。较文学化的用法只作识别性讲解；词源保留可证实的形式关系，不推断更早词根或年代链。剑桥页面未作为本次核对依据。",
+    "senseInventory": [
+      {
+        "sense": "建议、义务或责任，包括否定劝阻与疑问求建议",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留原有建议和行为规范例句，修正否定强度，并补充正面责任与疑问求建议的例句。"
+      },
+      {
+        "sense": "根据已知情况表达预期或推测",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原有将来与现在的预期例句成立；补充 should have + 过去分词表达完成情况预期，避免与遗憾义混同。"
+      },
+      {
+        "sense": "对过去行为的评价：本该做或本不该做",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原有两例成立；收紧标题和定义，使其明确属于事后评价语境，而非完成结构的唯一解释。"
+      },
+      {
+        "sense": "较委婉地提出建议或意见",
+        "coveredBy": [
+          "ls1"
+        ],
+        "assessment": "原例可保留；补充语域及 I should think 的语气限制。"
+      },
+      {
+        "sense": "条件句中的 should：万一、如果碰巧",
+        "coveredBy": [
+          "ls2"
+        ],
+        "assessment": "原稿遗漏；补为较正式用法，并说明条件倒装。"
+      },
+      {
+        "sense": "shall 的过去式与时态呼应：从过去看将来",
+        "coveredBy": [
+          "ls3"
+        ],
+        "assessment": "原稿遗漏；补为偏文学化、偏旧式用法，同时区分 should have to do 与 should have done。"
+      },
+      {
+        "sense": "建议或必要性 that 从句中的 should",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "作为建议与义务的常用句法功能补入，不另造独立词义；提供两个例句并说明省略 should 时的原形动词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"should 后接动词原形，常表示“应该、最好”；也可表示按情况推测“应该会”。它比 must 语气柔和。\"",
+        "valueJson": "\"should 后接动词原形，常表示“应该、最好”，也可表示“按理会”。表达义务时，它的语气通常比 must 弱；should have + 过去分词的含义要结合语境判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"should 后接 have，再接动词的过去分词，常表示过去本该做却没做，或对过去提出责备、遗憾。\"",
+        "valueJson": "\"should 后接 have，再接动词的过去分词。在事后评价中，常表示本该做却没做；在预期语境中，也可表示某事按理已经完成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示建议、较温和的义务或责任，常译为“应该、最好”。否定式 shouldn’t 表示不建议做某事。\"",
+        "valueJson": "\"表示建议、义务或应尽的责任，常译为“应该、最好”。否定式 shouldn’t 表示“不应该”，可用于劝阻或指出行为不妥。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"should 后必须接动词原形；语气通常比 must 弱，常用于给建议、讲规则或表达责任。\"",
+        "valueJson": "\"should 后用动词原形，常用于给建议、讲行为规范或表达责任；也可用 Should I/we ...? 征求意见。在 suggest/recommend that ... 及 It is important/necessary that ... 等句型中，should 可表达建议或必要性，这类从句在英式英语中较常见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"否定式表示不建议或不允许这样做。\"",
+        "valueJson": "\"这里表达行为规范，shouldn’t 意为“不应该”；语气通常弱于表示明确禁令的 mustn’t。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"We should return borrowed books on time.\",\"zh\":\"我们应该按时归还借来的书。\",\"note\":\"表达借书者应尽的责任。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e4\",\"senseId\":\"s1\",\"en\":\"Should we book a table for Friday night?\",\"zh\":\"我们应该为周五晚上订位吗？\",\"note\":\"用 Should we ...? 征求对方的建议。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e5\",\"senseId\":\"s1\",\"en\":\"The dentist suggested that Ben should use a softer toothbrush.\",\"zh\":\"牙医建议本用软一点的牙刷。\",\"note\":\"should 用在表示建议的 that 从句中；也可省略 should，写成 Ben use，动词仍用原形。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e6\",\"senseId\":\"s1\",\"en\":\"It is important that everyone should bring a water bottle for the hike.\",\"zh\":\"去徒步时，每个人都带上水瓶很重要。\",\"note\":\"较正式的表达；should 用在表示重要性的 that 从句中，强调应采取的行动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Should I/we + 动词原形 ...?\",\"zh\":\"我／我们应该……吗？\",\"note\":\"把 should 放到主语前，用来征求建议；不用 do 或 does。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"suggest/recommend that + 主语 + should + 动词原形\",\"zh\":\"建议某人做……\",\"note\":\"用于提出行动建议。should 可省略，后面的动词仍用原形，即使主语是 he 或 she 也不加 -s。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"It is important/necessary that + 主语 + should + 动词原形\",\"zh\":\"某人做……很重要／有必要\",\"note\":\"较正式的句型；should 可省略，省略后从句动词仍用原形。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"也用于建议或责任；语气接近 should，但 ought to 后要接 to，再接动词原形。\"",
+        "valueJson": "\"也用于建议或责任，语气接近 should；结构是 ought to + 动词原形，不能再多加一个 to。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用于根据时间、条件或已知安排作判断；否定式 shouldn’t 可表示“按理不该、不太会”。\"",
+        "valueJson": "\"常用于根据时间、条件或已知安排作判断；否定式 shouldn’t 可表示“按理不该、不太会”。should have + 过去分词还可表示某事按理已经发生，是否确实发生仍要看上下文。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2e3\",\"senseId\":\"s2\",\"en\":\"The parcel should have arrived by now; it was sent on Monday.\",\"zh\":\"包裹现在应该已经到了；它周一就寄出了。\",\"note\":\"根据寄出时间推测已经送达；单凭这句话不能确定是否真的到了，也不一定表示“本该到却没到”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"should have + 过去分词\",\"zh\":\"按理应该已经……\",\"note\":\"在预期语境中推测某事已经完成；不要一看到这个结构就理解为遗憾或责备。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"过去本该做却没做\"",
+        "valueJson": "\"本该做／本不该做：评价过去的行为\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"should have + 过去分词表示过去本来应该做某事，常暗示没有做到，或说话人对此感到遗憾、批评。shouldn’t have + 过去分词表示过去做了不该做的事。\"",
+        "valueJson": "\"在事后评价的语境中，should have + 过去分词表示过去本该做某事，常暗示没有做到；shouldn’t have + 过去分词表示过去本不该做某事，常暗示已经做了。两者都可表达遗憾或批评。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"should 后接原形，过去才用 have + 过去分词\"",
+        "valueJson": "\"should do 与 should have done：结构和含义\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"should 后不能直接接带 -s、-ed 或 to 的动词原形。谈过去“本该做”时，要用 should have + 过去分词。\"",
+        "valueJson": "\"should 后的动词用原形，不加第三人称单数 -s，也不加不定式标记 to。谈过去“本该做”时用 should have + 过去分词；这一完成结构也能表示“按理应该已经……”，不能仅凭结构判断有没有做到。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"用于评价过去的行为或遗漏；have 后不能接动词原形。\"",
+        "valueJson": "\"在这种完成结构中，have 后的实义动词用过去分词。它可用于事后评价，也可用于推测某事按理已经完成。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这种用法不如“should + 动词原形”表达建议常见，初中阶段先认得即可。\"",
+        "valueJson": "\"这类第一人称说法多见于较正式或偏英式的表达，初中阶段先认得即可。I should think 有时也有“想必”的意味，不一定表示把握较小。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls2\",\"title\":\"条件句中的“万一；如果碰巧”\",\"meaning\":\"在 if 从句中，should + 动词原形可表示某种可能出现的情况，常译为“万一、如果碰巧”。\",\"note\":\"较正式，常用于未来可能出现的情况。也可省去 if，把 should 放到主语前：Should you miss the last bus, call me.\",\"example\":{\"id\":\"ls2e1\",\"senseId\":\"ls2\",\"en\":\"If you should miss the last bus, call me.\",\"zh\":\"万一你错过末班车，就给我打电话。\",\"note\":\"从句提出可能情况，主句说明应对办法；这里的 should 不表示建议或义务。\"},\"sourceIds\":[\"wiktionnaire-should\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls3\",\"title\":\"shall 的过去式：从过去看将来\",\"meaning\":\"在较文学化、偏旧式的叙述中，should 可作为 shall 的过去式，与过去时主句呼应，表示从过去看将来。\",\"note\":\"现代英语通常用 would 表示这里的过去将来，如 I knew that I would have to ...。这种 should 不宜作为日常“将要”的通用译法。\",\"example\":{\"id\":\"ls3e1\",\"senseId\":\"ls3\",\"en\":\"I knew that I should have to pay for the repairs myself.\",\"zh\":\"我当时知道，到时候修理费得自己付。\",\"note\":\"表示当时预见的将来责任。这里是 should + have to + pay，have to pay 意为“不得不支付”，不是 should have + 过去分词。\"},\"sourceIds\":[\"wiktionnaire-should\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"should 是英语情态动词，现代学习中可整体记忆为表示建议、预期或对过去行为的评价。\"",
+        "valueJson": "\"should 是 shall 的过去式形式，这层关系仍保留在较文学化的时态呼应用法中。现代 should 也独立表达建议、义务和预期。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里给出的是现代用法记忆，不把相似形式当成构词或历史来源。\"",
+        "valueJson": "\"不要因这层过去式关系，就把现代 should 一律理解为过去时，或一概译成“将要”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-should\"]",
+        "valueJson": "[\"wiktionnaire-should\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-should\",\"title\":\"Cambridge Dictionary：should\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/should\",\"supports\":[\"情态动词用法及其结构\",\"表示建议、预期和过去评价的常见用法\",\"常见发音信息\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire-should\",\"title\":\"Wiktionnaire：should（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/should#Anglais\",\"supports\":[\"should 与 shall 的过去式关系及较文学化的时态呼应\",\"条件句中的 should\",\"建议、义务、预期与委婉表达\",\"should have + 过去分词表达过去本该做的事\",\"常见读音 /ʃʊd/\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1238,
+    "headword": "should",
+    "meaning_zh": "aux. 应该, 将要",
+    "phonetic": "/ʃud/",
+    "pos": "",
+    "forms": []
+  }
+}

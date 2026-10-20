@@ -1,0 +1,462 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "a28b8c784fd324a14a4658f7f72e9981da48dcdc13c8f4cbe1c8cabad0193768",
+    "executedReviewPromptHash": "a28b8c784fd324a14a4658f7f72e9981da48dcdc13c8f4cbe1c8cabad0193768",
+    "reviewHash": "6878e32462fb00879d505f69df0d7d77aa5d4f4ff501cd4739b181cf5b35a3d0",
+    "wordId": 1031,
+    "inputHash": "92fb662de568555e3fa24aeaaa15af58f935ebe907417497da26a83fd7d822ec",
+    "draftHash": "2cba62599eff15b37178b0985375f7efb60a429df26804c01c5311bf5cdd02d2",
+    "finalHash": "13b3190dda5851983220611a028de89fbdd7170488c1ed53b33c69886be284df",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/plan#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:21.260Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 7646,
+        "revisionId": 39913446,
+        "revisionTimestamp": "2026-10-01T20:36:21Z",
+        "sha256": "07406479b16e6696b49b5d6f93d81cbff156fd8a582bff3741dfe840b6cb4666",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/plan",
+        "section": "plan etymology",
+        "supports": [
+          "Flat surface to drawing to action scheme"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:10:43.416108+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "05566cd6cbcd7962c0443e38c1e6bec7dcc7d059828991914442bbab3c34d798",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "05566cd6cbcd7962c0443e38c1e6bec7dcc7d059828991914442bbab3c34d798",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1031.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/plan",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T04:57:28.546Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:10:57.569Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 本次未取得词条正文，不能承担现有读音、词义、词形和词族说明的来源归属。应移除该来源，将可支持的内容关联到实际取得的英语词条；词族中的专业语言知识说明保留空来源数组。"
+      },
+      {
+        "severity": "error",
+        "location": "各 examples、example 的 note 字段",
+        "message": "11 个原有例句缺少必填的 note 字段。补充说明，并在迁移图纸义时补全相应例句对象。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "平面图、设计图是 plan 的重要名词义，不宜仅作为单例扩展项处理。应提升为核心义，补足两个例句、搭配及限定语境的近义表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“打算”与“筹划安排”目前各只有一个例句；studyPlan 提到的 plan for 也未展开。应补足两类功能的例句，说明 plan for、plan on doing 和不接宾语的用法，并明确计划不保证实现。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "planner 不是 plan 加后缀 -ner，而是 plan 加 -er，按拼写规则双写 n。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/0、/lessCommonSenses/1/title、/wordFamily/1/example",
+        "message": "假期打算通常用 holiday plans；“绘制规划”搭配生硬；made the school fair easier 未交代哪方面更容易，译文也未准确对应。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "原有词源主线正确，可补入已取得材料明确支持的 planus，以及英语动词由名词产生的关系，并让阶段图显示英语图纸义向行动方案义的发展。"
+      }
+    ],
+    "coverageAssessment": "已核对名词行动计划、时间与程序安排、图纸义，以及动词筹划、打算、设计和词典列出的草拟、共同商议、负面策划语境。修订后，核心名词义各有两例，合并讲授的动词打算与筹划功能也分别得到充分举例。专业设计义保留在扩展区；未把宽泛中文译词机械拆成独立英语义。近义、反向表达、读音和词形均已核对。来源局限是 Cambridge 未取得正文，已移除其来源归属；补充的常规语法与构词说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "n. 行动计划、方案、打算；实现目标的策略或方法",
+        "coveredBy": [
+          "plan-n-1"
+        ],
+        "assessment": "核心义已覆盖，两个例句分别呈现个人行动计划与活动安排；现有近义和反向表达有语境限定。"
+      },
+      {
+        "sense": "n. 进度、日程和程序安排",
+        "coveredBy": [
+          "plan-n-1"
+        ],
+        "assessment": "属于计划所包含的时间和步骤内容，不另立一个与所有 schedule、timetable 都可互换的义项。"
+      },
+      {
+        "sense": "n. 平面图、设计图、技术示意图",
+        "coveredBy": [
+          "plan-n-2"
+        ],
+        "assessment": "由扩展区提升为核心义，补足布局图和建筑设计图两个例句；轮廓、示意仅按设计图样理解。"
+      },
+      {
+        "sense": "v. 筹划、安排活动或制订计划；为情况作准备",
+        "coveredBy": [
+          "plan-v-1"
+        ],
+        "assessment": "补充 plan for 与不接直接宾语的 plan ahead；与 plan something 的具体筹划功能共同讲授。"
+      },
+      {
+        "sense": "v. 打算、意欲做某事",
+        "coveredBy": [
+          "plan-v-1"
+        ],
+        "assessment": "补足两个意向例句，并说明 plan to do、plan on doing 都可表达打算，均不保证事情实现。"
+      },
+      {
+        "sense": "v. 设计、规划建筑、机器或空间布局",
+        "coveredBy": [
+          "plan-v-2"
+        ],
+        "assessment": "专业语境义保留在扩展区；花园规划例句自然，不要求一定亲手绘图。"
+      },
+      {
+        "sense": "v. 勾画、草拟设计或方案",
+        "coveredBy": [
+          "plan-v-2"
+        ],
+        "assessment": "按设计与拟定布局理解，不扩展成一般素描或描画动作。"
+      },
+      {
+        "sense": "v. 策划、暗中谋划",
+        "coveredBy": [
+          "plan-v-1"
+        ],
+        "assessment": "作为行动筹划义的语境色彩处理；补充说明 plan 本身中性，不固有地表示恶意。"
+      },
+      {
+        "sense": "v. 共同商定安排、共同筹划；不及物制订计划",
+        "coveredBy": [
+          "plan-v-1"
+        ],
+        "assessment": "通过共同筹划与 plan ahead 覆盖；不把词典中的法语释义扩大成 plan 单独表示征询或达成共识。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"plan 作名词是“计划、安排”；作动词是“计划做某事”或“为某事作安排”。常见结构是 plan to do 和 plan something.\"",
+        "valueJson": "\"plan 作名词可指“行动计划、安排”，也可指“平面图、设计图”；作动词可表示“筹划、安排”或“打算”。重点区分 plan to do、plan something 和 plan for something。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Our plan is to... 用来说明计划的具体内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"made a plan for... 表示为某项活动制订计划。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/en",
+        "expectedValueJson": "\"a holiday plan\"",
+        "valueJson": "\"holiday plans\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"常指假期中的活动安排。\"",
+        "valueJson": "\"谈假期的打算和活动安排时，常用复数 plans。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 plan to do 表示“计划做某事”；plan 后也可直接接名词，表示安排某项活动。\"",
+        "valueJson": "\"plan to do 和 plan on doing 表示打算；plan + 活动名词表示筹划该活动；plan for + 情况名词表示为该情况提前作准备。也可不接宾语，如 plan ahead。plan 只说明意图或准备，不保证事情已经发生或一定实现；它本身中性，是否带有“密谋”的色彩由语境决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"plan to visit 表示目前的打算，不保证一定成行。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"planned 后直接接 the games，表示筹划游戏活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plan-v-1-ex3\",\"senseId\":\"plan-v-1\",\"en\":\"I plan to save enough money for a new bike.\",\"zh\":\"我打算攒够钱买一辆新自行车。\",\"note\":\"plan to save 表示攒钱的意图，不表示已经攒够。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plan-v-1-ex4\",\"senseId\":\"plan-v-1\",\"en\":\"We need to plan for bad weather before our camping trip.\",\"zh\":\"去露营前，我们得为可能出现的坏天气做好准备。\",\"note\":\"plan for bad weather 是为坏天气预作安排，不是希望天气变坏。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plan-v-1-ex5\",\"senseId\":\"plan-v-1\",\"en\":\"Let's plan ahead so we have enough food for everyone.\",\"zh\":\"我们提前安排一下，好准备足够大家吃的食物。\",\"note\":\"plan ahead 表示提前筹划，这里的 plan 不接直接宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"plan for something\",\"zh\":\"为某事或某种情况提前作安排\",\"note\":\"for 后接需要考虑和应对的事情，如 plan for bad weather。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"plan on doing something\",\"zh\":\"打算做某事\",\"note\":\"on 是介词，后接动名词；表达打算时也可用 plan to do。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"plan-n-2\",\"title\":\"平面图；设计图\",\"meaning\":\"显示建筑、房间或物体布局的图。\",\"note\":\"常见于建筑或设计语境；初中学习先掌握“计划、安排”义即可。\",\"example\":{\"id\":\"plan-n-2-ex1\",\"senseId\":\"plan-n-2\",\"en\":\"The plan shows where the bedrooms are.\",\"zh\":\"这张平面图标出了卧室的位置。\"},\"sourceIds\":[\"wiktionary-en\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plan-n-2\",\"title\":\"平面图；设计图\",\"meaning\":\"显示建筑、房间或机器等布局、结构与技术细节的图纸。\",\"usageNote\":\"可数名词。单张布局图可用 a plan；一套建筑设计图常用复数 plans。\",\"examples\":[{\"id\":\"plan-n-2-ex1\",\"senseId\":\"plan-n-2\",\"en\":\"The plan shows where the bedrooms are.\",\"zh\":\"这张平面图标出了卧室的位置。\",\"note\":\"这里的 plan 是显示房间布局的图，不是未来的行动安排。\"},{\"id\":\"plan-n-2-ex2\",\"senseId\":\"plan-n-2\",\"en\":\"The builder checked the plans for the new garage before starting work.\",\"zh\":\"施工人员开工前核对了新车库的设计图。\",\"note\":\"plans 用复数，指用于施工的一套设计图。\"}],\"patterns\":[{\"en\":\"a plan of a building\",\"zh\":\"一座建筑的平面图\",\"note\":\"of 后说明图中展示的建筑或地方。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a floor plan\",\"zh\":\"楼层平面图\",\"note\":\"显示某一层的房间、门和通道等布局。\",\"kind\":\"common-collocation\"},{\"en\":\"building plans\",\"zh\":\"建筑设计图\",\"note\":\"常用复数，指建筑设计或施工所用的图纸。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"drawing\",\"zh\":\"图；图纸\",\"note\":\"范围更广；plan 在这里特指显示布局或设计细节的图。\"},{\"en\":\"blueprint\",\"zh\":\"蓝图；详细设计图\",\"note\":\"在图纸语境中常指建筑或机器的详细技术图；plan 的范围更宽。\"}],\"contrasting\":[],\"similarNote\":\"这些词在技术图纸语境中接近，不能在所有绘画语境中互换。\",\"contrastingNote\":\"这一图纸义没有常用的直接反义词。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"设计；绘制规划\"",
+        "valueJson": "\"设计；规划\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里指设计花园的布局，不只是在日程上安排一项活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"plan 后接 to walk；to 后使用动词原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"plan on doing something\",\"note\":\"这也是表达打算的正确结构；on 是介词，后接动名词。\",\"example\":{\"id\":\"plan-confusion-ex5\",\"senseId\":\"plan-v-1\",\"en\":\"She plans on joining the art club.\",\"zh\":\"她打算加入美术社。\",\"note\":\"plans on joining 与 plans to join 都可表达这一打算；使用前一结构时要保留 on。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记住 plan to do：to 后接动词原形。\"",
+        "valueJson": "\"表达打算可用 plan to do 或 plan on doing：to 后接动词原形，on 后接动名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"planned 中有两个 n；词尾 -ed 在这里读 /d/。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"planning 中有两个 n；am planning 表示正在筹划。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语名词 plan 经法语 plan 传入，相关早期形式来自拉丁语 planum，指平坦表面；“平面”与绘图、规划的联系，帮助理解它从图面到行动安排的意义发展。\"",
+        "valueJson": "\"英语名词 plan 经法语 plan（地面图、地图）传入，法语形式来自拉丁语 planum（平坦表面），后者以形容词 planus（平坦的）为基础。图纸义后来发展成“行动方案”；英语动词 plan 则由这个名词产生。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"planum\",\"meaning\":\"平坦表面\"},{\"language\":\"法语\",\"form\":\"plan\",\"meaning\":\"地面图、地图\"},{\"language\":\"英语\",\"form\":\"plan\",\"meaning\":\"计划；方案\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"planus\",\"meaning\":\"平坦的\"},{\"language\":\"拉丁语\",\"form\":\"planum\",\"meaning\":\"平坦表面\"},{\"language\":\"法语\",\"form\":\"plan\",\"meaning\":\"地面图、地图\"},{\"language\":\"英语\",\"form\":\"plan\",\"meaning\":\"平面图、设计图；后来也指行动方案\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"plan + -ner；由动词 plan 派生，表示做计划的人。\"",
+        "valueJson": "\"plan + -er；加后缀时按拼写规则双写 n，构成 planner，表示做计划或规划的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 planner 指负责制订计划的人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/en",
+        "expectedValueJson": "\"Careful planning made the school fair easier.\"",
+        "valueJson": "\"Careful planning made the school fair easier to organize.\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/zh",
+        "expectedValueJson": "\"周密的筹划让学校义卖会更顺利。\"",
+        "valueJson": "\"周密的筹划让学校义卖会更容易组织。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"planning 在这里是不可数名词，指筹划这项工作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: plan\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/plan\",\"supports\":[\"英式与美式读音\",\"名词“计划”和“平面图”义\",\"动词 plan to do 的常用结构\",\"plan 的词形变化与相关派生词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"plan 的法语与拉丁语历史来源线索\",\"名词计划义、图纸义和动词设计义\"]",
+        "valueJson": "[\"英语名词的行动计划义、平面图与设计图义\",\"英语动词的筹划、打算和设计用法\",\"英语 /plæn/ 读音及双写 n 的动词变化\",\"拉丁语 planus 的词源线索\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"plan 经法语传入英语的历史路径\",\"由平坦表面、图面发展到行动方案的语义线索\"]",
+        "valueJson": "[\"plan 经法语传入英语的历史路径\",\"拉丁语 planum 与形容词 planus 的关系\",\"由平坦表面、图纸发展到行动方案的语义线索\",\"英语动词 plan 由名词产生\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1031,
+    "headword": "plan",
+    "meaning_zh": "n. 计划, 方案, 策略, 方法, 进度表, 程序表, 平面图, 设计图, 轮廓, 示意图\nvt. 计划, 设计, 意欲\nvi. 订计划",
+    "phonetic": "/plæn/",
+    "pos": "",
+    "forms": []
+  }
+}

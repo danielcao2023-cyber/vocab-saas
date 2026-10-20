@@ -1,0 +1,532 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2fad077c2dfa7604a76609366214bb2ba9f261afe91d707774bf9057312af1bc",
+    "executedReviewPromptHash": "2fad077c2dfa7604a76609366214bb2ba9f261afe91d707774bf9057312af1bc",
+    "reviewHash": "f1e120bc962822e309e0a363975a7b3b132210c61a49edcf5d06ca22642efb1f",
+    "wordId": 808,
+    "inputHash": "d217d0d87ffdbf9b953c2df002c25c49af0619969ef1f85f5da2df4b0d9a650b",
+    "draftHash": "a218001a76170290c511e3d592b7328079feef856c9a8e5a4114ad7604ca6674",
+    "finalHash": "ec8ad1f0eda030af70fc49342011a514c72dacf575f7b44a6c2a90a81352b2ec",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/lost#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:11.689Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116347,
+        "revisionId": 39939105,
+        "revisionTimestamp": "2026-10-16T22:24:31Z",
+        "sha256": "5235516decf558df3cdb3b43ff26e5a1edd665eda09d1971d190d2628d9ebe53",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/lost",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:25:44.630Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:33:47.806Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "来源关联未对应实际取得的英语词条：Oxford 不在来源材料中，Cambridge 获取失败，而已取得的 Wiktionnaire 英语词条未被引用。应调整来源及相关 sourceIds，未获页面直接支持的扩展不冒充该页释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“迷路”和“不知所措”原来各仅一个例句；还需覆盖常用的“没听懂、跟不上”功能，并区分普通 get lost 与粗鲁命令 Get lost!。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "形容词“丢失的”和动词“弄丢”原来各仅一个例句；“失去”没有工作、信心等非实物对象的例句。近义和反向表达也需随之说明适用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "常用的比赛失利义不宜仅放在补充义中；原例只有动词过去式，未展示标题中的形容词用法。the game is lost 还可表示比赛尚未结束但败局已定，不能一律解释为已经正式输掉。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的 be lost in thought / a book“沉浸于、看得入迷”，应补充独立用法及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples、/lessCommonSenses/*/example、/confusions/*/items/*/example、/wordFamily/*/example",
+        "message": "原稿全部例句对象均缺少目标结构要求的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的条目仅能支持现代词形对应及形容词身份，不能据此建立历史演变链。应引用该来源，删除制作过程说明，保留确证事实及空的 stages。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/1、/lessCommonSenses",
+        "message": "ask for directions 是相关场景表达，不是 lost 的搭配。可换为实际含 lost 的搭配，并补充来源列出的 lost cause、lost in translation 等相关表达。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的动词过去式与过去分词、人物迷路或走失、物品丢失、比赛败局，以及能量损耗例中的过去分词用法；并按专业语言知识补充心理困惑、听不懂和沉浸等常用功能。修订后各核心义及主要语法功能均有至少两个对应例句，补充表达另列。法语是该来源的解释语言，词条语言是英语。历史词源仍限于可证实的现代词形关系，不建立无依据的演变阶段。",
+    "senseInventory": [
+      {
+        "sense": "形容词：迷路、找不到方向",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "保留原例并补充 get lost 的经历例，形成两个具体例句。"
+      },
+      {
+        "sense": "形容词：心理上迷茫、不知所措",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "补充朋友搬走后的情境，与新学校例共同覆盖该功能。"
+      },
+      {
+        "sense": "形容词：没弄明白、跟不上讲解",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "按常用英语补充两个例句，并限定与 understand、follow 的对照语境。"
+      },
+      {
+        "sense": "形容词：物品丢失，人或宠物走失",
+        "coveredBy": [
+          "s1",
+          "s2"
+        ],
+        "assessment": "s1 展示人的迷路状态；s2 用借书证和走失宠物展示表语、定语两种形容词位置。"
+      },
+      {
+        "sense": "动词：lose 的过去式和过去分词，表示弄丢或失去",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "补充实物与工作、信心等对象；一般过去时和现在完成时各有两个对应例句。"
+      },
+      {
+        "sense": "比赛：动词表示输掉；形容词表示败局已定",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "提升为核心义，分别提供两个动词例句和两个形容词例句，说明败局判断与最终结果的区别。"
+      },
+      {
+        "sense": "过去分词修饰用法：损耗、散失的能量",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "以 energy lost as heat 补充后置修饰及耗散含义，不把技术语境强拆成初中核心义。"
+      },
+      {
+        "sense": "形容词短语：沉浸于思想、书籍等",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "按常用英语新增完整义项及两个例句，未声称由已取得条目直接提供释义。"
+      },
+      {
+        "sense": "命令表达 Get lost!：粗鲁地叫人离开",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "作为补充表达说明语气，并与 s1 的普通迷路用法区分。"
+      },
+      {
+        "sense": "相关表达 lost cause：无望成功或不值得继续努力的人或事",
+        "coveredBy": [
+          "s6"
+        ],
+        "assessment": "来源列出该表达，具体释义和原创例句按常用英语补充。"
+      },
+      {
+        "sense": "相关表达 lost in translation：原意或效果未能在翻译中传达",
+        "coveredBy": [
+          "s7"
+        ],
+        "assessment": "来源列出该表达，补充说明翻译中的意义或效果损失。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"迷路的；不知所措的\"",
+        "valueJson": "\"迷路的；迷茫的；没弄明白的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"说人找不到方向；也可形容人在陌生情境中不知该怎么办。\"",
+        "valueJson": "\"说人找不到路或方向；也可表示在陌生处境中不知所措，或没听懂、跟不上说明。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"描述迷路常用 be lost；get lost 常表示“迷路了”或“走错路了”。不知所措时常说 feel lost。\"",
+        "valueJson": "\"be lost 描述迷路状态，get lost 强调变得迷路；不知所措时常说 feel lost。听不懂说明时也可说 I'm lost。单独对人说 Get lost! 是粗鲁的“滚开！”，需与叙述迷路的用法区分。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"were lost 描述当时迷路的状态；问路是随后采取的行动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"felt lost 表示面对陌生环境不知所措，不一定真的找不到路。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e3\",\"senseId\":\"s1\",\"en\":\"Without a map, we soon got lost in the narrow streets.\",\"zh\":\"没有地图，我们很快就在狭窄的街巷里迷了路。\",\"note\":\"got lost 表示从能够认路变为迷路，强调这一变化。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e4\",\"senseId\":\"s1\",\"en\":\"After her best friend moved away, Emma felt lost and didn't know who to talk to.\",\"zh\":\"最好的朋友搬走后，艾玛感到很迷茫，不知道该找谁说话。\",\"note\":\"这里的 lost 表示心理上失去方向、无所适从。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e5\",\"senseId\":\"s1\",\"en\":\"I'm lost. Could you explain that last step again?\",\"zh\":\"我没弄明白。你能再解释一下最后那一步吗？\",\"note\":\"说明或教学中说 I'm lost，常表示没理解或跟不上。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e6\",\"senseId\":\"s1\",\"en\":\"Ben was completely lost when the teacher explained fractions.\",\"zh\":\"老师讲分数时，本完全没听懂。\",\"note\":\"completely lost 在这里表示完全不明白所讲内容，不是迷路。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"I'm lost. Could you explain ... again?\",\"zh\":\"我没弄明白。你能再解释一下……吗？\",\"note\":\"用于跟不上讲解时请求进一步说明。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"ask for directions\",\"zh\":\"问路\",\"note\":\"迷路后常用的表达；directions 在这里指路线指引。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"be completely lost\",\"zh\":\"完全迷失方向；完全没弄明白\",\"note\":\"具体指迷路还是没听懂，要看地点、课程或说明等上下文。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"feel sure of what to do\",\"zh\":\"对该做什么有把握\",\"note\":\"与心理上迷茫、不知所措对照，不用于说明是否迷路。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"understand / follow an explanation\",\"zh\":\"听懂／跟上讲解\",\"note\":\"与讲解过程中说 I'm lost 对照。follow 在这里表示理解思路。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"confused 也可指不知所措，但不能自动表示找不到方向。\"",
+        "valueJson": "\"confused 可与迷茫、没弄懂接近；disoriented 偏重方向或位置感混乱。它们都不能在所有语境中直接替换 lost。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这些表达只与“迷路、找不到方向”这一用法对照。\"",
+        "valueJson": "\"find one's way、know where one is 对应位置和方向；feel sure of what to do 对应心理上的迷茫；understand、follow 对应没听懂讲解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"丢失的；失去的\"",
+        "valueJson": "\"丢失的；弄丢；失去\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作形容词时指东西找不到了；作动词时是 lose 的过去式或过去分词，表示失去、弄丢。\"",
+        "valueJson": "\"作形容词时指物品丢失，或人、宠物走失；作动词时是 lose 的过去式或过去分词，可表示弄丢物品或失去工作、信心等。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is lost 描述借书证目前丢失的状态，lost 作形容词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"has lost 是现在完成时，表示手套已经丢失；on the way home 说明丢失发生的途中，不是要求改用一般过去时的明确过去时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e3\",\"senseId\":\"s2\",\"en\":\"A neighbour brought our lost dog home.\",\"zh\":\"一位邻居把我们走失的狗送回了家。\",\"note\":\"lost 放在 dog 前作形容词，表示走失的。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e4\",\"senseId\":\"s2\",\"en\":\"I lost my phone on the bus yesterday.\",\"zh\":\"我昨天在公交车上把手机弄丢了。\",\"note\":\"lost 在这里是动词过去式；yesterday 明确指出过去时间。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e5\",\"senseId\":\"s2\",\"en\":\"She lost her job when the shop closed.\",\"zh\":\"商店关门后，她失去了工作。\",\"note\":\"lost her job 表示失去工作，不是把实物放错地方。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-e6\",\"senseId\":\"s2\",\"en\":\"After failing the driving test twice, he has lost confidence.\",\"zh\":\"驾驶考试两次没通过后，他已经失去了信心。\",\"note\":\"has lost 是现在完成时；confidence 是信心，展示 lose 与非实物对象的搭配。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/2",
+        "expectedValueJson": "{\"en\":\"lose a game\",\"zh\":\"输掉比赛\",\"note\":\"lose 也可表示比赛或游戏失利；此时不是“弄丢物品”。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"lose one's job / confidence\",\"zh\":\"失去工作／信心\",\"note\":\"lose 可以接非实物对象；过去式和过去分词均为 lost。比赛输赢另见比赛义。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"energy lost as heat\",\"zh\":\"以热的形式耗散的能量\",\"note\":\"lost 是过去分词，放在 energy 后修饰它，相当于 energy that is lost as heat；这里说能量耗散，不是物品遗失。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"no longer have\",\"zh\":\"不再拥有\",\"note\":\"可说明失去工作、信心等之后的状态；它侧重结果，不像 lose 那样直接表达失去这一变化。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"misplace 多指一时放错地方；lose 还可指永久失去或失去机会。\"",
+        "valueJson": "\"misplace 限于把东西放错地方；be missing 描述不见了的状态。no longer have 可说明失去某物后的结果，适用范围不限于实物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"在物品没有被弄丢的语境中，与 lose 的结果相对。\"",
+        "valueJson": "\"既可说保管好物品，也可说保住工作、保持信心，如 keep one's job、keep one's confidence。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"find 和 keep 只对应“物品丢失”这一语境；lose 表示比赛失利时应按比赛语境理解。\"",
+        "valueJson": "\"find 对应找到丢失的东西；keep 可对应保管好物品或保住工作、保持信心。比赛中与 lose 对照的常用词是 win。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\",\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s3\",\"title\":\"输掉；败局已定\",\"meaning\":\"作动词时，lost 表示输掉比赛；作形容词描述比赛时，可表示已经没有获胜希望、败局已定。\",\"usageNote\":\"lost a game 中 lost 是动词过去式；have lost a game 中是过去分词。The game is lost 中 lost 作形容词，比赛可能尚未结束；如果有 I thought 等表达，也可能只是当时的判断。\",\"examples\":[{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"Our team lost the final by one point.\",\"zh\":\"我们队在决赛中以一分之差输了。\",\"note\":\"lost 是动词过去式；by one point 表示输掉的分差。\"},{\"id\":\"s3-e2\",\"senseId\":\"s3\",\"en\":\"We've lost two games this month, but we still have a chance to reach the final.\",\"zh\":\"这个月我们已经输了两场比赛，但仍有机会进入决赛。\",\"note\":\"We've lost 是 We have lost 的缩写，lost 是过去分词；this month 指尚未结束的本月。\"},{\"id\":\"s3-e3\",\"senseId\":\"s3\",\"en\":\"With ten seconds left and our team twenty points behind, the game was lost.\",\"zh\":\"只剩十秒，我们队还落后二十分，这场比赛已无力回天。\",\"note\":\"was lost 描述败局已定，不要求比赛已经正式结束。\"},{\"id\":\"s3-e4\",\"senseId\":\"s3\",\"en\":\"I thought the match was lost, but our team scored twice in the last minute and won.\",\"zh\":\"我以为这场比赛输定了，但我们队在最后一分钟进了两球，赢得了比赛。\",\"note\":\"thought 表明败局只是说话人当时的判断，后来结果发生逆转。\"}],\"patterns\":[{\"en\":\"lose / lost / have lost a game\",\"zh\":\"输掉一场比赛\",\"note\":\"根据时态选择 lose、lost 或 have lost。\",\"kind\":\"sentence-pattern\"},{\"en\":\"the game / match is lost\",\"zh\":\"这场比赛败局已定\",\"note\":\"lost 描述比赛已经没有获胜希望。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lose a match / game\",\"zh\":\"输掉一场比赛\",\"note\":\"lose 的过去式和过去分词都是 lost；这里不译为弄丢比赛。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be defeated / be beaten\",\"zh\":\"被击败\",\"note\":\"比赛中意义接近，但主语通常是队伍或选手，如 Our team was defeated；不直接替换 the game is lost 中的 lost。\"}],\"contrasting\":[{\"en\":\"win / won\",\"zh\":\"赢得；获胜\",\"note\":\"对应输掉比赛，win 的过去式和过去分词都是 won。\"},{\"en\":\"still have a chance to win\",\"zh\":\"仍有获胜机会\",\"note\":\"对应比赛尚未结束时对败局已定的判断。\"}],\"similarNote\":\"lost the match 以参赛者作主语说明输掉比赛；was defeated 同样说参赛者被击败，但句法不同。\",\"contrastingNote\":\"正式比赛结果用 win 与 lose 对照；讨论是否还有希望时，可用 still have a chance to win。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"沉浸于；专注得入迷\",\"meaning\":\"注意力完全投入思想、书籍等，因而没有留意周围。\",\"usageNote\":\"常用 be lost in thought、be lost in a book。这里 in 后接投入注意的对象；与 be lost in a city 表示迷路的含义要靠上下文区分。\",\"examples\":[{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"He was lost in thought and didn't hear his phone ring.\",\"zh\":\"他陷入沉思，没听见手机响。\",\"note\":\"lost in thought 表示沉浸在思考中。\"},{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"Maya was so lost in her book that she missed her stop.\",\"zh\":\"玛雅看书太入迷，结果坐过了站。\",\"note\":\"so ... that ... 表示专注程度造成的结果；书并没有丢失。\"}],\"patterns\":[{\"en\":\"be lost in + thought / a book / music\",\"zh\":\"沉浸于思考／书本／音乐中\",\"note\":\"强调注意力投入其中，常伴随忽略周围的情况。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lost in thought\",\"zh\":\"陷入沉思\",\"note\":\"thought 在这个搭配中通常不加冠词。\",\"kind\":\"common-collocation\"},{\"en\":\"lost in a book\",\"zh\":\"看书入迷\",\"note\":\"a book 也可换成具体的书或 one's book。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be absorbed in\",\"zh\":\"全神贯注于\",\"note\":\"同样强调注意力集中，语气较中性。\"},{\"en\":\"be engrossed in\",\"zh\":\"专心致志于\",\"note\":\"强调某事十分吸引人，使人深深投入，表达较正式。\"}],\"contrasting\":[{\"en\":\"be distracted from\",\"zh\":\"注意力从……上分散\",\"note\":\"与专注于某事对照，强调注意力被其他事情带走。\"},{\"en\":\"be aware of one's surroundings\",\"zh\":\"留意周围环境\",\"note\":\"与入迷而忽略周围这一具体情境对照，不是 lost 在所有用法中的反义表达。\"}],\"similarNote\":\"这些表达都可说专注于某事；lost in 常突出投入得忘记周围。\",\"contrastingNote\":\"注意力分散与专注对照；留意周围则与忘记周围对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"s3\",\"title\":\"比赛中失利的；输掉的\",\"meaning\":\"形容比赛、游戏或竞选已经输掉；lose 也可作动词表示输掉比赛。\",\"note\":\"常见于 the game is lost 或 lose a game；可并入 lose 的“失去”义一起记。\",\"example\":{\"id\":\"s3-e1\",\"senseId\":\"s3\",\"en\":\"Our team lost the final by one point.\",\"zh\":\"我们队在决赛中以一分之差输了。\"},\"sourceIds\":[\"src-cambridge\"]}]",
+        "valueJson": "[{\"id\":\"s5\",\"title\":\"Get lost!：滚开！\",\"meaning\":\"粗鲁地叫人离开或别再烦自己。\",\"note\":\"这是带有敌意的命令，不宜用于礼貌交流；普通叙述中的 get lost 仍可表示迷路。\",\"example\":{\"id\":\"s5-e1\",\"senseId\":\"s5\",\"en\":\"He shouted 'Get lost!' when I tried to speak to him.\",\"zh\":\"我想和他说话时，他大喊：“滚开！”\",\"note\":\"引号中的 Get lost! 是驱赶对方的粗鲁说法。\"},\"sourceIds\":[]},{\"id\":\"s6\",\"title\":\"a lost cause：无望成功的人或事\",\"meaning\":\"被认为没有成功希望，或继续付出努力也不值得的人或事。\",\"note\":\"是固定表达；用于人时可能显得贬损。\",\"example\":{\"id\":\"s6-e1\",\"senseId\":\"s6\",\"en\":\"The old bike is a lost cause; fixing it would cost more than buying another one.\",\"zh\":\"这辆旧自行车不值得再修了；修它比另买一辆还贵。\",\"note\":\"这里不是说自行车丢了，而是认为继续修理不值得。\"},\"sourceIds\":[]},{\"id\":\"s7\",\"title\":\"lost in translation：翻译中未能传达的\",\"meaning\":\"原文的意义、幽默或效果没有在翻译后完整保留下来。\",\"note\":\"常说 something is lost in translation，不是指译文文件丢失。\",\"example\":{\"id\":\"s7-e1\",\"senseId\":\"s7\",\"en\":\"The joke was funny in Spanish, but its humour was lost in translation.\",\"zh\":\"这个笑话用西班牙语讲很好笑，但翻译后笑点没能传达出来。\",\"note\":\"lost 指幽默效果在翻译中流失。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"not to 后接动词原形 lose，表示提醒对方不要把票弄丢。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"yesterday 指过去时间，lost 在这里是一般过去时的谓语。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is losing 构成现在进行时；lose one's patience 表示失去耐心。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"lost 表示把自己持有的公交卡弄丢。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"missed 表示没赶上车；与前例弄丢公交卡的 lost 对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"lost 是动词 lose 的不规则过去式和过去分词，同时也用作形容词。历史上它与 lose 同族；此处不把现代的词形关系写成未经证实的历史演变链。\"",
+        "valueJson": "\"lost 是 lose 的过去式和过去分词，属于不规则变化；它也可作形容词，表示迷路、丢失或比赛败局已定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"lose—lost—lost 是现代英语中应掌握的不规则词形关系；这不等于已经列出其更早的历史词源。\"",
+        "valueJson": "\"lose—lost—lost 表示现代英语中的词形对应，不是词语历史演变的三个阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"not to 后用原形 lose；notes 在这里指笔记。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"is losing 描述正在掉叶子的过程；losing 的拼写是去掉 lose 末尾的 e 后加 -ing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: lost\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/lost\",\"supports\":[\"lost 作形容词表示迷路、找不到或失去方向\",\"lose 的不规则形式 lose—lost—lost\",\"lose 的常见搭配和词形\"],\"verification\":\"recommended\"},{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: lost\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/lost\",\"supports\":[\"lost 作形容词及 lose 的过去式、过去分词用法\",\"迷路、物品遗失和比赛失利等语境\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：lost（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/lost#Anglais\",\"supports\":[\"lost 是 lose 的过去式和过去分词\",\"形容词用于迷路、物品遗失和比赛败局等语境\",\"英式 /lɒst/ 与美式 /lɔst/、/lɑst/ 等发音变体\",\"能量损耗语境中的 lost 用法\",\"列出 get lost、lost cause、lost in translation 等相关表达\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 808,
+    "headword": "lost",
+    "meaning_zh": "adj. 迷路的；丢失的\nv. lose 的过去式和过去分词",
+    "phonetic": "/lɒst/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,642 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "383e232224f30d222f451e31bf12258cd563313f39dbbadc6e15cfce3162811d",
+    "executedReviewPromptHash": "bffec061d8ad68ac3f12e7d6e9b0623fb54ad7324e1b95d32e0821443d93c45f",
+    "reviewHash": "eb63b164dd3abb415310e81f7e54741dce7689552e76596c6b7ac3bb2308f07e",
+    "wordId": 968,
+    "inputHash": "25ec62249c13eb6c373534bb2c9e53587246198236a88e5e5719b175e75eaca3",
+    "draftHash": "45e640d721a4128f2896f3a42399ea14cca93ece9a56f073ea4d9169c7578d14",
+    "finalHash": "0474af9e3dcbd7556895191bd9868db977ee4b19c842417849f6e7ae39528662",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/outside#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.618Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120201,
+        "revisionId": 37265468,
+        "revisionTimestamp": "2025-02-05T19:47:56Z",
+        "sha256": "8b89f1c03d302ab6be5c57f95cf475996cf61ccaaa31e47b2c58b2eabdd1b85d",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/outside",
+        "section": "outside compound",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "816968a8ddfa8881d72446f64d49f6c84e8f18582972fb75ca392b1bf54c5a9a",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "816968a8ddfa8881d72446f64d49f6c84e8f18582972fb75ca392b1bf54c5a9a",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/968.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/outside",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:55:11.036Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:10:52.898Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "初稿反复引用未取得正文的 Oxford 和获取失败的 Cambridge，却未列入实际取得的英语词条与词源资料。须调整来源及引用范围；没有对应摘录的专业知识补充不强挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "“奥乌”的拟音容易误导 /aʊ/ 的起始音；“旧音标不准确”属于制作说明，不宜出现在学生文案中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0；/memoryAid/story",
+        "message": "名词说明将人的外部位置泛写成 the outside of + 地点，容易遗漏所需介词。原门外等候句可以成立，但不适合作为外表面义的第二例；助记把门外地面直接等同于 the outside 也不准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0；/senses",
+        "message": "on the outside 的外表义只有搭配提示，没有两句匹配例句；名词“外界”义也未展开。须分别补足，每个核心义提供两句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "释义包含某个范围之外的含义，但两例均为物理位置，遗漏常用的 outside help、outside expert 等外部来源义。补两例，并按语境区分 inside 与 internal。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples",
+        "message": "标题和释义同时教授“在外面”和“到外面”，现有两例都只表示位置。方向用法须另补两句完整例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "现有两例都是空间义，未实际覆盖时间、职责等范围义及群体成员界限。outside the rules 的说明还混合了“不受规则涵盖”和“规则不允许”；应改用含义清楚的范围搭配，并补充 within 的适用语境。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1/zh；/senses/4",
+        "message": "室外灯的译文不够自然；outside of 本身宜标为介词用法，而非完整介词短语。例外义应说明非正式语体，outside of school 也不宜作为该义的代表搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/0/example/senseId；/wordFamily/0/example/senseId",
+        "message": "Wait outside the library 是介词用法，却关联副词义；outsider 的群体关系例句也不应关联物体外表面义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠词源概述，初稿仍只写现代构词并保留待核实说明。应补入早期名词的外表面／外部部分义及围绕空间意义发展的其他词性，并引用相同 URL；不虚构阶段链。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "outside 加 -er 时不能保留原词尾 e 再完整添加 -er，否则会得到 outsideer。实际拼写为去掉词尾 e 后加 -er：outsider。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的名词、形容词、副词位置与方向、空间介词及 outside of 例外义，并补足常用的外表、外界、外部来源和抽象范围用法。修订后，每个核心义均有至少两句匹配例句；outside chance 保留为较低频搭配。法语仅是来源的释义语言。词源采用已取得的 Etymonline 概述，不添加未经支持的年代或顺序阶段；现代扩展中缺少对应摘录的内容依据专业语言知识审校，不借未取得的网页作证。",
+    "senseInventory": [
+      {
+        "sense": "名词：物体的外部、外表面",
+        "coveredBy": [
+          "outside-noun-exterior"
+        ],
+        "assessment": "修正用法说明并替换第二例，确保两句都呈现名词外表面义。"
+      },
+      {
+        "sense": "名词用法 on the outside：外表看来，与内心或实际状况相对",
+        "coveredBy": [
+          "outside-noun-exterior"
+        ],
+        "assessment": "原稿只在搭配中提及；补入两句完整的内外对照例句。"
+      },
+      {
+        "sense": "名词：外界，相对于封闭或隔离的环境",
+        "coveredBy": [
+          "outside-noun-world"
+        ],
+        "assessment": "新增完整义项和两例，并限定使用环境，区别于形容词结构 the outside world。"
+      },
+      {
+        "sense": "形容词：位于外侧、室外的",
+        "coveredBy": [
+          "outside-adjective-external"
+        ],
+        "assessment": "原有两例覆盖此义，保留英文并润色室外灯的译文。"
+      },
+      {
+        "sense": "形容词：来自组织、家庭或团队外部的",
+        "coveredBy": [
+          "outside-adjective-external"
+        ],
+        "assessment": "补入 outside help、outside expert 两句，增加与 internal 的语境限定对照。"
+      },
+      {
+        "sense": "副词：在外面",
+        "coveredBy": [
+          "outside-adverb-outdoors"
+        ],
+        "assessment": "原有两例覆盖位置义；补充说明外面不一定是露天。"
+      },
+      {
+        "sense": "副词：到外面、向外",
+        "coveredBy": [
+          "outside-adverb-outdoors"
+        ],
+        "assessment": "补入 go outside、come outside 两句，落实方向用法。"
+      },
+      {
+        "sense": "介词：在某地点或区域外部",
+        "coveredBy": [
+          "outside-preposition-beyond"
+        ],
+        "assessment": "原有两例覆盖空间义；用法说明补入空间义 outside of 的形式。"
+      },
+      {
+        "sense": "介词：不在时间、职责等范围内",
+        "coveredBy": [
+          "outside-preposition-beyond"
+        ],
+        "assessment": "补入办公时间及职责范围两例，并限定 within 的反向用法。"
+      },
+      {
+        "sense": "介词：不属于某个群体",
+        "coveredBy": [
+          "outside-preposition-beyond"
+        ],
+        "assessment": "补入俱乐部成员与班级成员两例，区别成员关系和物理位置。"
+      },
+      {
+        "sense": "介词用法 outside of：除……之外，表示例外",
+        "coveredBy": [
+          "outside-preposition-except"
+        ],
+        "assessment": "原有两句均可成立，保留；修正词性标题、语体说明和代表搭配。"
+      },
+      {
+        "sense": "固定搭配 an outside chance：很小但仍存在的可能性",
+        "coveredBy": [
+          "outside-chance"
+        ],
+        "assessment": "释义和例句正确，作为较低频扩展保留；不把未取得的词典列为释义依据。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"out 中的 /aʊ/ 类似“奥乌”的连读，side 中的 /aɪ/ 类似“爱”。\"",
+        "valueJson": "\"out 中的 /aʊ/ 从较开放的 /a/ 滑向 /ʊ/，side 中的 /aɪ/ 从 /a/ 滑向 /ɪ/；每个双元音各占一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；读音中的元音是 /aʊ/ 和 /aɪ/。\"",
+        "valueJson": "\"outside 分为 out-side 两个音节，词尾的 /d/ 要保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"名词：外面；外部\"",
+        "valueJson": "\"名词：外部、外表面；外表\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指建筑物、容器或其他事物的外部空间或外表面。\"",
+        "valueJson": "\"指事物的外部或外表面；on the outside 还可指外表呈现的样子，与内心或实际情况相对。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用 the outside；说人在某处外面时，可用 the outside of + 地点。\"",
+        "valueJson": "\"常用 the outside。the outside of + 名词 表示“……的外部或外表面”；on the outside 可表示“在外侧”或“从外表看”。单纯说“在门外等”通常用 wait outside the gate。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"outside-noun-2\",\"senseId\":\"outside-noun-exterior\",\"en\":\"We waited on the outside of the gate.\",\"zh\":\"我们在大门外面等着。\",\"note\":\"the outside of the gate 指门外一侧。\"}",
+        "valueJson": "{\"id\":\"outside-noun-2\",\"senseId\":\"outside-noun-exterior\",\"en\":\"She wiped the outside of the fridge with a cloth.\",\"zh\":\"她用一块布擦了冰箱的外表面。\",\"note\":\"the outside of the fridge 指冰箱的外表面，outside 在这里是名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-noun-3\",\"senseId\":\"outside-noun-exterior\",\"en\":\"He seemed calm on the outside, but he was nervous about the test.\",\"zh\":\"他表面上显得很平静，其实却在为考试紧张。\",\"note\":\"on the outside 指表现出来的样子，与内心的紧张对照。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-noun-4\",\"senseId\":\"outside-noun-exterior\",\"en\":\"The old house looks fine on the outside, but the roof leaks.\",\"zh\":\"这栋老房子从外表看还不错，但屋顶漏水。\",\"note\":\"on the outside 表示从外表判断，后半句揭示实际存在的问题。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"比 outside 更正式，常用于描述建筑物或物体的外部。\"",
+        "valueJson": "\"作名词可指物体的外部，也可指人表现出的外表，通常较正式，如 a calm exterior（平静的外表）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在描述同一物体或地点时，inside 指内部，outside 指外部。\"",
+        "valueJson": "\"作名词可指内部；on the inside 也可指人的内心，与 on the outside 表现出来的样子对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"inside 是此空间含义下常用的对照词。\"",
+        "valueJson": "\"比较物体时，outside / inside 对照外部与内部；谈人的感受时，on the outside / on the inside 可对照外表与内心。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"形容词：外面的；外部的\"",
+        "valueJson": "\"形容词：外侧的；来自外部的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"位于某物外侧的，或属于某个范围之外的。\"",
+        "valueJson": "\"位于建筑物或物体外侧的；也可指来自某个组织、家庭或团队之外的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常放在名词前修饰名词，如 outside wall；也可用 the outside door 指外侧的门。\"",
+        "valueJson": "\"通常放在名词前。outside wall 指外侧的位置；outside help、outside expert 指帮助或人员来自某个群体之外，不表示他们身处室外。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"门边的一盏外部照明灯亮着。\"",
+        "valueJson": "\"门边的一盏室外灯亮着。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-adj-3\",\"senseId\":\"outside-adjective-external\",\"en\":\"Our family needed outside help to care for my grandfather.\",\"zh\":\"我们家需要借助外人的帮助来照顾爷爷。\",\"note\":\"outside help 指来自家庭之外的帮助，不是指在户外提供帮助。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-adj-4\",\"senseId\":\"outside-adjective-external\",\"en\":\"The school brought in an outside expert to check the playground equipment.\",\"zh\":\"学校请来一位校外专家检查操场上的器材。\",\"note\":\"outside expert 指不属于该学校的专家，强调人员来源。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"outside 放在名词前作定语，指出位置在外侧。\"",
+        "valueJson": "\"outside 放在名词前作定语，可说明位置在外侧，也可说明来源在某个群体之外。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"outside help\",\"zh\":\"外部帮助；外援\",\"note\":\"指来自家庭、团队或组织以外的帮助。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"语气较正式，常见于说明、医学或技术语境；日常描述常用 outside。\"",
+        "valueJson": "\"在 external wall（外墙）、external support（外部支持）等搭配中与 outside 含义接近；external 更常见于正式或专业表达。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"internal\",\"zh\":\"内部的；来自内部的\",\"note\":\"在组织或团队语境中，internal support 指来自内部的支持，可与 outside support 的来源对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"inside 可作形容词，表示位于内部的，与本义的 outside 相对。\"",
+        "valueJson": "\"描述位置时可对照 inside；描述组织或团队中的来源时，常用 internal 作对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-adv-3\",\"senseId\":\"outside-adverb-outdoors\",\"en\":\"Let's go outside and look at the moon.\",\"zh\":\"我们到外面去看看月亮吧。\",\"note\":\"go outside 表示到外面去，outside 在这里说明移动的方向或目的地。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-adv-4\",\"senseId\":\"outside-adverb-outdoors\",\"en\":\"Come outside and help me carry these bags.\",\"zh\":\"到外面来，帮我搬这些袋子。\",\"note\":\"come outside 表示到外面来，移动方向朝向说话者所在的位置。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"outside 作副词，说明动作或状态发生在室外。\"",
+        "valueJson": "\"outside 说明动作或状态发生在所说地点的外面，不一定是露天；在教室外的走廊里等也可说 wait outside。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"介词：在……外面；在……之外\"",
+        "valueJson": "\"介词：在……外面；不在……范围内\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"放在地点或范围名称前，表示位于该处或范围的外部。\"",
+        "valueJson": "\"后接地点时表示在其外部；后接时间、职责等范围时表示不在该范围内；后接群体时还可表示不属于该群体。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"介词 outside 后面直接接名词，如 outside the classroom。表示“除……之外”时，也可用 outside of；这一用法在部分英语变体中较常见。\"",
+        "valueJson": "\"outside 可直接接地点、时间、职责或群体等名词。空间义可用 outside the house，也可说 outside of the house。outside of 表示“除……之外”的例外用法见下一义。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-prep-3\",\"senseId\":\"outside-preposition-beyond\",\"en\":\"Please call me outside office hours.\",\"zh\":\"请在办公时间以外给我打电话。\",\"note\":\"outside office hours 指不在办公时间之内，不表示办公地点的外面。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-prep-4\",\"senseId\":\"outside-preposition-beyond\",\"en\":\"Repairing the lift is outside my area of responsibility.\",\"zh\":\"修理电梯不属于我的职责范围。\",\"note\":\"outside 表示不在职责范围内，是抽象范围义。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-prep-5\",\"senseId\":\"outside-preposition-beyond\",\"en\":\"The club does not lend its equipment to anyone outside the group.\",\"zh\":\"俱乐部不把器材借给非本团体成员。\",\"note\":\"outside the group 指不属于这个团体，而非站在团体成员身旁。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-prep-6\",\"senseId\":\"outside-preposition-beyond\",\"en\":\"We cannot share these class photos with people outside our class.\",\"zh\":\"我们不能把这些班级照片分享给班外的人。\",\"note\":\"outside our class 表示不属于本班，划定的是成员范围。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1/note",
+        "expectedValueJson": "\"表示超出某个区域、组织或规定所涵盖的范围。\"",
+        "valueJson": "\"范围可指时间、职责或群体等，如 outside office hours、outside the group，不一定是具体位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"outside the rules\",\"zh\":\"超出规则范围\",\"note\":\"表示某事不属于规则所允许或涵盖的范围。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"outside my area of responsibility\",\"zh\":\"不在我的职责范围内\",\"note\":\"指某件事不属于自己负责的范围。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"outside office hours\",\"zh\":\"在办公时间之外\",\"note\":\"指非办公时间，划定的是时间范围。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"within\",\"zh\":\"在……范围内\",\"note\":\"在时间、职责等范围义中可与 outside 对照，如 within my area of responsibility（在我的职责范围内）。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"inside 是表示处于同一范围内部的常用对照词。\"",
+        "valueJson": "\"具体位置可对照 inside；时间、职责等抽象范围常用 within 作反向表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/title",
+        "expectedValueJson": "\"介词短语：除……之外\"",
+        "valueJson": "\"介词用法（outside of）：除……之外\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/usageNote",
+        "expectedValueJson": "\"outside of 可用于表示例外；写作中也可用 except for 或 apart from，表达通常更直接。\"",
+        "valueJson": "\"outside of 表示例外时常见于非正式表达，尤其是美式英语。except for 通常也能明确表达排除关系；apart from 则可能表示排除，也可能表示补充，要结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/collocations/0",
+        "expectedValueJson": "{\"en\":\"outside of school\",\"zh\":\"除学校以外；在校外\",\"note\":\"具体是“除学校之外”还是“在学校外面”，要根据句意判断。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"outside of a few minor problems\",\"zh\":\"除了一些小问题\",\"note\":\"把小问题作为例外排除，常见于非正式表达。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"outside-noun-world\",\"title\":\"名词：外界（相对于封闭或隔离的环境）\",\"meaning\":\"指某个封闭、隔离或受限制的环境以外的社会或人群。\",\"usageNote\":\"常用 the outside、on the outside、from the outside，通常已明确在谈监狱、隔离地点等环境。笼统说“外部世界”时，the outside world 更明确，其中 outside 是修饰 world 的形容词。\",\"examples\":[{\"id\":\"outside-world-1\",\"senseId\":\"outside-noun-world\",\"en\":\"While he was in prison, a friend on the outside looked after his dog.\",\"zh\":\"他坐牢期间，一位狱外的朋友替他照顾他的狗。\",\"note\":\"监狱语境中的 on the outside 指在狱外社会。\"},{\"id\":\"outside-world-2\",\"senseId\":\"outside-noun-world\",\"en\":\"During the storm, the island lost contact with the outside.\",\"zh\":\"暴风雨期间，这座岛与外界失去了联系。\",\"note\":\"the outside 指岛外的社会，outside 在这里是名词。\"}],\"patterns\":[{\"en\":\"from the outside\",\"zh\":\"来自外界\",\"note\":\"在封闭或隔离环境的语境中可指来自外界；也有普通空间用法，须看上下文。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"contact with the outside\",\"zh\":\"与外界的联系\",\"note\":\"常用于谈封闭或隔离环境与外部社会之间的联系。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"the outside world\",\"zh\":\"外界；外部世界\",\"note\":\"所指可以相近，但这里 outside 是形容词，world 是名词。\"}],\"contrasting\":[{\"en\":\"the inside\",\"zh\":\"内部\",\"note\":\"指同一封闭环境的内部，具体指向由上下文决定。\"}],\"similarNote\":\"the outside world 可以把“外界”说得更明确，但词性结构不同。\",\"contrastingNote\":\"围绕同一个封闭环境划定界限时，inside 与 outside 可对照内部和外界。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"outside-adverb-outdoors\"",
+        "valueJson": "\"outside-preposition-beyond\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说“在外面”等位置时可用 outside；说“在户外”可用 outdoors；修饰名词时常用 outdoor。\"",
+        "valueJson": "\"outside 可表示某处的外面，也可修饰名词；outdoors 表示“在户外”；outdoor 常放在名词前表示“户外的”，如 outdoor games。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\",\"cambridge-outside\"]",
+        "valueJson": "[\"frwiktionary-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"outside 是由 out（外面）和 side（侧面）组合而成的透明合成词；现代意思围绕“外侧、外部”展开。\"",
+        "valueJson": "\"outside 由 out 和 side 合成。它早期的名词用法指外表面或外部部分；形容词、副词和介词用法围绕这一空间意义发展，形成“外面的、在外面、在……之外”等用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代构词关系，不把两个组成部分误写成一条历史演变链；具体词源阶段需另据历史词源资料核实。\"",
+        "valueJson": "\"out 和 side 是共同组成 outside 的两个成分；an outside chance 的“小概率”是特定搭配的意思，不能仅凭两个成分的字面意思推出。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"etymonline-outside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接在 outside 后加 -er，保留词尾 e。\"",
+        "valueJson": "\"去掉 outside 词尾不发音的 e，再加 -er，写成 outsider：outsid + er，而不是 outsideer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"outside-noun-exterior\"",
+        "valueJson": "\"outside-adjective-external\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-outside\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你站在一扇门边：门外的地面是 the outside；走到门外是 go outside；门外那盏灯是 an outside light。记住“外侧”这个画面，再看句子里的词序判断词性。\"",
+        "valueJson": "\"想象你站在一扇门边：门的外侧表面是 the outside of the door；走到门外是 go outside；门外那盏灯是 an outside light；朋友在门外等，是 waiting outside the door。记住“外侧”这个画面，再看句子里的词序判断词性。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"outside light：修饰名词，表示外部的灯。\"",
+        "valueJson": "\"outside light：outside 修饰 light，表示室外灯。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-outside\",\"title\":\"Oxford Learner’s Dictionaries: outside\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/outside\",\"supports\":[\"词性和常见义项\",\"搭配及例句用法\",\"相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"frwiktionary-outside\",\"title\":\"维基词典法语版：outside（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/outside#Anglais\",\"supports\":[\"名词、形容词与副词的外部空间义\",\"outside of 的空间义与非正式例外义\",\"词性相关的读音及 inside、outdoors 对照\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-outside\",\"title\":\"Cambridge Dictionary: outside\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/outside\",\"supports\":[\"词性、释义与用法\",\"常见搭配及语法结构\",\"英式和美式读音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"etymonline-outside\",\"title\":\"Online Etymology Dictionary: outside\",\"url\":\"https://www.etymonline.com/word/outside\",\"supports\":[\"out 与 side 的合成关系\",\"早期名词指外表面或外部部分\",\"其他词性围绕空间意义发展的概述\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 968,
+    "headword": "outside",
+    "meaning_zh": "n. 外面, 外表, 外界\nadj. 外面的, 外表的, 外界的\nadv. 外面, 外表, 外界",
+    "phonetic": "/'aut'said/",
+    "pos": "",
+    "forms": []
+  }
+}

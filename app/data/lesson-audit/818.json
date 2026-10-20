@@ -1,0 +1,374 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1c2723d3decd3ad26e93f4d78feaba4bea71f2b5a1f894934655ce667c908643",
+    "executedReviewPromptHash": "1c2723d3decd3ad26e93f4d78feaba4bea71f2b5a1f894934655ce667c908643",
+    "reviewHash": "12150b324fd1b158480039cdd1d9399a08e666ad034de0b9985b1cfae9f47d1f",
+    "wordId": 818,
+    "inputHash": "cebe256d46c22fe2f78b5a2876e4558af0a2c1e67bfa62587b06ade91c3f07ef",
+    "draftHash": "86ad88f9f0109be17626365bafb3c30cc118c16f9e93803e9e53b1cd3e736735",
+    "finalHash": "a50bf09e00a5ed8f89d2134f3fe611d21eee0d5313ff5062d9184ee91b2b2269",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/madam#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:11.694Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117973,
+        "revisionId": 39442493,
+        "revisionTimestamp": "2026-04-12T23:57:09Z",
+        "sha256": "22ba5e175e5c652eb0474f46f3268b8731c62b25bc4181e9fb8f1e1492dfa320",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/madam",
+        "section": "madam etymology",
+        "supports": [
+          "Old French possessive phrase and respectful address"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:11:04.270532+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "5a0ab59f577124586741d91a93c98df0481bbd9b66aec68222c1707100d952a1",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "5a0ab59f577124586741d91a93c98df0481bbd9b66aec68222c1707100d952a1",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/818.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/madam",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:35:12.999Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:39:32.533Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及 oxford_madam 引用",
+        "message": "初稿主要引用了未列入实际来源材料的 Oxford。应将已有材料能够支持的内容改引 Wiktionnaire 的英语词条；不能把法语编释语言误当成词条语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了非正式的“自大、爱争吵或爱使唤人的女孩”和“妓院女老板”两义。“女主人”义还被扩大为管理任意场所的女性，原例中的 the madam 容易被理解为妓院女老板。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "遗漏了传统正式信函中 Dear Madam 和 Dear Sir or Madam 这一常用功能，应在现有礼貌称呼义下补充。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/2；/senses/0/relatedExpressions",
+        "message": "“日常交谈常用 ma’am”缺少地区和场合限制；“拼写因地区而异”也不够准确。应说明 ma’am 是缩略形式，其使用频率、读音和语感才具有明显地域差异。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1；/senses/1/usageNote",
+        "message": "职务称呼示范应写作 Madam Chair，并说明这是约定俗成的称呼方式，不能任意推广到所有职业名称。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "用汉字“麦”提示 /mæ/ 容易引入错误的双元音，应直接说明音标和轻重读。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/note",
+        "message": "mad 的地域提示容易造成误解：在美式口语中特别常见的是“生气的”用法，“发疯的”并非美式专有义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "可以保留“没有常见词缀派生词”的判断，但应补充实用的缩略形式 ma’am，说明实际省略的字母及撇号拼写。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的全部四组定义，并区分单独称呼、职务称呼和传统信函称呼。原有两个核心教学分项各有两个自然例句；补丁补充信函功能及两个识别性少见义，并收窄女主人义。词源的古法语→英语顺序及 ma dame 的字面解释有现有材料支持，无须改写。地域语感、现代缩略关系和书信用法依据专业语言知识补充；不将地区性的称呼习惯表述为各地通用规则。",
+    "senseInventory": [
+      {
+        "sense": "礼貌地直接称呼女性，相当于正式的“女士”",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有两个生活例句覆盖充分；修正与 ma’am 比较时的地域概括。"
+      },
+      {
+        "sense": "传统正式信函中的女性称呼及不知收信人身份时的称呼",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿遗漏这一常用功能；补充两个原创信函开头及固定表达，不另拆成独立词义。"
+      },
+      {
+        "sense": "Madam 与特定职务或头衔连用的尊称",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原有两个例句自然；补充惯用范围和首字母大写说明。"
+      },
+      {
+        "sense": "女主人",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "保留为少见义，限定家庭及旧式雇佣语境，并替换易产生歧义的例句。"
+      },
+      {
+        "sense": "非正式用法：自大、爱争吵或爱使唤人的女孩",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，说明其批评或打趣语气。"
+      },
+      {
+        "sense": "经营或管理妓院的女人",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "原稿遗漏；补入 lessCommonSenses，并与礼貌称呼及普通复数 madams 区分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_madam\",\"title\":\"Oxford Learner’s Dictionaries: madam\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/madam\",\"supports\":[\"madam 的词性、常见称呼义和职务称呼用法\",\"madam 的发音及相关用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_madam\",\"title\":\"Wiktionnaire：madam（英语词条，法语编释）\",\"url\":\"https://fr.wiktionary.org/wiki/madam#Anglais\",\"supports\":[\"madam 的英语读音及礼貌称呼、职务称呼用法\",\"称呼复数 ladies 与普通名词复数 madams\",\"女主人、非正式的自大或爱争吵的女孩、妓院女老板等词义\",\"ma’am 这一近义称呼\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"oxford_madam\"",
+        "valueJson": "\"wiktionary_madam\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_madam\"",
+        "valueJson": "\"wiktionary_madam\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_madam\"",
+        "valueJson": "\"wiktionary_madam\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds/0",
+        "expectedValueJson": "\"oxford_madam\"",
+        "valueJson": "\"wiktionary_madam\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_madam\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds/0",
+        "expectedValueJson": "\"oxford_madam\"",
+        "valueJson": "\"etymonline_madam\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习把 madam 放在职务前，如 madam chair。\"",
+        "valueJson": "\"练习约定俗成的职务尊称，如 Madam Chair；Madam 和头衔通常首字母大写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"注意 madam 语气正式，日常交谈常用 ma’am。\"",
+        "valueJson": "\"区分 madam 与其缩略形式 ma’am：前者较正式；后者的常见程度和语气因地区、场合而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一音节，读作“麦-dəm”；末尾音节轻读。\"",
+        "valueJson": "\"重音在第一音节 /mæd/；第二音节 /əm/ 轻读，其中 /ə/ 是中央元音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用于服务、正式场合或不知对方姓名时；单独称呼时通常放在句末。语气比 ma’am 更正式，在不少日常对话中也显得拘谨。\"",
+        "valueJson": "\"常用于服务或正式场合，也见于正式信函开头 Dear Madam。对话中的称呼语可在句首、句中或句末，用逗号隔开。madam 往往比 ma’am 更显庄重或拘谨，但二者是否自然还取决于地区和场合。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"也是对女性的礼貌称呼，口语中更常见；拼写和读音因地区而异。\"",
+        "valueJson": "\"madam 的缩略称呼形式，标准写作 ma’am 或 ma'am；在美国不少地区及某些服务、军警等场合较常见。使用频率、读音和语气因地区、场合而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"ma’am 更常见于口语；madam 更正式，适合服务或庄重场合。\"",
+        "valueJson": "\"ma’am 主要用于口语中的直接称呼；madam 更正式，也用于传统正式信函。不能把 ma’am 当成所有地区都自然的日常称呼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex8\",\"senseId\":\"s1\",\"en\":\"Dear Madam,\\nThank you for asking about our evening classes.\",\"zh\":\"尊敬的女士：\\n感谢您咨询我们的晚间课程。\",\"note\":\"传统正式信函开头：已知收信人为女性，但不知道姓名时使用；知道姓名时通常用姓名称呼更自然。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex9\",\"senseId\":\"s1\",\"en\":\"Dear Sir or Madam,\\nI am writing to ask whether your shop repairs watches.\",\"zh\":\"尊敬的先生或女士：\\n我写信想询问贵店是否维修手表。\",\"note\":\"不知收信人姓名和性别时使用的传统正式信函称呼；知道具体收信人时通常采用更明确的称呼。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Dear Madam,\",\"zh\":\"尊敬的女士：\",\"note\":\"传统正式信函开头，收信人为女性但姓名不详；此处 Madam 首字母大写。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"Dear Sir or Madam,\",\"zh\":\"尊敬的先生或女士：\",\"note\":\"传统正式信函中不知道具体收信人时的称呼；若知道姓名或合适的职务称呼，通常优先采用。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常与职务名称连用，书面或正式讲话中较常见；madam 在此不是独立职位名称。\"",
+        "valueJson": "\"用于 Madam Chair、Madam President、Madam Speaker 等约定俗成的正式职务称呼，通常将 Madam 和头衔首字母大写；不能任意加在所有职业名称前。Madam 在此不是独立职位名称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在正式头衔称呼中用于男性，可与 Madam + title 对照。\"",
+        "valueJson": "\"在 Mr. President、Mr. Speaker 等约定俗成的男性职务称呼中，与相应的 Madam 称呼对照；不能任意加在所有职业名称前。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"旧式或特定语境中指管理家庭或场所的女主人。\"",
+        "valueJson": "\"旧式或特定地域用法，指一家之中的女主人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"ex5\",\"senseId\":\"s3\",\"en\":\"The servants waited for the madam to return.\",\"zh\":\"仆人们等女主人回来。\",\"note\":\"这里指家中的女主人，不是对她的称呼。\"}",
+        "valueJson": "{\"id\":\"ex5\",\"senseId\":\"s3\",\"en\":\"The maid told the visitor, “Madam is in the garden.”\",\"zh\":\"女佣告诉来客：“女主人在花园里。”\",\"note\":\"旧式家庭雇佣语境中，用 madam 尊称家中的女主人；这里不是对她本人说话。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"娇纵自大、爱使唤人的女孩\",\"meaning\":\"非正式用法，指自以为是、爱使唤人或爱争吵的女孩，有时也指年轻女子。\",\"note\":\"尤见于英式口语，带责怪或打趣语气，常见 a little madam；不能当作中性的礼貌称呼。\",\"example\":{\"id\":\"ex6\",\"senseId\":\"s4\",\"en\":\"When Mia demanded breakfast in bed, her dad called her a little madam.\",\"zh\":\"米娅要求把早餐送到床上，爸爸便说她是个任性的小祖宗。\",\"note\":\"a little madam 指娇纵、爱使唤人的女孩；这里是家人带责怪意味的打趣。\"},\"sourceIds\":[\"wiktionary_madam\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"妓院女老板\",\"meaning\":\"经营或管理妓院的女人。\",\"note\":\"这是特定语境中的可数名词，复数为 madams；叙述中的 a/the madam 不能一概译为礼貌称呼“女士”。\",\"example\":{\"id\":\"ex7\",\"senseId\":\"s5\",\"en\":\"The police arrested the madam who ran the brothel.\",\"zh\":\"警方逮捕了经营那家妓院的女老板。\",\"note\":\"who ran the brothel 明确了所指；这里是普通名词，不是对女性的直接称呼。\"},\"sourceIds\":[\"wiktionary_madam\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"普通名词复数\",\"form\":\"madams\",\"ipa\":\"/ˈmæd.əmz/\",\"note\":\"用于普通可数名词义，如“妓院女老板”的复数；直接称呼多位女性时通常用 ladies。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"形容词，可表示“生气的”；美式英语中也常表示“疯的”。\"",
+        "valueJson": "\"形容词，可表示“发疯的”，也可表示“生气的”；其中“生气的”这一用法在美式口语中尤其常见。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"ma’am\",\"partOfSpeech\":\"名词；称呼语\",\"meaning\":\"女士；夫人（直接称呼）\",\"formation\":\"madam 的缩略形式，省去字母 d，以撇号表示省略；不是加词缀派生。\",\"spellingNote\":\"标准拼写为 ma’am，也可用直撇号写作 ma'am；两个 a 都保留。它通常不能替换 Madam President 中的 Madam。\",\"example\":{\"id\":\"wf1\",\"senseId\":\"s1\",\"en\":\"Yes, ma’am. I’ll move my car now.\",\"zh\":\"好的，女士。我马上把车挪开。\",\"note\":\"例如回应女性警官的要求；这类称呼是否自然取决于地区和场合。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"没有适合初中学习、且可确认由 madam 规则派生的常用词；mad 和 madam 只是拼写相似，不属于同一词族。\"",
+        "valueJson": "\"madam 没有常见的词缀派生词；ma’am 是它的常用缩略形式，应与加前缀或后缀的派生词区分。mad 与 madam 只是开头拼写相似，不属于同一词族。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 818,
+    "headword": "madam",
+    "meaning_zh": "n. 女士, 夫人",
+    "phonetic": "/'mædәm/",
+    "pos": "",
+    "forms": []
+  }
+}

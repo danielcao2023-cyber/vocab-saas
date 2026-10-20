@@ -1,0 +1,221 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4fcced87e68ea8cdd745663e349522c8734f4d673795b9f43a0382b093a6dead",
+    "executedReviewPromptHash": "4fcced87e68ea8cdd745663e349522c8734f4d673795b9f43a0382b093a6dead",
+    "reviewHash": "0797093f34be936343d2812ca1634f0fb85c9d63133c69ee3fd6199696102811",
+    "wordId": 655,
+    "inputHash": "9d0be9c936fe2d683dd226e01bfa9e44107ce3149f0800e3364751ce2552b767",
+    "draftHash": "76cc9b41704acfac23d13e43f05c90077ba998a91964ff27df621f1b05024974",
+    "finalHash": "887816319bdf036023af6ec4fa1e0826092cc6f1332c867b685b6829cd6895e9",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hobby#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.834Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 29124,
+        "revisionId": 38988454,
+        "revisionTimestamp": "2025-10-31T00:20:10Z",
+        "sha256": "4b5f8e04e8a8c5f0e331dfbf2eb7b3b974f8cc3892d3a943cafd5e5f1a7e05c9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hobby",
+        "section": "hobby etymology",
+        "supports": [
+          "Pastime shortening; separate earlier horse sense; borrowing direction correction"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:18:15.005973+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "4c347b9f9a7fcabe49abc942bfea390dcad4c554dea43c66591ee706186fd6b4",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "4c347b9f9a7fcabe49abc942bfea390dcad4c554dea43c66591ee706186fd6b4",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/655.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hobby",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:11:49.556Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:19:07.096Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未取得内容，却被用作正文依据。应改引已取得的法语维基词典英语词条，并同步调整来源引用；该条目支持常用名词义、英美发音及近形词提示。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1",
+        "message": "hobbies 是复数词形，不是搭配，应与 take up a hobby 分开说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1/kind",
+        "message": "take up a hobby 是词汇搭配，宜标为 common-collocation。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary",
+        "message": "来源支持爱好义经由玩具马相关表达发展而来，但不足以断言 hobbyhorse 的最初词义就是玩具马。应删除“原指”这一过强的历史断言。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "“没有……常见派生词”的表述过满。可补充构词透明的 hobbyist，并说明其保留 y，与复数 hobbies 的拼写变化形成对照。"
+      }
+    ],
+    "coverageAssessment": "现代常用的可数名词义“业余爱好、消遣”覆盖完整，两例自然且翻译准确；“嗜好、癖好”不必另拆核心义。近义词和 work 的语境限制恰当，英美音标写法可接受。早期马匹义作为词源背景处理即可。本次覆盖评估限于现代常用义及材料明确涉及的历史义，不宣称穷尽专业用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：业余爱好、消遣",
+        "coveredBy": [
+          "hobby-n-1"
+        ],
+        "assessment": "已覆盖，具备两个具体原创例句。中文词条中的“嗜好、癖好”在这里不构成需要另列的常用英语义项。"
+      },
+      {
+        "sense": "历史名词义：小型、活跃的马",
+        "coveredBy": [],
+        "assessment": "已在词源部分交代，属于历史背景，无须增设为初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-hobby\",\"title\":\"Cambridge Dictionary: hobby\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hobby\",\"supports\":[\"常用名词义与用法\",\"英美读音参考\",\"复数形式与基本拼写\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-hobby-en\",\"title\":\"Wiktionnaire：hobby（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/hobby#Anglais\",\"supports\":[\"现代英语名词的消遣、爱好义\",\"英美发音与首元音差异\",\"近形词 hubby\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"cambridge-hobby\"",
+        "valueJson": "\"wiktionary-hobby-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-hobby\"",
+        "valueJson": "\"wiktionary-hobby-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge-hobby\"",
+        "valueJson": "\"wiktionary-hobby-en\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习搭配 take up a hobby 和 hobbies。\"",
+        "valueJson": "\"练习搭配 take up a hobby，并记住 hobby 的复数是 hobbies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"hobby 的“爱好、消遣”义来自 figurative hobbyhorse 的缩短；hobbyhorse 原指玩具马，后来用于比喻喜爱的消遣。更早的 hobby 还曾指一种小型、活跃的马。\"",
+        "valueJson": "\"hobby 的“爱好、消遣”义来自 hobbyhorse 比喻用法的缩短；这一比喻用法由玩具马的形象发展而来。更早的 hobby 还曾指一种小型、活跃的马。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"hobbyist\",\"partOfSpeech\":\"noun\",\"meaning\":\"业余爱好者\",\"formation\":\"hobby + 名词后缀 -ist，表示以某项活动为业余爱好的人。\",\"spellingNote\":\"保留 hobby 末尾的 y，直接加 -ist，拼成 hobbyist；不要照搬复数 hobbies 中的 y → ies 变化。\",\"example\":{\"id\":\"hobby-family-1\",\"senseId\":\"hobby-n-1\",\"en\":\"The model train club welcomes hobbyists of all ages.\",\"zh\":\"这个火车模型俱乐部欢迎各个年龄段的业余爱好者加入。\",\"note\":\"hobbyist 指从事业余活动的人，hobby 指活动本身。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"常用词 hobby 没有适合初中阶段学习、且能清楚说明的常见派生词；复数 hobbies 是词形变化，不是新词族成员。\"",
+        "valueJson": "\"hobbyist 是表示“业余爱好者”的派生名词；hobbies 是 hobby 的复数词形，不是新词族成员。注意两者对词尾 y 的处理不同。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 655,
+    "headword": "hobby",
+    "meaning_zh": "n. 嗜好, 癖好, 爱好",
+    "phonetic": "/'hɒbi/",
+    "pos": "",
+    "forms": []
+  }
+}

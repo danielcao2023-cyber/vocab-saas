@@ -1,0 +1,260 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "74e21d4762ee4fa737d535fedad22c36e407d2a354b6240d8209bdd1d9dcbce4",
+    "executedReviewPromptHash": "74e21d4762ee4fa737d535fedad22c36e407d2a354b6240d8209bdd1d9dcbce4",
+    "reviewHash": "4d8c844b8d67e198df78bddd9c3beae81c0227fede89189dbefe09835c8778f8",
+    "wordId": 1596,
+    "inputHash": "e2e8c3f98f3f31009b50de125597f999a3cfae514420ef9d4d15307f0db3ac69",
+    "draftHash": "30374ba8ce111e5dc81934603928e528fb715a1f32c75a0e4f13c218d9f4024b",
+    "finalHash": "31d1615ccad40903e44ae7939195255b5614b758f74e2c4e07e57ebdf9c6536d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/yours#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.283Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 238494,
+        "revisionId": 38384903,
+        "revisionTimestamp": "2025-07-05T23:44:45Z",
+        "sha256": "c89648b3b8473ebc5af3b877620fa12e25e3d255f36230afdc89caa31c609e61",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/yours",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:35:45.504Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:42:38.033Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "已有例句只明确展示“你的”，没有真正覆盖“你们的”；须补充明确面向多人的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "将所属关系全部解释为物品所有权过窄，无法准确解释本课的座位和朋友用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/2/note",
+        "message": "“名词前用 a/an 或复数形式”混淆限定词与名词数，也容易误排除 that friend of yours 等正确结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "“后面常接具体物品作主语”误述 belong to you 的语序；物品通常位于该动词短语之前作主语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/collocations/1/zh",
+        "message": "脱离上下文的 yours and mine 应兼顾“你的”和“你们的”。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段释义只是重复来源说明，没有解释历史形式的字义；应将可证实的历史事实保留在 summary，并清空占位阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未成功取得，不能作为本次审核的内容依据。应删除该来源及其引用，改用已取得的英语词条，并补全该来源实际支持的内容。现有读音属于所列发音变体，无须据此改音标。"
+      }
+    ],
+    "coverageAssessment": "已核对词典列出的“你的”“你们的”和书信结束语三项定义。前两项属于同一物主代词功能，无须机械拆义；补充两个明确面向多人的例句后，单数与复数听话者均有实际覆盖。书信功能已有两个例子，近义及归属者对照基本恰当。词源保留可证实的中古英语来源，不添加未经支持的历史阶段。本次依据已取得的词典材料及专业语言知识审核，未使用不可访问的 Cambridge 内容。",
+    "senseInventory": [
+      {
+        "sense": "名词性物主代词：你的；属于你的事物或与你有关的人、事物",
+        "coveredBy": [
+          "yours-possessive"
+        ],
+        "assessment": "已有两个例句；修正所有权限制及座位例句说明后覆盖准确。"
+      },
+      {
+        "sense": "名词性物主代词：你们的；属于你们的事物或与你们有关的人、事物",
+        "coveredBy": [
+          "yours-possessive"
+        ],
+        "assessment": "原稿只在中文释义中列出；补充两个明确指多位听话者的例句。"
+      },
+      {
+        "sense": "用于书信结尾的礼貌表达",
+        "coveredBy": [
+          "yours-letter-closing"
+        ],
+        "assessment": "已有两个结束语例子，并说明署名位置和常见搭配，覆盖充分。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"名词性物主代词，代替“your + 名词”，表示某物属于听话的人。可译为“你的、你们的”，也可按语境译成“你的东西、你们的东西”。\"",
+        "valueJson": "\"名词性物主代词，代替“your + 名词”，指属于你／你们或与你／你们有关的人、事物。可指一位或多位听话者，所指的人、事物也可为单数或复数。所属关系不一定表示实际所有权，如 a friend of yours 指你的一位朋友。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"yours 放在 be 动词后作表语，表示座位归谁所有。\"",
+        "valueJson": "\"yours 放在 be 动词后作表语，这里询问座位是否留给你或正由你使用，不一定涉及座位的所有权。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"yours-ex5\",\"senseId\":\"yours-possessive\",\"en\":\"Are these bags yours, kids?\",\"zh\":\"孩子们，这些包是你们的吗？\",\"note\":\"kids 明确表示在对多位听话者说话；yours 表示“你们的”，所指的 bags 也是复数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"yours-ex6\",\"senseId\":\"yours-possessive\",\"en\":\"We've packed our lunches. Have you two packed yours?\",\"zh\":\"我们已经把午饭装好了。你们俩也把自己的午饭装好了吗？\",\"note\":\"you two 明确指两位听话者；yours 代替 your lunches，作 packed 的宾语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/note",
+        "expectedValueJson": "\"of yours 表示“你的……之一”；名词前用 a/an 或复数形式。\"",
+        "valueJson": "\"a friend of yours 表示“你的一位朋友”；也可说 friends of yours（你的一些朋友）或 that friend of yours（你的那位朋友）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"你们的和我的\"",
+        "valueJson": "\"你的／你们的和我的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"用动词短语说明归属，后面常接具体物品作主语；yours 本身可独立代替物品。\"",
+        "valueJson": "\"用动词短语说明归属，物品通常在该短语之前作主语：This bag belongs to you 对应 This bag is yours。belong to you 不能直接替换句中的 yours。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"历史材料将 yours 追溯到中古英语 youres，并说明它相当于 your 加 ’s。这个 ’s 是历史构词线索，不代表现代拼写应写成 your’s。\"",
+        "valueJson": "\"yours 源自中古英语 youres，构词上相当于 your 加表示所属的 ’s。现代英语中的固定拼写是 yours，不加撇号。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"youres\",\"meaning\":\"历史材料记载的形式；材料将其解释为相当于 your 加 ’s\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_yours\"]",
+        "valueJson": "[\"wiktionary_yours\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_yours\"]",
+        "valueJson": "[\"wiktionary_yours\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary_yours\",\"cambridge_yours\"]",
+        "valueJson": "[\"wiktionary_yours\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_yours\"]",
+        "valueJson": "[\"wiktionary_yours\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"历史材料所记中古英语形式 youres 及其与 your 和 ’s 的关系\",\"Yours sincerely、Yours truly 等书信表达\"]",
+        "valueJson": "[\"yours 表示“你的／你们的”的物主代词用法\",\"英美发音及其变体\",\"中古英语形式 youres 及其与 your 和 ’s 的构词关系\",\"书信结束语及 Yours sincerely、Yours truly 等表达\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_yours\",\"title\":\"Cambridge Dictionary: yours\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/yours\",\"supports\":[\"yours 作名词性物主代词的含义和用法\",\"yours 的英美发音参考\",\"书信结尾表达及相关搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1596,
+    "headword": "yours",
+    "meaning_zh": "pron. 你的(东西), 你们的(东西)",
+    "phonetic": "/juәz/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "59da61e84cad94d5bf20158990c9ffae000a5c26da29243ceb1021774c9e3881",
+    "executedReviewPromptHash": "59da61e84cad94d5bf20158990c9ffae000a5c26da29243ceb1021774c9e3881",
+    "reviewHash": "3eff253691a6899d748dc8663ef4264b7186523f01a2f5a751d87ca0fb79a948",
+    "wordId": 1489,
+    "inputHash": "6123ae2387e6c0fbb026293afd3215eb77c9eeffc1d8978aa19ac36707644528",
+    "draftHash": "9759cc9d1549a1edb8ddc581e8aeef417208c4c8e7a7089edc11c94b4fcdb1e1",
+    "finalHash": "a4768639d2a22a858eebcd896ae423005f36b025ab76561ffb9cca922b301bb1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/vacation#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.915Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 235220,
+        "revisionId": 38492830,
+        "revisionTimestamp": "2025-08-04T07:10:14Z",
+        "sha256": "dc7abc2294e1bcb75611eaac131a043ae1665891a02bd118ace3eece2213cd70",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/vacation",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:26:34.306Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:34:53.802Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "将首音节 /veɪ/ 判为误读不正确；已获取的词典正文明确列出该规范读音，同时美国音频标注支持 /və/。结尾发音提示也需明确弱元音的位置。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/note",
+        "message": "vacation 没有词尾 e；vacationing 是直接加 -ing，不是去 e 后添加。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note",
+        "message": "仅说明“通常可数”不足以解释核心搭配 on vacation。应交代可数与不可数用法及冠词差异。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2",
+        "message": "“spend a vacation + 地点/方式”未展示地点介词和 doing sth 结构，容易导致直接接地点名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote; /senses/1/patterns/0/note; /confusions/0/items/1/note",
+        "message": "vacation 作动词是不及物用法，不能笼统教成直接接地点；也不能把所有地点前的介词概括为 in。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "动词义的近义比较应明确 holiday 本身也可作动词，并说明英美使用倾向。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "拉丁语来源关系有依据，但阶段中的“来源形式；材料未给出……”是无释义的制作占位，应删除该阶段并将可靠事实保留在正文。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "来源只列 vacate 为相关词，不能据此断言 vacate 与 vacation 都源自拉丁语 vacatio。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/example",
+        "message": "火车到站前腾出座位缺乏清楚的生活情境；改用酒店退房例句，并包含 vacation，使既有 senseId 的关联明确。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 Cambridge sourceIds",
+        "message": "Cambridge 页面获取失败，不能承担本次审校的词典证据。应改引实际取得的英语词条，并将来源支持范围限定为正文确实提供的内容。"
+      }
+    ],
+    "coverageAssessment": "已从实际取得的英语词条核对名词“假期、休假”和动词“度假”两个主要义，初稿均有两个自然原创例句，无须强行增拆义项。学校假期与旅行假期可归入现有名词义。已修正读音、拼写说明、可数性、动词结构和来源归属；地区用法及补充教学说明依据专业语言知识。历史词源仅保留已证实的拉丁语 vacatio 来源关系，不扩写未经支持的演变链；Cambridge 页面不可用，不作为本次证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：假期；休假，包括学校假期及用于旅行或休息的假期",
+        "coveredBy": [
+          "vacation-n-1"
+        ],
+        "assessment": "已覆盖，两个例句分别体现去度假和度过一段具体假期；补正可数与不可数用法及 spend 结构即可。"
+      },
+      {
+        "sense": "不及物动词：在某地度假",
+        "coveredBy": [
+          "vacation-v-1"
+        ],
+        "assessment": "已覆盖，两个例句均自然；需明确地点状语的介词或副词结构，并完善与动词 holiday 的比较。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/uk",
+        "expectedValueJson": "\"/vəˈkeɪʃən/\"",
+        "valueJson": "\"/veɪˈkeɪʃən/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音相近；重音在第二音节。\"",
+        "valueJson": "\"重音在第二音节。英式常见首音节 /veɪ/；美式可读 /veɪ/，也可弱读为 /və/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头读轻而短的 /və/，不要按旧式拼读误读成 /veɪ/。\"",
+        "valueJson": "\"首音节 /veɪ/ 和弱读的 /və/ 都是规范读法，不要把 /veɪ/ 当成误读。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"结尾 -tion 读 /ʃən/，类似“申”前带轻元音。\"",
+        "valueJson": "\"本词的 -tion 读 /ʃən/；/ə/ 是轻读元音，位于 /ʃ/ 和 /n/ 之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-vacation\"]",
+        "valueJson": "[\"wiktionary-vacation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"假期；通常可数。\"",
+        "valueJson": "\"假期；可数或不可数。a vacation 指一次假期；on vacation 表示在休假，vacation 前不加冠词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e，再加 -ing。\"",
+        "valueJson": "\"直接在 vacation 后加 -ing，写作 vacationing；原词没有词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2",
+        "expectedValueJson": "{\"en\":\"spend a vacation + 地点/方式\",\"zh\":\"在某地／以某种方式度过假期\",\"note\":\"用 spend 说明假期在哪里或怎样度过。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"spend a/one’s vacation + 地点状语 / doing sth\",\"zh\":\"在某地／做某事度过假期\",\"note\":\"例如 spend a vacation in France、spend your vacation with family 或 spend your vacation reading；地点名词前通常需要合适的介词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-vacation\"]",
+        "valueJson": "[\"wiktionary-vacation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"作动词时常接地点，或与 in + 地点连用。\"",
+        "valueJson": "\"是不及物动词，常接地点状语，如 in Florida、by the lake 或 abroad；不能把地点名词直接当宾语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"地点前用 in，说明度假所在的地区。\"",
+        "valueJson": "\"in 常接城市、国家或地区，如 in Canada；其他地点要按含义选择介词，如 by the lake。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"英式英语通常说 go on holiday；作动词 vacation 在美式英语中更常见。\"",
+        "valueJson": "\"holiday 也可作不及物动词，主要见于英式英语，如 holiday in Spain；vacation 作动词主要见于美式英语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"vacation 作动词表示去度假；holiday 通常作名词，英式英语常用 go on holiday。\"",
+        "valueJson": "\"作动词时，vacation 和 holiday 都可表示度假，前者主要用于美式英语，后者主要用于英式英语；也常说 go on vacation 或 go on holiday。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-vacation\"]",
+        "valueJson": "[\"wiktionary-vacation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"可直接跟地点或 in + 地点，不需要 on。\"",
+        "valueJson": "\"是不及物动词：可接 in Florida 等介词短语，也可接 abroad 等地点副词；不能直接说 vacation Florida。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-vacation\"]",
+        "valueJson": "[\"wiktionary-vacation-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-vacation\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"vacation 来自拉丁语 vacatio；这里的历史材料只支持这一来源关系。\"",
+        "valueJson": "\"vacation 来自拉丁语 vacatio。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"vacatio\",\"meaning\":\"来源形式；材料未给出该形式的具体释义\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"词源关系不等于现代单词的构词拆分；不要把 vacation 按现代拼写拆成 vacate 加 -ion 来记。\"",
+        "valueJson": "\"历史来源与现代构词要分清；vacate 是相关词，但它表示“腾出、离开”，不表示“度假”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"与 vacation 同族，二者都关联拉丁语 vacatio 来源。\"",
+        "valueJson": "\"与 vacation 是相关词；不能仅凭拼写相近，就把它们解释为直接加减后缀形成的关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"family-vacate-ex1\",\"senseId\":\"vacation-n-1\",\"en\":\"Please vacate your seat before the train arrives.\",\"zh\":\"火车到站前请离开座位。\",\"note\":\"vacate 表示腾出或离开，不表示度假。\"}",
+        "valueJson": "{\"id\":\"family-vacate-ex1\",\"senseId\":\"vacation-n-1\",\"en\":\"We had to vacate our hotel room by 11 a.m. on the last day of our vacation.\",\"zh\":\"假期的最后一天，我们必须在上午十一点前腾出酒店房间。\",\"note\":\"vacate 表示腾出房间；vacation 在这里是名词，表示假期。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-vacation\",\"title\":\"Cambridge Dictionary: vacation\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/vacation\",\"supports\":[\"名词与动词用法\",\"英美用法提示\",\"读音及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: vacation（英语词源条目）\"",
+        "valueJson": "\"Wiktionnaire: vacation（英语词条，法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"vacation 的拉丁语来源关系\",\"vacate 的同族关联\"]",
+        "valueJson": "[\"名词“假期”和动词“度假”\",\"正文读音 /veɪˈkeɪʃən/ 与美国音频标注 /vəˈkeɪʃən/\",\"vacation 来自拉丁语 vacatio\",\"相关词 vacate 与词汇关联 holiday\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1489,
+    "headword": "vacation",
+    "meaning_zh": "n. 假期, 休假",
+    "phonetic": "/vei'keiʃәn/",
+    "pos": "",
+    "forms": []
+  }
+}

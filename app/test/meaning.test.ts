@@ -60,7 +60,12 @@ describe('curriculum card display', () => {
     expect(app).not.toContain('暂无音标');
     const phon = app.match(/<div\b[^>]*class="phon"[^>]*>/g) ?? [];
     expect(phon.length).toBeGreaterThan(0);
-    for (const tag of phon) expect(tag).toContain('v-if="card.phonetic"');
+    for (const tag of phon) {
+      const condition = tag.match(/v-if="([^"]+)"/)?.[1];
+      expect(['card.phonetic', 'phonetic']).toContain(condition);
+    }
+    // WordView resolves a recording's dialect before falling back to a general or legacy IPA.
+    expect(fs.readFileSync('web/src/views/WordView.vue', 'utf8')).toContain('v-if="phonetic"');
     const meanings = app.match(/<MeaningList [^>]*>/g) ?? [];
     expect(meanings.length).toBeGreaterThan(0);
     for (const tag of meanings) expect(tag).toContain(':source="card.meaning_source"');

@@ -1,0 +1,284 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c45e300f4e8a4bd2cc88fb9cd13050c259b05bd4c79f6c5e600a0c1737b6a8a7",
+    "executedReviewPromptHash": "c45e300f4e8a4bd2cc88fb9cd13050c259b05bd4c79f6c5e600a0c1737b6a8a7",
+    "reviewHash": "c258a0d89088d0e10a878fc5f0340947e2f7195277c3b48910316c05547e1e38",
+    "wordId": 335,
+    "inputHash": "27f12edc2a4f26ef00875c536e9896ebd06adebf972a70f3607dd2bb754c01aa",
+    "draftHash": "01921dd517dc30a14899b20a83ac60c02480e7c31fad22c470491a5a0a2774f5",
+    "finalHash": "9c65763555c490d763698c472ff203c98daa6215e4d2a7a05023d7372365f50f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cousin#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.846Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11339,
+        "revisionId": 39792055,
+        "revisionTimestamp": "2026-08-09T20:13:36Z",
+        "sha256": "8984e3de819ddc5b0416bb528a3dcbef09dc935427a700ffe8508e8924608ece",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/cousin",
+        "section": "cousin etymology",
+        "supports": [
+          "French relative meaning",
+          "Older Latin maternal-side term",
+          "Broader English kinship use"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "a9648ca76bcf7ee70d52c29413446390bc9baca6014afb667dae4afdc1a7475c",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "a9648ca76bcf7ee70d52c29413446390bc9baca6014afb667dae4afdc1a7475c",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/335.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cousin",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:02:19.602Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:06:10.867Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；/pronunciation/sourceIds；/senses/0/sourceIds；/confusions/0/sourceIds",
+        "message": "实际材料没有 Oxford 页面内容，正文却多处以其作为依据。应改引实际提供的法语维基词典英语词条，并准确限定支持范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/relatedExpressions/similar/1",
+        "message": "first cousin 与 second cousin 区分亲缘远近，不表示相差辈分。second cousins 的父母互为 first cousins，原译“远一辈”错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "stranger 表示不认识的人，不能用于判断是否为亲属；从未见过面的 cousin 也可能是 stranger。应删除这组对照。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway；/senses/0/meaning；/senses/0/examples",
+        "message": "材料还列出较广的亲属用法。应说明 cousin 也可指更远的堂表亲，并补充具体例句，无须另拆核心义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "可补充表示相关动物或相似事物的引申义，作为拓展。该义依据专业语言知识，不应归入未提供此义释义的来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "“通常和自己不同住”“自己家里”等说明容易使学生用居住安排判断亲属关系；应明确 cousin 与 sibling 的区别不取决于是否同住。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/2/zh",
+        "message": "从本人角度说母亲这边的 cousins，中文用“表亲”更准确。"
+      }
+    ],
+    "coverageAssessment": "已核对通常的堂表亲义及较远堂表亲用法，保留一个核心亲属义和原有两例，并补充远亲例句。相关动物或事物的引申义补入拓展栏；此项依据专业语言知识，来源标识留空。词性、读音、复数拼写、现有词源链及情境助记可保留。所给现代释义材料较简略，未扩展古旧称谓或地区性表达。",
+    "senseInventory": [
+      {
+        "sense": "父母的兄弟姐妹的子女，即 first cousin；不区分堂表、性别或长幼",
+        "coveredBy": [
+          "cousin-relative"
+        ],
+        "assessment": "核心义已有两个自然例句；补充用法说明即可，不需按中文亲属称谓拆义。"
+      },
+      {
+        "sense": "较广的堂表亲关系，包括 second cousin 等更远亲属",
+        "coveredBy": [
+          "cousin-relative"
+        ],
+        "assessment": "明确扩展定义，纠正 second cousin 的辈分误解，并补充例句；与核心亲属义合并教学。"
+      },
+      {
+        "sense": "引申指有亲缘、来源或相似关系的动物、植物或事物",
+        "coveredBy": [
+          "cousin-related-thing"
+        ],
+        "assessment": "补入 lessCommonSenses，以近亲动物为例；作为拓展，不增加初中核心义负担。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"cousin 指姑、伯、叔、舅、姨的子女，也就是堂兄弟姐妹或表兄弟姐妹；英语通常不区分堂表。\"",
+        "valueJson": "\"cousin 通常指姑、伯、叔、舅、姨的子女，也可泛指更远的堂表亲；这个词不区分堂表、性别或长幼。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"姑、伯、叔、舅、姨的子女；英语日常用 cousin 统称堂兄弟姐妹和表兄弟姐妹，不说明具体是哪一边的亲属。\"",
+        "valueJson": "\"通常指姑、伯、叔、舅、姨的子女（first cousin）；也可泛指更远的堂表亲。英语日常用 cousin 统称堂亲和表亲。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"通常根据上下文或家庭介绍判断具体亲属关系。需要说明辈分时可说 first cousin（堂/表兄弟姐妹）；日常交流只说 cousin 最自然。\"",
+        "valueJson": "\"通常根据上下文或家庭介绍判断具体亲属关系。需要说明亲缘远近时可说 first cousin（双方父母为兄弟姐妹的堂表亲）；不特别强调时，日常只说 cousin 即可。cousin 本身不区分堂表、性别或长幼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cousin-ex-3\",\"senseId\":\"cousin-relative\",\"en\":\"My dad and Anna's mum are first cousins, so Anna is my second cousin.\",\"zh\":\"我爸爸和安娜的妈妈是堂表亲，所以安娜和我是同辈的远房堂表亲。\",\"note\":\"父母互为 first cousins 时，子女彼此是 second cousins；年龄大小不影响这一称呼。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/2/zh",
+        "expectedValueJson": "\"我母亲这边的堂表亲\"",
+        "valueJson": "\"我母亲这边的表亲\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"second cousin\",\"zh\":\"再从表亲；远一辈的堂表亲\",\"note\":\"指更远一层的亲属关系，日常介绍时通常仍可简称 cousin。\"}",
+        "valueJson": "{\"en\":\"second cousin\",\"zh\":\"父母互为堂表兄弟姐妹的同辈远亲\",\"note\":\"双方父母互为 first cousins，双方因此是 second cousins；second 表示亲缘更远，不表示相差一辈。日常介绍时也可简称 cousin。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"stranger\",\"zh\":\"陌生人\",\"note\":\"只在说明是否属于亲属的语境中与 cousin 对照；并非 cousin 的固定反义词。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"英语没有日常固定的 cousin 反义词。说明家人关系时可与 sibling 区分；说明是否认识时才可能与 stranger 对照。\"",
+        "valueJson": "\"cousin 没有通用的反义词；这里用 sibling 区分亲属关系，sibling 并不是 cousin 的反义词。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cousin-related-thing\",\"title\":\"近亲；相关或相似的事物（引申）\",\"meaning\":\"比喻与另一种动物、植物或事物有亲缘、来源或相似关系的对象。\",\"note\":\"常见于科普或介绍事物的文字；close cousin 可表示关系较近的对象。\",\"example\":{\"id\":\"cousin-related-ex-1\",\"senseId\":\"cousin-related-thing\",\"en\":\"The wolf is a close cousin of the domestic dog.\",\"zh\":\"狼是家犬的近亲。\",\"note\":\"这里用 cousin 表示动物之间的亲缘关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"cousin 是父母兄弟姐妹的子女；sibling 才是自己的兄弟姐妹。\"",
+        "valueJson": "\"cousin 通常指父母的兄弟姐妹的子女；sibling 指自己的兄弟姐妹。两种关系都不取决于是否同住。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"指堂亲或表亲，通常和自己不同住也可以是亲属。\"",
+        "valueJson": "\"指堂亲或表亲；是否同住不影响这层亲属关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"sibling 指自己家里的兄弟或姐妹。\"",
+        "valueJson": "\"sibling 指自己的兄弟或姐妹；本句用单数，表示其中一位。共用房间只是居住安排，不是判断亲属关系的依据。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: cousin\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/cousin\",\"supports\":[\"名词及亲属含义\",\"英式与美式发音\",\"常见语法和搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：cousin（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/cousin#Anglais\",\"supports\":[\"英语名词的堂表亲含义及较广的亲属用法\",\"英语读音 /ˈkʌz.ən/\",\"first cousin、second cousin 等相关表达\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 335,
+    "headword": "cousin",
+    "meaning_zh": "n. 堂兄弟姊妹, 表兄弟姊妹",
+    "phonetic": "/'kʌzәn/",
+    "pos": "",
+    "forms": []
+  }
+}

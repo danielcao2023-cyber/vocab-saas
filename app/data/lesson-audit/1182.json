@@ -1,0 +1,373 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "01bea543200ed69673db2929a723cb12a7cf3773e6c4c81b98d445cc75f83fbb",
+    "executedReviewPromptHash": "01bea543200ed69673db2929a723cb12a7cf3773e6c4c81b98d445cc75f83fbb",
+    "reviewHash": "9a9876a3e7f276d262459a78f1c64d24116a28d63a0e6829b080cb51320b5276",
+    "wordId": 1182,
+    "inputHash": "0c11e84df67f5c7f894829ef914c3bb6cfa3a0c4099c99d678c4c85792fad363",
+    "draftHash": "eb638586cd567b49786386bd4f3e3cde8fd46a8c6cb6c91229f38f846c57fa3a",
+    "finalHash": "8cc790f447ca388aa6335abf09fec5a7758855f876292a8cf88b9ecc98c58054",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/safe#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.020Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116201,
+        "revisionId": 39763175,
+        "revisionTimestamp": "2026-08-03T04:25:34Z",
+        "sha256": "5d9c51332defe8f5194eca40984ea8e17e7705538ac297955ee34cf55214c942",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/safe",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:13:57.181Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:19:54.578Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note；/confusions/0；/wordFamily/0；/wordFamilyNote；/memoryAid/cues/2",
+        "message": "safely 的实际拼写是 safe + -ly，保留 e；初稿反复误教为去 e，须全部纠正。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/formation",
+        "message": "safety 可按 safe + -ty 分析，保留 e，并非把 e 改为 y。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "现有两例均说明人处于安全状态或平安无事，未实际覆盖词典中的“无害、使用时安全”这一常用功能。须补独立教学义和两例，并调整搭配、近义词及相关例句的归属。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "sûr 是法语编写者对英语 safe 的释义，不是可据此确立的历史来源。检索成功页的词源小节只有待补写模板，不能支持初稿的法语来源断言；应删除该断言，保留可解释的现代构词事实，不补造历史链。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；相关 sourceIds",
+        "message": "Oxford 未有实际来源内容，Cambridge 获取失败；正文却引用二者，并遗漏实际成功获取的英语词条。应改用可据实对应的来源，未获该来源支持的 unsafe 构词说明不冒用来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting",
+        "message": "保险箱这一具体物名没有固定的常用反义词；open box 只是另一种物品描述，不宜充当其反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1/note",
+        "message": "open a safe 表示打开保险箱，不等于开锁；开锁应是 unlock a safe。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/0",
+        "message": "不宜把旧式 /ei/ 记法一概判为不规范；直接教授本课采用的 /eɪ/ 更准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "实际词典还列有名词俚语“避孕套”。宜补为非核心阅读识别义，并说明日常通常使用 condom。"
+      }
+    ],
+    "coverageAssessment": "已核对形容词的“处于安全状态／平安无事”和“无害／可安全使用”两组常用功能，以及名词“保险箱”；修订后每个核心义均有两个自然英中例句。重叠的安全状态释义不机械拆分。俚语“避孕套”补为阅读识别义。已纠正构词拼写、虚设反向表达、open/unlock 混淆及来源指向。历史词源无法由现有内容建立，故删除无依据断言，保留空 stages；覆盖范围限于可见词典定义和基础常用功能。",
+    "senseInventory": [
+      {
+        "sense": "形容词：安全的、平安无事的、处于保护之下",
+        "coveredBy": [
+          "safe-adj"
+        ],
+        "assessment": "对应 sûr/sauf 及 en sûreté/en sécurité/à l’abri；属于重叠的状态用法，原有两例分别体现受到保护和历险后安然无恙，合并保留。"
+      },
+      {
+        "sense": "形容词：无害的；使用或进行时安全的",
+        "coveredBy": [
+          "safe-adj-use"
+        ],
+        "assessment": "对应 inoffensif/sûr；初稿只有搭配提示，缺少实质例句。补独立义项、两例及 safe for someone to use、safe to do 等句型。"
+      },
+      {
+        "sense": "可数名词：保险箱",
+        "coveredBy": [
+          "safe-n"
+        ],
+        "assessment": "原有两例自然，冠词和存放搭配正确；修正 open 的释义，删除人为设置的反向表达。"
+      },
+      {
+        "sense": "可数名词俚语：避孕套",
+        "coveredBy": [
+          "safe-n-slang"
+        ],
+        "assessment": "词典明确收录，非初中核心；补入 lessCommonSenses，仅作阅读识别，并提示常用词 condom。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 be safe from danger 表示“没有危险”。\"",
+        "valueJson": "\"记住 be safe from danger 表示“免受危险”，safe to use 表示“使用起来安全”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"旧音标 /seif/ 不规范；标准音标写作 /seɪf/。\"",
+        "valueJson": "\"本课采用 /seɪf/；字母 a 读双元音 /eɪ/，发音时由 /e/ 滑向 /ɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"由 safe 去掉词尾不发音的 e，再加 -ly；表示“安全地”。\"",
+        "valueJson": "\"由 safe 直接加 -ly，保留词尾 e；表示“安全地”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"没有危险，或没有受到伤害；也可指某处或某种做法能保护人免受危险。\"",
+        "valueJson": "\"处于安全状态，免受危险、伤害或其他威胁；也可表示经历某件事后平安无事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations",
+        "expectedValueJson": "[{\"en\":\"a safe place\",\"zh\":\"安全的地方\",\"note\":\"safe 放在名词前作定语，说明地点没有危险。\",\"kind\":\"common-collocation\"},{\"en\":\"safe to use\",\"zh\":\"使用起来安全\",\"note\":\"safe 后可接不定式，说明做某事不会带来危险。\",\"kind\":\"sentence-pattern\"}]",
+        "valueJson": "[{\"en\":\"safe from harm\",\"zh\":\"免受伤害\",\"note\":\"from 后接威胁或伤害，说明人处于受保护的状态。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"harmless\",\"zh\":\"无害的\",\"note\":\"用于说明事物或行为不会造成伤害，不通常用来描述人平安无事。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"secure 侧重保护或稳妥；harmless 侧重不会造成伤害。\"",
+        "valueJson": "\"secure 侧重受到保护或不易受侵害；safe 常直接说明人是否平安、是否受到危险威胁。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"open 和 lock 常与 safe 搭配，分别表示开锁和锁好。\"",
+        "valueJson": "\"open 表示打开保险箱，lock 表示锁上；若专指开锁，用 unlock。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"open box\",\"zh\":\"敞开的箱子\",\"note\":\"仅是存放物品的箱子，不强调坚固或能上锁；仅在谈存放方式时与保险箱形成对照。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"保险箱强调坚固和防护；普通敞开的箱子不具备这一含义。\"",
+        "valueJson": "\"safe 作“保险箱”时没有固定的常用反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"safe-adj-use\",\"title\":\"使用或进行时安全的；无害的\",\"meaning\":\"不会造成危险或伤害；常说明某物可安全使用，或某项活动可安全进行。\",\"usageNote\":\"safe for children 表示对儿童安全；safe to drink 说明饮用安全。两种结构可以合用，如 safe for children to use。\",\"examples\":[{\"id\":\"safe-use-ex1\",\"senseId\":\"safe-adj-use\",\"en\":\"This glue is safe for children to use in class.\",\"zh\":\"孩子们在课堂上可以安全地使用这种胶水。\",\"note\":\"safe for someone to use 说明对指定使用者来说，使用某物是安全的。\"},{\"id\":\"safe-use-ex2\",\"senseId\":\"safe-adj-use\",\"en\":\"Is the tap water here safe to drink?\",\"zh\":\"这里的自来水可以安全饮用吗？\",\"note\":\"safe to drink 说明饮用这种水是否安全，不是说水本身受到保护。\"}],\"patterns\":[{\"en\":\"something is safe to use / eat / drink\",\"zh\":\"某物可以安全使用／食用／饮用\",\"note\":\"不定式说明所谈的动作；主语通常是该动作的对象，如 water 是要喝的水。\",\"kind\":\"sentence-pattern\"},{\"en\":\"something is safe for someone to use\",\"zh\":\"某物供某人使用是安全的\",\"note\":\"for 后接使用者；to use 说明对该物做什么。\",\"kind\":\"sentence-pattern\"},{\"en\":\"It is safe to do something.\",\"zh\":\"做某事是安全的。\",\"note\":\"it 是形式主语，后面的不定式说明所谈的活动。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a safe place\",\"zh\":\"安全的地方\",\"note\":\"safe 放在名词前作定语，说明人待在那里是安全的。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"harmless\",\"zh\":\"无害的\",\"note\":\"强调不会造成伤害；不能用来表达某人经历危险后平安归来的状态。\"}],\"contrasting\":[{\"en\":\"unsafe\",\"zh\":\"不安全的\",\"note\":\"safe 的直接否定派生词，可说明物品或活动存在危险，如 unsafe to use。\"},{\"en\":\"dangerous\",\"zh\":\"危险的\",\"note\":\"强调可能造成伤害，可用于物品、做法或活动，如 dangerous to touch。\"}],\"similarNote\":\"harmless 侧重不会造成伤害；safe 常结合具体使用者、用途或活动来说明安全。\",\"contrastingNote\":\"unsafe 和 dangerous 在这一义下都可与 safe 对照，描述使用某物或进行某项活动有危险。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"safe-n-slang\",\"title\":\"避孕套（俚语）\",\"meaning\":\"避孕套；安全套。\",\"note\":\"这是较少见的俚语名词，作为阅读识别义了解即可；日常通常用 condom。\",\"example\":{\"id\":\"safe-slang-ex1\",\"senseId\":\"safe-n-slang\",\"en\":\"He took a safe out of his wallet.\",\"zh\":\"他从钱包里拿出一只避孕套。\",\"note\":\"这里的 safe 是俚语中的可数名词；钱包里的随身小物品这一语境有助于识别词义。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"safe 作形容词时描述安全状态；作名词时表示保险箱。派生副词 safely 的拼写要去掉 safe 末尾不发音的 e。\"",
+        "valueJson": "\"safe 作形容词时描述安全状态或说明某物使用起来安全；作名词时可表示保险箱。副词 safely 由 safe 直接加 -ly 构成，保留末尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"safe-adj\"",
+        "valueJson": "\"safe-adj-use\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"拼写为 safe 去 e 加 -ly，不写成 safe-ly。\"",
+        "valueJson": "\"safe 直接加 -ly，写作 safely，保留末尾 e；正常拼写不加连字符。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"safe 的历史来源可追溯到法语 sûr（意为“安全的”）这一相关词形；现今英语中的形容词和保险箱义共享同一拼写。\"",
+        "valueJson": "\"safely（安全地）和 safety（安全）是 safe 的现代派生词：safe + -ly 得到 safely，safe + -ty 得到 safety，两者都保留词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是历史来源线索，不是把 safe 按现代拼写拆成词根；safe 和 safely 的现代派生关系不等于词源演变。\"",
+        "valueJson": "\"这里仅解释现代构词；safe 的具体历史来源及其形容词与名词“保险箱”义的先后关系不作断言。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"safe 去掉不发音的 e，再加 -ly。\"",
+        "valueJson": "\"safe + -ly，保留词尾 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"拼写为 safely；辅音 f 保留，末尾 e 删除。\"",
+        "valueJson": "\"拼写为 safely（s-a-f-e-l-y）；f 和 e 都保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"safe 加名词后缀 -ty，拼写中末尾 e 改为 y。\"",
+        "valueJson": "\"safe 加名词后缀 -ty，保留词尾 e，写作 safety。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"safely、safety 和 unsafe 都与 safe 有直接的构词关系，注意 safely 去 e 加 -ly，safety 写作 -ety，unsafe 加前缀 un-。\"",
+        "valueJson": "\"safely = safe + -ly，safety = safe + -ty，两者都保留 e；unsafe = un- + safe，其中 un- 表示否定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"safely：安全地做某事，写作 safe 去 e 加 -ly。\"",
+        "valueJson": "\"safely：安全地做某事，写作 safe + -ly，保留 e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: safe\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/safe\",\"supports\":[\"safe 的形容词与名词用法\",\"safe 的常见搭配与派生词\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: safe\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/safe\",\"supports\":[\"safe 的形容词含义与常用句型\",\"safe and sound 等常见表达\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：safe（法语编写的英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/safe#Anglais\",\"supports\":[\"形容词 safe 的安全、平安、无害及受保护义\",\"名词 safe 的保险箱义和俚语避孕套义\",\"读音 /seɪf/、safe and sound，以及派生词 safely、safety\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1182,
+    "headword": "safe",
+    "meaning_zh": "adj. 安全的；平安的\nn. 保险箱",
+    "phonetic": "/seif/",
+    "pos": "",
+    "forms": []
+  }
+}

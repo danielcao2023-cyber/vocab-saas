@@ -1,0 +1,314 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5aed393ad8a6e26378b1aa7a177da6398cd20065f90c0c352c5a0c356b4e8ec4",
+    "executedReviewPromptHash": "5aed393ad8a6e26378b1aa7a177da6398cd20065f90c0c352c5a0c356b4e8ec4",
+    "reviewHash": "00718d5699fa25e71a1046ec8b715e8893c3a432804fde772d6968d47e8ceed8",
+    "wordId": 1194,
+    "inputHash": "504688414b7955e0ff952ab9cc918ab64c72f2bdb578907d0f548ad0c1fbf937",
+    "draftHash": "46a4c0f9829fccdb33a207789dd071f0b084d78b7296327e242e6f6c2fd1b902",
+    "finalHash": "79b5904111db436881354f88f2ae55cdeddff91940d0d510d24e4156a6e53aab",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/scarf#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.022Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 40886,
+        "revisionId": 39877025,
+        "revisionTimestamp": "2026-09-15T08:37:06Z",
+        "sha256": "07234fab8421672edf3ffc650f564ee82bb9394c3f46b36f2f2e2d3eed2b5d3c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/scarf",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:26:30.468Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:33:47.541Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Cambridge 未成功获取，不能承担当前引用；维基英语词条也未收录围裹动词和 scarfer 的相关说明。移除无对应依据的引用，保留实际支持的内容。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已获取的词源材料明确说明进食动词 scarf 由 scoff（吃）变形而来，初稿仍留空。应补入这条英语词源链，并与衣物义、斜接义分开。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏原词条中的及物动词“嵌接”。应作为专业用法补入，不能用接头名词义代替。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0/note；/wordFamily/0/meaning",
+        "message": "斜接接头义的复数用 scarfs；不能把衣物义的 scarves 推广到该专业名词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/1；/wordFamilyNote",
+        "message": "scarfer 的“快吃者”义未获所引词条支持，fast scarfer 也不是理想的自然教学示例。改用明确收录的合成词 headscarf，保留实际构词和拼写教学。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/1/note；/lessCommonSenses/1/example",
+        "message": "围裹动词宜明确标为罕见书面用法；改用头部裹着丝巾的例句，比裹婴儿的表达更适合展示这一用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote；/senses/0/examples",
+        "message": "补明装饰性领巾属于衣物义，并区别现代正式领带 tie；增加对应生活例句，无须另拆一个义项。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/usageNote；/senses/1/patterns",
+        "message": "进食义应提示偏美式的非正式语体，并补入词典明确列出的 scarf up 搭配。原有两个例句均可保留。"
+      }
+    ],
+    "coverageAssessment": "已核对原词条及法语维基词典英语词条的各义。衣物义和快速进食义均保留至少两个自然原创例句；专业接头名词、嵌接动词及罕见围裹动词分别处理。词典带问号的奶嘴义不纳入教学。补齐进食义的可靠词源，不推测衣物义和斜接义的更早来源；撤下无法获取的 Cambridge 引用。现有近义表达及进食方式对照的语境限制基本准确，无须强造反义词。",
+    "senseInventory": [
+      {
+        "sense": "衣物名词：围巾、头巾、装饰性领巾",
+        "coveredBy": [
+          "scarf-noun-clothing"
+        ],
+        "assessment": "核心义已覆盖脖围和头巾；补充领巾例句及与正式领带 tie 的区别，仍归入同一衣物义。"
+      },
+      {
+        "sense": "非正式动词：狼吞虎咽地吃；快速吃下",
+        "coveredBy": [
+          "scarf-verb-eat"
+        ],
+        "assessment": "已有 scarf down 和直接接食物的两个例句；补充 scarf up 及偏美式的语体提示。"
+      },
+      {
+        "sense": "专业名词：嵌接处；斜接接头",
+        "coveredBy": [
+          "scarf-noun-joint"
+        ],
+        "assessment": "已作为较少见义覆盖；修正相关复数说明为 scarfs。"
+      },
+      {
+        "sense": "罕见动词：用围巾围住、包裹",
+        "coveredBy": [
+          "scarf-verb-clothing"
+        ],
+        "assessment": "原词条支持保留；明确书面语体、调整示例，并移除不对应的维基引用。"
+      },
+      {
+        "sense": "专业动词：嵌接；斜接材料",
+        "coveredBy": [
+          "scarf-verb-joint"
+        ],
+        "assessment": "原词条列出而初稿遗漏；补入较少见义及独立例句。"
+      },
+      {
+        "sense": "罕见名词：婴儿塑料安抚奶嘴（存疑）",
+        "coveredBy": [],
+        "assessment": "词典原条带问号且无例证，不能可靠列为通行义，不写入学生课程。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-scarf\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"两种复数都可用，scarves 更常见；scarves 中 f 变为 v 再加 -es，scarfs 则直接加 -s。\"",
+        "valueJson": "\"衣物义两种复数都可用，scarves 更常见；scarves 把词尾 f 改为 ves，scarfs 直接加 -s。表示斜接接头时，复数用 scarfs。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"最常见的名词义。通常说 wear a scarf；围在头上时可用 headscarf。\"",
+        "valueJson": "\"最常见的名词义，包括保暖围巾、装饰性领巾和头巾。通常说 wear a scarf；专指头巾可用 headscarf。现代正式领带通常叫 tie 或 necktie。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scarf-noun-clothing-ex3\",\"senseId\":\"scarf-noun-clothing\",\"en\":\"She tied a silk scarf around her neck before the meeting.\",\"zh\":\"开会前，她在脖子上系了一条丝质领巾。\",\"note\":\"这里指装饰性的领巾，也属于 scarf 的衣物义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-scarf\"]",
+        "valueJson": "[\"wiktionary-scarf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 scarf down + 食物；不表示“围上围巾”。\"",
+        "valueJson": "\"偏美式口语，常说 scarf down + 食物；也可直接接食物，或用 scarf up + 食物。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"scarf up + food\",\"zh\":\"很快吃掉某种食物\",\"note\":\"up 也可与 scarf 连用，同属非正式的快速进食用法。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary-scarf\",\"cambridge-scarf\"]",
+        "valueJson": "[\"wiktionary-scarf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"可按字面理解，但比“戴围巾”少见；日常通常说 put a scarf around。\"",
+        "valueJson": "\"这是罕见的书面或文学用法；日常通常说 wrap a scarf around ... 或 put a scarf around ...。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/example",
+        "expectedValueJson": "{\"id\":\"scarf-verb-clothing-ex1\",\"senseId\":\"scarf-verb-clothing\",\"en\":\"She scarfed the baby against the wind.\",\"zh\":\"她用围巾把婴儿裹起来挡风。\",\"note\":\"此处是动词的少见字面用法。\"}",
+        "valueJson": "{\"id\":\"scarf-verb-clothing-ex1\",\"senseId\":\"scarf-verb-clothing\",\"en\":\"Her head was scarfed in blue silk.\",\"zh\":\"她的头上裹着蓝色丝巾。\",\"note\":\"scarfed 是被动结构中的过去分词，表示头部被丝巾裹住；这种表达偏书面。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"wiktionary-scarf\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scarf-verb-joint\",\"title\":\"嵌接；斜接\",\"meaning\":\"把木料等材料的端部加工成可搭接的形状，再接合起来。\",\"note\":\"这是木工等领域的专业及物动词，可用 scarf two pieces of timber together 表示把两段木料斜接起来。\",\"example\":{\"id\":\"scarf-verb-joint-ex1\",\"senseId\":\"scarf-verb-joint\",\"en\":\"The carpenter scarfed two short boards together to make a longer one.\",\"zh\":\"木匠把两块短木板斜接起来，做成了一块更长的木板。\",\"note\":\"scarfed ... together 表示用斜接的方法把材料连接起来。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-scarf\",\"wiktionary-scarf\"]",
+        "valueJson": "[\"wiktionary-scarf\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"scarf 的“围巾”和“斜接接头”是不同的名词用法；不要把它们硬连成一条容易记但没有根据的历史故事。\",\"stages\":[],\"caveat\":\"这里的记忆联想只帮助记忆现代用法，不代表 scarf 的历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"表示“狼吞虎咽地吃”的动词 scarf，由表示“吃”的俚语动词 scoff 变形而来。\",\"stages\":[{\"language\":\"英语\",\"form\":\"scoff\",\"meaning\":\"吃（俚语）\"},{\"language\":\"英语\",\"form\":\"scarf\",\"meaning\":\"狼吞虎咽地吃（口语）\"}],\"caveat\":\"这条演变链只涉及快速进食的动词义。衣物义和斜接义分别记忆；后面的联想故事只作记忆提示。\",\"sourceIds\":[\"wiktionary-scarf\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"围巾的复数；也可指多个斜接接头。\"",
+        "valueJson": "\"围巾、头巾等衣物的复数形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-scarf\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1",
+        "expectedValueJson": "{\"word\":\"scarfer\",\"partOfSpeech\":\"noun\",\"meaning\":\"狼吞虎咽地吃东西的人。\",\"formation\":\"scarf（快速吃）+ -er，表示做该动作的人；较少见、偏口语。\",\"spellingNote\":\"保留词尾 f，再加 -er。\",\"example\":{\"id\":\"scarf-family-ex2\",\"senseId\":\"scarf-verb-eat\",\"en\":\"He is a fast scarfer when he is hungry.\",\"zh\":\"他饿的时候吃东西特别快。\",\"note\":\"此词少见，日常更常直接描述某人 scarf down 食物。\"},\"sourceIds\":[\"wiktionary-scarf\"]}",
+        "valueJson": "{\"word\":\"headscarf\",\"partOfSpeech\":\"noun\",\"meaning\":\"头巾。\",\"formation\":\"head（头）+ scarf（围巾）组成的合成名词。\",\"spellingNote\":\"合写为 headscarf；常见复数为 headscarves，也可写 headscarfs。\",\"example\":{\"id\":\"scarf-family-ex2\",\"senseId\":\"scarf-noun-clothing\",\"en\":\"She wore a headscarf to keep her hair out of her face.\",\"zh\":\"她戴着头巾，免得头发挡住脸。\",\"note\":\"headscarf 明确表示戴在头上的布巾。\"},\"sourceIds\":[\"wiktionary-scarf\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"scarves 是复数词形变化；scarfer 是由表示快速吃的动词加 -er 构成，日常使用有限。\"",
+        "valueJson": "\"scarves 是衣物义的复数词形变化；headscarf 是 head + scarf 构成的合成词。斜接接头义的复数用 scarfs。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-scarf\",\"title\":\"Cambridge Dictionary: scarf\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/scarf\",\"supports\":[\"常用名词义及英美发音\",\"动词表示快速进食的用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"wiktionary-scarf\",\"title\":\"Wiktionary: scarf\",\"url\":\"https://fr.wiktionary.org/wiki/scarf#Anglais\",\"supports\":[\"少见的斜接接头名词义\",\"动词快速进食义的口语语体\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-scarf\",\"title\":\"法语维基词典：scarf（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/scarf#Anglais\",\"supports\":[\"围巾、头巾等衣物名词义\",\"斜接接头的专业名词义\",\"快速进食动词的口语用法及 scarf up 搭配\",\"进食动词由 scoff 变形的词源说明\",\"合成词 headscarf\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1194,
+    "headword": "scarf",
+    "meaning_zh": "n. 围巾, 头巾, 领带, 领巾, 嵌接\nvt. 用围巾围, 嵌接",
+    "phonetic": "/skɑ:f/",
+    "pos": "",
+    "forms": []
+  }
+}

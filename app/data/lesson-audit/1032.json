@@ -1,0 +1,372 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c4ce3a4a5c5ac06d7dbb742012f6cdfad073ca5a4eb5fd3adbb3934a155d606b",
+    "executedReviewPromptHash": "c4ce3a4a5c5ac06d7dbb742012f6cdfad073ca5a4eb5fd3adbb3934a155d606b",
+    "reviewHash": "c3c74177528612838efa494c41f97e94c3a7f8ebe88ab1620087611614696a92",
+    "wordId": 1032,
+    "inputHash": "93e9e51dfbfbed5a287447fa0adb638c39cbbf4a386050774da8d8ef22d158ae",
+    "draftHash": "37f4562bcd9cbd307c978542e9facdd9118fa5136e5981ae8eb57a54e8272523",
+    "finalHash": "9e6b675f6b41fbe4abfeace829608aa13998a854f62cd825d178e00f4abe86a5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/plane#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:21.263Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117041,
+        "revisionId": 39868774,
+        "revisionTimestamp": "2026-09-09T19:19:22Z",
+        "sha256": "dec282f0110b0a658cfd405de7140f1fac32e62c9025fcf1f8414ee305bf807b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/plane",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T04:57:29.699Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:09:56.968Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge-plane 的 sourceIds",
+        "message": "Cambridge 正文未取得，不能承担当前事实的来源引用。应改引已取得的英语词条；planar 的词形分析保留为专业语言知识，不冒称来源明载。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/lessCommonSenses",
+        "message": "尚未覆盖词典明确列出的形容词“平的”、名词“存在层面”和树名，以及动词“刨削、滑翔”。这些可作为识别义补齐，不必提升为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway、/lessCommonSenses/0、/confusions/0/items/0/note",
+        "message": "动词概述突出“乘飞机旅行”，却遗漏本次词典明确列出的刨削和滑翔；原少见义又合并多个意思而只举船只滑行的例子。应分别说明滑翔与船只高速滑行。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning、/senses/0/usageNote",
+        "message": "“能在空中飞行的航空器”范围过宽，会包含直升机等；airplane 也不因强调具体机型而使用。应明确飞机的固定机翼特征及两种说法的同义关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation、/wordFamily/0/spellingNote",
+        "message": "planar 实际拼作 p-l-a-n-a-r，并未保留 plane 的词尾 e。应明确去 e 加 -ar 是词形分析。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/example/senseId、/confusions/0/items/1/example",
+        "message": "planing 例句展示刨削动作，不能绑定名词“刨子”；plain 白衬衫例句没有出现 plane，却绑定飞机义。前者改绑刨削义，后者补入自然的机上场景，使绑定成立。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "应说明 planing 是 plane 的 -ing 形式，在本例中用作动名词，与词族条目的 noun 标注保持一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/cues/2/text",
+        "message": "plain 不是比 plane“多一个 i”；两词均为五个字母，应直接对照完整拼写。"
+      },
+      {
+        "severity": "polish",
+        "location": "/memoryAid/story",
+        "message": "地平线是线状意象，直接比作无限平面容易混淆几何概念；改用纸面向各方向延展的联想。"
+      }
+    ],
+    "coverageAssessment": "已核对全部名词、形容词和动词定义。飞机、几何平面两项核心义各有两例，原有几何介词和句法成立，予以保留；其余用法补为各一例的识别义，未展开专业术语。树名按悬铃木及美式 sycamore 的对应关系处理，不把跨地区的 sycamore 名称一概译为槭树。现有词源阶段只连接 planum 与17世纪几何义，顺序成立；飞机缩略来源另写在摘要中，无须重写。Cambridge 未取得正文，不作为本次依据。",
+    "senseInventory": [
+      {
+        "sense": "adj. 平的；平面的",
+        "coveredBy": [
+          "plane-adj-flat"
+        ],
+        "assessment": "原稿遗漏；补入技术语境识别义及一例。"
+      },
+      {
+        "sense": "n. 飞机",
+        "coveredBy": [
+          "plane-n-aircraft"
+        ],
+        "assessment": "核心义已有两例；修正过宽定义及 airplane 的使用说明。"
+      },
+      {
+        "sense": "n. 几何平面",
+        "coveredBy": [
+          "plane-n-geometry"
+        ],
+        "assessment": "核心义及两例完整；in/on a plane 的说明可保留。"
+      },
+      {
+        "sense": "n. 存在、精神等层面",
+        "coveredBy": [
+          "plane-n-level"
+        ],
+        "assessment": "原稿遗漏；补入 plane of existence 的识别义及一例。"
+      },
+      {
+        "sense": "n. 木工刨；刨子",
+        "coveredBy": [
+          "plane-n-tool"
+        ],
+        "assessment": "原有释义和例句成立，保留。"
+      },
+      {
+        "sense": "n. 树名：悬铃木；英式 plane/plane tree，美式亦称 sycamore",
+        "coveredBy": [
+          "plane-n-tree"
+        ],
+        "assessment": "补入树名及地区称呼说明，不混入英式 sycamore 可指的槭树。"
+      },
+      {
+        "sense": "v. 刨平；刨削",
+        "coveredBy": [
+          "plane-v-smooth"
+        ],
+        "assessment": "原稿仅在词族中间接出现；补入独立识别义，并修正 planing 例句的绑定。"
+      },
+      {
+        "sense": "v. 滑翔",
+        "coveredBy": [
+          "plane-v-glide"
+        ],
+        "assessment": "原稿遗漏；与船只滑行分开补入。"
+      },
+      {
+        "sense": "v. 船只高速航行时部分船身升出水面而滑行",
+        "coveredBy": [
+          "plane-v-nautical"
+        ],
+        "assessment": "从原合并义中独立出来，明确运动状态并配船只作主语的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb; adjective\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"plane 最常见的是“飞机”；在几何语境中也指“平面”。它还可作动词，表示乘飞机旅行或滑行。\"",
+        "valueJson": "\"plane 最常见的是“飞机”；在几何语境中也指“平面”。它还可作动词，表示刨平木料、滑翔或（船）高速滑行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-plane\"]",
+        "valueJson": "[\"wiktionary-plane-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"能在空中飞行的航空器；日常英语中常用来泛指飞机。\"",
+        "valueJson": "\"飞机，通常指有固定机翼的航空器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可数名词，通常说 a plane；强调具体机型或航空器时也常见 airplane。\"",
+        "valueJson": "\"可数名词，通常说 a plane。plane 是日常常用说法；airplane 在美式英语中尤其常见，二者在这一义中基本同义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-plane\"]",
+        "valueJson": "[\"wiktionary-plane-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-plane\"]",
+        "valueJson": "[\"wiktionary-plane-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"plane-v-travel\",\"title\":\"乘飞机旅行；滑行\",\"meaning\":\"作动词时，可指乘飞机飞行；在船只语境中也可指船高速滑行、船头抬起。\",\"note\":\"这些动词用法比名词“飞机”少见，初学者先掌握名词义即可。\",\"example\":{\"id\":\"plane-ex5\",\"senseId\":\"plane-v-travel\",\"en\":\"They planed across the bay in a fast boat.\",\"zh\":\"他们乘一艘快艇在海湾上滑行。\",\"note\":\"此处是较少见的船只滑行义。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}",
+        "valueJson": "{\"id\":\"plane-v-nautical\",\"title\":\"（船）高速滑行\",\"meaning\":\"船高速航行时，部分船身升出水面而滑行。\",\"note\":\"这是航海语境中的不及物动词用法，描述船加速后在水面上滑行的状态。\",\"example\":{\"id\":\"plane-ex5\",\"senseId\":\"plane-v-nautical\",\"en\":\"The speedboat began to plane as it picked up speed.\",\"zh\":\"快艇加速后，开始在水面上高速滑行。\",\"note\":\"主语是船；began to plane 表示开始进入部分船身升出水面的滑行状态。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plane-n-level\",\"title\":\"存在或精神层面\",\"meaning\":\"存在、思想或精神等的层面；境界。\",\"note\":\"多见于哲学、精神或幻想作品等语境；a plane of existence 表示一个存在层面。\",\"example\":{\"id\":\"plane-ex-level\",\"senseId\":\"plane-n-level\",\"en\":\"In the novel, spirits live on a different plane of existence.\",\"zh\":\"在这部小说中，灵魂生活在另一个存在层面。\",\"note\":\"这里的 plane 指存在层面，不是几何平面。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plane-n-tree\",\"title\":\"悬铃木\",\"meaning\":\"悬铃木；悬铃木属的树木。\",\"note\":\"这是树名，英式英语中可说 plane 或 plane tree；美式英语也常用 sycamore 指这类树木。\",\"example\":{\"id\":\"plane-ex-tree\",\"senseId\":\"plane-n-tree\",\"en\":\"We sat under a plane tree in the park.\",\"zh\":\"我们坐在公园里的一棵悬铃木下。\",\"note\":\"plane tree 是树名，不能按“飞机”理解。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plane-adj-flat\",\"title\":\"平的；平面的\",\"meaning\":\"作形容词，表示表面平坦的。\",\"note\":\"多见于正式或技术语境，如 a plane surface；日常通常用 flat。\",\"example\":{\"id\":\"plane-ex-adj\",\"senseId\":\"plane-adj-flat\",\"en\":\"For the experiment, we need a plane surface.\",\"zh\":\"做这个实验，我们需要一个平坦的表面。\",\"note\":\"plane 在这里是修饰 surface 的形容词。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plane-v-smooth\",\"title\":\"刨平；刨削\",\"meaning\":\"用刨子削去木料表面的薄层，使其平整或达到所需尺寸。\",\"note\":\"及物动词，常直接接木料或木制物的某个部位，如 plane a board。\",\"example\":{\"id\":\"plane-ex-smooth\",\"senseId\":\"plane-v-smooth\",\"en\":\"The carpenter planed the edge of the door so it would close properly.\",\"zh\":\"木匠把门边刨薄了一点，好让门能正常关上。\",\"note\":\"planed 是过去式；这里指用刨子削去少量木料。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"plane-v-glide\",\"title\":\"滑翔\",\"meaning\":\"在空中平稳滑行。\",\"note\":\"这是较少见、偏书面的不及物动词用法；日常更常用 glide。\",\"example\":{\"id\":\"plane-ex-glide\",\"senseId\":\"plane-v-glide\",\"en\":\"The gull planed over the water without flapping its wings.\",\"zh\":\"海鸥没有扇动翅膀，在水面上方滑翔。\",\"note\":\"planed 描写海鸥滑翔的动作。\"},\"sourceIds\":[\"wiktionary-plane-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"名词；也可作动词，指乘飞机飞行或滑行。\"",
+        "valueJson": "\"作名词时常指飞机、平面；作动词时可指刨平、滑翔或（船）高速滑行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"plane-confusion-ex2\",\"senseId\":\"plane-n-aircraft\",\"en\":\"She wore a plain white shirt.\",\"zh\":\"她穿了一件朴素的白衬衫。\",\"note\":\"plain 描写衣服简单朴素。\"}",
+        "valueJson": "{\"id\":\"plane-confusion-ex2\",\"senseId\":\"plane-n-aircraft\",\"en\":\"She wore a plain white shirt on the plane.\",\"zh\":\"她在飞机上穿着一件朴素的白衬衫。\",\"note\":\"plain 形容衬衫简单朴素；plane 在这里指飞机。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-plane\"]",
+        "valueJson": "[\"wiktionary-plane-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"plane + -ar\"",
+        "valueJson": "\"plane 去掉词尾 e，再加 -ar（现代词形分析）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"加 -ar 构成形容词 planar，词干保持 plane 的拼写。\"",
+        "valueJson": "\"planar 拼作 p-l-a-n-a-r；plane 的词尾 e 不保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-plane\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"plane-n-tool\"",
+        "valueJson": "\"plane-v-smooth\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"此处只列与 plane 有实际构词关系的 planar 和动词 planing；不要与 plan（计划）混为一组。\"",
+        "valueJson": "\"planar 与 plane 的“平面”义相关，可用去 e 加 -ar 记住拼写。planing 是 plane 的 -ing 形式，本课例句中用作动名词，指刨削。plan（计划）的 -ing 形式是 planning，需要双写 n。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"你登上 plane 去旅行，飞机窗外的地平线像一张无限展开的平面。记住同一个拼法 plane 可以指“飞机”或几何“平面”；听起来相同的 plain 则是另一词。\"",
+        "valueJson": "\"你坐上 plane 去旅行，拿出几何练习册：把纸面想象成向各个方向无限延伸的 plane，就想起了“平面”义。飞机与平面同拼作 plane，同音的 plain 则是另一个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"plain 多一个 i，常表示简单或朴素。\"",
+        "valueJson": "\"plane 拼作 p-l-a-n-e；plain 拼作 p-l-a-i-n，常表示简单、朴素，也可指平原。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"平面义的历史来源\",\"飞机义作为 aeroplane 或 airplane 的缩略形式\",\"木工工具和动词等少见用法\"]",
+        "valueJson": "[\"飞机、几何平面、存在层面、刨子和悬铃木等英语名词义\",\"形容词“平的”及刨削、滑翔、船只滑行的动词义\",\"英语读音、与 plain 的同音关系及规则词形\",\"平面义的历史来源和飞机义的缩略来源\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-plane\",\"title\":\"Cambridge Dictionary: plane\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/plane\",\"supports\":[\"飞机、平面等常见词义\",\"英式和美式读音\",\"plane 的相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1032,
+    "headword": "plane",
+    "meaning_zh": "n. 飞机；平面",
+    "phonetic": "/plein/",
+    "pos": "",
+    "forms": []
+  }
+}

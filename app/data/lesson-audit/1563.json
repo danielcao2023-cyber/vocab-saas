@@ -1,0 +1,328 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0618c3d9880f3240e39ecb15f5e3e2f55f56ed4874445a45e6afce2ab3fd3923",
+    "executedReviewPromptHash": "0618c3d9880f3240e39ecb15f5e3e2f55f56ed4874445a45e6afce2ab3fd3923",
+    "reviewHash": "658f8752b43197fd25d1e408bd366fe12809be1396ac9afcfbf7cb3d0257c404",
+    "wordId": 1563,
+    "inputHash": "808ee44d7cc783e2367558bf53d713fd2cf31adc2ee724427afe1f1e89da9cc7",
+    "draftHash": "d07d2f2853d83f9e7cbe88224678fed23bd77def58b5b719678435e6dbfe84a6",
+    "finalHash": "bcd87f7d5523f4b168b117e4a88d1e3af6a11722ee886611ed1a86e38a4600b3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wise#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.197Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117937,
+        "revisionId": 39878150,
+        "revisionTimestamp": "2026-09-15T23:35:09Z",
+        "sha256": "e42459a21c64c79bae11aef29dff98a7001f6c0cfebf39764248f81e5e81fc1b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wise",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:47:05.261Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:54:50.623Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note；/confusions/0/items/1/note；/wordFamily/1；/wordFamilyNote",
+        "message": "wisely 保留 wise 末尾的 e：wise + -ly → wisely。初稿反复说明“去 e”，且错误地排斥实际正确的拼写，必须统一修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0；全部现有 sourceIds",
+        "message": "Cambridge 页面未成功取回，不能作为已用资料支撑正文。应改引实际取得的法语维基词典英语词条；该词条未说明的语法辨析不绑定此来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有成功取得的历史词源资料，初稿仍以现代词族说明占位。应补入可确认的古英语及更早重构字形，并引用相同 URL；资料没有逐阶段释义，因此保留 stages 为空，不编造释义或把并列亲缘词串成演变链。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*；/lessCommonSenses/0/example；/confusions/*/items/*/example；/wordFamily/*/example",
+        "message": "共 11 个例句对象缺少目标结构必填的 note 字段，须逐一补齐。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/summary",
+        "message": "wisely 不仅说明动作的方式，也可评价采取某个行动是明智的；初稿的求助例句主要体现后一功能，宜明确说明。"
+      }
+    ],
+    "coverageAssessment": "已核对资料中的两项主要形容词定义：人的智慧与判断力、决定或做法的明智合理。初稿每义均有两个自然原创英中例句，翻译、时态、senseId 及近反义语境基本准确，无须增删核心义。wise beyond one's years 是第一义的固定表达，现有说明已明确其性质。修补词形说明、来源引用、历史词源及必填字段后可用。来源局限是 Cambridge 未成功取回；语法辨析和原创例句的评估依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "有智慧的；判断明达的，常用于人",
+        "coveredBy": [
+          "wise-adj-judgment",
+          "wise-less-expression"
+        ],
+        "assessment": "核心义有两个具体例句；wise beyond one's years 补充年龄与判断成熟度的固定表达，不构成新的独立义。"
+      },
+      {
+        "sense": "明智的；合理的，常评价决定、选择、建议或做法",
+        "coveredBy": [
+          "wise-adj-sensible"
+        ],
+        "assessment": "两个生活例句覆盖带外套和存钱的选择；wise to do、wise of someone to do 及 sensible、prudent、unwise、foolish 的辨析准确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"由 wise 去掉词尾 e，再加 -ly，表示“明智地”。\"",
+        "valueJson": "\"由 wise 保留词尾 e，直接加 -ly，拼作 wisely，表示“明智地”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"wise 描写人或事物；wisely 描写动作是怎样完成的。\"",
+        "valueJson": "\"wise 是形容词，描写人或事物；wisely 是副词，可说明做事的方式，也可评价采取某个行动是明智的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"修饰动词，说明做事的方式；拼写时去掉 wise 末尾的 e，再加 -ly。\"",
+        "valueJson": "\"可修饰动作，也可评价采取某个行动是明智的；本例评价的是她提前求助这一做法。拼写时保留 wise 末尾的 e，直接加 -ly，得到 wisely。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"wise 去掉词尾 e，再加 -ly。\"",
+        "valueJson": "\"wise + -ly；保留词尾 e，直接加 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"拼作 wisely，不是 wise­ly 中额外保留一个 e。\"",
+        "valueJson": "\"逐字母拼作 w-i-s-e-l-y：wise 中的 e 保留。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"wisdom 和 wisely 与 wise 同族，分别是名词和副词；拼写时注意 wisdom 去 e、wisely 也去 e 再加 -ly。\"",
+        "valueJson": "\"wisdom 和 wisely 与 wise 同族，分别是名词和副词。注意实际拼写：wisdom 中没有 e；wisely 保留 wise 的 e，再加 -ly。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_wise\",\"title\":\"Cambridge Dictionary: wise\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/wise\",\"supports\":[\"主要形容词义及常见搭配\",\"英式和美式读音\",\"比较级、最高级与副词形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"fr_wiktionary_wise\",\"title\":\"法语维基词典：wise（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/wise#Anglais\",\"supports\":[\"有智慧与明智合理两类形容词用法\",\"wise 的 /waɪz/ 读音及比较级、最高级形式\",\"wisdom、wisely 等词族成员及 wise beyond one's years 等表达\",\"古英语及更早重构词源字形、相关词对照\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_wise\"]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代英语中可把 wise 与 wisdom、wisely 看作同族词来记；这说明的是现代词形关系，不等于完整历史词源。\"",
+        "valueJson": "\"wise 来自古英语 wīs；更早可追溯到重构的原始日耳曼语形式 *wīsaz 和印欧语词根 *weid-。它与古高地德语中的相关词以及现代德语 weise、荷兰语 wijs、瑞典语 vis 有亲缘关系，英语 wit 也与它相关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"wise 的历史词源涉及更早的日耳曼语形式；这里不把现代词族关系误写成历史演变链。\"",
+        "valueJson": "\"星号 * 表示语言学家重构的形式。列出的其他语言词形是亲缘对照，不能当作英语 wise 依次经历的演变阶段；现代词族构词和记忆故事也不等于历史词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"fr_wiktionary_wise\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wise 形容奶奶的判断力；先倾听再给建议体现成熟的处事方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wise 修饰 teacher，强调老师判断明达、值得请教。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"It was wise to... 用于回顾并评价过去的做法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"make a wise choice 表示作出明智选择；这里指留存一部分钱供以后使用。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wise beyond his years 表示他的判断力比这个年龄通常具有的更成熟。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wise 是形容词，放在名词 decision 前，评价寻求帮助这一决定。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wisely 评价她在考试前求助是明智的，并非只描述求助的具体方式。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"to check the time 说明被评价的行动；before we leave 表示查看时间发生在出发之前。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"of Ben 点明作出明智行动的人，to bring an umbrella 说明具体行动。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wisdom 是名词，在这里作主语，表示她处理事情的智慧。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"wisely 修饰 use；use your time wisely 指合理安排、利用时间。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1563,
+    "headword": "wise",
+    "meaning_zh": "adj. 明智的；有智慧的",
+    "phonetic": "/waiz/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "87d7a72f169f8db87875aecd646344367210b0af7b689cb9b259fc4d54993961",
+    "executedReviewPromptHash": "87d7a72f169f8db87875aecd646344367210b0af7b689cb9b259fc4d54993961",
+    "reviewHash": "593100ab883308d5bfc25c4b71734cf86210f194eefe74387d18f7942a96a61a",
+    "wordId": 891,
+    "inputHash": "0bb9dd3773f2fdce5ba9bcbecd0e711fac1dc94b55104955b3725cf686612aa7",
+    "draftHash": "7929212824e1b0d8aede38c93f411160ca09a3a6394b71bfe2386f84136c8835",
+    "finalHash": "93ffc1823169cc49f92f546ea267de65b3d5dc43bbfdc1fcf0a5602f851be73d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/music#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:22.748Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10181,
+        "revisionId": 38442935,
+        "revisionTimestamp": "2025-08-01T02:51:32Z",
+        "sha256": "994cff9c465c4fa4098e403bfffb758b8f0afeaf9a7183098113a80b3ec882a4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/music",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:56:30.048Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T01:03:43.369Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/spellingNote；/wordFamilyNote",
+        "message": "musical 没有词尾 e。musically 是 musical 直接加 -ly，连接处形成 ll；两处“去 e”说明必须纠正。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1/example",
+        "message": "school musical club 不是表达“学校音乐社”的常规搭配，用它示范 musical 容易误导。改用自然明确的 musical instruments。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "来源中的 xno 是盎格鲁-诺曼语，不能写成古诺尔曼语。阶段数组还漏掉了这一中间环节，绘成箭头后会错误呈现古法语直接到中古英语的路径。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "尚未覆盖 music 表示“乐谱”的常见用法，尤其是 read music。补入独立用法和两个例句；现有“音乐／乐曲”两栏可保留为同一基本义的教学展开。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/sources；各处 /sourceIds",
+        "message": "Oxford 正文不在实际取得的材料中，无法据此核对其所支持的内容。相关引用改为实际提供的英语维基词典词条；该页未列出的 musically 和新增乐谱义使用空来源数组，由专业语言知识支撑。推荐标签保持不变。"
+      }
+    ],
+    "coverageAssessment": "给出的英语词典正文明确列出不可数名词“音乐”这一宽泛义。原有 music-n-art 与 music-n-work 分别展示泛指音乐和具体作品的表达，均有两个自然例句，不应据此宣称词典列出了两个独立主义。补入“乐谱”用法及两个例句后，主要日常用法得到覆盖。其余读音、不可数性、例句归属、近义词限制及 silence 的语境对照均可保留。来源限于所给正文与专业语言知识，未取得的 Oxford、Cambridge 正文不作为核验依据。",
+    "senseInventory": [
+      {
+        "sense": "n. [U] 音乐：音乐艺术、音乐声及乐曲内容",
+        "coveredBy": [
+          "music-n-art",
+          "music-n-work"
+        ],
+        "assessment": "对应所给词典明确列出的基本义。两栏是泛指与具体作品用法的教学分组，各有两个例句；a piece of music 的可数单位是 piece，原稿对此说明正确。"
+      },
+      {
+        "sense": "n. [U] 乐谱；书面记录的音乐",
+        "coveredBy": [
+          "music-n-score"
+        ],
+        "assessment": "原稿遗漏，补入 read music 和摆放乐谱的两个例句。这是专业语言知识可确定的常见延伸义，所给维基词典正文未单列，因此不挂接该页作为此义的直接来源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"musical 去掉词尾 e，再加 -ly。\"",
+        "valueJson": "\"musical 直接加 -ly，得到 musically；连接处有两个 l。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"musical、musician 和 musically 都与 music 同族；拼写分别注意 -al、-ian 和去 e 加 -ly。\"",
+        "valueJson": "\"musical 可按 music + -al 记，musician 可按 music + -ian 记；musically 是 musical 直接加 -ly，注意其中的 ll。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/en",
+        "expectedValueJson": "\"Mia joined the school musical club.\"",
+        "valueJson": "\"The shop sells musical instruments.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/zh",
+        "expectedValueJson": "\"米娅加入了学校音乐社。\"",
+        "valueJson": "\"这家商店卖乐器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"musical 修饰 club，说明社团与音乐有关。\"",
+        "valueJson": "\"musical 是形容词，修饰 instruments；musical instruments 指乐器。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"music 经古法语、古诺尔曼语和中古英语的相关形式传入英语；更早与拉丁语 musica、希腊语 mousikē 有关。\"",
+        "valueJson": "\"英语 music 源自中古英语 musik / musike，后者经盎格鲁-诺曼语 musik / musike 承自古法语 musique；更早可追溯到拉丁语 mūsica 和古希腊语 μουσική（mousikḗ）。\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/stages/3",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"language\":\"盎格鲁-诺曼语\",\"form\":\"musik / musike\",\"meaning\":\"音乐\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"music-n-score\",\"title\":\"乐谱\",\"meaning\":\"供演奏或演唱使用的书面乐谱；这里的 music 仍是不可数名词。\",\"usageNote\":\"在练习、排练等语境中，music 可以指乐谱。read music 常指看懂乐谱、识谱；表示一份乐谱可以说 a score 或 a copy of the music。\",\"examples\":[{\"id\":\"music-ex-score-1\",\"senseId\":\"music-n-score\",\"en\":\"Nina learned to read music in her piano lessons.\",\"zh\":\"妮娜在钢琴课上学会了识谱。\",\"note\":\"read music 指读懂乐谱上的记号。\"},{\"id\":\"music-ex-score-2\",\"senseId\":\"music-n-score\",\"en\":\"Ben put his music on the stand before he started to play.\",\"zh\":\"本在开始演奏前把乐谱放到了谱架上。\",\"note\":\"可以放在谱架上的 music 指乐谱；先放好乐谱，再开始演奏。\"}],\"patterns\":[{\"en\":\"read music\",\"zh\":\"识谱；读谱\",\"note\":\"常指具备看懂乐谱的能力。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"sheet music\",\"zh\":\"乐谱\",\"note\":\"强调书写或印刷形式的乐谱；sheet music 通常也不可数。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"score\",\"zh\":\"乐谱；总谱\",\"note\":\"表示一份乐谱时可说 a score；在管弦乐等语境中，常指列出各声部的总谱。\"}],\"contrasting\":[],\"similarNote\":\"score 作乐谱讲时可数；music 和 sheet music 在这里通常不可数。\",\"contrastingNote\":\"此义没有常用的直接反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[\"wiktionary_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford_music\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"music 的历史来源形式与传入路径\"]",
+        "valueJson": "[\"music 的音乐义与不可数名词标注\",\"英式与美式读音\",\"派生词 musical、musician 的列举\",\"music 的历史来源形式与传承路径\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_music\",\"title\":\"Oxford Learner’s Dictionaries: music\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/music\",\"supports\":[\"music 的名词用法、常见搭配及词族相关查询\",\"英式与美式发音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 891,
+    "headword": "music",
+    "meaning_zh": "n. 音乐, 乐曲",
+    "phonetic": "/'mju:zik/",
+    "pos": "",
+    "forms": []
+  }
+}

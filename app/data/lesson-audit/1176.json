@@ -1,0 +1,341 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8b926721c5671e4362ece9a4a96f2ae20054abce3e750cf58c3c3a81f818326c",
+    "executedReviewPromptHash": "8b926721c5671e4362ece9a4a96f2ae20054abce3e750cf58c3c3a81f818326c",
+    "reviewHash": "3e17176b9457b02819bd9026aa987db6b66ce72db0bec06afa093db53797b08f",
+    "wordId": 1176,
+    "inputHash": "c42c7f3840b1d243e03694adad62487b9ae75fadc7ff15aa55815d706a010670",
+    "draftHash": "dbd72ade185813f09d01d975e4e1ace2ff2a0ed0cb2d5622352f9a5d33c5b1ac",
+    "finalHash": "d0e3e4c578a1a5e581fab6f23dbc1d03153d65fdac0ba3e75a5693a9f3725222",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rubbish#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.019Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118231,
+        "revisionId": 38378627,
+        "revisionTimestamp": "2025-07-02T16:42:24Z",
+        "sha256": "442fdbf4c525eb7c6514d2e5f798e7054478fa99d13a521a131cb2c57297f727",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rubbish",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:02:07.461Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:13:54.567Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology；/sources/1/supports",
+        "message": "词源材料写的是盎格鲁—诺曼语 rubouses，不是中古英语 rubbous。原阶段还填入了没有实际字义的占位说明，应将可证实的来源形式保留在 summary，清空阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses/2；/senses",
+        "message": "总词性只标 noun，但正文教授形容词及 be rubbish at。s3 的名词式标题又与形容词结构混写，应明确其形容词用法，并为“劣质或无价值的东西”补充明确的名词用例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*/note；/confusions/0/items/*/example/note",
+        "message": "现有六个义项例句和两个辨析例句均缺少结构要求的 note 字段，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds；/senses/*/sourceIds；/confusions/0/sourceIds；/sources",
+        "message": "Cambridge 本次未取得正文，不能承担这些内容的证据引用。应将实际有材料支持的定义和不可数用法关联至英语维基词典条目，其余依据专业语言知识的内容不冒挂该来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses；/forms",
+        "message": "可补列英式非正式及物动词 rubbish，表示严厉批评或贬低，并准确列出 rubbishes、rubbished、rubbishing。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily；/wordFamilyNote",
+        "message": "词族留空过于保守。rubbishy 是 rubbish 加 -y 构成的真实非正式形容词，可补充其拼写和自然例句。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的英语词条中的“垃圾”“胡说”和形容词“差劲的”，并依据专业语言知识补足劣质事物的名词用法、动词拓展及 rubbishy。补丁后每个核心义均有两个自然例句；原有近义与反向表达的语境限制基本恰当，予以保留。材料未支持更细的历史演变链或 rubouses 的具体字义，因此不补造阶段。Cambridge 未取得正文，已移除其证据引用。",
+    "senseInventory": [
+      {
+        "sense": "垃圾；废弃物（不可数名词）",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "两例覆盖处理垃圾和描述环境中的垃圾；不可数说明准确。"
+      },
+      {
+        "sense": "胡说；不实或荒唐的话（非正式不可数名词）",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "两例均实际表达对言论真实性或可信度的否定，语气提示恰当。"
+      },
+      {
+        "sense": "差劲的；在某方面不擅长（英式非正式形容词）",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原有两例分别覆盖质量评价和 be rubbish at；补丁明确词性及介词后的结构。"
+      },
+      {
+        "sense": "劣质或无价值的东西、内容（非正式不可数名词）",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "新增两例分别涉及商品和电视节目，避免只用含混的 be rubbish 代表全部名词用法。"
+      },
+      {
+        "sense": "严厉批评；贬低（英式非正式及物动词）",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "作为拓展义补列一例，并补齐规则屈折形式。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; adjective; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"很差劲的东西；糟糕的表现\"",
+        "valueJson": "\"差劲的；不擅长的（形容词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 rubbish 作形容词补语，放在 be 后；也可用于 be rubbish at something，表示某方面很不擅长。\"",
+        "valueJson": "\"英式非正式形容词，可放在 be 后作表语，也可放在名词前；be rubbish at + 名词或动名词表示“不擅长……”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"rubbish 是不可数名词；the 指双方知道的那堆垃圾。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a lot of 可以修饰不可数名词 rubbish；这里用 There was。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"that’s rubbish 否定前面“考试取消”的说法，语气较直接。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"that rubbish 指那些不可信的话；rubbish 在此仍是不可数名词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用 rubbish 评价电影质量，属于英式非正式说法。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at 是介词，后接动名词 remembering；be rubbish at 表示“不擅长”。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"some 后的 rubbish 不可数，因此用 There is。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"two 修饰 pieces；数量变化体现在 piece → pieces 上。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"劣质或无价值的东西（名词）\",\"meaning\":\"非正式用法，贬指质量低劣的商品，或没有价值的节目、作品等内容。\",\"usageNote\":\"此义仍是不可数名词。判断它是在说东西质量差，还是在说某句话是胡说，要看具体语境。\",\"examples\":[{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"That shop sells cheap rubbish; my new bag lasted only a week.\",\"zh\":\"那家店卖的都是廉价劣质货；我的新包只用了一周就不能用了。\",\"note\":\"sell 后的 rubbish 是名词，指劣质商品。\"},{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"The channel shows hours of rubbish every evening.\",\"zh\":\"那个频道每天晚上都播好几个小时的烂节目。\",\"note\":\"这里评价的是节目质量，并不一定是在说节目中的话不真实。\"}],\"patterns\":[{\"en\":\"sell rubbish\",\"zh\":\"卖劣质货\",\"note\":\"rubbish 作不可数名词，贬指所卖商品的质量。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"cheap rubbish\",\"zh\":\"廉价劣质货\",\"note\":\"带明显贬义，强调东西便宜但质量很差。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"junk\",\"zh\":\"劣质货；无用的东西\",\"note\":\"可指劣质或无用的物品，也可贬指没有价值的内容；有时仅指旧杂物。\"}],\"contrasting\":[{\"en\":\"quality goods\",\"zh\":\"优质商品\",\"note\":\"在评价商品质量时，与劣质货形成对照。\"},{\"en\":\"worthwhile content\",\"zh\":\"有价值的内容\",\"note\":\"评价节目、文章等内容的价值时，可与本义的 rubbish 对照。\"}],\"similarNote\":\"junk 和本义的 rubbish 都可贬低事物的质量或价值；junk 也常指旧杂物。\",\"contrastingNote\":\"两项表达分别对应商品质量和内容价值，须按语境选择。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lc1\",\"title\":\"严厉批评；贬低（动词）\",\"meaning\":\"以强烈否定的态度批评或贬低某人、某事或某种说法。\",\"note\":\"英式非正式用法，常见于评论或报道；作及物动词，后面直接接被批评的对象。\",\"example\":{\"id\":\"lc1-e1\",\"senseId\":\"lc1\",\"en\":\"The manager rubbished our plan without reading it.\",\"zh\":\"经理看都没看我们的计划，就把它批得一无是处。\",\"note\":\"rubbished 是过去式，直接以 our plan 作宾语。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词第三人称单数\",\"form\":\"rubbishes\",\"ipa\":\"/ˈrʌbɪʃɪz/\",\"note\":\"动词以 -sh 结尾，第三人称单数加 -es，读音增加 /ɪz/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式与过去分词\",\"form\":\"rubbished\",\"ipa\":\"/ˈrʌbɪʃt/\",\"note\":\"直接加 -ed；-ed 在 /ʃ/ 后读 /t/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词现在分词与动名词\",\"form\":\"rubbishing\",\"ipa\":\"/ˈrʌbɪʃɪŋ/\",\"note\":\"直接加 -ing，不双写末尾字母。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"rubbishy\",\"partOfSpeech\":\"adjective\",\"meaning\":\"劣质的；差劲的；没有价值的\",\"formation\":\"rubbish + 形容词后缀 -y。\",\"spellingNote\":\"在 rubbish 后直接加 y，写作 rubbishy；保留原有的 bb 和 sh。\",\"example\":{\"id\":\"wf-rubbishy-e1\",\"senseId\":\"s3\",\"en\":\"This rubbishy umbrella broke the first time I used it.\",\"zh\":\"这把劣质雨伞第一次用就坏了。\",\"note\":\"rubbishy 是非正式形容词，直接修饰 umbrella，评价其质量。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本讲解不列常用且可靠的派生词；trash、garbage 等是近义词，不属于 rubbish 的词族。\"",
+        "valueJson": "\"rubbishy 是 rubbish 加 -y 构成的非正式形容词；rubbish 的动词用法属于词性转换。trash、garbage 等是近义词，不属于 rubbish 的词族。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"历史词源可追溯到中古英语 rubbous 一词；它与 rubble 和 rob 有关联。\"",
+        "valueJson": "\"rubbish 的词源可追溯到盎格鲁—诺曼语 rubouses；英语 rubble 和 rob 是词源上相关的词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"rubbous\",\"meaning\":\"与 rubbish 有历史关联的早期形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"rubbish 与中古英语 rubbous 的词源关联\"]",
+        "valueJson": "[\"名词“垃圾”和“胡说”的含义及不可数用法\",\"形容词“差劲的”的含义\",\"盎格鲁—诺曼语来源形式 rubouses；与 rubble、rob 的词源关联\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: rubbish\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/rubbish\",\"supports\":[\"发音与词性\",\"rubbish 表示垃圾的用法\",\"口语中表示胡说或很差劲的用法\",\"不可数用法及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1176,
+    "headword": "rubbish",
+    "meaning_zh": "n. 废物, 垃圾, 胡说",
+    "phonetic": "/'rʌbiʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

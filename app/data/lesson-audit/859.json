@@ -1,0 +1,328 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "28dfffccd2cdb14891fd88ee2a7a71622f03c4f60b9966b81a90895a51266ab0",
+    "executedReviewPromptHash": "28dfffccd2cdb14891fd88ee2a7a71622f03c4f60b9966b81a90895a51266ab0",
+    "reviewHash": "fa8cb0e8a2f107847411c699a30798da30b5440000a854d5250fc8aa01abccb5",
+    "wordId": 859,
+    "inputHash": "0555a868023fabdf6a939de77fb4c8b2fc3f77c6945716686d2943fe5a2ed1be",
+    "draftHash": "72798b53acc75fe78c8d65b2f35e5f7c70f089d67cae2571020fa3bf20829093",
+    "finalHash": "866ccebf2e76556f52c49cc566f7304b18f96281672d0b64a0f962e6671d4c03",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/mile#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:19.148Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2091,
+        "revisionId": 39914082,
+        "revisionTimestamp": "2026-10-02T09:42:56Z",
+        "sha256": "70ee8cb43a847103c2535a0a6ba25045a92c9b54856d8c7de3c26400e385f0bf",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/mile",
+        "section": "mile etymology",
+        "supports": [
+          "Latin thousand-paces measure; inherited borrowed form and varying historical length"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:13:10.091262+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "3326eed619cdf107f2a03bf6aea6ce333e178024dbf3adf87255d89254b395e3",
+        "summaryAndSupportsWordCount": 58,
+        "sha256": "3326eed619cdf107f2a03bf6aea6ce333e178024dbf3adf87255d89254b395e3",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/859.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/mile",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:13:19.144Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:21:41.544Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 cambridge-mile 的 sourceIds",
+        "message": "本次未取得 Cambridge 词条正文，不能将其列作这些具体说明的依据。应改引已取得的法语维基词典英语词条，并限定支持范围；该词条未记载的远距离用法及公里对照不虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏来源明确列出的航空特定语境中的海里义、航空常旅客计划积分义。可作为扩展义补入，并说明航空中的 mile 不能一概理解为海里。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "usageNote 提到表示巨大差距，但两个例句均只描述地点距离。需补充程度、水平差距的例句和搭配，并为相关近义、对照表达限定语境。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "古英语阶段的 meaning 只是来源关系说明，没有解释历史字义。应将可证实的 mil 形式保留在 summary，删除占位阶段；同时明确 milia 是表示“数千”的复数形式。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "走过一块写着“1 mile”的路牌不等于走了一英里。应改成路牌标明目的地距离的情境，并使用完整自然的英语助记句。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的普通英里、航空特定语境的海里、常旅客里程积分，以及专业语言知识中的 miles 远距离和程度差距用法。补丁保留原有正确的读音、复数拼写、单位换算、生活例句和 mileage 构词说明；为差距用法补足两例，并补入两个扩展义。现有来源未直接展开所有搭配，相关原创教学说明据专业语言知识审校，不将不可用页面冒充证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：英里，普通长度单位",
+        "coveredBy": [
+          "mile-1"
+        ],
+        "assessment": "核心义已覆盖，有两个自然例句；约 1.609 公里的换算及单复数说明正确。"
+      },
+      {
+        "sense": "通常用复数 miles：很远的距离",
+        "coveredBy": [
+          "mile-2"
+        ],
+        "assessment": "原有两个例句已覆盖。a mile away 与泛指很远的 miles away 的区别说明正确，保留。"
+      },
+      {
+        "sense": "miles 的引申强调用法：程度或水平差距很大",
+        "coveredBy": [
+          "mile-2"
+        ],
+        "assessment": "原稿仅在说明中提及；补入两个例句、比较结构和有语境限制的相关表达。"
+      },
+      {
+        "sense": "名词：海里，限特定航空语境",
+        "coveredBy": [
+          "mile-3"
+        ],
+        "assessment": "原稿遗漏；补入扩展义，用 nautical mile 明确单位，并保留语境限制。"
+      },
+      {
+        "sense": "名词：航空常旅客计划中的里程积分",
+        "coveredBy": [
+          "mile-4"
+        ],
+        "assessment": "原稿遗漏；补入扩展义和原创例句，说明积分不必等于实际飞行距离。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-mile\",\"title\":\"Cambridge Dictionary: mile\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/mile\",\"supports\":[\"mile 的英式与美式发音\",\"mile 的名词用法、复数形式及常见搭配\",\"mileage 的词形与含义\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-mile\",\"title\":\"Wiktionnaire：mile（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/mile#Anglais\",\"supports\":[\"英语名词 mile 的英里义、航空海里义和常旅客计划积分义\",\"英语发音、规则名词变形和单位符号 mi\",\"派生词列表中的 mileage\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-mile\"]",
+        "valueJson": "[\"wiktionary-mile\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-mile\"]",
+        "valueJson": "[\"wiktionary-mile\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-mile\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-mile\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-mile\"]",
+        "valueJson": "[\"wiktionary-mile\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"很远的距离\"",
+        "valueJson": "\"很远；差距很大（常用复数 miles）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"很远的一段距离；常用复数 miles 表示相隔很远。\"",
+        "valueJson": "\"很远的一段距离；也可夸张地表示程度或水平相差很大，通常用复数 miles。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见表达是 miles away；具体含义由上下文决定，也可夸张地强调差距很大。\"",
+        "valueJson": "\"miles away 常表示相隔很远，不一定是在精确报数；口语中的 miles better、miles ahead 则表示好得多、远远领先，不按实际英里数理解。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mile-2-ex3\",\"senseId\":\"mile-2\",\"en\":\"This new mattress is miles better than my old one.\",\"zh\":\"这张新床垫比我的旧床垫好得多。\",\"note\":\"miles 加强比较级 better，夸张地表示差别很大。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mile-2-ex4\",\"senseId\":\"mile-2\",\"en\":\"Leo is miles ahead of me in English.\",\"zh\":\"利奥的英语水平远远超过我。\",\"note\":\"miles ahead of 表示在水平上远远领先，不是地点相距很远。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"miles better than ...\",\"zh\":\"比……好得多\",\"note\":\"口语中 miles 可以加强比较级，表示程度相差很大；也可用于 miles cheaper 等表达。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"miles ahead of someone\",\"zh\":\"远远领先于某人\",\"note\":\"可比较学习水平、工作进度等，不表示具体相距多少英里。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"far better\",\"zh\":\"好得多\",\"note\":\"对应 miles better 的程度比较，语气较中性；不能直接替换表示地点很远的 miles away。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"about the same\",\"zh\":\"差不多\",\"note\":\"比较同一方面的质量或水平时，可与 miles better 等强调巨大差距的表达对照；不用于表示地点远近。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"far away 和 a long way away 都能描述距离远；miles away 常带强调意味。\"",
+        "valueJson": "\"谈地点距离时，可用 far away、a long way away；谈“好得多”时可用 far better。这些表达不能跨语境直接替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"nearby 只在描述地点距离的语境中与 miles away 对照。\"",
+        "valueJson": "\"地点远近可对照 nearby；比较质量或水平差距时，可对照 about the same。mile 本身没有通用反义词。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mile-3\",\"title\":\"海里：特定航空语境中的用法\",\"meaning\":\"在特定航空语境中，mile 可指海里，即 nautical mile。\",\"note\":\"nautical mile 明确表示海里，1 海里等于 1.852 公里。航空中也会使用普通英里，须看单位说明，不能把所有 mile 都译成海里。\",\"example\":{\"id\":\"mile-3-ex1\",\"senseId\":\"mile-3\",\"en\":\"The aircraft was ten nautical miles from the airport.\",\"zh\":\"飞机当时距机场十海里。\",\"note\":\"nautical miles 明确指海里，不能按普通英里换算。\"},\"sourceIds\":[\"wiktionary-mile\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mile-4\",\"title\":\"航空常旅客计划的里程积分\",\"meaning\":\"航空公司常旅客奖励计划中的积分，通常用复数 miles。\",\"note\":\"积分的累计和兑换规则由具体计划规定；miles 不必等于实际飞行的英里数。\",\"example\":{\"id\":\"mile-4-ex1\",\"senseId\":\"mile-4\",\"en\":\"I used my airline miles to book a flight to Tokyo.\",\"zh\":\"我用航空里程积分订了一张去东京的机票。\",\"note\":\"这里的 miles 指可用于兑换奖励的积分，不是这次航程的实际距离。\"},\"sourceIds\":[\"wiktionary-mile\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 mile 可追溯到古英语 mil，最终来自拉丁语 milia（“千”，mille 的复数）。罗马的英里与一千个双步相关；历史上的英里长度有变化。\"",
+        "valueJson": "\"英语 mile 经由古英语 mil，最终可追溯到日耳曼语从拉丁语借入的 milia（mille“一千”的复数形式，意为“数千”）。罗马英里按一千个双步计量；历史上的英里长度并不统一。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"“千”，是 mille（“一千”）的复数形式。\"",
+        "valueJson": "\"“数千”，是 mille（“一千”）的复数形式。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"古英语\",\"form\":\"mil\",\"meaning\":\"英语 mile 的历史来源形式。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你在公路边看到写着“1 mile”的里程牌：走过一个牌子就是一英里；如果牌子远得看不清，就可以说它 seems miles away。\"",
+        "valueJson": "\"想象路牌上写着“Beach 1 mile”，表示海滩在一英里外，约 1.6 公里。你走了一会儿还没到，便夸张地说：“It still seems miles away!”（感觉还是好远！）\""
+      }
+    ]
+  },
+  "input": {
+    "id": 859,
+    "headword": "mile",
+    "meaning_zh": "n. 英里, 很大距离",
+    "phonetic": "/mail/",
+    "pos": "",
+    "forms": []
+  }
+}

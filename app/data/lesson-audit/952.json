@@ -1,0 +1,432 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "145697a762d3cee9b5f3c0d10040bb3d08858834e39211d9b2125ffdb265003c",
+    "executedReviewPromptHash": "145697a762d3cee9b5f3c0d10040bb3d08858834e39211d9b2125ffdb265003c",
+    "reviewHash": "65d9c1b0d31b985db0dfe22486d3c9adb169df8dcd5f9b9a8f040e69e0ba3261",
+    "wordId": 952,
+    "inputHash": "f91e17219b97330a95f78a598df762fd716566b552c427be5f09062906b5dcdd",
+    "draftHash": "9a27e28eaadd468e8fc6556a52b25cdc4cf11b0260e21f0ac5ed83a45d999146",
+    "finalHash": "f9ac0ce8858d2df6475f7c103d2d3c8b4320b036f16db1bf03573b317ca784b8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/online#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.609Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 28338,
+        "revisionId": 39759466,
+        "revisionTimestamp": "2026-08-03T00:11:36Z",
+        "sha256": "17d3972f1fc360d61ff4f17b49679a59b0b6f795016fcee00e7519403a7b15f6",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/online",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:33:44.441Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:45:29.207Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "合并了“已联网”和“网上提供”两个常用形容词义，但没有真正展示联网状态的例句。应补设联网义，并为两个形容词义分别保留至少2例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples",
+        "message": "available online 中的 online 是副词，不宜充当形容词义的例证。第一例中的 online 位于 be 后作表语，说明也应明确；学校关闭不宜直接译为课程停课。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/1",
+        "message": "an online + 名词不能作为通用结构；复数名词和不可数名词不能一律加 an。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "词条所列第二音节重读读法可以保留，但“重音都在第二音节”过于绝对。已取回的英语词条还记录第一音节重读的英美读法，应说明变体并调整来源关联。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 正文未取回，不能承担当前的释义、发音及构词依据。主要义项应关联已取回的英语 Wiktionary 词条；独立语言知识补充的拼写辨析和 offline 构词不应虚挂 Cambridge。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "原技术例句中的 online 仍可理解为通过网络，且不是明确的形容词例证。应换成具有实时输入语境的形容词用例，并限定这一专业义的适用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "遗漏了已取回词源中的20世纪60年代，并把可证实的 on + line 合成构词仅称为助记提示。应补入年代和真实构词事实；没有必要保留缺乏独立历史阶段的占位项。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0",
+        "message": "“online 去掉词首 o，加 off”会得到 offnline，不能得到 offline。应按 off + line 解释实际拼写，并明确它与 online 的构词对应关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items; /wordFamily/0/example",
+        "message": "posted ... online 是副词用法，却关联到形容词义。on line 和 offline 的对照例句也应明确关联其所比较的副词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "“站到六号线上等待”的情境生硬；用文本第六行更自然。拼写说明还可补入规范变体 on-line，避免使学生误以为只有连写形式才成立。"
+      }
+    ],
+    "coverageAssessment": "已核对联网状态、网上提供或进行、副词“在网上”，以及专业语境中的实时或同步义。按补丁修改后，三个常用义各有至少2个生活例句，专业义保留1个明确例句。来源范围限于已取回词条和专业语言知识；不以未取回的 Cambridge 正文作依据，也不把联网一概等同于实时。",
+    "senseInventory": [
+      {
+        "sense": "形容词：已连接网络或系统，尤其互联网",
+        "coveredBy": [
+          "online-connected"
+        ],
+        "assessment": "原稿只有释义，没有对应生活例句；补为独立常用义，增加人物在线和打印机联网两例。"
+      },
+      {
+        "sense": "形容词：通过网络可获取、提供或进行的",
+        "coveredBy": [
+          "online-adj"
+        ],
+        "assessment": "保留课程例，补入名词前修饰阅读清单的明确例句；将 available online 移入副词义。"
+      },
+      {
+        "sense": "副词：在网上；通过互联网",
+        "coveredBy": [
+          "online-adv"
+        ],
+        "assessment": "原有查找、学习两例成立；另保留并正确归入 available online 的内容获取用法。"
+      },
+      {
+        "sense": "专业形容词：实时的；即时或同步进行的",
+        "coveredBy": [
+          "online-technical"
+        ],
+        "assessment": "作为较少见义保留，以新读数到达时生成实时估计的语境限定含义，不推广到所有联网活动。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式主要区别在词首元音；重音都在第二音节。\"",
+        "valueJson": "\"英式和美式的词首元音不同；除第二音节重读的读法外，也存在第一音节重读的读法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"分两拍读：on-line；第二音节 line 重读，读音同 line。\"]",
+        "valueJson": "[\"上面列出的读法重读第二音节 line，line 读 /laɪn/。\",\"也有第一音节重读的读法：英 /ˈɒnˌlaɪn/；美 /ˈɑnˌlaɪn/。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"形容词：在线的；网上提供或进行的\"",
+        "valueJson": "\"形容词：网上提供或进行的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示人或设备已连接网络，也可表示课程、服务、内容等通过互联网提供或进行。\"",
+        "valueJson": "\"表示课程、服务、内容等通过网络（通常是互联网）提供或进行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可放在名词前，如 online class；也可放在 be 后说明连接状态，如 be online。\"",
+        "valueJson": "\"可放在名词前，如 an online class；也可作表语，如 The class is online，说明课程通过网络进行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/zh",
+        "expectedValueJson": "\"今天学校停课，我们的科学课改为在线上课。\"",
+        "valueJson": "\"学校今天不开放，我们的科学课改为线上进行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"online 修饰 class，说明课程通过网络进行。\"",
+        "valueJson": "\"online 在 is 后作表语，说明这节课通过网络进行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"online-adj-ex2\",\"senseId\":\"online-adj\",\"en\":\"The library’s new reading list is available online.\",\"zh\":\"图书馆的新阅读清单可以在网上查到。\",\"note\":\"available online 表示内容可通过互联网获取。\"}",
+        "valueJson": "{\"id\":\"online-adj-ex2\",\"senseId\":\"online-adj\",\"en\":\"I use the library’s online reading list to choose books.\",\"zh\":\"我用图书馆的网上阅读清单来选书。\",\"note\":\"online 放在 reading list 前作定语，说明这份清单在网上提供。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/en",
+        "expectedValueJson": "\"an online + 名词\"",
+        "valueJson": "\"online + 名词\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"online 放在名词前，说明活动或服务通过互联网进行。\"",
+        "valueJson": "\"online 放在名词前；冠词由名词决定，如 an online class、online classes、online information，不能一律加 an。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"be online\",\"zh\":\"在线；已连接网络\",\"note\":\"常用于说明某人、设备或服务当前已连接网络。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"available online\",\"zh\":\"可在网上获取\",\"note\":\"常说明书籍、信息或服务可以通过网络使用。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"online shop\",\"zh\":\"网店\",\"note\":\"shop 在此是名词，online 作定语；与 shop online（网上购物）区分。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"offline\",\"zh\":\"离线的；不连接网络的\",\"note\":\"在描述网络连接状态或线上、线下服务时，可与 online 对照。\"}",
+        "valueJson": "{\"en\":\"offline\",\"zh\":\"线下的；离线可用的\",\"note\":\"谈课程、服务或内容的提供方式时，可与 online 对照；具体意思由语境决定。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"offline 只适合网络连接或线上线下这类语境，并非 online 所有用法的通用反义词。\"",
+        "valueJson": "\"谈课程或活动时，in-person 明确表示面对面进行；offline 还可能仅表示无需联网。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常放在动词后；也可放在句末说明活动发生的方式。\"",
+        "valueJson": "\"常放在动词后，说明活动通过互联网进行；也可用于 available online，说明内容可通过网络获取。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"online-adv-ex3\",\"senseId\":\"online-adv\",\"en\":\"The library’s new reading list is available online.\",\"zh\":\"图书馆的新阅读清单可以在网上查到。\",\"note\":\"online 作副词，说明这份清单可通过网络获取。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"available online\",\"zh\":\"可在网上获取\",\"note\":\"online 作副词，说明内容或服务可通过网络获取。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"专业用法：实时处理的\"",
+        "valueJson": "\"专业形容词：实时的；同步进行的\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在部分技术语境中，online 可表示数据处理或设备操作与系统同步进行。\"",
+        "valueJson": "\"在部分专业语境中，表示与输入或过程同步、实时进行的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"初中日常交流中通常先掌握“在线、在网上”；遇到技术文章再结合上下文理解。\"",
+        "valueJson": "\"这是特定专业语境中的用法；一般的 online 仍可能只表示联网，不能一律译作“实时”。日常学习先掌握“在线、在网上”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"online-technical-ex1\",\"senseId\":\"online-technical\",\"en\":\"The machine checks each order online as it arrives.\",\"zh\":\"机器会在每笔订单到达时实时检查。\",\"note\":\"这里强调系统随订单到达同步处理。\"}",
+        "valueJson": "{\"id\":\"online-technical-ex1\",\"senseId\":\"online-technical\",\"en\":\"The system provides online estimates of the engine’s temperature as new sensor readings arrive.\",\"zh\":\"新的传感器读数一传入，系统就实时估计发动机温度。\",\"note\":\"online 修饰 estimates；结合新读数到达即更新的语境，表示实时估计，而不只是把结果发布到网上。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"表示通过互联网时，通常写作一个词 online。on line 分开写时，可能按字面表示“在线上”或某条线上，不能随意替换。\"",
+        "valueJson": "\"网络含义通常连写 online，也能见到带连字符的 on-line。分写的 on line 还可能是介词 on 加名词 line，不能只凭两个词就判断为“在网上”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"online-adj\"",
+        "valueJson": "\"online-adv\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"分写形式不通常用来表达“在互联网上”；具体含义要看句子。\"",
+        "valueJson": "\"表示“在网上”时优先使用 online；分写的 on line 也可能只是表示位置的字面结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"online-spelling-ex2\",\"senseId\":\"online-adj\",\"en\":\"Please stand on line six while you wait.\",\"zh\":\"请在等待时站到六号线上。\",\"note\":\"on line six 是介词短语，line 指一条线。\"}",
+        "valueJson": "{\"id\":\"online-spelling-ex2\",\"senseId\":\"online-adv\",\"en\":\"Write your name on line six.\",\"zh\":\"在第六行写下你的名字。\",\"note\":\"on line six 指文本或表格的第六行；这里用字面位置短语与 online 的“在网上”副词义作对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"online 由 on 和 line 组成，字面可帮助记作“在线上”；它现在常指连接网络或通过互联网进行。\"",
+        "valueJson": "\"online 由英语 on 和 line 合成，字面意思是“在线上”；它的使用可追溯到20世纪60年代。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语构词\",\"form\":\"on + line → online\",\"meaning\":\"现代组合形式可联想为“在线上”，用于描述连接网络或通过网络进行的事物。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的 on + line 是帮助理解现代词义的构词提示，不代表完整的历史演变说明。\"",
+        "valueJson": "\"20世纪60年代是这个词的早期使用年代；各个现代互联网义项的具体出现时间不能据此确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"online 的反向构词形式，常用于网络连接或线上线下活动的对照。\"",
+        "valueJson": "\"由 off + line 合成，与 online 的 on + line 构词相对应；在网络语境中两词形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"online 去掉词首 o，加前缀 off，写作 offline。\"",
+        "valueJson": "\"off + line → offline：off 的两个 f 都保留，后接完整的 line；全词拼作 o-f-f-l-i-n-e。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"online-adj\"",
+        "valueJson": "\"online-adv\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "\"offline 表示阅读时不需要连接网络。\"",
+        "valueJson": "\"offline 在这里作副词，表示阅读时不需要联网，与 read online 的方式用法形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"on 与 line 的现代构词说明\",\"专业语境中的实时用法\"]",
+        "valueJson": "[\"英语形容词与副词的主要义项\",\"第一音节重读的英美发音变体\",\"20世纪60年代的使用年代及 on + line 合成词源\",\"专业语境中的实时、同步用法\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: online\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/online\",\"supports\":[\"形容词与副词用法\",\"常见搭配和英美发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"online-connected\",\"title\":\"形容词：已连接网络或系统的\",\"meaning\":\"表示人、账号或设备已连接网络或某个系统，处于在线状态。\",\"usageNote\":\"常描述人、电脑或设备的连接状态；可放在名词前，如 online users，也可用于 be 后，如 The printer is online。\",\"examples\":[{\"id\":\"online-connected-ex1\",\"senseId\":\"online-connected\",\"en\":\"I can see that Ben is online, so I’ll send him a message.\",\"zh\":\"我能看到本在线，所以我要给他发条消息。\",\"note\":\"online 在 is 后说明本的账号当前处于在线状态。\"},{\"id\":\"online-connected-ex2\",\"senseId\":\"online-connected\",\"en\":\"The printer is online again, so I can print my homework.\",\"zh\":\"打印机重新联网了，我可以打印作业了。\",\"note\":\"online 说明打印机已连接网络的状态。\"}],\"patterns\":[{\"en\":\"be online\",\"zh\":\"在线；已连接网络\",\"note\":\"be 后的 online 描述当前的连接状态。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"online users\",\"zh\":\"在线用户\",\"note\":\"指当前连接到某个网络或服务的用户。\",\"kind\":\"common-collocation\"},{\"en\":\"online status\",\"zh\":\"在线状态\",\"note\":\"用于谈论账号或设备是否处于联网状态。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"connected\",\"zh\":\"已连接的；联网的\",\"note\":\"在网络语境中与此义接近，常接 to the network；单独使用 connected 不一定表示上网。\"}],\"contrasting\":[{\"en\":\"offline\",\"zh\":\"离线的；未连接网络的\",\"note\":\"在网络连接状态上与 online 直接对照。\"}],\"similarNote\":\"connected 可用于多种连接；谈联网状态时，online 的含义更具体。\",\"contrastingNote\":\"这里的 offline 指没有连接网络或系统；表示课程线下进行属于另一种语境。\"},\"sourceIds\":[\"wiktionary\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 952,
+    "headword": "online",
+    "meaning_zh": "adj. 在线的；网上的\nadv. 在网上",
+    "phonetic": "英 /ˌɒnˈlaɪn/；美 /ˌɑːnˈlaɪn/",
+    "pos": "",
+    "forms": []
+  }
+}

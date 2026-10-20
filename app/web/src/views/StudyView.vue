@@ -10,6 +10,7 @@ import RecognizeCard from '../components/RecognizeCard.vue';
 import ChoiceQuestion from '../components/ChoiceQuestion.vue';
 import ExplainPanel from '../components/ExplainPanel.vue';
 import SpeakButton from '../components/SpeakButton.vue';
+import AnswerLesson from '../components/AnswerLesson.vue';
 const props=defineProps<{ prefer: 'review'|'new'; practice: Turn[]|null; estimate: number }>();
 const emit=defineEmits<{ cancel: []; done: [session: {done:number;correct:number}]; online: [value:boolean]; stale: [] }>();
 const turn=ref<Turn|null>(null), revealed=ref(false), answer=ref(''),usedHint=ref(false);
@@ -17,6 +18,9 @@ const feedback=ref<{correct:boolean;expected:string}|null>(null), choiceResult=r
 const input=ref<HTMLInputElement|null>(null), busy=ref(false),unsaved=ref(false),noAudio=ref<PlaybackFailure|null>(null),help=ref(false),failedLoad=ref(false);
 const session=ref({done:0,correct:0}); const estimated=ref(props.estimate);
 const card=computed(()=>turn.value?.card??null);
+const completeLessonWordId=ref<number|null>(null);
+const completeLessonReady=computed(()=>completeLessonWordId.value===card.value?.word_id);
+function onLessonReady(wordId:number,ready:boolean){if(card.value?.word_id===wordId)completeLessonWordId.value=ready?wordId:null;}
 const diff=computed(()=>charDiff(answer.value,feedback.value?.expected??''));
 const practiceQueue=props.practice ? [...props.practice] : null;
 const submitter=new PendingSubmitter((path,body)=>api(path,body));
@@ -32,7 +36,7 @@ async function play(){
 }
 async function loadNext(){
   if(busy.value||unsaved.value)return;
-  cancelAudio();busy.value=true;failedLoad.value=false;turn.value=null;
+  cancelAudio();busy.value=true;failedLoad.value=false;turn.value=null;completeLessonWordId.value=null;
   try{
     const next=practiceQueue ? (practiceQueue.shift()??null) : await api<Turn>('/api/next?prefer='+props.prefer);
     if(!alive)return;
@@ -110,16 +114,17 @@ onUnmounted(()=>{alive=false;cancelAudio();clearInterval(timer);window.removeEve
   <article v-if="turn&&card" :key="`${card.id}-${turn.question?.id??session.done}`" class="card">
     <div class="meta"><span class="tag">{{ COPY.qtypes[turn.question?.qtype??card.mode] }}</span><span v-if="card.level==='三级'||card.level==='二级'" class="tag" :class="{core:card.level==='三级'}">{{ card.level==='三级'?'核心词':'二级词' }}</span><span v-if="isRepeatCard(card)" class="repeat" data-testid="repeat-line">{{ COPY.repeatCard }}</span></div>
     <ChoiceQuestion v-if="turn.question" :card="card" :question="turn.question" :result="choiceResult" :busy="busy||unsaved" @choose="choose" @next="loadNext" @play="play" />
-    <RecognizeCard v-else-if="card.mode==='recognize'" :card="card" :revealed="revealed" :busy="busy||unsaved" @reveal="revealed=true" @rate="rate" @play="play" />
+    <RecognizeCard v-else-if="card.mode==='recognize'" :card="card" :revealed="revealed" :busy="busy||unsaved" :complete-lesson-ready="completeLessonReady" @reveal="revealed=true" @rate="rate" @play="play" />
     <template v-else>
       <div v-if="card.mode==='spell'" class="prompt"><div class="q">{{ COPY.spellPrompt }}</div><MeaningList :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" /><div v-if="card.phonetic" class="phon">{{ card.phonetic }}</div></div>
       <div v-else class="listen"><SpeakButton large @play="play" /><div><p>{{ COPY.dictationPrompt }}</p><p class="small muted">{{ COPY.listenHint }}</p></div></div>
       <form @submit.prevent="submit"><div class="spellbox"><input ref="input" v-model="answer" class="input" :disabled="!!feedback||unsaved||busy" autocomplete="off" autocapitalize="off" :spellcheck="false" aria-label="输入单词" placeholder="输入单词" /></div>
       <div v-if="feedback" class="fb" :class="feedback.correct?'ok':'bad'" role="status"><div><div class="t">{{ feedback.correct?COPY.correct:isNearMiss(answer,feedback.expected)?COPY.almost:COPY.spellWrong }}</div><template v-if="!feedback.correct"><div class="diff"><span class="lbl">{{ COPY.typed }}</span><span v-for="(c,i) in diff.typed" :key="`t${i}`" :class="{x:c.changed}">{{ c.char }}</span> → <span v-for="(c,i) in diff.expected" :key="`e${i}`" :class="{y:c.changed}">{{ c.char }}</span></div><div class="d small">{{ COPY.addedWrong }}</div></template></div></div>
-      <ExplainPanel v-if="feedback" :word-id="card.word_id" context="answer" />
+      <ExplainPanel v-if="feedback" :word-id="card.word_id" context="answer" :hide-pending="completeLessonReady" />
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>
+    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" />
     <p v-if="noAudio" class="note" role="status">{{ noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play">{{ COPY.audioRetry }}</button></p>
     <p v-if="unsaved" class="retry" role="status">{{ COPY.unsaved }} <button class="btn" :disabled="busy" @click="retry">{{ COPY.retry }}</button></p>
   </article>

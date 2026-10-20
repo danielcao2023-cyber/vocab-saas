@@ -1,0 +1,352 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4bcb9c589ff73dee7cea6b5dd0cf412ff49629d3f6525a3797e3b7dc018aa3ae",
+    "executedReviewPromptHash": "4bcb9c589ff73dee7cea6b5dd0cf412ff49629d3f6525a3797e3b7dc018aa3ae",
+    "reviewHash": "67f3dbe5ebe7fba5e8c2329c661726557c59f26b3fc219d259c2bfcf184cd313",
+    "wordId": 1538,
+    "inputHash": "d42c6201a05a491c424c007921930f84ca3c63d377ed85a1b6a3fadd09754dce",
+    "draftHash": "e70fc3aed86021c8e6f0a697d0cb3fafc2c1e9bedce05db179f2bdbc54ab58e4",
+    "finalHash": "bbbba4306476721da16c47dcebf6d8a33652ca4b41eb2deab7e093ddd64ef17f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/whatever#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.454Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115739,
+        "revisionId": 38891823,
+        "revisionTimestamp": "2025-10-12T11:51:18Z",
+        "sha256": "4a8364654ba78ba65f7b079e80a3d9a73b23cd774a7a103ddce92d78669f9698",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/whatever",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:04:58.931Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:17:36.912Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources、各处/sourceIds",
+        "message": "Cambridge 页面未成功获取，不能据此归因。应改引实际取得的法语维基词典英语词条，并把引用范围限定为该页确实支持的词性、基本释义和发音。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "不能一概否定 /hw/ 或 /ʍ/ 开头的读法；来源明确列有保留 /ʍ/ 的英音。美式 /ɚ/ 位于词尾第三音节，不是第二音节。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/partOfSpeech",
+        "message": "遗漏否定短语后 whatever 表示“丝毫、任何”的强调功能，以及强调疑问中的“究竟、到底”。前者补为核心义并提供两个例句，后者列入补充用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote、/senses/0/patterns/0、/senses/0/relatedExpressions/similar",
+        "message": "需明确区分让步从句与表示事物的名词性结构；no matter what 只能替换相应的让步用法。原句型也未涵盖 whatever 自身作从句主语的情况。anything 的说明宜补明疑问、否定和肯定自由选择用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "裸列 whatever reason 缺少典型搭配框架；改为 for whatever reason，并区分“无论出于什么原因”和“出于某种不明原因”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/contrasting、/senses/2/relatedExpressions/contrasting",
+        "message": "no time 通常表示没有可用时间，与 whatever time 的时间点选择并非相反；I disagree 也不与 Whatever! 构成稳定的态度对立，更不保证继续讨论。删除这两项，保留有明确语境的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "what ever 的例句属于强调疑问，不属于 s1 的不定代词用法；同时应说明强调疑问也可以写成一个词 whatever。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "ever 在此不能解释为“无论何时、无论怎样”。实际取得的词源部分仅有待补充标记，不能支持历史阶段；应只保留可靠的现代构词提示。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的不定代词、名词前限定用法和感叹词，原有三组例句均自然且保留。补丁另补齐否定强调与强调疑问，修正读音、句法对比、搭配和引用。补充语法依据专业语言知识，未冒充网页已载内容；历史词源仍无可据以展开的实质材料，因此保留空阶段，不虚构演变顺序。",
+    "senseInventory": [
+      {
+        "sense": "不定代词：任何事物；所需或所选的任何东西",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖，借物例句体现名词性结构；补丁明确其与让步用法的区别。"
+      },
+      {
+        "sense": "代词引导让步：无论发生什么或选择什么",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖；补丁说明 whatever 可作从句主语或宾语，以及 no matter what 的替换限制。"
+      },
+      {
+        "sense": "限定词：任何……；无论哪个或哪种……",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已覆盖自由选择和让步两种功能，各有自然例句；修正理由搭配及不恰当对照。"
+      },
+      {
+        "sense": "感叹词：随便；算了；表示不在意或不想争论",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "已覆盖，两例分别体现结束争论和不在意；保留语气及礼貌提醒。"
+      },
+      {
+        "sense": "副词性否定强调：丝毫；任何……都没有",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "初稿遗漏；补丁新增完整核心义，含两个原创例句及 at all、whatsoever 的比较。"
+      },
+      {
+        "sense": "强调疑问：究竟什么；到底什么",
+        "coveredBy": [
+          "lc1"
+        ],
+        "assessment": "初稿只在分写形式的比较中间接出现；补丁正式列为补充用法，并修正相应 senseId。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"代词；限定词；感叹词\"",
+        "valueJson": "\"代词；限定词；副词；感叹词\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"不是以 /hw/ 开头；开头读 /w/。\"",
+        "valueJson": "\"常见读法以 /w/ 开头；也有保留 /ʍ/ 的读法，部分音标体系写作 /hw/，不能一概判错。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"美式第二音节常带卷舌音 /ɚ/；英式词尾 r 通常不发音。\"",
+        "valueJson": "\"美式词尾第三音节 /ɚ/ 带卷舌音，/t/ 也常读成闪音 [ɾ]；非卷舌英音的词尾通常不发 /r/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作代词时，whatever 自己代替事物，不必再接名词。引导让步内容时，常表示“无论……都……”。\"",
+        "valueJson": "\"作代词时，whatever 本身代表事物。Whatever happens, call me. 中的从句表示让步；You can borrow whatever you need. 中的 whatever you need 整体作 borrow 的宾语，指“你需要的任何东西”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"Whatever + 主语 + 动词, 主句\",\"zh\":\"无论……，都……\",\"note\":\"whatever 引出让步内容；主句说明结果或安排。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Whatever ..., 主句\",\"zh\":\"无论……，都……\",\"note\":\"whatever 可作从句主语，如 Whatever happens；也可作宾语，如 Whatever you choose。从句用陈述语序，主句说明各种情况下都成立的事。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常用于普通肯定句或疑问句；whatever 更常引出“无论什么”的让步内容。\"",
+        "valueJson": "\"anything 常用于疑问句和否定句，也可在肯定句中表示自由选择，如 Choose anything.；whatever 可直接引出从句，如 Choose whatever you like.。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"可引出让步内容，常与 whatever 引导的结构意思接近；后面通常接完整分句。\"",
+        "valueJson": "\"可替换让步用法：Whatever happens, call me. 可改为 No matter what happens, call me.；不能替换 You can borrow whatever you need. 中作宾语的部分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"whatever reason\",\"zh\":\"无论什么理由\",\"note\":\"常用于表示理由不影响后续情况。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"for whatever reason\",\"zh\":\"无论出于什么原因；出于某种不明原因\",\"note\":\"可表示原因不影响结论，也可表示说话人不知道或不说明原因，具体含义取决于上下文。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"no\",\"zh\":\"没有；任何……都不\",\"note\":\"修饰名词时可表示否定数量，如 no time（没有时间），与 whatever time（任何时间／无论什么时间）方向相反。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"a particular 和 no 是修饰名词时的语境对照，不能替换 whatever 的所有用法。\"",
+        "valueJson": "\"a particular 与 whatever 在是否指定对象这一点上形成语境对照，不是固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"I disagree.\",\"zh\":\"我不同意。\",\"note\":\"明确表达反对并继续讨论；Whatever! 常表示不愿继续争论。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"I care 和 I disagree 是态度表达上的对照，不是词典式反义词。\"",
+        "valueJson": "\"I care. 只与 Whatever! 表示“不在意”的语境形成对照；它不是 whatever 的固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-fr\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s4\",\"title\":\"副词：丝毫；任何……都没有（加强否定）\",\"meaning\":\"放在否定短语后，加强“完全没有”的意思，相当于 at all 或 whatsoever。\",\"usageNote\":\"常见结构是 no + 名词 + whatever，whatever 放在名词之后。这种表达语气较强，较常见于书面或较正式语境；日常表达也常用 at all。\",\"examples\":[{\"id\":\"s4e1\",\"senseId\":\"s4\",\"en\":\"There is no reason whatever to cancel the picnic.\",\"zh\":\"完全没有理由取消这次野餐。\",\"note\":\"whatever 加强 no reason，表示一点理由都没有。\"},{\"id\":\"s4e2\",\"senseId\":\"s4\",\"en\":\"The new rule made no difference whatever to our plans.\",\"zh\":\"这条新规定对我们的计划丝毫没有影响。\",\"note\":\"no difference whatever 表示完全没有影响。\"}],\"patterns\":[{\"en\":\"no + 名词 + whatever\",\"zh\":\"丝毫没有……；没有任何……\",\"note\":\"whatever 后置，加强整个否定短语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"no reason whatever\",\"zh\":\"没有任何理由\",\"note\":\"强调完全没有理由。\",\"kind\":\"common-collocation\"},{\"en\":\"no difference whatever\",\"zh\":\"丝毫没有差别或影响\",\"note\":\"强调差别或影响为零。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"at all\",\"zh\":\"丝毫；根本（用于否定表达）\",\"note\":\"no reason whatever 可改为 no reason at all，意思接近。\"},{\"en\":\"whatsoever\",\"zh\":\"丝毫；任何（加强否定）\",\"note\":\"在此结构中与 whatever 意思接近，如 no difference whatsoever；不能据此替换所有其他 whatever 用法。\"}],\"contrasting\":[{\"en\":\"some evidence\",\"zh\":\"一些证据\",\"note\":\"在证据是否存在这一语境中，与 no evidence whatever（毫无证据）形成对照。\"}],\"similarNote\":\"at all 和 whatsoever 都可在这里加强否定；注意比较的是否定强调功能。\",\"contrastingNote\":\"whatever 本身没有适用于各种用法的固定反义词；这里比较的是存在一些与完全没有。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"id\":\"lc1\",\"title\":\"代词（强调疑问）：究竟什么；到底什么\",\"meaning\":\"用于疑问句，加强惊讶、不解等语气，意思接近 what on earth。\",\"note\":\"这种用法较多见于英式英语，也可分写为 what ever；这里表达疑问，不表示“无论什么”。\",\"example\":{\"id\":\"lc1e1\",\"senseId\":\"lc1\",\"en\":\"Whatever are you doing in the kitchen at midnight?\",\"zh\":\"你半夜到底在厨房干什么？\",\"note\":\"whatever 加强 what 的疑问语气，句子使用疑问语序。\"},\"sourceIds\":[]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"普通表达“无论什么”或“随便”时，通常写作一个词 whatever。分开写的 what ever 只在特殊强调 ever 时出现，初中写作一般不需要这种形式。\"",
+        "valueJson": "\"表示“无论什么”或单独回应“随便”时，写作一个词 whatever。强调疑问中的“到底什么”既可写作 whatever，也可分写为 what ever。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"分开写时是 what 与 ever 分别承担句法功能的特殊强调结构，不能当作 whatever 的常规拼法。\"",
+        "valueJson": "\"分写形式可用于强调疑问，ever 加强 what 的语气；同类强调疑问也可使用一个词 whatever。不要把分写形式用于“无论什么”或感叹词“随便”的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"s1\"",
+        "valueJson": "\"lc1\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代拼写可帮助记忆：what（什么）加 ever（无论何时、无论怎样的强调成分），合起来表示“无论什么”。这是便于理解的现代构词提示。\"",
+        "valueJson": "\"现代构词可按 what（什么）加 ever 来理解；在“无论什么”这一用法中，ever 表示所指范围不受限制。这可帮助记住 whatever 的整体意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里讲的是现代构词理解，不代表已经说明各部分的历史来源或演变过程。\"",
+        "valueJson": "\"这是现代构词提示，不是历史演变说明；理解这个词时，不宜把 ever 逐字译成“永远”或“无论何时”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: whatever\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/whatever\",\"supports\":[\"代词、限定词和感叹词的常见用法\",\"英式与美式发音\",\"常见句型与口语语气\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr\",\"title\":\"法语维基词典：whatever（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/whatever#Anglais\",\"supports\":[\"英语 whatever 的不定代词、名词前限定用法和感叹词基本释义\",\"英美发音，包括 /w/ 与 /ʍ/ 的读音差异及美式闪音\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"补记 no difference whatever（丝毫没有影响）中的否定强调，并认出 Whatever are you doing? 中“到底”的疑问语气。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1538,
+    "headword": "whatever",
+    "meaning_zh": "pron. 无论什么",
+    "phonetic": "/hwɒt'evә/",
+    "pos": "",
+    "forms": []
+  }
+}

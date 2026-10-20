@@ -1,0 +1,493 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1af1c3ae59115d86955ac0508d3a33b555a9240a1e79949be5db97105739d728",
+    "executedReviewPromptHash": "1af1c3ae59115d86955ac0508d3a33b555a9240a1e79949be5db97105739d728",
+    "reviewHash": "48f6b44e8173bd781fe5733db7fc608b361f8927739628ea95da41872b4e34c9",
+    "wordId": 1500,
+    "inputHash": "9fbc3e755a649e4d42e56d5f36d42468e158e1b247d45e2e901c7ae3e35b949c",
+    "draftHash": "7951e64e80759f2b4484b43faa7d2c46150cc4b99189635454e47731adb99576",
+    "finalHash": "72ca2a364113b1a3d07d17f7974b399ca6e5dad856289669d46a68642e9d4fd3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/voice#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.920Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 248903,
+        "revisionId": 39293111,
+        "revisionTimestamp": "2026-02-08T22:40:06Z",
+        "sha256": "41bbe8423626ef8f598988d18b086026104ea07f01c9f1fecdd55be92668f5e8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/voice",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:46:53.538Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:00:19.289Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及各处 sourceIds",
+        "message": "Cambridge 页面未成功取得，不能将其列作已经支撑正文的来源。应撤去这些引用，将确由英语维基词典条目支持的内容关联至该来源，其余专业语言知识不冒充网页取证结果。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "标题包含“意见”，但定义及两个例句都只教“发言权”。需补充 voice/voices 表示表达出来的意见、心声的用法及两个例句，并修正与 opinion 的比较。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses 及 /lessCommonSenses",
+        "message": "缺少常见的动词“为角色配音”，以及名词“代言者、喉舌”和“独特表达风格”。词条中的乐器调音义、英语词典明确列出的使语音浊化义和 IRC 权限义也未交代。乐器用法须说明主要调整音色，避免等同于校准音高。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/summary",
+        "message": "voice 与 choice 并非只差一个开头字母：二者分别是 v + oice 和 ch + oice。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例句仅展示 choice 的“选择”，却绑定 voice 的发言权义。可在同一句中加入实际的 voice 用法，使比较及义项关联清楚。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily",
+        "message": "voiced、voiceless 的语音学例句错误关联到语法“语态”义。voicing 的定义和译文泛称“发声”，也没有说明关键是声带振动；清音同样能发出可听见的声音。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/caveat",
+        "message": "历史借入链得到材料支持，但“现代动词由同形名词转成”的历史断言未在所提供的词源资料中得到说明。应保留可证实的借入链及古法语并列拼写，撤去这项额外历史断言。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "直接教正确的双元音和词尾清辅音即可，无须在学生文案中讨论“旧音标”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/patterns/0",
+        "message": "应分别写清 an opinion、a concern、a wish，并说明 about 可接在 concern 后，避免学生误以为整个表达不能使用 about。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/meaning",
+        "message": "语态定义将主语限定为做动作或承受动作的“人”，与其自身的 window 例句不符。应改为主语与动作之间的语法关系。"
+      }
+    ],
+    "coverageAssessment": "已核对嗓音及用嗓能力、意见与心声、发言权、代言者、表达风格、语法语态，以及动词表达、配音、使浊化、乐器音色调整和 IRC 授权功能。修订后核心义均有至少两个原创英中例句；意见与发言权合列但分别举例，专业义放入低频义。已有词形、主要搭配和历史借入顺序可保留。来源局限是 Cambridge 未获取成功，已撤去相关引用；新增配音、表达风格及乐器用法依据专业语言知识，不声称来自该未获取页面。法语网页的描述语言与其中英语词条的词语语言已区分。",
+    "senseInventory": [
+      {
+        "sense": "名词：嗓音、说话或唱歌的声音；用嗓能力",
+        "coveredBy": [
+          "voice-n1"
+        ],
+        "assessment": "两个例句覆盖辨认嗓音和轻声说话；lose one's voice 补充失声、嗓子哑的用法。无需把中文“嗓子”另立为身体器官义。"
+      },
+      {
+        "sense": "名词：表达出来的意见、心声",
+        "coveredBy": [
+          "voice-n2"
+        ],
+        "assessment": "原稿只列标题而未实际教学；补充定义及两个例句。中文“愿望”不能使 voice 在一般语境中直接替代 wish，可通过表达心声及 voice a wish 理解。"
+      },
+      {
+        "sense": "名词：发言权、参与决定的机会",
+        "coveredBy": [
+          "voice-n2"
+        ],
+        "assessment": "原有两个例句、have a voice in、give someone a voice 及 have no voice in 均适切，予以保留。"
+      },
+      {
+        "sense": "名词：代言者、代表某群体意见的媒体或机构",
+        "coveredBy": [
+          "voice-n4"
+        ],
+        "assessment": "原稿遗漏，补入低频义并说明 a voice for 的搭配。"
+      },
+      {
+        "sense": "名词：写作或艺术中的独特表达风格",
+        "coveredBy": [
+          "voice-n5"
+        ],
+        "assessment": "原稿遗漏，按专业语言知识补入低频义，与实际嗓音及发言权区分。"
+      },
+      {
+        "sense": "名词：语法中的语态",
+        "coveredBy": [
+          "voice-n3"
+        ],
+        "assessment": "已有例句正确；修正定义对“人”的不当限定，并与语音学的清浊区分。"
+      },
+      {
+        "sense": "及物动词：表达、吐露意见、担忧或愿望",
+        "coveredBy": [
+          "voice-v1"
+        ],
+        "assessment": "两个例句自然，表达担忧和支持的搭配准确；补清冠词及 concern about 的结构。"
+      },
+      {
+        "sense": "及物动词：为角色配音",
+        "coveredBy": [
+          "voice-v2"
+        ],
+        "assessment": "常见功能遗漏，新增完整义项和两个例句，说明与 dub 的侧重点。"
+      },
+      {
+        "sense": "及物动词：使语音浊化",
+        "coveredBy": [
+          "voice-v3"
+        ],
+        "assessment": "英语词典明确列出而原稿遗漏；补入低频义，词族中的清浊音例句改为关联此义。"
+      },
+      {
+        "sense": "及物动词：调整乐器的发声和音色",
+        "coveredBy": [
+          "voice-v4"
+        ],
+        "assessment": "词条中的“调音”未覆盖；补充专业用法，明确区别于主要校准音高的 tune。"
+      },
+      {
+        "sense": "及物动词：授予 IRC 用户 voice 状态",
+        "coveredBy": [
+          "voice-v5"
+        ],
+        "assessment": "英语词典明确列出；补入专业低频义，不将其泛化为普通聊天或麦克风操作。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"voice 作名词常指人的嗓音，也可指意见或发言权；作动词时表示把想法或感受说出来。\"",
+        "valueJson": "\"voice 作名词常指嗓音、表达出来的意见或发言权；作动词可表示表达想法，也可表示为角色配音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"结尾是清辅音 /s/；旧音标 /vɒis/ 不准确。\"",
+        "valueJson": "\"中间的双元音是 /ɔɪ/；结尾发清辅音 /s/，不要读成 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-voice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[\"wiktionary-voice-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"一个人表达意见、参与讨论或影响决定的机会。\"",
+        "valueJson": "\"表达出来的意见或心声；也指一个人表达意见、参与讨论或影响决定的机会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"have a voice in something 表示对某事有发言权；常用于讨论规则、选择或公共事务。\"",
+        "valueJson": "\"have a voice in something 表示对某事有发言权。表示不同人表达出来的意见时，常用复数 voices，如 voices of protest（抗议的声音）；the voices of local residents 可指当地居民的意见或心声。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-n2-ex3\",\"senseId\":\"voice-n2\",\"en\":\"There were voices of protest when the school shortened the lunch break.\",\"zh\":\"学校缩短午休时间时，出现了抗议的声音。\",\"note\":\"voices of protest 指表达出来的抗议意见，不是发言权。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-n2-ex4\",\"senseId\":\"voice-n2\",\"en\":\"Before closing the park, the council should listen to the voices of local families.\",\"zh\":\"关闭公园前，市议会应该听取当地家庭的意见。\",\"note\":\"listen to people's voices 在这里指听取他们的意见或心声。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"指具体想法本身；voice 在此义强调表达意见或参与的机会。\"",
+        "valueJson": "\"opinion 指具体观点；voice 可指表达观点的机会，复数 voices 也可转指不同人表达出来的意见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"have a say in 与 have a voice in 意思接近；voice 更突出意见能被表达或听见。\"",
+        "valueJson": "\"have a say in 与 have a voice in 都表示有发言权；说具体观点通常用 opinion，说不同群体表达出来的意见也可用 voices。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/en",
+        "expectedValueJson": "\"voice + an opinion / concern / wish\"",
+        "valueJson": "\"voice + an opinion / a concern / a wish\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0/note",
+        "expectedValueJson": "\"voice 后直接接想要表达的想法或感受，不需要加 about。\"",
+        "valueJson": "\"voice 直接接表示想法或感受的名词；说明担忧的对象可说 voice a concern about ...，其中 about 接在 concern 后。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[\"wiktionary-voice-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-v2\",\"title\":\"为角色配音\",\"meaning\":\"为动画、游戏等作品中的角色提供声音。\",\"usageNote\":\"及物动词，直接接角色或角色名；常用于介绍配音演员，与 voice an opinion 的“表达”义不同。\",\"examples\":[{\"id\":\"voice-v2-ex1\",\"senseId\":\"voice-v2\",\"en\":\"My sister voiced the robot in our short cartoon.\",\"zh\":\"我姐姐在我们的动画短片中为机器人配音。\",\"note\":\"voiced 后的 the robot 是接受配音的角色。\"},{\"id\":\"voice-v2-ex2\",\"senseId\":\"voice-v2\",\"en\":\"One actor voices both brothers in the animated series.\",\"zh\":\"一位演员在这部动画剧集中为兄弟俩配音。\",\"note\":\"voices 是动词第三人称单数，表示同一演员为两个角色提供声音。\"}],\"patterns\":[{\"en\":\"voice + a character / a character's name\",\"zh\":\"为某个角色配音\",\"note\":\"角色直接作宾语，不需要在 voice 后加 for。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"voice a character\",\"zh\":\"为角色配音\",\"note\":\"用于动画、游戏等作品的制作或演员介绍。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"do the voice of\",\"zh\":\"为……配音\",\"note\":\"较口语，如 do the voice of the robot。\"},{\"en\":\"dub\",\"zh\":\"配音\",\"note\":\"通常强调为已有影像后期配音或改配另一种语言；voice 侧重由谁为角色提供声音。\"}],\"contrasting\":[],\"similarNote\":\"voice a character 与 do the voice of a character 都可说明角色由谁配音；dub 更强调后期配音这一制作过程。\",\"contrastingNote\":\"此义没有固定的常用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"动词的一种语法形式，说明主语是做动作的人或承受动作的人，如主动语态和被动语态。\"",
+        "valueJson": "\"动词的语法类别，体现主语与动作之间的关系；英语中常见主动语态和被动语态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-n4\",\"title\":\"代言者；喉舌\",\"meaning\":\"代表某个人或群体表达意见的人、机构或媒体。\",\"note\":\"可用 a voice for ... 表示为某群体代言；这里不是指嗓音的音色。\",\"example\":{\"id\":\"voice-n4-ex1\",\"senseId\":\"voice-n4\",\"en\":\"The local newspaper has become a voice for small businesses.\",\"zh\":\"这家地方报纸已经成为小企业的代言者。\",\"note\":\"报纸通过报道和评论表达小企业的诉求。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-n5\",\"title\":\"独特的表达风格\",\"meaning\":\"作家或艺术家在作品中表现出的独特表达方式、态度和个性。\",\"note\":\"写作或艺术评论中常见；find one's own voice 可表示形成自己的表达风格，不一定涉及实际发声。\",\"example\":{\"id\":\"voice-n5-ex1\",\"senseId\":\"voice-n5\",\"en\":\"After years of writing, Maya found her own voice as a novelist.\",\"zh\":\"经过多年的写作，玛雅形成了自己独特的小说创作风格。\",\"note\":\"这里的 voice 指作品中的个人风格。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-v3\",\"title\":\"使语音浊化（语音学）\",\"meaning\":\"发某个音时使声带振动，将它发成浊音。\",\"note\":\"及物动词；语音学中的清浊取决于声带是否振动，不同于语法中的主动语态、被动语态。\",\"example\":{\"id\":\"voice-v3-ex1\",\"senseId\":\"voice-v3\",\"en\":\"Try voicing /s/ to make /z/.\",\"zh\":\"试着在发 /s/ 时让声带振动，把它变成 /z/。\",\"note\":\"/s/ 是清音，/z/ 是对应的浊音；两者都能发出声音。\"},\"sourceIds\":[\"wiktionary-voice-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-v4\",\"title\":\"调整乐器的音色\",\"meaning\":\"调整钢琴、管风琴等乐器的发声和音色。\",\"note\":\"乐器制作、维修中的专业用法；重点是音色及发声效果，而 tune 通常侧重校准音高。\",\"example\":{\"id\":\"voice-v4-ex1\",\"senseId\":\"voice-v4\",\"en\":\"The technician voiced the piano to make its tone softer.\",\"zh\":\"技师调整了钢琴的音色，使它听起来更柔和。\",\"note\":\"这里不是把音调得更低，而是改变音色。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"voice-v5\",\"title\":\"授予 IRC 发言状态\",\"meaning\":\"在 IRC 聊天系统中授予用户名为 voice 的发言状态。\",\"note\":\"这是特定聊天系统的权限术语，不泛指打开麦克风或让别人说话。\",\"example\":{\"id\":\"voice-v5-ex1\",\"senseId\":\"voice-v5\",\"en\":\"The channel operator voiced the new user.\",\"zh\":\"频道管理员授予了新用户 voice 发言状态。\",\"note\":\"这里的 voiced 指授予系统权限。\"},\"sourceIds\":[\"wiktionary-voice-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"拼写只差开头字母，但意思不同，发音也分别以 /v/ 和 /tʃ/ 开头。\"",
+        "valueJson": "\"voice 与 choice 都以 -oice 结尾，但前者以 v 开头，后者以 ch 开头；读音分别以 /v/ 和 /tʃ/ 开始。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"voice-confusion-2\",\"senseId\":\"voice-n2\",\"en\":\"We have a choice of two games.\",\"zh\":\"我们有两种游戏可选。\",\"note\":\"choice 不能用来表示嗓音或发言权。\"}",
+        "valueJson": "{\"id\":\"voice-confusion-2\",\"senseId\":\"voice-n2\",\"en\":\"We had a choice of two games, and everyone had a voice in the decision.\",\"zh\":\"我们有两种游戏可选，而且每个人对最后的决定都有发言权。\",\"note\":\"choice 表示可选的选项；a voice in the decision 表示参与决定的发言权。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的阶段按历史来源排列；现代动词 voice 是由同形名词转作动词，不代表另有一条相同的历史演变链。联想记忆也不是词源。\"",
+        "valueJson": "\"这里的阶段按历史来源排列。古法语的 vois 还可写作 voiz、voice，这些是并列拼写形式，不是三个先后相接的阶段。联想记忆不是词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"voice-n3\"",
+        "valueJson": "\"voice-v3\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"清音的；无声的\"",
+        "valueJson": "\"（语音）清音的；无法出声的；没有发言权的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"voice + -less，表示缺少声音或声带振动。\"",
+        "valueJson": "\"voice + 后缀 -less；普通用法可指无法出声或没有发言权，语音学用法指发音时声带不振动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"voice-n3\"",
+        "valueJson": "\"voice-v3\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"这里是语音学用法。\"",
+        "valueJson": "\"这里指发 /s/ 时声带不振动，并不是说 /s/ 没有可听见的声音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"发声；语音学中的浊化\"",
+        "valueJson": "\"语音学中的声带振动、浊音特征或浊化\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"voice + -ing，表示发声这一过程或特征。\"",
+        "valueJson": "\"由语音学动词 voice 加 -ing 构成，词尾不发音的 e 去掉；可指使音变浊的过程，也可指声带振动这一语音特征。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/senseId",
+        "expectedValueJson": "\"voice-n1\"",
+        "valueJson": "\"voice-v3\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/zh",
+        "expectedValueJson": "\"发声有助于我们区分/z/和/s/。\"",
+        "valueJson": "\"声带振动这一特征有助于我们区分 /z/ 和 /s/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "\"这里是语音学用法。\"",
+        "valueJson": "\"发 /z/ 时声带振动，发 /s/ 时声带不振动；这里讨论清浊，不是主动语态与被动语态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-voice\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"voice 的历史来源：古法语 vois，源自拉丁语 vox\",\"voice 的名词与表达类动词用法\"]",
+        "valueJson": "[\"voice 的历史来源：古法语 vois、voiz、voice，源自拉丁语 vox\",\"英语 voice 的发音及规则词形\",\"voice 的基本名词用法与表达类动词用法\",\"动词 voice 的语音学用法和 IRC 状态授予用法\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-voice\",\"title\":\"Cambridge Dictionary: voice\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/voice\",\"supports\":[\"名词 voice 的常用义与搭配\",\"动词 voice 表达意见的用法\",\"复数与动词词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1500,
+    "headword": "voice",
+    "meaning_zh": "n. 声音, 嗓音, 嗓子, 愿望, 发言权, 表达, 喉舌, 语态\nvt. 表达, 吐露, 调音",
+    "phonetic": "/vɒis/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,484 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "61b843ccbcfc924fe5d73fabf4a0eab2e8e6a92ff3931d6181d547067684b9e7",
+    "executedReviewPromptHash": "61b843ccbcfc924fe5d73fabf4a0eab2e8e6a92ff3931d6181d547067684b9e7",
+    "reviewHash": "2be2055aff6a7706342900fcd846859a2e3ab0bedd7a3f91151cbf7cc9072bc8",
+    "wordId": 1443,
+    "inputHash": "737db0057be37b1ccc52b9f8686f214d4e116f1811e61f8ae3f5275e978cd293",
+    "draftHash": "5ad441fc547ad4e50c2f74d288881125b7a54ec4854c6a6a658466b15b0eff63",
+    "finalHash": "3f298b45bf7ca4c46fb46a2a183ae7d6ef84ac27f93edd843c90efa741c316cf",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/total#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.939Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 58847,
+        "revisionId": 39773181,
+        "revisionTimestamp": "2026-08-03T13:42:45Z",
+        "sha256": "885836f6dd246ad175fffa7bdb7fc5dec227005246e7e46f306f7dc8f855da71",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/total",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:57:58.501Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:11:21.984Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "初稿多处引用 Oxford，但实际材料中没有该页面的检索内容。应统一引用已取得的法语维基词典英语词条，并明确其词条语言与释文语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "“总计的”和强调程度的“完全的”合并后各只有一个例句。应分开教学，每义补足两个例句；in total 也应移至名词下讲解其副词性功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "“进行加总”和“合计达到”是不同的常用功能，目前各只有一个例句。应分义补例，并分别配置搭配、近义表达和反向表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "total 并非以“辅音字母加 l”结尾：l 前是元音字母 a。英美双写差异可以保留，但拼写说明必须纠正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "partial silence 不适合作为基础教学中的自然反向搭配。“完全的”可用 total success / partial success 对照；“总计的”则可与单项费用作语境对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/summary",
+        "message": "仅凭 total 后接名词无法区分形容词与动词，因为 total the prices 中后面同样是名词。应根据修饰语或谓语的句法作用判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "车辆义只译为“严重损毁”不够精确，通常包含损坏到报废或不值得修理的程度。美式例句宜配套使用 totaled。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "取得的词源摘录只明确说明来自拉丁语 totalis，没有展开该拉丁词的释义。应保留已证实的来源说明，移除超出摘录证据的阶段释义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0",
+        "message": "算术例句本身正确，但可换成家长会人数这一具体生活场景，同时实际示范 a total of。"
+      }
+    ],
+    "coverageAssessment": "已核对形容词的总量义与完全程度义、名词总数和总额义、动词加总与合计达到两种功能，以及美式车辆报废义。补丁使四个主要形容词和动词功能各有两个例句，并在名词下补足 in total 的生活例句。原词条的“adv. 统统”不作为现代常用裸词副词另立义项，而通过 in total 与 totally 的区别落实教学。词源仅保留材料明确支持的拉丁语 totalis 来源；材料未取得的 Oxford 页面不再作为依据。",
+    "senseInventory": [
+      {
+        "sense": "形容词：总的；所有相关项目合计的",
+        "coveredBy": [
+          "total-adjective"
+        ],
+        "assessment": "原稿有总费用例句；补丁补充总人数例句，并将完全程度义分出。"
+      },
+      {
+        "sense": "形容词：完全的；彻底的",
+        "coveredBy": [
+          "total-adjective-complete"
+        ],
+        "assessment": "新增独立义项，以 total silence 和 a total success 各举一例，限定 complete、utter 和 partial 的适用搭配。"
+      },
+      {
+        "sense": "名词：总数；总额；合计",
+        "coveredBy": [
+          "total-noun"
+        ],
+        "assessment": "保留核对账单总额的例句，增加 a total of 的具体人数场景。无需另立与总数义重复的“全体”义。"
+      },
+      {
+        "sense": "副词性数量表达：总共；统共",
+        "coveredBy": [
+          "total-noun"
+        ],
+        "assessment": "通过名词构成的介词短语 in total 覆盖，并补充两个例句；不将 total 单独教成可替代 totally 的常用副词。"
+      },
+      {
+        "sense": "及物动词：把数目加总；计算总和",
+        "coveredBy": [
+          "total-verb"
+        ],
+        "assessment": "原稿只有一个计算动作例句；补丁补足两个，并将 amount to 移至合计结果义。"
+      },
+      {
+        "sense": "动词：合计为；总共达到",
+        "coveredBy": [
+          "total-verb-amount"
+        ],
+        "assessment": "新增独立义项，分别用队员人数和周末开支说明 total + 数量，并与 amount to、add up to 对照。"
+      },
+      {
+        "sense": "美式非正式及物动词：使车辆损坏至报废",
+        "coveredBy": [
+          "total-verb-slang"
+        ],
+        "assessment": "作为低频义保留，明确报废或不值得修理的程度，并统一例句的美式拼写。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"total 常说“全部的、总共的”，作名词是“总数”，作动词可表示“把数目加起来”或“合计为”。\"",
+        "valueJson": "\"total 作形容词可表示“总的”或“完全的”，作名词是“总数、总额”，作动词可表示“加总”或“合计达到”；in total 表示“总共”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 the total 是“总数”，常与 of 连用说明总数由什么组成。\"",
+        "valueJson": "\"记住 the total 是“总数、总额”，a total of + 数量 表示“总共……”，in total 表示“总共”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"以辅音字母加 -l 结尾；英式常双写 l，美式通常不双写。\"",
+        "valueJson": "\"total 以单个 l 结尾；加 -ed 时，英式通常双写 l，写作 totalled；美式通常不双写，写作 totaled。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"形容词：全部的；总的\"",
+        "valueJson": "\"形容词：总的；总计的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示把有关的人或事物都包括在内，也可表示整体的数量、程度或效果。\"",
+        "valueJson": "\"表示把所有相关项目都包括在内的总数量或总金额。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常放在名词前；total silence 表示“完全安静”，total cost 表示“总费用”。\"",
+        "valueJson": "\"常放在表示数量或金额的名词前，如 total cost（总费用）、total number（总数）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"total-adj-ex2\",\"senseId\":\"total-adjective\",\"en\":\"After the game, the room fell into total silence.\",\"zh\":\"比赛结束后，房间里完全安静下来。\",\"note\":\"total 修饰 silence，表示完全、彻底。\"}",
+        "valueJson": "{\"id\":\"total-adj-ex2\",\"senseId\":\"total-adjective\",\"en\":\"The total number of students in our class is 32.\",\"zh\":\"我们班共有32名学生。\",\"note\":\"total 修饰 number，表示把全班学生都计算在内的总人数。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"in total\",\"zh\":\"总共；合计\",\"note\":\"常放在数量之后或句末，概括全部数量。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"total silence\",\"zh\":\"一片寂静；完全安静\",\"note\":\"total 加在抽象名词前，强调程度彻底。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"total number\",\"zh\":\"总数\",\"note\":\"常接 of，说明统计的是哪些人或事物，如 the total number of students。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"whole\",\"zh\":\"全部的；完整的\",\"note\":\"whole 常强调一个完整整体，如 the whole class；total 更常概括总量或总体程度。\"},{\"en\":\"complete\",\"zh\":\"完全的；完整的\",\"note\":\"complete 强调没有缺少部分；total 常用于总数或程度。\"}],\"contrasting\":[{\"en\":\"partial\",\"zh\":\"部分的\",\"note\":\"在表示覆盖范围时与 total 相对，如 total silence / partial silence。\"}],\"similarNote\":\"whole 和 complete 都可表示完整，但搭配侧重点不同。\",\"contrastingNote\":\"partial 只适用于“全部与部分”的范围对比；total 表示程度时不一定能换成它。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"overall\",\"zh\":\"总的；整体的\",\"note\":\"overall cost 与 total cost 都可指总费用；overall 还可泛指整体情况，不一定涉及加总。\"},{\"en\":\"whole\",\"zh\":\"全部的；整个的\",\"note\":\"the whole class 强调整个班级；the total number of students 强调学生的总人数，两种结构不能直接互换。\"}],\"contrasting\":[{\"en\":\"individual\",\"zh\":\"单项的；各自的\",\"note\":\"统计费用时，可将 individual costs（各项费用）与 the total cost（总费用）对照。\"}],\"similarNote\":\"表达合计数量时优先记住 total cost、total number；whole 更侧重完整的整体。\",\"contrastingNote\":\"individual 与 total 在“单项与总计”的统计语境中形成对照，不是所有语境中的固定反义词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见结构是 the total of + 数量或项目；the total 可单独表示“总数”。\"",
+        "valueJson": "\"the total 可单独表示“总数、总额”；the total of 后接被合计的数字或项目，a total of 后接合计结果。in total 是表示“总共”的介词短语，其中 total 是名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"total-n-ex1\",\"senseId\":\"total-noun\",\"en\":\"The total of three and five is eight.\",\"zh\":\"三加五的总数是八。\",\"note\":\"the total of 后接构成总数的数字。\"}",
+        "valueJson": "{\"id\":\"total-n-ex1\",\"senseId\":\"total-noun\",\"en\":\"A total of 18 parents came to the meeting.\",\"zh\":\"共有18位家长来参加会议。\",\"note\":\"a total of 后接合计结果18位家长。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"total-n-ex3\",\"senseId\":\"total-noun\",\"en\":\"We bought five notebooks in total.\",\"zh\":\"我们总共买了五本笔记本。\",\"note\":\"in total 放在句末，说明五本是全部数量。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"total-n-ex4\",\"senseId\":\"total-noun\",\"en\":\"In total, we spent 80 yuan on books.\",\"zh\":\"我们买书总共花了80元。\",\"note\":\"in total 也可放在句首，概括全部开支。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"in total\",\"zh\":\"总共；合计\",\"note\":\"整个短语作状语，可放在句首或句末；total 在短语中是名词。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"动词：合计；把……加起来\"",
+        "valueJson": "\"动词：把……加总；计算总和\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"作及物动词时，把若干数目加起来；作不及物动词时，表示合计为某个数。\"",
+        "valueJson": "\"把若干数目或费用加起来，算出总数或总额。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"及物用法后接被计算的项目；表示结果时常用 total + 数字或 total + 数量表达。\"",
+        "valueJson": "\"这是及物动词用法，宾语是要加总的数目或费用。total the prices 表示进行计算，与 The prices total 80 yuan 直接陈述合计结果的用法分清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"total-v-ex2\",\"senseId\":\"total-verb\",\"en\":\"Our three teams total 24 players.\",\"zh\":\"我们的三支队伍合计有24名队员。\",\"note\":\"total 作不及物动词，说明合计结果为24人。\"}",
+        "valueJson": "{\"id\":\"total-v-ex2\",\"senseId\":\"total-verb\",\"en\":\"I totalled the amounts on the three receipts.\",\"zh\":\"我把三张收据上的金额加了起来。\",\"note\":\"totalled 后接 amounts，表示计算这些金额的总和。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"主语 + total + 数字或数量\",\"zh\":\"合计为……\",\"note\":\"主语是被统计的若干项，total 后给出合计结果。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"total 24 players\",\"zh\":\"合计24名队员\",\"note\":\"total 后接最终人数，表示合计结果。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"total the bill\",\"zh\":\"把账单金额加总\",\"note\":\"指计算账单上各项费用的总额。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"amount to\",\"zh\":\"合计为；总共达到\",\"note\":\"amount to 常用于总数、金额或程度达到某个数值。\"}",
+        "valueJson": "{\"en\":\"add together\",\"zh\":\"把……相加\",\"note\":\"可说 add the prices together，表示把这些价格相加；total 更强调求出整体总数或总额。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"add up 更突出加法动作；amount to 常突出最终结果。\"",
+        "valueJson": "\"add up 和 add together 都可表示相加的动作；total 强调把相关项目加总。amount to 表示合计结果，不表示进行加法计算的动作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"total-adjective-complete\",\"title\":\"形容词：完全的；彻底的\",\"meaning\":\"强调某种状态或结果是完全的、彻底的，而不是在说数量的总和。\",\"usageNote\":\"通常放在名词前，如 total silence、a total success、a total failure；修饰形容词表示“完全地”时用 totally，如 totally different。\",\"examples\":[{\"id\":\"total-complete-ex1\",\"senseId\":\"total-adjective-complete\",\"en\":\"After the game, the room fell into total silence.\",\"zh\":\"比赛结束后，房间里完全安静下来。\",\"note\":\"total 修饰 silence，强调完全没有声音。\"},{\"id\":\"total-complete-ex2\",\"senseId\":\"total-adjective-complete\",\"en\":\"The party was a total success; everyone had a great time.\",\"zh\":\"聚会非常成功，大家都玩得很开心。\",\"note\":\"a total success 表示完全成功，total 在这里强调成功的程度。\"}],\"patterns\":[{\"en\":\"a total + 表示结果或评价的可数名词\",\"zh\":\"完全的……；彻底的……\",\"note\":\"如 a total success、a total failure；这里的 a 属于整个名词短语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"total silence\",\"zh\":\"一片寂静；完全安静\",\"note\":\"强调没有声音，不是把声音数量加总。\",\"kind\":\"common-collocation\"},{\"en\":\"a total success\",\"zh\":\"完全成功的事\",\"note\":\"用于评价活动、计划等取得完全成功。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"complete\",\"zh\":\"完全的；彻底的\",\"note\":\"a complete success 与 a total success 意思接近；complete 还可表示组成部分齐全。\"},{\"en\":\"utter\",\"zh\":\"完全的；十足的\",\"note\":\"常修饰 confusion、nonsense 等名词，如 utter confusion；不能用来替换 total cost 中表示总量的 total。\"}],\"contrasting\":[{\"en\":\"partial\",\"zh\":\"部分的；不完全的\",\"note\":\"可用 total success 与 partial success 对照，分别表示完全成功和部分成功。\"}],\"similarNote\":\"这组近义表达主要比较程度或结果是否彻底，不能据此任意替换总量表达中的 total。\",\"contrastingNote\":\"partial 可与 total 在完全成功和部分成功等语境中相对；搭配仍需逐个判断。\"},\"sourceIds\":[\"wiktionary-total\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"total-verb-amount\",\"title\":\"动词：合计为；总共达到\",\"meaning\":\"说明若干项目或一组人、事物的总数或总金额达到多少。\",\"usageNote\":\"主语通常是费用、销售额或被统计的若干项，total 后直接接合计结果。注意主谓一致和时态，如 expenses total、the bill totals、expenses totalled。\",\"examples\":[{\"id\":\"total-amount-ex1\",\"senseId\":\"total-verb-amount\",\"en\":\"Our three teams total 24 players.\",\"zh\":\"我们的三支队伍合计有24名队员。\",\"note\":\"24 players 是合计结果，句子没有描述谁在进行计算。\"},{\"id\":\"total-amount-ex2\",\"senseId\":\"total-verb-amount\",\"en\":\"Our expenses for the weekend totalled 300 yuan.\",\"zh\":\"我们周末的开支合计300元。\",\"note\":\"totalled 后直接接金额，表示过去的开支总共达到多少。\"}],\"patterns\":[{\"en\":\"主语 + total + 数量\",\"zh\":\"……合计为……\",\"note\":\"total 根据主语和时态变化；其后直接给出结果，如 The bill totals 80 yuan。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"expenses total ...\",\"zh\":\"开支合计为……\",\"note\":\"后接金额，说明全部费用达到多少。\",\"kind\":\"sentence-pattern\"},{\"en\":\"teams total ... players\",\"zh\":\"队伍合计有……名队员\",\"note\":\"后接人数，说明几支队伍的总规模。\",\"kind\":\"sentence-pattern\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"amount to\",\"zh\":\"合计为；总共达到\",\"note\":\"Our expenses amounted to 300 yuan 与 totalled 300 yuan 意思接近；amount to 中的 to 要保留。\"},{\"en\":\"add up to\",\"zh\":\"合计为\",\"note\":\"The bills add up to 300 yuan 表示这些账单合计300元；区别于 add up the bills 这一计算动作。\"}],\"contrasting\":[],\"similarNote\":\"total 后直接接数量；amount to 和 add up to 都通过 to 引出合计结果。\",\"contrastingNote\":\"这一用法只陈述合计结果，没有固定的通用反义词；subtract 则是与加法相对的计算动作。\"},\"sourceIds\":[\"wiktionary-total\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在美式非正式用法中，total 可表示车辆在事故中严重损毁。\"",
+        "valueJson": "\"在美式非正式用法中，total 可表示使车辆严重损坏到报废或不值得修理的程度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常用被动形式，语境通常是车祸或车辆损坏。\"",
+        "valueJson": "\"这是及物动词用法，常见于被动语态；通常指车损已达到报废程度，而不只是一般的严重损坏。美式拼写通常为 totaled。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"total-slang-ex1\",\"senseId\":\"total-verb-slang\",\"en\":\"The old car was totalled in the crash.\",\"zh\":\"那辆旧车在撞车事故中严重损毁。\",\"note\":\"被动语态说明车辆遭到严重损坏。\"}",
+        "valueJson": "{\"id\":\"total-slang-ex1\",\"senseId\":\"total-verb-slang\",\"en\":\"The old car was totaled in the crash.\",\"zh\":\"那辆旧车在撞车事故中撞报废了。\",\"note\":\"was totaled 表示车辆损坏到报废或不值得修理的程度，采用美式拼写。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"看句子里 total 后面接什么：名词前通常是形容词；接被汇总项目或表示合计结果时是动词。\"",
+        "valueJson": "\"看 total 在句中承担什么作用：修饰名词时是形容词；充当谓语，表示进行加总或合计达到时是动词。两种用法后面都可能出现名词，不能只看后一个词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"total 通常修饰名词或作动词；totally 是副词，常修饰形容词或动词。\"",
+        "valueJson": "\"total 常用作形容词、名词或动词；表达“完全地”通常用副词 totally。表达数量上的“总共”可用 in total，其中 total 是名词，整个短语作状语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/senseId",
+        "expectedValueJson": "\"total-adjective\"",
+        "valueJson": "\"total-adjective-complete\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/senseId",
+        "expectedValueJson": "\"total-adjective\"",
+        "valueJson": "\"total-adjective-complete\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"名词前用 total；修饰形容词或动词时常用 totally。\"",
+        "valueJson": "\"修饰名词用形容词 total；表示“完全地”用副词 totally；表示数量上的“总共”常用 in total。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"totalis\",\"meaning\":\"完整的；全部的\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-etymology\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"total-adjective\"",
+        "valueJson": "\"total-adjective-complete\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-total\"]",
+        "valueJson": "[\"wiktionary-total\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-total\",\"title\":\"Oxford Learner’s Dictionaries: total\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/total\",\"supports\":[\"形容词、名词和动词的常见用法\",\"名词复数及动词词形\",\"发音和派生词\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: total（English section）\",\"url\":\"https://fr.wiktionary.org/wiki/total#Anglais\",\"supports\":[\"total 来自拉丁语 totalis\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-total\",\"title\":\"Wiktionnaire：total（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/total#Anglais\",\"supports\":[\"形容词、名词及动词义项，包括美式车辆损毁义\",\"英美发音、名词规则复数及动词拼写变体\",\"total 来自拉丁语 totalis\",\"totally、totality 等派生词的收录\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1443,
+    "headword": "total",
+    "meaning_zh": "adj. 全体的, 总的, 全然的\nvt. 计算...的总和, 共计为\nvi. 合计\nn. 总数, 全体, 合计\nadv. 统统",
+    "phonetic": "/'tәutl/",
+    "pos": "",
+    "forms": []
+  }
+}

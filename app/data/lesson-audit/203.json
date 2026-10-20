@@ -1,0 +1,325 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "04e76786045ced4157f589c2b63d4f5854b01a4a6f935a2f797d4b9dc5f55634",
+    "executedReviewPromptHash": "04e76786045ced4157f589c2b63d4f5854b01a4a6f935a2f797d4b9dc5f55634",
+    "reviewHash": "d823b9cdff084e7af77f3190f1a92c39edfc198a44171b311c2fbc384108983c",
+    "wordId": 203,
+    "inputHash": "0113c7a3a38cba681c6037ee0b0c987aca5199d9eaa26c9362eab9bc8c989560",
+    "draftHash": "caa148ef26bf84c08d5883a4df6b6340409cc94dbe2169239f80cbd16f76d5e8",
+    "finalHash": "8431ef6276ba419fe5dd28bdbd29ea9f81df7fdc7eb85c3dfd6f13d1f61cabcf",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/butter#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:27.946Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116407,
+        "revisionId": 39915289,
+        "revisionTimestamp": "2026-10-02T23:04:00Z",
+        "sha256": "d0ebd51a5f9b4db6a90eba7b9c0899d92f7d600eb9bee28c66b67cf2d85d647b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/butter",
+        "section": "butter (noun)",
+        "supports": [
+          "Old English and Latin transmission",
+          "Greek source",
+          "Uncertainty in deeper analysis"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "fac577d5d7b89a0b120a0830521f9665c4ab7db6268a54718fb6ed8f691edbde",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "fac577d5d7b89a0b120a0830521f9665c4ab7db6268a54718fb6ed8f691edbde",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/203.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/butter",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T05:52:29.009Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T05:58:39.416Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "butter 以 r 结尾，没有可删除的词尾 e；buttering 是直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 oxford_butter 的 sourceIds",
+        "message": "现有来源关联指向未提供正文的 Oxford，却遗漏实际取得的 Wiktionnaire 英语词条。应替换核心义和读音的来源，并清除现有材料不能支持的扩展项目关联。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "例句只有 batter，却绑定 butter 的黄油义。改为同时包含 butter 和 batter 的对照句，可保留有效 senseId。拼写提示也宜直接比较元音字母和读音。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "各阶段的 meaning 写的是来源转述，没有解释历史词形的词义。应将可靠借词链保留在 summary，删除这些占位阶段；深层拆解继续明确为不确定分析。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0",
+        "message": "have butter on bread 不能直接等同于“面包上有黄油”，在饮食语境中通常涉及吃法或选择。改用语义明确的 spread butter on bread。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "“英式词尾的 r 通常不明显”容易让学生误以为只是轻读，应说明常见标准英音中的不发音及连读条件。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "butter food with butter 语法可以成立，但作为默认常用模板信息重复；with 宜展示具体黄油种类。同时补明器具也可作宾语，并用实际结构比较 spread 与 butter。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/example/zh",
+        "message": "“他想请假前”不够自然，也未清楚对应 before asking；应明确先讨好、后开口请假的顺序。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条的两个主要定义：通常不可数的黄油名词义，以及给食物或器具涂黄油的及物动词义；两义各有2个自然原创例句。butter up 作为补充口语短语保留。复合词及仅列链接的 butter wouldn’t melt… 不作为新增核心义展开。词源按已取得的 Etymonline 材料保留可靠传承关系，不确定的深层分析未当作事实；法语编辑说明未被误作法语词义。",
+    "senseInventory": [
+      {
+        "sense": "名词：黄油，通常不可数",
+        "coveredBy": [
+          "butter-n-1"
+        ],
+        "assessment": "覆盖充分，两个例句分别展示涂面包和烹饪用途；不可数用法、量词及与 margarine、oil 的语境区别准确。"
+      },
+      {
+        "sense": "及物动词：给食物或器具涂黄油",
+        "coveredBy": [
+          "butter-v-1"
+        ],
+        "assessment": "已有两个生活例句；补明器具宾语范围，改进 with 模板及与 spread 的结构比较，并修正 buttering 的拼写解释。"
+      },
+      {
+        "sense": "短语 butter someone up：奉承、讨好",
+        "coveredBy": [
+          "butter-v-2"
+        ],
+        "assessment": "作为补充短语覆盖，未误教为裸词 butter 的独立用法；修顺译文。此义按专业语言知识保留，不关联未提供正文的来源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 have butter on bread 表示面包上有黄油。\"",
+        "valueJson": "\"记住 spread butter on bread 表示把黄油涂在面包上。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式词尾的 r 通常不明显；美式通常会读出 r。\"",
+        "valueJson": "\"标准英音中，词尾 r 在单独读或后接辅音时通常不发音，后接元音时可连读；美音通常读出 r。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"去掉词尾不发音的 e 再加 -ing。\"",
+        "valueJson": "\"保留 butter 的全部字母，直接加 -ing，写作 buttering。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"给食物涂黄油\"",
+        "valueJson": "\"给……涂黄油\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"把黄油涂在面包等食物上。\"",
+        "valueJson": "\"把黄油涂在面包等食物上，也可涂在烤盘等器具上。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 butter + 食物，也可用 butter + 食物 + with + 黄油；被涂抹的食物作宾语。\"",
+        "valueJson": "\"及物动词，直接接被涂黄油的食物或器具，如 butter the bread、butter the pan。butter 已包含“涂黄油”的意思；with 可补充黄油的具体种类，如 butter the toast with salted butter。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"butter food with butter\",\"zh\":\"用黄油给食物涂抹\",\"note\":\"with 后可说明使用的材料。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"butter the toast with salted butter\",\"zh\":\"在烤面包上涂咸黄油\",\"note\":\"butter 已表示涂黄油；with salted butter 补充说明黄油的种类。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可表示把黄油、果酱等抹开；单独使用时不说明涂的是什么。\"",
+        "valueJson": "\"spread butter on bread 与 butter the bread 都表示在面包上涂黄油；spread 还可用于果酱等涂抹物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"他想请假前，试着说些好听的话讨好教练。\"",
+        "valueJson": "\"他在开口请假前，先试着说些好听的话讨好教练。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"butter-confusion-ex2\",\"senseId\":\"butter-n-1\",\"en\":\"The pancake batter is ready.\",\"zh\":\"煎饼面糊准备好了。\",\"note\":\"batter 指烹饪前调好的稠面糊。\"}",
+        "valueJson": "{\"id\":\"butter-confusion-ex2\",\"senseId\":\"butter-n-1\",\"en\":\"Mix the melted butter into the pancake batter.\",\"zh\":\"把融化的黄油拌入煎饼面糊。\",\"note\":\"butter 是黄油，batter 是面糊；本句中两个词都是名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记忆拼写时把 butter 和 buttermilk 中的 but 联想在一起；面糊 batter 的元音字母是 a。\"",
+        "valueJson": "\"butter 中的 u 发 /ʌ/，batter 中的 a 发 /æ/；前者是黄油，后者在这里指面糊。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"历史上，英语 butter 经古英语 butere 传来；其更早来源与拉丁语 butyrum、希腊语 boutyron 有关。希腊语更深层的拆解说法并不确定。\"",
+        "valueJson": "\"英语 butter 经古英语 butere 传承而来。这个词在日耳曼语早期从拉丁语 butyrum 借入；拉丁词又来自希腊语 boutyron。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"butere\",\"meaning\":\"Etymonline 指出 butter 经此形式传入英语。\"},{\"language\":\"拉丁语\",\"form\":\"butyrum\",\"meaning\":\"Etymonline 指出这是古英语形式所借自的拉丁词。\"},{\"language\":\"希腊语\",\"form\":\"boutyron\",\"meaning\":\"Etymonline 将其列为拉丁词更早的来源。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是历史词源线索，不是现代英语的构词拆分；“牛加奶酪”的希腊语拆解说法不可靠。\"",
+        "valueJson": "\"这条历史借词链不是现代英语的构词拆分。希腊语 boutyron 的“牛＋奶酪”分析可能是民间词源解释，不能当作确定结论。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford_butter\",\"title\":\"Oxford Learner’s Dictionaries：butter\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/butter\",\"supports\":[\"butter 的名词和动词用法\",\"常见词形及相关表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_butter\",\"title\":\"Wiktionnaire：butter（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/butter#Anglais\",\"supports\":[\"butter 的黄油名词义与涂黄油动词义\",\"英美读音及规则动词变化\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[\"wiktionary_butter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[\"wiktionary_butter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[\"wiktionary_butter\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_butter\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 203,
+    "headword": "butter",
+    "meaning_zh": "n. 黄油\nv. 涂黄油",
+    "phonetic": "/'bʌtә/",
+    "pos": "",
+    "forms": []
+  }
+}

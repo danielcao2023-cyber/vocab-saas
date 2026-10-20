@@ -1,0 +1,162 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "11b35717f9f0c773d19fe31613d3fa74fb28c832d01a74974341b209c9e2a48d",
+    "executedReviewPromptHash": "11b35717f9f0c773d19fe31613d3fa74fb28c832d01a74974341b209c9e2a48d",
+    "reviewHash": "0ec71755f38a6ba0821c32ffc476ebad4853090e3ae25283396e6b1730bf96f0",
+    "wordId": 1592,
+    "inputHash": "53ada75ef70cd40b799a2268886cd4f1f725e0b6f86c2eb44f8eb3be90dea058",
+    "draftHash": "aadf98f99d7f9c64fa029e9f231ae0b22546f89c7fa7e9927820a6915e6ab6f9",
+    "finalHash": "42f8a9bace52674298b1f51bc022f7d53f651aeb7cd70df5c66995e991278dec",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/yogurt#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.281Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 42223,
+        "revisionId": 38441057,
+        "revisionTimestamp": "2025-08-01T00:56:30Z",
+        "sha256": "ceb8d66f57dfe6b2179b5f6f7b89d0f218f6988257a71d886af4782217028b72",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/yogurt",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:30:49.178Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:37:07.265Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "表示具体一杯或一份酸奶时，yogurt 也常作可数名词，如 a yogurt、two yogurts。原稿只教量词短语，遗漏了这一常用语法功能，需补充说明、复数形式及实例。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/stages/0/meaning",
+        "message": "此处写的是来源关系，不是该阶段词形的含义；应填写“酸奶”。奥斯曼土耳其语到英语的阶段顺序可以保留。"
+      }
+    ],
+    "coverageAssessment": "所给英语词条仅列“酸奶”这一名词义，s1 已用两个自然原创例句覆盖，无须拆成多个义项。补丁补齐按份计数的常用功能。英美发音、拼写变体、搭配、翻译及语境对照基本准确；milk 已明确为类别对照，未冒充反义词。历史词源与已取得的英语词条资料相符。来源未逐一列出的更少见拼法不影响初中常用义覆盖；未取得正文的推荐链接不作为已核实证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：酸奶，通常不可数，指这种发酵乳制食品",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "词典列出的唯一主要义项；现有两个例句已覆盖，释义、搭配和译文基本准确。"
+      },
+      {
+        "sense": "同一食物义的可数用法：一杯、一盒或一份酸奶",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "属于常用计数功能，不另立词义。所给词条仅标不可数；依据专业语言知识补充可数说明、yogurts 及具体例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一种由牛奶发酵制成的浓稠食品。通常作不可数名词；表示一杯或一份时，用量词短语。\"",
+        "valueJson": "\"一种由牛奶发酵制成的浓稠食品。通常作不可数名词；表示具体一杯、一盒或一份时，可用 a cup of yogurt 等量词短语，也常直接说 a yogurt、two yogurts。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"复数（按份计数时）\",\"form\":\"yogurts\",\"ipa\":\"/ˈjoʊɡɚts/\",\"note\":\"在 yogurt 后直接加 s；用于两杯、两盒或多份酸奶。泛指酸奶这种食物时通常仍用不可数形式 yogurt。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex3\",\"senseId\":\"s1\",\"en\":\"I packed two yogurts for the trip.\",\"zh\":\"我为这趟出行装了两盒酸奶。\",\"note\":\"two yogurts 指两份独立包装的酸奶；这里按盒计数，yogurt 作可数名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/0/meaning",
+        "expectedValueJson": "\"英语 yogurt 的传入来源\"",
+        "valueJson": "\"酸奶\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1592,
+    "headword": "yogurt",
+    "meaning_zh": "n. 酸奶",
+    "phonetic": "/'jɔ^әt/",
+    "pos": "",
+    "forms": []
+  }
+}

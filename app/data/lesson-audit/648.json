@@ -1,0 +1,440 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ed97d1bdac02c7de1c10e6ecb0b9b0d2d18aac7ca5997989f6ace90562d16aaf",
+    "executedReviewPromptHash": "ed97d1bdac02c7de1c10e6ecb0b9b0d2d18aac7ca5997989f6ace90562d16aaf",
+    "reviewHash": "f118041ed2119226dda692a0cb4f739b16aa7c6eb6b144bebf535f12d6bc40d7",
+    "wordId": 648,
+    "inputHash": "9d884bc7167d2141d4baaaab8a30e599a7c8908d619740f142a9c41a8ab16444",
+    "draftHash": "87de40351a18b8f9ff5aa95105e2202ea59d76f4f6a93c16c6684b706148d1e4",
+    "finalHash": "7ddf54919691cf439f6fee1daf2da5f23aa1d903ffeddd8df50f50de71ab834d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hike#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:26.203Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 223760,
+        "revisionId": 39916081,
+        "revisionTimestamp": "2026-10-03T13:05:00Z",
+        "sha256": "ddeedf6554acfd81b2d9cdfca3a7486cb9742a112b10b08cab0823b76c88cb82",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hike",
+        "section": "hike etymology",
+        "supports": [
+          "Walking sense has unknown origin; raising relation only possible"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:16:09.057140+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "cab2b270a89f69a5ac7a32141b35f8b73a911be81cab6c6833cf167a2a5222fd",
+        "summaryAndSupportsWordCount": 51,
+        "sha256": "cab2b270a89f69a5ac7a32141b35f8b73a911be81cab6c6833cf167a2a5222fd",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/648.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hike",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:56:00.131Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:08:52.686Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 正文未能取得，不能作为已用证据；法语维基词典的英语词条也未提供 hyke 或名词由动词形成的词源信息。须修正来源支持范围及相关引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "现有箭头容易把方言拼写 hyke 到现代 hike 画成已确定的历史阶段。材料明确支持的是步行义动词形成名词，阶段应只呈现这条关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "提价与提起衣物混为一义，各只有一个例句，且衣物义又在补充义重复出现。应让主讲义专讲提价并补足两例，衣物义保留在补充义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote",
+        "message": "“不及物动词可直接接地点”混淆了介词短语与直接宾语。hike in the forest 是不及物结构，hike a trail 则是及物结构，应明确区分并补充后一功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns",
+        "message": "price hike 中是 price 修饰中心名词 hike；in 引出被上调的项目或指标，具体涨幅通常用 of，不能笼统说 in 后接数额。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/2",
+        "message": "/aɪ/ 是双元音，此处不应标为长元音。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/0",
+        "message": "take a hike 确可表示去徒步，但单独命令 Take a hike! 常是不客气的“走开”。教学计划直接要求记忆该短语，应补充这个常用语用区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "词条列出的不及物“上升、上涨”尚未覆盖。可作为较少见用法补充，并说明日常表达更常用 rise 或 go up。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example/zh",
+        "message": "hike up sleeves 表示把袖子向上拉或捋，不必发生卷折；译为“卷了卷”加入了原文没有明确表达的动作。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1",
+        "message": "过去行程加当前备水建议在特定语境下成立，但独立例句缺少再次出行的背景。改为将来行程，因果与时序更清楚。"
+      }
+    ],
+    "coverageAssessment": "已核对名词“徒步、上调”，动词“徒步、提高、向上提起、上涨”，并补充徒步动词的及物路线结构及 Take a hike! 的语用区别。四个主讲义均保留至少两个自然例句；衣物上提、少见不及物上涨与习语列为补充。可用词典正文未直接覆盖全部扩展用法，相关修订依据词条释义与专业语言知识，未冒称 Cambridge 已核验。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：一次徒步旅行、远足",
+        "coveredBy": [
+          "hike-n-hiking"
+        ],
+        "assessment": "覆盖充分；调整第二例的时序，使备水建议与将来行程衔接。"
+      },
+      {
+        "sense": "可数名词：价格、费用等的一次上调",
+        "coveredBy": [
+          "hike-n-increase"
+        ],
+        "assessment": "两例充分；修正名词修饰关系及项目、涨幅的介词区别。"
+      },
+      {
+        "sense": "不及物动词：徒步走、远足",
+        "coveredBy": [
+          "hike-v-walk"
+        ],
+        "assessment": "已有两例；修正地点短语的语法说明。"
+      },
+      {
+        "sense": "及物动词：沿某条路线徒步",
+        "coveredBy": [
+          "hike-v-walk"
+        ],
+        "assessment": "与徒步义合讲，补充直接路线宾语的例句和句型。"
+      },
+      {
+        "sense": "及物动词：提高价格、税费、工资等",
+        "coveredBy": [
+          "hike-v-raise"
+        ],
+        "assessment": "移除混入的衣物义，改为两个提价例句。"
+      },
+      {
+        "sense": "及物动词，常与 up 连用：向上提起、拉起衣物等",
+        "coveredBy": [
+          "hike-v-move"
+        ],
+        "assessment": "保留为补充义；修正袖子动作的翻译。"
+      },
+      {
+        "sense": "较少见的不及物动词：价格等上涨",
+        "coveredBy": [
+          "hike-v-rise"
+        ],
+        "assessment": "原稿遗漏；补充单例并提示更常用的 rise、go up。"
+      },
+      {
+        "sense": "非正式表达 Take a hike!：不客气地叫人走开",
+        "coveredBy": [
+          "hike-expr-dismiss"
+        ],
+        "assessment": "补充语气和语境限制，避免与字面的徒步邀请混淆。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 go on a hike 表示去徒步，take a hike 表示徒步。\"",
+        "valueJson": "\"记住 go on a hike 表示去徒步；take a hike 也可作此义，但单独对人说 Take a hike! 往往是在不客气地叫人走开。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读 hike /haɪk/，注意中间是长元音 /aɪ/。\"",
+        "valueJson": "\"朗读 hike /haɪk/，注意中间是双元音 /aɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/en",
+        "expectedValueJson": "\"The hike took three hours, so bring some water.\"",
+        "valueJson": "\"The hike will take three hours, so bring some water.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"这趟徒步走了三个小时，所以带些水吧。\"",
+        "valueJson": "\"这趟徒步要走三个小时，所以带些水吧。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见于新闻或日常谈论开支；通常说 a hike in + 数额或项目，也可说 price hike。\"",
+        "valueJson": "\"常见于新闻或日常谈论开支；a hike in prices / fees 表示价格／费用上调，也可说 a price hike。涨幅可用 of 引出，如 a hike of 10%。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"in 后接被上调的项目或金额。\"",
+        "valueJson": "\"in 后接 prices、rent 等被上调的项目；涨幅可用 of 引出，如 a hike of 10%。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"名词 hike 放在 price 或 rent 后作修饰语。\"",
+        "valueJson": "\"price 或 rent 作名词定语，修饰中心名词 hike，说明上调的是价格或房租。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"作不及物动词时可直接接地点，也常与 for several hours 等时长表达连用。\"",
+        "valueJson": "\"常作不及物动词，用 in、through、along、up 等介词说明地点或路线；也可作及物动词，直接接路线，如 hike a trail。for several hours 等短语可说明徒步时长。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hike-v-walk-ex3\",\"senseId\":\"hike-v-walk\",\"en\":\"We hiked the forest trail before lunch.\",\"zh\":\"午饭前，我们沿森林里的小径徒步走了一趟。\",\"note\":\"hike a trail 是及物用法，trail 是直接宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"hike + 路线\",\"zh\":\"沿某条路线徒步\",\"note\":\"如 hike a trail；直接宾语表示走过的路线，普通地点则常用介词引出。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"把价格、税费、工资等调高；也可指把某物向上提起。\"",
+        "valueJson": "\"把价格、税费、工资等调高。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"提高价格时 hike 可直接带宾语；口语中 hike up 可强调向上调高。提起衣物等时常用 hike up。\"",
+        "valueJson": "\"提高价格时 hike 直接带宾语，也可说 hike up prices。常用 by 表示涨幅，用 to 表示调高后的数值。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"hike-v-raise-ex2\",\"senseId\":\"hike-v-raise\",\"en\":\"She hiked up her jeans before stepping into the stream.\",\"zh\":\"她下到溪水里之前把牛仔裤往上提了提。\",\"note\":\"hike up + 衣物，表示向上提起。\"}",
+        "valueJson": "{\"id\":\"hike-v-raise-ex2\",\"senseId\":\"hike-v-raise\",\"en\":\"Our landlord hiked the rent by $100 a month.\",\"zh\":\"房东把我们的月租提高了100美元。\",\"note\":\"hike the rent 表示提高房租；by 引出增加的金额。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"hike up + 衣物／物品\",\"zh\":\"把衣物／物品往上提\",\"note\":\"up 突出向上的动作，常用于衣物或可提起的物件。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0/zh",
+        "expectedValueJson": "\"提高；抬起\"",
+        "valueJson": "\"提高（价格、税费、工资等）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"他洗碗前把袖子往上卷了卷。\"",
+        "valueJson": "\"他洗碗前把袖子往上捋了捋。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "\"hike up 表示把袖子向上提。\"",
+        "valueJson": "\"hike up 表示向上提或拉，不一定把袖子卷起；强调卷起通常用 roll up one's sleeves。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hike-v-rise\",\"title\":\"不及物动词：上涨（较少见）\",\"meaning\":\"价格、费用等上涨，常指明显上涨。\",\"note\":\"这个不及物用法较少见；日常说价格上涨通常用 rise 或 go up。hike prices 则是及物结构，表示有人把价格调高。\",\"example\":{\"id\":\"hike-v-rise-ex1\",\"senseId\":\"hike-v-rise\",\"en\":\"Fuel prices hiked up after the storm.\",\"zh\":\"暴风雨过后，燃料价格猛涨。\",\"note\":\"prices 是主语；hiked up 后不接宾语，表示价格本身上涨。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hike-expr-dismiss\",\"title\":\"非正式表达：Take a hike!（走开！）\",\"meaning\":\"不客气地叫别人离开或别再纠缠。\",\"note\":\"常见于美式英语，语气不客气。take a hike 在户外语境也能按字面表示去徒步；单独对人说 Take a hike! 常是在赶人。\",\"example\":{\"id\":\"hike-expr-dismiss-ex1\",\"senseId\":\"hike-expr-dismiss\",\"en\":\"She told the pushy salesman to take a hike.\",\"zh\":\"她不客气地叫那个纠缠不休的推销员走开。\",\"note\":\"tell someone to take a hike 在这里表示叫某人走开，不是邀请他去徒步。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"英语方言\",\"form\":\"hyke\",\"meaning\":\"有劲地走\"},{\"language\":\"英语\",\"form\":\"hike\",\"meaning\":\"徒步走；名词由动词形成，指徒步活动\"}]",
+        "valueJson": "[{\"language\":\"英语（动词）\",\"form\":\"hike\",\"meaning\":\"有劲地走；徒步走\"},{\"language\":\"英语（名词）\",\"form\":\"hike\",\"meaning\":\"一次徒步活动，由步行义动词转成名词\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"wiktionary-fr-hike\",\"etymonline-hike\"]",
+        "valueJson": "[\"etymonline-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[\"wiktionary-fr-hike\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-hike\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"hyke 的方言步行义\",\"名词由动词形成\"]",
+        "valueJson": "[\"英语名词的徒步旅行义与明显上涨义\",\"英语不及物动词的徒步义\",\"英语发音 /haɪk/\",\"列出衍生形式 hiking\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"步行义来源不明\",\"提高义与 hitch 的关系仅为可能\"]",
+        "valueJson": "[\"方言形式 hyke 表示有劲地走\",\"徒步义名词由动词形成\",\"步行义来源不明\",\"提高义与 hitch 的关系仅为可能\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-hike\",\"title\":\"Cambridge Dictionary: hike\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hike\",\"supports\":[\"名词和动词的常用义项\",\"徒步与价格上调相关搭配\",\"常见词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 648,
+    "headword": "hike",
+    "meaning_zh": "n. 徒步旅行, 远足, 涨价, 提高\nvi. 步行, 徒步旅行, 上升\nvt. 使高涨, 拉起",
+    "phonetic": "/haik/",
+    "pos": "",
+    "forms": []
+  }
+}

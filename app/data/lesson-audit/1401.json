@@ -1,0 +1,306 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d27cd91eb3cf28829c808847b759bf720f19249bac72f85bb88ebc9e9f90080e",
+    "executedReviewPromptHash": "d27cd91eb3cf28829c808847b759bf720f19249bac72f85bb88ebc9e9f90080e",
+    "reviewHash": "19c2779edb520e315c02749516cbf35ddf849a846215c3ac643f7f3f7944b8f2",
+    "wordId": 1401,
+    "inputHash": "03ac43dbeb0a264e7c3d6feb620911c3eb5e14e13ce4d8afe01b2ee6f7efcbb1",
+    "draftHash": "d4400fd17c2f2b199d0d33f5f3c5412ad7a52b8008abdbeadb75038af77b63c1",
+    "finalHash": "9bec7a92db5e3aa0ca6d53a662a4378dca2c693a22818bb537bebe0023989634",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/their#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.426Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 236569,
+        "revisionId": 39739610,
+        "revisionTimestamp": "2026-08-02T00:36:33Z",
+        "sha256": "4a57c01954ba83c4f31db3aa2ee16fa085786348840650060f385dbb852abfb1",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/their",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:41:30.967Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:56:42.116Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/takeaway；/senses/1/usageNote",
+        "message": "单数 they 仍搭配 are、have 等形式；their 不决定谓语形式。Their teacher is here 的主语是 teacher，不能用来说明 they 的主谓一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0",
+        "message": "句型把指人表达与 their 直接相接，缺少谓语，也未区分 each 与 each + 单数名词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1；/wordFamily/0/meaning",
+        "message": "单数用法应明确涵盖使用 they 的非二元性别者，避免仅概括为不愿使用 he/she；现有例句只展示泛指个人，宜补充明确使用 they/them 的情境。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similar",
+        "message": "his or her 的说明容易被理解为性别已经明确。应说明它可泛指个人，但不能普遍替换指向特定个人的 their。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/note",
+        "message": "they’re 在意义上等于 they are，但通常不按未缩约的两个词朗读；原说明与同音辨析冲突。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "所获词源文本的语言代码是 ang，不能据此支持初稿的古诺尔斯语标注。阶段释义也只是来源占位说明。应仅保留可核对的来源字形 þeirra，并移除未获支持的语种及阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 页面未成功获取，不能作为已据以讲解的证据。已获取的法语维基词典英语词条实际支持释义、发音、同音词及代词形式关系，应调整引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/partOfSpeech；/studyPlan/1；/senses/1/patterns/1/zh",
+        "message": "词性宜明确为所属限定词；学习步骤中的中英混写可改为自然中文；单数 they 句型不宜译作复数的“他们自己的”。"
+      }
+    ],
+    "coverageAssessment": "已核对词典的复数所属与单数所属两项主要定义，无须增加第三义。两义原有例句均自然且各不少于两项；补充明确使用 they/them 的个人情境后，单数义覆盖更完整。已修正主谓一致、句型、缩约读音及来源引用；现有英美发音转写可保留。词源仅保留可核实的来源字形，不断言材料不能支持的具体语种关系。",
+    "senseInventory": [
+      {
+        "sense": "复数所属：他们的、她们的、它们的，表示所属或关联关系。",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已覆盖；包与树叶的两个原创例句分别展示人的所属物和事物的组成部分，搭配另涵盖亲友、住所及学校。"
+      },
+      {
+        "sense": "单数所属：某个人的，用于性别未知或不重要的人，也用于以 they 指称的人，包括部分非二元性别者。",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "原例覆盖 someone 与 each student；补充明确使用 they/them 的个人例句，并修正谓语说明及句型。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"possessive determiner; possessive pronoun form\"",
+        "valueJson": "\"possessive determiner（所属限定词；传统教学称形容词性物主代词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"their 表示某物属于 they 所指的人或事物，通常放在名词前：their books。它也可指一位性别未知或不愿用 he/she 指称的人；此时谓语常用单数形式，但 their 仍不变。\"",
+        "valueJson": "\"their 表示与所指的人或事物有关的所属关系，放在名词前：their books。它也可指一个性别未知、不重要或使用 they 称呼的人。谓语看主语：someone has，但单数 they 仍用 they have、they are；their 本身不决定谓语形式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"读 aloud 对比 their、there、they’re，检查句中表达的是所属、地点还是 they are。\"",
+        "valueJson": "\"大声朗读并对比 their、there、they’re，检查句中表达的是所属、地点还是 they are。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"某个人的；用来指性别未知、不重要或不愿用 he/she 指称的一个人。\"",
+        "valueJson": "\"某个人的；用于性别未知、不重要，或使用 they 称呼的一个人，包括部分非二元性别者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常与单数 they 配套使用。their 后接名词；谓语依句中 they 的用法通常用复数形式，如 Their teacher is here；若明确把人名当主语，则按该句结构选择谓语。\"",
+        "valueJson": "\"their 后接名词，但不决定谓语形式。指一个人时，they 作主语仍搭配 are、have 等形式；someone、each student 作主语则按单数搭配，如 Someone has left their bag here。Their teacher is here 中的主语是 teacher，所以用 is。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s2-ex3\",\"senseId\":\"s2\",\"en\":\"Alex uses they/them pronouns. Their sketchbook is on the table.\",\"zh\":\"亚历克斯使用 they/them 代词。亚历克斯的速写本在桌上。\",\"note\":\"已知 Alex 使用 they/them，their 是相应的所属形式；这里指一个人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"someone / anyone / each + noun + their + noun\",\"zh\":\"某人／任何人／每位……的……\",\"note\":\"先提及性别未知或泛指的一个人，再用 their 指回此人。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"Someone + verb + their + noun\",\"zh\":\"某人……自己的……\",\"note\":\"这是句型框架，须有谓语，如 Someone forgot their keys。anyone、each student 等也可用 their 指回所说的个人。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"某人……他们自己的……\"",
+        "valueJson": "\"某人……自己的……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"明确限定为男性或女性时可用；their 更简洁，也可用于性别未知或不愿标明性别的情况。\"",
+        "valueJson": "\"泛指个人时可用，但较冗长，且只列出 his 与 her 两种形式；指已知使用 they 的人时，不宜用它替换 their。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"his or her 明确列出两种性别；their 可泛指一位性别未知的人，也可尊重个人的称呼选择。\"",
+        "valueJson": "\"泛指个人时，his or her 与 their 有时可表达相近意思；their 还可指明确使用 they 的人，不能一律替换为 his or her。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"撇号代替省略的字母 a；朗读时读作 they are。\"",
+        "valueJson": "\"撇号标出 are 中省去的字母 a；意思相当于 they are，通常与 their、there 同音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 their 来自古诺尔斯语 þeirra。\"",
+        "valueJson": "\"their 可追溯到早期形式 þeirra。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"þeirra\",\"meaning\":\"英语 their 的来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"他们、她们、它们；也可指一位性别未知或不愿用 he/she 指称的人。\"",
+        "valueJson": "\"他们、她们、它们；也可指一个性别未知、不重要或使用 they 称呼的人，包括部分非二元性别者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-their\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"their 的历史来源形式为古诺尔斯语 þeirra\"]",
+        "valueJson": "[\"their 的复数及单数所属用法\",\"their 的所属限定词词性及与 they、them、theirs 的形式关系\",\"their 的英美发音及与 there、they’re 的同音关系\",\"their 的历史来源字形 þeirra\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-their\",\"title\":\"Cambridge Dictionary: their\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/their\",\"supports\":[\"their 表示复数所属\",\"their 可用于单数 they 的所属形式\",\"their 与 they、them、theirs 的形式关系\",\"their 的英美发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1401,
+    "headword": "their",
+    "meaning_zh": "pron. 他们的",
+    "phonetic": "/ðєә/",
+    "pos": "",
+    "forms": []
+  }
+}

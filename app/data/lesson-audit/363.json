@@ -1,0 +1,345 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "99b94a0b374ef11286545b26c3c7679a7672a076bb93a2c0f5ac42bbd6a16f8f",
+    "executedReviewPromptHash": "99b94a0b374ef11286545b26c3c7679a7672a076bb93a2c0f5ac42bbd6a16f8f",
+    "reviewHash": "ee81bbd9ea558647187acf892470ae83cd169e2a76d1f3cd68bed5396c971de9",
+    "wordId": 363,
+    "inputHash": "ed6f6653c3d983f5132db27bc302e5670813cbf739651d39c4a02a3ba421b33a",
+    "draftHash": "56602ec4940dd2e813531c06b3a0cad8fed1f6e165830c81024774ce349abbc3",
+    "finalHash": "2abf6dff1a1659227ecc569d2b40bc1be58d313d2a508a2d3d90863eed1d7de1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/death#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:29.374Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9945,
+        "revisionId": 38441410,
+        "revisionTimestamp": "2025-08-01T01:24:53Z",
+        "sha256": "d805739e881ac1c5d646a89c94220985c358e51bb2eb796b37c2384848d12a80",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/death",
+        "section": "death etymology",
+        "supports": [
+          "Old English dying or dead-state meaning",
+          "Germanic family",
+          "Historical noun formation"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "43750bb167bab22c77e39d0484c103a7fb0011f5442127f71e9cae9fbb90deaa",
+        "summaryAndSupportsWordCount": 68,
+        "sha256": "43750bb167bab22c77e39d0484c103a7fb0011f5442127f71e9cae9fbb90deaa",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/363.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/death",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:22:50.488Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:28:00.721Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "本义强调不可数用法，但两个例句都指某一次具体死亡，未展示不可数 death。应替换例句，并说明 the death of... 属于具体死亡事件的可数用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns",
+        "message": "cause 后接的是死亡数量；造成死亡的事件或事物通常作主语。另须区分 one death 与 two deaths，不能笼统写成所有数字后都用 deaths。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns",
+        "message": "death from... 是名词短语，中文宜体现“由……造成的死亡”，以便与 die from... 区分。建议补充常用固定短语 to death 的字面与夸张用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2/meaning",
+        "message": "deathly 的“极度的”缺少搭配限制。本项只展示形容词 deathly silence，释义宜与这一用法对应，避免当作通用程度词使用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0",
+        "message": "比喻义 death 不自带“逐渐”的含义；用法说明和例句翻译均无须加入这一速度限制。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary",
+        "message": "Germanic 在这里宜称“日耳曼语族”。古英语→中古英语→现代英语的阶段顺序有材料支持，无须重排。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 条目未取得正文，不能承接本次释义、发音和词族说明的证据引用。应将有实际支持的项目改引英语 death 的法语维基词典词条或 Etymonline，其余专业语言知识说明清空 sourceIds。"
+      }
+    ],
+    "coverageAssessment": "已核对材料明确列出的不可数“死亡”和可数“一例死亡”，修订后两类核心用法各有两个自然例句。保留比喻义，并补充 to death 的常用短语功能。近义、反向表达的现有语境限制基本准确；die→died 的原拼写说明实际成立，不作错误更改。历史阶段与所引材料一致。材料未直接释出比喻义、夸张短语及全部现代词形，这些按专业语言知识审校，不归称于未取得的 Cambridge 正文。",
+    "senseInventory": [
+      {
+        "sense": "死亡这一现象或状态（不可数）",
+        "coveredBy": [
+          "death-1"
+        ],
+        "assessment": "原例句未体现不可数用法；改为 afraid of death 和 close to death，并明确具体死亡事件的可数性质。"
+      },
+      {
+        "sense": "一次死亡；一例死亡（可数，复数 deaths）",
+        "coveredBy": [
+          "death-2"
+        ],
+        "assessment": "两个原例句自然，分别展示具体数量和零死亡；修正 cause 结构及单复数说明。"
+      },
+      {
+        "sense": "（比喻）终结；消失",
+        "coveredBy": [
+          "death-3"
+        ],
+        "assessment": "作为补充义保留；去除没有原文依据的“逐渐”限制。"
+      },
+      {
+        "sense": "to death：死亡结果或夸张程度（固定短语功能）",
+        "coveredBy": [
+          "death-1"
+        ],
+        "assessment": "在固定短语说明中补充字面与夸张搭配，不强行另设基本词义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"谈论某人的死亡时，常用 the death of + 人；表示死因时，常用 death from + 原因。\"",
+        "valueJson": "\"泛指死亡时，通常用不可数名词 death，如 fear of death、close to death。the death of + 人/动物 指一次具体的死亡，属于可数用法；death from + 原因 用来说明死因。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"death-1-ex1\",\"senseId\":\"death-1\",\"en\":\"The family was deeply saddened by the death of their dog.\",\"zh\":\"这家人因爱犬去世而非常难过。\",\"note\":\"death of their dog 指爱犬去世这件事。\"}",
+        "valueJson": "{\"id\":\"death-1-ex1\",\"senseId\":\"death-1\",\"en\":\"He became afraid of death after the accident.\",\"zh\":\"那次事故后，他开始害怕死亡。\",\"note\":\"death 泛指死亡，作不可数名词，不加冠词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"death-1-ex2\",\"senseId\":\"death-1\",\"en\":\"The report said his death was caused by a heart problem.\",\"zh\":\"报告说他的死因是心脏问题。\",\"note\":\"death 在这里表示死亡这一事实。\"}",
+        "valueJson": "{\"id\":\"death-1-ex2\",\"senseId\":\"death-1\",\"en\":\"The bird was close to death when we found it.\",\"zh\":\"我们发现那只鸟时，它已奄奄一息。\",\"note\":\"close to death 表示“濒临死亡”；death 在这里不可数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/zh",
+        "expectedValueJson": "\"死于某种原因\"",
+        "valueJson": "\"由某种原因造成的死亡\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"to death\",\"zh\":\"直至死亡；（夸张）……得要命\",\"note\":\"freeze/starve to death 表示“冻死／饿死”；be scared/bored to death 表示“吓得要命／无聊透顶”，通常是夸张，不表示真的死亡。death 在这些短语中不加冠词。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/en",
+        "expectedValueJson": "\"数字 + deaths\"",
+        "valueJson": "\"数词 + death/deaths\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"用复数 deaths 报告具体数量。\"",
+        "valueJson": "\"one death 用单数；two deaths、three deaths 等用复数，表示相应数量的死亡。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/en",
+        "expectedValueJson": "\"cause + 数字 + deaths\"",
+        "valueJson": "\"cause + 数词 + death/deaths\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"cause 后接事件或事物，说明它造成了多少人死亡。\"",
+        "valueJson": "\"造成死亡的事件或事物作主语；cause 后接死亡数量，如 The fire caused two deaths.（这场火灾造成两人死亡。）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/meaning",
+        "expectedValueJson": "\"极度的；像死亡般的\"",
+        "valueJson": "\"死一般的；令人想到死亡的\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于 the death of + 抽象事物，表达其影响力或存在逐渐终止。\"",
+        "valueJson": "\"常见于 the death of + 某种事物、制度或活动，表示其终结或不复存在。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"许多人担心当地小商店会逐渐消失。\"",
+        "valueJson": "\"许多人担心当地小商店会消失。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"death 延续自古英语 deaþ，经中古英语 deeth，成为现代英语 death。它与 die、dead 属于日耳曼语系的同族词。\"",
+        "valueJson": "\"death 延续自古英语 deaþ，经中古英语 deeth，成为现代英语 death。它与 die、dead 是日耳曼语族中的同源词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[\"wiktionary-death\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[\"wiktionary-death\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[\"wiktionary-death\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[\"wiktionary-death\",\"etymonline-death\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[\"etymonline-death\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-death\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-death\",\"title\":\"Cambridge Dictionary: death\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/death\",\"supports\":[\"death 的名词用法、发音、常见搭配及相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"death 的古英语和中古英语历史词形及演变信息\"]",
+        "valueJson": "[\"death 的不可数与可数名词用法及常规读音\",\"death 的古英语和中古英语历史词形及演变信息\",\"相关词 die、dying\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"death 延续自古英语 deaþ，并与日耳曼语系 die、dead 词族相关\"]",
+        "valueJson": "[\"death 延续自古英语 deaþ，早期已有死亡发生或死亡状态的含义\",\"death 与 die、dead 的日耳曼语族同源关系及历史名词构词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 363,
+    "headword": "death",
+    "meaning_zh": "n. 死亡",
+    "phonetic": "/deθ/",
+    "pos": "",
+    "forms": []
+  }
+}

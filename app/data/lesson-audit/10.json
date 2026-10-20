@@ -1,0 +1,927 @@
+{
+  "schemaVersion": 1,
+  "wordId": 10,
+  "headword": "according (to)",
+  "lessonSha256": "9aa7acd17bd688ef671a4b9d02b2835944ebc53eaf268ed7afda8f363837d653",
+  "updatedAt": "2026-10-18T04:45:35.931Z",
+  "originalPipelineAudit": {
+    "provenance": {
+      "version": "sense-lessons-v1",
+      "reviewVersion": "sense-lessons-patch-review-v2",
+      "reviewPromptHash": "61f722d1478f43498752de4725a06bd4aa3eebd1dea749c17fc76332064d4aab",
+      "executedReviewPromptHash": "61f722d1478f43498752de4725a06bd4aa3eebd1dea749c17fc76332064d4aab",
+      "reviewHash": "5edcbeda58cd9c08fa47b013ed35656994be36e9eecd10a28c8ec36a9c4c0e51",
+      "wordId": 10,
+      "inputHash": "0839a30ab1b283ab9f3cfa3d868a8978900a1213ac6b911d80c600a2f7b278fc",
+      "draftHash": "346ea3fc6fafc5ed4e9354997d15d307bcc6fa24d3d78f3d17dd1addfaecaf27",
+      "finalHash": "56c3e71cd7f3432f22c5b8af6382a57a7b6feec7e26561e52b9990a2acef32f6",
+      "generator": {
+        "model": "gpt-6-luna",
+        "method": "codex-exec",
+        "promptVersion": "sense-lessons-v1",
+        "directory": "generate-1"
+      },
+      "reviewer": {
+        "model": "gpt-6.1-sol",
+        "modelSource": "user-cli-configuration; confirmed by root",
+        "modelOverride": false,
+        "reasoningOverride": false,
+        "method": "separate-codex-exec-json-patches",
+        "independentInvocation": true,
+        "humanReviewed": false,
+        "verdict": "revised",
+        "directory": "review-1"
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://fr.wiktionary.org/wiki/according#Anglais",
+          "status": "retrieved",
+          "fetchedAt": "2026-10-18T00:45:49.536Z",
+          "kind": "etymology",
+          "retrievalMethod": "mediawiki-api-english-section",
+          "pageId": 1209353,
+          "revisionId": 33790525,
+          "revisionTimestamp": "2024-03-16T18:14:04Z",
+          "sha256": "225ca4371ebf24f5beb1e76bc43594226f22977ef26e4bbea79e4d8318780fd2",
+          "language": "English entry; French editorial explanation",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "truncated": false
+        },
+        {
+          "url": "https://dictionary.cambridge.org/dictionary/english/according",
+          "status": "unavailable",
+          "fetchedAt": "2026-10-18T01:18:59.595Z",
+          "failure": "http 403 or no dictionary entry"
+        }
+      ],
+      "reviewedAt": "2026-10-18T01:27:36.773Z"
+    },
+    "review": {
+      "verdict": "revised",
+      "issues": [
+        {
+          "severity": "error",
+          "location": "/senses",
+          "message": "遗漏 according to 表示“按某因素而定、随某因素变化、按标准分类”的常用功能；总括结构也未涵盖 what、how 等引导的名词性从句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/0；/confusions/0",
+          "message": "第一义把信息来源与遵照规范混在一起，与第二义重叠。地图例句应按信息来源理解；告示例句的 senseId 也应关联第二义。"
+        },
+        {
+          "severity": "error",
+          "location": "/sources；各 sourceIds",
+          "message": "初稿引用的 Oxford 正文不在给定材料中。实际取得的法语维基词典英语词条只支持现在分词关系及读音，不能冒充 according to 各义的词典依据。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/*/examples；/confusions/*/items/*/example",
+          "message": "共七个例句缺少目标结构必填的 note 字段。"
+        },
+        {
+          "severity": "polish",
+          "location": "/lessCommonSenses/0；/wordFamily/0/meaning；/wordFamilyNote",
+          "message": "应明确区分“给予”与 accord with 的“与……一致”，避免用未说明句型的“使一致”引导学习；词族总说明还存在自指重复。"
+        },
+        {
+          "severity": "polish",
+          "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions/contrastingNote",
+          "message": "based on 与遵照规则的 according to 需要说明结构和语义限制；改换消息来源本身不构成反向表达。"
+        }
+      ],
+      "coverageAssessment": "已核对 according 的现在分词身份，以及 according to 的信息来源、遵照规范、按因素决定三种主要功能。补丁后每个核心功能至少有两个自然英中例句，并补齐必填字段及正确归属。所给成功词典正文只支持词形关系和读音，其余用法依据专业语言知识审核；材料没有提供历史演变，保留现代构词与历史词源的界限，不补写推测。",
+      "senseInventory": [
+        {
+          "sense": "according：英语动词 accord 的现在分词",
+          "coveredBy": [
+            "according-3"
+          ],
+          "assessment": "这是所给词典正文唯一明确列出的词形释义。较少见动词例句展示“给予”，词族例句展示 accord with“与……一致”；补丁明确二者的句型区别。"
+        },
+        {
+          "sense": "according to：据某人所说或某资料所载",
+          "coveredBy": [
+            "according-2"
+          ],
+          "assessment": "已有两个核心例句。告示例句归入此义；地图同样属于信息来源，不再承担遵照规范义的例证。"
+        },
+        {
+          "sense": "according to：依照规则、指示、计划或安排",
+          "coveredBy": [
+            "according-1"
+          ],
+          "assessment": "补丁收紧分义，采用依说明组装书桌的例句，保留校规要求例句，并补充 according to plan 的固定搭配。"
+        },
+        {
+          "sense": "according to：按某因素而定、随某因素变化或按某标准分类",
+          "coveredBy": [
+            "according-4"
+          ],
+          "assessment": "原稿遗漏。补丁新增运费随重量变化、按年龄分组及按寒冷程度选择衣服三个例句，兼顾名词短语和名词性从句结构。"
+        }
+      ],
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/takeaway",
+          "expectedValueJson": "\"according to 后接名词、代词或名词短语，表示信息来源或依据；不能单独用 according 表达“根据”。\"",
+          "valueJson": "\"把 according to 当作整体：可表示“据……所说”“按照规则”或“按某因素而定”；to 后可接名词、代词或 what、how 等引导的名词性从句，其中的 to 不能省略。\""
+        },
+        {
+          "op": "replace",
+          "path": "/pronunciation/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/title",
+          "expectedValueJson": "\"依据、按照某信息或规则\"",
+          "valueJson": "\"依照规则、指示或安排\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/meaning",
+          "expectedValueJson": "\"用于指出某事所依据的资料、规则、安排或标准，相当于“根据；按照”。\"",
+          "valueJson": "\"以规则、指示、计划或安排作为做事的依据或规范，相当于“按照；依照”。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/usageNote",
+          "expectedValueJson": "\"结构是 according to + 名词或名词短语。不要说 according the map；应说 according to the map。\"",
+          "valueJson": "\"后面常接规则、说明、计划或安排等名词短语，强调以它们作为行为的规范；to 不能省略。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/examples/0",
+          "expectedValueJson": "{\"id\":\"according-1-ex1\",\"senseId\":\"according-1\",\"en\":\"According to the map, the lake is north of our village.\",\"zh\":\"根据地图，湖在我们村子的北面。\"}",
+          "valueJson": "{\"id\":\"according-1-ex1\",\"senseId\":\"according-1\",\"en\":\"We put the desk together according to the instructions.\",\"zh\":\"我们按照说明把书桌组装好了。\",\"note\":\"according to the instructions 表示组装时遵照说明操作。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"用校规说明学生应遵守的要求；不表示学生一定已经照做。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/collocations/0",
+          "expectedValueJson": "{\"en\":\"according to the map\",\"zh\":\"根据地图\",\"note\":\"表示以地图为依据。\",\"kind\":\"common-collocation\"}",
+          "valueJson": "{\"en\":\"according to plan\",\"zh\":\"按计划；如预期\",\"note\":\"常与 go 搭配，表示事情按预期发展；这个固定表达中 plan 前不用冠词。\",\"kind\":\"fixed-expression\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/relatedExpressions/similar/0/note",
+          "expectedValueJson": "\"强调把某事作为基础；常用于结论、故事或决定。\"",
+          "valueJson": "\"强调结论、设计或决定以某事为基础；与表示“遵照规则”的 according to 重点和句型不同，不能机械互换。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/relatedExpressions/similarNote",
+          "expectedValueJson": "\"based on 可强调依据；in accordance with 较正式，常指符合规则。\"",
+          "valueJson": "\"in accordance with 接近“依照规则”，语体较正式；based on 只在“以某事为依据”这一点上相近，替换时常需调整句子结构。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to Mia 指明消息来自米娅，不表示说话者已经独立核实。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to the weather report 交代天气信息的来源。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/relatedExpressions/contrastingNote",
+          "expectedValueJson": "\"转述来源没有固定的反义表达；可按具体内容改写成另一来源的说法。\"",
+          "valueJson": "\"这是标明信息来源的用法，没有固定反义词；换一个消息来源本身并不表示意思相反。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"according-4\",\"title\":\"按某因素而定；随某因素变化\",\"meaning\":\"表示数量、选择或安排取决于某种情况，也可用来指出分类、分组或排序的标准。\",\"usageNote\":\"常与 vary、change、choose、group、sort 等搭配；这里的 to 后接决定因素或分类标准，不是在交代消息来源。也可接 how、what 等引导的名词性从句。\",\"examples\":[{\"id\":\"according-4-ex1\",\"senseId\":\"according-4\",\"en\":\"The delivery charge varies according to the weight of the package.\",\"zh\":\"运费会随包裹的重量而变化。\",\"note\":\"包裹重量是影响运费的因素，不是信息来源。\"},{\"id\":\"according-4-ex2\",\"senseId\":\"according-4\",\"en\":\"The swimming teacher divides the children into groups according to their age.\",\"zh\":\"游泳老师按年龄给孩子们分组。\",\"note\":\"年龄是分组标准；according to their age 在这里也可用 by age 表达。\"},{\"id\":\"according-4-ex3\",\"senseId\":\"according-4\",\"en\":\"Choose your clothes according to how cold it is outside.\",\"zh\":\"根据外面有多冷来选择穿什么。\",\"note\":\"how cold it is outside 是名词性从句，用陈述语序，不能写成 how cold is it outside。\"}],\"patterns\":[{\"en\":\"vary/change according to + a factor\",\"zh\":\"随某因素变化\",\"note\":\"常用来说明价格、数量或安排因什么因素而不同。\",\"kind\":\"sentence-pattern\"},{\"en\":\"group/sort ... according to + a criterion\",\"zh\":\"按某标准分组／分类\",\"note\":\"age、size 等可以作为分组或分类的标准。\",\"kind\":\"sentence-pattern\"},{\"en\":\"according to how cold it is\",\"zh\":\"根据天气有多冷\",\"note\":\"to 后可接 how 等引导的名词性从句；从句内部用陈述语序。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"according to age\",\"zh\":\"按年龄\",\"note\":\"可用于分组或确定收费等，年龄是相应的标准或决定因素。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"depending on\",\"zh\":\"视……而定；取决于\",\"note\":\"表示随条件变化时与 according to 接近，例如 prices vary depending on size；不能用来转述某人的说法。\"},{\"en\":\"by\",\"zh\":\"按……分类\",\"note\":\"在 group/sort ... by age/size 等结构中与 according to 相近；by 的其他用法不能照搬。\"}],\"contrasting\":[{\"en\":\"regardless of\",\"zh\":\"不论；不考虑\",\"note\":\"在某因素是否影响决定的语境中形成对照，例如是否考虑年龄；不用于对照信息来源。\"}],\"similarNote\":\"表示随条件变化时常可用 depending on；表示按标准分类时常可用 by，搭配需随句子调整。\",\"contrastingNote\":\"regardless of 对照的是某因素是否影响安排、分组或决定，并非 according to 所有用法的通用反义表达。\"},\"sourceIds\":[]}"
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/meaning",
+          "expectedValueJson": "\"according 也可作为动词 accord 的现在分词，意为“给予；使一致”等，常见于较正式表达。\"",
+          "valueJson": "\"according 也可作为动词 accord 的现在分词；accord 表示“给予（尊重、权利等）”，在 accord with 中表示“与……一致”。\""
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/note",
+          "expectedValueJson": "\"初中学习中更常遇到的是 according to 这个固定介词短语。\"",
+          "valueJson": "\"下例展示“给予”；词族中的 accord with 例句展示“与……一致”。这些是较正式的动词用法，应与固定介词 according to 区分；初中阶段先掌握 according to。\""
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/items/0/example/senseId",
+          "expectedValueJson": "\"according-1\"",
+          "valueJson": "\"according-2\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to the sign 表示告示所提供的信息；to 不能漏掉。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/items/1/example/senseId",
+          "expectedValueJson": "\"according-1\"",
+          "valueJson": "\"according-2\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"这是说话者本人的观点，in my opinion 比 according to me 更自然。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to our teacher 转述老师提供的消息。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/sourceIds",
+          "expectedValueJson": "[]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/0/meaning",
+          "expectedValueJson": "\"给予；使一致；符合\"",
+          "valueJson": "\"给予；（与……）一致、相符\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamilyNote",
+          "expectedValueJson": "\"accord 是根据动词 accord 的真实同族词；本课实用重点仍是短语 according to。\"",
+          "valueJson": "\"accord 是 according 的基础动词；accordance 是同族名词，常用于 in accordance with。本课重点仍是 according to，这些词的句型要分别记忆。\""
+        },
+        {
+          "op": "replace",
+          "path": "/sources/0",
+          "expectedValueJson": "{\"id\":\"oxford-according\",\"title\":\"Oxford Learner’s Dictionaries: according\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/according\",\"supports\":[\"according to 的常见意义和句型\",\"according 的发音与词性信息\"],\"verification\":\"recommended\"}",
+          "valueJson": "{\"id\":\"fr-wiktionary-according\",\"title\":\"Wiktionnaire：according（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/according#Anglais\",\"supports\":[\"according 是英语动词 accord 的现在分词\",\"according 的英式与美式读音\"],\"verification\":\"recommended\"}"
+        }
+      ]
+    },
+    "input": {
+      "id": 10,
+      "headword": "according (to)",
+      "meaning_zh": "prep. 根据；按照（according to）",
+      "phonetic": "/ә'kɒ:diŋ/",
+      "pos": "",
+      "forms": []
+    }
+  },
+  "modelReview": {
+    "result": {
+      "verdict": "revised",
+      "issues": [
+        {
+          "severity": "error",
+          "location": "/senses",
+          "message": "遗漏 according to 表示“按某因素而定、随某因素变化、按标准分类”的常用功能；总括结构也未涵盖 what、how 等引导的名词性从句。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/0；/confusions/0",
+          "message": "第一义把信息来源与遵照规范混在一起，与第二义重叠。地图例句应按信息来源理解；告示例句的 senseId 也应关联第二义。"
+        },
+        {
+          "severity": "error",
+          "location": "/sources；各 sourceIds",
+          "message": "初稿引用的 Oxford 正文不在给定材料中。实际取得的法语维基词典英语词条只支持现在分词关系及读音，不能冒充 according to 各义的词典依据。"
+        },
+        {
+          "severity": "error",
+          "location": "/senses/*/examples；/confusions/*/items/*/example",
+          "message": "共七个例句缺少目标结构必填的 note 字段。"
+        },
+        {
+          "severity": "polish",
+          "location": "/lessCommonSenses/0；/wordFamily/0/meaning；/wordFamilyNote",
+          "message": "应明确区分“给予”与 accord with 的“与……一致”，避免用未说明句型的“使一致”引导学习；词族总说明还存在自指重复。"
+        },
+        {
+          "severity": "polish",
+          "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions/contrastingNote",
+          "message": "based on 与遵照规则的 according to 需要说明结构和语义限制；改换消息来源本身不构成反向表达。"
+        }
+      ],
+      "coverageAssessment": "已核对 according 的现在分词身份，以及 according to 的信息来源、遵照规范、按因素决定三种主要功能。补丁后每个核心功能至少有两个自然英中例句，并补齐必填字段及正确归属。所给成功词典正文只支持词形关系和读音，其余用法依据专业语言知识审核；材料没有提供历史演变，保留现代构词与历史词源的界限，不补写推测。",
+      "senseInventory": [
+        {
+          "sense": "according：英语动词 accord 的现在分词",
+          "coveredBy": [
+            "according-3"
+          ],
+          "assessment": "这是所给词典正文唯一明确列出的词形释义。较少见动词例句展示“给予”，词族例句展示 accord with“与……一致”；补丁明确二者的句型区别。"
+        },
+        {
+          "sense": "according to：据某人所说或某资料所载",
+          "coveredBy": [
+            "according-2"
+          ],
+          "assessment": "已有两个核心例句。告示例句归入此义；地图同样属于信息来源，不再承担遵照规范义的例证。"
+        },
+        {
+          "sense": "according to：依照规则、指示、计划或安排",
+          "coveredBy": [
+            "according-1"
+          ],
+          "assessment": "补丁收紧分义，采用依说明组装书桌的例句，保留校规要求例句，并补充 according to plan 的固定搭配。"
+        },
+        {
+          "sense": "according to：按某因素而定、随某因素变化或按某标准分类",
+          "coveredBy": [
+            "according-4"
+          ],
+          "assessment": "原稿遗漏。补丁新增运费随重量变化、按年龄分组及按寒冷程度选择衣服三个例句，兼顾名词短语和名词性从句结构。"
+        }
+      ],
+      "patches": [
+        {
+          "op": "replace",
+          "path": "/takeaway",
+          "expectedValueJson": "\"according to 后接名词、代词或名词短语，表示信息来源或依据；不能单独用 according 表达“根据”。\"",
+          "valueJson": "\"把 according to 当作整体：可表示“据……所说”“按照规则”或“按某因素而定”；to 后可接名词、代词或 what、how 等引导的名词性从句，其中的 to 不能省略。\""
+        },
+        {
+          "op": "replace",
+          "path": "/pronunciation/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/title",
+          "expectedValueJson": "\"依据、按照某信息或规则\"",
+          "valueJson": "\"依照规则、指示或安排\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/meaning",
+          "expectedValueJson": "\"用于指出某事所依据的资料、规则、安排或标准，相当于“根据；按照”。\"",
+          "valueJson": "\"以规则、指示、计划或安排作为做事的依据或规范，相当于“按照；依照”。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/usageNote",
+          "expectedValueJson": "\"结构是 according to + 名词或名词短语。不要说 according the map；应说 according to the map。\"",
+          "valueJson": "\"后面常接规则、说明、计划或安排等名词短语，强调以它们作为行为的规范；to 不能省略。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/examples/0",
+          "expectedValueJson": "{\"id\":\"according-1-ex1\",\"senseId\":\"according-1\",\"en\":\"According to the map, the lake is north of our village.\",\"zh\":\"根据地图，湖在我们村子的北面。\"}",
+          "valueJson": "{\"id\":\"according-1-ex1\",\"senseId\":\"according-1\",\"en\":\"We put the desk together according to the instructions.\",\"zh\":\"我们按照说明把书桌组装好了。\",\"note\":\"according to the instructions 表示组装时遵照说明操作。\"}"
+        },
+        {
+          "op": "add",
+          "path": "/senses/0/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"用校规说明学生应遵守的要求；不表示学生一定已经照做。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/collocations/0",
+          "expectedValueJson": "{\"en\":\"according to the map\",\"zh\":\"根据地图\",\"note\":\"表示以地图为依据。\",\"kind\":\"common-collocation\"}",
+          "valueJson": "{\"en\":\"according to plan\",\"zh\":\"按计划；如预期\",\"note\":\"常与 go 搭配，表示事情按预期发展；这个固定表达中 plan 前不用冠词。\",\"kind\":\"fixed-expression\"}"
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/relatedExpressions/similar/0/note",
+          "expectedValueJson": "\"强调把某事作为基础；常用于结论、故事或决定。\"",
+          "valueJson": "\"强调结论、设计或决定以某事为基础；与表示“遵照规则”的 according to 重点和句型不同，不能机械互换。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/relatedExpressions/similarNote",
+          "expectedValueJson": "\"based on 可强调依据；in accordance with 较正式，常指符合规则。\"",
+          "valueJson": "\"in accordance with 接近“依照规则”，语体较正式；based on 只在“以某事为依据”这一点上相近，替换时常需调整句子结构。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/0/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to Mia 指明消息来自米娅，不表示说话者已经独立核实。\""
+        },
+        {
+          "op": "add",
+          "path": "/senses/1/examples/1/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to the weather report 交代天气信息的来源。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/relatedExpressions/contrastingNote",
+          "expectedValueJson": "\"转述来源没有固定的反义表达；可按具体内容改写成另一来源的说法。\"",
+          "valueJson": "\"这是标明信息来源的用法，没有固定反义词；换一个消息来源本身并不表示意思相反。\""
+        },
+        {
+          "op": "replace",
+          "path": "/senses/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/senses/-",
+          "expectedValueJson": "MISSING",
+          "valueJson": "{\"id\":\"according-4\",\"title\":\"按某因素而定；随某因素变化\",\"meaning\":\"表示数量、选择或安排取决于某种情况，也可用来指出分类、分组或排序的标准。\",\"usageNote\":\"常与 vary、change、choose、group、sort 等搭配；这里的 to 后接决定因素或分类标准，不是在交代消息来源。也可接 how、what 等引导的名词性从句。\",\"examples\":[{\"id\":\"according-4-ex1\",\"senseId\":\"according-4\",\"en\":\"The delivery charge varies according to the weight of the package.\",\"zh\":\"运费会随包裹的重量而变化。\",\"note\":\"包裹重量是影响运费的因素，不是信息来源。\"},{\"id\":\"according-4-ex2\",\"senseId\":\"according-4\",\"en\":\"The swimming teacher divides the children into groups according to their age.\",\"zh\":\"游泳老师按年龄给孩子们分组。\",\"note\":\"年龄是分组标准；according to their age 在这里也可用 by age 表达。\"},{\"id\":\"according-4-ex3\",\"senseId\":\"according-4\",\"en\":\"Choose your clothes according to how cold it is outside.\",\"zh\":\"根据外面有多冷来选择穿什么。\",\"note\":\"how cold it is outside 是名词性从句，用陈述语序，不能写成 how cold is it outside。\"}],\"patterns\":[{\"en\":\"vary/change according to + a factor\",\"zh\":\"随某因素变化\",\"note\":\"常用来说明价格、数量或安排因什么因素而不同。\",\"kind\":\"sentence-pattern\"},{\"en\":\"group/sort ... according to + a criterion\",\"zh\":\"按某标准分组／分类\",\"note\":\"age、size 等可以作为分组或分类的标准。\",\"kind\":\"sentence-pattern\"},{\"en\":\"according to how cold it is\",\"zh\":\"根据天气有多冷\",\"note\":\"to 后可接 how 等引导的名词性从句；从句内部用陈述语序。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"according to age\",\"zh\":\"按年龄\",\"note\":\"可用于分组或确定收费等，年龄是相应的标准或决定因素。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"depending on\",\"zh\":\"视……而定；取决于\",\"note\":\"表示随条件变化时与 according to 接近，例如 prices vary depending on size；不能用来转述某人的说法。\"},{\"en\":\"by\",\"zh\":\"按……分类\",\"note\":\"在 group/sort ... by age/size 等结构中与 according to 相近；by 的其他用法不能照搬。\"}],\"contrasting\":[{\"en\":\"regardless of\",\"zh\":\"不论；不考虑\",\"note\":\"在某因素是否影响决定的语境中形成对照，例如是否考虑年龄；不用于对照信息来源。\"}],\"similarNote\":\"表示随条件变化时常可用 depending on；表示按标准分类时常可用 by，搭配需随句子调整。\",\"contrastingNote\":\"regardless of 对照的是某因素是否影响安排、分组或决定，并非 according to 所有用法的通用反义表达。\"},\"sourceIds\":[]}"
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/meaning",
+          "expectedValueJson": "\"according 也可作为动词 accord 的现在分词，意为“给予；使一致”等，常见于较正式表达。\"",
+          "valueJson": "\"according 也可作为动词 accord 的现在分词；accord 表示“给予（尊重、权利等）”，在 accord with 中表示“与……一致”。\""
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/note",
+          "expectedValueJson": "\"初中学习中更常遇到的是 according to 这个固定介词短语。\"",
+          "valueJson": "\"下例展示“给予”；词族中的 accord with 例句展示“与……一致”。这些是较正式的动词用法，应与固定介词 according to 区分；初中阶段先掌握 according to。\""
+        },
+        {
+          "op": "replace",
+          "path": "/lessCommonSenses/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/items/0/example/senseId",
+          "expectedValueJson": "\"according-1\"",
+          "valueJson": "\"according-2\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/0/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to the sign 表示告示所提供的信息；to 不能漏掉。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/items/1/example/senseId",
+          "expectedValueJson": "\"according-1\"",
+          "valueJson": "\"according-2\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/0/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"这是说话者本人的观点，in my opinion 比 according to me 更自然。\""
+        },
+        {
+          "op": "add",
+          "path": "/confusions/1/items/1/example/note",
+          "expectedValueJson": "MISSING",
+          "valueJson": "\"according to our teacher 转述老师提供的消息。\""
+        },
+        {
+          "op": "replace",
+          "path": "/confusions/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/etymology/sourceIds",
+          "expectedValueJson": "[]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/0/meaning",
+          "expectedValueJson": "\"给予；使一致；符合\"",
+          "valueJson": "\"给予；（与……）一致、相符\""
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/0/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[\"fr-wiktionary-according\"]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamily/1/sourceIds",
+          "expectedValueJson": "[\"oxford-according\"]",
+          "valueJson": "[]"
+        },
+        {
+          "op": "replace",
+          "path": "/wordFamilyNote",
+          "expectedValueJson": "\"accord 是根据动词 accord 的真实同族词；本课实用重点仍是短语 according to。\"",
+          "valueJson": "\"accord 是 according 的基础动词；accordance 是同族名词，常用于 in accordance with。本课重点仍是 according to，这些词的句型要分别记忆。\""
+        },
+        {
+          "op": "replace",
+          "path": "/sources/0",
+          "expectedValueJson": "{\"id\":\"oxford-according\",\"title\":\"Oxford Learner’s Dictionaries: according\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/according\",\"supports\":[\"according to 的常见意义和句型\",\"according 的发音与词性信息\"],\"verification\":\"recommended\"}",
+          "valueJson": "{\"id\":\"fr-wiktionary-according\",\"title\":\"Wiktionnaire：according（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/according#Anglais\",\"supports\":[\"according 是英语动词 accord 的现在分词\",\"according 的英式与美式读音\"],\"verification\":\"recommended\"}"
+        }
+      ]
+    },
+    "provenance": {
+      "version": "sense-lessons-v1",
+      "reviewVersion": "sense-lessons-patch-review-v2",
+      "reviewPromptHash": "61f722d1478f43498752de4725a06bd4aa3eebd1dea749c17fc76332064d4aab",
+      "executedReviewPromptHash": "61f722d1478f43498752de4725a06bd4aa3eebd1dea749c17fc76332064d4aab",
+      "reviewHash": "5edcbeda58cd9c08fa47b013ed35656994be36e9eecd10a28c8ec36a9c4c0e51",
+      "wordId": 10,
+      "inputHash": "0839a30ab1b283ab9f3cfa3d868a8978900a1213ac6b911d80c600a2f7b278fc",
+      "draftHash": "346ea3fc6fafc5ed4e9354997d15d307bcc6fa24d3d78f3d17dd1addfaecaf27",
+      "finalHash": "56c3e71cd7f3432f22c5b8af6382a57a7b6feec7e26561e52b9990a2acef32f6",
+      "generator": {
+        "model": "gpt-6-luna",
+        "method": "codex-exec",
+        "promptVersion": "sense-lessons-v1",
+        "directory": "generate-1"
+      },
+      "reviewer": {
+        "model": "gpt-6.1-sol",
+        "modelSource": "user-cli-configuration; confirmed by root",
+        "modelOverride": false,
+        "reasoningOverride": false,
+        "method": "separate-codex-exec-json-patches",
+        "independentInvocation": true,
+        "humanReviewed": false,
+        "verdict": "revised",
+        "directory": "review-1"
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://fr.wiktionary.org/wiki/according#Anglais",
+          "status": "retrieved",
+          "fetchedAt": "2026-10-18T00:45:49.536Z",
+          "kind": "etymology",
+          "retrievalMethod": "mediawiki-api-english-section",
+          "pageId": 1209353,
+          "revisionId": 33790525,
+          "revisionTimestamp": "2024-03-16T18:14:04Z",
+          "sha256": "225ca4371ebf24f5beb1e76bc43594226f22977ef26e4bbea79e4d8318780fd2",
+          "language": "English entry; French editorial explanation",
+          "license": "CC BY-SA 4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "truncated": false
+        },
+        {
+          "url": "https://dictionary.cambridge.org/dictionary/english/according",
+          "status": "unavailable",
+          "fetchedAt": "2026-10-18T01:18:59.595Z",
+          "failure": "http 403 or no dictionary entry"
+        }
+      ],
+      "reviewedAt": "2026-10-18T01:27:36.773Z"
+    }
+  },
+  "editorialReview": {
+    "method": "independent Codex agent full-content read",
+    "reviewer": "Independent Codex editorial agent /root/pronunciation_code_review; not a human teacher",
+    "status": "passed",
+    "candidateSha256": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+    "humanTeacherReviewed": false,
+    "evidence": {
+      "authorRecord": {
+        "wordId": 10,
+        "author": "Codex root",
+        "checkedAt": "2026-10-18T04:17:50.292080+00:00",
+        "beforeSha256": "ebf359419f9871c75c3114ab0484e72136a1b224f6123a0208a17c6e7b158dcd",
+        "candidateSha256": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+        "status": "awaiting-independent-review",
+        "fullReadOriginal": true,
+        "changes": [
+          "Add actually read Oxford support for the three modern uses and Etymonline history with correspondence/conformity meanings.",
+          "Replace a no-evidence process caveat with supported historical explanation, without implying agreement with a reported person."
+        ],
+        "originalAudit": "10-original-audit.json",
+        "limitations": "No teacher approval or newly invoked CLI review claimed. Original model records remain intact."
+      },
+      "independentReview": {
+        "schemaVersion": 1,
+        "wordId": 10,
+        "headword": "according (to)",
+        "status": "passed",
+        "reviewer": "Independent Codex editorial agent /root/pronunciation_code_review; not a human teacher",
+        "reviewedAt": "2026-10-18T04:38:38.423832+00:00",
+        "candidateSha256": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+        "independence": {
+          "candidateAuthor": "/root",
+          "reviewerDidNotAuthorCandidate": true,
+          "reviewerChangedCandidate": false,
+          "basis": "Read the complete candidate, author records/source summaries, original issue list and affected patch paths. Independently opened the supporting dictionary and etymology pages, then compared current wording and example coverage.",
+          "teacherReview": false,
+          "newModelCliReviewInvoked": false
+        },
+        "readScope": [
+          "Every core and optional meaning; all bilingual examples, patterns/collocations and scoped comparisons; overview/study plan, IPA/forms, confusions, historical meanings and direction, family spellings, mnemonic, source metadata and editorial status.",
+          "Root edit records and before-to-candidate changes; historical model issues adjudicated against current text. Original CLI evidence remains preserved, not recast as a new run."
+        ],
+        "linguisticFindings": [
+          {
+            "area": "sense grouping and bilingual examples",
+            "judgment": "passed",
+            "detail": "The three units separate compliance with instructions/rules, reported information, and dependence/classification. The desk/school-rule examples, Mia/weather examples and weight/age/cold-condition examples illustrate their own units; what/how clauses use declarative word order."
+          },
+          {
+            "area": "near/opposite limits and confusions",
+            "judgment": "passed",
+            "detail": "Contrary to applies to rule conformity; regardless of contrasts whether a factor affects a decision; switching a reported source is not an antonym. Based on is not treated as freely substitutable. According to me is discussed as a usage preference, not universally ungrammatical."
+          },
+          {
+            "area": "word history and forms",
+            "judgment": "passed",
+            "detail": "The early matching/conformity meaning is now explained, while reported-source according to is explicitly not speaker agreement. Accord takes -ing without doubling d. Granting something and according with something remain distinct constructions; the mnemonic is not called etymology."
+          }
+        ],
+        "originalIssueDecisions": [
+          {
+            "originalIssueIndex": 0,
+            "originalIssue": {
+              "severity": "error",
+              "location": "/senses",
+              "message": "遗漏 according to 表示“按某因素而定、随某因素变化、按标准分类”的常用功能；总括结构也未涵盖 what、how 等引导的名词性从句。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "The third core unit has three examples for dependence/classification, including how cold it is; the general explanation includes nominal clauses."
+          },
+          {
+            "originalIssueIndex": 1,
+            "originalIssue": {
+              "severity": "error",
+              "location": "/senses/0；/confusions/0",
+              "message": "第一义把信息来源与遵照规范混在一起，与第二义重叠。地图例句应按信息来源理解；告示例句的 senseId 也应关联第二义。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "The rules/instructions and reported-source units are separate; the sign confusion is associated with the reported-source unit, and the root revision preserves that correction."
+          },
+          {
+            "originalIssueIndex": 2,
+            "originalIssue": {
+              "severity": "error",
+              "location": "/sources；各 sourceIds",
+              "message": "初稿引用的 Oxford 正文不在给定材料中。实际取得的法语维基词典英语词条只支持现在分词关系及读音，不能冒充 according to 各义的词典依据。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "The formerly absent Oxford page was actually opened in this follow-up and now supports the three functional units. Fr-Wiktionnaire is not used as invented evidence for all these meanings."
+          },
+          {
+            "originalIssueIndex": 3,
+            "originalIssue": {
+              "severity": "error",
+              "location": "/senses/*/examples；/confusions/*/items/*/example",
+              "message": "共七个例句缺少目标结构必填的 note 字段。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "Current examples have substantive notes; structural validation independently confirms the required fields. Semantic acceptance was based on reading them, not merely field presence."
+          },
+          {
+            "originalIssueIndex": 4,
+            "originalIssue": {
+              "severity": "polish",
+              "location": "/lessCommonSenses/0；/wordFamily/0/meaning；/wordFamilyNote",
+              "message": "应明确区分“给予”与 accord with 的“与……一致”，避免用未说明句型的“使一致”引导学习；词族总说明还存在自指重复。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "Accord as granting and accord with as correspondence are distinguished; the family summary no longer defines accord as itself."
+          },
+          {
+            "originalIssueIndex": 5,
+            "originalIssue": {
+              "severity": "polish",
+              "location": "/senses/0/relatedExpressions；/senses/1/relatedExpressions/contrastingNote",
+              "message": "based on 与遵照规则的 according to 需要说明结构和语义限制；改换消息来源本身不构成反向表达。"
+            },
+            "judgment": "resolved-in-current-candidate",
+            "reason": "Based on is limited and warns about restructuring; the source-report unit explicitly rejects treating a different source as an opposite."
+          }
+        ],
+        "counts": {
+          "coreSenses": 3,
+          "coreExamples": 7,
+          "extendedUnits": 1,
+          "confusionExamples": 4,
+          "familyExamples": 2,
+          "originalIssuesIndividuallyAdjudicated": 6,
+          "freshPublicPagesRead": 2,
+          "allTeachingExamples": 14
+        },
+        "evidence": {
+          "10-before.json": "ebf359419f9871c75c3114ab0484e72136a1b224f6123a0208a17c6e7b158dcd",
+          "10-candidate.json": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+          "10-diff.patch": "bd5e2e55c9c20d36381dbaafa419f5ac3da7d7b63692805cb7eed0593fea52e2",
+          "10-author-record.json": "8643380e1e6b59623fc9e2611b5b2a372ee94c8fdecfa51a5f958a549aa314ac",
+          "10-source-evidence.json": "df19cab939d8718374995a710e73ee46d5a7e09777f3ea0ab832e228af177cfa",
+          "10-original-audit.json": "3ea5eb7368acb9a7c5edea6bb192c02af07a7a34791b762007fe45dade43eb53",
+          "10-independent-source-review.json": "b16d22d928c5ab9510d7fcc2114eac403a831268bc0d63fa5d13e1143bd72e31",
+          "10-independent-validation.json": "2b3104d1f64321a5f294c122661d5d0e91cacb7fae44531122dd5dc7d6808bff"
+        },
+        "hashChecks": "Before/candidate bytes match the author record; supplied original source-summary hashes match. Runtime validation is recorded separately from the full semantic review. Original pipeline audit is retained and hashed, not claimed to have been rerun.",
+        "validation": {
+          "ok": true,
+          "path": "10-independent-validation.json"
+        },
+        "blockingErrors": [],
+        "candidateChanges": [],
+        "limits": [
+          "Independent AI editorial review, not teacher approval or exhaustive coverage of every obsolete or technical meaning.",
+          "Written pronunciation was checked; no new recording audition occurred.",
+          "No claim that an old failed webpage fetch or absent historical source was successful; later evidence is dated separately."
+        ],
+        "writes": "Only independent review/source/validation sidecars. No candidate, formal lesson/audit, database, global adjudication or running-queue changes.",
+        "publication": "Candidate remains draft; root controls final metadata and publication."
+      },
+      "rootFinal": {
+        "schemaVersion": 1,
+        "wordId": 10,
+        "status": "passed",
+        "candidateSha256": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+        "checkedAt": "2026-10-18T04:45:35.426976+00:00",
+        "reviewer": "Codex /root",
+        "role": "Candidate author and final publication integrator; independent full-content acceptance belongs to the named different agent.",
+        "scope": [
+          "Root read the entire original lesson, relevant model issues, all authored changes and actual dictionary/etymology evidence during this heartbeat.",
+          "Read independent full-content findings and issue decisions, verified unchanged candidate hash and absence of unresolved blocking findings.",
+          "Preserve original generation and review and record the editorial metadata-only publication change."
+        ],
+        "independentReviewer": "Independent Codex editorial agent /root/pronunciation_code_review; not a human teacher",
+        "independentReviewSha256": "78593d30fe3a38f87197480c8fb2fb890bf89758356ad61396ebb6005fd8248e",
+        "humanTeacherReviewed": false,
+        "audioListening": false,
+        "limitations": "Not a claim of exhaustive obsolete/technical senses, teacher review or a rerun of the original CLI review."
+      },
+      "publicationMetadataChange": {
+        "before": {
+          "status": "draft",
+          "authorship": "保留原 gpt-6-luna 初稿与独立模型修订；本次 Codex 主代理补查来源并编辑。",
+          "scope": "本次候选经主代理全文审读与修订，待另一位代理独立复核；保留旧模型证据，不冒充教师审定。",
+          "checkedAt": "2026-10-18T04:17:50.292080+00:00"
+        },
+        "after": {
+          "status": "reviewed",
+          "authorship": "保留原作者稿及独立模型修订；Codex 编辑补查来源并修订，经另一位 Codex 全文复核。",
+          "scope": "原模型记录、本次来源与逐项修订均已保留；这是独立 AI 编辑复核，不是人类教师审定。",
+          "checkedAt": "2026-10-18"
+        }
+      },
+      "independent-source-review": {
+        "wordId": 10,
+        "reviewer": "/root/pronunciation_code_review",
+        "checkedAt": "2026-10-18T04:38:38.423832+00:00",
+        "sources": [
+          {
+            "url": "https://www.oxfordlearnersdictionaries.com/definition/english/according-to",
+            "status": "retrieved",
+            "checkedAt": "2026-10-18T04:38:38.423832+00:00",
+            "method": "Independent actual public-page web-tool read; original factual summary",
+            "text": "Reports can identify a source. Other uses concern conformity or dependence. The source and rules/conditions teaching units are legitimate distinctions; reference to a speaker does not entail agreement.",
+            "sha256": "ef6be80bca93b1bea413a63bd8830d4e5c05970cca36218685b1ec0d16607e5a",
+            "hashScope": "original summary text, not page bytes"
+          },
+          {
+            "url": "https://www.etymonline.com/word/according",
+            "status": "retrieved",
+            "checkedAt": "2026-10-18T04:38:38.423832+00:00",
+            "method": "Independent actual public-page web-tool read; original factual summary",
+            "text": "The participial form had matching and corresponding senses around 1300. Later conformity meanings and the medieval phrase explain the modern connection without making every present-day use mean agreement.",
+            "sha256": "c084ca66fb474f4e49b155e512803e1af4e0620ce789398d373a352397fb4a46",
+            "hashScope": "original summary text, not page bytes"
+          }
+        ],
+        "separateCachedEvidence": [],
+        "limitations": [
+          "Written sources and IPA checked; recordings were not auditioned.",
+          "Original source summaries from the author were read and their hashes verified; they are not presented as new independent page fetches."
+        ]
+      },
+      "independent-validation": {
+        "wordId": 10,
+        "candidateSha256": "8b1dabf8caa1e7649fcd2dbb6954251f00923142fca1a53140afcf41ef22e9bb",
+        "ok": true,
+        "errors": [],
+        "originalCandidateMatchesAuthor": true,
+        "beforeMatchesAuthor": true,
+        "sourceSummariesMatchHashes": true,
+        "validatedAt": "2026-10-18T04:36:24.200Z",
+        "scope": "Structural and byte-integrity checks only. Semantic acceptance is in the independent-review sidecar."
+      }
+    }
+  },
+  "sourceEvidence": [
+    {
+      "url": "https://fr.wiktionary.org/wiki/according#Anglais",
+      "status": "retrieved",
+      "fetchedAt": "2026-10-18T00:45:49.536Z",
+      "kind": "etymology",
+      "retrievalMethod": "mediawiki-api-english-section",
+      "pageId": 1209353,
+      "revisionId": 33790525,
+      "revisionTimestamp": "2024-03-16T18:14:04Z",
+      "sha256": "225ca4371ebf24f5beb1e76bc43594226f22977ef26e4bbea79e4d8318780fd2",
+      "language": "English entry; French editorial explanation",
+      "license": "CC BY-SA 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "truncated": false
+    },
+    {
+      "url": "https://dictionary.cambridge.org/dictionary/english/according",
+      "status": "unavailable",
+      "fetchedAt": "2026-10-18T01:18:59.595Z",
+      "failure": "http 403 or no dictionary entry"
+    },
+    {
+      "url": "https://www.etymonline.com/word/according",
+      "status": "retrieved",
+      "kind": "etymology",
+      "fetchedAt": "2026-10-18T04:20:47.961719+00:00",
+      "retrievalMethod": "actual web-tool public-page read by root; original factual summary",
+      "text": "The participial form developed correspondence and conformity meanings. The phrase according to is medieval and can identify a source’s statement without asserting the speaker’s agreement.",
+      "sha256": "1e17a3a6386e44c2f318660b74af18b354b977ce4b2ce0d7fb2b07b1c0e64d59",
+      "hashScope": "original factual summary, not full fetched page bytes"
+    },
+    {
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/english/according-to",
+      "status": "retrieved",
+      "kind": "dictionary",
+      "fetchedAt": "2026-10-18T04:20:47.961719+00:00",
+      "retrievalMethod": "actual web-tool public-page read by root; original factual summary",
+      "text": "The preposition marks a reported source or conformity/dependence. Its entry supports following instructions, plans and determining factors; these align with the lesson’s three teaching units.",
+      "sha256": "197f33c3a9f335950dc9918a8b18267fe383aa5d41259362a2b3ffae306760f1",
+      "hashScope": "original factual summary, not full fetched page bytes"
+    }
+  ],
+  "publicationChecks": {
+    "identityAndStructure": "passed",
+    "candidateReviewHash": "matched",
+    "rootFinalHash": "matched",
+    "beforeEditSha256": "ebf359419f9871c75c3114ab0484e72136a1b224f6123a0208a17c6e7b158dcd",
+    "originalAuditSha256": "3ea5eb7368acb9a7c5edea6bb192c02af07a7a34791b762007fe45dade43eb53",
+    "finalLessonSha256": "9aa7acd17bd688ef671a4b9d02b2835944ebc53eaf268ed7afda8f363837d653",
+    "note": "Only recorded editorial metadata changed after candidate review. Original generation and review remain historical; no additional CLI invocation claimed."
+  }
+}

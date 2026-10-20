@@ -1,0 +1,172 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5714a4fc504a4e5f16d3eee2a7012bf2a72c4951950e462f5cacaf6a1d9d74cb",
+    "executedReviewPromptHash": "5714a4fc504a4e5f16d3eee2a7012bf2a72c4951950e462f5cacaf6a1d9d74cb",
+    "reviewHash": "365ff0e0b2f5a45bbd3c4334d05aac18c5f8fce4d3f33d2eabe997515aeaadb4",
+    "wordId": 1559,
+    "inputHash": "095094498104ce25d2207819d458d0d5b3bd512b99b2b553af6049392479aa94",
+    "draftHash": "67930242fc35520c3847e2170a3fdeea68a4ca74e7a965595d18735cfc5290d8",
+    "finalHash": "e1a740bf25981ccf7565883c424e228e0e8e1fda4fa0076d48ddaed5c07f8be2",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/windy#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:53.195Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 1474631,
+        "revisionId": 27624207,
+        "revisionTimestamp": "2020-04-05T02:04:33Z",
+        "sha256": "aee5b1ff08903f598da018e5b9bc209c342bb6b3595dc828f060b6c31e55c1a4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/windy",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T22:40:18.245Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:46:53.291Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/1/note、/forms/2/note",
+        "message": "拼写规则漏了“加”字：应为“辅音字母加 y 结尾”，不能把 y 本身称为这里的辅音字母。windier、windiest 的实际拼写正确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/formation",
+        "message": "宜直接说明 wind 是构词基础、加 -y 得到 windy，避免把去掉后缀的分析过程写成词的构成方向。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/senses/0/sourceIds、/wordFamily/0/sourceIds、/sources/1/supports",
+        "message": "本次实际来源不含 Oxford 正文，不能据此确认其具体支持范围。相关引用改指已取得的维基词典英语词条，并补全该来源的支持项目；Oxford 可保留为推荐查询入口。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的英语词条全部定义：天气或地方多风属于同一核心形容词义，无须拆义；两个自然原创例句分别覆盖天气与地点用法。句型、翻译、近义词的语境限制、反向表达和读音均可保留。wind + -y 有词源材料支持，未虚构历史阶段，助记故事也已明确区分。未取得其他词典正文，因此不声称穷尽罕见引申义。",
+    "senseInventory": [
+      {
+        "sense": "形容词：有风的；多风的；风大的，可描述天气或地方",
+        "coveredBy": [
+          "windy-weather"
+        ],
+        "assessment": "覆盖完整，已有两个自然原创英中例句；天气句、名词前修饰和 too…to… 结构说明正确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"以辅音字母 y 结尾，变比较级时把 y 改为 i 再加 -er。\"",
+        "valueJson": "\"以辅音字母加 y 结尾，变比较级时把 y 改为 i 再加 -er。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"以辅音字母 y 结尾，变最高级时把 y 改为 i 再加 -est。\"",
+        "valueJson": "\"以辅音字母加 y 结尾，变最高级时把 y 改为 i 再加 -est。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-windy\"]",
+        "valueJson": "[\"wiktionary-windy\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"windy 去掉形容词后缀 -y 后的词根。\"",
+        "valueJson": "\"wind 是基础名词，加形容词后缀 -y 构成 windy。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-windy\"]",
+        "valueJson": "[\"wiktionary-windy\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"windy 的现代构词说明及读音线索\"]",
+        "valueJson": "[\"windy 的形容词词性及多风义\",\"wind 加后缀 -y 的构词关系及读音线索\",\"近义词 blowy、gusty 的列举\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1559,
+    "headword": "windy",
+    "meaning_zh": "adj. 多风的；风大的",
+    "phonetic": "/'windi/",
+    "pos": "",
+    "forms": []
+  }
+}

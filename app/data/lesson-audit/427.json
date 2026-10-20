@@ -1,0 +1,224 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7d3a1a661ae9a7b8bc2669febc80f66995043c8c4691e073db39ce1355ac09e5",
+    "executedReviewPromptHash": "7d3a1a661ae9a7b8bc2669febc80f66995043c8c4691e073db39ce1355ac09e5",
+    "reviewHash": "c128f6d6bffc688619a15a5d903b1a0c6014092df10592fcca08597ddff673bc",
+    "wordId": 427,
+    "inputHash": "77b7cfbbc5dc0a2c01e8a5a0703c0b192641d9c972226cbad729c090023be30c",
+    "draftHash": "9a88f1602acf82a1e38fab8a1d02f9008dc17e21682b44a53a1a3481987d1fd1",
+    "finalHash": "ad2ad270fdc2512c695e7b8aa792ea26322baec969ee58125cafc3c270b578ed",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/earthquake#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:47.459Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116282,
+        "revisionId": 30889510,
+        "revisionTimestamp": "2022-10-18T11:48:10Z",
+        "sha256": "9a77d5de08ec2d05f1cfc2ed7470811723bdb8da8ff49194b7acc3e68cad32f3",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/earthquake",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:11:22.169Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:14:36.282Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "quake 读 /kweɪk/；/keɪk/ 既不是它的完整读音，也不是它与 lake 共有的结尾，会导致漏读 /w/。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Oxford 不在实际提供的来源材料中，却被多个 sourceIds 用作依据。应删除这项来源及相关引用；可由已获取词条支持的内容改引 wiktionary，余震辨析不挂未经提供的词典来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/similar/1/note",
+        "message": "seismic event 的范围比 earthquake 广，也可包括爆破等产生地震波的事件；仅说明语体差别不足以限定其近义关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "余震不要求主震必须是大地震；还须限定为同一地区主震后的较小地震。主震也不一定是整个地震序列中最先发生的地震，原文“最初的主震”容易误导。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamilyNote",
+        "message": "“核心词族就是单复数变化”没有讲清构词成分与数的变化各自是什么关系。宜直接说明 earth、quake 与 earthquakes 的区别。"
+      }
+    ],
+    "coverageAssessment": "已核对已获取英语词条的全部定义：核心名词义“地震”及可数用法已覆盖，两句自然的英中例句对应正确，无须拆成多个义项。earth + quake 的构词分析有来源依据；现有单个构词节点没有虚构历史先后链。英美读音的记音差异可接受，仅修正漏读 /w/ 的说明。来源限于已获取的法语维基词典英语词条；Cambridge 未取得正文，Oxford 未提供实际材料。近义范围及余震辨析依据专业语言知识修正。",
+    "senseInventory": [
+      {
+        "sense": "名词：地震；可数，可指一次地震，也可用复数泛指地震。",
+        "coveredBy": [
+          "earthquake-n-1"
+        ],
+        "assessment": "覆盖充分。两例分别呈现具体地震事件和地震发生时的情境；单复数、冠词及常见搭配均有说明。词典没有列出其他需要补入的初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"quake 与 lake 押韵，末尾读 /keɪk/。\"",
+        "valueJson": "\"quake 读 /kweɪk/，注意不要漏读 /w/；它与 lake 押韵，两词的结尾都是 /eɪk/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"偏专业或正式的说法，常见于地质报告。\"",
+        "valueJson": "\"专业用语，指产生地震波的事件；包括地震，也可包括爆破等人为事件，范围比 earthquake 广，不能在所有语境下互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"aftershock 特指大地震之后发生的余震，不是 earthquake 的普通拼写或复数形式。\"",
+        "valueJson": "\"aftershock 指主震后在同一地区发生、震级小于主震的余震；它本身也是一种 earthquake。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"可泛指一次地震，包括最初的主震。\"",
+        "valueJson": "\"earthquake 是地震的通称，主震和余震都属于 earthquake。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"指主震之后发生的较小地震。\"",
+        "valueJson": "\"指主震后在同一地区发生、震级小于主震的地震。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"泛指地震用 earthquake；只有主震之后的震动才叫 aftershock。\"",
+        "valueJson": "\"earthquake 泛指地震；aftershock 特指同一地区主震后发生、震级小于主震的余震。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"常用核心词族就是 earthquake 的单复数变化；volcano 等自然灾害词只是主题相关词，不是它的派生词。\"",
+        "valueJson": "\"earth 和 quake 是 earthquake 的构词成分；earthquakes 是它的规则复数，不是另一个派生词。volcano 等自然灾害词只是主题相关词，不是 earthquake 的派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"wiktionary\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"earth 与 quake 的构词分析\",\"英式和美式读音\"]",
+        "valueJson": "[\"名词词性、地震义、标准拼写及规则复数\",\"earth 与 quake 的构词分析\",\"英式和美式读音\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: earthquake\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/earthquake\",\"supports\":[\"名词词性、可数用法和地震义\",\"常见搭配及英式、美式读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 427,
+    "headword": "earthquake",
+    "meaning_zh": "n. 地震",
+    "phonetic": "/'ә:θkweik/",
+    "pos": "",
+    "forms": []
+  }
+}

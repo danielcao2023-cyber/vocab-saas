@@ -1,0 +1,294 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "57fca1b175aee24bb09df25d2705f6a204ae20089c6bb3ca70139bd1a9b6e4fe",
+    "executedReviewPromptHash": "57fca1b175aee24bb09df25d2705f6a204ae20089c6bb3ca70139bd1a9b6e4fe",
+    "reviewHash": "b199abe0e5cb0e2e43c9a225c1b4829e66044c83b9bc5b41299bf2cb3c2314ad",
+    "wordId": 823,
+    "inputHash": "42a26ec390baeddb0e4843c99d9abc0a03176ef63d6cc1fb72a289f2a2ee4551",
+    "draftHash": "10bdfb52582f1be4d809212151b895de4d6f1fe08d7af6a072f65adc7348d915",
+    "finalHash": "734132b0da39613b708b57b36a855c43712df07486f7dab121dcbb3c75e929be",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/mall#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:11.695Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121064,
+        "revisionId": 39067150,
+        "revisionTimestamp": "2025-11-15T08:48:52Z",
+        "sha256": "c70ca8cb70a5a41ea69295252408b525a1042d9d7f40ecf089570f62c3816e0a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/mall",
+        "section": "mall etymology",
+        "supports": [
+          "Pall-mall game and promenade route to shopping mall"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:11:04.274233+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "1dd8eb7da6bb28cb3b3c76cb727569f87d909f497025b70fbeb1c1324e8e26eb",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "1dd8eb7da6bb28cb3b3c76cb727569f87d909f497025b70fbeb1c1324e8e26eb",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/823.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/mall",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:38:49.520Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:44:30.125Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 条目未取得，却被用于支撑发音、释义和辨析。应改引已取得的法语维基词典英语词条，并明确区分词条语言与编写语言。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "mall 中没有字母 o；同时不能排除部分美式口音中成立的 /mɑːl/。需修正拼读说明，并补充读音变体。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "将 mall 限定为室内场所过窄；购物中心也可以采用露天布局。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/takeaway；/memoryAid",
+        "message": "遗漏词条中文释义涉及的商业步行街用法。应说明 pedestrian mall 指供行人购物、禁行机动车的街道或区域，不能泛指任何商业街，并补足两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "promenade/esplanade 不仅涉及狭义步道，也包括开阔公共步行场地。原第二例仅凭 evening walk 无法排除购物中心义，应补足范围并换用明确场景。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example",
+        "message": "maul 的例句仅含被比较词，却绑定购物中心义。让同句同时出现 mall 和 mauled，可使义项关联明确，原句语法本身没有问题。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "可补入词典已列出的真实复合词 strip mall，解释其含义、构词和分写形式；无需虚构派生词。"
+      }
+    ],
+    "coverageAssessment": "已核对购物中心义、魁北克标注的同义用法，以及 promenade/esplanade 义；另按专业语言知识补齐 pedestrian mall 的商业步行区用法。修改后各义均有两个原创英中例句。现有词源概括符合已取得的“游戏—散步道—购物空间”路线，无须改写。来源局限是 Cambridge 未取得，因此撤换其引注；补充的口音变体、商业步行区细分及复合词释义按专业语言知识审校。",
+    "senseInventory": [
+      {
+        "sense": "名词：购物中心；魁北克英语标注的购物中心用法",
+        "coveredBy": [
+          "mall-shopping-centre"
+        ],
+        "assessment": "两个例句已覆盖。修正室内限制；魁北克标注属于地区用法，不另立义。"
+      },
+      {
+        "sense": "名词：散步道、林荫大道或开阔公共步行场地（promenade/esplanade）",
+        "coveredBy": [
+          "mall-promenade"
+        ],
+        "assessment": "保留较少见用法的定位；修改后两个例句分别展示步道和开阔公共草地区域。"
+      },
+      {
+        "sense": "名词：商业步行街；步行购物区，常见于 pedestrian mall",
+        "coveredBy": [
+          "mall-pedestrian-shopping-area"
+        ],
+        "assessment": "原稿遗漏，补入两个例句及语境限制。此细分依据专业语言知识，所给词典未单列该义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"mall 作名词，最常见的意思是“购物中心”；也可指供人散步的林荫步道，后一义较少见。\"",
+        "valueJson": "\"mall 日常最常指“购物中心”；pedestrian mall 常指禁行机动车的商业步行街；在较少见的用法中，mall 还可指散步道或开阔的公共步行区。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音相近，元音较长；部分口音的元音音质会略有不同。\"",
+        "valueJson": "\"本课以 /mɔːl/ 为主；部分美式口音也读 /mɑːl/，另有较少见的 /mæl/ 读法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"末尾的 ll 发 /l/；不要按字母 o 的常见短音读成 /ɒ/ 或 /ɑː/。\"",
+        "valueJson": "\"常见读法 /mɔːl/ 中，字母 a 发 /ɔː/；词尾 ll 合读一个 /l/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"有多家商店，通常也有餐饮或娱乐设施的大型室内商业场所。\"",
+        "valueJson": "\"由多家商店组成的购物中心，常配有餐饮或娱乐设施；既可以采用室内布局，也可以采用露天布局。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"林荫步道；散步场所\"",
+        "valueJson": "\"林荫步道；开阔公共步行区\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"供人散步的宽阔步道或林荫大道。\"",
+        "valueJson": "\"供人散步的宽阔步道、林荫大道，或供公众散步、休憩的开阔地带。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"mall-ex-4\",\"senseId\":\"mall-promenade\",\"en\":\"The old mall was a quiet place for an evening walk.\",\"zh\":\"这条老步道是傍晚散步的安静去处。\",\"note\":\"根据散步这一语境判断 mall 的意思。\"}",
+        "valueJson": "{\"id\":\"mall-ex-4\",\"senseId\":\"mall-promenade\",\"en\":\"Families were picnicking on the grassy mall between the museums.\",\"zh\":\"几家人正在博物馆之间的草地广场上野餐。\",\"note\":\"grassy mall 在这里指供公众散步、休憩的开阔草地区域。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"mall-pedestrian-shopping-area\",\"title\":\"商业步行街；步行购物区\",\"meaning\":\"设有商店、禁止机动车通行的街道或公共步行购物区。\",\"usageNote\":\"这一用法常见于 pedestrian mall，尤其在北美英语中。它强调商业区域供行人使用，不能把所有商业街都直接称作 mall。\",\"examples\":[{\"id\":\"mall-ex-5\",\"senseId\":\"mall-pedestrian-shopping-area\",\"en\":\"The city closed the shopping street to cars and turned it into a pedestrian mall.\",\"zh\":\"市政府禁止汽车驶入这条商业街，并把它改造成了商业步行街。\",\"note\":\"turn A into B 表示把 A 改造成 B；这里强调商业街改为供行人使用。\"},{\"id\":\"mall-ex-6\",\"senseId\":\"mall-pedestrian-shopping-area\",\"en\":\"We stopped for coffee at a café on the pedestrian mall.\",\"zh\":\"我们在商业步行街上的一家咖啡馆停下来喝了杯咖啡。\",\"note\":\"on the pedestrian mall 表示位于这条商业步行街上。\"}],\"patterns\":[{\"en\":\"turn a street into a pedestrian mall\",\"zh\":\"把一条街改造成商业步行街\",\"note\":\"turn A into B 表示把 A 改造成 B。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"pedestrian mall\",\"zh\":\"商业步行街；步行购物区\",\"note\":\"指禁行机动车、供人步行购物的区域，范围也可以大于一条街。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"pedestrian shopping street\",\"zh\":\"商业步行街\",\"note\":\"直接说明这是一条供行人购物的街，适合强调街道本身。\"},{\"en\":\"pedestrian precinct\",\"zh\":\"步行商业区\",\"note\":\"英式英语常见说法，指禁止车辆通行的步行区域，常有商店，范围可以大于一条街。\"}],\"contrasting\":[{\"en\":\"a shopping street open to traffic\",\"zh\":\"允许机动车通行的商业街\",\"note\":\"同样有商店，但允许机动车通行，可用于对照是否属于步行区。\"}],\"similarNote\":\"这些表达在步行购物的语境中接近，具体范围和地域习惯有所不同。\",\"contrastingNote\":\"这里按车辆能否通行作场所类型对照，不把它当作 mall 的固定反义关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"mall-conf-2\",\"senseId\":\"mall-shopping-centre\",\"en\":\"The dog mauled the toy bear.\",\"zh\":\"狗把玩具熊撕咬得乱七八糟。\",\"note\":\"maul 拼作 m-a-u-l；本句用过去式 mauled。\"}",
+        "valueJson": "{\"id\":\"mall-conf-2\",\"senseId\":\"mall-shopping-centre\",\"en\":\"Our dog mauled the toy bear we bought at the mall.\",\"zh\":\"我们的狗把我们在购物中心买的玩具熊撕咬得不成样子。\",\"note\":\"mall 指购物中心；maul 拼作 m-a-u-l，本句用过去式 mauled，表示猛烈撕咬。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"strip mall\",\"partOfSpeech\":\"noun\",\"meaning\":\"一排店面相连、通常前面有停车场的露天购物中心（美式英语）。\",\"formation\":\"strip（狭长的一条）+ mall（购物中心），组成表示商铺排成一列的复合名词。\",\"spellingNote\":\"两个词分写：strip mall；mall 保留两个 l。复数是 strip malls，只给最后的 mall 加 -s。\",\"example\":{\"id\":\"mall-family-1\",\"senseId\":\"mall-shopping-centre\",\"en\":\"The pharmacy is in the strip mall next to the gas station.\",\"zh\":\"药店在加油站旁边那排商铺组成的购物区里。\",\"note\":\"strip mall 中的店铺通常各有朝外的入口。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"mall 的常见复数 malls 是规则名词变化，不是新词族；本课不列仅与购物主题相关的词。\"",
+        "valueJson": "\"mall 的复数 malls 是规则名词变化；strip mall 是由两个独立词组成的复合名词，两个词分写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象一条两旁有树的宽步道，走到尽头便是热闹的购物中心。mall 的两个意思就连在同一条路上：先想到步道，日常最常用时想到商场。\"",
+        "valueJson": "\"想象一条两旁有树的宽步道，经过有咖啡馆的商业步行街，尽头就是热闹的购物中心。把 mall 的相关用法连在这条路上：散步道、pedestrian mall 商业步行街，以及日常最常说的购物中心。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"步行购物\",\"text\":\"pedestrian mall：禁行机动车、供人步行购物的街道或区域。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: mall\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/mall\",\"supports\":[\"mall 的名词用法及购物中心常见义\",\"常见发音\",\"mall 与相关购物场所词语的用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：mall（英语词条，法语释义说明）\",\"url\":\"https://fr.wiktionary.org/wiki/mall#Anglais\",\"supports\":[\"购物中心义及其魁北克英语地区标注\",\"promenade、esplanade 所表示的散步道和开阔公共步行场地义\",\"/mɔːl/ 与较少见的 /mæl/ 读音，以及与 maul 的常见同音关系\",\"shopping mall、strip mall 复合表达的列举\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 823,
+    "headword": "mall",
+    "meaning_zh": "n. 购物中心；商业街",
+    "phonetic": "/mɔ:l/",
+    "pos": "",
+    "forms": []
+  }
+}

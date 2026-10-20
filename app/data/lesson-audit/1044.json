@@ -1,0 +1,261 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e2bf1213744125d27aa15dbef43877857c2db803aeae6638af1811b6f3e99369",
+    "executedReviewPromptHash": "e2bf1213744125d27aa15dbef43877857c2db803aeae6638af1811b6f3e99369",
+    "reviewHash": "ead64750a3f65ca52b7948052d80b547d46f27f3d203eb30b8cc42bfdbf57b23",
+    "wordId": 1044,
+    "inputHash": "0991d17d1a0fd392e638c8a32a1120a1dca32bac87a16e7b98e56403688505e3",
+    "draftHash": "0fb5795509a26675131596e05eee3adb1ce182765d3790f39feaf30eff187d7e",
+    "finalHash": "d38fbdbd536b9575d67a50651f0cacf55907fcb891a4aa39f9a93f6b7b5bef22",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/poem#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:21.269Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118626,
+        "revisionId": 38299087,
+        "revisionTimestamp": "2025-06-07T12:48:00Z",
+        "sha256": "be281ba0a33fbe5ad519f8715a007d7b066125d45871f9b78a19e30ba571799b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/poem",
+        "section": "poem etymology",
+        "supports": [
+          "Greek created-work meaning and French/Latin route"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:10:43.419129+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "116f25714210758ccce54dcfd4f9d9198192f96b2bdff2b5b03969a17fa10866",
+        "summaryAndSupportsWordCount": 53,
+        "sha256": "116f25714210758ccce54dcfd4f9d9198192f96b2bdff2b5b03969a17fa10866",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1044.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/poem",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T05:21:53.790Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T05:27:00.287Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及相关 sourceIds",
+        "message": "Cambridge 未取得词条正文，不能用其来源 ID 为发音、比喻义、辨析和词族提供材料支持。改引已取得的法语维基词典英语词条支持基本释义，并清除其余无材料支持的引用；语言知识本身可保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1、/takeaway、/memoryAid/caveat",
+        "message": "“诗般美的事物”义成立，但属于较少见的文学性比喻。“两个常见用法”夸大其频率，相关句型也须限定语域；a poem of beauty 不宜作为常用搭配教授。原有两句比喻例句语法成立，可以保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/formation、/wordFamily/0/spellingNote",
+        "message": "poetic 的拼写正确，但“结尾是 -etic”容易被当成后缀划分。应明确现代词形可按 poet + -ic 理解，并与历史借入路线区分。"
+      }
+    ],
+    "coverageAssessment": "已核对可数名词“诗；一首诗”和较少见的文学比喻“诗般美的事物”，未发现遗漏的初中常用词性或核心义。两义原有例句均符合语法，翻译与所属义项相符，予以保留；poem/poetry 辨析、复数及英美读音可保留。词源各阶段与已取得的 Etymonline 摘要相符，顺序箭头成立，无须修改。来源局限是维基词典英语词条仅提供基本释义、复数及音频入口，未取得 Cambridge 正文；其余语言细节依据专业语言知识审校，不作为该网页已支持的内容。",
+    "senseInventory": [
+      {
+        "sense": "名词：诗；一首诗，可数，复数 poems",
+        "coveredBy": [
+          "poem-1"
+        ],
+        "assessment": "常用核心义覆盖充分，已有两个自然、具体的原创例句，搭配和可数性说明正确。"
+      },
+      {
+        "sense": "名词：诗般美的事物，较少见的文学性比喻",
+        "coveredBy": [
+          "poem-2"
+        ],
+        "assessment": "义项成立且已有两个合适的文学化例句；修正频率和语域说明，并调整搭配，避免作为日常通用表达教授。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"poem 通常指一首诗；有时也用来形容像诗一样优美、动人的事物。\"",
+        "valueJson": "\"poem 通常指一首诗；在较少见的文学性比喻中，也可指像诗一样优美、动人的事物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[\"wiktionary-poem-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"诗般美的事物\"",
+        "valueJson": "\"诗般美的事物（文学比喻）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这是比喻用法，常见于描述风景或特别美好的经历；使用时带有赞美意味。\"",
+        "valueJson": "\"这是较少见、带赞美意味的文学性比喻，可用于风景、建筑、舞蹈等。日常赞美通常用 beautiful；强调诗意时可用 poetic。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"用来赞美某个景象或时刻，强调它优美动人。\"",
+        "valueJson": "\"用于文学性比喻，赞美某个景象或时刻优美动人；不宜当作日常通用的赞美句型。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"一首关于……的诗；……的诗篇\"",
+        "valueJson": "\"宛如表达……的一首诗\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"of 后说明比喻所表达的情感或主题。\"",
+        "valueJson": "\"of 可引出比喻所体现的情感或主题，表达带有文学色彩。a poem of love 也能指真正的爱情诗，须结合上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a poem of beauty\",\"zh\":\"一幅／一幕诗意的美景\",\"note\":\"用于富有诗意的赞美表达，语气偏文学化。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"a poem in stone\",\"zh\":\"一首用石头写成的诗（比喻优美的建筑或雕塑）\",\"note\":\"在比喻语境中赞美建筑或雕塑优美如诗，是带有文学色彩的搭配。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"poem 的同族词，常用于描述富有诗意的语言或景象。\"",
+        "valueJson": "\"现代词形可按 poet + 形容词后缀 -ic 理解，表示“诗歌的；有诗意的”；这是词形分析，不是历史来源说明。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"词形为 poetic，结尾是 -etic；注意不要写成 poemic。\"",
+        "valueJson": "\"poetic 拼作 p-o-e-t-i-c；按 poet + -ic 记，保留 t，不要写成 poemic。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-poem\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这是帮助记忆两个常见用法的情境联想，不是 poem 的词源解释。\"",
+        "valueJson": "\"这是把基本义与较少见的文学比喻联系起来的情境联想，不是 poem 的词源解释。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-poem\",\"title\":\"Cambridge Dictionary: poem\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/poem\",\"supports\":[\"名词 poem 的主要含义和用法\",\"poem 的英美发音\",\"poem 与 poetry 等词的使用区别\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-poem-en\",\"title\":\"法语维基词典：poem（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/poem#Anglais\",\"supports\":[\"英语名词 poem 的基本释义“诗”\",\"复数形式 poems\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1044,
+    "headword": "poem",
+    "meaning_zh": "n. 诗, 诗般美的事物",
+    "phonetic": "/'pәuim/",
+    "pos": "",
+    "forms": []
+  }
+}

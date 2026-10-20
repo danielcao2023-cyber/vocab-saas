@@ -1,0 +1,202 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "823121b95e51a54472d44c5de11c54e14b578da3b081d807381866fac16f0145",
+    "executedReviewPromptHash": "823121b95e51a54472d44c5de11c54e14b578da3b081d807381866fac16f0145",
+    "reviewHash": "c327bb037ab254b13bb448698f36f1256f3de1f39b787f790b6ca8c200659567",
+    "wordId": 1521,
+    "inputHash": "fd05a1f7131e81e8e56794f0aeabb66b047ecf1a74bbe0b6266d25ddb4103b2e",
+    "draftHash": "d6ff649a3753c49c384a9b90860619dfe670b0d21536135fdd97dc3f02bb44cd",
+    "finalHash": "e63adb1aba1abba9e1186e5e73ae2b11cc36df442adbe6b1c1634050b52dc01a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/we#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:43.131Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 31256,
+        "revisionId": 39828830,
+        "revisionTimestamp": "2026-08-24T22:22:06Z",
+        "sha256": "6e48cc769db88a1896798d73cd95c637f782b15530a179eba6a2a5ac29b091a7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/we",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:33:32.404Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T21:43:09.812Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的泛指功能：we 可以泛指包括说话者在内的人们，用于共同需求和普遍经历。应补充说明及两个例句，不必扩展王室等特殊用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "stages 把古英语放在原始印欧语之前，会画出倒置的历史箭头；原始印欧语阶段的 meaning 还是来源说明而非释义。应将可证实的早期形式保留在 summary，阶段按古英语到现代英语排列，并清除学生正文中的制作说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note",
+        "message": "“we 后的 be 动词用 are”未限定时态，容易与本课的 we were 冲突。应明确 are 用于一般现在时。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms",
+        "message": "相关语法形式宜补入初中常见的 ourselves，并相应更新词族说明，区分反身、强调形式与派生词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0/note",
+        "message": "两个现有例句没有明确展示不包括听者的 we。可给第一句补充具体说话场景，与第二句的包含听者形成对照。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对现有例句、语法、翻译、拼写、读音及相关表达。检索成功的英语词条直接列出“我们”这一基本代词义；原稿已覆盖具体群体用法，补丁补齐泛指人们的常用功能，并明确包含或不包含听者的区别。历史词源仅采用所提供的成功检索材料；Oxford 仅作推荐来源，不视为已获取的核验依据。特殊的王室、作者及医护用法不作为本课初中核心义强行增列。",
+    "senseInventory": [
+      {
+        "sense": "第一人称复数主格：说话者及至少一位其他人",
+        "coveredBy": [
+          "we-pronoun-subject"
+        ],
+        "assessment": "基本定义和两个生活例句成立；通过例句注释明确不包括听者的语境。"
+      },
+      {
+        "sense": "具体群体中的包含听者与不包含听者",
+        "coveredBy": [
+          "we-pronoun-subject"
+        ],
+        "assessment": "属于同一基本义的指称差别，无须另拆词义；补丁后两个例句形成明确对照。"
+      },
+      {
+        "sense": "泛指包括说话者在内的人们",
+        "coveredBy": [
+          "we-pronoun-general"
+        ],
+        "assessment": "原稿遗漏；补丁新增常用功能说明、两个原创例句及限定语境的相关表达。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "\"说话者和一起制作海报的人都包括在 we 中。\"",
+        "valueJson": "\"例如向没有参与制作的家长介绍时，we 指说话者和一起做海报的同学，不包括听者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"we 后的 be 动词用 are，如 We are classmates.。\"",
+        "valueJson": "\"一般现在时用 are，如 We are classmates.（我们是同班同学）；一般过去时用 were，如 We were tired.（我们当时很累）。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"we-pronoun-general\",\"title\":\"我们；人们（泛指）\",\"meaning\":\"泛指包括说话者在内的人们，常用于谈共同需求、普遍经历或一般规律。\",\"usageNote\":\"这里的 we 不一定指某几个已明确的人。究竟指某个群体还是泛指人们，要看上下文；动词仍按第一人称复数搭配。\",\"examples\":[{\"id\":\"we-general-example-1\",\"senseId\":\"we-pronoun-general\",\"en\":\"We all need enough sleep.\",\"zh\":\"我们人人都需要充足的睡眠。\",\"note\":\"在谈普遍健康需求时，we 泛指包括说话者在内的人们。\"},{\"id\":\"we-general-example-2\",\"senseId\":\"we-pronoun-general\",\"en\":\"As we get older, our bodies change.\",\"zh\":\"随着年龄增长，我们的身体会发生变化。\",\"note\":\"这里谈人们普遍经历的变化，不限于说话者身边的某个小组。\"}],\"patterns\":[{\"en\":\"as we + 动词（一般现在时）\",\"zh\":\"随着我们……\",\"note\":\"可以引出普遍变化，如 as we get older；as 从句中的动词使用一般现在时。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"we all\",\"zh\":\"我们人人都\",\"note\":\"谈共同需求或普遍经历时，all 强调所谈范围中的每个人；具体范围仍由上下文决定。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"people\",\"zh\":\"人们\",\"note\":\"谈普遍情况时可表达相近意思，但 people 是第三人称复数名词，不像 we 那样明确把说话者包括在内。\"},{\"en\":\"you（泛指）\",\"zh\":\"人们；任何人\",\"note\":\"口语中也可谈普遍经历，并非一定指听者本人；需要结合上下文判断。\"}],\"contrasting\":[],\"similarNote\":\"people 和泛指的 you 可在某些概括性陈述中表达相近意思，但人称视角和句子结构不同，不宜逐词替换。\",\"contrastingNote\":\"这一泛指用法没有固定的直接反义词；谈特定双方时的 we 与 they 是指称对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"反身／强调形式\",\"form\":\"ourselves\",\"ipa\":\"/aʊərˈselvz/\",\"note\":\"表示“我们自己”。反身用法如 We made lunch for ourselves.（我们为自己做了午饭）；强调用法如 We did it ourselves.（我们亲自做的）。拼写为 our + selves，self 的复数形式是 selves。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"we 是代词，没有适合初中学习、由它规则派生的常见词族。us、our 和 ours 是同一代词的不同语法形式，不是派生词。\"",
+        "valueJson": "\"we 是代词，没有适合初中学习、由它规则派生的常见词族。us、our、ours 和 ourselves 是同一人称代词的相关语法形式，不是通过给 we 添加词缀得到的常规派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"we 是一个古老的整体代词。历史词源材料把它追溯到古英语 wē，再追溯到原始印欧语形式 *wéy；两者之间的年代和具体变化不在这里展开。\"",
+        "valueJson": "\"现代英语 we 来自古英语 wē；古英语形式又可追溯到原始印欧语形式 *wéy。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"wē\",\"meaning\":\"“我们”\"},{\"language\":\"原始印欧语\",\"form\":\"*wéy\",\"meaning\":\"被该词源材料列为更早的来源\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"wē\",\"meaning\":\"我们\"},{\"language\":\"现代英语\",\"form\":\"we\",\"meaning\":\"我们\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1521,
+    "headword": "we",
+    "meaning_zh": "pron. 我们",
+    "phonetic": "/wi:/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b8c8d0f2f41409190cf4d404f081127744ecaa3435d1e07bea1a8ae7cee4d525",
+    "executedReviewPromptHash": "b8c8d0f2f41409190cf4d404f081127744ecaa3435d1e07bea1a8ae7cee4d525",
+    "reviewHash": "095553cf18b2471068b1a975e1c369f9624ed2b1b144cf2f3a9c5f6ff145adf8",
+    "wordId": 1529,
+    "inputHash": "96cdf6938b987a8ce0b5035f9e8f400a8df74bdae42c0e85fe8dea4d8175563d",
+    "draftHash": "b7bbb59981641d79a4436bbebaa4d8c06127f67ae5c90d01617c8412b6043901",
+    "finalHash": "03dfead19e8068072cbe2eeadb5bad256e90801f2f1902b2cb7cd811e2e028af",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/weekend#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.450Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 30093,
+        "revisionId": 39770925,
+        "revisionTimestamp": "2026-08-03T10:30:14Z",
+        "sha256": "72511d43b3a6a81d6b09dd85cce47a27cc18415004dfcd9cffbf14d1f06aecfa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/weekend",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:52:38.005Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:03:38.397Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "初稿把未成功取得内容的 Cambridge 页面作为释义、读音和用法的依据，却遗漏了实际取得的法语维基词典英语词条。应改用实际来源，并移除词族、辨析中没有材料支持的引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/headline、/takeaway、/studyPlan/1、/forms/2/note、/senses/1",
+        "message": "weekend 作动词表示“度周末”，是不及物动词；不能概括为“在周末做某事”，也不应教授 weekend + 现在分词这一活动句型。原稿对地点结构的概括还漏掉了介词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "名词的“周末休假”含义缺少明确例句；“一周工作或上学结束后的休息时间”也容易被理解为任何个人休息日。应说明通常的周末时段，并补足短假用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns及/senses/0/collocations",
+        "message": "应补充常见的 at weekends/on weekends 和名词前置修饰用法；spend the weekend 的活动补语须明确用 doing，地点补语须给出相应介词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/examples/1及/senses/1/relatedExpressions",
+        "message": "动词第二例的 this month 使所指周末不清楚；stay for the weekend 不保证“留到周末结束”；把 weekend 动词笼统标成常见非正式用法也不准确。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实际取得的词源材料明确给出 week + end 的复合构词关系，应补入并引用同一 URL。两个成分没有先后演变关系，stages 应继续留空。"
+      }
+    ],
+    "coverageAssessment": "已区分来源的法语说明语言与英语词条，核对“周末”“周末休假”和不及物动词“度周末”。补丁保留一个名词义项组织两种紧密相关的用法，为短假补足两个例句，并补充常见的名词前置修饰功能。动词保留两个例句并明确其低频性质。英式末重音读法本身正确，不因来源记录了另一变体而替换；来源对重音变体的支持范围已说明。构词事实可以确认，未推断首见年代或历史演变链。其他常用搭配和词族按专业语言知识审核，未冒充来源已逐项收录。",
+    "senseInventory": [
+      {
+        "sense": "名词：周末，通常为星期六、星期日，也常包括星期五晚上",
+        "coveredBy": [
+          "weekend-noun"
+        ],
+        "assessment": "基本覆盖，已有两个自然例句；修正定义，避免与个人的任意休息日混同。"
+      },
+      {
+        "sense": "名词：周末休假、利用周末进行的短假",
+        "coveredBy": [
+          "weekend-noun"
+        ],
+        "assessment": "与时间义合并教学合理；补入明确释义及两个短假例句。"
+      },
+      {
+        "sense": "名词的常用修饰功能：用于另一名词前，表示周末的或在周末进行的",
+        "coveredBy": [
+          "weekend-noun"
+        ],
+        "assessment": "初稿未体现；补入 weekend job 搭配和例句，无须另立形容词义项。"
+      },
+      {
+        "sense": "不及物动词：度周末，常说明地点或一起过周末的人",
+        "coveredBy": [
+          "weekend-verb"
+        ],
+        "assessment": "来源明确收录，初稿也有覆盖；修正过宽释义和错误句型，保留两个具体例句并说明较少见。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_weekend\",\"title\":\"Cambridge Dictionary: weekend\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/weekend\",\"supports\":[\"名词“周末”及常见用法\",\"weekend 作动词的用法\",\"weekend 的读音和词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_weekend\",\"title\":\"Wiktionnaire：weekend（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/weekend#Anglais\",\"supports\":[\"名词：周末、周末休假\",\"动词：度周末\",\"week + end 的复合构词关系\",\"英美读音中的首音节重音变体\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_weekend\"]",
+        "valueJson": "[\"wiktionary_weekend\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"不同口音的重音位置可能不同；英美读音中 week 的元音通常较长。\"",
+        "valueJson": "\"英式常见末音节重读，也有首音节重读；美式常见首音节重读。所引英语词条记录了英美首音节重读的变体。美式音标中的 /i/ 与这里的 /iː/ 可反映不同的记音惯例。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_weekend\"]",
+        "valueJson": "[\"wiktionary_weekend\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_weekend\"]",
+        "valueJson": "[\"wiktionary_weekend\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_weekend\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_weekend\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"weekend：周末；在周末做某事\"",
+        "valueJson": "\"weekend：周末；度周末（较少见的动词用法）\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时指一周末尾的休息日；作动词时表示在周末度过或做某事。\"",
+        "valueJson": "\"作名词通常指星期六、星期日这段时间，也可指周末短假；作不及物动词表示“度周末”，日常较少用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"练习 weekend 作动词时接地点或活动的用法。\"",
+        "valueJson": "\"先练习 spend the weekend in/at + 地点和 spend the weekend doing sth，再认识较少见的动词 weekend。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"可作动词，表示在周末度过或做某事。\"",
+        "valueJson": "\"可作不及物动词，表示度周末，常用介词短语说明地点或一起过周末的人；日常较少用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"周末；周末休息时间\"",
+        "valueJson": "\"周末；周末短假\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"通常指星期六和星期日，也可泛指一周工作或上学结束后的休息时间。\"",
+        "valueJson": "\"通常指星期六和星期日这段时间，也常包括星期五晚上；也可指利用周末进行的短期休假。周末不一定是某个人实际休息的日子。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weekend-noun-ex3\",\"senseId\":\"weekend-noun\",\"en\":\"We spent a relaxing weekend at a small hotel by the sea.\",\"zh\":\"我们在海边一家小旅馆度过了一个轻松的周末假期。\",\"note\":\"这里说的是一次利用周末进行的短假。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weekend-noun-ex4\",\"senseId\":\"weekend-noun\",\"en\":\"They're planning a weekend in the mountains.\",\"zh\":\"他们正计划去山里度一个周末短假。\",\"note\":\"a weekend in + 地点可表示去某地度周末短假。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"weekend-noun-ex5\",\"senseId\":\"weekend-noun\",\"en\":\"Mia has a weekend job at a bakery.\",\"zh\":\"米娅有一份周末在面包店做的工作。\",\"note\":\"weekend 放在名词 job 前作修饰语，表示这份工作在周末做。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"at weekends（英式）／on weekends（美式）\",\"zh\":\"每逢周末；通常在周末\",\"note\":\"说反复发生的周末活动时常用复数 weekends；这两个结构中不加 the。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/en",
+        "expectedValueJson": "\"spend the weekend + 地点／活动\"",
+        "valueJson": "\"spend the weekend in/at + 地点；spend the weekend doing sth\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0/note",
+        "expectedValueJson": "\"spend 后接时间，再说明在哪里或做什么。\"",
+        "valueJson": "\"地点通常用相应介词引出，如 spend the weekend at home；活动用 doing，如 spend the weekend painting。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a weekend job\",\"zh\":\"一份在周末做的工作\",\"note\":\"weekend 作名词修饰 job；类似的还有 weekend plans（周末计划）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"在周末度过；周末去做\"",
+        "valueJson": "\"度周末（不及物动词，较少见）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作动词，表示在周末待在某处、度过周末，或在周末进行某项活动。\"",
+        "valueJson": "\"度周末，常指在某处停留或与某人一起过周末。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"动词用法比名词少见，常见结构为 weekend + 地点，或 weekend + 现在分词短语。\"",
+        "valueJson": "\"这是较少见的不及物动词用法，后面可接 at/in + 地点或 with + 人，不能直接接宾语。日常更常用 spend the weekend；说周末做某事可用 spend the weekend doing sth。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"weekend 后接地点，说明周末待在哪里。\"",
+        "valueJson": "\"weekend 是不及物动词；at 引出地点，说明他们周末通常待在哪里。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"weekend-verb-ex2\",\"senseId\":\"weekend-verb\",\"en\":\"We are weekending with our cousins this month.\",\"zh\":\"这个月我们会和表兄妹一起过周末。\",\"note\":\"进行时形式 weekending 描述正在安排或度过的周末。\"}",
+        "valueJson": "{\"id\":\"weekend-verb-ex2\",\"senseId\":\"weekend-verb\",\"en\":\"We weekended with our cousins in the countryside.\",\"zh\":\"我们和表兄妹一起在乡下过了周末。\",\"note\":\"weekended 是规则过去式；with 说明一起过周末的人，in 说明地点。日常更常说 We spent the weekend with our cousins in the countryside。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"with 后接同行的人，说明陪伴对象。\"",
+        "valueJson": "\"with 后接一起过周末的人，也可指接待自己的亲友，不一定表示共同出行。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"更常用、更直接；后面可接地点或活动。\"",
+        "valueJson": "\"日常更常用；后面可接 in/at 等介词引出的地点，或用 doing sth 说明活动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"强调留在某处直到周末结束。\"",
+        "valueJson": "\"强调在某处停留过周末；不规定具体离开的时刻，也不一定是度假。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"spend the weekend 是更常见的表达；weekend 作动词较简洁，常见于非正式用法。\"",
+        "valueJson": "\"日常交流更常用 spend the weekend；weekend 作动词较少见，常用于叙述周末的旅行或停留。stay for the weekend 则侧重停留的时段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上可看作 week（星期）和 end（末尾）的组合，帮助记忆其“周末”含义。\"",
+        "valueJson": "\"weekend 是英语复合词，由 week（周；一星期）和 end（末尾）组合而成，字面意思是“一周的末尾”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是现代词形构成，不能据此当作完整的历史词源演变。\"",
+        "valueJson": "\"week 和 end 是构词成分，不是 weekend 先后经历的两个词形；这一构词关系本身不能确定它最早出现的年代。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_weekend\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1529,
+    "headword": "weekend",
+    "meaning_zh": "n. 周末, 周末休假",
+    "phonetic": "/'wi:kend/",
+    "pos": "",
+    "forms": []
+  }
+}

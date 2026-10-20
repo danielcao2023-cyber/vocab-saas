@@ -1,0 +1,590 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6eca8fd2fcd4761d9e249aa36b9a696e8decb1c8490c4dc6a0454550a37d3886",
+    "executedReviewPromptHash": "6eca8fd2fcd4761d9e249aa36b9a696e8decb1c8490c4dc6a0454550a37d3886",
+    "reviewHash": "277a79566ac870331cf1469e911fb9d318357dad6650a1080caf5e94a0e8f575",
+    "wordId": 1242,
+    "inputHash": "4b992782d8dc7ae6738217c88b425f7f921a8c6ea010edc46a9c40da2f1f3eab",
+    "draftHash": "2965f7ac268f1be94feafc9511ec25a9363943f8c05d447e9b965cd182523686",
+    "finalHash": "628833ee098a2f659dba5cc6e0ef28aa5a917bdbff1ac8d1b8cbc0e75261caf0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/shower#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.205Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 785819,
+        "revisionId": 38721510,
+        "revisionTimestamp": "2025-09-22T14:16:31Z",
+        "sha256": "e45e016a6904e174bd18b807930ec08424db955073601b127878f3a8163989b8",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/shower",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:37:25.140Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:54:40.002Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/3/note; /wordFamily/1/spellingNote",
+        "message": "shower 以 r 结尾，不是不发音的 e；showering 应直接加 -ing，不能删去原词中的 e。另补动词第三人称单数 showers。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "现有引用全部指向未成功取回的 Cambridge 页面，应改为实际取回的法语维基词典英语词条；来源标签仍保持 recommended。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可靠的古英语 scūr 来源关系，不能继续仅写现代助记。只补可证实的字形来源，不推测古英语释义或中间演变阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0; /confusions/0",
+        "message": "shower 也常指淋浴隔间或区域；“说设备用 shower，说房间用 shower room”过于绝对。应说明这种范围重叠，并补相应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note; /senses/1/patterns/0",
+        "message": "every morning 在所举短语之后，不是在 shower 前；a shower of 后既可接复数可数名词，也可接 rain、dust、glass 等不可数名词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "遗漏常见的不及物 shower down；现有“被 shower 的对象”说明也未分清两种及物结构的宾语。应分别说明落下物、接受者和洒落位置。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples; /senses/1/examples; /senses/3/examples",
+        "message": "合并义项中的常用功能目前多为单例，且缺少淋浴隔间、不及物洒落和抽象事物接连涌来的例证；补足各功能的原创例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions; /senses/3/relatedExpressions",
+        "message": "take a shower 整体是动词短语；bathe 是较宽泛的洗浴表达，不能作为反向表达。give someone many 不完整且不能涵盖不可数的 praise；cover someone with 的抽象用法也不宜绝对排除。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions; /senses/1/relatedExpressions; /senses/2/usageNote",
+        "message": "淋浴不要求站立；长期干旱与短暂阵雨并不互斥，改用暂时停雨作情境对照。shower oneself 并非必然不合语法，但不宜与日常直接使用 shower 并列推荐。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "送礼聚会义主要用于美国、加拿大，shower 可以独立使用，并不限于 baby shower、bridal shower 两个复合表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway; /studyPlan/1; /wordFamily; /senses/0/patterns/1/note",
+        "message": "概要应纳入大量给予义；dark clouds 不能直接示范 shower 的用法。词族补一个真实派生词 showery；设备状态例句改用意义更明确的 broken。"
+      }
+    ],
+    "coverageAssessment": "已核对全部词典定义及常见语法功能。补丁覆盖淋浴行为、设备和隔间、阵雨与阵雪、实物及抽象事物成阵出现、动词洗淋浴、及物和不及物洒落、大量给予及北美送礼聚会。杂耍术语和另读音的成人俚语列入清单，但不纳入初中正文。词源仅补可证实的古英语字形来源，不扩推其释义或具体语义演变。",
+    "senseInventory": [
+      {
+        "sense": "名词：一次淋浴、淋浴这种洗浴行为",
+        "coveredBy": [
+          "shower-n1"
+        ],
+        "assessment": "核心义；补丁后有 take a shower 和 have a shower 两个动作例句。"
+      },
+      {
+        "sense": "名词：淋浴设备；供淋浴的小隔间或区域",
+        "coveredBy": [
+          "shower-n1"
+        ],
+        "assessment": "设备义已有覆盖；补充隔间范围，并分别提供设备和位置用法的例句。"
+      },
+      {
+        "sense": "名词：阵雨、阵雪等短时降水",
+        "coveredBy": [
+          "shower-n2"
+        ],
+        "assessment": "核心义；补充天气例句，保留 snow shower，并明确阵雨不一定雨势小。"
+      },
+      {
+        "sense": "名词：如雨般散落或接连出现的大量东西，包括尘土、纸屑、打击、问题或赞美等",
+        "coveredBy": [
+          "shower-n2"
+        ],
+        "assessment": "补足实物散落和抽象事物接连出现的例句；修正 of 后只能接复数名词的错误限制。"
+      },
+      {
+        "sense": "名词：杂耍中的 shower 抛接模式",
+        "coveredBy": [],
+        "assessment": "来源明确列有此义；属专门术语，非初中核心义，本课不展开。"
+      },
+      {
+        "sense": "名词：为准妈妈或准新娘等举办的送礼聚会",
+        "coveredBy": [
+          "shower-event"
+        ],
+        "assessment": "作为次常用文化义保留；补充北美地域标记及可以独立使用的说明。"
+      },
+      {
+        "sense": "动词：洗淋浴",
+        "coveredBy": [
+          "shower-v1"
+        ],
+        "assessment": "两个原创例句已覆盖；修正短语词性及与 bathe 的关系。"
+      },
+      {
+        "sense": "动词，不及物：纷纷落下，常用 shower down",
+        "coveredBy": [
+          "shower-v2"
+        ],
+        "assessment": "原稿未明确教学；补充句型及两个原创例句。"
+      },
+      {
+        "sense": "动词，及物：使东西纷纷洒落到某人或某物上",
+        "coveredBy": [
+          "shower-v2"
+        ],
+        "assessment": "保留风吹落叶例句，再补撒花瓣例句，并明确 with 与 on/upon 结构的角色。"
+      },
+      {
+        "sense": "动词，及物，比喻：大量给予礼物、赞美等",
+        "coveredBy": [
+          "shower-v2"
+        ],
+        "assessment": "保留暖心留言例句，再补礼物例句；限定近义和反向表达的适用语境。"
+      },
+      {
+        "sense": "另一读音的同形名词：成人性俚语，指阴茎平时已较大、勃起后增幅较小的人，与 grower 相对",
+        "coveredBy": [],
+        "assessment": "来源列为独立同形词，英式读 /ˈʃəʊə(r)/、美式读 /ˈʃoʊɚ/；非初中教学范围，不混入常见义的读音或词源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-shower\",\"title\":\"Cambridge Dictionary: shower\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/shower\",\"supports\":[\"名词表示淋浴和阵雨\",\"动词表示洗淋浴及大量给予\",\"英式和美式读音\",\"常见词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire-shower-en\",\"title\":\"Wiktionnaire：shower（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/shower#Anglais\",\"supports\":[\"名词的淋浴、阵雨、如雨般散落和送礼聚会用法\",\"动词洗淋浴和大量赠予的用法\",\"常见义的英美读音与规则屈折\",\"shower 来自古英语 scūr 的历史来源\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，shower 常指“淋浴”或一阵短暂的雨；作动词时，常表示“洗淋浴”或“使某物纷纷落下”。\"",
+        "valueJson": "\"作名词时，shower 常指“淋浴、淋浴设备”或“阵雨”；作动词时，可表示“洗淋浴”“（使）纷纷落下”，也可表示向某人大量给予礼物、赞美等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 dark clouds、a shower of leaves 记住 shower 表示“一阵雨”或“纷纷落下”。\"",
+        "valueJson": "\"用 a sudden shower 记“一阵雨”，用 a shower of leaves 记“树叶纷纷落下”；再记 shower someone with gifts 表示“送给某人大量礼物”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"以不发音的 e 结尾，去掉 e 再加 -ing。\"",
+        "valueJson": "\"shower 以 r 结尾，直接加 -ing：shower → showering；不删字母，也不双写 r。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"第三人称单数\",\"form\":\"showers\",\"ipa\":\"/ˈʃaʊərz/\",\"note\":\"动词 shower 的第三人称单数直接加 -s，与名词复数拼写相同。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"淋浴；淋浴设备\"",
+        "valueJson": "\"淋浴；淋浴设备或隔间\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"名词，指淋浴这种洗澡方式、一次淋浴，或供水喷淋的淋浴设备。\"",
+        "valueJson": "\"可数名词，指一次淋浴、淋浴设备，也可指供人淋浴的小隔间或区域。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"take a shower 是“洗一次淋浴”；have a shower 也常见于英式英语。shower 作动词时可直接表示“洗淋浴”。\"",
+        "valueJson": "\"take a shower 表示“洗一次淋浴”；have a shower 也常见于英式英语。in the shower 可表示正在洗淋浴或在淋浴隔间内。shower 作动词时也可直接表示“洗淋浴”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"常用搭配；可在 shower 前加时间或频率，如 take a shower every morning。\"",
+        "valueJson": "\"常用搭配；时间或频率表达可放在整个短语之后，如 take a shower every morning。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"用来描述淋浴设备的状态，如 The shower is cold。\"",
+        "valueJson": "\"用来描述淋浴设备的状态，如 The shower is broken（淋浴设备坏了）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"bath 通常指在浴缸里泡洗；shower 指站着用水冲洗。\"",
+        "valueJson": "\"bath 通常指在浴缸里泡洗；shower 指用淋浴水流冲洗身体。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n1-ex3\",\"senseId\":\"shower-n1\",\"en\":\"I had a quick shower after my run.\",\"zh\":\"跑完步后，我很快洗了个淋浴。\",\"note\":\"have a shower 也表示洗淋浴；quick 说明这次淋浴用时短。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n1-ex4\",\"senseId\":\"shower-n1\",\"en\":\"The plumber fixed our leaking shower.\",\"zh\":\"水管工修好了我们漏水的淋浴装置。\",\"note\":\"这里 shower 指设备，leaking 表示漏水。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n1-ex5\",\"senseId\":\"shower-n1\",\"en\":\"I left the shampoo in the shower.\",\"zh\":\"我把洗发水留在淋浴隔间里了。\",\"note\":\"这里 in the shower 指在淋浴区域内。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n1-ex6\",\"senseId\":\"shower-n1\",\"en\":\"There is a small shelf inside the shower.\",\"zh\":\"淋浴隔间里有一个小置物架。\",\"note\":\"这里 shower 指供人淋浴的小隔间。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"阵雨；纷纷落下的一阵\"",
+        "valueJson": "\"阵雨；如雨般落下或涌来的一阵\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"名词，指持续时间通常不长的一阵雨、雪等；也可比喻大量东西接连落下。\"",
+        "valueJson": "\"可数名词，指持续时间通常不长的一阵雨、雪等；也可指大量东西像雨一样落下，或大量问题、赞美等接连涌来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"a shower of + 名词可表示“一阵纷纷落下的……”，如雨点、花瓣或火花。\"",
+        "valueJson": "\"a shower of + 名词可表示大量东西纷纷落下或接连出现；of 后既可接复数可数名词，也可接 rain、dust 等不可数名词。阵雨可轻可重，不能一概译成“小雨”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/zh",
+        "expectedValueJson": "\"一阵树叶从树上纷纷落下。\"",
+        "valueJson": "\"树叶像一阵雨似的从树上纷纷落下。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"a shower of + plural noun\",\"zh\":\"一阵纷纷落下的……\",\"note\":\"后接复数名词，常用于雨点、叶子、火花等成群落下的东西。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a shower of + noun\",\"zh\":\"纷纷落下或接连涌来的一阵……\",\"note\":\"of 后可接复数可数名词，如 leaves、sparks；也可接不可数名词，如 rain、dust、glass。还可用于 questions、compliments 等抽象内容。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"shower of rain\",\"zh\":\"一阵雨\",\"note\":\"强调一阵降雨；rain 是更一般的“雨”，不一定是短时的一阵。\"}],\"contrasting\":[{\"en\":\"drought\",\"zh\":\"旱灾；长期干旱\",\"note\":\"在天气和降水语境中，drought 指长期缺雨，与一阵降雨形成对照。\"}],\"similarNote\":\"rain 是一般的“雨”；shower 常强调短暂的一阵。\",\"contrastingNote\":\"drought 只在降雨或天气语境中与 shower 对照，指长时间缺少降水。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"rain\",\"zh\":\"雨；下雨\",\"note\":\"在天气语境中与 shower 相关，但 rain 泛指降雨，不限定为短暂的一阵；shower 还可用于阵雪等。\"}],\"contrasting\":[{\"en\":\"a break in the rain\",\"zh\":\"雨暂时停歇的一段时间\",\"note\":\"只在降雨与暂时停雨的天气语境中构成对照；不是 shower 的固定反义词，也不适用于树叶、问题等用法。\"}],\"similarNote\":\"rain 是更一般的雨；shower 常强调短暂的一阵，雨势可以大也可以小。\",\"contrastingNote\":\"阵雨与暂时停雨可以作情境对照；这里没有常用的直接单词反义词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n2-ex3\",\"senseId\":\"shower-n2\",\"en\":\"The forecast says there will be showers tomorrow.\",\"zh\":\"天气预报说明天会有阵雨。\",\"note\":\"天气预报中常用复数 showers 表示间歇性或不同地区的阵雨。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n2-ex4\",\"senseId\":\"shower-n2\",\"en\":\"The window shattered, sending a shower of glass onto the floor.\",\"zh\":\"窗户碎裂，玻璃碴纷纷落到地板上。\",\"note\":\"glass 在这里是不可数名词；a shower of glass 表示大量碎玻璃如雨般散落。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n2-ex5\",\"senseId\":\"shower-n2\",\"en\":\"After the show, the young actor received a shower of compliments.\",\"zh\":\"演出结束后，这位年轻演员受到了许多赞美。\",\"note\":\"这里是比喻用法，表示赞美接连而来。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-n2-ex6\",\"senseId\":\"shower-n2\",\"en\":\"The new student faced a shower of questions about her old school.\",\"zh\":\"这位新同学面对着接连而来的、关于她原来学校的问题。\",\"note\":\"a shower of questions 表示许多问题接连涌来，不是真的有东西落下。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"可直接说 shower，也可说 shower oneself；日常表达中 take a shower 也很常用。\"",
+        "valueJson": "\"通常作不及物动词，直接说 I shower；也可说 I take a shower 或 I have a shower。表示自己洗淋浴时，一般不加反身代词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"take a shower\",\"zh\":\"洗淋浴\",\"note\":\"与动词 shower 意思相近；take a shower 是名词搭配，shower 则是动词。\"}],\"contrasting\":[{\"en\":\"bathe\",\"zh\":\"洗澡；沐浴\",\"note\":\"常泛指洗澡，也可指泡浴；具体方式要看上下文。\"}],\"similarNote\":\"take a shower 是常用名词短语，与动词 shower 可表达同一动作。\",\"contrastingNote\":\"bathe 只在洗澡方式语境中与 shower 对照，意思较宽，也可指在水中洗浴。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"take a shower\",\"zh\":\"洗淋浴\",\"note\":\"与动词 shower 可表达同一动作；整个表达是动词短语，其中 shower 是名词。\"},{\"en\":\"bathe\",\"zh\":\"洗澡；沐浴\",\"note\":\"可泛指洗浴，也可指泡浴等；具体方式要看上下文，不能据此判断一定用了淋浴。\"}],\"contrasting\":[{\"en\":\"skip a shower\",\"zh\":\"这次不洗淋浴\",\"note\":\"用于日常安排，表示这次省去洗淋浴这一动作；是行为上的对照，并非固定反义词。\"}],\"similarNote\":\"take a shower 是动词短语，其中 shower 作名词；bathe 的意义较宽，具体洗浴方式由上下文决定。\",\"contrastingNote\":\"洗淋浴这一动作没有常用的单词反义词；skip a shower 可用于是否洗这次淋浴的情境对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"使……纷纷落下；大量给予\"",
+        "valueJson": "\"（使）纷纷落下；大量给予\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"动词，表示让某物像雨一样成阵落下，或比喻大量给予某人某物。\"",
+        "valueJson": "\"动词，可作不及物动词，表示东西像雨一样纷纷落下；也可作及物动词，表示使东西洒落到某人或某物上，或大量给予礼物、赞美等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常见结构为 shower something on someone 或 shower someone with something；被 shower 的对象可以是礼物、赞美等。\"",
+        "valueJson": "\"表示落下时，落下的东西可作主语，常用 shower down。及物用法中，shower someone/something with something 的直接宾语是承受者，with 后接洒落或给予的东西；shower something on/upon someone/something 的直接宾语是洒落或给予的东西，on/upon 后接接受者或落到的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/0",
+        "expectedValueJson": "{\"en\":\"shower someone with something\",\"zh\":\"给某人纷纷送上……\",\"note\":\"someone 是接受者，with 后接大量给予的东西，如礼物、赞美或留言。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"shower someone/something with something\",\"zh\":\"使某人或某物被……洒满；给某人大量……\",\"note\":\"直接宾语是承受者；with 后接洒落或给予的东西，如花瓣、礼物、赞美。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"shower something on/upon someone\",\"zh\":\"把……大量给予某人\",\"note\":\"something 是给予的东西，on/upon 后接接受者。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"shower something on/upon someone/something\",\"zh\":\"把……纷纷洒向某人或某物；把……大量给予某人\",\"note\":\"直接宾语是洒落或给予的东西；on/upon 后接接受者或落到的位置。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"something showers down (on someone/something)\",\"zh\":\"某物（向某人或某物上）纷纷落下\",\"note\":\"这里 shower 是不及物动词；落下的东西作主语，后面不直接接宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"cover someone with\",\"zh\":\"使某人身上布满……\",\"note\":\"用于实物覆盖的语境；不适合表达大量给予赞美等抽象事物。\"},{\"en\":\"give someone many\",\"zh\":\"给某人许多……\",\"note\":\"意思直接，但没有 shower 的“纷纷、大量”形象感。\"}],\"contrasting\":[{\"en\":\"withhold\",\"zh\":\"不给；扣下\",\"note\":\"在给予礼物或赞美的语境中，可与 shower someone with 对照，表示不给予。\"}],\"similarNote\":\"cover someone with 强调覆盖；give someone many 只是表示数量多，语气较平实。\",\"contrastingNote\":\"withhold 只在给予某物的语境中构成对照，表示有意不提供。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"cover someone/something with something\",\"zh\":\"使某人或某物被……覆盖\",\"note\":\"在实物覆盖的语境中意思相近；cover 强调覆盖，shower 更突出纷纷洒落的过程。\"},{\"en\":\"give someone lots of something\",\"zh\":\"给某人大量……\",\"note\":\"较平实地说明给予的数量多；lots of 后可接复数可数名词或不可数名词，不一定带有 shower 的热情或密集感。\"},{\"en\":\"fall\",\"zh\":\"落下\",\"note\":\"只与不及物的洒落义相近；fall 本身不表示大量东西接连落下，也不能替代大量给予义。\"}],\"contrasting\":[{\"en\":\"withhold something (from someone)\",\"zh\":\"不向某人提供某物\",\"note\":\"在给予赞美、支持等语境中可作对照，如 withhold praise from someone；不用于树叶、花瓣等自然洒落的语境。\"}],\"similarNote\":\"cover 强调覆盖，give someone lots of something 平实地表达大量给予，fall 泛指落下；三者只分别接近 shower 的相关用法。\",\"contrastingNote\":\"withhold 表示有意不给予，只与大量给予义形成语境对照，不能用于所有洒落场景。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-v2-ex3\",\"senseId\":\"shower-v2\",\"en\":\"The children showered the bride and groom with flower petals.\",\"zh\":\"孩子们把花瓣纷纷撒向新娘和新郎。\",\"note\":\"及物用法：新娘和新郎是承受者，with 后的 flower petals 是撒出的东西。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-v2-ex4\",\"senseId\":\"shower-v2\",\"en\":\"Her grandparents showered her with gifts on her birthday.\",\"zh\":\"生日那天，她的祖父母送给她许多礼物。\",\"note\":\"比喻大量给予；直接宾语 her 是接受者，with gifts 说明给予的东西。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-v2-ex5\",\"senseId\":\"shower-v2\",\"en\":\"Pink petals showered down from the tree.\",\"zh\":\"粉红色花瓣从树上纷纷飘落。\",\"note\":\"不及物用法：落下的花瓣作主语，showered down 表示纷纷落下。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"shower-v2-ex6\",\"senseId\":\"shower-v2\",\"en\":\"When the workers removed the old shelf, dust showered down onto the floor.\",\"zh\":\"工人们拆下旧搁板时，灰尘纷纷落到地板上。\",\"note\":\"不及物用法：dust 作主语，onto the floor 说明灰尘落到的位置。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在 baby shower 或 bridal shower 中，shower 指为准妈妈或准新娘举办、通常会送礼物的聚会。\"",
+        "valueJson": "\"主要用于美国、加拿大，指为准妈妈或准新娘等举办、通常会送礼物的聚会；常见表达有 baby shower 和 bridal shower。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是特定复合词中的用法；初中阶段先认出整体表达即可。\"",
+        "valueJson": "\"shower 也可单独表示这种送礼聚会，如 throw someone a shower（为某人办送礼聚会）。初中阶段可先掌握 baby shower 和 bridal shower，并结合上下文理解单独使用的 shower。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"shower 可以指淋浴设备或洗淋浴的动作；shower room 指淋浴间或淋浴室。\"",
+        "valueJson": "\"shower 可指一次淋浴、淋浴设备，也可指淋浴小隔间；shower room 明确指供人淋浴的房间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"通常指淋浴设备、一次淋浴，或作动词表示洗淋浴。\"",
+        "valueJson": "\"可指设备、一次淋浴或淋浴隔间，也可作动词表示洗淋浴；in the shower 常表示正在洗淋浴或在淋浴区内。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"指供人淋浴的房间或区域。\"",
+        "valueJson": "\"指供人淋浴的房间，里面可能设有一个或多个淋浴装置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说设备用 shower；说房间用 shower room 或 bathroom。\"",
+        "valueJson": "\"shower 可指设备，也可指淋浴小隔间；强调淋浴房间用 shower room，泛说浴室常用 bathroom。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"记忆时可以把名词 shower（阵雨）和动词 shower（像雨一样纷纷落下）联系起来；这是现代词义之间的联想。\",\"stages\":[],\"caveat\":\"这只是帮助记忆的现代词义联系，不代表已经说明 shower 的历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"shower 来自古英语 scūr。\",\"stages\":[],\"caveat\":\"把“阵雨”“淋浴”“纷纷落下”联系起来属于现代词义联想，可帮助记忆，但不等于这些用法形成的完整历史。\",\"sourceIds\":[\"wiktionnaire-shower-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"过去式和过去分词为 showered；现在分词为 showering，去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"过去式和过去分词为 showered，直接加 -ed；现在分词为 showering，直接加 -ing，保留 shower 的全部字母。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-shower\"]",
+        "valueJson": "[\"wiktionnaire-shower-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"showery\",\"partOfSpeech\":\"adjective\",\"meaning\":\"时有阵雨的；多阵雨的\",\"formation\":\"shower（阵雨）加形容词后缀 -y，构成 showery。\",\"spellingNote\":\"在 shower 后直接加 y，得到 showery，保留原词中的 e 和 r。\",\"example\":{\"id\":\"shower-family-ex3\",\"senseId\":\"shower-n2\",\"en\":\"The weather will be showery tomorrow, so take an umbrella.\",\"zh\":\"明天会时有阵雨，所以带把伞吧。\",\"note\":\"showery 是形容词，可作表语，也常用于 showery weather（时有阵雨的天气）。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"shower 的常见名词和动词形式拼写相同；本词条列出的词族限于同一词的词性用法和规则屈折形式。\"",
+        "valueJson": "\"前两项展示 shower 这个词的名词和动词用法，不是两个新派生词；showery 则是由 shower 加后缀 -y 构成的派生词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1242,
+    "headword": "shower",
+    "meaning_zh": "n. 淋浴；阵雨\nv. 淋浴；洒下",
+    "phonetic": "/'ʃauә/",
+    "pos": "",
+    "forms": []
+  }
+}

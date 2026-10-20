@@ -1,0 +1,267 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b70a8bfa6e2e457c046c741adfde819130aa698e60362f6d5d504656b29376f4",
+    "executedReviewPromptHash": "b70a8bfa6e2e457c046c741adfde819130aa698e60362f6d5d504656b29376f4",
+    "reviewHash": "6d6a65ebc2e773f410c8e1ea349a4a5418934ec2aec661e6e7152882bd1a0d37",
+    "wordId": 1293,
+    "inputHash": "5f6fbebb41781683cd9546bc0bffac9ecead3142e93492eeb36a1651a65df7bc",
+    "draftHash": "d79ceabefa957f1a9e50fbbe96555c8745eae80cdb6322624c8a928e4ced7861",
+    "finalHash": "b7d5a5f2434d071411d7cea05321e63075f256c7b859fd65b70211aac100dad3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/somewhere#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:23.326Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117911,
+        "revisionId": 39886414,
+        "revisionTimestamp": "2026-09-21T00:09:39Z",
+        "sha256": "afc17c0cd4de187e9d29aeec9261d61f8a70892f40954e2aca69f162e9cc41be",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/somewhere",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:24:50.943Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T14:42:23.739Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "初稿多处引用 Oxford，但实际取得的材料是法语维基词典的英语词条。应将可支持的内容改引实际来源，语法对比不再挂靠未取得的 Oxford 材料。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得的词源明确说明 somewhere 由 some 和 where 复合而成，不能仍仅作为无来源的助记拆分处理。应补上构词事实及同 URL 引用；两个构词成分不能排列成历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的数值估计功能：somewhere around/about…、somewhere between…。应补充搭配限制及两个原创例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "原有“常用于”的概括正确，但应补充提议类问句中的 somewhere 和肯定句中表示“随便哪里”的 anywhere，并明确 anywhere 是用法对比词，不是简单反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/items/1",
+        "message": "标题标为“误写”，所配例句却是正确句，容易误读。改用形容词后置的标题，保留正确例句。"
+      }
+    ],
+    "coverageAssessment": "已核对词典明确列出的地点义，原有两例分别覆盖静态位置和移动目的地，无须硬拆成两个独立义。补充数值估计功能后，每个核心义均有两个自然英中例句。地点义、读音、someplace 近义关系及复合构词引用实际取得的英语词条；数值估计和句法对比依据专业语言知识补充，不冒称该摘录明确收录。现有材料不支持具体历史年代链，因此保持 stages 为空。",
+    "senseInventory": [
+      {
+        "sense": "在某处；到某处：未具体指明的地点或目的地",
+        "coveredBy": [
+          "somewhere-place"
+        ],
+        "assessment": "原稿覆盖充分，两例分别体现位置与目的地；属于同一地点义的不同语境。"
+      },
+      {
+        "sense": "数值估计：somewhere around/about…；somewhere between…",
+        "coveredBy": [
+          "somewhere-approx"
+        ],
+        "assessment": "原稿遗漏；补充估计时间、金额的两例，并说明 somewhere 不能单独放在数词前表示“大约”。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-somewhere\",\"title\":\"Oxford Learner’s Dictionaries: somewhere\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/somewhere\",\"supports\":[\"词性、常见地点含义与用法\",\"somewhere 与 someplace 的近义关系\",\"英式和美式发音查询\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr-somewhere\",\"title\":\"Wiktionnaire：somewhere（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/somewhere#Anglais\",\"supports\":[\"英语副词的地点义：在某处；到某处\",\"英式和美式读音\",\"someplace 的近义关系\",\"some 与 where 的复合构词关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-somewhere\"]",
+        "valueJson": "[\"wiktionary-fr-somewhere\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-somewhere\"]",
+        "valueJson": "[\"wiktionary-fr-somewhere\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-somewhere\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-somewhere\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上可以看出 some（某个）和 where（哪里、地方）的组合，帮助理解“某个地方”。\"",
+        "valueJson": "\"somewhere 由英语 some（某个）和 where（哪里）复合而成，表达“在某处；到某处”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是便于记忆的现代构词分析，不代表已说明其历史演变过程。\"",
+        "valueJson": "\"some 和 where 是两个构词成分，并非按先后演变排列的两个词形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr-somewhere\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"somewhere 表示地点不明确或暂时不说出在哪里；它本身不区分“在”还是“到”，要看句中的动词和语境。\"",
+        "valueJson": "\"somewhere 最常表示“在某处；到某处”，具体译法看动词和语境；与 around/about 或 between 等连用时，还可用于估计数值，表示“大约”或某个大致范围。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"somewhere-approx\",\"title\":\"大约；在某个数值范围内\",\"meaning\":\"与 around、about 或 between 等连用，对时间、金额、数量等给出大致估计。\",\"usageNote\":\"常用 somewhere around/about + 数值表示“大约……”，或 somewhere between A and B 表示“大致在 A 到 B 之间”。不能把 somewhere 单独放在数词前当作“大约”使用。\",\"examples\":[{\"id\":\"somewhere-approx-ex1\",\"senseId\":\"somewhere-approx\",\"en\":\"The journey took somewhere around forty minutes.\",\"zh\":\"这趟路大约花了四十分钟。\",\"note\":\"somewhere around forty minutes 表示约四十分钟，不是一个地点。\"},{\"id\":\"somewhere-approx-ex2\",\"senseId\":\"somewhere-approx\",\"en\":\"The repair will cost somewhere between 200 and 300 yuan.\",\"zh\":\"这次维修大概要花二百到三百元。\",\"note\":\"somewhere between 后接范围两端，给出估计费用。\"}],\"patterns\":[{\"en\":\"somewhere around/about + 数值\",\"zh\":\"大约……\",\"note\":\"around 或 about 后接时间、数量或金额等；这里整个表达用于数值估计。\",\"kind\":\"sentence-pattern\"},{\"en\":\"somewhere between A and B\",\"zh\":\"大致在 A 和 B 之间\",\"note\":\"A 和 B 给出估计范围；这一结构也能表示实际地点，应结合语境判断。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"somewhere around an hour\",\"zh\":\"大约一小时\",\"note\":\"用于估计所需时间或持续时间。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"about / around\",\"zh\":\"大约\",\"note\":\"估计数值时可直接放在数值前，如 about forty minutes；somewhere 单独不能这样使用。\"},{\"en\":\"approximately\",\"zh\":\"大约\",\"note\":\"同样用于数值估计，语气通常较正式，常见于报告或说明。\"}],\"contrasting\":[{\"en\":\"exactly\",\"zh\":\"恰好；精确地\",\"note\":\"在数值表达中强调确切数值，与“大约”形成对照。\"}],\"similarNote\":\"这些表达在估计数值时意思接近；地点义 somewhere 不等于 about 或 approximately。\",\"contrastingNote\":\"exactly 对照的是数值估计中的不精确性，不是 somewhere 所有用法的反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"记住 somewhere 常用于肯定句；一般疑问句和否定句中常换用 anywhere。\"",
+        "valueJson": "\"比较 somewhere 与 anywhere：前者常用于肯定句，也用于提议类问句；后者常用于中性问句和否定句，也能表示“随便哪里”。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"认识数值估计用法：somewhere around forty minutes 是“大约四十分钟”；somewhere between A and B 表示一个大致范围。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/1/note",
+        "expectedValueJson": "\"不定地点的问句和否定句中常用 anywhere，如 Did you go anywhere? 或 I didn’t go anywhere。\"",
+        "valueJson": "\"中性问句和否定句中常用，如 Did you go anywhere? 或 I didn’t go anywhere；肯定句中还可表示“随便哪里”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"nowhere 表示“无处”，与肯定存在某个地点的 somewhere 相对。问句和否定句通常用 anywhere，不能简单把 somewhere 换成 nowhere。\"",
+        "valueJson": "\"nowhere 表示“没有任何地方”，可与地点义 somewhere 对照。anywhere 是用法对比词：可用于中性问句和否定句，也可在肯定句中表示“任何地方”；它不是 somewhere 的简单反义词。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"somewhere：提议类问句也可用\",\"note\":\"提议去一个尚未具体选定的地方时，问句也能用 somewhere。\",\"example\":{\"id\":\"conf-somewhere-question-ex\",\"senseId\":\"somewhere-place\",\"en\":\"Would you like to go somewhere quiet?\",\"zh\":\"你想去个安静的地方吗？\",\"note\":\"这是提议；somewhere 指某个合适的地点，不能因为有问号就认定必须改用 anywhere。\"}}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"anywhere：肯定句中可表示随便哪里\",\"note\":\"表示地点不受限制时，anywhere 也可用于肯定句。\",\"example\":{\"id\":\"conf-anywhere-choice-ex\",\"senseId\":\"somewhere-place\",\"en\":\"You can sit anywhere you like.\",\"zh\":\"你想坐哪里都可以。\",\"note\":\"这里 anywhere 表示自由选择地点，不是某个尚未说清的地点。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"肯定句常用 somewhere；一般疑问句和否定句常用 anywhere。\"",
+        "valueJson": "\"somewhere 指某个地点，也可出现在提议类问句中；anywhere 可用于中性问句、否定句，还可在肯定句中表示“随便哪里”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/label",
+        "expectedValueJson": "\"some where：通常是误写\"",
+        "valueJson": "\"somewhere + 形容词：形容词后置\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"表示“某个地方”时不要把 somewhere 拆开。\"",
+        "valueJson": "\"描述地点特点的形容词放在 somewhere 后面，如 somewhere warm；例句中的 to eat 进一步说明这个地方的用途。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1293,
+    "headword": "somewhere",
+    "meaning_zh": "adv. 到某处, 在某处",
+    "phonetic": "/'sʌmhwєә/",
+    "pos": "",
+    "forms": []
+  }
+}

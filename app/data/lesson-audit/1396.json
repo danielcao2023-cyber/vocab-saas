@@ -1,0 +1,284 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9251a24b008d9c35866e2e03c974577d0b404abd58b06a9603100828a3179991",
+    "executedReviewPromptHash": "9251a24b008d9c35866e2e03c974577d0b404abd58b06a9603100828a3179991",
+    "reviewHash": "87b47e06b2dbce598110fe5e9d628b27a7eb8f5523197502917ddd3931df92a6",
+    "wordId": 1396,
+    "inputHash": "b54aedd63a4612ef4427522e30d815500d35fd22312f5e9f501927b207b5bbf8",
+    "draftHash": "1f6e42478f1a23c61755cbbb3bb07903ccf9fd999b2f4502ea394f933e4fdcd1",
+    "finalHash": "704c6090f4b5a6aed124c9d73890fd452674f70dfdcee116f6ef5e9a76999809",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/than#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.995Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116789,
+        "revisionId": 38906537,
+        "revisionTimestamp": "2025-10-16T00:00:57Z",
+        "sha256": "9f282d11167588362634a3f7f22b7d2dbfbfb9d415af30484ce79e5bbc118089",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/than",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:34:12.230Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:46:01.842Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "把 rather than 的选择义与 other than 的排除、区别义合并，只有两个例句，未达到各义至少两例的要求；“不同于”也没有例句。应分开组织并同步调整近义、对照表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0/note",
+        "message": "代词格的说明过于笼统。than me、than I am 和较正式的 than I 均可成立，应说明结构区别，避免学生误以为正式场合只能用主格。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/1",
+        "message": "宜补入常用的 would rather … than …，明确两个动词均用原形；no sooner … than … 可另列为进阶结构。原句 We walked rather than took the bus 语法成立，应保留。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "“古英语中的 than”是空洞占位，并非材料提供的历史释义。材料能够支持字形传承，现有 summary 已准确保留，应清空阶段数组，避免把占位内容画成词义发展。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/sourceIds、/senses/0/sourceIds、/sources/2/supports",
+        "message": "已取得的法语维基词典英语词条直接支持比较句法及强弱读音，宜用于这些内容的来源关联。Oxford 未提供正文，Cambridge 获取失败，两者只能保留为推荐阅读，不能视为本次已核验的证据。"
+      }
+    ],
+    "coverageAssessment": "已核对词典明确列出的比较义及其连词、介词功能，原有两个比较例句分别覆盖从句和名词短语，语法与翻译成立。修订后，选择义与 other than 的排除、区别义分别得到足量例句，并补充代词格、would rather … than … 和进阶时间结构。读音、than/then 区分、拼写、近义限制及无常见派生词的说明基本准确。历史字形传承有材料支持，但历史释义不足以建立阶段图。扩展表达按专业语言知识审校；未把未取得正文的推荐来源视为已核验资料。",
+    "senseInventory": [
+      {
+        "sense": "比较义，连词功能：比较级后引出从句",
+        "coveredBy": [
+          "1396-s1"
+        ],
+        "assessment": "词典明确列出；原有例句已覆盖，保留。"
+      },
+      {
+        "sense": "比较义，介词功能：比较级后接名词或代词",
+        "coveredBy": [
+          "1396-s1"
+        ],
+        "assessment": "词典明确列出；原有名词短语例句成立，补充宾格代词例句及结构说明。"
+      },
+      {
+        "sense": "数量或程度的比较：more than、less than",
+        "coveredBy": [
+          "1396-s1"
+        ],
+        "assessment": "属于比较义的常用实现，已有搭配和具体短语，无须机械另立词义。"
+      },
+      {
+        "sense": "选择或偏好：rather than、would rather … than …",
+        "coveredBy": [
+          "1396-s2"
+        ],
+        "assessment": "rather than 的形式见词典派生表达列表，具体句法按专业语言知识审校；修订后集中讲选择、偏好并有两个生活例句。"
+      },
+      {
+        "sense": "排除：other than，除……之外",
+        "coveredBy": [
+          "1396-s3"
+        ],
+        "assessment": "原稿仅一例；修订后单列相关用法并提供两个排除义例句。"
+      },
+      {
+        "sense": "区别：other than，不同于所提对象的另一种",
+        "coveredBy": [
+          "1396-s3"
+        ],
+        "assessment": "原稿只在搭配中提及；修订后补充两个自然例句，并限定 different from 的对应范围。"
+      },
+      {
+        "sense": "紧接发生：no sooner … than …，刚……就……",
+        "coveredBy": [
+          "1396-l1"
+        ],
+        "assessment": "作为专业语言知识补充到进阶栏，说明先后关系及句首倒装，不列为初中必掌握核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"用于比较两个人或事物，如 taller than Ben；正式写作中可根据句子结构选用主格或宾格代词。\"",
+        "valueJson": "\"可说 taller than me，也可说 taller than I am：前者把 me 作介词宾语，后者是完整比较从句。than I 也可用于较正式的省略结构。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1396-s1-e3\",\"senseId\":\"1396-s1\",\"en\":\"My younger brother is now taller than me.\",\"zh\":\"我弟弟现在比我高了。\",\"note\":\"than 后接宾格 me 是自然、规范的用法；这里也可说 than I am。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"选择或排除：而不是；除……之外\"",
+        "valueJson": "\"选择或偏好：而不是；宁愿……也不……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"用于 rather than、other than 等表达，说明选择另一种做法，或排除某个对象。\"",
+        "valueJson": "\"用于 rather than 或 would rather … than …，对照两种选择，说明采用或更愿意采用前一种。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"这类表达不能简单按比较级理解，应连同前面的词一起记：rather than 常表示“而不是”，other than 常表示“除……之外”。\"",
+        "valueJson": "\"rather than 常表示“而不是”；would rather A than B 表示“宁愿 A，也不愿 B”。后一个句型中的 rather 和 than 分开出现，than 引出较不愿选择的做法。表达偏好不等于已经实际采取行动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"1396-s2-e2\",\"senseId\":\"1396-s2\",\"en\":\"No one other than Leo knew the answer.\",\"zh\":\"除了利奥，没有人知道答案。\",\"note\":\"other than 在这里表示“除……之外”，用于排除其他人。\"}",
+        "valueJson": "{\"id\":\"1396-s2-e2\",\"senseId\":\"1396-s2\",\"en\":\"I'd rather cook at home than eat out tonight.\",\"zh\":\"今晚我宁愿在家做饭，也不想出去吃。\",\"note\":\"would rather … than … 表示偏好；cook 和 eat 都用动词原形，并不表示已经做了饭。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"other than + noun/pronoun\",\"zh\":\"other than + 名词／代词\",\"note\":\"表示“除……之外”或“不同于”，具体意思由句子语境决定。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"would rather + verb + than + verb\",\"zh\":\"宁愿做前一件事，也不愿做后一件事\",\"note\":\"两个动词均用原形，如 would rather walk than drive；would 常缩写为 'd。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"other than\",\"zh\":\"除了……；不同于……\",\"note\":\"可用于排除某项，也可说明与某事物不同。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"instead of\",\"zh\":\"代替；而不是\",\"note\":\"直接表示不选某项而改选另一项；rather than 也常表示选择，但结构更灵活。\"},{\"en\":\"except for\",\"zh\":\"除……之外\",\"note\":\"用于指出排除项；other than 在许多句子中也有此义。\"}],\"contrasting\":[{\"en\":\"including\",\"zh\":\"包括\",\"note\":\"在列举范围时与排除义的 other than 相对：including 把对象算在内，other than 可将对象排除在外。\"}],\"similarNote\":\"instead of 与 rather than 常可表达替代选择；except for 与 other than 常可引出排除项。\",\"contrastingNote\":\"仅在列举或范围语境中，including 表示纳入，other than 的排除义表示不包括。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"instead of\",\"zh\":\"代替；而不是\",\"note\":\"同样可以表达替代选择，但后接名词、代词或 -ing 形式，如 walked instead of taking the bus；不能直接照搬 took the bus。\"}],\"contrasting\":[{\"en\":\"both … and …\",\"zh\":\"……和……两者都\",\"note\":\"对照选择关系：tea rather than coffee 选择茶，both tea and coffee 则把茶和咖啡都包括在内。\"}],\"similarNote\":\"rather than 可连接名词、动词短语或从句；instead of 作介词短语，替换时常需调整后面的形式。\",\"contrastingNote\":\"both … and … 对照的是两者都选的关系，不是 than 的词汇反义词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1396-s3\",\"title\":\"排除或区别：other than（除……之外；不同于）\",\"meaning\":\"other than 可引出排除项，也可表示不同于所提对象的另一种人、事物或做法。\",\"usageNote\":\"排除义常用于 no one、nothing 等范围表达；区别义常用于 something、a solution 等词语之后，指出另一种内容或办法。这些意思依赖 other than 这个整体表达。\",\"examples\":[{\"id\":\"1396-s3-e1\",\"senseId\":\"1396-s3\",\"en\":\"No one other than Leo knew the answer.\",\"zh\":\"除了利奥，没有人知道答案。\",\"note\":\"排除义：在所有人中，只有利奥知道答案。\"},{\"id\":\"1396-s3-e2\",\"senseId\":\"1396-s3\",\"en\":\"The café is open every day other than Monday.\",\"zh\":\"这家咖啡馆除周一外每天营业。\",\"note\":\"排除义：把周一从营业日中排除。\"},{\"id\":\"1396-s3-e3\",\"senseId\":\"1396-s3\",\"en\":\"I'd like something other than soup for lunch.\",\"zh\":\"午饭我想吃点别的，不想喝汤。\",\"note\":\"区别义：想要的是不同于汤的另一种食物。\"},{\"id\":\"1396-s3-e4\",\"senseId\":\"1396-s3\",\"en\":\"Can we find a solution other than raising prices?\",\"zh\":\"我们能找到一个不用涨价的其他解决办法吗？\",\"note\":\"区别义：寻找不同于涨价的另一种办法；other than 后也可接 -ing 形式。\"}],\"patterns\":[{\"en\":\"no one / nothing + other than + noun/pronoun\",\"zh\":\"除……之外没有人／没有别的东西\",\"note\":\"常用于限定范围，如 no one other than Leo。\",\"kind\":\"sentence-pattern\"},{\"en\":\"something / a solution + other than + noun/-ing\",\"zh\":\"不同于……的其他东西／另一种解决办法\",\"note\":\"用来指出另一种选择，如 something other than soup、a solution other than raising prices。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"other than\",\"zh\":\"除……之外；不同于……\",\"note\":\"结合句子判断是在排除某项，还是指出另一种事物或办法。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"except\",\"zh\":\"除……之外\",\"note\":\"对应排除义，如 No one except Leo knew the answer；不宜直接套用到所有区别义句子。\"},{\"en\":\"different from\",\"zh\":\"不同于\",\"note\":\"对应区别义，如 a colour other than black 可改说 a colour different from black；不用于直接替换 no one other than Leo 中的 other than。\"}],\"contrasting\":[{\"en\":\"including\",\"zh\":\"包括\",\"note\":\"只在范围语境中与排除义对照：including 将某项算在内，other than 则将其排除。\"}],\"similarNote\":\"排除义可与 except 对照；区别义可与 different from 对照，替换时要检查整个句子。\",\"contrastingNote\":\"including 仅对照排除功能，不是 other than 各种用法的通用反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"1396-l1\",\"title\":\"进阶：no sooner … than …（刚……就……）\",\"meaning\":\"表示后一件事紧接着前一件事发生。\",\"note\":\"这是较正式的时间结构。no sooner 放在句首时，其后主句要部分倒装；叙述过去事件时，前一动作常用过去完成时，than 后的动作常用一般过去时。\",\"example\":{\"id\":\"1396-l1-e1\",\"senseId\":\"1396-l1\",\"en\":\"No sooner had I sat down than the doorbell rang.\",\"zh\":\"我刚坐下，门铃就响了。\",\"note\":\"先坐下，随后门铃响；had I sat down 是 no sooner 置于句首后的倒装形式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"þanne\",\"meaning\":\"古英语中的 than\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列的是有来源支持的历史形式传承；rather than、other than 等是现代英语中的组合用法，不代表 than 的历史词源拆分。\"",
+        "valueJson": "\"rather than、other than 是由多个词组成的表达，不能用它们来拆解 than 的历史来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-than\"]",
+        "valueJson": "[\"wiktionary-than-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-than\",\"cambridge-than\"]",
+        "valueJson": "[\"wiktionary-than-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"条目所列中古英语 than 源自古英语 þanne 的词源关系\"]",
+        "valueJson": "[\"than 在比较中作连词和介词的用法\",\"强读 /ðæn/ 与弱读 /ðən/\",\"派生表达列表中的 rather than、other than\",\"中古英语 than 源自古英语 þanne 的历史形式传承\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1396,
+    "headword": "than",
+    "meaning_zh": "conj. 比, 除...外\nprep. 比",
+    "phonetic": "/ðæn/",
+    "pos": "",
+    "forms": []
+  }
+}

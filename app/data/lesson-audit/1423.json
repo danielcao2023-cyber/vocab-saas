@@ -1,0 +1,338 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "05a7288db95f0bb190eb53a87039b8f512ecdb9b17320d61002145ed9d730c08",
+    "executedReviewPromptHash": "05a7288db95f0bb190eb53a87039b8f512ecdb9b17320d61002145ed9d730c08",
+    "reviewHash": "be30857bef78ca7782604bca673924bc777a37edd4361af4d7542f2036121310",
+    "wordId": 1423,
+    "inputHash": "dfc5efb52f3b1810404b17148fb7bf9a0f4485ea6b19fa3935d3cfecf542d1ee",
+    "draftHash": "172d0f8c2bece6e44053e64cfaf37e7516ed1a697b85bb079d6c1db039c6fedd",
+    "finalHash": "dfc5c4d1eb73c2b7a1a0aa91cfd9d014555014c7c9340b4bf19893b836dde63c",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/ticket#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.435Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 141481,
+        "revisionId": 39773124,
+        "revisionTimestamp": "2026-08-03T13:41:24Z",
+        "sha256": "de619d35c9b976360c94d2be14797a0e26e3e70a949de1a2c2008a050e7a724f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/ticket",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:20:13.800Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:31:02.646Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/4/note; /forms/5/note; /wordFamily/0/spellingNote; /wordFamily/1/spellingNote",
+        "message": "ticketed 和 ticketing 的实际拼写正确，但四处说明错误地要求双写末尾 t。两者都是直接加词尾，不双写。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "阶段顺序颠倒。来源说明中古法语 étiquet 源于古法语 estiquete，箭头应按古法语→中古法语排列。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources; 各处 sourceIds",
+        "message": "Oxford 未提供实际正文，Cambridge 抓取失败，不能作为本次审校中具体内容的证据归属。应将有直接支持的内容关联至已取得的英语维基词典词条，其余内容不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "将英式英语概括为更常说 parking fine 或 penalty notice 不准确；parking ticket 在英式英语中也很常用，而且 fine 与 ticket 的指称重点不同。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses; /confusions/1/summary",
+        "message": "遗漏原词条列出的动词“贴标签”和票务语境中的“为……出票、提供票”。后者不宜机械教成日常“替某人买票”的通用表达；名动词对比也需避免将动词限定为开罚单。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "未交代原词条“证明书”的适用范围。ticket 可在特定职业语境中指资格证，尤其是英式航海用语，不能泛指所有证明文件。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见比喻用法 a ticket to something / a ticket out of something，表示取得机会、通向目标或摆脱困境的途径。应独立说明并提供两个例句。"
+      }
+    ],
+    "coverageAssessment": "已核对交通票、入场券、罚单、标价签及相关动词。原稿的交通票与入场票分别有例句，罚单名词和开罚单动词也各有两个自然例句，无需重分。补丁补齐贴标签、出票、特定职业资格证及常见比喻用法，并修正拼写说明、词源时序和来源归属。已取得的词典正文直接支持交通票、入场票、罚单、读音和词源；其余可靠用法依据专业语言知识，不声称获得未取得正文的来源支持。本次不穷举政治、技术等领域的专门用法。",
+    "senseInventory": [
+      {
+        "sense": "名词：交通票、车票",
+        "coveredBy": [
+          "ticket-n1"
+        ],
+        "assessment": "已覆盖；公交车票例句明确体现交通用途。"
+      },
+      {
+        "sense": "名词：入场券、活动票",
+        "coveredBy": [
+          "ticket-n1"
+        ],
+        "assessment": "已覆盖；音乐会例句与交通票例句共同支撑这一组通行凭证用法。"
+      },
+      {
+        "sense": "名词：交通或停车罚单",
+        "coveredBy": [
+          "ticket-n2"
+        ],
+        "assessment": "已有两个例句；修正英美用法说明。"
+      },
+      {
+        "sense": "名词：标签、标价签",
+        "coveredBy": [
+          "ticket-n3"
+        ],
+        "assessment": "已在较少见义中覆盖，price ticket 例句自然；与 price tag 的比较有语境限制。"
+      },
+      {
+        "sense": "名词：特定职业资格证",
+        "coveredBy": [
+          "ticket-n4"
+        ],
+        "assessment": "补丁新增，限定为职业资格语境，并用航海资格证举例。"
+      },
+      {
+        "sense": "名词：通向目标或摆脱困境的途径、机会",
+        "coveredBy": [
+          "ticket-n5"
+        ],
+        "assessment": "补丁新增核心比喻义，分别举例说明 ticket to 和 ticket out of。"
+      },
+      {
+        "sense": "动词：给人或车辆开罚单",
+        "coveredBy": [
+          "ticket-v1"
+        ],
+        "assessment": "已覆盖；两个例句分别使用人和车辆作宾语。"
+      },
+      {
+        "sense": "动词：贴标签、标价签",
+        "coveredBy": [
+          "ticket-v2"
+        ],
+        "assessment": "补丁新增至较少见义，说明零售语境及更日常的替代表达。"
+      },
+      {
+        "sense": "动词：为……出票、提供票",
+        "coveredBy": [
+          "ticket-v3"
+        ],
+        "assessment": "补丁新增至较少见义，区分行业出票与日常替人买票。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"词尾加 -ed；末尾的 t 重复，构成 ticketed。\"",
+        "valueJson": "\"直接在 ticket 后加 -ed，构成 ticketed；不双写末尾的 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/note",
+        "expectedValueJson": "\"词尾加 -ing；末尾的 t 重复，构成 ticketing。\"",
+        "valueJson": "\"直接在 ticket 后加 -ing，构成 ticketing；不双写末尾的 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"末尾辅音字母 t 重复后加 -ed。\"",
+        "valueJson": "\"ticket + -ed → ticketed，不双写末尾的 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"末尾辅音字母 t 重复后加 -ing。\"",
+        "valueJson": "\"ticket + -ing → ticketing，不双写末尾的 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古法语\",\"form\":\"étiquet\",\"meaning\":\"住宿凭条或票据\"},{\"language\":\"古法语\",\"form\":\"estiquete\",\"meaning\":\"小告示、标记或票据\"}]",
+        "valueJson": "[{\"language\":\"古法语\",\"form\":\"estiquete\",\"meaning\":\"告示牌、标记、票据\"},{\"language\":\"中古法语\",\"form\":\"étiquet\",\"meaning\":\"住宿凭条\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"在美式英语中常见；英式英语更常说 parking fine 或 penalty notice。\"",
+        "valueJson": "\"ticket 表示交通罚单在美式英语中很常见，parking ticket 在英式英语中也很常用。注意区分：ticket 侧重违规通知单，fine 侧重罚款本身；penalty notice 是处罚通知单的正式说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"作名词时 ticket 是票或罚单；作动词时表示给违规者开罚单，常接 for 引出违规原因。\"",
+        "valueJson": "\"这里对比 ticket 的常见名词用法与“开罚单”的动词用法。作动词表示开罚单时，可接人或车辆，再用 for 引出违规原因；另有较少见的“贴标签”和“为……出票”用法。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ticket-v2\",\"title\":\"动词：贴标签；贴标价签\",\"meaning\":\"给商品等贴上标签或标价签。\",\"note\":\"多见于零售语境；日常也可说 label an item 或 put a price tag on an item。\",\"example\":{\"id\":\"ticket-v2-ex1\",\"senseId\":\"ticket-v2\",\"en\":\"The shop assistant ticketed each coat with its sale price.\",\"zh\":\"店员给每件外套都贴上了促销价签。\",\"note\":\"ticket 在这里是动词，表示给商品贴上标价签。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ticket-v3\",\"title\":\"动词：为……出票；向……提供票\",\"meaning\":\"为乘客等签发或提供所需的票。\",\"note\":\"主要用于航空等票务语境，常见被动形式 be ticketed。日常说“替某人买票”，通常用 buy someone a ticket 或 buy a ticket for someone。\",\"example\":{\"id\":\"ticket-v3-ex1\",\"senseId\":\"ticket-v3\",\"en\":\"The airline has ticketed all passengers on the morning flight.\",\"zh\":\"航空公司已经为早班航班的所有乘客出了票。\",\"note\":\"这里强调完成出票，不是给乘客开罚单。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ticket-n4\",\"title\":\"特定职业的资格证\",\"meaning\":\"证明持有人具备某种职业资格的证书。\",\"note\":\"属于特定行业用语，尤其见于英式航海语境，如 master's ticket（船长资格证）；不能用 ticket 泛指所有证明书。\",\"example\":{\"id\":\"ticket-n4-ex1\",\"senseId\":\"ticket-n4\",\"en\":\"She studied for her master's ticket while working at sea.\",\"zh\":\"她在海上工作期间备考船长资格证。\",\"note\":\"master 在这里指船长，ticket 指职业资格证。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ticket-n5\",\"title\":\"通向目标或摆脱困境的途径；机会\",\"meaning\":\"比喻使人有机会获得想要的结果，或摆脱某种困境的条件、办法。\",\"usageNote\":\"常用 a ticket 或 someone's ticket。ticket to 后接目标，ticket out of 后接想摆脱的处境；这是比喻说法，并不保证一定成功。\",\"examples\":[{\"id\":\"ticket-n5-ex1\",\"senseId\":\"ticket-n5\",\"en\":\"She saw the training course as her ticket to a better job.\",\"zh\":\"她把这门培训课看作获得更好工作的机会。\",\"note\":\"ticket to a better job 比喻通向更好工作的机会。\"},{\"id\":\"ticket-n5-ex2\",\"senseId\":\"ticket-n5\",\"en\":\"He hoped the scholarship would be his ticket out of poverty.\",\"zh\":\"他希望这笔奖学金能成为自己摆脱贫困的机会。\",\"note\":\"ticket out of poverty 表示摆脱贫困的途径；hoped 表明这是他的希望。\"}],\"patterns\":[{\"en\":\"a ticket to + noun / -ing\",\"zh\":\"通向某个目标的途径或机会\",\"note\":\"to 是介词，后接名词或动名词，如 success 或 getting a better job。\",\"kind\":\"sentence-pattern\"},{\"en\":\"someone's ticket out of + difficult situation\",\"zh\":\"某人摆脱困境的机会或途径\",\"note\":\"out of 后接想摆脱的处境，如 poverty。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a ticket to success\",\"zh\":\"通向成功的途径\",\"note\":\"将有利条件比作一张通往成功的票，不表示保证成功。\",\"kind\":\"common-collocation\"},{\"en\":\"a ticket out of poverty\",\"zh\":\"摆脱贫困的机会或途径\",\"note\":\"用于谈教育、工作等可能带来的改变。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a key to success\",\"zh\":\"成功的关键\",\"note\":\"强调关键条件；a ticket to success 更突出通向成功的机会或途径。\"},{\"en\":\"a way out\",\"zh\":\"摆脱困境的办法\",\"note\":\"与 ticket out of 的意思接近，但不强调某个条件带来的机会。\"}],\"contrasting\":[{\"en\":\"an obstacle to success\",\"zh\":\"成功的障碍\",\"note\":\"在谈某个因素促进还是阻碍成功时可作对照。\"}],\"similarNote\":\"这些表达都可谈目标与途径，侧重点不同，不能在所有句子中直接替换。\",\"contrastingNote\":\"ticket 在这个比喻义中没有固定的直接反义词；obstacle 只在有利条件与阻碍因素的语境中作对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\",\"cambridge-ticket\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\",\"cambridge-ticket\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\",\"cambridge-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\",\"cambridge-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-ticket\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-ticket\",\"title\":\"Oxford Learner’s Dictionaries: ticket\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/ticket\",\"supports\":[\"ticket 的常见名词和动词用法\",\"ticket 的规则词形变化\",\"ticket 的发音\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-ticket\",\"title\":\"Cambridge Dictionary: ticket\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/ticket\",\"supports\":[\"ticket 的票、罚单和动词用法\",\"常见搭配与语境\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionary: ticket（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/ticket#Anglais\",\"supports\":[\"ticket 的法语来源及相关历史词形\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-etymology\",\"title\":\"Wiktionnaire: ticket（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/ticket#Anglais\",\"supports\":[\"ticket 表示交通票、入场票和交通罚单的名词义\",\"ticket 的读音及英美发音示例\",\"ticket 源于中古法语 étiquet，后者源于古法语 estiquete\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1423,
+    "headword": "ticket",
+    "meaning_zh": "n. 票, 券, 车票, 标签, 入场券, 证明书\nvt. 加标签于, 为...购票",
+    "phonetic": "/'tikit/",
+    "pos": "",
+    "forms": []
+  }
+}

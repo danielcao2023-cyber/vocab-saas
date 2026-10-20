@@ -1,0 +1,536 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "81a84260fa1d8c0828006d6d50c255b613496af4c33e9323e7f409b1c407f136",
+    "executedReviewPromptHash": "81a84260fa1d8c0828006d6d50c255b613496af4c33e9323e7f409b1c407f136",
+    "reviewHash": "f5bc3451f3fdf674bb5bc172e2b3810b596a901fd38133399c09b356248b1e7c",
+    "wordId": 804,
+    "inputHash": "368117d4df458b7ec39ba99681b2255adaaf7ada5cf79bacf6826e8215493098",
+    "draftHash": "bb365dd0a279c339d1972bfaac12646f26a0d870e9d29efb04a50034b6c94102",
+    "finalHash": "ba6179e4739f336f5873bc493a7a9ee46c1d3b14027317a632d9f84e4d9f981a",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/long#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:11.687Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 9167,
+        "revisionId": 39919734,
+        "revisionTimestamp": "2026-10-05T11:58:53Z",
+        "sha256": "d3334f999a61120acb3df5995737b51c297e15461bd96c8b92b41886a6179f3c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/long",
+        "section": "long etymology",
+        "supports": [
+          "Length/duration and yearning stages; cognate boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:08:20.684978+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "abe132da53184bb86238f13eb0cd8c391ea1598882edaf3292ed6c34f46b8525",
+        "summaryAndSupportsWordCount": 45,
+        "sha256": "abe132da53184bb86238f13eb0cd8c391ea1598882edaf3292ed6c34f46b8525",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/804.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/long",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:22:21.267Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T23:28:35.657Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*/note；/wordFamily/0/example/note；/wordFamily/1/example/note",
+        "message": "8个核心例句及前2个词族例句缺少结构要求的必填 note，须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "Cambridge 获取失败，Oxford 未列入实际取得的材料，不能继续把具体教学断言归给这两个来源。应加入已取得的法语维基词典英语词条，并移除无材料支持的来源关联；该页面的说明语言是法语，所描述的词是英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用时间距离用法 long ago、long before、long after，以及 no longer 的“不再”和 as long as 的条件功能。应分别补充适用说明和至少2个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning",
+        "message": "长度义只解释为距离较大，遗漏数值量度结构：两厘米长也可说 two centimetres long，并不表示物体很长。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1",
+        "message": "How long does/did ... take? 中的 long 用于询问持续时间，属于副词功能，不能作为形容词义的句型来教。"
+      },
+      {
+        "severity": "polish",
+        "location": "/studyPlan/1；/forms/5/note；/senses/2",
+        "message": "应把 wait long 的疑问、否定语境落实到学习提示，并说明副词也有 longer、longest。“拼写不变”容易被误解为不能变化；同级比较及 all night long 等普通肯定句用法也宜补明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "已覆盖渴望得到和渴望做某事，但词典另列的思念义目前只有搭配说明，没有实际例句。应明确此义，并补足思念人、想家的两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/caveat",
+        "message": "材料对渴望义动词与长度词族、拉丁语 longus 与英语 long 的关系均保留可能性。初稿把这些关系写得过于确定，“并行发展”也超出了材料明确支持的事实。现有单个古英语阶段可以保留，无须串入动词形成错误箭头。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story",
+        "message": "故事先说已经到家，再说渴望回家，前后情境冲突。应把想家放在尚未到家时。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote",
+        "message": "不宜把英美读音差别概括成美音通常拖得更长。应突出元音音质，并说明美式长音符涉及转写惯例；原有常见音标可以保留。"
+      }
+    ],
+    "coverageAssessment": "已核对空间长度、数值量度、持续时间、持续时间比较、时间距离、渴望及思念，并补足 no longer 和条件用法 as long as。各核心义均保有至少2个完整例句；原稿正确的语法例句、限定语境的近反向表达及词族拼写予以保留。提供的词典正文对副词和固定表达展开有限，相关补充依据专业语言知识，来源关联已据实收缩。金融等专门用法不纳入本课初中核心范围。",
+    "senseInventory": [
+      {
+        "sense": "形容词：空间长度，包括客观报告具体长度",
+        "coveredBy": [
+          "long-adj-length"
+        ],
+        "assessment": "保留原有两个长度例句，补充数值量度的含义、结构和例句。"
+      },
+      {
+        "sense": "形容词：持续时间长",
+        "coveredBy": [
+          "long-adj-time"
+        ],
+        "assessment": "原有等待、谈话两个例句充分；将误归于此的 How long ... take? 移至副词用法。"
+      },
+      {
+        "sense": "副词：动作或状态持续多久、持续很久及持续时间比较",
+        "coveredBy": [
+          "long-adv-duration"
+        ],
+        "assessment": "补明疑问、否定、普通肯定句的用法，以及 longer、longest、表示一样久的 as long as 和 all night long。"
+      },
+      {
+        "sense": "副词：与现在或另一时间点相隔很久",
+        "coveredBy": [
+          "long-adv-time-gap"
+        ],
+        "assessment": "新增 long ago、long before、long after 的说明和三个对应例句，并区别 before long。"
+      },
+      {
+        "sense": "固定表达：no longer，表示不再",
+        "coveredBy": [
+          "long-no-longer"
+        ],
+        "assessment": "新增两个生活例句，说明否定意义、常见位置及与 still 的对照。"
+      },
+      {
+        "sense": "固定表达：as long as，引导条件，表示只要",
+        "coveredBy": [
+          "long-as-long-as"
+        ],
+        "assessment": "新增两个条件例句，说明从句位置、将来条件的常见时态，并与时间比较义区分。"
+      },
+      {
+        "sense": "动词：强烈渴望得到某物或做某事",
+        "coveredBy": [
+          "long-verb-desire"
+        ],
+        "assessment": "原有 long for 和 long to do 两个例句及搭配说明成立，予以保留。"
+      },
+      {
+        "sense": "动词：思念某人或故乡",
+        "coveredBy": [
+          "long-verb-desire"
+        ],
+        "assessment": "与渴望义同属强烈向往，保留在同一义组，补充明确释义及两个对应例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: long\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/long\",\"supports\":[\"英美读音及词性\",\"形容词、副词和动词的常见用法\",\"比较级、最高级和动词变化\",\"long for 与 long to do 的结构\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：long（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/long#Anglais\",\"supports\":[\"英语形容词的基本长度义\",\"英语动词的渴望、思念义及 long for、long to do 用法\",\"英美读音\",\"形容词、动词的常规变化提示及 longing 派生词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: long\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/long_1\",\"supports\":[\"词条常见义项与搭配\",\"形容词和副词的区别\",\"渴望义及常见句型\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英音元音较短；美音的元音通常较长，具体音质因地区而异。\"",
+        "valueJson": "\"英音常用 /ɒ/，美音常用 /ɔ/ 或 /ɑ/；学习时先分清元音音质。美式音标是否标 /ː/ 取决于转写惯例，实际发音不必刻意拖长。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"记住 wait long 可表示“等很久”，long for 后接渴望的人或事物。\"",
+        "valueJson": "\"在疑问句、否定句中练 wait long；普通肯定句常说 wait for a long time。再分清 long for + 名词与 long to + 动词原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"对比 long ago（很久以前）与 before long（不久以后），注意它们说的时间方向。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"用生活例句记住 no longer（不再）和表示条件的 as long as（只要）。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"long 修饰 bridge，表示桥的实际长度。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"long 作表语；long enough to do 表示长度足以做某事。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"long 修饰名词 wait，表示等待时间久。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"long 修饰 conversation，表示谈话持续了很长时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"too long 说明汤在外面放置的时间过久。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"long 作副词；疑问句中单独用 long 很自然。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"longed for 后接名词短语 a quiet evening at home，说明渴望的生活体验。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"longed to 后接动词原形 fly，说明渴望实现的动作；这里把小鸟拟人化。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"longer 在此作形容词比较级，比较两条小路的长度。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"longest 在此作形容词最高级；felt like 表明说的是主观感受。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"描述物体从一端到另一端距离较大，中文常译为“长的”。\"",
+        "valueJson": "\"既可描述物体从一端到另一端距离较大，也可在“数值 + 长度单位 + long”中说明具体长度；后一种用法不表示物体一定很长。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-a3\",\"senseId\":\"long-adj-length\",\"en\":\"The desk is 1.5 metres long.\",\"zh\":\"这张书桌长1.5米。\",\"note\":\"1.5 metres long 客观说明长度，不是在评价书桌很长。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be + 数值 + 长度单位 + long\",\"zh\":\"长……\",\"note\":\"数值和单位放在 long 前，如 1.5 metres long；单位用正常的单复数形式。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"How long does/did ... take?\",\"zh\":\"……要／花了多长时间？\",\"note\":\"询问一件事所需或实际花费的时间。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a long + 表示活动或时段的单数可数名词\",\"zh\":\"持续很久的……\",\"note\":\"如 a long meeting、a long holiday；long 修饰名词，表示持续时间长。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"副词：长久地、很久\"",
+        "valueJson": "\"副词：持续多久、很久\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"说明动作或状态持续了很长时间，常见于否定句、疑问句以及 too long、so long 等表达。\"",
+        "valueJson": "\"表示动作或状态持续多久、持续很久，也用于比较持续时间的长短。常见于疑问句、否定句以及 too long、so long 等表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"副词 long 的拼写不变。肯定句中常用 for a long time 表示“很久”。\"",
+        "valueJson": "\"副词直接用 long，不加 -ly；比较级为 longer，最高级为 longest。单独的 long 常用于疑问句、否定句；普通肯定句表示“很久”常用 for a long time，也可用 so/too long、all day long 等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0/note",
+        "expectedValueJson": "\"long 放在 wait 后，说明等候持续的时间。\"",
+        "valueJson": "\"常用于 Did you wait long?、I didn't wait long 等疑问句或否定句；普通肯定叙述常说 wait for a long time。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/note",
+        "expectedValueJson": "\"在 wait long 等用法中作副词，形式不变。\"",
+        "valueJson": "\"副词也写作 long，不加 -ly；比较级是 longer，最高级是 longest。单独的 long 常用于疑问句或否定句。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"How long does/did ... take?\",\"zh\":\"……要／花了多长时间？\",\"note\":\"询问一件事所需或实际花费的时间；这里的 long 用作副词。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"as long as ...\",\"zh\":\"和……一样久\",\"note\":\"用于持续时间的同级比较；不要与表示“只要”的条件表达混淆。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"all day/night long\",\"zh\":\"一整天／一整夜\",\"note\":\"强调整个时段，可以自然地用于肯定句。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-c3\",\"senseId\":\"long-adv-duration\",\"en\":\"How long did it take to fix the bike?\",\"zh\":\"修好这辆自行车花了多长时间？\",\"note\":\"How long 询问持续时间，本身不预设修车花了很久。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-c4\",\"senseId\":\"long-adv-duration\",\"en\":\"The train journey took as long as the flight.\",\"zh\":\"这趟火车旅程和那次飞行耗时一样长。\",\"note\":\"as long as 在这里比较两段持续时间，表示“一样久”。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-c5\",\"senseId\":\"long-adv-duration\",\"en\":\"We talked all night long.\",\"zh\":\"我们聊了一整夜。\",\"note\":\"all night long 强调整个夜晚，是自然的肯定句用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"动词：渴望\"",
+        "valueJson": "\"动词：渴望；思念\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"非常想得到某物、见到某人或实现某件事，常用 long for + 名词，或 long to do sth。\"",
+        "valueJson": "\"非常想得到某物、见到某人或实现某件事，也可表示强烈思念某人或故乡。常用 long for + 名词，或 long to do sth。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-d3\",\"senseId\":\"long-verb-desire\",\"en\":\"Living abroad, Sara longed for her family.\",\"zh\":\"萨拉在国外生活时，非常想念家人。\",\"note\":\"long for a person 可以表示强烈思念，希望与对方相聚。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-d4\",\"senseId\":\"long-verb-desire\",\"en\":\"On her first night away, Lily longed for home.\",\"zh\":\"第一次离家过夜时，莉莉格外想家。\",\"note\":\"long for home 在离家的语境中表示思念家、渴望回家。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"形容词 long 延续自古英语 lang，表示空间或时间上的延展。动词 long 与古英语 langian 有关，表达渴望；它与形容词属于相关词源脉络，但两者是并行发展的词形，不应拼成“lang 变成 langian 再变成 long”的单一路径。\"",
+        "valueJson": "\"形容词 long 延续自古英语 lang，表示空间或时间上的延展。表示“渴望、思念”的动词 long 则延续自古英语 langian，意为“渴望、因思念而悲伤”，很可能与表示长度的词族有关。这两种古英语词形分别延续为现代形容词和动词 long，不能理解成 lang 先变为 langian，再变成 long。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"形容词与动词的历史形式及含义不同；这里的联结是词源关系，不代表现代 long 可拆成有独立含义的词根。拉丁语 longus 是相关词，不是英语 long 的直接来源。\"",
+        "valueJson": "\"形容词与动词的历史形式及含义不同，两者的词源联系带有不确定性。形容词 long 与拉丁语 longus（长的）很可能同源，但英语 long 并非从 longus 借来。历史词源关系也不等于现代 long 可以拆成各有独立含义的词根。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你沿着一座 long bridge（长桥）走了很久，觉得这是 a long walk（一次漫长的步行）；到家后，你又 long for home（渴望回家休息）。同一个 long 在不同句子里分别说长度、时间和渴望。\"",
+        "valueJson": "\"想象你沿着一座 long bridge（长桥）走了很久，觉得这是 a long walk（一次漫长的步行）；你还没到家，便开始 long for home（想家，渴望回家）。同一个 long 在不同句子里分别说长度、时间和渴望。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-adv-time-gap\",\"title\":\"副词：相隔很久\",\"meaning\":\"表示与现在或另一个时间点相隔很久，常见于 long ago、long before、long after；不一定表示某个动作本身持续了很久。\",\"usageNote\":\"long ago 以现在为参照；long before/after 以另一个时间或事件为参照。注意 before long 表示“不久以后”，与 long before 的词序、意思都不同。\",\"examples\":[{\"id\":\"long-gap1\",\"senseId\":\"long-adv-time-gap\",\"en\":\"That shop closed long ago.\",\"zh\":\"那家店很久以前就关门了。\",\"note\":\"long ago 表示关店这件事距现在已经很久。\"},{\"id\":\"long-gap2\",\"senseId\":\"long-adv-time-gap\",\"en\":\"We booked the tickets long before the holiday began.\",\"zh\":\"假期开始前很久，我们就订好了票。\",\"note\":\"long before 强调订票早于假期开始很长一段时间。\"},{\"id\":\"long-gap3\",\"senseId\":\"long-adv-time-gap\",\"en\":\"The children were still awake long after midnight.\",\"zh\":\"午夜过了很久，孩子们还醒着。\",\"note\":\"long after midnight 表示所说的时间已经远在午夜之后。\"}],\"patterns\":[{\"en\":\"long before/after + 时间或从句\",\"zh\":\"在……之前／之后很久\",\"note\":\"long 强调与所述时间点的间隔很大。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"long ago\",\"zh\":\"很久以前\",\"note\":\"以现在为参照说明过去的时间，通常与过去时连用。\",\"kind\":\"fixed-expression\"},{\"en\":\"long before\",\"zh\":\"在……之前很久\",\"note\":\"强调明显早于另一个时间或事件。\",\"kind\":\"common-collocation\"},{\"en\":\"long after\",\"zh\":\"在……之后很久\",\"note\":\"强调明显晚于另一个时间或事件。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a long time ago\",\"zh\":\"很久以前\",\"note\":\"可与 long ago 表达相同的基本时间关系。\"}],\"contrasting\":[{\"en\":\"not long ago\",\"zh\":\"不久以前\",\"note\":\"同样以现在为参照，但强调距今时间短。\"},{\"en\":\"shortly before/after\",\"zh\":\"在……之前／之后不久\",\"note\":\"与 long before/after 对照，表示两个时间点间隔较短。\"}],\"similarNote\":\"这些表达谈的是事件发生的时间位置；long ago 不等于表示持续时长的 for a long time。\",\"contrastingNote\":\"应在相同参照点下比较时间间隔；before long 表示“不久以后”，不是 long before 的同义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-no-longer\",\"title\":\"固定表达：no longer，不再\",\"meaning\":\"表示过去存在的状态或习惯从某时起已经停止，相当于“不再”。\",\"usageNote\":\"no longer 本身含否定意义，通常放在实义动词前、be 动词后，或助动词、情态动词与主要动词之间；一般不另外加 not。\",\"examples\":[{\"id\":\"long-stop1\",\"senseId\":\"long-no-longer\",\"en\":\"I no longer need this old phone.\",\"zh\":\"我不再需要这部旧手机了。\",\"note\":\"no longer 放在实义动词 need 前，表示以前需要、现在不需要。\"},{\"id\":\"long-stop2\",\"senseId\":\"long-no-longer\",\"en\":\"The bakery is no longer open on Sundays.\",\"zh\":\"这家面包店现在星期日不再营业了。\",\"note\":\"no longer 放在 is 后，表示星期日营业的安排已经改变。\"}],\"patterns\":[{\"en\":\"主语 + no longer + 实义动词\",\"zh\":\"……不再……\",\"note\":\"如 I no longer need ...；按句意选择正常的动词时态。\",\"kind\":\"sentence-pattern\"},{\"en\":\"be/情态动词 + no longer + 其余部分\",\"zh\":\"……不再……\",\"note\":\"如 is no longer open、can no longer wait；注意 no longer 的位置。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"no longer need ...\",\"zh\":\"不再需要……\",\"note\":\"表示需求已经结束或发生改变。\",\"kind\":\"common-collocation\"},{\"en\":\"no longer live in ...\",\"zh\":\"不再住在……\",\"note\":\"表示过去住在那里，现在已经搬离。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"not ... any longer / not ... anymore\",\"zh\":\"不再……\",\"note\":\"通常把 any longer 或 anymore 放在句末，如 I don't need it anymore。\"}],\"contrasting\":[{\"en\":\"still\",\"zh\":\"仍然；还\",\"note\":\"谈同一状态是否继续时形成对照：still need 表示仍需要，no longer need 表示不再需要。\"}],\"similarNote\":\"no longer 与 not ... any longer、not ... anymore 都可表示原有情况停止，但否定形式和词序不同。\",\"contrastingNote\":\"still 强调继续，no longer 强调停止；对照须针对同一个状态或习惯。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"long-as-long-as\",\"title\":\"固定表达：as long as，只要\",\"meaning\":\"引出条件，表示只要所说条件满足，主句所说的情况就成立。\",\"usageNote\":\"as long as 作为整体引导条件从句，可以放在主句前或后。谈将来的条件时，从句通常用一般现在时，主句可用 will、can 等。它与表示“一样久”的时间比较结构用法不同。\",\"examples\":[{\"id\":\"long-cond1\",\"senseId\":\"long-as-long-as\",\"en\":\"You can borrow my bike as long as you bring it back by six.\",\"zh\":\"只要你最晚六点把车还回来，就可以借我的自行车。\",\"note\":\"as long as 引出借车的条件；bring 用一般现在时，指将来的归还行为。\"},{\"id\":\"long-cond2\",\"senseId\":\"long-as-long-as\",\"en\":\"As long as it doesn't rain, we'll have lunch in the park.\",\"zh\":\"只要不下雨，我们就会在公园吃午饭。\",\"note\":\"条件从句放在前面时，通常用逗号与主句隔开。\"}],\"patterns\":[{\"en\":\"主句 + as long as + 条件从句\",\"zh\":\"只要……就……\",\"note\":\"从句说明主句成立的条件，不是在比较持续时间。\",\"kind\":\"sentence-pattern\"},{\"en\":\"As long as + 条件从句, 主句\",\"zh\":\"只要……，就……\",\"note\":\"可以先说条件；表达将来条件时，从句通常不用 will。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"as long as you keep your promise\",\"zh\":\"只要你信守承诺\",\"note\":\"把守信作为约定成立的条件。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"so long as\",\"zh\":\"只要\",\"note\":\"在引导条件从句时，通常可与 as long as 互换。\"},{\"en\":\"provided (that)\",\"zh\":\"只要；条件是\",\"note\":\"也可引出所要求的条件，语气通常较正式。\"}],\"contrasting\":[],\"similarNote\":\"这些表达都能提出条件；不能把表示条件的 as long as 一律译成“一样久”。\",\"contrastingNote\":\"这一条件连接表达没有固定的反义词；需要表达相反条件时，应改变或否定从句的具体内容。\"},\"sourceIds\":[]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 804,
+    "headword": "long",
+    "meaning_zh": "adj. 长的；长时间的\nadv. 长久地\nv. 渴望（常用 long for）",
+    "phonetic": "/lɒŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

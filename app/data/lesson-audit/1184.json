@@ -1,0 +1,197 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "485a66018b289735f9de850e2f2ba71860296ae603744163e9b8090f567afcbf",
+    "executedReviewPromptHash": "485a66018b289735f9de850e2f2ba71860296ae603744163e9b8090f567afcbf",
+    "reviewHash": "fec626d676f3aa70f54992a11bec94232fbd56c05a02f3145fb6e01722dd3e2c",
+    "wordId": 1184,
+    "inputHash": "34eb907ec8610aa0b362267536ced891b31c914d0e1ae907cae881719e5f93b7",
+    "draftHash": "dd6ce335a718bf4fd3a42136ba257e92ae23aa648309793dcfacaa5ae4317500",
+    "finalHash": "da513bc11669c5eaf5847363798652f2afa80ece87b5e6aa8af4600596e16bba",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/salad#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.020Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86776,
+        "revisionId": 39760443,
+        "revisionTimestamp": "2026-08-03T00:36:27Z",
+        "sha256": "4b38122228833cc8abfeb3eaad431d21f0bbba33becaef98f827462206efd676",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/salad",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:14:48.444Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:18:51.538Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/studyPlan/0、/forms/0/note、/senses/0/usageNote、/confusions/1",
+        "message": "salad 常用作可数或不可数名词。原稿集中教授可数用法，并断言 made a salad 中的 a 不能省略，容易把合乎语法的 made salad、have salad 误判为错误。应补足不可数用法及其与按份、按种类计数的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary、/etymology/stages",
+        "message": "部分阶段的 meaning 实际是来源关系，并非词义；阶段链还省略了来源明确记载的中古英语环节。应把可靠的历史路径写入 summary，去掉无法逐阶段提供可靠释义的箭头链，同时删除“材料记载”这类制作说明。"
+      }
+    ],
+    "coverageAssessment": "可用英语词条提供一个核心名词义；蔬菜沙拉、水果沙拉等属于菜品类型，无须拆成多个义项。原有两例自然，补丁补足同一义项的不可数用法。读音、复数拼写、主要搭配及英中翻译未见实质错误。词源依据已获取的英语词条整理；Cambridge 内容未成功获取，未作为审核依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：沙拉，蔬菜、水果等食材组合而成的菜品；既可数，也可不可数",
+        "coveredBy": [
+          "salad-n1"
+        ],
+        "assessment": "菜品义及蔬菜、水果两类实例已覆盖；原稿遗漏常用的不可数功能，补丁增加说明和自然例句。无需另立义项。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 a salad 表示一份沙拉，通常是可数名词。\"",
+        "valueJson": "\"记住 salad 既可数也可不可数：a salad 是一份或一种沙拉，some salad 是一些沙拉。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"指一份沙拉或这类菜；常说 a salad。\"",
+        "valueJson": "\"可数时指一份或一种沙拉，如 a salad；不可数时指沙拉这种食物或一些沙拉，如 some salad。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可数名词：a salad / two salads。通常指做好的菜，不单指其中的生菜叶。\"",
+        "valueJson": "\"既可数也可不可数：a salad / two salads 可指一份、两份沙拉，也可按种类计数；some salad / have salad 把沙拉看作食物，不强调份数。通常指做好的菜，不专指生菜叶。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"salad-n1-ex3\",\"senseId\":\"salad-n1\",\"en\":\"Would you like some salad?\",\"zh\":\"你想来点沙拉吗？\",\"note\":\"这里 salad 是不可数名词；some salad 表示一些沙拉，不限定为完整的一份。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"别漏掉可数名词前的限定词\"",
+        "valueJson": "\"salad 的可数与不可数用法\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"表示一份沙拉时，单数 salad 前通常要有 a、the 或其他限定词。\"",
+        "valueJson": "\"salad 既可数也可不可数。强调一份或一种时可说 a salad；不按份数或种类计数时，可说 salad 或 some salad。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "\"a 不能省略。\"",
+        "valueJson": "\"这里 a 表示一份；made salad 也合乎语法，但不强调份数。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"salad / some salad\",\"note\":\"把沙拉当作食物、不按份数计数时，用不可数形式；可以不加冠词，也可以用 some 表示一些。\",\"example\":{\"id\":\"salad-conf-2c\",\"senseId\":\"salad-n1\",\"en\":\"We had salad with our sandwiches.\",\"zh\":\"我们吃三明治时还配了沙拉。\",\"note\":\"这里 salad 泛指食物，前面不加 a 也正确。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"单数可数名词 salad 一般不能单独放在句中；根据意思加限定词或用复数。\"",
+        "valueJson": "\"一份或一种可用 a salad；不按份计数可用 salad / some salad；多份或多种用 salads。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 salad 经古法语 salade 传入；材料记载它与通俗拉丁语重构形式 salata 有关，后者是拉丁语 herba salata 的缩略形式，该短语与 sal（盐）有关。\"",
+        "valueJson": "\"英语 salad 的记录可追溯到14世纪末。中古英语 salade 借自古法语 salade，后者可追溯到通俗拉丁语重构形式 *salata；*salata 是拉丁语短语 herba salata 的缩略形式，与 sal（盐）有关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"sal\",\"meaning\":\"盐\"},{\"language\":\"通俗拉丁语（重构形式）\",\"form\":\"salata\",\"meaning\":\"与拉丁语 herba salata 的缩略形式有关\"},{\"language\":\"古法语\",\"form\":\"salade\",\"meaning\":\"英语 salad 的传入来源\"},{\"language\":\"英语\",\"form\":\"salad\",\"meaning\":\"沙拉；凉拌菜\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1184,
+    "headword": "salad",
+    "meaning_zh": "n. 色拉",
+    "phonetic": "/'sælәd/",
+    "pos": "",
+    "forms": []
+  }
+}

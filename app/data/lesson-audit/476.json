@@ -1,0 +1,650 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "ff5bd2ec060ffe0a181c20d3dd45e6170a2d85753b4d2d5ef92a1a9d02afa183",
+    "executedReviewPromptHash": "ff5bd2ec060ffe0a181c20d3dd45e6170a2d85753b4d2d5ef92a1a9d02afa183",
+    "reviewHash": "fce039ad5f65732d4af2e16f620d9d8798a34c04b837fd532a6f81d4543ce7ec",
+    "wordId": 476,
+    "inputHash": "d4ed3a8de432eab93d5b97027e6217eff272a7144cd34f6a0c17c1ece22cc679",
+    "draftHash": "e7e7688cbb246f6af07503390ddc8f015b6659f8168c7902e26a6a823a995429",
+    "finalHash": "61ff96c771547400403c984a3cbf28549f6999e49a1ba1e57e6565f7d8649700",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/exercise#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:42.404Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121494,
+        "revisionId": 39759978,
+        "revisionTimestamp": "2026-08-03T00:27:01Z",
+        "sha256": "4ff2cca34d017f06b1a901b77c003009a891b460f521c4a947cbb8440f11d52e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/exercise",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T15:47:14.219Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T15:58:33.209Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "所有既有 example 对象",
+        "message": "15 个既有例句均缺少结构要求的 note 字段，须逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation；/forms/0/note",
+        "message": "美式卷舌音在第二音节，不在第一音节；exercise 以 /z/ 而非 /s/ 结尾。“按旧音标把重音放在第二音节”的提醒也没有依据。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0；/senses/1；/confusions/1",
+        "message": "an exercise 不能笼统解释为一次锻炼，应区分泛指锻炼与具体训练动作；可数单数也不一定使用冠词，可以由 this、my 等限定。脑力练习亦需明确覆盖。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏名词“行使；运用”，如 the exercise of a right、the exercise of skill，须补充完整义项及两个例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "只举了不及物的身体锻炼用法，未实质讲解及物的训练肌肉、大脑及让动物运动等常用功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "exercise 不自带“按规则”的含义；exercise care/caution/self-restraint 表示表现出谨慎或克制，需要解释和例句。exercise care/caution 应标为常见搭配。放弃权利也应与某次不行使权利区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "来源明确列出的期权行权、使人忧虑等较少见用法尚未覆盖。户外活动用法宜注明旧式语境，避免把法语 excursion 扩大为现代英语中通用的“郊游”义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段数组的箭头方向与历史传入方向相反，中古英语及古法语阶段的 meaning 只是来源占位；正文还含“原材料”等制作说明。应把完整来源关系写入 summary，只保留有明确释义的阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "sourceIds；/sources",
+        "message": "Oxford 未提供取回正文，Cambridge 取回失败，不能作为已取回的内容依据。可追溯内容应改引 Wiktionnaire，专业语言知识补充处可留空；两部词典保留为推荐查阅页。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/similar/0/note",
+        "message": "work out 是动词短语，与名词 exercise 关联时应提示句型差别。"
+      }
+    ],
+    "coverageAssessment": "已核对身体锻炼、具体身体练习、教材与脑力练习、名词的行使与运用、军事演习，以及动词的不及物锻炼、及物训练、运用与行使、谨慎克制、期权行权和使人忧虑。补丁使核心义具备至少两个原创英中例句，并保留原稿中正确的拼写和词形说明。历史户外活动用法仅作旧式语境补充。依据限于已提供的 Wiktionnaire 英语词条、原词条释义及专业语言知识，未将未取回的推荐页面视为核验依据。",
+    "senseInventory": [
+      {
+        "sense": "名词：泛指身体锻炼，通常不可数",
+        "coveredBy": [
+          "noun-physical"
+        ],
+        "assessment": "原有两个例句可保留；修正其与可数身体练习的界限。"
+      },
+      {
+        "sense": "名词：一项具体身体练习或训练动作，可数",
+        "coveredBy": [
+          "noun-physical"
+        ],
+        "assessment": "补充呼吸练习和伸展练习两个例句，避免误解为一次锻炼。"
+      },
+      {
+        "sense": "名词：教材习题、学习任务或脑力练习",
+        "coveredBy": [
+          "noun-task"
+        ],
+        "assessment": "保留教材练习例句，补充具体脑力练习并修正限定词说明。"
+      },
+      {
+        "sense": "名词：权利或权力的行使、能力的运用",
+        "coveredBy": [
+          "noun-use"
+        ],
+        "assessment": "原稿遗漏；补充完整核心义项，分别示范行使权利和运用技能。"
+      },
+      {
+        "sense": "名词：军事演习",
+        "coveredBy": [
+          "noun-military"
+        ],
+        "assessment": "原有补充义正确，补齐例句字段并改引实际提供的来源。"
+      },
+      {
+        "sense": "名词：旧式语境中的户外活动或散步",
+        "coveredBy": [
+          "noun-outdoor"
+        ],
+        "assessment": "补充语境限制，不将其泛化为现代英语中的任意出游。"
+      },
+      {
+        "sense": "不及物动词：锻炼身体",
+        "coveredBy": [
+          "verb-physical"
+        ],
+        "assessment": "原有两个例句自然，予以保留。"
+      },
+      {
+        "sense": "及物动词：训练身体部位或大脑；让动物得到运动",
+        "coveredBy": [
+          "verb-physical"
+        ],
+        "assessment": "扩大原义项说明，补充肌肉、大脑和遛狗例句，区分训练与运用。"
+      },
+      {
+        "sense": "及物动词：运用能力或判断力，行使权利、权力或控制",
+        "coveredBy": [
+          "verb-use"
+        ],
+        "assessment": "原有例句覆盖创造力和权利；删去自带合法守规含义的错误暗示。"
+      },
+      {
+        "sense": "及物动词：表现出谨慎、克制等",
+        "coveredBy": [
+          "verb-use"
+        ],
+        "assessment": "补充谨慎和自我克制两个例句，明确搭配意义。"
+      },
+      {
+        "sense": "及物动词：行使期权",
+        "coveredBy": [
+          "verb-option"
+        ],
+        "assessment": "按来源补为金融专业用法，并区分行权与交易期权合约。"
+      },
+      {
+        "sense": "及物动词：使人忧虑、不安或恼火",
+        "coveredBy": [
+          "verb-worry"
+        ],
+        "assessment": "按来源补为较正式用法，示范常见的 be exercised about 结构。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 exercise 常指“锻炼”或一道“练习题”；动词 exercise 可表示锻炼，也可表示运用某种能力。\"",
+        "valueJson": "\"名词 exercise 可指锻炼、具体练习，以及权利的行使或能力的运用；动词可表示锻炼身体、训练大脑、运用能力或行使权利。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记住 do exercise 表示锻炼，an exercise 表示一道练习题。\"",
+        "valueJson": "\"先区分不可数的 exercise（锻炼）和可数的 an exercise（一道练习题或一项具体身体练习）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式音标通常不卷舌；美式在第一个音节中有卷舌音。\"",
+        "valueJson": "\"两种读音都重读第一音节；英式第二音节为 /ə/，美式为卷舌元音 /ɚ/，也可记作 /ər/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"重音在第一个音节，末尾读 /saɪz/，不要按旧音标把重音放在第二音节。\"",
+        "valueJson": "\"重音在第一音节；末尾读 /saɪz/，最后一个音是浊辅音 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"词尾加 -s；因 exercise 以 /s/ 音结尾，复数多一个音节 /ɪz/。\"",
+        "valueJson": "\"词尾加 -s；exercise 以 /z/ 音结尾，因此这个 -s 读 /ɪz/，复数多一个音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"为保持健康或增强体能而做的身体活动。作不可数名词时常泛指锻炼；说一次具体活动时也可用 an exercise。\"",
+        "valueJson": "\"为保持健康或增强体能而进行的身体活动，泛指锻炼时通常不可数；可数的 an exercise 指一项具体身体练习，如呼吸或伸展练习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常说 do exercise 或 get some exercise；泛指锻炼时 exercise 通常不可数，不说 an exercise。\"",
+        "valueJson": "\"泛指锻炼时常说 do exercise 或 get some exercise，不用 an；an exercise 或 exercises 指具体身体练习，不能笼统表示一次锻炼。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exercise 在这里不可数；for twenty minutes 表示持续时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"good exercise 泛指有益的身体锻炼，前面不用 an。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"noun-physical-ex3\",\"senseId\":\"noun-physical\",\"en\":\"The instructor showed us a simple breathing exercise.\",\"zh\":\"教练向我们示范了一项简单的呼吸练习。\",\"note\":\"a breathing exercise 指一项具体训练，exercise 是可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"noun-physical-ex4\",\"senseId\":\"noun-physical\",\"en\":\"We learned two stretching exercises in class.\",\"zh\":\"我们在课上学了两项伸展练习。\",\"note\":\"two exercises 指两项具体练习，使用复数。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"多指有计划地训练或健身，常用于口语；exercise 范围更广。\"",
+        "valueJson": "\"动词短语，常指有计划的健身训练；与名词 exercise 相关，但句型不同，如 get some exercise 与 work out。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"为学习或训练而完成的一项任务、题目或动作。\"",
+        "valueJson": "\"为学习或训练而完成的一项具体任务，如课本习题或脑力练习。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用 a grammar exercise；冠词取决于紧随其后的 grammar 的首音。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"编号练习可直接说 exercises 3 and 4，不用冠词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"noun-task-ex3\",\"senseId\":\"noun-task\",\"en\":\"Planning a week's meals on a small budget is a useful mental exercise.\",\"zh\":\"用有限的预算规划一周的饭菜，是一项有益的脑力练习。\",\"note\":\"mental exercise 可指训练思考能力的任务，不限于课本习题。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/note",
+        "expectedValueJson": "\"exercise 作可数名词，单数前要用 a 或 an。\"",
+        "valueJson": "\"这里用 an exercise；单数也可由 this、my 等限定，不能只用裸词 exercise 表示一道题。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"mental exercise\",\"zh\":\"脑力练习；思维训练\",\"note\":\"强调动脑思考，可以是一项具体任务。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"锻炼；运动\"",
+        "valueJson": "\"锻炼；使身体或大脑得到训练\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"进行身体活动以保持健康或增强体能。\"",
+        "valueJson": "\"不及物时指进行身体锻炼；及物时指通过活动锻炼身体部位或大脑，也可指让动物得到运动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"动词可不及物使用，也可接身体部位；exercise regularly 表示定期锻炼。\"",
+        "valueJson": "\"不及物用法不接宾语，如 exercise regularly；及物时可接 muscles、brain、your dog 等。exercise your brain 强调训练大脑，exercise your judgment 则重在运用判断力。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exercises 是第三人称单数动词，这里没有宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exercised 是过去式；in the park 是地点状语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-physical-ex3\",\"senseId\":\"verb-physical\",\"en\":\"These stretches exercise the muscles in your back.\",\"zh\":\"这些伸展动作能锻炼你的背部肌肉。\",\"note\":\"exercise 接 the muscles 作宾语，表示使肌肉得到锻炼。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-physical-ex4\",\"senseId\":\"verb-physical\",\"en\":\"I exercise my brain by solving puzzles on the bus.\",\"zh\":\"我在公交车上解谜题来锻炼大脑。\",\"note\":\"exercise my brain 表示训练思考能力；by 后接动名词说明方式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-physical-ex5\",\"senseId\":\"verb-physical\",\"en\":\"I exercise my dog in the park every evening.\",\"zh\":\"我每天傍晚带狗到公园活动身体。\",\"note\":\"exercise my dog 表示让狗得到运动，常通过遛狗等方式实现。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"exercise your muscles\",\"zh\":\"锻炼肌肉\",\"note\":\"及物用法，muscles 是受到锻炼的对象。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"exercise your brain\",\"zh\":\"锻炼大脑\",\"note\":\"强调通过思考任务使大脑得到训练。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"work out 更常用于健身语境；exercise 也可表示散步等普通身体活动。\"",
+        "valueJson": "\"两者接近的是身体锻炼用法，work out 更常用于健身；exercise 还可接肌肉、大脑等宾语表示训练，替换时需调整表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"运用；行使\"",
+        "valueJson": "\"运用；行使；表现出谨慎或克制\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"使用某种能力、权利或判断力。\"",
+        "valueJson": "\"运用能力或判断力、行使权利或权力；与 care、caution、self-restraint 搭配时，表示表现出或保持谨慎、克制。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常接 ability、skill、right、control 等名词作宾语；正式语境中常表示按规则使用权利或权力。\"",
+        "valueJson": "\"常接 right、power、control、judgment 等抽象名词，语气较正式。表示谨慎或克制时，可接 care、caution、self-restraint；是否恰当行使权力，要看具体语境。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exercise creativity 表示运用或发挥创造力。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exercise one's right to do something 表示行使做某事的权利。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-use-ex3\",\"senseId\":\"verb-use\",\"en\":\"Please exercise caution when opening the hot oven.\",\"zh\":\"打开很烫的烤箱时请小心。\",\"note\":\"exercise caution 是较正式的表达，表示谨慎行事。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-use-ex4\",\"senseId\":\"verb-use\",\"en\":\"He exercised self-restraint and waited until the speaker had finished.\",\"zh\":\"他克制住自己，一直等到发言者说完。\",\"note\":\"exercise self-restraint 表示保持自我克制；先等对方说完，再采取后续行动。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1/note",
+        "expectedValueJson": "\"exercise 在此表示运用，常用于提醒某人做事谨慎。\"",
+        "valueJson": "\"较正式的常见搭配，表示小心谨慎地行事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1/kind",
+        "expectedValueJson": "\"fixed-expression\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在权利语境中与行使权利相对，表示不再保留或使用该权利。\"",
+        "valueJson": "\"在权利语境中表示放弃该项权利；某次没有行使权利，并不一定意味着放弃权利。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"give up a right 只对照 exercise a right 这一搭配。\"",
+        "valueJson": "\"give up a right 只对照权利语境；某次未行使权利可说 not exercise a right。谨慎语境中的 exercise caution 则可与 act carelessly（粗心行事）对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"noun-use\",\"title\":\"行使；运用（名词）\",\"meaning\":\"以名词表示行使权利、权力或运用能力这一行为。\",\"usageNote\":\"语气较正式，常用 the exercise of + 名词。强调行为过程时通常不可数；an exercise of 可把某个行为看作一次具体行使或运用。\",\"examples\":[{\"id\":\"noun-use-ex1\",\"senseId\":\"noun-use\",\"en\":\"Voting in the school election is an exercise of your right to choose a representative.\",\"zh\":\"在学校选举中投票，是在行使你选择代表的权利。\",\"note\":\"an exercise of a right 把投票看作一次具体的权利行使。\"},{\"id\":\"noun-use-ex2\",\"senseId\":\"noun-use\",\"en\":\"Making this model requires the exercise of considerable skill.\",\"zh\":\"制作这个模型需要运用相当娴熟的技能。\",\"note\":\"the exercise of skill 指技能的运用，是较正式的名词表达。\"}],\"patterns\":[{\"en\":\"the exercise of + 名词\",\"zh\":\"……的行使或运用\",\"note\":\"of 后说明所行使的权利、权力或所运用的能力。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the exercise of power\",\"zh\":\"权力的行使\",\"note\":\"常用于讨论权力如何被使用。\",\"kind\":\"common-collocation\"},{\"en\":\"the exercise of a right\",\"zh\":\"一项权利的行使\",\"note\":\"right 也可用复数 rights。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"use\",\"zh\":\"使用；运用\",\"note\":\"这里同为名词；use 范围更广，exercise 常用于权利、权力和能力等正式搭配。\"}],\"contrasting\":[{\"en\":\"failure to exercise a right\",\"zh\":\"未行使某项权利\",\"note\":\"描述权利没有被行使，不一定表示放弃权利。\"}],\"similarNote\":\"此处比较名词用法，如 the use of power 与 the exercise of power；具体搭配仍需看语境。\",\"contrastingNote\":\"该反向表达只适用于行使权利的语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里 exercise 可数，a military exercise 表示一次军事演习。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-option\",\"title\":\"行使期权（金融）\",\"meaning\":\"按期权合约规定使用买入或卖出标的资产的权利，简称行权。\",\"note\":\"exercise an option 指使用期权中的买卖权利，区别于购买或卖出期权合约本身。\",\"example\":{\"id\":\"verb-option-ex1\",\"senseId\":\"verb-option\",\"en\":\"She exercised her option to buy the shares at the agreed price.\",\"zh\":\"她行使了期权，按约定价格买入了这些股票。\",\"note\":\"exercise 接 option 作宾语；to buy 说明期权赋予的具体权利。\"},\"sourceIds\":[\"wiktionary_fr_exercise\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"verb-worry\",\"title\":\"使忧虑；使不安或恼火（正式）\",\"meaning\":\"使某人为一件事感到忧虑、不安或愤慨。\",\"note\":\"较正式，常见于 be exercised about/by something 结构。\",\"example\":{\"id\":\"verb-worry-ex1\",\"senseId\":\"verb-worry\",\"en\":\"Residents were greatly exercised about the plan to close their library.\",\"zh\":\"居民们对关闭当地图书馆的计划十分忧虑不安。\",\"note\":\"were exercised about 表示对某事感到不安，与身体锻炼无关。\"},\"sourceIds\":[\"wiktionary_fr_exercise\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"noun-outdoor\",\"title\":\"旧式语境：外出活动；户外散步\",\"meaning\":\"在旧式书面语中，可按上下文指户外散步等活动身体的外出活动。\",\"note\":\"outdoor exercise 可在具体场景中指散步；不能把 exercise 当作现代英语中通用的郊游或出游。\",\"example\":{\"id\":\"noun-outdoor-ex1\",\"senseId\":\"noun-outdoor\",\"en\":\"After tea, they went out for their usual exercise along the garden paths.\",\"zh\":\"喝过茶后，他们像往常一样沿花园小径散步活动身体。\",\"note\":\"花园小径的语境使 exercise 具体指户外散步活动。\"},\"sourceIds\":[\"wiktionary_fr_exercise\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a spelling exercise 指一项具体的拼写练习。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"practice 在这里指练习过程，more practice 不加复数词尾。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"指一项具体任务时可数，单数要有冠词。\"",
+        "valueJson": "\"指一项具体任务时可数；单数通常需要 an、this、my 等限定词。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"get exercise 表示通过活动获得身体锻炼。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"This 已限定 exercise，前面无需再加 an。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\",\"cambridge_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 exercise 的历史来源链为中古英语 exercise，经古法语 exercice 追溯到拉丁语 exercitium；原材料将拉丁语形式的意义标为军事训练、操练。\"",
+        "valueJson": "\"英语 exercise 来自中古英语 exercise，更早可追溯至古法语 exercice 和拉丁语 exercitium；拉丁语 exercitium 可指军事训练、操练。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"exercise\",\"meaning\":\"英语中的历史形式，后续来源为古法语 exercice。\"},{\"language\":\"古法语\",\"form\":\"exercice\",\"meaning\":\"英语所承接的来源形式。\"},{\"language\":\"拉丁语\",\"form\":\"exercitium\",\"meaning\":\"原材料标注为军事训练、操练。\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"exercitium\",\"meaning\":\"军事训练；操练\"}]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"exerciser 在这里是可数名词，指一件锻炼器械。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Exercising outdoors 是动名词短语，整体作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford_exercise\"]",
+        "valueJson": "[\"wiktionary_fr_exercise\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"常用名词和动词义项\",\"词形变化与常见搭配\"]",
+        "valueJson": "[\"推荐延伸查阅：常用名词和动词义项\",\"推荐延伸查阅：词形变化与常见搭配\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"英美发音\",\"锻炼、练习与运用等常用义项\"]",
+        "valueJson": "[\"推荐延伸查阅：英美发音\",\"推荐延伸查阅：锻炼、练习与运用等常用义项\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/2/supports",
+        "expectedValueJson": "[\"词源来源链及相关形式的历史标注\"]",
+        "valueJson": "[\"英美发音与规则词形\",\"身体和脑力锻炼、教材练习及军事演习用法\",\"动词的运用与自我克制用法\",\"期权行权及正式语境中使人忧虑的用法\",\"旧式文本中的户外活动用法\",\"中古英语、古法语与拉丁语的来源关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 476,
+    "headword": "exercise",
+    "meaning_zh": "n. 行使, 执行, 运动, 练习, 作业\nvt. 运用, 练习, 运动\nvi. 练习, 锻炼",
+    "phonetic": "/'eksәsaiz/",
+    "pos": "",
+    "forms": []
+  }
+}

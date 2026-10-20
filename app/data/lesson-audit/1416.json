@@ -1,0 +1,243 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fa9092c30dea6f2265fa5f3dc922b90224634ed2de7e9de9227f085956446e24",
+    "executedReviewPromptHash": "fa9092c30dea6f2265fa5f3dc922b90224634ed2de7e9de9227f085956446e24",
+    "reviewHash": "33486ab7e7d70a21f3c685fe3d9e68c2fc9220285207d4e312c76dd1357ed0fa",
+    "wordId": 1416,
+    "inputHash": "e10fa1f0500da160a0585acefbc39871d8a0bb44163702d228ae56c6d16cfd97",
+    "draftHash": "2e377dc7b67f77a3e02360464eaba3462dc914689f1293eab6b1bb62acc36eca",
+    "finalHash": "2f5f017c441476e1fbb9f7e2eec1bc92f8c3e2c415bf78f09c7eb8a80d9135d5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/those#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:55.433Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 223660,
+        "revisionId": 39820366,
+        "revisionTimestamp": "2026-08-20T21:12:51Z",
+        "sha256": "4c59120c9055bfdf3bc83ff8f0308d09374ec947d36824f59eeb47d38dede664",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/those",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:13:25.546Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:20:13.846Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/patterns/1",
+        "message": "one/ones 的说明容易使学生误用 those one；与 those 搭配应使用复数 ones。those who 中的 those 是代词，应将该句型移入代词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning；/senses/1/examples",
+        "message": "代词 those 不限于代替前文名词，也能直接指向语境中的对象。标题包含“那些人”，现有例句却均指事物，需补充指人的完整例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway；/memoryAid/cues/0/text",
+        "message": "仅凭复数或数量不能决定使用 those，近指复数还可用 these。数量口诀需要限定在远指情境中。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/stages",
+        "message": "词源正文含“材料给出的”制作说明。三个阶段的 meaning 均为来源关系占位，且排列为由晚到早，不宜绘制成历史发展箭头；应将有依据的字形链保留在 summary，清空占位阶段，不补造历史释义。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处引用 cambridge-those 的 sourceIds",
+        "message": "Cambridge 页面实际未取得，不能承担已用证据的支持作用。已取得的法语维基词典英语词条同时支持读音、两种词性和词源，应改引该来源；法语是说明语言，不是 those 的所属语言。"
+      }
+    ],
+    "coverageAssessment": "已核对词典列出的指示限定词、指示代词两个核心功能，不需机械增加义项。原稿每项已有两个自然例句；修订补充指人的代词例句，并将 those who 归入正确用法。空间、时间和话语指向，以及 those of 的回指功能均有覆盖。词源仅保留来源明确给出的字形追溯关系，不推测未提供的历史释义；来源支持范围限于已取得的英语词条和专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "指示限定词：那些……，置于复数名词前，表示空间、时间或话语上的指向",
+        "coveredBy": [
+          "sense-those-before-noun"
+        ],
+        "assessment": "核心功能覆盖充分，两个生活例句自然；需明确 ones 的复数要求，并移出属于代词用法的 those who。"
+      },
+      {
+        "sense": "指示代词：那些人或事物，可直接指示或回指；包括 those of、those who 及带后置修饰语的结构",
+        "coveredBy": [
+          "sense-those-alone"
+        ],
+        "assessment": "已有独立作主语及 those of 的例句；修订解除仅限前文回指的错误限制，并补充 those who 指人的例句。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"those 后接复数可数名词，作指示限定词，不能单独当形容词使用。若后面有 one/ones，those 可用于比较或区分。\"",
+        "valueJson": "\"作指示限定词时，those 后接复数可数名词，中间可以有形容词，如 those blue gloves。若用 one/ones 代替具体名词，与 those 搭配时要用复数 ones，如 those blue ones。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"those who + 动词\",\"zh\":\"那些……的人\",\"note\":\"who 引出描述人的定语从句，如 those who arrive early（那些早到的人）。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"those who + 动词\",\"zh\":\"那些……的人\",\"note\":\"those 在这里是指人的代词，who 引出定语从句，如 those who arrive early（那些早到的人）。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"代替前文已知的复数名词，指“那些人”“那些东西”或“那些情况”，避免重复名词。\"",
+        "valueJson": "\"不带所指的具体名词，指语境中能辨认出的复数人或事物；既可指向眼前的对象，也可回指前文的人、东西或情况。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"those-alone-ex-3\",\"senseId\":\"sense-those-alone\",\"en\":\"Those who need a ride can come with us.\",\"zh\":\"需要搭车的人可以跟我们一起走。\",\"note\":\"those 指人，who need a ride 说明是哪一群人；who 在从句中指复数的人，后用 need。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"看到复数名词或复数对象时用 those；单数对象通常用 that。\"",
+        "valueJson": "\"指较远的对象时，复数通常用 those，单数通常用 that；近指的复数通常用 these。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"两只或更多，用 those；一只通常用 that。\"",
+        "valueJson": "\"指远处两只或更多风筝，用 those；指远处一只，用 that。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"those 是现代英语中 that 的复数形式。历史上它来自中古英语 thos，材料给出的更早形式为古英语 thas，并继续追溯到重构的印欧语词根 *to-。\"",
+        "valueJson": "\"those 是现代英语中 that 的复数形式。历史上，those 来自中古英语 thos，后者源自古英语 thas，更早可追溯至重构的印欧语词根 *to-。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"thos\",\"meaning\":\"those 的较早形式\"},{\"language\":\"古英语\",\"form\":\"thas\",\"meaning\":\"中古英语 thos 的来源形式\"},{\"language\":\"印欧语重构形式\",\"form\":\"*to-\",\"meaning\":\"所列历史词源追溯到的词根\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-those\"]",
+        "valueJson": "[\"wiktionary-those-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-those\"]",
+        "valueJson": "[\"wiktionary-those-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-those\"]",
+        "valueJson": "[\"wiktionary-those-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-those\"]",
+        "valueJson": "[\"wiktionary-those-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-those\"]",
+        "valueJson": "[\"wiktionary-those-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge-those\",\"title\":\"Cambridge Dictionary：those\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/those\",\"supports\":[\"those 的英式和美式读音\",\"指示限定词及指示代词用法\",\"those 与名词搭配及相关语法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-those-etymology\",\"title\":\"Wiktionnaire：those（English，词源条目）\",\"url\":\"https://fr.wiktionary.org/wiki/those#Anglais\",\"supports\":[\"those 的历史词源形式与追溯关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-those-etymology\",\"title\":\"Wiktionnaire：those（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/those#Anglais\",\"supports\":[\"those 的英式和美式读音\",\"指示限定词及指示代词用法\",\"that 与 those 的单复数对应\",\"those 的历史词源形式与追溯关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1416,
+    "headword": "those",
+    "meaning_zh": "pron. 那些",
+    "phonetic": "/ðәuz/",
+    "pos": "",
+    "forms": []
+  }
+}

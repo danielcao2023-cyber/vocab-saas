@@ -1,0 +1,436 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e4eb47df4dbc9af285c11b8ce2b7a0696b52c14a88b4618ad901fdc1d1f9885b",
+    "executedReviewPromptHash": "f1fdd21a5ed9cbad2e8887fa46bc549cd8bf23da4e1bffe27ca2f5b85bbea764",
+    "reviewHash": "bf9f4f2122e48d48b707a5583a7ec1bbfa5f7d3aa15e05796f06cc5132ab2d4f",
+    "wordId": 1269,
+    "inputHash": "c828cdf234eacdbaecc9aefa5db8ece7fd3d2688bceb5e518e173d2f25b4518d",
+    "draftHash": "352c03ceae1329653df27037fc6de91a49d25ed9e9b2501b8b890be2a99198b5",
+    "finalHash": "5c919a02f3c39677ca9c6ddd994a560e22361219563c3dc8c521c11c61157003",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/slow#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:12.688Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 23204,
+        "revisionId": 39525323,
+        "revisionTimestamp": "2026-05-20T14:30:01Z",
+        "sha256": "4df827908faf6f971cbc68a5e892b558482369bd0171797b111efac933b09741",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/slow",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T13:34:26.353Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T13:50:24.465Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "生意冷清与速度、进展缓慢需要区分；原例句没有实际覆盖进展缓慢。应另列生意义，并为速度和进展分别补足例证。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的反应或理解迟缓、钟表时间落后等用法。“冷漠”“落后”不能作为脱离语境的通用译义。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏实际来源英语词条所列的少见名词“慢舞”；另补电影等节奏拖沓的引申用法。新增例句的 senseId 必须指向各自所属义项。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note",
+        "message": "系动词与表语的位置写反：slow 应位于 be、seem 等系动词之后。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples",
+        "message": "副词义的一个核心例句实际只使用派生词 slowly；改用自然的 drive slow、go slow 展示词头本身的副词功能。原 moved slow 不应被判作语法错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/patterns/1/note",
+        "message": "宾语位置说明未区分名词与人称代词，容易误导学生说 slow down it；同时应直接展示不带 down 的及物和不及物用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds; /senses/*/sourceIds; /sources",
+        "message": "文内引用未与实际获得的证据对齐：Cambridge 返回不可用，实际取得的法语维基词典英语词条却未列入来源。应调整引用；专业知识补充的用法不冒充已取得的词典原文。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/2",
+        "message": "slowly 重复列入词族，删除重复项即可，保留已有准确的构词和拼写说明。"
+      }
+    ],
+    "coverageAssessment": "已核对速度、进展、反应与理解、生意冷清、钟表时间落后、副词，以及动词的及物和不及物功能；各核心义均有至少两个例句。补入少见的慢舞名词和叙事节奏用法，所有新增例句的 senseId 均与所属义项一致。扩展义及语法说明依据通行英语知识；推荐查询来源与实际取得的来源已区分。实际来源的词源段只有草稿标记，不能支持历史发展，因此保留空 stages，不推测历史词根。",
+    "senseInventory": [
+      {
+        "sense": "形容词：移动或动作速度慢",
+        "coveredBy": [
+          "slow-adj-speed"
+        ],
+        "assessment": "保留公交车例句，补充步速例句；移除混入该义搭配栏的动词短语。"
+      },
+      {
+        "sense": "形容词：过程、进展或发展缓慢",
+        "coveredBy": [
+          "slow-adj-speed"
+        ],
+        "assessment": "与速度义合并教学，但补充维修进展和术后康复两个实际例句。"
+      },
+      {
+        "sense": "形容词：反应迟缓、理解或学习较慢；slow to do",
+        "coveredBy": [
+          "slow-adj-response"
+        ],
+        "assessment": "新增核心义，分别展示反应和理解，并说明评价他人的语气及 slow to do 的限制。"
+      },
+      {
+        "sense": "形容词：生意冷清、活动或交易少",
+        "coveredBy": [
+          "slow-adj-business"
+        ],
+        "assessment": "从速度义中分出，补足两个生活例句；以 quiet、slack 及 busy、brisk 作有语境限制的对照。"
+      },
+      {
+        "sense": "形容词：钟表显示的时间落后",
+        "coveredBy": [
+          "slow-adj-clock"
+        ],
+        "assessment": "新增核心义和两个例句，明确 be five minutes slow 表示时间落后，并以钟表义 fast 作反义对照。"
+      },
+      {
+        "sense": "副词：慢慢地",
+        "coveredBy": [
+          "slow-adv"
+        ],
+        "assessment": "两个核心例句均直接使用 slow；保留 slowly 的常用程度及语体区别。"
+      },
+      {
+        "sense": "动词：自身减慢",
+        "coveredBy": [
+          "slow-v"
+        ],
+        "assessment": "分别用 slow 和 slow down 展示不及物功能。"
+      },
+      {
+        "sense": "动词：使速度或进程减慢",
+        "coveredBy": [
+          "slow-v"
+        ],
+        "assessment": "分别展示 slow something 与 slow something down，并明确人称代词宾语的位置。"
+      },
+      {
+        "sense": "引申形容词：电影、故事等节奏拖沓",
+        "coveredBy": [
+          "slow-adj-dull"
+        ],
+        "assessment": "作为次要用法补入，区分叙事节奏缓慢与播放速度降低。"
+      },
+      {
+        "sense": "少见名词：慢舞",
+        "coveredBy": [
+          "slow-noun-dance"
+        ],
+        "assessment": "按实际来源的英语名词条目补入，并提示日常表达更常用 a slow dance。"
+      },
+      {
+        "sense": "中文释义中的“冷漠的、落后的”",
+        "coveredBy": [
+          "slow-adj-response",
+          "slow-adj-clock"
+        ],
+        "assessment": "限定为迟迟不行动、反应不积极或钟表时间落后等具体语境，不把 slow 当作 indifferent、backward 的通用替换词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"adjective; adverb; verb\"",
+        "valueJson": "\"adjective; adverb; verb; noun (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"slow 作形容词说速度不快；作副词修饰动作时，日常英语常用 slowly；作动词表示“减慢”，常见搭配是 slow down。\"",
+        "valueJson": "\"slow 可说速度、进展或反应慢，也可说生意冷清、钟表时间落后；副词 slow 常见于 go slow、drive slow，一般动作描写常用 slowly；动词 slow 或 slow down 表示“（使）减慢”。\""
+      },
+      {
+        "op": "add",
+        "path": "/sources/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wiktionary-en-slow\",\"title\":\"Wiktionnaire：slow（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/slow#Anglais\",\"supports\":[\"英语形容词 slow 和动词 slow 的基本义\",\"少见名词 slow 的慢舞义\",\"英美发音及 slowly、slowness 等相关词\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[\"wiktionary-en-slow\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"slow-adj-speed-ex2\",\"senseId\":\"slow-adj-speed\",\"en\":\"Business was slow on Monday morning.\",\"zh\":\"星期一早上生意比较冷清。\",\"note\":\"slow 描述生意活动不旺、进展不快。\"}",
+        "valueJson": "{\"id\":\"slow-adj-speed-ex2\",\"senseId\":\"slow-adj-speed\",\"en\":\"We made slow progress with the kitchen repairs.\",\"zh\":\"我们修理厨房的进展很缓慢。\",\"note\":\"slow 修饰 progress，表示事情推进得慢；progress 在这里是不可数名词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-speed-ex3\",\"senseId\":\"slow-adj-speed\",\"en\":\"We walked at a slow pace because my ankle hurt.\",\"zh\":\"因为我的脚踝疼，我们走得很慢。\",\"note\":\"slow 修饰名词 pace，说明步速慢。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-speed-ex4\",\"senseId\":\"slow-adj-speed\",\"en\":\"Recovery from the operation was slow but steady.\",\"zh\":\"手术后的康复虽然缓慢，但一直在稳步进行。\",\"note\":\"slow 描述康复过程推进得慢，不表示完全没有进展。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"slow 作表语，后接 be、seem 等系动词。\"",
+        "valueJson": "\"slow 位于 be、seem 等系动词之后，作表语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"slow down\",\"zh\":\"减速；放慢\",\"note\":\"也可作动词短语，指速度降低或使速度降低。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"a slow pace\",\"zh\":\"缓慢的步速或节奏\",\"note\":\"slow 作形容词，修饰表示步速或节奏的名词 pace。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[\"wiktionary-en-slow\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0",
+        "expectedValueJson": "{\"id\":\"slow-adv-ex1\",\"senseId\":\"slow-adv\",\"en\":\"Please speak slowly so I can understand.\",\"zh\":\"请慢慢说，这样我才能听懂。\",\"note\":\"slowly 修饰 speak，说明说话的速度。\"}",
+        "valueJson": "{\"id\":\"slow-adv-ex1\",\"senseId\":\"slow-adv\",\"en\":\"Please drive slow near the school.\",\"zh\":\"在学校附近请慢点开车。\",\"note\":\"slow 在这里作副词修饰 drive，常见于口语提醒；也可说 drive slowly。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"slow-adv-ex2\",\"senseId\":\"slow-adv\",\"en\":\"The car moved slow through the snow.\",\"zh\":\"汽车在雪地里慢慢行驶。\",\"note\":\"slow 在此作副词，口语中可见；也可以说 moved slowly。\"}",
+        "valueJson": "{\"id\":\"slow-adv-ex2\",\"senseId\":\"slow-adv\",\"en\":\"Go slow until you get used to the new bike.\",\"zh\":\"在适应这辆新自行车之前，先慢慢骑。\",\"note\":\"go slow 是常见表达，slow 在这里作副词；until 表示在适应之前保持较慢的速度。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"drive slowly\",\"zh\":\"慢慢开车\",\"note\":\"slowly 修饰 drive，说明驾驶速度。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"drive slow\",\"zh\":\"慢点开车\",\"note\":\"常见的口语搭配；一般书面表达也可用 drive slowly。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"slow down 是常见形式；slow down 可不带宾语表示“慢下来”，也可带宾语表示“让……慢下来”。\"",
+        "valueJson": "\"slow 本身即可表示“（使）减慢”：The train slowed 是自身减速，Rain slowed our progress 是使进展变慢。slow down 也可带或不带宾语；it、them 等人称代词作宾语时放在 slow 与 down 之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/0",
+        "expectedValueJson": "{\"id\":\"slow-v-ex1\",\"senseId\":\"slow-v\",\"en\":\"The train slowed down before the station.\",\"zh\":\"火车在车站前减慢了速度。\",\"note\":\"slow down 不带宾语，表示自身减速。\"}",
+        "valueJson": "{\"id\":\"slow-v-ex1\",\"senseId\":\"slow-v\",\"en\":\"The train slowed before it reached the station.\",\"zh\":\"火车在进站前减慢了速度。\",\"note\":\"slow 不带 down 也可作不及物动词，表示自身减速。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-v-ex3\",\"senseId\":\"slow-v\",\"en\":\"The heavy rain slowed our progress.\",\"zh\":\"大雨使我们的进展变慢了。\",\"note\":\"slow 直接带宾语 our progress，表示使过程减慢，不必加 down。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-v-ex4\",\"senseId\":\"slow-v\",\"en\":\"Please slow down before you turn into our street.\",\"zh\":\"请在拐进我们这条街之前减速。\",\"note\":\"slow down 不带宾语；before 说明先减速，再转弯。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"宾语可放在 slow 与 down 之间，也可放在 down 后。\"",
+        "valueJson": "\"名词宾语可放在 slow 与 down 之间或 down 后；it、them 等人称代词宾语须放在中间，如 slow it down。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"slow / slow something\",\"zh\":\"慢下来／使某事物减慢\",\"note\":\"不带 down 的 slow 也能作不及物或及物动词，如 The train slowed 和 Rain slowed our progress。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[\"wiktionary-en-slow\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-response\",\"title\":\"反应迟缓的；理解慢的\",\"meaning\":\"作出反应、理解事情或学会东西需要较长时间。\",\"usageNote\":\"be slow to do something 表示做某事迟缓，有时带不积极、不情愿的语气；是否后来做了，要看时态和上下文。直接说某人 is slow 容易被理解为理解能力差，可能不礼貌。slow 不能脱离具体语境直接当作“冷漠的”或“落后的”。\",\"examples\":[{\"id\":\"slow-adj-response-ex1\",\"senseId\":\"slow-adj-response\",\"en\":\"The old tablet is slow to respond when I tap the screen.\",\"zh\":\"我点屏幕时，那台旧平板反应很慢。\",\"note\":\"slow to respond 描述设备的反应迟缓。\"},{\"id\":\"slow-adj-response-ex2\",\"senseId\":\"slow-adj-response\",\"en\":\"The shop has been slow to respond to my complaint.\",\"zh\":\"那家店对我的投诉回应得很迟缓。\",\"note\":\"这里说回应不及时，不是在评价店员的理解能力。\"},{\"id\":\"slow-adj-response-ex3\",\"senseId\":\"slow-adj-response\",\"en\":\"I was slow to understand the teacher's instructions.\",\"zh\":\"我花了较长时间才理解老师的说明。\",\"note\":\"slow to understand 说明理解需要较长时间。\"},{\"id\":\"slow-adj-response-ex4\",\"senseId\":\"slow-adj-response\",\"en\":\"I'm a slow learner when it comes to new card games.\",\"zh\":\"学新的纸牌游戏时，我学得比较慢。\",\"note\":\"这里是自述；直接称别人为 a slow learner 可能带贬义。\"}],\"patterns\":[{\"en\":\"be slow to do something\",\"zh\":\"做某事迟缓；迟迟才做某事\",\"note\":\"slow 是形容词，后面的不定式说明哪一方面反应或行动慢；不要据此断定对方永远不做。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"slow to respond\",\"zh\":\"反应或回应迟缓\",\"note\":\"可说设备反应慢，也可说人或机构回应不及时。\",\"kind\":\"common-collocation\"},{\"en\":\"a slow learner\",\"zh\":\"学得较慢的人\",\"note\":\"描述学习速度；用于评价别人时注意语气。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"sluggish\",\"zh\":\"反应迟缓的；缺乏活力的\",\"note\":\"可描述设备、身体或反应迟缓，不专指理解能力。\"},{\"en\":\"slow on the uptake\",\"zh\":\"理解慢的；领会慢的\",\"note\":\"口语表达，专指理解较慢；直接评价别人可能不礼貌。\"}],\"contrasting\":[{\"en\":\"quick\",\"zh\":\"反应快的；理解快的\",\"note\":\"可用于 quick to respond、quick to understand，与相应的 slow 用法对照。\"},{\"en\":\"a quick learner\",\"zh\":\"学得快的人\",\"note\":\"与 a slow learner 在学习速度这一语境中相对。\"}],\"similarNote\":\"反应迟缓可用 sluggish；领会慢可用 slow on the uptake，两者侧重点不同。\",\"contrastingNote\":\"quick 可对照反应或理解速度；a quick learner 专门对照学习速度。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-business\",\"title\":\"生意冷清的；营业不忙的\",\"meaning\":\"生意、销售或营业时段的交易和活动较少。\",\"usageNote\":\"Business is slow 通常指生意冷清，不是服务动作慢。a slow day 可指店里或工作场所不忙的一天。\",\"examples\":[{\"id\":\"slow-adj-business-ex1\",\"senseId\":\"slow-adj-business\",\"en\":\"Business at our shop is often slow on rainy weekdays.\",\"zh\":\"下雨的工作日，我们店的生意常常比较冷清。\",\"note\":\"slow 描述交易少，不是在说营业过程慢。\"},{\"id\":\"slow-adj-business-ex2\",\"senseId\":\"slow-adj-business\",\"en\":\"It was a slow afternoon at the cafe; only two customers came in.\",\"zh\":\"那天下午咖啡馆很冷清，只有两位客人进来。\",\"note\":\"slow afternoon 指顾客少、不忙的下午。\"}],\"patterns\":[{\"en\":\"Business is slow.\",\"zh\":\"生意冷清。\",\"note\":\"business 在这里指生意活动，一般不用复数。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a slow day at the shop\",\"zh\":\"店里生意冷清的一天\",\"note\":\"slow 修饰营业时段，表示交易或顾客少。\",\"kind\":\"common-collocation\"},{\"en\":\"slow sales\",\"zh\":\"销售不畅\",\"note\":\"指卖得少或销售不旺，不是售货员动作慢。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"quiet\",\"zh\":\"不忙的；冷清的\",\"note\":\"商店或营业时段的 quiet 可以指顾客少，不一定只指声音小。\"},{\"en\":\"slack\",\"zh\":\"生意清淡的\",\"note\":\"可描述需求或商业活动不足，如 slack trade；不是所有 slow 都可替换为 slack。\"}],\"contrasting\":[{\"en\":\"busy\",\"zh\":\"繁忙的\",\"note\":\"用于顾客或工作多的商店、营业时段。\"},{\"en\":\"brisk\",\"zh\":\"兴旺的；活跃的\",\"note\":\"常修饰 trade、business、sales，表示交易活跃。\"}],\"similarNote\":\"quiet 可描述店里不忙；slack 更强调商业活动或需求不足。\",\"contrastingNote\":\"营业时段冷清可与 busy 对照；交易清淡可与 brisk business 或 brisk sales 对照。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-clock\",\"title\":\"钟表时间落后的\",\"meaning\":\"钟表显示的时间落后于正确时间。\",\"usageNote\":\"be five minutes slow 表示钟表显示的时间比正确时间慢五分钟，直接说明此刻的时间差；不只是说指针移动速度慢。这个意思不能泛化成所有语境中的“落后”。\",\"examples\":[{\"id\":\"slow-adj-clock-ex1\",\"senseId\":\"slow-adj-clock\",\"en\":\"My watch was five minutes slow, so I reset it.\",\"zh\":\"我的手表慢了五分钟，所以我重新校了时间。\",\"note\":\"先发现手表时间落后，再校准；两个动作都用过去时。\"},{\"id\":\"slow-adj-clock-ex2\",\"senseId\":\"slow-adj-clock\",\"en\":\"The kitchen clock is ten minutes slow: it shows 7:50 when it's actually 8:00.\",\"zh\":\"厨房的钟慢了十分钟：实际是八点，它却显示七点五十。\",\"note\":\"用实际时间与显示时间的差说明 slow 的钟表义。\"}],\"patterns\":[{\"en\":\"be five minutes slow\",\"zh\":\"钟表慢五分钟\",\"note\":\"表示时间差的 five minutes 放在 slow 前面。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a slow clock\",\"zh\":\"时间落后的钟\",\"note\":\"具体落后多久，可说 The clock is five minutes slow。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"behind the correct time\",\"zh\":\"落后于正确时间\",\"note\":\"用于说明钟表显示时间落后，与钟表义 slow 对应。\"}],\"contrasting\":[{\"en\":\"fast\",\"zh\":\"钟表时间超前的\",\"note\":\"在钟表语境中，five minutes fast 表示比正确时间快五分钟。\"},{\"en\":\"ahead of the correct time\",\"zh\":\"超前于正确时间\",\"note\":\"说明显示时间领先于正确时间，不是在说动作速度快。\"}],\"similarNote\":\"这里的 slow 对应钟表显示时间落后，可用 behind 表达。\",\"contrastingNote\":\"钟表义的直接反义是 fast；它表示时间超前，不能按一般动作速度理解。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-noun-dance\",\"title\":\"名词：慢舞\",\"meaning\":\"伴着慢节奏音乐相拥而跳的双人舞。\",\"note\":\"这是少见的名词用法，识别即可；日常英语更常说 a slow dance。\",\"example\":{\"id\":\"slow-noun-dance-ex1\",\"senseId\":\"slow-noun-dance\",\"en\":\"They danced one last slow before the party ended.\",\"zh\":\"聚会结束前，他们最后又跳了一支慢舞。\",\"note\":\"这里的 slow 是可数名词；日常表达更常用 one last slow dance。\"},\"sourceIds\":[\"wiktionary-en-slow\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"slow-adj-dull\",\"title\":\"电影、故事等节奏拖沓的\",\"meaning\":\"叙事或活动节奏缓慢，语境中常带不够吸引人的评价。\",\"note\":\"slow 主要评价节奏；节奏慢不一定意味着作品不好，也不等于视频播放速度被调慢。\",\"example\":{\"id\":\"slow-adj-dull-ex1\",\"senseId\":\"slow-adj-dull\",\"en\":\"The film was so slow that we stopped watching after half an hour.\",\"zh\":\"这部电影节奏太拖沓，我们看了半小时就不看了。\",\"note\":\"这里评价电影的叙事节奏；so ... that ... 表明拖沓导致停止观看。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"slow down 可表示“减速”；有宾语时，宾语既可放在中间，也可放在短语末尾。\"",
+        "valueJson": "\"slow down 可表示“减速”；名词宾语可放在中间或短语末尾，it、them 等人称代词宾语须放在中间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"名词作宾语时也可放在 down 后；代词宾语通常放在中间。\"",
+        "valueJson": "\"名词作宾语时也可放在 down 后；it、them 等人称代词作宾语时须放在 slow 和 down 之间。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"名词宾语可放中间或末尾；代词宾语要放在 slow 和 down 之间，如 slow it down。\"",
+        "valueJson": "\"名词宾语可放中间或末尾；it、them 等人称代词宾语放在 slow 和 down 之间，如 slow it down。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[\"wiktionary-en-slow\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-slow\"]",
+        "valueJson": "[\"wiktionary-en-slow\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/wordFamily/2",
+        "expectedValueJson": "{\"word\":\"slowly\",\"partOfSpeech\":\"副词\",\"meaning\":\"慢慢地\",\"formation\":\"slow + -ly；由形容词构成副词。\",\"spellingNote\":\"加 -ly 后拼写为 slowly，不写成 slowley。\",\"example\":{\"id\":\"slow-family-ex3\",\"senseId\":\"slow-adv\",\"en\":\"The line moved slowly.\",\"zh\":\"队伍移动得很慢。\",\"note\":\"slowly 修饰 moved。\"},\"sourceIds\":[\"cambridge-slow\"]}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1269,
+    "headword": "slow",
+    "meaning_zh": "adj. 慢的, 缓慢的, 迟缓的, 迟钝的, 冷漠的, 落后的\nadv. 慢地, 迟缓地\nv. (使)慢下来",
+    "phonetic": "/slәu/",
+    "pos": "",
+    "forms": []
+  }
+}

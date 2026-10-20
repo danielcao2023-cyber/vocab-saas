@@ -1,0 +1,171 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "168321ff0d5f488e42fadd8353d823923e70d4a6fd6ea2f996ad220bde5a5721",
+    "executedReviewPromptHash": "168321ff0d5f488e42fadd8353d823923e70d4a6fd6ea2f996ad220bde5a5721",
+    "reviewHash": "2b6ecf6be10e1d903e39a8ed2fc045044e60ba722ef914dfa25c645f80955816",
+    "wordId": 1463,
+    "inputHash": "b4f864c76290794ae462e2e7eba5c8721c6d2550d7ea2640c3bfa4b73b8f43c3",
+    "draftHash": "7142574c09d42d5506331b11f735bc3a8f057e2e0fec0df482f4dd16fbf0e748",
+    "finalHash": "0cabc3cabbcbdaaade43511cf598dd000c9452c97261331d320befba689147e3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/trousers#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.819Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116358,
+        "revisionId": 38265925,
+        "revisionTimestamp": "2025-05-23T06:37:10Z",
+        "sha256": "e0bbd7fe1413f42ed6abfe8f49bb09e0ddfad4d57c702d77f6858f8e98171900",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/trousers",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:34:28.716Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:40:18.838Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note",
+        "message": "a pair of trousers 在此作宾语，pair 的单数性质不能解释 bought 的使用；bought 是 buy 的过去式。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "1570 年的拼写应为 trouse，不是 trouser；来源将成对物品词形的影响用于解释 -er，不能改成解释 -s。stages 中只有拼写记录和空泛说明，缺少可核实的阶段释义，应将可靠事实集中保留在 summary。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/accentNote",
+        "message": "所列标准英式读音不读 /r/，不能表述为读得不明显；美式的 /r/ 位于最后一个 /z/ 之前。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/summary",
+        "message": "“成对穿着”容易误解为两件一起穿；这里应强调名词采用复数形式。"
+      }
+    ],
+    "coverageAssessment": "可用英语词条列出一个服饰义，初稿已覆盖，并有两个自然原创英中例句，无需拆成多个义。已检查复数语法、pair 数量表达、地区用法及近似与对照表达。未取得正文的词典页面不作为本次核验依据。",
+    "senseInventory": [
+      {
+        "sense": "复数名词：裤子；长裤",
+        "coveredBy": [
+          "trousers-clothing"
+        ],
+        "assessment": "覆盖完整；两个核心例句分别展示 trousers 的复数搭配和 a pair of trousers 的数量表达。第二例的语法说明须修正。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"a pair of 表示一条；句子的中心词是 pair，因此用 bought。\"",
+        "valueJson": "\"a pair of trousers 表示“一条裤子”，在本句中作 bought 的宾语；bought 是 buy 的过去式。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"trousers 的历史形式与苏格兰盖尔语 triubhas 有关；词典记录了早期英语的 trouser、trouzes 和 trossers 等形式。早期英语中出现 -s 的形式，与表示成对物品的词形有关。\"",
+        "valueJson": "\"trousers 的词源可追溯到苏格兰盖尔语 triubhas，而 triubhas 更早的来源不明。早期英语拼写记录包括 trouse（1570 年）、trouzes（1580 年）和 trossers（1610 年）。trousers 中的 -er 被解释为受 tweezers 等表示成对物品的词形影响。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"苏格兰盖尔语\",\"form\":\"triubhas\",\"meaning\":\"与 trousers 的历史来源有关；更早的来源不确定。\"},{\"language\":\"英语\",\"form\":\"trouser（1570）\",\"meaning\":\"早期记录的形式之一。\"},{\"language\":\"英语\",\"form\":\"trouzes（1580）\",\"meaning\":\"后续记录的形式之一。\"},{\"language\":\"英语\",\"form\":\"trossers（1610）\",\"meaning\":\"后续记录的形式之一。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式音标通常不明显读出末尾的 r；美式读出 r。\"",
+        "valueJson": "\"这里的标准英式读音不读 /r/；美式读音在最后一个 /z/ 前带 /r/。两种读音的词尾都是 /z/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"这些词都常指成对穿着的下身衣物，但裤长和地区用法不同。\"",
+        "valueJson": "\"trousers、pants 和 shorts 都常以复数形式出现，但所指衣物的裤长和地区用法不同。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1463,
+    "headword": "trousers",
+    "meaning_zh": "pl. 裤子, 长裤",
+    "phonetic": "/'trauzәz/",
+    "pos": "",
+    "forms": []
+  }
+}

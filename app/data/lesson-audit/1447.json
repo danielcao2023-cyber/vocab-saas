@@ -1,0 +1,411 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7c3faa47cffe8edccce208f662ea3e943b6795da82a23df8b3b0f1f046cd104d",
+    "executedReviewPromptHash": "7c3faa47cffe8edccce208f662ea3e943b6795da82a23df8b3b0f1f046cd104d",
+    "reviewHash": "29e511f31db7a31e1b519b1f7a1bc490973bf4314faad5387ee5246c136dcb96",
+    "wordId": 1447,
+    "inputHash": "0f842c6495dda88421a66e0ab809ec0c4f4be5457a0bb196f8ff82bf51c6fe3b",
+    "draftHash": "58f5dd96a65c6d708397e0f226825d4b5ec531900bf5bfcddccedfafdb89e8e3",
+    "finalHash": "96c3ead679a3116deb8410cf18637e9a29bb9c97d98829b0fc2b5738cfb03323",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/towards#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.939Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 123985,
+        "revisionId": 37314566,
+        "revisionTimestamp": "2025-02-10T21:13:26Z",
+        "sha256": "2a5c19d99ab4edc3a29743495bdbc28314f249f8d8ed34c2db976a991409d770",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/towards",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:03:02.210Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T19:10:58.190Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的“朝某目标推进”和“临近某个时间”用法；方向义也未覆盖 towards the back 一类静态位置表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "us 字段用 toward 的读音标注 towards，漏掉末尾 /z/；重音说明也应限定为所列两音节读法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/0",
+        "message": "patient 通常与 with 搭配。这里改用自然的 kind towards，并同步修改助记，避免把较不常用的搭配作为基础教学范式。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/1/zh",
+        "message": "friendly 被误译为“不友好”，应为“友好”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "collected books towards the school library 搭配不自然；用途义的说明和句型也过度泛化了物品与 towards 的组合。应以资金投入开支或目标的自然表达示范。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "to 标明目的地，本身不保证行动已经完成。原稿将“是否到达”过多归于介词本身，应结合动词、时态和语境解释。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "现有引用全部指向未提供正文的 Oxford 页面。应改为实际取得的法语维基词典英语词条，并将支持范围限定为其实际包含的释义、读音和地区使用说明。"
+      }
+    ],
+    "coverageAssessment": "已核对方向与位置、态度对象、资源投入、目标进展及时间接近五类常用功能。补齐后每个核心义至少有两个自然原创例句，并修正读音、搭配、翻译和 to 的解释。新增细分用法依据专业语言知识补充，未冒称词典逐项明载。已取得页面的词源部分只有待完善标记，无法建立可靠历史链；因此保留现代拼写说明及其限制，不补造历史阶段。",
+    "senseInventory": [
+      {
+        "sense": "朝某方向移动、转向或看；位置较靠近某一端",
+        "coveredBy": [
+          "towards-direction"
+        ],
+        "assessment": "原稿覆盖动态朝向；补充静态位置说明及例句后覆盖完整。"
+      },
+      {
+        "sense": "对某人或某事的态度、感情或行为",
+        "coveredBy": [
+          "towards-attitude"
+        ],
+        "assessment": "核心义已覆盖；修正示范搭配及 friendly 的中文误译。"
+      },
+      {
+        "sense": "用于某项开支或目标，作为部分投入",
+        "coveredBy": [
+          "towards-purpose"
+        ],
+        "assessment": "原稿已列此义；修正不自然例句并收紧句型适用范围。"
+      },
+      {
+        "sense": "朝某目标或结果推进",
+        "coveredBy": [
+          "towards-progress"
+        ],
+        "assessment": "原稿仅在相关表达中提及，未形成充分教学；新增完整核心义。"
+      },
+      {
+        "sense": "临近、接近某个时间",
+        "coveredBy": [
+          "towards-time"
+        ],
+        "assessment": "原稿遗漏；新增完整核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"towards 常表示“朝着”，也可表示“对待、对于”；英式英语常写 towards，美式英语常写 toward。两种拼法都正确。\"",
+        "valueJson": "\"towards 可表示朝向或较靠近某处、对某对象的态度、投入某项开支、朝目标推进，以及临近某个时间。towards 在英式英语中较常见，toward 在美式英语中较常见；两种形式都正确。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"比较 put money towards a trip 和 work towards a goal，区分资金投入与朝目标推进。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"用 towards the back 记位置，用 towards the end of the week 记时间接近。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/us",
+        "expectedValueJson": "\"/tɔːrd/\"",
+        "valueJson": "\"/təˈwɔːrdz/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"towards 常见于英式拼法；美式英语通常写 toward。具体发音会因口音而异。\"",
+        "valueJson": "\"这里的英美音标均对应 towards，末尾都有 /dz/。toward 在美式英语中较常见，没有末尾的 /z/；具体读法因口音而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"towards 重音在第二音节；美式拼法 toward 通常读作 /tɔːrd/。\"]",
+        "valueJson": "[\"所列 towards 的两音节读法重音在第二音节；也有单音节读法。\",\"toward 的一种常见美式读法是 /tɔːrd/；不要把它与 towards 的读音混在一起。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-towards\"]",
+        "valueJson": "[\"wiktionary-towards\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"朝着；向\"",
+        "valueJson": "\"朝着；向；较靠近某处\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示人或事物移动、转向或面朝某个方向。\"",
+        "valueJson": "\"表示移动、转身或视线朝向某人或某处，也可表示位置较靠近某一端。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常接地点或方向名词；本身只说明方向，不保证到达目的地。\"",
+        "valueJson": "\"后接人、地点或方向等名词短语。描述移动时只说明朝向，不保证到达；描述位置时，常见 towards the back 等表达。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"towards-direction-ex3\",\"senseId\":\"towards-direction\",\"en\":\"We found two seats towards the back of the bus.\",\"zh\":\"我们在公交车靠后的位置找到了两个座位。\",\"note\":\"这里说明座位的位置较靠近车尾，不表示座位在移动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"towards the back of the room\",\"zh\":\"在房间较靠后的位置\",\"note\":\"表示大致位置，不一定就在房间最后面。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"to 常表示到达某处；towards 通常只表示朝向，未必到达。\"",
+        "valueJson": "\"to 把某处标为目的地，towards 只标明朝向；是否已经到达，还要看动词、时态和语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"表示方向时，towards 强调朝向；to 常强调到达。\"",
+        "valueJson": "\"表示移动时，towards 强调朝向，to 标明目的地；不能仅凭 to 就断定已经到达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-towards\"]",
+        "valueJson": "[\"wiktionary-towards\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/en",
+        "expectedValueJson": "\"Our teacher is always patient towards new students.\"",
+        "valueJson": "\"Our teacher is always kind towards new students.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"我们的老师对新同学总是很有耐心。\"",
+        "valueJson": "\"我们的老师对新同学总是很友善。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "\"patient towards someone 表示对某人有耐心。\"",
+        "valueJson": "\"kind towards someone 表示对某人友善；表示“对某人有耐心”通常用 patient with someone。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/zh",
+        "expectedValueJson": "\"对某人友善／不友好／无礼\"",
+        "valueJson": "\"对某人友善／友好／无礼\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-towards\"]",
+        "valueJson": "[\"wiktionary-towards\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"表示某物被用来支付、完成或促成某个目标的一部分。\"",
+        "valueJson": "\"表示金钱、时间等被投入某项开支或目标，作为其中的一部分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构为 contribute / put / save something towards something；所给的金额或行动通常只是目标的一部分。\"",
+        "valueJson": "\"谈资金时，常用 save / put / contribute money towards something；towards 后可接开支、购买目标或动名词短语，通常表示部分投入。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"towards-purpose-ex2\",\"senseId\":\"towards-purpose\",\"en\":\"The class collected books towards the school library.\",\"zh\":\"全班收集书籍，用来充实学校图书馆。\",\"note\":\"towards 表示这些书被用于实现充实图书馆这一目标。\"}",
+        "valueJson": "{\"id\":\"towards-purpose-ex2\",\"senseId\":\"towards-purpose\",\"en\":\"Our class raised fifty pounds towards the cost of new library books.\",\"zh\":\"我们班筹集了五十英镑，用来分担购买图书馆新书的费用。\",\"note\":\"towards the cost 表示这笔钱用于承担部分费用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"save / put / contribute + 钱或物品 + towards + 目标\",\"zh\":\"存下／投入／捐出……用于某目标\",\"note\":\"说明钱或物品被用于实现某个目标，常只是其中一部分。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"save / put / contribute money towards + 名词或动名词短语\",\"zh\":\"存钱／投入资金／出资用于……\",\"note\":\"如 towards a new bike 或 towards buying a new bike，通常表示为购买目标投入部分资金。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-towards\"]",
+        "valueJson": "[\"wiktionary-towards\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"towards-progress\",\"title\":\"朝某目标或结果推进\",\"meaning\":\"表示行动或变化朝着某个目标、结果或状态发展。\",\"usageNote\":\"常与 work、step、progress 等搭配。towards 后接名词或动名词短语；朝目标努力不等于已经实现目标。\",\"examples\":[{\"id\":\"towards-progress-ex1\",\"senseId\":\"towards-progress\",\"en\":\"Mia is working towards becoming a nurse.\",\"zh\":\"米娅正为成为一名护士而努力。\",\"note\":\"towards 后用 becoming，不用 become；句子没有说她已经成为护士。\"},{\"id\":\"towards-progress-ex2\",\"senseId\":\"towards-progress\",\"en\":\"Painting the walls was a big step towards finishing our new kitchen.\",\"zh\":\"刷好墙壁让我们朝完成新厨房装修迈进了一大步。\",\"note\":\"a step towards 表示取得进展，不表示整个装修已经完成。\"}],\"patterns\":[{\"en\":\"work towards + 名词或动名词短语\",\"zh\":\"为实现……而努力\",\"note\":\"用于目标或希望实现的结果，如 work towards a goal。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a step towards solving a problem\",\"zh\":\"朝解决问题迈出的一步\",\"note\":\"表示有助于解决问题的一项进展。\",\"kind\":\"common-collocation\"},{\"en\":\"make progress towards a goal\",\"zh\":\"朝某目标取得进展\",\"note\":\"强调越来越接近目标，尚不表示已经达成。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"get closer to\",\"zh\":\"更加接近\",\"note\":\"谈目标时意思接近；强调与目标的距离缩小，work towards 则强调为目标努力。\"}],\"contrasting\":[{\"en\":\"move away from a goal\",\"zh\":\"偏离目标\",\"note\":\"只在谈目标和发展方向时，与朝目标推进构成对照。\"}],\"similarNote\":\"这些表达可用于目标语境，但描述的是努力、进展或距离等不同侧面。\",\"contrastingNote\":\"这里对照的是目标进展方向，并非 towards 在所有用法中都有这个反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"towards-time\",\"title\":\"临近某个时间\",\"meaning\":\"表示时间接近某个时刻或某段时间的末尾。\",\"usageNote\":\"常见于 towards noon、towards the end of the week 等表达，说明大致时间，不给出精确时刻。\",\"examples\":[{\"id\":\"towards-time-ex1\",\"senseId\":\"towards-time\",\"en\":\"We moved here towards the end of last year.\",\"zh\":\"我们在去年快结束时搬到了这里。\",\"note\":\"towards the end of last year 表示接近去年年底的一段时间。\"},{\"id\":\"towards-time-ex2\",\"senseId\":\"towards-time\",\"en\":\"The café gets busy towards noon.\",\"zh\":\"这家咖啡馆临近中午时会忙起来。\",\"note\":\"towards noon 表示快到中午时，不是精确的十二点。\"}],\"patterns\":[{\"en\":\"towards the end of + 一段时间\",\"zh\":\"临近……结束时\",\"note\":\"可接 the week、the month、the year 等。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"towards noon\",\"zh\":\"临近中午时\",\"note\":\"表示时间逐渐接近中午。\",\"kind\":\"common-collocation\"},{\"en\":\"towards the end of the week\",\"zh\":\"临近一周结束时\",\"note\":\"表示一周较靠后的时候，不指定某天某刻。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"near\",\"zh\":\"临近\",\"note\":\"near the end of the week 与 towards the end of the week 意思接近。\"},{\"en\":\"around\",\"zh\":\"大约在……时候\",\"note\":\"around noon 可指中午前后；towards noon 通常着眼于接近中午的时候。\"}],\"contrasting\":[{\"en\":\"at the beginning of\",\"zh\":\"在……开始时\",\"note\":\"谈同一段时间时，可与 towards the end of 对照。\"}],\"similarNote\":\"towards 强调接近某个时间，around 侧重前后大致范围，不能处处直接替换。\",\"contrastingNote\":\"开始与临近结束的对照适用于 towards the end of，不适用于所有时间表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"towards 与 toward 是同一个介词的英美拼法差异；to 也表示方向，但常更强调到达。\"",
+        "valueJson": "\"towards 与 toward 意思相同，地区使用偏好不同。描述移动时，towards 标明朝向，to 标明目的地；是否已经到达要结合整个句子判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"to 常表示到达某地；towards 只说明朝那个方向，不表示已经到达。\"",
+        "valueJson": "\"to 标明目的地，本身不保证行动已经完成。例如 We are walking to the park 表示正在去公园，尚未说明到达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"to 在此表示到达公园。\"",
+        "valueJson": "\"这句用一般过去时叙述一次走到目的地的行动，通常理解为已经到达；不能把这种理解机械套用到所有含 to 的句子。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"英式写 towards、美式常写 toward；只说朝向用 towards，强调到达常用 to。\"",
+        "valueJson": "\"towards 在英式英语中较常见，toward 在美式英语中较常见。比较方向时，towards 表朝向，to 标目的地；是否到达看全句。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-towards\"]",
+        "valueJson": "[\"wiktionary-towards\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你在学校走廊里朝图书馆走去，towards the library；走到同学身边时转向他，是 turn towards a friend；老师对新同学耐心，是 patient towards new students；你攒钱买书包，则是 save money towards a backpack。几幅画面都记住一个共同点：注意力、方向或资源朝某个对象去。\"",
+        "valueJson": "\"想象你朝图书馆走去，walk towards the library，在较靠后的位置坐下，sit towards the back。老师对新同学友善，是 kind towards new students；你攒钱买书包，是 save money towards a backpack；你为成为护士努力，是 work towards becoming a nurse。等到快中午，towards noon，你再离开图书馆。把空间方向、态度对象、资源投入、目标进展和时间接近分别放进画面里。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"be patient towards someone：对某人有耐心。\"",
+        "valueJson": "\"be kind towards someone：对某人友善。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"进展\",\"text\":\"work towards becoming a nurse：为成为护士努力，尚未说明目标已实现。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"时间\",\"text\":\"towards noon：临近中午时。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-towards\",\"title\":\"Oxford Learner’s Dictionaries: towards\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/towards\",\"supports\":[\"towards/toward 的拼法及地区使用差异\",\"表示方向、态度和用于某目标的常见意义\",\"英美发音参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-towards\",\"title\":\"Wiktionnaire：towards（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/towards#Anglais\",\"supports\":[\"towards 为英语介词，概括释义涉及方向、关系对象和用途\",\"towards 主要见于英式英语，toward 较常见于美式英语\",\"towards 的英式两音节音标及美式带卷舌音的读音参考\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1447,
+    "headword": "towards (AmE toward)",
+    "meaning_zh": "prep. 向, 对于, 为了",
+    "phonetic": "/tә'wɔ:dz/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "toward",
+        "kind": "spelling"
+      }
+    ]
+  }
+}

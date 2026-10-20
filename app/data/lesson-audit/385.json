@@ -1,0 +1,280 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "58467010f2a13c76affba4b72b77fdbf361699af1c1631e02c201c2cc16fe181",
+    "executedReviewPromptHash": "58467010f2a13c76affba4b72b77fdbf361699af1c1631e02c201c2cc16fe181",
+    "reviewHash": "bdb2a89bab6040f694ae7ac444cdd6da66221a9e98f385ebd728ace22d694a8a",
+    "wordId": 385,
+    "inputHash": "6873a796859902c3c663ef1e9e865950f428e821212c645e2bc3d4dc8cb89638",
+    "draftHash": "72665ee6dd7907c63424afd4e217564be35fa2219c63ecb4ea1dd08eabe8f18d",
+    "finalHash": "90ef1087c60790450738de32150171813cdb04a452c897f470352d9f2eb76703",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/dining#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:47:33.242Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 367043,
+        "revisionId": 38059257,
+        "revisionTimestamp": "2025-04-12T09:55:39Z",
+        "sha256": "b1865d19abe66ada3f5ba9c13e81cd491332e404a0d14220755b892daf2b5583",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/dining",
+        "section": "dining etymology",
+        "supports": [
+          "Verbal noun from dine",
+          "Earlier feast meaning",
+          "Meal-related compounds"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "9d87991dbbcedd279214b1429a7cb768d8b4b226568cfeef594214bd13603429",
+        "summaryAndSupportsWordCount": 64,
+        "sha256": "9d87991dbbcedd279214b1429a7cb768d8b4b226568cfeef594214bd13603429",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/385.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/dining",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:42:23.989Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:45:37.391Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0 及引用 oxford 的 sourceIds",
+        "message": "实际来源材料没有 Oxford 页面的内容，不能把它作为本课已据以编写的来源。应改引已提供的英语词条和 Etymonline；没有直接来源支撑的词族说明保留为专业语言判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了英语词条所列的“设宴待客”义。该用法较少见，宜补入较少见义，并说明普通 dining 不必然表示宴请。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions/similar",
+        "message": "meal 和 diner 都不是 dining 表示用餐用途时的近义表达。应比较 eating area、restaurant car 等完整搭配，并限定替换范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote、examples、patterns",
+        "message": "已有动名词例句，但没有实际展示 be dining。宜补充进行时例句，并明确名词、动名词和现在分词的语法区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/1/title",
+        "message": "标题写的是 dining room 与 dining-room，正文实际比较的是 dining room 与误写 dine room，标题应与内容一致。"
+      }
+    ],
+    "coverageAssessment": "已核对社交用餐、设宴待客、dine 的 -ing 形式、表示用餐用途的前置修饰，以及早期宴饮或宴席义。保留现有两组主学内容及其例句，补充进行时实例和较少见的宴请义。历史义已由词源摘要交代，无须另造现代核心义或顺序词源阶段。现有标准读音、去 e 加 -ing、diner 的实际构词拼写及其余例句未见需要修改的实质错误。",
+    "senseInventory": [
+      {
+        "sense": "名词：用餐这一活动，尤其见于社交用餐和餐饮服务语境",
+        "coveredBy": [
+          "385-1"
+        ],
+        "assessment": "已覆盖，有两个生活例句；与具体一顿饭 meal 的区别正确。"
+      },
+      {
+        "sense": "名词：设宴待客；请人吃饭",
+        "coveredBy": [
+          "385-3"
+        ],
+        "assessment": "初稿遗漏；补入较少见义，提供正式语境例句及更常用的日常表达。"
+      },
+      {
+        "sense": "动词 dine 的 -ing 形式：用于动名词结构或进行时",
+        "coveredBy": [
+          "385-1"
+        ],
+        "assessment": "原有 enjoy dining 展示动名词；补充 be dining 的例句和句型，不另拆同义的核心义。"
+      },
+      {
+        "sense": "前置修饰功能：表示供用餐或与餐饮有关",
+        "coveredBy": [
+          "385-2"
+        ],
+        "assessment": "dining room、dining car 等已覆盖，两个核心例句自然；修正近义表达的分类。"
+      },
+      {
+        "sense": "历史名词义：宴饮；宴席",
+        "coveredBy": [],
+        "assessment": "已在 etymology.summary 中准确交代；属于历史信息，不作为初中常用义另设教学单元。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: dining\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/dining\",\"supports\":[\"dining 的拼写、发音和词性\",\"dining room 等常见搭配\",\"dine、dining、diner 的构词关系\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：dining（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/dining#Anglais\",\"supports\":[\"英语名词 dining 的社交用餐义\",\"dining 表示设宴待客的名词义\",\"英语词条所列的 dining 读音\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作名词时通常不可数；说具体的一顿饭，常用 meal。\"",
+        "valueJson": "\"作名词时通常不可数；说具体的一顿饭，常用 meal。dining 也是 dine 的 -ing 形式：enjoy dining 中是动名词，be dining 中是构成进行时的现在分词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"385-1-ex3\",\"senseId\":\"385-1\",\"en\":\"We are dining with friends right now.\",\"zh\":\"我们这会儿正和朋友一起用餐。\",\"note\":\"are dining 表示正在用餐；这里的 dining 是现在分词，与名词用法不同。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"be dining (with someone)\",\"zh\":\"正在（与某人一起）用餐\",\"note\":\"be 随主语和时态变化，dining 是现在分词；如 are dining 表示正在用餐。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"meal\",\"zh\":\"餐；一顿饭\",\"note\":\"表示饭或一顿饭本身；dining 表示用餐活动，或用于构成餐饮相关搭配。\"},{\"en\":\"diner\",\"zh\":\"用餐者；小餐馆\",\"note\":\"diner 可指吃饭的人，也可指一种小餐馆；不要与 dining 混为一谈。\"}]",
+        "valueJson": "[{\"en\":\"eating area\",\"zh\":\"用餐区\",\"note\":\"与 dining area 意思相近；不能据此把 dining room、dining table 中的 dining 都换成 eating。\"},{\"en\":\"restaurant car\",\"zh\":\"餐车\",\"note\":\"与 dining car 都可指火车上供乘客用餐的车厢；这种对应只适用于整个搭配。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"本义是修饰用途；meal 指一顿饭，diner 指用餐的人或小餐馆，词性和意思都不同。\"",
+        "valueJson": "\"表示用餐用途时，应比较完整搭配：dining area 可对应 eating area，dining car 可对应 restaurant car；这些对应不适用于所有含 dining 的表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"385-3\",\"title\":\"设宴待客（较少见）\",\"meaning\":\"指请人来吃饭、以宴餐招待客人这一活动。\",\"note\":\"这种名词用法较少见，偏正式；日常说“请人吃饭”通常用 invite someone to dinner，描述宴请活动也可用 entertaining guests at dinner。普通的 dining 不一定包含做东请客的意思。\",\"example\":{\"id\":\"385-3-ex1\",\"senseId\":\"385-3\",\"en\":\"The dining of visiting diplomats was part of the ambassador’s duties.\",\"zh\":\"宴请来访外交官是大使的职责之一。\",\"note\":\"正式语境中的 dining 指宴请待客；日常交流宜使用更直接的 invite someone to dinner 等表达。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"dining room 和 dining-room\"",
+        "valueJson": "\"dining room 与误写 dine room\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 385,
+    "headword": "dining",
+    "meaning_zh": "n. 用餐（如 dining room：餐厅）",
+    "phonetic": "/'dainiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

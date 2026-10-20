@@ -1,0 +1,428 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "92dbc244df9afcf01c451600c72cba21f47c12c0e84d4dae832b5d511cd78ad0",
+    "executedReviewPromptHash": "92dbc244df9afcf01c451600c72cba21f47c12c0e84d4dae832b5d511cd78ad0",
+    "reviewHash": "109b5bb6fdaa593d217cfbf3b5874a41846109b2a381bdad4733b4e719850943",
+    "wordId": 849,
+    "inputHash": "6cf5e3f78cc192c6a875debbde3da12c44664a14df24970860619f23de809bc4",
+    "draftHash": "fc504df3f83f8012c382864067ae413ad09d44b4504a9ef18f5c0e92cb58719d",
+    "finalHash": "6fcc7d4d63436f8f10cf50971c80748a6e8117e19230a4217b05b47619e1f31d",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/meeting#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:15.229Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115799,
+        "revisionId": 39910376,
+        "revisionTimestamp": "2026-09-29T22:18:16Z",
+        "sha256": "398d353e279cd11f06e83fb4cfabb2c00cb10c519cba2518147d09938c4c7f0a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/meeting",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T00:01:49.181Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:10:46.360Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/partOfSpeech；/senses；/confusions/0",
+        "message": "英语词条明确列有 meet 的现在分词用法，初稿未作为常用功能讲解；meeting/meet 的对比也遗漏了 meeting 的动词身份。须补充进行结构、已安排的将来会面及常见动名词功能，并修正相关例句的关联义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0",
+        "message": "现有定义可以涵盖集会和专业会议，但两个例句未明确呈现词典分别列出的这些场景。可在同一主干义内补足，无须机械拆义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "会面、偶遇和体育交锋混在一起，体育交锋没有对应例句，偶遇也未明确落实。将体育交锋移入较少见义并补例，主干义补充明确的偶遇例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote；/confusions/0/takeaway；/memoryAid",
+        "message": "对日常碰面的说明过于宽泛，容易让学生把普通的“见朋友”一律表达成 have a meeting with a friend。应说明名词会面常用于有安排的交谈，普通见朋友通常直接用 meet。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples；/senses/1/examples；/lessCommonSenses/0/example；/wordFamily/0/example",
+        "message": "六个例句对象缺少目标结构必填的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；相关 sourceIds",
+        "message": "Cambridge 未取得条目正文，Oxford 未提供来源材料，不能作为本次审核中已获得的支持。改用已取得的英语 Wiktionary 条目；仅依据专业语言知识保留的补充内容不挂未经取得的来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary",
+        "message": "构词说明本身正确，但“词典所列构词也支持”属于核验叙述。正文直接陈述 meet + -ing 的可靠构词关系即可；没有依据添加历史时间链。"
+      }
+    ],
+    "coverageAssessment": "已核对英语词条中的工作会议、集会、专业会议及 meet 的现在分词，并结合词条中文释义和专业语言知识核对会面、偶遇、宗教集会与体育交锋。补丁保留原有正确例句、发音和语境限定，补足常用动词功能、明确的分义例句及必填字段。法语是来源的说明语言，所审词条仍是英语。Cambridge 抓取失败、Oxford 无正文，均不作为本次证据；词源仅保留可确认的 meet + -ing，不推测更早历史。",
+    "senseInventory": [
+      {
+        "sense": "名词：会议，尤其为讨论、交流或决策而举行的会议",
+        "coveredBy": [
+          "meeting-noun-business"
+        ],
+        "assessment": "原有两个例句自然、准确，保留并补充必填注释。"
+      },
+      {
+        "sense": "名词：集会、聚集",
+        "coveredBy": [
+          "meeting-noun-business",
+          "meeting-religious"
+        ],
+        "assessment": "与会议义存在连续关系；补明公众集会场景，宗教集会保留为较少见用法。"
+      },
+      {
+        "sense": "名词：专业会议、学术会议或研讨会",
+        "coveredBy": [
+          "meeting-noun-business"
+        ],
+        "assessment": "属于会议义的专业场景，不另造主干义；补充国际研究会议例句。"
+      },
+      {
+        "sense": "名词：会面、相遇",
+        "coveredBy": [
+          "meeting-noun-encounter"
+        ],
+        "assessment": "原有会面和初次见面例句正确；补充明确的偶遇例句，并限定日常口语中的使用范围。"
+      },
+      {
+        "sense": "动词形式：meet 的现在分词，用于进行结构及已安排的将来会面",
+        "coveredBy": [
+          "meeting-verb-form"
+        ],
+        "assessment": "初稿遗漏的明确词典项目；新增独立功能说明及两个对应例句。"
+      },
+      {
+        "sense": "动词的 -ing 形式：动名词短语作主语等",
+        "coveredBy": [
+          "meeting-verb-form"
+        ],
+        "assessment": "依据专业语法知识补充常用功能，以第三个例句说明，避免与可数名词 a meeting 混淆。"
+      },
+      {
+        "sense": "名词：宗教集会",
+        "coveredBy": [
+          "meeting-religious"
+        ],
+        "assessment": "原例句正确，补充必填注释；具体宗教用法不归因于未取得的 Oxford 正文。"
+      },
+      {
+        "sense": "名词：比赛双方的一次交锋",
+        "coveredBy": [
+          "meeting-sports"
+        ],
+        "assessment": "从主干会面义移至较少见义，补充完整例句，避免只在释义和搭配中提到。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; -ing form of meet\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的 meeting 是“会议”；说两个人约好碰面，也可以用 meeting。\"",
+        "valueJson": "\"meeting 作名词时常指会议、集会或一次会面；也可作 meet 的 -ing 形式，如 I'm meeting the coach tomorrow（我明天已约好见教练）。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 a meeting（一次会议或会面）、be meeting someone（正在或按计划见面）和 Meeting friends ...（用见面活动作主语）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"会议；开会\"",
+        "valueJson": "\"会议；集会\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"人们为了讨论事情、交换信息或作决定而聚在一起的活动。\"",
+        "valueJson": "\"人们为了讨论事情、交换信息、作决定或表达共同意见等目的而聚在一起的活动，可指工作会议、公众集会或专业会议。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常和 have、hold、attend 等动词搭配。\"",
+        "valueJson": "\"这一义是可数名词，单数常用 a meeting。会议可以当面举行，也可以在线举行；常和 have、hold、attend 等动词搭配。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"have a class meeting 表示开班会；every Friday 表示每周固定的活动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"be in a meeting 表示正在开会。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meeting-business-ex-3\",\"senseId\":\"meeting-noun-business\",\"en\":\"The mayor spoke at a public meeting in the town hall.\",\"zh\":\"市长在市政厅举行的一场公众集会上发表了讲话。\",\"note\":\"public meeting 指公众可以参加的会议或集会。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meeting-business-ex-4\",\"senseId\":\"meeting-noun-business\",\"en\":\"The international meeting on climate research lasted three days.\",\"zh\":\"这场关于气候研究的国际会议持续了三天。\",\"note\":\"meeting 也可用于国际或专业交流会议；on 后接会议主题。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"与某人见面、碰面；也可指两方或两支队伍之间的一次交锋或较量。\"",
+        "valueJson": "\"与某人的一次会面或相遇，可以事先约好，也可以偶然发生。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 meeting with someone 表示与某人会面；偶然碰上某人也可说 a meeting with someone。\"",
+        "valueJson": "\"a meeting with someone 常指与某人约好的交谈或商谈；强调偶遇时常说 a chance meeting。普通日常的“见朋友”通常直接说 meet a friend，不能一律换成 have a meeting with a friend。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"meeting with + 人表示与某人的会面；went well 表示进展顺利。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"first meeting 在这里指两人第一次见面。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meeting-encounter-ex-3\",\"senseId\":\"meeting-noun-encounter\",\"en\":\"I had a chance meeting with an old friend on the bus.\",\"zh\":\"我在公交车上偶遇了一位老朋友。\",\"note\":\"chance meeting 明确表示事先没有约好的相遇。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/2/note",
+        "expectedValueJson": "\"first meeting 可指两人第一次相识，也可指双方第一次交手，按上下文理解。\"",
+        "valueJson": "\"这里指双方第一次见面；是否事先约好，要看上下文。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0",
+        "expectedValueJson": "{\"en\":\"a meeting between two teams\",\"zh\":\"两支队伍之间的一场交锋\",\"note\":\"between 后列出交锋的双方；meeting 可用于体育或竞赛语境。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"arrange a meeting with someone\",\"zh\":\"安排与某人会面\",\"note\":\"arrange 强调提前约定会面。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meeting-verb-form\",\"title\":\"meet 的 -ing 形式\",\"meaning\":\"meeting 也可作动词 meet 的 -ing 形式，与 be 构成进行结构；meeting someone 这样的短语还可作主语等。\",\"usageNote\":\"be meeting someone 可表示正在见面，也可表示已安排好的将来会面。动词形式 meeting 后直接接见面的对象；Meeting friends ... 这样的动名词短语可以表示“和朋友见面这件事”。\",\"examples\":[{\"id\":\"meeting-verb-ex-1\",\"senseId\":\"meeting-verb-form\",\"en\":\"We are meeting the new teacher now.\",\"zh\":\"我们现在正在和新老师见面。\",\"note\":\"are meeting 构成现在进行时；meeting 直接接宾语 the new teacher。\"},{\"id\":\"meeting-verb-ex-2\",\"senseId\":\"meeting-verb-form\",\"en\":\"I'm meeting Anna at the library tomorrow.\",\"zh\":\"我明天已约好在图书馆和安娜见面。\",\"note\":\"现在进行时搭配 tomorrow，表示已经安排好的将来会面。\"},{\"id\":\"meeting-verb-ex-3\",\"senseId\":\"meeting-verb-form\",\"en\":\"Meeting friends after school helps me relax.\",\"zh\":\"放学后和朋友见面能让我放松。\",\"note\":\"Meeting friends after school 整个动名词短语作主语，friends 是 meeting 的宾语。\"}],\"patterns\":[{\"en\":\"be meeting someone\",\"zh\":\"正在／按计划和某人见面\",\"note\":\"be 要随主语和时态变化，如 am meeting、is meeting、are meeting；结合时间状语判断时间。\",\"kind\":\"sentence-pattern\"},{\"en\":\"Meeting someone + 谓语\",\"zh\":\"和某人见面这件事……\",\"note\":\"meeting 开头的动名词短语可作主语，如 Meeting friends helps me relax。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"meeting friends\",\"zh\":\"和朋友见面\",\"note\":\"这里是动词的 -ing 短语，friends 是直接宾语。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"get together\",\"zh\":\"相聚\",\"note\":\"在人们见面、相聚的语境中与 meet 接近；用于进行结构时写作 be getting together。\"}],\"contrasting\":[{\"en\":\"say goodbye\",\"zh\":\"告别\",\"note\":\"只在相聚与告别的语境中形成对照；用于进行结构时写作 be saying goodbye。\"}],\"similarNote\":\"这里只比较与人见面、相聚的用法；替换时仍须调整语法结构。\",\"contrastingNote\":\"告别是这一见面场景的情境对照，不是 meeting 这个词形在所有用法中的反义词。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"prayer meeting 指信徒聚在一起祷告的集会。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meeting-sports\",\"title\":\"比赛中的交锋\",\"meaning\":\"两个人或两支队伍在比赛中的一次交手。\",\"note\":\"常见于体育报道；a meeting between two teams 表示两队之间的一场交锋。\",\"example\":{\"id\":\"meeting-sports-ex-1\",\"senseId\":\"meeting-sports\",\"en\":\"This is the third meeting between the two teams this season.\",\"zh\":\"这是本赛季这两支球队的第三次交锋。\",\"note\":\"third meeting 指第三次对阵，不是第三次开会。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/senseId",
+        "expectedValueJson": "\"meeting-noun-business\"",
+        "valueJson": "\"meeting-verb-form\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"meeting 是名词，常指会议或会面；meet 是动词，表示见面或遇见。\"",
+        "valueJson": "\"meeting 既可作名词，也可作 meet 的 -ing 形式；meet 是动词原形，可用在 will、can 等词后，如 will meet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/senseId",
+        "expectedValueJson": "\"meeting-noun-encounter\"",
+        "valueJson": "\"meeting-verb-form\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"表示“开会”说 have a meeting；表示“见面”可说 meet someone 或 have a meeting with someone。\"",
+        "valueJson": "\"have a meeting 表示开会；a meeting with someone 表示一次会面。动词 meet someone 表示见面，be meeting someone 可表示正在见面或已安排好的会面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"现代构词上，meeting 是动词 meet 加 -ing 构成的名词，表示见面或聚会这件事；英语词典所列构词也支持这一拆分。\"",
+        "valueJson": "\"meeting 由英语动词 meet 加后缀 -ing 构成。作名词时表示会议、聚会或会面；同样的词形也用作 meet 的现在分词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"meeting-noun-encounter\"",
+        "valueJson": "\"meeting-verb-form\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里用一般现在时说日常活动；主语为 I，动词用原形 meet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象班长走进教室，大家围坐讨论春游计划：大家聚到一起，就是 a meeting。放学后你又和同学碰面，也可以说 a meeting with a friend。\"",
+        "valueJson": "\"想象班长走进教室，大家围坐讨论春游计划：这是一次会议（a meeting）。放学后，你又和教练约好讨论训练安排：这是 a meeting with the coach。你还可以说 I'm meeting the coach after school，表示已经安排好放学后见教练。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"和某人见面：a meeting with someone。\"",
+        "valueJson": "\"与教练约好谈训练：a meeting with the coach。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词形式\",\"text\":\"I'm meeting the coach after school：已约好放学后见教练。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: meeting\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/meeting\",\"supports\":[\"meeting 的名词用法、会议及会面相关用法\",\"常见搭配与英美发音\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: meeting\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/meeting\",\"supports\":[\"meeting 的名词用法及较少见语境\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary\",\"title\":\"Wiktionary: meeting (English)\",\"url\":\"https://fr.wiktionary.org/wiki/meeting#Anglais\",\"supports\":[\"meet 与 -ing 的现代构词关系\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：meeting（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/meeting#Anglais\",\"supports\":[\"meeting 的会议、集会及专业会议用法\",\"meeting 是 meet 的现在分词\",\"meet 加后缀 -ing 的构词关系\",\"英语词条列出的英美发音\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 849,
+    "headword": "meeting",
+    "meaning_zh": "n. 会议, 会面",
+    "phonetic": "/'mi:tiŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

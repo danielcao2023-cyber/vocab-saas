@@ -1,0 +1,317 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "c31deac7b199871bdfe4b25c694a1bf8503ec380fbb3258a110308cb1e497baa",
+    "executedReviewPromptHash": "c31deac7b199871bdfe4b25c694a1bf8503ec380fbb3258a110308cb1e497baa",
+    "reviewHash": "27ca2a6f4ed09194595cd3bd7ff5583a4d4a273d8fdd71e49fc718432ffe6188",
+    "wordId": 843,
+    "inputHash": "02ccdf24b8963c34c29a95927b5a44fcdf1575a198f31d5761f1a2487d9090ba",
+    "draftHash": "efa6702050e63e907d5a36255ee14442c2cef42a8cf1094ee7087b2e169f0e4d",
+    "finalHash": "4c50d25780b187558c0d4e618ab708ba0552ada348cc307811d6eecee1772246",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/meat#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:15.229Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 223369,
+        "revisionId": 39763396,
+        "revisionTimestamp": "2026-08-03T04:31:38Z",
+        "sha256": "21871466859f0fb8e3beb59d4c13bd6a3c9bb2d876d4556d7f5471dbe90be163",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/meat",
+        "section": "meat etymology",
+        "supports": [
+          "General food to animal flesh; conflicting remote reconstruction bounded"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T05:12:02.593145+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "486a8566570c055d720ff46cf855b9f83fe6543a2200d689c76032fd3297a5b0",
+        "summaryAndSupportsWordCount": 58,
+        "sha256": "486a8566570c055d720ff46cf855b9f83fe6543a2200d689c76032fd3297a5b0",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/843.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/meat",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T23:54:48.947Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T00:01:42.499Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/headline; /takeaway",
+        "message": "比喻义不限于“食物的核心内容”；“一顿饭”也不是现代较正式或比喻性的常用义，应明确其历史属性。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "两个例句中的 meat 在现代英语中都会自然理解为动物肉，无法支持“热饭／泛指食物”的译文。该历史义不宜与现代核心义并列训练；改列少见义，用保留旧义的固定表达说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0及引用cambridge_meat的位置",
+        "message": "Cambridge 页面未取得正文，不能作为这些具体教学结论的已取得依据。改引实际取得的 Wiktionnaire 英语词条；没有直接来源支撑的普通辨析说明清空来源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "a piece of meat 表示“一块肉”，不能直接解释为“一份肉食”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/0",
+        "message": "chicken meat 语法正确，但普通午餐叙述中较生硬。改为自然的 meat and rice，保留目标词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "detail 只是具体细节，完全可能构成实质内容，不宜作为该义的反向表达。评价文章或讲话时，可用 filler 与 meat 形成有明确语境限制的对照。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily; /wordFamilyNote",
+        "message": "“没有适合掌握的常用派生词”不准确；meaty 是常用派生形容词，且已出现在取得的相关词列表中，应补充真实构词、拼写和例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "词典另列粗俗俚语义“阴茎”。补充简短识别项和语域限制即可，不作为初中核心用法训练。"
+      }
+    ],
+    "coverageAssessment": "已核对肉类、实质内容、粗俗俚语三个词典义，并核对历史上的食物、滋养及一餐义。修订后两个现代教学核心义各保留两个自然例句；历史食物义及粗俗俚语列为识别项，“一餐”仅作为词义史知识说明。词源保留可靠的古英语到现代英语发展，不推定存在争议的远古词根。",
+    "senseInventory": [
+      {
+        "sense": "供食用的动物肉；肉类",
+        "coveredBy": [
+          "meat-1"
+        ],
+        "assessment": "核心义覆盖充分；通常不可数及表示种类时的 meats 均有说明，修正量词解释并润色一个例句。"
+      },
+      {
+        "sense": "文章、讨论等的实质内容或核心部分",
+        "coveredBy": [
+          "meat-3"
+        ],
+        "assessment": "两个例句和 the meat of something 结构有效；修正不成立的 detail 对照。"
+      },
+      {
+        "sense": "泛指食物、滋养之物，历史上也包括动物饲料",
+        "coveredBy": [
+          "meat-2"
+        ],
+        "assessment": "移至少见义，以保留旧义的谚语说明；不再把现代普通句中的肉强译成食物。"
+      },
+      {
+        "sense": "一顿饭；一餐（历史义）",
+        "coveredBy": [],
+        "assessment": "在词源中说明，不作为现代可直接套用的独立义项训练；日常表达使用 meal。"
+      },
+      {
+        "sense": "阴茎（粗俗俚语）",
+        "coveredBy": [
+          "meat-4"
+        ],
+        "assessment": "补充低优先级识别项，明确语域，不扩展为核心教学义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"meat：肉类；也可指食物的核心内容\"",
+        "valueJson": "\"meat：肉类；也可比喻文章、讨论等的实质内容\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"meat 通常指供人食用的动物肉，是不可数名词；在较正式或比喻的表达里，也可指一顿饭，或某件事最重要、最实在的部分。\"",
+        "valueJson": "\"meat 最常指供人食用的动物肉，通常不可数；the meat of something 指某事最重要、最实在的内容。泛指“食物”或“一顿饭”属于古旧用法，现代日常表达通常用 food 或 meal。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_meat\"]",
+        "valueJson": "[\"wiktionary_meat\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词通常作不可数用法，表示肉或食物；表示不同种类时可见 meats，但初中常用义一般不加复数。\"",
+        "valueJson": "\"表示肉时通常不可数；表示不同种类时可用 meats，如 different meats（不同种类的肉），但不能用 a meat 表示“一块肉”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"说“一些肉”用 some meat；说一份具体肉食可用 a piece of meat。meat 通常不指鱼肉。\"",
+        "valueJson": "\"说“一些肉”用 some meat；说“一块肉”用 a piece of meat。在日常饮食分类中，meat 常与 fish 分开。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"meat-1-ex1\",\"senseId\":\"meat-1\",\"en\":\"We had chicken meat and rice for lunch.\",\"zh\":\"我们午饭吃了鸡肉和米饭。\",\"note\":\"用 chicken meat 明确说鸡肉；日常也常直接说 chicken。\"}",
+        "valueJson": "{\"id\":\"meat-1-ex1\",\"senseId\":\"meat-1\",\"en\":\"We had meat and rice for lunch.\",\"zh\":\"我们午饭吃了肉和米饭。\",\"note\":\"这里 meat 泛指午饭中的肉，作不可数名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_meat\"]",
+        "valueJson": "[\"wiktionary_meat\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"detail\",\"zh\":\"细节\",\"note\":\"在概括内容时，detail 可与核心要点相对，指较小的具体信息。\"}",
+        "valueJson": "{\"en\":\"filler\",\"zh\":\"凑篇幅的内容\",\"note\":\"评价文章或讲话时，filler 可指缺乏实质内容、只是凑篇幅的部分，与 meat 所指的实质内容形成对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在谈内容重点时，可用 detail 对照核心部分，表示具体细节。\"",
+        "valueJson": "\"在评价文章或讲话是否有实质内容时，可用 filler 与 meat 对照；二者不是所有语境中都能互换的反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge_meat\"]",
+        "valueJson": "[\"wiktionary_meat\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_meat\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge_meat\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages/1/meaning",
+        "expectedValueJson": "\"常指供人食用的动物肉；也保留少见的“食物”义，并发展出“核心内容”的比喻义。\"",
+        "valueJson": "\"通常指供人食用的动物肉，也可比喻实质内容；泛指食物的旧义主要见于古旧文字或固定表达。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"meaty\",\"partOfSpeech\":\"形容词\",\"meaning\":\"肉多的；（文章、讨论等）内容充实的\",\"formation\":\"meat 加形容词后缀 -y。\",\"spellingNote\":\"保留 meat 的 ea 和 t，直接加 y，写作 meaty。\",\"example\":{\"id\":\"meaty-ex1\",\"senseId\":\"meat-3\",\"en\":\"We had a meaty discussion about how to improve school lunches.\",\"zh\":\"我们就如何改善学校午餐进行了一场内容充实的讨论。\",\"note\":\"meaty 在这里表示讨论有实质内容，呼应 meat 的比喻义。\"},\"sourceIds\":[\"wiktionary_meat\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本课常见义项没有适合初中生掌握的常用派生词；meatball、meatloaf 等是由 meat 构成的复合词，不列作派生词族。\"",
+        "valueJson": "\"meaty 是 meat 加 -y 构成的常用形容词，既可说肉多，也可说内容充实；meatball、meatloaf 则是复合词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_meat\",\"title\":\"Cambridge Dictionary：meat\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/meat\",\"supports\":[\"肉类的常见义项及不可数用法\",\"meat 表示食物或一顿饭的少见义项\",\"the meat of something 表示核心内容的比喻用法\",\"英式和美式发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_meat\",\"title\":\"Wiktionnaire：meat（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/meat#Anglais\",\"supports\":[\"肉类义、实质内容比喻义及粗俗俚语义\",\"英式和美式发音 /miːt/\",\"meaty 等相关词条入口\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1",
+        "expectedValueJson": "{\"id\":\"meat-2\",\"title\":\"一顿饭；食物\",\"meaning\":\"较少见或较旧的用法，指食物或一顿饭；日常英语通常用 food 或 meal。\",\"usageNote\":\"初中阅读中了解即可。meal 强调“一顿饭”，food 是“食物”的常用总称。\",\"examples\":[{\"id\":\"meat-2-ex1\",\"senseId\":\"meat-2\",\"en\":\"After the long walk, the warm meat was welcome.\",\"zh\":\"走了很久之后，这顿热饭真让人高兴。\",\"note\":\"这里的 meat 指一顿食物，属于少见用法。\"},{\"id\":\"meat-2-ex2\",\"senseId\":\"meat-2\",\"en\":\"The travelers shared meat by the fire.\",\"zh\":\"旅行者们在火边分吃食物。\",\"note\":\"语境带有较旧的叙述色彩，meat 泛指食物。\"}],\"patterns\":[{\"en\":\"a good meal\",\"zh\":\"一顿不错的饭\",\"note\":\"现代英语表达“一顿饭”通常用 meal。\",\"kind\":\"common-collocation\"},{\"en\":\"food for the journey\",\"zh\":\"旅途中的食物\",\"note\":\"现代英语说泛指食物通常用 food。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"share a meal\",\"zh\":\"一起吃一顿饭\",\"note\":\"meal 是表示一顿饭的常用词，常与 share 搭配。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"food\",\"zh\":\"食物\",\"note\":\"food 是现代英语中泛指食物的常用词；此义 meat 较少见。\"},{\"en\":\"meal\",\"zh\":\"一顿饭\",\"note\":\"meal 指一次有安排的进餐，重点是一顿饭。\"}],\"contrasting\":[],\"similarNote\":\"这几个词都涉及吃的东西；现代表达中按意思选 food（食物）或 meal（一顿饭）。\",\"contrastingNote\":\"这个少见义没有稳定的反义词；food 和 meal 是更常用的对应表达。\"},\"sourceIds\":[\"cambridge_meat\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meat-2\",\"title\":\"食物（古旧义）\",\"meaning\":\"旧时可泛指食物，而不限于动物肉；这一含义仍保留在一些固定表达中。\",\"note\":\"现代普通表达“食物”用 food，“一顿饭”用 meal。不要根据历史含义把普通句子中的 meat 随意译成“饭”。\",\"example\":{\"id\":\"meat-2-rare-ex1\",\"senseId\":\"meat-2\",\"en\":\"I love this cheese, but Mia hates it: one man's meat is another man's poison.\",\"zh\":\"我喜欢这款奶酪，米娅却讨厌它：真是各有所好。\",\"note\":\"谚语 one man's meat is another man's poison 中的 meat 保留泛指食物的旧义；整句也可表示同一事物对不同人利弊不同。\"},\"sourceIds\":[\"etymonline_meat\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"meat-4\",\"title\":\"阴茎（粗俗俚语，仅供识别）\",\"meaning\":\"在部分粗俗的性话语中指阴茎。\",\"note\":\"不属于初中日常表达；遇到时识别含义和语域即可。\",\"example\":{\"id\":\"meat-4-ex1\",\"senseId\":\"meat-4\",\"en\":\"In the joke, 'meat' was a crude word for the penis.\",\"zh\":\"在那个笑话中，meat 是指阴茎的粗俗用语。\",\"note\":\"这里通过说明词义来帮助识别这一俚语，不按食物义理解。\"},\"sourceIds\":[\"wiktionary_meat\"]}"
+      }
+    ]
+  },
+  "input": {
+    "id": 843,
+    "headword": "meat",
+    "meaning_zh": "n. 肉, 餐, 食物",
+    "phonetic": "/mi:t/",
+    "pos": "",
+    "forms": []
+  }
+}

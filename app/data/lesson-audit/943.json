@@ -1,0 +1,411 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7198400808b5923331cb148c7d22b0b5c48d628f8566b71d301b421045811b09",
+    "executedReviewPromptHash": "7198400808b5923331cb148c7d22b0b5c48d628f8566b71d301b421045811b09",
+    "reviewHash": "4f2391f2474b9c84998c83ddca10b3d4efab8b0c5195ee9d19a0214e28700fda",
+    "wordId": 943,
+    "inputHash": "2a80c7e305ab0ade429eeaf8b850d509c045aa8791f9c9dbb8b79f8531991fd1",
+    "draftHash": "88b856f47fc4be4617447fc3c7e4fe5a3bfea25a2f92c44e881f4a169fc0ce1c",
+    "finalHash": "e42af7d5b68c824c82d97b6e9c3e15e49b51297c7309d84a910788a633ffcd67",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/officer#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:32.450Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 86131,
+        "revisionId": 33774026,
+        "revisionTimestamp": "2024-03-15T06:10:37Z",
+        "sha256": "34efa67d7d51bddb49195fac74da5243e754ca72df26bd5f321ba1e7720e33db",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/officer",
+        "section": "officer noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "c1870eb852fb952e0797da2b04a31bf0ba7c8cea403c2ba697a8caf46040b9dc",
+        "summaryAndSupportsWordCount": 66,
+        "sha256": "c1870eb852fb952e0797da2b04a31bf0ba7c8cea403c2ba697a8caf46040b9dc",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/943.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/officer",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:19:25.083Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:34:15.538Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了英语词条明确列出的情报机构人员义，以及“配备军官”“以军官身份指挥”两项少见动词义。应补入较少见义，并相应补充词性标注。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "机构义被扩大成普通职员或任意活动负责人；an officer of the company 也不能泛指公司员工。应明确正式职务与公司高级职员的边界，并用卫生、公司和社团场景覆盖所列含义。助记中的普通活动负责人也需同步调整。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similar/1",
+        "message": "employee 表示雇佣关系，不是 officer 的近义词。宜换成适用于正式任职语境的 office-holder，并保留与 employee 的区别说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/0/en",
+        "message": "an army / naval / air force officer 的并列写法会产生错误的 an naval officer；各项应分别写明冠词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/patterns/0/note",
+        "message": "不能直接在单数 police officer 前放大于一的数量词；应同时说明复数变化。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "military officer 不泛指军方机构的所有工作人员；enlisted soldier 强调非军官身份，不等于泛泛的入伍人员。应同时说明 commissioned officer 与 non-commissioned officer 的区别。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/summary",
+        "message": "officer 与 office 在这里都是名词，“词性不同”属于事实错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages/1",
+        "message": "法语阶段的 meaning 只是来源位置说明，不是历史词义。材料能证实 oficier 这一中间形式，但未单列其释义；应删除该占位阶段，完整传入路线保留在 summary。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "原列 /ɪ/ 读音可以成立，不应笼统断言“旧音标不准确”。应说明弱读元音的口音差异，并加入实际取得的 Wiktionnaire 英语词条作为来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0/meaning",
+        "message": "“担任专业职责”的范围过宽，可能包括普通船员；应明确指担任指挥、驾驶、轮机等重要职务的高级船员。"
+      }
+    ],
+    "coverageAssessment": "已核对警务、军事、公务及机构任职、社团和公司职务、航海、情报机构人员与两项少见动词用法。修订后常用义均保留至少两个例句，s3 以三个场景覆盖其子义；专业和罕见用法列入 lessCommonSenses。词源路线依据已取得的词源材料核对，删除无释义的阶段占位。Oxford、Cambridge 保留为推荐链接，不视为本次已读取的证据。",
+    "senseInventory": [
+      {
+        "sense": "名词：警察；警官",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "已有两个自然例句；修正数量词与名词单复数的搭配说明。"
+      },
+      {
+        "sense": "名词：军官",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已有两个例句；修正并列冠词，并明确军官、士官和士兵的身份边界。"
+      },
+      {
+        "sense": "名词：公务官员及机构中承担特定职责的人员",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "卫生检查例句覆盖此义；修订定义，避免泛指所有工作人员。"
+      },
+      {
+        "sense": "名词：社团职务人员；公司高级职员",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "原活动负责人例句不足以成立；改用公司财务高管例句，并补充社团选举例句。"
+      },
+      {
+        "sense": "名词：船舶高级船员",
+        "coveredBy": [
+          "ls1"
+        ],
+        "assessment": "保留专业用法，收紧定义，避免包括普通专业船员。"
+      },
+      {
+        "sense": "名词：情报机构内部工作人员",
+        "coveredBy": [
+          "ls2"
+        ],
+        "assessment": "补入该义，并限定与 agent 的区别只适用于相关情报专业用法。"
+      },
+      {
+        "sense": "动词：为……配备军官",
+        "coveredBy": [
+          "ls3"
+        ],
+        "assessment": "补入少见及物动词用法、规则变化及原创例句。"
+      },
+      {
+        "sense": "动词：以军官身份指挥",
+        "coveredBy": [
+          "ls4"
+        ],
+        "assessment": "补入少见用法，并提示现代通常使用 command 或 lead。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "add",
+        "path": "/sources/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：officer（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/officer#Anglais\",\"supports\":[\"英语名词义，包括情报机构人员与 agent 的专业区别\",\"officer 的两项少见动词义\",\"英美读音及中间弱读元音的差异\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb (rare)\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"朗读 officer，听清开头重音和中间的 /ɪ/ 音。\"",
+        "valueJson": "\"朗读 officer，注意第一音节重读，并辨认中间弱读的 /ɪ/ 或 /ə/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/2",
+        "expectedValueJson": "\"旧音标不准确；常见英式读音为 /ˈɒf.ɪ.sə(r)/。\"",
+        "valueJson": "\"中间音节不重读；/ɪ/ 是常见读法，美式也可读 /ˈɑf.ə.sɚ/，中间元音弱读为 /ə/。\""
+      },
+      {
+        "op": "add",
+        "path": "/pronunciation/sourceIds/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"src-wiktionary\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"最常见的警察义搭配；前面可用 a 或具体数量词。\"",
+        "valueJson": "\"单数用 a police officer；数量大于一时用复数，如 two police officers。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/en",
+        "expectedValueJson": "\"an army / naval / air force officer\"",
+        "valueJson": "\"an army officer / a naval officer / an air force officer\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常和 army、navy、air force 等军种名称搭配；军官与普通士兵的身份不同。\"",
+        "valueJson": "\"常说 army officer、naval officer、air force officer。军队语境中单说 officer 通常指军官；non-commissioned officer 则是指士官的固定称谓。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0",
+        "expectedValueJson": "{\"en\":\"commissioned officer\",\"zh\":\"有正式任命军衔的军官\",\"note\":\"较正式、具体的军事用语；范围和军队制度有关。\"}",
+        "valueJson": "{\"en\":\"commissioned officer\",\"zh\":\"获正式军官任命的人\",\"note\":\"强调通过 commission 获得军官身份，与 non-commissioned officer（士官）有别。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"military officer\",\"zh\":\"军官；军方官员\",\"note\":\"可泛指军队中的军官，语境有时也包括军方机构职务人员。\"}",
+        "valueJson": "{\"en\":\"military officer\",\"zh\":\"军官\",\"note\":\"泛指军队中的军官，不限定军种；不能泛指军方机构里的所有工作人员。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"enlisted soldier\",\"zh\":\"士兵；应征入伍人员\",\"note\":\"在军队身份区分中，与军官相对；具体制度因国家而异。\"}",
+        "valueJson": "{\"en\":\"enlisted soldier\",\"zh\":\"士兵（包括士官，区别于军官）\",\"note\":\"指以非军官身份服役的陆军人员，包括士官；是否为义务兵须另看语境。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"military officer 较宽泛；commissioned officer 指具有正式军官任命身份的人。\"",
+        "valueJson": "\"military officer 泛指各军种军官；commissioned officer 强调正式军官任命，区别于 non-commissioned officer（士官）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"官员；职员；负责人\"",
+        "valueJson": "\"官员；社团干部；公司高级职员\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"在政府、机构、组织或企业中担任正式职务、负责某项事务的人。\"",
+        "valueJson": "\"在政府或机构中负责特定事务的人员；也指社团中担任正式职务的成员，或公司中具有正式管理职权的高级人员。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"单独的 officer 不一定是政府官员；可用所属机构或职位前的修饰词说明职责。\"",
+        "valueJson": "\"通常用岗位或机构名称说明职责，如 health officer、club officer、chief financial officer。不能把所有雇员或任何活动组织者都称为 officer；an officer of a company 通常指有正式职权的高级职员。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"ex6\",\"senseId\":\"s3\",\"en\":\"Please speak to the officer in charge of the event.\",\"zh\":\"请找负责这次活动的负责人谈谈。\",\"note\":\"in charge of 表示负责。\"}",
+        "valueJson": "{\"id\":\"ex6\",\"senseId\":\"s3\",\"en\":\"The company's chief financial officer explained the new budget.\",\"zh\":\"公司的首席财务官解释了新的预算方案。\",\"note\":\"chief financial officer（CFO）是公司高级管理职位，不能用 officer 泛指所有公司员工。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ex-s3-3\",\"senseId\":\"s3\",\"en\":\"The club elected three new officers at its annual meeting.\",\"zh\":\"俱乐部在年会上选出了三名新干部。\",\"note\":\"这里指社团中正式担任会长、秘书、财务等职务的成员。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/0",
+        "expectedValueJson": "{\"en\":\"an officer of the company\",\"zh\":\"公司的职员／负责人\",\"note\":\"of 后说明所属机构，具体职级由上下文决定。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"an officer of the company\",\"zh\":\"公司的高级职员\",\"note\":\"指在公司中有正式职权的人员，如董事或高管；具体范围随法律和公司制度而异。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"the officer in charge of ...\",\"zh\":\"负责……的负责人\",\"note\":\"in charge of 后接负责的事项或部门。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"the officer in charge of ...\",\"zh\":\"主管……的官员／负责人\",\"note\":\"in charge of 后接负责的事项或部门；常见于警务、军务或正式机构的职责分工，officer 本身仍须有相应的任职背景。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"employee\",\"zh\":\"雇员\",\"note\":\"强调受雇关系，不一定有正式职务或管理职责。\"}",
+        "valueJson": "{\"en\":\"office-holder\",\"zh\":\"担任公职或组织职务的人\",\"note\":\"适用于强调正式任职身份的政府或社团语境；不能替换 police officer 等职务名称中的 officer。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"official 与 officer 都可指官员，但 official 更常突出官方身份；employee 只强调受雇。\"",
+        "valueJson": "\"official 作名词可与政府、机构官员义相近；office-holder 强调担任正式职务。employee 只表示雇佣关系，不能直接等同于 officer。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在船舶上担任专业职责或管理职责的船员。\"",
+        "valueJson": "\"在船舶上担任指挥、驾驶、轮机等重要职务的高级船员，区别于普通船员。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls2\",\"title\":\"情报机构内部工作人员\",\"meaning\":\"正式属于情报机构并在其中工作的人员。\",\"note\":\"在这一专业用法中，intelligence officer 是机构内部人员，agent 可指受招募为机构工作、却不属于机构的线人。这个区别不能套用到 agent 的所有用法。\",\"example\":{\"id\":\"ex-ls2\",\"senseId\":\"ls2\",\"en\":\"The intelligence officer compared reports from several sources.\",\"zh\":\"那名情报官员对照分析了来自多个渠道的报告。\",\"note\":\"intelligence officer 指情报机构内部任职人员。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls3\",\"title\":\"动词：为……配备军官\",\"meaning\":\"为部队、舰船等配备军官。\",\"note\":\"少见及物动词，多用于军事或历史叙述；规则变化为 officers、officered、officering，拼写时不双写 r。\",\"example\":{\"id\":\"ex-ls3\",\"senseId\":\"ls3\",\"en\":\"The regiment was officered by graduates of the military academy.\",\"zh\":\"这个团的军官由军校毕业生担任。\",\"note\":\"was officered by ... 表示由哪些人担任军官。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"ls4\",\"title\":\"动词：以军官身份指挥\",\"meaning\":\"以军官身份指挥或统率。\",\"note\":\"极少见，主要用于旧式或历史叙述；现代普通表达通常使用 command 或 lead。\",\"example\":{\"id\":\"ex-ls4\",\"senseId\":\"ls4\",\"en\":\"He officered the troops during the campaign.\",\"zh\":\"战役期间，他以军官身份指挥这支部队。\",\"note\":\"officered 在这里是动词过去式，表示指挥。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"officer 是“官员、军官、警官”等人；office 通常是“办公室”或“职务”。两词拼写和词性不同。\"",
+        "valueJson": "\"officer 是“官员、军官、警官”等人；office 通常是“办公室”或“职务”。两词拼写和意思不同，这里都作名词。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"法语\",\"form\":\"oficier\",\"meaning\":\"传入英语前的法语形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象校门口有三个人出示证件：警官佩戴警徽，军官拿着部队证，活动负责人举着写有姓名和职责的工作牌。三人职责不同，却都承担正式职务——这帮助你记住 officer 要看上下文判断是哪类任职者。\"",
+        "valueJson": "\"想象校门口有三个人出示证件：警官佩戴警徽，军官拿着部队证，学校的安全专员举着写有 safety officer 的工作牌。三人职责不同，却都承担特定的正式职务——这帮助你记住 officer 要看上下文判断是哪类任职者。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2/text",
+        "expectedValueJson": "\"officer in charge：负责人\"",
+        "valueJson": "\"safety officer：安全专员\""
+      }
+    ]
+  },
+  "input": {
+    "id": 943,
+    "headword": "officer",
+    "meaning_zh": "n. 官员；军官；警官",
+    "phonetic": "/'ɒfisә/",
+    "pos": "",
+    "forms": []
+  }
+}

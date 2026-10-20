@@ -1,0 +1,441 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "63f4a2414b7139a09975d0fb2ec3e34572b45e452cd9599a9b1d7a0b67efaf45",
+    "executedReviewPromptHash": "63f4a2414b7139a09975d0fb2ec3e34572b45e452cd9599a9b1d7a0b67efaf45",
+    "reviewHash": "3123e15362ccb2f1afe8532504b58dc74458adac77c35c2c8238effab834d54b",
+    "wordId": 1466,
+    "inputHash": "4383dccf5f919b668afa7ce0dab1f7d724552c68eb96bb47a41d6872d6f900d8",
+    "draftHash": "feea170f0936725d97a9c588d52c0f7f6c1331ab0090c46dfce7f08fdb9a4b1a",
+    "finalHash": "6bd3825bd25a19a0559ac585e8f4652e8508ef7f68c2570bb2f8b7396f1603d1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/trust#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:17.820Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10359,
+        "revisionId": 39764964,
+        "revisionTimestamp": "2026-08-03T04:59:56Z",
+        "sha256": "70db5f4ce9920ee5b9c42aa3e70697728b2f4e24928eb431484da10a16081289",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/trust",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T19:44:46.966Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:00:59.194Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及各 sourceIds",
+        "message": "原稿的来源关联没有对应实际取得的词典正文：Oxford 不在提供的来源材料中，Cambridge 获取失败。应改引已取得的英语词条；仅依据专业语言知识补充的内容不冒充上述网页的支持。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "把 trusts 常规解释为“多种信任关系”会误导可数性学习。表示一般的信任时，trust 通常不可数；常见可数义是信托和托拉斯。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "trust in 所表达的信赖、信念功能只在概述和辨析中出现，缺少核心义中的充分示例。应明确其结构，并补充两个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples",
+        "message": "本义合并了“相信内容属实”和正式表达中的“希望”，但各只有一个例句；两种功能应分别达到两个例句，并说明 I trust 往往带有积极预期。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/examples/1/zh",
+        "message": "received funds from a family trust 是从家族信托获得资金，不是收到了一个家族信托基金。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏了名词 trust 表示受托责任、重托的较正式用法。应补充并与普通的信任义区分。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1/example",
+        "message": "标签是 trust in someone，例句却以 experience 为宾语。原句语法正确，但换成人作宾语才能直接展示该标签。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily/0/meaning",
+        "message": "trusting 不一定含贬义；只写“轻信”容易把其含义限制得过窄。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/caveat",
+        "message": "“不要把 trust 拆成 trust 的字母”表述空泛。已取得页面的词源部分没有实质历史内容，保留空 stages 合理，只需明确现代联想不代表历史演变。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对名词信任、动词信任与托付、trust in 的信赖功能、相信说法属实、正式希望、法律信托、托拉斯、受托责任及旧式赊卖义。补丁补足常用功能的例句，并新增较正式的受托责任义；同时说明 trust fund 等组合中的名词前置修饰功能，无须机械新增普通形容词义。词形、读音、主要搭配及近反义关系整体成立。所附英语词条没有可用的历史词源叙述，因此不补造历史阶段；来源未覆盖的用法按专业语言知识处理，不保留无依据的网页归属。",
+    "senseInventory": [
+      {
+        "sense": "名词：信任、信赖、信心",
+        "coveredBy": [
+          "trust-n1"
+        ],
+        "assessment": "两个例句自然；补明通常不可数，修正 trusts 的说明。"
+      },
+      {
+        "sense": "动词：信任某人或事物可靠",
+        "coveredBy": [
+          "trust-v1"
+        ],
+        "assessment": "已有充分句型与例句，补丁扩展释义以容纳对事物的信赖。"
+      },
+      {
+        "sense": "动词：放心托付，相信某人会做某事",
+        "coveredBy": [
+          "trust-v1"
+        ],
+        "assessment": "trust someone with something 与 trust someone to do something 已分别展示，归入可靠性义合理。"
+      },
+      {
+        "sense": "动词：trust in，对人、能力或信仰怀有信赖",
+        "coveredBy": [
+          "trust-v1"
+        ],
+        "assessment": "补充明确句型及两个原创例句，覆盖实际依靠和信仰语境。"
+      },
+      {
+        "sense": "动词：相信说法或情况属实",
+        "coveredBy": [
+          "trust-v2"
+        ],
+        "assessment": "补丁使该功能有两个例句，包含名词宾语和 that 从句。"
+      },
+      {
+        "sense": "动词：正式地表示希望、预期",
+        "coveredBy": [
+          "trust-v2"
+        ],
+        "assessment": "补丁使该功能有两个例句，并说明其积极预期及正式语气。"
+      },
+      {
+        "sense": "名词：法律上的信托及相关财产安排",
+        "coveredBy": [
+          "trust-n2"
+        ],
+        "assessment": "两个例句和主要搭配充分；修正资金来源的翻译，补充 in trust 及前置修饰说明。"
+      },
+      {
+        "sense": "名词：托拉斯",
+        "coveredBy": [
+          "trust-n3"
+        ],
+        "assessment": "作为经济史拓展义处理合适，已有自然例句。"
+      },
+      {
+        "sense": "名词：受托的责任、重托",
+        "coveredBy": [
+          "trust-n4"
+        ],
+        "assessment": "原稿遗漏，补入较少见义并提供具体例句。"
+      },
+      {
+        "sense": "动词：赊卖给、允许赊欠",
+        "coveredBy": [
+          "trust-v3"
+        ],
+        "assessment": "旧式用法与例句可保留，补明完整结构中的人作宾语。"
+      },
+      {
+        "sense": "名词前置修饰：与信托或托拉斯有关",
+        "coveredBy": [
+          "trust-n2",
+          "trust-n3"
+        ],
+        "assessment": "补充语法功能说明；不把这类定语用法扩大为可自由使用的普通形容词。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-trust\",\"title\":\"Oxford Learner’s Dictionaries: trust\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/trust_1\",\"supports\":[\"trust 的常见词性、释义、句型与搭配\",\"trust 的常见派生词及相关表达\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-trust\",\"title\":\"Cambridge Dictionary: trust\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/trust\",\"supports\":[\"trust 的常见词性、释义和用法\",\"trust 的发音与常见搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en-trust\",\"title\":\"Wiktionnaire：trust（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/trust#Anglais\",\"supports\":[\"名词 trust 的信任、信托和托拉斯义\",\"动词 trust 的信任义及 trust in 结构\",\"trust 的发音与规则名词复数\",\"trusting、trustworthy 等相关词的列举\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"名词表示多个信托或多种信任关系；动词用于主语 he、she、it 等。\"",
+        "valueJson": "\"名词通常表示多个信托或托拉斯；表示一般的“信任”时，trust 通常不可数。动词 trusts 用于 he、she、it 等第三人称单数主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用搭配是 trust in someone/something；也常说 have trust in。\"",
+        "valueJson": "\"表示一般的信任时通常不可数。常用搭配是 trust in someone/something；也常说 have trust in。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：信任，相信某人可靠\"",
+        "valueJson": "\"动词：信任，信赖人或事物\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"相信某人诚实、可靠，或能把事情做好。\"",
+        "valueJson": "\"相信某人诚实、可靠或能把事情做好；也可相信某人的能力或某事物值得依靠。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"直接说 trust someone；若强调相信某人会做某事，可用 trust someone to do something。\"",
+        "valueJson": "\"日常说信任某人，通常直接用 trust someone；相信某人会做某事用 trust someone to do something。trust in someone/something 强调信赖、依靠或信念，常见于较郑重的表达。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"trust-v1-e3\",\"senseId\":\"trust-v1\",\"en\":\"During the storm, the hikers trusted in their guide’s experience.\",\"zh\":\"暴风雨中，徒步旅行者们信赖向导的经验。\",\"note\":\"trust in something 表示相信某事物值得依靠；这里依靠的是向导的经验。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"trust-v1-e4\",\"senseId\":\"trust-v1\",\"en\":\"Before her operation, Ana prayed and trusted in God.\",\"zh\":\"手术前，安娜祈祷，并把信心寄托于上帝。\",\"note\":\"trust in 也可表达宗教信仰中的信赖。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"trust in someone/something\",\"zh\":\"信赖某人／某事物；对……有信心\",\"note\":\"强调信赖、依靠或信念；普通的“信任某人”通常直接说 trust someone。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"可接 that 从句；I trust 表示“我希望／我相信”，语气较正式、礼貌。\"",
+        "valueJson": "\"可接 that 从句来表达相信某种情况属实。正式、礼貌的 I trust (that) ... 也可表达希望，通常带有“相信情况会是好的”的积极预期，不能在所有场合直接替换 hope。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"trust-v2-e3\",\"senseId\":\"trust-v2\",\"en\":\"I trust that the dates on the school website are correct.\",\"zh\":\"我相信学校网站上的日期是准确的。\",\"note\":\"这里 trust that 表示相信信息准确，不只是希望它准确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"trust-v2-e4\",\"senseId\":\"trust-v2\",\"en\":\"I trust you are enjoying your stay with us.\",\"zh\":\"希望您在我们这里住得愉快。\",\"note\":\"正式、礼貌地表达关切，并带有对方住得愉快的预期；这里省略了 that。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"这是法律和金融语境中的用法；初中日常对话中不常见。\"",
+        "valueJson": "\"这是法律和金融语境中的用法；初中日常对话中不常见。trust fund 中的 trust 作名词前置修饰语，表示与信托有关，不宜据此把它当作可自由作表语的普通形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1/zh",
+        "expectedValueJson": "\"这家慈善机构收到了一笔家族信托基金。\"",
+        "valueJson": "\"这家慈善机构从一个家族信托获得了资金。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"hold something in trust for someone\",\"zh\":\"以信托方式为某人持有某物\",\"note\":\"in trust 表示按信托关系持有或管理财产，for 后接受益人。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是经济史或商业语境中的用法，日常英语中较少见。\"",
+        "valueJson": "\"这是经济史或商业语境中的用法，日常英语中较少见。表示与托拉斯有关时，trust 也可前置修饰其他名词，不必另记为一个普通形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/example/note",
+        "expectedValueJson": "\"trust for the cost of 表示允许赊欠这笔费用。\"",
+        "valueJson": "\"旧式结构 trust someone for an amount 表示允许某人赊欠某个金额；本句 him 是 trust 的宾语。现代通常用 sell to someone on credit 表达赊卖给某人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"trust-n4\",\"title\":\"名词：受托的责任，重托\",\"meaning\":\"别人交付给自己、需要尽责履行的责任或使命。\",\"note\":\"较正式，常用于强调责任重大；这一义可数，如 a sacred trust（神圣的重托），不等同于普通的工作任务。\",\"example\":{\"id\":\"trust-n4-e1\",\"senseId\":\"trust-n4\",\"en\":\"The museum regarded the care of the donated letters as a sacred trust.\",\"zh\":\"博物馆把保管这些受赠信件视为一项神圣的重托。\",\"note\":\"a sacred trust 指必须郑重履行的受托责任，不是法律上的信托基金。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"The players trust in their coach’s experience.\"",
+        "valueJson": "\"Even after the defeat, the players still trusted in their coach.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"队员们相信教练的经验。\"",
+        "valueJson": "\"即使输了比赛，队员们仍然信赖他们的教练。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\",\"cambridge-trust\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"以上是现代用法之间的联系，不是历史词源拆解；不要把 trust 拆成 trust 的字母来推测来源。\"",
+        "valueJson": "\"以上是帮助理解现代词义的联想，不代表这些词义产生的历史顺序，也不是历史词源拆解。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"轻信的；容易信任别人的\"",
+        "valueJson": "\"容易信任他人的；有时指轻信的\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\"]",
+        "valueJson": "[\"wiktionary-en-trust\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-trust\"]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1466,
+    "headword": "trust",
+    "meaning_zh": "n. 信任, 信赖, 相信, 受托, 职责, 信心, 托拉斯\nadj. 信托的, 托拉斯的\nvt. 信赖, 信任, 相信, 盼望, 赊卖给\nvi. 相信, 信赖, 依靠",
+    "phonetic": "/trʌst/",
+    "pos": "",
+    "forms": []
+  }
+}

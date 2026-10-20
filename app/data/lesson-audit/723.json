@@ -1,0 +1,472 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e8da44f80c0eee9df69ec6f0415a0d26fe8b353d2c429dba9ffff230a8ed7f3b",
+    "executedReviewPromptHash": "e8da44f80c0eee9df69ec6f0415a0d26fe8b353d2c429dba9ffff230a8ed7f3b",
+    "reviewHash": "da0cc1fa6d1ff8b29d403fa3e617a3b5fadbcf682394f9bbde9e5648019c7039",
+    "wordId": 723,
+    "inputHash": "e93a2db086a93b3d98c2753ff5f1d804a12157973075166ac89c5a182f0c326a",
+    "draftHash": "579072fbecc333fe335a1225765192daf2e5e419375b5d6303de6af332a2d50f",
+    "finalHash": "41b8754551786af99728953a23c61c11224fbd14a585d644f4ae128c83ec05a5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/jog#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:49.895Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 122104,
+        "revisionId": 39810299,
+        "revisionTimestamp": "2026-08-17T13:12:22Z",
+        "sha256": "4b974e7fd08e0e7333dcd94ef7d07452280a195feba3f26781fcb480ed9835bf",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/jog",
+        "section": "jog verb",
+        "supports": [
+          "Relevant historical meaning",
+          "Sense and uncertainty boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "0cc4b6a4fb2fe05036559650476174201e9700cc4d06c4bb02be1351ce6e7797",
+        "summaryAndSupportsWordCount": 58,
+        "sha256": "0cc4b6a4fb2fe05036559650476174201e9700cc4d06c4bb02be1351ce6e7797",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/723.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/jog",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:50:45.985Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:58:22.275Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Oxford 页面没有实际检索材料，Cambridge 检索失败，不宜继续把这些页面作为正文依据。改为引用已取得的英语词条及词源资料，保留 recommended 标签。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "轻碰与唤起记忆合并后各只有一个例句。应分开教学，并为两项核心功能分别补足例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "jog someone’s memory 的直接宾语是 memory，被提醒的人由所有格 someone’s 表示，原文把人说成宾语有误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏词条明列的名词“轻推、轻碰”义，应补入并提供两个生活例句；名词形式的 give someone’s memory a jog 也应交代。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations",
+        "message": "jog a memory 不宜作为可与 jog someone’s memory 任意替换的基础搭配；轻碰也不宜主要解释成有意引起注意，以免与 nudge 混同。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "标题和释义写成及物的“使摇晃”，例句却是不及物的“颠簸前行”，需要统一。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/2/note",
+        "message": "“不说 go jog”过于绝对。美式口语中的 Let’s go jog. 是成立的结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "英美元音差别不能主要归结为长短；/ɑ/ 与 /ɑː/ 也涉及转写体系。把普通字母 g 的使用称为“英式旧式转写”没有依据。"
+      },
+      {
+        "severity": "polish",
+        "location": "/forms/2/note 及 /wordFamilyNote",
+        "message": "jogged 的双写说明绕口且定位不清；jogging 同时是动词词形和活动名词，应避免只把它与词形变化对立起来。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0 及 /senses/2/patterns/1",
+        "message": "句型标题没有清楚呈现时长前的 for，以及 morning、short 等修饰语的位置，应与示例保持一致。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/similar/1",
+        "message": "walk 与 jog 是不同运动方式，不应作为该名词义的近义表达；保留在对照栏即可。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/etymology/stages",
+        "message": "shoggen 与 jog 只是可能相关，不宜在顺序箭头中呈现为确定传承。该假说保留在现有 summary 和 caveat，阶段改为同一英语词可证实的早晚用法。"
+      }
+    ],
+    "coverageAssessment": "已核对法语维基词典的全部英语定义，并结合词条释义与专业语言知识审查现代用法。补丁后，动词慢跑、轻碰、唤起记忆，名词一次慢跑、一下轻碰均有至少两个例句；名词记忆表达也有两个例句。颠簸前行保留为次要义。旧时摇动义保留于词源，特殊宗教文献中的 Jog＝yoga 仅列入审计，不作为初中核心教学内容。未借用未取得的 Oxford 或检索失败的 Cambridge 页面证明具体结论。",
+    "senseInventory": [
+      {
+        "sense": "动词：以小步较轻松地跑，常用于锻炼",
+        "coveredBy": [
+          "v-run"
+        ],
+        "assessment": "已有两个自然例句；保留，修清距离与时长句型。"
+      },
+      {
+        "sense": "动词：短促地轻推、轻碰，使稍微移动",
+        "coveredBy": [
+          "v-nudge"
+        ],
+        "assessment": "原稿与记忆功能合并后只有一个物理动作例句；补丁后独立讲解并有两个例句。"
+      },
+      {
+        "sense": "动词表达：jog someone’s memory，帮助某人回想起来",
+        "coveredBy": [
+          "memory"
+        ],
+        "assessment": "从原合并义拆出，纠正宾语说明，并提供两个动词结构例句。"
+      },
+      {
+        "sense": "名词：一次慢跑",
+        "coveredBy": [
+          "n-run"
+        ],
+        "assessment": "已有两个自然例句；修清名词修饰位置，删除近义栏中的 walk。"
+      },
+      {
+        "sense": "名词：一下轻推、轻碰或轻微震动",
+        "coveredBy": [
+          "n-nudge"
+        ],
+        "assessment": "原稿遗漏；补入两个例句，并说明此义较少见，日常轻推常用 a nudge。"
+      },
+      {
+        "sense": "名词表达：give someone’s memory a jog，给记忆一点提示",
+        "coveredBy": [
+          "memory"
+        ],
+        "assessment": "补入固定表达及两个例句，与动词结构明确区分。"
+      },
+      {
+        "sense": "动词：颠簸着前行；马以小步前进",
+        "coveredBy": [
+          "v-jolt"
+        ],
+        "assessment": "保留车辆例句并改成一致的不及物释义；马的小跑用法在说明中提示，属于非核心扩展。"
+      },
+      {
+        "sense": "动词旧义：摇动、使抖动",
+        "coveredBy": [],
+        "assessment": "英语词条标为旧义；现有词源已经说明，不单独扩展为现代初中核心义。"
+      },
+      {
+        "sense": "名词同形词：Jog，yoga 的异体写法",
+        "coveredBy": [],
+        "assessment": "英语词条中的特殊宗教用法，不能误当法语词，也不能串入慢跑义的词源链；本课不展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"jog 作动词常表示“慢跑”或“轻推、轻碰”；jog 作名词可指一次慢跑。提醒某人想起某事常用 jog someone’s memory。\"",
+        "valueJson": "\"jog 作动词可表示“慢跑”或“轻推、轻碰”；作名词可指“一次慢跑”或“一下轻推、轻碰”。帮助某人回想起来常用 jog someone’s memory，也可说 give someone’s memory a jog。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 jog slowly 说慢跑，用 jog someone’s memory 说提醒某人想起。\"",
+        "valueJson": "\"用 jog 或 go jogging 说慢跑，用 go for a jog 说去慢跑一会儿；用 jog someone’s memory 说唤起某人的记忆。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式英语中元音较短；美式英语中元音较长。\"",
+        "valueJson": "\"英式常用 /ɒ/，美式常用 /ɑ/，主要差别是元音音质。美式 /ɑ/ 在一些转写体系中也标为 /ɑː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"英式旧式转写常写作 /dʒɒg/；IPA中通常用 /ɡ/ 表示词尾浊软腭音。\"",
+        "valueJson": "\"词尾的 IPA 音标为 /ɡ/；词典排版中也常用普通字母 g 表示同一个音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"词尾辅音字母 g 后双写 d 前的 g，再加 -ed。\"",
+        "valueJson": "\"先双写词尾 g，再加 -ed：jog → jogged。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/en",
+        "expectedValueJson": "\"jog + 距离或时长\"",
+        "valueJson": "\"jog + 距离；jog for + 时长\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"此处按运动速度区分：walk 是步行，jog 是慢跑；两者并非所有语境下的严格反义词。\"",
+        "valueJson": "\"这里比较运动方式：walk 是步行，jog 是慢跑；速度高低不是两者的绝对分界。它们在运动方式上形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\",\"cambridge-jog\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"动词：轻推、轻碰；提醒想起\"",
+        "valueJson": "\"动词：轻推、轻碰\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"轻轻推或碰某人、某物；引申为提醒某人想起某事。\"",
+        "valueJson": "\"轻轻推或碰某人、某物，使其稍稍移动或晃动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"提醒记忆时常用 jog someone’s memory；被提醒的人作宾语，memory 表示记忆。\"",
+        "valueJson": "\"及物动词，后接被碰的人或物，也常接 arm、elbow 等身体部位；常表示短促的碰动，可以是无意碰撞。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"ex-4\",\"senseId\":\"v-nudge\",\"en\":\"The old photo jogged his memory.\",\"zh\":\"那张旧照片让他想起了往事。\",\"note\":\"事物作主语，表示它提醒某人想起某事。\"}",
+        "valueJson": "{\"id\":\"ex-nudge-2\",\"senseId\":\"v-nudge\",\"en\":\"Someone jogged my elbow while I was pouring the tea.\",\"zh\":\"我倒茶时，有人碰了一下我的胳膊肘。\",\"note\":\"jog 后接被碰的身体部位，强调短促的碰动。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"jog someone’s memory\",\"zh\":\"提醒某人想起；唤起某人的记忆\",\"note\":\"someone’s 表示所属；可用线索或事物作主语。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/note",
+        "expectedValueJson": "\"常用于轻轻碰人以引起注意的场景。\"",
+        "valueJson": "\"碰到胳膊肘，使手臂稍稍一动；可能是无意碰撞。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"jog a memory\",\"zh\":\"唤起一段记忆\",\"note\":\"memory 前可用物主代词或冠词，表示被唤起的记忆。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"nudge\",\"zh\":\"轻推；用胳膊肘轻碰\",\"note\":\"常指用手肘或身体轻推；jog 也可指轻碰，并常用于 jog someone’s memory。\"},{\"en\":\"remind\",\"zh\":\"提醒\",\"note\":\"可直接提醒某人某事；jog someone’s memory 更强调让人重新想起原先忘记的内容。\"}],\"contrasting\":[{\"en\":\"forget\",\"zh\":\"忘记\",\"note\":\"在记忆语境中，forget 表示未能记起；jog someone’s memory 则帮助人想起来。\"}],\"similarNote\":\"轻碰以引起注意可用 nudge；一般的提醒常用 remind；唤起记忆常用 jog someone’s memory。\",\"contrastingNote\":\"在“想起/忘记”这一语境中，forget 表示忘记，和 jog someone’s memory 所表达的唤起记忆方向相反。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"nudge\",\"zh\":\"轻推；轻碰\",\"note\":\"常指有意轻碰，以引起注意或示意；jog 更侧重碰得人或物稍稍一动，也可以是无意碰撞。\"},{\"en\":\"bump\",\"zh\":\"碰；撞\",\"note\":\"也可描述无意碰撞，力度范围更广，不一定只是轻微碰动。\"}],\"contrasting\":[{\"en\":\"steady\",\"zh\":\"扶稳；使稳定\",\"note\":\"在手臂动作的语境中，steady someone’s arm 是把胳膊扶稳，可与碰得胳膊一动形成对照。\"}],\"similarNote\":\"有意轻碰以示意时 nudge 很常见；短促碰动可用 jog；一般碰撞也可用 bump。\",\"contrastingNote\":\"steady 对照的是使物体稳定的动作效果，只适用于这里的身体或物体动作语境。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\",\"etymonline-jog\"]",
+        "valueJson": "[\"etymonline-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"a jog + 时间/地点\",\"zh\":\"一次……时间/地点的慢跑\",\"note\":\"可在 jog 前加 short、morning 等词，或用地点、时长补充活动信息。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"a short/morning jog；a jog around + 地点\",\"zh\":\"短暂慢跑／晨跑；绕某处的一次慢跑\",\"note\":\"short、morning 放在 jog 前，如 a short jog、a morning jog；地点可放在后面的介词短语中，如 a jog around the lake。时长也可说 a ten-minute jog。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"walk\",\"zh\":\"散步；步行\",\"note\":\"描述较轻松的步行活动；jog 指速度更快的慢跑。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-noun\",\"cambridge-jog\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"使轻微摇晃或颠簸\"",
+        "valueJson": "\"动词：颠簸着前行\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"使某物轻轻晃动、颠簸；常见于车辆移动等描述。\"",
+        "valueJson": "\"一边轻微颠簸或上下晃动，一边向前行进。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是“轻推、轻碰”一义的延伸用法，初中阶段先掌握慢跑和轻推、提醒记忆即可。\"",
+        "valueJson": "\"这里的 jog along 是不及物用法，主语是前行的车辆；这种表达较多见于叙述性或较旧的文字。马作主语时，jog along 也可描述小步前进。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"etymonline-jog\"]",
+        "valueJson": "[\"wiktionary-jog\",\"etymonline-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"go 后接 jogging，表示去慢跑；不说 go jog。\"",
+        "valueJson": "\"常用 go jogging 或 go for a jog 表示去慢跑；美式口语中也可说 Let’s go jog.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\",\"cambridge-jog\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\",\"cambridge-jog\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"shoggen\",\"meaning\":\"摇动、颠簸；与 jog 的早期形式可能有关，但关系不确定。\"},{\"language\":\"英语\",\"form\":\"jog\",\"meaning\":\"早期有摇动、颠簸之义；后来可表示轻推，现代常用于慢跑。\"}]",
+        "valueJson": "[{\"language\":\"英语（早期用法）\",\"form\":\"jog\",\"meaning\":\"摇动、轻推或颠簸。\"},{\"language\":\"英语（较晚用法）\",\"form\":\"jog\",\"meaning\":\"以小步慢跑，后来成为常见的健身用语。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-verb\",\"cambridge-jog\"]",
+        "valueJson": "[\"wiktionary-jog\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"jogged、jogs 是 jog 的词形变化；jogger 和 jogging 是常见派生词。拼写变化的关键是加 -ed、-ing、-er 时双写词尾 g。\"",
+        "valueJson": "\"jogs、jogged、jogging 是动词 jog 的词形；jogging 还可作表示慢跑活动的名词，jogger 是表示人的派生名词。加 -ed、-ing、-er 时都双写词尾 g：jogged、jogging、jogger。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"memory\",\"title\":\"常用表达：唤起记忆\",\"meaning\":\"通过某个提示，帮助某人想起一时忘记的事情。\",\"usageNote\":\"jog someone’s memory 中，直接宾语是 memory，someone’s 表示是谁的记忆。也可用 give someone’s memory a jog，其中 a jog 是名词，表示给记忆一点提示。\",\"examples\":[{\"id\":\"ex-4\",\"senseId\":\"memory\",\"en\":\"The old photo jogged his memory.\",\"zh\":\"那张旧照片唤起了他的记忆。\",\"note\":\"动词 jogged 的直接宾语是 his memory，his 表示记忆属于谁。\"},{\"id\":\"ex-memory-2\",\"senseId\":\"memory\",\"en\":\"Could you show me the receipt to jog my memory?\",\"zh\":\"你能让我看看收据，帮我回想起来吗？\",\"note\":\"to jog my memory 表示看收据的目的。\"},{\"id\":\"ex-memory-3\",\"senseId\":\"memory\",\"en\":\"The first few lines of the song gave my memory a jog.\",\"zh\":\"这首歌的前几句歌词唤起了我的记忆。\",\"note\":\"a jog 是名词；give my memory a jog 与 jog my memory 意思接近。\"},{\"id\":\"ex-memory-4\",\"senseId\":\"memory\",\"en\":\"Perhaps this old address will give your memory a jog.\",\"zh\":\"也许这个旧地址能帮你回想起来。\",\"note\":\"perhaps 表示不确定这个提示是否能让对方想起来。\"}],\"patterns\":[{\"en\":\"jog someone’s memory\",\"zh\":\"唤起某人的记忆\",\"note\":\"结构是 jog + 所有格 + memory；不要把人直接接在 jog 后就理解成提醒。\",\"kind\":\"fixed-expression\"},{\"en\":\"give someone’s memory a jog\",\"zh\":\"给某人的记忆一点提示；帮助回想\",\"note\":\"a jog 是名词，可与动词结构 jog someone’s memory 对照记忆。\",\"kind\":\"fixed-expression\"}],\"collocations\":[{\"en\":\"jog my/your memory\",\"zh\":\"唤起我的／你的记忆\",\"note\":\"my、your 指明是谁的记忆；线索、照片或话语等都可以作主语。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"remind\",\"zh\":\"提醒；使想起\",\"note\":\"可说 remind someone of/about something，也可说 remind someone to do something，范围包括提醒将来要做的事；jog someone’s memory 侧重唤起已有记忆。\"},{\"en\":\"recall\",\"zh\":\"回想起；记起\",\"note\":\"常用 recall something，由记起事情的人作主语；jog someone’s memory 由提供提示的人或事物作主语。\"}],\"contrasting\":[{\"en\":\"forget\",\"zh\":\"忘记\",\"note\":\"forget something 表示忘记某事，与这里帮助恢复记忆的方向形成对照，不能按同一句型直接替换。\"}],\"similarNote\":\"一般提醒可用 remind；自己回想起某事可用 recall；提示别人恢复记忆常用 jog someone’s memory。\",\"contrastingNote\":\"forget 对照的是遗忘与回想这两种方向，不是物理轻碰义的反义词。\"},\"sourceIds\":[\"wiktionary-jog\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"n-nudge\",\"title\":\"名词：一下轻推、轻碰\",\"meaning\":\"一次轻微的推、碰或震动。\",\"usageNote\":\"可数名词，可说 give someone’s arm a jog。此义比一次慢跑义少见；日常表达有意轻推一下时，a nudge 更常见。\",\"examples\":[{\"id\":\"ex-noun-nudge-1\",\"senseId\":\"n-nudge\",\"en\":\"Mia gave my arm a gentle jog to wake me up.\",\"zh\":\"米娅轻轻碰了一下我的胳膊，想把我叫醒。\",\"note\":\"a gentle jog 指一下轻碰；gave 是句中的动词。\"},{\"id\":\"ex-noun-nudge-2\",\"senseId\":\"n-nudge\",\"en\":\"A jog to my elbow made me spill some juice.\",\"zh\":\"胳膊肘被碰了一下，使我洒出了一些果汁。\",\"note\":\"a jog 是名词，to my elbow 说明被碰的部位。\"}],\"patterns\":[{\"en\":\"give + 人或身体部位 + a jog\",\"zh\":\"轻轻推或碰一下某人或某个身体部位\",\"note\":\"例如 give his arm a jog；这里的 jog 前有 a，是名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a gentle jog\",\"zh\":\"一下轻轻的推碰\",\"note\":\"gentle 描述推碰的力度。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"a nudge\",\"zh\":\"一下轻推\",\"note\":\"常用于有意轻推以引起注意或示意，比名词 a jog 更常见。\"},{\"en\":\"a bump\",\"zh\":\"一下碰撞\",\"note\":\"可指无意碰撞，力度可能更大，须按具体情境区分。\"}],\"contrasting\":[],\"similarNote\":\"有意轻推常用 a nudge；一般碰撞可用 a bump；a jog 强调一次轻微的碰动。\",\"contrastingNote\":\"这一动作名词没有常用的固定反义词；具体场景中可对比轻碰与扶稳，或轻碰与重撞。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-verb\",\"title\":\"Oxford Learner’s Dictionaries: jog (verb)\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/jog_1\",\"supports\":[\"动词慢跑义及轻推、提醒记忆等常见用法\",\"动词词形与常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-jog\",\"title\":\"Wiktionnaire: jog（英语词条；法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/jog#Anglais\",\"supports\":[\"英美读音与动词变化信息\",\"动词慢跑、马匹小跑及旧时摇动义\",\"名词慢跑义及唤起记忆的动词、名词表达\",\"派生词 jogger、jogging\",\"特殊同形词 Jog：yoga 的异体\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/2",
+        "expectedValueJson": "{\"id\":\"cambridge-jog\",\"title\":\"Cambridge Learner’s Dictionary: jog\",\"url\":\"https://dictionary.cambridge.org/us/dictionary/learner-english/jog\",\"supports\":[\"慢跑动词义和名词用法\",\"慢跑相关词形及用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"oxford-noun\",\"title\":\"Oxford Learner’s Dictionaries: jog (noun)\",\"url\":\"https://www.oxfordlearnersdictionaries.com/us/definition/english/jog_2\",\"supports\":[\"名词慢跑活动义\",\"名词常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 723,
+    "headword": "jog",
+    "meaning_zh": "n. 轻推, 轻撞, 慢跑\nv. 轻推, (使)蹒跚行进, (使)慢跑",
+    "phonetic": "/dʒɒg/",
+    "pos": "",
+    "forms": []
+  }
+}

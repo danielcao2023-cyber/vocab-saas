@@ -1,0 +1,285 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1d1ae46968da3aa73787b456159ce88a7ec9253a7977869ce390cf5fdd3e271c",
+    "executedReviewPromptHash": "8c0dc025d198c635828dc8fecd221b63337c0ebd59784b11d995d72cdfbecda6",
+    "reviewHash": "c6615a000e67a7849f5503f4ca6c004847aab1dfbe73bc9b0595bc3399833f3e",
+    "wordId": 614,
+    "inputHash": "ddfed22db205d9152d5e40e46782a0580033975124cf0694add765db77f93e93",
+    "draftHash": "9bd9b8131ad57d21d18f7f48a6316000b93c1c963d75f21e15bf4a18fd513816",
+    "finalHash": "a7865670d3fc53d373fcb295730fc035a72cedf6ce952ca4d7cb15e914004863",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/hall#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:15.292Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 55523,
+        "revisionId": 39814515,
+        "revisionTimestamp": "2026-08-19T04:35:43Z",
+        "sha256": "a676e2c0a5684970c0102b2a73e3b50cdcbdcbc9db6fa09f616303aaf1fc70fb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/hall",
+        "section": "hall etymology",
+        "supports": [
+          "Old English building meaning; later corridor development"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T04:14:23.807839+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "aabba4aab673525c09b9ac0f260ea12422fdd2197b61054d335df2e47eda6327",
+        "summaryAndSupportsWordCount": 48,
+        "sha256": "aabba4aab673525c09b9ac0f260ea12422fdd2197b61054d335df2e47eda6327",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/614.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/hall",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T19:01:27.595Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T19:14:11.333Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/us、/pronunciation/accentNote",
+        "message": "把英美音标中的长音标记差异解释成部分美国口音元音较短，容易误导。改用材料中的美式标音 /hɔl/，并说明不能仅凭长音符号判断实际时长。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 及相关 sourceIds",
+        "message": "Cambridge 正文未取得，Oxford 未列入实际来源材料，不能承担本课具体内容的来源依据。应引用已取得的法语维基词典英语词条，并保留 Etymonline 的词源引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/collocations/1",
+        "message": "school hall 通常指学校礼堂，不宜在走廊义下作为“学校走廊”的常用搭配教授。改用明确表示走廊位置的 across the hall。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典列出的“大宅；庄园宅邸”义。该义适合列入扩展义，并说明常见于大宅名称中的 Hall。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/title",
+        "message": "标题重复出现 hallway，与实际比较的 hall、hallway、concert hall 三项不一致。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily、/wordFamilyNote",
+        "message": "hallway 是可以准确解释和核对拼写的常用复合词，宜补充 hall + way 的构词知识，并与复数 halls 区分。"
+      }
+    ],
+    "coverageAssessment": "已核对词典全部五项名词释义。门厅、走廊、大厅三个核心义均已有两个自然例句，译文及原有 senseId 对应正确；大学宿舍义已覆盖，补丁补入大宅义。法语 pièce 项所附例句为 entrance hall，按门厅义覆盖，不将 hall 泛化成任意房间。词源的古英语到现代英语顺序成立，未引入未经证实的更早词根。新增例句 ID 均唯一，senseId 分别指向实际存在的 hall-ls2 和 hall-s2。",
+    "senseInventory": [
+      {
+        "sense": "供集会、会议或演出使用的大房间、会堂或场馆",
+        "coveredBy": [
+          "hall-s3"
+        ],
+        "assessment": "已覆盖；学校礼堂和音乐厅各有一个自然例句。"
+      },
+      {
+        "sense": "门厅；入口处的房间或空间",
+        "coveredBy": [
+          "hall-s1"
+        ],
+        "assessment": "已覆盖两个例句；同时承接词典 pièce 项中 entrance hall 的实际用法。"
+      },
+      {
+        "sense": "走廊；连接房间的通道",
+        "coveredBy": [
+          "hall-s2"
+        ],
+        "assessment": "已覆盖两个例句；替换容易误导的 school hall 搭配后，义项归属清楚。"
+      },
+      {
+        "sense": "大学宿舍楼；学生住宿机构",
+        "coveredBy": [
+          "hall-ls1"
+        ],
+        "assessment": "已作为扩展义覆盖，hall of residence 例句正确。"
+      },
+      {
+        "sense": "大宅；庄园宅邸",
+        "coveredBy": [
+          "hall-ls2"
+        ],
+        "assessment": "原稿遗漏；补丁以扩展义补齐，并用宅名中的 Hall 展示这一专门用法。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/us",
+        "expectedValueJson": "\"/hɔːl/\"",
+        "valueJson": "\"/hɔl/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音通常相近；部分美国口音中元音较短。\"",
+        "valueJson": "\"英式常标作 /hɔːl/，美式常标作 /hɔl/；美式音标不标长音符号，并不表示只是把英式元音读短。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\",\"src-oxford\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"school hall\",\"zh\":\"学校走廊／学校大厅\",\"note\":\"含义要结合上下文判断；hall 可指通道，也可指集会用的大房间。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"across the hall\",\"zh\":\"在走廊对面\",\"note\":\"常用来说明走廊另一侧的位置，如 the room across the hall（走廊对面的房间）。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"hall、hallway 和 hallway 的意思范围\"",
+        "valueJson": "\"hall、hallway 和 concert hall 的区别\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"hall-ls2\",\"title\":\"大宅；庄园宅邸\",\"meaning\":\"大型乡间住宅或庄园中的大宅。\",\"note\":\"较少见，常用于这类大宅的名称；作为宅名的一部分时通常写作 Hall。\",\"example\":{\"id\":\"hall-ls2-ex1\",\"senseId\":\"hall-ls2\",\"en\":\"The family has lived at Oakwood Hall for generations.\",\"zh\":\"这个家族世代居住在奥克伍德大宅。\",\"note\":\"Hall 是大宅名称的一部分，首字母大写；这里指整座宅邸。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"hallway\",\"partOfSpeech\":\"noun\",\"meaning\":\"走廊；过道\",\"formation\":\"由 hall 和 way（通道）组成的复合词。\",\"spellingNote\":\"hallway 连写，保留 hall 的两个 l；复数是 hallways。\",\"example\":{\"id\":\"hall-wf-ex1\",\"senseId\":\"hall-s2\",\"en\":\"A narrow hallway connects the kitchen and the living room.\",\"zh\":\"一条狭窄的走廊连接着厨房和客厅。\",\"note\":\"hallway 在这里指连接两个房间的通道。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"hall 的复数 halls 是规则屈折变化，不是派生词；没有必要把相关场所名称算作词族。\"",
+        "valueJson": "\"hallway 是 hall + way 构成的复合词；halls 是 hall 的规则复数，属于屈折变化。entrance hall、concert hall 等则是含 hall 的常用短语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: hall\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/hall\",\"supports\":[\"hall 作名词表示建筑入口区域、走廊或供活动使用的大房间\",\"hall 的英美发音及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：hall（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/hall#Anglais\",\"supports\":[\"hall 的大厅、入口房间和走廊义\",\"大学宿舍及大宅义\",\"英式 /hɔːl/ 与美式 /hɔl/ 标音\",\"走廊义的近义词 hallway 和 corridor\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"src-oxford\",\"title\":\"Oxford Learner’s Dictionaries: hall\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/hall\",\"supports\":[\"hall 的常用名词义项和搭配\",\"大学住宿相关用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 614,
+    "headword": "hall",
+    "meaning_zh": "n. 门厅, 走廊, 会堂",
+    "phonetic": "/hɒ:l/",
+    "pos": "",
+    "forms": []
+  }
+}

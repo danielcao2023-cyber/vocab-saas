@@ -1,0 +1,219 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "fd1c26ee6c3b2e015def949a434e64ace9950deb6c809d913c8d6cd0eacec1f7",
+    "executedReviewPromptHash": "fd1c26ee6c3b2e015def949a434e64ace9950deb6c809d913c8d6cd0eacec1f7",
+    "reviewHash": "df73ec866f29c6255789132eab243519eb406a27f4619813a0e0af84e56d456d",
+    "wordId": 1020,
+    "inputHash": "f25265918db6172fd11ce8e93dd33b22f29625f7332060422b1341b61c2a1d5d",
+    "draftHash": "94b065abfbde7929ff71dca82af58303054af2799ee95ea9a3009cd9cd11eb32",
+    "finalHash": "9fda6c9f9d13ae4dbdf49560635dbaa876babb32e598e5f4a8ca7e5d5c613b61",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/pie#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.987Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 25516,
+        "revisionId": 39783754,
+        "revisionTimestamp": "2026-08-07T13:39:06Z",
+        "sha256": "6be743c64ae4495b025037386bc59d79316ae1280d9ff4dfc1a8a3af4145257c",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/pie",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T04:35:23.910Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:46:33.895Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "pie 既可数也可不可数。初稿只标为可数名词，与 some pie 的例句不一致；学习计划和辨析说明也须同步明确两种用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "cake 是另一类烘焙食品，并非 pie 的反向表达。应移出反向表达数组，同时保留有用的类别辨析。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "“以 -e 结尾的普通名词直接加 -s”概括过宽，例如 wife 的复数是 wives。应限定为 pie 的实际复数构成。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 未取得正文，不能充当本次核对的依据。应引用实际取得的 Wiktionnaire 英语词条，并为“词源不明”补上同 URL 的来源；法语只是该条目的说明语言。"
+      }
+    ],
+    "coverageAssessment": "成功取得的词典正文只列食品名词义。现有两个原创例句分别覆盖甜派与肉馅饼，无须拆成两个义项。修订补全可数与不可数用法，并修正反向表达、复数规则和来源引用。词源材料仅支持“词源不明”，不支持增加历史演变阶段；其他引申义与习语未由现有词典正文核实。",
+    "senseInventory": [
+      {
+        "sense": "名词：派；馅饼，可有甜馅或咸馅；兼有可数与不可数用法",
+        "coveredBy": [
+          "pie-1"
+        ],
+        "assessment": "核心食品义已覆盖，两个例句分别体现甜馅与咸馅。可数与不可数属于同一义项的语法用法，已通过补丁明确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"练习 a piece of pie：pie 通常按食物整体说，切一块时用 piece。\"",
+        "valueJson": "\"分清 a pie（一个派）和 some pie（一些派）；切下一块可说 a piece of pie。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可数名词。说一个用 a pie；说一块通常用 a piece of pie。\"",
+        "valueJson": "\"既可数也可不可数。a pie / two pies 用来数一个个派；some pie 表示作为食物的一些派，不说明完整派的数量；a piece of pie 表示一块派。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"表示派或馅饼，是可数名词。\"",
+        "valueJson": "\"表示派或馅饼；可数时数一个个派，不可数时表示作为食物的派。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "\"some pie 指一些派，常按食物整体看待。\"",
+        "valueJson": "\"some pie 中的 pie 是不可数用法，表示一些派，不说明完整派的数量。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"cake\",\"zh\":\"蛋糕\",\"note\":\"在烘焙食品语境中，cake 通常是蛋糕体，不以馅料包在派皮中为主要特征。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里仅按常见烘焙食品区分；两者不是所有语境下的反义词。\"",
+        "valueJson": "\"pie 是具体食物名称，没有常用反义词。cake（蛋糕）可用于类别辨析：cake 通常以蛋糕体为主，pie 通常以派皮和馅料为主。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"以 -e 结尾的普通名词直接加 -s。\"",
+        "valueJson": "\"pie 的复数直接在词尾加 -s，保留 e，写作 pies。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_pie\",\"title\":\"Cambridge Dictionary: pie\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/pie\",\"supports\":[\"常见含义与名词用法\",\"英美发音\",\"复数形式及常见搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_pie\",\"title\":\"Wiktionnaire：pie（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/pie#Anglais\",\"supports\":[\"食品名词义\",\"规则名词标记、发音及与 pi 同音\",\"apple pie、meat pie 等搭配\",\"词源不明\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds/0",
+        "expectedValueJson": "\"cambridge_pie\"",
+        "valueJson": "\"wiktionary_pie\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge_pie\"",
+        "valueJson": "\"wiktionary_pie\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge_pie\"",
+        "valueJson": "\"wiktionary_pie\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds/0",
+        "expectedValueJson": "\"cambridge_pie\"",
+        "valueJson": "\"wiktionary_pie\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary_pie\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1020,
+    "headword": "pie",
+    "meaning_zh": "n. 馅饼；派",
+    "phonetic": "/pai/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "678a793c2ad190cd8fcb007d69cb92e01eb8364beea3122ab7df89293a56755f",
+    "executedReviewPromptHash": "678a793c2ad190cd8fcb007d69cb92e01eb8364beea3122ab7df89293a56755f",
+    "reviewHash": "2e4d1c81c13f50fa643064186efd83f4220e6160ee19e31c6323a9919f2f079d",
+    "wordId": 1494,
+    "inputHash": "f940726f9ca5616ac83e0f07cb1d82bd809d56778fb02d07245385f6a3c6cf4b",
+    "draftHash": "354ad5ab36d6f8e725f23f5f6b6a5b9024b4197ca87a515c04c39d6b6731a415",
+    "finalHash": "ee2031c7782d01db99608f60c5980a9f7a70e1b6c4b73bc1bd5ccdb0e680ebca",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/video#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:28.918Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117366,
+        "revisionId": 39869211,
+        "revisionTimestamp": "2026-09-10T06:33:54Z",
+        "sha256": "3212d2d3a6bce7718aa87107d5ce4f63329cd744523895674845b9c463492e67",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/video",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T20:35:52.351Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T20:48:08.443Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "把不可数的影像媒介义与可数的一段视频合并，但两个例句都只体现可数义。应分别讲清用法，并补足媒介义的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "多处引用的 Oxford 页面不在实际获取的来源中。应改用已经获取的英语词条，并明确其支持范围；该页面以法语解释英语词汇。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/forms/2/note",
+        "message": "videoes 是所列来源明确记录的正确词形，不应纠错；videos 也可用，但“更常见”的排序缺少依据，无须劝学生回避这一动词。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions",
+        "message": "film 作动词同样可用于日常手机录像，并不限于电影或正式作品；原对比夸大了语体差异。易混辨析标题列出 film，却没有相应条目。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "旧义指录像机，尤其是英式英语中的盒式录像机，不能泛化为所有视频设备。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "遗漏了来源明确记载的1935年及仿照 audio 构词这一关键关系，直接称为借词不够准确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "词族只重复屈折变化，未利用来源列出的实际复合词；其中 for the class page 也被译成已经发布到主页，超出了原句。"
+      }
+    ],
+    "coverageAssessment": "已核对来源中的影像媒介、具体视频、旧称录像机及录像动词四项定义。补丁为两项常用名词功能及动词义分别保留或补足两个原创英中例句，旧设备义标明时代与地域限制。现代数码录像场景及近义词辨析依据专业语言知识补充；未将未获取的 Oxford 或 Cambridge 页面视为证据。",
+    "senseInventory": [
+      {
+        "sense": "名词，不可数：影像媒介或视频内容这一类别，与 audio 对照",
+        "coveredBy": [
+          "video-noun-medium"
+        ],
+        "assessment": "原稿只有笼统释义，没有对应例句；补丁新增独立教学条目，区分媒介整体与技术语境中的影像部分。"
+      },
+      {
+        "sense": "名词，可数：一段视频或录像",
+        "coveredBy": [
+          "video-noun-content"
+        ],
+        "assessment": "两个例句自然，覆盖充分；补丁收窄释义并明确限定词用法。"
+      },
+      {
+        "sense": "名词，旧用法：录像机",
+        "coveredBy": [
+          "video-equipment"
+        ],
+        "assessment": "原稿已经涉及，但范围过宽；补丁明确为旧式英式用法中的录像机。"
+      },
+      {
+        "sense": "动词：录像、把人或活动录下来",
+        "coveredBy": [
+          "video-verb-record"
+        ],
+        "assessment": "两个例句及宾语加 doing 的结构正确；保留现代数码录像用法，修正与 film 的比较。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford_video\"]",
+        "valueJson": "[\"wiktionary_video_history\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"名词复数和动词第三人称单数拼写有特殊变化：videos、videoes；动词现在分词和过去式分别为 videoing、videoed。\"",
+        "valueJson": "\"名词复数为 videos；动词第三人称单数可写 videoes 或 videos，现在分词为 videoing，过去式和过去分词为 videoed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"有些词典也记录更常见的写法 videos；实际使用中可用 records video 表达“录制视频”，避免拼写选择上的疑问。\"",
+        "valueJson": "\"videoes 是正确写法，videos 也是可用的拼写变体；两者读音相同。注意名词复数写 videos。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"名词：视频内容或一段视频\"",
+        "valueJson": "\"名词（可数）：一段视频或录像\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"指通过屏幕观看的动态影像内容，常包括声音；也可数，指一段具体的视频。\"",
+        "valueJson": "\"指一段具体、可播放的视频或录像，通常包含动态画面，也可以带有声音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作可数名词时，前面通常用 a 或 the，复数为 videos。说“看视频”常用 watch a video。\"",
+        "valueJson": "\"说一段视频用 a video，特指某段视频可用 the video，也可说 her video、this video；复数为 videos。说“看视频”常用 watch a video。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford_video\"]",
+        "valueJson": "[\"wiktionary_video_history\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"video-noun-medium\",\"title\":\"名词（不可数）：视频这种影像媒介\",\"meaning\":\"统称动态影像这一类内容或媒介，不特指某一段视频。\",\"usageNote\":\"这个意义下不加 a。video 作为一种媒介可以包含声音；在 audio and video 这类技术对照中，video 指影像部分，audio 指声音部分。\",\"examples\":[{\"id\":\"video-noun-medium-1\",\"senseId\":\"video-noun-medium\",\"en\":\"This camera records clear video even in low light.\",\"zh\":\"这台相机即使在光线较暗时也能录制清晰的视频。\",\"note\":\"video 不可数，泛指录制的影像内容。\"},{\"id\":\"video-noun-medium-2\",\"senseId\":\"video-noun-medium\",\"en\":\"During our online lesson, the audio worked, but the video kept freezing.\",\"zh\":\"上网课时，声音正常，但画面总是卡住。\",\"note\":\"这里把声音和影像分开说，video 指视频画面。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"record video\",\"zh\":\"录制视频\",\"note\":\"video 不可数，泛指记录动态影像；record a video 则指录制一段具体的视频。\",\"kind\":\"common-collocation\"},{\"en\":\"audio and video\",\"zh\":\"音频和视频；声音和画面\",\"note\":\"常用于分别讨论设备或通话的声音与影像。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"moving images\",\"zh\":\"动态影像\",\"note\":\"可用来解释 video 的影像特征，但不表示其中一定包含声音。\"}],\"contrasting\":[{\"en\":\"audio\",\"zh\":\"音频\",\"note\":\"在分别讨论声音与画面时，与 video 对照。\"}],\"similarNote\":\"moving images 是描述性说法，不能替换所有含 video 的固定搭配。\",\"contrastingNote\":\"audio 与 video 是媒介类别的对照，不是词汇反义词。\"},\"sourceIds\":[\"wiktionary_video_history\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 video + 人或事物；video someone doing something 表示把某人正在做某事的情景录下来。video 的过去式常写作 videoed。\"",
+        "valueJson": "\"常用 video + 人或事物；video someone doing something 表示把某人正在做某事的情景录下来。这个动词尤其见于英式英语，也可用于数码录像；过去式为 videoed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"record\",\"zh\":\"录制\",\"note\":\"最常用、范围较广的动词，可录音或录像；video 明确表示录成视频。\"},{\"en\":\"film\",\"zh\":\"拍摄\",\"note\":\"常用于拍摄电影或较正式的影像内容；日常录制一段视频时 video 更直接。\"}]",
+        "valueJson": "[{\"en\":\"record\",\"zh\":\"录制\",\"note\":\"范围较广，可录音或录像；需要明确表示录像时，可说 record a video 或 record something on video。\"},{\"en\":\"film\",\"zh\":\"拍摄；录像\",\"note\":\"可用于拍电影，也可用于日常手机录像，并不限于正式作品；这里与动词 video 的意思接近。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"record 适用范围更广；film 常强调拍摄过程或影视作品；video 清楚指出录成视频。\"",
+        "valueJson": "\"record 本身不区分录音与录像；film 和 video 在记录动态影像的语境中常可互换，film 也广泛用于电影制作。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford_video\"]",
+        "valueJson": "[\"wiktionary_video_history\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"video-equipment\",\"title\":\"较少见：视频设备\",\"meaning\":\"在较旧或特定语境中，video 可指录像设备。\",\"note\":\"现代日常英语通常说 video recorder 或 video player 来明确设备类型；初中学习先掌握“视频”和“录制”两种常用用法。\",\"example\":{\"id\":\"video-equipment-1\",\"senseId\":\"video-equipment\",\"en\":\"The old video stopped working, so Dad replaced it with a digital recorder.\",\"zh\":\"那台旧录像设备坏了，所以爸爸换成了数字录像机。\",\"note\":\"这里的 video 指录像设备，属于较旧或特定的用法。\"},\"sourceIds\":[\"oxford_video\"]}",
+        "valueJson": "{\"id\":\"video-equipment\",\"title\":\"旧用法（英式）：录像机\",\"meaning\":\"指录像机，通常是使用录像带的盒式录像机（VCR）。\",\"note\":\"这是旧式英式英语中的用法，不是所有视频设备的统称。如今谈到这种旧设备时，说 VCR 或 videocassette recorder 更明确。\",\"example\":{\"id\":\"video-equipment-1\",\"senseId\":\"video-equipment\",\"en\":\"The old video stopped working, so Dad replaced it with a digital recorder.\",\"zh\":\"那台旧盒式录像机坏了，所以爸爸换成了数字录像机。\",\"note\":\"这里的 video 是旧式英式用法，指录像机。\"},\"sourceIds\":[\"wiktionary_video_history\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"名词复数常写 videos；动词现在分词是 videoing，过去式是 videoed。不要把所有词形都按同一种规则硬套。\"",
+        "valueJson": "\"名词复数是 videos；动词第三人称单数可写 videoes 或 videos，现在分词是 videoing，过去式和过去分词是 videoed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"通常是名词复数，表示多个视频；也可作为动词第三人称单数的拼写变体。\"",
+        "valueJson": "\"可作名词复数，表示多个视频；也可作动词第三人称单数。动词第三人称单数还可写 videoes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford_video\"]",
+        "valueJson": "[\"wiktionary_video_history\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"film\",\"note\":\"作名词可指电影；作动词可表示拍摄动态影像，也能用于日常手机录像。\",\"example\":{\"id\":\"video-confusion-5\",\"senseId\":\"video-verb-record\",\"en\":\"She filmed her new puppy playing with a ball.\",\"zh\":\"她把新养的小狗玩球的过程拍了下来。\",\"note\":\"这里 filmed 与 videoed 意思接近，不表示拍摄了正式电影。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"动态影像用 video，静态照片用 photo；film 常用于电影或拍摄作品。\"",
+        "valueJson": "\"video 可指视频，也可表示录像；film 可指电影，作动词也能表示日常录像；photo 指静态照片。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford_video\"]",
+        "valueJson": "[\"wiktionary_video_history\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"video 是英语中的借词，来源与拉丁语 video（“我看见”）有关。现代英语中，video 的常用意思已发展为视频内容，也可作动词表示录制视频。\"",
+        "valueJson": "\"英语 video 最早见于1935年，以拉丁语 video（“我看见”）为基础，并仿照前一年已出现的英语 audio 构成。audio 当时表示录制的声音，其相关形式 audio- 在十九世纪末就已有记录。\""
+      },
+      {
+        "op": "add",
+        "path": "/etymology/stages/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"language\":\"英语\",\"form\":\"video\",\"meaning\":\"影像媒介；视频\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的历史来源与现代英语 video 的拼写相同；“视频”是现代英语用法，不应误认为拉丁语原义。\"",
+        "valueJson": "\"拉丁语原义是“我看见”，“视频、录像”是英语中的用法。audio 是命名时参照的词，不是 video 的历史前身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily",
+        "expectedValueJson": "[{\"word\":\"videoed\",\"partOfSpeech\":\"动词过去式／过去分词\",\"meaning\":\"录制了视频\",\"formation\":\"video + -ed，规则动词变化。\",\"spellingNote\":\"保留词尾 o 后加 -ed。\",\"example\":{\"id\":\"video-family-1\",\"senseId\":\"video-verb-record\",\"en\":\"They videoed the final dance for the class page.\",\"zh\":\"他们把最后一支舞录下来，发到班级主页上。\",\"note\":\"videoed 是 video 的过去式。\"},\"sourceIds\":[\"oxford_video\"]},{\"word\":\"videoing\",\"partOfSpeech\":\"动词现在分词\",\"meaning\":\"正在录制视频；录制视频这件事\",\"formation\":\"video + -ing。\",\"spellingNote\":\"保留词尾 o 后加 -ing。\",\"example\":{\"id\":\"video-family-2\",\"senseId\":\"video-verb-record\",\"en\":\"Sam is videoing the birds near the lake.\",\"zh\":\"萨姆正在录湖边的鸟。\",\"note\":\"videoing 是 video 的现在分词。\"},\"sourceIds\":[\"oxford_video\"]}]",
+        "valueJson": "[{\"word\":\"video game\",\"partOfSpeech\":\"名词\",\"meaning\":\"电子游戏\",\"formation\":\"video + game 构成复合名词，指通过屏幕呈现画面的电子游戏。\",\"spellingNote\":\"写成两个词；复数为 video games。\",\"example\":{\"id\":\"video-family-1\",\"senseId\":\"video-noun-medium\",\"en\":\"My brother and I played a video game after dinner.\",\"zh\":\"晚饭后，我和哥哥玩了一款电子游戏。\",\"note\":\"video 在复合词中修饰 game；video game 整体表示电子游戏。\"},\"sourceIds\":[\"wiktionary_video_history\"]},{\"word\":\"video card\",\"partOfSpeech\":\"名词\",\"meaning\":\"显卡\",\"formation\":\"video + card 构成复合名词，指计算机中处理并输出图像的硬件。\",\"spellingNote\":\"写成两个词；复数为 video cards。\",\"example\":{\"id\":\"video-family-2\",\"senseId\":\"video-noun-medium\",\"en\":\"The repair shop replaced the video card in my computer.\",\"zh\":\"维修店更换了我电脑里的显卡。\",\"note\":\"video 在这里与图像处理有关，video card 不是录像文件。\"},\"sourceIds\":[\"wiktionary_video_history\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"video 的词形变化都保留词尾 o；常见名词复数为 videos，动词过去式为 videoed。\"",
+        "valueJson": "\"video game、video card 是含 video 的复合名词；videoed、videoing 则是 video 自身的屈折变化，已列在词形栏中。两类构词要分清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford_video\",\"title\":\"Oxford Learner’s Dictionaries: video\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/video\",\"supports\":[\"名词与动词用法\",\"常见词形\",\"搭配和读音\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary_video_history\",\"title\":\"Wiktionary: video（English）\",\"url\":\"https://fr.wiktionary.org/wiki/video#Anglais\",\"supports\":[\"所给历史材料记录的拉丁语来源及其释义\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary_video_history\",\"title\":\"Wiktionnaire：video 英语词条（法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/video#Anglais\",\"supports\":[\"英美读音、名词复数及动词第三人称单数 videoes\",\"影像媒介、一段视频、旧义录像机及录像动词的基本定义\",\"video game、video card 等复合词\",\"1935年记录、拉丁语来源及仿照 audio 构词的关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1494,
+    "headword": "video",
+    "meaning_zh": "n. 视频；录像\nv. 录像",
+    "phonetic": "/'vidiәu/",
+    "pos": "",
+    "forms": []
+  }
+}

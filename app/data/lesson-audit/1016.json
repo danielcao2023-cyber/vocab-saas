@@ -1,0 +1,299 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9c496f7bbcb2ddef8a6e85b3e5a31401d1108bc54bd21469d52309694e3a1160",
+    "executedReviewPromptHash": "9c496f7bbcb2ddef8a6e85b3e5a31401d1108bc54bd21469d52309694e3a1160",
+    "reviewHash": "f5d9c17a1f03e8e360ca66b91ddd12b65ee074c4c7cc794a601ce93b3911ed39",
+    "wordId": 1016,
+    "inputHash": "75fadcd9efdfde317102ff9016c143dffe436401f31c9d8955efa15d01d0c57f",
+    "draftHash": "b0bebaee1ab98b8fe70cfce9ef259255a26467b6db415b034fc96f8a9e32377e",
+    "finalHash": "3a18f8b7b8c4276455a3a0eb91cc435b8b11f4083a063f126a59f863d1b10339",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/piano",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:53:55.159Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/piano#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:46.986Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 2362,
+        "revisionId": 39868655,
+        "revisionTimestamp": "2026-09-09T17:27:22Z",
+        "sha256": "405c099c254da52de3ae5c6a85dc6262f30dddf658c8b9fc09f0f04a15fc1bf4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/piano",
+        "section": "piano etymology",
+        "supports": [
+          "Pianoforte shortening and soft/loud naming; exclude floor homograph"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T06:09:33.681748+00:00",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "59d3f753a3239ad42bce150dec28ab24651c7d339f398fc20ea6abcbf6a8805c",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "59d3f753a3239ad42bce150dec28ab24651c7d339f398fc20ea6abcbf6a8805c",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/1016.json"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:42:28.410Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1",
+        "message": "play piano 也是规范表达，尤其常见于美式英语及谈论演奏技能、乐队分工等语境，不能标为错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "表示弱奏的 piano 已进入英语，可作形容词或副词，不能因其源于意大利语就将其排除在英语词汇之外。“弱音地”及例句译文也需调整。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "牛津条目没有实际提供内容，剑桥条目取回失败，不能将二者作为已读取的释义、搭配或发音依据。应改引实际取回的维基词典英语词条；其中未提供 IPA 转写，发音转写按专业语言知识核对。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "将开头读成 /pɑː/ 与所谓“旧式拼读”联系起来没有依据。实际应提醒重读音节使用 /æ/。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions",
+        "message": "keyboard 常指键盘本身或电子键盘乐器，不能简单当作所有键盘乐器的上位词；keyboard instrument 才是明确的类别名称。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "pianist 是值得一起学习的常用关联词，原稿已提及却将词族完全留空。可补入人物义及去掉 o 后加 -ist 的拼写关系，不将其冒充历史借词过程。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "现有 pianoforte 缩略链基本成立，可以保留。词源说明可依据已取回材料补充法语、意大利语用法及 planus 关系，明确乐器名与力度术语共享“轻柔”的意义联系，并排除“楼层”同形义。"
+      }
+    ],
+    "coverageAssessment": "已核对核心可数名词“钢琴”和较低频的英语音乐力度用语。核心义已有两个自然原创英中例句，均保留；音乐用语放在 lessCommonSenses，保留一个例句合理，无须人为拆分更多核心义。发音、复数、冠词用法及 pianist 的拼写依专业语言知识核对；未将未取回的词典页面当作证据。词源阶段保留可成立的名称缩略顺序，拉丁语关系单独写入说明。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：钢琴",
+        "coveredBy": [
+          "piano-noun-instrument"
+        ],
+        "assessment": "初中核心义已覆盖，两个例句分别展示具体乐器与演奏活动；复数 pianos 正确。须纠正对 play piano 的误判及 keyboard 的比较说明。"
+      },
+      {
+        "sense": "形容词／副词（音乐）：弱的；轻声地、弱奏",
+        "coveredBy": [
+          "piano-music-direction"
+        ],
+        "assessment": "已作为较低频用法覆盖。须明确这是英语中使用的意大利语借词，并调整中文释义与译文；无需另立两个初中核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; adjective/adverb (music)\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"不要按旧式拼读把开头读成 /pɑː/。\"",
+        "valueJson": "\"注意重读音节的元音是 /æ/，不要读成 /ɑː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-piano\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"在乐器语境中可泛指带键盘的乐器，也可指电脑键盘；范围比 piano 广。\"",
+        "valueJson": "\"可指钢琴等乐器上的键盘，也常指电子键盘乐器；还可指电脑键盘。泛称键盘乐器时可用 keyboard instrument，不能一概用 keyboard 替换 piano。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"这些词都能帮助谈论乐器；keyboard 的范围更广，grand piano 是 piano 的具体种类。\"",
+        "valueJson": "\"keyboard 常指电子键盘乐器或键盘本身，与 piano 不能直接等同；grand piano 是 piano 的一种。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-piano\",\"cambridge-piano\"]",
+        "valueJson": "[\"wiktionary-en-piano\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"轻柔地；弱音地\"",
+        "valueJson": "\"（音乐）弱的；轻声地\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在乐谱中作音乐术语，指以较轻、较弱的音量演奏。\"",
+        "valueJson": "\"表示以较小的音量、较弱的力度演奏，即“弱奏”，乐谱中常用记号 p 表示。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是音乐记号或演奏说明中的用法；此处 piano 是意大利语音乐术语，不是“钢琴”这个名词。\"",
+        "valueJson": "\"这是英语中使用的音乐术语，源自意大利语，可作形容词或副词。这里的“弱”说明音量和力度，不表示速度慢。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"最后几个音标着弱音演奏。\"",
+        "valueJson": "\"最后几个音被标注为弱奏。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"play the piano，不是 play piano\"",
+        "valueJson": "\"play the piano 和 play piano 都正确\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"英语中谈演奏乐器通常在乐器前加 the。\"",
+        "valueJson": "\"play the piano 是常见表达；play piano 也正确，尤其常见于美式英语，以及谈论演奏技能、乐队分工等语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说乐器时用 play the piano；说数量时用 pianos；看到乐谱中的 piano，则结合上下文判断它表示轻柔演奏。\"",
+        "valueJson": "\"弹钢琴可说 play the piano，也可说 play piano；两架钢琴写 two pianos；乐谱中的 piano 表示弱奏。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-piano\",\"cambridge-piano\",\"etymonline-piano\"]",
+        "valueJson": "[\"wiktionary-en-piano\",\"etymonline-piano\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"乐器名 piano 是 pianoforte 的缩略形式；pianoforte 来自意大利语 piano e forte，字面表示“轻与响”，点出了这种乐器能演奏强弱变化。乐谱上的 piano 则是表示“轻柔地”的音乐术语，词源路径不同。\"",
+        "valueJson": "\"乐器名 piano 经法语和意大利语用法由 pianoforte 缩略而来。意大利语 piano e forte 表示“轻声与响声”，点出了钢琴能演奏强弱变化。英语音乐术语 piano 表示“轻声地、弱奏”，源自意大利语 piano；这一“轻柔”义最终可追溯到拉丁语 planus（平坦、光滑）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的历史演变解释的是乐器名词 piano。乐谱中的 piano 是表示“轻柔地”的音乐术语，不能把两种用法混成同一条词源链。\"",
+        "valueJson": "\"上面的阶段展示乐器名称的形成与缩略过程。乐器名中的 piano 和力度术语 piano 都与“轻柔”有关；意大利语中表示“楼层”的同形词不是这里的来源。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"pianist\",\"partOfSpeech\":\"noun\",\"meaning\":\"钢琴演奏者；钢琴家\",\"formation\":\"与 piano 对应的演奏者名词；-ist 是常见的人物名词后缀。\",\"spellingNote\":\"拼写可记为 piano 去掉末尾 o，再加 -ist，得到 pianist；不要写成 pianoist。\",\"example\":{\"id\":\"piano-family-pianist-1\",\"senseId\":\"piano-noun-instrument\",\"en\":\"The pianist played at our school concert.\",\"zh\":\"这位钢琴演奏者在我们学校的音乐会上演奏。\",\"note\":\"pianist 指演奏者，piano 指乐器。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"本词没有适合初中阶段讲解的常用派生词；pianist（钢琴演奏者）与 piano 相关，但属于职业名称，暂不作为本课词族重点。\"",
+        "valueJson": "\"先记 piano（钢琴）和 pianist（钢琴演奏者）这组词；pianist 指人，不一定是职业钢琴家。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-piano\",\"title\":\"Oxford Learner’s Dictionaries: piano\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/piano\",\"supports\":[\"名词及常见搭配\",\"词形与复数参考\",\"英式和美式发音参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en-piano\",\"title\":\"Wiktionnaire: piano（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/piano#Anglais\",\"supports\":[\"英语名词 piano 的“钢琴”义\",\"英语词条注明来自意大利语\",\"英语发音音频参考\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"cambridge-piano\",\"title\":\"Cambridge Dictionary: piano\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/piano\",\"supports\":[\"名词用法和发音参考\",\"play the piano 等搭配参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1016,
+    "headword": "piano",
+    "meaning_zh": "n. 钢琴",
+    "phonetic": "/pi'ɑ:nәu/",
+    "pos": "",
+    "forms": []
+  }
+}

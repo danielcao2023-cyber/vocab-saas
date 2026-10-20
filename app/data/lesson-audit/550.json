@@ -1,0 +1,591 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "1b5aecea460843b3fb913c6d6b64464c2490f45477eb937f00baf93fc03d9705",
+    "executedReviewPromptHash": "1b5aecea460843b3fb913c6d6b64464c2490f45477eb937f00baf93fc03d9705",
+    "reviewHash": "87c137aa5210f42a1ebb9080d0d6858f723470b1ad0272fdf870e4d96a5ace19",
+    "wordId": 550,
+    "inputHash": "99bc87b8b05b6e1d5bf8cb37116a16974ea1dd44ed2f211c27a219702095b7e6",
+    "draftHash": "a36d01702579206e260bc15cc9d8692f77a5cc7ffd8e10b73c4a0b88c5b93b0e",
+    "finalHash": "9c5d705f38d31634b31bbbcaaeb9f5d78036eaa8c20f09e52606d1df926ce8fb",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/forward#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:02.116Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120571,
+        "revisionId": 35907262,
+        "revisionTimestamp": "2024-08-21T17:08:36Z",
+        "sha256": "fcdafa41a02aac70aee1f3f389c266840d17d3ee481a5ff41f4ac7de1d9be615",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/forward",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:58:11.439Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T17:07:53.922Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处/sourceIds",
+        "message": "初稿未引用实际取得的英语词条，却把未提供正文的 Oxford 和抓取失败的 Cambridge 作为全篇依据。应改引实际取得的 Wiktionnaire 英语词条；超出其明确内容的专业知识补充不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/0；/senses/0；/studyPlan/2",
+        "message": "把安排提前误归为形容词义；forward date 不能据此解释为较早日期。forward-facing 本身正确，但不是 forward 单独作形容词的示范；另一例完全没有目标词。“提前完成”也容易诱导裸用 forward。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1；/senses",
+        "message": "look forward to 是重点常用功能，却只有搭配片段，没有两句完整例句；安排提前也未得到正确的副词教学。应分别补齐，并区分安排提前、钟表拨快和未来筹划。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples；/lessCommonSenses",
+        "message": "转寄只有搭配，没有实物转寄的完整例句；原始释义中的发育较早、促进和发运也未得到限定说明。应补齐，避免把“迅速、进步”当作 forward 的通用现代义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/relatedExpressions/contrasting",
+        "message": "保留、删除邮件均可与转发先后发生，不能当作转发的反向动作。应改为直接否定，以及特定语境中表示扣留、不予转交的 withhold。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/meaning；/senses/3/usageNote",
+        "message": "把体育名词一概解释为在前场进攻的队员，不能准确覆盖来源中的橄榄球 forwards。应说明不同运动的职责，并补充橄榄球例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "foreword 例句没有 forward，却被挂到 forward-adv。应使用同时展示两个词的自然例句，并绑定其中真正出现的 forward 动词义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/2；/forms/2/note；/confusions/0/items/2；/wordFamily/0",
+        "message": "forwards 的说明应区分副词变体、名词复数和动词第三人称单数，并限制固定表达的替换范围。“迎接公交车”的例句也宜换成更自然的方向场景。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现有材料已明确给出古英语 foreweard 来源，初稿仍仅讲现代拆词并拒绝历史关系，遗漏了可靠事实。应补入来源与构词关系；材料没有提供足以逐阶段展示的古英语释义，不编造箭头链。"
+      }
+    ],
+    "coverageAssessment": "已核对原始释义及实际取得的英语词条。补丁覆盖空间形容词、空间与进展副词、未来筹划、安排提前、期待、转发与转寄、体育名词，并补充冒失、发育超前、正式的促进及货运发运用法。各核心功能至少有两句完整原创例句，合并展示的空间、进展及实物转寄也分别补足。词源仅保留可确认的古英语来源和构词关系；未推断现代各义的历史顺序。来源局限是仅取得 Wiktionnaire 正文，其他专业知识补充不伪托未取得的词典。",
+    "senseInventory": [
+      {
+        "sense": "形容词：朝前的；位于前部的",
+        "coveredBy": [
+          "forward-adj"
+        ],
+        "assessment": "修正词性与例句，方向和前部位置各有两句。"
+      },
+      {
+        "sense": "形容词：涉及未来、预先筹划的",
+        "coveredBy": [
+          "forward-adj-future"
+        ],
+        "assessment": "补充 forward planning、forward bookings，明确区别于把既有安排提前。"
+      },
+      {
+        "sense": "形容词：发育较早、发展较超前",
+        "coveredBy": [
+          "forward-adj-developed"
+        ],
+        "assessment": "作为较旧或特定领域用法补充；原始“早、迅速、进步”不能扩展成 early、fast、progressive 的通用替换。"
+      },
+      {
+        "sense": "形容词：冒失、过分主动",
+        "coveredBy": [
+          "forward-adj-bold"
+        ],
+        "assessment": "现有释义与例句基本准确，保留并改接实际来源。"
+      },
+      {
+        "sense": "副词：向前移动",
+        "coveredBy": [
+          "forward-adv"
+        ],
+        "assessment": "补足两句空间方向例句，并限定 forwards 的替换范围。"
+      },
+      {
+        "sense": "副词：事情继续推进、取得进展",
+        "coveredBy": [
+          "forward-adv"
+        ],
+        "assessment": "保留计划例句，再补一例，避免仅展示字面移动。"
+      },
+      {
+        "sense": "副词：把安排提前",
+        "coveredBy": [
+          "forward-adv-time"
+        ],
+        "assessment": "补充两句写清原、新时间的例句，说明 move ... forward 的歧义及与拨快钟表的区别。"
+      },
+      {
+        "sense": "固定表达：look forward to，愉快地期待",
+        "coveredBy": [
+          "forward-look-forward-to"
+        ],
+        "assessment": "独立补齐两句完整例句、介词 to 的结构及相关表达的语境限制。"
+      },
+      {
+        "sense": "及物动词：转发；转寄",
+        "coveredBy": [
+          "forward-v"
+        ],
+        "assessment": "保留两句电子转发，增加两句实物转寄；修正反向表达。"
+      },
+      {
+        "sense": "及物动词：发运、运送",
+        "coveredBy": [
+          "forward-v-ship"
+        ],
+        "assessment": "作为货运领域补充，区别于收到私人邮件后的再次转寄。"
+      },
+      {
+        "sense": "及物动词：促进、推动",
+        "coveredBy": [
+          "forward-v-promote"
+        ],
+        "assessment": "作为正式用法补充，限定于事业、利益或发展等对象。"
+      },
+      {
+        "sense": "名词：体育前锋；橄榄球锋线队员",
+        "coveredBy": [
+          "forward-n"
+        ],
+        "assessment": "保留足球例句，补充橄榄球例句及职责差异，避免跨运动套用同一定义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"用自己的经历造句：描述向前走、提前完成和期待一件事。\"",
+        "valueJson": "\"用自己的经历造句：描述向前走、把约定时间提前、期待某项活动和转发邮件。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/2",
+        "expectedValueJson": "\"英式英语中副词也常写作 forwards；forward 本身可用于英美英语。\"",
+        "valueJson": "\"表示向前方向时，英式英语也常用副词 forwards；look forward to 等固定表达通常保留 forward。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可表示朝前的、在前面的或提前的；通常不用于比较级。\"",
+        "valueJson": "\"可表示朝前的、位于前部的；方向、位置义通常不用比较级。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"表示向前地；本用法不变形。英式英语也常见 forwards。\"",
+        "valueJson": "\"表示向前；副词本身没有屈折变化。方向义也可用 forwards，英式英语尤其常见。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"表示转寄、转发。规则变化：forwarded, forwarding。\"",
+        "valueJson": "\"表示转寄、转发。规则变化：第三人称单数 forwards，过去式和过去分词 forwarded，现在分词 forwarding。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"形容词：朝前的；在前面的；提前的\"",
+        "valueJson": "\"形容词：朝前的；位于前部的\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示朝前、位置靠前，或时间比通常预期更早。\"",
+        "valueJson": "\"表示动作朝向前方，或某部分位于物体的前部。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"可修饰表示位置、移动或时间的名词，如 movement、position、date。forward 在此通常不变形。\"",
+        "valueJson": "\"通常放在名词前，如 forward movement（向前移动）、the forward part（前部）。把会议日期提前时，forward 位于 move 或 bring 等动词之后，是副词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/0",
+        "expectedValueJson": "{\"id\":\"forward-adj-ex1\",\"senseId\":\"forward-adj\",\"en\":\"The car has a forward-facing camera.\",\"zh\":\"这辆车有一个朝前的摄像头。\",\"note\":\"forward-facing 修饰 camera，说明摄像头朝向车前方。\"}",
+        "valueJson": "{\"id\":\"forward-adj-ex1\",\"senseId\":\"forward-adj\",\"en\":\"The children practised forward rolls on the mat.\",\"zh\":\"孩子们在垫子上练习前滚翻。\",\"note\":\"forward 直接修饰 rolls，说明翻滚的方向朝前。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1",
+        "expectedValueJson": "{\"id\":\"forward-adj-ex2\",\"senseId\":\"forward-adj\",\"en\":\"The school moved the meeting to an earlier date because of the holiday.\",\"zh\":\"学校因假期把会议日期提前了。\",\"note\":\"这里用更自然的 earlier 表示日期提前；forward 也可用于 forward date 等特定搭配。\"}",
+        "valueJson": "{\"id\":\"forward-adj-ex2\",\"senseId\":\"forward-adj\",\"en\":\"We sat in the forward part of the boat.\",\"zh\":\"我们坐在船的前部。\",\"note\":\"forward 修饰 part，表示位于船体前部。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adj-ex3\",\"senseId\":\"forward-adj\",\"en\":\"Tom made a forward pass to his teammate.\",\"zh\":\"汤姆把球向前传给了队友。\",\"note\":\"这里是足球语境；forward 修饰 pass，说明传球方向。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adj-ex4\",\"senseId\":\"forward-adj\",\"en\":\"The bags were stored in the plane's forward compartment.\",\"zh\":\"行李存放在飞机前部的舱室里。\",\"note\":\"forward 修饰 compartment，表示舱室位于飞机前部。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0",
+        "expectedValueJson": "{\"en\":\"a forward-facing + noun\",\"zh\":\"朝前的……\",\"note\":\"forward-facing 常作复合形容词，说明某物朝向前方。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"forward + noun\",\"zh\":\"朝前的／位于前部的……\",\"note\":\"forward 作形容词直接修饰名词，如 a forward movement、the forward part of a boat。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"move a date forward\",\"zh\":\"把日期提前\",\"note\":\"表示把安排改到更早的时间；实际方向依语境确认，避免与“推迟”混淆。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions",
+        "expectedValueJson": "{\"similar\":[{\"en\":\"front\",\"zh\":\"前面的\",\"note\":\"常表示最靠前的位置，如 the front row；forward 更突出朝前的方向或位置变化。\"},{\"en\":\"early\",\"zh\":\"早的；提前的\",\"note\":\"用于时间，如 an early start；forward 只有在特定时间安排表达中才有“提前”义。\"}],\"contrasting\":[{\"en\":\"backward\",\"zh\":\"向后的；靠后的\",\"note\":\"在描述方向或位置时与 forward 相对；并非所有时间用法都能直接替换。\"},{\"en\":\"late\",\"zh\":\"晚的；迟的\",\"note\":\"与 early 对照时间早晚；不适合作为所有 forward 用法的反义词。\"}],\"similarNote\":\"描述位置时，front 指前方位置，forward 更强调朝前或向前的方向；描述时间时通常用 early 表示早。\",\"contrastingNote\":\"方向、位置语境可用 backward 对照；时间早晚语境用 late 对照。\"}",
+        "valueJson": "{\"similar\":[{\"en\":\"front\",\"zh\":\"前面的；前部的\",\"note\":\"常表示前部位置，如 the front row；forward 还可突出运动方向，不能处处替换。\"}],\"contrasting\":[{\"en\":\"backward\",\"zh\":\"向后的\",\"note\":\"描述动作方向时与 forward 对照，如 a backward movement。\"},{\"en\":\"rear\",\"zh\":\"后部的\",\"note\":\"描述物体前后部分时可与 forward 对照，如 the rear part of a boat。\"}],\"similarNote\":\"front 常用于前部位置；forward 可用于朝前的动作或交通工具前部等表达，具体搭配要分别记。\",\"contrastingNote\":\"动作朝向可对照 backward；物体的前后部分可对照 rear。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"副词：向前地\"",
+        "valueJson": "\"副词：向前；继续推进\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示朝前移动、继续向前推进，或把时间、进程向前推进。\"",
+        "valueJson": "\"表示朝前移动，也可比喻事情继续发展或取得进展。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"修饰动词；forward 可单独使用，也常用于 look forward to。英式英语也常写 forwards。\"",
+        "valueJson": "\"放在动作动词后说明方向或进展。表示空间方向时，英式英语也常用 forwards；不能据此把所有含 forward 的固定表达都加上 -s。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adv-ex3\",\"senseId\":\"forward-adv\",\"en\":\"She leaned forward to read the label.\",\"zh\":\"她向前探身去看标签。\",\"note\":\"lean forward 表示身体向前倾。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adv-ex4\",\"senseId\":\"forward-adv\",\"en\":\"After weeks of discussion, the project is finally moving forward.\",\"zh\":\"经过几周讨论，这个项目终于有进展了。\",\"note\":\"这里不是物体移动，而是项目继续推进。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"look forward to + noun / -ing\",\"zh\":\"期待……\",\"note\":\"固定结构中的 to 是介词，后接名词或动名词，不能直接接动词原形。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations",
+        "expectedValueJson": "[{\"en\":\"look forward to the trip\",\"zh\":\"期待这次旅行\",\"note\":\"to 后接名词，表达对未来事情的期待。\",\"kind\":\"common-collocation\"},{\"en\":\"look forward to seeing you\",\"zh\":\"期待见到你\",\"note\":\"to 后的动词用 -ing 形式：seeing。\",\"kind\":\"common-collocation\"}]",
+        "valueJson": "[{\"en\":\"step forward\",\"zh\":\"向前迈步\",\"note\":\"说明迈步的方向。\",\"kind\":\"common-collocation\"},{\"en\":\"move forward with a plan\",\"zh\":\"继续推进一项计划\",\"note\":\"with 后接正在推进的计划或事情。\",\"kind\":\"common-collocation\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-v-ex3\",\"senseId\":\"forward-v\",\"en\":\"The post office forwarded my letters to my new address.\",\"zh\":\"邮局把我的信转寄到了新地址。\",\"note\":\"forward 也用于实体信件，不限于电子邮件。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-v-ex4\",\"senseId\":\"forward-v\",\"en\":\"Could you forward the parcel to my office?\",\"zh\":\"你能把这个包裹转寄到我的办公室吗？\",\"note\":\"to 后也可接目的地，而不只是收件人。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"keep\",\"zh\":\"留下；保留\",\"note\":\"在处理邮件或文件时，keep 表示留下内容，和把它转发出去的动作相反。\"},{\"en\":\"delete\",\"zh\":\"删除\",\"note\":\"用于邮件或消息时表示移除内容；与转发是不同的处理方式。\"}]",
+        "valueJson": "[{\"en\":\"not forward\",\"zh\":\"不转发；不转寄\",\"note\":\"直接否定转发或转寄这个动作。\"},{\"en\":\"withhold\",\"zh\":\"扣留；不予转交\",\"note\":\"用于有意不给对方本应转交的消息或文件，比单纯没有转发更强调主动扣留。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"在处理同一条消息时，keep 表示保留，delete 表示删除；它们只在这个处理语境中与 forward 对照。\"",
+        "valueJson": "\"not forward 直接否定动作；withhold 只在有意扣留内容时与之对照。保留或删除原邮件都可能发生在转发之后，不能据此判断是否转发。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"球类运动中主要在前场进攻的队员。\"",
+        "valueJson": "\"足球、篮球等运动中的前锋；在橄榄球中也指锋线队员，具体职责因运动而异。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"体育用语，常见于足球、篮球等运动；可数名词，复数通常写作 forwards。\"",
+        "valueJson": "\"可数名词，复数为 forwards。足球前锋通常参与前场进攻；橄榄球中的 forwards 主要参与争球等身体对抗，不能直接套用足球的位置说明。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-n-ex3\",\"senseId\":\"forward-n\",\"en\":\"The forwards pushed hard in the scrum.\",\"zh\":\"锋线队员们在争球时奋力推挤。\",\"note\":\"这里是橄榄球语境；forwards 是名词复数。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-n-ex4\",\"senseId\":\"forward-n\",\"en\":\"The coach picked me to play as a forward in our rugby match.\",\"zh\":\"教练选我在这场橄榄球比赛中担任锋线队员。\",\"note\":\"play as a forward 表示担任这一位置，职责要结合运动项目理解。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"谈球员位置或职责时，defender 和 goalkeeper 可与 forward 作对照。\"",
+        "valueJson": "\"这里以足球为例：defender 侧重防守，goalkeeper 负责守门。不同运动的 forward 不能套用同一职责划分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adj-developed\",\"title\":\"形容词：发育较早的；发展较超前的\",\"meaning\":\"比通常情况更早达到某个生长或发展阶段。\",\"note\":\"多见于较旧或农业、园艺等特定语境。不能把它当作 early、fast 或 progressive 的通用替换词。\",\"example\":{\"id\":\"forward-adj-developed-ex1\",\"senseId\":\"forward-adj-developed\",\"en\":\"The crops are unusually forward this spring.\",\"zh\":\"今年春天，庄稼的生长进度比往常提前了不少。\",\"note\":\"指生长阶段较往常超前，不是一般意义上的移动迅速。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-v-promote\",\"title\":\"动词：促进；推动\",\"meaning\":\"帮助某项事业或发展取得进展。\",\"note\":\"较正式，常见于 forward a cause、forward someone's interests 等搭配，意思接近 further 或 promote。\",\"example\":{\"id\":\"forward-v-promote-ex1\",\"senseId\":\"forward-v-promote\",\"en\":\"The group raised money to forward the cause of equal education.\",\"zh\":\"这个团体筹集资金，以推动教育平等事业。\",\"note\":\"forward 在这里表示推动事业发展。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-v-ship\",\"title\":\"动词：发运；运送\",\"meaning\":\"把货物发送到目的地。\",\"note\":\"货运或商务用语，不一定指收到私人邮件或包裹后再次转寄。\",\"example\":{\"id\":\"forward-v-ship-ex1\",\"senseId\":\"forward-v-ship\",\"en\":\"The warehouse will forward the goods by rail.\",\"zh\":\"仓库将通过铁路发运这批货物。\",\"note\":\"forward the goods 指安排货物发运。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-look-forward-to\",\"title\":\"固定表达：look forward to，期待\",\"meaning\":\"带着愉快的心情等待将来发生的事。\",\"usageNote\":\"整体表达期待，不是字面上的朝前看。to 是介词，后接名词、代词或动名词，不能在这一结构中直接接动词原形。常用 be looking forward to，也可用 look forward to。\",\"examples\":[{\"id\":\"forward-look-forward-to-ex1\",\"senseId\":\"forward-look-forward-to\",\"en\":\"I'm looking forward to the school trip on Friday.\",\"zh\":\"我很期待周五的学校旅行。\",\"note\":\"to 后接名词短语 the school trip。\"},{\"id\":\"forward-look-forward-to-ex2\",\"senseId\":\"forward-look-forward-to\",\"en\":\"Lily is looking forward to playing tennis with her dad on Sunday.\",\"zh\":\"莉莉很期待周日和爸爸一起打网球。\",\"note\":\"to 后接动名词 playing，不用动词原形 play。\"}],\"patterns\":[{\"en\":\"look forward to + noun / pronoun / -ing\",\"zh\":\"期待某事／期待做某事\",\"note\":\"to 是介词；进行时常用于表达当前的期待。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"look forward to the trip\",\"zh\":\"期待这次旅行\",\"note\":\"名词短语作介词 to 的宾语。\",\"kind\":\"common-collocation\"},{\"en\":\"look forward to seeing you\",\"zh\":\"期待见到你\",\"note\":\"seeing 是动名词形式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be excited about\",\"zh\":\"对……感到兴奋\",\"note\":\"可表达对未来活动的兴奋，也可描述对当前事情的感受；不总是表示等待。\"},{\"en\":\"can't wait to do something\",\"zh\":\"迫不及待地想做某事\",\"note\":\"通常比 look forward to 更强烈；这里的 to 后接动词原形。\"}],\"contrasting\":[{\"en\":\"not look forward to\",\"zh\":\"并不期待；不太想面对\",\"note\":\"直接否定期待，常用于不想面对的未来事情。\"},{\"en\":\"dread\",\"zh\":\"惧怕；很不想面对\",\"note\":\"同样指向尚未发生的事，但情绪是担忧或恐惧，通常比否定 look forward to 更强。\"}],\"similarNote\":\"look forward to 强调愉快期待；be excited about 强调兴奋；can't wait to 强调迫不及待，并采用不同的 to do 结构。\",\"contrastingNote\":\"反向对照的是对未来事情的态度，而不是事情会不会发生。\"},\"sourceIds\":[\"wiktionary-forward\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adv-time\",\"title\":\"副词：把安排提前\",\"meaning\":\"把原定的活动、预约或截止时间改到更早的时间。\",\"usageNote\":\"bring ... forward 通常明确表示把安排提前。move ... forward 有人理解为提前，也有人理解为推后，实际沟通最好写清原、新时间。set the clock forward 则是把钟表拨快，钟面读数变大，不能套用同一解释。\",\"examples\":[{\"id\":\"forward-adv-time-ex1\",\"senseId\":\"forward-adv-time\",\"en\":\"The dentist brought my appointment forward from Friday to Wednesday.\",\"zh\":\"牙医把我的预约从周五提前到了周三。\",\"note\":\"from ... to ... 写明原、新日期；周三早于周五。\"},{\"id\":\"forward-adv-time-ex2\",\"senseId\":\"forward-adv-time\",\"en\":\"Because the room was free, we moved the meeting forward from 3 p.m. to 2 p.m.\",\"zh\":\"因为会议室空着，我们把会议从下午三点提前到了两点。\",\"note\":\"具体时刻消除了 move ... forward 可能产生的方向歧义。\"}],\"patterns\":[{\"en\":\"bring + event / appointment + forward (from ... to ...)\",\"zh\":\"把活动／预约从……提前到……\",\"note\":\"forward 是副词，说明时间安排的调整。\",\"kind\":\"sentence-pattern\"},{\"en\":\"move + event + forward\",\"zh\":\"调整活动时间\",\"note\":\"单独使用可能有提前、推后的理解差异，宜补充明确日期或时刻。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"bring the meeting forward\",\"zh\":\"把会议提前\",\"note\":\"改变已有会议安排。\",\"kind\":\"common-collocation\"},{\"en\":\"bring the deadline forward\",\"zh\":\"把截止日期提前\",\"note\":\"意味着可用的完成时间变少。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"reschedule something for an earlier time\",\"zh\":\"把某事重新安排到较早时间\",\"note\":\"意思明确，直接说明是改早。\"},{\"en\":\"advance a meeting\",\"zh\":\"把会议提前\",\"note\":\"较正式；可接具体新日期，不能套用到 advance 的所有其他义项。\"}],\"contrasting\":[{\"en\":\"postpone\",\"zh\":\"推迟\",\"note\":\"把活动安排到更晚的时间。\"},{\"en\":\"put off\",\"zh\":\"推迟\",\"note\":\"较口语；可接活动名词或动名词。\"}],\"similarNote\":\"reschedule ... for an earlier time 最明确；advance 在活动安排语境中较正式。\",\"contrastingNote\":\"这里对照的是同一活动日期改早还是改晚，不是动作的空间方向。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"forward-adj-future\",\"title\":\"形容词：面向未来的；预先的\",\"meaning\":\"涉及将来的需要、计划或预订。\",\"usageNote\":\"常见于 forward planning 等搭配，表示为未来预先安排；不等于把一个已经定好的日期改早。普通的较早日期仍说 an earlier date。\",\"examples\":[{\"id\":\"forward-adj-future-ex1\",\"senseId\":\"forward-adj-future\",\"en\":\"A little forward planning helped us avoid the holiday traffic.\",\"zh\":\"稍作提前规划，就让我们避开了假期的交通拥堵。\",\"note\":\"forward planning 指为未来预作安排。\"},{\"id\":\"forward-adj-future-ex2\",\"senseId\":\"forward-adj-future\",\"en\":\"The hotel is already taking forward bookings for next summer.\",\"zh\":\"这家酒店已经开始接受明年夏季的预订。\",\"note\":\"forward bookings 指预订未来的服务，常见于英式旅游或商务语境。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"forward planning\",\"zh\":\"提前规划；为未来作规划\",\"note\":\"突出预先考虑未来需要。\",\"kind\":\"common-collocation\"},{\"en\":\"forward bookings\",\"zh\":\"未来时段的预订\",\"note\":\"常用于酒店、旅游等服务。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"advance\",\"zh\":\"预先的\",\"note\":\"在 advance planning 等搭配中接近此义，但不能把所有 advance 搭配中的词都换成 forward。\"}],\"contrasting\":[{\"en\":\"last-minute\",\"zh\":\"临到最后才做的\",\"note\":\"last-minute planning 与预先筹划形成安排方式上的对照。\"}],\"similarNote\":\"forward planning 与 advance planning 都可强调提前筹划；具体名词搭配仍需分别掌握。\",\"contrastingNote\":\"last-minute 的对照限于准备、计划等语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"名词，指书籍正文前的序言；不是 forward 的变形。\"",
+        "valueJson": "\"名词，指书或报告开头的序言，常由正文作者以外的人撰写；不是 forward 的变形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"confusion-foreword-ex1\",\"senseId\":\"forward-adv\",\"en\":\"The author wrote a short foreword for the book.\",\"zh\":\"作者为这本书写了一篇简短的序言。\",\"note\":\"foreword 仅用于书籍前面的序言。\"}",
+        "valueJson": "{\"id\":\"confusion-foreword-ex1\",\"senseId\":\"forward-v\",\"en\":\"Please forward the foreword to the editor.\",\"zh\":\"请把这篇序言转发给编辑。\",\"note\":\"第一个词 forward 是动词“转发”，第二个词 foreword 是名词“序言”。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"常见副词形式，尤其在英式英语中；forward 也可作副词。\"",
+        "valueJson": "\"可作表示向前方向的副词，英式英语尤其常见；也可作名词 forward 的复数或动词第三人称单数。look forward to 等固定表达通常用 forward，形容词也用 forward。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example",
+        "expectedValueJson": "{\"id\":\"confusion-forwards-ex1\",\"senseId\":\"forward-adv\",\"en\":\"The children ran forwards to meet the bus.\",\"zh\":\"孩子们向前跑去迎接公交车。\",\"note\":\"forwards 与 forward 都可表示向前地。\"}",
+        "valueJson": "{\"id\":\"confusion-forwards-ex1\",\"senseId\":\"forward-adv\",\"en\":\"The queue moved forwards when the doors opened.\",\"zh\":\"门一开，队伍就往前挪动了。\",\"note\":\"这里 forwards 作副词，说明移动方向，可换成 forward。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"forward 是现代英语中的复合词，可看作 fore（前面）与 -ward（朝……方向）组合，帮助理解“朝前”的核心意思。转发、前锋等用法由这个方向概念在现代英语中的使用发展而来。\"",
+        "valueJson": "\"forward 源自古英语 foreweard；构词上可分析为 fore（前）和 -ward（朝……方向）的组合。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"fore + -ward 是现代构词拆解，帮助记忆方向含义；这里不把它当作已经核实的历史演变链。\"",
+        "valueJson": "\"fore 与 -ward 是构词成分，不是两个先后出现的词形。转发、前锋、冒失等现代义项的具体演变过程，不能仅由这一构词分析确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"在副词用法中，forward 和 forwards 都可表示向前；英式英语更常见 forwards。\"",
+        "valueJson": "\"forwards 以 -s 结尾。表示向前方向时，它与 forward 常可互换；look forward to 等固定表达通常用 forward。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[\"wiktionary-forward\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/example/senseId",
+        "expectedValueJson": "\"forward-v\"",
+        "valueJson": "\"forward-v-ship\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/3/sourceIds",
+        "expectedValueJson": "[\"oxford-forward\",\"cambridge-forward\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-forward\",\"title\":\"Oxford Learner’s Dictionaries: forward\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/forward_1\",\"supports\":[\"forward 的常见词性和释义\",\"副词用法及相关搭配\",\"动词转寄、转发用法\",\"体育名词前锋用法\",\"词形与发音\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-forward\",\"title\":\"Cambridge Dictionary: forward\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/forward\",\"supports\":[\"forward 的英美音标线索\",\"常见形容词、副词、动词和名词用法\",\"look forward to 等搭配\",\"forward 与 forwards 的用法\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-forward\",\"title\":\"Wiktionnaire：forward（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/forward#Anglais\",\"supports\":[\"空间方向的形容词与副词用法\",\"形容词“冒失、过分大胆”的用法\",\"动词转寄、转发用法\",\"足球与橄榄球中的体育名词用法\",\"英美发音、规则动词词形及名词复数\",\"副词 forwards、look forward to 与同音词 foreword\",\"古英语 foreweard 来源及 fore + -ward 构词关系\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 550,
+    "headword": "forward",
+    "meaning_zh": "adj. 向前的, 早的, 迅速的, 在前的, 进步的\nvt. 促进...的生长, 转寄, 运送\nadv. 向前地",
+    "phonetic": "/'fɒ:wәd/",
+    "pos": "",
+    "forms": []
+  }
+}

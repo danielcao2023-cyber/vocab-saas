@@ -1,0 +1,213 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "768518b9b99dc651757532ed3933b002061e78a3197e04c26ab64ec0da137a34",
+    "executedReviewPromptHash": "768518b9b99dc651757532ed3933b002061e78a3197e04c26ab64ec0da137a34",
+    "reviewHash": "cee1fe930927304152c1dfd4352151b698acfae539362f12cbd39dbf8edb9396",
+    "wordId": 1528,
+    "inputHash": "f557e49a27bf517de62cd44b4b77db9d0f862d33624ac23ae5a840eda29e1222",
+    "draftHash": "fd9681056c4ad4453eb1e6cfa6c2d04424d99332af03d4d65ddf3dad96635ed1",
+    "finalHash": "011231f31971f65cca9f1ed5af940184e1407a4f22db2f085fc0d1d8b605bf19",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/weekday#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:53:48.449Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115942,
+        "revisionId": 39476289,
+        "revisionTimestamp": "2026-05-01T12:52:09Z",
+        "sha256": "82edad84b86ece23c14a8ed88c1fcc1145623b55bed79dbb906a3f1aea323fad",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/weekday",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T21:52:18.992Z",
+        "failure": "network failure or timeout"
+      }
+    ],
+    "reviewedAt": "2026-10-19T22:04:58.170Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/0/meaning；/senses/0/relatedExpressions/contrasting",
+        "message": "部分说明混淆了 weekday 的星期分类与实际上班安排。周一至周五的节假日仍是 weekday；周末补班也不会因此成为 weekday。holiday 可以与 weekday 重叠。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/takeaway",
+        "message": "weekday 与 weekend 的区别不是 week 和 day 的位置互换；两词均以 week 开头，结尾分别是 day 和 end。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/summary；/etymology/caveat",
+        "message": "已获取的词源内容只支持 week 与 day 的复合关系，不能据此断定形成于现代。应删除面向制作过程的材料说明，只保留可证实的构词事实；stages 保持为空。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各处引用 cambridge-weekday 的 sourceIds",
+        "message": "Cambridge 页面获取失败，不能承担本次审核的事实依据。相关引用改为已获取的维基词典英语词条，并明确其实际支持的内容。"
+      }
+    ],
+    "coverageAssessment": "已核对全部可用定义：只有一个常用名词义，无须人为拆义。两个核心例句自然且覆盖该义；规则复数、可数用法及名词作定语的功能均已覆盖。现有英美音标属于可接受的宽式记法。近义表达、周末对照、词形拼写和其他例句未发现需修改的实质问题。历史部分仅保留已获支持的复合构词关系，不补造年代或演变阶段；未获取的 Cambridge 页面不作为依据。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：星期一至星期五中的一天，通常译作“工作日”",
+        "coveredBy": [
+          "weekday-n-1"
+        ],
+        "assessment": "已用两个自然原创例句覆盖，并包含复数 weekdays 与 a weekday morning 等定语用法。应明确这是星期类别，不随节假日或补班安排改变。可用定义未显示另一个需要新增的常用核心义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"一周中通常上学或上班的日子，通常指星期一到星期五中的一天。具体节假日安排可能不同。\"",
+        "valueJson": "\"星期一至星期五中的一天，中文通常译作“工作日”。这里按星期几分类：周一至周五即使放假，也仍是 weekday。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在通常一周安排中与 weekdays 相对，指星期六和星期日；某些工作安排可能不同。\"",
+        "valueJson": "\"通常指星期六和星期日，与 weekday 相对；周末上班不会使那一天变成 weekday。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"weekend 是一周安排中的常见对照；holiday 是否属于工作日要看具体安排。\"",
+        "valueJson": "\"weekend 与 weekday 是一周内日期类别的常见对照；holiday 可以与 weekday 重叠，因此不是 weekday 的严格反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"weekday 是工作周里的日子，weekend 是周末；不要把两个词的 week 和 day 位置记反。\"",
+        "valueJson": "\"weekday 通常指周一至周五中的一天，weekend 指周末。两个词都以 week 开头，结尾分别是 day 和 end。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"weekday 是 week 和 day 组成的现代复合词，字面是“一周中的一天”。所列历史词源材料也将其分析为这两个词的组合。\"",
+        "valueJson": "\"weekday 由 week（一周）和 day（一天）复合而成，按这两个成分理解，字面是“一周中的一天”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里说明的是构词关系，不表示两个词按先后顺序演变成 weekday；具体历史年代不在此处展开。\"",
+        "valueJson": "\"week 和 day 是两个构词成分，不是先后演变的两个阶段；weekday 的常用词义通常专指星期一至星期五中的一天。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-weekday\"]",
+        "valueJson": "[\"wiktionary-weekday\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weekday\"]",
+        "valueJson": "[\"wiktionary-weekday\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weekday\"]",
+        "valueJson": "[\"wiktionary-weekday\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-weekday\"]",
+        "valueJson": "[\"wiktionary-weekday\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-weekday\",\"title\":\"Cambridge Dictionary: weekday\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/weekday\",\"supports\":[\"词性与常见释义\",\"weekday 的常用读音和复数用法\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"week 与 day 的复合构词说明\"]",
+        "valueJson": "[\"名词词性、星期一至星期五的释义与规则复数\",\"英美读音\",\"weekend、holiday、working day 与 workday 等相关词汇\",\"week 与 day 的复合构词说明\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1528,
+    "headword": "weekday",
+    "meaning_zh": "n. 工作日（星期一至星期五）",
+    "phonetic": "/'wi:kdei/",
+    "pos": "",
+    "forms": []
+  }
+}

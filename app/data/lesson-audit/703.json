@@ -1,0 +1,536 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "5fa2f376dcf64c570fb9c3dab62e34d5ccfbaf1c787522c595b5a50e8b03faa3",
+    "executedReviewPromptHash": "5fa2f376dcf64c570fb9c3dab62e34d5ccfbaf1c787522c595b5a50e8b03faa3",
+    "reviewHash": "56e6d56eeea639ff14040db7782277e3ad206801d6d8ae10dda7de944c944aa4",
+    "wordId": 703,
+    "inputHash": "8d5529f5aea60f8a49ccd585f51f3da5d376120af3e934a3da8af21ec1fcd65d",
+    "draftHash": "cd1f6269e537ed0b616f48c747d0b0c3affd32b9e5dc17ab0443eac5edb533c0",
+    "finalHash": "5e83983e7b20bf1d90d0c04f2cf52d2e34cc978b403e05f176c0731f2fe815aa",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/inside#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:49.887Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 206740,
+        "revisionId": 34800872,
+        "revisionTimestamp": "2024-05-23T12:41:31Z",
+        "sha256": "18e5678cc47e14e6cbba59d9b1293a76e569d2f2c4ca3aadad59376babc00f09",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/inside",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T21:19:00.255Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T21:32:21.682Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各 sourceIds",
+        "message": "初稿把未实际取得的 Oxford 页面作为依据，却没有引用实际取得的法语维基词典英语词条。应更换来源，并避免把独立的语言知识说明虚挂在该词典下。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "“重音在第二音节”“标准读音为……”过于绝对；实际材料同时列有第一音节重读形式。关于旧音标的制作说明也不应出现在学生正文中。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/*/examples；/confusions/*/items/*/example",
+        "message": "现有十三个例句对象均缺少目标结构必填的 note 字段，必须补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "介词义只讲静态位置，遗漏与移动动词连用表示“到……里面”的常用功能，需补充说明和例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "in 也能独立作副词，如 come in、stay in。初稿把依赖上下文说成 in 特有的限制，并暗示 inside 与 in 的主要区别在句子结构，容易误导。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "outside 并非只能在具体空间中与 inside 对照，也有组织内外等抽象用法。应限定本栏正在比较的语境，不能作全局排除。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/examples/1",
+        "message": "inside door handle 在这里宜理解为门内侧的把手，原译误指里面那扇门。此外，该句仅替换了来源例句的末词，不满足原创例句要求。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "现已取得明确的 in- 与 side 合成关系，不能仍只保留无来源的现代拆词助记。应补入可证实的构词事实和同 URL 来源，不编造历史阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/memoryAid/story；/memoryAid/cues/2",
+        "message": "把“门的内侧”直接对应形容词用法不准确；inside door 表示里面的门，也不等于门的内侧。应以具体句法结构区分词性。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/usageNote；/confusions/1",
+        "message": "inside of 的说明宜补充其尤其常见于美式口语的使用范围。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/meaning；/senses/3/examples/0",
+        "message": "“人在或物在”存在中文语序问题；inside pocket 译为衣服的内袋比“里面的口袋”更明确。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses；/lessCommonSenses；/wordFamily",
+        "message": "可补齐常见固定表达 inside out，并简要补充时间、内心及 know ... inside out 的扩展用法。直接派生词 insider 也值得保留，须说明准确拼写。"
+      }
+    ],
+    "coverageAssessment": "已核对实际取得的英语词条所列介词、副词、名词、形容词四项基本义。修订后，介词兼顾位置与进入，副词兼顾静态与方向，五个核心教学项均有至少两个原创例句；另补时间义、内心义和固定表达的比喻用法。扩展说明及 insider 依据专业语言知识，不虚挂未取得的词典来源。词源仅确认合成关系，不推断年代或词性演变顺序；Cambridge 未取得，未作为依据。",
+    "senseInventory": [
+      {
+        "sense": "介词：在……里面；到……里面",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原稿覆盖静态位置；补充进入某空间的说明及例句后，常用功能完整。"
+      },
+      {
+        "sense": "副词：在里面；到里面",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已有静态和方向例句；修正中文语序，并澄清与副词 in 的关系。"
+      },
+      {
+        "sense": "名词：内部空间；内侧部分或表面",
+        "coveredBy": [
+          "s3"
+        ],
+        "assessment": "the inside of 和擦拭内侧的例句能够覆盖基本用法，无须强拆。"
+      },
+      {
+        "sense": "形容词：内侧的；内部的",
+        "coveredBy": [
+          "s4"
+        ],
+        "assessment": "保留内袋例句，替换把手例句并纠正译义；inside information 作为搭配扩展保留。"
+      },
+      {
+        "sense": "固定表达：inside out，里面朝外",
+        "coveredBy": [
+          "s5"
+        ],
+        "assessment": "新增两个具体例句，区分正反面翻转与前后方向穿反。"
+      },
+      {
+        "sense": "介词扩展：在一段时间以内",
+        "coveredBy": [
+          "l1"
+        ],
+        "assessment": "作为非核心补充列出，不与空间位置混同。"
+      },
+      {
+        "sense": "副词扩展：在内心",
+        "coveredBy": [
+          "l2"
+        ],
+        "assessment": "作为非核心补充列出，明确指心理感受。"
+      },
+      {
+        "sense": "固定表达扩展：know ... inside out，对……了如指掌",
+        "coveredBy": [
+          "l3"
+        ],
+        "assessment": "与物品翻面的字面义分开说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-inside\",\"title\":\"Oxford Learner’s Dictionaries: inside\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/inside\",\"supports\":[\"英式与美式读音\",\"inside 的介词、副词、名词和形容词用法\",\"inside、in、inside of 的用法区分\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-fr-inside\",\"title\":\"Wiktionnaire：inside（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/inside#Anglais\",\"supports\":[\"介词、副词、名词和形容词的基本空间义\",\"第二音节重读和第一音节重读两种读音形式\",\"由 in- 与 side 构成的合成关系\",\"inside of、inside out 两个衍生表达的列举\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式读音基本相同，重音在第二音节。\"",
+        "valueJson": "\"英美英语的基本音素相同；除第二音节重读的 /ɪnˈsaɪd/ 外，也有第一音节重读的 /ˈɪnsaɪd/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"可分为 /ɪn/ + /ˈsaɪd/ 两部分；重读 side。\"",
+        "valueJson": "\"读 /ɪnˈsaɪd/ 时重读第二音节 side；读 /ˈɪnsaɪd/ 时重读第一音节。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标不准确；标准读音为 /ɪnˈsaɪd/。\"",
+        "valueJson": "\"side 中的 /aɪ/ 是双元音；两个音节的元音分别是 /ɪ/ 和 /aɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"介词：在……里面\"",
+        "valueJson": "\"介词：在……里面；到……里面\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"表示人或物处于某个空间、容器或范围之内。\"",
+        "valueJson": "\"表示人或物处于某个空间、容器或有边界的范围之内，也可表示向其内部移动。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"后面接名词或代词，说明“在哪个范围里面”；inside of 也可表达这个意思，日常英语中 inside 更简洁。\"",
+        "valueJson": "\"inside 后接名词或代词；可表示“在……里面”，也可与 go、put 等动词连用表示“到……里面”。inside of 也能表示“在……里面”，尤其常见于美式口语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside the blue bag 是介词短语，说明午餐的位置。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside the school gate 指校门以内的位置。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1-e3\",\"senseId\":\"s1\",\"en\":\"We stepped inside the café to get out of the rain.\",\"zh\":\"我们走进咖啡馆避雨。\",\"note\":\"stepped 表示移动，inside the café 说明进入的空间；inside 后有名词短语，仍是介词用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/zh",
+        "expectedValueJson": "\"在……里面\"",
+        "valueJson": "\"在……里面；到……里面\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/note",
+        "expectedValueJson": "\"inside 后接房间、盒子或其他地点名称，指出所在范围。\"",
+        "valueJson": "\"后接名词短语，说明所在或进入的范围；具体表示位置还是移动，要看所用动词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"只在表示位置时与 inside 相对，如 inside the room / outside the room。\"",
+        "valueJson": "\"这里比较空间内外，如 inside the room / outside the room。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"outside 是空间位置上的对照词，不能替换到其他抽象语境中。\"",
+        "valueJson": "\"outside 在这里表示同一空间的外部；抽象语境中的对照要按具体搭配判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"单独使用，表示人在或物在里面，也可表示朝里面移动。\"",
+        "valueJson": "\"单独使用，表示人或物在里面，也可表示朝里面移动。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"come inside 表示进到里面；由 come 和上下文判断移动方向。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside 单独作副词，说明等候的位置；具体是哪处内部由上下文确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the inside of the box 是名词短语，整体作主语，说明盒子内部的状况。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the inside 作 wipe 的宾语，指需要擦拭的内侧表面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0",
+        "expectedValueJson": "{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"She put the note in her inside pocket.\",\"zh\":\"她把纸条放进了里面的口袋。\"}",
+        "valueJson": "{\"id\":\"s4-e1\",\"senseId\":\"s4\",\"en\":\"She put the note in her inside pocket.\",\"zh\":\"她把纸条放进了衣服的内袋。\",\"note\":\"inside 修饰 pocket，指衣服内侧的口袋；in 引出整个地点短语。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"The inside door handle is loose.\",\"zh\":\"里面那扇门的把手松了。\"}",
+        "valueJson": "{\"id\":\"s4-e2\",\"senseId\":\"s4\",\"en\":\"Pull the inside handle to open the car door.\",\"zh\":\"拉动门内侧的把手，把车门打开。\",\"note\":\"inside 修饰 handle，指车门内侧的把手。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1/note",
+        "expectedValueJson": "\"指只在某个团体或组织内部掌握的信息；此处是较扩展的用法。\"",
+        "valueJson": "\"指内部人员掌握、外界通常不知道的消息；这里不是说消息位于某个物体里面。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s5\",\"title\":\"固定表达：inside out（里面朝外）\",\"meaning\":\"衣物、袋子等原本朝内的一面翻到了外面。\",\"usageNote\":\"wear ... inside out 表示把衣物穿成里面朝外；turn ... inside out 表示把物品翻到反面。这里说的是正反面，不是前后方向。\",\"examples\":[{\"id\":\"s5-e1\",\"senseId\":\"s5\",\"en\":\"You're wearing your T-shirt inside out.\",\"zh\":\"你的T恤穿成里面朝外了。\",\"note\":\"指衣物反面露在外面，不表示衣服前后穿反。\"},{\"id\":\"s5-e2\",\"senseId\":\"s5\",\"en\":\"I turned the pillowcase inside out before washing it.\",\"zh\":\"洗枕套之前，我先把它翻到了反面。\",\"note\":\"turn ... inside out 表示把原本朝内的一面翻到外面。\"}],\"patterns\":[{\"en\":\"wear + 衣物 + inside out\",\"zh\":\"把衣物穿成里面朝外\",\"note\":\"说明穿着时衣物正反面的状态。\",\"kind\":\"sentence-pattern\"},{\"en\":\"turn + 物品 + inside out\",\"zh\":\"把物品翻到反面\",\"note\":\"常用于衣物、枕套、袋子等可以翻面的物品。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"inside out\",\"zh\":\"里面朝外；反面朝外\",\"note\":\"作为整体记忆，不能只用 inside 表达翻面的意思。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"with the inside facing out\",\"zh\":\"内侧朝外\",\"note\":\"可以解释衣物等翻面后的状态。\"}],\"contrasting\":[{\"en\":\"right side out\",\"zh\":\"正面朝外\",\"note\":\"用于衣物等有正反面的物品，与里面朝外的状态相反。\"}],\"similarNote\":\"这里比较物品翻面后的状态；比喻用法 know ... inside out 另表示了解得非常透彻。\",\"contrastingNote\":\"right side out 说明衣物正面在外，不能据此判断衣物前后是否穿对。\"},\"sourceIds\":[\"wiktionary-fr-inside\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"l1\",\"title\":\"介词扩展：在一段时间以内\",\"meaning\":\"在某段时间之内，常表示用时不到这段时间。\",\"note\":\"inside 后接时间段，意思接近 within；这是时间用法，不是空间位置。\",\"example\":{\"id\":\"l1-e1\",\"senseId\":\"l1\",\"en\":\"We finished cleaning the kitchen inside an hour.\",\"zh\":\"我们不到一小时就把厨房打扫完了。\",\"note\":\"inside an hour 表示用时在一小时以内。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"l2\",\"title\":\"副词扩展：在内心\",\"meaning\":\"表示内心的真实感受。\",\"note\":\"常与外表或表现形成对照，说明心里的感受。\",\"example\":{\"id\":\"l2-e1\",\"senseId\":\"l2\",\"en\":\"She looked calm, but inside she felt nervous.\",\"zh\":\"她看起来很平静，内心却很紧张。\",\"note\":\"inside 指内心感受，不是身体内部的位置。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"l3\",\"title\":\"固定表达扩展：对……了如指掌\",\"meaning\":\"know ... inside out 表示对某人或某事了解得非常透彻。\",\"note\":\"这是 inside out 的比喻用法，与衣物翻面的字面义分开记。\",\"example\":{\"id\":\"l3-e1\",\"senseId\":\"l3\",\"en\":\"After ten years of living here, she knows the town inside out.\",\"zh\":\"在这里住了十年，她对这座小镇了如指掌。\",\"note\":\"knows the town inside out 表示对这座小镇的情况非常熟悉。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两者都能说“在里面”，但句子结构和强调重点不同。\"",
+        "valueJson": "\"两者都可作介词或副词；区别主要在强调重点和适用范围。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"inside 可作副词单独使用；若只用 in 表示“在里面”，通常需要具体上下文或补足语。\"",
+        "valueJson": "\"inside 和 in 都可以单独作副词，如 come inside / come in；具体地点通常都需要上下文确定。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside 后接 the drawer，突出钥匙处于抽屉内部。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in the drawer 是自然的位置表达，与上一句在此语境中基本同义。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside 单独作副词；钥匙具体在哪个空间里面，需要根据上下文判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"有地点名词时 inside 和 in 常可互换；inside 更强调内外边界，且可以单独作副词。\"",
+        "valueJson": "\"表达具体空间位置时，inside 和 in 常可互换；两者也都能单独作副词。inside 更突出内外边界，in 的用途更广。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"两者都可作介词表达“在……里面”，但 inside of 更常见于口语。\"",
+        "valueJson": "\"两者都能表示“在……里面”；inside of 尤其常见于美式口语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"口语中常见，意思相同；正式或简洁表达通常可省去 of。\"",
+        "valueJson": "\"这种说法尤其常见于美式口语；inside 更简洁，且在英美英语中都通用。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"inside the house 说明小狗在屋内。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 inside of the house 与 inside the house 表达相同的位置。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"写作时优先用 inside + 名词；日常口语中 inside of 也很自然。\"",
+        "valueJson": "\"优先掌握 inside + 名词；inside of + 名词也成立，尤其常见于美式口语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-inside\"]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"inside 可按现代构词理解为 in（在里面）+ side（边、侧面）：先想到“在内侧”，再联想到“在里面”。\"",
+        "valueJson": "\"inside 是由 in- 与 side 构成的合成词。in- 表示“向内、在内”，side 表示“边、侧”，合起来对应“内侧、里面”的意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是帮助理解的现代构词拆分，不表示已经列出该词的历史演变。\"",
+        "valueJson": "\"这两个构词成分不是两个先后出现的历史阶段，也不能用来推断各词性用法的出现顺序。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-fr-inside\"]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"insider\",\"partOfSpeech\":\"名词\",\"meaning\":\"组织或圈子的内部人员；知情人\",\"formation\":\"由 inside 加表示人的后缀 -er 构成，指处于某个组织或圈子内部的人。\",\"spellingNote\":\"去掉 inside 末尾的 e，再接 -er，拼成 insider；不是 insideer。复数为 insiders。\",\"example\":{\"id\":\"wf-insider-e1\",\"senseId\":\"s4\",\"en\":\"My cousin is a company insider, so she heard about the move early.\",\"zh\":\"我表姐是公司内部人员，所以很早就听说了搬迁的事。\",\"note\":\"insider 指内部的人；与 inside information 中“内部人员掌握”的意思相关。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"此处不列主题相关词；inside 的常见词性变化本身不构成新的派生词族。\"",
+        "valueJson": "\"insider 是由 inside 派生的名词；inside 本身在介词、副词、名词和形容词之间的用法变化，不会产生新的拼写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象雨天站在门外，朋友招手说“Come inside.”你走进门后，inside 可表示“进到里面”；到了屋里，它又可说明你现在“在里面”。若指门的内侧或屋子的内部，则分别是形容词和名词用法。\"",
+        "valueJson": "\"想象雨天朋友招手说“Come inside.”，请你进屋。进门后，wait inside 表示“在里面等”，inside the house 表示“在屋里”。衣服的内袋叫 an inside pocket，盒子的内部叫 the inside of the box，分别帮助你记住副词、介词、形容词和名词用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/2",
+        "expectedValueJson": "{\"label\":\"门的内侧\",\"text\":\"inside door：里面的门。\"}",
+        "valueJson": "{\"label\":\"内侧口袋\",\"text\":\"an inside pocket：衣服的内袋。\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 703,
+    "headword": "inside",
+    "meaning_zh": "prep. 在……里面\nadv. 在里面\nn. 内部",
+    "phonetic": "/'in'said/",
+    "pos": "",
+    "forms": []
+  }
+}

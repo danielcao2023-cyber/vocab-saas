@@ -1,0 +1,269 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "f6e52bbb4600e48a654d5588b22176f8bdb309d6b8c5240ab9428d0c7e888732",
+    "executedReviewPromptHash": "f6e52bbb4600e48a654d5588b22176f8bdb309d6b8c5240ab9428d0c7e888732",
+    "reviewHash": "47f5732d645f57f879896362b32db68f12b8941e0d141823b6f018b9d76e17d7",
+    "wordId": 1166,
+    "inputHash": "5afb913f0de5c6e070c1cf14bb6b2264ad874fd673bb3dfa0f4909a3313102c7",
+    "draftHash": "ba9e01a01be6fda019d7b5c0eed482637116a7dc149164dfe48f363a3b0d4116",
+    "finalHash": "bd9d09236eb88b622018f69f235478deacba32d62deb25c0425bc02390113d85",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/road#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.643Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116238,
+        "revisionId": 39764090,
+        "revisionTimestamp": "2026-08-03T04:44:06Z",
+        "sha256": "af4312d6f54b9f9702a9303913d1116f553fd8629e18d54719e98217675bbadd",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/road",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:47:15.145Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:55:47.638Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及各处sourceIds",
+        "message": "Cambridge 正文未能取得，不能承担本轮核验依据。应引用实际取得的 Wiktionnaire 英语词条，并明确其释义语言是法语。比喻义和现有两个词族词未获该摘录直接支持，保留专业知识讲解，但清空对应来源引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/takeaway",
+        "message": "“也可泛指走路的路”范围过宽，容易使学生把任何步行小径都称为 road。宜突出通常供车辆通行的道路。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "比喻义需要限定为走向某种结果的过程或途径，不能让“方法”暗示 road 可随意替换 way 或 method。应明确 to 是介词。原两句语法均可成立，但较抽象，宜换成具体生活例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "现有内容只是现代用法说明。来源的词源栏本身没有历史解释，但定义及派生栏明确记录了过时的“骑马侵袭；突袭”义及 inroad 与该旧义的联系，可以补入摘要；不能据此编造“侵袭→道路”的演变链。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对英语词条中以法语写出的全部定义。三个相互重叠的现代实体释义可合入 road-1，无须机械拆义；现代常用比喻义由 road-2 承担。修订后两个核心义均有两个自然原创例句。过时的骑马侵袭义仅补入历史用义摘要。发音、复数、同音词、道路类型对照及现有合成词的拼写和构词均可保留。局限是来源未给出完整词源，也未明确展开比喻义；相关现代用法依据专业语言知识审校，历史部分不增加未经支持的阶段。",
+    "senseInventory": [
+      {
+        "sense": "名词：街道；路（rue、chemin）",
+        "coveredBy": [
+          "road-1"
+        ],
+        "assessment": "已覆盖。属于实体道路义，与后两项重叠，可以合讲。"
+      },
+      {
+        "sense": "名词：道路；通行道路（chemin、route、voie）",
+        "coveredBy": [
+          "road-1"
+        ],
+        "assessment": "已覆盖。通往村庄的例句具体体现连接地点的道路。"
+      },
+      {
+        "sense": "名词：车行道；道路（chaussée、route）",
+        "coveredBy": [
+          "road-1"
+        ],
+        "assessment": "已覆盖。cross the road 的例句体现供车辆行驶、可横穿的马路，不必另设核心义。"
+      },
+      {
+        "sense": "名词，已过时：骑马侵袭；突袭",
+        "coveredBy": [],
+        "assessment": "不属初中常用义，无须新增核心义及仿古例句；修订后在词源摘要中说明，并保留其与 inroad 的联系。"
+      },
+      {
+        "sense": "名词，现代比喻义：走向某种结果的过程；途径",
+        "coveredBy": [
+          "road-2"
+        ],
+        "assessment": "已收录。结合词条中文释义及专业知识，修订其适用范围，并以康复、储蓄购房两个具体情境说明过程与途径。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"road 最常指连接地点、供车辆通行的道路，也可泛指走路的路；road to success 是“通向成功的道路”，常作比喻。\"",
+        "valueJson": "\"road 通常指供车辆通行、连接地点的道路；the road to ... 还可比喻走向某种结果的过程或途径。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"途径；方法\"",
+        "valueJson": "\"（比喻）走向某种结果的过程；途径\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"比喻实现目标或解决问题的途径，常见于 road to success 等表达。\"",
+        "valueJson": "\"比喻走向某种结果或状态的过程、途径；结果可以是成功、康复，也可以是毁灭等不良结果。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 the road to + 抽象目标，强调通向某种结果的过程。\"",
+        "valueJson": "\"road to ... 侧重走向结果的过程；谈日常具体操作办法通常用 way 或 method。这里的 to 是介词，后面接名词或动名词短语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples",
+        "expectedValueJson": "[{\"id\":\"road-2-ex1\",\"senseId\":\"road-2\",\"en\":\"Practice is the road to improvement.\",\"zh\":\"练习是进步的途径。\",\"note\":\"road 用作比喻，表示达到进步的办法。\"},{\"id\":\"road-2-ex2\",\"senseId\":\"road-2\",\"en\":\"Honest communication can be a road to trust.\",\"zh\":\"坦诚沟通可以成为建立信任的途径。\",\"note\":\"说明某种做法有助于达到目标。\"}]",
+        "valueJson": "[{\"id\":\"road-2-ex1\",\"senseId\":\"road-2\",\"en\":\"After her knee operation, Mia is on the road to recovery.\",\"zh\":\"膝部手术后，米娅正在逐步康复。\",\"note\":\"on the road to recovery 表示正在康复的过程中，不表示已经完全康复。\"},{\"id\":\"road-2-ex2\",\"senseId\":\"road-2\",\"en\":\"Saving a little money each month put us on the road to buying our first home.\",\"zh\":\"每月存下一点钱，让我们开始朝买下第一套房子的目标迈进。\",\"note\":\"储蓄是通向购房目标的途径；to 是介词，后接 buying，并不表示已经买到了房子。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0",
+        "expectedValueJson": "{\"en\":\"the road to + 目标\",\"zh\":\"通向……的道路；实现……的途径\",\"note\":\"to 后接目标或结果，常用于抽象意义。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"the road to + 名词或动名词短语\",\"zh\":\"通向……的道路；走向某种结果的过程或途径\",\"note\":\"to 是介词，如 the road to recovery、the road to buying a home；冠词可根据语境用 the 或 a。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"road 是一个整体记忆的英语词。现代英语中可直接记作“道路”；road to + 目标常把实现目标比作沿路前行。\"",
+        "valueJson": "\"road 曾有“骑马侵袭；突袭”的用法，现已过时。inroad 一词与 road 的这个“侵入”旧义有关。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的 road to 比喻是现代用法说明，不代表词源演变。\"",
+        "valueJson": "\"这项旧义联系不能说明“侵袭”和现代“道路”义的演变先后；road to success 属于现代比喻用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[]",
+        "valueJson": "[\"wiktionary-road-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[\"wiktionary-road-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[\"wiktionary-road-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[\"wiktionary-road-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[\"wiktionary-road-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-road\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-road\",\"title\":\"Cambridge Dictionary: road\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/road\",\"supports\":[\"道路的常见含义与用法\",\"road 的英式和美式发音\",\"与 street 等相近词的用法参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-road-en\",\"title\":\"Wiktionnaire：road（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/road#Anglais\",\"supports\":[\"街道、道路及车行道等实体释义\",\"英美发音及与 rode 同音\",\"street 被列为近义词\",\"已过时的骑马侵袭、突袭义，以及 inroad 与该旧义的联系\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1166,
+    "headword": "road",
+    "meaning_zh": "n. 路, 道路, 公路, 途径, 方法",
+    "phonetic": "/rәud/",
+    "pos": "",
+    "forms": []
+  }
+}

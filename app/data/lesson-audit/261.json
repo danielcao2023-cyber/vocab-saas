@@ -1,0 +1,608 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8f7f54f3576ca6919d8c02a02fd108842bced80d117a1d59962e7a17fbf10428",
+    "executedReviewPromptHash": "8f7f54f3576ca6919d8c02a02fd108842bced80d117a1d59962e7a17fbf10428",
+    "reviewHash": "7ab4dd3236821d77c6dedfbdc249247bb623ef49632901cc0cd9d04cc2d64af3",
+    "wordId": 261,
+    "inputHash": "1f42fe63fc70ab596b8de2bd286f3daf6c8cabcaa1368755a546ab720cd6a5c1",
+    "draftHash": "18d777cc6a7840d80053dc30bda8dd4f55ed25ce65b761677dad69228e01f7e6",
+    "finalHash": "74c7b031d4af062d4d813ccc33f749d485666d5b8fc17b9af8a49e4d4b6a7af3",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/chip",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T06:59:13.406Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/chip#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:39.911Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120151,
+        "revisionId": 39760620,
+        "revisionTimestamp": "2026-08-03T00:39:36Z",
+        "sha256": "c18082dd9f2d8c726d85f5cc29c39986626a604c79edc0fbd9f30ea5ea190017",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      }
+    ],
+    "reviewedAt": "2026-10-18T12:41:45.830Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未成功获取，不能承担现有内容的资料依据。应改用实际取得的 Wiktionnaire 英语词条，并同步修改引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "“碎片／缺口”和“薯条／薯片”目前各只有一个对应例句；常见的筹码义、烘焙碎粒义及 chip in 表示共同出钱或出力的功能也未覆盖。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses",
+        "message": "应补充机器将材料打成碎片、给动物植入芯片及牌局中 chip in 的次要用法，以区分不同动词功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已有可用历史词源，却仍只讲现代构词并留空。应补入古英语、 中古英语来源，分开说明名词、动词与 microchip 简称关系。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions; /senses/2/relatedExpressions",
+        "message": "salad 和 mechanical part 只是任意选择的另一类事物，不宜填入反向表达栏；这两个具体名词义可以没有固定反义词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "chip 作为 microchip 的简称不限于口语；两者在该义项中的区别也不宜解释成 microchip 特别强调体积。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/examples/0; /lessCommonSenses/0",
+        "message": "普通碗通常说 rim，而非 corner。高尔夫 chip 应突出短距离、较低飞行及落地后滚动，避免“轻挑”造成高抛球的印象。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "chop 例句没有使用 chip，却绑定 chip 的动词义；结语指出 chip 以 p 结尾也不能区分同样以 p 结尾的 chop。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "“去除旧油漆”的例句宜明确使用 chip off，并调整释义。现有两项都是屈折变化，可补充真实相关词 microchip、chipper，说明各自构词和拼写。"
+      }
+    ],
+    "coverageAssessment": "已按英语词条核对全部名词、动词定义及运动子义，法语仅是词典的说明语言。修订后，碎片、缺口、薯条、薯片各有两个对应例句；筹码、烘焙碎粒及共同出钱或出力的 chip in 也各有充分例句。其余常见动词功能以次要义补充。地区性、过时义及专业术语列入清单说明取舍，未扩展成百科式课程；惯用语也未穷尽。",
+    "senseInventory": [
+      {
+        "sense": "名词：小碎片、木片、碎屑",
+        "coveredBy": [
+          "chip-n-fragment"
+        ],
+        "assessment": "原有冰片例句；补充木片例句。"
+      },
+      {
+        "sense": "名词：磕碰后留下的缺口或表面损伤",
+        "coveredBy": [
+          "chip-n-fragment"
+        ],
+        "assessment": "原有盘沿缺口例句；补充杯口缺口例句。"
+      },
+      {
+        "sense": "名词：赌博、扑克筹码",
+        "coveredBy": [
+          "chip-n-token"
+        ],
+        "assessment": "常见义，新增完整教学义项及两个例句。"
+      },
+      {
+        "sense": "名词：纪念或标示戒酒时长的章牌",
+        "coveredBy": [],
+        "assessment": "特定文化语境，初中核心课不展开。"
+      },
+      {
+        "sense": "名词：旧时俚语中的英国索维林金币",
+        "coveredBy": [],
+        "assessment": "过时货币俚语，不作为现代常用义教学。"
+      },
+      {
+        "sense": "名词：含电路及微型机械、化学等元件的基底混合系统",
+        "coveredBy": [],
+        "assessment": "专业电子学扩展，不等同于本课概括讲解的普通计算机芯片。"
+      },
+      {
+        "sense": "名词：电信中的码片",
+        "coveredBy": [],
+        "assessment": "专业术语，不展开。"
+      },
+      {
+        "sense": "名词：英式等地区英语中的炸薯条",
+        "coveredBy": [
+          "chip-n-food"
+        ],
+        "assessment": "补齐第二个例句，保留与美式 fries 的地区辨析。"
+      },
+      {
+        "sense": "名词：美式等地区英语中的薄脆薯片或其他蔬菜脆片",
+        "coveredBy": [
+          "chip-n-food"
+        ],
+        "assessment": "以最常见的薯片讲解，补齐第二个例句；不把地域分布说成英美独占。"
+      },
+      {
+        "sense": "名词：足球等运动中越过障碍的挑射或挑传",
+        "coveredBy": [],
+        "assessment": "运动专用义，未展开；不能直接套用高尔夫切击的轨迹说明。"
+      },
+      {
+        "sense": "名词：网球中的轻削击球",
+        "coveredBy": [],
+        "assessment": "运动专用义，不展开。"
+      },
+      {
+        "sense": "名词：高尔夫中的切击球",
+        "coveredBy": [
+          "chip-v-sport"
+        ],
+        "assessment": "在次要运动义的说明中补充名词搭配 a chip，主要例句仍展示动词用法。"
+      },
+      {
+        "sense": "名词：台球中的极轻击球",
+        "coveredBy": [],
+        "assessment": "运动专用义，不展开。"
+      },
+      {
+        "sense": "名词：冰壶中的斜向碰击",
+        "coveredBy": [],
+        "assessment": "运动专用义，不展开。"
+      },
+      {
+        "sense": "名词：用作燃料的干粪块",
+        "coveredBy": [],
+        "assessment": "低频生活或地域用法，不展开。"
+      },
+      {
+        "sense": "名词：新西兰北部地区装水果的小篮",
+        "coveredBy": [],
+        "assessment": "地域性容器名称，不展开。"
+      },
+      {
+        "sense": "名词：烘焙用的小粒食物，如巧克力粒",
+        "coveredBy": [
+          "chip-n-baking"
+        ],
+        "assessment": "常见食物用法，新增完整义项及两个例句。"
+      },
+      {
+        "sense": "名词：实体或软件中的色样片",
+        "coveredBy": [],
+        "assessment": "选色及设计语境用法，非本课核心，未展开。"
+      },
+      {
+        "sense": "名词：航海测量绳线上使用的三角木片",
+        "coveredBy": [],
+        "assessment": "专业航海用法，不展开。"
+      },
+      {
+        "sense": "名词：制帽用的薄木条、棕榈叶条或特制编草",
+        "coveredBy": [],
+        "assessment": "历史工艺用法，不展开。"
+      },
+      {
+        "sense": "名词：干瘪、枯萎或无味之物",
+        "coveredBy": [],
+        "assessment": "过时粗俗用法，不展开。"
+      },
+      {
+        "sense": "名词：少量、一点或一滴",
+        "coveredBy": [],
+        "assessment": "低频泛化用法，不列为初中核心义。"
+      },
+      {
+        "sense": "名词：微芯片、集成电路",
+        "coveredBy": [
+          "chip-n-electronic"
+        ],
+        "assessment": "已有两个自然例句；修正简称的语体说明。"
+      },
+      {
+        "sense": "及物动词：将材料打成小碎片",
+        "coveredBy": [
+          "chip-v-fragment"
+        ],
+        "assessment": "新增次要义，与意外磕出缺口区分。"
+      },
+      {
+        "sense": "及物动词：使边缘或表面磕损、掉下一小片",
+        "coveredBy": [
+          "chip-v-damage"
+        ],
+        "assessment": "已覆盖；修正碗的部位表达，保留 chip a tooth 等搭配。"
+      },
+      {
+        "sense": "及物动词：高尔夫切击球",
+        "coveredBy": [
+          "chip-v-sport"
+        ],
+        "assessment": "修正轨迹说明，突出短飞行、落地后滚动。"
+      },
+      {
+        "sense": "及物动词：通过芯片或控制程序调整提升发动机性能",
+        "coveredBy": [],
+        "assessment": "专业汽车改装用法，不展开。"
+      },
+      {
+        "sense": "不及物动词：表面掉片、剥落或出现小缺口",
+        "coveredBy": [
+          "chip-v-damage"
+        ],
+        "assessment": "油漆例句与 chip easily 句型已覆盖。"
+      },
+      {
+        "sense": "动词短语 chip in：牌局中投入筹码下注",
+        "coveredBy": [
+          "chip-v-bet"
+        ],
+        "assessment": "新增次要义，并与日常共同出钱区分。"
+      },
+      {
+        "sense": "及物动词：给动物植入识别芯片",
+        "coveredBy": [
+          "chip-v-animal"
+        ],
+        "assessment": "新增非正式次要义。"
+      },
+      {
+        "sense": "常用补充功能 chip in：共同出钱或出力",
+        "coveredBy": [
+          "chip-v-contribute"
+        ],
+        "assessment": "依据专业语言知识补充；出钱、出力各两个例句，不冒称词典原文直接列出了这些功能。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-chip\",\"title\":\"Cambridge Dictionary: chip\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/chip\",\"supports\":[\"英美音标与发音\",\"名词的碎片、缺口、薯条或薯片、电子芯片等常见义项\",\"动词表示使表面出现缺口或剥落\",\"常见搭配与词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionnaire-chip\",\"title\":\"Wiktionnaire：chip（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/chip#Anglais\",\"supports\":[\"英语 chip 的名词、动词释义及食物名称的地区差异\",\"读音 /tʃɪp/ 与规则词形变化\",\"碎片名词、动词和 microchip 简称义的词源关系\",\"chocolate chip、microchip、chipper 等相关词语\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-chip\"]",
+        "valueJson": "[\"wiktionnaire-chip\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-ex-wood\",\"senseId\":\"chip-n-fragment\",\"en\":\"There were wood chips on the workshop floor.\",\"zh\":\"工坊的地板上有些小木片。\",\"note\":\"wood chips 指木头加工后留下的小片，不是粉末状的木屑。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-ex-rim\",\"senseId\":\"chip-n-fragment\",\"en\":\"I noticed a small chip in the rim of my mug.\",\"zh\":\"我发现马克杯的杯口有个小缺口。\",\"note\":\"这里指掉了一小块后留下的缺口，不是掉下来的碎片。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-ex-fries-2\",\"senseId\":\"chip-n-food\",\"en\":\"Ben asked for a portion of chips with his burger.\",\"zh\":\"本要了一份薯条来配汉堡。\",\"note\":\"英式点餐语境；a portion of chips 是一份薯条。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-ex-crisps-2\",\"senseId\":\"chip-n-food\",\"en\":\"She ate a few potato chips while watching TV.\",\"zh\":\"她一边看电视，一边吃了几片薯片。\",\"note\":\"美式 potato chips 指薄脆薯片；英式通常说 crisps。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1",
+        "expectedValueJson": "{\"en\":\"chips with + 食物\",\"zh\":\"配……的薯条\",\"note\":\"英式点餐时常用，如 chips with fish。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"chips with + 酱料\",\"zh\":\"配……酱的薯条\",\"note\":\"英式点餐中可说 chips with curry sauce（配咖喱酱的薯条）。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"salad\",\"zh\":\"沙拉\",\"note\":\"作为菜单选择，可与油炸薯条或薯片对照；不是食物名称的词典反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"菜单语境中，salad 可作为不同类型的配餐选择；食物名称没有固定反义词。\"",
+        "valueJson": "\"薯条和薯片是具体食物名称，没有常用的词汇反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"多见于科技语境；a computer chip 指电脑芯片。口语中也常简称 chip。\"",
+        "valueJson": "\"chip 是 microchip 的常用简称，科技报道和日常表达都可使用，不限于口语。a computer chip 指计算机芯片。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"与此义基本相同，microchip 更明确强调体积很小。\"",
+        "valueJson": "\"在这一义项中基本同义；chip 是 microchip 的常用简称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"microchip 是近义词；processor 只指承担处理任务的部件，范围较窄。\"",
+        "valueJson": "\"microchip 与此义基本同义；processor 强调处理功能，存储等其他芯片通常不能称为 processor。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"mechanical part\",\"zh\":\"机械部件\",\"note\":\"在设备构造语境中，可与电子芯片按部件类型对照；不表示芯片的普遍反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"谈设备部件类别时，可用 mechanical part 与电子芯片对照；没有固定词汇反义词。\"",
+        "valueJson": "\"chip 在电子元件义上没有固定反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0/en",
+        "expectedValueJson": "\"I chipped a corner of the bowl when I dropped it.\"",
+        "valueJson": "\"I chipped the rim of the bowl when I dropped it.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/0/zh",
+        "expectedValueJson": "\"我把碗掉在地上时磕掉了一个角。\"",
+        "valueJson": "\"碗从我手里掉落时，碗口被磕掉了一小块。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"chip-v-sport\",\"title\":\"轻挑（球）\",\"meaning\":\"在高尔夫等运动中，轻轻击球，使球短距离飞起后落下。\",\"note\":\"属于特定运动用法，初学阶段认识即可。\",\"example\":{\"id\":\"chip-ex9\",\"senseId\":\"chip-v-sport\",\"en\":\"Leo chipped the ball gently onto the green.\",\"zh\":\"利奥轻轻挑球，让球落到果岭上。\",\"note\":\"高尔夫语境中，chip 指轻击短球。\"},\"sourceIds\":[\"cambridge-chip\"]}",
+        "valueJson": "{\"id\":\"chip-v-sport\",\"title\":\"高尔夫：切击球\",\"meaning\":\"在果岭附近短距离击球，让球较低地飞行一小段，落地后继续向球洞滚动。\",\"note\":\"chip the ball 是动词搭配；名词 a chip 也可指这样的一次切击。足球等运动中的 chip 有不同的具体动作和轨迹。\",\"example\":{\"id\":\"chip-ex9\",\"senseId\":\"chip-v-sport\",\"en\":\"Leo chipped the ball gently onto the green.\",\"zh\":\"利奥轻轻切击，将球打上果岭。\",\"note\":\"这里是高尔夫的短距离切击，不是强调高抛的击球。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/en",
+        "expectedValueJson": "\"Please chop the carrots into small pieces.\"",
+        "valueJson": "\"Be careful not to chip the blade when you chop frozen meat.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/zh",
+        "expectedValueJson": "\"请把胡萝卜切成小块。\"",
+        "valueJson": "\"剁冻肉时，小心别把刀刃磕出缺口。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"chop 指用刀剁或切，不是 chip。\"",
+        "valueJson": "\"chop frozen meat 表示剁冻肉；chip the blade 表示使刀刃磕掉一小块，后者对应本例绑定的 chip 动词义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"chip 的结尾是 p；chop 的中间元音不同，且常表示剁切。\"",
+        "valueJson": "\"两词都以 p 结尾，区别在中间元音：chip 是 /ɪ/，chop 是英式 /ɒ/ 或美式 /ɑː/。chip 常讲小片或缺口，chop 常讲砍、剁、切。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"芯片义可看作 microchip 的口语简称；microchip 由 micro-（微小）和 chip 构成。碎片义与芯片义之间可用现代词义联想记忆，不据此推断它们的历史演变。\",\"stages\":[],\"caveat\":\"这里说明的是现代构词与词义联系，不是 chip 的完整历史词源。\",\"sourceIds\":[]}",
+        "valueJson": "{\"summary\":\"古英语名词 ċipp（木片）经中古英语 chip、chippe 发展为现代英语的碎片义。该古英语名词由重构动词 *ċippian 派生；现代动词 chip 则经中古英语 chippen 接续这条动词来源。电子芯片义的 chip 是 microchip 的简称；microchip 可分析为 micro-（微小）+ chip。\",\"stages\":[{\"language\":\"古英语\",\"form\":\"ċipp\",\"meaning\":\"木片\"},{\"language\":\"现代英语\",\"form\":\"chip（名词）\",\"meaning\":\"小碎片\"}],\"caveat\":\"*ċippian 中的星号表示重构形式；有文献记录的是相关复合形式 forċippian。micro- + chip 是 microchip 的构词分析，应与古英语以来的历史来源分开理解。\",\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/meaning",
+        "expectedValueJson": "\"正在磕出缺口；磕出缺口这件事\"",
+        "valueJson": "\"使表面掉下小片；一点点凿除（-ing 形式，也可作动名词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/en",
+        "expectedValueJson": "\"Chipping the old paint took all afternoon.\"",
+        "valueJson": "\"Chipping off the old paint took all afternoon.\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/zh",
+        "expectedValueJson": "\"刮掉旧油漆花了一整个下午。\"",
+        "valueJson": "\"一点点凿掉旧油漆花了整整一下午。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "\"Chipping 作动名词，表示这一动作。\"",
+        "valueJson": "\"Chipping 作动名词；off 明确表示把旧油漆一点点去除。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-n-token\",\"title\":\"筹码\",\"meaning\":\"扑克等赌博游戏中代替钱下注的小圆片。\",\"usageNote\":\"可数名词，常用复数 chips；poker chips 指扑克筹码。\",\"examples\":[{\"id\":\"chip-token-ex1\",\"senseId\":\"chip-n-token\",\"en\":\"Each player began the poker game with twenty chips.\",\"zh\":\"扑克游戏开始时，每名玩家都有二十枚筹码。\",\"note\":\"chips 是可数名词复数，前面可直接用数词。\"},{\"id\":\"chip-token-ex2\",\"senseId\":\"chip-n-token\",\"en\":\"She pushed three chips into the middle of the table.\",\"zh\":\"她把三枚筹码推到桌子中央。\",\"note\":\"牌局语境中，chip 指下注用的筹码。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"poker chips\",\"zh\":\"扑克筹码\",\"note\":\"说明筹码用于扑克游戏。\",\"kind\":\"common-collocation\"},{\"en\":\"a stack of chips\",\"zh\":\"一摞筹码\",\"note\":\"stack 指叠放在一起的一摞。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"token\",\"zh\":\"代币；专用圆牌\",\"note\":\"范围更广，可用于游戏或其他特定场合；chip 在这里特指赌博游戏中的筹码。\"}],\"contrasting\":[],\"similarNote\":\"token 是较宽泛的相关词，不能在所有场合直接替换 poker chip。\",\"contrastingNote\":\"筹码是一种具体物品，没有固定反义词。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-n-baking\",\"title\":\"烘焙用的巧克力粒等\",\"meaning\":\"加入饼干、蛋糕等食品中的小粒食物，最常见的搭配是 chocolate chips（巧克力粒）。\",\"usageNote\":\"通常用复数。有些 chocolate chips 是特制的小颗粒，并非从大块巧克力上敲下来的碎片。\",\"examples\":[{\"id\":\"chip-baking-ex1\",\"senseId\":\"chip-n-baking\",\"en\":\"Add a handful of chocolate chips to the cookie dough.\",\"zh\":\"往饼干面团里加一把巧克力粒。\",\"note\":\"chocolate chips 是常见烘焙原料。\"},{\"id\":\"chip-baking-ex2\",\"senseId\":\"chip-n-baking\",\"en\":\"There are chocolate chips in these muffins.\",\"zh\":\"这些松饼里有巧克力粒。\",\"note\":\"这里不是薯片；前面的 chocolate 明确了原料。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"chocolate chips\",\"zh\":\"巧克力粒；巧克力碎粒\",\"note\":\"常指加入烘焙食品中的小粒巧克力。\",\"kind\":\"common-collocation\"},{\"en\":\"chocolate chip cookies\",\"zh\":\"巧克力豆饼干\",\"note\":\"chip 作前置修饰语时通常用单数，整体指含巧克力粒的饼干。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"chocolate chunks\",\"zh\":\"巧克力块\",\"note\":\"通常比 chocolate chips 大，形状也往往较不规则。\"}],\"contrasting\":[],\"similarNote\":\"chips 与 chunks 都可描述加入食品的巧克力，但大小和形状的侧重点不同。\",\"contrastingNote\":\"这种食品原料名称没有固定反义词。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-v-contribute\",\"title\":\"chip in：凑钱；出一份力\",\"meaning\":\"与别人一起出钱或帮忙，共同完成某件事。\",\"usageNote\":\"非正式短语动词。表示凑钱时可直接接金额；表示出力时常由上下文或 by doing 说明具体行动。这里的 in 不能随意省略。\",\"examples\":[{\"id\":\"chip-contribute-ex1\",\"senseId\":\"chip-v-contribute\",\"en\":\"Let's all chip in for Dad's birthday present.\",\"zh\":\"咱们凑钱给爸爸买生日礼物吧。\",\"note\":\"chip in for a present 指共同出钱买礼物。\"},{\"id\":\"chip-contribute-ex2\",\"senseId\":\"chip-v-contribute\",\"en\":\"Everyone chipped in five pounds to buy a new kettle for the office.\",\"zh\":\"每人都凑了五英镑，为办公室买一个新水壶。\",\"note\":\"金额 five pounds 直接放在 chip in 后面。\"},{\"id\":\"chip-contribute-ex3\",\"senseId\":\"chip-v-contribute\",\"en\":\"If we all chip in, we can clean the kitchen quickly.\",\"zh\":\"如果大家都搭把手，我们很快就能把厨房打扫干净。\",\"note\":\"这里指一起出力，不是出钱。\"},{\"id\":\"chip-contribute-ex4\",\"senseId\":\"chip-v-contribute\",\"en\":\"Tom chipped in by carrying the boxes upstairs.\",\"zh\":\"汤姆也出了一份力，帮忙把箱子搬上楼。\",\"note\":\"by carrying 说明他具体怎样帮忙。\"}],\"patterns\":[{\"en\":\"chip in + 金额\",\"zh\":\"凑出……钱\",\"note\":\"如 chip in five pounds；不要省掉 in。\",\"kind\":\"sentence-pattern\"},{\"en\":\"chip in for + 共同购买的东西\",\"zh\":\"凑钱买……\",\"note\":\"如 chip in for a present。\",\"kind\":\"sentence-pattern\"},{\"en\":\"chip in by doing something\",\"zh\":\"通过做某事出一份力\",\"note\":\"by 后接 -ing 形式，说明帮忙的方式。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"chip in for a present\",\"zh\":\"凑钱买礼物\",\"note\":\"常见的共同出钱场景。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"contribute\",\"zh\":\"贡献；捐助；出钱或出力\",\"note\":\"表达较正式，范围较广；chip in 常强调参与大家共同做的事。\"},{\"en\":\"pitch in\",\"zh\":\"搭把手；共同出力\",\"note\":\"也是非正式表达，在帮忙做事的语境中与 chip in 接近。\"}],\"contrasting\":[{\"en\":\"refuse to contribute\",\"zh\":\"拒绝出钱或出力\",\"note\":\"仅在大家共同承担费用或任务的语境中与 chip in 形成对照。\"}],\"similarNote\":\"contribute 的适用范围更广；pitch in 在共同干活的语境中尤其接近。\",\"contrastingNote\":\"refuse to contribute 表示拒绝参与共同承担，不是单个动词 chip 所有义项的反义表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-v-fragment\",\"title\":\"把材料打成小碎片\",\"meaning\":\"将木材等材料切碎或打成许多小片。\",\"note\":\"这是有意把材料加工成碎片，与意外把杯口磕出缺口不同。\",\"example\":{\"id\":\"chip-fragment-verb-ex1\",\"senseId\":\"chip-v-fragment\",\"en\":\"The gardener used a machine to chip the branches.\",\"zh\":\"园丁用机器把树枝打成小碎片。\",\"note\":\"chip 后接被加工的材料 branches。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-v-animal\",\"title\":\"给动物植入识别芯片\",\"meaning\":\"给动物植入用于识别身份的微芯片。\",\"note\":\"非正式及物动词用法；chip 后直接接动物。\",\"example\":{\"id\":\"chip-animal-ex1\",\"senseId\":\"chip-v-animal\",\"en\":\"The vet chipped our dog last week.\",\"zh\":\"兽医上周给我们的狗植入了识别芯片。\",\"note\":\"这里不是把狗弄伤，而是植入 microchip。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"chip-v-bet\",\"title\":\"chip in：在牌局中投入筹码\",\"meaning\":\"在牌局中投入钱或筹码下注。\",\"note\":\"这是赌博语境中的用法；日常 chip in 更常见的意思是共同出钱或出力。\",\"example\":{\"id\":\"chip-bet-ex1\",\"senseId\":\"chip-v-bet\",\"en\":\"He chipped in another ten dollars to stay in the game.\",\"zh\":\"为了继续留在牌局中，他又投入了十美元的筹码。\",\"note\":\"牌局语境使 chip in 表示投入赌注，而非一般的凑钱。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"microchip\",\"partOfSpeech\":\"noun\",\"meaning\":\"微芯片；微型集成电路\",\"formation\":\"micro-（微小）+ chip，构成复合词；电子义的 chip 又可作 microchip 的简称。\",\"spellingNote\":\"写成一个词 microchip；添加前缀 micro- 不改变 chip 中的 p。\",\"example\":{\"id\":\"chip-family-microchip\",\"senseId\":\"chip-n-electronic\",\"en\":\"A microchip stores the dog's identification number.\",\"zh\":\"一枚微芯片储存着这只狗的识别编号。\",\"note\":\"microchip 指芯片本身，不是植入芯片这一动作。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"chipper\",\"partOfSpeech\":\"noun\",\"meaning\":\"木材切碎机\",\"formation\":\"chip + -er，表示把木材等打成碎片的机器。\",\"spellingNote\":\"添加 -er 时双写末尾 p，写作 chipper；常见组合为 wood chipper。\",\"example\":{\"id\":\"chip-family-chipper\",\"senseId\":\"chip-v-fragment\",\"en\":\"They fed the branches into a wood chipper.\",\"zh\":\"他们把树枝送进木材切碎机。\",\"note\":\"这里的 chipper 是机器名称。\"},\"sourceIds\":[\"wiktionnaire-chip\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"chipped 和 chipping 是动词 chip 的规则词形变化；拼写时因短元音后的末尾 p 双写。\"",
+        "valueJson": "\"chipped、chipping 是 chip 的词形变化；chipper 是加 -er 构成的机器名称，这三种形式都双写 p。microchip 由 micro- + chip 构成，电子义的 chip 又是它的常用简称。\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"名词 chip 常指小碎片、表面缺口、电子芯片；英式英语中 chips 通常指薯条，美式英语中通常指较薄的薯片。作动词时，chip 可表示弄出缺口或使表面碎裂。\"",
+        "valueJson": "\"chip 可指小碎片、缺口、筹码或电子芯片，chocolate chips 是巧克力粒。英式 chips 通常指薯条，美式 chips 通常指薯片。动词 chip 可表示磕出缺口；chip in 常表示凑钱或共同出力。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"把 chip（磕出缺口）与 chip in（凑钱或出力）分开记，留意短语中的 in 不能随意省略。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 261,
+    "headword": "chip",
+    "meaning_zh": "n. 碎片；缺口；炸薯条；芯片",
+    "phonetic": "/tʃip/",
+    "pos": "",
+    "forms": []
+  }
+}

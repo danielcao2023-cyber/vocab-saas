@@ -1,0 +1,281 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "0947c6a553b5bbab19bf1b2159c1c270a6485b200ecb15fe4c1fc7e7e567dba3",
+    "executedReviewPromptHash": "0947c6a553b5bbab19bf1b2159c1c270a6485b200ecb15fe4c1fc7e7e567dba3",
+    "reviewHash": "91f3c8cf39885fcec0a35de48b65560c0c7cf18439996ad5aacb447f39b76155",
+    "wordId": 1311,
+    "inputHash": "ffd16a57c965bd06dbe604a1dc394b3552331f3881ed1adda09922242c1052e6",
+    "draftHash": "5fd499fa16a9a65a7e597220e5efebe382f9cc0b72a2d7e3b0263d399e41cf9c",
+    "finalHash": "7b55b1fbd61448e0d9bcd7fa3da6096e46d2139c2cd6f3f1754787dde2f566cb",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/spoon#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:27.738Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117850,
+        "revisionId": 39751688,
+        "revisionTimestamp": "2026-08-02T17:26:05Z",
+        "sha256": "1276c3518c5ad970c6af1c32ea9a83bdf9fa14d7bd24a70bbb5bf46a9a390829",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/spoon",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T14:59:43.928Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T15:07:19.891Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources及相关sourceIds",
+        "message": "Cambridge 页面未成功取得，不能充当本次审核的已读依据。已将有对应材料的引用改为实际取得的英语词条，并移除不可用来源；一般语法辨析不虚挂词典引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "遗漏词典明确列出的英国贬义名词用法“笨蛋”，应作为低频义补入。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote及/senses/1/patterns/1/note",
+        "message": "out 表示舀出的方向，不表示工具；宾语位置说明应区分名词与代词。"
+      },
+      {
+        "severity": "polish",
+        "location": "/lessCommonSenses/0",
+        "message": "相拥义应交代亲密或性意味，例句译文也应保留同向侧卧、前后相拥的姿势信息。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "材料未明确叙述“用木片制成勺子”的历史过渡，也未单独给出原始日耳曼语形式的释义。应保留可证实的来源关系，移除未经支持的过渡叙述和阶段释义，并清除学生文案中的制作说明。"
+      }
+    ],
+    "coverageAssessment": "已逐句核对全部四个词典义项及正文搭配、例句、读音、词形和构词。两个初中核心义均已有两个自然例句，无须强行拆义；补丁补齐英国贬义名词用法，并完善侧卧相拥义。词源限于实际取得的材料；英美读音一致及一般语法、构词说明依据专业语言知识，不冒充 Cambridge 核验结果。",
+    "senseInventory": [
+      {
+        "sense": "名词：勺子；调羹",
+        "coveredBy": [
+          "spoon-n"
+        ],
+        "assessment": "核心义覆盖充分，两个例句分别展示单数和复数；spoon 与 spoonful 的区别基本准确。"
+      },
+      {
+        "sense": "名词：笨蛋；不聪明的人（英国用法）",
+        "coveredBy": [
+          "spoon-n-rare"
+        ],
+        "assessment": "初稿遗漏；补丁作为低频义加入，并说明地域和贬义限制。"
+      },
+      {
+        "sense": "动词：用勺舀；用勺盛",
+        "coveredBy": [
+          "spoon-v"
+        ],
+        "assessment": "核心义和两个方向结构均已覆盖；补丁修正 out 的功能和宾语位置说明。"
+      },
+      {
+        "sense": "动词：两人同向侧卧、前后紧贴相拥",
+        "coveredBy": [
+          "spoon-v-rare"
+        ],
+        "assessment": "已覆盖；补丁补充语境色彩，并使译文体现特定姿势。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 spoon something into/onto something；表示工具时也可说 spoon something out。\"",
+        "valueJson": "\"常用 spoon something into/onto something，表示用勺把某物舀入或盛到某处；spoon something out 表示用勺把某物舀出来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/1/note",
+        "expectedValueJson": "\"out 表示从容器中舀出，后接宾语时通常放在 out 前。\"",
+        "valueJson": "\"out 表示从容器中舀出。名词宾语可放在 out 前或后，如 spoon the soup out / spoon out the soup；代词宾语须放在 out 前，如 spoon it out。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"这是较少见的用法，常见于非正式语境；初学者先掌握“用勺舀”的动词义即可。\"",
+        "valueJson": "\"常用于非正式语境，带亲密或性意味，但不表示一定发生性行为；初学者可先掌握“用勺舀”的动词义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example/zh",
+        "expectedValueJson": "\"那对情侣在沙发上盖着毯子紧紧相拥。\"",
+        "valueJson": "\"那对情侣在沙发上盖着毯子，朝同一方向侧卧，前后紧贴相拥。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"spoon-n-rare\",\"title\":\"笨蛋（英国用法）\",\"meaning\":\"名词 spoon 在英国口语中也可用来称呼不聪明或做了傻事的人。\",\"note\":\"带贬义，有时用于熟人间打趣；可能冒犯别人，不宜随意称呼他人。\",\"example\":{\"id\":\"spoon-n-rare-ex1\",\"senseId\":\"spoon-n-rare\",\"en\":\"“You spoon!” she said when I tried to open the door with the wrong key.\",\"zh\":\"我拿错钥匙试图开门时，她说：“你这个笨蛋！”\",\"note\":\"这里 spoon 指人，不指餐具。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"spoon 的词源可追溯到古英语 spon，原指木片或碎片；其更早形式与原始日耳曼语 *spēnuz 有关，意为木片。词义后来发展为用木片制成的勺子。\"",
+        "valueJson": "\"spoon 来自古英语 spon（木片、刨花），更早可追溯到原始日耳曼语重构形式 *spēnuz。德语 Span（木片、刨花）也与它同源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"原始日耳曼语\",\"form\":\"*spēnuz\",\"meaning\":\"木片\"},{\"language\":\"古英语\",\"form\":\"spon\",\"meaning\":\"木片、碎片\"}]",
+        "valueJson": "[{\"language\":\"古英语\",\"form\":\"spon\",\"meaning\":\"木片、刨花\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里列的是所给历史词源材料明确支持的早期阶段；现代 spoon 的餐具义不应被误认为仍指木片。\"",
+        "valueJson": "\"星号 * 表示语言学家重构的形式；德语 Span 是同源词，不是 spoon 演变过程中的一个阶段。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionnaire: spoon（英语词条词源部分）\"",
+        "valueJson": "\"Wiktionnaire: spoon（英语词条，法语释义）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"spoon 的早期词源形式及相关历史词义\"]",
+        "valueJson": "[\"勺子名词义、英国贬义名词用法及两个动词义\",\"基本读音 /spuːn/\",\"spoonful、teaspoon、tablespoon 等派生或复合词的列举\",\"古英语 spon、原始日耳曼语重构形式 *spēnuz 及德语同源词 Span\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: spoon\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/spoon\",\"supports\":[\"spoon 的名词义和动词义\",\"spoon 的英式和美式发音\",\"spoon 的常见构词与相关词\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1311,
+    "headword": "spoon",
+    "meaning_zh": "n. 勺子；调羹\nv. 用勺舀",
+    "phonetic": "/spu:n/",
+    "pos": "",
+    "forms": []
+  }
+}

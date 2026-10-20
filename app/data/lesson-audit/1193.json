@@ -1,0 +1,291 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4bce99c3e366254eb3ea4875458ecd65cdcab006c0a5ab1f170c00cfe729135b",
+    "executedReviewPromptHash": "4bce99c3e366254eb3ea4875458ecd65cdcab006c0a5ab1f170c00cfe729135b",
+    "reviewHash": "ae6cbc837fa3db212ae43496559e079868ac603d18ae7a63901481bff205e2a9",
+    "wordId": 1193,
+    "inputHash": "ab1ef94fa00f2a60b7f6622af7546b1ea5e5befb3d82db887f6555104cf3ebb6",
+    "draftHash": "c55e3b063d1c31f217be1e42a38211709f6f3ce4d0baa237ada74f2444e3f105",
+    "finalHash": "c0860ece4d450873820a82b69e5893a6110b226e62e5939507ca925380c6f1a1",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/scare#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:52.022Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 120567,
+        "revisionId": 38457165,
+        "revisionTimestamp": "2025-08-03T11:30:31Z",
+        "sha256": "4448c0845e419b5fb1521e905754af29b7d05d6ff7d5cd95c8e2d72a03d1a63f",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/scare",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T11:26:06.236Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T11:32:15.064Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用不及物用法 scare easily／not scare easily，以及名词表示公众恐慌、疑似危险事件的用法；分别补入两个自然例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "scare someone into doing 表示吓得某人去做，out of doing 表示吓得某人放弃，不能都归为“吓退”。将这些结果结构移入及物义，补齐例句，并修正混淆栏的 senseId。原译“不敢再爬”还多出了此前爬过的含义。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/3/note",
+        "message": "scare 已以 e 结尾，实际拼写是只加 -d 得到 scared，不能说明为直接加 -ed；/d/ 指词尾的读音。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/1",
+        "message": "scare away/off 也常表示使顾客、参与者等却步，不限于受惊后实际离开；补充这一常见延伸及例句。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/title",
+        "message": "标题过于突出“虚惊”。a scare 可以后来证明没有危险，也可以伴随实际危险，宜明确其本身不保证只是虚惊。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "历史来源顺序有依据，但两个 meaning 都是说明性占位，并非历史词形的释义。保留 summary 中可证实的来源关系，清空占位阶段，并修正 caveat 的空泛拆词说明。"
+      }
+    ],
+    "coverageAssessment": "补丁后覆盖及物“使害怕”（含吓走、使却步及 into/out of doing）、不及物“受惊”、名词“一次惊吓或担忧经历”和“公众恐慌或警报事件”，各核心义均有至少两个自然原创例句。材料中把人称为 a scare 的少见转指不列为初中核心义。词源仅保留已取回材料支持的历史关系；未将未取得的 Cambridge 或 Oxford 正文当作已核验依据，来源仍仅标 recommended。",
+    "senseInventory": [
+      {
+        "sense": "及物动词：使人或动物害怕、受惊或担心；可包含有意吓唬",
+        "coveredBy": [
+          "scare-vt"
+        ],
+        "assessment": "原有声音和消息例句有效；补充吓退顾客、吓得采取行动和放弃行动的常用结果结构，不另强拆为独立核心义。"
+      },
+      {
+        "sense": "不及物动词：受惊，尤用于说明容易或不容易被吓到",
+        "coveredBy": [
+          "scare-vi"
+        ],
+        "assessment": "原稿遗漏；补入 scare easily 和 not scare easily，配两个例句，并说明后面不接受惊对象作宾语。"
+      },
+      {
+        "sense": "可数名词：一次惊吓或令人担忧的经历",
+        "coveredBy": [
+          "scare-n"
+        ],
+        "assessment": "原有两个例句覆盖突然受惊和健康方面的虚惊；修正标题与释义，避免把所有 scare 都理解为最终没有危险。"
+      },
+      {
+        "sense": "可数名词：某种潜在危险引起的公众恐慌或警报事件",
+        "coveredBy": [
+          "scare-n-public"
+        ],
+        "assessment": "原稿遗漏；补入 bomb scare 和 food scare，分别配自然例句。"
+      },
+      {
+        "sense": "名词的少见转指：引起恐惧的人或事物",
+        "coveredBy": [],
+        "assessment": "材料中把 JM 称为 a scare 的例句体现这种转指；频率低，不作为本课初中核心义展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作动词时，scare 常表示“使某人害怕”；作名词时，a scare 指一次惊吓或令人担心的情况。\"",
+        "valueJson": "\"scare 作动词可表示“使害怕”，也可在 scare easily 等结构中表示“受惊”；作可数名词，a scare 可指一次惊吓或担忧经历，也可指围绕某种危险的公众恐慌。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"用 I don't scare easily. 记住不及物用法：我不容易受惊；这里 scare 后没有宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 have a scare（经历一次惊吓）和 a bomb/food scare（炸弹警报／食品安全恐慌）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"规则变化，直接加 -ed；过去式常读作 /d/。\"",
+        "valueJson": "\"以不发音的 e 结尾，只加 -d，写作 scared；过去式与过去分词的词尾都读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1",
+        "expectedValueJson": "{\"en\":\"scare someone away/off\",\"zh\":\"把某人或动物吓跑\",\"note\":\"away 或 off 强调受惊后离开，常用于鸟、动物或不受欢迎的访客。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"scare someone away/off\",\"zh\":\"把某人或动物吓走；使某人却步\",\"note\":\"既可指把人或动物吓走，也可指因价格、风险等使人放弃购买或参与；人称代词放中间，如 scare them off。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"scare someone away/off\",\"zh\":\"把某人或动物吓跑\",\"note\":\"away 或 off 强调受惊后离开，常用于鸟、动物或不受欢迎的访客。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"scare someone away/off\",\"zh\":\"把某人或动物吓走；使某人却步\",\"note\":\"既可指把人或动物吓走，也可指因价格、风险等使人放弃购买或参与；人称代词放中间，如 scare them off。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scare-vt-ex3\",\"senseId\":\"scare-vt\",\"en\":\"The older boys scared Ben into handing over his lunch money.\",\"zh\":\"那几个大男孩恐吓本，逼他交出了午餐钱。\",\"note\":\"scare someone into doing 表示吓得某人采取某种行动；这里本确实交出了钱。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scare-vt-ex4\",\"senseId\":\"scare-vt\",\"en\":\"The warning scared him out of climbing the old tree.\",\"zh\":\"那条警告吓得他放弃了爬那棵老树的打算。\",\"note\":\"scare someone out of doing 表示使某人因害怕而放弃做某事的打算，不要求此前做过。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scare-vt-ex5\",\"senseId\":\"scare-vt\",\"en\":\"The high price scared off several customers.\",\"zh\":\"高价吓退了几位顾客。\",\"note\":\"这里的 scare off 表示使顾客放弃购买，不一定是把人当场吓跑。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"scare someone into doing something\",\"zh\":\"吓得某人去做某事\",\"note\":\"into 后接动名词，表示恐惧或恐吓促使某人采取行动。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"scare someone out of doing something\",\"zh\":\"吓得某人放弃做某事\",\"note\":\"out of 后接动名词，表示因害怕而打消原先的打算；与 into doing 的结果方向不同。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"惊吓；令人担心的一场虚惊\"",
+        "valueJson": "\"一次惊吓；一场令人担心的经历\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"作可数名词，表示一次害怕或担心的经历，也可指后来证明没有大碍的惊险情况。\"",
+        "valueJson": "\"作可数名词，表示一次突然受惊或因可能的危险而担忧的经历；后来可能证明只是虚惊，但 scare 本身不保证危险并不存在。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scare-vi\",\"title\":\"受惊；容易或不容易被吓到\",\"meaning\":\"作不及物动词，表示感到害怕或受到惊吓，尤其常用来说明人或动物是否容易受惊。\",\"usageNote\":\"常见于 scare easily、not scare easily；这里没有表示受惊对象的宾语。I don't scare easily. 表示“我不容易被吓到”。\",\"examples\":[{\"id\":\"scare-vi-ex1\",\"senseId\":\"scare-vi\",\"en\":\"Our new puppy scares easily, so we keep the house quiet.\",\"zh\":\"我们刚养的小狗很容易受惊，所以我们让家里保持安静。\",\"note\":\"小狗是受惊的一方；scares 后没有宾语。\"},{\"id\":\"scare-vi-ex2\",\"senseId\":\"scare-vi\",\"en\":\"Nina doesn't scare easily, even during a thunderstorm.\",\"zh\":\"即使遇到雷雨，妮娜也不容易害怕。\",\"note\":\"doesn't scare easily 描写不容易受惊的倾向。\"}],\"patterns\":[],\"collocations\":[{\"en\":\"scare easily\",\"zh\":\"容易受惊\",\"note\":\"主语是受惊的人或动物，不是造成惊吓的事物。\",\"kind\":\"common-collocation\"},{\"en\":\"not scare easily\",\"zh\":\"不容易被吓到\",\"note\":\"常用于描述胆量，如 I don't scare easily。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be easily frightened\",\"zh\":\"容易被吓到\",\"note\":\"与 scare easily 接近，都可描述容易受惊的倾向。\"}],\"contrasting\":[{\"en\":\"be hard to frighten\",\"zh\":\"不容易被吓到\",\"note\":\"描述很难被吓到的人或动物，与容易受惊形成对照。\"}],\"similarNote\":\"描述容易受惊的倾向时，scare easily 与 be easily frightened 意思相近。\",\"contrastingNote\":\"这里对照的是容易受惊与不容易受惊，而不是是否会吓唬别人。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"scare-n-public\",\"title\":\"公众恐慌；疑似危险引发的警报事件\",\"meaning\":\"作可数名词，表示某种潜在危险引起的一场公众担忧、恐慌或警报事件，常与危险类型连用。\",\"usageNote\":\"常见于新闻和公共安全语境，如 a bomb scare、a food scare；这个词本身不说明危险已被证实，也不保证一定是误报。\",\"examples\":[{\"id\":\"scare-n-public-ex1\",\"senseId\":\"scare-n-public\",\"en\":\"The school was evacuated after a bomb scare.\",\"zh\":\"发生疑似炸弹警报后，学校里的人被疏散了。\",\"note\":\"a bomb scare 指因怀疑有炸弹而引起的警报或恐慌，不等于已经发生爆炸。\"},{\"id\":\"scare-n-public-ex2\",\"senseId\":\"scare-n-public\",\"en\":\"During the food scare, many families stopped buying local eggs.\",\"zh\":\"在那场食品安全恐慌期间，许多家庭停止购买当地的鸡蛋。\",\"note\":\"这里指公众对食品安全的担忧，不是某个人突然吓了一跳。\"}],\"patterns\":[{\"en\":\"a scare over/about something\",\"zh\":\"围绕某事引起的一场恐慌\",\"note\":\"over 或 about 后说明引起担忧的问题或潜在危险。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a bomb scare\",\"zh\":\"疑似炸弹警报；炸弹恐慌事件\",\"note\":\"指怀疑存在炸弹而引起的警报或恐慌。\",\"kind\":\"common-collocation\"},{\"en\":\"a food scare\",\"zh\":\"食品安全恐慌\",\"note\":\"指公众因食品可能不安全而产生的担忧或恐慌。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"alarm\",\"zh\":\"惊恐；担忧\",\"note\":\"这里指面对潜在危险的惊恐或担忧，如 cause alarm，更侧重人们的反应。\"},{\"en\":\"panic\",\"zh\":\"恐慌\",\"note\":\"强调强烈的惊慌，可能伴随失去冷静；程度通常比 scare 更重。\"}],\"contrasting\":[{\"en\":\"calm\",\"zh\":\"平静\",\"note\":\"作名词，表示恐慌平息后公众恢复的平静状态。\"}],\"similarNote\":\"scare 常指围绕某种潜在危险的一次恐慌事件；alarm、panic 更侧重惊恐反应，panic 通常更强烈。\",\"contrastingNote\":\"calm 可用于描述这类恐慌平息后的状态，是这一语境中的反向表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"scare-vt-deter\",\"title\":\"吓退；吓得不敢做\",\"meaning\":\"使某人因害怕而放弃某个打算。\",\"note\":\"常见于 scare someone into/out of doing something；作为初中起步学习，先掌握 scare someone 和 scare away 即可。\",\"example\":{\"id\":\"scare-vt-deter-ex1\",\"senseId\":\"scare-vt-deter\",\"en\":\"The warning scared him out of climbing the old tree.\",\"zh\":\"警告让他不敢再爬那棵老树。\",\"note\":\"scare someone out of doing 表示吓得某人不再做某事。\"},\"sourceIds\":[\"oxford_scare\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/example/senseId",
+        "expectedValueJson": "\"scare-vt-deter\"",
+        "valueJson": "\"scare-vt\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古诺尔斯语\",\"form\":\"skirra\",\"meaning\":\"词源来源\"},{\"language\":\"中古英语\",\"form\":\"skerren\",\"meaning\":\"后发展为英语 scare\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只说明有依据的历史来源关系；现代英语的 scare 不宜拆成 scare 与其他词来解释。\"",
+        "valueJson": "\"scared、scary 的现代构词与 scare 的历史来源是两回事。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1193,
+    "headword": "scare",
+    "meaning_zh": "n. 惊吓, 恐慌\nvt. 惊吓, 使恐慌\nvi. 受惊",
+    "phonetic": "/skєә/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7e3e40aeae93ad1cd4f8d41a631d1f9b322f7ab2d95b8b34aca2498e7129fd2b",
+    "executedReviewPromptHash": "7e3e40aeae93ad1cd4f8d41a631d1f9b322f7ab2d95b8b34aca2498e7129fd2b",
+    "reviewHash": "a8b18b61409e87bcba2e5b661fc9cfcac54164ceeb4c99c3b3ea25eb114c9c57",
+    "wordId": 653,
+    "inputHash": "bbff5c23acf94b282704de0194a19085262493c54166edf5cfa0409fb094a412",
+    "draftHash": "a1e77280335a192e5294583c6a373f6ae782d50fd0e372531c52bc1f517f3d31",
+    "finalHash": "be4d647699234e6ba7a53555bd735fef9b650ef5a6bbf2ea8a83fcae58b2ad23",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/history#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:49:31.833Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 11376,
+        "revisionId": 39260957,
+        "revisionTimestamp": "2026-01-26T21:18:52Z",
+        "sha256": "0714eb4f6add4aba4ae8deceacd0aafc8e417aeffa4f258b49cad998beb51170",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/history",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T20:09:05.793Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T20:22:37.724Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses 与 /lessCommonSenses/0",
+        "message": "“经历、既往情况”“活动记录”“历史记述”覆盖不足，不宜全部放进只有一个医疗例句的较少见义。补为两个核心义，分别提供两个例句，并区分 have a history of 与表示一部历史记述的 a history of。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/1/note",
+        "message": "history 变复数不是直接加 -es，而是把 y 改为 i，再加 -es。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "historical 的 h 后面是 i；t 位于 s 后面。原拼写提醒位置错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "来源写的是古法语，不是中古法语。拉丁语和中古英语两个阶段的 meaning 只是传承说明或字形占位，须移除并将可证实的形式保留在 summary；同时删除学生文案中的材料获取说明。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 与各处 /sourceIds",
+        "message": "Cambridge 页面未成功取回，不能作为本次实际核对的依据。保留为推荐查阅项；读音、历史学义和词族列举改关联已取回的英语词条，其他专业语言知识补充不挂未取回来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation",
+        "message": "常见的两音节读法涉及省去 /ə/，不只是中间音节较轻；旧式音标提醒也不够具体。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "“取得了一项……发现”中文搭配不自然；historical museum 可以理解，但不适合作为初学者的典型搭配。改用 historical novels，并明确 historic 与 historical 的意义侧重。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0",
+        "message": "应明确 story 也能讲真实事件，避免学生把 history/story 简化为真事与虚构故事的区别。"
+      }
+    ],
+    "coverageAssessment": "已核对过去事件及发展、历史学与历史课、既往经历、活动记录和历史记述，并补充非正式 be history。修订后四个核心义各有两个例句，搭配、可数性、词族拼写和反向表达均按具体语境处理。词源仅采用已取回材料支持的历史关系；Cambridge 未取回的局限已通过来源调整处理，其他常用用法依据专业语言知识补充。",
+    "senseInventory": [
+      {
+        "sense": "过去发生的事件及其发展过程",
+        "coveredBy": [
+          "history-past"
+        ],
+        "assessment": "老桥与城镇两个例句覆盖此义；保留 make history，并补入来源列出的 history repeats itself。"
+      },
+      {
+        "sense": "历史学；历史课程",
+        "coveredBy": [
+          "history-subject"
+        ],
+        "assessment": "两个例句分别覆盖学科和具体课程；study history 与 history lesson 的结构说明正确。"
+      },
+      {
+        "sense": "个人或事物的经历、既往情况",
+        "coveredBy": [
+          "history-record"
+        ],
+        "assessment": "由较少见义提升为核心义，医疗情况与车辆故障各有一个例句，并明确 have a history of 的结构。"
+      },
+      {
+        "sense": "过去活动的记录；一部历史记述",
+        "coveredBy": [
+          "history-account"
+        ],
+        "assessment": "新增核心义，分别用浏览记录和村庄简史覆盖两类用法，并说明历史著作的可数用法。"
+      },
+      {
+        "sense": "非正式 be history：已成过去、不再重要或被淘汰",
+        "coveredBy": [
+          "history-over"
+        ],
+        "assessment": "作为较少见用法补充，提供旧系统被淘汰的例句，并说明不加 a。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"history：过去发生的事，也可以是一门学科\"",
+        "valueJson": "\"history：历史与历史学，也指经历和记录\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"history 常指过去发生的事情及其发展，也指研究、学习过去的“历史学”。\"",
+        "valueJson": "\"history 可指过去事件及其发展、历史学科、个人或事物的既往经历，也可指活动记录或一部历史记述。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan",
+        "expectedValueJson": "[\"区分 history 作“过去发生的事”和作“历史学科”时的语境。\",\"记住 study history 表示学习历史，a history of ... 表示……的发展史或经历。\",\"朗读时重读开头的 his，注意词尾是 /i/。\"]",
+        "valueJson": "[\"区分“历史与发展过程”“历史学科”“既往经历”和“记录、历史记述”四类语境。\",\"掌握 the history of ...、have a history of + 名词或 -ing，以及 a history of ... 指一部历史记述时的用法。\",\"用 medical history、browsing history 和 a short history of the village 分别练习既往情况、活动记录和历史记述。\",\"朗读时重读第一音节；/ˈhɪstəri/ 和省去 /ə/ 的 /ˈhɪstri/ 都是常见读法。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英美读音相近；语速较快时中间的弱读音节可能听起来较轻。\"",
+        "valueJson": "\"英美都重读第一音节；常见三音节读法 /ˈhɪstəri/，也可省去中间的 /ə/，读成两音节 /ˈhɪstri/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"词尾读 /i/，不要把旧式音标里的符号当作标准写法。\"",
+        "valueJson": "\"词首 /h/ 要发音；词尾读 /i/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"表示若干段历史、经历或发展史；词尾加 -es，读音以 /z/ 结尾。\"",
+        "valueJson": "\"以辅音字母 r + y 结尾，先把 y 改为 i，再加 -es：history → histories；表示复数的结尾音是 /z/。可指多部历史记述，或不同的人、事物各自的历史与经历。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用作不可数名词；强调某件事物的发展经历时，常用 a history of ...。\"",
+        "valueJson": "\"谈过去事件的整体时常作不可数名词；谈某地或某事的发展可用 the history of ...，也可说 have a long history。have a history of ... 表示既往情况的用法见“经历；既往情况”义。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"family history\",\"zh\":\"家族史；家族经历\",\"note\":\"可指家族过去，也常用于谈健康或家族背景。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"family history\",\"zh\":\"家族史\",\"note\":\"这里指家族的起源、成员和发展等往事；医疗语境中的家族病史见“经历；既往情况”义。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1",
+        "expectedValueJson": "{\"en\":\"a history of illness\",\"zh\":\"患病史\",\"note\":\"history 在这里表示某人过去的医疗经历。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"local history\",\"zh\":\"地方史\",\"note\":\"指某一地区过去的事件和发展过程。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"history repeats itself\",\"zh\":\"历史会重演\",\"note\":\"用于说相似的事件或局面再次出现，是概括性的说法。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"history-record\",\"title\":\"记录；个人经历\",\"meaning\":\"关于某人或某事过去情况的记录，常见于医疗、工作或电脑使用等特定语境。\",\"note\":\"通常由上下文明确是哪一种记录；不是每次都指正式档案。\",\"example\":{\"id\":\"history-record-ex1\",\"senseId\":\"history-record\",\"en\":\"The doctor asked about her medical history.\",\"zh\":\"医生询问了她的病史。\",\"note\":\"medical history 指过去的医疗情况。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "{\"id\":\"history-over\",\"title\":\"be history：已成过去\",\"meaning\":\"非正式用语，指某事已结束、不再重要，或某物已被淘汰。\",\"note\":\"常见于 be history，history 前不加 a；具体含义取决于语境。\",\"example\":{\"id\":\"history-over-ex1\",\"senseId\":\"history-over\",\"en\":\"After the upgrade, the old system will be history.\",\"zh\":\"升级以后，旧系统就会被淘汰。\",\"note\":\"will be history 表示届时将成为过去、不再使用。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"history-record\",\"title\":\"经历；既往情况\",\"meaning\":\"某人或某事过去的经历、健康状况或曾出现的问题等。\",\"usageNote\":\"常见 have a history of + 名词或 -ing 形式，表示过去曾有、尤其是反复出现某种情况。history 在这里常用单数，前面可用 a、my、her 等限定词。\",\"examples\":[{\"id\":\"history-record-ex1\",\"senseId\":\"history-record\",\"en\":\"The doctor asked about her medical history.\",\"zh\":\"医生询问了她的病史。\",\"note\":\"medical history 指既往健康与就医情况，不一定指一份书面病历。\"},{\"id\":\"history-record-ex2\",\"senseId\":\"history-record\",\"en\":\"This car has a history of breaking down.\",\"zh\":\"这辆车以前多次出过故障。\",\"note\":\"have a history of breaking down 指过去反复出故障的情况。\"}],\"patterns\":[{\"en\":\"have a history of + 名词 / -ing\",\"zh\":\"过去有过……的情况或经历\",\"note\":\"of 是介词，接动词时用 -ing 形式；常用于谈疾病、问题或行为。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"medical history\",\"zh\":\"病史\",\"note\":\"指个人既往健康与就医情况，可由本人讲述，也可记入病历。\",\"kind\":\"common-collocation\"},{\"en\":\"a family history of ...\",\"zh\":\"……的家族病史\",\"note\":\"医疗语境中指家人曾患某病，如 a family history of diabetes；不表示本人一定患病。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"background\",\"zh\":\"背景；经历\",\"note\":\"可谈家庭、教育或工作背景，范围比某项既往情况更宽，不能直接替换 medical history。\"},{\"en\":\"track record\",\"zh\":\"以往的表现记录\",\"note\":\"侧重过去的成绩或行为表现，常用于工作、经营等评价，不直接用来表示病史。\"}],\"contrasting\":[{\"en\":\"have no history of ...\",\"zh\":\"没有……的既往情况\",\"note\":\"与 have a history of ... 对照，否定曾有某种情况。\"}],\"similarNote\":\"这些表达只在部分经历语境中接近，侧重点和适用范围不同。\",\"contrastingNote\":\"本义常通过 have no history of ... 否定具体经历，没有通用的一词反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"history-account\",\"title\":\"记录；历史记述\",\"meaning\":\"对过去事件、发展或活动所作的记录或叙述，可指一部历史著作，也可指电脑中保存的浏览、搜索等记录。\",\"usageNote\":\"指一部历史记述时可数，如 a history of the town；电脑记录常见 browsing history、search history。a history of ... 是“经历”还是“一部历史记述”，要结合上下文判断。\",\"examples\":[{\"id\":\"history-account-ex1\",\"senseId\":\"history-account\",\"en\":\"I cleared my browsing history after using the shared computer.\",\"zh\":\"用完那台共用电脑后，我清除了浏览记录。\",\"note\":\"browsing history 指浏览过哪些网页的记录。\"},{\"id\":\"history-account-ex2\",\"senseId\":\"history-account\",\"en\":\"She wrote a short history of the village.\",\"zh\":\"她写了一部村庄简史。\",\"note\":\"a short history 指一部简要的历史记述，是可数用法。\"}],\"patterns\":[{\"en\":\"write/read a history of + 名词\",\"zh\":\"撰写／阅读一部……史\",\"note\":\"这里的 a history 指一部历史记述或著作，不是曾经出现过的某种情况。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"browsing history\",\"zh\":\"浏览记录\",\"note\":\"记录访问过的网页，常与 clear 或 delete 搭配。\",\"kind\":\"common-collocation\"},{\"en\":\"search history\",\"zh\":\"搜索记录\",\"note\":\"指过去搜索过的内容。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"record\",\"zh\":\"记录\",\"note\":\"范围更广，可以记载各种信息；history 在这里侧重过去的事件、发展或活动。\"},{\"en\":\"account\",\"zh\":\"记述；叙述\",\"note\":\"强调对事件的叙述，不一定按年代记录，也未必谈久远的历史。\"}],\"contrasting\":[],\"similarNote\":\"record 更宽泛，account 侧重叙述；涉及过去的事件或活动时才可能与本义接近。\",\"contrastingNote\":\"这类记录或记述没有自然、通用的一词反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"两词拼写相近，但 history 常关联真实的过去或学科，story 常指故事或叙述。\"",
+        "valueJson": "\"history 常指过去及其研究、记录；story 强调讲述的内容，可以是真事，也可以是虚构故事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"通常指讲出来或写出来的故事，也可指某件事的说法。\"",
+        "valueJson": "\"既可以指虚构故事，也可以指真实事件的叙述，或某件事的说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说学科或真实的发展经历用 history；说故事通常用 story。\"",
+        "valueJson": "\"谈过去的发展或历史学科常用 history；强调讲述的内容常用 story，真实经历也能用 story 来讲。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"history-of-patterns\",\"title\":\"the history of 与 a history of\",\"summary\":\"冠词、前面的动词和后面的内容共同决定含义；a history of 不只有一种用法。\",\"items\":[{\"label\":\"the history of ...：某人或某事的历史\",\"note\":\"用 the 指所谈对象的历史或发展过程。\",\"example\":{\"id\":\"history-of-patterns-ex1\",\"senseId\":\"history-past\",\"en\":\"The guide explained the history of the castle.\",\"zh\":\"导游介绍了这座城堡的历史。\",\"note\":\"指这座城堡过去的发展。\"}},{\"label\":\"have a history of ...：有某种既往情况\",\"note\":\"常接疾病、问题或行为；of 后接动词时用 -ing 形式。\",\"example\":{\"id\":\"history-of-patterns-ex2\",\"senseId\":\"history-record\",\"en\":\"The machine has a history of overheating.\",\"zh\":\"这台机器以前多次出现过热的问题。\",\"note\":\"这里说以往反复出现的情况。\"}},{\"label\":\"a history of ...：一部历史记述\",\"note\":\"与 read、write、buy 等动词搭配时，可指一部记述某对象历史的著作。\",\"example\":{\"id\":\"history-of-patterns-ex3\",\"senseId\":\"history-account\",\"en\":\"She borrowed a history of the city from the library.\",\"zh\":\"她从图书馆借了一本记述这座城市历史的书。\",\"note\":\"这里的 a history 是可数的历史著作。\"}}],\"takeaway\":\"have a history of ... 常说既往经历；write/read a history of ... 常说一部历史记述，须结合语境判断。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"history 经中古法语和中古英语形式传入英语；更早与拉丁语 historia、古希腊语 historía 有关。所给历史词源材料将古希腊词义说明为“探究、研究；探究所得的叙述”。\"",
+        "valueJson": "\"history 经中古英语 historie、古法语 estoire，追溯至拉丁语 historia 和古希腊语 ἱστορία（historía）。古法语形式有“历史、编年记述”之意，古希腊语形式表示“探究、研究；探究所得的叙述”。history 与 story 同源，在中古英语中曾可作同义词使用。\""
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/3",
+        "expectedValueJson": "{\"language\":\"中古英语\",\"form\":\"historie\",\"meaning\":\"英语中的历史一词形式\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/etymology/stages/1",
+        "expectedValueJson": "{\"language\":\"拉丁语\",\"form\":\"historia\",\"meaning\":\"承接古希腊语 historia\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这是词的历史传递路径，不是按现代英语字母拆出来的构词法；各阶段的词义并非完全相同。\"",
+        "valueJson": "\"古希腊语到古法语之间经拉丁语 historia 传递，古法语之后还经历中古英语 historie；这些是词的历史传承关系，不是现代英语的拆词构词法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/zh",
+        "expectedValueJson": "\"这个团队取得了一项具有历史意义的发现。\"",
+        "valueJson": "\"这个团队做出了一项具有重要历史意义的发现。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1",
+        "expectedValueJson": "{\"word\":\"historical\",\"partOfSpeech\":\"adjective\",\"meaning\":\"与历史有关的；根据历史的\",\"formation\":\"history 的同族形容词，常见后缀为 -ical。\",\"spellingNote\":\"写作 historical；不要漏掉 h 后面的 t。\",\"example\":{\"id\":\"history-family-ex2\",\"senseId\":\"history-subject\",\"en\":\"We visited a historical museum.\",\"zh\":\"我们参观了一座历史博物馆。\",\"note\":\"historical 表示与历史有关。\"},\"sourceIds\":[\"cambridge\"]}",
+        "valueJson": "{\"word\":\"historical\",\"partOfSpeech\":\"adjective\",\"meaning\":\"与历史或过去有关的；基于史实的\",\"formation\":\"与 history 同族；拼写上把词尾 y 换成 -ical，写作 historical。\",\"spellingNote\":\"拼作 h-i-s-t-o-r-i-c-a-l；s 后面有 t，词尾是 -ical。\",\"example\":{\"id\":\"history-family-ex2\",\"senseId\":\"history-subject\",\"en\":\"She enjoys reading historical novels.\",\"zh\":\"她喜欢读历史小说。\",\"note\":\"historical novels 指以过去时代为背景的历史小说。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"historic、historical 和 historian 都是与 history 同族的常用词，分别表示历史性的、与历史有关的、历史学家。\"",
+        "valueJson": "\"historic 侧重具有重大历史意义，historical 侧重与历史或过去有关；historian 指历史学家。historic event 是历史性事件，historical event 是过去发生的事件，两者可以重合。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你在老车站里看一面时间墙：墙上记录车站过去发生的事，是它的 history；老师带你研究这些旧照片时，history 又成了学科。\"",
+        "valueJson": "\"想象你帮老车站做一面时间墙：车站从建成到今天的变化是它的 history；和老师一起研究这些往事，是学习 history。查资料时，你发现老电梯过去多次出故障（a history of breaking down）。你把车站的发展写成一本小册子（a short history of the station），查完后清理电脑里的浏览记录（browsing history）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/caveat",
+        "expectedValueJson": "\"这是帮助记忆两种常见用法的联想故事，不是 history 的词源解释。\"",
+        "valueJson": "\"这是串联常见义项的原创联想故事，不是 history 的词源解释。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"旧电梯\",\"text\":\"a history of breaking down → 过去多次出故障的经历。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"小册子与电脑\",\"text\":\"a short history → 一部简史；browsing history → 浏览记录。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"history 的名词用法与常见搭配\",\"history、story 的词义区分\",\"historic、historical、historian 等词族\"]",
+        "valueJson": "[\"推荐查阅 history 的释义、可数性和常见搭配\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/title",
+        "expectedValueJson": "\"Wiktionnaire: history（英语词条，词源部分）\"",
+        "valueJson": "\"Wiktionnaire: history（英语词条）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1/supports",
+        "expectedValueJson": "[\"history 经中古英语、中古法语、拉丁语至古希腊语的词源路径及早期词义\"]",
+        "valueJson": "[\"英语名词 history 的常见读音及历史学义\",\"historic、historical、historian 等同族词的列举\",\"history repeats itself 的固定表达形式\",\"history 经中古英语、古法语、拉丁语至古希腊语的词源路径、古希腊语词义及其与 story 的历史关系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 653,
+    "headword": "history",
+    "meaning_zh": "n. 历史, 过去, 经历, 发展过程, 历史学, 过去的事, 历史记录",
+    "phonetic": "/'histәri/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b288b3bbe655300d0613ee3f5a600f79e77244e0c9cea8f7932901de0bf3104f",
+    "executedReviewPromptHash": "b288b3bbe655300d0613ee3f5a600f79e77244e0c9cea8f7932901de0bf3104f",
+    "reviewHash": "1306640463483da69758a798ec61c469d7623991665af6417e07d74ff70202f6",
+    "wordId": 513,
+    "inputHash": "7a23d48360e6b8145666264de1e54decb9566ca294e29dd6fd481b22c765c43a",
+    "draftHash": "8362758c45cc32a2f246aa03583893531abc58f51f4f3b633ae7baad1468c865",
+    "finalHash": "e3b6873043a587f913344a0b4267d170bcfd63fbedef9b944fe8cef12e787bef",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-3",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-3",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/fight",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T16:17:15.082Z",
+        "failure": "http 403 or no dictionary entry"
+      },
+      {
+        "url": "https://fr.wiktionary.org/wiki/fight#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:48:58.071Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116319,
+        "revisionId": 39718608,
+        "revisionTimestamp": "2026-07-31T23:57:13Z",
+        "sha256": "f521d935545a5d753ec3cf4cac452f32b1183e8f819f483f1a720a6fb4fc8374",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/fight",
+        "section": "fight etymology",
+        "supports": [
+          "Attested historical form and selected meaning",
+          "Qualified route or semantic boundary"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "24f96f0e0c056c34846674dc6dc9d092cb48452c8bbf9a6bb2ba1832494d0eb2",
+        "summaryAndSupportsWordCount": 69,
+        "sha256": "24f96f0e0c056c34846674dc6dc9d092cb48452c8bbf9a6bb2ba1832494d0eb2",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/513.json"
+      }
+    ],
+    "reviewedAt": "2026-10-19T04:45:02.471Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/forms/2/note；/confusions/1/items/2/note；/wordFamily/0/spellingNote",
+        "message": "三处误称 fighting 要去掉词尾 e。fight 没有词尾 e，应直接加 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0；相关 sourceIds",
+        "message": "Cambridge 页面未成功获取，不能用它承载已经查阅过的释义、搭配和词族依据。应改列实际取得的法语维基词典英语词条，限定支持范围，并移除摘录未支持的扩展用法和词族引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "不可数的“斗志”和可数的“一场抗争”混写，且各只有一个例句。应明确可数性，各补足两例，并让近义与反向表达分别对应两种意思。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3；/senses/5",
+        "message": "词典明确列出的军事作战义缺少对应例句；常用及物结构 fight an enemy、fight a problem 和 fight to do 的教学也不足。补丁补入作战例句、直接宾语结构及努力实现目标的句型。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0；/senses/3/usageNote",
+        "message": "不能仅凭 with 判断双方敌对。fight with someone 在作战语境中也可以表示与某人并肩作战，原总结遗漏了这一常用功能。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1/items/0/note；/confusions/1/items/2/example/senseId",
+        "message": "一般现在时使用 fight 的主语不限于复数，还包括 I 和单数 you；另一个例句译为“争吵”，却绑定了肢体打斗义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实际材料已给出名词的古英语形式 feoht 和动词的中古英语形式 fighten，原文却称没有可靠字形。应补入摘要、引用对应来源，并删除面向制作过程的说明；名词和动词的历史线索不能串成同一条演变链。"
+      },
+      {
+        "severity": "polish",
+        "location": "/wordFamily",
+        "message": "fightable 虽可理解且偶见，但所配句子不够自然，不适合作为本课词族示范。改用常见的 firefighter，并将形容词 fighting 的释义调整为更典型的“战斗的、作战的”。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions/similarNote",
+        "message": "与 fight 对应的 argument 是言语争执，不必以提出理由为特点。原说明容易混入 argument 表示论证或论据的另一种用法。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1",
+        "message": "不宜笼统宣布旧式 /ai/ 记法错误。现有 IPA 和第一条发音提示已足够，删除这条评价。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/5/examples/1/zh",
+        "message": "school crossing 指学校附近供学生过街的地点，此处译成“学校路口”不够准确，应明确为学校附近的人行横道。"
+      }
+    ],
+    "coverageAssessment": "已核对名词的打斗、争吵、抗争、斗志，以及动词的打架、军事作战、争吵、抵抗和争取目标。补丁使各核心义或合并讲解的独立功能各有至少两个对应例句，并补齐直接宾语和 fight to do 结构。体育竞争保留为次要引申的一例补充。来源范围限于实际取得的摘录；常用扩展和词族可依据专业语言知识讲解，但不冒挂未取得或未提供相应内容的来源。",
+    "senseInventory": [
+      {
+        "sense": "名词：身体打斗、搏斗",
+        "coveredBy": [
+          "s1_n_physical"
+        ],
+        "assessment": "已有两个自然例句，符合词典 bagarre、lutte 所涉及的打斗义。"
+      },
+      {
+        "sense": "名词：争吵、口角",
+        "coveredBy": [
+          "s1_n_argument"
+        ],
+        "assessment": "已有两个例句；修正与 argument 的语境比较。"
+      },
+      {
+        "sense": "名词：为目标或权益进行的一场斗争、抗争",
+        "coveredBy": [
+          "s1_n_determination"
+        ],
+        "assessment": "原有一例；补足第二例，并与不可数的斗志明确区分。"
+      },
+      {
+        "sense": "名词：斗志、不肯放弃的精神",
+        "coveredBy": [
+          "s1_n_determination"
+        ],
+        "assessment": "原有一例；补足第二例，明确不可数用法及对应的近义、反向表达。"
+      },
+      {
+        "sense": "动词：打架、搏斗",
+        "coveredBy": [
+          "s1_v_physical"
+        ],
+        "assessment": "原有两个对应例句；保留并补充及物用法说明。"
+      },
+      {
+        "sense": "动词：参加战斗、与敌方作战",
+        "coveredBy": [
+          "s1_v_physical"
+        ],
+        "assessment": "词典明确列出的军事义原先仅在说明中出现；补入两个例句，并解释敌对与并肩作战的区别。"
+      },
+      {
+        "sense": "动词：争吵、发生言语争执",
+        "coveredBy": [
+          "s1_v_argument"
+        ],
+        "assessment": "已有两个生活例句；将译为争吵的混淆例句绑定到此义。"
+      },
+      {
+        "sense": "动词：对抗、抵抗危险或问题",
+        "coveredBy": [
+          "s1_v_resist"
+        ],
+        "assessment": "保留抗洪例句，补入及物的灭火例句，使该功能有两个具体例句。"
+      },
+      {
+        "sense": "动词：为人、权益或目标努力争取",
+        "coveredBy": [
+          "s1_v_resist"
+        ],
+        "assessment": "保留 fight for 例句，补入 fight to do 例句，并说明努力不等于已经成功。"
+      },
+      {
+        "sense": "动词引申：在比赛或竞争中奋力争胜",
+        "coveredBy": [
+          "s1_v_compete"
+        ],
+        "assessment": "作为争取目标义的体育引申补充，现有一个例句可保留。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"作名词时，fight 可以指打架、争吵，也可指斗争；作动词时，常见意思是打架、争吵或为人和目标而战。过去式和过去分词都是 fought。\"",
+        "valueJson": "\"作名词时，fight 可以指打架、争吵，也可指斗争或斗志；作动词时，常见意思是打架、争吵、抵抗或为人和目标而战。过去式和过去分词都是 fought。\""
+      },
+      {
+        "op": "remove",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /fait/ 不准确，标准音标为 /faɪt/。\"",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"fight 去掉词尾 e 再加 -ing。\"",
+        "valueJson": "\"fight 直接加 -ing，写作 fighting；不删字母，也不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"argument 更强调提出理由、讨论分歧；quarrel 常指人际间的争吵。\"",
+        "valueJson": "\"在“争吵”义中，argument 强调言语上的意见冲突，fight 往往更激烈；quarrel 常突出熟人之间不愉快的争执。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"面对困难、反对或不公平时坚持努力的精神或行动；常用于不可数义，也可指一场争取胜利或权益的斗争。\"",
+        "valueJson": "\"可以指面对困难仍不肯放弃的斗志，也可以指一场为争取目标、保护权益或抵抗某事而进行的斗争。前者通常不可数，后者可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见搭配有 fighting spirit；表示为某事而战常说 a fight for something。\"",
+        "valueJson": "\"表示“斗志”时通常不可数，常说 show fight 或 have plenty of fight left；表示“一场斗争”时可数，常说 a fight for/against something 或 a fight to do something。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e14\",\"senseId\":\"s1_n_determination\",\"en\":\"Even after failing the driving test twice, Sam still had plenty of fight left in him.\",\"zh\":\"即使两次驾照考试都没通过，萨姆仍然斗志十足。\",\"note\":\"fight 表示不可数的“斗志”；have plenty of fight left 表示仍有很强的斗志。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e15\",\"senseId\":\"s1_n_determination\",\"en\":\"The neighbors won their fight to keep the local library open.\",\"zh\":\"邻居们争取让当地图书馆继续开放，最终成功了。\",\"note\":\"their fight 指为目标进行的一场斗争；to keep ... 说明目标，won 才明确表示取得成功。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"determination\",\"zh\":\"决心；毅力\",\"note\":\"与不可数 fight 表示的“斗志”相近，强调坚持下去的决心。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"struggle 突出过程艰难；battle 常把长期努力比作一场战斗。\"",
+        "valueJson": "\"struggle 和 battle 对应“一场斗争”：前者突出过程艰难，后者把努力比作战斗；determination 对应不可数的“斗志”。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"lack of fight\",\"zh\":\"缺乏斗志\",\"note\":\"与不可数 fight 所表示的斗志相对，说明缺少坚持抗争或争胜的劲头。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"give up 仅在“坚持奋斗、继续努力”的语境中与之相对。\"",
+        "valueJson": "\"give up 对照停止奋斗的行动；lack of fight 对照缺少斗志的状态。这些表达分别对应本义中的行动和精神。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"打架；搏斗（动词）\"",
+        "valueJson": "\"打架；搏斗；作战（动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常用 fight with someone 表示与某人打架，fight against someone 表示与某人或一方交战；过去式和过去分词均为 fought。\"",
+        "valueJson": "\"fight 可单独使用，也可直接接对手，如 fight an enemy；fight with someone 可表示与某人打架，在作战语境中也可表示与某人并肩作战。fight against someone 明确引出对抗的一方。过去式和过去分词均为 fought。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e18\",\"senseId\":\"s1_v_physical\",\"en\":\"My grandfather fought in a war when he was young.\",\"zh\":\"我的祖父年轻时曾在一场战争中作战。\",\"note\":\"fight in a war 表示参加战争中的战斗；这里不是日常口角。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e19\",\"senseId\":\"s1_v_physical\",\"en\":\"The soldiers fought the enemy until help arrived.\",\"zh\":\"士兵们一直与敌人作战，直到援军赶到。\",\"note\":\"fight 后可直接接对手 the enemy，不必加介词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"fight someone / an enemy\",\"zh\":\"与某人搏斗／与敌人作战\",\"note\":\"fight 可作及物动词，直接接对手作宾语。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/usageNote",
+        "expectedValueJson": "\"fight against 强调抵抗对象；fight for 强调努力争取的人或目标。\"",
+        "valueJson": "\"fight 可直接接要对抗的问题，也可用 fight against ...；fight for ... 引出努力保护或争取的人、权益或目标；fight to do ... 表示努力做成某事，单凭 fight 不表示已经成功。这些用法不一定涉及暴力。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/examples/1/zh",
+        "expectedValueJson": "\"我们班正在为争取更安全的学校路口而努力。\"",
+        "valueJson": "\"我们班正在争取让学校附近的人行横道更安全。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e16\",\"senseId\":\"s1_v_resist\",\"en\":\"Firefighters fought the fire for three hours.\",\"zh\":\"消防员与大火搏斗了三个小时。\",\"note\":\"fight the fire 指奋力灭火；the fire 是直接宾语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e17\",\"senseId\":\"s1_v_resist\",\"en\":\"Lena fought to keep her small shop open after the rent went up.\",\"zh\":\"房租上涨后，莉娜努力维持自己的小店继续营业。\",\"note\":\"fight to do 表示为实现目标而努力；这句话本身没有说明最终是否成功。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"fight something\",\"zh\":\"对抗某事物；努力消除某问题\",\"note\":\"fight 可直接接问题或危险，如 fight a fire、fight poverty。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/5/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"fight to do something\",\"zh\":\"为做成某事而努力\",\"note\":\"to 后接动词原形，说明努力实现的目标；不表示一定成功。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"with 常说明一起冲突的人；for 引出争取或保护的目标；against 引出抵抗的对象。\"",
+        "valueJson": "\"with 可引出冲突对象，也可引出并肩作战的同伴，须看语境；for 引出争取或保护的目标；against 引出抵抗的对象。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"表示和某人打架或争吵，具体含义看语境。\"",
+        "valueJson": "\"在本例中表示和某人争吵；在其他语境中也可指打架。作战时，with 还可能引出并肩作战的同伴。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"fight with someone（并肩作战）\",\"note\":\"作战语境中的 with 也可以说明同一阵营的同伴；against 可同时标明敌对方。\",\"example\":{\"id\":\"ce7\",\"senseId\":\"s1_v_physical\",\"en\":\"The soldiers fought with their allies against a common enemy.\",\"zh\":\"士兵们与盟友并肩作战，对抗共同的敌人。\",\"note\":\"with their allies 表示与盟友在同一阵营；against a common enemy 表示对抗共同的敌人。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"先看介词：with 是和谁冲突，for 是为了什么而努力，against 是抵抗什么。\"",
+        "valueJson": "\"for 看争取或保护什么，against 看抵抗什么；with 要结合语境，区分冲突对手和并肩作战的同伴。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"原形用于不定式、祈使句和一般现在时复数主语之后。\"",
+        "valueJson": "\"原形可用于 to 不定式、祈使句和情态动词之后；一般现在时中，I、you、we、they 及复数名词作主语时用 fight。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/2/note",
+        "expectedValueJson": "\"加 -ing 时去掉词尾 e，再加 -ing。\"",
+        "valueJson": "\"直接在 fight 后加 -ing，写作 fighting；不删字母，也不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/2/example/senseId",
+        "expectedValueJson": "\"s1_v_physical\"",
+        "valueJson": "\"s1_v_argument\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"fight 的动词可追溯到古英语 feohtan，意为战斗、挣扎或攻击；名词也有古英语中表示战斗的形式。两者都承载“战斗”这一核心概念，后来英语中还发展出抵抗和冲突等用法。\"",
+        "valueJson": "\"动词 fight 可追溯到古英语 feohtan，当时有“战斗、挣扎或攻击”的意思；它在中古英语中写作 fighten。名词 fight 则可追溯到古英语 feoht，表示战斗。名词和动词各有历史线索，后来英语中又发展出更广泛的抵抗和冲突用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"词源材料提到名词也有古英语战斗形式，但没有提供可在此可靠说明的具体字形，因此未将其与动词形式串成同一条演变链。关于更早来源的猜测并无定论；这里的 fight 和 fought 是现代词形关系，不代表词源阶段。\"",
+        "valueJson": "\"这些早期形式之前的更深来源仍不确定。名词 feoht 与动词 feohtan 不应排成前后演变的两个阶段；fight—fought—fought 则是现代词形变化。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"s2\"]",
+        "valueJson": "[\"s2\",\"s1\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/meaning",
+        "expectedValueJson": "\"打斗；战斗；好斗的\"",
+        "valueJson": "\"名词：打斗、战斗；形容词：战斗的、作战的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"去掉词尾 e 再加 -ing：fight → fighting。\"",
+        "valueJson": "\"直接加 -ing：fight → fighting；保留 fight 的全部字母，不双写 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"s1\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2",
+        "expectedValueJson": "{\"word\":\"fightable\",\"partOfSpeech\":\"形容词\",\"meaning\":\"可通过斗争加以抵抗或解决的\",\"formation\":\"fight + -able，表示能够被做或处理。\",\"spellingNote\":\"直接加 -able：fight → fightable；该词较少见。\",\"example\":{\"id\":\"w3\",\"senseId\":\"s1_v_resist\",\"en\":\"The problem felt fightable once we had a plan.\",\"zh\":\"有了计划后，这个问题让人觉得可以努力解决。\",\"note\":\"fightable 较少见，此句展示其可理解的构词用法。\"},\"sourceIds\":[\"s1\"]}",
+        "valueJson": "{\"word\":\"firefighter\",\"partOfSpeech\":\"名词\",\"meaning\":\"消防员\",\"formation\":\"fire（火）+ fighter（与……作斗争的人），构成表示职业的复合名词。\",\"spellingNote\":\"fire + fighter → firefighter，通常连写；fight 中的 gh 保留。\",\"example\":{\"id\":\"w3\",\"senseId\":\"s1_v_resist\",\"en\":\"A firefighter carried the child out of the burning house.\",\"zh\":\"一名消防员把孩子从着火的房子里抱了出来。\",\"note\":\"firefighter 指从事灭火、救援等工作的消防员。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"fought 是 fight 的不规则词形，不是派生词；fighter 和 fighting 是较常用的同族词。fightable 较少见，学习时认识即可。\"",
+        "valueJson": "\"fought 是 fight 的不规则词形，不是派生词；fighting 由 fight 直接加 -ing，fighter 由 fight 直接加 -er；firefighter 是 fire 与 fighter 构成的复合词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"s1\",\"title\":\"Cambridge Dictionary: fight\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/fight\",\"supports\":[\"现代英美读音\",\"名词与动词常见义项和用法\",\"fight 的不规则变化\",\"常见搭配及词族\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"s1\",\"title\":\"Wiktionnaire：fight（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/fight#Anglais\",\"supports\":[\"英语 fight 的读音 /faɪt/\",\"名词的打斗、斗争、争吵义及可数、不可数标记\",\"动词的打架、军事作战、争吵义及及物、不及物标记\",\"fight、fights、fighting、fought 的词形和相应读音\",\"名词的古英语来源形式 feoht 与动词的中古英语来源形式 fighten\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 513,
+    "headword": "fight",
+    "meaning_zh": "n. 打架, 争吵, 斗志\nv. 对抗, 打架",
+    "phonetic": "/fait/",
+    "pos": "",
+    "forms": []
+  }
+}

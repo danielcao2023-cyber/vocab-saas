@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "e9c0970110c8aad60e9ad18c8680c27b24f4e429c4dcafaff78cf45d61b24e14",
+    "executedReviewPromptHash": "e9c0970110c8aad60e9ad18c8680c27b24f4e429c4dcafaff78cf45d61b24e14",
+    "reviewHash": "2898144b2503d05fd081327dc06127ae5d1ab6ea498befa8f513e37aed61dca0",
+    "wordId": 1113,
+    "inputHash": "0b09dc639f39f9fd8df4fecd8c6c551c7b8ffc56dc26ade790dc8609058cd4d6",
+    "draftHash": "cea59cf6b3df346ee18d4f6ac066d346b32a6c34958fe8ed349a6146b823c6be",
+    "finalHash": "1e840e64d7666183ada85049773dbc1feb005b956e85cc9852a963646bcb996f",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rabbit#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:41.406Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116592,
+        "revisionId": 39759970,
+        "revisionTimestamp": "2026-08-03T00:26:54Z",
+        "sha256": "bbb0fae485f0dd3199c7f1ac021cf65f9749c112cddad8a2ba99a6ad756e3fa4",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rabbit",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T07:26:27.559Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T07:40:46.141Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常见的不可数名词义“兔肉”，需补充两个例句并区分动物义与肉类义的可数性。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses",
+        "message": "已取得的英语词条还列有“捕兔”和英式口语“说个不停”两个动词义。应补入拓展义，并相应补齐词性和动词词形。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 正文未取得，初稿却将主要释义、发音和词形依据全部指向该页。应改引实际取得的法语维基词典英语词条；新增兔肉义依据专业语言知识，不冒充该页明确列出的定义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/examples/1/note",
+        "message": "the rabbits 特指语境中已知的兔子，不能解释为泛指兔子这一类动物。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "例句注释和结论容易使人误以为野外语境应使用 hare。野生兔子也可以是 rabbit，两词不能简单按家养与野生区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "阶段释义“传入来源形式”没有提供历史字义，属于空洞占位；应将可证实的中古英语来源形式保留在 summary，清空 stages，并删除学生文案中的资料制作说明。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "tortoise 虽已注明不是反义词，但此处只是任意动物类别对照，缺乏有用的反向关系，宜移除。"
+      }
+    ],
+    "coverageAssessment": "已核对所取得英语词条的全部三项定义：动物名词、捕兔动词、英式口语动词；另依据专业语言知识补齐常见的兔肉义。修订后两个核心名词义各有两个例句，两个较少见动词义各有拓展例句。原有基础读音、复数拼写和自然例句保留，补齐动词变化。词源仅保留可证实的中古英语来源，不推断更早关系；未取得的 Cambridge 正文不作为依据。本课覆盖基础常用义及材料明确列出的拓展义，不作专业、比喻用法的穷尽收录。",
+    "senseInventory": [
+      {
+        "sense": "可数名词：兔子",
+        "coveredBy": [
+          "rabbit-animal"
+        ],
+        "assessment": "原稿已覆盖且有两个自然例句；修正定冠词说明及 rabbit 与 hare 的区分。"
+      },
+      {
+        "sense": "不可数名词：兔肉",
+        "coveredBy": [
+          "rabbit-meat"
+        ],
+        "assessment": "原稿遗漏的常见用法；补为核心义，配两个例句及可数性说明。"
+      },
+      {
+        "sense": "不及物动词：捕兔",
+        "coveredBy": [
+          "rabbit-hunt"
+        ],
+        "assessment": "来源明确列出；补入较少见义，通过 go rabbiting 展示用法。"
+      },
+      {
+        "sense": "英式口语不及物动词：喋喋不休，通常用 rabbit on",
+        "coveredBy": [
+          "rabbit-talk"
+        ],
+        "assessment": "来源明确列出；补入较少见义，说明地域、语体及令人厌烦的语气。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"noun\"",
+        "valueJson": "\"noun; verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"rabbit 是名词，表示兔子；常见复数是 rabbits。\"",
+        "valueJson": "\"rabbit 最常作名词：表示“兔子”时可数，复数为 rabbits；表示“兔肉”时不可数。作动词还可表示“捕兔”，英式口语 rabbit on 表示“唠叨个没完”。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"区分 a rabbit（一只兔子）与 some rabbit（一些兔肉），了解 go rabbiting（去捕兔）和 rabbit on（唠叨个没完）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge_rabbit\"]",
+        "valueJson": "[\"wiktionary_rabbit_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/label",
+        "expectedValueJson": "\"复数\"",
+        "valueJson": "\"名词复数；动词第三人称单数\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"规则名词，词尾直接加 s。\"",
+        "valueJson": "\"表示兔子时，名词复数直接加 -s；动词第三人称单数也写 rabbits。词尾 -s 在 /t/ 后读 /s/。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词过去式及过去分词\",\"form\":\"rabbited\",\"ipa\":\"/ˈræbɪtɪd/\",\"note\":\"直接加 -ed，末尾 t 不双写；-ed 在 /t/ 后读 /ɪd/。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"动词现在分词\",\"form\":\"rabbiting\",\"ipa\":\"/ˈræbɪtɪŋ/\",\"note\":\"直接加 -ing，拼作 rabbiting，末尾 t 不双写。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "\"用复数 rabbits 泛指家里的几只兔子。\"",
+        "valueJson": "\"the rabbits 特指说话双方知道的那几只兔子；泛指兔子这一类动物可用不带 the 的复数 rabbits。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"tortoise\",\"zh\":\"陆龟\",\"note\":\"在动物类别对照中，兔子是哺乳动物，陆龟是爬行动物；不是普遍意义上的反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"没有通用反义词；谈动物类别时可用 tortoise 作有限对照。\"",
+        "valueJson": "\"rabbit 表示动物名称时没有常用反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_rabbit\"]",
+        "valueJson": "[\"wiktionary_rabbit_etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rabbit-meat\",\"title\":\"兔肉\",\"meaning\":\"供食用的兔肉；用作不可数名词。\",\"usageNote\":\"rabbit 指兔肉时通常不可数，泛指兔肉时不加 a；谈数量可用 some rabbit 或 a piece of rabbit。a rabbit 通常指一只兔子。\",\"examples\":[{\"id\":\"rabbit-meat-ex-1\",\"senseId\":\"rabbit-meat\",\"en\":\"We had rabbit for dinner last night.\",\"zh\":\"我们昨晚晚饭吃了兔肉。\",\"note\":\"rabbit 在这里指吃的兔肉，是不可数名词。\"},{\"id\":\"rabbit-meat-ex-2\",\"senseId\":\"rabbit-meat\",\"en\":\"I bought some rabbit to make a stew.\",\"zh\":\"我买了一些兔肉来炖菜。\",\"note\":\"some rabbit 表示一些兔肉，rabbit 不加复数 -s。\"}],\"patterns\":[{\"en\":\"some rabbit\",\"zh\":\"一些兔肉\",\"note\":\"rabbit 指肉类时不可数，some 后保持原形。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"roast rabbit\",\"zh\":\"烤兔肉\",\"note\":\"作为肉类名称时，rabbit 通常不可数。\",\"kind\":\"common-collocation\"},{\"en\":\"rabbit stew\",\"zh\":\"兔肉炖菜\",\"note\":\"rabbit 修饰 stew，说明炖菜所用的肉类。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"rabbit meat\",\"zh\":\"兔肉\",\"note\":\"明确说出肉类；在点餐、烹饪等语境中，也常直接用 rabbit。\"}],\"contrasting\":[],\"similarNote\":\"rabbit meat 明确指兔肉，与此义的 rabbit 意思相同。\",\"contrastingNote\":\"作为肉类名称，rabbit 没有常用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[]",
+        "valueJson": "[{\"id\":\"rabbit-hunt\",\"title\":\"动词：捕兔\",\"meaning\":\"猎捕兔子。\",\"note\":\"不及物动词，常见表达 go rabbiting 表示去捕兔；属于拓展用法。\",\"example\":{\"id\":\"rabbit-hunt-ex-1\",\"senseId\":\"rabbit-hunt\",\"en\":\"They used to go rabbiting in the nearby fields.\",\"zh\":\"他们过去常去附近的田野捕兔。\",\"note\":\"used to 表示过去的习惯；go rabbiting 中的 rabbiting 是动词 rabbit 的 -ing 形式。\"},\"sourceIds\":[\"wiktionary_rabbit_etymology\"]},{\"id\":\"rabbit-talk\",\"title\":\"英式口语动词：唠叨个没完\",\"meaning\":\"喋喋不休地说话，常使人觉得厌烦。\",\"note\":\"非正式英式用法，通常说 rabbit on 或 rabbit on about sth，带有不耐烦或批评语气。\",\"example\":{\"id\":\"rabbit-talk-ex-1\",\"senseId\":\"rabbit-talk\",\"en\":\"He kept rabbiting on about his new phone during lunch.\",\"zh\":\"午饭时，他不停地唠叨自己的新手机。\",\"note\":\"rabbit on about sth 表示围绕某事说个没完，含有说话令人厌烦的意味。\"},\"sourceIds\":[\"wiktionary_rabbit_etymology\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"野外动物语境常用 hare。\"",
+        "valueJson": "\"这里的 hare 指野兔类动物；在野外活动的兔子也可能称为 rabbit。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说宠物兔通常用 rabbit；说常见的野生野兔可用 hare。\"",
+        "valueJson": "\"rabbit 和 hare 通常按动物种类区分；宠物兔一般用 rabbit，野生兔子也可能叫 rabbit。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_rabbit\"]",
+        "valueJson": "[\"wiktionary_rabbit_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"rabbit 经中古英语进入现代英语；给出的历史词源记录将其来源指向中古英语 rabet。\"",
+        "valueJson": "\"现代英语中表示动物的名词 rabbit 源自中古英语 rabet。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"rabet\",\"meaning\":\"rabbit 的传入来源形式\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge_rabbit\"]",
+        "valueJson": "[\"wiktionary_rabbit_etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/1",
+        "expectedValueJson": "{\"id\":\"wiktionary_rabbit_etymology\",\"title\":\"Wiktionary: rabbit（English entry）\",\"url\":\"https://fr.wiktionary.org/wiki/rabbit#Anglais\",\"supports\":[\"rabbit 的中古英语来源形式 rabet\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary_rabbit_etymology\",\"title\":\"Wiktionnaire：rabbit（英语词条，法语释文）\",\"url\":\"https://fr.wiktionary.org/wiki/rabbit#Anglais\",\"supports\":[\"英语名词义“兔子”及规则复数 rabbits\",\"英式与美式常见发音\",\"英语动词义：捕兔；英式口语中说个不停\",\"rabbit 与 hare 的名称区别\",\"名词 rabbit 的中古英语来源形式 rabet\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge_rabbit\",\"title\":\"Cambridge Dictionary: rabbit\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/rabbit\",\"supports\":[\"常见名词义及用法\",\"发音\",\"名词复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      }
+    ]
+  },
+  "input": {
+    "id": 1113,
+    "headword": "rabbit",
+    "meaning_zh": "n. 兔子",
+    "phonetic": "/'ræbit/",
+    "pos": "",
+    "forms": []
+  }
+}

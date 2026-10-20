@@ -1,0 +1,288 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "97829092aa409d696f12b1d5faca5a9359ca8c0c96fd6aeaa1b85bd6415355b0",
+    "executedReviewPromptHash": "97829092aa409d696f12b1d5faca5a9359ca8c0c96fd6aeaa1b85bd6415355b0",
+    "reviewHash": "6c32108b872d954034b19be21fd0c3d7b74b0b1e2aaafbf6bbb5e6a28addea55",
+    "wordId": 951,
+    "inputHash": "52a0763b1e8351dcc1dcea075304d7a37fbd1411b825d765ae34f0da6d1e8efe",
+    "draftHash": "00d68a27bef3435a0c6edc0467a06320863b2d7bf1007cb01813cedb494bc796",
+    "finalHash": "5ee8436e16d34d3da455f45b8043a5f8c1e13b2185b89dfaee3674215f6c4a8e",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/onion#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:35.609Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117293,
+        "revisionId": 38445088,
+        "revisionTimestamp": "2025-08-01T05:18:56Z",
+        "sha256": "a77ff807f6d6624dd0286715558e050ea2be5d3c80438811e9f1d7e0f65a1bc7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/onion",
+        "section": "onion noun",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "8a547803d6fa8d32ca93e86099b9ffcd652e827115aa6574860cb54d66dd6790",
+        "summaryAndSupportsWordCount": 72,
+        "sha256": "8a547803d6fa8d32ca93e86099b9ffcd652e827115aa6574860cb54d66dd6790",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/951.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/onion",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T02:33:25.788Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T02:42:21.045Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/takeaway；/forms/0/note；/senses/0/usageNote；/senses/0/examples",
+        "message": "遗漏常见的不可数食材用法，如 some chopped onion。需补充说明和例句；针对 onion 的单数可数用法应直接说明用 an onion。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "“恩-扬”容易诱导出错误的元音和鼻音韵尾，不能准确提示 /ˈʌn.jən/。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0",
+        "message": "onion 与 union 只有首字母不同，后面的 n-i-o-n 完全相同，并非中间字母顺序不同。普通名词 union 不应默认大写，宜同时说明 an onion 与 a union 的发音依据。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "unionem 是 unio 的宾格单数，不是属格。材料中的 union 是盎格鲁诺曼语形式，不能据此列为英语阶段；相关法语形式也不能无依据串成逐一演变的链条。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0；相关 sourceIds",
+        "message": "实际取得的材料不含 Oxford 条目正文。应引用已取得的法语维基词典英语词条，并让词源同时引用它与 Etymonline；union 对比依据专业语言知识，不挂靠未取得的 Oxford 页面。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/meaning；/senses/1/examples/1",
+        "message": "植物义宜明确其食用部分是鳞茎，避免“结出洋葱”的含混说法；第二例宜换成具体园艺场景，以达到生活例句标准。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/patterns/0/kind；/senses/1/collocations/0/kind",
+        "message": "grow onions 是普通动宾搭配，标为 common-collocation 比 sentence-pattern 准确。"
+      }
+    ],
+    "coverageAssessment": "已按英语词条的两项定义核对蔬菜义 s1 与植株义 s2，两义均保留至少两个原创英中例句。补充食材不可数用法，作为 s1 的语法用法，不另造义项。词源按两份已取得材料修正；不可数用法及 union 对比依据专业语言知识。未见需要另补的初中常用义，未扩展材料之外的罕见义或专名用法。",
+    "senseInventory": [
+      {
+        "sense": "洋葱这种蔬菜；完整个体可数，作为一定量的食材也可不可数",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "原有两例覆盖可数用法；补充不可数说明及第三例后，覆盖常见食材用法。"
+      },
+      {
+        "sense": "洋葱植株（Allium cepa）",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已覆盖种植和植株用法；保留种植例句，将泛泛的第二例改为具体花园场景。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"onion 是可数名词，指洋葱这种蔬菜，也可指洋葱植株；一个洋葱说 an onion，多个说 onions。\"",
+        "valueJson": "\"onion 指洋葱这种蔬菜，也可指洋葱植株；一个用 an onion，多个用 onions。表示一定量的洋葱食材时也可不可数，如 some chopped onion（一些洋葱碎）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"末尾是 /jən/，可近似听作“恩-扬”，但不要拆成 on 加 ion。\"",
+        "valueJson": "\"第二音节是 /jən/：/j/ 是 yes 开头的辅音，后接弱读的 /ən/；末尾是 /n/，不是 /ŋ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"可数名词；前面常用 a 或 an，如 an onion。\"",
+        "valueJson": "\"指一个洋葱或一株洋葱时用 an onion；表示一定量的洋葱食材时也可不可数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"作可数名词，单数前通常加 a 或 an；onion 以元音音素开头，所以说 an onion。\"",
+        "valueJson": "\"表示一颗或几颗洋葱时可数；一个洋葱说 an onion，因为开头是元音音素。表示切碎或加入食物中的洋葱时也可不可数，如 some chopped onion。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"s1e3\",\"senseId\":\"s1\",\"en\":\"There's some chopped onion in the salad.\",\"zh\":\"沙拉里有一些切碎的洋葱。\",\"note\":\"some chopped onion 表示一定量的洋葱碎，onion 在这里按不可数食材使用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"结出洋葱的植物；在园艺或种植语境中，onion 也可指这种作物本身。\"",
+        "valueJson": "\"洋葱这种植物（Allium cepa），通常为食用鳞茎而栽培；在园艺或种植语境中，onion 可指植株本身。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"The onion is a useful garden plant.\",\"zh\":\"洋葱是一种实用的园艺植物。\",\"note\":\"这里的 onion 指植物，而非一颗切好的洋葱。\"}",
+        "valueJson": "{\"id\":\"s2e2\",\"senseId\":\"s2\",\"en\":\"The onions in our garden have long green leaves.\",\"zh\":\"我们花园里的洋葱长着长长的绿叶。\",\"note\":\"onions 指正在生长的洋葱植株。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0",
+        "expectedValueJson": "{\"id\":\"c1\",\"title\":\"onion 和 Union 容易看错\",\"summary\":\"onion 指洋葱；Union 常作专有名词的一部分或表示“联合、联盟”。两词中间的字母顺序不同，意思也不同。\",\"items\":[{\"label\":\"onion\",\"note\":\"拼写是 o-n-i-o-n，首字母小写时通常指洋葱。\",\"example\":{\"id\":\"c1e1\",\"senseId\":\"s1\",\"en\":\"She bought an onion for dinner.\",\"zh\":\"她买了一个洋葱做晚饭。\",\"note\":\"onion 是蔬菜名词。\"}},{\"label\":\"Union\",\"note\":\"拼写是 U-n-i-o-n；常见于机构或地名名称，也可指联合。\",\"example\":{\"id\":\"c1e2\",\"senseId\":\"s1\",\"en\":\"The students formed a union.\",\"zh\":\"学生们成立了一个联盟。\",\"note\":\"union 与 onion 不是同一个词。\"}}],\"takeaway\":\"记住 onion 中有两个 o，首字母后接 n；不要把它拼成 Union。\",\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "{\"id\":\"c1\",\"title\":\"onion 和 union：只差首字母，读音不同\",\"summary\":\"onion 指“洋葱”，union 指“联合；联盟；工会”。两词只有首字母 o / u 不同，后面的 n-i-o-n 完全相同；onion 以 /ʌ/ 开头，union 以 /juː/ 开头。\",\"items\":[{\"label\":\"onion\",\"note\":\"拼写是 o-n-i-o-n；开头是元音音素 /ʌ/，所以说 an onion。\",\"example\":{\"id\":\"c1e1\",\"senseId\":\"s1\",\"en\":\"She bought an onion for dinner.\",\"zh\":\"她买了一个洋葱做晚饭。\",\"note\":\"onion 是蔬菜名词。\"}},{\"label\":\"union\",\"note\":\"拼写是 u-n-i-o-n；开头是辅音 /j/，所以说 a union。普通名词通常小写，用于机构等专名中时可大写。\",\"example\":{\"id\":\"c1e2\",\"senseId\":\"s1\",\"en\":\"The union's canteen serves onion soup.\",\"zh\":\"工会食堂供应洋葱汤。\",\"note\":\"union 指工会；onion soup 中的 onion 表示洋葱这种食材。\"}}],\"takeaway\":\"o-n-i-o-n 是洋葱，u-n-i-o-n 是联合、联盟或工会；按发音分别用 an onion 和 a union。\",\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"onion 经法语形式传入英语，相关历史形式包括 union、oignon；它与拉丁语 unio 有关。把 onion 拆成 on 加 ion 来记，只是字母联想，不是现代构词或词源。\"",
+        "valueJson": "\"onion 经法语传入英语，相关形式包括盎格鲁诺曼语 union 和古法语 oignon、oingnon；更早可追溯到拉丁语 unio 的宾格 unionem。unio 可表示“洋葱”，也属于表示“一个、统一”的词族。一种历史命名解释是：洋葱的各层合成一个鳞茎，与大蒜分成多个蒜瓣形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"unio（属格形式 unionem）\",\"meaning\":\"与洋葱有关的词形；也属于表示“一个、统一”的词族。\"},{\"language\":\"古法语\",\"form\":\"oignon\",\"meaning\":\"洋葱。\"},{\"language\":\"英语\",\"form\":\"union\",\"meaning\":\"英语中较早的相关形式，后来形成 onion。\"}]",
+        "valueJson": "[{\"language\":\"拉丁语\",\"form\":\"unio（宾格 unionem）\",\"meaning\":\"洋葱；该词也与表示“一个、统一”的词族有关。\"},{\"language\":\"法语（古法语、盎格鲁诺曼语）\",\"form\":\"oignon、oingnon；union\",\"meaning\":\"洋葱。\"},{\"language\":\"英语\",\"form\":\"onion\",\"meaning\":\"洋葱。\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这些是历史传入和词形变化，不表示现代英语中的 onion 由 on 和 ion 两部分构成；关于名称与洋葱层次的联系属于词源解释。\"",
+        "valueJson": "\"古法语 oignon、oingnon 与盎格鲁诺曼语 union 是相关历史形式，不能据此断定三者依次演变。现代英语 onion 不能拆成 on 加 ion；切洋葱流泪的情境联想也不是词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/sourceIds",
+        "expectedValueJson": "[\"etymonline\"]",
+        "valueJson": "[\"wiktionary-en\",\"etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: onion\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/onion\",\"supports\":[\"常见名词义和可数用法\",\"发音与复数形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：onion（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/onion#Anglais\",\"supports\":[\"洋葱蔬菜义与洋葱植株义\",\"英美发音与规则复数形式\",\"古法语及盎格鲁诺曼语来源形式\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 951,
+    "headword": "onion",
+    "meaning_zh": "n. 洋葱",
+    "phonetic": "/'ʌnjәn/",
+    "pos": "",
+    "forms": []
+  }
+}

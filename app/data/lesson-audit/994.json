@@ -1,0 +1,492 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d3c911dba6bd0c34213256a06ec4c9a9507fdf05c2d75110d77d2975182aeeab",
+    "executedReviewPromptHash": "251615409029b84068ff34242b732a7c542b70161398c711c83ec73074c139b2",
+    "reviewHash": "29c3b001e6682a2af1b3fc3c191d21392a991557d7f5779c92f9bd0185e76b55",
+    "wordId": 994,
+    "inputHash": "eb4c193362bc46a0e1928960f2780a5c65c90499d376b5bcd49c88dc497b9640",
+    "draftHash": "9a420400a5beaf930ed41fccf8d562ac3d70d8f3053ae1698e95ad4e036baeb2",
+    "finalHash": "7caf51ec604a21f44b8d928de29a28719166d92c211d3bc64c68db5dc9d2e075",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-2",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/past#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:43.184Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118059,
+        "revisionId": 39751536,
+        "revisionTimestamp": "2026-08-02T17:11:03Z",
+        "sha256": "0ca44d882cdb4c4116ed53ebb2cfdaf3bda45b904028b7a4db747d87ef293da7",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/past",
+        "section": "past adjective and related uses",
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "supports": [
+          "Historical form and relevant meaning",
+          "Qualified route and sense boundaries"
+        ],
+        "summarySha256": "1e37fa83914632ffd4cb8b9a53c30e7e71ab300c167f45371d5af776c2715d78",
+        "summaryAndSupportsWordCount": 62,
+        "sha256": "1e37fa83914632ffd4cb8b9a53c30e7e71ab300c167f45371d5af776c2715d78",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/994.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/past",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T03:28:30.242Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T03:40:22.471Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 页面未能取得，不能承担初稿所列释义和读音依据。应改用实际取得的法语维基词典英语词条，并同步更换引用。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "the past tense 中的 past 是形容词，不能用来示范名词用法。名词表示语法中的“过去时”确有依据，但缺少对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "未充分覆盖形容词在 past tense 等语法术语中的功能；需补充说明和两个对应例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/examples",
+        "message": "经过和报时都是核心功能，目前各只有一个例句；应各补一个，并把 half past 的报时结构归入介词用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3",
+        "message": "half past nine 中 past 后接钟点，按本课采用的教学语法应归为介词；the time is past 中 past 是表语形容词。两者均不能支撑当前副词讲解。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/3/relatedExpressions",
+        "message": "away 表示离开，不宜列作此义的近义表达；before 的报时对照也不属于当前副词义。保留 by，并明确 stay 对照的是整个移动动作。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "超过时间或年龄界限属于常用功能，不宜仅作次要义处理；词典的 beyond 义还包括在某个地点更远处的位置用法，初稿遗漏。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions",
+        "message": "passed-only 和 last-month-only 例句被关联到并未实际出现的 past 义项，词族例句也存在同样问题；另有面向学生的 senseId 实现说明。应让这些例句包含实际对应的 past 用法并修正引用。last 的说明还须区分 last month 与 the last few days，避免概括过宽。"
+      }
+    ],
+    "coverageAssessment": "已核对取得的英语词条全部主要定义，并用专业语言知识校正词性分析。补丁后，名词的过去与语法过去时、形容词的时间修饰与语法术语功能、介词的经过与报时、副词的经过，以及介词的越界与位置功能均有对应覆盖，各核心功能至少两个例句。历史词源与已取得的 Etymonline 材料一致，无须改动。全部例句 ID 保持唯一，senseId 均指向补丁后存在且在例句中实际体现的义项；未展开所有高级固定表达。",
+    "senseInventory": [
+      {
+        "sense": "名词：现在以前的时间、事情或经历",
+        "coveredBy": [
+          "past-noun"
+        ],
+        "assessment": "原有两个例句有效，保留。"
+      },
+      {
+        "sense": "名词：语法中的过去时",
+        "coveredBy": [
+          "past-noun"
+        ],
+        "assessment": "补充两个名词用法例句，并以 the simple past 替换词性归属错误的搭配。"
+      },
+      {
+        "sense": "形容词：已经过去的、先前的、最近一段时间的",
+        "coveredBy": [
+          "past-adjective"
+        ],
+        "assessment": "原有例句覆盖一般过去经历与截至现在的最近时间；补充 last 的限定说明。"
+      },
+      {
+        "sense": "形容词：与过去有关的，尤其用于语法术语",
+        "coveredBy": [
+          "past-adjective"
+        ],
+        "assessment": "补充 past tense 的说明与两个具体例句。"
+      },
+      {
+        "sense": "介词：从某人或某物旁边经过",
+        "coveredBy": [
+          "past-preposition"
+        ],
+        "assessment": "保留原例并补充公交车经过住宅的例句，共两个。"
+      },
+      {
+        "sense": "介词：钟点过了若干分钟",
+        "coveredBy": [
+          "past-preposition"
+        ],
+        "assessment": "保留 ten past seven，并补入 half past nine，共两个；增加几点半的结构。"
+      },
+      {
+        "sense": "介词：晚于或超过时间、年龄等界限",
+        "coveredBy": [
+          "past-beyond"
+        ],
+        "assessment": "提升为主要义，使用年龄界限与午夜时间点两个例句。"
+      },
+      {
+        "sense": "介词：在某个参照地点的更远处",
+        "coveredBy": [
+          "past-beyond"
+        ],
+        "assessment": "补充药店和公交车站的位置例句，说明此用法不要求出现移动动作。"
+      },
+      {
+        "sense": "副词：从旁边经过",
+        "coveredBy": [
+          "past-adverb"
+        ],
+        "assessment": "保留骑车人经过的例句，另补开车经过的例句；移除介词报时和表语形容词的误归类。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"src-cambridge\",\"title\":\"Cambridge Dictionary: past\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/past\",\"supports\":[\"past 的词性和常见意思\",\"past 用于报时、经过和过去时间的表达\",\"past 与 passed 的用法区分\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"src-wiktionary\",\"title\":\"Wiktionnaire：past（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/past#Anglais\",\"supports\":[\"past 的英美读音及与 passed 同音\",\"past 的名词、形容词、副词和介词主要义项\",\"过去时、报时及超出界限等用法\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"past 可以作名词指过去，作形容词描述过去的时间，也可作介词或副词表示经过、超过。注意：动词 pass 的过去式和过去分词是 passed。\"",
+        "valueJson": "\"past 可作名词表示过去或语法中的过去时，作形容词表示过去的；作介词表示经过、报时、越过界限或在某地更远处，作副词表示从旁边经过。动词 pass 的过去式和过去分词写 passed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"名词：过去\"",
+        "valueJson": "\"名词：过去；（语法）过去时\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常见于 in the past（过去）和 the past tense（过去时）。\"",
+        "valueJson": "\"表示过去的时间时，常见于 in the past 和 learn from the past；语法语境中的 the past 也可单独表示过去时。注意：the past tense 中 past 修饰 tense，是形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"the past tense\",\"zh\":\"过去时\",\"note\":\"语法术语，指表达过去时间的动词形式。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"the simple past\",\"zh\":\"一般过去时\",\"note\":\"语法名称；这里 past 是名词，simple 修饰 past。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-noun-ex-3\",\"senseId\":\"past-noun\",\"en\":\"Our teacher asked us to put this sentence into the past.\",\"zh\":\"老师让我们把这个句子改成过去时。\",\"note\":\"语法语境中的 the past 是名词，表示过去时。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-noun-ex-4\",\"senseId\":\"past-noun\",\"en\":\"Is this verb in the present or the past?\",\"zh\":\"这个动词是现在时还是过去时？\",\"note\":\"the present 和 the past 在这里都是表示时态的名词用法。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/title",
+        "expectedValueJson": "\"形容词：过去的；刚过去的\"",
+        "valueJson": "\"形容词：过去的；最近的（也用于语法术语）\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"已经结束或发生在现在之前的；也可指刚刚过去的某段时间。\"",
+        "valueJson": "\"已经结束或发生在现在之前的；也可指最近一段时间，或在语法术语中表示与过去有关的。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"通常放在名词前，如 past events；the past few days 指刚过去的几天。\"",
+        "valueJson": "\"通常放在名词前，如 past events；the past few days 指截至现在的最近几天。past tense 中的 past 也作形容词，修饰 tense。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-adj-ex-3\",\"senseId\":\"past-adjective\",\"en\":\"The teacher wrote the past tense of 'go' on the board.\",\"zh\":\"老师在黑板上写出了 go 的过去式。\",\"note\":\"past 修饰 tense，是形容词；past tense 整体才是表示过去时的名词短语。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-adj-ex-4\",\"senseId\":\"past-adjective\",\"en\":\"I checked the past tense of 'buy' in a dictionary.\",\"zh\":\"我在词典里查了 buy 的过去式。\",\"note\":\"这里 past 仍修饰 tense，用于说明动词的过去时形式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"past tense\",\"zh\":\"过去时\",\"note\":\"语法术语，其中 past 是形容词，tense 是名词。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-prep-ex-3\",\"senseId\":\"past-preposition\",\"en\":\"The bus drove past our house without stopping.\",\"zh\":\"公交车从我们家旁边开过，没有停下来。\",\"note\":\"past 后接 our house，表示从住宅旁边经过。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-prep-ex-4\",\"senseId\":\"past-preposition\",\"en\":\"It is half past nine already.\",\"zh\":\"现在已经九点半了。\",\"note\":\"half past nine 表示九点三十分；past 后接钟点 nine，按介词学习。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"half past + 整点\",\"zh\":\"几点半\",\"note\":\"half 在报时中表示半小时；half past six 是六点三十分。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/title",
+        "expectedValueJson": "\"副词：经过；超过\"",
+        "valueJson": "\"副词：从旁边经过\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/meaning",
+        "expectedValueJson": "\"从旁边经过；在钟点上超过整点。\"",
+        "valueJson": "\"从旁边经过。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"作副词时可不带地点宾语，如 The bus went past；也常见于 half past six。\"",
+        "valueJson": "\"此处按传统教学语法讲副词用法：past 后不接名词或代词作宾语，如 The bus went past。half past six 中 past 后接钟点，归入介词报时用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"past-adv-ex-2\",\"senseId\":\"past-adverb\",\"en\":\"It is half past nine already.\",\"zh\":\"现在已经九点半了。\",\"note\":\"half past nine 表示九点三十分。\"}",
+        "valueJson": "{\"id\":\"past-adv-ex-2\",\"senseId\":\"past-adverb\",\"en\":\"I waved, but she drove straight past.\",\"zh\":\"我挥了挥手，但她径直开车过去了。\",\"note\":\"past 后没有宾语；straight 表示径直经过，没有停下。\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"half past + 整点\",\"zh\":\"几点半\",\"note\":\"固定报时表达，如 half past eight 表示八点半。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"the time is past\",\"zh\":\"时间已过\",\"note\":\"常结合具体时刻或期限理解，表示所说的时间已经超过。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"hurry past\",\"zh\":\"匆匆经过\",\"note\":\"hurry 表示匆忙移动；这里 past 后不带地点宾语。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"away\",\"zh\":\"离开；远去\",\"note\":\"away 强调离开或距离变远，不一定包含经过某物。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"before（报时）\",\"zh\":\"差……分到……点\",\"note\":\"报时中可表示整点之前的分钟数，与 half past 等超过整点的表达相对。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"by 可表示经过；away 只突出离开，不能总替换 past。\"",
+        "valueJson": "\"by 也可作副词表示从旁边经过，如 go by；比较时应限定在这种移动语境中。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"stay 对照经过动作；before 仅用于报时方向对照，如 ten before six（六点差十分）。\"",
+        "valueJson": "\"stay 表示停留，对照的是 go past 的整个经过动作；它不能直接替换 past 来构成反义表达。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"past-beyond\",\"title\":\"介词：超过；超出\",\"meaning\":\"超过某个年龄、范围、能力或期限。\",\"note\":\"常见结构为 past + 名词，表示超出界限。\",\"example\":{\"id\":\"past-beyond-ex-1\",\"senseId\":\"past-beyond\",\"en\":\"The little boy is past the age of needing a nap.\",\"zh\":\"这个小男孩已经过了还需要午睡的年龄。\",\"note\":\"past the age of 表示超过某个年龄阶段。\"},\"sourceIds\":[\"src-cambridge\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"past-beyond\",\"title\":\"介词：超过某个界限；在……更远处\",\"meaning\":\"超过某个时间或年龄等界限；也可指位置在某个参照地点的更远处。\",\"usageNote\":\"past 后接时间、年龄或地点等，表示越过某个参照点；说位置时不一定含有移动动作。\",\"examples\":[{\"id\":\"past-beyond-ex-1\",\"senseId\":\"past-beyond\",\"en\":\"The little boy is past the age of needing a nap.\",\"zh\":\"这个小男孩已经过了还需要午睡的年龄。\",\"note\":\"past the age of 表示超过某个年龄阶段。\"},{\"id\":\"past-beyond-ex-2\",\"senseId\":\"past-beyond\",\"en\":\"It was past midnight when we got home.\",\"zh\":\"我们到家时已经过了午夜。\",\"note\":\"past midnight 表示晚于午夜，不必说明具体过了几分钟。\"},{\"id\":\"past-beyond-ex-3\",\"senseId\":\"past-beyond\",\"en\":\"The pharmacy is just past the bank.\",\"zh\":\"药店在银行再往前一点的地方。\",\"note\":\"表示沿路线越过银行后的位置，句子描述的是位置。\"},{\"id\":\"past-beyond-ex-4\",\"senseId\":\"past-beyond\",\"en\":\"The bus stop is a little past the school gate.\",\"zh\":\"公交车站在校门再往前一点的地方。\",\"note\":\"past the school gate 表示在越过校门后的位置，不是在描述车站移动。\"}],\"patterns\":[{\"en\":\"be past + 时间点或年龄界限\",\"zh\":\"已经过了某个时间点或年龄阶段\",\"note\":\"如 be past midnight 或 be past the age of needing a nap。\",\"kind\":\"sentence-pattern\"},{\"en\":\"地点 + be + just/a little past + 参照地点\",\"zh\":\"某地在参照地点再往前一点\",\"note\":\"通常沿当前谈论的路线判断位置。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"past midnight\",\"zh\":\"过了午夜\",\"note\":\"表示晚于午夜这个时间点。\",\"kind\":\"common-collocation\"},{\"en\":\"past my bedtime\",\"zh\":\"过了我的就寝时间\",\"note\":\"说明已经晚于平常或规定的睡觉时间。\",\"kind\":\"common-collocation\"},{\"en\":\"just past the bank\",\"zh\":\"在银行再往前一点\",\"note\":\"用于说明沿路线的位置。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"beyond\",\"zh\":\"在……更远处；超出\",\"note\":\"在位置或界限语境中可与 past 接近，但具体搭配需要分别判断。\"},{\"en\":\"after\",\"zh\":\"晚于；在……之后\",\"note\":\"时间语境中，past midnight 可改说 after midnight；这里比较的是时间先后。\"}],\"contrasting\":[{\"en\":\"before\",\"zh\":\"在……之前\",\"note\":\"在时间语境中，before midnight 与 past midnight 形成先后对照。\"},{\"en\":\"on this side of\",\"zh\":\"在……的这一侧\",\"note\":\"沿同一路线、从同一观察位置看，可与 past 表示的越过参照地点后的位置对照。\"}],\"similarNote\":\"位置和界限可联系 beyond；时间先后可联系 after，不能跨义项机械替换。\",\"contrastingNote\":\"时间用 before 对照；路线位置可用 on this side of 对照，须保持同一参照点和观察方向。\"},\"sourceIds\":[\"src-wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"句中需要表达 pass 这个动作已发生时，写 passed。\"",
+        "valueJson": "\"passed 是 pass 的规则过去式和过去分词；可作一般过去时的谓语，也可用于完成时或被动语态，不能一概理解成动作已经发生。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"conf-past-vs-passed-2\",\"senseId\":\"past-noun\",\"en\":\"Mia passed the ball to Leo.\",\"zh\":\"米娅把球传给了利奥。\",\"note\":\"passed 是动词 pass 的过去式；这里 senseId 仅对应本词条用于对照的 past 语境。\"}",
+        "valueJson": "{\"id\":\"conf-past-vs-passed-2\",\"senseId\":\"past-preposition\",\"en\":\"We passed the park. / We rode past the park.\",\"zh\":\"我们经过了公园。／我们骑车经过了公园。\",\"note\":\"第一句 passed 本身是动词过去式；第二句 rode 是动词过去式，past 是介词，后接 the park。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"说“经过公园”可写 ride past the park；说“传了球”则写 passed the ball。动词 pass 的规则变化是 pass—passed—passed。\"",
+        "valueJson": "\"We went past the park 和 We passed the park 都可表示“我们经过了公园”：前者由 went 作谓语，past 是介词；后者 passed 本身就是动词过去式。动词变化是 pass—passed—passed。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\",\"src-etymonline\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"past 可指已经过去的一段时间，也可表示截至现在的最近一段时间；last 常指紧挨着现在之前的上一个完整时间段。\"",
+        "valueJson": "\"the past + 时间段 通常指截至现在的最近一段时间；不带 the 的 last week、last month、last year 通常指上一个完整日历周、月、年。the last few days 与 the past few days 通常都可指最近几天。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example",
+        "expectedValueJson": "{\"id\":\"conf-past-last-2\",\"senseId\":\"past-adjective\",\"en\":\"We visited Grandma last month.\",\"zh\":\"我们上个月去看了奶奶。\",\"note\":\"last month 指上一个完整月份。\"}",
+        "valueJson": "{\"id\":\"conf-past-last-2\",\"senseId\":\"past-adjective\",\"en\":\"We visited Grandma last month and have called her twice in the past week.\",\"zh\":\"我们上个月去看了奶奶，最近一周又给她打了两次电话。\",\"note\":\"last month 指上一个日历月；the past week 指截至现在的最近一周，其中 past 作形容词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"the past few days 常包括截至现在的时间；last month 通常指已经结束的上一个月份。\"",
+        "valueJson": "\"the past few days 和 the last few days 通常都指截至现在的最近几天；last month 通常指已经结束的上一个日历月。注意是否带 the 及后面的时间单位。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\"]",
+        "valueJson": "[\"src-wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"family-pass-ex-1\",\"senseId\":\"past-preposition\",\"en\":\"The runners passed the school gate.\",\"zh\":\"跑步的人经过了学校大门。\",\"note\":\"passed 是动词 pass 的过去式；past 在本词条中作介词。\"}",
+        "valueJson": "{\"id\":\"family-pass-ex-1\",\"senseId\":\"past-preposition\",\"en\":\"The runners passed the school gate and ran past the library.\",\"zh\":\"跑步的人经过了学校大门，又跑过了图书馆。\",\"note\":\"passed 是 pass 的过去式；ran past 中 ran 是动词，past 是介词，后接 the library。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"src-cambridge\",\"src-etymonline\"]",
+        "valueJson": "[\"src-wiktionary\",\"src-etymonline\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 994,
+    "headword": "past",
+    "meaning_zh": "n. 过去\nadj. 过去的\nprep. （时间）过了；经过",
+    "phonetic": "/pɑ:st/",
+    "pos": "",
+    "forms": []
+  }
+}

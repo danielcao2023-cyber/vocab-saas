@@ -1,0 +1,584 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "3fd7ba5d090c2aff4ef2dbe5d4e4c08c9cc600fbc8c164342bf17e12b2040088",
+    "executedReviewPromptHash": "ebe6d6e1504aa4ea3211259b264599659e8648d33eab7d8370a185e9b37e1918",
+    "reviewHash": "1fcf62a104fb7e391c3bec65d319bbb610d4fcc3cf23a608adf796c8e9a6de37",
+    "wordId": 1388,
+    "inputHash": "64541d23afbbc0b041ff677a14d14e1dda1229624c13386faf1311ac3203d5c2",
+    "draftHash": "35c8f21fa7829a878df3b28a980d903d024b2e04a9c1eb785b8ff5c5322adc04",
+    "finalHash": "6ce45b64b4a6d151ec3dac4d45c46b93939285e48eb2bfbca5039574f4caf8a5",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tell#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:51.992Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115428,
+        "revisionId": 39764225,
+        "revisionTimestamp": "2026-08-03T04:46:41Z",
+        "sha256": "a7cb89962c71f4be8966ce8bbbb757a93875edd041a0d73f3c40a6357f43bc6a",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tell",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T17:13:55.511Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T17:54:34.448Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples",
+        "message": "四个核心义的八个例句均缺少必填的 note 字段。"
+      },
+      {
+        "severity": "error",
+        "location": "/forms/4/note；/confusions/1/takeaway；/wordFamily/0/spellingNote",
+        "message": "tell 本来就以 ll 结尾：telling 和 teller 都保留原有的两个 l，既不是再双写一个 l，也不是只保留一个 l。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses；/partOfSpeech",
+        "message": "遗漏常用的“迹象表明”和不带宾语的“泄密”功能；来源明确列出的扑克名词义和考古名词义也未交代。补充这些义项，并提示 tell on 的“产生不良影响”用法，以区别“告状”。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote；/senses/0/collocations/1",
+        "message": "tell a secret 不要求补出听话的人。需说明固定搭配和不带宾语用法，补充常用的 tell someone about something、tell someone that... 和 tell a lie。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "判断与区分各只有一个例句，tell the time 只有搭配说明。补充具体例句及 tell apart 句型，说明美式 tell time，并明确此义无需听话人宾语。"
+      },
+      {
+        "severity": "polish",
+        "location": "/confusions/0/items/1",
+        "message": "Lily said the answer to me 语法成立，但作为基础辨析示例略显生硬；改为自然的直接引语，不将原句判为语法错误。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/relatedExpressions",
+        "message": "allow 的对照应明确限定为 tell someone not to do something，避免将“准许”泛化为“吩咐”的反义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/example；/wordFamilyNote",
+        "message": "银行柜员例句不能归到“告知”义，改用讲述者例句关联讲述义。telling 除现在分词外也有独立形容词用法，原说明过于绝对。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources；各 sourceIds",
+        "message": "Cambridge 正文获取失败，Oxford 未提供实际材料，不能用它们承担本课的支持性引用。保留成功取得的英语词条；专业语言知识补充的内容不冒挂来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology",
+        "message": "动词源自古英语 tellan 的说明有依据；补入考古同形名词独立的阿拉伯语来源，保持 stages 为空，不编造 tellan 的字义或将独立来源串成演变链。"
+      }
+    ],
+    "coverageAssessment": "已核对告知、吩咐、判断、区分、读钟、讲述、泄密、告状、表明，以及来源列出的两个名词义。修订后常用核心义均有至少两个自然原创英中例句，较少见义保留单例提示。历史说明限于可证实的两条独立来源。局限是仅取得一份词典正文；其余补充依据专业语言知识，不声称已获得额外词典证据。",
+    "senseInventory": [
+      {
+        "sense": "告诉；告知；使人知道某事",
+        "coveredBy": [
+          "tell-communicate"
+        ],
+        "assessment": "来源中“向某人说”和“通知、使人知道”的释义可合理合并；保留双例，补齐常用补语结构和实话、谎话搭配。"
+      },
+      {
+        "sense": "吩咐；要求某人做或不做某事",
+        "coveredBy": [
+          "tell-instruct"
+        ],
+        "assessment": "肯定与否定指令均有自然例句；限定与 allow 的对照范围。"
+      },
+      {
+        "sense": "看出；判断；根据线索知道",
+        "coveredBy": [
+          "tell-determine"
+        ],
+        "assessment": "补充 can tell from... that... 例句，与是否判断的原例共同覆盖。"
+      },
+      {
+        "sense": "辨别；区分",
+        "coveredBy": [
+          "tell-determine"
+        ],
+        "assessment": "保留双胞胎 tell apart 例句，新增 tell A from B 例句及对应句型。"
+      },
+      {
+        "sense": "辨认钟表上的时间",
+        "coveredBy": [
+          "tell-determine"
+        ],
+        "assessment": "补充两个具体例句，说明 tell the time 与美式 tell time，避免只列搭配而缺少使用语境。"
+      },
+      {
+        "sense": "讲述；叙说故事或事件",
+        "coveredBy": [
+          "tell-narrate"
+        ],
+        "assessment": "两个原例分别覆盖讲故事和叙述事情经过，无须另拆同义分支。"
+      },
+      {
+        "sense": "表明；显示某种情况",
+        "coveredBy": [
+          "tell-indicate"
+        ],
+        "assessment": "新增核心义，以表情和脚印为主语给出两个例句，区别于人主动告知。"
+      },
+      {
+        "sense": "泄密；把秘密说出去",
+        "coveredBy": [
+          "tell-reveal"
+        ],
+        "assessment": "新增两个不带宾语的例句，明确 I won't tell 等完整用法。"
+      },
+      {
+        "sense": "告发；告状",
+        "coveredBy": [
+          "tell-on"
+        ],
+        "assessment": "保留非正式语境的小义提示，补明与 tell on 表示不良影响的区别。"
+      },
+      {
+        "sense": "影响开始显现；产生不良影响",
+        "coveredBy": [
+          "tell-effect"
+        ],
+        "assessment": "作为专业语言知识补充较少见义，提供单例并与告状义区分，不冒用来源引用。"
+      },
+      {
+        "sense": "名词：扑克中泄露牌力的动作、神态或话语",
+        "coveredBy": [
+          "tell-poker"
+        ],
+        "assessment": "来源明确列出；补入较少见名词义和原创例句。"
+      },
+      {
+        "sense": "名词：考古学中的遗址丘",
+        "coveredBy": [
+          "tell-archaeology"
+        ],
+        "assessment": "来源明确列出；补入较少见名词义，并单独说明阿拉伯语来源。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"动词（及物、不及物）\"",
+        "valueJson": "\"动词（及物、不及物）；名词（较少见）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"加 -ing 时要双写词尾 l。\"",
+        "valueJson": "\"tell 末尾本来就有两个 l；直接加 -ing 得到 telling，保留原有的 ll。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"记住 tell–told–told；telling 则要双写 l 再加 -ing。\"",
+        "valueJson": "\"记住 tell–told–told；telling 是 tell 直接加 -ing，保留原有的两个 l。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"由 tell 加 -er 构成时保留一个 l，不双写。\"",
+        "valueJson": "\"tell + -er = teller，保留 tell 原有的两个 l，不再额外添加 l。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"told 是过去式；her brother 是听话的人，the good news 是告知的内容。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"Please tell me... 用来请对方告知信息，me 放在内容前。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"told us to turn off... 表示吩咐我们做某事；to 后接动词原形。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"told Leo not to run... 表示要求利奥不要跑，not 放在 to 前。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tell whether... 表示判断是否如此；这里无需接听话的人。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tell the twins apart 表示分清这对双胞胎；hardly 表示几乎不能。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tell someone a story 是给某人讲故事的常用结构。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"what happened 引出所讲述的事情经过。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用 tell someone something，也可用 tell something to someone。tell 后通常要说清楚告诉了谁；直接引出原话时常用 say。\"",
+        "valueJson": "\"告知消息常用 tell someone something，也可用 tell something to someone；日常表达中前者通常更自然。还常用 tell someone about something 和 tell someone (that)...。tell the truth、tell a lie 等搭配可不说明听话的人；直接引出原话时常用 say。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tell someone about something\",\"zh\":\"告诉某人有关某事的情况\",\"note\":\"about 引出所谈论的事情，如 tell me about your trip。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tell someone (that) ...\",\"zh\":\"告诉某人……\",\"note\":\"that 后接所告知的内容；口语中 that 常可省略。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/zh",
+        "expectedValueJson": "\"告诉某人一个秘密\"",
+        "valueJson": "\"说出一个秘密\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"tell 后通常补出听秘密的人，例如 tell a secret to a friend。\"",
+        "valueJson": "\"可以不说明告诉谁；要说明时，可说 tell someone a secret 或 tell a secret to someone。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tell a lie / tell lies\",\"zh\":\"说谎\",\"note\":\"标准搭配用 tell；可以不说出听话的人。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"You're telling me!\",\"zh\":\"可不是嘛！我太有同感了！\",\"note\":\"口语中表示自己也深有体会，常用于回应抱怨或感叹。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"比 tell 正式，常用于通知安排或重要信息。\"",
+        "valueJson": "\"比 tell 正式，常用 inform someone of/about something 或 inform someone that...；一般不套用 tell 的双宾语结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在是否要求对方做某事的语境中，allow 表示准许；tell someone not to do something 则是要求不要做。\"",
+        "valueJson": "\"只与 tell someone not to do something 作语境对照：allow 表示准许做，后者表示要求不要做。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"allow 在“是否准许某人做某事”这一语境中与禁止或不准的指示相对。\"",
+        "valueJson": "\"这里对照的是“允许做”与“吩咐不要做”；allow 不是 tell 的通用反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构有 tell whether/if...（判断是否……）、tell the difference（分辨差异）和 tell A from B（区分 A 与 B）。\"",
+        "valueJson": "\"此义常与 can/could 或其否定形式连用，不需要接听话的人。tell whether/if... 表示判断是否如此；can tell from... that... 表示根据线索看出情况；tell A from B、tell A and B apart 表示区分两者。tell the time 则指辨认钟表显示的时间。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"tell A and B apart\",\"zh\":\"分清 A 和 B\",\"note\":\"apart 放在所区分的对象之后，也可说 tell them apart。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"can tell from ... that ...\",\"zh\":\"能从……看出……\",\"note\":\"from 后说明判断依据，that 后说明看出的情况。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1/note",
+        "expectedValueJson": "\"常用于谈某人能否读出钟表上的时间。\"",
+        "valueJson": "\"指读懂钟表上的时间；英式常说 tell the time，美式也常说 tell time。要说“告诉某人几点了”，可用 tell someone the time。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-determine-ex3\",\"senseId\":\"tell-determine\",\"en\":\"I can tell from your voice that you have a cold.\",\"zh\":\"我听你的声音就知道你感冒了。\",\"note\":\"can tell from... that... 表示根据线索看出情况。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-determine-ex4\",\"senseId\":\"tell-determine\",\"en\":\"Ava can tell tea from coffee just by the smell.\",\"zh\":\"埃娃光闻气味就能分辨茶和咖啡。\",\"note\":\"tell A from B 表示区分两者；by the smell 交代辨别依据。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-determine-ex5\",\"senseId\":\"tell-determine\",\"en\":\"My daughter can now tell the time on a clock with hands.\",\"zh\":\"我女儿现在能看懂指针式钟表上的时间了。\",\"note\":\"tell the time 指辨认钟表显示的时间，无需接听话的人。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-determine-ex6\",\"senseId\":\"tell-determine\",\"en\":\"Leo learned to tell time before he started school.\",\"zh\":\"利奥上学前就学会看钟表认时间了。\",\"note\":\"tell time 是美式英语常用说法，与 tell the time 同义。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/label",
+        "expectedValueJson": "\"say something to someone\"",
+        "valueJson": "\"say something (to someone)\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"tell-say-ex2\",\"senseId\":\"tell-communicate\",\"en\":\"Lily said the answer to me.\",\"zh\":\"莉莉把答案说给我听。\",\"note\":\"the answer 是说出的内容，to me 表示说给谁听。\"}",
+        "valueJson": "{\"id\":\"tell-say-ex2\",\"senseId\":\"tell-communicate\",\"en\":\"Lily said to me, \\\"The answer is seven.\\\"\",\"zh\":\"莉莉对我说：“答案是七。”\",\"note\":\"say 可以直接引出原话；这里用 to me 表示说给谁听。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-indicate\",\"title\":\"表明；显示\",\"meaning\":\"表情、动作或其他迹象显示出某种情况。\",\"usageNote\":\"主语可以是表情、动作或其他线索，常用 something tells someone (that)...，表示这些迹象使人明白某种情况。\",\"examples\":[{\"id\":\"tell-indicate-ex1\",\"senseId\":\"tell-indicate\",\"en\":\"The smile on Eva's face told me that she loved the gift.\",\"zh\":\"埃娃脸上的笑容让我知道她很喜欢这份礼物。\",\"note\":\"主语是笑容，表示表情显露出的心情。\"},{\"id\":\"tell-indicate-ex2\",\"senseId\":\"tell-indicate\",\"en\":\"The muddy footprints told us that someone had walked through the kitchen.\",\"zh\":\"带泥的脚印表明，有人曾从厨房走过。\",\"note\":\"脚印是显示情况的线索；had walked 表示走过厨房发生在发现这一情况之前。\"}],\"patterns\":[{\"en\":\"something tells someone (that) ...\",\"zh\":\"某种迹象使某人知道……\",\"note\":\"someone 指根据迹象理解情况的人；that 后说明显现出的情况。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"tell its own story\",\"zh\":\"本身就说明问题；不言自明\",\"note\":\"指某种现象本身已清楚地显示情况。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"show\",\"zh\":\"显示；表明\",\"note\":\"这一语境中意思接近，适用范围较广；可说 show that...。\"},{\"en\":\"indicate\",\"zh\":\"表明；显示\",\"note\":\"较正式，常用于迹象、数据等显示某种情况。\"}],\"contrasting\":[{\"en\":\"give no sign of something\",\"zh\":\"没有显露出某事的迹象\",\"note\":\"只在是否显露迹象的语境中作反向表达。\"}],\"similarNote\":\"此义关注线索显示出的情况，show 较通用，indicate 较正式。\",\"contrastingNote\":\"没有适用于所有情况的直接反义词；give no sign of... 对照的是迹象没有显露。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-reveal\",\"title\":\"泄密；说出去\",\"meaning\":\"把本应保密的事情透露出去。\",\"usageNote\":\"在保密的语境中，tell 可以不接宾语，常见 I won't tell 和 Don't tell。要说明告诉谁或涉及什么事，也可说 tell someone about something。\",\"examples\":[{\"id\":\"tell-reveal-ex1\",\"senseId\":\"tell-reveal\",\"en\":\"I know who broke the cup, but I won't tell.\",\"zh\":\"我知道是谁打碎了杯子，但我不会说出去。\",\"note\":\"won't tell 在此表示答应不透露，无需再补听话的人。\"},{\"id\":\"tell-reveal-ex2\",\"senseId\":\"tell-reveal\",\"en\":\"Please don't tell—it's a surprise for Dad.\",\"zh\":\"请别说出去——这是给爸爸的惊喜。\",\"note\":\"上下文已经说明需要保密，don't tell 可以独立使用。\"}],\"patterns\":[{\"en\":\"won't tell\",\"zh\":\"不会说出去\",\"note\":\"在秘密已经明确的语境中，常用来保证不透露。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"promise not to tell\",\"zh\":\"答应不说出去\",\"note\":\"表示承诺保守秘密。\",\"kind\":\"common-collocation\"},{\"en\":\"don't tell a soul\",\"zh\":\"一个人也别告诉\",\"note\":\"a soul 在此指任何一个人，强调严格保密。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"reveal a secret\",\"zh\":\"透露秘密\",\"note\":\"意思接近，较明确地说出透露的内容。\"},{\"en\":\"let something slip\",\"zh\":\"不小心说漏嘴\",\"note\":\"强调无意泄露；tell 本身不限定是否出于无意。\"}],\"contrasting\":[{\"en\":\"keep a secret\",\"zh\":\"保守秘密\",\"note\":\"在是否透露秘密的语境中与说出去相对。\"}],\"similarNote\":\"tell 可以只说是否透露；let something slip 特别强调不小心说漏。\",\"contrastingNote\":\"keep a secret 是这一保密语境中的常见反向表达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"on 后接被告发的人；不要与普通的 tell someone something 混淆。\"",
+        "valueJson": "\"on 后接被告发的人，常指向老师、家长等告状。tell on someone 也可表示对某人产生不良影响，需要根据上下文区别。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-effect\",\"title\":\"影响显现；产生不良影响\",\"meaning\":\"疲劳、压力等的影响开始显现；tell on someone 可表示使某人吃不消。\",\"note\":\"较少见，多指不良影响；此处 tell on 的主语通常是压力、劳累等，与向人告状不同。\",\"example\":{\"id\":\"tell-effect-ex1\",\"senseId\":\"tell-effect\",\"en\":\"After a week of late shifts, the lack of sleep began to tell on Ben.\",\"zh\":\"连续上了一周夜班后，睡眠不足开始让本吃不消了。\",\"note\":\"began to tell on Ben 表示不良影响开始显现。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-poker\",\"title\":\"名词：泄露牌力的迹象\",\"meaning\":\"玩扑克时可能泄露手牌强弱的动作、神态或话语。\",\"note\":\"可数名词，复数为 tells；属于扑克语境，基础学习时认识即可。\",\"example\":{\"id\":\"tell-poker-ex1\",\"senseId\":\"tell-poker\",\"en\":\"She noticed a small tell: he tapped his cards whenever he had a strong hand.\",\"zh\":\"她发现了一个泄露牌力的小动作：他一拿到好牌就轻敲手中的牌。\",\"note\":\"a tell 是可观察到的迹象，这里指轻敲牌的动作。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"tell-archaeology\",\"title\":\"名词：遗址丘\",\"meaning\":\"考古学中指古代聚落反复修建、毁坏并层层堆积形成的丘状遗址。\",\"note\":\"可数名词，复数为 tells；是与常用动词拼写相同的专业名词，来源另见词源说明。\",\"example\":{\"id\":\"tell-archaeology-ex1\",\"senseId\":\"tell-archaeology\",\"en\":\"The archaeologists found pieces of pottery in the tell.\",\"zh\":\"考古学家在这座遗址丘中发现了一些陶片。\",\"note\":\"the tell 指正在发掘的遗址丘。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example",
+        "expectedValueJson": "{\"id\":\"tell-family-ex1\",\"senseId\":\"tell-communicate\",\"en\":\"The bank teller helped us deposit the money.\",\"zh\":\"银行柜员帮我们存了钱。\",\"note\":\"teller 在此指银行柜台职员。\"}",
+        "valueJson": "{\"id\":\"tell-family-ex1\",\"senseId\":\"tell-narrate\",\"en\":\"My grandfather was a wonderful teller of stories.\",\"zh\":\"我爷爷是个很会讲故事的人。\",\"note\":\"teller of stories 指讲故事的人，与 tell 的讲述义相联系。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"teller 是 tell 的派生词；telling 是 tell 的现在分词，不是新的词族词条。\"",
+        "valueJson": "\"teller 是 tell 加 -er 构成的派生词。telling 在进行时中是现在分词；作形容词时还可表示“很能说明问题的；有力的”，如 a telling detail（很能说明问题的细节）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"tell 的历史来源可追溯到古英语 tellan。\"",
+        "valueJson": "\"动词 tell 来自古英语 tellan。考古学中表示“遗址丘”的同形名词 tell 则来自阿拉伯语 tall，意思是“丘、土丘”。这是两条独立的来源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里的联想帮助记忆现代用法，不代表词源。\"",
+        "valueJson": "\"动词与考古学名词虽然拼写相同，来源不同；阿拉伯语来源不适用于常用动词 tell。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/story",
+        "expectedValueJson": "\"想象你手里有一张写着班级通知的纸：你先找到同学，再把通知告诉他。这个画面提醒你用 tell someone something。接着，老师指着黑板吩咐大家读一遍，是 tell someone to do something；晚上奶奶讲一个故事，是 tell a story。\"",
+        "valueJson": "\"想象你手里有一张写着班级通知的纸：你先找到同学，再把通知告诉他，提醒自己用 tell someone something。接着，老师吩咐大家读一遍，是 tell someone to do something。你从同学的表情看出他很兴奋，可以说 I can tell he's excited；从笑容这个迹象来说，则是 His smile tells me he's excited。通知里还有个惊喜，你答应不说出去：I won't tell。晚上奶奶讲故事，是 tell a story。\""
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"看出与分辨\",\"text\":\"can tell：能看出；tell A from B：区分 A 和 B。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"迹象表明\",\"text\":\"His smile tells me...：他的笑容让我知道……。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/memoryAid/cues/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"保守秘密\",\"text\":\"I won't tell：我不会说出去。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: tell\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/tell\",\"supports\":[\"tell 的常见词义、句型和搭配\",\"tell、say 的用法区别\",\"tell 的不规则变化及派生形式\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: tell\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/tell_1\",\"supports\":[\"tell 的常见词义、搭配和语法结构\",\"tell someone to do something 等句型\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary\",\"title\":\"Wiktionary: tell\",\"url\":\"https://fr.wiktionary.org/wiki/tell#Anglais\",\"supports\":[\"tell 的历史来源记载为古英语 tellan\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary\",\"title\":\"Wiktionnaire：tell（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/tell#Anglais\",\"supports\":[\"tell 的告知、讲述、判断用法及吩咐示例\",\"tell 与 say 的基本区别\",\"tell 的发音和不规则词形\",\"动词 tell 源自古英语 tellan\",\"名词 tell 的扑克义和考古义\",\"考古学名词 tell 源自阿拉伯语 tall（丘）\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1388,
+    "headword": "tell",
+    "meaning_zh": "vt. 告诉, 说, 吩咐, 断定, 知道\nvi. 讲述, 泄密, 告发, 表明",
+    "phonetic": "/tel/",
+    "pos": "",
+    "forms": []
+  }
+}

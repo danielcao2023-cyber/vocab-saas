@@ -1,0 +1,440 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "9d8569108f448d3d9610007083e15107934ba0a70428bf56535fb71fef8187e4",
+    "executedReviewPromptHash": "9d8569108f448d3d9610007083e15107934ba0a70428bf56535fb71fef8187e4",
+    "reviewHash": "ea45326e806872f716872b0925b8a04d728794e8f20c0d2c7850ebd879ed3276",
+    "wordId": 1159,
+    "inputHash": "302eea62424fd51ebad8392ae8ea0eeac2cae740bf8107c5feadbac489fd8e7a",
+    "draftHash": "afb59e16f4afa6cbe7e1c90e56a742ef9b17e2a1cdcc79b037f49e60c2084e8f",
+    "finalHash": "1aba98e302fa054a83f2bdf87b7b0f93bea55b045c77f65ff3de6fc821ef9db8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/rich#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:48.642Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 118400,
+        "revisionId": 38737779,
+        "revisionTimestamp": "2025-09-24T18:17:37Z",
+        "sha256": "7cceb356f97d5594d23184a7ccdaf81bb5b0eed3ce818b976a579eba4a1b11bc",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/rich",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:39:54.148Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:46:53.448Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "Cambridge 实际未能取得，不能作为已取得的释义、词族及搭配依据。应改引已取得的维基词典英语词条；该词条未直接支持的扩展内容清空 sourceIds，保留专业语言知识判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses；/lessCommonSenses",
+        "message": "the rich 只有零散说明，没有两个体现该名词化功能的例句；词典明确列出的讽刺用法完全遗漏。分别补为核心功能和次要义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1",
+        "message": "“丰富”只举营养成分和土壤，遗漏常见的历史、活动等内容丰富的用法，需补具体例句及相应搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "标题和释义同时包含色彩、声音，例句却只覆盖色彩。应拆出声音义；另补华贵用料的次要义，限定词条中“贵重的”的适用范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/relatedExpressions；/senses/0/relatedExpressions/contrastingNote",
+        "message": "“fertile 专指土地肥沃”不准确，它也有比喻用法。反向表达还应明确 poor soil 和 low in 的适用场景，避免对 poor 作过宽限制。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "rice 例句没有 rich，却绑定了 rich 的丰富义；发音辨析也遗漏 /ɪ/ 与 /aɪ/ 的区别。应同时修正例句归属和完整读音对比。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/notes/1；/studyPlan/0",
+        "message": "不宜把错误的长元音标注称作“旧音标”；a rich family 是名词短语，也不宜与 rich in 一起统称为两个句型。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对财富、物质与资源丰富、土壤肥沃、内容丰富、食物浓郁、色彩、音色、华贵用料、讽刺用法及 the rich 的群体功能。补丁后各核心义均有至少两个原创英中例句，次要义各有对应例句。读音、比较级、最高级及词族拼写基本正确，予以保留。取得的词源部分只有待补模板，不支持具体历史来源或演变链，因此保留空 stages，不补造词源；也未采纳来源中不规范的英式单数动词示例。",
+    "senseInventory": [
+      {
+        "sense": "形容词：富有的；富裕的",
+        "coveredBy": [
+          "rich-adj-wealth"
+        ],
+        "assessment": "两个例句分别覆盖个人和国家；保留，仅调整来源及反义说明。"
+      },
+      {
+        "sense": "形容词：富含物质或资源的；土壤肥沃的",
+        "coveredBy": [
+          "rich-adj-abundant"
+        ],
+        "assessment": "原稿已有营养成分与土壤例句；补明确的反向搭配并修正 fertile 的范围说明。"
+      },
+      {
+        "sense": "形容词：内容充实、多样、丰富的",
+        "coveredBy": [
+          "rich-adj-abundant"
+        ],
+        "assessment": "原稿未用例句落实；补入历史和图书馆活动两个场景。"
+      },
+      {
+        "sense": "形容词：食物浓郁、醇厚，常含较多奶油、糖或脂肪",
+        "coveredBy": [
+          "rich-adj-flavour"
+        ],
+        "assessment": "已有两个自然例句，且已区分浓郁与营养均衡，保留。"
+      },
+      {
+        "sense": "名词化用法：the rich，富人群体",
+        "coveredBy": [
+          "rich-n-people"
+        ],
+        "assessment": "补为独立核心功能，提供两个例句，并明确复数动词及单个人的表达方式。"
+      },
+      {
+        "sense": "形容词：色彩浓艳、饱满",
+        "coveredBy": [
+          "rich-adj-colour"
+        ],
+        "assessment": "保留原例句，移除未被该例句覆盖的声音释义。"
+      },
+      {
+        "sense": "形容词：声音浑厚、丰满、圆润",
+        "coveredBy": [
+          "rich-adj-sound"
+        ],
+        "assessment": "从混合释义中拆出，补对应例句，作为次要义。"
+      },
+      {
+        "sense": "形容词：荒唐可笑或虚伪得令人反感，常见于 That's rich",
+        "coveredBy": [
+          "rich-adj-ironic"
+        ],
+        "assessment": "词典明确列出而原稿遗漏；补讽刺语气、使用场景和原创例句。"
+      },
+      {
+        "sense": "形容词：布料、服饰或装饰华贵、华美",
+        "coveredBy": [
+          "rich-adj-luxurious"
+        ],
+        "assessment": "补作次要义，同时说明一般物品的贵重不能直接译为 rich。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-rich\",\"title\":\"Cambridge Dictionary: rich\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/rich\",\"supports\":[\"形容词常见含义与搭配\",\"rich in 的用法\",\"the rich 的群体用法\",\"richly、richness 等派生形式\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-rich-en\",\"title\":\"Wiktionnaire：rich（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/rich#Anglais\",\"supports\":[\"读音及规则比较级、最高级形式\",\"富裕、食物浓郁及讽刺用法\",\"the rich 的群体用法\",\"wealthy 与 poor 的近义、反义关系\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[\"wiktionary-rich-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[\"wiktionary-rich-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[\"wiktionary-rich-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[\"wiktionary-rich-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-rich\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"旧音标 /ri:tʃ/ 把元音标成长音，不准确。\"",
+        "valueJson": "\"读短元音 /ɪ/，不要读成长元音 /iː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"先记住 rich family 和 rich in 的两种常见句型。\"",
+        "valueJson": "\"先记住 a rich family（富裕的家庭）这一搭配和 be rich in + 名词（富含……）这一句型。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"这里的对照只针对财富义；描述味道或资源时不能用 poor 简单替换。\"",
+        "valueJson": "\"这里 rich 与 poor 对照财富多少；其他义须另看具体搭配，例如 rich soil 与 poor soil 也可对照土壤肥沃与贫瘠。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"含有大量某种物质、资源或特点；也可形容土地等资源丰富。\"",
+        "valueJson": "\"含有大量某种物质或资源；也可表示内容充实、多样。形容土壤时表示肥沃。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 rich in + 名词，说明丰富的具体内容；修饰土地时可表示土壤肥沃。\"",
+        "valueJson": "\"常用 rich in + 名词说明富含什么；rich soil 表示肥沃的土壤。rich 也可直接修饰 history、variety 等名词，表示内容丰富。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-ex-abundant-history\",\"senseId\":\"rich-adj-abundant\",\"en\":\"The town has a rich history of shipbuilding.\",\"zh\":\"这座小镇的造船历史丰富多彩。\",\"note\":\"rich history 强调历史内容丰富，不只是历史悠久。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-ex-abundant-activities\",\"senseId\":\"rich-adj-abundant\",\"en\":\"The library offers a rich variety of free activities for children.\",\"zh\":\"这家图书馆为孩子们提供丰富多样的免费活动。\",\"note\":\"a rich variety of 强调种类丰富，后接具体的事物或活动。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a rich variety of + noun\",\"zh\":\"丰富多样的……\",\"note\":\"常用于活动、选择、物品等，如 a rich variety of activities。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/similar/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"varied\",\"zh\":\"多样的\",\"note\":\"谈活动、经历等内容时与 rich 有交集；varied 强调多样，rich 还可带有充实、有价值的意味。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similarNote",
+        "expectedValueJson": "\"abundant 侧重数量充足；fertile 专指土地肥沃。\"",
+        "valueJson": "\"abundant 侧重数量充足；fertile 在土壤、土地的语境中与 rich 接近，也可比喻想象力等富于创造力；varied 侧重内容多样。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"poor soil\",\"zh\":\"贫瘠的土壤\",\"note\":\"与 rich soil 对照，说明土壤养分不足、肥力较差。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"low in\",\"zh\":\"……含量低的\",\"note\":\"常用于食物成分，如 low in fat；只说明含量低，不一定表示不好。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a limited range of\",\"zh\":\"种类或范围有限的……\",\"note\":\"谈活动、选择等范围时，可与 a rich variety of 对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"谈成分含量时，poor in 是常见反向表达；它不表示土地贫瘠时的所有用法。\"",
+        "valueJson": "\"谈含量可用 poor in 或 low in；谈土壤用 poor soil；谈种类有限可用 a limited range of。应按具体语境选择。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-n-people\",\"title\":\"the rich：富人群体\",\"meaning\":\"富裕的人们，作为一个群体来谈。\",\"usageNote\":\"the rich 是 the + 形容词 rich 的名词化用法，作主语时用复数动词。表示单个富人用 a rich person，不说 a rich。\",\"examples\":[{\"id\":\"rich-ex-people-1\",\"senseId\":\"rich-n-people\",\"en\":\"The rich in this town live near the lake.\",\"zh\":\"这个镇上的富人们住在湖边。\",\"note\":\"the rich 指多个人，因此用 live，不用 lives。\"},{\"id\":\"rich-ex-people-2\",\"senseId\":\"rich-n-people\",\"en\":\"The charity asked the rich to donate to the new hospital.\",\"zh\":\"这家慈善机构请富人们向新医院捐款。\",\"note\":\"the rich 在这里作 asked 的宾语，仍指富人群体。\"}],\"patterns\":[{\"en\":\"the rich + plural verb\",\"zh\":\"富人们……\",\"note\":\"例如 the rich are、the rich have；这是群体用法。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the gap between the rich and the poor\",\"zh\":\"贫富差距\",\"note\":\"the rich 与 the poor 分别指富人群体和穷人群体。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"rich people\",\"zh\":\"富人们\",\"note\":\"用普通名词 people 表达，语气通常比群体概称 the rich 更日常。\"},{\"en\":\"the wealthy\",\"zh\":\"富裕人士；富人群体\",\"note\":\"同样是名词化的群体表达，语气较正式，作主语时也用复数动词。\"}],\"contrasting\":[{\"en\":\"the poor\",\"zh\":\"穷人群体\",\"note\":\"与 the rich 对照财富状况，作主语时也用复数动词。\"}],\"similarNote\":\"这些表达都可指富人；the rich、the wealthy 尤其常用于把他们作为社会群体来谈。\",\"contrastingNote\":\"the poor 是相应的群体表达；单个穷人用 a poor person。\"},\"sourceIds\":[\"wiktionary-rich-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/title",
+        "expectedValueJson": "\"色彩浓艳的；声音浑厚的\"",
+        "valueJson": "\"色彩浓艳的\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"颜色饱满鲜明，或声音丰满、圆润。\"",
+        "valueJson": "\"颜色饱满鲜明、浓郁。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于颜色、音色等描写，初中阶段认识即可。\"",
+        "valueJson": "\"常用于服装、装饰等色彩描写，初中阶段认识即可。\""
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-adj-sound\",\"title\":\"声音浑厚的；圆润饱满的\",\"meaning\":\"声音丰满、圆润，听起来有厚度。\",\"note\":\"常修饰 voice、tone 等，描述音色，不表示声音一定很大。\",\"example\":{\"id\":\"rich-ex-sound-1\",\"senseId\":\"rich-adj-sound\",\"en\":\"The singer has a rich, warm voice.\",\"zh\":\"这位歌手的嗓音浑厚而温暖。\",\"note\":\"rich 描写饱满的音色，warm 补充温暖的听感。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-adj-ironic\",\"title\":\"（讽刺）真可笑；亏你说得出口\",\"meaning\":\"形容某人的话荒唐或虚伪，尤其是对方自己也有其所指责的问题。\",\"note\":\"口语中常说 That's rich! 或 That's rich coming from you!，讽刺语气较强，不能按“富有”理解。\",\"example\":{\"id\":\"rich-ex-ironic-1\",\"senseId\":\"rich-adj-ironic\",\"en\":\"You call me lazy? That's rich coming from you! You never help with the dishes.\",\"zh\":\"你说我懒？亏你说得出口！你从来不帮忙洗碗。\",\"note\":\"说话人指出对方自己也懒，却反过来批评别人。\"},\"sourceIds\":[\"wiktionary-rich-en\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"rich-adj-luxurious\",\"title\":\"（布料、装饰等）华贵的；华美的\",\"meaning\":\"用料或装饰豪华精美，显得富丽。\",\"note\":\"常见于 rich fabrics 等描写。普通物品价格贵用 expensive，价值高用 valuable，不能把“贵重的”一概译为 rich。\",\"example\":{\"id\":\"rich-ex-luxurious-1\",\"senseId\":\"rich-adj-luxurious\",\"en\":\"The hall was hung with rich silk curtains.\",\"zh\":\"大厅里挂着华美的丝绸窗帘。\",\"note\":\"rich 描写布料与装饰的华贵感。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"rich 和 rice 只差一个字母，但结尾发音不同，意思也不同。\"",
+        "valueJson": "\"rich /rɪtʃ/ 和 rice /raɪs/ 只差一个字母，但元音、词尾发音和意思都不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"结尾 ch 发 /tʃ/，意思包括“富有的、浓郁的”。\"",
+        "valueJson": "\"rich 读 /rɪtʃ/：元音是短元音 /ɪ/，词尾 ch 发 /tʃ/；意思包括“富有的、浓郁的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/note",
+        "expectedValueJson": "\"结尾 ce 发 /s/，表示“大米”。\"",
+        "valueJson": "\"rice 读 /raɪs/：元音是双元音 /aɪ/，词尾 ce 发 /s/；可指大米或米饭。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/en",
+        "expectedValueJson": "\"We eat rice every day.\"",
+        "valueJson": "\"Rice is rich in carbohydrates.\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/zh",
+        "expectedValueJson": "\"我们每天吃米饭。\"",
+        "valueJson": "\"米饭富含碳水化合物。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "\"rice 以 /s/ 结尾。\"",
+        "valueJson": "\"同句对比 rice /raɪs/ 与 rich /rɪtʃ/；rich in 在这里表示富含某种成分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"写 rich 时末尾是 ch；不要和表示“大米”的 rice 混淆。\"",
+        "valueJson": "\"rich /rɪtʃ/ 与 rice /raɪs/ 的元音和词尾都不同；拼写分别以 ch 和 ce 结尾。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1159,
+    "headword": "rich",
+    "meaning_zh": "adj. 富裕的, 富饶的, 浓厚的, 贵重的",
+    "phonetic": "/ri:tʃ/",
+    "pos": "",
+    "forms": []
+  }
+}

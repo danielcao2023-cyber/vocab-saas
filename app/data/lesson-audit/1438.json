@@ -1,0 +1,219 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "cada73e08fca9c8b7f47a2147afbb3637834e5fd7ccbed374d53b5bd2c0885b5",
+    "executedReviewPromptHash": "cada73e08fca9c8b7f47a2147afbb3637834e5fd7ccbed374d53b5bd2c0885b5",
+    "reviewHash": "8d669c3c9dbb4670eb58be8ee56b51d4a707d4e7b3a4cb28c3f1698250172595",
+    "wordId": 1438,
+    "inputHash": "17b361f8602f5f35f56184a8b62d76aefda8888713b6f4fdbdebca9b2fd8d7d7",
+    "draftHash": "298fe740fecf340c245cca7f4c2817b88e58a52128c900a4feef89529a0d0273",
+    "finalHash": "b4a5feaa90139c1b6dc37c5c289cd263ec7af43d6f9d0620876c693e74e0faf4",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/tonight#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:59.937Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115995,
+        "revisionId": 36947829,
+        "revisionTimestamp": "2025-01-13T17:24:09Z",
+        "sha256": "544c2859070004c7394b4e2d7bcdc3a7863db8991989cb60af7e197ab0d52445",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/tonight",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T18:49:51.336Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T18:57:57.685Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes",
+        "message": "原始音标中的 ә 表示弱读元音，并不暗示 /ɜː/；应直接说明正确发音，避免误解旧音标。词尾 /t/ 的说明也应避免诱导额外添加元音。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 页面未获取成功，不能作为本次已取得的词义、读音和搭配依据。基本词性与词义可关联已取得的英语维基词典词条；专业语言知识补充的读音和辨析不应虚挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/collocations/0",
+        "message": "tonight’s game 中使用的是名词所有格，不应列作副词义的搭配。原稿已在名词义中充分讲解所有格，此处应换成副词搭配。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例中的 this night 是名词短语主语，却关联副词义；天气比较中这一表达也较生硬。改用自然的特指夜晚例句，并关联名词义。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "已取得材料给出的古英语形式是 tōniht，未给出分写形式 tō niht，也未单独解释古英语形式的字义。应保留可证实的来源与字形，删除缺乏直接依据的阶段释义，并同步修正来源说明。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对副词和名词两种核心用法，均有至少两个自然原创英中例句。副词覆盖时间状语位置，名词覆盖主语及所有格功能；“今晚／今夜”属于同一时间义，无须另拆义项。近义及时间对照、拼写和所有格说明基本准确，无须强造反义词或派生词。修订后，来源归属与实际取得材料一致；历史词源仅保留可证实的古英语来源和词形，不扩展未经支持的演变过程。",
+    "senseInventory": [
+      {
+        "sense": "副词：今晚、今夜，在今天晚上或夜间",
+        "coveredBy": [
+          "tonight-adv"
+        ],
+        "assessment": "核心义已覆盖，两个例句分别展示句末与句首时间状语。将误归入本义的名词所有格搭配改为副词搭配。"
+      },
+      {
+        "sense": "名词：今晚、今夜这一时段",
+        "coveredBy": [
+          "tonight-n"
+        ],
+        "assessment": "核心义已覆盖，两个例句分别展示主语和所有格功能。过去时例句可用于当晚回顾已经发生的情况，无须判错。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"重音在第二音节；末尾的 /t/ 要读清楚。\",\"不要读成旧音标所暗示的 */tɜːˈnaɪt/。\"]",
+        "valueJson": "[\"重音在第二音节，第一音节的元音 /ə/ 轻读。\",\"词尾是 /t/，后面不要多加元音；连贯说话时不必刻意爆破。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-tonight\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/0",
+        "expectedValueJson": "{\"en\":\"tonight’s game\",\"zh\":\"今晚的比赛\",\"note\":\"这里 tonight’s 是名词所有格，修饰 game，表示今晚举行的比赛。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"stay up late tonight\",\"zh\":\"今晚熬夜\",\"note\":\"tonight 作时间副词，说明熬夜发生在今晚。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tonight\"]",
+        "valueJson": "[\"wiktionary-tonight-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-tonight\"]",
+        "valueJson": "[\"wiktionary-tonight-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"tonight-confusion-ex2\",\"senseId\":\"tonight-adv\",\"en\":\"This night feels colder than yesterday’s.\",\"zh\":\"这一夜感觉比昨晚冷。\",\"note\":\"this night 指眼前这一夜，带有特指意味。\"}",
+        "valueJson": "{\"id\":\"tonight-confusion-ex2\",\"senseId\":\"tonight-n\",\"en\":\"I’ll never forget this night.\",\"zh\":\"我永远不会忘记这一夜。\",\"note\":\"this night 作 forget 的宾语，强调这个特定的夜晚。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-tonight\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"古英语中已有 tō niht 这一写法，意为“今晚、今夜”；现代拼写 tonight 延续了这一古英语表达。\"",
+        "valueJson": "\"tonight 源自古英语 tōniht。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"tō niht\",\"meaning\":\"今晚；今夜\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-tonight\",\"title\":\"Cambridge Dictionary: tonight\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/tonight\",\"supports\":[\"副词和名词用法\",\"英式与美式读音\",\"常见时间搭配\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"词条所列古英语形式 tō niht 及其“今晚、今夜”含义\"]",
+        "valueJson": "[\"英语副词与名词词性及“今晚、今夜”的基本词义\",\"古英语来源及词形 tōniht\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1438,
+    "headword": "tonight",
+    "meaning_zh": "n. 今晚, 今夜\nadv. 今晚, 今夜",
+    "phonetic": "/tә'nait/",
+    "pos": "",
+    "forms": []
+  }
+}

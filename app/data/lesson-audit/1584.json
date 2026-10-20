@@ -1,0 +1,549 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "71f6f7727f19f435973a9a2e51b46d8021c74ac81d2e1a099b32706e994b0a63",
+    "executedReviewPromptHash": "71f6f7727f19f435973a9a2e51b46d8021c74ac81d2e1a099b32706e994b0a63",
+    "reviewHash": "b859e6f93ddb0f188028b5a18f15ddbfbd4cd575077b72ca79b062fe167cff63",
+    "wordId": 1584,
+    "inputHash": "1e1fd09dea9025faf3b630026a952dfe90894dc5e028b778dac2b8f9ebafc299",
+    "draftHash": "e34f1a84c33c5920870a90f2d93439fc23bfe8943f4af929b7d9571f0a8057a7",
+    "finalHash": "6296dd52bfb9ed9a33bd07f5e59d6b9bdfa330bd2ba537d4397186090832a9e0",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/wrong#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.278Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 115921,
+        "revisionId": 34227615,
+        "revisionTimestamp": "2024-04-22T17:29:56Z",
+        "sha256": "5229b3abc7fbb96f0261969b765aa2afbdac11471dce04cc339d0bc54213d713",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/wrong",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:16:05.999Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:30:48.393Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources；各处 sourceIds",
+        "message": "初稿引用了未提供实际内容的 Oxford 页面及获取失败的 Cambridge 页面，却没有引用已取得的法语维基词典英语词条。已改用实际来源；该来源没有直接支持的词族和 wrongly 用法说明不再挂靠这些词典。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "词典明确包含“不合适、不宜采用”的常用形容词义，初稿仅在宽泛说明中提及，没有对应的两个具体例句。已独立补义，并为原有“选错、方向不对”补充例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote；/wordFamily/1/spellingNote；/wordFamily/2/spellingNote",
+        "message": "wrongly、wrongness、wronged 都只有一个 g；三处“保留两个 g”均为实际拼写错误。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3；/confusions/0；/forms/1/note",
+        "message": "wrong 与 wrongly 不能仅按口语、正式程度互换；get something wrong 中的 wrong 是形容词宾语补足语。turn right 通常表示右转，不能作为 turn wrong 的“正确方向”对照。已修正词性归类、搭配及选择规则。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/patterns/2；/senses/1/collocations/1",
+        "message": "do someone wrong 和 right and wrong 使用的是名词 wrong，不宜作为形容词义的示范搭配。已将前者移至名词义，后者在形容词义下改为 morally wrong。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2",
+        "message": "My stomach feels wrong 不适合作为初中生表达胃部不适的常规模板；feel wrong 的说明也把身体不适与做法、情境不妥混在一起。已换成自然例句并限定用法。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/5/examples/0/zh；/wordFamily/2/example/zh",
+        "message": "规定 wronged 某人不必表示“冤枉”，更准确的是使其受到不公平对待；the wronged player 也不只是主观“觉得受了委屈”。已修正翻译。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation/accentNote；/forms/6/note；/etymology",
+        "message": "英美读音不应主要解释为元音长短；wronging 的说明残留自问自答。词源来源虽成功取得，但词源节仅为待补标记，没有可补写的历史事实；已保留空阶段，去掉学生文案中的制作说明，没有猜测来源链。"
+      }
+    ],
+    "coverageAssessment": "已逐项核对来源中的形容词、副词、名词及动词定义，并检查原稿例句、搭配、近反义、构词、读音与翻译。补丁后覆盖不正确、选错、判断错误、不合适、不正当、异常、副词方式义、名词道德与不公义，以及动词不公正对待义；核心义均至少有两个自然原创例句。名词“错误或不公正的立场”通过 be in the wrong 限定讲解，不扩张成可随意指称某个错误意见的名词用法。来源没有提供可靠的历史词源内容，因此不建立历史阶段；其余现代用法补充依据专业语言知识，不冒称来自获取失败或未提供内容的词典。",
+    "senseInventory": [
+      {
+        "sense": "形容词：答案或信息不正确",
+        "coveredBy": [
+          "wrong-adj-incorrect"
+        ],
+        "assessment": "已有日期和判断例句；保留，并明确与选错对象的联系。"
+      },
+      {
+        "sense": "形容词：选错对象、地点或方向",
+        "coveredBy": [
+          "wrong-adj-incorrect"
+        ],
+        "assessment": "原稿有搭配但具体例句不足；补充坐错公交车和走错方向。"
+      },
+      {
+        "sense": "形容词：某人判断错误、有错",
+        "coveredBy": [
+          "wrong-adj-incorrect"
+        ],
+        "assessment": "be wrong about 的会议时间例句自然，覆盖充分。"
+      },
+      {
+        "sense": "形容词：不合适、不宜采用",
+        "coveredBy": [
+          "wrong-adj-unsuitable"
+        ],
+        "assessment": "新增独立常用义，以雨天鞋子和谈话时机两个例句覆盖。"
+      },
+      {
+        "sense": "形容词：不应该、不正当",
+        "coveredBy": [
+          "wrong-adj-bad"
+        ],
+        "assessment": "两个行为评价例句有效；移除混入的名词搭配。"
+      },
+      {
+        "sense": "形容词：状态异常、有问题",
+        "coveredBy": [
+          "wrong-adj-problem"
+        ],
+        "assessment": "设备故障与身体异常均覆盖；修正身体不适例句及 feel wrong 的说明。"
+      },
+      {
+        "sense": "副词：错误地、以不正确的方式",
+        "coveredBy": [
+          "wrong-adv"
+        ],
+        "assessment": "保留抄错号码，补入装错盖子的自然例句；修正与 rightly/wrongly 及形容词宾补的混淆。"
+      },
+      {
+        "sense": "名词：不道德之事或道德上的错",
+        "coveredBy": [
+          "wrong-noun"
+        ],
+        "assessment": "right and wrong 及 do wrong 覆盖抽象道德义，并补明不可数用法。"
+      },
+      {
+        "sense": "名词：不公正行为、冤屈",
+        "coveredBy": [
+          "wrong-noun"
+        ],
+        "assessment": "right a wrong 的例句有效；补充可数性、复数形式及 do someone wrong。"
+      },
+      {
+        "sense": "名词：错误或不公正的立场",
+        "coveredBy": [
+          "wrong-fault"
+        ],
+        "assessment": "以 be in the wrong 限定表达处于错误或理亏的一方，不据此推广孤立名词用法。"
+      },
+      {
+        "sense": "动词：对某人造成不公正的伤害、亏待或冤枉",
+        "coveredBy": [
+          "wrong-verb"
+        ],
+        "assessment": "两个例句均保留；精确修正规定使人受不公的翻译，不把来源中的法语 offenser 泛化为一切“使人不快”。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/studyPlan/2",
+        "expectedValueJson": "\"区分 wrong（错的）与 wrongly（错误地，较正式）。\"",
+        "valueJson": "\"区分作副词的 wrong 与 wrongly：注意位置、固定搭配，以及 wrongly 表示“不公正地”的用法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英音元音通常较短；美音常较长，实际音色因口音而异。\"",
+        "valueJson": "\"英音通常用 /ɒ/；美音因口音和词典标音体系可记为 /ɔː/ 或 /ɑː/。差别涉及元音音色，不能只把英音元音拖长来读美音。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/1/note",
+        "expectedValueJson": "\"非正式用法中 wrong 可作副词，形式不变；更常见的副词形式是 wrongly。\"",
+        "valueJson": "\"wrong 可在非正式表达中作副词，形式不变，常放在动词或宾语后，如 spell a name wrong；不能与 wrongly 在所有结构中互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"名词用法常见于 do wrong（做坏事）或 right and wrong（是非）。\"",
+        "valueJson": "\"表示道德上的错时常不可数，如 do wrong、right and wrong；表示具体的不公正行为时可数，如 a wrong、wrongs。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/6/note",
+        "expectedValueJson": "\"动词 wrong 加 -ing 时去掉词尾不发音的 e？wrong 本身没有 e，直接加 -ing。\"",
+        "valueJson": "\"直接在 wrong 后加 -ing，写作 wronging；不删字母，也不双写 g。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"名词复数\",\"form\":\"wrongs\",\"ipa\":\"/rɒŋz/; /rɔːŋz/\",\"note\":\"表示多件不公正行为或冤屈时用复数 wrongs；直接加 -s，词尾读 /z/。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"答案、信息、选择、地点或方向不符合事实或目的；用于人时可表示判断错了。\"",
+        "valueJson": "\"答案或信息不正确；选到的物品、号码、地点或路线不是所需的；用于人时表示判断错了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/zh",
+        "expectedValueJson": "\"错误的／不合适的……\"",
+        "valueJson": "\"错误的／选错的……\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wrong-ex-a3\",\"senseId\":\"wrong-adj-incorrect\",\"en\":\"We took the wrong bus and ended up at the airport.\",\"zh\":\"我们坐错了公交车，最后到了机场。\",\"note\":\"the wrong bus 表示坐的不是原本需要乘坐的那辆车。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wrong-ex-a4\",\"senseId\":\"wrong-adj-incorrect\",\"en\":\"You're going the wrong way; the station is behind you.\",\"zh\":\"你走错方向了；车站在你身后。\",\"note\":\"the wrong way 指通往目的地的方向不对，不是特指左转或右转。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/collocations/1/note",
+        "expectedValueJson": "\"口语中常用，something 通常指姓名、日期、答案等。\"",
+        "valueJson": "\"wrong 是形容词，作宾语补足语，说明姓名、日期、答案等不正确；不能只因它位于动词后就判为副词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/1/patterns/2",
+        "expectedValueJson": "{\"en\":\"do someone wrong\",\"zh\":\"冤枉／亏待某人\",\"note\":\"固定搭配，表示对某人不公；具体含义由上下文判断。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"right and wrong\",\"zh\":\"是非、对与错\",\"note\":\"常用于谈道德判断或分辨是非。\",\"kind\":\"fixed-expression\"}",
+        "valueJson": "{\"en\":\"morally wrong\",\"zh\":\"道德上不对的\",\"note\":\"morally 明确指出这里评价的是道德上的正当与否。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常见结构是 Something is wrong with...；wrong 通常放在 be、feel、seem 等动词后。\"",
+        "valueJson": "\"常见结构是 Something is wrong with...，可描述设备、身体或情况出了问题。feel wrong 常说某种做法或情境让人觉得不妥，不是表达身体不舒服的通用说法。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"wrong-ex-c2\",\"senseId\":\"wrong-adj-problem\",\"en\":\"My stomach feels wrong after lunch.\",\"zh\":\"午饭后我觉得胃不太舒服。\",\"note\":\"这里的 wrong 表示身体感觉不正常。\"}",
+        "valueJson": "{\"id\":\"wrong-ex-c2\",\"senseId\":\"wrong-adj-problem\",\"en\":\"Something is wrong with my stomach; it has been hurting since lunch.\",\"zh\":\"我的胃有点问题；从午饭后就一直疼。\",\"note\":\"Something is wrong with... 也可说明身体某个部位出了问题；后半句具体描述症状。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1/note",
+        "expectedValueJson": "\"表达身体不舒服，或觉得某件事不正常。\"",
+        "valueJson": "\"常以做法、安排或情境作主语，表示让人觉得不妥或看起来异常。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"feel wrong\",\"zh\":\"感觉不舒服／不对劲\",\"note\":\"根据主语和上下文，可指身体不适或心里觉得不妥。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"feel wrong\",\"zh\":\"让人觉得不妥／不对劲\",\"note\":\"常以做法、决定或情境作主语，如某项安排让人觉得不妥；表达身体不舒服通常另用 feel unwell 等说法。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/usageNote",
+        "expectedValueJson": "\"常见于 go wrong、do something wrong 等表达。表示“错误地”时 wrongly 也很常见，语气通常较正式。\"",
+        "valueJson": "\"作副词时常放在动词或宾语后，如 spell a name wrong、do it wrong。wrongly 可放在动词前，还常表示判断错误或不公正。固定表达 go wrong 不能机械改成 go wrongly；get the answer wrong 中的 wrong 则是形容词宾语补足语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/examples/1",
+        "expectedValueJson": "{\"id\":\"wrong-ex-d2\",\"senseId\":\"wrong-adv\",\"en\":\"We turned wrong and ended up near the river.\",\"zh\":\"我们转错了方向，最后到了河边附近。\",\"note\":\"wrong 在这里修饰 turned，表示转的方向不对。\"}",
+        "valueJson": "{\"id\":\"wrong-ex-d2\",\"senseId\":\"wrong-adv\",\"en\":\"I put the lid on wrong, and now the jar won't close.\",\"zh\":\"我把盖子装错了，现在罐子盖不上了。\",\"note\":\"wrong 作副词，说明安装盖子的方式不对；这是自然的口语表达。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/1",
+        "expectedValueJson": "{\"en\":\"do something wrong\",\"zh\":\"做错某事\",\"note\":\"wrong 放在动作之后，描述做事方式不正确。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"do it wrong\",\"zh\":\"把它做错／做法不对\",\"note\":\"wrong 作副词，说明做事的方式不正确；it 指上文提到的事情。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/patterns/2",
+        "expectedValueJson": "{\"en\":\"get something wrong\",\"zh\":\"把某事弄错\",\"note\":\"常说把名字、事实或答案记错、说错。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"copy a number wrong\",\"zh\":\"把号码抄错\",\"note\":\"wrong 放在宾语后，说明抄写有误；可与 copy a number incorrectly 对照。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/1",
+        "expectedValueJson": "{\"en\":\"get the answer wrong\",\"zh\":\"答错题\",\"note\":\"wrong 放在 answer 后，表示答案作错了。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"spell a name wrong\",\"zh\":\"把名字拼错\",\"note\":\"wrong 作副词，修饰拼写这一动作；对应 spell a name right 或 correctly。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"更明确的副词形式，常用于较正式的书面语。\"",
+        "valueJson": "\"可表示错误地或不公正地，如 wrongly believe、wrongly accuse；常放在动词前，不能只按正式程度与 wrong 互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"wrong 作副词较口语；wrongly 和 incorrectly 更适合较正式的表达。\"",
+        "valueJson": "\"wrong 作副词常见于非正式表达，通常后置；wrongly 常修饰错误的判断或不公正的行为，也可前置；incorrectly 常说明答案或操作不正确。选择时还要看搭配，不能只看正式程度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrasting/0/note",
+        "expectedValueJson": "\"在非正式副词用法中，可与 wrong 对照，如 turn right / turn wrong。\"",
+        "valueJson": "\"表示做得正确时可与 wrong 对照，如 spell it right / spell it wrong；turn right 通常表示右转，不表示转对方向。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"do someone wrong\",\"zh\":\"冤枉／亏待某人\",\"note\":\"这里的 wrong 是名词，整个表达表示对某人不公；区别于直接用动词 wrong someone。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/meaning",
+        "expectedValueJson": "\"对某人不公正地对待或伤害某人。\"",
+        "valueJson": "\"不公正地对待某人，使其受到伤害或委屈；可指亏待或冤枉某人。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/examples/0/zh",
+        "expectedValueJson": "\"她认为这条规定冤枉了她弟弟。\"",
+        "valueJson": "\"她认为这条规定让她弟弟受到了不公平的对待。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"wrong-adj-unsuitable\",\"title\":\"形容词：不合适、不合时宜\",\"meaning\":\"某样东西、某个时机或某种做法不适合当前的用途或情境，不一定是事实错误或道德问题。\",\"usageNote\":\"常用 the wrong thing / time / person for...，也可说 be wrong for...；重点是是否适合具体情境。\",\"examples\":[{\"id\":\"wrong-ex-h1\",\"senseId\":\"wrong-adj-unsuitable\",\"en\":\"These canvas shoes are the wrong choice for a rainy day; my feet will get wet.\",\"zh\":\"下雨天选这双帆布鞋不合适；我的脚会湿的。\",\"note\":\"鞋子本身没有真假或对错，这里说它不适合雨天。\"},{\"id\":\"wrong-ex-h2\",\"senseId\":\"wrong-adj-unsuitable\",\"en\":\"This is the wrong time to discuss our holiday plans; Mum is trying to finish her work.\",\"zh\":\"现在不是讨论我们度假计划的合适时机；妈妈正赶着完成工作。\",\"note\":\"the wrong time 指时机不合适，不是把钟点记错。\"}],\"patterns\":[{\"en\":\"be wrong for + 人／用途／情境\",\"zh\":\"对……来说不合适\",\"note\":\"for 后说明判断是否合适的对象或情境。\",\"kind\":\"sentence-pattern\"},{\"en\":\"the wrong time to do something\",\"zh\":\"做某事的不合适时机\",\"note\":\"评价时机是否恰当，而非某个时间信息是否准确。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the wrong choice for the occasion\",\"zh\":\"不适合这个场合的选择\",\"note\":\"常评价衣着、物品或做法是否符合场合需要。\",\"kind\":\"common-collocation\"},{\"en\":\"the wrong person for the job\",\"zh\":\"不适合这项工作的人\",\"note\":\"指人选与工作要求不匹配，不表示这个人品行不好。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"unsuitable\",\"zh\":\"不合适的\",\"note\":\"明确表示不适合某人、用途或情境，常用 unsuitable for。\"},{\"en\":\"inappropriate\",\"zh\":\"不恰当的\",\"note\":\"常强调不符合场合、社交规范或身份要求；范围与 wrong 不完全相同。\"}],\"contrasting\":[{\"en\":\"right\",\"zh\":\"合适的\",\"note\":\"在 the right time、the right person 等选择语境中与此义对应。\"},{\"en\":\"suitable\",\"zh\":\"适合的\",\"note\":\"用于人选、物品或做法符合用途和情境的情况。\"}],\"similarNote\":\"unsuitable 强调不适合用途或对象；inappropriate 常强调不合场合或规范。它们不对应 wrong 的所有义项。\",\"contrastingNote\":\"right、suitable 在是否适合具体用途或情境时与此义相对。\"},\"sourceIds\":[\"wiktionary-wrong-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/meaning",
+        "expectedValueJson": "\"在 the wrong 中表示某人有错或应负责任。\"",
+        "valueJson": "\"在 be in the wrong 中表示处于错误或理亏的一方，可能是判断有误，也可能是应对某事负责。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"wrong 可作形容词，也能在口语中作副词；wrongly 是明确的副词形式，常见于较正式表达。\"",
+        "valueJson": "\"wrong 可作形容词，也能在非正式表达中作副词；wrongly 是副词。选择时既要看位置和固定搭配，也要看是否表示判断错误或不公正，不能只按正式程度替换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"副词，修饰动作，常用于正式一些的表达。\"",
+        "valueJson": "\"副词，可放在动词前；常说 wrongly believe（错误地认为）、wrongly accuse（错误地指控）等，也可说明某个动作做错了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"名词前用 wrong；要表达“错误地”时，口语常用 wrong，较正式时可用 wrongly。\"",
+        "valueJson": "\"形容词用 wrong。副词 wrong 通常后置，如 spell it wrong；wrongly 也可放在动词前。go wrong 不能改成 go wrongly；get the answer wrong 中的 wrong 是形容词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[\"wiktionary-wrong-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"wrong 是整体记忆的现代单词；目前这份讲解不据此提出历史词形或来源链。\"",
+        "valueJson": "\"wrong 可整体记忆；wrongly、wrongness 等现代派生词的构词见词族部分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里没有把现代词性变化或 wrong、wrongly 的关系当作已核实的历史词源。\"",
+        "valueJson": "\"现代加后缀的构词方式和助记故事，都不等于历史词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接在 wrong 后加 -ly，保留两个 g。\"",
+        "valueJson": "\"直接在 wrong 后加 -ly，写作 wrongly；全词只有一个 g，不双写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"直接加 -ness，保留词尾两个 g。\"",
+        "valueJson": "\"直接在 wrong 后加 -ness，写作 wrongness；只有一个 g，两个 s 来自后缀 -ness。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"直接加 -ed，两个 g 保留；作动词形式时也是规则变化。\"",
+        "valueJson": "\"直接在 wrong 后加 -ed，写作 wronged；只有一个 g，-ed 读 /d/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/zh",
+        "expectedValueJson": "\"觉得受了委屈的队员请求教练重新审视这个决定。\"",
+        "valueJson": "\"受到不公平对待的队员请求教练重新审视这个决定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford-wrong\",\"cambridge-wrong\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford-wrong\",\"title\":\"Oxford Learner’s Dictionaries：wrong\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/wrong\",\"supports\":[\"wrong 的常见形容词、副词、名词和动词用法\",\"wrong、wrongly 等相关词形和搭配\"],\"verification\":\"recommended\"},{\"id\":\"cambridge-wrong\",\"title\":\"Cambridge Dictionary：wrong\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/wrong\",\"supports\":[\"wrong 的常见义项与用法结构\",\"wrong 与 wrongly 的词性和搭配\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-wrong-en\",\"title\":\"Wiktionnaire：wrong（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/wrong#Anglais\",\"supports\":[\"形容词：不正确、不合适、不正当、有问题及判断错误\",\"副词 wrong 的非正式用法\",\"名词与动词的基本义项\",\"wrong 与 false 的语境差异\",\"英语读音 /ɹɒŋ/ 及加拿大口音 /ɹɔŋ/ 的记录\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1584,
+    "headword": "wrong",
+    "meaning_zh": "adj. 错误的, 不正当的, 失常的\nadv. 错误地",
+    "phonetic": "/rɒŋ/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "b12d01f68d18486c1951c5b07ab946723b9588087c870906603194c8292ff741",
+    "executedReviewPromptHash": "c107963ca286272ec10478a7a422f5a97df4b71a8f1ac15cf48524f81fdb1799",
+    "reviewHash": "4701ec57974db8b1fdac2d25062f23274bbd310b7b942771e8283e4db14db05c",
+    "wordId": 1227,
+    "inputHash": "151c61d95e8673a23b433e44bde70c496def5fd8f46a4f9ce8b37c10408ffac6",
+    "draftHash": "8cd94090b5138eb63ed473633cc65b976da312bb0ff8c509a30a89ba7656ed62",
+    "finalHash": "1cd0b512aac6acdd2685fb32e2894da8d22ac825e5b5e7c41d847393f80e5eb8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-2",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/sheep#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:01.199Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116360,
+        "revisionId": 39760000,
+        "revisionTimestamp": "2026-08-03T00:27:24Z",
+        "sha256": "109e6786887bc56dc16e720a6792cb235dfc7a9c03888a7ccb9a1c5f8bd8047e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/sheep",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T12:06:55.988Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T12:27:01.425Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/sourceIds、/senses/0/sourceIds、/confusions/*/sourceIds、/sources",
+        "message": "Oxford 没有对应的实际来源正文，Cambridge 抓取失败，不能将它们作为本次说明的事实出处。应回指已取得正文的 Wiktionary 英语词条，来源标签仍使用 recommended。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "来源支持中古英语、古英语 scēap 的传承关系，但没有给出中古英语的具体词形；现有阶段还用“早期形式”等占位说明代替词义。应将可靠事实写入 summary，清空缺乏依据的阶段，并补入明确记载的荷兰语、德语同源词。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/note",
+        "message": "a sheep 是普通的单数名词结构，不能称为固定表达；比喻义也可以使用复数 sheep。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily、/wordFamilyNote",
+        "message": "sheepish、sheepishly 是来源明确列出的实用派生词，直接排除全部派生词不妥。应作为拓展补充实际构词和拼写；新增例句均包含动物义 sheep，并绑定已有义项 s1。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items/1/example",
+        "message": "原例句只有 ship，却绑定 sheep 的动物义 s1，义项归属不准确。改为同时包含 ship 和动物义 sheep 的原创比较例句，可保留有效的 s1 引用。"
+      },
+      {
+        "severity": "polish",
+        "location": "/pronunciation、/confusions/0/takeaway、/memoryAid/cues/1",
+        "message": "辨音提示过度依赖拉长、短促，且“短而轻”容易让学生误以为 ship 必须轻读。应说明 /iː/ 与 /ɪ/ 的音质差异，并交代美式 /i/ 与 /iː/ 的转写习惯。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions",
+        "message": "goat 同时放在近似表达和类别对照中，分类重复。保留类别对照即可；lamb 则应明确为幼小的绵羊，与 sheep 不是完全同义关系。"
+      }
+    ],
+    "coverageAssessment": "已核对已取得英语词条正文中的动物义和“盲从者”比喻义。初中核心动物义 s1 有两条自然原创例句；比喻义 s2 放在拓展部分并保留一例，安排合理，无需强拆更多核心义。修订后的词源仅保留可证实的传承及同源关系；未取得正文的 Oxford/Cambridge 不作为本次事实出处。",
+    "senseInventory": [
+      {
+        "sense": "名词：绵羊，单复数同形",
+        "coveredBy": [
+          "s1"
+        ],
+        "assessment": "核心义已覆盖；两例分别展示单数 is 和复数 are，数量结构、群体搭配及饲养搭配正确。"
+      },
+      {
+        "sense": "名词，比喻：缺乏独立判断、盲从的人",
+        "coveredBy": [
+          "s2"
+        ],
+        "assessment": "已在 lessCommonSenses 中覆盖，例句自然；需修正将 a sheep 称为固定表达的说明。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\",\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: sheep\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/sheep\",\"supports\":[\"sheep 的词性、基本含义及单复数形式\"],\"verification\":\"recommended\"},{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: sheep\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/sheep\",\"supports\":[\"sheep 的读音和常见用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary\",\"title\":\"Wiktionary: sheep（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/sheep#Anglais\",\"supports\":[\"sheep 的历史词形信息\",\"sheep 的比喻用法\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary\",\"title\":\"Wiktionary: sheep（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/sheep#Anglais\",\"supports\":[\"sheep 的名词本义及单复数同形\",\"sheep 的英美读音及与 ship 的近音关系\",\"sheep 指盲从者的比喻义\",\"中古英语、古英语 scēap 的传承关系及荷兰语、德语同源词\",\"sheepish、sheepishly 作为派生词\"],\"verification\":\"recommended\"}]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"sheep 经中古英语进入现代英语；其更早来源是古英语 scēap。\"",
+        "valueJson": "\"sheep 由中古英语传承而来，更早可追溯到古英语 scēap。荷兰语 schaap 和德语 Schaf 与它同源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"古英语\",\"form\":\"scēap\",\"meaning\":\"sheep 的早期英语形式\"},{\"language\":\"中古英语\",\"form\":\"sheep\",\"meaning\":\"现代 sheep 的中间阶段\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"这里只表示词形的历史传承；把 sheep 记成“羊”是学习联想，不是词源解释。\"",
+        "valueJson": "\"古英语、中古英语和现代英语之间是历史传承关系；荷兰语 schaap、德语 Schaf 与 sheep 是并列的同源词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/note",
+        "expectedValueJson": "\"常见于固定表达 a sheep，带有批评意味；初中阶段先掌握动物本义即可。\"",
+        "valueJson": "\"这是带贬义的比喻用法，可用单数 a sheep，也可用复数 sheep 指一群盲从者；初中阶段先掌握动物本义即可。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"sheepish\",\"partOfSpeech\":\"adjective\",\"meaning\":\"窘迫的；不好意思的\",\"formation\":\"从现代构词看，可拆为 sheep + 形容词后缀 -ish，常表示因做错事等而不好意思。\",\"spellingNote\":\"保留 sheep 的全部字母，直接加 -ish：sheepish。\",\"example\":{\"id\":\"wf-sheepish\",\"senseId\":\"s1\",\"en\":\"Tom gave a sheepish smile when he realized he had forgotten to feed the sheep.\",\"zh\":\"汤姆意识到自己忘了喂羊时，不好意思地笑了笑。\",\"note\":\"sheepish 修饰 smile，表示窘迫的神态；句中的 sheep 指绵羊。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"word\":\"sheepishly\",\"partOfSpeech\":\"adverb\",\"meaning\":\"窘迫地；不好意思地\",\"formation\":\"sheepish + 副词后缀 -ly，用来说明某个动作带着不好意思的神态。\",\"spellingNote\":\"在 sheepish 后直接加 -ly：sheepishly；结尾拼作 -ishly。\",\"example\":{\"id\":\"wf-sheepishly\",\"senseId\":\"s1\",\"en\":\"I sheepishly admitted that I had let a sheep into the garden.\",\"zh\":\"我不好意思地承认自己让一只绵羊跑进了花园。\",\"note\":\"sheepishly 修饰 admitted，说明承认时的神态；a sheep 表示一只绵羊。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"sheep 本身没有适合初中阶段掌握的常见派生词。ewe（母羊）、ram（公羊）和 lamb（羔羊）是相关动物名称，不是 sheep 的派生词。\"",
+        "valueJson": "\"sheepish 和 sheepishly 是常见派生词，常用于描述人的窘迫神态，可作拓展学习。ewe（母绵羊）、ram（公绵羊）和 lamb（羔羊）是相关动物名称，不是 sheep 的派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example",
+        "expectedValueJson": "{\"id\":\"c1e2\",\"senseId\":\"s1\",\"en\":\"The ship is near the island.\",\"zh\":\"那艘船在岛附近。\",\"note\":\"ship 指船，不是 sheep。\"}",
+        "valueJson": "{\"id\":\"c1e2\",\"senseId\":\"s1\",\"en\":\"The farmer took six sheep to the island by ship.\",\"zh\":\"农场主乘船把六只绵羊运到了岛上。\",\"note\":\"by ship 表示乘船，six sheep 表示六只绵羊；注意两个词的元音不同。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/accentNote",
+        "expectedValueJson": "\"英式和美式常见读音都以长元音 /iː/ 为主。\"",
+        "valueJson": "\"英式常标 /ʃiːp/，美式也常用 /ʃip/ 记音；是否写长音符号与转写习惯有关。区分 sheep 和 ship 时，还要留意元音音质。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/0",
+        "expectedValueJson": "\"开头 /ʃ/ 像中文“嘘”的起始音；/iː/ 要拉长，结尾 /p/ 清晰收住。\"",
+        "valueJson": "\"开头 /ʃ/ 可借中文“嘘”的起始音近似练习；结尾 /p/ 用双唇闭合收住。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"不要读成 ship /ʃɪp/；ship 的元音短，且意思是“船”。\"",
+        "valueJson": "\"sheep /ʃiːp/ 的元音舌位较高、较靠前；ship /ʃɪp/ 的舌位稍低、较放松，通常也更短。不要只靠拉长声音区分；ship 的意思是“船”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"sheep 的 /iː/ 拉长；ship 的 /ɪ/ 短而轻。拼写时也别把 sheep 写成 ship。\"",
+        "valueJson": "\"sheep 的 /iː/ 舌位较高；ship 的 /ɪ/ 舌位稍低、较放松，通常也更短。音质与长度要一起听，拼写也要分清。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/1/text",
+        "expectedValueJson": "\"sheep /iː/ 拉长；ship /ɪ/ 短促。\"",
+        "valueJson": "\"sheep 的 /iː/ 和 ship 的 /ɪ/ 音质不同，通常长短也不同。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/0/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"goat\",\"zh\":\"山羊\",\"note\":\"也是家畜，但属于不同种类，不能用来替换 sheep。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"指年幼的羊；sheep 可指绵羊这一类，不限年龄。\"",
+        "valueJson": "\"特指年幼的绵羊；sheep 不限定年龄，不能用 lamb 替换表示成年绵羊的 sheep。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similarNote",
+        "expectedValueJson": "\"lamb 是羊的幼年阶段；goat 是另一种动物。\"",
+        "valueJson": "\"lamb 比 sheep 更具体，明确交代绵羊尚年幼；两者不是完全同义词。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 1227,
+    "headword": "sheep (pl. sheep)",
+    "meaning_zh": "n. 绵羊（单复数同形）",
+    "phonetic": "/ʃi:p/",
+    "pos": "",
+    "forms": [
+      {
+        "form": "sheep",
+        "kind": "s"
+      }
+    ]
+  }
+}

@@ -1,0 +1,702 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4da36f3d69d6ca5c7717c18d86557d0f956a877a95738753c5d6a818ba28a218",
+    "executedReviewPromptHash": "4da36f3d69d6ca5c7717c18d86557d0f956a877a95738753c5d6a818ba28a218",
+    "reviewHash": "bc55daf1b8bea364633a8072fb950c7ebc8021c2b107eedc90951d70616e98e9",
+    "wordId": 770,
+    "inputHash": "6dbe7101e1c5d2ee81aa579630292c6e64d81056aa648ea7429a148fcc4890c7",
+    "draftHash": "10c076ef73523f4e99850519d7daaa9551c51bf3631aa578afd7d57383fbf2e0",
+    "finalHash": "37768c538b39673fddf57e7d9418d4be743902ce28a6fac8022a9c5c10d97c2b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/lead#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:50:01.258Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 12698,
+        "revisionId": 39738540,
+        "revisionTimestamp": "2026-08-01T23:59:55Z",
+        "sha256": "8151d64422d2cceefaeed08b94cf0b216adc85e96de8f24ffd9cc3f235141872",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/lead",
+        "section": "lead guiding verb versus metal noun",
+        "supports": [
+          "Relevant historical meaning",
+          "Sense and uncertainty boundaries"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "2b24c764d2f2aee37c498c15a773cf6e535e56856e4fc70416fa3e5cd23085f3",
+        "summaryAndSupportsWordCount": 61,
+        "sha256": "2b24c764d2f2aee37c498c15a773cf6e535e56856e4fc70416fa3e5cd23085f3",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/770.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/lead",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T22:44:34.255Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T22:53:37.354Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses",
+        "message": "遗漏常用的动词“领先”“通向”“过某种生活”，以及名词“带头、榜样”“牵引绳”“导线”“铅笔芯”。须分义补齐，每个核心义至少两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "“领先优势”和“调查线索”被合并，各只有一个例句，搭配和近义词也混在一起。须拆开，各补足两例。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "“主角、主演”和修饰名词的“主要的”属于常用功能，现各仅一例。应提升为完整核心义；partOfSpeech 同时补入 adjective。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/usageNote",
+        "message": "因果用法遗漏 lead someone to do。现有 lead to doing 说明本身正确，但须明确区分介词 to 与宾语后的不定式，避免总结被理解为所有“使得”用法都只能接 -ing。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation",
+        "message": "不能笼统把所有动词 lead 都归为 /liːd/：加铅、包铅义动词读 /led/，过去式和过去分词固定为 leaded。相关发音、变形及“可写 leaded”的说明须一致修正。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/relatedExpressions",
+        "message": "metal 是上位词，Pb 是元素符号，不应列作可替换的近义表达；non-metal 也不是铅这一具体元素的反向表达。应保留分类说明，清空不合适的条目。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/3/collocations/0/note",
+        "message": "lead pipe 通常指管体用铅制成的管道，不能泛指任何含铅的管道。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2",
+        "message": "mislead 应说明为前缀派生词；原例句译文额外断定出口在别处，超出英文信息。宜改用明确的 mislead someone into doing，并准确翻译。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources/0",
+        "message": "Cambridge 内容未取得，不能继续用该 sourceId 支撑正文。应移除其支撑关系；已取得的维基词典内容按实际范围引用，其他可靠语言知识可使用空 sourceIds。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/examples/1",
+        "message": "led to saving both time and money 语法成立，但该句表达较生硬；宜换成结果关系更具体、自然的原创例句。"
+      }
+    ],
+    "coverageAssessment": "已核对全部列出的词典义及常用扩展。补丁补齐常用动词、名词和形容词功能，拆开领先与线索，使每个核心义至少有两例；专业义按层次处理。排版铅条义按实际读音 /led/ 处理。机械、航海、药物研发及部分历史用法列入清单但不展开。词源叙述与已取得材料相符，现有阶段只描述引导义的发展，没有把两条独立来源串成一链。",
+    "senseInventory": [
+      {
+        "sense": "带路、引导（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-guide"
+        ],
+        "assessment": "保留原例并补入不带宾语的带路用法，达到两例。"
+      },
+      {
+        "sense": "领导、指挥团队（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-guide"
+        ],
+        "assessment": "与带领义同组，另补一个团队例句，使该功能也有两例。"
+      },
+      {
+        "sense": "导致结果；促使某人做某事（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-result"
+        ],
+        "assessment": "保留 lead to，补齐 lead someone to do；两种结构各有两例。"
+      },
+      {
+        "sense": "领先、领跑（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-ahead"
+        ],
+        "assessment": "新增完整核心义，区别于表示领先幅度的名词。"
+      },
+      {
+        "sense": "道路等通向某处（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-route"
+        ],
+        "assessment": "新增完整核心义，区别于人带路及因果 lead to。"
+      },
+      {
+        "sense": "过某种生活（v. /liːd/）",
+        "coveredBy": [
+          "lead-v-life"
+        ],
+        "assessment": "补齐常用的 lead a/an ... life。"
+      },
+      {
+        "sense": "带头、主动引领；供人效仿的做法（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-initiative"
+        ],
+        "assessment": "新增 take the lead、follow someone's lead 的行动语境。"
+      },
+      {
+        "sense": "领先位置及领先幅度（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-advantage"
+        ],
+        "assessment": "移出调查线索，补齐第二个比赛例句。"
+      },
+      {
+        "sense": "调查、寻找中的线索（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-clue"
+        ],
+        "assessment": "独立成义，配两例及跟进线索的搭配。"
+      },
+      {
+        "sense": "主角、主要角色；主演（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-role"
+        ],
+        "assessment": "提升为核心义，分别示范角色和扮演者。"
+      },
+      {
+        "sense": "主要的、领衔的（adj. /liːd/）",
+        "coveredBy": [
+          "lead-adj-main"
+        ],
+        "assessment": "提升为核心义，补齐两个定语用法例句及词性标注。"
+      },
+      {
+        "sense": "动物牵引绳（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-leash"
+        ],
+        "assessment": "补齐英式日常常用义，说明美式通常用 leash。"
+      },
+      {
+        "sense": "导线、连接线（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-wire"
+        ],
+        "assessment": "补齐电气连接语境；不把 battery lead 误教成电池接线柱本身。"
+      },
+      {
+        "sense": "金属铅，元素 Pb（n. /led/）",
+        "coveredBy": [
+          "lead-n-metal"
+        ],
+        "assessment": "两例保留，修正铅管解释及不合适的近义、反向条目。"
+      },
+      {
+        "sense": "铅笔芯、替芯（n. /led/）",
+        "coveredBy": [
+          "lead-n-pencil"
+        ],
+        "assessment": "新增完整核心义，说明现代铅笔芯主要用石墨制成，并示范材料义与可数替芯。"
+      },
+      {
+        "sense": "给物体加铅、包铅、加铅压重及其被动状态（v. /led/）",
+        "coveredBy": [
+          "lead-v-cover"
+        ],
+        "assessment": "保留专业义，明确 leaded 是该动词的规则过去式及过去分词。"
+      },
+      {
+        "sense": "传统排版行间铅条及相关行距（n. /led/）",
+        "coveredBy": [
+          "lead-n-type"
+        ],
+        "assessment": "补入专业义以覆盖“铅条”；按实际术语读 /led/，不沿用源文名词分组造成的读音混淆。"
+      },
+      {
+        "sense": "给铅字排版加行距（v. /led/）",
+        "coveredBy": [],
+        "assessment": "专业用法，不作为初中核心义展开。"
+      },
+      {
+        "sense": "营销中的潜在客户或客户线索（n. /liːd/）",
+        "coveredBy": [
+          "lead-n-sales"
+        ],
+        "assessment": "以一个职场例句补入拓展义，区别于已经成交的客户。"
+      },
+      {
+        "sense": "螺纹导程（n. /liːd/）",
+        "coveredBy": [],
+        "assessment": "机械专业义，不展开。"
+      },
+      {
+        "sense": "机械或点火的提前量（n. /liːd/）",
+        "coveredBy": [],
+        "assessment": "机械专业义，不展开。"
+      },
+      {
+        "sense": "药物研发中的先导化合物（n. /liːd/）",
+        "coveredBy": [],
+        "assessment": "药学专业义，不展开。"
+      },
+      {
+        "sense": "屋面铅皮及铺铅的屋顶（n. /led/，屋顶义常见复数 leads）",
+        "coveredBy": [],
+        "assessment": "建筑及历史用法，不作为核心义展开；包铅动词例句仅提供相关语境。"
+      },
+      {
+        "sense": "子弹、铅弹（n. /led/）",
+        "coveredBy": [],
+        "assessment": "借材料指弹药的用法，不作为初中核心义展开。"
+      },
+      {
+        "sense": "航海测深铅锤及相关测深用法（/led/）",
+        "coveredBy": [],
+        "assessment": "航海专业或历史用法，不展开。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb; noun\"",
+        "valueJson": "\"verb; noun; adjective\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"动词 lead /liːd/ 表示“带领、引导”或“导致”；过去式和过去分词都写 led /led/。名词 lead /led/ 表示金属“铅”，别把两种读音和拼写混淆。\"",
+        "valueJson": "\"表示“带领、导致”等义的动词 lead 读 /liːd/，过去式和过去分词是 led /led/；金属“铅”和铅笔芯 lead 读 /led/。另有较少见的加铅动词 lead /led/，过去式和过去分词是 leaded。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"用 lead someone to 和 lead to 各造一个句子，比较“带某人去”和“导致”。\"",
+        "valueJson": "\"用 lead someone to a place、lead to a result 和 lead someone to do 各造一句，区分带到某处、导致结果和促使某人做事。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/ipa",
+        "expectedValueJson": "\"动词“带领”和名词“领先”：/liːd/；金属“铅”：/led/；动词过去式 led：/led/\"",
+        "valueJson": "\"带领、导致、领先、线索、主角等义：/liːd/；铅、铅笔芯及加铅动词：/led/；引导义的过去式 led：/led/\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/uk",
+        "expectedValueJson": "\"/liːd/（动词及“领先”义）；/led/（金属铅）\"",
+        "valueJson": "\"/liːd/（带领、领先、线索等义）；/led/（铅、铅笔芯及加铅动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/us",
+        "expectedValueJson": "\"/liːd/（动词及“领先”义）；/led/（金属铅）\"",
+        "valueJson": "\"/liːd/（带领、领先、线索等义）；/led/（铅、铅笔芯及加铅动词）\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes",
+        "expectedValueJson": "[\"/liːd/ 中元音较长，像“带领”动词的原形；/led/ 元音较短，表示金属铅，也读作动词过去式 led。\",\"led 是 lead 的不规则过去式和过去分词，拼写中没有 a。\"]",
+        "valueJson": "[\"带领、导致、领先、线索、主角、牵引绳及导线等义读 /liːd/；铅、铅笔芯及加铅动词读 /led/。\",\"两种读音不仅长短不同，元音音质也不同：/iː/ 与 /e/；部分音标系统把后者写作 /ɛ/。\",\"引导义 lead 的过去式和过去分词是 led /led/；加铅义动词的过去式和过去分词是 leaded /ˈledɪd/。\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/3/note",
+        "expectedValueJson": "\"不规则变化；不能写成 leaded。\"",
+        "valueJson": "\"表示带领、导致等义的 /liːd/ 动词用不规则过去式 led；加铅义另用 leaded。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/4/note",
+        "expectedValueJson": "\"与过去式同形，可用于完成时和被动语态。\"",
+        "valueJson": "\"表示带领、导致等义时，过去分词与过去式同形，可用于完成时和被动语态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/ipa",
+        "expectedValueJson": "\"带领、领先义 /liːd/；金属铅义 /led/\"",
+        "valueJson": "\"/liːd/（领先、线索、主角、牵引绳、导线等）；/led/（铅、铅笔芯等）\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/5/note",
+        "expectedValueJson": "\"名词单数形式；金属铅通常为不可数名词。\"",
+        "valueJson": "\"金属铅通常不可数；优势、线索、主角、牵引绳和导线等义可数，复数 leads 读 /liːdz/。铅笔芯既可指不可数的材料，也可指一根可数的替芯。\""
+      },
+      {
+        "op": "add",
+        "path": "/forms/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"加铅义动词的过去式及过去分词\",\"form\":\"leaded\",\"ipa\":\"/ˈledɪd/\",\"note\":\"原形 lead 读 /led/，表示加铅、包铅等，按规则加 -ed；不要与带领义的 led 混淆。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-guide-eg-3\",\"senseId\":\"lead-v-guide\",\"en\":\"You lead, and we'll follow you down the path.\",\"zh\":\"你在前面带路，我们沿着小路跟着你。\",\"note\":\"lead 可以不带宾语，表示带头走、带路。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-guide-eg-4\",\"senseId\":\"lead-v-guide\",\"en\":\"Nina will lead our group during the science project.\",\"zh\":\"妮娜将在这次科学项目中带领我们的小组。\",\"note\":\"这里指组织、领导团队，不一定真的走在队伍最前面。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 lead to + 名词或动名词，表示“导致某结果／使得发生某事”；lead to 后不直接接动词原形。\"",
+        "valueJson": "\"lead to + 名词或动名词表示导致某结果，其中 to 是介词；lead someone to do something 表示促使某人做某事或使某人形成判断，其中 to do 是不定式。两种结构都常用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1",
+        "expectedValueJson": "{\"id\":\"lead-eg-4\",\"senseId\":\"lead-v-result\",\"en\":\"Their careful plan led to saving both time and money.\",\"zh\":\"他们周密的计划既省了时间，也省了钱。\",\"note\":\"led to 后接动名词短语 saving both time and money。\"}",
+        "valueJson": "{\"id\":\"lead-eg-4\",\"senseId\":\"lead-v-result\",\"en\":\"Leaving the window open led to rain getting into the room.\",\"zh\":\"窗户开着，结果雨水飘进了房间。\",\"note\":\"to 后的 rain getting into the room 表示雨水进屋这一结果；getting 不是动词原形。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-result-eg-3\",\"senseId\":\"lead-v-result\",\"en\":\"The low price led me to buy a second pair of shoes.\",\"zh\":\"低廉的价格促使我又买了一双鞋。\",\"note\":\"lead someone to do：me 是宾语，to buy 是不定式。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-result-eg-4\",\"senseId\":\"lead-v-result\",\"en\":\"The dark clouds led us to believe that it would rain.\",\"zh\":\"乌云使我们认为快要下雨了。\",\"note\":\"lead someone to believe 表示使某人形成某种判断，不保证这个判断一定正确。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"lead someone to do something\",\"zh\":\"促使某人做某事；使某人形成某种判断\",\"note\":\"someone 是宾语，后接 to do 不定式；常见 lead someone to believe。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"比赛或比较中领先的距离、时间或分数，也可指线索、提示。\"",
+        "valueJson": "\"比赛或竞争中的领先位置，或领先的距离、时间、分数等。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"作“领先、优势”解时读 /liːd/；作“线索”解也读 /liːd/，常见表达是 a lead in a race 和 a lead in the investigation。\"",
+        "valueJson": "\"读 /liːd/。a two-point lead 指两分的领先优势；be in the lead 表示处于领先位置；take the lead 在比赛中表示取得领先。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"lead-eg-6\",\"senseId\":\"lead-n-advantage\",\"en\":\"The note gave the police a new lead in the search.\",\"zh\":\"这张纸条给警方的搜寻提供了一条新线索。\",\"note\":\"这里的 lead 表示帮助调查继续进行的线索。\"}",
+        "valueJson": "{\"id\":\"lead-advantage-eg-2\",\"senseId\":\"lead-n-advantage\",\"en\":\"Lena took the lead in the final lap.\",\"zh\":\"莉娜在最后一圈取得了领先。\",\"note\":\"这里的 take the lead 指比赛中取得领先位置。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/patterns/1",
+        "expectedValueJson": "{\"en\":\"a lead in the search/investigation\",\"zh\":\"搜寻／调查中的线索\",\"note\":\"lead 指能帮助进一步寻找或调查的信息。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"be in the lead\",\"zh\":\"处于领先位置\",\"note\":\"常用于比赛、比分或竞争的比较。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "remove",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"clue\",\"zh\":\"线索\",\"note\":\"指帮助解开问题的信息；lead 作“线索”时通常指能让调查继续追查的提示。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"advantage 范围更广；clue 侧重解谜或查找信息，lead 也常用于调查线索。\"",
+        "valueJson": "\"advantage 可指各种有利条件；lead 在本义中具体指领先位置或领先幅度。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/collocations/0/note",
+        "expectedValueJson": "\"由铅制成或含铅的管道。\"",
+        "valueJson": "\"通常指管体用铅制成的管道。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similar",
+        "expectedValueJson": "[{\"en\":\"metal\",\"zh\":\"金属\",\"note\":\"metal 是上位词，表示金属这一大类；lead 是其中一种具体金属。\"},{\"en\":\"Pb\",\"zh\":\"铅的元素符号\",\"note\":\"用于化学式和元素周期表；读字母名称 P-B（/ˌpiːˈbiː/），不读作一个普通英语单词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/similarNote",
+        "expectedValueJson": "\"lead 是一种具体的 metal；Pb 是它的化学元素符号。\"",
+        "valueJson": "\"铅是具体元素名，没有日常可通用替换的近义词。metal 是上位词，Pb 是元素符号，均不作为近义词记忆。\""
+      },
+      {
+        "op": "remove",
+        "path": "/senses/3/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"non-metal\",\"zh\":\"非金属\",\"note\":\"分类上与金属相对；不是 lead 的反义词，只在元素分类语境中对照。\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"lead-free 是描述产品不含铅的常见对照说法；non-metal 只用于元素分类。\"",
+        "valueJson": "\"lead 本身没有通常意义上的反义词；lead-free 只在材料是否含铅的描述中形成对照。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-clue\",\"title\":\"调查、寻找中的线索\",\"meaning\":\"能够帮助继续调查、寻找或追查的信息。\",\"usageNote\":\"读 /liːd/，是可数名词。常说 give someone a lead、follow up a lead。\",\"examples\":[{\"id\":\"lead-eg-6\",\"senseId\":\"lead-n-clue\",\"en\":\"The note gave the police a new lead in the search.\",\"zh\":\"这张纸条给警方的搜寻提供了一条新线索。\",\"note\":\"a new lead 是一条可以继续追查的信息。\"},{\"id\":\"lead-clue-eg-2\",\"senseId\":\"lead-n-clue\",\"en\":\"Our neighbour's photo gave us a useful lead in our search for the missing cat.\",\"zh\":\"邻居的照片为我们寻找走失的猫提供了一条有用线索。\",\"note\":\"lead 也可用于日常寻找，不限于警方调查。\"}],\"patterns\":[{\"en\":\"give someone a lead\",\"zh\":\"给某人提供线索\",\"note\":\"lead 指能帮助下一步查找的信息。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"follow up a lead\",\"zh\":\"跟进一条线索\",\"note\":\"进一步核查线索，看看能否发现更多信息。\",\"kind\":\"common-collocation\"},{\"en\":\"a promising lead\",\"zh\":\"一条很有希望的线索\",\"note\":\"表示这条线索可能带来进展。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"clue\",\"zh\":\"线索\",\"note\":\"clue 可指帮助推断真相的细节；lead 更突出可以继续追查的方向或信息。\"},{\"en\":\"tip\",\"zh\":\"提示；情报\",\"note\":\"调查语境中可指他人提供的消息；lead 不限定信息由他人口头提供。\"}],\"contrasting\":[],\"similarNote\":\"三者可在调查语境中接近，但线索的形式和作用各有侧重。\",\"contrastingNote\":\"线索这一名词没有通用反义词，不把尚无线索或调查失败硬当作反义词。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-v-ahead\",\"title\":\"领先；领跑\",\"meaning\":\"在比赛、比分或竞争中处于其他人前面。\",\"usageNote\":\"读 /liːd/，过去式和过去分词为 led。可以不带宾语，也可直接接被领先的人或比赛名称；领先幅度常用 by 引出。\",\"examples\":[{\"id\":\"lead-ahead-eg-1\",\"senseId\":\"lead-v-ahead\",\"en\":\"Our team is leading by two goals.\",\"zh\":\"我们队目前领先两球。\",\"note\":\"lead by 引出领先幅度。\"},{\"id\":\"lead-ahead-eg-2\",\"senseId\":\"lead-v-ahead\",\"en\":\"Maya led the race until the final lap.\",\"zh\":\"玛雅一直领跑到最后一圈。\",\"note\":\"lead the race 表示在比赛中领跑。\"}],\"patterns\":[{\"en\":\"lead by + an amount\",\"zh\":\"领先某个幅度\",\"note\":\"如 lead by two points。\",\"kind\":\"sentence-pattern\"},{\"en\":\"lead someone by + an amount\",\"zh\":\"领先某人某个幅度\",\"note\":\"someone 是被领先的对手。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lead the race\",\"zh\":\"领跑比赛\",\"note\":\"表示比赛进行中处于前面。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"be ahead of\",\"zh\":\"领先于\",\"note\":\"着重描述当前相对位置，可用于比分、距离或进度。\"},{\"en\":\"be in the lead\",\"zh\":\"处于领先位置\",\"note\":\"使用名词 lead 表达同类状态。\"}],\"contrasting\":[{\"en\":\"trail\",\"zh\":\"落后\",\"note\":\"在比赛或比分语境中与 lead 形成直接对照。\"},{\"en\":\"fall behind\",\"zh\":\"落到后面\",\"note\":\"强调变得落后，未必只是描述当前名次。\"}],\"similarNote\":\"这里的 lead 表示领先状态，不保证最终获胜。\",\"contrastingNote\":\"这些对照限于比赛、比分、排名或进度，不适用于带路义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-v-route\",\"title\":\"通向；通往\",\"meaning\":\"道路、楼梯、门等连接或通向某个地方。\",\"usageNote\":\"读 /liːd/，主语通常是道路或通道。to 后接地点时表示通向，不是在说明某事导致结果。\",\"examples\":[{\"id\":\"lead-route-eg-1\",\"senseId\":\"lead-v-route\",\"en\":\"This path leads to the beach.\",\"zh\":\"这条小路通向海滩。\",\"note\":\"主语是 path，没有被带领的人作宾语。\"},{\"id\":\"lead-route-eg-2\",\"senseId\":\"lead-v-route\",\"en\":\"The stairs lead up to the roof.\",\"zh\":\"这段楼梯向上通到屋顶。\",\"note\":\"up 补充向上的方向。\"}],\"patterns\":[{\"en\":\"a road/path leads to a place\",\"zh\":\"道路／小路通向某地\",\"note\":\"to 后接地点。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lead into the garden\",\"zh\":\"通入花园\",\"note\":\"into 突出通到内部。\",\"kind\":\"common-collocation\"},{\"en\":\"lead out of the building\",\"zh\":\"通向楼外\",\"note\":\"out of 突出从内部通往外部。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"go to\",\"zh\":\"通到\",\"note\":\"道路作主语时也可这样表达，如 This road goes to the station；go 还有许多其他含义。\"}],\"contrasting\":[],\"similarNote\":\"两者可用于道路通向某处；不能据此把所有 go 都换成 lead。\",\"contrastingNote\":\"空间连接没有统一反义词；通向不同地点也不构成反义关系。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-v-life\",\"title\":\"过某种生活\",\"meaning\":\"以某种方式生活。\",\"usageNote\":\"读 /liːd/，常用 lead a/an + 形容词 + life；过去式为 led。\",\"examples\":[{\"id\":\"lead-life-eg-1\",\"senseId\":\"lead-v-life\",\"en\":\"My grandparents lead a quiet life in the countryside.\",\"zh\":\"我的祖父母在乡下过着平静的生活。\",\"note\":\"lead a quiet life 表示过着平静的生活。\"},{\"id\":\"lead-life-eg-2\",\"senseId\":\"lead-v-life\",\"en\":\"She leads a busy life, working during the day and studying at night.\",\"zh\":\"她白天工作，晚上学习，生活十分忙碌。\",\"note\":\"lead 在这里不是带领别人，而是描述自己的生活方式。\"}],\"patterns\":[{\"en\":\"lead a/an + adjective + life\",\"zh\":\"过着某种生活\",\"note\":\"life 前通常用形容词说明生活方式。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lead a normal life\",\"zh\":\"过正常的生活\",\"note\":\"描述生活状态。\",\"kind\":\"common-collocation\"},{\"en\":\"lead an active life\",\"zh\":\"过积极活跃的生活\",\"note\":\"描述经常参与活动的生活方式。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"live a ... life\",\"zh\":\"过……的生活\",\"note\":\"在此结构中与 lead a ... life 意思接近；live 还可直接表示居住，如 live in a town。\"}],\"contrasting\":[],\"similarNote\":\"本义可与 live a ... life 对换，但不能据此把 live in London 改成 lead in London。\",\"contrastingNote\":\"生活方式由形容词区分，lead 本身在这个结构中没有通用反义词。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-initiative\",\"title\":\"带头；供人效仿的做法\",\"meaning\":\"行动中的主动引领，或别人可以跟着做的示范。\",\"usageNote\":\"读 /liːd/。take the lead 表示主动牵头，follow someone's lead 表示照着某人的做法行动；本义不要求存在比分或名次。\",\"examples\":[{\"id\":\"lead-initiative-eg-1\",\"senseId\":\"lead-n-initiative\",\"en\":\"Sam took the lead in organising the class picnic.\",\"zh\":\"萨姆牵头组织了班级野餐。\",\"note\":\"这里的 take the lead 指主动组织，不是比赛领先。\"},{\"id\":\"lead-initiative-eg-2\",\"senseId\":\"lead-n-initiative\",\"en\":\"Everyone followed her lead and brought a reusable cup.\",\"zh\":\"大家都照着她的做法，带来了可重复使用的杯子。\",\"note\":\"follow her lead 表示效仿她的做法。\"}],\"patterns\":[{\"en\":\"take the lead in doing something\",\"zh\":\"带头做某事\",\"note\":\"in 后用 -ing 形式。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"take the lead\",\"zh\":\"牵头；带头\",\"note\":\"在组织行动的语境中使用。\",\"kind\":\"fixed-expression\"},{\"en\":\"follow someone's lead\",\"zh\":\"效仿某人的做法\",\"note\":\"不一定指实际跟着某人走。\",\"kind\":\"fixed-expression\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"take the initiative\",\"zh\":\"主动采取行动\",\"note\":\"强调先行动；take the lead 还可能包含带动其他人。\"}],\"contrasting\":[{\"en\":\"follow someone's lead\",\"zh\":\"跟着某人的做法行动\",\"note\":\"在谁先带头、谁跟着做的关系中，与 take the lead 对照。\"}],\"similarNote\":\"主动行动和带领他人常有联系，但不是每次主动行动都带动了别人。\",\"contrastingNote\":\"这是行动角色的对照，跟随本身不表示消极或做错。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-role\",\"title\":\"主角；主演\",\"meaning\":\"戏剧、电影等中的主要角色，也可指扮演主要角色的人。\",\"usageNote\":\"读 /liːd/，是可数名词。play the lead 中指角色；the two leads 可指两位主演。\",\"examples\":[{\"id\":\"lead-eg-9\",\"senseId\":\"lead-n-role\",\"en\":\"Nina played the lead in the school show.\",\"zh\":\"妮娜在学校演出中担任主角。\",\"note\":\"play the lead 表示扮演主角。\"},{\"id\":\"lead-role-eg-2\",\"senseId\":\"lead-n-role\",\"en\":\"The two leads stayed after rehearsal to practise the final scene.\",\"zh\":\"两位主演在排练结束后留下来练习最后一场戏。\",\"note\":\"复数 leads 在这里指扮演主要角色的演员。\"}],\"patterns\":[{\"en\":\"play the lead in a play/film\",\"zh\":\"在戏剧／电影中担任主角\",\"note\":\"这里的 lead 是名词。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the female lead\",\"zh\":\"女主角；女主演\",\"note\":\"可指角色，也可指演员，须结合上下文判断。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"leading role\",\"zh\":\"主要角色；主角\",\"note\":\"与角色义接近，不能直接用来指演员本人。\"},{\"en\":\"protagonist\",\"zh\":\"故事的主人公\",\"note\":\"侧重叙事中心人物，不指扮演此人的演员。\"}],\"contrasting\":[{\"en\":\"supporting role\",\"zh\":\"配角\",\"note\":\"与主要角色在戏份或叙事地位上对照。\"},{\"en\":\"supporting actor\",\"zh\":\"配角演员\",\"note\":\"与主演这一演员身份对照。\"}],\"similarNote\":\"分清故事中的角色和扮演角色的人。\",\"contrastingNote\":\"角色与角色比较，演员与演员比较。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-adj-main\",\"title\":\"主要的；领衔的\",\"meaning\":\"在某项工作或活动中担任主要角色的。\",\"usageNote\":\"读 /liːd/，通常放在名词前，如 lead singer、lead researcher。lead singer 中 lead 修饰 singer；play the lead 中 lead 则是名词。\",\"examples\":[{\"id\":\"lead-eg-10\",\"senseId\":\"lead-adj-main\",\"en\":\"He is the lead singer in the band.\",\"zh\":\"他是乐队的主唱。\",\"note\":\"lead 修饰 singer，表示担任主唱的歌手。\"},{\"id\":\"lead-main-eg-2\",\"senseId\":\"lead-adj-main\",\"en\":\"Dr Chen is the lead researcher on the project.\",\"zh\":\"陈博士是这个项目的首席研究员。\",\"note\":\"lead researcher 指领衔研究工作的人。\"}],\"patterns\":[{\"en\":\"lead + noun\",\"zh\":\"主要的／领衔的……\",\"note\":\"通常作名词前的定语。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"lead singer\",\"zh\":\"主唱\",\"note\":\"指乐队中担任主要演唱任务的人。\",\"kind\":\"common-collocation\"},{\"en\":\"lead actor\",\"zh\":\"主演\",\"note\":\"lead 修饰 actor，表示担任主要角色的演员。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"main\",\"zh\":\"主要的\",\"note\":\"含义更广；固定职务或角色名称不一定能机械替换。\"},{\"en\":\"principal\",\"zh\":\"首要的；主要的\",\"note\":\"较正式，也用于某些主要职务或角色。\"}],\"contrasting\":[{\"en\":\"supporting\",\"zh\":\"配角的\",\"note\":\"在 lead actor 与 supporting actor 这类表演角色中形成对照。\"}],\"similarNote\":\"意思接近不表示每个固定搭配都可以替换。\",\"contrastingNote\":\"supporting 的这一对照限于表演角色等相关语境。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-leash\",\"title\":\"动物牵引绳\",\"meaning\":\"拴在狗等动物身上、供人牵引的绳或带。\",\"usageNote\":\"读 /liːd/，是可数名词，主要用于英式英语；美式英语通常用 leash。\",\"examples\":[{\"id\":\"lead-leash-eg-1\",\"senseId\":\"lead-n-leash\",\"en\":\"Please keep your dog on a lead near the playground.\",\"zh\":\"在游乐场附近，请给你的狗拴好牵引绳。\",\"note\":\"on a lead 表示拴着牵引绳。\"},{\"id\":\"lead-leash-eg-2\",\"senseId\":\"lead-n-leash\",\"en\":\"I hung the dog's lead beside the front door.\",\"zh\":\"我把狗的牵引绳挂在了前门旁。\",\"note\":\"这里的 lead 是一件可数的物品。\"}],\"patterns\":[{\"en\":\"keep a dog on a lead\",\"zh\":\"让狗拴着牵引绳\",\"note\":\"常见于遛狗或公共场所的提醒。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a dog lead\",\"zh\":\"狗的牵引绳\",\"note\":\"英式日常表达。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"leash\",\"zh\":\"牵引绳\",\"note\":\"在此义中意思相同，是美式英语通常使用的词。\"}],\"contrasting\":[],\"similarNote\":\"在牵引狗的语境中，lead 和 leash 主要体现地区用词差异。\",\"contrastingNote\":\"牵引绳是物品名，没有通用反义词；on a lead 与 off the lead 对照的是是否拴绳。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-wire\",\"title\":\"导线；连接线\",\"meaning\":\"连接电源、设备或电路部件的电线或电缆。\",\"usageNote\":\"读 /liːd/，是可数名词。日常设备电源线的这一叫法常见于英式英语，电气专业语境也使用 lead。\",\"examples\":[{\"id\":\"lead-wire-eg-1\",\"senseId\":\"lead-n-wire\",\"en\":\"Unplug the power lead before moving the printer.\",\"zh\":\"移动打印机前，先拔掉电源线。\",\"note\":\"power lead 指连接电源的线。\"},{\"id\":\"lead-wire-eg-2\",\"senseId\":\"lead-n-wire\",\"en\":\"The red lead connects the battery to the lamp.\",\"zh\":\"红色导线把电池和灯连接起来。\",\"note\":\"这里指连接用的导线，不是金属铅。\"}],\"patterns\":[{\"en\":\"a lead connects A to B\",\"zh\":\"一根导线连接 A 和 B\",\"note\":\"connect A to B 表示把两者连接起来。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"power lead\",\"zh\":\"电源线\",\"note\":\"美式日常英语常说 power cord。\",\"kind\":\"common-collocation\"},{\"en\":\"battery lead\",\"zh\":\"电池连接线\",\"note\":\"指连接电池的导线或电缆。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"wire\",\"zh\":\"电线；导线\",\"note\":\"范围更广；lead 突出用于连接设备或电路部件的功能。\"},{\"en\":\"power cord\",\"zh\":\"电源线\",\"note\":\"与 power lead 对应，不能替代所有电路中的 lead。\"}],\"contrasting\":[],\"similarNote\":\"根据连接功能和具体设备选择 wire、lead 或 power cord。\",\"contrastingNote\":\"导线是具体物品，没有通用反义词。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"lead-n-pencil\",\"title\":\"铅笔芯；替芯\",\"meaning\":\"铅笔中用于书写的芯，也指自动铅笔使用的一根根替芯。\",\"usageNote\":\"读 /led/。现代铅笔芯主要用石墨制成，并非金属铅。指芯的材料时可不可数，指单根替芯时可数。\",\"examples\":[{\"id\":\"lead-pencil-eg-1\",\"senseId\":\"lead-n-pencil\",\"en\":\"The lead in my pencil broke during the test.\",\"zh\":\"考试时，我的铅笔芯断了。\",\"note\":\"这里指铅笔里面的芯。\"},{\"id\":\"lead-pencil-eg-2\",\"senseId\":\"lead-n-pencil\",\"en\":\"I bought a pack of leads for my mechanical pencil.\",\"zh\":\"我给自动铅笔买了一盒替芯。\",\"note\":\"leads 指多根替芯，读 /ledz/。\"}],\"patterns\":[{\"en\":\"the lead in a pencil\",\"zh\":\"铅笔里的芯\",\"note\":\"不要把这个名称理解为铅笔芯含有金属铅。\",\"kind\":\"common-collocation\"}],\"collocations\":[{\"en\":\"pencil lead\",\"zh\":\"铅笔芯\",\"note\":\"读 /led/。\",\"kind\":\"common-collocation\"},{\"en\":\"spare leads\",\"zh\":\"备用铅笔芯\",\"note\":\"通常指自动铅笔的替芯。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[],\"contrasting\":[],\"similarNote\":\"graphite 是石墨这一材料名，不与包含其他成分的铅笔芯完全等同。\",\"contrastingNote\":\"铅笔芯是具体物品或材料，没有通用反义词。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses",
+        "expectedValueJson": "[{\"id\":\"lead-n-role\",\"title\":\"主角；主演角色\",\"meaning\":\"戏剧、电影或故事中最重要的角色。\",\"note\":\"常见于 play the lead 或 the lead role。\",\"example\":{\"id\":\"lead-eg-9\",\"senseId\":\"lead-n-role\",\"en\":\"Nina played the lead in the school show.\",\"zh\":\"妮娜在学校演出中担任主角。\",\"note\":\"play the lead 表示扮演主角。\"},\"sourceIds\":[\"cambridge-lead\"]},{\"id\":\"lead-adj-main\",\"title\":\"主要的；带头的\",\"meaning\":\"表示最重要、最突出或处于领先位置的。\",\"note\":\"常放在名词前，如 lead actor（主演）、lead researcher（主要研究员）。\",\"example\":{\"id\":\"lead-eg-10\",\"senseId\":\"lead-adj-main\",\"en\":\"He is the lead singer in the band.\",\"zh\":\"他是乐队的主唱。\",\"note\":\"lead 修饰 singer，表示主要或带头的歌手。\"},\"sourceIds\":[\"cambridge-lead\"]},{\"id\":\"lead-v-cover\",\"title\":\"给……加铅；用铅包覆\",\"meaning\":\"在专业或特定材料语境中，给物品加上铅或以铅覆盖。\",\"note\":\"这是较少见的动词用法，初中阶段认识即可；规则过去式可写 leaded。\",\"example\":{\"id\":\"lead-eg-11\",\"senseId\":\"lead-v-cover\",\"en\":\"The workers leaded the roof to protect it from rain.\",\"zh\":\"工人们用铅覆盖屋顶以防雨水。\",\"note\":\"此处 lead 作“用铅覆盖”解，过去式为 leaded；不要与表示“带领”的 led 混淆。\"},\"sourceIds\":[\"cambridge-lead\"]}]",
+        "valueJson": "[{\"id\":\"lead-v-cover\",\"title\":\"给……加铅；用铅包覆\",\"meaning\":\"给物品加上铅或以铅覆盖，也可指加铅压重。\",\"note\":\"这是较少见的专业动词，原形读 /led/；过去式和过去分词均为 leaded /ˈledɪd/。被铅包覆可用 be leaded 表达。\",\"example\":{\"id\":\"lead-eg-11\",\"senseId\":\"lead-v-cover\",\"en\":\"The workers leaded the roof to protect it from rain.\",\"zh\":\"工人们用铅覆盖屋顶以防雨水。\",\"note\":\"leaded 在这里读 /ˈledɪd/，不要与带领义的 led 混淆。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]},{\"id\":\"lead-n-type\",\"title\":\"排版行间铅条；相关行距\",\"meaning\":\"传统铅字排版中放在字行之间的薄铅条，也可指由此形成的行距。\",\"note\":\"这是与金属铅有关的排版术语，读 /led/；表示单根铅条时可数。\",\"example\":{\"id\":\"lead-type-eg-1\",\"senseId\":\"lead-n-type\",\"en\":\"The printer inserted a lead between the lines of type.\",\"zh\":\"印刷工在两行铅字之间插入了一根薄铅条。\",\"note\":\"这里的 a lead 是传统排版用的行间铅条。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]},{\"id\":\"lead-n-sales\",\"title\":\"潜在客户；客户线索\",\"meaning\":\"可能购买产品或服务的人，或可供销售人员跟进的相关信息。\",\"note\":\"营销用语，读 /liːd/，可数；成为 lead 不表示已经成交。\",\"example\":{\"id\":\"lead-sales-eg-1\",\"senseId\":\"lead-n-sales\",\"en\":\"We got three new sales leads at the local fair.\",\"zh\":\"我们在当地展会上获得了三条新的潜在客户线索。\",\"note\":\"sales leads 是可以进一步联系、了解购买意向的客户线索。\"},\"sourceIds\":[\"wiktionary-lead-etymology\"]}]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"表示“导致”时，lead to 后接名词或动名词；这里的 to 是介词，不接动词原形。\"",
+        "valueJson": "\"lead to + 名词或动名词表示导致结果，其中 to 是介词；lead someone to do 则表示促使某人做某事，其中 to do 是不定式。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"正确：lead someone to do\",\"note\":\"someone 是宾语，后面的 to do 是不定式。\",\"example\":{\"id\":\"lead-conf-eg-6\",\"senseId\":\"lead-v-result\",\"en\":\"The discount led me to buy the larger pack.\",\"zh\":\"优惠促使我买了大包装。\",\"note\":\"me 后接 to buy，不把它改成 buying。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"表达“导致做某事”时说 lead to doing，不说 lead to do。\"",
+        "valueJson": "\"记住两种结构：lead to + 名词／动名词；lead someone to + 动词原形。区别在于有没有 someone 这个宾语，以及 to 的语法作用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[\"wiktionary-lead-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"mis-（错误地）+ lead（引导），属于带领义的同族复合词。\"",
+        "valueJson": "\"前缀 mis-（错误地）+ lead（引导），是与带领义相关的前缀派生词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/en",
+        "expectedValueJson": "\"The unclear sign misled us about the exit.\"",
+        "valueJson": "\"The unclear sign misled us into taking the wrong exit.\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/example/zh",
+        "expectedValueJson": "\"不清楚的标牌让我们误以为出口在别处。\"",
+        "valueJson": "\"那块不清楚的标牌误导了我们，让我们走错了出口。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"cambridge-lead\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-lead\",\"title\":\"Cambridge Dictionary: lead\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/lead\",\"supports\":[\"动词 lead 的基本含义、搭配和不规则形式\",\"名词 lead 表示领先、线索和金属铅时的读音及含义\",\"lead 的相关派生词和常用表达\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/title",
+        "expectedValueJson": "\"Wiktionary: lead（English）— etymology\"",
+        "valueJson": "\"法语维基词典：lead（英语词条，含释义、发音和词源）\""
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"带领义和金属铅义的不同历史来源\",\"动词 lead 读 /liːd/、金属 lead 读 /led/ 的区别\"]",
+        "valueJson": "[\"引导义与金属义的读音、动词变形及不同历史来源\",\"领先、线索、牵引绳、电气连接线、主角、铅及铅笔芯等名词义\",\"加铅动词及排版、机械、航海、营销等专门义\",\"leader、leadership 等关联词\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 770,
+    "headword": "lead",
+    "meaning_zh": "n. 铅, 铅条, 领导, 超前量, 领引, 榜样, 主角, 导线\nvt. 引导, 带领, 领导, 指挥, 致使, 加铅于, 用铅包\nvi. 领导, 带头, 导致, 用测深锤测深, 被铅覆盖\nadj. 带头的, 最重要的",
+    "phonetic": "/li:d. led/",
+    "pos": "",
+    "forms": []
+  }
+}

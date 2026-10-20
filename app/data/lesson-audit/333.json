@@ -1,0 +1,178 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "8bea770bbf83302f8a09f4c82b7d35dd75cda403b9025b8ca664a1255e92653c",
+    "executedReviewPromptHash": "8bea770bbf83302f8a09f4c82b7d35dd75cda403b9025b8ca664a1255e92653c",
+    "reviewHash": "085141d0adbf6670bd2b50d9055295e8ee13d70cf34310476c4bcc7509940986",
+    "wordId": 333,
+    "inputHash": "a9e418b1c366a45ef4fc709074e272f59eb5ab10fb79ef81a5bb89408e1793b3",
+    "draftHash": "379b5e21632b6c8a2aeb7d017901109efbb74ad53d80e7d61b6d8cb00d0739f5",
+    "finalHash": "cc1310ccdeee3f360e51d590c3894a225ccf5a0a98efd4b08c1c1dfe6c7d3451",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/courage#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.845Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 10730,
+        "revisionId": 39809159,
+        "revisionTimestamp": "2026-08-16T20:35:13Z",
+        "sha256": "055ce6a6faa5c12849aabf63b6e7299b706ccdb2cd6d9320d91c33d00f4e095b",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/courage",
+        "section": "courage etymology",
+        "supports": [
+          "Cor heart",
+          "Earlier feelings and disposition",
+          "Bravery specialization"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "adff47c9d18e5e65394a0cf892e62a173279d9749e5afab8f325672f177a7f30",
+        "summaryAndSupportsWordCount": 65,
+        "sha256": "adff47c9d18e5e65394a0cf892e62a173279d9749e5afab8f325672f177a7f30",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/333.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/courage",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T13:59:46.195Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:07:01.810Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/wordFamily/2",
+        "message": "encouragement 由 encourage 直接加 -ment 构成，保留词尾 e。“去掉词尾 e”会得到错误拼写 encouragment；后面的拼写提示也需同步改清楚。"
+      },
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "把 ou 一概说明为 /ʌ/，与本课列出的美式卷舌元音 /ɝː/ 不一致；应限定英美读音的适用范围。现有 IPA 可保留。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary",
+        "message": "“所给历史词源说明”属于制作说明，应改为直接讲述有来源支持的历史事实。现有词源阶段的先后关系可以保留。"
+      }
+    ],
+    "coverageAssessment": "词典定义只有“勇气；胆量”这一个现代核心名词义，无须强行分义。两则原创例句分别覆盖日常压力与危险情境，数量、译文和 senseId 均合适。不可数用法、搭配及近反义的语境限制基本准确；词族和词源经修正后可用。审核依据限于提供的来源内容与专业语言知识；Cambridge 未取得正文，Oxford 仅作为推荐查询页。",
+    "senseInventory": [
+      {
+        "sense": "名词：勇气；胆量，即面对危险、困难或令人害怕的事情时表现出的勇敢品质。",
+        "coveredBy": [
+          "courage-n-bravery"
+        ],
+        "assessment": "覆盖充分。课堂发言与消防救援体现同一核心义的不同应用情境，不需要拆成独立义项；通常不可数的说明正确。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/formation",
+        "expectedValueJson": "\"encourage 去掉词尾 e，再加 -ment。\"",
+        "valueJson": "\"encourage + -ment，保留词尾 e，构成名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"写作 encouragement；不要漏掉 encourage 中的 e 后再错误添加字母。\"",
+        "valueJson": "\"写作 encouragement，g 后的 e 要保留；不要误写成 encouragment。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"拼写中的 ou 在这个词里读 /ʌ/，不要按字母名称读。\"",
+        "valueJson": "\"这里的 ou 不按字母名称读：英式读音含 /ʌ/，美式读音通常含卷舌元音 /ɝː/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"courage 经古法语 corage 进入英语；所给历史词源说明其词族与拉丁语 cor（心）相关。英语后来把其中一个用法发展为面对危险或困难时的勇敢。\"",
+        "valueJson": "\"courage 经古法语 corage 进入英语，历史上与拉丁语 cor（心）相关。古法语 corage 可表示心、内在感受或性情；英语后来发展出面对危险或困难时的勇敢这一常用义。\""
+      }
+    ]
+  },
+  "input": {
+    "id": 333,
+    "headword": "courage",
+    "meaning_zh": "n. 勇气, 胆量",
+    "phonetic": "/'kʌridʒ/",
+    "pos": "",
+    "forms": []
+  }
+}

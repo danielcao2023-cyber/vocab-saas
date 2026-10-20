@@ -1,0 +1,756 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "2f2efd2b9cab210a2932554ce504158fa3248c3ab91d6b30c7058989298a4350",
+    "executedReviewPromptHash": "2f2efd2b9cab210a2932554ce504158fa3248c3ab91d6b30c7058989298a4350",
+    "reviewHash": "6eecf016ee6e35f788e49b4c8d90a4cf28f3ec99ec66c7dc97e9b1c683d6301c",
+    "wordId": 349,
+    "inputHash": "03cb90c8321933bfe6a522cc9ab96fe6cd0dcf4db335b24be987c111dcefce34",
+    "draftHash": "0e72410bf8e4609eb1ff7bb3d86b27ecfb671071a700551e7e2b131f5a7e9da3",
+    "finalHash": "6d111223ccac9cb2592ff839a74e7c3d9e12509287e5f2c0d3daf861682210d8",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/cut#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:54.851Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 116310,
+        "revisionId": 35055674,
+        "revisionTimestamp": "2024-06-12T18:17:47Z",
+        "sha256": "84f54a33d291a76c68a92dafb7fd239805e0d8059c360557b3b7f5a2af2ddabb",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://www.etymonline.com/word/cut",
+        "section": "cut etymology",
+        "supports": [
+          "Middle English cutting meaning",
+          "Uncertain earlier source",
+          "Reduction and shortening extensions"
+        ],
+        "kind": "etymology",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18",
+        "retrievalMethod": "web-tool-public-page-read; original factual summary",
+        "summarySha256": "a247894995bf67ec377619be3f27ee449573afc1a260dfc9ae1865e4d54ca3c3",
+        "summaryAndSupportsWordCount": 70,
+        "sha256": "a247894995bf67ec377619be3f27ee449573afc1a260dfc9ae1865e4d54ca3c3",
+        "hashScope": "original factual summary text, not source page bytes",
+        "supplementPacket": ".tmp/lesson-source-supplement/349.json"
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/cut",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T14:12:36.633Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T14:20:16.378Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0及相关sourceIds",
+        "message": "初稿把多数内容归于未提供正文的Oxford页面。应改引已提供的法语维基词典英语词条，并清空其不能支持的具体用法引用；来源仍只标recommended。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/spellingNote",
+        "message": "cutter实际含两个t，不能解释为直接加-er且不双写。应为cut先双写t，再加-er。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses及/lessCommonSenses",
+        "message": "缺少词典明确列出的服装剪裁、肉类部位等名词义，也未充分展示删去、剔除、切割的不及物用法及若干条目所列延伸义。需补齐核心义和必要的附加义。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2",
+        "message": "切断、隔绝与开辟通路合在一义，各只有一个例句。应分开组织，并分别补足例句；open也不宜作为恢复各种供应的通用表达。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1",
+        "message": "缩短文字和时间缺少直接例句；cut a story short不一定表示编辑删字，宜换成明确限定删减后长度的表达。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0/usageNote",
+        "message": "cut oneself本身不限定为意外。剪头发的说明也应补出have/get one's hair cut，使请别人理发的结构清楚。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/4",
+        "message": "影片例句中的cuts容易与镜头切换混淆；editing范围也远大于删减。改用明确的文章删减例句和限定语境的deletion。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/5/examples/1及/patterns/1",
+        "message": "原句语法正确，但be cut into可以作分词或被动结构理解。形容词义应有第二个清楚的定语例句，并与被动结构区分。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/5/relatedExpressions/contrasting",
+        "message": "whole不能说明花仍长在植株上，剪下来的花也可以完整。应采用有明确适用对象的uncut，并限定比较范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/1/note",
+        "message": "miss a class不等于正式表达的逃课：它不说明是否故意。cut class还应注明主要用于美式非正式英语。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/1",
+        "message": "不能仅凭down后有无on判断是否表示减少；cut down也能直接接the amount等宾语表示减少。"
+      },
+      {
+        "severity": "uncertainty",
+        "location": "/etymology/stages",
+        "message": "词源摘要支持中古英语时期已有切割义，但没有提供中古英语的具体字形。不能把现代词头cut直接作为已核实的历史字形画入阶段链；可靠年代和语义发展保留在summary。"
+      }
+    ],
+    "coverageAssessment": "已核对主要动词、名词和形容词用法，并补足切割的不及物功能、删去与剔除、开路、服装剪裁及肉类部位。修订后每个主学义均有至少两个具体英中例句；较专门的雕刻、相交、影视和水道等用法另列。法语材料描述的是英语cut。法语abattis这一孤立对译不据以猜补专门定义；本课也不穷尽俚语、体育等低频用法。",
+    "senseInventory": [
+      {
+        "sense": "动词：切、割、剪、砍；及物和不及物",
+        "coveredBy": [
+          "cut-v1"
+        ],
+        "assessment": "补充砍树、剪发及剪切性能例句，区分cut down与普通切割。"
+      },
+      {
+        "sense": "动词：割伤自己或身体部位",
+        "coveredBy": [
+          "cut-v1"
+        ],
+        "assessment": "已有割伤例句；删除必然属于意外的限定。"
+      },
+      {
+        "sense": "动词：削减数量、降低价格、缩短时间或文字",
+        "coveredBy": [
+          "cut-v2"
+        ],
+        "assessment": "补充文字和旅程时间例句，保留by与to的区别。"
+      },
+      {
+        "sense": "动词：删去、去掉、剔除",
+        "coveredBy": [
+          "cut-v5"
+        ],
+        "assessment": "新增完整主学义，展示删段落、剔除队员和cut out完全戒除。"
+      },
+      {
+        "sense": "动词：切断、关闭、停止供应；使隔绝",
+        "coveredBy": [
+          "cut-v3"
+        ],
+        "assessment": "分别用电源、发动机和村庄隔绝展示；反向表达按对象限定。"
+      },
+      {
+        "sense": "动词：开辟通路",
+        "coveredBy": [
+          "cut-v4"
+        ],
+        "assessment": "从切断义分出，以开小路和修道路两个例句说明。"
+      },
+      {
+        "sense": "动词：穿过、抄近路",
+        "coveredBy": [
+          "cut-less3"
+        ],
+        "assessment": "补充cut through；不把裸词cut教作go的通用替代。"
+      },
+      {
+        "sense": "动词：刻出、雕刻",
+        "coveredBy": [
+          "cut-less4"
+        ],
+        "assessment": "作为具体切割的专门延伸补充，限定图案与材料结构。"
+      },
+      {
+        "sense": "动词：刺痛、伤害感情",
+        "coveredBy": [
+          "cut-less5"
+        ],
+        "assessment": "补充话语伤人的常见比喻用法；不展开所有身体刺痛场景。"
+      },
+      {
+        "sense": "动词：相交",
+        "coveredBy": [
+          "cut-less6"
+        ],
+        "assessment": "以几何语境列为附加义。"
+      },
+      {
+        "sense": "动词：剪辑影片",
+        "coveredBy": [
+          "cut-less7"
+        ],
+        "assessment": "补充影视专业用法，与普通删短文字区分。"
+      },
+      {
+        "sense": "动词：显出某种形象",
+        "coveredBy": [
+          "cut-less8"
+        ],
+        "assessment": "限定在cut a ... figure固定结构中。"
+      },
+      {
+        "sense": "名词：切口、割伤、伤口",
+        "coveredBy": [
+          "cut-n1"
+        ],
+        "assessment": "原有伤口例句保留，补充物体表面的切口。"
+      },
+      {
+        "sense": "名词：一次切割动作",
+        "coveredBy": [
+          "cut-less9"
+        ],
+        "assessment": "补充可数动作名词用法，与切割后的伤口区分。"
+      },
+      {
+        "sense": "名词：削减、降低、删减",
+        "coveredBy": [
+          "cut-n2"
+        ],
+        "assessment": "保留减薪，改用明确的文章删减例句。"
+      },
+      {
+        "sense": "名词：中断、停顿",
+        "coveredBy": [
+          "cut-less10"
+        ],
+        "assessment": "用常见的power cut展示供电中断，不把cut当作pause的通用替代。"
+      },
+      {
+        "sense": "名词：服装剪裁、发型",
+        "coveredBy": [
+          "cut-n3"
+        ],
+        "assessment": "补充词典中的剪裁义，并用理发语境展示相关发型用法。"
+      },
+      {
+        "sense": "名词：肉的部位、分切肉块",
+        "coveredBy": [
+          "cut-n4"
+        ],
+        "assessment": "新增两个生活例句；不强配反义词。"
+      },
+      {
+        "sense": "名词：通路、人工水道",
+        "coveredBy": [
+          "cut-less11"
+        ],
+        "assessment": "限定人工开挖的水道，不泛化为任何道路。"
+      },
+      {
+        "sense": "名词：影片的剪辑版本",
+        "coveredBy": [
+          "cut-less12"
+        ],
+        "assessment": "用director's cut补充，与被删掉的一处内容区分。"
+      },
+      {
+        "sense": "形容词：经切割的、剪下的",
+        "coveredBy": [
+          "cut-adj1"
+        ],
+        "assessment": "改为两个明确的名词前定语例句；反向表达采用限定语境的uncut。"
+      },
+      {
+        "sense": "形容词相关表达：减价的、缩减的",
+        "coveredBy": [
+          "cut-v2",
+          "cut-less13"
+        ],
+        "assessment": "数量缩减由动词义展示；减价形容词用cut-price说明，不把所有被动cut都标为形容词。"
+      },
+      {
+        "sense": "短语动词：插嘴、打断",
+        "coveredBy": [
+          "cut-less1"
+        ],
+        "assessment": "原例句自然，保留。"
+      },
+      {
+        "sense": "非正式动词：逃课",
+        "coveredBy": [
+          "cut-less2"
+        ],
+        "assessment": "保留例句，补充美式使用范围及与miss a class的区别。"
+      },
+      {
+        "sense": "法语名词对译abattis所涉及的专门义",
+        "coveredBy": [],
+        "assessment": "该孤立对译未限定具体领域，不据此扩写学生定义；不列为初中主学义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-cut\",\"title\":\"Oxford Learner’s Dictionaries: cut\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/cut_1\",\"supports\":[\"常见动词、名词和形容词用法\",\"cut 的不规则词形\",\"短语搭配及发音\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary-cut\",\"title\":\"Wiktionnaire：cut（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/cut#Anglais\",\"supports\":[\"基本切割义和割伤用法\",\"动词不规则变化、名词复数与 /kʌt/ 读音\",\"名词切口、服装剪裁、肉类部位及形容词剪下的用法\"],\"verification\":\"recommended\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[\"wiktionary-cut\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"常用结构是 cut + 物品；说明工具时可用 with。cut oneself 表示不小心弄伤自己。\"",
+        "valueJson": "\"常用结构是 cut + 被切的东西；说明工具时可用 with。cut oneself 表示割伤自己，是否意外要看上下文。cut 也可不接宾语，表示工具的切割性能。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/1/note",
+        "expectedValueJson": "\"可指自己剪，也可指让理发师剪，具体含义由上下文决定。\"",
+        "valueJson": "\"表示剪头发；若要明确表示请别人给自己剪头发，常用 have/get your hair cut。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v1-ex3\",\"senseId\":\"cut-v1\",\"en\":\"The workers cut down the damaged tree beside our house.\",\"zh\":\"工人们把我们家旁边那棵受损的树砍倒了。\",\"note\":\"砍倒整棵树通常用 cut down a tree；cut a tree 本身不保证树已被砍倒。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v1-ex4\",\"senseId\":\"cut-v1\",\"en\":\"My dad cuts my hair at home.\",\"zh\":\"爸爸在家给我剪头发。\",\"note\":\"这里 my dad 是动手剪的人；请别人给自己理发可说 I have my hair cut。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v1-ex5\",\"senseId\":\"cut-v1\",\"en\":\"These scissors don't cut well.\",\"zh\":\"这把剪刀剪东西不太利索。\",\"note\":\"cut 不接宾语，说明剪刀的剪切性能；scissors 按复数使用。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[\"wiktionary-cut\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常见搭配包括 cut costs（削减成本）、cut the price（降价）和 cut a story（删短故事）。\"",
+        "valueJson": "\"常见搭配包括 cut costs（削减成本）、cut the price（降价）。删短文字时可明确说 cut a report to 700 words；by 后接减少的幅度，to 后接减少后的数值。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"cut + 数量或活动表示减少它。\"",
+        "valueJson": "\"cut our screen time 表示减少看屏幕的时间；减少某种行为还常用 cut down on + 名词或动名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/collocations/1",
+        "expectedValueJson": "{\"en\":\"cut a story short\",\"zh\":\"删短故事\",\"note\":\"表示删去部分内容，让故事更短。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"cut a report to 700 words\",\"zh\":\"把报告删减到700词\",\"note\":\"to 后为删减后的词数；cut a story short 则常指提前结束讲述，不一定涉及编辑文字。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v2-ex3\",\"senseId\":\"cut-v2\",\"en\":\"I cut my report from 1,000 words to 700.\",\"zh\":\"我把报告从1,000词删到了700词。\",\"note\":\"from ... to ... 明确说明删减前后的长度。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v2-ex4\",\"senseId\":\"cut-v2\",\"en\":\"Taking the train cut our journey time by an hour.\",\"zh\":\"坐火车让我们的旅程缩短了一个小时。\",\"note\":\"cut journey time 表示缩短旅程时间；by an hour 是缩短的幅度。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"切断、截断；开辟\"",
+        "valueJson": "\"切断、关闭；使隔绝\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"切断电源、联系或供应；也可指开出一条路。\"",
+        "valueJson": "\"使电力、供水或联系中断，使人或地方与外界隔绝；在 cut the engine 等搭配中也表示关闭。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"cut off 常表示切断或使隔绝；cut a path through 表示穿过某处开出路。\"",
+        "valueJson": "\"cut off 常表示切断供应或使隔绝；cut someone off from something 表示使某人与某事物隔绝。cut the engine 表示关掉发动机，但 cut 不能随意替换所有 turn off。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"cut-v3-ex2\",\"senseId\":\"cut-v3\",\"en\":\"They cut a narrow path through the tall grass.\",\"zh\":\"他们在高高的草丛中开出一条窄路。\",\"note\":\"cut a path through 表示清出一条穿过某处的路。\"}",
+        "valueJson": "{\"id\":\"cut-v3-ex2\",\"senseId\":\"cut-v3\",\"en\":\"The worker cut off the power before repairing the fan.\",\"zh\":\"工人先切断电源，然后才修电风扇。\",\"note\":\"cut off the power 表示切断电源；before 说明断电在修理之前。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v3-ex3\",\"senseId\":\"cut-v3\",\"en\":\"The driver cut the engine when we arrived.\",\"zh\":\"我们到达后，司机关掉了发动机。\",\"note\":\"cut the engine 是关闭发动机的常用表达，这里不需要 off。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/1",
+        "expectedValueJson": "{\"en\":\"cut a path through the woods\",\"zh\":\"在树林中开出一条路\",\"note\":\"表示清理或砍开障碍，形成通路。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"cut the engine\",\"zh\":\"关掉发动机\",\"note\":\"表示让发动机停止运转，常见于口语和叙述。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrasting/1",
+        "expectedValueJson": "{\"en\":\"open\",\"zh\":\"打开、开通\",\"note\":\"在道路或供应被阻断的语境中，可表示恢复通行或供应。\"}",
+        "valueJson": "{\"en\":\"restore\",\"zh\":\"恢复\",\"note\":\"恢复已中断的供应或联系时常用，如 restore power、restore the water supply。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/relatedExpressions/contrasting/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"start the engine\",\"zh\":\"启动发动机\",\"note\":\"只与 cut the engine 表示关掉发动机这一搭配对照。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"connect 和 open 只在连接、通行或供应被切断的语境中构成对照。\"",
+        "valueJson": "\"connect 对应接通连接，restore 对应恢复供应或联系；关闭发动机则与 start the engine 对照，不能跨对象套用。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-n1-ex3\",\"senseId\":\"cut-n1\",\"en\":\"Make two small cuts in the lid so that air can get in.\",\"zh\":\"在盖子上切出两个小口，让空气能进去。\",\"note\":\"cuts 也可指物体上的切口，不一定是皮肤上的伤口。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[\"wiktionary-cut\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/examples/1",
+        "expectedValueJson": "{\"id\":\"cut-n2-ex2\",\"senseId\":\"cut-n2\",\"en\":\"The film has a few cuts to keep it short.\",\"zh\":\"这部电影删掉了几处内容以控制片长。\",\"note\":\"cuts 指剪辑或删去的部分。\"}",
+        "valueJson": "{\"id\":\"cut-n2-ex2\",\"senseId\":\"cut-n2\",\"en\":\"The editor made a few cuts to my article before it was published.\",\"zh\":\"编辑在我的文章发表前删掉了几处内容。\",\"note\":\"make cuts to an article 表示删减文章内容；cuts 是复数名词。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"editing\",\"zh\":\"剪辑、编辑\",\"note\":\"在电影或文字语境中，表示整理和删改内容。\"}",
+        "valueJson": "{\"en\":\"deletion\",\"zh\":\"删除；被删除的内容\",\"note\":\"用于文字或片段被删去的语境，不用于表示减薪或减税。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/relatedExpressions/similarNote",
+        "expectedValueJson": "\"reduction 适用于数额减少；editing 特指对影片或文字内容作编辑。\"",
+        "valueJson": "\"reduction 对应数额减少；deletion 对应删除内容。editing 是更广的编辑过程，还可以包含补充、重排和修订。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/4/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/usageNote",
+        "expectedValueJson": "\"作形容词时常放在名词前，如 cut flowers（鲜切花）；过去分词 cut 也常用于被动结构。\"",
+        "valueJson": "\"作形容词时常放在名词前，描述已切割或剪下的状态，如 cut flowers。be cut into pieces 则常按被动结构理解，应与这里的定语用法区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/examples/1",
+        "expectedValueJson": "{\"id\":\"cut-adj1-ex2\",\"senseId\":\"cut-adj1\",\"en\":\"The vegetables are already cut into small pieces.\",\"zh\":\"蔬菜已经切成小块了。\",\"note\":\"be cut 表示被切；into 后说明切成的形状。\"}",
+        "valueJson": "{\"id\":\"cut-adj1-ex2\",\"senseId\":\"cut-adj1\",\"en\":\"Cover the cut fruit and put it in the fridge.\",\"zh\":\"把切好的水果盖好，放进冰箱。\",\"note\":\"cut 位于名词 fruit 前，表示水果已经切过的状态。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/patterns/1",
+        "expectedValueJson": "{\"en\":\"be cut into pieces\",\"zh\":\"被切成几块\",\"note\":\"被动结构 be cut into 描述物品被切后的状态。\",\"kind\":\"sentence-pattern\"}",
+        "valueJson": "{\"en\":\"freshly cut grass\",\"zh\":\"刚割过的草\",\"note\":\"freshly 修饰 cut，说明修剪刚完成；cut 描述草已被割过的状态。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/relatedExpressions/contrasting/0",
+        "expectedValueJson": "{\"en\":\"whole\",\"zh\":\"完整的\",\"note\":\"用于花或食物时，表示尚未切开或分割。\"}",
+        "valueJson": "{\"en\":\"uncut\",\"zh\":\"未切割的、未修剪的\",\"note\":\"如 uncut grass（未修剪的草），可与 cut grass 对照。uncut 由 un- 加 cut 构成。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"whole 只在物品是否完整这一语境中与 cut 对照。\"",
+        "valueJson": "\"uncut 表示未经过切割或修剪。whole 可与切开的食物对照，但不能据此判断花是否已从植株上剪下；剪下来的花也可能完整。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/5/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[\"wiktionary-cut\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v4\",\"title\":\"开辟通路\",\"meaning\":\"通过砍除、挖掘或切开障碍，开出道路或通道。\",\"usageNote\":\"常用 cut a path/road through + 某处，强调开路；cut through a place 则还可表示直接穿过某处，不一定是在修路。\",\"examples\":[{\"id\":\"cut-v4-ex1\",\"senseId\":\"cut-v4\",\"en\":\"They cut a narrow path through the tall grass.\",\"zh\":\"他们在高高的草丛中开出一条窄路。\",\"note\":\"cut a path through 表示清除障碍，形成通路。\"},{\"id\":\"cut-v4-ex2\",\"senseId\":\"cut-v4\",\"en\":\"The workers cut a new road through the forest.\",\"zh\":\"工人们穿过森林开辟了一条新路。\",\"note\":\"宾语是 a new road，说明是在开路，而不只是走过森林。\"}],\"patterns\":[{\"en\":\"cut a path through something\",\"zh\":\"穿过某处开出一条路\",\"note\":\"path 是开出来的通路；through 后接草丛、树林等。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"cut a path through the woods\",\"zh\":\"在树林中开出一条路\",\"note\":\"强调清除障碍形成通路。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"clear a path\",\"zh\":\"清出一条路\",\"note\":\"同样强调去除障碍，但未必涉及切割或砍伐。\"}],\"contrasting\":[{\"en\":\"block a path\",\"zh\":\"堵住一条路\",\"note\":\"只在使道路可通行或不可通行的语境中构成对照。\"}],\"similarNote\":\"clear a path 强调清除障碍；cut a path 更突出砍开、切开或挖出的动作。\",\"contrastingNote\":\"block a path 描述堵路，与开出通路形成情境对照，不是 cut 在所有语境中的反义。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/4",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-v5\",\"title\":\"删去、去掉\",\"meaning\":\"从文本、名单等整体中删去或剔除一部分；cut out 还可表示完全去掉某种食物、饮料或习惯。\",\"usageNote\":\"cut something from something 表示从整体中删去某部分。cut out 强调完全去掉，cut down on 只表示减少；短语动词的意思要连同小品词一起记。\",\"examples\":[{\"id\":\"cut-v5-ex1\",\"senseId\":\"cut-v5\",\"en\":\"The editor cut the final paragraph from my article.\",\"zh\":\"编辑删去了我文章的最后一段。\",\"note\":\"删掉的是整段内容；from my article 说明从哪里删去。\"},{\"id\":\"cut-v5-ex2\",\"senseId\":\"cut-v5\",\"en\":\"She cut out sugary drinks for a month.\",\"zh\":\"她整整一个月都不喝含糖饮料。\",\"note\":\"cut out 表示完全不喝；cut down on 则只保证喝得更少。\"},{\"id\":\"cut-v5-ex3\",\"senseId\":\"cut-v5\",\"en\":\"Two players were cut from the team before the final.\",\"zh\":\"决赛前，两名球员被球队除名了。\",\"note\":\"cut someone from a team 表示把某人从队伍中剔除；这里使用被动结构。\"}],\"patterns\":[{\"en\":\"cut something from something\",\"zh\":\"从某物中删去某部分\",\"note\":\"常用于段落、场景或名单中的项目。\",\"kind\":\"sentence-pattern\"},{\"en\":\"cut something out / cut out something\",\"zh\":\"完全去掉某物\",\"note\":\"代词作宾语时放在中间，如 cut it out。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"cut a scene from a film\",\"zh\":\"从影片中删去一个场景\",\"note\":\"指去掉该场景，不只是把整部影片缩短一些。\",\"kind\":\"common-collocation\"},{\"en\":\"cut out sweets\",\"zh\":\"戒掉甜食\",\"note\":\"表示完全不吃，而非仅减少摄入。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"delete\",\"zh\":\"删除\",\"note\":\"接近删除文字、文件或片段的用法，不表示戒除饮食习惯。\"},{\"en\":\"remove\",\"zh\":\"去掉、移除\",\"note\":\"适用范围更广；remove someone from a team 可与剔除队员的 cut 接近。\"}],\"contrasting\":[{\"en\":\"retain\",\"zh\":\"保留\",\"note\":\"在决定保留还是删掉内容、成员的语境中与 cut 对照。\"},{\"en\":\"include\",\"zh\":\"包括、列入\",\"note\":\"在名单或作品收录内容的语境中，与剔除、删去相对。\"}],\"similarNote\":\"delete 主要用于删除内容或数据；remove 可用于内容、物品或成员，不能把二者都套用于所有 cut out 表达。\",\"contrastingNote\":\"retain 强调原有内容仍保留；include 强调纳入某整体。饮食习惯是否戒除还需结合具体行为说明。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/7",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-n3\",\"title\":\"剪裁、发型\",\"meaning\":\"衣服裁剪形成的版型，也可指头发修剪形成的发型。\",\"usageNote\":\"the cut of a jacket 指夹克的剪裁或版型；在理发语境中，a cut 也可指发型或理发，a haircut 更明确。\",\"examples\":[{\"id\":\"cut-n3-ex1\",\"senseId\":\"cut-n3\",\"en\":\"I like the cut of that jacket, but the sleeves are too long.\",\"zh\":\"我喜欢那件夹克的版型，但袖子太长了。\",\"note\":\"cut 是名词，指衣服的剪裁，不是衣服上的切口。\"},{\"id\":\"cut-n3-ex2\",\"senseId\":\"cut-n3\",\"en\":\"At the salon, she asked for a short, easy-to-manage cut.\",\"zh\":\"在理发店，她要求剪一个短而易打理的发型。\",\"note\":\"理发店的语境使 cut 明确指发型。\"}],\"patterns\":[{\"en\":\"the cut of a jacket\",\"zh\":\"夹克的剪裁、版型\",\"note\":\"of 后接衣物，说明谈的是哪件衣服的剪裁。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a loose cut\",\"zh\":\"宽松的剪裁\",\"note\":\"谈服装时，形容版型较宽松。\",\"kind\":\"common-collocation\"},{\"en\":\"a neat cut\",\"zh\":\"利落的发型\",\"note\":\"谈头发时，指修剪整齐的发型。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"style\",\"zh\":\"款式、发型\",\"note\":\"谈衣服外形或发型时含义接近，但 style 范围更广，还可包含不由裁剪形成的设计特点。\"}],\"contrasting\":[],\"similarNote\":\"cut 突出裁剪或修剪形成的外形；style 更宽，不能在所有位置互换。\",\"contrastingNote\":\"这是款式或外形的类别义，没有自然的通用反义词。\"},\"sourceIds\":[\"wiktionary-cut\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/8",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-n4\",\"title\":\"肉的部位、分切肉块\",\"meaning\":\"按动物身体部位或分切方式得到的一类肉或一块肉。\",\"usageNote\":\"常用 a cut of meat/beef/pork；cut 不仅表示随便一块肉，还可强调肉取自哪个部位或如何分切。\",\"examples\":[{\"id\":\"cut-n4-ex1\",\"senseId\":\"cut-n4\",\"en\":\"This cut of beef is good for slow cooking.\",\"zh\":\"这种部位的牛肉适合慢炖。\",\"note\":\"cut of beef 指按部位分出的牛肉，不是一次切割动作。\"},{\"id\":\"cut-n4-ex2\",\"senseId\":\"cut-n4\",\"en\":\"Ask the butcher for a lean cut of pork.\",\"zh\":\"请肉贩挑一块脂肪较少的猪肉。\",\"note\":\"lean cut 指脂肪较少的肉块或部位；cut 是可数名词。\"}],\"patterns\":[{\"en\":\"a cut of meat\",\"zh\":\"某个部位或某种分切方式的肉\",\"note\":\"of 后说明肉类；可用 beef、pork 等具体名称。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"a lean cut of meat\",\"zh\":\"脂肪较少的肉块\",\"note\":\"lean 描述肉较瘦，不是 cut 本身的另一种意思。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"piece of meat\",\"zh\":\"一块肉\",\"note\":\"不强调部位时可以这样说；不能替换所有表示部位类别的 cut。\"}],\"contrasting\":[],\"similarNote\":\"piece 主要说明是一块；cut 还可说明肉的部位或分切类别。\",\"contrastingNote\":\"肉的部位或分切类别没有自然的通用反义词。\"},\"sourceIds\":[\"wiktionary-cut\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/note",
+        "expectedValueJson": "\"这是口语用法，正式场合可说 miss a class 表示缺课。\"",
+        "valueJson": "\"cut class 主要用于美式非正式英语，表示故意逃课；miss a class 只说明没有上某节课，不说明是否故意，不能直接当作正式版的逃课。\""
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less3\",\"title\":\"穿过、抄近路\",\"meaning\":\"沿较直接的路线穿过某处，常用 cut through 或 cut across。\",\"note\":\"是否在抄近路要看上下文；cut through a place 不一定涉及切割或开路。\",\"example\":{\"id\":\"cut-less3-ex1\",\"senseId\":\"cut-less3\",\"en\":\"We cut through the park to get to school faster.\",\"zh\":\"为了更快到学校，我们抄近路穿过了公园。\",\"note\":\"to get to school faster 明确说明这样走是为了更快到达。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less4\",\"title\":\"刻出、雕刻\",\"meaning\":\"用工具在材料表面刻出文字或图案。\",\"note\":\"可用 cut + 文字或图案 + into + 材料；carve、engrave 可进一步说明雕刻方式。\",\"example\":{\"id\":\"cut-less4-ex1\",\"senseId\":\"cut-less4\",\"en\":\"The artist cut a pattern into the stone.\",\"zh\":\"艺术家在石头上刻出了一个图案。\",\"note\":\"into the stone 说明图案被刻入的材料。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less5\",\"title\":\"刺痛、伤害感情\",\"meaning\":\"使人感到强烈的情感伤害。\",\"note\":\"这是切割的比喻用法，常与 deeply 或 deep 连用，不表示身体真的被割伤。\",\"example\":{\"id\":\"cut-less5-ex1\",\"senseId\":\"cut-less5\",\"en\":\"His unkind words cut her deeply.\",\"zh\":\"他那刻薄的话深深刺痛了她。\",\"note\":\"cut her deeply 指伤害她的感情；cut 在这里是过去式。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less6\",\"title\":\"相交\",\"meaning\":\"一条线与另一条线或一个图形相交。\",\"note\":\"常见于几何等专门语境；也可用 intersect。\",\"example\":{\"id\":\"cut-less6-ex1\",\"senseId\":\"cut-less6\",\"en\":\"The line cuts the circle at two points.\",\"zh\":\"这条直线与这个圆相交于两点。\",\"note\":\"cut 在这里表示相交，不是把圆形物体实际切开。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less7\",\"title\":\"剪辑影片（动词）\",\"meaning\":\"对影片素材进行剪辑。\",\"note\":\"这是影视制作中的用法；edit 适用范围更广，还可用于文字和音频。\",\"example\":{\"id\":\"cut-less7-ex1\",\"senseId\":\"cut-less7\",\"en\":\"The editor is cutting the film this week.\",\"zh\":\"剪辑师这周正在剪辑这部电影。\",\"note\":\"cut a film 在制作语境中表示剪辑，不是用刀切坏胶片。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less8\",\"title\":\"显出某种形象\",\"meaning\":\"在 cut a ... figure 结构中，表示给人某种外表或形象上的印象。\",\"note\":\"这是较书面的固定结构，不能把 cut 当作 seem 的通用替代。\",\"example\":{\"id\":\"cut-less8-ex1\",\"senseId\":\"cut-less8\",\"en\":\"He cut an impressive figure in his dark suit.\",\"zh\":\"他穿着深色西装，显得仪表不凡。\",\"note\":\"cut an impressive figure 形容外表给人鲜明而出众的印象。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less9\",\"title\":\"一次切割（名词）\",\"meaning\":\"切一下的动作。\",\"note\":\"这是可数动作名词，区别于切割后留下的切口或伤口。\",\"example\":{\"id\":\"cut-less9-ex1\",\"senseId\":\"cut-less9\",\"en\":\"One quick cut opened the bag.\",\"zh\":\"只快速划了一刀，袋子就打开了。\",\"note\":\"one cut 数的是切割动作的次数。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less10\",\"title\":\"停电（power cut）\",\"meaning\":\"供电中断。\",\"note\":\"power cut 主要用于英式英语；美式英语常说 power outage。不能把 cut 单独当作任何停顿的通用名称。\",\"example\":{\"id\":\"cut-less10-ex1\",\"senseId\":\"cut-less10\",\"en\":\"We had a power cut during dinner.\",\"zh\":\"我们吃晚饭时停电了。\",\"note\":\"power cut 中的 cut 是名词，表示供电中断，不是减少用电量。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less11\",\"title\":\"人工水道（名词）\",\"meaning\":\"人工开挖、可供水流或船只通过的水道。\",\"note\":\"这是专门名词用法，不能用 cut 泛指日常的任何道路或通路。\",\"example\":{\"id\":\"cut-less11-ex1\",\"senseId\":\"cut-less11\",\"en\":\"A narrow cut connects the river to the canal.\",\"zh\":\"一条狭窄的人工水道把河流和运河连接起来。\",\"note\":\"这里的 cut 指开挖形成的水道。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less12\",\"title\":\"影片的剪辑版本（名词）\",\"meaning\":\"一部影片经过某种剪辑后形成的版本。\",\"note\":\"区别于表示一处删减的 cut；常见 director's cut（导演剪辑版）、final cut（最终剪辑版）。\",\"example\":{\"id\":\"cut-less12-ex1\",\"senseId\":\"cut-less12\",\"en\":\"We watched the director's cut of the film.\",\"zh\":\"我们看了这部电影的导演剪辑版。\",\"note\":\"这里的 cut 指整部影片的特定版本，不是被删掉的一个片段。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"cut-less13\",\"title\":\"减价的（cut-price）\",\"meaning\":\"复合形容词 cut-price 表示减价的、打折的。\",\"note\":\"常见于英式英语，作定语时通常加连字符。普通的预算被削减则常用被动结构，不能一概当作独立形容词用法。\",\"example\":{\"id\":\"cut-less13-ex1\",\"senseId\":\"cut-less13\",\"en\":\"We bought cut-price tickets online.\",\"zh\":\"我们在网上买到了打折票。\",\"note\":\"cut-price 整体修饰 tickets；不是把裸词 cut 当作 discounted 的通用替代。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[\"wiktionary-cut\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"cut down a tree 是把树砍倒；cut down on something 是减少某物或某事。\"",
+        "valueJson": "\"cut down a tree 是砍倒树；cut down on sugar 是减少糖的摄入。cut down 也能直接接宾语表示减少，如 cut down the amount of waste，不能只凭有无 on 判断意思。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"后接树木等具体物体，表示砍倒或砍下。\"",
+        "valueJson": "\"tree 是被砍倒的对象；代词作宾语时放在 cut 与 down 之间，如 cut it down。并非所有 cut down + 宾语都表示砍倒。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"看 down 后面是否有 on：砍倒具体物体用 cut down；减少某种消费或行为用 cut down on。\"",
+        "valueJson": "\"砍倒树：cut down a tree / cut it down；减少摄入或使用：cut down on sugar。cut down the amount of waste 也表示减少，要结合宾语判断。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"直接在 cut 后加 -er，不双写 t。\"",
+        "valueJson": "\"cut 加 -er 时先双写末尾 t：cut → cutter。cutter 中有两个 t。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-cut\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"cutting 既可作 cut 的现在分词，也可作名词；注意动词加 -ing 时双写末尾 t。\"",
+        "valueJson": "\"cutter 和 cutting 都先双写 cut 的末尾 t，再分别加 -er、-ing。cutting 既可作现在分词，也可作名词，如 newspaper cutting（剪报）。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"英语 cut 早期已有用有刃工具切开或划口的意思；后来扩展到缩短、删去或减少。更早的来源存在不同解释，不能确定为单一词根。\"",
+        "valueJson": "\"cut 在中古英语中已经表示用有刃工具切开或划出切口；后来扩展到缩短、删去或减少。更早的来源尚不确定，既有英语内部传承的解释，也有与斯堪的纳维亚语言相关的解释，不能确定为单一词根。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"中古英语\",\"form\":\"cut\",\"meaning\":\"有刃工具切开或划出切口；这是已知的早期英语用法。\"},{\"language\":\"现代英语\",\"form\":\"cut\",\"meaning\":\"由具体的切开延伸为缩短、删去或减少。\"}]",
+        "valueJson": "[]"
+      }
+    ]
+  },
+  "input": {
+    "id": 349,
+    "headword": "cut",
+    "meaning_zh": "n. 切口, 割伤, 降低, 切, 割, 砍, 削, 伤口, 削减, 缩短, 删节, 通路\nadj. 经切割的, 缩减的\nvt. 切, 割, 减少, 刺痛, 开辟, 雕刻, 删节, 缩短, 停止, 排斥, 切断, 关, 显出\nvi. 切, 割, 砍, 刺痛, 相交, 抄近路, 剪辑",
+    "phonetic": "/kʌt/",
+    "pos": "",
+    "forms": []
+  }
+}

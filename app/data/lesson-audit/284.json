@@ -1,0 +1,352 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "4e6ec2a68297bf5b4a6c36e49602c6388b926086f09ddb4a1e90712e7450278e",
+    "executedReviewPromptHash": "4e6ec2a68297bf5b4a6c36e49602c6388b926086f09ddb4a1e90712e7450278e",
+    "reviewHash": "a89783a66ef23bc0ab566976c374b65ac2dfa80d2b63a50452dc32fc36af0f10",
+    "wordId": 284,
+    "inputHash": "cb6d2b1b618f158912b9a2373e4f618d796d639b982a4c3d82246ad6cd35c119",
+    "draftHash": "15ed155e93e204fbd22e40c0e9bbe136aedeb2123dae16b7329ea5213333acb6",
+    "finalHash": "5f94be0051d91671bc4975a4bd4eb29988f8c5b905067d32e2c353085dcadfea",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/clothes#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:46:44.650Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 117494,
+        "revisionId": 39751623,
+        "revisionTimestamp": "2026-08-02T17:18:19Z",
+        "sha256": "f2f02da3fc438b2a313d64bbdd55bf04ca1c26f5b812e4177be37c4644f27cfa",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/clothes",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-18T12:58:25.643Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-18T13:13:48.814Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/sources/0；各处 sourceIds",
+        "message": "Cambridge 页面未取回，不能承担初稿所列的出处支持。移除该来源，并将相关引用改为已取回的 Wiktionnaire 英语词条。"
+      },
+      {
+        "severity": "error",
+        "location": "/takeaway；/studyPlan/0；/forms/0/note；相关语法说明",
+        "message": "名词 clothes 只用复数形式，多处“通常”弱化了这一限制。“动词用复数”也应明确指 clothes 作主语时的谓语动词。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses；/wordFamily/1/example/senseId",
+        "message": "词典另列 clothes 为 clothe 的第三人称单数形式。初稿虽在词族中介绍，却把动词例句归入名词义。应建立较少见用法条目并修正例句归属，无须将它提升为初中核心义。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/formation",
+        "message": "不能把 clothe 解释成现代英语中 cloth 加某个动词词尾的产物。保留同族关系，并说明可直接核对的 clothe + -s → clothes。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamilyNote",
+        "message": "名词 clothes 也可读 /kləʊðz/ 或 /kloʊðz/，因此名词与动词并非必然读音不同，必须结合句子结构判断。"
+      },
+      {
+        "severity": "error",
+        "location": "/confusions/0/items；/wordFamily/0/spellingNote；/senses/0/relatedExpressions/similar/0/note",
+        "message": "需要明确区分 cloth 的不可数布料义和可数的一块布义；只有后者有普通复数 cloths。clothing 在衣物总称义下不可数，也不宜用“也通常”模糊它与 clothes 的语法区别。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/relatedExpressions/contrasting",
+        "message": "原注已正确说明 underwear 不是反义词，但它是 clothes 的子类，与本义没有直接对立关系，宜移出反向表达栏。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/examples/1/zh",
+        "message": "“这些衣服本现在穿已经太小了”中文语序生硬，应明确衣服对本而言太小。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/0/patterns/0/kind",
+        "message": "clothes for + 场合或活动是名词搭配，不是句型。"
+      },
+      {
+        "severity": "polish",
+        "location": "/etymology/summary；/etymology/caveat",
+        "message": "古英语复数来源已有依据，现有单阶段可以保留；正文应直接讲历史事实，去掉“所列历史来源”“历史材料支持”等取材说明，并区分名词词源与动词形式构成。"
+      }
+    ],
+    "coverageAssessment": "已核对全部词典定义：名词 clothes 只有一个常用衣物义，现有两个原创生活例句足够，不应强拆多义；词条末尾的 clothe 第三人称单数形式补入较少见用法。已检查读音、可数性、搭配、译文、词族和词源。Cambridge 未取回，不作出处依据；补充的常识性语言说明依据专业语言知识。",
+    "senseInventory": [
+      {
+        "sense": "复数名词：衣服；衣物",
+        "coveredBy": [
+          "clothes-1"
+        ],
+        "assessment": "核心义覆盖完整，有两个自然原创例句；修正仅复数限制及单件计数说明。"
+      },
+      {
+        "sense": "动词形式：clothe 的一般现在时第三人称单数，给……穿衣或提供衣物",
+        "coveredBy": [
+          "clothes-verb"
+        ],
+        "assessment": "初稿仅在词族中介绍，且例句误挂名词义；补入较少见用法，并将原词族动词例句关联至此义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"plural noun\"",
+        "valueJson": "\"plural noun; verb (third-person singular of clothe)\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"clothes 指衣服这一类物品，通常只用复数形式，动词也用复数；说一件衣物，用 an item of clothing 或 a piece of clothing。\"",
+        "valueJson": "\"clothes 作名词时表示衣服，只用复数形式，作主语时谓语动词用复数；说一件衣物，用 an item of clothing 或 a piece of clothing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/0",
+        "expectedValueJson": "\"记住 clothes 通常作复数：These clothes are...\"",
+        "valueJson": "\"记住名词 clothes 只用复数，作主语时谓语动词用复数：These clothes are...\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge-clothes\"]",
+        "valueJson": "[\"wiktionary-clothes-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/forms/0/note",
+        "expectedValueJson": "\"通常只有复数形式，前面不加 a；搭配复数动词，如 These clothes are clean.\"",
+        "valueJson": "\"作名词时只用复数形式，不说 a clothes；作主语时谓语动词用复数，如 These clothes are clean.\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/usageNote",
+        "expectedValueJson": "\"clothes 是复数名词，通常与 are、these、many 等搭配；不说 a clothes。指一件衣物时可说 a piece/item of clothing。\"",
+        "valueJson": "\"clothes 是只用复数形式的名词，作主语时谓语动词用复数；可用 these、many 等修饰，不说 a clothes 或 two clothes。单件用 a piece of clothing 或 an item of clothing；两件用 two pieces/items of clothing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/examples/1/zh",
+        "expectedValueJson": "\"这些衣服本现在穿已经太小了。\"",
+        "valueJson": "\"这些衣服现在对本来说已经太小了。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/patterns/0/kind",
+        "expectedValueJson": "\"sentence-pattern\"",
+        "valueJson": "\"common-collocation\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"比 clothes 稍正式，也通常作不可数名词；可说 an item of clothing。\"",
+        "valueJson": "\"表示衣物总称，通常比 clothes 稍正式；在这一意义下不可数，作主语时谓语动词用单数。单件用 an item of clothing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"underwear\",\"zh\":\"内衣\",\"note\":\"只指穿在外衣里面的衣物，是 clothes 的一个具体类别，并非反义词。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"没有固定反义词。underwear 只在讨论衣物类别时与外穿衣物形成有限对照。\"",
+        "valueJson": "\"clothes 是衣物的总称，没有常用的直接反义词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-clothes\"]",
+        "valueJson": "[\"wiktionary-clothes-etymology\"]"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"clothes-verb\",\"title\":\"动词：clothe 的第三人称单数形式\",\"meaning\":\"clothe 的一般现在时第三人称单数形式，表示给……穿衣或为……提供衣物。\",\"note\":\"这种动词用法较正式，以识别为主。英式读 /kləʊðz/，美式读 /kloʊðz/，可与名词 clothes 同音，要结合句子结构判断。\",\"example\":{\"id\":\"clothes-verb-ex1\",\"senseId\":\"clothes-verb\",\"en\":\"The costume designer clothes the actors in bright silk for the final scene.\",\"zh\":\"服装设计师为最后一幕的演员们配上色彩鲜艳的丝绸服装。\",\"note\":\"单数主语 designer 后的 clothes 是动词；clothe someone in something 表示给某人穿上某种衣物。\"},\"sourceIds\":[\"wiktionary-clothes-etymology\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/0/note",
+        "expectedValueJson": "\"通常作复数名词，动词用复数。\"",
+        "valueJson": "\"作名词时只用复数形式，作主语时谓语动词用复数；不说 a clothes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/note",
+        "expectedValueJson": "\"通常指制作衣物或擦拭用的布料，复数可为 cloths。\"",
+        "valueJson": "\"表示布料时不可数；表示一块用于擦拭等的布时可数，复数写作 cloths。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"通常作不可数名词；说单件时用 a piece/item of clothing。\"",
+        "valueJson": "\"在衣物总称义下不可数，作主语时谓语动词用单数；说单件时用 a piece/item of clothing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"穿着的衣服通常说 clothes；布料说 cloth；较正式的总称 clothing。记得 clothes 通常配复数动词。\"",
+        "valueJson": "\"衣服用 clothes，布料用 cloth；clothing 是较正式的衣物总称。clothes 作主语时用复数谓语，clothing 作主语时用单数谓语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-clothes\"]",
+        "valueJson": "[\"wiktionary-clothes-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"clothes 是表示衣物的复数名词。所列历史来源将它联系到古英语 clāth 的复数形式 clāthas；现代英语中，cloth 表示布料，clothes 表示穿着的衣物。\"",
+        "valueJson": "\"名词 clothes 源自古英语 clāthas，即 clāth（布、衣物）的复数形式。拼写相同的动词形式 clothes 则是 clothe 加第三人称单数词尾 -s。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/caveat",
+        "expectedValueJson": "\"历史材料支持古英语复数形式这一来源；cloth 与 clothes 在现代英语中的意思和读音已有区别。记忆联想不代表词源。\"",
+        "valueJson": "\"现代英语中，cloth 指布或布料，clothes 指衣物，二者不能当作普通的单复数对应；记忆联想不代表词源。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/spellingNote",
+        "expectedValueJson": "\"单数 cloth，复数通常加 -s 写作 cloths；不要把 cloths 与 clothes 混写。\"",
+        "valueJson": "\"cloth 表示布料时不可数；表示一块布时可数，其复数直接加 -s，写作 cloths。cloths 与 clothes 意义不同，不要混写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"cambridge-clothes\"]",
+        "valueJson": "[\"wiktionary-clothes-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"由 cloth 加动词词尾构成的同族动词。\"",
+        "valueJson": "\"与 cloth、clothes 同族的动词；其第三人称单数由 clothe 直接加 -s，写作 clothes。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/example/senseId",
+        "expectedValueJson": "\"clothes-1\"",
+        "valueJson": "\"clothes-verb\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"cambridge-clothes\"]",
+        "valueJson": "[\"wiktionary-clothes-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamilyNote",
+        "expectedValueJson": "\"cloth、clothe 与 clothes 有词形关系，但 clothes 作名词通常表示衣服；clothe 的第三人称单数也拼作 clothes，语法和读音不同。\"",
+        "valueJson": "\"cloth、clothe 与 clothes 是同族词。名词 clothes 表示衣服，只用复数；动词 clothes 是 clothe 的第三人称单数形式。名词和动词可能同音，要靠句子结构和语境区分。\""
+      },
+      {
+        "op": "replace",
+        "path": "/memoryAid/cues/0/text",
+        "expectedValueJson": "\"clothes：通常当作复数来用。\"",
+        "valueJson": "\"clothes：作名词时只用复数，作主语时谓语动词用复数。\""
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"cambridge-clothes\",\"title\":\"Cambridge Dictionary: clothes\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/clothes\",\"supports\":[\"clothes 的常见含义和名词用法\",\"clothes 的英美读音\",\"cloth、clothing 与 clothe 等相关词形\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"clothes 名词的古英语词源线索\",\"clothes 名词与 clothe 动词形式的区分\",\"名词 clothes 的复数用法及相关词形\"]",
+        "valueJson": "[\"名词 clothes 的衣物义、仅用复数及单件表达\",\"名词 clothes 的英美读音及带 /ð/ 的变体\",\"clothes 作为 clothe 第三人称单数形式的用法与读音\",\"cloth、clothing、clothe 等相关词及 cloth 与 clothes 的元音区别\",\"名词 clothes 的古英语 clāthas 来源\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 284,
+    "headword": "clothes",
+    "meaning_zh": "n. 衣服",
+    "phonetic": "/klәuðz/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "6de0731c27a7a9f2d522c54191c3f8a6008881a730a543576203433fc9ed5f61",
+    "executedReviewPromptHash": "6de0731c27a7a9f2d522c54191c3f8a6008881a730a543576203433fc9ed5f61",
+    "reviewHash": "3c0c2dcbbd9e126a77d6fbef31d7bb06e71f3a794426f6d0bcc38fca76acb5f5",
+    "wordId": 1142,
+    "inputHash": "e51bbafdcbe771cfc7eaf5a1a40ec4953af1fc4ff9f9fe8086b06255b609f9f8",
+    "draftHash": "00fc3ada44942faa5b9b9afc9d3e3d3c90d6d8c691de9b44708ef28e3bf7680c",
+    "finalHash": "e2136da831180fdc5426836a5186f3f3e418439743bc9281aebc0906f287f271",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/remain#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:51:44.667Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 121133,
+        "revisionId": 33741467,
+        "revisionTimestamp": "2024-03-12T06:04:13Z",
+        "sha256": "ef3d63c6d0c7ac2b01591395b90e97a36917daf8e27ec19ab2edb40a193f5b2e",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/remain",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T10:22:00.456Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T10:35:21.269Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/senses/*/examples/*、/confusions/*/items/*/example、/wordFamily/*/example",
+        "message": "原稿的15个例句对象均缺少必填字段 note，需逐项补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/partOfSpeech、/senses、/lessCommonSenses、/wordFamily/0/example/senseId",
+        "message": "英语词条还列有通常用复数 remains 的名词用法。原稿仅在词族中简述，且把“古墙遗迹”的名词例句标为动词“剩下”义。应独立补入残余物义，并把遗迹、遗骸列为扩展义。"
+      },
+      {
+        "severity": "error",
+        "location": "/studyPlan/1、/confusions/1",
+        "message": "学习计划一概禁止 remain doing，辨析却将其泛化为“继续做任意动作”，两者矛盾。remain standing 是规范表达，应保留；须说明其状态补语功能，并限制概括范围。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote、/senses/2/collocations/0、/senses/2/relatedExpressions",
+        "message": "“剩下”义不宜突出 the rest/remains of 作主语；remain unused 实际表示状态持续；be remaining 的条目却用名词前的 remaining 作解释，结构不对应。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/1/spellingNote",
+        "message": "remain 以 n 结尾，没有所谓“词尾 e”；remaining 是直接加 -ing，不双写 n。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "名词 remains 与动词原形 remain 并不同形；它与动词第三人称单数 remains 同形。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources、各处 sourceIds",
+        "message": "Oxford 不在实际取得的来源记录中，不能充当本次审核的材料依据。应改引已取得的维基词典英语词条；其中未明确提供的句法辨析和扩展说明不挂该来源。"
+      },
+      {
+        "severity": "polish",
+        "location": "/headline、/pronunciation/notes/1、/etymology/summary",
+        "message": "标题“在其余部分中留下”含混；发音提示中的“不要按旧音标……”没有明确教学作用；词源正文中的“材料将……”属于制作说明，应改成直接讲述历史事实。"
+      }
+    ],
+    "coverageAssessment": "已按法语页面中的英语词条核对状态持续、留在某处、留在后面、剩余及复数名词用法；同时检查了尚待完成这一常用句型。修订后五个核心教学义各有两个例句，遗迹和遗骸作为扩展义列出。历史来源链与已取得的词源材料一致。来源限制是该词条释义简略，Cambridge 未取得、Oxford 未提供；细分句法及扩展用法依据专业语言知识，不声称获得上述页面的核验支持。",
+    "senseInventory": [
+      {
+        "sense": "动词：仍然是；保持状态或身份",
+        "coveredBy": [
+          "remain-1"
+        ],
+        "assessment": "已用形容词补语和名词补语各举一例，核心覆盖充分。"
+      },
+      {
+        "sense": "动词：留在；继续待在某处",
+        "coveredBy": [
+          "remain-2"
+        ],
+        "assessment": "两个具体地点例句自然，覆盖充分。"
+      },
+      {
+        "sense": "动词：留在后面；别人离开后留下",
+        "coveredBy": [
+          "remain-2"
+        ],
+        "assessment": "通过 remain behind 覆盖，属于地点义的常用表达，无须另拆重复义。"
+      },
+      {
+        "sense": "动词：剩下；仍然存在",
+        "coveredBy": [
+          "remain-3"
+        ],
+        "assessment": "食物和时间例句覆盖充分；需修正主语提示、近义条目及误归类搭配。"
+      },
+      {
+        "sense": "动词句型：尚待完成；结果仍待确定",
+        "coveredBy": [
+          "remain-4"
+        ],
+        "assessment": "两个被动不定式例句及 remains to be seen 结构覆盖充分。"
+      },
+      {
+        "sense": "复数名词 remains：剩余物；残余",
+        "coveredBy": [
+          "remain-5"
+        ],
+        "assessment": "原稿未独立教学；补入食物和物品残片两个例句，并说明复数谓语。"
+      },
+      {
+        "sense": "复数名词 remains：遗迹",
+        "coveredBy": [
+          "remain-6"
+        ],
+        "assessment": "补列扩展义，并将原词族中的古墙遗迹例句关联到此义。"
+      },
+      {
+        "sense": "复数名词 remains：遗骸；遗体",
+        "coveredBy": [
+          "remain-7"
+        ],
+        "assessment": "补列扩展义，注明正式语境及与动物遗骸相关的使用范围。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"verb\"",
+        "valueJson": "\"verb; noun (usually plural: remains)\""
+      },
+      {
+        "op": "replace",
+        "path": "/headline",
+        "expectedValueJson": "\"remain：继续处于某种状态，或在其余部分中留下\"",
+        "valueJson": "\"remain：仍然是、留在、剩下\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"remain 常表示“仍然是／保持”，也可表示“留在某处”和“剩下”。它通常用作不及物动词，后面接形容词、名词、地点短语或 to be done。\"",
+        "valueJson": "\"remain 常表示“仍然是／保持”，也可表示“留在某处”和“剩下”。它通常用作不及物动词，后面接形容词、名词、地点短语或 to be done。另有复数名词 remains，可表示残余物、遗迹或遗骸。\""
+      },
+      {
+        "op": "replace",
+        "path": "/studyPlan/1",
+        "expectedValueJson": "\"记住 remain to be done 表示“尚待处理”，不要写成 remain doing 来表示“仍在做”。\"",
+        "valueJson": "\"分清 remain standing（仍站着）与 remain to be done（尚待完成）；不要把 remain + -ing 当作适用于所有动作的“继续做”句型。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"词尾 -ain 在这里读 /eɪn/，不要按旧音标读成 /eɪn/ 以外的音。\"",
+        "valueJson": "\"第二音节 /meɪn/ 中的 /eɪ/ 是双元音，发音时由 /e/ 滑向 /ɪ/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"cheerful 描述主语继续保持的状态；remained 是过去式。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"a close friend 是名词短语，说明仍然保持的身份或关系。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"in the classroom 说明地点；to clean the desks 说明留下的目的。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"until the rain stops 表示一直留到雨停；这里谈将来，until 从句仍用一般现在时。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 the rest/remains of... 作主语，或用数量、时间等作主语；remain 通常不直接带宾语。\"",
+        "valueJson": "\"把剩下的人、物或时间作主语，如 Three cookies remain、Ten minutes remain；也可用 have ... remaining。remain 不直接带宾语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"three cookies 是剩下的事物，作 remain 的主语。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"remaining 放在 ten minutes 后，表示“剩余的”；这里不是进行时。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/collocations/0",
+        "expectedValueJson": "{\"en\":\"remain unused\",\"zh\":\"仍未使用；闲置着\",\"note\":\"说明某物还在，但尚未被使用。\",\"kind\":\"common-collocation\"}",
+        "valueJson": "{\"en\":\"little time remains\",\"zh\":\"剩下的时间不多了\",\"note\":\"time 为不可数名词，谓语用 remains；little 表示所剩很少。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similar/1",
+        "expectedValueJson": "{\"en\":\"be remaining\",\"zh\":\"剩余\",\"note\":\"常作形容词修饰名词，如 the remaining time（剩余时间）。\"}",
+        "valueJson": "{\"en\":\"be left over\",\"zh\":\"剩余；剩下\",\"note\":\"强调使用或某次活动后剩下，常用于食物、材料等；如 Three cookies are left over。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/relatedExpressions/similarNote",
+        "expectedValueJson": "\"be left 常用于口语表达剩余数量；remain 常把剩下的东西直接作主语。\"",
+        "valueJson": "\"be left 常用于口语表达剩余数量；be left over 尤其适合使用或活动后剩下的食物、材料。remain 常把剩下的东西直接作主语。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"One question 是单数主语，因此用 remains；to be answered 表示该问题尚待回答。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/3/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"to be decided 说明日期尚未确定。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"remain-5\",\"title\":\"remains（复数名词）：剩余物；残余\",\"meaning\":\"某物使用、消耗或破损后留下的部分。\",\"usageNote\":\"通常用复数 remains，并与复数谓语搭配，如 The remains are ...。注意与第三人称单数动词区分：One cookie remains 中的 remains 是动词。\",\"examples\":[{\"id\":\"remain-5-ex1\",\"senseId\":\"remain-5\",\"en\":\"Dad put the remains of the roast chicken in the fridge after dinner.\",\"zh\":\"晚饭后，爸爸把剩下的烤鸡放进了冰箱。\",\"note\":\"the remains of the roast chicken 是名词短语，表示剩下的烤鸡。\"},{\"id\":\"remain-5-ex2\",\"senseId\":\"remain-5\",\"en\":\"We swept the remains of the broken vase into a dustpan.\",\"zh\":\"我们把打碎的花瓶残片扫进了簸箕。\",\"note\":\"这里的 remains 指花瓶破碎后留下的部分，是名词，不是动词。\"}],\"patterns\":[{\"en\":\"the remains of + noun\",\"zh\":\"……剩下的部分；……的残余物\",\"note\":\"remains 是复数名词，of 后接残余物所来自的事物。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"the remains of a meal\",\"zh\":\"一餐后剩下的东西\",\"note\":\"可指剩下的饭菜；日常谈留着再吃的剩饭菜时，也常用 leftovers。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"leftovers\",\"zh\":\"剩饭菜；剩余物\",\"note\":\"谈剩饭菜时比 remains 更日常；不用于指人的遗体。\"},{\"en\":\"remnants\",\"zh\":\"残余部分；残片\",\"note\":\"常指少量残存部分或碎片；不能在遗体语境中随意替换 remains。\"}],\"contrasting\":[],\"similarNote\":\"谈饭菜优先考虑 leftovers；强调残片时可考虑 remnants，具体替换取决于所指事物。\",\"contrastingNote\":\"残余物没有固定的词汇反义词。要表达什么也没剩下，可说 nothing is left。\"},\"sourceIds\":[\"wiktionary\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"remain-6\",\"title\":\"remains（复数名词）：遗迹\",\"meaning\":\"古建筑等毁坏或废弃后留下的部分。\",\"note\":\"常见于历史、旅游和考古语境，如 the remains of a castle；这里的 remains 是复数名词。\",\"example\":{\"id\":\"remain-6-ex1\",\"senseId\":\"remain-6\",\"en\":\"We walked around the remains of an old castle during our trip.\",\"zh\":\"旅行时，我们绕着一座古城堡的遗迹走了一圈。\",\"note\":\"the remains of an old castle 指城堡留下来的建筑部分。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"remain-7\",\"title\":\"remains（复数名词）：遗骸；遗体\",\"meaning\":\"人或动物死后留下的身体或骨骼。\",\"note\":\"常见于新闻、考古或正式叙述；human remains 可译为人的遗体或遗骸，具体译法取决于保存情况。\",\"example\":{\"id\":\"remain-7-ex1\",\"senseId\":\"remain-7\",\"en\":\"The soldier's remains were returned to his family.\",\"zh\":\"那名士兵的遗体被送还给了他的家人。\",\"note\":\"remains 是复数名词，因此用 were；在这里译为“遗体”。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"The door 是主语，open 说明门持续保持的状态。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the door 是 keep 的宾语，open 说明要让门保持的状态。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/title",
+        "expectedValueJson": "\"remain doing 与 remain to be done 意思不同\"",
+        "valueJson": "\"remain standing 与 remain to be done：状态持续与尚待完成\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/summary",
+        "expectedValueJson": "\"remain doing 可表示继续做某动作；remain to be done 表示某事尚待完成。\"",
+        "valueJson": "\"remain standing 用 standing 描述持续的站立姿势；remain to be done 表示事情尚待完成。表达一般动作的延续时，常用 keep doing 或 continue doing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/label",
+        "expectedValueJson": "\"remain + -ing\"",
+        "valueJson": "\"remain + 状态补语（如 standing）\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/items/0/note",
+        "expectedValueJson": "\"表示动作持续，常用于较正式语境。\"",
+        "valueJson": "\"这里 standing 作主语补语，表示站立状态持续；不能据此把 remain + -ing 当作适用于所有动作的通用句型。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"remained standing 是规范表达，说明别人坐下时，她仍保持站姿。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/1/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"最后一页是等待检查的对象，因此用被动形式 to be checked。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/takeaway",
+        "expectedValueJson": "\"持续中的动作可用 remain doing；尚待完成的事项用 remain to be done。\"",
+        "valueJson": "\"remain standing 是“仍站着”；remain to be done 是“尚待完成”。一般表达“继续做某事”，优先用 keep doing 或 continue doing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/summary",
+        "expectedValueJson": "\"remain 经古法语 remaindre 来自拉丁语 remaneo，材料将相关意义解释为“留下、停留”。\"",
+        "valueJson": "\"remain 经古法语 remaindre 传入英语，可追溯到拉丁语 remaneo，意为“留下、停留”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"与动词 remain 同形的名词复数形式，常以复数形式使用。\"",
+        "valueJson": "\"与动词 remain 相关的名词，现代英语中通常用复数 remains；它与动词第三人称单数 remains 同形。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/example/senseId",
+        "expectedValueJson": "\"remain-3\"",
+        "valueJson": "\"remain-6\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里的 remains 是复数名词，表示建筑遗迹，不是动词第三人称单数。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/spellingNote",
+        "expectedValueJson": "\"加 -ing 时保留词尾 e 前的拼写结构，写作 remaining。\"",
+        "valueJson": "\"在 remain 后直接加 -ing，保留 ai，不双写 n：remain → remaining。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"remaining 放在 paper 前作定语，表示“剩下的”。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"the remainder of the juice 表示果汁剩下的部分；remainder 是名词。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary\"]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: remain\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/remain\",\"supports\":[\"词性、常见义项和句型\",\"词形变化与读音\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"wiktionary\",\"title\":\"Wiktionary: remain（English）\",\"url\":\"https://fr.wiktionary.org/wiki/remain#Anglais\",\"supports\":[\"词源历史来源链\"],\"verification\":\"recommended\"}",
+        "valueJson": "{\"id\":\"wiktionary\",\"title\":\"法语维基词典：remain（英语词条）\",\"url\":\"https://fr.wiktionary.org/wiki/remain#Anglais\",\"supports\":[\"英语动词 remain 的基本义与名词复数 remains\",\"读音及规则动词词形\",\"经古法语 remaindre 追溯至拉丁语 remaneo 的历史来源链\",\"相关词 remainder、remains、remnant 的列示\"],\"verification\":\"recommended\"}"
+      }
+    ]
+  },
+  "input": {
+    "id": 1142,
+    "headword": "remain",
+    "meaning_zh": "vi. 保持, 逗留, 剩余",
+    "phonetic": "/ri'mein/",
+    "pos": "",
+    "forms": []
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "d04250d65b3da5ce458062960220e842c7006b973a1d048cc6e1eacf51e6371f",
+    "executedReviewPromptHash": "d04250d65b3da5ce458062960220e842c7006b973a1d048cc6e1eacf51e6371f",
+    "reviewHash": "84db3d859026e857c9781e6d22dc6cf6ca086d67cfce7a3dfcc755dfef3fd51a",
+    "wordId": 1370,
+    "inputHash": "b38b4f2b6fd0e7cbe76e4c3b59f822460bb5f428039692e25340d14fb1a14894",
+    "draftHash": "8fbf532d9417bcca0241c2df2517eb2acf8662a2ae981168d5169720eea8fbc7",
+    "finalHash": "3869f309bf5de3388ac80568f2f73baa652409c13b5012ac5e2f17077b8d1dde",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/table#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:52:46.556Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 774,
+        "revisionId": 39845832,
+        "revisionTimestamp": "2026-09-01T13:21:28Z",
+        "sha256": "e0334fc00cc553cd011266ac6ba5634197731c374e1690b82442326171e24858",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/table",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T16:41:33.230Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T16:59:03.656Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/pronunciation/notes/1",
+        "message": "table 整个词通常有两个音节，并非“末尾是两个音节”；词尾也可以用成音节的 /l̩/ 发音，不能笼统禁止省去弱元音。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources 与各 sourceIds",
+        "message": "实际材料没有 Oxford 词条内容，不能将其用作已依据的来源。应移除该来源，将有材料支持的内容关联到现有 Wiktionnaire 来源；其余专业语言知识不冒挂来源。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/0/formation",
+        "message": "tabulate 不是 table 直接加 -ate；这种说明无法解释实际拼写中的 tabul-。"
+      },
+      {
+        "severity": "error",
+        "location": "/etymology/stages",
+        "message": "拉丁语阶段的 meaning 只是重复词源关系，没有提供词义。现有材料支持 tabula 的词源关联，但未提供其释义，应保留 summary 中的事实并删除空洞阶段。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0/example",
+        "message": "例句只使用 tableland，不能证明裸词 table 的地理义；应换成实际使用 table 的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses、/lessCommonSenses、/confusions、/wordFamily 中的部分 example",
+        "message": "共十个例句缺少目标结构要求的 note 字段，需要补齐。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/0",
+        "message": "标题包含“工作台”，现有两个例句只覆盖用餐和放书，应补充实际工作场景。chair 也不是该义的反向表达，不宜用来填充反义对照。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/1/collocations 与 /lessCommonSenses",
+        "message": "应补充常用的 table of contents、multiplication table，并为原始释义中的动词“制表”提供独立拓展说明；可同时准确呈现来源明确标为少见的“放到桌上”义。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses/2/examples/1",
+        "message": "现有英文中 tomorrow 的修饰范围不够清楚，中文又直接解释为明天表决；改为具体的英式会议场景可同时明确时间、动作和地区用法。"
+      }
+    ],
+    "coverageAssessment": "已核对家具、行列表格、提交议案、搁置议题四个主要义及其例句。补丁保留每个核心义至少两个例句，补足工作台场景、常用表格表达及两个动词拓展义。英美议事差异的基本说明正确；put forward、submit、postpone 等比较及 paragraph 的呈现方式对照已有语境限制，可保留。古旧的“铭文”及“平地层、嵌合”等未细分的专门释义不属于初中核心教学范围，现有材料也不足以展开其技术细节。历史词源仅保留材料支持的拉丁语 tabula 关联，不补造中间阶段或拉丁语释义。",
+    "senseInventory": [
+      {
+        "sense": "名词：桌子、餐桌、供工作使用的桌台",
+        "coveredBy": [
+          "table-n-furniture"
+        ],
+        "assessment": "核心义已覆盖；补充工作台例句，并加入餐馆订桌搭配。"
+      },
+      {
+        "sense": "名词：按行列排列的信息表、数据表",
+        "coveredBy": [
+          "table-n-information"
+        ],
+        "assessment": "核心义及两个例句充分；补充目录表和乘法表这两个常见用途，不必机械拆义。"
+      },
+      {
+        "sense": "动词：正式提交议案供讨论、考虑或表决",
+        "coveredBy": [
+          "table-v-discuss"
+        ],
+        "assessment": "已有两个例句，基本正确；调整第二例的时间表达，并保留英式用法提示。"
+      },
+      {
+        "sense": "动词：搁置、暂缓处理议题",
+        "coveredBy": [
+          "table-v-postpone"
+        ],
+        "assessment": "美式普通会议用法及两个例句正确；具体议事程序中的 table 与定期 postpone 不宜理解为完全等同。"
+      },
+      {
+        "sense": "动词：将数据列成表格",
+        "coveredBy": [
+          "table-v-tabulate"
+        ],
+        "assessment": "原稿未覆盖；补丁作为书面数据语境的拓展义加入。"
+      },
+      {
+        "sense": "动词：把东西放到桌上",
+        "coveredBy": [
+          "table-v-place"
+        ],
+        "assessment": "实际来源明确标为少见义；补丁加入带少见用法提示的例句。"
+      },
+      {
+        "sense": "名词：高而平坦的台地、平顶地形",
+        "coveredBy": [
+          "table-n-flatland"
+        ],
+        "assessment": "原稿有释义，但例句使用的是 tableland；补丁改为实际使用 table。"
+      },
+      {
+        "sense": "名词：原始释义中的“铭文”",
+        "coveredBy": [],
+        "assessment": "属于古旧或特定载体语境，不能笼统教作现代 inscription 的通用替代；不列入本课核心义。"
+      },
+      {
+        "sense": "名词：原始释义中的“平地层”",
+        "coveredBy": [],
+        "assessment": "未提供具体专门语境，不据此扩写独立技术定义；不影响日常核心义覆盖。"
+      },
+      {
+        "sense": "动词：原始释义中的“嵌合”",
+        "coveredBy": [],
+        "assessment": "专门技术义，缺乏具体对象及操作语境，不展开为初中常用义。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"末尾是两个音节，不要按旧式拼法把中间元音省掉。\"",
+        "valueJson": "\"整个词通常读作两个音节；词尾可读 /bəl/，也可用成音节的 /l̩/ 读作 /bl̩/。\""
+      },
+      {
+        "op": "replace",
+        "path": "/forms/2/note",
+        "expectedValueJson": "\"规则动词加 -ed。\"",
+        "valueJson": "\"词尾已有不发音的 e，过去式和过去分词只加 -d，写作 tabled。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"at the kitchen table 表示在厨房餐桌旁用餐。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"on the table 表示在桌面上；与表示人在桌旁的 at the table 区分。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"table-n-furniture-ex3\",\"senseId\":\"table-n-furniture\",\"en\":\"Dad put the broken lamp on the work table and began to repair it.\",\"zh\":\"爸爸把坏台灯放在工作台上，开始修理。\",\"note\":\"work table 指供工作使用的桌台；修理、制作时使用的结实工作台也常叫 workbench。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"book/reserve a table\",\"zh\":\"预订餐位\",\"note\":\"在餐馆语境中指预订供用餐的桌位。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrasting",
+        "expectedValueJson": "[{\"en\":\"chair\",\"zh\":\"椅子\",\"note\":\"在家具语境中与 table 功能不同：桌子承放物品，椅子供人坐。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/contrastingNote",
+        "expectedValueJson": "\"chair 只是在家具用途上与桌子相对，并非 table 在所有意义下的反义词。\"",
+        "valueJson": "\"table 在家具义下没有常用的直接反义词。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/0/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"table 指按行列列出各项运动及对应人数的数据表。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"这里填写的是有相应行列或单元格的表格；申请表等需要填写的表单通常叫 form。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a table of contents\",\"zh\":\"目录\",\"note\":\"列出书籍或文档的章节，通常附有页码；contents 在这一表达中用复数。\",\"kind\":\"fixed-expression\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/1/collocations/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"a multiplication table\",\"zh\":\"乘法表\",\"note\":\"列出乘法运算结果；英式英语中，the six times table 指六的乘法表或相应口诀。\",\"kind\":\"common-collocation\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/examples/1",
+        "expectedValueJson": "{\"id\":\"table-v-discuss-ex2\",\"senseId\":\"table-v-discuss\",\"en\":\"The council will table the motion for a vote tomorrow.\",\"zh\":\"委员会将把这项动议提交明天表决。\",\"note\":\"此处 table 指提交议事程序；实际含义应结合地区背景。\"}",
+        "valueJson": "{\"id\":\"table-v-discuss-ex2\",\"senseId\":\"table-v-discuss\",\"en\":\"At tomorrow's council meeting, Maya will table a motion to repair the footbridge.\",\"zh\":\"在明天的市议会会议上，玛雅将提交一项修缮人行桥的动议。\",\"note\":\"按英式英语理解；table 表示正式提交动议，并不表示动议已经获通过。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/example",
+        "expectedValueJson": "{\"id\":\"table-n-flatland-ex1\",\"senseId\":\"table-n-flatland\",\"en\":\"The village stands on a high tableland.\",\"zh\":\"这个村庄坐落在一片高原上。\"}",
+        "valueJson": "{\"id\":\"table-n-flatland-ex1\",\"senseId\":\"table-n-flatland\",\"en\":\"The village stood on a broad table of land above the valley.\",\"zh\":\"那个村庄坐落在山谷上方一片宽阔平坦的台地上。\",\"note\":\"这里 table 指高而平坦的地形，是较少见的地理用法；tableland 是相关复合词。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"table-v-tabulate\",\"title\":\"把数据列成表格\",\"meaning\":\"把信息或数字按表格形式列出。\",\"note\":\"见于报告等书面语，常用被动形式；表达把数据整理成表格时也可用 tabulate。\",\"example\":{\"id\":\"table-v-tabulate-ex1\",\"senseId\":\"table-v-tabulate\",\"en\":\"The survey results are tabled below.\",\"zh\":\"调查结果列在下表中。\",\"note\":\"此处 tabled 表示用表格列出，不是提交议案或搁置问题。\"},\"sourceIds\":[]}"
+      },
+      {
+        "op": "add",
+        "path": "/lessCommonSenses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"table-v-place\",\"title\":\"把东西放到桌上\",\"meaning\":\"将某物放在桌面上。\",\"note\":\"这是少见的动词用法；日常交流通常说 put something on the table。\",\"example\":{\"id\":\"table-v-place-ex1\",\"senseId\":\"table-v-place\",\"en\":\"He tabled the papers and took a seat.\",\"zh\":\"他把文件放到桌上，然后坐了下来。\",\"note\":\"按少见的字面义理解，不表示提交文件供会议审议。\"},\"sourceIds\":[\"wiktionary-etymology\"]}"
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"本例将列出具体分数的行列表格与便于视觉比较的图表作对照；chart 的范围也可包含某些表格式呈现。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"采用美式普通会议用法；严格议事程序中，搁置与延期到指定日期可能属于不同程序。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/2/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tablet 指平板电脑，table 指放置电脑的桌子；两词不能互换。\""
+      },
+      {
+        "op": "replace",
+        "path": "/etymology/stages",
+        "expectedValueJson": "[{\"language\":\"拉丁语\",\"form\":\"tabula\",\"meaning\":\"与 table 有词源联系的拉丁语词形。\"}]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/formation",
+        "expectedValueJson": "\"由 table 加 -ate 构成。\"",
+        "valueJson": "\"tabulate 使用 tabul- 这一相关形式和动词词尾 -ate，不是 table 直接加 -ate。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/formation",
+        "expectedValueJson": "\"由 tabulate 加名词后缀 -ion 构成。\"",
+        "valueJson": "\"tabulate 去掉词尾 e，再加名词后缀 -ion，成为 tabulation。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/0/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tabulated 是 tabulate 的过去式；by age group 表示按年龄组分类整理。\""
+      },
+      {
+        "op": "add",
+        "path": "/wordFamily/1/example/note",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"tabulation 是名词；本例指把结果整理成表格的过程。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[\"wiktionary-etymology\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/3/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/lessCommonSenses/0/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford-table\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "remove",
+        "path": "/sources/0",
+        "expectedValueJson": "{\"id\":\"oxford-table\",\"title\":\"Oxford Learner’s Dictionaries: table\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/table\",\"supports\":[\"table 的名词常用义与动词用法\",\"table 的词形变化和派生词参考\"],\"verification\":\"recommended\"}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/sources/0/supports",
+        "expectedValueJson": "[\"table 与拉丁语 tabula 的词源联系\"]",
+        "valueJson": "[\"table 的家具义和行列表格义\",\"提交议案供讨论的动词义，以及少见的放到桌上义\",\"table 的读音及规则词形变化\",\"table 与拉丁语 tabula 的词源联系\"]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1370,
+    "headword": "table",
+    "meaning_zh": "n. 桌子, 餐桌, 工作台, 铭文, 表格, 表, 高原, 平地层\nvt. 搁置, 嵌合, 制表, 把...列入议事日程",
+    "phonetic": "/'teibl/",
+    "pos": "",
+    "forms": []
+  }
+}

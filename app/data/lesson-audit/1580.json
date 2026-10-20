@@ -1,0 +1,405 @@
+{
+  "provenance": {
+    "version": "sense-lessons-v1",
+    "reviewVersion": "sense-lessons-patch-review-v2",
+    "reviewPromptHash": "7d059f01bf6749942b8d533f2940bb0fa7e93431e1d97e115203d7269683d7e2",
+    "executedReviewPromptHash": "7d059f01bf6749942b8d533f2940bb0fa7e93431e1d97e115203d7269683d7e2",
+    "reviewHash": "bacf46fc978cbbeffe90962a71f87d2aa916642ef4e51690375946ec696cb810",
+    "wordId": 1580,
+    "inputHash": "e49c2575053e72cb08a9d06247e96dc9946addf61a7ef0551ec922694c3f8930",
+    "draftHash": "a6f6944f95faada84a768b896b8f06c8f40b80fc21fbd05a2b31e2cfca6a691f",
+    "finalHash": "a5e73d3f7d21ed794eee58af951e415ef213a221a9483db329512342ec96d14b",
+    "generator": {
+      "model": "gpt-6-luna",
+      "method": "codex-exec",
+      "promptVersion": "sense-lessons-v1",
+      "directory": "generate-1",
+      "outputSchemaVersion": "sense-lessons-output-v2",
+      "outputSchemaHash": "7719c930ad30fe4db27aeb7c9dc2d4bb8701f731de47b31ecaecbf2fa17c1ab5",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "reviewer": {
+      "model": "gpt-6.1-sol",
+      "modelSource": "user-cli-configuration; confirmed by root",
+      "modelOverride": false,
+      "reasoningOverride": false,
+      "method": "separate-codex-exec-json-patches",
+      "independentInvocation": true,
+      "humanReviewed": false,
+      "verdict": "revised",
+      "directory": "review-1",
+      "mcpPolicy": {
+        "disabledServers": [
+          "utp",
+          "node_repl"
+        ],
+        "disabledPluginServers": [
+          {
+            "plugin": "unified-computer-use@openai-bundled",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "unified-computer-use",
+            "server": "cua_repl"
+          },
+          {
+            "plugin": "build-ios-apps@openai-curated-remote",
+            "server": "xcodebuildmcp"
+          }
+        ]
+      }
+    },
+    "sourceEvidence": [
+      {
+        "url": "https://fr.wiktionary.org/wiki/worth#Anglais",
+        "status": "retrieved",
+        "fetchedAt": "2026-10-18T00:54:04.272Z",
+        "kind": "etymology",
+        "retrievalMethod": "mediawiki-api-english-section",
+        "pageId": 262864,
+        "revisionId": 39483591,
+        "revisionTimestamp": "2026-05-04T23:26:22Z",
+        "sha256": "dc5916b440c61e0fb141d734196fc815c1a93eeb5f2ce39a7102ab09a547b4e9",
+        "language": "English entry; French editorial explanation",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "truncated": false
+      },
+      {
+        "url": "https://dictionary.cambridge.org/dictionary/english/worth",
+        "status": "unavailable",
+        "fetchedAt": "2026-10-19T23:14:17.819Z",
+        "failure": "http 403 or no dictionary entry"
+      }
+    ],
+    "reviewedAt": "2026-10-19T23:24:29.305Z"
+  },
+  "review": {
+    "verdict": "revised",
+    "issues": [
+      {
+        "severity": "error",
+        "location": "/etymology",
+        "message": "实际取得的英语词条摘录没有古英语 weorþ 或其历史释义；不能仅凭来源的 kind 标签保留词源断言。已删除未经材料支持的历史阶段，只保留可确认的现代词义和词族关系。"
+      },
+      {
+        "severity": "error",
+        "location": "/sources",
+        "message": "Cambridge 未取得正文，Oxford 没有提供实际材料；原稿却将多项说明归于它们。已统一保留实际取得的英语词条来源，调整来源说明及引用；专业语言知识补充不冒充词典原文。"
+      },
+      {
+        "severity": "error",
+        "location": "/lessCommonSenses/0",
+        "message": "名词“价值”是词典明确列出的主要义，不能只放在次要义中且仅给一个例句。“财产总额”还须区分资产总额与 net worth（净资产）。已提升为完整核心义，补足经济价值、作用价值和净资产的例句。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/2/usageNote",
+        "message": "a/an + 时间或数量 + worth of 漏掉所有格，也错误暗示复数时间表达仍需 a/an。已改为时间或金额的所有格结构，并补充金额对应数量的用例。"
+      },
+      {
+        "severity": "error",
+        "location": "/senses/1/meaning",
+        "message": "把“某人值得得到某种对待”并入本义，混淆了 worth 与 deserve、worthy。原混淆提示还暗示 worth 后接名词时均可换成 worthy of。已限定各自语义和句型，并补充 worth doing 的主动形式、常见被动含义及 worthwhile 的不定式结构。"
+      },
+      {
+        "severity": "error",
+        "location": "/wordFamily/2/spellingNote",
+        "message": "不能把 worth while 一概当作误拼；它也有规范分写用例。已说明 worthwhile 通常合写，并区分 worth your while 的固定分写结构。"
+      },
+      {
+        "severity": "polish",
+        "location": "/senses",
+        "message": "首义遗漏主语为人时表示身家的常用功能；另有翻译添加“也”、把 remembering 解释为“记下”，以及把估价措辞直接说成“更客观”等不够准确之处。均已作针对性修正。"
+      }
+    ],
+    "coverageAssessment": "已从法语维基词典的英语条目核对金额价值、是否值得投入以及名词“价值”，并检查时间／金额对应数量这一常用名词功能。修订后各核心义均至少有两个原创英中例句，另补充身家、净资产及关键句型区别。数量搭配和净资产细分使用专业语言知识补充；实际摘录没有历史词源内容，因此不保留古英语断言。",
+    "senseInventory": [
+      {
+        "sense": "值……钱；金钱价值；主语为人时表示身家",
+        "coveredBy": [
+          "worth-value"
+        ],
+        "assessment": "原有物品估值例句自然；已补充人的身家用法，并保留与 cost、be valued at 的语境区别。"
+      },
+      {
+        "sense": "值得投入时间、金钱或精力；值得做、拥有或经历",
+        "coveredBy": [
+          "worth-deserving"
+        ],
+        "assessment": "两例覆盖值得参观和记住；已纠正与 deserve 的混义，补充 worth doing 常有被动含义，以及 worthwhile、worthy 的句型限制。"
+      },
+      {
+        "sense": "名词：价值，包括经济价值、作用或能力的价值；net worth 表示净资产",
+        "coveredBy": [
+          "worth-noun"
+        ],
+        "assessment": "原稿弱化为次要义且仅举经济价值一例。已提升为核心义，提供三个例句并区分净资产与资产总额、收入。"
+      },
+      {
+        "sense": "名词数量结构：某段时间或某笔金额所对应的量",
+        "coveredBy": [
+          "worth-amount"
+        ],
+        "assessment": "保留原有两个时间例句；已修正所有格规则并增加金额例句，使标题、说明和例句一致。"
+      }
+    ],
+    "patches": [
+      {
+        "op": "replace",
+        "path": "/partOfSpeech",
+        "expectedValueJson": "\"形容词用法；名词\"",
+        "valueJson": "\"形容词用法（也分析为介词）；名词\""
+      },
+      {
+        "op": "replace",
+        "path": "/takeaway",
+        "expectedValueJson": "\"最常见的结构是 be worth + 名词，或 be worth doing；doing 用动名词形式。\"",
+        "valueJson": "\"记住 be worth + 金额/名词 和 be worth doing；doing 用主动形式，常有被动含义。名词 worth 表示价值；时间或金额的所有格 + worth of + 名词表示相应的量。\""
+      },
+      {
+        "op": "add",
+        "path": "/studyPlan/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "\"认识名词 worth（价值）及 net worth（净资产），练习 prove one’s worth。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/notes/1",
+        "expectedValueJson": "\"worth 的常见价格义在语法上常分析为介词性用法；学习时重点记住后面接名词或动名词。\"",
+        "valueJson": "\"worth 表示“值……、值得”时，传统教学常按形容词讲，也有词典将其分析为介词；学习时重点记住后接名词、金额或动名词的结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/pronunciation/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/title",
+        "expectedValueJson": "\"值……；价值相当于……\"",
+        "valueJson": "\"值……钱；（人）身家为……\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/meaning",
+        "expectedValueJson": "\"说明某物值多少钱，或价值相当于某个数量。\"",
+        "valueJson": "\"说明某物的金钱价值；主语为人时，也可说明其身家，而不是其收入。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/0/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"worth-e10\",\"senseId\":\"worth-value\",\"en\":\"After selling her company, Mia is worth about two million dollars.\",\"zh\":\"卖掉公司后，米娅的身家约为两百万美元。\",\"note\":\"主语为人时，be worth + 金额表示身家，不表示工资或收入。\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"常用于正式说明评估价格，语气比 worth 更客观。\"",
+        "valueJson": "\"常用于正式说明评估所得的金额；估价不一定等于实际成交价。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/meaning",
+        "expectedValueJson": "\"表示某件事值得花时间、精力或金钱去做，或某人值得得到某种对待。\"",
+        "valueJson": "\"表示做某事或获得、拥有某物有价值，值得投入相应的时间、精力或金钱。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/usageNote",
+        "expectedValueJson": "\"常用 be worth doing；动词用 -ing 形式，不能说 be worth to do。\"",
+        "valueJson": "\"常用 be worth doing，不用 be worth to do。doing 用主动形式，却常有被动含义：The book is worth reading 表示这本书值得被读。强调“很值得”常用 well worth doing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/0/zh",
+        "expectedValueJson": "\"下雨天也值得去参观这座博物馆。\"",
+        "valueJson": "\"下雨天去参观这座博物馆很值得。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/examples/1/note",
+        "expectedValueJson": "\"remembering 表示值得记下。\"",
+        "valueJson": "\"remembering 表示记住；句中说这个回答值得牢记，不是指把它写下来。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/0/note",
+        "expectedValueJson": "\"可修饰事情或活动，强调投入时间或精力有收获。\"",
+        "valueJson": "\"强调投入时间或精力有收获。可说 It is worthwhile to do/doing something，也可放在名词前，如 a worthwhile trip；worth 则常用 something is worth doing。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/relatedExpressions/similar/1/note",
+        "expectedValueJson": "\"常接名词，如 deserve praise；不用于 be worth doing 这一结构。\"",
+        "valueJson": "\"强调应得奖励、认可或某种待遇，常接名词或不定式，如 deserve praise、deserve to win；与 worth 强调投入是否值得的侧重点不同。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/1/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/title",
+        "expectedValueJson": "\"（时间或数量的）……量\"",
+        "valueJson": "\"（时间或金额所对应的）……量\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/meaning",
+        "expectedValueJson": "\"与表示时间或数量的词连用，表示相当于某段时间或某种数量的一份量。\"",
+        "valueJson": "\"与时间或金额表达连用，表示某段时间所需或积累的量，或某笔钱能买到的量。\""
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/usageNote",
+        "expectedValueJson": "\"常用 a/an + 时间或数量 + worth of + 名词。\"",
+        "valueJson": "\"常用“时间或金额的所有格 + worth of + 名词”，如 a week’s worth of food、three days’ worth of messages、ten dollars’ worth of apples。单数名词加 ’s，以 s 结尾的复数名词加 ’；复数数量前不用 a/an。\""
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/examples/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"worth-e11\",\"senseId\":\"worth-amount\",\"en\":\"She bought ten dollars’ worth of apples at the market.\",\"zh\":\"她在市场买了总价十美元的苹果。\",\"note\":\"ten dollars’ worth of 表示这笔钱所能买到的量，不表示每个苹果的单价。\"}"
+      },
+      {
+        "op": "add",
+        "path": "/senses/2/patterns/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"en\":\"ten dollars’ worth of + 名词\",\"zh\":\"价值十美元的……量\",\"note\":\"金额的所有格放在 worth of 前，表示相应金额能买到的量。\",\"kind\":\"sentence-pattern\"}"
+      },
+      {
+        "op": "replace",
+        "path": "/senses/2/sourceIds",
+        "expectedValueJson": "[\"cambridge\"]",
+        "valueJson": "[]"
+      },
+      {
+        "op": "add",
+        "path": "/senses/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"id\":\"worth-noun\",\"title\":\"（名词）价值；净资产\",\"meaning\":\"worth 作名词表示经济价值，也可表示某人或某事的作用、能力等方面的价值。net worth 特指资产减去负债后的净值，即净资产。\",\"usageNote\":\"通常作不可数名词。the worth of something 表示某物的价值；prove one’s worth 表示证明自己的价值。net worth 不等于资产总额，也不等于收入。\",\"examples\":[{\"id\":\"worth-e7\",\"senseId\":\"worth-noun\",\"en\":\"The report estimates the company’s worth.\",\"zh\":\"这份报告估算了这家公司的价值。\",\"note\":\"worth 是名词，表示估算出的价值。\"},{\"id\":\"worth-e8\",\"senseId\":\"worth-noun\",\"en\":\"Maya proved her worth by fixing the shop’s broken freezer.\",\"zh\":\"玛雅修好了店里坏掉的冷冻柜，展现了自己的价值。\",\"note\":\"prove one’s worth 指通过行动证明自己的作用或能力，不是在给人标价。\"},{\"id\":\"worth-e9\",\"senseId\":\"worth-noun\",\"en\":\"Her assets total $70,000 and her debts total $20,000, so her net worth is $50,000.\",\"zh\":\"她的资产共7万美元，负债共2万美元，因此净资产为5万美元。\",\"note\":\"net worth = 总资产 − 总负债。\"}],\"patterns\":[{\"en\":\"the worth of + 名词\",\"zh\":\"……的价值\",\"note\":\"worth 在这里是名词，of 后说明被评价的对象。\",\"kind\":\"sentence-pattern\"}],\"collocations\":[{\"en\":\"prove one’s worth\",\"zh\":\"证明自己的价值\",\"note\":\"常用于某人通过表现证明自己的能力或作用。\",\"kind\":\"common-collocation\"},{\"en\":\"net worth\",\"zh\":\"净资产；资产净值\",\"note\":\"指资产减去负债后的数值。\",\"kind\":\"common-collocation\"}],\"relatedExpressions\":{\"similar\":[{\"en\":\"value\",\"zh\":\"价值\",\"note\":\"与名词 worth 接近，也能谈经济价值或作用；value 的适用范围更广。\"},{\"en\":\"net assets\",\"zh\":\"净资产\",\"note\":\"在财务语境中与 net worth 接近，不对应所有名词 worth 的用法。\"}],\"contrasting\":[{\"en\":\"worthlessness\",\"zh\":\"毫无价值；无用\",\"note\":\"是 worthless 的名词形式，可对照 worth 表示的价值或作用。\"}],\"similarNote\":\"谈一般价值时可比较 worth 和 value；谈资产减去负债后的净值时可比较 net worth 和 net assets。\",\"contrastingNote\":\"worthlessness 对照的是价值或作用；净资产本身是可正、可零、可负的数值。\"},\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "remove",
+        "path": "/lessCommonSenses/0",
+        "expectedValueJson": "{\"id\":\"worth-noun\",\"title\":\"价值；财产总额\",\"meaning\":\"worth 作名词时，可指价值，也可指某人或某物拥有的总财产。\",\"note\":\"名词用法常见于 one’s worth 等表达；初中阶段先掌握 be worth 的常用结构。\",\"example\":{\"id\":\"worth-e7\",\"senseId\":\"worth-noun\",\"en\":\"The report estimates the company’s worth.\",\"zh\":\"这份报告估算了这家公司的价值。\",\"note\":\"worth 是名词，表示估算出的价值。\"},\"sourceIds\":[\"oxford\"]}",
+        "valueJson": "null"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/title",
+        "expectedValueJson": "\"别把 worth 后面的动词写成不定式\"",
+        "valueJson": "\"分清 worth、worthwhile 和 worthy 的句型\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/summary",
+        "expectedValueJson": "\"表达“值得做”时，worth 后接动名词；表示“值得一试”也可用名词短语。\"",
+        "valueJson": "\"worth 可直接接名词或动名词，不能直接接 to do；worthwhile 可用于 It is worthwhile to do/doing something；worthy of 常表示配得上某种认可或待遇，不能替换所有 worth + 名词的结构。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/1/example/note",
+        "expectedValueJson": "\"用 reading，不用 to read。\"",
+        "valueJson": "\"这是错误句：worth 后应使用 reading，不能直接接 to read。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/items/2/note",
+        "expectedValueJson": "\"worthy 是形容词，常接 of 和名词；它与 worth 的句型不同。\"",
+        "valueJson": "\"worthy 是形容词，worthy of praise/respect 表示值得称赞或尊敬；它不能替代表示价格的 worth，如 worth 200 yuan。\""
+      },
+      {
+        "op": "add",
+        "path": "/confusions/0/items/-",
+        "expectedValueJson": "MISSING",
+        "valueJson": "{\"label\":\"可用：It is worthwhile to do something\",\"note\":\"worthwhile 可放在名词前，也可用于 It is worthwhile to do/doing something；不要把这个 to do 结构套在 worth 后。\",\"example\":{\"id\":\"worth-c4\",\"senseId\":\"worth-deserving\",\"en\":\"It is worthwhile to check the bus times before leaving.\",\"zh\":\"出门前花点时间查一下公交车时刻很值得。\",\"note\":\"这里是 worthwhile to check，不是 worth to check。\"}}"
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/takeaway",
+        "expectedValueJson": "\"记作 be worth doing；若后面接名词，可用 be worthy of + 名词。\"",
+        "valueJson": "\"记住 be worth doing、It is worthwhile to do/doing something 和 be worthy of praise。worthy of 不能通用于价格等所有 worth + 名词的语境。\""
+      },
+      {
+        "op": "replace",
+        "path": "/confusions/0/sourceIds",
+        "expectedValueJson": "[\"cambridge\",\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/etymology",
+        "expectedValueJson": "{\"summary\":\"worth 的历史与古英语 weorþ 有关，相关历史用法含有“价值、价格”之意。worth 作“值得做”使用时，可按现代搭配 be worth doing 来记；不要把这个用法当作另一条已经证实的词源演变。\",\"stages\":[{\"language\":\"古英语\",\"form\":\"weorþ\",\"meaning\":\"价值、价格\"}],\"caveat\":\"古英语字形和含义属于历史词源信息；be worth doing 是现代英语中的常用句型，不是词源阶段。\",\"sourceIds\":[\"wiktionary-en\"]}",
+        "valueJson": "{\"summary\":\"worth 表示“值……、值得”的用法与名词“价值”在现代英语中并存；相关词包括 worthy、worthless 和 worthwhile。\",\"stages\":[],\"caveat\":\"这些现代用法和词族关系不构成一条历史演变链。\",\"sourceIds\":[\"wiktionary-en\"]}"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/0/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/1/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/spellingNote",
+        "expectedValueJson": "\"worthwhile 合写；不要误写为 worth while（除非语境中确实是两个独立词）。\"",
+        "valueJson": "\"worthwhile 作形容词时通常合写，如 a worthwhile activity；也见分写形式 worth while，尤其作表语时。固定结构 worth your while 中，worth 与 while 分写。\""
+      },
+      {
+        "op": "replace",
+        "path": "/wordFamily/2/sourceIds",
+        "expectedValueJson": "[\"oxford\"]",
+        "valueJson": "[\"wiktionary-en\"]"
+      },
+      {
+        "op": "replace",
+        "path": "/sources",
+        "expectedValueJson": "[{\"id\":\"cambridge\",\"title\":\"Cambridge Dictionary: worth\",\"url\":\"https://dictionary.cambridge.org/dictionary/english/worth\",\"supports\":[\"worth 的价格义与值得义\",\"be worth doing 句型\",\"worth 的常见语法用法\"],\"verification\":\"recommended\"},{\"id\":\"oxford\",\"title\":\"Oxford Learner’s Dictionaries: worth\",\"url\":\"https://www.oxfordlearnersdictionaries.com/definition/english/worth\",\"supports\":[\"worth 的常见词义与搭配\",\"worth 与 worthy、worthless、worthwhile 的词形和用法\"],\"verification\":\"recommended\"},{\"id\":\"wiktionary-en\",\"title\":\"Wiktionary: worth（English）\",\"url\":\"https://fr.wiktionary.org/wiki/worth#Anglais\",\"supports\":[\"worth 的古英语相关形式与历史意义\"],\"verification\":\"recommended\"}]",
+        "valueJson": "[{\"id\":\"wiktionary-en\",\"title\":\"Wiktionnaire：worth（英语词条，法语释义）\",\"url\":\"https://fr.wiktionary.org/wiki/worth#Anglais\",\"supports\":[\"worth 的金钱价值、值得投入等用法及名词“价值”\",\"worth 后接名词或动名词的用例及其介词分析\",\"worth 的英美发音\",\"相关词 worthy、worthless、worthwhile 的词形\"],\"verification\":\"recommended\"}]"
+      }
+    ]
+  },
+  "input": {
+    "id": 1580,
+    "headword": "worth",
+    "meaning_zh": "n. 价值, 财产\nadj. 值...的, 值得的",
+    "phonetic": "/wә:θ/",
+    "pos": "",
+    "forms": []
+  }
+}
