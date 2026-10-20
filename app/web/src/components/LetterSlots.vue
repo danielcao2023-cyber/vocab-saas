@@ -22,6 +22,6 @@ function key(event:KeyboardEvent,index:number){if(props.disabled)return;const n=
 <template><div class="letter-slots" role="group" aria-label="拼写答案"><template v-for="(char,i) in chars" :key="i"><input v-if="char==='_'" :ref="el=>inputs[i]=el as HTMLInputElement|null" :value="values[i]??''" :disabled="disabled" :aria-label="`第${editable.indexOf(i)+1}个字母`" type="text" inputmode="text" autocomplete="off" autocapitalize="off" :spellcheck="false" @input="input($event,i)" @paste="paste($event,i)" @keydown="key($event,i)" @focus="($event.target as HTMLInputElement).select?.()"><span v-else :class="{space:char===' '}">{{ char }}</span></template></div></template>
 <style scoped>
 .letter-slots{display:flex;flex-wrap:wrap;justify-content:center;align-items:end;gap:8px;margin:20px auto 28px;max-width:100%;}
-input{width:40px;min-width:0;height:56px;text-align:center;padding:0;border:0;border-bottom:2px solid var(--line);border-radius:0;background:transparent;color:var(--ink);font:400 28px/1.2 ui-monospace,monospace;}
-input:focus{border-bottom-color:var(--primary);}input:focus-visible{outline:2px solid var(--primary);outline-offset:4px;}span{font-size:22px;padding-bottom:8px;}.space{width:12px;}input:disabled{opacity:.75;}
+input{width:40px;min-width:0;height:56px;text-align:center;padding:0;border:0;border-bottom:2px solid var(--line);border-radius:0;background:transparent;color:var(--ink);caret-color:var(--primary);font:400 28px/1.2 ui-monospace,monospace;}
+input:focus,input:focus-visible{border-bottom-color:var(--primary);outline:none;box-shadow:none;}span{font-size:22px;padding-bottom:8px;}.space{width:12px;}input:disabled{opacity:.75;}
 </style>

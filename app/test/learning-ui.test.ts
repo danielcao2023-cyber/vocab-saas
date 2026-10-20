@@ -49,3 +49,12 @@ it('uses letter underlines for Chinese-to-English and celebrates without a book 
  ui.updateProps({feedback:{correct:true,assisted:false,expected:'above',meaning:'上方',book:'unfamiliar',nextDue:'2026-10-21'}});await flush();expect(ui.text()).toContain('答对了 👍');expect(ui.text()).not.toContain('不熟');
  }finally{ui.app.unmount();}
 });
+it.each([true,false])('opens the lesson after grading (correct=%s) without changing the saved result',async(correct)=>{
+ const summary={day:'2026-10-20',started:true,total:1,completed:0,deferred:0,newWords:1,reviewWords:0,remaining:1,backlog:0,answers:0,correct:0,books:{new:1,unfamiliar:0,familiar:0,mastered:0}};
+ const calls:string[]=[],open=vi.fn();vi.stubGlobal('fetch',vi.fn(async(path:string)=>{calls.push(path);return new Response(JSON.stringify(path.endsWith('/answer')?{correct,assisted:false,expected:'above',meaning:'上方',book:'familiar',nextDue:'2026-10-21'}:path.endsWith('/next')?{kind:'card',summary,card:{...card,mode:'recognize',headword:'above',options:[{id:5,text:'上方'}]}}:summary));}));
+ const ui=host('web/src/views/LearningStudyView.vue',{active:true,onOpen:open});
+ try{await flush();await ui.all(n=>n.tag==='button'&&ui.text(n).includes('上方'))[0].props.onClick();await flush();
+  const learn=ui.all(n=>n.tag==='button'&&ui.text(n).includes('学习该词'))[0];expect(learn.props.disabled).toBe(false);await learn.props.onClick();await flush();expect(open).toHaveBeenCalledWith(5);expect(calls).not.toContain('/api/learning/consult');
+  ui.updateProps({active:false});await flush();ui.updateProps({active:true});await flush();expect(ui.text()).toContain(correct?'答对了 👍':'再看一眼');expect(calls.filter(x=>x.endsWith('/next'))).toHaveLength(1);
+ }finally{ui.app.unmount();}
+});

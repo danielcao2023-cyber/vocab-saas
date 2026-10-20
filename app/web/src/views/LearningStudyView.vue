@@ -23,7 +23,7 @@ async function submit(choiceId?:number){const card=turn.value?.card;if(!card||bu
  catch(e){if(alive)error.value=e instanceof ClientError?'题目已更新，请刷新任务后继续。':'保存失败，请重试。';}finally{if(alive)busy.value=false;}
 }
 async function retry(){if(busy.value||!submitter.pending)return;busy.value=true;error.value='';try{const result=await submitter.retry();if(alive&&result)received(result);}catch{if(alive){unsaved.value=false;error.value='题目已更新，请刷新任务。';}}finally{if(alive)busy.value=false;}}
-async function consult(){const card=turn.value?.card;if(!card||busy.value||unsaved.value||feedback.value)return;busy.value=true;error.value='';
+async function consult(){const card=turn.value?.card;if(!card||busy.value||unsaved.value)return;if(feedback.value){stop();emit('open',card.wordId);return;}busy.value=true;error.value='';
  try{await api('/api/learning/consult',{issueId:card.issueId});if(alive){card.assisted=true;stop();emit('open',card.wordId);}}
  catch{if(alive)error.value='暂时无法打开学习页，请重试。';}finally{if(alive)busy.value=false;}
 }
