@@ -1,6 +1,6 @@
 # 小北记单词 Android 本地安装包
 
-包名 `cn.xiaobei.vocabulary`，版本 `1.0.0`（versionCode 1）。最低 Android 6 / API 23，构建与目标 API 35。应用使用 Capacitor 7 和本地 `mobile-dist`；不需要电脑服务或局域网地址。首次安装没有学习记录或 AI 配置；后续学习数据保存在当前设备私有目录，以两份 SQLite 快照和已确认指针保护持久化。AI 仅在用户自行配置后发起在线请求。
+包名 `cn.xiaobei.vocabulary`，版本 `1.0.1`（versionCode 2）。最低 Android 6 / API 23，构建与目标 API 35。应用使用 Capacitor 7 和本地 `mobile-dist`；不需要电脑服务或局域网地址。首次安装没有学习记录或 AI 配置；后续学习数据保存在当前设备私有目录，以两份 SQLite 快照和已确认指针保护持久化。AI 仅在用户自行配置后发起在线请求。
 
 ## 构建
 
@@ -18,7 +18,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 脚本检查 `mobile-dist/offline/seed.db` 和 `offline/sql-wasm.wasm` 存在后，先 `cap sync android`，只复制 `mobile-dist`，然后构建 release、zipalign、本机签名并校验。输出：
 
-- `android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.0.apk`
+- `android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.1.apk`
 - 同路径 `.apk.sha256` 文件
 
 这是本机签名、可直接安装的 APK。签名材料保存在源码目录外的 `~/.codex/signing/xiaobei-android`，目录权限 700、文件权限 600。可以通过 `XIAOBEI_SIGNING_DIR` 指定独立安全目录；不要把该目录、密钥或密码文件加入仓库。后续覆盖安装必须保留同一签名密钥。已有签名材料不完整时脚本会停止，避免意外替换密钥。
@@ -31,7 +31,7 @@ ADB 安装请显式指定设备序列号；先运行 `adb devices -l` 核对设�
 
 ```sh
 "$ANDROID_HOME/platform-tools/adb" -s emulator-5556 install -r \
-  android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.0.apk
+  android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.1.apk
 "$ANDROID_HOME/platform-tools/adb" -s emulator-5556 shell am start \
   -n cn.xiaobei.vocabulary/.MainActivity
 ```
@@ -70,3 +70,13 @@ ANDROID_SERIAL=emulator-5556 ./android/gradlew -p android :app:connectedDebugAnd
 2026-10-20 在用户明确允许 Android 官方 adb/测试框架后，仅对 emulator-5556 进行操作；飞行模式开启且 Wi-Fi 关闭。实际验证汉译英 as 独立答对进入熟悉、听写 people 播放本地录音并在看过讲解后正确标记“稍后独立再测”、下一题切换英译汉 government 且正确判分。答题后“学习该词”仍可点击，government 默认“发音与拼写”内容可离线显示。系统返回从讲解回原卡片、从卡片暂停回首页；强制停止并冷启动后已完成 1 个、熟悉 1 个、不熟 1 个、生词 1598 个保持一致，继续学习回到 government。离线搜索 animal 命中并能打开讲解。AI 对话为空、已配置模型为空，未保存测试 Key，也未调用真实云模型。媒体系统记录到应用 UID 的 44.1kHz 本地播放及非零输出帧；没有以此声称对全部录音进行了逐条听审。
 
 应用全量 Vitest 为 75 文件 / 556 项通过，移动和桌面构建通过；原生存储 12 项失败注入测试通过。独立审查发现的 commit(false) 内存指针与空指针误判首启问题已修复并复审。本次未操作物理手机或原电脑学习库。验收截图和测试日志保留在 Studio 的 `/Users/caogong/Documents/Codex/2026-10-20/vocab-android/`，测试中产生的记录仅在模拟器，分发 APK 的种子个人表仍为零。
+
+## 1.0.1 内容更新（2026-10-20）
+
+上面的 1599 录音、31 个拼写对照属于 1.0.0 历史快照。1.0.1 补齐剩余 782 个多音节课程条目，813 个候选条目全部覆盖；混合词条拆开计为 819 份独立拼写对照。内置录音增至 1608 份：1600 个主词全部有录音，另含 actress、anyone、empress、everyone、hostess、policewoman、princess、someone 8 个补充词形。underground 使用英式名词首音节重读录音与对应映射；actress 的实际 /ɪs/ 尾音变体与图中 /əs/ 差异在界面说明。
+
+新增混合词形选择，播放和失败重试跟随所选词，保留 Chinese/Mr 等原始大小写；切换词形会停止旧录音并忽略迟到错误。按钮改为中性“听整词录音”，说明实际录音口音。服务端仅在课程已有主词范围内支持混合词条的各词形。
+
+本轮 76 文件 / 565 项测试、类型检查、桌面与移动构建通过；在独立静态离线页面验证默认 tab、分段提示、actor/actress 切换和录音说明，浏览器错误/警告日志为空。Android15模拟器在飞行模式且Wi-Fi关闭时加载新版、播放underground与actress；同签名覆盖1.0.0后强制关闭再启动，原已完成2、熟悉2、不熟1、生词1597保持。打包种子仍是零个人记录，不含模拟器验收状态。APK ZIP资产与mobile-dist逐字节一致，1608录音哈希和许可元数据均匹配；签名证书沿用原证书。
+
+交付目录 `/Users/caogong/Documents/Codex/2026-10-20/vocab-android/`，文件 `小北记单词-1.0.1-离线版.apk`、`安装说明-1.0.1.md`、`SHA256-1.0.1.txt`。原始模型草稿、截图、构建/测试和APK审计证据在同日期的 `vocab-sound-spelling-complete/`，不进入源码包或学习数据库。

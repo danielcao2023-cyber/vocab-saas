@@ -1,5 +1,6 @@
 import {afterEach, expect, it, vi} from 'vitest';
-import {manageLesson} from '../web/src/content/lesson-samples/manage';
+import {manageLesson as originalManageLesson} from '../web/src/content/lesson-samples/manage';
+const manageLesson={...originalManageLesson,headword:'unmapped-test-fixture'};
 import {flush, host} from './p2-host';
 
 afterEach(() => vi.unstubAllGlobals());
@@ -78,8 +79,8 @@ it('defaults government to sound-spelling while keeping other words on the exist
  const play=vi.fn(),ui=host('web/src/components/SenseLesson.vue',{lesson:government,onPlay:play});
  try{const tabs=()=>ui.all(n=>n.props.role==='tab');expect(tabs()).toHaveLength(6);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
   expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);expect(ui.text()).toContain('gov');expect(ui.text()).toContain('ern');expect(ui.text()).toContain('ment');expect(ui.text()).toContain('/ɚ/');
-  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听美式整词'))[0].props.onClick();expect(play).toHaveBeenCalledOnce();
-  tabs().find(n=>ui.text(n)==='义项与用法')!.props.onClick();await flush();expect(ui.text()).not.toContain('听美式整词');
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();expect(play).toHaveBeenCalledOnce();
+  tabs().find(n=>ui.text(n)==='义项与用法')!.props.onClick();await flush();expect(ui.text()).not.toContain('听整词录音');
   ui.updateProps({lesson:structuredClone(manageLesson)});await flush();expect(tabs()).toHaveLength(5);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['义项与用法']);
  }finally{ui.app.unmount();}
 });
@@ -114,4 +115,33 @@ it('resets segment selection when navigating from a four-segment word to a short
   expect(chunks()).toHaveLength(2);expect(ui.text()).toContain('ac：怎么从声音想到字母');expect(ui.text()).not.toContain('gov');
   expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);
  }finally{ui.app.unmount();}
+});
+
+it('switches each mixed-headword map independently and requests the selected recording',async()=>{
+ const play=vi.fn();
+ const ui=host('web/src/components/SenseLesson.vue',{lesson:{...structuredClone(manageLesson),id:'actor-mixed',wordId:19,headword:'actor / actress'},onPlay:play});
+ try{
+  expect(ui.all(n=>n.props.role==='tab'&&String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
+  const actress=ui.all(n=>n.tag==='button'&&n.props['aria-label']==='拼写对照 actress')[0];
+  expect(actress).toBeDefined();actress.props.onClick();await flush();
+  expect(ui.text()).toContain('actress');
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();
+  expect(play).toHaveBeenCalledWith('actress');
+  ui.updateProps({lesson:{...structuredClone(manageLesson),id:'able-map',wordId:3,headword:'able'}});await flush();
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();
+  expect(play).toHaveBeenLastCalledWith('able');
+ }finally{ui.app.unmount();}
+});
+
+it('preserves the curriculum spelling case when playing a lower-case indexed map',async()=>{
+ const play=vi.fn(),ui=host('web/src/components/SenseLesson.vue',{lesson:{...structuredClone(manageLesson),id:'Chinese-map',wordId:0,headword:'Chinese'},onPlay:play});
+ try{ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();expect(play).toHaveBeenCalledWith('Chinese');}
+ finally{ui.app.unmount();}
+});
+
+it('labels the real recording accent independently of the spelling-map transcription',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify({status:'ready',accent:'uk',pronunciationNote:'地铁名词，重读首音节。'}))));
+ const ui=host('web/src/components/SoundSpellingLesson.vue',{lesson:{headword:'underground',ipa:'/ˈʌndəɡraʊnd/',chunks:[{letters:'under',sound:'/ʌndə/',stress:'primary',hint:'',tip:'',pairs:[]}],anchor:{text:''},sources:[]}});
+ try{await flush();expect(ui.text()).toContain('英式录音');expect(ui.text()).toContain('地铁名词，重读首音节。');expect(ui.text()).not.toContain('听美式');}
+ finally{ui.app.unmount();}
 });

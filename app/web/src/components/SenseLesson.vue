@@ -2,9 +2,10 @@
 import {computed,ref, watch, useId} from 'vue';
 import type {WordLesson, LessonUsage} from '../../../shared/lesson';
 import {lessonWordParts} from '../lesson-text';
+import {mainHeadwords} from '../../../server/src/text';
 
 import SoundSpellingLesson from './SoundSpellingLesson.vue';
-import {getSoundSpellingLesson} from '../content/sound-spelling/index';
+import {getSoundSpellingLessons} from '../content/sound-spelling/index';
 
 const props = defineProps<{lesson: WordLesson}>();
 const usageLabels: Record<LessonUsage['kind'], string> = {
@@ -15,7 +16,7 @@ const usageLabels: Record<LessonUsage['kind'], string> = {
 
 const tabIdPrefix = useId();
 
-defineEmits<{play:[]}>();
+const emit=defineEmits<{play:[headword:string];'cancel-playback':[]}>();
 type TabId = 'sound-spelling' | (typeof TABS)[number]['id'];
 
 const TABS = [
@@ -26,10 +27,18 @@ const TABS = [
   {id: 'extra', label: '再多了解一点'},
 ] as const;
 
-const soundSpelling=computed(()=>getSoundSpellingLesson(props.lesson.headword));
+const soundChoices=computed(()=>getSoundSpellingLessons(props.lesson.headword));
+const selectedSoundWord=ref('');
+const soundSpelling=computed(()=>soundChoices.value.find(item=>item.headword===selectedSoundWord.value)??soundChoices.value[0]);
+const soundRecordingWord=computed(()=>mainHeadwords(props.lesson.headword).find(word=>word.toLowerCase()===soundSpelling.value?.headword)??soundSpelling.value?.headword??'');
 const hasSoundSpelling=computed(()=>Boolean(soundSpelling.value));
 const availableTabs=computed(()=>hasSoundSpelling.value?[{id:'sound-spelling' as const,label:'发音与拼写'},...TABS]:[...TABS]);
 const activeTabId = ref<TabId>(availableTabs.value[0].id);
+
+function selectSoundWord(word:string){
+ if(word===soundSpelling.value?.headword)return;
+ emit('cancel-playback');selectedSoundWord.value=word;
+}
 
 function wordParts(text: string) {
   return lessonWordParts(text, props.lesson);
@@ -81,10 +90,12 @@ function handleTabClick(tabId: TabId) {
 
 watch(() => props.lesson.id, () => {
   activeTabId.value = availableTabs.value[0].id;
+  selectedSoundWord.value='';
 });
 
 watch(() => props.lesson.wordId, () => {
   activeTabId.value = availableTabs.value[0].id;
+  selectedSoundWord.value='';
 });
 </script>
 
@@ -111,7 +122,7 @@ watch(() => props.lesson.wordId, () => {
       </nav>
     </header>
 
-    <section v-if="activeTabId==='sound-spelling' && soundSpelling" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><SoundSpellingLesson :key="soundSpelling.headword" :lesson="soundSpelling" @play="$emit('play')" /></section>
+    <section v-if="activeTabId==='sound-spelling' && soundSpelling" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><div v-if="soundChoices.length>1" class="sound-word-choices" aria-label="选择拼写对照词"><button v-for="choice in soundChoices" :key="choice.headword" class="btn" type="button" :aria-label="`拼写对照 ${choice.headword}`" :aria-pressed="soundSpelling.headword===choice.headword" @click="selectSoundWord(choice.headword)">{{ choice.headword }}</button></div><SoundSpellingLesson :key="soundSpelling.headword" :lesson="soundSpelling" :recording-word="soundRecordingWord" @play="$emit('play',soundRecordingWord)" /></section>
 
     <section
       v-if="activeTabId === 'usage'"
@@ -269,6 +280,8 @@ watch(() => props.lesson.wordId, () => {
 </template>
 
 <style scoped>
+.sound-word-choices{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 18px;}.sound-word-choices [aria-pressed="true"]{background:var(--primary-soft);color:var(--primary);border-color:var(--primary);}
+
 .sense-lesson { color: var(--ink); line-height: 1.75; overflow-wrap: anywhere; }
 .sense-lesson h2, .sense-lesson h3, .sense-lesson h4, .sense-lesson p { margin: 0; }
 .sense-lesson h2 { font-size: 24px; line-height: 1.4; letter-spacing: -.03em; }

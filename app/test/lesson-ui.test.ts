@@ -111,6 +111,7 @@ it('shows why relations or roots do not apply, and separates checked sources fro
   lesson.sources=[{id:'reference',title:'延伸词典',url:'https://example.com/dictionary',supports:['可继续查阅词条'],verification:'recommended'},...lesson.sources];
   const ui=host('web/src/components/SenseLesson.vue',{lesson});
   try{
+    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='义项与用法')[0].props.onClick();await flush();
     expect(ui.text()).toContain('这里没有自然的一对一反义词。');
     ui.all(node=>node.props.role==='tab'&&ui.text(node)==='词根与词族')[0].props.onClick();await flush();
     expect(ui.text()).toContain('作为一个整体记忆，不作词根拆分。');

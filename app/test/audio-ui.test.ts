@@ -1,4 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import {manageLesson} from '../web/src/content/lesson-samples/manage';
 import { COPY } from '../web/src/copy.ts';
 import type { Card, Turn, WordDetail } from '../web/src/types.ts';
 import { mockAudio, MockAudio } from './audio-fixtures.ts';
@@ -159,4 +160,21 @@ it('WordView metadata failure does not become a word-loading or playback error',
     ui.all(n => n.props['aria-label'] === '听发音')[0].props.onClick();
     expect(MockAudio.instances[0].play).toHaveBeenCalledOnce();
   } finally { ui.app.unmount(); }
+});
+
+it('cancels the previous recording when switching a mixed spelling map and ignores late failures',async()=>{
+ let rejectOld!:(error:Error)=>void;
+ MockAudio.start=()=>new Promise((_,reject)=>{rejectOld=reject;});
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url==='/api/word/1/lesson'
+  ?{status:'ready',lesson:{...structuredClone(manageLesson),wordId:1,id:'mixed',headword:'actor / actress'}}
+  :{status:'ready',accent:'us'}))));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,'actor / actress')});
+ try{await flush();
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();await flush();
+  const old=MockAudio.instances[0];
+  ui.all(n=>n.props['aria-label']==='拼写对照 actress')[0].props.onClick();await flush();
+  expect(old.pause).toHaveBeenCalledOnce();expect(old.src).toBe('');
+  rejectOld(new Error('old recording failed'));old.emit('error');await flush();
+  expect(ui.text()).not.toContain(COPY.audioUnavailable);
+ }finally{ui.app.unmount();}
 });

@@ -20,7 +20,7 @@ export function createLocalRuntime(options:Options){
  const dispatch=async(url:URL,method:string,body:any):Promise<unknown>=>{
   const path=url.pathname,q=Object.fromEntries(url.searchParams),t=now();
   if(path==='/health')return {ok:true,offline:true,words:db.prepare('SELECT COUNT(*) n FROM words').get()?.n};
-  if(path==='/version')return {commit:'android-1.0.0',offline:true};
+  if(path==='/version')return {commit:'android-1.0.1',offline:true};
   if(path==='/api/learning/today'&&method==='GET')return learningToday(shared,t);
   if(path==='/api/learning/start'&&method==='POST')return startLearning(shared,t);
   if(path==='/api/learning/next'&&method==='GET')return nextLearning(shared,t);

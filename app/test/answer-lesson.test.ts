@@ -106,9 +106,24 @@ it('plays the current word from the sound-spelling tab inside a revealed answer 
  const ui=host('web/src/views/StudyView.vue',{prefer:'new',practice:[{card:cardFor(693,'important'),question:null}],estimate:1});
  try{
   await flush();ui.key('Enter');await flush();
-  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听美式整词'))[0].props.onClick();await flush();
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();await flush();
   expect(MockAudio.instances).toHaveLength(1);
   expect(MockAudio.instances[0].src).toContain('word=important');
   expect(MockAudio.instances[0].play).toHaveBeenCalledOnce();
  }finally{ui.app.unmount();}
 });
+
+ it('plays the selected mixed form inside a revealed answer lesson instead of the first word',async()=>{
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>url==='/api/word/19/lesson'
+   ?response({status:'ready',lesson:lessonFor(19,'actor / actress')})
+   :response({status:'pending',blocks:[]})));
+  const ui=host('web/src/views/StudyView.vue',{prefer:'new',practice:[{card:cardFor(19,'actor / actress'),question:null}],estimate:1});
+  try{await flush();ui.key('Enter');await flush();
+   ui.all(n=>n.tag==='button'&&n.props['aria-label']==='拼写对照 actress')[0].props.onClick();await flush();
+   ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();await flush();
+   expect(MockAudio.instances[0].src).toBe('/api/pronunciation/audio?word=actress');
+   MockAudio.instances[0].emit('error');await flush();
+   ui.all(n=>n.tag==='button'&&ui.text(n)===COPY.audioRetry)[0].props.onClick();await flush();
+   expect(MockAudio.instances[1].src).toBe('/api/pronunciation/audio?word=actress');
+  }finally{ui.app.unmount();}
+ });

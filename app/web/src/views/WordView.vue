@@ -16,6 +16,7 @@ const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boole
 defineEmits<{back:[]}>();
 const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=ref(false),audioFailed=ref<PlaybackFailure|null>(null);
 const pronunciationNote=ref<string|null>(null);
+const lastPlaybackWord=ref<string|null>(null);
 const pronunciationAccent=ref<'us'|'uk'|null>(null);
 const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
 let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
@@ -62,11 +63,13 @@ async function loadPronunciationNote(){
     }
   }catch{/* Optional recording metadata must never block the word or its audio button. */}
 }
-function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;}
-async function play(){
+function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;lastPlaybackWord.value=null;}
+async function play(word?:string|MouseEvent){
   if(!detail.value)return;
   const n=++audioRequest;audioFailed.value=null;
-  const result=await speak(detail.value.word.headword);
+  const target=typeof word==='string'?word:detail.value.word.headword;
+  lastPlaybackWord.value=target;
+  const result=await speak(target);
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   audioFailed.value=result.status==='unavailable'?result.reason:null;
 }
@@ -92,7 +95,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
           <p v-if="pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ pronunciationNote }}</p>
           <p class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
-        <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play">{{ COPY.audioRetry }}</button></p>
+        <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play(lastPlaybackWord??undefined)">{{ COPY.audioRetry }}</button></p>
         <details :key="wordId" class="lesson-record">
           <summary>学习记录 <span>认词 · 拼写 · 听写</span></summary>
           <div class="cards3">
@@ -112,7 +115,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
             <p v-else-if="!detail.statusDetail.recognize" class="note">这个词还没开始认词，暂时不会进入“练错词”。</p>
           </div>
         </details>
-        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" @play="play" />
+        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" @play="play" @cancel-playback="cancelAudio" />
         <template v-else>
           <p v-if="lessonFailed" class="note" role="status">完整讲解暂时未能载入。<button type="button" class="link" @click="loadLesson">重试讲解</button></p>
           <MeaningList :key="wordId" :meaning="card.meaning_zh" :source="card.meaning_source" :flag="card.meaning_flag" />

@@ -11,7 +11,7 @@ afterEach(async () => { for (const cleanup of cleanups.splice(0)) await cleanup(
 async function fixture() {
   const directory = temp('pronunciation-');
   const db = openDb(':memory:');
-  for (const word of ['receive', 'accept', 'Miss', 'miss', 'go (went, gone)'])
+  for (const word of ['receive', 'accept', 'Miss', 'miss', 'go (went, gone)', 'actor / actress'])
     db.prepare("INSERT INTO words(headword,source) VALUES (?,'test')").run(word);
   const entry = (word = 'receive') => ({ word, accent: 'us', file: `${word}.mp3`, author: 'Test Speaker',
     sha256: createHash('sha256').update('ID3fixture').digest('hex'),
@@ -91,3 +91,11 @@ describe('human pronunciation routes', () => {
     expect((await app.inject('/api/pronunciation/credits?word=receive')).body).not.toContain('Test Speaker');
   });
 });
+
+ it('serves each verified secondary member of a mixed curriculum entry independently',async()=>{
+  const {app,directory,entries,entry,save}=await fixture();
+  entries.actress=entry('actress');fs.writeFileSync(path.join(directory,'actress.mp3'),'ID3fixture');save();
+  expect((await app.inject('/api/pronunciation?word=actress')).json()).toMatchObject({status:'ready',word:'actress'});
+  expect((await app.inject('/api/pronunciation/audio?word=actress')).statusCode).toBe(200);
+  expect((await app.inject('/api/pronunciation/audio?word=actor')).statusCode).toBe(404);
+ });

@@ -26,11 +26,14 @@ const practiceQueue=props.practice ? [...props.practice] : null;
 const submitter=new PendingSubmitter((path,body)=>api(path,body));
 let shownAt=0,pendingRating=0,alive=true,timer:number|undefined,audioRequest=0;
 const progress=computed(()=>Math.min(100,session.value.done/Math.max(1,estimated.value)*100));
-function cancelAudio(){audioRequest++;stopAudio();noAudio.value=null;}
-async function play(){
+const lastPlaybackWord=ref<string|null>(null);
+function cancelAudio(){audioRequest++;stopAudio();noAudio.value=null;lastPlaybackWord.value=null;}
+async function play(word?:string|MouseEvent){
   if(!card.value)return;
   const n=++audioRequest;noAudio.value=null;
-  const result=await speak(card.value.headword);
+  const target=typeof word==='string'?word:card.value.headword;
+  lastPlaybackWord.value=target;
+  const result=await speak(target);
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   noAudio.value=result.status==='unavailable'?result.reason:null;
 }
@@ -124,8 +127,8 @@ onUnmounted(()=>{alive=false;cancelAudio();clearInterval(timer);window.removeEve
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>
-    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" @play="play" />
-    <p v-if="noAudio" class="note" role="status">{{ noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play">{{ COPY.audioRetry }}</button></p>
+    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" @play="play" @cancel-playback="cancelAudio" />
+    <p v-if="noAudio" class="note" role="status">{{ noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play(lastPlaybackWord??undefined)">{{ COPY.audioRetry }}</button></p>
     <p v-if="unsaved" class="retry" role="status">{{ COPY.unsaved }} <button class="btn" :disabled="busy" @click="retry">{{ COPY.retry }}</button></p>
   </article>
   <div v-else-if="failedLoad" class="panel"><button class="btn primary" @click="loadNext">{{ COPY.retry }}</button></div>

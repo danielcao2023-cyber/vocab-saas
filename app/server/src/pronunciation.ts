@@ -21,7 +21,7 @@ const escapeHtml = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<
 /** Serve verified, imported recordings locally: browser playback never depends on a third-party API. */
 export function pronunciationRoutes(app: FastifyInstance, db: DB, directory = DEFAULT_DIRECTORY) {
   const knownWords = new Set((db.prepare('SELECT headword FROM words').all() as { headword: string }[])
-    .map(row => mainHeadwords(row.headword)[0]).filter(Boolean));
+    .flatMap(row => mainHeadwords(row.headword)).filter(Boolean));
   const integrity = new Map<string, { identity: string; digest: string }>();
   function fileIsIntact(file: string, expected: string): boolean {
     const stat = fs.statSync(file);

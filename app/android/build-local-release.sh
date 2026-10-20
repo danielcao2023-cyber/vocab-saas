@@ -10,7 +10,7 @@ signing_dir="${XIAOBEI_SIGNING_DIR:-$HOME/.codex/signing/xiaobei-android}"
 key_store="$signing_dir/xiaobei-local.p12"
 password_file="$signing_dir/store-password"
 output_dir="$native_dir/app/build/outputs/apk/release"
-output_apk="$output_dir/xiaobei-vocabulary-1.0.0.apk"
+output_apk="$output_dir/xiaobei-vocabulary-1.0.1.apk"
 
 if [[ ! -f "$app_dir/mobile-dist/index.html" || ! -f "$app_dir/mobile-dist/offline/seed.db" || ! -f "$app_dir/mobile-dist/offline/sql-wasm.wasm" ]]; then
   echo 'Prepare the audited mobile-dist (including offline/seed.db and offline/sql-wasm.wasm) before building.' >&2
