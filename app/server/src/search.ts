@@ -3,8 +3,8 @@ import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { wordStatus, statusKey } from './word-status.ts';
 import { getContent } from './content.ts';
 import { HttpError } from './http-error.ts';
-export interface WordRow {id:number;headword:string;phonetic:string|null;meaning_zh:string|null;level:string|null;state:number|null;stability:number|null;inWrongBook:number;[key:string]:unknown}
-export function readWords(db:DB):WordRow[] {return db.prepare(`SELECT w.*, c.state,c.stability, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' ORDER BY w.id`).all() as WordRow[];}
+export interface WordRow {id:number;headword:string;phonetic:string|null;meaning_zh:string|null;level:string|null;state:number|null;stability:number|null;inWrongBook:number;learning_book?:string|null;[key:string]:unknown}
+export function readWords(db:DB):WordRow[] {return db.prepare(`SELECT w.*, c.state,c.stability, CASE WHEN EXISTS(SELECT 1 FROM learning_days) THEN COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) END learning_book, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id ORDER BY w.id`).all() as WordRow[];}
 export function summary(w:WordRow) {return {id:w.id,headword:w.headword,phonetic:w.phonetic,firstMeaning:(w.meaning_zh??'').split('\n')[0],level:w.level,status:wordStatus(w),inWrongBook:!!w.inWrongBook};}
 export const FORM_LABELS:Record<string,string>={p:'过去式',d:'过去分词',i:'现在分词','3':'第三人称单数',s:'复数',r:'比较级',t:'最高级'};
 export function search(db:DB,query:string,limit=20) {

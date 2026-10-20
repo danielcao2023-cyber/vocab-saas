@@ -184,6 +184,10 @@ function clearSamples(db: DB) {
   for (const table of ['cards', 'wrong_words', 'word_content', 'content_feedback', 'ai_cache'] as const) {
     deleted[table] = db.prepare(`DELETE FROM ${table} WHERE word_id IN (SELECT id FROM words WHERE is_sample=1)`).run().changes;
   }
+  for (const table of ['learning_issues','learning_day_words','learning_words']) {
+    db.prepare(`DELETE FROM ${table} WHERE word_id IN (SELECT id FROM words WHERE is_sample=1)`).run();
+  }
+  db.prepare('DELETE FROM learning_days WHERE day NOT IN (SELECT day FROM learning_day_words)').run();
   deleted.words = db.prepare('DELETE FROM words WHERE is_sample=1').run().changes;
   return deleted;
 }

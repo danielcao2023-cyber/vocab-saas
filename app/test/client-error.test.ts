@@ -1,5 +1,5 @@
 import { describe, it, expect, afterEach, vi } from 'vitest';
-import fs from 'node:fs';
+import {host,flush} from './p2-host';
 import { api } from '../web/src/api.ts';
 import { ClientError, OfflineError, PendingSubmitter } from '../web/src/pending.ts';
 
@@ -38,9 +38,14 @@ describe('4xx vs offline', () => {
     expect(p.failed).toBe(false);
   });
 
-  it('App shows stale message with reload button', () => {
-    const app = fs.readFileSync('web/src/App.vue', 'utf8');
-    expect(app).toContain('{{ COPY.staleCard }} <button @click="reloadPage">{{ COPY.refresh }}</button>');
-    expect(app).toContain('location.reload()');
+  it('study keeps a rejected question visible and offers task refresh', async () => {
+    const summary={day:'2026-10-20',started:true,total:1,completed:0,deferred:0,newWords:1,reviewWords:0,remaining:1,backlog:0,answers:0,correct:0,books:{new:1,unfamiliar:0,familiar:0,mastered:0}};
+    globalThis.fetch=vi.fn(async(path:any)=>new Response(JSON.stringify(String(path).endsWith('/answer')?{error:'stale'}:String(path).endsWith('/next')?{kind:'card',summary,card:{issueId:'one',wordId:1,mode:'recognize',headword:'above',patterns:[],options:[{id:1,text:'上方'}],assisted:false}}:summary),{status:String(path).endsWith('/answer')?409:200})) as any;
+    const ui=host('web/src/views/LearningStudyView.vue');
+    try{await flush();await ui.all(n=>n.tag==='button'&&ui.text(n).includes('上方'))[0].props.onClick();await flush();
+      expect(ui.text()).toContain('题目已更新，请刷新任务后继续。');
+      expect(ui.all(n=>n.tag==='button'&&ui.text(n)==='刷新任务')).toHaveLength(1);
+      expect(ui.text()).not.toContain('今天的任务完成了');
+    }finally{ui.app.unmount();vi.unstubAllGlobals();}
   });
 });

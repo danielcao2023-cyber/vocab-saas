@@ -1,3 +1,4 @@
+import {statusKey} from './word-status.ts';
 import type { DB } from './db.ts';
 import { State, createEmptyCard, fsrs, type Grade, type Card } from 'ts-fsrs';
 import { shDay, shDayStart } from './time.ts';
@@ -108,6 +109,11 @@ export function recomputeDailyStats(db: DB, days?: string[]) {
         const q = queueAt(db, h, new Date(last.review_at));
         if (q.review === 0 && q.new === 0) { stat.completed = 1; stat.completed_at = last.review_at; }
       }
+      if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day)){
+        const plan=db.prepare('SELECT COUNT(*) n,COALESCE(SUM(done),0) done FROM learning_day_words WHERE day=?').get(day) as {n:number;done:number};
+        stat.completed=Number(plan.n>0&&plan.done===plan.n);stat.completed_at=stat.completed?last?.review_at??null:null;
+        stat.mastered_new=(db.prepare("SELECT COUNT(DISTINCT word_id) n FROM learning_issues WHERE day=? AND json_extract(result_json,'$.book')='mastered' AND json_extract(result_json,'$.previousBook')<>'mastered'").get(day) as {n:number}).n;
+      }
       upsert.run(stat);
     }
   })();
@@ -159,16 +165,12 @@ export function makeup(db: DB, day: string, now = new Date()) {
 }
 
 export function curriculumProgress(db: DB) {
-  const group = (level: string) => {
-    const r = db.prepare(`SELECT COUNT(*) total,
-      COALESCE(SUM(c.id IS NULL OR c.state=0),0) AS new,
-      COALESCE(SUM(c.state IN (1,3) OR (c.state=2 AND c.stability<7)),0) learning,
-      COALESCE(SUM(c.state=2 AND c.stability>=7 AND c.stability<21),0) familiar,
-      COALESCE(SUM(c.state=2 AND c.stability>=21),0) mastered
-      FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' WHERE w.source='kb2022' AND w.level=?`).get(level) as { total: number; new: number; learning: number; familiar: number; mastered: number };
-    return r;
+  const group=(level:string)=>{
+    const r={total:0,new:0,learning:0,familiar:0,mastered:0};
+    const words=db.prepare("SELECT c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source='kb2022' AND w.level=?").all(level) as {state:number|null;stability:number|null;learning_book?:string|null}[];
+    for(const word of words){r.total++;r[statusKey(word)]++;}return r;
   };
-  return { core: group('三级'), level2: group('二级') };
+  return {core:group('三级'),level2:group('二级')};
 }
 export function parentSummary(db: DB, now = new Date(), days = 30) {
   if (!Number.isInteger(days) || days < 1 || days > 366) throw new Error('天数应在 1 到 366 之间');

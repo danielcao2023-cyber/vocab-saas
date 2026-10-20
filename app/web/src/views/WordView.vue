@@ -12,7 +12,7 @@ import StatusChip from '../components/StatusChip.vue';
 import SenseLesson from '../components/SenseLesson.vue';
 import WordAiChat from '../components/WordAiChat.vue';
 
-const props=defineProps<{wordId:number;initial?:WordDetail}>();
+const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boolean}>();
 defineEmits<{back:[]}>();
 const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=ref(false),audioFailed=ref<PlaybackFailure|null>(null);
 const pronunciationNote=ref<string|null>(null);
@@ -84,7 +84,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <div class="meta">
           <span class="tag" :class="{core:detail.word.level==='三级'}">{{ detail.word.level==='三级'?COPY.core:COPY.level2 }}</span>
           <StatusChip :status="detail.status" />
-          <span v-if="detail.wrong?.inBook" class="wb">{{ COPY.wrongBook }}</span>
+          <span v-if="!automaticBooks&&detail.wrong?.inBook" class="wb">{{ COPY.wrongBook }}</span>
         </div>
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
@@ -101,7 +101,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
               <span>{{ detail.statusDetail[mode]?COPY.cardStates[detail.statusDetail[mode]!.state]+' · '+date(detail.statusDetail[mode]!.due):COPY.noCard }}</span>
             </div>
           </div>
-          <div class="record-wrong">
+          <div v-if="!automaticBooks" class="record-wrong">
             <template v-if="detail.wrong?.inBook">
               <p class="small"><span class="wb">{{ COPY.inWrong }}</span> {{ COPY.wrongCount(detail.wrong.wrong_count) }}</p>
               <p class="small muted"><span class="dots3"><i v-for="n in 3" :key="n" :class="{on:n<=detail.wrong.correct_days.length}"></i></span>{{ COPY.correctDays(detail.wrong.correct_days.length) }} · {{ COPY.wrongRule }}</p>

@@ -84,7 +84,7 @@ export const COPY = {
   addWrong: '加入错词本', inWrong: '在错词本里', notInWrong: '不在错词本里。', removeWrong: '移出错词本', wrongBook: '错词本',
   lookupWrongNote: '加入后会保存在错词本；尚未开始认词的单词，需要先学习后才能进入“练错词”。查词本身不会改变复习安排。',
   learningStatus: '学习状态', nextReview: '下次复习：', back: '← 返回', loadMore: '加载更多', all: '全部', levelLabel: '级别', letterLabel: '首字母',
-  statuses: {new:'新词',learning:'学习中',familiar:'熟悉',mastered:'掌握'} as Record<string,string>, cardStates: ['新词','学习中','复习中','重学中'],
+  statuses: {new:'生词',learning:'不熟',familiar:'熟悉',mastered:'已掌握'} as Record<string,string>, cardStates: ['新词','学习中','复习中','重学中'],
   noCard: '还没开始', wrongCount: (n:number)=>`错过 ${n} 次`, correctDays: (n:number)=>`${n}/3 天`, browseTotal: (n:number)=>`共 ${n} 个`,
   // 稿 p2-browse-*.html 列表头：「共 1600 个 · 按中考常见程度（推断）排序」「首字母 E · 63 个 · 按日常使用频率排序」
   browseHead: (n:number,letter:string,group:string)=>`${letter==='all'?`共 ${n} 个`:`首字母 ${String(letter).toUpperCase()} · ${n} 个`} · ${group==='zk_high'?'按中考常见程度（推断）排序':'按日常使用频率排序'}`,

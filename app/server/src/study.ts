@@ -179,7 +179,7 @@ export function progress(db: DB) {
   const lists = db.prepare(`SELECT source, MAX(is_sample) is_sample, COUNT(*) total FROM words GROUP BY source`).all() as { source: string; is_sample: number; total: number }[];
   return lists.map((l) => {
     const r = { new:0, learning:0, familiar:0, mastered:0 };
-    const cards = db.prepare(`SELECT c.state,c.stability FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' WHERE w.source=?`).all(l.source) as {state:number|null;stability:number|null}[];
+    const cards = db.prepare(`SELECT c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source=?`).all(l.source) as {state:number|null;stability:number|null;learning_book?:string|null}[];
     for (const c of cards) r[statusKey(c)]++;
     return { source:l.source, isSample:!!l.is_sample, total:l.total, ...r };
   });

@@ -1,4 +1,5 @@
 import { search, wordDetail, browse } from './search.ts';
+import { learningRoutes } from './learning/routes.ts';
 import { getContent, contentFeedback } from './content.ts';
 import { sendError, parseId, HttpError } from './http-error.ts';
 import { feedbackLimiter, LIMIT_ERRORS } from './rate-limit.ts';
@@ -44,6 +45,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   app.get('/version', async () => version);
   pronunciationRoutes(app, db, opts.pronunciationDir);
   chatRoutes(app, db, opts);
+  learningRoutes(app, db, now);
   app.get('/api/today', async () => {
     const t = now(), p = parentSummary(db, t, 1);
     return { ...todaySummary(db, t), stats: p.daily[0], masteredNew: (db.prepare('SELECT mastered_new FROM daily_stats WHERE day=?').get(shDay(t)) as { mastered_new: number } | undefined)?.mastered_new ?? 0,
