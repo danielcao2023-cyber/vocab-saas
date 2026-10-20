@@ -19,6 +19,7 @@ const TABS = [
   {id: 'confusions', label: '近义与易混'},
   {id: 'etymology', label: '词根与词族'},
   {id: 'memory', label: '助记办法'},
+  {id: 'extra', label: '再多了解一点'},
 ] as const;
 
 const activeTabId = ref<TabId>(TABS[0].id);
@@ -222,7 +223,15 @@ watch(() => props.lesson.wordId, () => {
       <div class="study-plan"><h3>学完，试着说一说</h3><ol><li v-for="step in lesson.studyPlan" :key="step">{{ step }}</li></ol></div>
     </section>
 
-    <section class="lesson-section extensions" aria-label="补充讲解">
+    <section
+      v-if="activeTabId === 'extra'"
+      :id="`${tabIdPrefix}-extra-panel`"
+      role="tabpanel"
+      tabindex="0"
+      :aria-labelledby="`${tabIdPrefix}-extra`"
+      class="lesson-section extensions"
+      aria-label="补充讲解"
+    >
       <h2>再多了解一点</h2>
       <details class="reading-panel">
         <summary>发音与词形变化</summary>
@@ -237,17 +246,16 @@ watch(() => props.lesson.wordId, () => {
         <summary>进阶义项 · 先认识，不必一次记完</summary>
         <div class="panel-body"><article v-for="sense in lesson.lessCommonSenses" :key="sense.id" class="less-common"><h3>{{ sense.title }}</h3><p>{{ sense.meaning }}</p><p class="muted-copy">{{ sense.note }}</p><p lang="en" class="en compact-example"><template v-for="(part, i) in wordParts(sense.example.en)" :key="i"><strong v-if="part.highlighted">{{ part.text }}</strong><template v-else>{{ part.text }}</template></template></p><p class="translation">{{ sense.example.zh }}</p><p v-if="sense.example.note" class="example-note">{{ sense.example.note }}</p></article></div>
       </details>
+      <details v-if="lesson.sources.length" class="lesson-sources">
+        <summary>参考资料</summary>
+        <template v-for="group in ([{kind: 'verified', title: '已核对来源'}, {kind: 'recommended', title: '延伸阅读'}] as const)" :key="group.kind">
+          <div v-if="lesson.sources.some(source => source.verification === group.kind)" class="source-group">
+            <h4>{{ group.title }}</h4>
+            <ul><li v-for="source in lesson.sources.filter(source => source.verification === group.kind)" :key="source.id"><a :href="source.url" target="_blank" rel="noopener noreferrer">{{ source.title }}</a><span>{{ source.supports.join('；') }}</span></li></ul>
+          </div>
+        </template>
+      </details>
     </section>
-
-    <details v-if="lesson.sources.length" class="lesson-sources">
-      <summary>参考资料</summary>
-      <template v-for="group in ([{kind: 'verified', title: '已核对来源'}, {kind: 'recommended', title: '延伸阅读'}] as const)" :key="group.kind">
-        <div v-if="lesson.sources.some(source => source.verification === group.kind)" class="source-group">
-          <h4>{{ group.title }}</h4>
-          <ul><li v-for="source in lesson.sources.filter(source => source.verification === group.kind)" :key="source.id"><a :href="source.url" target="_blank" rel="noopener noreferrer">{{ source.title }}</a><span>{{ source.supports.join('；') }}</span></li></ul>
-        </div>
-      </template>
-    </details>
   </div>
 </template>
 

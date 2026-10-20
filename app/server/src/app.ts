@@ -16,8 +16,9 @@ import { readVersion } from './version.ts';
 import { checkSpelling, practiceAllowed, nextCard, progress, review, setWrong, todaySummary, wrongSummary, wrongPractice } from './study.ts';
 import { pronunciationRoutes } from './pronunciation.ts';
 import { createLessonReader } from './lessons.ts';
+import { chatRoutes,type ChatRouteOptions } from './chat-routes.ts';
 
-export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: string; lessonDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } = {}) {
+export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: string; lessonDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } & ChatRouteOptions = {}) {
   const now = opts.now ?? (() => new Date());
   const version = readVersion(opts.staticDir ?? 'dist'); // 启动时读一次
   const app = Fastify({ logger: false });
@@ -42,6 +43,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   });
   app.get('/version', async () => version);
   pronunciationRoutes(app, db, opts.pronunciationDir);
+  chatRoutes(app, db, opts);
   app.get('/api/today', async () => {
     const t = now(), p = parentSummary(db, t, 1);
     return { ...todaySummary(db, t), stats: p.daily[0], masteredNew: (db.prepare('SELECT mastered_new FROM daily_stats WHERE day=?').get(shDay(t)) as { mastered_new: number } | undefined)?.mastered_new ?? 0,

@@ -17,6 +17,18 @@ DB_PATH=data/dev-vocab.db HOST=127.0.0.1 PORT=18421 npm start
 
 环境变量：`HOST`、`PORT`（默认 18420）、`DB_PATH`（默认 `data/vocab.db`）、`STATIC_DIR`（默认 `dist`）、`ALLOW_CIDRS`。默认白名单为本机；非法网络配置会拒绝启动，单个监听地址暂不可用则继续重试。
 
+## 词条 AI 学习助手
+
+单词页右侧（手机端可展开）支持多个模型配置：DeepSeek、通义千问、智谱 GLM、Kimi、豆包、MiniMax。在“模型设置”添加显示名称、服务商、模型 ID 和对应平台的 API Key，再选模型提问。预设 ID 可按账号权限修改；豆包也可填已开通的 `ep-` 接入点 ID。保存配置不调用模型。对话使用官方 OpenAI 兼容接口，当前为非流式回复，等待上限 60 秒。
+
+Key 保存到服务端 `AI_CONFIG_PATH`，默认 `~/.config/vocab-saas/ai-models.json`，文件权限 0600，原子写入。它是本机明文配置，需按密钥文件管理；不进学习数据库、浏览器存储或 HTTP 查询响应。编辑留空保留原 Key，更换服务商必须填新的 Key。多人访问同一应用实例会共用这些模型配置和调用额度，沿用本机/Tailscale 白名单访问边界。
+
+只在发送时将当前词条（单词、释义、音标）及有限对话发送到所选服务商；不发送学习记录。聊天仅在页面内存中保存，切词、切模型或刷新会清空。支持停止、失败重试和清空；模型输出为纯文本，内容请核对。每次请求最多 20 条消息、每条 4000 字、合计 24000 字；长回复只在下一次发送上下文时截短，页面展示保留完整回复。
+
+接口：`GET /api/ai/settings`、`POST /api/ai/settings`、`POST /api/ai/settings/:id/delete`、`POST /api/ai/chat`。写操作校验 Origin；服务商地址固定且不跟随重定向；两个并发、每分钟 20 次请求上限，错误不回传上游原文。测试通过注入模拟上游完成，不需要或复用任何真实 Key；真实云模型连通性需配置对应账号后验证。
+
+官方协议依据：[DeepSeek](https://api-docs.deepseek.com/)、[百炼](https://help.aliyun.com/zh/model-studio/compatibility-of-openai-with-dashscope)、[智谱](https://docs.bigmodel.cn/cn/api/introduction)、[Kimi](https://platform.kimi.com/blog/posts/kimi-api-quick-start-guide)、[豆包](https://console.volcengine.com/ark/region%3Acn-beijing/docs/text-generation)、[MiniMax](https://platform.minimax.cn/docs/api-reference/text-openai-api)。预设仅作便捷起点，模型可用性以服务商账号为准。
+
 ## 词表与中文释义
 
 课标源文件位于仓库 `data/curriculum/ocr/`，三级词表共 1600 条，其中二级 505、初中新学 1095。2026-10-17 对 Studio 数据库的只读核对结果：1600 个词均有中文释义，59 条使用人工释义，1590 条有音标；当时扩展讲解表为空。

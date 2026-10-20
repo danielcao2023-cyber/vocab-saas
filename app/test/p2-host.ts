@@ -5,6 +5,7 @@ export class Host {
   children:Host[]=[];parent:Host|null=null;props:Record<string,any>={};text='';value='';tagName:string;
   constructor(public tag:string){this.tagName=tag.toUpperCase();}
   addEventListener(){} removeEventListener(){} setAttribute(k:string,v:any){this.props[k]=v;} removeAttribute(k:string){delete this.props[k];}
+  get options(){return this.children.filter(n=>n.tag==='option');}
   getRootNode(){return globalThis.document;} focus(){(document as any).activeElement=this;}
 }
 export function host(file:string,props:any={}) {

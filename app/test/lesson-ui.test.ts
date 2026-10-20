@@ -29,7 +29,7 @@ it('loads a lesson on demand without blocking the word or audio, then replaces o
     resolveLesson(response({status:'ready',lesson:lessonFor(12,'accept')}));await flush();
     expect(ui.text()).toContain('accept 的完整讲解');
     expect(ui.text()).not.toContain('原有释义');
-    expect(ui.all(node=>node.tag==='aside')).toHaveLength(0);
+    expect(ui.all(node=>node.tag==='aside'&&node.props['aria-label']==='AI 学习助手')).toHaveLength(1);
     expect(globalThis.fetch).toHaveBeenCalledWith('/api/word/12/lesson',undefined);
   }finally{ui.app.unmount();}
 });
@@ -115,6 +115,7 @@ it('shows why relations or roots do not apply, and separates checked sources fro
     ui.all(node=>node.props.role==='tab'&&ui.text(node)==='词根与词族')[0].props.onClick();await flush();
     expect(ui.text()).toContain('作为一个整体记忆，不作词根拆分。');
     expect(ui.text()).toContain('此阶段无需扩展同族词。');
+    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='再多了解一点')[0].props.onClick();await flush();
     expect(ui.text()).toContain('已核对来源');expect(ui.text()).toContain('延伸阅读');
   }finally{ui.app.unmount();}
 });
