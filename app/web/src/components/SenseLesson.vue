@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import {ref, watch, useId} from 'vue';
 import type {WordLesson, LessonUsage} from '../../../shared/lesson';
 import {lessonWordParts} from '../lesson-text';
 
@@ -8,16 +9,75 @@ const usageLabels: Record<LessonUsage['kind'], string> = {
   'common-collocation': '常见搭配',
   'fixed-expression': '固定表达',
 };
+
+const tabIdPrefix = useId();
+
+type TabId = (typeof TABS)[number]['id'];
+
+const TABS = [
+  {id: 'usage', label: '义项与用法'},
+  {id: 'confusions', label: '近义与易混'},
+  {id: 'etymology', label: '词根与词族'},
+  {id: 'memory', label: '助记办法'},
+] as const;
+
+const activeTabId = ref<TabId>(TABS[0].id);
+
 function wordParts(text: string) {
   return lessonWordParts(text, props.lesson);
 }
-function jumpTo(section: string) {
-  const target = document.getElementById(`${props.lesson.id}-${section}`);
-  if (!target) return;
-  const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-  target.scrollIntoView({behavior: reducedMotion ? 'auto' : 'smooth', block: 'start'});
-  target.focus({preventScroll: true});
+
+function activateTab(tabId: TabId) {
+  activeTabId.value = tabId;
 }
+
+function handleKeydown(event: KeyboardEvent, tabId: TabId) {
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+  const currentTarget = event.currentTarget as HTMLElement | null;
+  if (!currentTarget?.parentElement?.querySelectorAll) return;
+
+  const tabs = Array.from(currentTarget.parentElement.querySelectorAll<HTMLButtonElement>(`[role="tab"]`));
+  if (tabs.length === 0) return;
+
+  const currentIndex = tabs.findIndex(t => t.id === `${tabIdPrefix}-${tabId}`);
+  if (currentIndex === -1) return;
+
+  let newIndex = currentIndex;
+
+  switch (event.key) {
+    case 'ArrowLeft':
+      newIndex = currentIndex === 0 ? tabs.length - 1 : currentIndex - 1;
+      break;
+    case 'ArrowRight':
+      newIndex = currentIndex === tabs.length - 1 ? 0 : currentIndex + 1;
+      break;
+    case 'Home':
+      newIndex = 0;
+      break;
+    case 'End':
+      newIndex = tabs.length - 1;
+      break;
+    default:
+      return;
+  }
+
+  event.preventDefault();
+  const newTab = tabs[newIndex];
+  newTab?.focus({preventScroll: true});
+  activateTab(TABS[newIndex].id);
+}
+
+function handleTabClick(tabId: TabId) {
+  activateTab(tabId);
+}
+
+watch(() => props.lesson.id, () => {
+  activeTabId.value = TABS[0].id;
+});
+
+watch(() => props.lesson.wordId, () => {
+  activeTabId.value = TABS[0].id;
+});
 </script>
 
 <template>
@@ -26,15 +86,32 @@ function jumpTo(section: string) {
       <p class="eyebrow">{{ lesson.partOfSpeech }} · {{ lesson.levelHint }}</p>
       <h2>{{ lesson.headline }}</h2>
       <p class="takeaway">{{ lesson.takeaway }}</p>
-      <nav class="lesson-nav" aria-label="讲解内容">
-        <button type="button" @click="jumpTo('senses')">义项与用法</button>
-        <button type="button" @click="jumpTo('confusions')">近义与易混</button>
-        <button type="button" @click="jumpTo('roots')">词根与词族</button>
-        <button type="button" @click="jumpTo('memory')">助记办法</button>
+      <nav class="lesson-nav" role="tablist" aria-label="讲解内容">
+        <button
+          v-for="tab in TABS"
+          :key="tab.id"
+          :id="`${tabIdPrefix}-${tab.id}`"
+          role="tab"
+          type="button"
+          :class="{active: activeTabId === tab.id}"
+          :aria-selected="activeTabId === tab.id ? 'true' : 'false'"
+          :aria-controls="`${tabIdPrefix}-${tab.id}-panel`"
+          :tabindex="activeTabId === tab.id ? 0 : -1"
+          @click="handleTabClick(tab.id)"
+          @keydown="handleKeydown($event, tab.id)"
+        >{{ tab.label }}</button>
       </nav>
     </header>
 
-    <section :id="`${lesson.id}-senses`" tabindex="-1" class="core-senses" aria-label="核心义项与例句">
+    <section
+      v-if="activeTabId === 'usage'"
+      :id="`${tabIdPrefix}-usage-panel`"
+      role="tabpanel"
+      tabindex="0"
+      :aria-labelledby="`${tabIdPrefix}-usage`"
+      class="core-senses"
+      aria-label="核心义项与例句"
+    >
       <article v-for="(sense, index) in lesson.senses" :key="sense.id" class="sense">
         <div class="sense-heading">
           <span class="sense-number" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
@@ -72,7 +149,14 @@ function jumpTo(section: string) {
       </article>
     </section>
 
-    <section :id="`${lesson.id}-confusions`" tabindex="-1" class="lesson-section">
+    <section
+      v-if="activeTabId === 'confusions'"
+      :id="`${tabIdPrefix}-confusions-panel`"
+      role="tabpanel"
+      tabindex="0"
+      :aria-labelledby="`${tabIdPrefix}-confusions`"
+      class="lesson-section"
+    >
       <p class="section-kicker">分清用法</p><h2>容易混淆的地方</h2>
       <p v-if="!lesson.confusions.length" class="muted-copy">这个词先掌握上面的义项与用法即可，近义和相反表达见对应义项。</p>
       <details v-for="item in lesson.confusions" :key="item.id" class="reading-panel" open>
@@ -89,7 +173,14 @@ function jumpTo(section: string) {
       </details>
     </section>
 
-    <section :id="`${lesson.id}-roots`" tabindex="-1" class="lesson-section">
+    <section
+      v-if="activeTabId === 'etymology'"
+      :id="`${tabIdPrefix}-etymology-panel`"
+      role="tabpanel"
+      tabindex="0"
+      :aria-labelledby="`${tabIdPrefix}-etymology`"
+      class="lesson-section"
+    >
       <p class="section-kicker">看懂单词的来处</p><h2>词根、词缀与词族</h2>
       <details class="reading-panel" open>
         <summary>词源与词根</summary>
@@ -114,7 +205,14 @@ function jumpTo(section: string) {
       </details>
     </section>
 
-    <section :id="`${lesson.id}-memory`" tabindex="-1" class="lesson-section">
+    <section
+      v-if="activeTabId === 'memory'"
+      :id="`${tabIdPrefix}-memory-panel`"
+      role="tabpanel"
+      tabindex="0"
+      :aria-labelledby="`${tabIdPrefix}-memory`"
+      class="lesson-section"
+    >
       <p class="section-kicker">把意思连成画面</p><h2>助记办法</h2>
       <div class="memory-panel">
         <h3>{{ lesson.memoryAid.title }}</h3><p class="memory-story">{{ lesson.memoryAid.story }}</p>
@@ -165,8 +263,11 @@ strong { color: var(--primary); font-weight: 650; }
 .lesson-intro .eyebrow { margin-bottom: 8px; }
 .lesson-intro .takeaway { color: var(--ink-2); margin-top: 12px; font-size: 15px; }
 .lesson-nav { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 8px; }
-.lesson-nav button { padding: 7px 12px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 7px; color: var(--primary); font-size: 13px; cursor: pointer; }
-.lesson-nav button:hover { background: var(--primary-soft); border-color: var(--core-line); }
+.lesson-nav button { padding: 8px 14px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 20px; color: var(--ink-2); font-size: 13px; font-weight: 500; cursor: pointer; min-height: 44px; }
+@media (hover: hover) and (pointer: fine) {
+  .lesson-nav button:not(:disabled):not([aria-selected="true"]):hover { background: var(--primary-soft); border-color: var(--core-line); }
+}
+.lesson-nav button[aria-selected="true"], .lesson-nav button.active { background: var(--primary); border-color: var(--primary); color: #fff; }
 a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
 .core-senses, .lesson-section { scroll-margin-top: 100px; }
 .sense { padding: 30px 0 34px; border-bottom: 1px solid var(--line); }

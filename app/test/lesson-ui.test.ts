@@ -103,7 +103,7 @@ it('does not render a lesson bound to a different headword',async()=>{
   finally{ui.app.unmount();}
 });
 
-it('shows why relations or roots do not apply, and separates checked sources from further reading',()=>{
+it('shows why relations or roots do not apply, and separates checked sources from further reading',async()=>{
   const lesson=lessonFor(12,'accept');
   lesson.senses[0].relatedExpressions={similar:[],contrasting:[],similarNote:'这个用法没有能直接替换的近义词。',contrastingNote:'这里没有自然的一对一反义词。'};
   lesson.etymology.stages=[];lesson.etymology.summary='作为一个整体记忆，不作词根拆分。';
@@ -112,6 +112,7 @@ it('shows why relations or roots do not apply, and separates checked sources fro
   const ui=host('web/src/components/SenseLesson.vue',{lesson});
   try{
     expect(ui.text()).toContain('这里没有自然的一对一反义词。');
+    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='词根与词族')[0].props.onClick();await flush();
     expect(ui.text()).toContain('作为一个整体记忆，不作词根拆分。');
     expect(ui.text()).toContain('此阶段无需扩展同族词。');
     expect(ui.text()).toContain('已核对来源');expect(ui.text()).toContain('延伸阅读');
@@ -137,17 +138,17 @@ it.each([
   }finally{ui.app.unmount();}
 });
 
-it('navigates within a lesson without adding history entries that interfere with study or back navigation',()=>{
+it('changes lesson panels without scrolling or adding history entries',async()=>{
   const lesson=lessonFor(12,'accept');
   const ui=host('web/src/components/SenseLesson.vue',{lesson});
   const target={scrollIntoView:vi.fn(),focus:vi.fn()};
   const lookup=vi.fn(()=>target);Object.assign(document,{getElementById:lookup});
   const pushState=vi.fn();vi.stubGlobal('history',{pushState});
   try{
-    ui.all(node=>node.tag==='button'&&ui.text(node)==='助记办法')[0].props.onClick();
-    expect(lookup).toHaveBeenCalledWith('lesson-12-memory');
-    expect(target.scrollIntoView).toHaveBeenCalledWith({behavior:'smooth',block:'start'});
-    expect(target.focus).toHaveBeenCalledWith({preventScroll:true});
+    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='助记办法')[0].props.onClick();await flush();
+    expect(ui.text(ui.all(node=>node.props.role==='tabpanel')[0])).toContain(lesson.memoryAid.story);
+    expect(lookup).not.toHaveBeenCalled();
+    expect(target.scrollIntoView).not.toHaveBeenCalled();
     expect(pushState).not.toHaveBeenCalled();
     expect(ui.all(node=>node.tag==='a'&&String(node.props.href).startsWith('#'))).toHaveLength(0);
   }finally{ui.app.unmount();}

@@ -216,6 +216,36 @@ table.top20 td.w { font: 600 16px var(--font-word); }
 button:focus-visible, a:focus-visible, input:focus-visible, summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; box-shadow: 0 0 0 4px var(--primary-soft); }
 button:disabled { cursor: default; }
 button.btn:disabled { opacity: .55; }
+button:disabled:active { transform: none; }
+
+/* Global hover feedback for interactive elements */
+@media (hover: hover) and (pointer: fine) {
+  button:not(:disabled):hover,
+  summary:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+button:not(:disabled),
+summary {
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease,
+              filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  button:not(:disabled):hover,
+  summary:hover {
+    transform: none;
+  }
+  button,
+  summary {
+    transform: none !important;
+    transition: none !important;
+  }
+}
 .stack { display: grid; gap: 20px; }
 .tabs button, .bottombar button, .seg button { font: inherit; border: 0; background: transparent; color: var(--ink-2); }
 .tabs button { padding: 6px 14px; border-radius: 999px; min-height: 44px; font-weight: 500; }
