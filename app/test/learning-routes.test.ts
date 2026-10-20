@@ -7,16 +7,16 @@ it('starts and resumes real cards, grades on the server, retries once and expose
  const {app,db,advance}=setup();expect((await app.inject('/api/learning/today')).json()).toMatchObject({started:false,total:1});
  expect((await app.inject({method:'POST',url:'/api/learning/start',headers:{origin:'https://other.example'},payload:{}})).statusCode).toBe(403);
  expect((await app.inject({method:'POST',url:'/api/learning/start',payload:{}})).statusCode).toBe(200);
- let first='';for(let i=0;i<9;i++){
+ let first='';for(let i=0;i<1;i++){
   const turn=(await app.inject('/api/learning/next')).json();expect(turn.kind).toBe('card');if(!i)first=turn.card.issueId;
   const payload={issueId:turn.card.issueId,answerId:'answer-'+i,...(turn.card.mode==='recognize'?{choiceId:1}:{answer:'above'})};
   const saved=await app.inject({method:'POST',url:'/api/learning/answer',payload});expect(saved.statusCode).toBe(200);expect(saved.json().correct).toBe(true);
   expect((await app.inject({method:'POST',url:'/api/learning/answer',payload})).json()).toEqual(saved.json());advance();
  }
- expect((db.prepare('SELECT COUNT(*) n FROM review_logs').get() as any).n).toBe(9);
- expect((await app.inject('/api/learning/books?book=mastered')).json()).toMatchObject({total:1});
- expect((await app.inject('/api/word/1')).json().status).toBe('已掌握');
- expect((await app.inject('/api/browse?status=mastered')).json().total).toBe(1);
+ expect((db.prepare('SELECT COUNT(*) n FROM review_logs').get() as any).n).toBe(1);
+ expect((await app.inject('/api/learning/books?book=familiar')).json()).toMatchObject({total:1});
+ expect((await app.inject('/api/word/1')).json().status).toBe('熟悉');
+ expect((await app.inject('/api/browse?status=familiar')).json().total).toBe(1);
  expect((await app.inject({method:'POST',url:'/api/learning/answer',payload:{issueId:first,answerId:'collision',choiceId:1}})).statusCode).toBe(409);
 });
 it('rejects non-offered answers, invalid books and audio deferral on non-listening cards',async()=>{

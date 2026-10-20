@@ -14,5 +14,9 @@ CREATE TABLE IF NOT EXISTS learning_issues (
  id TEXT PRIMARY KEY,day TEXT NOT NULL,word_id INTEGER NOT NULL REFERENCES words(id),mode TEXT NOT NULL,options_json TEXT NOT NULL,
  issued_at TEXT NOT NULL,assisted INTEGER NOT NULL DEFAULT 0,answered_at TEXT,answer_id TEXT UNIQUE,result_json TEXT);
 CREATE INDEX IF NOT EXISTS idx_learning_due ON learning_words(due);
+CREATE INDEX IF NOT EXISTS idx_learning_word_answers ON learning_issues(word_id,day,issued_at);
 CREATE INDEX IF NOT EXISTS idx_learning_open ON learning_issues(day,answered_at);
-`);}
+`);
+ const columns=db.prepare('PRAGMA table_info(learning_days)').all() as {name:string}[];
+ if(!columns.some(c=>c.name==='policy_version'))db.exec('ALTER TABLE learning_days ADD COLUMN policy_version INTEGER NOT NULL DEFAULT 1');
+}

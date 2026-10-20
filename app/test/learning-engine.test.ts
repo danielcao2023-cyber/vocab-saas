@@ -12,12 +12,11 @@ it('freezes forty unique balanced words only on start and preserves the plan on 
  startLearning(db,initial);const ids=(db.prepare('SELECT word_id FROM learning_day_words').all() as any[]).map(r=>r.word_id);expect(new Set(ids).size).toBe(40);expect(ids.filter(id=>id<=35)).toHaveLength(28);
  startLearning(db,initial);expect(db.prepare('SELECT COUNT(*) n FROM learning_day_words').get()).toEqual({n:40});expect(learningToday(db,initial).started).toBe(true);
 });
-it('requires nine unassisted successes per new word and keeps FSRS separate from book classification',()=>{
- const db=fixture(1);let now=new Date(initial);startLearning(db,now);const seen:string[]=[];
- for(let i=0;i<9;i++){const turn=nextLearning(db,now);expect(turn.kind).toBe('card');seen.push(turn.card!.mode);respond(db,turn,now);now=new Date(now.getTime()+20*60000);}
- expect(seen.filter(m=>m==='dictation')).toHaveLength(3);expect(learningBooks(db,'mastered',1,now).total).toBe(1);expect(learningToday(db,now).completed).toBe(1);expect(db.prepare('SELECT mastered_new,completed FROM daily_stats WHERE day=?').get('2026-10-20')).toEqual({mastered_new:1,completed:1});expect(nextLearning(db,now).kind).toBe('done');
- expect((db.prepare('SELECT COUNT(*) n FROM review_logs').get() as any).n).toBe(9);
- const nextDay=new Date('2026-10-21T09:00:00+08:00');expect(learningToday(db,nextDay).reviewWords).toBe(1);
+it('finishes a new word with one independent success and retains FSRS and next-day review',()=>{
+ const db=fixture(1);startLearning(db,initial);respond(db,nextLearning(db,initial),initial);
+ expect(learningBooks(db,'familiar').total).toBe(1);expect(learningToday(db,initial).completed).toBe(1);expect(nextLearning(db,initial).kind).toBe('done');
+ expect(db.prepare('SELECT mastered_new,completed FROM daily_stats WHERE day=?').get('2026-10-20')).toEqual({mastered_new:0,completed:1});expect(db.prepare('SELECT COUNT(*) n FROM review_logs').get()).toEqual({n:1});
+ expect(learningToday(db,new Date('2026-10-21T09:00:00+08:00')).reviewWords).toBe(1);
 });
 it('downgrades immediately on failures, retries idempotently and does not erase daily errors after correction',()=>{
  const db=fixture(1);startLearning(db,initial);let turn=nextLearning(db,initial);const id='saved-once';const r=respond(db,turn,initial,false,id);expect(respond(db,turn,initial,false,id)).toEqual(r);expect((db.prepare('SELECT COUNT(*) n FROM review_logs').get() as any).n).toBe(1);
@@ -25,19 +24,18 @@ it('downgrades immediately on failures, retries idempotently and does not erase 
  for(let i=0;i<12;i++){now=new Date(now.getTime()+20*60000);turn=nextLearning(db,now);if(turn.kind==='done')break;respond(db,turn,now);}
  expect(learningBooks(db,'unfamiliar',1,now).total).toBe(1);
 });
-it('waits instead of completing early, preserves the open issue, rejects a midnight stale answer and consults prevent pristine mastery',()=>{
- const db=fixture(1);startLearning(db,initial);const turn=nextLearning(db,initial);expect(nextLearning(db,initial).card!.issueId).toBe(turn.card!.issueId);consultLearning(db,turn.card!.issueId,initial);respond(db,turn,initial);expect(nextLearning(db,initial).kind).toBe('waiting');
+it('preserves the open issue, rejects a midnight stale answer and consults prevent pristine mastery',()=>{
+ const db=fixture(1);startLearning(db,initial);const turn=nextLearning(db,initial);expect(nextLearning(db,initial).card!.issueId).toBe(turn.card!.issueId);consultLearning(db,turn.card!.issueId,initial);respond(db,turn,initial);expect(nextLearning(db,initial).kind).toBe('card');
  let now=new Date(initial);for(let i=0;i<12;i++){now=new Date(now.getTime()+20*60000);const t=nextLearning(db,now);if(t.kind==='done')break;respond(db,t,now);}
  expect(learningBooks(db,'mastered',1,now).total).toBe(0);expect(learningBooks(db,'familiar',1,now).total).toBe(1);
  const tomorrow=new Date('2026-10-21T09:00:00+08:00');startLearning(db,tomorrow);const old=nextLearning(db,tomorrow);expect(()=>respond(db,old,new Date('2026-10-22T09:00:00+08:00'))).toThrow();
 });
-it('probes a mastered word once, then applies one-error and two-error downgrades with remedial practice',()=>{
- const db=fixture(1);let now=new Date(initial);startLearning(db,now);for(let i=0;i<9;i++){respond(db,nextLearning(db,now),now);now=new Date(now.getTime()+20*60000);}
- now=new Date('2026-10-21T09:00:00+08:00');startLearning(db,now);respond(db,nextLearning(db,now),now,false);expect(learningBooks(db,'familiar',1,now).total).toBe(1);
- now=new Date(now.getTime()+20*60000);respond(db,nextLearning(db,now),now,false);expect(learningBooks(db,'unfamiliar',1,now).total).toBe(1);
- for(let i=0;i<3;i++){now=new Date(now.getTime()+20*60000);respond(db,nextLearning(db,now),now);}
- expect(nextLearning(db,now).kind).toBe('done');expect(learningBooks(db,'unfamiliar',1,now).total).toBe(1);
- now=new Date('2026-10-22T09:00:00+08:00');startLearning(db,now);for(let i=0;i<3;i++){respond(db,nextLearning(db,now),now);now=new Date(now.getTime()+20*60000);}expect(learningBooks(db,'familiar',1,now).total).toBe(1);
+it('probes a mastered word once and applies one-error and two-error downgrades without erasing errors on correction',()=>{
+ const db=fixture(1);for(let day=0;day<3;day++){const now=new Date(initial.getTime()+day*86400000);startLearning(db,now);respond(db,nextLearning(db,now),now);}
+ let now=new Date('2026-10-23T09:00:00+08:00');startLearning(db,now);respond(db,nextLearning(db,now),now,false);expect(learningBooks(db,'familiar').total).toBe(1);
+ respond(db,nextLearning(db,now),now,false);expect(learningBooks(db,'unfamiliar').total).toBe(1);respond(db,nextLearning(db,now),now);
+ expect(nextLearning(db,now).kind).toBe('done');expect(learningBooks(db,'unfamiliar').total).toBe(1);
+ now=new Date('2026-10-24T09:00:00+08:00');startLearning(db,now);respond(db,nextLearning(db,now),now);expect(learningBooks(db,'familiar').total).toBe(1);
 });
 it('preserves legacy history and prioritizes overdue review over new-word composition',()=>{
  const db=fixture();const now=new Date(initial);startLearning(db,now);
@@ -47,7 +45,7 @@ it('preserves legacy history and prioritizes overdue review over new-word compos
  expect((db.prepare('SELECT COUNT(*) n FROM review_logs').get() as any).n).toBe(before);
 });
 it('does not keep an old unfinished day as a permanent review obligation after later completion',()=>{
- const db=fixture(1);startLearning(db,initial);let now=new Date('2026-10-21T09:00:00+08:00');startLearning(db,now);for(let i=0;i<9;i++){respond(db,nextLearning(db,now),now);now=new Date(now.getTime()+20*60000);}
+ const db=fixture(1);startLearning(db,initial);let now=new Date('2026-10-21T09:00:00+08:00');startLearning(db,now);respond(db,nextLearning(db,now),now);
  db.prepare("UPDATE learning_words SET due='2026-11-20T00:00:00.000Z' WHERE word_id=1").run();
  expect(learningToday(db,new Date('2026-10-23T09:00:00+08:00')).reviewWords).toBe(0);
 });
@@ -72,8 +70,9 @@ it('balances easy medium and hard new words where the library provides them',()=
  expect([0,1,2].map(k=>words.filter(w=>wordDifficulty(w.headword)===k).length)).toEqual([16,16,8]);
 });
 it('defers unavailable dictation without awarding a pass or completing the day',()=>{
- const db=fixture(1);startLearning(db,initial);let now=new Date(initial);respond(db,nextLearning(db,now),now);now=new Date(now.getTime()+20*60000);respond(db,nextLearning(db,now),now);now=new Date(now.getTime()+20*60000);
- const turn=nextLearning(db,now);expect(turn.card!.mode).toBe('dictation');deferLearning(db,turn.card!.issueId,now);
- expect(learningToday(db,now)).toMatchObject({completed:0,deferred:1,answers:2});expect(nextLearning(db,now).kind).toBe('done');expect(learningBooks(db,'mastered',1,now).total).toBe(0);
- const tomorrow=new Date('2026-10-21T09:00:00+08:00');expect(learningToday(db,tomorrow).total).toBe(1);startLearning(db,tomorrow);expect(nextLearning(db,tomorrow).kind).toBe('card');
+ const db=fixture(3);startLearning(db,initial);let now=new Date(initial),deferred=0;
+ for(let i=0;i<3;i++){const turn=nextLearning(db,now);if(turn.card!.mode==='dictation'){deferLearning(db,turn.card!.issueId,now);deferred++;}else respond(db,turn,now);}
+ expect(deferred).toBe(1);
+ expect(learningToday(db,now)).toMatchObject({completed:2,deferred:1,answers:2});expect(nextLearning(db,now).kind).toBe('done');expect(learningBooks(db,'mastered',1,now).total).toBe(0);
+ const tomorrow=new Date('2026-10-21T09:00:00+08:00');expect(learningToday(db,tomorrow).total).toBe(3);startLearning(db,tomorrow);expect(nextLearning(db,tomorrow).kind).toBe('card');
 });

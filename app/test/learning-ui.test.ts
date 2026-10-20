@@ -43,3 +43,9 @@ it('marks a lesson visit as assisted and keeps the same question on return',asyn
   ui.updateProps({active:false});await flush();ui.updateProps({active:true});await flush();expect(calls.filter(x=>x.endsWith('/next'))).toHaveLength(1);expect(ui.text()).toContain('above');
  }finally{ui.app.unmount();}
 });
+it('uses letter underlines for Chinese-to-English and celebrates without a book label',async()=>{
+ const ui=host('web/src/components/FocusStudyCard.vue',{card:{...card,mode:'spell',meaning:'在上方'},answer:'',feedback:null,busy:false,audioFailed:null});
+ try{expect(ui.all(n=>n.tag==='input')).toHaveLength(5);expect(ui.all(n=>n.tag==='input'&&n.props.placeholder==='输入英文')).toHaveLength(0);
+ ui.updateProps({feedback:{correct:true,assisted:false,expected:'above',meaning:'上方',book:'unfamiliar',nextDue:'2026-10-21'}});await flush();expect(ui.text()).toContain('答对了 👍');expect(ui.text()).not.toContain('不熟');
+ }finally{ui.app.unmount();}
+});

@@ -6,10 +6,10 @@ import type {LearningTurn,LearningResult,LearningSummary} from '../../../shared/
 import FocusStudyCard from '../components/FocusStudyCard.vue';
 const props=withDefaults(defineProps<{active?:boolean}>(),{active:true});
 const emit=defineEmits<{cancel:[];open:[wordId:number];updated:[]}>();
-const turn=ref<LearningTurn|null>(null),answer=ref(''),feedback=ref<LearningResult|null>(null),busy=ref(false),unsaved=ref(false),error=ref(''),audioFailed=ref<PlaybackFailure|null>(null),tick=ref(Date.now());
-const submitter=new PendingSubmitter((path,body)=>api(path,body));let alive=true,version=0,audioVersion=0,shownAt=Date.now(),timer:ReturnType<typeof setInterval>|undefined;
+const turn=ref<LearningTurn|null>(null),answer=ref(''),feedback=ref<LearningResult|null>(null),busy=ref(false),unsaved=ref(false),error=ref(''),audioFailed=ref<PlaybackFailure|null>(null);
+const submitter=new PendingSubmitter((path,body)=>api(path,body));let alive=true,version=0,audioVersion=0,shownAt=Date.now();
 const summary=computed<LearningSummary|null>(()=>turn.value?.summary??null);
-const waitLabel=computed(()=>{const left=Math.max(0,Math.ceil((Date.parse(turn.value?.nextAt??'')-tick.value)/1000));return left>60?`${Math.ceil(left/60)} 分钟后`:'稍后';});
+
 function stop(){audioVersion++;stopAudio();audioFailed.value=null;}
 async function play(){const card=turn.value?.card;if(!card||!props.active)return;const n=++audioVersion;audioFailed.value=null;const result=await speak(card.audioWord??card.headword??'');if(alive&&n===audioVersion&&result.status==='unavailable')audioFailed.value=result.reason;}
 async function load(){if(busy.value||unsaved.value)return;const n=++version;busy.value=true;error.value='';stop();
@@ -31,12 +31,11 @@ async function defer(){const card=turn.value?.card;if(!card||busy.value||unsaved
 async function reconnect(){if(!unsaved.value||busy.value||!props.active)return;try{if((await fetch('/health')).ok)await retry();}catch{/* Keep original question until it is saved. */}}
 function pause(){if(!busy.value&&!unsaved.value){stop();emit('cancel');}}
 watch(()=>props.active,active=>{stop();if(active)shownAt=Date.now();});
-onMounted(()=>{load();window.addEventListener('online',reconnect);timer=setInterval(()=>{tick.value=Date.now();if(props.active&&turn.value?.kind==='waiting'&&Date.parse(turn.value.nextAt!)<=tick.value&&!busy.value)void load();},1000);});
-onUnmounted(()=>{alive=false;version++;stop();clearInterval(timer);window.removeEventListener('online',reconnect);});
+onMounted(()=>{load();window.addEventListener('online',reconnect);});
+onUnmounted(()=>{alive=false;version++;stop();window.removeEventListener('online',reconnect);});
 </script>
 <template><main class="page learning-study"><div class="learning-studybar"><button class="btn" type="button" :disabled="busy||unsaved" @click="pause">暂停</button><span v-if="summary" class="muted small">今日 {{ summary.completed }} / {{ summary.total }} 词</span></div>
  <FocusStudyCard v-if="turn?.kind==='card'&&turn.card" :key="turn.card.issueId" :card="turn.card" v-model:answer="answer" :feedback="feedback" :busy="busy||unsaved||!active" :audio-failed="audioFailed" @choose="submit" @submit="submit()" @next="load" @play="play" @learn="consult" @defer="defer" />
- <section v-else-if="turn?.kind==='waiting'" class="panel learning-message"><h1>这一轮先歇一会儿</h1><p>下一次复习在 {{ waitLabel }}。完成的进度已保存。</p><div class="actions"><button class="btn primary" :disabled="busy" @click="load">检查下一张</button><button class="btn" @click="pause">回到今日</button></div></section>
  <section v-else-if="turn?.kind==='done'" class="panel learning-message"><h1>{{ summary?.deferred?'本轮练习已结束':'今天的任务完成了' }}</h1><p>完成 {{ summary?.completed }} 个词 · 答题 {{ summary?.answers }} 次</p><p v-if="summary?.deferred">{{ summary.deferred }} 个词因读音暂缓，后续继续安排。</p><button class="btn primary" @click="pause">回到今日</button></section>
  <p v-else-if="!error" class="note">正在准备卡片…</p>
  <div v-if="unsaved" class="learning-message panel" role="status">答案尚未保存，请保持本题。<button class="btn" :disabled="busy" @click="retry">重试保存</button></div>

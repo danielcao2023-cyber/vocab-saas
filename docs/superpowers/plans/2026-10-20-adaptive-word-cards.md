@@ -60,3 +60,8 @@ Files: views/LearningHomeView.vue, LearningStudyView.vue, WordBooksView.vue; com
 - Final checks: 69 files / 518 tests, server and Vue type checks, Vite build and diff check pass. Desktop 1280×900 / native1135×1078, mobile390×844; three card modes, paste/autofocus/correction, assisted lesson return, waiting and book changes exercised. No relevant console errors or framework overlay after fixes.
 - A SQLite backup of the real dev database was made outside Git before migration, integrity_check=ok, 1600 words and zero original logs. Interactive answer QA used its disposable copy on18422; the real preview on18421 has no test learning sessions or answers. Production has not been migrated.
 - Application remains on the feature branch; integration/push is a later user decision. Weekly real-user retention and production proxy setup are not validated by these local/clock-controlled tests.
+
+
+## 同日体验修订（当前规则）
+
+初版提交a789d21之后，用户取消九题和强制等待，要求汉译英同用横线、答对仅提示并点赞；用户确认首次正确为熟悉，跨天验证后为掌握。新增policy.ts负责混排、跨天干净验证和旧当天计划兼容；原三次连续、分钟冷却及相关测试断言已按新需求替换。新增回归覆盖40新词40题、题型开头混排、错误队尾/一次修正完成、辅助不算通过、三个日期覆盖三型晋级、旧计划与旧音频暂缓的兼容。UI回归覆盖汉译英横线及纯成功反馈。

@@ -2,17 +2,16 @@ import {randomUUID} from 'node:crypto';
 import {createEmptyCard,Rating} from 'ts-fsrs';
 import type {DB} from '../db.ts';
 import {acceptedSpellings,normalizeAnswer,review,type CardRow} from '../study.ts';
-import {shDay,shDayStart} from '../time.ts';
+import {shDay} from '../time.ts';
 import {maskAnswer} from '../text.ts';
 import {meaningsOverlap} from '../quiz.ts';
 import {recomputeDailyStats} from '../stats.ts';
 import {HttpError} from '../http-error.ts';
 import {learningWords,selectDaily,type LearningWord} from './selection.ts';
 import type {WordBook,LearningMode,LearningSummary,LearningTurn,LearningCard,LearningAnswer,LearningResult,LearningBooks} from '../../../shared/learning.ts';
-const MODES:LearningMode[]=['recognize','spell','dictation'];
+import {MODES,POLICY_VERSION,nextDay as tomorrow,chooseMode,passBook,upgradePlan} from './policy.ts';
 interface DayWord {day:string;word_id:number;position:number;initial_book:WordBook;is_new:number;targets:string;streaks:string;errors:number;assisted:number;available_at:string;last_mode:number;done:number;deferred:number}
 interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null}
-const tomorrow=(now:Date)=>new Date(shDayStart(now).getTime()+86400000).toISOString();
 const counts=(words:LearningWord[])=>words.reduce((r,w)=>(r[w.book]++,r),{new:0,unfamiliar:0,familiar:0,mastered:0});
 const rows=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as DayWord[];
 export function learningToday(db:DB,now=new Date()):LearningSummary{
@@ -27,15 +26,10 @@ function ensureWord(db:DB,w:LearningWord,now:Date){
  for(const mode of MODES){const c=createEmptyCard(now);db.prepare('INSERT OR IGNORE INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,learning_steps,reps,lapses,state) VALUES (?,?,?,?,?,?,?,?,?,?,?)').run(w.id,mode,c.due.toISOString(),c.stability,c.difficulty,c.elapsed_days,c.scheduled_days,c.learning_steps,c.reps,c.lapses,c.state);}
 }
 export function startLearning(db:DB,now=new Date()){
- db.transaction(()=>{const day=shDay(now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;
-  db.prepare('INSERT INTO learning_days(day,created_at) VALUES (?,?)').run(day,now.toISOString());
+ db.transaction(()=>{const day=shDay(now);upgradePlan(db,now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;
+  db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,?)').run(day,now.toISOString(),POLICY_VERSION);
   selectDaily(db,now).selected.forEach((w,i)=>{
-   ensureWord(db,w,now);let targets=[1,1,1];
-   if(!w.initial_done)targets=[3,3,3];
-   else if(w.book==='mastered'){
-    const cards=db.prepare('SELECT mode,last_review,lapses,due FROM cards WHERE word_id=? ORDER BY due,COALESCE(last_review,\'\'),lapses DESC').all(w.id) as {mode:LearningMode}[];
-    targets=[0,0,0];targets[MODES.indexOf(cards[0].mode)]=1;
-   }
+   ensureWord(db,w,now);const mode=chooseMode(db,w,day,i),targets=MODES.map(m=>Number(m===mode));
    db.prepare('INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at) VALUES (?,?,?,?,?,?,?)').run(day,w.id,i,w.book,Number(w.book==='new'),JSON.stringify(targets),now.toISOString());
   });
  })();return learningToday(db,now);
@@ -56,13 +50,12 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
   ...(issue.mode==='recognize'?{headword:w.headword}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,w.headword),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(w.headword)[0]})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{return db.transaction(()=>{
- const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
+ upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
  const active=rows(db,summary.day).filter(w=>!w.done&&!w.deferred);if(!active.length)return {kind:'done',summary};
  const words=learningWords(db),byId=new Map(words.map(w=>[w.id,w]));
  const open=db.prepare('SELECT * FROM learning_issues WHERE day=? AND answered_at IS NULL ORDER BY issued_at DESC LIMIT 1').get(summary.day) as Issue|undefined;
  if(open&&active.some(w=>w.word_id===open.word_id))return {kind:'card',summary,card:renderCard(db,open,byId.get(open.word_id)!)};
- const eligible=active.filter(w=>w.available_at<=now.toISOString()).sort((a,b)=>a.available_at.localeCompare(b.available_at)||a.position-b.position);
- if(!eligible.length)return {kind:'waiting',summary,nextAt:active.map(w=>w.available_at).sort()[0]};
+ const eligible=active.sort((a,b)=>a.position-b.position);
  const entry=eligible[0],targets=JSON.parse(entry.targets) as number[],streaks=JSON.parse(entry.streaks) as number[];
  const modes=MODES.map((mode,i)=>({mode,i})).filter(({i})=>streaks[i]<targets[i]);
  modes.sort((a,b)=>streaks[a.i]-streaks[b.i]||Number(a.i===entry.last_mode)-Number(b.i===entry.last_mode)||a.i-b.i);
@@ -72,6 +65,7 @@ export function nextLearning(db:DB,now=new Date()):LearningTurn{return db.transa
  return {kind:'card',summary,card:renderCard(db,issue,w)};
 })() as LearningTurn;}
 function activeIssue(db:DB,id:unknown,now:Date){
+ upgradePlan(db,now);
  if(typeof id!=='string'||id.length>80)throw new HttpError(400,'题目编号无效。');
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue|undefined;
  if(!issue)throw new HttpError(404,'题目不存在，请重新开始。');
@@ -107,26 +101,22 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
  }
  const assisted=!!issue.assisted,errors=(w.error_day===issue.day?w.day_errors:0)+Number(!correct),initialErrors=w.initial_errors+Number(!w.initial_done&&(!correct||assisted));
  const targets=JSON.parse(entry.targets) as number[],streaks=JSON.parse(entry.streaks) as number[],i=MODES.indexOf(issue.mode);
- if(correct&&!assisted)streaks[i]++;else{streaks[i]=0;targets[i]=Math.max(3,targets[i]);}
- const finished=targets.every((n,index)=>streaks[index]>=n),wasAssisted=!!entry.assisted||assisted;
+ const finished=correct&&!assisted,wasAssisted=!!entry.assisted||assisted;
+ streaks[i]=Number(finished);
  let book:WordBook=w.book==='new'?'unfamiliar':w.book;
- if(!correct||assisted)book=errors>=2?'unfamiliar':w.book==='mastered'?'familiar':book;
- if(finished){
-  if(errors>=2)book='unfamiliar';else if(errors||wasAssisted)book='familiar';
-  else if(!w.initial_done)book=initialErrors===0?'mastered':'familiar';
-  else book=entry.initial_book==='unfamiliar'?'familiar':'mastered';
- }
+ if(finished)book=passBook(db,w,issue.day,issue.mode,errors,wasAssisted);
+ else if(errors>=2)book='unfamiliar';else if(w.book==='mastered')book='familiar';
  const card=db.prepare('SELECT * FROM cards WHERE word_id=? AND mode=?').get(w.id,issue.mode) as CardRow;
  const rated=review(db,card.id,correct?(assisted?Rating.Hard:Rating.Good):Rating.Again,now,{answerId:input.answerId,correct,answer:input.answer,context:'study',qtype:issue.mode==='recognize'?'flip':issue.mode,durationMs:input.durationMs});
- const gap=correct&&!assisted?(streaks[i]>=2?15:5):3,available=new Date(now.getTime()+gap*60000).toISOString();
- let due=available;
+ const available=now.toISOString();let due=available;
  if(finished){
   const earliest=(db.prepare('SELECT MIN(due) due FROM cards WHERE word_id=?').get(w.id) as {due:string}).due;
   due=earliest<tomorrow(now)?tomorrow(now):earliest;
-  if(!w.initial_done||(!correct)||errors>=2||(w.last_fail&&issue.day<shDay(new Date(new Date(w.last_fail).getTime()+2*86400000))))due=tomorrow(now);
+  if(!w.initial_done||errors||wasAssisted||(w.last_fail&&issue.day<shDay(new Date(new Date(w.last_fail).getTime()+2*86400000))))due=tomorrow(now);
  }
- db.prepare('UPDATE learning_day_words SET targets=?,streaks=?,errors=errors+?,assisted=?,available_at=?,last_mode=?,done=? WHERE day=? AND word_id=?').run(JSON.stringify(targets),JSON.stringify(streaks),Number(!correct),Number(wasAssisted),available,i,Number(finished),issue.day,w.id);
- db.prepare('UPDATE learning_words SET book=?,last_at=?,initial_done=?,initial_errors=?,error_day=?,day_errors=?,last_fail=?,due=? WHERE word_id=?').run(book,now.toISOString(),Number(!!w.initial_done||finished),initialErrors,issue.day,errors,!correct?now.toISOString():w.last_fail,due,w.id);
+ const position=finished?entry.position:(db.prepare('SELECT MAX(position) p FROM learning_day_words WHERE day=?').get(issue.day) as {p:number}).p+1;
+ db.prepare('UPDATE learning_day_words SET targets=?,streaks=?,errors=errors+?,assisted=?,available_at=?,last_mode=?,done=?,position=? WHERE day=? AND word_id=?').run(JSON.stringify(targets),JSON.stringify(streaks),Number(!correct),Number(wasAssisted),available,i,Number(finished),position,issue.day,w.id);
+ db.prepare('UPDATE learning_words SET book=?,last_at=?,initial_done=?,initial_errors=?,error_day=?,day_errors=?,last_fail=?,due=? WHERE word_id=?').run(book,now.toISOString(),Number(!!w.initial_done||finished),initialErrors,issue.day,errors,(!correct||assisted)?now.toISOString():w.last_fail,due,w.id);
  const result:LearningResult={correct,assisted,expected:w.headword,meaning:w.meaning_zh??'',book,nextDue:due,previousBook:w.book};
  db.prepare('UPDATE learning_issues SET answered_at=?,answer_id=?,result_json=? WHERE id=?').run(now.toISOString(),input.answerId,JSON.stringify(result),issue.id);
  recomputeDailyStats(db,[issue.day]);
