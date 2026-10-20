@@ -12,7 +12,8 @@ export function clientComponent(file: string): any {
   function load(filename: string): any {
     if (cache.has(filename)) return cache.get(filename);
     const source = fs.readFileSync(filename, 'utf8');
-    const content = filename.endsWith('.vue') ? compileScript(parse(source, { filename }).descriptor, { id: filename, inlineTemplate: true }).content : source;
+    // The custom host has no HTML parser/insertStaticContent; keep static nodes explicit in tests.
+    const content = filename.endsWith('.vue') ? compileScript(parse(source, { filename }).descriptor, { id: filename, inlineTemplate: true, templateOptions: {compilerOptions: {hoistStatic: false}} }).content : source;
     const js = ts.transpileModule(content, { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS, esModuleInterop: true } }).outputText;
     const mod: { exports: any } = { exports: {} };cache.set(filename,mod.exports);
     const require = (name: string) => {

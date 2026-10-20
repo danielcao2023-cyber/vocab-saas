@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import {ref, watch, useId} from 'vue';
+import {computed,ref, watch, useId} from 'vue';
 import type {WordLesson, LessonUsage} from '../../../shared/lesson';
 import {lessonWordParts} from '../lesson-text';
+
+import SoundSpellingLesson from './SoundSpellingLesson.vue';
 
 const props = defineProps<{lesson: WordLesson}>();
 const usageLabels: Record<LessonUsage['kind'], string> = {
@@ -12,7 +14,8 @@ const usageLabels: Record<LessonUsage['kind'], string> = {
 
 const tabIdPrefix = useId();
 
-type TabId = (typeof TABS)[number]['id'];
+defineEmits<{play:[]}>();
+type TabId = 'sound-spelling' | (typeof TABS)[number]['id'];
 
 const TABS = [
   {id: 'usage', label: '义项与用法'},
@@ -22,7 +25,9 @@ const TABS = [
   {id: 'extra', label: '再多了解一点'},
 ] as const;
 
-const activeTabId = ref<TabId>(TABS[0].id);
+const hasSoundSpelling=computed(()=>props.lesson.headword.toLowerCase()==='government');
+const availableTabs=computed(()=>hasSoundSpelling.value?[{id:'sound-spelling' as const,label:'发音与拼写'},...TABS]:[...TABS]);
+const activeTabId = ref<TabId>(availableTabs.value[0].id);
 
 function wordParts(text: string) {
   return lessonWordParts(text, props.lesson);
@@ -65,7 +70,7 @@ function handleKeydown(event: KeyboardEvent, tabId: TabId) {
   event.preventDefault();
   const newTab = tabs[newIndex];
   newTab?.focus({preventScroll: true});
-  activateTab(TABS[newIndex].id);
+  activateTab(availableTabs.value[newIndex].id);
 }
 
 function handleTabClick(tabId: TabId) {
@@ -73,11 +78,11 @@ function handleTabClick(tabId: TabId) {
 }
 
 watch(() => props.lesson.id, () => {
-  activeTabId.value = TABS[0].id;
+  activeTabId.value = availableTabs.value[0].id;
 });
 
 watch(() => props.lesson.wordId, () => {
-  activeTabId.value = TABS[0].id;
+  activeTabId.value = availableTabs.value[0].id;
 });
 </script>
 
@@ -89,7 +94,7 @@ watch(() => props.lesson.wordId, () => {
       <p class="takeaway">{{ lesson.takeaway }}</p>
       <nav class="lesson-nav" role="tablist" aria-label="讲解内容">
         <button
-          v-for="tab in TABS"
+          v-for="tab in availableTabs"
           :key="tab.id"
           :id="`${tabIdPrefix}-${tab.id}`"
           role="tab"
@@ -103,6 +108,8 @@ watch(() => props.lesson.wordId, () => {
         >{{ tab.label }}</button>
       </nav>
     </header>
+
+    <section v-if="activeTabId==='sound-spelling'" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><SoundSpellingLesson @play="$emit('play')" /></section>
 
     <section
       v-if="activeTabId === 'usage'"

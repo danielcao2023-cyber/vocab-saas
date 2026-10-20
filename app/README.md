@@ -30,6 +30,12 @@ DB_PATH=data/dev-vocab.db HOST=127.0.0.1 PORT=18421 npm start
 
 新增 `/api/learning/{today,start,next,answer,consult,defer,books}`；写接口检查 Origin，判分由服务端完成。启动时只新增 `learning_*` 表与索引，不重置旧卡片或日志；首次接入的旧词依据既有状态与稳定性映射单词本。旧接口保留兼容，日历和统计共享真实答题日志。升级前请先用 SQLite backup API 备份目标数据库；本轮只在本地开发库启用，生产尚未迁移。设计与实现计划见仓库 `docs/superpowers/`。
 
+## 发音与拼写示例
+
+当前仅 `government` 增加并默认打开“发音与拼写”tab，其他词保持原五个tab。美式示例按 `gov · ern · ment` 对齐字母/字母组合与音标，点选分段查看提示，播放按钮沿用现有美式整词录音。英式对照单独折叠；`/ɚ/` 与 `/ər/` 两种记号做了衔接说明。内容为人工整理的单词级对应，不自动把某个字母的读音推广到所有单词。
+
+数据在 `web/src/content/sound-spelling/government.ts`，展示在 `SoundSpellingLesson.vue`；依据 [Cambridge](https://dictionary.cambridge.org/us/pronunciation/english/government) 与 [Oxford](https://www.oxfordlearnersdictionaries.com/definition/english/government)。本轮为用户评审用示例，待确认样式与学习方式后再考虑扩展。
+
 ## 词条 AI 学习助手
 
 单词页右侧（手机端可展开）支持多个模型配置：DeepSeek、通义千问、智谱 GLM、Kimi、豆包、MiniMax。在“模型设置”添加显示名称、服务商、模型 ID 和对应平台的 API Key，再选模型提问。预设 ID 可按账号权限修改；豆包也可填已开通的 `ep-` 接入点 ID。保存配置不调用模型。对话使用官方 OpenAI 兼容接口，当前为非流式回复，等待上限 60 秒。

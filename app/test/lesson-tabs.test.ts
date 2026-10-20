@@ -72,3 +72,23 @@ it('supports arrow and boundary keys within its own tablist', async () => {
     }
   } finally { ui.app.unmount(); }
 });
+
+it('defaults government to sound-spelling while keeping other words on the existing five tabs',async()=>{
+ const government={...structuredClone(manageLesson),id:'lesson-government',wordId:600,headword:'government'};
+ const play=vi.fn(),ui=host('web/src/components/SenseLesson.vue',{lesson:government,onPlay:play});
+ try{const tabs=()=>ui.all(n=>n.props.role==='tab');expect(tabs()).toHaveLength(6);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
+  expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);expect(ui.text()).toContain('gov');expect(ui.text()).toContain('ern');expect(ui.text()).toContain('ment');expect(ui.text()).toContain('/ɚ/');
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听美式整词'))[0].props.onClick();expect(play).toHaveBeenCalledOnce();
+  tabs().find(n=>ui.text(n)==='义项与用法')!.props.onClick();await flush();expect(ui.text()).not.toContain('听美式整词');
+  ui.updateProps({lesson:structuredClone(manageLesson)});await flush();expect(tabs()).toHaveLength(5);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['义项与用法']);
+ }finally{ui.app.unmount();}
+});
+
+it('includes the new first tab in keyboard navigation and resets when government is opened',async()=>{
+ const ui=host('web/src/components/SenseLesson.vue',{lesson:structuredClone(manageLesson)});
+ try{ui.updateProps({lesson:{...structuredClone(manageLesson),id:'government',wordId:600,headword:'government'}});await flush();
+  const tabs=ui.all(n=>n.props.role==='tab'),buttons=tabs.map(n=>({id:n.props.id,focus:vi.fn()})),parentElement={querySelectorAll:()=>buttons};
+  tabs[0].props.onKeydown({key:'End',currentTarget:{...buttons[0],parentElement},preventDefault(){}});await flush();expect(tabs[5].props['aria-selected']).toBe('true');
+  tabs[5].props.onKeydown({key:'ArrowRight',currentTarget:{...buttons[5],parentElement},preventDefault(){}});await flush();expect(tabs[0].props['aria-selected']).toBe('true');
+ }finally{ui.app.unmount();}
+});

@@ -112,7 +112,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
             <p v-else-if="!detail.statusDetail.recognize" class="note">这个词还没开始认词，暂时不会进入“练错词”。</p>
           </div>
         </details>
-        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" />
+        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" @play="play" />
         <template v-else>
           <p v-if="lessonFailed" class="note" role="status">完整讲解暂时未能载入。<button type="button" class="link" @click="loadLesson">重试讲解</button></p>
           <MeaningList :key="wordId" :meaning="card.meaning_zh" :source="card.meaning_source" :flag="card.meaning_flag" />
