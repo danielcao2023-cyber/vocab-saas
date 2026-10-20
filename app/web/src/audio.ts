@@ -1,4 +1,5 @@
 import { mainHeadwords } from '../../server/src/text';
+import {isMobileBuild,bundledAudio} from './offline/mobile-mode';
 
 export type PlaybackFailure = 'blocked' | 'failed';
 export type PlaybackResult =
@@ -15,6 +16,7 @@ export function stopAudio(): void {
 
 export function pronunciationCreditsUrl(headword?: string): string {
   const word = headword ? mainHeadwords(headword)[0] : undefined;
+  if(isMobileBuild())return '/offline/credits.html'+(word?'#'+encodeURIComponent(word):'');
   return '/api/pronunciation/credits' + (word ? `?word=${encodeURIComponent(word)}` : '');
 }
 
@@ -61,7 +63,8 @@ export function speak(headword: string): Promise<PlaybackResult> {
     audio.addEventListener('error', onError);
     try {
       audio.preload = 'auto';
-      audio.src = `/api/pronunciation/audio?word=${encodeURIComponent(word)}`;
+      if(isMobileBuild()&&!bundledAudio(word)){finish({status:'unavailable',reason:'failed'});return;}
+      audio.src = isMobileBuild()?bundledAudio(word)!:`/api/pronunciation/audio?word=${encodeURIComponent(word)}`;
       // A fulfilled play() only means playback started, not that the recording completed.
       Promise.resolve(audio.play()).then(() => { started = true; }, onRejected);
     } catch (error) { onRejected(error); }

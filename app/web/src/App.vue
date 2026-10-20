@@ -30,8 +30,13 @@ function openBook(value:WordBook){book.value=value;go('books');}
 function openWord(id:number){if(view.value!=='word')previousView.value=view.value;history.replaceState({view:view.value,wordId:wordId.value},'');history.pushState({view:'word',wordId:id},'',`/?word=${id}`);wordHistory=true;wordId.value=id;view.value='word';}
 function pop(e:PopStateEvent){const id=Number(new URLSearchParams(location.search).get('word'));if(id>0){wordId.value=id;view.value='word';}else{wordId.value=null;view.value=e.state?.view&&e.state.view!=='word'?e.state.view:previousView.value;loadHome();}}
 function backWord(){if(wordHistory)history.back();else go(previousView.value);}
-onMounted(()=>{if(isParent)return;const id=Number(new URLSearchParams(location.search).get('word'));if(id>0){wordId.value=id;view.value='word';}window.addEventListener('popstate',pop);window.addEventListener('online',ping);loadHome();timer=setInterval(ping,30000);});
-onUnmounted(()=>{alive=false;version++;clearInterval(timer);window.removeEventListener('popstate',pop);window.removeEventListener('online',ping);});
+function nativeBack(e:Event){
+ if(view.value==='word'){e.preventDefault();backWord();return;}
+ if(view.value==='study'){e.preventDefault();window.dispatchEvent(new Event('xiaobei:pause-study'));return;}
+ if(view.value!=='home'){e.preventDefault();go('home');}
+}
+onMounted(()=>{if(isParent)return;const id=Number(new URLSearchParams(location.search).get('word'));if(id>0){wordId.value=id;view.value='word';}window.addEventListener('popstate',pop);window.addEventListener('xiaobei:back',nativeBack);window.addEventListener('online',ping);loadHome();timer=setInterval(ping,30000);});
+onUnmounted(()=>{alive=false;version++;clearInterval(timer);window.removeEventListener('popstate',pop);window.removeEventListener('xiaobei:back',nativeBack);window.removeEventListener('online',ping);});
 const tabs=[{view:'home' as const,label:'今日'},{view:'books' as const,label:'单词本'},{view:'browse' as const,label:COPY.wordList},{view:'progress' as const,label:'进度'}];
 </script>
 <template><ParentView v-if="isParent" /><template v-else>

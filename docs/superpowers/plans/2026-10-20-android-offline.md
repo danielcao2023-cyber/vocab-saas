@@ -1,0 +1,11 @@
+# Android Offline Implementation Plan
+
+Goal: deliver an installable APK with all bundled vocabulary and no prior personal state.
+Architecture: Vue/Capacitor, shared existing learning engine on sql.js, app-private persisted SQLite, local assets and optional explicit AI network requests.
+Spec: ../specs/2026-10-20-android-offline.md
+
+- [x] Database task: create web/src/offline/sqlite.ts with openBrowserDatabase(bytes, options) returning the synchronous DB interface used by server functions plus export/close; test real engine SQL, bindings, nested transactions and rollback. Create scripts/mobile-seed.ts with createMobileSeed(source,destination), new schema and explicit public-table projection, no user state; inspect exported seed before packaging. Independent worker owns only these modules and matching tests.
+- [x] Native task: create android/ and capacitor.config.ts for cn.xiaobei.vocabulary, label 小北记单词, webDir mobile-dist, no external server URL, min SDK23, API35. Offline assets handled by Capacitor. Disable backup, support system back, secure local Key store plugin, safe-area handling. Reuse installed JDK21/SDK licenses. Worker owns native files only; build signed installable APK, validate with aapt/apksigner and emulator when ready.
+- [x] Runtime task: web/src/offline/{runtime,storage,ai}.ts dispatch /api locally and persist all writes before resolving. main.ts initializes only VITE_MOBILE=1 build; audio.ts maps bundled recordings; mobile Vite configuration emits mobile-dist with generated public assets. Parent owns these files. Engine imports node:crypto become the browser randomUUID via build alias only.
+- [x] Integration task: real seed and actual engine tests for 40 words, wrong recovery, books and restart; compile desktop and mobile, no regression to server build. Native build waits for complete mobile-dist. Audit ZIP allowlist, ensure zero learner rows, no model keys/dialogues, and include audio attribution.
+- [x] Acceptance: emulator airplane mode cold start, search/lesson/audio and answer persistence, back-key behavior and visual evidence; install docs/version/hash. Keep source on feat/android-offline; no application deployment or remote push implied. Ask once about milestone archival at final handoff.

@@ -11,19 +11,29 @@
     "start": "tsx server/src/main.ts",
     "test": "vitest run",
     "seed:due": "tsx scripts/seed-due.ts",
-    "scan:tags": "tsx scripts/scan-tags.ts"
+    "scan:tags": "tsx scripts/scan-tags.ts",
+    "mobile:assets": "tsx scripts/mobile-assets.ts",
+    "mobile:build": "npm run mobile:assets && vue-tsc -p web/tsconfig.json --noEmit && vite build --config vite.mobile.config.ts",
+    "android:sync": "npm run mobile:build && cap sync android",
+    "android:apk": "npm run mobile:build && bash android/build-local-release.sh"
   },
   "dependencies": {
+    "@capacitor/android": "7.6.9",
+    "@capacitor/core": "7.6.9",
+    "@capacitor/filesystem": "7.1.8",
     "@fastify/static": "10.1.6",
     "better-sqlite3": "12.11.1",
     "fastify": "^5.12.7",
+    "sql.js": "1.15.1",
     "ts-fsrs": "^5.4.2",
     "tsx": "4.23.15",
     "vue": "3.5.44"
   },
   "devDependencies": {
+    "@capacitor/cli": "7.6.9",
     "@types/better-sqlite3": "^9.6.0",
     "@types/node": "^26.6.5",
+    "@types/sql.js": "1.4.9",
     "@vitejs/plugin-vue": "^6.0.10",
     "typescript": "^5.9.3",
     "vite": "^8.3.4",

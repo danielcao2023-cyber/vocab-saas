@@ -13,7 +13,7 @@
       </button>
 
       <h2 class="ai-settings-title">模型设置</h2>
-      <p class="settings-note">Key 保存在本机服务端配置文件中，不会回显或写入学习数据库。保存不会调用模型；发送提问按服务商规则计费。</p>
+      <p class="settings-note">{{ isMobileBuild()?'Key 加密保存在这台手机中，不会回显或写入学习数据库。':'Key 保存在本机服务端配置文件中，不会回显或写入学习数据库。' }}保存不会调用模型；发送提问按服务商规则计费。</p>
       <p v-if="status" class="settings-note" role="status">{{ status }}</p>
 
       <form class="ai-settings-form" @submit.prevent="handleSave">
@@ -128,6 +128,7 @@
 <script setup lang="ts">
 import {ref,computed,onMounted,onUnmounted,nextTick} from 'vue';
 import {api} from '../api';
+import {isMobileBuild} from '../offline/mobile-mode';
 import {AI_PROVIDERS,type AiModelInput,type AiModelProfile,type AiSettingsResponse,type AiProviderId} from '../../../shared/ai-chat';
 const props=defineProps<{initial?:AiSettingsResponse}>();
 const emit=defineEmits<{close:[];saved:[settings:AiSettingsResponse]}>();

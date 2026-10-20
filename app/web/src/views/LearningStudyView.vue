@@ -31,8 +31,8 @@ async function defer(){const card=turn.value?.card;if(!card||busy.value||unsaved
 async function reconnect(){if(!unsaved.value||busy.value||!props.active)return;try{if((await fetch('/health')).ok)await retry();}catch{/* Keep original question until it is saved. */}}
 function pause(){if(!busy.value&&!unsaved.value){stop();emit('cancel');}}
 watch(()=>props.active,active=>{stop();if(active)shownAt=Date.now();});
-onMounted(()=>{load();window.addEventListener('online',reconnect);});
-onUnmounted(()=>{alive=false;version++;stop();window.removeEventListener('online',reconnect);});
+onMounted(()=>{load();window.addEventListener('online',reconnect);window.addEventListener('xiaobei:pause-study',pause);});
+onUnmounted(()=>{alive=false;version++;stop();window.removeEventListener('online',reconnect);window.removeEventListener('xiaobei:pause-study',pause);});
 </script>
 <template><main class="page learning-study"><div class="learning-studybar"><button class="btn" type="button" :disabled="busy||unsaved" @click="pause">暂停</button><span v-if="summary" class="muted small">今日 {{ summary.completed }} / {{ summary.total }} 词</span></div>
  <FocusStudyCard v-if="turn?.kind==='card'&&turn.card" :key="turn.card.issueId" :card="turn.card" v-model:answer="answer" :feedback="feedback" :busy="busy||unsaved||!active" :audio-failed="audioFailed" @choose="submit" @submit="submit()" @next="load" @play="play" @learn="consult" @defer="defer" />
