@@ -92,3 +92,26 @@ it('includes the new first tab in keyboard navigation and resets when government
   tabs[5].props.onKeydown({key:'ArrowRight',currentTarget:{...buttons[5],parentElement},preventDefault(){}});await flush();expect(tabs[0].props['aria-selected']).toBe('true');
  }finally{ui.app.unmount();}
 });
+
+it('opens a reviewed multisyllabic word with its own sound map and highlights its stressed segment',async()=>{
+ const ui=host('web/src/components/SenseLesson.vue',{lesson:{...structuredClone(manageLesson),id:'important',wordId:693,headword:'important'}});
+ try{
+  expect(ui.all(n=>n.props.role==='tab'&&String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
+  const chunks=ui.all(n=>n.tag==='button'&&String(n.props.class).includes('sound-chunk'));
+  expect(chunks.map(n=>ui.text(n).includes('重读'))).toEqual([false,true,false]);
+  expect(ui.text()).toContain('por');expect(ui.text()).not.toContain('govern');
+  chunks[1].props.onClick();await flush();expect(ui.text()).toContain('por：怎么从声音想到字母');
+ }finally{ui.app.unmount();}
+});
+
+it('resets segment selection when navigating from a four-segment word to a shorter sound map',async()=>{
+ const ui=host('web/src/components/SenseLesson.vue',{lesson:{...structuredClone(manageLesson),id:'education',wordId:431,headword:'education'}});
+ try{
+  const chunks=()=>ui.all(n=>n.tag==='button'&&String(n.props.class).includes('sound-chunk'));
+  expect(chunks()).toHaveLength(4);chunks()[3].props.onClick();await flush();
+  expect(ui.text()).toContain('tion：怎么从声音想到字母');
+  ui.updateProps({lesson:{...structuredClone(manageLesson),id:'action',wordId:16,headword:'action'}});await flush();
+  expect(chunks()).toHaveLength(2);expect(ui.text()).toContain('ac：怎么从声音想到字母');expect(ui.text()).not.toContain('gov');
+  expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);
+ }finally{ui.app.unmount();}
+});

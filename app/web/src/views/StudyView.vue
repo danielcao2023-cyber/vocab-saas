@@ -124,7 +124,7 @@ onUnmounted(()=>{alive=false;cancelAudio();clearInterval(timer);window.removeEve
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>
-    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" />
+    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" @play="play" />
     <p v-if="noAudio" class="note" role="status">{{ noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play">{{ COPY.audioRetry }}</button></p>
     <p v-if="unsaved" class="retry" role="status">{{ COPY.unsaved }} <button class="btn" :disabled="busy" @click="retry">{{ COPY.retry }}</button></p>
   </article>

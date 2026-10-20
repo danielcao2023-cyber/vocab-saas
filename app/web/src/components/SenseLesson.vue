@@ -4,6 +4,7 @@ import type {WordLesson, LessonUsage} from '../../../shared/lesson';
 import {lessonWordParts} from '../lesson-text';
 
 import SoundSpellingLesson from './SoundSpellingLesson.vue';
+import {getSoundSpellingLesson} from '../content/sound-spelling/index';
 
 const props = defineProps<{lesson: WordLesson}>();
 const usageLabels: Record<LessonUsage['kind'], string> = {
@@ -25,7 +26,8 @@ const TABS = [
   {id: 'extra', label: '再多了解一点'},
 ] as const;
 
-const hasSoundSpelling=computed(()=>props.lesson.headword.toLowerCase()==='government');
+const soundSpelling=computed(()=>getSoundSpellingLesson(props.lesson.headword));
+const hasSoundSpelling=computed(()=>Boolean(soundSpelling.value));
 const availableTabs=computed(()=>hasSoundSpelling.value?[{id:'sound-spelling' as const,label:'发音与拼写'},...TABS]:[...TABS]);
 const activeTabId = ref<TabId>(availableTabs.value[0].id);
 
@@ -109,7 +111,7 @@ watch(() => props.lesson.wordId, () => {
       </nav>
     </header>
 
-    <section v-if="activeTabId==='sound-spelling'" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><SoundSpellingLesson @play="$emit('play')" /></section>
+    <section v-if="activeTabId==='sound-spelling' && soundSpelling" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><SoundSpellingLesson :key="soundSpelling.headword" :lesson="soundSpelling" @play="$emit('play')" /></section>
 
     <section
       v-if="activeTabId === 'usage'"

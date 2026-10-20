@@ -1,7 +1,7 @@
 import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import {manageLesson} from '../web/src/content/lesson-samples/manage';
 import type {Card,Turn,ChoiceResult} from '../web/src/types';
-import {mockAudio} from './audio-fixtures';
+import {mockAudio,MockAudio} from './audio-fixtures';
 import {COPY} from '../web/src/copy';
 import {flush,host} from './p2-host';
 
@@ -97,4 +97,18 @@ it.each(['pending','failed'] as const)('keeps the short explanation and the lear
     expect(ui.all(node=>node.props.class==='answer-lesson')).toHaveLength(0);
     expect(ui.all(node=>node.tag==='button'&&node.props.class?.includes('rate'))).toHaveLength(4);
   }finally{ui.app.unmount();}
+});
+
+it('plays the current word from the sound-spelling tab inside a revealed answer lesson',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>url==='/api/word/693/lesson'
+  ?response({status:'ready',lesson:lessonFor(693,'important')})
+  :response({status:'pending',blocks:[]})));
+ const ui=host('web/src/views/StudyView.vue',{prefer:'new',practice:[{card:cardFor(693,'important'),question:null}],estimate:1});
+ try{
+  await flush();ui.key('Enter');await flush();
+  ui.all(n=>n.tag==='button'&&ui.text(n).includes('听美式整词'))[0].props.onClick();await flush();
+  expect(MockAudio.instances).toHaveLength(1);
+  expect(MockAudio.instances[0].src).toContain('word=important');
+  expect(MockAudio.instances[0].play).toHaveBeenCalledOnce();
+ }finally{ui.app.unmount();}
 });

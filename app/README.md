@@ -30,11 +30,15 @@ DB_PATH=data/dev-vocab.db HOST=127.0.0.1 PORT=18421 npm start
 
 新增 `/api/learning/{today,start,next,answer,consult,defer,books}`；写接口检查 Origin，判分由服务端完成。启动时只新增 `learning_*` 表与索引，不重置旧卡片或日志；首次接入的旧词依据既有状态与稳定性映射单词本。旧接口保留兼容，日历和统计共享真实答题日志。升级前请先用 SQLite backup API 备份目标数据库；本轮只在本地开发库启用，生产尚未迁移。设计与实现计划见仓库 `docs/superpowers/`。
 
-## 发音与拼写示例
+## 发音与拼写
 
-当前仅 `government` 增加并默认打开“发音与拼写”tab，其他词保持原五个tab。美式示例按 `gov · ern · ment` 对齐字母/字母组合与音标，点选分段查看提示，播放按钮沿用现有美式整词录音。英式对照单独折叠；`/ɚ/` 与 `/ər/` 两种记号做了衔接说明。内容为人工整理的单词级对应，不自动把某个字母的读音推广到所有单词。
+已有 `government` 与首批30个核心词（三级）默认打开“发音与拼写”tab，其他词沿用原五个tab。覆盖包括 `important`、`remember`、`information`、`education`、`ability`、`action`、`activity`、`article` 等，完整清单见 `web/src/content/sound-spelling/core-batch-1.ts`。按2026-10-20盘点的813个多音节候选词条口径，目前31个有对照、余782个待完善；5个一/二音节变读、3词组和4缩写另列。
 
-数据在 `web/src/content/sound-spelling/government.ts`，展示在 `SoundSpellingLesson.vue`；依据 [Cambridge](https://dictionary.cambridge.org/us/pronunciation/english/government) 与 [Oxford](https://www.oxfordlearnersdictionaries.com/definition/english/government)。本轮为用户评审用示例，待确认样式与学习方式后再考虑扩展。
+通用数据结构位于 `web/src/content/sound-spelling/types.ts`，注册表为 `index.ts`，组件为 `SoundSpellingLesson.vue`。逐词记录连续拼写片段、字母组合与音标、主/次重音、拼写提醒、变读和来源。点选分段只切换提醒，不播放伪造分段录音；播放按钮沿用既有美式整词录音。手机为两列，切词重置选择，答题后完整讲解也复用原播放器。分段服务于声音—字母对齐，不强称严格音节或词根；不把一个词中的对应推广为无例外的规则。
+
+内容只加载已审核提交的数据。本地 Coder 的10词完整结构草稿出现不合法JSON、缺字母和音素错配，未直接采用；Codex重新整理全部30词映射，再让Coder基于固定映射提炼短提醒，保留20条、重写10条。程序测试校验完整拼写、两层音标重组和主次重音，另有 remember 的 b、-tion 整组及跨词交互回归；这是程序与Codex内容审核，不是教师逐词审定。
+
+发音依据为固定版本 [CMUdict](https://github.com/cmusphinx/cmudict/tree/74790861f652b15e4ac49015a90074ad62a27690) 的音素/重音，并对 `government`、`remember`、`education`、`information`、`different`、`area`、`article`、`appear` 核对相应学习词典读音。`/ɚ/`、`/ər/` 及美式轻拍音等变体在具体词中说明，真实整词录音可能有自然弱化。原始Coder输出、试写评估和截图留在Studio库外产物目录，不进入应用或学习库。
 
 ## 词条 AI 学习助手
 

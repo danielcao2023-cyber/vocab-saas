@@ -6,7 +6,7 @@ import SenseLesson from './SenseLesson.vue';
 
 // Mount only once the answer has been revealed or feedback has been received.
 const props=defineProps<{wordId:number;headword:string}>();
-const emit=defineEmits<{ready:[wordId:number,ready:boolean]}>();
+const emit=defineEmits<{ready:[wordId:number,ready:boolean];play:[]}>();
 const lesson=ref<WordLesson|null>(null);
 let alive=true,request=0;
 async function load(){
@@ -28,7 +28,7 @@ function readingKey(event:KeyboardEvent){
 <template>
   <details v-if="lesson" :key="wordId" class="answer-lesson" @keydown="readingKey">
     <summary>完整讲解 · 义项、近反义、词根与助记</summary>
-    <div class="answer-lesson-body"><SenseLesson :lesson="lesson" /></div>
+    <div class="answer-lesson-body"><SenseLesson :lesson="lesson" @play="emit('play')" /></div>
   </details>
 </template>
 
