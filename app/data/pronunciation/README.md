@@ -21,7 +21,7 @@ npx tsx scripts/prepare-pronunciation.ts --words=apple,about --limit=2
 
 Free Dictionary API 是独立的可选来源，必须显式使用 `--provider=free-dictionary`。仅接受该 API 返回的确切词条音频及逐音频许可，并通过 Commons 元数据核实作者与许可；不会在 Commons 限流时自动切换服务重试同一请求。它的在线稳定性和词表覆盖尚无保证。
 
-Commons 指向 `deed.en` 等官方许可摘要页时，保存对应的标准许可 URL；不改变许可种类。部分旧文件缺少结构化作者时，仅在原说明中明确写明“recorded by 某人”时采纳，仍无法验证的文件保持 `unknown`。
+Commons 指向 `deed.en` 等官方许可摘要页时，保存对应的标准许可 URL；不改变许可种类。部分旧文件缺少结构化作者时，仅在原说明中明确写明“recorded by 某人”“某人的 pronunciation”或“pronunciation of … by 某人”时采纳；仅有推测作者或上传者信息的文件保持 `unknown`。
 
 公有领域录音须同时有文件级 Public domain 标记与 `PD-self` 或 `PD-user` 许可类别，保存对应的原始类别和文件许可区链接，不改称 CC0。
 
