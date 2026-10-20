@@ -38,7 +38,7 @@ const tabs=[{view:'home' as const,label:'今日'},{view:'books' as const,label:'
 <header v-if="view!=='study'" class="top" :class="{searching:searchOpen}"><div class="in"><div class="brand"><span class="logo">W</span>背单词</div><nav class="tabs" aria-label="主导航"><button v-for="tab in tabs" :key="tab.view" :class="{on:activeTab===tab.view}" :aria-current="activeTab===tab.view?'page':undefined" @click="go(tab.view)">{{ tab.label }}</button></nav><SearchBox @open="openWord" @active="searchOpen=$event" /><div class="right"><span class="chip streak"><span class="flame"></span>连续 {{ calendar?.current??0 }} 天</span></div></div></header>
 <div v-if="!online" class="offline" role="alert">暂时连不上学习服务。<button @click="ping();loadHome()">重试</button></div>
 <div v-if="isSample" class="sample">当前是示例数据（开发测试用），不是课标词表。</div>
- <LearningHomeView v-if="view==='home'" :streak="calendar" :curriculum="curriculum" @start="start" @books="openBook" @updated="loadHome" />
+ <LearningHomeView v-if="view==='home'" :streak="calendar" @start="start" @books="openBook" @updated="loadHome" />
 <LearningStudyView v-if="keepStudy" v-show="view==='study'" :active="view==='study'" @cancel="go('home')" @open="openWord" @updated="loadHome" />
 <WordBooksView v-if="view==='books'" :initial-book="book" @open="openWord" @start="start" />
 <KeepAlive><BrowseView v-if="view==='browse'" @open="openWord" /></KeepAlive>
