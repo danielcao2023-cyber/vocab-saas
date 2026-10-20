@@ -135,7 +135,7 @@ it('switches each mixed-headword map independently and requests the selected rec
 
 it('preserves the curriculum spelling case when playing a lower-case indexed map',async()=>{
  const play=vi.fn(),ui=host('web/src/components/SenseLesson.vue',{lesson:{...structuredClone(manageLesson),id:'Chinese-map',wordId:0,headword:'Chinese'},onPlay:play});
- try{ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();expect(play).toHaveBeenCalledWith('Chinese');}
+ try{expect(ui.text(ui.all(n=>n.props.class==='spelling-word')[0])).toBe('Chinese');ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();expect(play).toHaveBeenCalledWith('Chinese');}
  finally{ui.app.unmount();}
 });
 
