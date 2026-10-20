@@ -110,11 +110,17 @@ npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
   --patches data/content/word-patches-2026-10-17.json
 npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
   --patches data/content/phonetics-followup-2026-10-17.json
+npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
+  --patches data/content/word-patches-to-2026-10-20.json
+npx tsx scripts/ai-review.ts patch-words --db data/dev-vocab.db \
+  --patches data/content/word-patches-wet-toilet-2026-10-20.json
 npx tsx scripts/ai-content-import.ts --db data/dev-vocab.db \
   --in data/content/core-1600-2026-10-17.json
 ```
 
 补丁预览无冲突后加 `--yes` 应用；内容导入应用还必须提供新的 `--backup <备份路径>`。同值补丁与同内容重复执行不会新增记录；遇到释义原值不一致时先复核，不能强行覆盖。先在开发副本验证，正式库受路径保护，需要单独执行已批准的上线交接流程。以上产物不含孩子的答题记录。
+
+按上面顺序逐个预览、应用补丁，再导入核心内容。`to`、`wet` 的后续补丁同时列明 ECDICT 原值与仓库人工释义表的已知旧值（`expectedAlternatives`），兼容新建开发库；其他未记录的改动仍拒绝覆盖。重新运行课标导入会恢复词典与人工释义表中的基础字段，之后应重新按此顺序应用补丁。
 
 ## 其他说明
 
