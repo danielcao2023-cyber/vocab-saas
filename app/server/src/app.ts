@@ -1,3 +1,4 @@
+import {evidenceVersion} from './learning/evidence-migration.ts';
 import { search, wordDetail, browse } from './search.ts';
 import { learningRoutes } from './learning/routes.ts';
 import { getContent, contentFeedback } from './content.ts';
@@ -54,6 +55,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   });
   app.get<{ Querystring: { prefer?: 'review' | 'new' } }>('/api/next', async (req) => { const t = now(); const card = nextCard(db, t, req.query.prefer === 'new' ? 'new' : 'review'); return { card, question: card ? issueQuestion(db, card, t, 'study', opts.rng) : null }; });
   app.post<{ Body: { cardId: number; rating: number; durationMs?: number; answerId?: string; context?: Context } }>('/api/review', async (req, reply) => {
+    if(evidenceVersion(db)===3)return reply.code(409).send({error:'请使用 /api/learning 新版背词入口。'});
     const { cardId, rating, durationMs, answerId, context } = req.body ?? ({} as any);
     const t = now();
     // 重试已存过的 answerId 直接走幂等返回
@@ -66,6 +68,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
     catch (e) { return reply.code(400).send({ ok: false, error: (e as Error).message }); }
   });
   app.post<{ Body: { cardId: number; answer: string; usedHint?: boolean; answerId?: string; durationMs?: number; context?: Context } }>('/api/check', async (req, reply) => {
+    if(evidenceVersion(db)===3)return reply.code(409).send({error:'请使用 /api/learning 新版背词入口。'});
     const { cardId, answer, usedHint, answerId, durationMs, context } = req.body ?? ({} as any);
     if (context === 'practice' && !replayed(answerId) && !practiceAllowed(db, Number(cardId), now())) return reply.code(409).send({ ok: false, error: 'practice only for wrong-book words' });
     try { return { ok: true, ...checkSpelling(db, Number(cardId), String(answer ?? ''), now(), !!usedHint, answerId, { context, durationMs }) }; }
@@ -87,6 +90,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   });
 
   app.post<{ Body: { questionId: number; choiceWordId: number; durationMs?: number; answerId: string } }>('/api/answer', async (req, reply) => {
+    if(evidenceVersion(db)===3)return reply.code(409).send({error:'请使用 /api/learning 新版背词入口。'});
     const b = req.body ?? {};
     try { return answerQuestion(db, Number(b.questionId), Number(b.choiceWordId), b.answerId, now(), b.durationMs); }
     catch (e) { return reply.code(e instanceof QuizError ? e.status : 400).send({ ok: false, error: (e as Error).message }); }

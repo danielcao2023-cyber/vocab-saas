@@ -1,11 +1,14 @@
+import {evidenceVersion} from './learning/evidence-migration.ts';
+import {readWordEvidence,capabilityEvidence} from './learning/evidence-store.ts';
+import {evidenceBook} from './learning/evidence-views.ts';
 import type { DB } from './db.ts';
 import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { wordStatus, statusKey } from './word-status.ts';
 import { getContent } from './content.ts';
 import { HttpError } from './http-error.ts';
 export interface WordRow {id:number;headword:string;phonetic:string|null;meaning_zh:string|null;level:string|null;state:number|null;stability:number|null;inWrongBook:number;learning_book?:string|null;[key:string]:unknown}
-export function readWords(db:DB):WordRow[] {return db.prepare(`SELECT w.*, c.state,c.stability, CASE WHEN EXISTS(SELECT 1 FROM learning_days) THEN COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) END learning_book, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id ORDER BY w.id`).all() as WordRow[];}
-export function summary(w:WordRow) {return {id:w.id,headword:w.headword,phonetic:w.phonetic,firstMeaning:(w.meaning_zh??'').split('\n')[0],level:w.level,status:wordStatus(w),inWrongBook:!!w.inWrongBook};}
+export function readWords(db:DB):WordRow[] {const rows=db.prepare(`SELECT w.*, c.state,c.stability, CASE WHEN EXISTS(SELECT 1 FROM learning_days) THEN COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) END learning_book, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id ORDER BY w.id`).all() as WordRow[];return evidenceVersion(db)===3?rows.map(w=>{const evidenceState=readWordEvidence(db,w.id,new Date());return {...w,evidenceState,learning_book:evidenceBook(evidenceState)};}):rows;}
+export function summary(w:WordRow) {return {id:w.id,headword:w.headword,phonetic:w.phonetic,firstMeaning:(w.meaning_zh??'').split('\n')[0],level:w.level,status:wordStatus(w),inWrongBook:!!w.inWrongBook,...(w.evidenceState?{evidenceState:w.evidenceState}:{})};}
 export const FORM_LABELS:Record<string,string>={p:'过去式',d:'过去分词',i:'现在分词','3':'第三人称单数',s:'复数',r:'比较级',t:'最高级'};
 export function search(db:DB,query:string,limit=20) {
   if([...query].length>40)throw new HttpError(400,'q must be at most 40 characters');
@@ -34,7 +37,7 @@ export function wordDetail(db:DB,id:number) {
   const cards=db.prepare('SELECT mode,state,due FROM cards WHERE word_id=?').all(id) as {mode:string;state:number;due:string}[];
   const wrong=db.prepare('SELECT removed_at,wrong_count,correct_days FROM wrong_words WHERE word_id=?').get(id) as {removed_at:string|null;wrong_count:number;correct_days:string}|undefined;
   const keys=['id','headword','phonetic','pos','meaning_zh','meaning_source','meaning_flag','level','source'];
-  return {word:Object.fromEntries(keys.map(k=>[k,w[k]])),status:wordStatus(w),statusDetail:Object.fromEntries(['recognize','spell','dictation'].map(mode=>[mode,cards.find(c=>c.mode===mode)?{state:cards.find(c=>c.mode===mode)!.state,due:cards.find(c=>c.mode===mode)!.due}:null])),wrong:wrong?{inBook:wrong.removed_at===null,wrong_count:wrong.wrong_count,correct_days:JSON.parse(wrong.correct_days)}:null,content:getContent(db,id)};
+  return {...(w.evidenceState?{evidenceState:w.evidenceState,capabilityEvidence:capabilityEvidence(db,id)}:{}),word:Object.fromEntries(keys.map(k=>[k,w[k]])),status:wordStatus(w),statusDetail:Object.fromEntries(['recognize','spell','dictation'].map(mode=>[mode,cards.find(c=>c.mode===mode)?{state:cards.find(c=>c.mode===mode)!.state,due:cards.find(c=>c.mode===mode)!.due}:null])),wrong:wrong?{inBook:wrong.removed_at===null,wrong_count:wrong.wrong_count,correct_days:JSON.parse(wrong.correct_days)}:null,content:getContent(db,id)};
 }
 export function browse(db:DB,q:Record<string,string|undefined>) {
   const group=q.group??'zk_high',level=q.level??'all',letter=q.letter??'all',status=q.status??'all';

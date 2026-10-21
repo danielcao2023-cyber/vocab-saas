@@ -1,3 +1,6 @@
+import {evidenceVersion} from './learning/evidence-migration.ts';
+import {evidenceMetrics,evidenceBook} from './learning/evidence-views.ts';
+import {readWordEvidence} from './learning/evidence-store.ts';
 import {statusKey} from './word-status.ts';
 import type { DB } from './db.ts';
 import { State, createEmptyCard, fsrs, type Grade, type Card } from 'ts-fsrs';
@@ -78,7 +81,8 @@ export function queueStateAt(db: DB, at: Date) { return queueAt(db, history(db),
 
 export function recomputeDailyStats(db: DB, days?: string[]) {
   const h = history(db);
-  const wanted = new Set(days ?? h.byDay.keys());
+  const activated=(db.prepare("SELECT value FROM learning_policy_meta WHERE key='activated_at'").get() as {value:string}|undefined)?.value;
+  const wanted = new Set([...(days ?? h.byDay.keys())].filter(day=>!activated||day>=shDay(new Date(activated))));
   const modes = new Map(h.cards.map(c => [c.id, c.mode]));
   const current = new Map(h.cards.map(c => [c.id, c]));
   const after = new Map<number, number>();
@@ -114,6 +118,7 @@ export function recomputeDailyStats(db: DB, days?: string[]) {
         stat.completed=Number(plan.n>0&&plan.done===plan.n);stat.completed_at=stat.completed?last?.review_at??null:null;
         stat.mastered_new=(db.prepare("SELECT COUNT(DISTINCT word_id) n FROM learning_issues WHERE day=? AND json_extract(result_json,'$.book')='mastered' AND json_extract(result_json,'$.previousBook')<>'mastered'").get(day) as {n:number}).n;
       }
+      if(activated){const old=db.prepare("SELECT body_json FROM learning_v3_snapshots WHERE kind='daily_stats' AND entity_id=?").get(day) as {body_json:string}|undefined;if(old){const previous=JSON.parse(old.body_json);if(previous.completed){stat.completed=1;stat.completed_at=previous.completed_at;}}}
       upsert.run(stat);
     }
   })();
@@ -167,8 +172,8 @@ export function makeup(db: DB, day: string, now = new Date()) {
 export function curriculumProgress(db: DB) {
   const group=(level:string)=>{
     const r={total:0,new:0,learning:0,familiar:0,mastered:0};
-    const words=db.prepare("SELECT c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source='kb2022' AND w.level=?").all(level) as {state:number|null;stability:number|null;learning_book?:string|null}[];
-    for(const word of words){r.total++;r[statusKey(word)]++;}return r;
+    const words=db.prepare("SELECT w.id,c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source='kb2022' AND w.level=?").all(level) as {id:number;state:number|null;stability:number|null;learning_book?:string|null}[];
+    for(const word of words){if(evidenceVersion(db)===3)word.learning_book=evidenceBook(readWordEvidence(db,word.id,new Date()));r.total++;r[statusKey(word)]++;}return r;
   };
   return {core:group('三级'),level2:group('二级')};
 }
@@ -196,5 +201,5 @@ export function parentSummary(db: DB, now = new Date(), days = 30) {
      ORDER BY COUNT(*) DESC,MAX(l.review_at) DESC LIMIT 1) topQtype
     FROM wrong_words ww JOIN words w ON w.id=ww.word_id ORDER BY ww.wrong_count DESC,ww.last_wrong_at DESC LIMIT 20`).all() as any[]).map(r => ({ ...r, inBook: !!r.inBook }));
   const s = streak(db, now);
-  return { daily, totals, streak: { current: s.current, best: s.best, makeupUsed: s.makeupUsed }, wrongTop20, progress: curriculumProgress(db), generatedAt: now.toISOString() };
+  return { ...(evidenceVersion(db)===3?{evidence:evidenceMetrics(db,now,days)}:{}),daily, totals, streak: { current: s.current, best: s.best, makeupUsed: s.makeupUsed }, wrongTop20, progress: curriculumProgress(db), generatedAt: now.toISOString() };
 }

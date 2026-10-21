@@ -31,8 +31,8 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
  if(evidenceVersion(db)===3)return report();
  return db.transaction(()=>{
   const stamp=now.toISOString();
-  for(const table of ['cards','learning_words','learning_day_words'])for(const row of db.prepare(`SELECT * FROM ${table}`).all() as any[]){
-   const id=table==='cards'?String(row.id):table==='learning_words'?String(row.word_id):row.day+':'+row.word_id;
+  for(const table of ['cards','learning_words','learning_day_words','daily_stats'])for(const row of db.prepare(`SELECT * FROM ${table}`).all() as any[]){
+   const id=table==='daily_stats'?row.day:table==='cards'?String(row.id):table==='learning_words'?String(row.word_id):row.day+':'+row.word_id;
    db.prepare('INSERT INTO learning_v3_snapshots(kind,entity_id,body_json,created_at) VALUES (?,?,?,?)').run(table,id,JSON.stringify(row),stamp);
   }
   let affected=0,verified=0,unknown=0;
@@ -50,6 +50,13 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
     db.prepare('UPDATE cards SET due=?,stability=?,difficulty=?,elapsed_days=?,scheduled_days=?,learning_steps=?,reps=?,lapses=?,state=?,last_review=? WHERE id=?').run(card.due.toISOString(),card.stability,card.difficulty,card.elapsed_days,card.scheduled_days,card.learning_steps,card.reps,card.lapses,card.state,last,c.id);affected++;
    }else if(c.reps>0)unknown++;
    db.prepare('INSERT OR IGNORE INTO learning_card_state(card_id,verification_due,last_attempt_at,last_failure_at) VALUES (?,?,?,?)').run(c.id,c.reps>0||last?stamp:null,last,last);
+  }
+  // Known answer reveals protect all sibling modes, including unknown legacy successes.
+  for(const i of db.prepare('SELECT * FROM learning_issues WHERE answered_at IS NOT NULL OR assisted=1').all() as any[]){
+   db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'exposure',?,'legacy_answer','legacy_verified')").run('legacy-exposure:'+i.id,i.word_id,i.mode,i.id,i.answered_at??i.issued_at);
+  }
+  for(const l of db.prepare('SELECT l.*,c.word_id,c.mode FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE NOT EXISTS(SELECT 1 FROM learning_issues i WHERE i.answer_id=l.answer_id AND i.answer_id IS NOT NULL)').all() as any[]){
+   db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,kind,occurred_at,reason,source) VALUES (?,?,?,'exposure',?,'legacy_unknown','legacy_unknown')").run('legacy-exposure-log:'+l.id,l.word_id,l.mode,l.review_at);
   }
   // Old issues cannot become new probes. Stored results remain byte-identical for replay.
   db.prepare('UPDATE learning_issues SET answered_at=? WHERE answered_at IS NULL').run(stamp);

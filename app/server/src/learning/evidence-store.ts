@@ -65,4 +65,4 @@ export function readWordEvidence(db:DB,wordId:number,now:Date):WordEvidenceState
  void now;return {stage:!contact?'new':cards.some(c=>c.delayed_successes>0)?'review':'consolidating',priority,stable,dueAt:due,weakModes:MODES.filter(mode=>{const c=cards.find(c=>c.mode===mode);return !c||c.delayed_successes===0||!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2;})};
 }
 /** Compatibility book is a projection, never a scheduling input in policy 3. */
-export function projectEvidence(db:DB,wordId:number,now:Date){const e=readWordEvidence(db,wordId,now);const book=e.stage==='new'?'new':e.stable?'mastered':e.priority?'unfamiliar':'familiar';db.prepare('UPDATE learning_words SET book=?,due=?,last_at=? WHERE word_id=?').run(book,e.dueAt??nextDay(now),now.toISOString(),wordId);return book;}
+export function projectEvidence(db:DB,wordId:number,now:Date){const e=readWordEvidence(db,wordId,now);const book=e.stage==='new'?'new':e.stable?'mastered':e.priority||e.stage==='consolidating'?'unfamiliar':'familiar';db.prepare('UPDATE learning_words SET book=?,due=?,last_at=? WHERE word_id=?').run(book,e.dueAt??nextDay(now),now.toISOString(),wordId);return book;}

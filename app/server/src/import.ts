@@ -180,6 +180,7 @@ function applyWords(db: DB, list: ListEntry[], dict: ReadonlyMap<string, DictEnt
 const emptyCleanup = () => ({ words: 0, cards: 0, review_logs: 0, wrong_words: 0, word_content: 0, content_feedback: 0, ai_cache: 0 });
 function clearSamples(db: DB) {
   const deleted = emptyCleanup();
+  db.prepare("DELETE FROM learning_v3_snapshots WHERE json_extract(body_json,'$.word_id') IN (SELECT id FROM words WHERE is_sample=1)").run();
   deleted.review_logs = db.prepare('DELETE FROM review_logs WHERE card_id IN (SELECT c.id FROM cards c JOIN words w ON w.id=c.word_id WHERE w.is_sample=1)').run().changes;
   for (const table of ['cards', 'wrong_words', 'word_content', 'content_feedback', 'ai_cache'] as const) {
     deleted[table] = db.prepare(`DELETE FROM ${table} WHERE word_id IN (SELECT id FROM words WHERE is_sample=1)`).run().changes;

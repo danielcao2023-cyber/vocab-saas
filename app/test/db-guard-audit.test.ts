@@ -49,7 +49,7 @@ export function audit(root:string){const files=collect(root),scope:string[]=[],f
   return {scope,failures};}
 it('every real CLI that opens a db guards it first; the scope is exactly the known set',()=>{
   const r=audit(process.cwd());expect(r.failures).toEqual([]);
-  expect(r.scope).toEqual(['scripts/ai-content-export.ts','scripts/ai-content-import.ts','scripts/ai-content-status.ts','scripts/ai-generate.ts','scripts/ai-review.ts','scripts/freq-daily.ts','scripts/freq-zk-rank.ts','scripts/import-forms.ts','scripts/lesson-generate.ts','scripts/lesson-quality.ts','scripts/mobile-seed.ts','scripts/seed-due.ts','scripts/verify-migration.ts','server/src/import.ts']);
+  expect(r.scope).toEqual(['scripts/ai-content-export.ts','scripts/ai-content-import.ts','scripts/ai-content-status.ts','scripts/ai-generate.ts','scripts/ai-review.ts','scripts/freq-daily.ts','scripts/freq-zk-rank.ts','scripts/import-forms.ts','scripts/lesson-generate.ts','scripts/lesson-quality.ts','scripts/mobile-seed.ts','scripts/preview-learning-v3.ts','scripts/seed-due.ts','scripts/verify-migration.ts','server/src/import.ts']);
 });
 it('guard wrappers really call the protection predicate; library openers guard internally',()=>{
   const body=(file:string,name:string)=>{const sf=parse(file,fs.readFileSync(file,'utf8'));let found='';walk(sf,n=>{if(ts.isFunctionDeclaration(n)&&n.name?.text===name)found=n.getText(sf);});expect(found,`${file} ${name}`).not.toBe('');return found;};

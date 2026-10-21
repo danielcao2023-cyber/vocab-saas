@@ -39,7 +39,7 @@ export function todayV3(db:DB,now:Date):LearningSummaryV3 {
  const tally=db.prepare('SELECT COUNT(*) answers,COALESCE(SUM(json_extract(result_json,\'$.correct\')),0) correct FROM learning_issues WHERE day=? AND answer_id IS NOT NULL').get(day) as {answers:number;correct:number};
  const attempts=(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE source='live' AND eligible=1 AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(day) as any).n;
  const deferred=items.filter(e=>e.deferred).length,resolved=items.filter(e=>e.done||e.deferred).length;
- const books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db)){const s=readWordEvidence(db,w.id,now);books[s.stage==='new'?'new':s.stable?'mastered':s.priority?'unfamiliar':'familiar']++;}
+ const books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db)){const s=readWordEvidence(db,w.id,now);books[s.stage==='new'?'new':s.stable?'mastered':s.priority||s.stage==='consolidating'?'unfamiliar':'familiar']++;}
  return {policyVersion:3,day,started,total,touched:touched.length,resolved,completed:resolved,deferred,newWords,reviewWords:total-newWords,remaining:total-resolved,backlog:preview.backlog,...tally,attempts,ready,pendingLater:active.length-ready,needsConsolidation:touched.filter(e=>readWordEvidence(db,e.word_id,now).priority||!hasSuccess(db,e.word_id,day)).length,books};
 }
 export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;

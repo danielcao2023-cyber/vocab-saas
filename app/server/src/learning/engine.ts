@@ -1,3 +1,5 @@
+import {readWordEvidence} from './evidence-store.ts';
+import {evidenceBook} from './evidence-views.ts';
 import {evidenceVersion} from './evidence-migration.ts';
 import {todayV3,startV3,nextV3,answerV3,consultV3,deferV3} from './evidence-engine.ts';
 import {randomUUID} from 'node:crypto';
@@ -130,6 +132,6 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
 })() as LearningResult;}
 export function learningBooks(db:DB,book:WordBook,page=1,now=new Date()):LearningBooks{
  if(!['new','unfamiliar','familiar','mastered'].includes(book)||!Number.isSafeInteger(page)||page<1)throw new HttpError(400,'单词本或页码无效。');
- const words=learningWords(db),filtered=words.filter(w=>w.book===book).sort((a,b)=>(a.due??'').localeCompare(b.due??'')||a.id-b.id),size=40;void now;
+ const words=learningWords(db).map(w=>evidenceVersion(db)===3?{...w,book:evidenceBook(readWordEvidence(db,w.id,now)),due:readWordEvidence(db,w.id,now).dueAt}:w),filtered=words.filter(w=>w.book===book).sort((a,b)=>(a.due??'').localeCompare(b.due??'')||a.id-b.id),size=40;void now;
  return {book,counts:counts(words),items:filtered.slice((page-1)*size,page*size).map(w=>({id:w.id,headword:w.headword,meaning:w.meaning_zh??'',phonetic:w.phonetic,level:w.level,book:w.book,due:w.due})),total:filtered.length,page,size};
 }
