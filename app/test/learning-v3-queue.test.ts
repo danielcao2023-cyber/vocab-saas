@@ -1,7 +1,7 @@
 import {afterEach,expect,it} from 'vitest';
 import {makeV3Fixture} from './learning-v3-helpers';
 import {startLearning,nextLearning,answerLearning,consultLearning,learningToday,deferLearning} from '../server/src/learning/engine';
-import {readWordEvidence,saveExposure} from '../server/src/learning/evidence-store';
+import {readWordEvidence,saveExposure,ensureEvidenceWord} from '../server/src/learning/evidence-store';
 import type {DB} from '../server/src/db';
 const t=new Date('2026-10-21T01:00:00Z'),dbs:DB[]=[];afterEach(()=>dbs.splice(0).forEach(d=>d.close()));
 function fixture(n=1){const db=makeV3Fixture(n,t);dbs.push(db);return db;}
@@ -68,4 +68,10 @@ it('keeps technical deferral out of memory ratings and repeats its acknowledgeme
  const db=fixture();startLearning(db,t);const i=nextLearning(db,t).card!;db.prepare("UPDATE learning_issues SET mode='dictation' WHERE id=?").run(i.issueId);
  // An audio problem is not evidence of forgetting.
  const before=db.prepare('SELECT * FROM cards').all();expect(deferLearning(db,i.issueId,t)).toEqual({ok:true});expect(deferLearning(db,i.issueId,t)).toEqual({ok:true});expect(db.prepare('SELECT * FROM cards').all()).toEqual(before);expect(learningToday(db,t)).toMatchObject({deferred:1,attempts:0});
+});
+it('shows twenty backlogged reviews when sixty distinct words are due and fills no new slots',()=>{
+ const db=fixture(70);for(let id=1;id<=60;id++)ensureEvidenceWord(db,id,t);
+ db.prepare("UPDATE cards SET reps=2,state=2,due='2026-10-20T00:00:00.000Z',last_review='2026-10-19T00:00:00.000Z'").run();
+ startLearning(db,t);expect(learningToday(db,t)).toMatchObject({total:40,reviewWords:40,newWords:0,backlog:20});
+ const ids=db.prepare('SELECT word_id FROM learning_day_words ORDER BY position').all();startLearning(db,t);expect(db.prepare('SELECT word_id FROM learning_day_words ORDER BY position').all()).toEqual(ids);
 });

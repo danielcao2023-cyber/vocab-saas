@@ -1,6 +1,14 @@
 # 小北记单词 Android 本地安装包
 
-包名 `cn.xiaobei.vocabulary`，版本 `1.0.1`（versionCode 2）。最低 Android 6 / API 23，构建与目标 API 35。应用使用 Capacitor 7 和本地 `mobile-dist`；不需要电脑服务或局域网地址。首次安装没有学习记录或 AI 配置；后续学习数据保存在当前设备私有目录，以两份 SQLite 快照和已确认指针保护持久化。AI 仅在用户自行配置后发起在线请求。
+包名 `cn.xiaobei.vocabulary`，版本 `1.0.2`（versionCode 3）。最低 Android 6 / API 23，构建与目标 API 35。应用使用 Capacitor 7 和本地 `mobile-dist`；不需要电脑服务或局域网地址。首次安装没有学习记录或 AI 配置；后续学习数据保存在当前设备私有目录，以两份 SQLite 快照和已确认指针保护持久化。AI 仅在用户自行配置后发起在线请求。
+
+## 1.0.2 独立回忆升级（2026-10-21）
+
+已实现证据驱动复习：求助记失败、抄对记纠正，答对一次可结束当天；近期暴露保护、两次独立补测上限、按能力到期/缺证据安排复核。入口改为可重叠的待复习/重点巩固/长期较稳等筛选。试用参数和验收见 [learning-v3/README.md](qa/learning-v3/README.md)。
+
+用同一签名覆盖安装保留旧记录和AI配置。首次切换v3会在应用私有目录生成独立 `files/learning-pre-v3.db` 并验证；该文件不随a/b存档轮换覆盖。`MobileVault.createMigrationBackup({version:3,data:base64})` 仅接受固定版本和路径；普通set/remove不能修改备份字段。备份或存储失败会保留旧数据并停止继续，不回退空种子。恢复仅在隔离副本演练；降级安装旧APK不等于安全回滚，恢复旧备份会失去切换后的新进度。
+
+本轮611项Web/共享引擎测试、16项原生存储测试与lint、类型检查、桌面/移动/release构建通过；Android15模拟器断网覆盖升级与冷启动验证通过，真实手机需安装后补验。内容维持1600词、1608录音、813多音节条目/819映射。完整审核结果见 [verification.json](qa/learning-v3/verification.json)。
 
 ## 构建
 
@@ -18,7 +26,7 @@ export ANDROID_HOME="$HOME/Library/Android/sdk"
 
 脚本检查 `mobile-dist/offline/seed.db` 和 `offline/sql-wasm.wasm` 存在后，先 `cap sync android`，只复制 `mobile-dist`，然后构建 release、zipalign、本机签名并校验。输出：
 
-- `android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.1.apk`
+- `android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.2.apk`
 - 同路径 `.apk.sha256` 文件
 
 这是本机签名、可直接安装的 APK。签名材料保存在源码目录外的 `~/.codex/signing/xiaobei-android`，目录权限 700、文件权限 600。可以通过 `XIAOBEI_SIGNING_DIR` 指定独立安全目录；不要把该目录、密钥或密码文件加入仓库。后续覆盖安装必须保留同一签名密钥。已有签名材料不完整时脚本会停止，避免意外替换密钥。
@@ -31,7 +39,7 @@ ADB 安装请显式指定设备序列号；先运行 `adb devices -l` 核对设�
 
 ```sh
 "$ANDROID_HOME/platform-tools/adb" -s emulator-5556 install -r \
-  android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.1.apk
+  android/app/build/outputs/apk/release/xiaobei-vocabulary-1.0.2.apk
 "$ANDROID_HOME/platform-tools/adb" -s emulator-5556 shell am start \
   -n cn.xiaobei.vocabulary/.MainActivity
 ```

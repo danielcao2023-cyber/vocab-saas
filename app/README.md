@@ -162,3 +162,10 @@ npx tsx scripts/ai-content-import.ts --db data/dev-vocab.db \
 FSRS 决定复习安排；同日再次答题、错词练习和断线重试均有独立处理，答案使用幂等键。家长看板位于 `/parent`。讲解反馈会隐藏对应块，旧版本不会因新版本隐藏而复活。
 
 设计与内容约束见仓库 `v3/`。此前 README 的第一期开发记录保留在 [历史说明](docs/phase1-historical-notes.md)，其中早期“42 个示例词”“无 AI”“浏览器朗读”等描述不再代表当前实现。
+
+
+## 证据驱动复习（2026-10-21）
+
+安卓1.0.2采用按能力记录的独立回忆规则；帮助后的正确填写只记纠正，近期暴露保护和延迟验证由共享引擎统一处理。每日40个是不同词条上限（复习＋新词），不是40题或40个新词；没有三型均分或强制九题。新的筛选可重叠，旧book字段仅兼容。
+
+设计与参数见 [实施设计](../docs/superpowers/specs/2026-10-21-evidence-based-review-design.md)，实施/验收与恢复见 [QA记录](qa/learning-v3/README.md) 及 [安卓说明](ANDROID.md)。Node服务首次启用v3之前会验证库外备份；`~/apps`下正式库默认拒绝，生产上线另行处理。预览可运行 `npx tsx scripts/preview-learning-v3.ts --synthetic`，或 `--db <副本路径> --dry-run --report <库外报告路径>`；不要将孩子数据库、模型Key或签名材料加入源码仓库。
