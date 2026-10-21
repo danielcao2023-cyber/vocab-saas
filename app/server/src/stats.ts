@@ -1,6 +1,6 @@
 import {evidenceVersion} from './learning/evidence-migration.ts';
 import {evidenceMetrics,evidenceBook} from './learning/evidence-views.ts';
-import {readWordEvidence} from './learning/evidence-store.ts';
+import {evidenceIndex,untouchedEvidence} from './learning/evidence-store.ts';
 import {statusKey} from './word-status.ts';
 import type { DB } from './db.ts';
 import { State, createEmptyCard, fsrs, type Grade, type Card } from 'ts-fsrs';
@@ -170,10 +170,11 @@ export function makeup(db: DB, day: string, now = new Date()) {
 }
 
 export function curriculumProgress(db: DB) {
+  const index=evidenceVersion(db)===3?evidenceIndex(db,new Date()):null;
   const group=(level:string)=>{
     const r={total:0,new:0,learning:0,familiar:0,mastered:0};
     const words=db.prepare("SELECT w.id,c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source='kb2022' AND w.level=?").all(level) as {id:number;state:number|null;stability:number|null;learning_book?:string|null}[];
-    for(const word of words){if(evidenceVersion(db)===3)word.learning_book=evidenceBook(readWordEvidence(db,word.id,new Date()));r.total++;r[statusKey(word)]++;}return r;
+    for(const word of words){if(index)word.learning_book=evidenceBook(index.get(word.id)??untouchedEvidence());r.total++;r[statusKey(word)]++;}return r;
   };
   return {core:group('三级'),level2:group('二级')};
 }

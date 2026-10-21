@@ -23,3 +23,7 @@ it('cannot turn a short successful retry into delayed recovery',()=>{
  expect(readWordEvidence(db,1,new Date(+t+300000))).toMatchObject({priority:true,stable:false,stage:'consolidating'});
  expect(db.prepare('SELECT delayed_successes FROM learning_card_state s JOIN cards c ON c.id=s.card_id WHERE mode=\'spell\'').get()).toEqual({delayed_successes:0});
 });
+it('requires two delayed success days after the capability failure before leaving priority',()=>{
+ const db=fixture();saveProbe(db,'i',{kind:'probe_failure',eligible:true,rating:1,reason:'help'},t);
+ for(let day=1;day<=2;day++){const now=new Date(+t+day*86400000),id='day'+day;db.prepare("INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at) VALUES (?,?,1,'spell','[]',?)").run(id,'2026-10-'+(21+day),now.toISOString());saveProbe(db,id,{kind:'probe_success',eligible:true,rating:3,reason:'independent'},now);expect(readWordEvidence(db,1,now)).toMatchObject({priority:day===1,stable:false,stage:'review'});}
+});

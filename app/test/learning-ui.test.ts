@@ -70,3 +70,8 @@ it('shows overlapping evidence filters instead of mutually exclusive mastery boo
  vi.stubGlobal('fetch',vi.fn(async()=>Response.json({policyVersion:3,counts:{all:2,new:1,due:1,priority:1,stable:0,weak_spell:1,weak_dictation:1},items:[],total:2,page:1,size:40})));
  const ui=host('web/src/views/WordBooksView.vue');try{await flush();expect(ui.text()).toContain('重点巩固');expect(ui.text()).toContain('长期较稳');expect(ui.text()).toContain('可重叠');}finally{ui.app.unmount();}
 });
+it('starts a new day when refreshing an old issue after midnight instead of staying on a loading screen',async()=>{
+ const s={day:'2026-10-21',started:true,total:1,completed:0},calls:string[]=[];let nextCalls=0;
+ vi.stubGlobal('fetch',vi.fn(async(path:string)=>{calls.push(path);if(path.endsWith('/answer'))return Response.json({error:'stale'},{status:409});if(path.endsWith('/next')){nextCalls++;return Response.json(nextCalls===2?{kind:'idle',summary:{...s,started:false}}:{kind:'card',summary:s,card:{...card,mode:'recognize',headword:'above',options:[{id:5,text:'上方'}]}});}return Response.json(s);}));
+ const ui=host('web/src/views/LearningStudyView.vue');try{await flush();await ui.all(n=>n.tag==='button'&&ui.text(n).includes('上方'))[0].props.onClick();await flush();await ui.all(n=>n.tag==='button'&&ui.text(n)==='刷新任务')[0].props.onClick();await flush();expect(calls.filter(x=>x.endsWith('/start'))).toHaveLength(2);expect(ui.text()).toContain('above');}finally{ui.app.unmount();}
+});

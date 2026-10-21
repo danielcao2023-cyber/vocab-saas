@@ -17,8 +17,8 @@ export function ensureEvidenceWord(db:DB,wordId:number,now:Date){
 }
 export function saveExposure(db:DB,input:{wordId:number;issueId?:string;eventId:string;reason:string},now:Date){return db.transaction(()=>{
  if(!Number.isSafeInteger(input.wordId)||input.wordId<1||typeof input.eventId!=='string'||!input.eventId.trim()||input.eventId.length>100||typeof input.reason!=='string'||!input.reason.trim()||input.reason.length>80)throw new HttpError(400,'阅读记录无效。');
- const key='exposure:'+input.eventId,previous=db.prepare('SELECT word_id,issue_id FROM learning_events WHERE event_key=?').get(key) as any;
- if(previous){if(previous.word_id!==input.wordId||previous.issue_id!==(input.issueId??null))throw new HttpError(409,'阅读编号已经使用。');return;}
+ const key='exposure:'+input.eventId,previous=db.prepare('SELECT word_id,issue_id,reason FROM learning_events WHERE event_key=?').get(key) as any;
+ if(previous){if(previous.word_id!==input.wordId||previous.issue_id!==(input.issueId??null)||previous.reason!==input.reason)throw new HttpError(409,'阅读编号已经使用。');return;}
  let mode:LearningMode='spell';
  if(input.issueId){const issue=db.prepare('SELECT word_id,mode FROM learning_issues WHERE id=?').get(input.issueId) as any;if(!issue||issue.word_id!==input.wordId)throw new HttpError(400,'题目与单词不匹配。');mode=issue.mode;}
  ensureEvidenceWord(db,input.wordId,now);
@@ -66,3 +66,7 @@ export function readWordEvidence(db:DB,wordId:number,now:Date):WordEvidenceState
 }
 /** Compatibility book is a projection, never a scheduling input in policy 3. */
 export function projectEvidence(db:DB,wordId:number,now:Date){const e=readWordEvidence(db,wordId,now);const book=e.stage==='new'?'new':e.stable?'mastered':e.priority||e.stage==='consolidating'?'unfamiliar':'familiar';db.prepare('UPDATE learning_words SET book=?,due=?,last_at=? WHERE word_id=?').run(book,e.dueAt??nextDay(now),now.toISOString(),wordId);return book;}
+
+export const untouchedEvidence=():WordEvidenceState=>({stage:'new',priority:false,stable:false,dueAt:null,weakModes:[...MODES]});
+/** One contact scan avoids thousands of empty per-word reads on the offline corpus. */
+export function evidenceIndex(db:DB,now:Date){const ids=db.prepare('SELECT DISTINCT word_id FROM learning_events UNION SELECT DISTINCT word_id FROM cards WHERE reps>0').all() as {word_id:number}[];return new Map(ids.map(r=>[r.word_id,readWordEvidence(db,r.word_id,now)]));}

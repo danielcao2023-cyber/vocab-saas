@@ -1,3 +1,5 @@
+import {nextLearning,answerLearning} from '../server/src/learning/engine';
+import type {LearningResultV3} from '../shared/learning';
 import {activateEvidencePolicy} from '../server/src/learning/evidence-migration';
 import {openDb,type DB} from '../server/src/db';
 export function makeLegacyFixture(n=1):DB {
@@ -7,3 +9,5 @@ export function makeLegacyFixture(n=1):DB {
 }
 
 export function makeV3Fixture(n=1,now=new Date('2026-10-21T01:00:00Z')):DB {const db=makeLegacyFixture(n);activateEvidencePolicy(db,now);return db;}
+
+export function answerCurrent(db:DB,now:Date,correct:boolean,id:string):LearningResultV3 {const c=nextLearning(db,now).card;if(!c)throw new Error('No current card');const w=db.prepare('SELECT headword FROM words WHERE id=?').get(c.wordId) as {headword:string};return answerLearning(db,{policyVersion:3,issueId:c.issueId,answerId:id,...(c.mode==='recognize'?{choiceId:correct?c.wordId:0}:{answer:correct?w.headword:'wrong'})},now) as LearningResultV3;}

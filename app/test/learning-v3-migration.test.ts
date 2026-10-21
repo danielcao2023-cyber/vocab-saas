@@ -1,3 +1,7 @@
+import {review} from '../server/src/study';
+import {Rating} from 'ts-fsrs';
+import {upsertWords} from '../server/src/import';
+import {recomputeDailyStats} from '../server/src/stats';
 import {afterEach,expect,it} from 'vitest';
 import {makeLegacyFixture} from './learning-v3-helpers';
 import {activateEvidencePolicy,evidenceVersion} from '../server/src/learning/evidence-migration';
@@ -22,4 +26,17 @@ it('rolls back snapshots and metadata if activation fails halfway',()=>{
  const db=fixture();startLearning(db,t);const before=db.prepare('SELECT * FROM cards').all();
  db.exec("CREATE TRIGGER fail_v3 BEFORE INSERT ON learning_v3_snapshots BEGIN SELECT RAISE(ABORT,'injected'); END");
  expect(()=>activateEvidencePolicy(db,t)).toThrow('injected');expect(evidenceVersion(db)).toBe(2);expect(db.prepare('SELECT * FROM cards').all()).toEqual(before);expect(db.prepare('SELECT COUNT(*) n FROM learning_v3_snapshots').get()).toEqual({n:0});
+});
+it('keeps orphan legacy ratings unknown and preserves their original intervals',()=>{
+ const db=fixture();startLearning(db,t);const c=db.prepare("SELECT * FROM cards WHERE mode='spell' LIMIT 1").get() as any;
+ review(db,c.id,Rating.Hard,t,{answerId:'orphan'});const before=db.prepare('SELECT * FROM cards WHERE id=?').get(c.id);activateEvidencePolicy(db,t);
+ expect(db.prepare('SELECT * FROM cards WHERE id=?').get(c.id)).toEqual(before);expect(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE kind='probe_success' OR kind='probe_failure'").get()).toEqual({n:0});expect(db.prepare('SELECT verification_required FROM learning_card_state WHERE card_id=?').get(c.id)).toEqual({verification_required:1});
+});
+it('clears v3 sample state without leaving foreign keys or snapshots to removed words',()=>{
+ const db=fixture();db.exec("UPDATE words SET source='sample',is_sample=1");startLearning(db,t);const c=nextLearning(db,t).card!;consultLearning(db,c.issueId,t);activateEvidencePolicy(db,t);
+ expect(()=>upsertWords(db,[{headword:'apple',level:'三级',pos:null}],new Map(),'kb2022',false,{clearSample:true})).not.toThrow();expect(db.pragma('foreign_key_check')).toEqual([]);expect(db.prepare('SELECT COUNT(*) n FROM learning_events').get()).toEqual({n:0});expect(db.prepare('SELECT COUNT(*) n FROM learning_v3_snapshots').get()).toEqual({n:0});
+});
+it('retains historical daily rows after activation and subsequent recomputation',()=>{
+ const db=fixture(),yesterday=new Date(+t-86400000);startLearning(db,yesterday);const c=nextLearning(db,yesterday).card!;answerLearning(db,{issueId:c.issueId,answerId:'old-day',choiceId:c.wordId,answer:'experience'},yesterday);
+ const old=db.prepare('SELECT * FROM daily_stats WHERE day=?').get('2026-10-20');activateEvidencePolicy(db,t);recomputeDailyStats(db);expect(db.prepare('SELECT * FROM daily_stats WHERE day=?').get('2026-10-20')).toEqual(old);
 });

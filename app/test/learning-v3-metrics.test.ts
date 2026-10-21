@@ -12,3 +12,6 @@ it('keeps helped first attempts failed after correction and excludes copies from
  expect(evidenceMetrics(db,later).modes.dictation).toMatchObject({samples:0,accuracy:null});
  }finally{db.close();}
 });
+it('counts a delayed failure in the delayed denominator and never calls an empty sample perfect',()=>{
+ const db=makeV3Fixture(1,t);try{startLearning(db,t);let c=nextLearning(db,t).card!;answerLearning(db,{policyVersion:3,issueId:c.issueId,answerId:'day0',answer:'experience'},t);const next=new Date(+t+86400000);startLearning(db,next);c=nextLearning(db,next).card!;answerLearning(db,{policyVersion:3,issueId:c.issueId,answerId:'day1-fail',answer:'wrong'},next);expect(evidenceMetrics(db,next).modes.spell).toMatchObject({samples:2,successes:1,delayedSamples:1,delayedSuccesses:0,delayedAccuracy:0});}finally{db.close();}
+});

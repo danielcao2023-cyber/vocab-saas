@@ -40,9 +40,8 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
   for(const c of db.prepare('SELECT * FROM cards').all() as any[]){
    // Only explicit help/wrong evidence can establish a failure. Unassisted legacy successes remain unknown.
    const issues=db.prepare('SELECT * FROM learning_issues WHERE word_id=? AND mode=? AND (assisted=1 OR json_extract(result_json,\'$.correct\')=0) ORDER BY issued_at,id').all(c.word_id,c.mode) as any[];
-   const logs=db.prepare('SELECT * FROM review_logs WHERE card_id=? AND (rating=1 OR rating=2 OR correct=0) ORDER BY review_at,id').all(c.id) as any[];
-   const failures=[...issues.map(i=>({at:i.answered_at??i.issued_at,key:'legacy-issue:'+i.id,issue:i.id,log:null as number|null,help:!!i.assisted})),].sort((a,b)=>a.at.localeCompare(b.at));
-   for(const f of failures){db.prepare('INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,text_correct,eligible,rating,reason,source,review_log_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)').run(f.key,c.word_id,c.mode,f.issue,'probe_failure',f.at,null,1,1,f.help?'help':'wrong','legacy_verified',f.log);verified++;}
+   const failures=[...issues.map(i=>({at:i.answered_at??stamp,key:'legacy-issue:'+i.id,issue:i.id,log:null as number|null,help:!!i.assisted})),].sort((a,b)=>a.at.localeCompare(b.at));
+   for(const f of failures){db.prepare('INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,text_correct,eligible,rating,reason,source,review_log_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)').run(f.key,c.word_id,c.mode,f.issue,'probe_failure',f.at,f.help?null:0,1,1,f.help?'help':'wrong','legacy_verified',f.log);verified++;}
    const last=failures.at(-1)?.at??null;
    if(c.reps>0)db.prepare("INSERT OR IGNORE INTO learning_words(word_id,book,introduced_at,due) VALUES (?,'unfamiliar',?,?)").run(c.word_id,c.last_review??stamp,c.due);
    if(last){
@@ -53,7 +52,7 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
   }
   // Known answer reveals protect all sibling modes, including unknown legacy successes.
   for(const i of db.prepare('SELECT * FROM learning_issues WHERE answered_at IS NOT NULL OR assisted=1').all() as any[]){
-   db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'exposure',?,'legacy_answer','legacy_verified')").run('legacy-exposure:'+i.id,i.word_id,i.mode,i.id,i.answered_at??i.issued_at);
+   db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'exposure',?,'legacy_answer','legacy_verified')").run('legacy-exposure:'+i.id,i.word_id,i.mode,i.id,i.answered_at??stamp);
   }
   for(const l of db.prepare('SELECT l.*,c.word_id,c.mode FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE NOT EXISTS(SELECT 1 FROM learning_issues i WHERE i.answer_id=l.answer_id AND i.answer_id IS NOT NULL)').all() as any[]){
    db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,kind,occurred_at,reason,source) VALUES (?,?,?,'exposure',?,'legacy_unknown','legacy_unknown')").run('legacy-exposure-log:'+l.id,l.word_id,l.mode,l.review_at);

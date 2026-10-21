@@ -10,7 +10,7 @@ import type {LearningMode,LearningCard,LearningAnswer,LearningResultV3,LearningS
 import {learningWords,composeFresh,type LearningWord} from './selection.ts';
 import {nextDay,MODES} from './policy.ts';
 import {REVIEW_POLICY,classifyEvidence,chooseCapability} from './evidence-policy.ts';
-import {ensureEvidenceWord,evidenceCards,latestExposure,readWordEvidence,saveProbe,saveExposure,recordCorrection,projectEvidence,capabilityNeeds} from './evidence-store.ts';
+import {ensureEvidenceWord,evidenceCards,latestExposure,readWordEvidence,saveProbe,saveExposure,recordCorrection,projectEvidence,capabilityNeeds,evidenceIndex,untouchedEvidence} from './evidence-store.ts';
 interface Entry {day:string;word_id:number;position:number;is_new:number;last_mode:number;done:number;deferred:number;available_at:string}
 interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null}
 const entries=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as Entry[];
@@ -35,16 +35,18 @@ export function todayV3(db:DB,now:Date):LearningSummaryV3 {
  const day=shDay(now),started=!!db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day),items=entries(db,day),preview=selection(db,now);
  const touched=items.filter(e=>!!db.prepare('SELECT 1 FROM learning_issues WHERE day=? AND word_id=? LIMIT 1').get(day,e.word_id));
  const active=items.filter(e=>!e.done&&!e.deferred),ready=active.filter(e=>!!needFor(db,e,now).ready).length;
- const total=started?items.length:preview.selected.length,newWords=started?items.filter(e=>e.is_new).length:preview.selected.filter(w=>!w.introduced_at).length;
+ const stateIndex=evidenceIndex(db,now);
+ const total=started?items.length:preview.selected.length,newWords=started?items.filter(e=>e.is_new).length:preview.selected.filter(w=>(stateIndex.get(w.id)??untouchedEvidence()).stage==='new').length;
  const tally=db.prepare('SELECT COUNT(*) answers,COALESCE(SUM(json_extract(result_json,\'$.correct\')),0) correct FROM learning_issues WHERE day=? AND answer_id IS NOT NULL').get(day) as {answers:number;correct:number};
  const attempts=(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE source='live' AND eligible=1 AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(day) as any).n;
  const deferred=items.filter(e=>e.deferred).length,resolved=items.filter(e=>e.done||e.deferred).length;
- const books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db)){const s=readWordEvidence(db,w.id,now);books[s.stage==='new'?'new':s.stable?'mastered':s.priority||s.stage==='consolidating'?'unfamiliar':'familiar']++;}
+ const index=stateIndex,books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db)){const s=index.get(w.id)??untouchedEvidence();books[s.stage==='new'?'new':s.stable?'mastered':s.priority||s.stage==='consolidating'?'unfamiliar':'familiar']++;}
  return {policyVersion:3,day,started,total,touched:touched.length,resolved,completed:resolved,deferred,newWords,reviewWords:total-newWords,remaining:total-resolved,backlog:preview.backlog,...tally,attempts,ready,pendingLater:active.length-ready,needsConsolidation:touched.filter(e=>readWordEvidence(db,e.word_id,now).priority||!hasSuccess(db,e.word_id,day)).length,books};
 }
 export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;
  const plan=selection(db,now);db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,3)').run(day,now.toISOString());
- plan.selected.forEach((w,i)=>{ensureEvidenceWord(db,w.id,now);db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at) VALUES (?,?,?,?,?,'[0,0,0]',?)").run(day,w.id,i,w.book,Number(!w.introduced_at),now.toISOString());});
+ const index=evidenceIndex(db,now);
+ plan.selected.forEach((w,i)=>{const isNew=(index.get(w.id)??untouchedEvidence()).stage==='new';ensureEvidenceWord(db,w.id,now);db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at) VALUES (?,?,?,?,?,'[0,0,0]',?)").run(day,w.id,i,w.book,Number(isNew),now.toISOString());});
 })();return todayV3(db,now);}
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
@@ -95,6 +97,7 @@ export function answerV3(db:DB,input:LearningAnswer,now:Date):LearningResultV3{r
  if(!input||typeof input.answerId!=='string'||!input.answerId.trim()||input.answerId.length>100)throw new HttpError(400,'提交编号无效。');
  const replay=db.prepare('SELECT id,result_json FROM learning_issues WHERE answer_id=?').get(input.answerId) as any;
  if(replay){if(replay.id!==input.issueId)throw new HttpError(409,'提交编号已经使用。');return JSON.parse(replay.result_json);}
+ if(db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(input.answerId))throw new HttpError(409,'提交编号已经使用。');
  if(input.policyVersion!==3)throw new HttpError(409,'请刷新后使用新版背词入口。');
  const {issue}=active(db,input.issueId,now),w=db.prepare('SELECT headword,meaning_zh FROM words WHERE id=?').get(issue.word_id) as any;
  if(input.durationMs!==undefined&&(!Number.isFinite(input.durationMs)||input.durationMs<0||input.durationMs>300000))throw new HttpError(400,'答题时长无效。');
@@ -117,6 +120,7 @@ export function answerV3(db:DB,input:LearningAnswer,now:Date):LearningResultV3{r
  recomputeDailyStats(db,[issue.day]);return result;
 })();}
 export function deferV3(db:DB,id:unknown,now:Date){return db.transaction(()=>{
+ if(typeof id==='string'&&db.prepare("SELECT 1 FROM learning_events WHERE event_key=? AND kind='technical_defer'").get(id+':technical'))return {ok:true};
  const {issue}=active(db,id,now);if(issue.mode!=='dictation')throw new HttpError(400,'只能暂缓无法播放的听写。');
  db.prepare("INSERT INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'technical_defer',?,'audio','live')").run(issue.id+':technical',issue.word_id,issue.mode,issue.id,now.toISOString());
  db.prepare('UPDATE learning_day_words SET deferred=1 WHERE day=? AND word_id=?').run(issue.day,issue.word_id);db.prepare('UPDATE learning_issues SET answered_at=? WHERE id=?').run(now.toISOString(),issue.id);

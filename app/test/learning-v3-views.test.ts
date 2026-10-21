@@ -22,3 +22,7 @@ it('guards legacy write routes and validates evidence input rather than acceptin
   expect((await app.inject({method:'POST',url:'/api/learning/consult',payload:{policyVersion:3,issueId:c.issueId,eventId:'read'}})).statusCode).toBe(200);
  }finally{await app.close();}
 });
+it('bulk projection agrees with per-word evidence and leaves untouched words new',()=>{
+ const db=fixture();startLearning(db,t);const c=nextLearning(db,t).card!;consultLearning(db,{policyVersion:3,issueId:c.issueId,eventId:'bulk-help'},t);
+ const all=learningViews(db,'all',1,t);expect(all.items.find(w=>w.id===c.wordId)?.evidenceState).toEqual((wordDetail(db,c.wordId) as any).evidenceState);expect(all.counts.new).toBe(1);
+});

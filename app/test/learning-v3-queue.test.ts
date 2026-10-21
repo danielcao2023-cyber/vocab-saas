@@ -1,6 +1,6 @@
 import {afterEach,expect,it} from 'vitest';
 import {makeV3Fixture} from './learning-v3-helpers';
-import {startLearning,nextLearning,answerLearning,consultLearning,learningToday} from '../server/src/learning/engine';
+import {startLearning,nextLearning,answerLearning,consultLearning,learningToday,deferLearning} from '../server/src/learning/engine';
 import {readWordEvidence,saveExposure} from '../server/src/learning/evidence-store';
 import type {DB} from '../server/src/db';
 const t=new Date('2026-10-21T01:00:00Z'),dbs:DB[]=[];afterEach(()=>dbs.splice(0).forEach(d=>d.close()));
@@ -49,5 +49,23 @@ it('rotates long-missing siblings even after repeated spelling failures',()=>{
 });
 it('keeps unfinished word IDs ahead of fresh fills on the next day',()=>{
  const db=fixture(60);startLearning(db,t);const ids=db.prepare('SELECT word_id FROM learning_day_words ORDER BY position').all();
- const day1=new Date(+t+86400000);startLearning(db,day1);expect(db.prepare('SELECT word_id FROM learning_day_words WHERE day=? ORDER BY position').all('2026-10-22').sort((a:any,b:any)=>a.word_id-b.word_id)).toEqual(ids.sort((a:any,b:any)=>a.word_id-b.word_id));
+ const day1=new Date(+t+86400000);startLearning(db,day1);expect(learningToday(db,day1)).toMatchObject({newWords:40,reviewWords:0});expect(db.prepare('SELECT word_id FROM learning_day_words WHERE day=? ORDER BY position').all('2026-10-22').sort((a:any,b:any)=>a.word_id-b.word_id)).toEqual(ids.sort((a:any,b:any)=>a.word_id-b.word_id));
+});
+it('never lets a success in one capability certify its siblings or create a stable word',()=>{
+ const db=fixture();startLearning(db,t);answer(db,t);
+ const state=readWordEvidence(db,1,t);expect(state).toMatchObject({stable:false,stage:'consolidating'});expect(state.weakModes).toEqual(expect.arrayContaining(['recognize','dictation']));
+});
+it('does not pull validated future cards forward merely because three days passed',()=>{
+ const db=fixture();startLearning(db,t);answer(db,t);
+ db.prepare("UPDATE cards SET reps=5,scheduled_days=30,due='2026-12-01T00:00:00.000Z'").run();db.prepare("UPDATE learning_card_state SET verification_due=NULL,verification_required=0,delayed_successes=2,recovery_days='[\"2026-10-22\",\"2026-10-23\"]'").run();
+ const day4=new Date(+t+4*86400000);expect(learningToday(db,day4)).toMatchObject({reviewWords:0,total:0});expect(readWordEvidence(db,1,day4).stable).toBe(true);
+});
+it('keeps earlier-due listening ahead of spelling within the same due group',()=>{
+ const db=fixture();startLearning(db,t);answer(db,t);db.prepare("UPDATE cards SET reps=3,due='2026-10-22T00:00:00.000Z'").run();db.prepare("UPDATE cards SET due='2026-10-21T12:00:00.000Z' WHERE mode='dictation'").run();db.prepare("UPDATE learning_card_state SET delayed_successes=2,verification_required=0,verification_due=NULL,recovery_days='[\"2026-10-19\",\"2026-10-20\"]'").run();
+ const next=new Date(+t+86400000);startLearning(db,next);expect(nextLearning(db,next).card?.mode).toBe('dictation');
+});
+it('keeps technical deferral out of memory ratings and repeats its acknowledgement safely',()=>{
+ const db=fixture();startLearning(db,t);const i=nextLearning(db,t).card!;db.prepare("UPDATE learning_issues SET mode='dictation' WHERE id=?").run(i.issueId);
+ // An audio problem is not evidence of forgetting.
+ const before=db.prepare('SELECT * FROM cards').all();expect(deferLearning(db,i.issueId,t)).toEqual({ok:true});expect(deferLearning(db,i.issueId,t)).toEqual({ok:true});expect(db.prepare('SELECT * FROM cards').all()).toEqual(before);expect(learningToday(db,t)).toMatchObject({deferred:1,attempts:0});
 });

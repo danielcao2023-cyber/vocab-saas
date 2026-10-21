@@ -1,5 +1,5 @@
 import {evidenceVersion} from './learning/evidence-migration.ts';
-import {readWordEvidence} from './learning/evidence-store.ts';
+import {evidenceIndex,untouchedEvidence} from './learning/evidence-store.ts';
 import {evidenceBook} from './learning/evidence-views.ts';
 import { createEmptyCard, fsrs, Rating, State, type Card, type Grade } from 'ts-fsrs';
 import type { DB } from './db.ts';
@@ -180,11 +180,12 @@ export function checkSpelling(db: DB, cardId: number, answer: string, now = new 
 
 /** 四档掌握度：看认词卡。新词=没学过；学习中=学习/重学阶段或稳定度<7天；熟悉=7–21天；掌握=稳定度≥21天 */
 export function progress(db: DB) {
+  const index=evidenceVersion(db)===3?evidenceIndex(db,new Date()):null;
   const lists = db.prepare(`SELECT source, MAX(is_sample) is_sample, COUNT(*) total FROM words GROUP BY source`).all() as { source: string; is_sample: number; total: number }[];
   return lists.map((l) => {
     const r = { new:0, learning:0, familiar:0, mastered:0 };
     const cards = db.prepare(`SELECT w.id,c.state,c.stability,l.book learning_book FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id WHERE w.source=?`).all(l.source) as {id:number;state:number|null;stability:number|null;learning_book?:string|null}[];
-    for (const c of cards){if(evidenceVersion(db)===3)c.learning_book=evidenceBook(readWordEvidence(db,c.id,new Date()));r[statusKey(c)]++;}
+    for (const c of cards){if(index)c.learning_book=evidenceBook(index.get(c.id)??untouchedEvidence());r[statusKey(c)]++;}
     return { source:l.source, isSample:!!l.is_sample, total:l.total, ...r };
   });
 }

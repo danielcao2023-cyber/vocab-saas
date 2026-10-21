@@ -14,7 +14,7 @@ const summary=computed<LearningSummaryV3|null>(()=>turn.value?.summary??null);
 function stop(){audioVersion++;stopAudio();audioFailed.value=null;}
 async function play(){const card=turn.value?.card;if(!card||!props.active)return;const n=++audioVersion;audioFailed.value=null;const result=await speak(card.audioWord??card.headword??'');if(alive&&n===audioVersion&&result.status==='unavailable')audioFailed.value=result.reason;}
 async function load(){if(busy.value||unsaved.value)return;const n=++version;busy.value=true;error.value='';stop();
- try{if(!didStart){await api('/api/learning/start',{policyVersion:3});didStart=true;}const next=await api<LearningTurnV3>('/api/learning/next');if(!alive||n!==version)return;turn.value=next;answer.value='';feedback.value=null;clock.reset(props.active&&document.visibilityState!=='hidden');consultEventId=null;emit('updated');if(next.card?.mode==='dictation'&&props.active)void play();}
+ try{if(!didStart){await api('/api/learning/start',{policyVersion:3});didStart=true;}let next=await api<LearningTurnV3>('/api/learning/next');if(next.kind==='idle'){didStart=false;await api('/api/learning/start',{policyVersion:3});didStart=true;next=await api<LearningTurnV3>('/api/learning/next');}if(!alive||n!==version)return;turn.value=next;answer.value='';feedback.value=null;clock.reset(props.active&&document.visibilityState!=='hidden');consultEventId=null;emit('updated');if(next.card?.mode==='dictation'&&props.active)void play();}
  catch{if(alive&&n===version)error.value='任务暂时未能载入，请重试。';}finally{if(alive&&n===version)busy.value=false;}
 }
 function received(result:LearningResultV3){feedback.value=result;clock.setActive(false);unsaved.value=false;emit('updated');}
