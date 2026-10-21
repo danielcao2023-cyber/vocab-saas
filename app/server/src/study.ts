@@ -9,6 +9,7 @@ import { recomputeDailyStats, streak } from './stats.ts';
 import { issueQuestion, availableQtypes, type Qtype, type Context, type Rng } from './quiz.ts';
 
 const scheduler = fsrs({ enable_fuzz: false });
+const evidenceScheduler=fsrs({request_retention:.9,enable_fuzz:false,learning_steps:[],relearning_steps:[]});
 export type Mode = 'recognize' | 'spell' | 'dictation';
 
 export interface CardRow {
@@ -102,7 +103,7 @@ function markCorrectForWrong(db: DB, wordId: number, now: Date) {
 
 export function countsTowardGraduation(rating: number) { return rating === Rating.Good || rating === Rating.Easy; }
 
-export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { durationMs?: number; answer?: string; correct?: boolean; answerId?: string; qtype?: Qtype; context?: Context } = {}): { card: Card; duplicate: boolean } {
+export function review(db: DB, cardId: number, rating: Grade, now = new Date(), extra: { evidence?:boolean; durationMs?: number; answer?: string; correct?: boolean; answerId?: string; qtype?: Qtype; context?: Context } = {}): { card: Card; duplicate: boolean } {
   if (extra.answerId) {
     const prev = db.prepare('SELECT card_id FROM review_logs WHERE answer_id=?').get(extra.answerId) as { card_id: number } | undefined;
     if (prev) return { card: toCard(db.prepare('SELECT * FROM cards WHERE id=?').get(prev.card_id) as CardRow), duplicate: true };
@@ -116,7 +117,7 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
   const qtype = extra.qtype ?? (row.mode === 'recognize' ? 'flip' : row.mode);
   const already = db.prepare(`SELECT 1 FROM review_logs WHERE card_id=? AND COALESCE(counted,1)<>0 AND review_at>=? AND review_at<=? LIMIT 1`).get(cardId, shDayStart(now).toISOString(), now.toISOString());
   const counted = context === 'practice' && already ? 0 : 1;
-  const scheduled = counted ? scheduler.next(toCard(row), now, rating) : null;
+  const scheduled = counted ? (extra.evidence?evidenceScheduler:scheduler).next(toCard(row), now, rating) : null;
   const card = scheduled?.card ?? toCard(row);
   const log = scheduled?.log ?? { ...row, due: new Date(row.due) };
   db.transaction(() => {
@@ -127,9 +128,9 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
       VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`).run(cardId, rating, log.state, row.due, log.stability, log.difficulty,
         log.elapsed_days, log.scheduled_days, now.toISOString(), extra.durationMs ?? null, extra.answer ?? null,
         extra.correct === undefined ? null : extra.correct ? 1 : 0, extra.answerId ?? null, qtype, counted, context);
-    if (rating === Rating.Again) addWrong(db, row.word_id, now); else if (countsTowardGraduation(rating)) markCorrectForWrong(db, row.word_id, now);
+    if (rating === Rating.Again) addWrong(db, row.word_id, now); else if (!extra.evidence && countsTowardGraduation(rating)) markCorrectForWrong(db, row.word_id, now);
     // 认词卡第一次学过后，开启拼写和听写卡（明天起出现）
-    if (counted && row.mode === 'recognize' && row.state === State.New) {
+    if (!extra.evidence && counted && row.mode === 'recognize' && row.state === State.New) {
       const tomorrow = new Date(shDayStart(now).getTime() + 86400_000);
       insertCard(db, row.word_id, 'spell', tomorrow);
       insertCard(db, row.word_id, 'dictation', tomorrow);

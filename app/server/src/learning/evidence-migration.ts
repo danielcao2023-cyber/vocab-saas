@@ -41,9 +41,10 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
    // Only explicit help/wrong evidence can establish a failure. Unassisted legacy successes remain unknown.
    const issues=db.prepare('SELECT * FROM learning_issues WHERE word_id=? AND mode=? AND (assisted=1 OR json_extract(result_json,\'$.correct\')=0) ORDER BY issued_at,id').all(c.word_id,c.mode) as any[];
    const logs=db.prepare('SELECT * FROM review_logs WHERE card_id=? AND (rating=1 OR rating=2 OR correct=0) ORDER BY review_at,id').all(c.id) as any[];
-   const failures=[...issues.map(i=>({at:i.answered_at??i.issued_at,key:'legacy-issue:'+i.id,issue:i.id,log:null as number|null,help:!!i.assisted})),...logs.filter(l=>!issues.some(i=>i.answer_id===l.answer_id&&l.answer_id)).map(l=>({at:l.review_at,key:'legacy-log:'+l.id,issue:null as string|null,log:l.id as number|null,help:l.rating===2}))].sort((a,b)=>a.at.localeCompare(b.at));
+   const failures=[...issues.map(i=>({at:i.answered_at??i.issued_at,key:'legacy-issue:'+i.id,issue:i.id,log:null as number|null,help:!!i.assisted})),].sort((a,b)=>a.at.localeCompare(b.at));
    for(const f of failures){db.prepare('INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,text_correct,eligible,rating,reason,source,review_log_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)').run(f.key,c.word_id,c.mode,f.issue,'probe_failure',f.at,null,1,1,f.help?'help':'wrong','legacy_verified',f.log);verified++;}
    const last=failures.at(-1)?.at??null;
+   if(c.reps>0)db.prepare("INSERT OR IGNORE INTO learning_words(word_id,book,introduced_at,due) VALUES (?,'unfamiliar',?,?)").run(c.word_id,c.last_review??stamp,c.due);
    if(last){
     const card=scheduler.next(createEmptyCard(new Date(last)),new Date(last),Rating.Again).card;
     db.prepare('UPDATE cards SET due=?,stability=?,difficulty=?,elapsed_days=?,scheduled_days=?,learning_steps=?,reps=?,lapses=?,state=?,last_review=? WHERE id=?').run(card.due.toISOString(),card.stability,card.difficulty,card.elapsed_days,card.scheduled_days,card.learning_steps,card.reps,card.lapses,card.state,last,c.id);affected++;

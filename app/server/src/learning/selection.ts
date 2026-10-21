@@ -13,7 +13,12 @@ export function selectDaily(db:DB,now:Date,limit=40){
  const words=learningWords(db),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(new Date(now.getTime()+8*3600000).toISOString().slice(0,10)) as {word_id:number}[]).map(r=>r.word_id));
  const due=words.filter(w=>unfinished.has(w.id)||(w.book!=='new'&&(!w.due||w.due<=now.toISOString())));
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(b.book==='unfamiliar')-Number(a.book==='unfamiliar')||(a.due??'').localeCompare(b.due??'')||b.day_errors-a.day_errors||a.id-b.id);
- const selected=due.slice(0,limit),fresh=words.filter(w=>w.book==='new'&&!unfinished.has(w.id)),needed=Math.min(limit-selected.length,fresh.length);let core=0;const buckets=[0,0,0];
+ const selected=due.slice(0,limit),fresh=words.filter(w=>w.book==='new'&&!unfinished.has(w.id));
+ selected.push(...composeFresh(fresh,limit-selected.length));
+ return {selected,backlog:Math.max(0,due.length-limit)};
+}
+
+export function composeFresh(input:LearningWord[],limit:number){const fresh=[...input],selected:LearningWord[]=[],needed=Math.min(limit,fresh.length);let core=0;const buckets=[0,0,0];
  for(let i=0;i<needed;i++){
   const coreTarget=Math.round((i+1)*.7),isCore=core<coreTarget;
   let pool=fresh.filter(w=>(w.priority===2)===isCore);if(!pool.length)pool=fresh;
@@ -22,5 +27,5 @@ export function selectDaily(db:DB,now:Date,limit=40){
   pool.sort((a,b)=>(a.freq_rank||999999)-(b.freq_rank||999999)||a.id-b.id);
   const word=pool[0];selected.push(word);if(word.priority===2)core++;buckets[wordDifficulty(word.headword)]++;fresh.splice(fresh.indexOf(word),1);
  }
- return {selected,backlog:Math.max(0,due.length-limit)};
+ return selected;
 }

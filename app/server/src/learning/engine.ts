@@ -1,3 +1,5 @@
+import {evidenceVersion} from './evidence-migration.ts';
+import {todayV3,startV3,nextV3,answerV3,consultV3,deferV3} from './evidence-engine.ts';
 import {randomUUID} from 'node:crypto';
 import {createEmptyCard,Rating} from 'ts-fsrs';
 import type {DB} from '../db.ts';
@@ -15,6 +17,7 @@ interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_j
 const counts=(words:LearningWord[])=>words.reduce((r,w)=>(r[w.book]++,r),{new:0,unfamiliar:0,familiar:0,mastered:0});
 const rows=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as DayWord[];
 export function learningToday(db:DB,now=new Date()):LearningSummary{
+ if(evidenceVersion(db)===3)return todayV3(db,now);
  const day=shDay(now),started=!!db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day),items=rows(db,day),preview=selectDaily(db,now);
  const tally=db.prepare('SELECT COUNT(*) answers,COALESCE(SUM(json_extract(result_json,\'$.correct\')),0) correct FROM learning_issues WHERE day=? AND answered_at IS NOT NULL AND answer_id IS NOT NULL').get(day) as {answers:number;correct:number};
  const total=started?items.length:preview.selected.length,newWords=started?items.filter(w=>w.is_new).length:preview.selected.filter(w=>w.book==='new').length;
@@ -26,6 +29,7 @@ function ensureWord(db:DB,w:LearningWord,now:Date){
  for(const mode of MODES){const c=createEmptyCard(now);db.prepare('INSERT OR IGNORE INTO cards(word_id,mode,due,stability,difficulty,elapsed_days,scheduled_days,learning_steps,reps,lapses,state) VALUES (?,?,?,?,?,?,?,?,?,?,?)').run(w.id,mode,c.due.toISOString(),c.stability,c.difficulty,c.elapsed_days,c.scheduled_days,c.learning_steps,c.reps,c.lapses,c.state);}
 }
 export function startLearning(db:DB,now=new Date()){
+ if(evidenceVersion(db)===3)return startV3(db,now);
  db.transaction(()=>{const day=shDay(now);upgradePlan(db,now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;
   db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,?)').run(day,now.toISOString(),POLICY_VERSION);
   selectDaily(db,now).selected.forEach((w,i)=>{
@@ -49,7 +53,7 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
   ...(issue.mode==='recognize'?{headword:w.headword}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,w.headword),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(w.headword)[0]})};
 }
-export function nextLearning(db:DB,now=new Date()):LearningTurn{return db.transaction(()=>{
+export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
  const active=rows(db,summary.day).filter(w=>!w.done&&!w.deferred);if(!active.length)return {kind:'done',summary};
  const words=learningWords(db),byId=new Map(words.map(w=>[w.id,w]));
@@ -74,16 +78,18 @@ function activeIssue(db:DB,id:unknown,now:Date){
  if(entry.done||entry.deferred)throw new HttpError(409,'这个词的本轮练习已结束。');return {issue,entry};
 }
 export function consultLearning(db:DB,id:unknown,now=new Date()){
+ if(evidenceVersion(db)===3)return consultV3(db,id,now);
  const {issue}=activeIssue(db,id,now);db.prepare('UPDATE learning_issues SET assisted=1 WHERE id=?').run(issue.id);return {ok:true};
 }
 export function deferLearning(db:DB,id:unknown,now=new Date()){
+ if(evidenceVersion(db)===3)return deferV3(db,id,now);
  return db.transaction(()=>{const {issue}=activeIssue(db,id,now);if(issue.mode!=='dictation')throw new HttpError(400,'只能暂缓无法播放的听写。');
   db.prepare('UPDATE learning_day_words SET deferred=1 WHERE day=? AND word_id=?').run(issue.day,issue.word_id);
   db.prepare('UPDATE learning_issues SET answered_at=? WHERE id=?').run(now.toISOString(),issue.id);
   db.prepare('UPDATE learning_words SET due=? WHERE word_id=?').run(tomorrow(now),issue.word_id);return {ok:true};
  })();
 }
-export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):LearningResult{return db.transaction(()=>{
+export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):LearningResult{if(evidenceVersion(db)===3)return answerV3(db,input,now);return db.transaction(()=>{
  if(!input||typeof input.answerId!=='string'||!input.answerId.trim()||input.answerId.length>100)throw new HttpError(400,'提交编号无效。');
  const replay=db.prepare('SELECT * FROM learning_issues WHERE answer_id=?').get(input.answerId) as Issue|undefined;
  if(replay){if(replay.id!==input.issueId)throw new HttpError(409,'提交编号已经使用。');return JSON.parse(replay.result_json!);}
