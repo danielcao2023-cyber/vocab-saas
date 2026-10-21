@@ -1,5 +1,6 @@
+import {migrateEvidenceSchema} from './evidence-migration.ts';
 import type {DB} from '../db.ts';
-export function migrateLearning(db:DB){db.exec(`
+export function migrateLearning(db:DB){migrateEvidenceSchema(db);db.exec(`
 CREATE TABLE IF NOT EXISTS learning_words (
  word_id INTEGER PRIMARY KEY REFERENCES words(id),book TEXT NOT NULL CHECK(book IN ('new','unfamiliar','familiar','mastered')),
  introduced_at TEXT NOT NULL,last_at TEXT,initial_done INTEGER NOT NULL DEFAULT 0,initial_errors INTEGER NOT NULL DEFAULT 0,
