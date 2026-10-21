@@ -213,4 +213,30 @@ public class VaultStoreTest {
         assertNull(store.get(VaultStore.LEARNING_POINTER));
         assertEquals(0, directory.listFiles().length);
     }
+    @Test public void migrationBackupSurvivesReopenAndSlotRotationWithoutOverwrite() throws Exception {
+        byte[] original=image("pre-v3-confirmed");store.writeSnapshot("a", original);
+        store.createMigrationBackup(3, original);newStore().createMigrationBackup(3, original);
+        store.writeSnapshot("b",image("v3-first"));store.writeSnapshot("a",image("v3-second"));
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-v3.db")));
+        try {store.createMigrationBackup(3,image("different"));fail("Backup must never be replaced");}catch(IOException expected){}
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-v3.db")));
+    }
+    @Test public void partialMigrationBackupKeepsOldPointerAndNeverPublishesTruncatedFile() throws Exception {
+        byte[] original=image("confirmed");store.writeSnapshot("a",original);
+        VaultStore failed=injected(SharedPreferences.Editor::commit,(file,bytes)->{try(FileOutputStream out=new FileOutputStream(file)){out.write(bytes,0,16);}throw new IOException("partial");});
+        expectUnavailable(()->failed.createMigrationBackup(3,original));
+        assertFalse(new File(directory,"learning-pre-v3.db").exists());assertArrayEquals(original,fileBytes(slot("a")));assertProcessSealed();
+    }
+    @Test public void corruptBackupReadbackBlocksMigrationWithoutChangingPointer() throws Exception {
+        byte[] original=image("confirmed");store.writeSnapshot("a",original);
+        VaultStore failed=injected(SharedPreferences.Editor::commit,(file,bytes)->VaultStore.durableWrite(file,image("corrupt")));
+        expectUnavailable(()->failed.createMigrationBackup(3,original));
+        assertArrayEquals(original,fileBytes(slot("a")));assertProcessSealed();
+    }
+    @Test public void migrationBackupRejectsOtherVersionsAndGenericVaultBypass() throws Exception {
+        try{store.createMigrationBackup(4,image("bad"));fail("Only fixed v3 backup");}catch(IllegalArgumentException expected){}
+        try{store.set("learning-pre-v3","bad");fail("Reserved backup");}catch(IllegalArgumentException expected){}
+        assertEquals(0,directory.listFiles().length);
+    }
+
 }

@@ -10,6 +10,10 @@ import android.util.Base64;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import java.nio.channels.FileLock;
+import java.security.MessageDigest;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.GeneralSecurityException;
@@ -104,7 +108,7 @@ final class VaultStore {
             if (value == null) {
                 // Corrupt/missing preferences XML can appear as an empty map.
                 // Existing snapshots prove this is not a fresh installation.
-                if (snapshot("a").exists() || snapshot("b").exists()) throw new IOException("Missing learning index");
+                if (snapshot("a").exists() || snapshot("b").exists() || new File(snapshotDirectory,"learning-pre-v3.db").exists()) throw new IOException("Missing learning index");
             } else if ((!"a".equals(value) && !"b".equals(value)) || !snapshot(value).isFile()) {
                 throw new IOException("Invalid learning index or missing snapshot");
             }
@@ -134,7 +138,7 @@ final class VaultStore {
     void set(String key, String value) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key)) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
+            if (LEARNING_POINTER.equals(key) || "learning-pre-v3".equals(key)) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
             try { putEncrypted(key, value); } catch (Exception error) { throw poison(error); }
         }
     }
@@ -142,7 +146,7 @@ final class VaultStore {
     void remove(String key) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key)) throw new IllegalArgumentException("The learning index cannot be removed");
+            if (LEARNING_POINTER.equals(key) || "learning-pre-v3".equals(key)) throw new IllegalArgumentException("The learning index cannot be removed");
             try {
                 if (!committer.commit(preferences.edit().remove(key))) throw new IOException("Vault removal failed");
             } catch (Exception error) { throw poison(error); }
@@ -166,6 +170,41 @@ final class VaultStore {
                 snapshotWriter.write(snapshot(slot), bytes);
                 putEncrypted(LEARNING_POINTER, slot);
             } catch (Exception error) { throw poison(error); }
+        }
+    }
+
+
+    private static byte[] digest(File file) throws Exception {
+        MessageDigest sha=MessageDigest.getInstance("SHA-256");
+        try(FileInputStream in=new FileInputStream(file)){byte[] buffer=new byte[8192];int count;while((count=in.read(buffer))!=-1)sha.update(buffer,0,count);}
+        return sha.digest();
+    }
+    /** Fixed, app-private recovery point. A file lock and atomic rename publish it once. */
+    void createMigrationBackup(int version, byte[] bytes) throws Exception {
+        synchronized(PROCESS_LOCK){
+            requireHealthy();
+            if(version!=3)throw new IllegalArgumentException("Unsupported backup version");
+            byte[] header="SQLite format 3\000".getBytes(StandardCharsets.US_ASCII);
+            if(bytes==null||bytes.length<header.length)throw new IllegalArgumentException("Invalid SQLite image");
+            for(int i=0;i<header.length;i++)if(bytes[i]!=header[i])throw new IllegalArgumentException("Invalid SQLite image");
+            File target=new File(snapshotDirectory,"learning-pre-v3.db");
+            byte[] expected=MessageDigest.getInstance("SHA-256").digest(bytes);
+            File temporary=new File(snapshotDirectory,"learning-pre-v3.tmp");
+            try(RandomAccessFile lockFile=new RandomAccessFile(new File(snapshotDirectory,"learning-pre-v3.lock"),"rw");
+                FileLock held=lockFile.getChannel().lock()){
+                if(!held.isValid())throw new IOException("Backup lock unavailable");
+            if(target.exists()){
+                if(target.length()!=bytes.length||!MessageDigest.isEqual(expected,digest(target)))throw new IOException("Conflicting migration backup; existing backup preserved");
+                return;
+            }
+                snapshotWriter.write(temporary,bytes);
+                if(temporary.length()!=bytes.length||!MessageDigest.isEqual(expected,digest(temporary)))throw new IOException("Backup readback failed");
+                // All writers use this fixed lock; existing targets were verified above.
+                Os.rename(temporary.getAbsolutePath(),target.getAbsolutePath());
+                FileDescriptor parent=Os.open(snapshotDirectory.getAbsolutePath(),OsConstants.O_RDONLY,0);
+                try{Os.fsync(parent);}finally{Os.close(parent);}
+                if(target.length()!=bytes.length||!MessageDigest.isEqual(expected,digest(target)))throw new IOException("Published backup verification failed");
+            }catch(Exception error){temporary.delete();throw poison(error);}
         }
     }
 

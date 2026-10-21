@@ -1,7 +1,7 @@
 import {Capacitor,registerPlugin} from '@capacitor/core';
 import {Directory,Filesystem} from '@capacitor/filesystem';
 
-interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>}
+interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>}
 const vault=registerPlugin<VaultPlugin>('MobileVault');
 const native=()=>Capacitor.isNativePlatform();
 export const profileVault={
@@ -26,13 +26,24 @@ function bytes(text:string){const raw=atob(text);return Uint8Array.from(raw,c=>c
 /** Native lock/fsync/pointer commit form one operation; native failures poison writes until a new process. */
 export const learningStorage={
  async load():Promise<Uint8Array|null>{
-  if(!native())return idbGet<Uint8Array>('learning-db');
+  if(!native()){const data=await idbGet<Uint8Array>('learning-db');if(data===null&&await idbGet('learning-pre-v3')!==null)throw new Error('学习索引缺失，请保留迁移备份以便恢复。');return data;}
   const pointer=(await vault.get({key:'learning-slot-v1'})).value;
   if(pointer===null)return null;
   if(!['a','b'].includes(pointer))throw new Error('学习数据索引异常，请保留应用数据以便恢复。');
   const file=await Filesystem.readFile({path:`learning-${pointer}.db`,directory:Directory.Data});
   if(typeof file.data!=='string')throw new Error('学习数据读取异常，请保留应用数据。');
   return bytes(file.data);
+ },
+ async createMigrationBackup(data:Uint8Array,version:3):Promise<void>{
+  if(version!==3)throw new Error('迁移版本无效。');
+  if(native()){await vault.createMigrationBackup({version,data:base64(data)});return;}
+  const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new Uint8Array(data)))).map(x=>x.toString(16).padStart(2,'0')).join('');
+  const db=await database();try{await new Promise<void>((resolve,reject)=>{
+   const tx=db.transaction('state','readwrite'),store=tx.objectStore('state'),get=store.get('learning-pre-v3');
+   get.onsuccess=()=>{const old=get.result;if(old){if(old.hash!==hash||old.data.length!==data.length||!data.every((b,i)=>old.data[i]===b))tx.abort();}else store.put({version,hash,data:new Uint8Array(data)},'learning-pre-v3');};
+   tx.oncomplete=()=>resolve();tx.onabort=tx.onerror=()=>reject(new Error('迁移前备份冲突或保存失败，原备份未被覆盖。'));
+  });}finally{db.close();}
+  const verify=await idbGet<{hash:string;data:Uint8Array}>('learning-pre-v3');if(!verify||verify.hash!==hash||verify.data.length!==data.length||!data.every((b,i)=>verify.data[i]===b))throw new Error('迁移备份回读校验失败。');
  },
  async save(data:Uint8Array):Promise<void>{
   if(!native()){await idbSet('learning-db',data);return;}

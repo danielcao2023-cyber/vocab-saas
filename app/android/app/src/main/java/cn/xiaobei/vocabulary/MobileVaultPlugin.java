@@ -74,6 +74,14 @@ public class MobileVaultPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void createMigrationBackup(PluginCall call) {
+        Integer version=call.getInt("version");String data=call.getString("data");
+        if(version==null||version!=3||data==null){call.reject("A v3 SQLite backup is required","INVALID_BACKUP");return;}
+        try{store.createMigrationBackup(version,Base64.decode(data,Base64.NO_WRAP));call.resolve();}
+        catch(Exception ignored){call.reject("Unable to verify migration backup; preserve application data","BACKUP_FAILED");}
+    }
+
+    @PluginMethod
     public void remove(PluginCall call) {
         String key = validKey(call);
         if (key == null) return;

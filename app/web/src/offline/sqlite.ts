@@ -40,7 +40,7 @@ function bindings(parameters: unknown[]): BindParams {
 export async function openBrowserDatabase(bytes: Uint8Array, options: Pick<SqlJsConfig, 'locateFile'> = {}): Promise<BrowserDatabase> {
   if (bytes.byteLength < 100) throw new Error('SQLite database image is empty or truncated');
   const SQL = await initSqlJs(options);
-  const raw = new SQL.Database(bytes);
+  const raw = new SQL.Database(new Uint8Array(bytes));
   let closed = false, depth = 0, savepoint = 0;
   const checkOpen = () => { if (closed) throw new Error('SQLite database is closed'); };
   const execute = (sql: string, parameters: unknown[], first: boolean): Row[] => {

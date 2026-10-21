@@ -1,3 +1,8 @@
+import {migrateLearning} from '../../../server/src/learning/schema';
+import {activateEvidencePolicy,evidenceVersion} from '../../../server/src/learning/evidence-migration';
+import {learningViews} from '../../../server/src/learning/evidence-views';
+import {saveExposure} from '../../../server/src/learning/evidence-store';
+import type {LearningView,ExposureInput} from '../../../shared/learning';
 import {CapacitorHttp,Capacitor} from '@capacitor/core';
 import {openBrowserDatabase,asSharedDb,type BrowserDatabase} from './sqlite';
 import {learningToday,startLearning,nextLearning,answerLearning,consultLearning,deferLearning,learningBooks} from '../../../server/src/learning/engine';
@@ -16,16 +21,20 @@ const jsonResponse=(value:unknown,options:ResponseInit={})=>new Response(JSON.st
 interface Options {db:BrowserDatabase;save:(bytes:Uint8Array)=>Promise<void>;assetFetch:typeof fetch;recordings:Record<string,BundledRecording>;now?:()=>Date;ai?:ReturnType<typeof createOfflineAi>}
 export function createLocalRuntime(options:Options){
  const {db,assetFetch,recordings}=options,shared=asSharedDb(db),now=options.now??(()=>new Date());
- let queue:Promise<unknown>=Promise.resolve();
+ let queue:Promise<unknown>=Promise.resolve();let pendingPersist:{key:string;result:unknown}|null=null;
  const dispatch=async(url:URL,method:string,body:any):Promise<unknown>=>{
-  const path=url.pathname,q=Object.fromEntries(url.searchParams),t=now();
+  const path=url.pathname,q=Object.fromEntries(url.searchParams),t=now(),v3=evidenceVersion(shared)===3;
+  if(v3&&['/api/review','/api/check','/api/answer'].includes(path)&&method==='POST')throw new HttpError(409,'请使用新版背词入口。');
+  if(v3&&path.startsWith('/api/learning/')&&method==='POST'){if(body?.policyVersion!==3)throw new HttpError(409,'请使用新版背词入口。');if(['rating','eligible','nextDue','stage'].some(k=>k in body))throw new HttpError(400,'不能自报记忆评分。');}
+  if(path==='/api/learning/views'&&method==='GET')return learningViews(shared,(q.view??'all') as LearningView,parseId(q.page??'1','page'),t);
+  if(path==='/api/learning/exposure'&&method==='POST'){if(!v3)throw new HttpError(409,'尚未启用新版学习。');saveExposure(shared,body as ExposureInput,t);return {ok:true};}
   if(path==='/health')return {ok:true,offline:true,words:db.prepare('SELECT COUNT(*) n FROM words').get()?.n};
-  if(path==='/version')return {commit:'android-1.0.1',offline:true};
+  if(path==='/version')return {commit:'android-1.0.2',offline:true};
   if(path==='/api/learning/today'&&method==='GET')return learningToday(shared,t);
   if(path==='/api/learning/start'&&method==='POST')return startLearning(shared,t);
   if(path==='/api/learning/next'&&method==='GET')return nextLearning(shared,t);
   if(path==='/api/learning/answer'&&method==='POST')return answerLearning(shared,body as LearningAnswer,t);
-  if(path==='/api/learning/consult'&&method==='POST')return consultLearning(shared,body?.issueId,t);
+  if(path==='/api/learning/consult'&&method==='POST')return consultLearning(shared,v3?body:body?.issueId,t);
   if(path==='/api/learning/defer'&&method==='POST')return deferLearning(shared,body?.issueId,t);
   if(path==='/api/learning/books'&&method==='GET')return learningBooks(shared,(q.book??'unfamiliar') as WordBook,parseId(q.page??'1','page'),t);
   if(path==='/api/search'&&method==='GET'){const limit=parseId(q.limit??'20','limit');if(limit>100)throw new HttpError(400,'invalid limit');return search(shared,q.q??'',limit);}
@@ -60,7 +69,8 @@ export function createLocalRuntime(options:Options){
    if(method!=='POST'&&!(url.pathname==='/api/ai/settings'&&method==='GET'))throw new HttpError(405,'请求方式不支持。');
    return options.ai.handle(url.pathname,body);
   }
-  const task=queue.then(async()=>{const result=await dispatch(url,method,body);await options.save(db.export());return result;});
+  const key=method+' '+url.pathname+url.search+' '+JSON.stringify(body);
+  const task=queue.then(async()=>{if(pendingPersist&&pendingPersist.key!==key)throw new HttpError(503,'上一条记录尚未保存，请先重试原操作。');if(!pendingPersist){const result=await dispatch(url,method,body);if(method==='GET'&&url.pathname!=='/api/learning/next')return result;pendingPersist={key,result};}await options.save(db.export());const result=pendingPersist.result;pendingPersist=null;return result;});
   queue=task.catch(()=>{});return task;
  }
  return {async fetch(input:RequestInfo|URL,init?:RequestInit):Promise<Response>{
@@ -83,7 +93,7 @@ export async function startOfflineRuntime(){
  if(data===null){const response=await originalFetch('/offline/seed.db');if(!response.ok)throw new Error('词库未能载入。');data=new Uint8Array(await response.arrayBuffer());}
  const db=await openBrowserDatabase(data,{locateFile:()=>'/offline/sql-wasm.wasm'});
  if(db.pragma('quick_check',{simple:true})!=='ok')throw new Error('学习数据异常，请保留应用数据以便恢复。');
- if(saved===null)await learningStorage.save(db.export());
+ await prepareEvidenceDatabase(db,saved,learningStorage,new Date());
  const ai=createOfflineAi({vault:profileVault,word:id=>db.prepare('SELECT headword,meaning_zh,phonetic FROM words WHERE id=?').get(id) as {headword:string;meaning_zh:string|null;phonetic:string|null}|undefined,
   upstream:async options=>{
    if(Capacitor.isNativePlatform())return CapacitorHttp.request({...options,method:'POST',connectTimeout:15000,readTimeout:60000,disableRedirects:true});
@@ -97,4 +107,11 @@ export async function startOfflineRuntime(){
   if(url.origin===location.origin&&(url.pathname.startsWith('/api/')||url.pathname==='/health'||url.pathname==='/version'))return runtime.fetch(input,init);
   return originalFetch(input,init);
  };
+}
+
+/** The caller cannot expose a writable runtime before this resolves. */
+export async function prepareEvidenceDatabase(db:BrowserDatabase,saved:Uint8Array|null,storage:{createMigrationBackup:(bytes:Uint8Array,version:3)=>Promise<void>;save:(bytes:Uint8Array)=>Promise<void>},now:Date){
+ const shared=asSharedDb(db);if(evidenceVersion(shared)===3){if(saved===null)await storage.save(db.export());return;}
+ if(saved!==null)await storage.createMigrationBackup(saved,3);
+ migrateLearning(shared);activateEvidencePolicy(shared,now);await storage.save(db.export());
 }
