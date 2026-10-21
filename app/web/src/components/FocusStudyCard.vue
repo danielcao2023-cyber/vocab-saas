@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {computed,ref,watch} from 'vue';
-import type {LearningCard,LearningResult} from '../../../shared/learning';
+import type {LearningCard,LearningResult,LearningResultV3} from '../../../shared/learning';
 import type {PlaybackFailure} from '../api';
 import LetterSlots from './LetterSlots.vue';
 import MeaningList from '../MeaningList.vue';
 import SpeakButton from './SpeakButton.vue';
-const props=defineProps<{card:LearningCard;answer:string;feedback:LearningResult|null;busy:boolean;audioFailed:PlaybackFailure|null}>();
+const props=defineProps<{card:LearningCard;answer:string;feedback:LearningResult&Partial<LearningResultV3>|null;busy:boolean;audioFailed:PlaybackFailure|null}>();
 const emit=defineEmits<{'update:answer':[value:string];choose:[id:number];submit:[];next:[];play:[];learn:[];defer:[]}>();
 const pattern=ref(props.card.patterns[0]??'');watch(()=>props.card.issueId,()=>pattern.value=props.card.patterns[0]??'');
 const canSubmit=computed(()=>props.answer.trim().length>0&&!props.busy);
@@ -21,7 +21,7 @@ function setPattern(value:string){pattern.value=value;emit('update:answer','');}
   <div v-if="!feedback" class="focus-confirm"><button class="btn primary" type="button" :disabled="!canSubmit||[...pattern].filter(c=>c==='_').length!==answer.replace(/[^A-Za-z]/g,'').length" @click="emit('submit')">确认答案</button></div>
  </template>
 
- <div v-if="feedback" class="focus-feedback" :class="feedback.correct&&!feedback.assisted?'correct':'review'" role="status"><div><strong>{{ feedback.assisted?'看过讲解，稍后独立再测':feedback.correct?'答对了 👍':'再看一眼' }}</strong><p v-if="!feedback.correct">{{ feedback.expected }} · {{ feedback.meaning }}</p></div><button class="btn primary" type="button" :disabled="busy" @click="emit('next')">继续</button></div>
+ <div v-if="feedback" class="focus-feedback" :class="(feedback.independentlyRecalled??(feedback.correct&&!feedback.assisted))?'correct':'review'" role="status"><div><strong>{{ feedback.evidenceKind==='correction'?'这次记住了，稍后再独立试试':feedback.correct&&!feedback.assisted?'答对了 👍':'再看一眼' }}</strong><p v-if="!feedback.correct">{{ feedback.expected }} · {{ feedback.meaning }}</p></div><button class="btn primary" type="button" :disabled="busy" @click="emit('next')">继续</button></div>
  <div v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?'请点击播放按钮启用读音。':'这个读音暂时无法播放。' }} <button class="link" type="button" @click="emit('play')">重试播放</button><button v-if="audioFailed!=='blocked'&&!feedback" class="link" type="button" :disabled="busy" @click="emit('defer')">暂缓此词</button></div>
 </article></template>
 <style scoped>

@@ -15,10 +15,10 @@ it('offers audio deferral only after playback fails and keeps feedback plain tex
  expect(ui.text()).toContain('<img src=x>');expect(ui.all(n=>n.tag==='img')).toHaveLength(0);
  }finally{ui.app.unmount();}
 });
-it('keeps the home action on one study path and displays all four books',async()=>{
+it('keeps one study path and presents overlapping evidence views',async()=>{
  const summary={day:'2026-10-20',started:false,total:40,completed:0,deferred:0,newWords:14,reviewWords:26,remaining:40,backlog:0,answers:0,correct:0,books:{new:100,unfamiliar:10,familiar:8,mastered:2}};
  vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify(summary))));const start=vi.fn(),ui=host('web/src/views/LearningHomeView.vue',{onStart:start,streak:{current:0,best:0,calendar:[],badges:[],makeupLeft:2,makeupUsed:0,makeupCandidates:[]}});
- try{await flush();expect(ui.text()).toContain('2026 年 10 月');for(const label of ['已掌握','熟悉','不熟','生词'])expect(ui.text()).toContain(label);expect(ui.text()).not.toContain('先学新词');
+ try{await flush();expect(ui.text()).toContain('2026 年 10 月');for(const label of ['全部词汇','待复习','重点巩固','长期较稳'])expect(ui.text()).toContain(label);expect(ui.text()).not.toContain('先学新词');
  ui.all(n=>n.tag==='button'&&ui.text(n)==='开始背单词')[0].props.onClick();expect(start).toHaveBeenCalledOnce();
  }finally{ui.app.unmount();}
 });
@@ -57,4 +57,16 @@ it.each([true,false])('opens the lesson after grading (correct=%s) without chang
   const learn=ui.all(n=>n.tag==='button'&&ui.text(n).includes('学习该词'))[0];expect(learn.props.disabled).toBe(false);await learn.props.onClick();await flush();expect(open).toHaveBeenCalledWith(5);expect(calls).not.toContain('/api/learning/consult');
   ui.updateProps({active:false});await flush();ui.updateProps({active:true});await flush();expect(ui.text()).toContain(correct?'答对了 👍':'再看一眼');expect(calls.filter(x=>x.endsWith('/next'))).toHaveLength(1);
  }finally{ui.app.unmount();}
+});
+it('keeps a helped correction distinct from an independent thumbs-up',async()=>{
+ const ui=host('web/src/components/FocusStudyCard.vue',{card,answer:'above',feedback:{policyVersion:3,correct:true,assisted:true,evidenceKind:'correction',independentlyRecalled:false,expected:'above',meaning:'上方',book:'unfamiliar',nextDue:'2026-10-21'},busy:false,audioFailed:null});
+ try{expect(ui.text()).toContain('这次记住了，稍后再独立试试');expect(ui.text()).not.toContain('答对了 👍');}finally{ui.app.unmount();}
+});
+it('does not open a lesson when the failed-probe write is unconfirmed',async()=>{
+ const s={day:'2026-10-21',total:1,completed:0},open=vi.fn();vi.stubGlobal('fetch',vi.fn(async(path:string)=>{if(path.endsWith('/consult'))throw new TypeError('offline');return Response.json(path.endsWith('/next')?{kind:'card',summary:s,card}:s);}));
+ const ui=host('web/src/views/LearningStudyView.vue',{onOpen:open});try{await flush();await ui.all(n=>n.tag==='button'&&ui.text(n).includes('学习该词'))[0].props.onClick();await flush();expect(open).not.toHaveBeenCalled();expect(ui.text()).toContain('暂时无法打开学习页');}finally{ui.app.unmount();}
+});
+it('shows overlapping evidence filters instead of mutually exclusive mastery books',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>Response.json({policyVersion:3,counts:{all:2,new:1,due:1,priority:1,stable:0,weak_spell:1,weak_dictation:1},items:[],total:2,page:1,size:40})));
+ const ui=host('web/src/views/WordBooksView.vue');try{await flush();expect(ui.text()).toContain('重点巩固');expect(ui.text()).toContain('长期较稳');expect(ui.text()).toContain('可重叠');}finally{ui.app.unmount();}
 });

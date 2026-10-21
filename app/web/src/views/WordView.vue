@@ -84,6 +84,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
     <button type="button" class="back link" @click="$emit('back')">{{ COPY.back }}</button>
     <div v-if="detail" class="wdetail lesson-layout">
       <article class="card wd-main">
+        <details v-if="detail.capabilityEvidence" class="evidence-detail"><summary>认义、拼写与听写的学习情况</summary><p v-for="e in detail.capabilityEvidence" :key="e.mode" class="small muted">{{ {recognize:'认义',spell:'汉译英',dictation:'听写'}[e.mode] }}：{{ e.delayedSuccesses?'已有延迟记住的记录':'仍需跨日验证' }}<span v-if="e.lastFailureAt"> · {{ e.delayedSuccesses<2?'需要继续巩固':'已复查' }}</span><span v-if="e.verificationDue"> · {{ date(e.verificationDue) }}起复查</span></p></details>
         <div class="meta">
           <span class="tag" :class="{core:detail.word.level==='三级'}">{{ detail.word.level==='三级'?COPY.core:COPY.level2 }}</span>
           <StatusChip :status="detail.status" />
