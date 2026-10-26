@@ -1,5 +1,6 @@
 import { mainHeadwords } from '../../server/src/text';
 import {isMobileBuild,bundledAudio} from './offline/mobile-mode';
+import {preferences} from './preferences';
 
 export type PlaybackFailure = 'blocked' | 'failed';
 export type PlaybackResult =
@@ -65,6 +66,8 @@ export function speak(headword: string): Promise<PlaybackResult> {
       audio.preload = 'auto';
       if(isMobileBuild()&&!bundledAudio(word)){finish({status:'unavailable',reason:'failed'});return;}
       audio.src = isMobileBuild()?bundledAudio(word)!:`/api/pronunciation/audio?word=${encodeURIComponent(word)}`;
+      audio.defaultPlaybackRate = preferences.playbackRate;
+      audio.playbackRate = preferences.playbackRate;
       // A fulfilled play() only means playback started, not that the recording completed.
       Promise.resolve(audio.play()).then(() => { started = true; }, onRejected);
     } catch (error) { onRejected(error); }

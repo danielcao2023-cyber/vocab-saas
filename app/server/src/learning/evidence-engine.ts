@@ -6,6 +6,7 @@ import {shDay} from '../time.ts';
 import {maskAnswer} from '../text.ts';
 import {meaningsOverlap} from '../quiz.ts';
 import {recomputeDailyStats} from '../stats.ts';
+import {dailyWordLimit} from '../user-settings.ts';
 import type {LearningMode,LearningCard,LearningAnswer,LearningResultV3,LearningSummaryV3,LearningTurnV3,CapabilityNeed,ConsultInput,WordBook} from '../../../shared/learning.ts';
 import {learningWords,composeFresh,type LearningWord} from './selection.ts';
 import {nextDay,MODES} from './policy.ts';
@@ -22,9 +23,9 @@ function selection(db:DB,now:Date){
  const words=learningWords(db),day=shDay(now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.day<? AND d.done=0 AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(day) as any[]).map(r=>r.word_id));
  const due=words.filter(w=>unfinished.has(w.id)||!!w.introduced_at&&capabilityNeeds(db,w.id,now).some(n=>n.group!=='initial'&&n.dueAt<=now.toISOString())||!!w.introduced_at&&readWordEvidence(db,w.id,now).stage!=='new'&&capabilityNeeds(db,w.id,now).some(n=>n.dueAt<=now.toISOString()));
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(readWordEvidence(db,b.id,now).priority)-Number(readWordEvidence(db,a.id,now).priority)||(readWordEvidence(db,a.id,now).dueAt??'').localeCompare(readWordEvidence(db,b.id,now).dueAt??'')||a.id-b.id);
- const selected=due.slice(0,40),ids=new Set(selected.map(w=>w.id));
- selected.push(...composeFresh(words.filter(w=>!ids.has(w.id)&&!w.introduced_at),40-selected.length));
- return {selected,backlog:Math.max(0,due.length-40)};
+ const limit=dailyWordLimit(db,now),selected=due.slice(0,limit),ids=new Set(selected.map(w=>w.id));
+ selected.push(...composeFresh(words.filter(w=>!ids.has(w.id)&&!w.introduced_at),limit-selected.length));
+ return {selected,backlog:Math.max(0,due.length-limit)};
 }
 function needFor(db:DB,e:Entry,now:Date){
  let needs=capabilityNeeds(db,e.word_id,now);

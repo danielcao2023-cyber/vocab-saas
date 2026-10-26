@@ -1,9 +1,15 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import { speak, stopAudio } from '../web/src/audio.ts';
 import { mockAudio, MockAudio } from './audio-fixtures.ts';
+import {applyPreferences} from '../web/src/preferences';
+import {DEFAULT_PREFERENCES} from '../shared/preferences';
 
 beforeEach(mockAudio);
-afterEach(() => { stopAudio(); vi.useRealTimers(); vi.unstubAllGlobals(); });
+afterEach(() => { stopAudio(); applyPreferences(DEFAULT_PREFERENCES); vi.useRealTimers(); vi.unstubAllGlobals(); });
+
+it('uses the saved recording speed without delaying the user gesture',async()=>{
+ applyPreferences({...DEFAULT_PREFERENCES,playbackRate:0.75});const result=speak('above');const audio=MockAudio.instances[0];expect(audio.playbackRate).toBe(0.75);expect(audio.defaultPlaybackRate).toBe(0.75);expect(audio.play).toHaveBeenCalledOnce();audio.emit('ended');await expect(result).resolves.toEqual({status:'success'});
+});
 
 it('starts the same-origin recording synchronously and preserves the exact case', async () => {
   const result = speak('US / us');

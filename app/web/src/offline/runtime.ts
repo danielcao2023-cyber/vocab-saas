@@ -10,6 +10,7 @@ import {streak,makeup,parentSummary,curriculumProgress} from '../../../server/sr
 import {progress,wrongSummary,setWrong} from '../../../server/src/study';
 import {getContent,contentFeedback} from '../../../server/src/content';
 import {HttpError,parseId} from '../../../server/src/http-error';
+import {readUserSettings,saveUserSettings} from '../../../server/src/user-settings';
 import {learningStorage} from './storage';
 import {setMobileRecordings,type BundledRecording} from './mobile-mode';
 import type {LearningAnswer,WordBook} from '../../../shared/learning';
@@ -28,6 +29,8 @@ export function createLocalRuntime(options:Options){
   if(path==='/api/learning/exposure'&&method==='POST'){if(!v3)throw new HttpError(409,'尚未启用新版学习。');saveExposure(shared,body as ExposureInput,t);return {ok:true};}
   if(path==='/health')return {ok:true,offline:true,words:db.prepare('SELECT COUNT(*) n FROM words').get()?.n};
   if(path==='/version')return {commit:'android-1.0.2',offline:true};
+  if(path==='/api/settings'&&method==='GET')return readUserSettings(shared,t);
+  if(path==='/api/settings'&&method==='POST')return saveUserSettings(shared,body,t);
   if(path==='/api/learning/today'&&method==='GET')return learningToday(shared,t);
   if(path==='/api/learning/start'&&method==='POST')return startLearning(shared,t);
   if(path==='/api/learning/next'&&method==='GET')return nextLearning(shared,t);

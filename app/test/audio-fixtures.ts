@@ -4,8 +4,12 @@ import { vi } from 'vitest';
 export class MockAudio extends EventTarget {
   static instances: MockAudio[] = [];
   static start: (audio: MockAudio) => Promise<void> = async audio => { audio.emit('playing'); };
-  src = '';
+  private source = '';
+  get src(){return this.source;}
+  set src(value:string){this.source=value;this.playbackRate=this.defaultPlaybackRate;}
   preload = '';
+  defaultPlaybackRate = 1;
+  playbackRate = 1;
   pause = vi.fn();
   load = vi.fn();
   play = vi.fn(() => MockAudio.start(this));

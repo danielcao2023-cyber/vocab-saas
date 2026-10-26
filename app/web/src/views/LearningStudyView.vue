@@ -5,6 +5,7 @@ import {ForegroundClock} from '../foreground-clock';
 import {PendingSubmitter,newAnswerId} from '../pending';
 import type {LearningTurnV3,LearningResultV3,LearningSummaryV3} from '../../../shared/learning';
 import FocusStudyCard from '../components/FocusStudyCard.vue';
+import {preferences} from '../preferences';
 const props=withDefaults(defineProps<{active?:boolean}>(),{active:true});
 const emit=defineEmits<{cancel:[];open:[wordId:number];updated:[]}>();
 const turn=ref<LearningTurnV3|null>(null),answer=ref(''),feedback=ref<LearningResultV3|null>(null),busy=ref(false),unsaved=ref(false),error=ref(''),audioFailed=ref<PlaybackFailure|null>(null);
@@ -30,7 +31,7 @@ async function fetchTurn(){
  await storedRequest<LearningTurnV3>('/api/learning/next',undefined,async next=>{
   if(next.kind==='idle'){didStart=false;await startTurn();return;}
   turn.value=next;answer.value='';feedback.value=null;clock.reset(props.active&&document.visibilityState!=='hidden');emit('updated');
-  if(next.card?.mode==='dictation'&&props.active)void play();
+  if(next.card?.mode==='dictation'&&props.active&&preferences.dictationAutoPlay)void play();
  },'任务暂时未能载入，请重试保存。');
 }
 async function startTurn(){
