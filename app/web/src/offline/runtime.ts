@@ -3,7 +3,6 @@ import {activateEvidencePolicy,evidenceVersion} from '../../../server/src/learni
 import {learningViews} from '../../../server/src/learning/evidence-views';
 import {saveExposure} from '../../../server/src/learning/evidence-store';
 import type {LearningView,ExposureInput} from '../../../shared/learning';
-import {CapacitorHttp,Capacitor} from '@capacitor/core';
 import {openBrowserDatabase,asSharedDb,type BrowserDatabase} from './sqlite';
 import {learningToday,startLearning,nextLearning,answerLearning,consultLearning,deferLearning,learningBooks} from '../../../server/src/learning/engine';
 import {search,wordDetail,browse} from '../../../server/src/search';
@@ -11,14 +10,13 @@ import {streak,makeup,parentSummary,curriculumProgress} from '../../../server/sr
 import {progress,wrongSummary,setWrong} from '../../../server/src/study';
 import {getContent,contentFeedback} from '../../../server/src/content';
 import {HttpError,parseId} from '../../../server/src/http-error';
-import {createOfflineAi} from './ai';
-import {learningStorage,profileVault} from './storage';
+import {learningStorage} from './storage';
 import {setMobileRecordings,type BundledRecording} from './mobile-mode';
 import type {LearningAnswer,WordBook} from '../../../shared/learning';
 
 const jsonResponse=(value:unknown,options:ResponseInit={})=>new Response(JSON.stringify(value),{...options,headers:{'content-type':'application/json; charset=utf-8',...options.headers}});
 
-interface Options {db:BrowserDatabase;save:(bytes:Uint8Array)=>Promise<void>;assetFetch:typeof fetch;recordings:Record<string,BundledRecording>;now?:()=>Date;ai?:ReturnType<typeof createOfflineAi>}
+interface Options {db:BrowserDatabase;save:(bytes:Uint8Array)=>Promise<void>;assetFetch:typeof fetch;recordings:Record<string,BundledRecording>;now?:()=>Date}
 export function createLocalRuntime(options:Options){
  const {db,assetFetch,recordings}=options,shared=asSharedDb(db),now=options.now??(()=>new Date());
  let queue:Promise<unknown>=Promise.resolve();let pendingPersist:{key:string;result:unknown}|null=null;
@@ -64,11 +62,6 @@ export function createLocalRuntime(options:Options){
   throw new HttpError(404,'这个功能暂不可用。');
  };
  async function run(url:URL,method:string,body:unknown){
-  if(url.pathname.startsWith('/api/ai/')){
-   if(!options.ai)throw new HttpError(503,'请重新打开模型设置。');
-   if(method!=='POST'&&!(url.pathname==='/api/ai/settings'&&method==='GET'))throw new HttpError(405,'请求方式不支持。');
-   return options.ai.handle(url.pathname,body);
-  }
   const key=method+' '+url.pathname+url.search+' '+JSON.stringify(body);
   const task=queue.then(async()=>{if(pendingPersist&&pendingPersist.key!==key)throw new HttpError(503,'上一条记录尚未保存，请先重试原操作。');if(!pendingPersist){const result=await dispatch(url,method,body);if(method==='GET'&&url.pathname!=='/api/learning/next')return result;pendingPersist={key,result};}await options.save(db.export());const result=pendingPersist.result;pendingPersist=null;return result;});
   queue=task.catch(()=>{});return task;
@@ -94,13 +87,7 @@ export async function startOfflineRuntime(){
  const db=await openBrowserDatabase(data,{locateFile:()=>'/offline/sql-wasm.wasm'});
  if(db.pragma('quick_check',{simple:true})!=='ok')throw new Error('学习数据异常，请保留应用数据以便恢复。');
  await prepareEvidenceDatabase(db,saved,learningStorage,new Date());
- const ai=createOfflineAi({vault:profileVault,word:id=>db.prepare('SELECT headword,meaning_zh,phonetic FROM words WHERE id=?').get(id) as {headword:string;meaning_zh:string|null;phonetic:string|null}|undefined,
-  upstream:async options=>{
-   if(Capacitor.isNativePlatform())return CapacitorHttp.request({...options,method:'POST',connectTimeout:15000,readTimeout:60000,disableRedirects:true});
-   const response=await originalFetch(options.url,{method:'POST',headers:options.headers,body:JSON.stringify(options.data),signal:AbortSignal.timeout(60000),redirect:'error'});
-   return {status:response.status,data:await response.json()};
-  }});
- const runtime=createLocalRuntime({db,save:learningStorage.save,recordings,assetFetch:originalFetch,ai});
+ const runtime=createLocalRuntime({db,save:learningStorage.save,recordings,assetFetch:originalFetch});
  setMobileRecordings(recordings);
  globalThis.fetch=(input,init)=>{
   const url=new URL(input instanceof Request?input.url:String(input),location.href);

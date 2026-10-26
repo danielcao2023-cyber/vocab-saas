@@ -29,7 +29,9 @@ it('loads a lesson on demand without blocking the word or audio, then replaces o
     resolveLesson(response({status:'ready',lesson:lessonFor(12,'accept')}));await flush();
     expect(ui.text()).toContain('accept 的完整讲解');
     expect(ui.text()).not.toContain('原有释义');
-    expect(ui.all(node=>node.tag==='aside'&&node.props['aria-label']==='AI 学习助手')).toHaveLength(1);
+    expect(ui.all(node=>node.tag==='aside'&&node.props['aria-label']==='AI 学习助手')).toHaveLength(0);
+    expect(ui.all(node=>node.tag==='button'&&ui.text(node).includes('模型设置'))).toHaveLength(0);
+    expect((globalThis.fetch as ReturnType<typeof vi.fn>).mock.calls.some(([url])=>String(url).startsWith('/api/ai/'))).toBe(false);
     expect(globalThis.fetch).toHaveBeenCalledWith('/api/word/12/lesson',undefined);
   }finally{ui.app.unmount();}
 });

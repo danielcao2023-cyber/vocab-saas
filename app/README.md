@@ -40,17 +40,11 @@ DB_PATH=data/dev-vocab.db HOST=127.0.0.1 PORT=18421 npm start
 
 发音依据为固定版本 [CMUdict](https://github.com/cmusphinx/cmudict/tree/74790861f652b15e4ac49015a90074ad62a27690) 的音素/重音，并对 `government`、`remember`、`education`、`information`、`different`、`area`、`article`、`appear` 核对相应学习词典读音。`/ɚ/`、`/ər/` 及美式轻拍音等变体在具体词中说明，真实整词录音可能有自然弱化。原始Coder输出、试写评估和截图留在Studio库外产物目录，不进入应用或学习库。
 
-## 词条 AI 学习助手
+## AI 学习助手已移除（2026-10-26）
 
-单词页右侧（手机端可展开）支持多个模型配置：DeepSeek、通义千问、智谱 GLM、Kimi、豆包、MiniMax。在“模型设置”添加显示名称、服务商、模型 ID 和对应平台的 API Key，再选模型提问。预设 ID 可按账号权限修改；豆包也可填已开通的 `ep-` 接入点 ID。保存配置不调用模型。对话使用官方 OpenAI 兼容接口，当前为非流式回复，等待上限 60 秒。
+词条页不再提供 AI 对话、模型选择或 Key 设置，网页与安卓离线运行时均已移除相关调用；原 `/api/ai/*` 接口返回 404。讲解恢复为居中单栏，已审核词条、发音、拼写对照与学习记录继续使用原有数据。
 
-Key 保存到服务端 `AI_CONFIG_PATH`，默认 `~/.config/vocab-saas/ai-models.json`，文件权限 0600，原子写入。它是本机明文配置，需按密钥文件管理；不进学习数据库、浏览器存储或 HTTP 查询响应。编辑留空保留原 Key，更换服务商必须填新的 Key。多人访问同一应用实例会共用这些模型配置和调用额度，沿用本机/Tailscale 白名单访问边界。
-
-只在发送时将当前词条（单词、释义、音标）及有限对话发送到所选服务商；不发送学习记录。聊天仅在页面内存中保存，切词、切模型或刷新会清空。支持停止、失败重试和清空；模型输出为纯文本，内容请核对。每次请求最多 20 条消息、每条 4000 字、合计 24000 字；长回复只在下一次发送上下文时截短，页面展示保留完整回复。
-
-接口：`GET /api/ai/settings`、`POST /api/ai/settings`、`POST /api/ai/settings/:id/delete`、`POST /api/ai/chat`。写操作校验 Origin；服务商地址固定且不跟随重定向；两个并发、每分钟 20 次请求上限，错误不回传上游原文。测试通过注入模拟上游完成，不需要或复用任何真实 Key；真实云模型连通性需配置对应账号后验证。
-
-官方协议依据：[DeepSeek](https://api-docs.deepseek.com/)、[百炼](https://help.aliyun.com/zh/model-studio/compatibility-of-openai-with-dashscope)、[智谱](https://docs.bigmodel.cn/cn/api/introduction)、[Kimi](https://platform.kimi.com/blog/posts/kimi-api-quick-start-guide)、[豆包](https://console.volcengine.com/ark/region%3Acn-beijing/docs/text-generation)、[MiniMax](https://platform.minimax.cn/docs/api-reference/text-openai-api)。预设仅作便捷起点，模型可用性以服务商账号为准。
+本次不读取、迁移或删除旧版的独立模型配置文件/加密存储项；它们不再被应用使用。这里移除的是使用者实时提问功能，开发侧词条生成与审核工具仍保留。已分发的 APK 不会随源码更新，需重新打包安装才能去掉手机上的助手。
 
 ## 词表与中文释义
 

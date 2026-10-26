@@ -4,10 +4,6 @@ import {Directory,Filesystem} from '@capacitor/filesystem';
 interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>}
 const vault=registerPlugin<VaultPlugin>('MobileVault');
 const native=()=>Capacitor.isNativePlatform();
-export const profileVault={
- async get(){return native()?(await vault.get({key:'profiles-v1'})).value:await idbGet<string>('profiles-v1');},
- async set(value:string){if(native())await vault.set({key:'profiles-v1',value});else await idbSet('profiles-v1',value);},
-};
 function database():Promise<IDBDatabase>{return new Promise((resolve,reject)=>{
  const request=indexedDB.open('xiaobei-mobile-v1',1);
  request.onupgradeneeded=()=>request.result.createObjectStore('state');

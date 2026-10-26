@@ -10,7 +10,6 @@ import SpeakButton from '../components/SpeakButton.vue';
 import ExplainPanel from '../components/ExplainPanel.vue';
 import StatusChip from '../components/StatusChip.vue';
 import SenseLesson from '../components/SenseLesson.vue';
-import WordAiChat from '../components/WordAiChat.vue';
 
 const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boolean}>();
 defineEmits<{back:[]}>();
@@ -123,15 +122,14 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
           <ExplainPanel :key="wordId" :word-id="wordId" context="word" :content="detail.content" />
         </template>
       </article>
-      <WordAiChat :word-id="wordId" :headword="detail.word.headword" />
     </div>
     <p v-if="failed" class="note"><button type="button" class="btn" @click="load">{{ COPY.retry }}</button></p>
   </main>
 </template>
 
 <style scoped>
-.lesson-page { max-width: 1280px; padding-top: 16px; }
-.lesson-layout { display:grid; grid-template-columns:minmax(0,1fr) 340px; gap:24px; align-items:start; }
+.lesson-page { max-width: 1040px; padding-top: 16px; }
+.lesson-layout { display:block; }
 .lesson-layout .wd-main { padding: 28px 32px; min-width:0; }
 .lesson-layout .meta { flex-wrap: wrap; margin-bottom: 8px; }
 .lesson-layout .word { margin-bottom: 12px; font-size: 60px; overflow-wrap: anywhere; }
@@ -147,10 +145,6 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
 .lesson-record p { margin-bottom: 0; }
 .record-wrong { border-top: 1px solid var(--line); margin-top: 16px; padding-top: 10px; }
 .record-wrong .btn { margin-top: 12px; }
-@media (max-width: 1000px) {
-  .lesson-layout { grid-template-columns:minmax(0,1fr); }
-  .lesson-layout :deep(.word-ai-chat) { order:-1; }
-}
 @media (max-width: 640px) {
   .lesson-page { padding: 18px 12px 100px; }
   .lesson-layout .wd-main { padding: 24px 20px; }
