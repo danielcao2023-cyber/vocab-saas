@@ -1,11 +1,13 @@
-import {afterEach,expect,it} from 'vitest';
+import {afterEach,beforeEach,expect,it,vi} from 'vitest';
 import {makeV3Fixture} from './learning-v3-helpers';
 import {startLearning,nextLearning,consultLearning,answerLearning} from '../server/src/learning/engine';
 import {learningViews} from '../server/src/learning/evidence-views';
 import {wordDetail,search,browse} from '../server/src/search';
 import {buildApp} from '../server/src/app';
 import type {DB} from '../server/src/db';
-const t=new Date('2026-10-21T01:00:00Z'),dbs:DB[]=[];afterEach(()=>dbs.splice(0).forEach(d=>d.close()));
+const t=new Date('2026-10-21T01:00:00Z'),dbs:DB[]=[];
+beforeEach(()=>{vi.useFakeTimers({toFake:['Date']});vi.setSystemTime(t);});
+afterEach(()=>{dbs.splice(0).forEach(d=>d.close());vi.useRealTimers();});
 function fixture(){const db=makeV3Fixture(2,t);dbs.push(db);return db;}
 it('allows overlapping due/priority and projects the same evidence on word/search/browse',()=>{
  const db=fixture();startLearning(db,t);const c=nextLearning(db,t).card!;consultLearning(db,{policyVersion:3,issueId:c.issueId,eventId:'help'},t);
