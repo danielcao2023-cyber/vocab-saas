@@ -11,6 +11,8 @@ import {progress,wrongSummary,setWrong} from '../../../server/src/study';
 import {getContent,contentFeedback} from '../../../server/src/content';
 import {HttpError,parseId} from '../../../server/src/http-error';
 import {readUserSettings,saveUserSettings} from '../../../server/src/user-settings';
+import {readVocabularyState} from '../../../server/src/vocabulary-selection';
+import {migrateVocabulary,installVocabulary,type Catalog} from '../../../server/src/vocabulary-import';
 import {learningStorage} from './storage';
 import {setMobileRecordings,type BundledRecording} from './mobile-mode';
 import type {LearningAnswer,WordBook} from '../../../shared/learning';
@@ -20,6 +22,7 @@ const jsonResponse=(value:unknown,options:ResponseInit={})=>new Response(JSON.st
 interface Options {db:BrowserDatabase;save:(bytes:Uint8Array)=>Promise<void>;assetFetch:typeof fetch;recordings:Record<string,BundledRecording>;now?:()=>Date}
 export function createLocalRuntime(options:Options){
  const {db,assetFetch,recordings}=options,shared=asSharedDb(db),now=options.now??(()=>new Date());
+ migrateVocabulary(shared);
  let queue:Promise<unknown>=Promise.resolve();let pendingPersist:{key:string;result:unknown}|null=null;
  const dispatch=async(url:URL,method:string,body:any):Promise<unknown>=>{
   const path=url.pathname,q=Object.fromEntries(url.searchParams),t=now(),v3=evidenceVersion(shared)===3;
@@ -30,6 +33,7 @@ export function createLocalRuntime(options:Options){
   if(path==='/health')return {ok:true,offline:true,words:db.prepare('SELECT COUNT(*) n FROM words').get()?.n};
   if(path==='/version')return {commit:'android-1.0.2',offline:true};
   if(path==='/api/settings'&&method==='GET')return readUserSettings(shared,t);
+  if(path==='/api/vocabulary'&&method==='GET')return readVocabularyState(shared,t);
   if(path==='/api/settings'&&method==='POST')return saveUserSettings(shared,body,t);
   if(path==='/api/learning/today'&&method==='GET')return learningToday(shared,t);
   if(path==='/api/learning/start'&&method==='POST')return startLearning(shared,t);
@@ -90,6 +94,8 @@ export async function startOfflineRuntime(){
  const db=await openBrowserDatabase(data,{locateFile:()=>'/offline/sql-wasm.wasm'});
  if(db.pragma('quick_check',{simple:true})!=='ok')throw new Error('学习数据异常，请保留应用数据以便恢复。');
  await prepareEvidenceDatabase(db,saved,learningStorage,new Date());
+ const catalogResponse=await originalFetch('/offline/vocabulary.json');if(!catalogResponse.ok)throw Error('扩充词库未能载入，请保留学习数据后重试。');
+ await prepareVocabularyDatabase(db,await catalogResponse.json(),learningStorage,saved!==null);
  const runtime=createLocalRuntime({db,save:learningStorage.save,recordings,assetFetch:originalFetch});
  setMobileRecordings(recordings);
  globalThis.fetch=(input,init)=>{
@@ -104,4 +110,12 @@ export async function prepareEvidenceDatabase(db:BrowserDatabase,saved:Uint8Arra
  const shared=asSharedDb(db);if(evidenceVersion(shared)===3){if(saved===null)await storage.save(db.export());return;}
  if(saved!==null)await storage.createMigrationBackup(saved,3);
  migrateLearning(shared);activateEvidencePolicy(shared,now);await storage.save(db.export());
+}
+
+export async function prepareVocabularyDatabase(db:BrowserDatabase,catalog:Catalog,storage:{save:(bytes:Uint8Array)=>Promise<void>;createVocabularyBackup:(bytes:Uint8Array,version:number)=>Promise<void>},existing:boolean){
+ const shared=asSharedDb(db);migrateVocabulary(shared);
+ const version=(shared.prepare("SELECT value FROM vocabulary_meta WHERE key='catalog_version'").get() as {value:string}|undefined)?.value;
+ if(Number(version)>=catalog.version)return;
+ if(existing)await storage.createVocabularyBackup(db.export(),catalog.version);
+ installVocabulary(shared,catalog);await storage.save(db.export());
 }

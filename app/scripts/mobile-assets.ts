@@ -35,4 +35,5 @@ fs.copyFileSync(path.join(root,'node_modules/sql.js/dist/sql-wasm.wasm'),path.jo
 const licenses=[['sql.js','node_modules/sql.js/LICENSE'],['Capacitor','node_modules/@capacitor/core/LICENSE'],['ts-fsrs','node_modules/ts-fsrs/LICENSE']].map(([name,file])=>name+'\n'+fs.readFileSync(path.join(root,file),'utf8')).join('\n\n');
 fs.writeFileSync(path.join(assets,'THIRD-PARTY-NOTICES.txt'),licenses+'\nCMUdict pronunciation source: https://github.com/cmusphinx/cmudict\n');
 fs.writeFileSync(path.join(assets,'bundle.json'),JSON.stringify({version:1,seed,lessons,recordings:Object.keys(recordings).length,personalState:'empty',modelProfiles:0,dialogs:0},null,2));
+fs.copyFileSync(path.join(root,'data/vocabulary/catalog.json'),path.join(assets,'vocabulary.json'));
 console.log(JSON.stringify({seed,lessons,recordings:Object.keys(recordings).length,output}));

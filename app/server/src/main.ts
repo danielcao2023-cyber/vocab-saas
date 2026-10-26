@@ -7,6 +7,7 @@ import {protectTarget,readSnapshot,verifiedBackup} from './guard.ts';
 import {activateEvidencePolicy,evidenceVersion} from './learning/evidence-migration.ts';
 import { openDb } from './db.ts';
 import { buildApp } from './app.ts';
+import {installBundledVocabulary,bundledVocabularyDigest} from './vocabulary-file.ts';
 import { ConfigError, parseCidrs, parseHosts, parsePort, startListeners } from './net.ts';
 
 let hosts: string[], port: number, allow;
@@ -22,13 +23,20 @@ const file=process.env.DB_PATH ?? 'data/vocab.db';
 protectTarget(file);
 if(file!==':memory:'&&fs.existsSync(file)){
  const bytes=Buffer.from(readSnapshot(file));bytes[18]=1;bytes[19]=1;
- const snapshot=new Database(bytes);let version;try{version=evidenceVersion(snapshot);}finally{snapshot.close();}
- if(version!==3){
-  const dir=path.join(os.homedir(),'.codex','backups','xiaobei','pre-v3');fs.mkdirSync(dir,{recursive:true,mode:0o700});
+ const snapshot=new Database(bytes);let version,catalogChanged;
+ try{
+  version=evidenceVersion(snapshot);
+  const exists=snapshot.prepare("SELECT 1 FROM sqlite_master WHERE name='vocabulary_meta'").get();
+  const digest=exists?(snapshot.prepare("SELECT value FROM vocabulary_meta WHERE key='bundle_digest'").get() as {value:string}|undefined)?.value:undefined;
+  catalogChanged=digest!==bundledVocabularyDigest();
+ }finally{snapshot.close();}
+ if(version!==3||catalogChanged){
+  const dir=path.join(os.homedir(),'.codex','backups','xiaobei',version!==3?'pre-v3':'pre-vocabulary');fs.mkdirSync(dir,{recursive:true,mode:0o700});
   await verifiedBackup(file,path.join(dir,Date.now()+'-'+randomUUID()+'.db'));
  }
 }
 const db=openDb(file);
+installBundledVocabulary(db);
 activateEvidencePolicy(db,new Date());
 const app = buildApp(db, { staticDir: process.env.STATIC_DIR ?? 'dist', allow });
 await app.ready();

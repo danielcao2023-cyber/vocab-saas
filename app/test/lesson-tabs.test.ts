@@ -5,17 +5,12 @@ import {flush, host} from './p2-host';
 
 afterEach(() => vi.unstubAllGlobals());
 
-it('keeps supplemental pronunciation and sources exclusively in the fifth tab', async () => {
+it('removes mnemonic and supplemental tabs and their content from existing lessons', async () => {
   const ui=host('web/src/components/SenseLesson.vue',{lesson:structuredClone(manageLesson)});
   try {
-    expect(ui.text()).not.toContain('发音与词形变化');
-    expect(ui.text()).not.toContain('参考资料');
-    ui.all(n=>n.props.role==='tab'&&ui.text(n)==='再多了解一点')[0].props.onClick();await flush();
-    expect(ui.text()).toContain('发音与词形变化');
-    expect(ui.text()).toContain('参考资料');
-    expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);
-    ui.all(n=>n.props.role==='tab'&&ui.text(n)==='助记办法')[0].props.onClick();await flush();
-    expect(ui.text()).not.toContain('发音与词形变化');
+    expect(ui.all(n=>n.props.role==='tab').map(n=>ui.text(n))).toEqual(['义项与用法','近义与易混','词根与词族']);
+    expect(ui.text()).not.toContain('助记办法');expect(ui.text()).not.toContain('再多了解一点');
+    expect(ui.text()).not.toContain(manageLesson.memoryAid.story);expect(ui.text()).not.toContain('发音与词形变化');
   } finally {ui.app.unmount();}
 });
 
@@ -26,17 +21,17 @@ it('shows one lesson panel and changes it without scrolling or changing history'
   try {
     const tabs = () => ui.all(n => n.props.role === 'tab');
     const panels = () => ui.all(n => n.props.role === 'tabpanel');
-    expect(tabs()).toHaveLength(5);
+    expect(tabs()).toHaveLength(3);
     expect(tabs().filter(n => String(n.props['aria-selected']) === 'true').map(n => ui.text(n))).toEqual(['义项与用法']);
     expect(panels()).toHaveLength(1);
     const selected = tabs().find(n => String(n.props['aria-selected']) === 'true')!;
     expect(Number(selected.props.tabindex)).toBe(0);
     expect(selected.props['aria-controls']).toBe(panels()[0].props.id);
-    expect(ui.text(panels()[0])).not.toContain(manageLesson.memoryAid.story);
-    tabs().find(n => ui.text(n) === '助记办法')!.props.onClick();
+    expect(ui.text(panels()[0])).not.toContain(manageLesson.etymology.summary);
+    tabs().find(n => ui.text(n) === '词根与词族')!.props.onClick();
     await flush();
     expect(panels()).toHaveLength(1);
-    expect(ui.text(panels()[0])).toContain(manageLesson.memoryAid.story);
+    expect(ui.text(panels()[0])).toContain(manageLesson.etymology.summary);
     expect(panels()[0].props['aria-labelledby']).toBe(tabs().find(n => String(n.props['aria-selected']) === 'true')!.props.id);
     expect(pushState).not.toHaveBeenCalled();
   } finally { ui.app.unmount(); }
@@ -45,7 +40,7 @@ it('shows one lesson panel and changes it without scrolling or changing history'
 it('resets to usage when the lesson changes to another word', async () => {
   const ui = host('web/src/components/SenseLesson.vue', {lesson: structuredClone(manageLesson)});
   try {
-    ui.all(n => n.props.role === 'tab' && ui.text(n) === '助记办法')[0].props.onClick();
+    ui.all(n => n.props.role === 'tab' && ui.text(n) === '词根与词族')[0].props.onClick();
     await flush();
     ui.updateProps({lesson: {...structuredClone(manageLesson), id: 'lesson-next', wordId: 999, headword: 'next'}});
     await flush();
@@ -58,10 +53,10 @@ it('supports arrow and boundary keys within its own tablist', async () => {
   const ui = host('web/src/components/SenseLesson.vue', {lesson: structuredClone(manageLesson)});
   try {
     const tabs = ui.all(n => n.props.role === 'tab');
-    expect(tabs).toHaveLength(5);
+    expect(tabs).toHaveLength(3);
     const buttons = tabs.map(n => ({id: n.props.id, focus: vi.fn()}));
     const parentElement = {querySelectorAll: vi.fn(() => buttons)};
-    for (const [from, key, to] of [[0, 'ArrowRight', 1], [1, 'End', 4], [4, 'Home', 0], [0, 'ArrowLeft', 4]] as const) {
+    for (const [from, key, to] of [[0, 'ArrowRight', 1], [1, 'End', 2], [2, 'Home', 0], [0, 'ArrowLeft', 2]] as const) {
       const preventDefault = vi.fn();
       tabs[from].props.onKeydown({key, currentTarget: {...buttons[from], parentElement}, preventDefault});
       await flush();
@@ -74,14 +69,14 @@ it('supports arrow and boundary keys within its own tablist', async () => {
   } finally { ui.app.unmount(); }
 });
 
-it('defaults government to sound-spelling while keeping other words on the existing five tabs',async()=>{
+it('defaults government to sound-spelling while keeping other words on the remaining tabs',async()=>{
  const government={...structuredClone(manageLesson),id:'lesson-government',wordId:600,headword:'government'};
  const play=vi.fn(),ui=host('web/src/components/SenseLesson.vue',{lesson:government,onPlay:play});
- try{const tabs=()=>ui.all(n=>n.props.role==='tab');expect(tabs()).toHaveLength(6);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
+ try{const tabs=()=>ui.all(n=>n.props.role==='tab');expect(tabs()).toHaveLength(4);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['发音与拼写']);
   expect(ui.all(n=>n.props.role==='tabpanel')).toHaveLength(1);expect(ui.text()).toContain('gov');expect(ui.text()).toContain('ern');expect(ui.text()).toContain('ment');expect(ui.text()).toContain('/ɚ/');
   ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();expect(play).toHaveBeenCalledOnce();
   tabs().find(n=>ui.text(n)==='义项与用法')!.props.onClick();await flush();expect(ui.text()).not.toContain('听整词录音');
-  ui.updateProps({lesson:structuredClone(manageLesson)});await flush();expect(tabs()).toHaveLength(5);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['义项与用法']);
+  ui.updateProps({lesson:structuredClone(manageLesson)});await flush();expect(tabs()).toHaveLength(3);expect(tabs().filter(n=>String(n.props['aria-selected'])==='true').map(n=>ui.text(n))).toEqual(['义项与用法']);
  }finally{ui.app.unmount();}
 });
 
@@ -89,8 +84,8 @@ it('includes the new first tab in keyboard navigation and resets when government
  const ui=host('web/src/components/SenseLesson.vue',{lesson:structuredClone(manageLesson)});
  try{ui.updateProps({lesson:{...structuredClone(manageLesson),id:'government',wordId:600,headword:'government'}});await flush();
   const tabs=ui.all(n=>n.props.role==='tab'),buttons=tabs.map(n=>({id:n.props.id,focus:vi.fn()})),parentElement={querySelectorAll:()=>buttons};
-  tabs[0].props.onKeydown({key:'End',currentTarget:{...buttons[0],parentElement},preventDefault(){}});await flush();expect(tabs[5].props['aria-selected']).toBe('true');
-  tabs[5].props.onKeydown({key:'ArrowRight',currentTarget:{...buttons[5],parentElement},preventDefault(){}});await flush();expect(tabs[0].props['aria-selected']).toBe('true');
+  tabs[0].props.onKeydown({key:'End',currentTarget:{...buttons[0],parentElement},preventDefault(){}});await flush();expect(tabs[3].props['aria-selected']).toBe('true');
+  tabs[3].props.onKeydown({key:'ArrowRight',currentTarget:{...buttons[3],parentElement},preventDefault(){}});await flush();expect(tabs[0].props['aria-selected']).toBe('true');
  }finally{ui.app.unmount();}
 });
 

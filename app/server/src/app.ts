@@ -19,6 +19,7 @@ import { checkSpelling, practiceAllowed, nextCard, progress, review, setWrong, t
 import { pronunciationRoutes } from './pronunciation.ts';
 import { createLessonReader } from './lessons.ts';
 import {readUserSettings,saveUserSettings} from './user-settings.ts';
+import {readVocabularyState} from './vocabulary-selection.ts';
 
 export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: string; lessonDir?: string; now?: () => Date; allow?: BlockList; rng?: Rng } = {}) {
   const now = opts.now ?? (() => new Date());
@@ -45,6 +46,7 @@ export function buildApp(db: DB, opts: { staticDir?: string; pronunciationDir?: 
   });
   app.get('/version', async () => version);
   app.get('/api/settings',(_req,reply)=>{reply.header('cache-control','no-store');return readUserSettings(db,now());});
+  app.get('/api/vocabulary',(_req,reply)=>{reply.header('cache-control','no-store');return readVocabularyState(db,now());});
   app.post('/api/settings',(req,reply)=>{reply.header('cache-control','no-store');try{if(req.headers.origin&&req.headers.origin!==`${req.protocol}://${req.headers.host}`)throw new HttpError(403,'请从本应用页面修改设置。');return saveUserSettings(db,req.body,now());}catch(e){return sendError(reply,e);}});
   pronunciationRoutes(app, db, opts.pronunciationDir);
   learningRoutes(app, db, now);

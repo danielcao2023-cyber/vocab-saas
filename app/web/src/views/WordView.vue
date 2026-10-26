@@ -14,7 +14,7 @@ import SenseLesson from '../components/SenseLesson.vue';
 const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boolean}>();
 defineEmits<{back:[]}>();
 const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=ref(false),audioFailed=ref<PlaybackFailure|null>(null);
-const pronunciationNote=ref<string|null>(null);
+const pronunciationNote=ref<string|null>(null),systemSpeech=ref(false);
 const lastPlaybackWord=ref<string|null>(null);
 const pronunciationAccent=ref<'us'|'uk'|null>(null);
 const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
@@ -62,15 +62,16 @@ async function loadPronunciationNote(){
     }
   }catch{/* Optional recording metadata must never block the word or its audio button. */}
 }
-function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;lastPlaybackWord.value=null;}
+function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;lastPlaybackWord.value=null;systemSpeech.value=false;}
 async function play(word?:string|MouseEvent){
   if(!detail.value)return;
-  const n=++audioRequest;audioFailed.value=null;
+  const n=++audioRequest;audioFailed.value=null;systemSpeech.value=false;
   const target=typeof word==='string'?word:detail.value.word.headword;
   lastPlaybackWord.value=target;
   const result=await speak(target);
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   audioFailed.value=result.status==='unavailable'?result.reason:null;
+  systemSpeech.value=result.status==='success'&&result.source==='system';
 }
 onMounted(()=>{loadLesson();loadPronunciationNote();if(!props.initial)load();});
 watch(()=>detail.value?.word.headword,loadPronunciationNote);
@@ -85,17 +86,18 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
       <article class="card wd-main">
         <details v-if="detail.capabilityEvidence" class="evidence-detail"><summary>认义、拼写与听写的学习情况</summary><p v-for="e in detail.capabilityEvidence" :key="e.mode" class="small muted">{{ {recognize:'认义',spell:'汉译英',dictation:'听写'}[e.mode] }}：{{ e.delayedSuccesses?'已有延迟记住的记录':'仍需跨日验证' }}<span v-if="e.lastFailureAt"> · {{ e.delayedSuccesses<2?'需要继续巩固':'已复查' }}</span><span v-if="e.verificationDue"> · {{ date(e.verificationDue) }}起复查</span></p></details>
         <div class="meta">
-          <span class="tag" :class="{core:detail.word.level==='三级'}">{{ detail.word.level==='三级'?COPY.core:COPY.level2 }}</span>
+          <span v-if="detail.word.source==='kb2022'" class="tag" :class="{core:detail.word.level==='三级'}">{{ detail.word.level==='三级'?COPY.core:COPY.level2 }}</span>
           <StatusChip :status="detail.status" />
           <span v-if="!automaticBooks&&detail.wrong?.inBook" class="wb">{{ COPY.wrongBook }}</span>
         </div>
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
-          <p v-if="pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ pronunciationNote }}</p>
-          <p class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
+          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音':pronunciationNote }}</p>
+          <p v-if="!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play(lastPlaybackWord??undefined)">{{ COPY.audioRetry }}</button></p>
+        <details v-if="detail.memberships?.length" class="lesson-record"><summary>词书与单元</summary><p v-for="m in detail.memberships" :key="m.bookId+String(m.unitId)" class="small muted">{{ m.bookTitle }}<span v-if="m.unitTitle"> · {{ m.unitTitle }}</span></p></details>
         <details :key="wordId" class="lesson-record">
           <summary>学习记录 <span>认词 · 拼写 · 听写</span></summary>
           <div class="cards3">
@@ -119,7 +121,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <template v-else>
           <p v-if="lessonFailed" class="note" role="status">完整讲解暂时未能载入。<button type="button" class="link" @click="loadLesson">重试讲解</button></p>
           <MeaningList :key="wordId" :meaning="card.meaning_zh" :source="card.meaning_source" :flag="card.meaning_flag" />
-          <ExplainPanel :key="wordId" :word-id="wordId" context="word" :content="detail.content" />
+          <ExplainPanel v-if="detail.word.source!=='vocabulary'||detail.content.blocks.length" :key="wordId" :word-id="wordId" context="word" :content="detail.content" />
         </template>
       </article>
     </div>

@@ -82,6 +82,14 @@ public class MobileVaultPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void createVocabularyBackup(PluginCall call) {
+        Integer version=call.getInt("version");String data=call.getString("data");
+        if(version==null||version<1||version>999||data==null){call.reject("Invalid vocabulary backup","INVALID_BACKUP");return;}
+        try{store.createVocabularyBackup(version,Base64.decode(data,Base64.NO_WRAP));call.resolve();}
+        catch(Exception ignored){call.reject("Unable to verify vocabulary backup; preserve application data","BACKUP_FAILED");}
+    }
+
+    @PluginMethod
     public void remove(PluginCall call) {
         String key = validKey(call);
         if (key == null) return;

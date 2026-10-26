@@ -1,12 +1,15 @@
 <script setup lang="ts">
-import {nextTick,onMounted,onUnmounted,reactive,ref} from 'vue';
+import {computed,nextTick,onMounted,onUnmounted,reactive,ref} from 'vue';
 import {api,ClientError} from '../api';
+import VocabularyPicker from './VocabularyPicker.vue';
+import {DEFAULT_VOCABULARY} from '../../../shared/vocabulary';
 import {applyPreferences} from '../preferences';
 import {DEFAULT_PREFERENCES,PLAYBACK_RATES,type PreferencesResponse,type StudyPreferences} from '../../../shared/preferences';
 const emit=defineEmits<{close:[];saved:[]}>();
 const draft=reactive<StudyPreferences>({...DEFAULT_PREFERENCES}),info=ref<PreferencesResponse|null>(null),version=ref(''),busy=ref(false),error=ref(''),saved=ref(false),panel=ref<HTMLElement|null>(null);
 let alive=true,pending:StudyPreferences|null=null,previousFocus:HTMLElement|null=null;
 const awaitingSave=ref(false);
+const activeScopeLabel=computed(()=>{const v=info.value?.vocabulary,b=v?.books.find(b=>b.id===v.activeSelection.bookId);return b?b.title+(v?.activeSelection.unitId?' · '+b.units.find(u=>u.id===v.activeSelection.unitId)?.title:''):'';});
 async function load(){if(busy.value||awaitingSave.value)return;busy.value=true;error.value='';try{const data=await api<PreferencesResponse>('/api/settings');if(!alive)return;info.value=data;Object.assign(draft,data.preferences);applyPreferences(data.preferences);try{const v=await api<{commit:string}>('/version');if(alive)version.value=v.commit;}catch{version.value='暂时无法读取';}}catch{if(alive)error.value='设置未能载入，请重试。';}finally{if(alive)busy.value=false;}}
 async function save(){if(busy.value||!info.value)return;const body=pending??{...draft};busy.value=true;error.value='';saved.value=false;
  try{const data=await api<PreferencesResponse>('/api/settings',body);if(!alive)return;pending=null;awaitingSave.value=false;info.value=data;Object.assign(draft,data.preferences);applyPreferences(data.preferences);saved.value=true;emit('saved');}
@@ -28,6 +31,8 @@ onUnmounted(()=>{alive=false;document.removeEventListener?.('keydown',key);windo
 <template><div class="settings-backdrop" @click.self="close"><section ref="panel" class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title" tabindex="-1">
  <header class="settings-heading"><div><p class="eyebrow">按你的节奏学习</p><h1 id="settings-title">设置</h1></div><button class="btn" type="button" :disabled="busy||awaitingSave" aria-label="关闭设置" @click="close">关闭</button></header>
  <form v-if="info" @submit.prevent="save"><fieldset :disabled="busy||awaitingSave"><legend>学习与发音</legend>
+  <VocabularyPicker v-if="info.vocabulary" :model-value="draft.vocabulary??DEFAULT_VOCABULARY" :books="info.vocabulary.books" :disabled="busy||awaitingSave" @update:model-value="draft.vocabulary=$event" />
+  <p v-if="info.vocabulary" class="settings-hint">一次学习一本词书，同词学习记录共享。今天已开始任务时，切换词书或单元从明天起生效。<span v-if="info.vocabulary.effectiveOn">已安排 {{ info.vocabulary.effectiveOn }} 起切换。今天仍使用 {{ activeScopeLabel }}。</span></p>
   <label class="settings-row" for="daily-word-limit"><span>每日词量<small>复习和新词合计，同一词补测不重复计数</small></span><div class="settings-number"><input id="daily-word-limit" v-model.number="draft.dailyWordLimit" type="number" min="5" max="100" step="1" required><span>词</span></div></label>
   <p class="settings-hint">词量修改从明天起生效，今天的任务保持不变。<span v-if="info.dailyLimitEffectiveOn">已安排 {{ info.dailyLimitEffectiveOn }} 起每天 {{ info.preferences.dailyWordLimit }} 词。</span></p>
   <label class="settings-row" for="playback-rate"><span>录音速度<small>用于词条发音和听写</small></span><select id="playback-rate" v-model.number="draft.playbackRate"><option v-for="rate in PLAYBACK_RATES" :key="rate" :value="rate">{{ rate }}×{{ rate===1?'（正常）':'' }}</option></select></label>

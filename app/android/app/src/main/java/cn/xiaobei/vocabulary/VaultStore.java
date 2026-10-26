@@ -138,7 +138,7 @@ final class VaultStore {
     void set(String key, String value) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key) || "learning-pre-v3".equals(key)) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
+            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-"))) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
             try { putEncrypted(key, value); } catch (Exception error) { throw poison(error); }
         }
     }
@@ -146,7 +146,7 @@ final class VaultStore {
     void remove(String key) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key) || "learning-pre-v3".equals(key)) throw new IllegalArgumentException("The learning index cannot be removed");
+            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-"))) throw new IllegalArgumentException("The learning index cannot be removed");
             try {
                 if (!committer.commit(preferences.edit().remove(key))) throw new IOException("Vault removal failed");
             } catch (Exception error) { throw poison(error); }
@@ -181,16 +181,23 @@ final class VaultStore {
     }
     /** Fixed, app-private recovery point. A file lock and atomic rename publish it once. */
     void createMigrationBackup(int version, byte[] bytes) throws Exception {
+        if(version!=3)throw new IllegalArgumentException("Unsupported backup version");
+        createBackup("learning-pre-v3",bytes);
+    }
+    void createVocabularyBackup(int version, byte[] bytes) throws Exception {
+        if(version<1||version>999)throw new IllegalArgumentException("Unsupported vocabulary version");
+        createBackup("learning-pre-vocabulary-"+version,bytes);
+    }
+    private void createBackup(String name, byte[] bytes) throws Exception {
         synchronized(PROCESS_LOCK){
             requireHealthy();
-            if(version!=3)throw new IllegalArgumentException("Unsupported backup version");
             byte[] header="SQLite format 3\000".getBytes(StandardCharsets.US_ASCII);
             if(bytes==null||bytes.length<header.length)throw new IllegalArgumentException("Invalid SQLite image");
             for(int i=0;i<header.length;i++)if(bytes[i]!=header[i])throw new IllegalArgumentException("Invalid SQLite image");
-            File target=new File(snapshotDirectory,"learning-pre-v3.db");
+            File target=new File(snapshotDirectory,name+".db");
             byte[] expected=MessageDigest.getInstance("SHA-256").digest(bytes);
-            File temporary=new File(snapshotDirectory,"learning-pre-v3.tmp");
-            try(RandomAccessFile lockFile=new RandomAccessFile(new File(snapshotDirectory,"learning-pre-v3.lock"),"rw");
+            File temporary=new File(snapshotDirectory,name+".tmp");
+            try(RandomAccessFile lockFile=new RandomAccessFile(new File(snapshotDirectory,name+".lock"),"rw");
                 FileLock held=lockFile.getChannel().lock()){
                 if(!held.isValid())throw new IOException("Backup lock unavailable");
             if(target.exists()){

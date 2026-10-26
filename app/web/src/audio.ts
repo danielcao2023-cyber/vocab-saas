@@ -1,10 +1,12 @@
 import { mainHeadwords } from '../../server/src/text';
 import {isMobileBuild,bundledAudio} from './offline/mobile-mode';
 import {preferences} from './preferences';
+import {Capacitor,registerPlugin} from '@capacitor/core';
+const DeviceSpeech=registerPlugin<{speak:(args:{text:string;rate:number})=>Promise<{status:'success'|'cancelled'|'unavailable'}>;stop:()=>Promise<void>}>('DeviceSpeech');
 
 export type PlaybackFailure = 'blocked' | 'failed';
 export type PlaybackResult =
-  | { status: 'success' | 'cancelled' }
+  | { status: 'success' | 'cancelled'; source?: 'system' }
   | { status: 'unavailable'; reason: PlaybackFailure };
 
 // One recording at a time across study and word-detail views.
@@ -33,13 +35,15 @@ export function speak(headword: string): Promise<PlaybackResult> {
     try { audio = new Audio(); }
     catch { resolve({ status: 'unavailable', reason: 'failed' }); return; }
 
-    let settled = false, started = false;
+    let settled = false, started = false, synthesizing = false;
+    let cancelSpeech: (()=>void)|null=null;
     const playback = { cancel: () => finish({ status: 'cancelled' }) };
     const timeout = setTimeout(() => finish({ status: 'unavailable', reason: 'failed' }), PLAYBACK_TIMEOUT_MS);
     function finish(result: PlaybackResult): void {
       if (settled) return;
       settled = true;
       clearTimeout(timeout);
+      cancelSpeech?.();
       audio.removeEventListener('playing', onPlaying);
       audio.removeEventListener('ended', onEnded);
       audio.removeEventListener('error', onError);
@@ -50,11 +54,37 @@ export function speak(headword: string): Promise<PlaybackResult> {
     }
     function onPlaying(): void { started = true; }
     function onEnded(): void {
+      if(synthesizing)return;
       finish(started ? { status: 'success' } : { status: 'unavailable', reason: 'failed' });
     }
-    function onError(): void { finish({ status: 'unavailable', reason: 'failed' }); }
+    function onError(): void {
+      if(settled||synthesizing)return;
+      synthesizing=true;
+      if(Capacitor.isNativePlatform()){
+        cancelSpeech=()=>{void DeviceSpeech.stop().catch(()=>{});};
+        void DeviceSpeech.speak({text:word,rate:preferences.playbackRate}).then(result=>{
+          if(result.status==='success')finish({status:'success',source:'system'});
+          else finish(result.status==='cancelled'?{status:'cancelled'}:{status:'unavailable',reason:'failed'});
+        },()=>finish({status:'unavailable',reason:'failed'}));
+        return;
+      }
+      if(typeof speechSynthesis==='undefined'||typeof SpeechSynthesisUtterance==='undefined'){
+        finish({status:'unavailable',reason:'failed'});return;
+      }
+      const utterance=new SpeechSynthesisUtterance(word);
+      const voice=speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang)&&v.localService)
+        ??speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang));
+      utterance.lang=voice?.lang??'en-US';if(voice)utterance.voice=voice;
+      utterance.rate=preferences.playbackRate;
+      utterance.onend=()=>finish({status:'success',source:'system'});
+      utterance.onerror=()=>finish({status:'unavailable',reason:'failed'});
+      cancelSpeech=()=>{utterance.onend=null;utterance.onerror=null;speechSynthesis.cancel();};
+      try{speechSynthesis.speak(utterance);}catch{finish({status:'unavailable',reason:'failed'});}
+    }
     function onRejected(error: unknown): void {
+      if(settled||synthesizing)return;
       const blocked = typeof error === 'object' && error !== null && 'name' in error && error.name === 'NotAllowedError';
+      if(!blocked&&typeof error==='object'&&error!==null&&'name' in error&&error.name==='NotSupportedError'){onError();return;}
       finish({ status: 'unavailable', reason: blocked ? 'blocked' : 'failed' });
     }
 
@@ -64,7 +94,7 @@ export function speak(headword: string): Promise<PlaybackResult> {
     audio.addEventListener('error', onError);
     try {
       audio.preload = 'auto';
-      if(isMobileBuild()&&!bundledAudio(word)){finish({status:'unavailable',reason:'failed'});return;}
+      if(isMobileBuild()&&!bundledAudio(word)){onError();return;}
       audio.src = isMobileBuild()?bundledAudio(word)!:`/api/pronunciation/audio?word=${encodeURIComponent(word)}`;
       audio.defaultPlaybackRate = preferences.playbackRate;
       audio.playbackRate = preferences.playbackRate;

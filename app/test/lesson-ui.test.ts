@@ -105,7 +105,7 @@ it('does not render a lesson bound to a different headword',async()=>{
   finally{ui.app.unmount();}
 });
 
-it('shows why relations or roots do not apply, and separates checked sources from further reading',async()=>{
+it('shows why relations or roots do not apply without the removed supplemental section',async()=>{
   const lesson=lessonFor(12,'accept');
   lesson.senses[0].relatedExpressions={similar:[],contrasting:[],similarNote:'这个用法没有能直接替换的近义词。',contrastingNote:'这里没有自然的一对一反义词。'};
   lesson.etymology.stages=[];lesson.etymology.summary='作为一个整体记忆，不作词根拆分。';
@@ -118,8 +118,7 @@ it('shows why relations or roots do not apply, and separates checked sources fro
     ui.all(node=>node.props.role==='tab'&&ui.text(node)==='词根与词族')[0].props.onClick();await flush();
     expect(ui.text()).toContain('作为一个整体记忆，不作词根拆分。');
     expect(ui.text()).toContain('此阶段无需扩展同族词。');
-    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='再多了解一点')[0].props.onClick();await flush();
-    expect(ui.text()).toContain('已核对来源');expect(ui.text()).toContain('延伸阅读');
+    expect(ui.text()).not.toContain('再多了解一点');expect(ui.text()).not.toContain('延伸阅读');
   }finally{ui.app.unmount();}
 });
 
@@ -149,8 +148,8 @@ it('changes lesson panels without scrolling or adding history entries',async()=>
   const lookup=vi.fn(()=>target);Object.assign(document,{getElementById:lookup});
   const pushState=vi.fn();vi.stubGlobal('history',{pushState});
   try{
-    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='助记办法')[0].props.onClick();await flush();
-    expect(ui.text(ui.all(node=>node.props.role==='tabpanel')[0])).toContain(lesson.memoryAid.story);
+    ui.all(node=>node.props.role==='tab'&&ui.text(node)==='词根与词族')[0].props.onClick();await flush();
+    expect(ui.text(ui.all(node=>node.props.role==='tabpanel')[0])).toContain(lesson.etymology.summary);
     expect(lookup).not.toHaveBeenCalled();
     expect(target.scrollIntoView).not.toHaveBeenCalled();
     expect(pushState).not.toHaveBeenCalled();

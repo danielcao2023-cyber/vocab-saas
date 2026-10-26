@@ -13,7 +13,7 @@ export const COPY = {
   spellPrompt: '看意思，拼出单词',
   listenHint: '戴上耳机 · 按 R 重听（不限次数）',
   audioHelp: '点发音按钮，可以再听一次。',
-  audioUnavailable: '这个词的真人录音暂时无法播放，点按钮重试。',
+  audioUnavailable: '这个词的发音暂时无法播放。请重试，或确认设备已安装英文语音。',
   audioBlocked: '浏览器还没有允许播放，点按钮听发音。',
   audioRetry: '听发音',
   audioCredits: '录音来源',

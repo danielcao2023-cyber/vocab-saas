@@ -2,13 +2,14 @@ import type {DB} from './db.ts';
 import {HttpError} from './http-error.ts';
 import {shDay} from './time.ts';
 import {learningWords} from './learning/selection.ts';
+import {readVocabularyState,saveVocabularySelection} from './vocabulary-selection.ts';
 import {DEFAULT_PREFERENCES,PLAYBACK_RATES,type StudyPreferences,type PreferencesResponse} from '../../shared/preferences.ts';
 const KEY='study_preferences';
 interface Stored {preferences:StudyPreferences;previousDailyWordLimit:number;effectiveOn:string|null}
 function validate(value:unknown):StudyPreferences {
  if(!value||typeof value!=='object'||Array.isArray(value))throw new HttpError(400,'设置格式无效。');
  const v=value as Record<string,unknown>;
- if(Object.keys(v).length!==3||Object.keys(v).some(k=>!['dailyWordLimit','playbackRate','dictationAutoPlay'].includes(k))
+ if(Object.keys(v).length<3||Object.keys(v).length>4||Object.keys(v).some(k=>!['dailyWordLimit','playbackRate','dictationAutoPlay','vocabulary'].includes(k))
   ||typeof v.dailyWordLimit!=='number'||!Number.isInteger(v.dailyWordLimit)||v.dailyWordLimit<5||v.dailyWordLimit>100
   ||typeof v.playbackRate!=='number'||!PLAYBACK_RATES.some(rate=>rate===v.playbackRate)||typeof v.dictationAutoPlay!=='boolean')throw new HttpError(400,'每日词量须为5—100的整数，请选择可用的录音速度和自动播放设置。');
  return {dailyWordLimit:v.dailyWordLimit,playbackRate:v.playbackRate,dictationAutoPlay:v.dictationAutoPlay};
@@ -21,10 +22,12 @@ function stored(db:DB):Stored {
 function active(v:Stored,now:Date){return v.effectiveOn&&shDay(now)<v.effectiveOn?v.previousDailyWordLimit:v.preferences.dailyWordLimit;}
 export function dailyWordLimit(db:DB,now:Date){return active(stored(db),now);}
 export function readUserSettings(db:DB,now:Date):PreferencesResponse {
- const v=stored(db);return {preferences:v.preferences,activeDailyWordLimit:active(v,now),dailyLimitEffectiveOn:v.effectiveOn&&shDay(now)<v.effectiveOn?v.effectiveOn:null,wordCount:learningWords(db).length};
+ const v=stored(db),vocabulary=readVocabularyState(db,now),hasCatalog=vocabulary.books.some(b=>b.id!=='kb2022');
+ return {preferences:{...v.preferences,...(hasCatalog?{vocabulary:vocabulary.selection}:{})},activeDailyWordLimit:active(v,now),dailyLimitEffectiveOn:v.effectiveOn&&shDay(now)<v.effectiveOn?v.effectiveOn:null,wordCount:learningWords(db,now).length,...(hasCatalog?{vocabulary}:{})};
 }
 export function saveUserSettings(db:DB,input:unknown,now:Date):PreferencesResponse {return db.transaction(()=>{
  const preferences=validate(input),old=stored(db),current=active(old,now),changed=preferences.dailyWordLimit!==old.preferences.dailyWordLimit;
+ if(Object.hasOwn(input as object,'vocabulary'))saveVocabularySelection(db,(input as Record<string,unknown>).vocabulary,now);
  const next:Stored={preferences,previousDailyWordLimit:changed?current:old.previousDailyWordLimit,effectiveOn:changed?(preferences.dailyWordLimit===current?null:shDay(new Date(+now+86400000))):old.effectiveOn};
  db.prepare('INSERT INTO settings(key,value) VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value').run(KEY,JSON.stringify(next));return readUserSettings(db,now);
 })();}

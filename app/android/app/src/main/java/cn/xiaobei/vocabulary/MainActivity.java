@@ -12,6 +12,7 @@ public class MainActivity extends BridgeActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         registerPlugin(MobileVaultPlugin.class);
+        registerPlugin(DeviceSpeechPlugin.class);
         super.onCreate(savedInstanceState);
 
         // API 35 draws edge-to-edge. Give the WebView actual system/cutout insets,

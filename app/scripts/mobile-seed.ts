@@ -3,12 +3,13 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import Database from 'better-sqlite3';
 import { openDb } from '../server/src/db.ts';
+import {installBundledVocabulary} from '../server/src/vocabulary-file.ts';
 import { readSnapshot, resolved, protectTarget } from '../server/src/guard.ts';
 
 const WORD_COLUMNS = ['id', 'headword', 'phonetic', 'pos', 'meaning_zh', 'meaning_raw', 'meaning_flag', 'meaning_source', 'ecdict_key', 'priority', 'source', 'level', 'unit', 'freq_rank', 'is_sample'] as const;
 const FORM_COLUMNS = ['word_id', 'form', 'kind'] as const;
 const FREQ_COLUMNS = ['word_id', 'grp', 'rank', 'score', 'basis', 'source', 'is_inferred', 'created_at'] as const;
-const PUBLIC_TABLES = new Set(['words', 'word_forms', 'word_freq']);
+const PUBLIC_TABLES = new Set(['words', 'word_forms', 'word_freq','vocabulary_books','vocabulary_units','vocabulary_members','vocabulary_entry_map','vocabulary_meta']);
 const DEFAULT_SETTINGS = new Map([
   ['new_per_day', '10'], ['review_limit', '200'], ['level2_every', '5'], ['choice_enabled', '1'], ['choice_weights', '1,1,1'],
   ['makeup_per_month', '2'], ['makeup_window_days', '7'], ['makeup_requires_today', '1'], ['duration_cap_ms', '300000'],
@@ -39,6 +40,7 @@ export function createMobileSeed(sourcePath: string, outputPath: string) {
       target.exec('DELETE FROM settings');
       const putSetting = target.prepare('INSERT INTO settings(key,value) VALUES (?,?)');
       for (const [key, val] of DEFAULT_SETTINGS) putSetting.run(key, val);
+      installBundledVocabulary(target);
     })();
     for (const { name } of target.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").all() as { name: string }[]) {
       if (PUBLIC_TABLES.has(name) || name === 'settings') continue;
@@ -50,7 +52,7 @@ export function createMobileSeed(sourcePath: string, outputPath: string) {
     const bytes = target.serialize(); bytes[18] = 1; bytes[19] = 1;
     fs.mkdirSync(path.dirname(outputFile), { recursive: true });
     fs.writeFileSync(outputFile, bytes, { flag: 'wx', mode: 0o600 });
-    return { words: words.length, bytes: bytes.length, outputPath: outputFile };
+    return { words:(target.prepare('SELECT COUNT(*) n FROM words').get() as {n:number}).n,coreWords:words.length,bytes: bytes.length, outputPath: outputFile };
   } finally { source.close(); target.close(); }
 }
 

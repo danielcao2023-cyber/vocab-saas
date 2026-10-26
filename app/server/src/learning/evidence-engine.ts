@@ -20,7 +20,7 @@ const hasSuccess=(db:DB,wordId:number,day:string)=>!!db.prepare("SELECT 1 FROM l
 export {capabilityNeeds} from './evidence-store.ts';
 
 function selection(db:DB,now:Date){
- const words=learningWords(db),day=shDay(now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.day<? AND d.done=0 AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(day) as any[]).map(r=>r.word_id));
+ const words=learningWords(db,now),day=shDay(now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.day<? AND d.done=0 AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(day) as any[]).map(r=>r.word_id));
  const due=words.filter(w=>unfinished.has(w.id)||!!w.introduced_at&&capabilityNeeds(db,w.id,now).some(n=>n.group!=='initial'&&n.dueAt<=now.toISOString())||!!w.introduced_at&&readWordEvidence(db,w.id,now).stage!=='new'&&capabilityNeeds(db,w.id,now).some(n=>n.dueAt<=now.toISOString()));
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(readWordEvidence(db,b.id,now).priority)-Number(readWordEvidence(db,a.id,now).priority)||(readWordEvidence(db,a.id,now).dueAt??'').localeCompare(readWordEvidence(db,b.id,now).dueAt??'')||a.id-b.id);
  const limit=dailyWordLimit(db,now),selected=due.slice(0,limit),ids=new Set(selected.map(w=>w.id));
@@ -41,7 +41,7 @@ export function todayV3(db:DB,now:Date):LearningSummaryV3 {
  const tally=db.prepare('SELECT COUNT(*) answers,COALESCE(SUM(json_extract(result_json,\'$.correct\')),0) correct FROM learning_issues WHERE day=? AND answer_id IS NOT NULL').get(day) as {answers:number;correct:number};
  const attempts=(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE source='live' AND eligible=1 AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(day) as any).n;
  const deferred=items.filter(e=>e.deferred).length,resolved=items.filter(e=>e.done||e.deferred).length;
- const index=stateIndex,books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db)){const s=index.get(w.id)??untouchedEvidence();books[s.stage==='new'?'new':s.stable?'mastered':s.priority||s.stage==='consolidating'?'unfamiliar':'familiar']++;}
+ const index=stateIndex,books={new:0,unfamiliar:0,familiar:0,mastered:0};for(const w of learningWords(db,now)){const s=index.get(w.id)??untouchedEvidence();books[s.stage==='new'?'new':s.stable?'mastered':s.priority||s.stage==='consolidating'?'unfamiliar':'familiar']++;}
  return {policyVersion:3,day,started,total,touched:touched.length,resolved,completed:resolved,deferred,newWords,reviewWords:total-newWords,remaining:total-resolved,backlog:preview.backlog,...tally,attempts,ready,pendingLater:active.length-ready,needsConsolidation:touched.filter(e=>readWordEvidence(db,e.word_id,now).priority||!hasSuccess(db,e.word_id,day)).length,books};
 }
 export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now);if(db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day))return;
@@ -69,7 +69,7 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
  const {e,ready:need}=candidate,mode=need!.mode,id=randomUUID(),options:{id:number;text:string}[]=[];
  if(mode==='recognize'){
   const w=db.prepare('SELECT meaning_zh FROM words WHERE id=?').get(e.word_id) as any;options.push({id:e.word_id,text:(w.meaning_zh??'').split('\n')[0]});
-  for(const other of learningWords(db)){if(options.length>=4)break;const text=(other.meaning_zh??'').split('\n')[0];if(other.id!==e.word_id&&text&&!options.some(o=>meaningsOverlap(text,o.text)))options.push({id:other.id,text});}
+  for(const other of learningWords(db,now)){if(options.length>=4)break;const text=(other.meaning_zh??'').split('\n')[0];if(other.id!==e.word_id&&text&&!options.some(o=>meaningsOverlap(text,o.text)))options.push({id:other.id,text});}
   options.sort(()=>Math.random()-.5);options.push({id:0,text:'不记得'});
  }
  db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at) VALUES (?,?,?,?,?,?)').run(id,day,e.word_id,mode,JSON.stringify(options),now.toISOString());

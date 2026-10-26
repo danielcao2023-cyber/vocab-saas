@@ -23,8 +23,6 @@ const TABS = [
   {id: 'usage', label: '义项与用法'},
   {id: 'confusions', label: '近义与易混'},
   {id: 'etymology', label: '词根与词族'},
-  {id: 'memory', label: '助记办法'},
-  {id: 'extra', label: '再多了解一点'},
 ] as const;
 
 const soundChoices=computed(()=>getSoundSpellingLessons(props.lesson.headword));
@@ -226,56 +224,6 @@ watch(() => props.lesson.wordId, () => {
       </details>
     </section>
 
-    <section
-      v-if="activeTabId === 'memory'"
-      :id="`${tabIdPrefix}-memory-panel`"
-      role="tabpanel"
-      tabindex="0"
-      :aria-labelledby="`${tabIdPrefix}-memory`"
-      class="lesson-section"
-    >
-      <p class="section-kicker">把意思连成画面</p><h2>助记办法</h2>
-      <div class="memory-panel">
-        <h3>{{ lesson.memoryAid.title }}</h3><p class="memory-story">{{ lesson.memoryAid.story }}</p>
-        <ul class="memory-cues"><li v-for="cue in lesson.memoryAid.cues" :key="cue.label"><b>{{ cue.label }}</b><span>{{ cue.text }}</span></li></ul>
-        <p class="caveat">{{ lesson.memoryAid.caveat }}</p>
-      </div>
-      <div class="study-plan"><h3>学完，试着说一说</h3><ol><li v-for="step in lesson.studyPlan" :key="step">{{ step }}</li></ol></div>
-    </section>
-
-    <section
-      v-if="activeTabId === 'extra'"
-      :id="`${tabIdPrefix}-extra-panel`"
-      role="tabpanel"
-      tabindex="0"
-      :aria-labelledby="`${tabIdPrefix}-extra`"
-      class="lesson-section extensions"
-      aria-label="补充讲解"
-    >
-      <h2>再多了解一点</h2>
-      <details class="reading-panel">
-        <summary>发音与词形变化</summary>
-        <div class="panel-body">
-          <p class="phonetic-line"><span>英式 <b>{{ lesson.pronunciation.uk }}</b></span><span>美式 <b>{{ lesson.pronunciation.us }}</b></span></p>
-          <p class="muted-copy">{{ lesson.pronunciation.accentNote }}</p>
-          <ul class="plain-list"><li v-for="note in lesson.pronunciation.notes" :key="note">{{ note }}</li></ul>
-          <dl class="forms-list"><div v-for="form in lesson.forms" :key="form.label"><dt>{{ form.label }}</dt><dd><b lang="en" class="en">{{ form.form }}</b><span class="form-ipa">{{ form.ipa }}</span><p>{{ form.note }}</p></dd></div></dl>
-        </div>
-      </details>
-      <details v-if="lesson.lessCommonSenses.length" class="reading-panel">
-        <summary>进阶义项 · 先认识，不必一次记完</summary>
-        <div class="panel-body"><article v-for="sense in lesson.lessCommonSenses" :key="sense.id" class="less-common"><h3>{{ sense.title }}</h3><p>{{ sense.meaning }}</p><p class="muted-copy">{{ sense.note }}</p><p lang="en" class="en compact-example"><template v-for="(part, i) in wordParts(sense.example.en)" :key="i"><strong v-if="part.highlighted">{{ part.text }}</strong><template v-else>{{ part.text }}</template></template></p><p class="translation">{{ sense.example.zh }}</p><p v-if="sense.example.note" class="example-note">{{ sense.example.note }}</p></article></div>
-      </details>
-      <details v-if="lesson.sources.length" class="lesson-sources">
-        <summary>参考资料</summary>
-        <template v-for="group in ([{kind: 'verified', title: '已核对来源'}, {kind: 'recommended', title: '延伸阅读'}] as const)" :key="group.kind">
-          <div v-if="lesson.sources.some(source => source.verification === group.kind)" class="source-group">
-            <h4>{{ group.title }}</h4>
-            <ul><li v-for="source in lesson.sources.filter(source => source.verification === group.kind)" :key="source.id"><a :href="source.url" target="_blank" rel="noopener noreferrer">{{ source.title }}</a><span>{{ source.supports.join('；') }}</span></li></ul>
-          </div>
-        </template>
-      </details>
-    </section>
   </div>
 </template>
 
@@ -355,38 +303,6 @@ details[open] > summary::after { content: '−'; }
 .word-pos { color: var(--ink-3); font-size: 12px; font-weight: 400; }
 .word-meaning { font-size: 14px; font-weight: 500; }
 .formation { margin-top: 7px !important; }
-.memory-panel { border-left: 3px solid var(--primary); background: var(--surface-2); padding: 20px; border-radius: 0 10px 10px 0; }
-.memory-panel h3 { font-size: 18px; }
-.memory-story { margin-top: 9px !important; font-size: 14px; }
-.memory-cues { list-style: none; padding: 0; margin: 18px 0; }
-.memory-cues li { margin-top: 10px; }
-.memory-cues b { display: block; font-size: 13px; color: var(--primary); }
-.memory-cues span { font-size: 13px; color: var(--ink-2); }
-.study-plan { margin-top: 22px; }
-.study-plan h3 { font-size: 16px; }
-.study-plan ol { padding-left: 22px; margin: 10px 0 0; font-size: 14px; }
-.study-plan li { padding-left: 3px; margin-top: 8px; }
-.study-plan li::marker { color: var(--primary); font-weight: 600; }
-.extensions > h2 { font-size: 20px; }
-.phonetic-line { display: flex; flex-wrap: wrap; gap: 7px 20px; font-size: 13px; }
-.phonetic-line b { color: var(--ink); font-weight: 500; }
-.plain-list { padding-left: 20px; font-size: 13px; color: var(--ink-2); margin: 10px 0 20px; }
-.forms-list { margin: 0; }
-.forms-list > div { display: grid; grid-template-columns: 84px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
-.forms-list dt { font-size: 12px; color: var(--ink-2); padding-top: 3px; }
-.forms-list dd { margin: 0; }
-.forms-list .en { font-size: 20px; }
-.form-ipa { font-size: 13px; margin-left: 10px; color: var(--ink-2); }
-.forms-list dd p { font-size: 12px; color: var(--ink-2); margin-top: 3px; }
-.less-common + .less-common { padding-top: 18px; margin-top: 18px; border-top: 1px solid var(--line); }
-.less-common h3 { font-size: 16px; margin-bottom: 5px; }
-.lesson-sources { margin-top: 30px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 12px; }
-.source-group { margin-top: 14px; }
-.source-group h4 { font-size: 12px; color: var(--ink-2); }
-.lesson-sources ul { padding-left: 16px; margin-bottom: 0; }
-.lesson-sources li + li { margin-top: 10px; }
-.lesson-sources a { color: var(--ink-2); text-decoration-color: var(--line); text-underline-offset: 3px; }
-.lesson-sources span { display: block; font-size: 11px; margin-top: 2px; }
 @media (max-width: 600px) {
   .origin-chain { grid-template-columns: 1fr; gap: 28px; }
   .origin-chain li:not(:last-child)::after { content: '↓'; top: auto; right: auto; left: 0; bottom: -24px; }
@@ -410,8 +326,5 @@ details[open] > summary::after { content: '−'; }
   .origin-chain { gap: 16px; flex-direction: column; }
   .origin-chain li { padding-left: 16px; border-left: 2px solid var(--line); }
   .origin-chain li:not(:last-child)::after { content: none; }
-  .memory-panel { padding: 16px; }
-  .forms-list > div { grid-template-columns: minmax(0, 1fr); gap: 2px; }
-  .form-ipa { display: inline-block; }
 }
 </style>

@@ -30,8 +30,8 @@ it('31st hide in one Shanghai day is 429 and changes nothing; the next Shanghai 
 });
 it.each([['minute','too many feedback requests',COPY.feedbackTooFast],['day','daily feedback limit reached',COPY.feedbackDayLimit]])('ExplainPanel shows a child-friendly %s-limit message and keeps the block',async(_s,error,msg)=>{
   vi.stubGlobal('fetch',vi.fn(async()=>new Response(JSON.stringify({error}),{status:429})));
-  const content={status:'ready',blocks:[{id:1,kind:'mnemonic_association',body:{text_zh:'想象画面。'},flags:[],label:'联想'}]};
+  const content={status:'ready',blocks:[{id:1,kind:'example',body:[{en:'Use this word.',zh:'示例句子。',target:'word'}],flags:[],label:'例句'}]};
   const ui=host('web/src/components/ExplainPanel.vue',{wordId:1,context:'word',content});
   try{await flush();ui.all(n=>n.tag==='button'&&ui.text(n)===COPY.reportContent)[0].props.onClick();await nextTick();await ui.all(n=>n.tag==='button'&&ui.text(n)==='其他')[0].props.onClick();await flush();
-    expect(ui.text()).toContain(msg);expect(ui.text()).toContain('想象画面。');expect(ui.text()).not.toContain(COPY.feedbackSaved);expect(ui.text()).not.toContain(error);}finally{ui.app.unmount();}
+    expect(ui.text()).toContain(msg);expect(ui.text()).toContain('示例句子。');expect(ui.text()).not.toContain(COPY.feedbackSaved);expect(ui.text()).not.toContain(error);}finally{ui.app.unmount();}
 });

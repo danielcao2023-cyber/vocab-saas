@@ -239,4 +239,16 @@ public class VaultStoreTest {
         assertEquals(0,directory.listFiles().length);
     }
 
+
+    @Test public void vocabularyUpgradeBackupIsIndependentDurableAndCannotBeOverwritten() throws Exception {
+        byte[] original=image("before-catalog");
+        store.createMigrationBackup(3,image("before-evidence"));
+        store.createVocabularyBackup(1,original);
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-vocabulary-1.db")));
+        newStore().createVocabularyBackup(1,original);
+        assertArrayEquals(image("before-evidence"),fileBytes(new File(directory,"learning-pre-v3.db")));
+        try {store.set("learning-pre-vocabulary-1","bad");fail("Reserved backup");} catch(IllegalArgumentException expected){}
+        expectUnavailable(()->store.createVocabularyBackup(1,image("different")));
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-vocabulary-1.db")));
+    }
 }

@@ -2,6 +2,7 @@ import Database from 'better-sqlite3';
 import fs from 'node:fs';
 import { recomputeDailyStats } from './stats.ts';
 import { migrateLearning } from './learning/schema.ts';
+import {migrateVocabulary} from './vocabulary-import.ts';
 
 export type DB = Database.Database;
 
@@ -121,6 +122,7 @@ export function openDb(file: string, options: { dryRun?: boolean } = {}): DB {
         ('makeup_per_month','2'),('makeup_window_days','7'),('makeup_requires_today','1'),('duration_cap_ms','300000');`);
     migratePhase2(db);
     migrateLearning(db);
+    migrateVocabulary(db);
     recomputeDailyStats(db);
     return db;
   } catch (error) { db.close(); throw error; }

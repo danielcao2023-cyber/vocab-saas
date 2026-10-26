@@ -7,6 +7,7 @@ import { mainHeadwords, normalizeQuotes } from './text.ts';
 import { wordStatus, statusKey } from './word-status.ts';
 import { getContent } from './content.ts';
 import { HttpError } from './http-error.ts';
+import {wordIdsForSelection,activeVocabularySelection} from './vocabulary-selection.ts';
 export interface WordRow {evidenceState?:WordEvidenceState;id:number;headword:string;phonetic:string|null;meaning_zh:string|null;level:string|null;state:number|null;stability:number|null;inWrongBook:number;learning_book?:string|null;[key:string]:unknown}
 export function readWords(db:DB):WordRow[] {const index=evidenceVersion(db)===3?evidenceIndex(db,new Date()):null;const rows=db.prepare(`SELECT w.*, c.state,c.stability, CASE WHEN EXISTS(SELECT 1 FROM learning_days) THEN COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) END learning_book, EXISTS(SELECT 1 FROM wrong_words ww WHERE ww.word_id=w.id AND ww.removed_at IS NULL) inWrongBook FROM words w LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize' LEFT JOIN learning_words l ON l.word_id=w.id ORDER BY w.id`).all() as WordRow[];return evidenceVersion(db)===3?rows.map(w=>{const evidenceState=index!.get(w.id)??untouchedEvidence();return {...w,evidenceState,learning_book:evidenceBook(evidenceState)};}):rows;}
 export function summary(w:WordRow) {return {id:w.id,headword:w.headword,phonetic:w.phonetic,firstMeaning:(w.meaning_zh??'').split('\n')[0],level:w.level,status:wordStatus(w),inWrongBook:!!w.inWrongBook,...(w.evidenceState?{evidenceState:w.evidenceState}:{})};}
@@ -38,15 +39,19 @@ export function wordDetail(db:DB,id:number) {
   const cards=db.prepare('SELECT mode,state,due FROM cards WHERE word_id=?').all(id) as {mode:string;state:number;due:string}[];
   const wrong=db.prepare('SELECT removed_at,wrong_count,correct_days FROM wrong_words WHERE word_id=?').get(id) as {removed_at:string|null;wrong_count:number;correct_days:string}|undefined;
   const keys=['id','headword','phonetic','pos','meaning_zh','meaning_source','meaning_flag','level','source'];
-  return {...(w.evidenceState?{evidenceState:w.evidenceState,capabilityEvidence:capabilityEvidence(db,id)}:{}),word:Object.fromEntries(keys.map(k=>[k,w[k]])),status:wordStatus(w),statusDetail:Object.fromEntries(['recognize','spell','dictation'].map(mode=>[mode,cards.find(c=>c.mode===mode)?{state:cards.find(c=>c.mode===mode)!.state,due:cards.find(c=>c.mode===mode)!.due}:null])),wrong:wrong?{inBook:wrong.removed_at===null,wrong_count:wrong.wrong_count,correct_days:JSON.parse(wrong.correct_days)}:null,content:getContent(db,id)};
+  const memberships=db.prepare(`SELECT b.id bookId,b.title bookTitle,u.id unitId,u.title unitTitle FROM vocabulary_members m JOIN vocabulary_books b ON b.id=m.book_id LEFT JOIN vocabulary_units u ON u.id=m.unit_id WHERE m.word_id=? ORDER BY b.rowid,u.position`).all(id);
+  return {...(memberships.length?{memberships}:{}),...(w.evidenceState?{evidenceState:w.evidenceState,capabilityEvidence:capabilityEvidence(db,id)}:{}),word:Object.fromEntries(keys.map(k=>[k,w[k]])),status:wordStatus(w),statusDetail:Object.fromEntries(['recognize','spell','dictation'].map(mode=>[mode,cards.find(c=>c.mode===mode)?{state:cards.find(c=>c.mode===mode)!.state,due:cards.find(c=>c.mode===mode)!.due}:null])),wrong:wrong?{inBook:wrong.removed_at===null,wrong_count:wrong.wrong_count,correct_days:JSON.parse(wrong.correct_days)}:null,content:getContent(db,id)};
 }
 export function browse(db:DB,q:Record<string,string|undefined>) {
   const group=q.group??'zk_high',level=q.level??'all',letter=q.letter??'all',status=q.status??'all';
   const int=(v:string|undefined,d:number)=>v===undefined?d:/^[1-9]\d*$/.test(v)?Number(v):NaN;const page=int(q.page,1),size=int(q.size,50);
   if(!['zk_high','daily_high'].includes(group)||!['all','core','level2'].includes(level)||!['all',...'abcdefghijklmnopqrstuvwxyz'].includes(letter)||!['all','new','learning','familiar','mastered'].includes(status)||!Number.isInteger(page)||page<1||!Number.isInteger(size)||size<1||size>100)throw new HttpError(400,'invalid browse parameters');
-  const all=readWords(db).filter(w=>w.source==='kb2022');
+  const selection=q.bookId?{bookId:q.bookId,unitId:q.unitId||null}:activeVocabularySelection(db);
+  const ids=wordIdsForSelection(db,selection);
+  const all=readWords(db).filter(w=>ids?ids.has(w.id):w.source==='kb2022');
   const ranks=db.prepare('SELECT * FROM word_freq WHERE grp=? AND rank>0').all(group) as {word_id:number;rank:number;basis:string;is_inferred:number}[];
-  const byId=new Map(ranks.map(r=>[r.word_id,r]));
-  const filtered=all.filter(w=>(level==='all'||w.level===(level==='core'?'三级':'二级'))&&(letter==='all'||mainHeadwords(w.headword)[0]?.[0]?.toLowerCase()===letter)&&(status==='all'||statusKey(w)===status)).sort((a,b)=>(byId.get(a.id)?.rank??Infinity)-(byId.get(b.id)?.rank??Infinity)||a.id-b.id);
+  const byId=new Map((selection.bookId==='kb2022'?ranks:[]).map(r=>[r.word_id,r]));
+  const positions=new Map((selection.bookId==='kb2022'?[]:db.prepare('SELECT word_id,MIN(position) position FROM vocabulary_members WHERE book_id=? AND (? IS NULL OR unit_id=?) GROUP BY word_id').all(selection.bookId,selection.unitId,selection.unitId) as {word_id:number;position:number}[]).map(r=>[r.word_id,r.position]));
+  const filtered=all.filter(w=>(level==='all'||w.level===(level==='core'?'三级':'二级'))&&(letter==='all'||mainHeadwords(w.headword)[0]?.[0]?.toLowerCase()===letter)&&(status==='all'||statusKey(w)===status)).sort((a,b)=>(byId.get(a.id)?.rank??positions.get(a.id)??Infinity)-(byId.get(b.id)?.rank??positions.get(b.id)??Infinity)||a.id-b.id);
   return {items:filtered.slice((page-1)*size,page*size).map(w=>({...summary(w),rank:byId.get(w.id)?.rank??null,basis:byId.get(w.id)?.basis??'',isInferred:!!byId.get(w.id)?.is_inferred})),total:filtered.length,page,size,group,coverage:{ranked:all.filter(w=>byId.has(w.id)).length,total:all.length}};
 }

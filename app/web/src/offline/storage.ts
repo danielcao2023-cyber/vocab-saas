@@ -1,7 +1,7 @@
 import {Capacitor,registerPlugin} from '@capacitor/core';
 import {Directory,Filesystem} from '@capacitor/filesystem';
 
-interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>}
+interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>;createVocabularyBackup(options:{version:number;data:string}):Promise<void>}
 const vault=registerPlugin<VaultPlugin>('MobileVault');
 const native=()=>Capacitor.isNativePlatform();
 function database():Promise<IDBDatabase>{return new Promise((resolve,reject)=>{
@@ -47,5 +47,16 @@ export const learningStorage={
   if(current!==null&&!['a','b'].includes(current))throw new Error('学习数据索引异常。');
   const next=current==='a'?'b':'a';
   await vault.writeSnapshot({slot:next,data:base64(data)});
+ },
+ async createVocabularyBackup(data:Uint8Array,version:number):Promise<void>{
+  if(!Number.isInteger(version)||version<1||version>999)throw Error('词库版本无效。');
+  if(native()){await vault.createVocabularyBackup({version,data:base64(data)});return;}
+  const key='learning-pre-vocabulary-'+version,db=await database();
+  try{await new Promise<void>((resolve,reject)=>{
+   const tx=db.transaction('state','readwrite'),store=tx.objectStore('state'),get=store.get(key);
+   get.onsuccess=()=>{const old=get.result as Uint8Array|undefined;if(old){if(old.length!==data.length||!data.every((b,i)=>old[i]===b))tx.abort();}else store.put(new Uint8Array(data),key);};
+   tx.oncomplete=()=>resolve();tx.onabort=tx.onerror=()=>reject(Error('词库升级备份冲突或保存失败，原备份未被覆盖。'));
+  });}finally{db.close();}
+  const verified=await idbGet<Uint8Array>(key);if(!verified||verified.length!==data.length||!data.every((b,i)=>verified[i]===b))throw Error('词库升级备份校验失败。');
  },
 };

@@ -93,3 +93,23 @@ it('fails cleanly for an empty word or missing media support without trying spee
   expect(MockAudio.instances).toHaveLength(0);
   expect(synth.speak).not.toHaveBeenCalled();
 });
+
+it('falls back to an English device voice for an unbundled word and cancels it on navigation', async()=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;
+ const synth={getVoices:()=>[{lang:'en-US',localService:true}],speak:vi.fn((u:Utterance)=>{utterance=u;}),cancel:vi.fn()};
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',synth);
+ applyPreferences({...DEFAULT_PREFERENCES,playbackRate:0.75});
+ const result=speak('aberration');MockAudio.instances[0].emit('error');
+ expect(utterance?.text).toBe('aberration');expect(utterance?.lang).toBe('en-US');expect(utterance?.rate).toBe(0.75);
+ utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
+ const cancelled=speak('another');MockAudio.instances[1].emit('error');stopAudio();
+ await expect(cancelled).resolves.toEqual({status:'cancelled'});expect(synth.cancel).toHaveBeenCalled();
+});
+it('ignores the companion media rejection after the error event starts a device voice',async()=>{
+ class Utterance {text:string;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined,rejectMedia!:(error:Error)=>void;
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{utterance=u;},cancel:vi.fn()});
+ MockAudio.start=()=>new Promise((_,reject)=>rejectMedia=reject);
+ const result=speak('aberration'),settled=vi.fn();result.then(settled);MockAudio.instances[0].emit('error');rejectMedia(Object.assign(Error('no source'),{name:'NotSupportedError'}));await Promise.resolve();await Promise.resolve();expect(settled).not.toHaveBeenCalled();utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
+});

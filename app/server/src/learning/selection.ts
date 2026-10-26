@@ -1,16 +1,17 @@
 import type {DB} from '../db.ts';
 import type {WordBook} from '../../../shared/learning.ts';
+import {selectedWordIds} from '../vocabulary-selection.ts';
 export interface LearningWord {id:number;headword:string;meaning_zh:string|null;phonetic:string|null;level:string|null;priority:number;freq_rank:number|null;source:string;meaning_source?:string|null;book:WordBook;due:string|null;initial_done:number;initial_errors:number;introduced_at:string|null;last_fail:string|null;day_errors:number;error_day:string;}
-export function learningWords(db:DB):LearningWord[]{return db.prepare(`SELECT w.*,COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) book,
+export function learningWords(db:DB,now=new Date()):LearningWord[]{const ids=selectedWordIds(db,now);return (db.prepare(`SELECT w.*,COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) book,
  COALESCE(l.due,(SELECT MIN(due) FROM cards WHERE word_id=w.id AND state<>0)) due,
  COALESCE(l.initial_done,CASE WHEN c.state>0 THEN 1 ELSE 0 END) initial_done,
  COALESCE(l.initial_errors,0) initial_errors,l.introduced_at,l.last_fail,COALESCE(l.day_errors,0) day_errors,COALESCE(l.error_day,'') error_day
  FROM words w LEFT JOIN learning_words l ON l.word_id=w.id LEFT JOIN cards c ON c.word_id=w.id AND c.mode='recognize'
- WHERE w.source=CASE WHEN EXISTS(SELECT 1 FROM words WHERE source='kb2022') THEN 'kb2022' ELSE w.source END ORDER BY w.id`).all() as LearningWord[];}
+ ORDER BY w.id`).all() as LearningWord[]).filter(w=>!ids||ids.has(w.id));}
 export function wordDifficulty(headword:string){const h=headword.replace(/\(.*?\)|（.*?）/g,'').split('/')[0].trim();const n=h.replace(/[^A-Za-z]/g,'').length;return n<=5&&!/[ '-]/.test(h)?0:n>=10||h.includes(' ')?2:1;}
 /** Composition affects new words only; overdue review always wins. */
 export function selectDaily(db:DB,now:Date,limit=40){
- const words=learningWords(db),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(new Date(now.getTime()+8*3600000).toISOString().slice(0,10)) as {word_id:number}[]).map(r=>r.word_id));
+ const words=learningWords(db,now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(new Date(now.getTime()+8*3600000).toISOString().slice(0,10)) as {word_id:number}[]).map(r=>r.word_id));
  const due=words.filter(w=>unfinished.has(w.id)||(w.book!=='new'&&(!w.due||w.due<=now.toISOString())));
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(b.book==='unfamiliar')-Number(a.book==='unfamiliar')||(a.due??'').localeCompare(b.due??'')||b.day_errors-a.day_errors||a.id-b.id);
  const selected=due.slice(0,limit),fresh=words.filter(w=>w.book==='new'&&!unfinished.has(w.id));

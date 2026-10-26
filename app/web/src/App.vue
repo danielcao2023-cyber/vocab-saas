@@ -15,6 +15,7 @@ import WordView from './views/WordView.vue';
 import ProgressPanel from './components/ProgressPanel.vue';
 import SettingsPanel from './components/SettingsPanel.vue';
 import {applyPreferences,preferenceRevision} from './preferences';
+import type {VocabularyState} from '../../shared/vocabulary';
 import type {PreferencesResponse} from '../../shared/preferences';
 import './styles/tokens.css';
 import './styles/app.css';
@@ -24,17 +25,19 @@ const view=ref<View>('home'),previousView=ref<View>('home'),wordId=ref<number|nu
 const calendar=ref<Streak|null>(null),curriculum=ref<Curriculum|null>(null),lists=ref<any[]>([]),book=ref<LearningView>('all');
 const navigation=new LessonNavigation(body=>api('/api/learning/exposure',body));
 const navigationError=ref(false),navigating=ref(false);
-const settingsOpen=ref(false);
+const settingsOpen=ref(false),settingsRevision=ref(0),scope=ref<VocabularyState|null>(null),scopeCounts=ref<Record<string,number>>({});
+const scopeLabel=computed(()=>{const v=scope.value,b=v?.books.find(b=>b.id===v.activeSelection.bookId);return b?b.title+(v?.activeSelection.unitId?' · '+b.units.find(u=>u.id===v.activeSelection.unitId)?.title:''):'';});
+async function settingsSaved(){await loadPreferences().catch(()=>{});settingsRevision.value++;void loadHome();}
 function closeSettings(){settingsOpen.value=false;void nextTick(()=>document.querySelector<HTMLButtonElement>('.settings-button')?.focus());}
 function openSettings(){if(!navigationError.value&&!navigating.value)settingsOpen.value=true;}
-async function loadPreferences(){const revision=preferenceRevision(),result=await api<PreferencesResponse>('/api/settings');if(!result?.preferences)throw Error('Settings unavailable');if(preferenceRevision()===revision)applyPreferences(result.preferences);}
+async function loadPreferences(){const revision=preferenceRevision(),result=await api<PreferencesResponse>('/api/settings');if(!result?.preferences)throw Error('Settings unavailable');if(preferenceRevision()===revision){applyPreferences(result.preferences);scope.value=result.vocabulary??null;}}
 async function navigate(commit:()=>void,enterWordId?:number){if(navigating.value||navigationError.value)return;navigating.value=true;navigationError.value=!await navigation.run({exitWordId:view.value==='word'?wordId.value??undefined:undefined,enterWordId,commit});navigating.value=false;}
 async function retryNavigation(){navigating.value=true;navigationError.value=!await navigation.retry();navigating.value=false;}
 let alive=true,wordHistory=false,timer:ReturnType<typeof setInterval>|undefined,version=0;
 const isSample=computed(()=>lists.value.some(l=>l.isSample));
 const activeTab=computed(()=>view.value==='word'?previousView.value:view.value);
 const keepStudy=computed(()=>view.value==='study'||(view.value==='word'&&previousView.value==='study'));
-async function loadHome(){const n=++version;try{const [p,s]=await Promise.all([api('/api/progress'),api<Streak>('/api/streak')]);if(alive&&n===version){curriculum.value=p.curriculum;lists.value=p.lists;calendar.value=s;online.value=true;}}catch{if(alive)online.value=false;}}
+async function loadHome(){const n=++version;try{const [p,s,v]=await Promise.all([api('/api/progress'),api<Streak>('/api/streak'),api<{counts:Record<string,number>}>('/api/learning/views?view=all')]);if(alive&&n===version){curriculum.value=p.curriculum;lists.value=p.lists;calendar.value=s;scopeCounts.value=v?.counts??{};online.value=true;}}catch{if(alive)online.value=false;}}
 async function ping(){try{online.value=(await fetch('/health')).ok;}catch{online.value=false;}}
 function go(value:View){void navigate(()=>{view.value=value;wordId.value=null;history.replaceState({view:value},'','/');loadHome();});}
 async function start(){try{await loadPreferences();go('study');}catch{online.value=false;}}
@@ -58,12 +61,12 @@ const tabs=[{view:'home' as const,label:'今日'},{view:'books' as const,label:'
 <div v-if="navigationError" class="offline" role="alert">阅读记录尚未保存，已保留当前页面。<button :disabled="navigating" @click="retryNavigation">重试保存并继续</button></div>
 <div v-if="!online" class="offline" role="alert">暂时连不上学习服务。<button @click="ping();loadHome()">重试</button></div>
 <div v-if="isSample" class="sample">当前是示例数据（开发测试用），不是课标词表。</div>
- <LearningHomeView v-if="view==='home'" :streak="calendar" @start="start" @books="openBook" @updated="loadHome" />
+ <LearningHomeView :key="settingsRevision" v-if="view==='home'" :streak="calendar" :scope-label="scopeLabel" @start="start" @books="openBook" @updated="loadHome" />
 <LearningStudyView v-if="keepStudy" v-show="view==='study'" :active="view==='study'&&!navigationError&&!navigating" @cancel="go('home')" @open="openWord" @updated="loadHome" />
 <WordBooksView v-if="view==='books'" :initial-view="book" @open="openWord" @start="start" />
-<KeepAlive><BrowseView v-if="view==='browse'" @open="openWord" /></KeepAlive>
+<KeepAlive><BrowseView :key="settingsRevision" v-if="view==='browse'" @open="openWord" /></KeepAlive>
 <WordView v-if="view==='word'&&wordId" :word-id="wordId" :automatic-books="true" @back="backWord" />
-<main v-if="view==='progress'&&curriculum" class="page"><h1>学习进度</h1><ProgressPanel :curriculum="curriculum" /><section v-for="l in lists.filter(l=>l.source!=='kb2022')" :key="l.source" class="panel" style="margin-top:20px"><h2>{{ l.source }}：已掌握 {{ l.mastered }}/{{ l.total }}</h2><p>已掌握 {{ l.mastered }} · 熟悉 {{ l.familiar }} · 不熟 {{ l.learning }} · 生词 {{ l.new }}</p></section></main>
+<main v-if="view==='progress'&&curriculum" class="page"><h1>学习进度</h1><template v-if="!scope||scope.activeSelection.bookId==='kb2022'"><ProgressPanel :curriculum="curriculum" /></template><section v-else class="panel"><h2>{{ scopeLabel }}</h2><p>全部 {{ scopeCounts.all??0 }} · 待复习 {{ scopeCounts.due??0 }} · 重点巩固 {{ scopeCounts.priority??0 }} · 长期较稳 {{ scopeCounts.stable??0 }}</p></section><section v-for="l in lists.filter(l=>l.source!=='kb2022'&&l.source!=='vocabulary')" :key="l.source" class="panel" style="margin-top:20px"><h2>{{ l.source }}：已掌握 {{ l.mastered }}/{{ l.total }}</h2><p>已掌握 {{ l.mastered }} · 熟悉 {{ l.familiar }} · 不熟 {{ l.learning }} · 生词 {{ l.new }}</p></section></main>
 <nav v-if="view!=='study'" class="bottombar" aria-label="手机导航"><button v-for="tab in tabs" :key="tab.view" :class="{on:activeTab===tab.view}" :aria-current="activeTab===tab.view?'page':undefined" @click="go(tab.view)"><i aria-hidden="true"></i>{{ tab.label }}</button></nav>
-</div><SettingsPanel v-if="settingsOpen" @close="closeSettings" @saved="loadHome" /></template></template>
+</div><SettingsPanel v-if="settingsOpen" @close="closeSettings" @saved="settingsSaved" /></template></template>
 <style scoped>.settings-button{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--ink-2);display:grid;place-items:center;flex-shrink:0;transition:background .18s,color .18s,transform .18s;}.settings-button:hover{background:var(--primary-soft);color:var(--primary);transform:rotate(12deg);}.settings-button:focus-visible{outline:2px solid var(--primary);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.settings-button{transition:none;}.settings-button:hover{transform:none;}}</style>

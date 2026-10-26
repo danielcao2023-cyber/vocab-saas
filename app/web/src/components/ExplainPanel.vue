@@ -8,10 +8,10 @@ const pending=():WordContent=>({status:'pending',blocks:[]});
 const data=ref<WordContent>(props.content??pending()),open=ref<Record<string,boolean>>({example:props.context!=='word',collocation:props.context==='recognize'}),hidden=ref<number[]>([]),reporting=ref<number|null>(null),limitMsg=ref<string|null>(null),submitting=ref(false);
 let alive=true,request=0;
 const groups=computed(()=>[
-  {key:'example',kinds:['example']},{key:'collocation',kinds:['collocation']},{key:'distinction',kinds:['distinction']},{key:'relations',kinds:['synonym','antonym']},{key:'pronunciation',kinds:['pronunciation']},{key:'memory',kinds:['mnemonic_etymology','mnemonic_association','related_words']},
+  {key:'example',kinds:['example']},{key:'collocation',kinds:['collocation']},{key:'distinction',kinds:['distinction']},{key:'relations',kinds:['synonym','antonym']},{key:'pronunciation',kinds:['pronunciation']},{key:'etymology',kinds:['mnemonic_etymology','related_words']},
 ].map(g=>({...g,blocks:data.value.blocks.filter(b=>g.kinds.includes(b.kind)&&b.body&&(!Array.isArray(b.body)||b.body.length))})).filter(g=>g.blocks.length));
 const allOpen=computed(()=>groups.value.length>0&&groups.value.every(g=>open.value[g.key]));
-function title(g:typeof groups.value[number]){if(g.key==='relations')return g.blocks.map(b=>b.kind==='synonym'?COPY.synonym:COPY.antonym).join(' · ');return COPY.contentTitles[g.key];}
+function title(g:typeof groups.value[number]){if(g.key==='etymology')return '词根与词族';if(g.key==='relations')return g.blocks.map(b=>b.kind==='synonym'?COPY.synonym:COPY.antonym).join(' · ');return COPY.contentTitles[g.key];}
 function preview(b:ContentBlock):string {const x=b.body;if(Array.isArray(x))return x.map(v=>v.en??v.word??v.words?.join(' / ')??'').join(' · ');return x.text_zh??x.explain_zh??x.syllables?.join(' · ')??'';}
 function persist(){try{window.localStorage.setItem('explain:'+props.context,JSON.stringify(open.value));}catch{/* storage optional */}}
 function toggle(key:string,event:Event){const value=(event.target as HTMLDetailsElement).open;if(open.value[key]===value)return;open.value={...open.value,[key]:value};persist();}

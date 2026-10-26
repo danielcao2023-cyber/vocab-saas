@@ -17,7 +17,7 @@ function fixture(n = 1600) {
   return { dir, db, sourcePath, outputPath };
 }
 
-it('creates a fresh 1600-word seed from public projections without learner data, keys or cached conversations', () => {
+it('creates a fresh core and expansion seed from public projections without learner data, keys or cached conversations', () => {
   const { db, sourcePath, outputPath } = fixture();
   db.prepare("INSERT INTO words(headword,source,is_sample) VALUES ('sample-only','sample',1)").run();
   db.prepare("UPDATE words SET entry_raw='private-marker-entry' WHERE id=1").run();
@@ -35,18 +35,21 @@ it('creates a fresh 1600-word seed from public projections without learner data,
   answerLearning(db, { issueId: card.issueId, answerId: 'private-marker-answer-id', ...(card.mode === 'recognize' ? { choiceId: 0 } : { answer: 'incorrect' }) }, now);
   db.close();
   const before = fs.readFileSync(sourcePath);
-  createMobileSeed(sourcePath, outputPath);
+  const built=createMobileSeed(sourcePath, outputPath);
   expect(fs.readFileSync(sourcePath)).toEqual(before);
   expect(fs.readFileSync(outputPath).includes(Buffer.from('private-marker'))).toBe(false);
   const seed = new Database(outputPath, { readonly: true });
   try {
     expect(seed.pragma('integrity_check', { simple: true })).toBe('ok');
     expect(seed.pragma('foreign_key_check')).toEqual([]);
-    expect(seed.prepare('SELECT COUNT(*) n FROM words').get()).toEqual({ n: 1600 });
+    expect(seed.prepare('SELECT COUNT(*) n FROM words').get()).toEqual({ n: built.words });
+    expect(seed.prepare("SELECT COUNT(*) n FROM words WHERE source='kb2022'").get()).toEqual({n:1600});
+    expect(seed.prepare('SELECT COUNT(*) n FROM vocabulary_books').get()).toEqual({n:13});
+    expect(seed.prepare('SELECT COUNT(*) n FROM vocabulary_units').get()).toEqual({n:36});
     expect(seed.prepare('SELECT entry_raw FROM words WHERE id=1').get()).toEqual({ entry_raw: null });
     expect(seed.prepare('SELECT * FROM word_forms').all()).toEqual([{ word_id: 1, form: 'word-form', kind: 'plural' }]);
     expect(seed.prepare('SELECT job_id,rank FROM word_freq').get()).toEqual({ job_id: null, rank: 1 });
-    const allowed = new Set(['words', 'word_forms', 'word_freq', 'settings']);
+    const allowed = new Set(['words', 'word_forms', 'word_freq', 'settings','vocabulary_books','vocabulary_units','vocabulary_members','vocabulary_entry_map','vocabulary_meta']);
     for (const { name } of seed.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'").all() as { name: string }[]) {
       if (!allowed.has(name)) expect(seed.prepare(`SELECT COUNT(*) n FROM "${name}"`).get(), name).toEqual({ n: 0 });
     }

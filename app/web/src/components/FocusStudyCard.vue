@@ -22,7 +22,7 @@ function setPattern(value:string){pattern.value=value;emit('update:answer','');}
  </template>
 
  <div v-if="feedback" class="focus-feedback" :class="(feedback.independentlyRecalled??(feedback.correct&&!feedback.assisted))?'correct':'review'" role="status"><div><strong>{{ feedback.evidenceKind==='correction'?'这次记住了，稍后再独立试试':feedback.correct&&!feedback.assisted?'答对了 👍':'再看一眼' }}</strong><p v-if="!feedback.correct">{{ feedback.expected }} · {{ feedback.meaning }}</p></div><button class="btn primary" type="button" :disabled="busy" @click="emit('next')">继续</button></div>
- <div v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?'请点击播放按钮启用读音。':'这个读音暂时无法播放。' }} <button class="link" type="button" @click="emit('play')">重试播放</button><button v-if="audioFailed!=='blocked'&&!feedback" class="link" type="button" :disabled="busy" @click="emit('defer')">暂缓此词</button></div>
+ <div v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?'请点击播放按钮启用读音。':'这个读音暂时无法播放，请确认设备已安装英文语音。' }} <button class="link" type="button" @click="emit('play')">重试播放</button><button v-if="audioFailed!=='blocked'&&!feedback" class="link" type="button" :disabled="busy" @click="emit('defer')">暂缓此词</button></div>
 </article></template>
 <style scoped>
 .focus-card{max-width:720px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);padding:20px 28px 30px;min-width:0;}
