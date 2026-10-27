@@ -9,3 +9,12 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
     expect(getSoundSpellingLesson(headword), headword).toBeDefined();
   }
 });
+
+it('provides reviewed Unit 2 lessons and spelling guidance for the travel vocabulary', () => {
+  const words = ['site', 'take control of', 'official', 'recognize', 'type', 'flight', 'accommodation', 'unique', 'path', 'destination'];
+  const read = createLessonReader();
+  for (const [index, headword] of words.entries()) {
+    expect(read({ id: 1696 + index, headword }).status, headword).toBe('ready');
+    expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
