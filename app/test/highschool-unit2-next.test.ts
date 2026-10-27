@@ -11,6 +11,15 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
   }
 });
 
+it('provides reviewed travel and communication terms', () => {
+  const words = ['credit card', 'detail', 'check in', 'check out', 'request', 'sight'];
+  const read = createLessonReader();
+  for (const [index, headword] of words.entries()) {
+    expect(read({ id: 1721 + index, headword }).status, headword).toBe('ready');
+    expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
+
 it('provides the next travel and economics terms with reviewed content', () => {
   const words = [[1706, 'other than'], [1707, 'architecture'], [1708, 'architect'], [1718, 'economy'], [1719, 'economic'], [1720, 'credit']] as const;
   const read = createLessonReader();

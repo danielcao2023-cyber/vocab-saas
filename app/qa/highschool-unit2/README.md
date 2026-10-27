@@ -18,3 +18,5 @@
 随后补充 brochure、package、package tour、contact、civilisation、civilization、make up、transport、transportation 的讲解与拼读，并通过独立复核。另补 10 份真人录音；逐条检查 Wiktionary 英语词条中的文件对应关系、Commons 作者与许可、文件哈希和解码。civilisation 的新录音为澳大利亚口音，部分录音的具体口音尚未确认，显示为英语录音。
 
 补充 other than、architecture、architect、economy、economic、credit 的讲解及拼读；经独立复核，修正了 Coder 草稿中的词类、惯用语与释义错误。
+
+补充 credit card、detail、check in、check out、request、sight 的讲解及拼读；复核中修正了退房搭配、请求句式、视力与名胜等义项说明。短语重音随上下文变化，detail 也有不止一种常见读法。
