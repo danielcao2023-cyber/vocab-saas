@@ -20,3 +20,5 @@
 补充 other than、architecture、architect、economy、economic、credit 的讲解及拼读；经独立复核，修正了 Coder 草稿中的词类、惯用语与释义错误。
 
 补充 credit card、detail、check in、check out、request、sight 的讲解及拼读；复核中修正了退房搭配、请求句式、视力与名胜等义项说明。短语重音随上下文变化，detail 也有不止一种常见读法。
+
+补充 statue、BCE、before the Common Era、tomb、unearth、comment 的讲解；适合的四个普通词另有拼读图，缩写与纪年全称保留文字说明。复核中修正 BCE 的 B.C.E. 写法、墓穴词义及 unearth 的比喻用法。

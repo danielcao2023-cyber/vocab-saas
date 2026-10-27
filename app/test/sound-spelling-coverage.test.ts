@@ -13,7 +13,7 @@ it('opens spelling maps for annotated and mixed curriculum headwords',()=>{
 it('covers all 813 audited multisyllabic entries, including each mixed multisyllabic form',()=>{
  const catalog=JSON.parse(readFileSync(new URL('../qa/sound-spelling/multisyllabic-coverage.json',import.meta.url),'utf8'));
  expect(catalog.entries).toHaveLength(813);
- expect(soundSpellingLessons).toHaveLength(819+42+6+5+10+9+6+6);
+ expect(soundSpellingLessons).toHaveLength(819+42+6+5+10+9+6+6+4);
  for(const entry of catalog.entries){
   expect(getSoundSpellingLesson(entry.headword),entry.headword).toBeDefined();
   for(const form of entry.forms)expect(getSoundSpellingLesson(form),form).toBeDefined();

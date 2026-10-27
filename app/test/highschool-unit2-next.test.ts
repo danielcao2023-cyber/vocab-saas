@@ -11,6 +11,15 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
   }
 });
 
+it('provides reviewed history terms without forcing a spelling map on abbreviations', () => {
+  const words = ['statue', 'BCE', 'before the Common Era', 'tomb', 'unearth', 'comment'];
+  const read = createLessonReader();
+  for (const [index, headword] of words.entries()) {
+    expect(read({ id: 1727 + index, headword }).status, headword).toBe('ready');
+    if (![1728, 1729].includes(1727 + index)) expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
+
 it('provides reviewed travel and communication terms', () => {
   const words = ['credit card', 'detail', 'check in', 'check out', 'request', 'sight'];
   const read = createLessonReader();
