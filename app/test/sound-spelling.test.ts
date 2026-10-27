@@ -5,6 +5,7 @@ import {soundSpellingLessons,getSoundSpellingLesson} from '../web/src/content/so
 const sounds=(text:string)=>text.replace(/[\/ˈˌ.\s]/g,'');
 it('preserves every letter and sound through both levels of every published map',()=>{
  expect(new Set(soundSpellingLessons.map(x=>x.headword)).size).toBe(soundSpellingLessons.length);
+ expect(new Set(soundSpellingLessons.map(x=>x.headword.toLowerCase())).size).toBe(soundSpellingLessons.length);
  for(const lesson of soundSpellingLessons){
   expect(lesson.chunks.map(c=>c.letters).join(''),lesson.headword).toBe(lesson.headword);
   expect(sounds(lesson.chunks.map(c=>c.sound).join('')),lesson.headword).toBe(sounds(lesson.ipa));

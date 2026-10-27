@@ -11,6 +11,26 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
   }
 });
 
+it('provides reviewed lessons for the Unit 2 places and cultural names', () => {
+  const words = ['the Eiffel Tower', 'Neuschwanstein Castle', 'Iceland', 'Disneyland', 'Peru', 'the Andes Mountains', 'the Amazon rainforest', 'the Inca Empire', 'Machu Picchu', 'Spain', 'Spanish', 'Cusco', 'Lake Titicaca', 'the Uros', 'the Terracotta Army'];
+  const read = createLessonReader();
+  for (const [index, headword] of words.entries()) {
+    expect(read({ id: 1733 + index, headword }).status, headword).toBe('ready');
+  }
+  for (const headword of ['Iceland', 'Peru', 'Spain', 'Spanish']) {
+    expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
+
+it('replaces placeholder meanings for the reviewed textbook places', () => {
+  const catalog = JSON.parse(fs.readFileSync(new URL('../data/vocabulary/catalog.json', import.meta.url), 'utf8'));
+  for (const word of ['the Andes Mountains', 'the Amazon rainforest', 'the Inca Empire', 'Lake Titicaca', 'the Uros', 'the Terracotta Army']) {
+    const entry = catalog.entries.find((item: { headword: string }) => item.headword === word);
+    expect(entry?.meaning, word).not.toBe('无');
+    expect(entry?.meaningCorrection?.expected, word).toBe('无');
+  }
+});
+
 it('provides reviewed history terms without forcing a spelling map on abbreviations', () => {
   const words = ['statue', 'BCE', 'before the Common Era', 'tomb', 'unearth', 'comment'];
   const read = createLessonReader();

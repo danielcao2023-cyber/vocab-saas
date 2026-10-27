@@ -22,3 +22,5 @@
 补充 credit card、detail、check in、check out、request、sight 的讲解及拼读；复核中修正了退房搭配、请求句式、视力与名胜等义项说明。短语重音随上下文变化，detail 也有不止一种常见读法。
 
 补充 statue、BCE、before the Common Era、tomb、unearth、comment 的讲解；适合的四个普通词另有拼读图，缩写与纪年全称保留文字说明。复核中修正 BCE 的 B.C.E. 写法、墓穴词义及 unearth 的比喻用法。
+
+补充 Unit 2 余下 15 个地名、族群和文化名称的讲解，并为 Iceland、Peru、Spain、Spanish 提供拼读图；六个原始释义为“无”的词条通过精确旧值匹配补全中文。资料采用 UNESCO、ESA 和相关机构参考；专名的读音与冠词随语言或语境变化，不将未查证的说法绝对化。
