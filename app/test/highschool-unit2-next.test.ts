@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+import fs from 'node:fs';
 import { createLessonReader } from '../server/src/lessons';
 import { getSoundSpellingLesson } from '../web/src/content/sound-spelling/index';
 
@@ -6,6 +7,25 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
   const words = ['arrangement', 'extremely', 'source', 'powerful', 'empire'];
   for (const [index, headword] of words.entries()) {
     expect(createLessonReader()({ id: 1691 + index, headword }).status, headword).toBe('ready');
+    expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
+
+it('bundles verified human recordings for the newly sourced travel terms', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  for (const word of ['accommodation', 'civilisation', 'make up', 'transportation', 'credit card', 'check in', 'check out', 'BCE', 'unearth', 'Disneyland']) {
+    const entry = manifest.entries[word];
+    expect(entry?.author, word).toBeTruthy();
+    expect(entry?.evidenceUrl, word).toMatch(/^https:\/\/en\.wiktionary\.org\/wiki\//);
+    expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
+  }
+});
+
+it('provides the next travel and culture terms with reviewed content', () => {
+  const words = ['brochure', 'package', 'package tour', 'contact', 'civilisation', 'civilization', 'make up', 'transport', 'transportation'];
+  const read = createLessonReader();
+  for (const [index, headword] of words.entries()) {
+    expect(read({ id: 1709 + index, headword }).status, headword).toBe('ready');
     expect(getSoundSpellingLesson(headword), headword).toBeDefined();
   }
 });

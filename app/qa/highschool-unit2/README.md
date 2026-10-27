@@ -14,3 +14,5 @@
 补充 arrangement、extremely、source、powerful、empire 的讲解和发音拼写对照。Claude Code CLI 本地 Coder 提供初稿，Codex 按词逐项修订，独立复核用法、音值和例句；对照参考 Cambridge 和 Oxford 词典。拼读分组用于辅助记忆，口音与连读可能有变体。后续词条仍需逐词核查，不把草稿视为完成。
 
 继续补充 site、take control of、official、recognize、type、flight、accommodation、unique、path、destination 的讲解与拼读，并为 1691–1705 共 15 条补充词族；审校纠正了 accommodation 的住宿释义和 flight 的可数性等问题。短语拼读仅展示一种句中读法，实际句子重音随语境变化。
+
+随后补充 brochure、package、package tour、contact、civilisation、civilization、make up、transport、transportation 的讲解与拼读，并通过独立复核。另补 10 份真人录音；逐条检查 Wiktionary 英语词条中的文件对应关系、Commons 作者与许可、文件哈希和解码。civilisation 的新录音为澳大利亚口音，部分录音的具体口音尚未确认，显示为英语录音。
