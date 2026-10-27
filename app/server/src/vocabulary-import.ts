@@ -28,6 +28,8 @@ export interface Entry {
   key: string;
   headword: string;
   meaning: string;
+  meaningCorrection?: {expected:string};
+  phoneticCorrection?: {expected:string};
   phonetic?: string;
   pos?: string;
   memberships: Membership[];
@@ -90,7 +92,7 @@ export function migrateVocabulary(db: DB): void {
  * Installs or updates vocabulary catalog data atomically.
  * Idempotent - safe to call multiple times with same or expanded catalog.
  * Does not delete existing words, cards, or learning data.
- * Preserves existing word meanings and phonetics.
+ * Preserves existing content except explicitly audited, expected-value corrections.
  */
 export function installVocabulary(db: DB, catalog: Catalog): void {
   // Validate catalog structure
@@ -150,9 +152,14 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
     }
 
     const resolveWord = wordResolver(db);
-    // Process entries without changing existing word content or evidence.
+    // Resolve stable identities and preserve learner evidence.
     for (const entry of catalog.entries) {
       const wordId = resolveWord(entry);
+      // A published editorial correction is conditional: never replace core or learner-edited content.
+      if(entry.meaningCorrection)db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=?")
+        .run(entry.meaning,wordId,entry.meaningCorrection.expected);
+      if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
+        .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
 
       // Insert/update vocabulary_entry_map (authoritative mapping)
       db.prepare(
@@ -313,6 +320,8 @@ function validateCatalog(catalog: Catalog): void {
     if (!Array.isArray(entry.memberships) || entry.memberships.length === 0) {
       throw new Error(`Entry ${entry.key} must have at least one membership`);
     }
+    if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000))throw Error('Invalid meaning correction');
+    if(entry.phoneticCorrection&&(typeof entry.phoneticCorrection.expected!=='string'||!entry.phoneticCorrection.expected.trim()||entry.phoneticCorrection.expected.length>500||typeof entry.phonetic!=='string'||!entry.phonetic.trim()||entry.phonetic.length>500))throw Error('Invalid phonetic correction');
     for (const membership of entry.memberships) {
       if (!membership.bookId || typeof membership.bookId !== 'string') {
         throw new Error(

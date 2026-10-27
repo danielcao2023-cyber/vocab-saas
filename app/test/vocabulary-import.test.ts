@@ -38,3 +38,20 @@ it('rolls back a catalog with an invalid unit relationship',()=>{
   expect(listVocabularyBooks(db)).toEqual([]);
  }finally{db.close();}
 });
+it('applies a versioned meaning correction only to the expected imported value, preserving learner and core edits',()=>{
+ const db=openDb(':memory:');try{
+  installVocabulary(db,catalog);
+  const corrected={...catalog,version:2,entries:[{...catalog.entries[0],meaning:'经核对的核心义',meaningCorrection:{expected:'能力'}}]};
+  installVocabulary(db,corrected);expect(db.prepare("SELECT meaning_zh FROM words WHERE headword='ability'").get()).toEqual({meaning_zh:'经核对的核心义'});
+  db.prepare("UPDATE words SET meaning_zh='自定义释义',meaning_source='manual' WHERE headword='ability'").run();installVocabulary(db,{...corrected,version:3,entries:[{...corrected.entries[0],meaningCorrection:{expected:'自定义释义'}}]});expect(db.prepare('SELECT meaning_zh FROM words').get()).toEqual({meaning_zh:'自定义释义'});
+  db.prepare("UPDATE words SET source='kb2022',meaning_source='词库导入',meaning_zh='能力'").run();installVocabulary(db,corrected);expect(db.prepare('SELECT meaning_zh FROM words').get()).toEqual({meaning_zh:'能力'});
+ }finally{db.close();}
+});
+it('corrects an explicitly audited imported phonetic value without changing manual or unexpected values',()=>{
+ const db=openDb(':memory:');try{
+  installVocabulary(db,catalog);const corrected={...catalog,version:2,entries:[{...catalog.entries[0],phonetic:'/correct/',phoneticCorrection:{expected:catalog.entries[0].phonetic}}]};
+  installVocabulary(db,corrected);expect(db.prepare('SELECT phonetic FROM words').get()).toEqual({phonetic:'/correct/'});
+  db.prepare("UPDATE words SET phonetic='/custom/',meaning_source='manual'").run();installVocabulary(db,{...corrected,entries:[{...corrected.entries[0],phoneticCorrection:{expected:'/custom/'}}]});expect(db.prepare('SELECT phonetic FROM words').get()).toEqual({phonetic:'/custom/'});
+  db.prepare("UPDATE words SET meaning_source='词库导入'").run();installVocabulary(db,corrected);expect(db.prepare('SELECT phonetic FROM words').get()).toEqual({phonetic:'/custom/'});
+ }finally{db.close();}
+});

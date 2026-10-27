@@ -37,3 +37,14 @@ it('backs up before installing the catalog and preserves existing review data af
 it('does not import or persist if the upgrade backup fails',async()=>{
  const node=makeV3Fixture(1,now),db=await openBrowserDatabase(node.serialize());node.close();const save=vi.fn();try{await expect(prepareVocabularyDatabase(db,catalog,{createVocabularyBackup:async()=>{throw Error('backup failed');},save},true)).rejects.toThrow('backup failed');expect(save).not.toHaveBeenCalled();expect(asSharedDb(db).prepare('SELECT COUNT(*) n FROM vocabulary_books').get()).toEqual({n:0});}finally{db.close();}
 });
+it('backs up a version-1 install before correcting only imported meanings in version 2',async()=>{
+ const node=makeV3Fixture(1,now);installVocabulary(node,catalog);const word=node.prepare("SELECT id FROM words WHERE headword='newword'").get() as {id:number};
+ node.prepare("UPDATE words SET meaning_zh='孩子自己的释义',meaning_source='manual' WHERE id=1").run();
+ const db=await openBrowserDatabase(node.serialize());node.close();let saved:Uint8Array|undefined;const order:string[]=[];
+ try{
+  const corrected={...catalog,version:2,entries:catalog.entries.map(e=>({...e,meaning:'核对后的释义',meaningCorrection:{expected:e.meaning}}))};
+  await prepareVocabularyDatabase(db,corrected,{createVocabularyBackup:async b=>{const old=await openBrowserDatabase(b);try{expect(asSharedDb(old).prepare('SELECT meaning_zh FROM words WHERE id=?').get(word.id)).toEqual({meaning_zh:'新词'});}finally{old.close();}order.push('backup');},save:async b=>{saved=b;order.push('save');}},true);
+  expect(order).toEqual(['backup','save']);expect(asSharedDb(db).prepare('SELECT meaning_zh FROM words WHERE id=?').get(word.id)).toEqual({meaning_zh:'核对后的释义'});expect(asSharedDb(db).prepare('SELECT meaning_zh FROM words WHERE id=1').get()).toEqual({meaning_zh:'孩子自己的释义'});
+  const reopened=await openBrowserDatabase(saved!);try{expect(asSharedDb(reopened).prepare("SELECT value FROM vocabulary_meta WHERE key='catalog_version'").get()).toEqual({value:'2'});}finally{reopened.close();}
+ }finally{db.close();}
+});

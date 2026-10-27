@@ -45,7 +45,19 @@ def generate(downloads, textbooks, output):
             trans=row.get('trans');meaning='\n'.join(str(t).strip() for t in trans if str(t).strip()) if isinstance(trans,list) else str(trans or '')
             add(row.get('name'),meaning,row.get('usphone') or row.get('ukphone'),id,None,i)
         record(file,'https://github.com/RealKai42/qwerty-learner',bookId=id,rows=len(rows))
-    result={'version':1,'books':books,'units':units,'entries':list(entries.values())}
+    corrections=json.loads(manifest.with_name('corrections.json').read_text())
+    for correction in corrections['entries']:
+        item=entries.get(correction['headword'])
+        if not item or item['meaning']!=correction['expected']:
+            raise ValueError(f'Correction source mismatch: {correction["headword"]}')
+        item['meaningCorrection']={'expected':item['meaning']}
+        item['meaning']=correction['meaning']
+        if 'expectedPhonetic' in correction:
+            if item['phonetic']!=correction['expectedPhonetic']:
+                raise ValueError(f'Phonetic source mismatch: {correction["headword"]}')
+            item['phoneticCorrection']={'expected':item['phonetic']}
+            item['phonetic']=correction['phonetic']
+    result={'version':corrections['version'],'books':books,'units':units,'entries':list(entries.values())}
     output.parent.mkdir(parents=True,exist_ok=True)
     output.write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
     output.with_name('sources.json').write_text(json.dumps({'generatedAt':'2026-10-26','normalization':'NFC, curly apostrophe and whitespace; case preserved; no stemming','sources':sources},ensure_ascii=False,indent=2)+'\n')
