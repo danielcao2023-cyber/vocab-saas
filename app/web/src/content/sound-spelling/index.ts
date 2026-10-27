@@ -1,4 +1,5 @@
 import {governmentSoundSpelling} from './government';
+import {highschoolUnit2Initial} from './highschool-unit2-initial';
 import {highschoolUnit1} from './highschool-unit1';
 import {coreBatch1} from './core-batch-1';
 import {expandedA} from './expanded-a';
@@ -8,7 +9,7 @@ import {mainHeadwords} from '../../../../server/src/text';
 import type {SoundSpellingLesson} from './types';
 
 /** Only reviewed, committed content is published; draft model files stay outside the app. */
-export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1];
+export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1,...highschoolUnit2Initial];
 const lessonsByWord=new Map(soundSpellingLessons.map(lesson=>[lesson.headword,lesson]));
 
 export function getSoundSpellingLessons(headword:string):SoundSpellingLesson[] {
