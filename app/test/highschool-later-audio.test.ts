@@ -1,0 +1,13 @@
+import { expect, it } from 'vitest';
+import fs from 'node:fs';
+
+it('provides documented local human recordings for representative later-unit words', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  for (const word of ['fitness', 'stadium', 'gymnastics', 'legend', 'glory']) {
+    const entry = manifest.entries[word];
+    expect(entry?.author, word).toBeTruthy();
+    expect(entry?.sourceUrl, word).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    expect(entry?.licenseUrl, word).toMatch(/^https:\/\/creativecommons\.org\//);
+    expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
+  }
+});

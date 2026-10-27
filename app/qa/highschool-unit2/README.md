@@ -16,3 +16,5 @@
 继续补充 site、take control of、official、recognize、type、flight、accommodation、unique、path、destination 的讲解与拼读，并为 1691–1705 共 15 条补充词族；审校纠正了 accommodation 的住宿释义和 flight 的可数性等问题。短语拼读仅展示一种句中读法，实际句子重音随语境变化。
 
 随后补充 brochure、package、package tour、contact、civilisation、civilization、make up、transport、transportation 的讲解与拼读，并通过独立复核。另补 10 份真人录音；逐条检查 Wiktionary 英语词条中的文件对应关系、Commons 作者与许可、文件哈希和解码。civilisation 的新录音为澳大利亚口音，部分录音的具体口音尚未确认，显示为英语录音。
+
+补充 other than、architecture、architect、economy、economic、credit 的讲解及拼读；经独立复核，修正了 Coder 草稿中的词类、惯用语与释义错误。

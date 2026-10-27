@@ -11,6 +11,15 @@ it('provides lessons and sound-spelling guidance for the next Unit 2 words', () 
   }
 });
 
+it('provides the next travel and economics terms with reviewed content', () => {
+  const words = [[1706, 'other than'], [1707, 'architecture'], [1708, 'architect'], [1718, 'economy'], [1719, 'economic'], [1720, 'credit']] as const;
+  const read = createLessonReader();
+  for (const [id, headword] of words) {
+    expect(read({ id, headword }).status, headword).toBe('ready');
+    expect(getSoundSpellingLesson(headword), headword).toBeDefined();
+  }
+});
+
 it('bundles verified human recordings for the newly sourced travel terms', () => {
   const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
   for (const word of ['accommodation', 'civilisation', 'make up', 'transportation', 'credit card', 'check in', 'check out', 'BCE', 'unearth', 'Disneyland']) {
