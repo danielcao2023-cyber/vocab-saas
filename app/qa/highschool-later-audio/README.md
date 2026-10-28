@@ -257,3 +257,5 @@
 - 选择性必修四 Unit 5（bridegroom–graphic）：bridegroom、categorise、profile、participant、code、orient、detective、graphic 暂无已确认真人录音；新增 debt 美式录音待人工试听。
 
 - 选择性必修四 Unit 5（estate–entrepreneur）：estate agent、real estate agent、accountant、come to a conclusion、greedy 暂无已确认真人录音；新增 entrepreneur 美式录音待人工试听。
+
+- 选择性必修四 Unit 5（receptionist–supervise）：receptionist、CV、résumé、communist、dedicate、attend to、supervise 暂无已确认真人录音；新增 canal 英式录音待人工试听。
