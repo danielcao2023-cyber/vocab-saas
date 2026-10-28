@@ -77,3 +77,5 @@
 选择性必修二 Unit 2 的 complex、qualification、adaptation、cite 暂未找到符合当前来源与许可条件的录音；recall 候选录音未标明重音对应的词性，暂缓并待试听。
 
 选择性必修二 Unit 2 的 participate in、speak up、feel at home、engage in、involve、get involved in 暂未找到符合当前来源与许可条件的录音，待继续查找。
+
+选择性必修二 Unit 2 的 culture shock、comfort zone、homesickness、motivated、motivation、motivate 暂未找到符合当前来源与许可条件的录音，待继续查找。
