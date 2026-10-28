@@ -63,3 +63,5 @@
 `batch-nutritionmissing.json` 补入 bomb、wheat 和 flavour 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-essentialmissing.json` 补入 bacterium、bacteria 和 root 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
+
+`batch-healthmissing.json` 补入 Vietnam 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。
