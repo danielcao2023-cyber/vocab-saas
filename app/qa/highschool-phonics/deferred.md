@@ -23,3 +23,5 @@
 - 选择性必修三 Unit 3：fossil fuel 短语重音和英美变读需进一步核验后补对照。
 
 - 选择性必修三 Unit 3：Svalbard 英文地名存在多种读音，待核验后补发音拼写对照。
+
+- 选择性必修三 Unit 4：Hurricane Katrina 专有名称需核验完整读音后补对照；turn sb. down 含占位符，需按实际替换词处理。

@@ -169,3 +169,5 @@
 - 选择性必修三 Unit 3（sensitive–dozen）：smog、conservation 暂无已确认真人录音。
 
 - 选择性必修三 Unit 3（dozens of–Svalbard）：dozens of、regulation、disposal、waterway、Svalbard 暂无已确认真人录音；新增 Norway 录音待人工试听。
+
+- 选择性必修三 Unit 4（Hurricane Katrina–enthusiastic）：Hurricane Katrina、adversity、turn sb. down 暂无已确认真人录音；新增 vigour、qualified 录音待人工试听。
