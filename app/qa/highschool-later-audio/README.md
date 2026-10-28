@@ -119,3 +119,5 @@
 `batch-unit5radiation.json` 补入 millimetre 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。radiation、electric shock、swollen、swell、swelled 暂未找到符合条件的录音。
 
 `batch-unit5paramedic.json` 补入 loose 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。blister、paramedic、wrap 暂未找到符合条件的录音。
+
+`batch-unit5ambulance.json` 补入 bathe 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。bathtub、operator 暂未找到符合条件的录音。
