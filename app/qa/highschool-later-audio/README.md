@@ -41,3 +41,5 @@
 `batch-predictmissing.json` 补入 deceased 美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。artificial intelligence、prediction、rural、advocate 的精确候选暂未找到或仍需核实。
 
 `batch-careermissing.json` 补入 luxury 美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。prospect、essay 存在词性读音差异，暂缓候选。
+
+`batch-valleymissing.json` 补入 cloth 的美式录音；Christian 沿用已有录音，已核对来源、许可、哈希和解码；尚未人工听辨。buffet 和 glacier 候选存在读音差异，暂缓核实。
