@@ -175,3 +175,5 @@
 - 选择性必修三 Unit 4（aboard–blanket）：新增 steward 录音待人工试听；本组其余词条已有录音。
 
 - 选择性必修三 Unit 4（belongings–bad-tempered）：belongings、cosy、good-tempered、bad-tempered 暂无已确认真人录音。
+
+- 选择性必修三 Unit 4（genuine–unfortunately）：perseverance、persevere 暂无已确认真人录音；thorough 候选录音需试听以确认英美变体。
