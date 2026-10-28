@@ -197,3 +197,5 @@
 - 选择性必修三 Unit 5（seed–grief）：dominant、deadline 暂无已确认真人录音；contest、polish 候选录音需试听确认词性与大小写对应的读音。
 
 - 选择性必修三 Unit 5（complicated–Langston Hughes）：racial、Shakespeare、The Crescent Moon、Tagore、Elizabeth Barrett Browning、Robert Browning、the Victorian era、Sonnets from the Portuguese、Langston Hughes 暂无已确认真人录音；专有名称音标待可靠资料核对。
+
+- 选择性必修四 Unit 1（fiction–salary）：science fiction、sci-fi、test out、bonus、more like 暂无已确认真人录音。
