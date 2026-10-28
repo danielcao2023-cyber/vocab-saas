@@ -245,3 +245,5 @@
 - 选择性必修四 Unit 4（tube–platform）：housing 暂无已确认真人录音；forehead 存在读音变体，候选录音待人工辨音；新增 tube 英式及 chemist 美式录音待人工试听。
 
 - 选择性必修四 Unit 4（fireplace–handshake）：saucer、leftover 暂无已确认真人录音。
+
+- 选择性必修四 Unit 4（drag–contract）：disabled、resign、input 暂无已确认真人录音；contract 名词和动词重音不同，候选录音待辨音；新增 tune 美式录音待人工试听。
