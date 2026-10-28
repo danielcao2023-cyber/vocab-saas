@@ -23,3 +23,5 @@
 - `Masaccio`、`Leonardo da Vinci`、`Michelangelo`、`Raphael`、`Rembrandt`、`Claude Monet`、`Renoir`、`Picasso`（选择性必修三 Unit 1）：人名涉及不同语言和读法，音形对照需进一步核验，暂不发布未经确认的映射。
 
 - `Giverny` 和作品名称 `Tadpoles Searching for Mother`、`The Cowboy's Flute`、`Feeling from Mountain and Water`、`Clearing After Snow on a Mountain Pass`（选择性必修三 Unit 1）：地名或长作品名称尚需核验可靠读法及分词对照，暂缓发布。
+
+- `examine`（选择性必修三 Unit 2）：x 的 /ɡz/ 横跨重音边界，当前结构不能准确同时表示音形对应与重音，待结构支持后核验。
