@@ -253,3 +253,5 @@
 - 选择性必修四 Unit 4–5（stability–bounce around）：pray that、bounce around 暂无已确认真人录音；新增 pray、Papua New Guinea、Ghana、Congo、Panama 美式录音待人工试听。
 
 - 选择性必修四 Unit 5（aptitude–wrist）：aptitude、head start、a chest of drawers、hydrogen、radium 暂无已确认真人录音；drawer 候选录音待核验读音变体；新增 scenario 美式录音待人工试听。
+
+- 选择性必修四 Unit 5（bridegroom–graphic）：bridegroom、categorise、profile、participant、code、orient、detective、graphic 暂无已确认真人录音；新增 debt 美式录音待人工试听。
