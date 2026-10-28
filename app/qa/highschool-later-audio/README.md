@@ -59,3 +59,5 @@
 `batch-hybridmissing.json` 补入 Brazil、Bulgaria、Albania 和 hybrid 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-grainmissing.json` 补入 leisure 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。
+
+`batch-nutritionmissing.json` 补入 bomb、wheat 和 flavour 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
