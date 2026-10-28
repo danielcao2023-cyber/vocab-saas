@@ -191,3 +191,5 @@
 - 选择性必修三 Unit 5（cinquain–blossom）：cinquain、be made up of、haiku、syllable、respectively 暂无已确认真人录音。
 
 - 选择性必修三 Unit 5（delicate–verse）：revolve、comprehension、cherry blossom、blank 暂无已确认真人录音。
+
+- 选择性必修三 Unit 5（civilian–sow）：innocence、correspond、sow 暂无已确认真人录音；sow 存在词性异音，录音须确认是“播种”的读音。
