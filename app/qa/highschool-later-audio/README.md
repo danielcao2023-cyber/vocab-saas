@@ -103,3 +103,5 @@
 选择性必修二 Unit 3 的 Kazak 及 Unit 4 的 airline 暂未找到符合当前来源与许可条件的录音，待继续查找。
 
 `batch-unit4scenery.json` 补入 literally 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。take sb.'s breath away、spectacular、peak 暂未找到符合条件的录音。
+
+`batch-unit4prairie.json` 补入 prairie 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。grizzly bear、freezing、freezing cold、shopping mall、a bunch of 暂未找到符合条件的录音。
