@@ -201,3 +201,5 @@
 - 选择性必修四 Unit 1（fiction–salary）：science fiction、sci-fi、test out、bonus、more like 暂无已确认真人录音。
 
 - 选择性必修四 Unit 1（absurd–whereas）：saleswoman、suspend 暂无已确认真人录音。
+
+- 选择性必修四 Unit 1（rumour–flour）：rumour、chairwoman、gramme 暂无已确认真人录音；on a ... basis 为占位形式，需针对具体表达确认录音；新增 flour 录音待人工试听。
