@@ -281,3 +281,5 @@
 `batch-wikirecovery-7.json` 补入 46 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
 
 `batch-phrase-recovery-1.json` 补入 15 份高中短语真人录音，核对 Wiktionary 对完整短语的关联以及 Commons 文件、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
+
+`batch-wikirecovery-8.json` 补入 55 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
