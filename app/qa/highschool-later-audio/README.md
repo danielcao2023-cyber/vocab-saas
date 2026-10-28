@@ -131,3 +131,5 @@
 选择性必修二 Unit 5 的 out of shape、foggy、suburb、Taylor、CPR、cardiopulmonary resuscitation、mouth-to-mouth rescue breathing、Heimlich manoeuvre，以及选择性必修三 Unit 1 的 precise，暂未找到符合当前来源与许可条件的整词录音。membership 已有录音，本次没有重复导入。
 
 `batch-realismbatch.json` 补入 Christianity、dimension 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。realistic、realism、realist、two-dimensional、in particular、set apart from 暂未找到符合条件的录音。
+
+选择性必修三 Unit 1 的 humanistic、influential 暂未找到符合当前来源与许可条件的整词录音；本批其余八个词已有录音，没有重复导入。
