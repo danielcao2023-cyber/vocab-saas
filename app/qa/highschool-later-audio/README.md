@@ -161,3 +161,5 @@
 选择性必修三 Unit 3 的 ecology、carbon、dioxide、carbon dioxide、habitable 暂未找到符合当前来源与许可条件的整词录音；methane 的候选录音需确认英美读音变体后再接入。
 
 - 选择性必修三 Unit 3（sustain–broadcast）：sustainable、fossil fuel、trend 暂无已确认录音；fuel 和 broadcast 新增录音需人工试听确认。
+
+- 选择性必修三 Unit 3（policy–undergone）：footprint、restrict、restriction、undergo、underwent、undergone 暂无已确认真人录音。
