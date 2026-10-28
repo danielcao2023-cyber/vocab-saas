@@ -121,3 +121,14 @@ it('provides documented recordings for further compulsory book two terms', () =>
     expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
   }
 });
+
+it('provides documented complete phrase recordings for Unit 3', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  for (const word of ['injured', 'make sense', 'even though', 'push-up', 'now and then']) {
+    const entry = manifest.entries[word];
+    expect(entry?.author, word).toBeTruthy();
+    expect(entry?.sourceUrl, word).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+    expect(entry?.licenseUrl, word).toMatch(/^https:\/\/creativecommons\.org\//);
+    expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
+  }
+});
