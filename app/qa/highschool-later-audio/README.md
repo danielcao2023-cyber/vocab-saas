@@ -217,3 +217,5 @@
 - 选择性必修四 Unit 2（equator–hollow）：BBQ、joint、premier、dim sim 暂无已确认真人录音；herb 候选录音需试听确认首音与词义。
 
 - 选择性必修四 Unit 2（vibrate–entitle）：entitle 暂无已确认真人录音；新增 prime minister 美式录音待人工试听。
+
+- 选择性必修四 Unit 2（getaway–liberty）：getaway、dive、dived、dove、kayaking、peak season、sponsor 暂无已确认真人录音；dove 为同形异音词，需区分鸽子 /dʌv/ 和 dive 的美式过去式 /doʊv/。
