@@ -235,3 +235,5 @@
 - 选择性必修四 Unit 3（bond–tax）：in hand、tournament、coverage、press conference 暂无已确认真人录音。
 
 - 选择性必修四 Unit 3（manned–gallon）：manned、submersible、underwater、capsule、coral、migration、directory、meanwhile 暂无已确认真人录音；exploit 为名动词重音不同的同形异音词，候选录音须先核验词性和读音。
+
+- 选择性必修四 Unit 3（murder–Ceylon）：opponent、Log、Marco Polo、Columbus、Ceylon 暂无已确认真人录音。
