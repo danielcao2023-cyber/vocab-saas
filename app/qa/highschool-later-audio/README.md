@@ -297,3 +297,5 @@
 `batch-phrase-recovery-4.json` 补入 29 份高中短语真人录音，核对 Wiktionary 对完整短语的关联以及 Commons 文件、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
 
 `batch-highschool-recovery-12.json` 补入 14 份高中单词与 21 份短语录音，核对英语 Wiktionary 对词条的关联以及 Commons 文件、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
+
+`batch-direct-recovery-1.json` 补入 mustache 真人录音，依据 Commons 标准英语文件名核对实际文件、作者、许可、解码和哈希；口音暂未独立确认，尚未人工试听。
