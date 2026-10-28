@@ -111,3 +111,5 @@
 `batch-unit4contrary.json` 补入 astonish 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。contrary 候选录音读法待听辨，contrary to、proceed to sth.、misty 暂未找到符合条件的录音。
 
 `batch-unit4photographer.json` 补入 advertisement 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。accent、photographer、owe sth. to sb. 暂未找到符合条件的录音。
+
+`batch-unit4canada.json` 补入 Vancouver 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。Halifax、Lake Louise、Jasper、Toronto、Edmonton、Winnipeg、Ontario、Lake Huron、Quebec City 暂未找到符合条件的录音。
