@@ -29,6 +29,7 @@ export interface Entry {
   headword: string;
   meaning: string;
   meaningCorrection?: {expected:string};
+  headwordCorrection?: {expected:string};
   phoneticCorrection?: {expected:string};
   phonetic?: string;
   pos?: string;
@@ -156,8 +157,10 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
     for (const entry of catalog.entries) {
       const wordId = resolveWord(entry);
       // A published editorial correction is conditional: never replace core or learner-edited content.
-      if(entry.meaningCorrection)db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=?")
-        .run(entry.meaning,wordId,entry.meaningCorrection.expected);
+      if(entry.headwordCorrection)db.prepare("UPDATE words SET headword=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND headword=? AND NOT EXISTS (SELECT 1 FROM words other WHERE other.source='vocabulary' AND other.headword=? AND other.id<>?)")
+        .run(entry.headword,wordId,entry.headwordCorrection.expected,entry.headword,wordId);
+      if(entry.meaningCorrection)db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
+        .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
         .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
 
@@ -320,6 +323,7 @@ function validateCatalog(catalog: Catalog): void {
     if (!Array.isArray(entry.memberships) || entry.memberships.length === 0) {
       throw new Error(`Entry ${entry.key} must have at least one membership`);
     }
+    if(entry.headwordCorrection&&(typeof entry.headwordCorrection.expected!=='string'||!entry.headwordCorrection.expected.trim()||entry.headwordCorrection.expected.length>500||entry.headword.length>500))throw Error('Invalid headword correction');
     if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000))throw Error('Invalid meaning correction');
     if(entry.phoneticCorrection&&(typeof entry.phoneticCorrection.expected!=='string'||!entry.phoneticCorrection.expected.trim()||entry.phoneticCorrection.expected.length>500||typeof entry.phonetic!=='string'||!entry.phonetic.trim()||entry.phonetic.length>500))throw Error('Invalid phonetic correction');
     for (const membership of entry.memberships) {
@@ -359,6 +363,15 @@ function wordResolver(db:DB){
  const insert=db.prepare("INSERT INTO words(headword,meaning_zh,phonetic,pos,source,meaning_source) VALUES (?,?,?,?,'vocabulary','词库导入')");
  return (entry:Entry):number=>{
   if(mapped.has(entry.key))return mapped.get(entry.key)!;
+  if(entry.headwordCorrection){
+   const candidates=db.prepare("SELECT id,source FROM words WHERE headword=?").all(entry.headwordCorrection.expected) as {id:number;source:string}[];
+   if(candidates.length){
+    const belongs=db.prepare("SELECT 1 FROM vocabulary_members WHERE word_id=? AND book_id=? AND unit_id=? AND position=?");
+    const old=candidates.filter(w=>w.source==='vocabulary' && entry.memberships.some(m=>!!belongs.get(w.id,m.bookId,m.unitId??'',m.position)));
+    if(candidates.length!==1||old.length!==1)throw Error('Cannot safely resolve previous headword: '+entry.headwordCorrection.expected);
+    return old[0].id;
+   }
+  }
   const matches=exact.get(entry.headword)??aliases.get(entry.headword);
   if(matches?.size){if(matches.size!==1)throw Error('Ambiguous headword: '+entry.headword);return [...matches][0];}
   const id=Number(insert.run(entry.headword,entry.meaning,entry.phonetic??null,entry.pos??null).lastInsertRowid);

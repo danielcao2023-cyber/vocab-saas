@@ -55,3 +55,65 @@ it('corrects an explicitly audited imported phonetic value without changing manu
   db.prepare("UPDATE words SET meaning_source='词库导入'").run();installVocabulary(db,corrected);expect(db.prepare('SELECT phonetic FROM words').get()).toEqual({phonetic:'/custom/'});
  }finally{db.close();}
 });
+it('corrects an audited headword on the mapped word while preserving identity and user edits',()=>{
+ const db=openDb(':memory:');try{
+  const old={...catalog,entries:[{...catalog.entries[0],key:'from on',headword:'from on',meaning:'adv.再向前'}]};
+  installVocabulary(db,old);const id=(db.prepare('SELECT id FROM words').get() as {id:number}).id;
+  db.prepare("INSERT INTO wrong_words(word_id,last_wrong_at,wrong_count) VALUES (?,datetime('now'),1)").run(id);
+  const corrected={...old,version:2,entries:[{...old.entries[0],headword:'from (then) on',headwordCorrection:{expected:'from on'},meaning:'从那时起',meaningCorrection:{expected:'adv.再向前'}}]};
+  installVocabulary(db,corrected);installVocabulary(db,corrected);
+  expect(db.prepare('SELECT id,headword,meaning_zh FROM words').get()).toEqual({id,headword:'from (then) on',meaning_zh:'从那时起'});
+  expect(db.prepare('SELECT word_id FROM wrong_words').get()).toEqual({word_id:id});
+  expect(db.prepare('SELECT word_id FROM vocabulary_entry_map').get()).toEqual({word_id:id});
+  db.prepare("UPDATE words SET headword='learner spelling', meaning_source='manual' WHERE id=?").run(id);
+  installVocabulary(db,{...corrected,entries:[{...corrected.entries[0],headwordCorrection:{expected:'learner spelling'}}]});
+  expect(db.prepare('SELECT headword FROM words').get()).toEqual({headword:'learner spelling'});
+ }finally{db.close();}
+});
+it('does not overwrite a colliding or core headword during an audited correction',()=>{
+ const db=openDb(':memory:');try{
+  const old={...catalog,entries:[{...catalog.entries[0],key:'old',headword:'from on'}]};installVocabulary(db,old);
+  db.prepare("INSERT INTO words(headword,source,meaning_source) VALUES ('from (then) on','vocabulary','词库导入')").run();
+  const corrected={...old,version:2,entries:[{...old.entries[0],headword:'from (then) on',headwordCorrection:{expected:'from on'},meaning:'新释义',meaningCorrection:{expected:'能力'}}]};
+  expect(()=>installVocabulary(db,corrected)).not.toThrow();
+  expect(db.prepare("SELECT meaning_zh FROM words WHERE headword='from on'").get()).toEqual({meaning_zh:'能力'});
+  expect(db.prepare("SELECT headword FROM words WHERE id=(SELECT word_id FROM vocabulary_entry_map WHERE entry_key='old')").get()).toEqual({headword:'from on'});
+  db.prepare("UPDATE words SET source='kb2022' WHERE headword='from on'").run();installVocabulary(db,corrected);
+  expect(db.prepare("SELECT headword FROM words WHERE source='kb2022'").get()).toEqual({headword:'from on'});
+ }finally{db.close();}
+});
+it('installs a corrected spelling directly in a fresh catalog',()=>{
+ const db=openDb(':memory:');try{
+  installVocabulary(db,{...catalog,entries:[{...catalog.entries[0],key:'from on',headword:'from (then) on',headwordCorrection:{expected:'from on'}}]});
+  expect(db.prepare('SELECT headword FROM words').get()).toEqual({headword:'from (then) on'});
+ }finally{db.close();}
+});
+
+it('reuses a uniquely matching old imported word even when its entry map is missing',()=>{
+ const db=openDb(':memory:');try{
+  const old={...catalog,entries:[{...catalog.entries[0],key:'old',headword:'from on'}]};installVocabulary(db,old);
+  const id=(db.prepare('SELECT id FROM words').get() as {id:number}).id;db.prepare('DELETE FROM vocabulary_entry_map').run();
+  installVocabulary(db,{...old,version:2,entries:[{...old.entries[0],headword:'from (then) on',headwordCorrection:{expected:'from on'}}]});
+  expect(db.prepare('SELECT id,headword FROM words').get()).toEqual({id,headword:'from (then) on'});
+  expect(db.prepare('SELECT COUNT(*) n FROM words').get()).toEqual({n:1});
+ }finally{db.close();}
+});
+
+it('reuses an unmapped old word with manual edits without altering its contents',()=>{
+ const db=openDb(':memory:');try{
+  const old={...catalog,entries:[{...catalog.entries[0],key:'old',headword:'from on'}]};installVocabulary(db,old);
+  const id=(db.prepare('SELECT id FROM words').get() as {id:number}).id;db.prepare("UPDATE words SET meaning_zh='自定义',meaning_source='manual' WHERE id=?").run(id);db.prepare('DELETE FROM vocabulary_entry_map').run();
+  installVocabulary(db,{...old,version:2,entries:[{...old.entries[0],headword:'from (then) on',headwordCorrection:{expected:'from on'},meaning:'新释义',meaningCorrection:{expected:'自定义'}}]});
+  expect(db.prepare('SELECT id,headword,meaning_zh FROM words').get()).toEqual({id,headword:'from on',meaning_zh:'自定义'});
+  expect(db.prepare('SELECT COUNT(*) n FROM words').get()).toEqual({n:1});
+ }finally{db.close();}
+});
+
+it('rejects an unmapped unrelated word rather than mixing its learning records into a catalog entry',()=>{
+ const db=openDb(':memory:');try{
+  db.prepare("INSERT INTO words(headword,source) VALUES ('from on','kb2022')").run();
+  const corrected={...catalog,entries:[{...catalog.entries[0],key:'old',headword:'from (then) on',headwordCorrection:{expected:'from on'}}]};
+  expect(()=>installVocabulary(db,corrected)).toThrow('Cannot safely resolve previous headword');
+  expect(db.prepare('SELECT COUNT(*) n FROM vocabulary_members').get()).toEqual({n:0});
+ }finally{db.close();}
+});
