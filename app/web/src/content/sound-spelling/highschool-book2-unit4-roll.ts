@@ -230,5 +230,133 @@ export const highschoolBook2Unit4Roll: SoundSpellingLesson[] = [
       "reviewedAt": "2026-10-28",
       "draftedBy": "Codex phoneme/letter alignment"
     }
+  },
+  {
+    "headword": "cattle",
+    "ipa": "/ˈkætəl/",
+    "uk": "/ˈkætəl/",
+    "chunks": [
+      {
+        "letters": "cat",
+        "sound": "/kæ/",
+        "stress": "primary",
+        "hint": "首部分重读；双写 t 不重复发音。",
+        "pairs": [
+          {
+            "letters": "c",
+            "sound": "/k/"
+          },
+          {
+            "letters": "a",
+            "sound": "/æ/"
+          },
+          {
+            "letters": "t",
+            "sound": ""
+          }
+        ],
+        "tip": "首部分重读；双写 t 不重复发音。"
+      },
+      {
+        "letters": "tle",
+        "sound": "/təl/",
+        "stress": "none",
+        "hint": "词尾轻读，le 构成音节。",
+        "pairs": [
+          {
+            "letters": "t",
+            "sound": "/t/"
+          },
+          {
+            "letters": "l",
+            "sound": "/əl/"
+          },
+          {
+            "letters": "e",
+            "sound": ""
+          }
+        ],
+        "tip": "词尾轻读，le 构成音节。"
+      }
+    ],
+    "anchor": {
+      "text": "结合例句与读音记忆拼写。"
+    },
+    "variantNote": "末尾也可标作音节辅音 /l̩/。",
+    "sources": [
+      {
+        "label": "Cambridge Dictionary · 英语读音",
+        "url": "https://dictionary.cambridge.org/pronunciation/english/cattle"
+      }
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewedAt": "2026-10-28",
+      "draftedBy": "Codex phoneme/letter alignment"
+    }
+  },
+  {
+    "headword": "custom",
+    "ipa": "/ˈkʌstəm/",
+    "uk": "/ˈkʌstəm/",
+    "chunks": [
+      {
+        "letters": "cus",
+        "sound": "/kʌs/",
+        "stress": "primary",
+        "hint": "首部分重读。",
+        "pairs": [
+          {
+            "letters": "c",
+            "sound": "/k/"
+          },
+          {
+            "letters": "u",
+            "sound": "/ʌ/"
+          },
+          {
+            "letters": "s",
+            "sound": "/s/"
+          }
+        ],
+        "tip": "首部分重读。"
+      },
+      {
+        "letters": "tom",
+        "sound": "/təm/",
+        "stress": "none",
+        "hint": "第二部分轻读。",
+        "pairs": [
+          {
+            "letters": "t",
+            "sound": "/t/"
+          },
+          {
+            "letters": "o",
+            "sound": "/ə/"
+          },
+          {
+            "letters": "m",
+            "sound": "/m/"
+          }
+        ],
+        "tip": "第二部分轻读。"
+      }
+    ],
+    "anchor": {
+      "text": "结合例句与读音记忆拼写。"
+    },
+    "variantNote": "英美常见读法相近。",
+    "sources": [
+      {
+        "label": "Cambridge Dictionary · 英语读音",
+        "url": "https://dictionary.cambridge.org/pronunciation/english/custom"
+      }
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewedAt": "2026-10-28",
+      "draftedBy": "Codex phoneme/letter alignment"
+    }
   }
 ];
