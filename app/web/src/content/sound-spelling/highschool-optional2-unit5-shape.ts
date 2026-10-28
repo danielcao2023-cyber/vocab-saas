@@ -260,12 +260,12 @@ export const highschoolOptional2Unit5Shape: SoundSpellingLesson[] = [
   },
   {
     "headword": "precise",
-    "ipa": "/prɪˈsaɪs/",
+    "ipa": "/prəˈsaɪs/",
     "uk": "/prɪˈsaɪs/",
     "chunks": [
       {
         "letters": "pre",
-        "sound": "/prɪ/",
+        "sound": "/prə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
@@ -279,7 +279,7 @@ export const highschoolOptional2Unit5Shape: SoundSpellingLesson[] = [
           },
           {
             "letters": "e",
-            "sound": "/ɪ/"
+            "sound": "/ə/"
           }
         ],
         "tip": "此部分轻读。"
@@ -313,7 +313,7 @@ export const highschoolOptional2Unit5Shape: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "c 在 i 前对应 /s/；末尾 e 不单独发音。",
+    "variantNote": "c 在 i 前对应 /s/；英式开头元音常为 /ɪ/，末尾 e 不单独发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
