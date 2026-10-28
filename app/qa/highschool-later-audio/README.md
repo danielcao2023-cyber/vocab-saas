@@ -55,3 +55,5 @@
 `batch-clarifymissing.json` 补入 bent 和 in other words 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-perceivemissing.json` 补入 anxiety、at work 和 inquire 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
+
+`batch-hybridmissing.json` 补入 Brazil、Bulgaria、Albania 和 hybrid 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
