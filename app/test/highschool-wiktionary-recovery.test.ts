@@ -1,0 +1,17 @@
+import {expect,it} from 'vitest';
+import {createHash} from 'node:crypto';
+import fs from 'node:fs';
+import {recordingWordProblem} from '../server/src/pronunciation-source.ts';
+it('keeps each recovered English recording linked to its exact evidence and intact bytes',()=>{
+ const manifest=JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json',import.meta.url),'utf8'));
+ const batch=JSON.parse(fs.readFileSync(new URL('../qa/highschool-later-audio/batch-wikirecovery-1.json',import.meta.url),'utf8'));
+ expect(batch.added).toHaveLength(18);
+ for(const row of batch.added){
+  const e=manifest.entries[row.word];expect(e?.word).toBe(row.word);expect(e.accent).toBe('unknown');
+  expect(e.author).toBeTruthy();expect(e.licenseUrl).toMatch(/^https:\/\/creativecommons\.org\/licenses\//);
+  const title=decodeURIComponent(new URL(e.sourceUrl).pathname.split('/wiki/')[1]);
+  expect(recordingWordProblem(row.word,title,{sourceUrl:e.sourceUrl,evidenceUrl:e.evidenceUrl})).toBeUndefined();
+  const bytes=fs.readFileSync(new URL('../data/pronunciation/'+e.file,import.meta.url));
+  expect(createHash('sha256').update(bytes).digest('hex')).toBe(e.sha256);
+ }
+});
