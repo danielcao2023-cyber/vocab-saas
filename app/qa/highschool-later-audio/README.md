@@ -227,3 +227,5 @@
 - 选择性必修四 Unit 2（frequency–prison）：frequency、hatch、a handful of 暂无已确认真人录音。
 
 - 选择性必修四 Unit 2（grand–Tasmanian devil）：Aborigine、Sydney、Bondi Beach、Chiang Mai、the Bay of Islands、the haka、Edmonds、Felicity、Tasmanian devil 暂无已确认真人录音。
+
+- 选择性必修四 Unit 2–3（Tasmania–beheld）：Tasmania、duck-billed platypus、tale、set sail、extend、beheld 暂无已确认真人录音。
