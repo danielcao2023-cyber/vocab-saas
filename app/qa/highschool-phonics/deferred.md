@@ -19,3 +19,5 @@
 
 - `expansion`（选择性必修三 Unit 1）：x 的 /ks/ 横跨重音边界；当前结构无法准确同时表示字母对应与重音，待结构支持后核验。
 - `Giotto di Bondone`（选择性必修三 Unit 1）：意大利人名的音形对照需核验合适读法，暂缓发布。
+
+- `Masaccio`、`Leonardo da Vinci`、`Michelangelo`、`Raphael`、`Rembrandt`、`Claude Monet`、`Renoir`、`Picasso`（选择性必修三 Unit 1）：人名涉及不同语言和读法，音形对照需进一步核验，暂不发布未经确认的映射。

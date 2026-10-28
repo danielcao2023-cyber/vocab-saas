@@ -143,3 +143,5 @@
 选择性必修三 Unit 1 的 ceramic、artistic、Buddhist 暂未找到符合当前来源与许可条件的整词录音；vase 的候选录音未标明具体读音变体，暂缓接入并待听辨。其余六个词已有录音，没有重复导入。
 
 选择性必修三 Unit 1 的 Buddhism、bring ... to life、contemporary、be worthy of、The Middle Ages、Giotto di Bondone、the Renaissance 暂未找到符合当前来源与许可条件的整词录音；其余三个词已有录音，没有重复导入。
+
+选择性必修三 Unit 1 的 Masaccio、Leonardo da Vinci、Michelangelo、Raphael、Rembrandt、Impressionism、Claude Monet、Renoir、Picasso、Cubism 暂未找到符合当前来源与许可条件的整词录音，待继续查找。
