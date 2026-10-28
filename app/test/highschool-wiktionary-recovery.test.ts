@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import {recordingWordProblem,allowedAudioLicense} from '../server/src/pronunciation-source.ts';
 it('keeps each recovered English recording linked to its exact evidence and intact bytes',()=>{
  const manifest=JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json',import.meta.url),'utf8'));
- const batches=[['batch-wikirecovery-1.json',18],['batch-wikirecovery-2.json',14],['batch-wikirecovery-3.json',45],['batch-wikirecovery-4.json',44],['batch-wikirecovery-5.json',42],['batch-wikirecovery-6.json',43]] as const;
+ const batches=[['batch-wikirecovery-1.json',18],['batch-wikirecovery-2.json',14],['batch-wikirecovery-3.json',45],['batch-wikirecovery-4.json',44],['batch-wikirecovery-5.json',42],['batch-wikirecovery-6.json',43],['batch-wikirecovery-7.json',46]] as const;
  for(const [file,count] of batches){
  const batch=JSON.parse(fs.readFileSync(new URL('../qa/highschool-later-audio/'+file,import.meta.url),'utf8'));
  expect(batch.added).toHaveLength(count);
