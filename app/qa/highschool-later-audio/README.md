@@ -83,3 +83,5 @@
 `batch-unit2advisor.json` 补入 expose 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。applicant 暂未找到符合条件的录音。
 
 `batch-unit2tremendous.json` 补入 surrounding 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。cost an arm and a leg、surroundings、mature、depressed、depress 暂未找到符合条件的录音。
+
+选择性必修二 Unit 2 的 boom、optimistic、competence、envoy 暂未找到符合当前来源与许可条件的录音，待继续查找。
