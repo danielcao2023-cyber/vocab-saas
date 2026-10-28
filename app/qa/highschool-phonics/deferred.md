@@ -16,3 +16,6 @@
 - `Vancouver`、`Lake Louise`、`Jasper`、`Toronto`、`Edmonton`、`Winnipeg`、`Ontario`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
 
 - `Montreal`、`Niagara Falls`、`St Lawrence River`、`Nova Scotia`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
+
+- `expansion`（选择性必修三 Unit 1）：x 的 /ks/ 横跨重音边界；当前结构无法准确同时表示字母对应与重音，待结构支持后核验。
+- `Giotto di Bondone`（选择性必修三 Unit 1）：意大利人名的音形对照需核验合适读法，暂缓发布。
