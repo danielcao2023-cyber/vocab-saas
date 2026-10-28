@@ -29,3 +29,5 @@
 `batch-15.json` 为必修一 Unit 4 补入 length 录音；词形、口音或专名读音待听辨的候选暂缓。已检查来源、许可和解码，未人工听辨。
 
 `batch-16.json` 重新查询并补入 injure、strength、destroy、brick 四份明确标记 PD-self 的录音：Commons API 的公共领域分类、作者和许可页面经核对，保留原始声明，不标为 CC0。已检查解码，未逐份人工听辨。
+
+`batch-17.json` 为高中词条补入 15 份 PD-self 或 PD-user 录音，重新核对 Commons 许可分类、作者、来源和解码；保存原始声明，不标为 CC0。读音或口音待核的 6 项暂缓，未逐份人工听辨。

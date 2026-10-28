@@ -153,3 +153,15 @@ it('preserves explicit Commons public-domain provenance for reviewed recordings'
     expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
   }
 });
+
+it('preserves PD-self and PD-user provenance for further high-school recordings', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  for (const [word, license] of [['equal', 'Public domain (PD-self)'], ['dynamic', 'Public domain (PD-self)'], ['label', 'Public domain (PD-user)']] as const) {
+    const entry = manifest.entries[word];
+    expect(entry?.author, word).toBeTruthy();
+    expect(entry?.license, word).toBe(license);
+    expect(entry?.sourceUrl, word).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+    expect(entry?.licenseUrl, word).toBe(entry?.sourceUrl + '#Licensing');
+    expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
+  }
+});

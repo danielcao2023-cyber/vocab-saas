@@ -1,3 +1,4 @@
+import {highschoolUnit4Ruins} from './highschool-unit4-ruins';
 import {highschoolUnit4Shelter} from './highschool-unit4-shelter';
 import {highschoolUnit4Rescue} from './highschool-unit4-rescue';
 import {highschoolUnit4Weather} from './highschool-unit4-weather';
@@ -28,7 +29,7 @@ import {mainHeadwords} from '../../../../server/src/text';
 import type {SoundSpellingLesson} from './types';
 
 /** Only reviewed, committed content is published; draft model files stay outside the app. */
-export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1,...highschoolUnit2Initial,...highschoolUnit2Next,...highschoolUnit2Travel,...highschoolUnit2Culture,...highschoolUnit2Economy,...highschoolUnit2Check,...highschoolUnit2History,...highschoolUnit2Places,...highschoolUnit3Initial,...highschoolUnit3Sports,...highschoolUnit3Track,...highschoolUnit3Glory,...highschoolUnit3Health,...highschoolUnit3Effort,...highschoolUnit3Usage,...highschoolUnit3Healthy,...highschoolUnit3Finish,...highschoolUnit4Weather,...highschoolUnit4Rescue,...highschoolUnit4Shelter];
+export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1,...highschoolUnit2Initial,...highschoolUnit2Next,...highschoolUnit2Travel,...highschoolUnit2Culture,...highschoolUnit2Economy,...highschoolUnit2Check,...highschoolUnit2History,...highschoolUnit2Places,...highschoolUnit3Initial,...highschoolUnit3Sports,...highschoolUnit3Track,...highschoolUnit3Glory,...highschoolUnit3Health,...highschoolUnit3Effort,...highschoolUnit3Usage,...highschoolUnit3Healthy,...highschoolUnit3Finish,...highschoolUnit4Weather,...highschoolUnit4Rescue,...highschoolUnit4Shelter,...highschoolUnit4Ruins];
 const lessonsByWord=new Map(soundSpellingLessons.map(lesson=>[lesson.headword.toLowerCase(),lesson]));
 
 export function getSoundSpellingLessons(headword:string):SoundSpellingLesson[] {
