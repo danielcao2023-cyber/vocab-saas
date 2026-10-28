@@ -14,3 +14,5 @@
 - `exceptional`（选择性必修二 Unit 3）：x 的 /ks/ 横跨重音边界，暂缓拼写对照，待结构支持后核验。
 
 - `Vancouver`、`Lake Louise`、`Jasper`、`Toronto`、`Edmonton`、`Winnipeg`、`Ontario`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
+
+- `Montreal`、`Niagara Falls`、`St Lawrence River`、`Nova Scotia`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
