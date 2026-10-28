@@ -181,3 +181,5 @@
 - 选择性必修三 Unit 4（fortunately–corporate）：recreation、guidance、advertising、advertise、corporate 暂无已确认真人录音；nephew 候选录音需试听确认 /f/ 或 /v/ 变体。
 
 - 选择性必修三 Unit 4（rough–motive）：navigator、loyal、make fire、give off、commitment 暂无已确认真人录音。
+
+- 选择性必修三 Unit 4（Confucianism–Tom Crean）：除 Antarctica 之外的 9 个名称暂无已确认真人录音；新增 Antarctica 美音录音待人工试听。
