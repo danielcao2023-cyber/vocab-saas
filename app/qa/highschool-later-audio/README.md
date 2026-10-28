@@ -249,3 +249,5 @@
 - 选择性必修四 Unit 4（drag–contract）：disabled、resign、input 暂无已确认真人录音；contract 名词和动词重音不同，候选录音待辨音；新增 tune 美式录音待人工试听。
 
 - 选择性必修四 Unit 4（grant–criteria）：take for granted、cardiac、disability、consultation、relay、relay to、criteria 暂无已确认真人录音；新增 criterion 美式录音待人工试听。
+
+- 选择性必修四 Unit 4–5（stability–bounce around）：pray that、bounce around 暂无已确认真人录音；新增 pray、Papua New Guinea、Ghana、Congo、Panama 美式录音待人工试听。
