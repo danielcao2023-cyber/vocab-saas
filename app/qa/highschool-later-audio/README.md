@@ -65,3 +65,5 @@
 `batch-essentialmissing.json` 补入 bacterium、bacteria 和 root 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-healthmissing.json` 补入 Vietnam 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。
+
+`batch-vaccinemissing.json` 补入 statistic、finding 和 vaccine 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。decrease 因词性重音待核暂缓。
