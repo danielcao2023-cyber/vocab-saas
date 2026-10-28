@@ -139,3 +139,5 @@
 `batch-sculpturebatch.json` 补入 arched、arch 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。visual、water lily 暂未找到符合条件的录音。
 
 选择性必修三 Unit 1 的 memorial、criticise、criticize、symphony 暂未找到符合当前来源与许可条件的整词录音；本批其余六个词已有录音，没有重复导入。
+
+选择性必修三 Unit 1 的 ceramic、artistic、Buddhist 暂未找到符合当前来源与许可条件的整词录音；vase 的候选录音未标明具体读音变体，暂缓接入并待听辨。其余六个词已有录音，没有重复导入。
