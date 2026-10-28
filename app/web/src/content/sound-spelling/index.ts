@@ -1,3 +1,4 @@
+import {highschoolUnit3Finish} from './highschool-unit3-finish';
 import {highschoolUnit3Healthy} from './highschool-unit3-healthy';
 import {highschoolUnit3Usage} from './highschool-unit3-usage';
 import {highschoolUnit3Effort} from './highschool-unit3-effort';
@@ -24,7 +25,7 @@ import {mainHeadwords} from '../../../../server/src/text';
 import type {SoundSpellingLesson} from './types';
 
 /** Only reviewed, committed content is published; draft model files stay outside the app. */
-export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1,...highschoolUnit2Initial,...highschoolUnit2Next,...highschoolUnit2Travel,...highschoolUnit2Culture,...highschoolUnit2Economy,...highschoolUnit2Check,...highschoolUnit2History,...highschoolUnit2Places,...highschoolUnit3Initial,...highschoolUnit3Sports,...highschoolUnit3Track,...highschoolUnit3Glory,...highschoolUnit3Health,...highschoolUnit3Effort,...highschoolUnit3Usage,...highschoolUnit3Healthy];
+export const soundSpellingLessons: readonly SoundSpellingLesson[] = [governmentSoundSpelling,...coreBatch1,...expandedA,...expandedB,...expandedC,...highschoolUnit1,...highschoolUnit2Initial,...highschoolUnit2Next,...highschoolUnit2Travel,...highschoolUnit2Culture,...highschoolUnit2Economy,...highschoolUnit2Check,...highschoolUnit2History,...highschoolUnit2Places,...highschoolUnit3Initial,...highschoolUnit3Sports,...highschoolUnit3Track,...highschoolUnit3Glory,...highschoolUnit3Health,...highschoolUnit3Effort,...highschoolUnit3Usage,...highschoolUnit3Healthy,...highschoolUnit3Finish];
 const lessonsByWord=new Map(soundSpellingLessons.map(lesson=>[lesson.headword.toLowerCase(),lesson]));
 
 export function getSoundSpellingLessons(headword:string):SoundSpellingLesson[] {
