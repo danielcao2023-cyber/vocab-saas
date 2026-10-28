@@ -189,3 +189,5 @@
 - 选择性必修三 Unit 5（diamond–amateur）：billy goat、recite、dewdrop、clover、amateur 暂无已确认真人录音；diamond 候选读音待试听，新增 brass 录音也待试听确认。
 
 - 选择性必修三 Unit 5（cinquain–blossom）：cinquain、be made up of、haiku、syllable、respectively 暂无已确认真人录音。
+
+- 选择性必修三 Unit 5（delicate–verse）：revolve、comprehension、cherry blossom、blank 暂无已确认真人录音。
