@@ -225,3 +225,5 @@
 - 选择性必修四 Unit 2（geothermal–session）：geothermal、licensed、licence、session 暂无已确认真人录音；新增 temporary、license 美式录音待人工试听。
 
 - 选择性必修四 Unit 2（frequency–prison）：frequency、hatch、a handful of 暂无已确认真人录音。
+
+- 选择性必修四 Unit 2（grand–Tasmanian devil）：Aborigine、Sydney、Bondi Beach、Chiang Mai、the Bay of Islands、the haka、Edmonds、Felicity、Tasmanian devil 暂无已确认真人录音。
