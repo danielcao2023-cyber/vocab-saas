@@ -159,3 +159,5 @@
 `batch-refreshbatch.json` 补入 graph 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。absorb 候选录音未标明 /s/ 或 /z/ 变体，待听辨；Aristotle、People's Liberation Army、PLA、Lao Zi 暂未找到符合条件的整词录音。
 
 选择性必修三 Unit 3 的 ecology、carbon、dioxide、carbon dioxide、habitable 暂未找到符合当前来源与许可条件的整词录音；methane 的候选录音需确认英美读音变体后再接入。
+
+- 选择性必修三 Unit 3（sustain–broadcast）：sustainable、fossil fuel、trend 暂无已确认录音；fuel 和 broadcast 新增录音需人工试听确认。
