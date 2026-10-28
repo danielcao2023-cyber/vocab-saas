@@ -78,7 +78,10 @@ function descriptionContradictsFilename(title: string, description: string): boo
   if (!filenameWord || !describedWord) return false;
   // Unknown scripts or unusual markup require separate review rather than a lossy comparison.
   if (!/^[a-z0-9 ._'-]+$/i.test(filenameWord) || !/^[a-z0-9 ._'-]+$/i.test(describedWord)) return true;
-  return comparableWord(filenameWord) !== comparableWord(describedWord);
+  const filename = comparableWord(filenameWord), described = comparableWord(describedWord);
+  // A numbered Commons version is not part of the spoken word; only accept it
+  // when the explicit description still exactly matches the unnumbered stem.
+  return filename !== described && filename.replace(/ [0-9]+$/, '') !== described;
 }
 
 export function commonsIdentity(value: string): string | undefined {

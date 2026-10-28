@@ -139,6 +139,28 @@ describe('pronunciation provenance', () => {
     expect(parseCommonsRecording(page)).toBeUndefined();
   });
 
+  it('accepts a numbered recording only when the described word matches the filename stem', () => {
+    const page = { pageid: 42, title: 'File:En-us-emotion 2.ogg', categories: [{title:'Category:PD-self'}], videoinfo: [{
+      descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-emotion_2.ogg',
+      extmetadata: { Artist:{value:'Dvortygirl'}, LicenseShortName:{value:'Public domain'}, ImageDescription:{value:"Pronunciation of the word 'emotion' in US English"} },
+      derivatives:[{src:'https://upload.wikimedia.org/wikipedia/commons/a/a1/emotion.mp3',type:'audio/mpeg'}],
+    }] };
+    expect(parseCommonsRecording(page)).toMatchObject({title:page.title});
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'motion' in US English";
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
+  it('requires exact independent evidence for a numbered recording', async () => {
+    const numbered: CommonsRecording = {...record, title:'File:En-us-emotion 2.ogg',
+      sourceUrl:'https://commons.wikimedia.org/wiki/File:En-us-emotion_2.ogg', description:"Pronunciation of the word 'emotion' in US English"};
+    const cached = new Map<string, CommonsRecording>(); indexCommonsRecording(cached, numbered);
+    const options = {provider:'wikimedia-commons' as const, metadata:cached, sourceUrl:numbered.sourceUrl};
+    expect(await resolvePronunciationSource('emotion', options)).toMatchObject({status:'unknown'});
+    expect(await resolvePronunciationSource('emotion', {...options,evidenceUrl:'https://en.wiktionary.org/wiki/emotion#English'})).toMatchObject({status:'resolved',source:{word:'emotion'}});
+    const conflict = new Map<string, CommonsRecording>(); indexCommonsRecording(conflict, {...numbered,description:"Pronunciation of the word 'motion'"});
+    expect(await resolvePronunciationSource('emotion', {...options,metadata:conflict,evidenceUrl:'https://en.wiktionary.org/wiki/emotion#English'})).toMatchObject({status:'unknown'});
+  });
+
   it('does not reuse cached metadata that explicitly describes another word', async () => {
     const conflicting = { ...record, description: "Pronunciation of the word 'associate'" };
     const cached = new Map();
