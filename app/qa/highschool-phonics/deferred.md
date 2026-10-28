@@ -27,3 +27,5 @@
 - 选择性必修三 Unit 4：Hurricane Katrina 专有名称需核验完整读音后补对照；turn sb. down 含占位符，需按实际替换词处理。
 
 - 选择性必修三 Unit 4：Ernest Shackleton、Perce Blackborow、the Antarctic、South Georgia Island、Frank Wild、Thomas Orde-Lees、Frank Worsley、Tom Crean 的完整名称读音与对照待核验。
+
+- 选择性必修三 Unit 4：Hubert Hudson、Lionel Greenstreet 的完整姓名读音及拼写对照待核验。

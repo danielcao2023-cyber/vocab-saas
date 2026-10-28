@@ -183,3 +183,5 @@
 - 选择性必修三 Unit 4（rough–motive）：navigator、loyal、make fire、give off、commitment 暂无已确认真人录音。
 
 - 选择性必修三 Unit 4（Confucianism–Tom Crean）：除 Antarctica 之外的 9 个名称暂无已确认真人录音；新增 Antarctica 美音录音待人工试听。
+
+- 选择性必修三 Unit 4–5（Hubert Hudson–mockingbird）：Hubert Hudson、Lionel Greenstreet、nursery、nursery rhyme、mockingbird 暂无已确认真人录音；新增 literary 录音待人工试听。
