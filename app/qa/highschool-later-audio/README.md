@@ -221,3 +221,5 @@
 - 选择性必修四 Unit 2（getaway–liberty）：getaway、dive、dived、dove、kayaking、peak season、sponsor 暂无已确认真人录音；dove 为同形异音词，需区分鸽子 /dʌv/ 和 dive 的美式过去式 /doʊv/。
 
 - 选择性必修四 Unit 2（golf–a flock of）：sample、kiwi、geyser、sulphuric pool、manuka honey、bungee jumping、a flock of 暂无已确认真人录音；新增 strait 美式录音待人工试听。
+
+- 选择性必修四 Unit 2（geothermal–session）：geothermal、licensed、licence、session 暂无已确认真人录音；新增 temporary、license 美式录音待人工试听。
