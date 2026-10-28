@@ -5,6 +5,7 @@ export type SoundSpellingLesson = {
   letters: string;
   sound: string;
   stress: 'primary' | 'secondary' | 'none';
+  crossesStressBoundary?: boolean;
   hint: string;
   pairs: {letters: string; sound: string}[];
   tip: string;
