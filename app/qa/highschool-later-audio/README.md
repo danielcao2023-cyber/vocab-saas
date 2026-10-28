@@ -87,3 +87,5 @@
 选择性必修二 Unit 2 的 boom、optimistic、competence、envoy 暂未找到符合当前来源与许可条件的录音，待继续查找。
 
 选择性必修二 Unit 2 的 side with、as far as I know、as far as I am concerned、in summary、generally speaking、outcome 暂未找到符合当前来源与许可条件的录音，待继续查找。
+
+选择性必修二 Unit 2 的 Rome、Aisha、the Belt and Road Initiative 及 Unit 3 的 cuisine、prior to、consist、consist of 暂未找到符合当前来源与许可条件的录音，待继续查找；Aisha 的读音可能因语言和地区而异。
