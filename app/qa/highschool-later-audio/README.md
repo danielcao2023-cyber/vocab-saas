@@ -47,3 +47,5 @@
 `batch-wandermissing.json` 补入 swing、swung、iron、upside down 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-interactionmissing.json` 补入 Sweden、Siberian、by contrast 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。entertainment 的候选描述不足，暂缓核实。
+
+`batch-gesturemissing.json` 补入 favour 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。
