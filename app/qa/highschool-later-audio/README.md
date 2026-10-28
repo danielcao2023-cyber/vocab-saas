@@ -269,3 +269,5 @@
 `batch-wikirecovery-1.json` 补入 18 份高中词条录音：英语 Wiktionary 明确关联至 Lingua Libre 英语词条录音，逐项核对 Commons 文件、作者、许可、MP3 解码和哈希。口音尚未独立确认，标记为英语录音；尚未逐条人工试听。
 
 `batch-wikirecovery-2.json` 补入 14 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
+
+`batch-wikirecovery-3.json` 补入 45 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
