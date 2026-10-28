@@ -263,3 +263,5 @@
 - 选择性必修四 Unit 5（handwriting–sewn）：handwriting、parking、sewed、sewn 暂无已确认真人录音；新增 purse 美式录音待人工试听。
 
 - 选择性必修四 Unit 5（knit–receipt）：knit、intermediate、priority、proficiency、flea collar、finance 暂无已确认真人录音；新增 receipt 美式录音待人工试听。
+
+- 选择性必修四 Unit 5（certificate–Public English Test System）：certificate、employer、Marie Curie、The Communist Manifesto、Olivia、PETS、Public English Test System 暂无已确认真人录音。
