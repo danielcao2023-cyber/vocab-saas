@@ -239,3 +239,5 @@
 - 选择性必修四 Unit 3（murder–Ceylon）：opponent、Log、Marco Polo、Columbus、Ceylon 暂无已确认真人录音。
 
 - 选择性必修四 Unit 3–4（Churchill–dust）：Churchill、Ferdinand Magellan、Zac Sunderland、Robin Lee Graham 暂无已确认真人录音；新增 secondary 美式录音待人工试听。
+
+- 选择性必修四 Unit 4（dusty–bubble）：a chorus of、not to mention、tablet、washroom 暂无已确认真人录音；新增 rubber 美式录音待人工试听。
