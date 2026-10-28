@@ -99,3 +99,5 @@
 选择性必修二 Unit 3 的 canteen、cafeteria、bun、chilli、red braised pork、pearl、regardless 暂未找到符合当前来源与许可条件的录音，待继续查找。
 
 `batch-unit3quantity.json` 补入 vitamin、dairy 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。regardless of、fibre、moderation 暂未找到符合条件的录音。
+
+选择性必修二 Unit 3 的 Kazak 及 Unit 4 的 airline 暂未找到符合当前来源与许可条件的录音，待继续查找。
