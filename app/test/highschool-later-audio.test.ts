@@ -141,3 +141,15 @@ it('provides a documented recording for Unit 4 length', () => {
   expect(entry?.licenseUrl).toMatch(/^https:\/\/creativecommons\.org\//);
   expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url))).toBe(true);
 });
+
+it('preserves explicit Commons public-domain provenance for reviewed recordings', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  for (const word of ['injure', 'strength', 'destroy', 'brick']) {
+    const entry = manifest.entries[word];
+    expect(entry?.author, word).toBeTruthy();
+    expect(entry?.license, word).toBe('Public domain (PD-self)');
+    expect(entry?.sourceUrl, word).toMatch(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:/);
+    expect(entry?.licenseUrl, word).toBe(entry?.sourceUrl + '#Licensing');
+    expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
+  }
+});
