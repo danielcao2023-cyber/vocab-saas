@@ -145,3 +145,5 @@
 选择性必修三 Unit 1 的 Buddhism、bring ... to life、contemporary、be worthy of、The Middle Ages、Giotto di Bondone、the Renaissance 暂未找到符合当前来源与许可条件的整词录音；其余三个词已有录音，没有重复导入。
 
 选择性必修三 Unit 1 的 Masaccio、Leonardo da Vinci、Michelangelo、Raphael、Rembrandt、Impressionism、Claude Monet、Renoir、Picasso、Cubism 暂未找到符合当前来源与许可条件的整词录音，待继续查找。
+
+选择性必修三 Unit 1 的 Giverny、Tadpoles Searching for Mother、The Cowboy's Flute、Feeling from Mountain and Water、Clearing After Snow on a Mountain Pass，以及 Unit 2 的 abuse、dominate 暂未找到符合当前来源与许可条件的整词录音；abuse 有名词和动词读音差别，候选录音需标明词性。tobacco、alcohol、physical 已有录音。
