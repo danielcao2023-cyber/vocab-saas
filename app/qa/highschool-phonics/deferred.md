@@ -21,3 +21,5 @@
 - `People's Liberation Army`、`PLA`、`Lao Zi`（选择性必修三 Unit 2）：专有名称或缩写的整词音形对照尚待核验，不使用未经确认的切分。
 
 - 选择性必修三 Unit 3：fossil fuel 短语重音和英美变读需进一步核验后补对照。
+
+- 选择性必修三 Unit 3：Svalbard 英文地名存在多种读音，待核验后补发音拼写对照。

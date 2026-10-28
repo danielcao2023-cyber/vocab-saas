@@ -167,3 +167,5 @@
 - 选择性必修三 Unit 3（implement–nuclear）：implement 录音须先确认词性；harmonious、moderate、on behalf、on behalf of 暂无已确认真人录音。新增 nuclear 英音录音需人工试听确认。
 
 - 选择性必修三 Unit 3（sensitive–dozen）：smog、conservation 暂无已确认真人录音。
+
+- 选择性必修三 Unit 3（dozens of–Svalbard）：dozens of、regulation、disposal、waterway、Svalbard 暂无已确认真人录音；新增 Norway 录音待人工试听。
