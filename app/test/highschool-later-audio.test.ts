@@ -132,3 +132,12 @@ it('provides documented complete phrase recordings for Unit 3', () => {
     expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url)), word).toBe(true);
   }
 });
+
+it('provides a documented recording for Unit 4 length', () => {
+  const manifest = JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json', import.meta.url), 'utf8'));
+  const entry = manifest.entries.length;
+  expect(entry?.author).toBeTruthy();
+  expect(entry?.sourceUrl).toMatch(/^https:\/\/commons\.wikimedia\.org\//);
+  expect(entry?.licenseUrl).toMatch(/^https:\/\/creativecommons\.org\//);
+  expect(fs.existsSync(new URL('../data/pronunciation/' + entry.file, import.meta.url))).toBe(true);
+});
