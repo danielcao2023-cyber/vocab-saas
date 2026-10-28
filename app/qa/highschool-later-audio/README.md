@@ -95,3 +95,5 @@
 `batch-unit3vegetarian.json` 补入 garlic 的英式录音，已核对来源、许可、哈希和解码；尚未人工听辨。temper、vegetarian、junk、junk food、bacon 暂未找到符合条件的录音。
 
 `batch-unit3ingredient.json` 补入 dessert、dough 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。bean curd、ingredient、stable、haggis 暂未找到符合条件的录音。
+
+选择性必修二 Unit 3 的 canteen、cafeteria、bun、chilli、red braised pork、pearl、regardless 暂未找到符合当前来源与许可条件的录音，待继续查找。
