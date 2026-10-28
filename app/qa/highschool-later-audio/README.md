@@ -121,3 +121,5 @@
 `batch-unit5paramedic.json` 补入 loose 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。blister、paramedic、wrap 暂未找到符合条件的录音。
 
 `batch-unit5ambulance.json` 补入 bathe 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。bathtub、operator 暂未找到符合条件的录音。
+
+`batch-unit5panic.json` 补入 bleeding、interrupt、scream 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。IV needle、sprain 暂未找到符合条件的录音。
