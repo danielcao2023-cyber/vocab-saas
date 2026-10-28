@@ -53,3 +53,5 @@
 `batch-assessmissing.json` 补入 slightly 和 twin 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
 
 `batch-clarifymissing.json` 补入 bent 和 in other words 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
+
+`batch-perceivemissing.json` 补入 anxiety、at work 和 inquire 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。
