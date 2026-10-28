@@ -125,3 +125,5 @@
 `batch-unit5panic.json` 补入 bleeding、interrupt、scream 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。IV needle、sprain 暂未找到符合条件的录音。
 
 `batch-dinerbatch.json` 补入 steak、fist 的美式录音，已核对来源、许可、哈希和解码；尚未逐条人工听辨。diner、choke、slap、help sb. to one's feet、obstruction 暂未找到符合条件的录音。
+
+`batch-motionbatch.json` 补入 manual 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。tightly、face up、face down、welfare、sleep in 暂未找到符合条件的录音。
