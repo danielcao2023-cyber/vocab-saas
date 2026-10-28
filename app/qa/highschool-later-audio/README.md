@@ -179,3 +179,5 @@
 - 选择性必修三 Unit 4（genuine–unfortunately）：perseverance、persevere 暂无已确认真人录音；thorough 候选录音需试听以确认英美变体。
 
 - 选择性必修三 Unit 4（fortunately–corporate）：recreation、guidance、advertising、advertise、corporate 暂无已确认真人录音；nephew 候选录音需试听确认 /f/ 或 /v/ 变体。
+
+- 选择性必修三 Unit 4（rough–motive）：navigator、loyal、make fire、give off、commitment 暂无已确认真人录音。
