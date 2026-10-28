@@ -17,3 +17,5 @@
 - `Masaccio`、`Leonardo da Vinci`、`Michelangelo`、`Raphael`、`Rembrandt`、`Claude Monet`、`Renoir`、`Picasso`（选择性必修三 Unit 1）：人名涉及不同语言和读法，音形对照需进一步核验，暂不发布未经确认的映射。
 
 - `Giverny` 和作品名称 `Tadpoles Searching for Mother`、`The Cowboy's Flute`、`Feeling from Mountain and Water`、`Clearing After Snow on a Mountain Pass`（选择性必修三 Unit 1）：地名或长作品名称尚需核验可靠读法及分词对照，暂缓发布。
+
+- `People's Liberation Army`、`PLA`、`Lao Zi`（选择性必修三 Unit 2）：专有名称或缩写的整词音形对照尚待核验，不使用未经确认的切分。
