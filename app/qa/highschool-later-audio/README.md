@@ -157,3 +157,5 @@
 选择性必修三 Unit 2 的 sugary、stressed out、worn out、bowling 暂未找到符合当前来源与许可条件的整词录音；本批其余六个词已有录音，没有重复导入。
 
 `batch-refreshbatch.json` 补入 graph 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。absorb 候选录音未标明 /s/ 或 /z/ 变体，待听辨；Aristotle、People's Liberation Army、PLA、Lao Zi 暂未找到符合条件的整词录音。
+
+选择性必修三 Unit 3 的 ecology、carbon、dioxide、carbon dioxide、habitable 暂未找到符合当前来源与许可条件的整词录音；methane 的候选录音需确认英美读音变体后再接入。
