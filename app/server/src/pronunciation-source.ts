@@ -70,6 +70,16 @@ export function allowedAudioLicense(url: unknown): url is string {
 }
 const normalizedLicense = (url: string) => url.replace(/^http:/, 'https:').replace(/\/deed\.[a-zA-Z-]+\/?$/, '').replace(/\/$/, '');
 const normalizedFileTitle = (title: string) => title.replace(/_/g, ' ').replace(/^File:(.)/u, (_all, letter: string) => `File:${letter.toUpperCase()}`);
+function descriptionContradictsFilename(title: string, description: string): boolean {
+  const filenameWord = normalizedFileTitle(title).match(/^File:En-(?:us|uk)-(.+)\.(?:ogg|oga|wav|mp3)$/i)?.[1];
+  const describedWord = description.match(/pronunciation of (?:the (?:english )?(?:word|term) )?["'“‘]([^"'”’]+)["'”’]/i)?.[1]
+    ?? description.match(/pronunciation of the (?:english )?(?:word|term) ([a-z][a-z'-]*)(?=$|[.,;(:]|\s+(?:in|by|recorded)\b)/i)?.[1];
+  const comparableWord = (value: string) => value.toLowerCase().trim().replace(/[_ ]+/g, ' ');
+  if (!filenameWord || !describedWord) return false;
+  // Unknown scripts or unusual markup require separate review rather than a lossy comparison.
+  if (!/^[a-z0-9 ._'-]+$/i.test(filenameWord) || !/^[a-z0-9 ._'-]+$/i.test(describedWord)) return true;
+  return comparableWord(filenameWord) !== comparableWord(describedWord);
+}
 
 export function commonsIdentity(value: string): string | undefined {
   try {
@@ -119,6 +129,9 @@ export function parseCommonsRecording(page: any): CommonsRecording | undefined {
   let license = plain(m?.LicenseShortName?.value);
   let licenseUrl = m?.LicenseUrl?.value;
   const description = plain(m?.ImageDescription?.value);
+  // Some Commons files have a plausible filename but explicitly describe a different
+  // spoken word. Treat that contradiction as unknown instead of trusting the filename.
+  if (typeof page?.title === 'string' && descriptionContradictsFilename(page.title, description)) return;
   const pdTemplate = license === 'Public domain' && page?.categories?.find((category: any) => ['Category:PD-self', 'Category:PD-user'].includes(category.title))?.title?.slice(9);
   if (pdTemplate && commonsIdentity(info?.descriptionurl ?? '')) {
     license = `Public domain (${pdTemplate})`;
@@ -229,6 +242,7 @@ function attachAliases(records: CommonsRecording[], redirects: { from: string; t
 }
 
 function sourceFromRecord(word: string, record: CommonsRecording, options: SourceOptions): PronunciationSource | undefined {
+  if (descriptionContradictsFilename(record.title, record.description)) return;
   if (!record.audioUrl || !validAudioUrl(record.audioUrl, 'wikimedia-commons') || !record.author.trim() || /no machine-readable author|assumed/i.test(record.author)) return;
   const accent = options.accent ?? (/^File:En-us-/i.test(record.title) ? 'us' : /^File:En-uk-/i.test(record.title) ? 'uk' : 'unknown');
   return { word, accent, audioUrl: record.audioUrl, sourceUrl: record.sourceUrl, author: record.author,
@@ -296,7 +310,7 @@ export async function resolvePronunciationSource(word: string, options: SourceOp
     candidates.sort((a, b) => Number(!/-us\.mp3$/.test(a.audio)) - Number(!/-us\.mp3$/.test(b.audio)));
     for (const p of candidates) {
       const record = await commonsRecord(p.sourceUrl, options);
-      if (!record || !record.author.trim() || /no machine-readable author|assumed/i.test(record.author) || recordingWordProblem(word, record.title) || normalizedLicense(p.license.url) !== normalizedLicense(record.licenseUrl)) continue;
+      if (!record || !record.author.trim() || /no machine-readable author|assumed/i.test(record.author) || descriptionContradictsFilename(record.title, record.description) || recordingWordProblem(word, record.title) || normalizedLicense(p.license.url) !== normalizedLicense(record.licenseUrl)) continue;
       const accent = /-us\.mp3$/.test(p.audio) ? 'us' : /-uk\.mp3$/.test(p.audio) ? 'uk' : 'unknown';
       return { status: 'resolved', source: { word, accent, audioUrl: p.audio, sourceUrl: record.sourceUrl,
         author: record.author, license: record.license, licenseUrl: record.licenseUrl, provider: 'free-dictionary' } };

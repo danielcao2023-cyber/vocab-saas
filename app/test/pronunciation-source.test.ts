@@ -115,6 +115,46 @@ describe('pronunciation provenance', () => {
     expect(parseCommonsRecording(page)).toBeUndefined();
   });
 
+  it('rejects a Commons filename whose explicit spoken-word description contradicts it', () => {
+    const page = { pageid: 1, title: 'File:En-us-temper.ogg', videoinfo: [{
+      descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-temper.ogg',
+      extmetadata: { Artist: { value: 'Example speaker' }, LicenseShortName: { value: 'CC BY-SA 3.0' },
+        LicenseUrl: { value: 'https://creativecommons.org/licenses/by-sa/3.0' },
+        ImageDescription: { value: "Pronunciation of the word 'associate' (noun/adjective)" } },
+      derivatives: [{ src: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/En-us-temper.mp3', type: 'audio/mpeg' }],
+    }] };
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Audio pronunciation of the term 'associate'";
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word associate.';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the term associate in US English';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the term in US English';
+    expect(parseCommonsRecording(page)).toMatchObject({ title: page.title });
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'temper'";
+    expect(parseCommonsRecording(page)).toMatchObject({ title: page.title });
+    page.title = "File:En-us-re-sign.ogg";
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'resign'";
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
+  it('does not reuse cached metadata that explicitly describes another word', async () => {
+    const conflicting = { ...record, description: "Pronunciation of the word 'associate'" };
+    const cached = new Map();
+    indexCommonsRecording(cached, conflicting);
+    expect(await resolvePronunciationSource('apple', { provider: 'wikimedia-commons', metadata: cached,
+      fetch: vi.fn<typeof globalThis.fetch>().mockResolvedValue(response({ query: { pages: [] } })) }))
+      .toMatchObject({ status: 'unknown' });
+  });
+
+  it('rejects conflicting cached Commons metadata in the dictionary audio path', async () => {
+    const cached = new Map<string, CommonsRecording>();
+    indexCommonsRecording(cached, { ...record, description: "Pronunciation of the term 'associate'" });
+    expect(await resolvePronunciationSource('apple', { fetch: fakeFetch([{ word: 'apple', phonetics: [phonetic] }]),
+      metadata: cached, lookupCommons: false })).toMatchObject({ status: 'unknown' });
+  });
+
   it('accepts an explicit PD-self file without pretending it has a CC0 license', () => {
     const page = { pageid: 42, title: 'File:En-us-afford.ogg', categories: [{ title: 'Category:PD-self' }], videoinfo: [{
       descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-afford.ogg',
@@ -168,7 +208,7 @@ describe('pronunciation provenance', () => {
         ImageDescription: { value: '<a href="/wiki/User:Muke">Muke Tever</a>\'s pronunciation of Chinese in general American English.' } },
     }] };
     expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever', license: 'Public domain (PD-self)' });
-    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word <b>surprise</b> by <a>Muke Tever</a>';
+    page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word <b>Chinese</b> by <a>Muke Tever</a>';
     expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever' });
     page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation uploaded by <a>Someone</a>';
     expect(parseCommonsRecording(page)).toBeUndefined();
