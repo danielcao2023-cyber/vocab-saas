@@ -237,3 +237,5 @@
 - 选择性必修四 Unit 3（manned–gallon）：manned、submersible、underwater、capsule、coral、migration、directory、meanwhile 暂无已确认真人录音；exploit 为名动词重音不同的同形异音词，候选录音须先核验词性和读音。
 
 - 选择性必修四 Unit 3（murder–Ceylon）：opponent、Log、Marco Polo、Columbus、Ceylon 暂无已确认真人录音。
+
+- 选择性必修四 Unit 3–4（Churchill–dust）：Churchill、Ferdinand Magellan、Zac Sunderland、Robin Lee Graham 暂无已确认真人录音；新增 secondary 美式录音待人工试听。
