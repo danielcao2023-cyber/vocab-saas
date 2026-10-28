@@ -275,3 +275,5 @@
 `batch-wikirecovery-4.json` 补入 44 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
 
 `batch-wikirecovery-5.json` 补入 42 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
+
+`batch-wikirecovery-6.json` 补入 43 份高中词条录音，通过英语 Wiktionary 词条关联核对 Commons 文件、作者、许可、解码和哈希；口音暂未独立确认，尚未逐条人工试听。
