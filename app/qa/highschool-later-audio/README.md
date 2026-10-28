@@ -39,3 +39,5 @@
 `batch-unit2missing.json` 补入 wire 的美式真人录音：来源声明为 PD-self，已核对来源、许可、哈希与解码；尚未人工听辨。early on、potentially、wiring、detect 的精确候选暂未找到，继续待补。
 
 `batch-predictmissing.json` 补入 deceased 美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。artificial intelligence、prediction、rural、advocate 的精确候选暂未找到或仍需核实。
+
+`batch-careermissing.json` 补入 luxury 美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。prospect、essay 存在词性读音差异，暂缓候选。
