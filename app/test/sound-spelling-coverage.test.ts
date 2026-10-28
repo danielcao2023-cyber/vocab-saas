@@ -13,7 +13,7 @@ it('opens spelling maps for annotated and mixed curriculum headwords',()=>{
 it('covers all 813 audited multisyllabic entries, including each mixed multisyllabic form',()=>{
  const catalog=JSON.parse(readFileSync(new URL('../qa/sound-spelling/multisyllabic-coverage.json',import.meta.url),'utf8'));
  expect(catalog.entries).toHaveLength(813);
- expect(soundSpellingLessons).toHaveLength(819+42+6+5+10+9+6+6+4+4+3+3+3+1+4+5+1+3+1+6+5+6+4+5+6+5+3+6+4+5+5+4+3+6+3+6+5+4+6+5+2+5+5+5+7+10+8+6+8+8+10+6+8+7+7+6+8+7+6+7+7+6+7+6+5+9+10+5+5+5+9+7+6+3+12+3+6+6+8+7+6+5+3+6+3+2+6+6+8+5+6+6+3+4+4+1+9+8+4+6+8+5+4+9+6+8+3+7+6+7+6+3+4+6+9+8+10+5+16+10+15+8+5+9+10+9+8+10+9+8+8+8+11+9+9+9+10+13+12+10+12+11+10+7+12+7+6+9+3+9+5+7+6+7+8+5+4+3+6+6+7+8+6+7+3+9+6+5+1+4+7+6+8+5+4+6+5+8+9+7+6+8+8+5+2+5+6+9+6+5+9+6+7+8+9+8);
+ expect(soundSpellingLessons).toHaveLength(819+42+6+5+10+9+6+6+4+4+3+3+3+1+4+5+1+3+1+6+5+6+4+5+6+5+3+6+4+5+5+4+3+6+3+6+5+4+6+5+2+5+5+5+7+10+8+6+8+8+10+6+8+7+7+6+8+7+6+7+7+6+7+6+5+9+10+5+5+5+9+7+6+3+12+3+6+6+8+7+6+5+3+6+3+2+6+6+8+5+6+6+3+4+4+1+9+8+4+6+8+5+4+9+6+8+3+7+6+7+6+3+4+6+9+8+10+5+16+10+15+8+5+9+10+9+8+10+9+8+8+8+11+9+9+9+10+13+12+10+12+11+10+7+12+7+6+9+3+9+5+7+6+7+8+5+4+3+6+6+7+8+6+7+3+9+6+5+1+4+7+6+8+5+4+6+5+8+9+7+6+8+8+5+2+5+6+9+6+5+9+6+7+8+9+8+9);
  for(const entry of catalog.entries){
   expect(getSoundSpellingLesson(entry.headword),entry.headword).toBeDefined();
   for(const form of entry.forms)expect(getSoundSpellingLesson(form),form).toBeDefined();
