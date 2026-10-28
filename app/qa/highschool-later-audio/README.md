@@ -241,3 +241,5 @@
 - 选择性必修四 Unit 3–4（Churchill–dust）：Churchill、Ferdinand Magellan、Zac Sunderland、Robin Lee Graham 暂无已确认真人录音；新增 secondary 美式录音待人工试听。
 
 - 选择性必修四 Unit 4（dusty–bubble）：a chorus of、not to mention、tablet、washroom 暂无已确认真人录音；新增 rubber 美式录音待人工试听。
+
+- 选择性必修四 Unit 4（tube–platform）：housing 暂无已确认真人录音；forehead 存在读音变体，候选录音待人工辨音；新增 tube 英式及 chemist 美式录音待人工试听。
