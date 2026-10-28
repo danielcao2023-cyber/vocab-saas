@@ -207,3 +207,5 @@
 - 选择性必修四 Unit 1（venue–conflict with）：venue、salesman、pros and cons、blurred、superior to、take over、inaction、conflict with 暂无已确认真人录音。
 
 - 选择性必修四 Unit 1（labour–niece）：labour、lever、backwards、backward、hazy 暂无已确认真人录音。
+
+- 选择性必修四 Unit 1（fetch–random）：turn out、fall away、puff、have an urge to 暂无已确认真人录音；handkerchief 候选音频需试听确认结尾变体。
