@@ -71,3 +71,5 @@
 `batch-unit1aviation.json` 补入 missile 的美式录音，已核对来源、许可、哈希和解码；尚未人工听辨。break out、aviation、jet、in charge of、leadership 暂未找到符合条件的录音。
 
 选择性必修二 Unit 1 的 gifted、come down、abstract、concept 暂未找到符合当前来源与许可条件的录音，待后续继续查找；abstract 存在词性相关的重音变体。
+
+`batch-unit1science.json` 补入 Cambridge 的英式录音，已核对来源、许可、哈希和解码；尚未人工听辨。above all、shift、Queen Victoria、non-Newtonian fluid、the Jet Propulsion Laboratory、Stephen Hawking、the big bang theory、Fred Hoyle 暂未找到符合条件的录音。
