@@ -209,3 +209,5 @@
 - 选择性必修四 Unit 1（labour–niece）：labour、lever、backwards、backward、hazy 暂无已确认真人录音。
 
 - 选择性必修四 Unit 1（fetch–random）：turn out、fall away、puff、have an urge to 暂无已确认真人录音；handkerchief 候选音频需试听确认结尾变体。
+
+- 选择性必修四 Unit 1（maximum–Claire）：explode、stun、Isaac Asimov、Larry Belmont、Claire 暂无已确认真人录音；新增 maximum 英式录音待人工试听。
