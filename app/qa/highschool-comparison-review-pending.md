@@ -43,3 +43,5 @@
 后续核验：1856–1885；逐项依据见 `highschool-comparison-audits/batch-1856-1870.json`、`batch-1871-1885.json`，仅覆盖对比义项和例句。
 
 后续核验：1886–1915，逐项依据见 `highschool-comparison-audits/batch-1886-1900.json`、`batch-1901-1915.json`；仅覆盖对比义项和例句。
+
+后续核验：1916–1945，逐项依据见 `highschool-comparison-audits/batch-1916-1930.json`、`batch-1931-1945.json`；仅覆盖对比义项及例句。
