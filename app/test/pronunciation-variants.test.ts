@@ -15,7 +15,7 @@ it('keeps default playback and serves independently verified noun and verb varia
     fs.writeFileSync(path.join(directory, `${name}.mp3`), data);
     return { word: 'estimate', accent: 'us', file: `${name}.mp3`, sha256: createHash('sha256').update(data).digest('hex'), author: name, sourceUrl: `https://example.org/${name}`, license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/' };
   };
-  const entry = {...make('default'), variants: {noun: make('noun'), verb: make('verb')}};
+  const entry = {...make('default'), ipa:'/boʊ/', variants: {noun: {...make('noun'), label:'弓、蝴蝶结'}, verb: make('verb')}};
   Object.assign(entry.variants.noun, {ipa: '/ˈestɪmət/', pronunciationNote: '加拿大口音'});
   const save = () => fs.writeFileSync(path.join(directory, 'manifest.json'), JSON.stringify({version: 1, entries: { estimate: entry }}));
   save();
@@ -28,8 +28,9 @@ it('keeps default playback and serves independently verified noun and verb varia
       const meta = (await app.inject(`/api/pronunciation?word=estimate${suffix}`)).json();
       expect(meta).toMatchObject({status:'ready', author:data});
     }
+    expect((await app.inject('/api/pronunciation?word=estimate')).json().ipa).toBe('/boʊ/');
     expect((await app.inject('/api/pronunciation?word=estimate')).json().variants).toEqual([
-      {variant:'noun',label:'名词',ipa:'/ˈestɪmət/',pronunciationNote:'加拿大口音'}, {variant:'verb',label:'动词'}
+      {variant:'noun',label:'弓、蝴蝶结',ipa:'/ˈestɪmət/',pronunciationNote:'加拿大口音'}, {variant:'verb',label:'动词'}
     ]);
     const credits = (await app.inject('/api/pronunciation/credits?word=estimate')).body;
     expect(credits).toContain('noun');
@@ -41,6 +42,7 @@ it('keeps default playback and serves independently verified noun and verb varia
     entry.variants.noun.sha256 = '0'.repeat(64); save();
     expect((await app.inject('/api/pronunciation?word=estimate&variant=noun')).json()).toMatchObject({status:'missing'});
     expect((await app.inject('/api/pronunciation/audio?word=estimate&variant=noun')).statusCode).toBe(404);
+    expect((await app.inject('/api/pronunciation?word=estimate')).json().ipa).toBe('/boʊ/');
     expect((await app.inject('/api/pronunciation?word=estimate')).json().variants).toEqual([{variant:'verb',label:'动词'}]);
     expect((await app.inject('/api/pronunciation/audio?word=estimate&variant=verb')).body).toBe('ID3-verb');
     entry.variants.verb.licenseUrl = 'javascript:alert(1)'; save();

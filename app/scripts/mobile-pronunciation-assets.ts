@@ -19,7 +19,7 @@ export function packPronunciations(manifest:any,source:string,destination:string
  if(manifest?.version!==1||!manifest.entries||typeof manifest.entries!=='object')return {recordings,credits:''};
  for(const [word,raw] of Object.entries(manifest.entries)){
   const r=raw as any,base=pack(word,r,''),variants:Record<string,any>={};
-  for(const variant of ['noun','verb'] as const){const v=pack(word,r?.variants?.[variant],variant==='noun'?'名词':'动词');if(v)variants[variant]=v;}
+  for(const variant of ['noun','verb'] as const){const v=pack(word,r?.variants?.[variant],typeof r?.variants?.[variant]?.label==='string'&&r.variants[variant].label.trim()?r.variants[variant].label.trim():variant==='noun'?'名词':'动词');if(v)variants[variant]=v;}
   if(base||Object.keys(variants).length)recordings[word]={...(base??{word}),...(Object.keys(variants).length?{variants}:{})};
  }
  return {recordings,credits:rows.join('')};

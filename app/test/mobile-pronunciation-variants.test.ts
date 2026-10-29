@@ -4,8 +4,8 @@ import {openBrowserDatabase} from '../web/src/offline/sqlite';
 import {createLocalRuntime} from '../web/src/offline/runtime';
 import {bundledAudio,setMobileRecordings} from '../web/src/offline/mobile-mode';
 
-const base={word:'word1',file:'/offline/recordings/default.mp3',accent:'us',sourceUrl:'https://example.com/default',author:'A',license:'CC BY',licenseUrl:'https://example.com/license'};
-const noun={...base,file:'/offline/recordings/noun.mp3',sourceUrl:'https://example.com/noun',author:'N'};
+const base={ipa:'/boʊ/',word:'word1',file:'/offline/recordings/default.mp3',accent:'us',sourceUrl:'https://example.com/default',author:'A',license:'CC BY',licenseUrl:'https://example.com/license'};
+const noun={...base,label:'弓、蝴蝶结',file:'/offline/recordings/noun.mp3',sourceUrl:'https://example.com/noun',author:'N'};
 const verb={...base,file:'/offline/recordings/verb.mp3',sourceUrl:'https://example.com/verb',author:'V'};
 const recordings={word1:{...base,variants:{noun,verb}}};
 
@@ -23,7 +23,10 @@ it('returns the metadata of the requested variant and rejects unavailable varian
  try {
   const runtime=createLocalRuntime({db,save:async()=>{},assetFetch:vi.fn(),recordings,now:()=>T});
   const request=(suffix:string)=>runtime.fetch('/api/pronunciation?word=word1'+suffix);
-  expect((await (await request('')).json()).author).toBe('A');
+  const metadata=await (await request('')).json();
+  expect(metadata.author).toBe('A');
+  expect(metadata.ipa).toBe('/boʊ/');
+  expect(metadata.variants[0].label).toBe('弓、蝴蝶结');
   const response=await request('&variant=noun');
   expect(response.status).toBe(200);expect((await response.json()).author).toBe('N');
   expect((await (await request('&variant=verb')).json()).author).toBe('V');
@@ -39,7 +42,7 @@ it('lists only available variants and validates repeated variant parameters',asy
   const runtime=createLocalRuntime({db,save:async()=>{},assetFetch:vi.fn(),recordings:variantOnly,now:()=>T});
   const result=await(await runtime.fetch('/api/pronunciation?word=word1')).json();
   expect(result.status).toBe('missing');
-  expect(result.variants).toEqual([{variant:'noun',label:'名词',ipa:'/ˈx/',pronunciationNote:'加拿大口音'}]);
+  expect(result.variants).toEqual([{variant:'noun',label:'弓、蝴蝶结',ipa:'/ˈx/',pronunciationNote:'加拿大口音'}]);
   expect((await (await runtime.fetch('/api/pronunciation?word=word1&variant=verb')).json()).status).toBe('missing');
   expect((await runtime.fetch('/api/pronunciation?word=word1&variant=noun&variant=verb')).status).toBe(400);
   expect((await runtime.fetch('/api/pronunciation?word=word1&variant%5B%5D=noun')).status).toBe(400);

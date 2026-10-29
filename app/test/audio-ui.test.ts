@@ -184,3 +184,10 @@ it('WordView exposes labelled pronunciation variants and retries the selected va
  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,'estimate')});
  try{await flush();const noun=ui.all(n=>n.tag==='button'&&ui.text(n).includes('名词'))[0];expect(noun).toBeDefined();expect(ui.text()).toContain('/ˈestɪmət/');expect(ui.text()).toContain('加拿大英语');noun.props.onClick();await flush();expect(MockAudio.instances[0].src).toContain('variant=noun');MockAudio.instances[0].emit('error');await flush();ui.all(n=>n.tag==='button'&&ui.text(n)===COPY.audioRetry)[0].props.onClick();await flush();expect(MockAudio.instances[1].src).toContain('variant=noun');MockAudio.instances[1].emit('ended');await flush();}finally{ui.app.unmount()}
 });
+
+
+it('WordView associates the main pronunciation with the recording and displays meaning labels',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url.includes('/api/pronunciation?')?{status:'ready',ipa:'/boʊ/',variants:[{variant:'noun',label:'弓、蝴蝶结'},{variant:'verb',label:'鞠躬、船首'}]}:{status:'missing'}),{status:200})));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:{...wordDetail(1,'bow'),word:{...wordDetail(1,'bow').word,phonetic:'/baʊ/'}}});
+ try {await flush();expect(ui.text()).toContain('/boʊ/');expect(ui.text()).not.toContain('/baʊ/');expect(ui.text()).toContain('弓、蝴蝶结');expect(ui.all(n=>n.props['aria-label']==='不同词性发音')).toHaveLength(0);}finally{ui.app.unmount()}
+});

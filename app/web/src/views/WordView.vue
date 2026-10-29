@@ -15,6 +15,7 @@ const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boole
 defineEmits<{back:[]}>();
 const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=ref(false),audioFailed=ref<PlaybackFailure|null>(null);
 const pronunciationNote=ref<string|null>(null),systemSpeech=ref(false);
+const recordingIpa=ref<string|null>(null);
 const pronunciationVariants=ref<{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]>([]);
 const lastPlaybackVariant=ref<'noun'|'verb'|undefined>();
 const lastPlaybackWord=ref<string|null>(null);
@@ -27,7 +28,7 @@ const lesson=computed(()=>loadedLesson.value?.wordId===detail.value?.word.id
   &&loadedLesson.value?.headword===detail.value?.word.headword?loadedLesson.value:null);
 const phonetic=computed(()=>{
   const pronunciation=lesson.value?.pronunciation;
-  return (pronunciationAccent.value?pronunciation?.[pronunciationAccent.value]:null)
+  return recordingIpa.value||(pronunciationAccent.value?pronunciation?.[pronunciationAccent.value]:null)
     ||pronunciation?.ipa||detail.value?.word.phonetic;
 });
 function date(iso:string){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'numeric',day:'numeric'}).format(new Date(iso));}
@@ -53,13 +54,14 @@ async function wrong(){
   finally{if(alive)busy.value=false;}
 }
 async function loadPronunciationNote(){
-  const n=++pronunciationRequest;pronunciationNote.value=null;pronunciationAccent.value=null;pronunciationVariants.value=[];
+  const n=++pronunciationRequest;pronunciationNote.value=null;pronunciationAccent.value=null;recordingIpa.value=null;pronunciationVariants.value=[];
   const word=pronunciationHeadword(detail.value?.word.headword??'');if(!word)return;
   try{
-    const data=await api<{status:string;accent?:string;pronunciationNote?:string;variants?:{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
+    const data=await api<{status:string;accent?:string;ipa?:string;pronunciationNote?:string;variants?:{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
     if(alive&&n===pronunciationRequest){
       pronunciationVariants.value=Array.isArray(data.variants)?data.variants.filter(v=>v.variant==='noun'||v.variant==='verb'):[];
       if(data?.status!=='ready')return;
+      recordingIpa.value=typeof data.ipa==='string'&&data.ipa.trim()?data.ipa.trim():null;
       pronunciationAccent.value=data.accent==='us'||data.accent==='uk'?data.accent:null;
       const accent=data.accent==='us'?'美式录音':data.accent==='uk'?'英式录音':'';
       pronunciationNote.value=[accent,typeof data.pronunciationNote==='string'?data.pronunciationNote.trim():''].filter(Boolean).join(' · ')||null;
@@ -100,7 +102,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
           <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音':pronunciationNote }}</p>
           <p v-if="!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
-        <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同词性发音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
+        <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play(lastPlaybackWord??undefined,lastPlaybackVariant)">{{ COPY.audioRetry }}</button></p>
         <details v-if="detail.memberships?.length" class="lesson-record"><summary>词书与单元</summary><p v-for="m in detail.memberships" :key="m.bookId+String(m.unitId)" class="small muted">{{ m.bookTitle }}<span v-if="m.unitTitle"> · {{ m.unitTitle }}</span></p></details>
         <details :key="wordId" class="lesson-record">

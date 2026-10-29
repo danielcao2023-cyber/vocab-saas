@@ -212,3 +212,9 @@ addSourcedPhrase('make fun of','/ˌmeɪk ˈfʌn əv/',[
  ch('fun ','/fʌn/','primary',[{letters:'f',sound:'/f/'},{letters:'u',sound:'/ʌ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
  ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
 ],'Cambridge Think Level 4 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-4/69564/resources/pdf/wordlist_think_level_4_u12.pdf');
+
+addSourcedPhrase('ups and downs','/ˌʌps ən ˈdaʊnz/',[
+ ch('ups ','/ʌps/','secondary',[{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'},{letters:'s',sound:'/s/'},{letters:' ',sound:''}]),
+ ch('and ','/ən/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'d',sound:''},{letters:' ',sound:''}]),
+ ch('downs','/daʊnz/','primary',[{letters:'d',sound:'/d/'},{letters:'ow',sound:'/aʊ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/z/'}]),
+],'Cambridge Dictionary · ups and downs','https://dictionary.cambridge.org/us/dictionary/english/ups-and-downs');

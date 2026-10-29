@@ -75,3 +75,10 @@ it.each([['refer to','/rɪˈfɜː tə/'],['try out','/ˌtraɪ ˈaʊt/'],['make s
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it('shows the Cambridge pronunciation for ups and downs',()=>{
+ const lesson=getSoundSpellingLesson('ups and downs');
+ expect(lesson?.ipa).toBe('/ˌʌps ən ˈdaʊnz/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('ups and downs');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary']);
+});
