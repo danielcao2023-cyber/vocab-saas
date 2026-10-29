@@ -6,7 +6,7 @@ import {todayV3,startV3,nextV3,answerV3,consultV3,deferV3} from './evidence-engi
 import {randomUUID} from 'node:crypto';
 import {createEmptyCard,Rating} from 'ts-fsrs';
 import type {DB} from '../db.ts';
-import {acceptedSpellings,normalizeAnswer,review,type CardRow} from '../study.ts';
+import {acceptedAnswers,acceptedSpellings,normalizeAnswer,review,type CardRow} from '../study.ts';
 import {legacyIssueHeadword} from './legacy-issue.ts';
 import {shDay} from '../time.ts';
 import {maskAnswer,hasDictionaryPlaceholder} from '../text.ts';
@@ -54,7 +54,7 @@ function optionsFor(db:DB,w:LearningWord){
 }
 function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
- const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[A-Za-z]/g,'_')))];
+ const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,issue.mode).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
   ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(shown)[0]})};
 }
@@ -114,7 +114,7 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
   correct=input.choiceId===issue.word_id;
  }else{
   if(typeof input.answer!=='string'||!input.answer.trim()||input.answer.length>256)throw new HttpError(400,'请输入英文单词。');
-  correct=acceptedSpellings(legacyIssueHeadword(issue,w.headword)??w.headword).includes(normalizeAnswer(input.answer));
+  correct=acceptedAnswers(legacyIssueHeadword(issue,w.headword)??w.headword,issue.mode).includes(normalizeAnswer(input.answer));
  }
  const assisted=!!issue.assisted,errors=(w.error_day===issue.day?w.day_errors:0)+Number(!correct),initialErrors=w.initial_errors+Number(!w.initial_done&&(!correct||assisted));
  const targets=JSON.parse(entry.targets) as number[],streaks=JSON.parse(entry.streaks) as number[],i=MODES.indexOf(issue.mode);
