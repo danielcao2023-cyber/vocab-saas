@@ -205,11 +205,11 @@ export const highschoolOptional3Unit2Specialist: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           },
           {
-            "letters": "te",
+            "letters": "e",
             "sound": ""
           }
         ],
