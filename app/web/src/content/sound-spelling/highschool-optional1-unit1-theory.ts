@@ -631,7 +631,7 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
     "uk": "/ˈpæʃən/",
     "chunks": [
       {
-        "letters": "pas",
+        "letters": "pass",
         "sound": "/pæʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -645,22 +645,18 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sion",
+        "letters": "ion",
         "sound": "/ən/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": ""
@@ -950,7 +946,7 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "al",
+        "letters": "all",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -960,22 +956,18 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ly",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"

@@ -7,8 +7,8 @@ export const highschoolOptional1Unit1Academic: SoundSpellingLesson[] = [
     "uk": "/kəˈmɪt/",
     "chunks": [
       {
-        "letters": "com",
-        "sound": "/kəm/",
+        "letters": "co",
+        "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
@@ -19,23 +19,19 @@ export const highschoolOptional1Unit1Academic: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": "/m/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mit",
-        "sound": "/ɪt/",
+        "letters": "mmit",
+        "sound": "/mɪt/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "m",
-            "sound": ""
+            "letters": "mm",
+            "sound": "/m/"
           },
           {
             "letters": "i",

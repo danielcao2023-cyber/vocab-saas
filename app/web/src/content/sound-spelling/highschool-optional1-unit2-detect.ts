@@ -395,7 +395,7 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
         "tip": "此部分重读。"
       },
       {
-        "letters": "tial",
+        "letters": "tiall",
         "sound": "/ʃəl/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -413,22 +413,18 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ly",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"

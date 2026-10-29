@@ -514,7 +514,7 @@ export const highschoolOptional1Unit2Career: SoundSpellingLesson[] = [
     "uk": "/ˈeseɪ/",
     "chunks": [
       {
-        "letters": "es",
+        "letters": "ess",
         "sound": "/es/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -524,22 +524,18 @@ export const highschoolOptional1Unit2Career: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "say",
+        "letters": "ay",
         "sound": "/eɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "ay",
             "sound": "/eɪ/"
@@ -570,7 +566,7 @@ export const highschoolOptional1Unit2Career: SoundSpellingLesson[] = [
     "uk": "/ˈækjərət/",
     "chunks": [
       {
-        "letters": "ac",
+        "letters": "acc",
         "sound": "/æk/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -580,22 +576,18 @@ export const highschoolOptional1Unit2Career: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "cu",
+        "letters": "u",
         "sound": "/jə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "c",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/jə/"

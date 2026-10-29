@@ -211,7 +211,7 @@ export const highschoolOptional1Unit2Start: SoundSpellingLesson[] = [
     "uk": "/əˈplaɪəns/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -219,22 +219,18 @@ export const highschoolOptional1Unit2Start: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "pli",
+        "letters": "ppli",
         "sound": "/plaɪ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

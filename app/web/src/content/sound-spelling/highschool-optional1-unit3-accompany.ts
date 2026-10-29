@@ -7,7 +7,7 @@ export const highschoolOptional1Unit3Accompany: SoundSpellingLesson[] = [
     "uk": "/əˈkʌmpəni/",
     "chunks": [
       {
-        "letters": "ac",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -15,22 +15,18 @@ export const highschoolOptional1Unit3Accompany: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "com",
+        "letters": "ccom",
         "sound": "/kʌm/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           },
           {

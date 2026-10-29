@@ -298,7 +298,7 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
     "uk": "/ˈʌpə/",
     "chunks": [
       {
-        "letters": "up",
+        "letters": "upp",
         "sound": "/ʌp/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -308,22 +308,18 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "per",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "p",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
@@ -443,7 +439,7 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mis",
+        "letters": "miss",
         "sound": "/mɪʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -457,22 +453,18 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sion",
+        "letters": "ion",
         "sound": "/ən/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": ""

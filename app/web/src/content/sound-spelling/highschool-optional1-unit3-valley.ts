@@ -151,7 +151,7 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
     "uk": "/ˈvæli/",
     "chunks": [
       {
-        "letters": "val",
+        "letters": "vall",
         "sound": "/væl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -165,22 +165,18 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ley",
+        "letters": "ey",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ey",
             "sound": "/i/"
@@ -343,7 +339,7 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
     "uk": "/ˈterətəri/",
     "chunks": [
       {
-        "letters": "ter",
+        "letters": "terr",
         "sound": "/ter/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -357,22 +353,18 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ri",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"
@@ -505,7 +497,7 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
     "uk": "/ˈkɒtɪdʒ/",
     "chunks": [
       {
-        "letters": "cot",
+        "letters": "cott",
         "sound": "/kɑːt/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -519,22 +511,18 @@ export const highschoolOptional1Unit3Valley: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "tage",
+        "letters": "age",
         "sound": "/ɪdʒ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/ɪ/"

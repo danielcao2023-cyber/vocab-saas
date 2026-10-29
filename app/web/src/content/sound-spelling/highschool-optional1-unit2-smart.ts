@@ -557,7 +557,7 @@ export const highschoolOptional1Unit2Smart: SoundSpellingLesson[] = [
     "uk": "/kəˈmɑːnd/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -569,22 +569,18 @@ export const highschoolOptional1Unit2Smart: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mand",
+        "letters": "mmand",
         "sound": "/mænd/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {

@@ -4,7 +4,7 @@ import {startLearning,nextLearning,answerLearning} from '../server/src/learning/
 import {acceptedSpellings,checkSpelling} from '../server/src/study';
 import {openBrowserDatabase,asSharedDb} from '../web/src/offline/sqlite';
 const now=new Date('2026-10-21T01:00:00Z');
-const pairs=[['defence','defense'],['defense','defence'],['advisor','adviser'],['adviser','advisor'],['chilli','chili'],['chili','chilli'],['fibre','fiber'],['fiber','fibre']] as const;
+const pairs=[['defence','defense'],['defense','defence'],['advisor','adviser'],['adviser','advisor'],['chilli','chili'],['chili','chilli'],['fibre','fiber'],['fiber','fibre'],['analyse','analyze'],['analyze','analyse'],['moustache','mustache'],['mustache','moustache'],['apologise','apologize'],['apologize','apologise'],['criticise','criticize'],['criticize','criticise'],['commercialisation','commercialization'],['commercialization','commercialisation']] as const;
 
 describe('explicit accepted textbook spelling alternatives',()=>{
  it.each(pairs)('%s accepts %s with the original first', (main,other)=>expect(acceptedSpellings(main)).toEqual([main,other]));

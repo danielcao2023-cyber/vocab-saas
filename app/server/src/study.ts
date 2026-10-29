@@ -152,6 +152,9 @@ export function normalizeAnswer(s: string) { return normalizeQuotes(s).trim().to
 const textbookSpellingVariants: Readonly<Record<string,string>> = {
   defence:'defense', defense:'defence', advisor:'adviser', adviser:'advisor',
   chilli:'chili', chili:'chilli', fibre:'fiber', fiber:'fibre',
+  analyse:'analyze', analyze:'analyse', moustache:'mustache', mustache:'moustache',
+  apologise:'apologize', apologize:'apologise', criticise:'criticize', criticize:'criticise',
+  commercialisation:'commercialization', commercialization:'commercialisation',
 };
 
 /** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */

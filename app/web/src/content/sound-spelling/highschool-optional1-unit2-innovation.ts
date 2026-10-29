@@ -165,7 +165,7 @@ export const highschoolOptional1Unit2Innovation: SoundSpellingLesson[] = [
     "uk": "/ˌɪnəˈveɪʃən/",
     "chunks": [
       {
-        "letters": "in",
+        "letters": "inn",
         "sound": "/ɪn/",
         "stress": "secondary",
         "hint": "此部分次重读。",
@@ -175,22 +175,18 @@ export const highschoolOptional1Unit2Innovation: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "n",
+            "letters": "nn",
             "sound": "/n/"
           }
         ],
         "tip": "此部分次重读。"
       },
       {
-        "letters": "no",
+        "letters": "o",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "n",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/ə/"
