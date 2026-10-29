@@ -48,3 +48,10 @@ it.each([['make progress','/ˌmeɪk ˈprəʊɡres/'],['make a difference','/ˌme
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks[0]?.stress).toBe('secondary');
 });
+
+it('preserves the Oxford pronunciation and stress for cost an arm and a leg',()=>{
+ const lesson=getSoundSpellingLesson('cost an arm and a leg');
+ expect(lesson?.ipa).toBe('/ˌkɒst ən ˌɑːm ən ə ˈleɡ/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('cost an arm and a leg');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','secondary','none','none','primary']);
+});

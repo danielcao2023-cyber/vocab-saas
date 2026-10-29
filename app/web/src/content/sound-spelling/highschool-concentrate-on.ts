@@ -125,3 +125,19 @@ highschoolConcentrateOn.push({
  variantNote:'这里展示教材的英式读法；实际语流中的元音和重音可有变化。',sources:[vocabularyPracticeSource],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Cambridge wordlist'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'cost an arm and a leg',ipa:'/ˌkɒst ən ˌɑːm ən ə ˈleɡ/',uk:'/ˌkɒst ən ˌɑːm ən ə ˈleɡ/',
+ chunks:[
+  {letters:'cost ',sound:'/kɒst/',stress:'secondary',hint:'cost 在词表中标次重音。',pairs:[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ɒ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}],tip:'这里采用英式 /ɒ/。'},
+  {letters:'an ',sound:'/ən/',stress:'none',hint:'an 轻读。',pairs:[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}],tip:'与 arm 自然连接。'},
+  {letters:'arm ',sound:'/ɑːm/',stress:'secondary',hint:'arm 在词表中标次重音。',pairs:[{letters:'ar',sound:'/ɑː/'},{letters:'m',sound:'/m/'},{letters:' ',sound:''}],tip:'这里采用非卷舌英音。'},
+  {letters:'and ',sound:'/ən/',stress:'none',hint:'and 在这一读法中弱读。',pairs:[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'d',sound:''},{letters:' ',sound:''}],tip:'and 也可能读得更完整。'},
+  {letters:'a ',sound:'/ə/',stress:'none',hint:'a 轻读。',pairs:[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}],tip:'读短而轻的 /ə/。'},
+  {letters:'leg',sound:'/leɡ/',stress:'primary',hint:'leg 是词表中的主重音。',pairs:[{letters:'l',sound:'/l/'},{letters:'e',sound:'/e/'},{letters:'g',sound:'/ɡ/'}],tip:'最后读清 /ɡ/。'},
+ ],
+ anchor:{text:'留意轻读的 an、and、a，再清楚读出 leg。'},
+ variantNote:'这里展示教材中的一种英式读法；实际语流中的 and 和重音可能变化。',
+ sources:[{label:'Oxford Solutions 2nd edition 词表',url:'https://teacherivanatheenglishlanguageblog.wordpress.com/wp-content/uploads/2015/09/2-self-test-1.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against Oxford wordlist'},
+});
