@@ -333,3 +333,5 @@
 `estimate-variants.json` 记录 estimate 的名词与动词真人录音：英语 Wiktionary 按词性列出音标和音频；Commons 标记 PD-self。两份音频已校验解码及哈希，尚未人工试听；默认播放动词，学习页另提供名词与动词按钮。
 
 `conduct-contrast-variants.json` 记录 conduct 动词与 contrast 名词、动词录音：词典英语栏目分别标注词性和口音，已校验 Commons 许可、音频解码和哈希；尚未人工试听。conduct 名词录音候选作者及来源信息不充分，暂未接入。
+
+`batch-tryout-recovery.json` 补入 try out 完整短语录音：核对英语 Wiktionary 关联、Commons 作者、许可、解码及哈希；口音未独立确认，尚未人工试听。

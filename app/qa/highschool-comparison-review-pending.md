@@ -17,3 +17,5 @@
 后续核验：4022、4024、4027–4033、4036、4041、4043–4045。证据见 `highschool-comparison-audits/batch-4022-4033.json`、`batch-4034-4045.json`；4034、4035、4037–4040、4042 等仍待核验。
 
 后续核验：4034、4035、4037–4040、4042 和 4046–4055。逐项依据见 `highschool-comparison-audits/batch-4034-remain.json`、`batch-4046-4055.json`；仅覆盖对比义项及例句，其他内容仍需审查。
+
+后续核验：4056–4068、4074–4076。逐项依据见 `highschool-comparison-audits/batch-4056-4062.json`、`batch-4063-4076.json`；本轮仅覆盖对比义项及例句。
