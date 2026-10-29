@@ -2811,15 +2811,15 @@ export const expandedC: SoundSpellingLesson[] = [
    "text": "主重音在 prin；i 在这一段对应 /ɪ/。"
   },
   "uk": "/prɪnˈses/",
-  "variantNote": "本图针对 princess，采用 /ˈprɪn.ses/。原混合词条为 prince / princess。本图采用读音 /ˈprɪn.ses/。原词条英式读音：prince /prɪns/；princess /prɪnˈses/；原词条美式读音：prince /prɪns/；princess /ˈprɪn.ses/。原词条口音说明：prince 的英美常见读法相同；princess 的英式常见读法重读第二音节，美式常见读法重读第一音节。 prince 是一个音节，末尾辅音群 /ns/ 连读。 princess 有两个音节，英式常见重音在后，美式常见重音在前；末音节读 /ses/，以清辅音 /s/ 结尾。prince 的复数 princes 读 /ˈprɪn.sɪz/，以浊辅音 /z/ 结尾。",
+  "variantNote": "本图采用 princess 的首音节重读 /ˈprɪnses/；英美读法也都可重读第二音节 /prɪnˈses/。prince 为一个音节 /prɪns/，复数 princes 读 /ˈprɪnsɪz/。",
   "sources": [
    {
     "label": "Cambridge Dictionary: prince",
     "url": "https://dictionary.cambridge.org/dictionary/english/prince"
    },
    {
-    "label": "Oxford Learner’s Dictionaries: princess",
-    "url": "https://www.oxfordlearnersdictionaries.com/definition/english/princess"
+    "label": "Cambridge Dictionary: princess pronunciation",
+    "url": "https://dictionary.cambridge.org/pronunciation/english/princess"
    }
   ],
   "review": {
