@@ -4,7 +4,7 @@ import {startLearning,nextLearning,answerLearning} from '../server/src/learning/
 import {acceptedSpellings,checkSpelling} from '../server/src/study';
 import {openBrowserDatabase,asSharedDb} from '../web/src/offline/sqlite';
 const now=new Date('2026-10-21T01:00:00Z');
-const pairs=[['defence','defense'],['defense','defence'],['advisor','adviser'],['adviser','advisor'],['chilli','chili'],['chili','chilli'],['fibre','fiber'],['fiber','fibre'],['analyse','analyze'],['analyze','analyse'],['moustache','mustache'],['mustache','moustache'],['apologise','apologize'],['apologize','apologise'],['criticise','criticize'],['criticize','criticise'],['commercialisation','commercialization'],['commercialization','commercialisation'],['harbour','harbor'],['harbor','harbour'],['enrol','enroll'],['enroll','enrol'],['recognise','recognize'],['recognize','recognise'],['civilisation','civilization'],['civilization','civilisation'],['organise','organize'],['organize','organise'],['organisation','organization'],['organization','organisation'],['inquire','enquire'],['enquire','inquire']] as const;
+const pairs=[['defence','defense'],['defense','defence'],['advisor','adviser'],['adviser','advisor'],['chilli','chili'],['chili','chilli'],['fibre','fiber'],['fiber','fibre'],['analyse','analyze'],['analyze','analyse'],['moustache','mustache'],['mustache','moustache'],['apologise','apologize'],['apologize','apologise'],['criticise','criticize'],['criticize','criticise'],['commercialisation','commercialization'],['commercialization','commercialisation'],['harbour','harbor'],['harbor','harbour'],['enrol','enroll'],['enroll','enrol'],['recognise','recognize'],['recognize','recognise'],['civilisation','civilization'],['civilization','civilisation'],['organise','organize'],['organize','organise'],['organisation','organization'],['organization','organisation'],['inquire','enquire'],['enquire','inquire'],['millimetre','millimeter'],['millimeter','millimetre']] as const;
 
 describe('explicit accepted textbook spelling alternatives',()=>{
  it.each(pairs)('%s accepts %s with the original first', (main,other)=>expect(acceptedSpellings(main)).toEqual([main,other]));
@@ -47,7 +47,7 @@ for(const v3 of [false,true])it(`keeps separate same-meaning word records under 
 const newlyVerifiedPairs = [
  ['harbour','harbor'], ['enrol','enroll'], ['recognise','recognize'],
  ['civilisation','civilization'], ['organise','organize'],
- ['organisation','organization'], ['inquire','enquire'],
+ ['organisation','organization'], ['inquire','enquire'], ['millimetre','millimeter'],
 ] as const;
 for (const v3 of [false,true]) it.each(newlyVerifiedPairs)(`keeps %s and %s as distinct histories under policy ${v3?3:2}`, (main,other)=>{
  const db=v3?makeV3Fixture(2):makeLegacyFixture(2);
