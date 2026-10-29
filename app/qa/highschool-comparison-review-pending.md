@@ -129,3 +129,5 @@
 后续核验：3116–3145，逐项依据见 `highschool-comparison-audits/batch-3116-3130.json`、`batch-3131-3145.json`；无关对比已移除。
 
 后续核验：3146–3175，逐项依据见 `highschool-comparison-audits/batch-3146-3160.json`、`batch-3161-3175.json`；无关对比已移除。
+
+后续核验：3176–3205，逐项依据见 `highschool-comparison-audits/batch-3176-3190.json`、`batch-3191-3205.json`；3203 已补充世界银行全称与缩写来源，无关对比已移除。
