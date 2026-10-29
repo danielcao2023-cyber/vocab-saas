@@ -9,4 +9,7 @@ export const KB2022_TEXTBOOK_CORRECTIONS: Record<string,{expected:string;meaning
   jog: {expected:"n. 轻推, 轻撞, 慢跑\nv. 轻推, (使)蹒跚行进, (使)慢跑",meaning:"vi. 慢跑\nn. 轻推, 轻撞, 慢跑\nv. 轻推, (使)蹒跚行进, (使)慢跑"},
   master: {expected:"n. 主人, 硕士, 大师, 母机\nadj. 主人的, 主要的\nvt. 征服, 控制, 精通",meaning:"n. 高手；主人\nvt. 精通；掌握\nn. 主人, 硕士, 大师, 母机\nadj. 主人的, 主要的\nvt. 征服, 控制, 精通"},
   event: {expected:"n. 事件, 结果, 事情的进程, 竞赛项目",meaning:"n. 比赛项目；大事；公开活动\nn. 事件, 结果, 事情的进程, 竞赛项目"},
+  "judge": {"expected":"n. 法官, 裁判员, 审判官, 鉴定人\nvt. 审理, 鉴定, 判断, 判决, 裁定\nvi. 下判断, 作评价","meaning":"vt. & vi. 评价；评判；判断\nn. 法官, 裁判员, 审判官, 鉴定人\nvt. 审理, 鉴定, 判断, 判决, 裁定\nvi. 下判断, 作评价"},
+  "hug": {"expected":"n. 紧抱, 拥抱\nvt. 紧抱, 坚持, 使沾沾自喜","meaning":"vt. 拥抱；抱紧\nn. 紧抱, 拥抱\nvt. 紧抱, 坚持, 使沾沾自喜"},
+  "normal": {"expected":"n. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的","meaning":"adj. 典型的；正常的；一般的\nn. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的"},
 };
