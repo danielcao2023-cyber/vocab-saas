@@ -435,7 +435,7 @@ export const highschoolBook3Unit4Analysis: SoundSpellingLesson[] = [
     "uk": "/ˈpɪləʊ/",
     "chunks": [
       {
-        "letters": "pil",
+        "letters": "pill",
         "sound": "/pɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -449,22 +449,18 @@ export const highschoolBook3Unit4Analysis: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "low",
+        "letters": "ow",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ow",
             "sound": "/oʊ/"

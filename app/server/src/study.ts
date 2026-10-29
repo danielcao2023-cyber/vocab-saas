@@ -148,6 +148,12 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
 
 export function normalizeAnswer(s: string) { return normalizeQuotes(s).trim().toLowerCase().replace(/\s+/g, ' '); }
 
+// Only explicit, dictionary-verified spelling variants; words remain separate records.
+const textbookSpellingVariants: Readonly<Record<string,string>> = {
+  defence:'defense', defense:'defence', advisor:'adviser', adviser:'advisor',
+  chilli:'chili', chili:'chilli', fibre:'fiber', fiber:'fibre',
+};
+
 /** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */
 export function acceptedSpellings(headword: string): string[] {
   const normalized = normalizeQuotes(headword);
@@ -167,7 +173,8 @@ export function acceptedSpellings(headword: string): string[] {
     variants.push(...parts.flatMap((part) => part.split(/[,，/]/)));
   }
   const accepted = variants.map(normalizeAnswer).filter((part) => /^[a-z' .-]+$/.test(part));
-  return [...new Set([...main, ...accepted])];
+  const textbookVariants=main.flatMap(word=>textbookSpellingVariants[word]?[textbookSpellingVariants[word]]:[]);
+  return [...new Set([...main, ...accepted, ...textbookVariants])];
 }
 
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */

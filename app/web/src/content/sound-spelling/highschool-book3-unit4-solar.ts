@@ -212,7 +212,7 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
     "uk": "/ˈkʌrənt/",
     "chunks": [
       {
-        "letters": "cur",
+        "letters": "curr",
         "sound": "/kɜːr/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -226,22 +226,18 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
             "sound": "/ɜː/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "rent",
+        "letters": "ent",
         "sound": "/ənt/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

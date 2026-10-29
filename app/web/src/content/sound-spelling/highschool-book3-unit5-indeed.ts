@@ -67,7 +67,7 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
     "uk": "/ˈwɪlɪŋ/",
     "chunks": [
       {
-        "letters": "wil",
+        "letters": "will",
         "sound": "/wɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -81,22 +81,18 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ling",
+        "letters": "ing",
         "sound": "/ɪŋ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
@@ -225,7 +221,7 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "bas",
+        "letters": "bass",
         "sound": "/bæs/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -239,22 +235,18 @@ export const highschoolBook3Unit5Indeed: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sa",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/ə/"

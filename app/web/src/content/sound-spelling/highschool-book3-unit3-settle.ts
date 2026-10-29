@@ -7,7 +7,7 @@ export const highschoolBook3Unit3Settle: SoundSpellingLesson[] = [
     "uk": "/ˈsetəl/",
     "chunks": [
       {
-        "letters": "set",
+        "letters": "sett",
         "sound": "/set/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolBook3Unit3Settle: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "tle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/əl/"

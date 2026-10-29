@@ -88,7 +88,7 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
     "uk": "/nəˈreɪʃən/",
     "chunks": [
       {
-        "letters": "nar",
+        "letters": "narr",
         "sound": "/ner/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -102,22 +102,18 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ra",
+        "letters": "a",
         "sound": "/eɪ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/eɪ/"

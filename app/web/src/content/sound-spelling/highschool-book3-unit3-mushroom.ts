@@ -374,7 +374,7 @@ export const highschoolBook3Unit3Mushroom: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ces",
+        "letters": "cess",
         "sound": "/ses/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -388,22 +388,18 @@ export const highschoolBook3Unit3Mushroom: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "so",
+        "letters": "o",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/ə/"

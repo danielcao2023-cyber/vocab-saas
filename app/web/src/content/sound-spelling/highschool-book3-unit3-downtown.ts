@@ -127,7 +127,7 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
     "uk": "/ˈmɪʃən/",
     "chunks": [
       {
-        "letters": "mis",
+        "letters": "miss",
         "sound": "/mɪʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -141,22 +141,18 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sion",
+        "letters": "ion",
         "sound": "/ən/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": ""
@@ -267,7 +263,7 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
     "uk": "/ɡrəˈfiːti/",
     "chunks": [
       {
-        "letters": "graf",
+        "letters": "gra",
         "sound": "/ɡrə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -283,22 +279,18 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "f",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "fi",
+        "letters": "ffi",
         "sound": "/fiː/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "f",
+            "letters": "ff",
             "sound": "/f/"
           },
           {

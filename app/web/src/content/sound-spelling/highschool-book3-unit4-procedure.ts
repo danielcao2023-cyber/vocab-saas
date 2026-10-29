@@ -369,7 +369,7 @@ export const highschoolBook3Unit4Procedure: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "tel",
+        "letters": "tell",
         "sound": "/tel/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -383,22 +383,18 @@ export const highschoolBook3Unit4Procedure: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "li",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

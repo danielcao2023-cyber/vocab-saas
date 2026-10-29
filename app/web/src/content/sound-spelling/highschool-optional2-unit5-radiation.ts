@@ -153,8 +153,8 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
   },
   {
     "headword": "millimetre",
-    "ipa": "/ˈmɪləmiːtər/",
-    "uk": "/ˈmɪlɪmiːtə/",
+    "ipa": "/ˈmɪləˌmiːtər/",
+    "uk": "/ˈmɪlɪˌmiːtə/",
     "chunks": [
       {
         "letters": "mill",
@@ -193,8 +193,8 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
       {
         "letters": "me",
         "sound": "/miː/",
-        "stress": "none",
-        "hint": "此部分轻读。",
+        "stress": "secondary",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "m",
@@ -205,7 +205,7 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
             "sound": "/iː/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "tre",

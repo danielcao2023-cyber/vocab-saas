@@ -7,7 +7,7 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
     "uk": "/ˈtɪʃuː/",
     "chunks": [
       {
-        "letters": "tis",
+        "letters": "tiss",
         "sound": "/tɪʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sue",
+        "letters": "ue",
         "sound": "/uː/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/uː/"
@@ -302,7 +298,7 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
     "uk": "/ˈʃæləʊ/",
     "chunks": [
       {
-        "letters": "shal",
+        "letters": "shall",
         "sound": "/ʃæl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -316,22 +312,18 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "low",
+        "letters": "ow",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ow",
             "sound": "/oʊ/"
@@ -362,7 +354,7 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
     "uk": "/ˈpætən/",
     "chunks": [
       {
-        "letters": "pat",
+        "letters": "patt",
         "sound": "/pæt/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -376,22 +368,18 @@ export const highschoolBook3Unit4Facility: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "tern",
+        "letters": "ern",
         "sound": "/ərn/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
