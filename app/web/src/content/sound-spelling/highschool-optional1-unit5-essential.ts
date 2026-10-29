@@ -416,7 +416,7 @@ export const highschoolOptional1Unit5Essential: SoundSpellingLesson[] = [
     "uk": "/ɪˈsenʃəl/",
     "chunks": [
       {
-        "letters": "es",
+        "letters": "e",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -424,22 +424,18 @@ export const highschoolOptional1Unit5Essential: SoundSpellingLesson[] = [
           {
             "letters": "e",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "sen",
+        "letters": "ssen",
         "sound": "/sen/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {
