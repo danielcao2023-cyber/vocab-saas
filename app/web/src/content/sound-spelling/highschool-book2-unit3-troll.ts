@@ -45,7 +45,7 @@ export const highschoolBook2Unit3Troll: SoundSpellingLesson[] = [
         "tip": "美式读出 r。"
       },
       {
-        "letters": "bul",
+        "letters": "bull",
         "sound": "/bʊl/",
         "stress": "secondary",
         "hint": "此部分次重读，u 对应 /ʊ/。",
@@ -59,22 +59,18 @@ export const highschoolBook2Unit3Troll: SoundSpellingLesson[] = [
             "sound": "/ʊ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "u 对应 /ʊ/。"
       },
       {
-        "letters": "ly",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "双写 l 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"
@@ -220,7 +216,7 @@ export const highschoolBook2Unit3Troll: SoundSpellingLesson[] = [
         "tip": "首部分轻读。"
       },
       {
-        "letters": "bar",
+        "letters": "barr",
         "sound": "/bær/",
         "stress": "primary",
         "hint": "第二部分重读。",
@@ -234,43 +230,35 @@ export const highschoolBook2Unit3Troll: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "第二部分重读。"
       },
       {
-        "letters": "ras",
+        "letters": "ass",
         "sound": "/əs/",
         "stress": "none",
         "hint": "双写 r 通常不重复发音。",
         "pairs": [
           {
-            "letters": "r",
-            "sound": ""
-          },
-          {
             "letters": "a",
             "sound": "/ə/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "双写 r 通常不重复发音。"
       },
       {
-        "letters": "sing",
+        "letters": "ing",
         "sound": "/ɪŋ/",
         "stress": "none",
         "hint": "双写 s 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

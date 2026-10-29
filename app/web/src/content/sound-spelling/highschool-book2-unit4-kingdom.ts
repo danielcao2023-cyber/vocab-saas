@@ -71,7 +71,7 @@ export const highschoolBook2Unit4Kingdom: SoundSpellingLesson[] = [
     "uk": "/ˈpʌzəl/",
     "chunks": [
       {
-        "letters": "puz",
+        "letters": "puzz",
         "sound": "/pʌz/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -85,22 +85,18 @@ export const highschoolBook2Unit4Kingdom: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "z",
+            "letters": "zz",
             "sound": "/z/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "zle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此处 l 可表示 /əl/，双写 z 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "z",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/əl/"
@@ -195,7 +191,7 @@ export const highschoolBook2Unit4Kingdom: SoundSpellingLesson[] = [
     "uk": "/ˈkʌrənsi/",
     "chunks": [
       {
-        "letters": "cur",
+        "letters": "curr",
         "sound": "/kɜːr/",
         "stress": "primary",
         "hint": "首部分重读，美式读出 r。",
@@ -209,22 +205,18 @@ export const highschoolBook2Unit4Kingdom: SoundSpellingLesson[] = [
             "sound": "/ɜː/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "首部分重读，美式读出 r。"
       },
       {
-        "letters": "ren",
+        "letters": "en",
         "sound": "/ən/",
         "stress": "none",
         "hint": "双写 r 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

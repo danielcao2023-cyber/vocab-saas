@@ -1,0 +1,4 @@
+import {expect,it} from 'vitest';
+import {getSoundSpellingLesson} from '../web/src/content/sound-spelling';
+it('documents both attested appetite vowel transcriptions and aligns the selected Oxford IPA',()=>{const l=getSoundSpellingLesson('appetite')!;expect(l.ipa).toBe('/ˈæpɪtaɪt/');expect(l.chunks.slice(0,2).map(c=>[c.letters,c.sound,c.stress])).toEqual([['app','/æp/','primary'],['e','/ɪ/','none']]);expect(l.variantNote).toContain('/ə/');expect(l.sources.some(s=>s.url.includes('oxfordlearnersdictionaries.com'))).toBe(true);});
+it('aligns possession /z/ with the stressed portion while retaining the spelling',()=>{const l=getSoundSpellingLesson('possession')!;expect(l.ipa).toBe('/pəˈzeʃən/');expect(l.chunks.map(c=>c.letters).join('')).toBe('possession');expect(l.chunks[0].sound).toBe('/pə/');expect(l.chunks[1].sound).toBe('/zeʃ/');expect(l.chunks[1].stress).toBe('primary');expect(l.chunks[1].pairs[0]).toEqual({letters:'ss',sound:'/z/'});});

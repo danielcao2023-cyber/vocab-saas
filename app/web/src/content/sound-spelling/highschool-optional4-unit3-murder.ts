@@ -131,8 +131,8 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
     "uk": "/pəˈzeʃən/",
     "chunks": [
       {
-        "letters": "poss",
-        "sound": "/pəz/",
+        "letters": "po",
+        "sound": "/pə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
@@ -143,20 +143,20 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "ss",
-            "sound": "/z/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ess",
-        "sound": "/eʃ/",
+        "letters": "ssess",
+        "sound": "/zeʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
+          {
+            "letters": "ss",
+            "sound": "/z/"
+          },
           {
             "letters": "e",
             "sound": "/e/"

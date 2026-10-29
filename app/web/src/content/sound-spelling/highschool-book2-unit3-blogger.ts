@@ -7,7 +7,7 @@ export const highschoolBook2Unit3Blogger: SoundSpellingLesson[] = [
     "uk": "/ˈblɒɡə/",
     "chunks": [
       {
-        "letters": "blog",
+        "letters": "blogg",
         "sound": "/blɑːɡ/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -25,22 +25,18 @@ export const highschoolBook2Unit3Blogger: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "g",
+            "letters": "gg",
             "sound": "/ɡ/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "ger",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "双写 g 合读 /ɡ/，美式读出 r。",
         "pairs": [
-          {
-            "letters": "g",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

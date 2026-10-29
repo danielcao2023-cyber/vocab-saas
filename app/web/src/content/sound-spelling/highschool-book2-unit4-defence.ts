@@ -135,7 +135,7 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
     "uk": "/səˈraʊnd/",
     "chunks": [
       {
-        "letters": "sur",
+        "letters": "su",
         "sound": "/sə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -147,22 +147,18 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
           {
             "letters": "u",
             "sound": "/ə/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "round",
+        "letters": "rround",
         "sound": "/raʊnd/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           },
           {
@@ -510,7 +506,7 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
     "uk": "/ˈbætəl/",
     "chunks": [
       {
-        "letters": "bat",
+        "letters": "batt",
         "sound": "/bæt/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -524,22 +520,18 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "tle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "双写 t 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/əl/"

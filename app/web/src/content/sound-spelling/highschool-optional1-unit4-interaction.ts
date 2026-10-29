@@ -143,28 +143,28 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "uk": "/ˈæpɪtaɪt/",
     "chunks": [
       {
-        "letters": "a",
-        "sound": "/æ/",
+        "letters": "app",
+        "sound": "/æp/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
             "letters": "a",
             "sound": "/æ/"
+          },
+          {
+            "letters": "pp",
+            "sound": "/p/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ppe",
-        "sound": "/pɪ/",
+        "letters": "e",
+        "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "pp",
-            "sound": "/p/"
-          },
           {
             "letters": "e",
             "sound": "/ɪ/"
@@ -201,11 +201,15 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "双写 p 不读两次；首音节重读。",
+    "variantNote": "双写 p 对应一个 /p/；牛津词典标第二元音 /ɪ/，剑桥词典也标 /ə/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/appetite"
+      },
+      {
+        "label": "Oxford Advanced Learner’s Dictionary · appetite",
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/appetite"
       }
     ],
     "review": {

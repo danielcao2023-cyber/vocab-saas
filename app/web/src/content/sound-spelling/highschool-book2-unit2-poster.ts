@@ -144,7 +144,7 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
     "uk": "/ɪˈliːɡəli/",
     "chunks": [
       {
-        "letters": "il",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -152,22 +152,18 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
           {
             "letters": "i",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "le",
+        "letters": "lle",
         "sound": "/liː/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           },
           {
@@ -178,7 +174,7 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
         "tip": "第二部分重读。"
       },
       {
-        "letters": "gal",
+        "letters": "gall",
         "sound": "/ɡəl/",
         "stress": "none",
         "hint": "轻读。",
@@ -192,22 +188,18 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "轻读。"
       },
       {
-        "letters": "ly",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "双 l 不重复发音。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"
@@ -302,7 +294,7 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
     "uk": "/ɪˈmiːdiətli/",
     "chunks": [
       {
-        "letters": "im",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "开头轻读，双 m 不重复发音。",
@@ -310,22 +302,18 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
           {
             "letters": "i",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "开头轻读，双 m 不重复发音。"
       },
       {
-        "letters": "me",
+        "letters": "mme",
         "sound": "/miː/",
         "stress": "primary",
         "hint": "这一部分重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {

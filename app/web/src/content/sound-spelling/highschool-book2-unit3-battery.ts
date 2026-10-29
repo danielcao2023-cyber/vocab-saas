@@ -7,7 +7,7 @@ export const highschoolBook2Unit3Battery: SoundSpellingLesson[] = [
     "uk": "/ˈbætəri/",
     "chunks": [
       {
-        "letters": "bat",
+        "letters": "batt",
         "sound": "/bæt/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -21,22 +21,18 @@ export const highschoolBook2Unit3Battery: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "te",
+        "letters": "e",
         "sound": "/ə/",
         "stress": "none",
         "hint": "双写 t 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
@@ -152,7 +148,7 @@ export const highschoolBook2Unit3Battery: SoundSpellingLesson[] = [
     "uk": "/ˈbʌtən/",
     "chunks": [
       {
-        "letters": "but",
+        "letters": "butt",
         "sound": "/bʌt/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -166,22 +162,18 @@ export const highschoolBook2Unit3Battery: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "ton",
+        "letters": "on",
         "sound": "/ən/",
         "stress": "none",
         "hint": "双写 t 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/ə/"

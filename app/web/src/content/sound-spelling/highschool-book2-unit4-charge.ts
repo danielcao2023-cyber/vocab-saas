@@ -7,7 +7,7 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
     "uk": "/əˈnaʊns/",
     "chunks": [
       {
-        "letters": "an",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -15,22 +15,18 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "nounce",
+        "letters": "nnounce",
         "sound": "/naʊns/",
         "stress": "primary",
         "hint": "第二部分重读，c 对应 /s/。",
         "pairs": [
           {
-            "letters": "n",
+            "letters": "nn",
             "sound": "/n/"
           },
           {
@@ -135,7 +131,7 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
     "uk": "/ˈɡæləri/",
     "chunks": [
       {
-        "letters": "gal",
+        "letters": "gall",
         "sound": "/ɡæl/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -149,22 +145,18 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "le",
+        "letters": "e",
         "sound": "/ə/",
         "stress": "none",
         "hint": "双写 l 通常不重复发音。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
