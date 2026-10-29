@@ -339,3 +339,5 @@
 `batch-next2-recovery.json` 补入 clap、decade、resign（动词）、drawer（抽屉）录音，核对词典英语栏目关联、Commons 作者及许可、解码和哈希；尚未逐条人工试听，口音未独立确认。
 
 `batch-next4-recovery.json` 补入 resource、clerk、essay、vase、polish、herb、finance 真人录音：核对法语 Wiktionary 英语栏目、Commons 授权、音频解码及哈希；录音未逐条试听，口音未独立确认。
+
+`batch-next3single-recovery.json` 补入 reject（动词）、recreation（娱乐义）、input、recall（动词）的真人录音；核对法语 Wiktionary 英语栏目、Commons 授权、解码及哈希，尚未逐条试听，口音未独立确认。`next3-variant-review.md` 保存待接入异读词的核验记录，文件归属有歧义的候选不接入。

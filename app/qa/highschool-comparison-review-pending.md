@@ -25,3 +25,5 @@
 后续核验：1621–1630、3947、3949、3952、3953、3955、3956，依据见 `highschool-comparison-audits/batch-1621-1630.json` 与 `batch-3947-3956.json`。3950、3951、3954 后续已核验并修正 3951 的例句，见 `batch-3950-3954.json`。
 
 后续核验：1631–1645，逐项依据见 `highschool-comparison-audits/batch-1631-1645.json`；仅覆盖对比义项和例句。
+
+后续核验：1646–1660、1662–1675，依据见 `highschool-comparison-audits/batch-1646-1660.json`、`batch-1661-1675.json`；1661 后续已对照剑桥词典和实际例句，见 `batch-1661.json`。仅覆盖对比义项及例句。
