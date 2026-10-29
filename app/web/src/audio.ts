@@ -17,8 +17,14 @@ export function stopAudio(): void {
   active?.cancel();
 }
 
+/** Textbook parentheses can show a necessary example word, not an optional sound. */
+export function pronunciationHeadword(headword: string): string {
+  if (/^from\s*\(then\)\s*on$/i.test(headword.trim())) return 'from then on';
+  return mainHeadwords(headword)[0] ?? '';
+}
+
 export function pronunciationCreditsUrl(headword?: string): string {
-  const word = headword ? mainHeadwords(headword)[0] : undefined;
+  const word = headword ? pronunciationHeadword(headword) : undefined;
   if(isMobileBuild())return '/offline/credits.html'+(word?'#'+encodeURIComponent(word):'');
   return '/api/pronunciation/credits' + (word ? `?word=${encodeURIComponent(word)}` : '');
 }
@@ -26,7 +32,7 @@ export function pronunciationCreditsUrl(headword?: string): string {
 /** Start synchronously within the click handler so the browser retains its user gesture. */
 export function speak(headword: string): Promise<PlaybackResult> {
   stopAudio();
-  const word = mainHeadwords(headword)[0] ?? '';
+  const word = pronunciationHeadword(headword);
   if (!word || typeof Audio === 'undefined') {
     return Promise.resolve({ status: 'unavailable', reason: 'failed' });
   }

@@ -113,3 +113,15 @@ it('ignores the companion media rejection after the error event starts a device 
  MockAudio.start=()=>new Promise((_,reject)=>rejectMedia=reject);
  const result=speak('aberration'),settled=vi.fn();result.then(settled);MockAudio.instances[0].emit('error');rejectMedia(Object.assign(Error('no source'),{name:'NotSupportedError'}));await Promise.resolve();await Promise.resolve();expect(settled).not.toHaveBeenCalled();utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
 });
+
+it('speaks the complete example for the abbreviated textbook phrase',async()=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);
+ vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{utterance=u;},cancel:vi.fn()});
+ const result=speak('from (then) on');
+ expect(MockAudio.instances[0].src).toBe('/api/pronunciation/audio?word=from%20then%20on');
+ MockAudio.instances[0].emit('error');
+ expect(utterance?.text).toBe('from then on');
+ utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
+});

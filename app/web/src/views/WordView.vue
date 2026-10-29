@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import {api,speak,stopAudio,pronunciationCreditsUrl,type PlaybackFailure} from '../api';
-import {mainHeadwords} from '../../../server/src/text';
+import {pronunciationHeadword} from '../audio';
 import {COPY} from '../copy';
 import type {WordDetail} from '../types';
 import type {WordLesson,WordLessonResponse} from '../../../shared/lesson';
@@ -52,7 +52,7 @@ async function wrong(){
 }
 async function loadPronunciationNote(){
   const n=++pronunciationRequest;pronunciationNote.value=null;pronunciationAccent.value=null;
-  const word=mainHeadwords(detail.value?.word.headword??'')[0];if(!word)return;
+  const word=pronunciationHeadword(detail.value?.word.headword??'');if(!word)return;
   try{
     const data=await api<{status:string;accent?:string;pronunciationNote?:string}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
     if(alive&&n===pronunciationRequest&&data?.status==='ready'){
