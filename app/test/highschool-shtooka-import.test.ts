@@ -8,10 +8,10 @@ import { canReuseShtookaRecording } from '../server/src/pronunciation-import-sta
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = join(root, 'data/pronunciation');
-const words = ['in the open air', 'in memory of', 'in ruins', 'illustrate'];
+const words = ['in the open air', 'in memory of', 'in ruins', 'illustrate', 'concrete'];
 const manifest = JSON.parse(readFileSync(join(source, 'manifest.json'), 'utf8'));
 
-it('reuses only the four specifically reviewed Shtooka records and unchanged bytes', () => {
+it('reuses only the specifically reviewed Shtooka records and unchanged bytes', () => {
   const entry = manifest.entries['in memory of'];
   expect(canReuseShtookaRecording('in memory of', entry, source)).toBe(true);
   for (const altered of [
@@ -29,7 +29,15 @@ it('reuses only the four specifically reviewed Shtooka records and unchanged byt
   } finally { rmSync(temp, { recursive: true, force: true }); }
 });
 
-it('keeps the verified four entries on a fresh importer seed and rejects a forged source', () => {
+it('accepts only the reviewed concrete source, license, speaker and audio bytes', () => {
+  const entry = manifest.entries.concrete;
+  expect(canReuseShtookaRecording('concrete', entry, source)).toBe(true);
+  for (const alteration of [{author:'somebody else'}, {sourceUrl:'https://evil.test/audio.flac'},
+    {licenseUrl:'https://creativecommons.org/licenses/by/4.0/'}, {sha256:'a'.repeat(64)}])
+    expect(canReuseShtookaRecording('concrete', {...entry, ...alteration}, source)).toBe(false);
+});
+
+it('keeps the verified entries on a fresh importer seed and rejects a forged source', () => {
   const temp = mkdtempSync(join(tmpdir(), 'shtooka-resume-'));
   try {
     const entries = Object.fromEntries(words.map(word => [word, manifest.entries[word]]));
@@ -46,7 +54,7 @@ it('keeps the verified four entries on a fresh importer seed and rejects a forge
   } finally { rmSync(temp, { recursive: true, force: true }); }
 });
 
-it('preserves all four verified entries on importer restart', () => {
+it('preserves all verified entries on importer restart', () => {
   const temp = mkdtempSync(join(tmpdir(), 'shtooka-resume-'));
   try {
     const entries = Object.fromEntries(words.map(word => [word, manifest.entries[word]]));

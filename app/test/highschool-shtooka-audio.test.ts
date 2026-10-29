@@ -14,6 +14,7 @@ it('packs independently attributed Shtooka recordings with intact offline bytes 
     ['in memory of', 'Emmanuel Revah', 'https://creativecommons.org/licenses/by/2.0/fr/'],
     ['in ruins', 'Emmanuel Revah', 'https://creativecommons.org/licenses/by/2.0/fr/'],
     ['illustrate', 'Mary Maury', 'https://creativecommons.org/licenses/by/3.0/us/'],
+    ['concrete', 'Mary Maury', 'https://creativecommons.org/licenses/by/3.0/us/'],
   ];
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'shtooka-offline-'));
   try {
@@ -31,6 +32,11 @@ it('packs independently attributed Shtooka recordings with intact offline bytes 
       expect(packed.credits).toContain(author);
       expect(packed.credits).toContain(license);
       if (word === 'illustrate') expect(packed.credits).toContain('flac/eng-3277a641.flac');
+      if (word === 'concrete') {
+        expect(entry.pronunciationNote).toContain('尚未人工试听');
+        expect(entry.pronunciationNote).toContain('重音可能与对照音标不同');
+        expect(packed.recordings[word].pronunciationNote).toBe(entry.pronunciationNote);
+      }
     }
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
