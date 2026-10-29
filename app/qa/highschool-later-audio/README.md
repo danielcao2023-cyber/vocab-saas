@@ -363,3 +363,5 @@
 `next9-exploit-variants.json` 加入 exploit 的名词英式和动词美式录音，核对英文 Wiktionary 对应词性、Commons 许可及解码哈希；均尚未试听。
 
 `batch-consist-recovery.json` 加入 consist 动词真人录音；核对 Wiktionary 词性栏目、Commons 作者的 PD-self 声明、解码及哈希，尚未人工试听。
+
+`batch-affect-recovery.json` 加入 affect 动词真人录音；核对英文 Wiktionary 的澳大利亚读音、Commons 许可、解码及哈希，尚未试听。
