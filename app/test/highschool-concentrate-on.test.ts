@@ -34,3 +34,10 @@ it('shows the sourced British weak form and stress for look forward to',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('look forward to');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary','none','none']);
 });
+
+it('shows the Collins phrasal-verb pronunciation for dress up',()=>{
+ const lesson=getSoundSpellingLesson('dress up');
+ expect(lesson?.ipa).toBe('/drɛs ˈʌp/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('dress up');
+ expect(lesson?.chunks[1]?.stress).toBe('primary');
+});

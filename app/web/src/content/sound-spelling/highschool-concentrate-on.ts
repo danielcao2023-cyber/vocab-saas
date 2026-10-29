@@ -87,3 +87,15 @@ highschoolConcentrateOn.push({
  sources:[{label:'Pearson Focus 2 教材词表',url:'https://www.pearson.com/content/dam/one-dot-com/one-dot-com/english/Images/FocusSecondEdition/Focus_2E_SB2_U1.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; British phrase pronunciation checked against Pearson wordlist'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'dress up',ipa:'/drɛs ˈʌp/',
+ chunks:[
+  {letters:'dress ',sound:'/drɛs/',stress:'none',hint:'先读 dress。',pairs:[{letters:'d',sound:'/d/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɛ/'},{letters:'ss',sound:'/s/'},{letters:' ',sound:''}],tip:'双写 ss 对应一个 /s/。'},
+  {letters:'up',sound:'/ʌp/',stress:'primary',hint:'这条美式读法中 up 重读。',pairs:[{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'}],tip:'up 中读 /ʌ/。'},
+ ],
+ anchor:{text:'dress 和 up 连起来读，留意双写 ss 只发一个 /s/。'},
+ variantNote:'此处采用 Collins 短语动词的美式读法；句中重音会随语境变化。',
+ sources:[{label:'Collins Dictionary · dress up 短语动词',url:'https://www.collinsdictionary.com/us/dictionary/english/dress-up'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; American phrasal-verb pronunciation checked against Collins'},
+});
