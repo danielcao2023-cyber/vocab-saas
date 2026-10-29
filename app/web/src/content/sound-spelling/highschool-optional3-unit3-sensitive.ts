@@ -504,7 +504,7 @@ export const highschoolOptional3Unit3Sensitive: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "美式 or 带卷舌，英式 r 通常不单独发音。",
+    "variantNote": "美式 or 带卷舌；单独读词时英式 ore 中的 r 通常不发音，词首 r 发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

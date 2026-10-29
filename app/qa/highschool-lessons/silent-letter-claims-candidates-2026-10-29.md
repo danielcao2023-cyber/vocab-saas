@@ -32,3 +32,13 @@
 - decline、dedicate、tolerate、episode 本轮未找到足够直接的具体词形拼读来源，保留原说明，不能因此推断其说明完整。
 
 真实 getter、结构与覆盖测试 3 文件 8 项通过；未处理录音。
+
+第四批核对英式 r 的泛化描述并修正 5 项：
+
+- [reward](https://dictionary.cambridge.org/us/pronunciation/english/reward)：ward 中辅音前 r 在该英式单词读法通常不发，词首 r 发音。
+- [reform](https://dictionary.cambridge.org/pronunciation/english/reform)：form 中辅音前 r 在所列英式读法不发，词首 r 发音。
+- [restore](https://dictionary.cambridge.org/pronunciation/english/restore)：单独读词时 ore 中 r 在所列英式读法通常不发，词首 r 发音；连读语境可能出现词尾连接 r。
+- [regularly](https://dictionary.cambridge.org/us/pronunciation/english/regularly)：regular 的第二个 r 在所列英式读法不发，词首 r 发音。
+- [straightforward](https://dictionary.cambridge.org/pronunciation/english/straightforward)：straight 部分的 r 发音，forward 中两个 r 在所列英式读法不发。
+
+上述原先“英式 r 通常不发音”未指定位置，容易误教成所有 r 静音；现已限定位置，不修改音标、分块或录音。真实 getter、结构和覆盖测试 3 文件 9 项通过，其他候选尚未逐项复核。

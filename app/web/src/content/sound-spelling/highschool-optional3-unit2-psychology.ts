@@ -236,7 +236,7 @@ export const highschoolOptional3Unit2Psychology: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "重音在 ward；英式 r 通常不发音。",
+    "variantNote": "重音在 ward；单独读词时英式 ward 中的 r 通常不发音，词首 r 发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

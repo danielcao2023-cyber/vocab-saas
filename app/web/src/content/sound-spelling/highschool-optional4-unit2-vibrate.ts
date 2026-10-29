@@ -149,7 +149,7 @@ export const highschoolOptional4Unit2Vibrate: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "straight 中 aigh 对应 /eɪ/；英式 r 常不发音。",
+    "variantNote": "straight 中 aigh 对应 /eɪ/，首部分 r 发音；英式 forward 中两个 r 通常不发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

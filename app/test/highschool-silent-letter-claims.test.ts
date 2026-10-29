@@ -21,3 +21,10 @@ it('explains cited split-vowel spellings in common words',()=>{
   expect([lesson.variantNote,...lesson.chunks.map(c=>c.tip)].join(' '),word).toContain(fragment);
  }
 });
+
+it('distinguishes pronounced initial r from the non-rhotic r in the selected British examples',()=>{
+ for(const [word,fragment] of Object.entries({reward:'词首 r 发音',reform:'词首 r 发音',restore:'词首 r 发音',regularly:'词首 r 发音',straightforward:'首部分 r 发音'})){
+  const lesson=getSoundSpellingLessons(word)[0];
+  expect(lesson.variantNote,word).toContain(fragment);
+ }
+});

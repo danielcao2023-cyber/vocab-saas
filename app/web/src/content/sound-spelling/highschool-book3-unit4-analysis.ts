@@ -416,7 +416,7 @@ export const highschoolBook3Unit4Analysis: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "由 regular 加 -ly 构成；英式 r 通常不发音。",
+    "variantNote": "由 regular 加 -ly 构成；英式 regular 的第二个 r 通常不发音，词首 r 发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
