@@ -85,3 +85,5 @@
 2478 的专名辨析已补充 NOAA 对两大洋地理位置的来源并核验。
 
 后续核验：2486–2515，依据及待核项见 `highschool-comparison-audits/batch-2486-2500.json`、`batch-2501-2515.json`；2503、2507、2508 的地理专名仍待核。
+
+后续核验：2516–2545，逐项依据见 `highschool-comparison-audits/batch-2516-2530.json`、`batch-2531-2545.json`；两组无关对比已移除。
