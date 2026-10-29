@@ -143,3 +143,5 @@
 3324 的 Jasper / jasper 已补地名与普通名词来源。后续核验：3326–3355，逐项依据见 `highschool-comparison-audits/batch-3326-3340.json`、`batch-3341-3355.json`；无关对比已移除。
 
 后续核验：3356–3385，逐项依据见 `highschool-comparison-audits/batch-3356-3370.json`、`batch-3371-3385.json`；无关对比已移除。
+
+后续核验：3386–3415，逐项依据见 `highschool-comparison-audits/batch-3386-3400.json`、`batch-3401-3415.json`；3405 待核，无关对比已移除。
