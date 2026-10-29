@@ -584,3 +584,11 @@ addSourcedPhrase('in memory of','/ɪn ˈmeməri əv/',[
  ch('ry ','/ri/','none',[{letters:'r',sound:'/r/'},{letters:'y',sound:'/i/'},{letters:' ',sound:''}]),
  ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
 ],'Pearson Focus 3 词表','https://can-ada.net/wp-content/uploads/2022/07/Focus-Student-Book-3.pdf');
+addSourcedPhrase('volcanic eruption','/vɒlˌkænɪk ɪˈrʌpʃən/',[
+ ch('vol','/vɒl/','none',[{letters:'v',sound:'/v/'},{letters:'o',sound:'/ɒ/'},{letters:'l',sound:'/l/'}]),
+ ch('can','/kæn/','secondary',[{letters:'c',sound:'/k/'},{letters:'a',sound:'/æ/'},{letters:'n',sound:'/n/'}]),
+ ch('ic ','/ɪk/','none',[{letters:'i',sound:'/ɪ/'},{letters:'c',sound:'/k/'},{letters:' ',sound:''}]),
+ ch('e','/ɪ/','none',[{letters:'e',sound:'/ɪ/'}]),
+ ch('rup','/rʌp/','primary',[{letters:'r',sound:'/r/'},{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'}]),
+ ch('tion','/ʃən/','none',[{letters:'ti',sound:'/ʃ/'},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
+],'Pearson Focus 3 词表','https://can-ada.net/wp-content/uploads/2022/07/Focus-Student-Book-3.pdf');

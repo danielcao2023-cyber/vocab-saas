@@ -271,3 +271,10 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it('matches the Pearson Focus pronunciation and stress for volcanic eruption',()=>{
+ const lesson=getSoundSpellingLesson('volcanic eruption');
+ expect(lesson?.ipa).toBe('/vɒlˌkænɪk ɪˈrʌpʃən/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('volcanic eruption');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','secondary','none','none','primary','none']);
+});
