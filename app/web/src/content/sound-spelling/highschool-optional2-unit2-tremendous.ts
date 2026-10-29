@@ -140,12 +140,8 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
             "sound": "/d/"
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

@@ -362,12 +362,8 @@ export const highschoolOptional4Unit1Fiction: SoundSpellingLesson[] = [
             "sound": "/l/"
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

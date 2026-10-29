@@ -566,12 +566,12 @@ export const highschoolOptional1Unit5Nutrition: SoundSpellingLesson[] = [
   },
   {
     "headword": "nutritious",
-    "ipa": "/nuˈtrɪʃəs/",
-    "uk": "/njuˈtrɪʃəs/",
+    "ipa": "/nuːˈtrɪʃəs/",
+    "uk": "/njuːˈtrɪʃəs/",
     "chunks": [
       {
         "letters": "nu",
-        "sound": "/nu/",
+        "sound": "/nuː/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
@@ -581,7 +581,7 @@ export const highschoolOptional1Unit5Nutrition: SoundSpellingLesson[] = [
           },
           {
             "letters": "u",
-            "sound": "/u/"
+            "sound": "/uː/"
           }
         ],
         "tip": "此部分轻读。"
@@ -614,20 +614,12 @@ export const highschoolOptional1Unit5Nutrition: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "ti",
             "sound": "/ʃ/"
           },
           {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

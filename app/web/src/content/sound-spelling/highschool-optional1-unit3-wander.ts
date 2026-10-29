@@ -350,12 +350,8 @@ export const highschoolOptional1Unit3Wander: SoundSpellingLesson[] = [
             "sound": "/m/"
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

@@ -448,20 +448,12 @@ export const highschoolOptional2Unit2Qualification: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "ti",
             "sound": "/ʃ/"
           },
           {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",
