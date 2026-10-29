@@ -263,7 +263,10 @@ function isWholePhraseRecording(word: string, title: string): boolean {
 /** Shared by resolution and cache reuse: an alias never proves what the actual file says. */
 export function recordingWordProblem(word: string, title: string, options: Pick<SourceOptions, 'sourceUrl' | 'evidenceUrl'> = {}): string | undefined {
   const actual = normalizedFileTitle(title);
-  if (isWholePhraseRecording(word, actual) || /-(?:a|an|the) [^/]+\.(?:ogg|oga|wav|mp3)$/i.test(actual)) return 'whole-phrase-recording';
+  // A requested phrase may itself begin with an article. Exempt only an exact
+  // standard filename; nonstandard accents must still pass the evidence check below.
+  const exactPhrase = actual.match(/^File:En-(?:us|uk|au|ca|gb)-(.+)\.(?:ogg|oga|wav|mp3)$/i)?.[1].toLowerCase() === word.toLowerCase();
+  if (isWholePhraseRecording(word, actual) || (!exactPhrase && /-(?:a|an|the) [^/]+\.(?:ogg|oga|wav|mp3)$/i.test(actual))) return 'whole-phrase-recording';
   const ordinary = actual.match(/^File:En-(?:us|uk)-(.+)\.(?:ogg|oga|wav|mp3)$/i);
   if (ordinary?.[1].toLowerCase() === word.toLowerCase()) return;
   // Nonstandard filenames, spelling variants and sense-specific audio need an explicit,

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { allowedAudioLicense, commonsIdentity, fetchCommonsRecordings, indexCommonsRecording, parseCommonsRecording,
-  parseRetryAfter, resolvePronunciationSource, validAudioUrl, type CommonsRecording } from '../server/src/pronunciation-source.ts';
+  parseRetryAfter, recordingWordProblem, resolvePronunciationSource, validAudioUrl, type CommonsRecording } from '../server/src/pronunciation-source.ts';
 
 const record: CommonsRecording = { title: 'File:En-us-apple.ogg', pageid: 718877,
   sourceUrl: 'https://commons.wikimedia.org/wiki/File:En-us-apple.ogg', author: 'Dvortygirl', license: 'CC BY-SA 3.0',
@@ -55,6 +55,32 @@ describe('pronunciation provenance', () => {
     expect(fetch).not.toHaveBeenCalled();
     expect(commonsIdentity('https://commons.wikimedia.org/wiki/File:en-us-a-stressed.ogg'))
       .toBe('title:File:En-us-a-stressed.ogg');
+  });
+
+  it('accepts an exact English recording when the article is part of the requested phrase', () => {
+    expect(recordingWordProblem('a great deal', 'File:En-us-a_great_deal.ogg')).toBeUndefined();
+    expect(recordingWordProblem('the Antarctic', 'File:En-uk-the Antarctic.ogg')).toBeUndefined();
+  });
+
+  it('still requires independent evidence for an exact nonstandard-accent filename', async () => {
+    const phrase = { ...record, title: 'File:En-au-a great deal.ogg',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:En-au-a_great_deal.ogg' };
+    const map = new Map<string, CommonsRecording>(); indexCommonsRecording(map, phrase);
+    const options = { provider: 'wikimedia-commons' as const, sourceUrl: phrase.sourceUrl, metadata: map, lookupCommons: false };
+    expect(await resolvePronunciationSource('a great deal', options)).toMatchObject({ status: 'unknown', reason: 'unverified-recording-selection' });
+    // Synthetic evidence exercises the selection guard; it is not a claim that this recording is on Wiktionary.
+    expect(await resolvePronunciationSource('a great deal', { ...options, evidenceUrl: 'https://en.wiktionary.org/wiki/a%20great%20deal#English' }))
+      .toMatchObject({ status: 'resolved', source: { word: 'a great deal' } });
+  });
+
+  it('rejects an extra article even when the requested phrase already begins with one', async () => {
+    expect(recordingWordProblem('great deal', 'File:En-us-a great deal.ogg')).toBe('whole-phrase-recording');
+    expect(recordingWordProblem('a great deal', 'File:En-us-the a great deal.ogg')).toBe('whole-phrase-recording');
+    const phrase = { ...record, title: 'File:En-us-the a great deal.ogg', aliases: ['File:En-us-a great deal.ogg'] };
+    const map = new Map<string, CommonsRecording>(); indexCommonsRecording(map, phrase);
+    expect(await resolvePronunciationSource('a great deal', { provider: 'wikimedia-commons',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:En-us-a_great_deal.ogg', metadata: map, lookupCommons: false }))
+      .toEqual({ status: 'unknown', reason: 'whole-phrase-recording' });
   });
 
   it('rejects a bare-word alias that redirects to an article-plus-word recording', async () => {
