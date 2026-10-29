@@ -62,3 +62,13 @@ it('keeps complex adjective as default and makes the noun pronunciation availabl
   expect(base.statusCode).toBe(200);expect(noun.statusCode).toBe(200);expect(createHash('sha256').update(base.rawPayload).digest('hex')).not.toBe(createHash('sha256').update(noun.rawPayload).digest('hex'));
  }finally{await app.close();db.close();}
 });
+
+it('keeps advocate verb as default and provides the distinct noun recording',async()=>{
+ const db=openDb(':memory:');db.prepare("INSERT INTO words(headword,source) VALUES ('advocate','test')").run();
+ const app=buildApp(db);try{
+  const meta=(await app.inject('/api/pronunciation?word=advocate')).json();expect(meta.pronunciationNote).toContain('动词');
+  expect(meta.variants.map((x:{variant:string})=>x.variant)).toEqual(['noun']);
+  const base=await app.inject('/api/pronunciation/audio?word=advocate');const noun=await app.inject('/api/pronunciation/audio?word=advocate&variant=noun');
+  expect(base.statusCode).toBe(200);expect(noun.statusCode).toBe(200);expect(createHash('sha256').update(base.rawPayload).digest('hex')).not.toBe(createHash('sha256').update(noun.rawPayload).digest('hex'));
+ }finally{await app.close();db.close();}
+});

@@ -375,3 +375,5 @@
 `batch-lever-recovery.json` 加入 lever 英式录音；核对法语 Wiktionary 英语栏目、Commons 作者的 PD-self 声明、解码及哈希，尚未人工试听。带连字符版本号的文件仍需词典关联及描述匹配。
 
 `batch-advocate-recovery.json` 加入 advocate 动词美式录音；核对英文 Wiktionary 词性、Commons 作者与许可、解码及哈希，尚未人工试听；名词读音仍待独立接入。
+
+`next9-advocate-noun.json` 增加 advocate 英式名词录音，保留已有美式动词默认录音；词典关联、Commons 许可、解码和哈希已核对，尚未试听。
