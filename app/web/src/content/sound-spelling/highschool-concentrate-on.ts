@@ -603,3 +603,9 @@ addSourcedPhrase('first hand','/ˌfɜːst ˈhænd/',[
  ch('first ','/fɜːst/','secondary',[{letters:'f',sound:'/f/'},{letters:'ir',sound:'/ɜː/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
  ch('hand','/hænd/','primary',[{letters:'h',sound:'/h/'},{letters:'a',sound:'/æ/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'}]),
 ],'Oxford Learner’s Dictionaries · first-hand','https://www.oxfordlearnersdictionaries.com/us/definition/english/first-hand_2');
+addSourcedPhrase('take out a loan','/teɪk ˌaʊt ə ˈləʊn/',[
+ ch('take ','/teɪk/','none',[{letters:'t',sound:'/t/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('out ','/aʊt/','secondary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('loan','/ləʊn/','primary',[{letters:'l',sound:'/l/'},{letters:'oa',sound:'/əʊ/'},{letters:'n',sound:'/n/'}]),
+],'Business in Context 3 词表','https://www.scook.at/cdn_proxy/8e31087a-04df-4a3c-89b8-bf45619447a4/0451750101_0451510101_WL_Lernwortschatz_gesamt.pdf');

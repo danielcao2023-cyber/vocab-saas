@@ -292,3 +292,10 @@ it('matches Oxford first-hand pronunciation and stress for first hand',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('first hand');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
 });
+
+it('matches Business in Context pronunciation and stress for take out a loan',()=>{
+ const lesson=getSoundSpellingLesson('take out a loan');
+ expect(lesson?.ipa).toBe('/teɪk ˌaʊt ə ˈləʊn/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('take out a loan');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','secondary','none','primary']);
+});
