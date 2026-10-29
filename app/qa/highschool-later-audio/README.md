@@ -385,3 +385,5 @@
 `batch-polish3-recovery.json` 依据波兰维基词典英语栏目及 Commons 许可补入 analyse、commercialisation、commercialise 的完整录音；文件已解码及核对哈希，尚未人工试听，口音未确认。
 
 `batch-polishnext-recovery.json` 依据波兰维基词典英语栏目及 Commons 许可补入 fade away、a great deal、gumbo 的完整录音；a great deal 文件标为澳大利亚口音。文件已解码及核对哈希，尚未人工试听。
+
+异读词入口审计：详情页及离线接口支持名词、动词独立录音；练习卡只调用默认读音，不会按释义自动选择词性。entrance 的名词和动词候选来源已核实但尚未试听，不能视为接入或完整覆盖。
