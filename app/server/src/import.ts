@@ -170,6 +170,11 @@ function applyWords(db: DB, list: ListEntry[], dict: ReadonlyMap<string, DictEnt
     if (key === null) missingEcdict.push(headword);
     else if (key !== lookupKey(headword)) caseInsensitiveHits.push({ headword, ecdict_key: key });
     const old = find.get(source, headword) as WordValues | undefined;
+    // Explicit manual input is authoritative; otherwise protect prior human
+    // meanings and review flags when refreshing the curriculum dictionary.
+    if(source==='kb2022' && old && manualMeaning===undefined && (old.meaning_source==='manual'||old.meaning_flag!==null)){
+      values.meaning_zh=old.meaning_zh; values.meaning_source=old.meaning_source; values.meaning_flag=old.meaning_flag;
+    }
     const correction=source==='kb2022'?KB2022_TEXTBOOK_CORRECTIONS[headword]:undefined;
     if(old && correction && manualMeaning===undefined && old.meaning_source==='教材校订' && old.meaning_flag===null && old.meaning_zh===correction.meaning){
       values.meaning_zh=old.meaning_zh; values.meaning_source=old.meaning_source; values.meaning_flag=old.meaning_flag;
