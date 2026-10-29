@@ -56,7 +56,7 @@ export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now)
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
  const shown=legacyIssueHeadword(i,w.headword)??w.headword;
- return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:acceptedSpellings(shown)[0]}:{headword:displayHeadword(db,i.word_id,w.headword)})};
+ return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:shown}:{headword:displayHeadword(db,i.word_id,w.headword)})};
 }
 export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};

@@ -128,12 +128,8 @@ export function parseCommonsRecording(page: any): CommonsRecording | undefined {
   // Older files sometimes lack an Artist field but explicitly name the recorder in their description.
   if (!author || /no machine-readable author|assumed/i.test(author)) {
     const descriptionHtml = m?.ImageDescription?.value ?? '';
-    const pronunciationBy = descriptionHtml.match(/pronunciation of([^\n]{0,200}?)\bby\s*(<a\b[^>]*>[^<]+<\/a>)/i);
-    const namedPronouncer = pronunciationBy && !/\b(?:upload\w*|convert\w*|edit\w*|transfer\w*|modif\w*)\b/i.test(pronunciationBy[1])
-      ? pronunciationBy[2] : undefined;
-    author = plain(descriptionHtml.match(/recorded by\s*(<a\b[^>]*>[^<]+<\/a>)/i)?.[1] ??
-      descriptionHtml.match(/(<a\b[^>]*>[^<]+<\/a>)(?:'|&#39;|&apos;)s pronunciation\b/i)?.[1] ??
-      namedPronouncer);
+    // A named speaker is not necessarily the recording creator or copyright holder.
+    author = plain(descriptionHtml.match(/recorded by\s*(<a\b[^>]*>[^<]+<\/a>)/i)?.[1]);
   }
   let license = plain(m?.LicenseShortName?.value);
   let licenseUrl = m?.LicenseUrl?.value;

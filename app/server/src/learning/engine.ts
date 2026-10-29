@@ -56,7 +56,7 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
  const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,issue.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
-  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:acceptedSpellings(shown)[0]})};
+  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:shown})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};

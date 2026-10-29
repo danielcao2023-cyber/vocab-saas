@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it, vi } from 'vitest';
 import { allowedAudioLicense, commonsIdentity, fetchCommonsRecordings, indexCommonsRecording, parseCommonsRecording,
   parseRetryAfter, recordingWordProblem, resolvePronunciationSource, validAudioUrl, type CommonsRecording } from '../server/src/pronunciation-source.ts';
@@ -279,19 +280,26 @@ describe('pronunciation provenance', () => {
     expect(fetchFn).toHaveBeenCalledTimes(1);
   });
 
-  it('recognizes explicit possessive recorder attribution without trusting an assumed uploader', () => {
+  it('does not infer recording authorship from the identity of a speaker', () => {
     const page = { pageid: 42, title: 'File:En-us-Chinese.ogg', categories: [{ title: 'Category:PD-self' }], videoinfo: [{
       descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-Chinese.ogg',
       extmetadata: { Artist: { value: 'No machine-readable author provided. Muke assumed.' },
         LicenseShortName: { value: 'Public domain' },
         ImageDescription: { value: '<a href="/wiki/User:Muke">Muke Tever</a>\'s pronunciation of Chinese in general American English.' } },
     }] };
-    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever', license: 'Public domain (PD-self)' });
+    expect(parseCommonsRecording(page)).toBeUndefined();
     page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word <b>Chinese</b> by <a>Muke Tever</a>';
-    expect(parseCommonsRecording(page)).toMatchObject({ author: 'Muke Tever' });
+    expect(parseCommonsRecording(page)).toBeUndefined();
     page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation uploaded by <a>Someone</a>';
     expect(parseCommonsRecording(page)).toBeUndefined();
     page.videoinfo[0].extmetadata.ImageDescription.value = 'Pronunciation of the word Chinese uploaded by <a>Someone</a>';
+    expect(parseCommonsRecording(page)).toBeUndefined();
+  });
+
+  it('rejects the real Arabic metadata when authorship is only assumed', () => {
+    const page = JSON.parse(readFileSync(new URL('./fixtures/commons-arabic-assumed.json', import.meta.url), 'utf8'));
+    expect(page.videoinfo[0].extmetadata.Artist.value).toMatch(/assumed/i);
+    expect(page.videoinfo[0].extmetadata.ImageDescription.value).toContain('Muke Tever');
     expect(parseCommonsRecording(page)).toBeUndefined();
   });
 

@@ -43,7 +43,7 @@ try {
   const r=spoken?offline[spoken]:undefined,src=spoken?source.entries[spoken]:undefined;
   const offlineValid=!!spoken&&valid(spoken,r,join(root,'mobile-public/offline/recordings'),true);
   const sourceValid=!!spoken&&valid(spoken,src,join(root,'data/pronunciation'),false);
-  return {key:e.key,word:w?.headword??null,id:w?.id??null,spoken,books:e.memberships.filter((m:any)=>m.bookId.startsWith('pep2019-')).map((m:any)=>({bookId:m.bookId,unitId:m.unitId})),placeholder:!!spoken&&hasDictionaryPlaceholder(spoken),offlineValid,sourceValid,accent:offlineValid?r.accent:null,sourceUrl:offlineValid?r.sourceUrl:null,note:offlineValid?r.pronunciationNote??null:null,metadataOnly:!!r&&!offlineValid};
+  return {key:e.key,word:w?.headword??null,id:w?.id??null,spoken,books:e.memberships.filter((m:any)=>m.bookId.startsWith('pep2019-')).map((m:any)=>({bookId:m.bookId,unitId:m.unitId})),placeholder:!!w&&hasDictionaryPlaceholder(w.headword),offlineValid,sourceValid,accent:offlineValid?r.accent:null,sourceUrl:offlineValid?r.sourceUrl:null,note:offlineValid?r.pronunciationNote??null:null,metadataOnly:!!r&&!offlineValid};
  });
  const count=(f:(r:any)=>boolean)=>rows.filter(f).length;
  const stats={total:rows.length,mappingMissing:count(r=>!r.word),offlineValid:count(r=>r.offlineValid),sourceValid:count(r=>r.sourceValid),offlineMissing:count(r=>!!r.word&&!r.offlineValid),sourceOnly:count(r=>r.sourceValid&&!r.offlineValid),offlineOnly:count(r=>r.offlineValid&&!r.sourceValid),placeholder:count(r=>r.placeholder),missingPlaceholder:count(r=>r.placeholder&&!r.offlineValid),accents:Object.fromEntries(['us','uk','unknown'].map(a=>[a,count(r=>r.offlineValid&&r.accent===a)]))};
