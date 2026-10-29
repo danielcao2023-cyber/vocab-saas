@@ -62,7 +62,7 @@
 | regardless of / `regardless of` | `data/lessons/3251.json` | 不管；不顾；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | category / `category` | `data/lessons/3252.json` | 类别；种类；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | vitamin / `vitamin` | `data/lessons/3253.json` | 维生素；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
-| fibre / `fibre` | `data/lessons/3254.json` | 纤维；膳食纤维；词典支持纤维可织成制品，原例句为材料纤维；“制品”作为独立词义缺证据，保持待核 |
+| fibre / `fibre` | `data/lessons/3254.json` | 纤维；膳食纤维；后续据 Oxford 补纤维材料/织物义，避免泛化为任意制品 |
 | quantity / `quantity` | `data/lessons/3255.json` | 数量；量；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | dairy / `dairy` | `data/lessons/3256.json` | 乳制品；乳品的；乳品厂；乳品加工场；补乳品店用例 |
 | moderation / `moderation` | `data/lessons/3257.json` | 适度；节制；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
@@ -82,3 +82,5 @@
 后续核查（2026-10-30）：[exceptional](https://dictionary.cambridge.org/dictionary/learner-english/exceptional) 和 [consistent](https://dictionary.cambridge.org/dictionary/english/consistent) 已有相关例句；[fibre](https://dictionary.cambridge.org/dictionary/english/fibre) 可做成布等材料，不据此断言任意纤维制品均叫 fibre。[dairy](https://www.collinsdictionary.com/us/dictionary/english/dairy) 补乳品店例句，[ideal](https://www.collinsdictionary.com/dictionary/english/ideal) 补理想世界和典范例句；[Kazak/Kazakh](https://www.dictionary.com/browse/kazakh) 原例中作前置修饰，补名词例句并说明词性。所有新增例句为原创，测试 `test/highschool-optional2-unit3-followup.test.ts` 使用真实 reader/validateLesson。
 
 词形与判分检查：教材 bean curd 括注 tofu；当前二者为独立 key、独立 headword，`server/src/study.ts` 的 `acceptedSpellings` 实测分别仅返回 `bean curd` 和 `tofu`；V2/V3 拼写、听写均按此精确判分，题面横线由各词自身的拼写生成，因此跨答会判错且横线长度不同。认词按各自独立记录发题。二者意义等同并非简单的英美拼写变体；是否接受同义答案、不同长度输入与避免重复出题需独立设计，本轮未更改身份、判分或记录。
+
+后续复核：[Oxford fibre](https://www.oxfordlearnersdictionaries.com/us/definition/english/fibre) 将布或绳等纤维材料列为词义，已补纤维材料/织物及自拟例句；不能据此泛化所有纤维成品均可叫 fibre。`test/highschool-optional2-unit3-fibre-followup.test.ts` 两项通过，含全单元实际 reader 和 validateLesson。

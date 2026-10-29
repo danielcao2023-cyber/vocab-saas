@@ -59,7 +59,7 @@
 | fetch / `fetch` | `data/lessons/3803.json` | 去取来；接来；初筛：已有相关例句 |
 | handkerchief / `handkerchief` | `data/lessons/3804.json` | 手帕；初筛：已有相关例句 |
 | lamp / `lamp` | `data/lessons/755.json` | 灯；照明设备；初筛：已有相关例句 |
-| turn out / `turn out` | `data/lessons/3805.json` | 结果是；原来是；关掉；后续已补到场例句；“使朝外”仍待核 |
+| turn out / `turn out` | `data/lessons/3805.json` | 结果是；原来是；关掉；后续已补到场例句；后续据 Oxford 补“（使）朝外；向外转”及例句 |
 | pace / `pace` | `data/lessons/3806.json` | 速度；步伐；踱步；调整自己的节奏；初筛：已有相关例句 |
 | fall away / `fall away` | `data/lessons/3807.json` | 脱落；减少；向下倾斜；逐渐减少；本批补例句，词典核查并验证 reader |
 | division / `division` | `data/lessons/3808.json` | 分割；部门；除法；分歧；本批补例句，词典核查并验证 reader |
@@ -83,4 +83,6 @@
 | The Three-Body Problem / `The Three-Body Problem` | `data/lessons/3826.json` | 《三体》；初筛：已有相关例句 |
 | Hugo Award / `Hugo Award` | `data/lessons/3827.json` | 雨果奖；初筛：已有相关例句 |
 
-未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖；turn out 的“使朝外”等义项仍需深入核验。专名仅查讲解可见，未重核身份；文件按当前 headword 匹配，stable key 与运行时 ID 跨设备转换未逐项重新验证。
+未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖；turn out 的“使朝外”后续核查见下文，其余细义仍需深入核验。专名仅查讲解可见，未重核身份；文件按当前 headword 匹配，stable key 与运行时 ID 跨设备转换未逐项重新验证。
+
+后续核查：[Oxford](https://www.oxfordlearnersdictionaries.com/us/definition/english/turn-out) 分别给出不及物朝外及及物使朝外，已补独立义项与自拟例句。`test/highschool-optional4-unit1-turn-out-followup.test.ts` 两项通过，含全单元真实 reader 和 validateLesson。

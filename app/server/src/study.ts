@@ -195,7 +195,8 @@ export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 
   const hasOvenSense = visibleSenses.includes('微波炉');
   const microwaveEquivalent = hasOvenSense ? ({'microwave':'microwave oven','microwave oven':'microwave'} as Record<string,string>)[spellings[0]] : undefined;
   const tuitionEquivalent = visibleSenses.includes('学费') ? ({'tuition':'tuition fees','tuition fees':'tuition'} as Record<string,string>)[spellings[0]] : undefined;
-  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? textbookTranslationEquivalents[spellings[0]];
+  const obgynEquivalent = visibleSenses.includes('妇产科') ? ({'the ob-gyn department':'department of obstetrics and gynecology','department of obstetrics and gynecology':'the ob-gyn department'} as Record<string,string>)[spellings[0]] : undefined;
+  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? obgynEquivalent ?? textbookTranslationEquivalents[spellings[0]];
   return equivalent ? [...new Set([...spellings, equivalent])] : spellings;
 }
 

@@ -9,7 +9,7 @@
 
 测试：`test/highschool-optional34-pending-followup.test.ts`。
 
-仍待核：选必四 Unit 1 turn out 使朝外，Unit 5 geometry 几何图形。其余未显式标出的细义仍未全部逐条词典审核。本次未处理录音。
+仍待核：选必四 Unit 1 turn out 使朝外。Unit 5 geometry 已依据词典补“几何构型”，单个几何图形应区分 geometric shape，见 optional4-unit5 初筛及后续测试。其余未显式标出的细义仍未全部逐条词典审核。本次未处理录音。
 
 后续（2026-10-30）：[noble](https://www.collinsdictionary.com/dictionary/english/noble) 宏伟义及 [entry](https://dictionary.cambridge.org/dictionary/english/entry) 参加比赛义补原创例句；[exhibition](https://dictionary.cambridge.org/dictionary/english/exhibition) 的 s2 已有技能/品质的展现及两个例句。真实 reader 与 validateLesson 测试见 `test/highschool-optional34-pending-followup2.test.ts`。realism 后续已据 Oxford 名词词条核实逼真质量义。
 
