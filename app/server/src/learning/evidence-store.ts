@@ -61,7 +61,7 @@ export function capabilityNeeds(db:DB,wordId:number,now:Date):CapabilityNeed[]{
 }
 export function readWordEvidence(db:DB,wordId:number,now:Date):WordEvidenceState {
  const headword=(db.prepare('SELECT headword FROM words WHERE id=?').get(wordId) as {headword:string}).headword,limited=hasDictionaryPlaceholder(headword);
- const all=evidenceCards(db,wordId),cards=all.filter(c=>!limited||c.mode==='recognize'),contact=!!db.prepare('SELECT 1 FROM learning_events WHERE word_id=? LIMIT 1').get(wordId)||all.some(c=>c.reps>0);
+ const all=evidenceCards(db,wordId),cards=all.filter(c=>!limited||c.mode==='recognize'),contact=!!db.prepare("SELECT 1 FROM learning_events WHERE word_id=? AND kind<>'technical_defer' LIMIT 1").get(wordId)||all.some(c=>c.reps>0);
  const priority=cards.some(c=>!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2);
  const stable=!limited&&cards.length===3&&!priority&&cards.every(c=>c.delayed_successes>0&&JSON.parse(c.recovery_days).length>=2&&(c.mode==='recognize'||c.scheduled_days>=7));
  const due=contact?capabilityNeeds(db,wordId,now).map(n=>n.dueAt).sort()[0]??null:null;
@@ -72,4 +72,4 @@ export function projectEvidence(db:DB,wordId:number,now:Date){const e=readWordEv
 
 export const untouchedEvidence=():WordEvidenceState=>({stage:'new',priority:false,stable:false,dueAt:null,weakModes:[...MODES]});
 /** One contact scan avoids thousands of empty per-word reads on the offline corpus. */
-export function evidenceIndex(db:DB,now:Date){const ids=db.prepare('SELECT DISTINCT word_id FROM learning_events UNION SELECT DISTINCT word_id FROM cards WHERE reps>0').all() as {word_id:number}[];return new Map(ids.map(r=>[r.word_id,readWordEvidence(db,r.word_id,now)]));}
+export function evidenceIndex(db:DB,now:Date){const ids=db.prepare("SELECT DISTINCT word_id FROM learning_events WHERE kind<>'technical_defer' UNION SELECT DISTINCT word_id FROM cards WHERE reps>0").all() as {word_id:number}[];return new Map(ids.map(r=>[r.word_id,readWordEvidence(db,r.word_id,now)]));}

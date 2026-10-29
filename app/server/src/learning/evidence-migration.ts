@@ -50,8 +50,19 @@ export function activateEvidencePolicy(db:DB,now:Date):MigrationReport {
    }else if(c.reps>0)unknown++;
    db.prepare('INSERT OR IGNORE INTO learning_card_state(card_id,verification_due,last_attempt_at,last_failure_at) VALUES (?,?,?,?)').run(c.id,c.reps>0||last?stamp:null,last,last);
   }
+  // Infer only the uniquely identifiable last V2 dictation defer for each word.
+  // Earlier or ambiguous history cannot safely establish a consecutive failure count.
+  const deferredIssues=db.prepare(`SELECT i.* FROM learning_issues i JOIN learning_day_words d ON d.day=i.day AND d.word_id=i.word_id
+   WHERE d.deferred=1 AND i.mode='dictation' AND i.answered_at IS NOT NULL AND i.answer_id IS NULL AND i.result_json IS NULL
+   AND datetime(i.issued_at) IS NOT NULL AND datetime(i.answered_at) IS NOT NULL AND i.issued_at<=i.answered_at AND i.answered_at<=?
+   AND substr(datetime(i.answered_at,'+8 hours'),1,10)=i.day
+   AND (SELECT COUNT(*) FROM learning_issues c WHERE c.day=i.day AND c.word_id=i.word_id AND c.mode='dictation' AND c.answered_at IS NOT NULL AND c.answer_id IS NULL AND c.result_json IS NULL)=1
+   AND NOT EXISTS(SELECT 1 FROM learning_issues later WHERE later.word_id=i.word_id AND later.mode='dictation' AND (later.issued_at>i.issued_at OR (later.issued_at=i.issued_at AND later.rowid>i.rowid)))`).all(stamp) as any[];
+  const deferredIds=new Set(deferredIssues.map(i=>i.id));
+  for(const i of deferredIssues)db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'technical_defer',?,'audio','legacy_verified')").run('legacy-technical-defer:'+i.id,i.word_id,'dictation',i.id,i.answered_at);
   // Known answer reveals protect all sibling modes, including unknown legacy successes.
   for(const i of db.prepare('SELECT * FROM learning_issues WHERE answered_at IS NOT NULL OR assisted=1').all() as any[]){
+   if(deferredIds.has(i.id)&&!i.assisted)continue;
    db.prepare("INSERT OR IGNORE INTO learning_events(event_key,word_id,mode,issue_id,kind,occurred_at,reason,source) VALUES (?,?,?,?,'exposure',?,'legacy_answer','legacy_verified')").run('legacy-exposure:'+i.id,i.word_id,i.mode,i.id,i.answered_at??stamp);
   }
   for(const l of db.prepare('SELECT l.*,c.word_id,c.mode FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE NOT EXISTS(SELECT 1 FROM learning_issues i WHERE i.answer_id=l.answer_id AND i.answer_id IS NOT NULL)').all() as any[]){
