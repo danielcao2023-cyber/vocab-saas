@@ -474,3 +474,12 @@ addSourcedPhrase('pass away','/ˌpɑːs əˈweɪ/',[
  ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
  ch('way','/weɪ/','primary',[{letters:'w',sound:'/w/'},{letters:'ay',sound:'/eɪ/'}]),
 ],'Express Publishing New Enterprise 2 词表','https://vipclub.egis.com.pl/zasoby/1ab869fd/1_new_enterprise_2_word_list.pdf');
+addSourcedPhrase('even if','/ˈiːvn ɪf/',[
+ ch('e','/iː/','primary',[{letters:'e',sound:'/iː/'}]),
+ ch('ven ','/vn/','none',[{letters:'v',sound:'/v/'},{letters:'e',sound:''},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('if','/ɪf/','none',[{letters:'i',sound:'/ɪ/'},{letters:'f',sound:'/f/'}]),
+],'Get to the Top Plus 3 词表','https://hu.elt-eu.com/sites/default/files/media/unprotected-files/Get_to_the_Top_Plus_3_companion.pdf');
+addSourcedPhrase('make it','/ˈmeɪk ɪt/',[
+ ch('make ','/meɪk/','primary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('it','/ɪt/','none',[{letters:'i',sound:'/ɪ/'},{letters:'t',sound:'/t/'}]),
+],'Business in Context 4/5 词表','https://www.scook.at/cdn_proxy/da3a4828-b4a9-48be-b48b-d177117db29e/0451760101_0451760101_WL_Alpha_Wortliste_tabellarisch.pdf');

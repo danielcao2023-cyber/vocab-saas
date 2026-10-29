@@ -186,3 +186,10 @@ it.each([['on hand','/ɒn ˈhænd/'],['keep track of','/kiːp ˈtræk əv/'],['p
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['even if','/ˈiːvn ɪf/'],['make it','/ˈmeɪk ɪt/']])('shows the sourced phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(word === 'even if' ? ['primary','none','none'] : ['primary','none']);
+});
