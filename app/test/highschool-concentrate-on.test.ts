@@ -251,3 +251,13 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it.each([
+ ['on the move','/ɒn ðə ˈmuːv/',['none','none','primary']],
+ ['in that case','/ɪn ˈðæt keɪs/',['none','primary','none']],
+])('matches the textbook pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});

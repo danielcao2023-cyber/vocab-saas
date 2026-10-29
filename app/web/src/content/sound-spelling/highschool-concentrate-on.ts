@@ -562,3 +562,13 @@ addSourcedPhrase('a great deal','/ə ˈɡreɪt diːl/',[
  ch('great ','/ɡreɪt/','primary',[{letters:'g',sound:'/ɡ/'},{letters:'r',sound:'/r/'},{letters:'ea',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
  ch('deal','/diːl/','none',[{letters:'d',sound:'/d/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'}]),
 ],'Pearson Focus 4 词表',pearsonFocus4);
+addSourcedPhrase('on the move','/ɒn ðə ˈmuːv/',[
+ ch('on ','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('the ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('move','/muːv/','primary',[{letters:'m',sound:'/m/'},{letters:'o',sound:'/uː/'},{letters:'v',sound:'/v/'},{letters:'e',sound:''}]),
+],'高中英语 Unit 6 词表','https://www.ejor.net/edu/upload/12-2024/content/67655b8d36dd4.pdf');
+addSourcedPhrase('in that case','/ɪn ˈðæt keɪs/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('that ','/ðæt/','primary',[{letters:'th',sound:'/ð/'},{letters:'a',sound:'/æ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('case','/keɪs/','none',[{letters:'c',sound:'/k/'},{letters:'a',sound:'/eɪ/'},{letters:'s',sound:'/s/'},{letters:'e',sound:''}]),
+],'Macmillan In Company 词表','https://legacy.hueber.de/media/36/Unit_11-15_Pre-int_sec_inc.pdf');
