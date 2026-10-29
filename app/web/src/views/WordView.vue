@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed,onMounted,onUnmounted,ref,watch} from 'vue';
 import {api,speak,stopAudio,pronunciationCreditsUrl,type PlaybackFailure} from '../api';
-import {pronunciationHeadword} from '../audio';
+import {pronunciationHeadword,systemSpeechText} from '../audio';
 import {COPY} from '../copy';
 import type {WordDetail} from '../types';
 import type {WordLesson,WordLessonResponse} from '../../../shared/lesson';
@@ -27,6 +27,8 @@ const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
 let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
 const card=computed(()=>detail.value!.word);
 const recognitionOnly=computed(()=>hasDictionaryPlaceholder(detail.value?.word.headword??''));
+const systemExample=computed(()=>systemSpeech.value&&detail.value&&/\b(?:sb|sth)\./i.test(detail.value.word.headword)?systemSpeechText(detail.value.word.headword):'');
+const recordModes=computed(()=>(recognitionOnly.value?['recognize']:['recognize','spell','dictation']) as ('recognize'|'spell'|'dictation')[]);
 const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!recognitionOnly.value||e.mode==='recognize')??[]);
 // The response is fetched independently; never show a lesson for a different card.
 const lesson=computed(()=>loadedLesson.value?.wordId===detail.value?.word.id
@@ -108,16 +110,16 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
-          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}</p>
+          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
           <p v-if="recordingReady&&!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='incomplete'?COPY.audioIncomplete:audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button v-if="audioFailed!=='incomplete'" type="button" class="link" @click="play(lastPlaybackWord??undefined,lastPlaybackVariant)">{{ COPY.audioRetry }}</button></p>
         <details v-if="detail.memberships?.length" class="lesson-record"><summary>词书与单元</summary><p v-for="m in detail.memberships" :key="m.bookId+String(m.unitId)" class="small muted">{{ m.bookTitle }}<span v-if="m.unitTitle"> · {{ m.unitTitle }}</span></p></details>
         <details :key="wordId" class="lesson-record">
-          <summary>学习记录 <span>认词 · 拼写 · 听写</span></summary>
+          <summary>学习记录 <span>{{ recognitionOnly?'认词':'认词 · 拼写 · 听写' }}</span></summary>
           <div class="cards3">
-            <div v-for="mode in (['recognize','spell','dictation'] as const)" :key="mode" class="c">
+            <div v-for="mode in recordModes" :key="mode" class="c">
               <span>{{ COPY.qtypes[mode] }}</span>
               <span>{{ detail.statusDetail[mode]?COPY.cardStates[detail.statusDetail[mode]!.state]+' · '+date(detail.statusDetail[mode]!.due):COPY.noCard }}</span>
             </div>

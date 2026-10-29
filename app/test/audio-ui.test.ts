@@ -236,3 +236,16 @@ it('discount word page displays the actual recording IPA ahead of the stale verb
  vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.includes('/lesson')?{status:'ready',lesson}:url.startsWith('/api/pronunciation?')?{status:'ready',ipa:'/ˈdɪskaʊnt/',pronunciationNote:'录音为动词读音。'}:{status:'missing'}))));
  const ui=host('web/src/views/WordView.vue',{wordId:2092,initial:detail});try{await flush();const phon=ui.all(n=>n.props.class==='phon');expect(phon.length).toBeGreaterThan(0);expect(ui.text(phon[0])).toContain('/ˈdɪskaʊnt/');expect(ui.text(phon[0])).not.toContain('[dɪˈskaʊnt]');ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();expect(MockAudio.instances[0].src).toContain('word=discount')}finally{ui.app.unmount()}
 });
+
+for(const mobile of [false,true])it(`${mobile?'offline':'online'} WordView displays the exact synthesized placeholder expansion`,async()=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let spoken:Utterance|undefined;vi.stubGlobal('__VOCAB_MOBILE__',mobile);vi.stubGlobal('__VOCAB_RECORDINGS__',{});
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{spoken=u},cancel:vi.fn()});
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,'sign up for sth.')});
+ try{await flush();ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();if(!mobile)MockAudio.instances[0].emit('error');await flush();expect(spoken?.text).toBe('sign up for something');spoken!.onend!();await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.text()).toContain('sign up for something');}finally{ui.app.unmount()}
+});
+
+it.each([['sign up for sth.',true],['receive',false]])('WordView limits record cards only for protected entries: %s',async(word,limited)=>{
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,word)});
+ try{await flush();const group=ui.all(n=>n.props.class==='cards3')[0];expect(group).toBeDefined();const text=ui.text(group);expect(text).toContain(COPY.qtypes.recognize);if(limited){expect(text).not.toContain(COPY.qtypes.spell);expect(text).not.toContain(COPY.qtypes.dictation)}else{expect(text).toContain(COPY.qtypes.spell);expect(text).toContain(COPY.qtypes.dictation)}}finally{ui.app.unmount()}
+});

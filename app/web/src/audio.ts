@@ -30,6 +30,13 @@ export function pronunciationCreditsUrl(headword?: string): string {
   return '/api/pronunciation/credits' + (word ? `?word=${encodeURIComponent(word)}` : '');
 }
 
+/** Exact text sent to either system speech engine, including textbook placeholders. */
+export function systemSpeechText(headword: string): string {
+  const word=pronunciationHeadword(headword);
+  return /^help\s+sb\.\s+to\s+one's\s+feet$/i.test(word) ? 'help someone to their feet' : word.replace(/\bsb\.(['’]s)?/gi, (_match, possessive: string | undefined) => possessive ? "someone's" : 'someone')
+    .replace(/\bsth\./gi, 'something');
+}
+
 /** Start synchronously within the click handler so the browser retains its user gesture. */
 export function speak(headword: string, variant?: 'noun'|'verb'): Promise<PlaybackResult> {
   stopAudio();
@@ -38,8 +45,7 @@ export function speak(headword: string, variant?: 'noun'|'verb'): Promise<Playba
   if (!word || typeof Audio === 'undefined') {
     return Promise.resolve({ status: 'unavailable', reason: 'failed' });
   }
-  const spoken = /^help\s+sb\.\s+to\s+one's\s+feet$/i.test(word) ? 'help someone to their feet' : word.replace(/\bsb\.(['’]s)?/gi, (_match, possessive: string | undefined) => possessive ? "someone's" : 'someone')
-    .replace(/\bsth\./gi, 'something');
+  const spoken = systemSpeechText(headword);
   return new Promise(resolve => {
     let audio: HTMLAudioElement;
     try { audio = new Audio(); }
