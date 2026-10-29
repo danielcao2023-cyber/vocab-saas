@@ -11,6 +11,7 @@ import ChoiceQuestion from '../components/ChoiceQuestion.vue';
 import ExplainPanel from '../components/ExplainPanel.vue';
 import SpeakButton from '../components/SpeakButton.vue';
 import AnswerLesson from '../components/AnswerLesson.vue';
+import {pronunciationHeadword,type RecordingPlayback} from '../audio';
 const props=defineProps<{ prefer: 'review'|'new'; practice: Turn[]|null; estimate: number }>();
 const emit=defineEmits<{ cancel: []; done: [session: {done:number;correct:number}]; online: [value:boolean]; stale: [] }>();
 const turn=ref<Turn|null>(null), revealed=ref(false), answer=ref(''),usedHint=ref(false);
@@ -26,16 +27,17 @@ const practiceQueue=props.practice ? [...props.practice] : null;
 const submitter=new PendingSubmitter((path,body)=>api(path,body));
 let shownAt=0,pendingRating=0,alive=true,timer:number|undefined,audioRequest=0;
 const progress=computed(()=>Math.min(100,session.value.done/Math.max(1,estimated.value)*100));
-const lastPlaybackWord=ref<string|null>(null);
-function cancelAudio(){audioRequest++;stopAudio();noAudio.value=null;lastPlaybackWord.value=null;}
+const lastPlaybackWord=ref<string|null>(null),recordingPlayback=ref<RecordingPlayback|null>(null);
+function cancelAudio(){audioRequest++;stopAudio();noAudio.value=null;lastPlaybackWord.value=null;recordingPlayback.value=null;}
 async function play(word?:string|MouseEvent){
   if(!card.value)return;
-  const n=++audioRequest;noAudio.value=null;
+  const n=++audioRequest;noAudio.value=null;recordingPlayback.value=null;
   const target=typeof word==='string'?word:card.value.headword;
   lastPlaybackWord.value=target;
   const result=await speak(target);
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   noAudio.value=result.status==='unavailable'?result.reason:null;
+  recordingPlayback.value={word:pronunciationHeadword(target),source:result.status==='unavailable'?'failed':result.source==='system'?'system':'recording'};
 }
 async function loadNext(){
   if(busy.value||unsaved.value)return;
@@ -127,7 +129,7 @@ onUnmounted(()=>{alive=false;cancelAudio();clearInterval(timer);window.removeEve
       <MeaningList v-if="feedback&&card.mode==='dictation'" :key="card.id" :meaning="card.meaning_zh" :flag="card.meaning_flag" :source="card.meaning_source" />
       <div class="after"><span class="small muted">{{ COPY.spellHint }}</span><button type="submit" class="btn primary" :disabled="busy||unsaved||(!feedback&&!answer.trim())">{{ feedback?COPY.next:'提交' }}</button></div></form>
     </template>
-    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" @ready="onLessonReady" @play="play" @cancel-playback="cancelAudio" />
+    <AnswerLesson v-if="feedback || choiceResult || (!turn.question && card.mode==='recognize' && revealed)" :key="card.word_id" :word-id="card.word_id" :headword="card.headword" :playback="recordingPlayback" @ready="onLessonReady" @play="play" @cancel-playback="cancelAudio" />
     <p v-if="noAudio" class="note" role="status">{{ noAudio==='incomplete'?COPY.audioIncomplete:noAudio==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button v-if="noAudio!=='incomplete'" type="button" class="link" @click="play(lastPlaybackWord??undefined)">{{ COPY.audioRetry }}</button></p>
     <p v-if="unsaved" class="retry" role="status">{{ COPY.unsaved }} <button class="btn" :disabled="busy" @click="retry">{{ COPY.retry }}</button></p>
   </article>

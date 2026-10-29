@@ -10,6 +10,7 @@ import SpeakButton from '../components/SpeakButton.vue';
 import ExplainPanel from '../components/ExplainPanel.vue';
 import StatusChip from '../components/StatusChip.vue';
 import SenseLesson from '../components/SenseLesson.vue';
+import type {RecordingPlayback} from '../audio';
 import {hasDictionaryPlaceholder} from '../../../server/src/text';
 
 const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boolean}>();
@@ -20,7 +21,7 @@ const recordingIpa=ref<string|null>(null);
 const recordingReady=ref(false);
 const pronunciationVariants=ref<{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]>([]);
 const lastPlaybackVariant=ref<'noun'|'verb'|undefined>();
-const lastPlaybackWord=ref<string|null>(null);
+const lastPlaybackWord=ref<string|null>(null),recordingPlayback=ref<RecordingPlayback|null>(null);
 const pronunciationAccent=ref<'us'|'uk'|null>(null);
 const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
 let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
@@ -74,16 +75,17 @@ async function loadPronunciationNote(){
     }
   }catch{/* Optional recording metadata must never block the word or its audio button. */}
 }
-function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;lastPlaybackWord.value=null;lastPlaybackVariant.value=undefined;systemSpeech.value=false;}
+function cancelAudio(){audioRequest++;stopAudio();audioFailed.value=null;lastPlaybackWord.value=null;lastPlaybackVariant.value=undefined;recordingPlayback.value=null;systemSpeech.value=false;}
 async function play(word?:string|MouseEvent,variant?:'noun'|'verb'){
   if(!detail.value)return;
-  const n=++audioRequest;audioFailed.value=null;systemSpeech.value=false;
+  const n=++audioRequest;audioFailed.value=null;systemSpeech.value=false;recordingPlayback.value=null;
   const target=typeof word==='string'?word:detail.value.word.headword;
   lastPlaybackWord.value=target;lastPlaybackVariant.value=variant;
   const result=await speak(target,variant);
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   audioFailed.value=result.status==='unavailable'?result.reason:null;
-  systemSpeech.value=result.status==='success'&&result.source==='system';
+  systemSpeech.value=pronunciationHeadword(target)===pronunciationHeadword(detail.value.word.headword)&&result.status==='success'&&result.source==='system';
+  recordingPlayback.value={word:pronunciationHeadword(target),source:result.status==='unavailable'?'failed':result.source==='system'?'system':'recording'};
 }
 onMounted(()=>{loadLesson();loadPronunciationNote();if(!props.initial)load();});
 watch(()=>detail.value?.word.headword,loadPronunciationNote);
@@ -131,7 +133,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
             <p v-else-if="!detail.statusDetail.recognize" class="note">这个词还没开始认词，暂时不会进入“练错词”。</p>
           </div>
         </details>
-        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" @play="play" @cancel-playback="cancelAudio" />
+        <SenseLesson v-if="lesson" :key="wordId" :lesson="lesson" :playback="recordingPlayback" @play="play" @cancel-playback="cancelAudio" />
         <template v-else>
           <p v-if="lessonFailed" class="note" role="status">完整讲解暂时未能载入。<button type="button" class="link" @click="loadLesson">重试讲解</button></p>
           <MeaningList :key="wordId" :meaning="card.meaning_zh" :source="card.meaning_source" :flag="card.meaning_flag" />

@@ -217,3 +217,16 @@ it('WordView explains an incomplete skeleton when the recording is missing',asyn
  const synth={getVoices:()=>[],speak:vi.fn(),cancel:vi.fn()};vi.stubGlobal('speechSynthesis',synth);vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,'range from ... to ...')});try{await flush();ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(ui.text()).toContain(COPY.audioIncomplete);expect(synth.speak).not.toHaveBeenCalled();expect(ui.all(n=>n.tag==='button'&&ui.text(n)===COPY.audioRetry)).toHaveLength(0)}finally{ui.app.unmount()}
 });
+it('mixed-word panel credits the selected empress recording, not emperor',async()=>{
+ const {createLessonReader}=await import('../server/src/lessons');const lesson=createLessonReader()({id:443,headword:'emperor / empress'}).lesson!;
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>{const word=url.includes('word=empress')?'empress':'emperor';return new Response(JSON.stringify(url.includes('/lesson')?{status:'ready',lesson}:url.startsWith('/api/pronunciation?')?{status:'ready',word,accent:'us'}:{status:'missing'}))}));
+ const ui=host('web/src/views/WordView.vue',{wordId:443,initial:wordDetail(443,'emperor / empress')});try{await flush();ui.all(n=>n.props['aria-label']==='拼写对照 empress')[0].props.onClick();await flush();ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();await flush();expect(MockAudio.instances[0].src).toContain('word=empress');expect(ui.all(n=>n.tag==='a'&&ui.text(n).includes('录音来源')).map(n=>n.props.href)).toContain('/api/pronunciation/credits?word=empress');}finally{ui.app.unmount()}
+});
+
+it('mixed-word panel reports system fallback for the selected word without hiding main credits',async()=>{
+ const {createLessonReader}=await import('../server/src/lessons');const lesson=createLessonReader()({id:443,headword:'emperor / empress'}).lesson!;
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[{lang:'en-US',localService:true}],speak:(u:Utterance)=>{utterance=u},cancel:vi.fn()});
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.includes('/lesson')?{status:'ready',lesson}:{status:'ready',accent:'us'}))));
+ const ui=host('web/src/views/WordView.vue',{wordId:443,initial:wordDetail(443,'emperor / empress')});try{await flush();ui.all(n=>n.props['aria-label']==='拼写对照 empress')[0].props.onClick();await flush();ui.all(n=>n.tag==='button'&&ui.text(n).includes('听整词录音'))[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance?.text).toBe('empress');utterance!.onend!();await flush();const links=ui.all(n=>n.tag==='a'&&ui.text(n).includes('录音来源')).map(n=>n.props.href);expect(links).toContain('/api/pronunciation/credits?word=emperor');expect(links).not.toContain('/api/pronunciation/credits?word=empress');expect(ui.text()).toContain('系统合成发音')}finally{ui.app.unmount()}
+});

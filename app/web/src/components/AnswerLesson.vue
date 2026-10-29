@@ -3,9 +3,10 @@ import {onMounted,onUnmounted,ref,watch} from 'vue';
 import {api} from '../api';
 import type {WordLesson,WordLessonResponse} from '../../../shared/lesson';
 import SenseLesson from './SenseLesson.vue';
+import type {RecordingPlayback} from '../audio';
 
 // Mount only once the answer has been revealed or feedback has been received.
-const props=defineProps<{wordId:number;headword:string}>();
+const props=defineProps<{wordId:number;headword:string;playback?:RecordingPlayback|null}>();
 const emit=defineEmits<{ready:[wordId:number,ready:boolean];play:[headword:string];'cancel-playback':[]}>();
 const lesson=ref<WordLesson|null>(null);
 let alive=true,request=0;
@@ -28,7 +29,7 @@ function readingKey(event:KeyboardEvent){
 <template>
   <details v-if="lesson" :key="wordId" class="answer-lesson" @keydown="readingKey">
     <summary>完整讲解 · 义项、近反义、词根与助记</summary>
-    <div class="answer-lesson-body"><SenseLesson :lesson="lesson" @play="emit('play',$event)" @cancel-playback="emit('cancel-playback')" /></div>
+    <div class="answer-lesson-body"><SenseLesson :lesson="lesson" :playback="playback" @play="emit('play',$event)" @cancel-playback="emit('cancel-playback')" /></div>
   </details>
 </template>
 

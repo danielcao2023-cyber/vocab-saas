@@ -3,11 +3,12 @@ import {computed,ref, watch, useId} from 'vue';
 import type {WordLesson, LessonUsage} from '../../../shared/lesson';
 import {lessonWordParts} from '../lesson-text';
 import {mainHeadwords} from '../../../server/src/text';
+import type {RecordingPlayback} from '../audio';
 
 import SoundSpellingLesson from './SoundSpellingLesson.vue';
 import {getSoundSpellingLessons} from '../content/sound-spelling/index';
 
-const props = defineProps<{lesson: WordLesson}>();
+const props = defineProps<{lesson: WordLesson;playback?:RecordingPlayback|null}>();
 const usageLabels: Record<LessonUsage['kind'], string> = {
   'sentence-pattern': '句型',
   'common-collocation': '常见搭配',
@@ -127,7 +128,7 @@ watch(() => props.lesson.wordId, () => {
       </nav>
     </header>
 
-    <section v-if="activeTabId==='sound-spelling' && soundSpelling" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><div v-if="soundChoices.length>1" class="sound-word-choices" aria-label="选择拼写对照词"><button v-for="choice in soundChoices" :key="choice.headword" class="btn" type="button" :aria-label="`拼写对照 ${choice.headword}`" :aria-pressed="soundSpelling.headword===choice.headword" @click="selectSoundWord(choice.headword)">{{ choice.headword }}</button></div><SoundSpellingLesson :key="soundSpelling.headword" :lesson="soundSpelling" :recording-word="soundRecordingWord" @play="$emit('play',soundRecordingWord)" /></section>
+    <section v-if="activeTabId==='sound-spelling' && soundSpelling" :id="`${tabIdPrefix}-sound-spelling-panel`" role="tabpanel" tabindex="0" :aria-labelledby="`${tabIdPrefix}-sound-spelling`"><div v-if="soundChoices.length>1" class="sound-word-choices" aria-label="选择拼写对照词"><button v-for="choice in soundChoices" :key="choice.headword" class="btn" type="button" :aria-label="`拼写对照 ${choice.headword}`" :aria-pressed="soundSpelling.headword===choice.headword" @click="selectSoundWord(choice.headword)">{{ choice.headword }}</button></div><SoundSpellingLesson :key="soundSpelling.headword" :lesson="soundSpelling" :recording-word="soundRecordingWord" :playback="playback" @play="$emit('play',soundRecordingWord)" /></section>
 
     <section
       v-if="activeTabId === 'usage'"

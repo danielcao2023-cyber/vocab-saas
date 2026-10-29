@@ -4,6 +4,7 @@ import {preferences} from './preferences';
 import {Capacitor,registerPlugin} from '@capacitor/core';
 const DeviceSpeech=registerPlugin<{speak:(args:{text:string;rate:number})=>Promise<{status:'success'|'cancelled'|'unavailable'}>;stop:()=>Promise<void>}>('DeviceSpeech');
 
+export interface RecordingPlayback {word:string;source:'recording'|'system'|'failed'}
 export type PlaybackFailure = 'blocked' | 'failed' | 'incomplete';
 export type PlaybackResult =
   | { status: 'success' | 'cancelled'; source?: 'system' }
