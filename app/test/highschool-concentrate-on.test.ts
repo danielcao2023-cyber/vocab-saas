@@ -41,3 +41,10 @@ it('shows the Collins phrasal-verb pronunciation for dress up',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('dress up');
  expect(lesson?.chunks[1]?.stress).toBe('primary');
 });
+
+it.each([['make progress','/ˌmeɪk ˈprəʊɡres/'],['make a difference','/ˌmeɪk ə ˈdɪfərəns/']])('shows the Cambridge British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks[0]?.stress).toBe('secondary');
+});

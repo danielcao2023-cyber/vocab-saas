@@ -99,3 +99,29 @@ highschoolConcentrateOn.push({
  sources:[{label:'Collins Dictionary · dress up 短语动词',url:'https://www.collinsdictionary.com/us/dictionary/english/dress-up'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; American phrasal-verb pronunciation checked against Collins'},
 });
+
+const vocabularyPracticeSource = {label:'Cambridge Vocabulary in Practice 5 词表，第 76 页',url:'https://content.fimsschools.com/ebooks/Vocabulary%20in%20Practice%20Books/Vocabulary%20in%20practice%20Book%205%20Intermediate%20to%20Upper-Intermediate.pdf'};
+highschoolConcentrateOn.push({
+ headword:'make progress',ipa:'/ˌmeɪk ˈprəʊɡres/',uk:'/ˌmeɪk ˈprəʊɡres/',
+ chunks:[
+  {letters:'make ',sound:'/meɪk/',stress:'secondary',hint:'make 在词表中标次重音。',pairs:[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'pro',sound:'/prəʊ/',stress:'primary',hint:'progress 第一部分重读。',pairs:[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'o',sound:'/əʊ/'}],tip:'这里采用英式 /əʊ/。'},
+  {letters:'gress',sound:'/ɡres/',stress:'none',hint:'第二部分轻读。',pairs:[{letters:'g',sound:'/ɡ/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/e/'},{letters:'ss',sound:'/s/'}],tip:'双写 ss 对应一个 /s/。'},
+ ],
+ anchor:{text:'make 稍重读，progress 第一部分重读，放回句中练习。'},
+ variantNote:'这里展示教材的英式读法；美式元音和句中重音可有变化。',sources:[vocabularyPracticeSource],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Cambridge wordlist'},
+});
+highschoolConcentrateOn.push({
+ headword:'make a difference',ipa:'/ˌmeɪk ə ˈdɪfərəns/',uk:'/ˌmeɪk ə ˈdɪfərəns/',
+ chunks:[
+  {letters:'make ',sound:'/meɪk/',stress:'secondary',hint:'make 在词表中标次重音。',pairs:[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'a ',sound:'/ə/',stress:'none',hint:'a 在这里弱读。',pairs:[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}],tip:'连读时声音轻短。'},
+  {letters:'di',sound:'/dɪ/',stress:'primary',hint:'difference 开头重读。',pairs:[{letters:'d',sound:'/d/'},{letters:'i',sound:'/ɪ/'}],tip:'读短元音 /ɪ/。'},
+  {letters:'ffer',sound:'/fər/',stress:'none',hint:'中间轻读。',pairs:[{letters:'ff',sound:'/f/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'}],tip:'双写 ff 对应一个 /f/。'},
+  {letters:'ence',sound:'/əns/',stress:'none',hint:'结尾轻读。',pairs:[{letters:'e',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'c',sound:'/s/'},{letters:'e',sound:''}],tip:'词尾 e 不单独发音。'},
+ ],
+ anchor:{text:'make a 轻快连接，difference 开头重读。'},
+ variantNote:'这里展示教材的英式读法；实际语流中的元音和重音可有变化。',sources:[vocabularyPracticeSource],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Cambridge wordlist'},
+});
