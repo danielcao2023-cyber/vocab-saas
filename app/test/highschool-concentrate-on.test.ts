@@ -88,3 +88,16 @@ it.each([['rather than','/ˈrɑːðə ðən/'],['in ruins','/ɪn ˈruːɪnz/'],[
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['die out','/ˌdaɪ ˈaʊt/'],['set off','/ˌset ˈɒf/'],['run out','/ˌrʌn ˈaʊt/'],['set out','/ˌset ˈaʊt/'],['break out','/ˌbreɪk ˈaʊt/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
+});
+
+it.each([['on board','/ˌɒn ˈbɔːd/'],['speak up','/ˌspiːk ˈʌp/'],['turn out','/ˌtɜːn ˈaʊt/'],['after all','/ˌɑːftər ˈɔːl/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

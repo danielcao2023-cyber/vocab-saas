@@ -235,3 +235,42 @@ addSourcedPhrase('under pressure','/ˌʌndə ˈpreʃə/',[
  ch('pre','/pre/','primary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/e/'}]),
  ch('ssure','/ʃə/','none',[{letters:'ss',sound:'/ʃ/'},{letters:'u',sound:'/ə/'},{letters:'re',sound:''}]),
 ],'Action for Kazakhstan Grade 10 词表','https://lib.kpvk.edu.kz/wp-content/uploads/2022/03/action-10-1.pdf');
+
+const oxfordWordSkills='https://formanglais.com/wp-content/uploads/2020/03/pocket-guide-Word-Skills.pdf';
+addSourcedPhrase('die out','/ˌdaɪ ˈaʊt/',[
+ ch('die ','/daɪ/','secondary',[{letters:'d',sound:'/d/'},{letters:'ie',sound:'/aɪ/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('set off','/ˌset ˈɒf/',[
+ ch('set ','/set/','secondary',[{letters:'s',sound:'/s/'},{letters:'e',sound:'/e/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('off','/ɒf/','primary',[{letters:'o',sound:'/ɒ/'},{letters:'ff',sound:'/f/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('run out','/ˌrʌn ˈaʊt/',[
+ ch('run ','/rʌn/','secondary',[{letters:'r',sound:'/r/'},{letters:'u',sound:'/ʌ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('set out','/ˌset ˈaʊt/',[
+ ch('set ','/set/','secondary',[{letters:'s',sound:'/s/'},{letters:'e',sound:'/e/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('break out','/ˌbreɪk ˈaʊt/',[
+ ch('break ','/breɪk/','secondary',[{letters:'b',sound:'/b/'},{letters:'r',sound:'/r/'},{letters:'ea',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('on board','/ˌɒn ˈbɔːd/',[
+ ch('on ','/ɒn/','secondary',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('board','/bɔːd/','primary',[{letters:'b',sound:'/b/'},{letters:'oar',sound:'/ɔː/'},{letters:'d',sound:'/d/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('speak up','/ˌspiːk ˈʌp/',[
+ ch('speak ','/spiːk/','secondary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'ea',sound:'/iː/'},{letters:'k',sound:'/k/'},{letters:' ',sound:''}]),
+ ch('up','/ʌp/','primary',[{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('turn out','/ˌtɜːn ˈaʊt/',[
+ ch('turn ','/tɜːn/','secondary',[{letters:'t',sound:'/t/'},{letters:'ur',sound:'/ɜː/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('after all','/ˌɑːftər ˈɔːl/',[
+ ch('af','/ɑːf/','secondary',[{letters:'a',sound:'/ɑː/'},{letters:'f',sound:'/f/'}]),
+ ch('ter ','/tər/','none',[{letters:'t',sound:'/t/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
+ ch('all','/ɔːl/','primary',[{letters:'a',sound:'/ɔː/'},{letters:'ll',sound:'/l/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
