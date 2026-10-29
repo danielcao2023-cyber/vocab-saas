@@ -1,5 +1,7 @@
 /** Audited source values are exact full ECDICT imports, not arbitrary user text. */
 export const KB2022_TEXTBOOK_CORRECTIONS: Record<string,{expected:string;meaning:string}> = {
+  pour: {expected:'n. 流出, 倾泻, 骤雨\nvt. 倒, 灌, 注, 倾泻, 诉说, 倾吐\nvi. 倾泻, 蜂涌而来, 下大雨',meaning:'vt. 倒出；倾泻；斟（饮料）；灌；注；诉说；倾吐\nvi. 倾泻；蜂拥而来；下大雨\nn. 流出；倾泻；骤雨'},
+  behave: {expected:'vi. 举止端正, 行为规矩\nvt. 检点(自己的)行为, 使表现好',meaning:'vi. 表现；举止；表现得体；行为规矩\nvt. 检点自己的行为；表现得体（用 behave oneself）'},
   pack: {expected:'n. 包裹, 一伙, 一副, 背包, 包装\nvt. 包装, 捆扎, 塞满, 压紧, 挑选\nvi. 包装货物, 挤, 群集, 被包装',meaning:'vi. & vt. 收拾行李；包装\nn. 包裹, 一伙, 一副, 背包, 包装\nvt. 包装, 捆扎, 塞满, 压紧, 挑选\nvi. 包装货物, 挤, 群集, 被包装'},
   hike: {expected:'n. 徒步旅行, 远足, 涨价, 提高\nvi. 步行, 徒步旅行, 上升\nvt. 使高涨, 拉起',meaning:'vi. 徒步旅行；远足\nn. 徒步旅行, 远足, 涨价, 提高\nvi. 步行, 徒步旅行, 上升\nvt. 使高涨, 拉起'},
   calm: {expected:"n. 平稳, 风平浪静\nadj. 平静的, 冷静的\nvi. 平静下来, 镇静\nvt. 使平静",meaning:"adj. 镇静的；沉着的；平静的\nn. 平稳, 风平浪静\nadj. 平静的, 冷静的\nvi. 平静下来, 镇静\nvt. 使平静"},
