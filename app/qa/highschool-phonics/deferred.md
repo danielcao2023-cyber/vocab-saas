@@ -18,7 +18,7 @@
 
 - `Giverny` 和作品名称 `Tadpoles Searching for Mother`、`The Cowboy's Flute`、`Feeling from Mountain and Water`、`Clearing After Snow on a Mountain Pass`（选择性必修三 Unit 1）：地名或长作品名称尚需核验可靠读法及分词对照，暂缓发布。
 
-- `People's Liberation Army`、`PLA`、`Lao Zi`（选择性必修三 Unit 2）：专有名称或缩写的整词音形对照尚待核验，不使用未经确认的切分。
+- `People's Liberation Army`、`PLA`（选择性必修三 Unit 2）：专有名称或缩写的整词音形对照尚待核验，不使用未经确认的切分。`Lao Zi` 已依据 Collins 所列英式读法补对照，其他读法及录音仍需核对。
 
 - `fossil fuel`：已按剑桥词典的英式读法补充音形对照，并注明美式及其他词典读法；录音仍需人工试听。
 
