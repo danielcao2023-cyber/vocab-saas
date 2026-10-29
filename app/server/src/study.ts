@@ -207,7 +207,8 @@ export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 
   const tuitionEquivalent = visibleSenses.includes('学费') ? ({'tuition':'tuition fees','tuition fees':'tuition'} as Record<string,string>)[spellings[0]] : undefined;
   const obgynEquivalent = visibleSenses.includes('妇产科') ? ({'the ob-gyn department':'department of obstetrics and gynecology','department of obstetrics and gynecology':'the ob-gyn department'} as Record<string,string>)[spellings[0]] : undefined;
   const candidEquivalent = visibleSenses.includes('说实话') ? ({'to be frank':'to be honest','to be honest':'to be frank'} as Record<string,string>)[spellings[0]] : undefined;
-  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? obgynEquivalent ?? candidEquivalent ?? textbookTranslationEquivalents[spellings[0]];
+  const causalEquivalent = visibleSenses.some(s=>s === '导致' || s === '造成' || /^短语\s+(?:导致|造成)$/.test(s)) ? ({'lead to':'result in','result in':'lead to'} as Record<string,string>)[spellings[0]] : undefined;
+  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? obgynEquivalent ?? candidEquivalent ?? causalEquivalent ?? textbookTranslationEquivalents[spellings[0]];
   return equivalent ? [...new Set([...spellings, equivalent])] : spellings;
 }
 
