@@ -4,7 +4,7 @@ import {preferences} from './preferences';
 import {Capacitor,registerPlugin} from '@capacitor/core';
 const DeviceSpeech=registerPlugin<{speak:(args:{text:string;rate:number})=>Promise<{status:'success'|'cancelled'|'unavailable'}>;stop:()=>Promise<void>}>('DeviceSpeech');
 
-export interface RecordingPlayback {word:string;source:'recording'|'system'|'failed';variant?:'noun'|'verb'}
+export interface RecordingPlayback {word:string;source:'recording'|'system'|'failed'|'pending';variant?:'noun'|'verb'}
 export type PlaybackFailure = 'blocked' | 'failed' | 'incomplete';
 export type PlaybackResult =
   | { status: 'success' | 'cancelled'; source?: 'system' }
@@ -38,7 +38,7 @@ export function systemSpeechText(headword: string): string {
 }
 
 /** Start synchronously within the click handler so the browser retains its user gesture. */
-export function speak(headword: string, variant?: 'noun'|'verb'): Promise<PlaybackResult> {
+export function speak(headword: string, variant?: 'noun'|'verb', onFallback?:()=>void): Promise<PlaybackResult> {
   stopAudio();
   const word = pronunciationHeadword(headword);
   variant = variant ?? (word==='bow'||word==='contract'?'verb':undefined);
@@ -78,6 +78,7 @@ export function speak(headword: string, variant?: 'noun'|'verb'): Promise<Playba
       if(variant){finish({status:'unavailable',reason:'failed'});return;}
       if(/\.{2,}|…/.test(word)){finish({status:'unavailable',reason:'incomplete'});return;}
       synthesizing=true;
+      onFallback?.();
       if(Capacitor.isNativePlatform()){
         cancelSpeech=()=>{void DeviceSpeech.stop().catch(()=>{});};
         void DeviceSpeech.speak({text:spoken,rate:preferences.playbackRate}).then(result=>{

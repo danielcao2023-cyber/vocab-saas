@@ -249,3 +249,23 @@ it.each([['sign up for sth.',true],['receive',false]])('WordView limits record c
  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,word)});
  try{await flush();const group=ui.all(n=>n.props.class==='cards3')[0];expect(group).toBeDefined();const text=ui.text(group);expect(text).toContain(COPY.qtypes.recognize);if(limited){expect(text).not.toContain(COPY.qtypes.spell);expect(text).not.toContain(COPY.qtypes.dictation)}else{expect(text).toContain(COPY.qtypes.spell);expect(text).toContain(COPY.qtypes.dictation)}}finally{ui.app.unmount()}
 });
+
+it.each(['success','failure'])('WordView hides recording attribution during speech fallback and on %s',async(outcome)=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{utterance=u},cancel:vi.fn()});
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>Response.json(url.startsWith('/api/pronunciation?')?{status:'ready',accent:'us',pronunciationNote:'原真人来源'}:{status:'missing'})));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});
+ try{await flush();expect(ui.text()).toContain('原真人来源');ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance).toBeDefined();expect(ui.text()).not.toContain('原真人来源');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0);if(outcome==='success')utterance!.onend!();else utterance!.onerror!();await flush();expect(ui.text()).not.toContain('原真人来源');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0);if(outcome==='success')expect(ui.text()).toContain('系统合成发音');else expect(ui.text()).toContain(COPY.audioUnavailable);}finally{ui.app.unmount()}
+});
+
+it('WordView restores real attribution after recording completes',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>Response.json(url.startsWith('/api/pronunciation?')?{status:'ready',accent:'us',pronunciationNote:'原真人来源'}:{status:'missing'})));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();await flush();expect(ui.text()).toContain('原真人来源');MockAudio.instances[0].emit('ended');await flush();expect(ui.text()).toContain('原真人来源');expect(ui.text()).not.toContain('系统合成发音')}finally{ui.app.unmount()}
+});
+it('late speech completion after switching words cannot overwrite the new recording attribution',async()=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{utterance=u},cancel:vi.fn()});
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>Response.json(url.startsWith('/api/pronunciation?')?{status:'ready',accent:'us',pronunciationNote:url.includes('accept')?'新词真人来源':'旧词真人来源'}:url==='/api/word/2'?wordDetail(2,'accept'):{status:'missing'})));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();const late=utterance!.onend!;expect(ui.text()).not.toContain('旧词真人来源');ui.updateProps({wordId:2});await flush();expect(ui.text()).toContain('新词真人来源');late();await flush();expect(ui.text()).toContain('新词真人来源');expect(ui.text()).not.toContain('旧词真人来源');expect(ui.text()).not.toContain('系统合成发音')}finally{ui.app.unmount()}
+});

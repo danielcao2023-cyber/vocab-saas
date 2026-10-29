@@ -25,3 +25,7 @@ it('does not claim the complex spelling map is the default recording when their 
  vi.stubGlobal('fetch',vi.fn(async()=>Response.json({status:'ready',ipa:info.ipa})));const ui=host('web/src/components/SoundSpellingLesson.vue',{lesson,recordingWord:'complex',playback:{word:'complex',source:'recording',variant:'noun'}});
  try{await flush();expect(ui.text()).toContain('刚播放所选读音');expect(ui.text()).toContain('下方音形对照请参照其标注音标');expect(ui.text()).not.toContain('下方音形对照为默认读音');expect(ui.text()).toContain('/kɑːmˈpleks/')}finally{ui.app.unmount()}
 });
+it('hides recording source during pending and failed fallback and restores it for real audio',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>Response.json({status:'ready',accent:'us',pronunciationNote:'原真人来源'})));const ui=host('web/src/components/SoundSpellingLesson.vue',{lesson:getSoundSpellingLesson('import'),recordingWord:'import'});
+ try{await flush();expect(ui.text()).toContain('原真人来源');for(const source of ['pending','failed']){ui.updateProps({playback:{word:'import',source}});await flush();expect(ui.text()).not.toContain('原真人来源');expect(ui.text()).not.toContain('录音来源')}ui.updateProps({playback:{word:'import',source:'system'}});await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.text()).not.toContain('原真人来源');ui.updateProps({playback:{word:'import',source:'recording'}});await flush();expect(ui.text()).toContain('原真人来源')}finally{ui.app.unmount()}
+});

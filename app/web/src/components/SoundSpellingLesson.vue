@@ -8,7 +8,7 @@ const recordingNote=ref('');
 const currentWord=computed(()=>props.recordingWord??props.lesson.headword);
 const currentPlayback=computed(()=>props.playback?.word===currentWord.value?props.playback.source:null);
 const currentVariant=computed(()=>props.playback?.word===currentWord.value&&props.playback.source==='recording'?props.playback.variant:undefined);
-const showRecording=computed(()=>!!recordingNote.value&&!currentVariant.value&&!['system','failed'].includes(currentPlayback.value??''));
+const showRecording=computed(()=>!!recordingNote.value&&!currentVariant.value&&!['system','failed','pending'].includes(currentPlayback.value??''));
 let recordingRequest=0;
 watch(()=>props.recordingWord??props.lesson.headword,async word=>{
  const request=++recordingRequest;recordingNote.value='';

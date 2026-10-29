@@ -27,6 +27,7 @@ const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
 let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
 const card=computed(()=>detail.value!.word);
 const recognitionOnly=computed(()=>hasDictionaryPlaceholder(detail.value?.word.headword??''));
+const showMainRecording=computed(()=>{const playback=recordingPlayback.value;if(!playback||!detail.value||playback.word!==pronunciationHeadword(detail.value.word.headword))return true;return playback.source==='recording';});
 const systemExample=computed(()=>systemSpeech.value&&detail.value&&/\b(?:sb|sth)\./i.test(detail.value.word.headword)?systemSpeechText(detail.value.word.headword):'');
 const recordModes=computed(()=>(recognitionOnly.value?['recognize']:['recognize','spell','dictation']) as ('recognize'|'spell'|'dictation')[]);
 const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!recognitionOnly.value||e.mode==='recognize')??[]);
@@ -83,8 +84,11 @@ async function play(word?:string|MouseEvent,variant?:'noun'|'verb'){
   const n=++audioRequest;audioFailed.value=null;systemSpeech.value=false;recordingPlayback.value=null;
   const target=typeof word==='string'?word:detail.value.word.headword;
   lastPlaybackWord.value=target;lastPlaybackVariant.value=variant;
-  const result=await speak(target,variant);
-  if(!alive||n!==audioRequest||result.status==='cancelled')return;
+  const result=await speak(target,variant,()=>{
+    if(alive&&n===audioRequest)recordingPlayback.value={word:pronunciationHeadword(target),source:'pending',...(variant?{variant}:{})};
+  });
+  if(!alive||n!==audioRequest)return;
+  if(result.status==='cancelled'){recordingPlayback.value=null;return;}
   audioFailed.value=result.status==='unavailable'?result.reason:null;
   systemSpeech.value=pronunciationHeadword(target)===pronunciationHeadword(detail.value.word.headword)&&result.status==='success'&&result.source==='system';
   recordingPlayback.value={word:pronunciationHeadword(target),source:result.status==='unavailable'?'failed':result.source==='system'?'system':'recording',...(variant?{variant}:{})};
@@ -110,8 +114,8 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
-          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
-          <p v-if="recordingReady&&!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
+          <p v-if="systemSpeech||(showMainRecording&&pronunciationNote)" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
+          <p v-if="recordingReady&&!systemSpeech&&showMainRecording" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='incomplete'?COPY.audioIncomplete:audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button v-if="audioFailed!=='incomplete'" type="button" class="link" @click="play(lastPlaybackWord??undefined,lastPlaybackVariant)">{{ COPY.audioRetry }}</button></p>

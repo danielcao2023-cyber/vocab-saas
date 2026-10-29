@@ -30,6 +30,7 @@ it('packs independently attributed Shtooka recordings with intact offline bytes 
       expect(packed.recordings[word].file).toBe(`/offline/recordings/${entry.file}`);
       expect(packed.credits).toContain(author);
       expect(packed.credits).toContain(license);
+      if (word === 'illustrate') expect(packed.credits).toContain('flac/eng-3277a641.flac');
     }
   } finally { fs.rmSync(directory, { recursive: true, force: true }); }
 });
