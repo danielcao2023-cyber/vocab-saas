@@ -20,5 +20,6 @@ export function copyReviewedLessons(directory:string,output:string,words:PublicW
   if(data.headword!==headword||!validateLesson(data).ok||data.editorial.status!=='reviewed')throw Error('Invalid keyed lesson '+file);
   fs.mkdirSync(path.join(output,'keyed'),{recursive:true});fs.writeFileSync(path.join(output,'keyed',file),JSON.stringify(data));count++;
  }
+ if(words.some(word=>word.headword==='Log')){const data=JSON.parse(fs.readFileSync(path.join(directory,'keyed','highschool-log.json'),'utf8'));if(data.headword!=='Log'||!validateLesson(data).ok||data.editorial.status!=='reviewed')throw Error('Invalid high school log lesson');fs.mkdirSync(path.join(output,'keyed'),{recursive:true});fs.writeFileSync(path.join(output,'keyed','highschool-log.json'),JSON.stringify(data));count++;}
  return count;
 }

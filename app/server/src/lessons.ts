@@ -5,7 +5,7 @@ import type { WordLesson, WordLessonResponse } from '../../shared/lesson.ts';
 import { keyedLessonName } from '../../shared/keyed-lessons.ts';
 
 export const defaultLessonDir = fileURLToPath(new URL('../../data/lessons/', import.meta.url));
-type ExpectedWord = { id: number; headword: string };
+type ExpectedWord = { id: number; headword: string; keyedName?: string };
 type Validation = { ok: true; lesson: WordLesson } | { ok: false; errors: string[] };
 const object = (value: unknown): value is Record<string, any> => !!value && typeof value === 'object' && !Array.isArray(value);
 
@@ -121,7 +121,7 @@ export function createLessonReader(directory = defaultLessonDir) {
   return (word: ExpectedWord): WordLessonResponse => {
     const pending: WordLessonResponse = { status:'pending', lesson:null };
     if (!Number.isSafeInteger(word.id) || word.id < 1) return pending;
-    const name=keyedLessonName(word.headword);
+    const name=word.keyedName==='highschool-log.json'&&word.headword==='Log'?word.keyedName:keyedLessonName(word.headword);
     if(name){
       try {
         const root=fs.realpathSync(directory), dir=fs.realpathSync(path.join(root,'keyed'));

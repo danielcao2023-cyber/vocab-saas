@@ -1,3 +1,4 @@
+import {displayHeadword} from '../display-headword.ts';
 import type {DB} from '../db.ts';
 import {HttpError} from '../http-error.ts';
 import {shDay} from '../time.ts';
@@ -10,7 +11,7 @@ export const evidenceBook=(s:WordEvidenceState):WordBook=>s.stage==='new'?'new':
 export function learningViews(db:DB,view:LearningView='all',page=1,now=new Date()):LearningViews {
  if(!LEARNING_VIEWS.includes(view)||!Number.isSafeInteger(page)||page<1)throw new HttpError(400,'筛选或页码无效。');
  const index=evidenceIndex(db,now);
- const rows=learningWords(db,now).map(w=>({id:w.id,headword:w.headword,meaning:w.meaning_zh??'',phonetic:w.phonetic,level:w.level,evidenceState:index.get(w.id)??untouchedEvidence()}));
+ const rows=learningWords(db,now).map(w=>({id:w.id,headword:displayHeadword(db,w.id,w.headword),meaning:w.meaning_zh??'',phonetic:w.phonetic,level:w.level,evidenceState:index.get(w.id)??untouchedEvidence()}));
  const match=(s:WordEvidenceState,v:LearningView)=>v==='all'||v==='new'&&s.stage==='new'||v==='due'&&s.dueAt!==null&&s.dueAt<=now.toISOString()||v==='priority'&&s.priority||v==='stable'&&s.stable||v==='weak_spell'&&s.stage!=='new'&&s.weakModes.includes('spell')||v==='weak_dictation'&&s.stage!=='new'&&s.weakModes.includes('dictation');
  const counts=Object.fromEntries(LEARNING_VIEWS.map(v=>[v,rows.filter(r=>match(r.evidenceState,v)).length])) as Record<LearningView,number>;
  const filtered=rows.filter(r=>match(r.evidenceState,view)).sort((a,b)=>Number(b.evidenceState.priority)-Number(a.evidenceState.priority)||(a.evidenceState.dueAt??'').localeCompare(b.evidenceState.dueAt??'')||a.id-b.id),size=40;

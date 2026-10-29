@@ -1,3 +1,4 @@
+import {displayHeadword} from './display-headword.ts';
 import {evidenceVersion} from './learning/evidence-migration.ts';
 import {evidenceMetrics,evidenceBook} from './learning/evidence-views.ts';
 import {evidenceIndex,untouchedEvidence} from './learning/evidence-store.ts';
@@ -196,11 +197,11 @@ export function parentSummary(db: DB, now = new Date(), days = 30) {
     return { studyDays: rows.filter(r => r.answers > 0).length, durationMs: sum('duration_ms'), minutes: sum('duration_ms') / 60000, new: sum('new_count'), masteredNew: sum('mastered_new'), answers, correct: sum('correct'), accuracy: answers ? sum('correct') / answers : null };
   };
   const totals = { ...aggregate(shiftDay(today, 1 - days)), last7: aggregate(shiftDay(today, -6)), thisWeek: aggregate(weekStart(today)), previousWeek: aggregate(shiftDay(weekStart(today), -7), shiftDay(weekStart(today), -1)) };
-  const wrongTop20 = (db.prepare(`SELECT w.headword,ww.wrong_count,ww.last_wrong_at,ww.removed_at IS NULL inBook,
+  const wrongTop20 = (db.prepare(`SELECT w.id word_id,w.headword,ww.wrong_count,ww.last_wrong_at,ww.removed_at IS NULL inBook,
     (SELECT COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END) FROM review_logs l JOIN cards c ON c.id=l.card_id
      WHERE c.word_id=w.id AND (l.correct=0 OR l.rating=1) GROUP BY COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END)
      ORDER BY COUNT(*) DESC,MAX(l.review_at) DESC LIMIT 1) topQtype
-    FROM wrong_words ww JOIN words w ON w.id=ww.word_id ORDER BY ww.wrong_count DESC,ww.last_wrong_at DESC LIMIT 20`).all() as any[]).map(r => ({ ...r, inBook: !!r.inBook }));
+    FROM wrong_words ww JOIN words w ON w.id=ww.word_id ORDER BY ww.wrong_count DESC,ww.last_wrong_at DESC LIMIT 20`).all() as any[]).map(({word_id,...r}) => ({ ...r, headword:displayHeadword(db,word_id,r.headword), inBook: !!r.inBook }));
   const s = streak(db, now);
   return { ...(evidenceVersion(db)===3?{evidence:evidenceMetrics(db,now,days)}:{}),daily, totals, streak: { current: s.current, best: s.best, makeupUsed: s.makeupUsed }, wrongTop20, progress: curriculumProgress(db), generatedAt: now.toISOString() };
 }

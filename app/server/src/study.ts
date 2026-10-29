@@ -1,3 +1,4 @@
+import {displayHeadword} from './display-headword.ts';
 import {evidenceVersion} from './learning/evidence-migration.ts';
 import {evidenceIndex,untouchedEvidence} from './learning/evidence-store.ts';
 import {evidenceBook} from './learning/evidence-views.ts';
@@ -43,7 +44,7 @@ export function newIntroducedToday(db: DB, now: Date): number {
   return r.n;
 }
 
-export const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample, w.level FROM cards c JOIN words w ON w.id=c.word_id`;
+export const CARD_SELECT = `SELECT c.*, CASE WHEN w.headword='Log' AND EXISTS (SELECT 1 FROM vocabulary_entry_map m WHERE m.entry_key='Log' AND m.word_id=w.id) THEN 'log' ELSE w.headword END headword, w.phonetic, w.pos, w.meaning_zh, w.meaning_flag, w.meaning_source, w.source, w.is_sample, w.level FROM cards c JOIN words w ON w.id=c.word_id`;
 
 /** 到期判定：首页计数和出卡用同一个条件 */
 export const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
@@ -178,7 +179,8 @@ export function checkSpelling(db: DB, cardId: number, answer: string, now = new 
   const correct = acceptedSpellings(row.headword).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
   const r = review(db, cardId, rating as Grade, now, { ...extra, qtype: row.mode, answer, correct, answerId });
-  return { correct, expected: row.headword, rating, due: r.card.due.toISOString(), duplicate: r.duplicate };
+  const word=(db.prepare('SELECT word_id FROM cards WHERE id=?').get(cardId) as {word_id:number});
+  return { correct, expected: displayHeadword(db,word.word_id,row.headword), rating, due: r.card.due.toISOString(), duplicate: r.duplicate };
 }
 
 /** 四档掌握度：看认词卡。新词=没学过；学习中=学习/重学阶段或稳定度<7天；熟悉=7–21天；掌握=稳定度≥21天 */
@@ -198,7 +200,7 @@ export function wrongList(db: DB, sort: WrongSort = 'count') {
   return (db.prepare(`SELECT w.id word_id,w.headword,w.phonetic,w.meaning_zh,ww.wrong_count,ww.last_wrong_at,ww.correct_days
     FROM wrong_words ww JOIN words w ON w.id=ww.word_id WHERE ww.removed_at IS NULL
     ORDER BY ${sort === 'recent' ? 'ww.last_wrong_at DESC,ww.word_id' : 'ww.wrong_count DESC,ww.last_wrong_at DESC,ww.word_id'}`).all() as any[])
-    .map(r => ({ ...r, correct_days: JSON.parse(r.correct_days).length, fails: Object.fromEntries((db.prepare(`SELECT COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END) qtype,COUNT(*) n
+    .map(r => ({ ...r, headword:displayHeadword(db,r.word_id,r.headword), correct_days: JSON.parse(r.correct_days).length, fails: Object.fromEntries((db.prepare(`SELECT COALESCE(l.qtype,CASE c.mode WHEN 'recognize' THEN 'flip' ELSE c.mode END) qtype,COUNT(*) n
       FROM review_logs l JOIN cards c ON c.id=l.card_id WHERE c.word_id=? AND (l.correct=0 OR l.rating=1) GROUP BY 1`).all(r.word_id) as { qtype: string; n: number }[]).map(f => [f.qtype, f.n])) }));
 }
 export function wrongSummary(db: DB, sort: WrongSort = 'count', now = new Date()) {

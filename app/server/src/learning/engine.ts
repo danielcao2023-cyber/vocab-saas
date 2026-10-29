@@ -1,3 +1,4 @@
+import {displayHeadword} from '../display-headword.ts';
 import {readWordEvidence} from './evidence-store.ts';
 import {evidenceBook} from './evidence-views.ts';
 import {evidenceVersion} from './evidence-migration.ts';
@@ -55,7 +56,7 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
  const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
-  ...(issue.mode==='recognize'?{headword:w.headword}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(shown)[0]})};
+  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(shown)[0]})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
@@ -133,7 +134,7 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
  const position=finished?entry.position:(db.prepare('SELECT MAX(position) p FROM learning_day_words WHERE day=?').get(issue.day) as {p:number}).p+1;
  db.prepare('UPDATE learning_day_words SET targets=?,streaks=?,errors=errors+?,assisted=?,available_at=?,last_mode=?,done=?,position=? WHERE day=? AND word_id=?').run(JSON.stringify(targets),JSON.stringify(streaks),Number(!correct),Number(wasAssisted),available,i,Number(finished),position,issue.day,w.id);
  db.prepare('UPDATE learning_words SET book=?,last_at=?,initial_done=?,initial_errors=?,error_day=?,day_errors=?,last_fail=?,due=? WHERE word_id=?').run(book,now.toISOString(),Number(!!w.initial_done||finished),initialErrors,issue.day,errors,(!correct||assisted)?now.toISOString():w.last_fail,due,w.id);
- const result:LearningResult={correct,assisted,expected:w.headword,meaning:w.meaning_zh??'',book,nextDue:due,previousBook:w.book};
+ const result:LearningResult={correct,assisted,expected:displayHeadword(db,w.id,w.headword),meaning:w.meaning_zh??'',book,nextDue:due,previousBook:w.book};
  db.prepare('UPDATE learning_issues SET answered_at=?,answer_id=?,result_json=? WHERE id=?').run(now.toISOString(),input.answerId,JSON.stringify(result),issue.id);
  recomputeDailyStats(db,[issue.day]);
  void rated;return result;
@@ -141,5 +142,5 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
 export function learningBooks(db:DB,book:WordBook,page=1,now=new Date()):LearningBooks{
  if(!['new','unfamiliar','familiar','mastered'].includes(book)||!Number.isSafeInteger(page)||page<1)throw new HttpError(400,'单词本或页码无效。');
  const words=learningWords(db).map(w=>evidenceVersion(db)===3?{...w,book:evidenceBook(readWordEvidence(db,w.id,now)),due:readWordEvidence(db,w.id,now).dueAt}:w),filtered=words.filter(w=>w.book===book).sort((a,b)=>(a.due??'').localeCompare(b.due??'')||a.id-b.id),size=40;void now;
- return {book,counts:counts(words),items:filtered.slice((page-1)*size,page*size).map(w=>({id:w.id,headword:w.headword,meaning:w.meaning_zh??'',phonetic:w.phonetic,level:w.level,book:w.book,due:w.due})),total:filtered.length,page,size};
+ return {book,counts:counts(words),items:filtered.slice((page-1)*size,page*size).map(w=>({id:w.id,headword:displayHeadword(db,w.id,w.headword),meaning:w.meaning_zh??'',phonetic:w.phonetic,level:w.level,book:w.book,due:w.due})),total:filtered.length,page,size};
 }

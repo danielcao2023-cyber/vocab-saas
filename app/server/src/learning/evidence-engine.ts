@@ -1,3 +1,4 @@
+import {displayHeadword} from '../display-headword.ts';
 import {randomUUID} from 'node:crypto';
 import type {DB} from '../db.ts';
 import {HttpError} from '../http-error.ts';
@@ -53,7 +54,7 @@ export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now)
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
  const shown=legacyIssueHeadword(i,w.headword)??w.headword;
- return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source}:i.mode==='dictation'?{audioWord:acceptedSpellings(shown)[0]}:{headword:w.headword})};
+ return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source}:i.mode==='dictation'?{audioWord:acceptedSpellings(shown)[0]}:{headword:displayHeadword(db,i.word_id,w.headword)})};
 }
 export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};
@@ -123,7 +124,7 @@ export function answerV3(db:DB,input:LearningAnswer,now:Date):LearningResultV3{r
  db.prepare('UPDATE learning_day_words SET done=?,errors=errors+?,assisted=MAX(assisted,?),available_at=?,position=CASE WHEN ? THEN position ELSE ? END WHERE day=? AND word_id=?').run(Number(passed||budget),Number(decision.kind==='probe_failure'),issue.assisted,available,Number(passed),max+1,issue.day,issue.word_id);
  if(budget&&!passed)db.prepare('UPDATE learning_card_state SET verification_due=? WHERE card_id IN (SELECT id FROM cards WHERE word_id=?) AND last_failure_at IS NOT NULL').run(nextDay(now),issue.word_id);
  const book=projectEvidence(db,issue.word_id,now) as WordBook,state=readWordEvidence(db,issue.word_id,now);
- const result:LearningResultV3={policyVersion:3,correct,assisted:!!issue.assisted,evidenceKind:decision.kind,independentlyRecalled:passed,needsConsolidation:state.priority||!passed,expected:w.headword,meaning:w.meaning_zh??'',book,nextDue:state.dueAt??nextDay(now)};
+ const result:LearningResultV3={policyVersion:3,correct,assisted:!!issue.assisted,evidenceKind:decision.kind,independentlyRecalled:passed,needsConsolidation:state.priority||!passed,expected:displayHeadword(db,issue.word_id,w.headword),meaning:w.meaning_zh??'',book,nextDue:state.dueAt??nextDay(now)};
  db.prepare('UPDATE learning_issues SET answered_at=?,answer_id=?,result_json=? WHERE id=?').run(now.toISOString(),input.answerId,JSON.stringify(result),issue.id);
  recomputeDailyStats(db,[issue.day]);return result;
 })();}

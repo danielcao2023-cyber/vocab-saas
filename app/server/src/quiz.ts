@@ -1,3 +1,4 @@
+import {displayHeadword} from './display-headword.ts';
 import type { DB } from './db.ts';
 import { Rating, State } from 'ts-fsrs';
 import { review, type CardRow } from './study.ts';
@@ -57,7 +58,7 @@ export function buildQuestion(db: DB, card: QuizCard, qtype: Qtype, rng: Rng = M
   if (qtype !== 'listen_choice' && qtype !== 'meaning_choice') return null;
   const answer = db.prepare('SELECT * FROM words WHERE id=?').get(card.word_id) as Word;
   if (!first(answer.meaning_zh)) return null;
-  const display = (w: Word) => qtype === 'listen_choice' ? first(w.meaning_zh) : w.headword;
+  const display = (w: Word) => qtype === 'listen_choice' ? first(w.meaning_zh) : displayHeadword(db,w.id,w.headword);
   const a = head(answer.headword);
   const candidates = (db.prepare("SELECT * FROM words WHERE source=? AND is_sample=? AND id<>? AND trim(COALESCE(meaning_zh,''))<>''").all(answer.source, answer.is_sample, answer.id) as Word[])
     .map(w => ({ word: w, score: (pos(w.meaning_zh) === pos(answer.meaning_zh) ? 100 : 0) + 20 - editDistance(a, head(w.headword)) + (head(w.headword)[0] === a[0] ? 4 : 0) + (Math.abs(head(w.headword).length - a.length) <= 2 ? 3 : 0) }))
@@ -82,7 +83,7 @@ function promptOf(answer: Word) {
 function renderIssue(db: DB, issue: Issue): Question {
   const answer = db.prepare('SELECT * FROM words WHERE id=?').get(issue.answer_word_id) as Word;
   const words = (JSON.parse(issue.options_json) as number[]).map(id => db.prepare('SELECT * FROM words WHERE id=?').get(id) as Word);
-  return { id: issue.id, qtype: issue.qtype, ...(issue.qtype === 'meaning_choice' ? { prompt: promptOf(answer) } : {}), options: words.map(w => ({ wordId: w.id, text: issue.qtype === 'listen_choice' ? maskAnswer(first(w.meaning_zh), answer.headword) : w.headword })) };
+  return { id: issue.id, qtype: issue.qtype, ...(issue.qtype === 'meaning_choice' ? { prompt: promptOf(answer) } : {}), options: words.map(w => ({ wordId: w.id, text: issue.qtype === 'listen_choice' ? maskAnswer(first(w.meaning_zh), answer.headword) : displayHeadword(db,w.id,w.headword) })) };
 }
 export function issueQuestion(db: DB, card: QuizCard, now = new Date(), context: Context = 'study', rng: Rng = Math.random, forced?: Qtype): Question | null {
   const word=db.prepare('SELECT headword FROM words WHERE id=?').get(card.word_id) as {headword:string};
@@ -144,6 +145,6 @@ export function answerQuestion(db: DB, questionId: number, choiceWordId: number,
       due = result.card.due.toISOString();
       db.prepare('UPDATE question_issues SET answered_at=?,chosen_word_id=?,answer_id=? WHERE id=?').run(now.toISOString(), chosenId, answerId, questionId);
     }
-    return { ok: true, correct, answerWordId: issue.answer_word_id, chosenWordId: chosenId, expected, chosen: { headword: selected.headword, meaning_first_line: first(selected.meaning_zh) }, due, duplicate };
+    return { ok: true, correct, answerWordId: issue.answer_word_id, chosenWordId: chosenId, expected:{...expected,headword:displayHeadword(db,issue.answer_word_id,expected.headword)}, chosen: { headword: displayHeadword(db,chosenId,selected.headword), meaning_first_line: first(selected.meaning_zh) }, due, duplicate };
   })();
 }

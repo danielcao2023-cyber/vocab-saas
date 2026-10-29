@@ -1,3 +1,4 @@
+import {displayHeadword} from '../../../server/src/display-headword.ts';
 import {migrateLearning} from '../../../server/src/learning/schema';
 import {activateEvidencePolicy,evidenceVersion} from '../../../server/src/learning/evidence-migration';
 import {learningViews} from '../../../server/src/learning/evidence-views';
@@ -57,10 +58,10 @@ export function createLocalRuntime(options:Options){
    if(!row)throw new HttpError(404,'这个单词不存在。');
    if(word[2]==='/content')return getContent(shared,id);
    if(word[2]==='/lesson'){
-    const keyed=typeof row.headword==='string'?keyedLessonName(row.headword):undefined;
+    const shown=displayHeadword(shared,id,String(row.headword));const keyed=shown!==row.headword?'highschool-log.json':typeof row.headword==='string'?keyedLessonName(row.headword):undefined;
     const result=await assetFetch(keyed?`/offline/lessons/keyed/${keyed}`:`/offline/lessons/${id}.json`);if(!result.ok)return {status:'pending',lesson:null};
     const raw=await result.json();if(raw.headword!==row.headword||(!keyed&&raw.wordId!==id))throw new Error('词条资料不匹配。');
-    const lesson=keyed?{...raw,wordId:id}:raw;
+    const lesson={...raw,wordId:keyed?id:raw.wordId,headword:shown};
     return {status:'ready',lesson};
    }
    return wordDetail(shared,id);
