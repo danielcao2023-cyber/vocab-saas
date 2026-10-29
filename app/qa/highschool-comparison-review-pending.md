@@ -121,3 +121,5 @@
 后续核验：2996–3025，逐项依据见 `highschool-comparison-audits/batch-2996-3010.json`、`batch-3011-3025.json`；无关对比已移除。
 
 后续核验：3026–3055，逐项依据见 `highschool-comparison-audits/batch-3026-3040.json`、`batch-3041-3055.json`；3047 已补充国名及词义来源，无关对比已移除。
+
+后续核验：3056–3085，逐项依据见 `highschool-comparison-audits/batch-3056-3070.json`、`batch-3071-3085.json`；无关对比已移除。
