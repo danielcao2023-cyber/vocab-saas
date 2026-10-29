@@ -87,3 +87,5 @@
 后续核验：2486–2515，依据及待核项见 `highschool-comparison-audits/batch-2486-2500.json`、`batch-2501-2515.json`；2503、2507、2508 的地理专名仍待核。
 
 后续核验：2516–2545，逐项依据见 `highschool-comparison-audits/batch-2516-2530.json`、`batch-2531-2545.json`；两组无关对比已移除。
+
+后续核验：2546–2575，逐项依据见 `highschool-comparison-audits/batch-2546-2560.json`、`batch-2561-2575.json`；无关对比已移除。

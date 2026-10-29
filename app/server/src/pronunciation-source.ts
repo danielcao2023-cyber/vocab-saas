@@ -283,7 +283,9 @@ export function recordingWordProblem(word: string, title: string, options: Pick<
   try {
     const url = new URL(options.evidenceUrl ?? '');
     const normalWord = (value: string) => value.toLowerCase().replace(/[ .’'-]/g, '');
-    const englishSection = url.hostname === 'en.wiktionary.org' || url.hostname === 'fr.wiktionary.org' && url.hash === '#Anglais';
+    const polishEnglishAnchor = `${word.replace(/ /g, '_')}_(język_angielski)`;
+    const englishSection = url.hostname === 'en.wiktionary.org' || url.hostname === 'fr.wiktionary.org' && url.hash === '#Anglais' ||
+      url.hostname === 'pl.wiktionary.org' && decodeURIComponent(url.hash.slice(1)) === polishEnglishAnchor;
     evidence = url.protocol === 'https:' && englishSection && url.pathname.startsWith('/wiki/') &&
       normalWord(decodeURIComponent(url.pathname.slice(6))) === normalWord(word);
   } catch { /* No verified mapping. */ }

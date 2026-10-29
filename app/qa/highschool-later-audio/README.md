@@ -381,3 +381,5 @@
 `batch-pla-recovery.json` 加入 People's Liberation Army 的完整真人录音；核对 Wiktionary 英语栏目、Commons 许可、解码及哈希，词典标注英格兰南部口音，尚未试听。
 
 `batch-led-recovery.json` 加入 light-emitting diode 的完整真人录音；核对 Wiktionary 英语栏目、Commons 许可、解码及哈希，词典标注英格兰南部口音，尚未试听。
+
+`batch-polish3-recovery.json` 依据波兰维基词典英语栏目及 Commons 许可补入 analyse、commercialisation、commercialise 的完整录音；文件已解码及核对哈希，尚未人工试听，口音未确认。

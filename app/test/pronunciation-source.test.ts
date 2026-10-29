@@ -118,6 +118,17 @@ describe('pronunciation provenance', () => {
     expect(await resolvePronunciationSource('exam', { ...options, evidenceUrl: 'https://fr.wiktionary.org/wiki/exam#Français' })).toMatchObject({ status: 'unknown' });
   });
 
+  it('accepts only the matching Polish Wiktionary English section for nonstandard filenames', () => {
+    const word = 'analyse';
+    const title = 'File:LL-Q1860 (eng)-Arlo Barnes-analyse.wav';
+    const sourceUrl = 'https://commons.wikimedia.org/wiki/File:LL-Q1860_(eng)-Arlo_Barnes-analyse.wav';
+    const verify = (evidenceUrl: string) => recordingWordProblem(word, title, {sourceUrl, evidenceUrl});
+    expect(verify('https://pl.wiktionary.org/wiki/analyse#analyse_(j%C4%99zyk_angielski)')).toBeUndefined();
+    expect(verify('https://pl.wiktionary.org/wiki/analyse#analyse_(j%C4%99zyk_francuski)')).toBe('unverified-recording-selection');
+    expect(verify('https://pl.wiktionary.org/wiki/analyse#other_(j%C4%99zyk_angielski)')).toBe('unverified-recording-selection');
+    expect(verify('https://pl.wiktionary.org/wiki/analyse')).toBe('unverified-recording-selection');
+  });
+
   it('distinguishes network errors from a real dictionary 404', async () => {
     expect(await resolvePronunciationSource('apple', { fetch: vi.fn<typeof globalThis.fetch>().mockRejectedValue(new Error('offline')) }))
       .toEqual({ status: 'unknown', reason: 'network-unavailable' });
