@@ -26,7 +26,7 @@ const TABS = [
 ] as const;
 
 // Related forms are curated individually; arbitrary forms can be homographs or have different stress.
-const reviewedRelatedSoundForms:Record<string,readonly string[]>={curious:['curiously','curiosity']};
+const reviewedRelatedSoundForms:Record<string,readonly string[]>={curious:['curiously','curiosity'],design:['designing'],explore:['exploring']};
 const soundChoices=computed(()=>{
  const base=getSoundSpellingLessons(props.lesson.headword);
  const related=reviewedRelatedSoundForms[props.lesson.headword.trim().toLowerCase()]??[];

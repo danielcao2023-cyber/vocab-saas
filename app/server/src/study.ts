@@ -209,7 +209,8 @@ export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 
   const candidEquivalent = visibleSenses.includes('说实话') ? ({'to be frank':'to be honest','to be honest':'to be frank'} as Record<string,string>)[spellings[0]] : undefined;
   const causalWords = ['lead to','result in','bring about'];
   const causalEquivalents = visibleSenses.some(s=>s === '导致' || s === '造成' || /^短语\s+(?:导致|造成)$/.test(s)) && causalWords.includes(spellings[0]) ? causalWords.filter(word=>word!==spellings[0]) : [];
-  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? obgynEquivalent ?? candidEquivalent ?? textbookTranslationEquivalents[spellings[0]];
+  const factEquivalent = visibleSenses.includes('事实上') ? ({'actually':'as a matter of fact','as a matter of fact':'actually'} as Record<string,string>)[spellings[0]] : undefined;
+  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? obgynEquivalent ?? candidEquivalent ?? factEquivalent ?? textbookTranslationEquivalents[spellings[0]];
   return [...new Set([...spellings, ...(equivalent ? [equivalent] : []), ...causalEquivalents])];
 }
 
