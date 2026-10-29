@@ -17,6 +17,7 @@ defineEmits<{back:[]}>();
 const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=ref(false),audioFailed=ref<PlaybackFailure|null>(null);
 const pronunciationNote=ref<string|null>(null),systemSpeech=ref(false);
 const recordingIpa=ref<string|null>(null);
+const recordingReady=ref(false);
 const pronunciationVariants=ref<{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]>([]);
 const lastPlaybackVariant=ref<'noun'|'verb'|undefined>();
 const lastPlaybackWord=ref<string|null>(null);
@@ -58,12 +59,13 @@ async function wrong(){
   finally{if(alive)busy.value=false;}
 }
 async function loadPronunciationNote(){
-  const n=++pronunciationRequest;pronunciationNote.value=null;pronunciationAccent.value=null;recordingIpa.value=null;pronunciationVariants.value=[];
+  const n=++pronunciationRequest;recordingReady.value=false;pronunciationNote.value=null;pronunciationAccent.value=null;recordingIpa.value=null;pronunciationVariants.value=[];
   const word=pronunciationHeadword(detail.value?.word.headword??'');if(!word)return;
   try{
     const data=await api<{status:string;accent?:string;ipa?:string;pronunciationNote?:string;variants?:{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
     if(alive&&n===pronunciationRequest){
       pronunciationVariants.value=Array.isArray(data.variants)?data.variants.filter(v=>v.variant==='noun'||v.variant==='verb'):[];
+      recordingReady.value=data?.status==='ready'||pronunciationVariants.value.length>0;
       if(data?.status!=='ready')return;
       recordingIpa.value=typeof data.ipa==='string'&&data.ipa.trim()?data.ipa.trim():null;
       pronunciationAccent.value=data.accent==='us'||data.accent==='uk'?data.accent:null;
@@ -105,7 +107,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
           <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音':pronunciationNote }}</p>
-          <p v-if="!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
+          <p v-if="recordingReady&&!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button type="button" class="link" @click="play(lastPlaybackWord??undefined,lastPlaybackVariant)">{{ COPY.audioRetry }}</button></p>

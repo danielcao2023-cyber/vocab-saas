@@ -95,7 +95,7 @@ it('WordView shows an honest unavailable message after media failure and clears 
 it('WordView cancels on word changes and unmount, ignores old failures and links the exact main headword credits', async () => {
   let rejectOld!: (error: Error) => void;
   MockAudio.start = () => new Promise((_, reject) => { rejectOld = reject; });
-  vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify(wordDetail(2, 'US / us')), { status: 200 })));
+  vi.stubGlobal('fetch', vi.fn(async (url:string) => new Response(JSON.stringify(url.startsWith('/api/pronunciation?')?{status:'ready'}:wordDetail(2, 'US / us')), { status: 200 })));
   const ui = host('web/src/views/WordView.vue', { wordId: 1, initial: wordDetail() });
   try {
     await flush();
@@ -142,8 +142,10 @@ it('WordView keeps the newest pronunciation note when old metadata arrives after
   try {
     ui.updateProps({ wordId: 2 }); await flush();
     expect(ui.text()).toContain('缩写 US 的美式录音。');
+    expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)[0].props.href).toBe('/api/pronunciation/credits?word=US');
     resolveOld(new Response('{"status":"ready","pronunciationNote":"旧单词的录音说明。"}')); await flush();
     expect(ui.text()).not.toContain('旧单词的录音说明。');
+    expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)[0].props.href).toBe('/api/pronunciation/credits?word=US');
     expect(ui.text()).toContain('缩写 US 的美式录音。');
   } finally { ui.app.unmount(); }
 });
@@ -155,6 +157,7 @@ it('WordView metadata failure does not become a word-loading or playback error',
     await flush();
     expect(ui.text()).toContain('receive');
     expect(ui.all(n => n.props['aria-label'] === '发音说明')).toHaveLength(0);
+    expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0);
     expect(ui.text()).not.toContain(COPY.retry);
     expect(ui.text()).not.toContain(COPY.audioUnavailable);
     ui.all(n => n.props['aria-label'] === '听发音')[0].props.onClick();
@@ -190,4 +193,23 @@ it('WordView associates the main pronunciation with the recording and displays m
  vi.stubGlobal('fetch',vi.fn(async (url:string)=>new Response(JSON.stringify(url.includes('/api/pronunciation?')?{status:'ready',ipa:'/boʊ/',variants:[{variant:'noun',label:'弓、蝴蝶结'},{variant:'verb',label:'鞠躬、船首'}]}:{status:'missing'}),{status:200})));
  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:{...wordDetail(1,'bow'),word:{...wordDetail(1,'bow').word,phonetic:'/baʊ/'}}});
  try {await flush();expect(ui.text()).toContain('/boʊ/');expect(ui.text()).not.toContain('/baʊ/');expect(ui.text()).toContain('弓、蝴蝶结');expect(ui.all(n=>n.props['aria-label']==='不同词性发音')).toHaveLength(0);}finally{ui.app.unmount()}
+});
+
+it('WordView only shows recording credits for ready audio or usable variants',async()=>{
+ for(const [data,visible] of [[{status:'missing'},false],[{status:'ready',accent:'us'},true],[{status:'missing',variants:[{variant:'noun',label:'名词'}]},true]] as const){
+  vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.startsWith('/api/pronunciation?')?data:{status:'missing'}))));
+  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits).length).toBe(visible?1:0)}finally{ui.app.unmount()}
+ }
+});
+it('WordView does not carry old audio credits to a missing or failed next word',async()=>{
+ let pending!:(r:Response)=>void;
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>{if(url==='/api/pronunciation?word=receive')return new Response('{"status":"ready"}');if(url==='/api/pronunciation?word=US')return new Promise<Response>(resolve=>pending=resolve);return new Response(JSON.stringify(wordDetail(2,'US / us')))}));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(1);ui.updateProps({wordId:2});await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0);pending(new Response('{"status":"missing"}'));await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0)}finally{ui.app.unmount()}
+});
+it('WordView labels successful system speech and hides a formerly ready recording credit',async()=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[{lang:'en-US',localService:true}],speak:(u:Utterance)=>{utterance=u},cancel:vi.fn()});
+ vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.startsWith('/api/pronunciation?')?{status:'ready'}:{status:'missing'}))));
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(1);ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance).toBeDefined();utterance!.onend!();await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0)}finally{ui.app.unmount()}
 });

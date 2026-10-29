@@ -9,6 +9,7 @@ import {fileURLToPath} from 'node:url';
 import Database from 'better-sqlite3';
 import {pronunciationHeadword} from '../web/src/audio.ts';
 import {hasDictionaryPlaceholder} from '../server/src/text.ts';
+import {protectTarget} from '../server/src/guard.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const args=process.argv.slice(2);
@@ -18,7 +19,9 @@ const cat=readJson(join(root,'data/vocabulary/catalog.json'));
 const offline=readJson(join(root,'mobile-public/offline/pronunciation.json'));
 const source=readJson(join(root,'data/pronunciation/manifest.json'));
 if(source.version!==1||!source.entries||!Array.isArray(cat.entries)||!offline||typeof offline!=='object') throw new Error('Unexpected catalog or pronunciation format');
-const db=new Database(join(root,'mobile-public/offline/seed.db'),{readonly:true,fileMustExist:true});
+const seedPath=join(root,'mobile-public/offline/seed.db');
+protectTarget(seedPath);
+const db=new Database(seedPath,{readonly:true,fileMustExist:true});
 const lookup=db.prepare('SELECT w.id,w.headword FROM vocabulary_entry_map m JOIN words w ON w.id=m.word_id WHERE m.entry_key=?');
 const cache=new Map<string,boolean>();
 function valid(word:string,entry:any,dir:string,offlinePath:boolean):boolean {
