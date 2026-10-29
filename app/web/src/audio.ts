@@ -36,6 +36,8 @@ export function speak(headword: string): Promise<PlaybackResult> {
   if (!word || typeof Audio === 'undefined') {
     return Promise.resolve({ status: 'unavailable', reason: 'failed' });
   }
+  const spoken = word.replace(/\bsb\.(['’]s)?/gi, (_match, possessive: string | undefined) => possessive ? "someone's" : 'someone')
+    .replace(/\bsth\./gi, 'something');
   return new Promise(resolve => {
     let audio: HTMLAudioElement;
     try { audio = new Audio(); }
@@ -68,7 +70,7 @@ export function speak(headword: string): Promise<PlaybackResult> {
       synthesizing=true;
       if(Capacitor.isNativePlatform()){
         cancelSpeech=()=>{void DeviceSpeech.stop().catch(()=>{});};
-        void DeviceSpeech.speak({text:word,rate:preferences.playbackRate}).then(result=>{
+        void DeviceSpeech.speak({text:spoken,rate:preferences.playbackRate}).then(result=>{
           if(result.status==='success')finish({status:'success',source:'system'});
           else finish(result.status==='cancelled'?{status:'cancelled'}:{status:'unavailable',reason:'failed'});
         },()=>finish({status:'unavailable',reason:'failed'}));
@@ -77,7 +79,7 @@ export function speak(headword: string): Promise<PlaybackResult> {
       if(typeof speechSynthesis==='undefined'||typeof SpeechSynthesisUtterance==='undefined'){
         finish({status:'unavailable',reason:'failed'});return;
       }
-      const utterance=new SpeechSynthesisUtterance(word);
+      const utterance=new SpeechSynthesisUtterance(spoken);
       const voice=speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang)&&v.localService)
         ??speechSynthesis.getVoices().find(v=>/^en[-_]/i.test(v.lang));
       utterance.lang=voice?.lang??'en-US';if(voice)utterance.voice=voice;

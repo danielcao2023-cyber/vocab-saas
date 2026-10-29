@@ -125,3 +125,19 @@ it('speaks the complete example for the abbreviated textbook phrase',async()=>{
  expect(utterance?.text).toBe('from then on');
  utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
 });
+
+it.each([
+ ['sign up for sth.','sign up for something'],
+ ['remind sb. of sth.','remind someone of something'],
+ ["take sb.'s breath away","take someone's breath away"],
+])('speaks textbook placeholder in %s as natural English',async(headword,expected)=>{
+ class Utterance {text:string;lang='';rate=1;onend:(()=>void)|null=null;onerror:(()=>void)|null=null;constructor(text:string){this.text=text;}}
+ let utterance:Utterance|undefined;
+ vi.stubGlobal('SpeechSynthesisUtterance',Utterance);
+ vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:(u:Utterance)=>{utterance=u;},cancel:vi.fn()});
+ const result=speak(headword);
+ expect(MockAudio.instances[0].src).toBe('/api/pronunciation/audio?word='+encodeURIComponent(headword));
+ MockAudio.instances[0].emit('error');
+ expect(utterance?.text).toBe(expected);
+ utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
+});
