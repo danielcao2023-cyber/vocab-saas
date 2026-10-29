@@ -77,3 +77,5 @@
 后续核验：2366–2395，逐项依据见 `highschool-comparison-audits/batch-2366-2380.json`、`batch-2381-2395.json`；仅覆盖对比义项及例句。
 
 后续核验：2396–2425，逐项依据见 `highschool-comparison-audits/batch-2396-2410.json`、`batch-2411-2425.json`；仅覆盖对比义项及例句。
+
+后续核验：2426–2455，逐项依据见 `highschool-comparison-audits/batch-2426-2440.json`、`batch-2441-2455.json`；仅覆盖对比义项及例句。

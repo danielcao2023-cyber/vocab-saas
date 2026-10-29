@@ -379,3 +379,5 @@
 `next9-advocate-noun.json` 增加 advocate 英式名词录音，保留已有美式动词默认录音；词典关联、Commons 许可、解码和哈希已核对，尚未试听。
 
 `batch-pla-recovery.json` 加入 People's Liberation Army 的完整真人录音；核对 Wiktionary 英语栏目、Commons 许可、解码及哈希，词典标注英格兰南部口音，尚未试听。
+
+`batch-led-recovery.json` 加入 light-emitting diode 的完整真人录音；核对 Wiktionary 英语栏目、Commons 许可、解码及哈希，词典标注英格兰南部口音，尚未试听。
