@@ -334,3 +334,10 @@ it('matches Cambridge Think pronunciation and stress for so as to',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('so as to');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none','none']);
 });
+
+it('matches Helbling MORE! pronunciation and stress for by comparison',()=>{
+ const lesson=getSoundSpellingLesson('by comparison');
+ expect(lesson?.ipa).toBe('/baɪ kəmˈpærɪsn/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('by comparison');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none','none']);
+});

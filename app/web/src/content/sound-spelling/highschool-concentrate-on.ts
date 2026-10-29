@@ -635,3 +635,10 @@ addSourcedPhrase('so as to','/ˈsəʊ əz tuː/',[
  ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
  ch('to','/tuː/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/uː/'}]),
 ],'Cambridge Think Level 3 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-3/69540/resources/pdf/l3_u11_wordlist.pdf');
+addSourcedPhrase('by comparison','/baɪ kəmˈpærɪsn/',[
+ ch('by ','/baɪ/','none',[{letters:'b',sound:'/b/'},{letters:'y',sound:'/aɪ/'},{letters:' ',sound:''}]),
+ ch('com','/kəm/','none',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ə/'},{letters:'m',sound:'/m/'}]),
+ ch('par','/pær/','primary',[{letters:'p',sound:'/p/'},{letters:'a',sound:'/æ/'},{letters:'r',sound:'/r/'}]),
+ ch('i','/ɪ/','none',[{letters:'i',sound:'/ɪ/'}]),
+ ch('son','/sn/','none',[{letters:'s',sound:'/s/'},{letters:'o',sound:''},{letters:'n',sound:'/n/'}]),
+],'Helbling MORE! 4 词表','https://www.helbling.com/sites/default/files/media/documents/399045980_Demo_0.pdf');
