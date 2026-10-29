@@ -362,3 +362,10 @@ it('matches Burlington pronunciation and stress for keep in mind',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('keep in mind');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary']);
 });
+
+it('matches Longman pronunciation and stress for come to power',()=>{
+ const lesson=getSoundSpellingLesson('come to power');
+ expect(lesson?.ipa).toBe('/kʌm tə ˈpaʊə/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('come to power');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none']);
+});

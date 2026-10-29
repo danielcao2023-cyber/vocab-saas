@@ -656,3 +656,9 @@ addSourcedPhrase('keep in mind','/kiːp ɪn ˈmaɪnd/',[
  ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
  ch('mind','/maɪnd/','primary',[{letters:'m',sound:'/m/'},{letters:'i',sound:'/aɪ/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'}]),
 ],'Burlington Advanced Real English 4 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/AdvRealEnglish4_WB_AppendCat_10213.pdf');
+addSourcedPhrase('come to power','/kʌm tə ˈpaʊə/',[
+ ch('come ','/kʌm/','none',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ʌ/'},{letters:'m',sound:'/m/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('to ','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('pow','/paʊ/','primary',[{letters:'p',sound:'/p/'},{letters:'ow',sound:'/aʊ/'}]),
+ ch('er','/ə/','none',[{letters:'er',sound:'/ə/'}]),
+],'Longman Exam Accelerator 词表','https://www.venturesbooks.cz/ke-stazeni/category/145-exam-accelerator?download=1507%3Aslovnicek-exam-accellerator-pdf');
