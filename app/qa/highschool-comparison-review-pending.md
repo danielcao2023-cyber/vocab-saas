@@ -35,3 +35,5 @@
 后续核验：1748–1765，依据见 `highschool-comparison-audits/batch-1736-1750.json` 和 `batch-1751-1765.json`；1736–1747 无对比项，不代表完整词条已核验。
 
 后续核验：1766–1795；逐项依据见 `highschool-comparison-audits/batch-1766-1780.json`、`batch-1781-1795.json`，仅覆盖对比义项及例句。
+
+后续核验：1796–1825，逐项依据见 `highschool-comparison-audits/batch-1796-1810.json`、`batch-1811-1825.json`；仅覆盖对比义项和例句。
