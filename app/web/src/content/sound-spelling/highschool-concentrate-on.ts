@@ -48,3 +48,28 @@ highschoolConcentrateOn.push({
  sources:[{label:'Pearson English Class B1+ 词表',url:'https://www.pearson.pl/fileadmin/poland/english/Documents/English_Class_B1P_SB_listy_slow.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; British phrase pronunciation checked against Pearson'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'consist of',ipa:'/kənˈsɪst əv/',
+ chunks:[
+  {letters:'con',sound:'/kən/',stress:'none',hint:'开头轻读。',pairs:[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}],tip:'轻读元音 /ə/。'},
+  {letters:'sist ',sound:'/sɪst/',stress:'primary',hint:'重音在 sist。',pairs:[{letters:'s',sound:'/s/'},{letters:'i',sound:'/ɪ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}],tip:'短元音 /ɪ/ 要读清楚。'},
+  {letters:'of',sound:'/əv/',stress:'none',hint:'of 在这里轻读。',pairs:[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}],tip:'字母 f 在此读 /v/。'},
+ ],
+ anchor:{text:'注意 consist 重音在后，of 在这条美式读法中轻读。'},
+ variantNote:'这里采用剑桥词典列出的美式读法；实际句中重音与弱读可变化。',
+ sources:[{label:'Cambridge Dictionary · consist of 发音',url:'https://dictionary.cambridge.org/pronunciation/english/consist-of'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against Cambridge'},
+});
+
+highschoolConcentrateOn.push({
+ headword:'due to',ipa:'/ˈdjuː tuː/',uk:'/ˈdjuː tuː/',
+ chunks:[
+  {letters:'due ',sound:'/djuː/',stress:'primary',hint:'这里采用英式 /djuː/。',pairs:[{letters:'d',sound:'/d/'},{letters:'ue',sound:'/juː/'},{letters:' ',sound:''}],tip:'先读 /d/，再读 /juː/。'},
+  {letters:'to',sound:'/tuː/',stress:'none',hint:'to 在这条读法中读 /tuː/。',pairs:[{letters:'t',sound:'/t/'},{letters:'o',sound:'/uː/'}],tip:'在句中 to 也可能弱读。'},
+ ],
+ anchor:{text:'先读 due，再接 to；结合语境听弱读。'},
+ variantNote:'读音参照 Collins，重音标记参照教材词表；to 在句中常有弱读变体。',
+ sources:[{label:'Collins Dictionary · due to',url:'https://www.collinsdictionary.com/dictionary/english/due-to'},{label:'Contrast 1 · 教材词表',url:'https://www.edu.xunta.gal/centros/iesalfredobranas/system/files/u27/Contrast1_SB_AppendGal_11948.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Collins and textbook word list'},
+});

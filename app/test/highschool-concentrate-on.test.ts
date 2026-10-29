@@ -21,3 +21,9 @@ it('shows the Pearson British pronunciation and full spelling for trip over',()=
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('trip over');
  expect(lesson?.chunks[1]?.stress).toBe('primary');
 });
+
+it.each([['consist of','/kənˈsɪst əv/'],['due to','/ˈdjuː tuː/']])('shows the sourced phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
