@@ -34,6 +34,7 @@ export function pronunciationCreditsUrl(headword?: string): string {
 export function speak(headword: string, variant?: 'noun'|'verb'): Promise<PlaybackResult> {
   stopAudio();
   const word = pronunciationHeadword(headword);
+  variant = variant ?? (word==='bow'||word==='contract'?'verb':undefined);
   if (!word || typeof Audio === 'undefined') {
     return Promise.resolve({ status: 'unavailable', reason: 'failed' });
   }

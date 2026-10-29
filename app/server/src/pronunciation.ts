@@ -88,7 +88,8 @@ export function pronunciationRoutes(app: FastifyInstance, db: DB, directory = DE
         ...(typeof recording.ipa === 'string' && recording.ipa.trim() ? { ipa: recording.ipa } : {}),
         ...(typeof recording.pronunciationNote === 'string' && recording.pronunciationNote.trim() ? { pronunciationNote: recording.pronunciationNote } : {}) }] : [];
     });
-    const r = available.get(variant ? `${word}\0${variant}` : word);
+    const selected = variant ?? ((word==='bow'||word==='contract') && req.headers['x-audio-variants']!=='1' ? 'noun' : undefined);
+    const r = available.get(selected ? `${word}\0${selected}` : word);
     if (!r) return { status: 'missing', word, ...(variants.length ? { variants } : {}) };
     return { status: 'ready', word: r.word, accent: r.accent, sourceUrl: r.sourceUrl,
       ...(variants.length ? { variants } : {}),
@@ -101,7 +102,8 @@ export function pronunciationRoutes(app: FastifyInstance, db: DB, directory = DE
     if (!word) return reply.code(400).send({ error: 'invalid word' });
     const variant = variantFor(req.query);
     if (variant === null) return reply.code(400).send({ error: 'invalid variant' });
-    const r = recordings().get(variant ? `${word}\0${variant}` : word);
+    const selected = variant ?? ((word==='bow'||word==='contract') ? 'noun' : undefined);
+    const r = recordings().get(selected ? `${word}\0${selected}` : word);
     if (!r) return reply.code(404).header('Cache-Control', 'no-store').send({ error: 'recording unavailable' });
     try {
       const bytes = fs.readFileSync(path.join(directory, r.file));

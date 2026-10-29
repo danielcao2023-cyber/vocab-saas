@@ -1,5 +1,5 @@
 export interface BundledRecording {word:string;file?:string;accent?:string;sourceUrl?:string;author?:string;license?:string;licenseUrl?:string;pronunciationNote?:string;ipa?:string;label?:string;variants?:Partial<Record<'noun'|'verb',BundledRecording>>}
 type MobileGlobals=typeof globalThis & {__VOCAB_MOBILE__?:boolean;__VOCAB_RECORDINGS__?:Record<string,BundledRecording>};
 export const isMobileBuild=()=>Boolean((globalThis as MobileGlobals).__VOCAB_MOBILE__);
-export function setMobileRecordings(recordings:Record<string,BundledRecording>){const state=globalThis as MobileGlobals;state.__VOCAB_MOBILE__=true;state.__VOCAB_RECORDINGS__=recordings;}
+export function setMobileRecordings(recordings:Record<string,BundledRecording>){const state=globalThis as MobileGlobals;state.__VOCAB_MOBILE__=true;state.__VOCAB_RECORDINGS__={...recordings};for(const word of ['bow','contract']){const base=recordings[word];if(base)state.__VOCAB_RECORDINGS__[word]={...base,...(base.variants?.noun??{file:undefined}),variants:base.variants};}}
 export function bundledAudio(word:string,variant?:string){const record=(globalThis as MobileGlobals).__VOCAB_RECORDINGS__?.[word];return variant===undefined?record?.file:(variant==='noun'||variant==='verb')?record?.variants?.[variant]?.file:undefined;}

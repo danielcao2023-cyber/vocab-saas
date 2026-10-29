@@ -1,3 +1,4 @@
+import {guardLegacyAudioIssue} from './audio-compat.ts';
 import {evidenceVersion} from './evidence-migration.ts';
 import {learningViews} from './evidence-views.ts';
 import {saveExposure} from './evidence-store.ts';
@@ -15,9 +16,9 @@ export function learningRoutes(app:FastifyInstance,db:DB,now:()=>Date){
  app.post('/api/learning/exposure',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);if(evidenceVersion(db)!==3)throw new HttpError(409,'尚未启用新版学习。');saveExposure(db,req.body as ExposureInput,now());return {ok:true};}));
  app.get('/api/learning/today',(_req,reply)=>run(reply,()=>learningToday(db,now())));
  app.post('/api/learning/start',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);return startLearning(db,now());}));
- app.get('/api/learning/next',(_req,reply)=>run(reply,()=>nextLearning(db,now())));
- app.post('/api/learning/answer',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);return answerLearning(db,req.body as LearningAnswer,now());}));
- app.post('/api/learning/consult',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);return consultLearning(db,evidenceVersion(db)===3?req.body:(req.body as any)?.issueId,now());}));
- app.post('/api/learning/defer',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);return deferLearning(db,(req.body as any)?.issueId,now());}));
+ app.get('/api/learning/next',(req,reply)=>run(reply,()=>nextLearning(db,now(),req.headers['x-audio-variants']==='1')));
+ app.post('/api/learning/answer',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);guardLegacyAudioIssue(db,(req.body as any)?.issueId,req.headers['x-audio-variants']==='1');return answerLearning(db,req.body as LearningAnswer,now());}));
+ app.post('/api/learning/consult',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);guardLegacyAudioIssue(db,(req.body as any)?.issueId,req.headers['x-audio-variants']==='1');return consultLearning(db,evidenceVersion(db)===3?req.body:(req.body as any)?.issueId,now());}));
+ app.post('/api/learning/defer',(req,reply)=>run(reply,()=>{checkOrigin(req);requireV3(req.body);guardLegacyAudioIssue(db,(req.body as any)?.issueId,req.headers['x-audio-variants']==='1');return deferLearning(db,(req.body as any)?.issueId,now());}));
  app.get<{Querystring:{book?:string;page?:string}}>('/api/learning/books',(req,reply)=>run(reply,()=>{const page=req.query.page??'1';if(!/^[1-9]\d*$/.test(page))throw new HttpError(400,'页码无效。');return learningBooks(db,(req.query.book??'unfamiliar') as WordBook,Number(page),now());}));
 }

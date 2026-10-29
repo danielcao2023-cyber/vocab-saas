@@ -1,3 +1,4 @@
+import {legacyHeteronym,guardLegacyAudioIssue} from './audio-compat.ts';
 import {displayHeadword} from '../display-headword.ts';
 import {readWordEvidence} from './evidence-store.ts';
 import {evidenceBook} from './evidence-views.ts';
@@ -56,9 +57,9 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
  const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,issue.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
-  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:shown,...(issue.audio_variant==='noun'||issue.audio_variant==='verb'?{audioVariant:issue.audio_variant}:{})})};
+  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:shown,...(issue.audio_variant==='noun'||issue.audio_variant==='verb'?{audioVariant:issue.audio_variant}:legacyHeteronym(w.headword)?{audioVariant:'noun' as const}:{})})};
 }
-export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
+export function nextLearning(db:DB,now=new Date(),supportsVariants=true):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now,supportsVariants);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
  const active=rows(db,summary.day).filter(w=>!w.done&&!w.deferred);if(!active.length)return {kind:'done',summary};
  const words=learningWords(db,now,true),byId=new Map(words.map(w=>[w.id,w]));
@@ -68,13 +69,13 @@ export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersi
   db.prepare('UPDATE learning_day_words SET targets=?,streaks=?,last_mode=? WHERE day=? AND word_id=?').run(entry.targets,entry.streaks,entry.last_mode,summary.day,entry.word_id);
  }
  const open=db.prepare('SELECT * FROM learning_issues WHERE day=? AND answered_at IS NULL ORDER BY issued_at DESC LIMIT 1').get(summary.day) as Issue|undefined;
- if(open&&active.some(w=>w.word_id===open.word_id))return {kind:'card',summary,card:renderCard(db,open,byId.get(open.word_id)!)};
+ if(open&&active.some(w=>w.word_id===open.word_id)){guardLegacyAudioIssue(db,open.id,supportsVariants);return {kind:'card',summary,card:renderCard(db,open,byId.get(open.word_id)!)};}
  const eligible=active.sort((a,b)=>a.position-b.position);
  const entry=eligible[0],targets=JSON.parse(entry.targets) as number[],streaks=JSON.parse(entry.streaks) as number[];
  const modes=MODES.map((mode,i)=>({mode,i})).filter(({i})=>streaks[i]<targets[i]);
  modes.sort((a,b)=>streaks[a.i]-streaks[b.i]||Number(a.i===entry.last_mode)-Number(b.i===entry.last_mode)||a.i-b.i);
  const mode=modes[0].mode,w=byId.get(entry.word_id)!,id=randomUUID(),options=mode==='recognize'?optionsFor(db,w):[];
- const audioVariant=mode==='dictation'&&['bow','contract'].includes(w.headword)?'verb':null;
+ const audioVariant=mode==='dictation'&&legacyHeteronym(w.headword)?(supportsVariants?'verb':'noun'):null;
  db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,summary.day,w.id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;
  return {kind:'card',summary,card:renderCard(db,issue,w)};

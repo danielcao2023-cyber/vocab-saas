@@ -1,3 +1,4 @@
+import {guardLegacyAudioIssue} from '../../../server/src/learning/audio-compat.ts';
 import {canonicalLessonId} from '../../../server/src/lesson-identity.ts';
 import {displayHeadword} from '../../../server/src/display-headword.ts';
 import {migrateLearning} from '../../../server/src/learning/schema';
@@ -27,7 +28,7 @@ export function createLocalRuntime(options:Options){
  const {db,assetFetch,recordings}=options,shared=asSharedDb(db),now=options.now??(()=>new Date());
  migrateVocabulary(shared);
  let queue:Promise<unknown>=Promise.resolve();let pendingPersist:{key:string;result:unknown}|null=null;
- const dispatch=async(url:URL,method:string,body:any):Promise<unknown>=>{
+ const dispatch=async(url:URL,method:string,body:any,supportsVariants:boolean):Promise<unknown>=>{
   const path=url.pathname,q=Object.fromEntries(url.searchParams),t=now(),v3=evidenceVersion(shared)===3;
   if(v3&&['/api/review','/api/check','/api/answer'].includes(path)&&method==='POST')throw new HttpError(409,'请使用新版背词入口。');
   if(v3&&path.startsWith('/api/learning/')&&method==='POST'){if(body?.policyVersion!==3)throw new HttpError(409,'请使用新版背词入口。');if(['rating','eligible','nextDue','stage'].some(k=>k in body))throw new HttpError(400,'不能自报记忆评分。');}
@@ -40,10 +41,10 @@ export function createLocalRuntime(options:Options){
   if(path==='/api/settings'&&method==='POST')return saveUserSettings(shared,body,t);
   if(path==='/api/learning/today'&&method==='GET')return learningToday(shared,t);
   if(path==='/api/learning/start'&&method==='POST')return startLearning(shared,t);
-  if(path==='/api/learning/next'&&method==='GET')return nextLearning(shared,t);
-  if(path==='/api/learning/answer'&&method==='POST')return answerLearning(shared,body as LearningAnswer,t);
-  if(path==='/api/learning/consult'&&method==='POST')return consultLearning(shared,v3?body:body?.issueId,t);
-  if(path==='/api/learning/defer'&&method==='POST')return deferLearning(shared,body?.issueId,t);
+  if(path==='/api/learning/next'&&method==='GET')return nextLearning(shared,t,supportsVariants);
+  if(path==='/api/learning/answer'&&method==='POST'){guardLegacyAudioIssue(shared,body?.issueId,supportsVariants);return answerLearning(shared,body as LearningAnswer,t);}
+  if(path==='/api/learning/consult'&&method==='POST'){guardLegacyAudioIssue(shared,body?.issueId,supportsVariants);return consultLearning(shared,v3?body:body?.issueId,t);}
+  if(path==='/api/learning/defer'&&method==='POST'){guardLegacyAudioIssue(shared,body?.issueId,supportsVariants);return deferLearning(shared,body?.issueId,t);}
   if(path==='/api/learning/books'&&method==='GET')return learningBooks(shared,(q.book??'unfamiliar') as WordBook,parseId(q.page??'1','page'),t);
   if(path==='/api/search'&&method==='GET'){const limit=parseId(q.limit??'20','limit');if(limit>100)throw new HttpError(400,'invalid limit');return search(shared,q.q??'',limit);}
   if(path==='/api/browse'&&method==='GET')return browse(shared,q);
@@ -77,15 +78,15 @@ export function createLocalRuntime(options:Options){
   const content=path.match(/^\/api\/content\/(\d+)\/feedback$/);if(content&&method==='POST')return contentFeedback(shared,parseId(content[1]),body?.reason,t);
   if(path==='/api/pronunciation'&&method==='GET'){
    if([...url.searchParams.keys()].some(key=>key.startsWith('variant['))||url.searchParams.getAll('variant').length>1||(q.variant!==undefined&&q.variant!=='noun'&&q.variant!=='verb'))throw new HttpError(400,'invalid variant');
-   const base=recordings[q.word??''];const r=q.variant===undefined?base:base?.variants?.[q.variant];
+   const base=recordings[q.word??''];const selected=q.variant??((q.word==='bow'||q.word==='contract')&&!supportsVariants?'noun':undefined);const r=selected===undefined?base:base?.variants?.[selected];
    const variants=(['noun','verb'] as const).flatMap(variant=>{const v=base?.variants?.[variant];return v?.file?[{variant,label:typeof v.label==='string'&&v.label.trim()?v.label.trim():variant==='noun'?'名词':'动词',...(v.ipa?{ipa:v.ipa}:{}),...(typeof v.pronunciationNote==='string'&&v.pronunciationNote.trim()?{pronunciationNote:v.pronunciationNote}:{})}]:[];});
    if(!r?.file)return {status:'missing',word:q.word,...(q.variant===undefined&&variants.length?{variants}:{})};const {file,variants:ignored,...info}=r;return {status:'ready',...info,...(q.variant===undefined&&variants.length?{variants}:{})};
   }
   throw new HttpError(404,'这个功能暂不可用。');
  };
- async function run(url:URL,method:string,body:unknown){
-  const key=method+' '+url.pathname+url.search+' '+JSON.stringify(body);
-  const task=queue.then(async()=>{if(pendingPersist&&pendingPersist.key!==key)throw new HttpError(503,'上一条记录尚未保存，请先重试原操作。');if(!pendingPersist){const result=await dispatch(url,method,body);if(method==='GET'&&url.pathname!=='/api/learning/next')return result;pendingPersist={key,result};}await options.save(db.export());const result=pendingPersist.result;pendingPersist=null;return result;});
+ async function run(url:URL,method:string,body:unknown,supportsVariants:boolean){
+  const key=method+' '+url.pathname+url.search+' '+JSON.stringify(body)+' '+supportsVariants;
+  const task=queue.then(async()=>{if(pendingPersist&&pendingPersist.key!==key)throw new HttpError(503,'上一条记录尚未保存，请先重试原操作。');if(!pendingPersist){const result=await dispatch(url,method,body,supportsVariants);if(method==='GET'&&url.pathname!=='/api/learning/next')return result;pendingPersist={key,result};}await options.save(db.export());const result=pendingPersist.result;pendingPersist=null;return result;});
   queue=task.catch(()=>{});return task;
  }
  return {async fetch(input:RequestInfo|URL,init?:RequestInit):Promise<Response>{
@@ -94,7 +95,7 @@ export function createLocalRuntime(options:Options){
   try{
    const text=init?.body??(input instanceof Request&&method!=='GET'?await input.text():undefined);
    const body=typeof text==='string'&&text?JSON.parse(text):undefined;
-   const result=await run(url,method,body);return jsonResponse(result,{headers:{'cache-control':'no-store'}});
+   const headers=new Headers(init?.headers??(input instanceof Request?input.headers:undefined));const result=await run(url,method,body,headers.get('x-audio-variants')==='1');return jsonResponse(result,{headers:{'cache-control':'no-store'}});
   }catch(e){return jsonResponse({error:e instanceof HttpError?e.message:'本机数据未能保存，请重试。'}, {status:e instanceof HttpError?e.status:503});}
  }};
 }

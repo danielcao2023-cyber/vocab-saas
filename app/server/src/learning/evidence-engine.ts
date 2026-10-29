@@ -1,3 +1,4 @@
+import {legacyHeteronym,guardLegacyAudioIssue} from './audio-compat.ts';
 import {dedupeDayGroup,dedupeTofuDayGroup,dedupeHighschoolVariants} from './day-groups.ts';
 import {displayHeadword} from '../display-headword.ts';
 import {randomUUID} from 'node:crypto';
@@ -68,9 +69,9 @@ export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now)
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
  const shown=legacyIssueHeadword(i,w.headword)??w.headword;
- return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:shown,...(i.audio_variant==='noun'||i.audio_variant==='verb'?{audioVariant:i.audio_variant}:{})}:{headword:displayHeadword(db,i.word_id,w.headword)})};
+ return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:shown,...(i.audio_variant==='noun'||i.audio_variant==='verb'?{audioVariant:i.audio_variant}:legacyHeteronym(w.headword)?{audioVariant:'noun' as const}:{})}:{headword:displayHeadword(db,i.word_id,w.headword)})};
 }
-export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
+export function nextV3(db:DB,now:Date,supportsVariants=true):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};
  let active=entries(db,day).filter(e=>!e.done&&!e.deferred);
  for(const e of active){const w=db.prepare('SELECT headword FROM words WHERE id=?').get(e.word_id) as {headword:string};if(!hasDictionaryPlaceholder(w.headword))continue;
@@ -78,7 +79,7 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
   if(cancelled.changes||e.last_mode>0){db.prepare('UPDATE learning_day_words SET last_mode=0 WHERE day=? AND word_id=?').run(day,e.word_id);e.last_mode=0;}
  }
  const open=db.prepare('SELECT * FROM learning_issues WHERE day=? AND answered_at IS NULL ORDER BY issued_at DESC,rowid DESC LIMIT 1').get(day) as Issue|undefined;
- if(open&&active.some(e=>e.word_id===open.word_id))return {policyVersion:3,kind:'card',summary,card:render(db,open)};
+ if(open&&active.some(e=>e.word_id===open.word_id)){guardLegacyAudioIssue(db,open.id,supportsVariants);return {policyVersion:3,kind:'card',summary,card:render(db,open)};}
  for(const e of active)if(probeCount(db,e.word_id,day)>=1+REVIEW_POLICY.additionalProbesPerDay){
   db.prepare('UPDATE learning_day_words SET done=1 WHERE day=? AND word_id=?').run(day,e.word_id);
   db.prepare('UPDATE learning_card_state SET verification_due=? WHERE card_id IN (SELECT id FROM cards WHERE word_id=?) AND last_failure_at IS NOT NULL AND (verification_due IS NULL OR verification_due<?)').run(nextDay(now),e.word_id,nextDay(now));
@@ -94,7 +95,7 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
   options.sort(()=>Math.random()-.5);options.push({id:0,text:'不记得'});
  }
  const word=db.prepare('SELECT headword FROM words WHERE id=?').get(e.word_id) as {headword:string};
- const audioVariant=mode==='dictation'&&['bow','contract'].includes(word.headword)?'verb':null;
+ const audioVariant=mode==='dictation'&&legacyHeteronym(word.headword)?(supportsVariants?'verb':'noun'):null;
  db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,day,e.word_id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  db.prepare('UPDATE learning_day_words SET last_mode=? WHERE day=? AND word_id=?').run(MODES.indexOf(mode),day,e.word_id);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;
