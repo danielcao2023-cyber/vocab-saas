@@ -15,3 +15,18 @@ export const highschoolVerifiedPhrases: SoundSpellingLesson[] = [
   review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against textbook wordlist'},
  },
 ];
+
+highschoolVerifiedPhrases.push({
+ headword:'in the open air',ipa:'/ɪn ði ˌəʊpn ˈeə/',uk:'/ɪn ði ˌəʊpn ˈeə/',
+ chunks:[
+  {letters:'in ',sound:'/ɪn/',stress:'none',hint:'先读 in。',pairs:[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}],tip:'放回句中体会连读。'},
+  {letters:'the ',sound:'/ði/',stress:'none',hint:'the 在元音前读 /ði/。',pairs:[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/i/'},{letters:' ',sound:''}],tip:'实际语流的重音和弱读可能变化。'},
+  {letters:'o',sound:'/əʊ/',stress:'secondary',hint:'open 的开头标次重音。',pairs:[{letters:'o',sound:'/əʊ/'}],tip:'这里采用词表中的英式读法。'},
+  {letters:'pen ',sound:'/pn/',stress:'none',hint:'末尾 n 构成一个轻读音节。',pairs:[{letters:'p',sound:'/p/'},{letters:'e',sound:''},{letters:'n',sound:'/n/'},{letters:' ',sound:''}],tip:'这是词表所示的音节辅音读法，也可能听到 /pən/。'},
+  {letters:'air',sound:'/eə/',stress:'primary',hint:'air 重读。',pairs:[{letters:'air',sound:'/eə/'}],tip:'这里展示非卷舌英音。'},
+ ],
+ anchor:{text:'先读 in the，再连接 open air。'},
+ variantNote:'这里展示词表中的一种英式读法；实际语流中的元音、重音和连读可能变化。',
+ sources:[{label:'Klett Freeway Soziales 词表',url:'https://www2.klett.de/sixcms/media.php/229/Wortschatz_Freeway_Soziales_GWSgekennzeichnet.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
+});
