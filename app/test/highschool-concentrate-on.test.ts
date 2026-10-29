@@ -62,3 +62,10 @@ it.each([['work out','/ˌwɜːk ˈaʊt/'],['give up','/ˌɡɪv ˈʌp/']])('shows
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
 });
+
+it.each([['take notes','/ˌteɪk ˈnəʊts/'],['make sense','/ˌmeɪk ˈsens/']])('shows the sourced pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
+});

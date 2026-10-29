@@ -163,3 +163,26 @@ highschoolConcentrateOn.push({
  sources:[{label:'Pearson English Class B1 词表',url:'https://www.pearson.pl/fileadmin/poland/english/Documents/English_Class_B1_SB_listy_slow.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Pearson wordlist'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'take notes',ipa:'/ˌteɪk ˈnəʊts/',uk:'/ˌteɪk ˈnəʊts/',
+ chunks:[
+  {letters:'take ',sound:'/teɪk/',stress:'secondary',hint:'take 在词表中标次重音。',pairs:[{letters:'t',sound:'/t/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'notes',sound:'/nəʊts/',stress:'primary',hint:'notes 在词表中重读。',pairs:[{letters:'n',sound:'/n/'},{letters:'o',sound:'/əʊ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:'s',sound:'/s/'}],tip:'这里采用英式 /əʊ/。'},
+ ],
+ anchor:{text:'take 与 notes 连起来读，在句中练习。'},
+ variantNote:'这里展示教材中的英式读法；美式元音及句中重音可能变化。',
+ sources:[{label:'Jordan Grade 9 教师用书词表',url:'https://nccd.gov.jo/EBV4.0/Root_Storage/EN/2024/G9/JOR_HN_G9_Teacher%27s_Book_Print.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Jordan textbook wordlist'},
+});
+highschoolConcentrateOn.push({
+ headword:'make sense',ipa:'/ˌmeɪk ˈsens/',uk:'/ˌmeɪk ˈsens/',
+ chunks:[
+  {letters:'make ',sound:'/meɪk/',stress:'secondary',hint:'make 在词表中标次重音。',pairs:[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'sense',sound:'/sens/',stress:'primary',hint:'sense 在词表中重读。',pairs:[{letters:'s',sound:'/s/'},{letters:'e',sound:'/e/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/s/'},{letters:'e',sound:''}],tip:'词尾 e 不单独发音。'},
+ ],
+ anchor:{text:'make 接 sense 连起来读，再放回句子。'},
+ variantNote:'这里展示词表中的读法；句中重音可随语境变化。',
+ sources:[{label:'Academic Vocabulary in Practice B1 词表',url:'https://languageadvisor.net/wp-content/uploads/2023/06/Academic_Vocabulary_Practice_Lower-Intermediate_B1.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against textbook wordlist'},
+});
