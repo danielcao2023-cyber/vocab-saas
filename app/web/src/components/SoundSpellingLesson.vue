@@ -7,7 +7,8 @@ const props=defineProps<{lesson:SoundSpellingLesson;recordingWord?:string;playba
 const recordingNote=ref('');
 const currentWord=computed(()=>props.recordingWord??props.lesson.headword);
 const currentPlayback=computed(()=>props.playback?.word===currentWord.value?props.playback.source:null);
-const showRecording=computed(()=>!!recordingNote.value&&!['system','failed'].includes(currentPlayback.value??''));
+const currentVariant=computed(()=>props.playback?.word===currentWord.value&&props.playback.source==='recording'?props.playback.variant:undefined);
+const showRecording=computed(()=>!!recordingNote.value&&!currentVariant.value&&!['system','failed'].includes(currentPlayback.value??''));
 let recordingRequest=0;
 watch(()=>props.recordingWord??props.lesson.headword,async word=>{
  const request=++recordingRequest;recordingNote.value='';
@@ -26,7 +27,8 @@ watch(()=>props.lesson.headword,()=>{selected.value=0;});
 </script>
 <template><div class="sound-spelling">
  <div class="sound-heading"><div><p class="eyebrow">把听到的声音，变成写得出的单词</p><h3>先听，再分段记住</h3><p class="sound-ipa">{{ lesson.ipa }}</p></div><button class="btn sound-play" type="button" @click="$emit('play')"><span aria-hidden="true">▶</span> 听整词录音</button></div>
- <p v-if="showRecording" class="small muted" aria-label="当前整词录音说明">{{ recordingNote }} · <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
+ <p v-if="currentVariant" class="small muted" aria-label="当前整词录音说明">刚播放{{ currentVariant==='noun'?'名词':'动词' }}读音；下方音形对照为默认读音。 <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
+ <p v-else-if="showRecording" class="small muted" aria-label="当前整词录音说明">{{ recordingNote }} · <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
  <p v-else-if="currentPlayback==='system'" class="small muted" aria-label="当前整词录音说明">系统合成发音</p>
  <div class="sound-chunks" aria-label="读音与字母对应"><button v-for="(chunk,i) in lesson.chunks" :key="i" class="sound-chunk" :class="{selected:selected===i,strong:chunk.stress==='primary'}" type="button" :aria-pressed="selected===i" @click="selected=i"><span class="chunk-stress">{{ chunk.crossesStressBoundary ? '跨重音' : stressLabels[chunk.stress] }}</span><span class="chunk-letters">{{ chunk.letters }}</span><span class="chunk-sound">{{ chunk.sound }}</span><span class="chunk-hint">{{ chunk.hint }}</span><span class="sound-pairs"><span v-for="(pair,j) in chunk.pairs" :key="j" class="sound-pair"><b>{{ pair.letters }}</b><span>{{ pair.sound || '不单独发音' }}</span></span></span></button></div>
  <div class="sound-tip" role="status" aria-live="polite"><strong>{{ selectedChunk.letters }}：怎么从声音想到字母</strong><p>{{ selectedChunk.tip }}</p></div>

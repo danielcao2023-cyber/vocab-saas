@@ -85,7 +85,7 @@ async function play(word?:string|MouseEvent,variant?:'noun'|'verb'){
   if(!alive||n!==audioRequest||result.status==='cancelled')return;
   audioFailed.value=result.status==='unavailable'?result.reason:null;
   systemSpeech.value=pronunciationHeadword(target)===pronunciationHeadword(detail.value.word.headword)&&result.status==='success'&&result.source==='system';
-  recordingPlayback.value={word:pronunciationHeadword(target),source:result.status==='unavailable'?'failed':result.source==='system'?'system':'recording'};
+  recordingPlayback.value={word:pronunciationHeadword(target),source:result.status==='unavailable'?'failed':result.source==='system'?'system':'recording',...(variant?{variant}:{})};
 }
 onMounted(()=>{loadLesson();loadPronunciationNote();if(!props.initial)load();});
 watch(()=>detail.value?.word.headword,loadPronunciationNote);
