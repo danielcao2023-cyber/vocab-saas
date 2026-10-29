@@ -144,3 +144,9 @@ it.each([['even though','/ˌiːvən ˈðəʊ/'],['in tears','/ɪn ˈtɪəz/']])(
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['on average','/ɒn ˈævərɪdʒ/'],['take advantage of','/ˌteɪk ədˈvɑːntɪdʒ əv/']])('shows the Pearson British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

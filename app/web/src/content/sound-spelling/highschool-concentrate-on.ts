@@ -381,3 +381,16 @@ addSourcedPhrase('in tears','/ɪn ˈtɪəz/',[
  ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
  ch('tears','/tɪəz/','primary',[{letters:'t',sound:'/t/'},{letters:'ear',sound:'/ɪə/'},{letters:'s',sound:'/z/'}]),
 ],'Macmillan New Password B1+ 词表','https://www.macmillan.pl/data/products/levels/materials/1647426354_New_Password_B1plus_SB_U1-2.pdf');
+addSourcedPhrase('on average','/ɒn ˈævərɪdʒ/',[
+ ch('on ','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('a','/æ/','primary',[{letters:'a',sound:'/æ/'}]),
+ ch('ver','/vər/','none',[{letters:'v',sound:'/v/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'}]),
+ ch('age','/ɪdʒ/','none',[{letters:'a',sound:'/ɪ/'},{letters:'g',sound:'/dʒ/'},{letters:'e',sound:''}]),
+],'Pearson Focus 3 词表','https://www.venturesbooks.cz/ke-stazeni/category/185-maturita-focus?download=1937%3Afocus-3-cz');
+addSourcedPhrase('take advantage of','/ˌteɪk ədˈvɑːntɪdʒ əv/',[
+ ch('take ','/teɪk/','secondary',[{letters:'t',sound:'/t/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('ad','/əd/','none',[{letters:'a',sound:'/ə/'},{letters:'d',sound:'/d/'}]),
+ ch('van','/vɑːn/','primary',[{letters:'v',sound:'/v/'},{letters:'a',sound:'/ɑː/'},{letters:'n',sound:'/n/'}]),
+ ch('tage ','/tɪdʒ/','none',[{letters:'t',sound:'/t/'},{letters:'a',sound:'/ɪ/'},{letters:'g',sound:'/dʒ/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Pearson Focus 3 第二版词表','https://anyflip.com/twmh/lylg/basic/101-150');
