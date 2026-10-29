@@ -11,3 +11,5 @@ hesitate 根据 [Cambridge](https://dictionary.cambridge.org/dictionary/english/
 ## permit 异读复核与待办
 
 动词首义与默认音标、录音元数据均对应动词读音；名词录音变体另有记录。本次未试听录音。剑桥美式词典也列出名词的第二音节重读变体：现有讲解中“名词重音在前”的绝对化表述待修订为“名词通常第一音节重读，也有其他读法”，并在集中处理录音时核实各音频。来源：https://dictionary.cambridge.org/us/dictionary/english/permit
+
+2026-10-30 后续修订：已将 permit 讲解中的绝对化重音表述改为常见读法，并提示美式变体；音频仍未试听。
