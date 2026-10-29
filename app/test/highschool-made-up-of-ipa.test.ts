@@ -1,0 +1,4 @@
+import {expect,it} from 'vitest';
+import fs from 'node:fs';
+import {createLessonReader,validateLesson} from '../server/src/lessons';
+it('serves Pearson whole-phrase IPA for be made up of',()=>{const word={id:3702,headword:'be made up of'},raw=JSON.parse(fs.readFileSync('data/lessons/3702.json','utf8'));expect(validateLesson(raw,word).ok).toBe(true);const result=createLessonReader()(word);expect(result.status).toBe('ready');expect(result.lesson?.pronunciation.ipa).toBe('/bi ˌmeɪd ˈʌp əv/');expect(result.lesson?.pronunciation.sourceIds).toContain('phrase-ipa');expect(result.lesson?.sources.some(s=>s.id==='phrase-ipa'&&s.url==='https://www.pearson.com/content/dam/one-dot-com/one-dot-com/english/SampleMaterials/Secondary/Focus/British_English_second_edition/Focus2e_SB4_U1_watermarked.pdf')).toBe(true);});

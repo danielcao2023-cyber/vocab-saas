@@ -379,11 +379,15 @@ export const highschoolOptional2Unit2Participate: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "词尾 g 对应 /dʒ/，e 不单独发音。",
+    "variantNote": "词尾 ge 的 g 对应 /dʒ/；e 不单独发音，也提示这里的 g 为软音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/engage"
+      },
+      {
+        "label": "Spellzone · 词尾 ge 的拼读",
+        "url": "https://www.spellzone.com/unit19/page8.cfm"
       }
     ],
     "review": {
