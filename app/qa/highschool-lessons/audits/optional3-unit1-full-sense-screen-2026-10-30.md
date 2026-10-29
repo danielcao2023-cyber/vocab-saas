@@ -28,9 +28,9 @@
 | mythology / `mythology` | `data/lessons/3429.json` | 神话；神话学；补流行但可能不真实的观念例句 |
 | client / `client` | `data/lessons/3430.json` | 客户；委托人；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | photography / `photography` | `data/lessons/3431.json` | 摄影；摄影术；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| emerge / `emerge` | `data/lessons/3432.json` | 出现；浮现；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
+| emerge / `emerge` | `data/lessons/3432.json` | 出现；浮现；后续核教材“暴露”和词典事实显露义，补独立讲解及例句 |
 | sunrise / `sunrise` | `data/lessons/3433.json` | 日出；日出时分；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| convey / `convey` | `data/lessons/3434.json` | 传达；运送；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
+| convey / `convey` | `data/lessons/3434.json` | 传达；运送；后续核教材与 Cambridge，现有绘画传情及车辆运送例句均覆盖 |
 | subjective / `subjective` | `data/lessons/3435.json` | 主观的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | outer / `outer` | `data/lessons/3436.json` | 外面的；外部的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | subsequent / `subsequent` | `data/lessons/3437.json` | 随后的；后来的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -98,3 +98,5 @@
 后续核查：教材印刷页 106–107 所列 primitive 名词、rank 动词与 frame 名词，分别依据 [Oxford primitive 名词](https://www.oxfordlearnersdictionaries.com/us/definition/english/primitive_2)、[Cambridge rank 动词](https://dictionary.cambridge.org/dictionary/english/rank) 和 [Cambridge frame 名词](https://dictionary.cambridge.org/dictionary/english/frame) 补充三项，各附原创例句；rank 例句指按标准排序，未将全部排队情形笼统称为 rank。真实 reader 和 validateLesson 见 `test/highschool-optional3-unit1-primitive-rank-frame.test.ts`。原义项与例句 ID 均保留。
 
 后续补充来源：[precisely](https://dictionary.cambridge.org/dictionary/english/precisely)、[exhibition](https://dictionary.cambridge.org/dictionary/english/exhibition)、[guarantee](https://dictionary.cambridge.org/dictionary/english/guarantee)。新增例句自拟。
+
+后续教材与词典核查（2026-10-30）：参照人教选必三 Unit 1 印刷页 106 词表（本地教材与哈希见 `../optional3-unit1-wordlist-audit-2026-10-29.md`），emerge 列“出现；浮现；暴露”，原例缺事实显露语境，依据 [Cambridge](https://dictionary.cambridge.org/dictionary/english/emerge) 补不及物“事实等显露；被知晓”与原创例句；该词典支持 become known，不据此推断及物“揭露”。convey 同页列传达与传送，原绘画传情和车辆运送例句分别覆盖，[Cambridge](https://dictionary.cambridge.org/dictionary/english/convey) 证实，未改。primitive 艺术史名词和 bronze 颜色义已有例句，本轮检查当前来源状态但未逐一重核。`test/highschool-optional3-unit1-emerge-followup.test.ts` 两项通过，含全单元真实 reader/validateLesson。
