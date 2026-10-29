@@ -321,3 +321,7 @@
 `batch-parallel-recovery-2.json` 补入 4 份高中名称和短语录音：核对英语 Wiktionary 关联或准确短语录音文件，以及 Commons 作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
 
 `batch-parallel-recovery-3.json` 补入 3 份高中名称录音：核对英语 Wiktionary 关联、Commons 作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。Challenger 使用同拼写普通名词读音。
+
+`batch-parallel-recovery-4.json` 补入 herbal 的录音：核对英语 Wiktionary 关联、Commons 作者、许可、解码和哈希；口音未独立确认，尚未人工试听。
+
+`batch-parallel-recovery-5.json` 补入 4 份高中词汇录音：核对法语 Wiktionary 英语栏目关联、Commons 作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
