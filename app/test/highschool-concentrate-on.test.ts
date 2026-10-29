@@ -278,3 +278,10 @@ it('matches the Pearson Focus pronunciation and stress for volcanic eruption',()
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('volcanic eruption');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','secondary','none','none','primary','none']);
 });
+
+it('matches Macmillan Gateway Plus pronunciation and stress for on the basis of',()=>{
+ const lesson=getSoundSpellingLesson('on the basis of');
+ expect(lesson?.ipa).toBe('/ɒn ðə ˈbeɪsɪs əv/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('on the basis of');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none','none']);
+});

@@ -592,3 +592,10 @@ addSourcedPhrase('volcanic eruption','/vɒlˌkænɪk ɪˈrʌpʃən/',[
  ch('rup','/rʌp/','primary',[{letters:'r',sound:'/r/'},{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'}]),
  ch('tion','/ʃən/','none',[{letters:'ti',sound:'/ʃ/'},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
 ],'Pearson Focus 3 词表','https://can-ada.net/wp-content/uploads/2022/07/Focus-Student-Book-3.pdf');
+addSourcedPhrase('on the basis of','/ɒn ðə ˈbeɪsɪs əv/',[
+ ch('on ','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('the ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('ba','/beɪ/','primary',[{letters:'b',sound:'/b/'},{letters:'a',sound:'/eɪ/'}]),
+ ch('sis ','/sɪs/','none',[{letters:'s',sound:'/s/'},{letters:'i',sound:'/ɪ/'},{letters:'s',sound:'/s/'},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Macmillan Gateway Plus 4 词表','https://www.macmillan.pl/images/materials/1463841597_Gateway_plus_4_TB_U2_wm.pdf');
