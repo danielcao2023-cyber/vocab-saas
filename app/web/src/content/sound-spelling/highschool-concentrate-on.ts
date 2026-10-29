@@ -630,3 +630,8 @@ addSourcedPhrase('a great deal of','/ə ɡreɪt ˈdiːl ɒv/',[
  ch('deal ','/diːl/','primary',[{letters:'d',sound:'/d/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
  ch('of','/ɒv/','none',[{letters:'o',sound:'/ɒ/'},{letters:'f',sound:'/v/'}]),
 ],'Burlington Mindset 2 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/Mindset2_AppendBas_26219_sz.pdf');
+addSourcedPhrase('so as to','/ˈsəʊ əz tuː/',[
+ ch('so ','/səʊ/','primary',[{letters:'s',sound:'/s/'},{letters:'o',sound:'/əʊ/'},{letters:' ',sound:''}]),
+ ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
+ ch('to','/tuː/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/uː/'}]),
+],'Cambridge Think Level 3 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-3/69540/resources/pdf/l3_u11_wordlist.pdf');

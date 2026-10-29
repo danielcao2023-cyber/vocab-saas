@@ -327,3 +327,10 @@ it('matches Burlington Mindset pronunciation and stress for a great deal of',()=
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('a great deal of');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none']);
 });
+
+it('matches Cambridge Think pronunciation and stress for so as to',()=>{
+ const lesson=getSoundSpellingLesson('so as to');
+ expect(lesson?.ipa).toBe('/ˈsəʊ əz tuː/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('so as to');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none','none']);
+});
