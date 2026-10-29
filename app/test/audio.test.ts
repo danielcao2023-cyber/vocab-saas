@@ -141,3 +141,11 @@ it.each([
  expect(utterance?.text).toBe(expected);
  utterance!.onend!();await expect(result).resolves.toEqual({status:'success',source:'system'});
 });
+
+it('plays a selected part-of-speech recording without falling back to speech synthesis',async()=>{
+ const synth=vi.fn();vi.stubGlobal('speechSynthesis',{getVoices:()=>[],speak:synth,cancel:vi.fn()});
+ const first=speak('estimate','noun');const audio=MockAudio.instances[0];
+ expect(audio.src).toBe('/api/pronunciation/audio?word=estimate&variant=noun');
+ audio.emit('error');await expect(first).resolves.toEqual({status:'unavailable',reason:'failed'});expect(synth).not.toHaveBeenCalled();
+ const second=speak('estimate','verb');expect(MockAudio.instances[1].src).toBe('/api/pronunciation/audio?word=estimate&variant=verb');MockAudio.instances[1].emit('ended');await expect(second).resolves.toEqual({status:'success'});
+});

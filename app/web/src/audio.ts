@@ -30,7 +30,7 @@ export function pronunciationCreditsUrl(headword?: string): string {
 }
 
 /** Start synchronously within the click handler so the browser retains its user gesture. */
-export function speak(headword: string): Promise<PlaybackResult> {
+export function speak(headword: string, variant?: 'noun'|'verb'): Promise<PlaybackResult> {
   stopAudio();
   const word = pronunciationHeadword(headword);
   if (!word || typeof Audio === 'undefined') {
@@ -67,6 +67,7 @@ export function speak(headword: string): Promise<PlaybackResult> {
     }
     function onError(): void {
       if(settled||synthesizing)return;
+      if(variant){finish({status:'unavailable',reason:'failed'});return;}
       synthesizing=true;
       if(Capacitor.isNativePlatform()){
         cancelSpeech=()=>{void DeviceSpeech.stop().catch(()=>{});};
@@ -102,8 +103,8 @@ export function speak(headword: string): Promise<PlaybackResult> {
     audio.addEventListener('error', onError);
     try {
       audio.preload = 'auto';
-      if(isMobileBuild()&&!bundledAudio(word)){onError();return;}
-      audio.src = isMobileBuild()?bundledAudio(word)!:`/api/pronunciation/audio?word=${encodeURIComponent(word)}`;
+      if(isMobileBuild()&&!bundledAudio(word,variant)){onError();return;}
+      audio.src = isMobileBuild()?bundledAudio(word,variant)!:`/api/pronunciation/audio?word=${encodeURIComponent(word)}${variant?`&variant=${encodeURIComponent(variant)}`:''}`;
       audio.defaultPlaybackRate = preferences.playbackRate;
       audio.playbackRate = preferences.playbackRate;
       // A fulfilled play() only means playback started, not that the recording completed.
