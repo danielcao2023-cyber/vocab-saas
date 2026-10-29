@@ -216,3 +216,10 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it('matches Cambridge Think pronunciation and stress for earn a living',()=>{
+ const lesson=getSoundSpellingLesson('earn a living');
+ expect(lesson?.ipa).toBe('/ˌɜːn ə ˈlɪv.ɪŋ/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('earn a living');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary','none']);
+});

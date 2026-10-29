@@ -519,3 +519,9 @@ addSourcedPhrase('in return','/ˌɪn rɪˈtɜːn/',[
  ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
  ch('turn','/tɜːn/','primary',[{letters:'t',sound:'/t/'},{letters:'ur',sound:'/ɜː/'},{letters:'n',sound:'/n/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('earn a living','/ˌɜːn ə ˈlɪv.ɪŋ/',[
+ ch('earn ','/ɜːn/','secondary',[{letters:'ear',sound:'/ɜː/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('liv','/lɪv/','primary',[{letters:'l',sound:'/l/'},{letters:'i',sound:'/ɪ/'},{letters:'v',sound:'/v/'}]),
+ ch('ing','/ɪŋ/','none',[{letters:'i',sound:'/ɪ/'},{letters:'ng',sound:'/ŋ/'}]),
+],'Cambridge Think Level 3 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-3/69538/resources/pdf/l3_u1_wordlist.pdf');
