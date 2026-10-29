@@ -3,6 +3,7 @@ import {shDay,shDayStart} from '../time.ts';
 import {recomputeDailyStats} from '../stats.ts';
 import {learningWords,type LearningWord} from './selection.ts';
 import type {LearningMode,WordBook} from '../../../shared/learning.ts';
+import {hasDictionaryPlaceholder} from '../text.ts';
 export const MODES:LearningMode[]=['recognize','spell','dictation'];
 export const POLICY_VERSION=2;
 export const nextDay=(now:Date)=>new Date(shDayStart(now).getTime()+86400000).toISOString();
@@ -21,6 +22,7 @@ export function passBook(db:DB,w:LearningWord,day:string,mode:LearningMode,error
  return days.size>=3&&modes.size===3?'mastered':'familiar';
 }
 export function chooseMode(db:DB,w:LearningWord,day:string,position:number):LearningMode{
+ if(hasDictionaryPlaceholder(w.headword))return 'recognize';
  const cards=db.prepare("SELECT mode FROM cards WHERE word_id=? ORDER BY due,COALESCE(last_review,''),lapses DESC").all(w.id) as {mode:LearningMode}[];
  if(w.book==='mastered')return cards[0]?.mode??'recognize';
  const seen=new Set(cleanChecks(db,w,day).map(c=>c.mode));

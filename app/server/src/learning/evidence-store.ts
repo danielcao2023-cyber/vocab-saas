@@ -6,6 +6,7 @@ import {HttpError} from '../http-error.ts';
 import type {EvidenceDecision,WordEvidenceState,CapabilityEvidence,CapabilityNeed,LearningMode} from '../../../shared/learning.ts';
 import {MODES,nextDay} from './policy.ts';
 import {REVIEW_POLICY} from './evidence-policy.ts';
+import {hasDictionaryPlaceholder} from '../text.ts';
 export interface EvidenceCard extends CardRow {verification_due:string|null;verification_required:number;last_attempt_at:string|null;last_failure_at:string|null;delayed_successes:number;recovery_days:string}
 export function evidenceCards(db:DB,wordId:number):EvidenceCard[]{return db.prepare('SELECT c.*,s.verification_due,s.verification_required,s.last_attempt_at,s.last_failure_at,COALESCE(s.delayed_successes,0) delayed_successes,COALESCE(s.recovery_days,\'[]\') recovery_days FROM cards c LEFT JOIN learning_card_state s ON s.card_id=c.id WHERE c.word_id=?').all(wordId) as EvidenceCard[];}
 export function latestExposure(db:DB,wordId:number):string|null{return (db.prepare("SELECT MAX(occurred_at) at FROM learning_events WHERE word_id=? AND kind IN ('exposure','probe_success','probe_failure','correction')").get(wordId) as {at:string|null}).at;}
@@ -44,9 +45,10 @@ export function recordCorrection(db:DB,issueId:string,answerId:string,correct:bo
 export function capabilityEvidence(db:DB,wordId:number):CapabilityEvidence[]{return evidenceCards(db,wordId).map(c=>({mode:c.mode,lastAttemptAt:c.last_attempt_at,lastFailureAt:c.last_failure_at,delayedSuccesses:c.delayed_successes,verificationDue:c.verification_due,dueAt:c.due,scheduledDays:c.scheduled_days}));}
 /** Siblings without attempts are evidence debt, not three overdue FSRS cards. */
 export function capabilityNeeds(db:DB,wordId:number,now:Date):CapabilityNeed[]{
- const cards=evidenceCards(db,wordId),word=db.prepare('SELECT introduced_at FROM learning_words WHERE word_id=?').get(wordId) as {introduced_at:string}|undefined;
+ const headword=(db.prepare('SELECT headword FROM words WHERE id=?').get(wordId) as {headword:string}).headword;
+ const limited=hasDictionaryPlaceholder(headword),cards=evidenceCards(db,wordId).filter(c=>!limited||c.mode==='recognize'),word=db.prepare('SELECT introduced_at FROM learning_words WHERE word_id=?').get(wordId) as {introduced_at:string}|undefined;
  const exposure=latestExposure(db,wordId),eligibleAt=new Date(exposure?Date.parse(exposure)+REVIEW_POLICY.exposureGuardMs:0).toISOString();
- if(!cards.some(c=>c.reps>0||c.last_attempt_at))return [{cardId:cards.find(c=>c.mode===REVIEW_POLICY.initialMode)?.id??-wordId,mode:REVIEW_POLICY.initialMode,group:'initial',dueAt:word?.introduced_at??now.toISOString(),eligibleAt,lastAttemptAt:null}];
+ if(!cards.some(c=>c.reps>0||c.last_attempt_at)){const mode=limited?'recognize':REVIEW_POLICY.initialMode;return [{cardId:cards.find(c=>c.mode===mode)?.id??-wordId,mode,group:'initial',dueAt:word?.introduced_at??now.toISOString(),eligibleAt,lastAttemptAt:null}];}
  return cards.flatMap(c=>{
   const unresolved=!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2;
   const origin=unresolved?c.last_failure_at:word?.introduced_at??c.last_review??now.toISOString();

@@ -3,6 +3,11 @@ export function normalizeQuotes(s: string): string {
   return s.replace(/[’‘ʼ]/g, "'");
 }
 
+/** 词典中的 sb./sth. 是语法占位符，不能要求学习者照字面拼写或听写。 */
+export function hasDictionaryPlaceholder(s: string): boolean {
+  return /\b(?:sb|sth)\.(?=\s|$|'s\b)/i.test(normalizeQuotes(s));
+}
+
 /** 括号用于注明变体或词形；斜杠外的每段才是主词头。 */
 export function mainHeadwords(s: string): string[] {
   return normalizeQuotes(s).replace(/\(.*?\)|（.*?）/g, '').split('/').map((part) => part.trim()).filter(Boolean);

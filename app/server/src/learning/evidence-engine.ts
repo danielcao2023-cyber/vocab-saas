@@ -3,7 +3,7 @@ import type {DB} from '../db.ts';
 import {HttpError} from '../http-error.ts';
 import {acceptedSpellings,normalizeAnswer} from '../study.ts';
 import {shDay} from '../time.ts';
-import {maskAnswer} from '../text.ts';
+import {maskAnswer,hasDictionaryPlaceholder} from '../text.ts';
 import {meaningsOverlap} from '../quiz.ts';
 import {recomputeDailyStats} from '../stats.ts';
 import {dailyWordLimit} from '../user-settings.ts';
@@ -56,6 +56,10 @@ function render(db:DB,i:Issue):LearningCard {
 export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};
  let active=entries(db,day).filter(e=>!e.done&&!e.deferred);
+ for(const e of active){const w=db.prepare('SELECT headword FROM words WHERE id=?').get(e.word_id) as {headword:string};if(!hasDictionaryPlaceholder(w.headword))continue;
+  const cancelled=db.prepare("UPDATE learning_issues SET answered_at=? WHERE day=? AND word_id=? AND answered_at IS NULL AND mode<>'recognize'").run(now.toISOString(),day,e.word_id);
+  if(cancelled.changes||e.last_mode>0){db.prepare('UPDATE learning_day_words SET last_mode=0 WHERE day=? AND word_id=?').run(day,e.word_id);e.last_mode=0;}
+ }
  const open=db.prepare('SELECT * FROM learning_issues WHERE day=? AND answered_at IS NULL ORDER BY issued_at DESC,rowid DESC LIMIT 1').get(day) as Issue|undefined;
  if(open&&active.some(e=>e.word_id===open.word_id))return {policyVersion:3,kind:'card',summary,card:render(db,open)};
  for(const e of active)if(probeCount(db,e.word_id,day)>=1+REVIEW_POLICY.additionalProbesPerDay){
@@ -82,6 +86,7 @@ function active(db:DB,id:unknown,now:Date){
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue|undefined;
  if(!issue)throw new HttpError(404,'题目不存在。');
  if(issue.answered_at||issue.day!==shDay(now))throw new HttpError(409,'题目已更新，请返回今日任务继续。');
+ if(issue.mode!=='recognize'&&hasDictionaryPlaceholder((db.prepare('SELECT headword FROM words WHERE id=?').get(issue.word_id) as {headword:string}).headword))throw new HttpError(409,'题目已更新，请返回今日任务继续。');
  const entry=db.prepare('SELECT * FROM learning_day_words WHERE day=? AND word_id=?').get(issue.day,issue.word_id) as Entry;
  if(!entry||entry.done||entry.deferred)throw new HttpError(409,'本轮已结束。');return {issue,entry};
 }
