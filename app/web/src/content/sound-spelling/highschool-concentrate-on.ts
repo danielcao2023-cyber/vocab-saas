@@ -483,3 +483,28 @@ addSourcedPhrase('make it','/ˈmeɪk ɪt/',[
  ch('make ','/meɪk/','primary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('it','/ɪt/','none',[{letters:'i',sound:'/ɪ/'},{letters:'t',sound:'/t/'}]),
 ],'Business in Context 4/5 词表','https://www.scook.at/cdn_proxy/da3a4828-b4a9-48be-b48b-d177117db29e/0451760101_0451760101_WL_Alpha_Wortliste_tabellarisch.pdf');
+
+const businessWordlist = 'https://www.scook.at/cdn_proxy/da3a4828-b4a9-48be-b48b-d177117db29e/0451760101_0451760101_WL_Alpha_Wortliste_tabellarisch.pdf';
+addSourcedPhrase('relate to','/rɪˈleɪt tə/',[
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('late ','/leɪt/','primary',[{letters:'l',sound:'/l/'},{letters:'a',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Business in Context 4/5 词表',businessWordlist);
+addSourcedPhrase('turn to','/ˈtɜːn tə/',[
+ ch('turn ','/tɜːn/','primary',[{letters:'t',sound:'/t/'},{letters:'ur',sound:'/ɜː/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Business in Context 4/5 词表',businessWordlist);
+addSourcedPhrase('insist on','/ɪnˈsɪst ɒn/',[
+ ch('in','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
+ ch('sist ','/sɪst/','primary',[{letters:'s',sound:'/s/'},{letters:'i',sound:'/ɪ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('on','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'}]),
+],'Business in Context 4/5 词表',businessWordlist);
+addSourcedPhrase('switch off','/ˌswɪtʃ ˈɒf/',[
+ ch('switch ','/swɪtʃ/','secondary',[{letters:'s',sound:'/s/'},{letters:'w',sound:'/w/'},{letters:'i',sound:'/ɪ/'},{letters:'tch',sound:'/tʃ/'},{letters:' ',sound:''}]),
+ ch('off','/ɒf/','primary',[{letters:'o',sound:'/ɒ/'},{letters:'ff',sound:'/f/'}]),
+],'Business in Context 4/5 词表',businessWordlist);
+addSourcedPhrase('appeal to','/əˈpiːl tə/',[
+ ch('ap','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:'p',sound:''}]),
+ ch('peal ','/piːl/','primary',[{letters:'p',sound:'/p/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Business in Context 4/5 词表',businessWordlist);

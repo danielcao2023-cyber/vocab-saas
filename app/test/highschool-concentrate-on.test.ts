@@ -193,3 +193,16 @@ it.each([['even if','/ˈiːvn ɪf/'],['make it','/ˈmeɪk ɪt/']])('shows the so
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(word === 'even if' ? ['primary','none','none'] : ['primary','none']);
 });
+
+it.each([
+ ['relate to','/rɪˈleɪt tə/',['none','primary','none']],
+ ['turn to','/ˈtɜːn tə/',['primary','none']],
+ ['insist on','/ɪnˈsɪst ɒn/',['none','primary','none']],
+ ['switch off','/ˌswɪtʃ ˈɒf/',['secondary','primary']],
+ ['appeal to','/əˈpiːl tə/',['none','primary','none']],
+])('matches the source pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});
