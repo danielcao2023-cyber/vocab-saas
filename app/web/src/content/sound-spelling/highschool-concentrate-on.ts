@@ -359,3 +359,25 @@ addSourcedPhrase('participate in','/pɑːˈtɪsəpeɪt ɪn/',[
  ch('pate ','/peɪt/','none',[{letters:'p',sound:'/p/'},{letters:'a',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('in','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
 ],'Pearson High Note 2 词表','https://www.pearson.pl/fileadmin/poland/english/catalogue/HighNote_SB2_PL_sample_unit_LowRes.pdf');
+const oxfordPhrasal='https://www.oup.es/wp-content/uploads/2024/07/Key2e_2-SupExt-unit4.pdf';
+addSourcedPhrase('go through','/ˌɡəʊ ˈθruː/',[
+ ch('go ','/ɡəʊ/','secondary',[{letters:'g',sound:'/ɡ/'},{letters:'o',sound:'/əʊ/'},{letters:' ',sound:''}]),
+ ch('through','/θruː/','primary',[{letters:'th',sound:'/θ/'},{letters:'r',sound:'/r/'},{letters:'ough',sound:'/uː/'}]),
+],'Oxford Key 2nd edition 短语动词表',oxfordPhrasal);
+addSourcedPhrase('get through','/ˌɡet ˈθruː/',[
+ ch('get ','/ɡet/','secondary',[{letters:'g',sound:'/ɡ/'},{letters:'e',sound:'/e/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('through','/θruː/','primary',[{letters:'th',sound:'/θ/'},{letters:'r',sound:'/r/'},{letters:'ough',sound:'/uː/'}]),
+],'Oxford Key 2nd edition 短语动词表',oxfordPhrasal);
+addSourcedPhrase('go off','/ˌɡəʊ ˈɒf/',[
+ ch('go ','/ɡəʊ/','secondary',[{letters:'g',sound:'/ɡ/'},{letters:'o',sound:'/əʊ/'},{letters:' ',sound:''}]),
+ ch('off','/ɒf/','primary',[{letters:'o',sound:'/ɒ/'},{letters:'ff',sound:'/f/'}]),
+],'Oxford Key 2nd edition 短语动词表',oxfordPhrasal);
+addSourcedPhrase('even though','/ˌiːvən ˈðəʊ/',[
+ ch('e','/iː/','secondary',[{letters:'e',sound:'/iː/'}]),
+ ch('ven ','/vən/','none',[{letters:'v',sound:'/v/'},{letters:'e',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('though','/ðəʊ/','primary',[{letters:'th',sound:'/ð/'},{letters:'ough',sound:'/əʊ/'}]),
+],'English Vocabulary in Use Pre-intermediate and Intermediate 词表','https://www.cag.edu.tr/uploads/site/lecturer-files/387-2-english-vocabulary-in-use-pre-intermediate-and-intermediate-redman-2017-4th-264p-sayfalar-silindi-3br9.pdf');
+addSourcedPhrase('in tears','/ɪn ˈtɪəz/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('tears','/tɪəz/','primary',[{letters:'t',sound:'/t/'},{letters:'ear',sound:'/ɪə/'},{letters:'s',sound:'/z/'}]),
+],'Macmillan New Password B1+ 词表','https://www.macmillan.pl/data/products/levels/materials/1647426354_New_Password_B1plus_SB_U1-2.pdf');

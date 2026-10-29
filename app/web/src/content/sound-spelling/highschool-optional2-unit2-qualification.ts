@@ -56,11 +56,15 @@ export const highschoolOptional2Unit2Qualification: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "美式形容词也可首音节重读；名词常首音节重读。",
+    "variantNote": "美式形容词有 /kɑːmˈpleks/ 和 /kəmˈpleks/ 两种发音变体；也可首音节重读。名词常首音节重读。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/complex"
+      },
+      {
+        "label": "Wiktionary · 英语读音",
+        "url": "https://en.wiktionary.org/wiki/complex#English"
       }
     ],
     "review": {

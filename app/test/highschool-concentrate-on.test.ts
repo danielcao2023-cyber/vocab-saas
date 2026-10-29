@@ -131,3 +131,16 @@ it.each([['come along','/ˌkʌm əˈlɒŋ/'],['in shock','/ɪn ˈʃɒk/'],['part
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['go through','/ˌɡəʊ ˈθruː/'],['get through','/ˌɡet ˈθruː/'],['go off','/ˌɡəʊ ˈɒf/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
+});
+
+it.each([['even though','/ˌiːvən ˈðəʊ/'],['in tears','/ɪn ˈtɪəz/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
