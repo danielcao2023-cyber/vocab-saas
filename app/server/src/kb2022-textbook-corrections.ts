@@ -14,4 +14,6 @@ export const KB2022_TEXTBOOK_CORRECTIONS: Record<string,{expected:string;meaning
   "normal": {"expected":"n. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的","meaning":"adj. 典型的；正常的；一般的\nn. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的"},
   pepper: {"expected":"n. 胡椒粉, 胡椒, 辣椒","meaning":"n. 甜椒；灯笼椒；胡椒粉；胡椒；辣椒"},
   negative: {"expected":"n. 否定, 否定语, 负数, 底片\nadj. 否定的, 消极的, 负的, 阴性的\nn. 负数, 负值","meaning":"adj. 消极的；有害的；否定的；负的；阴性的\nn. 否定；否定语；负数；负值；底片"},
+  bat: {"expected":"n. 蝙蝠, 球棒\nv. 用球棒打, 眨眼","meaning":"n. 球拍；球棒；蝙蝠\nv. 用球棒打；眨眼"},
+  folk: {"expected":"n. 人们, 家人, 亲属, 民族\nadj. 民间的","meaning":"adj. 民间的\nn. 人们；家人；亲属；民族"},
 };
