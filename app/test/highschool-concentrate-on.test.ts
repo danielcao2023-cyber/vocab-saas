@@ -107,3 +107,9 @@ it.each([['to be honest','/tə bi ˈɒnɪst/'],['as a result','/əz ə rɪˈzʌl
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['in addition','/ˌɪn əˈdɪʃn/'],['in other words','/ɪn ˈʌðə wɜːdz/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

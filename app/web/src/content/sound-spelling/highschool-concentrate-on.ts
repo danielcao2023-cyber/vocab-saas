@@ -193,7 +193,7 @@ const addSourcedPhrase=(headword:string,ipa:string,chunks:PhraseChunk[],label:st
   variantNote:'这里展示词表中的英式读法；实际语流的重音和弱读可能变化。',sources:[{label,url}],
   review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'}});
 };
-const ch=(letters:string,sound:string,stress:PhraseChunk['stress'],pairs:PhraseChunk['pairs']):PhraseChunk=>({letters,sound,stress,pairs,hint:stress==='primary'?'这部分重读。':stress==='secondary'?'这部分标次重音。':'这部分轻读。',tip:'结合完整短语和语境练读。'});
+const ch=(letters:string,sound:string,stress:PhraseChunk['stress'],pairs:PhraseChunk['pairs']):PhraseChunk=>({letters,sound,stress,pairs,hint:stress==='primary'?'这部分重读。':stress==='secondary'?'这部分标次重音。':'继续读这一部分。',tip:'结合完整短语和语境练读。'});
 addSourcedPhrase('refer to','/rɪˈfɜː tə/',[
  ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
  ch('fer ','/fɜː/','primary',[{letters:'f',sound:'/f/'},{letters:'er',sound:'/ɜː/'},{letters:' ',sound:''}]),
@@ -300,4 +300,16 @@ addSourcedPhrase('pros and cons','/ˌprəʊz ənd ˈkɒns/',[
  ch('pros ','/prəʊz/','secondary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'o',sound:'/əʊ/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
  ch('and ','/ənd/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'},{letters:' ',sound:''}]),
  ch('cons','/kɒns/','primary',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/s/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('in addition','/ˌɪn əˈdɪʃn/',[
+ ch('in ','/ɪn/','secondary',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('ad','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:'d',sound:''}]),
+ ch('di','/dɪ/','primary',[{letters:'d',sound:'/d/'},{letters:'i',sound:'/ɪ/'}]),
+ ch('tion','/ʃn/','none',[{letters:'tion',sound:'/ʃn/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('in other words','/ɪn ˈʌðə wɜːdz/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('o','/ʌ/','primary',[{letters:'o',sound:'/ʌ/'}]),
+ ch('ther ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:''},{letters:' ',sound:''}]),
+ ch('words','/wɜːdz/','none',[{letters:'w',sound:'/w/'},{letters:'or',sound:'/ɜː/'},{letters:'d',sound:'/d/'},{letters:'s',sound:'/z/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
