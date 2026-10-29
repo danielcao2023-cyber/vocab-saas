@@ -261,3 +261,13 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it.each([
+ ['except for','/ɪkˈsept fə/',['none','primary','none']],
+ ['in memory of','/ɪn ˈmeməri əv/',['none','primary','none','none','none']],
+])('matches the wordlist pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});

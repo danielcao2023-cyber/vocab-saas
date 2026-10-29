@@ -572,3 +572,15 @@ addSourcedPhrase('in that case','/ɪn ˈðæt keɪs/',[
  ch('that ','/ðæt/','primary',[{letters:'th',sound:'/ð/'},{letters:'a',sound:'/æ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
  ch('case','/keɪs/','none',[{letters:'c',sound:'/k/'},{letters:'a',sound:'/eɪ/'},{letters:'s',sound:'/s/'},{letters:'e',sound:''}]),
 ],'Macmillan In Company 词表','https://legacy.hueber.de/media/36/Unit_11-15_Pre-int_sec_inc.pdf');
+addSourcedPhrase('except for','/ɪkˈsept fə/',[
+ ch('ex','/ɪk/','none',[{letters:'e',sound:'/ɪ/'},{letters:'x',sound:'/k/'}]),
+ ch('cept ','/sept/','primary',[{letters:'c',sound:'/s/'},{letters:'e',sound:'/e/'},{letters:'p',sound:'/p/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('for','/fə/','none',[{letters:'f',sound:'/f/'},{letters:'or',sound:'/ə/'}]),
+],'Careers in Context 1 词表','https://www.scook.at/cdn_proxy/f14fee0d-07f6-4861-b329-ddbd848d633f/247133_0483040101_0483040101_WL_Word_list_alphabetical.pdf');
+addSourcedPhrase('in memory of','/ɪn ˈmeməri əv/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('mem','/mem/','primary',[{letters:'m',sound:'/m/'},{letters:'e',sound:'/e/'},{letters:'m',sound:'/m/'}]),
+ ch('o','/ə/','none',[{letters:'o',sound:'/ə/'}]),
+ ch('ry ','/ri/','none',[{letters:'r',sound:'/r/'},{letters:'y',sound:'/i/'},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Pearson Focus 3 词表','https://can-ada.net/wp-content/uploads/2022/07/Focus-Student-Book-3.pdf');
