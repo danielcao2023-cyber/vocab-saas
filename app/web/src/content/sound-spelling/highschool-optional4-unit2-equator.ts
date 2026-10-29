@@ -317,16 +317,8 @@ export const highschoolOptional4Unit2Equator: SoundSpellingLesson[] = [
             "sound": "/m/"
           },
           {
-            "letters": "i",
-            "sound": "/ɪ/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
-          },
-          {
-            "letters": "r",
-            "sound": "/r/"
+            "letters": "ier",
+            "sound": "/ɪr/"
           }
         ],
         "tip": "此部分重读。"

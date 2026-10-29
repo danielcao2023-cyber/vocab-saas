@@ -405,28 +405,8 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
-            "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
-          },
-          {
-            "letters": "c",
-            "sound": "/s/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
+            "letters": "tience",
+            "sound": "/ʃəns/"
           }
         ],
         "tip": "此部分轻读。"

@@ -34,16 +34,8 @@ export const highschoolOptional4Unit1Labour: SoundSpellingLesson[] = [
             "sound": "/b/"
           },
           {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
-          },
-          {
-            "letters": "r",
-            "sound": "/r/"
+            "letters": "our",
+            "sound": "/ər/"
           }
         ],
         "tip": "此部分轻读。"

@@ -37,3 +37,15 @@ it('treats final ue as a spelling group in reviewed headwords', () => {
     expect(lesson.chunks.flatMap(chunk => chunk.pairs).some(pair => pair.letters === 'ue' && pair.sound === sound), word).toBe(true);
   }
 });
+
+it('preserves meaningful spelling groups for the remaining reviewed candidates', () => {
+  for (const [word, letters, sound] of [
+    ['frontier', 'ier', '/ɪr/'], ['premier', 'ier', '/ɪr/'],
+    ['rumour', 'our', '/ər/'], ['labour', 'our', '/ər/'],
+    ['patience', 'tience', '/ʃəns/'],
+  ]) {
+    const lesson = getSoundSpellingLessons(word)[0];
+    expect(lesson.chunks.map(chunk => chunk.letters).join(''), word).toBe(word);
+    expect(lesson.chunks.flatMap(chunk => chunk.pairs).some(pair => pair.letters === letters && pair.sound === sound), word).toBe(true);
+  }
+});

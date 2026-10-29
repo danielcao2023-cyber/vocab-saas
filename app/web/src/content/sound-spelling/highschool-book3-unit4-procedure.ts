@@ -562,16 +562,8 @@ export const highschoolBook3Unit4Procedure: SoundSpellingLesson[] = [
             "sound": "/t/"
           },
           {
-            "letters": "i",
-            "sound": "/ɪ/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
-          },
-          {
-            "letters": "r",
-            "sound": "/r/"
+            "letters": "ier",
+            "sound": "/ɪr/"
           }
         ],
         "tip": "此部分重读。"

@@ -1,10 +1,10 @@
 # 高中音形元音组合筛查（2026-10-29）
 
-范围：按离线 seed 和 catalog v135 的 `pep2019-` 成员关系，经过生产 `getSoundSpellingLessons` 查找并对映射去重，筛选有映射的 1979 个词头。执行 `cd app && npx tsx qa/highschool-lessons/scan-split-vowel-digraphs.ts`；此方法仅识别列举的相邻单字母组合、前一字母发音而后一字母空音的模式，不覆盖其他错误，不证明候选是错的。原有 27 处，四批修复后剩 6 处，完整候选见同目录 `split-vowel-digraph-coverage-2026-10-29.json`。
+范围：按离线 seed 和 catalog v135 的 `pep2019-` 成员关系，经过生产 `getSoundSpellingLessons` 查找并对映射去重，筛选有映射的 1979 个词头。执行 `cd app && npx tsx qa/highschool-lessons/scan-split-vowel-digraphs.ts`；此方法仅识别列举的相邻单字母组合、前一字母发音而后一字母空音的模式，不覆盖其他错误，不证明候选是错的。原有 27 处，五批处理后剩 1 处，完整候选见同目录 `split-vowel-digraph-coverage-2026-10-29.json`。
 
 本批核实并修改 previous、various、religious、autonomous、precious、poisonous 的词尾：将拆开的 `o /ə/`、`u 空音` 合并为 `ou /ə/`，保持拼写、已有音素与重音不变。澳大利亚新南威尔士州教育部门 [Stage 2 拼写教学资料](https://education.nsw.gov.au/content/dam/main-education/en/home/teaching-and-learning/curriculum/english/documents/english-s2-spelling-instructional-sequence.pdf) 明确说明词尾 -ous 的元音组合 ou 常弱读 schwa；[牛津词典 -ous](https://www.oxfordlearnersdictionaries.com/us/definition/english/ous) 提供词尾 /əs/；剑桥词典 [previous](https://dictionary.cambridge.org/pronunciation/english/previous)、[various](https://dictionary.cambridge.org/pronunciation/english/various)、[religious](https://dictionary.cambridge.org/pronunciation/english/religious)、[autonomous](https://dictionary.cambridge.org/pronunciation/english/autonomous)、[precious](https://dictionary.cambridge.org/pronunciation/english/precious)、[poisonous](https://dictionary.cambridge.org/pronunciation/english/poisonous) 可核该词尾读法。此修改仅纠正词尾的字母组合说明，不代表本轮完整复核整词音标、英美变体、重音或每个音素与字母的对应；随后复核 autonomous：剑桥英式 /ɔːˈtɒnəməs/，剑桥美式 /ɑːˈtɑːnəməs/；[Merriam-Webster](https://www.merriam-webster.com/dictionary/autonomous) 使用其美式标音 ȯ-ˈtä-nə-məs，因此原 /ɔːˈtɑːnəməs/ 有美式变体依据，不能认定为错误。但原映射未明确口音且与 uk 字段不同；现采用完整剑桥英式作为音形对照，同时提示美式与词典差异。
 
-剩余 6 个候选尚未完成逐项核实，不能视为错误或自动合并；例如跨块 `ow`、英美 r 色彩音及 -ue 词尾需结合具体词判断。验证：生产 getter 定向测试、全量现有映射结构测试、原 813 词覆盖测试，共 3 个测试文件 6 项通过。未处理录音。
+剩余 1 个候选已经初查，音形分组仍待核实，不能视为错误或自动合并；例如跨块 `ow`、英美 r 色彩音及 -ue 词尾需结合具体词判断。验证：生产 getter 定向测试、全量现有映射结构测试、原 813 词覆盖测试，共 3 个测试文件 6 项通过。未处理录音。
 
 第二批同规则核查并修正 numerous、enormous、nutritious、ambitious、tremendous、ridiculous 词尾 ou /ə/ 字母分组，保留原整词音标及重音；本批依据同一新南威尔士州拼写教材及剑桥词典的具体词尾读音：[numerous](https://dictionary.cambridge.org/pronunciation/english/numerous)、[enormous](https://dictionary.cambridge.org/pronunciation/english/enormous)、[nutritious](https://dictionary.cambridge.org/pronunciation/english/nutritious)、[ambitious](https://dictionary.cambridge.org/pronunciation/english/ambitious)、[tremendous](https://dictionary.cambridge.org/pronunciation/english/tremendous)、[ridiculous](https://dictionary.cambridge.org/pronunciation/english/ridiculous)。此轮聚焦词尾，不宣称核完各词其他部分；生产 getter、原映射结构及覆盖测试三文件六项通过。
 
@@ -13,3 +13,13 @@
 第三批：Halloween 调整分段为 Hall /hæl/、ow /oʊ/、een /iːn/，保留次重音和重音，避免把 w 教成静音；依据 [剑桥整词读音](https://dictionary.cambridge.org/us/dictionary/english/halloween) 和常见 ow 拼写。airline 将 air 在现有美式映射中整体对应 /er/，不把 i 单独标静音；依据[英国文化协会 air 三字母组合教学](https://africa.teachingenglish.org.uk/classroom/curriculum-specific-resources/south-africa/grade3/phonics/the-air-chant)，不更改原英式音标。frontier、premier 的 ier 音形归属及 patience 的 tience 切分本轮未有足够独立证据，保留待核。生产 getter、结构及原覆盖测试 3 文件 8 项通过。
 
 第四批：statue、issue、tissue、venue、barbecue、pursue、virtue 的 ue 从“u 发音、e 静音”调整为整体 ue 对应所列 /uː/ 或 /juː/，前者例如 [兰开夏郡 Phonics 教材](https://www.lancashire.gov.uk/media/947083/bbp-sample-pages.pdf) 列 statue、tissue；后者参考 [Whickham 小学方案](https://whickhamparochial.eschools.co.uk/storage/secure_download/YmJEZDg5MFhXbmJEUmhmeTJEZDExUT09) 的 venue 例子与 [新南威尔士教育部门序列](https://education.nsw.gov.au/content/dam/main-education/teaching-and-learning/curriculum/key-learning-areas/english/media/documents/english-k-2-gpc-instructional-sequence.pdf) 的 ue /uː/ 规则。保持原音标及重音。剑桥 [tissue](https://dictionary.cambridge.org/us/pronunciation/english/tissue) 还列出 /ˈtɪs.juː/ 变体，这次仅调整既有 /ˈtɪʃuː/ 分组，不代表排除其他读法。真实 getter、全量映射结构与原覆盖测试 3 文件 9 项通过；未处理录音。
+
+第五批逐项判断：
+
+- frontier：美式 /frʌnˈtɪr/ 中 ier 整体对应 /ɪr/；[弗吉尼亚大学拼写规律](https://literacy.virginia.edu/sites/g/files/jsddwu1006/files/2023-05/2022_gk_english-language_spelling_pattern_generalizations_for_uva.pdf) 明列 frontier。原英式字段保留，剑桥记载英式首音节或第二音节重读均存在。
+- premier：美式 /prɪˈmɪr/ 中 ier 合并对应 /ɪr/；[纽约市立大学 Baruch College 教材](https://tfcs.baruch.cuny.edu/r-controlled-vowels/) 将 premier 列在 ier 类；英式读音重音不同，仍保留 uk 字段。
+- rumour、labour：英式拼写词尾 our 在本条美式有 r 的读法中整体对应 /ər/；[Beginners Reading](https://www.beginnersreading.co.uk/beginners-reading-scheme.pdf) 明列两词 our 弱读，保留既有美式音标以及英式字段；美式常见写法 rumor、labor。
+- patience：tience 合并为 /ʃəns/，不机械分配元音给单个字母；[教学材料](https://phonics.thetruetao.com/en/rules/tion-sound-2) 明列该整段及音标。
+- acknowledge：剑桥[英美完整发音](https://dictionary.cambridge.org/pronunciation/english/acknowledge) 不直接说明 ow 分组，且 [Oxford 词源](https://www.oxfordlearnersdictionaries.com/us/definition/english/acknowledge) 与 know 有关联；是否将 w 描述为静音或合并为 ow 尚无充分教学证据，不修改，留待核实。此候选仍在扫描结果中。
+
+本批真实 getter、映射结构及原覆盖测试 3 文件 10 项通过；只核所述部分，不代表完整复核整词全部音形。
