@@ -30,3 +30,16 @@ highschoolVerifiedPhrases.push({
  sources:[{label:'Klett Freeway Soziales 词表',url:'https://www2.klett.de/sixcms/media.php/229/Wortschatz_Freeway_Soziales_GWSgekennzeichnet.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
 });
+
+highschoolVerifiedPhrases.push({
+ headword:'roast turkey',ipa:'/ˌrəʊst ˈtɜːki/',uk:'/ˌrəʊst ˈtɜːki/',
+ chunks:[
+  {letters:'roast ',sound:'/rəʊst/',stress:'secondary',hint:'roast 标次重音。',pairs:[{letters:'r',sound:'/r/'},{letters:'oa',sound:'/əʊ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}],tip:'oa 在这里读 /əʊ/。'},
+  {letters:'tur',sound:'/tɜː/',stress:'primary',hint:'tur 是重读音节。',pairs:[{letters:'t',sound:'/t/'},{letters:'ur',sound:'/ɜː/'}],tip:'这里展示非卷舌英音。'},
+  {letters:'key',sound:'/ki/',stress:'none',hint:'词尾轻读。',pairs:[{letters:'k',sound:'/k/'},{letters:'ey',sound:'/i/'}],tip:'结合整组练读。'},
+ ],
+ anchor:{text:'先读 roast，再重读 turkey 的开头。'},
+ variantNote:'这里展示词表中的英式非卷舌读法；实际重音和口音可能变化。',
+ sources:[{label:'English Walker 教材词表',url:'https://mybook.dniprorada.gov.ua/uploads/8bd1ad0eb8854187a0984b58d2fc77a45englishwalker2022.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
+});

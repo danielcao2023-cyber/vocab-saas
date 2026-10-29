@@ -16,3 +16,11 @@ it('matches the Klett wordlist pronunciation and stress for in the open air',()=
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','secondary','none','primary']);
  expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('in the open air');
 });
+
+it('matches the English Walker pronunciation and stress for roast turkey',()=>{
+ const lesson=highschoolVerifiedPhrases.find(item=>item.headword==='roast turkey');
+ expect(lesson?.ipa).toBe('/ˌrəʊst ˈtɜːki/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('roast turkey');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary','none']);
+ expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('roast turkey');
+});
