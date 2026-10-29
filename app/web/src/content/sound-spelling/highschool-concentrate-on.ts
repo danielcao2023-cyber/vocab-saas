@@ -508,3 +508,14 @@ addSourcedPhrase('appeal to','/əˈpiːl tə/',[
  ch('peal ','/piːl/','primary',[{letters:'p',sound:'/p/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
  ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
 ],'Business in Context 4/5 词表',businessWordlist);
+addSourcedPhrase('tuition fees','/tjuˈɪʃn fiːz/',[
+ ch('tu','/tju/','none',[{letters:'t',sound:'/t/'},{letters:'u',sound:'/ju/'}]),
+ ch('i','/ɪ/','primary',[{letters:'i',sound:'/ɪ/'}]),
+ ch('tion ','/ʃn/','none',[{letters:'tio',sound:'/ʃ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('fees','/fiːz/','none',[{letters:'f',sound:'/f/'},{letters:'ee',sound:'/iː/'},{letters:'s',sound:'/z/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('in return','/ˌɪn rɪˈtɜːn/',[
+ ch('in ','/ɪn/','secondary',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('turn','/tɜːn/','primary',[{letters:'t',sound:'/t/'},{letters:'ur',sound:'/ɜː/'},{letters:'n',sound:'/n/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);

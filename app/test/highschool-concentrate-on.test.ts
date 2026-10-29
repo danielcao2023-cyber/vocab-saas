@@ -206,3 +206,13 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it.each([
+ ['tuition fees','/tjuˈɪʃn fiːz/',['none','primary','none','none']],
+ ['in return','/ˌɪn rɪˈtɜːn/',['secondary','none','primary']],
+])('matches the Oxford wordlist pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});
