@@ -218,3 +218,20 @@ addSourcedPhrase('ups and downs','/ˌʌps ən ˈdaʊnz/',[
  ch('and ','/ən/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'d',sound:''},{letters:' ',sound:''}]),
  ch('downs','/daʊnz/','primary',[{letters:'d',sound:'/d/'},{letters:'ow',sound:'/aʊ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/z/'}]),
 ],'Cambridge Dictionary · ups and downs','https://dictionary.cambridge.org/us/dictionary/english/ups-and-downs');
+
+addSourcedPhrase('rather than','/ˈrɑːðə ðən/',[
+ ch('ra','/rɑː/','primary',[{letters:'r',sound:'/r/'},{letters:'a',sound:'/ɑː/'}]),
+ ch('ther ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:''},{letters:' ',sound:''}]),
+ ch('than','/ðən/','none',[{letters:'th',sound:'/ð/'},{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
+],'Cambridge 教材词表','https://www.cambridge.es/content/download/6137/46089/SP4_Wordlist.pdf');
+addSourcedPhrase('in ruins','/ɪn ˈruːɪnz/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('ru','/ruː/','primary',[{letters:'r',sound:'/r/'},{letters:'u',sound:'/uː/'}]),
+ ch('ins','/ɪnz/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/z/'}]),
+],'Global Intermediate 教材词表','https://stichwoerter.hueber.de/media/36/Global%20Intermediate%20wordlist%20with%20phonetics_fin.pdf');
+addSourcedPhrase('under pressure','/ˌʌndə ˈpreʃə/',[
+ ch('un','/ʌn/','secondary',[{letters:'u',sound:'/ʌ/'},{letters:'n',sound:'/n/'}]),
+ ch('der ','/də/','none',[{letters:'d',sound:'/d/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:''},{letters:' ',sound:''}]),
+ ch('pre','/pre/','primary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/e/'}]),
+ ch('ssure','/ʃə/','none',[{letters:'ss',sound:'/ʃ/'},{letters:'u',sound:'/ə/'},{letters:'re',sound:''}]),
+],'Action for Kazakhstan Grade 10 词表','https://lib.kpvk.edu.kz/wp-content/uploads/2022/03/action-10-1.pdf');

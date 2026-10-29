@@ -82,3 +82,9 @@ it('shows the Cambridge pronunciation for ups and downs',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('ups and downs');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary']);
 });
+
+it.each([['rather than','/ˈrɑːðə ðən/'],['in ruins','/ɪn ˈruːɪnz/'],['under pressure','/ˌʌndə ˈpreʃə/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
