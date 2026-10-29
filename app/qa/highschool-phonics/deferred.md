@@ -26,7 +26,7 @@
 
 - 选择性必修三 Unit 4：Hurricane Katrina 专有名称需核验完整读音后补对照；turn sb. down 含占位符，需按实际替换词处理。
 
-- 选择性必修三 Unit 4：Ernest Shackleton、Perce Blackborow、the Antarctic、South Georgia Island、Frank Wild、Thomas Orde-Lees、Frank Worsley、Tom Crean 的完整名称读音与对照待核验。
+- 选择性必修三 Unit 4：Ernest Shackleton、Perce Blackborow、South Georgia Island、Frank Wild、Thomas Orde-Lees、Frank Worsley、Tom Crean 的完整名称读音与对照待核验。
 
 - 选择性必修三 Unit 4：Hubert Hudson、Lionel Greenstreet 的完整姓名读音及拼写对照待核验。
 
@@ -54,4 +54,4 @@
 
 - `Masaccio`：已依据剑桥词典的英美英语读法补充音形对照；其他读法及现有录音仍需试听核对。
 
-Antarctic 的剑桥词典词头已找到英美 IPA，但教材词条为 the Antarctic；完整表达的冠词读法与整体音形映射仍需核对，不能将单词音标直接当完整短语音标。
+the Antarctic 已按剑桥教材索引的完整短语英式音标补充音形对照；美式读法及现有录音仍需分别核对。

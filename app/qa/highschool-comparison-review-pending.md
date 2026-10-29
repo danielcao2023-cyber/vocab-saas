@@ -115,3 +115,5 @@
 2902、2904 专名辨析已核验。后续核验：2906–2935，逐项依据见 `highschool-comparison-audits/batch-2906-2920.json`、`batch-2921-2935.json`；无关对比已移除。
 
 后续核验：2936–2965，逐项依据见 `highschool-comparison-audits/batch-2936-2950.json`、`batch-2951-2965.json`；无关对比已移除。
+
+后续核验：2966–2995，逐项依据见 `highschool-comparison-audits/batch-2966-2980.json`、`batch-2981-2995.json`；无关对比已移除。
