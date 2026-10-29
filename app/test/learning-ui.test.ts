@@ -11,6 +11,16 @@ it('explains recognition-only assessment for textbook phrase skeletons',async()=
  const ui=host('web/src/components/FocusStudyCard.vue',{card:{...card,mode:'recognize',headword:'take for granted',options:[]},answer:'',feedback:null,busy:false,audioFailed:null});
  try{await flush();expect(ui.text()).toContain('仅评估认词，暂不测拼写和听写');}finally{ui.app.unmount();}
 });
+it('explains only the placeholders actually present in a recognition prompt',async()=>{
+ const ui=host('web/src/components/FocusStudyCard.vue',{card:{...card,mode:'recognize',headword:"owe sth. to sb.",options:[]},answer:'',feedback:null,busy:false,audioFailed:null});
+ try{await flush();expect(ui.text()).toContain('sb. 表示某人');expect(ui.text()).toContain('sth. 表示某事或某物');expect(ui.text()).not.toContain('省略号表示');
+  const hint=ui.all(n=>n.tag==='p'&&ui.text(n).includes('sb. 表示某人'))[0];expect(hint.props['aria-hidden']).not.toBe(true);
+  ui.updateProps({card:{...card,mode:'recognize',headword:"take sb.'s breath away",options:[]}});await flush();expect(ui.text()).toContain('sb. 表示某人');expect(ui.text()).not.toContain('sth. 表示');
+  ui.updateProps({card:{...card,mode:'recognize',headword:'sign up for sth.',options:[]}});await flush();expect(ui.text()).toContain('sth. 表示某事或某物');expect(ui.text()).not.toContain('sb. 表示');
+  ui.updateProps({card:{...card,mode:'recognize',headword:'compare ... with ...',options:[]}});await flush();expect(ui.text()).toContain('省略号表示可替换的内容');expect(ui.text()).not.toContain('sb. 表示');expect(ui.text()).not.toContain('sth. 表示');
+  ui.updateProps({card:{...card,mode:'recognize',headword:'above',options:[]}});await flush();expect(ui.text()).not.toContain('省略号表示');
+ }finally{ui.app.unmount();}
+});
 it('shows only letter underlines for dictation and offers word learning without exposing the answer',async()=>{
  const learn=vi.fn(),ui=host('web/src/components/FocusStudyCard.vue',{card,answer:'',feedback:null,busy:false,audioFailed:null,onLearn:learn});
  try{await flush();expect(ui.all(n=>n.tag==='input')).toHaveLength(5);expect(ui.text()).not.toContain('above');expect(ui.text()).not.toContain('本卡');expect(ui.text()).not.toContain('/3');

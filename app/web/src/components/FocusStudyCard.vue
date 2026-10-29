@@ -10,11 +10,20 @@ const props=defineProps<{card:LearningCard;answer:string;feedback:LearningResult
 const emit=defineEmits<{'update:answer':[value:string];choose:[id:number];submit:[];next:[];play:[];learn:[];defer:[]}>();
 const pattern=ref(props.card.patterns[0]??'');watch(()=>props.card.issueId,()=>pattern.value=props.card.patterns[0]??'');
 const canSubmit=computed(()=>props.answer.trim().length>0&&!props.busy);
+const placeholderHint=computed(()=>{
+ if(props.card.mode!=='recognize')return '';
+ const word=props.card.headword??'',hints:string[]=[];
+ if(/\bsb\./i.test(word))hints.push('sb. 表示某人');
+ if(/\bsth\./i.test(word))hints.push('sth. 表示某事或某物');
+ if(/\.{3}|…/.test(word))hints.push('省略号表示可替换的内容');
+ return hints.join('；');
+});
 const titles={recognize:'英译汉',spell:'汉译英',dictation:'听写'};
 function setPattern(value:string){pattern.value=value;emit('update:answer','');}
 </script>
 <template><article class="focus-card"><div class="focus-toolbar"><span class="small muted">{{ titles[card.mode] }}</span><button class="learn-word" type="button" :disabled="busy" @click="emit('learn')">学习该词 <span aria-hidden="true">↗</span></button></div>
  <div class="focus-question"><h1 v-if="card.mode==='recognize'" class="headword">{{ card.headword }}</h1><div v-else-if="card.mode==='spell'" class="meaning"><MeaningList :meaning="card.meaning??''" :source="card.meaning_source" /></div><SpeakButton v-else large @play="emit('play')" /></div>
+ <p v-if="placeholderHint" class="assessment-note">{{ placeholderHint }}。</p>
  <p v-if="card.mode==='recognize'&&hasDictionaryPlaceholder(card.headword??'')" class="assessment-note">本词条仅评估认词，暂不测拼写和听写。</p>
  <div v-if="card.mode==='recognize'" class="focus-options"><button v-for="(option,i) in card.options" :key="option.id" type="button" :class="{forgot:option.id===0}" :disabled="busy||!!feedback" @click="emit('choose',option.id)"><span>{{ option.id===0?'':String.fromCharCode(65+i) }}</span>{{ option.text }}</button></div>
  <template v-else>

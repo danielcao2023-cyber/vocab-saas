@@ -25,7 +25,14 @@ const TABS = [
   {id: 'etymology', label: '词根与词族'},
 ] as const;
 
-const soundChoices=computed(()=>getSoundSpellingLessons(props.lesson.headword));
+// Related forms are curated individually; arbitrary forms can be homographs or have different stress.
+const reviewedRelatedSoundForms:Record<string,readonly string[]>={curious:['curiously','curiosity']};
+const soundChoices=computed(()=>{
+ const base=getSoundSpellingLessons(props.lesson.headword);
+ const related=reviewedRelatedSoundForms[props.lesson.headword.trim().toLowerCase()]??[];
+ const available=new Set(props.lesson.forms.map(item=>item.form.trim().toLowerCase()));
+ return [...new Set([...base,...related.filter(form=>available.has(form)).flatMap(form=>getSoundSpellingLessons(form))])];
+});
 const selectedSoundWord=ref('');
 const soundSpelling=computed(()=>soundChoices.value.find(item=>item.headword===selectedSoundWord.value)??soundChoices.value[0]);
 const soundRecordingWord=computed(()=>mainHeadwords(props.lesson.headword).find(word=>word.toLowerCase()===soundSpelling.value?.headword)??soundSpelling.value?.headword??'');
