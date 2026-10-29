@@ -204,7 +204,7 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
     "uk": "/əˈprəʊtʃ/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -212,22 +212,18 @@ export const highschoolBook2Unit4Charge: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "proach",
+        "letters": "pproach",
         "sound": "/proʊtʃ/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

@@ -7,7 +7,7 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
     "uk": "/ˈɪnə/",
     "chunks": [
       {
-        "letters": "in",
+        "letters": "inn",
         "sound": "/ɪn/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -17,22 +17,18 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "n",
+            "letters": "nn",
             "sound": "/n/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ner",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "n",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

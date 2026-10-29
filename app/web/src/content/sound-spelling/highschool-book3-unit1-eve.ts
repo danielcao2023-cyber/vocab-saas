@@ -88,7 +88,7 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
     "uk": "/ˈmeri/",
     "chunks": [
       {
-        "letters": "mer",
+        "letters": "merr",
         "sound": "/mer/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -102,22 +102,18 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ry",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"
@@ -216,7 +212,7 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
     "uk": "/ˈpʊdɪŋ/",
     "chunks": [
       {
-        "letters": "pud",
+        "letters": "pudd",
         "sound": "/pʊd/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -230,22 +226,18 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
             "sound": "/ʊ/"
           },
           {
-            "letters": "d",
+            "letters": "dd",
             "sound": "/d/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ding",
+        "letters": "ing",
         "sound": "/ɪŋ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "d",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

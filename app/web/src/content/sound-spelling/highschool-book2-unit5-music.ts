@@ -7,7 +7,7 @@ export const highschoolBook2Unit5Music: SoundSpellingLesson[] = [
     "uk": "/ˈklæsɪkəl/",
     "chunks": [
       {
-        "letters": "clas",
+        "letters": "class",
         "sound": "/klæs/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -25,22 +25,18 @@ export const highschoolBook2Unit5Music: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "si",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "双写 s 不重复发音。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

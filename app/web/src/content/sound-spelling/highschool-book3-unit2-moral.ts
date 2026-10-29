@@ -148,7 +148,7 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "lem",
+        "letters": "lemm",
         "sound": "/lem/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -162,22 +162,18 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ma",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "m",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/ə/"
@@ -208,7 +204,7 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
     "uk": "/ˈɪləstreɪt/",
     "chunks": [
       {
-        "letters": "il",
+        "letters": "ill",
         "sound": "/ɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -218,22 +214,18 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "lu",
+        "letters": "u",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/ə/"

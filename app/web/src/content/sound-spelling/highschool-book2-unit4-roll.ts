@@ -237,8 +237,8 @@ export const highschoolBook2Unit4Roll: SoundSpellingLesson[] = [
     "uk": "/ˈkætəl/",
     "chunks": [
       {
-        "letters": "cat",
-        "sound": "/kæ/",
+        "letters": "catt",
+        "sound": "/kæt/",
         "stress": "primary",
         "hint": "首部分重读；双写 t 不重复发音。",
         "pairs": [
@@ -251,22 +251,18 @@ export const highschoolBook2Unit4Roll: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "t",
-            "sound": ""
+            "letters": "tt",
+            "sound": "/t/"
           }
         ],
         "tip": "首部分重读；双写 t 不重复发音。"
       },
       {
-        "letters": "tle",
-        "sound": "/təl/",
+        "letters": "le",
+        "sound": "/əl/",
         "stress": "none",
         "hint": "词尾轻读，le 构成音节。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": "/t/"
-          },
           {
             "letters": "l",
             "sound": "/əl/"

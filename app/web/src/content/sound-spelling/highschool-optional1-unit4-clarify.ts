@@ -545,11 +545,15 @@ export const highschoolOptional1Unit4Clarify: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "双写 c 不读两次；英式首元音常为 /ɒ/。",
+    "variantNote": "双写 c 对应一个 /k/；牛津词典标 /ju/，剑桥词典也标弱读 /jə/；英美首元音不同。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/occupy"
+      },
+      {
+        "label": "Oxford Advanced Learner’s Dictionary · occupy",
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/occupy"
       }
     ],
     "review": {

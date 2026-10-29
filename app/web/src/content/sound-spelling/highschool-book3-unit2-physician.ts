@@ -238,7 +238,7 @@ export const highschoolBook3Unit2Physician: SoundSpellingLesson[] = [
     "uk": "/ˈkɒliːɡ/",
     "chunks": [
       {
-        "letters": "col",
+        "letters": "coll",
         "sound": "/kɑːl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -252,22 +252,18 @@ export const highschoolBook3Unit2Physician: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "lea",
+        "letters": "ea",
         "sound": "/iː/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ea",
             "sound": "/iː/"

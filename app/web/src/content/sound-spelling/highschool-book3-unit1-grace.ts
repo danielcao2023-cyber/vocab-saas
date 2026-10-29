@@ -105,7 +105,7 @@ export const highschoolBook3Unit1Grace: SoundSpellingLesson[] = [
     "uk": "/ˈwedɪŋ/",
     "chunks": [
       {
-        "letters": "wed",
+        "letters": "wedd",
         "sound": "/wed/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -119,22 +119,18 @@ export const highschoolBook3Unit1Grace: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "d",
+            "letters": "dd",
             "sound": "/d/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ding",
+        "letters": "ing",
         "sound": "/ɪŋ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "d",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
@@ -169,7 +165,7 @@ export const highschoolBook3Unit1Grace: SoundSpellingLesson[] = [
     "uk": "/ˈhɒrəbəl/",
     "chunks": [
       {
-        "letters": "hor",
+        "letters": "horr",
         "sound": "/hɔːr/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -183,22 +179,18 @@ export const highschoolBook3Unit1Grace: SoundSpellingLesson[] = [
             "sound": "/ɔː/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ri",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"

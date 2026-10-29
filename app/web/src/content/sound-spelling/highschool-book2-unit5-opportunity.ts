@@ -7,7 +7,7 @@ export const highschoolBook2Unit5Opportunity: SoundSpellingLesson[] = [
     "uk": "/ˌɒpəˈtjuːnəti/",
     "chunks": [
       {
-        "letters": "op",
+        "letters": "o",
         "sound": "/ɑː/",
         "stress": "secondary",
         "hint": "首部分次重读。",
@@ -15,22 +15,18 @@ export const highschoolBook2Unit5Opportunity: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ɑː/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "首部分次重读。"
       },
       {
-        "letters": "por",
+        "letters": "ppor",
         "sound": "/pər/",
         "stress": "none",
         "hint": "轻读；美式读出 r。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

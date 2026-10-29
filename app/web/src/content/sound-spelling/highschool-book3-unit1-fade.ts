@@ -233,7 +233,7 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
     "uk": "/kəˈmɜːʃəl/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -245,22 +245,18 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mer",
+        "letters": "mmer",
         "sound": "/mɜːr/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {
@@ -322,7 +318,7 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
     "uk": "/kəˈmɜːʃəlaɪz/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -334,22 +330,18 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mer",
+        "letters": "mmer",
         "sound": "/mɜːr/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {
@@ -432,7 +424,7 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
     "uk": "/kəˌmɜːʃəlaɪˈzeɪʃən/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -444,22 +436,18 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mer",
+        "letters": "mmer",
         "sound": "/mɜːr/",
         "stress": "secondary",
         "hint": "此部分次重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {
@@ -572,7 +560,7 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
     "uk": "/kəˌmɜːʃəlaɪˈzeɪʃən/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -584,22 +572,18 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "mer",
+        "letters": "mmer",
         "sound": "/mɜːr/",
         "stress": "secondary",
         "hint": "此部分次重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {

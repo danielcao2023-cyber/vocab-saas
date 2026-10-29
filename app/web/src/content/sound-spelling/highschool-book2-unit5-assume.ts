@@ -7,7 +7,7 @@ export const highschoolBook2Unit5Assume: SoundSpellingLesson[] = [
     "uk": "/əˈsjuːm/",
     "chunks": [
       {
-        "letters": "as",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -15,22 +15,18 @@ export const highschoolBook2Unit5Assume: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "sume",
+        "letters": "ssume",
         "sound": "/suːm/",
         "stress": "primary",
         "hint": "此部分重读，双写 s 不重复发音。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {
@@ -71,7 +67,7 @@ export const highschoolBook2Unit5Assume: SoundSpellingLesson[] = [
     "uk": "/əˈdɪʃən/",
     "chunks": [
       {
-        "letters": "ad",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -79,22 +75,18 @@ export const highschoolBook2Unit5Assume: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "d",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "di",
+        "letters": "ddi",
         "sound": "/dɪ/",
         "stress": "primary",
         "hint": "此部分重读，双写 d 不重复发音。",
         "pairs": [
           {
-            "letters": "d",
+            "letters": "dd",
             "sound": "/d/"
           },
           {

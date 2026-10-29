@@ -204,7 +204,7 @@ export const highschoolBook3Unit1Reflect: SoundSpellingLesson[] = [
     "uk": "/əˈkeɪʒən/",
     "chunks": [
       {
-        "letters": "oc",
+        "letters": "o",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -212,22 +212,18 @@ export const highschoolBook3Unit1Reflect: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ca",
+        "letters": "cca",
         "sound": "/keɪ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           },
           {

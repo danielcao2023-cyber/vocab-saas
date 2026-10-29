@@ -7,7 +7,7 @@ export const highschoolBook3Unit1Names: SoundSpellingLesson[] = [
     "uk": "/ˌhæləʊˈiːn/",
     "chunks": [
       {
-        "letters": "Hal",
+        "letters": "Hall",
         "sound": "/hæl/",
         "stress": "secondary",
         "hint": "此部分次重读。",
@@ -21,22 +21,18 @@ export const highschoolBook3Unit1Names: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分次重读。"
       },
       {
-        "letters": "lo",
+        "letters": "o",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/oʊ/"
