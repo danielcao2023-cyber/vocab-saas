@@ -326,3 +326,20 @@ addSourcedPhrase('in response to','/ɪn rɪˈspɒns tə/',[
  ch('sponse ','/spɒns/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/s/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('as a matter of fact','/əz ə ˌmætər əv ˈfækt/',[
+ ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('mat','/mæt/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/æ/'},{letters:'t',sound:'/t/'}]),
+ ch('ter ','/ər/','none',[{letters:'t',sound:''},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
+ ch('of ','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'},{letters:' ',sound:''}]),
+ ch('fact','/fækt/','primary',[{letters:'f',sound:'/f/'},{letters:'a',sound:'/æ/'},{letters:'c',sound:'/k/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('take part in','/ˌteɪk ˈpɑːt ɪn/',[
+ ch('take ','/teɪk/','secondary',[{letters:'t',sound:'/t/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('part ','/pɑːt/','primary',[{letters:'p',sound:'/p/'},{letters:'ar',sound:'/ɑː/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('in','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
+],'Pearson High Note 2 词表','https://www.pearson.pl/fileadmin/poland/english/catalogue/HighNote_SB2_PL_sample_unit_LowRes.pdf');
+addSourcedPhrase('lead to','/ˈliːd tə/',[
+ ch('lead ','/liːd/','primary',[{letters:'l',sound:'/l/'},{letters:'ea',sound:'/iː/'},{letters:'d',sound:'/d/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Pearson Focus 4 词表','https://download.fimsschools.com/ebooks/Focus%20Student%20Book%204.pdf');

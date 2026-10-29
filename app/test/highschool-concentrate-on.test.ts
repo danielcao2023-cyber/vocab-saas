@@ -119,3 +119,9 @@ it.each([['set an example','/ˌset ən ɪɡˈzɑːmpl/'],['in response to','/ɪn
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['as a matter of fact','/əz ə ˌmætər əv ˈfækt/'],['take part in','/ˌteɪk ˈpɑːt ɪn/'],['lead to','/ˈliːd tə/']])('shows the sourced pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
