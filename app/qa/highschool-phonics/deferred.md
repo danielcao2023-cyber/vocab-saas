@@ -59,3 +59,5 @@ the Antarctic 已按剑桥教材索引的完整短语英式音标补充音形对
 the Antarctic 新增对照已在本地离线构建中以 1200px 和 390px 宽度验证，提示可展开；此项不代表录音已试听。
 
 PLA 逐字母读音可参考 [Reverso 词条](https://dictionary.reverso.net/english-chinese/PLA)，该页列有人民解放军义项，但读音未单独绑定义项，也未标明重音或口音；完整对照仍待交叉核验。
+
+Langston Hughes 的牛津词典搜索缓存显示姓名及音标，但原页面核查返回 404；不得将缓存视为可复核来源，完整英语音形对照仍待核验。
