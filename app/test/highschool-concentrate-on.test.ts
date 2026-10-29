@@ -162,3 +162,9 @@ it.each([['fall apart','/fɔːl əˈpɑːt/'],['apart from','/əˈpɑːt frəm/'
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['adapt to','/əˈdæpt tə/'],['aware of','/əˈweər əv/'],['concerned about','/kənˈsɜːnd əbaʊt/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

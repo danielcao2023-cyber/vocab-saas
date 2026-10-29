@@ -429,3 +429,19 @@ addSourcedPhrase('for instance','/fər ˈɪnstəns/',[
  ch('in','/ɪn/','primary',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
  ch('stance','/stəns/','none',[{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'c',sound:'/s/'},{letters:'e',sound:''}]),
 ],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('adapt to','/əˈdæpt tə/',[
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('dapt ','/dæpt/','primary',[{letters:'d',sound:'/d/'},{letters:'a',sound:'/æ/'},{letters:'p',sound:'/p/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Pearson Focus British English 词表','https://www.pearson.com/content/dam/one-dot-com/one-dot-com/english/SampleMaterials/Secondary/Focus/BritishEnglish/Focus-BrE2_StudentsBook_U1-Wordlist.pdf');
+addSourcedPhrase('aware of','/əˈweər əv/',[
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('ware ','/weər/','primary',[{letters:'w',sound:'/w/'},{letters:'a',sound:'/eə/'},{letters:'r',sound:'/r/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Express Publishing 词表','https://storage1.expresspublishingapps.co.uk/teachercorner/glossaries/Ent_4_COMPANION.pdf');
+addSourcedPhrase('concerned about','/kənˈsɜːnd əbaʊt/',[
+ ch('con','/kən/','none',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
+ ch('cerned ','/sɜːnd/','primary',[{letters:'c',sound:'/s/'},{letters:'er',sound:'/ɜː/'},{letters:'n',sound:'/n/'},{letters:'e',sound:''},{letters:'d',sound:'/d/'},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('bout','/baʊt/','none',[{letters:'b',sound:'/b/'},{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Burlington Books Learning Skills 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/LearningSkills1_AppendBas.pdf');
