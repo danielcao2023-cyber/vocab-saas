@@ -64,7 +64,7 @@
 | disposal / `disposal` | `data/lessons/3603.json` | 处理；处置；可供某人使用（固定表达）；初筛：已有相关例句 |
 | inspection / `inspection` | `data/lessons/3604.json` | 检查；视察；初筛：已有相关例句 |
 | fine / `fine` | `data/lessons/518.json` | 身体好；没事；晴朗的；天气好的；罚款；可以的；可接受的；好吧；优质的；出色的；漂亮的；颗粒细小的；纤细的；细微的；微妙的；对……处以罚款；正常地；顺利地；清楚地；初筛：已有相关例句 |
-| campaign / `campaign` | `data/lessons/3605.json` | 运动；活动；战役；后续补组织或参与活动义；具体“领导运动”仍需更明确语境 |
+| campaign / `campaign` | `data/lessons/3605.json` | 运动；活动；战役；已据 Oxford 核实参与或领导运动，并补明确领导者语境 |
 | waterway / `waterway` | `data/lessons/3606.json` | 水道；航道；初筛：已有相关例句 |
 | tolerate / `tolerate` | `data/lessons/3607.json` | 忍受；容忍；初筛：已有相关例句 |
 | agenda / `agenda` | `data/lessons/3608.json` | 议程；日程；初筛：已有相关例句 |
@@ -72,4 +72,4 @@
 | Svalbard / `Svalbard` | `data/lessons/3610.json` | 斯瓦尔巴群岛；初筛：已有相关例句 |
 | Hurricane Katrina / `Hurricane Katrina` | `data/lessons/3611.json` | 卡特里娜飓风；初筛：已有相关例句 |
 
-未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖；campaign 的“领导运动”等仍需进一步核验。专名仅查讲解可见，未重核身份。文件按当前 headword 匹配，stable key 与运行时 ID 跨设备转换未逐项重新验证。
+未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖；campaign 的“领导运动”已据 Oxford 核实；其他义项仍需进一步核验。专名仅查讲解可见，未重核身份。文件按当前 headword 匹配，stable key 与运行时 ID 跨设备转换未逐项重新验证。

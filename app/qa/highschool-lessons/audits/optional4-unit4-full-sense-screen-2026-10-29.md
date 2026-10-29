@@ -8,7 +8,7 @@
 |---|---|---|
 | parcel / `parcel` | `data/lessons/3957.json` | 包裹；把……打包；初筛：已有相关例句 |
 | jam / `jam` | `data/lessons/3958.json` | 果酱；交通堵塞；卡住；使卡住；初筛：已有相关例句 |
-| mail / `mail` | `data/lessons/3959.json` | 邮件；邮寄；待核：教材“发电邮给”缺例句 |
+| mail / `mail` | `data/lessons/3959.json` | 邮件；邮寄；后续据 Cambridge 补发电子邮件独立义及例句 |
 | secondary / `secondary` | `data/lessons/3960.json` | 中等的；次要的；初筛：已有相关例句 |
 | clay / `clay` | `data/lessons/3961.json` | 黏土；初筛：已有相关例句 |
 | dust / `dust` | `data/lessons/3962.json` | 灰尘；拂去灰尘；尘土；初筛：已有相关例句 |
@@ -27,7 +27,7 @@
 | tube / `tube` | `data/lessons/3973.json` | 管；管状物；初筛：已有相关例句 |
 | circus / `circus` | `data/lessons/3974.json` | 马戏团；马戏表演；初筛：已有相关例句 |
 | chemist / `chemist` | `data/lessons/3975.json` | 化学家；药剂师；药房（英式）；初筛：已有相关例句 |
-| shade / `shade` | `data/lessons/3976.json` | 阴凉处；色度；遮挡光线；灯罩；把图画涂暗；待核：教材“阴影部分”“加灯罩”缺独立示例 |
+| shade / `shade` | `data/lessons/3976.json` | 阴凉处；色度；遮挡光线；灯罩；把图画涂暗；后续据 Oxford 补绘画暗部、给灯加罩独立义及例句 |
 | jaw / `jaw` | `data/lessons/3977.json` | 颌；颌部；初筛：已有相关例句 |
 | wrinkle / `wrinkle` | `data/lessons/3978.json` | 皱纹；起皱；脸部皱纹；皱起；初筛：已有相关例句 |
 | forehead / `forehead` | `data/lessons/3979.json` | 前额；初筛：已有相关例句 |
@@ -51,7 +51,7 @@
 | resign / `resign` | `data/lessons/3997.json` | 辞职；辞去；初筛：已有相关例句 |
 | deserve / `deserve` | `data/lessons/3998.json` | 应得；值得；初筛：已有相关例句 |
 | lately / `lately` | `data/lessons/3999.json` | 最近；近来；初筛：已有相关例句 |
-| input / `input` | `data/lessons/4000.json` | 输入；投入；意见；输入；待核：教材“投入”未独立示例 |
+| input / `input` | `data/lessons/4000.json` | 输入；投入；意见；输入；后续据 Cambridge 补资源投入独立义及例句 |
 | tune / `tune` | `data/lessons/4001.json` | 曲调；调音；调节收音机频率；初筛：已有相关例句 |
 | contract / `contract` | `data/lessons/4002.json` | 合同；契约；收缩；缩小；感染疾病；订立合约；初筛：已有相关例句 |
 | grant / `grant` | `data/lessons/4003.json` | 授予；拨款；同意；准许；初筛：已有相关例句 |
@@ -73,4 +73,6 @@
 | Congo / `Congo` | `data/lessons/4019.json` | 刚果；初筛：已有相关例句 |
 | Panama / `Panama` | `data/lessons/4020.json` | 巴拿马；初筛：已有相关例句 |
 
-未核边界：表中已有相关例句仅说明教材相关义至少有可见示例，不表示每个教材义项均已覆盖。input 投入、mail 发电邮、shade 阴影部分与加灯罩等仍需词典及例句核验；专名仅检查讲解可见，未重新核实身份。文件按当前 headword 匹配，稳定 key 与运行时 ID 跨设备转换未在本表逐项重新验证。
+未核边界：表中已有相关例句仅说明教材相关义至少有可见示例，不表示每个教材义项均已覆盖。input、mail、shade 的具名待核项后续核验见下文；专名仅检查讲解可见，未重新核实身份。文件按当前 headword 匹配，稳定 key 与运行时 ID 跨设备转换未在本表逐项重新验证。
+
+后续来源：[mail](https://dictionary.cambridge.org/dictionary/english/mail)、[input](https://dictionary.cambridge.org/dictionary/english/input)、[shade 名词](https://www.oxfordlearnersdictionaries.com/definition/english/shade_1)、[shade 动词](https://www.oxfordlearnersdictionaries.com/definition/english/shade_2)。新增例句为原创；绘画暗部不可简单等同物体投下的 shadow。定向测试 `test/highschool-optional4-unit4-pending-followup.test.ts` 两项通过，含全单元实际 reader 和 validateLesson。

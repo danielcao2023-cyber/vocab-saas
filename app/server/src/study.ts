@@ -194,7 +194,8 @@ export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 
   const visibleSenses = visibleLines.flatMap(line=>line.replace(/^\s*(?:(?:[a-z]+\.)\s*)+/i,'').split(/[,，;；、]/).map(part=>part.trim()));
   const hasOvenSense = visibleSenses.includes('微波炉');
   const microwaveEquivalent = hasOvenSense ? ({'microwave':'microwave oven','microwave oven':'microwave'} as Record<string,string>)[spellings[0]] : undefined;
-  const equivalent = microwaveEquivalent ?? textbookTranslationEquivalents[spellings[0]];
+  const tuitionEquivalent = visibleSenses.includes('学费') ? ({'tuition':'tuition fees','tuition fees':'tuition'} as Record<string,string>)[spellings[0]] : undefined;
+  const equivalent = microwaveEquivalent ?? tuitionEquivalent ?? textbookTranslationEquivalents[spellings[0]];
   return equivalent ? [...new Set([...spellings, equivalent])] : spellings;
 }
 
