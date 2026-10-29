@@ -97,3 +97,5 @@
 2503、2507、2508 地名辨析已根据官方资料核验。后续核验：2636–2665，依据见 `highschool-comparison-audits/batch-2636-2650.json`、`batch-2651-2665.json`，无关对比已移除。
 
 后续核验：2666–2695，逐项依据见 `highschool-comparison-audits/batch-2666-2680.json`、`batch-2681-2695.json`；无关对比已移除。
+
+后续核验：2696–2725，逐项依据见 `highschool-comparison-audits/batch-2696-2710.json`、`batch-2711-2725.json`；无关对比已移除。
