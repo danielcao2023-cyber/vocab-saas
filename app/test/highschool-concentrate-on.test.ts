@@ -341,3 +341,10 @@ it('matches Helbling MORE! pronunciation and stress for by comparison',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('by comparison');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none','none']);
 });
+
+it('matches Hueber Next pronunciation and stress for ought to',()=>{
+ const lesson=getSoundSpellingLesson('ought to');
+ expect(lesson?.ipa).toBe('/ˈɔːt tə/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('ought to');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none']);
+});

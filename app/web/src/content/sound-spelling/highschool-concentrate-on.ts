@@ -642,3 +642,7 @@ addSourcedPhrase('by comparison','/baɪ kəmˈpærɪsn/',[
  ch('i','/ɪ/','none',[{letters:'i',sound:'/ɪ/'}]),
  ch('son','/sn/','none',[{letters:'s',sound:'/s/'},{letters:'o',sound:''},{letters:'n',sound:'/n/'}]),
 ],'Helbling MORE! 4 词表','https://www.helbling.com/sites/default/files/media/documents/399045980_Demo_0.pdf');
+addSourcedPhrase('ought to','/ˈɔːt tə/',[
+ ch('ought ','/ɔːt/','primary',[{letters:'ough',sound:'/ɔː/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Hueber Next B1/1 词表','https://www.hueber.de/media/36/530_14674_001_05_Next_B1_1__155-162.pdf');
