@@ -8,9 +8,9 @@
 
 
 
-- `Lake Louise`、`Jasper`、`Winnipeg`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
+- `Lake Louise`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
 
-- `Montreal`、`Niagara Falls`、`St Lawrence River`、`Nova Scotia`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
+- `Niagara Falls`、`St Lawrence River`、`Nova Scotia`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
 
 - `Giotto di Bondone`（选择性必修三 Unit 1）：意大利人名的音形对照需核验合适读法，暂缓发布。
 
@@ -31,3 +31,5 @@
 - 选择性必修三 Unit 4：Hubert Hudson、Lionel Greenstreet 的完整姓名读音及拼写对照待核验。
 
 - `Vancouver`、`Toronto`、`Edmonton`、`Ontario`：已依据英语词典核对并补充音形对照；Toronto 的省略 t 等变读已标注。录音口音及试听仍单独核查。
+
+- `Jasper`、`Winnipeg`、`Montreal`：已依据英语词典补充音形对照；Montreal 的不同英语及法语读法仍应结合录音说明区分。

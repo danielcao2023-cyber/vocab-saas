@@ -316,5 +316,222 @@ export const highschoolCanadaPlaces: SoundSpellingLesson[] = [
       "reviewedAt": "2026-10-29",
       "draftedBy": "Codex phoneme/letter alignment"
     }
+  },
+  {
+    "headword": "Jasper",
+    "ipa": "/ˈdʒæspɚ/",
+    "chunks": [
+      {
+        "letters": "Jas",
+        "sound": "/ˈdʒæs/",
+        "stress": "primary",
+        "hint": "此部分重读。",
+        "pairs": [
+          {
+            "letters": "J",
+            "sound": "/dʒ/"
+          },
+          {
+            "letters": "a",
+            "sound": "/æ/"
+          },
+          {
+            "letters": "s",
+            "sound": "/s/"
+          }
+        ],
+        "tip": "首段重读，J 发 /dʒ/。"
+      },
+      {
+        "letters": "per",
+        "sound": "/pɚ/",
+        "stress": "none",
+        "hint": "此部分轻读。",
+        "pairs": [
+          {
+            "letters": "p",
+            "sound": "/p/"
+          },
+          {
+            "letters": "er",
+            "sound": "/ɚ/"
+          }
+        ],
+        "tip": "美式词尾 er 带卷舌。"
+      }
+    ],
+    "anchor": {
+      "text": "加拿大地名，结合整词读音和分段拼写记忆。"
+    },
+    "variantNote": "美式读法末尾卷舌；英式词尾通常不卷舌。",
+    "sources": [
+      {
+        "label": "Wiktionary · English pronunciation",
+        "url": "https://en.wiktionary.org/wiki/Jasper#English"
+      }
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewedAt": "2026-10-29",
+      "draftedBy": "Codex phoneme/letter alignment"
+    },
+    "uk": "/ˈdʒaspə/"
+  },
+  {
+    "headword": "Winnipeg",
+    "ipa": "/ˈwɪnəˌpɛɡ/",
+    "chunks": [
+      {
+        "letters": "Win",
+        "sound": "/ˈwɪn/",
+        "stress": "primary",
+        "hint": "此部分重读。",
+        "pairs": [
+          {
+            "letters": "W",
+            "sound": "/w/"
+          },
+          {
+            "letters": "i",
+            "sound": "/ɪ/"
+          },
+          {
+            "letters": "n",
+            "sound": "/n/"
+          }
+        ],
+        "tip": "第一段重读。"
+      },
+      {
+        "letters": "ni",
+        "sound": "/ə/",
+        "stress": "none",
+        "hint": "此部分轻读。",
+        "pairs": [
+          {
+            "letters": "ni",
+            "sound": "/ə/"
+          }
+        ],
+        "tip": "双写 n 在这一分段中不需要额外读一个 /n/，中间元音轻读。"
+      },
+      {
+        "letters": "peg",
+        "sound": "/ˌpɛɡ/",
+        "stress": "secondary",
+        "hint": "此部分次重读。",
+        "pairs": [
+          {
+            "letters": "p",
+            "sound": "/p/"
+          },
+          {
+            "letters": "e",
+            "sound": "/ɛ/"
+          },
+          {
+            "letters": "g",
+            "sound": "/ɡ/"
+          }
+        ],
+        "tip": "末段可带次重音。"
+      }
+    ],
+    "anchor": {
+      "text": "加拿大地名，结合整词读音和分段拼写记忆。"
+    },
+    "variantNote": "词典标注首段主重音、末段次重音；中间元音轻读。",
+    "sources": [
+      {
+        "label": "Wiktionary · English pronunciation",
+        "url": "https://en.wiktionary.org/wiki/Winnipeg#English"
+      }
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewedAt": "2026-10-29",
+      "draftedBy": "Codex phoneme/letter alignment"
+    }
+  },
+  {
+    "headword": "Montreal",
+    "ipa": "/ˌmɑntriˈɔl/",
+    "chunks": [
+      {
+        "letters": "Mon",
+        "sound": "/ˌmɑn/",
+        "stress": "secondary",
+        "hint": "此部分次重读。",
+        "pairs": [
+          {
+            "letters": "M",
+            "sound": "/m/"
+          },
+          {
+            "letters": "o",
+            "sound": "/ɑ/"
+          },
+          {
+            "letters": "n",
+            "sound": "/n/"
+          }
+        ],
+        "tip": "首段带次重音。"
+      },
+      {
+        "letters": "tre",
+        "sound": "/tri/",
+        "stress": "none",
+        "hint": "此部分轻读。",
+        "pairs": [
+          {
+            "letters": "t",
+            "sound": "/t/"
+          },
+          {
+            "letters": "r",
+            "sound": "/r/"
+          },
+          {
+            "letters": "e",
+            "sound": "/i/"
+          }
+        ],
+        "tip": "这里 e 对应 /i/。"
+      },
+      {
+        "letters": "al",
+        "sound": "/ˈɔl/",
+        "stress": "primary",
+        "hint": "此部分重读。",
+        "pairs": [
+          {
+            "letters": "a",
+            "sound": "/ɔ/"
+          },
+          {
+            "letters": "l",
+            "sound": "/l/"
+          }
+        ],
+        "tip": "末段主重读。"
+      }
+    ],
+    "anchor": {
+      "text": "加拿大地名，结合整词读音和分段拼写记忆。"
+    },
+    "variantNote": "此处展示词典列出的美式读法；加拿大英语与法语中还有其他读法。",
+    "sources": [
+      {
+        "label": "Wiktionary · English pronunciation",
+        "url": "https://en.wiktionary.org/wiki/Montreal#English"
+      }
+    ],
+    "review": {
+      "status": "reviewed",
+      "reviewedAt": "2026-10-29",
+      "draftedBy": "Codex phoneme/letter alignment"
+    },
+    "uk": "/ˌmɒntriˈɔːl/"
   }
 ];
