@@ -20,26 +20,37 @@ interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_j
 const entries=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as Entry[];
 const probeCount=(db:DB,wordId:number,day:string)=>(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE word_id=? AND eligible=1 AND source='live' AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(wordId,day) as any).n as number;
 const hasSuccess=(db:DB,wordId:number,day:string)=>!!db.prepare("SELECT 1 FROM learning_events WHERE word_id=? AND kind='probe_success' AND source='live' AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(wordId,day);
+
+/** Technical audio failures are not memory evidence. Read persisted events so cooldown survives restarts. */
+function audioCooldowns(db:DB,now:Date):Map<number,string>{
+ const events=db.prepare(`SELECT word_id,kind,reason,occurred_at FROM learning_events WHERE mode='dictation' AND source='live' AND occurred_at<=? AND kind IN ('technical_defer','probe_success','probe_failure','correction') AND word_id IN (SELECT word_id FROM learning_events WHERE mode='dictation' AND kind='technical_defer') ORDER BY word_id,occurred_at,id`).all(now.toISOString()) as {word_id:number;kind:string;reason:string;occurred_at:string}[];
+ const states=new Map<number,{count:number;at:string}>();
+ for(const e of events){if(e.kind==='technical_defer'){const old=states.get(e.word_id);states.set(e.word_id,{count:(old?.count??0)+1,at:e.occurred_at});}else if(e.kind!=='probe_failure'||e.reason!=='help')states.delete(e.word_id);}
+ const result=new Map<number,string>();for(const [id,state] of states){const days=Math.min(7,2**Math.min(state.count-1,3));const until=new Date(Date.parse(nextDay(new Date(state.at)))+(days-1)*86400000).toISOString();if(until>now.toISOString())result.set(id,until);}return result;
+}
+function withAudioCooldown(needs:CapabilityNeed[],wordId:number,cooldowns:Map<number,string>):CapabilityNeed[]{const until=cooldowns.get(wordId);return until?needs.map(n=>n.mode==='dictation'&&n.eligibleAt<until?{...n,eligibleAt:until}:n):needs;}
+
 export {capabilityNeeds} from './evidence-store.ts';
 
 function selection(db:DB,now:Date){
  const words=learningWords(db,now),day=shDay(now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.day<? AND d.done=0 AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(day) as any[]).map(r=>r.word_id));
- const due=words.filter(w=>unfinished.has(w.id)||!!w.introduced_at&&capabilityNeeds(db,w.id,now).some(n=>n.group!=='initial'&&n.dueAt<=now.toISOString())||!!w.introduced_at&&readWordEvidence(db,w.id,now).stage!=='new'&&capabilityNeeds(db,w.id,now).some(n=>n.dueAt<=now.toISOString()));
+ const cooldowns=audioCooldowns(db,now);
+ const due=words.filter(w=>{if(!w.introduced_at&&!unfinished.has(w.id))return false;const needs=capabilityNeeds(db,w.id,now);if(cooldowns.has(w.id)&&!needs.some(n=>n.mode!=='dictation'&&n.dueAt<=now.toISOString()))return false;return unfinished.has(w.id)||!!w.introduced_at&&needs.some(n=>n.group!=='initial'&&n.dueAt<=now.toISOString())||!!w.introduced_at&&readWordEvidence(db,w.id,now).stage!=='new'&&needs.some(n=>n.dueAt<=now.toISOString());});
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(readWordEvidence(db,b.id,now).priority)-Number(readWordEvidence(db,a.id,now).priority)||(readWordEvidence(db,a.id,now).dueAt??'').localeCompare(readWordEvidence(db,b.id,now).dueAt??'')||a.id-b.id);
- const dueIds=new Set(due.map(w=>w.id)),fresh=words.filter(w=>!w.introduced_at&&!dueIds.has(w.id)),firstGroup=dedupeDayGroup(db,now,words,due,fresh),grouped=dedupeTofuDayGroup(db,now,words,firstGroup.due,firstGroup.fresh);
+ const dueIds=new Set(due.map(w=>w.id)),fresh=words.filter(w=>!w.introduced_at&&!unfinished.has(w.id)&&!dueIds.has(w.id)),firstGroup=dedupeDayGroup(db,now,words,due,fresh),grouped=dedupeTofuDayGroup(db,now,words,firstGroup.due,firstGroup.fresh);
  const limit=dailyWordLimit(db,now),selected=grouped.due.slice(0,limit);
  selected.push(...composeFresh(grouped.fresh,limit-selected.length));
  return {selected,backlog:Math.max(0,grouped.due.length-limit)};
 }
-function needFor(db:DB,e:Entry,now:Date){
- let needs=capabilityNeeds(db,e.word_id,now);
+function needFor(db:DB,e:Entry,now:Date,cooldowns:Map<number,string>){
+ let needs=withAudioCooldown(capabilityNeeds(db,e.word_id,now),e.word_id,cooldowns);
  if(probeCount(db,e.word_id,e.day)>0&&!hasSuccess(db,e.word_id,e.day)&&e.last_mode>=0)needs=needs.filter(n=>n.mode===MODES[e.last_mode]);
  return {needs,ready:chooseCapability(needs.map(n=>({...n,eligibleAt:n.eligibleAt>e.available_at?n.eligibleAt:e.available_at})),now)};
 }
 export function todayV3(db:DB,now:Date):LearningSummaryV3 {
  const day=shDay(now),started=!!db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(day),items=entries(db,day),preview=selection(db,now);
  const touched=items.filter(e=>!!db.prepare('SELECT 1 FROM learning_issues WHERE day=? AND word_id=? LIMIT 1').get(day,e.word_id));
- const active=items.filter(e=>!e.done&&!e.deferred),ready=active.filter(e=>!!needFor(db,e,now).ready).length;
+ const cooldowns=audioCooldowns(db,now),active=items.filter(e=>!e.done&&!e.deferred),ready=active.filter(e=>!!needFor(db,e,now,cooldowns).ready).length;
  const stateIndex=evidenceIndex(db,now);
  const total=started?items.length:preview.selected.length,newWords=started?items.filter(e=>e.is_new).length:preview.selected.filter(w=>(stateIndex.get(w.id)??untouchedEvidence()).stage==='new').length;
  const tally=db.prepare('SELECT COUNT(*) answers,COALESCE(SUM(json_extract(result_json,\'$.correct\')),0) correct FROM learning_issues WHERE day=? AND answer_id IS NOT NULL').get(day) as {answers:number;correct:number};
@@ -73,7 +84,7 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
  }
  active=entries(db,day).filter(e=>!e.done&&!e.deferred);summary=todayV3(db,now);
  if(!active.length)return {policyVersion:3,kind:'done',reason:summary.deferred?'technical_defer':summary.needsConsolidation?'retry_budget':'resolved',summary};
- const candidates=active.map(e=>({e,...needFor(db,e,now)})),candidate=candidates.find(c=>c.ready);
+ const cooldowns=audioCooldowns(db,now),candidates=active.map(e=>({e,...needFor(db,e,now,cooldowns)})),candidate=candidates.find(c=>c.ready);
  if(!candidate){const times=candidates.flatMap(c=>c.needs.map(n=>[n.dueAt,n.eligibleAt,c.e.available_at].sort().at(-1)!)).sort();return {policyVersion:3,kind:'waiting',summary,nextAt:times[0]??nextDay(now)};}
  const {e,ready:need}=candidate,mode=need!.mode,id=randomUUID(),options:{id:number;text:string}[]=[];
  if(mode==='recognize'){

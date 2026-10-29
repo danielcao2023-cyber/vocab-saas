@@ -11,6 +11,7 @@ interface Recording {
   word: string; accent: 'us' | 'uk' | 'unknown'; file: string; sha256: string;
   sourceUrl: string; author: string; license: string; licenseUrl: string;
   pronunciationNote?: string;
+  sourceLabel?: string;
   ipa?: string;
   label?: string;
   variants?: Partial<Record<'noun' | 'verb', Recording>>;
@@ -116,7 +117,7 @@ export function pronunciationRoutes(app: FastifyInstance, db: DB, directory = DE
     if (req.query.word !== undefined && !word) return reply.code(400).send({ error: 'invalid word' });
     const entries = [...recordings().entries()].filter(([, r]) => word === undefined || r.word === word)
       .sort((a, b) => a[0].localeCompare(b[0]));
-    const rows = entries.map(([key, r]) => `<tr><td>${escapeHtml(r.word)}${key.includes('\0') ? ` (${escapeHtml((typeof r.label === 'string' && r.label.trim()) || key.split('\0')[1])})` : ''}</td><td>${r.accent === 'us' ? '美式' : r.accent === 'uk' ? '英式' : '英语'}${typeof r.pronunciationNote === 'string' && r.pronunciationNote ? `<br>${escapeHtml(r.pronunciationNote)}` : ''}</td><td>${escapeHtml(r.author)}</td><td><a href="${escapeHtml(r.sourceUrl)}">原始录音</a></td><td><a href="${escapeHtml(r.licenseUrl)}">${escapeHtml(r.license)}</a></td></tr>`).join('');
+    const rows = entries.map(([key, r]) => `<tr><td>${escapeHtml(r.word)}${key.includes('\0') ? ` (${escapeHtml((typeof r.label === 'string' && r.label.trim()) || key.split('\0')[1])})` : ''}</td><td>${r.accent === 'us' ? '美式' : r.accent === 'uk' ? '英式' : '英语'}${typeof r.pronunciationNote === 'string' && r.pronunciationNote ? `<br>${escapeHtml(r.pronunciationNote)}` : ''}</td><td>${escapeHtml(r.author)}</td><td><a href="${escapeHtml(r.sourceUrl)}">${escapeHtml(typeof r.sourceLabel === 'string' && r.sourceLabel.trim() ? r.sourceLabel.trim() : '原始录音')}</a></td><td><a href="${escapeHtml(r.licenseUrl)}">${escapeHtml(r.license)}</a></td></tr>`).join('');
     return reply.type('text/html; charset=utf-8').header('Cache-Control', 'no-store')
       .header('Content-Security-Policy', "default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'")
       .send(`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>录音来源</title><style>body{font:16px/1.7 system-ui;margin:32px auto;padding:0 20px;max-width:960px;color:#172536}table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:10px;border-bottom:1px solid #ddd}a{color:#1261a0}</style><h1>录音来源</h1><p>这些英语发音来自真人录音。音频转换为 MP3，保留原许可；作者、原始文件与许可见下表。</p>${entries.length ? `<table><thead><tr><th>单词</th><th>口音</th><th>作者</th><th>来源</th><th>许可</th></tr></thead><tbody>${rows}</tbody></table>` : '<p>这条录音暂未准备好，请稍后重试。</p>'}</html>`);
