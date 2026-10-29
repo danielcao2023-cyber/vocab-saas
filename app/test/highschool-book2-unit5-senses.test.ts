@@ -1,0 +1,4 @@
+import {expect,it} from 'vitest';
+import fs from 'node:fs';
+import {createLessonReader,validateLesson} from '../server/src/lessons';
+for(const [id,headword,fragment,example] of [[2201,'conductor','售票员','bus conductor'],[2222,'try out','选拔','try out for'],[2217,'romantic','浪漫的人','a romantic'],[2212,'cure','解决问题','cure']] as const)it(`${headword} includes its Unit 5 textbook meaning`,()=>{const word={id,headword},raw=JSON.parse(fs.readFileSync(`data/lessons/${id}.json`,'utf8'));expect(validateLesson(raw,word).ok).toBe(true);const r=createLessonReader()(word);expect(r.status).toBe('ready');const s=r.lesson?.senses.find(x=>x.title.includes(fragment));expect(s).toBeDefined();expect(s?.examples.some(e=>e.en.toLowerCase().includes(example))).toBe(true);expect(s?.sourceIds.length).toBeGreaterThan(0);});

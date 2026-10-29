@@ -174,8 +174,16 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
           db.prepare("UPDATE learning_issues SET options_json=? WHERE word_id=? AND answered_at IS NULL AND mode IN ('spell','dictation') AND options_json='[]'")
             .run(JSON.stringify([{legacyHeadword:'keep balance'}]),wordId);
       }
-      if(entry.meaningCorrection)db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
-        .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
+      if(entry.meaningCorrection){
+        const updated=db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
+          .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
+        // Only repair the exact known malformed bagpipes text in open choice
+        // snapshots. Completed answers and user-edited meanings are untouched.
+        if(updated.changes&&entry.key==='bagpipes'&&entry.meaning==='风笛'&&entry.meaningCorrection.expected==='(also. 风笛'){
+          const pending=db.prepare("SELECT id,options_json FROM learning_issues WHERE mode='recognize' AND answered_at IS NULL AND answer_id IS NULL").all() as {id:string;options_json:string}[];
+          for(const issue of pending){try{const options=JSON.parse(issue.options_json);if(!Array.isArray(options))continue;let changed=false;for(const option of options)if(option&&option.id===wordId&&option.text===entry.meaningCorrection.expected){option.text=entry.meaning;changed=true;}if(changed)db.prepare('UPDATE learning_issues SET options_json=? WHERE id=?').run(JSON.stringify(options),issue.id);}catch{/* A malformed unrelated snapshot is not a reason to change it. */}}
+        }
+      }
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
         .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
 
