@@ -8,7 +8,7 @@
 
 
 
-- `Lake Louise`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
+- `Lake Louise`（选择性必修二 Unit 4）：[Oxford American Dictionary 转写](https://tw.dictionary.search.yahoo.com/search?p=Louise)针对加拿大地名给出词典式读法，但不是严格 IPA，须先核对转写再发布音形映射。录音尚未试听。
 
 - `St Lawrence River`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
 
