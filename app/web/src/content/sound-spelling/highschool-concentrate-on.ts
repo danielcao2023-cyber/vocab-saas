@@ -141,3 +141,25 @@ highschoolConcentrateOn.push({
  sources:[{label:'Oxford Solutions 2nd edition 词表',url:'https://teacherivanatheenglishlanguageblog.wordpress.com/wp-content/uploads/2015/09/2-self-test-1.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against Oxford wordlist'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'work out',ipa:'/ˌwɜːk ˈaʊt/',uk:'/ˌwɜːk ˈaʊt/',
+ chunks:[
+  {letters:'work ',sound:'/wɜːk/',stress:'secondary',hint:'work 在词表中标次重音。',pairs:[{letters:'w',sound:'/w/'},{letters:'or',sound:'/ɜː/'},{letters:'k',sound:'/k/'},{letters:' ',sound:''}],tip:'这里采用非卷舌英音。'},
+  {letters:'out',sound:'/aʊt/',stress:'primary',hint:'out 在词表中重读。',pairs:[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}],tip:'ou 合起来读 /aʊ/。'},
+ ],
+ anchor:{text:'work 接 out 连起来读，再放进句子。'},
+ variantNote:'这里展示教材中的英式读法；美式常带卷舌音，句中重音可变化。',sources:[vocabularyPracticeSource],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Cambridge wordlist'},
+});
+highschoolConcentrateOn.push({
+ headword:'give up',ipa:'/ˌɡɪv ˈʌp/',uk:'/ˌɡɪv ˈʌp/',
+ chunks:[
+  {letters:'give ',sound:'/ɡɪv/',stress:'secondary',hint:'give 在词表中标次重音。',pairs:[{letters:'g',sound:'/ɡ/'},{letters:'i',sound:'/ɪ/'},{letters:'v',sound:'/v/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'末尾 e 不单独发音。'},
+  {letters:'up',sound:'/ʌp/',stress:'primary',hint:'up 在词表中重读。',pairs:[{letters:'u',sound:'/ʌ/'},{letters:'p',sound:'/p/'}],tip:'up 中读 /ʌ/。'},
+ ],
+ anchor:{text:'give 与 up 连读，结合句子感受重音。'},
+ variantNote:'这里展示 Pearson 词表中的读法；真实句子中的重音可变化。',
+ sources:[{label:'Pearson English Class B1 词表',url:'https://www.pearson.pl/fileadmin/poland/english/Documents/English_Class_B1_SB_listy_slow.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Pearson wordlist'},
+});

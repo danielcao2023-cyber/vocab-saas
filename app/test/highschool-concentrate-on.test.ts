@@ -55,3 +55,10 @@ it('preserves the Oxford pronunciation and stress for cost an arm and a leg',()=
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('cost an arm and a leg');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','secondary','none','none','primary']);
 });
+
+it.each([['work out','/ˌwɜːk ˈaʊt/'],['give up','/ˌɡɪv ˈʌp/']])('shows the sourced pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
+});
