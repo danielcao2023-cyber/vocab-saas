@@ -223,3 +223,14 @@ it('matches Cambridge Think pronunciation and stress for earn a living',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('earn a living');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary','none']);
 });
+
+it.each([
+ ['the media','/ðə ˈmiːdiə/',['none','primary','none']],
+ ['on duty','/ɒn ˈdjuːti/',['none','primary','none']],
+ ['by accident','/baɪ ˈæksɪdənt/',['none','primary','none','none']],
+])('matches the Oxford Masterclass pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});

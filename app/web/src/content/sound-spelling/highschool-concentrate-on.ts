@@ -525,3 +525,21 @@ addSourcedPhrase('earn a living','/ˌɜːn ə ˈlɪv.ɪŋ/',[
  ch('liv','/lɪv/','primary',[{letters:'l',sound:'/l/'},{letters:'i',sound:'/ɪ/'},{letters:'v',sound:'/v/'}]),
  ch('ing','/ɪŋ/','none',[{letters:'i',sound:'/ɪ/'},{letters:'ng',sound:'/ŋ/'}]),
 ],'Cambridge Think Level 3 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-3/69538/resources/pdf/l3_u1_wordlist.pdf');
+
+const oxfordMasterclass='https://kbzsg.ch/wp-content/uploads/2023/03/Masterclass-Vocabulary_2020_STUDENTS.pdf';
+addSourcedPhrase('the media','/ðə ˈmiːdiə/',[
+ ch('the ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('me','/miː/','primary',[{letters:'m',sound:'/m/'},{letters:'e',sound:'/iː/'}]),
+ ch('dia','/diə/','none',[{letters:'d',sound:'/d/'},{letters:'i',sound:'/i/'},{letters:'a',sound:'/ə/'}]),
+],'Oxford English First Masterclass 词表',oxfordMasterclass);
+addSourcedPhrase('on duty','/ɒn ˈdjuːti/',[
+ ch('on ','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('du','/djuː/','primary',[{letters:'d',sound:'/d/'},{letters:'u',sound:'/juː/'}]),
+ ch('ty','/ti/','none',[{letters:'t',sound:'/t/'},{letters:'y',sound:'/i/'}]),
+],'Oxford English First Masterclass 词表',oxfordMasterclass);
+addSourcedPhrase('by accident','/baɪ ˈæksɪdənt/',[
+ ch('by ','/baɪ/','none',[{letters:'b',sound:'/b/'},{letters:'y',sound:'/aɪ/'},{letters:' ',sound:''}]),
+ ch('ac','/æk/','primary',[{letters:'a',sound:'/æ/'},{letters:'c',sound:'/k/'}]),
+ ch('ci','/sɪ/','none',[{letters:'c',sound:'/s/'},{letters:'i',sound:'/ɪ/'}]),
+ ch('dent','/dənt/','none',[{letters:'d',sound:'/d/'},{letters:'e',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'t',sound:'/t/'}]),
+],'Oxford English First Masterclass 词表',oxfordMasterclass);
