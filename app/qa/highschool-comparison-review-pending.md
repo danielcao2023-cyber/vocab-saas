@@ -91,3 +91,5 @@
 后续核验：2546–2575，逐项依据见 `highschool-comparison-audits/batch-2546-2560.json`、`batch-2561-2575.json`；无关对比已移除。
 
 后续核验：2576–2605，逐项依据见 `highschool-comparison-audits/batch-2576-2590.json`、`batch-2591-2605.json`；2591 待核，若干无关对比已移除。
+
+2591 已依据 Collins 与 Cambridge 核验同义关系。后续核验：2606–2635，依据见 `highschool-comparison-audits/batch-2606-2620.json`、`batch-2621-2635.json`；无关对比已移除。
