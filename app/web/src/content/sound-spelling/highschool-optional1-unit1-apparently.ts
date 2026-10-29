@@ -526,7 +526,7 @@ export const highschoolOptional1Unit1Apparently: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "cil",
+        "letters": "cill",
         "sound": "/sɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -540,22 +540,18 @@ export const highschoolOptional1Unit1Apparently: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "lin",
+        "letters": "in",
         "sound": "/ɪn/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
@@ -576,6 +572,10 @@ export const highschoolOptional1Unit1Apparently: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/penicillin"
+      },
+      {
+        "label": "Oxford Learner’s Dictionaries · 英语读音",
+        "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/penicillin"
       }
     ],
     "review": {

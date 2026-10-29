@@ -155,6 +155,10 @@ const textbookSpellingVariants: Readonly<Record<string,string>> = {
   analyse:'analyze', analyze:'analyse', moustache:'mustache', mustache:'moustache',
   apologise:'apologize', apologize:'apologise', criticise:'criticize', criticize:'criticise',
   commercialisation:'commercialization', commercialization:'commercialisation',
+  harbour:'harbor', harbor:'harbour', enrol:'enroll', enroll:'enrol',
+  recognise:'recognize', recognize:'recognise', civilisation:'civilization', civilization:'civilisation',
+  organise:'organize', organize:'organise', organisation:'organization', organization:'organisation',
+  inquire:'enquire', enquire:'inquire',
 };
 
 /** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */

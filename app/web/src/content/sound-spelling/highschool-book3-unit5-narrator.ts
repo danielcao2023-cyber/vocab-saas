@@ -7,7 +7,7 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
     "uk": "/nəˈreɪtə/",
     "chunks": [
       {
-        "letters": "nar",
+        "letters": "narr",
         "sound": "/nær/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ra",
+        "letters": "a",
         "sound": "/eɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/eɪ/"
@@ -74,6 +70,10 @@ export const highschoolBook3Unit5Narrator: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/narrator"
+      },
+      {
+        "label": "Oxford Learner’s Dictionaries · 英语读音",
+        "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/narrator"
       }
     ],
     "review": {

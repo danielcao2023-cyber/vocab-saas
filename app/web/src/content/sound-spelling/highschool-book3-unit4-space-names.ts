@@ -80,7 +80,7 @@ export const highschoolBook3Unit4SpaceNames: SoundSpellingLesson[] = [
     "uk": "/ˈtʃælɪndʒə/",
     "chunks": [
       {
-        "letters": "Chal",
+        "letters": "Chall",
         "sound": "/tʃæl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -94,22 +94,18 @@ export const highschoolBook3Unit4SpaceNames: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "len",
+        "letters": "en",
         "sound": "/ɪn/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ɪ/"
@@ -151,6 +147,10 @@ export const highschoolBook3Unit4SpaceNames: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/challenger"
+      },
+      {
+        "label": "Oxford Learner’s Dictionaries · 英语读音",
+        "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/challenger_2"
       }
     ],
     "review": {

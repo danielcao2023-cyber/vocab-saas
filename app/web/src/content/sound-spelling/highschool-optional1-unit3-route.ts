@@ -148,7 +148,7 @@ export const highschoolOptional1Unit3Route: SoundSpellingLesson[] = [
     "uk": "/ˈkɒrɪdɔː/",
     "chunks": [
       {
-        "letters": "cor",
+        "letters": "corr",
         "sound": "/kɔːr/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -162,22 +162,18 @@ export const highschoolOptional1Unit3Route: SoundSpellingLesson[] = [
             "sound": "/ɔː/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ri",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
@@ -215,6 +211,10 @@ export const highschoolOptional1Unit3Route: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/corridor"
+      },
+      {
+        "label": "Collins Dictionary · 英语读音",
+        "url": "https://www.collinsdictionary.com/us/dictionary/english-pronunciations/corridor"
       }
     ],
     "review": {

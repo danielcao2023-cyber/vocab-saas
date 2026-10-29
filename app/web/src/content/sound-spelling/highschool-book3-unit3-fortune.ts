@@ -7,7 +7,7 @@ export const highschoolBook3Unit3Fortune: SoundSpellingLesson[] = [
     "uk": "/ˈɪmɪɡrənt/",
     "chunks": [
       {
-        "letters": "im",
+        "letters": "imm",
         "sound": "/ɪm/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -17,22 +17,18 @@ export const highschoolBook3Unit3Fortune: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "mi",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "m",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
@@ -78,6 +74,10 @@ export const highschoolBook3Unit3Fortune: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/immigrant"
+      },
+      {
+        "label": "Oxford Learner’s Dictionaries · 英语读音",
+        "url": "https://www.oxfordlearnersdictionaries.com/us/definition/english/immigrant"
       }
     ],
     "review": {
