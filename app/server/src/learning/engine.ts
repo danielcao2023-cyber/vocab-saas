@@ -6,7 +6,7 @@ import {todayV3,startV3,nextV3,answerV3,consultV3,deferV3} from './evidence-engi
 import {randomUUID} from 'node:crypto';
 import {createEmptyCard,Rating} from 'ts-fsrs';
 import type {DB} from '../db.ts';
-import {acceptedAnswers,acceptedSpellings,normalizeAnswer,review,type CardRow} from '../study.ts';
+import {acceptedAnswers,acceptedSpellings,translationPromptHint,normalizeAnswer,review,type CardRow} from '../study.ts';
 import {legacyIssueHeadword} from './legacy-issue.ts';
 import {shDay} from '../time.ts';
 import {maskAnswer,hasDictionaryPlaceholder} from '../text.ts';
@@ -56,7 +56,7 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
  const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,issue.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
-  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(shown)[0]})};
+  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:acceptedSpellings(shown)[0]})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};

@@ -187,11 +187,21 @@ export function acceptedSpellings(headword: string): string[] {
 // Only translation cards accept these explicitly verified equivalent expressions.
 // Listening remains tied to the word that was played. See Cambridge: /dictionary/english/tofu.
 const textbookTranslationEquivalents: Readonly<Record<string,string>> = {'tofu':'bean curd','bean curd':'tofu','estate agent':'real estate agent','real estate agent':'estate agent','leapt':'leaped','leaped':'leapt','despite':'in spite of','in spite of':'despite'};
+function visibleMeaningSenses(meaning?: string | null, meaningSource?: string | null): string[] {
+  const visibleLines = (meaning ?? '').split('\n').map(line=>line.trim()).filter(Boolean).slice(0, meaningSource === 'manual' ? undefined : 2);
+  return visibleLines.flatMap(line=>line.replace(/^\s*(?:(?:[a-z]+\.)\s*)+/i,'').split(/[,，;；、]/).map(part=>part.trim()));
+}
+export function translationPromptHint(headword: string, meaning?: string | null, meaningSource?: string | null): string | undefined {
+  const word = acceptedSpellings(headword)[0];
+  if (!['premier','prime minister'].includes(word)) return;
+  if (!visibleMeaningSenses(meaning, meaningSource).some(s => s === '总理' || s === '首相')) return;
+  const count = word.split(/\s+/).length;
+  return count === 1 ? '请写一个单词' : count === 2 ? '请写两个单词' : undefined;
+}
 export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 'recognize', meaning?: string | null, meaningSource?: string | null): string[] {
   const spellings = acceptedSpellings(headword);
   if (mode !== 'spell') return spellings;
-  const visibleLines = (meaning ?? '').split('\n').map(line=>line.trim()).filter(Boolean).slice(0, meaningSource === 'manual' ? undefined : 2);
-  const visibleSenses = visibleLines.flatMap(line=>line.replace(/^\s*(?:(?:[a-z]+\.)\s*)+/i,'').split(/[,，;；、]/).map(part=>part.trim()));
+  const visibleSenses = visibleMeaningSenses(meaning, meaningSource);
   const hasOvenSense = visibleSenses.includes('微波炉');
   const microwaveEquivalent = hasOvenSense ? ({'microwave':'microwave oven','microwave oven':'microwave'} as Record<string,string>)[spellings[0]] : undefined;
   const tuitionEquivalent = visibleSenses.includes('学费') ? ({'tuition':'tuition fees','tuition fees':'tuition'} as Record<string,string>)[spellings[0]] : undefined;

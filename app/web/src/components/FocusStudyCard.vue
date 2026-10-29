@@ -23,6 +23,7 @@ function setPattern(value:string){pattern.value=value;emit('update:answer','');}
 </script>
 <template><article class="focus-card"><div class="focus-toolbar"><span class="small muted">{{ titles[card.mode] }}</span><button class="learn-word" type="button" :disabled="busy" @click="emit('learn')">学习该词 <span aria-hidden="true">↗</span></button></div>
  <div class="focus-question"><h1 v-if="card.mode==='recognize'" class="headword">{{ card.headword }}</h1><div v-else-if="card.mode==='spell'" class="meaning"><MeaningList :meaning="card.meaning??''" :source="card.meaning_source" /></div><SpeakButton v-else large @play="emit('play')" /></div>
+ <p v-if="card.mode==='spell'&&card.promptHint" class="assessment-note">{{ card.promptHint }}</p>
  <p v-if="placeholderHint" class="assessment-note">{{ placeholderHint }}。</p>
  <p v-if="card.mode==='recognize'&&hasDictionaryPlaceholder(card.headword??'')" class="assessment-note">本词条仅评估认词，暂不测拼写和听写。</p>
  <div v-if="card.mode==='recognize'" class="focus-options"><button v-for="(option,i) in card.options" :key="option.id" type="button" :class="{forgot:option.id===0}" :disabled="busy||!!feedback" @click="emit('choose',option.id)"><span>{{ option.id===0?'':String.fromCharCode(65+i) }}</span>{{ option.text }}</button></div>

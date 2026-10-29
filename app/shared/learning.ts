@@ -2,7 +2,7 @@ export type WordBook='new'|'unfamiliar'|'familiar'|'mastered';
 export type LearningMode='recognize'|'spell'|'dictation';
 export const BOOK_LABELS:Record<WordBook,string>={new:'生词',unfamiliar:'不熟',familiar:'熟悉',mastered:'已掌握'};
 export interface LearningSummary {day:string;started:boolean;total:number;completed:number;deferred:number;newWords:number;reviewWords:number;remaining:number;backlog:number;answers:number;correct:number;books:Record<WordBook,number>}
-export interface LearningCard {issueId:string;wordId:number;mode:LearningMode;headword?:string;meaning?:string;meaning_source?:string|null;audioWord?:string;patterns:string[];options:{id:number;text:string}[];assisted:boolean}
+export interface LearningCard {issueId:string;wordId:number;mode:LearningMode;headword?:string;meaning?:string;meaning_source?:string|null;promptHint?:string;audioWord?:string;patterns:string[];options:{id:number;text:string}[];assisted:boolean}
 export interface LearningTurn {kind:'idle'|'card'|'waiting'|'done';summary:LearningSummary;card?:LearningCard;nextAt?:string}
 export interface LearningAnswer {policyVersion?:3;issueId:string;answerId:string;answer?:string;choiceId?:number;durationMs?:number}
 export interface LearningResult {correct:boolean;assisted:boolean;expected:string;meaning:string;book:WordBook;nextDue:string;duplicate?:boolean;previousBook?:WordBook}

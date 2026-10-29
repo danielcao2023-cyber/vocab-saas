@@ -42,7 +42,7 @@
 | coral / `coral` | `data/lessons/3937.json` | 珊瑚；珊瑚色的；初筛：已有相关例句 |
 | migration / `migration` | `data/lessons/3938.json` | 迁徙；迁移；人口迁移；初筛：已有相关例句 |
 | directory / `directory` | `data/lessons/3939.json` | 名录；目录；初筛：已有相关例句 |
-| meanwhile / `meanwhile` | `data/lessons/3940.json` | 与此同时；待核：教材对比用法未独立示例 |
+| meanwhile / `meanwhile` | `data/lessons/3940.json` | 与此同时；后续据 Collins COBUILD 补对比用法和例句 |
 | exploit / `exploit` | `data/lessons/3941.json` | 利用；开发；剥削；功绩；事迹；开发资源；本批补例句，词典核查并验证 reader |
 | gallon / `gallon` | `data/lessons/3942.json` | 加仑；初筛：已有相关例句 |
 | murder / `murder` | `data/lessons/3943.json` | 谋杀；谋杀某人；初筛：已有相关例句 |
@@ -60,6 +60,8 @@
 | Zac Sunderland / `Zac Sunderland` | `data/lessons/3955.json` | 扎克·桑德兰；初筛：已有相关例句 |
 | Robin Lee Graham / `Robin Lee Graham` | `data/lessons/3956.json` | 罗宾·李·格雷厄姆；初筛：已有相关例句 |
 
-未核边界：上述“已有相关例句”仅表示教材相关义至少有可见示例，不能说明教材每个义项均已覆盖；此句为初筛时边界；下文记录了后续复核，其中 meanwhile 的独立转折义仍待核。专名仅核对存在与讲解可见，未重新核身份出处。上述 lesson 文件按当前 headword 匹配，stable key 与运行时 ID 的跨设备转换未在本表逐条重新验证。
+未核边界：上述“已有相关例句”仅表示教材相关义至少有可见示例，不能说明教材每个义项均已覆盖；此句为初筛时边界；下文记录了后续复核，随后 Collins COBUILD 已核实 meanwhile 可引出对比方面，见下文。专名仅核对存在与讲解可见，未重新核身份出处。上述 lesson 文件按当前 headword 匹配，stable key 与运行时 ID 的跨设备转换未在本表逐条重新验证。
 
-后续复核：royal 的“盛大、豪华” [Merriam-Webster](https://www.merriam-webster.com/dictionary/royal)，不应泛化为道德高尚；in hand 的现有资源见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/in%20hand)；arrest 名词停止义见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/arrest)。例句自拟。meanwhile 独立“转折”释义尚无充分权威证据，保留待核：[Cambridge](https://dictionary.cambridge.org/dictionary/english/meanwhile) 仅直接列时间相关义。定向测试 `test/highschool-optional4-unit3-pending-followup.test.ts` 两项通过，含全单元真实 reader 与 validateLesson。
+后续复核：royal 的“盛大、豪华” [Merriam-Webster](https://www.merriam-webster.com/dictionary/royal)，不应泛化为道德高尚；in hand 的现有资源见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/in%20hand)；arrest 名词停止义见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/arrest)。例句自拟。meanwhile 的对比用法后续由 [Collins COBUILD](https://www.collinsdictionary.com/dictionary/english/meanwhile) 明确支持，已补分义及自拟例句；这不意味着所有 meanwhile 都能译作转折。定向测试 `test/highschool-optional4-unit3-pending-followup.test.ts` 两项通过，含全单元真实 reader 与 validateLesson。
+
+meanwhile 新增义项定向验证：`test/highschool-optional4-unit3-meanwhile-followup.test.ts` 两项通过，含全单元真实 reader/validateLesson。

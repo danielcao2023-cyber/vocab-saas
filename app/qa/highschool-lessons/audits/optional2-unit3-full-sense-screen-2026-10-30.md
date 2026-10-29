@@ -38,7 +38,7 @@
 | sausage / `sausage` | `data/lessons/3231.json` | 香肠；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | cabbage / `cabbage` | `data/lessons/207.json` | 卷心菜；甘蓝；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | bean curd / `bean curd` | `data/lessons/3232.json` | 豆腐；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
-| tofu / `tofu` | `data/lessons/1432.json` | 豆腐；独立词条；拼写与听写答案不会相互接受，题面横线亦由各自词形生成；是否处理词义等同另行设计 |
+| tofu / `tofu` | `data/lessons/1432.json` | 豆腐；独立词条；汉译英互认并呈现两个词形的横线，听写按当前词头判分；同日去重另核 |
 | brand / `brand` | `data/lessons/3233.json` | 品牌；商标；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | olive / `olive` | `data/lessons/3234.json` | 橄榄；橄榄树（名词）；橄榄色（名词）；橄榄色的（形容词）；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
 | fig / `fig` | `data/lessons/3235.json` | 无花果；无花果树；初筛：至少一条已有相关例句，不代表教材所有细义已覆盖 |
@@ -81,6 +81,6 @@
 
 后续核查（2026-10-30）：[exceptional](https://dictionary.cambridge.org/dictionary/learner-english/exceptional) 和 [consistent](https://dictionary.cambridge.org/dictionary/english/consistent) 已有相关例句；[fibre](https://dictionary.cambridge.org/dictionary/english/fibre) 可做成布等材料，不据此断言任意纤维制品均叫 fibre。[dairy](https://www.collinsdictionary.com/us/dictionary/english/dairy) 补乳品店例句，[ideal](https://www.collinsdictionary.com/dictionary/english/ideal) 补理想世界和典范例句；[Kazak/Kazakh](https://www.dictionary.com/browse/kazakh) 原例中作前置修饰，补名词例句并说明词性。所有新增例句为原创，测试 `test/highschool-optional2-unit3-followup.test.ts` 使用真实 reader/validateLesson。
 
-词形与判分检查：教材 bean curd 括注 tofu；当前二者为独立 key、独立 headword，`server/src/study.ts` 的 `acceptedSpellings` 实测分别仅返回 `bean curd` 和 `tofu`；V2/V3 拼写、听写均按此精确判分，题面横线由各词自身的拼写生成，因此跨答会判错且横线长度不同。认词按各自独立记录发题。二者意义等同并非简单的英美拼写变体；是否接受同义答案、不同长度输入与避免重复出题需独立设计，本轮未更改身份、判分或记录。
+词形与判分检查：教材 bean curd 括注 tofu，二者仍为独立 key 和记录。提交 f54663da 增加汉译英两种同义答案及各自横线，听写依当前词头和录音严格判分。`acceptedSpellings` 仍表示词头拼写，汉译英额外使用 `acceptedAnswers`；V2/V3 在线/离线、重放和记录隔离由 `test/highschool-tofu-alternatives.test.ts` 覆盖。是否同日避免重复派发需另查，不能由互认推断已解决。
 
 后续复核：[Oxford fibre](https://www.oxfordlearnersdictionaries.com/us/definition/english/fibre) 将布或绳等纤维材料列为词义，已补纤维材料/织物及自拟例句；不能据此泛化所有纤维成品均可叫 fibre。`test/highschool-optional2-unit3-fibre-followup.test.ts` 两项通过，含全单元实际 reader 和 validateLesson。
