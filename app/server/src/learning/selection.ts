@@ -1,3 +1,4 @@
+import {dedupeDayGroup} from './day-groups.ts';
 import type {DB} from '../db.ts';
 import type {WordBook} from '../../../shared/learning.ts';
 import {selectedWordIds} from '../vocabulary-selection.ts';
@@ -14,9 +15,10 @@ export function selectDaily(db:DB,now:Date,limit=40){
  const words=learningWords(db,now),unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(new Date(now.getTime()+8*3600000).toISOString().slice(0,10)) as {word_id:number}[]).map(r=>r.word_id));
  const due=words.filter(w=>unfinished.has(w.id)||(w.book!=='new'&&(!w.due||w.due<=now.toISOString())));
  due.sort((a,b)=>Number(unfinished.has(b.id))-Number(unfinished.has(a.id))||Number(b.book==='unfamiliar')-Number(a.book==='unfamiliar')||(a.due??'').localeCompare(b.due??'')||b.day_errors-a.day_errors||a.id-b.id);
- const selected=due.slice(0,limit),fresh=words.filter(w=>w.book==='new'&&!unfinished.has(w.id));
- selected.push(...composeFresh(fresh,limit-selected.length));
- return {selected,backlog:Math.max(0,due.length-limit)};
+ const fresh=words.filter(w=>w.book==='new'&&!unfinished.has(w.id)),grouped=dedupeDayGroup(db,now,words,due,fresh);
+ const selected=grouped.due.slice(0,limit);
+ selected.push(...composeFresh(grouped.fresh,limit-selected.length));
+ return {selected,backlog:Math.max(0,grouped.due.length-limit)};
 }
 
 export function composeFresh(input:LearningWord[],limit:number){const fresh=[...input],selected:LearningWord[]=[],needed=Math.min(limit,fresh.length);let core=0;const buckets=[0,0,0];
