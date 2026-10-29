@@ -1,5 +1,6 @@
 import argparse,json,sqlite3,re,os,hashlib,collections
 from pathlib import Path
+from urllib.parse import urlsplit
 
 parser=argparse.ArgumentParser(description='Audit high-school primary recording metadata and hashes; not a listening or runtime audit.')
 parser.add_argument('--db',required=True,help='Path to an installed vocabulary database, opened read-only')
@@ -8,13 +9,20 @@ args=parser.parse_args()
 p=str(Path(__file__).resolve().parent.parent/'data/pronunciation');m=json.load(open(p+'/manifest.json'))['entries']; db=sqlite3.connect(Path(args.db).resolve().as_uri()+'?mode=ro',uri=True)
 rows=db.execute("select distinct w.id,w.headword from words w join vocabulary_members vm on vm.word_id=w.id join vocabulary_books b on b.id=vm.book_id where b.category='high'").fetchall()
 def main(s):return [x.strip() for x in re.sub(r'\(.*?\)|（.*?）','',re.sub('[’‘ʼ]',"'",s)).split('/') if x.strip()]
+def safe_url(value):
+ try:
+  u=urlsplit(value)
+  return u.scheme=='https' and bool(u.hostname) and u.username is None and u.password is None
+ except (TypeError, ValueError):return False
 def valid(k,r):
- if not r or r.get('word')!=k or r.get('accent') not in ('us','uk','unknown') or not all(r.get(x) for x in ['author','license','sourceUrl','licenseUrl']):return False
+ if not isinstance(r,dict) or r.get('word')!=k or r.get('accent') not in ('us','uk','unknown'):return False
+ if not all(isinstance(r.get(x),str) and r[x].strip() for x in ['author','license']):return False
+ if not all(safe_url(r.get(x)) for x in ['sourceUrl','licenseUrl']):return False
  file=r.get('file','');h=r.get('sha256','')
- if not re.fullmatch(r'[A-Za-z0-9_-]+\.mp3',file) or not re.fullmatch('[a-f0-9]{64}',h):return False
+ if not isinstance(file,str) or not isinstance(h,str) or not re.fullmatch(r'[A-Za-z0-9_-]+\.mp3',file) or not re.fullmatch('[a-f0-9]{64}',h):return False
  try:
   f=os.path.realpath(p+'/'+file)
-  return f.startswith(os.path.realpath(p)+os.sep) and 0<os.path.getsize(f)<=2000000 and hashlib.sha256(open(f,'rb').read()).hexdigest()==h
+  return f.startswith(os.path.realpath(p)+os.sep) and os.path.isfile(f) and 0<os.path.getsize(f)<=2000000 and hashlib.sha256(open(f,'rb').read()).hexdigest()==h
  except OSError:return False
 c=collections.Counter(); bad=[]; variants=collections.Counter()
 for id,h in rows:
