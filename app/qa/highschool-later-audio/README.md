@@ -359,3 +359,5 @@
 `batch-next8single-recovery.json` 加入 contrary 和 digest（动词）真人录音，核对英文 Wiktionary、Commons 授权、解码和哈希；尚未试听，digest 的首元音变体尚不确定。`next9-candidates.json` 记录下一批待独立核验候选。
 
 `next9-candidates.json` 中 contract 名词文件描述为 noun/verb，动词文件描述为 second verb pronunciation；虽词典栏目各有对应，现有元数据校验拒绝两者，保留待进一步核对，尚未接入。
+
+`next9-exploit-variants.json` 加入 exploit 的名词英式和动词美式录音，核对英文 Wiktionary 对应词性、Commons 许可及解码哈希；均尚未试听。
