@@ -343,3 +343,19 @@ addSourcedPhrase('lead to','/ˈliːd tə/',[
  ch('lead ','/liːd/','primary',[{letters:'l',sound:'/l/'},{letters:'ea',sound:'/iː/'},{letters:'d',sound:'/d/'},{letters:' ',sound:''}]),
  ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
 ],'Pearson Focus 4 词表','https://download.fimsschools.com/ebooks/Focus%20Student%20Book%204.pdf');
+addSourcedPhrase('come along','/ˌkʌm əˈlɒŋ/',[
+ ch('come ','/kʌm/','secondary',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ʌ/'},{letters:'m',sound:'/m/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('long','/lɒŋ/','primary',[{letters:'l',sound:'/l/'},{letters:'o',sound:'/ɒ/'},{letters:'ng',sound:'/ŋ/'}]),
+],'Oxford Key 2nd edition 词表','https://www.oup.es/wp-content/uploads/2024/07/Key2e_2-SupExt-unit4.pdf');
+addSourcedPhrase('in shock','/ɪn ˈʃɒk/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('shock','/ʃɒk/','primary',[{letters:'sh',sound:'/ʃ/'},{letters:'o',sound:'/ɒ/'},{letters:'ck',sound:'/k/'}]),
+],'Pearson High Note 3 教师用书词表','https://www.pearson.com/content/dam/one-dot-com/one-dot-com/english/SampleMaterials/Secondary/highnote/HighNote_TeacherBook_Level3_U3.pdf');
+addSourcedPhrase('participate in','/pɑːˈtɪsəpeɪt ɪn/',[
+ ch('par','/pɑː/','none',[{letters:'p',sound:'/p/'},{letters:'ar',sound:'/ɑː/'}]),
+ ch('ti','/tɪ/','primary',[{letters:'t',sound:'/t/'},{letters:'i',sound:'/ɪ/'}]),
+ ch('ci','/sə/','none',[{letters:'c',sound:'/s/'},{letters:'i',sound:'/ə/'}]),
+ ch('pate ','/peɪt/','none',[{letters:'p',sound:'/p/'},{letters:'a',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('in','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
+],'Pearson High Note 2 词表','https://www.pearson.pl/fileadmin/poland/english/catalogue/HighNote_SB2_PL_sample_unit_LowRes.pdf');

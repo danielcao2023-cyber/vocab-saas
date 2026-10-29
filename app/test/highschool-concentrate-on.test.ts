@@ -125,3 +125,9 @@ it.each([['as a matter of fact','/əz ə ˌmætər əv ˈfækt/'],['take part in
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['come along','/ˌkʌm əˈlɒŋ/'],['in shock','/ɪn ˈʃɒk/'],['participate in','/pɑːˈtɪsəpeɪt ɪn/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
