@@ -1,3 +1,4 @@
+import {canonicalLessonId} from '../../../server/src/lesson-identity.ts';
 import {displayHeadword} from '../../../server/src/display-headword.ts';
 import {migrateLearning} from '../../../server/src/learning/schema';
 import {activateEvidencePolicy,evidenceVersion} from '../../../server/src/learning/evidence-migration';
@@ -59,10 +60,17 @@ export function createLocalRuntime(options:Options){
    if(word[2]==='/content')return getContent(shared,id);
    if(word[2]==='/lesson'){
     const shown=displayHeadword(shared,id,String(row.headword));const keyed=shown!==row.headword?'highschool-log.json':typeof row.headword==='string'?keyedLessonName(row.headword):undefined;
-    const result=await assetFetch(keyed?`/offline/lessons/keyed/${keyed}`:`/offline/lessons/${id}.json`);if(!result.ok)return {status:'pending',lesson:null};
-    const raw=await result.json();if(raw.headword!==row.headword||(!keyed&&raw.wordId!==id))throw new Error('词条资料不匹配。');
-    const lesson={...raw,wordId:keyed?id:raw.wordId,headword:shown};
-    return {status:'ready',lesson};
+    let invalidAsset=false;
+    const readAsset=async(file:string,expectedId:number|undefined)=>{
+     const result=await assetFetch(file);if(!result.ok)return null;
+     const raw=await result.json();
+     if(raw.headword!==row.headword||(expectedId!==undefined&&raw.wordId!==expectedId)){invalidAsset=true;return null;}
+     return raw;
+    };
+    let raw=await readAsset(keyed?`/offline/lessons/keyed/${keyed}`:`/offline/lessons/${id}.json`,keyed?undefined:id);
+    if(!raw&&!keyed&&shown===row.headword){const canonical=canonicalLessonId(shared,{id,headword:String(row.headword)});if(canonical!==undefined&&canonical!==id)raw=await readAsset(`/offline/lessons/${canonical}.json`,canonical);}
+    if(!raw){if(invalidAsset)throw new HttpError(503,'单词讲解资源与当前词条不匹配。');return {status:'pending',lesson:null};}
+    return {status:'ready',lesson:{...raw,wordId:id,headword:shown}};
    }
    return wordDetail(shared,id);
   }
