@@ -27,3 +27,10 @@ it.each([['consist of','/kənˈsɪst əv/'],['due to','/ˈdjuː tuː/']])('shows
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it('shows the sourced British weak form and stress for look forward to',()=>{
+ const lesson=getSoundSpellingLesson('look forward to');
+ expect(lesson?.ipa).toBe('/ˌlʊk ˈfɔːwəd tə/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('look forward to');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary','none','none']);
+});

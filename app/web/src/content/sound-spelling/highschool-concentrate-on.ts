@@ -73,3 +73,17 @@ highschoolConcentrateOn.push({
  sources:[{label:'Collins Dictionary · due to',url:'https://www.collinsdictionary.com/dictionary/english/due-to'},{label:'Contrast 1 · 教材词表',url:'https://www.edu.xunta.gal/centros/iesalfredobranas/system/files/u27/Contrast1_SB_AppendGal_11948.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against Collins and textbook word list'},
 });
+
+highschoolConcentrateOn.push({
+ headword:'look forward to',ipa:'/ˌlʊk ˈfɔːwəd tə/',uk:'/ˌlʊk ˈfɔːwəd tə/',
+ chunks:[
+  {letters:'look ',sound:'/lʊk/',stress:'secondary',hint:'look 在词表中标次重音。',pairs:[{letters:'l',sound:'/l/'},{letters:'oo',sound:'/ʊ/'},{letters:'k',sound:'/k/'},{letters:' ',sound:''}],tip:'oo 在这里读短音 /ʊ/。'},
+  {letters:'for',sound:'/fɔː/',stress:'primary',hint:'forward 的前半部分重读。',pairs:[{letters:'f',sound:'/f/'},{letters:'or',sound:'/ɔː/'}],tip:'这里采用非卷舌英音。'},
+  {letters:'ward ',sound:'/wəd/',stress:'none',hint:'后半部分轻读。',pairs:[{letters:'w',sound:'/w/'},{letters:'a',sound:'/ə/'},{letters:'r',sound:''},{letters:'d',sound:'/d/'},{letters:' ',sound:''}],tip:'r 在此英式读法中不单独发音。'},
+  {letters:'to',sound:'/tə/',stress:'none',hint:'to 在这一读法中弱读。',pairs:[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}],tip:'to 的读音和句中重音会随语境变化。'},
+ ],
+ anchor:{text:'先读 look forward，后接轻读 to，再放回句中练习。'},
+ variantNote:'这里展示教材词表中的英式读法；美式常读卷舌音，语流中的重音与弱读也会变化。',
+ sources:[{label:'Pearson Focus 2 教材词表',url:'https://www.pearson.com/content/dam/one-dot-com/one-dot-com/english/Images/FocusSecondEdition/Focus_2E_SB2_U1.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; British phrase pronunciation checked against Pearson wordlist'},
+});
