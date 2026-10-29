@@ -52,3 +52,13 @@ it('keeps moderate adjective as the default and its verb as a separate recording
   expect(base.statusCode).toBe(200);expect(verb.statusCode).toBe(200);expect(createHash('sha256').update(base.rawPayload).digest('hex')).not.toBe(createHash('sha256').update(verb.rawPayload).digest('hex'));
  }finally{await app.close();db.close();}
 });
+
+it('keeps complex adjective as default and makes the noun pronunciation available',async()=>{
+ const db=openDb(':memory:');db.prepare("INSERT INTO words(headword,source) VALUES ('complex','test')").run();
+ const app=buildApp(db);try{
+  const meta=(await app.inject('/api/pronunciation?word=complex')).json();expect(meta.pronunciationNote).toContain('形容词');
+  expect(meta.variants.map((x:{variant:string})=>x.variant)).toEqual(['noun']);
+  const base=await app.inject('/api/pronunciation/audio?word=complex');const noun=await app.inject('/api/pronunciation/audio?word=complex&variant=noun');
+  expect(base.statusCode).toBe(200);expect(noun.statusCode).toBe(200);expect(createHash('sha256').update(base.rawPayload).digest('hex')).not.toBe(createHash('sha256').update(noun.rawPayload).digest('hex'));
+ }finally{await app.close();db.close();}
+});

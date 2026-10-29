@@ -369,3 +369,5 @@
 `batch-next7adj-recovery.json` 加入 appropriate、complex 的形容词美式录音；核对词典英语栏目、Commons 作者及许可、解码和哈希；尚未试听。complex 录音的词典标注与页面所列另一美式音标不同，已显式说明。
 
 `next7-moderate-variants.json` 加入 moderate 的形容词默认录音和动词单独录音；核对英文 Wiktionary 词性栏目、Commons 授权、解码及哈希，尚未人工试听。
+
+`next7-complex-noun.json` 为 complex 增加名词美式录音，保留已有形容词默认录音；词典关联、Commons 许可、解码和哈希已核对，尚未人工试听。
