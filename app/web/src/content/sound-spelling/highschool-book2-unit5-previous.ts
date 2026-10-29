@@ -51,12 +51,8 @@ export const highschoolBook2Unit5Previous: SoundSpellingLesson[] = [
         "hint": "词尾轻读。",
         "pairs": [
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

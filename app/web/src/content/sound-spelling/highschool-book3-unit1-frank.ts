@@ -59,7 +59,7 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
   },
   {
     "headword": "autonomous",
-    "ipa": "/ɔːˈtɑːnəməs/",
+    "ipa": "/ɔːˈtɒnəməs/",
     "uk": "/ɔːˈtɒnəməs/",
     "chunks": [
       {
@@ -77,7 +77,7 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
       },
       {
         "letters": "to",
-        "sound": "/tɑː/",
+        "sound": "/tɒ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
@@ -87,7 +87,7 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
           },
           {
             "letters": "o",
-            "sound": "/ɑː/"
+            "sound": "/ɒ/"
           }
         ],
         "tip": "此部分重读。"
@@ -120,12 +120,8 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
             "sound": "/m/"
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",
@@ -138,11 +134,15 @@ export const highschoolBook3Unit1Frank: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "重音在第二部分；英式该元音常读 /ɒ/。",
+    "variantNote": "以上对照采用剑桥词典英式读音；美式常见读法为 /ɑːˈtɑːnəməs/，也有词典记录词首 /ɔː/ 的美式读法。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/autonomous"
+      },
+      {
+        "label": "Merriam-Webster · 美式变体",
+        "url": "https://www.merriam-webster.com/dictionary/autonomous"
       }
     ],
     "review": {

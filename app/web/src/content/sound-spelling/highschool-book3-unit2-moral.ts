@@ -324,12 +324,8 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
             "sound": ""
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

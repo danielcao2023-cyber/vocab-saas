@@ -1,5 +1,5 @@
 import type {DB} from './db.ts';
-import identities from '../../shared/lesson-identities.json';
+import identities from '../../shared/lesson-identities.generated.ts';
 
 const index:Readonly<Record<string,{id:number;headword:string}>>=identities;
 /** Resolve only a catalog-mapped key whose indexed headword exactly matches the stored word. */

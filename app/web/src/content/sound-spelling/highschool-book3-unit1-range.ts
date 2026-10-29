@@ -213,12 +213,8 @@ export const highschoolBook3Unit1Range: SoundSpellingLesson[] = [
             "sound": ""
           },
           {
-            "letters": "o",
+            "letters": "ou",
             "sound": "/ə/"
-          },
-          {
-            "letters": "u",
-            "sound": ""
           },
           {
             "letters": "s",

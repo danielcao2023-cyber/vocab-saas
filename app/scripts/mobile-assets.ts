@@ -1,4 +1,4 @@
-import {makeLessonIdentityIndex} from './lesson-identity-index.ts';
+import {makeLessonIdentityIndex,lessonIdentityModule} from './lesson-identity-index.ts';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -9,7 +9,8 @@ import {createMobileSeed} from './mobile-seed.ts';
 import {packPronunciations} from './mobile-pronunciation-assets.ts';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const output=path.join(root,'mobile-public');
-if(JSON.stringify(JSON.parse(fs.readFileSync(path.join(root,'shared/lesson-identities.json'),'utf8')))!==JSON.stringify(makeLessonIdentityIndex(root)))throw Error('Lesson identity index is stale; run npx tsx scripts/lesson-identity-index.ts --write');
+const identityIndex=makeLessonIdentityIndex(root);
+if(JSON.stringify(JSON.parse(fs.readFileSync(path.join(root,'shared/lesson-identities.json'),'utf8')))!==JSON.stringify(identityIndex)||fs.readFileSync(path.join(root,'shared/lesson-identities.generated.ts'),'utf8')!==lessonIdentityModule(identityIndex))throw Error('Lesson identity index is stale; run npx tsx scripts/lesson-identity-index.ts --write');
 // The only generated directory removed here; never traverse the application data directory.
 fs.rmSync(output,{recursive:true,force:true});
 const assets=path.join(output,'offline');fs.mkdirSync(path.join(assets,'recordings'),{recursive:true});fs.mkdirSync(path.join(assets,'lessons'),{recursive:true});

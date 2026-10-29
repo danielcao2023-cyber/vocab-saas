@@ -1,6 +1,7 @@
-import {makeLessonIdentityIndex} from '../scripts/lesson-identity-index';
+import {makeLessonIdentityIndex,lessonIdentityModule} from '../scripts/lesson-identity-index';
 import {expect,it,vi} from 'vitest';
 import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {buildApp} from '../server/src/app';
 import {openDb} from '../server/src/db';
 import {installVocabulary,migrateVocabulary} from '../server/src/vocabulary-import';
@@ -29,7 +30,8 @@ it('index points only to matching canonical lesson identities and known keys',()
  for(const [key,item] of Object.entries(index) as [string,{id:number;headword:string}][]){expect(keys.has(key),key).toBe(true);const d=JSON.parse(fs.readFileSync(`data/lessons/${item.id}.json`,'utf8'));expect({id:d.wordId,headword:d.headword},key).toEqual(item);}
 });
 
-it('generated index stays synchronized with the catalog, curated aliases and reviewed lesson resources',()=>{expect(JSON.parse(fs.readFileSync('shared/lesson-identities.json','utf8'))).toEqual(makeLessonIdentityIndex());});
+it('generated index stays synchronized with the catalog, curated aliases and reviewed lesson resources',()=>{const index=makeLessonIdentityIndex();expect(JSON.parse(fs.readFileSync('shared/lesson-identities.json','utf8'))).toEqual(index);expect(fs.readFileSync('shared/lesson-identities.generated.ts','utf8')).toBe(lessonIdentityModule(index));});
+it('loads the production identity resolver using the actual tsx runtime',()=>{expect(execFileSync('npx',['tsx','-e',"import('./server/src/lesson-identity.ts').then(m=>console.log(typeof m.canonicalLessonId))"],{encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim()).toBe('function');});
 it('offline rejects unrelated numeric content when the key is absent or belongs to another word',async()=>{
  for(const [word,key] of [['title','unmapped'],['different','title']]){const source=fixture(1654,word,key);const db=await openBrowserDatabase(source.serialize());source.close();try{const assetFetch=vi.fn(async(url:any)=>{const file='data/lessons/'+String(url).replace('/offline/lessons/','');return fs.existsSync(file)?Response.json(JSON.parse(fs.readFileSync(file,'utf8'))):new Response('',{status:404});});const runtime=createLocalRuntime({db,save:async()=>{},assetFetch,recordings:{},now:()=>T});expect((await runtime.fetch('/api/word/1654/lesson')).status).toBe(503);}finally{db.close();}}
 });
