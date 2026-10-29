@@ -445,3 +445,12 @@ addSourcedPhrase('concerned about','/kənˈsɜːnd əbaʊt/',[
  ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
  ch('bout','/baʊt/','none',[{letters:'b',sound:'/b/'},{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
 ],'Burlington Books Learning Skills 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/LearningSkills1_AppendBas.pdf');
+addSourcedPhrase('now that','/ˈnaʊ ðət/',[
+ ch('now ','/naʊ/','primary',[{letters:'n',sound:'/n/'},{letters:'ow',sound:'/aʊ/'},{letters:' ',sound:''}]),
+ ch('that','/ðət/','none',[{letters:'th',sound:'/ð/'},{letters:'a',sound:'/ə/'},{letters:'t',sound:'/t/'}]),
+],'Cambridge Think 3 第二版词表','https://www.oxico.sk/files/think_2e_3_slovnik.pdf');
+addSourcedPhrase('in despair','/ɪn dɪˈspeə/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('de','/dɪ/','none',[{letters:'d',sound:'/d/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('spair','/speə/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'air',sound:'/eə/'}]),
+],'Azerbaijan Grade 10 英语教材词表','https://www.trims.edu.az/noduploads/book/quot-english-quot-ingilis-dili-asas-xarici-dil-fanni-uzra-10-cu-sinif-ucun-darslik-1539604664-369.pdf');

@@ -168,3 +168,9 @@ it.each([['adapt to','/əˈdæpt tə/'],['aware of','/əˈweər əv/'],['concern
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['now that','/ˈnaʊ ðət/'],['in despair','/ɪn dɪˈspeə/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
