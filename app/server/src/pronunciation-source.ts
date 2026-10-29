@@ -79,6 +79,12 @@ function descriptionContradictsFilename(title: string, description: string): boo
   // Unknown scripts or unusual markup require separate review rather than a lossy comparison.
   if (!/^[a-z0-9 ._'-]+$/i.test(filenameWord) || !/^[a-z0-9 ._'-]+$/i.test(describedWord)) return true;
   const filename = comparableWord(filenameWord), described = comparableWord(describedWord);
+  const posSuffix = filename.match(/^(.*)-(noun|verb)$/);
+  if (posSuffix && posSuffix[1] === described) {
+    // Only accept the suffix when the source description explicitly confirms the same part of speech.
+    const describedPos = description.match(/["'“‘][^"'”’]+["'”’]\s*\((noun|verb)\)/i)?.[1]?.toLowerCase();
+    return describedPos !== posSuffix[2];
+  }
   // A numbered Commons version is not part of the spoken word; only accept it
   // when the explicit description still exactly matches the unnumbered stem.
   return filename !== described && filename.replace(/ [0-9]+$/, '') !== described;

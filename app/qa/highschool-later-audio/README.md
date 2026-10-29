@@ -351,3 +351,5 @@
 `batch-next5-recovery.json` 补入 prospect（名词）、pedal（名词和动词）、output、abstract（名词）、implement（动词）真人录音；核对英/法 Wiktionary 英语栏目、Commons 许可、音频解码及哈希，尚未逐条试听。`next6-candidates.json` 记录下一批待独立核对的异读候选。
 
 `next6-transport-protest-variants.json` 增加 transport、protest 的名词及动词美式录音；核对词典栏目及 Commons 授权，校验解码与哈希，尚未人工试听。`next7-candidates.json` 记录下一批待独立核对的录音候选。
+
+`next6-permit-abuse-variants.json` 增加 permit、abuse 的名词和动词美式录音：核对英文词典、Commons 授权、解码及哈希，尚未人工试听。Commons 文件名带词性且描述明确匹配时，校验器允许通过；词性或词语矛盾继续拒绝。`next7-candidate-review.md` 记录下一批待独立核验候选及多个可能读音的限制。
