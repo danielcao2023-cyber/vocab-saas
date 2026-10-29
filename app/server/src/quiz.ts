@@ -3,7 +3,7 @@ import { Rating, State } from 'ts-fsrs';
 import { review, type CardRow } from './study.ts';
 import { shDayStart } from './time.ts';
 import { settings as readSettings } from './settings.ts';
-import { mainHeadwords, maskAnswer, normalizeQuotes } from './text.ts';
+import { mainHeadwords, maskAnswer, normalizeQuotes, hasDictionaryPlaceholder } from './text.ts';
 export type Qtype = 'flip' | 'listen_choice' | 'meaning_choice' | 'spell' | 'dictation';
 export type Context = 'study' | 'practice';
 export type Rng = () => number;
@@ -85,6 +85,8 @@ function renderIssue(db: DB, issue: Issue): Question {
   return { id: issue.id, qtype: issue.qtype, ...(issue.qtype === 'meaning_choice' ? { prompt: promptOf(answer) } : {}), options: words.map(w => ({ wordId: w.id, text: issue.qtype === 'listen_choice' ? maskAnswer(first(w.meaning_zh), answer.headword) : w.headword })) };
 }
 export function issueQuestion(db: DB, card: QuizCard, now = new Date(), context: Context = 'study', rng: Rng = Math.random, forced?: Qtype): Question | null {
+  const word=db.prepare('SELECT headword FROM words WHERE id=?').get(card.word_id) as {headword:string};
+  if(hasDictionaryPlaceholder(word.headword))return null;
   const existing = db.prepare(`SELECT * FROM question_issues WHERE card_id=? AND context=? AND answered_at IS NULL AND issued_at>=? AND issued_at<? ORDER BY id DESC LIMIT 1`).get(card.id, context, shDayStart(now).toISOString(), new Date(shDayStart(now).getTime() + 86400_000).toISOString()) as Issue | undefined;
   if (existing) return renderIssue(db, existing);
   // 另一个 context（学习/练错词）今天还有没答的选择题：/api/review 会拒绝翻面自评，所以这里也出同一题型的选择题，避免卡住
@@ -102,10 +104,13 @@ function openQuestion(db: DB, cardId: number, now: Date, context?: Context) {
 }
 /** 该卡今天是否有未作答的选择题（不分 context；给了 context 只看该 context）。有就必须走 /api/answer，由服务端判对错 */
 export function hasOpenQuestion(db: DB, cardId: number, context?: Context, now = new Date()) {
+  const word=db.prepare('SELECT w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?').get(cardId) as {headword:string}|undefined;
+  if(word&&hasDictionaryPlaceholder(word.headword))return false;
   return !!openQuestion(db, cardId, now, context);
 }
 export function availableQtypes(db: DB, card: QuizCard, cards: QuizCard[]): Qtype[] {
   const types: Qtype[] = ['flip'];
+  if(hasDictionaryPlaceholder((db.prepare('SELECT headword FROM words WHERE id=?').get(card.word_id) as {headword:string}).headword))return types;
   if (card.state === State.New) return types;
   const choicesEnabled = readSettings(db).choice_enabled !== '0';
   for (const type of ['listen_choice','meaning_choice'] as const) if (choicesEnabled && buildQuestion(db, card, type, () => .5)) types.push(type);
@@ -126,6 +131,7 @@ export function answerQuestion(db: DB, questionId: number, choiceWordId: number,
     if (!(JSON.parse(issue.options_json) as number[]).includes(chosenId)) throw new QuizError('choice not in options');
     if (!duplicate && db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId)) throw new QuizError('answerId already used', 409);
     const expected = db.prepare('SELECT headword,phonetic,meaning_zh,meaning_source FROM words WHERE id=?').get(issue.answer_word_id) as Pick<Word,'headword'|'phonetic'|'meaning_zh'|'meaning_source'>;
+    if(!duplicate&&hasDictionaryPlaceholder(expected.headword))throw new QuizError('题目已更新，请重新开始。',409);
     const selected = db.prepare('SELECT headword,meaning_zh FROM words WHERE id=?').get(chosenId) as Word;
     const correct = chosenId === issue.answer_word_id;
     let due: string;

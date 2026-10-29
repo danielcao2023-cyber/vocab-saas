@@ -3,6 +3,10 @@ import {host,flush} from './p2-host';
 import type {LearningCard} from '../shared/learning';
 const card:LearningCard={issueId:'issue-1',wordId:5,mode:'dictation',patterns:['_____'],audioWord:'above',options:[],assisted:false};
 afterEach(()=>vi.unstubAllGlobals());
+it('explains recognition-only assessment on placeholder cards but not ordinary cards',async()=>{
+ const ui=host('web/src/components/FocusStudyCard.vue',{card:{...card,mode:'recognize',headword:'owe sth. to sb.',options:[]},answer:'',feedback:null,busy:false,audioFailed:null});
+ try{await flush();expect(ui.text()).toContain('仅评估认词，暂不测拼写和听写');ui.updateProps({card:{...card,mode:'recognize',headword:'above',options:[]}});await flush();expect(ui.text()).not.toContain('仅评估认词');}finally{ui.app.unmount();}
+});
 it('shows only letter underlines for dictation and offers word learning without exposing the answer',async()=>{
  const learn=vi.fn(),ui=host('web/src/components/FocusStudyCard.vue',{card,answer:'',feedback:null,busy:false,audioFailed:null,onLearn:learn});
  try{await flush();expect(ui.all(n=>n.tag==='input')).toHaveLength(5);expect(ui.text()).not.toContain('above');expect(ui.text()).not.toContain('本卡');expect(ui.text()).not.toContain('/3');

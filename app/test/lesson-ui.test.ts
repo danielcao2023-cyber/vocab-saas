@@ -16,6 +16,13 @@ const response=(value:unknown)=>new Response(JSON.stringify(value));
 beforeEach(()=>{mockAudio();});
 afterEach(()=>{vi.unstubAllGlobals();});
 
+it('explains recognition-only assessment without presenting disabled modes as due',async()=>{
+ vi.stubGlobal('fetch',vi.fn(async()=>response({status:'missing'})));
+ const detail={...detailFor(12,'owe sth. to sb.'),capabilityEvidence:[{mode:'recognize',delayedSuccesses:1},{mode:'spell',delayedSuccesses:0},{mode:'dictation',delayedSuccesses:0}]};
+ const ui=host('web/src/views/WordView.vue',{wordId:12,initial:detail});
+ try{await flush();expect(ui.text()).toContain('仅评估认词，暂不测拼写和听写');expect(ui.text()).not.toContain('汉译英：仍需跨日验证');expect(ui.text()).not.toContain('听写：仍需跨日验证');}finally{ui.app.unmount();}
+});
+
 it('loads a lesson on demand without blocking the word or audio, then replaces old content',async()=>{
   let resolveLesson!:(r:Response)=>void;
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>url==='/api/word/12/lesson'

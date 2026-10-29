@@ -60,11 +60,12 @@ export function capabilityNeeds(db:DB,wordId:number,now:Date):CapabilityNeed[]{
  });
 }
 export function readWordEvidence(db:DB,wordId:number,now:Date):WordEvidenceState {
- const cards=evidenceCards(db,wordId),contact=!!db.prepare('SELECT 1 FROM learning_events WHERE word_id=? LIMIT 1').get(wordId)||cards.some(c=>c.reps>0);
+ const headword=(db.prepare('SELECT headword FROM words WHERE id=?').get(wordId) as {headword:string}).headword,limited=hasDictionaryPlaceholder(headword);
+ const all=evidenceCards(db,wordId),cards=all.filter(c=>!limited||c.mode==='recognize'),contact=!!db.prepare('SELECT 1 FROM learning_events WHERE word_id=? LIMIT 1').get(wordId)||all.some(c=>c.reps>0);
  const priority=cards.some(c=>!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2);
- const stable=cards.length===3&&!priority&&cards.every(c=>c.delayed_successes>0&&JSON.parse(c.recovery_days).length>=2&&(c.mode==='recognize'||c.scheduled_days>=7));
+ const stable=!limited&&cards.length===3&&!priority&&cards.every(c=>c.delayed_successes>0&&JSON.parse(c.recovery_days).length>=2&&(c.mode==='recognize'||c.scheduled_days>=7));
  const due=contact?capabilityNeeds(db,wordId,now).map(n=>n.dueAt).sort()[0]??null:null;
- void now;return {stage:!contact?'new':cards.some(c=>c.delayed_successes>0)?'review':'consolidating',priority,stable,dueAt:due,weakModes:MODES.filter(mode=>{const c=cards.find(c=>c.mode===mode);return !c||c.delayed_successes===0||!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2;})};
+ void now;return {stage:!contact?'new':cards.some(c=>c.delayed_successes>0)?'review':'consolidating',priority,stable,dueAt:due,weakModes:MODES.filter(mode=>(!limited||mode==='recognize')&&(()=>{const c=cards.find(c=>c.mode===mode);return !c||c.delayed_successes===0||!!c.last_failure_at&&JSON.parse(c.recovery_days).length<2;})())};
 }
 /** Compatibility book is a projection, never a scheduling input in policy 3. */
 export function projectEvidence(db:DB,wordId:number,now:Date){const e=readWordEvidence(db,wordId,now);const book=e.stage==='new'?'new':e.stable?'mastered':e.priority||e.stage==='consolidating'?'unfamiliar':'familiar';db.prepare('UPDATE learning_words SET book=?,due=?,last_at=? WHERE word_id=?').run(book,e.dueAt??nextDay(now),now.toISOString(),wordId);return book;}

@@ -10,6 +10,7 @@ import SpeakButton from '../components/SpeakButton.vue';
 import ExplainPanel from '../components/ExplainPanel.vue';
 import StatusChip from '../components/StatusChip.vue';
 import SenseLesson from '../components/SenseLesson.vue';
+import {hasDictionaryPlaceholder} from '../../../server/src/text';
 
 const props=defineProps<{wordId:number;initial?:WordDetail;automaticBooks?:boolean}>();
 defineEmits<{back:[]}>();
@@ -23,6 +24,8 @@ const pronunciationAccent=ref<'us'|'uk'|null>(null);
 const loadedLesson=ref<WordLesson|null>(null),lessonFailed=ref(false);
 let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
 const card=computed(()=>detail.value!.word);
+const recognitionOnly=computed(()=>hasDictionaryPlaceholder(detail.value?.word.headword??''));
+const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!recognitionOnly.value||e.mode==='recognize')??[]);
 // The response is fetched independently; never show a lesson for a different card.
 const lesson=computed(()=>loadedLesson.value?.wordId===detail.value?.word.id
   &&loadedLesson.value?.headword===detail.value?.word.headword?loadedLesson.value:null);
@@ -90,7 +93,8 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
     <button type="button" class="back link" @click="$emit('back')">{{ COPY.back }}</button>
     <div v-if="detail" class="wdetail lesson-layout">
       <article class="card wd-main">
-        <details v-if="detail.capabilityEvidence" class="evidence-detail"><summary>认义、拼写与听写的学习情况</summary><p v-for="e in detail.capabilityEvidence" :key="e.mode" class="small muted">{{ {recognize:'认义',spell:'汉译英',dictation:'听写'}[e.mode] }}：{{ e.delayedSuccesses?'已有延迟记住的记录':'仍需跨日验证' }}<span v-if="e.lastFailureAt"> · {{ e.delayedSuccesses<2?'需要继续巩固':'已复查' }}</span><span v-if="e.verificationDue"> · {{ date(e.verificationDue) }}起复查</span></p></details>
+        <p v-if="recognitionOnly" class="small muted">本词条仅评估认词，暂不测拼写和听写。</p>
+        <details v-if="detail.capabilityEvidence" class="evidence-detail"><summary>{{ recognitionOnly?'认词的学习情况':'认义、拼写与听写的学习情况' }}</summary><p v-for="e in visibleEvidence" :key="e.mode" class="small muted">{{ {recognize:'认义',spell:'汉译英',dictation:'听写'}[e.mode] }}：{{ e.delayedSuccesses?'已有延迟记住的记录':'仍需跨日验证' }}<span v-if="e.lastFailureAt"> · {{ e.delayedSuccesses<2?'需要继续巩固':'已复查' }}</span><span v-if="e.verificationDue"> · {{ date(e.verificationDue) }}起复查</span></p></details>
         <div class="meta">
           <span v-if="detail.word.source==='kb2022'" class="tag" :class="{core:detail.word.level==='三级'}">{{ detail.word.level==='三级'?COPY.core:COPY.level2 }}</span>
           <StatusChip :status="detail.status" />

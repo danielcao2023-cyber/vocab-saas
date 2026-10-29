@@ -6,7 +6,7 @@ import type { DB } from './db.ts';
 import { freshWordId } from './learn-order.ts';
 import { statusKey } from './word-status.ts';
 import { shDay, shDayStart } from './time.ts';
-import { mainHeadwords, normalizeQuotes } from './text.ts';
+import { mainHeadwords, normalizeQuotes, hasDictionaryPlaceholder } from './text.ts';
 import { setting } from './settings.ts';
 import { recomputeDailyStats, streak } from './stats.ts';
 import { issueQuestion, availableQtypes, type Qtype, type Context, type Rng } from './quiz.ts';
@@ -47,6 +47,7 @@ export const CARD_SELECT = `SELECT c.*, w.headword, w.phonetic, w.pos, w.meaning
 
 /** 到期判定：首页计数和出卡用同一个条件 */
 export const DUE_WHERE = `(c.state<>${State.New} OR c.mode<>'recognize') AND c.due <= ?`;
+function eligibleDue(db:DB,now:Date){return (db.prepare(`${CARD_SELECT} WHERE ${DUE_WHERE} ORDER BY c.due,c.id`).all(now.toISOString()) as (CardRow & {headword:string})[]).filter(c=>c.mode==='recognize'||!hasDictionaryPlaceholder(c.headword));}
 
 export function reviewedToday(db: DB, now: Date): number {
   return (db.prepare(`SELECT COUNT(*) n FROM review_logs WHERE state<>${State.New} AND COALESCE(counted,1)<>0 AND review_at >= ? AND review_at<=?`).get(shDayStart(now).toISOString(), now.toISOString()) as { n: number }).n;
@@ -54,7 +55,7 @@ export function reviewedToday(db: DB, now: Date): number {
 
 /** 当前可出的复习数和新词数（首页与 nextCard 共用同一函数） */
 export function queueState(db: DB, now = new Date()) {
-  const due = (db.prepare(`SELECT COUNT(*) n FROM cards c WHERE ${DUE_WHERE}`).get(now.toISOString()) as { n: number }).n;
+  const due = eligibleDue(db,now).length;
   const reviewLeft = Math.max(0, setting(db, 'review_limit', 200) - reviewedToday(db, now));
   const newQuota = Math.max(0, setting(db, 'new_per_day', 10) - newIntroducedToday(db, now));
   const unseen = (db.prepare(`SELECT COUNT(*) n FROM words w WHERE NOT EXISTS (SELECT 1 FROM cards c WHERE c.word_id=w.id AND c.mode='recognize' AND c.state<>${State.New})`).get() as { n: number }).n;
@@ -71,7 +72,7 @@ export function todaySummary(db: DB, now = new Date()) {
 /** 下一张卡：先到期复习，再新词。prefer='new' 时先新词。 */
 export function nextCard(db: DB, now = new Date(), prefer: 'review' | 'new' = 'review') {
   const q = queueState(db, now);
-  const due = () => q.review > 0 ? db.prepare(`${CARD_SELECT} WHERE ${DUE_WHERE} ORDER BY c.due LIMIT 1`).get(now.toISOString()) : undefined;
+  const due = () => q.review > 0 ? eligibleDue(db,now)[0] : undefined;
   const fresh = () => {
     if (q.new <= 0) return undefined;
     let row = db.prepare(`${CARD_SELECT} WHERE c.mode='recognize' AND c.state=${State.New} ORDER BY c.id LIMIT 1`).get();
@@ -114,6 +115,7 @@ export function review(db: DB, cardId: number, rating: Grade, now = new Date(), 
   if (![Rating.Again, Rating.Hard, Rating.Good, Rating.Easy].includes(rating)) throw new Error('bad rating');
   const row = db.prepare('SELECT * FROM cards WHERE id=?').get(cardId) as CardRow | undefined;
   if (!row) throw new Error('card not found');
+  if(row.mode!=='recognize'&&hasDictionaryPlaceholder((db.prepare('SELECT headword FROM words WHERE id=?').get(row.word_id) as {headword:string}).headword))throw new Error('此词条仅支持认词练习');
   if (extra.durationMs !== undefined && (!Number.isFinite(extra.durationMs) || extra.durationMs < 0)) throw new Error('bad durationMs');
   const context = extra.context ?? 'study';
   if (!['study','practice'].includes(context)) throw new Error('bad context');
@@ -172,6 +174,7 @@ export function checkSpelling(db: DB, cardId: number, answer: string, now = new 
   const row = db.prepare(`SELECT c.mode, w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string } | undefined;
   if (!row) throw new Error('card not found');
   if (row.mode === 'recognize') throw new Error('not a spelling card');
+  if(hasDictionaryPlaceholder(row.headword)&&!(answerId&&db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId)))throw new Error('此词条仅支持认词练习');
   const correct = acceptedSpellings(row.headword).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
   const r = review(db, cardId, rating as Grade, now, { ...extra, qtype: row.mode, answer, correct, answerId });
