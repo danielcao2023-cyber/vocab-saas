@@ -609,3 +609,9 @@ addSourcedPhrase('take out a loan','/teɪk ˌaʊt ə ˈləʊn/',[
  ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
  ch('loan','/ləʊn/','primary',[{letters:'l',sound:'/l/'},{letters:'oa',sound:'/əʊ/'},{letters:'n',sound:'/n/'}]),
 ],'Business in Context 3 词表','https://www.scook.at/cdn_proxy/8e31087a-04df-4a3c-89b8-bf45619447a4/0451750101_0451510101_WL_Lernwortschatz_gesamt.pdf');
+addSourcedPhrase('daily routine','/ˌdeɪli ruːˈtiːn/',[
+ ch('dai','/deɪ/','secondary',[{letters:'d',sound:'/d/'},{letters:'ai',sound:'/eɪ/'}]),
+ ch('ly ','/li/','none',[{letters:'l',sound:'/l/'},{letters:'y',sound:'/i/'},{letters:' ',sound:''}]),
+ ch('rou','/ruː/','none',[{letters:'r',sound:'/r/'},{letters:'ou',sound:'/uː/'}]),
+ ch('tine','/tiːn/','primary',[{letters:'t',sound:'/t/'},{letters:'i',sound:'/iː/'},{letters:'n',sound:'/n/'},{letters:'e',sound:''}]),
+],'English in Context 5 词表','https://www.scook.at/cdn_proxy/7cda8b21-2a47-4e24-a477-d330c8fd04d7/234215_0470590101_47058_EIC_5_Alphabetical_word_list.pdf');

@@ -299,3 +299,10 @@ it('matches Business in Context pronunciation and stress for take out a loan',()
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('take out a loan');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','secondary','none','primary']);
 });
+
+it('matches English in Context pronunciation and stress for daily routine',()=>{
+ const lesson=getSoundSpellingLesson('daily routine');
+ expect(lesson?.ipa).toBe('/ˌdeɪli ruːˈtiːn/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('daily routine');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','none','primary']);
+});
