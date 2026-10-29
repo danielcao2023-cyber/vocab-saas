@@ -165,8 +165,9 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
       // A published editorial correction is conditional: never replace core or learner-edited content.
       if(entry.headwordCorrection){
         const isBalanceCorrection=entry.key==='keep balance' && entry.headword==='keep a balance' && entry.headwordCorrection.expected==='keep balance';
+        const isNaadamCorrection=entry.key==='the Naadam festival' && entry.headword==='the Naadam Festival' && entry.headwordCorrection.expected==='the Naadam festival';
         const changed=db.prepare("UPDATE words SET headword=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND headword=? AND NOT EXISTS (SELECT 1 FROM words other WHERE (other.source='vocabulary' OR ?=1) AND other.headword=? AND other.id<>?)")
-          .run(entry.headword,wordId,entry.headwordCorrection.expected,Number(isBalanceCorrection),entry.headword,wordId);
+          .run(entry.headword,wordId,entry.headwordCorrection.expected,Number(isBalanceCorrection||isNaadamCorrection),entry.headword,wordId);
         // Preserve the answer shown to a learner before this specific correction.
         // Open spelling/dictation issues normally carry an empty options array.
         if(changed.changes && isBalanceCorrection)
