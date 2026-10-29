@@ -21,3 +21,16 @@
 - [princess](https://dictionary.cambridge.org/pronunciation/english/princess)：剑桥英美两栏都列前、后重音，原说明将其分别归于英、美常见，词典未提供频率数据，表述证据不足；改为两种读法均可用于英美，保留示例分段与 uk 字段。
 
 累计核查 14/25 条，其余 11 条尚未逐项核验；真实 getter 定向、结构及覆盖测试 3 文件 6 项通过。审计只覆盖上述音标及主重音，未核查所有字母对照与录音。
+
+第三批，余下 11 项均尝试核查，其中 9 项已确认范围内的现有读法与重音有词典依据：
+
+- [export](https://dictionary.cambridge.org/pronunciation/english/export)：所列美式与英式动词读法及英国名词的重音与现有说明一致。
+- [buffet](https://dictionary.cambridge.org/pronunciation/english/buffet)：所列名词与动词英美读法一致。
+- [vaccine](https://dictionary.cambridge.org/us/pronunciation/english/vaccine)：英式首、美式后重音与所列一致。
+- [complex](https://dictionary.cambridge.org/us/pronunciation/english/complex)：形容词有美式首/后重音和英式首/后重音，不同词性应区分；同页面美国词典收录 /kəmˈpleks/，当前示例和说明有依据。
+- [advertisement](https://dictionary.cambridge.org/pronunciation/english/advertisement)：英美重音位置与所列一致。
+- [realistic](https://dictionary.cambridge.org/us/pronunciation/english/realistic)：英美主重音均在 lis，算法因英式双元音与美式两个元音误报；保持原样。
+- [the Renaissance](https://dictionary.cambridge.org/us/pronunciation/english/renaissance)：英式后、美式首重音一致；定冠词具体弱读依语境。
+- [worldwide](https://dictionary.cambridge.org/us/pronunciation/english/worldwide) 和 [premier](https://dictionary.cambridge.org/us/pronunciation/english/premier)：所列英美重音均与剑桥基础词典示例一致，不排除其他词典所列变体。
+
+有两项未能本轮独立确认完整读音：be attracted to 的主重音位置因不同 IPA 中空格造成假阳性，但未找到完整词组词典音标，不能仅由单词机械拼接判定；Renoir 的现有引用本轮无法打开、搜索未找到可直接核验该词完整英美音标的内容，仍待进一步核对，均未改。累计 25 候选：23 个已核查相关主重音，2 个完整读音待核；该数不包括重音以外的全部内容。真实 getter、结构及覆盖测试 3 文件 6 项通过。未处理录音。

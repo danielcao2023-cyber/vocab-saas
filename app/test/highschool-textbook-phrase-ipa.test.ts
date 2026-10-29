@@ -1,0 +1,4 @@
+import {expect,it} from 'vitest';
+import fs from 'node:fs';
+import {createLessonReader,validateLesson} from '../server/src/lessons';
+it.each([[2782,'daily routine','/ˌdeɪli ruːˈtiːn/','https://www.pearson.pl/fileadmin/poland/english/Documents/English_Class_A1P_SB_listy_slow.pdf'],[3196,'as far as I know','/əz fɑː əz aɪ ˈnəʊ/','https://bbspainresources.s3.eu-central-1.amazonaws.com/LearningSkills1_AppendGal.pdf']] as const)('supplies the directly sourced pronunciation for %s %s',(id,headword,ipa,url)=>{const word={id,headword},raw=JSON.parse(fs.readFileSync(`data/lessons/${id}.json`,'utf8'));expect(validateLesson(raw,word).ok).toBe(true);const result=createLessonReader()(word);expect(result.status).toBe('ready');expect(result.lesson?.pronunciation.ipa).toBe(ipa);expect(result.lesson?.pronunciation.sourceIds).toContain('phrase-ipa');expect(result.lesson?.sources.some(s=>s.id==='phrase-ipa'&&s.url===url)).toBe(true);});
