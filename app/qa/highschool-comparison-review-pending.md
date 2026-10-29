@@ -56,4 +56,6 @@
 
 后续核验：2066–2090、2092–2095，依据见 `highschool-comparison-audits/batch-2066-2080.json`、`batch-2081-2095.json`；2087 后续已核验，见 `batch-1735-2087.json`。2091 后续已核验，见 `batch-2091.json`。此前没有对比项的 1735 已补 Iceland 与 island 辨析，同见 `batch-1735-2087.json`。
 
-后续核验：2096–2110、2114–2125，依据见 `highschool-comparison-audits/batch-2096-2110.json`、`batch-2111-2125.json`；2111 无对比项，2112 和 2113 的专名来源待核。
+后续核验：2096–2110、2114–2125，依据见 `highschool-comparison-audits/batch-2096-2110.json`、`batch-2111-2125.json`；2111 无对比项，2112 和 2113 后续已核验，见 `batch-2112-2113.json`。
+
+后续核验：2126–2155，逐项依据见 `highschool-comparison-audits/batch-2126-2140.json`、`batch-2141-2155.json`；仅覆盖对比义项及例句。
