@@ -2,7 +2,7 @@ import type {SoundSpellingLesson} from './types';
 export const highschoolThemeRemote: SoundSpellingLesson[] = [{
  headword:'theme park',ipa:'/ˈθiːm pɑːk/',uk:'/ˈθiːm pɑːk/',
  chunks:[
-  {letters:'theme ',sound:'/ˈθiːm /',stress:'primary',hint:'主要重音。',pairs:[{letters:'th',sound:'/θ/'},{letters:'e',sound:'/iː/'},{letters:'m',sound:'/m/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'th 对应 /θ/，词尾 e 不单独发音。'},
+  {letters:'theme ',sound:'/ˈθiːm /',stress:'primary',hint:'主要重音。',pairs:[{letters:'th',sound:'/θ/'},{letters:'e',sound:'/iː/'},{letters:'m',sound:'/m/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'th 对应 /θ/；theme 的两个 e 构成 e-e 拼写，对应 /iː/。'},
   {letters:'park',sound:'/pɑːk/',stress:'none',hint:'词组第二部分。',pairs:[{letters:'p',sound:'/p/'},{letters:'a',sound:'/ɑː/'},{letters:'r',sound:''},{letters:'k',sound:'/k/'}],tip:'该英式读法中 r 不单独发音。'}
  ],anchor:{text:'主题公园：按 theme + park 记住完整词组。'},variantNote:'这里采用牛津词典列出的英式读法；美式 park 通常带 r 音。现有录音尚未试听核对。',
  sources:[{label:'Oxford Learner’s Dictionaries · theme park',url:'https://www.oxfordlearnersdictionaries.com/us/definition/english/theme-park'}],review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex phoneme/letter alignment'}

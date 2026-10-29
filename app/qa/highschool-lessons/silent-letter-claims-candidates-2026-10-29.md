@@ -24,3 +24,11 @@
 - emerge 已解释末尾 g 在 e 前为 /dʒ/，release 的 ea 对应 /iː/ 且末尾 e 不单独发音；本轮保留原文。
 
 真实 getter、元音组合、结构与覆盖测试 4 文件 12 项通过；检查范围只限上述表述，其他候选仍待核，未处理录音。
+
+第三批检查 athlete、compete、estate、theme park、decline、dedicate、tolerate、episode：
+
+- athlete、compete 的 lete/pete 的两个 e 补充为 e-e 组合而非仅解释末 e 不单独发音，按[南非教育部课程](https://www.education.gov.za/Portals/0/Documents/Publications/EGRS/EGRP%202%20downloads/EFAL/Grade%203/Term%202/Grade%203%20Term%202%20Complete%20Lesson%20plan.pdf?ver=2025-09-30-003022-000)中的两个明确例子。
+- estate 增加 a-e 对应 /eɪ/，[英国政府 phonics 手册](https://files.eric.ed.gov/fulltext/ED472402.pdf) 明列该词；theme park 的 theme 增加 e-e 对应 /iː/，[西澳学校拼写计划](https://www.serpentineps.wa.edu.au/_files/ugd/fae298_d7c1dbd01e5f4f11823fa100d9d7e30c.pdf) 明列该词。保持原音标和配对。
+- decline、dedicate、tolerate、episode 本轮未找到足够直接的具体词形拼读来源，保留原说明，不能因此推断其说明完整。
+
+真实 getter、结构与覆盖测试 3 文件 8 项通过；未处理录音。

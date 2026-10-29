@@ -14,3 +14,10 @@ it('explains the role of final e without contradicting the pronunciation groups'
   expect(lesson.variantNote,word).toContain(fragment);
  }
 });
+
+it('explains cited split-vowel spellings in common words',()=>{
+ for(const [word,fragment] of [['athlete','e-e 拼写'],['compete','e-e 拼写'],['estate','a-e 拼写'],['theme park','e-e 拼写']]){
+  const lesson=getSoundSpellingLessons(word)[0];
+  expect([lesson.variantNote,...lesson.chunks.map(c=>c.tip)].join(' '),word).toContain(fragment);
+ }
+});

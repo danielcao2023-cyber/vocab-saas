@@ -3581,7 +3581,7 @@ export const expandedA: SoundSpellingLesson[] = [
       "sound": ""
      }
     ],
-    "tip": "lete 中第1个 e 对应 /iː/，第2个 e 不单独发音。"
+    "tip": "lete 中两个 e 构成 e-e 拼写，对应 /iː/；末尾 e 不单独发音。"
    }
   ],
   "anchor": {
@@ -10500,7 +10500,7 @@ export const expandedA: SoundSpellingLesson[] = [
       "sound": ""
      }
     ],
-    "tip": "pete 中第1个 e 对应 /iː/，第2个 e 不单独发音。"
+    "tip": "pete 中两个 e 构成 e-e 拼写，对应 /iː/；末尾 e 不单独发音。"
    }
   ],
   "anchor": {

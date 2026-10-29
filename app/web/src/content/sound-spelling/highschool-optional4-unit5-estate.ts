@@ -52,7 +52,7 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "重音在后部，词尾 e 不单独发音。",
+    "variantNote": "重音在后部；a 与末尾 e 构成 a-e 拼写，对应 /eɪ/，e 不单独发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
