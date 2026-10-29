@@ -1,5 +1,8 @@
 import type { DB } from './db.ts';
 import { mainHeadwords } from './text.ts';
+import { meaningsOverlap } from './quiz.ts';
+import { randomUUID } from 'node:crypto';
+import { CATALOG_ISSUE_REPLACED } from './learning/issue-cancellation.ts';
 
 /** Catalog structure imported from external source */
 export interface Catalog {
@@ -128,6 +131,7 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
 
   // Start transaction for atomicity
   const tx = db.transaction(() => {
+    const optionCorrections = new Map<number, {oldOption:string;newOption:string}>();
     // Upsert books
     for (const book of catalog.books) {
       db.prepare(
@@ -177,12 +181,13 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
       if(entry.meaningCorrection){
         const updated=db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
           .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
-        // Only repair the exact known malformed bagpipes text in open choice
-        // snapshots. Completed answers and user-edited meanings are untouched.
-        if(updated.changes&&entry.key==='bagpipes'&&entry.meaning==='风笛'&&entry.meaningCorrection.expected==='(also. 风笛'){
-          const pending=db.prepare("SELECT id,options_json FROM learning_issues WHERE mode='recognize' AND answered_at IS NULL AND answer_id IS NULL").all() as {id:string;options_json:string}[];
-          for(const issue of pending){try{const options=JSON.parse(issue.options_json);if(!Array.isArray(options))continue;let changed=false;for(const option of options)if(option&&option.id===wordId&&option.text===entry.meaningCorrection.expected){option.text=entry.meaning;changed=true;}if(changed)db.prepare('UPDATE learning_issues SET options_json=? WHERE id=?').run(JSON.stringify(options),issue.id);}catch{/* A malformed unrelated snapshot is not a reason to change it. */}}
-        }
+        // Recognition questions snapshot only the first line at issue time. Repair an
+        // unanswered snapshot only when the import changed this value or a prior
+        // catalog correction already installed exactly this value. The latter repairs
+        // snapshots left behind by an earlier upgrade while preserving user edits.
+        const oldOption=entry.meaningCorrection.expected.split('\n')[0],newOption=entry.meaning.split('\n')[0];
+        const alreadyCorrected=updated.changes?true:!!db.prepare("SELECT 1 FROM words WHERE id=? AND headword=? AND source='vocabulary' AND meaning_source='词库校订' AND meaning_flag IS NULL AND meaning_zh=?").get(wordId,entry.headword,entry.meaning);
+        if(alreadyCorrected&&oldOption!==newOption)optionCorrections.set(wordId,{oldOption,newOption});
       }
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
         .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
@@ -203,6 +208,35 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
            ON CONFLICT(book_id, unit_id, word_id) DO UPDATE SET
              position=excluded.position`
         ).run(membership.bookId, wordId, unitId, membership.position);
+      }
+    }
+
+    // Reissue rather than mutate an already displayed card: an old page may
+    // submit even an otherwise-valid choice after its meaning has changed.
+    if(optionCorrections.size){
+      const pending=db.prepare("SELECT * FROM learning_issues WHERE mode='recognize' AND answered_at IS NULL AND answer_id IS NULL").all() as {id:string;day:string;word_id:number;mode:string;options_json:string;issued_at:string;assisted:number}[];
+      for(const issue of pending){
+        let raw:unknown;try{raw=JSON.parse(issue.options_json);}catch{continue;}
+        if(!Array.isArray(raw)||raw.some(option=>!option||typeof option!=='object'||typeof option.id!=='number'||typeof option.text!=='string'))continue;
+        const options=raw.map(option=>{
+          if(!option||typeof option!=='object')return {option,changed:false};
+          const correction=optionCorrections.get(option.id);
+          return correction&&option.text===correction.oldOption?{option:{...option,text:correction.newOption},changed:true}:{option,changed:false};
+        });
+        if(!options.some(x=>x.changed))continue;
+        const correct=options.filter(x=>x.option?.id===issue.word_id);
+        if(correct.length!==1||typeof correct[0].option.text!=='string')continue;
+        // Prefer the correct answer and then untouched distractors; only remove
+        // overlaps involving a changed option, retaining the original display order.
+        const kept=[correct[0]];
+        const distractors=options.filter(x=>x!==correct[0]&&x.option?.id!==0).sort((a,b)=>Number(a.changed)-Number(b.changed));
+        for(const item of distractors){
+          if(typeof item.option?.text!=='string'||kept.some(k=>(item.changed||k.changed)&&meaningsOverlap(item.option.text,k.option.text)))continue;
+          kept.push(item);
+        }
+        const choices=options.filter(x=>x.option?.id===0||kept.includes(x)).map(x=>x.option);
+        const closed=db.prepare("UPDATE learning_issues SET answered_at=?,result_json=? WHERE id=? AND answered_at IS NULL AND answer_id IS NULL").run(new Date().toISOString(),CATALOG_ISSUE_REPLACED,issue.id);
+        if(closed.changes)db.prepare("INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,assisted) VALUES (?,?,?,?,?,?,?)").run(randomUUID(),issue.day,issue.word_id,issue.mode,JSON.stringify(choices),issue.issued_at,issue.assisted);
       }
     }
 
