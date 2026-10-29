@@ -113,3 +113,9 @@ it.each([['in addition','/ˌɪn əˈdɪʃn/'],['in other words','/ɪn ˈʌðə w
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['set an example','/ˌset ən ɪɡˈzɑːmpl/'],['in response to','/ɪn rɪˈspɒns tə/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

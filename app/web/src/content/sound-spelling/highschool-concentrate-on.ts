@@ -313,3 +313,16 @@ addSourcedPhrase('in other words','/ɪn ˈʌðə wɜːdz/',[
  ch('ther ','/ðə/','none',[{letters:'th',sound:'/ð/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:''},{letters:' ',sound:''}]),
  ch('words','/wɜːdz/','none',[{letters:'w',sound:'/w/'},{letters:'or',sound:'/ɜː/'},{letters:'d',sound:'/d/'},{letters:'s',sound:'/z/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('set an example','/ˌset ən ɪɡˈzɑːmpl/',[
+ ch('set ','/set/','secondary',[{letters:'s',sound:'/s/'},{letters:'e',sound:'/e/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('an ','/ən/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('e','/ɪ/','none',[{letters:'e',sound:'/ɪ/'}]),
+ {...ch('xam','/ɡzɑːm/','primary',[{letters:'x',sound:'/ɡz/'},{letters:'a',sound:'/ɑː/'},{letters:'m',sound:'/m/'}]),crossesStressBoundary:true},
+ ch('ple','/pl/','none',[{letters:'p',sound:'/p/'},{letters:'le',sound:'/l/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('in response to','/ɪn rɪˈspɒns tə/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('sponse ','/spɒns/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/s/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
