@@ -18,3 +18,12 @@ it('keeps each recovered English recording linked to its exact evidence and inta
  }
  }
 });
+
+it('keeps the consist verb recording and its public-domain author release intact',()=>{
+ const manifest=JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json',import.meta.url),'utf8'));
+ const batch=JSON.parse(fs.readFileSync(new URL('../qa/highschool-later-audio/batch-consist-recovery.json',import.meta.url),'utf8'));
+ expect(batch.added).toHaveLength(1);const entry=manifest.entries.consist;
+ expect(entry.license).toBe('Public domain (PD-self)');expect(entry.licenseUrl).toBe(`${entry.sourceUrl}#Licensing`);expect(entry.author).toBe('Dvortygirl');
+ expect(entry.pronunciationNote).toContain('动词');expect(recordingWordProblem('consist',decodeURIComponent(new URL(entry.sourceUrl).pathname.split('/wiki/')[1]),{sourceUrl:entry.sourceUrl,evidenceUrl:entry.evidenceUrl})).toBeUndefined();
+ expect(createHash('sha256').update(fs.readFileSync(new URL('../data/pronunciation/'+entry.file,import.meta.url))).digest('hex')).toBe(entry.sha256);
+});

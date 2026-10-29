@@ -361,3 +361,5 @@
 `next9-candidates.json` 中 contract 名词文件描述为 noun/verb，动词文件描述为 second verb pronunciation；虽词典栏目各有对应，现有元数据校验拒绝两者，保留待进一步核对，尚未接入。
 
 `next9-exploit-variants.json` 加入 exploit 的名词英式和动词美式录音，核对英文 Wiktionary 对应词性、Commons 许可及解码哈希；均尚未试听。
+
+`batch-consist-recovery.json` 加入 consist 动词真人录音；核对 Wiktionary 词性栏目、Commons 作者的 PD-self 声明、解码及哈希，尚未人工试听。
