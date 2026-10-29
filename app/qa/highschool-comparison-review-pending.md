@@ -19,3 +19,9 @@
 后续核验：4034、4035、4037–4040、4042 和 4046–4055。逐项依据见 `highschool-comparison-audits/batch-4034-remain.json`、`batch-4046-4055.json`；仅覆盖对比义项及例句，其他内容仍需审查。
 
 后续核验：4056–4068、4074–4076。逐项依据见 `highschool-comparison-audits/batch-4056-4062.json`、`batch-4063-4076.json`；本轮仅覆盖对比义项及例句。
+
+后续核验：1601–1620、3940–3946、4004–4006、4008–4010、4077–4090。逐项依据见 `highschool-comparison-audits/batch-1601-1610.json`、`batch-1611-1620.json`、`batch-3940-3946.json`、`batch-4004-4010.json`、`batch-4077-4085.json` 和 `batch-4086-4094.json`；仅覆盖对比义项及例句。
+
+后续核验：1621–1630、3947、3949、3952、3953、3955、3956，依据见 `highschool-comparison-audits/batch-1621-1630.json` 与 `batch-3947-3956.json`。3950、3951、3954 后续已核验并修正 3951 的例句，见 `batch-3950-3954.json`。
+
+后续核验：1631–1645，逐项依据见 `highschool-comparison-audits/batch-1631-1645.json`；仅覆盖对比义项和例句。

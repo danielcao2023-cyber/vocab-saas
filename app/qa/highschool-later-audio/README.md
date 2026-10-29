@@ -335,3 +335,7 @@
 `conduct-contrast-variants.json` 记录 conduct 动词与 contrast 名词、动词录音：词典英语栏目分别标注词性和口音，已校验 Commons 许可、音频解码和哈希；尚未人工试听。conduct 名词录音候选作者及来源信息不充分，暂未接入。
 
 `batch-tryout-recovery.json` 补入 try out 完整短语录音：核对英语 Wiktionary 关联、Commons 作者、许可、解码及哈希；口音未独立确认，尚未人工试听。
+
+`batch-next2-recovery.json` 补入 clap、decade、resign（动词）、drawer（抽屉）录音，核对词典英语栏目关联、Commons 作者及许可、解码和哈希；尚未逐条人工试听，口音未独立确认。
+
+`batch-next4-recovery.json` 补入 resource、clerk、essay、vase、polish、herb、finance 真人录音：核对法语 Wiktionary 英语栏目、Commons 授权、音频解码及哈希；录音未逐条试听，口音未独立确认。
