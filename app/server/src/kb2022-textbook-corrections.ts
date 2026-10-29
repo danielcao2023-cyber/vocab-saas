@@ -12,4 +12,5 @@ export const KB2022_TEXTBOOK_CORRECTIONS: Record<string,{expected:string;meaning
   "judge": {"expected":"n. 法官, 裁判员, 审判官, 鉴定人\nvt. 审理, 鉴定, 判断, 判决, 裁定\nvi. 下判断, 作评价","meaning":"vt. & vi. 评价；评判；判断\nn. 法官, 裁判员, 审判官, 鉴定人\nvt. 审理, 鉴定, 判断, 判决, 裁定\nvi. 下判断, 作评价"},
   "hug": {"expected":"n. 紧抱, 拥抱\nvt. 紧抱, 坚持, 使沾沾自喜","meaning":"vt. 拥抱；抱紧\nn. 紧抱, 拥抱\nvt. 紧抱, 坚持, 使沾沾自喜"},
   "normal": {"expected":"n. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的","meaning":"adj. 典型的；正常的；一般的\nn. 常态, 标准, 正常, 普通\nadj. 正常的, 正规的, 标准的, 师范的, 正态的"},
+  pepper: {"expected":"n. 胡椒粉, 胡椒, 辣椒","meaning":"n. 甜椒；灯笼椒；胡椒粉；胡椒；辣椒"},
 };
