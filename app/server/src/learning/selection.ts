@@ -2,7 +2,7 @@ import type {DB} from '../db.ts';
 import type {WordBook} from '../../../shared/learning.ts';
 import {selectedWordIds} from '../vocabulary-selection.ts';
 export interface LearningWord {id:number;headword:string;meaning_zh:string|null;phonetic:string|null;level:string|null;priority:number;freq_rank:number|null;source:string;meaning_source?:string|null;book:WordBook;due:string|null;initial_done:number;initial_errors:number;introduced_at:string|null;last_fail:string|null;day_errors:number;error_day:string;}
-export function learningWords(db:DB,now=new Date()):LearningWord[]{const ids=selectedWordIds(db,now);return (db.prepare(`SELECT w.*,COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) book,
+export function learningWords(db:DB,now=new Date(),includeAll=false):LearningWord[]{const ids=includeAll?null:selectedWordIds(db,now);return (db.prepare(`SELECT w.*,COALESCE(l.book,CASE WHEN c.state IS NULL OR c.state=0 THEN 'new' WHEN c.state IN (1,3) OR c.stability<7 THEN 'unfamiliar' WHEN c.stability<21 THEN 'familiar' ELSE 'mastered' END) book,
  COALESCE(l.due,(SELECT MIN(due) FROM cards WHERE word_id=w.id AND state<>0)) due,
  COALESCE(l.initial_done,CASE WHEN c.state>0 THEN 1 ELSE 0 END) initial_done,
  COALESCE(l.initial_errors,0) initial_errors,l.introduced_at,l.last_fail,COALESCE(l.day_errors,0) day_errors,COALESCE(l.error_day,'') error_day

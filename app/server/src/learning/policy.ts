@@ -35,7 +35,7 @@ export function upgradePlan(db:DB,now:Date){
  const day=shDay(now),plan=db.prepare('SELECT policy_version FROM learning_days WHERE day=?').get(day) as {policy_version:number}|undefined;
  if(!plan||plan.policy_version>=POLICY_VERSION)return;
  db.transaction(()=>{
-  const words=new Map(learningWords(db).map(w=>[w.id,w]));
+  const words=new Map(learningWords(db,now,true).map(w=>[w.id,w]));
   const entries=db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as {word_id:number;position:number;done:number;deferred:number;errors:number;assisted:number}[];
   for(const entry of entries){
    const w=words.get(entry.word_id);if(!w)continue;

@@ -53,14 +53,14 @@ function optionsFor(db:DB,w:LearningWord){
 }
 function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
- const patterns=[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[A-Za-z]/g,'_')))];
+ const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
   ...(issue.mode==='recognize'?{headword:w.headword}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null}:{audioWord:acceptedSpellings(shown)[0]})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
  const active=rows(db,summary.day).filter(w=>!w.done&&!w.deferred);if(!active.length)return {kind:'done',summary};
- const words=learningWords(db),byId=new Map(words.map(w=>[w.id,w]));
+ const words=learningWords(db,now,true),byId=new Map(words.map(w=>[w.id,w]));
  for(const entry of active)if(hasDictionaryPlaceholder(byId.get(entry.word_id)!.headword)){
   db.prepare("UPDATE learning_issues SET answered_at=? WHERE day=? AND word_id=? AND answered_at IS NULL AND mode<>'recognize'").run(now.toISOString(),summary.day,entry.word_id);
   entry.targets='[1,0,0]';entry.streaks='[0,0,0]';entry.last_mode=-1;
@@ -104,7 +104,7 @@ export function answerLearning(db:DB,input:LearningAnswer,now=new Date()):Learni
  const replay=db.prepare('SELECT * FROM learning_issues WHERE answer_id=?').get(input.answerId) as Issue|undefined;
  if(replay){if(replay.id!==input.issueId)throw new HttpError(409,'提交编号已经使用。');return JSON.parse(replay.result_json!);}
  if(db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(input.answerId))throw new HttpError(409,'提交编号已经使用。');
- const {issue,entry}=activeIssue(db,input.issueId,now),w=learningWords(db).find(w=>w.id===issue.word_id)!;
+ const {issue,entry}=activeIssue(db,input.issueId,now),w=learningWords(db,now,true).find(w=>w.id===issue.word_id)!;
  if(input.durationMs!==undefined&&(!Number.isFinite(input.durationMs)||input.durationMs<0||input.durationMs>300000))throw new HttpError(400,'答题时长无效。');
  let correct:boolean;
  if(issue.mode==='recognize'){

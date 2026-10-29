@@ -34,6 +34,7 @@ export interface Entry {
   phonetic?: string;
   pos?: string;
   memberships: Membership[];
+  retiredMemberships?: {bookId:string;unitId:string;replacementKey:string}[];
 }
 
 export interface Membership {
@@ -156,6 +157,11 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
     // Resolve stable identities and preserve learner evidence.
     for (const entry of catalog.entries) {
       const wordId = resolveWord(entry);
+      // A narrower textbook entry supersedes this membership, not this word's identity or history.
+      for(const retired of entry.retiredMemberships??[]){
+        if(!catalog.entries.some(e=>e.key===retired.replacementKey&&e.memberships.some(m=>m.bookId===retired.bookId&&m.unitId===retired.unitId)))throw new Error('Missing membership replacement: '+retired.replacementKey);
+        db.prepare('DELETE FROM vocabulary_members WHERE word_id=? AND book_id=? AND unit_id=?').run(wordId,retired.bookId,retired.unitId);
+      }
       // A published editorial correction is conditional: never replace core or learner-edited content.
       if(entry.headwordCorrection){
         const isBalanceCorrection=entry.key==='keep balance' && entry.headword==='keep a balance' && entry.headwordCorrection.expected==='keep balance';
@@ -328,9 +334,10 @@ function validateCatalog(catalog: Catalog): void {
     if (!entry.meaning || typeof entry.meaning !== 'string') {
       throw new Error(`Entry ${entry.key} must have a non-empty meaning`);
     }
-    if (!Array.isArray(entry.memberships) || entry.memberships.length === 0) {
+    if (!Array.isArray(entry.memberships) || (entry.memberships.length === 0 && !entry.retiredMemberships?.length)) {
       throw new Error(`Entry ${entry.key} must have at least one membership`);
     }
+    if(entry.retiredMemberships!==undefined&&(!Array.isArray(entry.retiredMemberships)||entry.retiredMemberships.some(r=>!r||typeof r.bookId!=='string'||typeof r.unitId!=='string'||typeof r.replacementKey!=='string'||!r.bookId||!r.unitId||!r.replacementKey)))throw new Error('Invalid retired membership');
     if(entry.headwordCorrection&&(typeof entry.headwordCorrection.expected!=='string'||!entry.headwordCorrection.expected.trim()||entry.headwordCorrection.expected.length>500||entry.headword.length>500))throw Error('Invalid headword correction');
     if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000))throw Error('Invalid meaning correction');
     if(entry.phoneticCorrection&&(typeof entry.phoneticCorrection.expected!=='string'||!entry.phoneticCorrection.expected.trim()||entry.phoneticCorrection.expected.length>500||typeof entry.phonetic!=='string'||!entry.phonetic.trim()||entry.phonetic.length>500))throw Error('Invalid phonetic correction');

@@ -4,7 +4,7 @@ export function normalizeQuotes(s: string): string {
 }
 
 // 这些教材词头省略了必需的对象；需具体语境才能测试拼写或听写。
-const recognitionOnlySkeletons=new Set(['leave ... alone','take for granted','prefer ... to ...']);
+const recognitionOnlySkeletons=new Set(['leave ... alone','take for granted','prefer ... to ...','portsmouth square','sputnik 1','voyager 1','soyuz 11','cut ... out','compare ... with ...','compare ... to ...','date back to ...','prevent ... from','donate ... to ...','keep ... in mind','join ... to ...','range from ... to ...','to ... extent','in a ... manner','keep in touch with ...','devote ... to','slice ... off','bring ... to life','on a ... basis','from (then) on']);
 /** 词典占位符或明确列出的句型骨架不适合作独立拼写、听写答案。 */
 export function hasDictionaryPlaceholder(s: string): boolean {
   const normalized=normalizeQuotes(s).trim().toLowerCase().replace(/\s+/g,' ');
