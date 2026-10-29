@@ -130,12 +130,14 @@ it('shows why relations or roots do not apply without the removed supplemental s
 });
 
 it.each([
-  {ipa:'/new/',legacy:'/old/',ready:true,expected:'/new/'},
-  {ipa:'',legacy:'/old/',ready:true,expected:'/old/'},
-  {ipa:'',legacy:null,ready:true,expected:null},
-  {ipa:'/new/',legacy:'/old/',ready:false,expected:'/old/'},
-])('uses available lesson or original phonetics and hides an absent label ($expected)',async({ipa,legacy,ready,expected})=>{
-  const lesson=lessonFor(12,'accept');lesson.pronunciation.ipa=ipa;
+  {ipa:'/new/',uk:'',us:'',legacy:'/old/',ready:true,expected:'/new/'},
+  {ipa:'',uk:'/uk/',us:'',legacy:'/old/',ready:true,expected:'/old/'},
+  {ipa:'',uk:'',us:'',legacy:null,ready:true,expected:null},
+  {ipa:'',uk:'/uk/',us:'',legacy:null,ready:true,expected:'英式 /uk/'},
+  {ipa:'',uk:'',us:'/us/',legacy:null,ready:true,expected:'美式 /us/'},
+  {ipa:'/new/',uk:'/uk/',us:'/us/',legacy:'/old/',ready:false,expected:'/old/'},
+])('uses available lesson or original phonetics and hides an absent label ($expected)',async({ipa,uk,us,legacy,ready,expected})=>{
+  const lesson=lessonFor(12,'accept');Object.assign(lesson.pronunciation,{ipa,uk,us});
   const detail=detailFor(12,'accept');detail.word.phonetic=legacy;
   vi.stubGlobal('fetch',vi.fn(async(url:string)=>response(url.endsWith('/lesson')
     ?ready?{status:'ready',lesson}:{status:'pending',lesson:null}

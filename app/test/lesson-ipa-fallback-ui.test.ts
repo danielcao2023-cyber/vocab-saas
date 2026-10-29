@@ -1,0 +1,12 @@
+import {beforeEach,afterEach,it,expect,vi} from 'vitest';
+import {readFileSync} from 'node:fs';
+import {flush,host} from './p2-host';
+import {mockAudio} from './audio-fixtures';
+const lesson=JSON.parse(readFileSync('data/lessons/2688.json','utf8'));
+const detail=(phonetic:string|null)=>({word:{id:2688,headword:'artemisinin',phonetic,meaning_zh:'青蒿素',meaning_source:'manual',meaning_flag:null,is_sample:0,state:0,reps:0,level:'三级',pos:'n.',source:'test'},status:'新词',statusDetail:{recognize:null,spell:null,dictation:null},wrong:null,content:{status:'pending',blocks:[]}});
+let metadata:any;
+beforeEach(()=>{mockAudio();metadata={status:'missing'};vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.includes('/lesson')?{status:'ready',lesson}:url.includes('/api/pronunciation?')?metadata:{status:'missing'}),{status:200})));});
+afterEach(()=>vi.unstubAllGlobals());
+it('shows a labelled British lesson pronunciation when recording and catalogue IPA are absent',async()=>{const ui=host('web/src/views/WordView.vue',{wordId:2688,initial:detail(null)});try{await flush();expect(ui.text()).toContain('英式 /ˌɑːtɪˈmɪzɪnɪn/')}finally{ui.app.unmount()}});
+it('preserves the stored pronunciation when a recording or generic lesson IPA is absent',async()=>{const ui=host('web/src/views/WordView.vue',{wordId:2688,initial:detail('/custom/')});try{await flush();expect(ui.text()).toContain('/custom/');expect(ui.text()).not.toContain('英式 /ˌɑːtɪˈmɪzɪnɪn/')}finally{ui.app.unmount()}});
+it('keeps the recording IPA ahead of the lesson fallback',async()=>{metadata={status:'ready',accent:'us',ipa:'/recording/'};const ui=host('web/src/views/WordView.vue',{wordId:2688,initial:detail(null)});try{await flush();expect(ui.text()).toContain('/recording/');expect(ui.text()).not.toContain('英式 /ˌɑːtɪˈmɪzɪnɪn/')}finally{ui.app.unmount()}});
