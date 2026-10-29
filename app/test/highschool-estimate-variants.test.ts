@@ -31,11 +31,11 @@ it('keeps contrast noun and verb distinct and never substitutes the missing cond
  }finally{await app.close();db.close();}
 });
 
-it('serves distinct sourced import and impact noun and verb recordings',async()=>{
- const db=openDb(':memory:');for(const word of ['import','impact'])db.prepare("INSERT INTO words(headword,source) VALUES (?, 'test')").run(word);
+it('serves distinct sourced noun and verb recordings for stress-changing words',async()=>{
+ const db=openDb(':memory:');for(const word of ['import','impact','extract','export'])db.prepare("INSERT INTO words(headword,source) VALUES (?, 'test')").run(word);
  const app=buildApp(db);try{
   const m=JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json',import.meta.url),'utf8'));
-  for(const word of ['import','impact']){
+  for(const word of ['import','impact','extract','export']){
    const meta=(await app.inject(`/api/pronunciation?word=${word}`)).json();expect(meta.variants.map((x:{variant:string})=>x.variant)).toEqual(['noun','verb']);
    const hashes=[];for(const variant of ['noun','verb']){const r=await app.inject(`/api/pronunciation/audio?word=${word}&variant=${variant}`);expect(r.statusCode).toBe(200);const hash=createHash('sha256').update(r.rawPayload).digest('hex');expect(hash).toBe(m.entries[word].variants[variant].sha256);hashes.push(hash);}
    expect(hashes[0]).not.toBe(hashes[1]);

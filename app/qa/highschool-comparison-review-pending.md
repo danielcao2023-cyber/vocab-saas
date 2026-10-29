@@ -29,3 +29,5 @@
 后续核验：1646–1660、1662–1675，依据见 `highschool-comparison-audits/batch-1646-1660.json`、`batch-1661-1675.json`；1661 后续已对照剑桥词典和实际例句，见 `batch-1661.json`。仅覆盖对比义项及例句。
 
 后续核验：1676–1705；1682 的 addicted to + 动名词结构另由 BBC Learning English 实例核验。依据见 `highschool-comparison-audits/batch-1676-1690.json` 和 `batch-1691-1705.json`。
+
+后续核验：1706–1732，逐项依据见 `highschool-comparison-audits/batch-1706-1720.json` 和 `batch-1721-1735.json`；1733–1735 无对比项。

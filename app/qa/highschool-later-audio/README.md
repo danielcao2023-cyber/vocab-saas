@@ -343,3 +343,5 @@
 `batch-next3single-recovery.json` 补入 reject（动词）、recreation（娱乐义）、input、recall（动词）的真人录音；核对法语 Wiktionary 英语栏目、Commons 授权、解码及哈希，尚未逐条试听，口音未独立确认。`next3-variant-review.md` 保存待接入异读词的核验记录，文件归属有歧义的候选不接入。
 
 `next3-import-impact-variants.json` 增加 import 与 impact 的名词和动词英式录音，核对词典栏目、词性、音标与 Commons 授权，已校验哈希与解码，均尚未人工试听；extract 和 export 的动词文件暂因下载失败未接入。
+
+`next3-extract-export-variants.json` 增加 extract 和 export 的名词、动词英式录音，核对词典栏目、词性、音标与 Commons 授权，已校验哈希及解码；尚未人工试听。`next5-variant-review.md` 保存下一批候选核验；relay 动词重音待试听确认。
