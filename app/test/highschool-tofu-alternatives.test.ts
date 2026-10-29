@@ -5,7 +5,7 @@ import {acceptedSpellings,acceptedAnswers,checkSpelling} from '../server/src/stu
 import {meaningsOverlap} from '../server/src/quiz';
 import {openBrowserDatabase,asSharedDb} from '../web/src/offline/sqlite';
 const now=new Date('2026-10-21T01:00:00Z');
-const pairs=[['tofu','bean curd'],['bean curd','tofu']] as const;
+const pairs=[['tofu','bean curd'],['bean curd','tofu'],['estate agent','real estate agent'],['real estate agent','estate agent'],['leapt','leaped'],['leaped','leapt']] as const;
 describe('precise meaning equivalents',()=>{
  it.each(pairs)('%s accepts %s only on translation', (main,other)=>{
   expect(acceptedAnswers(main,'spell')).toEqual([main,other]);
@@ -16,7 +16,8 @@ describe('precise meaning equivalents',()=>{
 });
 for(const v3 of [false,true])for(const offline of [false,true])for(const mode of ['spell','dictation'] as const)it.each(pairs)(`${v3?'V3':'V2'} ${offline?'offline':'online'} ${mode} old %s accepts equivalent %s only when appropriate and replays`,async(main,other)=>{
  const source=v3?makeV3Fixture(2):makeLegacyFixture(2);
- source.prepare('UPDATE words SET headword=?,meaning_zh=? WHERE id=1').run(main,'n. 豆腐');source.prepare('UPDATE words SET headword=?,meaning_zh=? WHERE id=2').run(other,'n. 豆腐');
+ const meaning=main.includes('agent')?'n. 房地产经纪人':main.startsWith('leap')?'v. 跳跃（leap 的过去式或过去分词）':'n. 豆腐';
+ source.prepare('UPDATE words SET headword=?,meaning_zh=? WHERE id=1').run(main,meaning);source.prepare('UPDATE words SET headword=?,meaning_zh=? WHERE id=2').run(other,meaning);
  startLearning(source,now);source.prepare('UPDATE learning_day_words SET position=CASE WHEN word_id=1 THEN 0 ELSE 1 END').run();const issued=nextLearning(source,now).card!;source.prepare('UPDATE learning_issues SET mode=? WHERE id=?').run(mode,issued.issueId);
  const mobile=offline?await openBrowserDatabase(source.serialize()):null,db=mobile?asSharedDb(mobile):source;if(mobile)source.close();
  try{const card=nextLearning(db,now).card!;expect(card.issueId).toBe(issued.issueId);expect(card.wordId).toBe(1);expect(card.mode).toBe(mode);

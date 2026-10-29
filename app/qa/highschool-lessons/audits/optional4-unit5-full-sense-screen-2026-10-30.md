@@ -46,7 +46,7 @@
 | communist / `communist` | `data/lessons/4057.json` | 共产主义者；共产主义的；初筛：已有相关例句 |
 | dedicate / `dedicate` | `data/lessons/4058.json` | 致力；献身；题献；初筛：已有相关例句 |
 | fox / `fox` | `data/lessons/552.json` | 狐狸；狡猾的人；用计谋欺骗；使困惑；把人难住；初筛：已有相关例句 |
-| council / `council` | `data/lessons/4059.json` | 委员会；地方议会；待核：教材“市政服务机构”是否有对应示例 |
+| council / `council` | `data/lessons/4059.json` | 委员会；地方议会；已补地方议会组织公共服务例句 |
 | canal / `canal` | `data/lessons/4060.json` | 运河；水道；灌溉渠；初筛：已有相关例句 |
 | attend to / `attend to` | `data/lessons/4061.json` | 处理；照料；初筛：已有相关例句 |
 | supervise / `supervise` | `data/lessons/4062.json` | 监督；管理；指导；初筛：已有相关例句 |
@@ -62,7 +62,7 @@
 | sewn / `sewn` | `data/lessons/4072.json` | 缝（过去分词）；教材括注变体或缩写解释，catalog 单列；初筛 |
 | knit / `knit` | `data/lessons/4073.json` | 编织；连接；结合；针织衣物；本批补例句，词典核查并验证 reader |
 | wool / `wool` | `data/lessons/4074.json` | 羊毛；毛线；初筛：已有相关例句 |
-| intermediate / `intermediate` | `data/lessons/4075.json` | 中间的；中级的；待核：教材“中间的”未独立示例 |
+| intermediate / `intermediate` | `data/lessons/4075.json` | 中间的；中级的；已补过程中的中间阶段例句 |
 | priority / `priority` | `data/lessons/4076.json` | 优先事项；优先权；初筛：已有相关例句 |
 | proficiency / `proficiency` | `data/lessons/4077.json` | 熟练；精通；初筛：已有相关例句 |
 | cage / `cage` | `data/lessons/4078.json` | 笼子；关进笼子；初筛：已有相关例句 |

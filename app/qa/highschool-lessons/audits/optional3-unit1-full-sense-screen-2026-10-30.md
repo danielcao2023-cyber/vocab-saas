@@ -7,7 +7,7 @@
 | 词头 / stable key | lesson | 现有义项与初筛状态 |
 |---|---|---|
 | precise / `precise` | `data/lessons/3410.json` | 精确的；明确的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| precisely / `precisely` | `data/lessons/3411.json` | 精确地；恰恰；教材“的确如此”义待核 |
+| precisely / `precisely` | `data/lessons/3411.json` | 精确地；恰恰；已补独立回应表示完全赞同的例句 |
 | Christianity / `Christianity` | `data/lessons/3412.json` | 基督教；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | realistic / `realistic` | `data/lessons/3413.json` | 切实可行的；现实的；逼真的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | realism / `realism` | `data/lessons/3414.json` | 现实主义（艺术）；务实的态度；教材“逼真”义是否有对应例句待核 |
@@ -39,7 +39,7 @@
 | fine art / `fine art` | `data/lessons/3440.json` | 美术；纯艺术；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | sculpture / `sculpture` | `data/lessons/3441.json` | 雕塑；雕塑艺术；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | sculptor / `sculptor` | `data/lessons/3442.json` | 雕塑家；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| visual / `visual` | `data/lessons/3443.json` | 视觉的；教材“视力的”义待核 |
+| visual / `visual` | `data/lessons/3443.json` | 视觉的；已补视力语境例句 |
 | water lily / `water lily` | `data/lessons/3444.json` | 睡莲；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | pond / `pond` | `data/lessons/3445.json` | 池塘；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | arched / `arched` | `data/lessons/3446.json` | 拱形的；拱起；呈拱形；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -58,7 +58,7 @@
 | frame / `frame` | `data/lessons/3459.json` | 框架；画框；给……装框；陷害；已补陷害及电影、胶片中的画面／帧 |
 | symphony / `symphony` | `data/lessons/3460.json` | 交响乐；交响曲；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | decline / `decline` | `data/lessons/3461.json` | 下降；衰落；拒绝；婉拒；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| exhibition / `exhibition` | `data/lessons/3462.json` | 展览；展览会；教材技能等的表演义待核 |
+| exhibition / `exhibition` | `data/lessons/3462.json` | 展览；展览会；后续已据 Cambridge 补技能、品质的展现及例句，reader/validateLesson 通过 |
 | bronze / `bronze` | `data/lessons/3463.json` | 青铜；青铜制的；青铜色；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | ceramic / `ceramic` | `data/lessons/3464.json` | 陶瓷的；陶瓷制品；教材“制陶艺术”义待核 |
 | vase / `vase` | `data/lessons/3465.json` | 花瓶；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -70,7 +70,7 @@
 | Buddhism / `Buddhism` | `data/lessons/3471.json` | 佛教；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | expansion / `expansion` | `data/lessons/3472.json` | 扩张；扩大；膨胀；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | bring ... to life / `bring ... to life` | `data/lessons/3473.json` | 使生动；赋予生命；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| guarantee / `guarantee` | `data/lessons/3474.json` | 保证；担保；保修承诺；教材“担保物”义待核 |
+| guarantee / `guarantee` | `data/lessons/3474.json` | 保证；担保；保修承诺；后续已据 Cambridge 补担保物义项及例句，reader/validateLesson 通过 |
 | contemporary / `contemporary` | `data/lessons/3475.json` | 当代的；同时代的；同时代的人；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | worthy / `worthy` | `data/lessons/3476.json` | 值得的；有价值的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | be worthy of / `be worthy of` | `data/lessons/3477.json` | 值得；配得上；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -96,3 +96,5 @@
 限制：表中“初筛”不是教材全部义项已逐条核实的结论；指定待核项只列明确发现的候选，不保证穷尽。按 headword 匹配文件，未逐设备验证动态 ID；新增例句保留原条目及学习记录。
 
 后续核查：教材印刷页 106–107 所列 primitive 名词、rank 动词与 frame 名词，分别依据 [Oxford primitive 名词](https://www.oxfordlearnersdictionaries.com/us/definition/english/primitive_2)、[Cambridge rank 动词](https://dictionary.cambridge.org/dictionary/english/rank) 和 [Cambridge frame 名词](https://dictionary.cambridge.org/dictionary/english/frame) 补充三项，各附原创例句；rank 例句指按标准排序，未将全部排队情形笼统称为 rank。真实 reader 和 validateLesson 见 `test/highschool-optional3-unit1-primitive-rank-frame.test.ts`。原义项与例句 ID 均保留。
+
+后续补充来源：[precisely](https://dictionary.cambridge.org/dictionary/english/precisely)、[exhibition](https://dictionary.cambridge.org/dictionary/english/exhibition)、[guarantee](https://dictionary.cambridge.org/dictionary/english/guarantee)。新增例句自拟。
