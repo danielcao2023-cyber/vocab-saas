@@ -566,7 +566,7 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
     "uk": "/ˈfæsɪneɪtɪŋ/",
     "chunks": [
       {
-        "letters": "fas",
+        "letters": "fasc",
         "sound": "/fæs/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -580,28 +580,24 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "s",
+            "letters": "sc",
             "sound": "/s/"
           }
         ],
-        "tip": "首部分重读。"
+        "tip": "首部分重读；sc 合起来对应 /s/。"
       },
       {
-        "letters": "ci",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
-        "hint": "sc 在此合读 /s/。",
+        "hint": "i 对应 /ɪ/。",
         "pairs": [
-          {
-            "letters": "c",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
           }
         ],
-        "tip": "sc 在此合读 /s/。"
+        "tip": "i 对应 /ɪ/。"
       },
       {
         "letters": "na",
@@ -650,6 +646,10 @@ export const highschoolBook2Unit4Defence: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/fascinating"
+      },
+      {
+        "label": "England national curriculum · sc 拼写",
+        "url": "https://assets.publishing.service.gov.uk/media/5a7db9e9e5274a5eaea65f58/Master_final_national_curriculum_28_Nov.pdf"
       }
     ],
     "review": {

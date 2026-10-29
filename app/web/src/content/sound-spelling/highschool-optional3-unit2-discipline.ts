@@ -105,7 +105,7 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
     "uk": "/ˈdɪsəplɪn/",
     "chunks": [
       {
-        "letters": "dis",
+        "letters": "disc",
         "sound": "/dɪs/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -119,28 +119,24 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "sc",
             "sound": "/s/"
           }
         ],
-        "tip": "此部分重读。"
+        "tip": "此部分重读；sc 合起来对应 /s/。"
       },
       {
-        "letters": "ci",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "此部分轻读，i 对应 /ə/。",
         "pairs": [
-          {
-            "letters": "c",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分轻读，i 对应 /ə/。"
       },
       {
         "letters": "pline",
@@ -180,6 +176,10 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/discipline"
+      },
+      {
+        "label": "England national curriculum · sc 拼写",
+        "url": "https://assets.publishing.service.gov.uk/media/5a7db9e9e5274a5eaea65f58/Master_final_national_curriculum_28_Nov.pdf"
       }
     ],
     "review": {
