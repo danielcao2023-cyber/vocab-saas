@@ -66,7 +66,7 @@ export function createLocalRuntime(options:Options){
   if(path==='/api/pronunciation'&&method==='GET'){
    if([...url.searchParams.keys()].some(key=>key.startsWith('variant['))||url.searchParams.getAll('variant').length>1||(q.variant!==undefined&&q.variant!=='noun'&&q.variant!=='verb'))throw new HttpError(400,'invalid variant');
    const base=recordings[q.word??''];const r=q.variant===undefined?base:base?.variants?.[q.variant];
-   const variants=(['noun','verb'] as const).flatMap(variant=>{const v=base?.variants?.[variant];return v?.file?[{variant,label:variant==='noun'?'名词':'动词',...(v.ipa?{ipa:v.ipa}:{})}]:[];});
+   const variants=(['noun','verb'] as const).flatMap(variant=>{const v=base?.variants?.[variant];return v?.file?[{variant,label:variant==='noun'?'名词':'动词',...(v.ipa?{ipa:v.ipa}:{}),...(typeof v.pronunciationNote==='string'&&v.pronunciationNote.trim()?{pronunciationNote:v.pronunciationNote}:{})}]:[];});
    if(!r?.file)return {status:'missing',word:q.word,...(q.variant===undefined&&variants.length?{variants}:{})};const {file,variants:ignored,...info}=r;return {status:'ready',...info,...(q.variant===undefined&&variants.length?{variants}:{})};
   }
   throw new HttpError(404,'这个功能暂不可用。');

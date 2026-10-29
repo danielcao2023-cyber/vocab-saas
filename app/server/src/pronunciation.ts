@@ -83,7 +83,8 @@ export function pronunciationRoutes(app: FastifyInstance, db: DB, directory = DE
     const variants = variant ? [] : (['noun', 'verb'] as const).flatMap(name => {
       const recording = available.get(`${word}\0${name}`);
       return recording ? [{ variant: name, label: name === 'noun' ? '名词' : '动词',
-        ...(typeof recording.ipa === 'string' && recording.ipa.trim() ? { ipa: recording.ipa } : {}) }] : [];
+        ...(typeof recording.ipa === 'string' && recording.ipa.trim() ? { ipa: recording.ipa } : {}),
+        ...(typeof recording.pronunciationNote === 'string' && recording.pronunciationNote.trim() ? { pronunciationNote: recording.pronunciationNote } : {}) }] : [];
     });
     const r = available.get(variant ? `${word}\0${variant}` : word);
     if (!r) return { status: 'missing', word, ...(variants.length ? { variants } : {}) };

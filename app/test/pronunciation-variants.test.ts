@@ -16,7 +16,7 @@ it('keeps default playback and serves independently verified noun and verb varia
     return { word: 'estimate', accent: 'us', file: `${name}.mp3`, sha256: createHash('sha256').update(data).digest('hex'), author: name, sourceUrl: `https://example.org/${name}`, license: 'CC BY 4.0', licenseUrl: 'https://creativecommons.org/licenses/by/4.0/' };
   };
   const entry = {...make('default'), variants: {noun: make('noun'), verb: make('verb')}};
-  Object.assign(entry.variants.noun, {ipa: '/ˈestɪmət/'});
+  Object.assign(entry.variants.noun, {ipa: '/ˈestɪmət/', pronunciationNote: '加拿大口音'});
   const save = () => fs.writeFileSync(path.join(directory, 'manifest.json'), JSON.stringify({version: 1, entries: { estimate: entry }}));
   save();
   const app = buildApp(db, {pronunciationDir: directory});
@@ -29,7 +29,7 @@ it('keeps default playback and serves independently verified noun and verb varia
       expect(meta).toMatchObject({status:'ready', author:data});
     }
     expect((await app.inject('/api/pronunciation?word=estimate')).json().variants).toEqual([
-      {variant:'noun',label:'名词',ipa:'/ˈestɪmət/'}, {variant:'verb',label:'动词'}
+      {variant:'noun',label:'名词',ipa:'/ˈestɪmət/',pronunciationNote:'加拿大口音'}, {variant:'verb',label:'动词'}
     ]);
     const credits = (await app.inject('/api/pronunciation/credits?word=estimate')).body;
     expect(credits).toContain('noun');

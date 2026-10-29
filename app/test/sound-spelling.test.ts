@@ -9,7 +9,8 @@ it('preserves every letter and sound through both levels of every published map'
  for(const lesson of soundSpellingLessons){
   expect(lesson.chunks.map(c=>c.letters).join(''),lesson.headword).toBe(lesson.headword);
   expect(sounds(lesson.chunks.map(c=>c.sound).join('')),lesson.headword).toBe(sounds(lesson.ipa));
-  expect(lesson.chunks.filter(c=>c.stress==='primary'),lesson.headword).toHaveLength(1);
+  expect(lesson.chunks.filter(c=>c.stress==='primary'),lesson.headword).toHaveLength(Math.max(1,(lesson.ipa.match(/ˈ/g)??[]).length));
+  expect(lesson.chunks.some(c=>c.stress==='primary'),lesson.headword).toBe(true);
   expect(lesson.chunks.filter(c=>c.stress==='secondary').length,lesson.headword).toBe((lesson.ipa.match(/ˌ/g)??[]).length);
   for(const chunk of lesson.chunks){
    expect(chunk.letters.trim().length,lesson.headword).toBeGreaterThan(0);

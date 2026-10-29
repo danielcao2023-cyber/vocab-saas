@@ -35,11 +35,11 @@ it('returns the metadata of the requested variant and rejects unavailable varian
 it('lists only available variants and validates repeated variant parameters',async()=>{
  const source=database(1),db=await openBrowserDatabase(source.serialize());source.close();
  try {
-  const variantOnly={word1:{word:'word1',variants:{noun:{...noun,ipa:'/ˈx/'}}}} as any;
+  const variantOnly={word1:{word:'word1',variants:{noun:{...noun,ipa:'/ˈx/',pronunciationNote:'加拿大口音'}}}} as any;
   const runtime=createLocalRuntime({db,save:async()=>{},assetFetch:vi.fn(),recordings:variantOnly,now:()=>T});
   const result=await(await runtime.fetch('/api/pronunciation?word=word1')).json();
   expect(result.status).toBe('missing');
-  expect(result.variants).toEqual([{variant:'noun',label:'名词',ipa:'/ˈx/'}]);
+  expect(result.variants).toEqual([{variant:'noun',label:'名词',ipa:'/ˈx/',pronunciationNote:'加拿大口音'}]);
   expect((await (await runtime.fetch('/api/pronunciation?word=word1&variant=verb')).json()).status).toBe('missing');
   expect((await runtime.fetch('/api/pronunciation?word=word1&variant=noun&variant=verb')).status).toBe(400);
   expect((await runtime.fetch('/api/pronunciation?word=word1&variant%5B%5D=noun')).status).toBe(400);
