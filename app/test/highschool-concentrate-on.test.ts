@@ -320,3 +320,10 @@ it('matches On Screen pronunciation and stress for fade away',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('fade away');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary']);
 });
+
+it('matches Burlington Mindset pronunciation and stress for a great deal of',()=>{
+ const lesson=getSoundSpellingLesson('a great deal of');
+ expect(lesson?.ipa).toBe('/ə ɡreɪt ˈdiːl ɒv/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('a great deal of');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none']);
+});

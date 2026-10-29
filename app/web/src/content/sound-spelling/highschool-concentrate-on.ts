@@ -624,3 +624,9 @@ addSourcedPhrase('fade away','/feɪd əˈweɪ/',[
  ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
  ch('way','/weɪ/','primary',[{letters:'w',sound:'/w/'},{letters:'ay',sound:'/eɪ/'}]),
 ],'On Screen A2+/B1 词表','https://vipclub.egis.com.pl/zasoby/f132e625/1_onscreen_a2plus-b1_wordlist_pl.pdf');
+addSourcedPhrase('a great deal of','/ə ɡreɪt ˈdiːl ɒv/',[
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('great ','/ɡreɪt/','none',[{letters:'g',sound:'/ɡ/'},{letters:'r',sound:'/r/'},{letters:'ea',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('deal ','/diːl/','primary',[{letters:'d',sound:'/d/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('of','/ɒv/','none',[{letters:'o',sound:'/ɒ/'},{letters:'f',sound:'/v/'}]),
+],'Burlington Mindset 2 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/Mindset2_AppendBas_26219_sz.pdf');
