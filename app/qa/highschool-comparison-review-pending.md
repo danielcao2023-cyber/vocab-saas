@@ -95,3 +95,5 @@
 2591 已依据 Collins 与 Cambridge 核验同义关系。后续核验：2606–2635，依据见 `highschool-comparison-audits/batch-2606-2620.json`、`batch-2621-2635.json`；无关对比已移除。
 
 2503、2507、2508 地名辨析已根据官方资料核验。后续核验：2636–2665，依据见 `highschool-comparison-audits/batch-2636-2650.json`、`batch-2651-2665.json`，无关对比已移除。
+
+后续核验：2666–2695，逐项依据见 `highschool-comparison-audits/batch-2666-2680.json`、`batch-2681-2695.json`；无关对比已移除。
