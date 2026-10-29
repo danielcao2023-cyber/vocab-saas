@@ -285,3 +285,10 @@ it('matches Macmillan Gateway Plus pronunciation and stress for on the basis of'
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('on the basis of');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary','none','none']);
 });
+
+it('matches Oxford first-hand pronunciation and stress for first hand',()=>{
+ const lesson=getSoundSpellingLesson('first hand');
+ expect(lesson?.ipa).toBe('/ˌfɜːst ˈhænd/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('first hand');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
+});

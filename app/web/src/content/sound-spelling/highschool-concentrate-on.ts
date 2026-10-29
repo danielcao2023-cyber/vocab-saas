@@ -599,3 +599,7 @@ addSourcedPhrase('on the basis of','/ɒn ðə ˈbeɪsɪs əv/',[
  ch('sis ','/sɪs/','none',[{letters:'s',sound:'/s/'},{letters:'i',sound:'/ɪ/'},{letters:'s',sound:'/s/'},{letters:' ',sound:''}]),
  ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
 ],'Macmillan Gateway Plus 4 词表','https://www.macmillan.pl/images/materials/1463841597_Gateway_plus_4_TB_U2_wm.pdf');
+addSourcedPhrase('first hand','/ˌfɜːst ˈhænd/',[
+ ch('first ','/fɜːst/','secondary',[{letters:'f',sound:'/f/'},{letters:'ir',sound:'/ɜː/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('hand','/hænd/','primary',[{letters:'h',sound:'/h/'},{letters:'a',sound:'/æ/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'}]),
+],'Oxford Learner’s Dictionaries · first-hand','https://www.oxfordlearnersdictionaries.com/us/definition/english/first-hand_2');
