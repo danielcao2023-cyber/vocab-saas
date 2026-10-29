@@ -109,3 +109,5 @@
 后续核验：2816–2845，逐项依据见 `highschool-comparison-audits/batch-2816-2830.json`、`batch-2831-2845.json`；无关对比已移除。
 
 后续核验：2846–2875，逐项依据见 `highschool-comparison-audits/batch-2846-2860.json`、`batch-2861-2875.json`；无关对比已移除。
+
+后续核验：2876–2905，逐项依据见 `highschool-comparison-audits/batch-2876-2890.json`、`batch-2891-2905.json`；2902、2904 专名待核，无关对比已移除。
