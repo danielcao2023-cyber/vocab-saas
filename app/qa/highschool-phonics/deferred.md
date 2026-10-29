@@ -14,7 +14,7 @@
 
 - `Giotto di Bondone`（选择性必修三 Unit 1）：意大利人名的音形对照需核验合适读法，暂缓发布。
 
-- `Masaccio`、`Leonardo da Vinci`、`Claude Monet`（选择性必修三 Unit 1）：人名涉及不同语言和读法，音形对照需进一步核验，暂不发布未经确认的映射。
+- `Leonardo da Vinci`、`Claude Monet`（选择性必修三 Unit 1）：人名涉及不同语言和读法，音形对照需进一步核验，暂不发布未经确认的映射。
 
 - `Giverny` 和作品名称 `Tadpoles Searching for Mother`、`The Cowboy's Flute`、`Feeling from Mountain and Water`、`Clearing After Snow on a Mountain Pass`（选择性必修三 Unit 1）：地名或长作品名称尚需核验可靠读法及分词对照，暂缓发布。
 
@@ -51,3 +51,5 @@
 - `Rembrandt`：已依据 Collins 的英语词典读法补充音形对照；其他语言与现有录音仍需试听核对。
 
 - `Renoir`：已依据剑桥词典的英美英语读法补充音形对照；法语和现有录音仍需试听核对。
+
+- `Masaccio`：已依据剑桥词典的英美英语读法补充音形对照；其他读法及现有录音仍需试听核对。
