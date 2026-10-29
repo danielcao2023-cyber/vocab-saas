@@ -22,7 +22,7 @@
 | breakthrough / `breakthrough` | `data/lessons/3423.json` | 突破；突破性进展；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | influential / `influential` | `data/lessons/3424.json` | 有影响力的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | reputation / `reputation` | `data/lessons/3425.json` | 名声；声誉；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| noble / `noble` | `data/lessons/3426.json` | 高尚的；贵族的；贵族；教材“宏伟的”义待核 |
+| noble / `noble` | `data/lessons/3426.json` | 高尚的；贵族的；贵族；后续补宏伟景观用例 |
 | rank / `rank` | `data/lessons/3427.json` | 等级；地位；排列；行列；后续已补按标准排序或分等级的及物动词用例 |
 | purchase / `purchase` | `data/lessons/3428.json` | 购买；购买的物品；购买行为；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | mythology / `mythology` | `data/lessons/3429.json` | 神话；神话学；教材“虚幻的想法”义未见例句，待核 |
@@ -63,7 +63,7 @@
 | ceramic / `ceramic` | `data/lessons/3464.json` | 陶瓷的；陶瓷制品；教材“制陶艺术”义待核 |
 | vase / `vase` | `data/lessons/3465.json` | 花瓶；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | artistic / `artistic` | `data/lessons/3466.json` | 艺术的；有艺术才能的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| entry / `entry` | `data/lessons/3467.json` | 进入；入场；入口；条目；记录；参赛作品；教材“参与”义是否覆盖待核 |
+| entry / `entry` | `data/lessons/3467.json` | 进入；入场；入口；条目；记录；参赛作品；后续补参加比赛用例 |
 | civil / `civil` | `data/lessons/3468.json` | 公民的；民间的；有礼貌的；民用的；民事的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | recognition / `recognition` | `data/lessons/3469.json` | 认出；认可；赞誉；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | Buddhist / `Buddhist` | `data/lessons/3470.json` | 佛教的；佛教徒；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |

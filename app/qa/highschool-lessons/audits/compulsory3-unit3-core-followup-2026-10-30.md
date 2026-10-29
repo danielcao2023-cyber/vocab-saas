@@ -16,7 +16,7 @@ catalog v137 中 pep2019-compulsory-3:unit3 共有 82 个 stable key；由离线
 | ethnic | 2448 | 2448.json | 民族的；族群的 | 标题初筛，例句和教材原文待核 |
 | admit | 2449 | 2449.json | 承认；准许进入 / 准许加入 | 标题初筛，例句和教材原文待核 |
 | definitely | 2450 | 2450.json | 肯定；明确地 | 标题初筛，例句和教材原文待核 |
-| occur | 2451 | 2451.json | 发生；出现 | 标题初筛，例句和教材原文待核 |
+| occur | 2451 | 2451.json | 发生；出现 / （想法）浮现；被想到 | 后续依据 Cambridge 区分 occur to，并补例句，reader 已验 |
 | downtown | 2452 | 2452.json | 市中心；往市中心 | 标题初筛，例句和教材原文待核 |
 | mission | 2453 | 2453.json | 任务；使命 | 标题初筛，例句和教材原文待核 |
 | district | 2454 | 2454.json | 地区；区域 | 标题初筛，例句和教材原文待核 |
@@ -25,7 +25,7 @@ catalog v137 中 pep2019-compulsory-3:unit3 共有 82 个 stable key；由离线
 | afterwards | 2457 | 2457.json | 后来；随后 | 标题初筛，例句和教材原文待核 |
 | head to | 2458 | 2458.json | 前往 | 标题初筛，例句和教材原文待核 |
 | historical | 2459 | 2459.json | 历史的；有关历史的 | 标题初筛，例句和教材原文待核 |
-| seek | 2460 | 2460.json | 寻找；寻求 | 标题初筛，例句和教材原文待核 |
+| seek | 2460 | 2460.json | 寻找；寻求 / 试图；努力做 | 后续依据 Cambridge 补 seek to do，reader 已验 |
 | seek one's fortune | 2461 | 2461.json | 寻找致富或成功的机会 | 标题初筛，例句和教材原文待核 |
 | earn | 2462 | 2462.json | 赚得；赢得 | 标题初筛，例句和教材原文待核 |
 | earn a living | 2463 | 2463.json | 谋生 | 标题初筛，例句和教材原文待核 |
@@ -90,3 +90,5 @@ catalog v137 中 pep2019-compulsory-3:unit3 共有 82 个 stable key；由离线
 新增义项来源：[claim 夺走生命](https://dictionary.cambridge.org/us/dictionary/english/claim)、[neat 极好（主要美式非正式）](https://dictionary.cambridge.org/dictionary/english/neat)、[construction 建筑物与语法结构](https://dictionary.cambridge.org/dictionary/english/construction)、[item 新闻条目](https://dictionary.cambridge.org/dictionary/english/item)；每条附自拟双语例句并通过 validateLesson 与 reader。
 
 仍需以出版社教材原文逐词核对词表、中文释义及具体语境；其他 78 条仅按标题初筛，细义、搭配、例句、词族及读音均未逐项权威核验。未处理录音。
+
+后续来源：[occur to](https://dictionary.cambridge.org/dictionary/english/occur-to)、[seek](https://dictionary.cambridge.org/dictionary/english/seek)。前者原先已有一个想起例句但未独立说明，后者原有例句仅覆盖寻找/寻求；新增例句自拟，未证明完整覆盖所有教材义项。定向测试 `test/highschool-compulsory3-unit3-pending-followup.test.ts` 两项通过，含全单元真实 reader 与 validateLesson。

@@ -186,7 +186,7 @@ export function acceptedSpellings(headword: string): string[] {
 
 // Only translation cards accept these explicitly verified equivalent expressions.
 // Listening remains tied to the word that was played. See Cambridge: /dictionary/english/tofu.
-const textbookTranslationEquivalents: Readonly<Record<string,string>> = {'tofu':'bean curd','bean curd':'tofu','estate agent':'real estate agent','real estate agent':'estate agent','leapt':'leaped','leaped':'leapt'};
+const textbookTranslationEquivalents: Readonly<Record<string,string>> = {'tofu':'bean curd','bean curd':'tofu','estate agent':'real estate agent','real estate agent':'estate agent','leapt':'leaped','leaped':'leapt','despite':'in spite of','in spite of':'despite'};
 export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 'recognize'): string[] {
   const spellings = acceptedSpellings(headword);
   if (mode !== 'spell') return spellings;
