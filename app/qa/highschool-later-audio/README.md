@@ -327,3 +327,5 @@
 `batch-parallel-recovery-5.json` 补入 4 份高中词汇录音：核对法语 Wiktionary 英语栏目关联、Commons 作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
 
 `batch-parallel-recovery-6.json` 补入 combine（动词）和 intermediate（形容词、名词）录音：核对 Wiktionary 英语栏目中的词性、音标、Commons 作者、许可、解码和哈希；尚未人工试听。
+
+`batch-process-recovery.json` 补入 process 的美式录音：核对 Wiktionary 英语栏目中对应读音、Commons 作者、许可、解码和哈希；尚未人工试听。
