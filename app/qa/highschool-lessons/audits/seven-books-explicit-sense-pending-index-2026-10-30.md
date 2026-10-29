@@ -21,7 +21,7 @@
 | optional3-unit1-full-sense-screen-2026-10-30.md | mythology / mythology | 神话；神话学；教材“虚幻的想法”义未见例句，待核 |
 | optional3-unit1-full-sense-screen-2026-10-30.md | ceramic / ceramic | 陶瓷的；陶瓷制品；教材“制陶艺术”义待核 |
 | optional3-unit1-full-sense-screen-2026-10-30.md | entry / entry | 进入；入场；入口；条目；记录；参赛作品；教材“参与”义是否覆盖待核 |
-| optional3-unit2-full-sense-screen-2026-10-30.md | Lao Zi / Lao Zi | 老子；源表扩展，非教材此 Unit 词表单列词头；归属待核 |
+| optional3-unit2-full-sense-screen-2026-10-30.md | Lao Zi / Lao Zi | 已核：教材 Unit 2 正文印刷页 15 作 Laozi，目录 Lao Zi 可作为正文扩展；未在单元词表单列 |
 | optional4-unit1-full-sense-screen-2026-10-30.md | turn out / turn out | 结果是；原来是；关掉；后续已补到场例句；“使朝外”仍待核 |
 | optional4-unit3-full-sense-screen-2026-10-29.md | royal / royal | 王室的；皇家的；待核：教材“高贵的”未独立示例 |
 | optional4-unit3-full-sense-screen-2026-10-29.md | in hand / in hand | 在手头；正在处理；在控制中；待核：教材“可供使用”未明确示例 |

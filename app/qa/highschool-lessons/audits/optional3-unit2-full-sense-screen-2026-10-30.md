@@ -62,6 +62,6 @@
 | Aristotle / `Aristotle` | `data/lessons/3545.json` | 亚里士多德；初筛：已有相关例句 |
 | People's Liberation Army / `People's Liberation Army` | `data/lessons/3546.json` | 中国人民解放军；初筛：已有相关例句 |
 | PLA / `PLA` | `data/lessons/3547.json` | 中国人民解放军（缩写）；教材括注缩写，catalog 单列；初筛 |
-| Lao Zi / `Lao Zi` | `data/lessons/3548.json` | 老子；源表扩展，非教材此 Unit 词表单列词头；归属待核 |
+| Lao Zi / `Lao Zi` | `data/lessons/3548.json` | 老子；教材正文 Unit 2 印刷页 15 写 Laozi，作为正文扩展归属有依据；词表未单列且目录拼写为 Lao Zi |
 
 未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖；skip 与 negative 的上述待核义已复核，其他义项仍需进一步核证。专名仅查讲解可见，未重核身份。文件按当前 headword 匹配，stable key 与运行时 ID 跨设备转换未逐项重新验证。

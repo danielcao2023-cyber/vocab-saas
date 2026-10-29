@@ -4,6 +4,7 @@
 
 - `despite`（「尽管，不管」）与 `in spite of`（「尽管；不顾」）均为介词表达，常接名词或动名词，[剑桥语法](https://dictionary.cambridge.org/grammar/british-grammar/in-spite-of-and-despite)确认二者意义相近、可表达同一让步关系。汉译英显式双向接受，保留不同词头、记录及听写本词。两者横线长度不同；无上下文的共通义项使词头无法唯一确定。
 - `tuition` / `tuition fees` 的「学费」义同义，前者常见美式、后者常见英式；[剑桥词典](https://dictionary.cambridge.org/dictionary/english/tuition-fees)。仅当汉译英可见义项独立包含「学费」时接受；tuition 的「讲授」义不触发，听写按原词。
+- `premier` / `prime minister` 在实际题面均含「总理／首相」，但 [剑桥 premier](https://dictionary.cambridge.org/dictionary/english/premier) 也包括地区政府首脑，而 [prime minister](https://dictionary.cambridge.org/dictionary/english/prime-minister) 指国家政府首脑；premier 题面还包含形容词义。中文无国家或地区上下文，未能确认全部情况双向等同，因此暂不添加互认。
 - `set off` / `set out`、`quit` / `give up`、`at last` / `eventually` 等虽含部分共通释义，表达范围或语用可能不同，不根据单个词义交叉就自动纳入。
 - `microwave` / `microwave oven` 的前者还有「微波」等义；[剑桥](https://dictionary.cambridge.org/dictionary/english/microwave)确认炉具义可对应，但题面可含多个义项，现仅当题面可见义项中独立出现「微波炉」时汉译英双向接受；「微波」或「不是微波炉」等不触发，听写不变。其他候选应按完整题面及对应词性继续审查。
 

@@ -20,7 +20,7 @@
 | radium / `radium` | `data/lessons/4031.json` | 镭；初筛：已有相关例句 |
 | wrist / `wrist` | `data/lessons/4032.json` | 手腕；初筛：已有相关例句 |
 | bridegroom / `bridegroom` | `data/lessons/4033.json` | 新郎；初筛：已有相关例句 |
-| geometry / `geometry` | `data/lessons/4034.json` | 几何学；待核：教材“几何图形”与词典结构义边界 |
+| geometry / `geometry` | `data/lessons/4034.json` | 几何学；后续依据 Cambridge 补“几何构型；结构布局”，区别单个 geometric shape |
 | debt / `debt` | `data/lessons/4035.json` | 债务；欠款；初筛：已有相关例句 |
 | categorise / `categorise` | `data/lessons/4036.json` | 分类；初筛：已有相关例句 |
 | profile / `profile` | `data/lessons/4037.json` | 简介；侧面；轮廓；介绍；报道；初筛：已有相关例句 |
@@ -80,4 +80,6 @@
 | PETS / `PETS` | `data/lessons/4089.json` | 全国英语等级考试；初筛：已有相关例句 |
 | Public English Test System / `Public English Test System` | `data/lessons/4090.json` | 全国英语等级考试；教材括注变体或缩写解释，catalog 单列；初筛 |
 
-未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖。geometry、intermediate 和 council 等仍需深入词典核查；专名仅查讲解可见，未重核身份。按当前 headword 匹配 lesson，stable key 与运行时 ID 跨设备转换未逐项重新验证。
+未核边界：已有相关例句仅说明教材相关义至少有可见示例，并不表示每个教材义项均已覆盖。geometry、intermediate 和 council 的相关后续核查见本文件与 followup；其他细义仍需深入核查；专名仅查讲解可见，未重核身份。按当前 headword 匹配 lesson，stable key 与运行时 ID 跨设备转换未逐项重新验证。
+
+后续复核：geometry 据 [Cambridge · the geometry of something](https://dictionary.cambridge.org/dictionary/english/geometry-of) 补物体各部分的几何构型及自编例句；单个几何图形可说 [geometric shape](https://dictionary.cambridge.org/dictionary/english/geometric)，不能将二者无条件互换。council、intermediate 相关例句已由 optional34-pending-followup 完成，本批未改。验证 `test/highschool-optional4-unit5-geometry-followup.test.ts` 两项通过，包括全单元真实 reader 与 validateLesson。

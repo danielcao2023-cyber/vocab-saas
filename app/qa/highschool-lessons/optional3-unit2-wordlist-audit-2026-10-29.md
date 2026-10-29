@@ -6,4 +6,4 @@
 
 印刷页 108：`liberation`、`shave`、`shave off`、`beard`、`disturb`、`cigarette`、`specialist`、`consultant`、`drug`、`skip`、`dizzy`、`flu`、`stimulate`、`dentist`、`sugary`、`nut`、`skateboard`、`dynamic`、`stressed out`、`worn out`、`bowling`、`comedy`、`monthly`、`enhance`、`refresh`、`absorb`、`Aristotle`、`People's Liberation Army` 均有 Unit 2 归属。
 
-未发现教材单列词头漏项或明确跨 Unit 错归属。教材 `People's Liberation Army` 括注 `PLA`，目录将缩写另列；是否独立训练属产品规则。目录另含 `Lao Zi`，该词并非此两页 Unit 2 词表的独立词头，可能是源表扩展；需核查正文及来源意图，不能仅据此断言错归属。
+未发现教材单列词头漏项或明确跨 Unit 错归属。教材 `People's Liberation Army` 括注 `PLA`，目录将缩写另列；是否独立训练属产品规则。目录另含 `Lao Zi`，该词并非此两页 Unit 2 词表的独立词头，后续核对正文印刷页 15（PDF 物理页 22）提及哲学家 Laozi；可作为正文扩展保留 Unit 2 归属，教材词表未单列且拼写与目录 Lao Zi 不同。
