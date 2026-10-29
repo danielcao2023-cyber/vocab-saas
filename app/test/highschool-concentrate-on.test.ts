@@ -180,3 +180,9 @@ it('shows the National Geographic Learning pronunciation for in spite of',()=>{
  expect(lesson?.ipa).toBe('/ɪn ˈspaɪt əv/');
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('in spite of');
 });
+
+it.each([['on hand','/ɒn ˈhænd/'],['keep track of','/kiːp ˈtræk əv/'],['pass away','/ˌpɑːs əˈweɪ/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

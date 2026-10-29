@@ -459,3 +459,18 @@ addSourcedPhrase('in spite of','/ɪn ˈspaɪt əv/',[
  ch('spite ','/spaɪt/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'i',sound:'/aɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
 ],'National Geographic Learning Life Lessons 词表','https://www.eltngl.com/sites/file/261927/download?token=vYUXEtTb');
+const burlingtonRestaurants='https://bbspainresources.s3.eu-central-1.amazonaws.com/Restaurants_VocabBuilderSpa_18634_sz.pdf';
+addSourcedPhrase('on hand','/ɒn ˈhænd/',[
+ ch('on ','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('hand','/hænd/','primary',[{letters:'h',sound:'/h/'},{letters:'a',sound:'/æ/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'}]),
+],'Burlington Books Restaurants and Catering 词表',burlingtonRestaurants);
+addSourcedPhrase('keep track of','/kiːp ˈtræk əv/',[
+ ch('keep ','/kiːp/','none',[{letters:'k',sound:'/k/'},{letters:'ee',sound:'/iː/'},{letters:'p',sound:'/p/'},{letters:' ',sound:''}]),
+ ch('track ','/træk/','primary',[{letters:'t',sound:'/t/'},{letters:'r',sound:'/r/'},{letters:'a',sound:'/æ/'},{letters:'ck',sound:'/k/'},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Burlington Books Restaurants and Catering 词表',burlingtonRestaurants);
+addSourcedPhrase('pass away','/ˌpɑːs əˈweɪ/',[
+ ch('pass ','/pɑːs/','secondary',[{letters:'p',sound:'/p/'},{letters:'a',sound:'/ɑː/'},{letters:'ss',sound:'/s/'},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('way','/weɪ/','primary',[{letters:'w',sound:'/w/'},{letters:'ay',sound:'/eɪ/'}]),
+],'Express Publishing New Enterprise 2 词表','https://vipclub.egis.com.pl/zasoby/1ab869fd/1_new_enterprise_2_word_list.pdf');
