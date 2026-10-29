@@ -28,6 +28,11 @@ function fixture() {
   // The runtime loads an mtime-qualified path; preserve the real validator logic
   // while avoiding Vite treating an external temporary .ts?mtime path as plain JS.
   fs.writeFileSync(validator, ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText);
+  // Keep the isolated validator's runtime dependency in the temporary project.
+  const keyedFile = path.join(root, 'app/shared/keyed-lessons.ts');
+  fs.mkdirSync(path.dirname(keyedFile), { recursive: true });
+  const keyedSource = fs.readFileSync(fileURLToPath(new URL('../shared/keyed-lessons.ts', import.meta.url)), 'utf8');
+  fs.writeFileSync(keyedFile, ts.transpileModule(keyedSource, { compilerOptions: { module: ts.ModuleKind.ESNext, target: ts.ScriptTarget.ES2022 } }).outputText);
   const draft = structuredClone(manageLesson);
   draft.editorial.status = 'draft'; draft.etymology.stages = [];
   draft.sources = draft.sources.map(({ checkedAt: _checkedAt, ...source }: any) => ({ ...source, verification: 'recommended' }));

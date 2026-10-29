@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { WordLesson, WordLessonResponse } from '../../shared/lesson.ts';
+import { keyedLessonName } from '../../shared/keyed-lessons.ts';
 
 export const defaultLessonDir = fileURLToPath(new URL('../../data/lessons/', import.meta.url));
 type ExpectedWord = { id: number; headword: string };
@@ -120,6 +121,18 @@ export function createLessonReader(directory = defaultLessonDir) {
   return (word: ExpectedWord): WordLessonResponse => {
     const pending: WordLessonResponse = { status:'pending', lesson:null };
     if (!Number.isSafeInteger(word.id) || word.id < 1) return pending;
+    const name=keyedLessonName(word.headword);
+    if(name){
+      try {
+        const root=fs.realpathSync(directory), dir=fs.realpathSync(path.join(root,'keyed'));
+        const file=fs.realpathSync(path.join(dir,name));
+        if(path.dirname(dir)!==root||path.dirname(file)!==dir||fs.statSync(file).size>512*1024)return pending;
+        const raw=JSON.parse(fs.readFileSync(file,'utf8'));
+        if(raw.headword!==word.headword)return pending;
+        const validated=validateLesson({...raw,wordId:word.id},word);
+        return validated.ok&&validated.lesson.editorial.status==='reviewed'?{status:'ready',lesson:validated.lesson}:pending;
+      } catch{return pending;}
+    }
     try {
       const {file,stat}=inspectLessonFile(directory,word.id);
       const fingerprint = `${word.headword}:${stat.dev}:${stat.ino}:${stat.size}:${stat.mtimeMs}:${stat.ctimeMs}`;

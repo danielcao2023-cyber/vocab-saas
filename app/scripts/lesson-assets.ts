@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {validateLesson} from '../server/src/lessons.ts';
+import {keyedLessons} from '../shared/keyed-lessons.ts';
 type PublicWord={id:number;headword:string;source:string};
 /** Preserve all core lessons while allowing reviewed catalog expansions. Never bundle orphaned/draft content. */
 export function copyReviewedLessons(directory:string,output:string,words:PublicWord[]):number{
@@ -12,6 +13,12 @@ export function copyReviewedLessons(directory:string,output:string,words:PublicW
   const data=JSON.parse(fs.readFileSync(path.join(directory,file),'utf8'));
   const result=validateLesson(data,word);if(!result.ok||data.editorial.status!=='reviewed')throw Error('Invalid or unreviewed lesson '+id);
   fs.writeFileSync(path.join(output,file),JSON.stringify(data));count++;
+ }
+ for(const [headword,file] of Object.entries(keyedLessons)){
+  if(!words.some(word=>word.headword===headword))continue;
+  const data=JSON.parse(fs.readFileSync(path.join(directory,'keyed',file),'utf8'));
+  if(data.headword!==headword||!validateLesson(data).ok||data.editorial.status!=='reviewed')throw Error('Invalid keyed lesson '+file);
+  fs.mkdirSync(path.join(output,'keyed'),{recursive:true});fs.writeFileSync(path.join(output,'keyed',file),JSON.stringify(data));count++;
  }
  return count;
 }

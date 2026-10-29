@@ -16,6 +16,7 @@ import {migrateVocabulary,installVocabulary,type Catalog} from '../../../server/
 import {learningStorage} from './storage';
 import {setMobileRecordings,type BundledRecording} from './mobile-mode';
 import type {LearningAnswer,WordBook} from '../../../shared/learning';
+import {keyedLessonName} from '../../../shared/keyed-lessons';
 
 const jsonResponse=(value:unknown,options:ResponseInit={})=>new Response(JSON.stringify(value),{...options,headers:{'content-type':'application/json; charset=utf-8',...options.headers}});
 
@@ -56,8 +57,10 @@ export function createLocalRuntime(options:Options){
    if(!row)throw new HttpError(404,'这个单词不存在。');
    if(word[2]==='/content')return getContent(shared,id);
    if(word[2]==='/lesson'){
-    const result=await assetFetch(`/offline/lessons/${id}.json`);if(!result.ok)return {status:'pending',lesson:null};
-    const lesson=await result.json();if(lesson.wordId!==id||lesson.headword!==row.headword)throw new Error('词条资料不匹配。');
+    const keyed=typeof row.headword==='string'?keyedLessonName(row.headword):undefined;
+    const result=await assetFetch(keyed?`/offline/lessons/keyed/${keyed}`:`/offline/lessons/${id}.json`);if(!result.ok)return {status:'pending',lesson:null};
+    const raw=await result.json();if(raw.headword!==row.headword||(!keyed&&raw.wordId!==id))throw new Error('词条资料不匹配。');
+    const lesson=keyed?{...raw,wordId:id}:raw;
     return {status:'ready',lesson};
    }
    return wordDetail(shared,id);
