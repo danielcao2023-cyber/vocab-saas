@@ -31,6 +31,12 @@ export function canReuseShtookaRecording(word: string, entry: unknown, directory
 /** Reuse requires the same chosen recording and unchanged installed bytes. No network access. */
 export function canReusePronunciation(word: string, entry: CachedPronunciation | undefined, directory: string,
   override?: PronunciationOverride, metadata?: Map<string, CommonsRecording>): boolean {
+  // Jasper's audited file is a transcode of the source recording of the
+  // common noun; its reviewed use for the Canadian place name is specific.
+  if (word === 'Jasper' && entry && (entry.sourceUrl !== 'https://commons.wikimedia.org/wiki/File:En-us-jasper.ogg' ||
+      entry.author !== 'Neskaya' || entry.license !== 'CC BY-SA 3.0' ||
+      entry.licenseUrl !== 'https://creativecommons.org/licenses/by-sa/3.0/' ||
+      entry.sha256 !== 'd2206f77db8c3a196fc02d1a1c3c8500a838f0412b4b874cc4aa49588172b65a')) return false;
   if (!entry || entry.word !== word || !/^[a-zA-Z0-9][a-zA-Z0-9._-]*\.mp3$/.test(entry.file) ||
       !/^[a-f0-9]{64}$/.test(entry.sha256) || !entry.author?.trim() || /no machine-readable author|assumed/i.test(entry.author)) return false;
   if (!allowedAudioLicense(entry.licenseUrl) && !(['Public domain (PD-self)', 'Public domain (PD-user)'].includes(entry.license) && commonsIdentity(entry.sourceUrl) && entry.licenseUrl === `${entry.sourceUrl}#Licensing`)) return false;
