@@ -345,3 +345,5 @@
 `next3-import-impact-variants.json` 增加 import 与 impact 的名词和动词英式录音，核对词典栏目、词性、音标与 Commons 授权，已校验哈希与解码，均尚未人工试听；extract 和 export 的动词文件暂因下载失败未接入。
 
 `next3-extract-export-variants.json` 增加 extract 和 export 的名词、动词英式录音，核对词典栏目、词性、音标与 Commons 授权，已校验哈希及解码；尚未人工试听。`next5-variant-review.md` 保存下一批候选核验；relay 动词重音待试听确认。
+
+`next5-suspect-variants.json` 增加 suspect 的名词和动词英式录音，核对词典栏目、词性、音标与 Commons 授权，已校验哈希和解码；尚未人工试听。

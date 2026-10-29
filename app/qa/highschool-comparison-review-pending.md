@@ -31,3 +31,5 @@
 后续核验：1676–1705；1682 的 addicted to + 动名词结构另由 BBC Learning English 实例核验。依据见 `highschool-comparison-audits/batch-1676-1690.json` 和 `batch-1691-1705.json`。
 
 后续核验：1706–1732，逐项依据见 `highschool-comparison-audits/batch-1706-1720.json` 和 `batch-1721-1735.json`；1733–1735 无对比项。
+
+后续核验：1748–1765，依据见 `highschool-comparison-audits/batch-1736-1750.json` 和 `batch-1751-1765.json`；1736–1747 无对比项，不代表完整词条已核验。
