@@ -313,3 +313,10 @@ it('matches English in Context pronunciation and stress for blog post',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('blog post');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none']);
 });
+
+it('matches On Screen pronunciation and stress for fade away',()=>{
+ const lesson=getSoundSpellingLesson('fade away');
+ expect(lesson?.ipa).toBe('/feɪd əˈweɪ/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('fade away');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary']);
+});

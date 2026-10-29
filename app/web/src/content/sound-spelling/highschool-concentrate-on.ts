@@ -619,3 +619,8 @@ addSourcedPhrase('blog post','/ˈblɒɡ pəʊst/',[
  ch('blog ','/blɒɡ/','primary',[{letters:'b',sound:'/b/'},{letters:'l',sound:'/l/'},{letters:'o',sound:'/ɒ/'},{letters:'g',sound:'/ɡ/'},{letters:' ',sound:''}]),
  ch('post','/pəʊst/','none',[{letters:'p',sound:'/p/'},{letters:'o',sound:'/əʊ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'}]),
 ],'English in Context 5 词表','https://www.scook.at/cdn_proxy/7cda8b21-2a47-4e24-a477-d330c8fd04d7/234215_0470590101_47058_EIC_5_Alphabetical_word_list.pdf');
+addSourcedPhrase('fade away','/feɪd əˈweɪ/',[
+ ch('fade ','/feɪd/','none',[{letters:'f',sound:'/f/'},{letters:'a',sound:'/eɪ/'},{letters:'d',sound:'/d/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('way','/weɪ/','primary',[{letters:'w',sound:'/w/'},{letters:'ay',sound:'/eɪ/'}]),
+],'On Screen A2+/B1 词表','https://vipclub.egis.com.pl/zasoby/f132e625/1_onscreen_a2plus-b1_wordlist_pl.pdf');
