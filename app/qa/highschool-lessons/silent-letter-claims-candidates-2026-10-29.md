@@ -16,3 +16,11 @@
 - make sense：描述词尾 e，不是 make 或 sense 中全部 e；候选来自重复字母，未查得整组词典标音，除局部文字误报判断外整词读音仍待核。
 
 真实 getter、结构与覆盖测试 3 文件 6 项通过；其他候选未逐项核实，未处理录音。
+
+第二批检查 venue、barbecue、escape、precise、recite、delete、emerge、release：
+
+- venue、barbecue 的配对已把 ue 整体对应 /juː/，旧说明仍写 u 发音、e 不单独发音，虽然后者并非完全错误，但表达与组合教学不一致；改说明为 ue 对应 /juː/。依据 [Whickham 拼读课程](https://whickhamparochial.eschools.co.uk/storage/secure_download/YmJEZDg5MFhXbmJEUmhmeTJEZDExUT09) 的 venue 和 [兰开夏郡教材](https://www.lancashire.gov.uk/media/947083/bbp-sample-pages.pdf) 的 ue 读音规则。
+- escape、precise、recite、delete 之前仅说末 e 不单独发音，现补充相应 a-e、i-e、e-e 分离拼写与长元音的关系；音标、字母配对和重音不变。依据[西澳学校拼写计划](https://www.serpentineps.wa.edu.au/_files/ugd/fae298_d7c1dbd01e5f4f11823fa100d9d7e30c.pdf) 对 e-e/delete 的明确例子，[学校 a-e 列表](https://www.montgomery-inf.essex.sch.uk/wp-content/uploads/2020/04/Week-Beginning-20.4-a_e-PDF.pdf) 对 escape 的例子，及[维多利亚州 phonics 课程](https://www.education.vic.gov.au/school/teachers/teachingresources/discipline/english/literacy/readingviewing/Pages/phonics-scoping-sequences.aspx) 的分离元音组合。
+- emerge 已解释末尾 g 在 e 前为 /dʒ/，release 的 ea 对应 /iː/ 且末尾 e 不单独发音；本轮保留原文。
+
+真实 getter、元音组合、结构与覆盖测试 4 文件 12 项通过；检查范围只限上述表述，其他候选仍待核，未处理录音。

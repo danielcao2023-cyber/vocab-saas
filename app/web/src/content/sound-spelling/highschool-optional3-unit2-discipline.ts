@@ -239,7 +239,7 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "重音在 lete；末尾 e 不单独发音。",
+    "variantNote": "重音在 lete；此处 e 与末尾 e 构成 e-e 拼写，对应 /iː/；末尾 e 不单独发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

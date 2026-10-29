@@ -138,7 +138,7 @@ export const highschoolOptional4Unit2Equator: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "英式中间 e 常读 /ɪ/；末尾 e 不单独发音。",
+    "variantNote": "英式中间 e 常读 /ɪ/；词尾 ue 在此对应 /juː/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

@@ -202,7 +202,7 @@ export const highschoolBook3Unit3Series: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "重音在第二部分，末尾 e 不单独发音。",
+    "variantNote": "重音在第二部分，a 与末尾 e 构成 a-e 拼写，a 对应 /eɪ/；e 不单独发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

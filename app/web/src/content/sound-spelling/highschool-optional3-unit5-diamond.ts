@@ -201,7 +201,7 @@ export const highschoolOptional3Unit5Diamond: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "c 对应 /s/，末尾 e 不单独发音。",
+    "variantNote": "c 对应 /s/；i 与末尾 e 构成 i-e 拼写，i 对应 /aɪ/，e 不单独发音。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

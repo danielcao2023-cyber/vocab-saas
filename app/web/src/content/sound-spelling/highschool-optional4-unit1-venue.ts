@@ -44,7 +44,7 @@ export const highschoolOptional4Unit1Venue: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "u 对应 /juː/，末尾 e 不单独发音。",
+    "variantNote": "这里 ue 共同对应 /juː/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
