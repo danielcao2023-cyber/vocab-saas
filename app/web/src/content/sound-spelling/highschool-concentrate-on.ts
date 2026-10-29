@@ -646,3 +646,8 @@ addSourcedPhrase('ought to','/ˈɔːt tə/',[
  ch('ought ','/ɔːt/','primary',[{letters:'ough',sound:'/ɔː/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
  ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
 ],'Hueber Next B1/1 词表','https://www.hueber.de/media/36/530_14674_001_05_Next_B1_1__155-162.pdf');
+addSourcedPhrase('early on','/ˈɜːli ɒn/',[
+ ch('ear','/ɜː/','primary',[{letters:'ear',sound:'/ɜː/'}]),
+ ch('ly ','/li/','none',[{letters:'l',sound:'/l/'},{letters:'y',sound:'/i/'},{letters:' ',sound:''}]),
+ ch('on','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'}]),
+],'Business English Magazine 词表','https://www.business-english.com.pl/dodatki/BEM%2075%20lista%20slow.pdf');

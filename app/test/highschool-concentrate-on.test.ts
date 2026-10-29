@@ -348,3 +348,10 @@ it('matches Hueber Next pronunciation and stress for ought to',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('ought to');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none']);
 });
+
+it('matches the published wordlist pronunciation and stress for early on',()=>{
+ const lesson=getSoundSpellingLesson('early on');
+ expect(lesson?.ipa).toBe('/ˈɜːli ɒn/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('early on');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none','none']);
+});
