@@ -67,7 +67,7 @@ function refreshOverrides() {
   }
   for (const [word, entry] of Object.entries(manifest.entries)) {
     // This importer validates Commons recordings only; independently sourced recordings are managed separately.
-    if (['openslr','eccc'].includes((entry as {provider?:string}).provider ?? '')) continue;
+    if (['openslr','eccc','mswc'].includes((entry as {provider?:string}).provider ?? '')) continue;
     if (!hasLocalAudio(word)) {
       delete manifest.entries[word];
       progress.words[word] = { status: 'unknown', checkedAt: new Date().toISOString(), reason: 'cache-needs-refresh', sourceUrl: hints.get(word) };
@@ -230,7 +230,7 @@ function hasLocalAudio(word: string) {
   return canReusePronunciation(word, manifest.entries[word], directory, overrides[word], metadata);
 }
 function needsWork(word: string) {
-  if (['openslr','eccc'].includes((manifest.entries[word] as {provider?:string}|undefined)?.provider ?? '')) return false;
+  if (['openslr','eccc','mswc'].includes((manifest.entries[word] as {provider?:string}|undefined)?.provider ?? '')) return false;
   if (hasLocalAudio(word)) return false;
   const previous = progress.words[word];
   if (overrides[word] && previous?.sourceUrl !== hints.get(word)) return true;
