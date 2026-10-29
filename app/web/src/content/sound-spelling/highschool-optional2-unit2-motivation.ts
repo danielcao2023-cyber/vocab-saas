@@ -327,12 +327,8 @@ export const highschoolOptional2Unit2Motivation: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

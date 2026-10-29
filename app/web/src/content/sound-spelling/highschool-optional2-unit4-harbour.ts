@@ -435,12 +435,8 @@ export const highschoolOptional2Unit4Harbour: SoundSpellingLesson[] = [
             "sound": "/oʊ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"

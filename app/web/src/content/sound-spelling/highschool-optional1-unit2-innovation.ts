@@ -422,12 +422,8 @@ export const highschoolOptional1Unit2Innovation: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"

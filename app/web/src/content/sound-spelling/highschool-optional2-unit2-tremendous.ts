@@ -450,12 +450,8 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           },
           {
             "letters": "e",
@@ -526,12 +522,8 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"

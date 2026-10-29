@@ -553,12 +553,8 @@ export const highschoolBook2Unit1Worthwhile: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "双 s 不重复发音。"

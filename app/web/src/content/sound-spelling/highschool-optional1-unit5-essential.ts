@@ -149,11 +149,15 @@ export const highschoolOptional1Unit5Essential: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "wide 和 spread 组合而成。",
+    "variantNote": "wide 和 spread 组合而成。这里采用 /ˈwaɪdspred/；另一常见读法为 /ˌwaɪdˈspred/，重音位置不同。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/widespread"
+      },
+      {
+        "label": "Oxford Learner's Dictionaries · 英语读音",
+        "url": "https://www.oxfordlearnersdictionaries.com/definition/english/widespread"
       }
     ],
     "review": {

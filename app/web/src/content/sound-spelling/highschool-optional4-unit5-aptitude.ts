@@ -193,11 +193,7 @@ export const highschoolOptional4Unit5Aptitude: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "s",
-            "sound": ""
-          },
-          {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {

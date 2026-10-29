@@ -312,12 +312,8 @@ export const highschoolOptional2Unit1Health: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           },
           {
             "letters": "h",

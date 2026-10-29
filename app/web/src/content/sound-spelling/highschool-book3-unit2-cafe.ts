@@ -42,12 +42,8 @@ export const highschoolBook3Unit2Cafe: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

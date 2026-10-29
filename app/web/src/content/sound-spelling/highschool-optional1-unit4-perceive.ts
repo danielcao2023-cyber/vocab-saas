@@ -374,12 +374,8 @@ export const highschoolOptional1Unit4Perceive: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           },
           {
             "letters": "e",

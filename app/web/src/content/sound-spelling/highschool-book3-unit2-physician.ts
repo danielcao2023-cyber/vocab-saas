@@ -487,11 +487,7 @@ export const highschoolBook3Unit2Physician: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
-            "sound": ""
-          },
-          {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {
