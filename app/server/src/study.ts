@@ -158,7 +158,7 @@ const textbookSpellingVariants: Readonly<Record<string,string>> = {
   harbour:'harbor', harbor:'harbour', enrol:'enroll', enroll:'enrol',
   recognise:'recognize', recognize:'recognise', civilisation:'civilization', civilization:'civilisation',
   organise:'organize', organize:'organise', organisation:'organization', organization:'organisation',
-  inquire:'enquire', enquire:'inquire', millimetre:'millimeter', millimeter:'millimetre',
+  inquire:'enquire', enquire:'inquire', millimetre:'millimeter', millimeter:'millimetre', cosy:'cozy', cozy:'cosy',
 };
 
 /** 主词头、裸写变体和 AmE 变体可接受；全称和复数注释不可接受。 */
