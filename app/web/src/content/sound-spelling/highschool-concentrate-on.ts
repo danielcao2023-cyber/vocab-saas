@@ -651,3 +651,8 @@ addSourcedPhrase('early on','/ˈɜːli ɒn/',[
  ch('ly ','/li/','none',[{letters:'l',sound:'/l/'},{letters:'y',sound:'/i/'},{letters:' ',sound:''}]),
  ch('on','/ɒn/','none',[{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'}]),
 ],'Business English Magazine 词表','https://www.business-english.com.pl/dodatki/BEM%2075%20lista%20slow.pdf');
+addSourcedPhrase('keep in mind','/kiːp ɪn ˈmaɪnd/',[
+ ch('keep ','/kiːp/','none',[{letters:'k',sound:'/k/'},{letters:'ee',sound:'/iː/'},{letters:'p',sound:'/p/'},{letters:' ',sound:''}]),
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('mind','/maɪnd/','primary',[{letters:'m',sound:'/m/'},{letters:'i',sound:'/aɪ/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'}]),
+],'Burlington Advanced Real English 4 词表','https://bbspainresources.s3.eu-central-1.amazonaws.com/AdvRealEnglish4_WB_AppendCat_10213.pdf');

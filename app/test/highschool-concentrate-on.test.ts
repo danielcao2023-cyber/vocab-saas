@@ -355,3 +355,10 @@ it('matches the published wordlist pronunciation and stress for early on',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('early on');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none','none']);
 });
+
+it('matches Burlington pronunciation and stress for keep in mind',()=>{
+ const lesson=getSoundSpellingLesson('keep in mind');
+ expect(lesson?.ipa).toBe('/kiːp ɪn ˈmaɪnd/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('keep in mind');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','primary']);
+});
