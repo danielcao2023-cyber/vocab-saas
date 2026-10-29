@@ -135,3 +135,5 @@
 后续核验：3206–3235，逐项依据见 `highschool-comparison-audits/batch-3206-3220.json`、`batch-3221-3235.json`；无关对比已移除。
 
 后续核验：3236–3265，逐项依据见 `highschool-comparison-audits/batch-3236-3250.json`、`batch-3251-3265.json`；无关对比已移除。
+
+后续核验：3266–3295，逐项依据见 `highschool-comparison-audits/batch-3266-3280.json`、`batch-3281-3295.json`；无关对比已移除。
