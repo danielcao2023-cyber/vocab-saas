@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
-import { speak, stopAudio } from '../web/src/audio.ts';
+import { speak, stopAudio, pronunciationHeadword } from '../web/src/audio.ts';
 import { mockAudio, MockAudio } from './audio-fixtures.ts';
 import {applyPreferences} from '../web/src/preferences';
 import {DEFAULT_PREFERENCES} from '../shared/preferences';
@@ -148,4 +148,21 @@ it('plays a selected part-of-speech recording without falling back to speech syn
  expect(audio.src).toBe('/api/pronunciation/audio?word=estimate&variant=noun');
  audio.emit('error');await expect(first).resolves.toEqual({status:'unavailable',reason:'failed'});expect(synth).not.toHaveBeenCalled();
  const second=speak('estimate','verb');expect(MockAudio.instances[1].src).toBe('/api/pronunciation/audio?word=estimate&variant=verb');MockAudio.instances[1].emit('ended');await expect(second).resolves.toEqual({status:'success'});
+});
+for(const mobile of [false,true])it(`${mobile?'offline':'online'} refuses to synthesize an incomplete ellipsis skeleton when recording is unavailable`,async()=>{
+ vi.stubGlobal('__VOCAB_MOBILE__',mobile);vi.stubGlobal('__VOCAB_RECORDINGS__',{});
+ const synth={getVoices:()=>[],speak:vi.fn(),cancel:vi.fn()};vi.stubGlobal('speechSynthesis',synth);vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ const result=speak('range from ... to ...');if(!mobile)MockAudio.instances[0].emit('error');
+ await expect(result).resolves.toEqual({status:'unavailable',reason:'incomplete'});expect(synth.speak).not.toHaveBeenCalled();
+});
+for(const mobile of [false,true])it(`${mobile?'offline':'online'} still plays a complete recorded ellipsis entry before any fallback`,async()=>{
+ vi.stubGlobal('__VOCAB_MOBILE__',mobile);vi.stubGlobal('__VOCAB_RECORDINGS__',{'range from ... to ...':{file:'/offline/recordings/sample.mp3'}});
+ const synth={getVoices:()=>[],speak:vi.fn(),cancel:vi.fn()};vi.stubGlobal('speechSynthesis',synth);
+ const result=speak('range from ... to ...');const audio=MockAudio.instances[0];expect(audio.play).toHaveBeenCalledOnce();audio.emit('ended');await expect(result).resolves.toEqual({status:'success'});expect(synth.speak).not.toHaveBeenCalled();
+});
+
+it('retains omitted phrase slots in the playback headword for fallback safety',()=>{
+ expect(pronunciationHeadword('range from ... to ...')).toBe('range from ... to ...');
+ expect(pronunciationHeadword('in a ... manner')).toBe('in a ... manner');
+ expect(pronunciationHeadword('from (then) on')).toBe('from then on');
 });

@@ -93,3 +93,6 @@ it('starts a new day when refreshing an old issue after midnight instead of stay
  vi.stubGlobal('fetch',vi.fn(async(path:string)=>{calls.push(path);if(path.endsWith('/answer'))return Response.json({error:'stale'},{status:409});if(path.endsWith('/next')){nextCalls++;return Response.json(nextCalls===2?{kind:'idle',summary:{...s,started:false}}:{kind:'card',summary:s,card:{...card,mode:'recognize',headword:'above',options:[{id:5,text:'上方'}]}});}return Response.json(s);}));
  const ui=host('web/src/views/LearningStudyView.vue');try{await flush();await ui.all(n=>n.tag==='button'&&ui.text(n).includes('上方'))[0].props.onClick();await flush();await ui.all(n=>n.tag==='button'&&ui.text(n)==='刷新任务')[0].props.onClick();await flush();expect(calls.filter(x=>x.endsWith('/start'))).toHaveLength(2);expect(ui.text()).toContain('above');}finally{ui.app.unmount();}
 });
+it('shows an example guidance instead of retrying an incomplete skeleton voice',async()=>{
+ const ui=host('web/src/components/FocusStudyCard.vue',{card,answer:'',feedback:null,busy:false,audioFailed:'incomplete'});try{await flush();expect(ui.text()).toContain('这个词组省略了部分内容，请查看例句了解完整表达');expect(ui.all(n=>n.tag==='button'&&ui.text(n)==='重试播放')).toHaveLength(0);expect(ui.all(n=>n.props.role==='status')).toHaveLength(1)}finally{ui.app.unmount()}
+});

@@ -4,7 +4,7 @@ import {preferences} from './preferences';
 import {Capacitor,registerPlugin} from '@capacitor/core';
 const DeviceSpeech=registerPlugin<{speak:(args:{text:string;rate:number})=>Promise<{status:'success'|'cancelled'|'unavailable'}>;stop:()=>Promise<void>}>('DeviceSpeech');
 
-export type PlaybackFailure = 'blocked' | 'failed';
+export type PlaybackFailure = 'blocked' | 'failed' | 'incomplete';
 export type PlaybackResult =
   | { status: 'success' | 'cancelled'; source?: 'system' }
   | { status: 'unavailable'; reason: PlaybackFailure };
@@ -68,6 +68,7 @@ export function speak(headword: string, variant?: 'noun'|'verb'): Promise<Playba
     function onError(): void {
       if(settled||synthesizing)return;
       if(variant){finish({status:'unavailable',reason:'failed'});return;}
+      if(/\.{2,}|…/.test(word)){finish({status:'unavailable',reason:'incomplete'});return;}
       synthesizing=true;
       if(Capacitor.isNativePlatform()){
         cancelSpeech=()=>{void DeviceSpeech.stop().catch(()=>{});};

@@ -213,3 +213,7 @@ it('WordView labels successful system speech and hides a formerly ready recordin
  vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.startsWith('/api/pronunciation?')?{status:'ready'}:{status:'missing'}))));
  const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(1);ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance).toBeDefined();utterance!.onend!();await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0)}finally{ui.app.unmount()}
 });
+it('WordView explains an incomplete skeleton when the recording is missing',async()=>{
+ const synth={getVoices:()=>[],speak:vi.fn(),cancel:vi.fn()};vi.stubGlobal('speechSynthesis',synth);vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail(1,'range from ... to ...')});try{await flush();ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(ui.text()).toContain(COPY.audioIncomplete);expect(synth.speak).not.toHaveBeenCalled();expect(ui.all(n=>n.tag==='button'&&ui.text(n)===COPY.audioRetry)).toHaveLength(0)}finally{ui.app.unmount()}
+});

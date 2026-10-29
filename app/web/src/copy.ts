@@ -15,6 +15,7 @@ export const COPY = {
   audioHelp: '点发音按钮，可以再听一次。',
   audioUnavailable: '这个词的发音暂时无法播放。请重试，或确认设备已安装英文语音。',
   audioBlocked: '浏览器还没有允许播放，点按钮听发音。',
+  audioIncomplete: '这个词组省略了部分内容，请查看例句了解完整表达。',
   audioRetry: '听发音',
   audioCredits: '录音来源',
   dictationPrompt: '听发音，拼出单词', // 文案审查 #10
