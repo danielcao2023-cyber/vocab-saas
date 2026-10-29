@@ -62,3 +62,19 @@
 本机没有检测到 MFA、WhisperX、torchaudio 或 aeneas，因此没有现成强制对齐器。Whisper base 的 `--word_timestamps True` 可生成粗略自动时间戳，但并非基于给定标准句的强制对齐：take part in 识别连续词约 5.28–6.10 秒；lead to 则将语句识别成 “lead consumers to make”，与索引的 “lead to consumers making” 不同，不能据此切分。均未人工试听，时间戳不能证明语音边界、没有截断或短语实际词形。
 
 为避免误裁，本次保留两个完整原句 WAV 供后续试听，不产出假定边界无误的短语切片。要得到可靠切片需要真实对齐工具（及模型）和人工听审；尤其 lead to 须先排查文本/录音不一致。本轮未修改 manifest 或用户数据。
+
+## 批量读取与本机对齐补充
+
+18 个原句的索引行、匿名文件 ID、音频包分组已保存。建议按 7 个口音包分组，各包优先一次读取 ZIP 中央目录（服务须准确支持 HTTP Range）；先核对文件名、大小和 CRC，再按成员分段读取，仅写入隔离目录并生成原文/来源/哈希台账。单文件获取已有 2 次成功，但第三份实测出现 TLS 超时和 BadZipFile；因此该方法目前**只验证部分可行**，不能称全部 18 项均可获取。需要低并发、网络失败停止或有限重试，并记录 Range、长度、版本及 CRC，不能将失败判作文件不存在。官方出处和 CC BY-SA 4.0 署名、衍生作品相同方式共享要求仍需随具体结果保留。
+
+本机 Whisper base 和 small 均可生成词时间戳，但都是先识别再对齐，**不是根据索引原句的强制对齐**。对 `take part in`，base 估计 5.28–6.10 秒，small 估计 5.30–6.12 秒；这仅是后续试听定位，两者一致也不能保证词首词尾完整。对 `lead to`，两个模型均识别为 “lead consumers to make”，与索引 “lead to consumers making” 不一致，因此不存在可信的目标短语时间候选，须人工先核音文。完整识别结果及单词时间保存在 `slr83-local-whisper-candidates-2026-10-30.json`。
+
+仅有两份完整原句 WAV 保存在 `/tmp/slr83-candidate-audio/`；未自动裁剪、未听审、未修改清单或用户数据。可信边界仍须具备实际可用的强制对齐工具并人工听审（尤其弱读、连读和相邻词混入）。
+
+## 18 条完整原句批量提取尝试
+
+分 7 个口音包、最多 2 并发，以 HTTP Range 读取 ZIP 成员并检查 ZIP CRC、SHA-256 与 ffmpeg 完整解码。批量过程多次 TLS 握手超时，主动停止，未继续重试；明细见 `slr83-batch-status-2026-10-30.json`。
+
+截至本次，隔离目录有 **3 条完整原句**（均完整解码）：此前已取得 take part in、lead to 两条，本次新取得 refer to，原文件 `/tmp/slr83-candidate-audio/nof_05223_01349045656.wav`，483372 字节，SHA-256 `8631a342fe172ac6e46e3c3d8080f80fdceb1a3c999500699b40fa14cee496d7`，CC BY-SA 4.0，索引句 “Maw may refer to a fish's air bladder”。其中 take part in、lead to 在本轮网络请求超时，但先前文件仍存在且再次本地验证了哈希和解码，不应误记为无文件。
+
+其余 **5 条本轮尝试失败**（the Eiffel Tower、the Nile、series of、suitable for、the Amazon rainforest）；**10 条尚未尝试**。这是连接/主动停止的状态，不表明文件不存在。完整句子不是目标词组录音；均未裁剪或人工试听，音文一致性及边界待核。未修改 manifest 和用户学习数据。
