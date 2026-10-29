@@ -7,7 +7,7 @@ export const highschoolOptional3Unit2Dynamic: SoundSpellingLesson[] = [
     "uk": "/ˈdɪzi/",
     "chunks": [
       {
-        "letters": "diz",
+        "letters": "dizz",
         "sound": "/dɪz/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolOptional3Unit2Dynamic: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "z",
+            "letters": "zz",
             "sound": "/z/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "zy",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "z",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"

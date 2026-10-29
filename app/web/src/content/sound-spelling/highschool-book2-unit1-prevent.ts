@@ -75,7 +75,7 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
     "uk": "/kəˈmɪti/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "开头轻读。",
@@ -87,22 +87,18 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "m",
-            "sound": ""
           }
         ],
         "tip": "开头轻读。"
       },
       {
-        "letters": "mit",
+        "letters": "mmitt",
         "sound": "/mɪt/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           },
           {
@@ -110,22 +106,18 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "第二部分重读。"
       },
       {
-        "letters": "tee",
+        "letters": "ee",
         "sound": "/i/",
         "stress": "none",
         "hint": "双 t 不重复发音，ee 对应 /i/。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "ee",
             "sound": "/i/"

@@ -646,7 +646,7 @@ export const highschoolOptional4Unit3Capsule: SoundSpellingLesson[] = [
     "uk": "/ˈɡælən/",
     "chunks": [
       {
-        "letters": "gal",
+        "letters": "gall",
         "sound": "/ɡæl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -660,22 +660,18 @@ export const highschoolOptional4Unit3Capsule: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "lon",
+        "letters": "on",
         "sound": "/ən/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/ə/"

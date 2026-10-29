@@ -191,7 +191,7 @@ export const highschoolOptional4Unit4Dusty: SoundSpellingLesson[] = [
     "uk": "/ˈrʌbə/",
     "chunks": [
       {
-        "letters": "rub",
+        "letters": "rubb",
         "sound": "/rʌb/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -205,22 +205,18 @@ export const highschoolOptional4Unit4Dusty: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "b",
+            "letters": "bb",
             "sound": "/b/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ber",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "b",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
@@ -379,7 +375,7 @@ export const highschoolOptional4Unit4Dusty: SoundSpellingLesson[] = [
     "uk": "/ˈbʌbəl/",
     "chunks": [
       {
-        "letters": "bub",
+        "letters": "bubb",
         "sound": "/bʌb/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -393,22 +389,18 @@ export const highschoolOptional4Unit4Dusty: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "b",
+            "letters": "bb",
             "sound": "/b/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ble",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "b",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/əl/"

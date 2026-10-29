@@ -339,7 +339,7 @@ export const highschoolOptional1Unit4Perceive: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "bar",
+        "letters": "barr",
         "sound": "/bær/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -353,22 +353,18 @@ export const highschoolOptional1Unit4Perceive: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "rassed",
+        "letters": "assed",
         "sound": "/əst/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/ə/"

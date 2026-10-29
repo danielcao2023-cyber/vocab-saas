@@ -229,7 +229,7 @@ export const highschoolOptional2Unit3Ingredient: SoundSpellingLesson[] = [
     "uk": "/dɪˈzɜːt/",
     "chunks": [
       {
-        "letters": "des",
+        "letters": "de",
         "sound": "/dɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -241,22 +241,18 @@ export const highschoolOptional2Unit3Ingredient: SoundSpellingLesson[] = [
           {
             "letters": "e",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "sert",
+        "letters": "ssert",
         "sound": "/zɜːrt/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/z/"
           },
           {
@@ -353,7 +349,7 @@ export const highschoolOptional2Unit3Ingredient: SoundSpellingLesson[] = [
     "uk": "/ˈhæɡɪs/",
     "chunks": [
       {
-        "letters": "hag",
+        "letters": "hagg",
         "sound": "/hæɡ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -367,22 +363,18 @@ export const highschoolOptional2Unit3Ingredient: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "g",
+            "letters": "gg",
             "sound": "/ɡ/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "gis",
+        "letters": "is",
         "sound": "/ɪs/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "g",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

@@ -143,7 +143,7 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "uk": "/ˈæpɪtaɪt/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/æ/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -151,22 +151,18 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/æ/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "pe",
+        "letters": "ppe",
         "sound": "/pɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {
@@ -706,7 +702,7 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "uk": "/əˈprəʊpriət/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -714,22 +710,18 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "pro",
+        "letters": "ppro",
         "sound": "/proʊ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {
@@ -808,7 +800,7 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "uk": "/əˈpruːv/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -816,22 +808,18 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "prove",
+        "letters": "pprove",
         "sound": "/pruːv/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

@@ -88,7 +88,7 @@ export const highschoolUnit5Era: SoundSpellingLesson[] = [
     "uk": "/ˈstrʌɡəl/",
     "chunks": [
       {
-        "letters": "strug",
+        "letters": "strugg",
         "sound": "/strʌɡ/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -110,22 +110,18 @@ export const highschoolUnit5Era: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "g",
+            "letters": "gg",
             "sound": "/ɡ/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "gle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "双 g 不重复发音，le 对应 /əl/。",
         "pairs": [
-          {
-            "letters": "g",
-            "sound": ""
-          },
           {
             "letters": "le",
             "sound": "/əl/"

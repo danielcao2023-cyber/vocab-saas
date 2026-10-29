@@ -79,7 +79,7 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
     "uk": "/əˈteɪn/",
     "chunks": [
       {
-        "letters": "at",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -87,22 +87,18 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "t",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "tain",
+        "letters": "ttain",
         "sound": "/teɪn/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           },
           {
@@ -245,7 +241,7 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
     "uk": "/ˈpɒləneɪt/",
     "chunks": [
       {
-        "letters": "pol",
+        "letters": "poll",
         "sound": "/pɑːl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -259,22 +255,18 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "li",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"
@@ -330,7 +322,7 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
     "uk": "/əˈsʌmpʃən/",
     "chunks": [
       {
-        "letters": "as",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -338,22 +330,18 @@ export const highschoolOptional1Unit5Yield: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "sump",
+        "letters": "ssump",
         "sound": "/sʌmp/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {

@@ -279,7 +279,7 @@ export const highschoolOptional2Unit4Photographer: SoundSpellingLesson[] = [
     "uk": "/ˈkɒbəlstəʊn/",
     "chunks": [
       {
-        "letters": "cob",
+        "letters": "cobb",
         "sound": "/kɑːb/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -293,22 +293,18 @@ export const highschoolOptional2Unit4Photographer: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "b",
+            "letters": "bb",
             "sound": "/b/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ble",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "b",
-            "sound": ""
-          },
           {
             "letters": "le",
             "sound": "/əl/"

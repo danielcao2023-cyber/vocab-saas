@@ -7,7 +7,7 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
     "uk": "/ˈɪʃuː/",
     "chunks": [
       {
-        "letters": "is",
+        "letters": "iss",
         "sound": "/ɪʃ/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -17,22 +17,18 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "sue",
+        "letters": "ue",
         "sound": "/uː/",
         "stress": "none",
         "hint": "两字母 s 共同对应 /ʃ/，词尾 e 不单独发音。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/uː/"
@@ -237,7 +233,7 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
         "tip": "首部分次重读。"
       },
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读，双 p 不重复发音。",
@@ -245,22 +241,18 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读，双 p 不重复发音。"
       },
       {
-        "letters": "pear",
+        "letters": "ppear",
         "sound": "/pɪr/",
         "stress": "primary",
         "hint": "末部分重读，美式读出 r。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {
@@ -297,7 +289,7 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
     "uk": "/əˈtempt/",
     "chunks": [
       {
-        "letters": "at",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读，双 t 不重复发音。",
@@ -305,22 +297,18 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "t",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读，双 t 不重复发音。"
       },
       {
-        "letters": "tempt",
+        "letters": "ttempt",
         "sound": "/tempt/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           },
           {

@@ -131,7 +131,7 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
     "uk": "/pəˈzeʃən/",
     "chunks": [
       {
-        "letters": "pos",
+        "letters": "poss",
         "sound": "/pəz/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -145,22 +145,18 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
             "sound": "/ə/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/z/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "sess",
+        "letters": "ess",
         "sound": "/eʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/e/"
@@ -216,7 +212,7 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
     "uk": "/əˈpəʊnənt/",
     "chunks": [
       {
-        "letters": "op",
+        "letters": "o",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -224,22 +220,18 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "po",
+        "letters": "ppo",
         "sound": "/poʊ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {
@@ -361,7 +353,7 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
     "uk": "/əˈrest/",
     "chunks": [
       {
-        "letters": "ar",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -369,22 +361,18 @@ export const highschoolOptional4Unit3Murder: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "rest",
+        "letters": "rrest",
         "sound": "/rest/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           },
           {

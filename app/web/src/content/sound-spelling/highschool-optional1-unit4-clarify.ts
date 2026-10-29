@@ -495,7 +495,7 @@ export const highschoolOptional1Unit4Clarify: SoundSpellingLesson[] = [
     "uk": "/ˈɒkjupaɪ/",
     "chunks": [
       {
-        "letters": "oc",
+        "letters": "occ",
         "sound": "/ɑːk/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -505,22 +505,18 @@ export const highschoolOptional1Unit4Clarify: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "cu",
+        "letters": "u",
         "sound": "/ju/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "c",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/ju/"

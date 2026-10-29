@@ -451,7 +451,7 @@ export const highschoolOptional1Unit3Route: SoundSpellingLesson[] = [
     "uk": "/əˈpiːl/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -459,22 +459,18 @@ export const highschoolOptional1Unit3Route: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "peal",
+        "letters": "ppeal",
         "sound": "/piːl/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

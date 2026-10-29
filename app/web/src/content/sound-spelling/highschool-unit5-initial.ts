@@ -7,7 +7,7 @@ export const highschoolUnit5Initial: SoundSpellingLesson[] = [
     "uk": "/ˈbɪljən/",
     "chunks": [
       {
-        "letters": "bil",
+        "letters": "bill",
         "sound": "/bɪl/",
         "stress": "primary",
         "hint": "首部分重读。",
@@ -21,22 +21,18 @@ export const highschoolUnit5Initial: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "首部分重读。"
       },
       {
-        "letters": "lion",
+        "letters": "ion",
         "sound": "/jən/",
         "stress": "none",
         "hint": "双 l 不重复发音，ion 对应 /jən/。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/j/"

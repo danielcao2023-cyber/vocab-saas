@@ -161,7 +161,7 @@ export const highschoolOptional2Unit1Aviation: SoundSpellingLesson[] = [
     "uk": "/əˈsɪstənt/",
     "chunks": [
       {
-        "letters": "as",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -169,22 +169,18 @@ export const highschoolOptional2Unit1Aviation: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "sis",
+        "letters": "ssis",
         "sound": "/sɪs/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {
@@ -246,7 +242,7 @@ export const highschoolOptional2Unit1Aviation: SoundSpellingLesson[] = [
     "uk": "/ˈmɪsaɪl/",
     "chunks": [
       {
-        "letters": "mis",
+        "letters": "miss",
         "sound": "/mɪs/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -260,22 +256,18 @@ export const highschoolOptional2Unit1Aviation: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sile",
+        "letters": "ile",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"

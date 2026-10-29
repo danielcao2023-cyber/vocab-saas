@@ -464,7 +464,7 @@ export const highschoolOptional2Unit4Harbour: SoundSpellingLesson[] = [
     "uk": "/ˈkwɒri/",
     "chunks": [
       {
-        "letters": "quar",
+        "letters": "quarr",
         "sound": "/kwɔːr/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -478,22 +478,18 @@ export const highschoolOptional2Unit4Harbour: SoundSpellingLesson[] = [
             "sound": "/ɔː/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ry",
+        "letters": "y",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "y",
             "sound": "/i/"

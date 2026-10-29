@@ -118,7 +118,7 @@ export const highschoolUnit5Global: SoundSpellingLesson[] = [
     "uk": "/kəˈlɪɡrəfi/",
     "chunks": [
       {
-        "letters": "cal",
+        "letters": "ca",
         "sound": "/kə/",
         "stress": "none",
         "hint": "开头轻读；双 l 在此不重复发音。",
@@ -130,22 +130,18 @@ export const highschoolUnit5Global: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "开头轻读；双 l 在此不重复发音。"
       },
       {
-        "letters": "lig",
+        "letters": "llig",
         "sound": "/lɪɡ/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           },
           {
@@ -336,7 +332,7 @@ export const highschoolUnit5Global: SoundSpellingLesson[] = [
     "uk": "/əˈpriːʃieɪt/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "开头轻读，双 p 不重复发音。",
@@ -344,22 +340,18 @@ export const highschoolUnit5Global: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "p",
-            "sound": ""
           }
         ],
         "tip": "开头轻读，双 p 不重复发音。"
       },
       {
-        "letters": "pre",
+        "letters": "ppre",
         "sound": "/priː/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           },
           {

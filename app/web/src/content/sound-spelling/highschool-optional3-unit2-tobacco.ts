@@ -24,7 +24,7 @@ export const highschoolOptional3Unit2Tobacco: SoundSpellingLesson[] = [
         "tip": "此部分轻读。"
       },
       {
-        "letters": "bac",
+        "letters": "bacc",
         "sound": "/bæk/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -38,22 +38,18 @@ export const highschoolOptional3Unit2Tobacco: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "co",
+        "letters": "o",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "c",
-            "sound": ""
-          },
           {
             "letters": "o",
             "sound": "/oʊ/"

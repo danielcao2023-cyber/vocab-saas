@@ -378,7 +378,7 @@ export const highschoolOptional2Unit5Paramedic: SoundSpellingLesson[] = [
     "uk": "/ˈswɒləʊ/",
     "chunks": [
       {
-        "letters": "swal",
+        "letters": "swall",
         "sound": "/swɑːl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -396,22 +396,18 @@ export const highschoolOptional2Unit5Paramedic: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "low",
+        "letters": "ow",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ow",
             "sound": "/oʊ/"

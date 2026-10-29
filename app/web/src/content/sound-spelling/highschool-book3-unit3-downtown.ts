@@ -7,7 +7,7 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
     "uk": "/əˈkɜː/",
     "chunks": [
       {
-        "letters": "oc",
+        "letters": "o",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -15,22 +15,18 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "cur",
+        "letters": "ccur",
         "sound": "/kɜːr/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           },
           {

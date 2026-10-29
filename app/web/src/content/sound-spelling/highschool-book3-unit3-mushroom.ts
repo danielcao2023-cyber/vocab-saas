@@ -272,7 +272,7 @@ export const highschoolBook3Unit3Mushroom: SoundSpellingLesson[] = [
     "uk": "/kəˈlekʃən/",
     "chunks": [
       {
-        "letters": "col",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -284,22 +284,18 @@ export const highschoolBook3Unit3Mushroom: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "lec",
+        "letters": "llec",
         "sound": "/lek/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           },
           {

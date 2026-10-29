@@ -177,7 +177,7 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
     "uk": "/səˈraʊndɪŋz/",
     "chunks": [
       {
-        "letters": "sur",
+        "letters": "su",
         "sound": "/sə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -189,22 +189,18 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
           {
             "letters": "u",
             "sound": "/ə/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "round",
+        "letters": "rround",
         "sound": "/raʊnd/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           },
           {
@@ -266,7 +262,7 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
     "uk": "/səˈraʊndɪŋ/",
     "chunks": [
       {
-        "letters": "sur",
+        "letters": "su",
         "sound": "/sə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -278,22 +274,18 @@ export const highschoolOptional2Unit2Tremendous: SoundSpellingLesson[] = [
           {
             "letters": "u",
             "sound": "/ə/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "round",
+        "letters": "rround",
         "sound": "/raʊnd/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           },
           {

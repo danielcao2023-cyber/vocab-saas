@@ -303,8 +303,8 @@ addSourcedPhrase('pros and cons','/ˌprəʊz ənd ˈkɒns/',[
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
 addSourcedPhrase('in addition','/ˌɪn əˈdɪʃn/',[
  ch('in ','/ɪn/','secondary',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
- ch('ad','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:'d',sound:''}]),
- ch('di','/dɪ/','primary',[{letters:'d',sound:'/d/'},{letters:'i',sound:'/ɪ/'}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('ddi','/dɪ/','primary',[{letters:'dd',sound:'/d/'},{letters:'i',sound:'/ɪ/'}]),
  ch('tion','/ʃn/','none',[{letters:'tion',sound:'/ʃn/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
 addSourcedPhrase('in other words','/ɪn ˈʌðə wɜːdz/',[
@@ -329,8 +329,8 @@ addSourcedPhrase('in response to','/ɪn rɪˈspɒns tə/',[
 addSourcedPhrase('as a matter of fact','/əz ə ˌmætər əv ˈfækt/',[
  ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
  ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
- ch('mat','/mæt/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/æ/'},{letters:'t',sound:'/t/'}]),
- ch('ter ','/ər/','none',[{letters:'t',sound:''},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
+ ch('matt','/mæt/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/æ/'},{letters:'tt',sound:'/t/'}]),
+ ch('er ','/ər/','none',[{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
  ch('of ','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'},{letters:' ',sound:''}]),
  ch('fact','/fækt/','primary',[{letters:'f',sound:'/f/'},{letters:'a',sound:'/æ/'},{letters:'c',sound:'/k/'},{letters:'t',sound:'/t/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
@@ -504,8 +504,8 @@ addSourcedPhrase('switch off','/ˌswɪtʃ ˈɒf/',[
  ch('off','/ɒf/','primary',[{letters:'o',sound:'/ɒ/'},{letters:'ff',sound:'/f/'}]),
 ],'Business in Context 4/5 词表',businessWordlist);
 addSourcedPhrase('appeal to','/əˈpiːl tə/',[
- ch('ap','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:'p',sound:''}]),
- ch('peal ','/piːl/','primary',[{letters:'p',sound:'/p/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('ppeal ','/piːl/','primary',[{letters:'pp',sound:'/p/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'},{letters:' ',sound:''}]),
  ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
 ],'Business in Context 4/5 词表',businessWordlist);
 addSourcedPhrase('tuition fees','/tjuˈɪʃn fiːz/',[

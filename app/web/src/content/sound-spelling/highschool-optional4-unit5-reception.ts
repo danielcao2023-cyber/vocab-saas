@@ -271,7 +271,7 @@ export const highschoolOptional4Unit5Reception: SoundSpellingLesson[] = [
     "uk": "/ˈkɒmjənɪst/",
     "chunks": [
       {
-        "letters": "com",
+        "letters": "comm",
         "sound": "/kɑːm/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -285,22 +285,18 @@ export const highschoolOptional4Unit5Reception: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "m",
+            "letters": "mm",
             "sound": "/m/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "mu",
+        "letters": "u",
         "sound": "/jə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "m",
-            "sound": ""
-          },
           {
             "letters": "u",
             "sound": "/jə/"

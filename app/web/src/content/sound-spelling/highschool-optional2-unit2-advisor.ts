@@ -170,7 +170,7 @@ export const highschoolOptional2Unit2Advisor: SoundSpellingLesson[] = [
     "uk": "/ˈæplɪkənt/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "app",
         "sound": "/æp/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -180,22 +180,18 @@ export const highschoolOptional2Unit2Advisor: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "pli",
+        "letters": "li",
         "sound": "/lɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "p",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/l/"
@@ -400,7 +396,7 @@ export const highschoolOptional2Unit2Advisor: SoundSpellingLesson[] = [
     "uk": "/ˈsetɪŋ/",
     "chunks": [
       {
-        "letters": "set",
+        "letters": "sett",
         "sound": "/set/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -414,22 +410,18 @@ export const highschoolOptional2Unit2Advisor: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ting",
+        "letters": "ing",
         "sound": "/ɪŋ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

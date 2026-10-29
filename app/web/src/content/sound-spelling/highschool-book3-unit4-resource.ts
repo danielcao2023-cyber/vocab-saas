@@ -293,7 +293,7 @@ export const highschoolBook3Unit4Resource: SoundSpellingLesson[] = [
     "uk": "/əˈtætʃ/",
     "chunks": [
       {
-        "letters": "at",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -301,22 +301,18 @@ export const highschoolBook3Unit4Resource: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "t",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "tach",
+        "letters": "ttach",
         "sound": "/tætʃ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           },
           {

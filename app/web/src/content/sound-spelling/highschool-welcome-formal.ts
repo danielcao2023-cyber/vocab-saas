@@ -140,7 +140,7 @@ export const highschoolWelcomeFormal: SoundSpellingLesson[] = [
     "uk": "/əˈnɔɪd/",
     "chunks": [
       {
-        "letters": "an",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读，双 n 不重复发音。",
@@ -148,22 +148,18 @@ export const highschoolWelcomeFormal: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读，双 n 不重复发音。"
       },
       {
-        "letters": "noyed",
+        "letters": "nnoyed",
         "sound": "/nɔɪd/",
         "stress": "primary",
         "hint": "第二部分重读，ed 发 /d/。",
         "pairs": [
           {
-            "letters": "n",
+            "letters": "nn",
             "sound": "/n/"
           },
           {
@@ -204,7 +200,7 @@ export const highschoolWelcomeFormal: SoundSpellingLesson[] = [
     "uk": "/əˈnɔɪ/",
     "chunks": [
       {
-        "letters": "an",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "首部分轻读。",
@@ -212,22 +208,18 @@ export const highschoolWelcomeFormal: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读。"
       },
       {
-        "letters": "noy",
+        "letters": "nnoy",
         "sound": "/nɔɪ/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "n",
+            "letters": "nn",
             "sound": "/n/"
           },
           {

@@ -7,7 +7,7 @@ export const highschoolOptional2Unit3Chef: SoundSpellingLesson[] = [
     "uk": "/ˈpepəkɔːn/",
     "chunks": [
       {
-        "letters": "pep",
+        "letters": "pepp",
         "sound": "/pep/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolOptional2Unit3Chef: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "per",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "p",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

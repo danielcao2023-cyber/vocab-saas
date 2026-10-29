@@ -471,7 +471,7 @@ export const highschoolOptional1Unit4Gesture: SoundSpellingLesson[] = [
     "uk": "/ˈdɪfə/",
     "chunks": [
       {
-        "letters": "dif",
+        "letters": "diff",
         "sound": "/dɪf/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -485,22 +485,18 @@ export const highschoolOptional1Unit4Gesture: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "f",
+            "letters": "ff",
             "sound": "/f/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "fer",
+        "letters": "er",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "f",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"
@@ -595,7 +591,7 @@ export const highschoolOptional1Unit4Gesture: SoundSpellingLesson[] = [
     "uk": "/ˈbæriə/",
     "chunks": [
       {
-        "letters": "bar",
+        "letters": "barr",
         "sound": "/bær/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -609,22 +605,18 @@ export const highschoolOptional1Unit4Gesture: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "ri",
+        "letters": "i",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "r",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/i/"

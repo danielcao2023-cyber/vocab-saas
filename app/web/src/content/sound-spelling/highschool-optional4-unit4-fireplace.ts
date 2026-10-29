@@ -143,7 +143,7 @@ export const highschoolOptional4Unit4Fireplace: SoundSpellingLesson[] = [
     "uk": "/ˈketəl/",
     "chunks": [
       {
-        "letters": "ket",
+        "letters": "kett",
         "sound": "/ket/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -157,22 +157,18 @@ export const highschoolOptional4Unit4Fireplace: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "t",
+            "letters": "tt",
             "sound": "/t/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "tle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "t",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/əl/"

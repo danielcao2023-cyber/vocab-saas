@@ -71,7 +71,7 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
     "uk": "/əˈkaʊntənt/",
     "chunks": [
       {
-        "letters": "ac",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -79,22 +79,18 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "count",
+        "letters": "ccount",
         "sound": "/kaʊnt/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           },
           {
@@ -224,7 +220,7 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
     "uk": "/əˈkjuːz/",
     "chunks": [
       {
-        "letters": "ac",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -232,22 +228,18 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "cuse",
+        "letters": "ccuse",
         "sound": "/kjuːz/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "cc",
             "sound": "/k/"
           },
           {

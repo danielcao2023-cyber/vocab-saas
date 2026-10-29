@@ -250,7 +250,7 @@ export const highschoolBook2Unit1Application: SoundSpellingLesson[] = [
     "uk": "/ˌæplɪˈkeɪʃən/",
     "chunks": [
       {
-        "letters": "ap",
+        "letters": "app",
         "sound": "/æp/",
         "stress": "secondary",
         "hint": "开头有次重音。",
@@ -260,22 +260,18 @@ export const highschoolBook2Unit1Application: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "p",
+            "letters": "pp",
             "sound": "/p/"
           }
         ],
         "tip": "开头有次重音。"
       },
       {
-        "letters": "pli",
+        "letters": "li",
         "sound": "/lə/",
         "stress": "none",
         "hint": "双 p 不重复发音，美式 i 轻读 /ə/。",
         "pairs": [
-          {
-            "letters": "p",
-            "sound": ""
-          },
           {
             "letters": "l",
             "sound": "/l/"

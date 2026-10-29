@@ -67,7 +67,7 @@ export const highschoolOptional2Unit4Scenery: SoundSpellingLesson[] = [
     "uk": "/ˈmæsɪv/",
     "chunks": [
       {
-        "letters": "mas",
+        "letters": "mass",
         "sound": "/mæs/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -81,22 +81,18 @@ export const highschoolOptional2Unit4Scenery: SoundSpellingLesson[] = [
             "sound": "/æ/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sive",
+        "letters": "ive",
         "sound": "/ɪv/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

@@ -204,7 +204,7 @@ export const highschoolOptional2Unit5Panic: SoundSpellingLesson[] = [
         "tip": "此部分次重读。"
       },
       {
-        "letters": "ter",
+        "letters": "te",
         "sound": "/tə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -216,22 +216,18 @@ export const highschoolOptional2Unit5Panic: SoundSpellingLesson[] = [
           {
             "letters": "e",
             "sound": "/ə/"
-          },
-          {
-            "letters": "r",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "rupt",
+        "letters": "rrupt",
         "sound": "/rʌpt/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "r",
+            "letters": "rr",
             "sound": "/r/"
           },
           {
@@ -272,7 +268,7 @@ export const highschoolOptional2Unit5Panic: SoundSpellingLesson[] = [
     "uk": "/ˈfeləʊ/",
     "chunks": [
       {
-        "letters": "fel",
+        "letters": "fell",
         "sound": "/fel/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -286,22 +282,18 @@ export const highschoolOptional2Unit5Panic: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "low",
+        "letters": "ow",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "ow",
             "sound": "/oʊ/"

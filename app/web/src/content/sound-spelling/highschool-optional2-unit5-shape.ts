@@ -7,7 +7,7 @@ export const highschoolOptional2Unit5Shape: SoundSpellingLesson[] = [
     "uk": "/ˈfɒɡi/",
     "chunks": [
       {
-        "letters": "fog",
+        "letters": "fo",
         "sound": "/fɑː/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -19,22 +19,18 @@ export const highschoolOptional2Unit5Shape: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ɑː/"
-          },
-          {
-            "letters": "g",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "gy",
+        "letters": "ggy",
         "sound": "/ɡi/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "g",
+            "letters": "gg",
             "sound": "/ɡ/"
           },
           {

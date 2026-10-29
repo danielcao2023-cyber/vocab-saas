@@ -71,7 +71,7 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
     "uk": "/ɪˈliːɡəl/",
     "chunks": [
       {
-        "letters": "il",
+        "letters": "i",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "首部分轻读，双 l 不重复发音。",
@@ -79,22 +79,18 @@ export const highschoolBook2Unit2Poster: SoundSpellingLesson[] = [
           {
             "letters": "i",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "首部分轻读，双 l 不重复发音。"
       },
       {
-        "letters": "le",
+        "letters": "lle",
         "sound": "/liː/",
         "stress": "primary",
         "hint": "第二部分重读。",
         "pairs": [
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           },
           {

@@ -174,7 +174,7 @@ export const highschoolOptional2Unit3Cafeteria: SoundSpellingLesson[] = [
     "uk": "/ˈtʃɪli/",
     "chunks": [
       {
-        "letters": "chil",
+        "letters": "chill",
         "sound": "/tʃɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -188,22 +188,18 @@ export const highschoolOptional2Unit3Cafeteria: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "li",
+        "letters": "i",
         "sound": "/i/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/i/"
@@ -375,7 +371,7 @@ export const highschoolOptional2Unit3Cafeteria: SoundSpellingLesson[] = [
     "uk": "/əˌsəʊsiˈeɪʃən/",
     "chunks": [
       {
-        "letters": "as",
+        "letters": "a",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -383,22 +379,18 @@ export const highschoolOptional2Unit3Cafeteria: SoundSpellingLesson[] = [
           {
             "letters": "a",
             "sound": "/ə/"
-          },
-          {
-            "letters": "s",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "so",
+        "letters": "sso",
         "sound": "/soʊ/",
         "stress": "secondary",
         "hint": "此部分次重读。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           },
           {

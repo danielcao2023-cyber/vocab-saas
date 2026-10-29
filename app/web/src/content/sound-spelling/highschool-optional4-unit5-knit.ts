@@ -314,7 +314,7 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
     "uk": "/ˈkɒlə/",
     "chunks": [
       {
-        "letters": "col",
+        "letters": "coll",
         "sound": "/kɑːl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -328,22 +328,18 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
             "sound": "/ɑː/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "lar",
+        "letters": "ar",
         "sound": "/ər/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "a",
             "sound": "/ə/"

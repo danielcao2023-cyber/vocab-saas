@@ -280,7 +280,7 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
     "uk": "/səˈfɪʃənt/",
     "chunks": [
       {
-        "letters": "suf",
+        "letters": "su",
         "sound": "/sə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -292,22 +292,18 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
           {
             "letters": "u",
             "sound": "/ə/"
-          },
-          {
-            "letters": "f",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "fi",
+        "letters": "ffi",
         "sound": "/fɪ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "f",
+            "letters": "ff",
             "sound": "/f/"
           },
           {

@@ -7,7 +7,7 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
     "uk": "/ˌpesɪˈmɪstɪk/",
     "chunks": [
       {
-        "letters": "pes",
+        "letters": "pess",
         "sound": "/pes/",
         "stress": "secondary",
         "hint": "此部分次重读。",
@@ -21,22 +21,18 @@ export const highschoolOptional3Unit2Discipline: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分次重读。"
       },
       {
-        "letters": "si",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"

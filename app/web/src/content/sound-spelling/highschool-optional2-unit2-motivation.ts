@@ -7,7 +7,7 @@ export const highschoolOptional2Unit2Motivation: SoundSpellingLesson[] = [
     "uk": "/ˈmesɪndʒə/",
     "chunks": [
       {
-        "letters": "mes",
+        "letters": "mess",
         "sound": "/mes/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolOptional2Unit2Motivation: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/s/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "sen",
+        "letters": "en",
         "sound": "/ɪn/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ɪ/"

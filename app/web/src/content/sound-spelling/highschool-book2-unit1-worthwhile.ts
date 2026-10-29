@@ -177,7 +177,7 @@ export const highschoolBook2Unit1Worthwhile: SoundSpellingLesson[] = [
         "tip": "首部分轻读。"
       },
       {
-        "letters": "fes",
+        "letters": "fess",
         "sound": "/feʃ/",
         "stress": "primary",
         "hint": "这一部分重读。",
@@ -191,22 +191,18 @@ export const highschoolBook2Unit1Worthwhile: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "s",
+            "letters": "ss",
             "sound": "/ʃ/"
           }
         ],
         "tip": "这一部分重读。"
       },
       {
-        "letters": "sion",
+        "letters": "ion",
         "sound": "/ən/",
         "stress": "none",
         "hint": "双 s 在此共同对应 /ʃ/。",
         "pairs": [
-          {
-            "letters": "s",
-            "sound": ""
-          },
           {
             "letters": "io",
             "sound": "/ə/"

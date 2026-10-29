@@ -256,7 +256,7 @@ export const highschoolOptional2Unit5Motion: SoundSpellingLesson[] = [
     "uk": "/kəˈlæps/",
     "chunks": [
       {
-        "letters": "col",
+        "letters": "co",
         "sound": "/kə/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -268,22 +268,18 @@ export const highschoolOptional2Unit5Motion: SoundSpellingLesson[] = [
           {
             "letters": "o",
             "sound": "/ə/"
-          },
-          {
-            "letters": "l",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "lapse",
+        "letters": "llapse",
         "sound": "/læps/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           },
           {

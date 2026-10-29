@@ -616,7 +616,7 @@ export const highschoolOptional2Unit1Astronomy: SoundSpellingLesson[] = [
     "uk": "/ˈbrɪljənt/",
     "chunks": [
       {
-        "letters": "bril",
+        "letters": "brill",
         "sound": "/brɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -634,22 +634,18 @@ export const highschoolOptional2Unit1Astronomy: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "liant",
+        "letters": "iant",
         "sound": "/jənt/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/j/"

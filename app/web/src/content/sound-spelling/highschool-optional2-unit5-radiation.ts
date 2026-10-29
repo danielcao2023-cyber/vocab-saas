@@ -157,7 +157,7 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
     "uk": "/ˈmɪlɪmiːtə/",
     "chunks": [
       {
-        "letters": "mil",
+        "letters": "mill",
         "sound": "/mɪl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -171,22 +171,18 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "li",
+        "letters": "i",
         "sound": "/ə/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ə/"
@@ -435,7 +431,7 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
     "uk": "/ˈswəʊlən/",
     "chunks": [
       {
-        "letters": "swol",
+        "letters": "swoll",
         "sound": "/swoʊl/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -453,22 +449,18 @@ export const highschoolOptional2Unit5Radiation: SoundSpellingLesson[] = [
             "sound": "/oʊ/"
           },
           {
-            "letters": "l",
+            "letters": "ll",
             "sound": "/l/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "len",
+        "letters": "en",
         "sound": "/ən/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "l",
-            "sound": ""
-          },
           {
             "letters": "e",
             "sound": "/ə/"

@@ -344,7 +344,7 @@ export const highschoolOptional1Unit2Smart: SoundSpellingLesson[] = [
     "uk": "/ɪˈfɪʃənt/",
     "chunks": [
       {
-        "letters": "ef",
+        "letters": "e",
         "sound": "/ɪ/",
         "stress": "none",
         "hint": "此部分轻读。",
@@ -352,22 +352,18 @@ export const highschoolOptional1Unit2Smart: SoundSpellingLesson[] = [
           {
             "letters": "e",
             "sound": "/ɪ/"
-          },
-          {
-            "letters": "f",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "fi",
+        "letters": "ffi",
         "sound": "/fɪ/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "f",
+            "letters": "ff",
             "sound": "/f/"
           },
           {
