@@ -63,3 +63,5 @@
 后续核验：2156–2170、2183–2185，逐项依据见 `highschool-comparison-audits/batch-2156-2170.json`、`batch-2171-2185.json`；2171–2182 无对比项，不代表整词条已核验。
 
 后续核验：2186–2215，逐项依据见 `highschool-comparison-audits/batch-2186-2200.json`、`batch-2201-2215.json`；仅覆盖对比义项及例句。
+
+后续核验：2216–2245，逐项依据见 `highschool-comparison-audits/batch-2216-2230.json`、`batch-2231-2245.json`；仅覆盖对比义项及例句。

@@ -165,7 +165,7 @@ describe('pronunciation provenance', () => {
     expect(parseCommonsRecording(page)).toBeUndefined();
   });
 
-  it('matches explicit noun or verb filename suffixes only when the description agrees', () => {
+  it('matches explicit part-of-speech filename suffixes only when the description agrees', () => {
     const page = { pageid: 42, title: 'File:En-us-permit-noun.ogg', videoinfo: [{
       descriptionurl: 'https://commons.wikimedia.org/wiki/File:En-us-permit-noun.ogg',
       extmetadata: { Artist:{value:'Dvortygirl'}, LicenseShortName:{value:'CC BY-SA 3.0'}, LicenseUrl:{value:'https://creativecommons.org/licenses/by-sa/3.0'}, ImageDescription:{value:"Pronunciation of the word 'permit' (noun) in US English"} },
@@ -175,6 +175,11 @@ describe('pronunciation provenance', () => {
     page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'permit' (verb) in US English";
     expect(parseCommonsRecording(page)).toBeUndefined();
     page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'permissive' (noun) in US English";
+    expect(parseCommonsRecording(page)).toBeUndefined();
+    page.title = 'File:En-us-appropriate-adj.ogg';
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'appropriate' (adjective) in US English";
+    expect(parseCommonsRecording(page)).toMatchObject({title:page.title});
+    page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'appropriate' (verb) in US English";
     expect(parseCommonsRecording(page)).toBeUndefined();
   });
 
