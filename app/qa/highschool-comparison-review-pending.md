@@ -51,3 +51,5 @@
 后续核验：1976–2005，逐项依据见 `highschool-comparison-audits/batch-1976-1990.json`、`batch-1991-2005.json`；仅覆盖对比义项及例句。
 
 后续核验：2006–2035，逐项依据见 `highschool-comparison-audits/batch-2006-2020.json`、`batch-2021-2035.json`；仅覆盖对比义项及例句。
+
+后续核验：2036–2065，逐项依据见 `highschool-comparison-audits/batch-2036-2050.json`、`batch-2051-2065.json`；2057、2058 的后续核验另见 `batch-2057-2058.json`。仅覆盖对比义项和例句。
