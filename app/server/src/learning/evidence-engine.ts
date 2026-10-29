@@ -12,6 +12,7 @@ import {learningWords,composeFresh,type LearningWord} from './selection.ts';
 import {nextDay,MODES} from './policy.ts';
 import {REVIEW_POLICY,classifyEvidence,chooseCapability} from './evidence-policy.ts';
 import {ensureEvidenceWord,evidenceCards,latestExposure,readWordEvidence,saveProbe,saveExposure,recordCorrection,projectEvidence,capabilityNeeds,evidenceIndex,untouchedEvidence} from './evidence-store.ts';
+import {legacyIssueHeadword} from './legacy-issue.ts';
 interface Entry {day:string;word_id:number;position:number;is_new:number;last_mode:number;done:number;deferred:number;available_at:string}
 interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null}
 const entries=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as Entry[];
@@ -51,7 +52,8 @@ export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now)
 })();return todayV3(db,now);}
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
- return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:[...new Set(acceptedSpellings(w.headword).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,w.headword),meaning_source:w.meaning_source}:i.mode==='dictation'?{audioWord:acceptedSpellings(w.headword)[0]}:{headword:w.headword})};
+ const shown=legacyIssueHeadword(i,w.headword)??w.headword;
+ return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:[...new Set(acceptedSpellings(shown).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source}:i.mode==='dictation'?{audioWord:acceptedSpellings(shown)[0]}:{headword:w.headword})};
 }
 export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};
@@ -108,7 +110,7 @@ export function answerV3(db:DB,input:LearningAnswer,now:Date):LearningResultV3{r
  const {issue}=active(db,input.issueId,now),w=db.prepare('SELECT headword,meaning_zh FROM words WHERE id=?').get(issue.word_id) as any;
  if(input.durationMs!==undefined&&(!Number.isFinite(input.durationMs)||input.durationMs<0||input.durationMs>300000))throw new HttpError(400,'答题时长无效。');
  let correct:boolean;if(issue.mode==='recognize'){if(!Number.isSafeInteger(input.choiceId)||!JSON.parse(issue.options_json).some((o:any)=>o.id===input.choiceId))throw new HttpError(400,'请选择题目答案。');correct=input.choiceId===issue.word_id;}
- else {if(typeof input.answer!=='string'||!input.answer.trim()||input.answer.length>256)throw new HttpError(400,'请输入英文单词。');correct=acceptedSpellings(w.headword).includes(normalizeAnswer(input.answer));}
+ else {if(typeof input.answer!=='string'||!input.answer.trim()||input.answer.length>256)throw new HttpError(400,'请输入英文单词。');correct=acceptedSpellings(legacyIssueHeadword(issue,w.headword)??w.headword).includes(normalizeAnswer(input.answer));}
  const exposure=latestExposure(db,issue.word_id),already=!!db.prepare("SELECT 1 FROM learning_events WHERE issue_id=? AND kind IN ('probe_success','probe_failure')").get(issue.id);
  const decision=classifyEvidence({correct,assisted:!!issue.assisted,nowMs:+now,latestExposureMs:exposure?Date.parse(exposure):null,probeAlreadySaved:already},REVIEW_POLICY);
  const saved=saveProbe(db,issue.id,decision,now);if(!saved.applied)recordCorrection(db,issue.id,input.answerId,correct,now);

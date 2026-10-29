@@ -157,8 +157,16 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
     for (const entry of catalog.entries) {
       const wordId = resolveWord(entry);
       // A published editorial correction is conditional: never replace core or learner-edited content.
-      if(entry.headwordCorrection)db.prepare("UPDATE words SET headword=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND headword=? AND NOT EXISTS (SELECT 1 FROM words other WHERE other.source='vocabulary' AND other.headword=? AND other.id<>?)")
-        .run(entry.headword,wordId,entry.headwordCorrection.expected,entry.headword,wordId);
+      if(entry.headwordCorrection){
+        const isBalanceCorrection=entry.key==='keep balance' && entry.headword==='keep a balance' && entry.headwordCorrection.expected==='keep balance';
+        const changed=db.prepare("UPDATE words SET headword=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND headword=? AND NOT EXISTS (SELECT 1 FROM words other WHERE (other.source='vocabulary' OR ?=1) AND other.headword=? AND other.id<>?)")
+          .run(entry.headword,wordId,entry.headwordCorrection.expected,Number(isBalanceCorrection),entry.headword,wordId);
+        // Preserve the answer shown to a learner before this specific correction.
+        // Open spelling/dictation issues normally carry an empty options array.
+        if(changed.changes && isBalanceCorrection)
+          db.prepare("UPDATE learning_issues SET options_json=? WHERE word_id=? AND answered_at IS NULL AND mode IN ('spell','dictation') AND options_json='[]'")
+            .run(JSON.stringify([{legacyHeadword:'keep balance'}]),wordId);
+      }
       if(entry.meaningCorrection)db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
         .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
