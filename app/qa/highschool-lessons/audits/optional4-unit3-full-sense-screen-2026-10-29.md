@@ -16,7 +16,7 @@
 | beheld / `beheld` | `data/lessons/3912.json` | 看见；注视（过去式或过去分词）；教材括号列出的词形，catalog 单独条目；初筛 |
 | league / `league` | `data/lessons/3913.json` | 联盟；联赛；同一水平；本批补例句，词典核查并验证 reader |
 | in a league of one's own / `in a league of one's own` | `data/lessons/3914.json` | 出类拔萃；远胜其他；初筛：已有相关例句 |
-| royal / `royal` | `data/lessons/3915.json` | 王室的；皇家的；待核：教材“高贵的”未独立示例 |
+| royal / `royal` | `data/lessons/3915.json` | 王室的；皇家的；后续据 Merriam-Webster 补“盛大的；豪华的”，不是道德意义的“高尚” |
 | spice / `spice` | `data/lessons/3916.json` | 香料；调味；初筛：已有相关例句 |
 | withdraw / `withdraw` | `data/lessons/3917.json` | 撤回；取出；退出；初筛：已有相关例句 |
 | withdrew / `withdrew` | `data/lessons/3918.json` | 撤回；退出（过去式）；教材括号列出的词形，catalog 单独条目；初筛 |
@@ -25,7 +25,7 @@
 | channel / `channel` | `data/lessons/3921.json` | 航道；水道；频道；渠道；途径；海峡；初筛：已有相关例句 |
 | maritime / `maritime` | `data/lessons/3922.json` | 海事的；海洋的；初筛：已有相关例句 |
 | bond / `bond` | `data/lessons/3923.json` | 纽带；联系；债券；建立亲密关系；初筛：已有相关例句 |
-| in hand / `in hand` | `data/lessons/3924.json` | 在手头；正在处理；在控制中；待核：教材“可供使用”未明确示例 |
+| in hand / `in hand` | `data/lessons/3924.json` | 在手头；正在处理；在控制中；后续据 Merriam-Webster 补现有、可供使用义与例句 |
 | politics / `politics` | `data/lessons/3925.json` | 政治；政治活动；初筛：已有相关例句 |
 | profession / `profession` | `data/lessons/3926.json` | 职业；行业；初筛：已有相关例句 |
 | tournament / `tournament` | `data/lessons/3927.json` | 锦标赛；比赛；初筛：已有相关例句 |
@@ -51,7 +51,7 @@
 | opponent / `opponent` | `data/lessons/3946.json` | 对手；反对者；初筛：已有相关例句 |
 | Log / `Log` | `data/lessons/3947.json` | 原木；日志；记录；原木；本批补例句，词典核查并验证 reader |
 | marine / `marine` | `data/lessons/3948.json` | 海洋的；海军陆战队员；初筛：已有相关例句 |
-| arrest / `arrest` | `data/lessons/3949.json` | 逮捕；拘捕；阻止；遏制；待核：教材名词“中止”未独立示例 |
+| arrest / `arrest` | `data/lessons/3949.json` | 逮捕；拘捕；阻止；遏制；后续据 Merriam-Webster 补名词“停止；中止”及例句 |
 | Marco Polo / `Marco Polo` | `data/lessons/3950.json` | 马可·波罗；初筛：已有相关例句 |
 | Columbus / `Columbus` | `data/lessons/3951.json` | 哥伦布；初筛：已有相关例句 |
 | Ceylon / `Ceylon` | `data/lessons/3952.json` | 锡兰；初筛：已有相关例句 |
@@ -60,4 +60,6 @@
 | Zac Sunderland / `Zac Sunderland` | `data/lessons/3955.json` | 扎克·桑德兰；初筛：已有相关例句 |
 | Robin Lee Graham / `Robin Lee Graham` | `data/lessons/3956.json` | 罗宾·李·格雷厄姆；初筛：已有相关例句 |
 
-未核边界：上述“已有相关例句”仅表示教材相关义至少有可见示例，不能说明教材每个义项均已覆盖；尤其 meanwhile 对比用法、arrest 名词“中止”、royal 高贵、in hand 可供使用仍需各自检索权威来源。专名仅核对存在与讲解可见，未重新核身份出处。上述 lesson 文件按当前 headword 匹配，stable key 与运行时 ID 的跨设备转换未在本表逐条重新验证。
+未核边界：上述“已有相关例句”仅表示教材相关义至少有可见示例，不能说明教材每个义项均已覆盖；此句为初筛时边界；下文记录了后续复核，其中 meanwhile 的独立转折义仍待核。专名仅核对存在与讲解可见，未重新核身份出处。上述 lesson 文件按当前 headword 匹配，stable key 与运行时 ID 的跨设备转换未在本表逐条重新验证。
+
+后续复核：royal 的“盛大、豪华” [Merriam-Webster](https://www.merriam-webster.com/dictionary/royal)，不应泛化为道德高尚；in hand 的现有资源见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/in%20hand)；arrest 名词停止义见 [Merriam-Webster](https://www.merriam-webster.com/dictionary/arrest)。例句自拟。meanwhile 独立“转折”释义尚无充分权威证据，保留待核：[Cambridge](https://dictionary.cambridge.org/dictionary/english/meanwhile) 仅直接列时间相关义。定向测试 `test/highschool-optional4-unit3-pending-followup.test.ts` 两项通过，含全单元真实 reader 与 validateLesson。

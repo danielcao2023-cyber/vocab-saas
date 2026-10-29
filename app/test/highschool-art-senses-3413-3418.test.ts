@@ -17,8 +17,8 @@ it.each(checks)('%i separates %s from %s and links examples to the right sense',
   for (const e of s.examples) expect(e.senseId).toBe(s.id);
  }
  const originalExamples = d.senses.slice(0, 2).flatMap((s:{examples:{id:string}[]})=>s.examples.map(e=>e.id));
- expect(originalExamples).toHaveLength(4);
- expect(new Set(originalExamples).size).toBe(4);
+ expect(originalExamples).toEqual(expect.arrayContaining(['s1-e1', 's1-e2', 's2-e1', 's2-e2']));
+ expect(new Set(originalExamples).size).toBe(originalExamples.length);
  const allExamples = d.senses.flatMap((s:{examples:{id:string}[]})=>s.examples.map(e=>e.id));
  expect(new Set(allExamples).size).toBe(allExamples.length);
 });

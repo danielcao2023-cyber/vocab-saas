@@ -1,0 +1,48 @@
+import {expect,it} from 'vitest';
+import {createSSRApp,h} from 'vue';
+import {renderToString} from '@vue/server-renderer';
+import MeaningList from '../web/src/MeaningList.vue';
+import {acceptedAnswers} from '../server/src/study';
+import {makeLegacyFixture,makeV3Fixture} from './learning-v3-helpers';
+import {startLearning,nextLearning,answerLearning} from '../server/src/learning/engine';
+import {openBrowserDatabase,asSharedDb} from '../web/src/offline/sqlite';
+const now=new Date('2026-10-21T01:00:00Z');
+const terms=[['microwave','microwave oven'],['microwave oven','microwave']] as const;
+const current='n. 微波；微波炉；v. 用微波炉加热';
+it('the card meaning renderer shows the oven sense and hides extra imported lines',async()=>{
+ expect(await renderToString(createSSRApp({render:()=>h(MeaningList,{meaning:current})}))).toContain('微波炉');
+ const hidden=await renderToString(createSSRApp({render:()=>h(MeaningList,{meaning:'n. 微波\nv. 加热\nn. 微波炉',source:'词库导入'})}));
+ expect(hidden).not.toContain('微波炉');
+});
+it.each(terms)('%s accepts %s only for a visible exact oven sense', (a,b)=>{
+ expect(acceptedAnswers(a,'spell',current)).toEqual([a,b]);
+ expect(acceptedAnswers(a,'spell','n. 微波')).toEqual([a]);
+ expect(acceptedAnswers(a,'spell','n. 不是微波炉')).toEqual([a]);
+ expect(acceptedAnswers(a,'spell','n. 微波\nv. 加热\nn. 微波炉')).toEqual([a]);
+ expect(acceptedAnswers(a,'spell','n. 微波\nv. 加热\nn. 微波炉','manual')).toEqual([a,b]);
+ expect(acceptedAnswers(a,'dictation',current)).toEqual([a]);
+});
+for(const v3 of [false,true])for(const offline of [false,true])for(const [main,other] of terms)for(const mode of ['spell','dictation'] as const)it(`${v3?'V3':'V2'} ${offline?'offline':'online'} restored ${main} ${mode}`,async()=>{
+ const source=v3?makeV3Fixture(2):makeLegacyFixture(2);source.prepare('UPDATE words SET headword=?,meaning_zh=?,meaning_source=? WHERE id=1').run(main,current,'manual');source.prepare('UPDATE words SET headword=?,meaning_zh=? WHERE id=2').run(other,'n. 微波炉');
+ startLearning(source,now);source.prepare('UPDATE learning_day_words SET position=CASE WHEN word_id=1 THEN 0 ELSE 1 END').run();const issue=nextLearning(source,now).card!;source.prepare('UPDATE learning_issues SET mode=? WHERE id=?').run(mode,issue.issueId);
+ const mobile=offline?await openBrowserDatabase(source.serialize()):null,db=mobile?asSharedDb(mobile):source;if(mobile)source.close();try{
+  const card=nextLearning(db,now).card!;expect(card.issueId).toBe(issue.issueId);expect(card.wordId).toBe(1);expect(card.patterns).toEqual((mode==='spell'?[main,other]:[main]).map(s=>s.replace(/[a-z]/g,'_')));
+  if(mode==='dictation')expect(card.audioWord).toBe(main);const input={policyVersion:3 as const,issueId:issue.issueId,answerId:'microwave-answer',answer:other};const result=answerLearning(db,input,now);
+  expect(result.correct).toBe(mode==='spell');expect(answerLearning(db,input,now)).toEqual(result);
+ }finally{mobile?mobile.close():source.close()}
+});
+for(const v3 of [false,true])it(`${v3?'V3':'V2'} restores an open card after a user changes the meaning`,()=>{
+ const db=v3?makeV3Fixture():makeLegacyFixture();try{
+  db.prepare("UPDATE words SET headword='microwave',meaning_zh='n. 微波炉',meaning_source='manual' WHERE id=1").run();startLearning(db,now);const issued=nextLearning(db,now).card!;db.prepare("UPDATE learning_issues SET mode='spell' WHERE id=?").run(issued.issueId);
+  expect(nextLearning(db,now).card?.patterns).toEqual(['_________','_________ ____']);
+  db.prepare("UPDATE words SET meaning_zh='n. 微波' WHERE id=1").run();
+  const card=nextLearning(db,now).card!;expect(card.issueId).toBe(issued.issueId);expect(card.meaning).toBe('n. 微波');expect(card.patterns).toEqual(['_________']);
+  expect(answerLearning(db,{policyVersion:3,issueId:card.issueId,answerId:'changed-meaning',answer:'microwave oven'},now).correct).toBe(false);
+ }finally{db.close()}
+});
+for(const v3 of [false,true])it(`${v3?'V3':'V2'} replays pre-upgrade results unchanged`,()=>{
+ const db=v3?makeV3Fixture():makeLegacyFixture();try{db.prepare("UPDATE words SET headword='microwave',meaning_zh='n. 微波炉' WHERE id=1").run();startLearning(db,now);const card=nextLearning(db,now).card!;const result={correct:false,expected:'microwave',historical:true};
+  db.prepare('UPDATE learning_issues SET answered_at=?,answer_id=?,result_json=? WHERE id=?').run(now.toISOString(),'old',JSON.stringify(result),card.issueId);
+  expect(answerLearning(db,{policyVersion:3,issueId:card.issueId,answerId:'old',answer:'microwave oven'},now)).toEqual(result);
+ }finally{db.close()}
+});

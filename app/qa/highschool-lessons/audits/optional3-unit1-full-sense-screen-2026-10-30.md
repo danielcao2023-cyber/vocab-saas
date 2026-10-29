@@ -10,13 +10,13 @@
 | precisely / `precisely` | `data/lessons/3411.json` | 精确地；恰恰；已补独立回应表示完全赞同的例句 |
 | Christianity / `Christianity` | `data/lessons/3412.json` | 基督教；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | realistic / `realistic` | `data/lessons/3413.json` | 切实可行的；现实的；逼真的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| realism / `realism` | `data/lessons/3414.json` | 现实主义（艺术）；务实的态度；教材“逼真”义是否有对应例句待核 |
+| realism / `realism` | `data/lessons/3414.json` | 现实主义（艺术）；务实的态度；补作品逼真程度例句 |
 | realist / `realist` | `data/lessons/3415.json` | 艺术现实主义者；务实的人；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | primitive / `primitive` | `data/lessons/3416.json` | 原始的；早期的；简陋的；后续已补艺术史名词“文艺复兴前艺术家或作品” |
 | two-dimensional / `two-dimensional` | `data/lessons/3417.json` | 二维的；平面的；单薄的；缺乏深度的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | dimension / `dimension` | `data/lessons/3418.json` | 尺寸；维度；方面；层面；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | in particular / `in particular` | `data/lessons/3419.json` | 尤其；特别；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| set apart from / `set apart from` | `data/lessons/3420.json` | 使与众不同；区别；教材“使优于”义是否覆盖待核 |
+| set apart from / `set apart from` | `data/lessons/3420.json` | 使与众不同；区别；补优于同类例句，说明并非所有不同均更好 |
 | humanistic / `humanistic` | `data/lessons/3421.json` | 人文主义的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | humanity / `humanity` | `data/lessons/3422.json` | 人类；人文学科；人性；仁慈；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | breakthrough / `breakthrough` | `data/lessons/3423.json` | 突破；突破性进展；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -25,7 +25,7 @@
 | noble / `noble` | `data/lessons/3426.json` | 高尚的；贵族的；贵族；后续补宏伟景观用例 |
 | rank / `rank` | `data/lessons/3427.json` | 等级；地位；排列；行列；后续已补按标准排序或分等级的及物动词用例 |
 | purchase / `purchase` | `data/lessons/3428.json` | 购买；购买的物品；购买行为；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| mythology / `mythology` | `data/lessons/3429.json` | 神话；神话学；教材“虚幻的想法”义未见例句，待核 |
+| mythology / `mythology` | `data/lessons/3429.json` | 神话；神话学；补流行但可能不真实的观念例句 |
 | client / `client` | `data/lessons/3430.json` | 客户；委托人；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | photography / `photography` | `data/lessons/3431.json` | 摄影；摄影术；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | emerge / `emerge` | `data/lessons/3432.json` | 出现；浮现；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
@@ -60,7 +60,7 @@
 | decline / `decline` | `data/lessons/3461.json` | 下降；衰落；拒绝；婉拒；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | exhibition / `exhibition` | `data/lessons/3462.json` | 展览；展览会；后续已据 Cambridge 补技能、品质的展现及例句，reader/validateLesson 通过 |
 | bronze / `bronze` | `data/lessons/3463.json` | 青铜；青铜制的；青铜色；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
-| ceramic / `ceramic` | `data/lessons/3464.json` | 陶瓷的；陶瓷制品；教材“制陶艺术”义待核 |
+| ceramic / `ceramic` | `data/lessons/3464.json` | 陶瓷的；陶瓷制品；原已有陶艺例句，后续明确 ceramics 陶艺词形并补例句 |
 | vase / `vase` | `data/lessons/3465.json` | 花瓶；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | artistic / `artistic` | `data/lessons/3466.json` | 艺术的；有艺术才能的；初筛：至少一条已有相关例句，不代表全部教材义已覆盖 |
 | entry / `entry` | `data/lessons/3467.json` | 进入；入场；入口；条目；记录；参赛作品；后续补参加比赛用例 |

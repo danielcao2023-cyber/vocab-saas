@@ -187,20 +187,24 @@ export function acceptedSpellings(headword: string): string[] {
 // Only translation cards accept these explicitly verified equivalent expressions.
 // Listening remains tied to the word that was played. See Cambridge: /dictionary/english/tofu.
 const textbookTranslationEquivalents: Readonly<Record<string,string>> = {'tofu':'bean curd','bean curd':'tofu','estate agent':'real estate agent','real estate agent':'estate agent','leapt':'leaped','leaped':'leapt','despite':'in spite of','in spite of':'despite'};
-export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 'recognize'): string[] {
+export function acceptedAnswers(headword: string, mode: 'spell' | 'dictation' | 'recognize', meaning?: string | null, meaningSource?: string | null): string[] {
   const spellings = acceptedSpellings(headword);
   if (mode !== 'spell') return spellings;
-  const equivalent = textbookTranslationEquivalents[spellings[0]];
+  const visibleLines = (meaning ?? '').split('\n').map(line=>line.trim()).filter(Boolean).slice(0, meaningSource === 'manual' ? undefined : 2);
+  const visibleSenses = visibleLines.flatMap(line=>line.replace(/^\s*(?:(?:[a-z]+\.)\s*)+/i,'').split(/[,，;；、]/).map(part=>part.trim()));
+  const hasOvenSense = visibleSenses.includes('微波炉');
+  const microwaveEquivalent = hasOvenSense ? ({'microwave':'microwave oven','microwave oven':'microwave'} as Record<string,string>)[spellings[0]] : undefined;
+  const equivalent = microwaveEquivalent ?? textbookTranslationEquivalents[spellings[0]];
   return equivalent ? [...new Set([...spellings, equivalent])] : spellings;
 }
 
 /** 拼写/听写：严格比对（忽略大小写和首尾空格），对→认识(Good)，错→忘了(Again)；用了提示→模糊(Hard) */
 export function checkSpelling(db: DB, cardId: number, answer: string, now = new Date(), usedHint = false, answerId?: string, extra: { context?: Context; durationMs?: number } = {}) {
-  const row = db.prepare(`SELECT c.mode, w.headword FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string } | undefined;
+  const row = db.prepare(`SELECT c.mode, w.headword, w.meaning_zh, w.meaning_source FROM cards c JOIN words w ON w.id=c.word_id WHERE c.id=?`).get(cardId) as { mode: Mode; headword: string; meaning_zh: string | null; meaning_source: string | null } | undefined;
   if (!row) throw new Error('card not found');
   if (row.mode === 'recognize') throw new Error('not a spelling card');
   if(hasDictionaryPlaceholder(row.headword)&&!(answerId&&db.prepare('SELECT 1 FROM review_logs WHERE answer_id=?').get(answerId)))throw new Error('此词条仅支持认词练习');
-  const correct = acceptedAnswers(row.headword,row.mode).includes(normalizeAnswer(answer));
+  const correct = acceptedAnswers(row.headword,row.mode,row.meaning_zh,row.meaning_source).includes(normalizeAnswer(answer));
   const rating = correct ? (usedHint ? Rating.Hard : Rating.Good) : Rating.Again;
   const r = review(db, cardId, rating as Grade, now, { ...extra, qtype: row.mode, answer, correct, answerId });
   const word=(db.prepare('SELECT word_id FROM cards WHERE id=?').get(cardId) as {word_id:number});
