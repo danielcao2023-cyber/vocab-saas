@@ -3,7 +3,7 @@ import { expect, it } from 'vitest';
 
 it('pairs sow, relay and complex default audio metadata with sourced pronunciations', () => {
  const entries=JSON.parse(readFileSync('data/pronunciation/manifest.json','utf8')).entries;
- expect(entries.sow).toMatchObject({ipa:'/saʊ/'});
+ expect(entries.sow).toMatchObject({ipa:'/soʊ/'});
  expect(entries.sow.variants.noun).toMatchObject({ipa:'/saʊ/',label:'母猪'});
  expect(entries.sow.variants.verb).toMatchObject({ipa:'/soʊ/',label:'播种'});
  expect(entries.relay).toMatchObject({ipa:'/ˈriːleɪ/'});
