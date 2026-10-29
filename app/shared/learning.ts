@@ -17,7 +17,7 @@ export interface AttemptEvidence {correct:boolean;assisted:boolean;nowMs:number;
 export interface EvidenceDecision {kind:'probe_success'|'probe_failure'|'correction';eligible:boolean;rating:1|3|null;reason:'independent'|'help'|'wrong'|'recent_exposure'|'already_recorded'}
 export interface CapabilityNeed {cardId:number;mode:LearningMode;group:'relearn'|'due'|'missing'|'initial';dueAt:string;eligibleAt:string;lastAttemptAt:string|null}
 export interface WordEvidenceState {stage:WordStage;priority:boolean;stable:boolean;dueAt:string|null;weakModes:LearningMode[]}
-export interface LearningSummaryV3 extends LearningSummary {policyVersion:3;touched:number;resolved:number;needsConsolidation:number;pendingLater:number;ready:number;attempts:number}
+export interface LearningSummaryV3 extends LearningSummary {policyVersion:3;touched:number;resolved:number;needsConsolidation:number;pendingLater:number;ready:number;attempts:number;audioCooldownCount?:number;audioRetryDay?:string|null}
 export interface LearningResultV3 extends LearningResult {policyVersion:3;evidenceKind:EvidenceKind;independentlyRecalled:boolean;needsConsolidation:boolean}
 export interface LearningTurnV3 extends Omit<LearningTurn,'summary'> {policyVersion:3;summary:LearningSummaryV3;reason?:'resolved'|'retry_budget'|'technical_defer'|CapabilityNeed['group']}
 export interface ExposureInput {policyVersion:3;wordId:number;issueId?:string;eventId:string;reason:string}
