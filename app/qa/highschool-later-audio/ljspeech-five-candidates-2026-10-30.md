@@ -1,5 +1,7 @@
 # LJSpeech 短语候选：五条完整句初筛（2026-10-30）
 
+**后续校验：**本记录初筛之后下载了官方 1.1 完整包，包哈希与 PyTorch 公布值一致；五条镜像 WAV 与官方同 ID 文件逐字节相同。具体结果见 `ljspeech-official-five-byte-comparison-2026-10-30.json` 和 `ljspeech-access-followup-2026-10-30.md`。下文关于未比对原件的描述保留初筛当时状态；此校验不代替人工试听或权利判断。
+
 从此前 42 个短语文本匹配中挑选五条语义自然、可能便于后续人工判断边界的句子。每条逐文件从 [flexthink/ljspeech 第三方镜像](https://huggingface.co/datasets/flexthink/ljspeech) 下载到临时目录；未下载整包，也未提交音频。精确下载 URL、原句、文件大小、完整 SHA-256 和 Whisper 输出见同目录 `ljspeech-five-candidates-2026-10-30.json`。本次对临时文件重新计算 SHA-256，五项均与该 JSON 一致；此哈希只证明本次本地文件身份，并非原始数据集比对。
 
 | 词组 | 文件 ID | 原句 | 本地 Whisper base 输出 |
