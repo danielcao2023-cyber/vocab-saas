@@ -70,3 +70,15 @@ highschoolVerifiedPhrases.push({
  sources:[{label:'Success in Business Higher 词表',url:'https://www.eltexampreparation.com/sites/default/files/SuccessBusiness_Higher_Wordlist_ES_0.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
 });
+
+highschoolVerifiedPhrases.push({
+ headword:'head to',ipa:'/ˈhed tə/',uk:'/ˈhed tə/',
+ chunks:[
+  {letters:'head ',sound:'/hed/',stress:'primary',hint:'head 重读。',pairs:[{letters:'h',sound:'/h/'},{letters:'ea',sound:'/e/'},{letters:'d',sound:'/d/'},{letters:' ',sound:''}],tip:'ea 在这里读 /e/。'},
+  {letters:'to',sound:'/tə/',stress:'none',hint:'to 在此轻读。',pairs:[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}],tip:'实际语流中弱读可能变化。'},
+ ],
+ anchor:{text:'head to 后面可以接目的地，结合完整句子练读。'},
+ variantNote:'这里摘取词表中 head to sth 的英式读法；后接内容时语流的重音可能变化。',
+ sources:[{label:'Pearson High Note 3 词表',url:'https://www.venturesbooks.cz/ke-stazeni/category/183-high-note?download=1921%3Ahn-3-slovnicek'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
+});

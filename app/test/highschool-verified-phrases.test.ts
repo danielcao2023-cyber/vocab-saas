@@ -40,3 +40,11 @@ it('matches the Success in Business pronunciation and stress for make a proposal
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','none','primary','none']);
  expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('make a proposal');
 });
+
+it('matches the High Note wordlist pronunciation and stress for head to',()=>{
+ const lesson=highschoolVerifiedPhrases.find(item=>item.headword==='head to');
+ expect(lesson?.ipa).toBe('/ˈhed tə/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('head to');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none']);
+ expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('head to');
+});
