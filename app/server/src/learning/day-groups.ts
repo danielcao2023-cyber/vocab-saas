@@ -52,7 +52,7 @@ function dedupeTextbookPair(db:DB,now:Date,scope:LearningWord[],due:LearningWord
  const mapped=db.prepare("SELECT entry_key,word_id FROM vocabulary_entry_map WHERE entry_key IN (?,?)").all(...keys) as {entry_key:string;word_id:number}[];
  if(mapped.length!==2)return {due,fresh};
  const ids=keys.map(key=>mapped.find(m=>m.entry_key===key)?.word_id);
- if(ids.some(id=>id===undefined)||ids[0]===ids[1]||!ids.every((id,i)=>scope.some(w=>w.id===id&&w.headword===heads[i]&&w.meaning_zh?.includes(expected))))return {due,fresh};
+ if(ids.some(id=>id===undefined)||ids[0]===ids[1]||!ids.every((id,i)=>scope.some(w=>w.id===id&&w.headword===heads[i]&&w.meaning_zh===expected&&(w.meaning_source==='词库导入'||w.meaning_source==='词库校订'))))return {due,fresh};
  const candidates=[...due,...fresh].filter(w=>ids.includes(w.id));if(candidates.length<2)return {due,fresh};
  const history=db.prepare('SELECT word_id,done FROM learning_day_words WHERE word_id IN (?,?) AND day<? ORDER BY day DESC,position ASC LIMIT 2').all(ids[0],ids[1],shDay(now)) as {word_id:number;done:number}[];
  const unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.word_id IN (?,?) AND d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(ids[0],ids[1],shDay(now)) as {word_id:number}[]).map(x=>x.word_id));
@@ -73,6 +73,5 @@ function dedupeTextbookPair(db:DB,now:Date,scope:LearningWord[],due:LearningWord
 }
 
 export function dedupeHighschoolVariants(db:DB,now:Date,scope:LearningWord[],due:LearningWord[],fresh:LearningWord[]){
- const first=dedupeTextbookPair(db,now,scope,due,fresh,['keep in mind','keep ... in mind'],['keep in mind','keep ... in mind'],'记');
- return dedupeTextbookPair(db,now,scope,first.due,first.fresh,['Braille','braille'],['Braille','braille'],'盲');
+ return dedupeTextbookPair(db,now,scope,due,fresh,['Braille','braille'],['Braille','braille'],'n. 布莱叶（法国盲人教育家）；盲人用点字法\nvt. 用盲字印');
 }
