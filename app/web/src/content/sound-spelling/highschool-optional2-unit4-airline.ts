@@ -239,16 +239,8 @@ export const highschoolOptional2Unit4Airline: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "a",
-            "sound": "/e/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "r",
-            "sound": "/r/"
+            "letters": "air",
+            "sound": "/er/"
           }
         ],
         "tip": "此部分重读。"

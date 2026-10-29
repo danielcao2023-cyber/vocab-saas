@@ -28,28 +28,24 @@ export const highschoolBook3Unit1Names: SoundSpellingLesson[] = [
         "tip": "此部分次重读。"
       },
       {
-        "letters": "o",
+        "letters": "ow",
         "sound": "/oʊ/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "o",
+            "letters": "ow",
             "sound": "/oʊ/"
           }
         ],
         "tip": "此部分轻读。"
       },
       {
-        "letters": "ween",
+        "letters": "een",
         "sound": "/iːn/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
-          {
-            "letters": "w",
-            "sound": ""
-          },
           {
             "letters": "ee",
             "sound": "/iː/"

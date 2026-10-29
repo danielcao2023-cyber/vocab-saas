@@ -20,3 +20,12 @@ it('maps ti to /ʃ/ and the nutritious vowel to the cited long vowel', () => {
   expect(nutritious.uk).toBe('/njuːˈtrɪʃəs/');
   expect(nutritious.chunks[0].sound).toBe('/nuː/');
 });
+
+it('keeps the spelling groups together in Halloween and airline', () => {
+  const halloween = getSoundSpellingLessons('Halloween')[0];
+  expect(halloween.chunks.map(chunk => chunk.letters).join('')).toBe('Halloween');
+  expect(halloween.chunks[1].pairs).toEqual([{ letters: 'ow', sound: '/oʊ/' }]);
+  expect(halloween.chunks[2].stress).toBe('primary');
+  const airline = getSoundSpellingLessons('airline')[0];
+  expect(airline.chunks[0].pairs).toEqual([{ letters: 'air', sound: '/er/' }]);
+});

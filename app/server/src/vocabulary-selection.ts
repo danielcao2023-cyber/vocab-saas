@@ -23,7 +23,13 @@ function validate(db:DB,input:unknown):VocabularySelection{
 }
 function stored(db:DB):Stored{
  try{const row=db.prepare('SELECT value FROM settings WHERE key=?').get(KEY) as {value:string}|undefined;
-  if(row){const value=JSON.parse(row.value);if(value.effectiveOn!==null&&!(typeof value.effectiveOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value.effectiveOn)))throw Error('Invalid date');return {selection:validate(db,value.selection),previous:validate(db,value.previous),effectiveOn:value.effectiveOn};}
+  if(row){const value=JSON.parse(row.value);if(value.effectiveOn!==null&&!(typeof value.effectiveOn==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value.effectiveOn)))throw Error('Invalid date');const selection=validate(db,value.selection);
+   // A new empty database uses the built-in default as a fallback even before
+   // any core words exist. Preserve that prior scope until tomorrow if a plan
+   // was already started; it is not an exposed selectable book.
+   const defaultPrevious=value.previous?.bookId==='kb2022'&&value.previous?.unitId===null&&Object.keys(value.previous).length===2;
+   const previous=value.effectiveOn===null?selection:defaultPrevious?{...DEFAULT_VOCABULARY}:validate(db,value.previous);
+   return {selection,previous,effectiveOn:value.effectiveOn};}
  }catch{/* Unknown or outdated selections never expose arbitrary settings. */}
  return {selection:{...DEFAULT_VOCABULARY},previous:{...DEFAULT_VOCABULARY},effectiveOn:null};
 }
@@ -53,7 +59,8 @@ export function saveVocabularySelection(db:DB,input:unknown,now:Date):Vocabulary
   const same=(a:VocabularySelection,b:VocabularySelection)=>a.bookId===b.bookId&&a.unitId===b.unitId;
   if(!same(selection,old.selection)){
    const started=!!db.prepare('SELECT 1 FROM learning_days WHERE day=?').get(shDay(now));
-   const next:Stored={selection,previous:current,effectiveOn:same(selection,current)||!started?null:shDay(new Date(+now+86400000))};
+   const effectiveOn=same(selection,current)||!started?null:shDay(new Date(+now+86400000));
+   const next:Stored={selection,previous:effectiveOn?current:selection,effectiveOn};
    db.prepare('INSERT INTO settings(key,value) VALUES (?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value').run(KEY,JSON.stringify(next));
   }
   return readVocabularyState(db,now);
