@@ -69,3 +69,9 @@ it.each([['take notes','/ˌteɪk ˈnəʊts/'],['make sense','/ˌmeɪk ˈsens/']]
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary']);
 });
+
+it.each([['refer to','/rɪˈfɜː tə/'],['try out','/ˌtraɪ ˈaʊt/'],['make sure','/ˌmeɪk ˈʃʊə/'],['make fun of','/ˌmeɪk ˈfʌn əv/']])('shows the sourced British pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});

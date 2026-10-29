@@ -186,3 +186,29 @@ highschoolConcentrateOn.push({
  sources:[{label:'Academic Vocabulary in Practice B1 词表',url:'https://languageadvisor.net/wp-content/uploads/2023/06/Academic_Vocabulary_Practice_Lower-Intermediate_B1.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; phrase pronunciation checked against textbook wordlist'},
 });
+
+type PhraseChunk = SoundSpellingLesson['chunks'][number];
+const addSourcedPhrase=(headword:string,ipa:string,chunks:PhraseChunk[],label:string,url:string)=>{
+ highschoolConcentrateOn.push({headword,ipa,uk:ipa,chunks,anchor:{text:'按字母与声音对照练读，再放回句子。'},
+  variantNote:'这里展示词表中的英式读法；实际语流的重音和弱读可能变化。',sources:[{label,url}],
+  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'}});
+};
+const ch=(letters:string,sound:string,stress:PhraseChunk['stress'],pairs:PhraseChunk['pairs']):PhraseChunk=>({letters,sound,stress,pairs,hint:stress==='primary'?'这部分重读。':stress==='secondary'?'这部分标次重音。':'这部分轻读。',tip:'结合完整短语和语境练读。'});
+addSourcedPhrase('refer to','/rɪˈfɜː tə/',[
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('fer ','/fɜː/','primary',[{letters:'f',sound:'/f/'},{letters:'er',sound:'/ɜː/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Oxford New Headway Elementary 词表','https://ektu.kz/files/DistanceEducation/Resource/379028/hw_elem_trd_wordlist_u12.pdf');
+addSourcedPhrase('try out','/ˌtraɪ ˈaʊt/',[
+ ch('try ','/traɪ/','secondary',[{letters:'t',sound:'/t/'},{letters:'r',sound:'/r/'},{letters:'y',sound:'/aɪ/'},{letters:' ',sound:''}]),
+ ch('out','/aʊt/','primary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'}]),
+],'Pearson Focus NL 3 词表','https://www.pearson.com/content/dam/one-dot-com/one-dot-com/netherlands/ELT-VO/FocusNL/Focus%20NL%203%20Sample.pdf');
+addSourcedPhrase('make sure','/ˌmeɪk ˈʃʊə/',[
+ ch('make ','/meɪk/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('sure','/ʃʊə/','primary',[{letters:'s',sound:'/ʃ/'},{letters:'u',sound:'/ʊ/'},{letters:'re',sound:'/ə/'}]),
+],'Oxford New Headway Pre-Intermediate 词表','https://ebizglow.com/wp-content/uploads/2020/06/New-Headway-Pre-Intermediate-Teacher-Book.pdf');
+addSourcedPhrase('make fun of','/ˌmeɪk ˈfʌn əv/',[
+ ch('make ','/meɪk/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('fun ','/fʌn/','primary',[{letters:'f',sound:'/f/'},{letters:'u',sound:'/ʌ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'Cambridge Think Level 4 词表','https://f.eba.gov.tr/ing-soru-bankasi/cambridge-01/think-level-4/69564/resources/pdf/wordlist_think_level_4_u12.pdf');
