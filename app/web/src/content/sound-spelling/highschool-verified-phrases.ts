@@ -43,3 +43,15 @@ highschoolVerifiedPhrases.push({
  sources:[{label:'English Walker 教材词表',url:'https://mybook.dniprorada.gov.ua/uploads/8bd1ad0eb8854187a0984b58d2fc77a45englishwalker2022.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
 });
+
+highschoolVerifiedPhrases.push({
+ headword:'date back',ipa:'/deɪt ˈbæk/',uk:'/deɪt ˈbæk/',
+ chunks:[
+  {letters:'date ',sound:'/deɪt/',stress:'none',hint:'先读 date。',pairs:[{letters:'d',sound:'/d/'},{letters:'a',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'back',sound:'/bæk/',stress:'primary',hint:'back 重读。',pairs:[{letters:'b',sound:'/b/'},{letters:'a',sound:'/æ/'},{letters:'ck',sound:'/k/'}],tip:'ck 合起来读 /k/。'},
+ ],
+ anchor:{text:'date back 常接 to 加时间，一起放回句子练读。'},
+ variantNote:'这里展示词表对 date back (to) 的英式读法；句中重音可能变化。',
+ sources:[{label:'National Geographic Learning Close-up B1+ 词表',url:'https://www.bridgebooks.cz/out/media/NCU%20B1plus%20Unit%206.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
+});

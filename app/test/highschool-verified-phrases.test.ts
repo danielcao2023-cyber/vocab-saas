@@ -24,3 +24,11 @@ it('matches the English Walker pronunciation and stress for roast turkey',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','primary','none']);
  expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('roast turkey');
 });
+
+it('matches the Close-up wordlist pronunciation and stress for date back',()=>{
+ const lesson=highschoolVerifiedPhrases.find(item=>item.headword==='date back');
+ expect(lesson?.ipa).toBe('/deɪt ˈbæk/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('date back');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','primary']);
+ expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('date back');
+});
