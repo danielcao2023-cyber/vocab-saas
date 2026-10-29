@@ -306,3 +306,10 @@ it('matches English in Context pronunciation and stress for daily routine',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('daily routine');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','none','primary']);
 });
+
+it('matches English in Context pronunciation and stress for blog post',()=>{
+ const lesson=getSoundSpellingLesson('blog post');
+ expect(lesson?.ipa).toBe('/ˈblɒɡ pəʊst/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('blog post');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['primary','none']);
+});
