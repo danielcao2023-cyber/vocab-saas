@@ -108,7 +108,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
-          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音':pronunciationNote }}</p>
+          <p v-if="systemSpeech||pronunciationNote" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}</p>
           <p v-if="recordingReady&&!systemSpeech" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>

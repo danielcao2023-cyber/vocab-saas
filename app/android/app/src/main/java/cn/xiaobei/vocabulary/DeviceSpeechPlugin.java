@@ -7,43 +7,44 @@ import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
-import java.util.Locale;
+import java.util.Collection;
+import android.speech.tts.Voice;
 
 /** Device English voice fallback for words without a bundled human recording. */
 @CapacitorPlugin(name="DeviceSpeech")
 public class DeviceSpeechPlugin extends Plugin {
     private TextToSpeech engine;
-    private boolean ready=false,destroyed=false;
-    private PluginCall pending;
-    private String utteranceId;
-    private long sequence=0;
+    private boolean ready=false;
+    private volatile boolean destroyed=false;
+    private final SpeechRequests<PluginCall> requests=new SpeechRequests<>();
 
-    private void finish(String status) {
-        PluginCall call=pending;pending=null;utteranceId=null;
+    private void resolve(PluginCall call,String status) {
         if(call!=null){JSObject result=new JSObject();result.put("status",status);call.resolve(result);}
     }
+    private void finish(String status) { resolve(requests.cancel(),status); }
     private void start() {
+        PluginCall pending=requests.current();
         if(pending==null||!ready)return;
-        int language=engine.setLanguage(Locale.US);
-        if(language==TextToSpeech.LANG_MISSING_DATA||language==TextToSpeech.LANG_NOT_SUPPORTED){finish("unavailable");return;}
-        // Network-only voices do not satisfy the offline learning contract.
-        if(engine.getVoice()==null||engine.getVoice().isNetworkConnectionRequired()){
-            android.speech.tts.Voice local=null;
-            if(engine.getVoices()!=null)for(android.speech.tts.Voice voice:engine.getVoices()){
-                if("en".equals(voice.getLocale().getLanguage())&&!voice.isNetworkConnectionRequired()){local=voice;break;}
-            }
-            if(local==null){finish("unavailable");return;}
-            engine.setVoice(local);
-        }
+        boolean selected=OfflineVoiceSelector.choose(new OfflineVoiceSelector.Engine<Voice>() {
+            public Collection<Voice> voices(){return engine.getVoices();}
+            public String language(Voice voice){return voice.getLocale().getLanguage();}
+            public String country(Voice voice){return voice.getLocale().getCountry();}
+            public boolean network(Voice voice){return voice.isNetworkConnectionRequired();}
+            public boolean installed(Voice voice){return voice.getFeatures()==null||!voice.getFeatures().contains(TextToSpeech.Engine.KEY_FEATURE_NOT_INSTALLED);}
+            public boolean select(Voice voice){return engine.setVoice(voice)==TextToSpeech.SUCCESS;}
+        });
+        if(!selected){finish("unavailable");return;}
         engine.setSpeechRate(pending.getFloat("rate",1f));
-        utteranceId="xiaobei-"+(++sequence);
+        String utteranceId=requests.start();
         if(engine.speak(pending.getString("text"),TextToSpeech.QUEUE_FLUSH,null,utteranceId)==TextToSpeech.ERROR)finish("unavailable");
     }
     @PluginMethod public void speak(PluginCall call) {
         String text=call.getString("text","");
-        if(text.isBlank()||text.length()>200){call.reject("Invalid word");return;}
+        if(SpeechText.isBlank(text)||text.length()>200){call.reject("Invalid word");return;}
         getActivity().runOnUiThread(()->{
-            if(engine!=null)engine.stop();finish("cancelled");pending=call;
+            if(destroyed){resolve(call,"cancelled");return;}
+            if(engine!=null)engine.stop();finish("cancelled");
+            if(!requests.begin(call)){resolve(call,"cancelled");return;}
             if(engine!=null){start();return;}
             engine=new TextToSpeech(getContext(),status->getActivity().runOnUiThread(()->{
                 if(destroyed)return;
@@ -59,7 +60,10 @@ public class DeviceSpeechPlugin extends Plugin {
             }));
         });
     }
-    private void complete(String id,String status){getActivity().runOnUiThread(()->{if(id.equals(utteranceId))finish(status);});}
+    private void complete(String id,String status){getActivity().runOnUiThread(()->{
+        PluginCall call=requests.complete(id);
+        if(call!=null){JSObject result=new JSObject();result.put("status",status);call.resolve(result);}
+    });}
     @PluginMethod public void stop(PluginCall call){getActivity().runOnUiThread(()->{if(engine!=null)engine.stop();finish("cancelled");call.resolve();});}
-    @Override protected void handleOnDestroy(){destroyed=true;if(engine!=null){engine.stop();engine.shutdown();}finish("cancelled");super.handleOnDestroy();}
+    @Override protected void handleOnDestroy(){destroyed=true;PluginCall call=requests.close();if(engine!=null){engine.stop();engine.shutdown();}resolve(call,"cancelled");super.handleOnDestroy();}
 }

@@ -211,7 +211,7 @@ it('WordView labels successful system speech and hides a formerly ready recordin
  let utterance:Utterance|undefined;
  vi.stubGlobal('SpeechSynthesisUtterance',Utterance);vi.stubGlobal('speechSynthesis',{getVoices:()=>[{lang:'en-US',localService:true}],speak:(u:Utterance)=>{utterance=u},cancel:vi.fn()});
  vi.stubGlobal('fetch',vi.fn(async(url:string)=>new Response(JSON.stringify(url.startsWith('/api/pronunciation?')?{status:'ready'}:{status:'missing'}))));
- const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(1);ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance).toBeDefined();utterance!.onend!();await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0)}finally{ui.app.unmount()}
+ const ui=host('web/src/views/WordView.vue',{wordId:1,initial:wordDetail()});try{await flush();expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(1);ui.all(n=>n.props['aria-label']==='听发音')[0].props.onClick();MockAudio.instances[0].emit('error');await flush();expect(utterance).toBeDefined();utterance!.onend!();await flush();expect(ui.text()).toContain('系统合成发音');expect(ui.text()).toContain('口音可能与音标不同');expect(ui.all(n=>n.tag==='a'&&ui.text(n)===COPY.audioCredits)).toHaveLength(0)}finally{ui.app.unmount()}
 });
 it('WordView explains an incomplete skeleton when the recording is missing',async()=>{
  const synth={getVoices:()=>[],speak:vi.fn(),cancel:vi.fn()};vi.stubGlobal('speechSynthesis',synth);vi.stubGlobal('SpeechSynthesisUtterance',class {constructor(public text:string){}});
