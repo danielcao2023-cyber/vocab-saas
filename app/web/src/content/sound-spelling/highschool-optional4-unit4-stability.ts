@@ -104,7 +104,7 @@ export const highschoolOptional4Unit4Stability: SoundSpellingLesson[] = [
         "letters": "hy",
         "sound": "/haɪ/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "h",
@@ -115,7 +115,7 @@ export const highschoolOptional4Unit4Stability: SoundSpellingLesson[] = [
             "sound": "/aɪ/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "po",

@@ -10,7 +10,7 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
         "letters": "in",
         "sound": "/ɪn/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "i",
@@ -21,7 +21,7 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
             "sound": "/n/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "ter",

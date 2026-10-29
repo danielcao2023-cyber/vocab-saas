@@ -11,7 +11,7 @@ export const highschoolRenoir: SoundSpellingLesson[] = [{
       tip: 'oi 在所列美式读法中对应 /wɑː/；末尾 r 发音。'}
   ],
   anchor: {text: '雷诺阿：先听整词，再按 Re + noir 记拼写；这个分块用于记忆，不严格等同音节。'},
-  variantNote: '这里的对应采用剑桥词典所列美式英语读法；英式重音及尾音不同，法语读法也可能不同。现有录音与上述读法是否一致仍需试听。',
-  sources: [{label: 'Cambridge Dictionary · Renoir', url: 'https://dictionary.cambridge.org/pronunciation/english/renoir'}, {label: 'Collins English Dictionary · Renoir', url: 'https://www.collinsdictionary.com/dictionary/english/renoir'}],
+  variantNote: '这里的对应采用 Collins 所列一种美式英语读法；美式另有前重音变体。所列英式读法重音及尾音不同，法语读法也不同。现有录音与上述读法是否一致仍需试听。',
+  sources: [{label: 'Collins English Dictionary · Renoir', url: 'https://www.collinsdictionary.com/dictionary/english/renoir'}],
   review: {status: 'reviewed', reviewedAt: '2026-10-29', draftedBy: 'Codex phoneme/letter alignment'}
 }];

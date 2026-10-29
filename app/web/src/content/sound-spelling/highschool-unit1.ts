@@ -3092,6 +3092,10 @@ export const highschoolUnit1 = [
       {
         "label": "Wiktionary · 基础词读音与搭配参考",
         "url": "https://en.wiktionary.org/wiki/attract"
+      },
+      {
+        "label": "Focus 教材词表 · 完整搭配英式读音",
+        "url": "https://www.magellanbooks.ru/upload/iblock/be7/ubzy72jrauy174l4qeor06h2k54bi28o.pdf"
       }
     ],
     "review": {

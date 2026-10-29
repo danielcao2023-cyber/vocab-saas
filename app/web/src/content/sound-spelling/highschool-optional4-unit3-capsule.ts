@@ -112,7 +112,7 @@ export const highschoolOptional4Unit3Capsule: SoundSpellingLesson[] = [
         "letters": "un",
         "sound": "/ʌn/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "u",
@@ -123,7 +123,7 @@ export const highschoolOptional4Unit3Capsule: SoundSpellingLesson[] = [
             "sound": "/n/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "der",

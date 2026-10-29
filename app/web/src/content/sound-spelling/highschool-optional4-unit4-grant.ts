@@ -155,7 +155,7 @@ export const highschoolOptional4Unit4Grant: SoundSpellingLesson[] = [
         "letters": "dis",
         "sound": "/dɪs/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "d",
@@ -170,7 +170,7 @@ export const highschoolOptional4Unit4Grant: SoundSpellingLesson[] = [
             "sound": "/s/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "a",
@@ -262,7 +262,7 @@ export const highschoolOptional4Unit4Grant: SoundSpellingLesson[] = [
         "letters": "con",
         "sound": "/kɑːn/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "c",
@@ -277,7 +277,7 @@ export const highschoolOptional4Unit4Grant: SoundSpellingLesson[] = [
             "sound": "/n/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "sul",

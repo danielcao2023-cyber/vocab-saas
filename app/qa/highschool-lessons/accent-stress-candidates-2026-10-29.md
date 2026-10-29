@@ -34,3 +34,5 @@
 - [worldwide](https://dictionary.cambridge.org/us/pronunciation/english/worldwide) 和 [premier](https://dictionary.cambridge.org/us/pronunciation/english/premier)：所列英美重音均与剑桥基础词典示例一致，不排除其他词典所列变体。
 
 有两项未能本轮独立确认完整读音：be attracted to 的主重音位置因不同 IPA 中空格造成假阳性，但未找到完整词组词典音标，不能仅由单词机械拼接判定；Renoir 的现有引用本轮无法打开、搜索未找到可直接核验该词完整英美音标的内容，仍待进一步核对，均未改。累计 25 候选：23 个已核查相关主重音，2 个完整读音待核；该数不包括重音以外的全部内容。真实 getter、结构及覆盖测试 3 文件 6 项通过。未处理录音。
+
+后续复核：出版教材 [Focus 词表 PDF 第 14 页](https://www.magellanbooks.ru/upload/iblock/be7/ubzy72jrauy174l4qeor06h2k54bi28o.pdf) 直接列 be attracted to /bi əˈtræktɪd tə/，与当前 UK 字段及分段一致，现加来源；教材提供这一完整读法，不作完整美式变体已核结论。Renoir 的 [Collins](https://www.collinsdictionary.com/dictionary/english/renoir) 明列英 /ˈrɛnwɑː/、美 /rənˈwɑr/ 和美式首重音变体；原示例音素与所列读法对应，修正来源归属为可查的 Collins，补充美式首重音变体。本次只检查词典发音，未确认录音对应读法。至此 25 项均已逐项核查相关重音，无法仅凭此推断其他音形和口音全部正确。

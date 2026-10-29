@@ -291,14 +291,14 @@ export const highschoolOptional4Unit4Fireplace: SoundSpellingLesson[] = [
         "letters": "o",
         "sound": "/oʊ/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "o",
             "sound": "/oʊ/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "ver",

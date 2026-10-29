@@ -343,7 +343,7 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
         "letters": "en",
         "sound": "/ɑːn/",
         "stress": "secondary",
-        "hint": "此部分轻读。",
+        "hint": "此部分次重读。",
         "pairs": [
           {
             "letters": "e",
@@ -354,7 +354,7 @@ export const highschoolOptional4Unit5Estate: SoundSpellingLesson[] = [
             "sound": "/n/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "此部分次重读。"
       },
       {
         "letters": "tre",
