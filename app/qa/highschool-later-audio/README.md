@@ -353,3 +353,5 @@
 `next6-transport-protest-variants.json` 增加 transport、protest 的名词及动词美式录音；核对词典栏目及 Commons 授权，校验解码与哈希，尚未人工试听。`next7-candidates.json` 记录下一批待独立核对的录音候选。
 
 `next6-permit-abuse-variants.json` 增加 permit、abuse 的名词和动词美式录音：核对英文词典、Commons 授权、解码及哈希，尚未人工试听。Commons 文件名带词性且描述明确匹配时，校验器允许通过；词性或词语矛盾继续拒绝。`next7-candidate-review.md` 记录下一批待独立核验候选及多个可能读音的限制。
+
+`batch-next7single-recovery.json` 加入 buffet（自助餐义）真人录音；核对英语 Wiktionary、Commons 许可、解码及哈希，尚未试听，具体美式元音变体未判定。`next8-candidates.json` 记录下一批待独立核验的候选。

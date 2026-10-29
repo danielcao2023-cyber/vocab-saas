@@ -1,6 +1,6 @@
 # next7 词条与录音核验（尚未试听）
 
-每份 Commons 作者、许可和文件链接见 /tmp/highschool-recording-next7.json。appropriate、complex、moderate、digest 作者 Dvortygirl，许可 CC BY-SA 3.0；buffet 作者 0x0077BE，许可 CC0 1.0。Wiktionary 英语发音栏中的音标是录音旁列出的词性读音或候选组，不能代替试听。
+每份 Commons 作者、许可和文件链接见 `next7-candidates.json`。appropriate、complex、moderate、digest 作者 Dvortygirl，许可 CC BY-SA 3.0；buffet 作者 0x0077BE，许可 CC0 1.0。Wiktionary 英语发音栏中的音标是录音旁列出的词性读音或候选组，不能代替试听。
 
 |词条|教材义项与主音标|词典关联录音|建议与问题|
 |---|---|---|---|
