@@ -409,3 +409,23 @@ addSourcedPhrase('search for','/ˈsɜːtʃ fə/',[
  ch('search ','/sɜːtʃ/','primary',[{letters:'s',sound:'/s/'},{letters:'ear',sound:'/ɜː/'},{letters:'ch',sound:'/tʃ/'},{letters:' ',sound:''}]),
  ch('for','/fə/','none',[{letters:'f',sound:'/f/'},{letters:'or',sound:'/ə/'}]),
 ],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('fall apart','/fɔːl əˈpɑːt/',[
+ ch('fall ','/fɔːl/','none',[{letters:'f',sound:'/f/'},{letters:'a',sound:'/ɔː/'},{letters:'ll',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('part','/pɑːt/','primary',[{letters:'p',sound:'/p/'},{letters:'ar',sound:'/ɑː/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('apart from','/əˈpɑːt frəm/',[
+ ch('a','/ə/','none',[{letters:'a',sound:'/ə/'}]),
+ ch('part ','/pɑːt/','primary',[{letters:'p',sound:'/p/'},{letters:'ar',sound:'/ɑː/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('from','/frəm/','none',[{letters:'f',sound:'/f/'},{letters:'r',sound:'/r/'},{letters:'o',sound:'/ə/'},{letters:'m',sound:'/m/'}]),
+],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('result in','/rɪˈzʌlt ɪn/',[
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('sult ','/zʌlt/','primary',[{letters:'s',sound:'/z/'},{letters:'u',sound:'/ʌ/'},{letters:'l',sound:'/l/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('in','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
+],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('for instance','/fər ˈɪnstəns/',[
+ ch('for ','/fər/','none',[{letters:'f',sound:'/f/'},{letters:'o',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
+ ch('in','/ɪn/','primary',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'}]),
+ ch('stance','/stəns/','none',[{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'},{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'c',sound:'/s/'},{letters:'e',sound:''}]),
+],'Oxford Project Explore 词表',projectExploreSource);

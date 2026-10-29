@@ -156,3 +156,9 @@ it.each([['as well as','/əz ˈwel əz/'],['belong to','/bɪˈlɒŋ tə/'],['sea
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['fall apart','/fɔːl əˈpɑːt/'],['apart from','/əˈpɑːt frəm/'],['result in','/rɪˈzʌlt ɪn/'],['for instance','/fər ˈɪnstəns/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
