@@ -5,8 +5,13 @@ import {nextCard,queueState,wrongPractice,setWrong,checkSpelling} from '../serve
 import {startLearning} from '../server/src/learning/engine';
 import {hasOpenQuestion,answerQuestion} from '../server/src/quiz';
 import {openBrowserDatabase,asSharedDb} from '../web/src/offline/sqlite';
+import {hasDictionaryPlaceholder} from '../server/src/text';
 import type {DB} from '../server/src/db';
 const now=new Date('2026-10-21T01:00:00Z'),dbs:DB[]=[];afterEach(()=>dbs.splice(0).forEach(d=>d.close()));
+it('limits only the explicitly identified skeletons without changing other phrases',()=>{
+ for(const w of ['leave ... alone','take for granted','prefer ... to ...'])expect(hasDictionaryPlaceholder(w)).toBe(true);
+ for(const w of ['at last','take notes','look forward to','what if','prefer'])expect(hasDictionaryPlaceholder(w)).toBe(false);
+});
 it('ignores obsolete spelling failures without removing history or awarding full mastery',()=>{
  const db=makeV3Fixture();dbs.push(db);db.prepare("UPDATE words SET headword='owe sth. to sb.' WHERE id=1").run();ensureEvidenceWord(db,1,now);
  db.prepare("UPDATE cards SET reps=3,scheduled_days=30 WHERE word_id=1 AND mode='recognize'").run();
@@ -27,6 +32,12 @@ it('legacy queue ignores prohibited due cards and old spelling submissions canno
  db.prepare("UPDATE cards SET due='2026-10-20T00:00:00Z' WHERE mode='spell'").run();db.prepare("UPDATE cards SET due='2026-10-25T00:00:00Z' WHERE mode<>'spell'").run();
  expect(queueState(db,now).review).toBe(0);expect((nextCard(db,now) as any)?.mode).not.toBe('spell');
  const id=(db.prepare("SELECT id FROM cards WHERE mode='spell'").get() as any).id;expect(()=>checkSpelling(db,id,'proceed to sth.',now)).toThrow();expect((db.prepare('SELECT count(*) n FROM review_logs').get() as any).n).toBe(0);
+});
+it('filters a textbook phrase skeleton from the legacy due queue',()=>{
+ const db=makeLegacyFixture();dbs.push(db);db.prepare("UPDATE words SET headword='take for granted' WHERE id=1").run();startLearning(db,now);
+ db.prepare("UPDATE cards SET due='2026-10-20T00:00:00Z' WHERE mode='dictation'").run();db.prepare("UPDATE cards SET due='2026-10-25T00:00:00Z' WHERE mode<>'dictation'").run();
+ expect(queueState(db,now).review).toBe(0);const id=(db.prepare("SELECT id FROM cards WHERE mode='dictation'").get() as any).id;
+ expect(()=>checkSpelling(db,id,'take for granted',now)).toThrow();
 });
 it('legacy wrong practice never selects previously failed spelling or audio for placeholder terms',()=>{
  const db=makeLegacyFixture();dbs.push(db);db.prepare("UPDATE words SET headword='owe sth. to sb.' WHERE id=1").run();startLearning(db,now);

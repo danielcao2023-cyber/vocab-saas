@@ -3,9 +3,12 @@ export function normalizeQuotes(s: string): string {
   return s.replace(/[’‘ʼ]/g, "'");
 }
 
-/** 词典中的 sb./sth. 是语法占位符，不能要求学习者照字面拼写或听写。 */
+// 这些教材词头省略了必需的对象；需具体语境才能测试拼写或听写。
+const recognitionOnlySkeletons=new Set(['leave ... alone','take for granted','prefer ... to ...']);
+/** 词典占位符或明确列出的句型骨架不适合作独立拼写、听写答案。 */
 export function hasDictionaryPlaceholder(s: string): boolean {
-  return /\b(?:sb|sth)\.(?=\s|$|'s\b)/i.test(normalizeQuotes(s));
+  const normalized=normalizeQuotes(s).trim().toLowerCase().replace(/\s+/g,' ');
+  return recognitionOnlySkeletons.has(normalized)||/\b(?:sb|sth)\.(?=\s|$|'s\b)/i.test(normalized);
 }
 
 /** 括号用于注明变体或词形；斜杠外的每段才是主词头。 */
