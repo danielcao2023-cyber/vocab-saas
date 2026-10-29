@@ -27,3 +27,12 @@ it('keeps the consist verb recording and its public-domain author release intact
  expect(entry.pronunciationNote).toContain('动词');expect(recordingWordProblem('consist',decodeURIComponent(new URL(entry.sourceUrl).pathname.split('/wiki/')[1]),{sourceUrl:entry.sourceUrl,evidenceUrl:entry.evidenceUrl})).toBeUndefined();
  expect(createHash('sha256').update(fs.readFileSync(new URL('../data/pronunciation/'+entry.file,import.meta.url))).digest('hex')).toBe(entry.sha256);
 });
+
+it('keeps the lever UK recording and its public-domain author release intact',()=>{
+ const m=JSON.parse(fs.readFileSync(new URL('../data/pronunciation/manifest.json',import.meta.url),'utf8'));
+ const batch=JSON.parse(fs.readFileSync(new URL('../qa/highschool-later-audio/batch-lever-recovery.json',import.meta.url),'utf8'));
+ expect(batch.added).toHaveLength(1);const e=m.entries.lever;
+ expect(e.license).toBe('Public domain (PD-self)');expect(e.licenseUrl).toBe(`${e.sourceUrl}#Licensing`);expect(e.author).toBe('D3VIL');expect(e.pronunciationNote).toContain('英式');
+ expect(recordingWordProblem('lever',decodeURIComponent(new URL(e.sourceUrl).pathname.split('/wiki/')[1]),{sourceUrl:e.sourceUrl,evidenceUrl:e.evidenceUrl})).toBeUndefined();
+ expect(createHash('sha256').update(fs.readFileSync(new URL('../data/pronunciation/'+e.file,import.meta.url))).digest('hex')).toBe(e.sha256);
+});

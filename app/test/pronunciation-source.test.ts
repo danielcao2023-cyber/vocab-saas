@@ -190,6 +190,8 @@ describe('pronunciation provenance', () => {
       derivatives:[{src:'https://upload.wikimedia.org/wikipedia/commons/a/a1/emotion.mp3',type:'audio/mpeg'}],
     }] };
     expect(parseCommonsRecording(page)).toMatchObject({title:page.title});
+    page.title = 'File:En-us-emotion-2.ogg';
+    expect(parseCommonsRecording(page)).toMatchObject({title:page.title});
     page.videoinfo[0].extmetadata.ImageDescription.value = "Pronunciation of the word 'motion' in US English";
     expect(parseCommonsRecording(page)).toBeUndefined();
   });

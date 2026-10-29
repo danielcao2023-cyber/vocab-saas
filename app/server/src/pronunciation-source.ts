@@ -87,7 +87,7 @@ function descriptionContradictsFilename(title: string, description: string): boo
   }
   // A numbered Commons version is not part of the spoken word; only accept it
   // when the explicit description still exactly matches the unnumbered stem.
-  return filename !== described && filename.replace(/ [0-9]+$/, '') !== described;
+  return filename !== described && filename.replace(/[ -][0-9]+$/, '') !== described;
 }
 
 export function commonsIdentity(value: string): string | undefined {
