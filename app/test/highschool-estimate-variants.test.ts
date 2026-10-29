@@ -42,3 +42,13 @@ it('serves distinct sourced noun and verb recordings for stress-changing words',
   }
  }finally{await app.close();db.close();}
 });
+
+it('keeps moderate adjective as the default and its verb as a separate recording',async()=>{
+ const db=openDb(':memory:');db.prepare("INSERT INTO words(headword,source) VALUES ('moderate','test')").run();
+ const app=buildApp(db);try{
+  const meta=(await app.inject('/api/pronunciation?word=moderate')).json();expect(meta.pronunciationNote).toContain('形容词');
+  expect(meta.variants.map((x:{variant:string})=>x.variant)).toEqual(['verb']);
+  const base=await app.inject('/api/pronunciation/audio?word=moderate');const verb=await app.inject('/api/pronunciation/audio?word=moderate&variant=verb');
+  expect(base.statusCode).toBe(200);expect(verb.statusCode).toBe(200);expect(createHash('sha256').update(base.rawPayload).digest('hex')).not.toBe(createHash('sha256').update(verb.rawPayload).digest('hex'));
+ }finally{await app.close();db.close();}
+});
