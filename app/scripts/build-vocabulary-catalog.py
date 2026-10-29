@@ -9,6 +9,13 @@ def clean(value):
 
 def generate(downloads, textbooks, output):
     manifest=Path(__file__).resolve().parents[1]/'data/vocabulary/highschool-units.json'
+    # This legacy generator does not include later reviewed edits. Never write
+    # into the published directory, even if its catalog was moved or deleted.
+    if output.parent.resolve() == manifest.parent.resolve():
+        raise ValueError('refusing to overwrite published vocabulary directory; use a new scratch directory')
+    source_output=output.with_name('sources.json')
+    if output.resolve() == source_output.resolve() or any(p.exists() or p.is_symlink() for p in (output,source_output)):
+        raise ValueError('refusing to overwrite existing catalog or sources; use a new scratch directory')
     schools=json.loads(manifest.read_text())
     exams=[('cet4','大学英语四级','CET4_T.json'),('cet6','大学英语六级','CET6_T.json'),('kaoyan','考研英语','KaoYan_3_T.json'),('toefl','托福 TOEFL','TOEFL_3_T.json'),('ielts','雅思 IELTS','IELTS_3_T.json'),('gre','GRE','GRE_3_T.json')]
     books=[];units=[];entries={};sources=[]
@@ -59,8 +66,16 @@ def generate(downloads, textbooks, output):
             item['phonetic']=correction['phonetic']
     result={'version':corrections['version'],'books':books,'units':units,'entries':list(entries.values())}
     output.parent.mkdir(parents=True,exist_ok=True)
-    output.write_text(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
-    output.with_name('sources.json').write_text(json.dumps({'generatedAt':'2026-10-26','normalization':'NFC, curly apostrophe and whitespace; case preserved; no stemming','sources':sources},ensure_ascii=False,indent=2)+'\n')
+    # Exclusive creation also prevents an overwrite if a file appeared while
+    # the sources were being read. Clean up only the catalog created here.
+    with output.open('x',encoding='utf-8') as catalog_file:
+        try:
+            with source_output.open('x',encoding='utf-8') as source_file:
+                catalog_file.write(json.dumps(result,ensure_ascii=False,separators=(',',':'))+'\n')
+                source_file.write(json.dumps({'generatedAt':'2026-10-26','normalization':'NFC, curly apostrophe and whitespace; case preserved; no stemming','sources':sources},ensure_ascii=False,indent=2)+'\n')
+        except Exception:
+            output.unlink(missing_ok=True)
+            raise
     print(json.dumps({'books':len(books),'units':len(units),'uniqueEntries':len(entries),'memberships':sum(len(e['memberships']) for e in entries.values()),'bytes':output.stat().st_size},ensure_ascii=False))
 
 if __name__=='__main__':

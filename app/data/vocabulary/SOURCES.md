@@ -36,16 +36,18 @@
 - 真人录音优先；无录音时使用设备英文语音，并在词条页标识“系统合成发音”。Android只选择可离线的英文语音，需要手机安装相应语音数据。两者均不可用时仍走技术暂缓，不将播放故障记作不会。
 - 来源项目及教材内容保留其原有权利归属。本目录记录数据来源，不表示获得了商业发行或官方授权。
 
-## 重建与升级
+## 历史生成脚本与升级
+
+以下命令为 2026-10-26 的历史基线，**不能重建当前审核过的目录**：当前目录有后续教材勘误与人工修订，旧 `corrections.json` 不包含全部变更。经本地对照，旧基线至少遗漏 `the Amish`、`nanobot`，并与当前目录约 206 项的字段不同（随当前目录变化可能改变）。脚本只允许在不存在 `catalog.json` 和 `sources.json` 的临时目录生成候选，不允许写入正式词库目录；候选不得直接替换正式目录。后续须建立包含全部修订和补录来源的可重放输入，并逐项对照后才能恢复无损重建。
 
 ```sh
 python3 scripts/build-vocabulary-catalog.py \
   --downloads /Users/caogong/Downloads/词库 \
   --textbooks /Users/caogong/Documents/Codex/2026-10-26/vocab-expansion/sources \
-  --output data/vocabulary/catalog.json
+  --output /tmp/vocab-baseline-review/catalog.json
 ```
 
-需要Python openpyxl。脚本只读下载源，不操作学习库。词头仅做NFC、弯引号和空白规范化；保留大小写，不词干化。含义取第一个出现的词头来源；原库释义不覆盖。
+需要Python openpyxl，目标目录应为新的临时目录。脚本只读下载源，不操作学习库。词头仅做NFC、弯引号和空白规范化；保留大小写，不词干化。含义取第一个出现的词头来源；原库释义不覆盖。
 
 服务端启动按目录摘要幂等导入；变化前先做库外校验备份。离线已有数据升级前创建独立的pre-vocabulary-1备份，备份或持久化失败不得发布可写运行时。后续修改目录时必须递增version，确保离线升级执行。
 
