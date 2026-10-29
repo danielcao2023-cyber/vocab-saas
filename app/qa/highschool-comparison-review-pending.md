@@ -53,3 +53,5 @@
 后续核验：2006–2035，逐项依据见 `highschool-comparison-audits/batch-2006-2020.json`、`batch-2021-2035.json`；仅覆盖对比义项及例句。
 
 后续核验：2036–2065，逐项依据见 `highschool-comparison-audits/batch-2036-2050.json`、`batch-2051-2065.json`；2057、2058 的后续核验另见 `batch-2057-2058.json`。仅覆盖对比义项和例句。
+
+后续核验：2066–2090、2092–2095，依据见 `highschool-comparison-audits/batch-2066-2080.json`、`batch-2081-2095.json`；2087 后续已核验，见 `batch-1735-2087.json`。2091 两个短语的直接词典依据仍待核。此前没有对比项的 1735 已补 Iceland 与 island 辨析，同见 `batch-1735-2087.json`。
