@@ -1,3 +1,4 @@
+import {KB2022_TEXTBOOK_CORRECTIONS} from './kb2022-textbook-corrections.ts';
 /**
  * 幂等导入：先校验输入，再事务内更新 words，不动正式词的 cards/复习记录。
  * 课标：npm run import -- --curriculum ../data/curriculum/ocr/level3_list.tsv
@@ -169,6 +170,10 @@ function applyWords(db: DB, list: ListEntry[], dict: ReadonlyMap<string, DictEnt
     if (key === null) missingEcdict.push(headword);
     else if (key !== lookupKey(headword)) caseInsensitiveHits.push({ headword, ecdict_key: key });
     const old = find.get(source, headword) as WordValues | undefined;
+    const correction=source==='kb2022'?KB2022_TEXTBOOK_CORRECTIONS[headword]:undefined;
+    if(old && correction && manualMeaning===undefined && old.meaning_source==='教材校订' && old.meaning_flag===null && old.meaning_zh===correction.meaning){
+      values.meaning_zh=old.meaning_zh; values.meaning_source=old.meaning_source; values.meaning_flag=old.meaning_flag;
+    }
     if (!old) { stmt.run(values); inserted++; }
     else if (WORD_COLUMNS.some((col) => old[col] !== values[col])) { stmt.run(values); updated++; }
     else unchanged++;

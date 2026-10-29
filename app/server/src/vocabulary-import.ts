@@ -1,4 +1,5 @@
 import type { DB } from './db.ts';
+import {KB2022_TEXTBOOK_CORRECTIONS} from './kb2022-textbook-corrections.ts';
 import { mainHeadwords } from './text.ts';
 import { meaningsOverlap } from './quiz.ts';
 import { randomUUID } from 'node:crypto';
@@ -32,6 +33,7 @@ export interface Entry {
   headword: string;
   meaning: string;
   meaningCorrection?: {expected:string;previous?:string[]};
+  kb2022MeaningCorrection?: {expected:string;meaning:string};
   headwordCorrection?: {expected:string};
   phoneticCorrection?: {expected:string};
   phonetic?: string;
@@ -191,6 +193,14 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
         const newOption=entry.meaning.split('\n')[0];
         const oldOptions=new Set(expectedValues.map(value=>value.split('\n')[0]).filter(value=>value!==newOption));
         if(alreadyCorrected&&oldOptions.size)optionCorrections.set(wordId,{oldOptions,newOption});
+      }
+      if(entry.kb2022MeaningCorrection){
+        const correction=entry.kb2022MeaningCorrection;
+        const changed=db.prepare("UPDATE words SET meaning_zh=?,meaning_source='教材校订' WHERE id=? AND headword=? AND source='kb2022' AND meaning_source='ecdict' AND meaning_flag IS NULL AND meaning_zh=?").run(correction.meaning,wordId,entry.headword,correction.expected).changes;
+        if(changed)changedMeaningWords.add(wordId);
+        const installed=changed||!!db.prepare("SELECT 1 FROM words WHERE id=? AND headword=? AND source='kb2022' AND meaning_source='教材校订' AND meaning_flag IS NULL AND meaning_zh=?").get(wordId,entry.headword,correction.meaning);
+        const oldOption=correction.expected.split('\n')[0],newOption=correction.meaning.split('\n')[0];
+        if(installed&&oldOption!==newOption)optionCorrections.set(wordId,{oldOptions:new Set([oldOption]),newOption});
       }
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
         .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
@@ -397,6 +407,10 @@ function validateCatalog(catalog: Catalog): void {
     if(entry.retiredMemberships!==undefined&&(!Array.isArray(entry.retiredMemberships)||entry.retiredMemberships.some(r=>!r||typeof r.bookId!=='string'||typeof r.unitId!=='string'||typeof r.replacementKey!=='string'||!r.bookId||!r.unitId||!r.replacementKey)))throw new Error('Invalid retired membership');
     if(entry.headwordCorrection&&(typeof entry.headwordCorrection.expected!=='string'||!entry.headwordCorrection.expected.trim()||entry.headwordCorrection.expected.length>500||entry.headword.length>500))throw Error('Invalid headword correction');
     if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000||(entry.meaningCorrection.previous!==undefined&&(!Array.isArray(entry.meaningCorrection.previous)||!entry.meaningCorrection.previous.length||entry.meaningCorrection.previous.some(value=>typeof value!=='string'||!value.trim()||value.length>16000)))))throw Error('Invalid meaning correction');
+    if(entry.kb2022MeaningCorrection){
+      const approved=KB2022_TEXTBOOK_CORRECTIONS[entry.key],candidate=entry.kb2022MeaningCorrection;
+      if(!approved||entry.headword!==entry.key||candidate.expected!==approved.expected||candidate.meaning!==approved.meaning)throw Error('Invalid kb2022 textbook correction');
+    }
     if(entry.phoneticCorrection&&(typeof entry.phoneticCorrection.expected!=='string'||!entry.phoneticCorrection.expected.trim()||entry.phoneticCorrection.expected.length>500||typeof entry.phonetic!=='string'||!entry.phonetic.trim()||entry.phonetic.length>500))throw Error('Invalid phonetic correction');
     for (const membership of entry.memberships) {
       if (!membership.bookId || typeof membership.bookId !== 'string') {
