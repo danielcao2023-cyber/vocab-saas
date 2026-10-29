@@ -55,3 +55,18 @@ highschoolVerifiedPhrases.push({
  sources:[{label:'National Geographic Learning Close-up B1+ 词表',url:'https://www.bridgebooks.cz/out/media/NCU%20B1plus%20Unit%206.pdf'}],
  review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
 });
+
+highschoolVerifiedPhrases.push({
+ headword:'make a proposal',ipa:'/meɪk ə prəˈpəʊzəl/',uk:'/meɪk ə prəˈpəʊzəl/',
+ chunks:[
+  {letters:'make ',sound:'/meɪk/',stress:'none',hint:'先读 make。',pairs:[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}],tip:'词尾 e 不单独发音。'},
+  {letters:'a ',sound:'/ə/',stress:'none',hint:'a 在这里弱读。',pairs:[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}],tip:'实际语流中的弱读可能变化。'},
+  {letters:'pro',sound:'/prə/',stress:'none',hint:'开头 pro 轻读。',pairs:[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'o',sound:'/ə/'}],tip:'注意弱读元音 /ə/。'},
+  {letters:'po',sound:'/pəʊ/',stress:'primary',hint:'po 重读。',pairs:[{letters:'p',sound:'/p/'},{letters:'o',sound:'/əʊ/'}],tip:'这里采用英式读音。'},
+  {letters:'sal',sound:'/zəl/',stress:'none',hint:'词尾轻读。',pairs:[{letters:'s',sound:'/z/'},{letters:'a',sound:'/ə/'},{letters:'l',sound:'/l/'}],tip:'词表也标出弱元音可省略。'},
+ ],
+ anchor:{text:'先读 make a，再注意 proposal 的重音。'},
+ variantNote:'这里展示词表中的一种英式读法；重音和弱读可随语境变化。',
+ sources:[{label:'Success in Business Higher 词表',url:'https://www.eltexampreparation.com/sites/default/files/SuccessBusiness_Higher_Wordlist_ES_0.pdf'}],
+ review:{status:'reviewed',reviewedAt:'2026-10-29',draftedBy:'Codex; pronunciation checked against textbook wordlist'},
+});

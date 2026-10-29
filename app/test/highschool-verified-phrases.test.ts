@@ -32,3 +32,11 @@ it('matches the Close-up wordlist pronunciation and stress for date back',()=>{
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','primary']);
  expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('date back');
 });
+
+it('matches the Success in Business pronunciation and stress for make a proposal',()=>{
+ const lesson=highschoolVerifiedPhrases.find(item=>item.headword==='make a proposal');
+ expect(lesson?.ipa).toBe('/meɪk ə prəˈpəʊzəl/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('make a proposal');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['none','none','none','primary','none']);
+ expect(lesson?.chunks.flatMap(chunk=>chunk.pairs).map(pair=>pair.letters).join('')).toBe('make a proposal');
+});
