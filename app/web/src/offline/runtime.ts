@@ -62,7 +62,7 @@ export function createLocalRuntime(options:Options){
     const shown=displayHeadword(shared,id,String(row.headword));const keyed=shown!==row.headword?'highschool-log.json':typeof row.headword==='string'?keyedLessonName(row.headword):undefined;
     let invalidAsset=false;
     const readAsset=async(file:string,expectedId:number|undefined)=>{
-     const result=await assetFetch(file);if(!result.ok)return null;
+     const result=await assetFetch(file);if(result.status===404)return null;if(!result.ok)throw new HttpError(503,'单词讲解资源读取失败，请重试。');
      const raw=await result.json();
      if(raw.headword!==row.headword||(expectedId!==undefined&&raw.wordId!==expectedId)){invalidAsset=true;return null;}
      return raw;

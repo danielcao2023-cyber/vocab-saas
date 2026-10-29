@@ -3,9 +3,9 @@ import {expect,it,vi} from 'vitest';
 import fs from 'node:fs';
 import {buildApp} from '../server/src/app';
 import {openDb} from '../server/src/db';
-import {migrateVocabulary} from '../server/src/vocabulary-import';
+import {installVocabulary,migrateVocabulary} from '../server/src/vocabulary-import';
 import {openBrowserDatabase} from '../web/src/offline/sqlite';
-import {createLocalRuntime} from '../web/src/offline/runtime';
+import {createLocalRuntime,prepareVocabularyDatabase} from '../web/src/offline/runtime';
 import {T} from './v3-helpers';
 
 function fixture(id:number,headword='title',key='title'){
@@ -35,6 +35,18 @@ it('offline rejects unrelated numeric content when the key is absent or belongs 
 });
 it('offline treats an absent unmapped lesson as pending rather than a corrupt asset',async()=>{
  const source=fixture(999999,'title','unmapped');const db=await openBrowserDatabase(source.serialize());source.close();try{const runtime=createLocalRuntime({db,save:async()=>{},assetFetch:async()=>new Response('',{status:404}),recordings:{},now:()=>T});expect(await (await runtime.fetch('/api/word/999999/lesson')).json()).toEqual({status:'pending',lesson:null});}finally{db.close();}
+});
+it('offline reports asset retrieval failures instead of treating them as absent lessons',async()=>{
+ for(const code of [403,500]){const source=fixture(999999,'title','unmapped');const db=await openBrowserDatabase(source.serialize());source.close();try{const runtime=createLocalRuntime({db,save:async()=>{},assetFetch:async()=>new Response('',{status:code}),recordings:{},now:()=>T});expect((await runtime.fetch('/api/word/999999/lesson')).status).toBe(503);}finally{db.close();}}
+});
+it('offline catalog upgrade preserves a reused legacy alias identity and resolves its lesson',async()=>{
+ const catalog=JSON.parse(fs.readFileSync('data/vocabulary/catalog.json','utf8'));const source=openDb(':memory:');
+ source.prepare("INSERT INTO words(id,headword,source) VALUES (80000,'emperor / empress','kb2022')").run();
+ installVocabulary(source,{...catalog,version:catalog.version-1});const db=await openBrowserDatabase(source.serialize());source.close();
+ try{const backup=vi.fn(async()=>{}),save=vi.fn(async()=>{});await prepareVocabularyDatabase(db,catalog,{save,createVocabularyBackup:backup},true);
+  const assetFetch=vi.fn(async(url:any)=>{const file='data/lessons/'+String(url).replace('/offline/lessons/','');return fs.existsSync(file)?Response.json(JSON.parse(fs.readFileSync(file,'utf8'))):new Response('',{status:404});});
+  const runtime=createLocalRuntime({db,save,assetFetch,recordings:{},now:()=>T});expect(await (await runtime.fetch('/api/word/80000/lesson')).json()).toMatchObject({status:'ready',lesson:{wordId:80000,headword:'emperor / empress'}});expect(backup).toHaveBeenCalledOnce();expect(db.prepare("SELECT word_id FROM vocabulary_entry_map WHERE entry_key='empress'").get()).toEqual({word_id:80000});
+ }finally{db.close();}
 });
 it('offline resolves special Log independent of local numeric ID',async()=>{
  const source=fixture(7777,'Log','Log');const db=await openBrowserDatabase(source.serialize());source.close();try{const assetFetch=vi.fn(async(url:any)=>{const file='data/lessons/'+String(url).replace('/offline/lessons/','');return fs.existsSync(file)?Response.json(JSON.parse(fs.readFileSync(file,'utf8'))):new Response('',{status:404});});const runtime=createLocalRuntime({db,save:async()=>{},assetFetch,recordings:{},now:()=>T});expect(await (await runtime.fetch('/api/word/7777/lesson')).json()).toMatchObject({status:'ready',lesson:{wordId:7777,headword:'log'}});}finally{db.close();}
