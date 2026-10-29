@@ -426,12 +426,8 @@ export const highschoolBook3Unit5Indicate: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "w",
+            "letters": "wh",
             "sound": "/w/"
-          },
-          {
-            "letters": "h",
-            "sound": ""
           },
           {
             "letters": "e",

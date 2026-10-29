@@ -175,12 +175,8 @@ export const highschoolBook3Unit2Replace: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "w",
+            "letters": "wh",
             "sound": "/w/"
-          },
-          {
-            "letters": "h",
-            "sound": ""
           },
           {
             "letters": "i",

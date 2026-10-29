@@ -316,12 +316,8 @@ export const highschoolBook3Unit2Elect: SoundSpellingLesson[] = [
         "hint": "此部分重读。",
         "pairs": [
           {
-            "letters": "w",
+            "letters": "wh",
             "sound": "/w/"
-          },
-          {
-            "letters": "h",
-            "sound": ""
           },
           {
             "letters": "e",

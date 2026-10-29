@@ -29,12 +29,8 @@ export const highschoolOptional2Unit2Perspective: SoundSpellingLesson[] = [
             "sound": "/e/"
           },
           {
-            "letters": "n",
+            "letters": "ng",
             "sound": "/ŋ/"
-          },
-          {
-            "letters": "g",
-            "sound": ""
           },
           {
             "letters": "th",

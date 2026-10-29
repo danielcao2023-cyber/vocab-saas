@@ -52,7 +52,14 @@ export function browse(db:DB,q:Record<string,string|undefined>) {
   const all=readWords(db).filter(w=>ids?ids.has(w.id):w.source==='kb2022');
   const ranks=db.prepare('SELECT * FROM word_freq WHERE grp=? AND rank>0').all(group) as {word_id:number;rank:number;basis:string;is_inferred:number}[];
   const byId=new Map((selection.bookId==='kb2022'?ranks:[]).map(r=>[r.word_id,r]));
-  const positions=new Map((selection.bookId==='kb2022'?[]:db.prepare('SELECT word_id,MIN(position) position FROM vocabulary_members WHERE book_id=? AND (? IS NULL OR unit_id=?) GROUP BY word_id').all(selection.bookId,selection.unitId,selection.unitId) as {word_id:number;position:number}[]).map(r=>[r.word_id,r.position]));
+  // Whole-book order follows the first occurrence in the earliest unit; a word
+  // belonging to several units is still displayed once. Unit-less books retain
+  // their membership order.
+  const positions=new Map<number,number>();
+  if(selection.bookId!=='kb2022'){
+   const members=db.prepare(`SELECT m.word_id FROM vocabulary_members m LEFT JOIN vocabulary_units u ON u.id=m.unit_id AND u.book_id=m.book_id WHERE m.book_id=? AND (? IS NULL OR m.unit_id=?) ORDER BY COALESCE(u.position,2147483647),m.unit_id,m.position,m.word_id`).all(selection.bookId,selection.unitId,selection.unitId) as {word_id:number}[];
+   for(const [i,m] of members.entries())if(!positions.has(m.word_id))positions.set(m.word_id,i);
+  }
   const filtered=all.filter(w=>(level==='all'||w.level===(level==='core'?'三级':'二级'))&&(letter==='all'||mainHeadwords(w.headword)[0]?.[0]?.toLowerCase()===letter)&&(status==='all'||statusKey(w)===status)).sort((a,b)=>(byId.get(a.id)?.rank??positions.get(a.id)??Infinity)-(byId.get(b.id)?.rank??positions.get(b.id)??Infinity)||a.id-b.id);
   return {items:filtered.slice((page-1)*size,page*size).map(w=>({...summary(w),rank:byId.get(w.id)?.rank??null,basis:byId.get(w.id)?.basis??'',isInferred:!!byId.get(w.id)?.is_inferred})),total:filtered.length,page,size,group,coverage:{ranked:all.filter(w=>byId.has(w.id)).length,total:all.length}};
 }
