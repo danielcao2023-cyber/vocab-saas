@@ -94,7 +94,7 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
   options.sort(()=>Math.random()-.5);options.push({id:0,text:'不记得'});
  }
  const word=db.prepare('SELECT headword FROM words WHERE id=?').get(e.word_id) as {headword:string};
- const audioVariant=mode==='dictation'&&['bow','contract'].includes(word.headword)?'noun':null;
+ const audioVariant=mode==='dictation'&&['bow','contract'].includes(word.headword)?'verb':null;
  db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,day,e.word_id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  db.prepare('UPDATE learning_day_words SET last_mode=? WHERE day=? AND word_id=?').run(MODES.indexOf(mode),day,e.word_id);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;

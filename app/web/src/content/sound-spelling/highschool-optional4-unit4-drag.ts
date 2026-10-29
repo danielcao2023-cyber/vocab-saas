@@ -425,14 +425,14 @@ export const highschoolOptional4Unit4Drag: SoundSpellingLesson[] = [
   },
   {
     "headword": "contract",
-    "ipa": "/ˈkɑːntrækt/",
-    "uk": "/ˈkɒntrækt/",
+    "ipa": "/kənˈtrækt/",
+    "uk": "/kənˈtrækt/",
     "chunks": [
       {
         "letters": "con",
-        "sound": "/kɑːn/",
-        "stress": "primary",
-        "hint": "此部分重读。",
+        "sound": "/kən/",
+        "stress": "none",
+        "hint": "此部分轻读，元音弱化为 /ə/。",
         "pairs": [
           {
             "letters": "c",
@@ -440,20 +440,20 @@ export const highschoolOptional4Unit4Drag: SoundSpellingLesson[] = [
           },
           {
             "letters": "o",
-            "sound": "/ɑː/"
+            "sound": "/ə/"
           },
           {
             "letters": "n",
             "sound": "/n/"
           }
         ],
-        "tip": "此部分重读。"
+        "tip": "动词的 con 常弱读 /kən/，字母 o 对应弱元音 /ə/。"
       },
       {
         "letters": "tract",
         "sound": "/trækt/",
-        "stress": "none",
-        "hint": "此部分轻读。",
+        "stress": "primary",
+        "hint": "此部分重读。",
         "pairs": [
           {
             "letters": "t",
@@ -476,13 +476,13 @@ export const highschoolOptional4Unit4Drag: SoundSpellingLesson[] = [
             "sound": "/t/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "动词重音在 tract；a 对应 /æ/。"
       }
     ],
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "这里展示名词读音；动词读 /kənˈtrækt/，重音在后。",
+    "variantNote": "这里展示动词读音 /kənˈtrækt/；名词重音在前，美式 /ˈkɑːntrækt/、英式 /ˈkɒntrækt/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

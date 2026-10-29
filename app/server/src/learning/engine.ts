@@ -74,7 +74,7 @@ export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersi
  const modes=MODES.map((mode,i)=>({mode,i})).filter(({i})=>streaks[i]<targets[i]);
  modes.sort((a,b)=>streaks[a.i]-streaks[b.i]||Number(a.i===entry.last_mode)-Number(b.i===entry.last_mode)||a.i-b.i);
  const mode=modes[0].mode,w=byId.get(entry.word_id)!,id=randomUUID(),options=mode==='recognize'?optionsFor(db,w):[];
- const audioVariant=mode==='dictation'&&['bow','contract'].includes(w.headword)?'noun':null;
+ const audioVariant=mode==='dictation'&&['bow','contract'].includes(w.headword)?'verb':null;
  db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,summary.day,w.id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;
  return {kind:'card',summary,card:renderCard(db,issue,w)};
