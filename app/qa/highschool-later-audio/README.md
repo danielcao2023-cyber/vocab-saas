@@ -315,3 +315,5 @@
 `batch-properphrase-recovery-2.json` 补入 4 份高中专有名称录音：核对英语 Wiktionary 与 Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
 
 `batch-french-proper-1.json` 补入 16 份高中名称及相关称谓的英语录音：核对法语 Wiktionary 英语栏目和 Commons 文件、作者、许可、解码、哈希；口音未独立确认，尚未逐条人工试听。
+
+`batch-parallel-recovery-1.json` 补入 6 份高中名称与短语录音：核对英语 Wiktionary 和 Commons 文件、作者、许可、解码、哈希；口音未独立确认，尚未逐条人工试听。
