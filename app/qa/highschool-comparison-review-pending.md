@@ -81,3 +81,7 @@
 后续核验：2426–2455，逐项依据见 `highschool-comparison-audits/batch-2426-2440.json`、`batch-2441-2455.json`；仅覆盖对比义项及例句。
 
 后续核验：2456–2485，逐项依据及待核项见 `highschool-comparison-audits/batch-2456-2470.json`、`batch-2471-2485.json`；仅覆盖对比义项及例句，2478 待核，2479 移除无关对比。
+
+2478 的专名辨析已补充 NOAA 对两大洋地理位置的来源并核验。
+
+后续核验：2486–2515，依据及待核项见 `highschool-comparison-audits/batch-2486-2500.json`、`batch-2501-2515.json`；2503、2507、2508 的地理专名仍待核。
