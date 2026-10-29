@@ -5467,11 +5467,12 @@ export const expandedB: SoundSpellingLesson[] = [
  },
  {
   "headword": "honour",
-  "ipa": "/ˈɑː.nɚ/",
+  "ipa": "/ˈɒ.nə/",
+  "uk": "/ˈɒ.nə/",
   "chunks": [
    {
     "letters": "ho",
-    "sound": "/ɑː/",
+    "sound": "/ɒ/",
     "stress": "primary",
     "hint": "h 没有独立读音",
     "pairs": [
@@ -5481,16 +5482,16 @@ export const expandedB: SoundSpellingLesson[] = [
      },
      {
       "letters": "o",
-      "sound": "/ɑː/"
+      "sound": "/ɒ/"
      }
     ],
     "tip": "本段重读；这里 h 不单独发音，拼写时仍要保留。"
    },
    {
     "letters": "nour",
-    "sound": "/nɚ/",
+    "sound": "/nə/",
     "stress": "none",
-    "hint": "our 对应 /ɚ/",
+    "hint": "our 对应 /ə/",
     "pairs": [
      {
       "letters": "n",
@@ -5498,20 +5499,20 @@ export const expandedB: SoundSpellingLesson[] = [
      },
      {
       "letters": "our",
-      "sound": "/ɚ/"
+      "sound": "/ə/"
      }
     ],
-    "tip": "这里 our 作为一组对应 /ɚ/。"
+    "tip": "这里 our 作为一组对应 /ə/。"
    }
   ],
   "anchor": {
-   "text": "开头 h 在本词中不发音；末尾 our 在本读法中对应 /ɚ/。"
+   "text": "开头 h 在本词中不发音；末尾 our 在本读法中对应 /ə/。"
   },
-  "variantNote": "本图采用 /ˈɑː.nɚ/。原词条为 honour (AmE honor)。原词条美式读音：/ˈɑː.nɚ/。原词条英式读音：/ˈɒn.ə(r)/。英式常读 /ˈɒn.ə/，美式常读 /ˈɑː.nɚ/；首音节重读，h 不发音。",
+  "variantNote": "此处采用剑桥词典所列英式读音；美式常拼作 honor，读 /ˈɑː.nɚ/。首音节重读，h 不发音。",
   "sources": [
    {
-    "label": "法语维基词典：honour（英语词条）",
-    "url": "https://fr.wiktionary.org/wiki/honour#Anglais"
+    "label": "Cambridge Dictionary · honour 发音",
+    "url": "https://dictionary.cambridge.org/pronunciation/english/honour"
    }
   ],
   "review": {
