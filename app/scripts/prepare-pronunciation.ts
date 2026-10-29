@@ -8,7 +8,7 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { mainHeadwords } from '../server/src/text.ts';
-import { canReusePronunciation } from '../server/src/pronunciation-import-state.ts';
+import { canReusePronunciation, canReuseShtookaRecording } from '../server/src/pronunciation-import-state.ts';
 import { PRONUNCIATION_DIRECTORY, PRONUNCIATION_USER_AGENT, COMMONS_METADATA_BATCH_LIMIT, commonsIdentity, fetchCommonsRecordings, indexCommonsRecording, loadCommonsMetadata, parseCommonsRecording, parseCommonsResponse,
   parseRetryAfter, resolvePronunciationSource, validAudioUrl, type PronunciationSource } from '../server/src/pronunciation-source.ts';
 
@@ -227,6 +227,8 @@ if (args.has('--retry-unverified')) for (const [word, previous] of Object.entrie
   if (previous.status !== 'ready' && reviewReasons.has(previous.reason ?? '')) delete progress.words[word];
 }
 function hasLocalAudio(word: string) {
+  if ((manifest.entries[word] as {provider?:string}|undefined)?.provider === 'shtooka')
+    return canReuseShtookaRecording(word, manifest.entries[word], directory, overrides[word]);
   return canReusePronunciation(word, manifest.entries[word], directory, overrides[word], metadata);
 }
 function needsWork(word: string) {
