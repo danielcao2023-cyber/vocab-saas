@@ -543,3 +543,9 @@ addSourcedPhrase('by accident','/baɪ ˈæksɪdənt/',[
  ch('ci','/sɪ/','none',[{letters:'c',sound:'/s/'},{letters:'i',sound:'/ɪ/'}]),
  ch('dent','/dənt/','none',[{letters:'d',sound:'/d/'},{letters:'e',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'t',sound:'/t/'}]),
 ],'Oxford English First Masterclass 词表',oxfordMasterclass);
+addSourcedPhrase('fall in love with','/ˌfɔːl ɪn ˈlʌv wɪð/',[
+ ch('fall ','/fɔːl/','secondary',[{letters:'f',sound:'/f/'},{letters:'a',sound:'/ɔː/'},{letters:'ll',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('love ','/lʌv/','primary',[{letters:'l',sound:'/l/'},{letters:'o',sound:'/ʌ/'},{letters:'v',sound:'/v/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('with','/wɪð/','none',[{letters:'w',sound:'/w/'},{letters:'i',sound:'/ɪ/'},{letters:'th',sound:'/ð/'}]),
+],'Pearson Focus 4 词表','https://download.fimsschools.com/ebooks/Focus%20Student%20Book%204.pdf');

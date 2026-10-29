@@ -234,3 +234,10 @@ it.each([
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
 });
+
+it('matches the Pearson Focus pronunciation and stress for fall in love with',()=>{
+ const lesson=getSoundSpellingLesson('fall in love with');
+ expect(lesson?.ipa).toBe('/ˌfɔːl ɪn ˈlʌv wɪð/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('fall in love with');
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary','none']);
+});
