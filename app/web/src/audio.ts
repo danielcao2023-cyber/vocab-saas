@@ -37,7 +37,7 @@ export function speak(headword: string, variant?: 'noun'|'verb'): Promise<Playba
   if (!word || typeof Audio === 'undefined') {
     return Promise.resolve({ status: 'unavailable', reason: 'failed' });
   }
-  const spoken = word.replace(/\bsb\.(['’]s)?/gi, (_match, possessive: string | undefined) => possessive ? "someone's" : 'someone')
+  const spoken = /^help\s+sb\.\s+to\s+one's\s+feet$/i.test(word) ? 'help someone to their feet' : word.replace(/\bsb\.(['’]s)?/gi, (_match, possessive: string | undefined) => possessive ? "someone's" : 'someone')
     .replace(/\bsth\./gi, 'something');
   return new Promise(resolve => {
     let audio: HTMLAudioElement;
