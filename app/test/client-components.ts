@@ -7,7 +7,7 @@ const nativeRequire = createRequire(import.meta.url);
 /** Compile trusted local SFCs as client components for Vue's custom renderer.
  * Vitest's standard Vue plugin emits SSR components, which are separately tested with renderToString.
  */
-export function clientComponent(file: string): any {
+export function clientComponent(file: string, overrides:Record<string,unknown>={}): any {
   const cache = new Map<string, any>();
   function load(filename: string): any {
     if (cache.has(filename)) return cache.get(filename);
@@ -20,6 +20,7 @@ export function clientComponent(file: string): any {
       if (!name.startsWith('.')) return nativeRequire(name);
       let target = path.resolve(path.dirname(filename), name);
       if (!path.extname(target)) target += '.ts';
+      if (target in overrides) return overrides[target];
       return load(target);
     };
     new Function('require', 'module', 'exports', js)(require,mod,mod.exports);

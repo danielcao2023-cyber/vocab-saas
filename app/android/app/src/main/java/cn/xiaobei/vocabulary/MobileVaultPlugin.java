@@ -90,6 +90,14 @@ public class MobileVaultPlugin extends Plugin {
     }
 
     @PluginMethod
+    public void createDictationVariantBackup(PluginCall call) {
+        String data=call.getString("data");
+        if(data==null){call.reject("A SQLite backup is required","INVALID_BACKUP");return;}
+        try{store.createDictationVariantBackup(Base64.decode(data,Base64.NO_WRAP));call.resolve();}
+        catch(Exception ignored){call.reject("Unable to verify dictation backup; preserve application data","BACKUP_FAILED");}
+    }
+
+    @PluginMethod
     public void remove(PluginCall call) {
         String key = validKey(call);
         if (key == null) return;

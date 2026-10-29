@@ -251,4 +251,18 @@ public class VaultStoreTest {
         expectUnavailable(()->store.createVocabularyBackup(1,image("different")));
         assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-vocabulary-1.db")));
     }
+    @Test public void dictationVariantBackupIsIndependentDurableAndCannotBeOverwritten() throws Exception {
+        byte[] original=image("before-dictation");
+        store.createDictationVariantBackup(original);
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-dictation-variant-v1.db")));
+        newStore().createDictationVariantBackup(original);
+        try {store.set("learning-pre-dictation-variant-v1","bad");fail("Reserved backup");} catch(IllegalArgumentException expected){}
+        try {store.remove("learning-pre-dictation-variant-v1");fail("Reserved backup");} catch(IllegalArgumentException expected){}
+        expectUnavailable(()->store.createDictationVariantBackup(image("different")));
+        assertArrayEquals(original,fileBytes(new File(directory,"learning-pre-dictation-variant-v1.db")));
+    }
+    @Test public void dictationBackupWithoutActiveIndexDoesNotLookLikeFreshInstall() throws Exception {
+        store.createDictationVariantBackup(image("recoverable"));
+        expectUnavailable(()->store.get(VaultStore.LEARNING_POINTER));
+    }
 }

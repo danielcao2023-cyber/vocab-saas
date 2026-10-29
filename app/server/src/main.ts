@@ -23,15 +23,17 @@ const file=process.env.DB_PATH ?? 'data/vocab.db';
 protectTarget(file);
 if(file!==':memory:'&&fs.existsSync(file)){
  const bytes=Buffer.from(readSnapshot(file));bytes[18]=1;bytes[19]=1;
- const snapshot=new Database(bytes);let version,catalogChanged;
+ const snapshot=new Database(bytes);let version,catalogChanged,dictationUpgrade;
  try{
   version=evidenceVersion(snapshot);
   const exists=snapshot.prepare("SELECT 1 FROM sqlite_master WHERE name='vocabulary_meta'").get();
   const digest=exists?(snapshot.prepare("SELECT value FROM vocabulary_meta WHERE key='bundle_digest'").get() as {value:string}|undefined)?.value:undefined;
   catalogChanged=digest!==bundledVocabularyDigest();
+  const issueTable=snapshot.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name='learning_issues'").get();
+  dictationUpgrade=!!issueTable&&!(snapshot.prepare('PRAGMA table_info(learning_issues)').all() as {name:string}[]).some(c=>c.name==='audio_variant');
  }finally{snapshot.close();}
- if(version!==3||catalogChanged){
-  const dir=path.join(os.homedir(),'.codex','backups','xiaobei',version!==3?'pre-v3':'pre-vocabulary');fs.mkdirSync(dir,{recursive:true,mode:0o700});
+ if(version!==3||catalogChanged||dictationUpgrade){
+  const dir=path.join(os.homedir(),'.codex','backups','xiaobei',version!==3?'pre-v3':dictationUpgrade?'pre-dictation-variant':'pre-vocabulary');fs.mkdirSync(dir,{recursive:true,mode:0o700});
   await verifiedBackup(file,path.join(dir,Date.now()+'-'+randomUUID()+'.db'));
  }
 }

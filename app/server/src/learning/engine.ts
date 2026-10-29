@@ -17,7 +17,7 @@ import {learningWords,selectDaily,type LearningWord} from './selection.ts';
 import type {WordBook,LearningMode,LearningSummary,LearningTurn,LearningCard,LearningAnswer,LearningResult,LearningBooks} from '../../../shared/learning.ts';
 import {MODES,POLICY_VERSION,nextDay as tomorrow,chooseMode,passBook,upgradePlan} from './policy.ts';
 interface DayWord {day:string;word_id:number;position:number;initial_book:WordBook;is_new:number;targets:string;streaks:string;errors:number;assisted:number;available_at:string;last_mode:number;done:number;deferred:number}
-interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null}
+interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null;audio_variant:string|null}
 const counts=(words:LearningWord[])=>words.reduce((r,w)=>(r[w.book]++,r),{new:0,unfamiliar:0,familiar:0,mastered:0});
 const rows=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as DayWord[];
 export function learningToday(db:DB,now=new Date()):LearningSummary{
@@ -56,7 +56,7 @@ function renderCard(db:DB,issue:Issue,w:LearningWord):LearningCard{
  const shown=legacyIssueHeadword(issue,w.headword)??w.headword;
  const patterns=issue.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,issue.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[A-Za-z]/g,'_')))];
  return {issueId:issue.id,wordId:w.id,mode:issue.mode,patterns,assisted:!!issue.assisted,options:issue.mode==='recognize'?JSON.parse(issue.options_json):[],
-  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:shown})};
+  ...(issue.mode==='recognize'?{headword:displayHeadword(db,w.id,w.headword)}:issue.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source??null,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:{audioWord:shown,...(issue.audio_variant==='noun'||issue.audio_variant==='verb'?{audioVariant:issue.audio_variant}:{})})};
 }
 export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersion(db)===3)return nextV3(db,now);return db.transaction(()=>{
  upgradePlan(db,now);const summary=learningToday(db,now);if(!summary.started)return {kind:'idle',summary};
@@ -74,7 +74,8 @@ export function nextLearning(db:DB,now=new Date()):LearningTurn{if(evidenceVersi
  const modes=MODES.map((mode,i)=>({mode,i})).filter(({i})=>streaks[i]<targets[i]);
  modes.sort((a,b)=>streaks[a.i]-streaks[b.i]||Number(a.i===entry.last_mode)-Number(b.i===entry.last_mode)||a.i-b.i);
  const mode=modes[0].mode,w=byId.get(entry.word_id)!,id=randomUUID(),options=mode==='recognize'?optionsFor(db,w):[];
- db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at) VALUES (?,?,?,?,?,?)').run(id,summary.day,w.id,mode,JSON.stringify(options),now.toISOString());
+ const audioVariant=mode==='dictation'&&['bow','contract'].includes(w.headword)?'noun':null;
+ db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,summary.day,w.id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;
  return {kind:'card',summary,card:renderCard(db,issue,w)};
 })() as LearningTurn;}

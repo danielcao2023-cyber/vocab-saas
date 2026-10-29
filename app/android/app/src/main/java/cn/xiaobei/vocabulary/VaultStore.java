@@ -108,7 +108,7 @@ final class VaultStore {
             if (value == null) {
                 // Corrupt/missing preferences XML can appear as an empty map.
                 // Existing snapshots prove this is not a fresh installation.
-                if (snapshot("a").exists() || snapshot("b").exists() || new File(snapshotDirectory,"learning-pre-v3.db").exists()) throw new IOException("Missing learning index");
+                if (snapshot("a").exists() || snapshot("b").exists() || new File(snapshotDirectory,"learning-pre-v3.db").exists() || new File(snapshotDirectory,"learning-pre-dictation-variant-v1.db").exists()) throw new IOException("Missing learning index");
             } else if ((!"a".equals(value) && !"b".equals(value)) || !snapshot(value).isFile()) {
                 throw new IOException("Invalid learning index or missing snapshot");
             }
@@ -138,7 +138,7 @@ final class VaultStore {
     void set(String key, String value) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-"))) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
+            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-")||key.startsWith("learning-pre-dictation-variant-"))) throw new IllegalArgumentException("Use writeSnapshot for the learning index");
             try { putEncrypted(key, value); } catch (Exception error) { throw poison(error); }
         }
     }
@@ -146,7 +146,7 @@ final class VaultStore {
     void remove(String key) throws Exception {
         synchronized (PROCESS_LOCK) {
             requireHealthy();
-            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-"))) throw new IllegalArgumentException("The learning index cannot be removed");
+            if (LEARNING_POINTER.equals(key) || ("learning-pre-v3".equals(key)||key.startsWith("learning-pre-vocabulary-")||key.startsWith("learning-pre-dictation-variant-"))) throw new IllegalArgumentException("The learning index cannot be removed");
             try {
                 if (!committer.commit(preferences.edit().remove(key))) throw new IOException("Vault removal failed");
             } catch (Exception error) { throw poison(error); }
@@ -187,6 +187,9 @@ final class VaultStore {
     void createVocabularyBackup(int version, byte[] bytes) throws Exception {
         if(version<1||version>999)throw new IllegalArgumentException("Unsupported vocabulary version");
         createBackup("learning-pre-vocabulary-"+version,bytes);
+    }
+    void createDictationVariantBackup(byte[] bytes) throws Exception {
+        createBackup("learning-pre-dictation-variant-v1", bytes);
     }
     private void createBackup(String name, byte[] bytes) throws Exception {
         synchronized(PROCESS_LOCK){

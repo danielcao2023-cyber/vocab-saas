@@ -14,7 +14,7 @@ const pendingOperation=shallowRef<(()=>Promise<void>)|null>(null);
 const summary=computed<LearningSummaryV3|null>(()=>turn.value?.summary??null);
 
 function stop(){audioVersion++;stopAudio();audioFailed.value=null;}
-async function play(){const card=turn.value?.card;if(!card||!props.active)return;const n=++audioVersion;audioFailed.value=null;const result=await speak(card.audioWord??card.headword??'');if(alive&&n===audioVersion&&result.status==='unavailable')audioFailed.value=result.reason;}
+async function play(){const card=turn.value?.card;if(!card||!props.active)return;const n=++audioVersion;audioFailed.value=null;const result=await speak(card.audioWord??card.headword??'',card.audioVariant);if(alive&&n===audioVersion&&result.status==='unavailable')audioFailed.value=result.reason;}
 // Keep the exact failed request and its next step. Earlier successful steps must
 // not be replayed while the offline runtime is waiting to persist this one.
 async function storedRequest<T>(path:string,body:unknown,accept:(result:T)=>void|Promise<void>,message:string){

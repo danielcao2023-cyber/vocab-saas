@@ -121,8 +121,12 @@ export async function startOfflineRuntime(){
 }
 
 /** The caller cannot expose a writable runtime before this resolves. */
-export async function prepareEvidenceDatabase(db:BrowserDatabase,saved:Uint8Array|null,storage:{createMigrationBackup:(bytes:Uint8Array,version:3)=>Promise<void>;save:(bytes:Uint8Array)=>Promise<void>},now:Date){
- const shared=asSharedDb(db);if(evidenceVersion(shared)===3){if(saved===null)await storage.save(db.export());return;}
+export async function prepareEvidenceDatabase(db:BrowserDatabase,saved:Uint8Array|null,storage:{createMigrationBackup:(bytes:Uint8Array,version:3)=>Promise<void>;createDictationVariantBackup?:(bytes:Uint8Array)=>Promise<void>;save:(bytes:Uint8Array)=>Promise<void>},now:Date){
+ const shared=asSharedDb(db);if(evidenceVersion(shared)===3){
+  const needsVariantMigration=!(shared.prepare('PRAGMA table_info(learning_issues)').all() as {name:string}[]).some(c=>c.name==='audio_variant');
+  if(needsVariantMigration){if(saved!==null){if(!storage.createDictationVariantBackup)throw Error('听写升级备份不可用，请保留学习数据。');await storage.createDictationVariantBackup(saved);}migrateLearning(shared);await storage.save(db.export());}
+  else if(saved===null)await storage.save(db.export());return;
+ }
  if(saved!==null)await storage.createMigrationBackup(saved,3);
  migrateLearning(shared);activateEvidencePolicy(shared,now);await storage.save(db.export());
 }

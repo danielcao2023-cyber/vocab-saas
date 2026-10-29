@@ -20,4 +20,9 @@ CREATE INDEX IF NOT EXISTS idx_learning_open ON learning_issues(day,answered_at)
 `);
  const columns=db.prepare('PRAGMA table_info(learning_days)').all() as {name:string}[];
  if(!columns.some(c=>c.name==='policy_version'))db.exec('ALTER TABLE learning_days ADD COLUMN policy_version INTEGER NOT NULL DEFAULT 1');
+ const issueColumns=db.prepare('PRAGMA table_info(learning_issues)').all() as {name:string}[];
+ if(!issueColumns.some(c=>c.name==='audio_variant'))db.transaction(()=>{
+  db.exec('ALTER TABLE learning_issues ADD COLUMN audio_variant TEXT');
+  db.exec("UPDATE learning_issues SET audio_variant='noun' WHERE mode='dictation' AND answered_at IS NULL AND word_id IN (SELECT id FROM words WHERE headword IN ('bow','contract'))");
+ })();
 }

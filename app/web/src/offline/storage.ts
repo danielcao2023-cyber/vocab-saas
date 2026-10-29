@@ -1,7 +1,7 @@
 import {Capacitor,registerPlugin} from '@capacitor/core';
 import {Directory,Filesystem} from '@capacitor/filesystem';
 
-interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>;createVocabularyBackup(options:{version:number;data:string}):Promise<void>}
+interface VaultPlugin {get(options:{key:string}):Promise<{value:string|null}>;set(options:{key:string;value:string}):Promise<void>;remove(options:{key:string}):Promise<void>;writeSnapshot(options:{slot:'a'|'b';data:string}):Promise<void>;createMigrationBackup(options:{version:3;data:string}):Promise<void>;createVocabularyBackup(options:{version:number;data:string}):Promise<void>;createDictationVariantBackup(options:{data:string}):Promise<void>}
 const vault=registerPlugin<VaultPlugin>('MobileVault');
 const native=()=>Capacitor.isNativePlatform();
 function database():Promise<IDBDatabase>{return new Promise((resolve,reject)=>{
@@ -22,7 +22,7 @@ function bytes(text:string){const raw=atob(text);return Uint8Array.from(raw,c=>c
 /** Native lock/fsync/pointer commit form one operation; native failures poison writes until a new process. */
 export const learningStorage={
  async load():Promise<Uint8Array|null>{
-  if(!native()){const data=await idbGet<Uint8Array>('learning-db');if(data===null&&await idbGet('learning-pre-v3')!==null)throw new Error('学习索引缺失，请保留迁移备份以便恢复。');return data;}
+  if(!native()){const data=await idbGet<Uint8Array>('learning-db');if(data===null&&(await idbGet('learning-pre-v3')!==null||await idbGet('learning-pre-dictation-variant-v1')!==null))throw new Error('学习索引缺失，请保留迁移备份以便恢复。');return data;}
   const pointer=(await vault.get({key:'learning-slot-v1'})).value;
   if(pointer===null)return null;
   if(!['a','b'].includes(pointer))throw new Error('学习数据索引异常，请保留应用数据以便恢复。');
@@ -58,5 +58,15 @@ export const learningStorage={
    tx.oncomplete=()=>resolve();tx.onabort=tx.onerror=()=>reject(Error('词库升级备份冲突或保存失败，原备份未被覆盖。'));
   });}finally{db.close();}
   const verified=await idbGet<Uint8Array>(key);if(!verified||verified.length!==data.length||!data.every((b,i)=>verified[i]===b))throw Error('词库升级备份校验失败。');
+ },
+ async createDictationVariantBackup(data:Uint8Array):Promise<void>{
+  if(native()){await vault.createDictationVariantBackup({data:base64(data)});return;}
+  const key='learning-pre-dictation-variant-v1',db=await database();
+  try{await new Promise<void>((resolve,reject)=>{
+   const tx=db.transaction('state','readwrite'),store=tx.objectStore('state'),get=store.get(key);
+   get.onsuccess=()=>{const old=get.result as Uint8Array|undefined;if(old){if(old.length!==data.length||!data.every((b,i)=>old[i]===b))tx.abort();}else store.put(new Uint8Array(data),key);};
+   tx.oncomplete=()=>resolve();tx.onabort=tx.onerror=()=>reject(Error('听写升级备份冲突或保存失败，原备份未被覆盖。'));
+  });}finally{db.close();}
+  const verified=await idbGet<Uint8Array>(key);if(!verified||verified.length!==data.length||!data.every((b,i)=>verified[i]===b))throw Error('听写升级备份校验失败。');
  },
 };

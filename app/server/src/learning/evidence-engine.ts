@@ -16,7 +16,7 @@ import {REVIEW_POLICY,classifyEvidence,chooseCapability} from './evidence-policy
 import {ensureEvidenceWord,evidenceCards,latestExposure,readWordEvidence,saveProbe,saveExposure,recordCorrection,projectEvidence,capabilityNeeds,evidenceIndex,untouchedEvidence} from './evidence-store.ts';
 import {legacyIssueHeadword} from './legacy-issue.ts';
 interface Entry {day:string;word_id:number;position:number;is_new:number;last_mode:number;done:number;deferred:number;available_at:string}
-interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null}
+interface Issue {id:string;day:string;word_id:number;mode:LearningMode;options_json:string;issued_at:string;assisted:number;answered_at:string|null;answer_id:string|null;result_json:string|null;audio_variant:string|null}
 const entries=(db:DB,day:string)=>db.prepare('SELECT * FROM learning_day_words WHERE day=? ORDER BY position').all(day) as Entry[];
 const probeCount=(db:DB,wordId:number,day:string)=>(db.prepare("SELECT COUNT(*) n FROM learning_events WHERE word_id=? AND eligible=1 AND source='live' AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(wordId,day) as any).n as number;
 const hasSuccess=(db:DB,wordId:number,day:string)=>!!db.prepare("SELECT 1 FROM learning_events WHERE word_id=? AND kind='probe_success' AND source='live' AND substr(datetime(occurred_at,'+8 hours'),1,10)=?").get(wordId,day);
@@ -68,7 +68,7 @@ export function startV3(db:DB,now:Date){db.transaction(()=>{const day=shDay(now)
 function render(db:DB,i:Issue):LearningCard {
  const w=db.prepare('SELECT headword,meaning_zh,meaning_source FROM words WHERE id=?').get(i.word_id) as LearningWord;
  const shown=legacyIssueHeadword(i,w.headword)??w.headword;
- return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:shown}:{headword:displayHeadword(db,i.word_id,w.headword)})};
+ return {issueId:i.id,wordId:i.word_id,mode:i.mode,patterns:i.mode==='recognize'&&hasDictionaryPlaceholder(w.headword)?[]:[...new Set(acceptedAnswers(shown,i.mode,w.meaning_zh,w.meaning_source).map(h=>h.replace(/[a-z]/gi,'_')))],assisted:!!i.assisted,options:i.mode==='recognize'?JSON.parse(i.options_json):[],...(i.mode==='spell'?{meaning:maskAnswer(w.meaning_zh,shown),meaning_source:w.meaning_source,promptHint:translationPromptHint(shown,w.meaning_zh,w.meaning_source)}:i.mode==='dictation'?{audioWord:shown,...(i.audio_variant==='noun'||i.audio_variant==='verb'?{audioVariant:i.audio_variant}:{})}:{headword:displayHeadword(db,i.word_id,w.headword)})};
 }
 export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():LearningTurnV3=>{
  const day=shDay(now);let summary=todayV3(db,now);if(!summary.started)return {policyVersion:3,kind:'idle',summary};
@@ -93,7 +93,9 @@ export function nextV3(db:DB,now:Date):LearningTurnV3{return db.transaction(():L
   for(const other of learningWords(db,now)){if(options.length>=4)break;const text=(other.meaning_zh??'').split('\n')[0];if(other.id!==e.word_id&&text&&!options.some(o=>meaningsOverlap(text,o.text)))options.push({id:other.id,text});}
   options.sort(()=>Math.random()-.5);options.push({id:0,text:'不记得'});
  }
- db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at) VALUES (?,?,?,?,?,?)').run(id,day,e.word_id,mode,JSON.stringify(options),now.toISOString());
+ const word=db.prepare('SELECT headword FROM words WHERE id=?').get(e.word_id) as {headword:string};
+ const audioVariant=mode==='dictation'&&['bow','contract'].includes(word.headword)?'noun':null;
+ db.prepare('INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,audio_variant) VALUES (?,?,?,?,?,?,?)').run(id,day,e.word_id,mode,JSON.stringify(options),now.toISOString(),audioVariant);
  db.prepare('UPDATE learning_day_words SET last_mode=? WHERE day=? AND word_id=?').run(MODES.indexOf(mode),day,e.word_id);
  const issue=db.prepare('SELECT * FROM learning_issues WHERE id=?').get(id) as Issue;
  return {policyVersion:3,kind:'card',reason:need!.group,summary:todayV3(db,now),card:render(db,issue)};
