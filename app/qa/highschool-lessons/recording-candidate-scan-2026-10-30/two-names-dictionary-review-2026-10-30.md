@@ -22,3 +22,9 @@ catalog version 从 137 升至 138，仅对稳定 key `Rembrandt` 的意义做�
 源码 manifest 和 sources 仅新增 Picasso：口音 unknown，明确尚未人工试听且具体人物指代未独立核验。词典没有直接关联本录音；依据是 Commons 对词形和许可的声明，不应解释为已听审或独立确定具体画家。已加在线/离线资源、署名、哈希测试；没有修改用户数据。
 
 接着请求 Rembrandt 原 WAV 返回 HTTP 429、Retry-After 1 秒，当即停止网络；其原文件及转码均未验证，不接入。记录见 `two-names-download-status-2026-10-30.json`；已安装安卓包尚未更新。
+
+## Rembrandt 后续隔离及接入
+
+冷却后单独下载原 WAV 与 Commons 官方 MP3 均 HTTP 200，ffmpeg 完整解码通过。原 WAV 109356 字节，SHA-256 `75eb230d8ed7bb2c79b43c968764409e45a5df8f825044d3249e65be933acc9b`，1.138667 秒；MP3 24618 字节，SHA-256 `fdc6d2b5b909d7549471d160f34ef1e4d29df1d8a7ded6a363a15e081b7db453`，1.138685 秒；完整结果见 `rembrandt-audio-verification-2026-10-30.json`。
+
+按 Picasso 同口径将 Rembrandt 接入源码 manifest 和 sources，保留录制者与 CC0，口音 unknown，并注明尚未人工试听、具体人物指代未独立核验；词典没有直接关联此录音，不能据词典标音断定录音实际发音。在线和离线播放、文件哈希及署名通过定向测试。没有修改用户数据；已安装安卓包不会自动更新。
