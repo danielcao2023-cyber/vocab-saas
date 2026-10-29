@@ -549,3 +549,16 @@ addSourcedPhrase('fall in love with','/ˌfɔːl ɪn ˈlʌv wɪð/',[
  ch('love ','/lʌv/','primary',[{letters:'l',sound:'/l/'},{letters:'o',sound:'/ʌ/'},{letters:'v',sound:'/v/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('with','/wɪð/','none',[{letters:'w',sound:'/w/'},{letters:'i',sound:'/ɪ/'},{letters:'th',sound:'/ð/'}]),
 ],'Pearson Focus 4 词表','https://download.fimsschools.com/ebooks/Focus%20Student%20Book%204.pdf');
+const pearsonFocus4='https://download.fimsschools.com/ebooks/Focus%20Student%20Book%204.pdf';
+addSourcedPhrase('make an impression','/ˌmeɪk ən ɪmˈpreʃən/',[
+ ch('make ','/meɪk/','secondary',[{letters:'m',sound:'/m/'},{letters:'a',sound:'/eɪ/'},{letters:'k',sound:'/k/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('an ','/ən/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('im','/ɪm/','none',[{letters:'i',sound:'/ɪ/'},{letters:'m',sound:'/m/'}]),
+ ch('pre','/pre/','primary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/e/'}]),
+ ch('ssion','/ʃən/','none',[{letters:'ss',sound:'/ʃ/'},{letters:'i',sound:''},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
+],'Pearson Focus 4 词表',pearsonFocus4);
+addSourcedPhrase('a great deal','/ə ˈɡreɪt diːl/',[
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('great ','/ɡreɪt/','primary',[{letters:'g',sound:'/ɡ/'},{letters:'r',sound:'/r/'},{letters:'ea',sound:'/eɪ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('deal','/diːl/','none',[{letters:'d',sound:'/d/'},{letters:'ea',sound:'/iː/'},{letters:'l',sound:'/l/'}]),
+],'Pearson Focus 4 词表',pearsonFocus4);

@@ -241,3 +241,13 @@ it('matches the Pearson Focus pronunciation and stress for fall in love with',()
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('fall in love with');
  expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(['secondary','none','primary','none']);
 });
+
+it.each([
+ ['make an impression','/ˌmeɪk ən ɪmˈpreʃən/',['secondary','none','none','primary','none']],
+ ['a great deal','/ə ˈɡreɪt diːl/',['none','primary','none']],
+])('matches Pearson Focus pronunciation and stress for %s',(word,ipa,stress)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+ expect(lesson?.chunks.map(chunk=>chunk.stress)).toEqual(stress);
+});
