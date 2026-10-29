@@ -454,3 +454,8 @@ addSourcedPhrase('in despair','/ɪn dɪˈspeə/',[
  ch('de','/dɪ/','none',[{letters:'d',sound:'/d/'},{letters:'e',sound:'/ɪ/'}]),
  ch('spair','/speə/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'air',sound:'/eə/'}]),
 ],'Azerbaijan Grade 10 英语教材词表','https://www.trims.edu.az/noduploads/book/quot-english-quot-ingilis-dili-asas-xarici-dil-fanni-uzra-10-cu-sinif-ucun-darslik-1539604664-369.pdf');
+addSourcedPhrase('in spite of','/ɪn ˈspaɪt əv/',[
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('spite ','/spaɪt/','primary',[{letters:'s',sound:'/s/'},{letters:'p',sound:'/p/'},{letters:'i',sound:'/aɪ/'},{letters:'t',sound:'/t/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
+ ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
+],'National Geographic Learning Life Lessons 词表','https://www.eltngl.com/sites/file/261927/download?token=vYUXEtTb');

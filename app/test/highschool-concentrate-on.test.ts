@@ -174,3 +174,9 @@ it.each([['now that','/ˈnaʊ ðət/'],['in despair','/ɪn dɪˈspeə/']])('show
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it('shows the National Geographic Learning pronunciation for in spite of',()=>{
+ const lesson=getSoundSpellingLesson('in spite of');
+ expect(lesson?.ipa).toBe('/ɪn ˈspaɪt əv/');
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe('in spite of');
+});
