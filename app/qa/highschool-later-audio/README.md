@@ -311,3 +311,5 @@
 `batch-proper-recovery-1.json` 补入 37 份高中教材专有名称及相关称谓的英语录音，核对词典关联、Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
 
 `batch-properphrase-recovery-1.json` 补入 9 份高中专有名称和短语真人录音：核对英语 Wiktionary 与 Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
+
+`batch-properphrase-recovery-2.json` 补入 4 份高中专有名称录音：核对英语 Wiktionary 与 Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。

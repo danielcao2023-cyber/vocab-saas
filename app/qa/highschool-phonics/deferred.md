@@ -8,7 +8,7 @@
 
 
 
-- `Vancouver`、`Lake Louise`、`Jasper`、`Toronto`、`Edmonton`、`Winnipeg`、`Ontario`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
+- `Lake Louise`、`Jasper`、`Winnipeg`、`Lake Huron`、`Quebec City`（选择性必修二 Unit 4）：地名发音拼写对照仍需逐词核验，暂不发布未经核对的映射。
 
 - `Montreal`、`Niagara Falls`、`St Lawrence River`、`Nova Scotia`（选择性必修二 Unit 4）：地名音形对照仍需逐词核验，暂不发布未经核对的映射。
 
@@ -29,3 +29,5 @@
 - 选择性必修三 Unit 4：Ernest Shackleton、Perce Blackborow、the Antarctic、South Georgia Island、Frank Wild、Thomas Orde-Lees、Frank Worsley、Tom Crean 的完整名称读音与对照待核验。
 
 - 选择性必修三 Unit 4：Hubert Hudson、Lionel Greenstreet 的完整姓名读音及拼写对照待核验。
+
+- `Vancouver`、`Toronto`、`Edmonton`、`Ontario`：已依据英语词典核对并补充音形对照；Toronto 的省略 t 等变读已标注。录音口音及试听仍单独核查。
