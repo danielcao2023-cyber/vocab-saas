@@ -274,3 +274,30 @@ addSourcedPhrase('after all','/ˌɑːftər ˈɔːl/',[
  ch('ter ','/tər/','none',[{letters:'t',sound:'/t/'},{letters:'e',sound:'/ə/'},{letters:'r',sound:'/r/'},{letters:' ',sound:''}]),
  ch('all','/ɔːl/','primary',[{letters:'a',sound:'/ɔː/'},{letters:'ll',sound:'/l/'}]),
 ],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('to be honest','/tə bi ˈɒnɪst/',[
+ ch('to ','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('be ','/bi/','none',[{letters:'b',sound:'/b/'},{letters:'e',sound:'/i/'},{letters:' ',sound:''}]),
+ ch('hon','/ɒn/','primary',[{letters:'h',sound:''},{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'}]),
+ ch('est','/ɪst/','none',[{letters:'e',sound:'/ɪ/'},{letters:'s',sound:'/s/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('as a result','/əz ə rɪˈzʌlt/',[
+ ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
+ ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),
+ ch('re','/rɪ/','none',[{letters:'r',sound:'/r/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('sult','/zʌlt/','primary',[{letters:'s',sound:'/z/'},{letters:'u',sound:'/ʌ/'},{letters:'l',sound:'/l/'},{letters:'t',sound:'/t/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('keep in touch','/ˌkiːp ɪn ˈtʌtʃ/',[
+ ch('keep ','/kiːp/','secondary',[{letters:'k',sound:'/k/'},{letters:'ee',sound:'/iː/'},{letters:'p',sound:'/p/'},{letters:' ',sound:''}]),
+ ch('in ','/ɪn/','none',[{letters:'i',sound:'/ɪ/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
+ ch('touch','/tʌtʃ/','primary',[{letters:'t',sound:'/t/'},{letters:'ou',sound:'/ʌ/'},{letters:'ch',sound:'/tʃ/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('out of shape','/ˌaʊt əv ˈʃeɪp/',[
+ ch('out ','/aʊt/','secondary',[{letters:'ou',sound:'/aʊ/'},{letters:'t',sound:'/t/'},{letters:' ',sound:''}]),
+ ch('of ','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'},{letters:' ',sound:''}]),
+ ch('shape','/ʃeɪp/','primary',[{letters:'sh',sound:'/ʃ/'},{letters:'a',sound:'/eɪ/'},{letters:'p',sound:'/p/'},{letters:'e',sound:''}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+addSourcedPhrase('pros and cons','/ˌprəʊz ənd ˈkɒns/',[
+ ch('pros ','/prəʊz/','secondary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'o',sound:'/əʊ/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
+ ch('and ','/ənd/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:'d',sound:'/d/'},{letters:' ',sound:''}]),
+ ch('cons','/kɒns/','primary',[{letters:'c',sound:'/k/'},{letters:'o',sound:'/ɒ/'},{letters:'n',sound:'/n/'},{letters:'s',sound:'/s/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);

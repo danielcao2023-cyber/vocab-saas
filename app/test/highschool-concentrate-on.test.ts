@@ -101,3 +101,9 @@ it.each([['on board','/ˌɒn ˈbɔːd/'],['speak up','/ˌspiːk ˈʌp/'],['turn 
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['to be honest','/tə bi ˈɒnɪst/'],['as a result','/əz ə rɪˈzʌlt/'],['keep in touch','/ˌkiːp ɪn ˈtʌtʃ/'],['out of shape','/ˌaʊt əv ˈʃeɪp/'],['pros and cons','/ˌprəʊz ənd ˈkɒns/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
