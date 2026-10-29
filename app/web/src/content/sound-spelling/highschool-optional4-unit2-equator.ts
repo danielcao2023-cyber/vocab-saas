@@ -128,12 +128,8 @@ export const highschoolOptional4Unit2Equator: SoundSpellingLesson[] = [
             "sound": "/k/"
           },
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/juː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

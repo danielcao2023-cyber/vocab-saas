@@ -38,12 +38,8 @@ export const highschoolBook3Unit5Pursue: SoundSpellingLesson[] = [
             "sound": "/s/"
           },
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/uː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分重读。"

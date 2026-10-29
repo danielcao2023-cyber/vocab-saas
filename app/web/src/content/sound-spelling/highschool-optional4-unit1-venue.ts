@@ -34,12 +34,8 @@ export const highschoolOptional4Unit1Venue: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/juː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

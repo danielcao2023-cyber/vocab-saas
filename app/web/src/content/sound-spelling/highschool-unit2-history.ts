@@ -31,22 +31,18 @@ export const highschoolUnit2History: SoundSpellingLesson[] = [
         "letters": "tue",
         "sound": "/tʃuː/",
         "stress": "none",
-        "hint": "t 在这里对应 /tʃ/，末尾 e 不单独发音。",
+        "hint": "t 在这里对应 /tʃ/，ue 共同对应 /uː/。",
         "pairs": [
           {
             "letters": "t",
             "sound": "/tʃ/"
           },
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/uː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
-        "tip": "t 在这里对应 /tʃ/，末尾 e 不单独发音。"
+        "tip": "t 在这里对应 /tʃ/，ue 共同对应 /uː/。"
       }
     ],
     "anchor": {

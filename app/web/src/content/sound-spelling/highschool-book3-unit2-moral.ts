@@ -98,12 +98,8 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
             "sound": "/tʃ/"
           },
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/uː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

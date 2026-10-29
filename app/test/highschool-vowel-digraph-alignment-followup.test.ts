@@ -29,3 +29,11 @@ it('keeps the spelling groups together in Halloween and airline', () => {
   const airline = getSoundSpellingLessons('airline')[0];
   expect(airline.chunks[0].pairs).toEqual([{ letters: 'air', sound: '/er/' }]);
 });
+
+it('treats final ue as a spelling group in reviewed headwords', () => {
+  for (const [word, sound] of Object.entries({ statue: '/uː/', issue: '/uː/', tissue: '/uː/', venue: '/juː/', barbecue: '/juː/', pursue: '/uː/', virtue: '/uː/' })) {
+    const lesson = getSoundSpellingLessons(word)[0];
+    expect(lesson.chunks.map(chunk => chunk.letters).join('').toLowerCase(), word).toBe(word);
+    expect(lesson.chunks.flatMap(chunk => chunk.pairs).some(pair => pair.letters === 'ue' && pair.sound === sound), word).toBe(true);
+  }
+});

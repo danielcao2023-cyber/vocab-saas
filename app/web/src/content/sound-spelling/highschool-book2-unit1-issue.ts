@@ -27,18 +27,14 @@ export const highschoolBook2Unit1Issue: SoundSpellingLesson[] = [
         "letters": "ue",
         "sound": "/uː/",
         "stress": "none",
-        "hint": "两字母 s 共同对应 /ʃ/，词尾 e 不单独发音。",
+        "hint": "两字母 s 共同对应 /ʃ/，ue 共同对应 /uː/。",
         "pairs": [
           {
-            "letters": "u",
+            "letters": "ue",
             "sound": "/uː/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
-        "tip": "两字母 s 共同对应 /ʃ/，词尾 e 不单独发音。"
+        "tip": "两字母 s 共同对应 /ʃ/，ue 共同对应 /uː/。"
       }
     ],
     "anchor": {
