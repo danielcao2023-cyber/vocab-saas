@@ -31,7 +31,7 @@ export interface Entry {
   key: string;
   headword: string;
   meaning: string;
-  meaningCorrection?: {expected:string};
+  meaningCorrection?: {expected:string;previous?:string[]};
   headwordCorrection?: {expected:string};
   phoneticCorrection?: {expected:string};
   phonetic?: string;
@@ -131,7 +131,8 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
 
   // Start transaction for atomicity
   const tx = db.transaction(() => {
-    const optionCorrections = new Map<number, {oldOption:string;newOption:string}>();
+    const optionCorrections = new Map<number, {oldOptions:Set<string>;newOption:string}>();
+    const changedMeaningWords = new Set<number>();
     // Upsert books
     for (const book of catalog.books) {
       db.prepare(
@@ -179,15 +180,17 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
             .run(JSON.stringify([{legacyHeadword:'keep balance'}]),wordId);
       }
       if(entry.meaningCorrection){
-        const updated=db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)")
-          .run(entry.meaning,wordId,entry.meaningCorrection.expected,entry.headwordCorrection?1:0,entry.headword);
-        // Recognition questions snapshot only the first line at issue time. Repair an
-        // unanswered snapshot only when the import changed this value or a prior
-        // catalog correction already installed exactly this value. The latter repairs
-        // snapshots left behind by an earlier upgrade while preserving user edits.
-        const oldOption=entry.meaningCorrection.expected.split('\n')[0],newOption=entry.meaning.split('\n')[0];
-        const alreadyCorrected=updated.changes?true:!!db.prepare("SELECT 1 FROM words WHERE id=? AND headword=? AND source='vocabulary' AND meaning_source='词库校订' AND meaning_flag IS NULL AND meaning_zh=?").get(wordId,entry.headword,entry.meaning);
-        if(alreadyCorrected&&oldOption!==newOption)optionCorrections.set(wordId,{oldOption,newOption});
+        const expectedValues=[entry.meaningCorrection.expected,...(entry.meaningCorrection.previous??[])];
+        const update=db.prepare("UPDATE words SET meaning_zh=?,meaning_source='词库校订' WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND meaning_zh=? AND (?=0 OR headword=?)");
+        let changed=false;
+        for(const expected of expectedValues){
+          if(update.run(entry.meaning,wordId,expected,entry.headwordCorrection?1:0,entry.headword).changes){changed=true;if(expected!==entry.meaning)changedMeaningWords.add(wordId);break;}
+        }
+        // Only verified imported values authorize updating an unanswered snapshot.
+        const alreadyCorrected=changed||!!db.prepare("SELECT 1 FROM words WHERE id=? AND headword=? AND source='vocabulary' AND meaning_source='词库校订' AND meaning_flag IS NULL AND meaning_zh=?").get(wordId,entry.headword,entry.meaning);
+        const newOption=entry.meaning.split('\n')[0];
+        const oldOptions=new Set(expectedValues.map(value=>value.split('\n')[0]).filter(value=>value!==newOption));
+        if(alreadyCorrected&&oldOptions.size)optionCorrections.set(wordId,{oldOptions,newOption});
       }
       if(entry.phoneticCorrection)db.prepare("UPDATE words SET phonetic=? WHERE id=? AND source='vocabulary' AND meaning_source IN ('词库导入','词库校订') AND meaning_flag IS NULL AND phonetic=?")
         .run(entry.phonetic,wordId,entry.phoneticCorrection.expected);
@@ -211,6 +214,17 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
       }
     }
 
+    // Spell prompts are rendered from the current word meaning rather than a
+    // snapshot. Invalidate a displayed prompt when this import actually changes it.
+    if(changedMeaningWords.size){
+      const pending=db.prepare("SELECT * FROM learning_issues WHERE mode='spell' AND answered_at IS NULL AND answer_id IS NULL").all() as {id:string;day:string;word_id:number;mode:string;options_json:string;issued_at:string;assisted:number}[];
+      for(const issue of pending){
+        if(!changedMeaningWords.has(issue.word_id))continue;
+        const closed=db.prepare("UPDATE learning_issues SET answered_at=?,result_json=? WHERE id=? AND answered_at IS NULL AND answer_id IS NULL").run(new Date().toISOString(),CATALOG_ISSUE_REPLACED,issue.id);
+        if(closed.changes)db.prepare("INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at,assisted) VALUES (?,?,?,?,?,?,?)").run(randomUUID(),issue.day,issue.word_id,issue.mode,issue.options_json,issue.issued_at,issue.assisted);
+      }
+    }
+
     // Reissue rather than mutate an already displayed card: an old page may
     // submit even an otherwise-valid choice after its meaning has changed.
     if(optionCorrections.size){
@@ -221,7 +235,7 @@ export function installVocabulary(db: DB, catalog: Catalog): void {
         const options=raw.map(option=>{
           if(!option||typeof option!=='object')return {option,changed:false};
           const correction=optionCorrections.get(option.id);
-          return correction&&option.text===correction.oldOption?{option:{...option,text:correction.newOption},changed:true}:{option,changed:false};
+          return correction&&correction.oldOptions.has(option.text)?{option:{...option,text:correction.newOption},changed:true}:{option,changed:false};
         });
         if(!options.some(x=>x.changed))continue;
         const correct=options.filter(x=>x.option?.id===issue.word_id);
@@ -382,7 +396,7 @@ function validateCatalog(catalog: Catalog): void {
     }
     if(entry.retiredMemberships!==undefined&&(!Array.isArray(entry.retiredMemberships)||entry.retiredMemberships.some(r=>!r||typeof r.bookId!=='string'||typeof r.unitId!=='string'||typeof r.replacementKey!=='string'||!r.bookId||!r.unitId||!r.replacementKey)))throw new Error('Invalid retired membership');
     if(entry.headwordCorrection&&(typeof entry.headwordCorrection.expected!=='string'||!entry.headwordCorrection.expected.trim()||entry.headwordCorrection.expected.length>500||entry.headword.length>500))throw Error('Invalid headword correction');
-    if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000))throw Error('Invalid meaning correction');
+    if(entry.meaningCorrection&&(!entry.meaningCorrection.expected||typeof entry.meaningCorrection.expected!=='string'||entry.meaningCorrection.expected.length>16000||(entry.meaningCorrection.previous!==undefined&&(!Array.isArray(entry.meaningCorrection.previous)||!entry.meaningCorrection.previous.length||entry.meaningCorrection.previous.some(value=>typeof value!=='string'||!value.trim()||value.length>16000)))))throw Error('Invalid meaning correction');
     if(entry.phoneticCorrection&&(typeof entry.phoneticCorrection.expected!=='string'||!entry.phoneticCorrection.expected.trim()||entry.phoneticCorrection.expected.length>500||typeof entry.phonetic!=='string'||!entry.phonetic.trim()||entry.phonetic.length>500))throw Error('Invalid phonetic correction');
     for (const membership of entry.memberships) {
       if (!membership.bookId || typeof membership.bookId !== 'string') {
