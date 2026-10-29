@@ -303,3 +303,5 @@
 `batch-wikialt-2.json` 补入 concentrate、figure、explode 三份录音，核对英语 Wiktionary 关联的替代文件、Commons 许可和哈希；尚未逐条人工试听。
 
 `batch-french-recovery-1.json` 补入 23 份高中单词录音：核对法语 Wiktionary 的英语栏目与 Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未逐条人工试听。
+
+`batch-french-phrase-1.json` 补入 point of view 的真人录音：核对法语 Wiktionary 的英语栏目与 Commons 文件、作者、许可、解码和哈希；口音未独立确认，尚未人工试听。
