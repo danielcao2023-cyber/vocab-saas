@@ -394,3 +394,18 @@ addSourcedPhrase('take advantage of','/ˌteɪk ədˈvɑːntɪdʒ əv/',[
  ch('tage ','/tɪdʒ/','none',[{letters:'t',sound:'/t/'},{letters:'a',sound:'/ɪ/'},{letters:'g',sound:'/dʒ/'},{letters:'e',sound:''},{letters:' ',sound:''}]),
  ch('of','/əv/','none',[{letters:'o',sound:'/ə/'},{letters:'f',sound:'/v/'}]),
 ],'Pearson Focus 3 第二版词表','https://anyflip.com/twmh/lylg/basic/101-150');
+addSourcedPhrase('as well as','/əz ˈwel əz/',[
+ ch('as ','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'},{letters:' ',sound:''}]),
+ ch('well ','/wel/','primary',[{letters:'w',sound:'/w/'},{letters:'e',sound:'/e/'},{letters:'ll',sound:'/l/'},{letters:' ',sound:''}]),
+ ch('as','/əz/','none',[{letters:'a',sound:'/ə/'},{letters:'s',sound:'/z/'}]),
+],'Oxford Learner’s Pocket Word Skills 词表',oxfordWordSkills);
+const projectExploreSource='https://ua.izzi.digital/DOS/1306848/datastore/21/publication/1306848/files/2024/08/28/c8711ccb562399263ddbd257fa89cf72_project_explore_8_wordlist.pdf?v=1743018279';
+addSourcedPhrase('belong to','/bɪˈlɒŋ tə/',[
+ ch('be','/bɪ/','none',[{letters:'b',sound:'/b/'},{letters:'e',sound:'/ɪ/'}]),
+ ch('long ','/lɒŋ/','primary',[{letters:'l',sound:'/l/'},{letters:'o',sound:'/ɒ/'},{letters:'ng',sound:'/ŋ/'},{letters:' ',sound:''}]),
+ ch('to','/tə/','none',[{letters:'t',sound:'/t/'},{letters:'o',sound:'/ə/'}]),
+],'Oxford Project Explore 词表',projectExploreSource);
+addSourcedPhrase('search for','/ˈsɜːtʃ fə/',[
+ ch('search ','/sɜːtʃ/','primary',[{letters:'s',sound:'/s/'},{letters:'ear',sound:'/ɜː/'},{letters:'ch',sound:'/tʃ/'},{letters:' ',sound:''}]),
+ ch('for','/fə/','none',[{letters:'f',sound:'/f/'},{letters:'or',sound:'/ə/'}]),
+],'Oxford Project Explore 词表',projectExploreSource);

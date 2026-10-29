@@ -150,3 +150,9 @@ it.each([['on average','/ɒn ˈævərɪdʒ/'],['take advantage of','/ˌteɪk əd
  expect(lesson?.ipa).toBe(ipa);
  expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
 });
+
+it.each([['as well as','/əz ˈwel əz/'],['belong to','/bɪˈlɒŋ tə/'],['search for','/ˈsɜːtʃ fə/']])('shows the Oxford phrase pronunciation for %s',(word,ipa)=>{
+ const lesson=getSoundSpellingLesson(word);
+ expect(lesson?.ipa).toBe(ipa);
+ expect(lesson?.chunks.map(chunk=>chunk.letters).join('')).toBe(word);
+});
