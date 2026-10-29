@@ -89,3 +89,5 @@
 后续核验：2516–2545，逐项依据见 `highschool-comparison-audits/batch-2516-2530.json`、`batch-2531-2545.json`；两组无关对比已移除。
 
 后续核验：2546–2575，逐项依据见 `highschool-comparison-audits/batch-2546-2560.json`、`batch-2561-2575.json`；无关对比已移除。
+
+后续核验：2576–2605，逐项依据见 `highschool-comparison-audits/batch-2576-2590.json`、`batch-2591-2605.json`；2591 待核，若干无关对比已移除。
