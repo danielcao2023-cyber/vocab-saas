@@ -10,6 +10,7 @@ import Database from 'better-sqlite3';
 import {pronunciationHeadword} from '../web/src/audio.ts';
 import {hasDictionaryPlaceholder} from '../server/src/text.ts';
 import {protectTarget} from '../server/src/guard.ts';
+import {recordingRequirement,type AudioExemption} from './lib/recording-requirement.ts';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const args=process.argv.slice(2);
@@ -18,6 +19,11 @@ const readJson=(path:string)=>JSON.parse(readFileSync(path,'utf8'));
 const cat=readJson(join(root,'data/vocabulary/catalog.json'));
 const offline=readJson(join(root,'mobile-public/offline/pronunciation.json'));
 const source=readJson(join(root,'data/pronunciation/manifest.json'));
+const exemptions=readJson(join(root,'data/pronunciation/highschool-audio-exemptions.json'));
+if(exemptions.version!==1||!exemptions.entries||typeof exemptions.entries!=='object') throw new Error('Unexpected audio exemption format');
+for(const [word,reason] of Object.entries(exemptions.entries)) {
+ if(!word.trim()||word!==word.trim()||!['abbreviation','proper-name','transliteration'].includes(reason as string)) throw new Error(`Invalid audio exemption: ${word}`);
+}
 if(source.version!==1||!source.entries||!Array.isArray(cat.entries)||!offline||typeof offline!=='object') throw new Error('Unexpected catalog or pronunciation format');
 const seedPath=join(root,'mobile-public/offline/seed.db');
 protectTarget(seedPath);
@@ -43,10 +49,12 @@ try {
   const r=spoken?offline[spoken]:undefined,src=spoken?source.entries[spoken]:undefined;
   const offlineValid=!!spoken&&valid(spoken,r,join(root,'mobile-public/offline/recordings'),true);
   const sourceValid=!!spoken&&valid(spoken,src,join(root,'data/pronunciation'),false);
-  return {key:e.key,word:w?.headword??null,id:w?.id??null,spoken,books:e.memberships.filter((m:any)=>m.bookId.startsWith('pep2019-')).map((m:any)=>({bookId:m.bookId,unitId:m.unitId})),placeholder:!!w&&hasDictionaryPlaceholder(w.headword),offlineValid,sourceValid,accent:offlineValid?r.accent:null,sourceUrl:offlineValid?r.sourceUrl:null,note:offlineValid?r.pronunciationNote??null:null,metadataOnly:!!r&&!offlineValid};
+  const requirement=recordingRequirement(e.headword,exemptions.entries as Record<string,AudioExemption>);
+  return {key:e.key,word:w?.headword??null,id:w?.id??null,spoken,requirement,audioRequired:requirement==='word',books:e.memberships.filter((m:any)=>m.bookId.startsWith('pep2019-')).map((m:any)=>({bookId:m.bookId,unitId:m.unitId})),placeholder:!!w&&hasDictionaryPlaceholder(w.headword),offlineValid,sourceValid,accent:offlineValid?r.accent:null,sourceUrl:offlineValid?r.sourceUrl:null,note:offlineValid?r.pronunciationNote??null:null,metadataOnly:!!r&&!offlineValid};
  });
  const count=(f:(r:any)=>boolean)=>rows.filter(f).length;
  const stats={total:rows.length,mappingMissing:count(r=>!r.word),offlineValid:count(r=>r.offlineValid),sourceValid:count(r=>r.sourceValid),offlineMissing:count(r=>!!r.word&&!r.offlineValid),sourceOnly:count(r=>r.sourceValid&&!r.offlineValid),offlineOnly:count(r=>r.offlineValid&&!r.sourceValid),placeholder:count(r=>r.placeholder),missingPlaceholder:count(r=>r.placeholder&&!r.offlineValid),accents:Object.fromEntries(['us','uk','unknown'].map(a=>[a,count(r=>r.offlineValid&&r.accent===a)]))};
  if(args.length)writeFileSync(resolve(args[1]),JSON.stringify(rows.filter((r:any)=>!r.offlineValid),null,2)+'\n',{flag:'wx'});
- console.log(JSON.stringify({catalogVersion:cat.version,stats,scope:'catalog high-school entries resolved against built offline seed; metadata and SHA-256 only; not a listening, decode or license audit'},null,2));
+ const requiredAudio={required:count(r=>r.audioRequired),valid:count(r=>r.audioRequired&&r.offlineValid),missing:count(r=>r.audioRequired&&!r.offlineValid),exempt:count(r=>!r.audioRequired),exemptMissing:count(r=>!r.audioRequired&&!r.offlineValid),missingByReason:Object.fromEntries(['phrase','abbreviation','proper-name','transliteration'].map(reason=>[reason,count(r=>r.requirement===reason&&!r.offlineValid)]))};
+ console.log(JSON.stringify({catalogVersion:cat.version,stats,requiredAudio,scope:'catalog high-school entries resolved against built offline seed; required audio excludes phrases and explicitly reviewed non-words; metadata and SHA-256 only; not a listening, decode or license audit'},null,2));
 }finally{db.close();}

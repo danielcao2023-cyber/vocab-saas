@@ -148,4 +148,3 @@ function handleBookChange(event: Event) {
   color: var(--ink-2);
 }
 </style>
-
