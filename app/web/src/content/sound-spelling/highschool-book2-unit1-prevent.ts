@@ -149,9 +149,9 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "es",
-        "sound": "/ɪs/",
+        "sound": "/ɪˈs/",
         "stress": "none",
-        "hint": "开头轻读。",
+        "hint": "重读音节从这段中的 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -159,10 +159,11 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
           },
           {
             "letters": "s",
-            "sound": "/s/"
+            "sound": "/ˈs/"
           }
         ],
-        "tip": "开头轻读。"
+        "tip": "重读音节从这段中的 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "tab",

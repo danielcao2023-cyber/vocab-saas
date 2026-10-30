@@ -204,9 +204,9 @@ export const highschoolWelcomeImpress: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪks/",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "开头轻读，x 对应 /ks/。",
+        "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -214,10 +214,11 @@ export const highschoolWelcomeImpress: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ks/"
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "开头轻读，x 对应 /ks/。"
+        "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "per",

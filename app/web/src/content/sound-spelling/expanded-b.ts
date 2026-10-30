@@ -1409,9 +1409,9 @@ export const expandedB: SoundSpellingLesson[] = [
   "chunks": [
    {
     "letters": "ex",
-    "sound": "/ɪks/",
+    "sound": "/ɪkˈs/",
     "stress": "none",
-    "hint": "e 对应 /ɪ/",
+    "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
     "pairs": [
      {
       "letters": "e",
@@ -1419,10 +1419,11 @@ export const expandedB: SoundSpellingLesson[] = [
      },
      {
       "letters": "x",
-      "sound": "/ks/"
+      "sound": "/kˈs/"
      }
     ],
-    "tip": "这里 e 对应 /ɪ/。"
+    "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+    "crossesStressBoundary": true
    },
    {
     "letters": "plore",
@@ -1447,13 +1448,17 @@ export const expandedB: SoundSpellingLesson[] = [
    }
   ],
   "anchor": {
-   "text": "ex 中 x 对应 /ks/；主重音在 plore 段，ore 对应 /ɔːr/。"
+   "text": "ex 中 x 对应 /ks/；重读音节从 x 的 /s/ 开始，ore 对应 /ɔːr/。"
   },
   "variantNote": "本图采用 /ɪkˈsplɔːr/。原词条美式读音：/ɪkˈsplɔːr/。原词条英式读音：/ɪkˈsplɔː/。英式通常不读词尾 r；美式会读出 r。为完整对应 x，记忆分段可跨越语音音节边界；主重音仍落在标记段的元音。",
   "sources": [
    {
     "label": "Wiktionary: explore（English）",
     "url": "https://fr.wiktionary.org/wiki/explore#Anglais"
+   },
+   {
+    "label": "Cambridge Dictionary · 英语读音",
+    "url": "https://dictionary.cambridge.org/pronunciation/english/explore"
    }
   ],
   "review": {

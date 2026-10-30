@@ -115,9 +115,9 @@ export const highschoolBook2Unit2Rate: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪks/",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "首部分轻读。",
+        "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -125,10 +125,11 @@ export const highschoolBook2Unit2Rate: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ks/"
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "首部分轻读。"
+        "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "tinct",
@@ -183,9 +184,9 @@ export const highschoolBook2Unit2Rate: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪks/",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "首部分轻读。",
+        "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -193,10 +194,11 @@ export const highschoolBook2Unit2Rate: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ks/"
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "首部分轻读。"
+        "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "tinc",

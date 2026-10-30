@@ -80,9 +80,9 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "dis",
-        "sound": "/dɪs/",
+        "sound": "/dɪˈs/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "重读音节从这段中的 /s/ 开始。",
         "pairs": [
           {
             "letters": "d",
@@ -94,10 +94,11 @@ export const highschoolOptional1Unit4Interaction: SoundSpellingLesson[] = [
           },
           {
             "letters": "s",
-            "sound": "/s/"
+            "sound": "/ˈs/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "重读音节从这段中的 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "play",

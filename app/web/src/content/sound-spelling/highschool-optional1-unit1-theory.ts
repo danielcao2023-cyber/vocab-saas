@@ -765,9 +765,9 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪks/",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -775,10 +775,11 @@ export const highschoolOptional1Unit1Theory: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ks/"
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "tra",

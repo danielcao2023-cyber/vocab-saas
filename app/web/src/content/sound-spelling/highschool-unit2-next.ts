@@ -97,9 +97,9 @@ export const highschoolUnit2Next: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪks/",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "x 对应 /ks/，其中 /s/ 与后面的 /tr/ 连读。",
+        "hint": "x 对应 /ks/，重读音节从 /s/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -107,10 +107,11 @@ export const highschoolUnit2Next: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ks/"
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "x 对应 /ks/，其中 /s/ 与后面的 /tr/ 连读。"
+        "tip": "x 对应 /ks/，重读音节从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "treme",

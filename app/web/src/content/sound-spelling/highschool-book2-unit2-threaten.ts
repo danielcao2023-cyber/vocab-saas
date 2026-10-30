@@ -72,9 +72,9 @@ export const highschoolBook2Unit2Threaten: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "ex",
-        "sound": "/ɪɡz/",
+        "sound": "/ɪɡˈz/",
         "stress": "none",
-        "hint": "x 在此对应 /ɡz/。",
+        "hint": "x 对应 /ɡz/，重读音节从 /z/ 开始。",
         "pairs": [
           {
             "letters": "e",
@@ -82,10 +82,11 @@ export const highschoolBook2Unit2Threaten: SoundSpellingLesson[] = [
           },
           {
             "letters": "x",
-            "sound": "/ɡz/"
+            "sound": "/ɡˈz/"
           }
         ],
-        "tip": "x 在此对应 /ɡz/。"
+        "tip": "x 对应 /ɡz/，重读音节从 /z/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "ist",

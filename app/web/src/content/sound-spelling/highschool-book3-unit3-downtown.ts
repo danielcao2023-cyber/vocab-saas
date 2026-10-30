@@ -490,9 +490,9 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
     "chunks": [
       {
         "letters": "his",
-        "sound": "/hɪs/",
+        "sound": "/hɪˈs/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "重读音节从这段中的 /s/ 开始。",
         "pairs": [
           {
             "letters": "h",
@@ -504,10 +504,11 @@ export const highschoolBook3Unit3Downtown: SoundSpellingLesson[] = [
           },
           {
             "letters": "s",
-            "sound": "/s/"
+            "sound": "/ˈs/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "重读音节从这段中的 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
         "letters": "tor",
