@@ -25,6 +25,9 @@ it.each([
   [2674, 'the upper class', '/ði ˌʌpə ˈklɑːs/', '/ði ˌʌpər ˈklæs/'],
   [3548, 'Lao Zi', '/ˈlaʊ ˈzɪə/', ''],
   [3488, 'Renoir', '/ˈrɛnwɑː/', '/rənˈwɑːr/'],
+  [3202, 'Aisha', '/aɪˈiːʃə/', '/aɪˈiːʃə/'],
+  [2342, 'Carla', '/ˈkɑːlə/', '/ˈkɑːrlə/'],
+  [3482, 'Leonardo da Vinci', '/ˌliːəˈnɑːdəʊ də ˈvɪntʃɪ/', ''],
 ] as const)('reads sourced proper-name pronunciations for %s', (id, headword, uk, us) => {
   const word = { id, headword };
   const result = read(word);
