@@ -19,7 +19,7 @@ const detail=ref<WordDetail|null>(props.initial??null),busy=ref(false),failed=re
 const pronunciationNote=ref<string|null>(null),systemSpeech=ref(false);
 const recordingIpa=ref<string|null>(null);
 const recordingReady=ref(false);
-const pronunciationVariants=ref<{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]>([]);
+const pronunciationVariants=ref<{variant:'noun'|'verb';label:string;ipa?:string;kind?:'synthetic';pronunciationNote?:string}[]>([]);
 const lastPlaybackVariant=ref<'noun'|'verb'|undefined>();
 const lastPlaybackWord=ref<string|null>(null),recordingPlayback=ref<RecordingPlayback|null>(null);
 const pronunciationAccent=ref<'us'|'uk'|null>(null);
@@ -29,7 +29,7 @@ const card=computed(()=>detail.value!.word);
 const recognitionOnly=computed(()=>hasDictionaryPlaceholder(detail.value?.word.headword??''));
 const showMainRecording=computed(()=>{const playback=recordingPlayback.value;if(!playback||!detail.value||playback.word!==pronunciationHeadword(detail.value.word.headword))return true;return playback.source==='recording';});
 const selectedRecording=computed(()=>{const playback=recordingPlayback.value;if(playback?.source!=='recording'||!playback.variant||!detail.value||playback.word!==pronunciationHeadword(detail.value.word.headword))return null;return pronunciationVariants.value.find(item=>item.variant===playback.variant)??null;});
-const shownPronunciationNote=computed(()=>selectedRecording.value?[selectedRecording.value.label,selectedRecording.value.pronunciationNote].filter(Boolean).join(' · '):pronunciationNote.value);
+const shownPronunciationNote=computed(()=>selectedRecording.value?[selectedRecording.value.label,selectedRecording.value.kind==='synthetic'?'合成语音':null,selectedRecording.value.pronunciationNote].filter(Boolean).join(' · '):pronunciationNote.value);
 const systemExample=computed(()=>systemSpeech.value&&detail.value&&/\b(?:sb|sth)\./i.test(detail.value.word.headword)?systemSpeechText(detail.value.word.headword):'');
 const recordModes=computed(()=>(recognitionOnly.value?['recognize']:['recognize','spell','dictation']) as ('recognize'|'spell'|'dictation')[]);
 const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!recognitionOnly.value||e.mode==='recognize')??[]);
@@ -72,14 +72,14 @@ async function loadPronunciationNote(){
   const n=++pronunciationRequest;recordingReady.value=false;pronunciationNote.value=null;pronunciationAccent.value=null;recordingIpa.value=null;pronunciationVariants.value=[];
   const word=pronunciationHeadword(detail.value?.word.headword??'');if(!word)return;
   try{
-    const data=await api<{status:string;accent?:string;ipa?:string;pronunciationNote?:string;variants?:{variant:'noun'|'verb';label:string;ipa?:string;pronunciationNote?:string}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
+    const data=await api<{status:string;accent?:string;ipa?:string;kind?:'synthetic';pronunciationNote?:string;variants?:{variant:'noun'|'verb';label:string;ipa?:string;kind?:'synthetic';pronunciationNote?:string}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
     if(alive&&n===pronunciationRequest){
       pronunciationVariants.value=Array.isArray(data.variants)?data.variants.filter(v=>v.variant==='noun'||v.variant==='verb'):[];
       recordingReady.value=data?.status==='ready'||pronunciationVariants.value.length>0;
       if(data?.status!=='ready')return;
       recordingIpa.value=typeof data.ipa==='string'&&data.ipa.trim()?data.ipa.trim():null;
       pronunciationAccent.value=data.accent==='us'||data.accent==='uk'?data.accent:null;
-      const accent=data.accent==='us'?'美式录音':data.accent==='uk'?'英式录音':'';
+      const accent=data.kind==='synthetic'?(data.accent==='us'?'美式合成语音':data.accent==='uk'?'英式合成语音':'合成语音'):data.accent==='us'?'美式录音':data.accent==='uk'?'英式录音':'';
       pronunciationNote.value=[accent,typeof data.pronunciationNote==='string'?data.pronunciationNote.trim():''].filter(Boolean).join(' · ')||null;
     }
   }catch{/* Optional recording metadata must never block the word or its audio button. */}
@@ -123,7 +123,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
           <p v-if="systemSpeech||(showMainRecording&&shownPronunciationNote)" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':shownPronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
           <p v-if="recordingReady&&!systemSpeech&&showMainRecording" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
-        <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
+        <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.kind==='synthetic'">· 合成语音</span> <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
         <p v-if="audioFailed" class="note" role="status">{{ audioFailed==='incomplete'?COPY.audioIncomplete:audioFailed==='blocked'?COPY.audioBlocked:COPY.audioUnavailable }} <button v-if="audioFailed!=='incomplete'" type="button" class="link" @click="play(lastPlaybackWord??undefined,lastPlaybackVariant)">{{ COPY.audioRetry }}</button></p>
         <details v-if="detail.memberships?.length" class="lesson-record"><summary>词书与单元</summary><p v-for="m in detail.memberships" :key="m.bookId+String(m.unitId)" class="small muted">{{ m.bookTitle }}<span v-if="m.unitTitle"> · {{ m.unitTitle }}</span></p></details>
         <details :key="wordId" class="lesson-record">

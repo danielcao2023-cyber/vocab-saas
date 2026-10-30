@@ -13,7 +13,7 @@ export function packPronunciations(manifest:any,source:string,destination:string
   fs.writeFileSync(path.join(destination,r.file),data);
   const {file:ignored,variants:unused,...info}=r;
   const anchor=anchored.has(word)?'':` id="${escape(word)}"`;anchored.add(word);
-  rows.push(`<tr${anchor}><td>${escape(word)}${label?`（${escape(label)}）`:''}</td><td>${escape(r.author)}${typeof r.pronunciationNote === 'string' && r.pronunciationNote.trim()?`<br>${escape(r.pronunciationNote.trim())}`:''}</td><td><a href="${escape(r.sourceUrl)}">${escape(typeof r.sourceLabel === 'string' && r.sourceLabel.trim()?r.sourceLabel.trim():'原始录音')}</a></td><td><a href="${escape(r.licenseUrl)}">${escape(r.license)}</a></td></tr>`);
+  rows.push(`<tr${anchor}><td>${escape(word)}${label?`（${escape(label)}）`:''}</td><td>${r.kind === 'synthetic' ? '合成语音<br>' : ''}${escape(r.author)}${typeof r.pronunciationNote === 'string' && r.pronunciationNote.trim()?`<br>${escape(r.pronunciationNote.trim())}`:''}</td><td><a href="${escape(r.sourceUrl)}">${escape(typeof r.sourceLabel === 'string' && r.sourceLabel.trim()?r.sourceLabel.trim():'原始录音')}</a></td><td><a href="${escape(r.licenseUrl)}">${escape(r.license)}</a></td></tr>`);
   return {...info,file:`/offline/recordings/${r.file}`};
  };
  if(manifest?.version!==1||!manifest.entries||typeof manifest.entries!=='object')return {recordings,credits:''};

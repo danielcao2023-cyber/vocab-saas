@@ -1,6 +1,6 @@
-# 真人单词录音缓存
+# 单词发音缓存
 
-`manifest.json` 的 `entries` 仅保存已经下载到本目录、经过 MP3 解码检查并有逐文件作者与许可记录的音频。键为课标词条的第一个 `mainHeadwords` 主词头（保留大小写）；它不等于完整课标词条文本。
+`manifest.json` 的 `entries` 保存本地 MP3 音频，包括经来源及许可核验的真人录音和明确标为 `kind: synthetic` 的合成语音；文件需通过解码检查并记录来源与许可。键为课标词条的第一个 `mainHeadwords` 主词头（保留大小写）；它不等于完整课标词条文本。
 
 `file` 为本目录内的安全文件名，`sha256` 用于校验内容。`sourceUrl` 指向原始录音说明页，`author`、`license`、`licenseUrl` 是录音本身的来源与许可。Commons 的 CC0 结构化数据许可、Free Dictionary API 的 GPL 软件许可都不能替代音频许可。
 

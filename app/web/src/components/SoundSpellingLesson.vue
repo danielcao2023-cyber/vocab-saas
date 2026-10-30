@@ -5,17 +5,20 @@ import {pronunciationCreditsUrl,systemSpeechText,type RecordingPlayback} from '.
 import type {SoundSpellingLesson} from '../content/sound-spelling/types';
 const props=defineProps<{lesson:SoundSpellingLesson;recordingWord?:string;playback?:RecordingPlayback|null}>();
 const recordingNote=ref('');
+const syntheticVariants=ref<string[]>([]);
 const currentWord=computed(()=>props.recordingWord??props.lesson.headword);
 const currentPlayback=computed(()=>props.playback?.word===currentWord.value?props.playback.source:null);
 const currentVariant=computed(()=>props.playback?.word===currentWord.value&&props.playback.source==='recording'?props.playback.variant:undefined);
 const showRecording=computed(()=>!!recordingNote.value&&!currentVariant.value&&!['system','failed','pending'].includes(currentPlayback.value??''));
 let recordingRequest=0;
 watch(()=>props.recordingWord??props.lesson.headword,async word=>{
- const request=++recordingRequest;recordingNote.value='';
+ const request=++recordingRequest;recordingNote.value='';syntheticVariants.value=[];
  try{
-  const info=await api<{status:string;accent?:string;ipa?:string;pronunciationNote?:string}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
-  if(request!==recordingRequest||info.status!=='ready')return;
-  recordingNote.value=[info.accent==='uk'?'英式录音':info.accent==='us'?'美式录音':'整词录音',info.ipa?.trim(),info.pronunciationNote].filter(Boolean).join(' · ');
+  const info=await api<{status:string;accent?:string;ipa?:string;kind?:'synthetic';pronunciationNote?:string;variants?:{variant:string;kind?:'synthetic'}[]}>(`/api/pronunciation?word=${encodeURIComponent(word)}`);
+  if(request!==recordingRequest)return;
+  syntheticVariants.value=(info.variants??[]).filter(v=>v.kind==='synthetic').map(v=>v.variant);
+  if(info.status!=='ready')return;
+  recordingNote.value=[info.kind==='synthetic'?(info.accent==='uk'?'英式合成语音':info.accent==='us'?'美式合成语音':'合成语音'):info.accent==='uk'?'英式录音':info.accent==='us'?'美式录音':'整词录音',info.ipa?.trim(),info.pronunciationNote].filter(Boolean).join(' · ');
  }catch{/* Optional metadata never blocks the spelling map or playback. */}
 },{immediate:true});
 onUnmounted(()=>{recordingRequest++;});
@@ -30,7 +33,7 @@ watch(()=>props.lesson.headword,()=>{selected.value=0;});
 </script>
 <template><div class="sound-spelling">
  <div class="sound-heading"><div><p class="eyebrow">把听到的声音，变成写得出的单词</p><h3>先听，再分段记住</h3><p class="sound-ipa">{{ lesson.ipa }}</p></div><button class="btn sound-play" type="button" @click="$emit('play')"><span aria-hidden="true">▶</span> 听整词录音</button></div>
- <p v-if="currentVariant" class="small muted" aria-label="当前整词录音说明">刚播放所选读音；下方音形对照请参照其标注音标。 <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
+ <p v-if="currentVariant" class="small muted" aria-label="当前整词录音说明">刚播放所选读音<span v-if="syntheticVariants.includes(currentVariant)">（合成语音）</span>；下方音形对照请参照其标注音标。 <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
  <p v-else-if="showRecording" class="small muted" aria-label="当前整词录音说明">{{ recordingNote }} · <a class="link" :href="pronunciationCreditsUrl(currentWord)" target="_blank" rel="noopener noreferrer">录音来源</a></p>
  <p v-else-if="currentPlayback==='system'" class="small muted" aria-label="当前整词录音说明">系统合成发音，口音可能与音标不同<template v-if="/\b(?:sb|sth)\./i.test(currentWord)"> · 朗读内容：{{ systemSpeechText(currentWord) }}</template></p>
  <div class="sound-chunks" aria-label="读音与字母对应"><button v-for="(chunk,i) in lesson.chunks" :key="i" class="sound-chunk" :class="{selected:selected===i,strong:chunk.stress==='primary'}" type="button" :aria-pressed="selected===i" @click="selected=i"><span class="chunk-stress">{{ isPlaceholderChunk(chunk) ? '可替换内容' : chunk.crossesStressBoundary ? '跨重音' : stressLabels[chunk.stress] }}</span><span class="chunk-letters">{{ chunk.letters }}</span><span class="chunk-sound">{{ chunk.sound }}</span><span class="chunk-hint">{{ chunk.hint }}</span><span class="sound-pairs"><span v-for="(pair,j) in chunk.pairs.filter(pair=>pair.letters.trim() || pair.sound.trim())" :key="j" class="sound-pair"><b>{{ pair.letters }}</b><span>{{ isPlaceholderPair(pair) ? '填入具体内容' : pair.sound || '不单独发音' }}</span></span></span></button></div>

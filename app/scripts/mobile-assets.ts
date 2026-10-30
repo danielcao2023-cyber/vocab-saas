@@ -18,7 +18,7 @@ const seed=createMobileSeed(process.env.MOBILE_SOURCE_DB??path.join(root,'data/d
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'data/pronunciation/manifest.json'),'utf8'));
 const {recordings,credits:rows}=packPronunciations(manifest,path.join(root,'data/pronunciation'),path.join(assets,'recordings'));
 fs.writeFileSync(path.join(assets,'pronunciation.json'),JSON.stringify(recordings));
-fs.writeFileSync(path.join(assets,'credits.html'),`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>录音来源</title><style>body{font:16px/1.8 system-ui;padding:16px;color:#172536}table{border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #ddd}a{color:#303fc0}</style><h1>录音来源</h1><p>真人录音转为 MP3 随应用离线提供，保留原许可。点击来源与许可需要联网。</p><table><tr><th>单词</th><th>作者</th><th>来源</th><th>许可</th></tr>${rows}</table></html>`);
+fs.writeFileSync(path.join(assets,'credits.html'),`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>录音来源</title><style>body{font:16px/1.8 system-ui;padding:16px;color:#172536}table{border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid #ddd}a{color:#303fc0}</style><h1>录音来源</h1><p>音频以 MP3 随应用离线提供；合成语音会在表中标注。点击来源与许可需要联网。</p><table><tr><th>单词</th><th>作者</th><th>来源</th><th>许可</th></tr>${rows}</table></html>`);
 const publicSeedPath=path.join(assets,'seed.db');protectTarget(publicSeedPath);
 const publicDb=new Database(publicSeedPath,{readonly:true});
 let lessons:number;
