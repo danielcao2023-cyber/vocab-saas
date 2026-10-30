@@ -56,11 +56,15 @@ export const highschoolBook2Unit1Prevent: SoundSpellingLesson[] = [
     "anchor": {
       "text": "本图展示名词常见美式读音。"
     },
-    "variantNote": "动词常见英式 /prəˈtest/、美式 /proʊˈtest/，重音通常在第二部分；读音有变体。",
+    "variantNote": "动词常见英式 /prəˈtest/、美式 /proʊˈtest/，重音在第二部分；美式动词也可读 /ˈproʊtest/，重音在第一部分。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/protest"
+      },
+      {
+        "label": "Cambridge Dictionary · 美式动词读音变体",
+        "url": "https://dictionary.cambridge.org/us/dictionary/english/protest"
       }
     ],
     "review": {
