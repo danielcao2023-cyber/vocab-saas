@@ -3,6 +3,19 @@ import { createLessonReader, validateLesson } from '../server/src/lessons.ts';
 
 const read = createLessonReader('data/lessons');
 
+it.each([
+  [1744, 'Cusco', '/ˈkuː.skəʊ/', '/ˈkuː.skoʊ/'],
+  [1846, 'Memphis', '/ˈmemfɪs/', '/ˈmemfɪs/'],
+] as const)('reads sourced place-name pronunciations for %s', (id, headword, uk, us) => {
+  const word = { id, headword };
+  const result = read(word);
+  expect(result.status).toBe('ready');
+  if (result.status !== 'ready') throw new Error('missing lesson');
+  expect(validateLesson(result.lesson, word).ok).toBe(true);
+  expect(result.lesson.pronunciation.uk).toBe(uk);
+  expect(result.lesson.pronunciation.us).toBe(us);
+});
+
 it('reads the sourced British full form pronunciation of GPS', () => {
   const word = { id: 2612, headword: 'global positioning system' };
   const result = read(word);
