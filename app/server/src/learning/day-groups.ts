@@ -10,11 +10,18 @@ export function dedupeDayGroup(db:DB,now:Date,scope:LearningWord[],due:LearningW
  // Avoid silently grouping edited or otherwise unrelated words.
  if(!scope.some(w=>w.id===ids[0]&&w.headword==='from (then) on')||!scope.some(w=>w.id===ids[1]&&w.headword==='from then on'))return {due,fresh};
  const candidates=[...due,...fresh].filter(w=>ids.includes(w.id));if(candidates.length<2)return {due,fresh};
- const history=db.prepare('SELECT word_id FROM learning_day_words WHERE word_id IN (?,?) AND day<? ORDER BY day DESC,position ASC LIMIT 2').all(ids[0],ids[1],shDay(now)) as {word_id:number}[];
- const dueGroup=due.filter(w=>ids.includes(w.id));let chosen:number;
- if(dueGroup.length===2){chosen=history.length?dueGroup.find(w=>w.id!==history[0].word_id)?.id??dueGroup[0].id:dueGroup[0].id;}
- else if(dueGroup.length===1){const d=dueGroup[0].id;chosen=history.length===2&&history.every(h=>h.word_id===d)?candidates.find(w=>w.id!==d)!.id:d;}
- else chosen=history.length?candidates.find(w=>w.id!==history[0].word_id)?.id??candidates[0].id:ids[1]!;
+ const history=db.prepare('SELECT word_id,done FROM learning_day_words WHERE word_id IN (?,?) AND day<? ORDER BY day DESC,position ASC LIMIT 2').all(ids[0],ids[1],shDay(now)) as {word_id:number;done:number}[];
+ const unfinished=new Set((db.prepare('SELECT d.word_id FROM learning_day_words d WHERE d.word_id IN (?,?) AND d.done=0 AND d.day<? AND d.day=(SELECT MAX(x.day) FROM learning_day_words x WHERE x.word_id=d.word_id)').all(ids[0],ids[1],shDay(now)) as {word_id:number}[]).map(x=>x.word_id));
+ const dueGroup=due.filter(w=>ids.includes(w.id));
+ const unfinishedGroup=dueGroup.filter(w=>unfinished.has(w.id));
+ let chosen=unfinishedGroup.length>1&&history.length
+  ? unfinishedGroup.find(w=>w.id!==history[0].word_id)?.id??unfinishedGroup[0].id
+  : unfinishedGroup[0]?.id;
+ if(chosen===undefined&&dueGroup.length){
+  chosen=dueGroup[0].id;
+  if(history.length===2&&history.every(h=>h.done&&h.word_id===chosen))chosen=candidates.find(w=>w.id!==chosen)!.id;
+ }
+ if(chosen===undefined)chosen=history.length?candidates.find(w=>w.id!==history[0].word_id)?.id??candidates[0].id:ids[1]!;
  // A fairness rotation from a due entry to its new sibling keeps the same due slot,
  // otherwise a fully booked review queue would prevent the sibling from ever entering.
  const promoted=dueGroup.length===1&&dueGroup[0].id!==chosen?fresh.find(w=>w.id===chosen):undefined;

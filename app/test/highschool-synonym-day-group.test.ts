@@ -15,6 +15,43 @@ it('keeps existing day plan intact when it already has both identities',()=>{con
 it('prioritizes a due member but schedules an eligible sibling after two consecutive selections',()=>{const db=fixture();try{const ids=db.prepare("SELECT entry_key,word_id FROM vocabulary_entry_map WHERE entry_key IN ('from on','from then on')").all() as any[];const due=ids.find(e=>e.entry_key==='from then on').word_id,other=ids.find(e=>e.entry_key==='from on').word_id;db.prepare("INSERT INTO learning_words(word_id,book,introduced_at,due) VALUES (?,'unfamiliar',?,?)").run(due,'2026-10-01T00:00:00.000Z','2026-10-01T00:00:00.000Z');expect(selectDaily(db,T,4).selected.some(w=>w.id===due)).toBe(true);for(const day of ['2026-10-15','2026-10-16']){db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,2)').run(day,day+'T00:00:00.000Z');db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at,done) VALUES (?,?,0,'unfamiliar',0,'[0,0,0]',?,1)").run(day,due,day+'T00:00:00.000Z');}const state=db.prepare('SELECT * FROM learning_words WHERE word_id=?').get(due);const picked=selectDaily(db,T,4).selected;expect(selectDaily(db,T,1).selected[0]?.id).toBe(other);expect(picked.some(w=>w.id===other)).toBe(true);expect(picked.some(w=>w.id===due)).toBe(false);expect(db.prepare('SELECT * FROM learning_words WHERE word_id=?').get(due)).toEqual(state);}finally{db.close();}});
 
 it('V3 respects due before new, and alternates after two consecutive days without moving dates',()=>{const db=fixture();try{const rows=db.prepare("SELECT entry_key,word_id FROM vocabulary_entry_map WHERE entry_key IN ('from on','from then on')").all() as any[];const due=rows.find(x=>x.entry_key==='from then on').word_id,other=rows.find(x=>x.entry_key==='from on').word_id;ensureEvidenceWord(db,due,new Date('2026-10-01T00:00:00Z'));db.prepare("UPDATE cards SET due='2026-10-01T00:00:00.000Z',reps=1 WHERE word_id=?").run(due);for(const day of ['2026-10-15','2026-10-16']){db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,3)').run(day,day+'T00:00:00.000Z');db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at,done) VALUES (?,?,0,'unfamiliar',0,'[0,0,0]',?,1)").run(day,due,day+'T00:00:00.000Z');}const before=db.prepare('SELECT * FROM cards WHERE word_id=?').all(due);startV3(db,T);const picked=db.prepare("SELECT word_id FROM learning_day_words WHERE day='2026-10-17'").all() as any[];expect(picked.some(x=>x.word_id===other)).toBe(true);expect(picked.some(x=>x.word_id===due)).toBe(false);expect(db.prepare('SELECT * FROM cards WHERE word_id=?').all(due)).toEqual(before);}finally{db.close();}});
+
+for(const policy of [2,3]) it(`V${policy} keeps an unfinished phrase ahead of its new sibling after two days`,()=>{
+ const db=fixture();try{
+  const ids=db.prepare("SELECT entry_key,word_id FROM vocabulary_entry_map WHERE entry_key IN ('from on','from then on')").all() as {entry_key:string;word_id:number}[];
+  const unfinished=ids.find(x=>x.entry_key==='from then on')!.word_id, sibling=ids.find(x=>x.entry_key==='from on')!.word_id;
+  if(policy===2)db.prepare("INSERT INTO learning_words(word_id,book,introduced_at,due) VALUES (?,'unfamiliar',?,?)").run(unfinished,'2026-10-01T00:00:00.000Z','2026-10-01T00:00:00.000Z');
+  else {ensureEvidenceWord(db,unfinished,new Date('2026-10-01T00:00:00Z'));db.prepare("UPDATE cards SET due='2026-10-01T00:00:00.000Z',reps=1 WHERE word_id=?").run(unfinished);}
+  for(const day of ['2026-10-15','2026-10-16']){
+   db.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,?)').run(day,day+'T00:00:00.000Z',policy);
+   db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at,done) VALUES (?,?,0,'unfamiliar',0,'[0,0,0]',?,0)").run(day,unfinished,day+'T00:00:00.000Z');
+  }
+  const prior=db.prepare("SELECT * FROM learning_day_words WHERE day<'2026-10-17' ORDER BY day").all();
+  const picked=policy===2?selectDaily(db,T,1).selected.map(w=>w.id):(startV3(db,T), (db.prepare("SELECT word_id FROM learning_day_words WHERE day='2026-10-17'").all() as {word_id:number}[]).map(x=>x.word_id));
+  expect(picked).toContain(unfinished);expect(picked).not.toContain(sibling);
+  expect(db.prepare("SELECT * FROM learning_day_words WHERE day<'2026-10-17' ORDER BY day").all()).toEqual(prior);
+ }finally{db.close();}
+});
+
+it('offline V3 carries the unfinished phrase into the new day without rewriting its history',async()=>{
+ const source=fixture();
+ const ids=source.prepare("SELECT entry_key,word_id FROM vocabulary_entry_map WHERE entry_key IN ('from on','from then on')").all() as {entry_key:string;word_id:number}[];
+ const unfinished=ids.find(x=>x.entry_key==='from then on')!.word_id,sibling=ids.find(x=>x.entry_key==='from on')!.word_id;
+ ensureEvidenceWord(source,unfinished,new Date('2026-10-01T00:00:00Z'));
+ source.prepare("UPDATE cards SET due='2026-10-01T00:00:00.000Z',reps=1 WHERE word_id=?").run(unfinished);
+ for(const day of ['2026-10-15','2026-10-16']){
+  source.prepare('INSERT INTO learning_days(day,created_at,policy_version) VALUES (?,?,3)').run(day,day+'T00:00:00.000Z');
+  source.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at,done) VALUES (?,?,0,'unfamiliar',0,'[0,0,0]',?,0)").run(day,unfinished,day+'T00:00:00.000Z');
+ }
+ const db=await openBrowserDatabase(source.serialize());source.close();
+ try{
+  const before=db.prepare("SELECT * FROM learning_day_words WHERE day<'2026-10-17' ORDER BY day").all();
+  startV3(asSharedDb(db),T);
+  const idsToday=(db.prepare("SELECT word_id FROM learning_day_words WHERE day='2026-10-17'").all() as {word_id:number}[]).map(x=>x.word_id);
+  expect(idsToday).toContain(unfinished);expect(idsToday).not.toContain(sibling);
+  expect(db.prepare("SELECT * FROM learning_day_words WHERE day<'2026-10-17' ORDER BY day").all()).toEqual(before);
+ }finally{db.close();}
+});
 it('offline database reopens with the exact chosen daily plan',async()=>{const source=fixture(),db=await openBrowserDatabase(source.serialize());source.close();try{startV3(asSharedDb(db),T);const before=db.prepare('SELECT day,word_id,position FROM learning_day_words ORDER BY position').all();const restored=await openBrowserDatabase(db.export());try{startV3(asSharedDb(restored),T);expect(restored.prepare('SELECT day,word_id,position FROM learning_day_words ORDER BY position').all()).toEqual(before);}finally{restored.close();}}finally{db.close();}});
 
 it('retains an existing unanswered issue and its answer across repeated starts',()=>{const db=fixture();try{ensureEvidenceWord(db,2,T);db.prepare("INSERT INTO learning_days(day,created_at,policy_version) VALUES ('2026-10-17',?,3)").run(T.toISOString());for(const id of [1,2])db.prepare("INSERT INTO learning_day_words(day,word_id,position,initial_book,is_new,targets,available_at) VALUES ('2026-10-17',?,?,'new',1,'[0,0,0]',?)").run(id,id,T.toISOString());db.prepare("INSERT INTO learning_issues(id,day,word_id,mode,options_json,issued_at) VALUES ('old','2026-10-17',2,'spell','[]',?)").run(T.toISOString());startV3(db,T);const turn=nextV3(db,T);expect(turn.kind==='card'&&turn.card?.issueId).toBe('old');const req={policyVersion:3 as const,issueId:'old',answerId:'old-answer',answer:'from then on'};const answer=answerV3(db,req,T);expect(answer.correct).toBe(true);expect(answerV3(db,req,T)).toEqual(answer);expect((db.prepare("SELECT COUNT(*) n FROM learning_day_words WHERE day='2026-10-17'").get() as any).n).toBe(2);}finally{db.close();}});
