@@ -240,20 +240,8 @@ export const highschoolBook3Unit1Reflect: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "s",
-            "sound": "/ʒ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "sion",
+            "sound": "/ʒən/"
           }
         ],
         "tip": "此部分轻读。"
@@ -262,7 +250,7 @@ export const highschoolBook3Unit1Reflect: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "此词中 s 对应 /ʒ/；字母与声音并非总是一一对应。",
+    "variantNote": "此词中 sion 对应 /ʒən/；字母与声音并非总是一一对应。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

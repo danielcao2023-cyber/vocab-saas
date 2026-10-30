@@ -34,20 +34,8 @@ export const highschoolBook3Unit2Institutions: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "s",
-            "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "sion",
+            "sound": "/ʃən/"
           }
         ],
         "tip": "此部分轻读。"

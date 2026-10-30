@@ -555,7 +555,7 @@ addSourcedPhrase('make an impression','/ˌmeɪk ən ɪmˈpreʃən/',[
  ch('an ','/ən/','none',[{letters:'a',sound:'/ə/'},{letters:'n',sound:'/n/'},{letters:' ',sound:''}]),
  ch('im','/ɪm/','none',[{letters:'i',sound:'/ɪ/'},{letters:'m',sound:'/m/'}]),
  ch('pre','/pre/','primary',[{letters:'p',sound:'/p/'},{letters:'r',sound:'/r/'},{letters:'e',sound:'/e/'}]),
- ch('ssion','/ʃən/','none',[{letters:'ss',sound:'/ʃ/'},{letters:'i',sound:''},{letters:'o',sound:'/ə/'},{letters:'n',sound:'/n/'}]),
+ ch('ssion','/ʃən/','none',[{letters:'ssion',sound:'/ʃən/'}]),
 ],'Pearson Focus 4 词表',pearsonFocus4);
 addSourcedPhrase('a great deal','/ə ˈɡreɪt diːl/',[
  ch('a ','/ə/','none',[{letters:'a',sound:'/ə/'},{letters:' ',sound:''}]),

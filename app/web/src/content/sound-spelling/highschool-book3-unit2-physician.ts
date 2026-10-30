@@ -197,20 +197,8 @@ export const highschoolBook3Unit2Physician: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
-            "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "a",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "cian",
+            "sound": "/ʃən/"
           }
         ],
         "tip": "此部分轻读。"

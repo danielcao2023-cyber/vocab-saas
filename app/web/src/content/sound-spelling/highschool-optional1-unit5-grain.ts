@@ -358,20 +358,8 @@ export const highschoolOptional1Unit5Grain: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "s",
-            "sound": "/ʒ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "sion",
+            "sound": "/ʒən/"
           }
         ],
         "tip": "此部分轻读。"
@@ -490,20 +478,8 @@ export const highschoolOptional1Unit5Grain: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "s",
-            "sound": "/ʒ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "sion",
+            "sound": "/ʒən/"
           }
         ],
         "tip": "此部分轻读。"
