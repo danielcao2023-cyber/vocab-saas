@@ -3,6 +3,17 @@ import { createLessonReader, validateLesson } from '../server/src/lessons.ts';
 
 const read = createLessonReader('data/lessons');
 
+it('reads the sourced British full form pronunciation of GPS', () => {
+  const word = { id: 2612, headword: 'global positioning system' };
+  const result = read(word);
+  expect(result.status).toBe('ready');
+  if (result.status !== 'ready') throw new Error('missing lesson');
+  expect(validateLesson(result.lesson, word).ok).toBe(true);
+  expect(result.lesson.pronunciation.uk).toBe('/ˌɡləʊbl pəˈzɪʃənɪŋ sɪstəm/');
+  expect(result.lesson.pronunciation.us).toBe('');
+  expect(result.lesson.sources.find(source => source.id === 'phrase-oxford')?.url).toBe('https://www.oxfordlearnersdictionaries.com/us/definition/english/global-positioning-system');
+});
+
 it.each([[2318, 'to be frank']] as const)(
   'keeps unverified phrase IPA empty for %s', (id, headword) => {
     const word = { id, headword };
