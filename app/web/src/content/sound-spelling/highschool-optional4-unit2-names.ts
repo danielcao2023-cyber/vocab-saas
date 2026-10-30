@@ -134,32 +134,32 @@ export const highschoolOptional4Unit2Names: SoundSpellingLesson[] = [
         "letters": "ney",
         "sound": "/ni/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "此部分轻读，ey 合起来对应 /i/。",
         "pairs": [
           {
             "letters": "n",
             "sound": "/n/"
           },
           {
-            "letters": "e",
-            "sound": ""
-          },
-          {
-            "letters": "y",
+            "letters": "ey",
             "sound": "/i/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "词尾 ey 合起来对应 /i/。"
       }
     ],
     "anchor": {
       "text": "结合词义与语境记忆拼写。"
     },
-    "variantNote": "首音节重读，词尾 y 对应 /i/。",
+    "variantNote": "首音节重读，词尾 ey 合起来对应 /i/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/sydney"
+      },
+      {
+        "label": "Primary English 教学资料 · ey 拼写",
+        "url": "https://primaryenglish.education/wp-content/uploads/2022/02/Beveridge-L.-Australia_My_Country2021.pdf"
       }
     ],
     "review": {
