@@ -3,7 +3,7 @@ import { createLessonReader, validateLesson } from '../server/src/lessons.ts';
 
 const read = createLessonReader('data/lessons');
 
-it.each([[1992, 'on earth'], [2318, 'to be frank']] as const)(
+it.each([[2318, 'to be frank']] as const)(
   'keeps unverified phrase IPA empty for %s', (id, headword) => {
     const word = { id, headword };
     const result = read(word);
@@ -14,6 +14,17 @@ it.each([[1992, 'on earth'], [2318, 'to be frank']] as const)(
     expect(result.lesson.pronunciation.accentNote).toContain('尚待核实');
   },
 );
+
+it('shows the sourced British pronunciation of on earth in a question', () => {
+  const word = { id: 1992, headword: 'on earth' };
+  const result = read(word);
+  expect(result.status).toBe('ready');
+  if (result.status !== 'ready') throw new Error('missing lesson');
+  expect(validateLesson(result.lesson, word).ok).toBe(true);
+  expect(result.lesson.pronunciation.uk).toBe('/ɒn ɜːθ/');
+  expect(result.lesson.pronunciation.us).toBe('');
+  expect(result.lesson.sources.find(source => source.id === 'phrase-uk')?.url).toContain('9781316628317_index.pdf');
+});
 
 it('reads the complete watch over transcription without inventing stress marks', () => {
   const word = { id: 2028, headword: 'watch over' };
