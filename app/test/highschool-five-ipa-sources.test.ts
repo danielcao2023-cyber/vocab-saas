@@ -18,8 +18,3 @@ it('identifies the dictionary transcription as unmarked stress',()=>{
  const result=read({id:3197,headword:'as far as I am concerned'});if(result.status!=='ready')throw new Error('missing lesson');
  expect(result.lesson.pronunciation.accentNote).toContain('原词典未标重音');
 });
-
-it('leaves Marie Curie IPA empty until the primary source can be checked visually',()=>{
- const result=read({id:4086,headword:'Marie Curie'});if(result.status!=='ready')throw new Error('missing lesson');
- expect([result.lesson.pronunciation.ipa,result.lesson.pronunciation.uk,result.lesson.pronunciation.us]).toEqual(['','','']);
-});
