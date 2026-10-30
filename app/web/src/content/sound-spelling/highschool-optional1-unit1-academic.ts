@@ -978,16 +978,8 @@ export const highschoolOptional1Unit1Academic: SoundSpellingLesson[] = [
             "sound": "/ɪ/"
           },
           {
-            "letters": "d",
-            "sound": ""
-          },
-          {
-            "letters": "g",
+            "letters": "dge",
             "sound": "/dʒ/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"

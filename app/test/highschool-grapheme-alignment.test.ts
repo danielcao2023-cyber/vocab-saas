@@ -16,3 +16,10 @@ describe('Buddhist and Buddhism sound-spelling alignment', () => {
     }
   });
 });
+
+it('acknowledge groups dge as one /dʒ/ spelling', () => {
+  const lesson = getSoundSpellingLessons('acknowledge')[0];
+  const pairs = lesson.chunks.flatMap((chunk) => chunk.pairs);
+  expect(pairs).toContainEqual({ letters: 'dge', sound: '/dʒ/' });
+  expect(pairs).not.toContainEqual({ letters: 'd', sound: '' });
+});
