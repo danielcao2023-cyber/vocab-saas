@@ -54,6 +54,7 @@ it.each([
   [2007, 'concerned about', '/kənˈsɜːnd əbaʊt/'],
   [2425, 'a great deal of', '/ə ɡreɪt ˈdiːl ɒv/'],
   [2738, 'come to power', '/kʌm tə ˈpaʊə/'],
+  [2315, 'roast turkey', '/ˌrəʊst ˈtɜːki/'],
 ] as const)(
   'reads the sourced British phrase pronunciation for %s', (id, headword, ipa) => {
     const word = { id, headword };

@@ -36,8 +36,11 @@ const lesson=computed(()=>loadedLesson.value?.wordId===detail.value?.word.id
   &&loadedLesson.value?.headword===detail.value?.word.headword?loadedLesson.value:null);
 const phonetic=computed(()=>{
   const pronunciation=lesson.value?.pronunciation;
+  const generic=pronunciation?.ipa;
+  const labelledGeneric=generic&&pronunciation?.uk===generic&&!pronunciation.us?`英式 ${generic}`
+    :generic&&pronunciation?.us===generic&&!pronunciation.uk?`美式 ${generic}`:generic;
   return recordingIpa.value||(pronunciationAccent.value?pronunciation?.[pronunciationAccent.value]:null)
-    ||pronunciation?.ipa||detail.value?.word.phonetic
+    ||labelledGeneric||detail.value?.word.phonetic
     ||(pronunciation?.uk?`英式 ${pronunciation.uk}`:pronunciation?.us?`美式 ${pronunciation.us}`:null);
 });
 function date(iso:string){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',month:'numeric',day:'numeric'}).format(new Date(iso));}
