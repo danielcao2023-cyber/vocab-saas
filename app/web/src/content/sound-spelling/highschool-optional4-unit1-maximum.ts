@@ -84,28 +84,29 @@ export const highschoolOptional4Unit1Maximum: SoundSpellingLesson[] = [
     "uk": "/ɪkˈspləʊd/",
     "chunks": [
       {
-        "letters": "e",
-        "sound": "/ɪ/",
+        "letters": "ex",
+        "sound": "/ɪkˈs/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "x 的声音跨过重音起点。",
         "pairs": [
           {
             "letters": "e",
             "sound": "/ɪ/"
+          },
+          {
+            "letters": "x",
+            "sound": "/kˈs/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "x 对应 /ks/，重音从 /s/ 开始。",
+        "crossesStressBoundary": true
       },
       {
-        "letters": "xplode",
-        "sound": "/ksploʊd/",
+        "letters": "plode",
+        "sound": "/ploʊd/",
         "stress": "primary",
         "hint": "此部分重读。",
         "pairs": [
-          {
-            "letters": "x",
-            "sound": "/ks/"
-          },
           {
             "letters": "p",
             "sound": "/p/"
