@@ -28,6 +28,8 @@ let alive=true,request=0,audioRequest=0,pronunciationRequest=0,lessonRequest=0;
 const card=computed(()=>detail.value!.word);
 const recognitionOnly=computed(()=>hasDictionaryPlaceholder(detail.value?.word.headword??''));
 const showMainRecording=computed(()=>{const playback=recordingPlayback.value;if(!playback||!detail.value||playback.word!==pronunciationHeadword(detail.value.word.headword))return true;return playback.source==='recording';});
+const selectedRecording=computed(()=>{const playback=recordingPlayback.value;if(playback?.source!=='recording'||!playback.variant||!detail.value||playback.word!==pronunciationHeadword(detail.value.word.headword))return null;return pronunciationVariants.value.find(item=>item.variant===playback.variant)??null;});
+const shownPronunciationNote=computed(()=>selectedRecording.value?[selectedRecording.value.label,selectedRecording.value.pronunciationNote].filter(Boolean).join(' · '):pronunciationNote.value);
 const systemExample=computed(()=>systemSpeech.value&&detail.value&&/\b(?:sb|sth)\./i.test(detail.value.word.headword)?systemSpeechText(detail.value.word.headword):'');
 const recordModes=computed(()=>(recognitionOnly.value?['recognize']:['recognize','spell','dictation']) as ('recognize'|'spell'|'dictation')[]);
 const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!recognitionOnly.value||e.mode==='recognize')??[]);
@@ -35,6 +37,7 @@ const visibleEvidence=computed(()=>detail.value?.capabilityEvidence?.filter(e=>!
 const lesson=computed(()=>loadedLesson.value?.wordId===detail.value?.word.id
   &&loadedLesson.value?.headword===detail.value?.word.headword?loadedLesson.value:null);
 const phonetic=computed(()=>{
+  if(selectedRecording.value)return selectedRecording.value.ipa?.trim()||null;
   const pronunciation=lesson.value?.pronunciation;
   const generic=pronunciation?.ipa;
   const labelledGeneric=generic&&pronunciation?.uk===generic&&!pronunciation.us?`英式 ${generic}`
@@ -117,7 +120,7 @@ onUnmounted(()=>{alive=false;request++;lessonRequest++;pronunciationRequest++;ca
         <h1 class="word"><span>{{ detail.word.headword }}</span><SpeakButton @play="play" /></h1>
         <div class="lesson-pronunciation">
           <div v-if="phonetic" class="phon">{{ phonetic }}</div>
-          <p v-if="systemSpeech||(showMainRecording&&pronunciationNote)" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':pronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
+          <p v-if="systemSpeech||(showMainRecording&&shownPronunciationNote)" class="small muted pronunciation-note" aria-label="发音说明">{{ systemSpeech?'系统合成发音，口音可能与音标不同':shownPronunciationNote }}<template v-if="systemExample"> · 朗读内容：{{ systemExample }}</template></p>
           <p v-if="recordingReady&&!systemSpeech&&showMainRecording" class="small muted"><a class="link" :href="pronunciationCreditsUrl(detail.word.headword)" target="_blank" rel="noopener noreferrer">{{ COPY.audioCredits }}</a></p>
         </div>
         <div v-if="pronunciationVariants.length" class="pronunciation-variants" aria-label="不同读音"><button v-for="item in pronunciationVariants" :key="item.variant" type="button" class="btn" @click="play(undefined,item.variant)">▶ {{ item.label }} <span v-if="item.ipa">{{ item.ipa }}</span> <span v-if="item.pronunciationNote">· {{ item.pronunciationNote }}</span></button></div>
