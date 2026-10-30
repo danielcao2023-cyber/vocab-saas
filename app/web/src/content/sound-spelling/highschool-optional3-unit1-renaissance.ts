@@ -7,7 +7,7 @@ export const highschoolOptional3Unit1Renaissance: SoundSpellingLesson[] = [
     "uk": "/ˈbʊdɪzəm/",
     "chunks": [
       {
-        "letters": "Bud",
+        "letters": "Buddh",
         "sound": "/bʊd/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -21,22 +21,18 @@ export const highschoolOptional3Unit1Renaissance: SoundSpellingLesson[] = [
             "sound": "/ʊ/"
           },
           {
-            "letters": "d",
+            "letters": "ddh",
             "sound": "/d/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "dhism",
+        "letters": "ism",
         "sound": "/ɪzəm/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "dh",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"

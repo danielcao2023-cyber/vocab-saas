@@ -520,7 +520,7 @@ export const highschoolOptional3Unit1Exhibition: SoundSpellingLesson[] = [
     "uk": "/ˈbʊdɪst/",
     "chunks": [
       {
-        "letters": "Bud",
+        "letters": "Buddh",
         "sound": "/bʊd/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -534,22 +534,18 @@ export const highschoolOptional3Unit1Exhibition: SoundSpellingLesson[] = [
             "sound": "/ʊ/"
           },
           {
-            "letters": "d",
+            "letters": "ddh",
             "sound": "/d/"
           }
         ],
         "tip": "此部分重读。"
       },
       {
-        "letters": "dhist",
+        "letters": "ist",
         "sound": "/ɪst/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
-          {
-            "letters": "dh",
-            "sound": ""
-          },
           {
             "letters": "i",
             "sound": "/ɪ/"
