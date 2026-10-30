@@ -6,7 +6,9 @@ const read = createLessonReader('data/lessons');
 it.each([
   [1744, 'Cusco', '/ˈkuː.skəʊ/', '/ˈkuː.skoʊ/'],
   [1846, 'Memphis', '/ˈmemfɪs/', '/ˈmemfɪs/'],
-] as const)('reads sourced place-name pronunciations for %s', (id, headword, uk, us) => {
+  [2600, 'Neil Armstrong', '/ˌniːl ˈɑːmstrɒŋ/', '/ˌniːl ˈɑːrmstrɔːŋ/'],
+  [3128, 'Stephen Hawking', '/ˌstiːvn ˈhɔːkɪŋ/', '/ˌstiːvn ˈhɔːkɪŋ/'],
+] as const)('reads sourced proper-name pronunciations for %s', (id, headword, uk, us) => {
   const word = { id, headword };
   const result = read(word);
   expect(result.status).toBe('ready');
