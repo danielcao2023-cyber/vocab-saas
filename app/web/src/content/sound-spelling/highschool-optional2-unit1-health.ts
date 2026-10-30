@@ -423,20 +423,8 @@ export const highschoolOptional2Unit1Health: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
-            "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "tion",
+            "sound": "/ʃən/"
           }
         ],
         "tip": "此部分轻读。"
@@ -716,20 +704,8 @@ export const highschoolOptional2Unit1Health: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
-            "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
-          },
-          {
-            "letters": "o",
-            "sound": "/ə/"
-          },
-          {
-            "letters": "n",
-            "sound": "/n/"
+            "letters": "tion",
+            "sound": "/ʃən/"
           }
         ],
         "tip": "此部分轻读。"
