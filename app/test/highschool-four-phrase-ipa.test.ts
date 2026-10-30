@@ -34,15 +34,21 @@ it('reads the sourced British full form pronunciation of GPS', () => {
   expect(result.lesson.sources.find(source => source.id === 'phrase-oxford')?.url).toBe('https://www.oxfordlearnersdictionaries.com/us/definition/english/global-positioning-system');
 });
 
-it.each([[2318, 'to be frank']] as const)(
-  'keeps unverified phrase IPA empty for %s', (id, headword) => {
+it.each([
+  [2318, 'to be frank', '/tə bɪ ˈfræŋk/'],
+  [2007, 'concerned about', '/kənˈsɜːnd əbaʊt/'],
+  [2425, 'a great deal of', '/ə ɡreɪt ˈdiːl ɒv/'],
+  [2738, 'come to power', '/kʌm tə ˈpaʊə/'],
+] as const)(
+  'reads the sourced British phrase pronunciation for %s', (id, headword, ipa) => {
     const word = { id, headword };
     const result = read(word);
     expect(result.status).toBe('ready');
     if (result.status !== 'ready') throw new Error('missing lesson');
     expect(validateLesson(result.lesson, word).ok).toBe(true);
-    expect([result.lesson.pronunciation.ipa, result.lesson.pronunciation.uk, result.lesson.pronunciation.us]).toEqual(['', '', '']);
-    expect(result.lesson.pronunciation.accentNote).toContain('尚待核实');
+    expect([result.lesson.pronunciation.ipa, result.lesson.pronunciation.uk, result.lesson.pronunciation.us]).toEqual([ipa, ipa, '']);
+    expect(result.lesson.pronunciation.accentNote).toContain('美式');
+    expect(result.lesson.sources.some(source => source.id === 'phrase-reference')).toBe(true);
   },
 );
 
