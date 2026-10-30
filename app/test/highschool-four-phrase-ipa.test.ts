@@ -10,6 +10,8 @@ it.each([
   [3128, 'Stephen Hawking', '/ˌstiːvn ˈhɔːkɪŋ/', '/ˌstiːvn ˈhɔːkɪŋ/'],
   [3820, 'Isaac Asimov', '/ˌaɪzək ˈæzɪmɒf/', '/ˌaɪzək ˈæzɪmɑːf/'],
   [3748, 'Elizabeth Barrett Browning', '/ɪˌlɪzəbəθ ˌbærət ˈbraʊnɪŋ/', '/ɪˌlɪzəbəθ ˌbærət ˈbraʊnɪŋ/'],
+  [3752, 'Langston Hughes', '/ˌlæŋkstən ˈhjuːz/', '/ˌlæŋkstən ˈhjuːz/'],
+  [2180, 'Van Gogh', '/vænˈɡɒf/', '/vænˈɡoʊ/'],
 ] as const)('reads sourced proper-name pronunciations for %s', (id, headword, uk, us) => {
   const word = { id, headword };
   const result = read(word);
