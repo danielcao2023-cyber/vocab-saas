@@ -60,7 +60,7 @@ export const highschoolOptional2Unit2Perspective: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "gh 在此不单独发音，n 对应 /ŋ/。",
+    "variantNote": "ng 对应 /ŋ/，g 不另发 /ɡ/；th 对应 /θ/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
