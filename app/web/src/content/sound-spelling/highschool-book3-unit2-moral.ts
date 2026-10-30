@@ -312,12 +312,8 @@ export const highschoolBook3Unit2Moral: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "ou",

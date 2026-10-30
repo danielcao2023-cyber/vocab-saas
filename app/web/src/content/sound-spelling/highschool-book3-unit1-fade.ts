@@ -277,12 +277,8 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -362,12 +358,8 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -468,12 +460,8 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -604,12 +592,8 @@ export const highschoolBook3Unit1Fade: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",

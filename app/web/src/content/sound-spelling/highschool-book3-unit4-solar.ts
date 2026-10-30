@@ -316,12 +316,8 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "e",
@@ -342,7 +338,7 @@ export const highschoolBook3Unit4Solar: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "双写 f 不读两次；c 在此对应 /ʃ/。",
+    "variantNote": "双写 f 不读两次；ci 在此对应 /ʃ/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

@@ -401,12 +401,8 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "ti",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -436,7 +432,7 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "tial 中 t 对应 /ʃ/，双写 l 不读两次。",
+    "variantNote": "tial 中 ti 对应 /ʃ/，双写 l 不读两次。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
@@ -499,12 +495,8 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "ti",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -521,7 +513,7 @@ export const highschoolOptional1Unit2Detect: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "tial 中 t 对应 /ʃ/。 美式首元音可读 /oʊ/，英式常弱读为 /ə/。",
+    "variantNote": "tial 中 ti 对应 /ʃ/。 美式首元音可读 /oʊ/，英式常弱读为 /ə/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

@@ -380,12 +380,8 @@ export const highschoolOptional1Unit2Smart: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "e",

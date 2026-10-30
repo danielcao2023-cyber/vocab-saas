@@ -726,12 +726,8 @@ export const highschoolOptional1Unit2Innovation: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",
@@ -748,7 +744,7 @@ export const highschoolOptional1Unit2Innovation: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "英式 r 在辅音前通常不发音；c 对应 /ʃ/。",
+    "variantNote": "英式 r 在辅音前通常不发音；ci 对应 /ʃ/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",

@@ -460,12 +460,8 @@ export const highschoolOptional1Unit5Essential: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "t",
+            "letters": "ti",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "a",

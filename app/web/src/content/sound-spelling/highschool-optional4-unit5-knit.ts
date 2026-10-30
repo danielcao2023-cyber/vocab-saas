@@ -256,12 +256,8 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
+            "letters": "ci",
             "sound": "/ʃ/"
-          },
-          {
-            "letters": "i",
-            "sound": ""
           },
           {
             "letters": "e",
@@ -295,7 +291,7 @@ export const highschoolOptional4Unit5Knit: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "c 在此分别对应 /ʃ/ 和 /s/。",
+    "variantNote": "ci 对应 /ʃ/，词尾 c 对应 /s/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
