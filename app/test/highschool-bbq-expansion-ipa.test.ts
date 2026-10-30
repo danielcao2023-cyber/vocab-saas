@@ -8,5 +8,6 @@ it('labels the full-word American reading of the written abbreviation BBQ',()=>{
  expect(result.lesson.pronunciation.ipa).toBe('barbecue 美式读法：/ˈbɑrbəˌkju/');
  expect(result.lesson.forms[0].ipa).toBe(result.lesson.pronunciation.ipa);
  expect(result.lesson.takeaway).toContain('可以按完整词 barbecue 朗读');
+ expect(result.lesson.takeaway).toContain('也可按字母读');
  expect(result.lesson.sources.some(s=>s.url==='https://www.collinsdictionary.com/us/dictionary/english/bbq')).toBe(true);
 });
