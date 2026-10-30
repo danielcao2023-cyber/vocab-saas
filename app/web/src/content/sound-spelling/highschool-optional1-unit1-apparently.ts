@@ -244,22 +244,18 @@ export const highschoolOptional1Unit1Apparently: SoundSpellingLesson[] = [
         "letters": "sci",
         "sound": "/saɪ/",
         "stress": "secondary",
-        "hint": "此部分次重读。",
+        "hint": "此部分次重读；sc 对应 /s/。",
         "pairs": [
           {
-            "letters": "s",
+            "letters": "sc",
             "sound": "/s/"
-          },
-          {
-            "letters": "c",
-            "sound": ""
           },
           {
             "letters": "i",
             "sound": "/aɪ/"
           }
         ],
-        "tip": "此部分次重读。"
+        "tip": "此部分次重读；sc 合起来对应 /s/，i 对应 /aɪ/。"
       },
       {
         "letters": "en",
@@ -325,6 +321,10 @@ export const highschoolOptional1Unit1Apparently: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/scientific"
+      },
+      {
+        "label": "England national curriculum · sc 拼写",
+        "url": "https://assets.publishing.service.gov.uk/media/5a7db9e9e5274a5eaea65f58/Master_final_national_curriculum_28_Nov.pdf"
       }
     ],
     "review": {

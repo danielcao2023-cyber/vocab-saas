@@ -147,7 +147,7 @@ export const highschoolBook3Unit4Dock: SoundSpellingLesson[] = [
     "uk": "/ˈmʌsəl/",
     "chunks": [
       {
-        "letters": "mus",
+        "letters": "musc",
         "sound": "/mʌs/",
         "stress": "primary",
         "hint": "此部分重读。",
@@ -161,29 +161,21 @@ export const highschoolBook3Unit4Dock: SoundSpellingLesson[] = [
             "sound": "/ʌ/"
           },
           {
-            "letters": "s",
+            "letters": "sc",
             "sound": "/s/"
           }
         ],
-        "tip": "此部分重读。"
+        "tip": "此部分重读；sc 合起来对应 /s/。"
       },
       {
-        "letters": "cle",
+        "letters": "le",
         "sound": "/əl/",
         "stress": "none",
         "hint": "此部分轻读。",
         "pairs": [
           {
-            "letters": "c",
-            "sound": ""
-          },
-          {
-            "letters": "l",
+            "letters": "le",
             "sound": "/əl/"
-          },
-          {
-            "letters": "e",
-            "sound": ""
           }
         ],
         "tip": "此部分轻读。"
@@ -192,11 +184,15 @@ export const highschoolBook3Unit4Dock: SoundSpellingLesson[] = [
     "anchor": {
       "text": "结合例句与读音记忆拼写。"
     },
-    "variantNote": "c 通常不发音，词尾是 /əl/。",
+    "variantNote": "sc 合起来对应 /s/，词尾 le 对应 /əl/。",
     "sources": [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/muscle"
+      },
+      {
+        "label": "NSW Department of Education · sc 拼写",
+        "url": "https://education.nsw.gov.au/content/dam/main-education/teaching-and-learning/curriculum/key-learning-areas/english/media/documents/english-k-2-gpc-instructional-sequence.pdf"
       }
     ],
     "review": {
