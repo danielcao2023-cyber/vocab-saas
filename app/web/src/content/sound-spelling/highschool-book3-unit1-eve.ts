@@ -296,22 +296,18 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
         "letters": "key",
         "sound": "/ki/",
         "stress": "none",
-        "hint": "此部分轻读。",
+        "hint": "ey 一起对应 /i/。",
         "pairs": [
           {
             "letters": "k",
             "sound": "/k/"
           },
           {
-            "letters": "e",
-            "sound": ""
-          },
-          {
-            "letters": "y",
+            "letters": "ey",
             "sound": "/i/"
           }
         ],
-        "tip": "此部分轻读。"
+        "tip": "词尾 ey 合起来对应 /i/。"
       }
     ],
     "anchor": {
@@ -322,6 +318,10 @@ export const highschoolBook3Unit1Eve: SoundSpellingLesson[] = [
       {
         "label": "Cambridge Dictionary · 英语读音",
         "url": "https://dictionary.cambridge.org/pronunciation/english/turkey"
+      },
+      {
+        "label": "Thomas A Becket Infant School · ey 拼写",
+        "url": "https://www.tabinfant.org.uk/ur/_files/ugd/ef338b_660d1c3fcad5478082f088cef21e01d8.pdf"
       }
     ],
     "review": {
