@@ -1,6 +1,8 @@
-# vocab-saas：初三背单词（家用）
+# vocab-saas：背单词（家用）
 
-只给家里孩子用的初三英语背单词网页，跑在家里的 Mac Studio 上，只能通过 Tailscale 访问。
+只给家里孩子用的英语背单词网页，跑在家里的 Mac Studio 上，只能通过 Tailscale 访问。
+
+词库范围：初三 → 高中、四六级、托福（2026-11 起陆续加入）。
 
 ## 目录
 - `app/`：程序代码（Fastify + SQLite + ts-fsrs + Vue）。完整提交历史和分支都在这个仓库里：
